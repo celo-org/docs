@@ -1,2 +1,3 @@
 _book/*
 command-line-interface/*.bak
+node_modules/
