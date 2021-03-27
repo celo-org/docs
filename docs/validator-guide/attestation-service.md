@@ -1,8 +1,8 @@
 # Attestation Service
 
-Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance.  If you are a recipient of or considering applying to receive [votes from the Celo Foundation](celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
+Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
 
-The Attestation Service is part of the [Celo identity protocol](../celo-codebase/protocol/identity/README.md). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
+The Attestation Service is part of the [Celo identity protocol](../celo-codebase/protocol/identity). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
 
 ![](https://storage.googleapis.com/celo-website/docs/attestations-flow.jpg)
 
@@ -12,18 +12,18 @@ Validators receive a fee (set by [on-chain governance](../celo-holder-guide/voti
 
 This guide steps you through setting up an Attestation Service:
 
-* Follow the instructions to set up a validator on [mainnet](../getting-started/running-a-validator-in-mainnet.md) or [baklava](../getting-started/running-a-validator-in-baklava.md)
-* Configure Twilio, MessageBird and Nexmo, the SMS providers used by Attestation Service
-* Generate and register an attestation signer key
-* Deploy a Celo full node, with the attestation signer key unlocked
-* Deploy the attestation service
-* Configure and publish validator metadata so that clients can find your attestation service
-* Configure monitoring for the full node and attestation service
+- Follow the instructions to set up a validator on [mainnet](../getting-started/running-a-validator-in-mainnet.md) or [baklava](../getting-started/running-a-validator-in-baklava.md)
+- Configure Twilio, MessageBird and Nexmo, the SMS providers used by Attestation Service
+- Generate and register an attestation signer key
+- Deploy a Celo full node, with the attestation signer key unlocked
+- Deploy the attestation service
+- Configure and publish validator metadata so that clients can find your attestation service
+- Configure monitoring for the full node and attestation service
 
 ## Recent releases
 
-* [Attestation Service v1.2.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.2.0) (latest production release)
-* [Attestation Service v1.1.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.1.0)
+- [Attestation Service v1.2.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.2.0) (latest production release)
+- [Attestation Service v1.1.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.1.0)
 
 ## Deployment Architecture
 
@@ -37,7 +37,7 @@ An Attestation Service is usually deployed alongside a Celo full node instance, 
 
 Attestation Service is a stateless service that uses a database to persist status of current and recently completed SMS delivery attempts. The most straightforward deployment architecture is to have a single machine or VM running three containers: one the attestation service, a Celo Blockchain node, and a single database instance.
 
-For a high availability setup, multiple instances can be deployed behind a load balancer and sharing a single database service. The load balancer should be configured with a round robin routing policy using the instances' `/healthz` endpoint as a healthcheck. Deploying a high availability database setup is beyond the scope of these instructions, but is straightforward with most cloud providers.  In this setup, if a delivery report for an SMS issued by one instance is received by another instance, that instance can identify the matching record in the shared database and act on the receipt to resend if necessary.
+For a high availability setup, multiple instances can be deployed behind a load balancer and sharing a single database service. The load balancer should be configured with a round robin routing policy using the instances' `/healthz` endpoint as a healthcheck. Deploying a high availability database setup is beyond the scope of these instructions, but is straightforward with most cloud providers. In this setup, if a delivery report for an SMS issued by one instance is received by another instance, that instance can identify the matching record in the shared database and act on the receipt to resend if necessary.
 
 Every record in the database includes the issuer (i.e. validator) in its key, so a single setup like the above can be used to provide attestations for multiple validators.
 
@@ -45,9 +45,9 @@ Every record in the database includes the issuer (i.e. validator) in its key, so
 
 Currently the Attestation Service supports three SMS providers:
 
-* [Twilio](https://www.twilio.com/try-twilio)
-* [Nexmo](https://dashboard.nexmo.com/sign-up)
-* [MessageBird](https://messagebird.com/en/) (from version 1.2.0 and later)
+- [Twilio](https://www.twilio.com/try-twilio)
+- [Nexmo](https://dashboard.nexmo.com/sign-up)
+- [MessageBird](https://messagebird.com/en/) (from version 1.2.0 and later)
 
 It is recommended that you sign up with all three.
 
@@ -61,7 +61,7 @@ Next, adjust the Geo settings to serve phone numbers globally under [https://www
 
 To actually be able to send SMS, you need to create a messaging service under [Programmable SMS > SMS](https://www.twilio.com/console/sms/services). Provide the resulting `SID` in the `TWILIO_MESSAGING_SERVICE_SID` configuration variable.
 
-Now that you have provisioned your messaging service, you need to buy at least 1 phone number to send SMS from. You can do so under the `Numbers` option of the messaging service page. It is strongly recommended that you purchase at least a US (`+1`) number which seem to provide high delivery success rates.  If you purchase numbers in other locales, Twilio will intelligently select the best number to send each SMS.
+Now that you have provisioned your messaging service, you need to buy at least 1 phone number to send SMS from. You can do so under the `Numbers` option of the messaging service page. It is strongly recommended that you purchase at least a US (`+1`) number which seem to provide high delivery success rates. If you purchase numbers in other locales, Twilio will intelligently select the best number to send each SMS.
 
 ### Nexmo
 
@@ -77,7 +77,7 @@ Note that Attestation Service from version 1.2.0 no longer requires callback URL
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable.  Click `Top Up` to add credit. MessageBird requires a dedicated number and approval to send SMS to certain countries that validators must support including the USA, Canada and others. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and approval to send SMS to certain countries that validators must support including the USA, Canada and others. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
 
 ## Installation
 
@@ -107,7 +107,7 @@ export CELO_ATTESTATION_SIGNER_ADDRESS=<YOUR-ATTESTATION-SIGNER-ADDRESS>
 celocli releasegold:authorize --contract $CELO_VALIDATOR_RG_ADDRESS --role attestation --signature 0x$CELO_ATTESTATION_SIGNER_SIGNATURE --signer $CELO_ATTESTATION_SIGNER_ADDRESS
 ```
 
-You can now run the node for the attestation service in the background with the following command. Remember to specify the password you used during the creation of the `CELO_ATTESTATION_SIGNER_ADDRESS`.  And, if you want to run the attestation service for Baklava, add the `--baklava` flag.
+You can now run the node for the attestation service in the background with the following command. Remember to specify the password you used during the creation of the `CELO_ATTESTATION_SIGNER_ADDRESS`. And, if you want to run the attestation service for Baklava, add the `--baklava` flag.
 
 ```bash
 # On the Attestation machine
@@ -153,58 +153,58 @@ Lines beginning `#` are treated as comments. In addition, any options specified 
 
 Required options:
 
-| Variable                       | Explanation   |
-|--------------------------------|-------------------------------------------------------------------------------------------------|
-| `DATABASE_URL`                   | The URL to access the local database, e.g. `sqlite://db/attestations.db` |
-| `CELO_PROVIDER`                  | The node URL for your local full node at which your attestation signer key is unlocked. e.g. `http://localhost:8545`. Do not expose this port to the public internet! |
-| `CELO_VALIDATOR_ADDRESS`         | Address of the Validator account. If Validator is deployed via a `ReleaseGold` contract, this is the contract's address (i.e. `$CELO_VALIDATOR_RG_ADDRESS`), not the beneficiary. |
-| `ATTESTATION_SIGNER_ADDRESS`     | Address of the Validator's attestation signer key  |
-| `SMS_PROVIDERS`                  | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
- |
+| Variable                     | Explanation                                                                                                                                                                                                                                                        |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `DATABASE_URL`               | The URL to access the local database, e.g. `sqlite://db/attestations.db`                                                                                                                                                                                           |
+| `CELO_PROVIDER`              | The node URL for your local full node at which your attestation signer key is unlocked. e.g. `http://localhost:8545`. Do not expose this port to the public internet!                                                                                              |
+| `CELO_VALIDATOR_ADDRESS`     | Address of the Validator account. If Validator is deployed via a `ReleaseGold` contract, this is the contract's address (i.e. `$CELO_VALIDATOR_RG_ADDRESS`), not the beneficiary.                                                                                  |
+| `ATTESTATION_SIGNER_ADDRESS` | Address of the Validator's attestation signer key                                                                                                                                                                                                                  |
+| `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
+|  |
 
 Optional environment variables:
 
-| Variable                       | Explanation    |
-|--------------------------------|-------------------------------------------------------------------------------------------------|
-| `PORT`                           | Port to listen on. Default `3000`. |
-| `RATE_LIMIT_REQS_PER_MIN`        | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`. |
-| `SMS_PROVIDERS_<country>`        | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`) |
-| `SMS_PROVIDERS_RANDOMIZED`       | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. |
-| `MAX_DELIVERY_ATTEMPTS`          | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.  |
-| `MAX_REREQUEST_MINS`       | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.
-| `EXTERNAL_CALLBACK_HOSTPORT`     | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilio` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
-| `VERIFY_CONFIG_ON_STARTUP`       | Refuse to start if signer or metadata is misconfigured. Default `1`. If you disable this, you must specify `EXTERNAL_CALLBACK_HOSTPORT`. |
-| `MAX_AGE_LATEST_BLOCK_SECS`      | (v1.2.0+) Maximum age of the latest received block, in seconds, before the health check reports failure. Default is `20`. |
-| `DB_RECORD_EXPIRY_MINS`          | Time in minutes before a record of an attestation in the database may be deleted. Default 60 minutes. |
-| `LOG_LEVEL`                      | One of `fatal`, `error`, `warn`, `info`, `debug`, `trace` |
-| `LOG_FORMAT`                     | One of `json`, `human`, `stackdriver`  |
-| `APP_SIGNATURE`                  | A value that is shown under the key `appSignature` field in the `/status` endpoint that you can use to identify multiple instances. |
+| Variable                     | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PORT`                       | Port to listen on. Default `3000`.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `RATE_LIMIT_REQS_PER_MIN`    | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`.                                                                                                                                                                                                                                                                                                                                                    |
+| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`)                                                                                                                                                                                                                                                                                                                                                |
+| `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`.                                                                                                                                                                                                                                                                       |
+| `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
+| `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
+| `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilio` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
+| `VERIFY_CONFIG_ON_STARTUP`   | Refuse to start if signer or metadata is misconfigured. Default `1`. If you disable this, you must specify `EXTERNAL_CALLBACK_HOSTPORT`.                                                                                                                                                                                                                                                                                                                 |
+| `MAX_AGE_LATEST_BLOCK_SECS`  | (v1.2.0+) Maximum age of the latest received block, in seconds, before the health check reports failure. Default is `20`.                                                                                                                                                                                                                                                                                                                                |
+| `DB_RECORD_EXPIRY_MINS`      | Time in minutes before a record of an attestation in the database may be deleted. Default 60 minutes.                                                                                                                                                                                                                                                                                                                                                    |
+| `LOG_LEVEL`                  | One of `fatal`, `error`, `warn`, `info`, `debug`, `trace`                                                                                                                                                                                                                                                                                                                                                                                                |
+| `LOG_FORMAT`                 | One of `json`, `human`, `stackdriver`                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `APP_SIGNATURE`              | A value that is shown under the key `appSignature` field in the `/status` endpoint that you can use to identify multiple instances.                                                                                                                                                                                                                                                                                                                      |
 
 Twilio configuration options:
 
-| Variable                       | Explanation                                                     |
-| ------------------------------ | --------------------------------------------------------------- |
-| `TWILIO_ACCOUNT_SID`           | The Twilio account ID                                           |
-| `TWILIO_MESSAGING_SERVICE_SID` | The Twilio Message Service ID. Starts with `MG`                 |
-| `TWILIO_AUTH_TOKEN`            | The API authentication token                                    |
-| `TWILIO_UNSUPPORTED_REGIONS`   | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD`  |
+| Variable                       | Explanation                                                                                        |
+| ------------------------------ | -------------------------------------------------------------------------------------------------- |
+| `TWILIO_ACCOUNT_SID`           | The Twilio account ID                                                                              |
+| `TWILIO_MESSAGING_SERVICE_SID` | The Twilio Message Service ID. Starts with `MG`                                                    |
+| `TWILIO_AUTH_TOKEN`            | The API authentication token                                                                       |
+| `TWILIO_UNSUPPORTED_REGIONS`   | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
 
 Nexmo configuration options:
 
-| Variable                    | Explanation                                                     |
-| --------------------------- | --------------------------------------------------------------- |
-| `NEXMO_KEY`                 | The API key to the Nexmo API                                    |
-| `NEXMO_SECRET`              | The API secret to the Nexmo API                                 |
-| `NEXMO_APPLICATION`  | Optional. Use only numbers linked to the Nexmo application with matching ID, rather than the global pool.  |
-| `NEXMO_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD`  |
+| Variable                       | Explanation                                                                                                                     |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXMO_KEY`                    | The API key to the Nexmo API                                                                                                    |
+| `NEXMO_SECRET`                 | The API secret to the Nexmo API                                                                                                 |
+| `NEXMO_APPLICATION`            | Optional. Use only numbers linked to the Nexmo application with matching ID, rather than the global pool.                       |
+| `NEXMO_UNSUPPORTED_REGIONS`    | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD`                              |
 | `NEXMO_ACCOUNT_BALANCE_METRIC` | Optional. Disabled by default. If set to `1`, Nexmo balances will be published under the `attestation_provider_balance` metric. |
 
 MessageBird configuration options (v1.2.0+):
 
-| Variable                    | Explanation                                                     |
-| --------------------------- | --------------------------------------------------------------- |
-| `MESSAGEBIRD_API_KEY`       | The API key to the MessageBird API                              |
-| `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD`  |
+| Variable                          | Explanation                                                                                        |
+| --------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `MESSAGEBIRD_API_KEY`             | The API key to the MessageBird API                                                                 |
+| `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
 
 ## Registering Metadata
 
@@ -228,7 +228,7 @@ You should now host your metadata somewhere reachable via HTTPS. You can use a s
 
 Now we can register this url for others to see. To do this, we must have the `beneficiary` address of the `ReleaseGold` contract (`CELO_VALIDATOR_ADDRESS`) unlocked.
 
-(Note: If you used a Ledger to create the `beneficiary` address, add the ```--useLedger``` flag and possibly the ```--ledgerAddresses=N``` flag to the below command. The latter flag will have the ledger check N number of addresses, e.g. ```--ledgerAddresses=5``` would have the Ledger check 5 addresses. Don't forget to confirm the transaction on your Ledger after initiating it via the CLI.)
+(Note: If you used a Ledger to create the `beneficiary` address, add the `--useLedger` flag and possibly the `--ledgerAddresses=N` flag to the below command. The latter flag will have the ledger check N number of addresses, e.g. `--ledgerAddresses=5` would have the Ledger check 5 addresses. Don't forget to confirm the transaction on your Ledger after initiating it via the CLI.)
 
 ```bash
 # On your local machine
@@ -305,7 +305,7 @@ The Attestation Service provides JSON-format structured logs.
 
 The `/healthz` endpoint will respond with status `200` when all of the following are true: the attestation signer key is available and unlocked, the node is not syncing, the latest block is recent, and the database is accessible. Otherwise it will respond with status `500`.
 
-Use this endpoint when configuring a load balancer in front of multiple instances.  The results of the last healthcheck are reported via the `attestation_service_healthy` metric.
+Use this endpoint when configuring a load balancer in front of multiple instances. The results of the last healthcheck are reported via the `attestation_service_healthy` metric.
 
 Attestation Service also has a `/status` endpoint for configuration information.
 
@@ -363,11 +363,11 @@ The following metrics track each delivery attempt. Each client request for an at
 
 Administrative metrics:
 
-- The `attestation_provider_balance` tracks the value of the balance of accounts at supported providers.  Label `provider` identifies the provider. This is currently only supported for Nexmo, and is off by default but can be enabled by setting `NEXMO_ACCOUNT_BALANCE_METRIC`. The metric is populated as a value in the account currency, e.g USD, and only once a successful SMS has been delivered by that provider.
+- The `attestation_provider_balance` tracks the value of the balance of accounts at supported providers. Label `provider` identifies the provider. This is currently only supported for Nexmo, and is off by default but can be enabled by setting `NEXMO_ACCOUNT_BALANCE_METRIC`. The metric is populated as a value in the account currency, e.g USD, and only once a successful SMS has been delivered by that provider.
 
 ### Blockchain
 
-The number of requested and entirely completed attestations is in effect recorded on the blockchain. The values can be seen at [Celo Explorer](https://explorer.celo.org): enter the Validator's address and click the 'Celo Info' tab.  
+The number of requested and entirely completed attestations is in effect recorded on the blockchain. The values can be seen at [Celo Explorer](https://explorer.celo.org): enter the Validator's address and click the 'Celo Info' tab.
 
 [TheCelo](https://thecelo.com/?tab=attestations) tracks global attestation counts and success rates, and shows detailed information about recent attestation attempts.
 

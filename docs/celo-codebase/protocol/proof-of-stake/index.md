@@ -1,4 +1,8 @@
-# Proof-of-Stake
+---
+title: Proof-of-Stake
+id: proof-of-stake
+slug: /celo-codebase/protocol/proof-of-stake
+---
 
 {% youtube src="https://www.youtube.com/watch?v=3UIudzzCb8o" %}{% endyoutube %}
 

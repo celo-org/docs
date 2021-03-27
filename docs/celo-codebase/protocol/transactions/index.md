@@ -1,4 +1,8 @@
-# Transactions
+---
+title: Transactions
+id: transactions
+slug: /celo-codebase/protocol/transactions
+---
 
 Transactions in the Celo protocol include payments, contract calls, and other operation which modifies state. They are similar to Ethereum transaction with the following key differences.
 

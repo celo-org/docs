@@ -15,13 +15,13 @@ DAppKit uses [deeplinks](https://en.wikipedia.org/wiki/Mobile_deep_linking) to c
 One of the first actions you will want to do as a DApp Developer is to get the address of your user's account, to display relevant information to them. It can be done as simply as:
 
 ```javascript
-import { requestAccountAddress, waitForAccountAuth } from '@celo/dappkit';
-import { Linking } from 'expo';
+import { requestAccountAddress, waitForAccountAuth } from "@celo/dappkit";
+import { Linking } from "expo";
 
 login = async () => {
-  const requestId = 'login';
-  const dappName = 'My DappName';
-  const callback = Linking.makeUrl('/my/path');
+  const requestId = "login";
+  const dappName = "My DappName";
+  const callback = Linking.makeUrl("/my/path");
 
   requestAccountAddress({
     requestId,
@@ -31,21 +31,24 @@ login = async () => {
 
   const dappkitResponse = await waitForAccountAuth(requestId);
 
-  this.setState({ address: dappkitResponse.address, phoneNumber: dappkitResponse.phoneNumber });
-}
+  this.setState({
+    address: dappkitResponse.address,
+    phoneNumber: dappkitResponse.phoneNumber,
+  });
+};
 ```
 
-Once you have the account address, you can make calls against your own smart contract, or use [ContractKit](../contractkit/README.md) to interact with Celo Core Contracts to do actions like fetch a user's balance.
+Once you have the account address, you can make calls against your own smart contract, or use [ContractKit](../contractkit) to interact with Celo Core Contracts to do actions like fetch a user's balance.
 
 First import and instantiate an instance of ContractKit. For ContractKit version 1.0.0 onwards, you also need to import and instantiate a Web3 instance manually:
 
 ```javascript
 // Add ContractKit to your file and instantiate the kit.
 // note: for versions prior to 1.x.x, please check the legacy docs.
-import { newKitFromWeb3 } from '@celo/contractkit';
-import Web3 from 'web3';
- 
-const web3 = new Web3('https://alfajores-forno.celo-testnet.org');
+import { newKitFromWeb3 } from "@celo/contractkit";
+import Web3 from "web3";
+
+const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 // mainnet -- comment out the above, uncomment below for mainnet
 // const web3 = new Web3('https://forno.celo.org');
 
@@ -56,7 +59,7 @@ Then add the following to your `login` method to fetch a user's balance:
 
 ```javascript
 // Note that `address` and `phoneNumber` are already stored in state from the first login snippet
-this.setState({isLoadingBalance: true });
+this.setState({ isLoadingBalance: true });
 // Set the default account to the account returned from the wallet
 kit.defaultAccount = this.state.address;
 // Get the StableToken contract
@@ -74,26 +77,20 @@ this.setState({ cUSDBalance, isLoadingBalance: false });
 Let's go from accessing account information to submitting transactions. To alter state on the blockchain, you need to make a transaction object with your smart contract or any of the Celo Core Contracts in ContractKit. All that is left to do is to pass the transaction object to DAppKit.
 
 ```javascript
-import { toTxResult } from '@celo/connect';
-import {
-  requestTxSig,
-  waitForSignedTxs
-} from '@celo/dappkit';
+import { toTxResult } from "@celo/connect";
+import { requestTxSig, waitForSignedTxs } from "@celo/dappkit";
 
 // Create the transaction object
 const stableToken = await kit.contracts.getStableToken();
 const decimals = await stableToken.decimals();
 // This can be a specific account address, a contract address, etc.
-const transferTo = '<TRANSFER_TO_ACCOUNT>'
-const transferValue = new BigNumber('10e18');
-const txObject = stableToken.transfer(
-  transferTo,
-  transferValue.toString()
-).txo;
+const transferTo = "<TRANSFER_TO_ACCOUNT>";
+const transferValue = new BigNumber("10e18");
+const txObject = stableToken.transfer(transferTo, transferValue.toString()).txo;
 
-const requestId = 'transfer';
-const dappName = 'My DappName';
-const callback = Linking.makeUrl('/my/path');
+const requestId = "transfer";
+const dappName = "My DappName";
+const callback = Linking.makeUrl("/my/path");
 
 // Request the TX signature from DAppKit
 requestTxSig(
@@ -103,8 +100,8 @@ requestTxSig(
       tx: txObject,
       from: this.state.address,
       to: stableToken.contract.options.address,
-      feeCurrency: FeeCurrency.cUSD
-    }
+      feeCurrency: FeeCurrency.cUSD,
+    },
   ],
   { requestId, dappName, callback }
 );
@@ -117,7 +114,10 @@ const tx = await kit.connection.sendSignedTransaction(rawTx);
 const receipt = await tx.waitReceipt();
 
 const cUSDBalanceBig = await stableToken.balanceOf(kit.defaultAccount);
-this.setState({ cUSDBalance: cUSDBalanceBig.toString(), isLoadingBalance: false });
+this.setState({
+  cUSDBalance: cUSDBalanceBig.toString(),
+  isLoadingBalance: false,
+});
 ```
 
 ## Example: Exchanging cUSD and Locking CELO
@@ -126,15 +126,12 @@ Here's an example of how to go about exchanging some cUSD to CELO, and
 then Locking that CELO to be able to vote for a validator group.
 
 ```javascript
-import {
-  requestTxSig,
-  waitForSignedTxs
-} from '@celo/dappkit';
+import { requestTxSig, waitForSignedTxs } from "@celo/dappkit";
 
-import { BigNumber } from 'bignumber.js';
+import { BigNumber } from "bignumber.js";
 
-const dappName = 'My DappName';
-const callback = Linking.makeUrl('/my/path');
+const dappName = "My DappName";
+const callback = Linking.makeUrl("/my/path");
 
 // Let's assume that the address has funds enough in cUSD to pay the
 // transaction fees of all the transactions and enough to buy 1 CELO
@@ -163,21 +160,23 @@ if (!txIsAccount) {
         tx: txRegisterAccountObj,
         from: this.state.address,
         to: accounts.address,
-        feeCurrency: FeeCurrency.cUSD
-      }
+        feeCurrency: FeeCurrency.cUSD,
+      },
     ],
     { requestId, dappName, callback }
   );
   const respRegisterAccount = await waitForSignedTxs(requestId);
-  const txRegisterAccount = await kit.connection.sendSignedTransaction(respRegisterAccount.rawTxs[0]);
+  const txRegisterAccount = await kit.connection.sendSignedTransaction(
+    respRegisterAccount.rawTxs[0]
+  );
   const receiptRegisterAccount = await txRegisterAccount.waitReceipt();
   console.log(`Tx hash: ${receiptRegisterAccount.transactionHash}`);
   // Handle account registration
 }
 
 // 1e18 = 1 Celo
-const oneCelo = new BigNumber('1e18');
-const tenCUSD = new BigNumber('10e18');
+const oneCelo = new BigNumber("1e18");
+const tenCUSD = new BigNumber("10e18");
 // Now we will generate the transactions that we require to be signed
 
 // First of all, we need to increase the allowance of the exchange address
@@ -188,13 +187,9 @@ const txObjectIncAllow = stableToken.increaseAllowance(
   tenCUSD
 ).txo;
 
-// Then we will call the Exchange contract, and attempt to buy 1 CELO with a 
+// Then we will call the Exchange contract, and attempt to buy 1 CELO with a
 // max price of 10 cUSD (it could use less than that).
-const txObjectExchange = exchange.buy(
-  oneCelo,
-  tenCUSD,
-  true
-).txo;
+const txObjectExchange = exchange.buy(oneCelo, tenCUSD, true).txo;
 
 // Then we will call the lockedGold contract to lock our CELO
 // (Remember that the address should be a registered Account)
@@ -205,13 +200,10 @@ const txObjectLock = lockedGold.lock().txo;
 // Here you have to change the validator group address
 // (At the moment of writing the tuto, the 0x5edfCe0bad47e24E30625c275457F5b4Bb619241
 // was a valid address, but you could check the groups using the celocli)
-const validatorGroupAddress = '<VALIDATOR_GROUP_ADDRESS>';
-const txObjectVote = (await election.vote(
-  validatorGroupAddress, 
-  oneCelo
-)).txo;
+const validatorGroupAddress = "<VALIDATOR_GROUP_ADDRESS>";
+const txObjectVote = (await election.vote(validatorGroupAddress, oneCelo)).txo;
 
-const requestId = 'signMeEverything';
+const requestId = "signMeEverything";
 
 // Request the TX signature from DAppKit
 requestTxSig(
@@ -221,29 +213,29 @@ requestTxSig(
       tx: txObjectIncAllow,
       from: this.state.address,
       to: stableToken.address,
-      feeCurrency: FeeCurrency.cUSD
+      feeCurrency: FeeCurrency.cUSD,
     },
     {
       tx: txObjectExchange,
       from: this.state.address,
       to: exchange.address,
       feeCurrency: FeeCurrency.cUSD,
-      estimatedGas: 200000
+      estimatedGas: 200000,
     },
     {
       tx: txObjectLock,
       from: this.state.address,
       to: lockedGold.address,
       feeCurrency: FeeCurrency.cUSD,
-      value: oneCelo
+      value: oneCelo,
     },
     {
       tx: txObjectVote,
       from: this.state.address,
       to: election.address,
       feeCurrency: FeeCurrency.cUSD,
-      estimatedGas: 200000
-    }
+      estimatedGas: 200000,
+    },
   ],
   { requestId, dappName, callback }
 );
@@ -252,28 +244,36 @@ const dappkitResponse = await waitForSignedTxs(requestId);
 
 const receipts = [];
 // execute the allowance
-console.log('execute the allowance');
-const tx0 = await kit.connection.sendSignedTransaction(dappkitResponse.rawTxs[0]);
+console.log("execute the allowance");
+const tx0 = await kit.connection.sendSignedTransaction(
+  dappkitResponse.rawTxs[0]
+);
 receipts.push(await tx0.waitReceipt());
 
 // execute the exchange
-console.log('execute the exchange');
-const tx1 = await kit.connection.sendSignedTransaction(dappkitResponse.rawTxs[1]);
+console.log("execute the exchange");
+const tx1 = await kit.connection.sendSignedTransaction(
+  dappkitResponse.rawTxs[1]
+);
 receipts.push(await tx1.waitReceipt());
 
 // execute the lock
-console.log('execute the lock');
-const tx2 = await kit.connection.sendSignedTransaction(dappkitResponse.rawTxs[2]);
+console.log("execute the lock");
+const tx2 = await kit.connection.sendSignedTransaction(
+  dappkitResponse.rawTxs[2]
+);
 receipts.push(await tx2.waitReceipt());
 
 // execute the vote
-console.log('execute the vote');
-const tx3 = await kit.connection.sendSignedTransaction(dappkitResponse.rawTxs[3]);
+console.log("execute the vote");
+const tx3 = await kit.connection.sendSignedTransaction(
+  dappkitResponse.rawTxs[3]
+);
 receipts.push(await tx3.waitReceipt());
-console.log('Receipts: ', receipts);
+console.log("Receipts: ", receipts);
 
 const voteInfo = await election.getVoter(this.state.address);
-console.log('Vote info: ', voteInfo);
+console.log("Vote info: ", voteInfo);
 // REMEMBER that after voting the next epoch you HAVE TO ACTIVATE those votes
 // using the `activate` method in the election contract.
 

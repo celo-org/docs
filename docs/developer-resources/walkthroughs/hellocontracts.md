@@ -47,11 +47,11 @@ contract HelloWorld {
 Let's create a migration to deploy the contract. For that, we need to create a file in the `migrations` folder named `2_deploy_helloworld.js`:
 
 ```javascript
-var HelloWorld = artifacts.require('HelloWorld')
+var HelloWorld = artifacts.require("HelloWorld");
 
-module.exports = function(deployer) {
-  deployer.deploy(HelloWorld)
-}
+module.exports = function (deployer) {
+  deployer.deploy(HelloWorld);
+};
 ```
 
 To be able to actually deploy it though, we need a blockchain. For local development and testing, you can use our fork of ganache:
@@ -101,7 +101,7 @@ truffle(test)> contract.getName()
 
 ## Deploy to Alfajores
 
-When you are ready to deploy your contract to Alfajores, you'll need a Celo client connected to the testnet. We'll run a node somewhat similarly to the [Instructions of running a full node on Baklava](/getting-started/baklava-testnet/running-a-full-node):
+When you are ready to deploy your contract to Alfajores, you'll need a Celo client connected to the testnet. We'll run a node somewhat similarly to the [Instructions of running a full node on Baklava](/getting-started/running-a-full-node-in-baklava):
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:alfajores

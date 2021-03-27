@@ -196,7 +196,7 @@ An interaction that takes place solely through a transaction being executed on t
 
 ## Proof-of-Stake
 
-The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. [Celo's Proof-of-Stake mechanism](celo-codebase/protocol/proof-of-stake/README.md) permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
+The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. [Celo's Proof-of-Stake mechanism](celo-codebase/protocol/proof-of-stake) permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
 
 ## RC1
 
@@ -220,7 +220,7 @@ The process, when a node joins the network, of requesting and receiving block he
 
 ## SDK
 
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](developer-resources/dappkit/README.md) and [ContractKit](developer-resources/contractkit/README.md).
+Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](developer-resources/dappkit) and [ContractKit](developer-resources/contractkit).
 
 ## Slashing
 

@@ -32,7 +32,7 @@ In this guide, you will:
 - Access the `ReleaseGold` account associated with your address using your existing Ledger
 - Authorize a voting key, which you will hold on a new, second Ledger
 - Lock some of the Gold in your `ReleaseGold` account
-- Use that Locked Gold to vote for Validator Groups to operate Celo's [Proof of Stake](../celo-codebase/protocol/proof-of-stake/README.md) network (and in doing so be ready to receive epoch rewards of 6% when the community enables them in a forthcoming governance proposal)
+- Use that Locked Gold to vote for Validator Groups to operate Celo's [Proof of Stake](../celo-codebase/protocol/proof-of-stake) network (and in doing so be ready to receive epoch rewards of 6% when the community enables them in a forthcoming governance proposal)
 
 ## Preparing Ledgers
 
@@ -228,7 +228,7 @@ celocli account:balance $CELO_VOTE_SIGNER_ADDRESS
 
 To vote for Validator Groups and on governance proposals you will need to lock CELO. This is to keep the network secure by making sure each unit of CELO can only be used to vote once.
 
-Specify the amount of CELO you wish to lock (don’t include the `< >`  braces). All amounts are given as wei, i.e units of 10^-18 CELO. For example, 1 CELO = 1000000000000000000.
+Specify the amount of CELO you wish to lock (don’t include the `< >` braces). All amounts are given as wei, i.e units of 10^-18 CELO. For example, 1 CELO = 1000000000000000000.
 
 {% hint style="warning" %}
 Make sure to leave at least 1 CELO unlocked to pay for transaction fees.
@@ -247,7 +247,7 @@ celocli lockedgold:show $CELO_RG_ADDRESS
 
 ## Vote for a Validator Group
 
-Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](../GLOSSARY.md#epoch-rewards).
+Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](/getting-started/glossary#epoch-rewards).
 
 For more details, check out the [Voting for Validators page](voting-validators.md), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
 
@@ -276,7 +276,7 @@ celocli account:balance $CELO_RG_ADDRESS
 
 All CELO amounts should be expressed in wei: that means 1 CELO = 1000000000000000000. Don’t include the `< >` braces in the line below.
 
-To vote, you will use your vote signer key, which is voting *on behalf of* your Locked Gold account.
+To vote, you will use your vote signer key, which is voting _on behalf of_ your Locked Gold account.
 
 {% hint style="info" %}
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
@@ -343,11 +343,11 @@ Or by searching for your `ReleaseGold` address on the [Block Explorer](https://e
 
 You are now set up to participate in the Celo network!
 
-You might want to read more about [choosing a Validator Group](voting-validators.md) to vote for, and how [voter rewards](../celo-codebase/protocol/proof-of-stake/locked-gold-rewards.md) are calculated.  You can vote for up to ten different Groups from a single account.
+You might want to read more about [choosing a Validator Group](voting-validators.md) to vote for, and how [voter rewards](../celo-codebase/protocol/proof-of-stake/locked-gold-rewards.md) are calculated. You can vote for up to ten different Groups from a single account.
 
 Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](voting-governance.md). You can do this without affecting any vote you have made for Validator Groups.
 
-You can also read more about how Celo's [Proof of Stake](../celo-codebase/protocol/proof-of-stake/README.md) and on-chain [Governance](../celo-codebase/protocol/governance.md) mechanisms work.
+You can also read more about how Celo's [Proof of Stake](../celo-codebase/protocol/proof-of-stake) and on-chain [Governance](../celo-codebase/protocol/governance.md) mechanisms work.
 
 ## Revoking Votes
 
@@ -357,7 +357,7 @@ At any point you can revoke votes cast for a Validator Group. For example, a Gro
 When you revoke your votes you will stop receiving voter rewards.
 {% endhint %}
 
-Specify the amount of CELO you wish to revoke (don’t include the  `< >`  braces). All CELO amounts should be expressed in 18 decimal places. For example, 1 CELO = 1000000000000000000.
+Specify the amount of CELO you wish to revoke (don’t include the `< >` braces). All CELO amounts should be expressed in 18 decimal places. For example, 1 CELO = 1000000000000000000.
 
 {% hint style="info" %}
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.

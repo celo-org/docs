@@ -18,7 +18,7 @@ If you hold CELO, or are a beneficiary of a [`ReleaseGold` contract](release-gol
 
 CELO that you lock and use to vote for a group that elects one or more Validators receives [epoch rewards](../celo-codebase/protocol/proof-of-stake/epoch-rewards.md) every epoch (approximately every day) once the community passes a governance proposal enabling rewards. The initial level of rewards is anticipated to be around 6% per annum equivalent (but is subject to change).
 
-Unlike a number of Proof of Stake protocols, **CELO used for voting is never at risk**. The actions of the Validator Groups or Validators you vote for can cause you to receive lower or higher rewards, but the CELO you locked will always be available to be unlocked in the future. [Slashing](../GLOSSARY.md#slashing) in the Celo protocol applies only to Validators and Validator Groups. 
+Unlike a number of Proof of Stake protocols, **CELO used for voting is never at risk**. The actions of the Validator Groups or Validators you vote for can cause you to receive lower or higher rewards, but the CELO you locked will always be available to be unlocked in the future. [Slashing](/getting-started/glossary#slashing) in the Celo protocol applies only to Validators and Validator Groups.
 
 ## Choosing a Validator Group
 
@@ -38,7 +38,7 @@ As a CELO holder, you have the opportunity to impact the Celo network by voting 
 
 - **No recent slashing:** When Validators and groups register, their Locked Gold becomes "staked", in that it is subject to penalties for conduct that could seriously adversely affect the health of the network. Voters' Locked Gold is never slashed, but voter rewards are affected by a group's [slashing penalty](../celo-codebase/protocol/proof-of-stake/validator-rewards.md#calculating-slashing-penalty), which is halved when a group or one of its Validators is slashed. Look for groups with a last slashing time long in the past, ideally `0` (never), and a slashing penalty value of `1.0`.
 
-- **Runs an Attestation Service**: The [Attestation Service](../celo-codebase/protocol/identity/README.md) is an important service that Validators can run that allows users to verify that they have access to a phone number and map it to an address. Supporting Validators that run this service makes it easier for new users to begin using Celo.
+- **Runs an Attestation Service**: The [Attestation Service](../celo-codebase/protocol/identity) is an important service that Validators can run that allows users to verify that they have access to a phone number and map it to an address. Supporting Validators that run this service makes it easier for new users to begin using Celo.
 
 - **Runs a Validator on Baklava**: A group that runs a Validator on the [Baklava](../getting-started/baklava-testnet.md) helps maintain the testnet and verify that upgrades to the Celo Blockchain software can be deployed smoothly.
 
@@ -54,7 +54,7 @@ As a CELO holder, you have the opportunity to impact the Celo network by voting 
 
 As described above, there are many criteria to consider when deciding which group to vote for. While it is highly recommended that all CELO holders do their independent research when deciding which group to vote for, another option is to vote for Validator Groups that have received votes from the Celo Foundation.
 
-The Celo Foundation has a [Validator Group voting policy](../validator-guide/celo-foundation-voting-policy.md) that it follows when voting with the CELO that it holds. This policy has been developed by the Foundation board and technical advisors with the express goal of promoting the long-term security and decentralization of the network. Validator Groups have an opportunity to apply for Foundation votes every 3 months, and a new cohort is selected based on past performance and contributions. 
+The Celo Foundation has a [Validator Group voting policy](../validator-guide/celo-foundation-voting-policy.md) that it follows when voting with the CELO that it holds. This policy has been developed by the Foundation board and technical advisors with the express goal of promoting the long-term security and decentralization of the network. Validator Groups have an opportunity to apply for Foundation votes every 3 months, and a new cohort is selected based on past performance and contributions.
 
 You can find the [full set of Validator Groups currently receiving votes, and their addresses linked here](https://docs.google.com/spreadsheets/d/1ltVNkQfXW3lIZxXU52R3IXeD6w21oacWFVb3a-FYRBY/edit?usp=sharing).
 
@@ -98,6 +98,6 @@ Celovote shows ranking of validator groups based on their estimated annual rate 
 
 ### [Cauldron](https://cauldron.pretoriaresearchlab.io/block-map) ( [Pretoria Research Lab GmbH](https://pretoriaresearchlab.io))
 
-Cauldron is a tooling site containing a signed blocks explorer for Mainnet and Baklava testnet, visualizing missed blocks and patterns for the validator group set, and developer faucets for the Alfajores and Baklava test networks. 
+Cauldron is a tooling site containing a signed blocks explorer for Mainnet and Baklava testnet, visualizing missed blocks and patterns for the validator group set, and developer faucets for the Alfajores and Baklava test networks.
 
 _Please raise a Pull Request against [this page](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/celo-holder-guide/voting-validators.md) to add/amend details of any community services!_

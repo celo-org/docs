@@ -36,7 +36,6 @@ geth --baklava
 
 For more command line options, please see [https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
 
-
 ### Forno
 
 Forno is a hosted node service for interacting with the Celo network. This allow the user to get connected to the Celo Blockchain without having to run its own node.
@@ -67,7 +66,6 @@ Baklava = 'https://baklava-blockscout.celo-testnet.org'
 Mainnet = 'https://explorer.celo.org/'
 ```
 
-
 ## Signing Transactions
 
 Compared to Ethereum transaction, Celo transactions have 3 additional, optional fields:
@@ -81,4 +79,4 @@ Compared to Ethereum transaction, Celo transactions have 3 additional, optional 
 To sign transactions, you have the following options:
 
 - Use the JSON-RPC [`sendTransaction`](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) method to your node which would have the account in question unlocked. (Either manually or via a library such as `web3`)
-- Use [ContractKit's](../contractkit/README.md) local signing feature.
+- Use [ContractKit's](../contractkit) local signing feature.

@@ -2,13 +2,14 @@
 
 Welcome to the Celo SDK Docs Homepage! Here, you can find resources for DAppKit and ContractKit, two services that allow you to build mobile dApps, apps, and more on Celo.
 
-- **[ContractKit](contractkit/README.md)** is a library to help developers and validators interact with the Celo Blockchain and Celo Core Contracts. It is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
+- **[ContractKit](contractkit)** is a library to help developers and validators interact with the Celo Blockchain and Celo Core Contracts. It is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
 
-- **[DAppKit](dappkit/README.md)** is a lightweight set of functions that allow mobile DApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience: DApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
+- **[DAppKit](dappkit)** is a lightweight set of functions that allow mobile DApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience: DApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
 
-- **[Forno](forno/README.md)** is a hosted node service for interacting with the Celo network. This allow the user to get connected to the Celo Blockchain without having to run its own node.
+- **[Forno](forno)** is a hosted node service for interacting with the Celo network. This allow the user to get connected to the Celo Blockchain without having to run its own node.
 
 ## Get Started
+
 To get started, check out the [Quick Start Guides](start.md)
 
 ## Get Involved

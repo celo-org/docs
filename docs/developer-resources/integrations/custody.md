@@ -26,7 +26,7 @@ The following smart contracts are helpful to understand in order to map the conc
 
 ### Accounts
 
-[Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) allows the mapping of an address to an account in storage, after which all further functionality (locking, voting, etc.) can be accessed. 
+[Accounts.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) allows the mapping of an address to an account in storage, after which all further functionality (locking, voting, etc.) can be accessed.
 
 The [`createAccount`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol#L103) function indexes the address as an account in storage, and is required to differentiate an arbitrary key-pair from a user-owned account in the Celo network.
 
@@ -34,7 +34,7 @@ The `Accounts` contract also allows for the authorization of various signer keys
 
 ### LockedGold
 
-[LockedGold.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/LockedGold.sol), which references Celo Gold, the deprecated name for the native token, is used as part of Celo's [proof-of-stake](/../../celo-codebase/protocol/proof-of-stake/README.md) mechanism. Users can lock CELO by sending it to the `LockedGold` contract after creating an account via the `Accounts` contract as described above. This allows users to vote in validator elections, receive epoch rewards, and participate in on-chain governance.
+[LockedGold.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/LockedGold.sol), which references Celo Gold, the deprecated name for the native token, is used as part of Celo's [proof-of-stake](/../../celo-codebase/protocol/proof-of-stake) mechanism. Users can lock CELO by sending it to the `LockedGold` contract after creating an account via the `Accounts` contract as described above. This allows users to vote in validator elections, receive epoch rewards, and participate in on-chain governance.
 
 There are two ways in which users can vote:
 

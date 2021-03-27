@@ -1,3 +1,9 @@
+---
+title: Celo Wallet
+id: wallet
+slug: /celo-codebase/wallet
+---
+
 # Celo Wallet
 
 The Celo Wallet is an easy way to send, receive, and save Celo Assets. This section describes what is going on under the hood during various aspects of the wallet experience.
