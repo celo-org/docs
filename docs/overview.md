@@ -15,9 +15,9 @@ A **blockchain** or **cryptographic network** is a broad term used to describe a
 
 The code of the Celo Blockchain has shared ancestry with [Ethereum](https://www.ethereum.org), blockchain software for building general-purpose decentralized applications. Celo differs from Ethereum in several important areas as described in the following sections. However, it inherits a number of key concepts.
 
-{% hint style="warning" %}
+:::warning
 Despite its similarity to Ethereum, Celo is a completely different blockchain and protocol, and Celo assets **cannot** be accessed on the Ethereum network.
-{% endhint %}
+:::
 
 Ethereum applications are built using **smart contracts**. Smart contracts are programs written in languages like [Solidity](https://solidity.readthedocs.io/en/v0.5.10/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment. Programs encoded in smart contracts receive messages and manipulate the blockchain ledger and are termed **on-chain**.
 
@@ -25,9 +25,9 @@ Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to
 
 **ERC-20** is a standard interface for implementing cryptocurrencies or **tokens** as contracts, rather than via account balances. For additional information on this, see [Celo for Ethereum Developers](https://docs.celo.org/developer-guide/celo-for-eth-devs). In Celo, CELO has a duality as both the native currency and an ERC-20 compliant token on the Celo blockchain.
 
-{% hint style="warning" %}
+:::warning
 Celo assets exist on an independent blockchain, and cannot be accessed through wallets that connect to the Ethereum network. Only use wallets designed to work with the Celo network. Do **not** send your Celo assets to your Ethereum wallet or send your Ethereum assets to your Celo wallet.
-{% endhint %}
+:::
 
 Users interact with the blockchain by creating signed **transactions.** These are requests to make a change to the ledger. They can: transfer value between accounts; execute a function in a smart contract and pass in arguments \(perhaps causing other smart contracts to be called, update their storage, or transfer value\); or create a new smart contract.
 
@@ -81,9 +81,9 @@ The Celo Blockchain implements a Byzantine Fault Tolerant \(BFT\) consensus algo
 
 Celo uses a proof-of-stake mechanism for selecting the validator set for a fixed period termed an epoch. Anyone can earn rewards by locking CELO and by participating in validator elections and governance proposals. Initially, the number of validators will be capped to one hundred nodes elected by CELO holders. Validators earn additional fixed rewards in Celo Dollars to cover their costs plus margin.
 
-{% hint style="success" %}
+:::success
 **Roadmap**: Celo is pioneering a [highly scalable, permissionless BFT consensus algorithm](https://medium.com/celohq/bftree-scaling-hotstuff-to-millions-of-validators-7d6930ee046a) that in the long term will result in substantial changes to the proof-of-stake mechanism described here.
-{% endhint %}
+:::
 
 ### On-Chain Governance
 
@@ -97,9 +97,9 @@ Celo provides extremely fast, secure synchronization to enable light clients to 
 
 In Ethereum, verifying whether data received from an untrusted full node really does represent the current state of a blockchain requires fetching every block header ever produced to confirm they form a cryptographically secure chain. A consequence of Celo using a BFT consensus algorithm is that it can do that verification by building a chain only of changes in the validator set, not each individual block.
 
-{% hint style="success" %}
+:::success
 **Roadmap**: Synchronization performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
-{% endhint %}
+:::
 
 ### Incentives for Operating Full Nodes
 
@@ -121,9 +121,9 @@ The Celo protocol ensures that there is sufficient CELO collateral to redeem the
 
 In addition, a back-up reserve of cryptocurrencies is held off-chain. This off-chain reserve is managed to preserve value and minimize volatility by maintaining a diversified portfolio of cryptocurrencies through algorithmic rebalancing trading and periodically "topping-up" the CELO collateral available to ensure it exceeds the amount required to redeem Celo Dollars in circulation. The approved cryptocurrencies, distribution ratios, and rebalancing period are all subject to on-chain governance.
 
-{% hint style="success" %}
+:::success
 **Roadmap**: Celo envisages a number of stable currencies pegged to different fiat currencies as well as natural resources such as forests. In addition, once bridges between other chains and the Celo blockchain are fully developed, and liquid trading on decentralized exchanges occurs, the rebalancing can be handled transparently on-chain.
-{% endhint %}
+:::
 
 ### Lightweight Identity
 
@@ -137,9 +137,9 @@ Celo provides a number of enhancements to regular transactions as familiar to Et
 
 The Celo native asset has a duality as both the native currency and is also an ERC-20 token, simplifying the work of application developers.
 
-{% hint style="warning" %}
+:::warning
 Celo assets exist on an independent blockchain, and cannot be accessed through wallets that connect to the Ethereum network. Only use wallets designed to work with the Celo network.
-{% endhint %}
+:::
 
 In Celo, transaction fees can be paid in stable cryptocurrencies. A user sending Celo Dollars will be able to pay their transaction fee out of their Celo Dollar balance, so they do not need to hold a separate balance of CELO in order to make transactions. The protocol maintains a list of currencies which can be used to pay for transaction fees. These smart contracts implement an extension of the ERC-20 interface, with additional functions that allow the protocol to debit and credit transaction fees.
 

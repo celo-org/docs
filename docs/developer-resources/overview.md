@@ -41,11 +41,11 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 
 #### Networks
 
-- [Alfajores Testnet](../getting-started/alfajores-testnet.md)
+- [Alfajores Testnet](../getting-started/alfajores-testnet)
   - [Faucet](https://celo.org/developers/faucet) for free testnet CELO and cUSD
   - [Forno](forno/) supports connections to alfajores
   - Requires Alfajores Celo wallet for mobile device testing (please request, [support@clabs.co](mailto:support@clabs.co))
-- [Baklava testnet](../getting-started/baklava-testnet.md) for validators and testing protocol changes
+- [Baklava testnet](../getting-started/baklava-testnet) for validators and testing protocol changes
 
 ### Ethereum Tools
 

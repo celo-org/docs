@@ -1,4 +1,8 @@
-# Glossary
+---
+title: Glossary
+id: glossary
+slug: /getting-started/glossary
+---
 
 ## Account
 
@@ -8,7 +12,7 @@ Identifies an account on Celo. There are two types of account. **Externally owne
 
 A unique identifier for an account on the Celo blockchain.
 
-## [Alfajores](getting-started/alfajores-testnet.md)
+## [Alfajores](/getting-started/alfajores-testnet)
 
 The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](important-information/alfajores-testnet-disclaimer.md).
 
@@ -20,7 +24,7 @@ Generally, support for an entity having an associated identity. In Celo, each at
 
 A service operated by validators that sends signed SMS messages in order to allow accounts to prove they have access to a phone number.
 
-## [Baklava](getting-started/baklava-testnet.md)
+## [Baklava](/getting-started/baklava-testnet)
 
 The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](important-information/baklava-testnet-disclaimer.md).
 

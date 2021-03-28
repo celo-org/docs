@@ -1,4 +1,6 @@
-# Getting an Account and Funds
+---
+title: Getting an Account and Funds
+---
 
 ## Try the Celo Wallet with a Funded Account
 

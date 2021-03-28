@@ -4,7 +4,7 @@ When a new version of the Celo node is available, you can follow this guide to u
 
 ## Recent Releases
 
-* [Blockchain Client 1.2.0](https://github.com/celo-org/celo-blockchain/releases/tag/v1.2.2) (Latest production release)
+- [Blockchain Client 1.2.0](https://github.com/celo-org/celo-blockchain/releases/tag/v1.2.2) (Latest production release)
 
 ## When an upgrade is required
 
@@ -36,10 +36,10 @@ docker rm celo-fullnode
 
 Start the new node using `docker run` as detailed in the appropriate section of the getting started guide. Remember to recover any environment variables, if using a new terminal, before running the documented commands.
 
-- [Full node](../getting-started/running-a-full-node-in-mainnet.md#start-the-node)
-- [Accounts node](../getting-started/running-a-validator-in-mainnet.md#start-your-accounts-node)
-- [Attestion node](../getting-started/running-a-validator-in-mainnet.md#running-the-attestation-service)
-- [Proxy node](../getting-started/running-a-validator-in-mainnet.md#deploy-a-proxy)
+- [Full node](/getting-started/mainnet/running-a-full-node-in-mainnet#start-the-node)
+- [Accounts node](/getting-started/mainnet/running-a-validator-in-mainnet#start-your-accounts-node)
+- [Attestion node](/getting-started/mainnet/running-a-validator-in-mainnet#running-the-attestation-service)
+- [Proxy node](/getting-started/mainnet/running-a-validator-in-mainnet#deploy-a-proxy)
 
 ## Upgrading a Validating Node
 
@@ -56,40 +56,44 @@ A second option is to perform a hot-swap to switch over to a new validator node.
 Validators can be configured as primaries or replicas. By default validators start as primaries and will persist all changes around starting or stopping. Through the istanbul management RPC API the validator can be configured to start or stop at a specified block. The validator will participate in consensus for block numbers in the range `[start, stop)`.
 
 #### RPC Methods
-* `istanbul.start()` and `istanbul.startAtBlock()` start validating immediately or at a block
-* `istanbul.stop()` and `istanbul.stopAtBlock()` stop validating immediately or at a block
-* `istanbul.replicaState` will give you the state of the node and the start/stop blocks
-* `istanbul.validating` will give you true/false if the node is validating
+
+- `istanbul.start()` and `istanbul.startAtBlock()` start validating immediately or at a block
+- `istanbul.stop()` and `istanbul.stopAtBlock()` stop validating immediately or at a block
+- `istanbul.replicaState` will give you the state of the node and the start/stop blocks
+- `istanbul.validating` will give you true/false if the node is validating
 
 {% hint style="info" %} `startAtBlock` and `stopAtBlock` must be given a block in the future. {% endhint %}
 
 #### Geth Flags
-* `--istanbul.replica` flag which starts a validator in replica mode.
+
+- `--istanbul.replica` flag which starts a validator in replica mode.
 
 On startup, nodes will look to see if there is a `replicastate` folder inside it's data directory. If that folder exists the node will configure itself as a validator or replica depending on the previous stored state. The stored state will take precedence over the command line flags. If the folder does not exists the node will stored it's state as configured by the command line. When RPC calls are made to start or stop validating, those changes will be persisted to the `replicastate` folder.
 
 {% hint style="warning" %} If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed. If there is an existing `replicastate` folder from a node that was not configured as a replica the node will attempt to start validating. {% endhint %}
 
 #### Steps to upgrade
+
 1. Pull the latest docker image.
 2. Start a new validator node on a second host in replica mode (`--istanbul.replica` flag). It should be otherwise configured exactly the same as the existing validator.
-    * It needs to connect to the exisiting proxies and the validator signing key to connect to other validators in listen mode.
-    * If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed.
+   - It needs to connect to the exisiting proxies and the validator signing key to connect to other validators in listen mode.
+   - If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed.
 3. Once the replica is synced and has validator enode urls for all validators, it is ready to swapped in.
-    * Check validator enode urls with `istanbul.valEnodeTableInfo` in the geth console. The field `enode` should be filled in for each validator peer.
+   - Check validator enode urls with `istanbul.valEnodeTableInfo` in the geth console. The field `enode` should be filled in for each validator peer.
 4. In the geth console on the primary run `istanbul.stopAtBlock(xxxx)`
-    * Make sure to select a block number comfortably in the future.
-    * You can check what the stop block is with `istanbul.replicaState` in the geth console.
-    * You can run `istanbul.start()` to clear the stop block
+   - Make sure to select a block number comfortably in the future.
+   - You can check what the stop block is with `istanbul.replicaState` in the geth console.
+   - You can run `istanbul.start()` to clear the stop block
 5. In the geth console of the replica run `istanbul.startAtBlock(xxxx)`
-    * You can check what the start block is with `istanbul.replicaState` in the geth console.
-    * You can run `istanbul.stop()` to clear the start block
-6. Confirm that the transition occurred with `istanbul.replicaState` 
-    * The last block that the old primary will sign is block number `xxxx - 1`
-    * The first block that the new primary will sign is block number `xxxx`
+   - You can check what the start block is with `istanbul.replicaState` in the geth console.
+   - You can run `istanbul.stop()` to clear the start block
+6. Confirm that the transition occurred with `istanbul.replicaState`
+   - The last block that the old primary will sign is block number `xxxx - 1`
+   - The first block that the new primary will sign is block number `xxxx`
 7. Tear down the old primary once the transition has occurred.
 
 Example geth console on the old primary.
+
 ```bash
 > istanbul.replicaState
 {
@@ -100,7 +104,7 @@ Example geth console on the old primary.
 }
 > istanbul.stopAtBlock(21000)
 null
-> istanbul.replicaState  
+> istanbul.replicaState
 {
   isPrimary: true,
   startValidatingBlock: null,
@@ -117,6 +121,7 @@ null
 ```
 
 Example geth console on the replica being promoted to primary. Not shown is confirming the node is synced and connected to validator peers.
+
 ```bash
 > istanbul.replicaState
 {

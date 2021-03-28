@@ -1,6 +1,6 @@
 # Quick Start for CELO Holders
 
-If you are a self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet.md), this guide will help you access your account and do the setup necessary to earn rewards on those funds.
+If you are a self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet), this guide will help you access your account and do the setup necessary to earn rewards on those funds.
 
 ## Prerequisites
 
@@ -72,12 +72,12 @@ celocli --version
 
 And if not, upgrade by running the same command as above.
 
-You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](../getting-started/mainnet.md) network. There are two options:
+You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](../getting-started/mainnet) network. There are two options:
 
 - **Local Celo Blockchain node**: You can run a full node on your local machine which will communicate
   with other nodes and cryptographically verify all data it receives. Since this approach does not require you to trust the network, it is most secure.
 
-  To do this, follow the tutorial for [running a full node](../getting-started/running-a-full-node-in-mainnet.md) (and make sure to pass `--nousb`).
+  To do this, follow the tutorial for [running a full node](../getting-started/mainnet/running-a-full-node-in-mainnet) (and make sure to pass `--nousb`).
 
   Then run:
 

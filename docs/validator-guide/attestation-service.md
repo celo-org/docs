@@ -12,7 +12,7 @@ Validators receive a fee (set by [on-chain governance](../celo-holder-guide/voti
 
 This guide steps you through setting up an Attestation Service:
 
-- Follow the instructions to set up a validator on [mainnet](../getting-started/running-a-validator-in-mainnet.md) or [baklava](../getting-started/running-a-validator-in-baklava.md)
+- Follow the instructions to set up a validator on [mainnet](/getting-started/mainnet/running-a-validator-in-mainnet) or [baklava](/getting-started/baklava-testnet/running-a-validator-in-baklava)
 - Configure Twilio, MessageBird and Nexmo, the SMS providers used by Attestation Service
 - Generate and register an attestation signer key
 - Deploy a Celo full node, with the attestation signer key unlocked
@@ -160,7 +160,7 @@ Required options:
 | `CELO_VALIDATOR_ADDRESS`     | Address of the Validator account. If Validator is deployed via a `ReleaseGold` contract, this is the contract's address (i.e. `$CELO_VALIDATOR_RG_ADDRESS`), not the beneficiary.                                                                                  |
 | `ATTESTATION_SIGNER_ADDRESS` | Address of the Validator's attestation signer key                                                                                                                                                                                                                  |
 | `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
-|  |
+|                              |
 
 Optional environment variables:
 

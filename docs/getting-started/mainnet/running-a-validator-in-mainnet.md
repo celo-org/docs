@@ -1,12 +1,14 @@
-# Running a Validator in Mainnet
+---
+title: Running a Validator
+---
 
-This section explains how to get a Validator node running on [Mainnet](mainnet.md).
+This section explains how to get a Validator node running on [Mainnet](/getting-started/mainnet).
 
-{% hint style="info" %}
+:::info
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-{% endhint %}
+:::
 
 Validators help secure the Celo network by participating in Celo’s proof-of-stake protocol. Validators are organized into Validator Groups, analogous to parties in representative democracies. A Validator Group is essentially an ordered list of Validators.
 
@@ -16,7 +18,7 @@ While other Validator Groups will exist on the Celo Network, the fastest way to 
 
 Because of the importance of Validator security and availability, Validators are expected to run a "proxy" node in front of each Validator node. In this setup, the Proxy node connects with the rest of the network, and the Validator node communicates only with the Proxy, ideally via a private network.
 
-Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](../celo-codebase/protocol/identity), to provide attestations that allow users to map their phone number to a Celo address.
+Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](/celo-codebase/protocol/identity), to provide attestations that allow users to map their phone number to a Celo address.
 
 [Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa)
 
@@ -24,13 +26,13 @@ Additionally, Validators are expected to run an [Attestation Service](https://gi
 
 ### Staking Requirements
 
-Celo uses a [proof-of-stake](../celo-codebase/protocol/proof-of-stake) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
+Celo uses a [proof-of-stake](/celo-codebase/protocol/proof-of-stake) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](running-a-validator-in-baklava.md)
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/getting-started/baklava-testnet/running-a-validator-in-baklava.md)
 
 We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO, and it is assumed in this guide that your gold is held in two `ReleaseGold` contracts, one for the Validator and one for the Validator Group. If that is not the case, the provided commands will need to be adjusted, but the guide will still provide the required steps.
 
-At a high level, `ReleaseGold` holds a balance for scheduled release, while allowing the held balance to be used for certain actions such as validating and voting, depending on the configuration of the contract. [Read more about `ReleaseGold`](../celo-holder-guide/release-gold.md).
+At a high level, `ReleaseGold` holds a balance for scheduled release, while allowing the held balance to be used for certain actions such as validating and voting, depending on the configuration of the contract. [Read more about `ReleaseGold`](/celo-holder-guide/release-gold.md).
 
 ### Hardware requirements
 
@@ -68,10 +70,10 @@ On the Attestations machine, port 80 should accept TCP connections from all IP a
 To illustrate this, you may refer to the following table:
 
 | Machine \\ IPs open to | 0\.0\.0\.0/0 \(all\) | your\-validator\-ip | your\-proxy\-ip |
-|------------------------|----------------------|-----------------------|-------------------|
-| Validator              |                      |                       | tcp:30503        |
-| Proxy                  | tcp:30303, udp:30303 | tcp:30503             |                   |
-| Attestation            | tcp:80               |                       |                   |
+| ---------------------- | -------------------- | ------------------- | --------------- |
+| Validator              |                      |                     | tcp:30503       |
+| Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
+| Attestation            | tcp:80               |                     |                 |
 
 ### Software requirements
 
@@ -86,24 +88,24 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](../command-line-interface/introduction.md)for instructions on how to get set up.
+  See [Command Line Interface \(CLI\) ](/command-line-interface/introduction.md)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
   Some users have reported issues using the most recent version of node. Use the LTS for greater reliability.
 
-{% hint style="info" %}
+:::info
 A note about conventions:
 The code snippets you'll see on this page are bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
-{% endhint %}
+:::
 
 ### Key Management
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of value.
 
-This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](../validator-guide/key-management/summary.md)
+This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator-guide/key-management/summary.md)
 
 #### Unlocking
 
@@ -118,58 +120,60 @@ It is important to note that when a key is unlocked you need to be particularly 
 
 There are a number of environment variables in this guide, and you may use this table as a reference.
 
-| Variable                             | Explanation                                                                                                                          |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| CELO_IMAGE                           | The Docker image used for the Validator and proxy containers                                                                         |
-| CELO_VALIDATOR_GROUP_ADDRESS         | The account address for the Validator Group; the `ReleaseGold` beneficiary address for the Validator Group                                                                                          |
-| CELO_VALIDATOR_ADDRESS         | The account address for the Validator; the `ReleaseGold` beneficiary address for the Validator                                                                                          |
-| CELO_VALIDATOR_GROUP_RG_ADDRESS         | The `ReleaseGold` contract address for the Validator Group                                                                                          |
-| CELO_VALIDATOR_RG_ADDRESS         | The `ReleaseGold` contract address for the Validator                                                                                          |
-| CELO_VALIDATOR_GROUP_SIGNER_ADDRESS        | The validator (group) signer address authorized by the Validator Group account.
-| CELO_VALIDATOR_GROUP_SIGNER_SIGNATURE      | The proof-of-possession of the Validator Group signer key                                                                                  |
-| CELO_VALIDATOR_SIGNER_ADDRESS        | The validator signer address authorized by the Validator Account
-| CELO_VALIDATOR_SIGNER_PUBLIC_KEY     | The ECDSA public key associated with the Validator signer address                                                                    |
-| CELO_VALIDATOR_SIGNER_SIGNATURE      | The proof-of-possession of the Validator signer key                                                                                  |
-| CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY | The BLS public key for the Validator instance                                                                                        |
-| CELO_VALIDATOR_SIGNER_BLS_SIGNATURE  | A proof-of-possession of the BLS public key                                                                                          |
-| CELO_VALIDATOR_GROUP_VOTE_SIGNER_ADDRESS        | The address of the Validator Group vote signer                                                              |
-| CELO_VALIDATOR_GROUP_VOTE_SIGNER_PUBLIC_KEY     | The ECDSA public key associated with the Validator Group vote signer address                                                                    |
-| CELO_VALIDATOR_GROUP_VOTE_SIGNER_SIGNATURE      | The proof-of-possession of the Validator Group vote signer key                                                                                  |
-| CELO_VALIDATOR_VOTE_SIGNER_ADDRESS        | The address of the Validator vote signer                                                              |
-| CELO_VALIDATOR_VOTE_SIGNER_PUBLIC_KEY     | The ECDSA public key associated with the Validator vote signer address                                                                    |
-| CELO_VALIDATOR_VOTE_SIGNER_SIGNATURE      | The proof-of-possession of the Validator vote signer key                                                                                  |
-| PROXY_ENODE                          | The enode address for the Validator proxy                                                                                            |
-| PROXY_INTERNAL_IP                    | (Optional) The internal IP address over which your Validator can communicate with your proxy                                         |
-| PROXY_EXTERNAL_IP                    | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
-| CELO_ATTESTATION_SIGNER_ADDRESS           | The address of the attestation signer authorized by the Validator Account                                                            |
-| CELO_ATTESTATION_SIGNER_SIGNATURE         | The proof-of-possession of the attestation signer key                                                                                |
-| CELO_ATTESTATION_SERVICE_URL              | The URL to access the deployed Attestation Service                                                                                   |
-| METADATA_URL                         | The URL to access the metadata file for your Attestation Service                                                                     |
-| DATABASE_URL                         | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
-| SMS_PROVIDERS                        | A comma-separated list of providers you want to configure, Celo currently supports `nexmo` & `twilio`                                   |
+| Variable                                    | Explanation                                                                                                                          |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| CELO_IMAGE                                  | The Docker image used for the Validator and proxy containers                                                                         |
+| CELO_VALIDATOR_GROUP_ADDRESS                | The account address for the Validator Group; the `ReleaseGold` beneficiary address for the Validator Group                           |
+| CELO_VALIDATOR_ADDRESS                      | The account address for the Validator; the `ReleaseGold` beneficiary address for the Validator                                       |
+| CELO_VALIDATOR_GROUP_RG_ADDRESS             | The `ReleaseGold` contract address for the Validator Group                                                                           |
+| CELO_VALIDATOR_RG_ADDRESS                   | The `ReleaseGold` contract address for the Validator                                                                                 |
+| CELO_VALIDATOR_GROUP_SIGNER_ADDRESS         | The validator (group) signer address authorized by the Validator Group account.                                                      |
+| CELO_VALIDATOR_GROUP_SIGNER_SIGNATURE       | The proof-of-possession of the Validator Group signer key                                                                            |
+| CELO_VALIDATOR_SIGNER_ADDRESS               | The validator signer address authorized by the Validator Account                                                                     |
+| CELO_VALIDATOR_SIGNER_PUBLIC_KEY            | The ECDSA public key associated with the Validator signer address                                                                    |
+| CELO_VALIDATOR_SIGNER_SIGNATURE             | The proof-of-possession of the Validator signer key                                                                                  |
+| CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY        | The BLS public key for the Validator instance                                                                                        |
+| CELO_VALIDATOR_SIGNER_BLS_SIGNATURE         | A proof-of-possession of the BLS public key                                                                                          |
+| CELO_VALIDATOR_GROUP_VOTE_SIGNER_ADDRESS    | The address of the Validator Group vote signer                                                                                       |
+| CELO_VALIDATOR_GROUP_VOTE_SIGNER_PUBLIC_KEY | The ECDSA public key associated with the Validator Group vote signer address                                                         |
+| CELO_VALIDATOR_GROUP_VOTE_SIGNER_SIGNATURE  | The proof-of-possession of the Validator Group vote signer key                                                                       |
+| CELO_VALIDATOR_VOTE_SIGNER_ADDRESS          | The address of the Validator vote signer                                                                                             |
+| CELO_VALIDATOR_VOTE_SIGNER_PUBLIC_KEY       | The ECDSA public key associated with the Validator vote signer address                                                               |
+| CELO_VALIDATOR_VOTE_SIGNER_SIGNATURE        | The proof-of-possession of the Validator vote signer key                                                                             |
+| PROXY_ENODE                                 | The enode address for the Validator proxy                                                                                            |
+| PROXY_INTERNAL_IP                           | (Optional) The internal IP address over which your Validator can communicate with your proxy                                         |
+| PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
+| CELO_ATTESTATION_SIGNER_ADDRESS             | The address of the attestation signer authorized by the Validator Account                                                            |
+| CELO_ATTESTATION_SIGNER_SIGNATURE           | The proof-of-possession of the attestation signer key                                                                                |
+| CELO_ATTESTATION_SERVICE_URL                | The URL to access the deployed Attestation Service                                                                                   |
+| METADATA_URL                                | The URL to access the metadata file for your Attestation Service                                                                     |
+| DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
+| SMS_PROVIDERS                               | A comma-separated list of providers you want to configure, Celo currently supports `nexmo` & `twilio`                                |
 
 ## Network Deployment Timeline
 
 The setup of mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
 
 Done:
-* 4/19 00:00 UTC: Docker image with genesis block distributed
-* 4/19 - 4/22: Infrastructure setup
-* 4/22 16:00 UTC: Block production begins
-* 4/22: Celo Core Contracts and `ReleaseGold` contracts are deployed
-* 4/27: Governance proposals submitted to unfreeze validator elections and validator epoch rewards
-* 5/1: Elections and validator rewards enabled if governance proposals pass; validators have been registered and affiliated with a Validator Group for first election
-* 5/14: Governance proposals submitted to enable voter rewards and enable CELO transfers
-* 5/18: RC1 is declared Mainnet and CELO transfers are enabled, if governance proposals pass
+
+- 4/19 00:00 UTC: Docker image with genesis block distributed
+- 4/19 - 4/22: Infrastructure setup
+- 4/22 16:00 UTC: Block production begins
+- 4/22: Celo Core Contracts and `ReleaseGold` contracts are deployed
+- 4/27: Governance proposals submitted to unfreeze validator elections and validator epoch rewards
+- 5/1: Elections and validator rewards enabled if governance proposals pass; validators have been registered and affiliated with a Validator Group for first election
+- 5/14: Governance proposals submitted to enable voter rewards and enable CELO transfers
+- 5/18: RC1 is declared Mainnet and CELO transfers are enabled, if governance proposals pass
 
 Upcoming:
-* ~5/25: Deployment of CELO/USD Oracles
-* ~5/31: Governance proposal submitted to unfreeze stability protocol
-* ~6/3: Stability protocol goes live if governance proposal passes
 
-{% hint style="info" %}
+- ~5/25: Deployment of CELO/USD Oracles
+- ~5/31: Governance proposal submitted to unfreeze stability protocol
+- ~6/3: Stability protocol goes live if governance proposal passes
+
+:::info
 A [timeline](https://forum.celo.org/t/release-candidate-1-rc1-timeline-and-details/428) of the Release Candidate 1 and Mainnet networks is available to provide further context.
-{% endhint %}
+:::
 
 ## Validator Node Setup
 
@@ -202,10 +206,9 @@ cd celo-accounts-node
 docker run --name celo-accounts -it --restart always -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin,personal --datadir /root/.celo
 ```
 
-{% hint style="danger" %}
+:::danger
 **Security**: The command line above includes the parameter `--rpcaddr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p 127.0.0.1:localport:containerport` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
-{% endhint %}
-
+:::
 
 ### Deploy a proxy
 
@@ -236,13 +239,14 @@ docker run --name celo-proxy -it --restart unless-stopped -p 30303:30303 -p 3030
 
 Hint: If you are running into trouble peering with the full nodes, one of the first things to check is whether your container's ports are properly configured (i.e. specifically, `-p 30303:30303 -p 30303:30303/udp` - which is set in the proxy node's command, but not the account node's command).
 
-{% hint style="info" %}
+:::info
 You can detach from the running container by pressing `ctrl+p ctrl+q`, or start it with `-d` instead of `-it` to start detached. Access the logs for a container in the background with the `docker logs` command.
-{% endhint %}
+:::
 
 **NOTES**
-* For the proxy to be able to send stats to [Celostats](https://stats.celo.org/), both the proxy and the validator should set the `celostats` flag
-* If you are deploying multiple proxies for the same validator, the `celostats` flag should be added in only one of them
+
+- For the proxy to be able to send stats to [Celostats](https://stats.celo.org/), both the proxy and the validator should set the `celostats` flag
+- If you are deploying multiple proxies for the same validator, the `celostats` flag should be added in only one of them
 
 ### Get your Proxy's connection info
 
@@ -321,15 +325,15 @@ docker run --name celo-validator -it --restart unless-stopped -p 30303:30303 -p 
 
 At this point your Validator and Proxy machines should be configured, and both should be syncing to the network. You should see `Imported new chain segment` in your node logs, about once every 5 seconds once the node is synced to the latest block which you can find on the [Network Stats](https://stats.celo.org) page.
 
-{% hint style="info" %}
-You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](running-a-validator-in-mainnet.md#deploy-a-proxy) section.  Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option.  E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
-{% endhint %}
+:::info
+You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](running-a-validator-in-mainnet.md#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
+:::
 
 ## Registering as a Validator
 
 In order to operate as a Validator, you must register on-chain and be elected. Elections will run on each epoch boundary, approximatly every 24 hours, after elections have been unfrozen by on-chain governance. Eligible validator groups will be considered in an Election mechanism that will select Validator based on the [D'Hondt method](https://en.wikipedia.org/wiki/D%27Hondt_method).
 
-In the following steps, this guide will assume your CELO is held in a `ReleaseGold` contract, if this is not the case, the commands will need to be adjusted. At a high level, `ReleaseGold` holds a balance for scheduled release, while allowing the held balance to be used for certain actions such as validating and voting, depending on the configuration of the contract. [Read more about `ReleaseGold`.](../celo-holder-guide/release-gold.md)
+In the following steps, this guide will assume your CELO is held in a `ReleaseGold` contract, if this is not the case, the commands will need to be adjusted. At a high level, `ReleaseGold` holds a balance for scheduled release, while allowing the held balance to be used for certain actions such as validating and voting, depending on the configuration of the contract. [Read more about `ReleaseGold`.](/celo-holder-guide/release-gold.md)
 
 **Once elections are running, the genesis validators will be replaced by the elected validators, so it is important to register and vote even if you are in the genesis set.**
 
@@ -359,9 +363,9 @@ celocli releasegold:show --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS
 celocli releasegold:show --contract $CELO_VALIDATOR_RG_ADDRESS
 ```
 
-{% hint style="info" %}
+:::info
 When running the following commands, the Beneficiary keys should be [unlocked](#unlocking).
-{% endhint %}
+:::
 
 Create a registered Account for each of the Validator and Validator Group's `ReleaseGold` contracts:
 
@@ -396,7 +400,7 @@ celocli lockedgold:show $CELO_VALIDATOR_RG_ADDRESS
 
 ### Register as a Validator
 
-In order to perform Validator actions with the Account created in the previous step, you will need to authorize a [Validator signer](../validator-guide/key-management/detailed.md#authorized-validator-signers) for the `ReleaseGold` contract account.
+In order to perform Validator actions with the Account created in the previous step, you will need to authorize a [Validator signer](/validator-guide/key-management/detailed.md#authorized-validator-signers) for the `ReleaseGold` contract account.
 
 ```bash
 # On the Validator machine
@@ -438,13 +442,15 @@ In order to validate we need to authorize the Validator signer:
 celocli releasegold:authorize --contract $CELO_VALIDATOR_RG_ADDRESS --role validator --signature 0x$CELO_VALIDATOR_SIGNER_SIGNATURE --signer $CELO_VALIDATOR_SIGNER_ADDRESS
 ```
 
-{% hint style="info" %} The first time you authorize a validator signer for a ReleaseGold account the signer address is funded 1 CELO to cover tx fees. Any subsequent validator signers you authorize will not be funded. {% endhint %}
+:::info
+The first time you authorize a validator signer for a ReleaseGold account the signer address is funded 1 CELO to cover tx fees. Any subsequent validator signers you authorize will not be funded.
+:::
 
 Using the newly authorized Validator signer, register a validator on behalf of the registered Account:
 
-{% hint style="info" %}
+:::info
 Running the following command requires the keys for the validator signer address. This command can be run on the validator machine, or if the keys are also available on your local machine, it can be run there.
-{% endhint %}
+:::
 
 ```bash
 # On a machine with CELO_VALIDATOR_SIGNER_ADDRESS unlocked.
@@ -592,9 +598,9 @@ celocli election:show $CELO_VALIDATOR_RG_ADDRESS --voter
 
 Users in the Celo protocol receive epoch rewards for voting in Validator Elections only after submitting a special transaction to enable rewards. This must be done every time new votes are cast, and can only be made after the most recent epoch has ended. For convenience, we can use the following command, which will wait until the epoch has ended before sending a transaction:
 
-{% hint style="info" %}
+:::info
 Epoch lengths in the mainnet network are set to be the number of blocks produced in a day. As a result, votes may need to be activated up to 24 hours after they are cast.
-{% endhint %}
+:::
 
 ```bash
 # On your local machine
@@ -643,7 +649,7 @@ celocli validator:show $CELO_VALIDATOR_RG_ADDRESS
 
 ## Running the Attestation Service
 
-Validators are expected to run an [Attestation Service](../validator-guide/attestation-service.md) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](../validator-guide/attestation-service.md).
+Validators are expected to run an [Attestation Service](/validator-guide/attestation-service.md) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator-guide/attestation-service.md).
 
 ## Deployment Tips
 

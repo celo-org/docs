@@ -19,8 +19,8 @@ In this documentation you’ll find information on:
   - [Start here](celo-holder-guide/quick-start.md) to find out how to access your account and earn rewards for participating in the network.
 - Validator & Node Operators
   - Check out the [Validator overview page](validator-guide/overview.md).
-  - Consider running a node on the [Baklava testnet](getting-started/baklava-testnet.md) before getting started on Mainnet.
-  - Learn more about running nodes on [Mainnet](getting-started/mainnet.md).
+  - Consider running a node on the [Baklava testnet](getting-started/baklava-testnet) before getting started on Mainnet.
+  - Learn more about running nodes on [Mainnet](getting-started/mainnet).
 - Developers
   - Start at the [developer tools page](developer-resources/overview.md) for help building a DApp or service on the Celo network.
 - Integration Guide
@@ -80,13 +80,13 @@ The Celo project is live on [Mainnet](https://medium.com/celoorg/its-official-ce
 
 The code is entirely open source and available on [GitHub](https://github.com/celo-org). Versions of all the major components of both the protocol and wallet exist, but the platform as a whole is under active development and testing by the Celo community.
 
-The [Alfajores Testnet](getting-started/alfajores-testnet.md) is the first of several networks designed for testing and for developers to experiment and learn more about Celo. You can set up an account, receive funds, and try out the Celo Wallet and Celo CLI. [Get started here](getting-started/faucet.md).
+The [Alfajores Testnet](getting-started/alfajores-testnet) is the first of several networks designed for testing and for developers to experiment and learn more about Celo. You can set up an account, receive funds, and try out the Celo Wallet and Celo CLI. [Get started here](getting-started/alfajores-testnet/faucet).
 
 :::caution
-The Alfajores Testnet’s tokens hold no real world economic value. The entirety of the testnet’s data will be reset on a regular basis. This will erase your accounts, their balance and your transaction history. Your use of the Alfajores Tesnet is subject to the [Alfajores Testnet Disclaimer](important-information/alfajores-testnet-disclaimer.md).
+The Alfajores Testnet’s tokens hold no real world economic value. The entirety of the testnet’s data will be reset on a regular basis. This will erase your accounts, their balance and your transaction history. Your use of the Alfajores Tesnet is subject to the [Alfajores Testnet Disclaimer](important-information/alfajores-testnet-disclaimer).
 :::
 
-The [Baklava Testnet](getting-started/baklava-testnet.md) is the second Celo test network after Alfajores. You can use it to participate in the The Great Celo Stake Off. Subject to these Terms and Conditions, eligible participants will have the opportunity to receive CELO at the Mainnet launch of the Celo Protocol. The Stake Off will operate in phases, with each phase focusing on a different part of the protocol or infrastructure to test.
+The [Baklava Testnet](getting-started/baklava-testnet) is the second Celo test network after Alfajores. You can use it to participate in the The Great Celo Stake Off. Subject to these Terms and Conditions, eligible participants will have the opportunity to receive CELO at the Mainnet launch of the Celo Protocol. The Stake Off will operate in phases, with each phase focusing on a different part of the protocol or infrastructure to test.
 
 The Celo community's work is focused on the path to a production Celo network that holds economic value. This means testing, running security audits, and building broader involvement around a longer-term roadmap. The project also continues to remain focused on user experience.
 
@@ -114,7 +114,7 @@ Browse the code, raise an issue, or contribute a PR:
 
 Try Celo out:
 
-- [Using the Mobile Wallet](getting-started/using-the-mobile-wallet.md) on the Alfajores Testnet
+- [Using the Mobile Wallet](getting-started/alfajores-testnet/using-the-mobile-wallet) on the Alfajores Testnet
 - [Introduction to the CLI ](command-line-interface/introduction.md)on the Alfajores Testnet
 
 Read the Whitepapers:

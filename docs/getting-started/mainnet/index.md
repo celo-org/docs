@@ -1,8 +1,12 @@
-# Mainnet
+---
+title: Mainnet
+id: index
+slug: /getting-started/mainnet
+---
 
 The **Mainnet** network, previously known as the Release Candidate 1 network, is Celo's production network.
 
-Please refer to [Key Concepts](../overview.md#background-and-key-concepts) for background on blockchains and an explanation of terms used in the section.
+Please refer to [Key Concepts](/overview#background-and-key-concepts) for background on blockchains and an explanation of terms used in the section.
 
 ## Useful links
 

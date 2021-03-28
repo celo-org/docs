@@ -40,7 +40,7 @@ As a CELO holder, you have the opportunity to impact the Celo network by voting 
 
 - **Runs an Attestation Service**: The [Attestation Service](../celo-codebase/protocol/identity) is an important service that Validators can run that allows users to verify that they have access to a phone number and map it to an address. Supporting Validators that run this service makes it easier for new users to begin using Celo.
 
-- **Runs a Validator on Baklava**: A group that runs a Validator on the [Baklava](../getting-started/baklava-testnet.md) helps maintain the testnet and verify that upgrades to the Celo Blockchain software can be deployed smoothly.
+- **Runs a Validator on Baklava**: A group that runs a Validator on the [Baklava](../getting-started/baklava-testnet) helps maintain the testnet and verify that upgrades to the Celo Blockchain software can be deployed smoothly.
 
 ### Community
 
