@@ -1,20 +1,23 @@
-# Using a Ledger Wallet
+---
+title: Using a Ledger Wallet
+slug: /celo-owner-guide/ledger
+---
 
 This section shows how to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
 
 A hardware wallet or Hardware Security Module (HSM) holds a single random seed (expressed as a mnemonic) which can be used to generate any number of public-private keypairs, that is, any number of accounts ("wallets"), each with an associated address.
 
-{% hint style="info" %}
+:::info
 The steps below require technical knowledge. You should be comfortable with the Command Line Interface (CLI) and understand the basics of how cryptographic network accounts work.
-{% endhint %}
+:::
 
 ## Install the Celo Application
 
 Start by installing the Celo application and setting a PIN on your Ledger device by following steps 1 and 2 [on this page](https://www.ledger.com/start/).
 
-{% hint style="danger" %}
+:::danger
 Make sure to securely back up both the PIN and the recovery phrase (also known as a backup key or mnemonic). If you lose them, or they are stolen, you lose access to your Celo assets with no recovery possible. The recovery phrase will be shown only once.
-{% endhint %}
+:::
 
 Open the Ledger Live App on your computer and follow the instructions on the screen.
 
@@ -24,9 +27,9 @@ Click **Install** for the Celo app, this will install the Celo App Version 1.0.3
 
 ![](https://storage.googleapis.com/celo-website/docs/ledger-celo-app-install.png)
 
-{% hint style="info" %}
+:::info
 If you’ve previously installed the Celo app on your device, you’ll see an **Upgrade** option instead of **Install.**
-{% endhint %}
+:::
 
 The installation is completed once you see the green tick and **Installed** label.
 
@@ -70,7 +73,9 @@ Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
 celocli config:set --node https://alfajores-forno.celo-testnet.org/
 ```
 
-{% hint style="danger" %} Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself. {% endhint %}
+:::danger
+Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
+:::
 
 Check that the node is synchronized:
 
@@ -88,7 +93,7 @@ The Ledger's current seed phrase determines the device's accounts. In the termin
 celocli account:list --useLedger --ledgerAddresses 1
 ```
 
-{% hint style="tip" %}
+:::tip
 If you wish to generate more than one address from your seed phrase, you can display the first `N` (e.g. 10) addresses use the `--ledgerAddresses` flag.
 
 ```bash
@@ -101,11 +106,11 @@ To display addresses at specific indexes `M`and `N`(e. 2 and 654) use the `--led
 celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 ```
 
-{% endhint %}
+:::
 
-{% hint style="tip" %}
+:::tip
 **Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.  
-{% endhint %}
+:::
 
 ## Performing a Test transaction on Celo CLI
 

@@ -1,4 +1,8 @@
-# Using the Wallet
+---
+title: Using the Wallet
+id: using-the-wallet
+slug: /getting-started/using-the-wallet
+---
 
 This section explains how to use the Alfajores Testnet Celo Wallet. You will need either an account or an invitation in order to get the Celo Wallet in order to verify your phone number.
 

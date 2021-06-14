@@ -1,12 +1,15 @@
-# Recovering CELO from an Ethereum Address
+---
+title: Recovering CELO from an Ethereum Address
+slug: /celo-owner-guide/eth-recovery
+---
 
 In this guide, steps are outlined to help you recover your [CELO (previously Celo Gold)](../overview.md#background-and-key-concepts) if you accidentally transferred them to an [Ethereum address](https://en.wikipedia.org/wiki/Ethereum#Addresses).
 
 This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Account Key').
 
-{% hint style="danger" %}
+:::danger
 There are [risks](https://www.cryptomathic.com/news-events/blog/cryptographic-key-management-the-risks-and-mitigations) associated with using a recovery phrase or a private key. Please keep these secret.
-{% endhint %}
+:::
 
 ## Recovering with CeloWallet.app
 
@@ -108,6 +111,6 @@ celocli transfer:celo --from <accountAddress> --to <addressOfChoice> --value <va
 - Replace `<addressOfChoice>` with the address that you want to send CELO to.
 - Replace `<valueInCeloWei>` with the amount you want to send, but this number needs to be slightly lower than your balance, as there’s a transaction fee.
 
-{% hint style="info" %}
+:::info
 Note that the value has a unit of CELO Wei (1 CELO = 10^18 CELO Wei), so if you want to send 1 CELO, the `<valueInCeloWei>` should be 1000000000000000000.
-{% endhint %}
+:::

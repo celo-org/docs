@@ -1,4 +1,7 @@
-# ReleaseGold
+---
+title: Understanding ReleaseGold
+slug: /celo-owner-guide/release-gold
+---
 
 ## Introduction
 

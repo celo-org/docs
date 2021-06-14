@@ -1,4 +1,7 @@
-# Governance Cheat Sheet
+---
+title: Governance Cheat Sheet
+slug: /celo-owner-guide/governance-cheat-sheet
+---
 
 ## Governable Parameters 
 

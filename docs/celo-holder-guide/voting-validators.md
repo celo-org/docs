@@ -1,14 +1,17 @@
-# Voting for Validator Groups
+---
+title: Voting for Validator Groups
+slug: /celo-owner-guide/voting-validators
+---
 
 Validators play a critical role in the Celo protocol, determining which transactions get applied and producing new blocks. Selecting organizations that operate well-run infrastructure to perform this role effectively is essential for Celo's long-term success.
 
 The Celo community makes these decisions by locking CELO and voting for [Validator Groups](../celo-codebase/protocol/proof-of-stake/validator-groups.md), intermediaries that sit between voters and Validators. Every Validator Group has an ordered list of up to 5 candidate Validators. Some organizations may operate a group with their own Validators in it; some may operate a group to which they have added Validators run by others.
 
-{% hint style="info" %}
+:::info
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-{% endhint %}
+:::
 
 ## Validator Elections
 
@@ -62,11 +65,11 @@ You can find the [full set of Validator Groups currently receiving votes, and th
 
 The Celo ecosystem includes a number of great services for browsing registered Validator Groups and Validators.
 
-{% hint style="warning" %}
+:::caution
 **Warning**: Exercise caution in relying on Validator-supplied names to determine their real-world identity. Malicious participants may attempt to impersonate other Validators in order to attract votes.
 
 Validators and groups can also supply [verifiable DNS claims](../validator-guide/validator-explorer.md), and the Celo Validator Explorer displays these. You can use these to securely identify that the same entity has access both to the account of a Validator or group and the supplied DNS records.
-{% endhint %}
+:::
 
 ### [Celo Validator Explorer](https://validators.celo.org) (cLabs)
 

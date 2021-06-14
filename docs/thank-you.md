@@ -1,5 +1,7 @@
 ---
 title: Thank you!
+id: thank-you
+slug: /thank-you
 ---
 
 Congratulations on making it this far!

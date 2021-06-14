@@ -1,4 +1,7 @@
-# cUSD User Guide
+---
+title: cUSD Owner Guide
+slug: /celo-owner-guide/cusd
+---
 
 If you intend to hold Celo Dollars (cUSD), exchange CELO for cUSD, or send cUSD to others, this guide will help you access your account and manage your funds.
 
