@@ -1,4 +1,6 @@
-# Celo Signal
+---
+title: Celo Signal
+---
 
 Celo Signal is a mailing list for everything that involves the core community of Celo as well as Celo owners who participate in governance.
 

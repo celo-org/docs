@@ -1,4 +1,7 @@
-# Key management
+---
+title: Summary
+slug: /validator-guide/summary
+---
 
 > Crypto is a tool for turning a whole swathe of problems into key management problems. Key management problems are way harder than (virtually all) cryptographers think.
 >

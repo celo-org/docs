@@ -1,10 +1,12 @@
-# Celo Foundation Validator Voting Policy
+---
+title: Celo Foundation Voting Policy
+---
 
 The following describes how the Celo Foundation anticipates allocating its votes to validator groups, with special attention to the first allocated groups at the Celo Mainnet release and the months thereafter.
 
-{% hint style="info" %}
+:::info
 The policy described here can change at any time as determined by the Foundation Board.
-{% endhint %}
+:::
 
 ## Policy Objectives
 
@@ -72,13 +74,13 @@ In addition to meeting the standard criteria, outlined above, the Foundation ant
 
 ## Application
 
-{% hint style="danger" %}
+:::danger
 Make sure to complete all prerequisites before applying. 
-{% endhint %}
+:::
 
-{% hint style="info" %}
+:::info
 Note: Application for Cohort 7 is now open.
-{% endhint %}
+:::
 
 
 [APPLY FOR FOUNDATION VOTES HERE](https://forum.celo.org/t/cohort-7-application-of-foundation-voting-program-is-now-open/829)
@@ -88,9 +90,9 @@ Cohort 7 application deadline: **April 10, 2021 at 23:59 UTC**
 
 Anticipated vote date for selected applicants in Cohort 7: **May 1, 2021**
 
-{% hint style="info" %}
+:::info
 Note: The anticipated vote date for new cohorts is a best-guess estimate given the requirements and coordination when it comes to voting for new applicants. 
-{% endhint %}
+:::
 
 
 
@@ -131,8 +133,8 @@ Currently receiving Foundation votes:
 * **Cohort 5:** [25 validator groups](https://docs.google.com/spreadsheets/d/1n2lwFsAsFaohng4Bo_FEWcoXzZl5CrLFxA6EK0nuFSA/edit#gid=0) -- votes will expire on Aug 1, 2021 
 * **Cohort 6:** [7 validator groups](https://docs.google.com/spreadsheets/d/1HT_fN-mSAL2etF0Po_h122jeU1zpEtdpb_khogOfBCg/edit?usp=sharing) -- votes will expire on Nov 1, 2021
 
-{% hint style="info" %}
+:::info
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-{% endhint %}
+:::

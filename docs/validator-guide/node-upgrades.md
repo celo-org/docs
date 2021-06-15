@@ -1,4 +1,6 @@
-# Node Upgrades
+---
+title: Upgrading a Node
+---
 
 When a new version of the Celo node is available, you can follow this guide to upgrade.
 
@@ -51,7 +53,9 @@ A second option is to perform a hot-swap to switch over to a new validator node.
 
 ### Hotswapping Validator Nodes
 
-{% hint style="info" %} Hotswap is being introduced in version 1.2.0. When upgrading nodes that are not yet on 1.2.0 refer to the guide to perform a key rotation. {% endhint %}
+:::info
+Hotswap is being introduced in version 1.2.0. When upgrading nodes that are not yet on 1.2.0 refer to the guide to perform a key rotation.
+:::
 
 Validators can be configured as primaries or replicas. By default validators start as primaries and will persist all changes around starting or stopping. Through the istanbul management RPC API the validator can be configured to start or stop at a specified block. The validator will participate in consensus for block numbers in the range `[start, stop)`.
 
@@ -62,7 +66,9 @@ Validators can be configured as primaries or replicas. By default validators sta
 - `istanbul.replicaState` will give you the state of the node and the start/stop blocks
 - `istanbul.validating` will give you true/false if the node is validating
 
-{% hint style="info" %} `startAtBlock` and `stopAtBlock` must be given a block in the future. {% endhint %}
+:::info
+`startAtBlock` and `stopAtBlock` must be given a block in the future.
+:::
 
 #### Geth Flags
 
@@ -70,7 +76,9 @@ Validators can be configured as primaries or replicas. By default validators sta
 
 On startup, nodes will look to see if there is a `replicastate` folder inside it's data directory. If that folder exists the node will configure itself as a validator or replica depending on the previous stored state. The stored state will take precedence over the command line flags. If the folder does not exists the node will stored it's state as configured by the command line. When RPC calls are made to start or stop validating, those changes will be persisted to the `replicastate` folder.
 
-{% hint style="warning" %} If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed. If there is an existing `replicastate` folder from a node that was not configured as a replica the node will attempt to start validating. {% endhint %}
+:::caution
+If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed. If there is an existing `replicastate` folder from a node that was not configured as a replica the node will attempt to start validating.
+:::
 
 #### Steps to upgrade
 
@@ -150,6 +158,8 @@ null
 
 ### Upgrading Proxy Nodes
 
-{% hint style="danger" %} Release 1.2.0 is backwards incompatible in the Validator and Proxy connection. Validators and proxies must be upgraded to 1.2.0 at the same time. {% endhint %}
+:::danger
+Release 1.2.0 is backwards incompatible in the Validator and Proxy connection. Validators and proxies must be upgraded to 1.2.0 at the same time.
+:::
 
 With multi-proxy, you can upgrade proxies one by one or can add newly synced proxies with the latest Docker image and can remove the old proxies. If upgrading the proxies in place, a rolling upgrade is recommended as the validator will re-assign direct connections as proxies are added and removed. These re-assignments will allow the validator to continue to participate in consensus.

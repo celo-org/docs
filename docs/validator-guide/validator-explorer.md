@@ -1,4 +1,7 @@
-# Validator Explorer
+---
+title: Validator Explorer
+---
+
 You can interact with the Validator Explorer that allows you to have a complete view of how the different validators are performing. This is one resource voters may use to find validator groups to vote for. The Validator Explorer tool is available in the following address:
 https://celo.org/validators/explore/
 

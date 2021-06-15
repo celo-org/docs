@@ -1,4 +1,6 @@
-# DevOps Best Practices
+---
+title: DevOps Best Practices
+---
 
 ## Cloud Infrastructure Best Practices
 
