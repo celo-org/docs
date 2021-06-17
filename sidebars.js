@@ -106,9 +106,5 @@ module.exports = {
         'validator-guide/celo-signal',
       ]
     },
-    {
-      type: "doc",
-      id: "thank-you"
-    }
   ],
 };
