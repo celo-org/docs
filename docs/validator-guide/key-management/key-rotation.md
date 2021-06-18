@@ -41,9 +41,9 @@ docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-pos
     celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
     ```
 
-{% hint style="warning" %}
+:::caution
 Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](./detailed.md#authorized-validator-bls-signers).
-{% endhint %}
+:::
 
 3. **Leave all validator and proxy nodes running** until the next epoch change. At the start the next epoch, the new Validator signer should take over participation in consensus.
 
@@ -54,8 +54,8 @@ Please note that the BLS key will change along with the validator signer ECDSA k
 - Open `baklava-celostats.celo-testnet.org` to confirm that your node is signing blocks.
 - Run `celocli validator:signed-blocks --signer $SIGNER_TO_AUTHORIZE` with the new validator signer address to further confirm that your node is signing blocks.
 
-{% hint style="warning" %}
+:::caution
 The newly authorized keys will only take effect in the next epoch, so the instance operating with the old key must remain running until the end of the current epoch to avoid downtime.
-{% endhint %}
+:::
 
 5. Shut down the validator instance with the now obsolete signer key.
