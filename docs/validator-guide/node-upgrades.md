@@ -6,7 +6,7 @@ When a new version of the Celo node is available, you can follow this guide to u
 
 ## Recent Releases
 
-- [Blockchain Client 1.2.0](https://github.com/celo-org/celo-blockchain/releases/tag/v1.2.2) (Latest production release)
+- [You can view the latest releases here.](https://github.com/celo-org/celo-blockchain/releases)
 
 ## When an upgrade is required
 
