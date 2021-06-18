@@ -28,18 +28,18 @@ docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-pos
 1. If `VALIDATOR_ACCOUNT_ADDRESS` corresponds to a key you possess:
 
 
-    ```bash
-    # From a node with access to the key for VALIDATOR_ACCOUNT_ADDRESS
-    celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
-    ```
+```bash
+# From a node with access to the key for VALIDATOR_ACCOUNT_ADDRESS
+celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
+```
 
 2. If `VALIDATOR_ACCOUNT_ADDRESS` is a `ReleaseGold` contract:
 
 
-    ```bash
-    # From a node with access to the beneficiary key of VALIDATOR_ACCOUNT_ADDRESS
-    celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
-    ```
+```bash
+# From a node with access to the beneficiary key of VALIDATOR_ACCOUNT_ADDRESS
+celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
+```
 
 :::caution
 Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](./detailed.md#authorized-validator-bls-signers).
