@@ -1,4 +1,6 @@
-# Validator Guide Overview
+---
+title: Overview
+---
 
 ## Validator Guide
 

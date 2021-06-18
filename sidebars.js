@@ -82,6 +82,31 @@ module.exports = {
       ]
     },
     {
+      type: 'category',
+      label: 'Validator Guide',
+      items: [
+        'validator-guide/overview',
+        'validator-guide/attestation-service',
+        {
+          type: 'category',
+          label: 'Key Management',
+          items: [
+            'validator-guide/key-management/summary',
+            'validator-guide/key-management/detailed',
+            'validator-guide/key-management/key-rotation',
+          ]
+        },
+        'validator-guide/securing-nodes-and-services',
+        'validator-guide/monitoring',
+        'validator-guide/devops-best-practices',
+        'validator-guide/node-upgrades',
+        'validator-guide/proxy',
+        'validator-guide/validator-explorer',
+        'validator-guide/celo-foundation-voting-policy',
+        'validator-guide/celo-signal',
+      ]
+    },
+    {
       type: "doc",
       id: "thank-you"
     }
