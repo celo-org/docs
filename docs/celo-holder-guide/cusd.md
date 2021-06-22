@@ -9,7 +9,7 @@ If you intend to hold Celo Dollars (cUSD), exchange CELO for cUSD, or send cUSD 
 
 This guide assumes:
 
-- You have read [Key Management](../validator-guide/key-management/summary.md) on Celo
+- You have read [Key Management](/validator-guide/summary) on Celo
 - You have installed the [Celo Command Line Interface](../command-line-interface/introduction.md) (Celo CLI)
 
 ## Choose a Node
@@ -34,7 +34,7 @@ export CELO_ACCOUNT_ADDRESS=<YOUR-CELO-ACCOUNT-ADDRESS>
 Once you have deposited CELO to your account, you can check your balance:
 
 ```
-celocli account:balance $CELO_ACCOUNT_ADDRESSS
+celocli account:balance $CELO_ACCOUNT_ADDRESS
 ```
 
 You can exchange CELO for cUSD using the following command. Note that the unit of value is CELO Wei (1 CELO = 10^18 CELO Wei).

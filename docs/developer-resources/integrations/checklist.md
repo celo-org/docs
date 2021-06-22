@@ -1,4 +1,7 @@
-# Checklist
+---
+title: Checklist
+slug: /developer-guide/integrations/checklist
+---
 
 This page serves as a checklist for applications building and integrating on Celo. Using common features and standards across applications in the Celo ecosystem will lead to a superior user experience.
 

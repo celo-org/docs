@@ -1,4 +1,7 @@
-# Celo for Ethereum Developers
+---
+title: Celo for Ethereum Developers
+slug: /developer-guide/celo-for-eth-devs
+---
 
 For a general overview of the Celo network and architecture, see [the Celo Overview page](../overview.md).
 

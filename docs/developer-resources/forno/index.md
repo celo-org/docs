@@ -1,14 +1,13 @@
 ---
 title: Forno
-id: forno
-slug: /developer-resources/forno
+slug: /developer-guide/forno
 ---
 
 Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 Forno has HTTP and websocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access historic state.
 
-Forno can be used as an `Http Provider` with [ContractKit](/developer-resources/contractkit).
+Forno can be used as an `Http Provider` with [ContractKit](/developer-guide/contractkit).
 
 ```javascript
 const ContractKit = require("@celo/contractkit");

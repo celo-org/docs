@@ -1,4 +1,8 @@
-# Listing Guide
+---
+title: Listings
+slug: /developer-guide/integrations/listings
+---
+
 Welcome to the Listing Guide documentation page. If you are a digital asset exchange or ranking site, this guide will help you run a node and audit your setup. 
 
 ## Support

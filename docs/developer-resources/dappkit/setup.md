@@ -1,4 +1,7 @@
-# DappKit
+---
+title: Setup
+slug: /developer-guide/dappkit/setup
+---
 
 ## Quick Start
 

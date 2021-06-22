@@ -1,4 +1,7 @@
-# Examples
+---
+title: Celo Core Contracts. Wrapper / Registry
+slug: /developer-guide/contractkit/contracts-wrappers-registry
+---
 
 ## Interacting with CELO & cUSD
 
