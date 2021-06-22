@@ -1,4 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
+const path = require('path');
+
 module.exports = {
   title: "Celo Docs",
   tagline: "Documentation for the Celo Platform",
@@ -85,4 +88,7 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/aliases.ts'),
+  ]
 };
