@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  /* Small trick to get the height a ratio of the width */
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.sizer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
