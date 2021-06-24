@@ -1,4 +1,6 @@
-# Metadata
+---
+title: Metadata
+---
 
 The Celo protocol's **metadata and claims** feature makes it possible to connect on-chain with off-chain identities.
 

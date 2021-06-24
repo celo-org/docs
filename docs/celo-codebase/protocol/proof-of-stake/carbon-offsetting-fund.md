@@ -1,4 +1,7 @@
-# Carbon Offsetting Fund
+---
+title: Carbon Offsetting Fund
+slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund
+---
 
 The Carbon Offsetting Fund provides for making the infrastructure of the Celo platform carbon-neutral, by making a transfer every epoch to an organization that commits to using those assets off-chain for carbon offsetting projects.
 

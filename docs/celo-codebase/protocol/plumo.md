@@ -1,4 +1,6 @@
-# Plumo Ultralight Sync
+---
+title: Plumo Ultralight Sync
+---
 
 Plumo is a zk-SNARK based system that allows mobile and resource constrained nodes on the Celo network to sync to the Celo blockchain faster and with less data. It accomplishes this by using zero-knowledge proofs, which allow the quick verification of the chain syncing computation without having to run it locally.
 

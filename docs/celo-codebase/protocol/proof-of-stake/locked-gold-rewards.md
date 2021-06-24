@@ -1,4 +1,7 @@
-# Rewards to Locked Gold
+---
+title: Rewards to Locked Gold
+slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards
+---
 
 Holders of Locked Gold that voted in the previous epoch for a group that elected one or more validators and have activated their votes are eligible for rewards. Rewards are added directly to the Locked Gold voting for that group, and re-applied as votes for that same group, so future rewards are compounded without the account holder needing to take any action. The voting process is described further [here](locked-gold.md).
 

@@ -1,4 +1,6 @@
-# Locating Nodes
+---
+title: Locating Nodes
+---
 
 All Celo nodes \(including our validators\) are using a variant of Ethereum's V4 discovery protocol to find other nodes within the network. Details of Ethereum's protocol can be found here: [https://github.com/ethereum/devp2p/blob/master/discv4.md](https://github.com/ethereum/devp2p/blob/master/discv4.md).
 

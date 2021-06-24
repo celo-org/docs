@@ -1,6 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
-
 const path = require('path');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 module.exports = {
   title: "Celo Docs",
@@ -81,12 +82,21 @@ module.exports = {
           // Please change this to your repo.
           editUrl: "https://github.com/celo-org/docs/edit/main/",
           routeBasePath: "/",
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      integrity: 'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+      crossorigin: 'anonymous',
+    }
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/aliases.ts'),

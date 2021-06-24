@@ -1,10 +1,8 @@
 ---
-title: Celo Protocol
-id: protocol
+title: Overview
 slug: /celo-codebase/protocol
 ---
-
-# Celo Protocol
+import PageRef from '@components/PageRef'
 
 Celo's blockchain reference implementation is based on go-ethereum, the Go implementation of the Ethereum protocol. The project team is indebted to the Geth community for providing these shoulders to stand on and, while recognizing that Ethereum is an independent project with its own trajectory, hopes to contribute changes where it makes sense to do so.
 
@@ -12,16 +10,11 @@ In addition to the blockchain client, some core components of the Celo protocol 
 
 Overall, a number of substantial changes and additions have been made in service of Celo's product goals, including the following:
 
-{% page-ref page="consensus/" %}
-
-{% page-ref page="proof-of-stake/" %}
-
-{% page-ref page="governance.md" %}
-
-{% page-ref page="stability/" %}
-
-{% page-ref page="transactions/" %}
-
-{% page-ref page="identity/" %}
-
-{% page-ref page="plumo.md" %}
+<PageRef url="/celo-codebse/protocol/consensus" pageName="Consensus" />
+<PageRef url="/celo-codebse/protocol/proof-of-stake" pageName="Proof-of-Stake" />
+<PageRef url="/celo-codebse/protocol/governance" pageName="Governance" />
+<PageRef url="/celo-codebse/protocol/stability" pageName="Stability Mechanism" />
+<PageRef url="/celo-codebse/protocol/transactions" pageName="Transactions" />
+<PageRef url="/celo-codebse/protocol/identity" pageName="Identity" />
+<PageRef url="/celo-codebse/protocol/optics" pageName="Optics" />
+<PageRef url="/celo-codebse/protocol/plumo" pageName="Plumo Ultralight Sync" />

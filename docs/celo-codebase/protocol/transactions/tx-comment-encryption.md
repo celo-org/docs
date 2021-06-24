@@ -1,4 +1,6 @@
-# Encrypted Payment Comments
+---
+title: Encrypted Payment Comments
+---
 
 ### **Overview**
 

@@ -1,4 +1,6 @@
-# Oracles
+---
+title: Oracles
+---
 
 As mentioned in the previous section, the stability mechanism needs to know the market price of CELO with respect to the US dollar. This value is made available on-chain in the SortedOracles smart contract.
 

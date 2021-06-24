@@ -1,4 +1,6 @@
-# Stability Fees
+---
+title: Stability Fees
+---
 
 ### **Parameters Governing the Stability Fee**
 

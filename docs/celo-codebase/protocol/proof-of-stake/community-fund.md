@@ -1,4 +1,7 @@
-# Community Fund
+---
+title: Community Fund
+slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund
+---
 
 The Community Fund provides for general upkeep of the Celo platform. CELO holders decide how to allocate these funds through governance proposals. Funds might be used to pay bounties for bugs or vulnerabilities, security audits, or grants for protocol development.
 
