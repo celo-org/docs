@@ -1,3 +1,8 @@
+---
+title: Integrations
+slug: /developer-guide/integrations
+---
+
 This section gives some guides about common ways of integrating Celo into your service.
 
 The [General](general.md) page provides some general information about integrating with Celo.

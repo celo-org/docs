@@ -1,4 +1,7 @@
-# Development Chain w/ Protocol Contracts
+---
+title: Local Development Chain w/ Protocol Contracts
+slug: /developer-guide/development-chain
+---
 
 In this tutorial, we will go over how to set up a Celo development blockchain that includes all of the [core protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol), including identity and stability contracts.
 

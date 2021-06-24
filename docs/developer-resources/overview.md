@@ -1,4 +1,7 @@
-# Overview
+---
+title: Overview
+slug: /developer-guide/overview
+---
 
 This section contains information about some of the key tools and resources that will help developers start building applications
 on Celo.
@@ -11,7 +14,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 
 ### SDKs
 
-- [ContractKit](contractkit/)
+- [ContractKit](/developer-guide/contractkit)
   - Javascript package of Celo blockchain utilities
   - Manage connections to the Celo blockchain, accounts, send transactions, interact with smart contracts, etc.
   - A set of wrappers around the core protocol smart contracts to easily connect with contracts related to governance, validators, on-chain exchange, etc.
@@ -20,7 +23,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
   - A minimal wrapper to make [ethers.js](https://docs.ethers.io/v5/) compatible with the Celo network
 - [use-contractkit](https://github.com/celo-tools/use-contractkit)
   - A [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-- [DappKit](dappkit/)
+- [DappKit](/developer-guide/dappkit)
   - Easily connect to the [Valora](http://valoraapp.com/) wallet
   - Valora manages user account, private keys and transaction signing, so you can focus on building your dapp
   - Learn more and see the code with the [Dappkit truffle box](https://github.com/critesjosh/celo-dappkit)
@@ -30,7 +33,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 ### Infrastructure
 
 - [Valora](https://valoraapp.com/) provides a clean, intuitive UI where users can send transactions and interact with smart contracts
-- [Forno](forno/)
+- [Forno](/developer-guide/forno)
   - Node access service so you can connect your dapp to the Celo blockchain without having to run node infrastructure
 - [ODIS](contractkit/odis.md)
   - Oblivious decentralized identity service
@@ -41,11 +44,11 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 
 #### Networks
 
-- [Alfajores Testnet](../getting-started/alfajores-testnet)
+- [Alfajores Testnet](/getting-started/alfajores-testnet)
   - [Faucet](https://celo.org/developers/faucet) for free testnet CELO and cUSD
   - [Forno](forno/) supports connections to alfajores
   - Requires Alfajores Celo wallet for mobile device testing (please request, [support@clabs.co](mailto:support@clabs.co))
-- [Baklava testnet](../getting-started/baklava-testnet) for validators and testing protocol changes
+- [Baklava testnet](/getting-started/baklava-testnet) for validators and testing protocol changes
 
 ### Ethereum Tools
 

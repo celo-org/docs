@@ -1,8 +1,11 @@
 ---
-description: >-
-  This page is similar to the Hello Contracts page, but this one
-  will connect to a remote node (Forno) and do key management in the Truffle project.
+title: Deply and Interact with Contracts (Remotely)
+slug: /developer-guide/start/hello-contract-remote-node
 ---
+import PageRef from '@components/PageRef'
+
+This page is similar to the Hello Contracts page, but this one
+will connect to a remote node (Forno) and do key management in the Truffle project.
 
 # Hello Contract \(Truffle + Remote Node\)
 
@@ -16,13 +19,13 @@ This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-np
 npm install -g truffle
 ```
 
-{% hint style="info" %}
+:::info
 [Learn more about the Truffle development framework here.](https://www.trufflesuite.com/docs/truffle/overview) 
-{% endhint %}
+:::
 
 As you may know, Truffle is built for Ethereum developers. Because Celo has a similar network architecture and runs the Ethereum Virtual Machine, Celo developers are able to leverage many Ethereum developer tools. But it is important to keep in mind the differences. If you haven't already, please review the Celo overview.
 
-{% page-ref page="../../overview.md" %}
+<PageRef url="/overview" pageName="Celo Overview"/>
 
 [Clone this Truffle project from GitHub to get started](https://github.com/critesjosh/hello_contract-truffle). 
 
@@ -73,9 +76,9 @@ truffle compile
 
 After compiling the contract, you need to create a migration to deploy the contract. For that, create a file in the `./migrations/` folder named `2_deploy_helloworld.js`:
 
-{% hint style="info" %}
+:::info
 [Learn more about Truffle migrations here.](https://www.trufflesuite.com/docs/truffle/getting-started/running-migrations)
-{% endhint %}
+:::
 
 ```javascript
 var HelloWorld = artifacts.require('HelloWorld')
@@ -85,9 +88,9 @@ module.exports = function(deployer) {
 }
 ```
 
-{% hint style="info" %}
+:::info
 You can [learn more about Truffle configuration options here.](https://www.trufflesuite.com/docs/truffle/reference/configuration)
-{% endhint %}
+:::
 
 ## Deploy to Alfajores \(Remotely\)
 
@@ -215,9 +218,9 @@ You are finally ready to deploy the contract. Use the `kit`to create a custom tr
     })
 ```
 
-{% hint style="info" %}
+:::info
 To deploy a contract on Celo, use the `kit.connection.sendTransaction()` function with no `to:` field and the contract bytecode in the `data` field. The account that you are sending the transaction from must have enough CELO to pay the transaction fee, unless you specify another currency as the `feeCurrency`, then you need enough of that currency to pay the transaction fee.
-{% endhint %}
+:::
 
 The entire deployment script is less than 20 lines of code.
 

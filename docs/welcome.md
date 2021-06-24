@@ -8,8 +8,8 @@ Welcome to the technical documentation site for the Celo project!
 
 In this documentation you’ll find information on:
 
-- An [overview](overview.md) of the high-level architecture of Celo
-- Tutorials to get you started with the [Celo SDK](developer-resources/start.md) and the [Celo networks](getting-started/choosing-a-network.md)
+- An [overview](./overview.md) of the high-level architecture of Celo
+- Tutorials to get you started with the [Celo SDK](./developer-resources/start.md) and the [Celo networks](getting-started/choosing-a-network.md)
 - Reference documentation about the [Celo protocol](celo-codebase/protocol/) and [wallet](celo-codebase/wallet/)
 - How to make technical [contributions](community/contributing.md) to the project and community
 
@@ -22,9 +22,9 @@ In this documentation you’ll find information on:
   - Consider running a node on the [Baklava testnet](getting-started/baklava-testnet) before getting started on Mainnet.
   - Learn more about running nodes on [Mainnet](getting-started/mainnet).
 - Developers
-  - Start at the [developer tools page](developer-resources/overview.md) for help building a DApp or service on the Celo network.
+  - Start at the [developer tools page](./developer-resources/overview.md) for help building a DApp or service on the Celo network.
 - Integration Guide
-  - [This section](developer-resources/integrations/integrations.md) includes guides on common ways for integrating Celo into your service. This may be relevant for custodians, exchanges or other services that intend to custody Celo assets like CELO and cUSD.
+  - [This section](./developer-resources/integrations/integrations.md) includes guides on common ways for integrating Celo into your service. This may be relevant for custodians, exchanges or other services that intend to custody Celo assets like CELO and cUSD.
 
 ### About Celo
 

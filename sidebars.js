@@ -106,5 +106,65 @@ module.exports = {
         'validator-guide/celo-signal',
       ]
     },
+    {
+      type: 'category',
+      label: 'Developer Guide',
+      items: [
+        'developer-resources/overview',
+        {
+          type: 'category',
+          label: 'Code Examples',
+          items: [
+            'developer-resources/start',
+            'developer-resources/walkthroughs/hellocelo',
+            'developer-resources/walkthroughs/hellocontracts',
+            'developer-resources/walkthroughs/hello-contract-remote-node',
+            'developer-resources/walkthroughs/hello-mobile-dapp',
+            'developer-resources/develop-on-windows',
+            'developer-resources/walkthroughs/web-dapp',
+            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'}
+          ]
+        },
+        {
+          type: 'category',
+          label: 'ContractKit',
+          items: [
+            'developer-resources/contractkit/index',
+            'developer-resources/contractkit/setup',
+            'developer-resources/contractkit/notes-web3-with-contractkit',
+            'developer-resources/contractkit/contracts-wrappers-registry',
+            'developer-resources/contractkit/odis',
+            'developer-resources/contractkit/migrating-to-contractkit-v1',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'DAppKit',
+          items: [
+            'developer-resources/dappkit/index',
+            'developer-resources/dappkit/setup',
+            'developer-resources/dappkit/usage',
+          ]
+        },
+        'developer-resources/forno/index',
+        'developer-resources/walkthroughs/development-chain',
+        'developer-resources/celo-for-eth-devs',
+        'developer-resources/celo-dapp-gallery',
+        {
+          type: 'category',
+          label: 'Integrations',
+          items: [
+            'developer-resources/integrations/integrations',
+            'developer-resources/integrations/general',
+            'developer-resources/integrations/checklist',
+            'developer-resources/integrations/custody',
+            'developer-resources/integrations/listings',
+            'developer-resources/integrations/cloud-hsm',
+          ]
+        },
+        // TODO: This link will need to be changed when we move all the SDK type docs
+        { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
+      ]
+    },
   ],
 };

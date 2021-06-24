@@ -1,8 +1,8 @@
 ---
 title: Celo ContractKit
-id: contractkit
-slug: /developer-resources/contractkit
+slug: /developer-guide/contractkit
 ---
+import PageRef from '@components/PageRef'
 
 ContractKit is a library to help developers and validators to interact with the celo-blockchain and is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
 
@@ -19,6 +19,6 @@ ContractKit supports the following functionality:
 - Utilities
 - Query on-chain identifier for a phone number
 
-{% page-ref page="setup.md" %}
+<PageRef url="/developer-guide/contractkit/setup" pageName="Setup"/>
 
-{% page-ref page="usage.md" %}
+<PageRef url="/developer-guide/contractkit/usage" pageName="Using the kit"/>

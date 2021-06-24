@@ -1,4 +1,7 @@
-# Usage
+---
+title: Usage
+slug: /developer-guide/dappkit/usage
+---
 
 This page walks you through the main functionalities of DAppKit and provides small code snippets. We recommend checking out the [Celo Truffle Box](https://github.com/critesjosh/celo-dappkit) tutorial for a step-by-step guide on creating a mobile DApp using Expo.
 
@@ -38,7 +41,7 @@ login = async () => {
 };
 ```
 
-Once you have the account address, you can make calls against your own smart contract, or use [ContractKit](../contractkit) to interact with Celo Core Contracts to do actions like fetch a user's balance.
+Once you have the account address, you can make calls against your own smart contract, or use [ContractKit](/developer-guide/contractkit) to interact with Celo Core Contracts to do actions like fetch a user's balance.
 
 First import and instantiate an instance of ContractKit. For ContractKit version 1.0.0 onwards, you also need to import and instantiate a Web3 instance manually:
 

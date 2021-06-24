@@ -1,4 +1,7 @@
-# Getting Started
+---
+title: Setup
+slug: /developer-guide/contractkit/setup
+---
 
 ## Installation and System Requirements
 
@@ -22,7 +25,7 @@ import { newKit } from "@celo/contractkit";
 const kit = newKit("https://alfajores-forno.celo-testnet.org");
 ```
 
-Go to the [page about Forno](../forno) for details about different connection types and network endpoints.
+Go to the [page about Forno](/developer-guide/forno) for details about different connection types and network endpoints.
 
 ## Initialize the Kit with your own node
 

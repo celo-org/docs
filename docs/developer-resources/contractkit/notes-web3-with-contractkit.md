@@ -1,4 +1,7 @@
-# Using Web3 with ContractKit
+---
+title: Using Web3 from the Kit
+slug: /developer-guide/contractkit/notes-web3-with-contractkit
+---
 
 Although the [Web3 library](https://web3js.readthedocs.io/) was intended to be used only with `Ethereum`, due to the nature of `Celo`, we can still use the majority of its features.
 The ContractKit, for every interaction with the node, uses internally a Web3 instance.

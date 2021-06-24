@@ -1,4 +1,7 @@
-# Celo DApp Gallery
+---
+title: Celo DApp Gallery
+slug: /developer-guide/celo-dapp-gallery
+---
 
 Welcome to the DApp Gallery! Here are some featured examples to help you get started building on Celo.
 

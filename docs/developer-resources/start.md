@@ -1,4 +1,7 @@
-# Start
+---
+title: Start
+slug: /developer-guide/start
+---
 
 The following examples and guides will help you start building on Celo.
 
@@ -14,7 +17,7 @@ The following examples and guides will help you start building on Celo.
 
 - [Deploy a Contract (Forno)](walkthroughs/hello-contract-remote-node.md)
 
-  - Our second Deploy a Contract tutorial demonstrates how to deploy smart contracts with [Truffle](https://www.trufflesuite.com/truffle) and [Forno](forno/), a remote node service provider.
+  - Our second Deploy a Contract tutorial demonstrates how to deploy smart contracts with [Truffle](https://www.trufflesuite.com/truffle) and [Forno](/developer-guide/forno), a remote node service provider.
 
 ## Mobile DApps
 

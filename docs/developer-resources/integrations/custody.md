@@ -1,4 +1,7 @@
-# Custodying Celo Assets and Monitoring Balances
+---
+title: Custody
+slug: /developer-guide/integrations/custody
+---
 
 This section is intended for Custodians, Exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user. Generally speaking, custodying CELO, the native token on the Celo network, requires understanding the various states that CELO can exist in at any time. This is to provide useful services beyond custody such as allowing users to lock up their CELO and vote with it. Many of these "states" are implemented as smart contracts, and involve sending CELO from a user owned account to a contract address. Thus, in order to be able to show a user's true balance, services need to be able to observe every balance changing operation and reconcile CELO balances from all the various contracts and states CELO can be in.
 
@@ -6,9 +9,9 @@ This section is intended for Custodians, Exchanges, and other services that inte
 
 As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [`LockedGold`](../../celo-codebase/protocol/proof-of-stake/locked-gold.md) smart contract that holds the "locked portion of a user's `CELO` balance". Another one is the [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds `CELO` that is being released to a beneficiary address over time according to some schedule.
 
-{% hint style="warning" %}
+:::caution
 Celo assets assets exist on an independent blockchain, and although they implement the ERC20 interface, they cannot be accessed through wallets that connect to the Ethereum network. Wallets and other integrations must connect to the Celo network to transfer tokens on Celo.
-{% endhint %}
+:::
 
 Applications that display balances may need to be written to be aware of this possibility.
 

@@ -1,4 +1,7 @@
-# ContractKit Usage
+---
+title: Using the Kit
+slug: /developer-guide/contractkit/usage
+---
 
 The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](../walkthroughs/hellocontracts.md#deploy-to-alfajores)
 

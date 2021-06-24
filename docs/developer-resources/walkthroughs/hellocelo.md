@@ -1,16 +1,18 @@
 ---
-description: >-
-  In this guide we are going to learn how to connect to the Celo test network and tranfer tokens
-  using ContractKit.
+title: Sending CELO & cUSD
+slug: /developer-guide/start/hellocelo
 ---
+
+In this guide we are going to learn how to connect to the Celo test network and tranfer tokens
+using ContractKit.
 
 # Hello Celo: sending value with Celo
 
 In this guide we are going to write a Node.js script to introduce some of the basic concepts that are important to understand how Celo works. This will get us started with connecting to the Celo network and learning how to develop more advanced applications.
 
-{% hint style="info" %}
+:::info
 We assume you already have Node.js and NPM installed on your computer.
-{% endhint %}
+:::
 
 ## Learning Objectives
 
@@ -55,17 +57,17 @@ const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
 const kit = ContractKit.newKitFromWeb3(web3)
 ```
 
-{% hint style="info" %}
+:::info
 At any point in the file you can `console.log()` variables to print their output when you run the script.
-{% endhint %}
+:::
 
 ## Reading Alfajores
 
 ContractKit contains a `contracts` property that we can use to access certain information about deployed Celo contracts.
 
-{% hint style="info" %}
+:::info
 The Celo blockchain has two native assets, CELO \(CELO\) and the Celo Dollar \(cUSD\). Both of these assets implement the [ERC20 token standard](https://eips.ethereum.org/EIPS/eip-20) from Ethereum. The CELO asset is managed by the CELO smart contract and Celo Dollars is managed by the cUSD contract. We can access the CELO contract via the SDK with `kit.contracts.getGoldToken()` and the cUSD contract with `kit.contracts.getStableToken()`. These functions return promises, so we have to wait for them to resolve before we can interact with the token contracts. If you are unfamiliar with Promises in Javascript, [check out this documentation.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promises are a common tool in blockchain development. In this guide, we use the [async/await syntax for promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).
-{% endhint %}
+:::
 
 Let's read some token balances from the blockchain. Add the following line in the `readAccount()` function. 
 
@@ -98,9 +100,9 @@ To view the balances, run the script from the termainal with
 node helloCelo.js
 ```
 
-{% hint style="info" %}
+:::info
 Note that the `balanceOf()` function returns objects with type [BigNumber](https://github.com/MikeMcl/bignumber.js/) because balances are represented in Celo as a 256 bit unsigned integer, and JavaScript's number type cannot safely handle numbers of that size. Note also that the balance values are reported in units of CELO Wei, where one CELO = 10\*\*18 CELO Wei.
-{% endhint %}
+:::
 
 Reading all account balances is a powerful feature of blockchains. Next, let's see how we can send value to each other on the testnet.
 
@@ -114,17 +116,17 @@ In order to do transfers (aka [transactions](https://docs.celo.org/getting-start
 
 We are accessing the Celo network via a remote [node](https://docs.celo.org/getting-started/glossary#node) via HTTP requests at `'https://alfajores-forno.celo-testnet.org'`.
 
-{% hint style="info" %}
+:::info
 Don't worry about what this means right now, just understand that it is easier to get started using Celo by accessing remote nodes, rather than running them locally on your machine. You can [read more about the details of the Celo network here.](https://github.com/critesjosh/celo-monorepo/tree/8542c1bc3ad32bc48eed33073f4d34a36fd91fae/packages/docs/celo-sdk/walkthroughs/overview.md#topology-of-a-celo-network)
-{% endhint %}
+:::
 
 Because we are accessing the network remotely, we need to generate an account to sign transactions and fund that account with test CELO.
 
 There is a short script in `getAccount.js` to either get a Celo account from a mnemonic in the `.secret` file, or create a random account if the file is empty. In the script, we use`web3.js` to create a new private key/account pair. [Web3.js](https://web3js.readthedocs.io/en/v1.2.6/) is a popular javascript library for handling Ethereum related functionality. Celo is a cousin of Ethereum, so this library works well for generating Celo accounts.
 
-{% hint style="danger" %}
+:::danger
 This is not the standard way of managing Celo accounts. In a production environment, the [Celo Wallet](../../celo-codebase/wallet/) will manage accounts for you. Accessing accounts from the Celo Wallet will be discussed in future guides.
-{% endhint %}
+:::
 
 We can now use this `account` to get account information \(ie the private key and account address\) and to send transactions from `account.address`. Add the following code to read the account balance. Continue adding to `helloCelo.js`.
 
