@@ -24,6 +24,7 @@ For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/mas
 
 ### Constitutional parameters
 
+<!-- TODO: SDK urls will need to be changed when the SDK type docs are separated from the rest of docs -->
 As new contracts are added to the registry, new [constitution parameters](https://docs.celo.org/developer-guide/sdk-code-reference/summary-2/classes/_wrappers_governance_.governancewrapper#isproposalpassing) need to be set. There's an [issue open](https://github.com/celo-org/celo-monorepo/issues/7318) to include this in the tooling to support it as part of the Contract Release.
 
 ### Oracle activation
