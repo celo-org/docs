@@ -60,5 +60,6 @@ Adding a new stable asset involves updating many parts of the tooling, such as:
 * Supporting alfajores faucet.
 * Supporting on Dapp kit.
 
-    [^1] There are opened issues trying to de-couple the addition of new assets to the reserve to the release cycle.
-    [^2] Please note this example proposal also includes freezing, this is because, at the time of writing (22-march-2021), the tooling for proposing a contract release doesn't support freezing those contracts on the same proposal. Proposals shall not be modified manually given that the tool is meant to run verifications.
+[^1] There are opened issues trying to de-couple the addition of new assets to the reserve to the release cycle.
+
+[^2] Please note this example proposal also includes freezing, this is because, at the time of writing (22-march-2021), the tooling for proposing a contract release doesn't support freezing those contracts on the same proposal. Proposals shall not be modified manually given that the tool is meant to run verifications.
