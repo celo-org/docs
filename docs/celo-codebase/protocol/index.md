@@ -10,11 +10,11 @@ In addition to the blockchain client, some core components of the Celo protocol 
 
 Overall, a number of substantial changes and additions have been made in service of Celo's product goals, including the following:
 
-<PageRef url="/celo-codebse/protocol/consensus" pageName="Consensus" />
-<PageRef url="/celo-codebse/protocol/proof-of-stake" pageName="Proof-of-Stake" />
-<PageRef url="/celo-codebse/protocol/governance" pageName="Governance" />
-<PageRef url="/celo-codebse/protocol/stability" pageName="Stability Mechanism" />
-<PageRef url="/celo-codebse/protocol/transactions" pageName="Transactions" />
-<PageRef url="/celo-codebse/protocol/identity" pageName="Identity" />
-<PageRef url="/celo-codebse/protocol/optics" pageName="Optics" />
-<PageRef url="/celo-codebse/protocol/plumo" pageName="Plumo Ultralight Sync" />
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Consensus" />
+<PageRef url="/celo-codebase/protocol/proof-of-stake" pageName="Proof-of-Stake" />
+<PageRef url="/celo-codebase/protocol/governance" pageName="Governance" />
+<PageRef url="/celo-codebase/protocol/stability" pageName="Stability Mechanism" />
+<PageRef url="/celo-codebase/protocol/transactions" pageName="Transactions" />
+<PageRef url="/celo-codebase/protocol/identity" pageName="Identity" />
+<PageRef url="/celo-codebase/protocol/optics" pageName="Optics" />
+<PageRef url="/celo-codebase/protocol/plumo" pageName="Plumo Ultralight Sync" />
