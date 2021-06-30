@@ -174,12 +174,12 @@ module.exports = {
           type: 'category',
           label: 'Celo Protocol',
           items: [
-            'celo-codebase/protocol/index',
+            { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/index', },
             {
               type: 'category',
               label: 'Consensus',
               items: [
-                'celo-codebase/protocol/consensus/index',
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/consensus/index', },
                 'celo-codebase/protocol/consensus/validator-set-differences',
                 'celo-codebase/protocol/consensus/locating-nodes',
                 'celo-codebase/protocol/consensus/ultralight-sync',
@@ -189,7 +189,7 @@ module.exports = {
               type: 'category',
               label: 'Proof-of-Stake',
               items: [
-                'celo-codebase/protocol/proof-of-stake/index',
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/index', },
                 'celo-codebase/protocol/proof-of-stake/validator-groups',
                 'celo-codebase/protocol/proof-of-stake/locked-gold',
                 'celo-codebase/protocol/proof-of-stake/validator-elections',
@@ -197,7 +197,7 @@ module.exports = {
                   type: 'category',
                   label: 'Epoch Rewards',
                   items: [
-                    'celo-codebase/protocol/proof-of-stake/epoch-rewards',
+                    { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/epoch-rewards', },
                     'celo-codebase/protocol/proof-of-stake/validator-rewards',
                     'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',
                     'celo-codebase/protocol/proof-of-stake/community-fund',
@@ -212,7 +212,7 @@ module.exports = {
               type: 'category',
               label: 'Stability Mechanism',
               items: [
-                'celo-codebase/protocol/stability/index',
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/stability/index', },
                 'celo-codebase/protocol/stability/doto',
                 'celo-codebase/protocol/stability/oracles',
                 'celo-codebase/protocol/stability/stability-fees',
@@ -224,7 +224,7 @@ module.exports = {
               type: 'category',
               label: 'Transactions',
               items: [
-                'celo-codebase/protocol/transactions/index',
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/transactions/index', },
                 'celo-codebase/protocol/transactions/native-currency',
                 'celo-codebase/protocol/transactions/erc20-transaction-fees',
                 'celo-codebase/protocol/transactions/gas-pricing',
@@ -237,7 +237,7 @@ module.exports = {
               type: 'category',
               label: 'Identity',
               items: [
-                'celo-codebase/protocol/identity/index',
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/identity/index', },
                 'celo-codebase/protocol/identity/valora-accounts',
                 'celo-codebase/protocol/identity/phone-number-privacy',
                 'celo-codebase/protocol/identity/metadata',

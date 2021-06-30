@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Epoch Rewards Overview
 ---
 
 **Epoch Rewards** are similar to the familiar notion of block rewards in other blockchains, minting and distributing new units of CELO as blocks are produced, to create several kinds of incentives. Epoch rewards are paid in the final block of the epoch and are used to:

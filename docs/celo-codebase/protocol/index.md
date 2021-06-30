@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Protocol Overview
 slug: /celo-codebase/protocol
 ---
 import PageRef from '@components/PageRef'

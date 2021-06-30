@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Consensus Overview
 slug: /celo-codebase/protocol/consensus
 ---
 

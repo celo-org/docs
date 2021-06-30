@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Transactions Overview
 slug: /celo-codebase/protocol/transactions
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Stability Mechanism Overview
 slug: /celo-codebase/protocol/stability
 ---
 import YouTube from '@components/YouTube';

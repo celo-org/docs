@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Proof Of Stake Overview
 slug: /celo-codebase/protocol/proof-of-stake
 ---
 
