@@ -166,5 +166,89 @@ module.exports = {
         { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
       ]
     },
+    {
+      type: 'category',
+      label: 'Celo Codebase',
+      items: [
+        {
+          type: 'category',
+          label: 'Celo Protocol',
+          items: [
+            { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/index', },
+            {
+              type: 'category',
+              label: 'Consensus',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/consensus/index', },
+                'celo-codebase/protocol/consensus/validator-set-differences',
+                'celo-codebase/protocol/consensus/locating-nodes',
+                'celo-codebase/protocol/consensus/ultralight-sync',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Proof-of-Stake',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/index', },
+                'celo-codebase/protocol/proof-of-stake/validator-groups',
+                'celo-codebase/protocol/proof-of-stake/locked-gold',
+                'celo-codebase/protocol/proof-of-stake/validator-elections',
+                {
+                  type: 'category',
+                  label: 'Epoch Rewards',
+                  items: [
+                    { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/epoch-rewards', },
+                    'celo-codebase/protocol/proof-of-stake/validator-rewards',
+                    'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',
+                    'celo-codebase/protocol/proof-of-stake/community-fund',
+                    'celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund',
+                  ]
+                },
+                'celo-codebase/protocol/proof-of-stake/penalties',
+              ]
+            },
+            'celo-codebase/protocol/governance',
+            {
+              type: 'category',
+              label: 'Stability Mechanism',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/stability/index', },
+                'celo-codebase/protocol/stability/doto',
+                'celo-codebase/protocol/stability/oracles',
+                'celo-codebase/protocol/stability/stability-fees',
+                'celo-codebase/protocol/stability/adding_stable_assets',
+                'celo-codebase/protocol/stability/tobin-tax',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Transactions',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/transactions/index', },
+                'celo-codebase/protocol/transactions/native-currency',
+                'celo-codebase/protocol/transactions/erc20-transaction-fees',
+                'celo-codebase/protocol/transactions/gas-pricing',
+                'celo-codebase/protocol/transactions/escrow',
+                'celo-codebase/protocol/transactions/tx-comment-encryption',
+                'celo-codebase/protocol/transactions/full-node-incentives',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Identity',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/identity/index', },
+                'celo-codebase/protocol/identity/valora-accounts',
+                'celo-codebase/protocol/identity/phone-number-privacy',
+                'celo-codebase/protocol/identity/metadata',
+                'celo-codebase/protocol/identity/randomness',
+              ]
+            },
+            'celo-codebase/protocol/optics',
+            'celo-codebase/protocol/plumo',
+          ]
+        }
+      ]
+    }
   ],
 };

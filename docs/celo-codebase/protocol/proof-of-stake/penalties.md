@@ -1,4 +1,6 @@
-# Slashing
+---
+title: Penalties
+---
 
 ## Overview
 

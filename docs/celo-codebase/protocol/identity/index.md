@@ -1,6 +1,5 @@
 ---
-title: Identity
-id: identity
+title: Identity Overview
 slug: /celo-codebase/protocol/identity
 ---
 

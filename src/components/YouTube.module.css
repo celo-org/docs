@@ -1,4 +1,5 @@
 .container {
+  margin: 24px 0px;
   width: 100%;
   /* Small trick to get the height a ratio of the width */
   padding-bottom: 56.25%;

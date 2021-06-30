@@ -1,4 +1,6 @@
-# Gas Pricing
+---
+title: Gas Pricing
+---
 
 ## Gas Price Minimum
 

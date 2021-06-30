@@ -1,12 +1,14 @@
 ---
-title: Proof-of-Stake
-id: proof-of-stake
+title: Proof Of Stake Overview
 slug: /celo-codebase/protocol/proof-of-stake
 ---
 
-{% youtube src="https://www.youtube.com/watch?v=3UIudzzCb8o" %}{% endyoutube %}
+import YouTube from '@components/YouTube'
 
-Celo uses a Byzantine Fault Tolerant [consensus protocol](../consensus/README.md) to agree on new blocks to append to the blockchain. The instances of the Celo software that participate in this consensus protocol are known as **validators**. More accurately, they are **active validators** or **elected validators**, to distinguish them from **registered validators** which are configured to participate but are not actively selected.
+
+<YouTube videoId="3UIudzzCb8o" />
+
+Celo uses a Byzantine Fault Tolerant [consensus protocol](/celo-codebase/protocol/consensus) to agree on new blocks to append to the blockchain. The instances of the Celo software that participate in this consensus protocol are known as **validators**. More accurately, they are **active validators** or **elected validators**, to distinguish them from **registered validators** which are configured to participate but are not actively selected.
 
 Celo's proof-of-stake mechanism is the set of processes that determine which nodes become active validators and how incentives are arranged to secure the network.
 

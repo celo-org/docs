@@ -1,4 +1,6 @@
-# Locked Gold and Voting
+---
+title: Locked Gold and Voting
+---
 
 To participate in validator elections, users must first make a transfer of CELO to the `LockedGold` smart contract.
 
