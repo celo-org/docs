@@ -51,7 +51,7 @@ The Celo app is now ready for use and you should see `Application is ready` on t
 
 Now that you have installed the Celo app on to your ledger, you can begin to use it with the Celo CLI.
 
-Open the terminal application on your computer and install the [Celo CLI](https://docs.celo.org/command-line-interface/introduction):
+Open the terminal application on your computer and install the [Celo CLI](/command-line-interface/introduction.md):
 
 ```bash
 npm install -g @celo/celocli

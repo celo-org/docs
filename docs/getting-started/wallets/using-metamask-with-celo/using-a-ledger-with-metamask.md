@@ -9,5 +9,5 @@ Here are some things to keep in mind when using a Ledger hardware wallet with Me
     \(Users using a Celo-specific wallet with the Ledger should still use the Celo app though\)
 
 TODO: Replace these with new links
-* When recovering [Celo sent to an Eth address](https://docs.celo.org/celo-owner-guide/eth-recovery), use Metamask with the Ethereum app on the Ledger device.
-* When recovering [Eth sent to a Celo address](https://docs.celo.org/celo-owner-guide/celo-recovery), use the Celo app on the Ledger device with any Celo wallet.
+* When recovering [Celo sent to an Eth address](celo-holder-guide/eth-recovery.md), use Metamask with the Ethereum app on the Ledger device.
+* When recovering [Eth sent to a Celo address](celo-holder-guide/celo-recovery.md), use the Celo app on the Ledger device with any Celo wallet.

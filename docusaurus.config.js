@@ -8,6 +8,7 @@ module.exports = {
   tagline: "Documentation for the Celo Platform",
   url: "https://docs.celo.org",
   baseUrl: "/",
+  trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logo.png",
@@ -70,7 +71,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Celo Foundatio, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
