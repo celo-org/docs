@@ -10,15 +10,15 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
   themeConfig: {
     navbar: {
       title: "Celo Docs",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
+        alt: "Celo Logo",
+        src: "img/logo.png",
       },
       items: [
         {
