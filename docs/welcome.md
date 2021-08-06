@@ -4,8 +4,6 @@ id: welcome
 slug: /
 ---
 
-# THIS IS A PREVIEW BUILD
-
 Welcome to the technical documentation site for the Celo project!
 
 In this documentation you’ll find information on:
