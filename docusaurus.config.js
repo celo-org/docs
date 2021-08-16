@@ -68,10 +68,6 @@ module.exports = {
             ],
             copyright: `Copyright © ${new Date().getFullYear()} Celo Foundatio, Inc. Built with Docusaurus.`,
         },
-        googleAnalytics: {
-            trackingID: 'G-W2H8BZBELD',
-            anonymizeIP: true, // Should IPs be anonymized?
-        },
     },
     presets: [
         [
@@ -98,14 +94,5 @@ module.exports = {
     }],
     plugins: [
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
-        '@docusaurus/plugin-google-analytics',
-        [
-            '@docusaurus/plugin-sitemap',
-            {
-                changefreq: 'weekly',
-                priority: 0.5,
-                trailingSlash: false,
-            },
-        ],
     ]
 };

@@ -8,7 +8,7 @@ The Celo Wallet can be used to send and request payments with anyone who has ver
 
 ### Comment Encryption
 
-Comments are encrypted using the `messageEncryptionKey` of the sender and the recipient to ensure that comment contents are kept private. These encrypted comments are then stored on chain. For more details, please refer to the [Encrypted Payment Comments](../../protocol/transactions/tx-comment-encryption.md) section of protocol documentation.
+Comments are encrypted using the `messageEncryptionKey` of the sender and the recipient to ensure that comment contents are kept private. These encrypted comments are then stored on chain. For more details, please refer to the [Encrypted Payment Comments](/celo-codebase/protocol/transactions/tx-comment-encryption.md) section of protocol documentation.
 
 ### **Requesting**
 
@@ -27,6 +27,6 @@ In order for notifications to work in a fork of the Celo Wallet, creation of ano
 
 ## **Exchanging**
 
-The Mobile Exchange experience implements the uniswap-style exchange detailed in [Stability Mechanism Documentation](../../protocol/stability/doto.md). For this reason, rates provided are an overestimate of the current rate and subject to change \(such changes are presented to the user if they result in a less favorable rate\)
+The Mobile Exchange experience implements the uniswap-style exchange detailed in [Stability Mechanism Documentation](/celo-codebase/protocol/stability/doto.md). For this reason, rates provided are an overestimate of the current rate and subject to change \(such changes are presented to the user if they result in a less favorable rate\)
 
 \_\_

@@ -8,7 +8,7 @@ Behind every Valora wallet are two types of accounts: an externally owned accoun
 
 ### Separation of signer and payer
 
-When new users sign up with Valora, most wallets start with an empty balance. This makes it difficult for the user to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](index.md)). To make this experience more intuitive for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user. It does this by first deploying a meta-transaction wallet contract and setting the Valora EOA address as the signer. At this point, the EOA can sign transactions and submit them to Komenci. Komenci will wrap the signed transaction into a meta-transaction, which it pays for and submits to the network.
+When new users sign up with Valora, most wallets start with an empty balance. This makes it difficult for the user to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)). To make this experience more intuitive for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user. It does this by first deploying a meta-transaction wallet contract and setting the Valora EOA address as the signer. At this point, the EOA can sign transactions and submit them to Komenci. Komenci will wrap the signed transaction into a meta-transaction, which it pays for and submits to the network.
 
 ### Fund Recovery
 
@@ -23,13 +23,13 @@ When performing a payment to a Valora wallet, it's important that the address th
 3. Use the on-chain identifier to get the account address
 4. Use the account address to get the wallet address (EOA)
 
-The first two steps are covered extensively in [this guide](../../../developer-resources/contractkit/odis.md).
+The first two steps are covered extensively in [this guide](/developer-resources/contractkit/odis.md).
 
 To get the account address (step 3) you can use the [Attestation contract method `lookupAccountsForIdentifier`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Attestations.ts#L472).
 
 To get the wallet address from the account (step 4) you can use the [Account contract method `getWalletAddress`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L318).
 
-It may also be necessary to lookup the data encryption key (ex. [for comment encryption](../transactions/tx-comment-encryption.md)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
+It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/celo-codebase/protocol/transactions/tx-comment-encryption.md)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
 
 You can view a working example of this all tied together in [the `celocli` command `identity:get-attestations`](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/identity/get-attestations.ts).
 

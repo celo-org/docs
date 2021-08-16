@@ -16,15 +16,15 @@ The first set of active validators are determined in the genesis block. Thereaft
 
 ![](https://storage.googleapis.com/celo-website/docs/concepts.jpg)
 
-In Celo's [Validator Elections](validator-elections.md), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](validator-groups.md).
+In Celo's [Validator Elections](/celo-codebase/protocol/proof-of-stake/validator-elections.md), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/celo-codebase/protocol/proof-of-stake/validator-groups.md).
 
-Before they can vote, holders of CELO move balances into the [Locked Gold](locked-gold.md) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](../governance.md) proposals. This means that validators and groups can vote and earn rewards with their stake.
+Before they can vote, holders of CELO move balances into the [Locked Gold](/celo-codebase/protocol/proof-of-stake/locked-gold.md) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/celo-codebase/protocol/governance.md) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
 Unlike in other proof-of-stake systems, holding Locked Gold or voting for a group does not put that amount 'at risk' from slashing due to the behavior of validators or validator groups. Only the stake put up by a validator or group may be slashed.
 
 ## Implementation
 
-Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](../governance.md) process.
+Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](/celo-codebase/protocol//governance.md) process.
 
 - [`Accounts.sol`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) manages key delegation and metadata for all accounts including Validators, Groups and Locked Gold holders.
 
@@ -36,6 +36,6 @@ Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and a
 
 In Celo blockchain:
 
-- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](../consensus/validator-set-differences.md).
+- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](/celo-codebase/protocol//consensus/validator-set-differences.md).
 
 - [`consensus/istanbul/backend/pos.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/pos.go) is called in the last block of the epoch to process validator uptime scores and make epoch rewards.

@@ -3,7 +3,7 @@ title: Recovering Ethereum from a Celo Address
 slug: /celo-owner-guide/celo-recovery
 ---
 
-In this guide, steps are outlined to help you recover your [Ethereum](https://en.wikipedia.org/wiki/Ethereum#Addresses) if you accidentally transferred them to a [CELO (previously Celo Gold)](../overview.md#background-and-key-concepts).
+In this guide, steps are outlined to help you recover your [Ethereum](https://en.wikipedia.org/wiki/Ethereum#Addresses) if you accidentally transferred them to a [CELO (previously Celo Gold)](/overview.md#background-and-key-concepts).
 
 ## Prerequisites
 

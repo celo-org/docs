@@ -2,7 +2,7 @@
 title: Stability Algorithm (Mento)
 ---
 
-This section discusses the mechanism by which the supply of the Celo Dollar is achieved in the Celo protocol - the constant-product decentralized one-to-one mechanism (CP-DOTO). On a high level, CP-DOTO allows user demand to determine the supply of Celo Dollars by enabling users to create a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](oracles.md) value of the CELO to US Dollar market rate to work.
+This section discusses the mechanism by which the supply of the Celo Dollar is achieved in the Celo protocol - the constant-product decentralized one-to-one mechanism (CP-DOTO). On a high level, CP-DOTO allows user demand to determine the supply of Celo Dollars by enabling users to create a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](/celo-codebase/protocol/stability/oracles.md) value of the CELO to US Dollar market rate to work.
 
 This creates incentives such that when demand for the Celo Dollar rises and the market price is above the peg, users can profit using their own efforts by buying 1 US Dollar worth of CELO on the market, exchanging it with the protocol for one Celo Dollar, and selling that Celo Dollar for the market price. Similarly, when demand for the Celo Dollar falls and the market price is below the peg, users can profit using their own efforts by purchasing Celo Dollar at the market price, exchanging it with the protocol for 1 US Dollar worth of CELO, and selling the CELO to the market.
 

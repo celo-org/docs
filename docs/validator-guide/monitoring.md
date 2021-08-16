@@ -134,7 +134,7 @@ Celo adds specific functions around consensus:
 
 ## Monitoring Attestation Service
 
-It is also important to [monitor Attestation Service](attestation-service.md#monitoring) and the full node that it depends on.
+It is also important to [monitor Attestation Service](validator-guide/attestation-service.md#monitoring) and the full node that it depends on.
 
 ## Community Moniting Tools
 
