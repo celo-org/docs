@@ -246,6 +246,25 @@ module.exports = {
             'celo-codebase/protocol/optics',
             'celo-codebase/protocol/plumo',
           ]
+        },
+        {
+          type: 'category',
+          label: 'Celo Wallet',
+          items: [
+            { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/index', },
+            { type: 'doc', label: 'Running the wallet locally', id: 'celo-codebase/wallet/intro', },
+            { 
+              type: 'category', 
+              label: 'Wallet Functionality', 
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/how-the-wallet-works/README', },
+                'celo-codebase/wallet/how-the-wallet-works/verification',
+                'celo-codebase/wallet/how-the-wallet-works/invitations',
+                'celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments',
+                'celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync',
+              ]
+            }
+          ]
         }
       ]
     }

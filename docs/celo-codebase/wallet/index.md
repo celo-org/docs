@@ -1,6 +1,5 @@
 ---
 title: Celo Wallet
-id: wallet
 slug: /celo-codebase/wallet
 ---
 

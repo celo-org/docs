@@ -75,11 +75,11 @@ We use Jest snapshot testing to assert that no intentional changes to the compon
 
 ### Shallow rendering testing
 
-We use Enzyme as an additional testing tool. It allows for shallow rendering, which reduces running time and the amount of stubbing you have to do by only rendering the immediate children \(and not the grandchildren etc.\) Further, you can interact with the rendered tree to assert proper reactions to user interaction and input. See an example at [`src/components/CodeRow.test.tsx`](https://github.com/celo-org/wallet/blob/master/packages/mobile/src/components/CodeRow.test.tsx) or read more about the [docs](https://airbnb.io/enzyme/docs/guides/react-native.html)
+We use Enzyme as an additional testing tool. It allows for shallow rendering, which reduces running time and the amount of stubbing you have to do by only rendering the immediate children \(and not the grandchildren etc.\) Further, you can interact with the rendered tree to assert proper reactions to user interaction and input. See an example at [`src/components/CodeRow.test.tsx`](https://github.com/celo-org/wallet/blob/master/packages/mobile/src/components/CodeRow.test.tsx) or read more about the [docs](https://airbnb.io/enzyme/docs/guides/react-native.html).
 
 ### E2E testing
 
-We use [Detox](https://github.com/wix/Detox) for E2E testing. In order to run the tests locally, you must have the proper emulator set up. Emulator installation instructions can be [found here](https://docs.expo.io/versions/latest/workflow/android-studio-emulator/). Please make sure to set up the emulator you would like to run the tests with is set up properly with the name `Pixel_API_29_AOSP_x86_64`.
+We use [Detox](https://github.com/wix/Detox) for E2E testing. In order to run the tests locally, you must have the proper emulator set up. Emulator installation instructions can be [found here](https://docs.expo.dev/workflow/android-studio-emulator/). Please make sure to set up the emulator you would like to run the tests with is set up properly with the name `Pixel_API_29_AOSP_x86_64`.
 
 Please set `123456` as the pin code in the emulator, since the e2e tests rely on that.
 
