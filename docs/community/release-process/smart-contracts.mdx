@@ -1,10 +1,11 @@
+---
+title: Smart Contracts Release Process
+---
 export const N = "N";
 
-# Smart Contracts Release Process
-
-{% hint style="warning" %}
+:::warning
 This release process is a work in progress. Many infrastructure components required to execute it are not in place, and the process itself is subject to change.
-{% endhint %}
+:::
 
 ## Versioning
 
@@ -57,9 +58,9 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 
 There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](../../command-line-interface/introduction.md)) for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
 
-{% hint style="warning" %}​
+:::warning
 For these to run, you may need to follow the [setup instructions](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md). These steps include installing Node and setting `nvm` to use the correct version of Node. Successful `yarn install` and `yarn build` in the protocol package signal a completed setup.
-{% endhint %}
+:::
 
 Using these tools, a contract release candidate can be built, deployed, and proposed for upgrade automatically on a specified network. Subsequently, stakeholders can verify the release candidate against a governance upgrade proposal's contents on the network.
 
@@ -327,13 +328,13 @@ Deploying a new contract release should occur with the following process. On-cha
       <ol>
         <li>
           On Tuesday: Run the{" "}
-          <a href="#build-and-release-process">smart contract release script</a>{" "}
+          <a href="#release-process">smart contract release script</a>{" "}
           in order to to deploy the contracts to Baklava as well as submit a
           governance proposal.
           <ul>
             <li>
               Transition proposal through Baklava{" "}
-              <a href="https://docs.celo.org/celo-codebase/protocol/governance">
+              <a href="/celo-codebase/protocol/governance">
                 {" "}
                 governance process.
               </a>
@@ -359,7 +360,7 @@ Deploying a new contract release should occur with the following process. On-cha
         <li>Confirm all contracts working as intended on Baklava.</li>
         <li>
           Run the{" "}
-          <a href="https://docs.celo.org/community/release-process/smart-contracts#build-process">
+          <a href="#release-process">
             smart contract release script
           </a>{" "}
           in order to to deploy the contracts to Alfajores as well as submit a
@@ -414,7 +415,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="https://docs.celo.org/celo-codebase/protocol/governance">
+          <a href="/celo-codebase/protocol/governance">
             governance process.
           </a>
           <ul>
@@ -485,9 +486,9 @@ Make sure to keep the post up to date. All updates (excluding fixing typos) shou
 
 ### Emergency patches
 
-{% hint style="warning" %}
+:::warning
 Work in progress
-{% endhint %}
+:::
 
 ## Vulnerability Disclosure
 
@@ -499,6 +500,6 @@ None
 
 ## Dependents
 
-{% hint style="warning" %}
+:::warning
 Work in progress
-{% endhint %}
+:::

@@ -1,4 +1,6 @@
-# Grant Playbook
+---
+title: Grant Playbook
+---
 
 The Celo Foundation believes in investing in projects that share Celo’s mission of building an open financial system that creates conditions of prosperity for everyone. This document provides a summary of best practices that grantees are encouraged to follow to further this mission.
 

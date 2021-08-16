@@ -267,6 +267,26 @@ module.exports = {
           ]
         }
       ]
+    },
+    {
+      type: 'category',
+      label: 'Community',
+      items: [
+        { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
+        { type: 'doc', label: 'Contributing', id: 'community/contributing', },
+        { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
+        {
+          type: 'category',
+          label: ' Release Process',
+          items: [
+            { type: 'doc', label: 'Overview', id: 'community/release-process/README', },
+            { type: 'doc', label: 'Smart Contracts', id: 'community/release-process/smart-contracts', },
+            { type: 'doc', label: 'Blockchain Client', id: 'community/release-process/blockchain-client', },
+            { type: 'doc', label: 'CeloCLI and ContractKit', id: 'community/release-process/base-cli-contractkit-dappkit-utils', },
+            { type: 'doc', label: 'Attestation Service', id: 'community/release-process/attestation-service', },
+          ]
+        }
+      ]
     }
   ],
 };
