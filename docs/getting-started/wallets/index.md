@@ -77,3 +77,8 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [pesabase.com](https://pesabase.com/)
 - Platforms: iOS, Android
+
+### D’CENT
+
+- [https://dcentwallet.com/](https://dcentwallet.com/)
+- Platforms: Browser, iOS, Android
