@@ -34,7 +34,7 @@ For all releases:
 
 * Each package’s `CHANGELOG.md` file, as mentioned above
 * Github releases page, as mentioned above
-* [Discord](https://discord.gg/6yWMkgM): #developer-chat, #mainnet, and #sdk
+* [Discord](https://chat.celo.org): #developer-chat, #mainnet, and #sdk
 
 For major releases:
 
