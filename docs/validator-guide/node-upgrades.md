@@ -29,8 +29,10 @@ docker pull $CELO_IMAGE
 
 Stop and remove the existing node. Make sure to stop the node gracefully (i.e. giving it time to shut down and complete any writes to disk) or your chain data may become corrupted.
 
+Note: The `docker run` commands in the documentation have been updated to now include `--stop-timeout 300`, which should make the `-t 300` in `docker stop` below redundant. However, it is still recommended to include it just in case.
+
 ```bash
-docker stop -t 60 celo-fullnode
+docker stop -t 300 celo-fullnode
 docker rm celo-fullnode
 ```
 
