@@ -75,40 +75,42 @@ In addition to meeting the standard criteria, outlined above, the Foundation ant
 ## Application
 
 :::danger
-Make sure to complete all prerequisites before applying. 
+Make sure to complete all prerequisites before applying.
 :::
 
 :::info
-Note: Application for Cohort 7 is now open.
+Note: Application for Cohort 7 is now closed.
 :::
 
 
 [APPLY FOR FOUNDATION VOTES HERE](https://forum.celo.org/t/cohort-7-application-of-foundation-voting-program-is-now-open/829)
 
 ### Timings
+
 Cohort 7 application deadline: **April 10, 2021 at 23:59 UTC**
 
 Anticipated vote date for selected applicants in Cohort 7: **May 1, 2021**
 
-:::info
-Note: The anticipated vote date for new cohorts is a best-guess estimate given the requirements and coordination when it comes to voting for new applicants. 
+:::warning
+Note: The anticipated vote date for new cohorts is a best-guess estimate given the requirements and coordination when it comes to voting for new applicants.
 :::
 
-
-
 ### Application Prerequisites
-Before applying all validator group members should have: 
+
+Before applying all validator group members should have:
+
 * Completed the [Mastering the Art of Validating](https://youtu.be/3UIudzzCb8o) and [Validator Group Marketing](https://www.youtube.com/watch?v=0_veGIugCGQ) courses
 * Completed the [Security Self Assessment Audit](https://docs.google.com/presentation/d/e/2PACX-1vRdKNpXI2mvqwQF6L5LRrxPW2qRK-5MDce5EhqXqLC1MSYmupZMFnhp6YEP0gLYuRKW-FF0fcAqhEAp/pub?start=true&loop=false&delayms=10000&slide=id.g76d52a0216_0_333), which includes completing this [checklist](https://docs.google.com/spreadsheets/d/1FqmUfleCoyNIUep7PoVu3ujHd-OkHZJ8o6p7Affr93w/edit?usp=sharing)
 * Run at least one Validator and Validator Group on Mainnet or Baklava
 * Run an Attestation Service on either Mainnet or Baklava
 
-### Application Details 
+### Application Details
+
 Before applying be ready to share the following:
 * A personal statement telling the Foundation why your group should get votes (max 1,500 characters)
 * Validator Group details: email, name, website, address on Mainnet and Baklava, and geographic location
 * Information about your team: full names, link to professional profiles such as LinkedIn or GitHub, and an explanation of the team’s relevant experience
-* Whether your Group: 
+* Whether your Group:
     * Is validating or has validated in the past 1 month on the Celo Mainnet
     * Is currently receiving Foundation votes
     * Has been slashed in the past 6 months and if so why

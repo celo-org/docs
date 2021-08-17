@@ -10,11 +10,9 @@ Optics has been designed for ease of implementation in any blockchain that suppo
 
 ## Building Intuition for Optics
 
-Optics works something like a notary service. 
-
+Optics works something like a notary service.
 
 <img width="1172" alt="optics-notary" src="https://user-images.githubusercontent.com/2653576/115466701-4a3c9880-a1e5-11eb-87e3-ae1cbab49b0b.png"/>
-
 
 The sending (or “home”) chain produces a series of documents ("messages") that needs notarization. A notary (called the “updater”) is contracted to sign it. The notary can produce a fraudulent copy, but they will be punished by having their bond and license publicly revoked. When this happens, everyone relying on the notary learns that the notary is malicious. All the notary's customers can immediately block the notary and prevent any malicious access to their accounts.
 

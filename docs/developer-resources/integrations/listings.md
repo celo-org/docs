@@ -24,36 +24,48 @@ A general overview of integrations that would be relevant to you listing Celo Pl
 For more specific use-cases for exchanges, please checkout the [Custody and Exchange Integration Guide](https://docs.celo.org/developer-guide/integrations/custody) as well.
 
 ## Important Information
-### Celo Native Asset and Celo Dollar
 
-There are two important assets on the Celo network, the Celo native asset (CELO) and the Celo Dollar (cUSD). CELO was called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold in the codebase. To learn more about the two, please read [this](https://docs.celo.org/developer-guide/celo-for-eth-devs#the-celo-native-asset-and-the-celo-dollar) section of the docs.
+### Celo Native Asset and Stable Value Currencies
+
+There are key assets on the Celo network, the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/developer-guide/celo-for-eth-devs#the-celo-native-asset-and-the-celo-dollar) section of the docs.
 
 You can also view the CGP proposal regarding the name change [here](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0003.md) and the forum post about the name change [here](https://forum.celo.org/t/proposal-to-rename-celo-gold-to-celo-native-asset/528).
 
 ## Resources
-### Address for CELO and cUSD
-The smart contract address for CELO can be found on the explorer [here](https://explorer.celo.org/address/0x471ece3750da237f93b8e339c536989b8978a438/transactions). It is `0x471ece3750da237f93b8e339c536989b8978a438`.
-The smart contract address for cUSD can be found on the explorer [here](https://explorer.celo.org/address/0x765de816845861e75a25fca122bb6898b8b1282a/transactions).
-It is `0x765de816845861e75a25fca122bb6898b8b1282a`.
 
+### Address for CELO and Stable Value Currencies
+
+* CELO ($CELO) - [`0x471ece3750da237f93b8e339c536989b8978a438`](https://explorer.celo.org/address/0x471ece3750da237f93b8e339c536989b8978a438/transactions)
+* Celo Dollar ($cUSD) - [`0x765de816845861e75a25fca122bb6898b8b1282a`](https://explorer.celo.org/address/0x765de816845861e75a25fca122bb6898b8b1282a/transactions)
+* Celo Euro ($cEUR) - [`0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`](https://explorer.celo.org/address/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73/transactions)
 
 ### Useful API endpoints
+
 The following are useful API endpoints available to you that would help you in your listings of the CELO and cUSD digital assets.
 
-#### CELO and cUSD
+#### CELO and Stable Value Currencies
 
 ##### Total CELO supply
+
 For querying the API on total coins in circulation in CELO, which are the total amount of coins in existence right now, the following endpoint will provide you with that:
 ```sh
 $ curl  [https://thecelo.com/api/v0.1.js?method=ex_totalcoins](https://thecelo.com/api/v0.1.js?method=ex_totalcoins) {"code":"200","msg":"success","data":{"CELO":608485841.9959723,"cUSD":10250632.56099673}}
 ```
 
-##### cUSD Circulating Supply
+##### Stable Value Currencies
+
+###### cUSD Circulating Supply
+
 Circulating Supply refers to the # of coins that are circulating in the market and in the general public's hands.
+
 ```sh
 $ curl https://thecelo.com/api/v0.1.js?method=ex_cusd_circulating
 11353464.550486518
 ```
+
+###### cEUR Circulating Supply
+
+This endpoint is not yet available.
 
 #### CP-DOTO (Stability Algorithm)
 
@@ -61,8 +73,14 @@ CP-DOTO information can be found [here](https://docs.celo.org/celo-codebase/prot
 
 For API endpoints useful for listing that follow [CMC requirements](https://docs.google.com/document/d/1S4urpzUnO2t7DmS_1dc4EL4tgnnbTObPYXvDeBnukCg/edit#)
 
+##### Mento Addresses
+
+* cUSD/CELO contract - [`0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275`](https://explorer.celo.org/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275/transactions)
+* cEUR/CELO contract - [`0xE383394B913d7302c49F794C7d3243c429d53D1d`](https://explorer.celo.org/address/0xE383394B913d7302c49F794C7d3243c429d53D1d/transactions)
+
 ##### Summary
-Summary overview of market data for all tickers and all markets.
+
+Summary overview of market data for all tickers and all markets. These endpoints don't yet support cEUR.
 
 ```sh 
 $ curl https://thecelo.com/api/v0.1.js?method=ex_summary
@@ -71,6 +89,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_summary
 ```
 
 ##### Assets
+
 In depth details of the assets available on the exchange.
 
 ```sh
@@ -80,6 +99,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_assets
 ```
 
 ##### Ticker
+
 24-hour rolling window price change statistics.
 
 ```sh
@@ -89,6 +109,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_ticker
 ```
 
 ##### Orderbook
+
 Market depth of a trading pair. One array containing a list of ask prices and another array containing bid prices.
 
 ```sh
@@ -98,6 +119,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_orderbook
 ```
 
 ##### CELO cUSD
+
 Recently completed (past 24h) trades.
 
 ```sh 
@@ -107,6 +129,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 ```
 
 ### Whitepapers
+
 To learn about the Celo Protocol, please refer to the [whitepaper](https://celo.org/papers/Celo_A_Multi_Asset_Cryptographic_Protocol_for_Decentralized_Social_Payments.pdf).
 
 If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](https://docs.celo.org/#useful-links) page.
@@ -117,7 +140,9 @@ The [Stability Analysis Whitepaper](https://celo.org/papers/Celo_Stability_Analy
 If you want to find more information about the Celo Reserve, a diversified portfolio of cryptocurrencies supporting the ability of the Celo protocol to expand and contract the supply of Celo stable assets, please visit [https://celoreserve.org](https://celoreserve.org ).
 
 ### Github
+
 The Celo Protocol GitHub is located [here.](https://github.com/celo-org/)
 
 ### Audits
+
 All the security audits on the smart contracts, security and economics of the Celo Platform can be found [here](https://celo.org/audits).
