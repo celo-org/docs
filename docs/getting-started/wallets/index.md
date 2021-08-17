@@ -20,7 +20,7 @@ Valora is a mobile wallet focused on making global peer-to-peer payments simple 
 
 - [valoraapp.com](https://valoraapp.com)
 - Platforms: iOS, Android
-- Maintainers: [cLabs](https://clabs.co)
+- Maintainers: [Valora](https://valoraapp.com)
 - Ledger support: No
 
 ### CeloWallet.app
@@ -53,6 +53,20 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 ## Celo Compatible Wallets
 
 There are currently a few other compatible wallets. When the upcoming [Donut hard-fork](https://github.com/celo-org/celo-proposals/issues/94) is live, Celo transactions will become compatible with Ethereum transactions. This will allow some Ethereum wallets to work with Celo. More updates on this coming soon.
+
+### Metamask
+
+You can learn more about connecting Metamask to the Celo network [here](/getting-started/wallets/using-metamask-with-celo).
+
+- [metamask.io](https://metamask.io/)
+- Platforms: Browser, iOS, Android
+
+### Wallet Connect
+
+Strictly speaking, wallet connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 2, so dapp developers should use V2 as well. You can learn more about getting started with wallet connect on Celo with [this tutorial](/developer-guide/start/wallet-connect).
+
+- [walletconnect.org/](https://walletconnect.org/)
+- Platforms: Browser, iOS, Android
 
 ### Dove Wallet
 
