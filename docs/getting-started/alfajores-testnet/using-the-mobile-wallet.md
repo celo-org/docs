@@ -16,7 +16,7 @@ If you need more funds, you can always visit [celo.org/build/faucet](https://cel
 
 For more information on how to run a build of the Celo Wallet and develop on it, please refer to the [Running the Wallet Locally](/celo-codebase/wallet/intro) section.
 
-For more detailed information on how to get an account please refer to the [Getting an Account and Funds](faucet.md) section.
+For more detailed information on how to get an account please refer to the [Getting an Account and Funds](/getting-started/alfajores-testnet/faucet.md) section.
 
 ### Report a Bug
 

@@ -19,7 +19,7 @@ Celo has [WIP QR code standard CIP16](https://github.com/celo-org/celo-proposals
 
 ## Custodian/Exchange
 
-Please read more under [Custody](./custody.md), but here is a shortened version:
+Please read more under [Custody](/developer-resources/integrations/custody.md), but here is a shortened version:
 
 ### Detect Transfers
 
@@ -65,7 +65,7 @@ The Celo ecosystem relies on a diverse set of applications to be built so that u
 
 ## Validator Group Explorers
 
-[Validator Group Explorers](../../celo-holder-guide/voting-validators.md#validator-explorers) are critical to Celo's Proof of Stake system. Explorers will consider using the following standards to provide a minimum experience across all explorers.
+[Validator Group Explorers](/celo-holder-guide/voting-validators.md#validator-explorers) are critical to Celo's Proof of Stake system. Explorers will consider using the following standards to provide a minimum experience across all explorers.
 
 ### Names
 
@@ -77,4 +77,4 @@ Celo accounts can make claims to existing identities, some of which are verifiab
 
 ### Performance indicators
 
-Validator Groups and their validators can perform their duties differently and explorers should reflect that to allow voters to ensure an optimal validator set. While uptime in the form of block signatures by the validators ultimately affect rewards, explorers should also consider displaying [other metrics](../../celo-holder-guide/voting-validators.md#choosing-a-validator-group) that impact the success of the Celo ecosystem, such as validators' performance in the identity protocol.
+Validator Groups and their validators can perform their duties differently and explorers should reflect that to allow voters to ensure an optimal validator set. While uptime in the form of block signatures by the validators ultimately affect rewards, explorers should also consider displaying [other metrics](/celo-holder-guide/voting-validators.md#choosing-a-validator-group) that impact the success of the Celo ecosystem, such as validators' performance in the identity protocol.

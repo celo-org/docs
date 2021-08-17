@@ -27,7 +27,7 @@ There are three categories of slashing conditions:
 
 Provable slashing conditions cannot be initiated automatically on chain but information provided from an external source can be definitively verified on-chain.
 
-In exchange for sending a transaction which initiates a successful provable slashing condition on-chain, the reporter receives a "reward", a portion of the slashed amount (which will always be greater than the gas costs of the proof). The reward is added to the reporter's balance of non-voting LockedGold. The remainder of the slashed amount is sent to the [Community Fund](community-fund.md).
+In exchange for sending a transaction which initiates a successful provable slashing condition on-chain, the reporter receives a "reward", a portion of the slashed amount (which will always be greater than the gas costs of the proof). The reward is added to the reporter's balance of non-voting LockedGold. The remainder of the slashed amount is sent to the [Community Fund](/celo-codebase/protocol/proof-of-stake/community-fund.md).
 
 - **Persistent downtime -** A validator which can be shown to be absent from 8640 consecutive BLS signatures will be slashed 100 CELO, have future rewards suppressed, and (most importantly in this case) will be ejected from its current group.
 
@@ -35,4 +35,4 @@ In exchange for sending a transaction which initiates a successful provable slas
 
 ### **Governed**
 
-For misbehavior which is harder to formally classify and requires some off-chain knowledge, slashing can be performed via [governance proposals](../governance.md). These conditions are important for preventing nuanced validator attacks.
+For misbehavior which is harder to formally classify and requires some off-chain knowledge, slashing can be performed via [governance proposals](/celo-codebase/protocol//governance.md). These conditions are important for preventing nuanced validator attacks.

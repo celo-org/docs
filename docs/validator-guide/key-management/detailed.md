@@ -9,11 +9,11 @@ This page provides a detailed description of the various account roles found in 
 
 Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.
 
-Celo Accounts can be designated as Locked Gold Accounts or authorized as signer keys on behalf of a Locked Gold Account by sending special transactions using [celocli](../../command-line-interface/introduction.md). Note that Celo accounts that have not been designated as Locked Gold Accounts or authorized signers may not be able to send certain transactions related to proof-of-stake.
+Celo Accounts can be designated as Locked Gold Accounts or authorized as signer keys on behalf of a Locked Gold Account by sending special transactions using [celocli](/command-line-interface/introduction.md). Note that Celo accounts that have not been designated as Locked Gold Accounts or authorized signers may not be able to send certain transactions related to proof-of-stake.
 
 ## Locked Gold Accounts
 
-[Locked Gold](../../celo-codebase/protocol/proof-of-stake/locked-gold.md) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in proof-of-stake. Furthermore, Locked Gold Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked Gold Account.
+[Locked Gold](/celo-codebase/protocol/proof-of-stake/locked-gold.md) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in proof-of-stake. Furthermore, Locked Gold Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked Gold Account.
 
 In *most* cases, the Locked Gold Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked Gold Account with both the authorized vote signer *and* the Locked Gold Account.
 
@@ -31,7 +31,7 @@ celocli account:register --from $ADDRESS_TO_DESIGNATE --useLedger
 celocli account:show $ADDRESS_TO_DESIGNATE
 ```
 
-Note that [ReleaseGold](../../celo-holder-guide/release-gold.md) beneficiary keys are considered vanilla Celo accounts with respect to proof-of-stake, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked Gold Account.
+Note that [ReleaseGold](/celo-holder-guide/release-gold.md) beneficiary keys are considered vanilla Celo accounts with respect to proof-of-stake, and that the `ReleaseGold` contract address is what ultimately gets designated as a Locked Gold Account.
 
 ## Authorized Vote Signers
 

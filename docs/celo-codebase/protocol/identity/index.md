@@ -9,9 +9,9 @@ Celo’s unique purpose is to make financial tools accessible to anyone with a m
 
 ### Adding their phone number to the mapping
 
-To allow Bob to find an address mapped to her phone number, Alice can request attestations to their phone number \(technically the hash of their phone number\) from the `Attestations` contract by transferring the attestation request fee to it. The fee per attestation request is set on the contract with [Governance](../governance.md). After a brief waiting time of currently `4` blocks, the `Attestations` contract will use the `Random` contract to do a random selection over the current validator set in the `Validators` contract who will become responsible for these attestation requests.
+To allow Bob to find an address mapped to her phone number, Alice can request attestations to their phone number \(technically the hash of their phone number\) from the `Attestations` contract by transferring the attestation request fee to it. The fee per attestation request is set on the contract with [Governance](celo-codebase/protocol/governance.md). After a brief waiting time of currently `4` blocks, the `Attestations` contract will use the `Random` contract to do a random selection over the current validator set in the `Validators` contract who will become responsible for these attestation requests.
 
-As part of the expectation to validators, they run the attestation service whose endpoint they register in their [Metadata](./metadata.md). Alice can identify the validators responsible for her attestation from the smart contract, determine the validators' attestation service URLs from their [Metadata](./metadata.md) and request attestations from them. In turn, the attestation service produces a signed secret message that acts as an attestation by that validator that Alice owns the phone number. The validator sends that message via SMS. Read more under [attestation service](#attestation-service).
+As part of the expectation to validators, they run the attestation service whose endpoint they register in their [Metadata](/celo-codebase/protocol/identity/metadata.md). Alice can identify the validators responsible for her attestation from the smart contract, determine the validators' attestation service URLs from their [Metadata](/celo-codebase/protocol/identity/metadata.md) and request attestations from them. In turn, the attestation service produces a signed secret message that acts as an attestation by that validator that Alice owns the phone number. The validator sends that message via SMS. Read more under [attestation service](#attestation-service).
 
 When Alice receives the text message, she can take that signed message to the `Attestations` contract, which can verify that the attestation came from the validator indeed. Upon a successful attestation, the validator can redeem for the attestation request fee to pay them for the cost of sending the SMS. In the end, we have recorded an attestation by the validator to a mapping of Alice’s phone number to her account address.
 
@@ -27,7 +27,7 @@ There are additional measures we can take to further secure the integrity of the
 
 ### Preventing harvesting of phone numbers
 
-To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](./phone-number-privacy.md)
+To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](/celo-codebase/protocol/identity/phone-number-privacy.md)
 
 ### Attestation service
 
@@ -37,4 +37,4 @@ We have been experimenting with a SMS provider that we would like community feed
 
 ### Future improvements to privacy
 
-Celo is committed to meet the privacy needs of its users. More details about areas for future research can be found in [Privacy Research](./privacy-research.md)
+Celo is committed to meet the privacy needs of its users. More details about areas for future research can be found in [Privacy Research](/celo-codebase/protocol/identity/privacy-research.md)

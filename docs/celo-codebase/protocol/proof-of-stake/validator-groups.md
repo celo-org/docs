@@ -26,7 +26,7 @@ While an account has a registered validator group, or for up to a `deregistratio
 
 ## Group Share
 
-Validator groups are compensated by taking a share (the 'Group Share') of the [validator rewards](validator-rewards.md) from any of its member validators that are elected during an epoch. This value is set at registration time and can be changed later.
+Validator groups are compensated by taking a share (the 'Group Share') of the [validator rewards](/celo-codebase/protocol/proof-of-stake/validator-rewards.md) from any of its member validators that are elected during an epoch. This value is set at registration time and can be changed later.
 
 ## Changing Group Members
 
@@ -38,12 +38,12 @@ This means that while a group can unilaterally remove a validator, and a validat
 
 ## Votes and Voting Cap
 
-Validator Groups can receive votes from Locked Gold up to a [voting cap](validator-elections.md#group-voting-caps). This value is set to be the number of votes that would be needed to elect all of its validators, plus one more validator. The cap is enforced at the point of voting: a user can only cast a vote for a group if it currently has fewer votes than this cap.
+Validator Groups can receive votes from Locked Gold up to a [voting cap](/celo-codebase/protocol/proof-of-stake/validator-elections.md#group-voting-caps). This value is set to be the number of votes that would be needed to elect all of its validators, plus one more validator. The cap is enforced at the point of voting: a user can only cast a vote for a group if it currently has fewer votes than this cap.
 
 ## Slashing Penalty
 
-A [slashing penalty](penalties.md), initially `1.0`, is also tracked for each validator group. This value may be reduced as a penalty for misbehavior of the validator in the group. It affects the future rewards of the group, its validators, and Locked Gold holders receiving rewards for voting for the group.
+A [slashing penalty](/celo-codebase/protocol/proof-of-stake/penalties.md), initially `1.0`, is also tracked for each validator group. This value may be reduced as a penalty for misbehavior of the validator in the group. It affects the future rewards of the group, its validators, and Locked Gold holders receiving rewards for voting for the group.
 
 ## Metadata
 
-Both validators and validator groups can use [Accounts Metadata](../identity/metadata.md) to provide unverified metadata (such as name and organizational affiliation) as well as claims that can be verified off-chain for control of third-party accounts. All validators are encouraged to make a verifiable claim for [domain names](../../../validator-guide/validator-explorer.md).
+Both validators and validator groups can use [Accounts Metadata](/celo-codebase/protocol/identity/metadata.md) to provide unverified metadata (such as name and organizational affiliation) as well as claims that can be verified off-chain for control of third-party accounts. All validators are encouraged to make a verifiable claim for [domain names](/validator-guide/validator-explorer.md).

@@ -3,7 +3,7 @@ title: Querying on-chain identifiers with ODIS
 slug: /developer-guide/contractkit/odis
 ---
 
-This guide walks through using ContractKit to query the on-chain identifier given a phone number. See [this overview document](../../celo-codebase/protocol/identity/phone-number-privacy.md) for more details on ODIS. One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.
+This guide walks through using ContractKit to query the on-chain identifier given a phone number. See [this overview document](/celo-codebase/protocol/identity/phone-number-privacy.md) for more details on ODIS. One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.
 
 :::info
 ODIS requests are rate-limited based on transaction history and balance. Ensure the account that is performing the queries has a balance and has performed transactions on the network. If an out of quota error is hit, this indicates that more transactions need to be sent from the querying account.
@@ -16,7 +16,7 @@ There are two methods for ODIS:
 
 ## Authentication
 
-Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](./data-encryption-key.md)
+Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer-resources/contractkit/data-encryption-key.md)
 
 You may use the `EncryptionKeySigner` for your `AuthSigner` by passing in the raw private key:
 
