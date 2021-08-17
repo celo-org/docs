@@ -111,7 +111,7 @@ To illustrate this, you may refer to the following table:
 
   See [Command Line Interface \(CLI\) ](/command-line-interface/introduction.md)for instructions on how to get set up.
 
-- **You are using the latest Node 10.x LTS**
+- **You are using the latest Node.js 12.x**
 
   Some users have reported issues using the most recent version of node. Use the LTS for greater reliability.
 
