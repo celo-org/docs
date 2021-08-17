@@ -8,7 +8,7 @@ The protocol aims to incentivize validator uptime performance and penalize past 
 Five factors affect validator and group rewards:
 
 - The on-target reward amount for this epoch
-- The protocol's [overall spending vs target of epoch rewards](epoch-rewards.md)
+- The protocol's [overall spending vs target of epoch rewards](/celo-codebase/protocol/proof-of-stake/epoch-rewards.md)
 - The validator’s ‘uptime score’
 - The current value of the slashing penalty for the group of which it was a member at the last election
 - The group share for the group of which it was a member at the last election

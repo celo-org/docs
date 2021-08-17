@@ -2,13 +2,13 @@
 title: Attestation Service
 ---
 
-Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
+Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator-guide/celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
 
-The Attestation Service is part of the [Celo identity protocol](../celo-codebase/protocol/identity). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
+The Attestation Service is part of the [Celo identity protocol](/celo-codebase/protocol/identity). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
 
 ![](https://storage.googleapis.com/celo-website/docs/attestations-flow.jpg)
 
-Validators receive a fee (set by [on-chain governance](../celo-holder-guide/voting-governance.md), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. In a future release, validators will be able claim and withdraw this fee.
+Validators receive a fee (set by [on-chain governance](/celo-holder-guide/voting-governance.md), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. In a future release, validators will be able claim and withdraw this fee.
 
 ## Outline
 
@@ -105,7 +105,7 @@ MessageBird support is introduced in version 1.2.0 and later. After signing up f
 
 This section uses several environment variables defined during the validator setup. You'll need to export `CELO_IMAGE` and `CELO_VALIDATOR_RG_ADDRESS` on this machine.
 
-Setting up an Attestation Service first requires an [Attestation Signer key](key-management/detailed.md#authorized-attestation-signers) to be registered (Similar to Validator and Vote signer keys). For that let's start our node on the Attestations machine (keep track of the password you use for this account):
+Setting up an Attestation Service first requires an [Attestation Signer key](validator-guide/key-management/detailed.md#authorized-attestation-signers) to be registered (Similar to Validator and Vote signer keys). For that let's start our node on the Attestations machine (keep track of the password you use for this account):
 
 ```bash
 # On the Attestation machine
@@ -231,7 +231,7 @@ MessageBird configuration options (v1.2.0+):
 
 ## Registering Metadata
 
-Celo uses [Metadata](../celo-codebase/protocol/identity/metadata.md) to allow accounts to make certain claims without having to do so on-chain. Users can use any authorized signer address to make claims on behalf of the registered Account. For convenience this guide uses the `CELO_ATTESTATION_SIGNER_ADDRESS`, but any authorized signer will work. Note that metadata needs recreating if the key signing it is changed; it is recommended not to use the validator signer address since that key is typically rotated more regularly.
+Celo uses [Metadata](/celo-codebase/protocol/identity/metadata.md) to allow accounts to make certain claims without having to do so on-chain. Users can use any authorized signer address to make claims on behalf of the registered Account. For convenience this guide uses the `CELO_ATTESTATION_SIGNER_ADDRESS`, but any authorized signer will work. Note that metadata needs recreating if the key signing it is changed; it is recommended not to use the validator signer address since that key is typically rotated more regularly.
 
 To complete the metadata process, we have to claim which URL users can request attestations from. Run the following commands on your local machine. This section uses several environment variables defined during the validator setup.
 
@@ -300,7 +300,7 @@ If you are using a load balancer in front of Attestation Service with a URL base
 
 Attestation Service provides a test endpoint.
 
-You can run the following command ([reference]("../command-line-interface/identity.md#celocli identity:test-attestation-service")) to test an Attestation Service and send an SMS to yourself:
+You can run the following command ([reference]("/command-line-interface/identity.md#celocli identity:test-attestation-service")) to test an Attestation Service and send an SMS to yourself:
 
 ```bash
 celocli identity:test-attestation-service --from $CELO_ATTESTATION_SIGNER_ADDRESS --phoneNumber <YOUR-PHONE-NUMBER-E164-FORMAT> --message <YOUR_MESSAGE> [--provider <PROVIDER>]
@@ -318,7 +318,7 @@ If this works then your attestation service should be successfully deployed!
 
 ## Monitoring
 
-It is important to monitor the Attestation Service and also [monitor the full node](monitoring.md) that it depends on.
+It is important to monitor the Attestation Service and also [monitor the full node](/validator-guide/monitoring.md) that it depends on.
 
 ### Logging
 

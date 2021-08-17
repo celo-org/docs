@@ -3,7 +3,7 @@ title: Validator Signer Key Rotation
 slug: /validator-guide/summary/key-rotation
 ---
 
-As detailed in [the Celo account roles description page](./detailed.md), Celo Locked Gold accounts can authorize separate signer keys for various roles such as voting or validating. This way, if an authorized signer key is lost or compromised, the Locked Gold account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
+As detailed in [the Celo account roles description page](/validator-guide/key-management/detailed.md), Celo Locked Gold accounts can authorize separate signer keys for various roles such as voting or validating. This way, if an authorized signer key is lost or compromised, the Locked Gold account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
 
 ### Validator Signer Rotation
 
@@ -42,7 +42,7 @@ celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role valid
 ```
 
 :::caution
-Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](./detailed.md#authorized-validator-bls-signers).
+Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](/validator-guide/key-management/detailed.md#authorized-validator-bls-signers).
 :::
 
 3. **Leave all validator and proxy nodes running** until the next epoch change. At the start the next epoch, the new Validator signer should take over participation in consensus.

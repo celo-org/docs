@@ -3,7 +3,7 @@ title: Celo for Ethereum Developers
 slug: /developer-guide/celo-for-eth-devs
 ---
 
-For a general overview of the Celo network and architecture, see [the Celo Overview page](../overview.md).
+For a general overview of the Celo network and architecture, see [the Celo Overview page](/developer-resources/overview.md).
 
 ## What is Celo's Relationship to Ethereum?
 
@@ -81,6 +81,7 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
  Celo transaction objects include the same fields as Ethereum transaction objects, plus feeCurrency, gatewayFee and gatewayFeeRecipient. 
  These additional fields are included to provide [full node incentives](../overview.md#incentives-for-operating-full-nodes) 
  and to allow users to [pay transaction fees in different currencies.](../overview.md#richer-transactions) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
+
 
  3. When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
 

@@ -19,13 +19,13 @@ ContractKit is now a [suite of packages](https://github.com/celo-org/celo-monore
 ### Main packages
 
  - `Connect` handles how we communicate to the our chain nodes. It wraps the `web3` library and has its own `rpcCaller` class, to make custom calls to the node. It's the layer in charge of knowing how and which parameters are added by Celo, connect to the node, build the message, send it and handle those responses.
- - `ContractKit` is a reduced subset of the previous versions of ContractKit. This is the layer in charge of loading and using our [core contracts](contracts-wrappers-registry.md). Internally, uses the `connect` package described above. It has our contracts generated from the ABIs, their wrappers, and also the logic to make claims.
+ - `ContractKit` is a reduced subset of the previous versions of ContractKit. This is the layer in charge of loading and using our [core contracts](/developer-resources/contractkit/contracts-wrappers-registry.md). Internally, uses the `connect` package described above. It has our contracts generated from the ABIs, their wrappers, and also the logic to make claims.
 
 ### Complementary Packages
 
  - `Explorer` depends on `contractkit` and `connect`. It provides some utility functions that make it easy to listen for new block and log information.
  - `Governance` depends on `contractkit` and `explorer`. It provides functions to read and interact with Celo Governance Proposals (CGPs).
- - `Identity` simplifies interacting with [ODIS](odis.md), Celo’s lightweight identity layer based on phone numbers.
+ - `Identity` simplifies interacting with [ODIS](/developer-resources/contractkit/odis.md), Celo’s lightweight identity layer based on phone numbers.
  - `Network-utils` provides utilities for getting genesis block and static node information.
  - `Transactions-uri` makes it easy to generate Celo transaction URIs and QR codes.
 

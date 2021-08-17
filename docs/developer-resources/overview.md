@@ -8,7 +8,7 @@ on Celo.
 
 ## Quick Start Guides
 
-View the [Developer Code Examples page](start.md) to get started using the Celo SDKs with guided coding exercises.
+View the [Developer Code Examples page](/developer-resources/start.md) to get started using the Celo SDKs with guided coding exercises.
 
 ## Tools
 
@@ -35,7 +35,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 - [Valora](https://valoraapp.com/) provides a clean, intuitive UI where users can send transactions and interact with smart contracts
 - [Forno](/developer-guide/forno)
   - Node access service so you can connect your dapp to the Celo blockchain without having to run node infrastructure
-- [ODIS](contractkit/odis.md)
+- [ODIS](/developer-resources/contractkit/odis.md)
   - Oblivious decentralized identity service
   - Lightweight identity layer that makes it easy to send cryptocurrency to a phone number
 - Blockscout block explorers
@@ -54,7 +54,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 
 - Similarities between Celo and Ethereum means you can use many of the most popular Ethereum developer tools.
   - Celo supports the EVM, so tools for writing smart contracts in Solidity (or any language that compiles to EVM bytecode) are compatible with Celo
-  - ERC20, NFT (ERC721) and other smart contract interface standards are supported, see [Celo for Ethereum Developers](celo-for-eth-devs.md)
+  - ERC20, NFT (ERC721) and other smart contract interface standards are supported, see [Celo for Ethereum Developers](developer-resources/celo-for-eth-devs.md)
   - [Truffle](https://www.trufflesuite.com/)
   - [OpenZeppelin](https://openzeppelin.com/)
   - [Remix](https://remix.ethereum.org/)
@@ -62,7 +62,7 @@ View the [Developer Code Examples page](start.md) to get started using the Celo 
 
 ### Ongoing projects
 
-- [Community projects](celo-dapp-gallery.md)
+- [Community projects](developer-resources/celo-dapp-gallery.md)
 - [Grant recipients](https://celo.org/experience/grants/directory)
 - Web wallets
   - [celowallet.app](https://celowallet.app)

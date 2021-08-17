@@ -12,7 +12,7 @@ When a new version of the Celo node is available, you can follow this guide to u
 
 Upgrades to the Celo node software will often be optional improvements, such as improvements to performance, new useful features, and non-critical bug fixes.
 
-Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes. Required upgrades are enforced by setting the via a minimum client version number stored on-chain, which may be updated via [Governance](../celo-codebase/protocol/governance.md) after the client is made available.
+Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes. Required upgrades are enforced by setting the via a minimum client version number stored on-chain, which may be updated via [Governance](/celo-codebase/protocol/governance.md) after the client is made available.
 
 ## Upgrading a non-validating node
 
@@ -47,7 +47,7 @@ Start the new node using `docker run` as detailed in the appropriate section of 
 
 Upgrading a validating node is much the same, but requires extra care to be taken to prevent validator downtime.
 
-One option to complete a validating node upgrade is to perform a key rotation onto a new node. Pull the latest Docker image, as mentioned above, then execute a Validator signing key rotation, using the latest image as the new Validator signing node. A recommended procedure for key rotation is documented in the [Key Management](key-management/key-rotation.md) guide.
+One option to complete a validating node upgrade is to perform a key rotation onto a new node. Pull the latest Docker image, as mentioned above, then execute a Validator signing key rotation, using the latest image as the new Validator signing node. A recommended procedure for key rotation is documented in the [Key Management](validator-guide/key-management/key-rotation.md) guide.
 
 A second option is to perform a hot-swap to switch over to a new validator node. The new validator node **must** be configured with the same set of proxies as the existing validator node.
 

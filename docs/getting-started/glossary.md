@@ -224,7 +224,7 @@ The process, when a node joins the network, of requesting and receiving block he
 
 ## SDK
 
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](/developer-guide/dappkit) and [ContractKit](../developer-resources/contractkit/index.md).
+Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](/developer-guide/dappkit) and [ContractKit](/developer-resources/contractkit/index.md).
 
 ## Slashing
 

@@ -76,13 +76,13 @@ Compared to Ethereum transaction, Celo transactions have 3 additional, optional 
 - `feeCurrency` - Specifies the address of the currency in which fees should be paid. If `null`, the native token `CELO` is assumed.
 
 <!-- TODO: Fix this link when this part of the docs is done
-- `gatewayFeeRecipient` - As part of [Full Node Incentives](../../celo-codebase/protocol/transactions/full-node-incentives.md), light clients will need to specify the address of their gateway for it to forward the transactions onto the network.
+- `gatewayFeeRecipient` - As part of [Full Node Incentives](/celo-codebase/protocol/transactions/full-node-incentives.md), light clients will need to specify the address of their gateway for it to forward the transactions onto the network.
 -->
 
 - `gatewayFee` - The value of the gateway fee.
 
 <!-- TODO: Fix this link when this part of the docs is done
-[Read more about Celo Transactions](../../celo-codebase/protocol/transactions)
+[Read more about Celo Transactions](/celo-codebase/protocol/transactions)
 -->
 
 To sign transactions, you have the following options:

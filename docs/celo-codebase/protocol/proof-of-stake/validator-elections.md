@@ -2,7 +2,7 @@
 title: Validator Elections
 ---
 
-The active validator set is updated by running an election in the final block of each epoch, after processing transactions and [Epoch Rewards](epoch-rewards.md).
+The active validator set is updated by running an election in the final block of each epoch, after processing transactions and [Epoch Rewards](/celo-codebase/protocol/proof-of-stake/epoch-rewards.md).
 
 ## Group Voting Caps
 
