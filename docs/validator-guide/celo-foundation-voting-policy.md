@@ -1,10 +1,12 @@
-# Celo Foundation Validator Voting Policy
+---
+title: Celo Foundation Voting Policy
+---
 
 The following describes how the Celo Foundation anticipates allocating its votes to validator groups, with special attention to the first allocated groups at the Celo Mainnet release and the months thereafter.
 
-{% hint style="info" %}
+:::info
 The policy described here can change at any time as determined by the Foundation Board.
-{% endhint %}
+:::
 
 ## Policy Objectives
 
@@ -43,7 +45,6 @@ To support effective and responsible validators, the Foundation considers the fo
 * **Uptime Performance.** High performance uptime score over the past 30 days on Mainnet (or Baklava if not elected on Mainnet)
 
 **Note**: If you are NOT ELECTED on Mainnet, you must be validating on Baklava testnet for at least 30 days. If you are ELECTED you must run validators and attestation service for at least one month (30 days) on Mainnet. If you are ELECTED on mainnet but for less than 30 days, you must be validating on Baklava for 30 days at least.
-
 
 ### Supporting Criteria 
 
@@ -112,7 +113,6 @@ You will receive an email from Celo Foundation asking you if you are interested 
 
 At the application deadline date for new applicants, your validator group will be evaluated on Performance Score and Attestation Score. If you score above the Foundation’s threshold, you will be considered for the new cohort along with the new applicants reapplying, limited by seat availability in that cohort. If you don’t make the new cohort, you are invited to reapply for the next cohort application.
 
-
 ### Cohort Information
 
 Past Foundation votes recipients:
@@ -126,8 +126,8 @@ Currently receiving Foundation votes:
 * **Cohort 6:** [7 validator groups](https://docs.google.com/spreadsheets/d/1HT_fN-mSAL2etF0Po_h122jeU1zpEtdpb_khogOfBCg/edit?usp=sharing) -- votes will expire on March 1, 2022
 * **Cohort 7:** [23 validator groups](https://docs.google.com/spreadsheets/d/1eYBzQMObTAy-WKs5CHHFnGGl_k1rQo0MBHinV3OgSik/edit#gid=1466530578) -- votes will expire on July 1, 2022
 
-{% hint style="info" %}
+:::info
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
-{% endhint %}
+:::
