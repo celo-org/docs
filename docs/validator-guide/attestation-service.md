@@ -65,6 +65,26 @@ To actually be able to send SMS, you need to create a messaging service under [P
 
 Now that you have provisioned your messaging service, you need to buy at least 1 phone number to send SMS from. You can do so under the `Numbers` option of the messaging service page. It is strongly recommended that you purchase at least a US (`+1`) number which seem to provide high delivery success rates. If you purchase numbers in other locales, Twilio will intelligently select the best number to send each SMS.
 
+#### Verify Service (post v1.3.0)
+
+We're in the process of transitioning to [Twilio's Verify Service](https://www.twilio.com/verify) which will automatically manage a set of phone numbers for global reach. Create a Verify Service in the Twilio Portal by navigating to [Verify](https://www.twilio.com/console/verify/services) and click `+` to create a new service. It's important to provide `Celo` as the service friendly name, since this will show up in the text message content.
+
+1. Set the code length to `8 digits`.
+2. Enter `sell-oh` in the `TTS SERVICE NAME`.
+3. Enable `SMS`, `CALL`, and `EMAIL` delivery channels.
+
+After you create the Verify Service, you **[must create a support ticket](https://www.twilio.com/console/support/tickets/create)** to enable the `custom code` feature. Provide Twilio support your new Verify SID and request enabling the `custom code` feature. Please monitor for a response and respond to any follow up questions.
+
+Support ticket request template
+
+> Hello, I'd like to enable custom codes for our Verify API with SID {YOUR_VERIFY_SID}. I understand that we will be charged on each attempted user verification.
+
+After Twilio enables custom codes, you'll see the following property in the Twilio dashboard when viewing your Verify Service:
+
+![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
+
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. In the future, we'll likely switch entirely to the Verify Service and deprecate the Messaging Service, but for now it's important to specify both.
+
 ### Nexmo
 
 After signing up for [Nexmo](https://dashboard.nexmo.com/sign-up), click the balance in the top-left to go to [Billing and Payments](https://dashboard.nexmo.com/billing-and-payments), where you can add funds. It is strongly recommended that you use a credit or debit card (as opposed to other forms of payment) as you will then be able to enable `Auto reload`. You should also enable `Low balance alerts`. Both of these will help avoid failing to deliver SMS when your funds are exhausted. It appears that these options may not be immediately available for all new accounts due to fraud checks: try sending a few SMS, checking back after a few days, or raising a support ticket.
@@ -79,7 +99,7 @@ Note that Attestation Service from version 1.2.0 no longer requires callback URL
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and approval to send SMS to certain countries that validators must support including the USA, Canada and others. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable.  Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
 
 ## Installation
 
@@ -114,7 +134,7 @@ You can now run the node for the attestation service in the background with the 
 ```bash
 # On the Attestation machine
 echo <CELO-ATTESTATION-SIGNER-PASSWORD> > .password
-docker run --name celo-attestations -it --restart always -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
+docker run --name celo-attestations -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
 ```
 
 ### Database Configuration
@@ -188,6 +208,7 @@ Twilio configuration options:
 | ------------------------------ | -------------------------------------------------------------------------------------------------- |
 | `TWILIO_ACCOUNT_SID`           | The Twilio account ID                                                                              |
 | `TWILIO_MESSAGING_SERVICE_SID` | The Twilio Message Service ID. Starts with `MG`                                                    |
+| `TWILIO_VERIFY_SERVICE_SID`    | The Twilio Verify Service ID. Starts with `VA`                                                     |
 | `TWILIO_AUTH_TOKEN`            | The API authentication token                                                                       |
 | `TWILIO_UNSUPPORTED_REGIONS`   | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
 

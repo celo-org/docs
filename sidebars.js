@@ -25,7 +25,6 @@ module.exports = {
                 "getting-started/wallets/using-metamask-with-celo/index",
                 "getting-started/wallets/using-metamask-with-celo/manual-setup",
                 "getting-started/wallets/using-metamask-with-celo/programmatic-setup",
-                "getting-started/wallets/using-metamask-with-celo/choosing-the-right-gas-price",
                 "getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask",
               ],
             }
@@ -247,7 +246,55 @@ module.exports = {
             'celo-codebase/protocol/optics',
             'celo-codebase/protocol/plumo',
           ]
+        },
+        {
+          type: 'category',
+          label: 'Celo Wallet',
+          items: [
+            { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/index', },
+            { type: 'doc', label: 'Running the wallet locally', id: 'celo-codebase/wallet/intro', },
+            { 
+              type: 'category', 
+              label: 'Wallet Functionality', 
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/how-the-wallet-works/README', },
+                'celo-codebase/wallet/how-the-wallet-works/verification',
+                'celo-codebase/wallet/how-the-wallet-works/invitations',
+                'celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments',
+                'celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync',
+              ]
+            }
+          ]
         }
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Community',
+      items: [
+        { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
+        { type: 'doc', label: 'Contributing', id: 'community/contributing', },
+        { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
+        {
+          type: 'category',
+          label: ' Release Process',
+          items: [
+            { type: 'doc', label: 'Overview', id: 'community/release-process/README', },
+            { type: 'doc', label: 'Smart Contracts', id: 'community/release-process/smart-contracts', },
+            { type: 'doc', label: 'Blockchain Client', id: 'community/release-process/blockchain-client', },
+            { type: 'doc', label: 'CeloCLI and ContractKit', id: 'community/release-process/base-cli-contractkit-dappkit-utils', },
+            { type: 'doc', label: 'Attestation Service', id: 'community/release-process/attestation-service', },
+          ]
+        }
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Important Information',
+      items: [
+        { type: 'doc', label: 'Alfajores Testnet Disclaimer', id: 'important-information/alfajores-testnet-disclaimer', },
+        { type: 'doc', label: 'Baklava Testnet Disclaimer', id: 'important-information/baklava-testnet-disclaimer', },
+        { type: 'doc', label: 'Mainnet Disclaimer', id: 'important-information/mainnet-network-disclaimer', },
       ]
     }
   ],

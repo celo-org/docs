@@ -1,4 +1,6 @@
-# Verification
+---
+title: Verification
+---
 
 The Celo Wallet leverages the [Lightweight Identity](../../protocol/identity/) protocol to construct mappings of phone number hashes to addresses.
 

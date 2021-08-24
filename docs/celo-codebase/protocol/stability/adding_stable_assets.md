@@ -20,7 +20,7 @@ Currently, the addition of new assets is tied to the [Contract Release Cycle](co
 
 These contracts should be set as frozen to prevent `cX` from being transferable before Mento supports it in a governance proposal. At this point, as there are no oracles, the contract `ExchangeX` can't update buckets and it is thus impossible to mint and burn `cX`. There is [an issue open](https://github.com/celo-org/celo-monorepo/issues/7331) to include this step as part of the Contract Release.
 
-For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0023.md), this was included as part of the [Oracle activation](#oracle-activation) proposal. 
+For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0023.md), this was included as part of the [Oracle activation](#oracle-activation) proposal.
 
 ### Constitutional parameters
 

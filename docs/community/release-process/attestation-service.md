@@ -10,7 +10,7 @@ All builds are identified as `unstable` (a development build) or `stable` (a com
 
 ## Documentation
 
-Documentation is maintained under `packages/docs` directory and is hosted on [docs.celo.org](https://docs.celo.org/validator-guide/attestation-service).
+Documentation is maintained under `packages/docs` directory and is hosted on [docs.celo.org](/validator-guide/attestation-service).
 
 ## Identifying releases
 

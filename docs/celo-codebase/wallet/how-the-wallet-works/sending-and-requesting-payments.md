@@ -1,5 +1,6 @@
-# Payments and Exchanging
-
+---
+title: Payments and Exchanging
+---
 ## **Payments**
 
 ### **Sending**
@@ -21,12 +22,9 @@ For non-essential functionality that is not detrimental to interoperability, a p
 - Receiving a payment request
 - Payment of an outstanding payment request
 
-{% hint style="info" %}
+:::info
 In order for notifications to work in a fork of the Celo Wallet, creation of another firebase service for the forked wallet is necessary.
-{% endhint %}
+:::
+## Exchanging
 
-## **Exchanging**
-
-The Mobile Exchange experience implements the uniswap-style exchange detailed in [Stability Mechanism Documentation](/celo-codebase/protocol/stability/doto.md). For this reason, rates provided are an overestimate of the current rate and subject to change \(such changes are presented to the user if they result in a less favorable rate\)
-
-\_\_
+The Mobile Exchange experience implements the uniswap-style exchange detailed in [Stability Mechanism Documentation](../../protocol/stability/doto.md). For this reason, rates provided are an overestimate of the current rate and subject to change \(such changes are presented to the user if they result in a less favorable rate\)

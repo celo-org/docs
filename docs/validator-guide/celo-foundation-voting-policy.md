@@ -89,14 +89,17 @@ For each cohort, the deadline to apply/be evaluated (if you are reapplying) is e
 Before applying all validator group members should have: 
 * **Important**: Run at least one Validator and Validator Group on Baklava
 * **Important**: Run an Attestation Service on Baklava
+
 * Completed the [Mastering the Art of Validating](https://youtu.be/3UIudzzCb8o) and [Validator Group Marketing](https://www.youtube.com/watch?v=0_veGIugCGQ) courses
 * Completed the [Security Self Assessment Audit](https://docs.google.com/presentation/d/e/2PACX-1vRdKNpXI2mvqwQF6L5LRrxPW2qRK-5MDce5EhqXqLC1MSYmupZMFnhp6YEP0gLYuRKW-FF0fcAqhEAp/pub?start=true&loop=false&delayms=10000&slide=id.g76d52a0216_0_333), which includes completing this [checklist](https://docs.google.com/spreadsheets/d/1FqmUfleCoyNIUep7PoVu3ujHd-OkHZJ8o6p7Affr93w/edit?usp=sharing)
 
-### Application Details 
+### Application Details
+
 Before applying be ready to share the following:
 * A personal statement telling the Foundation why your group should get votes (max 1,500 characters)
 * Validator Group details: email, name, website, address on Mainnet and Baklava, and geographic location
 * Information about your team: full names, link to professional profiles such as LinkedIn or GitHub, and an explanation of the team’s relevant experience
+
 * Whether your Group: 
     * Is validating or has validated in the past 1 month on the Baklava Testnet (Need to provide validator group address and validator address on Baklava)
     * Has been slashed in the past 6 months and if so why (for reapplicants)
@@ -122,9 +125,11 @@ Past Foundation votes recipients:
 * **Cohort 4:** [22 validator groups](https://docs.google.com/spreadsheets/d/1bp2nJUxqhWner-uOffBohKQc3N93e--eMpP7XOBrbGI/edit?usp=sharing) -- votes expired on May 1, 2021
 
 Currently receiving Foundation votes: 
+
 * **Cohort 5:** [24 validator groups](https://docs.google.com/spreadsheets/d/1n2lwFsAsFaohng4Bo_FEWcoXzZl5CrLFxA6EK0nuFSA/edit#gid=0) -- votes will expire on November 1, 2021
 * **Cohort 6:** [7 validator groups](https://docs.google.com/spreadsheets/d/1HT_fN-mSAL2etF0Po_h122jeU1zpEtdpb_khogOfBCg/edit?usp=sharing) -- votes will expire on March 1, 2022
 * **Cohort 7:** [23 validator groups](https://docs.google.com/spreadsheets/d/1eYBzQMObTAy-WKs5CHHFnGGl_k1rQo0MBHinV3OgSik/edit#gid=1466530578) -- votes will expire on July 1, 2022
+
 
 :::info
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
