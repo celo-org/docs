@@ -66,7 +66,7 @@ module.exports = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} Celo Foundatio, Inc. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
         },
     },
     presets: [
