@@ -80,6 +80,12 @@ module.exports = {
                     routeBasePath: "/",
                     remarkPlugins: [math],
                     rehypePlugins: [katex],
+                    include: ['**/*.md', 
+                              '**/*.mdx', 
+                              'docs/developer-resources/docs/modules/_*_.md',
+                              'docs/developer-resources/docs/classes/_*.md',
+                              'docs/developer-resources/docs/enums/_*.md',
+                              '**/_*.md', '**/_*_.mdx'],
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
