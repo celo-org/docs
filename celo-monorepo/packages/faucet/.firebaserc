@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "celo-faucet"
+  },
+  "targets": {
+    "celo-faucet": {
+      "database": {
+        "faucet": [
+          "celo-faucet"
+        ]
+      }
+    },
+    "celo-faucet-staging": {
+      "database": {
+        "faucet": [
+          "celo-faucet-staging"
+        ]
+      }
+    }
+  }
+}
