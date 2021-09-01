@@ -49,7 +49,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:5](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L5)
+[celo-monorepo/packages/sdk/base/src/address.ts:5](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L5)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:50](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L50)
+[celo-monorepo/packages/sdk/base/src/collections.ts:50](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L50)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/logger.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/logger.ts#L1)
+[celo-monorepo/packages/sdk/base/src/logger.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/logger.ts#L1)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:20](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L20)
+[celo-monorepo/packages/sdk/base/src/account.ts:20](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L20)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L10)
+[celo-monorepo/packages/sdk/base/src/result.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L10)
 
 ## Variables
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:115](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L115)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:115](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L115)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L1)
+[celo-monorepo/packages/sdk/base/src/account.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L1)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L15)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L15)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:77](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L77)
+[celo-monorepo/packages/sdk/base/src/result.ts:77](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L77)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:30](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L30)
+[celo-monorepo/packages/sdk/base/src/address.ts:30](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L30)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L1)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L1)
 
 ___
 
@@ -236,7 +236,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:35](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L35)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:35](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L35)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:32](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L32)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:32](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L32)
 
 ___
 
@@ -270,7 +270,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/string.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/string.ts#L14)
+[celo-monorepo/packages/sdk/base/src/string.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/string.ts#L14)
 
 ___
 
@@ -280,7 +280,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/io.ts:2](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/io.ts#L2)
+[celo-monorepo/packages/sdk/base/src/io.ts:2](https://github.com/celo-org/celo-monorepo/tree/master/io.ts#L2)
 
 ___
 
@@ -298,7 +298,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:52](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L52)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:52](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L52)
 
 ## Functions
 
@@ -324,7 +324,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:16](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L16)
+[celo-monorepo/packages/sdk/base/src/result.ts:16](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L16)
 
 ___
 
@@ -345,7 +345,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:8](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L8)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:8](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L8)
 
 ___
 
@@ -371,7 +371,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:12](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L12)
+[celo-monorepo/packages/sdk/base/src/result.ts:12](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L12)
 
 ___
 
@@ -391,7 +391,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:31](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L31)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:31](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L31)
 
 ___
 
@@ -412,7 +412,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/string.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/string.ts#L1)
+[celo-monorepo/packages/sdk/base/src/string.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/string.ts#L1)
 
 ___
 
@@ -432,7 +432,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:36](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L36)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:36](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L36)
 
 ___
 
@@ -452,7 +452,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:28](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L28)
+[celo-monorepo/packages/sdk/base/src/address.ts:28](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L28)
 
 ___
 
@@ -483,7 +483,7 @@ Map an async function over a list xs with a given concurrency level
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:128](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L128)
+[celo-monorepo/packages/sdk/base/src/async.ts:128](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L128)
 
 ___
 
@@ -514,7 +514,7 @@ Map an async function over the values in Object x with a given concurrency level
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:150](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L150)
+[celo-monorepo/packages/sdk/base/src/async.ts:150](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L150)
 
 ___
 
@@ -534,7 +534,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:100](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L100)
+[celo-monorepo/packages/sdk/base/src/task.ts:100](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L100)
 
 ___
 
@@ -554,7 +554,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/logger.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/logger.ts#L15)
+[celo-monorepo/packages/sdk/base/src/logger.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/logger.ts#L15)
 
 ___
 
@@ -574,7 +574,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:17](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L17)
+[celo-monorepo/packages/sdk/base/src/address.ts:17](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L17)
 
 ___
 
@@ -595,7 +595,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:7](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L7)
+[celo-monorepo/packages/sdk/base/src/address.ts:7](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L7)
 
 ___
 
@@ -615,7 +615,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:53](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L53)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:53](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L53)
 
 ___
 
@@ -636,7 +636,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:32](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L32)
+[celo-monorepo/packages/sdk/base/src/address.ts:32](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L32)
 
 ___
 
@@ -656,7 +656,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:21](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L21)
+[celo-monorepo/packages/sdk/base/src/address.ts:21](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L21)
 
 ___
 
@@ -676,7 +676,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L13)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L13)
 
 ___
 
@@ -696,7 +696,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/displayFormatting.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/displayFormatting.ts#L1)
+[celo-monorepo/packages/sdk/base/src/displayFormatting.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/displayFormatting.ts#L1)
 
 ___
 
@@ -716,7 +716,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L13)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L13)
 
 ___
 
@@ -738,7 +738,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L14)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L14)
 
 ___
 
@@ -761,7 +761,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:22](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L22)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:22](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L22)
 
 ___
 
@@ -781,7 +781,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:26](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L26)
+[celo-monorepo/packages/sdk/base/src/address.ts:26](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L26)
 
 ___
 
@@ -807,7 +807,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:32](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L32)
+[celo-monorepo/packages/sdk/base/src/collections.ts:32](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L32)
 
 ___
 
@@ -832,7 +832,7 @@ or defaults if factors are ommited.
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:88](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L88)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:88](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L88)
 
 ___
 
@@ -852,7 +852,7 @@ contactOrNumber is MinimalContact
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:26](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L26)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:26](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L26)
 
 ___
 
@@ -872,7 +872,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:27](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L27)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:27](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L27)
 
 ___
 
@@ -892,7 +892,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:24](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L24)
+[celo-monorepo/packages/sdk/base/src/address.ts:24](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L24)
 
 ___
 
@@ -912,7 +912,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:11](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L11)
+[celo-monorepo/packages/sdk/base/src/address.ts:11](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L11)
 
 ___
 
@@ -932,7 +932,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/io.ts:6](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/io.ts#L6)
+[celo-monorepo/packages/sdk/base/src/io.ts:6](https://github.com/celo-org/celo-monorepo/tree/master/io.ts#L6)
 
 ___
 
@@ -966,7 +966,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:90](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L90)
+[celo-monorepo/packages/sdk/base/src/collections.ts:90](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L90)
 
 ___
 
@@ -1000,7 +1000,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:100](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L100)
+[celo-monorepo/packages/sdk/base/src/collections.ts:100](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L100)
 
 ___
 
@@ -1042,7 +1042,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:47](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L47)
+[celo-monorepo/packages/sdk/base/src/result.ts:47](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L47)
 
 ___
 
@@ -1084,7 +1084,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:35](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L35)
+[celo-monorepo/packages/sdk/base/src/result.ts:35](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L35)
 
 ___
 
@@ -1113,7 +1113,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:69](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L69)
+[celo-monorepo/packages/sdk/base/src/address.ts:69](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L69)
 
 ___
 
@@ -1134,7 +1134,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:36](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L36)
+[celo-monorepo/packages/sdk/base/src/address.ts:36](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L36)
 
 ___
 
@@ -1154,7 +1154,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:49](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L49)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:49](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L49)
 
 ___
 
@@ -1174,7 +1174,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/logger.ts:3](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/logger.ts#L3)
+[celo-monorepo/packages/sdk/base/src/logger.ts:3](https://github.com/celo-org/celo-monorepo/tree/master/logger.ts#L3)
 
 ___
 
@@ -1194,7 +1194,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/string.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/string.ts#L10)
+[celo-monorepo/packages/sdk/base/src/string.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/string.ts#L10)
 
 ___
 
@@ -1214,7 +1214,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:9](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L9)
+[celo-monorepo/packages/sdk/base/src/address.ts:9](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L9)
 
 ___
 
@@ -1234,7 +1234,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L13)
+[celo-monorepo/packages/sdk/base/src/address.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L13)
 
 ___
 
@@ -1260,7 +1260,7 @@ value is TValue
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:28](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L28)
+[celo-monorepo/packages/sdk/base/src/collections.ts:28](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L28)
 
 ___
 
@@ -1280,7 +1280,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:84](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L84)
+[celo-monorepo/packages/sdk/base/src/result.ts:84](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L84)
 
 ___
 
@@ -1303,7 +1303,7 @@ Parses an "array of strings" that is returned from a Solidity function
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/parsing.ts:17](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/parsing.ts#L17)
+[celo-monorepo/packages/sdk/base/src/parsing.ts:17](https://github.com/celo-org/celo-monorepo/tree/master/parsing.ts#L17)
 
 ___
 
@@ -1330,7 +1330,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:50](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L50)
+[celo-monorepo/packages/sdk/base/src/future.ts:50](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L50)
 
 ___
 
@@ -1351,7 +1351,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/logger.ts:7](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/logger.ts#L7)
+[celo-monorepo/packages/sdk/base/src/logger.ts:7](https://github.com/celo-org/celo-monorepo/tree/master/logger.ts#L7)
 
 ___
 
@@ -1374,7 +1374,7 @@ Runs an async function eternally until stopped
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:54](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L54)
+[celo-monorepo/packages/sdk/base/src/task.ts:54](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L54)
 
 ___
 
@@ -1394,7 +1394,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:33](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L33)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:33](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L33)
 
 ___
 
@@ -1425,7 +1425,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L14)
+[celo-monorepo/packages/sdk/base/src/async.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L14)
 
 ___
 
@@ -1457,7 +1457,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:40](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L40)
+[celo-monorepo/packages/sdk/base/src/async.ts:40](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L40)
 
 ___
 
@@ -1490,7 +1490,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:102](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L102)
+[celo-monorepo/packages/sdk/base/src/async.ts:102](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L102)
 
 ___
 
@@ -1510,7 +1510,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:40](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L40)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:40](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L40)
 
 ___
 
@@ -1543,7 +1543,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:68](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L68)
+[celo-monorepo/packages/sdk/base/src/async.ts:68](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L68)
 
 ___
 
@@ -1563,7 +1563,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:25](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L25)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:25](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L25)
 
 ___
 
@@ -1585,7 +1585,7 @@ Sleep for a number of milliseconds
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:6](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L6)
+[celo-monorepo/packages/sdk/base/src/async.ts:6](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L6)
 
 ___
 
@@ -1605,7 +1605,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/parsing.ts:1](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/parsing.ts#L1)
+[celo-monorepo/packages/sdk/base/src/parsing.ts:1](https://github.com/celo-org/celo-monorepo/tree/master/parsing.ts#L1)
 
 ___
 
@@ -1634,7 +1634,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:21](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L21)
+[celo-monorepo/packages/sdk/base/src/result.ts:21](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L21)
 
 ___
 
@@ -1668,7 +1668,7 @@ Wraps an async function in a timeout before calling it.
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/async.ts:173](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/async.ts#L173)
+[celo-monorepo/packages/sdk/base/src/async.ts:173](https://github.com/celo-org/celo-monorepo/tree/master/async.ts#L173)
 
 ___
 
@@ -1694,7 +1694,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:45](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L45)
+[celo-monorepo/packages/sdk/base/src/future.ts:45](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L45)
 
 ___
 
@@ -1714,7 +1714,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/address.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/address.ts#L15)
+[celo-monorepo/packages/sdk/base/src/address.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/address.ts#L15)
 
 ___
 
@@ -1740,7 +1740,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:128](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L128)
+[celo-monorepo/packages/sdk/base/src/task.ts:128](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L128)
 
 ___
 
@@ -1761,7 +1761,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:19](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L19)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:19](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L19)
 
 ___
 
@@ -1781,7 +1781,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L15)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L15)
 
 ___
 
@@ -1801,7 +1801,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:23](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L23)
+[celo-monorepo/packages/sdk/base/src/collections.ts:23](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L23)
 
 ___
 
@@ -1831,7 +1831,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:3](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L3)
+[celo-monorepo/packages/sdk/base/src/collections.ts:3](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L3)
 
 ___
 
@@ -1861,4 +1861,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/collections.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/collections.ts#L13)
+[celo-monorepo/packages/sdk/base/src/collections.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/collections.ts#L13)

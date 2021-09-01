@@ -14,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:8](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L8)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:8](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L8)

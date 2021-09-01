@@ -22,7 +22,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[proxy.ts:31](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L31)
+[proxy.ts:31](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L31)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:83](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L83)
+[proxy.ts:83](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L83)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:90](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L90)
+[proxy.ts:90](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L90)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:89](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L89)
+[proxy.ts:89](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L89)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:63](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L63)
+[proxy.ts:63](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L63)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:47](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L47)
+[proxy.ts:47](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L47)
 
 ## Functions
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[proxy.ts:127](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L127)
+[proxy.ts:127](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L127)
 
 ___
 
@@ -117,7 +117,7 @@ Creates a new instance of `ContractKit` give a nodeUrl
 
 #### Defined in
 
-[kit.ts:38](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L38)
+[kit.ts:38](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L38)
 
 ___
 
@@ -140,7 +140,7 @@ Creates a new instance of the `ContractKit` with a web3 instance
 
 #### Defined in
 
-[kit.ts:49](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L49)
+[kit.ts:49](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L49)
 
 ___
 
@@ -161,4 +161,4 @@ ___
 
 #### Defined in
 
-[proxy.ts:137](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/proxy.ts#L137)
+[proxy.ts:137](https://github.com/celo-org/celo-monorepo/tree/master/proxy.ts#L137)

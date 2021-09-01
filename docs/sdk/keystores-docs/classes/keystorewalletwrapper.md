@@ -22,7 +22,7 @@ Convenience wrapper of the LocalWallet to connect to a keystore
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:9](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L9)
+[keystore-wallet-wrapper.ts:9](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L9)
 
 ## Methods
 
@@ -36,7 +36,7 @@ Convenience wrapper of the LocalWallet to connect to a keystore
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:25](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L25)
+[keystore-wallet-wrapper.ts:25](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L25)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:21](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L21)
+[keystore-wallet-wrapper.ts:21](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L21)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:16](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L16)
+[keystore-wallet-wrapper.ts:16](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L16)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:34](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L34)
+[keystore-wallet-wrapper.ts:34](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L34)
 
 ___
 
@@ -112,4 +112,4 @@ ___
 
 #### Defined in
 
-[keystore-wallet-wrapper.ts:29](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-wallet-wrapper.ts#L29)
+[keystore-wallet-wrapper.ts:29](https://github.com/celo-org/celo-monorepo/tree/master/keystore-wallet-wrapper.ts#L29)

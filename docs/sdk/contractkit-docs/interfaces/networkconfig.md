@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[kit.ts:59](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L59)
+[kit.ts:59](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L59)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[kit.ts:68](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L68)
+[kit.ts:68](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L68)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[kit.ts:67](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L67)
+[kit.ts:67](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L67)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[kit.ts:57](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L57)
+[kit.ts:57](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L57)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[kit.ts:58](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L58)
+[kit.ts:58](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L58)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[kit.ts:63](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L63)
+[kit.ts:63](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L63)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[kit.ts:60](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L60)
+[kit.ts:60](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L60)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[kit.ts:61](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L61)
+[kit.ts:61](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L61)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[kit.ts:64](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L64)
+[kit.ts:64](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L64)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[kit.ts:62](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L62)
+[kit.ts:62](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L62)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[kit.ts:65](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L65)
+[kit.ts:65](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L65)
 
 ___
 
@@ -124,4 +124,4 @@ ___
 
 #### Defined in
 
-[kit.ts:66](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/contractkit/src/kit.ts#L66)
+[kit.ts:66](https://github.com/celo-org/celo-monorepo/tree/master/kit.ts#L66)

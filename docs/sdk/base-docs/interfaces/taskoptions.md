@@ -22,7 +22,7 @@ Logger function
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:20](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L20)
+[celo-monorepo/packages/sdk/base/src/task.ts:20](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L20)
 
 ___
 
@@ -34,4 +34,4 @@ Name for the task. To be used in logging messages
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:18](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L18)
+[celo-monorepo/packages/sdk/base/src/task.ts:18](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L18)

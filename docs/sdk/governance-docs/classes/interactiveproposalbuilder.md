@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[proposals.ts:324](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L324)
+[proposals.ts:324](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L324)
 
 ## Methods
 
@@ -34,7 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[proposals.ts:327](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L327)
+[proposals.ts:327](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L327)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 #### Defined in
 
-[proposals.ts:332](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L332)
+[proposals.ts:332](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L332)

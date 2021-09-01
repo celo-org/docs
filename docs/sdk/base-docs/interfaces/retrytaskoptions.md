@@ -32,7 +32,7 @@ Logger function
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:20](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L20)
+[celo-monorepo/packages/sdk/base/src/task.ts:20](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L20)
 
 ___
 
@@ -44,7 +44,7 @@ Maximum number of attemps
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:123](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L123)
+[celo-monorepo/packages/sdk/base/src/task.ts:123](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L123)
 
 ___
 
@@ -60,7 +60,7 @@ Name for the task. To be used in logging messages
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:18](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L18)
+[celo-monorepo/packages/sdk/base/src/task.ts:18](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L18)
 
 ___
 
@@ -72,7 +72,7 @@ seconds between repetition
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:121](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L121)
+[celo-monorepo/packages/sdk/base/src/task.ts:121](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L121)
 
 ___
 
@@ -92,4 +92,4 @@ Function that tries to obtain a value A or returns null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:125](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L125)
+[celo-monorepo/packages/sdk/base/src/task.ts:125](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L125)

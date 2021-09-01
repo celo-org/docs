@@ -48,7 +48,7 @@ Error.constructor
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:66](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L66)
+[celo-monorepo/packages/sdk/base/src/result.ts:66](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L66)
 
 ## Properties
 

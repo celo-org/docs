@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:21](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L21)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:21](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L21)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:22](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L22)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:22](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L22)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:20](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/signatureUtils.ts#L20)
+[celo-monorepo/packages/sdk/base/src/signatureUtils.ts:20](https://github.com/celo-org/celo-monorepo/tree/master/signatureUtils.ts#L20)

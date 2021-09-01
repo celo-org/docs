@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:2](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L2)
+[celo-monorepo/packages/sdk/base/src/result.ts:2](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L2)
 
 ___
 
@@ -30,4 +30,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/result.ts:3](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/result.ts#L3)
+[celo-monorepo/packages/sdk/base/src/result.ts:3](https://github.com/celo-org/celo-monorepo/tree/master/result.ts#L3)

@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:71](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L71)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:71](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L71)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:68](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L68)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:68](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L68)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:69](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L69)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:69](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L69)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/attestations.ts:70](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/attestations.ts#L70)
+[celo-monorepo/packages/sdk/base/src/attestations.ts:70](https://github.com/celo-org/celo-monorepo/tree/master/attestations.ts#L70)

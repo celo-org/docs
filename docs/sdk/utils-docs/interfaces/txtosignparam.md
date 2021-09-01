@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:107](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L107)
+[packages/sdk/utils/src/dappkit.ts:107](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L107)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:111](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L111)
+[packages/sdk/utils/src/dappkit.ts:111](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L111)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:108](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L108)
+[packages/sdk/utils/src/dappkit.ts:108](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L108)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:110](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L110)
+[packages/sdk/utils/src/dappkit.ts:110](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L110)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:109](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L109)
+[packages/sdk/utils/src/dappkit.ts:109](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L109)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:106](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L106)
+[packages/sdk/utils/src/dappkit.ts:106](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L106)
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:112](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L112)
+[packages/sdk/utils/src/dappkit.ts:112](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L112)

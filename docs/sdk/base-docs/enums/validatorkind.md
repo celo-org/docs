@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:2](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L2)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:2](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L2)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:3](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L3)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:3](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L3)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:4](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L4)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:4](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L4)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/inputValidation.ts:5](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/inputValidation.ts#L5)
+[celo-monorepo/packages/sdk/base/src/inputValidation.ts:5](https://github.com/celo-org/celo-monorepo/tree/master/inputValidation.ts#L5)

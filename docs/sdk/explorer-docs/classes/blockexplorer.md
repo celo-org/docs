@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[block-explorer.ts:52](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L52)
+[block-explorer.ts:52](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L52)
 
 ## Properties
 
@@ -47,7 +47,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[block-explorer.ts:68](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L68)
+[block-explorer.ts:68](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L68)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:65](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L65)
+[block-explorer.ts:65](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L65)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:72](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L72)
+[block-explorer.ts:72](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L72)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:109](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L109)
+[block-explorer.ts:109](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L109)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:80](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L80)
+[block-explorer.ts:80](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L80)
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:97](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L97)
+[block-explorer.ts:97](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L97)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:117](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L117)
+[block-explorer.ts:117](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L117)
 
 ___
 
@@ -196,4 +196,4 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:60](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L60)
+[block-explorer.ts:60](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L60)

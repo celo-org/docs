@@ -38,7 +38,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[base.ts:11](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/base.ts#L11)
+[base.ts:11](https://github.com/celo-org/celo-monorepo/tree/master/base.ts#L11)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[base.ts:31](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/base.ts#L31)
+[base.ts:31](https://github.com/celo-org/celo-monorepo/tree/master/base.ts#L31)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:38](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L38)
+[block-explorer.ts:38](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L38)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[log-explorer.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/log-explorer.ts#L10)
+[log-explorer.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/log-explorer.ts#L10)
 
 ___
 
@@ -125,4 +125,4 @@ ___
 
 #### Defined in
 
-[base.ts:24](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/base.ts#L24)
+[base.ts:24](https://github.com/celo-org/celo-monorepo/tree/master/base.ts#L24)

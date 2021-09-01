@@ -26,7 +26,7 @@ Example:
 
 #### Defined in
 
-[proposals.ts:72](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L72)
+[proposals.ts:72](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L72)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:70](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L70)
+[proposals.ts:70](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L70)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:71](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L71)
+[proposals.ts:71](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L71)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:73](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L73)
+[proposals.ts:73](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L73)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 #### Defined in
 
-[proposals.ts:74](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L74)
+[proposals.ts:74](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L74)

@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:17](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L17)
+[packages/sdk/utils/src/dappkit.ts:17](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L17)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:19](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L19)
+[packages/sdk/utils/src/dappkit.ts:19](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L19)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:18](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L18)
+[packages/sdk/utils/src/dappkit.ts:18](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L18)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:29](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L29)
+[packages/sdk/utils/src/dappkit.ts:29](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L29)

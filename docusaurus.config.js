@@ -203,7 +203,7 @@ module.exports = {
         ],
         tsconfig:
           "celo-monorepo/packages/sdk/wallets/wallet-base/tsconfig.json",
-        out: "sdk/wallet-base-docs",
+        out: "sdk/wallet/wallet-base-docs",
       },
     ],
     [
@@ -214,7 +214,7 @@ module.exports = {
           "celo-monorepo/packages/sdk/wallets/wallet-hsm/src/index.ts",
         ],
         tsconfig: "celo-monorepo/packages/sdk/wallets/wallet-hsm/tsconfig.json",
-        out: "sdk/wallet-hsm-docs",
+        out: "sdk/wallet/wallet-hsm-docs",
       },
     ],
     [
@@ -223,16 +223,81 @@ module.exports = {
         id: "wallet-hsm-aws",
         entryPoints: [
           "celo-monorepo/packages/sdk/wallets/wallet-hsm-aws/src/index.ts",
-          // 'celo-monorepo/packages/sdk/wallets/wallet-hsm-azure/src/index.ts',
-          // 'celo-monorepo/packages/sdk/wallets/wallet-ledger/src/index.ts',
-          // 'celo-monorepo/packages/sdk/wallets/wallet-local/src/index.ts',
-          // 'celo-monorepo/packages/sdk/wallets/wallet-remote/src/index.ts',
-          // 'celo-monorepo/packages/sdk/wallets/wallet-rpc/src/index.ts',
-          // 'celo-monorepo/packages/sdk/wallets/wallet-walletconnect/src/index.ts',
         ],
         tsconfig:
           "celo-monorepo/packages/sdk/wallets/wallet-hsm-aws/tsconfig.json",
-        out: "sdk/wallet-hsm-aws-docs",
+        out: "sdk/wallet/wallet-hsm-aws-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-hsm-azure",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-hsm-azure/src/index.ts",
+        ],
+        tsconfig:
+          "celo-monorepo/packages/sdk/wallets/wallet-hsm-azure/tsconfig.json",
+        out: "sdk/wallet/wallet-hsm-azure-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-ledger",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-ledger/src/index.ts",
+        ],
+        tsconfig:
+          "celo-monorepo/packages/sdk/wallets/wallet-ledger/tsconfig.json",
+        out: "sdk/wallet/wallet-ledger-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-local",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-local/src/index.ts",
+        ],
+        tsconfig:
+          "celo-monorepo/packages/sdk/wallets/wallet-local/tsconfig.json",
+        out: "sdk/wallet/wallet-local-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-remote",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-remote/src/index.ts",
+        ],
+        tsconfig:
+          "celo-monorepo/packages/sdk/wallets/wallet-remote/tsconfig.json",
+        out: "sdk/wallet/wallet-remote-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-rpc",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-rpc/src/index.ts",
+        ],
+        tsconfig: "celo-monorepo/packages/sdk/wallets/wallet-rpc/tsconfig.json",
+        out: "sdk/wallet/wallet-rpc-docs",
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "wallet-walletconnect",
+        entryPoints: [
+          "celo-monorepo/packages/sdk/wallets/wallet-walletconnect/src/index.ts",
+        ],
+        tsconfig:
+          "celo-monorepo/packages/sdk/wallets/wallet-walletconnect/tsconfig.json",
+        out: "sdk/wallet/wallet-walletconnect-docs",
       },
     ],
   ],

@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:19](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L19)
+[packages/sdk/utils/src/countries.ts:19](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L19)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L15)
+[packages/sdk/utils/src/countries.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L15)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:12](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L12)
+[packages/sdk/utils/src/countries.ts:12](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L12)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L13)
+[packages/sdk/utils/src/countries.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L13)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L14)
+[packages/sdk/utils/src/countries.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L14)
 
 ___
 

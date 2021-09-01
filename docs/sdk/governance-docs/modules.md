@@ -23,7 +23,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[proposals.ts:45](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L45)
+[proposals.ts:45](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L45)
 
 ## Functions
 
@@ -45,7 +45,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[proposals.ts:47](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L47)
+[proposals.ts:47](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L47)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:53](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L53)
+[proposals.ts:53](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L53)
 
 ___
 
@@ -92,4 +92,4 @@ The JSON encoding of the proposal.
 
 #### Defined in
 
-[proposals.ts:122](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L122)
+[proposals.ts:122](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L122)

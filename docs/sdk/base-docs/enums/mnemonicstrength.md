@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:4](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L4)
+[celo-monorepo/packages/sdk/base/src/account.ts:4](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L4)
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:5](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L5)
+[celo-monorepo/packages/sdk/base/src/account.ts:5](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L5)

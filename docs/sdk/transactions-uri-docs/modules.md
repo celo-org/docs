@@ -25,7 +25,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[tx-uri.ts:114](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/transactions-uri/src/tx-uri.ts#L114)
+[tx-uri.ts:114](https://github.com/celo-org/celo-monorepo/tree/master/tx-uri.ts#L114)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[tx-uri.ts:65](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/transactions-uri/src/tx-uri.ts#L65)
+[tx-uri.ts:65](https://github.com/celo-org/celo-monorepo/tree/master/tx-uri.ts#L65)
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[tx-uri.ts:26](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/transactions-uri/src/tx-uri.ts#L26)
+[tx-uri.ts:26](https://github.com/celo-org/celo-monorepo/tree/master/tx-uri.ts#L26)

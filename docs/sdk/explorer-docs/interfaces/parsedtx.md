@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[block-explorer.ts:24](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L24)
+[block-explorer.ts:24](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L24)
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[block-explorer.ts:25](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/block-explorer.ts#L25)
+[block-explorer.ts:25](https://github.com/celo-org/celo-monorepo/tree/master/block-explorer.ts#L25)

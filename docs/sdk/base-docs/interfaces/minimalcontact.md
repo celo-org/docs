@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:8](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L8)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:8](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L8)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:9](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L9)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:9](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L9)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:7](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L7)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:7](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L7)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/contacts.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/contacts.ts#L10)
+[celo-monorepo/packages/sdk/base/src/contacts.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/contacts.ts#L10)

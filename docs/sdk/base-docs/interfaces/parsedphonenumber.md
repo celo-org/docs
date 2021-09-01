@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:7](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L7)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:7](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L7)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:5](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L5)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:5](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L5)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:6](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L6)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:6](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L6)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:4](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L4)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:4](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L4)
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:8](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/phoneNumbers.ts#L8)
+[celo-monorepo/packages/sdk/base/src/phoneNumbers.ts:8](https://github.com/celo-org/celo-monorepo/tree/master/phoneNumbers.ts#L8)

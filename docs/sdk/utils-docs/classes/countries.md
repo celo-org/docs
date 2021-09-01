@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:41](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L41)
+[packages/sdk/utils/src/countries.ts:41](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L41)
 
 ## Properties
 
@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:40](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L40)
+[packages/sdk/utils/src/countries.ts:40](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L40)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:39](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L39)
+[packages/sdk/utils/src/countries.ts:39](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L39)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:41](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L41)
+[packages/sdk/utils/src/countries.ts:41](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L41)
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:51](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L51)
+[packages/sdk/utils/src/countries.ts:51](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L51)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:61](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L61)
+[packages/sdk/utils/src/countries.ts:61](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L61)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/countries.ts:65](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/countries.ts#L65)
+[packages/sdk/utils/src/countries.ts:65](https://github.com/celo-org/celo-monorepo/tree/master/countries.ts#L65)

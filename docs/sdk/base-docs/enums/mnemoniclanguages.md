@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:9](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L9)
+[celo-monorepo/packages/sdk/base/src/account.ts:9](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L9)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L10)
+[celo-monorepo/packages/sdk/base/src/account.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L10)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:11](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L11)
+[celo-monorepo/packages/sdk/base/src/account.ts:11](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L11)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:12](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L12)
+[celo-monorepo/packages/sdk/base/src/account.ts:12](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L12)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L13)
+[celo-monorepo/packages/sdk/base/src/account.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L13)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L14)
+[celo-monorepo/packages/sdk/base/src/account.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L14)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L15)
+[celo-monorepo/packages/sdk/base/src/account.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L15)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:17](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L17)
+[celo-monorepo/packages/sdk/base/src/account.ts:17](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L17)
 
 ___
 
@@ -94,4 +94,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/account.ts:16](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/account.ts#L16)
+[celo-monorepo/packages/sdk/base/src/account.ts:16](https://github.com/celo-org/celo-monorepo/tree/master/account.ts#L16)

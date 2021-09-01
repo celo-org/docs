@@ -48,7 +48,7 @@ Change secret phrase used to encrypt the private key of an address
 
 #### Defined in
 
-[keystore-base.ts:132](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L132)
+[keystore-base.ts:132](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L132)
 
 ___
 
@@ -74,7 +74,7 @@ Permanently removes keystore entry from keystore
 
 #### Defined in
 
-[keystore-base.ts:145](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L145)
+[keystore-base.ts:145](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L145)
 
 ___
 
@@ -102,7 +102,7 @@ Account address
 
 #### Defined in
 
-[keystore-base.ts:51](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L51)
+[keystore-base.ts:51](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L51)
 
 ___
 
@@ -124,7 +124,7 @@ Record with account addresses as keys, keystore entry names as values
 
 #### Defined in
 
-[keystore-base.ts:72](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L72)
+[keystore-base.ts:72](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L72)
 
 ___
 
@@ -144,7 +144,7 @@ Gets a list of the names of each entry in the keystore
 
 #### Defined in
 
-[inmemory-keystore.ts:18](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/inmemory-keystore.ts#L18)
+[inmemory-keystore.ts:18](https://github.com/celo-org/celo-monorepo/tree/master/inmemory-keystore.ts#L18)
 
 ___
 
@@ -172,7 +172,7 @@ Name of corresponding keystore entry
 
 #### Defined in
 
-[keystore-base.ts:106](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L106)
+[keystore-base.ts:106](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L106)
 
 ___
 
@@ -199,7 +199,7 @@ Gets decrypted (plaintext) private key for an account address
 
 #### Defined in
 
-[keystore-base.ts:120](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L120)
+[keystore-base.ts:120](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L120)
 
 ___
 
@@ -225,7 +225,7 @@ Returns raw encrypted keystore entry string by name
 
 #### Defined in
 
-[inmemory-keystore.ts:14](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/inmemory-keystore.ts#L14)
+[inmemory-keystore.ts:14](https://github.com/celo-org/celo-monorepo/tree/master/inmemory-keystore.ts#L14)
 
 ___
 
@@ -252,7 +252,7 @@ Encrypts and stores a private key as a new keystore entry
 
 #### Defined in
 
-[keystore-base.ts:86](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L86)
+[keystore-base.ts:86](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L86)
 
 ___
 
@@ -274,7 +274,7 @@ List of account address strings
 
 #### Defined in
 
-[keystore-base.ts:64](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/keystore-base.ts#L64)
+[keystore-base.ts:64](https://github.com/celo-org/celo-monorepo/tree/master/keystore-base.ts#L64)
 
 ___
 
@@ -301,7 +301,7 @@ Saves encrypted keystore entry (i.e. to disk, database, ...). Must be implemente
 
 #### Defined in
 
-[inmemory-keystore.ts:10](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/inmemory-keystore.ts#L10)
+[inmemory-keystore.ts:10](https://github.com/celo-org/celo-monorepo/tree/master/inmemory-keystore.ts#L10)
 
 ___
 
@@ -327,4 +327,4 @@ Removes keystore entry from keystore permanently
 
 #### Defined in
 
-[inmemory-keystore.ts:22](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/keystores/src/inmemory-keystore.ts#L22)
+[inmemory-keystore.ts:22](https://github.com/celo-org/celo-monorepo/tree/master/inmemory-keystore.ts#L22)

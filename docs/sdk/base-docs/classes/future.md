@@ -26,7 +26,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:7](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L7)
+[celo-monorepo/packages/sdk/base/src/future.ts:7](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L7)
 
 ## Accessors
 
@@ -40,7 +40,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:20](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L20)
+[celo-monorepo/packages/sdk/base/src/future.ts:20](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L20)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:16](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L16)
+[celo-monorepo/packages/sdk/base/src/future.ts:16](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L16)
 
 ## Methods
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:40](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L40)
+[celo-monorepo/packages/sdk/base/src/future.ts:40](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L40)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:30](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L30)
+[celo-monorepo/packages/sdk/base/src/future.ts:30](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L30)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:24](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L24)
+[celo-monorepo/packages/sdk/base/src/future.ts:24](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L24)
 
 ___
 
@@ -122,4 +122,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/future.ts:36](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/future.ts#L36)
+[celo-monorepo/packages/sdk/base/src/future.ts:36](https://github.com/celo-org/celo-monorepo/tree/master/future.ts#L36)

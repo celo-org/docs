@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:47](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L47)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:47](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L47)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:49](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L49)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:49](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L49)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/currencies.ts:48](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/currencies.ts#L48)
+[celo-monorepo/packages/sdk/base/src/currencies.ts:48](https://github.com/celo-org/celo-monorepo/tree/master/currencies.ts#L48)

@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[log-explorer.ts:15](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/log-explorer.ts#L15)
+[log-explorer.ts:15](https://github.com/celo-org/celo-monorepo/tree/master/log-explorer.ts#L15)
 
 ## Properties
 
@@ -47,7 +47,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[log-explorer.ts:47](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/log-explorer.ts#L47)
+[log-explorer.ts:47](https://github.com/celo-org/celo-monorepo/tree/master/log-explorer.ts#L47)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[log-explorer.ts:51](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/log-explorer.ts#L51)
+[log-explorer.ts:51](https://github.com/celo-org/celo-monorepo/tree/master/log-explorer.ts#L51)
 
 ___
 
@@ -87,4 +87,4 @@ ___
 
 #### Defined in
 
-[log-explorer.ts:62](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/explorer/src/log-explorer.ts#L62)
+[log-explorer.ts:62](https://github.com/celo-org/celo-monorepo/tree/master/log-explorer.ts#L62)

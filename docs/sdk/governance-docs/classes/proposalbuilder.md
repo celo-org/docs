@@ -24,7 +24,7 @@ Builder class to construct proposals from JSON or transaction objects.
 
 #### Defined in
 
-[proposals.ts:192](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L192)
+[proposals.ts:192](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L192)
 
 ## Properties
 
@@ -50,7 +50,7 @@ Builder class to construct proposals from JSON or transaction objects.
 
 #### Defined in
 
-[proposals.ts:319](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L319)
+[proposals.ts:319](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L319)
 
 ___
 
@@ -73,7 +73,7 @@ Adds a transaction to set the implementation on a proxy to the given address.
 
 #### Defined in
 
-[proposals.ts:227](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L227)
+[proposals.ts:227](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L227)
 
 ___
 
@@ -96,7 +96,7 @@ Adds a Celo transaction to the list for proposal construction.
 
 #### Defined in
 
-[proposals.ts:253](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L253)
+[proposals.ts:253](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L253)
 
 ___
 
@@ -119,7 +119,7 @@ Adds a Web3 transaction to the list for proposal construction.
 
 #### Defined in
 
-[proposals.ts:245](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L245)
+[proposals.ts:245](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L245)
 
 ___
 
@@ -137,7 +137,7 @@ A constructed Proposal object (i.e. a list of ProposalTransaction)
 
 #### Defined in
 
-[proposals.ts:203](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L203)
+[proposals.ts:203](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L203)
 
 ___
 
@@ -157,7 +157,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:273](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L273)
+[proposals.ts:273](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L273)
 
 ___
 
@@ -180,7 +180,7 @@ Converts a Web3 transaction into a proposal transaction object.
 
 #### Defined in
 
-[proposals.ts:216](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L216)
+[proposals.ts:216](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L216)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:266](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L266)
+[proposals.ts:266](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L266)
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 #### Defined in
 
-[proposals.ts:269](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L269)
+[proposals.ts:269](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L269)
 
 ___
 
@@ -241,4 +241,4 @@ ___
 
 #### Defined in
 
-[proposals.ts:263](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/governance/src/proposals.ts#L263)
+[proposals.ts:263](https://github.com/celo-org/celo-monorepo/tree/master/proposals.ts#L263)

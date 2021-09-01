@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:11](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L11)
+[packages/sdk/utils/src/dappkit.ts:11](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L11)
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[packages/sdk/utils/src/dappkit.ts:12](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/utils/src/dappkit.ts#L12)
+[packages/sdk/utils/src/dappkit.ts:12](https://github.com/celo-org/celo-monorepo/tree/master/dappkit.ts#L12)

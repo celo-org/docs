@@ -30,7 +30,7 @@ Indicates wether the task is running
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:13](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L13)
+[celo-monorepo/packages/sdk/base/src/task.ts:13](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L13)
 
 ___
 
@@ -46,4 +46,4 @@ Flag task to be stopped. Might not be inmediate
 
 #### Defined in
 
-[celo-monorepo/packages/sdk/base/src/task.ts:11](https://github.com/celo-org/docs/blob/36f0e03d3/celo-monorepo/packages/sdk/base/src/task.ts#L11)
+[celo-monorepo/packages/sdk/base/src/task.ts:11](https://github.com/celo-org/celo-monorepo/tree/master/task.ts#L11)
