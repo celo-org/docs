@@ -10,9 +10,20 @@ on:
     branches: [ main ]
 
 jobs:
+  build_monorepo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest celo-monorepo
+        run: git pull -s subtree celo-monorepo master
+      - run: cd celo-monorepo
+      - run: yarn
+      - run: yarn build
+      
   build:
 
     runs-on: ubuntu-latest
+    
+    needs: build_monorepo
 
     strategy:
       matrix:
