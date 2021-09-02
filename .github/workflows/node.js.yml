@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: git config pull.rebase true 
       - run: git remote add -f celo-monorepo https://github.com/celo-org/celo-monorepo.git
       - name: Get latest celo-monorepo
         run: git pull -s subtree celo-monorepo master
