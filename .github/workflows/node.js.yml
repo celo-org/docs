@@ -32,10 +32,10 @@ jobs:
 #       - run: git pull -s subtree celo-monorepo master
       - name: Get monorepo dependencies
         working-directory: ./celo-monorepo
-        run: yarn lerna
+        run: yarn
       - name: Build monorepo
         working-directory: ./celo-monorepo
-        run: yarn lerna build --ignore docs
+        run: yarn build --ignore docs
       
   build:
 
