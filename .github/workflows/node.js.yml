@@ -26,7 +26,12 @@ jobs:
 #       - run: git merge -s ours --no-commit --allow-unrelated-histories celo-monorepo/master
 #       - run: git read-tree --prefix=celo-monorepo/ -u celo-monorepo/master
 #       - run: git pull -s subtree celo-monorepo master
-      - run: yarn build-monorepo
+      - name: Get monorepo dependencies
+        working-directory: ./celo-monorepo
+        run: yarn
+      - name: Build monorepo
+        working-directory: ./celo-monorepo
+        run: yarn build
       
   build:
 
