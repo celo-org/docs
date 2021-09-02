@@ -35,7 +35,7 @@ jobs:
         run: yarn
       - name: Build monorepo
         working-directory: ./celo-monorepo
-        run: yarn build
+        run: yarn build --ignore docs
       
   build:
 
