@@ -16,8 +16,9 @@ jobs:
       - uses: actions/checkout@v2
       - run: git config pull.rebase true 
       - run: git remote add -f celo-monorepo https://github.com/celo-org/celo-monorepo.git
-      - name: Get latest celo-monorepo
-        run: git pull -s subtree celo-monorepo master
+      - run: git merge -s ours --no-commit --allow-unrelated-histories celo-monorepo/master
+      - run: git read-tree --prefix=celo-monorepo/ -u celo-monorepo/master
+      - run: git pull -s subtree celo-monorepo master
       - run: cd celo-monorepo
       - run: yarn
       - run: yarn build
