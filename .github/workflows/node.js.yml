@@ -10,9 +10,26 @@ on:
     branches: [ main ]
 
 jobs:
+  build_monorepo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+#       - run: git config pull.rebase true 
+#       - run: git config --local user.email "$(git log --format='%ae' HEAD^!)"
+#       - run: git config --local user.name "$(git log --format='%an' HEAD^!)"
+#       - run: git remote add -f celo-monorepo https://github.com/celo-org/celo-monorepo.git
+#       - run: git merge -s ours --no-commit --allow-unrelated-histories celo-monorepo/master
+#       - run: git read-tree --prefix=celo-monorepo/ -u celo-monorepo/master
+#       - run: git pull -s subtree celo-monorepo master
+      - run: cd celo-monorepo
+      - run: yarn
+      - run: yarn build
+      
   build:
 
     runs-on: ubuntu-latest
+    
+    needs: build_monorepo
 
     strategy:
       matrix:
