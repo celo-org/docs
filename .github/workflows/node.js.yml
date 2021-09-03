@@ -12,8 +12,17 @@ on:
 jobs:
   build_monorepo:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.x]
+    
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 #       - run: git config pull.rebase true 
 #       - run: git config --local user.email "$(git log --format='%ae' HEAD^!)"
 #       - run: git config --local user.name "$(git log --format='%an' HEAD^!)"
@@ -21,9 +30,12 @@ jobs:
 #       - run: git merge -s ours --no-commit --allow-unrelated-histories celo-monorepo/master
 #       - run: git read-tree --prefix=celo-monorepo/ -u celo-monorepo/master
 #       - run: git pull -s subtree celo-monorepo master
-      - run: cd celo-monorepo
-      - run: yarn
-      - run: yarn build
+      - name: Get monorepo dependencies
+        working-directory: ./celo-monorepo
+        run: yarn
+      - name: Build monorepo
+        working-directory: ./celo-monorepo
+        run: yarn build --ignore docs
       
   build:
 
