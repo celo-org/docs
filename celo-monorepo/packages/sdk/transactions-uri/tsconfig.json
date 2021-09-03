@@ -1,0 +1,14 @@
+{
+  "extends": "@celo/typescript/tsconfig.library.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "include": ["src/**/*", "types/**/*"],
+  "typedocOptions": {
+    "exclude": ["**/generated/*.ts", "**/*+(index|.test).ts"],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "hideGenerator": "true"
+  }
+}

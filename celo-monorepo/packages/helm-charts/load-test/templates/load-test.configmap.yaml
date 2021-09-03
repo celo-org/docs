@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.environment }}-load-test-config
+  labels:
+    app: load-test
+    chart: load-test
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: load-test
+data:
+  genesis.json: {{ .Values.genesis.genesisFileBase64 | b64dec | quote }}
+  static-nodes.json: {{ .Values.geth.staticNodes | b64dec | quote }}
