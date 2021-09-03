@@ -5,5 +5,11 @@
     "outDir": "lib",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "types/**/*", "src/utils/timezones.json"]
+  "include": ["src/**/*", "types/**/*", "src/utils/timezones.json"],
+  "typedocOptions": {
+    "exclude": ["**/*+(index|.test).ts"],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "hideGenerator": "true"
+  }
 }

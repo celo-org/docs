@@ -5,5 +5,11 @@
     "outDir": "lib",
     "downlevelIteration": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "typedocOptions": {
+    "exclude": ["**/*+(index|.test).ts"],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "hideGenerator": "true"
+  }
 }

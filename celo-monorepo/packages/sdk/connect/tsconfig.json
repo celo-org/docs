@@ -4,5 +4,11 @@
     "rootDir": "src",
     "outDir": "lib"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "typedocOptions": {
+    "exclude": ["**/generated/*.ts", "**/*+(index|.test).ts"],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "hideGenerator": "true"
+  }
 }
