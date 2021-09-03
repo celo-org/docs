@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "yarn build-monorepo && docusaurus build",
+    "build": "./netlify_packages/libsecret && yarn build-monorepo && docusaurus build",
     "build-monorepo": "cd celo-monorepo && yarn && yarn build --ignore docs",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
