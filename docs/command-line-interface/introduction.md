@@ -10,7 +10,7 @@ description: >-
 
 ### **Optional**
 
-- **Run a Celo node full node.** Commands will connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/README.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
+- **Run a Celo node full node.** Commands will connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/index.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/mainnet/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
 
 ### NPM Package
 
