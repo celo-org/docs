@@ -110,7 +110,7 @@ module.exports = {
                           '/validator-guide/summary/ledger',
                           '/validator-guide/using-a-ledger-wallet',
                           '/celo-gold-holder-guide/ledger',
-                          'celo-owner-guide/ledger'
+                          '/celo-owner-guide/ledger'
                     ]
                   },
                   {
@@ -175,27 +175,27 @@ module.exports = {
                     from: ['/celo-gold-holder-guide/release-gold'],
                 },
                 {
-                    to: 'celo-holder-guide/voting-governance',
+                    to: '/celo-holder-guide/voting-governance',
                     from: [
-                        'celo-gold-holder-guide/voting-governance',
-                        'celo-owner-guide/voting-governance'
+                        '/celo-gold-holder-guide/voting-governance',
+                        '/celo-owner-guide/voting-governance'
                     ],
                 },
                 {
-                    to: 'celo-holder-guide/voting-validators',
+                    to: '/celo-holder-guide/voting-validators',
                     from: [
-                        'celo-gold-holder-guide/voting-validators',
-                        'celo-owner-guide/voting-validators'
+                        '/celo-gold-holder-guide/voting-validators',
+                        '/celo-owner-guide/voting-validators'
                     ],
                 },
                 {
-                    to: 'celo-holder-guide/cusd',
-                    from: ['celo-owner-guide/cusd'],
+                    to: '/celo-holder-guide/cusd',
+                    from: ['/celo-owner-guide/cusd'],
                 },
                 {
-                    to: 'celo-holder-guide/eth-recovery',
+                    to: '/celo-holder-guide/eth-recovery',
                     from: [
-                        'celo-owner-guide/eth-recovery'
+                        '/celo-owner-guide/eth-recovery'
                     ],
                 },
               ],
