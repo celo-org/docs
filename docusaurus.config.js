@@ -94,5 +94,112 @@ module.exports = {
     }],
     plugins: [
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
+        [
+            '@docusaurus/plugin-client-redirects',
+            {
+              redirects: [
+                  {
+                      to: '/celo-holder-guide/ledger.md',
+                      from: [
+                          '/operations-manual/key-management/using-a-ledger-wallet',
+                          '/operations-manual/key-management/ledger',
+                          '/operations-manual/summary/ledger',
+                          '/operations-manual/using-a-ledger-wallet',
+                          '/validator-guide/key-management/using-a-ledger-wallet',
+                          '/validator-guide/key-management/ledger',
+                          '/validator-guide/summary/ledger',
+                          '/validator-guide/using-a-ledger-wallet',
+                          '/celo-gold-holder-guide/ledger',
+                          'celo-owner-guide/ledger'
+                    ]
+                  },
+                  {
+                    to: '/getting-started/running-a-full-node-in-baklava',
+                    from: [
+                        '/getting-started/running-a-full-node',
+                        '/getting-started/running-a-validator'
+                    ],
+                },
+                {
+                    to: '/getting-started/using-the-mobile-wallet',
+                    from: ['/getting-started/using-the-wallet'],
+                },
+                {
+                    to: '/celo-holder-guide/release-gold',
+                    from: [
+                        '/celo-codebase/protocol/release-gold',
+                        'celo-owner-guide/release-gold'
+                    ]
+                },
+                {
+                    to: '/celo-holder-guide/voting-governance',
+                    from: '/validator-guide/governance',
+                },
+                {
+                    to: '/developer-resources/walkthroughs/hello-mobile-dapp',
+                    from: ['/developer-guide/start/celo-truffle-box'],
+                },
+                {
+                    to: '/developer-resources/overview',
+                    from: ['/developer-guide/overview/introduction'],
+                },
+                {
+                    to: '/developer-guide/development-chain',
+                    from: ['/developer-guide/start/development-chain'],
+                },
+                {
+                    to: '/important-information/mainnet-network-disclaimer',
+                    from: ['/important-information/rc-network-disclaimer'],
+                },
+                {
+                    to: '/getting-started/mainnet',
+                    from: ['/getting-started/rc1'],
+                },
+                {
+                    to: '/getting-started/running-a-full-node-in-mainnet',
+                    from: ['/getting-started/rc1/running-a-full-node-in-rc1'],
+                },
+                {
+                    to: '/getting-started/running-a-validator-in-mainnet',
+                    from: ['/getting-started/rc1/running-a-validator-in-rc1'],
+                },
+                {
+                    to: '/celo-holder-guide/quick-start',
+                    from: [
+                        '/celo-gold-holder-guide/quick-start',
+                        'celo-owner-guide/quick-start'
+                    ],
+                },
+                {
+                    to: '/celo-holder-guide/release-gold',
+                    from: ['/celo-gold-holder-guide/release-gold'],
+                },
+                {
+                    to: 'celo-holder-guide/voting-governance',
+                    from: [
+                        'celo-gold-holder-guide/voting-governance',
+                        'celo-owner-guide/voting-governance'
+                    ],
+                },
+                {
+                    to: 'celo-holder-guide/voting-validators',
+                    from: [
+                        'celo-gold-holder-guide/voting-validators',
+                        'celo-owner-guide/voting-validators'
+                    ],
+                },
+                {
+                    to: 'celo-holder-guide/cusd',
+                    from: ['celo-owner-guide/cusd'],
+                },
+                {
+                    to: 'celo-holder-guide/eth-recovery',
+                    from: [
+                        'celo-owner-guide/eth-recovery'
+                    ],
+                },
+              ],
+            },
+        ]
     ]
 };
