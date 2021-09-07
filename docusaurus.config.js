@@ -128,7 +128,7 @@ module.exports = {
                     to: '/celo-holder-guide/release-gold',
                     from: [
                         '/celo-codebase/protocol/release-gold',
-                        'celo-owner-guide/release-gold'
+                        '/celo-owner-guide/release-gold'
                     ]
                 },
                 {
@@ -167,7 +167,7 @@ module.exports = {
                     to: '/celo-holder-guide/quick-start',
                     from: [
                         '/celo-gold-holder-guide/quick-start',
-                        'celo-owner-guide/quick-start'
+                        '/celo-owner-guide/quick-start'
                     ],
                 },
                 {
