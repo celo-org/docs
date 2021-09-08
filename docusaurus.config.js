@@ -206,6 +206,12 @@ module.exports = {
                         '/celo-holder-guide/eth-recovery'
                     ],
                 },
+                {
+                    to: '/celo-owner-guide/celo-recovery',
+                    from: [
+                        '/celo-holder-guide/celo-recovery'
+                    ],
+                },
               ],
             },
         ]
