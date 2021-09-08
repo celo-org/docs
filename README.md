@@ -6,7 +6,7 @@ Welcome to the technical documentation site for the Celo project! You can check 
 
 This documentation site is built using [Docusaurus v2](https://github.com/facebook/docusaurus).
 
-You can run the site locally by cloning this repository, installing dependcies and starting docusarus.
+You can run the site locally by cloning this repository, installing dependencies and starting docusaurus.
 
 ```sh
 git clone https://github.com/celo-org/docs.git
@@ -25,7 +25,7 @@ You can find many of the other main Celo project repositories at https://github.
 
 ## Contact
 
-Join us on [Discord](https://chat.celo.org).
+Join us on [Discord](https://chat.celo.org) or file an issue.
 
 ## Code of Conduct
 
