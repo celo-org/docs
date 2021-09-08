@@ -121,9 +121,8 @@ module.exports = {
                     ],
                 },
                 {
-                    to: '/getting-started/alfajores-testnet/using-the-mobile-wallet',
+                    to: '/getting-started/using-the-wallet',
                     from: [
-                        '/getting-started/using-the-wallet',
                         '/getting-started/using-the-mobile-wallet',
                     ],
                 },
