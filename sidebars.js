@@ -63,7 +63,6 @@ module.exports = {
         "getting-started/validator-troubleshooting-faq",
         "getting-started/glossary",
       ],
-      collapsed: false,
     },
     {
       type: 'category',
