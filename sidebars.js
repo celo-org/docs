@@ -118,10 +118,12 @@ module.exports = {
             'developer-resources/walkthroughs/hellocelo',
             'developer-resources/walkthroughs/hellocontracts',
             'developer-resources/walkthroughs/hello-contract-remote-node',
+            'developer-resources/walkthroughs/no-code-erc20',
+            'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
-            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'}
+            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect' }
           ]
         },
         {
@@ -162,7 +164,7 @@ module.exports = {
           ]
         },
         // TODO: This link will need to be changed when we move all the SDK type docs
-        { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
+        // { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
       ]
     },
     {
