@@ -162,7 +162,7 @@ module.exports = {
           ]
         },
         // TODO: This link will need to be changed when we move all the SDK type docs
-        { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
+        // { type: 'link', label: 'SDK Code Reference', href: 'https://docs.celo.org/developer-guide/sdk-code-reference' },
       ]
     },
     {
