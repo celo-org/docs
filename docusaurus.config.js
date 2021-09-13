@@ -95,6 +95,14 @@ module.exports = {
     plugins: [
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
         [
+            '@docusaurus/plugin-sitemap',
+            {
+              changefreq: 'weekly',
+              priority: 0.5,
+              trailingSlash: false,
+            },
+        ],
+        [
             '@docusaurus/plugin-client-redirects',
             {
               redirects: [
