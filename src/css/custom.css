@@ -33,3 +33,7 @@
 h2 {
   font-size:  1.6em !important;
 }
+
+.DocSearch-Logo {
+  display: none;
+}
