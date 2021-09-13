@@ -217,6 +217,12 @@ module.exports = {
                         '/celo-holder-guide/celo-recovery'
                     ],
                 },
+                {
+                    to: '/developer-guide/overview',
+                    from: [
+                        '/v/master/developer-guide/overview'
+                    ]
+                }
               ],
             },
         ]
