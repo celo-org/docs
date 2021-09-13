@@ -1,3 +1,7 @@
+---
+title: Using a Ledger Wallet
+slug: /celo-owner-guide/ledger
+---
 # Setup a Ledger Wallet with Celo
 
 This section shows how to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
