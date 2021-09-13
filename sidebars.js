@@ -71,7 +71,16 @@ module.exports = {
       items: [
         { type: 'doc', label: 'Quick Start', id: 'celo-holder-guide/quick-start' },
         'celo-holder-guide/cusd',
-        'celo-holder-guide/ledger',
+        {
+          type: 'category',
+          label: 'Using a Ledger Wallet',
+          items: [
+            'celo-holder-guide/ledger',
+            'celo-holder-guide/connecting-ledger-celo-terminal-wallet',
+            'celo-holder-guide/connecting-ledger-celo-web-wallet',
+            'celo-holder-guide/connecting-ledger-celocli'
+          ]
+        },
         'celo-holder-guide/release-gold',
         'celo-holder-guide/voting-validators',
         { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
