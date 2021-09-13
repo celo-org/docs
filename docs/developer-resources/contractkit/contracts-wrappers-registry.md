@@ -9,7 +9,7 @@ celo-blockchain has two initial coins: CELO and cUSD (stableToken).
 Both implement the ERC20 standard, and to interact with them is as simple as:
 
 ```ts
-const goldtoken = await kit.contract.getGoldToken()
+const goldtoken = await kit.contracts.getGoldToken()
 
 const balance = await goldtoken.balanceOf(someAddress)
 ```

@@ -63,7 +63,6 @@ module.exports = {
         "getting-started/validator-troubleshooting-faq",
         "getting-started/glossary",
       ],
-      collapsed: false,
     },
     {
       type: 'category',
@@ -123,7 +122,8 @@ module.exports = {
             'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
-            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect' }
+            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
+            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
           ]
         },
         {

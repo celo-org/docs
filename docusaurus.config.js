@@ -40,6 +40,12 @@ module.exports = {
                 },
             ],
         },
+        algolia: {
+            apiKey: 'a55b84f8b98dc5edd71d11cf4e42434e',
+            indexName: 'celo',
+            contextualSearch: false,
+            debug: false
+        },
         footer: {
             style: "dark",
             links: [{
