@@ -9,12 +9,12 @@ You can easily deploy token contracts that use the ERC20, ERC721, or ERC1155 tok
 In this tutorial, we will go over how to deploy an ERC20 token contract. The process is very similar for deploying other tokens as well.
 
 1. Install [Metamask](https://metamask.io/).
-2. [Add the Celo network](/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask) to Metamask. I suggest adding the Alfajores testnet to Metamask as well, so you can test contract deployments before deploying to mainnet.
+2. [Add the Celo network](/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask) to Metamask. We suggest adding the Alfajores testnet to Metamask as well, so you can test contract deployments before deploying to mainnet.
 3. Add a small amount of CELO to your Metamask account. In this example, we will deploy to the Alfajores testnet, so we need Alfajores CELO, which you can get from the faucet [here](https://celo.org/developers/faucet).
 4. Go to the [Open Zeppelin Contracts Wizard](https://docs.openzeppelin.com/contracts/4.x/wizard).
 5. Select `ERC20` as the type of contract that you would like to deploy. ![erc20 empty settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20empty%20settings.png?raw=true)
-6. Name your token. I am calling our token “ProsperityToken” in this example.
-7. Select the features for your token. I am making ProsperityToken mintable, burnable and enabling snapshots, so the token may be used for governance. I am also making the contract Ownable, so the deployer of the contract can mint new tokens and distribute them as desired. Ideally, the owner account will be a multi-signature contract, so no single person has control over this token contract. ![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
+6. Name your token. We are calling our token “ProsperityToken” in this example.
+7. Select the features for your token. We are making ProsperityToken mintable, burnable and enabling snapshots, so the token may be used for governance. We are also making the contract Ownable, so the deployer of the contract can mint new tokens and distribute them as desired. Ideally, the owner account will be a multi-signature contract, so no single person has control over this token contract. ![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
 8. Open your contract in Remix by clicking “Open in Remix”. Remix will pop open with the contract code already filled in.
 9. Click the big blue button that says “Compile contract-xxxxx.sol”. The contract should compile without error. ![remix compile erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20compile%20erc20.png?raw=true)
 10. Click the Ethereum logo in the left sidebar. This will bring up a new interface for deploying the contract. ![remix deploy erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20deploy%20erc20.png?raw=true)
