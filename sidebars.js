@@ -126,6 +126,8 @@ module.exports = {
             'developer-resources/walkthroughs/hellocelo',
             'developer-resources/walkthroughs/hellocontracts',
             'developer-resources/walkthroughs/hello-contract-remote-node',
+            'developer-resources/walkthroughs/no-code-erc20',
+            'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
