@@ -222,6 +222,12 @@ module.exports = {
                     from: [
                         '/v/master/developer-guide/overview'
                     ]
+                },
+                {
+                    to: '/developer-guide/start',
+                    from: [
+                        '/v/master/developer-guide/start'
+                    ]
                 }
               ],
             },
