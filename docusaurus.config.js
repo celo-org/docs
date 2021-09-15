@@ -103,16 +103,6 @@ module.exports = {
         [
             '@docusaurus/plugin-client-redirects',
             {
-              createRedirects: function(existingPath){
-                let regex = new RegExp('\/command-line-interface\/commands\/[A-z]')
-                console.log(existingPath)
-                console.log(regex.test(existingPath))
-                if (regex.test(existingPath)) {
-                    let newPath = existingPath.replace("commands/", "")
-                    console.log(newPath)
-                    return [newPath]
-                }
-              },
               redirects: [
                   {
                       to: '/celo-owner-guide/ledger',
@@ -238,7 +228,145 @@ module.exports = {
                     from: [
                         '/v/master/developer-guide/start'
                     ]
-                }
+                },
+                {
+                    to: '/command-line-interface/account',
+                    from: [
+                        '/command-line-interface/commands/account',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/autocomplete',
+                    from: [
+                        '/command-line-interface/commands/autocomplete',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/commands',
+                    from: [
+                        '/command-line-interface/commands/commands',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/config',
+                    from: [
+                        '/command-line-interface/commands/config',
+                    ]
+                },   
+                {
+                    to: '/command-line-interface/dkg',
+                    from: [
+                        '/command-line-interface/commands/dkg',
+                    ]
+                },   
+                {
+                    to: '/command-line-interface/election',
+                    from: [
+                        '/command-line-interface/commands/election',
+                    ]
+                },   
+                {
+                    to: '/command-line-interface/exchange',
+                    from: [
+                        '/command-line-interface/commands/exchange',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/governance',
+                    from: [
+                        '/command-line-interface/commands/governance',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/help',
+                    from: [
+                        '/command-line-interface/commands/help',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/identity',
+                    from: [
+                        '/command-line-interface/commands/identity',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/lockedgold',
+                    from: [
+                        '/command-line-interface/commands/lockedgold',
+                    ]
+                },
+                {
+                    to: '/command-line-interface/multisig',
+                    from: [
+                        '/command-line-interface/commands/multisig',
+                    ]
+                },     
+                {
+                    to: '/command-line-interface/network',
+                    from: [
+                        '/command-line-interface/commands/network',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/node',
+                    from: [
+                        '/command-line-interface/commands/node',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/oracle',
+                    from: [
+                        '/command-line-interface/commands/oracle',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/plugins',
+                    from: [
+                        '/command-line-interface/commands/plugins',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/registry',
+                    from: [
+                        '/command-line-interface/commands/registry',
+                    ]
+                },    
+                {
+                    to: '/command-line-interface/releasegold',
+                    from: [
+                        '/command-line-interface/commands/releasegold',
+                    ]
+                },                  
+                {
+                    to: '/command-line-interface/reserve',
+                    from: [
+                        '/command-line-interface/commands/reserve',
+                    ]
+                },  
+                {
+                    to: '/command-line-interface/rewards',
+                    from: [
+                        '/command-line-interface/commands/rewards',
+                    ]
+                },  
+                {
+                    to: '/command-line-interface/transfer',
+                    from: [
+                        '/command-line-interface/commands/transfer',
+                    ]
+                },  
+                {
+                    to: '/command-line-interface/validator',
+                    from: [
+                        '/command-line-interface/commands/validator',
+                    ]
+                },  
+                {
+                    to: '/command-line-interface/validatorgroup',
+                    from: [
+                        '/command-line-interface/commands/validatorgroup',
+                    ]
+                },                                                                                      
               ],
             },
         ]
