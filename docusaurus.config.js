@@ -103,6 +103,14 @@ module.exports = {
         [
             '@docusaurus/plugin-client-redirects',
             {
+              createRedirects: function(existingPath){
+                let regex = new RegExp('\/command-line-interface\/commands\/*')
+                if (existingPath === '/command-line-interface/commands'){
+                    return [existingPath]
+                } else if (existingPath === regex) {
+                    return [existingPath.replace("commands/", "")]
+                }
+              },
               redirects: [
                   {
                       to: '/celo-owner-guide/ledger',
