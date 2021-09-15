@@ -4,8 +4,6 @@ title: 'Deploy an ERC20 token to Celo'
 
 You can easily deploy token contracts that use the ERC20, ERC721, or ERC1155 token standard to Celo without having to write any code.
 
-# Deploying ERC20 Tokens on Celo (no code)
-
 In this tutorial, we will go over how to deploy an ERC20 token contract. The process is very similar for deploying other tokens as well.
 
 1. Install [Metamask](https://metamask.io/).
