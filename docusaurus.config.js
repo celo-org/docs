@@ -104,10 +104,8 @@ module.exports = {
             '@docusaurus/plugin-client-redirects',
             {
               createRedirects: function(existingPath){
-                let regex = new RegExp('\/command-line-interface\/commands\/')
-                if (existingPath === '/command-line-interface/commands' || existingPath === '/command-line-interface/commands/'){
-                    return [existingPath]
-                } else if (regex.test(existingPath)) {
+                let regex = new RegExp('\/command-line-interface\/commands\/[A-z]')
+                if (regex.test(existingPath)) {
                     return [existingPath.replace("commands/", "")]
                 }
               },
