@@ -105,8 +105,11 @@ module.exports = {
             {
               createRedirects: function(existingPath){
                 let regex = new RegExp('\/command-line-interface\/commands\/[A-z]')
+                console.log(existingPath)
+                console.log(regex.test(existingPath))
                 if (regex.test(existingPath)) {
                     let newPath = existingPath.replace("commands/", "")
+                    console.log(newPath)
                     return [newPath]
                 }
               },
