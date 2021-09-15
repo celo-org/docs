@@ -107,7 +107,7 @@ module.exports = {
                 let regex = new RegExp('\/command-line-interface\/commands\/')
                 if (existingPath === '/command-line-interface/commands' || existingPath === '/command-line-interface/commands/'){
                     return [existingPath]
-                } else if (existingPath.match(regex)) {
+                } else if (existingPath.match(regex).length > 0) {
                     return [existingPath.replace("commands/", "")]
                 }
               },
