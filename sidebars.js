@@ -234,6 +234,7 @@ module.exports = {
               items: [
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/stability/index', },
                 'celo-codebase/protocol/stability/doto',
+                'celo-codebase/protocol/stability/granda-mento',
                 'celo-codebase/protocol/stability/oracles',
                 'celo-codebase/protocol/stability/stability-fees',
                 'celo-codebase/protocol/stability/adding_stable_assets',
