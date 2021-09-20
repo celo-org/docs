@@ -27,7 +27,7 @@ module.exports = {
                 },
                 {
                     href: "https://celo.org/",
-                    label: "Discuss",
+                    label: "Contribute",
                 },
                 {
                     href: "https://medium.com/celoorg",
@@ -35,7 +35,7 @@ module.exports = {
                 },
                 {
                     href: "https://celo.org/",
-                    label: "Contribute",
+                    label: "FAQ",
                 },
                 {
                     href: "https://discord.com/invite/6yWMkgM",
