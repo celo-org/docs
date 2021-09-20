@@ -22,16 +22,25 @@ module.exports = {
                 src: "img/logo.png",
             },
             items: [{
-                    href: "https://celo.org",
-                    label: "Celo Home",
+                    href: "https://celo.org/",
+                    label: "Learn",
                 },
                 {
-                    href: "https://celo.org/build",
-                    label: "Build",
+                    href: "https://celo.org/",
+                    label: "Discuss",
                 },
                 {
-                    href: "https://celo.org/build/faucet",
-                    label: "Faucet",
+                    href: "https://medium.com/celoorg",
+                    label: "Blog",
+                },
+                {
+                    href: "https://celo.org/",
+                    label: "Contribute",
+                },
+                {
+                    href: "https://discord.com/invite/6yWMkgM",
+                    label: "Chat",
+                    position: "right",
                 },
                 {
                     href: "https://github.com/celo-org/docs",
