@@ -15,7 +15,6 @@ module.exports = {
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
     plugins: [
-        '@docusaurus/plugin-google-gtag',
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
         [
             '@docusaurus/plugin-client-redirects',
