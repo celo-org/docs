@@ -15,6 +15,7 @@ module.exports = {
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
     plugins: [
+        require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
         [
             '@docusaurus/plugin-client-redirects',
@@ -353,6 +354,10 @@ module.exports = {
             ],
             copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
         },
+        fathomAnalytics: {
+            siteId: 'AZMFWALB'
+        },
+
     },
     presets: [
         [
