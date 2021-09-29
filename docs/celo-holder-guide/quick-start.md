@@ -317,9 +317,9 @@ celocli election:show $CELO_RG_ADDRESS --voter
 
 Your vote should be displayed next to `pending` under `votes`.
 
-{% hint style="info" %}
+:::info
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
-{% endhint %}
+:::
 
 Now activate your votes:
 
