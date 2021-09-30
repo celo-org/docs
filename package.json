@@ -19,14 +19,27 @@
     "@docusaurus/preset-classic": "2.0.0-beta.6",
     "@docusaurus/theme-search-algolia": "^2.0.0-beta.6",
     "@mdx-js/react": "^1.6.21",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
     "clsx": "^1.1.1",
+    "crypto-browserify": "^3.12.0",
     "docusaurus-plugin-fathom": "^1.1.0",
     "hast-util-is-element": "1.1.0",
+    "https-browserify": "^1.0.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-youtube": "^7.13.1",
     "rehype-katex": "4",
-    "remark-math": "3"
+    "remark-math": "3",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "web3": "^1.5.3"
   },
   "browserslist": {
     "production": [
