@@ -6,9 +6,6 @@ module.exports = function (context, options) {
     configureWebpack(config, isServer, utils) {
       return {
         resolve: {
-          alias: {
-            process: "process/browser"
-          }, 
           fallback: {
             http: require.resolve('stream-http'),
             https: require.resolve('https-browserify'),
@@ -21,6 +18,7 @@ module.exports = function (context, options) {
         plugins: [
           new webpack.ProvidePlugin({
             Buffer: [require.resolve('buffer'), 'Buffer'],
+            process: 'process/browser',
           }),
           new webpack.IgnorePlugin({
             resourceRegExp: /^electron$/
