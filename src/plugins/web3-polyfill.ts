@@ -13,14 +13,15 @@ module.exports = function (context, options) {
             crypto: require.resolve('crypto-browserify'),
             assert: require.resolve("assert"),
             stream: require.resolve("stream-browserify"),
-            buffer: require.resolve('buffer')
           },
         },
         plugins: [
           new webpack.ProvidePlugin({
             Buffer: [require.resolve('buffer'), 'Buffer'],
-            process: 'process/browser',
-          })
+          }),
+          new webpack.IgnorePlugin({
+            resourceRegExp: /^electron$/
+          }),
         ],
       }
     }
