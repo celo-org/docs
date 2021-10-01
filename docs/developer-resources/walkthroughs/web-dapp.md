@@ -64,9 +64,12 @@ When a user wants to interact with your DApp we need to somehow allow them to co
 
 Leveraging our previously added [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) library we can provide a button that prompts the user to connect their wallet.
 
+Update pages/index.js with the following:
 ```javascript
-import React from 'react'
-import { useContractKit } from '@celo-tools/use-contractkit'
+import React from 'react';
+import { useContractKit } from '@celo-tools/use-contractkit';
+import { ContractKitProvider } from '@celo-tools/use-contractkit';
+import '@celo-tools/use-contractkit/lib/styles.css';
 
 function App () {
   const { address, connect } = useContractKit()
@@ -79,6 +82,21 @@ function App () {
     </main>
   )
 }
+
+function WrappedApp() {
+  return (
+    <ContractKitProvider
+      dapp={{
+          name: "My awesome dApp",
+          description: "My awesome description",
+          url: "https://example.com",
+        }}
+    >
+      <App />
+    </ContractKitProvider>
+  );
+}
+export default WrappedApp;
 ```
 
 Clicking this button will show the `use-contractkit` modal and allow the user to connect with their wallet of choice. Once the modal has been dismissed, the `address` property exposed by `use-contractkit` will be filled with the users primary account.
