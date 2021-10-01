@@ -116,7 +116,7 @@ For the purposes of this tutorial, we'll only be looking at dequeued proposals, 
 Here's how it looks using a combination of the `useEffect` and `useCallback` hooks to request and display all dequeued proposals from the blockchain.
 
 ```javascript
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useContractKit } from '@celo-tools/use-contractkit'
 
 function App() {
