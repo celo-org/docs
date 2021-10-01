@@ -36,6 +36,24 @@ Here's what we'll be using each of these packages for:
 - [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) is a community provided library to ease establishing the connection with a user's wallet, whether that is a hardware, mobile, or web wallet. When developing with this library, your users can hold Celo via [Valora](https://valoraapp.com), a Ledger, Metamask and more
 - [bignumber.js](https://github.com/MikeMcl/bignumber.js/) is a library for expressing large numbers in JavaScript. When interacting with a blockchain we often need to handle arbitrary-precision decimal and non-decimal arithmetic.
 
+We'll also need to add some Next.js config to work with these packages. Update next.config.js with the following:
+```javascript
+module.exports = {
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      child_process: false,
+      readline: false,
+    };
+    return config;
+  },
+};
+```
+
+We'll need to restart the server for the config changes to take effect.
+
 ## Developing the application
 
 After all our boilerplate has been setup, we're ready to start developing our application.
