@@ -7,7 +7,7 @@ This guide walks you through the basics of how to deploy your own smart contract
 
 ## Setup
 
-This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup. If so, you can install truffle with:
+This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup (Node.js v12.x). If so, you can install truffle with:
 
 ```
 npm install -g truffle
