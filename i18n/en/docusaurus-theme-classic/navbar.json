@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Celo Docs",
+    "description": "The title in the navbar"
+  },
+  "item.label.Celo Home": {
+    "message": "Celo Home",
+    "description": "Navbar item with label Celo Home"
+  },
+  "item.label.Build": {
+    "message": "Build",
+    "description": "Navbar item with label Build"
+  },
+  "item.label.Faucet": {
+    "message": "Faucet",
+    "description": "Navbar item with label Faucet"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

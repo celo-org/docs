@@ -14,6 +14,10 @@ module.exports = {
     favicon: "img/logo.png",
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en']
+    },
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
@@ -295,7 +299,12 @@ module.exports = {
                 alt: "Celo Logo",
                 src: "img/logo.png",
             },
-            items: [{
+            items: [
+                {
+                    type: 'localeDropdown',
+                    position: 'left',
+                },
+                {
                     href: "https://celo.org",
                     label: "Celo Home",
                 },
