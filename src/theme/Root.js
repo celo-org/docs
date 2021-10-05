@@ -1,5 +1,5 @@
 import React from 'react';
-import { Web3ReactProvider } from "@web3-react/core"
+// import { Web3ReactProvider } from "@web3-react/core"
 import Web3 from 'web3'
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
@@ -11,10 +11,15 @@ function Root({children}) {
     }
 
     return (
-        <BrowserOnly>
-            <Web3ReactProvider getLibrary={getLibrary}>
-                <>{children}</>;
-            </Web3ReactProvider>
+        <BrowserOnly fallback={<>{children}</>}>
+        {() => {
+            const Web3ReactProvider = require("@web3-react/core").Web3ReactProvider
+            return (
+                <Web3ReactProvider getLibrary={getLibrary}>
+                    <>{children}</>;
+                </Web3ReactProvider>
+            )
+        }}
         </BrowserOnly>
     )
 }
