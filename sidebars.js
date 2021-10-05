@@ -25,6 +25,7 @@ module.exports = {
                 "getting-started/wallets/using-metamask-with-celo/index",
                 "getting-started/wallets/using-metamask-with-celo/manual-setup",
                 "getting-started/wallets/using-metamask-with-celo/programmatic-setup",
+                "getting-started/wallets/using-metamask-with-celo/metamask-valora-import",
                 "getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask",
               ],
             }
