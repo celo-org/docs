@@ -18,12 +18,12 @@ Since Celo network's [Donut Hardfork](https://github.com/celo-org/celo-proposals
 
 ### **For end users:**
 
-* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](manual-setup.mdx)
+* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](manual-setup.md)
 * [Setup a Ledger to Work with MetaMask to Work With Celo](using-a-ledger-with-metamask.md)
 
 ### **For developers:**
 
-* [Setup MetaMask to Work with Your dApp](programmatic-setup.mdx)
+* [Setup MetaMask to Work with Your dApp](programmatic-setup.md)
 
 ## **Things to Keep in Mind**
 
