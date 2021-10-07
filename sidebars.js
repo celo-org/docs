@@ -173,6 +173,16 @@ module.exports = {
             'developer-resources/integrations/cloud-hsm',
           ]
         },
+        {
+          type: 'category',
+          label: 'Bridging',
+          items: [
+            { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
+            'celo-codebase/protocol/bridging/bridging-native-assets',
+            'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
+
+          ]
+        },
         // TODO: This link will need to be changed when we move all the SDK type docs
         { type: 'link', label: 'SDK Code Reference', href: 'https://celo-sdk-docs.readthedocs.io/' },
       ]
