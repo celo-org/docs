@@ -14,6 +14,6 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 * [Optics Bridge](./../../protocol/optics.md)
   * [Mobius](https://bridge.mobius.money/#/)
-  * [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
   * Optics GUI (coming soon)
+* [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
 * [Moss](https://bridge.moss.earth/)
