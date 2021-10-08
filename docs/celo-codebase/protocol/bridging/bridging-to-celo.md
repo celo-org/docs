@@ -13,7 +13,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 :::
 
 * [Optics Bridge](./../../protocol/optics.md)
-  * Web UIs
+  * Optics Web UIs
     * [Mobius Optics Web UI](https://bridge.mobius.money/#/)
     * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
     * cLabs Optics Web UI (coming soon)
