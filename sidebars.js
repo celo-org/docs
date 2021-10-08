@@ -25,6 +25,7 @@ module.exports = {
                 "getting-started/wallets/using-metamask-with-celo/index",
                 "getting-started/wallets/using-metamask-with-celo/manual-setup",
                 "getting-started/wallets/using-metamask-with-celo/programmatic-setup",
+                "getting-started/wallets/using-metamask-with-celo/metamask-valora-import",
                 "getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask",
               ],
             }
@@ -170,6 +171,16 @@ module.exports = {
             'developer-resources/integrations/custody',
             'developer-resources/integrations/listings',
             'developer-resources/integrations/cloud-hsm',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Bridging',
+          items: [
+            { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
+            'celo-codebase/protocol/bridging/bridging-native-assets',
+            'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
+
           ]
         },
         // TODO: This link will need to be changed when we move all the SDK type docs
