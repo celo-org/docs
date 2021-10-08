@@ -21,9 +21,11 @@ The components of the library are roughly as follows:
 ## Usage
 
 :::warning
+
 For accounts containing significant funds or otherwise requiring a high degree of security, we **do not** recommend this keystore library! This is only for managing keys for low-risk hot wallets and signers.
 
 For more stringent security requirements, check out the guide to [Choosing a Wallet](/getting-started/wallets).
+
 :::
 
 Depending on your use case, you can either interact directly with the `FileKeystore` (purely for creating and interacting with keystore files, importing or accessing private keys) or else use the `KeystoreWalletWrapper` (combines the keystore functionality with convenient access to the `LocalWallet` for signing tranactions).

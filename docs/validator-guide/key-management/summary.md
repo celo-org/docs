@@ -31,5 +31,7 @@ For more details on a specific key type, please see the more detailed sections b
 
 
 :::caution
+
 A Locked Gold Account may have at most one authorized signer of each type at any time. Once a signer is authorized, the only way to deauthorize that signer is to authorize a new signer that has never previously been used as an authorized signer or Locked Gold Account. It follows then that a newly deauthorized signer cannot be reauthorized.
+
 :::

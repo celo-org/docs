@@ -136,8 +136,10 @@ The following are examples for cUSD and cEUR.
 </Tabs>
 
 :::tip
+
 TODO: Replace this documentation link
 To double-check that the above values are up-to-date, please verify using the `celocli network:contracts` command ([see documentation](https://docs.celo.org/command-line-interface/commands/network#celocli-network-contracts)\).
+
 :::
 
 * Where it says `INSERT_SYMBOL_HERE`, please replace with the correct symbol for the asset you'd like to watch. For Celo Dollars, it's `cUSD` and for Celo Euros, it's `cEUR`.

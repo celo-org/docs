@@ -18,11 +18,15 @@ npm install -g @celo/celocli
 ```
 
 :::info
+
 We are currently deploying the CLI with only Node.js v12.x. If you are running a different version of Node.js, consider using [NVM](https://github.com/nvm-sh/nvm#installation-and-update) to manage your node versions. e.g. with: `nvm install 12 && nvm use 12`
+
 :::
 
 :::info
+
 If you have trouble installing globally \(i.e. with the `-g` flag\), try installing to a local directory instead with `npm install @celo/celocli` and run with `npx celocli`.
+
 :::
 
 ### Overview
@@ -36,7 +40,9 @@ celocli <module>:<command> <...args> <...flags?>
 The `celocli` tool assumes that users are running a node which they have access to signing transactions on, or have another mechanism for signing transactions (such as a Ledger wallet or supplying the private key as an argument to the command). See the documentation on the [config](config.md) module for information about how to set which node commands are sent to.
 
 :::info
+
 All balances of CELO or Celo Dollars are expressed in units of 10^-18.
+
 :::
 
 You can find the Celo CLI package on NPM [here](https://www.npmjs.com/package/@celo/celocli).
@@ -66,7 +72,9 @@ The Celo CLI supports using a [Ledger hardware wallet](../celo-holder-guide/ledg
 Additional plugins can be installed which make the CLI experience smoother. Currently, `celocli` only supports installing plugins published on NPM within the `@celo/*` and `@clabs/*` scopes.
 
 :::danger
+
 Installing a 3rd party plugin can be _dangerous_! Please always be sure that you trust the plugin provider.
+
 :::
 
 The autocomplete plugin adds an interactive autocomplete for `bash` and `zsh` shells. To enable the autocomplete plugin, follow the instructions provided at:

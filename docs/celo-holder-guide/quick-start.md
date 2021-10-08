@@ -17,9 +17,10 @@ This guide assumes:
 
 - You have your private key held on a [Ledger Nano S or Ledger Nano X](/celo-holder-guide/ledger.md) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#Using-a-single-Ledger).
 
-
 :::caution
+
 **Warning**: Self-custodying keys has associated security and financial risks. Loss or theft of keys can result in irrecovable loss of funds. This guide also requires technical knowledge. You should be comfortable with using a Command Line Interface (CLI) and understand the basics of how cryptographic network accounts work.
+
 :::
 
 ## Support
@@ -49,7 +50,9 @@ You will need:
 As a first step, follow [these instructions](celo-holder-guide/ledger.md) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Alfajores test network.
 
 :::info
+
 The latest version of the Celo Ledger app is 1.0.3. If you are already using a Ledger with an earlier version installed, please [upgrade](celo-holder-guide/ledger.md).
+
 :::
 
 The remainder of this guide assumes you are using the first address available on each Ledger. You can add the flags described in [these instructions](celo-holder-guide/ledger.md) to commands below to use different addresses.
@@ -145,13 +148,17 @@ Otherwise, you're all set. You don't need to take any further action right now.
 To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](https://docs.celo.org/validator-guide/summary/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
 
 :::info
+
 A vote signer can either be another Ledger device or a cloud Hardware Security Module (HSM). Explore [this guide](/developer-guide/integrations/cloud-hsm) to learn more about cloud HSM setup and celocli integration.
+
 :::
 
 This is a two step process. First, you create a "proof of possession" that shows that the holder of the beneficiary key also holds the vote signer key. Then, you will use that when the beneficiary signs a transaction authorizing the vote signer key. This proves to the Celo network that a single entity holds both keys.
 
 :::info
+
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 First obtain your vote signer address:
@@ -185,7 +192,9 @@ export CELO_VOTE_SIGNER_SIGNATURE=<YOUR-VOTE-SIGNER-SIGNATURE>
 Now switch ledgers.
 
 :::info
+
 Connect your **Beneficiary Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 Next, register the `ReleaseGold` contract as a “Locked Gold” account:
@@ -225,7 +234,9 @@ celocli account:balance $CELO_VOTE_SIGNER_ADDRESS
 ```
 
 :::caution
+
 **Warning**: If you authorize a second vote signer, it will not be automatically funded by the `ReleaseGold` contract. You will need to transfer a fraction of 1 CELO from your beneficiary address to it in order to cover transaction fees when using it.
+
 :::
 
 ## Lock CELO
@@ -235,7 +246,9 @@ To vote for Validator Groups and on governance proposals you will need to lock C
 Specify the amount of CELO you wish to lock (don’t include the `< >` braces). All amounts are given as wei, i.e units of 10^-18 CELO. For example, 1 CELO = 1000000000000000000.
 
 :::caution
+
 Make sure to leave at least 1 CELO unlocked to pay for transaction fees.
+
 :::
 
 ```bash
@@ -283,7 +296,9 @@ All CELO amounts should be expressed in wei: that means 1 CELO = 100000000000000
 To vote, you will use your vote signer key, which is voting _on behalf of_ your Locked Gold account.
 
 :::info
+
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 ```bash
@@ -306,7 +321,9 @@ Your vote will apply starting at the next Validator Election, held once per day,
 After that election has occurred, you will need to activate your vote. This will allow you to receive epoch rewards if in that election (or at any subsequent one, until you change your vote) the Validator Group for which you voted elected at least one Validator. Rewards will get added to your votes for that Group and will compound automatically.
 
 :::info
+
 Epoch lengths in Mainnet are set to be the number of blocks produced in a day. As a result, votes may need to be activated up to 24 hours after they are cast.
+
 :::
 
 Check that your votes were cast in a previous epoch:
@@ -318,7 +335,9 @@ celocli election:show $CELO_RG_ADDRESS --voter
 Your vote should be displayed next to `pending` under `votes`.
 
 :::info
+
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 Now activate your votes:
@@ -358,13 +377,17 @@ You can also read more about how Celo's [Proof of Stake](/celo-codebase/protocol
 At any point you can revoke votes cast for a Validator Group. For example, a Group may be performing poorly and affecting your rewards, and you may prefer to vote for another Group.
 
 :::info
+
 When you revoke your votes you will stop receiving voter rewards.
+
 :::
 
 Specify the amount of CELO you wish to revoke (don’t include the `< >` braces). All CELO amounts should be expressed in 18 decimal places. For example, 1 CELO = 1000000000000000000.
 
 :::info
+
 Connect your **Vote Signer Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 Revoke votes for the Group:
@@ -400,7 +423,9 @@ celocli account:balance $CELO_RG_ADDRESS
 ```
 
 :::info
+
 Connect your **Beneficiary Ledger** now, unlock it, and open the Celo application.
+
 :::
 
 Assuming you have non-voting Locked Gold, you can initiate the process to unlock:

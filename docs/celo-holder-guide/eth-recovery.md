@@ -8,7 +8,9 @@ In this guide, steps are outlined to help you recover your [CELO (previously Cel
 This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Account Key').
 
 :::danger
+
 There are [risks](https://www.cryptomathic.com/news-events/blog/cryptographic-key-management-the-risks-and-mitigations) associated with using a recovery phrase or a private key. Please keep these secret.
+
 :::
 
 ## Recovering with CeloWallet.app

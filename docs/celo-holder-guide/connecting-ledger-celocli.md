@@ -27,7 +27,9 @@ celocli config:set --node https://forno.celo.org/
 ```
 
 :::danger
+
 Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
+
 ::: 
 
 #### [Configure for Celo Alfajores Testnet](https://docs.celo.org/getting-started/alfajores-testnet).
@@ -39,7 +41,9 @@ celocli config:set --node https://alfajores-forno.celo-testnet.org/
 ```
 
 :::danger
+
 Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
+
 :::
 
 #### Check that the node is synchronized to Celo CLI:
@@ -59,6 +63,7 @@ celocli account:list --useLedger --ledgerAddresses 1
 ```
 
 :::info
+
 If you wish to generate more than one address from your seed phrase, you can display the first `N` (e.g. 10) addresses use the `--ledgerAddresses` flag.
 
 ```bash
@@ -70,10 +75,13 @@ To display addresses at specific indexes `M`and `N`(e. 2 and 654) use the `--led
 ```bash
 celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 ```
+
 :::
 
 :::info
+
 **Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.  
+
 :::
 
 ### Performing a Testnet transaction on Celo CLI
