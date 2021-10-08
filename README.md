@@ -33,6 +33,16 @@ We welcome contributions from the community. Please review our [contribution gui
 
 You can find many of the other main Celo project repositories at https://github.com/celo-org.
 
+### Internationalization
+
+We are managing translations using [Crowdin](https://crowdin.com/). You can find the [Celo Docs Crowdin project here](https://crowdin.com/project/celo-docs). From here, click on the language that you would like to help translate the docs into.
+
+Some files are marked as high priority. In the following image you can see the up arrow on the right side of the file line, indicating the file is a higher priority than others. Please focus on files marked as high priority.
+
+![](https://github.com/critesjosh/images/blob/main/docs_translations/high_priority_files.png?raw=true)
+
+If you have any questions, please post in the [project discussions tab here](https://crowdin.com/project/celo-docs/discussions).
+
 ## Contact
 
 Join us on [Discord](https://chat.celo.org) or file an issue.
