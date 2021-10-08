@@ -14,11 +14,11 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 * [Optics Bridge](./../../protocol/optics.md)
   * Web UIs
-   * [Mobius Optics Web UI](https://bridge.mobius.money/#/)
-   * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
-   * cLabs Optics Web UI (coming soon)
+    * [Mobius Optics Web UI](https://bridge.mobius.money/#/)
+    * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
+    * cLabs Optics Web UI (coming soon)
   * Manually Using Etherscan
-   * [Bridge Native Tokens via Etherscan](./../../protocol/bridging-native-assets.md)
-   * [Bridge ERC-21 Tokens via Etherscan](./../../protocol/optics.md)
+    * [Bridge Native Tokens via Etherscan](./../../protocol/bridging-native-assets.md)
+    * [Bridge ERC-21 Tokens via Etherscan](./../../protocol/optics.md)
 * [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
 * [Moss](https://bridge.moss.earth/)
