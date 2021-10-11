@@ -2,6 +2,7 @@
 const path = require('path');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const DefaultLocale = 'en';
 
 module.exports = {
     title: "Celo Docs",
@@ -16,7 +17,7 @@ module.exports = {
     projectName: "docs", // Usually your repo name.
     i18n: {
         defaultLocale: 'en',
-        locales: ['en']
+        locales: ['en', 'es', 'pt', 'tl']
     },
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
@@ -317,6 +318,10 @@ module.exports = {
                     label: "Faucet",
                 },
                 {
+                    href: "https://crowdin.com/project/celo-docs",
+                    label: "Translate"
+                },
+                {
                     href: "https://github.com/celo-org/docs",
                     label: "GitHub",
                     position: "right",
@@ -376,6 +381,14 @@ module.exports = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     // Please change this to your repo.
                     editUrl: "https://github.com/celo-org/docs/edit/main/",
+                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                        // Link to Crowdin for French docs
+                        if (locale !== DefaultLocale) {
+                          return `https://crowdin.com/project/celo-docs/${locale}`;
+                        }
+                        // Link to Github for English docs
+                        return "https://github.com/celo-org/docs/edit/main/"
+                    },
                     routeBasePath: "/",
                     remarkPlugins: [math],
                     rehypePlugins: [katex],
