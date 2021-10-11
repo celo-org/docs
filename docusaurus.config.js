@@ -17,7 +17,7 @@ module.exports = {
     projectName: "docs", // Usually your repo name.
     i18n: {
         defaultLocale: 'en',
-        locales: ['en', 'es', 'pt', 'tl']
+        locales: ['en', 'es']
     },
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
