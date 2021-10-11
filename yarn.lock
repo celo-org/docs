@@ -1145,7 +1145,7 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@crowdin/cli@3":
+"@crowdin/cli@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.7.0.tgz#d35b69e90b6a737a9de017423ac34c02291cdebb"
   integrity sha512-7eje7V6BGMeW23ywbrYdvpdIIxG5O1WP2wit4MVP9EtuZMOfr1M0l9BnObbkSYK86UiZuoJFHs1Q1KoCWg1rlA==
