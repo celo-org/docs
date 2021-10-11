@@ -68,6 +68,7 @@ Validators can be configured as primaries or replicas. By default validators sta
 Note that the replica node **must** use the same set of proxies as the primary node. If it does not it will not be able to switchover without downtime due to needing to the complete the announce protocol from scratch. Replicas behind the same set of proxies as the primary node will be able to switchover without downtime.
 
 :::
+
 #### RPC Methods
 
 - `istanbul.start()` and `istanbul.startAtBlock()` start validating immediately or at a block

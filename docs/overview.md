@@ -30,6 +30,7 @@ Celo has a native unit of accounting, the cryptocurrency **CELO**, comparable to
 :::warning
 
 Celo assets exist on an independent blockchain, and cannot be accessed through wallets that connect to the Ethereum network. Only use wallets designed to work with the Celo network. Do **not** send your Celo assets to your Ethereum wallet or send your Ethereum assets to your Celo wallet.
+
 :::
 
 Users interact with the blockchain by creating signed **transactions.** These are requests to make a change to the ledger. They can: transfer value between accounts; execute a function in a smart contract and pass in arguments \(perhaps causing other smart contracts to be called, update their storage, or transfer value\); or create a new smart contract.
@@ -105,6 +106,7 @@ In Ethereum, verifying whether data received from an untrusted full node really 
 :::success
 
 **Roadmap**: Synchronization performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
+
 :::
 
 ### Incentives for Operating Full Nodes
@@ -130,6 +132,7 @@ In addition, a back-up reserve of cryptocurrencies is held off-chain. This off-c
 :::success
 
 **Roadmap**: Celo envisages a number of stable currencies tracking different fiat currencies as well as natural resources such as forests. In addition, once bridges between other chains and the Celo blockchain are fully developed, and liquid trading on decentralized exchanges occurs, the rebalancing can be handled transparently on-chain.
+
 :::
 
 ### Lightweight Identity
@@ -147,6 +150,7 @@ The Celo native asset has a duality as both the native currency and is also an E
 :::warning
 
 Celo assets exist on an independent blockchain, and cannot be accessed through wallets that connect to the Ethereum network. Only use wallets designed to work with the Celo network.
+
 :::
 
 In Celo, transaction fees can be paid in stable cryptocurrencies. A user sending Celo Dollars will be able to pay their transaction fee out of their Celo Dollar balance, so they do not need to hold a separate balance of CELO in order to make transactions. The protocol maintains a list of currencies which can be used to pay for transaction fees. These smart contracts implement an extension of the ERC-20 interface, with additional functions that allow the protocol to debit and credit transaction fees.
