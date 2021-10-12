@@ -177,10 +177,10 @@ module.exports = {
           type: 'category',
           label: 'Bridging',
           items: [
+            'celo-codebase/protocol/bridging/optics-gui',
             { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
             'celo-codebase/protocol/bridging/bridging-native-assets',
             'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
-
           ]
         },
         // TODO: This link will need to be changed when we move all the SDK type docs
