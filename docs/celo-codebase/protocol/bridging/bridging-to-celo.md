@@ -14,9 +14,9 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 * [Optics Bridge](../optics.md)
   * Optics Web UIs
+    * [cLabs Optics Web UI](https://optics.network/)
     * [Mobius Optics Web UI](https://bridge.mobius.money/#/)
     * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
-    * cLabs Optics Web UI (coming soon)
   * Manually Using Etherscan
     * [Bridge Native Tokens via Etherscan](bridging-native-assets.md)
     * [Bridge ERC-21 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
