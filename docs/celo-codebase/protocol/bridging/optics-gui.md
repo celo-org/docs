@@ -8,7 +8,7 @@ title: Optics Bridge GUI
 
 - Install Metamask from [https://metamask.io](https://metamask.io).
 - Make sure you have ETH in your account.
-- Go to the Optics Bridge app.
+- Go to the [Optics Bridge app](https://optics.network/).
   - Connect Metamask
   - Make sure Metamask is connected to Ethereum Mainnet.
   - In the top **From** section, Select “ETH on Ethereum”. This indicates that you want to send the ETH asset that is currently on Ethereum.
