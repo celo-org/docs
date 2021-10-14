@@ -17,12 +17,12 @@ The easiest is to use a "pre-generated" devchain from the [celo-devchain](https:
 
 ```sh
 > npm install --save-dev celo-devchain
-> npx celo-devchain --port 7545
+> npx celo-devchain --port 8545
 
 or
 
 > yarn add --dev celo-devchain
-> yarn run celo-devchain --port 7545
+> yarn run celo-devchain --port 8545
 ```
 
 ### 2. Initialize your own devchain from the monorepo
