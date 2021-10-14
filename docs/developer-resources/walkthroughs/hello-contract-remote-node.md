@@ -13,7 +13,15 @@ This guide walks you through the basics of how to deploy your own smart contract
 
 ## Setup
 
-This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup. If so, you can install truffle with:
+This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup. 
+
+:::info
+
+The latest versions of truffle cause errors when migrating contracts to the Celo network. We are fixing this--in the meantime use version 5.4.0.
+
+:::
+
+You can install truffle 5.4.0 with:
 
 ```text
 npm install -g truffle@5.4.0
