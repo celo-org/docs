@@ -4,6 +4,8 @@ title: Optics Bridge GUI
 
 # Optics Bridge GUI
 
+Other translations: [zh_cn](./optics-gui-zh_cn.md)
+
 ## Sending ETH From Ethereum to Celo
 
 - Install Metamask from [https://metamask.io](https://metamask.io).
