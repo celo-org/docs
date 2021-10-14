@@ -87,7 +87,7 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 ![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
 
-Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. In the future, we'll likely switch entirely to the Verify Service and deprecate the Messaging Service, but for now it's important to specify both.
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), we have introduced the `TWILIO_VERIFY_DISABLED_REGIONS` configuration variable to choose the Messaging Service over the Verify Service for select countries. See [Configuration](#configuration) below for more details on this parameter, including default values.
 
 ### Nexmo
 
@@ -235,6 +235,7 @@ Twilio configuration options:
 | `TWILIO_VERIFY_SERVICE_SID`    | The Twilio Verify Service ID. Starts with `VA`                                                     |
 | `TWILIO_AUTH_TOKEN`            | The API authentication token                                                                       |
 | `TWILIO_UNSUPPORTED_REGIONS`   | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
+| `TWILIO_VERIFY_DISABLED_REGIONS` | Optional. A comma-separated list of country codes for which to disable the Verify API, recommended value `CN,CI,IS,SK,RS,CG,PG,MT,ET,BH,AZ` |
 
 Nexmo configuration options:
 
