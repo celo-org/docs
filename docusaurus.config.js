@@ -384,7 +384,7 @@ module.exports = {
                     editUrl: ({locale, versionDocsDirPath, docPath}) => {
                         // Link to Crowdin for French docs
                         if (locale !== DefaultLocale) {
-                          return `https://crowdin.com/project/celo-docs/${locale}`;
+                          return `https://celo.crowdin.com/celo-docs/${locale}`;
                         }
                         // Link to Github for English docs
                         return "https://github.com/celo-org/docs/edit/main/"
