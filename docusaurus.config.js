@@ -387,7 +387,7 @@ module.exports = {
                           return `https://celo.crowdin.com/celo-docs/${locale}`;
                         }
                         // Link to Github for English docs
-                        return "https://github.com/celo-org/docs/edit/main/"
+                        return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`
                     },
                     routeBasePath: "/",
                     remarkPlugins: [math],
