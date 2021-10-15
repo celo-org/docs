@@ -4,7 +4,7 @@ title: Optics Bridge GUI
 
 # Optics Bridge GUI
 
-Other translations: [zh_cn](./optics-gui-zh_cn.md)
+Other translations: [zh_cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
 
 ## Sending ETH From Ethereum to Celo
 
