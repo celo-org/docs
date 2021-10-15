@@ -15,7 +15,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 * [Optics Bridge](../optics.md)
   * Optics Web UIs
     * [cLabs Optics Web UI](https://optics.app)
-      * View the tutorial: [en](./optics-gui.md) [zh-cn](./optics-gui-zh_cn.md)
+      * View the tutorial: [en](./optics-gui.md), [zh-cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
     * [Mobius Optics Web UI](https://bridge.mobius.money/#/)
     * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
   * Manually Using Etherscan
