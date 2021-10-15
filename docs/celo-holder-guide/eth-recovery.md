@@ -8,7 +8,9 @@ In this guide, steps are outlined to help you recover your [CELO (previously Cel
 This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Account Key').
 
 :::danger
+
 There are [risks](https://www.cryptomathic.com/news-events/blog/cryptographic-key-management-the-risks-and-mitigations) associated with using a recovery phrase or a private key. Please keep these secret.
+
 :::
 
 ## Recovering with CeloWallet.app
@@ -48,12 +50,9 @@ This guide assumes that you have access to the following:
 - [Celo Command Line Interface](command-line-interface/introduction.md) installed on your computer
 - The [24-word recovery phrase](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) of your Ethereum address
 
-
-
 ### Steps
 
 Please follow the instructions below closely, because missteps can lead to errors or permanent loss of your tokens. To understand these steps, please read [What is Ethereum](https://ethereum.org/en/what-is-ethereum/) and [Celo Overview](https://docs.celo.org/overview).
-
 
 #### Prepare your recovery phases
 
@@ -112,5 +111,7 @@ celocli transfer:celo --from <accountAddress> --to <addressOfChoice> --value <va
 - Replace `<valueInCeloWei>` with the amount you want to send, but this number needs to be slightly lower than your balance, as there’s a transaction fee.
 
 :::info
+
 Note that the value has a unit of CELO Wei (1 CELO = 10^18 CELO Wei), so if you want to send 1 CELO, the `<valueInCeloWei>` should be 1000000000000000000.
+
 :::

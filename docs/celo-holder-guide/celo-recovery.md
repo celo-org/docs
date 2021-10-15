@@ -13,7 +13,9 @@ This guide assumes that you have access to the following:
 - An Ethereum wallet manager such as MyEtherWallet or MyCrypto. It is recommended to use the Desktop or offline version over a webapp version.
 
 :::danger
+
 There are [risks](https://www.cryptomathic.com/news-events/blog/cryptographic-key-management-the-risks-and-mitigations) associated with using a recovery phrase or a private key. Please do not share them with anyone else.
+
 :::
 
 ## Steps

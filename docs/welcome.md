@@ -83,7 +83,9 @@ The code is entirely open source and available on [GitHub](https://github.com/ce
 The [Alfajores Testnet](getting-started/alfajores-testnet) is the first of several networks designed for testing and for developers to experiment and learn more about Celo. You can set up an account, receive funds, and try out the Celo Wallet and Celo CLI. [Get started here](getting-started/alfajores-testnet/faucet).
 
 :::caution
+
 The Alfajores Testnet’s tokens hold no real world economic value. The entirety of the testnet’s data will be reset on a regular basis. This will erase your accounts, their balance and your transaction history. Your use of the Alfajores Tesnet is subject to the [Alfajores Testnet Disclaimer](important-information/alfajores-testnet-disclaimer).
+
 :::
 
 The [Baklava Testnet](getting-started/baklava-testnet) is the second Celo test network after Alfajores. You can use it to participate in the The Great Celo Stake Off. Subject to these Terms and Conditions, eligible participants will have the opportunity to receive CELO at the Mainnet launch of the Celo Protocol. The Stake Off will operate in phases, with each phase focusing on a different part of the protocol or infrastructure to test.
@@ -93,7 +95,9 @@ The Celo community's work is focused on the path to a production Celo network th
 The team working on Celo anticipates working to improve and expand the range of APIs available for developers to use in creating extensions to Celo, whether as smart contracts or applications. Your input is very welcome in the form of use cases, suggestions, and bug reports.
 
 :::caution
+
 While development proceeds, Celo’s protocol and its APIs will evolve and any smart contracts or applications built to operate on Alfajores or with respect to the current codebase may become incompatible.
+
 :::
 
 Celo is a project with a mission of financial inclusion that consists entirely of open source code, is deployed as an open, decentralized runtime, and promotes open governance. Make it your project too. Please [get involved](community/contributing.md)!

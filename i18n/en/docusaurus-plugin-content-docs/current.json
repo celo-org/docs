@@ -1,0 +1,126 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Wallets": {
+    "message": "Wallets",
+    "description": "The label for category Wallets in sidebar docs"
+  },
+  "sidebar.docs.category.Using MetaMask with Celo": {
+    "message": "Using MetaMask with Celo",
+    "description": "The label for category Using MetaMask with Celo in sidebar docs"
+  },
+  "sidebar.docs.category.Alfajores Testnet": {
+    "message": "Alfajores Testnet",
+    "description": "The label for category Alfajores Testnet in sidebar docs"
+  },
+  "sidebar.docs.category.Baklava Testnet": {
+    "message": "Baklava Testnet",
+    "description": "The label for category Baklava Testnet in sidebar docs"
+  },
+  "sidebar.docs.category.Mainnet": {
+    "message": "Mainnet",
+    "description": "The label for category Mainnet in sidebar docs"
+  },
+  "sidebar.docs.category.Celo Owner Guide": {
+    "message": "Celo Owner Guide",
+    "description": "The label for category Celo Owner Guide in sidebar docs"
+  },
+  "sidebar.docs.category.Using a Ledger Wallet": {
+    "message": "Using a Ledger Wallet",
+    "description": "The label for category Using a Ledger Wallet in sidebar docs"
+  },
+  "sidebar.docs.category.Validator Guide": {
+    "message": "Validator Guide",
+    "description": "The label for category Validator Guide in sidebar docs"
+  },
+  "sidebar.docs.category.Key Management": {
+    "message": "Key Management",
+    "description": "The label for category Key Management in sidebar docs"
+  },
+  "sidebar.docs.category.Developer Guide": {
+    "message": "Developer Guide",
+    "description": "The label for category Developer Guide in sidebar docs"
+  },
+  "sidebar.docs.category.Code Examples": {
+    "message": "Code Examples",
+    "description": "The label for category Code Examples in sidebar docs"
+  },
+  "sidebar.docs.category.ContractKit": {
+    "message": "ContractKit",
+    "description": "The label for category ContractKit in sidebar docs"
+  },
+  "sidebar.docs.category.DAppKit": {
+    "message": "DAppKit",
+    "description": "The label for category DAppKit in sidebar docs"
+  },
+  "sidebar.docs.category.Integrations": {
+    "message": "Integrations",
+    "description": "The label for category Integrations in sidebar docs"
+  },
+  "sidebar.docs.category.Celo CLI": {
+    "message": "Celo CLI",
+    "description": "The label for category Celo CLI in sidebar docs"
+  },
+  "sidebar.docs.category.Celo Codebase": {
+    "message": "Celo Codebase",
+    "description": "The label for category Celo Codebase in sidebar docs"
+  },
+  "sidebar.docs.category.Celo Protocol": {
+    "message": "Celo Protocol",
+    "description": "The label for category Celo Protocol in sidebar docs"
+  },
+  "sidebar.docs.category.Consensus": {
+    "message": "Consensus",
+    "description": "The label for category Consensus in sidebar docs"
+  },
+  "sidebar.docs.category.Proof-of-Stake": {
+    "message": "Proof-of-Stake",
+    "description": "The label for category Proof-of-Stake in sidebar docs"
+  },
+  "sidebar.docs.category.Epoch Rewards": {
+    "message": "Epoch Rewards",
+    "description": "The label for category Epoch Rewards in sidebar docs"
+  },
+  "sidebar.docs.category.Stability Mechanism": {
+    "message": "Stability Mechanism",
+    "description": "The label for category Stability Mechanism in sidebar docs"
+  },
+  "sidebar.docs.category.Transactions": {
+    "message": "Transactions",
+    "description": "The label for category Transactions in sidebar docs"
+  },
+  "sidebar.docs.category.Identity": {
+    "message": "Identity",
+    "description": "The label for category Identity in sidebar docs"
+  },
+  "sidebar.docs.category.Celo Wallet": {
+    "message": "Celo Wallet",
+    "description": "The label for category Celo Wallet in sidebar docs"
+  },
+  "sidebar.docs.category.Wallet Functionality": {
+    "message": "Wallet Functionality",
+    "description": "The label for category Wallet Functionality in sidebar docs"
+  },
+  "sidebar.docs.category.Community": {
+    "message": "Community",
+    "description": "The label for category Community in sidebar docs"
+  },
+  "sidebar.docs.category. Release Process": {
+    "message": " Release Process",
+    "description": "The label for category  Release Process in sidebar docs"
+  },
+  "sidebar.docs.category.Important Information": {
+    "message": "Important Information",
+    "description": "The label for category Important Information in sidebar docs"
+  },
+  "sidebar.docs.link.SDK Code Reference": {
+    "message": "SDK Code Reference",
+    "description": "The label for link SDK Code Reference in sidebar docs, linking to https://celo-sdk-docs.readthedocs.io/"
+  }
+}

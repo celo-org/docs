@@ -6,7 +6,9 @@ slug: /developer-guide/start/wallet-connect
 This tutorial will be a basic guide on integrating [WalletConnect V2](https://walletconnect.org/) support into your decentralised application (DApp). Integrating WalletConnect support means users with Valora, [Celo Wallet](https://celowallet.app) and other WalletConnect compatible wallets can interact with your DApp.
 
 :::info
+
 If you'd prefer a more managed and opinionated flow for connecting wallets to your DApp, checkout the [use-contractkit](https://github.com/celo-tools/use-contractkit) library. It handles connecting to a variety of wallets (WalletConnect, Ledger, Metamask and more) and is a higher level abstraction than the library we'll be using in this tutorial.
+
 :::
 
 This tutorial is platform independent and using TypeScript, so you may need to sort out a Webpack (or similar bundling tool) build pipeline before usage in your environment of choice.

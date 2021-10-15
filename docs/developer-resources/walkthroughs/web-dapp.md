@@ -106,11 +106,13 @@ Clicking this button will show the `use-contractkit` modal and allow the user to
 After that we've connected to the user's wallet we can show interesting information based on their address. In the context of a governance voting DApp it may make sense to show past proposals they've voted on. If we were creating a simple banking interface, we could imagine wanting to show transfers into and out of the users account.
 
 :::info
+
 On the Celo blockchain, only queued and dequeued proposals are kept in the Governance state. That means to access old proposals we'd need to access an indexed history of the blockchain. This is out of scope for our tutorial however there's many resources online you can find that will help you accessing indexed blockchain state.
 
 For a comprehensive look at how to interpret this on chain state, take a look at the implementation for the [celocli governance:list](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/governance/list.ts) command.
 
 For the purposes of this tutorial, we'll only be looking at dequeued proposals, or proposals we can currently vote on.
+
 :::
 
 Here's how it looks using a combination of the `useEffect` and `useCallback` hooks to request and display all dequeued proposals from the blockchain.
