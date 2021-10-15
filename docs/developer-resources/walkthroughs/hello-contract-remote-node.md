@@ -1,5 +1,5 @@
 ---
-title: Deply and Interact with Contracts (Remotely)
+title: Deploy and Interact with Contracts (Remotely)
 slug: /developer-guide/start/hello-contract-remote-node
 ---
 import PageRef from '@components/PageRef'
