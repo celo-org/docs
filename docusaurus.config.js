@@ -318,7 +318,7 @@ module.exports = {
                     label: "Faucet",
                 },
                 {
-                    href: "https://crowdin.com/project/celo-docs",
+                    href: "https://celo.crowdin.com/celo-docs",
                     label: "Translate"
                 },
                 {
