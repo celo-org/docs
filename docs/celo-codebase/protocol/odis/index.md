@@ -10,8 +10,6 @@ Possibly link to other applications that use (p)OPRFs such as Privacy Pass, OPAQ
 Phone privacy.
 :::
 
-<!-- Paragraph below repeats itself a bit -->
-
 The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/celo-codebase/protocol/odis/phone-number-privacy), [password hardening](/celo-codebase/protocol/odis/key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
 Essentially, it is a service that allows users to compute a limited number of hashes (i.e. PRF evaluations), without letting the service see the data being hashed.
 Many useful applications are built on top of this primitive, such as privacy protected phone number mappings, password hardening, and [captchas for bot detection](https://privacypass.github.io/).
@@ -47,27 +45,52 @@ In the case that a single key is compromised, user data will remain private and 
 If a key held by one of the operators is leaked, or if the operator becomes corrupt, a key rotation can restore the security of ODIS by removing the compromised keys.
 Key rotation can also allow new ODIS operators to be added, by creating new keys for all the existing operators as well as the newly added operator.
 
-To rotate keys, a new DKG ceremony must be performed with at least $$k$$ of the $$m$$ original keys. These newly generated keys will not be compatible with the old keys; however if $$k$$ of the old keys are used, an attacker may still reach the necessary threshold. Therefore, it's extremely important that all of the old keys are destroyed after a successful key rotation. Note that a DKG ceremony also provides the opportunity to change the values for $$k$$ and $$m$$.
+To rotate keys, a new DKG ceremony must be performed with at least $$k$$ of the $$m$$ original keys.
+These newly generated keys will not be compatible with the old keys; however if $$k$$ of the old keys are used, an attacker may still reach the necessary threshold.
+Therefore, it's extremely important that all of the old keys are destroyed after a successful key rotation.
+This DKG ceremony also provides the opportunity to change the values for $$k$$ and $$m$$, adding or removing operators, or changing the threshold required to compute the OPRF.
+Note that this process for key rotation does not change the public key the client uses to [verify](#verification) the results.
 
 ## Blinding
 
-<!-- CHECKPOINT -->
-
-When a client queries ODIS to get an OPRF evaluation, the client first blinds the phone number locally. This blinding process preserves the privacy of the mobile number such that ODIS nodes cannot determine what number they're providing a pepper for; reducing risk of targeted censorship and further increasing privacy. After the application receives the response, it unblinds it to compute the pepper.
+When a client queries ODIS to get an OPRF evaluation, the client first blinds the phone number locally using a secret one-time key.
+This blinding process preserves the privacy of underlying message (e.g. a mobile number or password) such that ODIS nodes won't learn any of the user's sensitive information.
+In addition to protecting the user's privacy, it reduces the risk of targeted censorship.
+ODIS operators compute the OPRF against this hidden input value, and return a result which is also hidden from the operators.
+After the application receives the response, it unblinds it to receive the final evaluation result.
+Note that this blinding process provides privacy to the user _even_ if all of the ODIS operators where corrupted.
+This blinding process is what makes the oblivious pseudo random function (OPRF) "oblivious".
 
 ## Verification
 
-<!-- Add some detail about the requirements and properties of verification -->
+Query results from ODIS can be verified against the services public key, which is shared with users along with the client library.
+By verifying the results, the client can be sure that the service computed the OPRF correctly and that no one could have intercepted and changed the result.
 
 ## Combiner
 
-To facilitate the multi-service communication needed for the K of M signing, ODIS includes a combiner service which performs this orchestration for the convenience of wallets and other clients building on Celo. Like ODIS signer nodes, the combiner only receives the blinded phone number and therefore cannot see what number it's handling. The combiner also validates the response from each signer to ensure a corrupt signer cannot corrupt the resulting pepper.
+To facilitate the communication needed for the $$k$$ of $$m$$ OPRF evaluation, ODIS includes a combiner service which performs this orchestration for the convenience of wallets and other clients building on Celo.
+Like the ODIS operators, the combiner only receives the blinded message and so won't learn anything about the users sensitive information.
+The combiner also verifies the response from each operator to ensure a corrupt operator cannot affect the resulting pepper.
+Clients can additionally verify the response they get from the combiner to ensure the combiner could not have tampered with it.
 
-Anyone who wishes to participate in ODIS service may run a combiner. Currently, cLabs operates one such combiner that may be used by other projects building on Celo.
+Anyone can run a combiner, for their own use or for the public.
+Currently, cLabs operates one such combiner that may be used by any project building on Celo.
 
-## Authentication
+## Rate limiting
 
-In order to measure the quota for a given requester, ODIS must check their account information on the Celo blockchain. To prove ownership over their account, the POST request contains an Authorization header with the signed message body. When ODIS nodes receive the request, it authenticates the user by recovering the message signer from the header and comparing it to the value in the message body.
+As part of its core function, ODIS enforces rate limits on user queries.
+Rate limits depend on the application context in which ODIS is being used (e.g. the rate limit is much higher for deriving peppers for phone numbers than for hardening a 6-digit PIN)
+
+The original, phone number privacy, API enforces a rate limit based on the actions, balance, and verification status or the user on the Celo blockchain.
+In order to measure the quota for a given requester, ODIS must check their on-chain account information.
+To prove ownership over their account, the POST request contains an Authorization header with the signed message body.
+When ODIS nodes receive the request, it authenticates the user by recovering the message signer from the header and comparing it to the value in the message body.
+
+In the newer domain separated API, the rate limit can depend on a variety of factors configured to each domain type.
+More information about the domains API and the implemented domain types can be found in the respective pages.
+
+<PageRef url="/celo-codebase/protocol/odis/domains" pageName="Domains" />
+<PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
 
 ## Request flow diagram
 
@@ -77,7 +100,9 @@ In order to measure the quota for a given requester, ODIS must check their accou
 
 ![architecture diagram](https://storage.googleapis.com/celo-website/docs/ODIS-architecture-diagram.svg)
 
-The hosted architecture is divided into two components, the Combiner and the Signers. Currently the combiner is a cloud function and the signers are independent NodeJs servers. Both services leverage the [Celo Threshold BLS library](https://github.com/celo-org/celo-threshold-bls-rs) which has been compiled to [a Web Assembly module](https://github.com/celo-org/blind-threshold-bls-wasm).
+The hosted architecture is divided into two components, the combiner and the signers.
+Currently the combiner is a cloud function and the signers are independent NodeJS servers run by the operators.
+Both services leverage the [Celo Threshold BLS library](https://github.com/celo-org/celo-threshold-bls-rs) which has been compiled to [a Web Assembly module](https://github.com/celo-org/blind-threshold-bls-wasm).
 
 The combiner and signers maintain some minimal state in a SQL database, mainly related to quota tracking.
 
