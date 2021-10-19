@@ -270,10 +270,29 @@ module.exports = {
               label: 'Identity',
               items: [
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/identity/index', },
-                'celo-codebase/protocol/identity/valora-accounts',
-                'celo-codebase/protocol/identity/phone-number-privacy',
                 'celo-codebase/protocol/identity/metadata',
                 'celo-codebase/protocol/identity/randomness',
+                'celo-codebase/protocol/identity/phone-number-privacy',
+                'celo-codebase/protocol/identity/valora-accounts',
+                'celo-codebase/protocol/identity/smart-contract-accounts',
+                'celo-codebase/protocol/identity/encrypted-cloud-backup',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'ODIS',
+              items: [
+                { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/odis/index', },
+                'celo-codebase/protocol/odis/phone-number-privacy',
+                'celo-codebase/protocol/odis/key-hardening',
+                {
+                  type: 'category',
+                  label: 'Domains',
+                  items: [
+                    { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/odis/domains/index', },
+                    'celo-codebase/protocol/odis/domains/sequential-delay-domain',
+                  ]
+                },
               ]
             },
             'celo-codebase/protocol/optics',
