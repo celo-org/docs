@@ -119,6 +119,7 @@ module.exports = {
       label: 'Developer Guide',
       items: [
         'developer-resources/overview',
+        'developer-resources/deploy-dapp',
         {
           type: 'category',
           label: 'Code Examples',
