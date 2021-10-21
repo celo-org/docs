@@ -1,22 +1,60 @@
 ---
-title: Valora Accounts
+title: Smart Contract Accounts
 ---
 
-Behind every Valora wallet are two types of accounts: an externally owned account (EOA) and a meta-transaction wallet (MTW). EOAs are what most people think of when they imagine a blockchain wallet. EOAs are comprised of an ECDSA public/private key pair from which the on-chain address is derived. With Valora, this EOA is generated and stored on the user's mobile device and backed up via the mnemonic phrase. A meta-transaction wallet on the other hand is a smart contract that can be used to interact with other smart contracts on behalf of an EOA. In this case you can think of the MTW as a proxy account and the EOA as the only controller of this account.
+Smart contract accounts are used to enable features beyond what can be accomplished with an externally owned account (EOA) alone.
+In this document, we'll describe some of the features and considerations associated with smart contract accounts in general, and the architecture used by the Valora wallet in particular as an example of how smart contract accounts can be used.
 
-## Benefits of a Meta-Transaction Wallet
+EOAs are what most people think of when they imagine a blockchain wallet.
+EOAs are comprised of an ECDSA public/private key pair from which the on-chain address is derived.
+The account address is derived from the public key, and transactions are authorized by the private key.
+In most wallets, the EOA is generated and stored on the user's mobile device and backed up via a BIP-39 mnemonic phrase.
+
+A smart contract account on the other hand is a smart contract that can be used to interact with other smart contracts on behalf of the owner.
+Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
+In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions my signing a meta-transaction containing the details of the authorized transaction.
+This is how the meta-transaction wallet works.
+In this case you can think of the smart contract account as a proxy account and the EOA as the controller of this account.
+
+## Benefits of a smart contract account
 
 ### Separation of signer and payer
 
-When new users sign up with Valora, most wallets start with an empty balance. This makes it difficult for the user to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)). To make this experience more intuitive for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user. It does this by first deploying a meta-transaction wallet contract and setting the Valora EOA address as the signer. At this point, the EOA can sign transactions and submit them to Komenci. Komenci will wrap the signed transaction into a meta-transaction, which it pays for and submits to the network.
+When new users create a wallet, they start with an empty balance.
+This makes it difficult for the user to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)).
+To make this experience more intuitive and frictionless for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user.
+It does this by first deploying a meta-transaction wallet contract and setting the wallet EOA address as the signer.
+At this point, the EOA can sign transactions and submit them to Komenci.
+Komenci will wrap the signed transaction into a meta-transaction, which it pays for and submits to the network.
 
-### Fund Recovery
+In general, smart contract accounts allow the someone other than the account owner to pay for the transaction fees required to submit a transaction to the blockchain, enabling a number of useful operations not otherwise possible.
 
-Meta-transaction wallets can also be useful if a user ever loses their phone and backup account key. Any ERC20 tokens that the EOA has [approved](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-approve-address-uint256-) their meta-transaction wallet to use, can be recovered. In the case of loss of EOA, a new EOA will be created and granted signer rights to the original MTW. This would allow the lost funds to still be accessed, even though the original EOA is unrecoverable. This recovery mechanism hasn't been rolled out yet, but is actively being worked on by cLabs.
+### Account recovery
 
-## For Wallet Developers
+Smart contract accounts can also be useful if a user ever loses their phone and backup account key.
+Unlike EOAs, smart contract accounts can support account recovery methods that do not rely solely on recovering the underlying keys.
+The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
+This Guardian can be a simple backup key or a smart contract implementing social recovery, [KELP](https://eprint.iacr.org/2021/289), or another account recovery protocol.
+With the authorization of the Guardian, the meta-transaction wallet will update the owner of the account to replace the lost key.
+Any funds or privileges held by the meta-transaction wallet are then recovered to the user who can control the account using their new key.
 
-When performing a payment to a Valora wallet, it's important that the address that is receiving funds is the EOA, and not the MTW since funds in the MTW are not displayed or directly accessible to Valora users. To look up a wallet using a phone number:
+<!-- TODO(victor): Include information about the multi-factor recovery model devise for keyless account recovery -->
+
+### Transaction batching
+
+With smart contract accounts, including the meta-transaction wallet, transactions can be batched together to execute atomically.
+This makes for a better user experience, as transactions can be guaranteed to execute all together or entirely revert and can also prevent some cases where front-running would be possible to harm the user by splitting their transactions.
+
+## Valora accounts
+
+Behind every Valora wallet are two types of accounts: an externally owned account (EOA) and a meta-transaction wallet.
+Valora generates the EOA during onboarding, and has a meta-transaction wallet deployed for it by Komenci with the generated EOA as the signer.
+Using this configuration, Valora user gain the benefits listed above, including having Valora pay for the transaction fees associated with onboarding.
+
+## Sending to a Valora wallet
+
+When performing a payment to a Valora wallet, it's important that the address that is receiving funds is the EOA, and not the MTW since funds in the MTW are not displayed or directly accessible to Valora users.
+To look up a wallet using a phone number:
 
 1. Use ODIS to query the phone number pepper
 2. Use the phone number pepper to get the on-chain identifier
@@ -33,12 +71,14 @@ It may also be necessary to lookup the data encryption key (ex. [for comment enc
 
 You can view a working example of this all tied together in [the `celocli` command `identity:get-attestations`](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/identity/get-attestations.ts).
 
-## For Dapp Developers
+## Enabling Valora to interact with your dApp
 
-### EIP-712
+### Signatures
 
-Since all Valora users will have the ability to use a meta-transaction wallet, it's important to keep in mind that transactions may originate from an EOA as well as a smart contract. If your contract relies upon EIP-712 signed typed data, be sure to also support typed data originating from contracts. This data doesn't need to be signed by the msg.sender since it's originating from a contract.
+Since all Valora users will have the use a meta-transaction wallet, it's important to keep in mind that transactions may originate from an EOA as well as a smart contract.
+If your contract relies upon EIP-712 signed typed data, be sure to also support typed data originating from contracts.
+This data can't be signed by the `msg.sender` since it's originating from a contract, but is implicitly authorized by originating from the contract.
 
 ## Implementation
 
-The implementation of Valora's meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol).
+The implementation of the meta-transaction wallet can be [found here](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol).
