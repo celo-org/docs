@@ -273,7 +273,6 @@ module.exports = {
                 'celo-codebase/protocol/identity/metadata',
                 'celo-codebase/protocol/identity/randomness',
                 'celo-codebase/protocol/identity/phone-number-privacy',
-                'celo-codebase/protocol/identity/valora-accounts',
                 'celo-codebase/protocol/identity/smart-contract-accounts',
                 'celo-codebase/protocol/identity/encrypted-cloud-backup',
               ]
