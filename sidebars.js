@@ -119,7 +119,16 @@ module.exports = {
       label: 'Developer Guide',
       items: [
         'developer-resources/overview',
-        'developer-resources/deploy-dapp',
+        {
+          type: 'category',
+          label: 'Deploy a DApp',
+          items: [
+            'developer-resources/deploy-dapp',
+            'developer-resources/deploy-remix',
+            'developer-resources/deploy-truffle',
+            'developer-resources/deploy-replit',
+          ]
+        },
         {
           type: 'category',
           label: 'Code Examples',
@@ -131,7 +140,6 @@ module.exports = {
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
-            'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
             { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
@@ -184,6 +192,8 @@ module.exports = {
             'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
           ]
         },
+        'developer-resources/develop-on-windows',
+        'developer-resources/using-mac',
         // TODO: This link will need to be changed when we move all the SDK type docs
         { type: 'link', label: 'SDK Code Reference', href: 'https://celo-sdk-docs.readthedocs.io/' },
       ]
