@@ -16,12 +16,12 @@ You can run the development Celo blockchain in two ways:
 The easiest is to use a "pre-generated" devchain from the [celo-devchain](https://github.com/zviadm/celo-devchain) NPM package. For that all you have to do is:
 
 ```sh
-> npm install --save-dev celo-devchain
+> npm install --save-dev @terminal-fi/celo-devchain
 > npx celo-devchain --port 7545
 
 or
 
-> yarn add --dev celo-devchain
+> yarn add --dev @terminal-fi/celo-devchain
 > yarn run celo-devchain --port 7545
 ```
 
