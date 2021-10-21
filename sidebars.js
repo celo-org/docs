@@ -282,8 +282,14 @@ module.exports = {
               label: 'ODIS',
               items: [
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/odis/index', },
-                'celo-codebase/protocol/odis/phone-number-privacy',
-                'celo-codebase/protocol/odis/key-hardening',
+                {
+                  type: 'category',
+                  label: 'Use Cases',
+                  items: [
+                    { type: 'link', label: 'Phone Number Privacy', href: '/celo-codebase/protocol/identity/phone-number-privacy', },
+                    'celo-codebase/protocol/odis/use-cases/key-hardening',
+                  ]
+                },
                 {
                   type: 'category',
                   label: 'Domains',
