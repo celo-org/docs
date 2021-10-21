@@ -38,7 +38,7 @@ This Guardian can be a simple backup key or a smart contract implementing social
 With the authorization of the Guardian, the meta-transaction wallet will update the owner of the account to replace the lost key.
 Any funds or privileges held by the meta-transaction wallet are then recovered to the user who can control the account using their new key.
 
-<!-- TODO(victor): Include information about the multi-factor recovery model devise for keyless account recovery -->
+<!-- TODO(victor): Include information about the multi-factor recovery model created for keyless account recovery -->
 
 ### Transaction batching
 

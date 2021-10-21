@@ -59,4 +59,4 @@ Users should, by requirement of security, be given a limited number of attempts 
 Attempts should be rate limited with a certain number of attempts available immediately (e.g. 3-5 attempts within the first 24 hours), and a limited number of additional attempts available after one or more waiting periods (e.g. up to 10-15 attempts over 3 days).
 Once all attempts are exhausted, the backup will become unrecoverable and the user will only be able to recover their account if they have their mnemonic phrase written down.
 
-<!-- TODO(victor): Add detailed information about the key derivation and file structure -->
+<!-- TODO(victor): Add detailed information about the key derivation and file structure when the library is implemented and can be referenced -->
