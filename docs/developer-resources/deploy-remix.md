@@ -88,6 +88,6 @@ The source code of the contract that you are verifying will need to be in Remix.
 
 :::
 
-![sourcify plugin](/build/img/docusaurus.png)
+![sourcify plugin](/img/docusaurus.png)
 
 Navigate to the **Contract Address Details Page** in the block explore to, use the **Code, Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
