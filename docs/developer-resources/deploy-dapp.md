@@ -11,7 +11,7 @@ The fastest way to deploy a dApp on Celo is to [Set up a Testnet Development Wal
 
 ## Set up your local environment
 
-- [Using Mac](TODO)
+- [Using Mac](./using-mac.md)
 - [Using Windows](TODO)
 
 ## Set up a development wallet
