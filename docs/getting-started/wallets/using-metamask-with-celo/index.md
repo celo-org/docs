@@ -7,7 +7,9 @@ slug: /getting-started/wallets/using-metamask-with-celo
 # Using MetaMask with Celo
 
 :::danger
+
 Do not send ETH to your Celo address. Do not send CELO assets to your Ethereum address. Always make sure that you are connected to the correct network.
+
 :::
 
 [MetaMask](https://metamask.io/) is a crypto wallet that can be used in a web browser and on mobile devices to interact with the Ethereum blockchain. Many dApps in the space integrate with MetaMask, and we're excited to bring its functionality to the Celo ecosystem.
@@ -47,5 +49,7 @@ While gas on Celo can usually be paid in [many different currencies](../../../ce
 In some cases, the MetaMask UI may display the Ethereum logo in places where it should display a CELO logo or no logo at all.
 
 :::info
+
 MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose a Celo native wallet [here](../index.md).
+
 :::

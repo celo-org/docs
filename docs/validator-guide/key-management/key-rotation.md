@@ -12,7 +12,9 @@ Because the Validator signer key is constantly in use to sign consensus messages
 1. Create a new Validator instance as detailed in the [Deploy a Validator](/getting-started/mainnet/running-a-validator-in-mainnet#deploy-a-validator-machine) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
 
 :::caution
+
 Before proceeding to step 2 ensure there is sufficient time until the end of the epoch to complete key rotation.
+
 :::
 
 2. Authorize the new Validator signer key with the Locked Gold Account to overwrite the old Validator signer key.
@@ -42,7 +44,9 @@ celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role valid
 ```
 
 :::caution
+
 Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](/validator-guide/key-management/detailed.md#authorized-validator-bls-signers).
+
 :::
 
 3. **Leave all validator and proxy nodes running** until the next epoch change. At the start the next epoch, the new Validator signer should take over participation in consensus.
@@ -55,7 +59,9 @@ Please note that the BLS key will change along with the validator signer ECDSA k
 - Run `celocli validator:signed-blocks --signer $SIGNER_TO_AUTHORIZE` with the new validator signer address to further confirm that your node is signing blocks.
 
 :::caution
+
 The newly authorized keys will only take effect in the next epoch, so the instance operating with the old key must remain running until the end of the current epoch to avoid downtime.
+
 :::
 
 5. Shut down the validator instance with the now obsolete signer key.

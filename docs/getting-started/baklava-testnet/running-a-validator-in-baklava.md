@@ -9,14 +9,17 @@ The Baklava Testnet is a non-production Testnet for the Validator community. It 
 - **Testing ground**: Experiment with new infrastructure configurations in a low-risk environment.
 
 :::info
+
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
+
 :::
 
 The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/getting-started/mainnet).
 
 :::info
+
 If you are transitioning from the Baklava network prior to the June 24 reset, you will need to start with a fresh chain database. You can create new nodes from fresh machines, as described in this guide, or you may delete your chaindata folder, which is named `celo` in the node data directory, and start over by running the provided `init` commands for each node described below. All on-chain registration steps, the commands completed with `celocli`, will need to be run on the new network.
 
 Key differences are:
@@ -24,8 +27,8 @@ Key differences are:
 - New network ID is `62320`
 - A new image has been pushed to `us.gcr.io/celo-org/geth:baklava`
 - A new genesis block, bootnode enode, and the new network ID are included in the Docker image
-  :::
 
+:::
 
 ## Prerequisites
 
@@ -98,10 +101,12 @@ To illustrate this, you may refer to the following table:
   Some users have reported issues using the most recent version of node. Use the LTS for greater reliability.
 
 :::info
+
 A note about conventions:
 The code snippets you'll see on this page are bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
+
 :::
 
 ### Key Management
@@ -177,7 +182,9 @@ The `us.gcr.io/celo-org/geth:baklava` image contains the [genesis block](https:/
 #### Account Creation
 
 :::info
+
 Please complete this section if you are new to validating on Celo.
+
 :::
 
 ##### Account and Signer keys
@@ -198,8 +205,10 @@ Note that Account and all the signer keys must be unique and may not be reused.
 First, you'll need to generate account keys for your Validator and Validator Group.
 
 :::danger
+
 These keys will control your locked CELO, and thus should be handled with care.
 Store and back these keys up in a secure manner, as there will be no way to recover them if lost or stolen.
+
 :::
 
 ```bash
@@ -233,7 +242,9 @@ docker run --name celo-accounts -it --restart always --stop-timeout 300 -p 127.0
 ```
 
 :::danger
+
 **Security**: The command line above includes the parameter `--rpcaddr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p 127.0.0.1:localport:containerport` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
+
 :::
 
 ### Deploy a Validator
@@ -253,7 +264,9 @@ export CELO_VALIDATOR_SIGNER_ADDRESS=<YOUR-VALIDATOR-SIGNER-ADDRESS>
 #### Proof-of-Possession
 
 :::info
+
 Please complete this step if you are running a validator on Celo for the first time.
+
 :::
 
 In order to authorize our Validator signer, we need to create a proof that we have possession of the Validator signer private key. We do so by signing a message that consists of the Validator account address. To generate the proof-of-possession, run the following command:
@@ -319,7 +332,9 @@ docker run --name celo-proxy -it --restart unless-stopped --stop-timeout 300 -p 
 ```
 
 :::info
+
 You can detach from the running container by pressing `ctrl+p ctrl+q`, or start it with `-d` instead of `-it` to start detached. Access the logs for a container in the background with the `docker logs` command.
+
 :::
 
 **NOTES**
@@ -393,7 +408,9 @@ docker run --name celo-validator -it --restart unless-stopped --stop-timeout 300
 At this point your Validator and Proxy machines should be configured, and both should be syncing to the network. You should see `Imported new chain segment` in your node logs, about once every 5 seconds once the node is synced to the latest block which you can find on the [Baklava Network Stats](https://baklava-celostats.celo-testnet.org/) page.
 
 :::info
+
 You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/getting-started/baklava-testnet/running-a-validator-in-baklava#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
+
 :::
 
 ## Registering as a Validator
@@ -557,7 +574,9 @@ celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
 You're all set! Elections are finalized at the end of each epoch, roughly once an hour in the Alfajores or Baklava Testnets. After that hour, if you get elected, your node will start participating BFT consensus and validating blocks. After the first epoch in which your Validator participates in BFT, you should receive your first set of epoch rewards.
 
 :::info
+
 **Roadmap**: Different parameters will govern elections in a Celo production network. Epochs are likely to be daily, rather than hourly. Running a Validator will also include setting up proxy nodes to protect against DDoS attacks, and using hardware wallets to secure the key used to sign blocks. We plan to update these instructions with more details soon.
+
 :::
 
 You can inspect the current state of the validator elections by running:

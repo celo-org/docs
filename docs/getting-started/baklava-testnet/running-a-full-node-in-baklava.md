@@ -5,9 +5,11 @@ title: Running a Full Node in Baklava
 This section explains how to get a full node running on the [Baklava Network](/getting-started/baklava-testnet), using a Docker image that was built for this purpose.
 
 :::info
+
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
+
 :::
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives.md).
@@ -17,10 +19,13 @@ When a light client sends transactions, they may include a gateway fee to be pai
 For this reason, despite the fact that Celo uses a proof-of-stake protocol, users can earn cryptocurrency without first having to own any, simply by running a full node.
 
 :::warning
+
 Full node incentives have not been enabled yet because the mechanism for negotiating a gateway fee is still under development. Currently, light clients are configured to send a gateway fee of 0 and full nodes are set to accept a minimum gateway fee of 0.
+
 :::
 
 :::info
+
 If you are transitioning from the Baklava network prior to the June 24 reset, you will need to start with a fresh chain database. You can either shut down your existing node, delete the `celo` folder, and continue by following the guide below or create a new node following these directions.
 
 Key differences are:
@@ -37,9 +42,11 @@ Key differences are:
 - **You have Docker installed.** If you don’t have it already, follow the instructions here: [Get Started with Docker](https://www.docker.com/get-started). It will involve creating or signing in with a Docker account, downloading a desktop app, and then launching the app to be able to use the Docker CLI. If you are running on a Linux server, follow the instructions for your distro [here](https://docs.docker.com/install/#server). You may be required to run Docker with `sudo` depending on your installation environment.
 
 :::info
+
 Code you'll see on this page is bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
+
 :::
 
 ## Celo Networks
@@ -88,7 +95,9 @@ export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
 ```
 
 :::info
+
 This environment variable will only persist while you have this terminal window open. If you want this environment variable to be available in the future, you can add it to your `~/.bash_profile`
+
 :::
 
 ## Start the node
@@ -112,7 +121,9 @@ INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  t
 You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Baklava Network Stats](https://baklava-celostats.celo-testnet.org/) or [Baklava Block Explorer]](https://baklava-blockscout.celo-testnet.org/) pages.
 
 :::danger
+
 **Security**: The command line above includes the parameter `--rpcaddr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
+
 :::
 
 ## Command Line Interface
