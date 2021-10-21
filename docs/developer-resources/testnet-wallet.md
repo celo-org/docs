@@ -28,15 +28,15 @@ MetaMask allows you to easily create and manage accounts. This provides you with
 
 - From your MetaMask extension, select **Celo (Alfajores Tesnet)**
 
-![select alfajores network in MM]()
+![select alfajores network in MM](/img/docusaurus.png)
 
 - Choose wallet **Settings**, select **Create Account**, name your account, and select **Create**
 
-![select create account MM]()
+![select create account MM](/img/docusaurus.png)
 
 - View your account details and copy your account address from the top center of the user interface
 
-![new account MM]()
+![new account MM](/img/docusaurus.png)
 
 :::note
 
@@ -50,17 +50,21 @@ Deploying locally requires that you have a local blockchain setup. Install and s
 
 #### Install Ganache
 
-`npm install -g @celo/ganache-cli`
+```
+npm install -g @celo/ganache-cli
+```
 
 #### Start Ganache
 
-`ganache-cli --port 7545`
+```
+ganache-cli --port 7545
+```
 
 Ganache will return a list of available accounts, private keys, and additional wallet details that you can access on port 7545.
 
 Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer-guide/development-chain#1-use-the-celo-devchain-npm-package).
 
-![ganache terminal output]()
+![ganache terminal output](/img/docusaurus.png)
 
 :::note
 
@@ -70,10 +74,17 @@ Skip to **Step 3** to connect your accounts to your wallet.
 
 ### Option 3: Using Celo CLI
 
-Install `celocli` by running `npm install -g @celo/celocli`.
+Install `celocli` by running 
+
+```
+npm install -g @celo/celocli
+```
+
 #### Create an Account
 
-`celocli account:new`
+```
+celocli account:new
+```
 
 Creating an account will return its account details as shown below (details will be specific to your account).
 
@@ -99,7 +110,7 @@ If you created an account using option 2 or 3, you can now import these accounts
 - Select **Settings** > **Import Account**
 - Copy the **private key** from your local account, paste it into the window provided, and select **Import**
 
-![import account to metamask]()
+![import account to metamask](/img/docusaurus.png)
 
 ## Step 4: Fund your Account
 
@@ -109,6 +120,6 @@ No matter where you created your accounts, you can send them testnet funds using
 - Copy your address from your terminal or wallet
 - Paste this address into the **Testnet Faucet**, complete the **Captcha**, and click **Get Started**
 
-![alfajores faucet]()
+![alfajores faucet](/img/docusaurus.png)
 
 Wait for the transaction to process to view your funds in your account.
