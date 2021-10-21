@@ -23,6 +23,6 @@ The fastest way to deploy a dApp on Celo is to [Set up a Testnet Development Wal
 - [Deploy with Remix](./deploy-remix.md)
 - [Deploy with Truffle](TODO)
 - [Deploy with Hardhat](TODO)
-- [Deploy with Replit](TODO)
+- [Deploy with Replit](./deploy-replit.md)
 
 These guides are meant to help you deploy a dApp on Celo as quickly as possible. Read the supporting resources linked throughout each guide for an in-depth look at the tools and code. If you would like to learn more about Solidity (the language for developing smart contracts) you can view the [Solidity docs](https://docs.soliditylang.org/en/latest/) or with [Solidity by Example](https://solidity-by-example.org/).
