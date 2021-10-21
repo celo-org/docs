@@ -75,16 +75,24 @@ Currently, cLabs operates one such combiner that may be used by any project buil
 As part of its core function, ODIS enforces rate limits on user queries.
 Rate limits depend on the application context in which ODIS is being used (e.g. the rate limit is much higher for deriving peppers for phone numbers than for hardening a 6-digit PIN)
 
-The original, phone number privacy, API enforces a rate limit based on the actions, balance, and verification status or the user on the Celo blockchain.
+### Phone number privacy
+
+The original API, targeted for phone number privacy, enforces a rate limit based on the actions, balance, and verification status or the user on the Celo blockchain.
 In order to measure the quota for a given requester, ODIS must check their on-chain account information.
 To prove ownership over their account, the POST request contains an Authorization header with the signed message body.
 When ODIS nodes receive the request, it authenticates the user by recovering the message signer from the header and comparing it to the value in the message body.
+
+### Domains
 
 In the newer domain separated API, the rate limit can depend on a variety of factors configured to each domain type.
 More information about the domains API and the implemented domain types can be found in the respective pages.
 
 <PageRef url="/celo-codebase/protocol/odis/domains" pageName="Domains" />
 <PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
+
+A full specification of the Domains API can be found in CIP-40
+
+<PageRef url="https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md" pageName="CIP-40" />
 
 ## Request flow diagram
 
