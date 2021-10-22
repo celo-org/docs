@@ -125,7 +125,6 @@ module.exports = {
           items: [
             'developer-resources/develop-on-windows',
             'developer-resources/using-mac',
-            'developer-resources/testnet-wallet',
           ]
         },
         {
@@ -177,6 +176,7 @@ module.exports = {
           ]
         },
         'developer-resources/forno/index',
+        'developer-resources/testnet-wallet',
         'developer-resources/walkthroughs/development-chain',
         'developer-resources/celo-for-eth-devs',
         'developer-resources/celo-dapp-gallery',

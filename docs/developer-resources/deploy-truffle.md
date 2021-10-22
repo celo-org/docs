@@ -279,7 +279,7 @@ Learn more about exploring the Celo network and smart contract details in BlockS
 
 :::
 
-## Step 6: Verify Smart Contract
+## Verify Smart Contract
 
 Verifying a smart contract allows developers to review your code from within the Celo Block Explorer. 
 

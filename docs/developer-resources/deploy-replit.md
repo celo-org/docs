@@ -28,7 +28,7 @@ To deploy on Celo using Replit, you don’t need any local environment. You shou
 
 If you are new to Replit, it will also help to review the [Solidity announcement](https://blog.replit.com/solidity) and [Replit documentation](https://docs.replit.com/).
 
-## Step 1: Create a Repl
+## Create a Repl
 
 After creating your Replit account, your home screen will include a dashboard where you can view projects, create projects, manage your account, and do many other things. You can get started by creating a new Repl.
 
@@ -38,7 +38,7 @@ After creating your Replit account, your home screen will include a dashboard wh
 
 ![create repl](/img/doc-images/deploy-replit/image1.png)
 
-## Step 2: Explore the Workspace
+## Explore the Workspace
 
 By creating a project, you now have a fully functional online IDE that allows you to edit, view, and deploy your smart contracts. It also creates a front-end for your smart contract that you can publish to an easily sharable URL. Read [Solidity on Replit](https://blog.replit.com/solidity) for an overview of some of these features.  
 
@@ -50,7 +50,7 @@ The README provides an overview of the workspace and gives details on how to mak
 
 :::
 
-## Step 3: Deploy on Celo
+## Deploy on Celo
 
 Deploying on Celo with Replit is easy. If you don’t have a wallet with funds, complete [Set up a Development Test Wallet](./testnet-wallet.md) so that you are prepared to deploy and interact with your smart contract.
 
@@ -69,7 +69,7 @@ You can now interact with your contract using the provided user interface or fro
 
 ![deploy](/img/doc-images/deploy-replit/image5.png)
 
-## Step 4: Verify Contract Deployment
+## Verify Contract Deployment
 
 To view your deployed contract, copy your **account address** navigate to the [Celo explorer](https://explorer.celo.org/), and search for your account (verify that you are searching the correct network).
 
@@ -83,7 +83,7 @@ Learn more about exploring the Celo network and smart contract details in BlockS
 
 :::
 
-## Step 5: Update your dApp
+## Update your dApp
 
 Your dApp is now live and can be shared with the world. You can use this workspace to edit and redeploy your dApp at any time. Here are a few tips you can use to help improve your dApp.
 
@@ -113,7 +113,7 @@ After making these basic changes, users will be able to determine that they are 
 
 You can now manage any additional changes using GitHub from the user interface provided by Replit.
 
-## Step 7: Publish to Replit
+## Publish to Replit
 
 Among many other features, Replit allows you to publish your projects to a personal profile. After publishing, projects will show up on your spotlight page for others to explore, interact with, clone, and collaborate.
 
