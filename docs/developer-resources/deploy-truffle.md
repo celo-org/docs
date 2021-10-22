@@ -21,10 +21,10 @@ To learn more about the features available to you as a smart contract developer 
 
 To deploy on Celo using Truffle, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
-* [Using Windows](./develop-on-windows.md)
-* [Using Mac](./using-mac.md)
+- [Using Windows](/developer-guide/start/develop-on-windows)
+- [Using Mac](./using-mac.md)
 
-If you are new to Truffle, complete the[ Celo truffle installation instructions](./using-mac#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
+If you are new to Truffle, complete the [Celo truffle installation instructions](./using-mac.md#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
 ## Project Setup
 
@@ -32,15 +32,15 @@ If you are new to Truffle, complete the[ Celo truffle installation instructions]
 
 Open your terminal window, create a project directory, and navigate into that directory.
 
-```
+```shell
 mkdir myDapp && cd myDap
 ```
 
 **Install hdwallet-provider**
 
-From your root truffle project directory, install [truffle/hdwallet-provider](https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md#:~:text=HD%20Wallet%2Denabled%20Web3%20provider,12%20or%2024%20word%20mnemonic.). This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file. 
+From your root truffle project directory, install [truffle/hdwallet-provider](https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md#:~:text=HD%20Wallet%2Denabled%20Web3%20provider,12%20or%2024%20word%20mnemonic.). This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file.
 
-```
+```shell
 npm install @truffle/hdwallet-provider --save
 ```
 
@@ -48,7 +48,7 @@ npm install @truffle/hdwallet-provider --save
 
 Initializing truffle creates the scaffolding for your truffle project.
 
-```
+```shell
 truffle init
 ```
 
@@ -56,7 +56,7 @@ truffle init
 
 Open your project in [Visual Studio code](https://www.microsoft.com/en-us/resilience/remote-development-solutions/?&ef_id=Cj0KCQjwtrSLBhCLARIsACh6RmixaTeMbvlNJN4yrdykHGg5e4aN2Px1-Vf_oUq2edhP86n2C1-8lDIaAkxcEALw_wcB:G:s&OCID=AID2200893_SEM_Cj0KCQjwtrSLBhCLARIsACh6RmixaTeMbvlNJN4yrdykHGg5e4aN2Px1-Vf_oUq2edhP86n2C1-8lDIaAkxcEALw_wcB:G:s) or your preferred IDE.
 
-```
+```shell
 code .
 ```
 
@@ -72,7 +72,7 @@ You can launch VS Code from the command line by <a href="https://code.visualstud
 
 Create a file named **HelloCelo.sol **in the **contracts** directory and populate it with the Solidity code below.
 
-```
+```js
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
@@ -91,7 +91,7 @@ If you would like to create a different smart contract or learn more about Solid
 
 Create a file named **2_deploy_contracts.js** in the **./migrations/** folder and populate it with the code below. 
 
-```
+```js
 var HelloCelo = artifacts.require('HelloCelo')
 
 module.exports = function (deployer) {
@@ -151,7 +151,7 @@ Open [truffle-config.js](https://www.trufflesuite.com/docs/truffle/reference/con
 
 Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The private network setup connects to your localhost on this port and gives you access to your accounts on ganache-cli.
 
-```
+```js
    private: {
      host: "127.0.0.1",
      port: 7545,
@@ -169,7 +169,7 @@ If you choose to <a href="https://docs.celo.org/developer-guide/development-chai
 
 Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.secret** file.
 
-```
+```js
    testnet: {
      provider: function() {
        return new HDWalletProvider(mnemonic, "https://alfajores-forno.celo-testnet.org")
@@ -183,7 +183,7 @@ Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchai
 
 Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.secret** file.
 
-```
+```js
    mainnet: {
      provider: function() {
        return new HDWalletProvider(mnemonic, "https://forno.celo.org")
@@ -207,7 +207,7 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 Compile the Solidity code into Ethereum bytecode prior to deploying the contract. The following truffle command will compile any new or updated Solidity (.sol) contracts found in **./contracts**.
 
-```
+```shell
 truffle compile
 ```
 
@@ -221,7 +221,7 @@ Learn more about compiling contracts with Truffle <a href="https://www.trufflesu
 
 Migrations are JavaScript files that help you deploy contracts to the Ethereum network. To run your migrations, run the following:
 
-```
+```shell
 truffle migrate
 ```
 
@@ -235,24 +235,24 @@ Learn more about Truffle migrations <a href="https://www.trufflesuite.com/docs/t
 
 Deploy to your chosen Celo network running one of the following commands.
 
-```
+```shell
 truffle deploy --network alfajores
 ```
-```
+```shell
 truffle deploy --network celo
 ```
-```
+```shell
 truffle deploy --network local
 ```
 
 ### Deploy with --reset
 
-Use the **---reset** flag to redeploy contracts with a new contract address after making code changes
+Use the **---reset** flag to redeploy contracts with a new contract address if you haven't made any code changes
 
-```
+```shell
 truffle deploy --network NETWORK --reset
 ```
-```
+```shell
 truffle migrate --network NETWORK --reset
 ```
 
@@ -294,4 +294,4 @@ Verifying a smart contract allows developers to review your code from within the
 ![github](/img/doc-images/deploy-truffle/image3.png)
 
 * Click** Verify & Publish**
-* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract **panels to view and interact with your deployed smart contract.
+* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
