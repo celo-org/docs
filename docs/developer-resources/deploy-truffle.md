@@ -105,12 +105,12 @@ If you created a different smart contract, update the variable name, file requir
 
 :::
 
-**Mnemonic .secret**
+**Mnemonic .env**
 
-If you don’t yet have a mnemonic or are unsure how to create one, see [Set up a Development Wallet](./testnet-wallet.md) for more details. When you’re ready, create a **.secret** file in your root directory and populate it with your development wallet mnemonic (example below).
+If you don’t yet have a mnemonic or are unsure how to create one, see [Set up a Development Wallet](./testnet-wallet.md) for more details. When you’re ready, create a **.env** file in your root directory and populate it with your development wallet mnemonic (example below).
 
-```
-turtle cash neutral drift brisk young swallow raw payment drill mail wear penalty vibrant entire adjust near chapter mistake size angry planet slam demand
+```text
+MNEMONIC="turtle cash neutral drift brisk young swallow raw payment drill mail wear penalty vibrant entire adjust near chapter mistake size angry planet slam demand"
 ```
 
 This mnemonic is used by **HDWalletProvider** in the **truffle.config** file to verify the account supplying funds during contract deployment. (See lines 21 & 69.)
@@ -129,7 +129,7 @@ Create a **.gitignore** file in your root directory and populate it with the cod
 .DS_Store
 
 #hidden files
-.secret
+.env
 ```
 
 :::tip
