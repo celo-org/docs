@@ -26,7 +26,7 @@ To deploy on Celo using Truffle, you should have Celo set up Celo in your local 
 
 If you are new to Truffle, complete the [Celo truffle installation instructions](./using-mac.md#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
-## Step 1: Project Setup
+## Project Setup
 
 **Setup Project Folder**
 
@@ -66,7 +66,7 @@ You can launch VS Code from the command line by <a href="https://code.visualstud
 
 :::
 
-## Step 2: Write Project Code 
+## Write Project Code
 
 **Create Smart Contract**
 
@@ -89,7 +89,7 @@ If you would like to create a different smart contract or learn more about Solid
 
 **Migrations File**
 
-Create a file named **2_deploy_contracts.js** in the **./migrations/** folder and populate it with the code below. 
+Create a file named **2_deploy_contracts.js** in the **./migrations/** folder and populate it with the code below.
 
 ```js
 var HelloCelo = artifacts.require('HelloCelo')
@@ -138,21 +138,20 @@ See <a href="https://help.github.com/articles/ignoring-files/">ignoring files</a
 
 :::
 
-## Step 3: Configure Deployment Settings
+## Configure Deployment Settings
 
-The default **truffle.config.js **file contains connections required to deploy to the Ethereum networks, imports **HDWalletProvider, **and connects to the mnemonic in your **.secret **file. To deploy a Celo network, you need to update this configuration file to point toward the different Celo networks and add a few details specific to Celo best practices.
-
+The default **truffle.config.js** file contains connections required to deploy to the Ethereum networks, imports **HDWalletProvider**, and connects to the mnemonic in your **.env** file. To deploy a Celo network, you need to update this configuration file to point toward the different Celo networks and add a few details specific to Celo best practices.
 
 **Update the truffle-config.js file**
 
 Open [truffle-config.js](https://www.trufflesuite.com/docs/truffle/reference/configuration#:~:text=Your%20configuration%20file%20is%20called,necessary%20to%20create%20your%20configuration.&text=js%20contained%20by%20the%20barebones%20project%20that%20truffle%20init%20creates.) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js). This code is similar to Truffle settings with a few configuration updates needed to deploy to a Celo network.
 
-**Connect to Private Network **
+**Connect to a Development Network**
 
 Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The private network setup connects to your localhost on this port and gives you access to your accounts on ganache-cli.
 
 ```js
-   private: {
+   local: {
      host: "127.0.0.1",
      port: 7545,
      network_id: "*"
@@ -161,32 +160,32 @@ Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The 
 
 :::tip
 
-If you choose to <a href="https://docs.celo.org/developer-guide/development-chain">Set up a Local Development Chain</a>, your blockchain will also be hosted on a private network on localhost. This same configuration can be used to connect to the local development chain. 
+If you choose to <a href="https://docs.celo.org/developer-guide/development-chain">Set up a Local Development Chain</a>, your blockchain will also be running on a private development network on localhost. This same configuration can be used to connect to the local development chain.
 
 :::
 
 **Connect to Testnet using Forno**
 
-Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.secret** file.
+Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    testnet: {
      provider: function() {
-       return new HDWalletProvider(mnemonic, "https://alfajores-forno.celo-testnet.org")
+       return new HDWalletProvider(process.env.MNEMONIC, "https://alfajores-forno.celo-testnet.org")
      },
      network_id: 44787,
-     gas: 4000000      
+     gas: 20000000      
    }
 ```
 
 **Connect to Mainnet using Forno**
 
-Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.secret** file.
+Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    mainnet: {
      provider: function() {
-       return new HDWalletProvider(mnemonic, "https://forno.celo.org")
+       return new HDWalletProvider(process.env.MNEMONIC, "https://forno.celo.org")
      },
      network_id: 42220,
      gas: 4000000     
@@ -199,9 +198,9 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 :::
 
-## Step 4: Deploy Smart Contract
+## Deploy Smart Contract
 
-### Option 1: Compile and Migrate
+### Compile and Migrate
 
 **Compile Contract**
 
@@ -231,7 +230,7 @@ Learn more about Truffle migrations <a href="https://www.trufflesuite.com/docs/t
 
 :::
 
-### Option 2: Deploy Contract
+### Deploy Contract
 
 Deploy to your chosen Celo network running one of the following commands.
 
@@ -258,11 +257,11 @@ truffle migrate --network NETWORK --reset
 
 :::tip
 
-Save contract addresses for future reference. If you lose it, proceed to block explorer to review your wallet transactions for contract creation and its response.
+Save contract addresses for future reference. If you lose it, proceed to block explorer to review your wallet transactions for contract creation and its response. Truffle saves deployment information, like transaction hashes and contract addresses, in JSON files in `./build/contracts/`.
 
 :::
 
-## Step 5: View Contract Deployment
+## View Contract Deployment
 
 Copy your **contract address** from the terminal and navigate to the [block explorer](https://explorer.celo.org/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
