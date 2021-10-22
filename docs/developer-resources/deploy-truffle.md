@@ -153,11 +153,11 @@ Open [truffle-config.js](https://www.trufflesuite.com/docs/truffle/reference/con
 Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The private network setup connects to your localhost on this port and gives you access to your accounts on ganache-cli.
 
 ```js
-   local: {
-     host: "127.0.0.1",
-     port: 7545,
-     network_id: "*"
-   }
+local: {
+  host: "127.0.0.1",
+  port: 7545,
+  network_id: "*"
+}
 ```
 
 :::tip
@@ -171,13 +171,13 @@ If you choose to <a href="https://docs.celo.org/developer-guide/development-chai
 Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
-   testnet: {
-     provider: function() {
-       return new HDWalletProvider(process.env.MNEMONIC, "https://alfajores-forno.celo-testnet.org")
-     },
-     network_id: 44787,
-     gas: 20000000      
-   }
+testnet: {
+  provider: function() {
+    return new HDWalletProvider(process.env.MNEMONIC, "https://alfajores-forno.celo-testnet.org")
+  },
+  network_id: 44787,
+  gas: 20000000      
+}
 ```
 
 **Connect to Mainnet using Forno**
@@ -185,13 +185,13 @@ Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchai
 Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
-   mainnet: {
-     provider: function() {
-       return new HDWalletProvider(process.env.MNEMONIC, "https://forno.celo.org")
-     },
-     network_id: 42220,
-     gas: 4000000     
-   }
+mainnet: {
+  provider: function() {
+    return new HDWalletProvider(process.env.MNEMONIC, "https://forno.celo.org")
+  },
+  network_id: 42220,
+  gas: 4000000     
+}
 ```
 
 :::tip
@@ -248,7 +248,7 @@ truffle deploy --network local
 
 ### Deploy with --reset
 
-Use the **---reset** flag to redeploy contracts with a new contract address if you haven't made any code changes
+Use the **---reset** flag to redeploy contracts with a new contract address if you haven't made any code changes.
 
 ```shell
 truffle deploy --network NETWORK --reset
