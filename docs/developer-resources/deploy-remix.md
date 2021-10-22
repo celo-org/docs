@@ -19,7 +19,7 @@ To learn more about the features available to you as a smart contract developer 
 
 :::
 
-## Step 1: Create a Smart Contract
+## Create a Smart Contract
 
 * Navigate to [remix.ethereum.org](http://remix.ethereum.org) and select **contracts > 1_Storage.sol** from the **File Explorers** pane.
 * Review the smart contract code and learn more using the [Solidity docs](https://docs.soliditylang.org/en/latest/) or with [Solidity by Example](https://solidity-by-example.org/).
@@ -27,7 +27,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ![github](/img/doc-images/deploy-remix/image1.png)
 
-## Step 2: Compile the Contract
+## Compile the Contract
 
 * Choose the **Solidity Compiler Icon** on the left side menu.
 * Check that your compiler version is within the versions specified in the **pragma solidity statement**.
@@ -35,7 +35,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ![github](/img/doc-images/deploy-remix/image2.png)
 
-## Step 3: Deploy the Contract
+## Deploy the Contract
 
 * Click the **Deploy and Run Transactions Icon** on the left side menu.
 * Choose **Injected Web3** as your environment.
@@ -46,7 +46,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ![github](/img/doc-images/deploy-remix/image3.png)
 
-## Step 4: Interacting with the Contract
+## Interacting with the Contract
 
 * Select the **dropdown** on the newly deployed contract at the bottom of the left panel.
 * View the deployed contract’s functions using the **Deployed Contracts** window.
@@ -55,7 +55,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ![github](/img/doc-images/deploy-remix/image4.png)
 
-## Step 5: View Contract Details
+## View Contract Details
 
 * Copy the contract address from the **Deployed Contracts** window on the left panel.
 * Navigate to the [Celo Block Explorer](https://explorer.celo.org/) and use the contract address to search for your contract.
@@ -63,7 +63,7 @@ To learn more about the features available to you as a smart contract developer 
 
 ![github](/img/doc-images/deploy-remix/image6.png)
 
-## Step 6: Verify the Smart Contract
+## Verify the Smart Contract
 
 * Verifying a smart contract allows anyone to review your code from within the Celo Block Explorer. This can be done using the Remix Sourcify Plugin.
 * Navigate back to the **Remix IDE**, select **Plugin Manager** from the left side menu.
