@@ -27,7 +27,7 @@ There are additional measures we can take to further secure the integrity of the
 
 ### Preventing harvesting of phone numbers
 
-To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](/celo-codebase/protocol/identity/phone-number-privacy.md)
+To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](/celo-codebase/protocol/odis/use-cases/phone-number-privacy.md)
 
 ### Attestation service
 

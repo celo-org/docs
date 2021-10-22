@@ -4,7 +4,7 @@ slug: /celo-codebase/protocol/odis
 ---
 import PageRef from '@components/PageRef'
 
-The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/celo-codebase/protocol/identity/phone-number-privacy), [password hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
+The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/celo-codebase/protocol/odis/use-cases/phone-number-privacy), [password hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
 Essentially, it is a service that allows users to compute a limited number of hashes (i.e. PRF evaluations), without letting the service see the data being hashed.
 Many useful applications are built on top of this primitive, such as privacy protected phone number mappings, password hardening, and [captchas for bot detection](https://privacypass.github.io/).
 

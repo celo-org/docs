@@ -49,7 +49,7 @@ Celo wallets should follow the [BIP44](https://github.com/bitcoin/bips/blob/mast
 
 ### Identity Protocol
 
-Celo has a [lightweight identity protocol](/celo-codebase/protocol/identity) that allows users to address each other via their phone number instead of addresses that Celo wallets should implement. Since user privacy is important, Celo wallets should leverage the built-in [Phone Number Privacy protocol](/celo-codebase/protocol/identity/phone-number-privacy) to protect against large-scale harvesting of user phone numbers.
+Celo has a [lightweight identity protocol](/celo-codebase/protocol/identity) that allows users to address each other via their phone number instead of addresses that Celo wallets should implement. Since user privacy is important, Celo wallets should leverage the built-in [Phone Number Privacy protocol](/celo-codebase/protocol/odis/use-cases/phone-number-privacy) to protect against large-scale harvesting of user phone numbers.
 
 ### Wallet Address
 

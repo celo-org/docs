@@ -31,7 +31,7 @@ The Sequential Delay Domain additionally supports signature-based authentication
 
 Even with the use of ODIS to prevent brute-force guessing of a password, it remains important to include a user-specific value in the hashing request as a salt to prevent [rainbow table attacks](https://en.wikipedia.org/wiki/Rainbow_table).
 A salt can be included in the Domain parameter of the request to ODIS to ensure a rate limit is enforced specific to the user's context.
-Using a random salt value is recommended, however a client identifier such as a username or [phone number hash](/celo-codebase/protocol/identity/phone-number-privacy) can also be used.
+Using a random salt value is recommended, however a client identifier such as a username or [phone number hash](/celo-codebase/protocol/odis/use-cases/phone-number-privacy) can also be used.
 
 ## Password filtering
 

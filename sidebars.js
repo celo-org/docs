@@ -291,7 +291,6 @@ module.exports = {
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/identity/index', },
                 'celo-codebase/protocol/identity/metadata',
                 'celo-codebase/protocol/identity/randomness',
-                'celo-codebase/protocol/identity/phone-number-privacy',
                 'celo-codebase/protocol/identity/smart-contract-accounts',
                 'celo-codebase/protocol/identity/encrypted-cloud-backup',
               ]
@@ -305,7 +304,7 @@ module.exports = {
                   type: 'category',
                   label: 'Use Cases',
                   items: [
-                    { type: 'link', label: 'Phone Number Privacy', href: '/celo-codebase/protocol/identity/phone-number-privacy', },
+                    'celo-codebase/protocol/odis/use-cases/phone-number-privacy',
                     'celo-codebase/protocol/odis/use-cases/key-hardening',
                   ]
                 },
