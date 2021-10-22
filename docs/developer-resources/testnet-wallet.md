@@ -17,14 +17,14 @@ This guide will focus on funding an account on MetaMask with Celo ([Alfajores te
 
 :::
 
-## Step 1: Download a Wallet
+## Download a Wallet
 
 When deploying a dApp, you will need to pay for transactions that write data to the Celo blockchain. This is done using a wallet funded with Celo on your preferred network.
 
 - Download [MetaMask](https://metamask.io/) for your browser
 - If using MetaMask, [Connect MetaMask to Celo](/getting-started/wallets/using-metamask-with-celo) ([video](https://www.youtube.com/watch?v=JLHeCb01fzs)) to access Celo network options from your wallet
 
-## Step 2: Create your Account
+## Create your Account
 
 You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/command-line-interface/introduction.md).
 
@@ -46,7 +46,7 @@ MetaMask allows you to easily create and manage accounts. This provides you with
 
 :::tip
 
-Skip to [Step 4](#step-4-fund-your-account) to fund your account.
+Skip to to [fund your account](#fund-your-account) to continue.
 
 :::
 
@@ -74,7 +74,7 @@ Note that `@celo/ganache-cli` does not currently allow you to send transactions 
 
 :::tip
 
-Skip to [Step 3](#step-3-import-account-to-wallet-for-options-2--3) to connect your accounts to your wallet.
+Continue to [import your acccounts to your wallet](#import-account-to-wallet-for-options-2--3) to continue.
 
 :::
 
@@ -104,11 +104,11 @@ address: 0x5986ac413fA0C4A0379A674Cb986A59a962FC84e
 
 :::tip
 
-Skip to [Step 3](#step-3-import-account-to-wallet-for-options-2--3) to connect your account to your wallet.
+Continue to [import your acccounts to your wallet](#import-account-to-wallet-for-options-2--3) to continue.
 
 :::
 
-## Step 3: Import Account to Wallet (for Options 2 & 3)
+## Import Account to Wallet (for Options 2 & 3)
 
 If you created an account using option 2 or 3, you can now import these accounts to your wallet. 
 
@@ -118,7 +118,7 @@ If you created an account using option 2 or 3, you can now import these accounts
 
 <!-- ![import account to metamask](/img/doc-images/testnet-wallet/image5.png) -->
 
-## Step 4: Fund your Account
+## Fund your Account
 
 No matter where you created your accounts, you can send them testnet funds using your **Account Address** and the testnet faucet.
 

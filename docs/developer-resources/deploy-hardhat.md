@@ -18,13 +18,13 @@ To deploy on Celo using Hardhat, you should have Celo set up Celo in your local 
 * [Using Windows](./develop-on-windows.md)
 * [Using Mac](./using-mac.md)
 
-## Step 1: Create Hardhat Project
+## Create Hardhat Project
 
 Choose one of the following items to prepare a dApp to deploy on Celo.
 
 * Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract. 
 
-## Step 2: Update the hardhat.config.js file
+## Update the hardhat.config.js file
 
 Open [hardhat-config.js](https://hardhat.org/config/) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/DevRel/blob/main/configuration/hardhat.config.js). This code is similar to Hardhat settings with a few configuration updates needed to deploy to a Celo network.
 
@@ -80,7 +80,7 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 :::
 
-## Step 3: Deploy to Celo
+## Deploy to Celo
 
 Run the following command from your root project directory to deploy to Celo Alfajores testnet.
 
@@ -93,7 +93,7 @@ npx hardhat run scripts/sample-script.js --network alfajores
 npx hardhat run scripts/sample-script.js --network celo
 ```
 
-## Step 4: View Contract Deployment
+## View Contract Deployment
 
 Copy your **contract address** from the terminal and navigate to the [block explorer](https://explorer.celo.org/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
@@ -107,7 +107,7 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 :::
 
-## Step 5: Verify Smart Contract
+## Verify Smart Contract
 
 Verifying a smart contract allows developers to review your code from within the Celo Block Explorer. 
 

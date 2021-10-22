@@ -26,7 +26,7 @@ To deploy on Celo using Truffle, you should have Celo set up Celo in your local 
 
 If you are new to Truffle, complete the[ Celo truffle installation instructions](./using-mac#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
-## Step 1: Project Setup
+## Project Setup
 
 **Setup Project Folder**
 
@@ -66,7 +66,7 @@ You can launch VS Code from the command line by <a href="https://code.visualstud
 
 :::
 
-## Step 2: Write Project Code 
+## Write Project Code 
 
 **Create Smart Contract**
 
@@ -138,7 +138,7 @@ See <a href="https://help.github.com/articles/ignoring-files/">ignoring files</a
 
 :::
 
-## Step 3: Configure Deployment Settings
+## Configure Deployment Settings
 
 The default **truffle.config.js **file contains connections required to deploy to the Ethereum networks, imports **HDWalletProvider, **and connects to the mnemonic in your **.secret **file. To deploy a Celo network, you need to update this configuration file to point toward the different Celo networks and add a few details specific to Celo best practices.
 
@@ -199,7 +199,7 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 :::
 
-## Step 4: Deploy Smart Contract
+## Deploy Smart Contract
 
 ### Option 1: Compile and Migrate
 
@@ -262,7 +262,7 @@ Save contract addresses for future reference. If you lose it, proceed to block e
 
 :::
 
-## Step 5: View Contract Deployment
+## View Contract Deployment
 
 Copy your **contract address** from the terminal and navigate to the [block explorer](https://explorer.celo.org/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
@@ -280,7 +280,7 @@ Learn more about exploring the Celo network and smart contract details in BlockS
 
 :::
 
-## Step 6: Verify Smart Contract
+## Verify Smart Contract
 
 Verifying a smart contract allows developers to review your code from within the Celo Block Explorer. 
 
