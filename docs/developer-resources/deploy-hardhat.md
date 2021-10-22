@@ -40,13 +40,13 @@ Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The 
 
 :::tip
 
-If you choose to [Set up a Local Development Chain](./walkthroughs/development-chain.md), your blockchain will also be hosted on a private network on localhost. This same configuration can be used to connect to the local development chain. 
+If you choose to [Set up a Local Development Chain](./walkthroughs/development-chain.md), your blockchain will also be hosted on a private network on localhost. This same configuration can be used to connect to the local development chain.
 
 :::
 
 ### Connect to Testnet using Forno
 
-Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.secret** file.
+Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```
    alfajores: {
@@ -59,9 +59,15 @@ Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchai
    }
 ```
 
+:::note
+
+Celo uses a different account derivation path than Ethereum, so you have to specify "m/44'/52752'/0'/0" as the path.
+
+:::
+
 ### Connect to Mainnet using Forno
 
-Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.secret** file.
+Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```
    celo: {
@@ -109,7 +115,9 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 ## Verify Smart Contract
 
-Verifying a smart contract allows developers to review your code from within the Celo Block Explorer. 
+### Using Blockscout
+
+Verifying a smart contract allows developers to review your code from within the Celo Block Explorer.
 
 * Navigate to the Code tab at the Explorer page for your contract's address
 * Click Verify & Publish to enter the smart contract verification page
@@ -120,5 +128,29 @@ Verifying a smart contract allows developers to review your code from within the
 
 ![github](/img/doc-images/deploy-hardhat/image3.png)
 
-* Click** Verify & Publish**
-* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract **panels to view and interact with your deployed smart contract.
+* Click **Verify & Publish**
+* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
+
+### Using the hardhat plugin
+
+You can also verify your contracts programatically using the [hardhat-deploy plugin](https://hardhat.org/plugins/hardhat-deploy.html).
+
+First, install the plugin in your project with
+
+```shell
+npm install -D hardhat-deploy
+```
+
+then add the following line to your `hardhat.config.js` file.
+
+```js
+require('hardhat-deploy');
+```
+
+Now you can verify your contracts on sourcify and Blockscout with
+
+```shell
+hardhat --network alfajores sourcify
+```
+
+just be sure to replace the network flag with the appropriate network.
