@@ -121,6 +121,25 @@ module.exports = {
         'developer-resources/overview',
         {
           type: 'category',
+          label: 'Local Environment',
+          items: [
+            'developer-resources/develop-on-windows',
+            'developer-resources/using-mac',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Deploy a DApp',
+          items: [
+            'developer-resources/deploy-dapp',
+            'developer-resources/deploy-remix',
+            'developer-resources/deploy-truffle',
+            'developer-resources/deploy-hardhat',
+            'developer-resources/deploy-replit',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Code Examples',
           items: [
             'developer-resources/start',
@@ -130,7 +149,6 @@ module.exports = {
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
-            'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
             { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
@@ -158,6 +176,7 @@ module.exports = {
           ]
         },
         'developer-resources/forno/index',
+        'developer-resources/testnet-wallet',
         'developer-resources/walkthroughs/development-chain',
         'developer-resources/celo-for-eth-devs',
         'developer-resources/celo-dapp-gallery',
