@@ -142,6 +142,8 @@ See <a href="https://help.github.com/articles/ignoring-files/">ignoring files</a
 
 The default **truffle.config.js** file contains connections required to deploy to the Ethereum networks, imports **HDWalletProvider**, and connects to the mnemonic in your **.env** file. To deploy a Celo network, you need to update this configuration file to point toward the different Celo networks and add a few details specific to Celo best practices.
 
+You can see an example repo [here](https://github.com/critesjosh/celo-contracts-workshop).
+
 **Update the truffle-config.js file**
 
 Open [truffle-config.js](https://www.trufflesuite.com/docs/truffle/reference/configuration#:~:text=Your%20configuration%20file%20is%20called,necessary%20to%20create%20your%20configuration.&text=js%20contained%20by%20the%20barebones%20project%20that%20truffle%20init%20creates.) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js). This code is similar to Truffle settings with a few configuration updates needed to deploy to a Celo network.
