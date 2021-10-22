@@ -121,11 +121,21 @@ module.exports = {
         'developer-resources/overview',
         {
           type: 'category',
+          label: 'Local Environment',
+          items: [
+            'developer-resources/develop-on-windows',
+            'developer-resources/using-mac',
+            'developer-resources/testnet-wallet',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Deploy a DApp',
           items: [
             'developer-resources/deploy-dapp',
             'developer-resources/deploy-remix',
             'developer-resources/deploy-truffle',
+            'developer-resources/deploy-hardhat',
             'developer-resources/deploy-replit',
           ]
         },
@@ -192,8 +202,6 @@ module.exports = {
             'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
           ]
         },
-        'developer-resources/develop-on-windows',
-        'developer-resources/using-mac',
         // TODO: This link will need to be changed when we move all the SDK type docs
         { type: 'link', label: 'SDK Code Reference', href: 'https://celo-sdk-docs.readthedocs.io/' },
       ]

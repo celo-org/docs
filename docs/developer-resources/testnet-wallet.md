@@ -1,11 +1,17 @@
 ---
-title: Testnet Development Wallet Setup
-description: Learn to create and fund a wallet to use for developing Celo dApps.
+title: Setup Testnet Wallet
+description: How to create and fund a wallet to use for developing Celo dApps.
 ---
+
+# Setup Testnet Wallet
+
+How to create and fund a wallet to use for developing Celo dApps.
+
+____
 
 While developing and deploying dApps on Celo, it’s helpful to have a wallet prepared with funds to pay for any transactions you make on the blockchain. These can be set up using either real or test funds, and this allows application developers and users to interact Celo applications more easily.
 
-:::note
+:::tip
 
 This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/getting-started/alfajores-testnet) tokens). You can also use the [Celo Extension Wallet](/getting-started/wallets#celoextensionwallet) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo mainnet.
 
@@ -28,19 +34,19 @@ MetaMask allows you to easily create and manage accounts. This provides you with
 
 - From your MetaMask extension, select **Celo (Alfajores Tesnet)**
 
-![select alfajores network in MM](/img/docusaurus.png)
+<!-- ![select alfajores network in MM](/img/doc-images/testnet-wallet/image1.png) -->
 
 - Choose wallet **Settings**, select **Create Account**, name your account, and select **Create**
 
-![select create account MM](/img/docusaurus.png)
+<!-- ![select create account MM](/img/doc-images/testnet-wallet/image2.png) -->
 
 - View your account details and copy your account address from the top center of the user interface
 
-![new account MM](/img/docusaurus.png)
+<!-- ![new account MM](/img/doc-images/testnet-wallet/image3.png) -->
 
-:::note
+:::tip
 
-Skip to **Step 4** to fund your wallet.
+Skip to [Step 4](#step-4-fund-your-account) to fund your account.
 
 :::
 
@@ -64,11 +70,11 @@ Ganache will return a list of available accounts, private keys, and additional w
 
 Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer-guide/development-chain#1-use-the-celo-devchain-npm-package).
 
-![ganache terminal output](/img/docusaurus.png)
+![ganache terminal output](/img/doc-images/testnet-wallet/image4.png)
 
-:::note
+:::tip
 
-Skip to **Step 3** to connect your accounts to your wallet.
+Skip to [Step 3](#step-3-import-account-to-wallet-for-options-2--3) to connect your accounts to your wallet.
 
 :::
 
@@ -96,9 +102,9 @@ publicKey: 024baaae61bab2a6e16ccb008c78dddb7132fc48d082e2a6166f8cc52d8d7a5289
 address: 0x5986ac413fA0C4A0379A674Cb986A59a962FC84e
 ```
 
-:::note
+:::tip
 
-Skip to **Step 3** to connect your account to your wallet.
+Skip to [Step 3](#step-3-import-account-to-wallet-for-options-2--3) to connect your account to your wallet.
 
 :::
 
@@ -110,7 +116,7 @@ If you created an account using option 2 or 3, you can now import these accounts
 - Select **Settings** > **Import Account**
 - Copy the **private key** from your local account, paste it into the window provided, and select **Import**
 
-![import account to metamask](/img/docusaurus.png)
+<!-- ![import account to metamask](/img/doc-images/testnet-wallet/image5.png) -->
 
 ## Step 4: Fund your Account
 
@@ -120,6 +126,6 @@ No matter where you created your accounts, you can send them testnet funds using
 - Copy your address from your terminal or wallet
 - Paste this address into the **Testnet Faucet**, complete the **Captcha**, and click **Get Started**
 
-![alfajores faucet](/img/docusaurus.png)
+![alfajores faucet](/img/doc-images/testnet-wallet/image6.png)
 
 Wait for the transaction to process to view your funds in your account.

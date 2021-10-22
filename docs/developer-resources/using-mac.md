@@ -5,7 +5,7 @@ description: Installation and development requirements for macOS
 
 Before building on Celo, you need to set up a development environment to make sure you have the proper tools to build an application. This setup includes a combination of general development tools, Celo specific tools, and mobile development tools.
 
-:::note
+:::tip
 
 While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer-guide/start/develop-on-windows).
 
@@ -59,7 +59,7 @@ Checksums matched!
 Now using node v12.22.7 (npm v6.14.15)
 ```
 
-:::note
+:::info
 
 You can switch node versions using 
 
@@ -99,7 +99,7 @@ npm install -g yarn
 
 This will install the Yarn global binary.
 
-:::note
+:::info
 
 The `-g` is short for `--global`. This flag means you are installing this package on your system and it will be accessible from the cli no matter what project you are in.
 
@@ -143,7 +143,7 @@ docker --version Docker version 19.03.13, build 4484c46d9d
 
 ## Celo Prerequisites
 
-### Truffle
+### Truffle 
 
 Since the Celo Blockchain has [shared ancestry with Ethereum](/developer-guide/celo-for-eth-devs) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying. 
 
@@ -191,7 +191,7 @@ npm install -g @celo/celocli
 added 966 packages from 1135 contributors in 91.815s
 ```
 
-:::note
+:::info
 
 Installation can take over a minute, so be patient depending on your internet connection.
 
@@ -203,7 +203,7 @@ Celo Wallet is the development wallet to onboard onto the Celo network, manage f
 
 There is a [detailed write-up](https://github.com/celo-org/celo-monorepo/tree/master/packages/mobile#mobile-celo-wallet) on the celo-monorepo for the Celo Wallet. This guide only includes the summarized installation instructions for macOS. If you're on another OS, please refer to that guide instead of this document.
 
-:::note
+:::info
 
 Celo's focus on mobile-first means that the priority has been on mobile applications and tooling. We know there is a growing demand for web applications and have several projects underway to build the tools needed to support web-based applications. In the meantime, you can still use your web-savvy skills to develop mobile apps without too much of a learning curve because of frameworks like React Native and Expo.
 
@@ -284,7 +284,7 @@ $ brew cask install android-platform-tools
 
 Next, install [Android Studio](https://developer.android.com/studio) and add the [Android NDK](https://developer.android.com/studio/projects/install-ndk).
 
-:::note
+:::info
 
 These paths may differ on your machine. You can find the path to the SDK and NDK via the [Android Studio menu](https://stackoverflow.com/questions/40520324/how-to-find-the-path-to-ndk).
 
