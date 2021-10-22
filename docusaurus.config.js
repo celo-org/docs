@@ -19,6 +19,7 @@ module.exports = {
         defaultLocale: 'en',
         locales: ['en', 'es']
     },
+    themes: ['@docusaurus/theme-live-codeblock'],
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
