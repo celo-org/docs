@@ -2,6 +2,7 @@
 const path = require('path');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const { docs, developers } = require('./sidebars');
 const DefaultLocale = 'en';
 
 module.exports = {
@@ -309,20 +310,44 @@ module.exports = {
                     position: 'left',
                 },
                 {
-                    href: "https://celo.org",
-                    label: "Celo Home",
+                    "to": "developer-guide/overview",
+                    "label": "Develop",
+                    "position": "left"
                 },
                 {
-                    href: "https://celo.org/build",
-                    label: "Build",
+                    "to": "validator-guide/overview",
+                    "label": "Validate",
+                    "position": "left"
                 },
                 {
-                    href: "https://celo.org/build/faucet",
-                    label: "Faucet",
+                    "to": "developer-guide/integrations",
+                    "label": "Integrate",
+                    "position": "left"
+                },
+                {
+                    "to": "celo-owner-guide/quick-start",
+                    "label": "Own",
+                    "position": "left"
+                },
+                {
+                    "to": "developer-guide/start",
+                    "label": "Learn",
+                    "position": "left"
+                },
+                {
+                    "to": "community/contributing",
+                    "label": "Contribute",
+                    "position": "left"
                 },
                 {
                     href: "https://celo.crowdin.com/celo-docs",
-                    label: "Translate"
+                    label: "Translate",
+                    position: "right",
+                },
+                {
+                    href: "https://discord.com/invite/6yWMkgM",
+                    label: "Chat",
+                    position: "right",
                 },
                 {
                     href: "https://github.com/celo-org/docs",
