@@ -293,7 +293,7 @@ const sidebars = {
     'validator-guide/validator-explorer',
     'validator-guide/celo-foundation-voting-policy',
     'validator-guide/celo-signal',
-    "getting-started/validator-troubleshooting-faq",
+    { type: "doc", label: "Validator FAQ", id: "getting-started/validator-troubleshooting-faq",},
   ],
   // ######################################
   // Integration 
