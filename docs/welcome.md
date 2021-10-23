@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Welcome to Celo
 id: welcome
 slug: /
 ---
