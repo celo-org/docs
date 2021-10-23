@@ -182,10 +182,6 @@ const sidebars = {
   // Developers 
   // ######################################
   developers: [
-    {
-      type: 'category',
-      label: 'Developer Guide',
-      items: [
         'developer-resources/overview',
         {
           type: 'category',
@@ -193,33 +189,6 @@ const sidebars = {
           items: [
             'developer-resources/develop-on-windows',
             'developer-resources/using-mac',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Deploy a DApp',
-          items: [
-            'developer-resources/deploy-dapp',
-            'developer-resources/deploy-remix',
-            'developer-resources/deploy-truffle',
-            'developer-resources/deploy-hardhat',
-            'developer-resources/deploy-replit',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Code Examples',
-          items: [
-            'developer-resources/start',
-            'developer-resources/walkthroughs/hellocelo',
-            'developer-resources/walkthroughs/hellocontracts',
-            'developer-resources/walkthroughs/hello-contract-remote-node',
-            'developer-resources/walkthroughs/no-code-erc20',
-            'developer-resources/walkthroughs/no-code-erc721',
-            'developer-resources/walkthroughs/hello-mobile-dapp',
-            'developer-resources/walkthroughs/web-dapp',
-            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
-            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
           ]
         },
         {
@@ -260,107 +229,110 @@ const sidebars = {
         },
         // TODO: This link will need to be changed when we move all the SDK type docs
         { type: 'link', label: 'SDK Code Reference', href: 'https://celo-sdk-docs.readthedocs.io/' },
-      ]
-    },
   ],
   // ######################################
   // Validators 
   // ######################################
   validators: [  
+    'validator-guide/overview',
+    'validator-guide/attestation-service',
     {
       type: 'category',
-      label: 'Validator Guide',
+      label: 'Key Management',
       items: [
-        'validator-guide/overview',
-        'validator-guide/attestation-service',
-        {
-          type: 'category',
-          label: 'Key Management',
-          items: [
-            'validator-guide/key-management/summary',
-            'validator-guide/key-management/detailed',
-            'validator-guide/key-management/key-rotation',
-          ]
-        },
-        'validator-guide/securing-nodes-and-services',
-        'validator-guide/monitoring',
-        'validator-guide/devops-best-practices',
-        'validator-guide/node-upgrades',
-        'validator-guide/proxy',
-        'validator-guide/validator-explorer',
-        'validator-guide/celo-foundation-voting-policy',
-        'validator-guide/celo-signal',
+        'validator-guide/key-management/summary',
+        'validator-guide/key-management/detailed',
+        'validator-guide/key-management/key-rotation',
       ]
     },
+    'validator-guide/securing-nodes-and-services',
+    'validator-guide/monitoring',
+    'validator-guide/devops-best-practices',
+    'validator-guide/node-upgrades',
+    'validator-guide/proxy',
+    'validator-guide/validator-explorer',
+    'validator-guide/celo-foundation-voting-policy',
+    'validator-guide/celo-signal',
   ],
   // ######################################
   // Integration 
   // ######################################
   integrate: [  
-    {
-      type: 'category',
-      label: 'Integrations',
-      items: [
-        'developer-resources/integrations/integrations',
-        'developer-resources/integrations/general',
-        'developer-resources/integrations/checklist',
-        'developer-resources/integrations/custody',
-        'developer-resources/integrations/listings',
-        'developer-resources/integrations/cloud-hsm',
-      ]
-    },
+    'developer-resources/integrations/integrations',
+    'developer-resources/integrations/general',
+    'developer-resources/integrations/checklist',
+    'developer-resources/integrations/custody',
+    'developer-resources/integrations/listings',
+    'developer-resources/integrations/cloud-hsm',
   ], 
   // ######################################
   // Own 
   // ######################################
-  integrate: [  
+  own: [  
+    { type: 'doc', label: 'Quick Start', id: 'celo-holder-guide/quick-start' },
+    'celo-holder-guide/cusd',
     {
       type: 'category',
-      label: 'Celo Owner Guide',
+      label: 'Using a Ledger Wallet',
       items: [
-        { type: 'doc', label: 'Quick Start', id: 'celo-holder-guide/quick-start' },
-        'celo-holder-guide/cusd',
-        {
-          type: 'category',
-          label: 'Using a Ledger Wallet',
-          items: [
-            'celo-holder-guide/ledger',
-            'celo-holder-guide/connecting-ledger-celo-terminal-wallet',
-            'celo-holder-guide/connecting-ledger-celo-web-wallet',
-            'celo-holder-guide/connecting-ledger-celocli'
-          ]
-        },
-        'celo-holder-guide/release-gold',
-        'celo-holder-guide/voting-validators',
-        { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
-        'celo-holder-guide/governance-cheat-sheet',
-        'celo-holder-guide/eth-recovery',
-        'celo-holder-guide/celo-recovery',
+        'celo-holder-guide/ledger',
+        'celo-holder-guide/connecting-ledger-celo-terminal-wallet',
+        'celo-holder-guide/connecting-ledger-celo-web-wallet',
+        'celo-holder-guide/connecting-ledger-celocli'
       ]
     },
+    'celo-holder-guide/release-gold',
+    'celo-holder-guide/voting-validators',
+    { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
+    'celo-holder-guide/governance-cheat-sheet',
+    'celo-holder-guide/eth-recovery',
+    'celo-holder-guide/celo-recovery',
   ], 
+  learn: [
+    'developer-resources/start',
+    {
+      type: 'category',
+      label: 'Deploy a DApp',
+      items: [
+        'developer-resources/deploy-dapp',
+        'developer-resources/deploy-remix',
+        'developer-resources/deploy-truffle',
+        'developer-resources/deploy-hardhat',
+        'developer-resources/deploy-replit',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Code Examples',
+      items: [
+        'developer-resources/walkthroughs/hellocelo',
+        'developer-resources/walkthroughs/hellocontracts',
+        'developer-resources/walkthroughs/hello-contract-remote-node',
+        'developer-resources/walkthroughs/no-code-erc20',
+        'developer-resources/walkthroughs/no-code-erc721',
+        'developer-resources/walkthroughs/hello-mobile-dapp',
+        'developer-resources/walkthroughs/web-dapp',
+        { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
+        { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
+      ]
+    },
+  ],
   // ######################################
   // Contributors 
   // ######################################
   contributors: [ 
+    { type: 'doc', label: 'Contributing', id: 'community/contributing', },
+    { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
+    { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
     {
       type: 'category',
-      label: 'Community',
+      label: ' Release Process',
       items: [
-        { type: 'doc', label: 'Contributing', id: 'community/contributing', },
-        { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
-        { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
-        {
-          type: 'category',
-          label: ' Release Process',
-          items: [
-            { type: 'doc', label: 'Overview', id: 'community/release-process/README', },
-            { type: 'doc', label: 'Smart Contracts', id: 'community/release-process/smart-contracts', },
-            { type: 'doc', label: 'Blockchain Client', id: 'community/release-process/blockchain-client', },
-            { type: 'doc', label: 'CeloCLI and ContractKit', id: 'community/release-process/base-cli-contractkit-dappkit-utils', },
-            { type: 'doc', label: 'Attestation Service', id: 'community/release-process/attestation-service', },
-          ]
-        }
+        { type: 'doc', label: 'Overview', id: 'community/release-process/README', },
+        { type: 'doc', label: 'Smart Contracts', id: 'community/release-process/smart-contracts', },
+        { type: 'doc', label: 'Blockchain Client', id: 'community/release-process/blockchain-client', },
+        { type: 'doc', label: 'CeloCLI and ContractKit', id: 'community/release-process/base-cli-contractkit-dappkit-utils', },
+        { type: 'doc', label: 'Attestation Service', id: 'community/release-process/attestation-service', },
       ]
     },
     {
@@ -371,7 +343,7 @@ const sidebars = {
         { type: 'doc', label: 'Baklava Testnet Disclaimer', id: 'important-information/baklava-testnet-disclaimer', },
         { type: 'doc', label: 'Mainnet Disclaimer', id: 'important-information/mainnet-network-disclaimer', },
       ]
-    }
+    },
   ],  
 };
 module.exports = sidebars;
