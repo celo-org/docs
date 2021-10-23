@@ -329,11 +329,11 @@ module.exports = {
                     "label": "Own",
                     "position": "left"
                 },
-                {
-                    "to": "developer-guide/start",
-                    "label": "Learn",
-                    "position": "left"
-                },
+                // {
+                //     "to": "developer-guide/start",
+                //     "label": "Learn",
+                //     "position": "left"
+                // },
                 {
                     "to": "community/contributing",
                     "label": "Contribute",
