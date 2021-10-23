@@ -190,7 +190,7 @@ const sidebars = {
   // Developers 
   // ######################################
   developers: [
-        'developer-resources/overview',
+        { type: 'doc', label: 'Overview', id: 'developer-resources/overview', },
         {
           type: 'category',
           label: 'Local Environment',
@@ -200,30 +200,60 @@ const sidebars = {
           ]
         },
         {
-          type: 'category',
-          label: 'ContractKit',
+          type: "category",
+          label: "Developer Tools",
           items: [
-            'developer-resources/contractkit/index',
-            'developer-resources/contractkit/setup',
-            'developer-resources/contractkit/notes-web3-with-contractkit',
-            'developer-resources/contractkit/contracts-wrappers-registry',
-            'developer-resources/contractkit/odis',
-            'developer-resources/contractkit/migrating-to-contractkit-v1',
+            {
+              type: 'category',
+              label: 'ContractKit',
+              items: [
+                'developer-resources/contractkit/index',
+                'developer-resources/contractkit/setup',
+                'developer-resources/contractkit/notes-web3-with-contractkit',
+                'developer-resources/contractkit/contracts-wrappers-registry',
+                'developer-resources/contractkit/odis',
+                'developer-resources/contractkit/migrating-to-contractkit-v1',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'DAppKit',
+              items: [
+                'developer-resources/dappkit/index',
+                'developer-resources/dappkit/setup',
+                'developer-resources/dappkit/usage',
+              ]
+            },
+            'developer-resources/forno/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deploy on Celo',
+          items: [
+            'developer-resources/deploy-dapp',
+            'developer-resources/deploy-remix',
+            'developer-resources/deploy-truffle',
+            'developer-resources/deploy-hardhat',
+            'developer-resources/deploy-replit',
           ]
         },
         {
           type: 'category',
-          label: 'DAppKit',
+          label: 'Code Examples',
           items: [
-            'developer-resources/dappkit/index',
-            'developer-resources/dappkit/setup',
-            'developer-resources/dappkit/usage',
+            'developer-resources/start',
+            'developer-resources/walkthroughs/hellocelo',
+            'developer-resources/walkthroughs/hellocontracts',
+            'developer-resources/walkthroughs/hello-contract-remote-node',
+            'developer-resources/walkthroughs/no-code-erc20',
+            'developer-resources/walkthroughs/no-code-erc721',
+            'developer-resources/walkthroughs/hello-mobile-dapp',
+            'developer-resources/walkthroughs/web-dapp',
+            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
+            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
           ]
         },
-        'developer-resources/forno/index',
-        'developer-resources/testnet-wallet',
-        'developer-resources/walkthroughs/development-chain',
-        'developer-resources/celo-for-eth-devs',
         {
           type: 'category',
           label: 'Bridging',
@@ -234,6 +264,9 @@ const sidebars = {
             'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
           ]
         },
+        { type: 'doc', label: 'Testnet Wallet', id: 'developer-resources/testnet-wallet', },
+        { type: 'doc', label: 'Development Chain', id: 'developer-resources/walkthroughs/development-chain', },
+        { type: 'doc', label: 'Ethereum Developers', id: 'developer-resources/celo-for-eth-devs', },
         // TODO: This link will need to be changed when we move all the SDK type docs
         { type: 'link', label: 'SDK Code Reference', href: 'https://celo-sdk-docs.readthedocs.io/' },
   ],
@@ -286,35 +319,11 @@ const sidebars = {
     'celo-holder-guide/eth-recovery',
     'celo-holder-guide/celo-recovery',
   ], 
-  learn: [
-    'developer-resources/start',
-    {
-      type: 'category',
-      label: 'Deploy a DApp',
-      items: [
-        'developer-resources/deploy-dapp',
-        'developer-resources/deploy-remix',
-        'developer-resources/deploy-truffle',
-        'developer-resources/deploy-hardhat',
-        'developer-resources/deploy-replit',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Code Examples',
-      items: [
-        'developer-resources/walkthroughs/hellocelo',
-        'developer-resources/walkthroughs/hellocontracts',
-        'developer-resources/walkthroughs/hello-contract-remote-node',
-        'developer-resources/walkthroughs/no-code-erc20',
-        'developer-resources/walkthroughs/no-code-erc721',
-        'developer-resources/walkthroughs/hello-mobile-dapp',
-        'developer-resources/walkthroughs/web-dapp',
-        { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
-        { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
-      ]
-    },
-  ],
+  // ######################################
+  // Learn 
+  // ######################################
+  // learn: [  
+  // ]
   // ######################################
   // Contributors 
   // ######################################
