@@ -8,7 +8,7 @@ const sidebars = {
       label: "Getting Started",
       items: [
         { type: "doc", label: "Overview", id: "overview", },
-        { type: "doc", label: "Applications", id: "developer-resources/celo-dapp-gallery",},
+        { type: "doc", label: "Examples", id: "developer-resources/celo-dapp-gallery",},
         { type: "doc", label: "Glossary", id: "getting-started/glossary",},
       ],
     },
@@ -322,8 +322,47 @@ const sidebars = {
   // ######################################
   // Learn 
   // ######################################
-  // learn: [  
-  // ]
+  learn: [ 
+    {
+      type: 'category',
+      label: ' Introduction to Celo',
+      items: [
+        { type: 'doc', label: 'Introduction', id: 'learn/celo-overview', },
+        { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
+        { type: 'doc', label: 'Value', id: 'learn/celo-value', },
+        { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
+        { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
+        { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
+        { type: 'doc', label: 'Ecosystem', id: 'learn/celo-ecosystem', },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Celo Platform',
+      items: [
+        { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
+        { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
+        { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
+        { type: 'doc', label: 'Developer Tools', id: 'learn/developer-tools', },
+        { type: 'doc', label: 'EVM Tools', id: 'learn/evm-compatible-tooling', },
+      ]
+    }, 
+    {
+      type: 'category',
+      label: 'Quick Guides',
+      items: [
+        { type: 'doc', label: 'Celo', id: 'learn/celo-summary', },
+        { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol-summary', },
+        { type: 'doc', label: 'Valora', id: 'learn/valora-summary', },
+        { type: 'doc', label: 'CELO', id: 'learn/CELO-coin-summary', },
+        { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
+      ]
+    },
+    { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
+    { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
+    { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
+    { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
+  ],
   // ######################################
   // Contributors 
   // ######################################
@@ -351,6 +390,7 @@ const sidebars = {
         { type: 'doc', label: 'Mainnet Disclaimer', id: 'important-information/mainnet-network-disclaimer', },
       ]
     },
+    { type: 'doc', label: 'Join the Community', id: 'community/join-the-community', },
   ],  
 };
 module.exports = sidebars;

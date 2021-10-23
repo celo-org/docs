@@ -311,32 +311,32 @@ module.exports = {
                 },
                 {
                     "to": "developer-guide/overview",
-                    "label": "Develop",
+                    "label": "Developers",
                     "position": "left"
                 },
                 {
                     "to": "validator-guide/overview",
-                    "label": "Validate",
+                    "label": "Validators",
                     "position": "left"
                 },
                 {
                     "to": "developer-guide/integrations",
-                    "label": "Integrate",
+                    "label": "Integrations",
                     "position": "left"
                 },
                 {
                     "to": "celo-owner-guide/quick-start",
-                    "label": "Own",
+                    "label": "Owners",
                     "position": "left"
                 },
-                // {
-                //     "to": "developer-guide/start",
-                //     "label": "Learn",
-                //     "position": "left"
-                // },
+                {
+                    "to": "learn/celo-overview",
+                    "label": "Learn",
+                    "position": "left"
+                },
                 {
                     "to": "community/contributing",
-                    "label": "Contribute",
+                    "label": "Community",
                     "position": "left"
                 },
                 {
