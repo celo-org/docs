@@ -23,7 +23,9 @@ For non-essential functionality that is not detrimental to interoperability, a p
 - Payment of an outstanding payment request
 
 :::info
+
 In order for notifications to work in a fork of the Celo Wallet, creation of another firebase service for the forked wallet is necessary.
+
 :::
 ## Exchanging
 

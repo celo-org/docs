@@ -19,7 +19,11 @@ Restart your computer when prompted.
 
 Next, install a Linux distribution from the Microsoft Store. When developing this guide, we chose [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1&activetab=pivot:overviewtab).
 
-Set up your Linux distro by setting a username and password then update and upgrade the packages by running the following command in the terminal: **`$ sudo apt update && sudo apt upgrade`**  
+Set up your Linux distro by setting a username and password then update and upgrade the packages by running the following command in the terminal: 
+
+```shell
+sudo apt update && sudo apt upgrade
+```
 
 
 You can view the source documentation for setting up the Linux distro [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).

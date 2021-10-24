@@ -120,7 +120,7 @@ Savings Circles let you pool funds with your friends to save for large purchases
 
 ### Tradegen
 
-[Tradegen](https://www.tradegen.io/) is a decentralized social trading platform that aims to make algo trading more inclusive and transparent. The platform consists of trading strategies, user-managed pools, and a marketplace for custom indicators/comparators to use in on-chain trading bots. Tradegen is [open source on GitHub](https://github.com/Tradegen/tradegen).
+[Tradegen](https://www.tradegen.io/) is an asset management and algo trading platform that connects users to traders. Users can invest in pools, manage their own pools, farm pool tokens to earn extra yield, and trade pool tokens as NFTs on the platform's marketplace. Tradegen is [open source on GitHub](https://github.com/Tradegen).
 
 ## Umoja
 

@@ -36,6 +36,24 @@ Here's what we'll be using each of these packages for:
 - [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) is a community provided library to ease establishing the connection with a user's wallet, whether that is a hardware, mobile, or web wallet. When developing with this library, your users can hold Celo via [Valora](https://valoraapp.com), a Ledger, Metamask and more
 - [bignumber.js](https://github.com/MikeMcl/bignumber.js/) is a library for expressing large numbers in JavaScript. When interacting with a blockchain we often need to handle arbitrary-precision decimal and non-decimal arithmetic.
 
+We'll also need to add some Next.js config to work with these packages. Update next.config.js with the following:
+```javascript
+module.exports = {
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      child_process: false,
+      readline: false,
+    };
+    return config;
+  },
+};
+```
+
+We'll need to restart the server for the config changes to take effect.
+
 ## Developing the application
 
 After all our boilerplate has been setup, we're ready to start developing our application.
@@ -46,9 +64,12 @@ When a user wants to interact with your DApp we need to somehow allow them to co
 
 Leveraging our previously added [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) library we can provide a button that prompts the user to connect their wallet.
 
+Update pages/index.js with the following:
 ```javascript
-import React from 'react'
-import { useContractKit } from '@celo-tools/use-contractkit'
+import React from 'react';
+import { useContractKit } from '@celo-tools/use-contractkit';
+import { ContractKitProvider } from '@celo-tools/use-contractkit';
+import '@celo-tools/use-contractkit/lib/styles.css';
 
 function App () {
   const { address, connect } = useContractKit()
@@ -61,6 +82,21 @@ function App () {
     </main>
   )
 }
+
+function WrappedApp() {
+  return (
+    <ContractKitProvider
+      dapp={{
+          name: "My awesome dApp",
+          description: "My awesome description",
+          url: "https://example.com",
+        }}
+    >
+      <App />
+    </ContractKitProvider>
+  );
+}
+export default WrappedApp;
 ```
 
 Clicking this button will show the `use-contractkit` modal and allow the user to connect with their wallet of choice. Once the modal has been dismissed, the `address` property exposed by `use-contractkit` will be filled with the users primary account.
@@ -70,17 +106,19 @@ Clicking this button will show the `use-contractkit` modal and allow the user to
 After that we've connected to the user's wallet we can show interesting information based on their address. In the context of a governance voting DApp it may make sense to show past proposals they've voted on. If we were creating a simple banking interface, we could imagine wanting to show transfers into and out of the users account.
 
 :::info
+
 On the Celo blockchain, only queued and dequeued proposals are kept in the Governance state. That means to access old proposals we'd need to access an indexed history of the blockchain. This is out of scope for our tutorial however there's many resources online you can find that will help you accessing indexed blockchain state.
 
 For a comprehensive look at how to interpret this on chain state, take a look at the implementation for the [celocli governance:list](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/governance/list.ts) command.
 
 For the purposes of this tutorial, we'll only be looking at dequeued proposals, or proposals we can currently vote on.
+
 :::
 
 Here's how it looks using a combination of the `useEffect` and `useCallback` hooks to request and display all dequeued proposals from the blockchain.
 
 ```javascript
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useContractKit } from '@celo-tools/use-contractkit'
 
 function App() {

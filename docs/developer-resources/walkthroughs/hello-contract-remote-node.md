@@ -1,5 +1,5 @@
 ---
-title: Deply and Interact with Contracts (Remotely)
+title: Deploy and Interact with Contracts (Remotely)
 slug: /developer-guide/start/hello-contract-remote-node
 ---
 import PageRef from '@components/PageRef'
@@ -13,14 +13,24 @@ This guide walks you through the basics of how to deploy your own smart contract
 
 ## Setup
 
-This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup. If so, you can install truffle with:
+This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup. 
+
+:::info
+
+The latest versions of truffle cause errors when migrating contracts to the Celo network. We are fixing this--in the meantime use version 5.4.0.
+
+:::
+
+You can install truffle 5.4.0 with:
 
 ```text
-npm install -g truffle
+npm install -g truffle@5.4.0
 ```
 
 :::info
-[Learn more about the Truffle development framework here.](https://www.trufflesuite.com/docs/truffle/overview) 
+
+[Learn more about the Truffle development framework here.](https://www.trufflesuite.com/docs/truffle/overview)
+
 :::
 
 As you may know, Truffle is built for Ethereum developers. Because Celo has a similar network architecture and runs the Ethereum Virtual Machine, Celo developers are able to leverage many Ethereum developer tools. But it is important to keep in mind the differences. If you haven't already, please review the Celo overview.
@@ -77,7 +87,9 @@ truffle compile
 After compiling the contract, you need to create a migration to deploy the contract. For that, create a file in the `./migrations/` folder named `2_deploy_helloworld.js`:
 
 :::info
+
 [Learn more about Truffle migrations here.](https://www.trufflesuite.com/docs/truffle/getting-started/running-migrations)
+
 :::
 
 ```javascript
@@ -89,7 +101,9 @@ module.exports = function (deployer) {
 ```
 
 :::info
+
 You can [learn more about Truffle configuration options here.](https://www.trufflesuite.com/docs/truffle/reference/configuration)
+
 :::
 
 ## Deploy to Alfajores \(Remotely\)
@@ -219,7 +233,9 @@ You are finally ready to deploy the contract. Use the `kit`to create a custom tr
 ```
 
 :::info
+
 To deploy a contract on Celo, use the `kit.connection.sendTransaction()` function with no `to:` field and the contract bytecode in the `data` field. The account that you are sending the transaction from must have enough CELO to pay the transaction fee, unless you specify another currency as the `feeCurrency`, then you need enough of that currency to pay the transaction fee.
+
 :::
 
 The entire deployment script is less than 20 lines of code.

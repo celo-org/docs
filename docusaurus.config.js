@@ -2,6 +2,7 @@
 const path = require('path');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const DefaultLocale = 'en';
 
 module.exports = {
     title: "Celo Docs",
@@ -14,6 +15,10 @@ module.exports = {
     favicon: "img/logo.png",
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en', 'es']
+    },
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
@@ -289,13 +294,21 @@ module.exports = {
         ]
     ],
     themeConfig: {
+        prism: {
+            theme: require('prism-react-renderer/themes/dracula'),
+        },
         navbar: {
             title: "Celo Docs",
             logo: {
                 alt: "Celo Logo",
                 src: "img/logo.png",
             },
-            items: [{
+            items: [
+                {
+                    type: 'localeDropdown',
+                    position: 'left',
+                },
+                {
                     href: "https://celo.org",
                     label: "Celo Home",
                 },
@@ -306,6 +319,10 @@ module.exports = {
                 {
                     href: "https://celo.org/build/faucet",
                     label: "Faucet",
+                },
+                {
+                    href: "https://celo.crowdin.com/celo-docs",
+                    label: "Translate"
                 },
                 {
                     href: "https://github.com/celo-org/docs",
@@ -367,6 +384,14 @@ module.exports = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     // Please change this to your repo.
                     editUrl: "https://github.com/celo-org/docs/edit/main/",
+                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                        // Link to Crowdin for French docs
+                        if (locale !== DefaultLocale) {
+                          return `https://celo.crowdin.com/celo-docs/${locale}`;
+                        }
+                        // Link to Github for English docs
+                        return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`
+                    },
                     routeBasePath: "/",
                     remarkPlugins: [math],
                     rehypePlugins: [katex],

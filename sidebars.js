@@ -25,6 +25,7 @@ module.exports = {
                 "getting-started/wallets/using-metamask-with-celo/index",
                 "getting-started/wallets/using-metamask-with-celo/manual-setup",
                 "getting-started/wallets/using-metamask-with-celo/programmatic-setup",
+                "getting-started/wallets/using-metamask-with-celo/metamask-valora-import",
                 "getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask",
               ],
             }
@@ -120,6 +121,25 @@ module.exports = {
         'developer-resources/overview',
         {
           type: 'category',
+          label: 'Local Environment',
+          items: [
+            'developer-resources/develop-on-windows',
+            'developer-resources/using-mac',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Deploy a DApp',
+          items: [
+            'developer-resources/deploy-dapp',
+            'developer-resources/deploy-remix',
+            'developer-resources/deploy-truffle',
+            'developer-resources/deploy-hardhat',
+            'developer-resources/deploy-replit',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Code Examples',
           items: [
             'developer-resources/start',
@@ -129,7 +149,6 @@ module.exports = {
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
-            'developer-resources/develop-on-windows',
             'developer-resources/walkthroughs/web-dapp',
             { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
@@ -157,6 +176,7 @@ module.exports = {
           ]
         },
         'developer-resources/forno/index',
+        'developer-resources/testnet-wallet',
         'developer-resources/walkthroughs/development-chain',
         'developer-resources/celo-for-eth-devs',
         'developer-resources/celo-dapp-gallery',
@@ -170,6 +190,16 @@ module.exports = {
             'developer-resources/integrations/custody',
             'developer-resources/integrations/listings',
             'developer-resources/integrations/cloud-hsm',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Bridging',
+          items: [
+            { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
+            'celo-codebase/protocol/bridging/optics-gui',
+            'celo-codebase/protocol/bridging/bridging-native-assets',
+            'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
           ]
         },
         // TODO: This link will need to be changed when we move all the SDK type docs

@@ -3,7 +3,9 @@ title: Tobin Tax
 ---
 
 :::info
+
 The tobin tax is currently **disabled** on Mainnet.
+
 :::
 
 If the Celo reserve ratio falls below `tobinTaxReserveRatio`, a small fee is levied on CELO transfers to discourage further depletion of CELO collateral. This fee is transferred to the `Reserve` smart contract. There is no gas charged for this transfer. The `tobinTaxReserveRatio` and the `tobinTax` parameters are governable.

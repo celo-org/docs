@@ -7,7 +7,9 @@ slug: /getting-started/wallets/using-metamask-with-celo
 # Using MetaMask with Celo
 
 :::danger
+
 Do not send ETH to your Celo address. Do not send CELO assets to your Ethereum address. Always make sure that you are connected to the correct network.
+
 :::
 
 [MetaMask](https://metamask.io/) is a crypto wallet that can be used in a web browser and on mobile devices to interact with the Ethereum blockchain. Many dApps in the space integrate with MetaMask, and we're excited to bring its functionality to the Celo ecosystem.
@@ -18,12 +20,12 @@ Since Celo network's [Donut Hardfork](https://github.com/celo-org/celo-proposals
 
 ### **For end users:**
 
-* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](manual-setup.mdx)
+* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](manual-setup.md)
 * [Setup a Ledger to Work with MetaMask to Work With Celo](using-a-ledger-with-metamask.md)
 
 ### **For developers:**
 
-* [Setup MetaMask to Work with Your dApp](programmatic-setup.mdx)
+* [Setup MetaMask to Work with Your dApp](programmatic-setup.md)
 
 ## **Things to Keep in Mind**
 
@@ -35,6 +37,7 @@ Celo and Ethereum use different derivation paths for generating seed phrases. Be
 
   * You can't import an existing Celo account into the MetaMask wallet using its seed phrase, as you'd get the Ethereum version of it. Instead, you have to import it using the associated private key.
   * If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/)) you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
+  * See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](metamask-valora-import.md)
   * See these guides if you accidentally sent [ETH to CELO addresses](../../../celo-holder-guide/celo-recovery.md) or [CELO to ETH addresses.](../../..//celo-holder-guide/eth-recovery.md)
 
 ## **Gas Fees Require CELO**
@@ -46,5 +49,7 @@ While gas on Celo can usually be paid in [many different currencies](../../../ce
 In some cases, the MetaMask UI may display the Ethereum logo in places where it should display a CELO logo or no logo at all.
 
 :::info
+
 MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose a Celo native wallet [here](../index.md).
+
 :::

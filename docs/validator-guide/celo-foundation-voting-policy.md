@@ -5,7 +5,9 @@ title: Celo Foundation Voting Policy
 The following describes how the Celo Foundation anticipates allocating its votes to validator groups, with special attention to the first allocated groups at the Celo Mainnet release and the months thereafter.
 
 :::info
+
 The policy described here can change at any time as determined by the Foundation Board.
+
 :::
 
 ## Policy Objectives
@@ -132,7 +134,9 @@ Currently receiving Foundation votes:
 
 
 :::info
+
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
+
 :::

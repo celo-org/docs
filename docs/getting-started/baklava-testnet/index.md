@@ -11,13 +11,17 @@ The Baklava Testnet is a non-production Testnet for the Validator community. It 
 - **Testing ground**: Experiment with new infrastructure configurations in a low-risk environment.
 
 :::warning
+
 The Baklava Testnet is designed for testing and experimentation by developers. Its tokens hold no real world economic value. The testnet software will be upgraded and the entirety of its data reset on a regular basis. This will erase your accounts, their balance and your transaction history. The testnet software will be upgraded on a regular basis. You may encounter bugs and limitations with the software and documentation.
+
 :::
 
 Please help the community to improve Celo by asking questions on [Discord](https://chat.celo.org) the [Forum](https://forum.celo.org/c/baklava-testnet)!
 
 :::info
+
 Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/important-information/baklava-testnet-disclaimer).
+
 :::
 
 ## Useful links

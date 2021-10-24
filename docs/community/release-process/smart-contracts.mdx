@@ -4,7 +4,9 @@ title: Smart Contracts Release Process
 export const N = "N";
 
 :::warning
+
 This release process is a work in progress. Many infrastructure components required to execute it are not in place, and the process itself is subject to change.
+
 :::
 
 ## Versioning
@@ -54,7 +56,9 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](/command-line-interface/introduction.md)) for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
 
 :::warning
+
 For these to run, you may need to follow the [setup instructions](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md). These steps include installing Node and setting `nvm` to use the correct version of Node. Successful `yarn install` and `yarn build` in the protocol package signal a completed setup.
+
 :::
 
 Using these tools, a contract release candidate can be built, deployed, and proposed for upgrade automatically on a specified network. Subsequently, stakeholders can verify the release candidate against a governance upgrade proposal's contents on the network.
@@ -471,7 +475,9 @@ Make sure to keep the post up to date. All updates (excluding fixing typos) shou
 ### Emergency patches
 
 :::warning
+
 Work in progress
+
 :::
 
 ## Vulnerability Disclosure
@@ -485,5 +491,7 @@ None
 ## Dependents
 
 :::warning
+
 Work in progress
+
 :::
