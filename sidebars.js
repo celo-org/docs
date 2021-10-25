@@ -160,6 +160,7 @@ module.exports = {
           items: [
             'developer-resources/contractkit/index',
             'developer-resources/contractkit/setup',
+            'developer-guide/contractkit/usage',
             'developer-resources/contractkit/notes-web3-with-contractkit',
             'developer-resources/contractkit/contracts-wrappers-registry',
             'developer-resources/contractkit/odis',
