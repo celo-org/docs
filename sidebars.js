@@ -136,42 +136,6 @@ const sidebars = {
       ]
     },
     {
-      type: "category",
-      label: "Networks",
-      items: [
-        { type: "doc", label: "Celo Networks", id: "getting-started/choosing-a-network",},
-        {
-          type: "category",
-          label: "Mainnet",
-          items: [
-            "getting-started/mainnet/index",
-            "getting-started/mainnet/running-a-validator-in-mainnet",
-            "getting-started/mainnet/running-a-full-node-in-mainnet",
-          ],
-        },
-        {
-          type: "category",
-          label: "Alfajores Testnet",
-          items: [
-            "getting-started/alfajores-testnet/index",
-            "getting-started/alfajores-testnet/using-the-mobile-wallet",
-            "getting-started/alfajores-testnet/faucet",
-            "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
-          ],
-        },
-        {
-          type: "category",
-          label: "Baklava Testnet",
-          items: [
-            "getting-started/baklava-testnet/index",
-            "getting-started/baklava-testnet/running-a-validator-in-baklava",
-            "getting-started/baklava-testnet/running-a-full-node-in-baklava",
-          ],
-        },
-        "getting-started/hosted-nodes",
-      ],
-    },
-    {
       type: 'category',
       label: 'Bridging',
       items: [
@@ -281,6 +245,42 @@ const sidebars = {
   // ######################################
   validators: [  
     'validator-guide/overview',
+    {
+      type: "category",
+      label: "Networks",
+      items: [
+        { type: "doc", label: "Celo Networks", id: "getting-started/choosing-a-network",},
+        {
+          type: "category",
+          label: "Mainnet",
+          items: [
+            "getting-started/mainnet/index",
+            "getting-started/mainnet/running-a-validator-in-mainnet",
+            "getting-started/mainnet/running-a-full-node-in-mainnet",
+          ],
+        },
+        {
+          type: "category",
+          label: "Alfajores Testnet",
+          items: [
+            "getting-started/alfajores-testnet/index",
+            "getting-started/alfajores-testnet/using-the-mobile-wallet",
+            "getting-started/alfajores-testnet/faucet",
+            "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
+          ],
+        },
+        {
+          type: "category",
+          label: "Baklava Testnet",
+          items: [
+            "getting-started/baklava-testnet/index",
+            "getting-started/baklava-testnet/running-a-validator-in-baklava",
+            "getting-started/baklava-testnet/running-a-full-node-in-baklava",
+          ],
+        },
+        "getting-started/hosted-nodes",
+      ],
+    },
     'validator-guide/attestation-service',
     {
       type: 'category',

@@ -306,6 +306,11 @@ module.exports = {
             },
             items: [
                 {
+                    "to": "learn/celo-overview",
+                    "label": "Learn",
+                    "position": "left"
+                },
+                {
                     "to": "developer-guide/overview",
                     "label": "Developers",
                     "position": "left"
@@ -326,19 +331,9 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "learn/celo-overview",
-                    "label": "Learn",
-                    "position": "left"
-                },
-                {
                     "to": "community/contributing",
                     "label": "Community",
                     "position": "left"
-                },
-                {
-                    href: "https://discord.com/invite/6yWMkgM",
-                    label: "Chat",
-                    position: "right",
                 },
                 {
                     href: "https://github.com/celo-org/docs",
