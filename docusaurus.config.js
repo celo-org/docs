@@ -351,6 +351,10 @@ module.exports = {
                         href: "https://celo.crowdin.com/celo-docs",
                         label: "Help translate"
                     },
+                    {
+                        label: "Docs GitHub",
+                        href: "https://github.com/celo-org/docs"
+                    }
                 ]},
                 {
                     title: "Community",
@@ -371,7 +375,7 @@ module.exports = {
                             href: "https://www.reddit.com/r/celo/"
                         },
                         {
-                            label: "GitHub",
+                            label: "Celo GitHub",
                             href: "https://github.com/celo-org"
                         }
                     ],
