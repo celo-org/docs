@@ -51,7 +51,6 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 ## **Get Support**
 
-* [Celo Docs](https://docs.celo.org/v/master/developer-guide/overview)
 * [Discord](https://chat.celo.org/)
 * [Forum](https://forum.celo.org/)
 * [Telegram](https://t.me/celoplatform)

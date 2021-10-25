@@ -13,7 +13,7 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 * [Ethereum.org](https://ethereum.org/en/)
 * [What is DeFi](https://www.youtube.com/watch?v=k9HYC0EJU6E)
 
-## **Part 1: Getting Started as a Developer**
+## **Getting Started as a Developer**
 
 * [Why Build on Celo](https://medium.com/celoorg/why-build-on-the-celo-blockchain-9ceab3d11b70)
 * [Celo Decentralized Application Examples](https://celohub.org/)
@@ -23,18 +23,25 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 * [A Look at the Celo Stability Analysis White Paper](https://medium.com/celoorg/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5)
 * [Celo Whitepapers](https://celo.org/papers)
 
-## **Part 2: Programming in your Local Environment**
+## **Set up Local Environment**
 
-* [Celo Basics](https://learn.figment.io/network-documentation/celo/celo-pathway)
-* [Connect to a Celo node with Datahub](https://learn.figment.io/network-documentation/celo/tutorial/intro-pathway-celo-basics/1.connect)
-* [Create your first Celo account](https://learn.figment.io/network-documentation/celo/tutorial/intro-pathway-celo-basics/2.account)
-* [Query the Celo Network](https://learn.figment.io/network-documentation/celo/tutorial/intro-pathway-celo-basics/3.query)
-* [Submit your first transactions](https://learn.figment.io/network-documentation/celo/tutorial/intro-pathway-celo-basics/4.transactions)
-* [Write and deploy your first Celo smart contract](https://learn.figment.io/network-documentation/celo/tutorial/intro-pathway-celo-basics/5.smart-contract)
-* [Send CELO and cUSD](https://learn.figment.io/network-documentation/celo/tutorial/hello-celo)
-* [Deploy and interact with contracts (remotely)](https://learn.figment.io/network-documentation/celo/tutorial/hello-contracts)
+* [Using Windows](../developer-guide/start/develop-on-windows) 
+* [Using Mac](../developer-resources/using-mac) 
+## **Deploy a dApp with Celo**
 
-## **Part 3: Build Celo Applications**
+* [Deploy a dApp with Celo](../developer-resources/deploy-dapp) 
+* [Set up a Tesnet Wallet](../developer-resources/testnet-wallet) 
+* [Deploy a dApp with Celo](../developer-resources/deploy-dapp) 
+* [Deploy with Remix](../developer-resources/deploy-remix) 
+* [Deploy with Truffle](../developer-resources/deploy-truffle) 
+* [Deploy with Hardhat](../developer-resources/deploy-hardhat) 
+* [Deploy with Replit](../developer-resources/deploy-replit) 
+
+## **Celo Developer Pathway**
+
+* [Figment Learn](figment-learn) 
+
+## **Build Celo Applications**
 
 * [Build Mobile-First DeFi Apps with the Celo SDK](https://medium.com/celoorg/build-mobile-first-defi-apps-with-the-celo-sdk-e6f85f2fe18c)
 * [Developing & deploying your first DApp on Celo](https://www.youtube.com/watch?v=kO6Wm8pgKXU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=12)

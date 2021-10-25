@@ -1,6 +1,6 @@
 # EVM Compatible Tooling
 
-See [Celo for Ethereum Developers](https://docs.celo.org/developer-guide/celo-for-eth-devs) for an in-depth overview of the similarities and differences between Celo and Ethereum.
+See [Celo for Ethereum Developers](../developer-guide/celo-for-eth-devs) for an in-depth overview of the similarities and differences between Celo and Ethereum.
 
 ## **Solidity**
 

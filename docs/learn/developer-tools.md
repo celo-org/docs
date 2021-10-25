@@ -15,7 +15,7 @@ Contractkit includes common functionality to make it easier to get started build
 
 **What you can do?**
 
-[ContractKit](https://docs.celo.org/community/release-process/base-cli-contractkit-dappkit-utils) supports the following functionality:
+[ContractKit](../community/release-process/base-cli-contractkit-dappkit-utils) supports the following functionality:
 
 
 
@@ -30,13 +30,13 @@ Contractkit includes common functionality to make it easier to get started build
 
 ## **Celo CLI**
 
-The [Command-Line Interface](https://docs.celo.org/community/release-process/base-cli-contractkit-dappkit-utils) allows users to interact with the Celo Protocol smart contracts. 
+The [Command-Line Interface](../community/release-process/base-cli-contractkit-dappkit-utils) allows users to interact with the Celo Protocol smart contracts. 
 
 It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
 
 ## **DAppKit**
 
-[DAppKit](https://docs.celo.org/developer-guide/dappkit) is a lightweight set of functions that allow mobile dApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience:dDApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
+[DAppKit](../developer-guide/dappkit) is a lightweight set of functions that allow mobile dApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience:dDApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
 
 **DAppKit supports the following functionality:**
 
@@ -50,7 +50,7 @@ DAppKit is currently built with React Native in mind, though the excellent[ Expo
 
 ## **Mainnet**
 
-The production Celo network, [Mainnet](https://docs.celo.org/getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
+The production Celo network, [Mainnet](../getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
 
 
 
@@ -60,7 +60,7 @@ The production Celo network, [Mainnet](https://docs.celo.org/getting-started/mai
 
 ## **Alfajores Testnet**
 
-The [Alfajores Testnet](https://docs.celo.org/getting-started/alfajores-testnet) is a Celo test network for developers building on the Celo platform. You can use it to try out the[ Celo Wallet](https://celo.org/build/wallet) or the Celo CLI (by sending transfers to yourself or other users of the testnet). You can also assist in running the network by operating a full node on your machine (or on a cloud or hosting provider).
+The [Alfajores Testnet](../getting-started/alfajores-testnet) is a Celo test network for developers building on the Celo platform. You can use it to try out the[ Celo Wallet](https://celo.org/build/wallet) or the Celo CLI (by sending transfers to yourself or other users of the testnet). You can also assist in running the network by operating a full node on your machine (or on a cloud or hosting provider).
 
 * [Alfajores Testnet Faucet](https://celo.org/build/faucet) - get testnet tokens to experiment with
 * [Celo Wallet for Alfajores](https://celo.org/build/wallet) - download the Android wallet app for the testnet from the Play Store
@@ -69,7 +69,7 @@ The [Alfajores Testnet](https://docs.celo.org/getting-started/alfajores-testnet)
 
 ## **Baklava Testnet**
 
-The [Baklava Testnet](https://docs.celo.org/getting-started/baklava-testnet) is focused on building operational experience and best practices for node operators.
+The [Baklava Testnet](../getting-started/baklava-testnet) is focused on building operational experience and best practices for node operators.
 
 It is designed for validators and testing protocol changes. You will most likely not develop on the Baklava testnet. If you have an idea for a project that uses more protocol features in terms of handling the community fund or uniquely handling epoch rewards, like block rewards or staking rewards, it might be useful to develop on Baklava. 
 
@@ -79,7 +79,7 @@ It is designed for validators and testing protocol changes. You will most likely
 
 ## **Hosted Node Service (Forno)**
 
-[Forno](https://docs.celo.org/developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+[Forno](../developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
 
@@ -91,7 +91,7 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 # **Celo Wallets**
 
-[Celo Wallets](https://docs.celo.org/getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
+[Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
 
 The Celo Wallet is an easy way to send, receive, and save Celo assets. This section describes what is going on under the hood during various aspects of the wallet experience.
 
