@@ -5,7 +5,7 @@ slug: /developer-guide/development-chain
 
 In this tutorial, we will go over how to set up a Celo development blockchain that includes all of the [core protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol), including identity and stability contracts.
 
-At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:8545](http://localhost:8545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](https://docs.celo.org/command-line-interface/introduction) and the [ContractKit](https://docs.celo.org/developer-guide/overview/introduction/contractkit).
+At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](https://docs.celo.org/command-line-interface/introduction) and the [ContractKit](https://docs.celo.org/developer-guide/overview/introduction/contractkit).
 
 Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with cGLD and cUSD and all transactions on the network are virtually instant.
 
@@ -17,12 +17,12 @@ The easiest is to use a "pre-generated" devchain from the [celo-devchain](https:
 
 ```sh
 > npm install --save-dev @terminal-fi/celo-devchain
-> npx celo-devchain --port 8545
+> npx celo-devchain --port 7545
 
 or
 
 > yarn add --dev @terminal-fi/celo-devchain
-> yarn run celo-devchain --port 8545
+> yarn run celo-devchain --port 7545
 ```
 
 ### 2. Initialize your own devchain from the monorepo
@@ -63,7 +63,8 @@ We can use the [Celo CLI tool](https://docs.celo.org/command-line-interface/intr
 
 You can install the CLI using npm by running `npm install -g @celo/celocli`. You can see the [package details here](https://www.npmjs.com/package/@celo/celocli). Once it is installed, you should be able to access the tool from the terminal by running `$ celocli`. Try `$ celocli help`.
 
-The CLI will connect to the node at [http://localhost:8545](http://localhost:8545) by default. You can check this by running  `$ celocli node:get`.
+The CLI will connect to the node at [http://localhost:8545](http://localhost:8545) by default. To connect to port 7545 you can run
+`$ celocli config:set -n http://localhost:7545`, and then check check the connection by running  `$ celocli node:get`.
 
 You can see the accounts available on the Celo development chain by running`$ celocli account:list`. You should see something like:
 
