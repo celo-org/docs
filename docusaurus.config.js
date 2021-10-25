@@ -307,6 +307,12 @@ module.exports = {
                 {
                     type: 'localeDropdown',
                     position: 'left',
+                    dropdownItemsAfter: [
+                    {
+                        to: 'https://celo.crowdin.com/',
+                        label: 'Help us translate',
+                    },
+                    ],
                 },
                 {
                     href: "https://celo.org",
