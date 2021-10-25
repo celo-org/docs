@@ -9,7 +9,6 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "overview", },
         { type: "doc", label: "Examples", id: "developer-resources/celo-dapp-gallery",},
-        { type: "doc", label: "Glossary", id: "getting-started/glossary",},
       ],
     },
     {
@@ -21,8 +20,6 @@ const sidebars = {
           type: 'category',
           label: 'Celo Wallet',
           items: [
-            { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/index', },
-            { type: 'doc', label: 'Running the wallet locally', id: 'celo-codebase/wallet/intro', },
             { 
               type: 'category', 
               label: 'Wallet Functionality', 
@@ -176,6 +173,16 @@ const sidebars = {
       ],
     },
     {
+      type: 'category',
+      label: 'Bridging',
+      items: [
+        { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
+        'celo-codebase/protocol/bridging/optics-gui',
+        'celo-codebase/protocol/bridging/bridging-native-assets',
+        'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
+      ]
+    },
+    {
       type: "category",
       label: "Command Line",
       items: [
@@ -185,6 +192,7 @@ const sidebars = {
         },
       ],
     },
+    { type: "doc", label: "Glossary", id: "getting-started/glossary",},
   ],
   // ######################################
   // Developers 
@@ -256,12 +264,10 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Bridging',
+          label: 'Mobile Development',
           items: [
-            { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
-            'celo-codebase/protocol/bridging/optics-gui',
-            'celo-codebase/protocol/bridging/bridging-native-assets',
-            'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
+            { type: 'doc', label: 'Celo Wallet', id: 'celo-codebase/wallet/index', },
+            { type: 'doc', label: 'Running the wallet locally', id: 'celo-codebase/wallet/intro', },
           ]
         },
         { type: 'doc', label: 'Testnet Wallet', id: 'developer-resources/testnet-wallet', },
@@ -323,11 +329,11 @@ const sidebars = {
   // Learn 
   // ######################################
   learn: [ 
+    { type: 'doc', label: 'Introduction', id: 'learn/celo-overview', },
     {
       type: 'category',
-      label: ' Introduction to Celo',
+      label: 'Celo Basics',
       items: [
-        { type: 'doc', label: 'Introduction', id: 'learn/celo-overview', },
         { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
         { type: 'doc', label: 'Value', id: 'learn/celo-value', },
         { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },

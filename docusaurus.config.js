@@ -306,10 +306,6 @@ module.exports = {
             },
             items: [
                 {
-                    type: 'localeDropdown',
-                    position: 'left',
-                },
-                {
                     "to": "developer-guide/overview",
                     "label": "Developers",
                     "position": "left"
@@ -340,11 +336,6 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    href: "https://celo.crowdin.com/celo-docs",
-                    label: "Translate",
-                    position: "right",
-                },
-                {
                     href: "https://discord.com/invite/6yWMkgM",
                     label: "Chat",
                     position: "right",
@@ -352,7 +343,17 @@ module.exports = {
                 {
                     href: "https://github.com/celo-org/docs",
                     label: "GitHub",
+                    src: 'img/oss_logo.png',
                     position: "right",
+                },
+                {
+                    href: "https://celo.crowdin.com/celo-docs",
+                    label: "Translate",
+                    position: "right",
+                },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
                 },
             ],
         },
