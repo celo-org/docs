@@ -50,6 +50,7 @@ const serviceContext: ServiceContext = {
 ```
 
 The ODIS endpoint URL for each environment can be found here:
+
 | Environment | Key |
 |---|---|
 | Alfajores Staging | https://us-central1-celo-phone-number-privacy-stg.cloudfunctions.net |
@@ -57,6 +58,7 @@ The ODIS endpoint URL for each environment can be found here:
 | Mainnet | https://us-central1-celo-pgpnp-mainnet.cloudfunctions.net |
 
 The ODIS public key for each environment can be found here:
+
 | Environment | Key |
 |---|---|
 | Alfajores Staging | 7FsWGsFnmVvRfMDpzz95Np76wf/1sPaK0Og9yiB+P8QbjiC8FV67NBans9hzZEkBaQMhiapzgMR6CkZIZPvgwQboAxl65JWRZecGe5V3XO4sdKeNemdAZ2TzQuWkuZoA |
