@@ -54,7 +54,6 @@ const sidebars = {
             { type: "doc", label: "Connect to Celo CLI", id: "celo-holder-guide/connecting-ledger-celocli",},
           ]
         },
-        { type: "doc", label: "Testnet Wallet", id: "getting-started/using-the-wallet",},
       ],
     },
     {
@@ -268,6 +267,7 @@ const sidebars = {
           items: [
             { type: 'doc', label: 'Celo Wallet', id: 'celo-codebase/wallet/index', },
             { type: 'doc', label: 'Running the wallet locally', id: 'celo-codebase/wallet/intro', },
+            { type: "doc", label: "Using the Wallet", id: "getting-started/using-the-wallet",},
           ]
         },
         { type: 'doc', label: 'Testnet Wallet', id: 'developer-resources/testnet-wallet', },
