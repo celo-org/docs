@@ -321,10 +321,6 @@ module.exports = {
                     label: "Faucet",
                 },
                 {
-                    href: "https://celo.crowdin.com/celo-docs",
-                    label: "Translate"
-                },
-                {
                     href: "https://github.com/celo-org/docs",
                     label: "GitHub",
                     position: "right",
@@ -350,8 +346,12 @@ module.exports = {
                     items: [{
                         label: "Home",
                         to: "/",
-                    }, ],
-                },
+                    },
+                    {
+                        href: "https://celo.crowdin.com/celo-docs",
+                        label: "Help translate"
+                    },
+                ]},
                 {
                     title: "Community",
                     items: [{
