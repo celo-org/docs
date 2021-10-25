@@ -349,7 +349,7 @@ module.exports = {
                     },
                     {
                         href: "https://celo.crowdin.com/celo-docs",
-                        label: "Translate"
+                        label: "Help translate"
                     },
                 ]},
                 {
