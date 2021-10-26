@@ -29,7 +29,7 @@ const receipt = await tx.waitReceipt()
 To interact with cUSD, is the same but with a different contract:
 
 ```ts
-const stabletoken = await kit.contract.getStableToken()
+const stabletoken = await kit.contracts.getStableToken()
 ```
 
 ## Interacting with Other Celo Contracts
