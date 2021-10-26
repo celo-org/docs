@@ -329,7 +329,7 @@ const sidebars = {
   // Learn 
   // ######################################
   learn: [ 
-    { type: 'doc', label: 'Learn Celo', id: 'learn/celo-overview', },
+    { type: 'doc', label: 'Celo Guide', id: 'learn/celo-overview', },
     {
       type: 'category',
       label: 'Celo Basics',

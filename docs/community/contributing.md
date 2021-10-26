@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-# Welcome Celo Community
+# Community Guide
 
 Celo is open source and we welcome open participation. We strive to be an open an inclusive community where everyone feels welcome and empowered to contribute, which also means following some ground rules and abiding to Celo’s [Code of Conduct](https://celo.org/code-of-conduct). Thanks for your interest!
 
