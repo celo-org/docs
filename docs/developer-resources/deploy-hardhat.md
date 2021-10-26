@@ -32,7 +32,7 @@ Open [hardhat-config.js](https://hardhat.org/config/) in a text editor and repla
 
 Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The private network setup connects to your localhost on this port and gives you access to your accounts on ganache-cli.
 
-```
+```js
     localhost: {
       url: "http://127.0.0.1:7545"
     },
@@ -48,7 +48,7 @@ If you choose to [Set up a Local Development Chain](./walkthroughs/development-c
 
 Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
-```
+```js
    alfajores: {
      url: "https://alfajores-forno.celo-testnet.org",
      accounts: {
@@ -69,7 +69,7 @@ Celo uses a different account derivation path than Ethereum, so you have to spec
 
 Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
-```
+```js
    celo: {
      url: "https://forno.celo.org",
      accounts: {
@@ -90,12 +90,12 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 Run the following command from your root project directory to deploy to Celo Alfajores testnet.
 
-```
+```shell
 npx hardhat run scripts/sample-script.js --network alfajores
 ```
 ...or run this command to deploy to Celo mainnet.
 
-```
+```shell
 npx hardhat run scripts/sample-script.js --network celo
 ```
 
