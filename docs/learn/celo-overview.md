@@ -1,4 +1,4 @@
-# Celo Guide
+# Introduction to Celo
 
 Learn about Celo's mission, vision, and goals for financial prosperity for everyone.
 
