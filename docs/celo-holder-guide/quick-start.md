@@ -2,6 +2,7 @@
 title: Quick Start for CELO Holders
 slug: /celo-owner-guide/quick-start
 ---
+# Welcome Celo Owners
 
 If you are a self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet), this guide will help you access your account and do the setup necessary to earn rewards on those funds.
 

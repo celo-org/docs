@@ -1,7 +1,7 @@
 ---
 title: Overview
 ---
-
+# Welcome Celo Validators
 ## Validator Guide
 
 In this section you will find information about:
