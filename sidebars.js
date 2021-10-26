@@ -161,7 +161,7 @@ const sidebars = {
   // Developers 
   // ######################################
   developers: [
-        { type: 'doc', label: 'Overview', id: 'developer-resources/overview', },
+        { type: 'doc', label: 'Developers', id: 'developer-resources/overview', },
         {
           type: 'category',
           label: 'Local Environment',
@@ -243,8 +243,8 @@ const sidebars = {
   // ######################################
   // Validators 
   // ######################################
-  validators: [  
-    'validator-guide/overview',
+  validators: [ 
+    { type: "doc", label: "Validators", id: "validator-guide/overview",}, 
     {
       type: "category",
       label: "Networks",
@@ -305,7 +305,7 @@ const sidebars = {
   // Integration 
   // ######################################
   integrate: [  
-    'developer-resources/integrations/integrations',
+    { type: 'doc', label: 'Integrations', id: 'developer-resources/integrations/integrations' },
     'developer-resources/integrations/general',
     'developer-resources/integrations/checklist',
     'developer-resources/integrations/custody',
@@ -316,7 +316,7 @@ const sidebars = {
   // Own 
   // ######################################
   own: [  
-    { type: 'doc', label: 'Quick Start', id: 'celo-holder-guide/quick-start' },
+    { type: 'doc', label: 'Owners', id: 'celo-holder-guide/quick-start' },
     'celo-holder-guide/cusd',
     'celo-holder-guide/release-gold',
     'celo-holder-guide/voting-validators',
@@ -329,7 +329,7 @@ const sidebars = {
   // Learn 
   // ######################################
   learn: [ 
-    { type: 'doc', label: 'Introduction', id: 'learn/celo-overview', },
+    { type: 'doc', label: 'Learn', id: 'learn/celo-overview', },
     {
       type: 'category',
       label: 'Celo Basics',
@@ -373,7 +373,7 @@ const sidebars = {
   // Contributors 
   // ######################################
   contributors: [ 
-    { type: 'doc', label: 'Contributing', id: 'community/contributing', },
+    { type: 'doc', label: 'Community', id: 'community/contributing', },
     { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
     { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
     {
