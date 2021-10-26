@@ -145,6 +145,8 @@ const sidebars = {
         'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
       ]
     },
+    { type: "doc", label: "Glossary", id: "getting-started/glossary",},
+    { type: 'doc', label: 'FAQs', id: 'faqs', },
     {
       type: "category",
       label: "Command Line",
@@ -155,7 +157,6 @@ const sidebars = {
         },
       ],
     },
-    { type: "doc", label: "Glossary", id: "getting-started/glossary",},
   ],
   // ######################################
   // Developers 
