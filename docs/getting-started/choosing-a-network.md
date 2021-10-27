@@ -1,5 +1,5 @@
 ---
-title: Choosing a Network
+title: Choosing a Networkk
 id: choosing-a-network
 slug: /getting-started/choosing-a-network
 ---
