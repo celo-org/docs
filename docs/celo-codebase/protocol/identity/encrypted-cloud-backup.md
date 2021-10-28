@@ -18,7 +18,7 @@ Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/pr
 
 With these core components, we can construct a cloud backup system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
 
-Valora is currently working implement encrypted cloud backup, using the users access PIN for encryption.
+Valora is currently working to implement encrypted cloud backup, using the user's access PIN for encryption.
 
 ### Similar protocols
 
