@@ -380,7 +380,7 @@ const sidebars = {
   // Contributors 
   // ######################################
   contributors: [ 
-    { type: 'doc', label: 'Community Guide', id: 'community/contributing', },
+    { type: 'doc', label: 'Contributor Guide', id: 'community/contributing', },
     { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
     { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
     {
