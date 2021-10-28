@@ -6,7 +6,7 @@ import ImageWrapper from '@components/ImageWrapper'
 
 The tutorial shows how you can use [Wallet Connect version 1](https://docs.walletconnect.com/1.0/) in a DApp to connect to [Valora](https://valoraapp.com/). In this example, we will demonstrate how to add Wallet Connect to a simple React app.
 
-This is a simple DApp that focuses on demonstrating how to connect Wallet Connect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index) and make a simple cUSD transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
+This is a simple DApp that focuses on demonstrating how to connect Wallet Connect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index.md) and make a simple cUSD transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
 
 ## Add Packages
 
