@@ -1,0 +1,79 @@
+{
+  "name": "agile-docs",
+  "version": "0.0.9",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "build:serve": "yarn run build && yarn run serve",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "test": "jest --passWithNoTests",
+    "install-docusaurus": "yalc add @docusaurus/core & yarn install",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,ts}\"",
+    "lint": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
+    "analize": "node scripts/analize.js",
+    "install:dev:agile": "yalc add @agile-ts/core @agile-ts/react @agile-ts/api @agile-ts/event @agile-ts/proxytree @agile-ts/logger @agile-ts/utils & yarn install",
+    "install:prod:agile": "yarn add @agile-ts/core @agile-ts/react @agile-ts/api @agile-ts/event @agile-ts/proxytree @agile-ts/logger @agile-ts/utils  & yarn install"
+  },
+  "dependencies": {
+    "@agile-ts/api": "^0.0.24",
+    "@agile-ts/core": "^0.2.6",
+    "@agile-ts/event": "^0.0.13",
+    "@agile-ts/logger": "^0.0.10",
+    "@agile-ts/proxytree": "^0.0.8",
+    "@agile-ts/react": "^0.2.2",
+    "@agile-ts/utils": "^0.0.10",
+    "@docusaurus/core": "2.0.0-beta.6",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.6",
+    "@docusaurus/preset-classic": "2.0.0-beta.6",
+    "@docusaurus/remark-plugin-npm2yarn": "2.0.0-beta.6",
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.6",
+    "@mdx-js/react": "^1.6.22",
+    "@tsconfig/docusaurus": "^1.0.4",
+    "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-live": "^2.3.0",
+    "react-spring": "^8.0.27",
+    "react-swipeable": "^6.2.0",
+    "react-toastify": "^6.2.0",
+    "sass": "^1.39.2",
+    "webpack-bundle-analyzer": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.1",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "2.1.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^4.3.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

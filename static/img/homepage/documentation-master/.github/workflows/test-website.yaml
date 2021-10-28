@@ -1,0 +1,37 @@
+name: Test Website
+on:
+  pull_request:
+    branches: [ "*" ]
+    types: [ "opened", "reopened" ]
+
+jobs:
+  publish:
+    name: Test Website
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout Project
+      - name: 📚 Checkout
+        uses: actions/checkout@v2
+
+        # Setup NodeJS
+      - name: 🟢 Setup Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+        # Install Dependencies
+      - name: ⏳ Install
+        run: yarn install
+
+        # Run Tests
+      - name: 🤔 Test
+        run: yarn test
+
+        # Run Linter
+      - name: 🤖 Lint
+        run: yarn run lint
+
+        # Build Packages for Testing
+      - name: 🔨 Build Packages
+        run: yarn run build

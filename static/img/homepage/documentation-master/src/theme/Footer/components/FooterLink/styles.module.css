@@ -1,0 +1,7 @@
+.LinkText {
+  color: var(--ifm-color-on-background);
+}
+
+.LinkText:hover {
+  color: var(--ifm-color-on-background-3);
+}

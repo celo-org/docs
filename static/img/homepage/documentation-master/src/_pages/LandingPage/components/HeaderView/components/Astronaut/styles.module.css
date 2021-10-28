@@ -1,0 +1,16 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Text {
+  color: var(--ifm-color-on-background-2);
+  margin-top: 30px;
+  align-self: center;
+}
+
+.ImageContainer {
+  width: 100%;
+  max-width: 800px;
+}

@@ -1,0 +1,31 @@
+.Header {
+  letter-spacing: 0.08rem;
+  padding: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.EditorHeader {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-on-primary);
+}
+
+.Editor {
+  font-family: var(--ifm-font-family-monospace) !important;
+  border-bottom-left-radius: var(--ifm-global-radius);
+  border-bottom-right-radius: var(--ifm-global-radius);
+}
+
+.PreviewHeader {
+  background: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-on-primary);
+}
+
+.PreviewContainer {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom-left-radius: var(--ifm-global-radius);
+  border-bottom-right-radius: var(--ifm-global-radius);
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

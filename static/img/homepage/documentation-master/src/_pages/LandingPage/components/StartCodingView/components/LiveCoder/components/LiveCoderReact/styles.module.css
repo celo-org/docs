@@ -1,0 +1,49 @@
+.EditorContainer {
+  position: relative;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--ifm-color-surface-2);
+  margin-bottom: 1rem;
+}
+
+.Editor {
+  font-family: var(--ifm-font-family-monospace) !important;
+  border: 2px solid #61dbfb;
+  border-radius: 8px;
+}
+
+.PreviewOuterContainer {
+  position: relative;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--ifm-color-surface-2);
+}
+
+.PreviewContainer {
+  border: 2px solid #61dbfb;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: var(--ifm-color-background);
+}
+
+.Label {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  color: var(--ifm-color-on-surface);
+  background-color: var(--ifm-color-surface-2);
+  font-size: var(--ifm-font-size-12);
+}
+
+.LiveLabel {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  color: var(--ifm-color-on-surface);
+  background-color: var(--ifm-color-red);
+  font-size: var(--ifm-font-size-12);
+}

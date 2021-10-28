@@ -1,0 +1,63 @@
+.Container {
+  background-color: var(--ifm-color-background-2);
+  transform: skewY(-2deg);
+  padding: 8rem 0;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  transform: skewY(2deg);
+}
+
+.HeaderContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.Tagline {
+  font-size: var(--ifm-font-size-28);
+  color: var(--ifm-color-on-background-2);
+  font-weight: bold;
+}
+
+.Title {
+  font-size: var(--ifm-font-size-48);
+  color: var(--ifm-color-on-background);
+  font-weight: bold;
+}
+
+.Description {
+  font-size: var(--ifm-font-size-18);
+  color: var(--ifm-color-on-background-3);
+}
+
+.LearnMoreButton {
+  align-self: flex-start;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .Title {
+    font-size: var(--ifm-font-size-36);
+  }
+
+  .Tagline {
+    font-size: var(--ifm-font-size-18);
+  }
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .Container {
+    padding: 4em 0 !important;
+  }
+}

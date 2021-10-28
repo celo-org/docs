@@ -1,0 +1,32 @@
+.Container {
+  position: relative;
+  width: 100%;
+  font-size: var(--ifm-font-size-16);
+  transform: translateZ(0);
+  border-radius: 8px;
+  transition: top 100ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  --ifm-leading: 0; /* because of weired margin of codeblock */
+  --ifm-spacing-vertical: 0 /* because of weired margin of codeblock */
+}
+
+.Container:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.Container_Active {
+  border: 2px solid var(--ifm-color-primary);
+  font-size: var(--ifm-font-size-18);
+
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .Container {
+    font-size: var(--ifm-font-size-16);
+    overflow: hidden;
+  }
+
+  .Container_Active {
+    font-size: var(--ifm-font-size-16);
+  }
+}

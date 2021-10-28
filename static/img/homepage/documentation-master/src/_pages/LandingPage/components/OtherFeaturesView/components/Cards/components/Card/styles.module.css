@@ -1,0 +1,55 @@
+.Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--ifm-color-background-2);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--ifm-color-surface);
+  pointer-events: none;
+}
+
+.Container_Active {
+  border: 2px solid var(--ifm-color-primary);
+  pointer-events: all;
+}
+
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  width: 80%;
+  flex: 1;
+  height: 50%;
+}
+
+.TextContainer {
+  display: flex;
+  flex: 1;
+  padding-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Title {
+  color: var(--ifm-color-on-background);
+  font-size: var(--ifm-font-size-32);
+  font-weight: bold;
+}
+
+.Description {
+  color: var(--ifm-color-on-background-2);
+  font-size: var(--ifm-font-size-16);
+}
+
+.MoreButton {
+  align-self: flex-end;
+  justify-self: flex-end;
+}

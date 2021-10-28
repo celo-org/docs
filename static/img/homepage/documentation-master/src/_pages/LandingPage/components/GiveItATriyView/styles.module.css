@@ -1,0 +1,63 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 5rem 0;
+  background-color: var(--ifm-color-background-3);
+}
+
+.Title {
+  color: var(--ifm-color-on-background);
+  font-size: var(--ifm-font-size-24);
+  font-weight: bold;
+}
+
+.Terminal {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--ifm-color-on-background-2);
+  border-right: 1px solid var(--ifm-color-on-background-2);
+  border-top: 1px solid var(--ifm-color-on-background-2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 30px 30px 0 30px;
+  width: 500px;
+  position: relative;
+}
+
+.Terminal::before {
+  content: "○ ○ ○";
+  color: var(--ifm-color-on-background-2);
+  font-size: 16px;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+}
+
+.Terminal code {
+  color: var(--ifm-color-on-background);
+  font-size: 18px;
+  position: relative;
+  background: none;
+}
+
+/* https://developer.mozilla.org/de/docs/Web/CSS/::before */
+.Terminal code:first-child::before {
+  content: ">";
+  position: absolute;
+  left: -13px;
+  color: var(--ifm-color-on-background-3);
+}
+
+@media (max-width: 550px) {
+  .Terminal {
+    width: 80%;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .Container {
+    padding: 4em 0 !important;
+  }
+}

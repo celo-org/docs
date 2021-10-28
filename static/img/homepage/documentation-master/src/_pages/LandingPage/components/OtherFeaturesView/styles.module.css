@@ -1,0 +1,15 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+  padding: 12rem 0;
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .Container {
+    padding: 4em 0 !important;
+  }
+}

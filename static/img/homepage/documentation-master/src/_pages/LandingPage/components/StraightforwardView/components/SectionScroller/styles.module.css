@@ -1,0 +1,126 @@
+.SectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--ifm-container-width);
+  max-height: 550px;
+  padding: 5rem 3em;
+  border-radius: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: var(--ifm-font-size-18);
+  background-color: var(--ifm-color-surface);
+  filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.25));
+}
+
+.SectionInnerContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+}
+
+.SectionLeftContainer {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  max-height: 400px;
+  padding: 5px;
+}
+
+.SectionLeftContainer::before {
+  display: block;
+  content: ' '; /* https://stackoverflow.com/questions/35180361/css-before-and-after-not-working */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 108px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--ifm-color-surface),
+    var(--ifm-color-surface-transparent)
+  );
+  z-index: 1;
+}
+
+.SectionLeftContainer::after {
+  display: block;
+  content: ' '; /* https://stackoverflow.com/questions/35180361/css-before-and-after-not-working */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 108px;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    var(--ifm-color-surface),
+    var(--ifm-color-surface-transparent)
+  );
+  z-index: 1;
+}
+
+.SectionRightContainer {
+  display: flex;
+  flex: 1;
+  margin-left: 5rem;
+  flex-direction: column;
+}
+
+.ChevronContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--ifm-font-size-36);
+  color: var(--ifm-color-on-surface);
+  padding: 1.25rem;
+}
+
+.ChevronContainer:hover {
+  cursor: pointer;
+  color: var(--ifm-color-on-surface-2);
+}
+
+@media (max-width: 996px) {
+  .SectionContainer {
+    padding: 4rem 1.75em;
+  }
+
+  .SectionInnerContainer {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SectionRightContainer {
+    margin-left: 2rem;
+  }
+
+  .SectionLeftContainer {
+    flex: 3;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .SectionContainer {
+    padding: 0;
+  }
+
+  .SectionInnerContainer {
+    flex-direction: column;
+    display: block;
+  }
+
+  .SectionRightContainer {
+    display: none;
+  }
+
+  .SectionLeftContainer {
+    max-height: 288px;
+    padding: 0 2rem;
+  }
+}

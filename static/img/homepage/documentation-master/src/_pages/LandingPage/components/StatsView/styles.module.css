@@ -1,0 +1,60 @@
+.Container {
+  padding: 10rem 0;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.Tagline {
+  font-size: var(--ifm-font-size-28);
+  color: var(--ifm-color-on-background-2);
+  font-weight: bold;
+}
+
+.Title {
+  font-size: var(--ifm-font-size-48);
+  color: var(--ifm-color-on-background);
+  font-weight: bold;
+}
+
+.BadgesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Badge {
+  margin: 2em;
+}
+
+@media (max-width: 768px) {
+  .Title {
+    font-size: var(--ifm-font-size-36);
+  }
+
+  .Tagline {
+    font-size: var(--ifm-font-size-18);
+  }
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+  .Container {
+    padding: 4em 0 !important;
+  }
+}

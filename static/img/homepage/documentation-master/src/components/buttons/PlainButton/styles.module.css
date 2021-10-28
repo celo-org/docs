@@ -1,0 +1,28 @@
+.ButtonContainer {
+  background: transparent;
+  border: none;
+
+  color: var(--ifm-color-on-background-2);
+
+  font-size: var(--ifm-font-size-12);
+  font-weight: bold;
+  padding: 0 0 1px 0; /* because of border */
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonContainer:hover {
+  color: var(--ifm-color-on-background-3);
+  border-bottom: 1px solid var(--ifm-color-on-background-3);
+  padding: 0; /* because of border */
+}
+
+.Chevron {
+  margin-left: 2px;
+  margin-top: 2px;
+}
