@@ -1,9 +1,9 @@
 ---
-title: Celo FAQs
+title: Celo FAQ
 id: faqs
 ---
 
-# Celo FAQs
+# Celo FAQ
 
 Frequently asked questions about Celo.
 

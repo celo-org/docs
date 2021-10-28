@@ -307,7 +307,7 @@ module.exports = {
             items: [
                 {
                     "to": "learn/celo-overview",
-                    "label": "Learn",
+                    "label": "Basics",
                     "position": "left"
                 },
                 {
@@ -321,18 +321,18 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "developer-guide/integrations",
-                    "label": "Integrations",
-                    "position": "left"
-                },
-                {
                     "to": "celo-owner-guide/quick-start",
                     "label": "Owners",
                     "position": "left"
                 },
                 {
+                    "to": "developer-guide/integrations",
+                    "label": "Integrations",
+                    "position": "left"
+                },
+                {
                     "to": "community/contributing",
-                    "label": "Community",
+                    "label": "Contributors",
                     "position": "left"
                 },
                 {
@@ -345,6 +345,12 @@ module.exports = {
                       },
                     ]
                 },
+                {
+                    href: 'https://github.com/celo-org/docs',
+                    position: 'right',
+                    className: 'header-github-link',
+                    'aria-label': 'GitHub repository',
+                  },
             ],
         },
         gtag: {

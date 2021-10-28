@@ -6,10 +6,6 @@ description: Stay up to date on the latest Celo resources.
 
 # Celo Resources
 
-Stay up to date on the latest Celo resources.
-
----
-
 The Celo community is always creating new resources to help you learn about Celo.
 
 ## **Code Examples**

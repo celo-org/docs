@@ -7,8 +7,8 @@ const sidebars = {
       type: "category",
       label: "Getting Started",
       items: [
-        { type: "doc", label: "Overview", id: "overview", },
-        { type: "doc", label: "Examples", id: "developer-resources/celo-dapp-gallery",},
+        { type: "doc", label: "Celo Overview", id: "overview", },
+        { type: "doc", label: "DApp Gallery", id: "developer-resources/celo-dapp-gallery",},
       ],
     },
     {
@@ -146,7 +146,7 @@ const sidebars = {
       ]
     },
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},
-    { type: 'doc', label: 'FAQs', id: 'faqs', },
+    { type: 'doc', label: 'FAQ', id: 'faqs', },
     {
       type: "category",
       label: "Command Line",
@@ -303,18 +303,7 @@ const sidebars = {
     { type: "doc", label: "Validator FAQ", id: "getting-started/validator-troubleshooting-faq",},
   ],
   // ######################################
-  // Integration 
-  // ######################################
-  integrate: [  
-    { type: 'doc', label: 'Integration Guide', id: 'developer-resources/integrations/integrations' },
-    'developer-resources/integrations/general',
-    'developer-resources/integrations/checklist',
-    'developer-resources/integrations/custody',
-    'developer-resources/integrations/listings',
-    'developer-resources/integrations/cloud-hsm',
-  ], 
-  // ######################################
-  // Own 
+  // Owners 
   // ######################################
   own: [  
     { type: 'doc', label: 'Owner Guide', id: 'celo-holder-guide/quick-start' },
@@ -326,6 +315,17 @@ const sidebars = {
     'celo-holder-guide/eth-recovery',
     'celo-holder-guide/celo-recovery',
   ], 
+    // ######################################
+  // Integration 
+  // ######################################
+  integrate: [  
+    { type: 'doc', label: 'Integration Guide', id: 'developer-resources/integrations/integrations' },
+    'developer-resources/integrations/general',
+    'developer-resources/integrations/checklist',
+    'developer-resources/integrations/custody',
+    'developer-resources/integrations/listings',
+    'developer-resources/integrations/cloud-hsm',
+  ], 
   // ######################################
   // Learn 
   // ######################################
@@ -333,7 +333,7 @@ const sidebars = {
     { type: 'doc', label: 'Introduction to Celo', id: 'learn/celo-overview', },
     {
       type: 'category',
-      label: 'Celo Basics',
+      label: 'Mission',
       items: [
         { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
         { type: 'doc', label: 'Value', id: 'learn/celo-value', },
@@ -345,7 +345,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Celo Platform',
+      label: 'Platform',
       items: [
         { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
         { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
@@ -354,6 +354,14 @@ const sidebars = {
         { type: 'doc', label: 'EVM Tools', id: 'learn/evm-compatible-tooling', },
       ]
     }, 
+    {
+      type: 'category',
+      label: 'Onboarding',
+      items: [
+        { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
+        { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
+      ]
+    },
     {
       type: 'category',
       label: 'Quick Guides',
@@ -365,8 +373,6 @@ const sidebars = {
         { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
       ]
     },
-    { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
-    { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
     { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
     { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
   ],
