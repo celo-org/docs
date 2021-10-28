@@ -307,6 +307,12 @@ module.exports = {
                 {
                     type: 'localeDropdown',
                     position: 'left',
+                    dropdownItemsAfter: [
+                    {
+                        to: 'https://celo.crowdin.com/',
+                        label: 'Help us translate',
+                    },
+                    ],
                 },
                 {
                     href: "https://celo.org",
@@ -319,10 +325,6 @@ module.exports = {
                 {
                     href: "https://celo.org/build/faucet",
                     label: "Faucet",
-                },
-                {
-                    href: "https://celo.crowdin.com/celo-docs",
-                    label: "Translate"
                 },
                 {
                     href: "https://github.com/celo-org/docs",
@@ -350,24 +352,64 @@ module.exports = {
                     items: [{
                         label: "Home",
                         to: "/",
-                    }, ],
-                },
+                    },
+                    {
+                        href: "https://celo.crowdin.com/celo-docs",
+                        label: "Help translate"
+                    },
+                    {
+                        label: "Docs GitHub",
+                        href: "https://github.com/celo-org/docs"
+                    }
+                ]},
                 {
                     title: "Community",
                     items: [{
-                            label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/celo",
+                            label: "Forum",
+                            href: "https://forum.celo.org/",
                         },
                         {
                             label: "Discord",
-                            href: "https://discordapp.com/invite/docusaurus",
+                            href: "https://chat.celo.org",
                         },
                         {
                             label: "Twitter",
-                            href: "https://twitter.com/docusaurus",
+                            href: "https://twitter.com/CeloOrg",
                         },
+                        {
+                            label: "Reddit",
+                            href: "https://www.reddit.com/r/celo/"
+                        },
+                        {
+                            label: "Celo GitHub",
+                            href: "https://github.com/celo-org"
+                        }
                     ],
                 },
+                {
+                    title: "Ecosystem",
+                    items: [{
+                        label: "Celo Foundation",
+                        href: "https://celo.org"
+                    },
+                    {
+                        label: "Blog",
+                        href: "https://medium.com/celoorg"
+                    },
+                    {
+                        label: "The Celo",
+                        href: "https://thecelo.com/"
+                    },
+                    {
+                        label: "Celo Hub",
+                        href: "https://celohub.org/"
+                    },
+                    {
+                        label: "Careers",
+                        href: "https://celo.org/jobs"
+                    }
+                ]
+                }
             ],
             copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
         },

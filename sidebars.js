@@ -150,6 +150,7 @@ module.exports = {
             'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/walkthroughs/web-dapp',
+            'developer-resources/walkthroughs/valora-wc-v1',
             { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
           ]
@@ -160,6 +161,7 @@ module.exports = {
           items: [
             'developer-resources/contractkit/index',
             'developer-resources/contractkit/setup',
+            'developer-resources/contractkit/usage',
             'developer-resources/contractkit/notes-web3-with-contractkit',
             'developer-resources/contractkit/contracts-wrappers-registry',
             'developer-resources/contractkit/odis',
