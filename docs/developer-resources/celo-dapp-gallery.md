@@ -130,4 +130,6 @@ UMOJA is an open banking platform that enables NGOs and FSPs to provide flexible
 
 Santym is a platform that allows Africans to have access to U.S Banking with crypto integration. Santym's available on [github](https://github.com/Santym-Inc/santym.fi). Santym is currently working on an African Stablecoin Exchange that allows continental currencies to be easily swapped on celo's blockchain.
 
+## Add your app to this list
+
 _Are you building on Celo? To add your project, please submit a pull request updating this page!_
