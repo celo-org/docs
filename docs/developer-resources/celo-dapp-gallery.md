@@ -125,6 +125,9 @@ Savings Circles let you pool funds with your friends to save for large purchases
 ## Umoja
 
 UMOJA is an open banking platform that enables NGOs and FSPs to provide flexible micro-financing to anyone with a phone. Umoja is [open source on GitHub](https://github.com/Emerging-Impact) and consists of a suite of APIs and products to make digital money accounts more accessible (and more easily to develop for other financial applications).
-## Add your app to this list
+
+## Santym
+
+Santym is a platform that allows Africans to have access to U.S Banking with crypto integration. Santym's available on [github](https://github.com/Santym-Inc/santym.fi). Santym is currently working on an African Stablecoin Exchange that allows continental currencies to be easily swapped on celo's blockchain.
 
 _Are you building on Celo? To add your project, please submit a pull request updating this page!_
