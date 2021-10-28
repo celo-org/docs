@@ -14,14 +14,14 @@ A smart contract account on the other hand is a smart contract that can be used 
 Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
 In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions my signing a meta-transaction containing the details of the authorized transaction.
 This is how the meta-transaction wallet works.
-In this case you can think of the smart contract account as a proxy account and the EOA as the controller of this account.
+In this case you can think of the smart contract account as the primary account, and the EOA as the controller of this account.
 
 ## Benefits of a smart contract account
 
 ### Separation of signer and payer
 
 When new users create a wallet, they start with an empty balance.
-This makes it difficult for the user to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)).
+This makes it difficult for the new users to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)).
 To make this experience more intuitive and frictionless for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user.
 It does this by first deploying a meta-transaction wallet contract and setting the wallet EOA address as the signer.
 At this point, the EOA can sign transactions and submit them to Komenci.
@@ -43,13 +43,14 @@ Any funds or privileges held by the meta-transaction wallet are then recovered t
 ### Transaction batching
 
 With smart contract accounts, including the meta-transaction wallet, transactions can be batched together to execute atomically.
-This makes for a better user experience, as transactions can be guaranteed to execute all together or entirely revert and can also prevent some cases where front-running would be possible to harm the user by splitting their transactions.
+This makes for a better user experience, as transactions can be guaranteed to execute all together or entirely revert.
+It can also prevent some cases where front-running would be possible by splitting the user's transactions.
 
 ## Valora accounts
 
 Behind every Valora wallet are two types of accounts: an externally owned account (EOA) and a meta-transaction wallet.
 Valora generates the EOA during onboarding, and has a meta-transaction wallet deployed for it by Komenci with the generated EOA as the signer.
-Using this configuration, Valora user gain the benefits listed above, including having Valora pay for the transaction fees associated with onboarding.
+Using this configuration, Valora users gain the benefits listed above, including having Valora pay for the transaction fees associated with onboarding.
 
 ## Sending to a Valora wallet
 

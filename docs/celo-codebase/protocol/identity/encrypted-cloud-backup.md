@@ -3,17 +3,22 @@ title: Encrypted Cloud Backup
 ---
 
 <!-- TODO(victor): Do we want to use a more creative protocol name here -->
+Secure and reliable account key backups are critical to the experience of non-custodial wallets, and Celo more generally.
+Day-to-day, users store their account keys on their mobile device, but if they lose their phone, they need a way to recover access to their account.
+Described in this document is a protocol for encrypted backups of a user's account keys in their cloud storage account.
+
+## Summary
 
 Using built-in support for iOS and Android, mobile apps can save data backups to Apple iCloud and Google Drive respectively.
 When a user installs the wallet onto a new device, possibly after losing their old device, or reinstalls the app on the same device, it can check the user's Drive or iCloud account for account backup data.
 If available, this data can be downloaded and used to initialize the application with the recovered account information.
 
 Access to the user's cloud storage requires logging in to their Google or Apple account.
-This provides a measure of security, but is not enough to confidently store the wallet's account key.
-In order to provide additional security, the account key backup can be encrypted with a secret, namely a PIN or password, that the user has memorized or stored securely.
+This provides a measure of security as only the owner of the cloud storage account can see the data, but is not enough to confidently store the wallet's account key.
+In order to provide additional security, the account key backup should be encrypted with a secret, namely a PIN or password, that the user has memorized or stored securely.
 This way, the users account key backup is only accessible to someone who can access their cloud storage account *and* knows their secret.
 
-Because user-chosen secrets, especially PINs, are susceptible to guessing by an attacker this secret must be [hardened](https://en.wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
+Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](https://en.wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
 Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
 
 With these core components, we can construct a cloud backup system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
