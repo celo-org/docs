@@ -7,7 +7,7 @@ const FeatureList = [
     title: 'Tutorials',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
-      <>Learn about blockchain and the basics of the Celo protocol.</>
+      <>Gain the skills you need to get the most from the Celo platform.</>
     ),
     link: (
       // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
@@ -18,7 +18,7 @@ const FeatureList = [
     title: 'Developers',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
-      <>Create, deploy, and manage applications on the Celo network.</>
+      <>Build, deploy, and manage applications on the Celo network.</>
     ),
     link: (
       <a href="/developer-guide/overview">Build on Celo</a>
@@ -28,7 +28,7 @@ const FeatureList = [
     title: 'Validators',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
-      <>Setup your own nodes to maintain the network and earn rewards.</>
+      <>Setup Celo nodes to maintain the network and earn rewards.</>
     ),
     link: (
       <a href="/validator-guide/overview">Run a Node</a>
