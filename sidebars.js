@@ -327,13 +327,13 @@ const sidebars = {
     'developer-resources/integrations/cloud-hsm',
   ], 
   // ######################################
-  // Learn 
+  // Basics 
   // ######################################
   learn: [ 
     { type: 'doc', label: 'Introduction to Celo', id: 'learn/celo-overview', },
     {
       type: 'category',
-      label: 'Mission',
+      label: 'Celo Basics',
       items: [
         { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
         { type: 'doc', label: 'Value', id: 'learn/celo-value', },
@@ -345,7 +345,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Platform',
+      label: 'Celo Platform',
       items: [
         { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
         { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },

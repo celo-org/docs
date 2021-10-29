@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Dapp Developers',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../static/img/homepage/svg.svg').default,
     description: (
       <>
         Complete information including easy tutorials you need to build, deploy, and manage apps on Polygon.
@@ -32,7 +32,7 @@ const FeatureList = [
   },
   {
     title: 'Validators',
-    Svg: require('../../static/img/homepage/03-light.svg').default,
+    Svg: require('../../static/img/homepage/svg.svg').default,
     description: (
       <>
         Learn how to stake with Celo, and setup your own nodes to maintain the network and earn rewards.
@@ -41,7 +41,7 @@ const FeatureList = [
   },
   {
     title: 'Integrations',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('../../static/img/homepage/svg.svg').default,
     description: (
       <>
         Key information for projects looking to integrate with Celo. Wallets, developer tools, oracles, and more - get all the info you need.
@@ -50,7 +50,7 @@ const FeatureList = [
   },
   {
     title: 'Core Contributors',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('../../static/img/homepage/svg.svg').default,
     description: (
       <>
         Contribute and get involved with the Polygon code base. Spin up a local testnet, or just submit a Pull Request on one of our repos.

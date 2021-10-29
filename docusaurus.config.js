@@ -6,8 +6,8 @@ const { docs, developers } = require('./sidebars');
 const DefaultLocale = 'en';
 
 module.exports = {
-    title: "Celo Docs",
-    tagline: "Documentation for the Celo Platform",
+    title: "Welcome to Celo",
+    tagline: "Built for mobile so you can build for all",
     url: "https://docs.celo.org",
     baseUrl: "/",
     trailingSlash: false,
@@ -305,6 +305,11 @@ module.exports = {
                 src: "img/logo.png",
             },
             items: [
+                {
+                    "to": "overview",
+                    "label": "Get Started",
+                    "position": "left"
+                },
                 {
                     "to": "learn/celo-overview",
                     "label": "Basics",
