@@ -57,6 +57,11 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .hero--primary {
-  --ifm-hero-background-color: #2E3338;
+  --ifm-hero-background-color: #242526;
   --ifm-hero-text-color: #ffffff;
+}
+
+.text--center {
+  text-align: left;
+  padding: 10px;
 }

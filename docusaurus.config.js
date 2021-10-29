@@ -307,7 +307,7 @@ module.exports = {
             items: [
                 {
                     "to": "overview",
-                    "label": "Get Started",
+                    "label": "Overview",
                     "position": "left"
                 },
                 {
