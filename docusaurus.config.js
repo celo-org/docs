@@ -13,7 +13,7 @@ module.exports = {
     trailingSlash: false,
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
-    favicon: "img/logo.png",
+    favicon: "img/color-favicon.png",
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
     i18n: {
@@ -302,7 +302,7 @@ module.exports = {
             title: "Celo Docs",
             logo: {
                 alt: "Celo Logo",
-                src: "img/logo.png",
+                src: "img/color-logo.png",
             },
             items: [
                 {
