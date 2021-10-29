@@ -2,6 +2,7 @@
 const path = require('path');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const { docs, developers } = require('./sidebars');
 const DefaultLocale = 'en';
 
 module.exports = {
@@ -305,32 +306,56 @@ module.exports = {
             },
             items: [
                 {
+                    "to": "/",
+                    "label": "Welcome",
+                    "position": "left"
+                },
+                {
+                    "to": "learn/celo-overview",
+                    "label": "Tutorials",
+                    "position": "left"
+                },
+                {
+                    "to": "developer-guide/overview",
+                    "label": "Developers",
+                    "position": "left"
+                },
+                {
+                    "to": "validator-guide/overview",
+                    "label": "Validators",
+                    "position": "left"
+                },
+                {
+                    "to": "celo-owner-guide/quick-start",
+                    "label": "Owners",
+                    "position": "left"
+                },
+                {
+                    "to": "developer-guide/integrations",
+                    "label": "Integrations",
+                    "position": "left"
+                },
+                {
+                    "to": "community/contributing",
+                    "label": "Contributors",
+                    "position": "left"
+                },
+                {
                     type: 'localeDropdown',
-                    position: 'left',
+                    position: 'right',
                     dropdownItemsAfter: [
-                    {
-                        to: 'https://celo.crowdin.com/',
-                        label: 'Help us translate',
-                    },
-                    ],
+                      {
+                          to: 'https://celo.crowdin.com/',
+                          label: 'Help us translate',
+                      },
+                    ]
                 },
                 {
-                    href: "https://celo.org",
-                    label: "Celo Home",
-                },
-                {
-                    href: "https://celo.org/build",
-                    label: "Build",
-                },
-                {
-                    href: "https://celo.org/build/faucet",
-                    label: "Faucet",
-                },
-                {
-                    href: "https://github.com/celo-org/docs",
-                    label: "GitHub",
-                    position: "right",
-                },
+                    href: 'https://github.com/celo-org',
+                    position: 'right',
+                    className: 'header-github-link',
+                    'aria-label': 'GitHub repository',
+                  },
             ],
         },
         gtag: {

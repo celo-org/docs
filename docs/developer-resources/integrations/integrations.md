@@ -2,6 +2,7 @@
 title: Integrations
 slug: /developer-guide/integrations
 ---
+# Integration Guide
 
 This section gives some guides about common ways of integrating Celo into your service.
 

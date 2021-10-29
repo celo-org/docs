@@ -1,8 +1,7 @@
 ---
 title: Overview
 ---
-
-## Validator Guide
+# Validator Guide
 
 In this section you will find information about:
 
