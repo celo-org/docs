@@ -306,7 +306,7 @@ module.exports = {
             },
             items: [
                 {
-                    "to": "overview",
+                    "to": "/overview",
                     "label": "Welcome",
                     "position": "left"
                 },

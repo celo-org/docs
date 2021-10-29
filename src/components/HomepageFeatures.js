@@ -4,13 +4,14 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Celo Basics',
+    title: 'Tutorials',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Learn about blockchain and the basics of the Celo protocol.</>
     ),
     link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
+      // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
+      <a href="/learn/celo-overview">Learn Celo</a>
     ),
   },
   {
@@ -20,7 +21,7 @@ const FeatureList = [
       <>Create, deploy, and manage applications on the Celo network.</>
     ),
     link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/developer-guide/overview">Build on Celo</a>
+      <a href="/developer-guide/overview">Build on Celo</a>
     ),
   },
   {
@@ -30,17 +31,7 @@ const FeatureList = [
       <>Setup your own nodes to maintain the network and earn rewards.</>
     ),
     link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/validator-guide/overview">Run a Node</a>
-    ),
-  },
-  {
-    title: 'Integrations',
-    // Svg: require('../../static/img/homepage/1.svg').default,
-    description: (
-      <>Integrate your application, service, or exchange with the Celo network.</>
-    ),
-    link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/celo-owner-guide/quick-start">Integrate with Celo</a>
+      <a href="/validator-guide/overview">Run a Node</a>
     ),
   },
   {
@@ -50,7 +41,17 @@ const FeatureList = [
       <>Start sending, spending, and earning crypto from your mobile phone.</>
     ),
     link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/developer-guide/integrations">Get CELO</a>
+      <a href="/celo-owner-guide/quick-start">Get CELO</a>
+    ),
+  },
+  {
+    title: 'Integrations',
+    // Svg: require('../../static/img/homepage/1.svg').default,
+    description: (
+      <>Integrate your application, service, or exchange with the Celo network.</>
+    ),
+    link: (
+      <a href="/developer-guide/integrations">Integrate with Celo</a>
     ),
   },
   {
@@ -60,7 +61,7 @@ const FeatureList = [
       <>Join a community of developers, designers, dreamers, and doers.</>
     ),
     link: (
-      <a href="https://deploy-preview-154--celo-docs.netlify.app/community/contributing">Contribute to Celo</a>
+      <a href="/community/contributing">Contribute to Celo</a>
     ),
   },
 ];
