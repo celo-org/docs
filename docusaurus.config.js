@@ -351,7 +351,7 @@ module.exports = {
                     ]
                 },
                 {
-                    href: 'https://github.com/celo-org/celo-monorepo',
+                    href: 'https://github.com/celo-org',
                     position: 'right',
                     className: 'header-github-link',
                     'aria-label': 'GitHub repository',
