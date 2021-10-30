@@ -1,7 +1,7 @@
 ---
 title: Welcome to Celo
 id: welcome
-slug: /
+slug: /welcome
 ---
 
 Welcome to the technical documentation site for the Celo project!
