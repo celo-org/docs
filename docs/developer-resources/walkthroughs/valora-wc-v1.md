@@ -12,7 +12,7 @@ This is a simple DApp that focuses on demonstrating how to connect Wallet Connec
 
 Add the packages that you need to your project.
 
-- [@wallet-connect/web3-provider](https://www.npmjs.com/package/@walletconnect/web3-provider)
+- [@walletconnect/web3-provider](https://www.npmjs.com/package/@walletconnect/web3-provider)
 - [Contractkit](https://www.npmjs.com/package/@celo/contractkit)
 - [Web3](https://www.npmjs.com/package/web3)
 
