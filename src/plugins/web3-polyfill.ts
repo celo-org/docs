@@ -17,7 +17,7 @@ module.exports = function (context, options) {
         },
         plugins: [
           new webpack.ProvidePlugin({
-            // Buffer: [require.resolve('buffer'), 'Buffer'],
+            Buffer: [require.resolve('buffer'), 'Buffer'],
             process: 'process/browser',
           }),
           new webpack.IgnorePlugin({
