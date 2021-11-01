@@ -130,6 +130,10 @@ UMOJA is an open banking platform that enables NGOs and FSPs to provide flexible
 
 Santym is a platform that allows Africans to have access to U.S Banking with crypto integration. Santym's available on [github](https://github.com/Santym-Inc/santym.fi). Santym is currently working on an African Stablecoin Exchange that allows continental currencies to be easily swapped on celo's blockchain.
 
+## Into The Verse
+
+Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have a Play2Earn NFT Dungeon Loot Game, game storefront and Token Swaps on Celo. Open Sourced on [github](https://github.com/Into-The-Verse/), we aim to bridge Defi and Gaming through token gated Pixel Metaverses.
+
 ## Add your app to this list
 
 _Are you building on Celo? To add your project, please submit a pull request updating this page!_
