@@ -1,7 +1,7 @@
 const sidebars = {
   docs: [
     {
-      type: "doc", label: "Wallet Test", id: "wallet-test",
+      type: "doc", label: "Wallet Connection Test", id: "wallet-test",
     },
     {
       type: "doc", label: "Welcome to Celo", id: "welcome",
