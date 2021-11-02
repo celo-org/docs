@@ -10,7 +10,7 @@ Celo’s mobile-first approach to user-first decentralized finance (DeFi) means 
 
 ### **User-first with phone number PKI**
 
-[Mobile phone number mapping](learn/celo-protocol#lightweight-identity) to account addresses for a seamless user experience on platform-native dApps, like [impactMarket](https://www.impactmarket.com/) or [Valora](https://valoraapp.com/).
+[Mobile phone number mapping](learn/celo-protocol.md#lightweight-identity) to account addresses for a seamless user experience on platform-native dApps, like [impactMarket](https://www.impactmarket.com/) or [Valora](https://valoraapp.com/).
 
 ### **Ultra-accessible with Ultralight Mobile Client**
 
