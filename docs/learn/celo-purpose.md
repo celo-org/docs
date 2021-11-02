@@ -26,7 +26,7 @@ With its interoperability, full EVM compatibility, and vision for currency inclu
 
 ### **Interoperable with Optics**
 
-The [Optics](celo-codebase/protocol/optics) standard will allow Celo to facilitate transactions between other smart contract enabled layer 1 blockchains like Ethereum, Cosmos, Solana, and Near, meaning Celo’s ecosystem of developers can connect the people, services, and technologies that allow everyone to benefit from a more open and connected blockchain ecosystem.
+The [Optics](../celo-codebase/protocol/optics) standard will allow Celo to facilitate transactions between other smart contract enabled layer 1 blockchains like Ethereum, Cosmos, Solana, and Near, meaning Celo’s ecosystem of developers can connect the people, services, and technologies that allow everyone to benefit from a more open and connected blockchain ecosystem.
 
 ### **On-chain governance with CELO** 
 
@@ -34,8 +34,8 @@ Celo is turning crypto into usable money with a multi-asset system: a growing fa
 
 ### **Sustainable with staking**
 
-[Celo’s Proof-of-Stake (PoS)](celo-codebase/protocol/proof-of-stake) consensus mechanism and automatic daily carbon offsets make Celo the world's first carbon-negative blockchain, offsetting over 2,285 tons of carbon to-date.
+[Celo’s Proof-of-Stake (PoS)](../celo-codebase/protocol/proof-of-stake) consensus mechanism and automatic daily carbon offsets make Celo the world's first carbon-negative blockchain, offsetting over 2,285 tons of carbon to-date.
 
 ## **Real**
 
-Using the power of mobile-first DeFi to solve real problems for real people, Celo has made blockchain’s vision for a globally accessible decentralized financial system a reality. With Celo’s reliable 5 second block times, low gas fees [payable in stablecoins](celo-codebase/protocol/transactions/erc20-transaction-fees), and decentralized phone verification protocol, it’s no wonder companies and organizations like Deutsche Telekom, Opera, and the Grameen Foundation are working with the Celo ecosystem to drive adoption of Celo’s technology in the real world. 
+Using the power of mobile-first DeFi to solve real problems for real people, Celo has made blockchain’s vision for a globally accessible decentralized financial system a reality. With Celo’s reliable 5 second block times, low gas fees [payable in stablecoins](../celo-codebase/protocol/transactions/erc20-transaction-fees), and decentralized phone verification protocol, it’s no wonder companies and organizations like Deutsche Telekom, Opera, and the Grameen Foundation are working with the Celo ecosystem to drive adoption of Celo’s technology in the real world. 
