@@ -87,7 +87,7 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 ![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
 
-Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. In the future, we'll likely switch entirely to the Verify Service and deprecate the Messaging Service, but for now it's important to specify both.
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version `v1.5.0` onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
 
 ### Nexmo
 
@@ -103,7 +103,7 @@ Note that Attestation Service from version 1.2.0 no longer requires callback URL
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable.  Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
 
 ## Installation
 
@@ -201,7 +201,7 @@ Required options:
 | `CELO_PROVIDER`                  | (required pre-v1.4.0; not recommended v1.4.0+) The node URL for your local full node at which your attestation signer key is unlocked. e.g. `http://localhost:8545`. Do not expose this port to the public internet! (v1.4.0+ optional) node URL for the Celo node used to connect to the chain. |
 | `CELO_VALIDATOR_ADDRESS`     | Address of the Validator account. If Validator is deployed via a `ReleaseGold` contract, this is the contract's address (i.e. `$CELO_VALIDATOR_RG_ADDRESS`), not the beneficiary.                                                                                  |
 | `ATTESTATION_SIGNER_ADDRESS` | Address of the Validator's attestation signer key                                                                                                                                                                                                                  |
-| `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
+| `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. From v1.5.0, can include `twiliomessaging` and `twilioverify` instead of `twilio`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
 |                              |
 
 Optional environment variables:
