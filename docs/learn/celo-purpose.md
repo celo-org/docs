@@ -10,15 +10,15 @@ Celo’s mobile-first approach to user-first decentralized finance (DeFi) means 
 
 ### **User-first with phone number PKI**
 
-Mobile phone number mapping to public keys for a seamless user experience on platform-native dApps, like impactMarket or Valora  
+Mobile phone number mapping to account addresses for a seamless user experience on platform-native dApps, like [impactMarket](https://www.impactmarket.com/) or [Valora](https://valoraapp.com/).
 
 ### **Ultra-accessible with Ultralight Mobile Client**
 
-Means Celo’s 5s block times that are 17000x faster than other blockchains and able to process transactions even in areas with low internet speeds 
+The ultralight client is a zk-SNARK based system that allows mobile and resource constrained nodes on the Celo network to sync to the Celo blockchain faster and with less data. It accomplishes this by using zero-knowledge proofs, which allow the quick verification of the chain syncing computation without having to run it locally.
 
-### **Industry-leading speeds with Plumo**
+### **Industry-leading blockchain sync speeds with Plumo**
 
-[FORTHCOMING] SNARK/Plumo will = 1mm times faster than other blockchains 
+[FORTHCOMING] [Plumo](celo-codebase/protocol/plumo) will allow Celo to sync 1 million times faster than other blockchains. 
 
 ## **Open**
 
@@ -26,7 +26,7 @@ With its interoperability, full EVM compatibility, and vision for currency inclu
 
 ### **Interoperable with Optics**
 
-The Optics standard will allow Celo to facilitate transactions between other layer 1s like Ethereum, Bitcoin, Cosmos, Solana, and Near, meaning Celo’s ecosystem of developers can connect the people, services, and technologies that allow everyone to benefit from a more open and connected blockchain ecosystem.
+The Optics standard will allow Celo to facilitate transactions between other layer 1 blockchains like Ethereum, Bitcoin, Cosmos, Solana, and Near, meaning Celo’s ecosystem of developers can connect the people, services, and technologies that allow everyone to benefit from a more open and connected blockchain ecosystem.
 
 ### **On-chain governance with CELO** 
 
