@@ -1,4 +1,12 @@
+import YouTube from '@components/YouTube';
+
 # Celo's Economic model
+
+## The Future of Value
+
+Celo co-founder Sep Kamvar outlines a vision for the future of value and how Celo can contribute.
+
+<YouTube videoId="tX5ep1JzY6k"/>
 
 ## **Sacred Economics**
 
