@@ -298,6 +298,9 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
+        colorMode: {
+            defaultMode: 'dark',
+        },
         navbar: {
             title: "Celo Docs",
             logo: {
