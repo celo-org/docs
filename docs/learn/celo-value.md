@@ -6,19 +6,19 @@ Celo includes native support for multiple [ERC20-like stable currencies](learn/c
 
 ### **Accounts Linked to Phone Numbers** 
 
-Celo maintains a secure [decentralized mapping of phone numbers](celo-codebase/protocol/identity) that allow wallet users to send and receive payments with their existing contacts simply and with confidence that the payment will reach the intended recipient.
+Celo maintains a secure [decentralized mapping of phone numbers](../celo-codebase/protocol/identity) that allow wallet users to send and receive payments with their existing contacts simply and with confidence that the payment will reach the intended recipient.
 
 ### **Transaction Fees in Any Currency** 
 
-Users can [pay transaction fees](celo-codebase/protocol/transactions/erc20-transaction-fees) in stable currencies so that they do not need to manage the balances of different currencies.
+Users can [pay transaction fees](../celo-codebase/protocol/transactions/erc20-transaction-fees) in stable currencies so that they do not need to manage the balances of different currencies.
 
 ### **Immediate Syncing Even on Slow Connections** 
 
-Extremely fast, secure [synchronization](celo-codebase/protocol/plumo) between mobile devices and the Celo network means that even wallet users with high latency, low bandwidth, or high-cost data tariffs can use Celo. Celo removes the need to check every header before a received header can be trusted. The performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
+Extremely fast, secure [synchronization](../celo-codebase/protocol/plumo) between mobile devices and the Celo network means that even wallet users with high latency, low bandwidth, or high-cost data tariffs can use Celo. Celo removes the need to check every header before a received header can be trusted. The performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
 
 ### **Proof-of-Stake** 
 
-Celo uses a [Proof-of-Stake (PoS)](celo-codebase/protocol/proof-of-stake) consensus algorithm. In comparison to Proof-of-Work (PoW) systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and where the outcome cannot be changed once complete.
+Celo uses a [Proof-of-Stake (PoS)](../celo-codebase/protocol/proof-of-stake) consensus algorithm. In comparison to Proof-of-Work (PoW) systems like Bitcoin and Ethereum, this eliminates the negative environmental impact and means that users can make transactions that are cheaper, faster, and where the outcome cannot be changed once complete.
 
 ### **On-chain Governance** 
 
@@ -40,7 +40,7 @@ ____
 
 110 Globally
 
-Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](celo-codebase/protocol/governance) process.
+Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](../celo-codebase/protocol/governance) process.
 
 You can view more detailed infor about the current validator set at [stats.celo.org](https://stats.celo.org/).
 
