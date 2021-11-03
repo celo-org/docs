@@ -31,6 +31,7 @@
 - [Governance Cheat Sheet](celo-holder-guide/governance-cheat-sheet.md)
 - [Recovering CELO from an Ethereum Address](celo-holder-guide/eth-recovery.md)
 - [Recovering ETH from a Celo Address](celo-holder-guide/celo-recovery.md)
+- [CELO to Celo stable token exchange bot](celo-holder-guide/celo-exchange-bot.md)
 
 ## Validator Guide
 
