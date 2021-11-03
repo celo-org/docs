@@ -11,7 +11,7 @@ const FeatureList = [
     ),
     link: (
       // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
-      <a href="/learn/celo-overview">Learn Celo</a>
+      <a href="/learn/celo-onboarding">Learn Celo</a>
     ),
   },
   {

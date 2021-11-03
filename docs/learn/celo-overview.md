@@ -1,19 +1,15 @@
-# Introduction to Celo
+# Welcome to Celo
 
-Learn about Celo's mission, vision, and goals for financial prosperity for everyone.
+Celo's mission, vision, and goals for financial prosperity for everyone.
 
 ## **Crypto made for Mobile**
 
-Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. 
-
-[Visit Celo](https://celo.org/)
-
+[Celo](https://celo.org/) is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. 
 ## **Celo's Mission**
 
 The company’s mission is to build a financial system that creates the conditions of prosperity for everyone. Celo enables native and non-native digital assets–both cryptographic and Central Bank Digital Currencies (CBDCs)–to circulate freely across devices, carriers, and countries. This makes money mobile, global and accessible like never before. Celo is supported by a community of organizations and individuals, including Jack Dorsey, a16z, and Deutsche Telekom.
 
 **Watch:** [What if Money were Beautiful](https://www.youtube.com/watch?v=kKggE5OvyhE)
-
 
 ## **Celo Ecosystem**
 

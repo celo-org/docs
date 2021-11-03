@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="./welcome">
+            to="./learn/celo-overview">
              Get Started
           </Link>
         </div>

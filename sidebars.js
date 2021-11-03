@@ -1,13 +1,33 @@
 const sidebars = {
   docs: [
-    {
-      type: "doc", label: "Welcome to Celo", id: "welcome",
-    },
+    // { type: "doc", label: "Welcome to Celo", id: "welcome",},
+    { type: 'doc', label: 'Welcome to Celo', id: 'learn/celo-overview', },
     {
       type: "category",
       label: "Getting Started",
       items: [
-        { type: "doc", label: "Celo Overview", id: "overview", },
+        {
+          type: 'category',
+          label: 'Celo Basics',
+          items: [
+            { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
+            { type: 'doc', label: 'Value', id: 'learn/celo-value', },
+            { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
+            { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
+            { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
+            { type: 'doc', label: 'Ecosystem', id: 'learn/celo-ecosystem', },
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Celo Platform',
+          items: [
+            { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
+            { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
+            { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
+          ]
+        }, 
+        // { type: "doc", label: "Celo Overview", id: "overview", },
         { type: "doc", label: "DApp Gallery", id: "developer-resources/celo-dapp-gallery",},
       ],
     },
@@ -175,6 +195,8 @@ const sidebars = {
           type: "category",
           label: "Developer Tools",
           items: [
+            { type: 'doc', label: 'Developer Tools', id: 'learn/developer-tools', },
+            { type: 'doc', label: 'EVM Tools', id: 'learn/evm-compatible-tooling', },
             {
               type: 'category',
               label: 'ContractKit',
@@ -332,38 +354,8 @@ const sidebars = {
   // Learn 
   // ######################################
   learn: [ 
-    { type: 'doc', label: 'Introduction to Celo', id: 'learn/celo-overview', },
-    {
-      type: 'category',
-      label: 'Celo Basics',
-      items: [
-        { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
-        { type: 'doc', label: 'Value', id: 'learn/celo-value', },
-        { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
-        { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
-        { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
-        { type: 'doc', label: 'Ecosystem', id: 'learn/celo-ecosystem', },
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Celo Platform',
-      items: [
-        { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
-        { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
-        { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
-        { type: 'doc', label: 'Developer Tools', id: 'learn/developer-tools', },
-        { type: 'doc', label: 'EVM Tools', id: 'learn/evm-compatible-tooling', },
-      ]
-    }, 
-    {
-      type: 'category',
-      label: 'Onboarding',
-      items: [
-        { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
-        { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
-      ]
-    },
+    { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
+    { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
     {
       type: 'category',
       label: 'Quick Guides',
