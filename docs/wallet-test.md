@@ -34,3 +34,57 @@ We could use an existing LMS for creating a course, but docusaurus is way more c
 
 - It is built using React, the go-to framework for building DApps today. We can show how to build using React, right in Docusaurus. This is not possible using most other LMSs.
 - We can keep the repo on GitHub and start building a community around it. Include other ecosystem partners and educators in making this better.
+
+```jsx live
+
+function MetamaskUtils(){
+
+    const CUSD_PARAMS = {
+      type: 'ERC20',
+      options: {
+        address: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
+        symbol: 'cUSD',
+        decimals: 18
+      }
+    }
+
+    const NETWORK_PARAMS = { 
+      chainId: '0xa4ec', 
+      chainName: 'Celo', 
+      nativeCurrency: { 
+        name: 'Celo', 
+        symbol: 'CELO', 
+        decimals: 18 
+      }, 
+      rpcUrls: ['https://forno.celo.org'], 
+      blockExplorerUrls: ['https://explorer.celo.org/'], 
+      iconUrls: ['future'] 
+    }
+
+    async function connectMetamask(){
+      await window.ethereum.enable()
+    }
+
+    async function addToken(){
+        await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: CUSD_PARAMS
+        });    
+    }
+
+    async function addNetwork(){
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [NETWORK_PARAMS],
+        });      
+    }
+
+    return (
+      <div>
+        <button onClick={connectMetamask}>Connect Metamask</button><br/>
+        <button onClick={addNetwork}>Connect to Celo Mainnet</button><br/>
+        <button onClick={addToken}>Add cUSD (mainnet)</button>
+      </div>
+    )
+}
+```
