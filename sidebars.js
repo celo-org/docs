@@ -315,6 +315,7 @@ const sidebars = {
     'celo-holder-guide/governance-cheat-sheet',
     'celo-holder-guide/eth-recovery',
     'celo-holder-guide/celo-recovery',
+    'celo-holder-guide/celo-exchange-bot'
   ], 
     // ######################################
   // Integration 
