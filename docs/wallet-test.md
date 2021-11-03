@@ -32,8 +32,12 @@ Here is an example component that connects to a wallet via wallet connect:
 
 We could use an existing LMS for creating a course, but docusaurus is way more customizable.
 
+- Easy to contribute content. Most of the content will be written in markdown and hosted on Github, making it easy for community additions.
 - It is built using React, the go-to framework for building DApps today. We can show how to build using React, right in Docusaurus. This is not possible using most other LMSs.
 - We can keep the repo on GitHub and start building a community around it. Include other ecosystem partners and educators in making this better.
+- We can leverage the Crowdin translations process set of for the docs site.
+
+## Live coding example
 
 ```jsx live
 
@@ -87,4 +91,40 @@ function MetamaskUtils(){
       </div>
     )
 }
+```
+
+## Get a Smart contract
+
+```jsx live
+
+class deployContract extends React {
+
+    constructor(props){
+      super(props)
+      this.state = {
+        contract: null
+      }
+
+      this.getGist = this.getGist.bind(this)
+    }
+
+    getGist = async() => {
+      let res = await fetch('https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol')
+      let text = await res.text()
+      //this.setState({contract: text})
+    }
+
+    render(){
+      return (
+        <div>     
+          <button>test</button>
+
+        </div>
+      )
+    }
+
+}
+
+
+
 ```
