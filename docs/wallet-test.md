@@ -97,34 +97,5 @@ function MetamaskUtils(){
 
 ```jsx live
 
-class deployContract extends React {
-
-    constructor(props){
-      super(props)
-      this.state = {
-        contract: null
-      }
-
-      this.getGist = this.getGist.bind(this)
-    }
-
-    getGist = async() => {
-      let res = await fetch('https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/master/contracts/token/ERC20/ERC20.sol')
-      let text = await res.text()
-      //this.setState({contract: text})
-    }
-
-    render(){
-      return (
-        <div>     
-          <button>test</button>
-
-        </div>
-      )
-    }
-
-}
-
-
 
 ```
