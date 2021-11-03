@@ -18,7 +18,7 @@ The ultralight client is a zk-SNARK based system that allows mobile and resource
 
 ### **Industry-leading blockchain sync speeds with Plumo**
 
-[FORTHCOMING] [Plumo](celo-codebase/protocol/plumo) will allow Celo to sync 1 million times faster than other blockchains. 
+[Plumo](../celo-codebase/protocol/plumo) will allow Celo to sync 1 million times faster than other blockchains. 
 
 ## **Open**
 
