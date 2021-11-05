@@ -1,4 +1,4 @@
-# Celo Value
+# Celo Highlights
 
 ### Stable Value Currencies 
 
@@ -56,7 +56,7 @@ Transactions are interactions that occur between user addresses and Celo (e.g., 
 
 **<$.01 Average Network Transaction Fee**
 
-:::note
+:::tip
 
 Real-time gas fees are captured in gwei on [stats.celo.org](https://stats.celo.org/).
 
@@ -67,7 +67,7 @@ Real-time gas fees are captured in gwei on [stats.celo.org](https://stats.celo.o
 * **CELO:** Metric updated in real-time, please visit  [coinmarketcap.com/currencies/celo](https://coinmarketcap.com/currencies/celo/) 
 * **cUSD + cEUR:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/) 
 
-:::note
+:::tip
 
 For current circulating supply of cUSD and cEUR please see the section titled ‘outstanding supply’ and reference the top number in black. 
 
@@ -79,7 +79,7 @@ For current circulating supply of cUSD and cEUR please see the section titled �
 
 For real-time updates, please visit [wren.co/profile/celo](https://www.wren.co/profile/celo)
 
-:::note
+:::tip
 
 Tons of carbon offset reflect Celo community purchases of carbon credits by way of funding the Community tree planting project with Wren. 
 
