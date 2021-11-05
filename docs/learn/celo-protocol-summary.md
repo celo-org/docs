@@ -1,4 +1,11 @@
+---
+title: Celo Protocol
+description: Summary of the Celo Protocol and the value it provides to the community.
+---
+
 # Celo Protocol
+
+Summary of the Celo Protocol and the value it provides to the community.
 
 ## The Platform for Mobile DeFi
 

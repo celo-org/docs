@@ -1,4 +1,11 @@
+---
+title: Celo
+description: Summary of Celo and the value it provides to the community.
+---
+
 # Celo
+
+Summary of Celo and the value it provides to the community.
 
 ## Crypto made for mobile
 

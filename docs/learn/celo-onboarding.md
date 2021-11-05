@@ -1,4 +1,13 @@
+---
+title: Celo Onboarding
+description: Learn the basics of the Celo platform.
+---
+
 # Celo Onboarding
+
+Learn the basics of the Celo platform.
+
+## What is Celo?
 
 Celo is a mobile-first and carbon-neutral blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone–bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
 

@@ -1,3 +1,8 @@
+---
+title: Welcome to Celo
+description: Celo's mission, vision, and goals for financial prosperity for everyone.
+---
+
 # Welcome to Celo
 
 Celo's mission, vision, and goals for financial prosperity for everyone.

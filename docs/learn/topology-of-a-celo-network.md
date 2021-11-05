@@ -1,4 +1,13 @@
+---
+title: Celo Network Topology
+description: Overview of the Celo Network topology including validators, full nodes, light clients, and wallets.
+---
+
 # Topology of a Celo Network
+
+Overview of the Celo Network topology including validators, full nodes, light clients, and wallets.
+
+## What is the Celo Network Topology?
 
 The topology of a Celo network consists of machines running the Celo blockchain software in several distinct configurations:
 

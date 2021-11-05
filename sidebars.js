@@ -22,7 +22,7 @@ const sidebars = {
           type: 'category',
           label: 'Celo Platform',
           items: [
-            { type: 'doc', label: 'Platform Overview', id: 'overview', },
+            { type: 'doc', label: 'Introduction', id: 'overview', },
             { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
             { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
             { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
@@ -369,7 +369,7 @@ const sidebars = {
       ]
     },
     { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
-    { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
+    { type: 'doc', label: 'Additional Resources', id: 'learn/celo-resources', },
   ],
   // ######################################
   // Contributors 

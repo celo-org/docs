@@ -1,11 +1,18 @@
 ---
 title: Celo DApp Gallery
+description: Featured DApp examples to help you start building on Celo.
 slug: /developer-guide/celo-dapp-gallery
 ---
 
-Welcome to the DApp Gallery! Here are some featured examples to help you get started building on Celo.
+# Celo DApp Gallery
 
-Additionally, head over to [Celo Hub](https://celohub.org) and [Electric Capital Ecosystem Gallery](https://electric-capital.github.io/?p=/ecosystem/celo) to track new projects being built on Celo. If you're building on Celo, be sure to add your project information there.
+Featured DApp examples to help you start building on Celo.
+
+:::tip
+
+Head over to [Celo Hub](https://celohub.org) and [Electric Capital Ecosystem Gallery](https://electric-capital.github.io/?p=/ecosystem/celo) to track new projects being built on Celo. If you're building on Celo, you can also share your project information there.
+
+:::
 ## [Celo Camp](https://www.celocamp.com/) Projects
 
 ### GoodGhosting

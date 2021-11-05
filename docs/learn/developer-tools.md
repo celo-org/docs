@@ -1,4 +1,10 @@
-# Celo Tools
+---
+title: Celo Developer Tools
+description: Overview of Celo tools and the value they provide to developers.
+---
+# Developer Tools
+
+Overview of Celo tools and the value they provide to developers.
 
 
 ## BlockScout

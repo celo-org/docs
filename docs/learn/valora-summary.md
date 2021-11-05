@@ -1,3 +1,8 @@
+---
+title: Valora
+description: Summary of Valora and the value it provides to the community.
+---
+
 # Valora
 
 **Use crypto like everyday money**

@@ -1,10 +1,11 @@
 ---
 title: Celo Highlights
-description: Celo's features are focused on making crypto accessible to anyone with a mobile phone.
+description: Celo is focused on making crypto accessible to anyone with a mobile phone.
 ---
 # Highlights
 
-Celo's is focused on making crypto accessible to anyone with a mobile phone.
+Celo is focused on making crypto accessible to anyone with a mobile phone.
+
 ## Features
 
 ### Stable Value Currencies 
@@ -38,6 +39,9 @@ Celo includes a programmable smart contract platform that is compatible with the
 ### Self Custody 
 
 Users have access to and fully control their funds and account keys, and don't need to depend on third parties to make payments.
+
+
+___
 ## Metrics
 
 ### Validators
