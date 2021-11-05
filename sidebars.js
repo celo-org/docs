@@ -41,17 +41,11 @@ const sidebars = {
           type: 'category',
           label: 'Celo Wallet',
           items: [
-            { 
-              type: 'category', 
-              label: 'Wallet Functionality', 
-              items: [
-                { type: 'doc', label: 'Overview', id: 'celo-codebase/wallet/how-the-wallet-works/README', },
-                'celo-codebase/wallet/how-the-wallet-works/verification',
-                'celo-codebase/wallet/how-the-wallet-works/invitations',
-                'celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments',
-                'celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync',
-              ]
-            }
+            { type: 'doc', label: 'Functionality', id: 'celo-codebase/wallet/how-the-wallet-works/README', },
+            { type: 'doc', label: 'Verification', id: 'celo-codebase/wallet/how-the-wallet-works/verification', },
+            'celo-codebase/wallet/how-the-wallet-works/invitations',
+            'celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments',
+            'celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync',
           ]
         },
         {
@@ -69,7 +63,7 @@ const sidebars = {
           type: 'category',
           label: 'Ledger Wallet',
           items: [
-            'celo-holder-guide/ledger',
+            { type: "doc", label: "Set up a Ledger Wallet", id: 'celo-holder-guide/ledger',},
             { type: "doc", label: "Connect to Celo Terminal", id: "celo-holder-guide/connecting-ledger-celo-terminal-wallet",},
             { type: "doc", label: "Connect to Celo Web Wallet", id: "celo-holder-guide/connecting-ledger-celo-web-wallet",},
             { type: "doc", label: "Connect to Celo CLI", id: "celo-holder-guide/connecting-ledger-celocli",},

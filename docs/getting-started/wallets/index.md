@@ -2,8 +2,12 @@
 title: Digital Wallets for Celo
 id: index
 slug: /getting-started/wallets
+description: Overview of digital wallets available to send, spend, and earn Celo assets.
 ---
 
+# Digital Wallets for Celo
+
+Overview of digital wallets available to send, spend, and earn Celo assets.
 ## Choosing a Wallet
 
 Wallets are tools that create accounts, manage keys, and help users transact on the Celo network.

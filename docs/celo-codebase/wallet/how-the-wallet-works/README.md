@@ -1,7 +1,11 @@
 ---
-title: Wallet Functionality
+title: Celo Wallet Functionality
+desciption: This section describes the technology powering key functionality of the Celo Wallet.
 ---
+
 import PageRef from '@components/PageRef'
+
+# Wallet Functionality
 
 This section describes the technology powering key functionality of the Celo Wallet.
 

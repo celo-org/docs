@@ -1,12 +1,12 @@
 ---
 title: Celo DApp Gallery
-description: Featured DApp examples to help you start building on Celo.
+description: List of featured DApp examples to help you start building on Celo.
 slug: /developer-guide/celo-dapp-gallery
 ---
 
 # Celo DApp Gallery
 
-Featured DApp examples to help you start building on Celo.
+List of featured DApp examples to help you start building on Celo.
 
 :::tip
 

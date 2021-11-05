@@ -1,25 +1,33 @@
+---
+
+title: Connect Ledger to Celo Terminal
+description: How to connect a ledger wallet to Celo Terminal. 
+
+---
 # Connect Ledger to Celo Terminal
 
-## Step 1
+How to connect a ledger wallet to Celo Terminal. 
+
+## Download Celo Terminal
 
 Navigate to [https://celoterminal.com/](https://celoterminal.com/) to download application for your OS type.
 
 ![https://celoterminal.com](https://user-images.githubusercontent.com/2653576/130853186-9e6d369d-dcce-4da9-bc50-d8b30f94b089.png "image_tooltip")
 
-## Step 2
+## Add Account
 
 Select “Add account”
 
 ![Add account](https://user-images.githubusercontent.com/2653576/130853277-78d1a6cd-b2af-4c15-a72d-92e871b1df8b.png "image_tooltip")
 
-## Step 3
+## Add Ledger Account 
 
 Connect your ledger device and choose “Add Ledger Account”
 
 ![Connect ledger device](https://user-images.githubusercontent.com/2653576/130853460-0ca1dbf5-c2ad-4057-b24c-c30cec3af625.png "image_tooltip")
 
 
-## Step 4
+## Choose your Account
 
 A new window will appear listing available accounts, the default is selected (index 0). Choose your account, default selection typically works for standard accounts.
 

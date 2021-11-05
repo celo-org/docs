@@ -1,10 +1,13 @@
 ---
-title: Using a Ledger Wallet
+title: Set up a Ledger Wallet with Celo
+description: How to set up a Ledger Nano S or X hardware wallet with Celo.
 slug: /celo-owner-guide/ledger
 ---
-# Setup a Ledger Wallet with Celo
+# Set up a Ledger Wallet with Celo
 
-This section shows how to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
+How to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
+
+## Hardware Security Module
 
 A hardware wallet or Hardware Security Module (HSM) holds a single random seed (expressed as a mnemonic) which can be used to generate any number of public-private keypairs, that is, any number of accounts ("wallets"), each with an associated address.
 

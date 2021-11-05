@@ -1,9 +1,13 @@
 ---
 title: Payments and Exchanging
+description: How the Celo wallet facilitates payments and exchanges using Celo assets.
 ---
-## **Payments**
+# Payments and Exchanging
 
-### **Sending**
+How the Celo wallet facilitates payments and exchanges using Celo assets.
+## Payments
+
+### Sending
 
 The Celo Wallet can be used to send and request payments with anyone who has verified their phone number to an address\(or using QR codes for unverified addresses\). Send transactions make a call to the `transferWithComment` function within the `StableToken` contract.
 
@@ -11,7 +15,7 @@ The Celo Wallet can be used to send and request payments with anyone who has ver
 
 Comments are encrypted using the `messageEncryptionKey` of the sender and the recipient to ensure that comment contents are kept private. These encrypted comments are then stored on chain. For more details, please refer to the [Encrypted Payment Comments](/celo-codebase/protocol/transactions/tx-comment-encryption.md) section of protocol documentation.
 
-### **Requesting**
+### Requesting
 
 Payment requests occur off chain - using a service \(firebase in the open source Celo Wallet\) we deliver payment requests. Upon confirmation of a request, a send transaction is created and sent.
 

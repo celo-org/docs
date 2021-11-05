@@ -1,11 +1,16 @@
 ---
-title: Invitations
+title: Wallet Invitations
+description: How invitations allow users to create accounts in the Celo wallet.
 ---
-### **Overview**
+
+# Wallet Invitations
+
+How invitations allow users to create accounts in the Celo wallet.
+## Overview
 
 To be able to use the wallet and create an account, a user must be invited through their phone number by a verified user. The inviter will send an _invitation code_ to the invitee, which they can later redeem upon downloading the app.
 
-### **Sending Invitations**
+## Sending Invitations
 
 If Alice is verified, she can invite \(unverified\) Bob to the app by choosing him through her contacts list in the wallet or by inputting his phone number. This will generate a temporary public/private key pair and associated temporary wallet address. Alice will have to pay a small invitation fee to this temporary wallet. Finally, Alice's wallet app will auto populate a message including this temporary private key, now known as invitation code, and will prompt Alice to send this message to Bob through either SMS or WhatsApp.
 
@@ -17,7 +22,7 @@ The invitation fee allows for invitees to be able to pay for verification fees a
 
 Along with an invite, inviters also have the option of sending a payment. In the example above, Alice will send this payment to an [escrow](/celo-codebase/protocol/transactions/escrow.md) smart contract which maps the temporary wallet address associated with the invitation code/temporary private key with the specific payment.
 
-### Escrow and Redeeming Invites
+## Escrow and Redeeming Invites
 
 After downloading the wallet app, Bob can redeem the invitation code that Alice sent him by inputting it into the app's homepage. During the invitation code redemption process:
 

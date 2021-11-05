@@ -1,10 +1,10 @@
 ---
 title: Celo Highlights
-description: Celo is focused on making crypto accessible to anyone with a mobile phone.
+description: Summary of features and metrics supporting the Celo ecosystem.
 ---
 # Highlights
 
-Celo is focused on making crypto accessible to anyone with a mobile phone.
+Summary of features and metrics supporting the Celo ecosystem.
 
 ## Features
 
@@ -39,9 +39,6 @@ Celo includes a programmable smart contract platform that is compatible with the
 ### Self Custody 
 
 Users have access to and fully control their funds and account keys, and don't need to depend on third parties to make payments.
-
-
-___
 ## Metrics
 
 ### Validators
