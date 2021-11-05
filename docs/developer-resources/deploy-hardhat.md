@@ -103,9 +103,7 @@ npx hardhat run scripts/sample-script.js --network celo
 
 Copy your **contract address** from the terminal and navigate to the [block explorer](https://explorer.celo.org/) to search for your deployed contract. Switch between networks to find your contract using the dropdown by the search bar.
 
-
 ![github](/img/doc-images/deploy-hardhat/image1.png)
-
 
 :::tip
 
@@ -130,27 +128,3 @@ Verifying a smart contract allows developers to review your code from within the
 
 * Click **Verify & Publish**
 * Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
-
-### Using the hardhat plugin
-
-You can also verify your contracts programatically using the [hardhat-deploy plugin](https://hardhat.org/plugins/hardhat-deploy.html).
-
-First, install the plugin in your project with
-
-```shell
-npm install -D hardhat-deploy
-```
-
-then add the following line to your `hardhat.config.js` file.
-
-```js
-require('hardhat-deploy');
-```
-
-Now you can verify your contracts on sourcify and Blockscout with
-
-```shell
-hardhat --network alfajores sourcify
-```
-
-just be sure to replace the network flag with the appropriate network.
