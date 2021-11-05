@@ -10,7 +10,7 @@ const sidebars = {
           type: 'category',
           label: 'Celo Basics',
           items: [
-            { type: 'doc', label: 'Introduction', id: 'learn/celo-purpose', },
+            { type: 'doc', label: 'Why Celo', id: 'learn/why-celo', },
             { type: 'doc', label: 'Highlights', id: 'learn/celo-highlights', },
             { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
             { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },

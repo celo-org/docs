@@ -1,4 +1,16 @@
-# Introduction to Celo
+---
+title: Why Celo
+id: why-celo
+slug: /why-celo
+---
+
+# Why Celo
+
+The Celo platform is proof-of-stake, EVM-compatible, open source, and governed by CELO asset owners.
+
+___
+
+## Celo is Mobile, Open, Real
 
 Celo was designed to enable a new universe of financial solutions accessible for mobile users and takes a mobile-first approach that provides the opportunity to positively impact 6B+ smartphone owners globally, creating a global financial ecosystem where an end-user can onboard into the Celo ecosystem with just a mobile number. 
 
