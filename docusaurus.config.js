@@ -309,7 +309,7 @@ module.exports = {
             },
             items: [
                 {
-                    "to": "learn/celo-overview",
+                    "to": "welcome",
                     "label": "Welcome",
                     "position": "left"
                 },

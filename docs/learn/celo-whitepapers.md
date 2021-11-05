@@ -1,6 +1,6 @@
 # Celo Whitepapers
 
-## **Protocol**
+## Protocol
 
 Celo Whitepaper: A Multi-Asset Cryptographic Protocol for Decentralized Social Payments
 
@@ -11,7 +11,7 @@ Plumo: Towards Scalable Interoperable Blockchains Using Ultra Light Validation S
 
 * [Read paper](https://celo.org/papers/plumo)
 
-## **Economics**
+## Economics
 
 An Analysis of the Stability Characteristics of Celo
 
@@ -26,7 +26,7 @@ Shaping the Future of Digital Currencies
 
 * [Read paper](https://celo.org/papers/future-of-digital-currencies)
 
-## **Social Impact**
+## Social Impact
 
 Future-Proof Aid Policy
 

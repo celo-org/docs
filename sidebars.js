@@ -1,7 +1,7 @@
 const sidebars = {
   docs: [
     // { type: "doc", label: "Welcome to Celo", id: "welcome",},
-    { type: 'doc', label: 'Welcome to Celo', id: 'learn/celo-overview', },
+    { type: 'doc', label: 'Welcome to Celo', id: 'welcome', },
     {
       type: "category",
       label: "Getting Started",
@@ -10,8 +10,8 @@ const sidebars = {
           type: 'category',
           label: 'Celo Basics',
           items: [
-            { type: 'doc', label: 'Purpose', id: 'learn/celo-purpose', },
-            { type: 'doc', label: 'Value', id: 'learn/celo-value', },
+            { type: 'doc', label: 'Introduction', id: 'learn/celo-purpose', },
+            { type: 'doc', label: 'Highlights', id: 'learn/celo-highlights', },
             { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
             { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
             { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
@@ -22,6 +22,7 @@ const sidebars = {
           type: 'category',
           label: 'Celo Platform',
           items: [
+            { type: 'doc', label: 'Platform Overview', id: 'overview', },
             { type: 'doc', label: 'Celo Stack', id: 'learn/celo-stack', },
             { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
             { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
