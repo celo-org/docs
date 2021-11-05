@@ -200,7 +200,7 @@ An interaction that takes place solely through a transaction being executed on t
 
 ## Proof-of-Stake
 
-The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. [Celo's Proof-of-Stake mechanism](../../celo-codebase/protocol/proof-of-stake) permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
+The system that determines the participants in a Byzantine Fault Tolerant consensus mechanism. Celo's Proof-of-Stake mechanism permits accounts to convert units of [CELO](#celo-native-asset) into [Locked Gold](#locked-gold) then vote for Validator Groups, such that an election held at the end of every epoch selects a new set of validators for the following epoch.
 
 ## RC1
 
