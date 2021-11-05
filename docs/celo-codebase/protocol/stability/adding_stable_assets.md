@@ -14,22 +14,22 @@ A good criteria to a successfully decide a pre-mint amount is to check by how mu
 
 ### Including contracts on the registry
 
-Currently, the addition of new assets is tied to the [Contract Release Cycle](community/release-process/smart-contracts), as the contracts `ExchangeX` and `StableTokenX` need to be checked in [^1]. These new contracts inherit from Exchange and StableToken, that are the ones originally used for `cUSD`. As StableToken `cX` will be initialized by the contract release, key parameters like `spread` and `reserveFraction` should be included, although they can be later modified by setters in the following governance proposals. The only value that can't be changed is the pre-mint amount.
+Currently, the addition of new assets is tied to the [Contract Release Cycle](../../../community/release-process/smart-contracts.mdx), as the contracts `ExchangeX` and `StableTokenX` need to be checked in [^1]. These new contracts inherit from Exchange and StableToken, that are the ones originally used for `cUSD`. As StableToken `cX` will be initialized by the contract release, key parameters like `spread` and `reserveFraction` should be included, although they can be later modified by setters in the following governance proposals. The only value that can't be changed is the pre-mint amount.
 
 ### Freezing
 
 These contracts should be set as frozen to prevent `cX` from being transferable before Mento supports it in a governance proposal. At this point, as there are no oracles, the contract `ExchangeX` can't update buckets and it is thus impossible to mint and burn `cX`. There is [an issue open](https://github.com/celo-org/celo-monorepo/issues/7331) to include this step as part of the Contract Release.
 
-For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0023.md), this was included as part of the [Oracle activation](#oracle-activation) proposal.
+For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md), this was included as part of the [Oracle activation](#oracle-activation) proposal.
 
 ### Constitutional parameters
 
 <!-- TODO: SDK urls will need to be changed when the SDK type docs are separated from the rest of docs -->
-As new contracts are added to the registry, new [constitution parameters](https://docs.celo.org/developer-guide/sdk-code-reference/summary-2/classes/_wrappers_governance_.governancewrapper#isproposalpassing) need to be set. There's an [issue open](https://github.com/celo-org/celo-monorepo/issues/7318) to include this in the tooling to support it as part of the Contract Release.
+As new contracts are added to the registry, new **constitution parameters** need to be set. There's an [issue open](https://forum.celo.org/t/governance-proposals-for-march-2021/816) to include this in the tooling to support it as part of the Contract Release.
 
 ### Oracle activation
 
-A following governance proposal needs to be submitted to enable [oracles](/celo-codebase/protocol/stability/oracles.md) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0023.md)[^2].
+A following governance proposal needs to be submitted to enable [oracles](/celo-codebase/protocol/stability/oracles.md) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
 
 ### Oracle report
 
