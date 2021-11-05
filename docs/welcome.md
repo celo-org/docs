@@ -1,11 +1,11 @@
 ---
 title: Welcome to Celo
-description: Celo's mission, vision, and goals for financial prosperity for everyone.
+description: Our mission is to build a financial system that creates the conditions for prosperity—for everyone.
 id: welcome
 slug: /welcome
 ---
 
-Celo's mission, vision, and goals for financial prosperity for everyone.
+Our mission is to build a financial system that creates the conditions for prosperity—for everyone.
 ## Crypto made for Mobile
 
 [Celo](https://celo.org/) is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. 
