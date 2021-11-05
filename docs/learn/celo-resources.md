@@ -8,7 +8,7 @@ description: Stay up to date on the latest Celo resources.
 
 The Celo community is always creating new resources to help you learn about Celo.
 
-## **Code Examples**
+## Code Examples
 
 * [Sending Celo and cUSD](https://docs.celo.org/developer-guide/start/hellocelo)
 * [Deploy a Contract using a Local Node](https://docs.celo.org/developer-guide/start/hellocontracts)
@@ -20,13 +20,13 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Integrate WalletConnect with your dApp](https://docs.celo.org/developer-guide/start/wallet-connect)
 * [Local Key Management using Keystores](https://docs.celo.org/developer-guide/start/using-js-keystores)
 
-## **Developer Guide**
+## Developer Guide
 
 * [Local Development Chain with Protocol Contracts](https://docs.celo.org/developer-guide/development-chain)
 * [Celo for Ethereum Developers](https://docs.celo.org/developer-guide/celo-for-eth-devs)
 * [Celo dApp Gallery](https://docs.celo.org/developer-guide/celo-dapp-gallery)
 
-## **Tech Talks**
+## Tech Talks
 
 * [Building a mobile-first blockchain platform](https://www.youtube.com/watch?v=bp2loYXPhbM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc)
 * [Simplifying blockchain development with the Celo SDK](https://www.youtube.com/watch?v=Rg33B0E2DTM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=2)
@@ -52,7 +52,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Hello Celo Q&A](https://www.youtube.com/watch?v=Tj4u_AgkVNY&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=21)
 * [Building Celo Ecosystem and Community](https://www.youtube.com/watch?v=p7gtW75gtbo&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=24)
 
-## **Pirate Radio Interview Series**
+## Pirate Radio Interview Series
 
 * [Interview with The Graph ](https://youtu.be/FsLe1msmgYE)
 * [Interview with Polkadot](https://youtu.be/oMSWODQQuxU)
@@ -60,7 +60,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Interview with Aurora](https://youtu.be/jFudk4Hr5IQ)
 * [Interview with Optics Team](https://youtu.be/mr-YyCtur8E)
 
-## **Cross-Chain Salon Workshops**
+## Cross-Chain Salon Workshops
 
 * [Regen Network Workshop](https://youtu.be/pvtn6sPwDL0)
 * [Celo Wallet Connect Workshop](https://youtu.be/QMI4Z9hH2Ew) 
@@ -74,17 +74,17 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Skale Workshop](https://youtu.be/kiZwO_dvotg)
 * [Near Workshop](https://youtu.be/ysmAaNi5JOY)
 
-## **Discussion Panels**
+## Discussion Panels
 
 * [Stablecoins Discussion Panel](https://youtu.be/CfzqpK_-LHA)
 
-## **The Great Celo Stake Off**
+## The Great Celo Stake Off
 
 * [What is The Great Celo Stake Off?](https://www.youtube.com/watch?v=pKSWrfCsWZk&list=PLsQbsop73cfF70IohTnE7uZuEoCGPlnDM)
 * [Celo Mastering the Art of Validating Webinar](https://www.youtube.com/watch?v=3UIudzzCb8o&list=PLsQbsop73cfF70IohTnE7uZuEoCGPlnDM&index=2)
 * [The Great Celo Stake Off Info Session](https://www.youtube.com/watch?v=Cz47o3HLMVw&list=PLsQbsop73cfF70IohTnE7uZuEoCGPlnDM&index=3)
 
-## **Celo in the World**
+## Celo in the World
 
 * [Crypto + Banking: The Next Billion Users](https://www.youtube.com/watch?v=gySPQ41v-SY&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG)
 * [Future of Finance Spotlight - Celo](https://www.youtube.com/watch?v=LUT8XyhUC8g&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=2)
@@ -97,7 +97,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Celo - Banking the unbanked: lessons from the field](https://www.youtube.com/watch?v=a1iEF8GWU4I&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=9)
 * [Validator Elections on Celo](https://www.youtube.com/watch?v=e4Aur9HBssQ&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=10)
 
-## **How Celo Works**
+## How Celo Works
 
 * [Taking Crypto Beyond Volatility: Stablecoins](https://www.youtube.com/watch?v=ENBQbPbbalg&list=PLsQbsop73cfGDHETt02NSBqeH_zlfXJKI)
 * [Celo - Advancing Financial Inclusion with Permissionless Cryptocurrencies](https://www.youtube.com/watch?v=ay7sFzfJ6K4&list=PLsQbsop73cfGDHETt02NSBqeH_zlfXJKI&index=2)
@@ -107,7 +107,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Celo - Banking the unbanked: lessons from the field](https://www.youtube.com/watch?v=a1iEF8GWU4I&list=PLsQbsop73cfGDHETt02NSBqeH_zlfXJKI&index=6)
 * [Validator Elections on Celo](https://www.youtube.com/watch?v=e4Aur9HBssQ&list=PLsQbsop73cfGDHETt02NSBqeH_zlfXJKI&index=7)
 
-## **Celo’s 4 Tenents**
+## Celo’s 4 Tenents
 
 * [What if money were beautiful?](https://www.youtube.com/watch?v=kKggE5OvyhE&list=PLsQbsop73cfHAblkFzkgDJ2amxaWoNstC)
 * [Meet the team working on Celo](https://www.youtube.com/watch?v=F5SnS1v9fNo&list=PLsQbsop73cfHAblkFzkgDJ2amxaWoNstC&index=2)
@@ -115,7 +115,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Sep Kamvar - Curitiba Bus Token, Blockchain for Social Impact Coalition Earth Day Live Stream](https://www.youtube.com/watch?v=bMwDj-vkQQs&list=PLsQbsop73cfHAblkFzkgDJ2amxaWoNstC&index=4)
 
 
-## **Celo Prosper Series**
+## Celo Prosper Series
 
 * [Prosper Series Discover Your Unique Purpose](https://www.youtube.com/watch?v=QCkWMbOrJNw&list=PLsQbsop73cfEbacv8AD6cNC64hmjhGleo)
 * [Prosper Series Blockchain for Prosperity](https://www.youtube.com/watch?v=b1S0FDgOAVg&list=PLsQbsop73cfEbacv8AD6cNC64hmjhGleo&index=2)
@@ -129,7 +129,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Prosper Series Emerging Technology, Emerging Markets, & Activism](https://www.youtube.com/watch?v=zibcUUOBe2Q&list=PLsQbsop73cfEbacv8AD6cNC64hmjhGleo&index=10)
 * [Collaborative Economy for Prosperity](https://www.youtube.com/watch?v=8_WVZwKPOL8&list=PLsQbsop73cfEbacv8AD6cNC64hmjhGleo&index=11)
 
-## **Central Bank Digital Currency Series**
+## Central Bank Digital Currency Series
 
 * [Types of Stablecoins](https://www.youtube.com/watch?v=0XB_2O6FsIk&list=PLsQbsop73cfEY1Dz4YyX2S4VNpamozj1v)
 * [Stability Protocol](https://www.youtube.com/watch?v=lfbouGPNbQY&list=PLsQbsop73cfEY1Dz4YyX2S4VNpamozj1v&index=2)
@@ -137,24 +137,24 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Managing Financial Crime Risk on Distributed Ledgers](https://www.youtube.com/watch?v=iYMDejO6uYc&list=PLsQbsop73cfEY1Dz4YyX2S4VNpamozj1v&index=4)
 * [Influencing the Velocity of Central Bank Digital Currencies](https://www.youtube.com/watch?v=yxKtDcHs9dI&list=PLsQbsop73cfEY1Dz4YyX2S4VNpamozj1v&index=5)
 
-## **Kuneco**
+## Kuneco
 
 * [The first Kuneco](https://www.youtube.com/watch?v=x3Tn2mx1x2g&list=PLsQbsop73cfHISg3Co3MRks7zah3dfBil)
 * [Kuneco Community All-Hands](https://www.youtube.com/watch?v=0qk6GfpKdTw&list=PLsQbsop73cfHISg3Co3MRks7zah3dfBil&index=2)
 
-## **Celo Camp 2020**
+## Celo Camp 2020
 
 * [Celo Camp 2020: Celo's Values with Sep Kamvar](https://www.youtube.com/watch?v=dDxb5daPdME&list=PLsQbsop73cfEOoGErgO4rmzWnBY9TzBCi)
 * [Celo Camp 2020: AMA With Marek Olszewski, Co-founder of Celo](https://www.youtube.com/watch?v=4AwtJ0bFLNI&list=PLsQbsop73cfEOoGErgO4rmzWnBY9TzBCi&index=2)
 * [Celo Camp 2020 Investors AMA](https://www.youtube.com/watch?v=opAaSUY3G2E&list=PLsQbsop73cfEOoGErgO4rmzWnBY9TzBCi&index=3)
 
-## **Coinbase Earn**
+## Coinbase Earn
 
 * [What is the Celo Platform?](https://www.youtube.com/watch?v=ofQD_hhq09g&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq)
 * [What is CELO?](https://www.youtube.com/watch?v=mkpTmbkRv4A&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq&index=2)
 * [What can Celo Dollars do?](https://www.youtube.com/watch?v=n1k1JcjTnp8&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq&index=3)
 
-## **Eth Denver 2020**
+## Eth Denver 2020
 
 * [C-LABS Sponsor Feature, ETHDenver & ColoradoJam 2021 Feb 5th-12th](https://www.youtube.com/watch?v=hC82Tj1KF8E&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9)
 * [ETHDenver 2021 Opening Ceremonies: Celo](https://www.youtube.com/watch?v=cfP_Y3YwpJw&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=2)
@@ -165,7 +165,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Plumo Ceremony](https://www.youtube.com/watch?v=VsAH4N92Au0&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=7)
 * [Celo Bounties at #ETHDenver](https://www.youtube.com/watch?v=WhY0fKXgKsg&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=8)
 
-## **Celo Tutorials (Figment Pathway)**
+## Celo Tutorials (Figment Pathway)
 
 * [Learn how connect to Celo node with DataHub](https://www.youtube.com/watch?v=bz76yk-Bww4&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X)
 * [Create your First Celo Account](https://www.youtube.com/watch?v=3VJyk669O-k&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=2)
@@ -174,14 +174,14 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Write and deploy your first Celo smart contract](https://www.youtube.com/watch?v=pQvrl4yOi10&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=5)
 
 
-## **#MakeitMobile Hackathon**
+## #MakeitMobile Hackathon
 
 * [Everything You Need to #MakeItMobile​ on Celo](https://www.youtube.com/watch?v=8Z7__lqu3Yk&list=PLsQbsop73cfFx53_9VGaH7Gw8ddDcAzDm)
 * [How to Build a DApp on Celo](https://www.youtube.com/watch?v=LN7p6mB1t4k&list=PLsQbsop73cfFx53_9VGaH7Gw8ddDcAzDm&index=2)
 * [Accelerating the Movement to Mobile-First DeFi](https://www.youtube.com/watch?v=Q0S4WQ836WA&list=PLsQbsop73cfFx53_9VGaH7Gw8ddDcAzDm&index=3)
 * [How to Port Your Etherum DApp to Celo](https://www.youtube.com/watch?v=FeUo6kNb5NU&list=PLsQbsop73cfFx53_9VGaH7Gw8ddDcAzDm&index=4)
 
-## **Tech Blog**
+## Tech Blog
 
 * [Fast and Light](https://medium.com/celoorg/fast-and-light-39ec38759900)
 * [Cryptocurrency for a Beautiful Planet](https://medium.com/celoorg/cryptocurrency-for-a-beautiful-planet-e47299dfb1c3)
@@ -198,7 +198,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [A Look at the Celo White Paper](https://medium.com/celoorg/a-look-at-the-celo-whitepaper-c0061118ffd4)
 * [Arbitrage and Winning a Cryptocurrency Trading Competition at MIT](https://medium.com/celoorg/arbitrage-and-winning-a-cryptocurrency-trading-competition-at-mit-32e183766e42)
 
-## **Design Blog**
+## Design Blog
 
 * [A Celebration of Heart](https://medium.com/celoorg/a-celebration-of-heart-for-celo-44bbbba94a2c)
 * [Celo Camp and The Third Place](https://medium.com/celoorg/celo-camp-and-the-third-place-a-case-study-in-ecosystem-brand-design-4d1da339d1a8)
@@ -218,7 +218,7 @@ The Celo community is always creating new resources to help you learn about Celo
 * [Why we should rename Celo Gold](https://medium.com/celoorg/why-we-should-rename-celo-gold-35b04d87e95a)
 * [CELO Holders: Make Your Voice Heard Through On-chain Governance](https://medium.com/celoorg/celo-gold-holders-make-your-voice-heard-through-on-chain-governance-96cb5a1e8b90)
 
-## **General Updates**
+## General Updates
 
 * [Celo Sets Sights On Becoming Fastest EVM Chain Through Collaboration With Mysten Labs](https://medium.com/celoorg/celo-sets-sights-on-becoming-fastest-evm-chain-through-collaboration-with-mysten-labs-e88b426aee83)
 * [Meet the cLabs Team at Messari Mainnet!](https://medium.com/celoorg/meet-the-clabs-team-at-messari-mainnet-83b72b259dcb)

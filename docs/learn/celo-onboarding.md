@@ -4,7 +4,7 @@ Celo is a mobile-first and carbon-neutral blockchain that makes decentralized fi
 
 With its interoperability, cross-chain compatibility and vision for inclusivity, Celo enables native and non-native digital assets–both cryptographic and Central Bank Digital Currencies (CBDCs)–to circulate freely, at extremely low costs and high speeds, across devices, carriers, and countries–making money mobile, global and accessible like never before.
 
-## **Getting Started with Celo**
+## Getting Started with Celo
 
 * [Hello from Celo](https://medium.com/celoorg/hello-from-celo-34bf195cb99?source=false---------0)
 * [What if money were beautiful?](https://www.youtube.com/watch?v=kKggE5OvyhE&list=PLsQbsop73cfHAblkFzkgDJ2amxaWoNstC)
@@ -12,13 +12,13 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 * [Meet the team working on Celo](https://www.youtube.com/watch?v=F5SnS1v9fNo&list=PLsQbsop73cfHAblkFzkgDJ2amxaWoNstC&index=2)
 * [Celo Tech Talks Building a mobile first blockchain platform](https://www.youtube.com/watch?v=bp2loYXPhbM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc)
 
-## **Celo Basics**
+## Celo Basics
 
 * [What is the Celo Platform?](https://www.youtube.com/watch?v=ofQD_hhq09g&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq)
 * [What is CELO?](https://www.youtube.com/watch?v=mkpTmbkRv4A&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq&index=2)
 * [What can Celo Dollars do?](https://www.youtube.com/watch?v=n1k1JcjTnp8&list=PLsQbsop73cfGRlLENseWOt7CPzocUXSRq&index=3)
 
-## **Celo Tour**
+## Celo Tour
 
 * [About Celo](https://celo.org/about)
 * [Join](https://celo.org/jobs)
@@ -29,7 +29,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 * [Blog](https://medium.com/celoorg)
 * [GitHub](https://github.com/celo-org)
 
-## **Celo First Steps**
+## Celo First Steps
 
 * [Valora](https://valoraapp.com/)
 * [Get CELO](https://celohub.org/purchase)
@@ -37,7 +37,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 * [Get Test Funds](https://celo.org/developers/faucet)
 * [Block Explorer](https://explorer.celo.org/)
 
-## **Connect with the Community**
+## Connect with the Community
 
 * [Reddit](https://www.reddit.com/r/celo/)
 * [Blog](https://medium.com/celoorg)
@@ -49,7 +49,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 * [LinkedIn](https://www.linkedin.com/company/celoOrg/)
 * [Twitch](https://www.twitch.tv/celoorg)
 
-## **Get Support**
+## Get Support
 
 * [Discord](https://chat.celo.org/)
 * [Forum](https://forum.celo.org/)
