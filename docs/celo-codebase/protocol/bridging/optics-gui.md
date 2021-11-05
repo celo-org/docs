@@ -1,5 +1,6 @@
 ---
 title: Optics Bridge GUI
+description: Sending ETH From Ethereum to Celo
 ---
 
 # Optics Bridge GUI

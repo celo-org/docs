@@ -1,5 +1,6 @@
 ---
 title: Optics Bridge GUI - Korean
+description: Sending ETH From Ethereum to Celo
 ---
 
 # Sending ETH From Ethereum to Celo

@@ -1,7 +1,7 @@
 ---
-title: Optics Bridge GUI
+title: Optics Bridge GUI - gui-zh-cn
+description: Sending ETH From Ethereum to Celo
 ---
-
 # Optics 跨链桥使用指南
 
 ## ETH从以太坊跨链到Celo主网

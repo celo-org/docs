@@ -1,4 +1,7 @@
-# Bridging to Celo
+---
+title: Bridging to Celo
+description: Bridging to Ethereum, Polygon, and Solana to Celo
+---
 
 Bridging to Ethereum, Polygon, and Solana to Celo
 

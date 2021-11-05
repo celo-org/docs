@@ -1,5 +1,6 @@
 ---
 title: Celo FAQ
+description: Frequently asked questions about Celo.
 id: faqs
 ---
 

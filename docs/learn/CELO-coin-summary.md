@@ -1,5 +1,8 @@
-# CELO
-
+---
+title: What is CELO?
+description: CELO is the platform-native asset that supports the growth and development of the Celo blockchain and ecosystem.
+---
+# What is CELO?
 ## Platform-Native Digital Asset
 
 CELO is the platform-native asset that supports the growth and development of the Celo blockchain and ecosystem. CELO holders can earn rewards, stake with validators, and vote on proposals that shape the future of Celo.

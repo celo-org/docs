@@ -1,5 +1,6 @@
 ---
 title: Bridge Tokens with Etherscan
+description: Bridging ERC-20 tokens from Ethereum and Polygon to Celo.
 ---
 
 Bridging ERC-20 tokens from Ethereum and Polygon to Celo.

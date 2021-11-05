@@ -1,5 +1,6 @@
 ---
 title: Bridge Native Assets with Etherscan
+description: Bridging ETH and Matic to Celo.
 ---
 
 Bridging ETH and Matic to Celo.
