@@ -10,7 +10,7 @@ Solidity is an object-oriented, high-level language for implementing smart contr
 
 [Truffle](https://www.trufflesuite.com/) is a development environment, testing framework, and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM). It allows you to write contracts in your favorite development environment. After installing truffle in your project the truffle project will run scripts to deploy your contracts to the Alfajores Testnet, Mainnet, or whatever you specify in the configuration file. It helps you run unit tests against your deployed contracts to make sure that they're running as you expect. It also keeps track of all your contract deployments and your upgrades and the like the deployment history.
 
-Learn more about deploying contracts to Celo with Truffle [here]((../developer-resources/deploy-truffle)).
+Learn more about deploying contracts to Celo with Truffle [here](../developer-resources/deploy-truffle).
 
 ## Hardhat
 
