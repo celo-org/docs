@@ -9,7 +9,7 @@ How Celo nodes join the network, establish a connection, and communiate their IP
 
 ## V4 Discovery Protocol
 
-All Celo nodes \(including our validators\) are using a variant of Ethereum's V4 discovery protocol to find other nodes within the network. Details of Ethereum's protocol can be found here: [https://github.com/ethereum/devp2p/blob/master/discv4.md](https://github.com/ethereum/devp2p/blob/master/discv4.md).
+All Celo nodes \(including our validators\) are using a variant of Ethereum's V4 discovery protocol to find other nodes within the network. Details of Ethereum's protocol can be found [here](https://github.com/ethereum/devp2p/blob/master/discv4.md).
 
 ## Joining the Network
 

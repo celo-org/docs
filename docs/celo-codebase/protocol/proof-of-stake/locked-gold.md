@@ -1,6 +1,11 @@
 ---
-title: Locked Gold and Voting
+title: Celo Locked Gold and Voting
+description: Introduction to Celo locked gold and how to use validator elections to participate in voting.
 ---
+# Locked Gold and Voting
+
+Introduction to Celo locked gold and how to use validator elections to participate in voting.
+## Validator Election Participation
 
 To participate in validator elections, users must first make a transfer of CELO to the `LockedGold` smart contract.
 

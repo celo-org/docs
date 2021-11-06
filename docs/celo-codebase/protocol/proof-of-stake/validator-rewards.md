@@ -1,11 +1,16 @@
 ---
-title: Rewards for Validators and Validator Groups
+title: Celo Rewards for Validators and Validator Groups
+description: Overview of epoch rewards for Validators and Validator Groups.
 slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards
 ---
 
+# Validator Rewards
+
+Overview of epoch rewards for Validators and Validator Groups.
+
 The protocol aims to incentivize validator uptime performance and penalize past poor behavior in future rewards, while ensuring that payments are economically reasonable in size independent of fluctuations of the price of CELO.
 
-Five factors affect validator and group rewards:
+**Five factors affect validator and group rewards:**
 
 - The on-target reward amount for this epoch
 - The protocol's [overall spending vs target of epoch rewards](/celo-codebase/protocol/proof-of-stake/epoch-rewards.md)

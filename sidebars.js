@@ -75,15 +75,15 @@ const sidebars = {
       type: 'category',
       label: 'Protocol',
       items: [
-        { type: 'doc', label: 'Introduction', id: 'celo-codebase/protocol/index', },
+        { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/index', },
         {
           type: 'category',
           label: 'Consensus',
           items: [
-            { type: 'doc', label: 'Introduction', id: 'celo-codebase/protocol/consensus/index', },
-            'celo-codebase/protocol/consensus/validator-set-differences',
-            'celo-codebase/protocol/consensus/locating-nodes',
-            'celo-codebase/protocol/consensus/ultralight-sync',
+            { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/consensus/index', },
+            { type: 'doc', label: 'Validator Set Differences', id: 'celo-codebase/protocol/consensus/validator-set-differences', },
+            { type: 'doc', label: 'Locating Nodes', id: 'celo-codebase/protocol/consensus/locating-nodes', },
+            { type: 'doc', label: 'Ultralight Sync', id: 'celo-codebase/protocol/consensus/ultralight-sync', },
           ]
         },
         {
@@ -91,21 +91,21 @@ const sidebars = {
           label: 'Proof-of-Stake',
           items: [
             { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/index', },
-            'celo-codebase/protocol/proof-of-stake/validator-groups',
-            'celo-codebase/protocol/proof-of-stake/locked-gold',
-            'celo-codebase/protocol/proof-of-stake/validator-elections',
+            { type: 'doc', label: 'Validator Groups', id: 'celo-codebase/protocol/proof-of-stake/validator-groups', },
+            { type: 'doc', label: 'Locked Gold', id: 'celo-codebase/protocol/proof-of-stake/locked-gold', },
+            { type: 'doc', label: 'Validator Elections', id: 'celo-codebase/protocol/proof-of-stake/validator-elections', },
             {
               type: 'category',
               label: 'Epoch Rewards',
               items: [
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/epoch-rewards', },
-                'celo-codebase/protocol/proof-of-stake/validator-rewards',
-                'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',
-                'celo-codebase/protocol/proof-of-stake/community-fund',
-                'celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund',
+                { type: 'doc', label: 'Validator Rewards', id: 'celo-codebase/protocol/proof-of-stake/validator-rewards',},
+                { type: 'doc', label: 'Locked Gold Rewards', id: 'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',},
+                { type: 'doc', label: 'Community Fund', id: 'celo-codebase/protocol/proof-of-stake/community-fund',},
+                { type: 'doc', label: 'Carbon Offsetting Fund', id: 'celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund',},
               ]
             },
-            'celo-codebase/protocol/proof-of-stake/penalties',
+            { type: 'doc', label: 'Penalties', id: 'celo-codebase/protocol/proof-of-stake/penalties',},
           ]
         },
         'celo-codebase/protocol/governance',
