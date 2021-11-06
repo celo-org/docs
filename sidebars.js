@@ -75,12 +75,12 @@ const sidebars = {
       type: 'category',
       label: 'Protocol',
       items: [
-        { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/index', },
+        { type: 'doc', label: 'Introduction', id: 'celo-codebase/protocol/index', },
         {
           type: 'category',
           label: 'Consensus',
           items: [
-            { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/consensus/index', },
+            { type: 'doc', label: 'Introduction', id: 'celo-codebase/protocol/consensus/index', },
             'celo-codebase/protocol/consensus/validator-set-differences',
             'celo-codebase/protocol/consensus/locating-nodes',
             'celo-codebase/protocol/consensus/ultralight-sync',

@@ -5,7 +5,7 @@ slug: /celo-codebase/protocol
 ---
 import PageRef from '@components/PageRef'
 
-# Protocol
+# Celo Protocol
 
 Introduction to the Celo protocol, its implementation, and its relationship to Ethereum.
 ## What is the Celo Protocol?
