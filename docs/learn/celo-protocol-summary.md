@@ -1,6 +1,6 @@
 # Celo Protocol
 
-## **The Platform for Mobile DeFi**
+## The Platform for Mobile DeFi
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
@@ -19,7 +19,7 @@ The Celo protocol also includes mechanisms for [lightweight identity](../celo-co
 * Gas Payable in Multiple Stablecoins 
 * Programmable (full EVM Compatibility)
 
-## **Optimized for Financial Applications**
+## Optimized for Financial Applications
 
 Powered by Celo’s industry-leading decentralized phone number verification, payment applications built on Celo allow users to easily send or request digital currencies  from  any mobile number, anywhere in the world, capable of offering their users features like:
 
@@ -29,7 +29,7 @@ Powered by Celo’s industry-leading decentralized phone number verification, pa
 * QR Code Support
 * Mobile first SDK
 
-## **Core Contracts**
+## Core Contracts
 
 Designed to support an ecology of stable value currencies. The first stablecoin, cUSD, tracks the value of the US Dollar.
 
@@ -37,7 +37,7 @@ Designed to support an ecology of stable value currencies. The first stablecoin,
 * Crypto-asset collateralized
 * Native support for multiple stablecoins
 
-## **Blockchain**
+## Blockchain
 
 Open source permissionless smart contract platform built on decentralized infrastructure.
 
@@ -45,6 +45,6 @@ Open source permissionless smart contract platform built on decentralized infras
 * Incentives for serving mobile devices
 * On-chain governance
 
-## **Build on Celo**
+## Build on Celo
 
 Visit [docs.celo.org](https://docs.celo.org/) to learn more.

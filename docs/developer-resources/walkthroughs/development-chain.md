@@ -5,7 +5,7 @@ slug: /developer-guide/development-chain
 
 In this tutorial, we will go over how to set up a Celo development blockchain that includes all of the [core protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol), including identity and stability contracts.
 
-At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](https://docs.celo.org/command-line-interface/introduction) and the [ContractKit](https://docs.celo.org/developer-guide/overview/introduction/contractkit).
+At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](../command-line-interface/introduction) and the [ContractKit](../developer-guide/contractkit).
 
 Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with cGLD and cUSD and all transactions on the network are virtually instant.
 
@@ -57,8 +57,7 @@ The process will finish and print `Ganache started`. Leave this terminal window 
 
 Now that we have a Celo development chain running, we probably want to know what accounts we have access to, how much cGLD and cUSD they have as well as the addresses of the deployed protocol contracts.
 
-We can use the [Celo CLI tool](https://docs.celo.org/command-line-interface/introduction) for this, or we can use the [contractkit](https://docs.celo.org/developer-guide/overview/introduction/contractkit) npm package in a node script.
-
+We can use the [Celo CLI tool](../command-line-interface/introduction) for this, or we can use the and the [ContractKit](../developer-guide/contractkit) npm package in a node script.
 ### **Celo CLI**
 
 You can install the CLI using npm by running `npm install -g @celo/celocli`. You can see the [package details here](https://www.npmjs.com/package/@celo/celocli). Once it is installed, you should be able to access the tool from the terminal by running `$ celocli`. Try `$ celocli help`.
@@ -94,7 +93,7 @@ pending: 0
 
 ### ContractKit + Node.js
 
-You can also use the [contractkit](https://docs.celo.org/developer-guide/overview/introduction/contractkit) to access the local node in a node.js script.
+You can also use the [ContractKit](../developer-guide/contractkit) to access the local node in a node.js script.
 
 As an example, try running [this script](https://gist.github.com/critesjosh/35ba7b1c2fe41934308cb243b003001c) in an npm project with contractkit installed. 
 

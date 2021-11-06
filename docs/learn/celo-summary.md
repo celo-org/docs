@@ -12,18 +12,18 @@ Celo's mission is to build a financial system that creates the conditions of pro
 * Carbon Offset 65.7 Avg Tons Per Month
 * Average Network Transaction Fee &lt;$.01
 
-## **Mobile-First**
+## Mobile-First
 
 Celo makes sending payments as easy as sending a text, to anyone with an internet connection, anywhere in the world. Celo maps phone numbers to wallet addresses using a novel decentralized address-based identity layer. Mobile participants can earn rewards for securing and maintaining the system.
 
-## **Multi-Asset**
+## Multi-Asset
 
 Celo is turning crypto into usable money with a multi-asset system: a utility, governance, and staking asset (CELO) and a growing family of stablecoins named for the currencies they algorithmically follow (e.g., cUSD, cEUR).
 
-## **EVM-Compatible**
+## EVM-Compatible
 
 An EVM-compatible solution capable of reaching billions of global users at scale, Celo’s technology supports 1000+ projects from builders, developers, and even artists who everyday launch new applications and issue digital currencies from everywhere in the world usable by anyone in the world with a desktop computer or mobile phone.
 
-## **Get Started with Celo**
+## Get Started with Celo
 
 Visit [celo.org](http://www.celo.org) to learn more.
