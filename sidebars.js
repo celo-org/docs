@@ -154,10 +154,10 @@ const sidebars = {
       type: 'category',
       label: 'Bridging',
       items: [
-        { type: 'doc', label: 'Bridging to Celo', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
-        'celo-codebase/protocol/bridging/optics-gui',
-        'celo-codebase/protocol/bridging/bridging-native-assets',
-        'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan',
+        { type: 'doc', label: 'Celo Bridges', id: 'celo-codebase/protocol/bridging/bridging-to-celo', },
+        { type: 'doc', label: 'Optics Bridge GUI', id: 'celo-codebase/protocol/bridging/optics-gui', },
+        { type: 'doc', label: 'Native Assets with Etherscan', id: 'celo-codebase/protocol/bridging/bridging-native-assets', },
+        { type: 'doc', label: 'Tokens with Etherscan', id: 'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan', },
       ]
     },
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},

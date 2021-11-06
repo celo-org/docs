@@ -1,12 +1,12 @@
 ---
 title: Celo FAQ
-description: Frequently asked questions about Celo.
+description: Answers to frequently asked questions about Celo.
 id: faqs
 ---
 
-# Celo FAQ
+# FAQ
 
-Frequently asked questions about Celo.
+Answers to frequently asked questions about Celo.
 
 ## Introduction and Overview
 
