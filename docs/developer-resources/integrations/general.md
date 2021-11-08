@@ -1,9 +1,11 @@
 ---
-title: General
+title: Celo General Integration Information
 slug: /developer-guide/integrations/general
+description: General information about integrations regardless of your service or use case.
 ---
+# General
 
-Here you find some general information about integrations regardless of your service or use case:
+General information about integrations regardless of your service or use case.
 
 ## Accessing the chain
 

@@ -1,9 +1,12 @@
 ---
-title: Listings
+title: Celo Listing Integrations
+description: Support for digital asset exchanges or ranking sites that would like to run a Celo node and audit your setup.
 slug: /developer-guide/integrations/listings
 ---
 
-Welcome to the Listing Guide documentation page. If you are a digital asset exchange or ranking site, this guide will help you run a node and audit your setup. 
+# Listings
+
+Support for digital asset exchanges or ranking sites that would like to run a Celo node and audit your setup.
 
 ## Support
 If you have any questions or need assistance with these instructions, please contact cLabs or ask in the #exchanges channel on [Celo’s Discord server](https://chat.celo.org/). Remember that Discord is a public channel: never disclose recovery phrases (also known as backup keys, or mnemonics), private keys, unsanitized log output, or personal information.

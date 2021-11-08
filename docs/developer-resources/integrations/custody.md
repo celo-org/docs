@@ -1,9 +1,16 @@
 ---
-title: Custody
+title: Celo Custody Integrations
+description: Details for custodians, exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user.
 slug: /developer-guide/integrations/custody
 ---
 
-This section is intended for Custodians, Exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user. Generally speaking, custodying CELO, the native token on the Celo network, requires understanding the various states that CELO can exist in at any time. This is to provide useful services beyond custody such as allowing users to lock up their CELO and vote with it. Many of these "states" are implemented as smart contracts, and involve sending CELO from a user owned account to a contract address. Thus, in order to be able to show a user's true balance, services need to be able to observe every balance changing operation and reconcile CELO balances from all the various contracts and states CELO can be in.
+# Custody 
+
+Details for custodians, exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user.
+
+## Custody Overview
+
+Generally speaking, custodying CELO, the native token on the Celo network, requires understanding the various states that CELO can exist in at any time. This is to provide useful services beyond custody such as allowing users to lock up their CELO and vote with it. Many of these "states" are implemented as smart contracts, and involve sending CELO from a user owned account to a contract address. Thus, in order to be able to show a user's true balance, services need to be able to observe every balance changing operation and reconcile CELO balances from all the various contracts and states CELO can be in.
 
 ## Balance Model
 

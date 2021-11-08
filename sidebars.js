@@ -339,11 +339,11 @@ const sidebars = {
   // ######################################
   integrate: [  
     { type: 'doc', label: 'Integration Guide', id: 'developer-resources/integrations/integrations' },
-    'developer-resources/integrations/general',
-    'developer-resources/integrations/checklist',
-    'developer-resources/integrations/custody',
-    'developer-resources/integrations/listings',
-    'developer-resources/integrations/cloud-hsm',
+    { type: 'doc', label: 'General', id: 'developer-resources/integrations/general' },
+    { type: 'doc', label: 'Checklist', id: 'developer-resources/integrations/checklist' },
+    { type: 'doc', label: 'Custody', id: 'developer-resources/integrations/custody' },
+    { type: 'doc', label: 'Listings', id: 'developer-resources/integrations/listings' },
+    { type: 'doc', label: 'Cloud HSM', id: 'developer-resources/integrations/cloud-hsm' },
   ], 
   // ######################################
   // Learn 
