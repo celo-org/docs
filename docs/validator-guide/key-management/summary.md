@@ -1,7 +1,13 @@
 ---
-title: Summary
+title: Celo Key Management Summary
+description: Introduction to the philosophy and account roles related to key management on Celo.
 slug: /validator-guide/summary
 ---
+# Summary
+
+Introduction to the philosophy and account roles related to key management on Celo.
+
+## Quote
 
 > Crypto is a tool for turning a whole swathe of problems into key management problems. Key management problems are way harder than (virtually all) cryptographers think.
 >

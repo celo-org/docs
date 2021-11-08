@@ -1,6 +1,12 @@
 ---
-title: Running Proxies
+title: Running Proxies on Celo
+description: How to ensure Validator uptime by running proxy nodes.
 ---
+# Running Proxies
+
+How to ensure Validator uptime by running proxy nodes.
+
+## Why run a Proxy?
 
 Validator uptime is essential for the health of the Celo blockchain. To help with validator uptime, operators can use the proxy node, which will provide added security for the validator. It allows the validator to run within a private network, and to communicate to the rest of the Celo network via the proxy.
 
@@ -14,11 +20,11 @@ The communication protocol between the validator and it's proxies implemented in
 
 There are two ways to specify the proxy information to a validator. It can be done on validator startup via the command line argument, or by the rpc api when the validator is running.
 
-### Command Line
+## Command Line
 
 Instructions on how to add proxies via the command line is described in the [Getting Started guide for mainnet](/getting-started/mainnet/running-a-validator-in-mainnet#deploy-a-validator-machine).
 
-### RPC API
+## RPC API
 
 - `istanbul.addProxy(<proxy's internal enode URL>, <proxy's external enode URL>)` can be used on the validator to add a proxy to the validator's proxy set
 - `istanbul.removeProxy(<proxy's internal enode URL>)` can be used on the validator to remove a proxy from the validator's proxy set

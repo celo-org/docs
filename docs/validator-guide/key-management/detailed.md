@@ -1,9 +1,12 @@
 ---
-title: Detailed Role Descriptions
+title: Celo Detailed Role Descriptions
+description: Detailed description of the various account roles found in the Celo protocol with examples of how to designate an account as playing a particular role.
 slug: /validator-guide/summary/detailed
 ---
 
-This page provides a detailed description of the various account roles found in the Celo protocol, as well as small examples of how to designate an account as playing a particular role.
+# Detailed Role Descriptions
+
+Detailed description of the various account roles found in the Celo protocol with examples of how to designate an account as playing a particular role.
 
 ## Celo Accounts
 

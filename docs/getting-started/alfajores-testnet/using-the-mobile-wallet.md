@@ -1,9 +1,10 @@
 ---
 title: Using the Mobile Wallet
+description: How to get started with the Alfajores Testnet using the Celo Mobile wallet.
 ---
+# Mobile Wallet
 
-One easy way to experiment with the Alfajores Testnet is to install the Celo Mobile Wallet. This section explains how to download the wallet and how to get invited onto the network.
-
+How to get started with the Alfajores Testnet using the Celo Mobile wallet.
 ### Getting Started
 
 Since verifying your phone number costs gas, you have to be invited to the platform to have the funds to pay for the verification process. To do so, please visit [celo.org/build/wallet](https://celo.org/build/wallet) and enter your phone number to be messaged an invitation code.

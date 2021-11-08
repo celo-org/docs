@@ -1,14 +1,19 @@
 ---
-title: Getting an Account and Funds
+title: Celo Wallet Testnet Funds
+description: How to fund your Celo wallet account with testnet funds.
 ---
+# Celo Wallet Testnet Funds
 
-## Try the Celo Wallet with a Funded Account
+How to fund your Celo wallet account with testnet funds.
+## Getting Started
 
 To start experimenting with the Alfajores Testnet, you will first need to get a funded account.
 
-{% hint style="warning" %}
+:::warning
+
 Alfajores Testnet accounts hold no real world economic value. The testnet's data may be reset on a regular basis. This will erase your accounts, their balance and your transaction history.
-{% endhint %}
+
+:::
 
 Getting an account is really being given or generating a public-private keypair. This gives you control of balances accessible with the address corresponding to that key. For CELO, this is a native balance stored at the account whose address matches your key. For Celo Dollars, an ERC-20 token, the StableCoin smart contract maintains in its storage a mapping of the balance of each address.
 

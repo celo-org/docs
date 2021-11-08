@@ -1,12 +1,15 @@
 ---
-title: Running a Validator in Baklava
+title: Run Baklava Testnet Validator on Celo
+description: How to get a Validator node running on the Celo Mainnet (Celo's Node Operator Testnet).
 ---
 
-The Baklava Testnet is a non-production Testnet for the Validator community. It serves several purposes:
+# Run Baklava Testnet Validator
 
-- **Operational excellence**: Build familiarity with the processes used on Mainnet, and to verify the security and stability of your infrastructure with the new software.
-- **Detecting vulnerabilities**: Discover bugs in new software releases before they reach Mainnet.
-- **Testing ground**: Experiment with new infrastructure configurations in a low-risk environment.
+How to get a Validator node running on the Celo Baklava Testnet (Celo's Node Operator Testnet).
+
+## Why run a Baklava Testnet Validator?
+
+The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/getting-started/mainnet).
 
 :::info
 
@@ -15,8 +18,6 @@ If you would like to keep up-to-date with all the news happening in the Celo com
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
 
 :::
-
-The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/getting-started/mainnet).
 
 :::info
 

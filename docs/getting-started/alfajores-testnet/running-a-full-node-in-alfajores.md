@@ -1,10 +1,24 @@
 ---
-title: Running a Full Node in Alfajores
+title: Run an Alfajores Full Node on Celo
+description: How to run a full node on the Alfajores Network using a prebuilt Docker image.
 ---
+# Run an Alfajores Full Node
 
-This section explains how to get a full node running on the [Alfajores Network](/getting-started/alfajores-testnet), using a Docker image that was built for this purpose.
+How to run a full node on the [Alfajores Network](/getting-started/alfajores-testnet) using a prebuilt Docker image.
+
+## What is a Full Node?
+
+Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives).
+
+When a light client sends transactions, they may include a gateway fee to be paid to the node that gossips transactions to the other full nodes and validators.
+
+For this reason, despite the fact that Celo uses a proof-of-stake protocol, users can earn cryptocurrency without first having to own any, simply by running a full node.
+
+:::tip
 
 If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/getting-started/hosted-nodes) documentation.
+
+:::
 
 :::info
 
@@ -13,12 +27,6 @@ If you would like to keep up-to-date with all the news happening in the Celo com
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
 
 :::
-
-Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives).
-
-When a light client sends transactions, they may include a gateway fee to be paid to the node that gossips transactions to the other full nodes and validators.
-
-For this reason, despite the fact that Celo uses a proof-of-stake protocol, users can earn cryptocurrency without first having to own any, simply by running a full node.
 
 :::warning
 

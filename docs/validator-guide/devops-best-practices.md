@@ -1,6 +1,10 @@
 ---
-title: DevOps Best Practices
+title: Celo DevOps Best Practices
+description: Best practices for running cloud infrastructure for Celo nodes and services.
 ---
+# DevOps Best Practices
+
+Best practices for running cloud infrastructure for Celo nodes and services.
 
 ## Cloud Infrastructure Best Practices
 
