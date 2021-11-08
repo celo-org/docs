@@ -1,7 +1,13 @@
 ---
-title: Transactions Overview
+title: Celo Transactions Overview
+description: Introduction to Celo transactions, gas prices, and gateway fees.
 slug: /celo-codebase/protocol/transactions
 ---
+# Transactions
+
+Introduction to Celo transactions, gas prices, and gateway fees.
+
+## Celo vs Ethereum Transactions
 
 Transactions in the Celo protocol include payments, contract calls, and other operation which modifies state. They are similar to Ethereum transaction with the following key differences.
 

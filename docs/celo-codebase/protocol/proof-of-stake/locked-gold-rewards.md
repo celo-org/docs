@@ -1,11 +1,20 @@
 ---
-title: Rewards to Locked Gold
+title: Celo Rewards to Locked Gold
 slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards
+description: How to earn locked gold rewards and adjust the rate for voting participation, target schedule, and deductions.
 ---
+# Rewards to Locked Gold
+
+How to earn locked gold rewards and adjust the rate for voting participation, target schedule, and deductions.
+## Introduction to Locked Gold Rewards
 
 Holders of Locked Gold that voted in the previous epoch for a group that elected one or more validators and have activated their votes are eligible for rewards. Rewards are added directly to the Locked Gold voting for that group, and re-applied as votes for that same group, so future rewards are compounded without the account holder needing to take any action. The voting process is described further [here](/celo-codebase/protocol/proof-of-stake/locked-gold.md).
 
-Rewards to Locked Gold are totally independent from validator and validator group rewards, and are not subject to the ‘group share’.
+:::tip
+
+Rewards to Locked Gold are totally independent from validator and validator group rewards, and are not subject to the **group share**.
+
+:::
 
 ![](https://storage.googleapis.com/celo-website/docs/locked-gold-rewards.jpg)
 

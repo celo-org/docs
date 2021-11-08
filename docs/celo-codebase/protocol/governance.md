@@ -1,6 +1,11 @@
 ---
 title: Governance
+description: Overview of Celo governance and how the network is managed using the stakeholder proposal process.
 ---
+
+Overview of Celo governance and how the network is managed using the stakeholder proposal process.
+
+## What is Celo Governance?
 
 Celo uses a formal on-chain governance mechanism to manage and upgrade the protocol such as for upgrading smart contracts, adding new stable currencies, or modifying the reserve target asset allocation. All changes must be agreed upon by CELO holders. A quorum threshold model is used to determine the number of votes needed for a proposal to pass.
 

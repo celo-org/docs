@@ -1,15 +1,32 @@
 ---
-title: Add more stable assets
+title: Add Stable Assets to Celo
+description: Overview of the requirements and steps to add a new stable asset to the Celo platform.
 ---
+# Add Stable Assets
 
-This document outlies the requirements and steps to add a new stable asset to the Celo platform. Assuming we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/celo-codebase/protocol/stability/doto.md).
+Overview of the requirements and steps to add a new stable asset to the Celo platform.
+
+:::tip Note
+
+This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/celo-codebase/protocol/stability/doto.md).
+
+:::
 
 ## Requirements
 
-1. Liquidity: the asset X has to be liquidly traded against CELO, in a CELO/X ticker. In absence of that, X has to be liquidly traded, including weekends, against well known assets that trade 24/7, like BTC or ETH, such that the price of X with respect to Celo can be inferred. In this second case, an implicit pair can be calculated for the oracle reports.
-2. Determine pre-mint addresses and amounts: It is possible to pre-mint a fixed amount at the time of launching a new stable asset, good candidates to receive the pre-mint are the community fund and other entities commited to distribute this initial allocation to grant recipients and liquidity providers.
+**Liquidity**
+
+The asset X has to be liquidly traded against CELO, in a CELO/X ticker. In absence of that, X has to be liquidly traded, including weekends, against well known assets that trade 24/7, like BTC or ETH, such that the price of X with respect to Celo can be inferred. In this second case, an implicit pair can be calculated for the oracle reports.
+
+**Determine pre-mint addresses and amounts**
+
+It is possible to pre-mint a fixed amount at the time of launching a new stable asset, good candidates to receive the pre-mint are the community fund and other entities commited to distribute this initial allocation to grant recipients and liquidity providers.
+
+:::tip
 
 A good criteria to a successfully decide a pre-mint amount is to check by how much it would affect the reserve collateralization ratio, this is, the ratio of all stable assets, divided by all the reserve holdings. Reserve information, as well as the collateralization ration can be found on the [Reserve website](https://celoreserve.org/).
+
+:::
 ## Procedure
 
 ### Including contracts on the registry
@@ -63,4 +80,8 @@ Adding a new stable asset involves updating many parts of the tooling, such as:
 
 [^1] There are opened issues trying to de-couple the addition of new assets to the reserve to the release cycle.
 
+:::note
+
 [^2] Please note this example proposal also includes freezing, this is because, at the time of writing (22-march-2021), the tooling for proposing a contract release doesn't support freezing those contracts on the same proposal. Proposals shall not be modified manually given that the tool is meant to run verifications.
+
+:::

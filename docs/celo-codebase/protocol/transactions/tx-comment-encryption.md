@@ -1,25 +1,30 @@
 ---
-title: Encrypted Payment Comments
+title: Celo Encrypted Payment Comments
+description: Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
 ---
+# Encrypted Payment Comments
 
-### **Overview**
+Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
+### Introduction to Comment Encryption
 
-As part of Celo’s identity protocol, a public encryption key is stored along with a user’s address in the `Accounts` contract. Both the address key pair and the encryption key pair are derived from the backup phrase. When sending a transaction the encryption key of the recipient is retrieved when getting his or her address. The comment is then encrypted using a 128 bit hybrid encryption scheme \(ECDH on secp256k1 with AES-128-CTR\). This system ensures that comments can only be read by the sending and receiving parties and that messages will be recovered when restoring a wallet from its backup phrase.
+As part of Celo’s identity protocol, a public encryption key is stored along with a user’s address in the `Accounts` contract. 
 
-### **Comment Encryption Technical Details**
+Both the address key pair and the encryption key pair are derived from the backup phrase. When sending a transaction the encryption key of the recipient is retrieved when getting his or her address. The comment is then encrypted using a 128 bit hybrid encryption scheme \(ECDH on secp256k1 with AES-128-CTR\). This system ensures that comments can only be read by the sending and receiving parties and that messages will be recovered when restoring a wallet from its backup phrase.
+
+### Comment Encryption Technical Details
 
 A 128 bit randomly generated session key, sk, is generated and used to symmetrically encrypt the comment. sk is asymmetrically encrypted to the sender and to the recipient.
 
 ‌`Encrypted = ECIES(sk, to=pubSelf) | ECIES(sk, to=pubOther) | AES(ke=sk, km=sk, comment)`
 
-#### ‌**Symmetric Encryption \(AES-128-CTR\)**
+#### ‌Symmetric Encryption \(AES-128-CTR\)
 
 - Takes encryption key, ke, and MAC key, km, and the data to encrypt, plaintext
 - Cipher: AES-128-CTR using a randomly generated iv
 - Authenticate iv \| ciphertext using HMAC with SHA-256 and km
 - Return iv \| ciphertext \| mac
 
-#### **Asymmetric Encryption \(ECIES\)**
+#### Asymmetric Encryption \(ECIES\)
 
 1.  Takes data to encrypt, plaintext, and the public key of the recipient, pubKeyTo
 2.  Generate an ephemeral keypair, ephemPubKey and ephemPrivKey

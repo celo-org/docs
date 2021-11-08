@@ -1,12 +1,18 @@
 ---
-title: Gas Pricing
+title: Celo Gas Pricing
+description: Introduction to gas prices, calculations, transactions, and fees on the Celo network. 
 ---
 
+# Gas Pricing
+
+Introduction to gas prices, calculations, transactions, and fees on the Celo network. 
 ## Gas Price Minimum
 
 Celo uses a gas market based on [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). The protocol establishes a **gas price minimum** that applies to all transactions regardless of which validator processes them.
 
 The gas price minimum will respond to demand, increasing during periods of sustained demand, but allowing temporary spikes in gas demand without price shocks. The Celo protocol aims to have blocks filled at the `target_density`, a certain proportion of the total block gas limit. When blocks are being filled more than the target, the gas price minimum will be raised until demand subsides. If blocks are being filled at less than the target rate, the gas price minimum will decrease until demand rises. The rate of change is determined by a governable parameter, `adjustment_speed`.
+
+## Calculating Gas Price
 
 In the Celo protocol, the gas price minimum for the next block is calculated based on the current block:
 

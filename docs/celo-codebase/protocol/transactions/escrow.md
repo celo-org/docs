@@ -1,6 +1,11 @@
 ---
-title: Escrow
+title: Celo's Escrow Contract
+description: Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
 ---
+# Escrow 
+
+Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
+## What is the Escrow Contract?
 
 The `Escrow` contract utilizes Celo’s Lightweight identity feature to allow users to _send payments to other users who don’t yet have a public/private key pair or an address_. These payments are stored in this contract itself and can be either withdrawn by the intended recipient or reclaimed by the sender. This functionality supports _both_ versions of Celo’s lightweight identity: identifier-based \(such as a phone number to address mapping\) and privacy-based. This gives applications that intend to use this contract some flexibility in deciding which version of identity they prefer to use.
 
