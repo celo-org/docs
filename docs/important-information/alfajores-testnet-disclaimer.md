@@ -1,6 +1,12 @@
 ---
-title: Alfajores Testnet Disclaimer
+title: Celo Alfajores Testnet Disclaimer
+description: Important considerations, warnings, and legal regulations for users of the Alfajores Testnet.
 ---
+# Alfajores Testnet Disclaimer
+
+Important considerations, warnings, and legal regulations for users of the Alfajores Testnet.
+
+## Terms and Conditions
 
 By using, and contributing to, the Celo Alfajores Testnet, you \(the User\) agree to these terms and acknowledge and agree that the Celo protocol and platform is in development and that use of the Alfajores Testnet is entirely at the User’s sole risk. You also agree to adhere to the [Celo Community Code of Conduct](https://celo.org/code-of-conduct).
 

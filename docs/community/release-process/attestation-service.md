@@ -1,6 +1,16 @@
+---
+title: Celo Attestation Service Release Process
+description: Details of the release process for updating the attestation service on the Celo platform.
+---
 # Attestation Service Release Process
 
+Details of the release process for updating the attestation service on the Celo platform.
+
+:::tip note
+
 This release process will be adopted from Attestation Service v1.2.0 onwards.
+
+:::
 
 ## Versioning
 

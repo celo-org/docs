@@ -1,10 +1,10 @@
 ---
 title: Celo Highlights
-description: Summary of features and metrics supporting the Celo ecosystem.
+description: Summary of features and metrics driving the Celo platform.
 ---
 # Highlights
 
-Summary of features and metrics supporting the Celo ecosystem.
+Summary of features and metrics driving the Celo platform.
 
 ## Features
 
