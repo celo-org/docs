@@ -1,6 +1,11 @@
 ---
 title: Optics
+description: Introduction to Optics, it's core concepts, architecture, process, and implementation.
 ---
+# Optics
+
+Introduction to Optics, it's core concepts, architecture, process, and implementation.
+## What is Optics?
 
 Optics is a new design for radically cheaper cross-chain communication without header verification. We expect operating Optics to cut 90% of gas costs compared to a traditional header relay. To accomplish this, we took inspiration from optimistic systems (a la Optimistic Roll-ups). Optics features many of the features we prize in an optimistic mechanism, like public verification, low gas fees, broad participation, but has a slightly different security model. 
 

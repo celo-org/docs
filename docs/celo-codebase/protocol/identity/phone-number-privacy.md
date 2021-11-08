@@ -1,6 +1,11 @@
 ---
 title: Phone Number Privacy
+description: How Celo's identity protocol allows users to associate their phone number with one or more addresses on the Celo blockchain.
 ---
+# Phone Number Privacy
+
+How Celo allows users to associate their phone number with addresses on the Celo blockchain. 
+## Identity Protocol
 
 Celo's [identity protocol](..) allows users to associate their phone number with one or more addresses on the Celo blockchain. This allows users to find each other on the Celo network using phone number instead of cumbersome hexadecimal addresses. The Oblivious Decentralized Identifier Service (ODIS) was created to help preserve the privacy of phone numbers and addresses.
 
