@@ -1,10 +1,10 @@
 ---
 title: Celo Milestones
-description: The Celo ecosystem continues to develop and is driven by a series of exciting milestones.
+description: Important milestones for the Celo protocol and ecosystem.
 ---
 # Milestones
 
-The Celo ecosystem continues to develop and is driven by a series of exciting milestones.
+Important milestones for the Celo protocol and ecosystem.
 ## Deutsche Telekom
 
 **Deutsche Telekom** [made](https://medium.com/celoorg/deutsche-telekom-joins-celo-ecosystem-as-the-first-mobile-carrier-amid-launch-of-ceur-stablecoin-2b79aae38540) a strategic purchase of the Celo native digital asset (CELO) and joined the Celo Alliance for Prosperity as the first mobile carrier member. They also became a validator on the Celo network. This partnership is very aligned with Celo’s mission and the services Deutsche Telekom provides its customers worldwide, the majority of which primarily use their phones to access financial services. By building on Celo’s mobile-first platform, mobile carriers like Deutsche Telekom are able to seamlessly integrate mobile-friendly blockchain-based solutions and serve customers in new, meaningful ways. Deutsche Telekom is leading in this effort, and we’re excited to see how mobile carriers and other organizations take advantage of all that blockchain and cryptocurrency has to offer. 

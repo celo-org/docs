@@ -1,6 +1,15 @@
-# Celo Developer Onboarding
+---
+title: Celo Develoepr Onboarding
+description: Start your journey toward developing decentralized applications on the Celo platform. 
+---
 
-Learn the basics of Celo and start your journey toward developing decentralized applications on the Celo platform. Throughout this program, you will learn about the Celo mission, platform architecture, and how you can stay connected with our community. You’ll also be introduced to our developer ecosystem and make use of our tools and resources to build and deploy your first decentralized application on the Celo platform.
+# Developer Onboarding
+
+Start your journey toward developing decentralized applications on the Celo platform. 
+
+## What to expect
+
+These resources help you learn about the Celo mission, platform architecture, and how you can stay connected with our community. You’ll also be introduced to our developer ecosystem and make use of our tools and resources to build and deploy your first decentralized application on the Celo platform.
 
 ## Prerequisite knowledge
 

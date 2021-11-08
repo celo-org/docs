@@ -1,10 +1,10 @@
 ---
 title: Celo Whitepapers
-description: Celo Whitepapers describe the protocol, economics, and social impact of the Celo protocol.
+description: Celo Whitepapers describe Celo's protocol, economics, and social impact.
 ---
 # Whitepapers
 
-Celo Whitepapers describe the protocol, economics, and social impact of the Celo protocol.
+Celo Whitepapers describe Celo's protocol, economics, and social impact.
 
 ## Protocol
 

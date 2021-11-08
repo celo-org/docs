@@ -1,8 +1,9 @@
 ---
 title: Carbon Offsetting Fund
 slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund
-description: 
+description: Introduction to the Carbon Offsetting fund, its purpose, and governance process.
 ---
+# Carbon Offsetting Fund
 
 Introduction to the Carbon Offsetting fund, its purpose, and governance process.
 

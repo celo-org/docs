@@ -1,11 +1,11 @@
 ---
 title: Consensus Introduction
-description: Introduction to Celo's consensus protocol and its network validators.
+description: Overview of Celo's consensus protocol and network validators.
 slug: /celo-codebase/protocol/consensus
 ---
 # Consensus 
 
-Introduction to Celo's consensus protocol and its network validators.
+Overview of Celo's consensus protocol and network validators.
 
 ## Protocol
 

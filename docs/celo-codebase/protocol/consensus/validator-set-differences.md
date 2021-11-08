@@ -1,11 +1,11 @@
 ---
 title: Validator Set Differences
-description: How validator sets are elected and managed using the Celo protocol.
+description: How validator sets are elected and managed with the Celo protocol.
 ---
 
 # Validator Set Differences
 
-How validator sets are elected and managed using the Celo protocol.
+How validator sets are elected and managed with the Celo protocol.
 
 ## Computing Set Differences
 
