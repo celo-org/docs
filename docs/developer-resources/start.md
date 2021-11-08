@@ -1,9 +1,12 @@
 ---
-title: Start
+title: Build on Celo
+description: List of examples and guides to help you start building on Celo.
 slug: /developer-guide/start
 ---
 
-The following examples and guides will help you start building on Celo.
+# Build on Celo
+
+List of examples and guides to help you start building on Celo.
 
 ## Interacting with Smart Contracts and Celo Networks
 

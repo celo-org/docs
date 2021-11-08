@@ -3,7 +3,15 @@ title: Integrating WalletConnect into your DApp
 slug: /developer-guide/start/wallet-connect
 ---
 
-This tutorial will be a basic guide on integrating [WalletConnect V2](https://walletconnect.org/) support into your decentralised application (DApp). Integrating WalletConnect support means users with Valora, [Celo Wallet](https://celowallet.app) and other WalletConnect compatible wallets can interact with your DApp.
+# Ingtegrating walleConnect
+
+How to integrate [WalletConnect V2](https://walletconnect.org/) support into your decentralised application (DApp). 
+
+:::tip
+
+Integrating WalletConnect support means users with Valora, [Celo Wallet](https://celowallet.app) and other WalletConnect compatible wallets can interact with your DApp.
+
+:::
 
 :::info
 

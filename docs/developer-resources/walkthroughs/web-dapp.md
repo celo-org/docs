@@ -1,9 +1,14 @@
 ---
 title: React based DApp
+description: The basics of developing a decentralised application (DApp) on Celo. 
 slug: /developer-guide/start/web-dapp
 ---
+# React Based DApp
 
-This tutorial will be a basic guide on developing a decentralised application (DApp) on top of Celo. We'll be developing against one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](https://docs.celo.org/celo-owner-guide/voting-governance).
+The basics of developing a decentralised application (DApp) on Celo. 
+## Getting Started
+
+This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](https://docs.celo.org/celo-owner-guide/voting-governance).
 
 ## Foreword
 

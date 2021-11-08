@@ -1,9 +1,16 @@
 ---
-title: DappKit Truffle Box
+title: DAppKit Truffle Box
+description: Use a Truffle Box to start developing React Native dapps on Celo. 
 slug: /developer-guide/start/hello-mobile
 ---
 
-This tutorial includes a walk through of a truffle box to get you started with developing React Native dapps on Celo. We will touch on several key concepts in Celo dapp development including:
+# DAppKit Trufflebox
+
+Use a Truffle Box to start developing React Native dapps on Celo. 
+## Getting Started
+
+We will touch on several key concepts in Celo dapp development including:
+
  - Creating accounts (private keys)
  - Basic smart contract development in Solidity
  - Sending transactions to a Celo network

@@ -1,7 +1,11 @@
 ---
-title: Setup
+title: Celo DAppKit Setup
+description: How to configure and install DAppKit to begin building on Celo.
 slug: /developer-guide/dappkit/setup
 ---
+# Setup
+
+How to configure and install DAppKit to begin building on Celo.
 
 ## Quick Start
 

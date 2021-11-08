@@ -1,13 +1,26 @@
 ---
 title: Migrating to ContractKit v1.0
+description: How to migrate to the newest version of ContractKit and make use of its latest features.
 slug: /developer-guide/contractkit/migrating-to-contractkit-v1
 ---
 
+# Migrating to ContractKit v1.0
+
+How to migrate to the newest version of ContractKit and make use of its latest features.
+
+## What is ContractKit version v1.0?
+
 cLabs recently released [ContractKit version 1.0.0](https://medium.com/celoorg/contractkit-1-0-0-9c0412462d45). In it, the original ContractKit package has been split into several separate packages that all make up the Celo SDK. This document explains the key differences and shows you how you can start using the updated SDK.
+
+
+:::caution
 
 If you are using a previous version of ContractKit (anything below 1.0.0), you can continue using that version and you will only need to make the following changes when you upgrade.
 
-The main benefit of using the new version include:
+:::
+
+**The main benefit of using the new version include:**
+
  - Reduced bundle size
  - Better Typescript support
  - Improved maintenance by making it easier to use other libraries

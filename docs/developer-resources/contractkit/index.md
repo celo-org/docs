@@ -1,8 +1,15 @@
 ---
 title: Celo ContractKit
+description: Overview of ContractKit, its features, purpose, and resources to help you get started.
 slug: /developer-guide/contractkit
 ---
 import PageRef from '@components/PageRef'
+
+# ContractKit
+
+Overview of ContractKit, its features, purpose, and resources to help you get started.
+
+## What is ContractKit?
 
 ContractKit is a library to help developers and validators to interact with the celo-blockchain and is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
 

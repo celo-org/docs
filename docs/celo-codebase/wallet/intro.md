@@ -1,4 +1,10 @@
+---
+title: Running the Wallet Locally
+description: How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
+---
 # Running the Wallet Locally
+
+How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
 
 ## Setup
 

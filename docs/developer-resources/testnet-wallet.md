@@ -6,8 +6,7 @@ description: How to create and fund a wallet to use for developing Celo dApps.
 # Setup Testnet Wallet
 
 How to create and fund a wallet to use for developing Celo dApps.
-
-____
+## Getting Started
 
 While developing and deploying dApps on Celo, it’s helpful to have a wallet prepared with funds to pay for any transactions you make on the blockchain. These can be set up using either real or test funds, and this allows application developers and users to interact Celo applications more easily.
 

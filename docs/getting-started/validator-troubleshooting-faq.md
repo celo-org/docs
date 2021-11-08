@@ -1,13 +1,13 @@
 ---
 title: Celo Validator Troubleshooting FAQ
-description: Answers to frequently asked questions about troubleshooting isses as a Validator.
+description: Answers to frequently asked questions while troubleshooting isses as a Validator.
 id: validator-troubleshooting-faq
 slug: /getting-started/validator-troubleshooting-faq
 ---
 
-# Validator Troubleshooting FAQ
+# Validator FAQ
 
-Answers to frequently asked questions about troubleshooting isses as a Validator.
+Answers to frequently asked questions while troubleshooting isses as a Validator.
 
 
 :::tip

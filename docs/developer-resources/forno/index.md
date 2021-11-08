@@ -1,7 +1,12 @@
 ---
-title: Forno
+title: Celo Forno
+description: How to connect to Celo without running a full node using Forno.
 slug: /developer-guide/forno
 ---
+# Forno
+
+How to connect to Celo without running a full node using Forno.
+## What is Forno?
 
 Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 

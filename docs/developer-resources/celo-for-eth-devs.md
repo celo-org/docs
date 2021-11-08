@@ -1,9 +1,19 @@
 ---
 title: Celo for Ethereum Developers
+description: Overview of the similarities and differences between the Celo and Ethereum blockchains.
 slug: /developer-guide/celo-for-eth-devs
 ---
 
+# Celo for Ethereum Developers
+
+Overview of the similarities and differences between the Celo and Ethereum blockchains.
+
+
+:::tip
+
 For a general overview of the Celo network and architecture, see [the Celo Overview page](/developer-resources/overview.md).
+
+:::
 
 ## What is Celo's Relationship to Ethereum?
 

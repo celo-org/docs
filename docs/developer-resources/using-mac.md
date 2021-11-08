@@ -1,15 +1,18 @@
 ---
-title: Using Mac
-description: Installation and development requirements for macOS
+title: Celo Local Development Environment Using Mac
+description: How to set up a local development environment for Celo using Mac.
 ---
+# Using Mac
 
-Before building on Celo, you need to set up a development environment to make sure you have the proper tools to build an application. This setup includes a combination of general development tools, Celo specific tools, and mobile development tools.
+How to set up a local development environment for Celo using Mac.
 
 :::tip
 
 While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer-guide/start/develop-on-windows).
 
 :::
+
+Before building on Celo, you need to set up a development environment to make sure you have the proper tools to build an application. This setup includes a combination of general development tools, Celo specific tools, and mobile development tools.
 
 ## Web2 Prerequisites
 

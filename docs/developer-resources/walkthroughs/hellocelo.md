@@ -2,11 +2,11 @@
 title: Sending CELO & cUSD
 slug: /developer-guide/start/hellocelo
 ---
+# Send CELO & cUSD
 
-In this guide we are going to learn how to connect to the Celo test network and tranfer tokens
-using ContractKit.
+How to connect to the Celo test network and tranfer tokens using ContractKit.
 
-# Hello Celo: sending value with Celo
+## Hello Celo: sending value with Celo
 
 In this guide we are going to write a Node.js script to introduce some of the basic concepts that are important to understand how Celo works. This will get us started with connecting to the Celo network and learning how to develop more advanced applications.
 

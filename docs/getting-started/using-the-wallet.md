@@ -1,10 +1,20 @@
 ---
-title: Using the Wallet
+title: Using the Celo Wallet
+description: How to set up and use the Alfajores Testnet Celo Wallet. 
 id: using-the-wallet
 slug: /getting-started/using-the-wallet
 ---
 
-This section explains how to use the Alfajores Testnet Celo Wallet. You will need either an account or an invitation in order to get the Celo Wallet in order to verify your phone number.
+# Using the Wallet
+
+How to set up and use the Alfajores Testnet Celo Wallet. 
+
+
+:::caution
+
+You will need either an account or an invitation in order to get the Celo Wallet in order to verify your phone number.
+
+:::
 
 ### Getting an Invitation Code
 

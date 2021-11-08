@@ -182,8 +182,8 @@ const sidebars = {
           type: 'category',
           label: 'Local Environment',
           items: [
-            'developer-resources/develop-on-windows',
-            'developer-resources/using-mac',
+            { type: 'doc', label: 'Using Windows', id: 'developer-resources/develop-on-windows',},
+            { type: 'doc', label: 'Using Mac', id: 'developer-resources/using-mac',},
           ]
         },
         {
@@ -196,24 +196,24 @@ const sidebars = {
               type: 'category',
               label: 'ContractKit',
               items: [
-                'developer-resources/contractkit/index',
-                'developer-resources/contractkit/setup',
-                'developer-resources/contractkit/notes-web3-with-contractkit',
-                'developer-resources/contractkit/contracts-wrappers-registry',
-                'developer-resources/contractkit/odis',
-                'developer-resources/contractkit/migrating-to-contractkit-v1',
+                { type: 'doc', label: 'Overview', id: 'developer-resources/contractkit/index',},
+                { type: 'doc', label: 'Setup', id: 'developer-resources/contractkit/setup',},
+                { type: 'doc', label: 'Use Web3 from ContracKit', id: 'developer-resources/contractkit/notes-web3-with-contractkit',},
+                { type: 'doc', label: 'Wrappers & Registry Contracts', id: 'developer-resources/contractkit/contracts-wrappers-registry',},
+                { type: 'doc', label: 'Query On-Chain Identifiers with ODIS', id: 'developer-resources/contractkit/odis',},
+                { type: 'doc', label: 'Migrate to ContractKit v1', id: 'developer-resources/contractkit/migrating-to-contractkit-v1',},
               ]
             },
             {
               type: 'category',
               label: 'DAppKit',
               items: [
-                'developer-resources/dappkit/index',
-                'developer-resources/dappkit/setup',
-                'developer-resources/dappkit/usage',
+                { type: 'doc', label: 'Overview', id: 'developer-resources/dappkit/index',},
+                { type: 'doc', label: 'Setup', id: 'developer-resources/dappkit/setup',},
+                { type: 'doc', label: 'Usage', id: 'developer-resources/dappkit/usage',},
               ]
             },
-            'developer-resources/forno/index',
+            { type: 'doc', label: 'Forno', id: 'developer-resources/forno/index',},
           ],
         },
         {

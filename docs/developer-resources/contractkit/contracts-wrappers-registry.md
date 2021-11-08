@@ -1,7 +1,12 @@
 ---
-title: Celo Core Contracts. Wrapper / Registry
+title: Celo Core Contracts (Wrapper/Registry)
+description: How to interact with CELO assets using the wrapper and registry Celo Core Contracts.
 slug: /developer-guide/contractkit/contracts-wrappers-registry
 ---
+
+# Core Contracts (Wrapper/Registry) 
+
+How to interact with CELO assets using the wrapper and registry Celo Core Contracts.
 
 ## Interacting with CELO & cUSD
 
