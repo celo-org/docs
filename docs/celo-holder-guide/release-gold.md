@@ -1,9 +1,14 @@
 ---
-title: Understanding ReleaseGold
+title: Celo ReleaseGold
+description: Introduction to ReleaseGold including examples, use cases, and FAQ.
 slug: /celo-owner-guide/release-gold
 ---
 
-## Introduction
+# Understanding ReleaseGold
+
+Introduction to ReleaseGold including examples, use cases, and FAQ. 
+
+## What is ReleaseGold?
 
 [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) is a smart contract that enables CELO to be released programmatically to a beneficiary over a period of time. In a deployed `ReleaseGold` smart contract, only the CELO balance that has been released according to the release schedule can be withdrawn by the contract’s beneficiary. The unreleased CELO cannot be withdrawn, but can be used for specific functions in Celo’s Proof of Stake protocol, namely voting and validating.
 
@@ -11,7 +16,11 @@ The intent of the `ReleaseGold` contract is to allow beneficiaries to participat
 
 Increasing the volume of CELO that can be used in Celo’s Proof of Stake consensus promotes network security and even greater decentralization. See below for details on specific features of the `ReleaseGold` contract, as well as how they are implemented. The [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) includes documentation, and technical readers are encouraged to find further details there.
 
-Warning: please do not send any ERC20 token other han CELO or cUSD to a Release Gold contract, as it will not be able to be transfered out of the contract per [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L164).
+:::warning
+
+Please do not send any ERC20 token other han CELO or cUSD to a Release Gold contract, as it will not be able to be transfered out of the contract per [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L164).
+
+:::
 
 ### Example
 

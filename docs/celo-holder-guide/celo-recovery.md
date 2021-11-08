@@ -1,9 +1,12 @@
 ---
-title: Recovering ETH or ERC-20 tokens sent to a Celo Address
+title: Recover CELO from an Ethereum Address
+description: How to recover ETH or ERC-20 tokens if you accidentally transferred them to a CELO (previously Celo Gold address.
 slug: /celo-owner-guide/celo-recovery
 ---
 
-In this guide, steps are outlined to help you recover your ETH or ERC-20 tokens if you accidentally transferred them to a [CELO (previously Celo Gold)](../overview.md#background-and-key-concepts) address.
+# Recover CELO from an Ethereum Address
+
+How to recover ETH or ERC-20 tokens if you accidentally transferred them to a [CELO (previously Celo Gold)](../overview.md#background-and-key-concepts) address.
 
 ## Prerequisites
 

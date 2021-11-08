@@ -325,14 +325,14 @@ const sidebars = {
   // ######################################
   own: [  
     { type: 'doc', label: 'Owner Guide', id: 'celo-holder-guide/quick-start' },
-    'celo-holder-guide/cusd',
-    'celo-holder-guide/release-gold',
-    'celo-holder-guide/voting-validators',
+    { type: 'doc', label: 'Asset Management', id: 'celo-holder-guide/cusd' },
+    { type: 'doc', label: 'Release Gold', id: 'celo-holder-guide/release-gold' },
+    { type: 'doc', label: 'Voting for Validators', id: 'celo-holder-guide/voting-validators', },
     { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
-    'celo-holder-guide/governance-cheat-sheet',
-    'celo-holder-guide/eth-recovery',
-    'celo-holder-guide/celo-recovery',
-    'celo-holder-guide/celo-exchange-bot'
+    { type: 'doc', label: 'Governance Cheat Sheet', id: 'celo-holder-guide/governance-cheat-sheet', },
+    { type: 'doc', label: 'ETH Recovery', id: 'celo-holder-guide/eth-recovery', },
+    { type: 'doc', label: 'CELO Recovery', id: 'celo-holder-guide/celo-recovery', },
+    { type: 'doc', label: 'Exchange Celo Assets', id: 'celo-holder-guide/celo-exchange-bot', },
   ], 
     // ######################################
   // Integration 
