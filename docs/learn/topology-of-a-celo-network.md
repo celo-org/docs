@@ -1,11 +1,11 @@
 ---
 title: Celo Network Topology
-description: Overview of the Celo Network topology including validators, full nodes, light clients, and wallets.
+description: Introduction to the Celo Network's topology including validators, full nodes, light clients, and wallets.
 ---
 
 # Topology of a Celo Network
 
-Overview of the Celo Network topology including validators, full nodes, light clients, and wallets.
+Introduction to the Celo Network's topology including validators, full nodes, light clients, and wallets.
 
 ## What is the Celo Network Topology?
 

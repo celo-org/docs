@@ -6,7 +6,7 @@ slug: /developer-guide/celo-dapp-gallery
 
 # Celo DApp Gallery
 
-List of featured DApp examples to help you start building on Celo.
+List of featured DApp examples to help you learn more about Celo.
 
 :::tip
 

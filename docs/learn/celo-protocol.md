@@ -1,10 +1,10 @@
 ---
 title: The Celo Protocol
-description: Overview of the Celo Protocol's consensus, governance, incentives, and key features.
+description: Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 ---
 # The Celo Protocol
 
-Overview of the Celo Protocol's consensus, governance, incentives, and key features.
+Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 
 ## What is the Celo Protocol?
 
