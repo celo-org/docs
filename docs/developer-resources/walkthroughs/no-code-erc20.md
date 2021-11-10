@@ -1,5 +1,5 @@
 ---
-title: Mint & Deploy a Token
+title: Deploy & Mint a Token
 description: How to deploy an ERC20 token contract to Celo.
 ---
 
