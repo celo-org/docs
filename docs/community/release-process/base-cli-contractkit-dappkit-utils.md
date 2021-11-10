@@ -1,4 +1,12 @@
-# Release Process for Celocli and ContractKit
+---
+title: Celo Release Process for CeloCLI and ContractKit
+description: Details of the release process for updating CeloCLI and ContractKit on the Celo platform.
+---
+# Release Process for CeloCLI and ContractKit
+
+Details of the release process for updating CeloCLI and ContractKit on the Celo platform.
+
+___
 
 ## Versioning
 

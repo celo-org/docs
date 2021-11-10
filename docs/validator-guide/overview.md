@@ -1,7 +1,13 @@
 ---
-title: Overview
+title: Celo Validator Guide
+description: Collection of resources to support Validators on the Celo network.
 ---
 # Validator Guide
+
+Collection of resources to support Validators on the Celo network.
+
+___
+## Validator Information
 
 In this section you will find information about:
 

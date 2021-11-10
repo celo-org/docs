@@ -2,7 +2,14 @@
 title: Glossary
 id: glossary
 slug: /getting-started/glossary
+description: List of key terms related to the Celo platform, networks, tools, and blockchain technology.
 ---
+
+# Glossary
+
+List of key terms related to the Celo platform, networks, tools, and blockchain technology.
+
+___
 
 ## Account
 

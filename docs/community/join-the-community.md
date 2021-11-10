@@ -1,6 +1,14 @@
+---
+title: Join the Celo Community
+description: Find Celo on social media, contribute to the codebase, or chat with the community.
+---
 # Join the Community
 
-## **Follow**
+Find Celo on social media, contribute to the codebase, or chat with the community.
+
+___
+
+## Follow
 
 Follow on Social Media to learn more about Celo.
 
@@ -16,7 +24,7 @@ Follow on Social Media to learn more about Celo.
 * [Reddit](https://www.reddit.com/r/celo/)
 * [Telegram](https://t.me/celoplatform)
 
-## **Contribute**
+## Contribute
 
 Browse the code, raise an issue, or contribute a pull request.
 
@@ -25,7 +33,7 @@ Browse the code, raise an issue, or contribute a pull request.
 * [Contributing Guide](https://docs.celo.org/community/contributing)
 * [Celo Build Page](https://celo.org/build)
 
-## **Connect**
+## Connect
 
 Ask questions, find answers, and get in touch.
 

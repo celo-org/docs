@@ -1,8 +1,14 @@
 ---
-title: Contributing
+title: Celo Contributor Guide
+description: How to contribute to the Celo ecosystem as a member of the community.
 ---
-
 # Contributor Guide
+
+How to contribute to the Celo ecosystem as a member of the community.
+
+___
+
+## Celo Community
 
 Celo is open source and we welcome open participation. We strive to be an open an inclusive community where everyone feels welcome and empowered to contribute, which also means following some ground rules and abiding to Celo’s [Code of Conduct](https://celo.org/code-of-conduct). Thanks for your interest!
 

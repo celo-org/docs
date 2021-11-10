@@ -1,6 +1,18 @@
+---
+title: Celo EVM Compatible Tooling
+description: Overview of Celo EVM compatible tools and the value they provide to developers.
+---
 # EVM Compatible Tooling
 
+Overview of Celo EVM compatible tools and the value they provide to developers.
+
+___
+
+:::tip
+
 See [Celo for Ethereum Developers](../developer-guide/celo-for-eth-devs) for an in-depth overview of the similarities and differences between Celo and Ethereum.
+
+:::
 
 ## Solidity
 

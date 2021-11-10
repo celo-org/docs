@@ -1,9 +1,19 @@
 ---
-title: Community Fund
+title: Celo Community Fund
 slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund
+description: Introduction to the community fund, its assets, and its relationship to the on-chain reserve.
 ---
+# Community Fund
+
+Introduction to the community fund, its assets, and its relationship to the on-chain reserve.
+
+___
+
+## What is the Community Fund?
 
 The Community Fund provides for general upkeep of the Celo platform. CELO holders decide how to allocate these funds through governance proposals. Funds might be used to pay bounties for bugs or vulnerabilities, security audits, or grants for protocol development.
+
+## Community Fund Assets
 
 The Community Fund receives assets from three sources:
 

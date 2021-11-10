@@ -1,4 +1,15 @@
-# Connecting Ledger to Celo CLI
+---
+
+title: Connect Ledger to Celo CLI
+description: How to connect a ledger wallet to the Celo CLI.
+
+---
+
+# Connect Ledger to Celo CLI
+
+How to connect a ledger wallet to the Celo CLI.
+
+___
 
 ### Install the Celo CLI
 

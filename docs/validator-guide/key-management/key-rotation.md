@@ -1,7 +1,16 @@
 ---
-title: Validator Signer Key Rotation
+title: Celo Validator Signer Key Rotation
+description: How to manage signer key rotations as a Celo Validator.
 slug: /validator-guide/summary/key-rotation
 ---
+
+# Validator Signer Key Rotation
+
+How to manage signer key rotations as a Celo Validator.
+
+___
+
+## Why Rotate Keys?
 
 As detailed in [the Celo account roles description page](/validator-guide/key-management/detailed.md), Celo Locked Gold accounts can authorize separate signer keys for various roles such as voting or validating. This way, if an authorized signer key is lost or compromised, the Locked Gold account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
 

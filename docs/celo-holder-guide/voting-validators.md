@@ -1,7 +1,16 @@
 ---
 title: Voting for Validator Groups
+description: Overview of Validator elections for validator groups including technical details, policies, and explorers.
 slug: /celo-owner-guide/voting-validators
 ---
+
+# Voting for Validator Groups
+
+Resources for Validator Groups elections including technical details, policies, and Validator explorers.
+
+___
+
+## What are Validators?
 
 Validators play a critical role in the Celo protocol, determining which transactions get applied and producing new blocks. Selecting organizations that operate well-run infrastructure to perform this role effectively is essential for Celo's long-term success.
 

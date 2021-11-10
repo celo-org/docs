@@ -1,8 +1,20 @@
 ---
-title: Attestation Service
+title: Celo Attestation Service
+descriptin: How to configure, run, and manage an attestation service as a Celo Validator.
 ---
+# Attestation Service
+
+How to configure, run, and manage an attestation service as a Celo Validator.
+
+___
+
+:::tip
 
 Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator-guide/celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
+
+:::
+
+## What is an Attestation Service?
 
 The Attestation Service is part of the [Celo identity protocol](/celo-codebase/protocol/identity). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
 

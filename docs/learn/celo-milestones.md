@@ -1,4 +1,12 @@
-# Celo Milestones
+---
+title: Celo Milestones
+description: Important milestones for the Celo protocol and ecosystem.
+---
+# Milestones
+
+Important milestones for the Celo protocol and ecosystem.
+
+___
 
 ## Deutsche Telekom
 

@@ -1,13 +1,23 @@
 ---
-title: Manual Setup
+title: MetaMask Manual Setup on Celo
+description: How to manually add a Celo network to your existing MetaMask wallet. 
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Use this guide if you'd like to manually add in a Celo network to your
-existing MetaMask wallet. If you're a dApp developer and want to do this
-programmatically, go to the next page.
+# Manual Setup
+
+How to manually add a Celo network to your existing MetaMask wallet. 
+
+___
+
+:::tip
+
+If you're a dApp developer and want to set up your wallet this programmatically, view [programmatic setup](programmatic-setup).
+
+:::
+
 
 ## **Setup**
 

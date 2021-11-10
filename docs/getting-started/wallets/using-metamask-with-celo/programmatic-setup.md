@@ -1,14 +1,18 @@
 ---
-title: Programmatic Setup
+title: MetaMask Programmatic Setup on Celo
+description: How dApp developers can use MetaMask to interact with the Celo network.
 ---
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-See this guide if you're a dApp developer and want your users to use MetaMask
-to interact with the Celo network.
+# Programmatic Setup
 
-## **Summary**
+How dApp developers can use MetaMask to interact with the Celo network.
+
+___
+
+## How to Add Celo to MetaMask
 
 For dApp Developers interested in using MetaMask with Celo, we encourage doing the following 3 things, which are described in detail in the below sections.
 
@@ -16,7 +20,7 @@ For dApp Developers interested in using MetaMask with Celo, we encourage doing t
 2. Add Celo tokens \(e.g. cUSD, cEUR\)
 3. Handle cases where MetaMask is connected to a different network
 
-## **Adding a Celo Network to MetaMask**
+## Adding a Celo Network to MetaMask
 
 To add a Celo Network to your dApp, you can use MetaMask's RPC API's `wallet_addEthereumChain` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-addethereumchain)\).
 
@@ -82,7 +86,7 @@ const BAKLAVA_PARAMS = {
 
 </Tabs>>
 
-## **Adding Tokens \(e.g. cUSD, cEUR\)**
+## Adding Tokens \(e.g. cUSD, cEUR\)
 
 To watch an asset on a Celo netowork \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)\).
 
@@ -144,7 +148,7 @@ To double-check that the above values are up-to-date, please verify using the `c
 
 * Where it says `INSERT_SYMBOL_HERE`, please replace with the correct symbol for the asset you'd like to watch. For Celo Dollars, it's `cUSD` and for Celo Euros, it's `cEUR`.
 
-## **Handling cases where MetaMask is connected to a different network**
+## Handling cases where MetaMask is connected to a different network
 
 We strongly suggest that you disable your dApp's functionality when MetaMask is connected to a non-Celo network.
 

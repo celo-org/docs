@@ -1,21 +1,24 @@
 ---
-title: Connect MetaMask and Valora
+title: Import Valora Wallet to MetaMask
+description: How to import your Celo account to MetaMask from a Valora wallet.
 ---
 
-# Import a Valora Account to MetaMask with a Private Key
+# Import Valora to MetaMask
+
+How to import your Celo account to MetaMask from a Valora wallet.
+
+___
+
+## Getting Started
 
 Importing a Celo Account to MetaMask allows you to extend Celo to any application that integrates with MetaMask. This guide helps you import your Celo account using a Valora Wallet and so you to access your Celo account using MetaMask.
-
-**Topics covered in this guide**
 
 * Prerequisites required to start using MetaMask and Celo
 * Create a simple project directory to temporarily store project information
 * Access your Valora account and private key with the celocli
 * Import your private key to MetaMask to access your Celo account
 
----
-
-## **Prerequisites**
+## Prerequisites
 
 Before getting started, it’s important to have downloaded MetaMask, Valora, and have completed some basic configuration on each account. Follow the links below for additional guides on each topic.
 
@@ -23,12 +26,7 @@ Before getting started, it’s important to have downloaded MetaMask, Valora, an
 * [Download Valora](https://valoraapp.com/) and create an account.
 * Configure [MetaMask to work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo)
 * Install the [celocli](https://docs.celo.org/command-line-interface/introduction)
-
----
-
-## **Getting Started**
-
-**Set up your project**
+## Set up your project
 
 Create a new project directory.
 
@@ -53,9 +51,8 @@ Open the text file to store your Account Key.
 ```
 open valora-account-key.txt
 ```
----
 
-### **Valora Account and Private Keys**
+### Valora Private Keys
 
 * Open the Valora App, navigate to **Menu** **>** **Account** **Key**, and Enter PIN to reveal your Account Key.
 
@@ -106,15 +103,13 @@ Anyone that has access to your private key will be able to access and control th
 
 :::
 
----
-
-### **Import Private Key to MetaMask**
+### Import Private Key
 
 * Open MetaMask and select **Celo (Mainnet)** as your network.`
 * Select **Settings > Import Account **select type** Private Key **and paste the private key from your terminal window.
 * Select **Import** to import your Celo Account from your Valora Wallet.
 
-### **Metamask &lt;3 Valora**
+### Delete Project Directory
 
 MetaMask is now connected to your Valora wallet. The value of your Valora wallet should show in your MetaMask account and you can now use MetaMask to access your funds. 
 

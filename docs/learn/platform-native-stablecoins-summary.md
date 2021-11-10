@@ -1,4 +1,13 @@
-# Platform-Native Stablecoins (cUSD, cEUR)?
+---
+title: Platform-Native Stablecoins (cUSD, cEUR)
+description: Summary of Celo Platform-Native Stablecoins and the value they provide to the community.
+---
+
+# Platform-Native Stablecoins
+
+Summary of Celo Platform-Native Stablecoins and the value they provide to the community.
+
+___
 
 ## Stable with Celo
 

@@ -1,9 +1,18 @@
 ---
-title: Using a Cloud HSM
+title: Using a Cloud HSM with Celo
+description: How to create a cloud HSM in Azure and connect it to celocli. 
 slug: /developer-guide/integrations/cloud-hsm
 ---
 
-A cloud Hardware Security Module (HSM) provides a good balance between security and accessibility. A cloud HSM can manage a Celo private key and can be used seamlessly with `celocli` and `contractkit`. Similar to a ledger device, a key in an HSM avoids the key from ever being sent over the network or stored on disk since the key can never leave the hardware boundary and all signing is performed within the HSM. To authenticate to the HSM, it's recommended to create a service principal account that has been granted access to sign with the managed keys. A cloud HSM can be a great option for managing vote signer keys, since you may want these keys to be portable but also maintain good security practices. This guide will walk you through creating a cloud HSM in Azure and connecting it to `celocli`. 
+# Using a Cloud HSM
+
+How to create a cloud HSM in Azure and connect it to `celocli`. 
+
+___
+
+## Introduction to HSM
+
+A cloud Hardware Security Module (HSM) provides a good balance between security and accessibility. A cloud HSM can manage a Celo private key and can be used seamlessly with `celocli` and `contractkit`. Similar to a ledger device, a key in an HSM avoids the key from ever being sent over the network or stored on disk since the key can never leave the hardware boundary and all signing is performed within the HSM. To authenticate to the HSM, it's recommended to create a service principal account that has been granted access to sign with the managed keys. A cloud HSM can be a great option for managing vote signer keys, since you may want these keys to be portable but also maintain good security practices. 
 
 ## Create an Azure subscription
 

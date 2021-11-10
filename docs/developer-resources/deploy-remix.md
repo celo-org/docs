@@ -7,7 +7,9 @@ description: How to deploy a Smart Contract to Celo using remix.ethereum.org.
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Remix](https://remix.ethereum.org/).
 
-____
+___
+
+## Introduction to Remix
 
 The [Remix IDE](https://remix-project.org/) is an open-source web and desktop application for creating and deploying Smart Contracts. Originally created for Ethereum, it fosters a fast development cycle and has a rich set of plugins with intuitive GUIs. Remix is used for the entire journey of contract development and is a playground for learning and teaching Celo. 
 

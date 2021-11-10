@@ -2,11 +2,15 @@
 title: Figment Learn
 description: Learn Celo. Build a better Internet.
 ---
-
-
 # Figment Learn
 
-Figment Learn is the easiest way for Web3 protocols to onboard and educate developers. With Learn, developers gain access to comprehensive practical tutorials developed by Figment and the community to foster the ecosystem's growth.
+Learn Celo. Build a better internet.
+
+___
+
+## What is Figment Learn?
+
+[Figment Learn](https://learn.figment.io/) is the easiest way for Web3 protocols to onboard and educate developers. With Learn, developers gain access to comprehensive practical tutorials developed by Figment and the community to foster the ecosystem's growth.
 
 Their [Celo Pathway](https://learn.figment.io/protocols/celo) teaches you the basics of Celo to help you build and deploy dApps.
 

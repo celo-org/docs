@@ -1,8 +1,19 @@
 ---
-title: Epoch Rewards Overview
+title: Celo Epoch Rewards Overview
+description: Introduction to Celo epoch rewards and the target reward release schedule.
 ---
+# Epoch Rewards
 
-**Epoch Rewards** are similar to the familiar notion of block rewards in other blockchains, minting and distributing new units of CELO as blocks are produced, to create several kinds of incentives. Epoch rewards are paid in the final block of the epoch and are used to:
+Introduction to Celo epoch rewards and the target reward release schedule.
+
+___
+
+## What are Epoch Rewards?
+
+**Epoch Rewards** are similar to the familiar notion of block rewards in other blockchains, minting and distributing new units of CELO as blocks are produced, to create several kinds of incentives. 
+
+**Epoch rewards are paid in the final block of the epoch and are used to:**
+
 * Distributed [rewards for validators and validator groups](/celo-codebase/protocol/proof-of-stake/validator-rewards.md)
 * Distribute [rewards to holders of Locked CELO](/celo-codebase/protocol/proof-of-stake/locked-gold-rewards.md) voting for groups that elected validators
 * Make payments into a [Community Fund](/celo-codebase/protocol/proof-of-stake/community-fund.md) for protocol infrastructure grants
@@ -11,7 +22,15 @@ title: Epoch Rewards Overview
 
 A total of 400 million CELO will be released for epoch rewards over time. CELO is a utility and governance asset on Celo, and also the reserve collateral for Celo Dollar (and possibly in the future other whitelisted tokens). It has a fixed total supply and in the long term will exhibit deflationary characteristics like Bitcoin.
 
-The total amount of disbursements is determined at the end of every epoch via a two step process. In step one, economically desired **on-target rewards** are derived. These are explained in the following pages. Several factors can increase or decrease the value of the payments that would ideally be made in a given epoch (including the CELO to Dollar exchange rate, the collateralization of the reserve, and whether payments to validators or groups are held back due to poor uptime or prior slashing).
+### Reward Disbursement
+
+The total amount of disbursements is determined at the end of every epoch via a two step process. 
+
+**Step 1**
+
+In step one, economically desired **on-target rewards** are derived. These are explained in the following pages. Several factors can increase or decrease the value of the payments that would ideally be made in a given epoch (including the CELO to Dollar exchange rate, the collateralization of the reserve, and whether payments to validators or groups are held back due to poor uptime or prior slashing).
+
+**Step 2**
 
 In step two, these on-target rewards are adjusted to generate a drift towards a predefined target epoch rewards schedule. This process aims to solve the trade-off between paying reasonable rewards in terms of purchasing power and avoiding excessive over- or underspending with respect to a predefined epoch rewards schedule. More detail about the two steps is provided below.
 

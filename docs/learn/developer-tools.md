@@ -1,4 +1,12 @@
-# Celo Tools
+---
+title: Celo Developer Tools
+description: Overview of Celo tools and the value they provide to developers.
+---
+# Developer Tools
+
+Overview of Celo tools and the value they provide to developers.
+
+___
 
 
 ## BlockScout
@@ -16,8 +24,6 @@ Contractkit includes common functionality to make it easier to get started build
 **What you can do?**
 
 [ContractKit](../community/release-process/base-cli-contractkit-dappkit-utils) supports the following functionality:
-
-
 
 * Connect to a node
 * Access Web3 object to interact with node's JSON RPC API

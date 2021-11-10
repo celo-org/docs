@@ -1,4 +1,12 @@
-# Celo Whitepapers
+---
+title: Celo Whitepapers
+description: Overview of Celo Whitepapers describing Celo's protocol, economics, and social impact.
+---
+# Whitepapers
+
+Overview of Celo Whitepapers describing Celo's protocol, economics, and social impact.
+
+___
 
 ## Protocol
 

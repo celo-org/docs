@@ -5,6 +5,8 @@ slug: /developer-guide/contractkit/usage
 
 The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](/developer-resources/walkthroughs/hellocontracts.md#deploy-to-alfajores)
 
+___
+
 ## Setting Default Tx Options
 
 `kit` allows you to set default transaction options:

@@ -1,4 +1,21 @@
-# Celo's Economic model
+---
+title: Celo Economic Model
+description: Celo’s economic model is derived from research in Sacred Economics and Theory of Change.
+---
+import YouTube from '@components/YouTube';
+
+
+# Economic Model
+
+Celo’s economic model is derived from research in **Sacred Economics** and **Theory of Change**.
+
+___
+
+## Features of Money
+
+Sep Kamvar speaks about the Future of Value.
+
+<YouTube videoId="tX5ep1JzY6k"/>
 
 ## Sacred Economics
 

@@ -1,9 +1,17 @@
 ---
 title: Querying on-chain identifiers with ODIS
+description: How to use ODIS to query the on-chain identifier given a phone number. 
 slug: /developer-guide/contractkit/odis
 ---
+# Query On-Chain Identifiers with ODIS
 
-This guide walks through using ContractKit to query the on-chain identifier given a phone number. See [this overview document](/celo-codebase/protocol/identity/phone-number-privacy.md) for more details on ODIS. One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.
+How to use ODIS to query the on-chain identifier given a phone number. 
+
+___
+
+## What is ODIS?
+
+One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.
 
 :::info
 
@@ -16,6 +24,11 @@ There are two methods for ODIS:
 1. `getPhoneNumberIdentifier` - Query and compute the identifier for a phone number
 2. `getContactMatches` - Find mutual connections between users
 
+:::tip
+
+See [this overview document](/celo-codebase/protocol/identity/phone-number-privacy.md) for more details on ODIS. 
+
+:::
 ## Authentication
 
 Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer-resources/contractkit/data-encryption-key.md)

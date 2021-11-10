@@ -1,4 +1,12 @@
+---
+title: Celo
+description: Summary of CELO and the value it provides to the community.
+---
 # CELO
+
+Summary of CELO and the value it provides to the community.
+
+___
 
 ## Platform-Native Digital Asset
 

@@ -1,7 +1,14 @@
 ---
-title: Setup
+title: Celo ContractKit Setup
+description: ContractKit requirements, installation, and initialization.
 slug: /developer-guide/contractkit/setup
 ---
+
+# Setup
+
+ContractKit requirements, installation, and initialization.
+
+___
 
 ## Installation and System Requirements
 

@@ -1,4 +1,14 @@
+---
+title: The Celo Stack
+description: Overview of the Celo Stack including it's blockchain, core contracts, and applications. 
+---
 # The Celo Stack
+
+Overview of the Celo Stack including it's blockchain, core contracts, and applications. 
+
+___
+
+## Introduction to the Celo Stack
 
 Celo is oriented around providing the simplest possible experience for end-users, who may have no familiarity with cryptocurrencies and may be using low-cost devices with limited connectivity. To achieve this, Celo takes a full-stack approach, where each layer of the stack is designed with the end-user in mind while considering other stakeholders (e.g. operators of nodes in the network) involved in enabling the end-user experience.
 

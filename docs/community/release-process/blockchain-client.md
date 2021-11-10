@@ -1,4 +1,12 @@
+---
+title: Celo Blockchain Client Release Process
+description: Details of the release process for updating the blockchain client on the Celo platform.
+---
 # Blockchain Client Release Process
+
+Details of the release process for updating the blockchain client on the Celo platform.
+
+___
 
 ## Versioning
 

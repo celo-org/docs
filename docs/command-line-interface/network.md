@@ -1,3 +1,8 @@
+---
+title: celocli network
+description: View details about the network, like contracts and parameters
+---
+
 # `celocli network`
 
 View details about the network, like contracts and parameters

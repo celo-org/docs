@@ -1,9 +1,17 @@
 ---
-title: Platform Overview
+title: Celo Platform
+description: Overview of the Celo platform and it's relationship to the Ethereum blockchain.
 id: overview
 ---
 
-Celo is a complete stack of new blockchain software, core libraries that run on that blockchain, and end user applications including a Wallet app that communicate with that logic.
+# Celo Platform
+
+Overview of the Celo platform and it's relationship to the Ethereum blockchain.
+
+___
+## What is the Celo Platform?
+
+Celo is a complete stack of new blockchain software, core libraries that run on that blockchain, and end-user applications including a Wallet app that communicate with that logic.
 ### Blockchain
 
 A **blockchain** or **cryptographic network** is a broad term used to describe a database maintained by a distributed set of computers that do not share a trust relationship or common ownership. This arrangement is referred to as **decentralized**. The content of a blockchain's database, or **ledger**, is authenticated using cryptographic techniques, preventing its contents from being added to, edited or removed except according to a protocol operated by the network as a whole.

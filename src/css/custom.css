@@ -33,6 +33,12 @@ h2 {
   font-size:  1.6em !important;
 }
 
+hr {
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
 .DocSearch-Logo {
   display: none;
 }

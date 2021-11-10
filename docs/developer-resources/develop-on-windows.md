@@ -1,11 +1,18 @@
 ---
-title: Using Windows
+title: Celo Local Envorinment using Windows
+description: How to set up a local development environment for Celo using Windows.
 slug: /developer-guide/start/develop-on-windows
 ---
 
-Many popular tools and resources for blockchain development are written for developers working on UNIX machines. It is common for developers working on Windows to encounter errors that are not covered in the documentation and have no luck with Google. Fortunately, Microsoft makes it easy to run a UNIX machine directly from a Windows desktop ****with the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq).
+# Using Windows
 
-Here, we are going to show you how to get set up for developing on Celo on Windows.
+How to set up a local development environment for Celo using Windows.
+
+:::tip
+
+Many popular tools and resources for blockchain development are written for developers working on UNIX machines. It is common for developers working on Windows to encounter errors that are not covered in the documentation and have no luck with Google. Fortunately, Microsoft makes it easy to run a UNIX machine directly from a Windows desktop with the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq).
+
+:::
 
 ### **Getting set up with Windows**
 

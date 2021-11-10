@@ -1,6 +1,14 @@
 ---
-title: Baklava Testnet Disclaimer
+title: Celo Baklava Testnet Disclaimer
+description: Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
 ---
+# Baklava Testnet Disclaimer
+
+Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
+
+___
+
+## Terms and Conditions
 
 By using, and contributing to, the Celo Baklava Testnet, you \(the User\) agree to these terms and acknowledge and agree that the Celo protocol and platform is in development and that use of the Baklava Testnet is entirely at the User’s sole risk. You also agree to adhere to the [Celo Code of Conduct](https://celo.org/code-of-conduct).
 

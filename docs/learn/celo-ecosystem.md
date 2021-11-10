@@ -1,4 +1,12 @@
-# Celo Ecosystem
+---
+title: Celo Ecosystem
+description: Celo tools, assets, and community are focused on creating a future where everyone can prosper.
+---
+# Ecosystem
+
+Celo tools, assets, and community are focused on creating a future where everyone can prosper.
+
+___
 
 ## Mainnet
 

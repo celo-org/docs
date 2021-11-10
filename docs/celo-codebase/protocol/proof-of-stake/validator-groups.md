@@ -1,16 +1,26 @@
 ---
-title: Validator Groups
+title: Celo Validator Groups
+description: Celo's proof-of-stake mechanism introduces the concept of Validator Groups as intermediaries between voters and validators.
 ---
+# Validator Groups
 
 Celo's proof-of-stake mechanism introduces the concept of **Validator Groups** as intermediaries between voters and validators.
 
-## Overview
+___
+
+## What is a Validator Group?
 
 A validator group has **members**, an ordered list of candidate validators. There is a fixed limit to the number of members that a group may have.
 
+## Why use a Validator Group?
+
 Validator groups can help mitigate the information disparity between voters and validators. It is anticipated that groups might emerge that do not necessarily operate validators themselves but attract votes for their reputation for ensuring their associated validators have known real-world identities, have high uptime, are well maintained and regularly audited. Since every validator needs to be accepted by a single group to stand for election, that group will be more able to build up long-term judgements on their validators’ operational practices and security setups than each of the numerous CELO holders that might vote for it would.
 
+## Fielding Multiple Validators
+
 Equally, a number of organizations may want to attempt to field multiple validators under their own control, or be able to interchange the specific machines or keys under which they validate in the case of hardware or connectivity failure. By switching out validators in the list, groups can accomplish this without users having to change their votes.
+
+## Validator Group Limits
 
 Validator groups can have no more than a small, fixed maximum number of validators -- currently 5 in Mainnet. This means an organization wanting to get more validators elected than this maximum has the added challenge of managing multiple group identities and reputations simultaneously. This further promotes decentralization and strengthens operational security, making it more likely that the validator set will be composed of nodes operated in different fashions by independent individuals and organizations.
 

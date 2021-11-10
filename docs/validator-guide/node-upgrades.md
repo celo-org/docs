@@ -1,8 +1,12 @@
 ---
-title: Upgrading a Node
+title: Upgrade a Celo Node
+description: How to upgrade to the newest available version of a Celo node.
 ---
+# Upgrade a Node
 
-When a new version of the Celo node is available, you can follow this guide to upgrade.
+How to upgrade to the newest available version of a Celo node.
+
+___
 
 ## Recent Releases
 

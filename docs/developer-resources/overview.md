@@ -1,12 +1,14 @@
 ---
 title: Overview
+description: Overview of key tools and resources for developers to build dApps on Celo.
 slug: /developer-guide/overview
 ---
 
 # Developer Guide
 
-This section contains information about some of the key tools and resources that will help developers start building applications
-on Celo.
+Overview of key tools and resources for developers to build dApps on Celo.
+
+___
 
 ## Quick Start Guides
 

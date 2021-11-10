@@ -1,15 +1,19 @@
 ---
-description: >-
-  This Command Line Interface allows users to interact with the Celo Protocol
-  smart contracts.
+title: Celo CLI
+description: The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 sidebar_position: 1
 ---
 
-# Introduction
+# Celo CLI
 
-## Getting Started
+Introduction to the Celo Command Line Interface and installation instructions.
 
-### NPM Package
+## What is the Celo CLI
+
+The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
+
+It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+## NPM Package
 
 The Celo CLI is published as a node module on NPM. Assuming you have [npm](https://www.npmjs.com/get-npm) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) both installed, you can install the Celo CLI using the following command:
 
@@ -29,7 +33,7 @@ If you have trouble installing globally \(i.e. with the `-g` flag\), try install
 
 :::
 
-### Overview
+## Commands
 
 The tool is broken down into modules and commands with the following pattern:
 
@@ -47,9 +51,9 @@ All balances of CELO or Celo Dollars are expressed in units of 10^-18.
 
 You can find the Celo CLI package on NPM [here](https://www.npmjs.com/package/@celo/celocli).
 
-### Optional
+## Optional: Run a Full Node
 
-**Run a Celo node full node.** Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/index.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/mainnet/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
+Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/index.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/mainnet/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
 
 The easiest way to connect `celocli` to the Celo network is by running the following command in your terminal with `celocli` installed:
 
@@ -63,11 +67,11 @@ You can verify that `celocli` is connected by running
 celocli config:get
 ```
 
-### Using a Ledger Wallet
+## Using a Ledger Wallet
 
 The Celo CLI supports using a [Ledger hardware wallet](../celo-holder-guide/ledger.md) to sign transactions.
 
-### Plugins
+## Plugins
 
 Additional plugins can be installed which make the CLI experience smoother. Currently, `celocli` only supports installing plugins published on NPM within the `@celo/*` and `@clabs/*` scopes.
 

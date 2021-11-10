@@ -1,12 +1,12 @@
 ---
 title: Celo Resources
-description: Stay up to date on the latest Celo resources.
+description: Curated collection of Celo resources for developers, designers, dreamers, and doers.
 ---
+# Resources
 
+Curated collection of Celo resources for developers, designers, dreamers, and doers.
 
-# Celo Resources
-
-The Celo community is always creating new resources to help you learn about Celo.
+___
 
 ## Code Examples
 

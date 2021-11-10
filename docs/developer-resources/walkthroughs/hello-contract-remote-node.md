@@ -1,15 +1,26 @@
 ---
 title: Deploy and Interact with Contracts (Remotely)
+description: How to deploy and interact your own smart contracts using a remote node.
 slug: /developer-guide/start/hello-contract-remote-node
 ---
 import PageRef from '@components/PageRef'
 
-This page is similar to the Hello Contracts page, but this one
-will connect to a remote node (Forno) and do key management in the Truffle project.
-
 # Hello Contract \(Truffle + Remote Node\)
 
-This guide walks you through the basics of how to deploy your own smart contracts on Celo networks. As Celo is fully EVM compatible, we inherit the rich developer ecosystem and tooling of the Ethereum community. You will be deploying a typical hello world smart contract onto the Alfajores testnet with typical Ethereum tools like Truffle and Ganache.
+How to deploy and interact your own smart contracts using a remote node.
+
+:::tip
+
+As Celo is fully EVM compatible, we inherit the rich developer ecosystem and tooling of the Ethereum community. You will be deploying a typical hello world smart contract onto the Alfajores testnet with the common Ethereum tool, Truffle.
+
+:::
+
+
+:::note
+
+This page is similar to the Hello Contracts page, but this one will connect to a remote node (Forno) and do key management in the Truffle project.
+
+:::
 
 ## Setup
 

@@ -1,6 +1,15 @@
+---
+title: Running the Wallet Locally
+description: How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
+---
 # Running the Wallet Locally
 
-## Setup
+How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
+
+___
+
+
+## Wallet Setup
 
 The app uses [React Native](https://facebook.github.io/react-native/) and a [light node](https://github.com/ethereum/wiki/wiki/Light-client-protocol) running the [celo client](https://github.com/celo-org/celo-blockchain). You will need to install Java 8, the Android SDK, Yarn, and Node.js v12.x to run the app.
 
