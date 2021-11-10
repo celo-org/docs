@@ -44,13 +44,13 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
-    Domain ID = 1667591279
+    Celo Domain ID = 1667591279
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    Domain ID = 1886350457
+    Polygon Domain ID = 1886350457
   </TabItem>
     <TabItem value="Ethereum" label="On Ethereum">
-    Domain ID = 6648936
+    Ethereum Domain ID = 6648936
   </TabItem>
 </Tabs>
 
