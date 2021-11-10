@@ -384,7 +384,7 @@ module.exports = {
                     title: "Community",
                     items: [
                         {
-                            href: "https://docs.celo.org/community/contributing",
+                            href: "/community/contributing",
                             label: "Contributors",
                         },
                         {
