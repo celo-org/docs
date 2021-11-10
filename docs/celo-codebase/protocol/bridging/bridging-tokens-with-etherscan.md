@@ -11,11 +11,12 @@ import TabItem from '@theme/TabItem';
 How to bridge ERC-20 tokens from Ethereum and Polygon to Celo.
 
 ___
+
 ## Approve the Bridge
 
 Start by approving token usage on the bridge.
 
-* Navigate to the [Etherscan](https://etherscan.io/) page for the token you want to send
+* Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://polygonscan.com/)) page  for the token you want to send
 * Open the **Write Contract** pane > **connect your wallet** > and select **approve**
 
 ![Bridging Tokens with Etherescan 1](https://github.com/joenyzio/assets/blob/main/celo-docs/bridging-tokens-with-etherscan/bridging-tokens-with-etherscan-1.png?raw=true)
@@ -23,11 +24,11 @@ Start by approving token usage on the bridge.
 * For **spender** enter the BridgeRouter address:
 
 <Tabs>
-  <TabItem value="Ethereum" label="On Ethereum" default>
-    Address = 0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
+  <TabItem value="Ethereum" label="Ethereum" default>
+    Ethereum BridgeRouter Address = 0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
   </TabItem>
-  <TabItem value="Polygon" label="On Polygon">
-    Address = 0xf244eA81F715F343040569398A4E7978De656bf6
+  <TabItem value="Polygon" label="Polygon">
+    Polygon BridgeRouter Address = 0xf244eA81F715F343040569398A4E7978De656bf6
   </TabItem>
 </Tabs>
 
@@ -47,22 +48,20 @@ Approving too much is usually ok, but not approving enough will cause your next 
 
 :::
 
-
 * Select **write** > sign the transaction > then send it to the network.
 
 ## Call the Bridge
 
 You can now start sending tokens on the approved Bridge.
 
-1. Navigate to the [Etherscan](https://etherscan.io/) page for the router
-
+1. Navigate to the appropriate page for the router
 
 <Tabs>
-  <TabItem value="Ethereum" label="On Ethereum" default>
-    Address = 0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
+  <TabItem value="Ethereum" label="Ethereum" default>
+    Address = [0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47](https://etherscan.io/address/0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47)
   </TabItem>
-  <TabItem value="Polygon" label="On Polygon">
-    Address = 0xf244eA81F715F343040569398A4E7978De656bf6
+  <TabItem value="Polygon" label="Polygon">
+    Address = [0xf244eA81F715F343040569398A4E7978De656bf6](https://polygonscan.com/address/0xf244eA81F715F343040569398A4E7978De656bf6)
   </TabItem>
 </Tabs>
 
@@ -83,18 +82,20 @@ This should be the same number you approved earlier.
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
-    Domain ID = 1667591279
+    Celo Domain ID = 1667591279
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    Domain ID = 1886350457
+    Polygon Domain ID = 1886350457
   </TabItem>
   <TabItem value="Ethereum" label="On Ethereum">
-    Domain ID = 6648936
+    Ethereum Domain ID = 6648936
   </TabItem>
 </Tabs>
 
 :::tip
+
 Domain IDs are like phone numbers. They represent the chain you're going to call.
+
 :::
 
 * For **_recipient**, enter the address of the recipient on the destination chain.
