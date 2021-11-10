@@ -1,6 +1,6 @@
 ---
 title: 'Deploy a Contract on Celo (local node)'
-description: How to deploy your own smart contracts onto a Celo local node.
+description: How to deploy your own smart contracts onto Celo from a local node.
 slug: /developer-guide/start/hellocontracts
 ---
 
