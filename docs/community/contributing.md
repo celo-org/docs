@@ -1,6 +1,6 @@
 ---
 title: Celo Contributor Guide
-description: How to contribute to the Celo ecosystem as a community member of the community.
+description: How to contribute to the Celo ecosystem as a member of the community.
 ---
 # Contributor Guide
 
