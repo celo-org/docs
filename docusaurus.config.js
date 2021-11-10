@@ -339,11 +339,6 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "community/contributing",
-                    "label": "Contributors",
-                    "position": "left"
-                },
-                {
                     type: 'localeDropdown',
                     position: 'right',
                     dropdownItemsAfter: [
@@ -388,11 +383,16 @@ module.exports = {
                     {
                         label: "Docs GitHub",
                         href: "https://github.com/celo-org/docs"
-                    }
+                    },
                 ]},
                 {
                     title: "Community",
-                    items: [{
+                    items: [
+                        {
+                            href: "community/contributing",
+                            label: "Contributors",
+                        },
+                        {
                             label: "Forum",
                             href: "https://forum.celo.org/",
                         },
