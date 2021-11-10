@@ -13,14 +13,14 @@ How to bridge native assets from ETH and Matic to Celo with Etherscan.
 ___
 ## Call the EthHelper
 
-Navigate to the [Etherscan](https://etherscan.io/) page for the EthHelper.
+Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://polygonscan.com/)) page for the EthHelper.
 
 <Tabs>
   <TabItem value="Ethereum" label="On Ethereum" default>
-    Address = 0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A
+    Ethereum EthHelper Address = [0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A](https://etherscan.io/address/0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A)
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    Address = 0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA
+    Polygon EthHelper Address = [0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA](https://polygonscan.com/address/0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA)
   </TabItem>
 </Tabs>
 
