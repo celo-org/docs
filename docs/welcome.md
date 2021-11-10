@@ -35,4 +35,4 @@ An Ethereum-compatible technology capable of reaching global users at scale, Cel
 
 To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
 
-[Join the Community](../community/join-the-community)
+[Introduction to Celo](../introduction-to-celo)

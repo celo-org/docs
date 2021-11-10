@@ -22,7 +22,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 <YouTube videoId="4a70pVEcRw4"/>
 
-[Learn more about the Celo Platform](../learn/celo-protocol-summary.md)
+[View Celo DApps](/developer-guide/celo-dapp-gallery)
 
 ## What is CELO?
 
@@ -30,7 +30,7 @@ CELO is a platform-native reserve and governance asset, serving as the primary a
 
 <YouTube videoId="PLodjpBer4M"/>
 
-[Learn more about CELO](../learn/CELO-coin-summary.md)
+[Learn more about Celo](/why-celo)
 
 
 ## What can Celo Dollars Do?
@@ -39,4 +39,4 @@ Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) 
 
 <YouTube videoId="bu4P6jZKXgA"/>
 
-[Learn more about Celo Stablecoins](../learn/platform-native-stablecoins-summary.md)
+[Get a Celo Wallet](../getting-started/wallets)
