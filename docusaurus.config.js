@@ -314,11 +314,6 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "learn/celo-onboarding",
-                    "label": "Tutorials",
-                    "position": "left"
-                },
-                {
                     "to": "developer-guide/overview",
                     "label": "Developers",
                     "position": "left"
