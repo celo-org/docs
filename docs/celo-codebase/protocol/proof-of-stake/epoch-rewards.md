@@ -6,6 +6,8 @@ description: Introduction to Celo epoch rewards and the target reward release sc
 
 Introduction to Celo epoch rewards and the target reward release schedule.
 
+___
+
 ## What are Epoch Rewards?
 
 **Epoch Rewards** are similar to the familiar notion of block rewards in other blockchains, minting and distributing new units of CELO as blocks are produced, to create several kinds of incentives. 

@@ -1,10 +1,13 @@
 ---
-title: Community Fund
+title: Celo Community Fund
 slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/community-fund
 description: Introduction to the community fund, its assets, and its relationship to the on-chain reserve.
 ---
+# Community Fund
 
 Introduction to the community fund, its assets, and its relationship to the on-chain reserve.
+
+___
 
 ## What is the Community Fund?
 

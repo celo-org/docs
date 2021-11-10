@@ -8,6 +8,8 @@ slug: /celo-owner-guide/release-gold
 
 Introduction to ReleaseGold including examples, use cases, and FAQ. 
 
+___
+
 ## What is ReleaseGold?
 
 [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) is a smart contract that enables CELO to be released programmatically to a beneficiary over a period of time. In a deployed `ReleaseGold` smart contract, only the CELO balance that has been released according to the release schedule can be withdrawn by the contract’s beneficiary. The unreleased CELO cannot be withdrawn, but can be used for specific functions in Celo’s Proof of Stake protocol, namely voting and validating.

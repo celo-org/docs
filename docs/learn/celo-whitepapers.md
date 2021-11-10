@@ -6,6 +6,8 @@ description: Overview of Celo Whitepapers describing Celo's protocol, economics,
 
 Overview of Celo Whitepapers describing Celo's protocol, economics, and social impact.
 
+___
+
 ## Protocol
 
 Celo Whitepaper: A Multi-Asset Cryptographic Protocol for Decentralized Social Payments

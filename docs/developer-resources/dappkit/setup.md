@@ -7,6 +7,8 @@ slug: /developer-guide/dappkit/setup
 
 How to configure and install DAppKit to begin building on Celo.
 
+___
+
 ## Quick Start
 
 To get started, it is easiest to just use our Truffle Box template at [https://github.com/celo-org/celo-dappkit](https://github.com/celo-org/celo-dappkit). This repository includes a "Hello World" example for getting started with DappKit.

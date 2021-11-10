@@ -6,6 +6,8 @@ description: Overview of the Tobin Tax and its effect on the Celo reserve.
 
 Overview of the Tobin Tax and its effect on the Celo reserve.
 
+___
+
 :::info
 
 The tobin tax is currently **disabled** on Mainnet.

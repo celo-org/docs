@@ -9,6 +9,8 @@ slug: /getting-started/wallets/using-metamask-with-celo
 
 Overview of MetaMask and how you can get started with MetaMask on Celo.
 
+___
+
 :::danger
 
 Do not send ETH to your Celo address. Do not send CELO assets to your Ethereum address. Always make sure that you are connected to the correct network.

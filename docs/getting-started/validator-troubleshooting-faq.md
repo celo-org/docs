@@ -9,6 +9,8 @@ slug: /getting-started/validator-troubleshooting-faq
 
 Answers to frequently asked questions while troubleshooting isses as a Validator.
 
+___
+
 
 :::tip
 

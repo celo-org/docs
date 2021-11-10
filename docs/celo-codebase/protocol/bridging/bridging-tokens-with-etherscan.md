@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 # Bridge Tokens with Etherscan
 
 How to bridge ERC-20 tokens from Ethereum and Polygon to Celo.
+
+___
 ## Approve the Bridge
 
 Start by approving token usage on the bridge.

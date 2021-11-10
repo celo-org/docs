@@ -6,6 +6,7 @@ const sidebars = {
       type: "category",
       label: "Getting Started",
       items: [
+        { type: 'doc', label: 'Introduction', id: 'learn/introduction-to-celo', },
         { type: "doc", label: "DApp Gallery", id: "developer-resources/celo-dapp-gallery",},
         {
           type: 'category',

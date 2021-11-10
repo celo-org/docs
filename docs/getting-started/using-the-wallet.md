@@ -9,6 +9,8 @@ slug: /getting-started/using-the-wallet
 
 How to set up and use the Alfajores Testnet Celo Wallet. 
 
+___
+
 
 :::caution
 

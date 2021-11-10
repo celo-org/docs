@@ -7,6 +7,8 @@ description: Summary of Celo Platform-Native Stablecoins and the value they prov
 
 Summary of Celo Platform-Native Stablecoins and the value they provide to the community.
 
+___
+
 ## Stable with Celo
 
 Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Celo stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility. 

@@ -7,6 +7,9 @@ description: Overview of full node incentives available to node operators using 
 
 Overview of full node incentives available to node operators using gateway fees and transaction payments.
 
+___
+
+
 :::info
 
 Full node incentives are still very much in the early-research stage are **not yet** live on mainnet.

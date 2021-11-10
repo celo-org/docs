@@ -6,6 +6,8 @@ description: Best practices for running cloud infrastructure for Celo nodes and 
 
 Best practices for running cloud infrastructure for Celo nodes and services.
 
+___
+
 ## Cloud Infrastructure Best Practices
 
 ### Node Redundancy

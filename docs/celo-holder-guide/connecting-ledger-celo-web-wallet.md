@@ -9,6 +9,8 @@ description: How to connect a ledger wallet to the Celo Web Wallet.
 
 How to connect a ledger wallet to the Celo Web Wallet. 
 
+___
+
 ## Download Celo Web Wallet
 
 Navigate to [https://celowallet.app/setup](https://celowallet.app/setup). Choose “Use Existing Account”.

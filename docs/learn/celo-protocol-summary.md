@@ -7,6 +7,8 @@ description: Summary of the Celo Protocol and the value it provides to the commu
 
 Summary of the Celo Protocol and the value it provides to the community.
 
+___
+
 ## The Platform for Mobile DeFi
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.

@@ -6,6 +6,9 @@ description: How Ultralight Node sync works with the Celo wallet.
 
 How Ultralight Node sync works with the Celo wallet. 
 
+___
+
+
 ## Fetch Headers
 
 The Celo Wallet first fetches the latest header to learn about the likely latest block height. Next, it fetches all the _epoch headers_ between Genesis and the latest block height. The fetch is done in batches of 192 blocks \(Ethereum's default batch size\) to minimize latency. In Celo's case, each of these headers are not contiguous and are instead one epoch apart \(planned for around 1 day for mainnet\). 

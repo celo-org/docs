@@ -8,6 +8,8 @@ id: faqs
 
 Answers to frequently asked questions about Celo.
 
+___
+
 ## Introduction and Overview
 
 

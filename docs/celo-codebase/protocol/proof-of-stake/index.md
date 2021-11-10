@@ -10,6 +10,8 @@ import YouTube from '@components/YouTube'
 
 Overview of Celo's proof-of-stake algorithm, mechanisms, and implementation.
 
+___
+
 ## Mastering the Art of Validating
 
 

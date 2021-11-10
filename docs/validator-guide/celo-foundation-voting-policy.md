@@ -5,6 +5,8 @@ description: How the Celo Foundation anticipates allocating its votes to validat
 
 How the Celo Foundation anticipates allocating its votes to validator groups, with special attention to the first allocated groups at the Celo Mainnet release and the months thereafter.
 
+___
+
 :::info
 
 The policy described here can change at any time as determined by the Foundation Board.

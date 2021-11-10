@@ -6,6 +6,8 @@ description: Celo tools, assets, and community are focused on creating a future 
 
 Celo tools, assets, and community are focused on creating a future where everyone can prosper.
 
+___
+
 ## Mainnet
 
 The Celo Mainnet is Celo's production network and was launched in April 2020. Mainnet is used to describe when a blockchain protocol is fully developed and deployed, meaning that cryptocurrency transactions are being broadcasted, verified, and recorded on a distributed ledger technology (blockchain).

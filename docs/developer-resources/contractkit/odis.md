@@ -7,6 +7,8 @@ slug: /developer-guide/contractkit/odis
 
 How to use ODIS to query the on-chain identifier given a phone number. 
 
+___
+
 ## What is ODIS?
 
 One of Celo's key features is the ability to associate a phone number to a Celo address. This provides a convenient payment experience for Celo users. To map a phone number to an address, the on-chain identifier for a given phone number must first be retrieved. With this identifier, the address can be looked up on-chain.

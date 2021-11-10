@@ -9,6 +9,8 @@ description: How to connect a ledger wallet to the Celo CLI.
 
 How to connect a ledger wallet to the Celo CLI.
 
+___
+
 ### Install the Celo CLI
 
 Open the terminal application on your computer and install the [Celo CLI](https://docs.celo.org/command-line-interface/introduction):

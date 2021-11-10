@@ -7,6 +7,8 @@ description: Introduction to Granda Mento (CIP 38), its design, and how to manag
 
 Introduction to Granda Mento (CIP 38), its design, and how to manage exchange proposals.
 
+___
+
 ## What is Granda Mento?
 
 Granda Mento, described in [CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md), is a mechanism for exchanging large amounts of CELO for Celo stable tokens that aren't suitable for [Mento](doto.md) or over-the-counter (OTC).

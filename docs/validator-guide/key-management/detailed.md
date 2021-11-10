@@ -7,7 +7,7 @@ slug: /validator-guide/summary/detailed
 # Detailed Role Descriptions
 
 Detailed description of the various account roles found in the Celo protocol with examples of how to designate an account as playing a particular role.
-
+___
 ## Celo Accounts
 
 Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.

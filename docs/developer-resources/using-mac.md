@@ -6,6 +6,8 @@ description: How to set up a local development environment for Celo using Mac.
 
 How to set up a local development environment for Celo using Mac.
 
+___
+
 :::tip
 
 While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer-guide/start/develop-on-windows).

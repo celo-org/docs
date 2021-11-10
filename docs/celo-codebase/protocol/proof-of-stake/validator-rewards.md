@@ -8,6 +8,8 @@ slug: /celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards
 
 Overview of epoch rewards for Validators and Validator Groups.
 
+___
+
 The protocol aims to incentivize validator uptime performance and penalize past poor behavior in future rewards, while ensuring that payments are economically reasonable in size independent of fluctuations of the price of CELO.
 
 **Five factors affect validator and group rewards:**

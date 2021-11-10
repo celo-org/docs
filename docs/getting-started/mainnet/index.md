@@ -9,6 +9,8 @@ slug: /getting-started/mainnet
 
 Collection of resources to get started with Celo **Mainnet** (Celo's production network).
 
+___
+
 :::note
 
 Celo Mainnet was previously known as the Release Candidate 1 network.

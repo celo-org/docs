@@ -7,6 +7,8 @@ slug: /developer-guide/integrations
 
 Collection of resources to help integrate Celo with your service.
 
+___
+
 ## Integrate with Celo
 
 Choose from the options below for support integrating your service with Celo.

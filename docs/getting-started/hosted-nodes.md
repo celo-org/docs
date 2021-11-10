@@ -8,6 +8,8 @@ slug: /getting-started/hosted-nodes
 
 How to get a preconfigured Celo blockchain node running on one of the major cloud providers. 
 
+___
+
 ## Before getting started
 
 cLabs currently provides machine images for launching full and lightest nodes on Alfajores and Mainnet. These prebuilt images are updated with every release of the Celo blockchain client and available on Amazon Web Services and Google Cloud Platform.

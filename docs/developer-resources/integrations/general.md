@@ -7,6 +7,8 @@ description: General information about integrations regardless of your service o
 
 General information about integrations regardless of your service or use case.
 
+___
+
 ## Accessing the chain
 
 There are a myriad of ways through which you can access chain data:

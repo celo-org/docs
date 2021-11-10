@@ -6,6 +6,8 @@ description: How to get a full node running on the Baklava Network using a prebu
 
 How to get a full node running on the [Baklava Network](/getting-started/baklava-testnet) using a prebuilt Docker image.
 
+___
+
 ## What is a Baklava Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives.md).

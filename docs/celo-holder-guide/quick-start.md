@@ -7,6 +7,8 @@ slug: /celo-owner-guide/quick-start
 
 Account access and reward details for self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet)
 
+___
+
 ## Prerequisites
 
 This guide assumes:

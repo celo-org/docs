@@ -6,6 +6,8 @@ description: How to get a Validator node running on the Celo Mainnet.
 
 How to get a Validator node running on the Celo [Mainnet](/getting-started/mainnet).
 
+___
+
 :::info
 
 If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).

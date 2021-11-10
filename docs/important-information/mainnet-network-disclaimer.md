@@ -6,6 +6,8 @@ description: Important considerations, warnings, and legal regulations for users
 
 Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
 
+___
+
 ## Terms and Conditions
 
 By using, and contributing to, Celo blockchain and cryptographic network (Celo), you (the User) agree to these terms and acknowledge that the use of Celo, including any and all release candidates, is entirely at the User’s sole risk. You also agree to adhere to the [Celo Code of Conduct](https://celo.org/code-of-conduct).

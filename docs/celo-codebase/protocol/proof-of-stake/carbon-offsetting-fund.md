@@ -7,6 +7,8 @@ description: Introduction to the Carbon Offsetting fund, its purpose, and govern
 
 Introduction to the Carbon Offsetting fund, its purpose, and governance process.
 
+___
+
 ## What is the Carbon Offsetting Fund?
 
 The Carbon Offsetting Fund provides for making the infrastructure of the Celo platform carbon-negative, by making a transfer every epoch to an organization that commits to using those assets off-chain for carbon offsetting projects.

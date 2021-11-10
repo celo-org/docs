@@ -6,6 +6,8 @@ description: Recommendations for running secure Celo nodes and services.
 
 Recommendations for running secure Celo nodes and services.
 
+___
+
 :::warning
 
 Running Celo nodes and services securely, especially as part of running a validator, is of utmost importance. Failure to do so can lead to severe consequences including, but not limited to loss of funds, slashing due to double signing, etc. 

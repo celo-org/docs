@@ -7,6 +7,8 @@ description: How to import your Celo account to MetaMask from a Valora wallet.
 
 How to import your Celo account to MetaMask from a Valora wallet.
 
+___
+
 ## Getting Started
 
 Importing a Celo Account to MetaMask allows you to extend Celo to any application that integrates with MetaMask. This guide helps you import your Celo account using a Valora Wallet and so you to access your Celo account using MetaMask.

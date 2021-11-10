@@ -6,6 +6,8 @@ description: Overview of stability fee parameters, timing, frequency, amounts, m
 
 Overview of stability fee parameters, timing, frequency, amounts, management, and updates.
 
+___
+
 ### Parameters Governing the Stability Fee
 
 `inflationPeriod` how long to wait between rounds of applying inflation

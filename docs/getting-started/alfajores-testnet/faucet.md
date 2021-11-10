@@ -5,6 +5,9 @@ description: How to fund your Celo wallet account with testnet funds.
 # Celo Wallet Testnet Funds
 
 How to fund your Celo wallet account with testnet funds.
+
+___
+
 ## Getting Started
 
 To start experimenting with the Alfajores Testnet, you will first need to get a funded account.

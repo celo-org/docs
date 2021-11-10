@@ -9,6 +9,9 @@ import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
 Overview of the Celo protocol's Stability Mechanisms.
+
+___
+
 ## Stability of Celo's Stablecoin Protocol
 
 <YouTube videoId="kYhDUmKuGCY"/>

@@ -6,6 +6,8 @@ description: How to ensure Validator uptime by running proxy nodes.
 
 How to ensure Validator uptime by running proxy nodes.
 
+___
+
 ## Why run a Proxy?
 
 Validator uptime is essential for the health of the Celo blockchain. To help with validator uptime, operators can use the proxy node, which will provide added security for the validator. It allows the validator to run within a private network, and to communicate to the rest of the Celo network via the proxy.

@@ -5,6 +5,9 @@ description: How to get started with the Alfajores Testnet using the Celo Mobile
 # Mobile Wallet
 
 How to get started with the Alfajores Testnet using the Celo Mobile wallet.
+
+___
+
 ### Getting Started
 
 Since verifying your phone number costs gas, you have to be invited to the platform to have the funds to pay for the verification process. To do so, please visit [celo.org/build/wallet](https://celo.org/build/wallet) and enter your phone number to be messaged an invitation code.

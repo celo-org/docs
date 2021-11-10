@@ -7,6 +7,8 @@ description: How to run a full node on the Celo Mainnet Network using a prebuilt
 
 How to run on the [Mainnet Network](/getting-started/mainnet) using a prebuilt Docker image.
 
+___
+
 :::tip Hosted Nodes
 
 If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/getting-started/hosted-nodes) documentation.

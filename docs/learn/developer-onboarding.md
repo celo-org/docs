@@ -7,6 +7,8 @@ description: Start your journey toward developing decentralized applications on 
 
 Start your journey toward developing decentralized applications on the Celo platform. 
 
+___
+
 ## What to expect
 
 These resources help you learn about the Celo mission, platform architecture, and how you can stay connected with our community. You’ll also be introduced to our developer ecosystem and make use of our tools and resources to build and deploy your first decentralized application on the Celo platform.

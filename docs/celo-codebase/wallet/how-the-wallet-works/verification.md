@@ -7,6 +7,9 @@ description: How the Celo wallet uses phone number verification to map phone num
 
 How the Celo wallet uses phone number verification to map phone number hashses to addresses.
 
+___
+
+
 ## How does Wallet Verification work?
 
 The Celo Wallet leverages the [Lightweight Identity](../../protocol/identity/) protocol to construct mappings of phone number hashes to addresses.

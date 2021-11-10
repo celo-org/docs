@@ -6,6 +6,8 @@ description: How to upgrade to the newest available version of a Celo node.
 
 How to upgrade to the newest available version of a Celo node.
 
+___
+
 ## Recent Releases
 
 - [You can view the latest releases here.](https://github.com/celo-org/celo-blockchain/releases)

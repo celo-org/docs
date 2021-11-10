@@ -8,6 +8,8 @@ slug: /developer-guide/celo-for-eth-devs
 
 Overview of the similarities and differences between the Celo and Ethereum blockchains.
 
+___
+
 
 :::tip
 

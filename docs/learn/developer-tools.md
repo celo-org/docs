@@ -6,6 +6,8 @@ description: Overview of Celo tools and the value they provide to developers.
 
 Overview of Celo tools and the value they provide to developers.
 
+___
+
 
 ## BlockScout
 

@@ -5,6 +5,9 @@ description: How the Celo wallet facilitates payments and exchanges using Celo a
 # Payments and Exchanging
 
 How the Celo wallet facilitates payments and exchanges using Celo assets.
+
+___
+
 ## Payments
 
 ### Sending

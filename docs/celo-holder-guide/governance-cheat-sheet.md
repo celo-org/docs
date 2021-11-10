@@ -8,6 +8,8 @@ slug: /celo-owner-guide/governance-cheat-sheet
 
 List of governable parameters and governance restrictions on Celo.
 
+___
+
 ## Governable Parameters 
 
 * The stability protocol, including the exchange

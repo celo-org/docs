@@ -8,6 +8,8 @@ slug: /developer-guide/contractkit/migrating-to-contractkit-v1
 
 How to migrate to the newest version of ContractKit and make use of its latest features.
 
+___
+
 ## What is ContractKit version v1.0?
 
 cLabs recently released [ContractKit version 1.0.0](https://medium.com/celoorg/contractkit-1-0-0-9c0412462d45). In it, the original ContractKit package has been split into several separate packages that all make up the Celo SDK. This document explains the key differences and shows you how you can start using the updated SDK.

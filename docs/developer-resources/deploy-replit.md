@@ -7,6 +7,8 @@ description: How to deploy a smart contract to Celo testnet, mainnet, or a local
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Replit](https://replit.com/).
 
+___
+
 ## Introduction to Replit
 
 [Replit](https://replit.com/~) is a coding platform that lets you write code and host apps. It also has many educational features built-in, making it great for teachers and learners too. Every repl you create is a fully functional development and production environment. [Hosting from your editor](https://amasad.me/hosting) makes it easy to iterate quickly on your work, collaborate with others, and get feedback.

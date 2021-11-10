@@ -7,6 +7,8 @@ description: How to bridge from Ethereum, Polygon, and Solana to Celo.
 
 How to bridge assets from Ethereum, Polygon, and Solana to Celo.
 
+___
+
 ## Bridges Available on Celo
 
 There are several bridges developed by the community for bridging tokens from other chains to Celo.

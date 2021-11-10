@@ -7,6 +7,8 @@ slug: /celo-owner-guide/cusd
 
 Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and stablecoins. 
 
+___
+
 ## Prerequisites
 
 This guide assumes:

@@ -8,6 +8,8 @@ slug: /developer-guide/start
 
 List of examples and guides to help you start building on Celo.
 
+___
+
 ## Interacting with Smart Contracts and Celo Networks
 
 - [Sending CELO](/developer-resources/walkthroughs/hellocelo.md)

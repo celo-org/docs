@@ -8,6 +8,8 @@ slug: /developer-guide/contractkit/contracts-wrappers-registry
 
 How to interact with CELO assets using the wrapper and registry Celo Core Contracts.
 
+___
+
 ## Interacting with CELO & cUSD
 
 celo-blockchain has two initial coins: CELO and cUSD (stableToken).

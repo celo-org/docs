@@ -6,6 +6,8 @@ description: Details of the release process for updating the blockchain client o
 
 Details of the release process for updating the blockchain client on the Celo platform.
 
+___
+
 ## Versioning
 
 Releases of celo-blockchain are numbered according to semantic versioning, as described at [semver.org](https://semver.org).

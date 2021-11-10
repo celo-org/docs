@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 How to manually add a Celo network to your existing MetaMask wallet. 
 
+___
+
 :::tip
 
 If you're a dApp developer and want to set up your wallet this programmatically, view [programmatic setup](programmatic-setup).

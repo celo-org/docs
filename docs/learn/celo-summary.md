@@ -7,6 +7,8 @@ description: Summary of Celo and the value it provides to the community.
 
 Summary of Celo and the value it provides to the community.
 
+___
+
 ## Crypto made for mobile
 
 Celo is a mobile-first, carbon-neutral blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone–bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. 

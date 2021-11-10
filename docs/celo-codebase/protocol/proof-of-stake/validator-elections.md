@@ -7,6 +7,8 @@ description: Introduction to Celo validator elections and management of groups a
 
 Introduction to Celo validator elections and management of groups and votes throughout the process.
 
+___
+
 ## Updating the Active Validator Set
 
 The active validator set is updated by running an election in the final block of each epoch, after processing transactions and [Epoch Rewards](/celo-codebase/protocol/proof-of-stake/epoch-rewards.md).

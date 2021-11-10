@@ -6,6 +6,8 @@ description: Details of the release process for updating CeloCLI and ContractKit
 
 Details of the release process for updating CeloCLI and ContractKit on the Celo platform.
 
+___
+
 ## Versioning
 
 Use the standard MAJOR.MINOR.PATCH semantic versioning scheme described at [semver.org](http://semver.org).

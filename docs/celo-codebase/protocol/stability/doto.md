@@ -7,6 +7,8 @@ description: How the supply of the Celo Dollar is achieved in the Celo protocol 
 
 How the supply of the Celo Dollar is achieved in the Celo protocol using the constant-product decentralized one-to-one mechanism. 
 
+___
+
 ## What is Mento?
 
 On a high level, Mento (previously known as CP-DOTO) allows user demand to determine the supply of celo stable assets by enabling users to create, for example, a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](oracles.md) value of the CELO to US Dollar market rate to work.

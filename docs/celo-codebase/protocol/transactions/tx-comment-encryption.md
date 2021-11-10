@@ -5,6 +5,9 @@ description: Overview of encrypted payment comments and its technical details re
 # Encrypted Payment Comments
 
 Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
+
+___
+
 ### Introduction to Comment Encryption
 
 As part of Celo’s identity protocol, a public encryption key is stored along with a user’s address in the `Accounts` contract. 

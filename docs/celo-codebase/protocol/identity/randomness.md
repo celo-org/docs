@@ -5,6 +5,8 @@ description: How unpredictable pseudo-randomness is achieved on the Celo blockch
 # Randomness
 
 How unpredictable pseudo-randomness is achieved on the Celo blockchain.
+
+___
 ## Requesting New Attestations
 
 As mentioned previously, when requesting new attestations, random validators are selected to perform phone number verification. This selection needs to be unpredictable to prevent Eve from creating an attestation for a phone number she doesn’t control. Suppose, for example, that instead validators were selected in a round robin fashion. Eve could request an attestation when it was the turn of a validator she controls to perform verification. Instead of sending an SMS to the phone number \(since she doesn’t own it\) she could just produce the correct verification code since she has access to the validator’s private key.

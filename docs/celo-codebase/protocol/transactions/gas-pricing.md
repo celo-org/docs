@@ -6,6 +6,9 @@ description: Introduction to gas prices, calculations, transactions, and fees on
 # Gas Pricing
 
 Introduction to gas prices, calculations, transactions, and fees on the Celo network. 
+
+___
+
 ## Gas Price Minimum
 
 Celo uses a gas market based on [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559). The protocol establishes a **gas price minimum** that applies to all transactions regardless of which validator processes them.

@@ -6,6 +6,8 @@ description: How to run a full node on the Alfajores Network using a prebuilt Do
 
 How to run a full node on the [Alfajores Network](/getting-started/alfajores-testnet) using a prebuilt Docker image.
 
+___
+
 ## What is a Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives).

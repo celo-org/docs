@@ -6,6 +6,8 @@ description: Find Celo on social media, contribute to the codebase, or chat with
 
 Find Celo on social media, contribute to the codebase, or chat with the community.
 
+___
+
 ## Follow
 
 Follow on Social Media to learn more about Celo.

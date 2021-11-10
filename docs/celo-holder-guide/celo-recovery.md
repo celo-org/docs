@@ -8,6 +8,8 @@ slug: /celo-owner-guide/celo-recovery
 
 How to recover ETH or ERC-20 tokens if you accidentally transferred them to a [CELO (previously Celo Gold)](../overview.md#background-and-key-concepts) address.
 
+___
+
 ## Prerequisites
 
 This guide assumes that you have access to the following:

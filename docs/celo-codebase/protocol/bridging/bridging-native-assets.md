@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 # Bridge Native Assets with Etherscan
 
 How to bridge native assets from ETH and Matic to Celo with Etherscan.
+
+___
 ## Call the EthHelper
 
 Navigate to the [Etherscan](https://etherscan.io/) page for the EthHelper.

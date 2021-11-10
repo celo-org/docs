@@ -5,6 +5,9 @@ description: Celo’s economic model is derived from research in Sacred Economic
 # Economic Model
 
 Celo’s economic model is derived from research in **Sacred Economics** and **Theory of Change**.
+
+___
+
 ## Sacred Economics
 
 Celo’s philosophy is grounded in the work of Charles Eisenstein’s[ Sacred Economics](http://sacred-economics.com/film/).

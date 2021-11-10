@@ -7,6 +7,9 @@ slug: /getting-started/baklava-testnet
 # Baklava Testnet
 
 Collection of resources to get started with Celo Baklava Testnet (Celo's Node Operator Testnet).
+
+___
+
 ## What is the Baklava Testnet?
 
 The Baklava Testnet is a non-production Testnet for the Validator community. 

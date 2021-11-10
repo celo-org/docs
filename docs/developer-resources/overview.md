@@ -8,6 +8,8 @@ slug: /developer-guide/overview
 
 Overview of key tools and resources for developers to build dApps on Celo.
 
+___
+
 ## Quick Start Guides
 
 View the [Developer Code Examples page](/developer-resources/start.md) to get started using the Celo SDKs with guided coding exercises.

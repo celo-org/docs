@@ -8,6 +8,8 @@ slug: /getting-started/choosing-a-network
 
 How to choose a Celo network based on your interested and objectives.
 
+___
+
 ## [Alfajores](/getting-started/alfajores-testnet), the Developer Testnet
 
 If you're a developer considering building on the Celo platform, or want to try out the [Celo Wallet](https://celo.org/build/wallet), start with [Alfajores](/getting-started/alfajores-testnet). You can [obtain a balance](https://celo.org/build/faucet) immediately and use it for experimenting with. The [SDK tutorials](/developer-guide/start) assume you are using Alfajores. The network is managed by cLabs, who operate all of its validators, and its software and deployed contracts will track mainnet.

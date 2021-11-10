@@ -6,6 +6,8 @@ description: Introduction to the Celo Protocol's consensus, governance, incentiv
 
 Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 
+___
+
 ## What is the Celo Protocol?
 
 The Celo blockchain and Celo Core Contracts together comprise the Celo Protocol. This term describes both what services the decentralized Celo network provides to applications and the way in which nodes in the network cooperate to achieve this. This section introduces some of these services.

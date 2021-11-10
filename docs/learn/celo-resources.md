@@ -5,6 +5,9 @@ description: Curated collection of Celo resources for developers, designers, dre
 # Resources
 
 Curated collection of Celo resources for developers, designers, dreamers, and doers.
+
+___
+
 ## Code Examples
 
 * [Sending Celo and cUSD](https://docs.celo.org/developer-guide/start/hellocelo)

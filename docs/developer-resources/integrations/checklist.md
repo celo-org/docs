@@ -8,6 +8,8 @@ description: Checklist for applications building and integrating on Celo.
 
 Checklist for applications building and integrating on Celo.
 
+___
+
 ## General
 
 ### Addresses

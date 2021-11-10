@@ -8,6 +8,8 @@ slug: /developer-guide/integrations/listings
 
 Support for digital asset exchanges or ranking sites that would like to run a Celo node and audit your setup.
 
+___
+
 ## Support
 If you have any questions or need assistance with these instructions, please contact cLabs or ask in the #exchanges channel on [Celo’s Discord server](https://chat.celo.org/). Remember that Discord is a public channel: never disclose recovery phrases (also known as backup keys, or mnemonics), private keys, unsanitized log output, or personal information.
 

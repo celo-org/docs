@@ -9,7 +9,7 @@ description: List of key terms related to the Celo platform, networks, tools, an
 
 List of key terms related to the Celo platform, networks, tools, and blockchain technology.
 
-
+___
 
 ## Account
 

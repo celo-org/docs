@@ -8,6 +8,8 @@ slug: /developer-guide/contractkit/setup
 
 ContractKit requirements, installation, and initialization.
 
+___
+
 ## Installation and System Requirements
 
 To install, run the following:

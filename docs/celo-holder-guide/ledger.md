@@ -7,6 +7,8 @@ slug: /celo-owner-guide/ledger
 
 How to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
 
+___
+
 ## Hardware Security Module
 
 A hardware wallet or Hardware Security Module (HSM) holds a single random seed (expressed as a mnemonic) which can be used to generate any number of public-private keypairs, that is, any number of accounts ("wallets"), each with an associated address.

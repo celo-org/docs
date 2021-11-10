@@ -9,6 +9,9 @@ import TabItem from '@theme/TabItem'
 # Programmatic Setup
 
 How dApp developers can use MetaMask to interact with the Celo network.
+
+___
+
 ## How to Add Celo to MetaMask
 
 For dApp Developers interested in using MetaMask with Celo, we encourage doing the following 3 things, which are described in detail in the below sections.

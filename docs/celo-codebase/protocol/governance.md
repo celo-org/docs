@@ -1,9 +1,14 @@
 ---
-title: Governance
+title: Celo Governance
 description: Overview of Celo governance and how the network is managed using the stakeholder proposal process.
 ---
 
+# Governance
+
 Overview of Celo governance and how the network is managed using the stakeholder proposal process.
+
+___
+
 
 ## What is Celo Governance?
 

@@ -5,6 +5,9 @@ description: How to join the mailing list for everything involving the Celo core
 # Celo Signal
 
 How to join the mailing list for everything involving the Celo core community and owners who participate in governance.
+
+___
+
 ## Why join the Mailing List?
 
 **If you are a:**

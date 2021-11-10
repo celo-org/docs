@@ -5,6 +5,9 @@ description: How to pay Celo gas fees using whitelisted ERC20 tokens.
 # Paying for Gas in Tokens
 
 How to pay Celo gas fees using whitelisted ERC20 tokens.
+
+___
+
 ## Transaction Fees
 
 As in Ethereum, transaction fees play a critical role in the Celo protocol as a safeguard against denial-of-service attacks. In order to simplify the process of sending funds, these fees can be paid in ERC20 tokens, and not just the native token of the protocol, CELO. This means that a user sending Celo Dollars to friends or family will be able to pay their transaction fee out of their Celo Dollar balance, and do not need to hold a separate balance of CELO in order to make transactions.

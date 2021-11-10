@@ -7,6 +7,7 @@ slug: /celo-owner-guide/voting-governance
 
 How to use the [Celo CLI](/command-line-interface/introduction.md) to participate in Goverance and create a Governance proposal.
 
+___
 
 ## Governance
 

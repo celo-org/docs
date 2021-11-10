@@ -7,6 +7,8 @@ description: Quick introductions on how to deploy dApps on Celo using Remix, Tru
 
 Quick introductions on how to deploy dApps on Celo using Remix, Truffle, and Hardhat.
 
+___
+
 ## Introduction
 
 Deploying a dApp on Celo is a quick and simple process. You can deploy on Celo using any [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.

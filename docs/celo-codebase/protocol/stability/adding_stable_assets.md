@@ -6,6 +6,8 @@ description: Overview of the requirements and steps to add a new stable asset to
 
 Overview of the requirements and steps to add a new stable asset to the Celo platform.
 
+___
+
 :::tip Note
 
 This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/celo-codebase/protocol/stability/doto.md).
