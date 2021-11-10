@@ -243,7 +243,6 @@ const sidebars = {
             'developer-resources/walkthroughs/hello-contract-remote-node',
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
-            'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/walkthroughs/web-dapp',
             'developer-resources/walkthroughs/valora-wc-v1',
             { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},

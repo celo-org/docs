@@ -64,7 +64,7 @@ module.exports = {
                     ]
                 },
                 {
-                    to: '/developer-guide/start/hello-mobile', 
+                    to: '/developer-guide/start', 
                     from: [
                         '/developer-guide/start/celo-truffle-box',
                         '/developer-resources/walkthroughs/hello-mobile-dapp',
