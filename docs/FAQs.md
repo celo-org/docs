@@ -177,4 +177,4 @@ You can see the key differences between Celo and Ethereum [here](./developer-gui
 
 ### When building for web2 what SDKs or libraries are available?
 
-A basic example can be found [here](./developer-guide/start/wallet-connect). If you prefer more granular control, take a look at [use-contractkit](https://github.com/celo-tools/use-contractkit). 
+A basic example of using wallet connect with Valora can be found [here](/developer-resources/walkthroughs/valora-wc-v1). If you prefer more granular control, take a look at [use-contractkit](https://github.com/celo-tools/use-contractkit). 

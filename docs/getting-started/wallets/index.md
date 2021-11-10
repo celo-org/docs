@@ -71,7 +71,7 @@ You can learn more about connecting Metamask to the Celo network [here](/getting
 
 ### Wallet Connect
 
-Strictly speaking, wallet connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 2, so dapp developers should use V2 as well. You can learn more about getting started with wallet connect on Celo with [this tutorial](/developer-guide/start/wallet-connect).
+Strictly speaking, wallet connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 1, so dapp developers should use V1 as well. You can learn more about getting started with wallet connect on Celo with [this tutorial](/developer-resources/walkthroughs/valora-wc-v1).
 
 - [walletconnect.org/](https://walletconnect.org/)
 - Platforms: Browser, iOS, Android

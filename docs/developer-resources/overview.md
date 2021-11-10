@@ -25,7 +25,7 @@ View the [Developer Code Examples page](/developer-resources/start.md) to get st
   - A minimal wrapper to make [ethers.js](https://docs.ethers.io/v5/) compatible with the Celo network
 - [use-contractkit](https://github.com/celo-tools/use-contractkit)
   - A [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-- [Wallet Connect](walkthroughs/wallet-connect.md) is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking.
+- [Wallet Connect](walkthroughs/valora-wc-v1.md) is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking.
 - [Python SDK](https://github.com/blaize-tech/celo-sdk-py)
 - [Java SDK](https://github.com/blaize-tech/celo-sdk-java)
 
