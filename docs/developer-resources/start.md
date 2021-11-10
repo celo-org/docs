@@ -21,8 +21,7 @@ The following examples and guides will help you start building on Celo.
 
 ## Mobile DApps
 
-- [DappKit Truffle Box](/developer-resources/walkthroughs/hello-mobile-dapp.md)
-  - The [DappKit Truffle Box](/developer-resources/walkthroughs/hello-mobile-dapp.md) walkthrough will help you create a simple mobile dApp using dAppKit and the React Native Expo framework. This application will allow connecting to your Valora account and sending transactions.
+- The [Valora + Wallet Connect](/developer-resources/walkthroughs/valora-wc-v1.md) walkthrough will help you create a simple web dApp using React and [Wallet Connect](https://walletconnect.com/). This application will allow connecting to your Valora account and sending transactions.
 
 ## Web DApps
 

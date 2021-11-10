@@ -54,9 +54,9 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 * [Deploy a Contract (local node)](../developer-guide/start/hellocontracts)
 * [Deploy and Interact with Contracts (Remotely)](../developer-guide/start/hello-contract-remote-node)
 
-## Create a Mobile dApp with Celo
+## Create a Mobile friendly dApp with Celo
 
-* [DappKit Truffle Box](../developer-guide/start/hello-mobile)
+* [Valora + Wallet Connect](../developer-resources/walkthroughs/valora-wc-v1.md)
 
 ## Create a Web dApp with Celo
 
