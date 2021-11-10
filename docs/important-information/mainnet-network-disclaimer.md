@@ -2,9 +2,10 @@
 title: Celo Mainnet Disclaimer
 description: Important considerations, warnings, and legal regulations for users of the Celo Mainnet.
 ---
+
 # Mainnet Disclaimer
 
-Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
+Important considerations, warnings, and legal regulations for users of Celo mainnet.
 
 ___
 
