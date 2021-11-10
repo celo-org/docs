@@ -169,6 +169,27 @@ const sidebars = {
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},
     { type: 'doc', label: 'FAQ', id: 'faqs', },
     {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
+        { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
+        {
+          type: 'category',
+          label: 'Quick Guides',
+          items: [
+            { type: 'doc', label: 'Celo', id: 'learn/celo-summary', },
+            { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol-summary', },
+            { type: 'doc', label: 'Valora', id: 'learn/valora-summary', },
+            { type: 'doc', label: 'CELO', id: 'learn/CELO-coin-summary', },
+            { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
+          ]
+        },
+        { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
+        { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
+      ]
+    },
+    {
       type: "category",
       label: "Command Line",
       items: [
@@ -350,26 +371,6 @@ const sidebars = {
     'developer-resources/integrations/listings',
     'developer-resources/integrations/cloud-hsm',
   ], 
-  // ######################################
-  // Learn 
-  // ######################################
-  learn: [ 
-    { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
-    { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
-    {
-      type: 'category',
-      label: 'Quick Guides',
-      items: [
-        { type: 'doc', label: 'Celo', id: 'learn/celo-summary', },
-        { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol-summary', },
-        { type: 'doc', label: 'Valora', id: 'learn/valora-summary', },
-        { type: 'doc', label: 'CELO', id: 'learn/CELO-coin-summary', },
-        { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
-      ]
-    },
-    { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
-    { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
-  ],
   // ######################################
   // Contributors 
   // ######################################

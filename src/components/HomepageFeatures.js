@@ -4,17 +4,6 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Tutorials',
-    // Svg: require('../../static/img/homepage/1.svg').default,
-    description: (
-      <>Gain the skills you need to get the most from the Celo platform.</>
-    ),
-    link: (
-      // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
-      <a href="/learn/celo-onboarding">Learn Celo</a>
-    ),
-  },
-  {
     title: 'Developers',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
@@ -62,6 +51,17 @@ const FeatureList = [
     ),
     link: (
       <a href="/community/contributing">Contribute to Celo</a>
+    ),
+  },
+  {
+    title: 'Additional Resources',
+    // Svg: require('../../static/img/homepage/1.svg').default,
+    description: (
+      <>Gain the skills you need to get the most from the Celo platform.</>
+    ),
+    link: (
+      // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
+      <a href="/learn/celo-onboarding">Find Celo Resources</a>
     ),
   },
 ];
