@@ -164,6 +164,27 @@ const sidebars = {
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},
     { type: 'doc', label: 'FAQ', id: 'faqs', },
     {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
+        { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
+        {
+          type: 'category',
+          label: 'Quick Guides',
+          items: [
+            { type: 'doc', label: 'Celo', id: 'learn/celo-summary', },
+            { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol-summary', },
+            { type: 'doc', label: 'Valora', id: 'learn/valora-summary', },
+            { type: 'doc', label: 'CELO', id: 'learn/CELO-coin-summary', },
+            { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
+          ]
+        },
+        { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
+        { type: 'doc', label: 'Celo Resources', id: 'learn/celo-resources', },
+      ]
+    },
+    {
       type: "category",
       label: "Command Line",
       items: [
@@ -238,10 +259,8 @@ const sidebars = {
             'developer-resources/walkthroughs/hello-contract-remote-node',
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
-            'developer-resources/walkthroughs/hello-mobile-dapp',
             'developer-resources/walkthroughs/web-dapp',
             'developer-resources/walkthroughs/valora-wc-v1',
-            { type: 'doc', label: 'WalletConnect', id: 'developer-resources/walkthroughs/wallet-connect'},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
           ]
         },
@@ -346,26 +365,6 @@ const sidebars = {
     { type: 'doc', label: 'Listings', id: 'developer-resources/integrations/listings' },
     { type: 'doc', label: 'Cloud HSM', id: 'developer-resources/integrations/cloud-hsm' },
   ], 
-  // ######################################
-  // Learn 
-  // ######################################
-  learn: [ 
-    { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
-    { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
-    {
-      type: 'category',
-      label: 'Quick Guides',
-      items: [
-        { type: 'doc', label: 'Celo', id: 'learn/celo-summary', },
-        { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol-summary', },
-        { type: 'doc', label: 'Valora', id: 'learn/valora-summary', },
-        { type: 'doc', label: 'CELO', id: 'learn/CELO-coin-summary', },
-        { type: 'doc', label: 'Celo Stablecoins', id: 'learn/platform-native-stablecoins-summary', },
-      ]
-    },
-    { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
-    { type: 'doc', label: 'Additional Resources', id: 'learn/celo-resources', },
-  ],
   // ######################################
   // Contributors 
   // ######################################

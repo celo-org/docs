@@ -15,7 +15,6 @@ As mentioned previously, when requesting new attestations, random validators are
 Producing unpredictable pseudo-randomness without a trusted third party is not trivial. Several solutions for this problem exist or are being currently researched. They include Verifiable Random Functions \(for example, based on BLS threshold signatures\), Verifiable Delay Functions, and commit-reveal schemes. Currently, Celo implements a simple commit-reveal scheme which is secure enough for the purposes of validator selection. A more sophisticated solution might be implemented as the network evolves, especially if randomness becomes necessary for other purposes that require stronger assumptions about the randomness’s security \(for example if it was decided that a randomized leader election algorithm should replace the current round robin\).
 
 In a proposed block, the proposer attaches two values related to the randomness scheme - randomness corresponding to their previous commitment, and a new commitment to freshly generated random bytes that will be revealed in the future. The revealed randomness is added to an entropy pool accessible on-chain from the Random smart contract.
-
 ## Randomness Equation
 
 More formally, the $$n*{th}$$ block proposed by a given validator contains values $$(r_n, s_n)$$ such that $$\text{keccack256}(r_n) = s*{n-1}$$. The one exception to this is the validator’s first block, the case where $$n = 1$$, since they have not previously committed to randomness yet. Here, the protocol instead requires that $$r_1 = 1$$.

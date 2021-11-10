@@ -1,6 +1,6 @@
 ---
-title: 'Deploy an ERC20 token to Celo'
-description: How to deploy token contracts that use the ERC20, ERC721, or ERC1155 token standard to Celo without writing code.
+title: Deploy & Mint a Token
+description: How to deploy an ERC20 token contract to Celo.
 ---
 # Deploy an ERC20 token to Celo
 

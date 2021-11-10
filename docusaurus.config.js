@@ -64,7 +64,7 @@ module.exports = {
                     ]
                 },
                 {
-                    to: '/developer-guide/start/hello-mobile', 
+                    to: '/developer-guide/start', 
                     from: [
                         '/developer-guide/start/celo-truffle-box',
                         '/developer-resources/walkthroughs/hello-mobile-dapp',
@@ -314,11 +314,6 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "learn/celo-onboarding",
-                    "label": "Tutorials",
-                    "position": "left"
-                },
-                {
                     "to": "developer-guide/overview",
                     "label": "Developers",
                     "position": "left"
@@ -336,11 +331,6 @@ module.exports = {
                 {
                     "to": "developer-guide/integrations",
                     "label": "Integrations",
-                    "position": "left"
-                },
-                {
-                    "to": "community/contributing",
-                    "label": "Contributors",
                     "position": "left"
                 },
                 {
@@ -388,11 +378,16 @@ module.exports = {
                     {
                         label: "Docs GitHub",
                         href: "https://github.com/celo-org/docs"
-                    }
+                    },
                 ]},
                 {
                     title: "Community",
-                    items: [{
+                    items: [
+                        {
+                            href: "/community/contributing",
+                            label: "Contributors",
+                        },
+                        {
                             label: "Forum",
                             href: "https://forum.celo.org/",
                         },
