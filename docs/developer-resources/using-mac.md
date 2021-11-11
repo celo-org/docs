@@ -275,7 +275,7 @@ Install by running the following:
 ```shell
 $ brew install cask
 $ brew tap homebrew/cask-versions
-$ brew install --cask homebrew/cask-versions/adoptopenjdk8
+$ brew install homebrew/cask-versions/adoptopenjdk8
 ```
 
 #### Android Dev Tools
@@ -283,8 +283,8 @@ $ brew install --cask homebrew/cask-versions/adoptopenjdk8
 Install the Android SDK and platform-tools
 
 ```
-$ brew install --cask android-sdk
-$ brew install --cask android-platform-tools
+$ brew install android-sdk
+$ brew install android-platform-tools
 ```
 
 Next, install [Android Studio](https://developer.android.com/studio) and add the [Android NDK](https://developer.android.com/studio/projects/install-ndk).
@@ -318,7 +318,7 @@ For the same reason you installed the emulator iOS (you may or may not have an A
 One Android emulator option is Genymotion.
 
 ```
-brew install --cask genymotion
+brew install genymotion
 ```
 
 Under OSX High Sierra and later, you'll get a message that you need to [approve it in System Preferences > Security & Privacy > General.](https://developer.apple.com/library/content/technotes/tn2459/_index.html)
