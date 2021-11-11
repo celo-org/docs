@@ -54,7 +54,6 @@ const CELO_PARAMS = {
     iconUrls: ['future'],
 };
 ```
-
 </TabItem>
 <TabItem value='alfajores'>
 
@@ -70,8 +69,8 @@ const ALFAJORES_PARAMS = {
 ```
 
 </TabItem>
+
 <TabItem value='baklava'>
-</TabItem>
 
 ```javascript
 const BAKLAVA_PARAMS = {
@@ -83,8 +82,9 @@ const BAKLAVA_PARAMS = {
     iconUrls: ['future'],
 };
 ```
+</TabItem>
 
-</Tabs>>
+</Tabs>
 
 ## Adding Tokens \(e.g. cUSD, cEUR\)
 
