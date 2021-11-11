@@ -27,9 +27,6 @@ View the [Developer Code Examples page](/developer-resources/start.md) to get st
   - A minimal wrapper to make [ethers.js](https://docs.ethers.io/v5/) compatible with the Celo network
 - [use-contractkit](https://github.com/celo-tools/use-contractkit)
   - A [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-- [Wallet Connect](walkthroughs/valora-wc-v1.md) is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking.
-- [Python SDK](https://github.com/blaize-tech/celo-sdk-py)
-- [Java SDK](https://github.com/blaize-tech/celo-sdk-java)
 
 ### Infrastructure
 
@@ -62,6 +59,7 @@ Similarities between Celo and Ethereum means you can use many of the most popula
 
 - [Metamask](https://metamask.io/) is one of the most popular EVM blockchain wallets. Learn more about how to use Metamask with Celo [here](../getting-started/wallets/using-metamask-with-celo/index.md).
 - ERC20, NFT (ERC721) and other smart contract interface standards are supported, see [Celo for Ethereum Developers](developer-resources/celo-for-eth-devs.md)
+- [Hardhat](https://hardhat.org/)
 - [Truffle](https://www.trufflesuite.com/)
 - [OpenZeppelin](https://openzeppelin.com/)
 - [Remix](https://remix.ethereum.org/)
