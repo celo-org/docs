@@ -40,9 +40,19 @@ The [Command-Line Interface](../community/release-process/base-cli-contractkit-d
 
 It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
 
+## WalletConnect
+
+[WalletConnect](https://walletconnect.com/) is a standard across EVM compatible blockchains to connect wallets to dapps. It allows developers to build connections between wallets and dapps on the same desktop or mobile device, or between desktop dapps and mobile wallets.
+
 ## DAppKit
 
-[DAppKit](../developer-guide/dappkit) is a lightweight set of functions that allow mobile dApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience:dDApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
+:::warning
+
+While DAppKit is functional, it is no longer being actively maintained in favor of WalletConnect. If WalletConnect does not work for your use case, you can use deep links directly. You can read more about how Valora handles this [here](https://github.com/valora-inc/wallet/blob/main/packages/mobile/docs/deeplinks.md).
+
+:::
+
+[DAppKit](../developer-guide/dappkit) is a lightweight set of functions that allow mobile dApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience: DApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary. 
 
 **DAppKit supports the following functionality:**
 
@@ -54,7 +64,7 @@ DAppKit is currently built with React Native in mind, though the excellent[ Expo
 
 # Celo Networks
 
-## **Mainnet**
+## Mainnet
 
 The production Celo network, [Mainnet](../getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
 
@@ -95,6 +105,10 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 [Figment datahub](https://figment.io/datahub/celo/) is a service similar to Forno. They have some additional features that allow you to track how people are using your application in terms of the type and number of requests coming through the endpoints. They have a free tier with the option to pay for the service to increase limits to support more popular projects.
 
+## Quicknode
+
+[Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
+
 # Celo Wallets
 
 [Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
@@ -107,18 +121,20 @@ The Celo Native Wallets section shows some popular wallets that were built speci
 
 # Smart Contracts
 
-A smart contract is a self-executing contract with the terms of the agreement being directly written into lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network. The code controls the execution, and transactions are trackable and irreversible.
+A smart contract is a deterministic program running on a blockchain. The terms of the agreement (the program) are written as lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network. The code controls the execution, and transactions are trackable and irreversible.
 
-Celo includes both protocol contracts and application-specific contracts. 
+Celo includes both protocol contracts and application-specific contracts.
+
+Smart contracts running on Celo are functionally (and often programatically) identitcal to [smart contracts running on Ethereum](https://ethereum.org/en/developers/docs/smart-contracts/#top).
 
 ## Protocol Contracts
 
-Protocol contracts exist at the lowest layer and include functionality like the Celo election process and code that runs the Celo proof of stake system and on-chain governance. 
+Protocol contracts exist at the lowest layer and include functionality like the Celo election process and code that runs the Celo proof of stake system and on-chain governance.
 
 ## Application Contracts
 
-Application contracts aren’t built by cLabs. These contracts are custom-built by developers to support application functionality. 
+Application contracts may or may not be built by cLabs. These contracts are custom-built by developers to support application functionality.
 
 ## Ethereum Contracts
 
-[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) has a common token, governance, access control, utility contracts written in Solidity.
+[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) has a common token, governance, access control, utility contracts written in [Solidity](https://docs.soliditylang.org/en/latest/).

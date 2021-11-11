@@ -16,7 +16,7 @@ See [Celo for Ethereum Developers](../developer-guide/celo-for-eth-devs) for an 
 
 ## Solidity
 
-Solidity is an object-oriented, high-level language for implementing smart contracts. It’s easy to learn if you’re familiar with C++, Python or Javascript. It’s the most popular language on Ethereum with strong support for both tooling and resources. You leverage existing work done on Ethereum open source projects for Celo applications.
+[Solidity](https://docs.soliditylang.org/en/latest/) is an object-oriented, high-level language for implementing smart contracts. It’s easy to learn if you’re familiar with C++, Python or Javascript. It’s the most popular language on Ethereum with strong support for both tooling and resources. You leverage existing work done on Ethereum open source projects for Celo applications.
 
 ## Truffle
 
@@ -35,11 +35,6 @@ Learn more about deploying contracts to Celo with Hardhat [here](../developer-re
 [Remix IDE](https://remix-project.org/) allows developing, deploying, and administering smart contracts for Ethereum like blockchains. It can also be used as a learning platform. It allows you to write Solidity smart contracts with linting, import from GitHub, compile contracts to the EVM, deploy contracts, and connect to & interact with already deployed smart contracts.
 
 Learn more about deploying contracts to Celo with Remix [here](../developer-resources/deploy-remix).
-
-**Requirements**
-
-* [Celo Extension Wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
-* Celo Remix plugin
 
 ### Metamask
 
