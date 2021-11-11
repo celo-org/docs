@@ -64,7 +64,7 @@ DAppKit is currently built with React Native in mind, though the excellent[ Expo
 
 # Celo Networks
 
-## **Mainnet**
+## Mainnet
 
 The production Celo network, [Mainnet](../getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
 
