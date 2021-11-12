@@ -249,7 +249,7 @@ module.exports = {
                     ]
                 },    
                 {
-                    to: '/command-line-interface/registry',
+                    to: '/command-line-interface/introduction',
                     from: [
                         '/command-line-interface/commands/registry',
                     ]
