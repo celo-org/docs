@@ -11,6 +11,12 @@ Introduction to DAppKit and resources to help you gets started.
 
 ___
 
+:::warning
+
+While DAppKit is functional, it is no longer being actively maintained in favor of WalletConnect. If WalletConnect does not work for your use case, you can use deep links directly. You can read more about how Valora handles this [here](https://github.com/valora-inc/wallet/blob/main/packages/mobile/docs/deeplinks.md).
+
+:::
+
 ## What is DAppKit?
 
 DAppKit is a lightweight set of functions that allow mobile DApps to work with the Celo Wallet to sign transactions and access the user's account. This allows for a better user experience: DApps can focus on a great native experience without having to worry about key management. It also provides a simpler development experience, as no state or connection management is necessary.
