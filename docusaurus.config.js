@@ -358,7 +358,7 @@ module.exports = {
                     position: 'right',
                     className: 'header-github-link',
                     'aria-label': 'GitHub repository',
-                  },
+                },
             ],
         },
         gtag: {
@@ -380,6 +380,10 @@ module.exports = {
                     items: [{
                         label: "Home",
                         to: "/",
+                    },
+                    {
+                        label: "Blog",
+                        to: "/blog"
                     },
                     {
                         href: "https://celo.crowdin.com/celo-docs",
@@ -421,7 +425,7 @@ module.exports = {
                         href: "https://celo.org"
                     },
                     {
-                        label: "Blog",
+                        label: "Medium Blog",
                         href: "https://medium.com/celoorg"
                     },
                     {
