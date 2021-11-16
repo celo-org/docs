@@ -26,9 +26,9 @@ Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome
 
 Our community includes a group of contributors that help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.
 
-<PageRef url="/community/protocol-contributors" pageName="Protocol Contributors" />
-<PageRef url="/community/documentation-contributors" pageName="Documentation Contributors" />
-<PageRef url="/community/translation-contributors" pageName="Translation Contributors" />
+<PageRef url="/community/code-contributors" pageName="Code Contributors" />
+<PageRef url="/community/documentation-contributors" pageName="Technical Writers" />
+<PageRef url="/community/translation-contributors" pageName="Translators" />
 <PageRef url="/community/CIP-contributors" pageName="Community Improvement Proposals" />
 
 :::note

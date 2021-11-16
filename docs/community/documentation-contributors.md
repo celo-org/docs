@@ -1,9 +1,9 @@
 ---
-title: Celo Documentation Contributors
+title: Celo Technical Writers
 description: How to contribute to the Celo community documentation.
 ---
 
-# Documentation Contributors
+# Technical Writers
 
 How to contribute to the Celo community documentation.
 
@@ -11,9 +11,9 @@ ___
 
 import YouTube from '@components/YouTube';
 
-## Who are Documentation Contributors?
+## Who are Celo technical writers?
 
-Documentation Contributors support the Celo community by educating developers about Celo through engaging, informative, and insightful documentation.
+Technical writers support the Celo community by educating developers about Celo through engaging, informative, and insightful documentation.
 
 ## How to Contribute
 
@@ -52,5 +52,3 @@ View [Translation Contributions](/community/translation-contributors) for detail
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-
-

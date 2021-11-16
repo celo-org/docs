@@ -1,11 +1,11 @@
 ---
-title: Celo Translation Contributors
+title: Celo Translators
 description: Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 ---
 
-# Translation Contributors
+# Translators
 
-How to contribute to the Celo community as a Translator.
+How to contribute to the Celo community as a translator.
 
 ___
 
