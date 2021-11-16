@@ -71,7 +71,6 @@ const ALFAJORES_PARAMS = {
 
 </TabItem>
 <TabItem value='baklava'>
-</TabItem>
 
 ```javascript
 const BAKLAVA_PARAMS = {
@@ -83,7 +82,7 @@ const BAKLAVA_PARAMS = {
     iconUrls: ['future'],
 };
 ```
-
+</TabItem>
 </Tabs>>
 
 ## Adding Tokens \(e.g. cUSD, cEUR\)
