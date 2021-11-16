@@ -13,7 +13,7 @@ import YouTube from '@components/YouTube';
 
 ## Who are Documentation Contributors?
 
-Documentation Contributors support the Celo community by educating developers about Celo through engaging, informative, and insightful documentation at [docs.celo.org](docs.celo.org).
+Documentation Contributors support the Celo community by educating developers about Celo through engaging, informative, and insightful documentation.
 
 ## How to Contribute
 
