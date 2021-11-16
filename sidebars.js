@@ -397,7 +397,7 @@ const sidebars = {
       label: 'Contributors',
       items: [
         { type: 'doc', label: 'Guidelines', id: 'community/guidelines', },
-        { type: 'doc', label: 'Protocol', id: 'community/code-contributors' },
+        { type: 'doc', label: 'Code', id: 'community/code-contributors' },
         { type: 'doc', label: 'Translation', id: 'community/translation-contributors' },
         { type: 'doc', label: 'Documentation ', id: 'community/documentation-contributors' },
         { type: 'doc', label: 'Community Improvements', id: 'community/CIP-contributors' },
