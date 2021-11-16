@@ -1,6 +1,6 @@
 ---
 title: Welcome to Celo
-description: Our mission is to build a financial system that creates the conditions for prosperity—for everyone.
+description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 id: welcome
 slug: /welcome
 ---
@@ -9,7 +9,7 @@ import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
 
-Our mission is to build a financial system that creates the conditions for prosperity—for everyone.
+Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 
 ___
 
@@ -35,4 +35,4 @@ An Ethereum-compatible technology capable of reaching global users at scale, Cel
 
 To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
 
-[Introduction to Celo](../introduction-to-celo)
+<PageRef url="/introduction-to-celo" pageName="Introduction to Celo" />

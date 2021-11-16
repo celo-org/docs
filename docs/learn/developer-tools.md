@@ -8,14 +8,9 @@ Overview of Celo tools and the value they provide to developers.
 
 ___
 
+## SDKs
 
-## BlockScout
-
-[BlockScout](https://explorer.celo.org/) is a cLabs hosted GUI block explorer and [API endpoints](https://explorer.celo.org/api_docs). It allows you to look up information about the Celo blockchain including average block time, total transactions, and additional transaction details. You may also view details of your own custom smart contracts or existing DeFi contracts to view how value is moving between accounts and on-chain network events.
-
-The [API endpoints](https://explorer.celo.org/api_docs) allow you programmatically fetch blockchain data such as account balances and transaction history, smart contract interactions and events (logs), and block and transaction-specific information.
-
-## ContractKit
+### ContractKit
 
 ContractKit is a library to help developers and validators to interact with the Celo blockchain and is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
 
@@ -34,7 +29,15 @@ Contractkit includes common functionality to make it easier to get started build
 * Utilities
 * Query on-chain identifier for a phone number
 
-## Celo CLI
+### Celo Ethers.js Wrapper
+
+[Celo Ethers.js Wrapper](https://github.com/celo-tools/celo-ethers-wrapper) is a minimal wrapper to make [ethers.js](https://docs.ethers.io/v5/) compatible with the Celo network
+
+### use-contractkit
+
+[use-contractkit](https://github.com/celo-tools/use-contractkit) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
+
+### Celo CLI
 
 The [Command-Line Interface](../community/release-process/base-cli-contractkit-dappkit-utils) allows users to interact with the Celo Protocol smart contracts. 
 
@@ -62,19 +65,17 @@ While DAppKit is functional, it is no longer being actively maintained in favor 
 
 DAppKit is currently built with React Native in mind, though the excellent[ Expo framework](https://expo.io/) is still highly recommended for developers building mobile and web dApps on Celo. Expo offers awesome features like incredibly easy setup, hot-reloading, and more. Currently, most of our tutorials and examples involve Expo, though we are working on creating additional documentation for other app frameworks. While DAppKit was designed for mobile apps in particular, since version 1.1.0-beta.1 it offers beta support for web dApps running in the browser of a mobile device. More details about this are included in the Usage section below.
 
-# Celo Networks
+## Celo Networks
 
-## Mainnet
+### Mainnet
 
 The production Celo network, [Mainnet](../getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
-
-
 
 * [Mainnet Validator Explorer](https://validators.celo.org/) - to view the current status of Validator elections
 * [Mainnet Network Status](https://stats.celo.org/) - to check the current availability of the network
 * [Mainnet Network Block Explorer](http://explorer.celo.org/) - explore the history of the blockchain and view transaction details
 
-## Alfajores Testnet
+### Alfajores Testnet
 
 The [Alfajores Testnet](../getting-started/alfajores-testnet) is a Celo test network for developers building on the Celo platform. You can use it to try out the[ Celo Wallet](https://celo.org/build/wallet) or the Celo CLI (by sending transfers to yourself or other users of the testnet). You can also assist in running the network by operating a full node on your machine (or on a cloud or hosting provider).
 
@@ -83,7 +84,7 @@ The [Alfajores Testnet](../getting-started/alfajores-testnet) is a Celo test net
 * [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org/) - to check the current availability of the testnet
 * [Alfajores Testnet Block Explorer](https://alfajores-blockscout.celo-testnet.org/) - explore the history of the blockchain and view transaction details
 
-## Baklava Testnet
+### Baklava Testnet
 
 The [Baklava Testnet](../getting-started/baklava-testnet) is focused on building operational experience and best practices for node operators.
 
@@ -93,7 +94,7 @@ It is designed for validators and testing protocol changes. You will most likely
 * [Baklava Network Status](https://baklava-celostats.celo-testnet.org/) - to check the current availability of the testnet
 * [Baklava Network Block Explorer](https://baklava-blockscout.celo-testnet.org/) - explore the history of the blockchain and view transaction details
 
-## Hosted Node Service (Forno)
+### Hosted Node Service (Forno)
 
 [Forno](../developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
@@ -101,15 +102,15 @@ Forno has HTTP and WebSocket endpoints that you can use to query current Celo da
 
 Forno can be used as an HTTP Provider with ContractKit.
 
-## Figment Datahub
+### Figment Datahub
 
 [Figment datahub](https://figment.io/datahub/celo/) is a service similar to Forno. They have some additional features that allow you to track how people are using your application in terms of the type and number of requests coming through the endpoints. They have a free tier with the option to pay for the service to increase limits to support more popular projects.
 
-## Quicknode
+### Quicknode
 
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
 
-# Celo Wallets
+## Celo Wallets
 
 [Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
 
@@ -119,7 +120,7 @@ It's important to be careful when choosing a wallet because they manage your sec
 
 The Celo Native Wallets section shows some popular wallets that were built specifically for the Celo network. They often include features that more general wallets do not, like paying for fees with cUSD. The Celo Compatible Wallets section has wallets that can work with Celo but were built for other networks (like Ethereum) or through company partnerships (like Pesabase).
 
-# Smart Contracts
+## Smart Contracts
 
 A smart contract is a deterministic program running on a blockchain. The terms of the agreement (the program) are written as lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network. The code controls the execution, and transactions are trackable and irreversible.
 
@@ -127,14 +128,44 @@ Celo includes both protocol contracts and application-specific contracts.
 
 Smart contracts running on Celo are functionally (and often programatically) identitcal to [smart contracts running on Ethereum](https://ethereum.org/en/developers/docs/smart-contracts/#top).
 
-## Protocol Contracts
+### Protocol Contracts
 
 Protocol contracts exist at the lowest layer and include functionality like the Celo election process and code that runs the Celo proof of stake system and on-chain governance.
 
-## Application Contracts
+### Application Contracts
 
 Application contracts may or may not be built by cLabs. These contracts are custom-built by developers to support application functionality.
 
-## Ethereum Contracts
+### Ethereum Contracts
 
-[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) has a common token, governance, access control, utility contracts written in [Solidity](https://docs.soliditylang.org/en/latest/).
+[OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) has a common token, governance, access control, utility contracts written in Solidity.
+
+## Infrastructure
+
+### BlockScout
+
+[BlockScout](https://explorer.celo.org/) is a cLabs hosted GUI block explorer and [API endpoints](https://explorer.celo.org/api_docs). It allows you to look up information about the Celo blockchain including average block time, total transactions, and additional transaction details. You may also view details of your own custom smart contracts or existing DeFi contracts to view how value is moving between accounts and on-chain network events.
+
+The [API endpoints](https://explorer.celo.org/api_docs) allow you programmatically fetch blockchain data such as account balances and transaction history, smart contract interactions and events (logs), and block and transaction-specific information.
+
+### ODIS
+
+- [ODIS](/developer-resources/contractkit/odis.md)
+  - Oblivious decentralized identity service
+  - Lightweight identity layer that makes it easy to send cryptocurrency to a phone number
+- Blockscout block explorers
+
+### Stats.celo.org
+
+- [Stats.celo.org](http://stats.celo.org) allows you to check network activity and health.
+
+### Ongoing projects
+
+- [Wallets](../getting-started/wallets/index.md)
+- [Community projects & Ecosystem](https://celohub.org/)
+- [Grant recipients](https://celo.org/experience/grants/directory)
+
+### Community
+
+- Join our [Discord](https://chat.celo.org)
+- [Discourse Forum](https://forum.celo.org/)

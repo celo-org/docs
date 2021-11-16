@@ -2,9 +2,11 @@
 title: Sending CELO & cUSD
 slug: /developer-guide/start/hellocelo
 ---
-# Send CELO & cUSD
+# Sending CELO & cUSD
 
 How to connect to the Celo test network and tranfer tokens using ContractKit.
+
+___
 
 ## Hello Celo: sending value with Celo
 

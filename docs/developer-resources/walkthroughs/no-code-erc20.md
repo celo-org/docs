@@ -6,6 +6,8 @@ description: How to deploy an ERC20 token contract to Celo.
 
 How to deploy token contracts that use the ERC20, ERC721, or ERC1155 token standard to Celo without writing code.
 
+___
+
 ## Getting Started
 
 In this tutorial, we will go over how to deploy an ERC20 token contract. The process is very similar for deploying other tokens as well.

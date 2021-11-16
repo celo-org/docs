@@ -7,7 +7,9 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #35D07F;
+  --ifm-color-primary: #35D07E;
+  /* Alternate Color (Green is hard to read) */
+  /* --ifm-color-primary: #3476F2; */
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -18,7 +20,7 @@
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: rgb(17, 18, 20);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
@@ -62,7 +64,7 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .hero--primary {
-  --ifm-hero-background-color: #2f3337;
+  --ifm-hero-background-color: #111214;
   --ifm-hero-text-color: #ffffff;
 }
 
@@ -75,7 +77,7 @@ html[data-theme='dark'] .header-github-link:before {
 and (min-width : 1951px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 80%;
     background-position: -290px 0em;
     background-repeat: repeat-x;
@@ -87,7 +89,7 @@ and (min-width : 1651px)
 and (max-width : 1950px)  {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 100%;
     background-position: -540px 0em;
     background-repeat: repeat-x;
@@ -99,7 +101,7 @@ and (min-width : 1451px)
 and (max-width : 1650px)  {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 100%;
     background-position: -540px 0em;
     background-repeat: repeat-x;
@@ -112,7 +114,7 @@ and (min-width : 1251px)
 and (max-width : 1450px)  {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -800px 1em;
     background-repeat: repeat-x;
@@ -124,7 +126,7 @@ and (min-width : 1051px)
 and (max-width : 1250px)  {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -678px 1em;
     background-repeat: repeat-x;
@@ -136,7 +138,7 @@ and (min-width : 965px)
 and (max-width : 1050px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -625px 1em;
     background-repeat: repeat-x;
@@ -148,7 +150,7 @@ and (min-width : 861px)
 and (max-width : 964px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -555px 1em;
     background-repeat: repeat-x;
@@ -161,7 +163,7 @@ and (min-width : 691px)
 and (max-width : 860px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -485px 1em;
     background-repeat: repeat-x;
@@ -173,7 +175,7 @@ and (min-width : 641px)
 and (max-width : 690px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -420px 4em;
     background-repeat: repeat-x;
@@ -185,7 +187,7 @@ and (min-width : 581px)
 and (max-width : 640px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -371px 9em;
     background-repeat: repeat-x;
@@ -197,7 +199,7 @@ and (min-width : 481px)
 and (max-width : 580px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -308px 9em;
     background-repeat: repeat-x;
@@ -209,7 +211,7 @@ and (min-width : 451px)
 and (max-width : 480px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 150%;
     background-position: -283px 9em;
     background-repeat: repeat-x;
@@ -221,7 +223,7 @@ and (min-width : 381px)
 and (max-width : 450px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 200%;
     background-position: -373px 10em;
     background-repeat: repeat-x;
@@ -233,7 +235,7 @@ and (min-width : 321px)
 and (max-width : 380px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 300%;
     background-position: -440px 10em;
     background-repeat: repeat-x;
@@ -245,9 +247,29 @@ and (min-width : 270px)
 and (max-width : 320px) {
 /* Styles */
 .hero--primary {
-  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/5d88ceeeb8bb1b0372a04d3128ea2430/HomeSpotIllo_2x.jpg");
+  background-image: url("https://images.ctfassets.net/bzlah72jow8z/bmyoV7T0sEJTJlcTkvL18/de50fc80b518f648ed94f8decf03c03c/MOR-desktop.jpg");
     background-size: 300%;
     background-position: -385px 14em;
     background-repeat: repeat-x;
 }
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #18191A;
+  --ifm-footer-color: var(--ifm-footer-link-color);
+  --ifm-footer-link-color: var(--ifm-color-secondary);
+  --ifm-footer-title-color: var(--ifm-color-white);
+}
+
+.navbar--dark {
+  background-color: #111214;
+  box-shadow: var(--ifm-navbar-shadow);
+  display: flex;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #111214;
+  --ifm-background-surface-color: #111214;
 }

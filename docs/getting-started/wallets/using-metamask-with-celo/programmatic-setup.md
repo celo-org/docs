@@ -83,8 +83,7 @@ const BAKLAVA_PARAMS = {
 };
 ```
 </TabItem>
-
-</Tabs>
+</Tabs>>
 
 ## Adding Tokens \(e.g. cUSD, cEUR\)
 

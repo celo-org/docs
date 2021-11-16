@@ -325,13 +325,18 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "celo-owner-guide/quick-start",
+                    "to": "celo-holder-guide/owners",
                     "label": "Owners",
                     "position": "left"
                 },
                 {
                     "to": "developer-guide/integrations",
                     "label": "Integrations",
+                    "position": "left"
+                },
+                {
+                    "to": "/community/contributing",
+                    "label": "Community",
                     "position": "left"
                 },
                 {

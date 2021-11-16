@@ -9,6 +9,8 @@ import ImageWrapper from '@components/ImageWrapper'
 
 How to use [Wallet Connect version 1](https://docs.walletconnect.com/1.0/) in a DApp to connect to [Valora](https://valoraapp.com/). 
 
+___
+
 ## Getting Started
 
 In this example, we will demonstrate how to add Wallet Connect to a simple React app.
