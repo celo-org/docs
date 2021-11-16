@@ -300,6 +300,7 @@ module.exports = {
         },
         colorMode: {
             defaultMode: 'dark',
+            backgroundColor: '#111214',
         },
         navbar: {
             title: "Celo Docs",

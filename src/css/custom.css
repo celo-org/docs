@@ -7,7 +7,9 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #35D07F;
+  --ifm-color-primary: #35D07E;
+  /* Alternate Color (Green is hard to read) */
+  /* --ifm-color-primary: #3476F2; */
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -62,7 +64,7 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .hero--primary {
-  --ifm-hero-background-color: rgb(17, 18, 20);
+  --ifm-hero-background-color: #111214;
   --ifm-hero-text-color: #ffffff;
 }
 
@@ -253,8 +255,21 @@ and (max-width : 320px) {
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #111214;
+  --ifm-footer-background-color: #18191A;
   --ifm-footer-color: var(--ifm-footer-link-color);
   --ifm-footer-link-color: var(--ifm-color-secondary);
   --ifm-footer-title-color: var(--ifm-color-white);
+}
+
+.navbar--dark {
+  background-color: #111214;
+  box-shadow: var(--ifm-navbar-shadow);
+  display: flex;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #111214;
+  --ifm-background-surface-color: #111214;
 }
