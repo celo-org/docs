@@ -146,6 +146,13 @@ Poof.cash is a protocol for decentralized, private transactions. It is the first
 * [Website](https://poof.cash)
 * [GitHub](https://github.com/poofcash)
 
+### Talent Protocol
+
+Talent Protocol is a web3 platform where talent can easily launch a social token (called Talent Tokens) to accelerate their career, and where supporters can back people they believe in.
+
+* [Website](https://talentprotocol.com)
+* [GitHub](https://github.com/talentprotocol)
+
 ___
 ## Decentralized Impact Incubator Winners
 
