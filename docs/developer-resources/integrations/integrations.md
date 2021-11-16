@@ -32,9 +32,8 @@ Not ready to Integrate with Celo? [Learn more about Celo](../../../../docs/welco
 <PageRef url="/developer-guide/integrations/listings" pageName="Listings" />
 <PageRef url="/developer-guide/integrations/cloud-hsm" pageName="Using a Cloud HSM" />
 
-## Join the Community
+:::tip
 
-[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-<PageRef url="https://chat.celo.org" pageName="Discord" />
-<PageRef url="https://forum.celo.org" pageName="Discourse Forum" />
+:::

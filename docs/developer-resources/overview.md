@@ -43,9 +43,8 @@ Celo works with native mobile dApps and is interoperable with MetaMask and popul
 
 <PageRef url="/learn/developer-tools" pageName="Developer Tools" />
 
-## Join the Community
+:::tip
 
-[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-<PageRef url="https://chat.celo.org" pageName="Discord" />
-<PageRef url="https://forum.celo.org" pageName="Discourse Forum" />
+:::
