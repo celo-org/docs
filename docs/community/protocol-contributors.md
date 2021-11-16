@@ -1,18 +1,17 @@
 ---
-title: Celo Protocol Contributors
+title: Celo Code Contributors
 description: How to contribute to the Celo ecosystem as a member of the community.
 ---
 
-# Protocol Contributors
+# Code Contributors
 
 How to contribute to the Celo ecosystem as a member of the community.
 
 ___
 
-## Who are Protocol Contributors?
+## Who are Code Contributors?
 
-Protocol Contributors are developers in the Celo community that contribute to the [core protocol code](https://github.com/celo-org/celo-monorepo). They help improve the protocol by fixing bugs and designing new features that help improve the Celo platform.  
-
+Code Contributors are developers in the Celo community that contribute to the [Celo monorepo](https://github.com/celo-org/celo-monorepo) or the [core protocol code](https://github.com/celo-org/celo-blockchain). They help improve the protocol and infrastructure by fixing bugs and designing new features that help improve the Celo platform.  
 
 ## How to Get Started
 
@@ -44,5 +43,3 @@ If you are submitting an issue, please double check that there doesn’t already
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-
-
