@@ -40,3 +40,4 @@ Here are some topics that you could write about:
 ## Reach out
 
 If you have any questions, feel free to join our Discord server at [https://chat.celo.org](https://chat.celo.org) and feel free to reach out to me. My username is joshc#0001.
+
