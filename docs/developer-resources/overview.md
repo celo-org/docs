@@ -31,7 +31,7 @@ Get started, learn how to deploy contracts, and more.
 <PageRef url="/developer-resources/deploy-dapp" pageName="Start Building" />
 
 
-## Code in Solidity
+## Code for the EVM
 
 Celo is Ethereum Virtual Machine (EVM) compatible making it easy to build and port dApps over.
 
