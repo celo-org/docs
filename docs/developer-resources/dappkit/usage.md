@@ -9,12 +9,6 @@ How to use DAppKit and make use of its functions while building DApps on Celo.
 
 ___
 
-:::tip
-
-Check out the [Celo Truffle Box](https://github.com/critesjosh/celo-dappkit) tutorial for a step-by-step guide on creating a mobile DApp using Expo.
-
-:::
-
 ## Overview
 
 DAppKit uses [deeplinks](https://en.wikipedia.org/wiki/Mobile_deep_linking) to communicate between your DApp and the [Celo Developer Wallet](https://celo.org/developers/wallet) (for testing) and [Valora](https://valoraapp.com/) (for production).

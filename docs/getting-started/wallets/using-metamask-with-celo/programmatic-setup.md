@@ -54,7 +54,6 @@ const CELO_PARAMS = {
     iconUrls: ['future'],
 };
 ```
-
 </TabItem>
 <TabItem value='alfajores'>
 
@@ -70,6 +69,7 @@ const ALFAJORES_PARAMS = {
 ```
 
 </TabItem>
+
 <TabItem value='baklava'>
 
 ```javascript
@@ -130,7 +130,7 @@ The following are examples for cUSD and cEUR.
 * Token Contract Address for cEUR: `0x10c892a6ec43a53e45d0b916b4b7d383b1b78c0f`
 
 </TabItem>
-<TabItem value='celo'>
+<TabItem value='baklava'>
 
 * Token Contract Address for cUSD: `0x62492A644A588FD904270BeD06ad52B9abfEA1aE`
 * Token Contract Address for cEUR: `0xf9ecE301247aD2CE21894941830A2470f4E774ca`

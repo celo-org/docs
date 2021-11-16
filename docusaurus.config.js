@@ -249,9 +249,10 @@ module.exports = {
                     ]
                 },    
                 {
-                    to: '/command-line-interface/registry',
+                    to: '/command-line-interface/introduction',
                     from: [
                         '/command-line-interface/commands/registry',
+                        '/command-line-interface/registry'
                     ]
                 },    
                 {
@@ -463,7 +464,10 @@ module.exports = {
                         return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`
                     },
                     routeBasePath: "/",
-                    remarkPlugins: [math],
+                    remarkPlugins: [
+                        math,
+                        [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
+                    ],
                     rehypePlugins: [katex],
                 },
                 theme: {

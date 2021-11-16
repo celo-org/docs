@@ -34,7 +34,7 @@ In [May](https://medium.com/celoorg/a-carbon-negative-blockchain-its-here-and-it
 
 ## Donut Hardfork
 
-On May 19th 2021, the donut hardfork went live.** **The Donut Hardfork is a non-contentious hardfork that includes many exciting network upgrades making Celo more gas efficient, improving interoperability, and allowing Celo users to connect to popular tools like MetaMask.
+On May 19th 2021, the donut hardfork went live.**The Donut Hardfork** is a non-contentious hardfork that includes many exciting network upgrades making Celo more gas efficient, improving interoperability, and allowing Celo users to connect to popular tools like MetaMask.
 
 **Important updates from the Donut Hardfork:**
 

@@ -15,7 +15,6 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 
 ___
 
-
 [Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification. 
 
 :::tip
@@ -48,4 +47,3 @@ Celo works with native mobile dApps and is interoperable with MetaMask and popul
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-

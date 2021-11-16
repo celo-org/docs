@@ -11,15 +11,24 @@ ___
 
 ## What is Forno?
 
-Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node. 
+
+:::tip
+
+Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using [Figment Datahub](/learn/developer-tools#figment-datahub) or [Quicknode](/learn/developer-tools#quicknode).
+
+:::
 
 Forno has HTTP and websocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access historic state.
 
 Forno can be used as an `Http Provider` with [ContractKit](/developer-guide/contractkit).
 
 ```javascript
+const Web3 = require("web3");
 const ContractKit = require("@celo/contractkit");
-const kit = ContractKit.newKit("https://alfajores-forno.celo-testnet.org");
+
+const web3 = new Web3("https://forno.celo.org");
+const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
 Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno. The [Hello Celo](/developer-resources/walkthroughs/hellocelo.md) guide shows you how to connect to the Alfajores testnet with Forno and use it to sign and send transactions on the network.
@@ -28,14 +37,34 @@ Forno is a public node, so to send transactions from a Forno connection you will
 
 Consult [this page](/getting-started/choosing-a-network.md) to determine which network is right for you.
 
+### Celo Mainnet
+
+```bash
+https://forno.celo.org
 ```
-Alfajores = 'https://alfajores-forno.celo-testnet.org'
-            'wss://alfajores-forno.celo-testnet.org/ws' (for websocket support)
 
-Baklava = 'https://baklava-forno.celo-testnet.org'
+Websocket support:
 
-Mainnet = 'https://forno.celo.org'
-          'wss://forno.celo.org/ws' (for websocket support)
+```bash
+wss://forno.celo.org/ws
+```
+
+### Alfajores Testnet
+
+```bash
+https://alfajores-forno.celo-testnet.org
+```
+
+Websocket support:
+
+```bash
+wss://alfajores-forno.celo-testnet.org/ws
+```
+
+### Baklava Testnet
+
+```
+https://baklava-forno.celo-testnet.org
 ```
 
 ### Websocket connections & Event listeners

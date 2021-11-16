@@ -112,3 +112,12 @@ You can code the transaction approval request with just a few lines, demonstrate
 <ImageWrapper path="/img/doc-images/valora-wc-v1/valora-send.jpg" alt="approve valora" width="200" />
 
 The receipt will be logged once the user approves the transaction and it is confirmed on the network.
+
+## Pay Fees in Stable currencies
+
+Specifying the `feeCurrency` field in the transaction will allow users to pay transaction fees in that currency. Here's how you can have users pay transaction fees in cUSD, for example:
+
+```js
+const stabletoken = await kit.contracts.getStableToken()
+let tx = await stabletoken.transfer(this.state.someAddress, amount).send({ feeCurrency: stabletoken.address })
+```
