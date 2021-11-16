@@ -21,6 +21,12 @@ module.exports = {
         locales: ['en', 'es']
     },
     themes: ['@docusaurus/theme-live-codeblock'],
+    scripts: [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js',
+            async: true,
+        },
+    ],
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
