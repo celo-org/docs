@@ -18,7 +18,7 @@ This post provides an introduction to the live code editor that is included in t
 
 There will be more examples in the future about how to do more specific things 
 
-If you have any suggestions for examples that you'd like to see, or if you'd like to create one yourself and have it included in the blog, please reach out to me at [josh@clabs.co](josh@clabs.co) or on Discord at joshc#0001.
+If you have any suggestions for examples that you'd like to see, or if you'd like to create one yourself and have it included in the blog, please reach out to me at [josh@clabs.co](mailto:josh@clabs.co) or on Discord at joshc#0001.
 
 ## Live coding
 
