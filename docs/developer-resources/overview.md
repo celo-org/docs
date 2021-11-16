@@ -18,13 +18,19 @@ ___
 
 [Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification. 
 
-<PageRef url="/developer-resources/deploy-dapp" pageName="Build on Celo" />
-
 :::tip
 
 Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome.md).
 
 :::
+
+## Build on Celo
+
+Get started, learn how to deploy contracts, and more.
+
+<PageRef url="/developer-resources/deploy-dapp" pageName="Start Building" />
+
+
 ## Code in Solidity
 
 Celo is Ethereum Virtual Machine (EVM) compatible making it easy to build and port dApps over.
