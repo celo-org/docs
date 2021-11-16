@@ -1,9 +1,9 @@
 ---
-title: Quick Start for CELO Holders
+title: Self-Custody CELO
 description: Account access and reward details for self-custodying holder of CELO on the Celo Mainnet.
 slug: /celo-owner-guide/quick-start
 ---
-# Owner Guide
+# Self-Custody CELO
 
 Account access and reward details for self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet)
 

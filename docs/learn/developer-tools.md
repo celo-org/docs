@@ -54,7 +54,7 @@ DAppKit is currently built with React Native in mind, though the excellent[ Expo
 
 # Celo Networks
 
-## **Mainnet**
+## Mainnet
 
 The production Celo network, [Mainnet](../getting-started/mainnet) was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechanism. Much of the activity is being driven by the validator organizations that are featured on the leaderboard of[ The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
 
@@ -122,3 +122,59 @@ Application contracts aren’t built by cLabs. These contracts are custom-built 
 ## Ethereum Contracts
 
 [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) has a common token, governance, access control, utility contracts written in Solidity.
+
+# SDKs
+
+## ContractKit
+
+[ContractKit](/developer-guide/contractkit)
+  - Javascript package of Celo blockchain utilities
+  - Manage connections to the Celo blockchain, accounts, send transactions, interact with smart contracts, etc.
+  - A set of wrappers around the core protocol smart contracts to easily connect with contracts related to governance, validators, on-chain exchange, etc.
+  - Depends on [web3.js](https://web3js.readthedocs.io/en/latest/)
+
+## Celo Ethers.js Wrapper
+
+[Celo Ethers.js Wrapper](https://github.com/celo-tools/celo-ethers-wrapper) is a minimal wrapper to make [ethers.js](https://docs.ethers.io/v5/) compatible with the Celo network
+## use-contractkit
+
+[use-contractkit](https://github.com/celo-tools/use-contractkit) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
+
+# Infrastructure
+
+## Valora 
+
+[Valora](https://valoraapp.com/) provides a clean, intuitive UI where users can send transactions and interact with smart contracts
+## Forno
+
+[Forno](/developer-guide/forno) is a node access service so you can connect your dapp to the Celo blockchain without having to run node infrastructure
+
+## QuickNode
+
+[QuickNode](https://www.quicknode.com/chains/celo) is an enterprise node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
+
+## Figment DataHub
+
+[Figment DataHub](https://figment.io/datahub/celo/) offers direct access to Celo’s RPC via our highly available full node infrastructure.
+## ODIS
+
+- [ODIS](/developer-resources/contractkit/odis.md)
+  - Oblivious decentralized identity service
+  - Lightweight identity layer that makes it easy to send cryptocurrency to a phone number
+- Blockscout block explorers
+
+## Stats.celo.org
+
+- [Stats.celo.org](http://stats.celo.org) allows you to check network activity and health.
+
+## Ongoing projects
+
+- [Wallets](../getting-started/wallets/index.md)
+- [Community projects & Ecosystem](https://celohub.org/)
+- [Grant recipients](https://celo.org/experience/grants/directory)
+
+## Community
+
+- Join our [Discord](https://chat.celo.org)
+- [Discourse Forum](https://forum.celo.org/)
+

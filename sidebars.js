@@ -152,6 +152,42 @@ const sidebars = {
       ]
     },
     {
+      type: "category",
+      label: "Networks",
+      items: [
+        { type: "doc", label: "Networks", id: "getting-started/choosing-a-network",},
+        {
+          type: "category",
+          label: "Mainnet",
+          items: [
+            { type: 'doc', label: 'Celo Mainnet', id: "getting-started/mainnet/index", },
+            { type: 'doc', label: 'Run Mainnet Validator', id: "getting-started/mainnet/running-a-validator-in-mainnet", },
+            { type: 'doc', label: 'Run Mainnet Full Node', id: "getting-started/mainnet/running-a-full-node-in-mainnet", },
+          ],
+        },
+        {
+          type: "category",
+          label: "Alfajores Testnet",
+          items: [
+            { type: 'doc', label: 'Alfajores Testnet', id: "getting-started/alfajores-testnet/index", },
+            { type: 'doc', label: 'Run Alfajores Full Node', id: "getting-started/alfajores-testnet/running-a-full-node-in-alfajores", },
+            { type: 'doc', label: 'Mobile Wallet', id: "getting-started/alfajores-testnet/using-the-mobile-wallet", },
+            { type: 'doc', label: 'Testnet Faucet', id: "getting-started/alfajores-testnet/faucet", },
+          ],
+        },
+        {
+          type: "category",
+          label: "Baklava Testnet",
+          items: [
+            { type: 'doc', label: 'Baklava Testnet', id: "getting-started/baklava-testnet/index", },
+            { type: 'doc', label: 'Run Baklava Validator', id: "getting-started/baklava-testnet/running-a-validator-in-baklava", },
+            { type: 'doc', label: 'Run Baklava Full Node', id: "getting-started/baklava-testnet/running-a-full-node-in-baklava", },
+          ],
+        },
+        { type: 'doc', label: 'Hosted Nodes', id: "getting-started/hosted-nodes", },
+      ],
+    },
+    {
       type: 'category',
       label: 'Bridging',
       items: [
@@ -199,13 +235,42 @@ const sidebars = {
   // Developers 
   // ######################################
   developers: [
-        { type: 'doc', label: 'Developer Guide', id: 'developer-resources/overview', },
+        { type: 'doc', label: 'Developers', id: 'developer-resources/overview', },
+        // { type: 'doc', label: 'Basics', id: 'developer-resources/developer-basics',}, 
+        {
+          type: 'category',
+          label: 'Build on Celo',
+          items: [
+            { type: 'doc', label: 'Start Building', id: 'developer-resources/deploy-dapp',},
+            'developer-resources/deploy-remix',
+            'developer-resources/deploy-truffle',
+            'developer-resources/deploy-hardhat',
+            'developer-resources/deploy-replit',
+          ]
+        },       
         {
           type: 'category',
           label: 'Local Environment',
           items: [
-            { type: 'doc', label: 'Using Windows', id: 'developer-resources/develop-on-windows',},
             { type: 'doc', label: 'Using Mac', id: 'developer-resources/using-mac',},
+            { type: 'doc', label: 'Using Windows', id: 'developer-resources/develop-on-windows',},
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Code Examples',
+          items: [
+            { type: 'doc', label: 'Introduction', id: 'developer-resources/start',},
+            { type: 'doc', label: 'Sending CELO & cUSD', id: 'developer-resources/walkthroughs/hellocelo',},
+            { type: 'doc', label: 'Deploy to a Local Node', id: 'developer-resources/walkthroughs/hellocontracts',},
+            { type: 'doc', label: 'Deploy to a Remote Node', id: 'developer-resources/walkthroughs/hello-contract-remote-node',},
+            'developer-resources/walkthroughs/no-code-erc20',
+            'developer-resources/walkthroughs/no-code-erc721',
+            'developer-resources/walkthroughs/web-dapp',
+            { type: 'doc', label: 'Valora + Wallet Connect', id: 'developer-resources/walkthroughs/valora-wc-v1',},
+            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores',},
+            { type: 'link', label: 'Figment | Celo 101', href: 'https://learn.figment.io/protocols/celo/' },
+            { type: 'link', label: 'Dacade | Celo 101', href: 'https://dacade.org/communities/celo-development-101' }, 
           ]
         },
         {
@@ -240,32 +305,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Deploy on Celo',
-          items: [
-            'developer-resources/deploy-dapp',
-            'developer-resources/deploy-remix',
-            'developer-resources/deploy-truffle',
-            'developer-resources/deploy-hardhat',
-            'developer-resources/deploy-replit',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Code Examples',
-          items: [
-            'developer-resources/start',
-            'developer-resources/walkthroughs/hellocelo',
-            'developer-resources/walkthroughs/hellocontracts',
-            'developer-resources/walkthroughs/hello-contract-remote-node',
-            'developer-resources/walkthroughs/no-code-erc20',
-            'developer-resources/walkthroughs/no-code-erc721',
-            'developer-resources/walkthroughs/web-dapp',
-            'developer-resources/walkthroughs/valora-wc-v1',
-            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores'}
-          ]
-        },
-        {
-          type: 'category',
           label: 'Mobile Development',
           items: [
             { type: 'doc', label: 'Celo Wallet', id: 'celo-codebase/wallet/index', },
@@ -283,43 +322,7 @@ const sidebars = {
   // Validators 
   // ######################################
   validators: [ 
-    { type: "doc", label: "Validator Guide", id: "validator-guide/overview",}, 
-    {
-      type: "category",
-      label: "Networks",
-      items: [
-        { type: "doc", label: "Celo Networks", id: "getting-started/choosing-a-network",},
-        {
-          type: "category",
-          label: "Mainnet",
-          items: [
-            { type: 'doc', label: 'Celo Mainnet', id: "getting-started/mainnet/index", },
-            { type: 'doc', label: 'Run Mainnet Validator', id: "getting-started/mainnet/running-a-validator-in-mainnet", },
-            { type: 'doc', label: 'Run Mainnet Full Node', id: "getting-started/mainnet/running-a-full-node-in-mainnet", },
-          ],
-        },
-        {
-          type: "category",
-          label: "Alfajores Testnet",
-          items: [
-            { type: 'doc', label: 'Alfajores Testnet', id: "getting-started/alfajores-testnet/index", },
-            { type: 'doc', label: 'Run Alfajores Full Node', id: "getting-started/alfajores-testnet/running-a-full-node-in-alfajores", },
-            { type: 'doc', label: 'Mobile Wallet', id: "getting-started/alfajores-testnet/using-the-mobile-wallet", },
-            { type: 'doc', label: 'Testnet Faucet', id: "getting-started/alfajores-testnet/faucet", },
-          ],
-        },
-        {
-          type: "category",
-          label: "Baklava Testnet",
-          items: [
-            { type: 'doc', label: 'Baklava Testnet', id: "getting-started/baklava-testnet/index", },
-            { type: 'doc', label: 'Run Baklava Validator', id: "getting-started/baklava-testnet/running-a-validator-in-baklava", },
-            { type: 'doc', label: 'Run Baklava Full Node', id: "getting-started/baklava-testnet/running-a-full-node-in-baklava", },
-          ],
-        },
-        { type: 'doc', label: 'Hosted Nodes', id: "getting-started/hosted-nodes", },
-      ],
-    },
+    { type: "doc", label: "Validators", id: "validator-guide/overview",}, 
     { type: "doc", label: "Attestation Service", id: 'validator-guide/attestation-service',},
     {
       type: 'category',
@@ -344,21 +347,40 @@ const sidebars = {
   // Owners 
   // ######################################
   own: [  
-    { type: 'doc', label: 'Owner Guide', id: 'celo-holder-guide/quick-start' },
-    { type: 'doc', label: 'Asset Management', id: 'celo-holder-guide/cusd' },
-    { type: 'doc', label: 'Release Gold', id: 'celo-holder-guide/release-gold' },
-    { type: 'doc', label: 'Voting for Validators', id: 'celo-holder-guide/voting-validators', },
-    { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
-    { type: 'doc', label: 'Governance Cheat Sheet', id: 'celo-holder-guide/governance-cheat-sheet', },
-    { type: 'doc', label: 'ETH Recovery', id: 'celo-holder-guide/eth-recovery', },
-    { type: 'doc', label: 'CELO Recovery', id: 'celo-holder-guide/celo-recovery', },
-    { type: 'doc', label: 'Exchange Celo Assets', id: 'celo-holder-guide/celo-exchange-bot', },
+    { type: 'doc', label: 'Owners', id: 'celo-holder-guide/owners' },
+    {
+      type: 'category',
+      label: 'Manage Assets',
+      items: [
+        { type: 'doc', label: 'Self-Custody CELO', id: 'celo-holder-guide/quick-start' },
+        { type: 'doc', label: 'Asset Management', id: 'celo-holder-guide/cusd' },
+        { type: 'doc', label: 'Release Gold', id: 'celo-holder-guide/release-gold' },
+        { type: 'doc', label: 'Exchange Celo Assets', id: 'celo-holder-guide/celo-exchange-bot', },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Voting',
+      items: [
+        { type: 'doc', label: 'Voting for Validators', id: 'celo-holder-guide/voting-validators', },
+        { type: 'doc', label: 'Voting on Governance', id: 'celo-holder-guide/voting-governance', },
+        { type: 'doc', label: 'Governance Cheat Sheet', id: 'celo-holder-guide/governance-cheat-sheet', },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Recovery',
+      items: [
+        { type: 'doc', label: 'ETH Recovery', id: 'celo-holder-guide/eth-recovery', },
+        { type: 'doc', label: 'CELO Recovery', id: 'celo-holder-guide/celo-recovery', },
+      ]
+    },
   ], 
     // ######################################
   // Integration 
   // ######################################
   integrate: [  
-    { type: 'doc', label: 'Integration Guide', id: 'developer-resources/integrations/integrations' },
+    { type: 'doc', label: 'Integrations', id: 'developer-resources/integrations/integrations' },
     { type: 'doc', label: 'General', id: 'developer-resources/integrations/general' },
     { type: 'doc', label: 'Checklist', id: 'developer-resources/integrations/checklist' },
     { type: 'doc', label: 'Custody', id: 'developer-resources/integrations/custody' },
@@ -369,7 +391,8 @@ const sidebars = {
   // Contributors 
   // ######################################
   contributors: [ 
-    { type: 'doc', label: 'Contributor Guide', id: 'community/contributing', },
+    { type: 'doc', label: 'Contributors', id: 'community/contributing', },
+    { type: 'doc', label: 'Protocol Contributors', id: 'community/protocol-contributors' },
     { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
     { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
     {

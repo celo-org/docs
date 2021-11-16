@@ -1,89 +1,91 @@
 ---
-title: Celo Contributor Guide
+title: Celo Contributors
 description: How to contribute to the Celo ecosystem as a member of the community.
 ---
-# Contributor Guide
+
+import PageRef from '@components/PageRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Contributors
 
 How to contribute to the Celo ecosystem as a member of the community.
 
 ___
 
-## Celo Community
+## Contribute to Celo
 
-Celo is open source and we welcome open participation. We strive to be an open an inclusive community where everyone feels welcome and empowered to contribute, which also means following some ground rules and abiding to Celo’s [Code of Conduct](https://celo.org/code-of-conduct). Thanks for your interest!
+Celo Integrations dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### Getting started
+## Quick Start
 
-Find an area that is of interest and you would like to help with. Look for issues that are tagged as "[good first issue](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)" and "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)" to get started. If you’d like to dig deeper, feel free to look at other labels and TODO’s in code comments. If there’s an issue you’re interested in contributing to or taking over, assign yourself to it and add a comment with your plans to address and target timeline. If there’s already someone assigned to it, please check with them before adding yourself to the assignee list.
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
 
-Tasks range from minor to major improvements. Based on your interests, skillset, and level of comfort with the code-base feel free to contribute where you see appropriate. Our only ask is that you follow the guidelines below to ensure a smooth and effective collaboration.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Quick Start" />
 
-Participation in the Celo project is subject to the [Code of Conduct](https://celo.org/code-of-conduct).
 
-#### **Ground Rules**
+:::tip
 
-There are a few basic ground rules for contributing:
+Not ready to become a Celo Holder? [Learn more about Celo](../../docs/welcome.md).
 
-- PRs \(pull requests\) are preferred to issues, especially for small changes such as typos. Issues should be used for missing features and for broad-based changes.
-- For on-going work, use your own side-branch and not the master branch.
-- For non-trivial amounts of work, we encourage you to submit PRs regularly to solicit feedback.
-- Please double check your work before submitting it. Submissions with typos, spelling, and grammatical errors may not be merged until fixed.
-- Try to remain as objective and fact-based as possible.
+:::
 
-#### **Submitting PRs**
+## Set up a Celo Wallet
 
-We encourage you to PR \(pull request\) your work regularly and often to solicit feedback and to ensure everyone has an idea of what you’re working on. If you’ve just started, we suggest creating a PR with “WIP” \(Work In Progress\) in the title and let us know when it’s ready to review in the comments.
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
 
-##### Please make sure your PR:
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-- Requests the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.
-- Provides a comprehensive description of the problem addressed and changes made.
-- Explains dependencies and backwards incompatible changes .
-- Contains unit and end-to-end tests and a description of how these were run.
-- Includes changes to relevant documentation.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-If you are submitting an issue, please double check that there doesn’t already exist and issue for the work you have in mind.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-##### Please make sure your issue:
+## Purchase Celo Assets
 
-- Is created in the correct repository.
-- Has a clear detailed title such that it can’t be confused with other Celo issues.
-- Provides a comprehensive description of the current and expected behavior including, if relevant, links to external references and specific implementation guidelines.
-- Is tagged with the relevant labels.
-- Is assigned if you or someone else is already working on it.
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
 
-#### Contributing to the documentation
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-To edit an existing page in the documentation, create a fork of the repo, commit your edits and submit a PR. 
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-To add a new page to the documentation, create a fork, add the new pages and update the [table of contents file](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/SUMMARY.md) to include your new pages in the appropriate location and submit a PR.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-#### **Finding Us and Other Contributors**
+## Manage Celo Assets
 
-For code-related questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org) or [Discord](https://chat.celo.org).
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
 
-### Improving Celo
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-Celo’s Improvement Proposals \(CIPs\) describe standards for the Celo platform, including the core protocol specifications, SDK, and contract standards. A CIP is a design document that should provide background information, a rationale for the proposal, detailed solution including technical specifications, and, if any, a list of potential risks. The proposer is responsible for soliciting community feedback and for driving consensus.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-Participation in the Celo project is subject to the [Code of Conduct](https://celo.org/code-of-conduct).
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-#### **Submitting CIPs**
+## Voting as a Celo Owner
 
-Draft all proposals following the template below and submit to the [CIPs repository](https://github.com/celo-org/celo-proposals) via a PR \(pull request\).
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
 
-CIP template:
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-- **Summary:** Describe your proposal in 280 characters or less.
-- **Abstract**: Provide a short description of the technical issue being addressed.
-- **Motivation:** Clearly explain why the proposed change should be made. It should layout the current Celo protocol shortcomings it addresses and why doing so is important.
-- **Specification:** Define and explain in detail the technical requirements for new features and/or changes proposed.
-- **Rationale**: Explain the reasoning behind your approach. It should cover alternative approaches considered, related work, and trade-offs made.
-- **Implementation:** For all proposals going through the governance process, this section should reference the code implementing the proposed change. It’s recommended to get community feedback before writing any code.
-- **Risks:** Highlight any risks and concerns that may affect consensus, proof-of-stake, governance, protocol economics, the stability protocol, security, and privacy.
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-**Finding Us and Other Contributors**
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
 
-A list of active contributors can be found at [celo.org/about](https://celo.org/about#contributors)
+## More Guides
 
-For code-related questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org) or [Discord](https://chat.celo.org).
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
+
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
+
+
+## Join the Community
+
+Celo Contributors dolor sit amet, consectetur adipiscing elit.
+
+<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
+
+
+:::tip
+
+Interested in building the Celo mission? Become a Celo Contributor
+
+:::

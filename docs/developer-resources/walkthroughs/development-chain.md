@@ -8,6 +8,8 @@ slug: /developer-guide/development-chain
 
 How to set up a Celo development blockchain that includes all of the [core protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol), including identity and stability contracts.
 
+___
+
 ## What to expect
 
 At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](../command-line-interface/introduction) and the [ContractKit](../developer-guide/contractkit).

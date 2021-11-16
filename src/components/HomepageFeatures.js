@@ -30,7 +30,7 @@ const FeatureList = [
       <>Start sending, spending, and earning crypto from your mobile phone.</>
     ),
     link: (
-      <a href="/celo-owner-guide/quick-start">Get CELO</a>
+      <a href="/celo-holder-guide/owners">Get CELO</a>
     ),
   },
   {

@@ -3,17 +3,38 @@ title: Celo Integrations
 description: Collection of resources to help integrate Celo with your service.
 slug: /developer-guide/integrations
 ---
-# Integration Guide
+
+import PageRef from '@components/PageRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Celo Integrations
 
 Collection of resources to help integrate Celo with your service.
 
 ___
 
+
+Celo provides you with the tools to easily integrate DeFi into your existing mobile application. Integrating with Celo allows you to accept payments, send payouts, and manage all of your DeFi needs using our global financial infrastructure--all from a mobile phone.
+
+
+:::tip
+
+Not ready to Integrate with Celo? [Learn more about Celo](../../../../docs/welcome.md).
+
+:::
+
 ## Integrate with Celo
 
-Choose from the options below for support integrating your service with Celo.
+<PageRef url="/developer-guide/integrations/general" pageName="General information" />
+<PageRef url="/developer-guide/integrations/checklist" pageName="Integration Checklist" />
+<PageRef url="/developer-guide/integrations/custody" pageName="Custody" />
+<PageRef url="/developer-guide/integrations/listings" pageName="Listings" />
+<PageRef url="/developer-guide/integrations/cloud-hsm" pageName="Using a Cloud HSM" />
 
-* [General](/developer-resources/integrations/general.md): General information about integrating with Celo.
-* [Custody](/developer-resources/integrations/custody.md): Information that may be more relevant to custodians, exchanges and other services that intend to custody Celo assets such as the Celo Dollar and CELO on behalf of a user.
-* [Using a Cloud HSM](/developer-resources/integrations/cloud-hsm.md): Information about how to integrate with cloud hardware security modules.
+## Join the Community
 
+[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+
+<PageRef url="https://chat.celo.org" pageName="Discord" />
+<PageRef url="https://forum.celo.org" pageName="Discourse Forum" />

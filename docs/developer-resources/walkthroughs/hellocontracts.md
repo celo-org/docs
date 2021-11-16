@@ -8,6 +8,8 @@ slug: /developer-guide/start/hellocontracts
 
 How to deploy your own smart contracts onto a Celo local node.
 
+___
+
 :::tip
 
 As Celo is fully EVM compliant, we inherit the rich developer ecosystem and tooling of the Ethereum community. We will be deploying a typical hello world smart contract onto the Alfajores testnet with typical Ethereum tools like Truffle and Ganache.

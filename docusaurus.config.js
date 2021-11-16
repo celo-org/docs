@@ -324,7 +324,7 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "celo-owner-guide/quick-start",
+                    "to": "celo-holder-guide/owners",
                     "label": "Owners",
                     "position": "left"
                 },
