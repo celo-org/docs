@@ -48,9 +48,9 @@ CELO is listed on 20+ exchanges worldwide.
 <PageRef url="/celo-owner-guide/eth-recovery" pageName="Recover ETH from a Celo Address" />
 <PageRef url="/celo-owner-guide/celo-recovery" pageName="Recover CELO from an Ethereum Address" />
 
-## Join the Community
+:::tip
 
-[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-<PageRef url="https://chat.celo.org" pageName="Discord" />
-<PageRef url="https://forum.celo.org" pageName="Discourse Forum" />
+:::
+

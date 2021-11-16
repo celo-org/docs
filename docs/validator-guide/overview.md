@@ -47,9 +47,9 @@ Not ready to become a Celo Validator? [Learn more about Celo](../../docs/welcome
 
 <PageRef url="/validator-guide/celo-foundation-voting-policy" pageName="Celo Foundation Voting Policy" />
 
-## Join the Community
+:::tip
 
-[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-<PageRef url="https://chat.celo.org" pageName="Discord" />
-<PageRef url="https://forum.celo.org" pageName="Discourse Forum" />
+:::
+
