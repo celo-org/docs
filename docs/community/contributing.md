@@ -23,7 +23,7 @@ Not ready to join the Celo Community? [Learn more about Celo](../../docs/welcome
 
 ## Get Started with the Celo Community
 
-Find your purpose join a community focused on building the conditions of prosperity—for everyone
+Find your purpose and join a community focused on building the conditions of prosperity—for everyone
 
 <PageRef url="/community/guidelines" pageName="Contributors" />
 <PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
