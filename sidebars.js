@@ -391,8 +391,18 @@ const sidebars = {
   // Contributors 
   // ######################################
   contributors: [ 
-    { type: 'doc', label: 'Contributors', id: 'community/contributing', },
-    { type: 'doc', label: 'Protocol Contributors', id: 'community/protocol-contributors' },
+    { type: 'doc', label: 'Community', id: 'community/contributing', },
+    {
+      type: 'category',
+      label: 'Contributors',
+      items: [
+        { type: 'doc', label: 'Guidelines', id: 'community/guidelines', },
+        { type: 'doc', label: 'Protocol', id: 'community/protocol-contributors' },
+        { type: 'doc', label: 'Translation', id: 'community/translation-contributors' },
+        { type: 'doc', label: 'Documentation ', id: 'community/documentation-contributors' },
+        { type: 'doc', label: 'Community Improvements', id: 'community/CIP-contributors' },
+      ]
+    },
     { type: 'doc', label: 'Code of Conduct', id: 'community/code-of-conduct', },
     { type: 'doc', label: 'Grant Playbook', id: 'community/grant-playbook', },
     {

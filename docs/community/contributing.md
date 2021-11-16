@@ -1,91 +1,39 @@
 ---
-title: Celo Contributors
-description: How to contribute to the Celo ecosystem as a member of the community.
+title: Celo Community
+description: Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 ---
 
 import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Contributors
+# Celo Community
 
-How to contribute to the Celo ecosystem as a member of the community.
+Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 
 ___
 
-## Contribute to Celo
-
-Celo Integrations dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Quick Start
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Quick Start" />
-
+Celo is a decentralized community of creators -- developers, designers, dreamers, doers -- who are motivated by the power of accessible financial tools to make the world a better place. We are guided by [Celo's Core tenets](https://celo.org/community).
 
 :::tip
 
-Not ready to become a Celo Holder? [Learn more about Celo](../../docs/welcome.md).
+Not ready to join the Celo Community? [Learn more about Celo](../../docs/welcome.md).
 
 :::
 
-## Set up a Celo Wallet
+## Get Started with the Celo Community
 
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
+Find your purpose join a community focused on building the conditions of prosperity—for everyone
 
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-## Purchase Celo Assets
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-## Manage Celo Assets
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-## Voting as a Celo Owner
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-## More Guides
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
-
-## Join the Community
-
-Celo Contributors dolor sit amet, consectetur adipiscing elit.
-
-<PageRef url="/celo-codebase/protocol/consensus" pageName="Learn Celo" />
-
+<PageRef url="/community/guidelines" pageName="Contributors" />
+<PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
+<PageRef url="/community/grant-playbook" pageName="Grant Playbook" />
+<PageRef url="/community/release-process/README" pageName="Release Process" />
+<PageRef url="/community/join-the-community" pageName="Join the Community" />
 
 :::tip
 
-Interested in building the Celo mission? Become a Celo Contributor
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
+

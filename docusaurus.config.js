@@ -334,6 +334,11 @@ module.exports = {
                     "position": "left"
                 },
                 {
+                    "to": "/community/contributing",
+                    "label": "Community",
+                    "position": "left"
+                },
+                {
                     type: 'localeDropdown',
                     position: 'right',
                     dropdownItemsAfter: [

@@ -50,5 +50,7 @@ CELO is listed on 20+ exchanges worldwide.
 
 ## Join the Community
 
+[Join a community](https://celo.org/community) of developers, designers, dreamers and doers building the conditions for prosperity for everyone.
+
 <PageRef url="https://chat.celo.org" pageName="Discord" />
 <PageRef url="https://forum.celo.org" pageName="Discourse Forum" />

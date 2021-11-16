@@ -11,7 +11,7 @@ How to set up your development environment and deploy on Celo.
 
 ___
 
-The fastest way to deploy a dApp on Celo is to [Set up a Testnet Development Wallet](./testnet-wallet.md) and [Deploy with Remix](./deploy-remix.md).  This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
+The fastest way to build and deploy on Celo is to [Set up a Testnet Development Wallet](./testnet-wallet.md) and [Deploy with Remix](./deploy-remix.md).  This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
 
 :::tip
 
@@ -38,4 +38,4 @@ Developers can build on Celo using any [Ethereum](https://ethereum.org/en/) comp
 
 ## Code Examples
 
-<PageRef url="/developer-guide/start" pageName="Code Example" />
+<PageRef url="/developer-guide/start" pageName="Code Examples" />
