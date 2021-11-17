@@ -1,21 +1,21 @@
 ---
-title: Celo Valora + Wallet Connect v1
+title: Celo Valora + WalletConnect v1
 description: How to use Wallet Connect version 1 in a DApp to connect to Valora.
 ---
 
 import ImageWrapper from '@components/ImageWrapper'
 
-#  Valora + Wallet Connect v1
+#  Valora + WalletConnect v1
 
-How to use [Wallet Connect version 1](https://docs.walletconnect.com/1.0/) in a DApp to connect to [Valora](https://valoraapp.com/). 
+How to use [WalletConnect version 1](https://docs.walletconnect.com/1.0/) in a DApp to connect to [Valora](https://valoraapp.com/). 
 
 ___
 
 ## Getting Started
 
-In this example, we will demonstrate how to add Wallet Connect to a simple React app.
+In this example, we will demonstrate how to add WalletConnect to a simple React app.
 
-This is a simple DApp that focuses on demonstrating how to connect Wallet Connect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index.md) and make a simple cUSD transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
+This is a simple DApp that focuses on demonstrating how to connect WalletConnect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index.md) and make a simple cUSD transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
 
 ## Add Packages
 
@@ -47,7 +47,7 @@ When a provider is detected, the DApp will show a button to send some cUSD.
 
 ![connect dapp](/img/doc-images/valora-wc-v1/connect-dapp.png)
 
-The connect function sets up the Wallet Connect Provider and initializes ContractKit with the provider and user account. It also sets up a listener that will log when the user changes accounts. The DApp then saves the provider and initialized Contractkit in the [React component state](https://reactjs.org/docs/faq-state.html).
+The connect function sets up the WalletConnect Provider and initializes ContractKit with the provider and user account. It also sets up a listener that will log when the user changes accounts. The DApp then saves the provider and initialized Contractkit in the [React component state](https://reactjs.org/docs/faq-state.html).
 
 ```js
  connect = async() => {
