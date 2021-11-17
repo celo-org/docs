@@ -136,7 +136,7 @@ Let's try to send some CELO on Alfajores. Make sure you are connected to the Alf
 Make sure you have some Alfajores CELO to send. If you need some, you can get some from [the faucet here](https://celo.org/developers/faucet).
 
 ```jsx live
-function MetamaskAddToken(){
+function MetamaskSendCelo(){
 
     const TX_PARAMS = {
       to: '0x5038ae19CDf0B623e6e8015249ecF58A1165D653',
