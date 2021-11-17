@@ -18,7 +18,7 @@ Celo provides you with the tools to easily integrate DeFi into your existing mob
 
 :::tip
 
-Not ready to Integrate with Celo? [Learn more about Celo](../../../../docs/welcome.md).
+Not ready to Integrate with Celo? [Learn more about Celo](/welcome.md).
 
 :::
 
