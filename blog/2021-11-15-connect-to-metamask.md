@@ -12,10 +12,17 @@ image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
-Let's see how we can interact with Metamask from the code playground. We can connect to Metamask, switch networks and add tokens to the Metamask asset list.
+Let's see how we can interact with Metamask from the code playground. We can connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.
 
 <!--truncate-->
 
+This post uses a live code editor. Check out [this post](2021-11-15-code-playground.md) to learn more about how it works.
+
+:::tip
+
+Make sure that you have have [Metamask installed](https://metamask.io) in your browser. 
+
+:::
 ## Connect to Metamask
 
 The following example shows how to connect Metamask to this browser page.
@@ -29,15 +36,11 @@ This function will only trigger an action if Metamask is not yet connect to the 
 ```jsx live
 function connect(){
 
-    async function connectMetamask(){
-      await window.ethereum.enable()
+    function connectMetamask(){
+      ethereum.request({ method: 'eth_requestAccounts' })
     }
 
-    return (
-      <div>
-        <button onClick={connectMetamask}>Connect Metamask</button><br/>
-      </div>
-    )
+    return <button onClick={connectMetamask}>Connect Metamask</button>
 }
 ```
 
@@ -48,7 +51,7 @@ This example shows how you can prompt a user to connect to a specific Celo netwo
 Try it out:
 
 ```jsx live
-function MetamaskUtils(){
+function MetamaskSwitchNetwork(){
 
     const NETWORK_PARAMS = { 
       chainName: 'Celo', 
@@ -73,15 +76,15 @@ function MetamaskUtils(){
       blockExplorerUrls: ['https://alfajores-blockscout.celo-testnet.org/']
     }
 
-    async function addMainnet(){
-        await window.ethereum.request({
+    function addMainnet(){
+        window.ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [MAINNET_PARAMS],
         });      
     }
 
-    async function addAlfajores(){
-        await window.ethereum.request({
+    function addAlfajores(){
+        window.ethereum.request({
           method: 'wallet_addEthereumChain',
           params: [ALFAJORES_PARAMS],
         });         
@@ -98,47 +101,61 @@ function MetamaskUtils(){
 
 ### Add Tokens
 
+The following code example shows how you can add the cUSD token on the Alfajores testnet to Metamask. To add other tokens, just update the parameter options. You can read more about the Metamask API [here](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset).
+
 ```jsx live
-function MetamaskUtils(){
-    const CUSD_PARAMS = {
+function MetamaskAddToken(){
+    const TOKEN_PARAMS = {
       type: 'ERC20',
       options: {
-        address: '0x765DE816845861e75A25fCA122bb6898B8B1282a',
+        address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
         symbol: 'cUSD',
         decimals: 18
       }
     }
 
-    async function addToken(){
-        await window.ethereum.request({
+    function addToken(){
+        window.ethereum.request({
           method: 'wallet_watchAsset',
-          params: CUSD_PARAMS
+          params: TOKEN_PARAMS
         });    
     }
 
     return (
       <div>
-        <button onClick={connectMetamask}>Connect Metamask</button><br/>
-        <button onClick={addNetwork}>Connect to Celo Mainnet</button><br/>
-        <button onClick={addToken}>Add cUSD (mainnet)</button>
+        <button onClick={addToken}>Add cUSD (Alfajores)</button>
       </div>
     )
 }
 ```
 
+### Send Tokens
+
+Let's try to send some CELO on Alfajores. Make sure you are connected to the Alfajores testnet, you can double check by clicking the `Connect to Alfajores Testnet` button above again.
+
+Make sure you have some Alfajores CELO to send. If you need some, you can get some from [the faucet here](https://celo.org/developers/faucet).
+
 ```jsx live
+function MetamaskAddToken(){
 
-function test(){
+    const TX_PARAMS = {
+      to: '0x5038ae19CDf0B623e6e8015249ecF58A1165D653',
+      from: ethereum.selectedAddress,
+      value: '0x11111111111111',
+    }
 
-  const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
+    async function send(){
+        let txID = await window.ethereum.request({
+          method: 'eth_sendTransaction',
+          params: [TX_PARAMS]
+        });   
+        console.log(txID) 
+    }
 
-  console.log(web3)
-
-  return (
-    <p></p>
-  )
+    return <button onClick={send}>Send CELO (Alfajores)</button>
 }
-
 ```
 
-Check out this post to see how you can initiate Metamask transactions using web3.js.
+Click the button to send some CELO. Once you click submit, the transaction id will be logged in the browser console!
+
+To send cUSD or interact with any other smart contract, you will have to encode the data and include it in the transaction data field. Libraries like [web3.js](https://web3js.readthedocs.io/en/v1.5.2/) and [contractkit](https://www.npmjs.com/package/@celo/contractkit) make this easier. We will go over using web3.js and contractkit in future posts.
