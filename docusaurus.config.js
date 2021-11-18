@@ -371,7 +371,7 @@ module.exports = {
             anonymizeIP: true, // Should IPs be anonymized?
         },
         algolia: {
-            apiKey: 'a55b84f8b98dc5edd71d11cf4e42434e',
+            apiKey: 'baed78b52be14ac907688f1dd70b41d5',
             indexName: 'celo',
             contextualSearch: true,
             debug: false
