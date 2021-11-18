@@ -140,8 +140,8 @@ function MetamaskSendCelo(){
       value: '0x11111111111111',
     }
 
-    function send(){
-        let txID = window.ethereum.request({
+    async function send(){
+        let txID = await window.ethereum.request({
           method: 'eth_sendTransaction',
           params: [TX_PARAMS]
         });   
