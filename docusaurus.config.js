@@ -20,6 +20,13 @@ module.exports = {
         defaultLocale: 'en',
         locales: ['en', 'es']
     },
+    themes: ['@docusaurus/theme-live-codeblock'],
+    scripts: [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js',
+            async: true,
+        },
+    ],
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
@@ -354,7 +361,7 @@ module.exports = {
                     position: 'right',
                     className: 'header-github-link',
                     'aria-label': 'GitHub repository',
-                  },
+                },
             ],
         },
         gtag: {
@@ -376,6 +383,10 @@ module.exports = {
                     items: [{
                         label: "Home",
                         to: "/",
+                    },
+                    {
+                        label: "Blog",
+                        to: "/blog"
                     },
                     {
                         href: "https://celo.crowdin.com/celo-docs",
@@ -422,7 +433,7 @@ module.exports = {
                         href: "https://celo.org"
                     },
                     {
-                        label: "Blog",
+                        label: "Medium Blog",
                         href: "https://medium.com/celoorg"
                     },
                     {
