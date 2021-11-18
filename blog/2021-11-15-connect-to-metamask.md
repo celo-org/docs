@@ -121,11 +121,7 @@ function MetamaskAddToken(){
         });    
     }
 
-    return (
-      <div>
-        <button onClick={addToken}>Add cUSD (Alfajores)</button>
-      </div>
-    )
+    return <button onClick={addToken}>Add cUSD (Alfajores)</button>
 }
 ```
 
@@ -144,8 +140,8 @@ function MetamaskSendCelo(){
       value: '0x11111111111111',
     }
 
-    async function send(){
-        let txID = await window.ethereum.request({
+    function send(){
+        let txID = window.ethereum.request({
           method: 'eth_sendTransaction',
           params: [TX_PARAMS]
         });   
