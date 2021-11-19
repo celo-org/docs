@@ -74,7 +74,7 @@ type Name @entity {
 }
 ```
 
-This will tell us the new name that is being stored in the contract and the account address that updated the name. 
+This will tell us the new name that is being stored in the contract, `newName`, and the account address that updated the name, `udpater`. 
 
 ### Define Mappings
 
@@ -98,6 +98,8 @@ export function handleNameUpdated(event: NameUpdated): void {
 }
 ```
 
+This mapping sets the entity `id` as the transaction hash, the entity `newName` as the newName from the event parameter and the entity `updater` as the updater from the event parameter. The mapping will update an entity if one with a known `id` already exists, but since transaction hashes are unique, each event emitted from the contract will create a new entity.
+
 You can find more information about mappings on [the Graph website here](https://thegraph.com/docs/developer/create-subgraph-hosted#writing-mappings).
 
 Once the mapping is defined, you can generate the Graph AssebmlyScript by running
@@ -106,7 +108,7 @@ Once the mapping is defined, you can generate the Graph AssebmlyScript by runnin
 graph codegen
 ```
 
-"This will generate an AssemblyScript class for every smart contract in the ABI files mentioned in subgraph.yaml, allowing you to bind these contracts to specific addresses in the mappings and call read-only contract methods against the block being processed. It will also generate a class for every contract event to provide easy access to event parameters as well as the block and transaction the event originated from." 
+"This will generate an AssemblyScript class for every smart contract in the ABI files mentioned in subgraph.yaml, allowing you to bind these contracts to specific addresses in the mappings and call read-only contract methods against the block being processed. It will also generate a class for every contract event to provide easy access to event parameters as well as the block and transaction the event originated from. 
 
 *--[The Graph codegen docs](https://thegraph.com/docs/developer/create-subgraph-hosted#code-generation)* 
 
