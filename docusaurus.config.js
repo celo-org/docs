@@ -484,6 +484,12 @@ module.exports = {
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
+                blog: {
+                    showReadingTime: true,
+                    readingTime: ({content, frontMatter, defaultReadingTime}) =>
+                        // allows per post reading time override in frontmatter
+                        frontMatter.hide_reading_time ? undefined : defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+                }
             },
         ],
     ],
