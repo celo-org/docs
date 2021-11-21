@@ -35,7 +35,8 @@ module.exports = {
             {
               redirects: [
                   {
-                      to: '/celo-owner-guide/ledger',
+                      to: '/celo-owner-gu
+                      e/ledger',
                       from: [
                           '/operations-manual/key-management/using-a-ledger-wallet',
                           '/operations-manual/key-management/ledger',
@@ -371,7 +372,8 @@ module.exports = {
             anonymizeIP: true, // Should IPs be anonymized?
         },
         algolia: {
-            apiKey: 'a55b84f8b98dc5edd71d11cf4e42434e',
+            appId: '55M4I38S60',
+            apiKey: 'baed78b52be14ac907688f1dd70b41d5',
             indexName: 'celo',
             contextualSearch: true,
             debug: false
