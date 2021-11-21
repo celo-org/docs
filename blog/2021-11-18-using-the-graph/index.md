@@ -12,8 +12,6 @@ import styles from '../styles.css'
 
 Getting historical blockchain data using [The Graph protocol](https://thegraph.com/).
 
-<!--truncate-->
-
 ## What is the Graph?
 
 From the Graph website:
@@ -21,6 +19,8 @@ From the Graph website:
 *The Graph is a decentralized protocol for indexing and querying data from blockchains, starting with Ethereum. It makes it possible to query data that is difficult to query directly.*
 
 The problem that the Graph solves is that indexing blockchain data is actually very difficult. Additionally, the Graph makes it easy to get historical blockchain data without having to run your own archive node or paying to access an archive node through a node service provider, like [Quicknode](https://www.quicknode.com/chains/celo).
+
+<!--truncate-->
 
 ## Using the Graph
 

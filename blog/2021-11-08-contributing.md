@@ -14,8 +14,6 @@ hide_table_of_contents: false
 
 Contribute to Celo.
 
-<!--truncate-->
-
 ## Open Source
 
 Celo is an open source project and without community contributions from people like you Celo wouldn't exist. We welcome contributions to our [codebase](https://github.com/celo-org), [documentation](https://github.com/celo-org/docs), [translations](https://celo.crowdin.com/) and [blog](https://github.com/celo-org/docs/blog).
@@ -23,6 +21,8 @@ Celo is an open source project and without community contributions from people l
 It can be difficult to find ways to meaningfully contribute to a new project, but writing a guest post on our blog is a great way to get started!
 
 Write about your experience as a member of the Celo community, whether you're a CELO owner or a project founder. Your experience and perspective is valuable and can help others.
+
+<!--truncate-->
 
 ## Blog Ideas
 

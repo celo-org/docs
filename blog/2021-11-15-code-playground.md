@@ -13,8 +13,6 @@ hide_table_of_contents: false
 
 This post provides an introduction to the live code editor that is included as a feature in this blog. It allows you to see working examples of things like connecting to the Celo network with Metamask and initiating user transactions with the SDK.
 
-<!--truncate-->
-
 If you have any suggestions for examples that you'd like to see, or if you'd like to create one yourself and have it included in the blog, please reach out to me at [josh@clabs.co](mailto:josh@clabs.co) or on Discord at joshc#0001.
 
 ## Live coding
@@ -27,6 +25,7 @@ The code is rendered using [React Live](https://github.com/FormidableLabs/react-
 
 :::
 
+<!--truncate-->
 ### Hello World
 
 Try it out:

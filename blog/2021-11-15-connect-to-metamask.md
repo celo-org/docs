@@ -13,8 +13,6 @@ hide_table_of_contents: false
 
 Let's see how we can interact with Metamask from the code playground. We can connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.
 
-<!--truncate-->
-
 This post uses a live code editor. Check out [this post](2021-11-15-code-playground.md) to learn more about how it works.
 
 :::tip
@@ -42,6 +40,8 @@ function connect(){
     return <button onClick={connectMetamask}>Connect Metamask</button>
 }
 ```
+
+<!--truncate-->
 
 ### Switch Networks
 
