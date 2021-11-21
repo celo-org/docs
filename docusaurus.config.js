@@ -35,8 +35,7 @@ module.exports = {
             {
               redirects: [
                   {
-                      to: '/celo-owner-gu
-                      e/ledger',
+                      to: '/celo-owner-guide/ledger',
                       from: [
                           '/operations-manual/key-management/using-a-ledger-wallet',
                           '/operations-manual/key-management/ledger',
