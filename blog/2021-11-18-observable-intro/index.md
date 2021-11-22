@@ -1,5 +1,5 @@
 ---
-title: Intro to ObservableHQ
+title: Demos with ObservableHQ
 description: Learn more about Observable notebooks and how they can be used in a blog
 slug: observable-intro
 authors: [josh]
