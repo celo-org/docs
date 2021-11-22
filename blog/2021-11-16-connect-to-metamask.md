@@ -20,6 +20,7 @@ This post uses a live code editor. Check out [this post](2021-11-15-code-playgro
 Make sure that you have have [Metamask installed](https://metamask.io) in your browser. 
 
 :::
+
 ## Connect to Metamask
 
 The following example shows how to connect Metamask to this browser page.
