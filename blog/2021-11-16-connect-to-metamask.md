@@ -121,11 +121,7 @@ function MetamaskAddToken(){
         });    
     }
 
-    return (
-      <div>
-        <button onClick={addToken}>Add cUSD (Alfajores)</button>
-      </div>
-    )
+    return <button onClick={addToken}>Add cUSD (Alfajores)</button>
 }
 ```
 
