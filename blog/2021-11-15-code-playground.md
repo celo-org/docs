@@ -55,4 +55,4 @@ function logger(){
 
 Cool!
 
-This is just a small preview into what code sharing and learning experiences we can build with this tool. Check out this post about [Connecting to Metamask](2021-11-15-connect-to-metamask.md) to learn more.
+This is just a small preview into what code sharing and learning experiences we can build with this tool. Check out this post about [Connecting to Metamask](2021-11-16-connect-to-metamask.md) to learn more.
