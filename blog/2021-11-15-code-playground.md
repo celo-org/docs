@@ -8,13 +8,10 @@ authors:
     url: https://github.com/critesjosh
     image_url: https://github.com/critesjosh.png
 tags: [code playground]
-image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
 This post provides an introduction to the live code editor that is included as a feature in this blog. It allows you to see working examples of things like connecting to the Celo network with Metamask and initiating user transactions with the SDK.
-
-<!--truncate-->
 
 If you have any suggestions for examples that you'd like to see, or if you'd like to create one yourself and have it included in the blog, please reach out to me at [josh@clabs.co](mailto:josh@clabs.co) or on Discord at joshc#0001.
 
@@ -28,6 +25,7 @@ The code is rendered using [React Live](https://github.com/FormidableLabs/react-
 
 :::
 
+<!--truncate-->
 ### Hello World
 
 Try it out:
@@ -57,4 +55,4 @@ function logger(){
 
 Cool!
 
-This is just a small preview into what code sharing and learning experiences we can build with this tool. Check out this post about [Connecting to Metamask](2021-11-15-connect-to-metamask.md) to learn more.
+This is just a small preview into what code sharing and learning experiences we can build with this tool. Check out this post about [Connecting to Metamask](2021-11-16-connect-to-metamask.md) to learn more.

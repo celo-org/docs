@@ -8,13 +8,10 @@ authors:
     url: https://github.com/critesjosh
     image_url: https://github.com/critesjosh.png
 tags: [code playground]
-image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
 Let's see how we can interact with Metamask from the code playground. We can connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.
-
-<!--truncate-->
 
 This post uses a live code editor. Check out [this post](2021-11-15-code-playground.md) to learn more about how it works.
 
@@ -23,6 +20,7 @@ This post uses a live code editor. Check out [this post](2021-11-15-code-playgro
 Make sure that you have have [Metamask installed](https://metamask.io) in your browser. 
 
 :::
+
 ## Connect to Metamask
 
 The following example shows how to connect Metamask to this browser page.
@@ -43,6 +41,8 @@ function connect(){
     return <button onClick={connectMetamask}>Connect Metamask</button>
 }
 ```
+
+<!--truncate-->
 
 ### Switch Networks
 
