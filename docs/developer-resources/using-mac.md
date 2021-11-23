@@ -1,15 +1,20 @@
 ---
-title: Using Mac
-description: Installation and development requirements for macOS
+title: Celo Local Development Environment Using Mac
+description: How to set up a local development environment for Celo using Mac.
 ---
+# Using Mac
 
-Before building on Celo, you need to set up a development environment to make sure you have the proper tools to build an application. This setup includes a combination of general development tools, Celo specific tools, and mobile development tools.
+How to set up a local development environment for Celo using Mac.
+
+___
 
 :::tip
 
 While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer-guide/start/develop-on-windows).
 
 :::
+
+Before building on Celo, you need to set up a development environment to make sure you have the proper tools to build an application. This setup includes a combination of general development tools, Celo specific tools, and mobile development tools.
 
 ## Web2 Prerequisites
 
@@ -270,7 +275,7 @@ Install by running the following:
 ```shell
 $ brew install cask
 $ brew tap homebrew/cask-versions
-$ brew cask install homebrew/cask-versions/adoptopenjdk8
+$ brew install homebrew/cask-versions/adoptopenjdk8
 ```
 
 #### Android Dev Tools
@@ -278,8 +283,8 @@ $ brew cask install homebrew/cask-versions/adoptopenjdk8
 Install the Android SDK and platform-tools
 
 ```
-$ brew cask install android-sdk
-$ brew cask install android-platform-tools
+$ brew install android-sdk
+$ brew install android-platform-tools
 ```
 
 Next, install [Android Studio](https://developer.android.com/studio) and add the [Android NDK](https://developer.android.com/studio/projects/install-ndk).
@@ -313,7 +318,7 @@ For the same reason you installed the emulator iOS (you may or may not have an A
 One Android emulator option is Genymotion.
 
 ```
-brew cask install genymotion
+brew install genymotion
 ```
 
 Under OSX High Sierra and later, you'll get a message that you need to [approve it in System Preferences > Security & Privacy > General.](https://developer.apple.com/library/content/technotes/tn2459/_index.html)

@@ -1,4 +1,15 @@
+---
+title: Granda Mento
+description: Introduction to Granda Mento (CIP 38), its design, and how to manage exchange proposals.
+---
+
 # Granda Mento
+
+Introduction to Granda Mento (CIP 38), its design, and how to manage exchange proposals.
+
+___
+
+## What is Granda Mento?
 
 Granda Mento, described in [CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md), is a mechanism for exchanging large amounts of CELO for Celo stable tokens that aren't suitable for [Mento](doto.md) or over-the-counter (OTC).
 
@@ -39,7 +50,7 @@ The approver multi-sig that is ultimately responsible for approving an exchange 
 | human           | [OpenCelo](https://www.opencelo.org/) | `human #6811`             | `0x91f2437f5C8e7A3879e14a75a7C5b4CccC76023a` |
 | Deepak Nuli     | [Kresko](https://www.kresko.fi/)      | `Deepak \| Kresko#3647`   | `0x099f3F5527671594351E30B48ca822cc90778a11` |
 
-### How to create an exchange proposal
+### Create an exchange proposal
 
 Refer to [CIP 46](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0046.md) for information surrounding processes.
 
@@ -49,7 +60,7 @@ The easiest way create an exchange proposal on-chain is using the `celocli grand
 celocli grandamento:propose --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --sellCelo=true --stableToken=cUSD --value=20000000000000000000000
 ```
 
-### How to view exchange proposals
+### View exchange proposals
 
 Exchange proposal information, including the tokens and quantities being sold and bought, can be easily viewed using celocli.
 
@@ -65,7 +76,7 @@ To show a specific exchange proposal regardless of it being proposed, cancelled,
 celocli grandamento:show --proposalID 1
 ```
 
-### How to cancel an exchange proposal
+### Cancel an exchange proposal
 
 The exchanger of an exchange proposal can cancel the exchange proposal if the proposal has not yet been approved. This can be done using the `celocli grandamento:cancel` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentocancel)). For example:
 
@@ -75,7 +86,7 @@ celocli grandamento:cancel --proposalID 1
 
 If an exchange proposal has already been approved or someone other than the exchanger wishes to cancel (or "veto") an exchange proposal, this must be done by a governance proposal. [CIP 46](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0046.md#vetoing-an-exchange-proposal) provides information on the exact details of the governance proposal.
 
-### How to execute an exchange proposal
+### Execute an exchange proposal
 
 Anyone is able to execute an exchange proposal that has been approved as long as the veto period has elapsed since the time of approval. This can be done using the `celocli grandamento:execute` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentoexecute)). For example:
 
@@ -83,7 +94,7 @@ Anyone is able to execute an exchange proposal that has been approved as long as
 celocli grandamento:execute --proposalID 1
 ```
 
-### How to view the buy amount for a hypothetical exchange proposal
+### View the buy amount for a hypothetical exchange proposal
 
 The amount of the token being bought in an exchange proposal is calculated when the exchange proposal is created according to the current oracle price and the spread. To view the amount of the token being bought that a hypothetical exchange proposal would receive for a provided amount of the token sold, `celocli grandamento:get-buy-amount` can be used ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentoget-buy-amount)). For example:
 
@@ -91,7 +102,7 @@ The amount of the token being bought in an exchange proposal is calculated when 
 celocli grandamento:get-buy-amount --stableToken cUSD --sellCelo true --value 20000000000000000000000
 ```
 
-### How to view current Granda Mento parameters
+### View current Granda Mento parameters
 
 Granda Mento's governable parameters can be viewed using the `celocli network:parameters` command ([docs](https://docs.celo.org/command-line-interface/network#celocli-networkparameters)). For example:
 

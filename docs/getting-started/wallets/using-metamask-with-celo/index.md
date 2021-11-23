@@ -1,10 +1,15 @@
 ---
-title: Using MetaMask with Celo
+title: MetaMask and Celo
+description: Overview of MetaMask and how you can get started with MetaMask on Celo.
 id: index
 slug: /getting-started/wallets/using-metamask-with-celo
 ---
 
-# Using MetaMask with Celo
+# MetaMask and Celo
+
+Overview of MetaMask and how you can get started with MetaMask on Celo.
+
+___
 
 :::danger
 

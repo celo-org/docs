@@ -1,10 +1,20 @@
 ---
-title: Baklava Testnet
+title: Celo Baklava Testnet
+description: Collection of resources to get started with Celo Baklava Testnet (Celo's Node Operator Testnet).
 id: index
 slug: /getting-started/baklava-testnet
 ---
+# Baklava Testnet
 
-The Baklava Testnet is a non-production Testnet for the Validator community. It serves several purposes:
+Collection of resources to get started with Celo Baklava Testnet (Celo's Node Operator Testnet).
+
+___
+
+## What is the Baklava Testnet?
+
+The Baklava Testnet is a non-production Testnet for the Validator community. 
+
+**It serves several purposes:**
 
 - **Operational excellence**: Build familiarity with the processes used on Mainnet, and to verify the security and stability of your infrastructure with the new software.
 - **Detecting vulnerabilities**: Discover bugs in new software releases before they reach Mainnet.

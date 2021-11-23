@@ -1,16 +1,21 @@
 ---
-title: Setup
+title: Celo ContractKit Setup
+description: ContractKit requirements, installation, and initialization.
 slug: /developer-guide/contractkit/setup
 ---
+
+# Setup
+
+ContractKit requirements, installation, and initialization.
+
+___
 
 ## Installation and System Requirements
 
 To install, run the following:
 
-```bash
-npm install @celo/contractkit
-// or
-yarn add @celo/contractkit
+```bash npm2yarn 
+npm install web3 @celo/contractkit
 ```
 
 You will need Node.js v12.x.
@@ -20,9 +25,11 @@ You will need Node.js v12.x.
 To start working with ContractKit you need a `kit` instance and a valid net to connect with. In this example will use `alfajores` (you can read more about it [here](../../getting-started/alfajores-testnet))
 
 ```ts
-import { newKit } from "@celo/contractkit";
+import Web3 from "web3";
+import { newKitFromWeb3 } from "@celo/contractkit";
 
-const kit = newKit("https://alfajores-forno.celo-testnet.org");
+const web3 = new Web3("https://alfajores-forno.celo-testnet.org")
+const kit = newKitFromWeb3(web3);
 ```
 
 Go to the [page about Forno](/developer-guide/forno) for details about different connection types and network endpoints.
@@ -31,12 +38,14 @@ Go to the [page about Forno](/developer-guide/forno) for details about different
 
 If you are hosting your own node (you can follow [this guide](/getting-started/mainnet/running-a-full-node-in-mainnet) to run one) you can connect our ContractKit to it.
 
-```ts
-import { newKit } from "@celo/contractkit";
+```js
+import Web3 from "web3";
+import { newKitFromWeb3 } from "@celo/contractkit";
 
-// define localUrl and port with the ones of your node
+// define localUrl and port with the ones for your node
 
-const kit = newKit(`${localUrl}:${port}`);
+const web3 = new Web3(`${localUrl}:${port}`);
+const kit = newKitFromWeb3(web3);
 ```
 
 Same as `Web3` we support `WebSockets`, `RPC` and connecting via `IPC`.

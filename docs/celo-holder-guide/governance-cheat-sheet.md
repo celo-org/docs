@@ -1,7 +1,14 @@
 ---
-title: Governance Cheat Sheet
+title: Celo Governance Cheat Sheet
+description: List of governable parameters and governance restrictions on Celo.
 slug: /celo-owner-guide/governance-cheat-sheet
 ---
+
+# Governance Cheat Sheet
+
+List of governable parameters and governance restrictions on Celo.
+
+___
 
 ## Governable Parameters 
 

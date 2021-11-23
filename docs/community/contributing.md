@@ -1,81 +1,39 @@
 ---
-title: Contributing
+title: Celo Community
+description: Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 ---
 
-Celo is open source and we welcome open participation. We strive to be an open an inclusive community where everyone feels welcome and empowered to contribute, which also means following some ground rules and abiding to Celo’s [Code of Conduct](https://celo.org/code-of-conduct). Thanks for your interest!
+import PageRef from '@components/PageRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### Getting started
+# Celo Community
 
-Find an area that is of interest and you would like to help with. Look for issues that are tagged as "[good first issue](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)" and "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)" to get started. If you’d like to dig deeper, feel free to look at other labels and TODO’s in code comments. If there’s an issue you’re interested in contributing to or taking over, assign yourself to it and add a comment with your plans to address and target timeline. If there’s already someone assigned to it, please check with them before adding yourself to the assignee list.
+Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 
-Tasks range from minor to major improvements. Based on your interests, skillset, and level of comfort with the code-base feel free to contribute where you see appropriate. Our only ask is that you follow the guidelines below to ensure a smooth and effective collaboration.
+___
 
-Participation in the Celo project is subject to the [Code of Conduct](https://celo.org/code-of-conduct).
+Celo is a decentralized community of creators -- developers, designers, dreamers, doers -- who are motivated by the power of accessible financial tools to make the world a better place. We are guided by [Celo's Core tenets](https://celo.org/community).
 
-#### **Ground Rules**
+:::tip
 
-There are a few basic ground rules for contributing:
+Not ready to join the Celo Community? [Learn more about Celo](../../docs/welcome.md).
 
-- PRs \(pull requests\) are preferred to issues, especially for small changes such as typos. Issues should be used for missing features and for broad-based changes.
-- For on-going work, use your own side-branch and not the master branch.
-- For non-trivial amounts of work, we encourage you to submit PRs regularly to solicit feedback.
-- Please double check your work before submitting it. Submissions with typos, spelling, and grammatical errors may not be merged until fixed.
-- Try to remain as objective and fact-based as possible.
+:::
 
-#### **Submitting PRs**
+## Get Started with the Celo Community
 
-We encourage you to PR \(pull request\) your work regularly and often to solicit feedback and to ensure everyone has an idea of what you’re working on. If you’ve just started, we suggest creating a PR with “WIP” \(Work In Progress\) in the title and let us know when it’s ready to review in the comments.
+Find your purpose and join a community focused on building the conditions of prosperity—for everyone
 
-##### Please make sure your PR:
+<PageRef url="/community/guidelines" pageName="Contributors" />
+<PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
+<PageRef url="/community/grant-playbook" pageName="Grant Playbook" />
+<PageRef url="/community/release-process/README" pageName="Release Process" />
+<PageRef url="/community/join-the-community" pageName="Join the Community" />
 
-- Requests the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.
-- Provides a comprehensive description of the problem addressed and changes made.
-- Explains dependencies and backwards incompatible changes .
-- Contains unit and end-to-end tests and a description of how these were run.
-- Includes changes to relevant documentation.
+:::tip
 
-If you are submitting an issue, please double check that there doesn’t already exist and issue for the work you have in mind.
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
-##### Please make sure your issue:
+:::
 
-- Is created in the correct repository.
-- Has a clear detailed title such that it can’t be confused with other Celo issues.
-- Provides a comprehensive description of the current and expected behavior including, if relevant, links to external references and specific implementation guidelines.
-- Is tagged with the relevant labels.
-- Is assigned if you or someone else is already working on it.
-
-#### Contributing to the documentation
-
-To edit an existing page in the documentation, create a fork of the repo, commit your edits and submit a PR. 
-
-To add a new page to the documentation, create a fork, add the new pages and update the [table of contents file](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/SUMMARY.md) to include your new pages in the appropriate location and submit a PR.
-
-#### **Finding Us and Other Contributors**
-
-For code-related questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org) or [Discord](https://chat.celo.org).
-
-### Improving Celo
-
-Celo’s Improvement Proposals \(CIPs\) describe standards for the Celo platform, including the core protocol specifications, SDK, and contract standards. A CIP is a design document that should provide background information, a rationale for the proposal, detailed solution including technical specifications, and, if any, a list of potential risks. The proposer is responsible for soliciting community feedback and for driving consensus.
-
-Participation in the Celo project is subject to the [Code of Conduct](https://celo.org/code-of-conduct).
-
-#### **Submitting CIPs**
-
-Draft all proposals following the template below and submit to the [CIPs repository](https://github.com/celo-org/celo-proposals) via a PR \(pull request\).
-
-CIP template:
-
-- **Summary:** Describe your proposal in 280 characters or less.
-- **Abstract**: Provide a short description of the technical issue being addressed.
-- **Motivation:** Clearly explain why the proposed change should be made. It should layout the current Celo protocol shortcomings it addresses and why doing so is important.
-- **Specification:** Define and explain in detail the technical requirements for new features and/or changes proposed.
-- **Rationale**: Explain the reasoning behind your approach. It should cover alternative approaches considered, related work, and trade-offs made.
-- **Implementation:** For all proposals going through the governance process, this section should reference the code implementing the proposed change. It’s recommended to get community feedback before writing any code.
-- **Risks:** Highlight any risks and concerns that may affect consensus, proof-of-stake, governance, protocol economics, the stability protocol, security, and privacy.
-
-**Finding Us and Other Contributors**
-
-A list of active contributors can be found at [celo.org/about](https://celo.org/about#contributors)
-
-For code-related questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org) or [Discord](https://chat.celo.org).

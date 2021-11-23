@@ -1,9 +1,13 @@
 ---
-title: Usage
+title: Celo DAppKit Usage
+description: How to use DAppKit and make use of its features while building DApps on Celo.
 slug: /developer-guide/dappkit/usage
 ---
+## Usage
 
-This page walks you through the main functionalities of DAppKit and provides small code snippets. We recommend checking out the [Celo Truffle Box](https://github.com/critesjosh/celo-dappkit) tutorial for a step-by-step guide on creating a mobile DApp using Expo.
+How to use DAppKit and make use of its functions while building DApps on Celo.
+
+___
 
 ## Overview
 
@@ -11,7 +15,7 @@ DAppKit uses [deeplinks](https://en.wikipedia.org/wiki/Mobile_deep_linking) to c
 
 :::info
 
-Note: DappKit uses the same deeplink for both the testing and production wallets. This means that when testing on iOS devices, the deeplinks will open the testing wallet vs the product wallet if both are installed on the same device. On Android devices, when multiple wallets are installed users are able to select which wallet they would like to use to open the deeplink. We are currently working to make separate deeplinks. Given the low transaction fees, many developers have chosen to only develop on mainnet to get around this.
+DappKit uses the same deeplink for both the testing and production wallets. This means that when testing on iOS devices, the deeplinks will open the testing wallet vs the product wallet if both are installed on the same device. On Android devices, when multiple wallets are installed users are able to select which wallet they would like to use to open the deeplink. We are currently working to make separate deeplinks. Given the low transaction fees, many developers have chosen to only develop on mainnet to get around this.
 
 :::
 

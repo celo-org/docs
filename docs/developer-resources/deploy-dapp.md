@@ -1,34 +1,41 @@
 ---
-title: Deploy a DApp on Celo
-description: Quick introductions on how to deploy dApps on Celo using Remix, Truffle, and Hardhat.
+title: Build on Celo
+description: How to set up your development environment and deploy on Celo.
 ---
 
-# Deploy a DApp on Celo
+import PageRef from '@components/PageRef'
 
-Quick introductions on how to deploy dApps on Celo using Remix, Truffle, and Hardhat.
+# Build on Celo
 
-____
+How to set up your development environment and deploy on Celo.
 
-Deploying a dApp on Celo is a quick and simple process. You can deploy on Celo using any [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
+___
 
-## Start Building on Celo
+The fastest way to build and deploy on Celo is to [Set up a Testnet Development Wallet](./testnet-wallet.md) and [Deploy with Remix](./deploy-remix.md).  This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
 
-The fastest way to deploy a dApp on Celo is to [Set up a Testnet Development Wallet](./testnet-wallet.md) and [Deploy with Remix](./deploy-remix.md).  This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
+:::tip
+
+Developers can build on Celo using any [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
+
+:::
 
 ## Set up your local environment
 
-- [Using Mac](./using-mac.md)
-- [Using Windows](/developer-guide/start/develop-on-windows)
+<PageRef url="/developer-resources/using-mac" pageName="Using Mac" />
+<PageRef url="/developer-guide/start/develop-on-windows" pageName="Using Windows" />
 
 ## Set up a development wallet
 
-- [Set up a Testnet Development Wallet](./testnet-wallet.md)
 
-## Choose your preferred tool to get started
+<PageRef url="/developer-resources/testnet-wallet" pageName="Set up a Testnet Development Wallet" />
 
-- [Deploy with Remix](./deploy-remix.md)
-- [Deploy with Truffle](./deploy-truffle.md)
-- [Deploy with Hardhat](./deploy-hardhat)
-- [Deploy with Replit](./deploy-replit.md)
+## Deploy on Celo
 
-These guides are meant to help you deploy a dApp on Celo as quickly as possible. Read the supporting resources linked throughout each guide for an in-depth look at the tools and code. If you would like to learn more about Solidity (the language for developing smart contracts) you can view the [Solidity docs](https://docs.soliditylang.org/en/latest/) or with [Solidity by Example](https://solidity-by-example.org/).
+<PageRef url="/developer-resources/deploy-remix" pageName="Deploy with Remix" />
+<PageRef url="/developer-resources/deploy-truffle" pageName="Deploy with Truffle" />
+<PageRef url="/developer-resources/deploy-hardhat" pageName="Deploy with Hardhat" />
+<PageRef url="/developer-resources/deploy-replit" pageName="Deploy with Replit" />
+
+## Code Examples
+
+<PageRef url="/developer-guide/start" pageName="Code Examples" />

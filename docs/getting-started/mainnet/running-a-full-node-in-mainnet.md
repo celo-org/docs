@@ -1,10 +1,19 @@
 ---
-title: Running a Full Node
+title: Run a Celo Full Node
+description: How to run a full node on the Celo Mainnet Network using a prebuilt Docker image.
 ---
 
-This section explains how to get a full node running on the [Mainnet Network](/getting-started/mainnet), using a Docker image that was built for this purpose.
+# Run a Full Node
+
+How to run on the [Mainnet Network](/getting-started/mainnet) using a prebuilt Docker image.
+
+___
+
+:::tip Hosted Nodes
 
 If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/getting-started/hosted-nodes) documentation.
+
+:::
 
 :::info
 
@@ -14,7 +23,7 @@ You can add the [Celo Signal public calendar](https://calendar.google.com/calend
 
 :::
 
-Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. To make sure that full nodes are rewarded for this service, the Celo protocol includes [full node incentives](/celo-codebase/protocol/transactions/full-node-incentives.md).
+Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
 
 When a light client sends transactions, they may include a gateway fee to be paid to the node that gossips transactions to the other full nodes and validators.
 

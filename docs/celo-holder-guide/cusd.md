@@ -1,9 +1,13 @@
 ---
 title: Celo Asset Management Guide
+description: Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and stablecoins. 
 slug: /celo-owner-guide/cusd
 ---
+# Asset Management 
 
-If you intend to hold Celo Dollars (cUSD) or a similar stablecoin like Celo Euros (cEUR), exchange CELO for stablecoins, or send Celo native assets to others, this guide will help you access your account and manage your funds.
+Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and stablecoins. 
+
+___
 
 ## Prerequisites
 

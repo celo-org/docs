@@ -1,8 +1,15 @@
 ---
-title: Penalties
+title: Celo Validator Penalties
+description: Introduction to validator penalties, enforcement mechanisms, and conditions.
 ---
 
-## Overview
+# Validator Penalties
+
+Introduction to validator penalties, enforcement mechanisms, and conditions.
+
+___
+
+## What is Slashing?
 
 Slashing accomplishes punishment of misbehaving validators by seizing a portion of their stake. Without these punishments, for example, the Celo Protocol would be subject to the [nothing at stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed) problem. Validator misbehavior is classified as a set of slashing conditions below.
 

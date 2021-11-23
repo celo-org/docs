@@ -7,7 +7,9 @@ description: How to deploy a Smart Contract to Celo using Truffle
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Truffle](https://www.trufflesuite.com/).
 
-____
+___
+
+## Introduction to Truffle
 
 [Truffle](https://www.trufflesuite.com/) is a world-class development environment, testing framework, and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM). By creating a Truffle project and editing a few configuration settings you can easily deploy your project on Celo.
 

@@ -1,6 +1,13 @@
 ---
-title: Monitoring
+title: Celo Monitoring
+description: Commands, metrics, APIs, and services for monitoring Validators and Proxies.
 ---
+
+# Monitoring
+
+Commands, metrics, APIs, and services for monitoring Validators and Proxies.
+
+___
 
 ## Monitoring Validators and Proxies
 

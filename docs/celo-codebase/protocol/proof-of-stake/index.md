@@ -1,26 +1,47 @@
 ---
-title: Proof Of Stake Overview
+title: Celo Proof of Stake Overview
 slug: /celo-codebase/protocol/proof-of-stake
+description: Overview of Celo's proof-of-stake algorithm, mechanisms, and implementation.
 ---
 
 import YouTube from '@components/YouTube'
 
+# Proof of Stake
+
+Overview of Celo's proof-of-stake algorithm, mechanisms, and implementation.
+
+___
+
+## Mastering the Art of Validating
+
 
 <YouTube videoId="3UIudzzCb8o" />
 
+## Validator Types
+
 Celo uses a Byzantine Fault Tolerant [consensus protocol](/celo-codebase/protocol/consensus) to agree on new blocks to append to the blockchain. The instances of the Celo software that participate in this consensus protocol are known as **validators**. More accurately, they are **active validators** or **elected validators**, to distinguish them from **registered validators** which are configured to participate but are not actively selected.
 
+## Proof-of-Stake
+
 Celo's proof-of-stake mechanism is the set of processes that determine which nodes become active validators and how incentives are arranged to secure the network.
+
+## Active Validators
 
 The first set of active validators are determined in the genesis block. Thereafter at the end of every epoch, a fixed number of blocks fixed at network creation time, an election is run that may lead to validators being added or removed.
 
 ![](https://storage.googleapis.com/celo-website/docs/concepts.jpg)
 
+## Validator Elections
+
 In Celo's [Validator Elections](/celo-codebase/protocol/proof-of-stake/validator-elections.md), holders of the native asset, CELO, may participate and earn rewards for doing so. Accounts do not make votes for validators directly, but instead vote for [validator groups](/celo-codebase/protocol/proof-of-stake/validator-groups.md).
 
 Before they can vote, holders of CELO move balances into the [Locked Gold](/celo-codebase/protocol/proof-of-stake/locked-gold.md) smart contract. Locked Gold can be used concurrently for: placing votes in Validator Elections, maintaining a stake to satisfy the requirements of registering as a validator or validator group, and also voting in on-chain [Governance](/celo-codebase/protocol/governance.md) proposals. This means that validators and groups can vote and earn rewards with their stake.
 
+:::tip note
+
 Unlike in other proof-of-stake systems, holding Locked Gold or voting for a group does not put that amount 'at risk' from slashing due to the behavior of validators or validator groups. Only the stake put up by a validator or group may be slashed.
+
+:::
 
 ## Implementation
 

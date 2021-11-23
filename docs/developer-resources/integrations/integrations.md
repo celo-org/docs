@@ -1,13 +1,38 @@
 ---
-title: Integrations
+title: Celo Integrations
+description: Collection of resources to help integrate Celo with your service.
 slug: /developer-guide/integrations
 ---
 
-This section gives some guides about common ways of integrating Celo into your service.
+import PageRef from '@components/PageRef'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-The [General](/developer-resources/integrations/general.md) page provides some general information about integrating with Celo.
+# Celo Integrations
 
-The [Custody](/developer-resources/integrations/custody.md) page provides information that may be more relevant to custodians, exchanges and other services that intend to custody Celo assets such as the Celo Dollar and CELO on behalf of a user.
+Collection of resources to help integrate Celo with your service.
 
-The [Using a Cloud HSM](/developer-resources/integrations/cloud-hsm.md) page provides information about how to integrate with cloud hardware security modules.
+___
+
+Celo provides you with the tools to easily integrate DeFi into your existing mobile application or blockchain service. Integrating with Celo allows you to accept payments, send payouts, and manage all of your DeFi needs using our global financial infrastructure.
+
+:::tip
+
+Not ready to Integrate with Celo? [Learn more about Celo](/welcome.md).
+
+:::
+
+## Integrate with Celo
+
+<PageRef url="/developer-guide/integrations/general" pageName="General information" />
+<PageRef url="/developer-guide/integrations/checklist" pageName="Integration Checklist" />
+<PageRef url="/developer-guide/integrations/custody" pageName="Custody" />
+<PageRef url="/developer-guide/integrations/listings" pageName="Listings" />
+<PageRef url="/developer-guide/integrations/cloud-hsm" pageName="Using a Cloud HSM" />
+
+:::tip
+
+For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
+
+:::
 

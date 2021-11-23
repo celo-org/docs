@@ -1,8 +1,20 @@
 ---
-title: Attestation Service
+title: Celo Attestation Service
+descriptin: How to configure, run, and manage an attestation service as a Celo Validator.
 ---
+# Attestation Service
+
+How to configure, run, and manage an attestation service as a Celo Validator.
+
+___
+
+:::tip
 
 Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator-guide/celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
+
+:::
+
+## What is an Attestation Service?
 
 The Attestation Service is part of the [Celo identity protocol](/celo-codebase/protocol/identity). It sends SMS on behalf of users to allow them to attest to having access to a phone number and to map that to a Celo account, securely and privately. This is shown as Steps 3 and 4 in this diagram:
 
@@ -87,7 +99,7 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 ![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
 
-Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. In the future, we'll likely switch entirely to the Verify Service and deprecate the Messaging Service, but for now it's important to specify both.
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version `v1.5.0` onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
 
 ### Nexmo
 
@@ -103,7 +115,7 @@ Note that Attestation Service from version 1.2.0 no longer requires callback URL
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable.  Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
 
 ## Installation
 
@@ -201,7 +213,7 @@ Required options:
 | `CELO_PROVIDER`                  | (required pre-v1.4.0; not recommended v1.4.0+) The node URL for your local full node at which your attestation signer key is unlocked. e.g. `http://localhost:8545`. Do not expose this port to the public internet! (v1.4.0+ optional) node URL for the Celo node used to connect to the chain. |
 | `CELO_VALIDATOR_ADDRESS`     | Address of the Validator account. If Validator is deployed via a `ReleaseGold` contract, this is the contract's address (i.e. `$CELO_VALIDATOR_RG_ADDRESS`), not the beneficiary.                                                                                  |
 | `ATTESTATION_SIGNER_ADDRESS` | Address of the Validator's attestation signer key                                                                                                                                                                                                                  |
-| `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
+| `SMS_PROVIDERS`              | Comma-separated list of all enabled SMS providers. Can include `twilio`, `nexmo`. From v1.2.0, can include `messagebird`. It is recommended to list `nexmo` last if it is configured. From v1.5.0, can include `twiliomessaging` and `twilioverify` instead of `twilio`. Providers are tried from first to last, unless `SMS_PROVIDERS_RANDOMIZED` is set to `1`, in which case they are tried in a random order. |
 |                              |
 
 Optional environment variables:
@@ -212,8 +224,8 @@ Optional environment variables:
 | `ATTESTATION_SIGNER_KEYSTORE_PASSPHRASE` | (v1.4.0+) Passphrase used to encrypt `ATTESTATION_SIGNER_ADDRESS`'s keystore file. Must be used with `ATTESTATION_SIGNER_KEYSTORE_DIRPATH` |
 | `PORT`                       | Port to listen on. Default `3000`.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `RATE_LIMIT_REQS_PER_MIN`    | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`.                                                                                                                                                                                                                                                                                                                                                    |
-| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`)                                                                                                                                                                                                                                                                                                                                                |
-| `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`.                                                                                                                                                                                                                                                                       |
+| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). See the [Recommended Option Settings Section](#sms_providers_country) below for guidance on configuring this. |
+| `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. Note: setting this to `1` is only recommended if you *do not* have Vonage/Nexmo configured as a provider. |
 | `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
 | `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
 | `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilio` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
@@ -252,6 +264,26 @@ MessageBird configuration options (v1.2.0+):
 | --------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `MESSAGEBIRD_API_KEY`             | The API key to the MessageBird API                                                                 |
 | `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
+
+### Recommended Option Settings
+
+#### `SMS_PROVIDERS_<country>`
+
+Based on observed performance, we recommend the following country-specific provider configuration:
+
+```bash
+# v1.5.0+
+SMS_PROVIDERS_CN=twiliomessaging
+SMS_PROVIDERS_VN=messagebird,twilioverify
+SMS_PROVIDERS_TR=twilioverify
+# v1.2.0+
+SMS_PROVIDERS_BR=messagebird,twilio
+SMS_PROVIDERS_IN=messagebird,twilio
+SMS_PROVIDERS_VE=messagebird,twilio
+SMS_PROVIDERS_GH=messagebird,twilio
+SMS_PROVIDERS_PH=messagebird,twilio,nexmo
+SMS_PROVIDERS_DE=messagebird,twilio
+```
 
 ## Registering Metadata
 

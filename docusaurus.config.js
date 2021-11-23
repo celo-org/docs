@@ -2,6 +2,7 @@
 const path = require('path');
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const { docs, developers } = require('./sidebars');
 const DefaultLocale = 'en';
 
 module.exports = {
@@ -12,13 +13,20 @@ module.exports = {
     trailingSlash: false,
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
-    favicon: "img/logo.png",
+    favicon: "img/color-favicon.png",
     organizationName: "celo-org", // Usually your GitHub org/user name.
     projectName: "docs", // Usually your repo name.
     i18n: {
         defaultLocale: 'en',
         locales: ['en', 'es']
     },
+    themes: ['@docusaurus/theme-live-codeblock'],
+    scripts: [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js',
+            async: true,
+        },
+    ],
     plugins: [
         require.resolve('docusaurus-plugin-fathom'),
         path.resolve(__dirname, 'src/plugins/aliases.ts'),
@@ -63,7 +71,7 @@ module.exports = {
                     ]
                 },
                 {
-                    to: '/developer-guide/start/hello-mobile', 
+                    to: '/developer-guide/start', 
                     from: [
                         '/developer-guide/start/celo-truffle-box',
                         '/developer-resources/walkthroughs/hello-mobile-dapp',
@@ -248,9 +256,10 @@ module.exports = {
                     ]
                 },    
                 {
-                    to: '/command-line-interface/registry',
+                    to: '/command-line-interface/introduction',
                     from: [
                         '/command-line-interface/commands/registry',
+                        '/command-line-interface/registry'
                     ]
                 },    
                 {
@@ -309,39 +318,66 @@ module.exports = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
         },
+        colorMode: {
+            defaultMode: 'dark',
+        },
         navbar: {
             title: "Celo Docs",
             logo: {
                 alt: "Celo Logo",
-                src: "img/logo.png",
+                src: "img/color-logo.png",
             },
             items: [
                 {
+                    "to": "welcome",
+                    "label": "Welcome",
+                    "position": "left"
+                },
+                {
+                    "to": "developer-guide/overview",
+                    "label": "Developers",
+                    "position": "left"
+                },
+                {
+                    "to": "validator-guide/overview",
+                    "label": "Validators",
+                    "position": "left"
+                },
+                {
+                    "to": "celo-holder-guide/owners",
+                    "label": "Owners",
+                    "position": "left"
+                },
+                {
+                    "to": "developer-guide/integrations",
+                    "label": "Integrations",
+                    "position": "left"
+                },
+                {
+                    "to": "/community/contributing",
+                    "label": "Community",
+                    "position": "left"
+                },
+                {
+                    "to": "/blog",
+                    "label": "Blog",
+                    "position": "right"
+                },                
+                {
                     type: 'localeDropdown',
-                    position: 'left',
+                    position: 'right',
                     dropdownItemsAfter: [
-                    {
-                        to: 'https://celo.crowdin.com/',
-                        label: 'Help us translate',
-                    },
-                    ],
+                      {
+                          to: 'https://celo.crowdin.com/',
+                          label: 'Help us translate',
+                      },
+                    ]
                 },
                 {
-                    href: "https://celo.org",
-                    label: "Celo Home",
-                },
-                {
-                    href: "https://celo.org/build",
-                    label: "Build",
-                },
-                {
-                    href: "https://celo.org/build/faucet",
-                    label: "Faucet",
-                },
-                {
-                    href: "https://github.com/celo-org/docs",
-                    label: "GitHub",
-                    position: "right",
+                    href: 'https://github.com/celo-org',
+                    position: 'right',
+                    className: 'header-github-link',
+                    'aria-label': 'GitHub repository',
                 },
             ],
         },
@@ -352,9 +388,10 @@ module.exports = {
             anonymizeIP: true, // Should IPs be anonymized?
         },
         algolia: {
-            apiKey: 'a55b84f8b98dc5edd71d11cf4e42434e',
+            appId: '55M4I38S60',
+            apiKey: 'baed78b52be14ac907688f1dd70b41d5',
             indexName: 'celo',
-            contextualSearch: false,
+            contextualSearch: true,
             debug: false
         },
         footer: {
@@ -366,17 +403,26 @@ module.exports = {
                         to: "/",
                     },
                     {
+                        label: "Blog",
+                        to: "/blog"
+                    },
+                    {
                         href: "https://celo.crowdin.com/celo-docs",
                         label: "Help translate"
                     },
                     {
                         label: "Docs GitHub",
                         href: "https://github.com/celo-org/docs"
-                    }
+                    },
                 ]},
                 {
                     title: "Community",
-                    items: [{
+                    items: [
+                        {
+                            href: "/community/contributing",
+                            label: "Contributors",
+                        },
+                        {
                             label: "Forum",
                             href: "https://forum.celo.org/",
                         },
@@ -405,7 +451,7 @@ module.exports = {
                         href: "https://celo.org"
                     },
                     {
-                        label: "Blog",
+                        label: "Medium Blog",
                         href: "https://medium.com/celoorg"
                     },
                     {
@@ -447,12 +493,21 @@ module.exports = {
                         return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`
                     },
                     routeBasePath: "/",
-                    remarkPlugins: [math],
+                    remarkPlugins: [
+                        math,
+                        [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}]
+                    ],
                     rehypePlugins: [katex],
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
+                blog: {
+                    showReadingTime: true,
+                    readingTime: ({content, frontMatter, defaultReadingTime}) =>
+                        // allows per post reading time override in frontmatter
+                        frontMatter.hide_reading_time ? undefined : defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+                }
             },
         ],
     ],

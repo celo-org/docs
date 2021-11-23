@@ -1,10 +1,18 @@
 ---
-title: Securing Celo Nodes and Services
+title: Run Secure Celo Nodes and Services
+description: Recommendations for running secure Celo nodes and services.
 ---
+# Run Secure Nodes and Services
 
-Running Celo nodes and services securely, especially as part of running a validator, is of utmost importance. Failure to do so can lead to severe consequences including, but not limited to loss of funds, slashing due to double signing, etc. Here are some recommendations:
+Recommendations for running secure Celo nodes and services.
 
+___
 
+:::warning
+
+Running Celo nodes and services securely, especially as part of running a validator, is of utmost importance. Failure to do so can lead to severe consequences including, but not limited to loss of funds, slashing due to double signing, etc. 
+
+:::
 ### RPC Endpoints
 
 Celo nodes can be interacted with through an RPC interface for common interactions such as querying the blockchain, inspecting network connectivity and much more. The RPC interface is exposed via HTTP, WebSockets or a local IPC socket. There are two considerations:

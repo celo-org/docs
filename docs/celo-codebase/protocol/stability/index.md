@@ -1,9 +1,18 @@
 ---
-title: Stability Mechanism Overview
+title: Celo Stability Mechanism Overview
 slug: /celo-codebase/protocol/stability
+description: Overview of the Celo protocol's Stability Mechanisms.
 ---
 import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
+
+# Stability Mechanism
+
+Overview of the Celo protocol's Stability Mechanisms.
+
+___
+
+## Stability of Celo's Stablecoin Protocol
 
 <YouTube videoId="kYhDUmKuGCY"/>
 

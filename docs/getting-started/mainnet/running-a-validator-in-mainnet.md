@@ -1,8 +1,12 @@
 ---
-title: Running a Validator
+title: Running a Celo Validator
+description: How to get a Validator node running on the Celo Mainnet.
 ---
+# Running a Validator
 
-This section explains how to get a Validator node running on [Mainnet](/getting-started/mainnet).
+How to get a Validator node running on the Celo [Mainnet](/getting-started/mainnet).
+
+___
 
 :::info
 
@@ -11,6 +15,8 @@ If you would like to keep up-to-date with all the news happening in the Celo com
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
 
 :::
+
+## What is a Validator?
 
 Validators help secure the Celo network by participating in Celo’s proof-of-stake protocol. Validators are organized into Validator Groups, analogous to parties in representative democracies. A Validator Group is essentially an ordered list of Validators.
 
