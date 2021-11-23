@@ -30,3 +30,16 @@ A full specification of Domains and the related ODIS APIs is available in CIP-40
 ## Implemented Domains
 
 <PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
+
+## Creating a Domain Type
+
+The Domains interface is designed to be flexible to facilitate new applications for the ODIS POPRF function.
+If you have an application that would benefit from a new Domain type and rate limiting ruleset, the first step is to open an extension to the CIP-40 standard.
+
+New Domain types are standardized through a lighter version of the [general CIP process](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0000.md).
+Open a PR against the celo-org/celo-proposals repository to add a specification for your new domain to the [CIP-40 extensions folder](https://github.com/celo-org/celo-proposals/tree/master/CIPs/CIP-0040).
+As an example for what you should include, take a look at the [specification](https://github.com/celo-org/celo-proposals/blob/master/CIPs/CIP-0040/sequentialDelayDomain.md) for the `SequentialDelayDomain`.
+When it is ready for review, contact a [CIP editor](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0000.md#cip-editors) to help get reviews from the ODIS core development team.
+
+Implementing a new Domain type, which includes new rate limiting to be enforced by the ODIS operators, requires an upgrade to the ODIS server implementation.
+Once the new domain type is standardized, this implementation can be written and deployed to the staging and production ODIS service operators.
