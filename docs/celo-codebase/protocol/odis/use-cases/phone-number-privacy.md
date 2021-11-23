@@ -13,8 +13,8 @@ The Oblivious Decentralized Identifier Service (ODIS) was created to help preser
 
 When a user sends a payment to someone in their phone's address book, the mobile client must look up the identifier for that phone number on-chain to find the corresponding Celo blockchain address.
 This address is needed in order to create a payment transaction, and the user may only know the phone number of the person they want to pay.
-If cleartext phone numbers were used as identifiers directly on the Celo network, then anyone would be able to associate all phone numbers with blockchain accounts and balances (e.g. After searching for addresses with a high balance, they could look up the associated phone number to [phish](https://en.wikipedia.org/wiki/Phishing) the account owner).
-If instead, the identifier was the hash of the recipient's phone number, attackers would still be able to associate phone numbers with accounts and balances via a [rainbow table attack](https://en.wikipedia.org/wiki/Rainbow_table).
+If cleartext phone numbers were used as identifiers directly on the Celo network, then anyone would be able to associate all phone numbers with blockchain accounts and balances (e.g. After searching for addresses with a high balance, they could look up the associated phone number to [phish](https://wikipedia.org/wiki/Phishing) the account owner).
+If instead, the identifier was the hash of the recipient's phone number, attackers would still be able to associate phone numbers with accounts and balances via a [rainbow table attack](https://wikipedia.org/wiki/Rainbow_table).
 
 ## The solution
 
