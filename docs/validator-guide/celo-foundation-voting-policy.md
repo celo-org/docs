@@ -94,7 +94,7 @@ For each cohort, the deadline to apply/be evaluated (if you are reapplying) is e
 Before applying all validator group members should have: 
 * **Important**: Run at least one Validator and Validator Group on Baklava
 * **Important**: Run an Attestation Service on Baklava
-
+* **Important**: Register a validator group on Mainnet and get 150k CELO voted for your validator group
 * Completed the [Mastering the Art of Validating](https://youtu.be/3UIudzzCb8o) and [Validator Group Marketing](https://www.youtube.com/watch?v=0_veGIugCGQ) courses
 * Completed the [Security Self Assessment Audit](https://docs.google.com/presentation/d/e/2PACX-1vRdKNpXI2mvqwQF6L5LRrxPW2qRK-5MDce5EhqXqLC1MSYmupZMFnhp6YEP0gLYuRKW-FF0fcAqhEAp/pub?start=true&loop=false&delayms=10000&slide=id.g76d52a0216_0_333), which includes completing this [checklist](https://docs.google.com/spreadsheets/d/1FqmUfleCoyNIUep7PoVu3ujHd-OkHZJ8o6p7Affr93w/edit?usp=sharing)
 
@@ -126,14 +126,14 @@ At the application deadline date for new applicants, your validator group will b
 Past Foundation votes recipients:
 * **Cohort 1:** The Great Celo Stake Off [leaderboard](https://docs.google.com/spreadsheets/d/1Me56YkCHYmsN23gSMgDb1hZ_ezN0sTjNW4kyGbAO9vc/edit#gid=1970613133) participants at ranking 26-50 -- votes expired on Aug 1, 2020
 * **Cohort 2:** The Great Celo Stake Off [leaderboard](https://docs.google.com/spreadsheets/d/1Me56YkCHYmsN23gSMgDb1hZ_ezN0sTjNW4kyGbAO9vc/edit#gid=1970613133) participants at ranking 1-25 -- votes expired on Nov 1, 2020
-* **Cohort 3:** [6 validator groups](https://docs.google.com/spreadsheets/d/1OkWnr6EOeFn4pIv0zxmXFNtHLmKWf_qCJOJ4iacov-A/edit?usp=sharing) -- votes will expire on Feb 1, 2021
+* **Cohort 3:** [6 validator groups](https://docs.google.com/spreadsheets/d/1OkWnr6EOeFn4pIv0zxmXFNtHLmKWf_qCJOJ4iacov-A/edit?usp=sharing) -- votes expired on Feb 1, 2021
 * **Cohort 4:** [22 validator groups](https://docs.google.com/spreadsheets/d/1bp2nJUxqhWner-uOffBohKQc3N93e--eMpP7XOBrbGI/edit?usp=sharing) -- votes expired on May 1, 2021
+* **Cohort 5:** [24 validator groups](https://docs.google.com/spreadsheets/d/1n2lwFsAsFaohng4Bo_FEWcoXzZl5CrLFxA6EK0nuFSA/edit#gid=0) -- votes expired on November 1, 2021
 
 Currently receiving Foundation votes: 
-
-* **Cohort 5:** [24 validator groups](https://docs.google.com/spreadsheets/d/1n2lwFsAsFaohng4Bo_FEWcoXzZl5CrLFxA6EK0nuFSA/edit#gid=0) -- votes will expire on November 1, 2021
 * **Cohort 6:** [7 validator groups](https://docs.google.com/spreadsheets/d/1HT_fN-mSAL2etF0Po_h122jeU1zpEtdpb_khogOfBCg/edit?usp=sharing) -- votes will expire on March 1, 2022
 * **Cohort 7:** [23 validator groups](https://docs.google.com/spreadsheets/d/1eYBzQMObTAy-WKs5CHHFnGGl_k1rQo0MBHinV3OgSik/edit#gid=1466530578) -- votes will expire on July 1, 2022
+* **Cohort 8:** [22 validator groups](https://docs.google.com/spreadsheets/d/11fTPMa_2FXAye_mgidE_3Ub-xY_aJLo0WXee_Qn5mC8/edit#gid=0) -- votes will expire on November 1, 2022
 
 
 :::info
