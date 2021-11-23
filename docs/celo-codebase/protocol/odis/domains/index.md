@@ -12,7 +12,7 @@ This context information is used to decide what rate limit and/or authentication
 As an example, a Domain for hashing an account password might specify an application username of "vitalik.eth" (context) and a cap of 10 password attempts (rate-limiting parameter).
 These would be combined with the user's password (blinded input) in the POPRF, which acts as a one-way function, to form the final output.
 As a result the rate limiting parameters, in this case allowing a total of 10 queries, can be set to arbitrary values but are effectively binding once chosen.
-This allows the parameters to be tuned to the needs of the individual user or application.
+This allows the parameters to be tuned to the needs of the individual user or application and prevents potential overlap of different use cases.
 
 Queries with distinct domain specifiers will receive uncorrelated output.
 For example, output from ODIS with the phone number domain and message `18002738255` will be distinct from and unrelated to the output when requesting with a password domain and message `18002738255`.
