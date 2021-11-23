@@ -168,11 +168,6 @@ const sidebars = {
                 'celo-codebase/protocol/odis/domains/sequential-delay-domain',
               ]
             },
-            { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/identity/index', },
-            'celo-codebase/protocol/identity/valora-accounts',
-            'celo-codebase/protocol/identity/phone-number-privacy',
-            'celo-codebase/protocol/identity/metadata',
-            'celo-codebase/protocol/identity/randomness',
           ]
         },
         'celo-codebase/protocol/optics',
