@@ -6,7 +6,7 @@ slug: /celo-owner-guide/eth-recovery
 
 # Recover ETH or ERC-20 tokens from a Celo Address
 
-How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an [Ethereum address](https://en.wikipedia.org/wiki/Ethereum#Addresses).
+How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an [Ethereum address](https://wikipedia.org/wiki/Ethereum#Addresses).
 
 ___
 
@@ -50,7 +50,7 @@ Once you've been able to access your funds, it's recommended that you move them 
 
 This guide assumes that you have access to the following:
 
-- A computer with a [Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface). You can access it following these instructions:
+- A computer with a [Command Line Interface](https://wikipedia.org/wiki/Command-line_interface). You can access it following these instructions:
   - [Windows](https://www.howtogeek.com/270810/how-to-quickly-launch-a-bash-shell-from-windows-10s-file-explorer/)
   - [Mac](https://macpaw.com/how-to/use-terminal-on-mac)
   - [Linux](https://askubuntu.com/questions/196212/how-do-you-open-a-command-line)

@@ -11,7 +11,7 @@ ___
 
 ## Overview
 
-DAppKit uses [deeplinks](https://en.wikipedia.org/wiki/Mobile_deep_linking) to communicate between your DApp and the [Celo Developer Wallet](https://celo.org/developers/wallet) (for testing) and [Valora](https://valoraapp.com/) (for production).
+DAppKit uses [deeplinks](https://wikipedia.org/wiki/Mobile_deep_linking) to communicate between your DApp and the [Celo Developer Wallet](https://celo.org/developers/wallet) (for testing) and [Valora](https://valoraapp.com/) (for production).
 
 :::info
 

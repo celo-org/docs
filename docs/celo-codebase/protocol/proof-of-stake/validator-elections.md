@@ -39,7 +39,7 @@ The Celo protocol allows an account to divide its vote between up to ten groups,
 
 ![](https://storage.googleapis.com/celo-website/docs/election.jpg)
 
-The `Election` contract is called from the IBFT block finalization code to select the validators for the following epoch. The contract maintains a sorted list of the Locked Gold voting (either pending or activated) for each Validator Group. The [D’Hondt method](https://en.wikipedia.org/wiki/D'Hondt_method), a closed party list form of proportional representation, is applied to iteratively select validators from the Validator Groups with the greatest associated vote balances.
+The `Election` contract is called from the IBFT block finalization code to select the validators for the following epoch. The contract maintains a sorted list of the Locked Gold voting (either pending or activated) for each Validator Group. The [D’Hondt method](https://wikipedia.org/wiki/D'Hondt_method), a closed party list form of proportional representation, is applied to iteratively select validators from the Validator Groups with the greatest associated vote balances.
 
 ### Filtering Groups
 

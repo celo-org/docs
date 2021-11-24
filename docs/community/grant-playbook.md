@@ -40,7 +40,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 
 ### Source Code
 
-In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://en.wikipedia.org/wiki/Apache_License)). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
+In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://wikipedia.org/wiki/Apache_License)). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
 
 To make sure teams are making progress on projects, send us bi-weekly updates to grants@celo.org. The intent is not to create pressure, but to provide structure and guidance in case things get off track. Some suggestions:
 
