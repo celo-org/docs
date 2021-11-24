@@ -29,13 +29,13 @@ The Sequential Delay Domain additionally supports signature-based authentication
 
 ## Salting
 
-Even with the use of ODIS to prevent brute-force guessing of a password, it remains important to include a user-specific value in the hashing request as a salt to prevent [rainbow table attacks](https://en.wikipedia.org/wiki/Rainbow_table).
+Even with the use of ODIS to prevent brute-force guessing of a password, it remains important to include a user-specific value in the hashing request as a salt to prevent [rainbow table attacks](https://wikipedia.org/wiki/Rainbow_table).
 A salt can be included in the Domain parameter of the request to ODIS to ensure a rate limit is enforced specific to the user's context.
 Using a random salt value is recommended, however a client identifier such as a username or [phone number hash](/celo-codebase/protocol/odis/use-cases/phone-number-privacy) can also be used.
 
 ## Password filtering
 
 In addition to using ODIS to harden passwords chosen by users, it is recommended that the application help the user choose a good password during onboarding.
-Password filtering, blocking the user from setting a password which may be week, can greatly improve the quality of a user's password and prevent it being broken by guessing the most common passwords (e.g. "password").
+Password filtering, blocking the user from setting a password which may be weak, can greatly improve the quality of a user's password and prevent it being broken by guessing the most common passwords (e.g. "password").
 [NIST 800-63](https://pages.nist.gov/800-63-3/sp800-63-3.html) recommends that passwords should be checked against a list of known compromised passwords, such as [HIBP Passwords](https://haveibeenpwned.com/Passwords).
 Additional research has found other [practical techniques for increasing the strength of passwords chosen by users](https://www.andrew.cmu.edu/user/nicolasc/publications/Tan-CCS20.pdf).

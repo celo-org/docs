@@ -18,7 +18,7 @@ This provides a measure of security as only the owner of the cloud storage accou
 In order to provide additional security, the account key backup should be encrypted with a secret, namely a PIN or password, that the user has memorized or stored securely.
 This way, the users account key backup is only accessible to someone who can access their cloud storage account *and* knows their secret.
 
-Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](https://en.wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
+Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](https://wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
 Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
 
 With these core components, we can construct a cloud backup system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.

@@ -32,13 +32,13 @@ The goal the distributed key generation is to make it harder for a hacker, or a 
 In particular, if an attacker has control over any less then the threshold $$k$$ of keys, they cannot make an unauthorized computation (e.g. querying the pepper for a phone number without quota) of the OPRF function.
 Additionally, as long as $$k$$ operators remain honest and have access to their keys, honest users will continue to be able to use the service even if $$m-k$$ corrupt operators are refusing their requests.
 
-For example, consider the phone number privacy protocol when there are 7 ODIS operators and the required threshold is 5. An attacker may can compute can the pepper for all phone numbers if 5 operators are compromised or corrupt. If 3 are corrupt or taken offline (e.g. by DDoS attack) then an attacker may prevent the rest of the operators from generating the pepper for users.
+For example, consider the phone number privacy protocol when there are 7 ODIS operators and the required threshold is 5. An attacker may compute the pepper for all phone numbers if 5 operators are compromised or corrupt. If 3 are corrupt or taken offline (e.g. by DDoS attack) then an attacker may prevent the rest of the operators from generating the pepper for users.
 
 In the case that a single key is compromised, user data will remain private and the service operational; however, it's important that we can detect and perform a key rotation before the number of keys compromised exceeds $$k$$ or $$m - k + 1$$ (whichever is lower). 
 
 ## Rotating keys
 
-If a key held by one of the operators is leaked, or if the operator becomes corrupt, a key rotation can restore the security of ODIS by removing the compromised keys.
+If a key held by one of the operators is leaked, or if the operator becomes corrupt, a key rotation can allow the group to generate a new set of keys. Once the new keys are in place, operators can destroy their old keys, preventing any use from the compromised key.
 Key rotation can also allow new ODIS operators to be added, by creating new keys for all the existing operators as well as the newly added operator.
 
 To rotate keys, a new DKG ceremony must be performed with at least $$k$$ of the $$m$$ original keys.
@@ -65,7 +65,7 @@ By verifying the results, the client can be sure that the service computed the O
 ## Combiner
 
 To facilitate the communication needed for the $$k$$ of $$m$$ OPRF evaluation, ODIS includes a combiner service which performs this orchestration for the convenience of wallets and other clients building on Celo.
-Like the ODIS operators, the combiner only receives the blinded message and so won't learn anything about the users sensitive information.
+Like the ODIS operators, the combiner only receives the blinded message and therefore it cannot learn anything about the user's sensitive information.
 The combiner also verifies the response from each operator to ensure a corrupt operator cannot affect the resulting pepper.
 Clients can additionally verify the response they get from the combiner to ensure the combiner could not have tampered with it.
 
@@ -92,7 +92,7 @@ More information about the domains API and the implemented domain types can be f
 <PageRef url="/celo-codebase/protocol/odis/domains" pageName="Domains" />
 <PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
 
-A full specification of the Domains API can be found in CIP-40
+A full specification of the Domains API can be found in CIP-40.
 
 <PageRef url="https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md" pageName="CIP-40" />
 
