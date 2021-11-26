@@ -20,6 +20,17 @@ kit.defaultAccount = accounts[0]
 await kit.setFeeCurrency(CeloContract.StableToken)
 ```
 
+## Set `feeCurrency` for a transaction
+
+You can set the `feeCurrency` for each transaction individually by setting the `feeCurrency` field in the `.send()` method. The `feeCurrency` field accepts contract addresses of whitelisted fee currencies.
+
+```js
+let cUSDcontract = await kit.contracts.getStableToken()
+let cUSDtx = await cUSDcontract
+                    .transfer(someAddress, amount)
+                    .send({ feeCurrency: cUSDcontract.address })
+```
+
 ## Getting the Total Balance
 
 This method from the `kit` will return the CELO, locked CELO, cUSD and total balance of the address
