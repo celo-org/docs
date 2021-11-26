@@ -285,6 +285,7 @@ const sidebars = {
               items: [
                 { type: 'doc', label: 'Overview', id: 'developer-resources/contractkit/index',},
                 { type: 'doc', label: 'Setup', id: 'developer-resources/contractkit/setup',},
+                { type: 'doc', label: 'Usage', id: 'developer-resources/contractkit/usage',},
                 { type: 'doc', label: 'Use Web3 from ContracKit', id: 'developer-resources/contractkit/notes-web3-with-contractkit',},
                 { type: 'doc', label: 'Wrappers & Registry Contracts', id: 'developer-resources/contractkit/contracts-wrappers-registry',},
                 { type: 'doc', label: 'Query On-Chain Identifiers with ODIS', id: 'developer-resources/contractkit/odis',},
