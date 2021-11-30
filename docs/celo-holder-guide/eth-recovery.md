@@ -12,7 +12,7 @@ ___
 
 ## Prerequisites
 
-This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Account Key').
+This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Recovery Phrase').
 
 :::danger
 
@@ -28,7 +28,7 @@ The Celo Wallet for Web and Desktop can be used to import mnemonic phrases with 
 
 1. Visit [celowallet.app](https://celowallet.app) in a modern browser (Chrome is recommended).
 2. For small accounts, you can import in the web version directly. For larger accounts, downloading the desktop version is **strongly** recommended.
-3. Click 'Use Existing Account', then 'Use Account Key', then choose the 'Advanced' tab.
+3. Click 'Use Existing Account', then 'Use Recovery Phrase', then choose the 'Advanced' tab.
 4. Specify your deriviation path and click import.
 5. Set a strong password and click Continue. You should reach the home screen and see your account funds.
 
@@ -42,7 +42,7 @@ Once you've been able to access your funds, it's recommended that you move them 
 2. Copy the address of your new account
 3. In the first Celo Wallet window, click the Send button in the top-left.
 4. Send your funds to your new account.
-5. If you intend to keep this new account permanently, be sure to save its password and account key in a safe place!
+5. If you intend to keep this new account permanently, be sure to save its password and recovery phrase in a safe place!
 
 ## Recovering with the Celo CLI
 
