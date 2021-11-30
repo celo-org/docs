@@ -31,7 +31,7 @@ Please follow the instructions below closely because missteps can lead to errors
 
 1. [Download and run MEW Offline](https://kb.myetherwallet.com/en/offline/using-mew-offline/) (scroll down until you see the download instructions)
 2. Open MEW and click on **Access My Wallet > Software > Mnemonic Phrase > Continue**
-3. Change to a 24 Value mnemonic and enter in the words from your Account Key. Then click **Continue**
+3. Change to a 24 Value mnemonic and enter in the words from your Recovery Phrase. Then click **Continue**
 4. Change the HD Derivation Path to **Add Custom path**
 5. Call your Alias "Celo" for easy reference. Enter in your Path as `m/44'/52752'/0'/0`. Click **Add Custom Path.** 
 6. Go back to your Derivation Path dropdown and select **Celo (m/44'/52752'/0'/0)**. You should see the addresses change. Select the address that matches your Valora Account Number (it's usually the first one).
@@ -47,7 +47,7 @@ Please follow the instructions below closely because missteps can lead to errors
 
 1. [Download](https://app.mycrypto.com/download-desktop-app) then open the MyCrypto desktop app and click on **View & Send**
 2. Access using **Mnemonic Phrase**
-3. Enter in your Valora Account Key into the Mnemonic Phrase box (tip: click the eye icon to easily see your phrase) the click **Choose address**
+3. Enter in your Valora Recovery Phrase into the Mnemonic Phrase box (tip: click the eye icon to easily see your phrase) the click **Choose address**
 4. Change the **Address** from "Default (ETH)" to "Custom". Enter `m/44'/52752'/0'/0` into the box that pops up next to it.
 5. Select the address that matches your Valora Account number (it's usually the first one).
 6. Click **Unlock**

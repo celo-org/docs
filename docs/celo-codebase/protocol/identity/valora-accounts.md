@@ -20,7 +20,7 @@ When new users sign up with Valora, most wallets start with an empty balance. Th
 
 ### Fund Recovery
 
-Meta-transaction wallets can also be useful if a user ever loses their phone and backup account key. Any ERC20 tokens that the EOA has [approved](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-approve-address-uint256-) their meta-transaction wallet to use, can be recovered. In the case of loss of EOA, a new EOA will be created and granted signer rights to the original MTW. This would allow the lost funds to still be accessed, even though the original EOA is unrecoverable. This recovery mechanism hasn't been rolled out yet, but is actively being worked on by cLabs.
+Meta-transaction wallets can also be useful if a user ever loses their phone and backup recovery phrase. Any ERC20 tokens that the EOA has [approved](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-approve-address-uint256-) their meta-transaction wallet to use, can be recovered. In the case of loss of EOA, a new EOA will be created and granted signer rights to the original MTW. This would allow the lost funds to still be accessed, even though the original EOA is unrecoverable. This recovery mechanism hasn't been rolled out yet, but is actively being worked on by cLabs.
 
 ## For Wallet Developers
 
