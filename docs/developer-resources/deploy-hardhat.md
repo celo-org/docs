@@ -133,4 +133,4 @@ Verifying a smart contract allows developers to review your code from within the
 
 ### Hardhat-deploy plugin
 
-You can read an in depth guide about how to deploy and verify contracts on Celo programatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).
+You can read an in depth guide about how to deploy and verify contracts on Celo programmatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).
