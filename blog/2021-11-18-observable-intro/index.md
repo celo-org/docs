@@ -4,7 +4,7 @@ description: Learn more about Observable notebooks and how they can be used in a
 slug: observable-intro
 authors: [josh]
 tags: [observable]
-image: https://logowik.com/content/uploads/images/the-graph-grt1266.jpg
+image: https://dl.airtable.com/.attachmentThumbnails/7d8f17f343965c3ed93eafadc818c0f5/427cd0fe
 hide_table_of_contents: false
 ---
 
