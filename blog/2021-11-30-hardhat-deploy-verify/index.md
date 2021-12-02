@@ -4,6 +4,7 @@ description: Learn to verify contracts on Sourcify using the hardhat-deploy plug
 slug: hardhat-deploy-verify
 authors: [josh]
 tags: [hardhat, sourcify, verification]
+image: https://dl.airtable.com/.attachmentThumbnails/22e935b11333f80ed706c943717d0b49/24fbfa2e
 hide_table_of_contents: false
 ---
 
