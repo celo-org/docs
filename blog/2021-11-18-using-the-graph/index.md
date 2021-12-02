@@ -4,7 +4,7 @@ description: Learn about what the Graph is and how to use it in your Celo DApp
 slug: using-the-graph
 authors: [josh]
 tags: [The Graph, DApps]
-image: https://logowik.com/content/uploads/images/the-graph-grt1266.jpg
+image: https://dl.airtable.com/.attachmentThumbnails/dd1b24f2e572bdf951dcc727ddf043ac/76b5253c
 hide_table_of_contents: false
 ---
 
