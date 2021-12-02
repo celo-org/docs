@@ -156,7 +156,7 @@ We can now use this `account` to get account information \(ie the private key an
 // 6. Import the getAccount function
 const getAccount = require('./getAccount').getAccount
 
-async function createAccount(){
+async function getBalances(){
     // 7. Get your account
     let account = await getAccount()
     
@@ -176,6 +176,8 @@ async function createAccount(){
     console.log(`Your account cUSD balance: ${cUSDBalance.toString()}`)
     console.log(`Your account cEUR balance: ${cEURBalance.toString()}`)
 }
+
+getBalances()
 ```
 
 Run this script again with `node helloCelo.js`. This will print `0`, as we have not funded the associated account yet.
@@ -249,6 +251,8 @@ async function send(){
     console.log(`Your new account cUSD balance: ${cUSDBalance.toString()}`)
     console.log(`Your new account cUSD balance: ${cEURBalance.toString()}`)
 }
+
+send()
 ```
 
 Run `$ node helloCelo.js` again to send the transactions and see the printed output in the console.
