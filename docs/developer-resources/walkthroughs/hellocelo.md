@@ -23,9 +23,9 @@ We assume you already have Node.js and NPM installed on your computer.
 At the end of this guide, you will be able to:
 
 * Connect to the Celo test network, called Alfajores
-* Get test CELO and Celo Dollars (cUSD) from the faucet
+* Get test CELO, Celo Dollars (cUSD) and Celo Euros (cEUR) from the faucet
 * Read account and contract information from the test network
-* Transferring CELO and cUSD on the test network
+* Transferring CELO, cUSD and cEUR on the test network
 
 ## Getting Started
 
@@ -82,8 +82,9 @@ Let's read some token balances from the blockchain. Add the following line in th
 
 ```javascript
 // 3. Get the token contract wrappers
-let goldtoken = await kit.contracts.getGoldToken()
-let stabletoken = await kit.contracts.getStableToken()
+let celotoken = await kit.contracts.getGoldToken()
+let cUSDtoken = await kit.contracts.getStableToken()
+let cEURtoken = await kit.contracts.getStableToken('cEUR')
 ```
 
 We can get the CELO balance of an account using the token wrappers like `goldtoken.balanceOf(address)`. Let's check the balance of this address `'0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'`.
@@ -93,12 +94,14 @@ We can get the CELO balance of an account using the token wrappers like `goldtok
 let anAddress = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 
 // 5. Get token balances
-let celoBalance = await goldtoken.balanceOf(anAddress)
-let cUSDBalance = await stabletoken.balanceOf(anAddress)
+let celoBalance = await celotoken.balanceOf(anAddress)
+let cUSDBalance = await cUSDtoken.balanceOf(anAddress)
+let cEURBalance = await cEURtoken.balanceOf(anAddress)
 
 // Print balances
 console.log(`${anAddress} CELO balance: ${celoBalance.toString()}`)
 console.log(`${anAddress} cUSD balance: ${cUSDBalance.toString()}`)
+console.log(`${anAddress} cEUR balance: ${cEURBalance.toString()}`)
 ```
 
 The `balanceOf(address)` function also returns a Promise, so we wait for the promise to resolve then we print the result.
@@ -153,22 +156,25 @@ We can now use this `account` to get account information \(ie the private key an
 // 6. Import the getAccount function
 const getAccount = require('./getAccount').getAccount
 
-async function createAccount(){
+async function getBalances(){
     // 7. Get your account
     let account = await getAccount()
     
     // 8. Get the token contract wrappers
-    let goldtoken = await kit.contracts.getGoldToken()
-    let stabletoken = await kit.contracts.getStableToken()
+    let celotoken = await kit.contracts.getGoldToken()
+    let cUSDtoken = await kit.contracts.getStableToken()
+    let cEURtoken = await kit.contracts.getStableToken('cEUR')
     
     // 9. Get your token balances
-    let celoBalance = await goldtoken.balanceOf(account.address)
-    let cUSDBalance = await stabletoken.balanceOf(account.address)
-
+    let celoBalance = await celotoken.balanceOf(account.address)
+    let cUSDBalance = await cUSDtoken.balanceOf(account.address)
+    let cEURBalance = await cEURtoken.balanceOf(account.address)
+    
     // Print your account info
     console.log(`Your account address: ${account.address}`)
     console.log(`Your account CELO balance: ${celoBalance.toString()}`)
     console.log(`Your account cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your account cEUR balance: ${cEURBalance.toString()}`)
 }
 ```
 
@@ -213,29 +219,35 @@ async function send(){
     let amount = 100000
 
     // 14. Get the token contract wrappers    
-    let goldtoken = await kit.contracts.getGoldToken()
-    let stabletoken = await kit.contracts.getStableToken()
+    let celotoken = await kit.contracts.getGoldToken()
+    let cUSDtoken = await kit.contracts.getStableToken()
+    let cEURtoken = await kit.contracts.getStableToken('cEUR')
     
     // 15. Transfer CELO and cUSD from your account to anAddress
-    // Specify cUSD as the feeCurrency when sending cUSD
-    let celotx = await goldtoken.transfer(anAddress, amount).send({from: account.address})
-    let cUSDtx = await stabletoken.transfer(anAddress, amount).send({from: account.address, feeCurrency: stabletoken.address})
-    
+    // Optional: specify the feeCurrency, default feeCurrency is CELO
+    let celotx = await celotoken.transfer(anAddress, amount).send({from: account.address})
+    let cUSDtx = await cUSDtoken.transfer(anAddress, amount).send({from: account.address, feeCurrency: cUSDtoken.address})
+    let cEURtx = await cEURtoken.transfer(anAddress, amount).send({from: account.address})
+
     // 16. Wait for the transactions to be processed
     let celoReceipt = await celotx.waitReceipt()
     let cUSDReceipt = await cUSDtx.waitReceipt()
+    let cEURReceipt = await cEURtx.waitReceipt()
     
     // 17. Print receipts
     console.log('CELO Transaction receipt: %o', celoReceipt)
     console.log('cUSD Transaction receipt: %o', cUSDReceipt)
+    console.log('cEUR Transaction receipt: %o', cEURReceipt)
     
     // 18. Get your new balances
-    let celoBalance = await goldtoken.balanceOf(account.address)
-    let cUSDBalance = await stabletoken.balanceOf(account.address)
+    let celoBalance = await celotoken.balanceOf(account.address)
+    let cUSDBalance = await cUSDtoken.balanceOf(account.address)
+    let cEURBalance = await cEURtoken.balanceOf(account.address)
     
     // 19. Print new balance
     console.log(`Your new account CELO balance: ${celoBalance.toString()}`)
     console.log(`Your new account cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your new account cUSD balance: ${cEURBalance.toString()}`)
 }
 ```
 
@@ -299,8 +311,8 @@ Once you have successfully created the ContractKit, you can use the various Celo
 ```javascript
 // Use the gold token contract to transfer tokens
 const transfer = async (from, to, amount) => {
-  const goldTokenContract = await kit.contracts.getGoldToken();
-  const tx = await goldTokenContract.transfer(to, amount).send({ from });
+  const celoTokenContract = await kit.contracts.getGoldToken();
+  const tx = await celoTokenContract.transfer(to, amount).send({ from });
   const receipt = await tx.waitReceipt();
   console.log("Transaction Receipt: ", receipt);
 };
