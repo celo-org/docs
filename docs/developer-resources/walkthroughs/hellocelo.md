@@ -176,8 +176,6 @@ async function getBalances(){
     console.log(`Your account cUSD balance: ${cUSDBalance.toString()}`)
     console.log(`Your account cEUR balance: ${cEURBalance.toString()}`)
 }
-
-getBalances()
 ```
 
 Run this script again with `node helloCelo.js`. This will print `0`, as we have not funded the associated account yet.
@@ -251,8 +249,6 @@ async function send(){
     console.log(`Your new account cUSD balance: ${cUSDBalance.toString()}`)
     console.log(`Your new account cUSD balance: ${cEURBalance.toString()}`)
 }
-
-send()
 ```
 
 Run `$ node helloCelo.js` again to send the transactions and see the printed output in the console.
