@@ -83,8 +83,8 @@ Let's read some token balances from the blockchain. Add the following line in th
 ```javascript
 // 3. Get the token contract wrappers
 let celotoken = await kit.contracts.getGoldToken()
-let cusdtoken = await kit.contracts.getStableToken()
-let ceurtoken = await kit.contracts.getStableToken('cEUR')
+let cUSDtoken = await kit.contracts.getStableToken()
+let cEURtoken = await kit.contracts.getStableToken('cEUR')
 ```
 
 We can get the CELO balance of an account using the token wrappers like `goldtoken.balanceOf(address)`. Let's check the balance of this address `'0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'`.
@@ -95,8 +95,8 @@ let anAddress = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 
 // 5. Get token balances
 let celoBalance = await celotoken.balanceOf(anAddress)
-let cUSDBalance = await cusdtoken.balanceOf(anAddress)
-let cEURBalance = await ceurtoken.balanceOf(anAddress)
+let cUSDBalance = await cUSDtoken.balanceOf(anAddress)
+let cEURBalance = await cEURtoken.balanceOf(anAddress)
 
 // Print balances
 console.log(`${anAddress} CELO balance: ${celoBalance.toString()}`)
