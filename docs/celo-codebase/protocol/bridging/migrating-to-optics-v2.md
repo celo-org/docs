@@ -19,25 +19,17 @@ You have two migration options:
 
 [Option 1](#option-1): You can swap your affected v1 tokens to a token unaffected by v1 on Celo using Ubeswap, Mobius, or Sushiswap, then swap those tokens for Optics v2 tokens. Please note that as more tokens are bridged out of v1, it will become harder and possibly more expensive to swap your tokens.
 
-
-
 * 1a &mdash; [Swap Affected Token for Unaffected Token](#1a---swap-affected-tokens-for-unaffected-tokens)
 * 1b &mdash; [Swap Unaffected Tokens for Optics v2 Tokens](#1b---swap-unaffected-tokens-for-optics-v2-tokens)
 
 [Option 2](#option-2): You can bridge your affected v1 tokens to Ethereum or Polygon, and then back to Celo over the Optics v2 Bridge.
 
-
-
 * 2a &mdash; [Bridge Affected Tokens Out and Back](#2a---bridge-affected-tokens-out-and-back)
 * 2b &mdash; [Bridge Back to Celo](#2b---bridge-back-from-ethereum-to-celo-using-optics-v2)
 
-Depending on the available liquidity on AMMs, gas fees on the Ethereum network, and the total amount of tokens to be migrated, and the amount of effort you’re willing to spend you must 
-
-choose whichever option makes the most sense.
-
+Depending on the available liquidity on AMMs, gas fees on the Ethereum network, and the total amount of tokens to be migrated, and the amount of effort you’re willing to spend you must choose whichever option makes the most sense.
 
 ---
-
 
 ## Option 1
 
