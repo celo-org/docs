@@ -31,6 +31,10 @@ That’s it! We now have ProsperityToken deployed on Alfajores with the Metamask
 
 You can see the contract information on the [Alfajores block explorer](https://alfajores-blockscout.celo-testnet.org/). Copy and paste the contract address or deployment transaction hash from the console output and paste it into the block explorer search bar or look up the deployment transaction info in the Metamask activity. 
 
+## Verify
+
+Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer-resources/deploy-remix#verify-the-smart-contract).
+
 You can find my example contract [here](https://alfajores-blockscout.celo-testnet.org/address/0x97d550A2540F902F4501e21A6c09f12B69173261/transactions).
 
 Let me know what you end up building and reach out if you have any questions, [@critesjosh_](https://twitter.com/critesjosh_) on Twitter or joshc#0001 on Discord. Join the Celo discord at https://chat.celo.org.
