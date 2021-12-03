@@ -25,10 +25,10 @@ Start by approving token usage on the bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    Ethereum BridgeRouter Address = <code>0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
+    Ethereum BridgeRouter Address = 0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    Polygon BridgeRouter Address = <code>0xf244eA81F715F343040569398A4E7978De656bf6</code>
+    Polygon BridgeRouter Address = 0xf244eA81F715F343040569398A4E7978De656bf6
   </TabItem>
 </Tabs>
 
@@ -58,10 +58,10 @@ You can now start sending tokens on the approved Bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    <code>Address = [0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47](https://etherscan.io/address/0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47)</code>
+    Address = [0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47](https://etherscan.io/address/0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47)
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    <code>Address = [0xf244eA81F715F343040569398A4E7978De656bf6](https://polygonscan.com/address/0xf244eA81F715F343040569398A4E7978De656bf6)</code>
+    Address = [0xf244eA81F715F343040569398A4E7978De656bf6](https://polygonscan.com/address/0xf244eA81F715F343040569398A4E7978De656bf6)
   </TabItem>
 </Tabs>
 
@@ -82,13 +82,13 @@ This should be the same number you approved earlier.
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
-    <code>Celo Domain ID = 1667591279</code>
+    Celo Domain ID = 1667591279
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    <code>Polygon Domain ID = 1886350457</code>
+    Polygon Domain ID = 1886350457
   </TabItem>
   <TabItem value="Ethereum" label="On Ethereum">
-    <code>Ethereum Domain ID = 6648936</code>
+    Ethereum Domain ID = 6648936
   </TabItem>
 </Tabs>
 
@@ -104,11 +104,11 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 :::tip
 
-**Before: bytes32**
-<code>0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
+**Before:bytes32**
+0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
 
 **After: 24 Zeros after 0x Prefix**
-<code>0x0000000000000000000000006a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
+0x0000000000000000000000006a39909e805A3eaDd2b61fFf61147796ca6aBB47
 
 :::
 
