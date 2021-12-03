@@ -17,10 +17,10 @@ Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://pol
 
 <Tabs>
   <TabItem value="Ethereum" label="On Ethereum" default>
-    <code>Ethereum EthHelper Address = [0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A](https://etherscan.io/address/0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A)</code>
+    Ethereum EthHelper Address = [0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A](https://etherscan.io/address/0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A)
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    <code>Polygon EthHelper Address = [0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA](https://polygonscan.com/address/0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA)</code>
+    Polygon EthHelper Address = [0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA](https://polygonscan.com/address/0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA)
   </TabItem>
 </Tabs>
 
@@ -44,13 +44,13 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
-    <code>Celo Domain ID = 1667591279</code>
+    Celo Domain ID = 1667591279
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    <code>Polygon Domain ID = 1886350457</code>
+    Polygon Domain ID = 1886350457
   </TabItem>
     <TabItem value="Ethereum" label="On Ethereum">
-    <code>Ethereum Domain ID = 6648936</code>
+    Ethereum Domain ID = 6648936
   </TabItem>
 </Tabs>
 
