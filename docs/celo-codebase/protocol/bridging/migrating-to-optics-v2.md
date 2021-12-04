@@ -119,9 +119,13 @@ To find a list of tokens supported by Optics v2, you may visit Optics v2, [https
 
 #### Bridge Tokens from Celo back to Ethereum or Polygon using Optics v1
 
-You may send wETH (Optics), wBTC (Optics), DAI, USDC  (Optics), TFBX, SUSHI, CRV, AAVE, or other tokens back to Ethereum by using the original Optics v1 interface.
+:::info
+When bridging from Celo to Ethereum network:
+* Send only wETH, wBTC, DAI, USDC, TFBX, Sushi, CRV, AAVE, USDT, TFBX or Ethereum based tokens.
 
-
+When bridging from Celo to Polygon network:
+* Send only USDC (PoS) and WMATIC or Polygon based tokens.
+:::
 
 * Install Metamask from [metamask.io](https://metamask.io/)
 * Make sure you have the desired token in your Celo account
