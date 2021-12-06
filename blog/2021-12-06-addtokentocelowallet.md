@@ -7,10 +7,14 @@ Now that you’ve made your own ERC20 Token, you will want to have it display in
 1) Open up Cello Wallet and make sure you can see “Account Balance Details” then select “Add a new currency/token.”
 ![Photo](https://user-images.githubusercontent.com/93226346/144902366-42169908-95e8-4d0a-a6d8-b6ad021394cf.png)
 
-  If you don’t see the above screen then click the green “More” button in the upper left of the Celo Wallet app.<br><br>
+  If you don’t see the above screen then click the green “More” button in the upper left of the Celo Wallet app.
+  
   ![Photo](https://user-images.githubusercontent.com/93226346/144900620-2ed8b9a1-513e-4a8b-a95a-9542c97c2908.png)
-  <br><br>Then select "Balance - View Balances"<br><br>
-  ![Photo](https://user-images.githubusercontent.com/93226346/144900692-5a213c05-a99e-408b-97c9-7aeed41d870c.png)
+
+
+Then select "Balance - View Balances"
+
+![Photo](https://user-images.githubusercontent.com/93226346/144900692-5a213c05-a99e-408b-97c9-7aeed41d870c.png)
 
 2) Copy your token’s address and paste it into the “Token name or address” text field. If you don’t remember your Token’s address you can search for it by name on [Celo’s Explorer](https://explorer.celo.org/).
 ![Photo](https://user-images.githubusercontent.com/93226346/144900871-cc2ffa50-d7f2-46c3-94dd-15126d71f57b.png)
