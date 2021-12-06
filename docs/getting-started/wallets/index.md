@@ -97,3 +97,8 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [https://dcentwallet.com/](https://dcentwallet.com/)
 - Platforms: Browser, iOS, Android
+
+### Bitfy
+
+- [https://bitfy.app/](https://bitfy.app/)
+- Platforms: iOS, Android
