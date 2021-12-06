@@ -196,6 +196,7 @@ const sidebars = {
         { type: 'doc', label: 'Native Assets with Etherscan', id: 'celo-codebase/protocol/bridging/bridging-native-assets', },
         { type: 'doc', label: 'Tokens with Etherscan', id: 'celo-codebase/protocol/bridging/bridging-tokens-with-etherscan', },
         { type: 'doc', label: 'Migrating to Optics v2', id: 'celo-codebase/protocol/bridging/migrating-to-optics-v2', },
+        { type: 'doc', label: 'Optics Bridge FAQ', id: 'celo-codebase/protocol/bridging/optics-bridge-faq', },
       ]
     },
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},
