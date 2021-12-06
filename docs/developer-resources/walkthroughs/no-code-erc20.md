@@ -4,7 +4,7 @@ description: How to deploy an ERC20 token contract to Celo.
 ---
 # Deploy an ERC20 token to Celo
 
-How to deploy token contracts that use the ERC20, ERC721, or ERC1155 token standard to Celo without writing code.
+How to deploy a token contract that use the ERC20 token standard to Celo without writing code.
 
 ___
 
@@ -18,7 +18,8 @@ In this tutorial, we will go over how to deploy an ERC20 token contract. The pro
 4. Go to the [Open Zeppelin Contracts Wizard](https://docs.openzeppelin.com/contracts/4.x/wizard).
 5. Select `ERC20` as the type of contract that you would like to deploy. ![erc20 empty settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20empty%20settings.png?raw=true)
 6. Name your token. We are calling our token “ProsperityToken” in this example.
-7. Select the features for your token. We are making ProsperityToken mintable, burnable and enabling snapshots, so the token may be used for governance. We are also making the contract Ownable, so the deployer of the contract can mint new tokens and distribute them as desired. Ideally, the owner account will be a multi-signature contract, so no single person has control over this token contract. ![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
+7. Select the features for your token. We are making ProsperityToken mintable, burnable and enabling snapshots, so the token may be used for governance. We are also making the contract Ownable, so the deployer of the contract can mint new tokens and distribute them as desired. Ideally, the owner account will be a multi-signature contract, so no single person has control over this token contract.
+Leave "Upgradeability" UNCHECKED and do not select one of the two radio options below it. Selecting one of these options will prevent Celo from recognizing your deployed contract as a token. ![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
 8. Open your contract in Remix by clicking “Open in Remix”. Remix will pop open with the contract code already filled in.
 9. Click the big blue button that says “Compile contract-xxxxx.sol”. The contract should compile without error. ![remix compile erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20compile%20erc20.png?raw=true)
 10. Click the Ethereum logo in the left sidebar. This will bring up a new interface for deploying the contract. ![remix deploy erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20deploy%20erc20.png?raw=true)
@@ -31,7 +32,15 @@ That’s it! We now have ProsperityToken deployed on Alfajores with the Metamask
 
 You can see the contract information on the [Alfajores block explorer](https://alfajores-blockscout.celo-testnet.org/). Copy and paste the contract address or deployment transaction hash from the console output and paste it into the block explorer search bar or look up the deployment transaction info in the Metamask activity. 
 
+## Deploying your token on the Mainnet
+
+When you're ready to deploy your token to the Celo Mainnet make sure to change the network of your connected wallet from Alfajores to the Celo Mainnet. Once you have done this you can simply redeploy the contract (you will not need to recompile it).
+
+Note: When deploying to the Mainnet you will need to use real Celo to pay the gas fee (as opposed to using the faucet on the testnet). As of December 2021 this cost is less than $0.01 US. You can learn how to [get Celo here](https://celo.org/buy).
+
 ## Verify
+
+If you are unable to view your token on the block explorer, you may need to Verify it first. If you are able to see your token, you may skip this section.
 
 Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer-resources/deploy-remix#verify-the-smart-contract).
 
