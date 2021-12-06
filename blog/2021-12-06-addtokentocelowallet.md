@@ -17,18 +17,23 @@ Then select "Balance - View Balances"
 ![Photo](https://user-images.githubusercontent.com/93226346/144900692-5a213c05-a99e-408b-97c9-7aeed41d870c.png)
 
 2) Copy your token’s address and paste it into the “Token name or address” text field. If you don’t remember your Token’s address you can search for it by name on [Celo’s Explorer](https://explorer.celo.org/).
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144900871-cc2ffa50-d7f2-46c3-94dd-15126d71f57b.png)
 
 3) Click “Add” and you should then see the token listed. The token I added for this example is “BCN.” If you look to the far right you’ll see that only “BCN” has an “X” after its address. This is because I manually added “BCN” and the other listed coins are native assets from Celo.
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144901070-cc1e1317-d2ab-4279-8c83-dd62072b9987.png)
 
 4) If you wish to send your token to another Cello Wallet click the green “Send” button in the upper left.
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144901103-72335db9-7806-40e4-bdad-11a8c8ad51b6.png)
 
 5) Enter the recipient’s address and select your token from the Currency dropdown. You can then enter the amount of tokens you wish to send.
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144901137-2b679ac6-24ea-4947-80fd-4fab1d3b76cd.png)
 
 6) You’ll be charged a fee in Celo for your transaction. Make sure you are sending this to another Cello Wallet! If the address, token and amount are all correct click “Send Payment.”
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144901189-2f9adb93-9cce-48ff-8e4d-1476b75f1fec.png)
 
 Congratulations! You’ve just sent your own token to somebody! Your token should be automatically added to their list. If for some reason it is not automatically added, they can simply follow the above steps.
