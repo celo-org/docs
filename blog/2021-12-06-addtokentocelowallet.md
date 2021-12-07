@@ -8,7 +8,7 @@ authors:
     url: https://github.com/vissequ
     image_url: https://github.com/vissequ.png
 tags: [contribute]
-image: https://user-images.githubusercontent.com/93226346/144902366-42169908-95e8-4d0a-a6d8-b6ad021394cf.png
+image: https://user-images.githubusercontent.com/93226346/144900871-cc2ffa50-d7f2-46c3-94dd-15126d71f57b.png
 hide_table_of_contents: false
 ---
 
