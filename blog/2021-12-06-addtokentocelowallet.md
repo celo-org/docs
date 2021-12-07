@@ -1,3 +1,17 @@
+---
+title: Add Your ERC20 Token to Your Celo Wallet
+description: Learn How to Add Your ERC20 Token to Your Celo Wallet
+slug: blog-contributions
+authors:
+  - name: Connor Fabiano
+    title: 
+    url: https://github.com/vissequ
+    image_url: https://github.com/vissequ.png
+tags: [contribute]
+image: https://user-images.githubusercontent.com/93226346/144902366-42169908-95e8-4d0a-a6d8-b6ad021394cf.png
+hide_table_of_contents: false
+---
+
 # How to Add Your ERC20 Token to Your Celo Wallet
 
 If you are trying to add your own token please make sure you have already read Josh's tutorial on [how to make your own ERC20 Token on Celo](https://docs.celo.org/developer-resources/walkthroughs/no-code-erc20).
