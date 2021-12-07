@@ -51,6 +51,6 @@ Then select "Balance - View Balances"
 
 Congratulations! You’ve just sent your own token to somebody! Your token should be automatically added to their list. If for some reason it is not automatically added, they can simply follow the above steps.
 
-If you have any questions feel free to message me on Discord at vissequ#1301
+If you have any questions feel free to message me on Discord at vissequ#1301 or on Twitter at [@connorfabiano](https://twitter.com/connorfabiano)
 
 (Tutorials for using different wallets such as Metamask will be added in the future.)
