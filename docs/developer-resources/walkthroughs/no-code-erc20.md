@@ -38,6 +38,8 @@ When you're ready to deploy your token to the Celo Mainnet make sure to change t
 
 Note: When deploying to the Mainnet you will need to use real Celo to pay the gas fee (as opposed to using the faucet on the testnet). As of December 2021 this cost is less than $0.01 US. You can learn how to [get Celo here](https://celo.org/buy).
 
+You can read about how to add your new token to the Celo Wallet [here](/blog/add-token-celo-wallet).
+
 ## Verify
 
 If you are unable to view your token on the block explorer, you may need to Verify it first. If you are able to see your token, you may skip this section.
