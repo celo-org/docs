@@ -491,6 +491,9 @@ module.exports = {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
                 blog: {
+                    blogTitle: 'Celo Blog',
+                    blogSidebarTitle: 'All posts',
+                    blogSidebarCount: 'ALL',
                     showReadingTime: true,
                     readingTime: ({content, frontMatter, defaultReadingTime}) =>
                         // allows per post reading time override in frontmatter
