@@ -1,10 +1,9 @@
 ---
 title: Add Your ERC20 Token to Your Celo Wallet
 description: Learn How to Add Your ERC20 Token to Your Celo Wallet
-slug: blog-contributions
+slug: add-token-celo-wallet
 authors:
   - name: Connor Fabiano
-    title: 
     url: https://github.com/vissequ
     image_url: https://github.com/vissequ.png
 tags: [contribute]
@@ -19,12 +18,12 @@ If you are trying to add your own token please make sure you have already read J
 Now that you’ve made your own ERC20 Token, you will want to have it display in your Celo Wallet. If you don’t currently have Celo Wallet you will need to [download it](https://celowallet.app/setup) first.
 
 1) Open up Cello Wallet and make sure you can see “Account Balance Details” then select “Add a new currency/token.”
+
 ![Photo](https://user-images.githubusercontent.com/93226346/144902366-42169908-95e8-4d0a-a6d8-b6ad021394cf.png)
 
-  If you don’t see the above screen then click the green “More” button in the upper left of the Celo Wallet app.
+If you don’t see the above screen then click the green “More” button in the upper left of the Celo Wallet app.
   
-  ![Photo](https://user-images.githubusercontent.com/93226346/144900620-2ed8b9a1-513e-4a8b-a95a-9542c97c2908.png)
-
+![Photo](https://user-images.githubusercontent.com/93226346/144900620-2ed8b9a1-513e-4a8b-a95a-9542c97c2908.png)
 
 Then select "Balance - View Balances"
 
