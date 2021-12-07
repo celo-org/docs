@@ -16,7 +16,7 @@ hide_table_of_contents: false
 
 If you are trying to add your own token please make sure you have already read Josh's tutorial on [how to make your own ERC20 Token on Celo](https://docs.celo.org/developer-resources/walkthroughs/no-code-erc20).
 
-Now that you’ve made your own ERC20 Token, you will want to have it display in your Celo wallet. If you don’t currently have Celo wallet you will need to [download it](https://celowallet.app/setup) first.
+Now that you’ve made your own ERC20 Token, you will want to have it display in your Celo Wallet. If you don’t currently have Celo Wallet you will need to [download it](https://celowallet.app/setup) first.
 
 1) Open up Cello Wallet and make sure you can see “Account Balance Details” then select “Add a new currency/token.”
 ![Photo](https://user-images.githubusercontent.com/93226346/144902366-42169908-95e8-4d0a-a6d8-b6ad021394cf.png)
