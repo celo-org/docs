@@ -6,7 +6,7 @@ authors:
   - name: Connor Fabiano
     url: https://github.com/vissequ
     image_url: https://github.com/vissequ.png
-tags: [contribute]
+tags: [tokens, celo wallet]
 image: https://user-images.githubusercontent.com/93226346/144900871-cc2ffa50-d7f2-46c3-94dd-15126d71f57b.png
 hide_table_of_contents: false
 ---
