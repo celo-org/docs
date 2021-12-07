@@ -16,17 +16,41 @@ In this tutorial, we will go over how to deploy an ERC20 token contract. The pro
 2. [Add the Celo network](/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask) to Metamask. We suggest adding the Alfajores testnet to Metamask as well, so you can test contract deployments before deploying to mainnet.
 3. Add a small amount of CELO to your Metamask account. In this example, we will deploy to the Alfajores testnet, so we need Alfajores CELO, which you can get from the faucet [here](https://celo.org/developers/faucet).
 4. Go to the [Open Zeppelin Contracts Wizard](https://docs.openzeppelin.com/contracts/4.x/wizard).
-5. Select `ERC20` as the type of contract that you would like to deploy. ![erc20 empty settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20empty%20settings.png?raw=true)
+5. Select `ERC20` as the type of contract that you would like to deploy. 
+
+![erc20 empty settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20empty%20settings.png?raw=true)
+
 6. Name your token. We are calling our token “ProsperityToken” in this example.
 7. Select the features for your token. We are making ProsperityToken mintable, burnable and enabling snapshots, so the token may be used for governance. We are also making the contract Ownable, so the deployer of the contract can mint new tokens and distribute them as desired. Ideally, the owner account will be a multi-signature contract, so no single person has control over this token contract.
-If you want the block explorer to recognize your token then leave "Upgradeability" unchecked and do not select one of the two radio options below it. Selecting one of these options will prevent the [Celo block explorer](https://explorer.celo.org/) from recognizing your deployed contract as a token. If you want upgradability and do not care about the block explorer, feel free to make your token contract upgradable. ![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
+If you want the block explorer to recognize your token then leave "Upgradeability" unchecked and do not select one of the two radio options below it. Selecting one of these options will prevent the [Celo block explorer](https://explorer.celo.org/) from recognizing your deployed contract as a token. If you want upgradability and do not care about the block explorer, feel free to make your token contract upgradable. 
+
+![erc20 filled settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20filled%20settings.png?raw=true)
+
 8. Open your contract in Remix by clicking “Open in Remix”. Remix will pop open with the contract code already filled in.
-9. Click the big blue button that says “Compile contract-xxxxx.sol”. The contract should compile without error. ![remix compile erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20compile%20erc20.png?raw=true)
-10. Click the Ethereum logo in the left sidebar. This will bring up a new interface for deploying the contract. ![remix deploy erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20deploy%20erc20.png?raw=true)
-11. In the “Environment” section on the top left, select “Injected Web3”. This will connect Remix to Metamask. Now clicking the “deploy” button will deploy the contracts to whichever network Metamask is connected to. You should see a small textbox indicating that Remix is connected to a custom network. The Alfajores network id is 44787. ![select injected web3.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/select%20injected%20web3.png?raw=true)
-12. In the Contract dropdown, select the contract that you want to deploy. In this example, it is called ProsperityToken. ![select prosperitytoken erc20 contract.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/select%20prosperitytoken%20erc20%20contract.png?raw=true)
-13. Click Deploy. Metamask should pop open. ![deploy prosperity token erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/deploy%20prosperity%20token%20erc20.png?raw=true)
-14. Click Confirm. Once the transaction confirms (less than 5 seconds), a contract interface will appear in the bottom left, and transaction details will appear in the console at the bottom. ![deployed prosperity token.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/deployed%20prosperity%20token.png?raw=true)
+9. Click the big blue button that says “Compile contract-xxxxx.sol”. The contract should compile without error. 
+
+![remix compile erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20compile%20erc20.png?raw=true)
+
+10. Click the Ethereum logo in the left sidebar. This will bring up a new interface for deploying the contract. 
+
+
+![remix deploy erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/remix%20deploy%20erc20.png?raw=true)
+
+11. In the “Environment” section on the top left, select “Injected Web3”. This will connect Remix to Metamask. Now clicking the “deploy” button will deploy the contracts to whichever network Metamask is connected to. You should see a small textbox indicating that Remix is connected to a custom network. The Alfajores network id is 44787. 
+
+![select injected web3.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/select%20injected%20web3.png?raw=true)
+
+12. In the Contract dropdown, select the contract that you want to deploy. In this example, it is called ProsperityToken. 
+
+![select prosperitytoken erc20 contract.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/select%20prosperitytoken%20erc20%20contract.png?raw=true)
+
+13. Click Deploy. Metamask should pop open. 
+
+![deploy prosperity token erc20.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/deploy%20prosperity%20token%20erc20.png?raw=true)
+
+14. Click Confirm. Once the transaction confirms (less than 5 seconds), a contract interface will appear in the bottom left, and transaction details will appear in the console at the bottom. 
+
+![deployed prosperity token.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/deployed%20prosperity%20token.png?raw=true)
 
 That’s it! We now have ProsperityToken deployed on Alfajores with the Metamask account as the contract owner.
 
