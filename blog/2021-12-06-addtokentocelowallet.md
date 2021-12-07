@@ -15,7 +15,7 @@ hide_table_of_contents: false
 
 If you are trying to add your own token please make sure you have already read Josh's tutorial on [how to make your own ERC20 Token on Celo](https://docs.celo.org/developer-resources/walkthroughs/no-code-erc20).
 
-Now that you’ve made your own ERC20 Token, you will want to have it display in your Celo Wallet. If you don’t currently have Celo Wallet you will need to [download it](https://celowallet.app/setup) first.
+Now that you’ve made your own ERC20 Token, you will want to have it displayed in your Celo Wallet. If you don’t currently have Celo Wallet you will need to [download it](https://celowallet.app/setup) first.
 
 <!-- truncate -->
 
@@ -39,7 +39,7 @@ Then select "Balance - View Balances"
 
 ![Photo](https://user-images.githubusercontent.com/93226346/144901070-cc1e1317-d2ab-4279-8c83-dd62072b9987.png)
 
-4) If you wish to send your token to another Cello Wallet click the green “Send” button in the upper left.
+4) If you wish to send your token to another Celo Wallet click the green “Send” button in the upper left.
 
 ![Photo](https://user-images.githubusercontent.com/93226346/144901103-72335db9-7806-40e4-bdad-11a8c8ad51b6.png)
 
