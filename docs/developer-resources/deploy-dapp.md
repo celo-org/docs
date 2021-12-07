@@ -15,7 +15,9 @@ The fastest way to build and deploy on Celo is to [Set up a Testnet Development 
 
 :::tip
 
-Developers can build on Celo using any [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
+Developers can build on Celo using many [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo. 
+
+Just getting started learning about how to write smart contracts? [The Solidity docs](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html) are a great place to start.
 
 :::
 
