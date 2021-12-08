@@ -101,17 +101,13 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 ### Bitfy
 
 - [https://bitfy.app/](https://bitfy.app/)
+- Countries: Brazil
 - Platforms: iOS, Android
 
 ### Lemon Cash
 
 - [https://en.lemon.me/](https://en.lemon.me/)
 - Countries: Argentina
-
-### Bitfy
-
-- [https://bitfy.app/](https://bitfy.app/)
-- Countries: Brazil
 
 ### CocoPay
 
@@ -122,22 +118,27 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [https://cobru.co/](https://cobru.co/)
 - Countries: Colombia
+
 ### PandaPay
 
 - [https://www.pandapay.ca/en/](https://www.pandapay.ca/en/)
 - Countries: Brazil
+
 ### Tauros
 
 - [https://tauros.shop/](https://tauros.shop/)
 - Countries: Mexico
+
 ### Kanzu Banking
 
 - [https://kanzucode.com/](https://kanzucode.com/)
 - Countries: Uganda
+
 ### Kotani Pay
 
 - [https://kotanipay.com/](https://kotanipay.com/)
 - Countries: Kenya
+
 ### Coinprofile
 
 - [https://coinprofile.co/](https://coinprofile.co/)
@@ -152,9 +153,11 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [https://www.bloom.solutions/](https://www.bloom.solutions/)
 - Countries: Philippines
+
 ### Frontier
 
 - [https://frontierwallet.com/](https://frontierwallet.com/)
+
 ### El Dorado
 
 - [https://eldorado.io/](https://eldorado.io/)
