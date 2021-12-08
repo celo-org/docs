@@ -374,8 +374,8 @@ const sidebars = {
       type: 'category',
       label: 'Recovery',
       items: [
-        { type: 'doc', label: 'ETH Recovery', id: 'celo-holder-guide/eth-recovery', },
-        { type: 'doc', label: 'CELO Recovery', id: 'celo-holder-guide/celo-recovery', },
+        { type: 'doc', label: 'Recover from ETH Address', id: 'celo-holder-guide/eth-recovery', },
+        { type: 'doc', label: 'Recover from Celo Address', id: 'celo-holder-guide/celo-recovery', },
       ]
     },
   ], 
