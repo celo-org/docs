@@ -147,35 +147,42 @@ function GovernanceApp() {
   }, [fetchProposals])
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Status</th>
-          <th>Description URL</th>
-        </tr>
-      </thead>
-      <tbody>
-        {proposals.map((proposal) => (
+    <div>
+      <h1>Celo Voting DApp</h1>
+      <p>{address}</p>
+      <button onClick={connect}>Click here to connect your wallet</button>
+      <table>
+        <thead>
           <tr>
-            <td>{proposal.id.toString()}</td>
-            <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
-            <td>
-              <a href={proposal.metadata.descriptionURL} target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>
-                Link
-              </a>
-            </td>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Description URL</th>
+            <th>Voted</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {proposals.map((proposal) => (
+            <tr>
+              <td>{proposal.id.toString()}</td>
+              <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
+              <td>
+                <a href={proposal.metadata.descriptionURL} target="_blank" style={{ color: 'blue', textDecoration: 'underline' }} >
+                  Link
+                </a>
+              </td>
+              <td>{proposal.vote ?? 'No vote yet'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 ```
 
 Be sure to add this new `GovernanceApp` component to your `WrappedApp` component.
 
-```
+```js
 function WrappedApp() {
   return (
     <ContractKitProvider
@@ -185,7 +192,6 @@ function WrappedApp() {
           url: "https://example.com",
         }}
     >
-      <App />
       <GovernanceApp />
     </ContractKitProvider>
   );
