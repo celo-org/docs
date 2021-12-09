@@ -84,7 +84,7 @@ function App () {
   return (
     <main>
       <h1>Celo Voting DApp</h1>
-
+      <p>{address}</p>
       <button onClick={connect}>Click here to connect your wallet</button>
     </main>
   )
@@ -128,7 +128,7 @@ Here's how it looks using a combination of the `useEffect` and `useCallback` hoo
 import React, { useCallback, useEffect, useState } from 'react'
 import { useContractKit } from '@celo-tools/use-contractkit'
 
-function App() {
+function GovernanceApp() {
   const { address, connect, kit, getConnectedKit } = useContractKit()
   const [proposals, setProposals] = useState([])
 
@@ -161,8 +161,8 @@ function App() {
             <td>{proposal.id.toString()}</td>
             <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
             <td>
-              <a href={proposal.descriptionURL} target="_blank">
-                Description link
+              <a href={proposal.metadata.descriptionURL} target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>
+                Link
               </a>
             </td>
           </tr>
@@ -170,6 +170,25 @@ function App() {
       </tbody>
     </table>
   )
+}
+```
+
+Be sure to add this new `GovernanceApp` component to your `WrappedApp` component.
+
+```
+function WrappedApp() {
+  return (
+    <ContractKitProvider
+      dapp={{
+          name: "My awesome dApp",
+          description: "My awesome description",
+          url: "https://example.com",
+        }}
+    >
+      <App />
+      <GovernanceApp />
+    </ContractKitProvider>
+  );
 }
 ```
 
@@ -221,8 +240,8 @@ return (
           <td>{proposal.id.toString()}</td>
           <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
           <td>
-            <a href={proposal.descriptionURL} target="_blank">
-              Description link
+            <a style={{ color: 'blue', textDecoration: 'underline' }} href={proposal.metadata.descriptionURL} target="_blank">
+              Link
             </a>
           </td>
           <td>{proposal.vote ?? 'No vote yet'}</td>
