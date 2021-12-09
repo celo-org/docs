@@ -157,7 +157,6 @@ function GovernanceApp() {
             <th>ID</th>
             <th>Status</th>
             <th>Description URL</th>
-            <th>Voted</th>
           </tr>
         </thead>
         <tbody>
@@ -170,7 +169,6 @@ function GovernanceApp() {
                   Link
                 </a>
               </td>
-              <td>{proposal.vote ?? 'No vote yet'}</td>
             </tr>
           ))}
         </tbody>
