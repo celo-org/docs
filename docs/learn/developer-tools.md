@@ -161,6 +161,14 @@ The [API endpoints](https://explorer.celo.org/api_docs) allow you programmatical
   - Lightweight identity layer that makes it easy to send cryptocurrency to a phone number
 - Blockscout block explorers
 
+### The Graph
+
+[The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph. You can read more about how to use the Graph with Celo [here](blog/using-the-graph). 
+
+### DappLooker
+
+[DappLooker](https://dapplooker.com/integration/celo) allows you to easily analyze & visualize your Celo smart contracts & subgraph data in various formats and gather it into dashboards from multiple sources. Analyze your data with intuitive Visual SQL which writes queries for you. Share the story your data tells with your team or with your community. Share dashboard insights via URL wherever you need to make your organization truly data driven.
+
 ### Stats.celo.org
 
 - [Stats.celo.org](http://stats.celo.org) allows you to check network activity and health.
