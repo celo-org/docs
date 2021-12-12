@@ -8,7 +8,6 @@ description: How to migrate tokens from Optics v1 to v2.
 
 This tutorial will guide you from Optics v1 to Optics v2.
 
-
 ---
 
 The v2 Optics Bridge is live! The launch of v2 was announced in [this post to the Celo Forum](https://forum.celo.org/t/optics-v2-is-live/2554).
