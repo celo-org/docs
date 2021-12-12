@@ -8,24 +8,27 @@ description: How to migrate tokens from Optics v1 to v2.
 
 This tutorial will guide you from Optics v1 to Optics v2.
 
-
 ---
 
 The v2 Optics Bridge is live! The launch of v2 was announced in [this post to the Celo Forum](https://forum.celo.org/t/optics-v2-is-live/2554).
 
-Due to issues highlighted in an earlier [Celo Forum post](https://forum.celo.org/t/optics-recovery-mode/2452/34), tokens bridged using [Optics v1 Bridge](https://optics.app) should be migrated to unaffected tokens or to Optics v2 tokens.
+All v1 Optics Bridge users should migrate their v1 tokens to v2 tokens. Learn more [here](https://forum.celo.org/t/optics-recovery-mode/2452/34).
 
-You have two migration options:
+You have three options to choose from:
 
-[Option 1](#option-1): You can swap your affected v1 tokens to a token unaffected by v1 on Celo using Ubeswap, Mobius, or Sushiswap, then swap those tokens for Optics v2 tokens. Please note that as more tokens are bridged out of v1, it will become harder and possibly more expensive to swap your tokens.
+[Option 1](#option-1): **VERY EASY** Use the Mobius Migrator to swap Optics v1 for Optic v2 (1 for 1).
 
-* 1a &mdash; [Swap Affected Token for Unaffected Token](#1a---swap-affected-tokens-for-unaffected-tokens)
-* 1b &mdash; [Swap Unaffected Tokens for Optics v2 Tokens](#1b---swap-unaffected-tokens-for-optics-v2-tokens)
+* [1 Easily Migrate Optics Bridge Tokens to v2](#1---easily-migrate-optics-bridge-tokens-to-v2)
 
-[Option 2](#option-2): You can bridge your affected v1 tokens to Ethereum or Polygon, and then back to Celo over the Optics v2 Bridge.
+[Option 2](#option-2): **MODERATE** You can swap your v1 tokens to a an alternative token on Celo using Ubeswap, Mobius, or Sushiswap, then swap those tokens for Optics v2 tokens. __Please note that as more tokens are bridged out of v1, it will become harder and possibly more expensive to swap your tokens.__
 
-* 2a &mdash; [Bridge Affected Tokens Out and Back](#2a---bridge-affected-tokens-out-and-back)
-* 2b &mdash; [Bridge Back to Celo](#2b---bridge-back-from-ethereum-to-celo-using-optics-v2)
+* 2a &mdash; [Swap Affected Token for Unaffected Token](#2a---swap-affected-tokens-for-unaffected-tokens)
+* 2b &mdash; [Swap Unaffected Tokens for Optics v2 Tokens](#2b---swap-unaffected-tokens-for-optics-v2-tokens)
+
+[Option 3](#option-3): **HARDEST** You can bridge your affected v1 tokens to Ethereum or Polygon, and then back to Celo over the Optics v2 Bridge.
+
+* 3a &mdash; [Bridge Affected Tokens Out and Back](#3a---bridge-affected-tokens-out-and-back)
+* 3b &mdash; [Bridge Back to Celo](#3b---bridge-back-from-ethereum-to-celo-using-optics-v2)
 
 Depending on the available liquidity on AMMs, gas fees on the Ethereum network, and the total amount of tokens to be migrated, and the amount of effort you’re willing to spend you must choose whichever option makes the most sense.
 
@@ -33,7 +36,41 @@ Depending on the available liquidity on AMMs, gas fees on the Ethereum network, 
 
 ## Option 1
 
-### 1a - Swap Affected Tokens for Unaffected Tokens
+### 1 - Easily Migrate Optics Bridge Tokens to v2
+
+The easiest way to migrate your v1 token to v2 is by using the [Mobius Migrate tab](https://www.mobius.money/#/opensum).
+
+1. Visit [Mobius's Migrate tab](https://www.mobius.money/#/opensum)
+
+2. Connect your wallet.
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-1-connect.png "Connect your wallet") 
+
+3. Select cUSDCxV1, wETHxV1, or wBTCxV1 token to swap.
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-3-select.png "Select cUSDCxV1, wETHxV1, or wBTCxV1 token to swap")
+
+4. Input the amount to swap.
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-4-amount.png "Input the amount to swap")
+
+5. Approve accessing your tokens (cUSDCxV1 in this example).
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-5-approve.png "Approve accessing your tokens (cUSDCxV1 in this example)")
+
+6. Swap.
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-6-swap.png "Swap.")
+
+7. Now visit the Swap tab to verify that you have swapped all your v1 token for v2 cUSDC, wETH, and wBTC.
+
+![alt_text](/img/doc-images/migrating-optics-v2/mobius-migrate-8-verify.png "Now visit the Swap tab to verify that you have swapped all your v1 token for v2 cUSDC, wETH, and wBTC.")
+
+
+
+## Option 2
+
+### 2a - Swap Affected Tokens for Unaffected Tokens
 
 You can migrate to Optics v2 by first swapping affected tokens for unaffected tokens like cUSD, cEUR, CELO, cBTC, or cETH.
 
@@ -91,7 +128,7 @@ As liquidity on v1 pools is removed, the market depth will decrease and the pric
 ---
 
 
-### 1b - Swap Unaffected Tokens for Optics v2 Tokens
+### 2b - Swap Unaffected Tokens for Optics v2 Tokens
 
 As Optics v2 Liquidity Pools come online on Mobius, Sushi, and Ubeswap you may swap your cUSD, cEUR, CELO, cBTC, cETH for wBTC, wETH and other v2 tokens.
 
@@ -112,16 +149,16 @@ To find a list of tokens supported by Optics v2, you may visit Optics v2, [https
 ---
 
 
-# Option 2
+# Option 3
 
-### 2a - Bridge Affected Tokens Out and Back
+### 3a - Bridge Affected Tokens Out and Back
 
 
 #### Bridge Tokens from Celo back to Ethereum or Polygon using Optics v1
 
 :::info
 When bridging from Celo to Ethereum network:
-* Send only wETH, wBTC, DAI, USDC, TFBX, Sushi, CRV, AAVE, USDT, TFBX or Ethereum based tokens.
+* Send only wETH, wBTC, DAI, USDC, TFBX, Sushi, CRV, AAVE, USDT or Ethereum based tokens.
 
 When bridging from Celo to Polygon network:
 * Send only USDC (PoS) and WMATIC or Polygon based tokens.
@@ -168,7 +205,7 @@ Once your transaction is approved your transaction details may not appear in the
 :::
 
 
-### 2b - Bridge back from Ethereum to Celo using Optics v2
+### 3b - Bridge back from Ethereum to Celo using Optics v2
 
 Next, bridge your Ethereum network tokens back to Celo using Optics v2 will follow the same path as v1. v2 smart contract representations will be different from v1.
 
