@@ -1,12 +1,12 @@
 ---
 title: Recover CELO from an Ethereum Address
-description: How to recover CELO (previously Celo Gold) if you accidentally transferred them to an Ethereum address.
+description: How to recover CELO (previously Celo Gold) if you accidentally transferred them to an account generated using an Ethereum wallet.
 slug: /celo-owner-guide/eth-recovery
 ---
 
 # Recover CELO from an Ethereum Address
 
-How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an [Ethereum address](https://en.wikipedia.org/wiki/Ethereum#Addresses).
+How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an account generated using an Ethereum wallet.
 
 ___
 
