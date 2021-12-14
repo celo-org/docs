@@ -21,7 +21,8 @@ Several command line options control logging:
 
 - `--consoleoutput`: Sends output to the given path, or to `stdout`.
 
-- `--log.json`: Formats logs as structured JSON (`true`), or for easy viewing in a terminal (`false`, default option).
+- (Deprecatedin v1.5) `--consoleformat`: Formats logs for easy viewing in a terminal (`term`), or as structured JSON (`json`).
+- (Introduced in v1.5) `--log.json`: Formats logs as structured JSON (`true`), or for easy viewing in a terminal (`false`, default option).
 
 Useful messages to record or set up log-based metrics on:
 
