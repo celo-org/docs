@@ -51,23 +51,23 @@ The easiest way to migrate your v1 token to v2 is by using the [Mobius Migrate t
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-1-connect.png" alt="Connect your wallet" width="300" />
 
-1. Select cUSDCxV1, wETHxV1, or wBTCxV1 token to swap.
+3. Select cUSDCxV1, wETHxV1, or wBTCxV1 token to swap.
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-3-select.png" alt="Select cUSDCxV1, wETHxV1, or wBTCxV1 token to swap" width="300" />
 
-1. Input the amount to swap.
+4. Input the amount to swap.
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-4-amount.png" alt="Input the amount to swap" width="300" />
 
-1. Approve accessing your tokens (cUSDCxV1 in this example).
+5. Approve accessing your tokens (cUSDCxV1 in this example).
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-5-approve.png" alt="Approve accessing your tokens (cUSDCxV1 in this example)" width="300" />
 
-1. Swap.
+6. Swap.
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-6-swap.png" alt="Swap" width="300" />
 
-1. Now visit the Swap tab to verify that you have swapped all your v1 token for v2 cUSDC, wETH, and wBTC.
+7. Now visit the Swap tab to verify that you have swapped all your v1 token for v2 cUSDC, wETH, and wBTC.
 
 <ImageWrapper path="/img/doc-images/migrating-optics-v2/mobius-migrate-8-verify.png" alt="Now visit the Swap tab to verify that you have swapped all your v1 token for v2 cUSDC, wETH, and wBTC." width="300" />
 
