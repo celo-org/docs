@@ -8,6 +8,14 @@ slug: /celo-owner-guide/eth-recovery
 
 How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an account generated using an Ethereum wallet.
 
+:::note
+
+You only need to go through this process when going from mnemonic (secret phrase) to accounts because of the different account derivation paths between Celo and Ethereum. This is only relevant if you're using a wallet that can’t connect to both the Ethereum and Celo networks or you can’t export the private key--going from private key to account address is the same for both Celo and Ethereum, it's just menemonic (secret phrase) to private keys thats different.
+
+With Metamask, recovery is easy because you just switch Metamask to the network where the funds are--the accounts and private keys are the same. The problem occurs when the wallet only accepts the secret phrase and derives private keys and accounts differently based on the network it is designed for.
+
+:::
+
 ___
 
 ## Prerequisites
