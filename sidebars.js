@@ -263,7 +263,7 @@ const sidebars = {
           label: 'Code Examples',
           items: [
             { type: 'doc', label: 'Introduction', id: 'developer-resources/start',},
-            { type: 'doc', label: 'Sending CELO & cUSD', id: 'developer-resources/walkthroughs/hellocelo',},
+            { type: 'doc', label: 'Sending CELO & Stable Assets', id: 'developer-resources/walkthroughs/hellocelo',},
             { type: 'doc', label: 'Deploy to a Local Node', id: 'developer-resources/walkthroughs/hellocontracts',},
             { type: 'doc', label: 'Deploy to a Remote Node', id: 'developer-resources/walkthroughs/hello-contract-remote-node',},
             'developer-resources/walkthroughs/no-code-erc20',
