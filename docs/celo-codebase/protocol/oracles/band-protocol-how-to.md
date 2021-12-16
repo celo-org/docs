@@ -32,6 +32,7 @@ This tutorial will go over:
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/deploy.png" alt="environment" />
 
 An interface to interact with the contract will appear in the bottom left corner of Remix.
+
 ## Get Rates
 
 Clicking the `getPrice` button will return the current price of CELO in USD. This function calls `getReferenceData(string memory _base, string memory _quote)` on the Band reference data contract, passing "CELO" and "USD", indicating CELO as the base and USD as the quote. The rate returned is base/quote multiplied by 1e18.
@@ -53,3 +54,7 @@ The "savePrice" function will save any base/quote rate that is passed to it in t
 ## Available Reference Data
 
 You can view the available reference data on the [Band Data site here](https://data.bandprotocol.com/).
+
+## Bandchain.js
+
+Band also has a javascript library that makes it easy to interact with BandChain directly from Javascript or Typescript applications. The library provides classes and methods for convenient to send transactions, query data, OBI encoding, and wallet management. You can [read more about it here](https://docs.bandchain.org/client-library/bandchain.js/get-started.html#).
