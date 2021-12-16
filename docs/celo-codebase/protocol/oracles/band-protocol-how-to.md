@@ -15,7 +15,7 @@ This tutorial will go over:
 
 ## What is the Band Protocol?
 
-Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts. You can read more about the specific details of the protocol [here](https://docs.bandchain.org/). 
+[Band Protocol](https://bandprotocol.com/) is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts. You can read more about the specific details of the protocol [here](https://docs.bandchain.org/). 
 
 ## Deploy Oracle
 
