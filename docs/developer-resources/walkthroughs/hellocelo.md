@@ -1,8 +1,8 @@
 ---
-title: Sending CELO & cUSD
+title: Sending CELO & Stable Assets
 slug: /developer-guide/start/hellocelo
 ---
-# Sending CELO & cUSD
+# Sending CELO & Stable Assets
 
 How to connect to the Celo test network and tranfer tokens using ContractKit.
 
