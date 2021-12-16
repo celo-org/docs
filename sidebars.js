@@ -199,6 +199,13 @@ const sidebars = {
         { type: 'doc', label: 'Optics Bridge FAQ', id: 'celo-codebase/protocol/bridging/optics-bridge-faq', },
       ]
     },
+    {
+      type: 'category',
+      label: 'Oracles',
+      items: [
+        { type: 'doc', id: 'celo-codebase/protocol/oracles/band-protocol-how-to', },
+      ]
+    },
     { type: "doc", label: "Glossary", id: "getting-started/glossary",},
     { type: 'doc', label: 'FAQ', id: 'faqs', },
     {
