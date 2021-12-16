@@ -93,7 +93,7 @@ const sidebars = {
           items: [
             { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/index', },
             { type: 'doc', label: 'Validator Groups', id: 'celo-codebase/protocol/proof-of-stake/validator-groups', },
-            { type: 'doc', label: 'Locked Gold', id: 'celo-codebase/protocol/proof-of-stake/locked-gold', },
+            { type: 'doc', label: 'Locked CELO', id: 'celo-codebase/protocol/proof-of-stake/locked-gold', },
             { type: 'doc', label: 'Validator Elections', id: 'celo-codebase/protocol/proof-of-stake/validator-elections', },
             {
               type: 'category',
@@ -101,7 +101,7 @@ const sidebars = {
               items: [
                 { type: 'doc', label: 'Overview', id: 'celo-codebase/protocol/proof-of-stake/epoch-rewards', },
                 { type: 'doc', label: 'Validator Rewards', id: 'celo-codebase/protocol/proof-of-stake/validator-rewards',},
-                { type: 'doc', label: 'Locked Gold Rewards', id: 'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',},
+                { type: 'doc', label: 'Locked CELO Rewards', id: 'celo-codebase/protocol/proof-of-stake/locked-gold-rewards',},
                 { type: 'doc', label: 'Community Fund', id: 'celo-codebase/protocol/proof-of-stake/community-fund',},
                 { type: 'doc', label: 'Carbon Offsetting Fund', id: 'celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund',},
               ]
@@ -374,8 +374,8 @@ const sidebars = {
       type: 'category',
       label: 'Recovery',
       items: [
-        { type: 'doc', label: 'ETH Recovery', id: 'celo-holder-guide/eth-recovery', },
-        { type: 'doc', label: 'CELO Recovery', id: 'celo-holder-guide/celo-recovery', },
+        { type: 'doc', label: 'Recover from ETH Address', id: 'celo-holder-guide/eth-recovery', },
+        { type: 'doc', label: 'Recover from Celo Address', id: 'celo-holder-guide/celo-recovery', },
       ]
     },
   ], 

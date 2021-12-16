@@ -113,7 +113,7 @@ To derive a BLS public key and proof-of-possession from the authorized validator
 ```shell
 # Derive the BLS public key and create a proof-of-possession. Note that the signer private key must be available.
 # Also note that BLS proof-of-possessions are not currently supported by celocli
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-possession $AUTHORIZED_VALIDATOR_SIGNER $LOCKED_GOLD_ACCOUNT --bls
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account proof-of-possession $AUTHORIZED_VALIDATOR_SIGNER $LOCKED_GOLD_ACCOUNT --bls
 
 # Register the Validator with the authorized validator signer on behalf of the Locked Gold Account
 celocli validator:register --from $AUTHORIZED_VALIDATOR_SIGNER --blsKey $BLS_SIGNER_PUBLIC_KEY --blsSignature $BLS_SIGNER_PROOF_OF_POSSESSION
