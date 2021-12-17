@@ -97,7 +97,7 @@ This should be the same number you approved earlier.
     <code>Ethereum Domain ID = 6648936</code>
   </TabItem>
   <TabItem value="Avalanche" label="On Avalanche">
-    <code>Ethereum Domain ID = 1635148152</code>
+    <code>Avalanche Domain ID = 1635148152</code>
   </TabItem>
 </Tabs>
 
