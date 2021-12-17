@@ -58,10 +58,16 @@ You can now start sending tokens on the approved Bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    <code>Address = [0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47](https://etherscan.io/address/0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47)</code>
+    <code>Address = [0x4fc16De11deAc71E8b2Db539d82d93BE4b486892](https://etherscan.io/address/0x4fc16De11deAc71E8b2Db539d82d93BE4b486892)</code>
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    <code>Address = [0xf244eA81F715F343040569398A4E7978De656bf6](https://polygonscan.com/address/0xf244eA81F715F343040569398A4E7978De656bf6)</code>
+    <code>Address = [0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d](https://polygonscan.com/address/0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d)</code>
+  </TabItem>
+  <TabItem value="Celo" label="Celo">
+    <code>Address = [0x1548cf5cf7dBd93f4dA11f45fCce315573d21B60](https://explorer.celo.org/address/0x1548cf5cf7dBd93f4dA11f45fCce315573d21B60/transactions)</code>
+  </TabItem>
+  <TabItem value="Avalanche" label="Avalanche">
+    <code>Address = [0xB6bB41B1fb8c381b002C405B8abB5D1De0C0abFE](https://polygonscan.com/address/0xB6bB41B1fb8c381b002C405B8abB5D1De0C0abFE)</code>
   </TabItem>
 </Tabs>
 
@@ -89,6 +95,9 @@ This should be the same number you approved earlier.
   </TabItem>
   <TabItem value="Ethereum" label="On Ethereum">
     <code>Ethereum Domain ID = 6648936</code>
+  </TabItem>
+  <TabItem value="Avalanche" label="On Avalanche">
+    <code>Ethereum Domain ID = 1635148152</code>
   </TabItem>
 </Tabs>
 
