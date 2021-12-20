@@ -204,6 +204,7 @@ const sidebars = {
       label: 'Oracles',
       items: [
         { type: 'doc', label: 'Celo Oracles', id: 'celo-codebase/protocol/oracles/oracles-on-celo', },
+        { type: 'doc', id: 'celo-codebase/protocol/oracles/redstone-protocol-how-to', },
         { type: 'doc', id: 'celo-codebase/protocol/oracles/band-protocol-how-to', },
       ]
     },
