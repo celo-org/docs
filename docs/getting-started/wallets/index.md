@@ -124,11 +124,6 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 - [https://www.pandapay.ca/en/](https://www.pandapay.ca/en/)
 - Countries: Brazil
 
-### Tauros
-
-- [https://tauros.shop/](https://tauros.shop/)
-- Countries: Mexico
-
 ### Kanzu Banking
 
 - [https://kanzucode.com/](https://kanzucode.com/)
