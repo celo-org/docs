@@ -53,7 +53,7 @@ The "savePrice" function will save any base/quote rate that is passed to it in t
 
 ## Mainnet Reference Data Contract
 
-You can access the reference data aggregator contract on mainnet at `[0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3/transactions)`. 
+You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3/transactions)`. 
 
 ## Available Reference Data
 
