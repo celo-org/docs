@@ -70,7 +70,7 @@ We will not go into the details of how to write Solidity in this exercise, but y
 
 The contract will just store a name for now:
 
-```text
+```solidity
 
 pragma solidity >=0.5.0 <0.8.0;
 

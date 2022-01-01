@@ -304,6 +304,7 @@ module.exports = {
     ],
     themeConfig: {
         prism: {
+            additionalLanguages: ['solidity'],
             theme: require('prism-react-renderer/themes/dracula'),
         },
         colorMode: {

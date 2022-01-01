@@ -4,7 +4,7 @@ description: How to use onchain randomness in your smart contracts.
 slug: /developer-guide/start/randomness
 ---
 
-```
+```solidity
 import "celo-monorepo/packages/protocol/identity/interfaces/IRandom.sol";
 import "celo-monorepo/packages/protocol/common/interfaces/IRegistry.sol";
 
@@ -19,7 +19,7 @@ contract Example {
 ```
 Alternatively, through inheritance of `UsingRegistry`.
 
-```
+```solidity
 import "celo-monorepo/packages/protocol/common/UsingRegistryV2.sol";
 
 contract Example is UsingRegistryV2 {
