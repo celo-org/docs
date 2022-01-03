@@ -277,6 +277,7 @@ const sidebars = {
             'developer-resources/walkthroughs/no-code-erc20',
             'developer-resources/walkthroughs/no-code-erc721',
             'developer-resources/walkthroughs/web-dapp',
+            { type: 'doc', label: 'Use onchain randomness', id: 'developer-resources/walkthroughs/randomness',},
             { type: 'doc', label: 'Valora + Wallet Connect', id: 'developer-resources/walkthroughs/valora-wc-v1',},
             { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores',},
             { type: 'link', label: 'Figment | Celo 101', href: 'https://learn.figment.io/protocols/celo/' },
