@@ -26,6 +26,6 @@ Be sure you understand and review the risks pages when bridging assets between c
     * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
   * Manually Using Etherscan
     * [Bridge Native Tokens via Etherscan](bridging-native-assets.md)
-    * [Bridge ERC-21 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
+    * [Bridge ERC-20 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
 * [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
 * [Moss](https://bridge.moss.earth/)
