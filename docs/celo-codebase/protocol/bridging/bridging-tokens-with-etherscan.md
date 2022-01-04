@@ -25,10 +25,10 @@ Start by approving token usage on the bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    Ethereum BridgeRouter Address = <code>0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
+    Ethereum BridgeRouter Address = <code>0x4fc16De11deAc71E8b2Db539d82d93BE4b486892</code>
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    Polygon BridgeRouter Address = <code>0xf244eA81F715F343040569398A4E7978De656bf6</code>
+    Polygon BridgeRouter Address = <code>0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d</code>
   </TabItem>
 </Tabs>
 
