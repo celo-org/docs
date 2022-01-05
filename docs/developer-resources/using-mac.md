@@ -154,27 +154,34 @@ Since the Celo Blockchain has [shared ancestry with Ethereum](/developer-guide/c
 
 Similar to how you might use a framework like React instead of vanilla JavaScript, you can use Truffle to abstract away a lot of the imperative details from Solidity (the language used to write smart contracts).
 
-**Install Truffle Version 5.4.0**
-
-Celo works best with truffle version 5.4.0. Install this specific version using the command below.
+**Install Truffle**
 
 ```shell
-npm install -g truffle@5.4.0
+npm install -g truffle
 ```
 
-If you have worked with Truffle in the past, you may have installed a version that is incompatible with Celo. Use the commands below to uninstall your current version so that you can install truffle version 5.4.0.
+**Confugring Truffle**
 
-Check Truffle Location
+You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer-resources/contractkit/index.md). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
+
+The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like: 
 
 ```shell
-$ which truffle 
-/usr/local/bin/truffle
+Error:  *** Deployment Failed ***
+
+"Migrations" -- invalid argument 0: json: cannot unmarshal invalid hex string into Go value of type hexutil.Bytes.
 ```
 
-Remove Existing Installation
+You can resolve this by specifying the `gas` field in the network details in `truffle.config.js`. 
 
-```shell
-$ rm -f /usr/local/bin/truffle
+For example:
+
+```js
+alfajores: {
+  provider: kit.connection.web3.currentProvider,
+  network_id: 44787,                  
+  gas: 4000000,                        
+}
 ```
 
 ### Local Development Blockchain
