@@ -162,7 +162,7 @@ npm install -g truffle
 
 **Confugring Truffle**
 
-You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](developer-guide/contractkit). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
+You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](./developer-guide/contractkit). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
 
 The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like: 
 
