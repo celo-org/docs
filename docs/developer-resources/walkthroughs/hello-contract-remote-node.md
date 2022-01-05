@@ -58,7 +58,7 @@ We will not go into the details of how to write Solidity in this exercise, but y
 
 The contract will just store a name for now:
 
-```solidity
+```solidity title="contracts/HelloWorld.sol"
 
 pragma solidity >=0.5.0 <0.8.0;
 
@@ -93,7 +93,7 @@ After compiling the contract, you need to create a migration to deploy the contr
 
 :::
 
-```javascript
+```javascript title="migrations/2_deploy_helloworld.js"
 var HelloWorld = artifacts.require('HelloWorld')
 
 module.exports = function (deployer) {
@@ -134,7 +134,7 @@ Run the createAccount.js script with:
 node createAccount.js
 ```
 
-```javascript
+```javascript title="createAccount.js"
 const Web3 = require("web3")
 const web3 = new Web3("http://localhost:8545")
 
@@ -151,7 +151,7 @@ If you go to the [Alfajores Faucet Page](https://celo.org/build/faucet), you can
 
 Before you can use truffle for the migration, you need to set up the proper configuration in `./truffle-config.js`.  At the top of `./truffle-config.js`, set up the `kit` by connecting to the test network and adding the account you just funded.
 
-```javascript
+```javascript title="truffle.config.js"
 const ContractKit = require('@celo/contractkit')
 const Web3 = require('web3')
 require('dotenv').config()
@@ -164,7 +164,7 @@ kit.connection.addAccount(process.env.PRIVATE_KEY)
 
 Then, in the `networks` object, you can add the initialized `kit`provider to an `alfajores` property.
 
-```javascript
+```javascript title="truffle.config.js"
   networks: {
     test: {
       host: "127.0.0.1",
@@ -209,7 +209,7 @@ const HelloWorld = require('./build/contracts/HelloWorld.json')
 
 You are finally ready to deploy the contract. Use the `kit`to create a custom transaction that includes the contract bytecode.
 
-```javascript
+```javascript title="celo_deploy.js"
 let tx = await kit.connection.sendTransaction({
     from: address,
     data: HelloWorld.bytecode // from ./build/contracts/HelloWorld.json
@@ -224,7 +224,7 @@ To deploy a contract on Celo, use the `kit.connection.sendTransaction()` functio
 
 The entire deployment script is about 20 lines of code.
 
-```javascript
+```javascript title="celo_deploy.js"
 const Web3 = require('web3')
 const ContractKit = require('@celo/contractkit')
 const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
@@ -263,7 +263,7 @@ There are 3 functions defined in `helloWorld.js` that accomplish this.
 
 The first function, `initContract()`, reads the deployed contract information from the Truffle artifact at `HelloWorld.json`. With this information, you can create a new web3.js Contract instance:
 
-```javascript
+```javascript title="helloWorld.js"
 async function initContract(){
     // Check the Celo network ID
     const networkId = await web3.eth.net.getId()
@@ -286,7 +286,7 @@ After creating the contract instance, the `initContract()` function calls `getNa
 
 The `getName()` function will call, return and print the `getName()` function of the provided instance of the HelloWorld contract. 
 
-```javascript
+```javascript title="helloWorld.js"
 async function getName(instance){
     let name = await instance.methods.getName().call()
     console.log(name)
@@ -295,7 +295,7 @@ async function getName(instance){
 
 The `setName()` function is a bit more involved. First, it gets the account key from the provided `./secret` file, just like in `celo_deploy.js`. Then it creates a `txObject` that encodes a smart contract transaction call to `setName()` with the provided `newName` to the provided instance of the HelloWorld contract. Then the function sends the encoded transaction object to the network, waits for a reciept and prints it to the console. 
 
-```javascript
+```javascript title="helloWorld.js"
 async function setName(instance, newName){
 
     // Add your account to ContractKit to sign transactions
