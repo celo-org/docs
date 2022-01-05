@@ -303,6 +303,7 @@ module.exports = {
         ]
     ],
     themeConfig: {
+        hideableSidebar: true,
         prism: {
             additionalLanguages: ['solidity'],
             theme: require('prism-react-renderer/themes/dracula'),
