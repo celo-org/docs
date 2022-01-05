@@ -48,7 +48,7 @@ We will be writing our Node.js app in the `helloCelo.js` file.
 
 Import the contract kit into our script with
 
-```javascript
+```javascript title="helloCelo.js"
 // 1. Import web3 and contractkit 
 const Web3 = require("web3")
 const ContractKit = require('@celo/contractkit')
@@ -56,7 +56,7 @@ const ContractKit = require('@celo/contractkit')
 
 Now we can use the ContractKit to connect to the test network.
 
-```javascript
+```javascript title="helloCelo.js"
 // 2. Init a new kit, connected to the alfajores testnet
 const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
 const kit = ContractKit.newKitFromWeb3(web3)
@@ -80,7 +80,7 @@ The Celo blockchain has two native assets, CELO \(CELO\) and the Celo Dollar \(c
 
 Let's read some token balances from the blockchain. Add the following line in the `readAccount()` function.
 
-```javascript
+```javascript title="helloCelo.js"
 // 3. Get the token contract wrappers
 let celotoken = await kit.contracts.getGoldToken()
 let cUSDtoken = await kit.contracts.getStableToken()
@@ -89,7 +89,7 @@ let cEURtoken = await kit.contracts.getStableToken('cEUR')
 
 We can get the CELO balance of an account using the token wrappers like `goldtoken.balanceOf(address)`. Let's check the balance of this address `'0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'`.
 
-```javascript
+```javascript title="helloCelo.js"
 // 4. Address to look up
 let anAddress = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 
@@ -148,7 +148,7 @@ This is not the standard way of managing Celo accounts. In a production environm
 
 We can now use this `account` to get account information \(ie the private key and account address\) and to send transactions from `account.address`. Add the following code to read the account balance. Continue adding to `helloCelo.js`.
 
-```javascript
+```javascript title="helloCelo.js"
 //
 // Create an Account
 //
@@ -204,7 +204,7 @@ You may notice that the account balance is a bit smaller than the amount of toke
 
 Add the following code to the `send()` function in `helloCelo.js` to send a transaction.
 
-```javascript
+```javascript title="helloCelo.js"
 async function send(){
     // 10. Get your account
     let account = await getAccount()
