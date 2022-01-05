@@ -30,18 +30,6 @@ This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-np
 
 :::info
 
-The latest versions of truffle cause errors when migrating contracts to the Celo network. We are fixing this--in the meantime use version 5.4.0.
-
-:::
-
-You can install truffle 5.4.0 with:
-
-```text
-npm install -g truffle@5.4.0
-```
-
-:::info
-
 [Learn more about the Truffle development framework here.](https://www.trufflesuite.com/docs/truffle/overview)
 
 :::
@@ -128,7 +116,7 @@ When you are ready to deploy your contract to Alfajores, you'll need a Celo clie
 Here are the steps to go through to deploy the contract to the Alfajores testnet.
 
 1. Connect to Forno \(a remote Celo node service provider\)
-2. Get personal account information \(generate a private key if required, stored in `./.secret`\)
+2. Get personal account information \(generate a private key if required, stored in `./.env`\)
 3. Get your personal account address and fund it via the [faucet](https://celo.org/build/faucet)
 4. Get the compiled contract bytecode
 5. Create and sign the contract deployment transaction
@@ -137,46 +125,25 @@ Here are the steps to go through to deploy the contract to the Alfajores testnet
 Make sure the dependencies are installed with:
 
 ```text
-npm install
+yarn install
 ```
 
-Run the provided script with:
+Run the createAccount.js script with:
 
 ```text
-node celo_deploy.js
+node createAccount.js
 ```
 
 ```javascript
-// celo_deploy.js
+const Web3 = require("web3")
+const web3 = new Web3("http://localhost:8545")
 
-const Web3 = require('web3')
-const ContractKit = require('@celo/contractkit')
-const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
-const kit = ContractKit.newKitFromWeb3(web3)
-const getAccount = require('./getAccount').getAccount
-
-async function awaitWrapper(){
-    let account = await getAccount()
-    
-    // This account must have a CELO balance to pay tx fees 
-    // get some testnet funds at https://celo.org/build/faucet
-    console.log(account.address)
-    
-    //...
-}
-
-awaitWrapper()
+console.log(web3.eth.accounts.create())
 ```
 
-The provided code will import the contract kit and connect to the remote node. It will look for a private key in the `./.secret` file, and if it doesn't find one, it will generate a new one. Once it gets the key, it will print the associated account. This is the account that we will fund with the faucet.
+The provided code will print a private key / account pair in the terminal. Copy and paste the printed `priavteKey` into a `PRIVATE_KEY` variable in a file called `.env`, similar to what is shown in the `.envexample` file. The `address` that is printed with the private key is the account that we will fund with the faucet.
 
 If you go to the [Alfajores Faucet Page](https://celo.org/build/faucet), you can faucet your account some CELO and see your balance increase.
-
-Then add your account to the `kit` with the private key:
-
-```javascript
-    kit.connection.addAccount(account.privateKey) // this account must have a CELO balance to pay transaction fees
-```
 
 ### Deploy the contract
 
@@ -185,17 +152,14 @@ Then add your account to the `kit` with the private key:
 Before you can use truffle for the migration, you need to set up the proper configuration in `./truffle-config.js`.  At the top of `./truffle-config.js`, set up the `kit` by connecting to the test network and adding the account you just funded.
 
 ```javascript
-const Web3 = require('web3')
 const ContractKit = require('@celo/contractkit')
+const Web3 = require('web3')
+require('dotenv').config()
+
 const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
 const kit = ContractKit.newKitFromWeb3(web3)
-const getAccount = require('./getAccount').getAccount
 
-async function awaitWrapper(){
-    let account = await getAccount()
-    kit.connection.addAccount(account.privateKey)
-}
-awaitWrapper()
+kit.connection.addAccount(process.env.PRIVATE_KEY)
 ```
 
 Then, in the `networks` object, you can add the initialized `kit`provider to an `alfajores` property.
@@ -209,10 +173,17 @@ Then, in the `networks` object, you can add the initialized `kit`provider to an 
     },
     alfajores: {
       provider: kit.connection.web3.currentProvider, // CeloProvider
-      network_id: 44787                              // Alfajores network id
+      network_id: 44787,                             // Alfajores network id
+      gas: 4000000,            // You need to include the gas limit           
     }
   }
 ```
+
+:::info
+
+Truffle doesn't estimate the gas properly, so you need to specify a gas limit in `truffle.config.js`.
+
+:::
 
 Now, deploy the contracts to Alfajores with this command:
 
@@ -239,10 +210,10 @@ const HelloWorld = require('./build/contracts/HelloWorld.json')
 You are finally ready to deploy the contract. Use the `kit`to create a custom transaction that includes the contract bytecode.
 
 ```javascript
-    let tx = await kit.connection.sendTransaction({
-        from: account.address,
-        data: HelloWorld.bytecode // from ./build/contracts/HelloWorld.json
-    })
+let tx = await kit.connection.sendTransaction({
+    from: address,
+    data: HelloWorld.bytecode // from ./build/contracts/HelloWorld.json
+})
 ```
 
 :::info
@@ -251,23 +222,27 @@ To deploy a contract on Celo, use the `kit.connection.sendTransaction()` functio
 
 :::
 
-The entire deployment script is less than 20 lines of code.
+The entire deployment script is about 20 lines of code.
 
 ```javascript
 const Web3 = require('web3')
 const ContractKit = require('@celo/contractkit')
 const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
+const privateKeyToAddress = require('@celo/utils/lib/address').privateKeyToAddress
 const kit = ContractKit.newKitFromWeb3(web3)
-const getAccount = require('./getAccount').getAccount
+require('dotenv').config()
 const HelloWorld = require('./build/contracts/HelloWorld.json')
 
-async function awaitWrapper(){
-    let account = await getAccount()
-    console.log(account.address)
-    kit.connection.addAccount(account.privateKey) // this account must have a CELO balance to pay transaction fees
+async function awaitWrapper(){    
+    kit.connection.addAccount(process.env.PRIVATE_KEY) // this account must have a CELO balance to pay transaction fees
+
+    // This account must have a CELO balance to pay tx fees 
+    // get some testnet funds at https://celo.org/build/faucet
+    const address = privateKeyToAddress(process.env.PRIVATE_KEY)
+    console.log(address)
 
     let tx = await kit.connection.sendTransaction({
-        from: account.address,
+        from: address,
         data: HelloWorld.bytecode
     })
 
@@ -322,13 +297,17 @@ The `setName()` function is a bit more involved. First, it gets the account key 
 
 ```javascript
 async function setName(instance, newName){
-    let account = await getAccount()
 
     // Add your account to ContractKit to sign transactions
     // This account must have a CELO balance to pay tx fees, get some https://celo.org/build/faucet
-    kit.connection.addAccount(account.privateKey)
-    const txObject = await instance.methods.setName(newName)
-    let tx = await kit.sendTransactionObject(txObject, { from: account.address })
+    kit.connection.addAccount(process.env.PRIVATE_KEY)
+    const address = privateKeyToAddress(process.env.PRIVATE_KEY)
+
+    // Encode the transaction to HelloWorld.sol according to the ABI
+    let txObject = await instance.methods.setName(newName)
+    
+    // Send the transaction
+    let tx = await kit.sendTransactionObject(txObject, { from: address })
 
     let receipt = await tx.waitReceipt()
     console.log(receipt)
