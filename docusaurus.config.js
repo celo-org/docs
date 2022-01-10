@@ -497,6 +497,7 @@ module.exports = {
                     blogSidebarTitle: 'All posts',
                     blogSidebarCount: 'ALL',
                     showReadingTime: true,
+                    blogListComponent: require.resolve('./src/components/CustomBlogListPage.module.tsx'),
                     readingTime: ({content, frontMatter, defaultReadingTime}) =>
                         // allows per post reading time override in frontmatter
                         frontMatter.hide_reading_time ? undefined : defaultReadingTime({content, options: {wordsPerMinute: 300}}),
