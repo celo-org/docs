@@ -284,7 +284,7 @@ It's also possible that users of your DApp already have locked CELO, so you migh
 
 To actually vote on a proposal we need to again interact with the [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol) smart contract. Our logic for handling a vote looks as follows:
 
-```typescript
+```typescript title="pages/index.js"
 const vote = useCallback(
   async (id: string, value: VoteValue) => {
     const kit = await getConnectedKit()
@@ -300,7 +300,7 @@ How you handle calling that function is up to you. With [Celo Tools](https://git
 
 Here's a simple example showing buttons for `Yes` or `No` votes when no vote has been cast.
 
-```javascript
+```javascript title="pages/index.js"
 import { VoteValue } from '@celo/contractkit/lib/wrappers/Governance'
 
 return (
