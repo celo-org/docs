@@ -320,36 +320,36 @@ module.exports = {
             items: [
                 {
                     "to": "welcome",
-                    "label": "Welcome",
+                    "label": "Basics",
+                    "position": "left"
+                },
+                {
+                    "to": "celo-holder-guide/overview",
+                    "label": "Use Celo",
                     "position": "left"
                 },
                 {
                     "to": "developer-guide/overview",
-                    "label": "Developers",
+                    "label": "Develop",
                     "position": "left"
                 },
                 {
                     "to": "validator-guide/overview",
-                    "label": "Validators",
-                    "position": "left"
-                },
-                {
-                    "to": "celo-holder-guide/owners",
-                    "label": "Owners",
-                    "position": "left"
-                },
-                {
-                    "to": "developer-guide/integrations",
-                    "label": "Integrations",
+                    "label": "Validate",
                     "position": "left"
                 },
                 {
                     "to": "/community/contributing",
-                    "label": "Community",
+                    "label": "Contribute",
                     "position": "left"
                 },
                 {
-                    "to": "/blog",
+                    "to": "/blog/tags",
+                    "label": "Tutorials",
+                    "position": "left"
+                },
+                {
+                    "to": "https://medium.com/celoorg",
                     "label": "Blog",
                     "position": "right"
                 },                
