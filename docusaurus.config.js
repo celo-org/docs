@@ -320,36 +320,36 @@ module.exports = {
             items: [
                 {
                     "to": "welcome",
-                    "label": "Welcome",
+                    "label": "Basics",
+                    "position": "left"
+                },
+                {
+                    "to": "celo-holder-guide/overview",
+                    "label": "Use Celo",
                     "position": "left"
                 },
                 {
                     "to": "developer-guide/overview",
-                    "label": "Developers",
+                    "label": "Develop",
                     "position": "left"
                 },
                 {
                     "to": "validator-guide/overview",
-                    "label": "Validators",
-                    "position": "left"
-                },
-                {
-                    "to": "celo-holder-guide/owners",
-                    "label": "Owners",
-                    "position": "left"
-                },
-                {
-                    "to": "developer-guide/integrations",
-                    "label": "Integrations",
+                    "label": "Validate",
                     "position": "left"
                 },
                 {
                     "to": "/community/contributing",
-                    "label": "Community",
+                    "label": "Contribute",
                     "position": "left"
                 },
                 {
                     "to": "/blog",
+                    "label": "Tutorials",
+                    "position": "left"
+                },
+                {
+                    "to": "https://medium.com/celoorg",
                     "label": "Blog",
                     "position": "right"
                 },                
@@ -497,6 +497,7 @@ module.exports = {
                     blogSidebarTitle: 'All posts',
                     blogSidebarCount: 'ALL',
                     showReadingTime: true,
+                    blogListComponent: require.resolve('./src/components/CustomBlogListPage.module.tsx'),
                     readingTime: ({content, frontMatter, defaultReadingTime}) =>
                         // allows per post reading time override in frontmatter
                         frontMatter.hide_reading_time ? undefined : defaultReadingTime({content, options: {wordsPerMinute: 300}}),

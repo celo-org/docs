@@ -5,16 +5,13 @@ slug: /introduction-to-celo
 description: Celo believes in a future where everyone can prosper.
 ---
 
-# Introduction to Celo
+# Key Concepts
 
 Crypto made for mobile.
 
-___
+---
 
 import YouTube from '@components/YouTube';
-
-Celo is a mobile-first, carbon-neutral blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone–bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
-
 
 ## What is the Celo Platform?
 
@@ -31,7 +28,6 @@ CELO is a platform-native reserve and governance asset, serving as the primary a
 <YouTube videoId="PLodjpBer4M"/>
 
 [Learn more about Celo](/why-celo)
-
 
 ## What can Celo Dollars Do?
 

@@ -1,5 +1,5 @@
 ---
-title: Celo Owners
+title: Get CELO
 description: Start sending, spending, and earning crypto from your mobile phone
 ---
 
@@ -7,19 +7,13 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Celo Owners
+# Get CELO
 
 Start sending, spending, and earning crypto from your mobile phone.
 
-___
+---
 
 [Celo Owners](https://celo.org/buy) can start transacting with 6 billion other smartphone users around the world from your phone and on the go. Transact in seconds — at a fraction of the cost of other crypto platforms. Anyone who holds any amount of CELO is empowered to vote on governance proposals that direct how the core technology operates today and in the future.
-
-:::tip
-
-Not ready to become a Celo Holder? [Learn more about Celo](../../docs/welcome.md).
-
-:::
 
 ## Discover CELO
 
@@ -35,7 +29,6 @@ CELO is listed on 20+ exchanges worldwide.
 <PageRef url="/celo-owner-guide/cusd" pageName="Asset Management" />
 <PageRef url="/celo-owner-guide/release-gold" pageName="Understand ReleaseGold" />
 <PageRef url="/celo-owner-guide/celo-exchange-bot" pageName="Exchange Celo Assets" />
-
 
 ## Voting as a Celo Owner
 
@@ -53,4 +46,3 @@ CELO is listed on 20+ exchanges worldwide.
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-
