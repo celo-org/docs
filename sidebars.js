@@ -325,24 +325,6 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Code Examples',
-              items: [
-                { type: 'doc', label: 'Introduction', id: 'developer-resources/start',},
-                { type: 'doc', label: 'Sending CELO & Stable Assets', id: 'developer-resources/walkthroughs/hellocelo',},
-                { type: 'doc', label: 'Deploy to a Local Node', id: 'developer-resources/walkthroughs/hellocontracts',},
-                { type: 'doc', label: 'Deploy to a Remote Node', id: 'developer-resources/walkthroughs/hello-contract-remote-node',},
-                'developer-resources/walkthroughs/no-code-erc20',
-                'developer-resources/walkthroughs/no-code-erc721',
-                'developer-resources/walkthroughs/web-dapp',
-                { type: 'doc', label: 'Use onchain randomness', id: 'developer-resources/walkthroughs/randomness',},
-                { type: 'doc', label: 'Valora + Wallet Connect', id: 'developer-resources/walkthroughs/valora-wc-v1',},
-                { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores',},
-                { type: 'link', label: 'Figment | Celo 101', href: 'https://learn.figment.io/protocols/celo/' },
-                { type: 'link', label: 'Dacade | Celo 101', href: 'https://dacade.org/communities/celo-development-101' }, 
-              ]
-            },
-            {
-              type: 'category',
               label: 'DAppKit',
               items: [
                 { type: 'doc', label: 'Overview', id: 'developer-resources/dappkit/index',},
@@ -354,6 +336,24 @@ const sidebars = {
             { type: 'doc', label: 'Wallet', id: 'developer-resources/testnet-wallet', },
             { type: 'doc', label: 'Development Chain', id: 'developer-resources/walkthroughs/development-chain', },
           ],
+        },
+        {
+          type: 'category',
+          label: 'Code Examples',
+          items: [
+            { type: 'doc', label: 'Introduction', id: 'developer-resources/start',},
+            { type: 'doc', label: 'Sending CELO & Stable Assets', id: 'developer-resources/walkthroughs/hellocelo',},
+            { type: 'doc', label: 'Deploy to a Local Node', id: 'developer-resources/walkthroughs/hellocontracts',},
+            { type: 'doc', label: 'Deploy to a Remote Node', id: 'developer-resources/walkthroughs/hello-contract-remote-node',},
+            'developer-resources/walkthroughs/no-code-erc20',
+            'developer-resources/walkthroughs/no-code-erc721',
+            'developer-resources/walkthroughs/web-dapp',
+            { type: 'doc', label: 'Use onchain randomness', id: 'developer-resources/walkthroughs/randomness',},
+            { type: 'doc', label: 'Valora + Wallet Connect', id: 'developer-resources/walkthroughs/valora-wc-v1',},
+            { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores',},
+            { type: 'link', label: 'Figment | Celo 101', href: 'https://learn.figment.io/protocols/celo/' },
+            { type: 'link', label: 'Dacade | Celo 101', href: 'https://dacade.org/communities/celo-development-101' }, 
+          ]
         },
         {
           type: 'category',
