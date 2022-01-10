@@ -61,7 +61,7 @@ const FeatureList = [
     ),
     link: (
       // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
-      <a href="/blog/tags/">Learn more with Celo</a>
+      <a href="/blog/">Learn more with Celo</a>
     ),
   },
 ];

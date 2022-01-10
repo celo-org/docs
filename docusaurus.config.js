@@ -344,7 +344,7 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "/blog/tags",
+                    "to": "/blog",
                     "label": "Tutorials",
                     "position": "left"
                 },
