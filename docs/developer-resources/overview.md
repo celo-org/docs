@@ -26,6 +26,12 @@ Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome
 <PageRef url="/developer-resources/using-mac" pageName="Using Mac" />
 <PageRef url="/developer-guide/start/develop-on-windows" pageName="Using Windows" />
 
+:::info
+
+Want to create a dApp fast? [Deploy on Celo](/developer-resources/deploy-dapp)
+
+:::
+
 ## Create a testnet wallet
 
 <PageRef url="/developer-resources/testnet-wallet" pageName="Set up a Testnet Development Wallet" />
