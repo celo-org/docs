@@ -30,7 +30,7 @@ const FeatureList = [
       <>Build, deploy, and manage applications on the Celo network.</>
     ),
     link: (
-      <a href="developer-resources/overview">Start building</a>
+      <a href="/developer-resources/overview">Start building</a>
     ),
   },
   {
