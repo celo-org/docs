@@ -16,6 +16,8 @@ import PageRef from '@components/PageRef';
 
 Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.
 
+<!--truncate-->
+
 <PageRef url="/celo-codebase/protocol/identity/randomness" pageName="Randomness" />
 
 This randomness can be used by any smart contracts deployed to a Celo network.
