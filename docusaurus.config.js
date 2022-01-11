@@ -329,7 +329,7 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "developer-guide/overview",
+                    "to": "developer-resources/overview",
                     "label": "Develop",
                     "position": "left"
                 },

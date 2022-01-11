@@ -16,7 +16,11 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
 
-[View Website](https://www.celo.org)
+:::tip
+
+First time visiting Celo? [View the Website](https://www.celo.org)
+
+:::
 
 ## Celo's Mission
 
@@ -33,5 +37,3 @@ An Ethereum-compatible technology capable of reaching global users at scale, Cel
 ## Get started with Celo
 
 To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
-
-<PageRef url="/introduction-to-celo" pageName="Introduction to Celo" />
