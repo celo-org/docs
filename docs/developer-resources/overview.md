@@ -1,6 +1,7 @@
 ---
 title: Celo Developers Overview
 description: There are 6 Billion smartphones on Earth. Build for all of them.
+slug: /developer-guide/overview
 ---
 
 import PageRef from '@components/PageRef'
