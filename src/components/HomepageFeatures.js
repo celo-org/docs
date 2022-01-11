@@ -24,13 +24,13 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Become a developer',
+    title: 'Build on Celo',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Build, deploy, and manage applications on the Celo network.</>
     ),
     link: (
-      <a href="developer-resources/overview">Build on Celo</a>
+      <a href="developer-resources/overview">Start building</a>
     ),
   },
   {
