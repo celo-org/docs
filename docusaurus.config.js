@@ -318,11 +318,11 @@ module.exports = {
                 src: "img/color-logo.png",
             },
             items: [
-                {
-                    "to": "welcome",
-                    "label": "Basics",
-                    "position": "left"
-                },
+                // {
+                //     "to": "welcome",
+                //     "label": "Basics",
+                //     "position": "left"
+                // },
                 {
                     "to": "developer-guide/overview",
                     "label": "Build",
