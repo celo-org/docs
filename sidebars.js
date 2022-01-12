@@ -1,73 +1,22 @@
 const sidebars = {
   docs: [
     { type: 'doc', label: 'Welcome to Celo', id: 'welcome', },
-    { type: 'doc', label: 'Key Concepts', id: 'learn/key-concepts', },
-    { type: 'doc', label: 'Architecture', id: 'learn/celo-stack', },
-    { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
-    { type: 'doc', label: 'Community', id: 'community/join-the-community', },
-    { type: "doc", label: "Glossary", id: "getting-started/glossary",},
-    { type: "doc", label: "Gallery", id: "developer-resources/celo-dapp-gallery",},
-    { type: 'doc', label: 'FAQ', id: 'faqs', },
-    // {
-    //   type: "category",
-    //   label: "Getting Started",
-    //   items: [
-    //     {
-    //       type: 'category',
-    //       label: 'Celo Basics',
-    //       items: [
-    //         { type: 'doc', label: 'Why Celo', id: 'learn/why-celo', },
-    //         { type: 'doc', label: 'Highlights', id: 'learn/celo-highlights', },
-    //         { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
-    //         { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
-    //         { type: 'doc', label: 'Ecosystem', id: 'learn/celo-ecosystem', },
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Celo Platform',
-    //       items: [
-    //         { type: 'doc', label: 'Introduction', id: 'overview', },
-    //         { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
-    //         { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
-    //       ]
-    //     }, 
-    //   ],
-    // },
-  ],
-
-  // ######################################
-  // validators 
-  // ######################################
-  validators: [
-        { type: "doc", label: "Overview", id: "validator-guide/overview",}, 
-        { type: "doc", label: "Attestation Service", id: 'validator-guide/attestation-service',},
-        {
-          type: 'category',
-          label: 'Key Management',
-          items: [
-            { type: "doc", label: "Summary", id: 'validator-guide/key-management/summary',},
-            { type: "doc", label: "Key Management", id: 'validator-guide/key-management/detailed',},
-            { type: "doc", label: "Key Rotation", id: 'validator-guide/key-management/key-rotation',},
-          ]
-        },
-        { type: 'doc', label: 'Run Secure Nodes and Services', id: 'validator-guide/securing-nodes-and-services', },
-        { type: 'doc', label: 'Monitoring', id: 'validator-guide/monitoring', },
-        { type: 'doc', label: 'DevOps Best Practices', id: 'validator-guide/devops-best-practices', },
-        { type: 'doc', label: 'Node Upgrades', id: 'validator-guide/node-upgrades', },
-        { type: 'doc', label: 'Running Proxies', id: 'validator-guide/proxy', },
-        { type: 'doc', label: 'Validator Explorer', id: 'validator-guide/validator-explorer', },
-        { type: 'doc', label: 'Voting Policy', id: 'validator-guide/celo-foundation-voting-policy',},
-        { type: 'doc', label: 'Celo Signal', id: 'validator-guide/celo-signal',},
-        { type: "doc", label: "Validator FAQ", id: "getting-started/validator-troubleshooting-faq",},
-  ],
-
-  // ######################################
-  // users 
-  // ######################################
-
-  users: [
-    { type: 'doc', label: 'Overview', id: 'celo-holder-guide/overview' },
+    {
+      type: "category",
+      label: "Basics",
+      items: [
+        { type: 'doc', label: 'Why Celo', id: 'learn/why-celo', },
+        { type: 'doc', label: 'Highlights', id: 'learn/celo-highlights', },
+        { type: 'doc', label: 'Economic Model', id: 'learn/celo-economic-model', },
+        { type: 'doc', label: 'Milestones', id: 'learn/celo-milestones', },
+        { type: 'doc', label: 'Ecosystem', id: 'learn/celo-ecosystem', },
+        { type: 'doc', label: 'Key Concepts', id: 'learn/key-concepts', },
+        { type: 'doc', label: 'Architecture', id: 'learn/celo-stack', },
+        { type: 'doc', label: 'Whitepapers', id: 'learn/celo-whitepapers', },
+        { type: 'doc', label: 'Community', id: 'community/join-the-community', },
+        { type: "doc", label: "Glossary", id: "getting-started/glossary",},
+      ]
+    },
     {
       type: "category",
       label: "Wallets",
@@ -276,20 +225,59 @@ const sidebars = {
         { type: 'doc', label: 'Hosted Nodes', id: "getting-started/hosted-nodes", },
       ],
     },
-    {
-      type: "category",
-      label: "Command Line",
-      items: [
+        { type: "doc", label: "Gallery", id: "developer-resources/celo-dapp-gallery",},
+        { type: 'doc', label: 'FAQ', id: 'faqs', },
+        // {
+        //   type: 'category',
+        //   label: 'Celo Platform',
+        //   items: [
+        //     { type: 'doc', label: 'Introduction', id: 'overview', },
+        //     { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
+        //     { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
+        //   ]
+        // }, 
         {
-          type: "autogenerated",
-          dirName: "command-line-interface",
+          type: "category",
+          label: "Command Line",
+          items: [
+            {
+              type: "autogenerated",
+              dirName: "command-line-interface",
+            },
+          ],
         },
-      ],
-    },
+    ],
+
+  // ######################################
+  // validators 
+  // ######################################
+  validators: [
+        { type: "doc", label: "Overview", id: "validator-guide/overview",}, 
+        { type: "doc", label: "Attestation Service", id: 'validator-guide/attestation-service',},
+        {
+          type: 'category',
+          label: 'Key Management',
+          items: [
+            { type: "doc", label: "Summary", id: 'validator-guide/key-management/summary',},
+            { type: "doc", label: "Key Management", id: 'validator-guide/key-management/detailed',},
+            { type: "doc", label: "Key Rotation", id: 'validator-guide/key-management/key-rotation',},
+          ]
+        },
+        { type: 'doc', label: 'Run Secure Nodes and Services', id: 'validator-guide/securing-nodes-and-services', },
+        { type: 'doc', label: 'Monitoring', id: 'validator-guide/monitoring', },
+        { type: 'doc', label: 'DevOps Best Practices', id: 'validator-guide/devops-best-practices', },
+        { type: 'doc', label: 'Node Upgrades', id: 'validator-guide/node-upgrades', },
+        { type: 'doc', label: 'Running Proxies', id: 'validator-guide/proxy', },
+        { type: 'doc', label: 'Validator Explorer', id: 'validator-guide/validator-explorer', },
+        { type: 'doc', label: 'Voting Policy', id: 'validator-guide/celo-foundation-voting-policy',},
+        { type: 'doc', label: 'Celo Signal', id: 'validator-guide/celo-signal',},
+        { type: "doc", label: "Validator FAQ", id: "getting-started/validator-troubleshooting-faq",},
   ],
+
   // ######################################
   // Developers 
   // ######################################
+  
   developers: [
         { type: 'doc', label: 'Overview', id: 'developer-resources/overview', },
         {

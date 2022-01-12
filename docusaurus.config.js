@@ -324,11 +324,6 @@ module.exports = {
                     "position": "left"
                 },
                 {
-                    "to": "celo-holder-guide/overview",
-                    "label": "Learn",
-                    "position": "left"
-                },
-                {
                     "to": "developer-guide/overview",
                     "label": "Build",
                     "position": "left"
@@ -345,6 +340,11 @@ module.exports = {
                 },
                 {
                     "to": "/blog",
+                    "label": "Learn",
+                    "position": "left"
+                },
+                {
+                    "to": "https://medium.com/celoorg",
                     "label": "Blog",
                     "position": "right"
                 },                
