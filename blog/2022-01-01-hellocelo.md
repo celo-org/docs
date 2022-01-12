@@ -152,7 +152,7 @@ There is a short script in `getAccount.js` to either get a Celo account from a m
 
 :::danger
 
-This is not the standard way of managing Celo accounts. In a production environment, the [Celo Wallet](../../celo-codebase/wallet/) will manage accounts for you. Accessing accounts from the Celo Wallet will be discussed in future guides.
+This is not the standard way of managing Celo accounts. In a production environment, the [Celo Wallet](/celo-codebase/wallet) will manage accounts for you. Accessing accounts from the Celo Wallet will be discussed in future guides.
 
 :::
 
