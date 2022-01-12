@@ -325,12 +325,12 @@ module.exports = {
                 },
                 {
                     "to": "celo-holder-guide/overview",
-                    "label": "Use Celo",
+                    "label": "Learn",
                     "position": "left"
                 },
                 {
-                    "to": "developer-resources/overview",
-                    "label": "Develop",
+                    "to": "developer-guide/overview",
+                    "label": "Build",
                     "position": "left"
                 },
                 {
@@ -345,11 +345,6 @@ module.exports = {
                 },
                 {
                     "to": "/blog",
-                    "label": "Tutorials",
-                    "position": "left"
-                },
-                {
-                    "to": "https://medium.com/celoorg",
                     "label": "Blog",
                     "position": "right"
                 },                
