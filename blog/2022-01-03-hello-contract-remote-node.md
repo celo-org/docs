@@ -7,7 +7,7 @@ authors:
     title: Developer Relations, cLabs
     url: https://github.com/critesjosh
     image_url: https://github.com/critesjosh.png
-tags: [smart contract, remote]
+tags: [smart contract, remote, deploy]
 image: https://dl.airtable.com/.attachmentThumbnails/a7e530eb72ac8f30f37c0a3447ef0e7d/72e944da
 hide_table_of_contents: false
 ---
