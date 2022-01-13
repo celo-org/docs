@@ -1,6 +1,6 @@
 ---
-title: Setup Testnet Wallet on MetaMask
-description: How to create and fund a MetaMas testnet wallet to use for developing Celo dApps.
+title: Setup Testnet Wallets
+description: How to create and fund testnet wallets to use for developing Celo dApps.
 ---
 
 # MetaMask Testnet Wallet
