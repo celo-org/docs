@@ -1,5 +1,5 @@
 ---
-title: use-contract-kit
+title: use-contractkit
 description: The easiest way to access [ContractKit](https://www.npmjs.com/package/@celo/contractkit) in your React applications.
 ---
 
