@@ -9,7 +9,7 @@ Find Celo on social media, contribute to the codebase, or chat with the communit
 
 ---
 
-## Follow
+## Social Media
 
 Follow on Social Media to learn more about Celo.
 
@@ -25,7 +25,7 @@ Follow on Social Media to learn more about Celo.
 - [Reddit](https://www.reddit.com/r/celo/)
 - [Telegram](https://t.me/celoplatform)
 
-## Connect
+## Discussions
 
 Ask questions, find answers, and get in touch.
 
@@ -35,7 +35,7 @@ Ask questions, find answers, and get in touch.
 - [Celo Website](https://celo.org/build)
 - [Host a Meetup](https://airtable.com/shrTCM7LddTxOm3r6)
 
-## Contribute
+## Contributions
 
 Browse the code, raise an issue, or contribute a pull request.
 

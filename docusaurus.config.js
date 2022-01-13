@@ -318,19 +318,14 @@ module.exports = {
                 src: "img/color-logo.png",
             },
             items: [
-                {
-                    "to": "welcome",
-                    "label": "Basics",
-                    "position": "left"
-                },
-                {
-                    "to": "celo-holder-guide/overview",
-                    "label": "Use Celo",
-                    "position": "left"
-                },
+                // {
+                //     "to": "welcome",
+                //     "label": "Basics",
+                //     "position": "left"
+                // },
                 {
                     "to": "developer-guide/overview",
-                    "label": "Develop",
+                    "label": "Build",
                     "position": "left"
                 },
                 {
@@ -345,7 +340,7 @@ module.exports = {
                 },
                 {
                     "to": "/blog",
-                    "label": "Tutorials",
+                    "label": "Learn",
                     "position": "left"
                 },
                 {
