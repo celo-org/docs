@@ -46,7 +46,7 @@ yarn add @celo-tools/use-contractkit
 
 use-contractkit uses [unstated-next](https://github.com/jamiebuilds/unstated-next) under the hood to inject state throughout your application. unstated-next is built on top of the React Context API so you need to make sure your application is wrapped with the provider before usage.
 
-```javascript
+```jsx
 import { ContractKitProvider } from "@celo-tools/use-contractkit";
 import "@celo-tools/use-contractkit/lib/styles.css";
 
@@ -73,7 +73,7 @@ function App() {
 
 use-contractkit provides a `connect` function that will open a modal with a list of wallets your user can connect to.
 
-```javascript
+```jsx
 import { useContractKit } from "@celo-tools/use-contractkit";
 
 function App() {
@@ -97,7 +97,7 @@ After connecting to an account the `address` property will be set.
 
 Now that we've connected to an account and have the users address, we can use the `kit` to query on-chain data:
 
-```javascript
+```jsx
 import { useContractKit } from '@celo-tools/use-contractkit';
 
 function App() {
@@ -136,7 +136,7 @@ When a user refreshes or navigates back to your page, they may not necessarily h
 
 For that functionality we have the `performActions` and `getConnectedKit` methods. Usage looks a little like this for `getConnectedKit`:
 
-```javascript
+```jsx
 import { useContractKit } from "@celo-tools/use-contractkit";
 
 function App() {
@@ -154,7 +154,7 @@ function App() {
 
 and this for `performActions`:
 
-```javascript
+```jsx
 import { useContractKit } from "@celo-tools/use-contractkit";
 
 function App() {
@@ -181,7 +181,7 @@ If you'd prefer your DApp to only access a specific network (maybe you're deploy
 
 You can also pass in a `network` prop to the `ContractKitProvider` as the default starting network
 
-```
+```jsx
 import { ContractKitProvider, Alfajores } from '@celo-tools/use-contractkit';
 
 function WrappedApp({ Component, pageProps }) {
@@ -209,7 +209,7 @@ function App () {
 
 Be sure to check the use-contractkit example application for a showcase of how network management works in more depth. Usually you'll want to show a dropdown to your users allowing them to select the network to connect to.
 
-```javascript
+```jsx
 import { useContractKit } from "@celo-tools/use-contractkit";
 
 function App() {
