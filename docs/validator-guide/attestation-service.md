@@ -2,11 +2,12 @@
 title: Celo Attestation Service
 descriptin: How to configure, run, and manage an attestation service as a Celo Validator.
 ---
+
 # Attestation Service
 
 How to configure, run, and manage an attestation service as a Celo Validator.
 
-___
+---
 
 :::tip
 
