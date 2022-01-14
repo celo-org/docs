@@ -28,8 +28,6 @@ Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/d
 
 ### Git branches
 
-Each minor version of Attestation Service has its own “release branch”, e.g. `release/attestation-service/1.0`.
-
 Development is done on the `master` branch, which corresponds to the next major or minor version. Changes to be included in a patch release of an existing minor version are cherry-picked to that existing release branch.
 
 ### Git tags
@@ -102,7 +100,7 @@ yarn test:e2e:ios -t e2e/src/RedeemInviteAndVerify.spec.js -i
 
 Patch releases should be constructed by cherry-picking all included commits from `master` to the `release/attestation-service/x.y` branch, if necessary created from the `attestation-service-vX.Y.Z` tag of the most recent major or minor release. The first commit of this process should change the version number encoded in the source from `x.y.z` to `x.y.z+1-dev` and the final commit should change the version number to `x.y.z+1`.
 
-Major and minor releases should be constructed by pushing a commit to the `master` branch to change the encoded version number from `x.y.z-dev` to `x.y.z`. A `attestation-service-vX.Y.Z` tag should be created at this commit which uniquely references one commit; release notes should be published alongside this. The next commit must change the version number from `x.y.z` to `x.y+1.0-dev`, or `x+1.0.0-dev` if the next planned release is a major release.
+Major and minor releases should be constructed by pushing a commit to the `master` branch to change the encoded version number from `x.y.z-dev` to `x.y.z`. A `attestation-service-vX.Y.Z` tag should be created at this commit which uniquely references one commit; release notes should be published alongside this. The next commit should change the version number from `x.y.z` to `x.y+1.0-dev`, or `x+1.0.0-dev` if the next planned release is a major release.
 
 ### Distribution
 
