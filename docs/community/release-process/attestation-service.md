@@ -84,15 +84,7 @@ docker save $(docker image inspect us.gcr.io/celo-testnet/celo-monorepo:attestat
 
 ## Testing
 
-As well as monorepo CI tests, all releases are expected to go through manual testing as needed to verify security properties, accuracy of documentation, and compatibility with deployed and anticipated versions of `celocli` and wallets including Valora.
-
-This testing should include running the Valora e2e tests. Currently, these expect access to cLabs provisioned credentials for SMS providers. Follow the [Valora mobile build instructions](https://github.com/celo-org/wallet/blob/master/packages/mobile/README.md#setup). Then run:
-
-```bash
-git checkout verification-e2e-tests
-cd packages/mobile
-yarn test:e2e:ios -t e2e/src/RedeemInviteAndVerify.spec.js -i
-```
+As well as monorepo CI tests, all releases are expected to go through manual testing as needed to verify security properties, accuracy of documentation, and compatibility with deployed and anticipated versions of `celocli` and wallets including Valora. Releases currently involve coordinating with Valora to run the verification e2e tests in CI.
 
 ## Promotion process
 
@@ -125,9 +117,9 @@ Distribution of an image follows this schedule:
     <td>
       <ol>
         <li>Confirm Valora production and testing builds against Alfajores experience no issues and that e2e verification tests complete successfully</li>
-        <li>Publish the Git release notes and tag, and signature of Docker image</li>
+        <li>Publish the release notes and tag the relevant commit on GitHub</li>
         <li>Tag released Docker image with <code>attestation-service-alfajores</code>, <code>attestation-service-baklava</code>, <code>attestation-service-mainnet</code>, and <code>attestation-service-vX.Y.Z</code> tags (removing tags from other releases)</li>
-        <li>Communicate T+1w Mainnet (Baklava optional) upgrade date.</li>
+        <li>Inform the community of the new release via Discord and the Celo Forum</li>
       </ol>
     </td>
   </tr>
