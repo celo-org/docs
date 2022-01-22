@@ -26,7 +26,9 @@ You can start a local EVM development blockchain with [Ganache](https://truffles
 ganache --fork.url https://forno.celo.org
 ```
 
-This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts. You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment. 
+This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts like the [Reserve](https://explorer.celo.org/address/0xc683e6f77B58D814B31F8661331EbDf63785D607/contracts), [cUSD](https://explorer.celo.org/address/0x765DE816845861e75A25fCA122bb6898B8B1282a/contracts), [cEUR](https://explorer.celo.org/token/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/token-transfers), [Accounts](https://explorer.celo.org/address/0x7d21685C17607338b313a7174bAb6620baD0aaB7/read-proxy), Governance and [other contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts). 
+
+You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment. 
 
 Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum enviroment. It behaves similarly to the Celo EVM but not exactly.
 
