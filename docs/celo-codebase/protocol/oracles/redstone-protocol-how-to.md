@@ -23,7 +23,7 @@ RedStone offers a radically different design of Oracles catering for the needs o
 - Use signed meta-transactions to deliver prices on-chain
 - Although the data at RedStone is persisted on the Arweave chain, it could be used with any other blockchain
 
-You can read much more about the RedStone protocol [here](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
+You can read much more about the RedStone protocol [in the RedStone compiled documentation.](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
 
 ## 📈 What data is available
 You can check available assets and data providers using [app.redstone.finance.](https://app.redstone.finance/)
@@ -32,11 +32,11 @@ You can check available assets and data providers using [app.redstone.finance.](
 
 Please read this [short documentation](https://github.com/redstone-finance/redstone-evm-connector/blob/master/README.md) to learn how to integrate your dApp with RedStone oracles.
 
-💡 Note: currently RedStone is integrated only with `ethers.js` library, so in order to use it on Celo blockchain dApps you should use [ethers.js](https://docs.ethers.io/v5/) along with `@celo-tools/celo-ethers-wrapper`.
+💡 Note: currently RedStone is integrated only with `ethers.js` library, so in order to use it on Celo blockchain dApps you should use [ethers.js](https://docs.ethers.io/v5/) along with [@celo-tools/celo-ethers-wrapper](https://www.npmjs.com/package/@celo-tools/celo-ethers-wrapper).
 
 ## 👨‍💻 Code examples
-- [Small examples](https://github.com/redstone-finance/redstone-evm-connector-examples)
-- [Using pseudo-random values](https://github.com/redstone-finance/redstone-evm-connector-examples/blob/main/contracts/example-pseudo-random.sol)
+- [Repo with examples](https://github.com/redstone-finance/redstone-evm-connector-examples)
+- [Generating pseudo-random values](https://github.com/redstone-finance/redstone-evm-connector-examples/blob/main/contracts/example-pseudo-random.sol)
 - [Example with multiple contracts](https://github.com/redstone-finance/redstone-evm-connector-examples/tree/main/contracts/example-proxy-calldata)
 - [Synthetic commodities dApp on Celo](https://github.com/redstone-finance/komodo-celo)
 
