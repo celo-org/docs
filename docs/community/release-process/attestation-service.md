@@ -10,7 +10,7 @@ ___
 
 :::tip note
 
-This release process will be adopted from Attestation Service v1.2.0 onwards.
+This release process is currently in use.
 
 :::
 
@@ -18,17 +18,15 @@ This release process will be adopted from Attestation Service v1.2.0 onwards.
 
 Releases of Attestation Service are made as needed. Releases are numbered according to semantic versioning, as described at [semver.org](https://semver.org).
 
-All builds are identified as `unstable` (a development build) or `stable` (a commit released as a particular version number). There should only ever exist one commit with a version `x.y.z` for any `(x, y, z)`.
+Development builds should be identified with `-dev`, and only one commit should exist with a released version `x.y.z` for any `(x, y, z)`.
 
 ## Documentation
 
-Documentation is maintained under `packages/docs` directory and is hosted on [docs.celo.org](/validator-guide/attestation-service).
+Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/docs) repo and is hosted on [docs.celo.org](/validator-guide/attestation-service).
 
 ## Identifying releases
 
 ### Git branches
-
-Each minor version of Attestation Service has its own “release branch”, e.g. `release/attestation-service/1.0`.
 
 Development is done on the `master` branch, which corresponds to the next major or minor version. Changes to be included in a patch release of an existing minor version are cherry-picked to that existing release branch.
 
@@ -48,7 +46,7 @@ On Github, each release tag should have attached signatures that can be used to 
 
 Each Docker image is tagged with `attestation-service-<commithash>`. Just as a Git tag immutably points to a commit hash, the Docker tag should immutably point to an image hash.
 
-In addition, each Docker image correspinding to a released version should be tagged with `attestation-service-vx.y.z`.
+In addition, each Docker image corresponding to a released version should be tagged with `attestation-service-vX.Y.Z`.
 
 The latest image qualified for deployment to various networks are also tagged as follows:
 
@@ -86,29 +84,19 @@ docker save $(docker image inspect us.gcr.io/celo-testnet/celo-monorepo:attestat
 
 ## Testing
 
-As well as monorepo CI tests, all releases are expected to go through manual testing as needed to verify security properties, accuracy of documentation, and compatibility with deployed and anticipated versions of `celocli` and wallets including Valora.
-
-This testing should include running the Valora e2e tests. Currently, these expect access to cLabs provisioned credentials for SMS providers. Follow the [Valora mobile build instructions](https://github.com/celo-org/wallet/blob/master/packages/mobile/README.md#setup). Then run:
-
-```bash
-git checkout verification-e2e-tests
-cd packages/mobile
-yarn test:e2e:ios -t e2e/src/RedeemInviteAndVerify.spec.js -i
-```
+As well as monorepo CI tests, all releases are expected to go through manual testing as needed to verify security properties, accuracy of documentation, and compatibility with deployed and anticipated versions of `celocli` and wallets including Valora. Releases currently involve coordinating with Valora to run the verification e2e tests in CI.
 
 ## Promotion process
 
 ### Source control
 
-Patch releases should be constructed by cherry-picking all included commits from `master` to the `release/attestation-service/x.y` branch. The first commit of this process should change the version number encoded in the source from `x.y.z-stable` to `x.y.z+1-unstable` and the final commit should change the version number to `x.y.z+1-stable`.
+Patch releases should be constructed by cherry-picking all included commits from `master` to the `release/attestation-service/x.y` branch, if necessary created from the `attestation-service-vX.Y.Z` tag of the most recent major or minor release. The first commit of this process should change the version number encoded in the source from `x.y.z` to `x.y.z+1-dev` and the final commit should change the version number to `x.y.z+1`.
 
-Major and minor releases should be constructed by pushing a commit to the `master` branch to change the encoded version number from `x.y.z-unstable` to `x.y.z`. A `release/attestation-service/x.y` branch should be created from this commit. The next commit must change the version number from `x.y.z-stable` to `x.y+1.0-unstable`, or `x+1.0.0-unstable` if the next planned release is a major release.
-
-Only one commit should ever have a "stable" tag at any given version number. When that commit is created, a tag should be added along with release notes. Once the tag is published it should not be reused for any further release or changes.
+Major and minor releases should be constructed by pushing a commit to the `master` branch to change the encoded version number from `x.y.z-dev` to `x.y.z`. A `attestation-service-vX.Y.Z` tag should be created at this commit which uniquely references one commit; release notes should be published alongside this. The next commit should change the version number from `x.y.z` to `x.y+1.0-dev`, or `x+1.0.0-dev` if the next planned release is a major release.
 
 ### Distribution
 
-Distribution of an image should occur along the following schedule:
+Distribution of an image follows this schedule:
 
 <table>
   <tr>
@@ -120,6 +108,7 @@ Distribution of an image should occur along the following schedule:
     <td>
       <ol>
         <li>Deploy release candidate build to Alfajores testnet</li>
+        <li>Test manually and via e2e verification tests</li>
       </ol>
     </td>
   </tr>  
@@ -128,27 +117,18 @@ Distribution of an image should occur along the following schedule:
     <td>
       <ol>
         <li>Confirm Valora production and testing builds against Alfajores experience no issues and that e2e verification tests complete successfully</li>
-        <li>Publish the Git release notes and tag, and signature of Docker image</li>
-        <li>Communicate T+1w Baklava upgrade date.</li>
-        <li>Tag released Docker image with <code>attestation-service-alfajores</code> and <code>attestation-service-baklava</code> (removing tags from other releases)</li>
+        <li>Publish the release notes and tag the relevant commit on GitHub</li>
+        <li>Tag released Docker image with <code>attestation-service-alfajores</code>, <code>attestation-service-baklava</code>, <code>attestation-service-mainnet</code>, and <code>attestation-service-vX.Y.Z</code> tags (removing tags from other releases)</li>
+        <li>Inform the community of the new release via Discord and the Celo Forum</li>
       </ol>
     </td>
   </tr>
   <tr>
-    <td>T+1w</td>
+    <td>T+1w onwards</td>
     <td>
       <ol>
-        <li>Confirm Baklava users have upgraded without issues and that Baklava attestation bots run successfully</li>
-        <li>Communicate T+2w Mainnet upgrade date</li>
-        <li>Tag released Docker image with <code>attestation-service-mainnet</code>(removing tag from other releases)</li>
-      </ol>
-    </td>
-  </tr>
-  <tr>
-    <td>T+2w</td>
-    <td>
-      <ol>
-        <li>Confirm Mainnet users have upgraded without issues</li>
+        <li>Confirm Mainnet services have upgraded without issues</li>
+        <li>Continue monitoring dashboards for user issues</li>
       </ol>
     </td>
   </tr>

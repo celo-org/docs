@@ -4,64 +4,64 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Developers',
+    title: 'Learn the basics',
+    // Svg: require('../../static/img/homepage/1.svg').default,
+    description: (
+      <>Join the mission to build a financial system that creates the conditions for prosperity—for everyone.</>
+    ),
+    link: (
+      <a href="/welcome">Get started with Celo</a>
+    ),
+  },
+  {
+    title: 'Build on Celo',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Build, deploy, and manage applications on the Celo network.</>
     ),
     link: (
-      <a href="/developer-guide/overview">Build on Celo</a>
+      <a href="/developer-guide/overview">Start building</a>
     ),
   },
   {
-    title: 'Validators',
+    title: 'Secure the network',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Setup Celo nodes to maintain the network and earn rewards.</>
     ),
     link: (
-      <a href="/validator-guide/overview">Run a Node</a>
+      <a href="/validator-guide/overview">Run a node</a>
     ),
   },
   {
-    title: 'Owners',
+    title: 'Contribute to Celo',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Start sending, spending, and earning crypto from your mobile phone.</>
     ),
     link: (
-      <a href="/celo-holder-guide/owners">Get CELO</a>
+      <a href="/community/contributing">Use the Celo network</a>
     ),
   },
   {
-    title: 'Integrations',
-    // Svg: require('../../static/img/homepage/1.svg').default,
-    description: (
-      <>Integrate your application, service, or exchange with the Celo network.</>
-    ),
-    link: (
-      <a href="/developer-guide/integrations">Integrate with Celo</a>
-    ),
-  },
-  {
-    title: 'Contributors',
-    // Svg: require('../../static/img/homepage/1.svg').default,
-    description: (
-      <>Join a community of developers, designers, dreamers, and doers.</>
-    ),
-    link: (
-      <a href="/community/contributing">Contribute to Celo</a>
-    ),
-  },
-  {
-    title: 'Additional Resources',
+    title: 'Learn by coding',
     // Svg: require('../../static/img/homepage/1.svg').default,
     description: (
       <>Gain the skills you need to get the most from the Celo platform.</>
     ),
     link: (
       // <a href="https://deploy-preview-154--celo-docs.netlify.app/learn/celo-overview">Learn Celo</a>
-      <a href="/learn/celo-onboarding">Find Celo Resources</a>
+      <a href="/blog/">Learn more with Celo</a>
+    ),
+  },
+  {
+    title: 'Join the Discussion',
+    // Svg: require('../../static/img/homepage/1.svg').default,
+    description: (
+      <>Join a community of developers, designers, dreamers, and doers.</>
+    ),
+    link: (
+      <a href="https://discord.com/invite/atBpDfqQqX">Join Discord</a>
     ),
   },
 ];

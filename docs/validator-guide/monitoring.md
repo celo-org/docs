@@ -148,9 +148,10 @@ It is also important to [monitor Attestation Service](validator-guide/attestatio
 
 ## Community Moniting Tools
 
-### [Pretoria Research Lab Mainnet Signed Blocks Map](https://cauldron.pretoriaresearchlab.io/rc1-block-map)
+### [Vladiator Labs Signature & Attestation Viewer (Celo Vido)](https://vido.vladiatorlabs.io/block-map)
 
-Shows current and historic data on validator signatures collected in each block on Mainnet.
+* Visualizer of current and historic data on validator signatures collected in each block on Mainnet and Baklava.
+* Visualizer of current and historic attestation requests and completions, and attestation endpoint versions and status on Mainnet and Baklava.
 
 ### [Virtual Hive Celo Network Validator Exporter](https://github.com/virtualhive/celo-network-validator-exporter)
 
