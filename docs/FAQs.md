@@ -8,37 +8,36 @@ id: faqs
 
 Answers to frequently asked questions about Celo.
 
-___
+---
 
 ## Introduction and Overview
 
-
 ### What is Celo (CELO)?
 
-Celo is an open platform that makes financial tools accessible to anyone with a mobile phone. Celo is a mobile-first platform that makes financial dApps and crypto payments accessible to  anyone with a mobile phone  Let's dig a little deeper into some of the terms:
+Celo is an open platform that makes financial tools accessible to anyone with a mobile phone. Celo is a mobile-first platform that makes financial dApps and crypto payments accessible to anyone with a mobile phone Let's dig a little deeper into some of the terms:
 
 **Open**
 
-* The platform is an open-source project where everyone is invited to contribute
-* Celo is connecting to decentralized ecosystems like Ethereum, Bitcoin, and Cosmos, and improving blockchain interoperability with Optics
+- The platform is an open-source project where everyone is invited to contribute
+- Celo is connecting to decentralized ecosystems like Ethereum, Bitcoin, and Cosmos, and improving blockchain interoperability with Optics
 
 **Mobile**
 
-* Phone numbers are mapped to addresses using a decentralized identity protocol, which facilitates the user experience
-* The ultra-light client allows all smartphones, including those with low memory and connectivity, to easily connect to the Celo network
+- Phone numbers are mapped to addresses using a decentralized identity protocol, which facilitates the user experience
+- The ultra-light client allows all smartphones, including those with low memory and connectivity, to easily connect to the Celo network
 
 **Real**
 
-* The platform is designed with communities around the world where are innovations are based on 150+ user interviews in 20+ cities across 10+ countries
-* Celo hosts a rich ecosystem of dApps, from DeFI to payments, catering to users across 6 continents
-* Celo is a blockchain ecosystem focused on increasing cryptocurrency adoption among smartphone users.
-* By using phone numbers as public keys, Celo hopes to introduce the world’s billions of smartphone owners, including those without banking access, to transacting in cryptocurrency.
+- The platform is designed with communities around the world where are innovations are based on 150+ user interviews in 20+ cities across 10+ countries
+- Celo hosts a rich ecosystem of dApps, from DeFI to payments, catering to users across 6 continents
+- Celo is a blockchain ecosystem focused on increasing cryptocurrency adoption among smartphone users.
+- By using phone numbers as public keys, Celo hopes to introduce the world’s billions of smartphone owners, including those without banking access, to transacting in cryptocurrency.
 
 ### When was Celo Launched?
 
 The project started in the fall of 2017 when the whitepaper was first published. The first test network, called Alfajores (named after the famous Argentian cookie), launched in July 2019. The incentivized testnet, called Baklava (named after the delicious Turkish dessert), launched in December 2019. Mainnet launched on Earth Day Apr 22, 2020.
 
-Today Alfajores is a testnet for dApp developers and Baklava a testnet for node operators. 
+Today Alfajores is a testnet for dApp developers and Baklava a testnet for node operators.
 
 ### Who are the Founders of Celo?
 
@@ -46,11 +45,9 @@ Celo was originally founded by a team comprised of people from MIT, Stanford, Go
 
 Separate entities are aimed at Celo’s promotion and preservation. The dedicated Celo Foundation is a non-profit which launched along with the mainnet, while the Celo Alliance for Prosperity is what the company describes as an “ecosystem of mission-aligned organizations.”
 
-
 ### Where can I see a list with all the apps developed on Celo?
 
 [Celo DApp Gallery](./developer-guide/celo-dapp-gallery)
-
 
 ### What is the unique selling point of Celo?
 
@@ -110,7 +107,7 @@ In addition, up to 120 million CELO will go towards a reserve designed to mainta
 
 Celo uses proof-of-stake to maintain security and has a complex election process to determine validators of its blockchain. Holders of CELO are able to use their holdings as a means of participating in elections by voting for groups of validators.
 
-### Regarding Celo Blockchain, do we have another source for on-chain data apart from [explorer.celo.org](https://explorer.celo.org/)? 
+### Regarding Celo Blockchain, do we have another source for on-chain data apart from [explorer.celo.org](https://explorer.celo.org/)?
 
 [https://www.thecelo.com/](https://www.thecelo.com/) is an alternative source for on-chain data.
 
@@ -132,9 +129,9 @@ For DeFi - today the easiest experience is to visit a dApp’s website and eithe
 
 ## Staking Questions
 
-### How do I  stake CELO?
+### How do I stake CELO?
 
-You can stake CELO via [CeloWallet.app](https://celowallet.app/), [CeloVote.com](https://celovote.com/), [Celo.dance](https://celo.dance/), or [Celoterminal.com](https://celoterminal.com/). 
+You can stake CELO via [CeloWallet.app](https://celowallet.app/), [CeloVote.com](https://celovote.com/), [Celo.dance](https://celo.dance/), or [Celoterminal.com](https://celoterminal.com/).
 
 ### Can people without technical knowledge also participate in the staking process?
 
@@ -156,7 +153,7 @@ Staking tokens in a pool gives you a token called a liquidity provider token (or
 
 ### How can I provide liquidity and farm tokens of Celo’s ecosystem?
 
-[Ubeswap](https://ubeswap.org/) (more info [here](https://docs.ubeswap.org/tutorial/providing-liquidity))and [SushiSwap](https://sushi.com/) offer liquidity provision and farming functionalities on Celo. 
+[Ubeswap](https://ubeswap.org/) (more info [here](https://docs.ubeswap.org/tutorial/providing-liquidity))and [SushiSwap](https://sushi.com/) offer liquidity provision and farming functionalities on Celo.
 
 ### What about borrowing, lending, and interest-earning on Celo?
 
@@ -172,12 +169,12 @@ As with any new technology, not all risks can be eliminated. Some of them are sm
 
 ### How is Celo different from Ethereum?
 
-You can see the key differences between Celo and Ethereum [here](./developer-guide/celo-for-eth-devs). 
+You can see the key differences between Celo and Ethereum [here](./developer-guide/celo-for-eth-devs).
 
 ### When building for mobile, what native SDKs are available?
 
-* [Java](https://github.com/blaize-tech/celo-sdk-java)  
+- [Java](https://github.com/blaize-tech/celo-sdk-java)
 
 ### When building for web2 what SDKs or libraries are available?
 
-A basic example of using wallet connect with Valora can be found [here](/developer-resources/walkthroughs/valora-wc-v1). If you prefer more granular control, take a look at [use-contractkit](https://github.com/celo-tools/use-contractkit). 
+A basic example of using wallet connect with Valora can be found [here](/developer-resources/walkthroughs/valora-wc-v1). If you prefer more granular control, take a look at [use-contractkit](https://github.com/celo-tools/use-contractkit).

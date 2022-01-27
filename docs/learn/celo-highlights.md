@@ -1,12 +1,13 @@
 ---
-title: Celo Highlights
+title: Key Concepts
 description: Summary of benefits, features, and data behind the Celo platform.
 ---
-# Highlights
+
+# Key Concepts
 
 Summary of benefits, features, and data behind the Celo platform.
 
-___
+---
 
 ## The Platform for Mobile DeFi
 
@@ -16,48 +17,49 @@ The Celo protocol also includes mechanisms for [lightweight identity](../celo-co
 
 **Innovative tools to build native mobile dApps:**
 
-* Stable Value Currencies
-* Phone Number Public Key Infrastructure
-* On-chain Governance
-* Self Custody
-* Proof-of-Stake
-* Open-source 
-* Permissionless
-* High Speed Sync for Ultra-light Clients
-* Gas Payable in Multiple Stablecoins 
-* Programmable (full EVM Compatibility)
+- Stable Value Currencies
+- Phone Number Public Key Infrastructure
+- On-chain Governance
+- Self Custody
+- Proof-of-Stake
+- Open-source
+- Permissionless
+- High Speed Sync for Ultra-light Clients
+- Gas Payable in Multiple Stablecoins
+- Programmable (full EVM Compatibility)
 
 ## Optimized for Financial Applications
 
-Powered by Celo’s industry-leading decentralized phone number verification, payment applications built on Celo allow users to easily send or request digital currencies  from  any mobile number, anywhere in the world, capable of offering their users features like:
+Powered by Celo’s industry-leading decentralized phone number verification, payment applications built on Celo allow users to easily send or request digital currencies from any mobile number, anywhere in the world, capable of offering their users features like:
 
-* Non-custodial wallets
-* Ultra low network transaction fees
-* Digital currency exchange capabilities 
-* QR Code Support
-* Mobile first SDK
+- Non-custodial wallets
+- Ultra low network transaction fees
+- Digital currency exchange capabilities
+- QR Code Support
+- Mobile first SDK
 
 ## Core Contracts
 
 Designed to support an ecology of stable value currencies. The first stablecoin, cUSD, tracks the value of the US Dollar.
 
-* Algorithmic reserve-backed stabilization mechanism
-* Crypto-asset collateralized
-* Native support for multiple stablecoins
+- Algorithmic reserve-backed stabilization mechanism
+- Crypto-asset collateralized
+- Native support for multiple stablecoins
 
 ## Blockchain
 
 Open source permissionless smart contract platform built on decentralized infrastructure.
 
-* Proof-of-Stake based consensus with high throughput, low latency, and zero carbon
-* Incentives for serving mobile devices
-* On-chain governance
+- Proof-of-Stake based consensus with high throughput, low latency, and zero carbon
+- Incentives for serving mobile devices
+- On-chain governance
 
 ## Build on Celo
 
 Visit [celo.org](https://celo.org) to learn more.
 
-___
+---
+
 ## Details
 
 Celo is a mobile-first, carbon-neutral blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone–bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
@@ -94,7 +96,8 @@ Celo includes a programmable smart contract platform that is compatible with the
 
 Users have access to and fully control their funds and account keys, and don't need to depend on third parties to make payments.
 
-___
+---
+
 ## Metrics
 
 **Validators**
@@ -109,11 +112,11 @@ You can view more detailed information about the current validator set at [stats
 
 **Total Blocks**
 
-For real-time updates and information, please visit [explorer.celo.org](https://explorer.celo.org/) 
+For real-time updates and information, please visit [explorer.celo.org](https://explorer.celo.org/)
 
 **Average Block Time**
 
-Celo's average blocktime is 5 seconds. For real-time updates and information, please visit [https://explorer.celo.org/](https://explorer.celo.org/) 
+Celo's average blocktime is 5 seconds. For real-time updates and information, please visit [https://explorer.celo.org/](https://explorer.celo.org/)
 
 **Average User-Perceived Transaction Time Average Network Transaction (Gas) Fee**
 
@@ -129,12 +132,12 @@ Real-time gas fees are captured in gwei on [stats.celo.org](https://stats.celo.o
 
 **Circulating Supply**
 
-* **CELO:** Metric updated in real-time, please visit  [coinmarketcap.com/currencies/celo](https://coinmarketcap.com/currencies/celo/) 
-* **cUSD + cEUR:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/) 
+- **CELO:** Metric updated in real-time, please visit [coinmarketcap.com/currencies/celo](https://coinmarketcap.com/currencies/celo/)
+- **cUSD + cEUR:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/)
 
 :::tip
 
-For current circulating supply of cUSD and cEUR please see the section titled ‘outstanding supply’ and reference the top number in black. 
+For current circulating supply of cUSD and cEUR please see the section titled ‘outstanding supply’ and reference the top number in black.
 
 :::
 
@@ -144,6 +147,6 @@ For real-time updates, please visit [wren.co/profile/celo](https://www.wren.co/p
 
 :::tip
 
-Tons of carbon offset reflect Celo community purchases of carbon credits by way of funding the Community tree planting project with Wren. 
+Tons of carbon offset reflect Celo community purchases of carbon credits by way of funding the Community tree planting project with Wren.
 
 :::

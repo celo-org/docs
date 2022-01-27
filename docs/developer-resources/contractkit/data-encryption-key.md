@@ -18,7 +18,7 @@ When using the DEK, it's important to check that the DEK is the latest that's re
 ```ts
   // Query the on-chain data encryption key for a user
   const accountWrapper: AccountsWrapper = await contractKit.contracts.getAccounts()
-  const dataEncryptionKey = accountWrapper.getDataEncryptionKey(address)
+  const dataEncryptionKey = await accountWrapper.getDataEncryptionKey(address)
   // Check that this matches with the public key
   ...
 ```

@@ -18,7 +18,7 @@ This post uses a live code editor. Check out [this post](2021-11-15-code-playgro
 
 :::tip
 
-Make sure that you have have [Metamask installed](https://metamask.io) in your browser. 
+Make sure that you have have [Metamask installed](https://metamask.io) in your browser.
 
 :::
 
@@ -33,13 +33,12 @@ This function will only trigger an action if Metamask is not yet connect to the 
 :::
 
 ```jsx live
-function connect(){
+function connect() {
+  function connectMetamask() {
+    ethereum.request({ method: "eth_requestAccounts" });
+  }
 
-    function connectMetamask(){
-      ethereum.request({ method: 'eth_requestAccounts' })
-    }
-
-    return <button onClick={connectMetamask}>Connect Metamask</button>
+  return <button onClick={connectMetamask}>Connect Metamask</button>;
 }
 ```
 
@@ -52,51 +51,52 @@ This example shows how you can prompt a user to connect to a specific Celo netwo
 Try it out:
 
 ```jsx live
-function MetamaskSwitchNetwork(){
+function MetamaskSwitchNetwork() {
+  const NETWORK_PARAMS = {
+    chainName: "Celo",
+    nativeCurrency: {
+      name: "Celo",
+      symbol: "CELO",
+      decimals: 18,
+    },
+  };
 
-    const NETWORK_PARAMS = { 
-      chainName: 'Celo', 
-      nativeCurrency: { 
-        name: 'Celo', 
-        symbol: 'CELO', 
-        decimals: 18 
-      } 
-    }
+  const MAINNET_PARAMS = {
+    ...NETWORK_PARAMS,
+    chainId: "0xa4ec", // 42220
+    rpcUrls: ["https://forno.celo.org"],
+    blockExplorerUrls: ["https://explorer.celo.org/"],
+  };
 
-    const MAINNET_PARAMS = {
-      ...NETWORK_PARAMS,
-      chainId: '0xa4ec', // 42220
-      rpcUrls: ['https://forno.celo.org'], 
-      blockExplorerUrls: ['https://explorer.celo.org/']
-    }
+  const ALFAJORES_PARAMS = {
+    ...NETWORK_PARAMS,
+    chainId: "0xaef3", // 44787
+    rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
+    blockExplorerUrls: ["https://alfajores-blockscout.celo-testnet.org/"],
+  };
 
-    const ALFAJORES_PARAMS = {
-      ...NETWORK_PARAMS,
-      chainId: '0xaef3', // 44787
-      rpcUrls: ['https://alfajores-forno.celo-testnet.org'], 
-      blockExplorerUrls: ['https://alfajores-blockscout.celo-testnet.org/']
-    }
+  function addMainnet() {
+    window.ethereum.request({
+      method: "wallet_addEthereumChain",
+      params: [MAINNET_PARAMS],
+    });
+  }
 
-    function addMainnet(){
-        window.ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [MAINNET_PARAMS],
-        });      
-    }
+  function addAlfajores() {
+    window.ethereum.request({
+      method: "wallet_addEthereumChain",
+      params: [ALFAJORES_PARAMS],
+    });
+  }
 
-    function addAlfajores(){
-        window.ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [ALFAJORES_PARAMS],
-        });         
-    }
-
-    return (
-      <div>
-        <button onClick={addMainnet}>Connect to Celo Mainnet</button><br/>
-        <button onClick={addAlfajores}>Connect to Alfajores Testnet</button><br/>
-      </div>
-    )
+  return (
+    <div>
+      <button onClick={addMainnet}>Connect to Celo Mainnet</button>
+      <br />
+      <button onClick={addAlfajores}>Connect to Alfajores Testnet</button>
+      <br />
+    </div>
+  );
 }
 ```
 
@@ -105,24 +105,24 @@ function MetamaskSwitchNetwork(){
 The following code example shows how you can add the cUSD token on the Alfajores testnet to Metamask. To add other tokens, just update the parameter options. You can read more about the Metamask API [here](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset).
 
 ```jsx live
-function MetamaskAddToken(){
-    const TOKEN_PARAMS = {
-      type: 'ERC20',
-      options: {
-        address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
-        symbol: 'cUSD',
-        decimals: 18
-      }
-    }
+function MetamaskAddToken() {
+  const TOKEN_PARAMS = {
+    type: "ERC20",
+    options: {
+      address: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1",
+      symbol: "cUSD",
+      decimals: 18,
+    },
+  };
 
-    function addToken(){
-        window.ethereum.request({
-          method: 'wallet_watchAsset',
-          params: TOKEN_PARAMS
-        });    
-    }
+  function addToken() {
+    window.ethereum.request({
+      method: "wallet_watchAsset",
+      params: TOKEN_PARAMS,
+    });
+  }
 
-    return <button onClick={addToken}>Add cUSD (Alfajores)</button>
+  return <button onClick={addToken}>Add cUSD (Alfajores)</button>;
 }
 ```
 
@@ -133,23 +133,22 @@ Let's try to send some CELO on Alfajores. Make sure you are connected to the Alf
 Make sure you have some Alfajores CELO to send. If you need some, you can get some from [the faucet here](https://celo.org/developers/faucet).
 
 ```jsx live
-function MetamaskSendCelo(){
+function MetamaskSendCelo() {
+  const TX_PARAMS = {
+    to: "0x5038ae19CDf0B623e6e8015249ecF58A1165D653",
+    from: ethereum.selectedAddress,
+    value: "0x11111111111111",
+  };
 
-    const TX_PARAMS = {
-      to: '0x5038ae19CDf0B623e6e8015249ecF58A1165D653',
-      from: ethereum.selectedAddress,
-      value: '0x11111111111111',
-    }
+  async function send() {
+    let txID = await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [TX_PARAMS],
+    });
+    console.log(txID);
+  }
 
-    async function send(){
-        let txID = await window.ethereum.request({
-          method: 'eth_sendTransaction',
-          params: [TX_PARAMS]
-        });   
-        console.log(txID) 
-    }
-
-    return <button onClick={send}>Send CELO (Alfajores)</button>
+  return <button onClick={send}>Send CELO (Alfajores)</button>;
 }
 ```
 

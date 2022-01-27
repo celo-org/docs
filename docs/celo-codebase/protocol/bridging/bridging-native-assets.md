@@ -17,10 +17,10 @@ Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://pol
 
 <Tabs>
   <TabItem value="Ethereum" label="On Ethereum" default>
-    <code>Ethereum EthHelper Address = [0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A](https://etherscan.io/address/0xf1c1413096ff2278C3Df198a28F8D54e0369cF3A)</code>
+    <code>Ethereum EthHelper Address = [0x2784a755690453035f32Ac5e28c52524d127AfE2](https://etherscan.io/address/0x2784a755690453035f32Ac5e28c52524d127AfE2)</code>
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    <code>Polygon EthHelper Address = [0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA](https://polygonscan.com/address/0xc494bFEE14b5E1E118F93CfedF831f40dFA720fA)</code>
+    <code>Polygon EthHelper Address = [0xa489b8981ae5652C9Dd6515848cB8Dbecae5E1B0](https://polygonscan.com/address/0xa489b8981ae5652C9Dd6515848cB8Dbecae5E1B0)</code>
   </TabItem>
 </Tabs>
 
