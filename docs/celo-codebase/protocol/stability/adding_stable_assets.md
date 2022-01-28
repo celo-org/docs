@@ -63,6 +63,7 @@ The last governance proposal is expected to unfreeze the contract and attach the
 3. Declaring the token to the Reserve as an asset to be stabilized calling `Reserve.addToken`
 4. Enable `StableTokenX` as a fee currency, so that it can be used to pay for gas `FeeCurrencyWhitelist.addToken`.
 5. In case necessary, parameters such as `reserveFraction` and `spread` can also be updated in this governance proposal.
+6. Granda Mento activation
 
 
 After passing this last proposal, `cX` should be fully activated.
