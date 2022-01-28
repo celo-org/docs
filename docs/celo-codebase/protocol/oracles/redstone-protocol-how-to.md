@@ -26,6 +26,8 @@ RedStone offers a radically different design of Oracles catering for the needs o
 You can read much more about the RedStone protocol [in the RedStone compiled documentation.](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
 
 ## 📈 What data is available
+Thanks to our innovative architecture, we offer more than one thousand of pricing data feeds, including tokens, stocks, ETFs, commodities, and much more for a fraction of regular Oracles integration costs.
+
 You can check available assets and data providers using [app.redstone.finance.](https://app.redstone.finance/)
 
 ## 🔥 How to use RedStone?
