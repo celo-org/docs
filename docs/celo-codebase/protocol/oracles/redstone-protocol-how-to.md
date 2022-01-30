@@ -32,6 +32,8 @@ You can check available assets and data providers using [app.redstone.finance.](
 
 ## 🔥 How to use RedStone?
 
+**IMPORTANT**: Our contracts are still undergoing security audit and we are working on the infrastructure secutiry improvements. So, before using RedStone oracles in production apps, please reach out to the RedStone team [on Discord.](https://redstone.finance/discord) We will be happy to help you with the integration and will set up a new pool of data provider nodes if there is a need.
+
 Please read this [short documentation](https://github.com/redstone-finance/redstone-evm-connector/blob/master/README.md) to learn how to integrate your dApp with RedStone oracles.
 
 💡 Note: currently RedStone is integrated only with `ethers.js` library, so in order to use it on Celo blockchain dApps you should use [ethers.js](https://docs.ethers.io/v5/) along with [@celo-tools/celo-ethers-wrapper](https://www.npmjs.com/package/@celo-tools/celo-ethers-wrapper).
