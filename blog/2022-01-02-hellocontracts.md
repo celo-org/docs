@@ -173,7 +173,7 @@ _Note: this environment variable will only persist while you have this terminal 
 This command specifies the settings needed to run the node, and gets it started.
 
 ```bash
-docker run --name celo-ultralight-node -d --restart unless-stopped -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3  --syncmode lightest --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin,personal --etherbase $CELO_ACCOUNT_ADDRESS --alfajores --datadir=/root/.celo --allow-insecure-unlock
+docker run --name celo-ultralight-node -d --restart unless-stopped -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3  --syncmode lightest --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --etherbase $CELO_ACCOUNT_ADDRESS --alfajores --datadir=/root/.celo --allow-insecure-unlock
 ```
 
 You can follow the logs with
