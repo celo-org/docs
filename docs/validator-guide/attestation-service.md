@@ -169,7 +169,7 @@ You can now run the node for the attestation service in the background with the 
 ```bash
 # On the Attestation machine
 echo <CELO-ATTESTATION-SIGNER-PASSWORD> > .password
-docker run --name celo-attestations -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
+docker run --name celo-attestations -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
 ```
 
 ### Database Configuration
