@@ -157,3 +157,8 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [https://eldorado.io/](https://eldorado.io/)
 - Countries: Colombia, Venezuela, Argentina
+
+### Más Empathy
+
+-https://www.binance.com/es
+- countries: Dominican Repúblic
