@@ -1,5 +1,5 @@
 ---
-title: Celo Contributors
+title: Celo Community
 description: Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 ---
 
@@ -7,7 +7,7 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Celo Contributors
+# Celo Community
 
 Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 
@@ -21,10 +21,11 @@ Not ready to become a Celo Contributor? [Learn more about Celo](../../docs/welco
 
 :::
 
-## Get Started as a Celo Contributor
+## Get Started with the Celo Community
 
 Find your purpose and join a community focused on building the conditions of prosperity—for everyone
 
+<PageRef url="/community/developer-events" pageName="Developer Events" />
 <PageRef url="/community/guidelines" pageName="Contributors" />
 <PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
 <PageRef url="/community/grant-playbook" pageName="Grant Playbook" />
