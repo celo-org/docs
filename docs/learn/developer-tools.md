@@ -45,12 +45,6 @@ WalletConnect is a standard across EVM compatible blockchains to connect wallets
 
 <PageRef url="walletconnect" pageName="WalletConnect" />
 
-### DAppKit
-
-DAppKit is a lightweight set of functions that allow mobile DApps to work with the Celo Wallet to sign transactions and access the user's account.
-
-<PageRef url="/developer-guide/dappkit" pageName="DAppKit" />
-
 ### Celo CLI
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
