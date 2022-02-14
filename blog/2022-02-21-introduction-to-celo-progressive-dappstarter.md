@@ -12,17 +12,17 @@ import YouTube from '@components/YouTube';
 
 Quickly develop full-stack progressive web applications on the Celo blockchain.
 
-<!--truncate-->
-
 ---
 
 ## Getting started
 
-Welcome to the [Celo Progressive Dappstarter](https://celo-progressive-dapp-starter.netlify.app/)—a starter pack to get you up and running fast with Celo DApp development. The goal of this post is to get you up and running Celo Progressive Dappstarter in about 15 minutes or less. From there you can quickly build, iterate, and deploy new DApps on the Celo blockchain.
+Welcome to the [Celo Progressive Dappstarter](https://celo-progressive-dapp-starter.netlify.app/)—a starter pack to get you up and running fast with Celo DApp development. The goal of this post is to get you up and running [Celo Progressive Dapp starter](https://github.com/celo-org/celo-progressive-dapp-starter) in about 15 minutes or less. From there you can quickly build, iterate, and deploy new DApps on the Celo blockchain.
 
 **Here's a quick look at what you'll build**
 
 ![dappstarter](/img/doc-images/introduction-to-celo-progressive-dappstarter/1.png)
+
+<!--truncate-->
 
 ## Watch the video
 
@@ -128,6 +128,12 @@ Open your projects `.env` file and replace `PRIVATE_KEY` with the account **priv
 
 Return to your terminal and run `yarn deploy` to deploy your smart contracts.
 
+:::info Redeploy contracts
+
+You can run **yarn deploy --reset** to force re-deploy your contracts to any chain.
+
+:::
+
 ![dappstarter](/img/doc-images/introduction-to-celo-progressive-dappstarter/12.png)
 
 ## Start the front-end
@@ -188,7 +194,7 @@ The front-end code for each smart contract interface are found in **packages/rea
 
 :::info Redeploy contracts
 
-You can run **yarn deploy --reset **to force re-deploy your contracts to your local development chain.
+You can run **yarn deploy --reset** to force re-deploy your contracts to any chain.
 
 :::
 
