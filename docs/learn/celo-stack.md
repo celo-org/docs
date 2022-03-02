@@ -19,7 +19,7 @@ Celo is oriented around providing the simplest possible experience for end-users
 
 ## Celo Blockchain
 
-An open cryptographic protocol that allows applications to make transactions with and run smart contracts in a secure and decentralized fashion. The Celo blockchain code has shared ancestry with[ Ethereum](https://www.ethereum.org/) and maintains full EVM compatibility for smart contracts. However, it uses a[ Byzantine Fault Tolerant](http://pmg.csail.mit.edu/papers/osdi99.pdf) (BFT) consensus mechanism(Proof of stake) rather than Proof-of-Work and has different block format, transaction format, client synchronization protocols, and gas payment and pricing mechanisms.
+An open cryptographic protocol that allows applications to make transactions with and run smart contracts in a secure and decentralized fashion. The Celo blockchain code has shared ancestry with[ Ethereum](https://www.ethereum.org/) and maintains full EVM compatibility for smart contracts. However, it uses a[ Byzantine Fault Tolerant](http://pmg.csail.mit.edu/papers/osdi99.pdf) (BFT) consensus mechanism (Proof-of-Stake) rather than Proof-of-Work and has different block format, transaction format, client synchronization protocols, and gas payment and pricing mechanisms.
 
 ## Celo Core Contracts
 
