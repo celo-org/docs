@@ -49,7 +49,7 @@ Attestation Service needs to expose a HTTP or HTTPS endpoint to the public Inter
 
 The `PORT` environment variable sets the listening port for the service on the local instance. Note that depending on your setup, this may be different from the port exposed to the public Internet.
 
-Attestation Service exposes a HTTP endpoint, but it is strongly recommended that you adopt a setup that implements TLS. Attestation Service must expose the following routes to the public Internet: POST `/attestations`, POST `/test_attestations`, GET `/get_attestations`, POST `/delivery_status_twilio`, POST `/delivery_status_nexmo`, and (from version 1.2.0) GET (not POST) `/delivery_status_messagebird`. It should also expose GET `/status`. Optionally you may choose to expose GET `/healthz` and GET `/metrics`. Note that the URL provided in the validator metadata should not include any of these suffixes.
+Attestation Service exposes a HTTP endpoint, but it is strongly recommended that you adopt a setup that implements TLS. Attestation Service must expose the following routes to the public Internet: POST `/attestations`, POST `/test_attestations`, GET `/get_attestations`, POST `/delivery_status_nexmo`, (v1.5.0+) POST `/delivery_status_twilioverify`, (v1.5.0+) POST `/delivery_status_twiliomessaging`, (pre-v1.5.0) POST `/delivery_status_twilio`, and (v1.2.0+) GET (not POST) `/delivery_status_messagebird`. It should also expose GET `/status`. Optionally you may choose to expose GET `/healthz` and GET `/metrics`. Note that the URL provided in the validator metadata should not include any of these suffixes.
 
 From Attestation Service version 1.4.0 onwards, there are two ways of deploying the Attestation Service. We recommend that new validators use the file keystore method (instead of using a Celo full node) for key management, and that existing validators eventually migrate to the new architecture.
 
@@ -68,6 +68,7 @@ Every record in the database includes the issuer (i.e. validator) in its key, so
 Currently the Attestation Service supports three SMS providers:
 
 - [Twilio](https://www.twilio.com/try-twilio)
+  - from v1.5.0, the Attestation Service treats the Twilio Messaging Service (`twiliomessaging`) and the Twilio Verify API (`twilioverify`) as separate providers.
 - [Nexmo](https://dashboard.nexmo.com/sign-up)
 - [MessageBird](https://messagebird.com/en/) (from version 1.2.0 and later)
 
@@ -103,7 +104,7 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 ![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
 
-Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version `v1.5.0` onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version v1.5.0 onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
 
 ### Nexmo
 
@@ -234,7 +235,7 @@ Optional environment variables:
 | `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. Note: setting this to `1` is only recommended if you *do not* have Vonage/Nexmo configured as a provider. |
 | `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
 | `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
-| `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilio` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
+| `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilioverify` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
 | `VERIFY_CONFIG_ON_STARTUP`   | Refuse to start if signer or metadata is misconfigured. Default `1`. If you disable this, you must specify `EXTERNAL_CALLBACK_HOSTPORT`.                                                                                                                                                                                                                                                                                                                 |
 | `MAX_AGE_LATEST_BLOCK_SECS`  | (v1.2.0+) Maximum age of the latest received block, in seconds, before the health check reports failure. Default is `20`.                                                                                                                                                                                                                                                                                                                                |
 | `GET_BLOCK_TIMEOUT_MS`      | (v1.4.0+) Maximum time in milliseconds to wait after fetching the latest block from a connection, before it times out. Default is `500 ms`. |
@@ -379,7 +380,7 @@ docker run --name celo-attestation-service -it --restart always --entrypoint /bi
 
 Attestation Services supports delivery receipts so that SMS providers can callback to provide delivery information. This triggers retries as needed, even between providers, and enables delivery success and timing metrics to be logged and made accessible to the client.
 
-There is no configuration necessary to enable Twilio or Nexmo delivery receipts. The Attestation Service uses the URL in the validator metadata, provided that `VERIFY_CONFIG_ON_STARTUP` is enabled. The URL for callbacks can always be specified with the `EXTERNAL_CALLBACK_HOSTPORT` configuration option. The service appends `/delivery_status_{twilio, nexmo}` on to the URL, and supplies that to the provider through its API.
+There is no configuration necessary to enable Twilio or Nexmo delivery receipts. The Attestation Service uses the URL in the validator metadata, provided that `VERIFY_CONFIG_ON_STARTUP` is enabled. The URL for callbacks can always be specified with the `EXTERNAL_CALLBACK_HOSTPORT` configuration option. The service appends `/delivery_status_{PROVIDER}` (i.e. `/delivery_status_twilioverify`) on to the URL, and supplies that to the provider through its API.
 
 For MessageBird, provide the callback URL (be sure to include `/delivery_status_messagebird`) in the MessageBird dashboard's [API Settings](https://dashboard.messagebird.com/en/developers/settings) page.
 
@@ -397,7 +398,13 @@ celocli identity:test-attestation-service --from $CELO_ATTESTATION_SIGNER_ADDRES
 
 You need the attestation signer key available and unlocked on your local machine.
 
-You may wish to do this once for each provider you have configured (`--provider=twilio`, `--provider=nexmo` etc). (If this option is not recognized, try upgrading `celocli`).
+You may wish to do this once for each provider you have configured (i.e. `--provider=messagebird`). If the `provider` option is not recognized, please upgrade `celocli`.
+
+For `twilio`, please note the following to test the SMS vs. verify API from v1.5.0 onwards:
+
+- `--provider=twilioverify` (v1.5.0+)
+- `--provider=twiliomessaging` (v1.5.0+)
+- `--provider=twilio` (up to v1.4.0)
 
 Note that this does not use an identical code path to real attestations (since those require specific on-chain state) so this endpoint should not be used in place of monitoring logs and metrics.
 
