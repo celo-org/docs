@@ -211,7 +211,7 @@ export DATABASE_URL="postgres://postgres:<DATABASE_PASSWORD>@localhost:5432/atte
 
 ## Configuration
 
-Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. It is recommended that you start using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development):
+Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. We **highly recommend** that you start by using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development), which contains up-to-date, sensible defaults especially for `SMS_PROVIDERS_<country>`:
 
 ```bash
 # Choose a location for the config and fetch the defaults
@@ -241,7 +241,7 @@ Optional environment variables:
 | `ATTESTATION_SIGNER_KEYSTORE_PASSPHRASE` | (v1.4.0+) Passphrase used to encrypt `ATTESTATION_SIGNER_ADDRESS`'s keystore file. Must be used with `ATTESTATION_SIGNER_KEYSTORE_DIRPATH` |
 | `PORT`                       | Port to listen on. Default `3000`.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `RATE_LIMIT_REQS_PER_MIN`    | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`.                                                                                                                                                                                                                                                                                                                                                    |
-| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). See the [Recommended Option Settings Section](#sms_providers_country) below for guidance on configuring this. |
+| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). We **highly recommend** using the [default configuration file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development#L21) as a base and then making changes accordingly. |
 | `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. Note: setting this to `1` is only recommended if you *do not* have Vonage/Nexmo configured as a provider. |
 | `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
 | `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
@@ -281,28 +281,6 @@ MessageBird configuration options (v1.2.0+):
 | --------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `MESSAGEBIRD_API_KEY`             | The API key to the MessageBird API                                                                 |
 | `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
-
-### Recommended Option Settings
-
-#### `SMS_PROVIDERS_<country>`
-
-Based on observed performance, we recommend the following country-specific provider configuration:
-
-```bash
-# v1.5.0+
-SMS_PROVIDERS_CN=twiliomessaging
-SMS_PROVIDERS_VN=messagebird,twilioverify
-SMS_PROVIDERS_TR=twilioverify
-# 10DLC - ensure toll-free number registered with messagebird or remove
-SMS_PROVIDERS_US=twilioverify,messagebird
-# v1.2.0+
-SMS_PROVIDERS_BR=messagebird,twilio
-SMS_PROVIDERS_IN=messagebird,twilio
-SMS_PROVIDERS_VE=messagebird,twilio
-SMS_PROVIDERS_GH=messagebird,twilio
-SMS_PROVIDERS_PH=messagebird,twilio,nexmo
-SMS_PROVIDERS_DE=messagebird,twilio
-```
 
 ## Registering Metadata
 
