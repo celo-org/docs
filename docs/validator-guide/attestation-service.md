@@ -106,7 +106,7 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version v1.5.0 onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
 
-For sending messages to the US, we recommend using the `twilioverify` API exclusively in order to comply with 10DLC regulations. Otherwise, you may need to [register your brand](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-) in order to avoid fees.
+For sending messages to the US, we recommend using the Twilio Verify API(provider: `twilioverify`) as opposed to the Messaging Service in order to comply with 10DLC regulations (this can be specified in the `SMS_PROVIDERS_US` variable). Otherwise, you may need to [register your brand](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-) in order to avoid fees.
 
 ### Nexmo
 
