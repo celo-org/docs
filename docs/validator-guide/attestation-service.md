@@ -9,6 +9,13 @@ How to configure, run, and manage an attestation service as a Celo Validator.
 
 ---
 
+:::caution New update (as of March 2022)
+
+Please check the updated provider guidance to make sure your Attestation Service complies with 10DLC regulations in the US; in particular, look at: [Twilio](#verify-service-post-v140) and [Messagebird](#messagebird) configuration guidance below.
+
+:::
+
+
 :::tip
 
 Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator-guide/celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
@@ -106,11 +113,13 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version v1.5.0 onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
 
+For sending messages to the US, we recommend using the Twilio Verify API(provider: `twilioverify`) as opposed to the Messaging Service in order to comply with 10DLC regulations (this can be specified in the `SMS_PROVIDERS_US` variable). Otherwise, you may need to [register your brand](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-) in order to avoid fees.
+
 ### Nexmo
 
 After signing up for [Nexmo](https://dashboard.nexmo.com/sign-up), click the balance in the top-left to go to [Billing and Payments](https://dashboard.nexmo.com/billing-and-payments), where you can add funds. It is strongly recommended that you use a credit or debit card (as opposed to other forms of payment) as you will then be able to enable `Auto reload`. You should also enable `Low balance alerts`. Both of these will help avoid failing to deliver SMS when your funds are exhausted. It appears that these options may not be immediately available for all new accounts due to fraud checks: try sending a few SMS, checking back after a few days, or raising a support ticket.
 
-Under [Your Numbers](https://dashboard.nexmo.com/your-numbers), create a US number and ensure that is enabled for SMS. Note that Nexmo numbers appear to have a rate limit of 250 SMS per day.
+Under [Your Numbers](https://dashboard.nexmo.com/your-numbers), create a US number and ensure that is enabled for SMS; this number will be used to send *international* text messages. Note that Nexmo numbers appear to have a rate limit of 250 SMS per day. We recommend configuring your Attestation Service to **not** use Nexmo to serve the US (i.e. remove `nexmo` in `SMS_PROVIDERS_US`). If you still want to do so, please configure a US toll-free number according to the [guidance here](https://www.notion.so/clabsco/10DLC-Guidance-6f23dcff502f45b4afae02254c629c61#94d870c4f85745039d4141a5343232a2) and ensure that your Attestation Service is running at `v1.2.2+`.
 
 Under [Settings](https://dashboard.nexmo.com/settings), copy the API key into the environment variable `NEXMO_KEY`, and API secret into `NEXMO_SECRET`.
 
@@ -122,7 +131,15 @@ Note that from version 1.2.0, the Attestation Service no longer requires callbac
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA (see below) and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries. You can find guidance on filling in the required information [here](https://www.notion.so/clabsco/SMS-Provider-Validator-Support-Template-e168d45219e844e8a826c1ccefb5a06a).
+
+Due to 10DLC regulations from 2021, we now recommend setting up a toll-free number to serve US numbers. Please see [this page](https://www.notion.so/clabsco/10DLC-Guidance-6f23dcff502f45b4afae02254c629c61#455a4f8fcdc04804b2542b463e4e59c4) for more guidance on how to request a toll-free number and how to fill out the necessary form. If you do not set up a toll-free number, you must either register your brand according to the [instructions here](https://support.messagebird.com/hc/en-us/articles/208747865-United-States#h_01FEBCSJKT19C5BB7VPP07XJDD) OR remove `messagebird` from your configuration of `SMS_PROVIDERS_US`.
+
+:::warning
+
+Failure to comply with 10DLC regulations in the US can potentially result in fines or blocked traffic.
+
+:::
 
 ## Installation
 
@@ -201,7 +218,7 @@ export DATABASE_URL="postgres://postgres:<DATABASE_PASSWORD>@localhost:5432/atte
 
 ## Configuration
 
-Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. It is recommended that you start using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development):
+Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. We **highly recommend** that you start by using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development), which contains up-to-date, sensible defaults especially for `SMS_PROVIDERS_<country>`:
 
 ```bash
 # Choose a location for the config and fetch the defaults
@@ -231,7 +248,7 @@ Optional environment variables:
 | `ATTESTATION_SIGNER_KEYSTORE_PASSPHRASE` | (v1.4.0+) Passphrase used to encrypt `ATTESTATION_SIGNER_ADDRESS`'s keystore file. Must be used with `ATTESTATION_SIGNER_KEYSTORE_DIRPATH` |
 | `PORT`                       | Port to listen on. Default `3000`.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `RATE_LIMIT_REQS_PER_MIN`    | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`.                                                                                                                                                                                                                                                                                                                                                    |
-| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). See the [Recommended Option Settings Section](#sms_providers_country) below for guidance on configuring this. |
+| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). We **highly recommend** using the [default configuration file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development#L21) as a base and then making changes accordingly. |
 | `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. Note: setting this to `1` is only recommended if you *do not* have Vonage/Nexmo configured as a provider. |
 | `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
 | `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
@@ -271,26 +288,6 @@ MessageBird configuration options (v1.2.0+):
 | --------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `MESSAGEBIRD_API_KEY`             | The API key to the MessageBird API                                                                 |
 | `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
-
-### Recommended Option Settings
-
-#### `SMS_PROVIDERS_<country>`
-
-Based on observed performance, we recommend the following country-specific provider configuration:
-
-```bash
-# v1.5.0+
-SMS_PROVIDERS_CN=twiliomessaging
-SMS_PROVIDERS_VN=messagebird,twilioverify
-SMS_PROVIDERS_TR=twilioverify
-# v1.2.0+
-SMS_PROVIDERS_BR=messagebird,twilio
-SMS_PROVIDERS_IN=messagebird,twilio
-SMS_PROVIDERS_VE=messagebird,twilio
-SMS_PROVIDERS_GH=messagebird,twilio
-SMS_PROVIDERS_PH=messagebird,twilio,nexmo
-SMS_PROVIDERS_DE=messagebird,twilio
-```
 
 ## Registering Metadata
 
