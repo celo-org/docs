@@ -10,7 +10,9 @@ How to configure, run, and manage an attestation service as a Celo Validator.
 ---
 
 :::caution New update (as of March 2022)
+
 Please check the updated provider guidance to make sure your Attestation Service complies with 10DLC regulations in the US; in particular, look at: [Twilio](#verify-service-post-v140) and [Messagebird](#messagebird) configuration guidance below.
+
 :::
 
 
