@@ -85,6 +85,8 @@ The Command Line Interface allows users to interact with the Celo Protocol smart
 
 ## Hosted Nodes
 
+RPC Endpoint Services
+
 ### Forno
 
 [Forno](../developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
@@ -94,6 +96,12 @@ Forno has HTTP and WebSocket endpoints that you can use to query current Celo da
 Forno can be used as an HTTP Provider with ContractKit.
 
 <PageRef url="../developer-guide/forno" pageName="Forno" />
+
+### Ankr
+
+Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
+
+<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
 
 ### Figment Datahub
 
