@@ -34,3 +34,5 @@ Contractkit includes common functionality to make it easier to get started build
 <PageRef url="/developer-guide/contractkit/setup" pageName="Setup"/>
 
 <PageRef url="/developer-guide/contractkit/usage" pageName="Using the kit"/>
+
+<PageRef url="https://celo-sdk-docs.readthedocs.io/" pageName="SDK Reference Docs"/>

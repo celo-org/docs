@@ -61,4 +61,4 @@ You can view the available reference data on the [Band Data site here](https://d
 
 ## Bandchain.js
 
-Band also has a javascript library that makes it easy to interact with BandChain directly from Javascript or Typescript applications. The library provides classes and methods for convenient to send transactions, query data, OBI encoding, and wallet management. You can [read more about it here](https://docs.bandchain.org/client-library/bandchain.js/get-started.html#).
+Band also has a javascript library that makes it easy to interact with BandChain directly from Javascript or Typescript applications. The library provides classes and methods for convenient to send transactions, query data, OBI encoding, and wallet management. You can [read more about it here](https://docs.bandchain.org/client-library/bandchain.js/getting-started.html).
