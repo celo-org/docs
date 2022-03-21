@@ -51,6 +51,32 @@ The Command Line Interface allows users to interact with the Celo Protocol smart
 
 <PageRef url="/command-line-interface/introduction" pageName="Celo CLI" />
 
+### Celo SDK Reference Docs
+
+You can find the reference documentation for all of the [Celo SDK packages](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk) found in the celo monorepo here. The SDK packages consist of:
+
+- Base
+- Connect
+- ContractKit
+- Explorer
+- Governance
+- Identity
+- Keystores
+- Network Utils
+- Transactions Uri
+- Utils
+- Wallet-base
+- Wallet-HSM
+- Wallet-HSM-AWS
+- Wallet-HSM-Azure
+- Wallet-ledger
+- Wallet-local
+- Wallet-remote
+- Wallet-rpc
+- Wallet-walletconnect
+
+<PageRef url="https://celo-sdk-docs.readthedocs.io/" pageName="Celo SDK Reference Docs" />
+
 ## Infrastructure
 
 ### BlockScout
