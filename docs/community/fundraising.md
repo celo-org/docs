@@ -241,6 +241,6 @@ The groups below have also invested in companies in the Celo Ecosystem and may b
 
 ![fundraising](/img/doc-images/fundraising/3.png)
 
-### How do I get in touch with these investors?
+## How do I get in touch with these investors?
 
 Please reach out to [celoinvestorecosystem@celo.org](mailto:celoinvestorecosystem@celo.org) with your investor presentation and a short description of the company, and your round details and we can help get you connected with interested investors in Celo’s Investor Ecosystem.
