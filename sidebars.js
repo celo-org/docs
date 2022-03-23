@@ -883,6 +883,11 @@ const sidebars = {
       id: "community/developer-events",
     },
     {
+      type: "doc",
+      label: "Fundraising",
+      id: "community/fundraising",
+    },
+    {
       type: "category",
       label: "Ambassadors",
       items: [
