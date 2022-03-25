@@ -13,56 +13,54 @@ ___
 
 ### Bundlesize
 
-The primary motivation in creating v2 was reduced bundlesize and increased real modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first dApps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. stull big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, `kit` instance is no longer required to any classes in the contractkit package, and the introduction `MiniContractKit`
-
+The primary motivation in creating v2 was reduced bundlesize and increased real modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first dApps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. still big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, `kit` instance is no longer required to any classes in the contractkit package, and the introduction `MiniContractKit`.
 
 ### Modularity
 
 #### `sideEffects:false`
 
-tells your bundler it can safely only include the code that is explicitly used, reducing real world bundlesize
+Tells your bundler it can safely only include the code that is explicitly used, reducing real world bundlesize
 
 #### `kit` no longer needed by everything
 
 In v1 Almost everything required a Kit to be passed to its constructor, effectively this meant it was impossible to use any of the classes in @celo/contractkit alone.
 
-In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed using mostly just a `Connection`(Sometimes other arguments too).
+In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed using mostly just a `Connection` (sometimes other arguments too).
 
 #### `MiniContractKit`
 
 The prize of no longer needing a full kit is that it became possible to create a slimed down minimal viable ContractKit.
 
-`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit` It drops weight by only including Access to `Accounts, GasPriceMinimum, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can setFeeCurrency, look up info about the current account, and like Full Contractkit delegates most functionality to `connection`
-
+`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit` It drops weight by only including access to `Accounts, GasPriceMinimum, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account, and like full Contractkit it delegates most functionality to `connection`.
 
 ## Get Started
 
-Upgrade The packages your project uses to the latest (in this case release beta).  For example if ContractKit and Celo Utils.
+Upgrade The packages your project uses to the latest (in this case release beta).  For example, with ContractKit and Celo utils:
 
 `yarn add @celo/contractkit@beta @celo/utils@beta`
 
-if you are directly importing any other  @celo/* packages upgrade them as well for full benefit**
+If you are directly importing any other @celo/* packages, upgrade them as well for full benefit.
 
-
-if you need them append `@celo/phone-utils@beta` `@celo/cryptographic-utils@beta`
+If you need them, append `@celo/phone-utils@beta` `@celo/cryptographic-utils@beta`.
 
 *(see section on breaks in [@celo/utils](#celoutils) to know if you need them)*
 
 ## Breaking changes
 
-Because of how we publish packages all will be upgraded to v2. However not all will have true breaking changes. Breaks are limited to
+Because of how we publish packages, all packages will be upgraded to v2. However not all packages will have breaking changes. Breaking changes are limited to:
 
 - [@celo/contractkit](#celocontractkit)
 - [@celo/utils](#celoutils)
 
-
 ### @celo/contractkit
 
-Most changes here are about eliminating the need to construct an entire kit to use classes and functions. and thus giving us the dream of a modular sdk
+Most changes are about eliminating the need to construct an entire kit to use other classes and functions.
 
 #### IdentityMetadataWrapper (idendity/metadata.ts)
 
-This had functions that took a `kit` as a param. Now Takes an AcountsWrapper class as that is all the kit was used for. This change was done so that `kit` was not required to be passed into all the classes and functions that use `IdentityMetadataWrapper`
+This had functions that took a `kit` as a param. Now it takes an AcountsWrapper class. 
+
+This change was done so that `kit` was not required to be passed into all the classes and functions that use `IdentityMetadataWrapper`.
 
 *v1
 
@@ -92,24 +90,24 @@ IdentityMetadataWrapper.fromRawString(accounts, rawData)
 
 #### AddressRegistry
 
-now takes an `Connection` instance instead of a `kit`
+Now takes an `Connection` instance instead of a `kit`.
 
 #### CeloTokens
 
-no longer requires kit instead requires a Class implementing `ContractCacheType` to be passed. Examples are `WrapperCache` or `CeloTokensCache`
+No longer requires `kit`, instead requires a Class implementing `ContractCacheType` to be passed in. Examples are `WrapperCache` or `CeloTokensCache`.
 
 #### Wrappers
 
-**Note if you were constructing wrappers with `kit.contracts.getX` no change is required.**
+**Note: if you were constructing wrappers with `kit.contracts.getX` no change is required.**
 
-Rather than take the full Kit Wrappers now construct like
+Rather than take the full Kit Wrappers, now construct it like:
 
 ```javascript
-///Most Common
+// Most Common
 constructor(connection: Connection, contract: Contract)
 // The Voting Contracts (Governance, Election, Validator, LockedGold, Slashers, and Attestations
 constructor(connection: Connection, contract: Contract, wrapperCache: WrapperCache)
- // Sorted Oracles
+// Sorted Oracles
 constructor(connection: Connection, contract: Contract, addressRegistry:  AddressRegistry)
 ```
 
