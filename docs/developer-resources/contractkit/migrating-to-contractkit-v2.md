@@ -5,6 +5,10 @@ slug: /developer-guide/contractkit/migrating-to-contractkit-v2
 ---
 
 
+How to migrate from v1 to v2 of the Celo SDK suite of packages and make use of their latest features.
+
+___
+
 ## Why v2?
 
 ### Bundlesize
