@@ -7,43 +7,50 @@ slug: /developer-guide/contractkit/migrating-to-contractkit-v2
 
 ## Why v2?
 
+### Bundlesize
+
 The primary motivation in creating v2 was reduced bundlesize and increased real modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first dApps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. stull big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, `kit` instance is no longer required to any classes in the contractkit package, and the introduction `MiniContractKit`
 
-### `sideEffects:false`
+
+### Modularity
+
+#### `sideEffects:false`
 
 tells your bundler it can safely only include the code that is explicitly used, reducing real world bundlesize
 
-### `kit` no longer needed by everything
+#### `kit` no longer needed by everything
 
 In v1 Almost everything required a Kit to be passed to its constructor, effectively this meant it was impossible to use any of the classes in @celo/contractkit alone.
 
 In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed using mostly just a `Connection`(Sometimes other arguments too).
 
-### MiniKit
+#### `MiniContractKit`
 
 The prize of no longer needing a full kit is that it became possible to create a slimed down minimal viable ContractKit.
 
 `MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit` It drops weight by only including Access to `Accounts, GasPriceMinimum, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can setFeeCurrency, look up info about the current account, and like Full Contractkit delegates most functionality to `connection`
 
-## Ok but what is the cost?
-
-Because of how we publish packages all will be upgraded to v2. However not all will have true breaking changes. Breaks are limited to
-
-`@celo/contractkit`
-`@celo/utils`
 
 ## Get Started
 
+Upgrade The packages your project uses to the latest (in this case release beta).  For example if ContractKit and Celo Utils.
+
 `yarn add @celo/contractkit@beta @celo/utils@beta`
+
+if you are directly importing any other  @celo/* packages upgrade them as well for full benefit**
 
 
 if you need them append `@celo/phone-utils@beta` `@celo/cryptographic-utils@beta`
 
-*(see section on breaks in @celo/utils to know if you need them)*
+*(see section on breaks in [@celo/utils](#celoutils) to know if you need them)*
 
-**if you are directly importing any other  @celo/* packages upgrade them as well for full benefit**
+## Breaking changes
 
-### breaks in `@celo/contractkit`
+Because of how we publish packages all will be upgraded to v2. However not all will have true breaking changes. Breaks are limited to
+
+- [@celo/contractkit](#celocontractkit)
+- [@celo/utils](#celoutils)
+
 
 ### @celo/contractkit
 
@@ -134,7 +141,7 @@ const validatorsInstance = await kit.contracts.getValidatorsWrapper()
 
 Instead of a `kit` requires only a `AddressRegistry` (uses AddressRegistry's web3 instances)
 
-### breaks in `@celo/utils`
+### @celo/utils
 
 Most of the size savings came from removing functionality from `@celo/utils` into two new packages `@celo/phone-utils` and `@celo/cryptographic-utils`
 
