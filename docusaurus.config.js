@@ -312,12 +312,6 @@ module.exports = {
         },
       ],
     },
-    gtag: {
-      // You can also use your "G-" Measurement ID here.
-      trackingID: "G-0CXEKQ81V2",
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
     algolia: {
       appId: "55M4I38S60",
       apiKey: "baed78b52be14ac907688f1dd70b41d5",
@@ -432,6 +426,12 @@ module.exports = {
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
           rehypePlugins: [katex],
+        },
+        gtag: {
+          // You can also use your "G-" Measurement ID here.
+          trackingID: "G-0CXEKQ81V2",
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
