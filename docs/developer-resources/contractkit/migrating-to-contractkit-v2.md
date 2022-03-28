@@ -57,7 +57,7 @@ Most changes are about eliminating the need to construct an entire kit to use ot
 
 #### IdentityMetadataWrapper (idendity/metadata.ts)
 
-This had functions that took a `kit` as a param. Now it takes an AcountsWrapper class. 
+This had functions that took a `kit` as a parameter. Now it takes an AccountsWrapper class. 
 
 This change was done so that `kit` was not required to be passed into all the classes and functions that use `IdentityMetadataWrapper`.
 
@@ -70,7 +70,6 @@ IdentityMetadataWrapper.fromFile(kit, path)
 
 IdentityMetadataWrapper.verifySignerForAddress(kit, hash, signature, address)
 IdentityMetadataWrapper.fromRawString(kit, rawData)
-
 ```
 
 *v2
@@ -84,20 +83,19 @@ IdentityMetadataWrapper.fromFile(accounts, path)
 
 IdentityMetadataWrapper.verifySignerForAddress(accounts, hash, signature, address)
 IdentityMetadataWrapper.fromRawString(accounts, rawData)
-
 ```
 
 #### AddressRegistry
 
-Now takes an `Connection` instance instead of a `kit`.
+Now takes an `Connection` instance instead of a `kit` instance.
 
 #### CeloTokens
 
-No longer requires `kit`, instead requires a Class implementing `ContractCacheType` to be passed in. Examples are `WrapperCache` or `CeloTokensCache`.
+No longer requires `kit`, instead it requires a class implementing `ContractCacheType` to be passed in. Examples are `WrapperCache` or `CeloTokensCache`.
 
 #### Wrappers
 
-**Note: if you were constructing wrappers with `kit.contracts.getX` no change is required.**
+**Note: If you were constructing wrappers with `kit.contracts.getX` no change is required.**
 
 Rather than take the full Kit Wrappers, now construct it like:
 
@@ -110,7 +108,7 @@ constructor(connection: Connection, contract: Contract, wrapperCache: WrapperCac
 constructor(connection: Connection, contract: Contract, addressRegistry:  AddressRegistry)
 ```
 
-The `WrapperCache` takes care of this while constructing them and most likely there will not be many situations where Wrappers were constructed  directly given they needed a kit before.
+The `WrapperCache` takes care of this while constructing them and most likely there will not be many situations where wrappers were constructed directly given they needed a `kit` before.
 
 ##### AccountsWrapper
 
@@ -119,11 +117,9 @@ The `WrapperCache` takes care of this while constructing them and most likely th
 *v1*
 
 ```ts
-
 const accountsInstance = await kit.contracts.getAccountsWrapper()
 
 accountsInstance.authorizeValidatorSigner(signer, sig)
-
 ```
 
 *v2*
@@ -133,24 +129,23 @@ accountsInstance.authorizeValidatorSigner(signer, sig)
 const accountsInstance = await kit.contracts.getAccountsWrapper()
 const validatorsInstance = await kit.contracts.getValidatorsWrapper()
 
-
-  accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
+accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
 
 ```
 
 #### Web3ContractCache
 
-Instead of a `kit` requires only a `AddressRegistry` (uses AddressRegistry's web3 instances)
+Instead of a `kit` instance, it requires only a `AddressRegistry` (uses AddressRegistry's web3 instances).
 
 ### @celo/utils
 
 Most of the size savings came from removing functionality from `@celo/utils` into two new packages `@celo/phone-utils` and `@celo/cryptographic-utils`
 
-So depending on what you used you will need to add one or both to your package.json
+So depending on what you used you will need to add one or both to your package.json.
 
 #### Phone Utils
 
-if your packages imports any of the following from `@celo/utils` you will need to change the import to `@celo/phone-utils`
+If your packages imports any of the following from `@celo/utils` you will need to change the import to `@celo/phone-utils`
 
 ##### from countries.ts
 
@@ -185,55 +180,34 @@ if your packages imports any of the following from `@celo/utils` you will need t
 ##### from phoneNumbers.ts
 
 - `getCountryCode`
-
 - `getRegionCode`
-
 - `getRegionCodeFromCountryCode`
-
 - `getDisplayPhoneNumber`
-
 - `getDisplayNumberInternational`
-
 - `getE164DisplayNumber`
-
 - `getE164Number`
-
 - `isE164NumberStrict`
-
 - `parsePhoneNumber`
-
 - `getExampleNumber`
 
 #### Cryptographic-utils
 
-if your packages imports any of the following from `@celo/utils` you will need to change the import to `@celo/cryptographic-utils`
+If your packages imports any of the following from `@celo/utils` you will need to change the import to `@celo/cryptographic-utils`
 
 ##### from account.ts
 
 - `generateKeys`
-
 - `generateKeysFromSeed`
-
 - `generateDeterministicInviteCode`
-
 - `generateSeed`
-
 - `generateMnemonic`
-
 - `validateMnemonic`
-
 - `invalidMnemonicWords`
-
 - `normalizeMnemonic`
-
 - `formatNonAccentedCharacters`
-
 - `getAllLanguages`
-
 - `mnemonicLengthFromStrength`
-
 - `detectMnemonicLanguage`
-
 - `suggestMnemonicCorrections`
 
 ##### from bls.ts
