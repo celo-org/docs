@@ -664,6 +664,11 @@ const sidebars = {
                   label: "Migrate to ContractKit v1",
                   id: "developer-resources/contractkit/migrating-to-contractkit-v1",
                 },
+                {
+                  type: "doc",
+                  label: "Migrate to ContractKit v2",
+                  id: "developer-resources/contractkit/migrating-to-contractkit-v2",
+                },
               ],
             },
             {

@@ -6,7 +6,7 @@ slug: /developer-guide/contractkit/migrating-to-contractkit-v1
 
 # Migrating to ContractKit v1.0
 
-How to migrate to the newest version of ContractKit and make use of its latest features.
+How to migrate to from prerelease of  ContractKit to v1 and make use of its features.
 
 ___
 
@@ -74,22 +74,22 @@ import { newBlockExplorer } from '@celo/explorer/lib/block-explorer'
 ### Older versions of ContractKit:
 
 ```javascript
-// version ^0.4.0 
+// version ^0.4.0
 const ContractKit = require('@celo/contractkit')
 
-// Older versions of ContractKit create a new Web3 instance internally 
+// Older versions of ContractKit create a new Web3 instance internally
 const kit = ContractKit.newKit('https://forno.celo.org')
 ```
 
 ### Version 1.x.y
 
 ```javascript
-// Since ContractKit no longer instantiates web3, you'll need to explicitly require it 
-const Web3 = require('web3') 
-const web3 = new Web3('https://forno.celo.org') 
+// Since ContractKit no longer instantiates web3, you'll need to explicitly require it
+const Web3 = require('web3')
+const web3 = new Web3('https://forno.celo.org')
 
-// Require ContractKit and newKitFromWeb3 
-const { ContractKit, newKitFromWeb3 } = require('@celo/contractkit') 
+// Require ContractKit and newKitFromWeb3
+const { ContractKit, newKitFromWeb3 } = require('@celo/contractkit')
 let contractKit = newKitFromWeb3(web3)
 ```
 ## Accessing Web3 functions
@@ -97,9 +97,9 @@ let contractKit = newKitFromWeb3(web3)
 You can access `web3` functions through the `connection` module.
 
 ```javascript
-// version ^0.4.0 
+// version ^0.4.0
 let amount = kit.web3.utils.fromWei("1000000", "ether")
- 
+
 // version 1.x.y
 let amount = kit.connection.web3.utils.fromWei("1000000", "ether")
 ```
