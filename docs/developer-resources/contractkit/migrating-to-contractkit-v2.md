@@ -133,6 +133,24 @@ accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
 
 ```
 
+##### AttestationsWrapper
+
+`AttestationsWrapper.getConfig()` and`AttestationsWrapper.getHumanReadableConfig()`
+
+These functions now require an array of fee payable token addresses. You can get these from the CeloTokens class, the Registry, or Token Contracts
+
+```typescript
+const celoTokens = kit.celoTokens
+const eachTokenAddress = await celoTokens.getAddresses()
+const addresses = Object.values(eachTokenAddress)
+
+AttestationsWrapper.getConfig(addresses)
+// OR
+AttestationsWrapper.getHumanReadableConfig(addresses)
+
+```
+
+
 #### Web3ContractCache
 
 Instead of a `kit` instance, it requires only a `AddressRegistry` (uses AddressRegistry's web3 instances).
