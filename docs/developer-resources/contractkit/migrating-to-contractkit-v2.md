@@ -30,7 +30,7 @@ In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed u
 
 The prize of no longer needing a full `kit` is that it became possible to create a slimed down minimal viable ContractKit.
 
-`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, GasPriceMinimum, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
+`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
 
 ## Get Started
 
