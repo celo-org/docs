@@ -1,5 +1,5 @@
 ---
-title: Pin/Password Encrypted Cloud Backup (PEAR 🍐)
+title: Pin/Password Encrypted Account Recovery (PEAR 🍐)
 ---
 
 Secure and reliable account key backups are critical to the experience of non-custodial wallets, and Celo more generally.
@@ -20,9 +20,9 @@ This way, the users account key backup is only accessible to someone who can acc
 Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](https://wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
 Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
 
-With these core components, we can construct a cloud backup system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
+With these core components, we can construct an account recovery system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
 
-Valora is currently working to implement encrypted cloud backup, using the user's access PIN for encryption.
+Valora is currently working to implement encrypted account recovery, using the user's access PIN for encryption.
 
 ### Similar protocols
 
@@ -39,8 +39,8 @@ Wallets may alter this flow to suite the needs of their users.
 
 ### Onboarding
 
-During onboarding on a supported device, after the PIN or password is set and the account key is created, the user should be informed about cloud backup and given a chance opt-out of cloud backup for their account.
-If they opt out, the rest of the setup should be skipped as they will not be using cloud backup.
+During onboarding on a supported device, after the PIN or password is set and the account key is created, the user should be informed about the account backup and given a chance opt-out of backup system for their account.
+If they opt out, the rest of the setup should be skipped as they will not be using this account recovery system.
 
 On Android, when the user opts-in, they should be prompted to select a Google account that they would like to use to store the backup.
 On iOS, the user need not be prompted as there is a single Apple account on the device and the permissions architecture allows access to application-specific iCloud data without prompting the user.
@@ -51,11 +51,11 @@ The encrypted mnemonic and metadata, including the salt, should be stored in the
 
 ### Recovery
 
-During recovery, the application should determine if a cloud backup is available.
+During recovery, the application should determine if a backup is available in their cloud account.
 On iOS, this can be done automatically.
-On Android, the user may choose to restore from cloud backup, at which point they should be prompted to choose their Google account.
+On Android, the user may choose to restore from a cloud backup, at which point they should be prompted to choose their Google account.
 
-If a backup is available the user may select to restore from cloud backup, at which point they should be asked for their PIN or password.
+If a backup is available the user may select to restore from a cloud backup, at which point they should be asked for their PIN or password.
 Given the PIN or password, the application should combine it with the salt value and query ODIS to retrieve the hardened key for decrypting the account key backup.
 If successful, the user will be sent to the home screen.
 If unsuccessful, the user will be given the option to try again or enter their mnemonic phrase instead.

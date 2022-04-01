@@ -12,7 +12,7 @@ Computationally expensive password hashing functions, such as PBKDF and scrypt, 
 ODIS implements hashing (i.e. PRF evaluation) with a rate limit controlled by the committee of ODIS operators, and can be used to harden a password into a stronger cryptographic key.
 As long as this committee remains collectively honest and secure, an attacker cannot make more guesses at a users password than ODIS allows, making it extremely unlikely a good password will be broken.
 
-Using ODIS for key hardening allows passwords to be used in a number of applications, including to create [encrypted cloud backups](/celo-codebase/protocol/identity/encrypted-cloud-backup) and as a factor in [smart contract account recovery](/celo-codebase/protocol/identity/smart-contract-accounts).
+Using ODIS for key hardening allows passwords to be used in a number of applications, including to create [encrypted account backups](/celo-codebase/protocol/identity/encrypted-cloud-backup) and as a factor in [smart contract account recovery](/celo-codebase/protocol/identity/smart-contract-accounts).
 
 ## Rate limiting
 
