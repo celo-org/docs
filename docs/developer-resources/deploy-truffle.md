@@ -74,7 +74,7 @@ You can launch VS Code from the command line by <a href="https://code.visualstud
 
 Create a file named **HelloCelo.sol **in the **contracts** directory and populate it with the Solidity code below.
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 

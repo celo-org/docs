@@ -8,15 +8,18 @@ id: overview
 
 Overview of the Celo platform and it's relationship to the Ethereum blockchain.
 
-___
+---
+
 ## What is the Celo Platform?
 
 Celo is a complete stack of new blockchain software, core libraries that run on that blockchain, and end-user applications including a Wallet app that communicate with that logic.
+
 ### Blockchain
 
 A **blockchain** or **cryptographic network** is a broad term used to describe a database maintained by a distributed set of computers that do not share a trust relationship or common ownership. This arrangement is referred to as **decentralized**. The content of a blockchain's database, or **ledger**, is authenticated using cryptographic techniques, preventing its contents from being added to, edited or removed except according to a protocol operated by the network as a whole.
 
 The code of the Celo Blockchain has shared ancestry with [Ethereum](https://www.ethereum.org), blockchain software for building general-purpose decentralized applications. Celo differs from Ethereum in several important areas as described in the following sections. However, it inherits a number of key concepts.
+
 ## Smart Contracts
 
 Ethereum applications are built using **smart contracts**. Smart contracts are programs written in languages like [Solidity](https://solidity.readthedocs.io/en/v0.5.10/) that produce bytecode for the **Ethereum Virtual Machine** or **EVM**, a runtime environment. Programs encoded in smart contracts receive messages and manipulate the blockchain ledger and are termed **on-chain**.
@@ -35,13 +38,13 @@ Celo assets exist on an independent blockchain, and cannot be accessed through w
 
 ## Transactions
 
-Users interact with the blockchain by creating signed **transactions.** These are requests to make a change to the ledger. 
+Users interact with the blockchain by creating signed **transactions.** These are requests to make a change to the ledger.
 
-**Transactions can complete the following actions** 
+**Transactions can complete the following actions**
 
-* Transfer value between accounts 
-* Execute a function in a smart contract and pass in arguments
-* Create a new smart contract
+- Transfer value between accounts
+- Execute a function in a smart contract and pass in arguments
+- Create a new smart contract
 
 ## Blocks
 

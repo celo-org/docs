@@ -8,6 +8,7 @@ authors:
     url: https://github.com/critesjosh
     image_url: https://github.com/critesjosh.png
 tags: [code playground]
+image: https://dl.airtable.com/.attachmentThumbnails/a7e530eb72ac8f30f37c0a3447ef0e7d/72e944da
 hide_table_of_contents: false
 ---
 

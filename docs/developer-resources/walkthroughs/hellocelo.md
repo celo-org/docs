@@ -1,8 +1,8 @@
 ---
-title: Sending CELO & cUSD
+title: Sending CELO & Stable Assets
 slug: /developer-guide/start/hellocelo
 ---
-# Sending CELO & cUSD
+# Sending CELO & Stable Assets
 
 How to connect to the Celo test network and tranfer tokens using ContractKit.
 
@@ -23,9 +23,9 @@ We assume you already have Node.js and NPM installed on your computer.
 At the end of this guide, you will be able to:
 
 * Connect to the Celo test network, called Alfajores
-* Get test CELO and Celo Dollars (cUSD) from the faucet
+* Get test CELO, Celo Dollars (cUSD) and Celo Euros (cEUR) from the faucet
 * Read account and contract information from the test network
-* Transferring CELO and cUSD on the test network
+* Transferring CELO, cUSD and cEUR on the test network
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ We will be writing our Node.js app in the `helloCelo.js` file.
 
 Import the contract kit into our script with
 
-```javascript
+```javascript title="helloCelo.js"
 // 1. Import web3 and contractkit 
 const Web3 = require("web3")
 const ContractKit = require('@celo/contractkit')
@@ -56,7 +56,7 @@ const ContractKit = require('@celo/contractkit')
 
 Now we can use the ContractKit to connect to the test network.
 
-```javascript
+```javascript title="helloCelo.js"
 // 2. Init a new kit, connected to the alfajores testnet
 const web3 = new Web3('https://alfajores-forno.celo-testnet.org')
 const kit = ContractKit.newKitFromWeb3(web3)
@@ -80,25 +80,28 @@ The Celo blockchain has two native assets, CELO \(CELO\) and the Celo Dollar \(c
 
 Let's read some token balances from the blockchain. Add the following line in the `readAccount()` function.
 
-```javascript
+```javascript title="helloCelo.js"
 // 3. Get the token contract wrappers
-let goldtoken = await kit.contracts.getGoldToken()
-let stabletoken = await kit.contracts.getStableToken()
+let celotoken = await kit.contracts.getGoldToken()
+let cUSDtoken = await kit.contracts.getStableToken()
+let cEURtoken = await kit.contracts.getStableToken('cEUR')
 ```
 
 We can get the CELO balance of an account using the token wrappers like `goldtoken.balanceOf(address)`. Let's check the balance of this address `'0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'`.
 
-```javascript
+```javascript title="helloCelo.js"
 // 4. Address to look up
 let anAddress = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 
 // 5. Get token balances
-let celoBalance = await goldtoken.balanceOf(anAddress)
-let cUSDBalance = await stabletoken.balanceOf(anAddress)
+let celoBalance = await celotoken.balanceOf(anAddress)
+let cUSDBalance = await cUSDtoken.balanceOf(anAddress)
+let cEURBalance = await cEURtoken.balanceOf(anAddress)
 
 // Print balances
 console.log(`${anAddress} CELO balance: ${celoBalance.toString()}`)
 console.log(`${anAddress} cUSD balance: ${cUSDBalance.toString()}`)
+console.log(`${anAddress} cEUR balance: ${cEURBalance.toString()}`)
 ```
 
 The `balanceOf(address)` function also returns a Promise, so we wait for the promise to resolve then we print the result.
@@ -145,7 +148,7 @@ This is not the standard way of managing Celo accounts. In a production environm
 
 We can now use this `account` to get account information \(ie the private key and account address\) and to send transactions from `account.address`. Add the following code to read the account balance. Continue adding to `helloCelo.js`.
 
-```javascript
+```javascript title="helloCelo.js"
 //
 // Create an Account
 //
@@ -153,22 +156,25 @@ We can now use this `account` to get account information \(ie the private key an
 // 6. Import the getAccount function
 const getAccount = require('./getAccount').getAccount
 
-async function createAccount(){
+async function getBalances(){
     // 7. Get your account
     let account = await getAccount()
     
     // 8. Get the token contract wrappers
-    let goldtoken = await kit.contracts.getGoldToken()
-    let stabletoken = await kit.contracts.getStableToken()
+    let celotoken = await kit.contracts.getGoldToken()
+    let cUSDtoken = await kit.contracts.getStableToken()
+    let cEURtoken = await kit.contracts.getStableToken('cEUR')
     
     // 9. Get your token balances
-    let celoBalance = await goldtoken.balanceOf(account.address)
-    let cUSDBalance = await stabletoken.balanceOf(account.address)
-
+    let celoBalance = await celotoken.balanceOf(account.address)
+    let cUSDBalance = await cUSDtoken.balanceOf(account.address)
+    let cEURBalance = await cEURtoken.balanceOf(account.address)
+    
     // Print your account info
     console.log(`Your account address: ${account.address}`)
     console.log(`Your account CELO balance: ${celoBalance.toString()}`)
     console.log(`Your account cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your account cEUR balance: ${cEURBalance.toString()}`)
 }
 ```
 
@@ -198,7 +204,7 @@ You may notice that the account balance is a bit smaller than the amount of toke
 
 Add the following code to the `send()` function in `helloCelo.js` to send a transaction.
 
-```javascript
+```javascript title="helloCelo.js"
 async function send(){
     // 10. Get your account
     let account = await getAccount()
@@ -213,29 +219,35 @@ async function send(){
     let amount = 100000
 
     // 14. Get the token contract wrappers    
-    let goldtoken = await kit.contracts.getGoldToken()
-    let stabletoken = await kit.contracts.getStableToken()
+    let celotoken = await kit.contracts.getGoldToken()
+    let cUSDtoken = await kit.contracts.getStableToken()
+    let cEURtoken = await kit.contracts.getStableToken('cEUR')
     
     // 15. Transfer CELO and cUSD from your account to anAddress
-    // Specify cUSD as the feeCurrency when sending cUSD
-    let celotx = await goldtoken.transfer(anAddress, amount).send({from: account.address})
-    let cUSDtx = await stabletoken.transfer(anAddress, amount).send({from: account.address, feeCurrency: stabletoken.address})
-    
+    // Optional: specify the feeCurrency, default feeCurrency is CELO
+    let celotx = await celotoken.transfer(anAddress, amount).send({from: account.address})
+    let cUSDtx = await cUSDtoken.transfer(anAddress, amount).send({from: account.address, feeCurrency: cUSDtoken.address})
+    let cEURtx = await cEURtoken.transfer(anAddress, amount).send({from: account.address})
+
     // 16. Wait for the transactions to be processed
     let celoReceipt = await celotx.waitReceipt()
     let cUSDReceipt = await cUSDtx.waitReceipt()
+    let cEURReceipt = await cEURtx.waitReceipt()
     
     // 17. Print receipts
     console.log('CELO Transaction receipt: %o', celoReceipt)
     console.log('cUSD Transaction receipt: %o', cUSDReceipt)
+    console.log('cEUR Transaction receipt: %o', cEURReceipt)
     
     // 18. Get your new balances
-    let celoBalance = await goldtoken.balanceOf(account.address)
-    let cUSDBalance = await stabletoken.balanceOf(account.address)
+    let celoBalance = await celotoken.balanceOf(account.address)
+    let cUSDBalance = await cUSDtoken.balanceOf(account.address)
+    let cEURBalance = await cEURtoken.balanceOf(account.address)
     
     // 19. Print new balance
     console.log(`Your new account CELO balance: ${celoBalance.toString()}`)
     console.log(`Your new account cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your new account cUSD balance: ${cEURBalance.toString()}`)
 }
 ```
 
@@ -299,8 +311,8 @@ Once you have successfully created the ContractKit, you can use the various Celo
 ```javascript
 // Use the gold token contract to transfer tokens
 const transfer = async (from, to, amount) => {
-  const goldTokenContract = await kit.contracts.getGoldToken();
-  const tx = await goldTokenContract.transfer(to, amount).send({ from });
+  const celoTokenContract = await kit.contracts.getGoldToken();
+  const tx = await celoTokenContract.transfer(to, amount).send({ from });
   const receipt = await tx.waitReceipt();
   console.log("Transaction Receipt: ", receipt);
 };

@@ -51,6 +51,10 @@ All balances of CELO or Celo Dollars are expressed in units of 10^-18.
 
 You can find the Celo CLI package on NPM [here](https://www.npmjs.com/package/@celo/celocli).
 
+To see all available commands, run `celocli commands`.
+
+To see all available flags for a command, add the flag `--globalHelp` to the command.
+
 ## Optional: Run a Full Node
 
 Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/index.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/mainnet/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
@@ -67,9 +71,33 @@ You can verify that `celocli` is connected by running
 celocli config:get
 ```
 
+## Import Accounts
+
+If you are connecting to a remote node (like Forno), Celo CLI will need to sign transactions locally before sending them. To do this, Celo CLI needs access to a private key. There are a couple ways to sign transactions using Celo CLI.
+
+### Import Private Key (less secure)
+
+Add the `--privateKey` flag followed by the private key associated with the sending account. For example:
+
+```shell
+celocli transfer:celo --from <accountAddress> --to <addressOfChoice> --value <valueInCeloWei> --privateKey <privateKey> --node https://forno.celo.org
+```
+
+Or you can use a Ledger hardware wallet. (preferred, see below)
+
 ## Using a Ledger Wallet
 
-The Celo CLI supports using a [Ledger hardware wallet](../celo-holder-guide/ledger.md) to sign transactions.
+The Celo CLI supports using a [Ledger hardware wallet](../celo-holder-guide/ledger.md) to sign transactions. Just add the `--useLedger` flag to a command that requires a signature.
+
+You can specify the number of addresses to get for local signing with the `--ledgerAddresses` flag.
+
+You can specify an array of index addresses for local signing. Example `--ledgerCustomAddresses "[4,99]"`.
+
+For example: 
+
+```shell
+celocli transfer:celo --to <addressOfChoice> --value 1000000 --from <accountAddress> --useLedger
+```
 
 ## Plugins
 

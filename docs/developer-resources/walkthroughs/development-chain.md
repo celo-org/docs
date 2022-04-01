@@ -14,11 +14,25 @@ ___
 
 At the end of this tutorial, you will have a local Celo development blockchain running exposed at [http://localhost:7545](http://localhost:7545) and will be able to connect to it like any other local node. We will also go over how to inspect the development blockchain using the [Celo CLI tool](../command-line-interface/introduction) and the [ContractKit](../developer-guide/contractkit).
 
-Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with cGLD and cUSD and all transactions on the network are virtually instant.
+Running the development Celo blockchain is helpful because it greatly speeds up development time. You will start with 10 accounts pre-funded with CELO and all transactions on the network are virtually instant.
 
-You can run the development Celo blockchain in two ways:
+You can run the development Celo blockchain in several ways:
 
-### 1. Use the celo-devchain NPM package
+### Use Ganache to fork Mainnet or Alfajores
+
+You can start a local EVM development blockchain with [Ganache](https://trufflesuite.com/docs/ganache/index.html). Once Ganache is installed you can fork Mainnet or Alfajores with a single command. Read more about it in the [Ganache docs here](https://trufflesuite.com/blog/introducing-ganache-7/index.html#1-zero-config-mainnet-forking).
+
+```shell
+ganache --fork.url https://forno.celo.org
+```
+
+This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts like the [Reserve](https://explorer.celo.org/address/0xc683e6f77B58D814B31F8661331EbDf63785D607/contracts), [cUSD](https://explorer.celo.org/address/0x765DE816845861e75A25fCA122bb6898B8B1282a/contracts), [cEUR](https://explorer.celo.org/token/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/token-transfers), [Accounts](https://explorer.celo.org/address/0x7d21685C17607338b313a7174bAb6620baD0aaB7/read-proxy), Governance and [other contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts). 
+
+You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment. 
+
+Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum enviroment. It behaves similarly to the Celo EVM but not exactly.
+
+### Use the celo-devchain NPM package
 
 The easiest is to use a "pre-generated" devchain from the [celo-devchain](https://github.com/zviadm/celo-devchain) NPM package. For that all you have to do is:
 
@@ -32,7 +46,7 @@ or
 > yarn run celo-devchain --port 7545
 ```
 
-### 2. Initialize your own devchain from the monorepo
+### Initialize your own devchain from the monorepo
 
 If you prefer, you can initialize your own devchain and build it from scratch. To start, download the Celo monorepo [here](https://github.com/celo-org/celo-monorepo) or with the following command.
 

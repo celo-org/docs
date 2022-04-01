@@ -1,18 +1,26 @@
 ---
-title: Recover ETH or ERC-20 tokens from a Celo Address
-description: How to recover CELO (previously Celo Gold) if you accidentally transferred them to an Ethereum address.
+title: Recover CELO from an Ethereum Address
+description: How to recover CELO (previously Celo Gold) if you accidentally transferred them to an account generated using an Ethereum wallet.
 slug: /celo-owner-guide/eth-recovery
 ---
 
-# Recover ETH or ERC-20 tokens from a Celo Address
+# Recover CELO from an Ethereum Address
 
-How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an [Ethereum address](https://wikipedia.org/wiki/Ethereum#Addresses).
+How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an account generated using an Ethereum wallet.
+
+:::note
+
+You only need to go through this process when going from mnemonic (secret phrase) to account because of the different account derivation paths between Celo and Ethereum. This is only relevant if you're using a wallet that can’t connect to both the Ethereum and Celo networks or you can’t export the private key. Private key--account pairs are the same for both Celo and Ethereum, it's just menemonic (secret phrase) to private keys that are different.
+
+With Metamask, recovery is easy because you just switch Metamask to the network where the funds are--the accounts and private keys for both networks are the same. The problem occurs when the wallet only accepts the secret phrase and derives private keys and accounts differently based on the network it is designed for.
+
+:::
 
 ___
 
 ## Prerequisites
 
-This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Account Key').
+This guide assumes you have access to the recipient's mnemonic recovery phrase (note, in Valora and Celo Wallet it's called your 'Recovery Phrase').
 
 :::danger
 
@@ -28,7 +36,7 @@ The Celo Wallet for Web and Desktop can be used to import mnemonic phrases with 
 
 1. Visit [celowallet.app](https://celowallet.app) in a modern browser (Chrome is recommended).
 2. For small accounts, you can import in the web version directly. For larger accounts, downloading the desktop version is **strongly** recommended.
-3. Click 'Use Existing Account', then 'Use Account Key', then choose the 'Advanced' tab.
+3. Click 'Use Existing Account', then 'Use Recovery Phrase', then choose the 'Advanced' tab.
 4. Specify your deriviation path and click import.
 5. Set a strong password and click Continue. You should reach the home screen and see your account funds.
 
@@ -42,7 +50,7 @@ Once you've been able to access your funds, it's recommended that you move them 
 2. Copy the address of your new account
 3. In the first Celo Wallet window, click the Send button in the top-left.
 4. Send your funds to your new account.
-5. If you intend to keep this new account permanently, be sure to save its password and account key in a safe place!
+5. If you intend to keep this new account permanently, be sure to save its password and recovery phrase in a safe place!
 
 ## Recovering with the Celo CLI
 

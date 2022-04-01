@@ -130,3 +130,7 @@ Verifying a smart contract allows developers to review your code from within the
 
 * Click **Verify & Publish**
 * Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
+
+### Hardhat-deploy plugin
+
+You can read an in depth guide about how to deploy and verify contracts on Celo programmatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).

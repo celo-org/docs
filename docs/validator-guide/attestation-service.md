@@ -2,11 +2,19 @@
 title: Celo Attestation Service
 descriptin: How to configure, run, and manage an attestation service as a Celo Validator.
 ---
+
 # Attestation Service
 
 How to configure, run, and manage an attestation service as a Celo Validator.
 
-___
+---
+
+:::caution New update (as of March 2022)
+
+Please check the updated provider guidance to make sure your Attestation Service complies with 10DLC regulations in the US; in particular, look at: [Twilio](#verify-service-post-v140) and [Messagebird](#messagebird) configuration guidance below.
+
+:::
+
 
 :::tip
 
@@ -36,7 +44,10 @@ This guide steps you through setting up an Attestation Service:
 
 ## Recent releases
 
-- [Attestation Service v1.2.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.2.0) (latest production release)
+- [Attestation Service v1.5.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.5.0) (latest production release)
+- [Attestation Service v1.4.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.4.0)
+- [Attestation Service v1.3.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.3.0)
+- [Attestation Service v1.2.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.2.0)
 - [Attestation Service v1.1.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.1.0)
 
 ## Deployment Architecture
@@ -45,7 +56,7 @@ Attestation Service needs to expose a HTTP or HTTPS endpoint to the public Inter
 
 The `PORT` environment variable sets the listening port for the service on the local instance. Note that depending on your setup, this may be different from the port exposed to the public Internet.
 
-Attestation Service exposes a HTTP endpoint, but it is strongly recommended that you adopt a setup that implements TLS. Attestation Service must expose the following routes to the public Internet: POST `/attestations`, POST `/test_attestations`, GET `/get_attestations`, POST `/delivery_status_twilio`, POST `/delivery_status_nexmo`, and (from version 1.2.0) GET (not POST) `/delivery_status_messagebird`. It should also expose GET `/status`. Optionally you may choose to expose GET `/healthz` and GET `/metrics`. Note that the URL provided in the validator metadata should not include any of these suffixes.
+Attestation Service exposes a HTTP endpoint, but it is strongly recommended that you adopt a setup that implements TLS. Attestation Service must expose the following routes to the public Internet: POST `/attestations`, POST `/test_attestations`, GET `/get_attestations`, POST `/delivery_status_nexmo`, (v1.5.0+) POST `/delivery_status_twilioverify`, (v1.5.0+) POST `/delivery_status_twiliomessaging`, (pre-v1.5.0) POST `/delivery_status_twilio`, and (v1.2.0+) GET (not POST) `/delivery_status_messagebird`. It should also expose GET `/status`. Optionally you may choose to expose GET `/healthz` and GET `/metrics`. Note that the URL provided in the validator metadata should not include any of these suffixes.
 
 From Attestation Service version 1.4.0 onwards, there are two ways of deploying the Attestation Service. We recommend that new validators use the file keystore method (instead of using a Celo full node) for key management, and that existing validators eventually migrate to the new architecture.
 
@@ -64,6 +75,7 @@ Every record in the database includes the issuer (i.e. validator) in its key, so
 Currently the Attestation Service supports three SMS providers:
 
 - [Twilio](https://www.twilio.com/try-twilio)
+  - from v1.5.0, the Attestation Service treats the Twilio Messaging Service (`twiliomessaging`) and the Twilio Verify API (`twilioverify`) as separate providers.
 - [Nexmo](https://dashboard.nexmo.com/sign-up)
 - [MessageBird](https://messagebird.com/en/) (from version 1.2.0 and later)
 
@@ -99,23 +111,35 @@ After Twilio enables custom codes, you'll see the following property in the Twil
 
 ![Custom Code Property](https://storage.googleapis.com/celo-website/docs/custom-code.png)
 
-Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version `v1.5.0` onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
+Once you have confirmation that custom codes are enabled on your Twilio account, you can provide the resulting `SID` in the `TWILIO_VERIFY_SERVICE_SID` configuration variable and start the service. Since there are a few countries for which the Messaging Service consistently outperforms the Verify Service (and vice versa), from version v1.5.0 onwards, we treat the Messaging and Verify services as separate SMS providers which can be specified as `twiliomessaging` and `twilioverify`, respectively. These providers can be specified on a per-country basis; that is, you could specify the Messaging Service to be used for a particular country by setting `SMS_PROVIDERS_X=twiliomessaging,nexmo,...`. (Note that `twilio` will continue to work as shorthand for `twiliomessaging,twilioverify`, to maintain backwards compatibility.)
+
+For sending messages to the US, we recommend using the Twilio Verify API(provider: `twilioverify`) as opposed to the Messaging Service in order to comply with 10DLC regulations (this can be specified in the `SMS_PROVIDERS_US` variable). Otherwise, you may need to [register your brand](https://support.twilio.com/hc/en-us/articles/1260801864489-How-do-I-register-to-use-A2P-10DLC-messaging-) in order to avoid fees.
 
 ### Nexmo
 
 After signing up for [Nexmo](https://dashboard.nexmo.com/sign-up), click the balance in the top-left to go to [Billing and Payments](https://dashboard.nexmo.com/billing-and-payments), where you can add funds. It is strongly recommended that you use a credit or debit card (as opposed to other forms of payment) as you will then be able to enable `Auto reload`. You should also enable `Low balance alerts`. Both of these will help avoid failing to deliver SMS when your funds are exhausted. It appears that these options may not be immediately available for all new accounts due to fraud checks: try sending a few SMS, checking back after a few days, or raising a support ticket.
 
-Under [Your Numbers](https://dashboard.nexmo.com/your-numbers), create a US number and ensure that is enabled for SMS. Note that Nexmo numbers appear to have a rate limit of 250 SMS per day.
+Under [Your Numbers](https://dashboard.nexmo.com/your-numbers), create a US number and ensure that is enabled for SMS; this number will be used to send *international* text messages. Note that Nexmo numbers appear to have a rate limit of 250 SMS per day. We recommend configuring your Attestation Service to **not** use Nexmo to serve the US (i.e. remove `nexmo` in `SMS_PROVIDERS_US`). If you still want to do so, please configure a US toll-free number according to the [guidance here](https://www.notion.so/clabsco/10DLC-Guidance-6f23dcff502f45b4afae02254c629c61#94d870c4f85745039d4141a5343232a2) and ensure that your Attestation Service is running at `v1.2.2+`.
 
 Under [Settings](https://dashboard.nexmo.com/settings), copy the API key into the environment variable `NEXMO_KEY`, and API secret into `NEXMO_SECRET`.
 
 If you wish to partition the numbers used within this account, you may choose to create and configure a [Nexmo application](https://dashboard.nexmo.com/applications/) for each one. In each application, enable messaging (labeled as `Communicate with WhatsApp, Facebook Messenger, MMS and Viber`) and assign a number. Copy each application's `Application Id` value into the appropriate instance's `NEXMO_APPLICATION` configuration value. There is no need to generate or use a public/private keypair. By default an Attestation Service will pick a number from the global pool of numbers not linked to a specific Nexmo application. The only effect of supplying `NEXMO_APPLICATION` is to select numbers from those linked to that application.
 
-Note that Attestation Service from version 1.2.0 no longer requires callback URLs to be supplied in the Nexmo dashboard, so supports using a single account for multiple Attestation Services.
+Note that from version 1.2.0, the Attestation Service no longer requires callback URLs to be supplied in the Nexmo dashboard. This means one can support multiple Attestation Services using a single account. However to receive the delivery receipts from Nexmo, it is important to update the default HTTP method in the Nexmo dashboard to `POST-JSON` (see image below or follow the [instructions here](https://help.nexmo.com/hc/en-us/articles/206345667)), since the Attestation Service currently expects POST requests routed to the `/delivery_status_nexmo` endpoint.
+
+![](https://storage.googleapis.com/celo-website/nexmo-post-json-default-1.png)
 
 ### MessageBird
 
-MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries.
+MessageBird support is introduced in version 1.2.0 and later. After signing up for [MessageBird](https://messagebird.com/en/), locate the `Your API Keys` section on the [Dashboard](https://dashboard.messagebird.com/en/user/index), click `Show` next to the `Live` key, and copy its value into the `MESSAGEBIRD_API_KEY` configuration variable. Click `Top Up` to add credit. MessageBird requires a dedicated number and/or KYC approval to send SMS to certain countries that validators must support. Click `Numbers` then [Buy Number](https://dashboard.messagebird.com/en/numbers/buy/search) to purchase a number. You will need to purchase separate numbers for both the USA (see below) and Canada. Then visit [SMS Settings](https://dashboard.messagebird.com/en/settings/sms) and request approval to send to these countries. You can find guidance on filling in the required information [here](https://www.notion.so/clabsco/SMS-Provider-Validator-Support-Template-e168d45219e844e8a826c1ccefb5a06a).
+
+Due to 10DLC regulations from 2021, we now recommend setting up a toll-free number to serve US numbers. Please see [this page](https://www.notion.so/clabsco/10DLC-Guidance-6f23dcff502f45b4afae02254c629c61#455a4f8fcdc04804b2542b463e4e59c4) for more guidance on how to request a toll-free number and how to fill out the necessary form. If you do not set up a toll-free number, you must either register your brand according to the [instructions here](https://support.messagebird.com/hc/en-us/articles/208747865-United-States#h_01FEBCSJKT19C5BB7VPP07XJDD) OR remove `messagebird` from your configuration of `SMS_PROVIDERS_US`.
+
+:::warning
+
+Failure to comply with 10DLC regulations in the US can potentially result in fines or blocked traffic.
+
+:::
 
 ## Installation
 
@@ -165,7 +189,7 @@ You can now run the node for the attestation service in the background with the 
 ```bash
 # On the Attestation machine
 echo <CELO-ATTESTATION-SIGNER-PASSWORD> > .password
-docker run --name celo-attestations -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
+docker run --name celo-attestations -it --restart always --stop-timeout 300 -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin --unlock $CELO_ATTESTATION_SIGNER_ADDRESS --password /root/.celo/.password --allow-insecure-unlock
 ```
 
 ### Database Configuration
@@ -194,7 +218,7 @@ export DATABASE_URL="postgres://postgres:<DATABASE_PASSWORD>@localhost:5432/atte
 
 ## Configuration
 
-Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. It is recommended that you start using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development):
+Attestation Service can use its config from a file that can be specified using `CONFIG` environment variable. We **highly recommend** that you start by using the [template Attestation Service config file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development), which contains up-to-date, sensible defaults especially for `SMS_PROVIDERS_<country>`:
 
 ```bash
 # Choose a location for the config and fetch the defaults
@@ -224,11 +248,11 @@ Optional environment variables:
 | `ATTESTATION_SIGNER_KEYSTORE_PASSPHRASE` | (v1.4.0+) Passphrase used to encrypt `ATTESTATION_SIGNER_ADDRESS`'s keystore file. Must be used with `ATTESTATION_SIGNER_KEYSTORE_DIRPATH` |
 | `PORT`                       | Port to listen on. Default `3000`.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `RATE_LIMIT_REQS_PER_MIN`    | (v1.2.0+) Requests per minute over all endpoints before new requests are rate limited. Default `100`.                                                                                                                                                                                                                                                                                                                                                    |
-| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). See the [Recommended Option Settings Section](#sms_providers_country) below for guidance on configuring this. |
+| `SMS_PROVIDERS_<country>`    | Override to set SMS providers and order for a specific country code (e.g `SMS_PROVIDERS_MX=nexmo,twilio`). We **highly recommend** using the [default configuration file](https://github.com/celo-org/celo-monorepo/blob/master/packages/attestation-service/config/.env.development#L21) as a base and then making changes accordingly. |
 | `SMS_PROVIDERS_RANDOMIZED`   | (v1.2.0+) If set to `1` and no country-specific providers are configured for the country of the number being requested, randomize the order of the default providers. Default `0`. Note: setting this to `1` is only recommended if you *do not* have Vonage/Nexmo configured as a provider. |
 | `MAX_DELIVERY_ATTEMPTS`      | Number of total delivery attempts when sending SMS. Each attempt tries the next available provider in the order specified. If omitted, the deprecated `MAX_PROVIDER_RETRIES` option will be used. Default value is `3`.                                                                                                                                                                                                                                  |
 | `MAX_REREQUEST_MINS`         | Number of minutes during which the client can rerequest the same attestation. Default value is `55`.                                                                                                                                                                                                                                                                                                                                                     |
-| `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilio` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
+| `EXTERNAL_CALLBACK_HOSTPORT` | Provide the full external URL at which the service can be reached, usually the same as the value of the `ATTESTATION_SERVICE_URL` claim in your metadata. This value, plus a suffix e.g. `/delivery_status_twilioverify` will be the URL at which service can receive delivery receipt callbacks. If this value is not set, and `VERIFY_CONFIG_ON_STARTUP=1` (the default), the URL will be taken from the validator metadata. Otherwise, it must be supplied. |
 | `VERIFY_CONFIG_ON_STARTUP`   | Refuse to start if signer or metadata is misconfigured. Default `1`. If you disable this, you must specify `EXTERNAL_CALLBACK_HOSTPORT`.                                                                                                                                                                                                                                                                                                                 |
 | `MAX_AGE_LATEST_BLOCK_SECS`  | (v1.2.0+) Maximum age of the latest received block, in seconds, before the health check reports failure. Default is `20`.                                                                                                                                                                                                                                                                                                                                |
 | `GET_BLOCK_TIMEOUT_MS`      | (v1.4.0+) Maximum time in milliseconds to wait after fetching the latest block from a connection, before it times out. Default is `500 ms`. |
@@ -264,26 +288,6 @@ MessageBird configuration options (v1.2.0+):
 | --------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `MESSAGEBIRD_API_KEY`             | The API key to the MessageBird API                                                                 |
 | `MESSAGEBIRD_UNSUPPORTED_REGIONS` | Optional. A comma-separated list of country codes to not serve, recommended value `CU,SY,KP,IR,SD` |
-
-### Recommended Option Settings
-
-#### `SMS_PROVIDERS_<country>`
-
-Based on observed performance, we recommend the following country-specific provider configuration:
-
-```bash
-# v1.5.0+
-SMS_PROVIDERS_CN=twiliomessaging
-SMS_PROVIDERS_VN=messagebird,twilioverify
-SMS_PROVIDERS_TR=twilioverify
-# v1.2.0+
-SMS_PROVIDERS_BR=messagebird,twilio
-SMS_PROVIDERS_IN=messagebird,twilio
-SMS_PROVIDERS_VE=messagebird,twilio
-SMS_PROVIDERS_GH=messagebird,twilio
-SMS_PROVIDERS_PH=messagebird,twilio,nexmo
-SMS_PROVIDERS_DE=messagebird,twilio
-```
 
 ## Registering Metadata
 
@@ -373,7 +377,7 @@ docker run --name celo-attestation-service -it --restart always --entrypoint /bi
 
 Attestation Services supports delivery receipts so that SMS providers can callback to provide delivery information. This triggers retries as needed, even between providers, and enables delivery success and timing metrics to be logged and made accessible to the client.
 
-There is no configuration necessary to enable Twilio or Nexmo delivery receipts. The Attestation Service uses the URL in the validator metadata, provided that `VERIFY_CONFIG_ON_STARTUP` is enabled. The URL for callbacks can always be specified with the `EXTERNAL_CALLBACK_HOSTPORT` configuration option. The service appends `/delivery_status_{twilio, nexmo}` on to the URL, and supplies that to the provider through its API.
+There is no configuration necessary to enable Twilio or Nexmo delivery receipts. The Attestation Service uses the URL in the validator metadata, provided that `VERIFY_CONFIG_ON_STARTUP` is enabled. The URL for callbacks can always be specified with the `EXTERNAL_CALLBACK_HOSTPORT` configuration option. The service appends `/delivery_status_{PROVIDER}` (i.e. `/delivery_status_twilioverify`) on to the URL, and supplies that to the provider through its API.
 
 For MessageBird, provide the callback URL (be sure to include `/delivery_status_messagebird`) in the MessageBird dashboard's [API Settings](https://dashboard.messagebird.com/en/developers/settings) page.
 
@@ -391,7 +395,13 @@ celocli identity:test-attestation-service --from $CELO_ATTESTATION_SIGNER_ADDRES
 
 You need the attestation signer key available and unlocked on your local machine.
 
-You may wish to do this once for each provider you have configured (`--provider=twilio`, `--provider=nexmo` etc). (If this option is not recognized, try upgrading `celocli`).
+You may wish to do this once for each provider you have configured (i.e. `--provider=messagebird`). If the `provider` option is not recognized, please upgrade `celocli`.
+
+For `twilio`, please note the following to test the SMS vs. verify API from v1.5.0 onwards:
+
+- `--provider=twilioverify` (v1.5.0+)
+- `--provider=twiliomessaging` (v1.5.0+)
+- `--provider=twilio` (up to v1.4.0)
 
 Note that this does not use an identical code path to real attestations (since those require specific on-chain state) so this endpoint should not be used in place of monitoring logs and metrics.
 
@@ -470,6 +480,36 @@ The following metrics track each delivery attempt. Each client request for an at
 Administrative metrics:
 
 - The `attestation_provider_balance` tracks the value of the balance of accounts at supported providers. Label `provider` identifies the provider. This is currently only supported for Nexmo, and is off by default but can be enabled by setting `NEXMO_ACCOUNT_BALANCE_METRIC`. The metric is populated as a value in the account currency, e.g USD, and only once a successful SMS has been delivered by that provider.
+
+### Error Responses
+
+Here is a list of the error codes and messages returned by the Attestation Service and what they mean. This can be helpful when looking through raw attestation service logs. In addition to the error codes listed below, the service also returns `500` for `Unknown Error`.
+
+#### 422, Unprocessable Entity
+
+- `Mismatching issuer, I am ${address}` - The attestation request references an issuer address that does not match that of the AS that actually received the request.
+- `NO_INCOMPLETE_ATTESTATION_FOUND_ERROR / 'No incomplete attestation found'` - The Attestations contract has no record that this AS was randomly assigned as an issuer for the given account/identifier pair.
+- `ATTESTATION_ERROR / 'Valid attestation could not be provided'` - A call to validateAttestationCode in the Attestations contract has failed. This method checks that (1) there is a non-expired incomplete attestation assigned to the issuer whose signature constitutes the given attestation code.
+- `'Invalid securityCodePrefix'` - A security code prefix with an incorrect length was provided in the attestation request.
+- `'Invalid smsRetrieverAppSig'` - The provided smsRetrieverAppSig does not match the regex `'^[\\w+]{5,12}$'`
+- `'Attestation can no longer be re-requested'` - The user is re-requesting an attestation that the AS thinks was completed too long ago for it to accept the re-request.
+- `'Delivery attempts exceeded'` - The AS has attempted to deliver this attestation to the user too many times and will not try again.
+- `ErrorMessages.NO_PROVIDER_SETUP / 'No provider was setup for this phone number'` - The AS has not setup an SMS provider
+- `ErrorMessages.INVALID_SIGNATURE / 'Invalid signature provided'` - The signature provided in a `AttestationServiceTestRequest` was not generated by either the AS's account address or attestation signer address.
+
+#### 404, Not Found
+
+- `'Attestation not found'` - The attestation the user is attempting to complete could not be found in the AS's database.
+
+#### 403, Forbidden
+
+- `'Security code attempts exceeded'` - The user has attempted to complete the attestation with an incorrect security code too many times. The attestation can no longer be completed.
+- `'Invalid security code'` - The user has attempted to complete the attestation with an incorrect security code.
+
+#### 401, Unauthorized
+
+- `'Missing authentication'` - the authentication header is missing from the request
+- `'Invalid signature'` - The authentication header failed signature verification. It should be signed by either the account's DEK or wallet key.
 
 ### Blockchain
 

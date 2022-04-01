@@ -8,6 +8,10 @@ Introduction to Optics, it's core concepts, architecture, process, and implement
 
 ___
 
+:::info
+Migrating to v2? Go [here](https://docs.celo.org/celo-codebase/protocol/bridging/migrating-to-optics-v2) to learn how to migrate from v1.
+:::
+
 ## What is Optics?
 
 Optics is a new design for radically cheaper cross-chain communication without header verification. We expect operating Optics to cut 90% of gas costs compared to a traditional header relay. To accomplish this, we took inspiration from optimistic systems (a la Optimistic Roll-ups). Optics features many of the features we prize in an optimistic mechanism, like public verification, low gas fees, broad participation, but has a slightly different security model. 

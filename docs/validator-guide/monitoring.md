@@ -21,7 +21,8 @@ Several command line options control logging:
 
 - `--consoleoutput`: Sends output to the given path, or to `stdout`.
 
-- `--consoleformat`: Formats logs for easy viewing in a terminal (`term`), or as structured JSON (`json`).
+- (Deprecatedin v1.5) `--consoleformat`: Formats logs for easy viewing in a terminal (`term`), or as structured JSON (`json`).
+- (Introduced in v1.5) `--log.json`: Formats logs as structured JSON (`true`), or for easy viewing in a terminal (`false`, default option).
 
 Useful messages to record or set up log-based metrics on:
 
@@ -35,7 +36,7 @@ Celo Blockchain inherits [go-ethereum's metrics](https://github.com/ethereum/go-
 
 Metrics reporting is enabled with the `--metrics` flag.
 
-Pull-based metrics are available using the ` --pprof` flag. This enables the `pprof` debugging HTTP server, by default on `http://localhost:6060`. The `--pprofaddr` and `--pprofport` options can be used to configure the interface and port respectively. If the node is running inside a Docker container, you will need to set `--pprofaddr 0.0.0.0`, then on your Docker command line add `-p 127.0.0.1:6060:6060`.
+Pull-based metrics are available using the ` --pprof` flag. This enables the `pprof` debugging HTTP server, by default on `http://localhost:6060`. The `--pprof.addr` and `--pprof.port` options can be used to configure the interface and port respectively. If the node is running inside a Docker container, you will need to set `--pprof.addr 0.0.0.0`, then on your Docker command line add `-p 127.0.0.1:6060:6060`.
 
 :::caution
 
@@ -147,9 +148,10 @@ It is also important to [monitor Attestation Service](validator-guide/attestatio
 
 ## Community Moniting Tools
 
-### [Pretoria Research Lab Mainnet Signed Blocks Map](https://cauldron.pretoriaresearchlab.io/rc1-block-map)
+### [Vladiator Labs Signature & Attestation Viewer (Celo Vido)](https://vido.vladiatorlabs.io/block-map)
 
-Shows current and historic data on validator signatures collected in each block on Mainnet.
+* Visualizer of current and historic data on validator signatures collected in each block on Mainnet and Baklava.
+* Visualizer of current and historic attestation requests and completions, and attestation endpoint versions and status on Mainnet and Baklava.
 
 ### [Virtual Hive Celo Network Validator Exporter](https://github.com/virtualhive/celo-network-validator-exporter)
 

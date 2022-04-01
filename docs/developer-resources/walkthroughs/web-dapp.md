@@ -44,7 +44,8 @@ Here's what we'll be using each of these packages for:
 - [bignumber.js](https://github.com/MikeMcl/bignumber.js/) is a library for expressing large numbers in JavaScript. When interacting with a blockchain we often need to handle arbitrary-precision decimal and non-decimal arithmetic.
 
 We'll also need to add some Next.js config to work with these packages. Update next.config.js with the following:
-```javascript
+
+```javascript title="next.config.js"
 module.exports = {
   webpack: (config) => {
     config.resolve.fallback = {
@@ -72,7 +73,8 @@ When a user wants to interact with your DApp we need to somehow allow them to co
 Leveraging our previously added [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) library we can provide a button that prompts the user to connect their wallet.
 
 Update pages/index.js with the following:
-```javascript
+
+```javascript title="pages/index.js"
 import React from 'react';
 import { useContractKit } from '@celo-tools/use-contractkit';
 import { ContractKitProvider } from '@celo-tools/use-contractkit';
@@ -84,7 +86,7 @@ function App () {
   return (
     <main>
       <h1>Celo Voting DApp</h1>
-
+      <p>{address}</p>
       <button onClick={connect}>Click here to connect your wallet</button>
     </main>
   )
@@ -124,11 +126,11 @@ For the purposes of this tutorial, we'll only be looking at dequeued proposals, 
 
 Here's how it looks using a combination of the `useEffect` and `useCallback` hooks to request and display all dequeued proposals from the blockchain.
 
-```javascript
+```javascript title="pages/index.js"
 import React, { useCallback, useEffect, useState } from 'react'
 import { useContractKit } from '@celo-tools/use-contractkit'
 
-function App() {
+function GovernanceApp() {
   const { address, connect, kit, getConnectedKit } = useContractKit()
   const [proposals, setProposals] = useState([])
 
@@ -147,35 +149,58 @@ function App() {
   }, [fetchProposals])
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Status</th>
-          <th>Description URL</th>
-        </tr>
-      </thead>
-      <tbody>
-        {proposals.map((proposal) => (
+    <div>
+      <h1>Celo Voting DApp</h1>
+      <p>{address}</p>
+      <button onClick={connect}>Click here to connect your wallet</button>
+      <table>
+        <thead>
           <tr>
-            <td>{proposal.id.toString()}</td>
-            <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
-            <td>
-              <a href={proposal.descriptionURL} target="_blank">
-                Description link
-              </a>
-            </td>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Description URL</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {proposals.map((proposal) => (
+            <tr>
+              <td>{proposal.id.toString()}</td>
+              <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
+              <td>
+                <a href={proposal.metadata.descriptionURL} target="_blank" style={{ color: 'blue', textDecoration: 'underline' }} >
+                  Link
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
+}
+```
+
+Be sure to add this new `GovernanceApp` component to your `WrappedApp` component.
+
+```js title="pages/index.js"
+function WrappedApp() {
+  return (
+    <ContractKitProvider
+      dapp={{
+          name: "My awesome dApp",
+          description: "My awesome description",
+          url: "https://example.com",
+        }}
+    >
+      <GovernanceApp />
+    </ContractKitProvider>
+  );
 }
 ```
 
 This works pretty well however it makes sense to additionally show whether the user has voted on any given dequeued governance proposal. To show that information, we can amend our `fetchProposals` function as follows
 
-```javascript
+```js title="pages/index.js"
 const fetchProposals = useCallback(async () => {
   if (!address) {
     return
@@ -204,7 +229,7 @@ const fetchProposals = useCallback(async () => {
 
 Now we have access to whether the user voted on this proposal, we can render that information in our table.
 
-```javascript
+```js title="pages/index.js"
 return (
   <table>
     <thead>
@@ -221,8 +246,8 @@ return (
           <td>{proposal.id.toString()}</td>
           <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
           <td>
-            <a href={proposal.descriptionURL} target="_blank">
-              Description link
+            <a style={{ color: 'blue', textDecoration: 'underline' }} href={proposal.metadata.descriptionURL} target="_blank">
+              Link
             </a>
           </td>
           <td>{proposal.vote ?? 'No vote yet'}</td>
@@ -259,7 +284,7 @@ It's also possible that users of your DApp already have locked CELO, so you migh
 
 To actually vote on a proposal we need to again interact with the [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol) smart contract. Our logic for handling a vote looks as follows:
 
-```typescript
+```typescript title="pages/index.js"
 const vote = useCallback(
   async (id: string, value: VoteValue) => {
     const kit = await getConnectedKit()
@@ -275,7 +300,7 @@ How you handle calling that function is up to you. With [Celo Tools](https://git
 
 Here's a simple example showing buttons for `Yes` or `No` votes when no vote has been cast.
 
-```javascript
+```javascript title="pages/index.js"
 import { VoteValue } from '@celo/contractkit/lib/wrappers/Governance'
 
 return (

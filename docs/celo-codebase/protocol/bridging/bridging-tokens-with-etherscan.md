@@ -25,10 +25,10 @@ Start by approving token usage on the bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    Ethereum BridgeRouter Address = 0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
+    Ethereum BridgeRouter Address = <code>0x4fc16De11deAc71E8b2Db539d82d93BE4b486892</code>
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    Polygon BridgeRouter Address = 0xf244eA81F715F343040569398A4E7978De656bf6
+    Polygon BridgeRouter Address = <code>0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d</code>
   </TabItem>
 </Tabs>
 
@@ -58,10 +58,16 @@ You can now start sending tokens on the approved Bridge.
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
-    Address = [0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47](https://etherscan.io/address/0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47)
+    <code>Address = [0x4fc16De11deAc71E8b2Db539d82d93BE4b486892](https://etherscan.io/address/0x4fc16De11deAc71E8b2Db539d82d93BE4b486892)</code>
   </TabItem>
   <TabItem value="Polygon" label="Polygon">
-    Address = [0xf244eA81F715F343040569398A4E7978De656bf6](https://polygonscan.com/address/0xf244eA81F715F343040569398A4E7978De656bf6)
+    <code>Address = [0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d](https://polygonscan.com/address/0x3a5846882C0d5F8B0FA4bB04dc90C013104d125d)</code>
+  </TabItem>
+  <TabItem value="Celo" label="Celo">
+    <code>Address = [0x1548cf5cf7dBd93f4dA11f45fCce315573d21B60](https://explorer.celo.org/address/0x1548cf5cf7dBd93f4dA11f45fCce315573d21B60/transactions)</code>
+  </TabItem>
+  <TabItem value="Avalanche" label="Avalanche">
+    <code>Address = [0xB6bB41B1fb8c381b002C405B8abB5D1De0C0abFE](https://polygonscan.com/address/0xB6bB41B1fb8c381b002C405B8abB5D1De0C0abFE)</code>
   </TabItem>
 </Tabs>
 
@@ -82,13 +88,16 @@ This should be the same number you approved earlier.
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
-    Celo Domain ID = 1667591279
+    <code>Celo Domain ID = 1667591279</code>
   </TabItem>
   <TabItem value="Polygon" label="On Polygon">
-    Polygon Domain ID = 1886350457
+    <code>Polygon Domain ID = 1886350457</code>
   </TabItem>
   <TabItem value="Ethereum" label="On Ethereum">
-    Ethereum Domain ID = 6648936
+    <code>Ethereum Domain ID = 6648936</code>
+  </TabItem>
+  <TabItem value="Avalanche" label="On Avalanche">
+    <code>Avalanche Domain ID = 1635148152</code>
   </TabItem>
 </Tabs>
 
@@ -104,11 +113,11 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 :::tip
 
-**Before:bytes32**
-0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47
+**Before: bytes32**
+<code>0x6a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
 
 **After: 24 Zeros after 0x Prefix**
-0x0000000000000000000000006a39909e805A3eaDd2b61fFf61147796ca6aBB47
+<code>0x0000000000000000000000006a39909e805A3eaDd2b61fFf61147796ca6aBB47</code>
 
 :::
 

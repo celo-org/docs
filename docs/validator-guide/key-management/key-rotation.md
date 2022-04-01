@@ -32,8 +32,8 @@ Before proceeding to step 2 ensure there is sufficient time until the end of the
 # With $SIGNER_TO_AUTHORIZE as the new validator signer:
 
 # On the new validator node which contains the new $SIGNER_TO_AUTHORIZE key
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-possession $SIGNER_TO_AUTHORIZE $VALIDATOR_ACCOUNT_ADDRESS
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-possession $SIGNER_TO_AUTHORIZE $VALIDATOR_ACCOUNT_ADDRESS --bls
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account proof-of-possession $SIGNER_TO_AUTHORIZE $VALIDATOR_ACCOUNT_ADDRESS
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account proof-of-possession $SIGNER_TO_AUTHORIZE $VALIDATOR_ACCOUNT_ADDRESS --bls
 ```
 
 1. If `VALIDATOR_ACCOUNT_ADDRESS` corresponds to a key you possess:

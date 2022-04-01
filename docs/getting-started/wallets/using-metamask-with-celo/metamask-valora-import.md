@@ -40,31 +40,31 @@ Change into your project directory.
 cd valora-metamask
 ```
 
-Create a text file to temporarily store your Valora Account Key.
+Create a text file to temporarily store your Valora Recovery Phrase.
 
 ```
-touch valora-account-key.txt
+touch valora-recovery-phrase.txt
 ```
 
-Open the text file to store your Account Key.
+Open the text file to store your Recovery Phrase.
 
 ```
-open valora-account-key.txt
+open valora-recovery-phrase.txt
 ```
 
 ### Valora Private Keys
 
-* Open the Valora App, navigate to **Menu** **>** **Account** **Key**, and Enter PIN to reveal your Account Key.
+* Open the Valora App, navigate to **Menu > Recovery Phrase**, and Enter PIN to reveal your Recovery Phrase.
 
 :::caution
 
-The Account Key is a series of 24 unique words specific to your Valora wallet. Do not lose these words or share them with anyone at any time.
+The Recovery Phrase is a series of 24 unique words specific to your Valora wallet. Do not lose these words or share them with anyone at any time.
 
 :::
 
 **Populate Text File**
 
-Populate your text file with the Account Key shown in your Valora wallet.
+Populate your text file with the Recovery Phrase shown in your Valora wallet.
 
 ```
 one two three four five six seven...
@@ -75,7 +75,7 @@ one two three four five six seven...
 Open your terminal and type the following command to read your account information.
 
 ```
-celocli account:new --mnemonicPath valora-account-key.txt
+celocli account:new --mnemonicPath valora-recovery-phrase.txt
 ```
 
 This command will display your Valora wallet mnemonic, accountAddress, privateKey, publicKey, and address. 

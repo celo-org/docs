@@ -11,13 +11,13 @@ import TabItem from '@theme/TabItem';
 
 Join a community of developers, designers, dreamers, and doers building prosperity for everyone.
 
-___
+---
 
 Celo is a decentralized community of creators -- developers, designers, dreamers, doers -- who are motivated by the power of accessible financial tools to make the world a better place. We are guided by [Celo's Core tenets](https://celo.org/community).
 
 :::tip
 
-Not ready to join the Celo Community? [Learn more about Celo](../../docs/welcome.md).
+Not ready to become a Celo Contributor? [Learn more about Celo](../../docs/welcome.md).
 
 :::
 
@@ -25,6 +25,7 @@ Not ready to join the Celo Community? [Learn more about Celo](../../docs/welcome
 
 Find your purpose and join a community focused on building the conditions of prosperity—for everyone
 
+<PageRef url="/community/developer-events" pageName="Developer Events" />
 <PageRef url="/community/guidelines" pageName="Contributors" />
 <PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
 <PageRef url="/community/grant-playbook" pageName="Grant Playbook" />
@@ -36,4 +37,3 @@ Find your purpose and join a community focused on building the conditions of pro
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-

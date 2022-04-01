@@ -64,6 +64,7 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 * [Sending Celo](../developer-guide/start/hellocelo)
 * [Deploy a Contract (local node)](../developer-guide/start/hellocontracts)
 * [Deploy and Interact with Contracts (Remotely)](../developer-guide/start/hello-contract-remote-node)
+* [Use onchain randomness in your contract](../developer-guide/start/randomness)
 
 ## Create a Mobile friendly dApp with Celo
 

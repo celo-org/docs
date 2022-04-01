@@ -43,6 +43,7 @@ You can also view the CGP proposal regarding the name change [here](https://gith
 * CELO ($CELO) - [`0x471ece3750da237f93b8e339c536989b8978a438`](https://explorer.celo.org/address/0x471ece3750da237f93b8e339c536989b8978a438/transactions)
 * Celo Dollar ($cUSD) - [`0x765de816845861e75a25fca122bb6898b8b1282a`](https://explorer.celo.org/address/0x765de816845861e75a25fca122bb6898b8b1282a/transactions)
 * Celo Euro ($cEUR) - [`0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`](https://explorer.celo.org/address/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73/transactions)
+* Celo Brazilian Real ($cREAL) - [`0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787`](https://explorer.celo.org/address/0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787/transactions)
 
 ### Useful API endpoints
 
@@ -82,6 +83,7 @@ For API endpoints useful for listing that follow [CMC requirements](https://docs
 
 * cUSD/CELO contract - [`0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275`](https://explorer.celo.org/address/0x67316300f17f063085Ca8bCa4bd3f7a5a3C66275/transactions)
 * cEUR/CELO contract - [`0xE383394B913d7302c49F794C7d3243c429d53D1d`](https://explorer.celo.org/address/0xE383394B913d7302c49F794C7d3243c429d53D1d/transactions)
+* cREAL/CELO contract - [`0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA`](https://explorer.celo.org/address/0x8f2cf9855C919AFAC8Bd2E7acEc0205ed568a4EA/transactions)
 
 ##### Summary
 
