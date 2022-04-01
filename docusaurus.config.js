@@ -244,6 +244,18 @@ module.exports = {
             to: "/command-line-interface/validatorgroup",
             from: ["/command-line-interface/commands/validatorgroup"],
           },
+          {
+            to: '/celo-codebase/protocol/odis/use-cases/phone-number-privacy',
+            from: [
+              '/celo-codebase/protocol/identity/phone-number-privacy'
+            ],
+          },
+          {
+            to: '/celo-codebase/protocol/identity/smart-contract-accounts',
+            from: [
+              '/celo-codebase/protocol/identity/valora-accounts'
+            ],
+          },
         ],
       },
     ],

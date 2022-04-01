@@ -26,7 +26,7 @@ There are two methods for ODIS:
 
 :::tip
 
-See [this overview document](/celo-codebase/protocol/identity/phone-number-privacy.md) for more details on ODIS. 
+See [this overview document](/celo-codebase/protocol/odis/use-cases/phone-number-privacy.md) for more details on ODIS. 
 
 :::
 ## Authentication

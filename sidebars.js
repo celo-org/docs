@@ -365,16 +365,35 @@ const sidebars = {
           type: "category",
           label: "Identity",
           items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "celo-codebase/protocol/identity/index",
-            },
-            "celo-codebase/protocol/identity/valora-accounts",
-            "celo-codebase/protocol/identity/phone-number-privacy",
+            { type: "doc", label: "Overview", id: "celo-codebase/protocol/identity/index", },
             "celo-codebase/protocol/identity/metadata",
             "celo-codebase/protocol/identity/randomness",
-          ],
+            "celo-codebase/protocol/identity/smart-contract-accounts",
+            "celo-codebase/protocol/identity/encrypted-cloud-backup",
+          ]
+        },
+        {
+          type: "category",
+          label: "ODIS",
+          items: [
+            { type: "doc", label: "Overview", id: "celo-codebase/protocol/odis/index", },
+            {
+              type: "category",
+              label: "Use Cases",
+              items: [
+                "celo-codebase/protocol/odis/use-cases/phone-number-privacy",
+                "celo-codebase/protocol/odis/use-cases/key-hardening",
+              ]
+            },
+            {
+              type: "category",
+              label: "Domains",
+              items: [
+                { type: "doc", label: "Overview", id: "celo-codebase/protocol/odis/domains/index", },
+                "celo-codebase/protocol/odis/domains/sequential-delay-domain",
+              ]
+            },
+          ]
         },
         "celo-codebase/protocol/optics",
         "celo-codebase/protocol/plumo",
@@ -471,12 +490,12 @@ const sidebars = {
     },
     { type: "doc", label: "FAQ", id: "faqs" },
     // {
-    //   type: 'category',
-    //   label: 'Celo Platform',
+    //   type: "category",
+    //   label: "Celo Platform",
     //   items: [
-    //     { type: 'doc', label: 'Introduction', id: 'overview', },
-    //     { type: 'doc', label: 'Network Topology', id: 'learn/topology-of-a-celo-network', },
-    //     { type: 'doc', label: 'Celo Protocol', id: 'learn/celo-protocol', },
+    //     { type: "doc", label: "Introduction", id: "overview", },
+    //     { type: "doc", label: "Network Topology", id: "learn/topology-of-a-celo-network", },
+    //     { type: "doc", label: "Celo Protocol", id: "learn/celo-protocol", },
     //   ]
     // },
     {
@@ -831,16 +850,16 @@ const sidebars = {
       type: "category",
       label: "Tutorials",
       items: [
-        // { type: 'doc', label: 'Introduction', id: 'developer-resources/start',},
-        // { type: 'doc', label: 'Sending CELO & Stable Assets', id: 'developer-resources/walkthroughs/hellocelo',},
-        // { type: 'doc', label: 'Deploy to a Local Node', id: 'developer-resources/walkthroughs/hellocontracts',},
-        // { type: 'doc', label: 'Deploy to a Remote Node', id: 'developer-resources/walkthroughs/hello-contract-remote-node',},
-        // 'developer-resources/walkthroughs/no-code-erc20',
-        // 'developer-resources/walkthroughs/no-code-erc721',
-        // 'developer-resources/walkthroughs/web-dapp',
-        // { type: 'doc', label: 'Use onchain randomness', id: 'developer-resources/walkthroughs/randomness',},
-        // { type: 'doc', label: 'Valora + Wallet Connect', id: 'developer-resources/walkthroughs/valora-wc-v1',},
-        // { type: 'doc', label: 'Using Keystores', id: 'developer-resources/walkthroughs/using-js-keystores',},
+        // { type: "doc", label: "Introduction", id: "developer-resources/start",},
+        // { type: "doc", label: "Sending CELO & Stable Assets", id: "developer-resources/walkthroughs/hellocelo",},
+        // { type: "doc", label: "Deploy to a Local Node", id: "developer-resources/walkthroughs/hellocontracts",},
+        // { type: "doc", label: "Deploy to a Remote Node", id: "developer-resources/walkthroughs/hello-contract-remote-node",},
+        // "developer-resources/walkthroughs/no-code-erc20",
+        // "developer-resources/walkthroughs/no-code-erc721",
+        // "developer-resources/walkthroughs/web-dapp",
+        // { type: "doc", label: "Use onchain randomness", id: "developer-resources/walkthroughs/randomness",},
+        // { type: "doc", label: "Valora + Wallet Connect", id: "developer-resources/walkthroughs/valora-wc-v1",},
+        // { type: "doc", label: "Using Keystores", id: "developer-resources/walkthroughs/using-js-keystores",},
         {
           type: "link",
           label: "Celo Tutorials",
@@ -973,8 +992,8 @@ const sidebars = {
       type: "category",
       label: "Resources",
       items: [
-        // { type: 'doc', label: 'Celo Onboarding', id: 'learn/celo-onboarding', },
-        // { type: 'doc', label: 'Developer Onboarding', id: 'learn/developer-onboarding', },
+        // { type: "doc", label: "Celo Onboarding", id: "learn/celo-onboarding", },
+        // { type: "doc", label: "Developer Onboarding", id: "learn/developer-onboarding", },
         {
           type: "category",
           label: "Quick Guides",
@@ -994,7 +1013,7 @@ const sidebars = {
             },
           ],
         },
-        // { type: 'doc', label: 'Figment Learn', id: 'learn/figment-learn', },
+        // { type: "doc", label: "Figment Learn", id: "learn/figment-learn", },
         { type: "doc", label: "Celo Resources", id: "learn/celo-resources" },
       ],
     },

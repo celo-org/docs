@@ -127,6 +127,10 @@ A project with which the code of the Celo Blockchain has shared ancestry. [Ether
 
 The Ethereum Virtual Machine. A runtime environment used by smart contracts on Ethereum and Celo.
 
+## Externally Owned Account (EOA)
+
+An account owned by a private key which has full control to send transactions from the account by signing and submitting the transaction to the blockchain. All transaction on Celo must originate from an EOA, which pays for the transaction fees.
+
 ## Full Node
 
 A computer running the Celo Blockchain software that maintains a full copy of the blockchain locally and, in Celo, receives transaction fees in exchange for servicing light clients.
