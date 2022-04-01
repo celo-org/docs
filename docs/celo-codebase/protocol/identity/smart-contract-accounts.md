@@ -31,7 +31,7 @@ In general, smart contract accounts allow the someone other than the account own
 
 ### Account recovery
 
-Smart contract accounts can also be useful if a user ever loses their phone and backup account key.
+Smart contract accounts can also be useful if a user ever loses their phone and recovery phrase.
 Unlike EOAs, smart contract accounts can support account recovery methods that do not rely solely on recovering the underlying keys.
 The meta-transaction wallet implements [a function](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol#L101-L108) to assign another Celo address as the Guardian of the account.
 This Guardian can be a simple backup key or a smart contract implementing social recovery, [KELP](https://eprint.iacr.org/2021/289), or another account recovery protocol.

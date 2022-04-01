@@ -1,8 +1,7 @@
 ---
-title: Encrypted Cloud Backup
+title: Pin/Password Encrypted Cloud Backup (PEAR 🍐)
 ---
 
-<!-- TODO(victor): Do we want to use a more creative protocol name here -->
 Secure and reliable account key backups are critical to the experience of non-custodial wallets, and Celo more generally.
 Day-to-day, users store their account keys on their mobile device, but if they lose their phone, they need a way to recover access to their account.
 Described in this document is a protocol for encrypted backups of a user's account keys in their cloud storage account.
@@ -47,7 +46,7 @@ On Android, when the user opts-in, they should be prompted to select a Google ac
 On iOS, the user need not be prompted as there is a single Apple account on the device and the permissions architecture allows access to application-specific iCloud data without prompting the user.
 
 In the background, the chosen PIN or password and a locally generated salt value should be used to query ODIS.
-The resulting hardened key should be used to encrypt the account key mnemonic.
+The resulting hardened key should be used to encrypt the BIP-39 account key mnemonic.
 The encrypted mnemonic and metadata, including the salt, should be stored in the user's cloud storage.
 
 ### Recovery
