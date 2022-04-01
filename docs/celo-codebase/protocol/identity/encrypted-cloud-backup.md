@@ -72,7 +72,7 @@ Creating a backup file consists of a number of steps to derive the encryption ke
 
 1. Generate a random nonce and hash it with the password or PIN input to get the initial key.
 2. Generate a random fuse key and hash it with the initial key to get an updated key.
-   Encrypt this fuse key to the public key of the circuit breaker service and discard the fuse key.
+   Encrypt this fuse key to the public key of the circuit breaker service and discard the plaintext fuse key.
 3. Send the key as a blinded message to the ODIS to be hashed under a [password hardening domain](/celo-codebase/protocol/odis/use-cases/key-hardening).
    Use an authentication key derived from the backup nonce such that only a user with access to the backup can make queries to ODIS.
    Hash the response from ODIS together with the key to generate the hardened key.

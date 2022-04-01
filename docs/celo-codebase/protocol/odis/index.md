@@ -22,7 +22,7 @@ The number of key holders ($$m$$) and threshold of signatures required ($$k$$) t
 ### Production setup
 
 As of October 2021, ODIS operates with 7 signers and a threshold of 5 (i.e. $$m=7, k=5$$).
-As a result, 5 of the 7 parties must cooperate in order to produce an output from the OPRF function, and as long as at least 3 are honest and secure, no unauthorized requests will be served.
+As a result, 5 of the 7 parties must cooperate in order to produce an output from the (P)OPRF function, and as long as at least 3 are honest and secure, no unauthorized requests will be served.
 
 <!-- TODO(victor): Once the new set is in production, information about the 7 operators should be included here -->
 

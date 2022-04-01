@@ -4,6 +4,12 @@ slug: /celo-codebase/protocol/odis/domains
 ---
 import PageRef from '@components/PageRef'
 
+::: caution
+
+Domain API features described here are not deployed to Mainnet ODIS as of April 1, 2022.
+
+:::
+
 In order to support use cases such as password hardening, and future applications, ODIS implements Domains.
 A Domain instance is structured message sent to ODIS along with the secret blinded message.
 Unlike the blinded message, the Domain instance is visible to the ODIS service and allows the client to specify context information about their request.
