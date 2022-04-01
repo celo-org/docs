@@ -10,7 +10,7 @@ ___
 
 ## Why v2?
 
-### Bundlesize
+### Bundle Size
 
 The primary motivation in creating v2 was reduced bundlesize and increased modularity. The massive package size for `@celo/contractkit` has been an elephant in the room and source of dissonance for looking to build mobile first dApps. As of 1.5.2 bundlephobia list the minified size at 3.7MB. 2.0.0 comes in at 1.7MB. still big yet we have a few more tricks. First the packages have been all marked as `sideEffects:false`, a `kit` instance is no longer required to any classes in the contractkit package, and the introduction of `MiniContractKit`.
 
@@ -30,7 +30,7 @@ In v2 AddressRegistry, Wrappers, WrapperCache, and more can all be constructed u
 
 The prize of no longer needing a full `kit` is that it became possible to create a slimed down minimal viable ContractKit.
 
-`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, GasPriceMinimum, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
+`MiniContractKit` provides a subset of ContractKit features with the same interface. For many dapps it will be a drop in opt-in change (eg `import {newKit, ContractKit} from "@celo/contractkit/lib/mini/kit`). It reduces size by only including access to `Accounts, StableToken*, Exchange* and GoldToken` wrappers and contracts. It can `setFeeCurrency`, look up info about the current account and, like full Contractkit, it delegates most functionality to `connection`.
 
 ## Get Started
 
@@ -55,35 +55,6 @@ Because of how we publish packages, all packages will be upgraded to v2. However
 
 Most changes are about eliminating the need to construct an entire kit to use other classes and functions.
 
-#### IdentityMetadataWrapper (idendity/metadata.ts)
-
-This had functions that took a `kit` as a parameter. Now it takes an AccountsWrapper class. 
-
-This change was done so that `kit` was not required to be passed into all the classes and functions that use `IdentityMetadataWrapper`.
-
-*v1
-
-```typescript
-IdentityMetadataWrapper.fetchFromURL(kit, url)
-
-IdentityMetadataWrapper.fromFile(kit, path)
-
-IdentityMetadataWrapper.verifySignerForAddress(kit, hash, signature, address)
-IdentityMetadataWrapper.fromRawString(kit, rawData)
-```
-
-*v2
-
-```typescript
-const accounts = await kit.contracts.getAccounts()
-
-IdentityMetadataWrapper.fetchFromURL(accounts, url)
-
-IdentityMetadataWrapper.fromFile(accounts, path)
-
-IdentityMetadataWrapper.verifySignerForAddress(accounts, hash, signature, address)
-IdentityMetadataWrapper.fromRawString(accounts, rawData)
-```
 
 #### AddressRegistry
 
@@ -132,6 +103,24 @@ const validatorsInstance = await kit.contracts.getValidatorsWrapper()
 accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
 
 ```
+
+##### AttestationsWrapper
+
+`AttestationsWrapper.getConfig()` and`AttestationsWrapper.getHumanReadableConfig()`
+
+These functions now require an array of fee payable token addresses. You can get these from the CeloTokens class, the Registry, or Token Contracts
+
+```typescript
+const celoTokens = kit.celoTokens
+const eachTokenAddress = await celoTokens.getAddresses()
+const addresses = Object.values(eachTokenAddress)
+
+AttestationsWrapper.getConfig(addresses)
+// OR
+AttestationsWrapper.getHumanReadableConfig(addresses)
+
+```
+
 
 #### Web3ContractCache
 
