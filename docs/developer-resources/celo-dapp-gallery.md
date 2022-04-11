@@ -249,3 +249,9 @@ Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have
 
 * [GitHub](https://github.com/Into-The-Verse/)
 
+## RARE 💎 GEMS
+
+Non-custodial multichain NFT marketplace, connected to Celo
+
+* [Website](https://raregems.io/)
+* [Celo NFT collections](https://raregems.io/celo)
