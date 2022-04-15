@@ -133,7 +133,7 @@ Real-time gas fees are captured in gwei on [stats.celo.org](https://stats.celo.o
 **Circulating Supply**
 
 - **CELO:** Metric updated in real-time, please visit [coinmarketcap.com/currencies/celo](https://coinmarketcap.com/currencies/celo/)
-- **cUSD + cEUR:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/)
+- **cUSD + cEUR + cREAL:** Metrics updated in real-time, please visit [celoreserve.org](https://celoreserve.org/)
 
 :::tip
 
@@ -141,7 +141,7 @@ For current circulating supply of cUSD and cEUR please see the section titled â€
 
 :::
 
-**2679.3 Tons of Carbon Offset**
+**3007.7 Tons of Carbon Offset**
 
 For real-time updates, please visit [wren.co/profile/celo](https://www.wren.co/profile/celo)
 
