@@ -36,4 +36,4 @@ Many individuals don’t have a way of establishing assets or credit history on 
 * [Read Stability White Paper](https://celo.org/papers)
 * [Celo Dollars](https://medium.com/celoorg/celo-dollars-powerful-new-digital-money-in-circulation-b4147eda2d10) (cUSD)
 * [Celo Euros](https://medium.com/celoorg/deutsche-telekom-joins-celo-ecosystem-as-the-first-mobile-carrier-amid-launch-of-ceur-stablecoin-2b79aae38540) (cEUR)
-* [Celo Real] (https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c) (cREAL)
+* [Celo Real](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c) (cREAL)
