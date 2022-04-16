@@ -11,7 +11,7 @@ ___
 
 ## Stable with Celo
 
-Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Celo stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility. 
+Named for the currencies they follow, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals (cREAL) are stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Celo stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility. 
 
 * Average Network Transaction Fee &lt;$.01
 * Algorithmic stabilization mechanism 
@@ -36,3 +36,4 @@ Many individuals don’t have a way of establishing assets or credit history on 
 * [Read Stability White Paper](https://celo.org/papers)
 * [Celo Dollars](https://medium.com/celoorg/celo-dollars-powerful-new-digital-money-in-circulation-b4147eda2d10) (cUSD)
 * [Celo Euros](https://medium.com/celoorg/deutsche-telekom-joins-celo-ecosystem-as-the-first-mobile-carrier-amid-launch-of-ceur-stablecoin-2b79aae38540) (cEUR)
+* [Celo Real](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c) (cREAL)
