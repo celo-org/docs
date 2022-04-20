@@ -50,10 +50,6 @@ As new contracts are added to the registry, new **constitution parameters** need
 
 A following governance proposal needs to be submitted to enable [oracles](/celo-codebase/protocol/stability/oracles.md) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
 
-### Oracle report
-
-Before fully activating `cX`, it is required to have at least one oracle report. This is required by the Reserve contract in [this line](https://github.com/celo-org/celo-monorepo/blob/9b43d07b35c9d50389f5f2f53ddfa0c21f16d0f2/packages/protocol/contracts/stability/Reserve.sol#L223). After reporting, it is worth double checking that the buckets sizes on `StableTokenX` are consistent with values reported and it is a good opportunity to test the oracle set up in production with no funds at risk, as the contracts involved are still frozen.
-
 ### Full activation
 
 The last governance proposal is expected to unfreeze the contract and attach the last strings in the process to get a fully transferable asset stabilized by the Reserve. This propose involves:
