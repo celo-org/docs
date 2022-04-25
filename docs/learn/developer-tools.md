@@ -123,6 +123,14 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 <PageRef url="../developer-guide/forno" pageName="Forno" />
 
+### All That Node
+
+All That Node is the industry’s most comprehensive multi-chain development suite, geared to support 20+ protocols from a single platform. Built by validators for blockchain developers, driven by the understanding that lowering financial and technological barriers is key to redefining what’s possible in the multi-chain ecosystem.
+
+All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. By following their mission, they offer FREE private RPC nodes up to 10,000 requests/day and of course you can upgrade your plan on your need. Since they are powered by DSRV, one of the genesis validators of Celo, they run RPC nodes stably and has beautiful uptime. Also you can claim alfajores faucet in the site without signing up or any time-consuming auth.
+
+<PageRef url="[https://www.allthatnode.com/celo.dsrv](https://www.allthatnode.com/celo.dsrv)" pageName="All That Node" />
+
 ### Ankr
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
