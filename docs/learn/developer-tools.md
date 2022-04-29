@@ -141,6 +141,12 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 <PageRef url="https://www.quicknode.com/chains/celo" pageName="Quicknode" />
 
+### All That Node
+
+All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
+
+<PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
+
 ## Celo Wallets
 
 [Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
