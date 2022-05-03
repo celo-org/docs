@@ -176,17 +176,29 @@ If you’re building on Celo and looking for fundraising, start with our Celo Ec
 
 ![fundraising](/img/doc-images/fundraising/1.png)
 
-Celo Camp: Celo Camp is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this link - [https://www.celocamp.com/](https://www.celocamp.com/)
+## Celo Camp
 
-Celo Web3 Studio (via Bld.ai): Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. To learn more about Bld.ai - please visit this link - ​​[https://www.bld.ai/](https://www.bld.ai/)
+Celo Camp is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this link - [https://www.celocamp.com/](https://www.celocamp.com/)
 
-Celo Community Fund: Celo Community Fund I (CCF I) is the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding can apply to CCF I, which is managed by three community stewards, or they can submit their own governance spend proposal to be voted on by CELO owners. Focus areas include on/off ramps, community tools, research and education. To learn more about the Celo Community Fund, please visit this link - [https://celocommunityfund.org/#grants-process](https://celocommunityfund.org/#grants-process)
+## Celo Web3 Studio (via Bld.ai)
 
-Celo Foundation Grant Program: The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. To learn more about Bld.ai - please visit this link - ​​[https://www.bld.ai/](https://www.bld.ai/)
 
-Celo Scout Investors: Celo Scouts are individual investors who are hand selected by the Celo Foundation to invest in mission-aligned founders building on Celo. These investors tend to focus on early stage companies who may be looking for angel/pre-seed like funding and write check sizes between 25-50K cUSD on average.
+## Celo Community Fund
 
-Dedicated Institutional Celo Ecosystem Funds: Celo Ecosystem Funds are firms that the Celo Foundation has partnered with to evaluate larger private equity and/or token investments into companies building on Celo.
+Celo Community Fund I (CCF I) is the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding can apply to CCF I, which is managed by three community stewards, or they can submit their own governance spend proposal to be voted on by CELO owners. Focus areas include on/off ramps, community tools, research and education. To learn more about the Celo Community Fund, please visit this link - [https://celocommunityfund.org/#grants-process](https://celocommunityfund.org/#grants-process)
+
+## Celo Foundation Grant Program
+
+The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+
+## Celo Scout Investors
+
+Celo Scouts are individual investors who are hand selected by the Celo Foundation to invest in mission-aligned founders building on Celo. These investors tend to focus on early stage companies who may be looking for angel/pre-seed like funding and write check sizes between 25-50K cUSD on average.
+
+## Dedicated Institutional Celo Ecosystem Funds
+
+Celo Ecosystem Funds are firms that the Celo Foundation has partnered with to evaluate larger private equity and/or token investments into companies building on Celo.
 
 ![fundraising](/img/doc-images/fundraising/2.png)
 
@@ -201,12 +213,12 @@ Flori Ventures is a seed stage venture fund already partnered with many projects
 
 ### Unicorn Growth Fund
 
-Unicorn Growth Capital is a Seed & Series A venture fund focused on partnering exclusively with founders innovating financial services in Africa. They’re particularly excited about FinTech infrastructure, embedded finance products and broad digital financial services that can foster an inclusive financial ecosystem.
+Unicorn Growth Capital is a Seed & Series A venture fund focused on partnering exclusively with founders innovating financial services in Africa. They’re particularly excited about FinTech & DeFi infrastructure, embedded finance products and broad digital financial services that can foster an inclusive financial ecosystem.
 
-- **Stage Focus:** Seed & Series A
-- **Geography Focus:** Africa
-- **Sector Focus:** FinTech Infrastructure, Embedded Finance, Financial Services
-- **Average Check Size:** $500K for Seed and >$2.5M for Series A
+**Stage Focus:** Seed & Series A
+**Geography Focus:** Africa
+**Sector Focus:** FinTech & DeFi Infrastructure, Embedded Finance, Financial Services
+**Average Check Size:** $500K for Seed and <$1.5M for Series A
 
 ### Lightshift Capital
 
