@@ -194,6 +194,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Add New Token",
+          id: "celo-codebase/protocol/bridging/optics-add-new-token",
+        },
+        {
+          type: "doc",
           label: "Native Assets with Etherscan",
           id: "celo-codebase/protocol/bridging/bridging-native-assets",
         },
@@ -365,35 +370,47 @@ const sidebars = {
           type: "category",
           label: "Identity",
           items: [
-            { type: "doc", label: "Overview", id: "celo-codebase/protocol/identity/index", },
+            {
+              type: "doc",
+              label: "Overview",
+              id: "celo-codebase/protocol/identity/index",
+            },
             "celo-codebase/protocol/identity/metadata",
             "celo-codebase/protocol/identity/randomness",
             "celo-codebase/protocol/identity/smart-contract-accounts",
             "celo-codebase/protocol/identity/encrypted-cloud-backup",
-          ]
+          ],
         },
         {
           type: "category",
           label: "ODIS",
           items: [
-            { type: "doc", label: "Overview", id: "celo-codebase/protocol/odis/index", },
+            {
+              type: "doc",
+              label: "Overview",
+              id: "celo-codebase/protocol/odis/index",
+            },
             {
               type: "category",
               label: "Use Cases",
               items: [
                 "celo-codebase/protocol/odis/use-cases/phone-number-privacy",
                 "celo-codebase/protocol/odis/use-cases/key-hardening",
-              ]
+              ],
             },
             {
               type: "category",
               label: "Domains",
               items: [
-                { type: "doc", label: "Overview", id: "celo-codebase/protocol/odis/domains/index", },
+                {
+                  type: "doc",
+                  label: "Overview",
+                  id: "celo-codebase/protocol/odis/domains/index",
+                },
                 "celo-codebase/protocol/odis/domains/sequential-delay-domain",
-              ]
+              ],
             },
-          ]
+          ],
         },
         "celo-codebase/protocol/optics",
         "celo-codebase/protocol/plumo",
