@@ -1,8 +1,8 @@
 ---
-title: Sending CELO & Stable Assets
+title: Sending CELO & Mento Stable Assets
 slug: /developer-guide/start/hellocelo
 ---
-# Sending CELO & Stable Assets
+# Sending CELO & Mento Stable Assets
 
 How to connect to the Celo test network and tranfer tokens using ContractKit.
 
@@ -23,9 +23,9 @@ We assume you already have Node.js and NPM installed on your computer.
 At the end of this guide, you will be able to:
 
 * Connect to the Celo test network, called Alfajores
-* Get test CELO, Celo Dollars (cUSD) and Celo Euros (cEUR) from the faucet
+* Get test CELO, Mento cUSD (USD) and Mento cEUR (EUR) from the faucet
 * Read account and contract information from the test network
-* Transferring CELO, cUSD and cEUR on the test network
+* Transferring CELO, Mento cUSD and Mento cEUR on the test network
 
 ## Getting Started
 
@@ -74,7 +74,7 @@ ContractKit contains a `contracts` property that we can use to access certain in
 
 :::info
 
-The Celo blockchain has two native assets, CELO \(CELO\) and the Celo Dollar \(cUSD\). Both of these assets implement the [ERC20 token standard](https://eips.ethereum.org/EIPS/eip-20) from Ethereum. The CELO asset is managed by the CELO smart contract and Celo Dollars is managed by the cUSD contract. We can access the CELO contract via the SDK with `kit.contracts.getGoldToken()` and the cUSD contract with `kit.contracts.getStableToken()`. These functions return promises, so we have to wait for them to resolve before we can interact with the token contracts. If you are unfamiliar with Promises in Javascript, [check out this documentation.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promises are a common tool in blockchain development. In this guide, we use the [async/await syntax for promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).
+The Celo blockchain has two native assets, CELO \(CELO\) and the Mento cUSD. Both of these assets implement the [ERC20 token standard](https://eips.ethereum.org/EIPS/eip-20) from Ethereum. The CELO asset is managed by the CELO smart contract and Mento cUSD is managed by the cUSD contract. We can access the CELO contract via the SDK with `kit.contracts.getGoldToken()` and the Mento cUSD contract with `kit.contracts.getStableToken()`. These functions return promises, so we have to wait for them to resolve before we can interact with the token contracts. If you are unfamiliar with Promises in Javascript, [check out this documentation.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promises are a common tool in blockchain development. In this guide, we use the [async/await syntax for promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await).
 
 :::
 
@@ -100,8 +100,8 @@ let cEURBalance = await cEURtoken.balanceOf(anAddress)
 
 // Print balances
 console.log(`${anAddress} CELO balance: ${celoBalance.toString()}`)
-console.log(`${anAddress} cUSD balance: ${cUSDBalance.toString()}`)
-console.log(`${anAddress} cEUR balance: ${cEURBalance.toString()}`)
+console.log(`${anAddress} Mento cUSD balance: ${cUSDBalance.toString()}`)
+console.log(`${anAddress} Mento cEUR balance: ${cEURBalance.toString()}`)
 ```
 
 The `balanceOf(address)` function also returns a Promise, so we wait for the promise to resolve then we print the result.
@@ -123,7 +123,7 @@ Reading all account balances is a powerful feature of blockchains. Next, let's s
 In order to do transfers (aka [transactions](https://docs.celo.org/getting-started/glossary#transaction)), we need to:
 
 1. Create an [account](https://docs.celo.org/getting-started/glossary#account) \(by creating a private key\)
-2. Fund it with test CELO and cUSDs
+2. Fund it with test CELO and Mento cUSDs
 3. Sign and send transactions to the network
 
 ## Accounts
@@ -173,8 +173,8 @@ async function getBalances(){
     // Print your account info
     console.log(`Your account address: ${account.address}`)
     console.log(`Your account CELO balance: ${celoBalance.toString()}`)
-    console.log(`Your account cUSD balance: ${cUSDBalance.toString()}`)
-    console.log(`Your account cEUR balance: ${cEURBalance.toString()}`)
+    console.log(`Your account Mento cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your account Mento cEUR balance: ${cEURBalance.toString()}`)
 }
 ```
 
@@ -182,7 +182,7 @@ Run this script again with `node helloCelo.js`. This will print `0`, as we have 
 
 ## Using the faucet
 
-We can get free test CELO and cUSDs on the test network for development via [the Celo Alfajores faucet](https://celo.org/build/faucet).
+We can get free test CELO and Mento cUSDs on the test network for development via [the Celo Alfajores faucet](https://celo.org/build/faucet).
 
 Copy your randomly generated account address from the console output mentioned above, and paste it into the faucet.
 
@@ -190,11 +190,11 @@ Once your account has been funded, run `$ node helloCelo.js` again to see your u
 
 ## Sending Value
 
-We have an account with CELO and cUSD in it, now how do we send tokens to another account? Remember the token wrappers we used to read account balances earlier? We can use the same wrappers to send tokens, you just need to add the private key associated with your account to ContractKit \(see line 10\).
+We have an account with CELO and Mento cUSD in it, now how do we send tokens to another account? Remember the token wrappers we used to read account balances earlier? We can use the same wrappers to send tokens, you just need to add the private key associated with your account to ContractKit \(see line 10\).
 
 The token wrappers have a method called `transfer(address, amount)` that allows you to send value to the specified address \(line 14\).
 
-You need to `send()` the transaction to the network after you construct it. The `send()` methods accepts an option that allows you to specify the `feeCurrency`, which allows the sender to pay transaction fees in CELO or cUSD. The default `feeCurrency` is CELO. In the following example, let's pay transaction fees in CELO when we transfer CELO and pay with cUSD when we transfer cUSD.  
+You need to `send()` the transaction to the network after you construct it. The `send()` methods accepts an option that allows you to specify the `feeCurrency`, which allows the sender to pay transaction fees in CELO or Mento cUSD. The default `feeCurrency` is CELO. In the following example, let's pay transaction fees in CELO when we transfer CELO and pay with Mento cUSD when we transfer Mento cUSD.  
 
 The `send()` method returns a transaction object. We will wait for the transaction receipt \(which will be returned when the transaction has been included in the blockchain\) and print it when we get it. This receipt contains information about the transaction.
 
@@ -236,8 +236,8 @@ async function send(){
     
     // 17. Print receipts
     console.log('CELO Transaction receipt: %o', celoReceipt)
-    console.log('cUSD Transaction receipt: %o', cUSDReceipt)
-    console.log('cEUR Transaction receipt: %o', cEURReceipt)
+    console.log('Mento cUSD Transaction receipt: %o', cUSDReceipt)
+    console.log('Mento cEUR Transaction receipt: %o', cEURReceipt)
     
     // 18. Get your new balances
     let celoBalance = await celotoken.balanceOf(account.address)
@@ -246,8 +246,8 @@ async function send(){
     
     // 19. Print new balance
     console.log(`Your new account CELO balance: ${celoBalance.toString()}`)
-    console.log(`Your new account cUSD balance: ${cUSDBalance.toString()}`)
-    console.log(`Your new account cUSD balance: ${cEURBalance.toString()}`)
+    console.log(`Your new account Mento cUSD balance: ${cUSDBalance.toString()}`)
+    console.log(`Your new account Mento cUSD balance: ${cEURBalance.toString()}`)
 }
 ```
 
