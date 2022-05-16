@@ -27,7 +27,7 @@ Celo makes sending payments as easy as sending a text, to anyone with an interne
 
 ## Multi-Asset
 
-Celo is turning crypto into usable money with a multi-asset system: a utility, governance, and staking asset (CELO) and a growing family of stablecoins named for the currencies they algorithmically follow (e.g., cUSD, cEUR).
+Celo is turning crypto into usable money with a multi-asset system: a utility, governance, and staking asset (CELO) and a growing family of stablecoins named for the currencies they algorithmically follow (e.g., cUSD, cEUR, cREAL).
 
 ## EVM-Compatible
 

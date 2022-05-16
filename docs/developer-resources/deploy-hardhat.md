@@ -28,7 +28,7 @@ Choose one of the following items to prepare a dApp to deploy on Celo.
 
 ## Update the hardhat.config.js file
 
-Open [hardhat-config.js](https://hardhat.org/config/) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/DevRel/blob/main/configuration/hardhat.config.js). This code is similar to Hardhat settings with a few configuration updates needed to deploy to a Celo network.
+Open [hardhat.config.js](https://hardhat.org/config/) in a text editor and replace its contents with this [Celo configuration code](https://github.com/celo-org/DevRel/blob/main/configuration/hardhat.config.js). This code is similar to Hardhat settings with a few configuration updates needed to deploy to a Celo network. You will need to create a `.env` file in the project root directory and install `dotenv` with npm or yarn in order to read the `process.env.MNEMONIC` variable in the config file.
 
 ### Connect to Local Network
 
