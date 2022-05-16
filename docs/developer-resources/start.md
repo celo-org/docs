@@ -12,11 +12,11 @@ List of examples and guides to help you start building on Celo.
 
 ___
 
-## Sending CELO & cUSD
+## Sending CELO & Mento cUSD stablecoin
 
-The send CELO & cUSD walkthrough will guide you through the basics of connecting to Celo networks using ContractKit and sending a test transaction.
+The send CELO & Mento cUSD stablecoin walkthrough will guide you through the basics of connecting to Celo networks using ContractKit and sending a test transaction.
 
-<PageRef url="/developer-guide/start/hellocelo" pageName="Send CELO & USD" />
+<PageRef url="/developer-guide/start/hellocelo" pageName="Send CELO & Mento cUSD stablecoin" />
 
 ## Deploy a Contract (local node)
 
