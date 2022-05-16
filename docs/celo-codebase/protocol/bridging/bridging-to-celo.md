@@ -29,3 +29,4 @@ Be sure you understand and review the risks pages when bridging assets between c
     * [Bridge ERC-20 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
 * [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
 * [Moss](https://bridge.moss.earth/)
+* _Wormhole coming soon!_
