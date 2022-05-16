@@ -15,7 +15,7 @@ ___
 
 In this example, we will demonstrate how to add WalletConnect to a simple React app.
 
-This is a simple DApp that focuses on demonstrating how to connect WalletConnect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index.md) and make a simple cUSD transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
+This is a simple DApp that focuses on demonstrating how to connect WalletConnect to Valora, but also shows how to set up [ContractKit](/developer-resources/contractkit/index.md) and make a simple Mento cUSD stablecoin transfer. You can view the DApp code [here](https://github.com/critesjosh/valora-wallet-connect-v1).
 
 ## Add Packages
 
@@ -43,7 +43,7 @@ If the DApp does not detect a [wallet connect provider](https://docs.walletconne
 
 If the DApp is being accessed on a computer or device other than the mobile device with the wallet, the user can connect to the mobile wallet by scanning the presented QR code. If the DApp is being accessed on the same device as the wallet, the connection will be made via the appropriate linking mechanism (iOS and Android are different). You can read more about that [here](https://docs.walletconnect.com/1.0/mobile-linking#wallet-support).
 
-When a provider is detected, the DApp will show a button to send some cUSD.
+When a provider is detected, the DApp will show a button to send Mento cUSD stablecoin.
 
 ![connect dapp](/img/doc-images/valora-wc-v1/connect-dapp.png)
 
@@ -82,20 +82,20 @@ The connect function sets up the WalletConnect Provider and initializes Contract
 
 When the provider has been set and the DApp is connected to Valora, the UI will update the button and display the user account address below.
 
-![send cusd](/img/doc-images/valora-wc-v1/send-cusd.png)
+![send Mento cUSD stablecoin](/img/doc-images/valora-wc-v1/send-cusd.png)
 
 ## Send cUSD
 
-Clicking the new button will prompt the user to send 0.001 cUSD to a hard-coded address. The user will have to click Allow to send the transaction. Once the transaction is confirmed, the transaction receipt will be printed in the DApp browser console.
+Clicking the new button will prompt the user to send 0.001 Mento cUSD stablecoin to a hard-coded address. The user will have to click Allow to send the transaction. Once the transaction is confirmed, the transaction receipt will be printed in the DApp browser console.
 
-You can code the transaction approval request with just a few lines, demonstrated in the `sendcUSD` function.
+You can code the transaction approval request with just a few lines, demonstrated in the `sendMentocUSD` function.
 
 - Get the saved instance of ContractKit from `this.state.kit`
-- Get the stabletoken (cUSD) contract
+- Get the stabletoken (Mento cUSD) contract
 - Call `transfer` and `send` with the recipient and amount
 
 ```js
- sendcUSD = async () => {
+ sendMentocUSD = async () => {
     let kit = this.state.kit
 
     let amount = kit.web3.utils.toWei('0.001', 'ether')
@@ -115,7 +115,7 @@ The receipt will be logged once the user approves the transaction and it is conf
 
 ## Pay Fees in Stable currencies
 
-Specifying the `feeCurrency` field in the transaction will allow users to pay transaction fees in that currency. Here's how you can have users pay transaction fees in cUSD, for example:
+Specifying the `feeCurrency` field in the transaction will allow users to pay transaction fees in that currency. Here's how you can have users pay transaction fees in Mento cUSD, for example:
 
 ```js
 const stabletoken = await kit.contracts.getStableToken()
