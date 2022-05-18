@@ -180,6 +180,17 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Add A Contract",
+      items: [
+        {
+          type: "doc",
+          label: "Add A Contract In Celo-Monorepo",
+          id: "celo-codebase/protocol/add-a-contract/AddingContract",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Bridging",
       items: [
         {
