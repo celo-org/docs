@@ -35,7 +35,7 @@ At the end of this guide, you will be able to:
 - Connect to the Celo test network, called Alfajores
 - Get test CELO, Celo Dollars (cUSD) and Celo Euros (cEUR) from the faucet
 - Read account and contract information from the test network
-- Transferring CELO, cUSD and cEUR on the test network
+- Transferring CELO, Mento cUSD and Mento cEUR on the test network
 
 ## Getting Started
 

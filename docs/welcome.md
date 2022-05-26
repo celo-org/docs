@@ -30,7 +30,7 @@ The company’s mission is to build a financial system that creates the conditio
 
 ## Celo Ecosystem
 
-An Ethereum-compatible technology capable of reaching global users at scale, Celo turns crypto into usable money with a multi-asset system: a governance and staking asset (CELO) and a family of stablecoins. Since the launch of Mainnet in 2020, Celo’s network now supports 1000+ projects from builders, developers, and artists, who everyday create new applications and issue digital currencies from over 100 countries around the world.
+An Ethereum-compatible technology capable of reaching global users at scale, Celo turns crypto into usable money with a multi-asset system: a governance and staking asset (CELO) and a family of Mento stablecoins. Since the launch of Mainnet in 2020, Celo’s network now supports 1000+ projects from builders, developers, and artists, who everyday create new applications and issue digital currencies from over 100 countries around the world.
 
 <YouTube videoId="vwfHiaVzc2E"/>
 

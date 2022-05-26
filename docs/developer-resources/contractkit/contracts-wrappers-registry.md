@@ -4,11 +4,11 @@ description: How to interact with CELO assets using the wrapper and registry Cel
 slug: /developer-guide/contractkit/contracts-wrappers-registry
 ---
 
-# Core Contracts (Wrapper/Registry) 
+# Core Contracts (Wrapper/Registry)
 
 How to interact with CELO assets using the wrapper and registry Celo Core Contracts.
 
-___
+---
 
 ## Interacting with CELO & cUSD
 
@@ -16,27 +16,27 @@ celo-blockchain has two initial coins: CELO and cUSD (stableToken).
 Both implement the ERC20 standard, and to interact with them is as simple as:
 
 ```ts
-const goldtoken = await kit.contracts.getGoldToken()
+const goldtoken = await kit.contracts.getGoldToken();
 
-const balance = await goldtoken.balanceOf(someAddress)
+const balance = await goldtoken.balanceOf(someAddress);
 ```
 
 To send funds:
 
 ```ts
-const oneGold = kit.web3.utils.toWei('1', 'ether')
+const oneGold = kit.web3.utils.toWei("1", "ether");
 const tx = await goldtoken.transfer(someAddress, oneGold).send({
   from: myAddress,
-})
+});
 
-const hash = await tx.getHash()
-const receipt = await tx.waitReceipt()
+const hash = await tx.getHash();
+const receipt = await tx.waitReceipt();
 ```
 
-To interact with cUSD, is the same but with a different contract:
+To interact with Mento cUSD, is the same but with a different contract:
 
 ```ts
-const stabletoken = await kit.contracts.getStableToken()
+const stabletoken = await kit.contracts.getStableToken();
 ```
 
 ## Interacting with Other Celo Contracts
@@ -70,18 +70,18 @@ That's actually how `kit` obtain them.
 We expose the registry api, which can be accessed by:
 
 ```ts
-const goldTokenAddress = await kit.registry.addressFor(CeloContract.GoldToken)
+const goldTokenAddress = await kit.registry.addressFor(CeloContract.GoldToken);
 ```
 
 ## Accessing web3 contract wrappers
 
 Some user might want to access web3 native contract wrappers.
-*We encourage to use the Celo contracts instead to avoid mistakes.*
+_We encourage to use the Celo contracts instead to avoid mistakes._
 
 To do so, you can:
 
 ```ts
-const web3Exchange = await kit._web3Contracts.getExchange()
+const web3Exchange = await kit._web3Contracts.getExchange();
 ```
 
 We expose native wrappers for all Web3 contracts.

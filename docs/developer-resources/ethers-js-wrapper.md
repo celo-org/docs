@@ -77,7 +77,7 @@ console.info(`cUSD payment hash received: ${txReceipt.transactionHash}`);
 
 ## Alternative gas fee currencies
 
-The Celo network supports paying for transactions with the native asset (CELO) but also with the stable token (cUSD).
+The Celo network supports paying for transactions with the native asset (CELO) but also with the stable token (Mento cUSD).
 
 This wrapper currently has partial support for specifying feeCurrency in transactions.
 

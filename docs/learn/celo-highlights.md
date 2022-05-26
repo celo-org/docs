@@ -11,7 +11,7 @@ Summary of benefits, features, and data behind the Celo platform.
 
 ## The Platform for Mobile DeFi
 
-The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
+The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets with Mento. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are Mento stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
 The Celo protocol also includes mechanisms for [lightweight identity](../celo-codebase/protocol/identity) and [ultralight mobile](../celo-codebase/protocol/consensus/ultralight-sync) clients.
 
@@ -25,7 +25,7 @@ The Celo protocol also includes mechanisms for [lightweight identity](../celo-co
 - Open-source
 - Permissionless
 - High Speed Sync for Ultra-light Clients
-- Gas Payable in Multiple Stablecoins
+- Gas Payable in Multiple Mento Stablecoins
 - Programmable (full EVM Compatibility)
 
 ## Optimized for Financial Applications
@@ -40,11 +40,11 @@ Powered by Celo’s industry-leading decentralized phone number verification, pa
 
 ## Core Contracts
 
-Designed to support an ecology of stable value currencies. The first stablecoin, cUSD, tracks the value of the US Dollar.
+Designed to support an ecology of stable value currencies. The first Mento stablecoin, cUSD, tracks the value of the US Dollar.
 
 - Algorithmic reserve-backed stabilization mechanism
 - Crypto-asset collateralized
-- Native support for multiple stablecoins
+- Native support for multiple Mento stablecoins
 
 ## Blockchain
 

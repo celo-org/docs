@@ -2,11 +2,12 @@
 title: The Celo Protocol
 description: Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 ---
+
 # The Celo Protocol
 
 Introduction to the Celo Protocol's consensus, governance, incentives, and key features.
 
-___
+---
 
 ## What is the Celo Protocol?
 
@@ -44,9 +45,9 @@ Since light clients need not trust full nodes, as they can verify their work, th
 
 ## Stable Cryptocurrencies
 
-Celo enables a family of stablecoins that track the value of any asset, including fiat currencies, commodities, and even natural resources. Stablecoins supported include the Celo Dollar (cUSD) and the Celo Euro (cEUR), which track the value of the U.S. Dollar and Euro respectively. CELO and a basket of other assets including BTC and ETH serve as the collateral for these stablecoins. These stablecoins are redeemable for CELO, ensuring that transactions can occur quickly, cheaply, and reliably on-chain.
+Celo enables a family of stablecoins that track the value of any asset, including fiat currencies, commodities, and even natural resources. Mento stablecoins supported include the Celo Dollar (cUSD) and the Celo Euro (cEUR), which track the value of the U.S. Dollar and Euro respectively. CELO and a basket of other assets including BTC and ETH serve as the collateral for these stablecoins. These stablecoins are redeemable for CELO, ensuring that transactions can occur quickly, cheaply, and reliably on-chain.
 
-Celo's stability mechanism allows users to create a new cUSD and cEUR by sending CELO to the reserve or burn cUSD and cEUR by redeeming it for their equivalent value in CELO.
+Mento's stability mechanism allows users to create a new cUSD and cEUR by sending CELO to the reserve or burn cUSD and cEUR by redeeming it for their equivalent value in CELO.
 
 This mechanism relies on a series of Oracles, or information feeds from exchanges external to the network, to report the CELO to US Dollar or Euro market rates. To minimize the risk of a run on CELO collateral when these reported values are inaccurate or out-of-date, Celo uses an on-chain constant-product-market-maker model, inspired by the[ Uniswap](https://uniswap.io/) system. This mechanism adjusts the redemption price of CELO until either arbitrage occurs (so that the on-chain price dynamically adjusts until the offered rate meets the external rate) or Oracles reset the on-chain price.
 
@@ -56,13 +57,11 @@ In addition, a backup reserve of cryptocurrencies is held off-chain. This off-ch
 
 **Roadmap: **Celo envisages a number of stable currencies tracking different fiat currencies as well as natural resources such as forests. In addition, once bridges between other chains and the Celo blockchain are fully developed, and liquid trading on decentralized exchanges occurs, the rebalancing can be handled transparently on-chain.
 
-
 ## Lightweight Identity
 
 Celo offers a lightweight identity layer that allows users of applications including Celo Wallet to identify and securely transact with other users via their contacts' phone numbers. Celo Wallet enables payments directly to users listed in their device's contacts list.
 
 The Attestations contract allows a user to request attestations to their phone number for a small fee. A secure decentralized source of randomness is used to pick a number of validators that will produce and send via SMS signed secret messages that act as attestations of ownership of the phone number. The user then submits these back to the Attestations contract which verifies them and installs a mapping for the phone number to the user's account.
-
 
 ## Richer Transactions
 

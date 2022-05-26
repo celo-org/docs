@@ -3,11 +3,12 @@ title: Celo DAppKit Usage
 description: How to use DAppKit and make use of its features while building DApps on Celo.
 slug: /developer-guide/dappkit/usage
 ---
+
 ## Usage
 
 How to use DAppKit and make use of its functions while building DApps on Celo.
 
-___
+---
 
 ## Overview
 
@@ -46,11 +47,11 @@ login = async () => {
 
   const dappkitResponse = await waitForAccountAuth(requestId);
 
-// The pepper is not available in all Valora versions
-  this.setState({ 
-    address: dappkitResponse.address, 
-    phoneNumber: dappkitResponse.phoneNumber, 
-    pepper: dappkitResponse.pepper 
+  // The pepper is not available in all Valora versions
+  this.setState({
+    address: dappkitResponse.address,
+    phoneNumber: dappkitResponse.phoneNumber,
+    pepper: dappkitResponse.pepper,
   });
 };
 ```
@@ -94,9 +95,12 @@ this.setState({ cUSDBalance, isLoadingBalance: false });
 If the user is using a Valora version that passes the `pepper` that Valora has for a `phone_number`, you can use both pieces of information to determine attestations for the identifier (learn more about the [lightweight identity protocol here](../../celo-codebase/protocol/identity)):
 
 ```javascript
-import { PhoneNumberUtils } from '@celo/utils'
+import { PhoneNumberUtils } from "@celo/utils";
 const attestations = await kit.contracts.getAttestations();
-const identifier = PhoneNumberUtils.getPhoneHash(dappkitResponse.phoneNumber, dappkitResponse.pepper);
+const identifier = PhoneNumberUtils.getPhoneHash(
+  dappkitResponse.phoneNumber,
+  dappkitResponse.pepper
+);
 // Find all accounts that have received attestations for this phone number
 const accounts = attestations.lookupAccountsForIdentifier(identifier);
 // Get the attestations stats for the accounts
@@ -154,7 +158,7 @@ this.setState({
 });
 ```
 
-## Example: Exchanging cUSD and Locking CELO
+## Example: Exchanging Mento cUSD and Locking CELO
 
 Here's an example of how to go about exchanging some cUSD to CELO, and
 then Locking that CELO to be able to vote for a validator group.

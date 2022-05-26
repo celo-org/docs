@@ -9,7 +9,7 @@ description: Overview of digital wallets available to send, spend, and earn Celo
 
 Overview of digital wallets available to send, spend, and earn Celo assets.
 
-___
+---
 
 ## Choosing a Wallet
 

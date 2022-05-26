@@ -8,7 +8,7 @@ slug: /developer-guide/development-chain
 
 How to set up a Celo development blockchain that includes all of the [core protocol contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol), including identity and stability contracts.
 
-___
+---
 
 ## What to expect
 
@@ -26,9 +26,9 @@ You can start a local EVM development blockchain with [Ganache](https://truffles
 ganache --fork.url https://forno.celo.org
 ```
 
-This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts like the [Reserve](https://explorer.celo.org/address/0xc683e6f77B58D814B31F8661331EbDf63785D607/contracts), [cUSD](https://explorer.celo.org/address/0x765DE816845861e75A25fCA122bb6898B8B1282a/contracts), [cEUR](https://explorer.celo.org/token/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/token-transfers), [Accounts](https://explorer.celo.org/address/0x7d21685C17607338b313a7174bAb6620baD0aaB7/read-proxy), Governance and [other contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts). 
+This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts like the [Reserve](https://explorer.celo.org/address/0xc683e6f77B58D814B31F8661331EbDf63785D607/contracts), [cUSD](https://explorer.celo.org/address/0x765DE816845861e75A25fCA122bb6898B8B1282a/contracts), [cEUR](https://explorer.celo.org/token/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/token-transfers), [Accounts](https://explorer.celo.org/address/0x7d21685C17607338b313a7174bAb6620baD0aaB7/read-proxy), Governance and [other contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts).
 
-You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment. 
+You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment.
 
 Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum enviroment. It behaves similarly to the Celo EVM but not exactly.
 
@@ -54,21 +54,21 @@ If you prefer, you can initialize your own devchain and build it from scratch. T
 git clone https://github.com/celo-org/celo-monorepo.git
 ```
 
-See [this page](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#building-celo-monorepo) for instructions on how to build the monorepo. 
+See [this page](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#building-celo-monorepo) for instructions on how to build the monorepo.
 
-Once the monorepo is built, move into the `contractkit` directory. 
+Once the monorepo is built, move into the `contractkit` directory.
 
 ```
 cd packages/sdk/contractkit
 ```
 
-From the `contractkit` directory, run 
+From the `contractkit` directory, run
 
 ```
 yarn test:reset && yarn test:livechain
 ```
 
-This will start the development Celo blockchain. It will take at least a few minutes to start. The contract migrations will be printed in the terminal as they are deployed. 
+This will start the development Celo blockchain. It will take at least a few minutes to start. The contract migrations will be printed in the terminal as they are deployed.
 
 The process will finish and print `Ganache started`. Leave this terminal window open to leave the development chain running.
 
@@ -76,15 +76,16 @@ The process will finish and print `Ganache started`. Leave this terminal window 
 
 ### **Inspecting the chain**
 
-Now that we have a Celo development chain running, we probably want to know what accounts we have access to, how much cGLD and cUSD they have as well as the addresses of the deployed protocol contracts.
+Now that we have a Celo development chain running, we probably want to know what accounts we have access to, how much cGLD and Mento cUSD they have as well as the addresses of the deployed protocol contracts.
 
 We can use the [Celo CLI tool](../command-line-interface/introduction) for this, or we can use the and the [ContractKit](../developer-guide/contractkit) npm package in a node script.
+
 ### **Celo CLI**
 
 You can install the CLI using npm by running `npm install -g @celo/celocli`. You can see the [package details here](https://www.npmjs.com/package/@celo/celocli). Once it is installed, you should be able to access the tool from the terminal by running `$ celocli`. Try `$ celocli help`.
 
 The CLI will connect to the node at [http://localhost:8545](http://localhost:8545) by default. To connect to port 7545 you can run
-`$ celocli config:set -n http://localhost:7545`, and then check check the connection by running  `$ celocli node:get`.
+`$ celocli config:set -n http://localhost:7545`, and then check check the connection by running `$ celocli node:get`.
 
 You can see the accounts available on the Celo development chain by running`$ celocli account:list`. You should see something like:
 
@@ -116,15 +117,14 @@ pending: 0
 
 You can also use the [ContractKit](../developer-guide/contractkit) to access the local node in a node.js script.
 
-As an example, try running [this script](https://gist.github.com/critesjosh/35ba7b1c2fe41934308cb243b003001c) in an npm project with contractkit installed. 
+As an example, try running [this script](https://gist.github.com/critesjosh/35ba7b1c2fe41934308cb243b003001c) in an npm project with contractkit installed.
 
 The linked gist is called getInfo.js. Run it with `$ node getInfo.js` This will print some of the Celo blockchain information.
 
-You are now prepared to start developing, transacting and deploying contracts on your own Celo development blockchain! 
+You are now prepared to start developing, transacting and deploying contracts on your own Celo development blockchain!
 
 ### Using Ethereum developers tools with Celo
 
-You can connect the development chain to a tool like [Truffle](https://www.trufflesuite.com/docs/truffle/overview) or [Remix](https://remix.ethereum.org/) to begin interacting with it. Keep in mind that these tools are built primarily for Ethereum development and are compatible with Celo because Celo is similar to Ethereum. The two blockchains have similar block architectures and both run the Ethereum Virtual Machine \(EVM\) for executing smart contracts. 
+You can connect the development chain to a tool like [Truffle](https://www.trufflesuite.com/docs/truffle/overview) or [Remix](https://remix.ethereum.org/) to begin interacting with it. Keep in mind that these tools are built primarily for Ethereum development and are compatible with Celo because Celo is similar to Ethereum. The two blockchains have similar block architectures and both run the Ethereum Virtual Machine \(EVM\) for executing smart contracts.
 
-The main difference between Celo and Ethereum that dapp developers need to keep in mind is that Celo has a slightly different transaction object than Ethereum. Celo requires 3 additional fields in a transaction object, a `feeCurrency`, a `gatewayFee` and a `gatewayFeeRecipient`. When Truffle and Remix are connected to a locally running Celo node, the local node will fill these fields with default values \(if the fields are empty\). The node will sign the Celo transaction and broadcast it to the network. Trying to send signed Ethereum transactions to a Celo network will not work.  
-
+The main difference between Celo and Ethereum that dapp developers need to keep in mind is that Celo has a slightly different transaction object than Ethereum. Celo requires 3 additional fields in a transaction object, a `feeCurrency`, a `gatewayFee` and a `gatewayFeeRecipient`. When Truffle and Remix are connected to a locally running Celo node, the local node will fill these fields with default values \(if the fields are empty\). The node will sign the Celo transaction and broadcast it to the network. Trying to send signed Ethereum transactions to a Celo network will not work.

@@ -1,13 +1,13 @@
 ---
 title: Celo Stability Algorithm (Mento)
-description: How the supply of the Celo Dollar is achieved in the Celo protocol using the constant-product decentralized one-to-one mechanism (CP-DOTO). 
+description: How the supply of the Celo Dollar is achieved in the Celo protocol using the constant-product decentralized one-to-one mechanism (CP-DOTO).
 ---
 
 # Stability Algorithm (Mento)
 
-How the supply of the Celo Dollar is achieved in the Celo protocol using the constant-product decentralized one-to-one mechanism. 
+How the supply of the Celo Dollar is achieved in the Celo protocol using the constant-product decentralized one-to-one mechanism.
 
-___
+---
 
 ## What is Mento?
 
@@ -15,13 +15,14 @@ On a high level, Mento (previously known as CP-DOTO) allows user demand to deter
 
 ## Incentives
 
-This creates incentives such that when demand for the Celo Dollar rises and the market price is above the peg, users can profit using their own efforts by buying 1 US Dollar worth of CELO on the market, exchanging it with the protocol for one Celo Dollar, and selling that Celo Dollar for the market price. 
+This creates incentives such that when demand for the Celo Dollar rises and the market price is above the peg, users can profit using their own efforts by buying 1 US Dollar worth of CELO on the market, exchanging it with the protocol for one Celo Dollar, and selling that Celo Dollar for the market price.
 
 Similarly, when demand for the Celo Dollar falls and the market price is below the peg, users can profit using their own efforts by purchasing Celo Dollar at the market price, exchanging it with the protocol for 1 US Dollar worth of CELO, and selling the CELO to the market.
 
 ## Mitigating Risk
 
-In cases in which the CELO to US Dollar oracle value is not an accurate reflection of the market price, exploiting such discrepancies can lead to a depletion of the reserve. Mento, inspired by the [Uniswap](https://uniswap.io/) system, mitigates this risk of depletion as follows: The Celo protocol maintains two virtual buckets of CELO and Celo Dollar. The amounts in these virtual buckets are recalibrated every time the reported oracle value is updated, provided the difference between the current time and the oracle timestamp is less than $$oracle\_staleness\_threshold$$. 
+In cases in which the CELO to US Dollar oracle value is not an accurate reflection of the market price, exploiting such discrepancies can lead to a depletion of the reserve. Mento, inspired by the [Uniswap](https://uniswap.io/) system, mitigates this risk of depletion as follows: The Celo protocol maintains two virtual buckets of CELO and Celo Dollar. The amounts in these virtual buckets are recalibrated every time the reported oracle value is updated, provided the difference between the current time and the oracle timestamp is less than $$oracle\_staleness\_threshold$$.
+
 ## Model Equations
 
 The equation for the constant-product-market-maker model fixes the product of the wallet quantities.
@@ -36,7 +37,8 @@ $$
 P_t = \frac{D_t}{G_t}
 $$
 
-for traded amounts that are small relative to the bucket quantities. 
+for traded amounts that are small relative to the bucket quantities.
+
 ## Oracle Rates
 
 Whenever the CELO to US Dollar oracle rate is updated, the protocol adjusts the bucket quantities such that they equalize the on-chain CELO to Celo Dollar exchange rate $$P_t$$ to the current oracle rate. During such a reset, the CELO bucket must remain smaller than the total reserve gold balance. To achieve this, the CELO bucket size is defined as the total reserve balance times $$gold\_bucket\_size$$, with $$0<gold\_bucket\_size<1$$ and the Celo Dollar bucket size is then chosen such that $$P_t$$ mirrors the oracle price. To discourage excessive on-chain trading, a transaction fee is imposed by adding small spread around the above exchange rate.
@@ -51,4 +53,4 @@ For a more detailed explanation, read the article [Zooming in on the Celo Expans
 
 ## Multi-mento Deployment
 
-Many instances of mento can be deployed in parallel for different stable assets. Currently, `cEUR` and `cUSD` live side-by-side, with independent buckets and oracle reports (although both of them are using the same `SortedOracles` instance). They all fill the CELO bucket with funds from the Reserve, but not necessarily at the same time.
+Many instances of Mento can be deployed in parallel for different stable assets. Currently, Mento `cEUR` and `cUSD` live side-by-side, with independent buckets and oracle reports (although both of them are using the same `SortedOracles` instance). They all fill the CELO bucket with funds from the Reserve, but not necessarily at the same time.

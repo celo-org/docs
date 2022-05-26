@@ -9,7 +9,7 @@ export const N = "N";
 
 Details of the release process for updating smart contracts on the Celo platform.
 
-___
+---
 
 :::warning
 
@@ -131,7 +131,7 @@ This should be used in tandem with `verify-deployed -b $PREVIOUS_RELEASE -n $NET
 
 ### Deploy the release candidate
 
-Use the following script to build and deploy a candidate release. This takes as input the corresponding backwards compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy). 
+Use the following script to build and deploy a candidate release. This takes as input the corresponding backwards compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
 STORAGE updates are adopted by deploying a new proxy/implementation pair. This script outputs a JSON contract upgrade governance proposal.
 
 ```bash
@@ -293,18 +293,16 @@ Deploying a new contract release should occur with the following process. On-cha
           <ol>
             <li>
               {" "}
-              Submit a governance proposal draft using this format:
-              https://github.com/celo-org/celo-proposals/blob/master/CGPs/template.md
+              Submit a governance proposal draft using this format: https://github.com/celo-org/celo-proposals/blob/master/CGPs/template.md
             </li>
             <li>
               {" "}
-              Add any initialization data to the CGP that should be included as
-              part of the proposal
+              Add any initialization data to the CGP that should be included as part
+              of the proposal
             </li>
             <li>
               {" "}
-              Announce forthcoming smart contract release on:
-              https://forum.celo.org/c/governance
+              Announce forthcoming smart contract release on: https://forum.celo.org/c/governance
             </li>
           </ol>
         </li>
@@ -336,9 +334,9 @@ Deploying a new contract release should occur with the following process. On-cha
       <ol>
         <li>
           On Tuesday: Run the{" "}
-          <a href="#release-process">smart contract release script</a>{" "}
-          in order to to deploy the contracts to Baklava as well as submit a
-          governance proposal.
+          <a href="#release-process">smart contract release script</a> in order
+          to to deploy the contracts to Baklava as well as submit a governance
+          proposal.
           <ul>
             <li>
               Transition proposal through Baklava{" "}
@@ -363,10 +361,7 @@ Deploying a new contract release should occur with the following process. On-cha
       <ol>
         <li>Confirm all contracts working as intended on Baklava.</li>
         <li>
-          Run the{" "}
-          <a href="#release-process">
-            smart contract release script
-          </a>{" "}
+          Run the <a href="#release-process">smart contract release script</a>{" "}
           in order to to deploy the contracts to Alfajores as well as submit a
           governance proposal.
         </li>
@@ -411,9 +406,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/celo-codebase/protocol/governance">
-            governance process.
-          </a>
+          <a href="/celo-codebase/protocol/governance">governance process.</a>
           <ul>
             <li>
               Currently the governance process should take approximately 1 week:

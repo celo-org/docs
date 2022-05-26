@@ -27,6 +27,6 @@ CELO is a platform-native reserve and governance asset, serving as the primary a
 
 ## What can Celo Dollars Do?
 
-Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Celo stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility.
+Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are Mento stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Celo stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility.
 
 <YouTube videoId="bu4P6jZKXgA"/>

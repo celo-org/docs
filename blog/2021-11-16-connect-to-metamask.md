@@ -122,7 +122,7 @@ function MetamaskAddToken() {
     });
   }
 
-  return <button onClick={addToken}>Add cUSD (Alfajores)</button>;
+  return <button onClick={addToken}>Add Mento cUSD (Alfajores)</button>;
 }
 ```
 

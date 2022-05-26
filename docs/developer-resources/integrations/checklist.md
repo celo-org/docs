@@ -8,7 +8,7 @@ description: Checklist for applications building and integrating on Celo.
 
 Checklist for applications building and integrating on Celo.
 
-___
+---
 
 ## General
 
@@ -28,7 +28,7 @@ Please read more under [Custody](/developer-resources/integrations/custody.md), 
 
 ### Detect Transfers
 
-Stable-value currencies, currently cUSD and cEUR, are contracts, `StableToken` and `StableTokenEUR` respectively, that can be accessed via the ERC20 interface.  The native asset CELO can be accessed via the `GoldToken` ERC20 interface, or natively, similar to ETH on Ethereum.
+Mento stable-value currencies, currently cUSD and cEUR, are contracts, `StableToken` and `StableTokenEUR` respectively, that can be accessed via the ERC20 interface. The native asset CELO can be accessed via the `GoldToken` ERC20 interface, or natively, similar to ETH on Ethereum.
 
 Addresses for those contracts can be found by querying the [registry](../contractkit/contracts-wrappers-registry.md) or in the [Listing Guide](./listings.md).
 
@@ -62,7 +62,7 @@ When transferring assets to an account, wallets should check the receiving accou
 
 ### Transaction metadata
 
-cUSD (aka StableToken) adds an additional method to the ERC20 interface called `transferWithComment` which allows senders to specify an additional comment that Celo wallets should support. Additionally, comments should be encrypted to the `dataEncryptionKey` when applicable.
+cUSD (aka Mento StableToken) adds an additional method to the ERC20 interface called `transferWithComment` which allows senders to specify an additional comment that Celo wallets should support. Additionally, comments should be encrypted to the `dataEncryptionKey` when applicable.
 
 ### Dappkit
 

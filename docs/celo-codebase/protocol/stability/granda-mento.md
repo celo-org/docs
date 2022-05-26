@@ -7,7 +7,7 @@ description: Introduction to Granda Mento (CIP 38), its design, and how to manag
 
 Introduction to Granda Mento (CIP 38), its design, and how to manage exchange proposals.
 
-___
+---
 
 ## What is Granda Mento?
 
@@ -17,7 +17,7 @@ Mento has proven effective at maintaining the stability of Celo's stable tokens,
 
 Similar to Mento, exchanges through Granda Mento are effectively made against the reserve. Purchased stable tokens are created into existence ("minted"), and sold stable tokens are destroyed ("burned"). Purchased CELO is taken from the reserve, and sold CELO is given to the reserve. For example, a sale of 50,000 CELO in exchange for 100,000 cUSD would involve the 50,000 CELO being transferred to the reserve and the 100,000 cUSD being created and given to the exchanger.
 
-At the time of writing, exchanging about 50,000 cUSD via Mento results in a slippage of about 2%. Without Granda Mento, all launched Celo stable tokens can only be minted and burned using Mento, with the exception of cUSD that is minted as validator rewards each epoch. Granda Mento was created to enable institutional-grade liquidity to mint or burn millions of stable tokens at a time.
+At the time of writing, exchanging about 50,000 cUSD via Mento results in a slippage of about 2%. Without Granda Mento, all launched Celo stable tokens can only be minted and burned using Mento, with the exception of Mento cUSD that is minted as validator rewards each epoch. Granda Mento was created to enable institutional-grade liquidity to mint or burn millions of stable tokens at a time.
 
 The mainnet Granda Mento contract address is `0x03f6842B82DD2C9276931A17dd23D73C16454a49` ([link](https://explorer.celo.org/address/0x03f6842B82DD2C9276931A17dd23D73C16454a49)), was introduced in [Contract Release 5](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0037.md), and activated in [CGP 31](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0031.md).
 
@@ -41,7 +41,7 @@ Processes surrounding Granda Mento exchanges, like how to achieve rough consensu
 The approver multi-sig that is ultimately responsible for approving an exchange proposal that has achieved rough consensus from the community is `0xf10011424A0F35B8411e9abcF120eCF067E4CF27` ([link](https://explorer.celo.org/address/0xf10011424A0F35B8411e9abcF120eCF067E4CF27/transactions)) and has the following signers:
 
 | **Name**        | **Affiliation**                       | **Discord Handle**        | **Address**                                  |
-|-----------------|---------------------------------------|---------------------------|----------------------------------------------|
+| --------------- | ------------------------------------- | ------------------------- | -------------------------------------------- |
 | Andrew Shen     | [Bi23 Labs](https://bi23.com/)        | `Shen \| Bi23 Labs #6675` | `0xBecc041a5090cD08AbD3940ab338d4CC94d2Ed3c` |
 | Pinotio         | [Pinotio](https://pinotio.com/)       | `Pinotio.com #5357`       | `0x802FE32083fD341D8e9A35E3a351291d948a83E6` |
 | Serge Kiema     | [DuniaPay](https://www.duniapay.net/) | `serge_duniapay #5152`    | `0xdcac99458a3c5957d8ae7b92e4bafc88a32b80e4` |
