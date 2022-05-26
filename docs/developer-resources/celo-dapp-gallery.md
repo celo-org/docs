@@ -30,6 +30,11 @@ Celo Camp is a virtual accelerator and competition focused on helping startups a
 
 [View Celo Camp](https://www.celocamp.com/)
 
+### Flan
+Flan is a freelancing platform that offers users with multiple tools to streamline gig-posting, asset ownership, project processes, and payments for freelancers and clients operating in the creative/digital space.
+
+* [Website](https://www.flan.design/)
+
 ### GoodGhosting
 GoodGosting is a no-loss DeFi saving game. Users can compete with others to get higher interest rates than when they would save by themselves. We created a shared saving pool smart contract, which plugs into existing Celo DeFi projects (e.g. Moola) to generate interest for all winning players.
 
