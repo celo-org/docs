@@ -3,11 +3,12 @@ title: Celo DAppKit Usage
 description: How to use DAppKit and make use of its features while building DApps on Celo.
 slug: /developer-guide/dappkit/usage
 ---
+
 ## Usage
 
 How to use DAppKit and make use of its functions while building DApps on Celo.
 
-___
+---
 
 ## Overview
 
@@ -46,11 +47,11 @@ login = async () => {
 
   const dappkitResponse = await waitForAccountAuth(requestId);
 
-// The pepper is not available in all Valora versions
-  this.setState({ 
-    address: dappkitResponse.address, 
-    phoneNumber: dappkitResponse.phoneNumber, 
-    pepper: dappkitResponse.pepper 
+  // The pepper is not available in all Valora versions
+  this.setState({
+    address: dappkitResponse.address,
+    phoneNumber: dappkitResponse.phoneNumber,
+    pepper: dappkitResponse.pepper,
   });
 };
 ```
@@ -79,7 +80,7 @@ Then add the following to your `login` method to fetch a user's balance:
 this.setState({ isLoadingBalance: true });
 // Set the default account to the account returned from the wallet
 kit.defaultAccount = this.state.address;
-// Get the StableToken contract
+// Get the Mento StableToken contract
 const stableToken = await kit.contracts.getStableToken();
 // Get the user account balance (cUSD)
 const cUSDBalanceBig = await stableToken.balanceOf(kit.defaultAccount);
@@ -94,9 +95,12 @@ this.setState({ cUSDBalance, isLoadingBalance: false });
 If the user is using a Valora version that passes the `pepper` that Valora has for a `phone_number`, you can use both pieces of information to determine attestations for the identifier (learn more about the [lightweight identity protocol here](../../celo-codebase/protocol/identity)):
 
 ```javascript
-import { PhoneNumberUtils } from '@celo/utils'
+import { PhoneNumberUtils } from "@celo/utils";
 const attestations = await kit.contracts.getAttestations();
-const identifier = PhoneNumberUtils.getPhoneHash(dappkitResponse.phoneNumber, dappkitResponse.pepper);
+const identifier = PhoneNumberUtils.getPhoneHash(
+  dappkitResponse.phoneNumber,
+  dappkitResponse.pepper
+);
 // Find all accounts that have received attestations for this phone number
 const accounts = attestations.lookupAccountsForIdentifier(identifier);
 // Get the attestations stats for the accounts
@@ -214,7 +218,7 @@ const tenCUSD = new BigNumber("10e18");
 // Now we will generate the transactions that we require to be signed
 
 // First of all, we need to increase the allowance of the exchange address
-// to let the contract expend the amount of stable tokens to buy one CELO.
+// to let the contract expend the amount of Mento stabletokens to buy one CELO.
 // We are allowing the exchange contract to spend 10 cUSD
 const txObjectIncAllow = stableToken.increaseAllowance(
   exchange.address,
