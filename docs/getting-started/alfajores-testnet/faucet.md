@@ -2,11 +2,12 @@
 title: Celo Wallet Testnet Funds
 description: How to fund your Celo wallet account with testnet funds.
 ---
+
 # Celo Wallet Testnet Funds
 
 How to fund your Celo wallet account with testnet funds.
 
-___
+---
 
 ## Getting Started
 
@@ -18,7 +19,7 @@ Alfajores Testnet accounts hold no real world economic value. The testnet's data
 
 :::
 
-Getting an account is really being given or generating a public-private keypair. This gives you control of balances accessible with the address corresponding to that key. For CELO, this is a native balance stored at the account whose address matches your key. For Celo Dollars, an ERC-20 token, the StableCoin smart contract maintains in its storage a mapping of the balance of each address.
+Getting an account is really being given or generating a public-private keypair. This gives you control of balances accessible with the address corresponding to that key. For CELO, this is a native balance stored at the account whose address matches your key. For Celo Dollars, an ERC-20 token, the Mento Stablecoin smart contract maintains in its storage a mapping of the balance of each address.
 
 ### Get an Invitation Code
 

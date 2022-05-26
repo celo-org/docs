@@ -65,7 +65,7 @@ At the moment there is none on telegram, best to follow Celo on Twitter or any o
 
 ### What token does CELO have?
 
-The platform has three native tokens. CELO is a proof-of-stake (PoS) token used for transaction fees, governance participation, and related activities. In the future, the platform aims to host various stablecoins, with Celo Dollar & Celo Euro, already in use.
+The platform has three native tokens. CELO is a proof-of-stake (PoS) token used for transaction fees, governance participation, and related activities. In the future, the platform aims to host various Mento stablecoins, with Celo Dollar & Celo Euro, already in use.
 
 ### What is cUSD/cEUR backed by?
 
@@ -77,7 +77,7 @@ Go to the App Store and search "Valora" to find the Celo mobile wallet. Alternat
 
 ### What's the difference between cEUR and cUSD?
 
-cEUR is a stablecoin that tracks the value of 1 euro while cUSD follows the value of 1 USD.
+cEUR is a Mento stablecoin that tracks the value of 1 euro while cUSD follows the value of 1 USD.
 
 ---
 
@@ -97,7 +97,7 @@ CELO has a capped supply of 1 billion (1,000,000,000) tokens, of which 600 milli
 
 The last 40% of the supply will be released gradually via fees and rewards, and various vesting schedules are in place depending on how initial investors received their tokens.
 
-In addition, up to 120 million CELO will go towards a reserve designed to maintain the validity and price stability of cUSD. As a stablecoin, cUSD is envisioned as a convenient payment method for Celo users who will not have to worry about their holdings fluctuating in value.
+In addition, up to 120 million CELO will go towards a reserve designed to maintain the validity and price stability of cUSD. As a Mento stablecoin, cUSD is envisioned as a convenient payment method for Celo users who will not have to worry about their holdings fluctuating in value.
 
 ---
 

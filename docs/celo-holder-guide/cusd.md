@@ -1,13 +1,14 @@
 ---
 title: Celo Asset Management Guide
-description: Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and stablecoins. 
+description: Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and Mento stablecoins.
 slug: /celo-owner-guide/cusd
 ---
-# Asset Management 
 
-Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and stablecoins. 
+# Asset Management
 
-___
+Access and account management for holding, exchanging, or sending Celo Dollars (cUSD) and Mento stablecoins.
+
+---
 
 ## Prerequisites
 
@@ -33,7 +34,7 @@ After creating an account, record its address in environment variables:
 export CELO_ACCOUNT_ADDRESS=<YOUR-CELO-ACCOUNT-ADDRESS>
 ```
 
-## Exchange CELO for Stablecoins
+## Exchange CELO for Mento Stablecoins
 
 Once you have deposited CELO to your account, you can check your balance:
 
@@ -47,9 +48,9 @@ As an example of a common stablecoin swap, you can exchange CELO for cUSD using 
 celocli exchange:celo --value <VALUE-TO-EXCHANGE> --from $CELO_ACCOUNT_ADDRESS
 ```
 
-## Transfer Stablecoins
+## Transfer Mento Stablecoins
 
-When you have sufficient balance, you can send stablecoins such as cUSD to other accounts. Note that the unit of value is cUSD Wei (1 cUSD = 10^18 cUSD Wei).
+When you have sufficient balance, you can send Mento stablecoins such as cUSD to other accounts. Note that the unit of value is cUSD Wei (1 cUSD = 10^18 cUSD Wei).
 
 ```
 celocli transfer:dollars --from $CELO_ACCOUNT_ADDRESS --to <RECIPIENT-ADDRESS> --value <VALUE-TO-TRANSFER>

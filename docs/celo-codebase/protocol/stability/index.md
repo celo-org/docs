@@ -3,6 +3,7 @@ title: Celo Stability Mechanism Overview
 slug: /celo-codebase/protocol/stability
 description: Overview of the Celo protocol's Stability Mechanisms.
 ---
+
 import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
@@ -10,9 +11,9 @@ import PageRef from '@components/PageRef';
 
 Overview of the Celo protocol's Stability Mechanisms.
 
-___
+---
 
-## Stability of Celo's Stablecoin Protocol
+## Stability of Mento Stablecoin Protocol
 
 <YouTube videoId="kYhDUmKuGCY"/>
 

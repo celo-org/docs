@@ -1,15 +1,13 @@
 ---
-
 title: Connect Ledger to Celo CLI
 description: How to connect a ledger wallet to the Celo CLI.
-
 ---
 
 # Connect Ledger to Celo CLI
 
 How to connect a ledger wallet to the Celo CLI.
 
-___
+---
 
 ### Install the Celo CLI
 
@@ -41,7 +39,7 @@ celocli config:set --node https://forno.celo.org/
 
 Connecting celocli to an untrusted node may allow that node to influence the transactions sent by the Celo CLI to the Ledger for signing. When in doubt, always use a node that you trust or are running yourself.
 
-::: 
+:::
 
 #### [Configure for Celo Alfajores Testnet](https://docs.celo.org/getting-started/alfajores-testnet).
 
@@ -91,7 +89,7 @@ celocli account:list --useLedger --ledgerCustomAddresses "[M, N]"
 
 :::info
 
-**Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.  
+**Advanced:** Celo uses a [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) derivation path of `m/44'/52752'/0'/0/index`, where `index >= 0`.
 
 :::
 
@@ -143,7 +141,7 @@ This will display the specific account balance for your address on Celo Mainnet.
 
 ## Receive Crypto Assets
 
-In order to receive Celo on your address, whether it's CELO or cUSD or any stablecoin in the future, you must share your specific address with the sender.
+In order to receive Celo on your address, whether it's CELO or cUSD or any Mento stablecoin in the future, you must share your specific address with the sender.
 
 Once a sender has confirmed they sent you the assets to your Ledger address, ask for the transaction ID which you can lookup on the [Explorer](https://explorer.celo.org/).
 
@@ -154,6 +152,7 @@ In order to send CELO or cUSD from your Ledger, you just need a recipient addres
 ```sh
 celocli transfer:gold --from=<your-address> --to=<recipient-address> --value=10 --useLedger
 ```
+
 You'll need to then approve the transaction on the Ledger device. Toggle right on the device until you see `Approve` on screen. Press both buttons at the same time to confirm.
 
 You'll then get a transaction hash when it's confirmed that the transaction was mined by the network, and you can check the status of the transaction on the explorer [here](https://explorer.celo.org).

@@ -40,7 +40,7 @@ Powered by Celo’s industry-leading decentralized phone number verification, pa
 
 ## Core Contracts
 
-Designed to support an ecology of stable value currencies. The first stablecoin, cUSD, tracks the value of the US Dollar.
+Designed to support an ecology of stable value currencies. The first Mento stablecoin, cUSD, tracks the value of the US Dollar.
 
 - Algorithmic reserve-backed stabilization mechanism
 - Crypto-asset collateralized

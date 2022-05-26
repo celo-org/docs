@@ -10,7 +10,7 @@ import PageRef from '@components/PageRef'
 
 List of examples and guides to help you start building on Celo.
 
-___
+---
 
 ## Sending CELO & Mento cUSD stablecoin
 
