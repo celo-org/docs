@@ -153,6 +153,13 @@ Talent Protocol is a web3 platform where talent can easily launch a social token
 * [Website](https://talentprotocol.com)
 * [GitHub](https://github.com/talentprotocol)
 
+### esolidar
+
+Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sustainable project or cause can choose to receive Celo stablecoins as donations.
+
+* [Website](https://web3.esolidar.com)
+* [GitHub](https://github.com/esolidar/web3)
+
 ___
 ## Decentralized Impact Incubator Winners
 
