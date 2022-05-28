@@ -255,3 +255,10 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 * [Website](https://raregems.io/)
 * [Celo NFT collections](https://raregems.io/celo)
+
+## Birden
+
+Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces. 
+
+* [Website](https://birden.io/)
+* [GitHub](https://github.com/fffilimonov/birden)
