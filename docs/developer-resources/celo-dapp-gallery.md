@@ -255,3 +255,11 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 * [Website](https://raregems.io/)
 * [Celo NFT collections](https://raregems.io/celo)
+
+## Bru Finance
+
+Globally the largest issuer of tokenized real world assets ($600 Million & Counting), Brú Finance is  a new paradigm of DeFi 2.5 that brings Tokenized Emerging Market Asset Backed Bonds to decentralised finance.
+
+* [Website](https://bru.finance)
+* [Mobile Web App on Celo](https://celo.bru.finance)
+* [Github](https://gitlab.com/abhib.work/bruapp/-/tree/prod)
