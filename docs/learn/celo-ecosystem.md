@@ -50,7 +50,7 @@ The Celo Foundation Grants Program is an open initiative supporting projects com
 
 ## Celo Ambassadors
 
-Celo Ambassadors are active Celo community members who are passionate about furthering Celo’s mission by driving the adoption of the Celo ecosystem.
+Celo Ambassadors are active Celo community members who are passionate about furthering Celo’s mission by driving the adoption of the Celo ecosystem. To become an ambassador, sign up [here](https://celocommunity.xyz/join-the-ambassador-program)
 
 ## Kuneco
 
