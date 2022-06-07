@@ -1,5 +1,5 @@
 ---
-title: Celo DAppKit Usage
+title: Celo DappKit Usage
 description: How to use DAppKit and make use of its features while building DApps on Celo.
 slug: /developer-guide/dappkit/usage
 ---
