@@ -62,7 +62,7 @@ console.info(`CELO transaction hash received: ${txReceipt.transactionHash}`);
 
 `CeloWallet` can be used to send transactions.
 
-Here's an example of sending cUSD with the StableToken contract. For interacting with contracts you need the ABI and address. Addresses for Celo core contracts can be found with the CLI's `network:contracts` command. The ABIs can be built from the solidity code or extracted in ContractKit's `generated` folder.
+Here's an example of sending cUSD with the Mento StableToken contract. For interacting with contracts you need the ABI and address. Addresses for Celo core contracts can be found with the CLI's `network:contracts` command. The ABIs can be built from the solidity code or extracted in ContractKit's `generated` folder.
 
 ```js
 import { Contract, ethers, utils, providers } from "ethers";
@@ -77,7 +77,7 @@ console.info(`cUSD payment hash received: ${txReceipt.transactionHash}`);
 
 ## Alternative gas fee currencies
 
-The Celo network supports paying for transactions with the native asset (CELO) but also with the stable token (cUSD).
+The Celo network supports paying for transactions with the native asset (CELO) but also with the Mento stabletoken (cUSD).
 
 This wrapper currently has partial support for specifying feeCurrency in transactions.
 

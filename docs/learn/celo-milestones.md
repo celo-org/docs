@@ -2,19 +2,20 @@
 title: Celo Milestones
 description: Important milestones for the Celo protocol and ecosystem.
 ---
+
 # Milestones
 
 Important milestones for the Celo protocol and ecosystem.
 
-___
+---
 
 ## Deutsche Telekom
 
-**Deutsche Telekom** [made](https://medium.com/celoorg/deutsche-telekom-joins-celo-ecosystem-as-the-first-mobile-carrier-amid-launch-of-ceur-stablecoin-2b79aae38540) a strategic purchase of the Celo native digital asset (CELO) and joined the Celo Alliance for Prosperity as the first mobile carrier member. They also became a validator on the Celo network. This partnership is very aligned with Celo’s mission and the services Deutsche Telekom provides its customers worldwide, the majority of which primarily use their phones to access financial services. By building on Celo’s mobile-first platform, mobile carriers like Deutsche Telekom are able to seamlessly integrate mobile-friendly blockchain-based solutions and serve customers in new, meaningful ways. Deutsche Telekom is leading in this effort, and we’re excited to see how mobile carriers and other organizations take advantage of all that blockchain and cryptocurrency has to offer. 
+**Deutsche Telekom** [made](https://medium.com/celoorg/deutsche-telekom-joins-celo-ecosystem-as-the-first-mobile-carrier-amid-launch-of-ceur-stablecoin-2b79aae38540) a strategic purchase of the Celo native digital asset (CELO) and joined the Celo Alliance for Prosperity as the first mobile carrier member. They also became a validator on the Celo network. This partnership is very aligned with Celo’s mission and the services Deutsche Telekom provides its customers worldwide, the majority of which primarily use their phones to access financial services. By building on Celo’s mobile-first platform, mobile carriers like Deutsche Telekom are able to seamlessly integrate mobile-friendly blockchain-based solutions and serve customers in new, meaningful ways. Deutsche Telekom is leading in this effort, and we’re excited to see how mobile carriers and other organizations take advantage of all that blockchain and cryptocurrency has to offer.
 
 ## Celo Euro (cEUR)
 
-We launched **Celo Euro (cEUR)**, our second native stablecoin on the platform for mobile payments that we’ve launched in the last year. cEUR creates an entirely new remittance market for the European Union where users can quickly and easily transfer digital money between countries with a phone number. It’s as easy as sending a text message and can be done in as little as 5 seconds for less than $0.01. Combined with the open nature of Celo’s platform, we can enable a mobile-friendly form of digital money that can be used by the 6 billion smartphone users around the world. 
+We launched **Celo Euro (cEUR)**, our second native Mento stablecoin on the platform for mobile payments that we’ve launched in the last year. cEUR creates an entirely new remittance market for the European Union where users can quickly and easily transfer digital money between countries with a phone number. It’s as easy as sending a text message and can be done in as little as 5 seconds for less than $0.01. Combined with the open nature of Celo’s platform, we can enable a mobile-friendly form of digital money that can be used by the 6 billion smartphone users around the world.
 
 ## Optics
 
@@ -30,7 +31,7 @@ We [introduced](https://medium.com/celoorg/announcing-optics-a-gas-efficient-int
 
 ## Carbon Negative
 
-In [May](https://medium.com/celoorg/a-carbon-negative-blockchain-its-here-and-it-s-celo-60228de36490) we shared that Celo officially became one of the **first carbon negative blockchains** and highlighted some [community initiatives](https://projectwren.com/projects/community-tree-planting) underway to offset carbon emissions on Celo. Building on that, we recently submitted an on-chain government proposal to allocate .5% of the Celo Reserve to natural backed assets, the first being Mc02 tokens. This makes Celo the first blockchain to incorporate natural backed assets into its reserve, enabling users to support and protect the environment—just by using Celo Dollar (cUSD)—and we hope it will set a new standard for the industry. 
+In [May](https://medium.com/celoorg/a-carbon-negative-blockchain-its-here-and-it-s-celo-60228de36490) we shared that Celo officially became one of the **first carbon negative blockchains** and highlighted some [community initiatives](https://projectwren.com/projects/community-tree-planting) underway to offset carbon emissions on Celo. Building on that, we recently submitted an on-chain government proposal to allocate .5% of the Celo Reserve to natural backed assets, the first being Mc02 tokens. This makes Celo the first blockchain to incorporate natural backed assets into its reserve, enabling users to support and protect the environment—just by using Celo Dollar (cUSD)—and we hope it will set a new standard for the industry.
 
 ## Donut Hardfork
 
@@ -38,6 +39,6 @@ On May 19th 2021, the donut hardfork went live.**The Donut Hardfork** is a non-c
 
 **Important updates from the Donut Hardfork:**
 
-* **CIP-20** | Toolkit for adding cryptographic functions that are useful to smart-contract devs 
-* **CIP-25**: Will help enable future bridging to Solana, Cosmos, and NEAR thanks to Chorus One
-* **CIP-35**: Makes Ethereum transaction types accessible on Celo, which will enable access to all Ethereum’s tools 
+- **CIP-20** | Toolkit for adding cryptographic functions that are useful to smart-contract devs
+- **CIP-25**: Will help enable future bridging to Solana, Cosmos, and NEAR thanks to Chorus One
+- **CIP-35**: Makes Ethereum transaction types accessible on Celo, which will enable access to all Ethereum’s tools

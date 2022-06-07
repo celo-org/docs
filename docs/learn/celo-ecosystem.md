@@ -2,11 +2,12 @@
 title: Celo Ecosystem
 description: Celo tools, assets, and community are focused on creating a future where everyone can prosper.
 ---
+
 # Ecosystem
 
 Celo tools, assets, and community are focused on creating a future where everyone can prosper.
 
-___
+---
 
 ## Mainnet
 
@@ -14,7 +15,7 @@ The Celo Mainnet is Celo's production network and was launched in April 2020. Ma
 
 ## CELO
 
-CELO is a platform-native reserve and governance asset, serving as the primary asset in the [stability mechanism](https://celo.org/papers/Celo_Stability_Analysis.pdf) (Mento) that supports stable digital currencies like cUSD and cEUR. CELO’s primary function is stabilization, ensuring the healthy velocity of assets that globally circulate and transact on Celo. CELO also serves as the key governance mechanism for the Celo Platform. Owning and using CELO supports the growth and development of the Celo Platform by enabling each CELO owner to vote on proposals that direct how the core technology operates today and in the future. 
+CELO is a platform-native reserve and governance asset, serving as the primary asset in the [stability mechanism](https://celo.org/papers/Celo_Stability_Analysis.pdf) (Mento) that supports stable digital currencies like cUSD and cEUR. CELO’s primary function is stabilization, ensuring the healthy velocity of assets that globally circulate and transact on Celo. CELO also serves as the key governance mechanism for the Celo Platform. Owning and using CELO supports the growth and development of the Celo Platform by enabling each CELO owner to vote on proposals that direct how the core technology operates today and in the future.
 
 ## Stable Assets
 
@@ -22,11 +23,11 @@ The Celo Reserve supports the Celo Platform and helps to ensure the value of sta
 
 ## Celo Dollars (cUSD)
 
-Celo Dollars (cUSD) are Celo’s first stable asset (i.e., stablecoin) that tracks the value of the U.S. dollar. Celo Dollars were designed to be as usable and stable as everyday digital money with the added benefits of fully mobile global circulation. Because Celo Dollars are digital, stable, and mobile-first, users can easily save, pay, lend, and send cUSD to any mobile number in the world in faster, cheaper, and more secure ways.
+Celo Dollars (cUSD) are Celo’s first Mento stable asset that tracks the value of the U.S. dollar. Celo Dollars were designed to be as usable and stable as everyday digital money with the added benefits of fully mobile global circulation. Because Celo Dollars are digital, stable, and mobile-first, users can easily save, pay, lend, and send cUSD to any mobile number in the world in faster, cheaper, and more secure ways.
 
 ## Celo Euro (cEUR)
 
-Celo Euro (cEUR) is Celo’s stable asset (i.e., stablecoin) that tracks the value of the Euro. Celo Euro was designed to be as usable and stable as everyday digital money with the added benefits of fully mobile global circulation. Because Celo Euro are digital, stable, and mobile-first, users can easily save, pay, lend, and send cEUR to any mobile number in the world in faster, cheaper, and more secure ways.
+Celo Euro (cEUR) is Celo’s Mento stable asset that tracks the value of the Euro. Celo Euro was designed to be as usable and stable as everyday digital money with the added benefits of fully mobile global circulation. Because Celo Euro are digital, stable, and mobile-first, users can easily save, pay, lend, and send cEUR to any mobile number in the world in faster, cheaper, and more secure ways.
 
 ## The Celo Foundation
 
@@ -34,11 +35,11 @@ The Celo Foundation is a U.S.-based organization that helps to bring Celo’s mi
 
 ## The Alliance for Prosperity
 
-The Alliance for Prosperity is a group of mission-aligned Celo Foundation members focused on developing use cases for the Celo Platform and ecosystem of technologies, furthering the mission of financial inclusion and prosperity, and driving adoption of the Celo blockchain and ecology of digital assets. 
+The Alliance for Prosperity is a group of mission-aligned Celo Foundation members focused on developing use cases for the Celo Platform and ecosystem of technologies, furthering the mission of financial inclusion and prosperity, and driving adoption of the Celo blockchain and ecology of digital assets.
 
 By joining the Alliance for Prosperity, Alliance members are furthering the Celo mission in one (or more) of five ways: (1) Backing project development efforts, (2) Building infrastructure, (3) Implementing desired use cases on the Celo Platform, (4) Integrating Celo assets in their projects, (5) Collaborating on education campaigns in their communities to advance the use of blockchain technology.
 
-* Alliance members are welcomed along all of the use cases outlined on [celo.org/alliance](https://celo.org/alliance). Feel free to reach out via the application if your organization is interested in membership.
+- Alliance members are welcomed along all of the use cases outlined on [celo.org/alliance](https://celo.org/alliance). Feel free to reach out via the application if your organization is interested in membership.
 
 ## Celo Camp
 
@@ -54,7 +55,7 @@ Celo Ambassadors are active Celo community members who are passionate about furt
 
 ## Kuneco
 
-Kuneco is a monthly community call designed to bring the Celo community together in celebration of achievements, growth, milestones, and progress towards prosperity. 
+Kuneco is a monthly community call designed to bring the Celo community together in celebration of achievements, growth, milestones, and progress towards prosperity.
 
 ## cLabs
 
