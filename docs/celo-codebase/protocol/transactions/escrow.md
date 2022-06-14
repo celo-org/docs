@@ -1,12 +1,16 @@
 ---
 title: Celo's Escrow Contract
-description: Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
+description: Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 ---
 # Escrow 
 
-Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
+Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 
 ___
+
+
+
+<!-- 
 
 ## What is the Escrow Contract?
 
@@ -22,4 +26,4 @@ The recipient of an escrowed payment can choose to withdraw their payment assumi
 
 ## Revoking & Reclaiming
 
-Alice sends Bob an escrowed payment. Let’s say Bob never withdraws it, or worse, the temporary private key he needs to withdraw the payment gets lost or sent to the wrong person. For this purpose, Celo’s protocol also allows for senders to reclaim any unclaimed escrowed payment that they sent. After an escrowed payment has expired \(each payment has its own expiry length that is set by the sender upon creation\), the sender of the payment can revoke the payment and reclaim their funds with just the paymentId.
+Alice sends Bob an escrowed payment. Let’s say Bob never withdraws it, or worse, the temporary private key he needs to withdraw the payment gets lost or sent to the wrong person. For this purpose, Celo’s protocol also allows for senders to reclaim any unclaimed escrowed payment that they sent. After an escrowed payment has expired \(each payment has its own expiry length that is set by the sender upon creation\), the sender of the payment can revoke the payment and reclaim their funds with just the paymentId. -->
