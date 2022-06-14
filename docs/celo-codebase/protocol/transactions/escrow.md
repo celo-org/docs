@@ -25,7 +25,7 @@ For ease of reference, here is some terminology we will use on this page:
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by secretly exchanging a private key
 
-[![](https://mermaid.ink/img/pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)](https://mermaid.live/edit#pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)
+[![Flow diagram for private key-based payment and proof of identity](https://mermaid.ink/img/pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)](https://mermaid.live/edit#pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)
 
 <!-- 
 Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
@@ -33,7 +33,7 @@ Interim fix for a known bug that adds whitespace to large diagrams: https://gith
 Mermaid diagram source: https://mermaid.live/edit#pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc
 -->
 
-<!-- table -->
+<!-- Table version of Pros/Cons below -->
 
 Pro: Privacy preserving (only keys are exchanged)
 Con: Private key has to be exchanged off-chain in a secure way
@@ -47,14 +47,14 @@ Note: There are additional helper function like [`generateMnemonic()`](https://g
 
 ```ts
 function generateKeys(
-  mnemonic: string,
+    mnemonic: string,
   password?: string,
   changeIndex: number = 0,
   addressIndex: number = 0,
   bip39ToUse: Bip39 = bip39Wrapper,
   derivationPath: string = CELO_DERIVATION_PATH_BASE
 ): Promise<{ privateKey: string; publicKey: string; address: string }> {
-  const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
+    const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
   return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
 }
 ```
@@ -64,7 +64,15 @@ function generateKeys(
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by using Bob's phone number
 
-<!-- Diagram 2 -->
+[![Flow diagram for phone number-based payment and proof of identity](https://mermaid.ink/img/pako:eNqdVc1q3DAQfpVBl2yos6QhS6kPKSnNoRRCIT0agmzN2mJtyZXkNSbk2FsfoX25PElH_lvbu_2he1j0883MN5pvxk8s0QJZyCx-rVAl-EHy1PAiUkA_njht4DaXCXYHJTdOJrLkygH3x488SXTldxZuu-UxsuRNgcp9FB71BYtSG24a-ITNMTbRyhmK66F3NjG6XludH-NiHT-WmVboge91fGbhc7u9r4oYzWmD35Ht8iQvkeoPKqfVxFH7BHBxcXPjUSHU5NH6vMBpfxJAXDm_AKHRqjMHGd8TNQVDyAb7WAYpOZPGq6vL6wCuNhv6u7w-n8WhMLPXDcmdhZcf3zrUvXYIeo9miSqN3HO622ETQFnFdDtbcyEMWruMNb5lCDul65ORJphX12_h9ZuNp72B9XrdQVGJZYJ9btME_RMNIWfJKQ0vP7-fivp_2Y10DmmOMgwhRYWGfFkQ6NAUUklLShlUM8h1YVVZqVLoVNepwyuJm7TyiCX3ieE_MofVaHOkh6EvQij4Du3gnfS3jNvaBAd8wvPcAm2U3aJZnYNUs85aRmoF_pBxYjRvVqily-Bd-4MHJ_McFKJA0Z4Njv6o75ZljlsHetsF8oJIDLa1mLTLKmJWpgqqMmJ_k86o1imi12pp6E0s6JrqbTNZtk-0fDHfwBObrszcESXHndRqZXsKh6FzRKTg5VJ5A51JKXIui0PtukAnBuKc2rKUvgzC8Pq4lN52HKBjLakiKPcHzVjY6n7An55u3b7kUrQ5SEVDLpPUo1jnTV8tMZSKBaygDiIwfUWevMOIuQwLjFhIS4FbXuUuYkF3laFMM9fd-SkbsUg9k4-qFOT1TkiaxCzc8txi0AIeGpWw0JkKB1D_iepRz78AgrRDRg)](https://mermaid.live/edit#pako:eNqdVc1q3DAQfpVBl2yos6QhS6kPKSnNoRRCIT0agmzN2mJtyZXkNSbk2FsfoX25PElH_lvbu_2he1j0883MN5pvxk8s0QJZyCx-rVAl-EHy1PAiUkA_njht4DaXCXYHJTdOJrLkygH3x488SXTldxZuu-UxsuRNgcp9FB71BYtSG24a-ITNMTbRyhmK66F3NjG6XludH-NiHT-WmVboge91fGbhc7u9r4oYzWmD35Ht8iQvkeoPKqfVxFH7BHBxcXPjUSHU5NH6vMBpfxJAXDm_AKHRqjMHGd8TNQVDyAb7WAYpOZPGq6vL6wCuNhv6u7w-n8WhMLPXDcmdhZcf3zrUvXYIeo9miSqN3HO622ETQFnFdDtbcyEMWruMNb5lCDul65ORJphX12_h9ZuNp72B9XrdQVGJZYJ9btME_RMNIWfJKQ0vP7-fivp_2Y10DmmOMgwhRYWGfFkQ6NAUUklLShlUM8h1YVVZqVLoVNepwyuJm7TyiCX3ieE_MofVaHOkh6EvQij4Du3gnfS3jNvaBAd8wvPcAm2U3aJZnYNUs85aRmoF_pBxYjRvVqily-Bd-4MHJ_McFKJA0Z4Njv6o75ZljlsHetsF8oJIDLa1mLTLKmJWpgqqMmJ_k86o1imi12pp6E0s6JrqbTNZtk-0fDHfwBObrszcESXHndRqZXsKh6FzRKTg5VJ5A51JKXIui0PtukAnBuKc2rKUvgzC8Pq4lN52HKBjLakiKPcHzVjY6n7An55u3b7kUrQ5SEVDLpPUo1jnTV8tMZSKBaygDiIwfUWevMOIuQwLjFhIS4FbXuUuYkF3laFMM9fd-SkbsUg9k4-qFOT1TkiaxCzc8txi0AIeGpWw0JkKB1D_iepRz78AgrRDRg)
+
+<!-- 
+Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
+
+Mermaid diagram source: https://mermaid.live/edit#pako:eNqdVc1q3DAQfpVBl2yos6QhS6kPKSnNoRRCIT0agmzN2mJtyZXkNSbk2FsfoX25PElH_lvbu_2he1j0883MN5pvxk8s0QJZyCx-rVAl-EHy1PAiUkA_njht4DaXCXYHJTdOJrLkygH3x488SXTldxZuu-UxsuRNgcp9FB71BYtSG24a-ITNMTbRyhmK66F3NjG6XludH-NiHT-WmVboge91fGbhc7u9r4oYzWmD35Ht8iQvkeoPKqfVxFH7BHBxcXPjUSHU5NH6vMBpfxJAXDm_AKHRqjMHGd8TNQVDyAb7WAYpOZPGq6vL6wCuNhv6u7w-n8WhMLPXDcmdhZcf3zrUvXYIeo9miSqN3HO622ETQFnFdDtbcyEMWruMNb5lCDul65ORJphX12_h9ZuNp72B9XrdQVGJZYJ9btME_RMNIWfJKQ0vP7-fivp_2Y10DmmOMgwhRYWGfFkQ6NAUUklLShlUM8h1YVVZqVLoVNepwyuJm7TyiCX3ieE_MofVaHOkh6EvQij4Du3gnfS3jNvaBAd8wvPcAm2U3aJZnYNUs85aRmoF_pBxYjRvVqily-Bd-4MHJ_McFKJA0Z4Njv6o75ZljlsHetsF8oJIDLa1mLTLKmJWpgqqMmJ_k86o1imi12pp6E0s6JrqbTNZtk-0fDHfwBObrszcESXHndRqZXsKh6FzRKTg5VJ5A51JKXIui0PtukAnBuKc2rKUvgzC8Pq4lN52HKBjLakiKPcHzVjY6n7An55u3b7kUrQ5SEVDLpPUo1jnTV8tMZSKBaygDiIwfUWevMOIuQwLjFhIS4FbXuUuYkF3laFMM9fd-SkbsUg9k4-qFOT1TkiaxCzc8txi0AIeGpWw0JkKB1D_iepRz78AgrRDRg
+-->
+
+<!-- Table version of Pros/Cons below -->
 
 You can find Valora's implementation of the phone number-based payment and proof of identity in [Github > valora-inc > wallet > src > escrow > utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
 
@@ -77,16 +85,20 @@ Additional context:
 
 ```ts
 function generateDeterministicInviteCode(
-  recipientPhoneHash: string,
+    recipientPhoneHash: string,
   recipientPepper: string,
   addressIndex: number = 0,
   changeIndex: number = 0,
   derivationPath: string = CELO_DERIVATION_PATH_BASE
 ): { privateKey: string; publicKey: string } {
-  const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
+    const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
   return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
 }
 ```
+
+<!-- Arthur todo: add link to attestation overview -->
+
+You can learn more about attestations and phone number mappings here.
 
 ## What is the Escrow Contract?
 
