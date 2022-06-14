@@ -12,13 +12,17 @@ ___
 
 For ease of reference, here is some terminology we will use on this page:
 
-- Alice (sender)
-  - has a `private key` and a `public key` (referred to as **Keys**) and an associated `public address` (altogether referred to as an **Account**)
+- Alice ("sender")
+  - has a `private key` and a `public key` referred to as "**Keys**"
+  - an associated `public address` altogether referred to as an **Account**
 - Bob (recipient)
-  - has (or will have) a `private key` and a `public key` (referred to as **Keys**)
-  - has (or will have)  an associated `public address`
-- Temporary `private key` and an associated `public address`, referred to as **`paymentId`**
-- Phone number ownership verifications, referred to as `attestations`
+  - has (or will have) a `private key` and a `public key` referred to as **Keys**
+  - has (or will have)  an associated `public address` altogether referred to as an **Account**
+- Alice (randomly or deterministically) generates
+  - a temporary `private key` and `public key` referred to as **Temporary Key**
+  - an associated `public address` (referred to as **`paymentId`**)
+  - (more random vs deterministic generation below)
+- Proofs of phone number ownership, referred to as **`attestations`** (optional)
 
 ### Use case 1: Private key-based payment and proof of identity
 
