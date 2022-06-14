@@ -8,9 +8,60 @@ Introduction to the Celo Escrow contract and how to use it to transfer, withdraw
 
 ___
 
+## Use cases and Diagrams
+
+For ease of reference, here is some terminology we will use on this page:
+
+- Alice (sender)
+  - has a `private key` and a `public key` (referred to as **Keys**) and an associated `public address` (altogether referred to as an **Account**)
+- Bob (recipient)
+  - has (or will have) a `private key` and a `public key` (referred to as **Keys**)
+  - has (or will have)  an associated `public address`
+- Temporary `private key` and an associated `public address`, referred to as **`paymentId`**
+- Phone number ownership verifications, referred to as `attestations`
+
+Use case 1: Private key-based payment and proof of identity
+
+- Alice wants pay to Bob, but Bob doesn't have an account yet.
+- The payment is facilitated by secretly exchanging a private key
+
+<!-- Diagram 1 -->
+
+Pro: Privacy preserving (only keys are exchanged)
+Con: Private key has to be exchanged off-chain in a secure way
+
+Use case 2: Phone number-based payment and proof of identity
+
+- Alice wants pay to Bob, but Bob doesn't have an account yet.
+- The payment is facilitated by using Bob's phone number
+
+<!-- Diagram 2 -->
 
 
-<!-- 
+
+## Tooling
+
+You can find Valora's implementation of the phone number-based payment and proof of identity in [Github > valora-inc > wallet > src > escrow > utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
+
+You can generate a (deterministic) `paymentId` and `private key` using Bob's phone number by:
+
+1. generating a (deterministic) `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
+2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+Additional context:
+
+```ts
+export function generateDeterministicInviteCode(
+  recipientPhoneHash: string,
+  recipientPepper: string,
+  addressIndex: number = 0,
+  changeIndex: number = 0,
+  derivationPath: string = CELO_DERIVATION_PATH_BASE
+): { privateKey: string; publicKey: string } {
+  const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
+  return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
+}
+```
 
 ## What is the Escrow Contract?
 
