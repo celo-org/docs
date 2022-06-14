@@ -20,30 +20,55 @@ For ease of reference, here is some terminology we will use on this page:
 - Temporary `private key` and an associated `public address`, referred to as **`paymentId`**
 - Phone number ownership verifications, referred to as `attestations`
 
-Use case 1: Private key-based payment and proof of identity
+### Use case 1: Private key-based payment and proof of identity
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by secretly exchanging a private key
 
-<!-- Diagram 1 -->
+[![](https://mermaid.ink/img/pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)](https://mermaid.live/edit#pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc)
+
+<!-- 
+Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
+
+Mermaid diagram source: https://mermaid.live/edit#pako:eNqdVM1q3DAQfpVBl27ACSEkFx8CKc2hFHpJj4Yylsa2iC25-tnFhBx76yO0L5cnqWTZ613vtoUaYzTS55lvvpnRC-NaEMuZpW-eFKcPEmuDXaEgPMidNvDQSk5po0fjJJc9KgcYt78i59pHy8JDWp4iexw6Uu6jiKgv1PXaoBngEw2nWK6VMyFuhD5abvTuyur2FFfq8o-xE-33uizUtOGdVr4rySR7zAguL-_vIyqHXfBoI01wOu5kUHoXFyA0WfXOQYNbAlQwhxxoimUocDV1ubm5vs3g5u4ufK5vL47ihDBHYuXBnYW3n98T6rN2BHpLZo3qjdxiOHumIYPel-H0aI1CGLI2eSEl1owmMoeMYk6Rz4F8iY3S8Pbrx5rQEez_6Cwa7Nsgh5oUmeDLrjFz-XPo8Jns_E-oy5ra-E-24Dm2rYVgKFuR2VyAVCcNtMQZy_7UYCB83JGwk66Z--avxR2ptFQ50FXyF8XlhmJeh72yKZiVtQLfF-xfZdg3xV6_GXqQaYuyW6TxVqr63FgtWsWWXisV8xQGd-eV2o_hXqygBcntUhILlZ6uifNDlewepRhzKKnShqAJL4oDea5YxjoyXcCFa-gl-iqYa6ijguVhKahC37qCZemoIVk3Lp3FuS5YoV6DD9-LIPyjkGH2WV5haykbAU-D4ix3xtMMmu64CfX6G04nqrc
+-->
+
+<!-- table -->
 
 Pro: Privacy preserving (only keys are exchanged)
 Con: Private key has to be exchanged off-chain in a secure way
 
-Use case 2: Phone number-based payment and proof of identity
+You can generate a **random** `paymentId` (address), `private key` and `public key` by:
+
+1. calling [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
+2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+Note: There are additional helper function like [`generateMnemonic()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L51) to help you generate the arguments for [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) in [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts).
+
+```ts
+function generateKeys(
+  mnemonic: string,
+  password?: string,
+  changeIndex: number = 0,
+  addressIndex: number = 0,
+  bip39ToUse: Bip39 = bip39Wrapper,
+  derivationPath: string = CELO_DERIVATION_PATH_BASE
+): Promise<{ privateKey: string; publicKey: string; address: string }> {
+  const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
+  return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
+}
+```
+
+### Use case 2: Phone number-based payment and proof of identity
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by using Bob's phone number
 
 <!-- Diagram 2 -->
 
-
-
-## Tooling
-
 You can find Valora's implementation of the phone number-based payment and proof of identity in [Github > valora-inc > wallet > src > escrow > utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
 
-You can generate a (deterministic) `paymentId` and `private key` using Bob's phone number by:
+You can generate a **deterministic** `paymentId` and `private key` using Bob's phone number by:
 
 1. generating a (deterministic) `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
 2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
@@ -51,7 +76,7 @@ You can generate a (deterministic) `paymentId` and `private key` using Bob's pho
 Additional context:
 
 ```ts
-export function generateDeterministicInviteCode(
+function generateDeterministicInviteCode(
   recipientPhoneHash: string,
   recipientPepper: string,
   addressIndex: number = 0,
