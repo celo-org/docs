@@ -436,6 +436,7 @@ module.exports = {
           remarkPlugins: [
             math,
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
+            require('mdx-mermaid'),
           ],
           rehypePlugins: [katex],
         },
