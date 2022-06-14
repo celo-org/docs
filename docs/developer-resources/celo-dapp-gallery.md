@@ -177,6 +177,12 @@ Decentralized application to help coordinate and improve the impact metric of no
 
 - [GitHub](https://github.com/nestorbonilla/bienvenir)
 
+### Symbiotic Protocol
+
+Decentralized and autonomous protocol built for multi-chain social impact, the play-for-good solution for crypto donation, connecting Gamers and Nonprofits.
+
+- [GitHub](https://github.com/Symbiotic-Protocol)
+
 ---
 
 ## Additional DApps
