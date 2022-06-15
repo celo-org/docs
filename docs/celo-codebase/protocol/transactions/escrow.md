@@ -8,23 +8,39 @@ Introduction to the Celo Escrow contract and how to use it to transfer, withdraw
 
 ___
 
-## Use cases and Diagrams
+## Overview
+
+The Escrow smart contract ([escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol)) is a [Core Contract](../../../learn/celo-stack#celo-core-contracts) on Celo that lets users make escrowed payments. This is particularly useful when Alice wants to make a payment to Bob, before Bob has a Celo account.
+
+For example, inviting new users to Celo by paying them some CELO prior to joining, is a use case that is enabled by escrowed payments. 
+
+The contract provides two options to make escrowed payments:
+
+1. using the recipient's phone number and attestations, or
+2. by sharing a (traditional) private key with the recipient.
+
+The payments are stored in the contract and can be withdrawn by the recipient or the sender.
+
+## Payment flows
 
 For ease of reference, here is some terminology we will use on this page:
 
 - Alice ("sender")
-  - has a `private key` and a `public key` referred to as "**Keys**"
-  - an associated `public address` altogether referred to as an **Account**
-- Bob (recipient)
-  - has (or will have) a `private key` and a `public key` referred to as **Keys**
-  - has (or will have)  an associated `public address` altogether referred to as an **Account**
-- Alice (randomly or deterministically) generates
-  - a temporary `private key` and `public key` referred to as **Temporary Key**
-  - an associated `public address` (referred to as **`paymentId`**)
-  - (more random vs deterministic generation below)
-- Proofs of phone number ownership, referred to as **`attestations`** (optional)
+  - has a `private key` and a `public key` referred to as **Keys**, and
+  - has an associated `public address`, altogether referred to as an **Account**
+- Bob ("recipient")
+  - has (or will have) a `private key` and a `public key` referred to as **Keys**, and
+  - has (or will have)  an associated `public address`, altogether referred to as an **Account**
+- There is
+  - a temporary `private key` and `public key` referred to as **Temporary Key**, and
+  - an associated `public address` referred to as **`paymentId`**
+  - these are generated _randomly_ or _deterministically_ depending on the payment flow choice
+- There are
+  - proofs of ownership over a phone number referred to as **`attestations`**
 
-### Use case 1: Private key-based payment and proof of identity
+### Option 1: Private key-based escrow payment
+
+Scenario:
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by secretly exchanging a private key
@@ -42,28 +58,29 @@ Mermaid diagram: https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt2AE8KSXHwIpDSH
 Pro: Privacy preserving (only keys are exchanged)
 Con: Private key has to be exchanged off-chain in a secure way
 
-You can generate a **random** `paymentId` (address), `private key` and `public key` by:
+You can _randomly_ generate the `paymentId` (public address), `private key` and `public key` by:
 
 1. calling [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
+
+    ```ts
+    function generateKeys(
+        mnemonic: string,
+    password?: string,
+    changeIndex: number = 0,
+    addressIndex: number = 0,
+    bip39ToUse: Bip39 = bip39Wrapper,
+    derivationPath: string = CELO_DERIVATION_PATH_BASE
+    ): Promise<{ privateKey: string; publicKey: string; address: string }> {
+        const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
+    return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
+    }
+    ```
+
 2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
 
-Note: There are additional helper function like [`generateMnemonic()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L51) to help you generate the arguments for [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) in [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts).
+### Option 2: Phone number-based escrow payment
 
-```ts
-function generateKeys(
-    mnemonic: string,
-  password?: string,
-  changeIndex: number = 0,
-  addressIndex: number = 0,
-  bip39ToUse: Bip39 = bip39Wrapper,
-  derivationPath: string = CELO_DERIVATION_PATH_BASE
-): Promise<{ privateKey: string; publicKey: string; address: string }> {
-    const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
-  return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
-}
-```
-
-### Use case 2: Phone number-based payment and proof of identity
+Scenario:
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
 - The payment is facilitated by using Bob's phone number
@@ -78,35 +95,30 @@ Mermaid diagram: https://mermaid.live/edit#pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilN
 
 <!-- Table version of Pros/Cons below -->
 
-You can find Valora's implementation of the phone number-based payment and proof of identity in [Github > valora-inc > wallet > src > escrow > utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
+You can _deterministically_ generate the `paymentId` (public address) and `private key` using Bob's phone number by:
 
-You can generate a **deterministic** `paymentId` and `private key` using Bob's phone number by:
+1. generating a `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts) and the recipient's ODIS phone number `pepper` 
 
-1. generating a (deterministic) `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
+    ```ts
+    function generateDeterministicInviteCode(
+        recipientPhoneHash: string,
+    recipientPepper: string,
+    addressIndex: number = 0,
+    changeIndex: number = 0,
+    derivationPath: string = CELO_DERIVATION_PATH_BASE
+    ): { privateKey: string; publicKey: string } {
+        const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
+    return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
+    }
+    ```
+
 2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
 
-Additional context:
-
-```ts
-function generateDeterministicInviteCode(
-    recipientPhoneHash: string,
-  recipientPepper: string,
-  addressIndex: number = 0,
-  changeIndex: number = 0,
-  derivationPath: string = CELO_DERIVATION_PATH_BASE
-): { privateKey: string; publicKey: string } {
-    const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
-  return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
-}
-```
+You can find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow (> utils.ts)](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
 
 <!-- Arthur todo: add link to attestation overview -->
 
-You can learn more about attestations and phone number mappings here.
-
-## What is the Escrow Contract?
-
-The `Escrow` contract utilizes Celo’s Lightweight identity feature to allow users to _send payments to other users who don’t yet have a public/private key pair or an address_. These payments are stored in this contract itself and can be either withdrawn by the intended recipient or reclaimed by the sender. This functionality supports _both_ versions of Celo’s lightweight identity: identifier-based \(such as a phone number to address mapping\) and privacy-based. This gives applications that intend to use this contract some flexibility in deciding which version of identity they prefer to use.
+Here are some links to learn more about attestations, phone number mappings and phone number peppers from ODIS.
 
 ## How it works
 
