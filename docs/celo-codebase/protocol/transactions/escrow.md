@@ -53,11 +53,6 @@ Interim fix for a known bug that adds whitespace to large diagrams: https://gith
 Mermaid diagram: https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt2AE8KSXHwIpDSHUtrL9mgoY2tsi9iSK8lrTMixt_6E9s_ll3S09u7a620bSpfF6ONJ783M8_hJZEaSiIWjry3pjN4pLCzWiQb-YeaNhftKZTQsNGi9ylSD2gOG5S-YZaYNMwf3w3CJbLCvSfv3MqA-U90Yi7aHD9QvsZnR3jJvgD64zJruyplqiUtN-lvuQfZbkyZ6XGi90W2dkh3mu4jg8vLuLqBi6PhGF2SCN2ElgrT1YQDSkNNvPJS4JUANe8qeRi5LrNUW6Wp9fRPB-vaWH9c3FzMeppklK-brHLz8-DagPhlPYLZkT1GNVVvkvUfqI2jalHdnY5TSknPDLaTlqaJRzFRRiCnomaRvUKMNvPz8fipoBvs3OcccHGwQg0UtTV31UJAmy5e6U-YJ-JW8sDqcGYOdOzRI2Lsrhhofye1ZuOx_LEV0PJdhVSldAE-1y8muLkDphVNPK7EORRgfC2_sLLgpkYOYvx2w2iqEzcdNBDUHiEUgdmS34SQ7HLXxJWvtsL-YZP0VxtzFWVHuweQDfzBGZimUYurzVSKcKjS0TSL-ZqEzhv4P_tnTTUpQoaqPtWtdSMs8cS5kk9tNyipONYX3e1nPTvlSWuzO1_PQlRaBc5pJbY9WcuG4po69PaRTznvT-QY0zBtUchdvSrmxBCX_UU7KcSUiUZOtGcct-ynclQi2QE2JiHkoKce28omIhq2SVFH6YS_0wEQk-pnvaBvJyh6k4j4p4hwrR9EOsOl1JmJvW9qDxu_BiHr-BZ5VEow
 -->
 
-<!-- Table version of Pros/Cons below -->
-
-Pro: Privacy preserving (only keys are exchanged)
-Con: Private key has to be exchanged off-chain in a secure way
-
 You can _randomly_ generate the `paymentId` (public address), `private key` and `public key` by:
 
 1. calling [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
@@ -119,6 +114,15 @@ You can find Valora's implementation of the phone number-based escrow payment in
 <!-- Arthur todo: add link to attestation overview -->
 
 Here are some links to learn more about attestations, phone number mappings and phone number peppers from ODIS.
+
+<!-- Table version of Pros/Cons below -->
+### Comparison
+
+|       | Private key-based                                                         | Phone number-based                                                        |
+|-------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| Pro ✅ | Privacy preserving (cannot be tied to a user's identity)                  | Simply requires proving ownership over phone number                       |
+| Con ❌ | Requires sharing private key via SMS, messaging service or another method | Payment can be linked to you by users with knowledge of your phone number |
+
 
 ## How it works
 
