@@ -182,7 +182,7 @@ class EscrowWrapper extends BaseWrapper<Escrow> {
 }
 ```
 
-You can follow the [instructions here to setup and use ContractKit](https://docs.celo.org/developer-guide/contractkit/setup).
+You can follow the [instructions here to setup and use ContractKit](https://docs.celo.org/developer-guide/contractkit/setup) and find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow](https://github.com/valora-inc/wallet/tree/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow) ([> saga.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/saga.ts) and [> utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts)).
 
 For observability, the contract emits the following events:
 
