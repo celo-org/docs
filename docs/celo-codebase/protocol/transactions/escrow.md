@@ -2,7 +2,7 @@
 title: Celo's Escrow Contract
 description: Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 ---
-# Escrow 
+# Escrow
 
 Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 
@@ -10,18 +10,18 @@ ___
 
 ## Overview
 
-The Escrow smart contract ([escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol)) is a [Core Contract](../../../learn/celo-stack#celo-core-contracts) on Celo that lets users make escrowed payments. In short, Alice can make a payment to Bob, before Bob has a Celo account. This is particularly useful when Alice wants to invite Bob to Celo by making an escrowed payment he claim after creating an account.
+The Escrow smart contract ([escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol)) is a [Core Contract](../../../learn/celo-stack#celo-core-contracts) on Celo that lets users make escrowed payments. In short, Alice can make a payment to Bob, before Bob has a Celo account. This is particularly useful when Alice wants to invite Bob to Celo by making an escrowed payment to him, which he can claim after creating an account.
 
-The contract provides two options for making escrowed payments:
+The contract provides two options for claiming an escrowed payment:
 
-1. using the recipient's phone number as proof of identity
-2. using a secret private key shared by the sender as proof of identity
+1. using the recipient's phone number as proof of identity, and
+2. using a secret private key as proof of identity.
 
 The payments are stored in the contract and can be withdrawn by the recipient or the sender (more in this below).
 
 ## Payment flows
 
-For ease of reference, here is some terminology for this page:
+For ease of reference, here is some terminology for the following page:
 
 - Alice is the "**sender**"
 - Bob is the "**recipient**"
@@ -37,7 +37,7 @@ For ease of reference, here is some terminology for this page:
 Scenario:
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
-- The payment is facilitated by secretly exchanging a private key
+- The escrow payment is facilitated by secretly sharing a private key
 
 [![Flow diagram for private key-based payment and proof of identity](https://mermaid.ink/img/pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)](https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)
 
@@ -66,6 +66,13 @@ You can **randomly** generate the `paymentId` (public address), `private key` an
     ```
 
 2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+    ```ts
+    const publicKeyToAddress = (publicKey: string) =>
+        toChecksumAddress(
+            ensureLeading0x(pubToAddress(toBuffer(ensureLeading0x(publicKey)), true).toString('hex'))
+        )
+    ```
 
 ### Option 2: Phone number-based proof of identity
 
@@ -100,6 +107,13 @@ You can **deterministically** generate the `paymentId` (public address) and `pri
     ```
 
 2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+    ```ts
+    const publicKeyToAddress = (publicKey: string) =>
+        toChecksumAddress(
+            ensureLeading0x(pubToAddress(toBuffer(ensureLeading0x(publicKey)), true).toString('hex'))
+        )
+    ```
 
 You can find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow (> utils.ts)](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
 
@@ -146,7 +160,7 @@ struct EscrowedPayment {
 }
 ```
 
-The contract emits the following events:
+For ease of reference, the contract emits the following events:
 
 ```solidity
 event Transfer(
@@ -161,7 +175,7 @@ event Transfer(
 
 :::caution Forthcoming change to Event Emitted in Escrow.sol
 
-In a forthcoming Escrow.sol upgrade, we are proposing to change the data emitted in the `to` from `payment.sender` to `msg.sender`. [Read more on GitHub Discussions](https://github.com/celo-org/identity/discussions/25). 
+In a forthcoming Escrow.sol upgrade, we are proposing to change the data emitted in the `to` from `payment.sender` to `msg.sender`. [Read more on GitHub Discussions](https://github.com/celo-org/identity/discussions/25).
 
 :::
 
