@@ -115,7 +115,7 @@ You can **deterministically** generate the `paymentId` (public address) and `pri
         )
     ```
 
-You can find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow (> utils.ts)](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts).
+You can find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow](https://github.com/valora-inc/wallet/tree/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow) ([> saga.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/saga.ts) and [> utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts)).
 
 <!-- Arthur todo: add link to attestation overview -->
 
