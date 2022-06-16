@@ -280,17 +280,17 @@ module.exports = {
         // },
         {
           to: "developer-guide/overview",
-          label: "Develop",
+          label: "Developers",
           position: "left",
         },
         {
           to: "validator-guide/overview",
-          label: "Validate",
+          label: "Validators",
           position: "left",
         },
         {
           to: "developer-guide/integrations",
-          label: "Integrate",
+          label: "Integrations",
           position: "left",
         },
         // {
@@ -315,6 +315,10 @@ module.exports = {
             {
               label: "Developer Blog",
               to: "https://medium.com/celodevelopers/",
+            },
+            {
+              label: "Code Tutorials",
+              to: "blog",
             },
             {
               label: "Celo Blog",

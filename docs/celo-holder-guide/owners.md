@@ -7,7 +7,7 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Get CELO
+# Celo Holders
 
 Start sending, spending, and earning crypto from your mobile phone.
 

@@ -8,7 +8,7 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Integrate with Celo
+# Celo Integrations
 
 Collection of resources to help integrate Celo with your service.
 
