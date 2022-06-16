@@ -306,25 +306,27 @@ module.exports = {
         {
           type: "dropdown",
           position: "left",
-          label: "Resources",
+          label: "Learn",
           items: [
             {
-              to: "https://explorer.celo.org/",
-              label: "Explorer",
+              label: "Celo Composer",
+              to: "https://github.com/celo-org/celo-composer#celo-composer",
             },
             {
-              to: "https://celo.org/developers/faucet",
-              label: "Faucet",
+              label: "Developer Blog",
+              to: "https://medium.com/celodevelopers/",
             },
-            { to: "https://forum.celo.org/", label: "Forum" },
             {
-              to: "https://thecelo.com/",
-              label: "Stats",
+              label: "Celo Blog",
+              to: "https://medium.com/celoorg",
             },
-            { to: "https://discord.com/invite/6yWMkgM", label: "Chat" },
             {
-              to: "https://celohub.org/",
-              label: "Hub",
+              label: "Figment",
+              to: "https://learn.figment.io/protocols/celo",
+            },
+            {
+              label: "Dacade",
+              to: "https://dacade.org/communities/celo",
             },
           ],
         },
@@ -367,10 +369,6 @@ module.exports = {
               to:
                 "https://github.com/therealharpaljadeja/celo-progressive-dapp-starter/tree/react-native-app/packages/react-native-app/",
               label: "React Native",
-            },
-            {
-              to: "https://github.com/celo-org/celo-progressive-dapp-starter",
-              label: "Celo Composer",
             },
           ],
         },
