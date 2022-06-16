@@ -21,14 +21,14 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **💰 Saving**
 
-**[GoodGhosting](https://goodghosting.com/#/)** - a gamified savings protocol where savings pools reward regular savers with higher interest rates and extra rewards by taking some interest away from those who don’t. Powered by [Moola](moola.market) and [Mobius](mobius.money).
+**[GoodGhosting](https://goodghosting.com/#/)** - a gamified savings protocol where savings pools reward regular savers with higher interest rates and extra rewards by taking some interest away from those who don’t. Powered by [Moola](https://moola.market/) and [Mobius](https://www.mobius.money/#/swap).
 
 - [GitHub](https://github.com/Good-Ghosting/goodghosting-protocol-v0)
 - [Contracts](https://dappradar.com/celo/defi/goodghosting) (then click “14 GoodGhosting Smart Contracts”)
 - Relevant function calls
   - [joinGame, makeDeposit, earlyWithdraw, redeemFromExternalPool, withdraw](https://docs.goodghosting.com/docs/game-mechanics-and-technical)
 
-**[PoolTogether](https://pooltogether.com/)** - a no-loss lottery that invests user deposits in lending markets then lotteries off the yield to a single entity. Powered by [Moola](moola.market).
+**[PoolTogether](https://pooltogether.com/)** - a no-loss lottery that invests user deposits in lending markets then lotteries off the yield to a single entity. Powered by [Moola](https://moola.market/).
 
 - [GitHub](https://github.com/pooltogether)
 - [Contracts](https://v3.docs.pooltogether.com/)
@@ -54,7 +54,7 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **💱 Exchanges**
 
-**[Ubeswap](ubeswap.org)** - a token launchpad DEX that makes it easy for teams to set-up farming incentives for their liquidity pools. Ubeswap has a constant product AMM as well as an on-chain limit order book.
+**[Ubeswap](https://ubeswap.org/)** - a token launchpad DEX that makes it easy for teams to set-up farming incentives for their liquidity pools. Ubeswap has a constant product AMM as well as an on-chain limit order book.
 
 - [GitHub](https://github.com/Ubeswap)
 - [Contracts](https://docs.ubeswap.org/code-and-contracts/overview)
@@ -62,7 +62,7 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
   - Read: price quotes, pool compositions, unclaimed rewards
   - Write: Limit order, swap, deposit and withdraw to LP/farm, claim rewards
 
-**[Mobius](mobius.money)** - a cross-chain stableswap exchange primarily focused on stablecoins. Move money between Celo, Ethereum, Solana, Terra, Avalanche, and Polygon–or treat it as a high-interest savings for your USD stablecoins
+**[Mobius](https://www.mobius.money/#/swap)** - a cross-chain stableswap exchange primarily focused on stablecoins. Move money between Celo, Ethereum, Solana, Terra, Avalanche, and Polygon–or treat it as a high-interest savings for your USD stablecoins
 
 - [GitHub](https://github.com/mobiusAMM)
 - [Contracts](https://opencelo.gitbook.io/mobius/)
@@ -70,26 +70,26 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
   - Read: price quotes, pool compositions, unclaimed rewards
   - Write: Swap, deposit and withdraw to LP/gauge, claim rewards
 
-**[Symmetric](symmetric.finance)** - a DEX that allows pools to be composed of multiple tokens, allowing the creation of crypto index funds and non 50/50 dual asset pools (e.g. 80% cUSD, 20% MOBI) which can help prevent impermanent loss.
+**[Symmetric](https://symmetric.finance/)** - a DEX that allows pools to be composed of multiple tokens, allowing the creation of crypto index funds and non 50/50 dual asset pools (e.g. 80% cUSD, 20% MOBI) which can help prevent impermanent loss.
 
 - [GitHub](https://github.com/centfinance)
 - [Contracts](https://docs.google.com/spreadsheets/d/12HS-AMMYqvqqxb9qL9LJsG2X9EQkR3gxH5J0GB3DM0I/edit#gid=324163664)
 
 ## **🏦 Lending Markets**
 
-**[Moola](moola.market)**- a money market that allows users to lend cUSD, cEUR, and CELO to borrowers in return for a premium for forgoing their liquidity. Moola deposits receive mTokens which are currency denominated and accrue interest similar to dividend payments–they are essentially interest-bearing stablecoins.
+**[Moola](https://moola.market/)**- a money market that allows users to lend cUSD, cEUR, and CELO to borrowers in return for a premium for forgoing their liquidity. Moola deposits receive mTokens which are currency denominated and accrue interest similar to dividend payments–they are essentially interest-bearing stablecoins.
 
 - [GitHub](https://github.com/moolamarket)
 - [Contracts](https://drive.google.com/file/d/1xGQl625ytbGB8Rt65xK5dnC1wUtfWPJ6/view?usp=sharing)
 - Relevant function calls
   - Deposit/withdraw, get a loan, repay a loan, delegate credit, draw credit line, repay credit line, auto-collateralize loan
 
-**[Pinnata](dahlia.finance)** - a money market for leveraged yield farming on Mobius and Sushiswap. Lend single-assets and earn interest, or lever up on your yield farming position.
+**[Pinnata](https://www.dahlia.finance/earn)** - a money market for leveraged yield farming on Mobius and Sushiswap. Lend single-assets and earn interest, or lever up on your yield farming position.
 
 - [GitHub](https://github.com/Pinnata/pinnata-contracts-celo)
 - [Contracts](https://github.com/Pinnata/pinnata-contracts-celo/tree/master/contracts)
 
-**[Resource](resourcenetwork.co)** - a peer to peer mutual credit market that allows businesses to barter with each other using their own products and services. For example, if you run a massage shop you could offer “free” employee benefits by trading massage vouchers with a hotel for room vouchers.
+**[Resource](https://www.resourcenetwork.co/)** - a peer to peer mutual credit market that allows businesses to barter with each other using their own products and services. For example, if you run a massage shop you could offer “free” employee benefits by trading massage vouchers with a hotel for room vouchers.
 
 - [GitHub](https://github.com/ReSource-Network/)
 - Relevant contracts
@@ -109,7 +109,7 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **🆔 Identity**
 
-**[Nomspace](nom.space)** - a cross-chain naming service that allows users to map human-readable names to their wallet address across Celo, Avalanche, and Polygon.
+**[Nomspace](https://nom.space/#/)** - a cross-chain naming service that allows users to map human-readable names to their wallet address across Celo, Avalanche, and Polygon.
 
 - [GitHub](https://github.com/Nomspace)
 - [Contracts](https://github.com/nomspace/xnom-contracts)
@@ -120,12 +120,12 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **🌉 Bridges**
 
-**[Optics](optics.xyz)** - a 1-to-n optimistic bridge that is fully trustless. Cross-chain applications can be deployed to the bridge and tap into smart contracts across Celo, Ethereum, Polygon, and Avalanche.
+**[Optics](https://optics.app/)** - a 1-to-n optimistic bridge that is fully trustless. Cross-chain applications can be deployed to the bridge and tap into smart contracts across Celo, Ethereum, Polygon, and Avalanche.
 
 - [GitHub](https://github.com/celo-org/optics-monorepo)
 - [How does it work](https://docs.celo.org/celo-codebase/protocol/optics)
 
-**[AllBridge](allbridge.io)** - a fast and cheap custodial bridge for moving funds between Celo and almost every other blockchain.
+**[AllBridge](https://allbridge.io/)** - a fast and cheap custodial bridge for moving funds between Celo and almost every other blockchain.
 
 - [GitHub](https://github.com/allbridge-io)
 - [Contracts](https://docs.allbridge.io/allbridge-overview/bridge-contracts)
