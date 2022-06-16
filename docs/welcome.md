@@ -64,7 +64,7 @@ Places to find dApps built on Celo.
 
 ### Explore Celo Data
 
-Explore Celo network data to view the reserve, network, dapps, and additional analytics.
+Explore Celo data to view the reserve, network, dapps, and additional analytics.
 
 - [Celo Reserve](https://celoreserve.org/)
 - [Explorer: Blockscout](https://explorer.celo.org/)
@@ -79,8 +79,8 @@ Explore Celo network data to view the reserve, network, dapps, and additional an
 Overview of Celo wallets, nodes, networks, protocols, and addresses.
 
 - [Wallets](getting-started/wallets)
-- [Nodes](developer-guide/forno)
-- [Network](getting-started/choosing-a-network)
+- [Nodes](getting-started/choosing-a-network)
+- [Endpoints](developer-guide/forno)
 - [Protocol](celo-codebase/protocol)
 - [Addresses](contract-addresses)
 

@@ -124,35 +124,13 @@ const sidebars = {
         },
       ],
     },
-
     {
       type: "category",
       label: "Nodes",
       items: [
         {
           type: "doc",
-          label: "Forno",
-          id: "developer-resources/forno/index",
-        },
-        {
-          type: "doc",
-          label: "Hosted Nodes",
-          id: "getting-started/hosted-nodes",
-        },
-        {
-          type: "link",
-          label: "Figment",
-          href: "https://www.figment.io/datahub/celo",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Network",
-      items: [
-        {
-          type: "doc",
-          label: "Networks",
+          label: "Overview",
           id: "getting-started/choosing-a-network",
         },
         {
@@ -225,6 +203,47 @@ const sidebars = {
                 "getting-started/baklava-testnet/running-a-full-node-in-baklava",
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "Hosted Nodes",
+          id: "getting-started/hosted-nodes",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Endpoints",
+      items: [
+        {
+          type: "doc",
+          label: "Forno",
+          id: "developer-resources/forno/index",
+        },
+        {
+          type: "link",
+          label: "Figment",
+          href: "https://www.figment.io/datahub/celo",
+        },
+        {
+          type: "link",
+          label: "Quicknode",
+          href: "https://www.quicknode.com/chains/celo",
+        },
+        {
+          type: "link",
+          label: "Tatum",
+          href: "https://pages.tatum.io/celo",
+        },
+        {
+          type: "link",
+          label: "Ankr",
+          href: "https://www.ankr.com/protocol/public/celo/",
+        },
+        {
+          type: "link",
+          label: "All that Node",
+          href: "https://www.allthatnode.com/celo.dsrv",
         },
       ],
     },
@@ -668,11 +687,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "Developer Tools",
-          id: "learn/evm-compatible-tooling",
-        },
-        {
           type: "category",
           label: "Migrate to Celo",
           items: [
@@ -682,6 +696,11 @@ const sidebars = {
               id: "developer-resources/celo-for-eth-devs",
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "Developer Tools",
+          id: "learn/evm-compatible-tooling",
         },
         // {
         //   type: "category",
