@@ -49,7 +49,8 @@ module.exports = {
             ],
           },
           {
-            to: "/getting-started/baklava-testnet/running-a-full-node-in-baklava",
+            to:
+              "/getting-started/baklava-testnet/running-a-full-node-in-baklava",
             from: [
               "/getting-started/running-a-full-node",
               "/getting-started/running-a-validator",
@@ -245,16 +246,12 @@ module.exports = {
             from: ["/command-line-interface/commands/validatorgroup"],
           },
           {
-            to: '/celo-codebase/protocol/odis/use-cases/phone-number-privacy',
-            from: [
-              '/celo-codebase/protocol/identity/phone-number-privacy'
-            ],
+            to: "/celo-codebase/protocol/odis/use-cases/phone-number-privacy",
+            from: ["/celo-codebase/protocol/identity/phone-number-privacy"],
           },
           {
-            to: '/celo-codebase/protocol/identity/smart-contract-accounts',
-            from: [
-              '/celo-codebase/protocol/identity/valora-accounts'
-            ],
+            to: "/celo-codebase/protocol/identity/smart-contract-accounts",
+            from: ["/celo-codebase/protocol/identity/valora-accounts"],
           },
         ],
       },
@@ -283,7 +280,7 @@ module.exports = {
         // },
         {
           to: "developer-guide/overview",
-          label: "Build",
+          label: "Develop",
           position: "left",
         },
         {
@@ -292,19 +289,44 @@ module.exports = {
           position: "left",
         },
         {
-          to: "/community/contributing",
-          label: "Community",
+          to: "developer-guide/integrations",
+          label: "Integrate",
           position: "left",
         },
+        // {
+        //   to: "/community/contributing",
+        //   label: "Stake",
+        //   position: "left",
+        // },
+        // {
+        //   to: "/blog",
+        //   label: "Learn",
+        //   position: "left",
+        // },
         {
-          to: "/blog",
-          label: "Learn",
+          type: "dropdown",
           position: "left",
-        },
-        {
-          to: "https://medium.com/celoorg",
-          label: "Blog",
-          position: "right",
+          label: "Quicklinks",
+          items: [
+            {
+              to: "https://explorer.celo.org/",
+              label: "Explorer",
+            },
+            {
+              to: "https://celo.org/developers/faucet",
+              label: "Faucet",
+            },
+            { to: "https://forum.celo.org/", label: "Forum" },
+            {
+              to: "https://thecelo.com/",
+              label: "Stats",
+            },
+            { to: "https://discord.com/invite/6yWMkgM", label: "Chat" },
+            {
+              to: "https://celohub.org/",
+              label: "Hub",
+            },
+          ],
         },
         {
           type: "localeDropdown",
@@ -313,6 +335,42 @@ module.exports = {
             {
               to: "https://celo.crowdin.com/",
               label: "Help us translate",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          position: "right",
+          label: "APIs & SDKs",
+          items: [
+            { to: "command-line-interface/introduction", label: "CLI" },
+            {
+              to: "https://github.com/heymateag/celoiossdk",
+              label: "iOS",
+            },
+            {
+              to: "https://github.com/blaize-tech/celo-sdk-java",
+              label: "Java",
+            },
+            { to: "https://github.com/celo-org/react-celo", label: "React" },
+            { to: "https://docs.flutter.dev/", label: "Flutter" },
+            {
+              to: "https://github.com/blaize-tech/celo-sdk-py/",
+              label: "Python",
+            },
+            {
+              to:
+                "https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit",
+              label: "JavaScript",
+            },
+            {
+              to:
+                "https://github.com/therealharpaljadeja/celo-progressive-dapp-starter/tree/react-native-app/packages/react-native-app/",
+              label: "React Native",
+            },
+            {
+              to: "https://github.com/celo-org/celo-progressive-dapp-starter",
+              label: "Celo Composer",
             },
           ],
         },
@@ -436,7 +494,7 @@ module.exports = {
           remarkPlugins: [
             math,
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
-            require('mdx-mermaid'),
+            require("mdx-mermaid"),
           ],
           rehypePlugins: [katex],
         },
