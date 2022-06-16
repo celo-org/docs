@@ -8,7 +8,7 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Build on Celo
+# Celo Developers
 
 There are 6 Billion smartphones on Earth. Build for all of them.
 

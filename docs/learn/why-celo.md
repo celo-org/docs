@@ -1,54 +1,37 @@
 ---
-title: Why Celo
-id: why-celo
-slug: /why-celo
-description: Celo believes in a future where everyone can prosper.
+title: What is Celo?
+description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 ---
 
-# Why Celo
+import YouTube from '@components/YouTube';
+import PageRef from '@components/PageRef';
 
-Celo believes in a future where everyone can prosper.
+Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 
 ---
 
-## Celo is mobile, open, and real
+## Crypto made for Mobile
 
-Celo was designed to enable a new universe of financial solutions accessible for mobile users and takes a mobile-first approach that provides the opportunity to positively impact 6B+ smartphone owners globally, creating a global financial ecosystem where an end-user can onboard into the Celo ecosystem with just a mobile number.
+Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
 
-Celo’s technology innovations allow it to truly work across devices, carriers, and countries. Celo uses a novel Proof-of-Stake (PoS) consensus protocol and a hyper-efficient light client. With its interoperability, [cross-chain compatibility](celo-codebase/protocol/optics), and vision for currency inclusivity, Celo enables digital assets to circulate at extremely low costs and high speeds across devices, carriers, and countries, making money mobile, global and accessible like never before. Celo is supported by a mission-aligned network of technologists and international organizations committed to building an inclusive financial system that creates the conditions for prosperity—for everyone.
+:::tip Learn more 📚
 
-## Mobile
+Read [Celo: Building a Regenerative Economy](https://www.notboring.co/p/celo-building-a-regenerative-economy?s=r), [Celo Spotlight](https://medium.com/celodevelopers/celo-spotlight-build-a-financial-system-that-creates-the-conditions-for-prosperity-for-everyone-7b1830efc254), and the [Celo 2021 Annual Report](https://medium.com/celoorg/the-celo-foundation-annual-report-2021-celebrates-growth-impact-and-transparency-a9e47748700d) for an in-depth look at Celo and how it's creating the conditions of prosperity for everyone.
 
-Celo’s mobile-first approach to user-first decentralized finance (DeFi) means everyone has equal access to powerful financial tools and services – no matter who they are or where they live – creating convenient, financial opportunities for anyone who is online and on their mobile phones.
+:::
 
-**User-first with phone number PKI**
+## Celo's Mission
 
-[Mobile phone number mapping](learn/celo-protocol.md#lightweight-identity) to account addresses for a seamless user experience on platform-native dApps, like [impactMarket](https://www.impactmarket.com/) or [Valora](https://valoraapp.com/).
+The company’s mission is to build a financial system that creates the conditions of prosperity for everyone. Celo enables native and non-native digital assets–both cryptographic and Central Bank Digital Currencies (CBDCs)–to circulate freely across devices, carriers, and countries. This makes money mobile, global and accessible like never before. Celo is supported by a community of organizations and individuals, including Jack Dorsey, a16z, and Deutsche Telekom.
 
-**Ultra-accessible with Ultralight Mobile Client**
+<YouTube videoId="kKggE5OvyhE"/>
 
-The ultralight client is a zk-SNARK based system that allows mobile and resource constrained nodes on the Celo network to sync to the Celo blockchain faster and with less data. It accomplishes this by using zero-knowledge proofs, which allow the quick verification of the chain syncing computation without having to run it locally.
+## Celo Ecosystem
 
-**Industry-leading blockchain sync speeds with Plumo**
+An Ethereum-compatible technology capable of reaching global users at scale, Celo turns crypto into usable money with a multi-asset system: a governance and staking asset (CELO) and a family of Mento stablecoins. Since the launch of Mainnet in 2020, Celo’s network now supports 1000+ projects from builders, developers, and artists, who everyday create new applications and issue digital currencies from over 100 countries around the world.
 
-[Plumo](../celo-codebase/protocol/plumo) will allow Celo to sync 1 million times faster than other blockchains.
+<YouTube videoId="vwfHiaVzc2E"/>
 
-## Open
+## Get started with Celo
 
-With its interoperability, full EVM compatibility, and vision for currency inclusivity, Celo’s open-source infrastructure now supports 1000+ projects from builders, developers, and even artists, who every day create new applications and issue digital currencies from 100+ countries around the world.
-
-**Interoperable with Optics**
-
-The [Optics](../celo-codebase/protocol/optics) standard will allow Celo to facilitate transactions between other smart contract enabled layer 1 blockchains like Ethereum, Cosmos, Solana, and Near, meaning Celo’s ecosystem of developers can connect the people, services, and technologies that allow everyone to benefit from a more open and connected blockchain ecosystem.
-
-**On-chain governance with CELO**
-
-Celo is turning crypto into usable money with a multi-asset system: a growing family of native and wrapped stablecoins and CELO, the native governance and staking asset (CELO) that allows anyone to help shape the future of Celo.
-
-**Sustainable with staking**
-
-[Celo’s Proof-of-Stake (PoS)](../celo-codebase/protocol/proof-of-stake) consensus mechanism and automatic daily carbon offsets make Celo the world's first carbon-negative blockchain, offsetting over 2,285 tons of carbon to-date.
-
-## Real
-
-Using the power of mobile-first DeFi to solve real problems for real people, Celo has made blockchain’s vision for a globally accessible decentralized financial system a reality. With Celo’s reliable 5 second block times, low gas fees [payable in stablecoins](../celo-codebase/protocol/transactions/erc20-transaction-fees), and decentralized phone verification protocol, it’s no wonder companies and organizations like Deutsche Telekom, Opera, and the Grameen Foundation are working with the Celo ecosystem to drive adoption of Celo’s technology in the real world.
+To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
