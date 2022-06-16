@@ -34,9 +34,6 @@ For ease of reference, here is some terminology for this page:
 
 ### Option 1: Private key-based proof of identity
 
-SECRETLY GENERATES
-SECRETELY SHARES
-
 Scenario:
 
 - Alice wants pay to Bob, but Bob doesn't have an account yet.
@@ -122,6 +119,14 @@ You can find Valora's implementation of the phone number-based escrow payment in
 The contract allows Alice (the sender) to revoke an unclaimed escrow payment she made and reclaim the funds. This is important if Bob never withdraws the escrow payment, or worse, the temporary key is lost or sent to an unintended recipient.
 
 Every escrow payment has an expiry time set by the sender upon creation. After an escrow payment has expired, Alice can revoke the payment, after which the payment is returned to her and deleted from the escrow contract.
+
+[![Revocation payment flow](https://mermaid.ink/img/pako:eNqdlF1L5DAUhv_KITc6UEVEb3ohKOvFIuzNellYTpMz02CT1Hw4W8T_vvloZ1oHWXAuhiZ5857nvE36zrgRxGrm6DWQ5vRD4s6iajTEH3JvLNz3klOZGNB6yeWA2gOm6T_IuQlp5OC-PJ4qBxwVaf9TJNUzqcFYtCM80Xiq5UZ7G-sm6aPj1uwvnelPda1pv6xdsB9M2-hpInijg2rJlnHuCC4u7u4O9eppch_NHXgDlt7MCwFqoIwxd1FBSxyDo1QAOnT6LFL3KBUJkB5G8peHuquI1uUUCpo9i_qX8QTmjex6X3Xcw7Hvpd5BHGq3JXu-AakXMUVaAY58hH8N0kYg-jvIGLWPdDBTWYrx2l17fn17W8H11U3-25TFZa5rYCEFaDP1OpOndj_TLywW7Hvpuwi7BEqk7TgFX1xIi1PMTDixbv6fbHlz7rvhlu2foy0uh9OZKq6MatgGLRygTX2lA4r8JZ2jxe1ZNHc0Sk5ZU0_VDtFKN7GI_F6P_tk60uVtZ3GuILCKKbIKpYj3-T3VaZjvSFHD6vgoaIuh9w2rylJHctf5spYuSMMa_RE9wiDQ06OQ8RKxeou9oyoLfo-as9rbQLNo-lhMqo9_PQd5Dg)](https://mermaid.live/edit#pako:eNqdlF1L5DAUhv_KITc6UEVEb3ohKOvFIuzNellYTpMz02CT1Hw4W8T_vvloZ1oHWXAuhiZ5857nvE36zrgRxGrm6DWQ5vRD4s6iajTEH3JvLNz3klOZGNB6yeWA2gOm6T_IuQlp5OC-PJ4qBxwVaf9TJNUzqcFYtCM80Xiq5UZ7G-sm6aPj1uwvnelPda1pv6xdsB9M2-hpInijg2rJlnHuCC4u7u4O9eppch_NHXgDlt7MCwFqoIwxd1FBSxyDo1QAOnT6LFL3KBUJkB5G8peHuquI1uUUCpo9i_qX8QTmjex6X3Xcw7Hvpd5BHGq3JXu-AakXMUVaAY58hH8N0kYg-jvIGLWPdDBTWYrx2l17fn17W8H11U3-25TFZa5rYCEFaDP1OpOndj_TLywW7Hvpuwi7BEqk7TgFX1xIi1PMTDixbv6fbHlz7rvhlu2foy0uh9OZKq6MatgGLRygTX2lA4r8JZ2jxe1ZNHc0Sk5ZU0_VDtFKN7GI_F6P_tk60uVtZ3GuILCKKbIKpYj3-T3VaZjvSFHD6vgoaIuh9w2rylJHctf5spYuSMMa_RE9wiDQ06OQ8RKxeou9oyoLfo-as9rbQLNo-lhMqo9_PQd5Dg)
+
+<!-- 
+Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
+
+Mermaid diagram: https://mermaid.live/edit#pako:eNqdlF1L5DAUhv_KITc6UEVEb3ohKOvFIuzNellYTpMz02CT1Hw4W8T_vvloZ1oHWXAuhiZ5857nvE36zrgRxGrm6DWQ5vRD4s6iajTEH3JvLNz3klOZGNB6yeWA2gOm6T_IuQlp5OC-PJ4qBxwVaf9TJNUzqcFYtCM80Xiq5UZ7G-sm6aPj1uwvnelPda1pv6xdsB9M2-hpInijg2rJlnHuCC4u7u4O9eppch_NHXgDlt7MCwFqoIwxd1FBSxyDo1QAOnT6LFL3KBUJkB5G8peHuquI1uUUCpo9i_qX8QTmjex6X3Xcw7Hvpd5BHGq3JXu-AakXMUVaAY58hH8N0kYg-jvIGLWPdDBTWYrx2l17fn17W8H11U3-25TFZa5rYCEFaDP1OpOndj_TLywW7Hvpuwi7BEqk7TgFX1xIi1PMTDixbv6fbHlz7rvhlu2foy0uh9OZKq6MatgGLRygTX2lA4r8JZ2jxe1ZNHc0Sk5ZU0_VDtFKN7GI_F6P_tk60uVtZ3GuILCKKbIKpYj3-T3VaZjvSFHD6vgoaIuh9w2rylJHctf5spYuSMMa_RE9wiDQ06OQ8RKxeou9oyoLfo-as9rbQLNo-lhMqo9_PQd5Dg
+-->
 
 ## Smart contract details
 
