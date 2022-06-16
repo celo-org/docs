@@ -126,129 +126,6 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Nodes",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "getting-started/choosing-a-network",
-        },
-        {
-          type: "category",
-          label: "Mainnet",
-          items: [
-            {
-              type: "doc",
-              label: "Celo Mainnet",
-              id: "getting-started/mainnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Mainnet Validator",
-              id: "getting-started/mainnet/running-a-validator-in-mainnet",
-            },
-            {
-              type: "doc",
-              label: "Run Mainnet Full Node",
-              id: "getting-started/mainnet/running-a-full-node-in-mainnet",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Alfajores Testnet",
-          items: [
-            {
-              type: "doc",
-              label: "Alfajores Testnet",
-              id: "getting-started/alfajores-testnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Alfajores Full Node",
-              id:
-                "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
-            },
-            {
-              type: "doc",
-              label: "Mobile Wallet",
-              id: "getting-started/alfajores-testnet/using-the-mobile-wallet",
-            },
-            {
-              type: "doc",
-              label: "Testnet Faucet",
-              id: "getting-started/alfajores-testnet/faucet",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Baklava Testnet",
-          items: [
-            {
-              type: "doc",
-              label: "Baklava Testnet",
-              id: "getting-started/baklava-testnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Baklava Validator",
-              id:
-                "getting-started/baklava-testnet/running-a-validator-in-baklava",
-            },
-            {
-              type: "doc",
-              label: "Run Baklava Full Node",
-              id:
-                "getting-started/baklava-testnet/running-a-full-node-in-baklava",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Hosted Nodes",
-          id: "getting-started/hosted-nodes",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Endpoints",
-      items: [
-        {
-          type: "doc",
-          label: "Forno",
-          id: "developer-resources/forno/index",
-        },
-        {
-          type: "link",
-          label: "Figment",
-          href: "https://www.figment.io/datahub/celo",
-        },
-        {
-          type: "link",
-          label: "Quicknode",
-          href: "https://www.quicknode.com/chains/celo",
-        },
-        {
-          type: "link",
-          label: "Tatum",
-          href: "https://pages.tatum.io/celo",
-        },
-        {
-          type: "link",
-          label: "Ankr",
-          href: "https://www.ankr.com/protocol/public/celo/",
-        },
-        {
-          type: "link",
-          label: "All that Node",
-          href: "https://www.allthatnode.com/celo.dsrv",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Protocol",
       items: [
         { type: "doc", label: "Overview", id: "celo-codebase/protocol/index" },
@@ -434,6 +311,130 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Nodes",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "getting-started/choosing-a-network",
+        },
+        {
+          type: "category",
+          label: "Mainnet",
+          items: [
+            {
+              type: "doc",
+              label: "Celo Mainnet",
+              id: "getting-started/mainnet/index",
+            },
+            {
+              type: "doc",
+              label: "Run Mainnet Validator",
+              id: "getting-started/mainnet/running-a-validator-in-mainnet",
+            },
+            {
+              type: "doc",
+              label: "Run Mainnet Full Node",
+              id: "getting-started/mainnet/running-a-full-node-in-mainnet",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Alfajores Testnet",
+          items: [
+            {
+              type: "doc",
+              label: "Alfajores Testnet",
+              id: "getting-started/alfajores-testnet/index",
+            },
+            {
+              type: "doc",
+              label: "Run Alfajores Full Node",
+              id:
+                "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
+            },
+            {
+              type: "doc",
+              label: "Mobile Wallet",
+              id: "getting-started/alfajores-testnet/using-the-mobile-wallet",
+            },
+            {
+              type: "doc",
+              label: "Testnet Faucet",
+              id: "getting-started/alfajores-testnet/faucet",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Baklava Testnet",
+          items: [
+            {
+              type: "doc",
+              label: "Baklava Testnet",
+              id: "getting-started/baklava-testnet/index",
+            },
+            {
+              type: "doc",
+              label: "Run Baklava Validator",
+              id:
+                "getting-started/baklava-testnet/running-a-validator-in-baklava",
+            },
+            {
+              type: "doc",
+              label: "Run Baklava Full Node",
+              id:
+                "getting-started/baklava-testnet/running-a-full-node-in-baklava",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Hosted Nodes",
+          id: "getting-started/hosted-nodes",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Endpoints",
+      items: [
+        {
+          type: "doc",
+          label: "Forno",
+          id: "developer-resources/forno/index",
+        },
+        {
+          type: "link",
+          label: "Figment",
+          href: "https://www.figment.io/datahub/celo",
+        },
+        {
+          type: "link",
+          label: "Quicknode",
+          href: "https://www.quicknode.com/chains/celo",
+        },
+        {
+          type: "link",
+          label: "Tatum",
+          href: "https://pages.tatum.io/celo",
+        },
+        {
+          type: "link",
+          label: "Ankr",
+          href: "https://www.ankr.com/protocol/public/celo/",
+        },
+        {
+          type: "link",
+          label: "All that Node",
+          href: "https://www.allthatnode.com/celo.dsrv",
+        },
+      ],
+    },
+
     {
       type: "category",
       label: "Addresses",
