@@ -1,23 +1,23 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Introduction", id: "welcome" },
+    { type: "doc", label: "Welcome to Celo", id: "welcome" },
     {
       type: "category",
       label: "Overview",
       items: [
-        { type: "doc", label: "Why Celo", id: "learn/why-celo" },
-        { type: "doc", label: "Highlights", id: "learn/celo-highlights" },
-        {
-          type: "doc",
-          label: "Economic Model",
-          id: "learn/celo-economic-model",
-        },
-        { type: "doc", label: "Milestones", id: "learn/celo-milestones" },
-        { type: "doc", label: "Ecosystem", id: "learn/celo-ecosystem" },
+        { type: "doc", label: "Celo Basics", id: "overview" },
+        // { type: "doc", label: "Highlights", id: "learn/celo-highlights" },
+        // {
+        //   type: "doc",
+        //   label: "Economic Model",
+        //   id: "learn/celo-economic-model",
+        // },
+        // { type: "doc", label: "Milestones", id: "learn/celo-milestones" },
+        // { type: "doc", label: "Ecosystem", id: "learn/celo-ecosystem" },
         { type: "doc", label: "Key Concepts", id: "learn/key-concepts" },
         { type: "doc", label: "Architecture", id: "learn/celo-stack" },
         { type: "doc", label: "Whitepapers", id: "learn/celo-whitepapers" },
-        { type: "doc", label: "Community", id: "community/join-the-community" },
+        // { type:  "doc", label: "Community", id: "community/join-the-community" },
         { type: "doc", label: "Glossary", id: "getting-started/glossary" },
       ],
     },
