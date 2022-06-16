@@ -1,6 +1,6 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Welcome to Celo", id: "welcome" },
+    { type: "doc", label: "Introduction", id: "welcome" },
     {
       type: "category",
       label: "Overview",
@@ -112,15 +112,15 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "category",
-      label: "Staking",
-      items: [
-        { type: "doc", label: "Topic", id: "learn/why-celo" },
-        { type: "doc", label: "Topic", id: "learn/why-celo" },
-        { type: "doc", label: "Topic", id: "learn/why-celo" },
-      ],
-    },
+    // {
+    //   type: "category",
+    //   label: "Staking",
+    //   items: [
+    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
+    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
+    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
+    //   ],
+    // },
     {
       type: "category",
       label: "Develop",
@@ -128,7 +128,7 @@ const sidebars = {
         { type: "doc", label: "Overview", id: "developer-resources/overview" },
         {
           type: "category",
-          label: "Installation",
+          label: "Local Environment",
           items: [
             {
               type: "doc",
@@ -142,46 +142,88 @@ const sidebars = {
             },
           ],
         },
+        // {
+        //   type: "category",
+        //   label: "Wallet",
+        //   items: [
+        //     {
+        //       type: "doc",
+        //       label: "MetaMask",
+        //       id: "developer-resources/testnet-wallet",
+        //     },
+        //     {
+        //       type: "category",
+        //       label: "Celo Wallet",
+        //       items: [
+        //         {
+        //           type: "doc",
+        //           label: "Celo Wallet",
+        //           id: "celo-codebase/wallet/index",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Running the wallet locally",
+        //           id: "celo-codebase/wallet/intro",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Using the Wallet",
+        //           id: "getting-started/using-the-wallet",
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       type: "link",
+        //       label: "Faucet",
+        //       href: "https://celo.org/developers/faucet",
+        //     },
+        //   ],
+        // },
         {
           type: "category",
-          label: "Wallet",
+          label: "Deploy on Celo",
           items: [
             {
               type: "doc",
-              label: "MetaMask",
-              id: "developer-resources/testnet-wallet",
+              label: "Overview",
+              id: "developer-resources/deploy-dapp",
             },
             {
-              type: "category",
-              label: "Celo Wallet",
-              items: [
-                {
-                  type: "doc",
-                  label: "Celo Wallet",
-                  id: "celo-codebase/wallet/index",
-                },
-                {
-                  type: "doc",
-                  label: "Running the wallet locally",
-                  id: "celo-codebase/wallet/intro",
-                },
-                {
-                  type: "doc",
-                  label: "Using the Wallet",
-                  id: "getting-started/using-the-wallet",
-                },
-              ],
+              type: "doc",
+              label: "Using Remix",
+              id: "developer-resources/deploy-remix",
             },
             {
-              type: "link",
-              label: "Faucet",
-              href: "https://celo.org/developers/faucet",
+              type: "doc",
+              label: "Using Truffle",
+              id: "developer-resources/deploy-truffle",
+            },
+            {
+              type: "doc",
+              label: "Using Hardhat",
+              id: "developer-resources/deploy-hardhat",
+            },
+            {
+              type: "doc",
+              label: "Using Replit",
+              id: "developer-resources/deploy-replit",
             },
           ],
         },
         {
           type: "category",
-          label: "Tools",
+          label: "Migrate to Celo",
+          items: [
+            {
+              type: "doc",
+              label: "Ethereum Developers",
+              id: "developer-resources/celo-for-eth-devs",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Developer Tools",
           items: [
             { type: "doc", label: "Overview", id: "learn/developer-tools" },
             {
@@ -337,37 +379,6 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: "category",
-          label: "Deploy",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "developer-resources/deploy-dapp",
-            },
-            {
-              type: "doc",
-              label: "Remix",
-              id: "developer-resources/deploy-remix",
-            },
-            {
-              type: "doc",
-              label: "Truffle",
-              id: "developer-resources/deploy-truffle",
-            },
-            {
-              type: "doc",
-              label: "Hardhat",
-              id: "developer-resources/deploy-hardhat",
-            },
-            {
-              type: "doc",
-              label: "Replit",
-              id: "developer-resources/deploy-replit",
-            },
-          ],
-        },
       ],
     },
     {
@@ -412,17 +423,12 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Bridging",
+          label: "Bridges",
           items: [
             {
               type: "doc",
               label: "Celo Bridges",
               id: "celo-codebase/protocol/bridging/bridging-to-celo",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge GUI",
-              id: "celo-codebase/protocol/bridging/optics-gui",
             },
             {
               type: "doc",
@@ -435,16 +441,32 @@ const sidebars = {
               id:
                 "celo-codebase/protocol/bridging/bridging-tokens-with-etherscan",
             },
-            {
-              type: "doc",
-              label: "Migrating to Optics v2",
-              id: "celo-codebase/protocol/bridging/migrating-to-optics-v2",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge FAQ",
-              id: "celo-codebase/protocol/bridging/optics-bridge-faq",
-            },
+            // {
+            //   type: "category",
+            //   label: "Optics",
+            //   items: [
+            //     {
+            //       type: "doc",
+            //       label: "Optics Bridge GUI",
+            //       id: "celo-codebase/protocol/bridging/optics-gui",
+            //     },
+            //     {
+            //       type: "doc",
+            //       label: "Optics Bridge",
+            //       id: "celo-codebase/protocol/optics",
+            //     },
+            //     {
+            //       type: "doc",
+            //       label: "Migrating to Optics v2",
+            //       id: "celo-codebase/protocol/bridging/migrating-to-optics-v2",
+            //     },
+            //     {
+            //       type: "doc",
+            //       label: "Optics Bridge FAQ",
+            //       id: "celo-codebase/protocol/bridging/optics-bridge-faq",
+            //     },
+            //   ],
+            // },
           ],
         },
         {
@@ -683,32 +705,6 @@ const sidebars = {
         { type: "doc", label: "Overview", id: "celo-codebase/protocol/index" },
         {
           type: "category",
-          label: "Consensus",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "celo-codebase/protocol/consensus/index",
-            },
-            {
-              type: "doc",
-              label: "Validator Set Differences",
-              id: "celo-codebase/protocol/consensus/validator-set-differences",
-            },
-            {
-              type: "doc",
-              label: "Locating Nodes",
-              id: "celo-codebase/protocol/consensus/locating-nodes",
-            },
-            {
-              type: "doc",
-              label: "Ultralight Sync",
-              id: "celo-codebase/protocol/consensus/ultralight-sync",
-            },
-          ],
-        },
-        {
-          type: "category",
           label: "Proof-of-Stake",
           items: [
             {
@@ -771,23 +767,36 @@ const sidebars = {
             },
           ],
         },
-        "celo-codebase/protocol/governance",
         {
           type: "category",
-          label: "Stability Mechanism",
+          label: "Consensus",
           items: [
             {
               type: "doc",
               label: "Overview",
-              id: "celo-codebase/protocol/stability/index",
+              id: "celo-codebase/protocol/consensus/index",
             },
-            "celo-codebase/protocol/stability/doto",
-            "celo-codebase/protocol/stability/granda-mento",
-            "celo-codebase/protocol/stability/oracles",
-            "celo-codebase/protocol/stability/stability-fees",
-            "celo-codebase/protocol/stability/adding_stable_assets",
-            "celo-codebase/protocol/stability/tobin-tax",
+            {
+              type: "doc",
+              label: "Validator Set Differences",
+              id: "celo-codebase/protocol/consensus/validator-set-differences",
+            },
+            {
+              type: "doc",
+              label: "Locating Nodes",
+              id: "celo-codebase/protocol/consensus/locating-nodes",
+            },
+            {
+              type: "doc",
+              label: "Ultralight Sync",
+              id: "celo-codebase/protocol/consensus/ultralight-sync",
+            },
           ],
+        },
+        {
+          type: "doc",
+          label: "Governance",
+          id: "celo-codebase/protocol/governance",
         },
         {
           type: "category",
@@ -808,6 +817,23 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Stability",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "celo-codebase/protocol/stability/index",
+            },
+            "celo-codebase/protocol/stability/doto",
+            "celo-codebase/protocol/stability/granda-mento",
+            "celo-codebase/protocol/stability/oracles",
+            "celo-codebase/protocol/stability/stability-fees",
+            "celo-codebase/protocol/stability/adding_stable_assets",
+            "celo-codebase/protocol/stability/tobin-tax",
+          ],
+        },
+        {
+          type: "category",
           label: "Identity",
           items: [
             {
@@ -819,41 +845,44 @@ const sidebars = {
             "celo-codebase/protocol/identity/randomness",
             "celo-codebase/protocol/identity/smart-contract-accounts",
             "celo-codebase/protocol/identity/encrypted-cloud-backup",
-          ],
-        },
-        {
-          type: "category",
-          label: "ODIS",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "celo-codebase/protocol/odis/index",
-            },
             {
               type: "category",
-              label: "Use Cases",
-              items: [
-                "celo-codebase/protocol/odis/use-cases/phone-number-privacy",
-                "celo-codebase/protocol/odis/use-cases/key-hardening",
-              ],
-            },
-            {
-              type: "category",
-              label: "Domains",
+              label: "ODIS",
               items: [
                 {
                   type: "doc",
                   label: "Overview",
-                  id: "celo-codebase/protocol/odis/domains/index",
+                  id: "celo-codebase/protocol/odis/index",
                 },
-                "celo-codebase/protocol/odis/domains/sequential-delay-domain",
+                {
+                  type: "category",
+                  label: "Use Cases",
+                  items: [
+                    "celo-codebase/protocol/odis/use-cases/phone-number-privacy",
+                    "celo-codebase/protocol/odis/use-cases/key-hardening",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "Domains",
+                  items: [
+                    {
+                      type: "doc",
+                      label: "Overview",
+                      id: "celo-codebase/protocol/odis/domains/index",
+                    },
+                    "celo-codebase/protocol/odis/domains/sequential-delay-domain",
+                  ],
+                },
               ],
             },
           ],
         },
-        "celo-codebase/protocol/optics",
-        "celo-codebase/protocol/plumo",
+        {
+          type: "doc",
+          label: "Ultralight Client",
+          id: "celo-codebase/protocol/plumo",
+        },
       ],
     },
     {

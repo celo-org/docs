@@ -306,7 +306,7 @@ module.exports = {
         {
           type: "dropdown",
           position: "left",
-          label: "Quicklinks",
+          label: "Support",
           items: [
             {
               to: "https://explorer.celo.org/",
