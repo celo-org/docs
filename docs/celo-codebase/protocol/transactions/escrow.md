@@ -10,7 +10,7 @@ ___
 
 ## Overview
 
-The Escrow smart contract ([escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol)) is a [Core Contract](../../../learn/celo-stack#celo-core-contracts) on Celo that lets users make escrowed payments. In short, Alice can make a payment to Bob, before Bob has a Celo account. This is particularly useful when Alice wants to invite Bob to Celo by making an escrowed payment to him, which he can claim after creating an account.
+The Escrow smart contract ([Escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol)) is a [Core Contract](../../../learn/celo-stack#celo-core-contracts) on Celo that lets users make escrowed payments. In short, Alice can make a payment to Bob, before Bob has a Celo account. This is particularly useful when Alice wants to invite Bob to Celo by making an escrowed payment to him, which he can claim after creating an account.
 
 The contract provides two options for claiming an escrowed payment:
 
@@ -144,7 +144,7 @@ Mermaid diagram: https://mermaid.live/edit#pako:eNqdlF1L5DAUhv_KITc6UEVEb3ohKOvF
 
 ## Smart contract details
 
-The [escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol) contract stores funds in a mapping from `paymentId` addresses to `EscrowedPayment` structs. Each `EscrowedPayment` struct has the following attributes:
+The [Escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol) contract stores funds in a mapping from `paymentId` addresses to `EscrowedPayment` structs. Each `EscrowedPayment` struct has the following attributes:
 
 ```solidity
 struct EscrowedPayment {
@@ -160,7 +160,31 @@ struct EscrowedPayment {
 }
 ```
 
-For ease of reference, the contract emits the following events:
+Each [Escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol) function can be called using the [Escrow.ts](https://github.com/celo-org/celo-monorepo/blob/master/packages/sdk/contractkit/src/wrappers/Escrow.ts) wrapper in [ContractKit](https://docs.celo.org/developer-guide/contractkit/contracts-wrappers-registry#interacting-with-other-celo-contracts).
+
+```ts
+class EscrowWrapper extends BaseWrapper<Escrow> {
+  escrowedPayments = proxyCall(this.contract.methods.escrowedPayments)
+
+  receivedPaymentIds = proxyCall(this.contract.methods.receivedPaymentIds)
+
+  sentPaymentIds = proxyCall(this.contract.methods.sentPaymentIds)
+
+  getReceivedPaymentIds = proxyCall(this.contract.methods.getReceivedPaymentIds)
+
+  getSentPaymentIds = proxyCall(this.contract.methods.getSentPaymentIds)
+
+  transfer = proxySend(this.connection, this.contract.methods.transfer)
+
+  withdraw = proxySend(this.connection, this.contract.methods.withdraw)
+
+  revoke = proxySend(this.connection, this.contract.methods.revoke)
+}
+```
+
+You can follow the [instructions here to setup and use ContractKit](https://docs.celo.org/developer-guide/contractkit/setup).
+
+For observability, the contract emits the following events:
 
 ```solidity
 event Transfer(
@@ -175,7 +199,7 @@ event Transfer(
 
 :::caution Forthcoming change to Event Emitted in Escrow.sol
 
-In a forthcoming Escrow.sol upgrade, we are proposing to change the data emitted in the `to` from `payment.sender` to `msg.sender`. [Read more on GitHub Discussions](https://github.com/celo-org/identity/discussions/25).
+In a forthcoming [Escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol) upgrade, we are proposing to change the data emitted in the `to` field from `payment.sender` to `msg.sender`. [Read more on GitHub Discussions](https://github.com/celo-org/identity/discussions/25).
 
 :::
 
