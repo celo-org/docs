@@ -501,6 +501,23 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "validator-guide/overview" },
         {
+          type: "category",
+          label: "Run a Validator",
+          items: [
+            {
+              type: "doc",
+              label: "Mainnet Validator",
+              id: "getting-started/mainnet/running-a-validator-in-mainnet",
+            },
+            {
+              type: "doc",
+              label: "Baklava Validator",
+              id:
+                "getting-started/baklava-testnet/running-a-validator-in-baklava",
+            },
+          ],
+        },
+        {
           type: "doc",
           label: "Attestation Service",
           id: "validator-guide/attestation-service",
@@ -562,23 +579,6 @@ const sidebars = {
           type: "doc",
           label: "Validator FAQ",
           id: "getting-started/validator-troubleshooting-faq",
-        },
-        {
-          type: "category",
-          label: "Run a Validator",
-          items: [
-            {
-              type: "doc",
-              label: "Mainnet Validator",
-              id: "getting-started/mainnet/running-a-validator-in-mainnet",
-            },
-            {
-              type: "doc",
-              label: "Baklava Validator",
-              id:
-                "getting-started/baklava-testnet/running-a-validator-in-baklava",
-            },
-          ],
         },
       ],
     },

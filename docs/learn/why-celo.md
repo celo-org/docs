@@ -10,7 +10,7 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 ---
 
-## Crypto made for Mobile
+## Crypto made for mobile
 
 Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
 

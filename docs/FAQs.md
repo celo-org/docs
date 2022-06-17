@@ -10,7 +10,7 @@ Answers to frequently asked questions about Celo.
 
 ---
 
-## Introduction and Overview
+## General
 
 ### What is Celo (CELO)?
 
@@ -53,15 +53,11 @@ Separate entities are aimed at Celo’s promotion and preservation. The dedicate
 
 Celo’s main unique selling point lies in making financial tools and global digital payments accessible to all using crypto. It focuses on making crypto mobile and usable taking a user-centric approach to platform design and innovation.
 
----
-
-## General Questions
-
 ### Do you have an Announcement Channel?
 
 At the moment there is none on telegram, best to follow Celo on Twitter or any other social media channels for Celo. Every announcement is always posted there.
 
-### Celo Token
+## Celo Token
 
 ### What token does CELO have?
 
