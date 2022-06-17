@@ -4,11 +4,12 @@ description: Collection of resources to get started with Celo Alfajores Testnet 
 id: index
 slug: /getting-started/alfajores-testnet
 ---
+
 # Alfajores Testnet
 
 Collection of resources to get started with Celo Alfajores Testnet (Celo's Developer Testnet).
 
-___
+---
 
 ## What is the Alfajores Testnet?
 
@@ -39,10 +40,3 @@ Please help the community to improve Celo by asking questions on the [Forum](htt
 Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaimer](/important-information/alfajores-testnet-disclaimer).
 
 :::
-
-## Useful links
-
-- [Alfajores Testnet Faucet](https://celo.org/build/faucet) - get testnet tokens to experiment with
-- [Celo Wallet for Alfajores](https://celo.org/build/wallet) - download the Android wallet app for the testnet from the Play Store
-- [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org) - to check the current availability of the testnet
-- [Alfajores Testnet Block Explorer](https://alfajores-blockscout.celo-testnet.org) - explore the history of the blockchain and view transaction details

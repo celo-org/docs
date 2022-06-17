@@ -90,6 +90,11 @@ const sidebars = {
               label: "Running the Wallet Locally",
               id: "celo-codebase/wallet/intro",
             },
+            {
+              type: "doc",
+              label: "Testnet Faucet",
+              id: "getting-started/alfajores-testnet/faucet",
+            },
           ],
         },
         {
@@ -324,26 +329,21 @@ const sidebars = {
           label: "Overview",
           id: "getting-started/choosing-a-network",
         },
-        {
-          type: "doc",
-          label: "Celo Mainnet",
-          id: "getting-started/mainnet/index",
-        },
-        {
-          type: "doc",
-          label: "Alfajores Testnet",
-          id: "getting-started/alfajores-testnet/index",
-        },
-        {
-          type: "doc",
-          label: "Testnet Faucet",
-          id: "getting-started/alfajores-testnet/faucet",
-        },
-        {
-          type: "doc",
-          label: "Baklava Testnet",
-          id: "getting-started/baklava-testnet/index",
-        },
+        // {
+        //   type: "doc",
+        //   label: "Celo Mainnet",
+        //   id: "getting-started/mainnet/index",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Alfajores Testnet",
+        //   id: "getting-started/alfajores-testnet/index",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Baklava Testnet",
+        //   id: "getting-started/baklava-testnet/index",
+        // },
         {
           type: "category",
           label: "Disclaimers",
@@ -437,8 +437,8 @@ const sidebars = {
       type: "category",
       label: "Addresses",
       items: [
-        { type: "doc", label: "Contract Addresses", id: "contract-addresses" },
-        { type: "doc", label: "Tokens Addresses", id: "token-addresses" },
+        { type: "doc", label: "Contracts", id: "contract-addresses" },
+        { type: "doc", label: "Tokens", id: "token-addresses" },
       ],
     },
     // Holders
@@ -449,13 +449,8 @@ const sidebars = {
         { type: "doc", label: "Overview", id: "celo-holder-guide/owners" },
         {
           type: "doc",
-          label: "Self-Custody CELO",
+          label: "Self-Custody",
           id: "celo-holder-guide/quick-start",
-        },
-        {
-          type: "doc",
-          label: "Asset Management",
-          id: "celo-holder-guide/cusd",
         },
         {
           type: "doc",
@@ -464,12 +459,12 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Exchange Celo Assets",
+          label: "Exchange Assets",
           id: "celo-holder-guide/celo-exchange-bot",
         },
         {
           type: "doc",
-          label: "Voting for Validators",
+          label: "Validator Elections",
           id: "celo-holder-guide/voting-validators",
         },
         {
@@ -479,8 +474,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Governance Cheat Sheet",
+          label: "Governable Parameters",
           id: "celo-holder-guide/governance-cheat-sheet",
+        },
+        {
+          type: "doc",
+          label: "Asset Management",
+          id: "celo-holder-guide/cusd",
         },
         {
           type: "doc",
