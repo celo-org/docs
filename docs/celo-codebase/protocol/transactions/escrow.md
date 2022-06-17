@@ -1,8 +1,8 @@
 ---
-title: Celo's Escrow Contract
+title: Escrow Payments
 description: Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 ---
-# Escrow
+# Escrow payments
 
 Introduction to the Celo Escrow contract and how to use it to transfer, withdraw, and revoke funds.
 
@@ -23,14 +23,14 @@ The payments are stored in the contract and can be withdrawn by the recipient or
 
 For ease of reference, here is some terminology for the following page:
 
-- Alice is the "**sender**"
-- Bob is the "**recipient**"
-- a `private key` and a `public key` are referred to as "**keys**", and
-- with the associated `public address` they are altogether referred to as an "**account**"
-- a temporary `private key` and `public key` are referred to as "**temporary keys**", and
-- the associated temporary `public address` is referred to as a "**`paymentId`**"
-- the keys are generated **randomly** or **deterministically** depending on the payment flow of choice \(more on this below\)
-- a proof of ownership over a phone number is referred to as an "**attestation**"
+- Alice is the "sender"
+- Bob is the "recipient"
+- a `private key` and a `public key` are referred to as "keys", and
+- with the associated `public address` they are altogether referred to as an "account"
+- a temporary `private key` and `public key` are referred to as "temporary keys", and
+- the associated temporary `public address` is referred to as a "`paymentId`"
+- the keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\)
+- a proof of ownership over a phone number is referred to as an "attestation"
 
 ### Option 1: Private key-based proof of identity
 
