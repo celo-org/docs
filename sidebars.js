@@ -344,6 +344,27 @@ const sidebars = {
           label: "Baklava Testnet",
           id: "getting-started/baklava-testnet/index",
         },
+        {
+          type: "category",
+          label: "Disclaimers",
+          items: [
+            {
+              type: "doc",
+              label: "Alfajores Testnet Disclaimer",
+              id: "important-information/alfajores-testnet-disclaimer",
+            },
+            {
+              type: "doc",
+              label: "Baklava Testnet Disclaimer",
+              id: "important-information/baklava-testnet-disclaimer",
+            },
+            {
+              type: "doc",
+              label: "Mainnet Disclaimer",
+              id: "important-information/mainnet-network-disclaimer",
+            },
+          ],
+        },
       ],
     },
     // Endpoints
@@ -427,67 +448,49 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "celo-holder-guide/owners" },
         {
-          type: "category",
-          label: "Manage Assets",
-          items: [
-            {
-              type: "doc",
-              label: "Self-Custody CELO",
-              id: "celo-holder-guide/quick-start",
-            },
-            {
-              type: "doc",
-              label: "Asset Management",
-              id: "celo-holder-guide/cusd",
-            },
-            {
-              type: "doc",
-              label: "Release Gold",
-              id: "celo-holder-guide/release-gold",
-            },
-            {
-              type: "doc",
-              label: "Exchange Celo Assets",
-              id: "celo-holder-guide/celo-exchange-bot",
-            },
-          ],
+          type: "doc",
+          label: "Self-Custody CELO",
+          id: "celo-holder-guide/quick-start",
         },
         {
-          type: "category",
-          label: "Voting",
-          items: [
-            {
-              type: "doc",
-              label: "Voting for Validators",
-              id: "celo-holder-guide/voting-validators",
-            },
-            {
-              type: "doc",
-              label: "Voting on Governance",
-              id: "celo-holder-guide/voting-governance",
-            },
-            {
-              type: "doc",
-              label: "Governance Cheat Sheet",
-              id: "celo-holder-guide/governance-cheat-sheet",
-            },
-          ],
+          type: "doc",
+          label: "Asset Management",
+          id: "celo-holder-guide/cusd",
         },
         {
-          type: "category",
-          label: "Recovery",
-          items: [
-            {
-              type: "doc",
-              label: "Recover from ETH Address",
-              id: "celo-holder-guide/eth-recovery",
-            },
-            {
-              type: "doc",
-              label: "Recover from Celo Address",
-              id: "celo-holder-guide/celo-recovery",
-            },
-          ],
+          type: "doc",
+          label: "Release Gold",
+          id: "celo-holder-guide/release-gold",
+        },
+        {
+          type: "doc",
+          label: "Exchange Celo Assets",
+          id: "celo-holder-guide/celo-exchange-bot",
+        },
+        {
+          type: "doc",
+          label: "Voting for Validators",
+          id: "celo-holder-guide/voting-validators",
+        },
+        {
+          type: "doc",
+          label: "Voting on Governance",
+          id: "celo-holder-guide/voting-governance",
+        },
+        {
+          type: "doc",
+          label: "Governance Cheat Sheet",
+          id: "celo-holder-guide/governance-cheat-sheet",
+        },
+        {
+          type: "doc",
+          label: "Recover from ETH Address",
+          id: "celo-holder-guide/eth-recovery",
+        },
+        {
+          type: "doc",
+          label: "Recover from Celo Address",
+          id: "celo-holder-guide/celo-recovery",
         },
       ],
     },
@@ -893,27 +896,6 @@ const sidebars = {
               type: "doc",
               label: "Attestation Service",
               id: "community/release-process/attestation-service",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Important Information",
-          items: [
-            {
-              type: "doc",
-              label: "Alfajores Testnet Disclaimer",
-              id: "important-information/alfajores-testnet-disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Baklava Testnet Disclaimer",
-              id: "important-information/baklava-testnet-disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Mainnet Disclaimer",
-              id: "important-information/mainnet-network-disclaimer",
             },
           ],
         },
