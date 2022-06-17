@@ -10,23 +10,9 @@ const sidebars = {
         { type: "doc", label: "Whitepapers", id: "learn/celo-whitepapers" },
         { type: "doc", label: "Glossary", id: "getting-started/glossary" },
         { type: "doc", label: "FAQs", id: "faqs" },
-        // { type: "doc", label: "Highlights", id: "learn/celo-highlights" },
-        // {
-        //   type: "doc",
-        //   label: "Economic Model",
-        //   id: "learn/celo-economic-model",
-        // },
-        // { type: "doc", label: "Milestones", id: "learn/celo-milestones" },
-
-        // { type: "doc", label: "Ecosystem", id: "learn/celo-ecosystem" },
-        // { type: "doc", label: "Key Concepts", id: "learn/key-concepts" },
-        // {
-        //   type: "doc",
-        //   label: "Community",
-        //   id: "community/join-the-community",
-        // },
       ],
     },
+    // Wallets
     {
       type: "category",
       label: "Wallets",
@@ -92,6 +78,22 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Mobile Wallet",
+          items: [
+            {
+              type: "doc",
+              label: "Testnet Wallet",
+              id: "getting-started/alfajores-testnet/using-the-mobile-wallet",
+            },
+            {
+              type: "doc",
+              label: "Running the Wallet Locally",
+              id: "celo-codebase/wallet/intro",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Ledger Wallet",
           items: [
             {
@@ -124,6 +126,7 @@ const sidebars = {
         },
       ],
     },
+    // Protocol
     {
       type: "category",
       label: "Protocol",
@@ -311,9 +314,10 @@ const sidebars = {
         },
       ],
     },
+    // Nodes
     {
       type: "category",
-      label: "Nodes",
+      label: "Networks",
       items: [
         {
           type: "doc",
@@ -321,91 +325,46 @@ const sidebars = {
           id: "getting-started/choosing-a-network",
         },
         {
-          type: "category",
-          label: "Mainnet",
-          items: [
-            {
-              type: "doc",
-              label: "Celo Mainnet",
-              id: "getting-started/mainnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Mainnet Validator",
-              id: "getting-started/mainnet/running-a-validator-in-mainnet",
-            },
-            {
-              type: "doc",
-              label: "Run Mainnet Full Node",
-              id: "getting-started/mainnet/running-a-full-node-in-mainnet",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Alfajores Testnet",
-          items: [
-            {
-              type: "doc",
-              label: "Alfajores Testnet",
-              id: "getting-started/alfajores-testnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Alfajores Full Node",
-              id:
-                "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
-            },
-            {
-              type: "doc",
-              label: "Mobile Wallet",
-              id: "getting-started/alfajores-testnet/using-the-mobile-wallet",
-            },
-            {
-              type: "doc",
-              label: "Testnet Faucet",
-              id: "getting-started/alfajores-testnet/faucet",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Baklava Testnet",
-          items: [
-            {
-              type: "doc",
-              label: "Baklava Testnet",
-              id: "getting-started/baklava-testnet/index",
-            },
-            {
-              type: "doc",
-              label: "Run Baklava Validator",
-              id:
-                "getting-started/baklava-testnet/running-a-validator-in-baklava",
-            },
-            {
-              type: "doc",
-              label: "Run Baklava Full Node",
-              id:
-                "getting-started/baklava-testnet/running-a-full-node-in-baklava",
-            },
-          ],
+          type: "doc",
+          label: "Celo Mainnet",
+          id: "getting-started/mainnet/index",
         },
         {
           type: "doc",
-          label: "Hosted Nodes",
-          id: "getting-started/hosted-nodes",
+          label: "Alfajores Testnet",
+          id: "getting-started/alfajores-testnet/index",
+        },
+        {
+          type: "doc",
+          label: "Testnet Faucet",
+          id: "getting-started/alfajores-testnet/faucet",
+        },
+        {
+          type: "doc",
+          label: "Baklava Testnet",
+          id: "getting-started/baklava-testnet/index",
         },
       ],
     },
+    // Endpoints
     {
       type: "category",
-      label: "Endpoints",
+      label: "Nodes",
       items: [
         {
           type: "doc",
           label: "Forno",
           id: "developer-resources/forno/index",
+        },
+        {
+          type: "link",
+          label: "Ankr",
+          href: "https://www.ankr.com/protocol/public/celo/",
+        },
+        {
+          type: "link",
+          label: "Tatum",
+          href: "https://pages.tatum.io/celo",
         },
         {
           type: "link",
@@ -419,22 +378,40 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Tatum",
-          href: "https://pages.tatum.io/celo",
-        },
-        {
-          type: "link",
-          label: "Ankr",
-          href: "https://www.ankr.com/protocol/public/celo/",
-        },
-        {
-          type: "link",
           label: "All that Node",
           href: "https://www.allthatnode.com/celo.dsrv",
         },
+        {
+          type: "doc",
+          label: "Hosted Nodes",
+          id: "getting-started/hosted-nodes",
+        },
+        {
+          type: "category",
+          label: "Run a Node",
+          items: [
+            {
+              type: "doc",
+              label: "Mainnet Full Node",
+              id: "getting-started/mainnet/running-a-full-node-in-mainnet",
+            },
+            {
+              type: "doc",
+              label: "Alfajores Full Node",
+              id:
+                "getting-started/alfajores-testnet/running-a-full-node-in-alfajores",
+            },
+            {
+              type: "doc",
+              label: "Baklava Full Node",
+              id:
+                "getting-started/baklava-testnet/running-a-full-node-in-baklava",
+            },
+          ],
+        },
       ],
     },
-
+    // Addresses
     {
       type: "category",
       label: "Addresses",
@@ -443,16 +420,7 @@ const sidebars = {
         { type: "doc", label: "Tokens Addresses", id: "token-addresses" },
       ],
     },
-
-    // {
-    //   type: "category",
-    //   label: "Staking",
-    //   items: [
-    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
-    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
-    //     { type: "doc", label: "Topic", id: "learn/why-celo" },
-    //   ],
-    // },
+    // Holders
     {
       type: "category",
       label: "Holders",
@@ -523,6 +491,7 @@ const sidebars = {
         },
       ],
     },
+    // Validators
     {
       type: "category",
       label: "Validators",
@@ -591,8 +560,26 @@ const sidebars = {
           label: "Validator FAQ",
           id: "getting-started/validator-troubleshooting-faq",
         },
+        {
+          type: "category",
+          label: "Run a Validator",
+          items: [
+            {
+              type: "doc",
+              label: "Mainnet Validator",
+              id: "getting-started/mainnet/running-a-validator-in-mainnet",
+            },
+            {
+              type: "doc",
+              label: "Baklava Validator",
+              id:
+                "getting-started/baklava-testnet/running-a-validator-in-baklava",
+            },
+          ],
+        },
       ],
     },
+    // Developers
     {
       type: "category",
       label: "Developers",
@@ -668,6 +655,7 @@ const sidebars = {
         },
       ],
     },
+    // Integrations
     {
       type: "category",
       label: "Integrations",
@@ -709,6 +697,7 @@ const sidebars = {
         },
       ],
     },
+    // Bridges
     {
       type: "category",
       label: "Bridges",
@@ -773,6 +762,7 @@ const sidebars = {
         },
       ],
     },
+    // Oracles
     {
       type: "category",
       label: "Oracles",
@@ -792,6 +782,7 @@ const sidebars = {
         },
       ],
     },
+    // Resources
     {
       type: "category",
       label: "Resources",
@@ -824,7 +815,7 @@ const sidebars = {
         },
       ],
     },
-
+    // Community
     {
       type: "category",
       label: "Community",
