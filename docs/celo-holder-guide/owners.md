@@ -19,27 +19,27 @@ Start sending, spending, and earning crypto from your mobile phone.
 
 CELO is listed on 20+ exchanges worldwide.
 
-<PageRef url="https://coinmarketcap.com/currencies/celo/markets/" pageName="Get CELO" />
-<PageRef url="https://coinmarketcap.com/currencies/celo-dollar/markets/" pageName="Get cUSD" />
-<PageRef url="https://coinmarketcap.com/currencies/celo-euro/" pageName="Get cEUR" />
+- [Get CELO](https://coinmarketcap.com/currencies/celo/markets/)
+- [Get cUSD](https://coinmarketcap.com/currencies/celo-dollar/markets/)
+- [Get cEUR](https://coinmarketcap.com/currencies/celo-euro/)
 
 ## Manage Celo Assets
 
-<PageRef url="/celo-owner-guide/quick-start" pageName="Self-Custody CELO" />
-<PageRef url="/celo-owner-guide/cusd" pageName="Asset Management" />
-<PageRef url="/celo-owner-guide/release-gold" pageName="Understand ReleaseGold" />
-<PageRef url="/celo-owner-guide/celo-exchange-bot" pageName="Exchange Celo Assets" />
+- [Self-Custody CELO](/celo-owner-guide/quick-start)
+- [Asset Management](/celo-owner-guide/cusd)
+- [Understand ReleaseGold](/celo-owner-guide/release-gold)
+- [Exchange Celo Assets](/celo-owner-guide/celo-exchange-bot)
 
 ## Voting as a Celo Owner
 
-<PageRef url="/celo-owner-guide/voting-validators" pageName="Voting for Validators" />
-<PageRef url="/celo-owner-guide/voting-governance" pageName="Voting on Governance" />
-<PageRef url="/celo-owner-guide/governance-cheat-sheet" pageName="Governance Cheatsheet" />
+- [Voting for Validators](/celo-owner-guide/voting-validators)
+- [Voting on Governance](/celo-owner-guide/voting-governance)
+- [Governance Cheatsheet](/celo-owner-guide/governance-cheat-sheet)
 
 ## Asset Recovery
 
-<PageRef url="/celo-owner-guide/eth-recovery" pageName="Recover ETH from a Celo Address" />
-<PageRef url="/celo-owner-guide/celo-recovery" pageName="Recover CELO from an Ethereum Address" />
+- [Recover ETH from a Celo Address](/celo-owner-guide/eth-recovery)
+- [Recover CELO from an Ethereum Address](/celo-owner-guide/celo-recovery)
 
 :::tip
 

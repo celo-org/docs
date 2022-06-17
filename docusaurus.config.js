@@ -334,15 +334,20 @@ module.exports = {
             },
           ],
         },
+        // {
+        //   type: "localeDropdown",
+        //   position: "right",
+        //   dropdownItemsAfter: [
+        //     {
+        //       to: "https://celo.crowdin.com/",
+        //       label: "Help us translate",
+        //     },
+        //   ],
+        // },
         {
-          type: "localeDropdown",
+          to: "https://github.com/celo-org/docs/issues",
+          label: "Feedback",
           position: "right",
-          dropdownItemsAfter: [
-            {
-              to: "https://celo.crowdin.com/",
-              label: "Help us translate",
-            },
-          ],
         },
         {
           type: "dropdown",
@@ -405,10 +410,10 @@ module.exports = {
               label: "Blog",
               to: "/blog",
             },
-            {
-              href: "https://celo.crowdin.com/celo-docs",
-              label: "Help translate",
-            },
+            // {
+            //   href: "https://celo.crowdin.com/celo-docs",
+            //   label: "Help translate",
+            // },
             {
               label: "Docs GitHub",
               href: "https://github.com/celo-org/docs",

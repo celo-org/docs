@@ -7,12 +7,11 @@ description: Join a community of developers, designers, dreamers, and doers buil
 
 Guidelines for submitting contributions to the Celo community.
 
-___
+---
 
 import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 Celo is open source and we welcome open participation. We strive to fulfill our [Community Tenets](https://celo.org/community) by being an open and inclusive community where everyone feels welcome and empowered to contribute. This also means following some ground rules and abiding by Celo’s [Code of Conduct](https://celo.org/code-of-conduct).
 
@@ -26,10 +25,10 @@ Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome
 
 Our community includes a group of contributors that help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.
 
-<PageRef url="/community/code-contributors" pageName="Code Contributors" />
-<PageRef url="/community/documentation-contributors" pageName="Technical Writers" />
-<PageRef url="/community/translation-contributors" pageName="Translators" />
-<PageRef url="/community/CIP-contributors" pageName="Community Improvement Proposals" />
+- [Code Contributors](/community/code-contributors)
+- [Technical Writers](/community/documentation-contributors)
+- [Translators](/community/translation-contributors)
+- [Community Improvement Proposals](/community/CIP-contributors)
 
 :::note
 

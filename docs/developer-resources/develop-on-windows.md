@@ -8,6 +8,8 @@ slug: /developer-guide/start/develop-on-windows
 
 How to set up a local development environment for Celo using Windows.
 
+---
+
 :::tip
 
 Many popular tools and resources for blockchain development are written for developers working on UNIX machines. It is common for developers working on Windows to encounter errors that are not covered in the documentation and have no luck with Google. Fortunately, Microsoft makes it easy to run a UNIX machine directly from a Windows desktop with the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq).
@@ -26,18 +28,17 @@ Restart your computer when prompted.
 
 Next, install a Linux distribution from the Microsoft Store. When developing this guide, we chose [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q?rtc=1&activetab=pivot:overviewtab).
 
-Set up your Linux distro by setting a username and password then update and upgrade the packages by running the following command in the terminal: 
+Set up your Linux distro by setting a username and password then update and upgrade the packages by running the following command in the terminal:
 
 ```shell
 sudo apt update && sudo apt upgrade
 ```
 
-
 You can view the source documentation for setting up the Linux distro [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) and the Microsoft documentation for setting up the Windows Subsystem for Linux [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan).
 
 ### Set up the Linux Environment
 
-Now that you have Linux installed, let’s install [nvm](https://github.com/nvm-sh/nvm) and [yarn](https://yarnpkg.com/). Nvm \(node version manager\) makes it easy to install and manage different versions of Node.js. The following instructions are from the [celo-monoreop setup documentation for Linux](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#linux). 
+Now that you have Linux installed, let’s install [nvm](https://github.com/nvm-sh/nvm) and [yarn](https://yarnpkg.com/). Nvm \(node version manager\) makes it easy to install and manage different versions of Node.js. The following instructions are from the [celo-monoreop setup documentation for Linux](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#linux).
 
 Run the following commands in the Linux terminal.
 
@@ -73,5 +74,5 @@ You are good to go! If you have any questions, [join our Discord server](https:/
 
 ### Additional Resources
 
-* [**Windows Subsystem for Linux Installation Guide for Windows 10**](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan)
-* [**WSL: Ultimate Guide**](https://adamtheautomator.com/windows-subsystem-for-linux/#developing-on-wsl-with-visual-studio-code-vs-code-)
+- [**Windows Subsystem for Linux Installation Guide for Windows 10**](https://docs.microsoft.com/en-us/windows/wsl/install-win10?WT.mc_id=smashingmag-article-buhollan)
+- [**WSL: Ultimate Guide**](https://adamtheautomator.com/windows-subsystem-for-linux/#developing-on-wsl-with-visual-studio-code-vs-code-)

@@ -19,9 +19,9 @@ Overview of the Celo protocol's Stability Mechanisms.
 
 The Celo protocol's stability mechanism comprises the following:
 
-<PageRef url="/celo-codebase/protocol/stability/doto" pageName="Stability Algorithm (Mento)" />
-<PageRef url="/celo-codebase/protocol/stability/oracles" pageName="Oracles" />
-<PageRef url="/celo-codebase/protocol/stability/stability-fees" pageName="Stability Fees" />
-<PageRef url="/celo-codebase/protocol/stability/granda-mento" pageName="Granda Mento" />
-<PageRef url="/celo-codebase/protocol/stability/adding_stable_assets" pageName="Adding Stable Tokens" />
-<PageRef url="/celo-codebase/protocol/stability/tobin-tax" pageName="Tobin Tax" />
+- [Stability Algorithm (Mento)](/celo-codebase/protocol/stability/doto)
+- [Oracles](/celo-codebase/protocol/stability/oracles)
+- [Stability Fees](/celo-codebase/protocol/stability/stability-fees)
+- [Granda Mento](/celo-codebase/protocol/stability/granda-mento)
+- [Adding Stable Tokens](/celo-codebase/protocol/stability/adding_stable_assets)
+- [Tobin Tax](/celo-codebase/protocol/stability/tobin-tax)

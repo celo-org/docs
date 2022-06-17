@@ -1200,11 +1200,6 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "link",
-      href: "https://github.com/celo-org/docs/issues",
-      label: "Feedback",
-    },
   ],
 
   // ######################################

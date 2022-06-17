@@ -24,11 +24,11 @@ Not ready to Integrate with Celo? [Learn more about Celo](/welcome.md).
 
 ## Integrate with Celo
 
-<PageRef url="/developer-guide/integrations/general" pageName="General information" />
-<PageRef url="/developer-guide/integrations/checklist" pageName="Integration Checklist" />
-<PageRef url="/developer-guide/integrations/custody" pageName="Custody" />
-<PageRef url="/developer-guide/integrations/listings" pageName="Listings" />
-<PageRef url="/developer-guide/integrations/cloud-hsm" pageName="Using a Cloud HSM" />
+- [General information](/developer-guide/integrations/general)
+- [Integration Checklist](/developer-guide/integrations/checklist)
+- [Custody](/developer-guide/integrations/custody)
+- [Listings](/developer-guide/integrations/listings)
+- [Using a Cloud HSM](/developer-guide/integrations/cloud-hsm)
 
 :::tip
 
