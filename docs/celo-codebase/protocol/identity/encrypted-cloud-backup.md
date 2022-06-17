@@ -1,5 +1,9 @@
 ---
-title: Pin/Password Encrypted Account Recovery (PEAR 🍐)
+title: PEAR 🍐
+---
+
+Pin/Password Encrypted Account Recovery.
+
 ---
 
 Secure and reliable account key backups are critical to the experience of non-custodial wallets, and Celo more generally.
@@ -15,9 +19,9 @@ If available, this data can be downloaded and used to initialize the application
 Access to the user's cloud storage requires logging in to their Google or Apple account.
 This provides a measure of security as only the owner of the cloud storage account can see the data, but is not enough to confidently store the wallet's account key.
 In order to provide additional security, the account key backup should be encrypted with a secret, namely a PIN or password, that the user has memorized or stored securely.
-This way, the users account key backup is only accessible to someone who can access their cloud storage account *and* knows their secret.
+This way, the users account key backup is only accessible to someone who can access their cloud storage account _and_ knows their secret.
 
-Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](https://wikipedia.org/wiki/Hardening_(computing)) before it can be used as an encryption key.
+Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](<https://wikipedia.org/wiki/Hardening_(computing)>) before it can be used as an encryption key.
 Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
 
 With these core components, we can construct an account recovery system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
