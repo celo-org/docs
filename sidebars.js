@@ -367,7 +367,7 @@ const sidebars = {
         },
       ],
     },
-    // Endpoints
+    // Nodes
     {
       type: "category",
       label: "Nodes",
@@ -378,34 +378,35 @@ const sidebars = {
           id: "developer-resources/forno/index",
         },
         {
-          type: "link",
-          label: "Ankr",
-          href: "https://www.ankr.com/protocol/public/celo/",
-        },
-        {
-          type: "link",
-          label: "Tatum",
-          href: "https://pages.tatum.io/celo",
-        },
-        {
-          type: "link",
-          label: "Figment",
-          href: "https://www.figment.io/datahub/celo",
-        },
-        {
-          type: "link",
-          label: "Quicknode",
-          href: "https://www.quicknode.com/chains/celo",
-        },
-        {
-          type: "link",
-          label: "All that Node",
-          href: "https://www.allthatnode.com/celo.dsrv",
-        },
-        {
-          type: "doc",
-          label: "Hosted Nodes",
-          id: "getting-started/hosted-nodes",
+          type: "category",
+          label: "Providers",
+          items: [
+            {
+              type: "link",
+              label: "Ankr",
+              href: "https://www.ankr.com/protocol/public/celo/",
+            },
+            {
+              type: "link",
+              label: "Tatum",
+              href: "https://pages.tatum.io/celo",
+            },
+            {
+              type: "link",
+              label: "Figment",
+              href: "https://www.figment.io/datahub/celo",
+            },
+            {
+              type: "link",
+              label: "Quicknode",
+              href: "https://www.quicknode.com/chains/celo",
+            },
+            {
+              type: "link",
+              label: "All that Node",
+              href: "https://www.allthatnode.com/celo.dsrv",
+            },
+          ],
         },
         {
           type: "category",
@@ -427,6 +428,11 @@ const sidebars = {
               label: "Baklava Full Node",
               id:
                 "getting-started/baklava-testnet/running-a-full-node-in-baklava",
+            },
+            {
+              type: "doc",
+              label: "Hosted Nodes",
+              id: "getting-started/hosted-nodes",
             },
           ],
         },
