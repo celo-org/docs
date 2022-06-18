@@ -15,6 +15,11 @@ const sidebars = {
           label: "Gallery",
           id: "developer-resources/celo-dapp-gallery",
         },
+        {
+          type: "link",
+          label: "EVM",
+          href: "https://ethereum.org/en/developers/docs/",
+        },
         { type: "doc", label: "FAQs", id: "faqs" },
       ],
     },
@@ -241,7 +246,7 @@ const sidebars = {
             {
               type: "link",
               label: "Network Stats",
-              href: "https://thecelo.com/",
+              href: "https://explorer.celo.org/stats",
             },
             {
               type: "link",
