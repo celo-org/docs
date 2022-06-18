@@ -12,14 +12,6 @@ How dApp developers can use MetaMask to interact with the Celo network.
 
 ---
 
-## How to Add Celo to MetaMask
-
-For dApp Developers interested in using MetaMask with Celo, we encourage doing the following 3 things, which are described in detail in the below sections.
-
-1. Add the Network
-2. Add Celo tokens \(e.g. cUSD, cEUR\)
-3. Handle cases where MetaMask is connected to a different network
-
 ## Adding a Celo Network to MetaMask
 
 To add a Celo Network to your dApp, you can use MetaMask's RPC API's `wallet_addEthereumChain` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-addethereumchain)\).
@@ -35,17 +27,9 @@ await window.ethereum.request({
 
 Where it says `INSERT_NETWORK_PARAMS_HERE`, please replace with any of the following constants, depending on which network you'd like to connect to.
 
-<!-- <Tabs
-defaultValue='celo'
-values={[
-{label: 'Celo Mainnet', value: 'celo'},
-{label: 'Alfajores Testnet', value: 'alfajores'},
-{label: 'Baklava Testnet', value: 'baklava'},
-]}
+### Mainnet
 
-> <TabItem value='celo'>
-
-```js
+```jsx
 const CELO_PARAMS = {
   chainId: "0xa4ec",
   chainName: "Celo",
@@ -56,10 +40,9 @@ const CELO_PARAMS = {
 };
 ```
 
-</TabItem>
-<TabItem value='alfajores'>
+### Alfajores
 
-```javascript
+```jsx
 const ALFAJORES_PARAMS = {
   chainId: "0xaef3",
   chainName: "Alfajores Testnet",
@@ -68,13 +51,11 @@ const ALFAJORES_PARAMS = {
   blockExplorerUrls: ["https://alfajores-blockscout.celo-testnet.org/"],
   iconUrls: ["future"],
 };
-``` -->
+```
 
-<!-- </TabItem>
+### Baklava
 
-<TabItem value='baklava'>
-
-```javascript
+```jsx
 const BAKLAVA_PARAMS = {
   chainId: "0xf370",
   chainName: "Baklava Testnet",
@@ -85,16 +66,13 @@ const BAKLAVA_PARAMS = {
 };
 ```
 
-</TabItem>
-</Tabs>> -->
-
 ## Adding Tokens \(e.g. cUSD, cEUR\)
 
 To watch an asset on a Celo netowork \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)\).
 
 Here is a JavaScript snippet you can use:
 
-<!-- ```jsx
+```jsx
 await window.ethereum.request({
   method: "wallet_watchAsset",
   params: {
@@ -107,44 +85,19 @@ await window.ethereum.request({
     iconUrls: ["future"],
   },
 });
-``` -->
+```
 
-Where it says `INSERT_ADDRESS_HERE`, please replace with any of the following constants, depending on which network and which asset you'd like to connect to.
-
-The following are examples for cUSD and cEUR.
-
-<!-- <Tabs
-defaultValue='celo'
-values={[
-{value: 'celo', label: 'Celo Mainnet'},
-{value: 'alfajores', label: 'Alfajores Testnet'},
-{value: 'baklava', label: 'Baklava Testnet'},
-]}
-
-> <TabItem value='celo'> -->
-
-- Token Contract Address for cUSD: `0x765de816845861e75a25fca122bb6898b8b1282a`
-- Token Contract Address for cEUR: `0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`
-
-<!-- </TabItem>
-<TabItem value='alfajores'> -->
-
-- Token Contract Address for cUSD: `0x874069fa1eb16d44d622f2e0ca25eea172369bc1`
-- Token Contract Address for cEUR: `0x10c892a6ec43a53e45d0b916b4b7d383b1b78c0f`
-
-<!-- </TabItem>
-<TabItem value='baklava'> -->
-
-- Token Contract Address for cUSD: `0x62492A644A588FD904270BeD06ad52B9abfEA1aE`
-- Token Contract Address for cEUR: `0xf9ecE301247aD2CE21894941830A2470f4E774ca`
-
-<!-- </TabItem>
-</Tabs> -->
-
+- Where it says `INSERT_ADDRESS_HERE`, please replace with any of the following constants, depending on which network and which asset you'd like to connect to.
 - Where it says `INSERT_SYMBOL_HERE`, please replace with the correct symbol for the asset you'd like to watch. For Celo Dollars, it's `cUSD` and for Celo Euros, it's `cEUR`.
 
-## Handling cases where MetaMask is connected to a different network
+:::tip
 
-We strongly suggest that you disable your dApp's functionality when MetaMask is connected to a non-Celo network.
+View available token addresses for Celo assets to add to MetaMask [here](/token-addresses).
 
-MetaMask has an API for determining what network/chain you're connected to. [See here](https://docs.metamask.io/guide/ethereum-provider.html#methods) for more documentation around that.
+:::
+
+:::warning
+
+We strongly suggest that you disable your dApp's functionality when MetaMask is connected to a non-Celo network. MetaMask has an API for determining what network/chain you're connected to. [See here](https://docs.metamask.io/guide/ethereum-provider.html#methods) for more documentation around that.
+
+:::

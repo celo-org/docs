@@ -40,6 +40,12 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 
 - [Ethereum Developers](/developer-guide/celo-for-eth-devs)
 
+## Integrations
+
+- [Integrations](/developer-guide/integrations)
+
 ## Developer Tools
 
 - [EVM Compatible Tooling](/learn/evm-compatible-tooling)
+- [Block Explorer](https://explorer.celo.org/)
+- [Testnet Faucet](https://celo.org/developers/faucet)
