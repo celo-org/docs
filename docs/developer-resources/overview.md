@@ -16,37 +16,30 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 
 [Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification.
 
-:::tip
-
-Not ready to become a Celo Developer? [Learn more about Celo](../../docs/welcome.md).
-
-:::
-
-## Set up your environment
+## Local Environmennt
 
 - [Using Mac](/developer-resources/using-mac)
 - [Using Windows](/developer-guide/start/develop-on-windows)
 
-:::info
-
-Want to create a dApp fast? [Deploy on Celo](/developer-resources/deploy-dapp)
-
-:::
-
-## Create a testnet wallet
-
-- [Set up a Testnet Development Wallet](/developer-resources/testnet-wallet)
-
 ## Deploy on Celo
 
-- [Deploy on Celo](/developer-resources/deploy-dapp)
+- [Using Remix](/developer-resources/deploy-remix)
+- [Using Truffle](/developer-resources/deploy-truffle)
+- [Using Hardhat](/developer-resources/deploy-hardhat)
+- [Using Replit](/developer-resources/deploy-replit)
 
-## Integrate with Celo
+## Code Examples
 
-- [Integrate with Celo](/developer-guide/integrations)
+- [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
+- [Developer Blog](https://medium.com/celodevelopers)
+- [Code Tutorials](blog)
+- [Figment](https://learn.figment.io/protocols/celo)
+- [Dacade](https://dacade.org/communities/celo)
 
-:::tip
+## Migrate to Celo
 
-For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
+- [Ethereum Developers](/developer-guide/celo-for-eth-devs)
 
-:::
+## Developer Tools
+
+- [EVM Compatible Tooling](/learn/evm-compatible-tooling)

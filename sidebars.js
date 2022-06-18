@@ -648,6 +648,42 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Code Examples",
+          items: [
+            {
+              type: "link",
+              label: "Celo Composer",
+              href: "https://github.com/celo-org/celo-composer#celo-composer",
+            },
+            {
+              type: "link",
+              label: "Developer Blog",
+              href: "https://medium.com/celodevelopers",
+            },
+            // {
+            //   type: "doc",
+            //   label: "Code Tutorials",
+            //   id: "/blog",
+            // },
+            {
+              type: "link",
+              label: "Celo Blog",
+              href: "https://medium.com/celoorg",
+            },
+            {
+              type: "link",
+              label: "Figment",
+              href: "https://learn.figment.io/protocols/celo",
+            },
+            {
+              type: "link",
+              label: "Dacade",
+              href: "https://dacade.org/communities/celo",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Migrate to Celo",
           items: [
             {
