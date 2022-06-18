@@ -6,8 +6,8 @@ const { docs, developers } = require("./sidebars");
 const DefaultLocale = "en";
 
 module.exports = {
-  title: "Celo Docs",
-  tagline: "Documentation for the Celo Platform",
+  title: "Celo Documentation",
+  tagline: "Documentation for the Celo platform.",
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
