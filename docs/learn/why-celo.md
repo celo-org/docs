@@ -23,21 +23,21 @@ Celo was designed to enable a new universe of financial solutions accessible for
 - [Localized stablecoins (cUSD, cEUR, cREAL)](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c)
 - [Gas payable in multiple currencies](celo-codebase/protocol/transactions/erc20-transaction-fees)
 
-## Celo's Mission
+## What is the Celo Platform?
 
-The company’s mission is to build a financial system that creates the conditions of prosperity for everyone. Celo enables native and non-native digital assets–both cryptographic and Central Bank Digital Currencies (CBDCs)–to circulate freely across devices, carriers, and countries. This makes money mobile, global and accessible like never before. Celo is supported by a community of organizations and individuals, including Jack Dorsey, a16z, and Deutsche Telekom.
+Celo makes sending payments as easy as sending a text, to anyone with an internet connection, anywhere in the world. Celo maps phone numbers to wallet addresses using a novel decentralized address-based identity layer. Mobile participants can earn rewards for securing and maintaining the system.
 
 <YouTube videoId="4a70pVEcRw4"/>
 
-## Celo Ecosystem
+## What is CELO?
 
-An Ethereum-compatible technology capable of reaching global users at scale, Celo turns crypto into usable money with a multi-asset system: a governance and staking asset (CELO) and a family of Mento stablecoins. Since the launch of Mainnet in 2020, Celo’s network now supports 1000+ projects from builders, developers, and artists, who everyday create new applications and issue digital currencies from over 100 countries around the world.
+CELO is the platform-native asset that supports the growth and development of the Celo blockchain and ecosystem. CELO holders can earn rewards, stake with validators, and vote on proposals that shape the future of Celo.
 
 <YouTube videoId="mkpTmbkRv4A"/>
 
-## Get started with Celo
+## What can Celo Dollars do?
 
-To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
+Named for the currencies they follow, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals (cREAL) are Mento stablecoins that allow you to share value faster, cheaper, and more easily on your mobile phone. Mento stablecoins instantly unlock access for everyday uses like low-cost remittances and cross-border payments, global distribution of charitable aid, effortlessly paying online, or transferring value within exchanges, particularly in markets subject to currency volatility.
 
 <YouTube videoId="n1k1JcjTnp8"/>
 
