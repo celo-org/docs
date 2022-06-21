@@ -322,6 +322,10 @@ module.exports = {
               to: "blog",
             },
             {
+              label: "EVM Basics",
+              to: "https://ethereum.org/en/developers/docs/",
+            },
+            {
               label: "Celo Blog",
               to: "https://medium.com/celoorg",
             },
@@ -403,7 +407,7 @@ module.exports = {
             },
             {
               to:
-                "https://github.com/therealharpaljadeja/celo-progressive-dapp-starter/tree/react-native-app/packages/react-native-app/",
+                "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
               label: "React Native",
             },
           ],

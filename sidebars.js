@@ -1,6 +1,6 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: " Welcome to Celo 🌱", id: "welcome" },
+    { type: "doc", label: "Welcome to Celo", id: "welcome" },
     // Addresses
     {
       type: "category",
@@ -14,11 +14,6 @@ const sidebars = {
           type: "doc",
           label: "Gallery",
           id: "developer-resources/celo-dapp-gallery",
-        },
-        {
-          type: "link",
-          label: "EVM",
-          href: "https://ethereum.org/en/developers/docs/",
         },
         { type: "doc", label: "FAQs", id: "faqs" },
       ],

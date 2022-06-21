@@ -19,6 +19,8 @@ The production Celo network, Mainnet was previously known as the Release Candida
 - [Mainnet Network Status](https://stats.celo.org/)
 - [Mainnet Validator Explorer](https://validators.celo.org/)
 
+**Chain ID:** `42220`
+
 ## Alfajores, the Developer Testnet
 
 If you're a developer considering building on the Celo platform, or want to try out the [Celo Wallet](https://celo.org/build/wallet), start with [Alfajores](/getting-started/alfajores-testnet). You can [obtain a balance](https://celo.org/build/faucet) immediately and use it for experimenting with. The [SDK tutorials](/developer-guide/start) assume you are using Alfajores. The network is managed by cLabs, who operate all of its validators, and its software and deployed contracts will track mainnet.
@@ -27,6 +29,8 @@ If you're a developer considering building on the Celo platform, or want to try 
 - [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org)
 - [Alfajores Testnet Faucet](https://celo.org/build/faucet)
 - [Celo Wallet for Alfajores](https://celo.org/build/wallet)
+
+**Chain ID:** `44787`
 
 :::info
 
