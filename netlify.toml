@@ -10,4 +10,4 @@
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
-  command = "yarn run build"
+  command = "yarn run build --locale en"
