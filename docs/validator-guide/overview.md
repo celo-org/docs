@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Secure the Celo network by participating in consensus of the Celo protocol.
 
-___
+---
 
-Celo Validators participate in the consensus of the Celo protocol. They help secure the Celo network by verifying transactions and proposing blocks to add to the Celo blockchain. 
+Celo Validators participate in the consensus of the Celo protocol. They help secure the Celo network by verifying transactions and proposing blocks to add to the Celo blockchain.
 
 :::tip
 
@@ -23,33 +23,32 @@ Not ready to become a Celo Validator? [Learn more about Celo](../../docs/welcome
 
 ## Run a Validator
 
-<PageRef url="/getting-started/baklava-testnet/running-a-validator-in-baklava" pageName="Run a Baklava Testnet Validator" />
-<PageRef url="/getting-started/mainnet/running-a-validator-in-mainnet" pageName="Run a Mainnet Validator" />
+- [Run a Baklava Testnet Validator](/getting-started/baklava-testnet/running-a-validator-in-baklava)
+- [Run a Mainnet Validator](/getting-started/mainnet/running-a-validator-in-mainnet)
 
 ## Important Information
 
-<PageRef url="/validator-guide/attestation-service" pageName="Attestation Service" />
-<PageRef url="/validator-guide/key-management/summary" pageName="Key Management" />
+- [Attestation Service](/validator-guide/attestation-service)
+- [Key Management](/validator-guide/key-management/summary)
 
 ## Nodes and Services
 
-<PageRef url="/validator-guide/securing-nodes-and-services" pageName="Securing Celo Nodes and Services" />
-<PageRef url="/validator-guide/node-upgrades" pageName="Upgrading a Node" />
+- [Securing Celo Nodes and Services](/validator-guide/securing-nodes-and-services)
+- [Upgrading a Node](/validator-guide/node-upgrades)
 
-<PageRef url="/validator-guide/monitoring" pageName="Monitoring" />
-<PageRef url="/validator-guide/proxy" pageName="Running Proxies" />
+- [Monitoring](/validator-guide/monitoring)
+- [Running Proxies](/validator-guide/proxy)
 
 ## Validator Tools
 
-<PageRef url="/validator-guide/validator-explorer" pageName="Validator Explorer" />
+- [Validator Explorer](/validator-guide/validator-explorer)
 
 ## Voting Policy
 
-<PageRef url="/validator-guide/celo-foundation-voting-policy" pageName="Celo Foundation Voting Policy" />
+- [Celo Foundation Voting Policy](/validator-guide/celo-foundation-voting-policy)
 
 :::tip
 
 For questions, comments, and discussions please use the [Celo Forum](https://forum.celo.org/) or [Discord](https://chat.celo.org/).
 
 :::
-

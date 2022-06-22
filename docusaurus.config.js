@@ -6,8 +6,8 @@ const { docs, developers } = require("./sidebars");
 const DefaultLocale = "en";
 
 module.exports = {
-  title: "Celo Docs",
-  tagline: "Documentation for the Celo Platform",
+  title: "Celo Documentation",
+  tagline: "Documentation for the Celo platform.",
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
@@ -30,6 +30,7 @@ module.exports = {
   plugins: [
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
+    path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -321,6 +322,10 @@ module.exports = {
               to: "blog",
             },
             {
+              label: "EVM Basics",
+              to: "https://ethereum.org/en/developers/docs/",
+            },
+            {
               label: "Celo Blog",
               to: "https://medium.com/celoorg",
             },
@@ -334,13 +339,44 @@ module.exports = {
             },
           ],
         },
+        // {
+        //   type: "localeDropdown",
+        //   position: "right",
+        //   dropdownItemsAfter: [
+        //     {
+        //       to: "https://celo.crowdin.com/",
+        //       label: "Help us translate",
+        //     },
+        //   ],
+        // },
         {
-          type: "localeDropdown",
+          type: "dropdown",
           position: "right",
-          dropdownItemsAfter: [
+          label: "Support",
+          items: [
             {
-              to: "https://celo.crowdin.com/",
-              label: "Help us translate",
+              to: "https://github.com/celo-org/docs/issues",
+              label: "Issues",
+            },
+            // {
+            //   to: "https://github.com/celo-org/docs/discussions",
+            //   label: "Discussions",
+            // },
+            {
+              to: "https://forum.celo.org/",
+              label: "Forum",
+            },
+            {
+              to: "https://discord.com/invite/6yWMkgM",
+              label: "Chat",
+            },
+            {
+              to: "https://explorer.celo.org/",
+              label: "Explorer",
+            },
+            {
+              to: "https://explorer.celo.org/stats",
+              label: "Analytics",
             },
           ],
         },
@@ -371,7 +407,7 @@ module.exports = {
             },
             {
               to:
-                "https://github.com/therealharpaljadeja/celo-progressive-dapp-starter/tree/react-native-app/packages/react-native-app/",
+                "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
               label: "React Native",
             },
           ],
@@ -405,10 +441,10 @@ module.exports = {
               label: "Blog",
               to: "/blog",
             },
-            {
-              href: "https://celo.crowdin.com/celo-docs",
-              label: "Help translate",
-            },
+            // {
+            //   href: "https://celo.crowdin.com/celo-docs",
+            //   label: "Help translate",
+            // },
             {
               label: "Docs GitHub",
               href: "https://github.com/celo-org/docs",

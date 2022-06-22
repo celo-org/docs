@@ -6,9 +6,11 @@ id: contract-addresses
 import YouTube from '@components/YouTube';
 import PageRef from '@components/PageRef';
 
+Core contract address proxies and implementations for the Celo network.
+
 ---
 
-:::info
+:::tip
 
 View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts) contract addresses by searching testnet or mainnet on [celoscan.xyz](https://celoscan.xyz/) or [explorer.celo.org](https://explorer.celo.org/).
 

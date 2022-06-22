@@ -4,15 +4,16 @@ description: Collection of resources to get started with Celo Baklava Testnet (C
 id: index
 slug: /getting-started/baklava-testnet
 ---
+
 # Baklava Testnet
 
 Collection of resources to get started with Celo Baklava Testnet (Celo's Node Operator Testnet).
 
-___
+---
 
 ## What is the Baklava Testnet?
 
-The Baklava Testnet is a non-production Testnet for the Validator community. 
+The Baklava Testnet is a non-production Testnet for the Validator community.
 
 **It serves several purposes:**
 
@@ -29,10 +30,6 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 Please help the community to improve Celo by asking questions on [Discord](https://chat.celo.org) the [Forum](https://forum.celo.org/c/baklava-testnet)!
 
 :::info
-
-Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/important-information/baklava-testnet-disclaimer).
-
-:::
 
 ## Useful links
 

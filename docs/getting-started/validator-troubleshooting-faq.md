@@ -9,15 +9,9 @@ slug: /getting-started/validator-troubleshooting-faq
 
 Answers to frequently asked questions while troubleshooting isses as a Validator.
 
-___
+---
 
-
-:::tip
-
-This is a living document. Please contribute if you have a solution to a common problem.
-
-:::
-## How do I reset my local celo state?
+## How do I reset my local Celo state?
 
 You may desire to reset your local chain state when updating parameters or wishing to perform a clean reset. Note that this will cause the node to resync from the genesis block which will take a couple hours.
 

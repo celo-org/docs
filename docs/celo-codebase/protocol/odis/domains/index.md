@@ -2,9 +2,10 @@
 title: ODIS Domains
 slug: /celo-codebase/protocol/odis/domains
 ---
+
 import PageRef from '@components/PageRef'
 
-::: caution
+:::tip
 
 Domain API features described here are not deployed to Mainnet ODIS as of April 1, 2022.
 
@@ -31,11 +32,11 @@ New domain types, with associated rate-limiting rules, may be added in the futur
 
 A full specification of Domains and the related ODIS APIs is available in CIP-40.
 
-<PageRef url="https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md" pageName="CIP-40" />
+- [CIP-40](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md)
 
 ## Implemented Domains
 
-<PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
+- [Sequential Delay Domain](/celo-codebase/protocol/odis/domains/sequential-delay-domain)
 
 ## Creating a Domain Type
 

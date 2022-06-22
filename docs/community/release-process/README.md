@@ -2,6 +2,7 @@
 title: Celo Release Process
 description: Overview of the release process for updates to the Celo platform.
 ---
+
 import PageRef from '@components/PageRef'
 
 # Release Process
@@ -14,7 +15,7 @@ It is critical that updates to the Celo platform can be released on a regular ba
 
 :::
 
-<PageRef url="/community/release-process/smart-contracts" pageName="Smart Contracts" />
-<PageRef url="/community/release-process/blockchain-client" pageName="Blockchain Client" />
-<PageRef url="/community/release-process/base-cli-contractkit-dappkit-utils" pageName="CeloCLI and ContractKit" />
-<PageRef url="/community/release-process/attestation-service" pageName="Attestation Service" />
+- [Smart Contracts](/community/release-process/smart-contracts)
+- [Blockchain Client](/community/release-process/blockchain-client)
+- [CeloCLI and ContractKit](/community/release-process/base-cli-contractkit-dappkit-utils)
+- [Attestation Service](/community/release-process/attestation-service)

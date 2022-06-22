@@ -2,6 +2,7 @@
 title: Oblivious Decentralized Identifier Service (ODIS)
 slug: /celo-codebase/protocol/odis
 ---
+
 import PageRef from '@components/PageRef'
 
 The Oblivious Decentralized Identifier Service (ODIS) allows for privacy preserving [phone number mappings](/celo-codebase/protocol/odis/use-cases/phone-number-privacy), [password hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), and other use cases by implementing a rate limited oblivious pseudorandom function (OPRF).
@@ -34,7 +35,7 @@ Additionally, as long as $$k$$ operators remain honest and have access to their 
 
 For example, consider the phone number privacy protocol when there are 7 ODIS operators and the required threshold is 5. An attacker may compute the pepper for all phone numbers if 5 operators are compromised or corrupt. If 3 are corrupt or taken offline (e.g. by DDoS attack) then an attacker may prevent the rest of the operators from generating the pepper for users.
 
-In the case that a single key is compromised, user data will remain private and the service operational; however, it's important that we can detect and perform a key rotation before the number of keys compromised exceeds $$k$$ or $$m - k + 1$$ (whichever is lower). 
+In the case that a single key is compromised, user data will remain private and the service operational; however, it's important that we can detect and perform a key rotation before the number of keys compromised exceeds $$k$$ or $$m - k + 1$$ (whichever is lower).
 
 ## Rotating keys
 
@@ -89,12 +90,12 @@ When ODIS nodes receive the request, it authenticates the user by recovering the
 In the newer domain separated API, the rate limit can depend on a variety of factors configured to each domain type.
 More information about the domains API and the implemented domain types can be found in the respective pages.
 
-<PageRef url="/celo-codebase/protocol/odis/domains" pageName="Domains" />
-<PageRef url="/celo-codebase/protocol/odis/domains/sequential-delay-domain" pageName="Sequential Delay Domain" />
+- [Domains](/celo-codebase/protocol/odis/domains)
+- [Sequential Delay Domain](/celo-codebase/protocol/odis/domains/sequential-delay-domain)
 
 A full specification of the Domains API can be found in CIP-40.
 
-<PageRef url="https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md" pageName="CIP-40" />
+- [CIP-40](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0040.md)
 
 ## Request flow diagram
 

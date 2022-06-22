@@ -25,12 +25,12 @@ Not ready to become a Celo Contributor? [Learn more about Celo](../../docs/welco
 
 Find your purpose and join a community focused on building the conditions of prosperity—for everyone
 
-<PageRef url="/community/developer-events" pageName="Developer Events" />
-<PageRef url="/community/guidelines" pageName="Contributors" />
-<PageRef url="/community/code-of-conduct" pageName="Code of Conduct" />
-<PageRef url="/community/grant-playbook" pageName="Grant Playbook" />
-<PageRef url="/community/release-process/README" pageName="Release Process" />
-<PageRef url="/community/join-the-community" pageName="Join the Community" />
+- [Developer Events](/community/developer-events)
+- [Contributors](/community/guidelines)
+- [Code of Conduct](/community/code-of-conduct)
+- [Grant Playbook](/community/grant-playbook)
+- [Release Process](/community/release-process/README)
+- [Join the Community](/community/join-the-community)
 
 :::tip
 

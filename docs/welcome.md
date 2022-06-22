@@ -14,24 +14,13 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 ## Getting Started
 
-Celo is a mobile-first and carbon-neutral blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone–bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. Use this page as your guide into the Celo ecosystem and explore the docs to learn more!
+[Celo](https://celo.org/) is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. Use this documentation as your guide into the Celo ecosystem!
 
 :::tip Celo ❤️ Feedback
 
 If you have any ideas to improve the docs please make an [issue](https://github.com/celo-org/docs/issues), start a [discussion](https://github.com/celo-org/docs/discussions), or submit a [pull request](https://github.com/celo-org/docs/pulls) and reach out on [Discord](https://discord.com/invite/6yWMkgM) or [Telegram](https://t.me/celoplatform).
 
 :::
-
-### Celo Quickstart
-
-Get up and running as a Celo holder, validator, developer, using tools in the Celo ecosystem.
-
-- [Holders](celo-holder-guide/owners)
-- [Developers](developer-guide/overview)
-- [Validators](validator-guide/overview)
-- [Integrations](developer-guide/integrations)
-- [Bridges](celo-codebase/protocol/bridging/bridging-to-celo)
-- [Oracles](celo-codebase/protocol/oracles/oracles-on-celo)
 
 ### Celo Basics
 
@@ -43,6 +32,17 @@ Learn the Celo Baics to get an overview of our mission, vision, whitepapers, and
 - [Celo Blog](https://medium.com/celoorg)
 - [Developer Blog](https://medium.com/celodevelopers)
 - [Whitepapers](https://celo.org/papers)
+
+### Use Celo
+
+Get up and running as a Celo holder, validator, developer, using tools in the Celo ecosystem.
+
+- [Holders](celo-holder-guide/owners)
+- [Developers](developer-guide/overview)
+- [Validators](validator-guide/overview)
+- [Integrations](developer-guide/integrations)
+- [Bridges](celo-codebase/protocol/bridging/bridging-to-celo)
+- [Oracles](celo-codebase/protocol/oracles/oracles-on-celo)
 
 ### Popular Celo Content
 

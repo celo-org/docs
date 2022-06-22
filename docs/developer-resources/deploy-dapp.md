@@ -23,7 +23,7 @@ Just getting started learning about how to write smart contracts? [The Solidity 
 
 ## Deploy on Celo
 
-<PageRef url="/developer-resources/deploy-remix" pageName="Deploy with Remix" />
-<PageRef url="/developer-resources/deploy-truffle" pageName="Deploy with Truffle" />
-<PageRef url="/developer-resources/deploy-hardhat" pageName="Deploy with Hardhat" />
-<PageRef url="/developer-resources/deploy-replit" pageName="Deploy with Replit" />
+- [Using Remix](/developer-resources/deploy-remix)
+- [Using Truffle](/developer-resources/deploy-truffle)
+- [Using Hardhat](/developer-resources/deploy-hardhat)
+- [Using Replit](/developer-resources/deploy-replit)
