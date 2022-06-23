@@ -310,10 +310,6 @@ module.exports = {
           label: "Learn",
           items: [
             {
-              label: "Celo Composer",
-              to: "https://github.com/celo-org/celo-composer#celo-composer",
-            },
-            {
               label: "Developer Blog",
               to: "https://medium.com/celodevelopers/",
             },
@@ -336,6 +332,10 @@ module.exports = {
             {
               label: "Dacade",
               to: "https://dacade.org/communities/celo",
+            },
+            {
+              label: "Cryptohunt",
+              to: "https://www.cryptohunt.it/projects/celo",
             },
           ],
         },
@@ -409,6 +409,10 @@ module.exports = {
               to:
                 "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
               label: "React Native",
+            },
+            {
+              label: "Celo Composer",
+              to: "https://github.com/celo-org/celo-composer#celo-composer",
             },
           ],
         },
