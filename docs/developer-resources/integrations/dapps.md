@@ -125,6 +125,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 - [GitHub](https://github.com/celo-org/optics-monorepo)
 - [How does it work](https://docs.celo.org/celo-codebase/protocol/optics)
 
+**[Wormhole](https://portalbridge.com)** - a generic message passing protocol that connects to multiple chains including Ethereum, Solana, Terra, Binance Smart Chain, Polygon, Avalanche, Oasis, Fantom, Karura, Celo and Aurora.
+
+- [GitHub](https://github.com/certusone/wormhole)
+- [How does it work](https://docs.wormholenetwork.com/wormhole/)
+
 **[AllBridge](https://allbridge.io/)** - a fast and cheap custodial bridge for moving funds between Celo and almost every other blockchain.
 
 - [GitHub](https://github.com/allbridge-io)
