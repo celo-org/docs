@@ -19,6 +19,10 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 :::
 
+* [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
+* [Moss](https://bridge.moss.earth/)
+* [Wormhole](https://www.portalbridge.com/#/transfer)
+
 * [Optics Bridge](../optics.md)
   * Optics Web UIs
     * [cLabs Optics Bridge](https://optics.app)
@@ -27,6 +31,3 @@ Be sure you understand and review the risks pages when bridging assets between c
   * Manually Using Etherscan
     * [Bridge Native Tokens via Etherscan](bridging-native-assets.md)
     * [Bridge ERC-20 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
-* [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC) 
-* [Moss](https://bridge.moss.earth/)
-* _Wormhole coming soon!_
