@@ -108,4 +108,4 @@ Instead of querying for all the user's contact's peppers and consuming the user'
 
 The response will be a subset of the input `e164NumberContacts` that are matched by the matchmaking service.
 
-You can view an example of this call in [our mobile project here](https://github.com/celo-org/wallet/blob/master/packages/mobile/src/identity/matchmaking.ts).
+You can view [an example of this call in the Valora wallet](https://github.com/valora-inc/wallet/blob/main/src/identity/matchmaking.ts).
