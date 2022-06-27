@@ -1,6 +1,7 @@
 ---
 title: Celo Release Process
 description: Overview of the release process for updates to the Celo platform.
+slug: /community/release-process/README
 ---
 
 import PageRef from '@components/PageRef'

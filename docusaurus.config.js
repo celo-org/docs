@@ -16,10 +16,10 @@ module.exports = {
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
-  },
+//  i18n: {
+//    defaultLocale: "en",
+//    locales: ["en", "es"],
+//  },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [
     {
@@ -259,7 +259,10 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    hideableSidebar: true,
+    docs: {
+      sidebar: { hideable: true,
+      },
+    },
     prism: {
       additionalLanguages: ["solidity"],
       theme: require("prism-react-renderer/themes/dracula"),

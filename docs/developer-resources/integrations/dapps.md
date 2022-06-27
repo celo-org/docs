@@ -1,6 +1,7 @@
 ---
 title: Dapp Integrations
 description: General information about integrations regardless of your service or use case.
+slug: /developer-guide/integrations/dapps
 ---
 
 # Dapp Integrations
