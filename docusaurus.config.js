@@ -311,6 +311,7 @@ module.exports = {
           label: "Tutorials",
           position: "left",
         },
+        { to: "showcase", label: "Showcase", position: "left" },
         // {
         //   type: "dropdown",
         //   position: "left",
@@ -555,7 +556,7 @@ module.exports = {
         blog: {
           blogTitle: "Celo Tutorials",
           blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
+          // blogSidebarCount: "ALL",
           showReadingTime: false,
           blogListComponent: require.resolve(
             "./src/components/CustomBlogListPage.module.tsx"
