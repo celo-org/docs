@@ -160,8 +160,6 @@ Pages can also include a `<!--truncate-->` tag that specifies what text will be 
 
 If you would like to include images or other static assets in a post, you can create a folder following the naming convention described above (YYYY-MM-DD-post-name). The contents of the folder can include the images and the post (with filename index.md).
 
-For examples of how other posts do this and to see how other features are implemented (like [live coding](./2021-11-15-code-playground.md)), check out other posts source code in the [blog directory on GitHub](https://github.com/celo-org/docs/tree/main/blog).
-
 ## 🌐 Translations
 
 Translators support the community expanding Celo to non-English speaking communities by translating and sharing content in different languages.

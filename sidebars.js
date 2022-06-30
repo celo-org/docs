@@ -983,6 +983,11 @@ const sidebars = {
           id: "community/fundraising",
         },
         {
+          type: "link",
+          label: "Bounties",
+          href: "https://gitcoin.co/celo-org/projects",
+        },
+        {
           type: "doc",
           label: "Grant Playbook",
           id: "community/grant-playbook",
