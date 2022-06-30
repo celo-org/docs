@@ -3,7 +3,7 @@ title: Using the Graph w/ Celo
 description: Learn about what the Graph is and how to use it in your Celo DApp
 slug: using-the-graph
 authors: [josh]
-tags: [The Graph, DApps]
+tags: [graph, dapp]
 image: https://dl.airtable.com/.attachmentThumbnails/dd1b24f2e572bdf951dcc727ddf043ac/76b5253c
 hide_table_of_contents: false
 ---
@@ -24,7 +24,7 @@ In this post I explore
 
 From the Graph website:
 
-*The Graph is a decentralized protocol for indexing and querying data from blockchains, starting with Ethereum. It makes it possible to query data that is difficult to query directly.*
+_The Graph is a decentralized protocol for indexing and querying data from blockchains, starting with Ethereum. It makes it possible to query data that is difficult to query directly._
 
 The problem that the Graph solves is that indexing blockchain data is actually very difficult. Additionally, the Graph makes it easy to get historical blockchain data without having to run your own archive node or paying to access an archive node through a node service provider, like [Quicknode](https://www.quicknode.com/chains/celo).
 
@@ -32,9 +32,10 @@ The problem that the Graph solves is that indexing blockchain data is actually v
 
 ## Using the Graph
 
-I will be using [this GitHub repository](https://github.com/critesjosh/the-graph-hello-world) as a reference throughout this post. This repo contains a simple [HelloWorld contract](https://github.com/critesjosh/the-graph-hello-world/blob/master/HelloWorld.sol) that stores a string that can be updated. 
+I will be using [this GitHub repository](https://github.com/critesjosh/the-graph-hello-world) as a reference throughout this post. This repo contains a simple [HelloWorld contract](https://github.com/critesjosh/the-graph-hello-world/blob/master/HelloWorld.sol) that stores a string that can be updated.
 
 `HelloWorld.sol`
+
 ```js
 // HelloWorld.sol
 
@@ -42,30 +43,30 @@ I will be using [this GitHub repository](https://github.com/critesjosh/the-graph
 pragma solidity >=0.5.0;
 
 contract HelloWorld {
-  
+
   event NameUpdated(string newName, address updater);
-  
+
   // Define a string called name
   string name;
 
   // Declares a function called getName
   // The 'public' label means the function can be called internally, by transactions or other contracts
   // The 'view' label indicates that the function does not change the state of the contract
-  // The function returns a string, from the memory data location  
-  function getName() 
-    public 
-    view 
-    returns (string memory) 
+  // The function returns a string, from the memory data location
+  function getName()
+    public
+    view
+    returns (string memory)
   {
     // Return the storage variable 'name'
     return name;
   }
 
   // Declare a function called setName
-  // The function takes 1 parameter, a string, called newName, with the calldata data location in the Ethereum Virtual Machine  
+  // The function takes 1 parameter, a string, called newName, with the calldata data location in the Ethereum Virtual Machine
   // The 'external' label means the function can only be called from an external source
-  function setName(string calldata newName) 
-    external 
+  function setName(string calldata newName)
+    external
   {
     emit NameUpdated(newName, msg.sender);
     // Set the storage variable, name, to the value passed in as newName
@@ -106,7 +107,7 @@ Learn more about the `graph-cli` package [here](https://www.npmjs.com/package/@g
 
 ### Initialize your Subgraph
 
-*A subgraph defines which data The Graph will index from Ethereum, and how it will store it. Once deployed, it will form a part of a global graph of blockchain data.*
+_A subgraph defines which data The Graph will index from Ethereum, and how it will store it. Once deployed, it will form a part of a global graph of blockchain data._
 
 :::tip
 
@@ -154,23 +155,23 @@ This will tell us the new name that is being stored in the contract, `newName`, 
 
 ### Define Mappings
 
-Mappings are defined in `./src/mappings.ts` and transform the contract data (events) into the entities that are defined in `schema.graphql`. These mappings are written in a subset of Typescript. 
+Mappings are defined in `./src/mappings.ts` and transform the contract data (events) into the entities that are defined in `schema.graphql`. These mappings are written in a subset of Typescript.
 
 In this example, there is only one event being indexed, so there is only one mapping.
 
 ```ts
-import { NameUpdated } from '../generated/HelloWorld/HelloWorld'
-import { Name } from '../generated/schema'
+import { NameUpdated } from "../generated/HelloWorld/HelloWorld";
+import { Name } from "../generated/schema";
 
 export function handleNameUpdated(event: NameUpdated): void {
-  let id = event.transaction.hash.toHex()
-  let name = Name.load(id)
+  let id = event.transaction.hash.toHex();
+  let name = Name.load(id);
   if (name == null) {
-    name = new Name(id)
+    name = new Name(id);
   }
-  name.newName = event.params.newName
-  name.updater = event.params.updater
-  name.save()
+  name.newName = event.params.newName;
+  name.updater = event.params.updater;
+  name.save();
 }
 ```
 
@@ -190,7 +191,7 @@ graph codegen
 
 "This will generate an AssemblyScript class for every smart contract in the ABI files mentioned in subgraph.yaml, allowing you to bind these contracts to specific addresses in the mappings and call read-only contract methods against the block being processed. It will also generate a class for every contract event to provide easy access to event parameters as well as the block and transaction the event originated from."
 
-*--[The Graph codegen docs](https://thegraph.com/docs/developer/create-subgraph-hosted#code-generation)* 
+_--[The Graph codegen docs](https://thegraph.com/docs/developer/create-subgraph-hosted#code-generation)_
 
 ### Deploy Subgraph
 
