@@ -3,7 +3,7 @@ title: How to customize an Ethereum smart contract for the Celo network
 description: Learn how to convert & customize an existing Ethereum Smart Contract for Celo network
 authors:
   - name: ✍️ Brittany Deventer  ·  🔗 External
-tags: [Figment, Intermediate, NodeJS, Smart contracts, Truffle]
+tags: [figment, intermediate, nodejs, smart contract, truffle]
 hide_table_of_contents: true
 ---
 

@@ -311,37 +311,37 @@ module.exports = {
           label: "Tutorials",
           position: "left",
         },
-        {
-          type: "dropdown",
-          position: "left",
-          label: "Tutorials",
-          items: [
-            {
-              label: "Code Tutorials",
-              to: "blog",
-            },
-            {
-              label: "Developer Blog",
-              to: "https://medium.com/celodevelopers/",
-            },
-            {
-              label: "EVM Basics",
-              to: "https://ethereum.org/en/developers/docs/",
-            },
-            {
-              label: "Celo Blog",
-              to: "https://medium.com/celoorg",
-            },
-            {
-              label: "Figment",
-              to: "https://learn.figment.io/protocols/celo",
-            },
-            {
-              label: "Dacade",
-              to: "https://dacade.org/communities/celo",
-            },
-          ],
-        },
+        // {
+        //   type: "dropdown",
+        //   position: "left",
+        //   label: "Tutorials",
+        //   items: [
+        //     {
+        //       label: "Code Tutorials",
+        //       to: "blog",
+        //     },
+        //     {
+        //       label: "Developer Blog",
+        //       to: "https://medium.com/celodevelopers/",
+        //     },
+        //     {
+        //       label: "EVM Basics",
+        //       to: "https://ethereum.org/en/developers/docs/",
+        //     },
+        //     {
+        //       label: "Celo Blog",
+        //       to: "https://medium.com/celoorg",
+        //     },
+        //     {
+        //       label: "Figment",
+        //       to: "https://learn.figment.io/protocols/celo",
+        //     },
+        //     {
+        //       label: "Dacade",
+        //       to: "https://dacade.org/communities/celo",
+        //     },
+        //   ],
+        // },
         // {
         //   type: "localeDropdown",
         //   position: "right",

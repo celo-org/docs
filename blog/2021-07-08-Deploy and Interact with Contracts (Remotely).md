@@ -3,7 +3,7 @@ title: Deploy and Interact with Contracts (Remotely)
 description: Learn how to deploy your own smart contracts on the Celo network
 authors:
   - name: 🔗 External
-tags: [Figment, Beginner]
+tags: [figment, beginner]
 hide_table_of_contents: true
 ---
 

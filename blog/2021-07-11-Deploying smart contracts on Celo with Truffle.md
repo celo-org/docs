@@ -3,7 +3,7 @@ title: Deploying smart contracts on Celo with Truffle
 description: We will learn how to use Truffle and ContractKit to deploy smart contracts to Celo.
 authors:
   - name: ✍️ Alex Reyes  ·  🔗 External
-tags: [Figment, Beginner, NodeJS, Smart contracts, Truffle]
+tags: [figment, beginner, nodejs, smart contract, truffle]
 hide_table_of_contents: true
 ---
 

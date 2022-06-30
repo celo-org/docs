@@ -3,7 +3,7 @@ title: Build a Decentralized Autonomous Organization (DAO) on Celo
 description: Build a functioning DAO by writing the Solidity smart contract and building a React Native dApp
 authors:
   - name: ✍️ Segun Ogundipe & Emmanuel Oaikhenan  ·   🔗 External
-tags: [Figment, Advanced, React Native, NodeJS, Truffle]
+tags: [figment, advanced, react native, nodejs, truffle]
 hide_table_of_contents: true
 ---
 

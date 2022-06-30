@@ -3,7 +3,7 @@ title: How to mint your own fungible token on Celo
 description: How to create fungible tokens on Celo using the Remix IDE
 authors:
   - name: ✍️ Deepanshu Hooda  ·  🔗 External
-tags: [Figment, Beginner, Solidity, Metamask, Remix]
+tags: [figment, beginner, solidity, metamask, remix]
 hide_table_of_contents: true
 ---
 

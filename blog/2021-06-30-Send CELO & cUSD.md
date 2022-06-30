@@ -3,7 +3,7 @@ title: Send CELO & cUSD
 description: Learn how to connect to the Celo test network and transfer tokens using ContractKit.
 authors:
   - name: 🔗 External
-tags: [Figment, cUSD, CELO]
+tags: [figment, cusd, celo]
 hide_table_of_contents: true
 ---
 

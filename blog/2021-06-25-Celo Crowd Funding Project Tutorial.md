@@ -3,7 +3,7 @@ title: Celo Crowd Funding Project Tutorial
 description: Learn how to create a Smart Contract which facilitates crowdfunding.
 authors:
   - name: ✍️ Alex Reyes & Neo Cho  ·  🔗 External
-tags: [Figment, Advanced, Smart contracts, Truffle, Solidity]
+tags: [figment, advanced, smart contract, truffle, solidity]
 hide_table_of_contents: true
 ---
 

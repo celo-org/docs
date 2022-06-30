@@ -3,7 +3,7 @@ title: Create subgraphs for Celo smart contracts
 description: Learn how to integrate The Graph with CELO
 authors:
   - name: ✍️ Shardul Aeer  ·  🔗 External
-tags: [Figment, supgraphs]
+tags: [figment, supgraphs]
 hide_table_of_contents: true
 ---
 

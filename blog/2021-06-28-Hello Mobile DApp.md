@@ -3,7 +3,7 @@ title: Hello Mobile DApp
 description: Learn how to create a simple mobile DApp using dAppKit and the React Native Expo framework
 authors:
   - name: 🔗 External
-tags: [Figment, Mobile]
+tags: [figment, mobile]
 hide_table_of_contents: true
 ---
 

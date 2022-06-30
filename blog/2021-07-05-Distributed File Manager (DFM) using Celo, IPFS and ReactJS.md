@@ -5,14 +5,14 @@ authors:
   - name: ✍️ Raj Ranjan  ·  🔗 External
 tags:
   [
-    Figment,
-    Intermediate,
-    React,
-    NodeJS,
-    Smart contracts,
-    Truffle,
-    Solidity,
-    IPFS,
+    figment,
+    intermediate,
+    react,
+    nodejs,
+    smart contract,
+    truffle,
+    solidity,
+    ipfs,
   ]
 hide_table_of_contents: true
 ---

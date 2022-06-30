@@ -3,7 +3,7 @@ title: Introduction to dApp kit
 description: In this tutorial we are going to make counter dapp with expo (react native)
 authors:
   - name: ✍️ Nikhil Bhintade  ·  🔗 External
-tags: [Figment, Intermediate, React Native, NodeJS, Truffle]
+tags: [figment, intermediate, react native, nodejs, truffle]
 hide_table_of_contents: true
 ---
 
