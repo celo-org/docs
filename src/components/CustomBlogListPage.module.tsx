@@ -34,7 +34,11 @@
          tag: 'blog_posts_list',
        }}
        sidebar={sidebar}>
-       <a href="/blog/tags">Filter posts by tag</a>
+         <h1>Celo Development Tutorials</h1>
+         {/* <p>Welcome to our curated list of community tutorials.</p> */}
+        <p><a href="/blog/tags"> Filter posts by tag</a> or <a href="/community/guidelines">contribute a tutorial 🚀</a></p>
+        <div><br></br></div>
+
        {items.map(({content: BlogPostContent}) => (
          <BlogPostItem
            key={BlogPostContent.metadata.permalink}

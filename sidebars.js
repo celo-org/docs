@@ -814,6 +814,38 @@ const sidebars = {
           label: "Ultralight Client",
           id: "celo-codebase/protocol/plumo",
         },
+        {
+          type: "category",
+          label: " Release Process",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "community/release-process/README",
+            },
+            {
+              type: "doc",
+              label: "Smart Contracts",
+              id: "community/release-process/smart-contracts",
+            },
+            {
+              type: "doc",
+              label: "Blockchain Client",
+              id: "community/release-process/blockchain-client",
+            },
+            {
+              type: "doc",
+              label: "CeloCLI and ContractKit",
+              id:
+                "community/release-process/base-cli-contractkit-dappkit-utils",
+            },
+            {
+              type: "doc",
+              label: "Attestation Service",
+              id: "community/release-process/attestation-service",
+            },
+          ],
+        },
       ],
     },
     // Bridges
@@ -914,44 +946,41 @@ const sidebars = {
       type: "category",
       label: "Community",
       items: [
-        { type: "doc", label: "Overview", id: "community/contributing" },
         {
           type: "doc",
-          label: "Developer Events",
-          id: "community/developer-events",
+          label: "Contributors",
+          id: "community/guidelines",
         },
+        // { type: "doc", label: "Contributors", id: "community/contributing" },
+        // {
+        //   type: "doc",
+        //   label: "Developer Events",
+        //   id: "community/developer-events",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Code",
+        //   id: "community/code-contributors",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Translations",
+        //   id: "community/translation-contributors",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "Docs",
+        //   id: "community/documentation-contributors",
+        // },
+        // {
+        //   type: "doc",
+        //   label: "CIPs",
+        //   id: "community/CIP-contributors",
+        // },
         {
           type: "doc",
           label: "Fundraising",
           id: "community/fundraising",
-        },
-        {
-          type: "category",
-          label: "Ambassadors",
-          items: [
-            { type: "doc", label: "Guidelines", id: "community/guidelines" },
-            { type: "doc", label: "Code", id: "community/code-contributors" },
-            {
-              type: "doc",
-              label: "Translation",
-              id: "community/translation-contributors",
-            },
-            {
-              type: "doc",
-              label: "Documentation ",
-              id: "community/documentation-contributors",
-            },
-            {
-              type: "doc",
-              label: "Community Improvements",
-              id: "community/CIP-contributors",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Code of Conduct",
-          id: "community/code-of-conduct",
         },
         {
           type: "doc",
@@ -959,67 +988,46 @@ const sidebars = {
           id: "community/grant-playbook",
         },
         {
-          type: "category",
-          label: " Release Process",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "community/release-process/README",
-            },
-            {
-              type: "doc",
-              label: "Smart Contracts",
-              id: "community/release-process/smart-contracts",
-            },
-            {
-              type: "doc",
-              label: "Blockchain Client",
-              id: "community/release-process/blockchain-client",
-            },
-            {
-              type: "doc",
-              label: "CeloCLI and ContractKit",
-              id:
-                "community/release-process/base-cli-contractkit-dappkit-utils",
-            },
-            {
-              type: "doc",
-              label: "Attestation Service",
-              id: "community/release-process/attestation-service",
-            },
-          ],
+          type: "link",
+          label: "Ambassadors",
+          href: "https://celocommunity.xyz/join-the-ambassador-program",
         },
         {
-          type: "category",
-          label: "Resources",
-          items: [
-            {
-              type: "category",
-              label: "Quick Guides",
-              items: [
-                { type: "doc", label: "Celo", id: "learn/celo-summary" },
-                {
-                  type: "doc",
-                  label: "Celo Protocol",
-                  id: "learn/celo-protocol-summary",
-                },
-                { type: "doc", label: "Valora", id: "learn/valora-summary" },
-                { type: "doc", label: "CELO", id: "learn/CELO-coin-summary" },
-                {
-                  type: "doc",
-                  label: "Celo Stablecoins",
-                  id: "learn/platform-native-stablecoins-summary",
-                },
-              ],
-            },
-            {
-              type: "doc",
-              label: "Celo Resources",
-              id: "learn/celo-resources",
-            },
-          ],
+          type: "link",
+          label: "Code of Conduct",
+          href:
+            "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
         },
+        // {
+        //   type: "category",
+        //   label: "Resources",
+        //   items: [
+        //     {
+        //       type: "category",
+        //       label: "Quick Guides",
+        //       items: [
+        //         { type: "doc", label: "Celo", id: "learn/celo-summary" },
+        //         {
+        //           type: "doc",
+        //           label: "Celo Protocol",
+        //           id: "learn/celo-protocol-summary",
+        //         },
+        //         { type: "doc", label: "Valora", id: "learn/valora-summary" },
+        //         { type: "doc", label: "CELO", id: "learn/CELO-coin-summary" },
+        //         {
+        //           type: "doc",
+        //           label: "Celo Stablecoins",
+        //           id: "learn/platform-native-stablecoins-summary",
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       type: "doc",
+        //       label: "Celo Resources",
+        //       id: "learn/celo-resources",
+        //     },
+        //   ],
+        // },
       ],
     },
   ],

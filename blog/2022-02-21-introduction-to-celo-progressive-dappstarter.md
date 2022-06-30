@@ -1,5 +1,5 @@
 ---
-title: Introduction to Celo Progressive DAppstarter
+title: Introduction to Celo Composer
 description: Quickly develop full-stack progressive web applications on Celo.
 tags: [react, material-ui, dappstarter, progressive]
 hide_table_of_contents: false
@@ -8,9 +8,11 @@ hide_table_of_contents: false
 import ImageWrapper from '@components/ImageWrapper'
 import YouTube from '@components/YouTube';
 
-# Introduction to Celo Progressive DAppstarter
+# Introduction to Celo Composer
 
 Quickly develop full-stack progressive web applications on the Celo blockchain.
+
+<!--truncate-->
 
 ---
 

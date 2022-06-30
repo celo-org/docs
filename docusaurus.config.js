@@ -16,10 +16,10 @@ module.exports = {
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-//  i18n: {
-//    defaultLocale: "en",
-//    locales: ["en", "es"],
-//  },
+  //  i18n: {
+  //    defaultLocale: "en",
+  //    locales: ["en", "es"],
+  //  },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [
     {
@@ -260,8 +260,7 @@ module.exports = {
   ],
   themeConfig: {
     docs: {
-      sidebar: { hideable: true,
-      },
+      sidebar: { hideable: true },
     },
     prism: {
       additionalLanguages: ["solidity"],
@@ -308,21 +307,22 @@ module.exports = {
         //   position: "left",
         // },
         {
+          to: "/blog",
+          label: "Tutorials",
+          position: "left",
+        },
+        {
           type: "dropdown",
           position: "left",
-          label: "Learn",
+          label: "Tutorials",
           items: [
             {
-              label: "Celo Composer",
-              to: "https://github.com/celo-org/celo-composer#celo-composer",
+              label: "Code Tutorials",
+              to: "blog",
             },
             {
               label: "Developer Blog",
               to: "https://medium.com/celodevelopers/",
-            },
-            {
-              label: "Code Tutorials",
-              to: "blog",
             },
             {
               label: "EVM Basics",
@@ -412,6 +412,10 @@ module.exports = {
               to:
                 "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
               label: "React Native",
+            },
+            {
+              label: "Celo Composer",
+              to: "https://github.com/celo-org/celo-composer#celo-composer",
             },
           ],
         },
@@ -549,10 +553,10 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         blog: {
-          blogTitle: "Celo Blog",
+          blogTitle: "Celo Tutorials",
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
-          showReadingTime: true,
+          showReadingTime: false,
           blogListComponent: require.resolve(
             "./src/components/CustomBlogListPage.module.tsx"
           ),
