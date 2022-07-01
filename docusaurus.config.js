@@ -271,6 +271,14 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    announcementBar: {
+      id: "support_us",
+      content:
+        '🌱 If you like Celo, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/celo-monorepo">GitHub</a> and follow <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloDevs">@CeloDevs</a> and <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloOrg">@CeloOrg </a> 🌱',
+      backgroundColor: "#111214",
+      textColor: "#ffffff",
+      isCloseable: false,
+    },
     docs: {
       sidebar: { hideable: true },
     },
