@@ -156,6 +156,15 @@ Talent Protocol is a web3 platform where talent can easily launch a social token
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)
 
+## NEFTME 
+
+NEFTME is a decentralized social NFT-powered network that allows anyone, anywhere to create, share and sell an NFT, with any media content!
+
+Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
+
+- [Website](https://neftme.com)
+- [GitHub](https://github.com/NEFTME)
+
 ---
 
 ## Decentralized Impact Incubator Winners
