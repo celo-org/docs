@@ -156,6 +156,13 @@ Talent Protocol is a web3 platform where talent can easily launch a social token
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)
 
+### Plastiks
+
+Plastiks is an NFT marketplace that brings People, Organizations and Companies together to fight against plastic pollution..
+
+- [Website](https://plastiks.io)
+- [GitLab]([https://github.com/talentprotocol](https://gitlab.com/nozama.green/plast))
+
 ---
 
 ## Decentralized Impact Incubator Winners
