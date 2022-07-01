@@ -146,6 +146,18 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 - [Documentation](https://integrations.simplex.com/wallet-api-integration)
 
+## **:iphone: Social**
+
+**[NEFTME](https://neftme.com)**- A decentralized social NFT-powered network, that allows anyone, anywhere to create, share and sell a NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
+
+- [GitHub](https://github.com/NEFTME)
+- [NFT(ERC721) Contract](https://alfajores-blockscout.celo-testnet.org/address/0xA8C40bdE8BE47D47999d3637dD9683C5F1dc317B/transactions)
+- [Token(ERC20) Contract](https://alfajores-blockscout.celo-testnet.org/address/0x6A50e7f557D2295F6af98fc10171ecDdF34400fB)
+- Relevant function calls
+  - Read: $NEFT Balance, NFT Stakers Info, NFT's total staked amount
+  - Write: Mint, Bid, Stake, Cancel Bid
+
+
 # Thank you
 
 Special thanks to @0xHuman and the Node team for putting together this resource for Node's [Berkeley Blockchain Hackathon](https://thenode.fi/hackathon).
