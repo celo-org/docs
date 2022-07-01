@@ -35,7 +35,7 @@ import styles from './styles.module.css';
 
 const TITLE = translate({message: 'Celo Ecosystem Showcase'});
 const DESCRIPTION = translate({
-  message: 'List of partners, tools, and dApps in the Celo ecosystem.',
+  message: 'List of decentralized applications in the Celo ecosystem.',
 });
 const EDIT_URL =
   'https://github.com/facebook/docusaurus/edit/main/website/src/data/users.tsx';

@@ -306,12 +306,12 @@ module.exports = {
         //   label: "Learn",
         //   position: "left",
         // },
+        { to: "showcase", label: "Showcase", position: "left" },
         {
           to: "/blog",
           label: "Tutorials",
           position: "left",
         },
-        { to: "showcase", label: "Showcase", position: "left" },
         // {
         //   type: "dropdown",
         //   position: "left",
