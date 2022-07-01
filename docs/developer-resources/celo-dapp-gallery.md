@@ -258,3 +258,10 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
+
+## Celo Tracker
+
+The Front Page of Celo. Track and manage all your assets from one place. We support all major projects on Celo, allow swapping using the best exchange rate on Celo and also track and show NFTs.
+
+- [Website](https://celotracker.com/)
+- [GitHub](https://github.com/celo-tracker/)
