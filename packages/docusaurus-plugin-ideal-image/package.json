@@ -1,0 +1,53 @@
+{
+  "name": "@docusaurus/plugin-ideal-image",
+  "version": "2.0.0-beta.21",
+  "description": "Docusaurus Plugin to generate an almost ideal image (responsive, lazy-loading, and low quality placeholder).",
+  "main": "lib/index.js",
+  "types": "src/plugin-ideal-image.d.ts",
+  "scripts": {
+    "build": "tsc --build && node ../../admin/scripts/copyUntypedFiles.js && prettier --config ../../.prettierrc --write \"lib/theme/**/*.js\"",
+    "watch": "run-p -c copy:watch build:watch",
+    "build:watch": "tsc --build --watch",
+    "copy:watch": "node ../../admin/scripts/copyUntypedFiles.js --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/docusaurus.git",
+    "directory": "packages/docusaurus-plugin-ideal-image"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-beta.21",
+    "@docusaurus/lqip-loader": "2.0.0-beta.21",
+    "@docusaurus/responsive-loader": "^1.7.0",
+    "@docusaurus/theme-translations": "2.0.0-beta.21",
+    "@docusaurus/types": "2.0.0-beta.21",
+    "@docusaurus/utils-validation": "2.0.0-beta.21",
+    "@endiliey/react-ideal-image": "^0.0.11",
+    "react-waypoint": "^10.3.0",
+    "sharp": "^0.30.6",
+    "tslib": "^2.4.0",
+    "webpack": "^5.73.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "@docusaurus/types": "2.0.0-beta.21",
+    "fs-extra": "^10.1.0"
+  },
+  "peerDependencies": {
+    "jimp": "*",
+    "react": "^16.8.4 || ^17.0.0",
+    "react-dom": "^16.8.4 || ^17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "jimp": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=16.14"
+  }
+}

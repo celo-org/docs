@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useEffect, useState, useRef} from 'react';
-import ReactDOM from 'react-dom';
-import {usePopper} from 'react-popper';
-import styles from './styles.module.css';
+import React, { useEffect, useState, useRef } from "react";
+import ReactDOM from "react-dom";
+import { usePopper } from "react-popper";
+import styles from "./styles.module.css";
 
 interface Props {
   anchorEl?: HTMLElement | string;
@@ -25,30 +25,30 @@ export default function Tooltip({
 }: Props): JSX.Element {
   const [open, setOpen] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
-    null,
+    null
   );
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
   const [container, setContainer] = useState<Element | null>(null);
-  const {styles: popperStyles, attributes} = usePopper(
+  const { styles: popperStyles, attributes } = usePopper(
     referenceElement,
     popperElement,
     {
       modifiers: [
         {
-          name: 'arrow',
+          name: "arrow",
           options: {
             element: arrowElement,
           },
         },
         {
-          name: 'offset',
+          name: "offset",
           options: {
             offset: [0, 8],
           },
         },
       ],
-    },
+    }
   );
 
   const timeout = useRef<number | null>(null);
@@ -56,7 +56,7 @@ export default function Tooltip({
 
   useEffect(() => {
     if (anchorEl) {
-      if (typeof anchorEl === 'string') {
+      if (typeof anchorEl === "string") {
         setContainer(document.querySelector(anchorEl));
       } else {
         setContainer(anchorEl);
@@ -67,18 +67,18 @@ export default function Tooltip({
   }, [container, anchorEl]);
 
   useEffect(() => {
-    const showEvents = ['mouseenter', 'focus'];
-    const hideEvents = ['mouseleave', 'blur'];
+    const showEvents = ["mouseenter", "focus"];
+    const hideEvents = ["mouseleave", "blur"];
 
     const handleOpen = () => {
       // There is no point in displaying an empty tooltip.
-      if (text === '') {
+      if (text === "") {
         return;
       }
 
       // Remove the title ahead of time to avoid displaying
       // two tooltips at the same time (native + this one).
-      referenceElement?.removeAttribute('title');
+      referenceElement?.removeAttribute("title");
 
       timeout.current = window.setTimeout(() => {
         setOpen(true);
@@ -117,7 +117,7 @@ export default function Tooltip({
     <>
       {React.cloneElement(children, {
         ref: setReferenceElement,
-        'aria-describedby': open ? tooltipId : undefined,
+        "aria-describedby": open ? tooltipId : undefined,
       })}
       {container
         ? ReactDOM.createPortal(
@@ -128,7 +128,8 @@ export default function Tooltip({
                 ref={setPopperElement}
                 className={styles.tooltip}
                 style={popperStyles.popper}
-                {...attributes.popper}>
+                {...attributes.popper}
+              >
                 {text}
                 <span
                   ref={setArrowElement}
@@ -137,7 +138,7 @@ export default function Tooltip({
                 />
               </div>
             ),
-            container,
+            container
           )
         : container}
     </>
