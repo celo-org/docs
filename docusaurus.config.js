@@ -257,6 +257,18 @@ module.exports = {
         ],
       },
     ],
+    [
+      "ideal-image",
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ],
   ],
   themeConfig: {
     docs: {
@@ -306,6 +318,7 @@ module.exports = {
         //   label: "Learn",
         //   position: "left",
         // },
+        { to: "showcase", label: "Showcase", position: "left" },
         {
           to: "/blog",
           label: "Tutorials",
@@ -358,28 +371,12 @@ module.exports = {
           label: "Support",
           items: [
             {
-              to: "https://github.com/celo-org/docs/issues",
-              label: "Issues",
-            },
-            // {
-            //   to: "https://github.com/celo-org/docs/discussions",
-            //   label: "Discussions",
-            // },
-            {
               to: "https://forum.celo.org/",
-              label: "Forum",
+              label: "View the Forum",
             },
             {
-              to: "https://discord.com/invite/6yWMkgM",
-              label: "Chat",
-            },
-            {
-              to: "https://explorer.celo.org/",
-              label: "Explorer",
-            },
-            {
-              to: "https://explorer.celo.org/stats",
-              label: "Analytics",
+              to: "https://github.com/celo-org/docs/issues/new",
+              label: "Create an Issue",
             },
           ],
         },
@@ -555,7 +552,7 @@ module.exports = {
         blog: {
           blogTitle: "Celo Tutorials",
           blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
+          // blogSidebarCount: "ALL",
           showReadingTime: false,
           blogListComponent: require.resolve(
             "./src/components/CustomBlogListPage.module.tsx"
