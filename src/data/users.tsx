@@ -407,14 +407,6 @@ const Users: User[] = [
     tags: ['apps'],
   },
   {
-    title: 'Mobius',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
     title: 'Kresko',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     preview: require('./showcase/agilets.png'),

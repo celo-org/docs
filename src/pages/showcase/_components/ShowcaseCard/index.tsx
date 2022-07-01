@@ -9,7 +9,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
-// import Image from '@theme/IdealImage';
+import Image from '@theme/IdealImage';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import {
   Tags,
@@ -62,7 +62,7 @@ function ShowcaseCard({user}: {user: User}) {
   return (
     <li key={user.title} className="card shadow--md">
       <div className={clsx('card__image', styles.showcaseCardImage)}>
-        {/* <Image img={user.preview} alt={user.title} /> */}
+        <Image img={user.preview} alt={user.title} />
       </div>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
