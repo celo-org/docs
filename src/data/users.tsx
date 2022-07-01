@@ -53,7 +53,7 @@ export type Tag = {
 };
 
 export type TagType =
-  | "favorite"
+  | "popular"
   | "apps"
   | "impact"
   | "defi"
@@ -75,11 +75,11 @@ export type User = {
 // We'll remove inappropriate tags, but it's less likely that we add tags.
 export const Tags: { [type in TagType]: Tag } = {
   // DO NOT USE THIS TAG: we choose sites to add to appss
-  favorite: {
-    label: translate({ message: "Favorite" }),
+  popular: {
+    label: translate({ message: "Popular" }),
     description: translate({
-      message: "Our favorite Celo dApps for you to check out!",
-      id: "showcase.tag.favorite.description",
+      message: "Popular Celo dApps for you to check out!",
+      id: "showcase.tag.popular.description",
     }),
     color: "#e9669e",
   },
@@ -141,7 +141,7 @@ const Users: User[] = [
     preview: require('./showcase/valora.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
-    tags: ['apps', 'wallets', 'favorite'],
+    tags: ['apps', 'wallets', 'popular'],
   },
   {
     title: 'Impact Market',
@@ -149,7 +149,7 @@ const Users: User[] = [
     preview: require('./showcase/impact-market.png'),
     website: 'https://www.impactmarket.com/',
     source: 'https://github.com/impactMarket',
-    tags: ['apps', 'impact', 'favorite'],
+    tags: ['apps', 'impact', 'popular'],
   },
   {
     title: 'Emerging Impact',
@@ -165,7 +165,7 @@ const Users: User[] = [
     preview: require('./showcase/mobius.png'),
     website: 'https://www.mobius.money/#/swap',
     source: 'https://github.com/mobiusAMM',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Ubeswap',
@@ -173,7 +173,7 @@ const Users: User[] = [
     preview: require('./showcase/ube-swap.png'),
     website: 'https://ubeswap.org/',
     source: 'https://github.com/ubeswap',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Moola Market',
@@ -181,7 +181,7 @@ const Users: User[] = [
     preview: require('./showcase/moola.png'),
     website: 'https://moola.market/',
     source: 'https://github.com/moolamarket/moola',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Good Ghosting',
@@ -189,7 +189,7 @@ const Users: User[] = [
     preview: require('./showcase/good-ghosting.png'),
     website: 'https://goodghosting.com/#/',
     source: 'https://github.com/Good-Ghosting',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Symmetric',
@@ -229,7 +229,7 @@ const Users: User[] = [
     preview: require('./showcase/nom-space.png'),
     website: 'https://www.nom.space/#/',
     source: 'https://github.com/nomspace',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Celo Terminal',
@@ -245,7 +245,7 @@ const Users: User[] = [
     preview: require('./showcase/celo-wallet.png'),
     website: 'https://celowallet.app/setup',
     source: 'https://github.com/celo-tools/celo-web-wallet',
-    tags: ['apps', 'wallets', 'favorite'],
+    tags: ['apps', 'wallets', 'popular'],
   },
   {
     title: 'Masa',
@@ -253,7 +253,7 @@ const Users: User[] = [
     preview: require('./showcase/masa.png'),
     website: 'https://masa.finance/',
     source: 'https://github.com/masa-finance',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Poof',
@@ -261,7 +261,7 @@ const Users: User[] = [
     preview: require('./showcase/poof.png'),
     website: 'https://poof.cash/',
     source: 'https://github.com/poofcash/poof-core',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Optics',
@@ -357,7 +357,7 @@ const Users: User[] = [
     preview: require('./showcase/kotani-pay.png'),
     website: 'https://kotanipay.com/',
     source: 'https://github.com/Kotani-Pay/',
-    tags: ['apps', 'wallets', 'favorite'],
+    tags: ['apps', 'wallets', 'popular'],
   },
   {
     title: 'CeloDance',
@@ -373,7 +373,7 @@ const Users: User[] = [
     preview: require('./showcase/sushi-swap.png'),
     website: 'https://sushi.com/',
     source: 'https://github.com/sushiswap',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'SocialStack',
@@ -405,7 +405,7 @@ const Users: User[] = [
     preview: require('./showcase/wren.png'),
     website: 'https://www.wren.co/profile/celo',
     source: 'https://github.com/valora-inc',
-    tags: ['apps', 'impact', 'favorite'],
+    tags: ['apps', 'impact', 'popular'],
   },
   {
     title: 'GoodDollar',
@@ -445,7 +445,7 @@ const Users: User[] = [
     preview: require('./showcase/moss.png'),
     website: 'https://moss.earth/',
     source: 'https://moss.earth/',
-    tags: ['apps', 'impact', 'favorite'],
+    tags: ['apps', 'impact', 'popular'],
   },
   {
     title: 'CoCo',
@@ -493,7 +493,7 @@ const Users: User[] = [
     preview: require('./showcase/beefy-finance.png'),
     website: 'https://beefy.finance/',
     source: 'https://docs.beefy.finance/',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'Space',
@@ -509,7 +509,7 @@ const Users: User[] = [
     preview: require('./showcase/talent-protocol.png'),
     website: 'https://www.talentprotocol.com/',
     source: 'https://github.com/talentprotocol/web-dapp',
-    tags: ['apps', 'defi', 'favorite'],
+    tags: ['apps', 'defi', 'popular'],
   },
   {
     title: 'La Stabilite',
@@ -727,13 +727,22 @@ const Users: User[] = [
     source: 'https://paysail.us/',
     tags: ['apps','earn'],
   },
+
+  {
+    title: 'Mento-Fi',
+    description: 'Make exchanges between Celo native currencies using the Mento on-chain exchange mechanism.',
+    preview: require('./showcase/mento-fi.png'),
+    website: 'https://mento.finance/',
+    source: 'https://github.com/celo-tools/mento-fi',
+    tags: ['apps','defi', 'popular'],
+  },
   {
     title: 'Flywallet',
     description: 'The only all-in-one budgeting platform designed just for travelers. Get custom savings plans, destination insights, cheap flights and more.',
     preview: require('./showcase/fly-wallet.png'),
     website: 'https://www.flywallet.io/',
     source: 'https://www.flywallet.io/',
-    tags: ['apps','earn', 'favorite'],
+    tags: ['apps','earn', 'popular'],
   },
   {
     title: 'DataUnion',

@@ -10,6 +10,7 @@
  import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
  import BlogLayout from '@theme/BlogLayout';
  import BlogPostItem from '@theme/BlogPostItem';
+ import Translate, {translate} from '@docusaurus/Translate';
  import BlogListPaginator from '@theme/BlogListPaginator';
  import type {Props} from '@theme/BlogListPage';
  import {ThemeClassNames} from '@docusaurus/theme-common';
@@ -35,17 +36,29 @@
        }}
        sidebar={sidebar}>
          <h1>Celo Development Tutorials</h1>
-         {/* <p>Welcome to our curated list of community tutorials.</p> */}
-        <p><a href="/blog/tags"> Filter posts by tag</a> or <a href="/community/guidelines">contribute a tutorial 🚀</a></p>
+         <p>Welcome to our curated list of community tutorials.</p>
+        {/* <p><a href="/blog/tags"> Filter posts by tag</a></p> */}
+        <a
+        className="button button--primary"
+        href="/community/guidelines"
+        // target="_blank"
+        rel="noreferrer">
+        <Translate id="showcase.header.button">
+         ✍️ Contribute a Tutorial
+        </Translate>
+        
+
+      </a>
         <div><br></br></div>
 
        {items.map(({content: BlogPostContent}) => (
          <BlogPostItem
-           key={BlogPostContent.metadata.permalink}
+           key={BlogPostContent.metadata.permalink} 
            frontMatter={BlogPostContent.frontMatter}
            assets={BlogPostContent.assets}
            metadata={BlogPostContent.metadata}
-           truncated={BlogPostContent.metadata.truncated}>
+           truncated={BlogPostContent.metadata.truncated}
+           >
            <BlogPostContent />
          </BlogPostItem>
        ))}

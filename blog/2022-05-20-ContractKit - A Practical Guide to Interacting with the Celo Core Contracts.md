@@ -3,7 +3,7 @@ title: ContractKit - A Practical Guide to Interacting with the Celo Core Contrac
 description: How to access the Celo Blockchain with JavaScript using ContractKit.
 authors:
   - name: ✍️ Joe Nyzio  ·  🔗 External
-tags: [composer, foundation]
+tags: [contractkit, foundation]
 hide_table_of_contents: true
 ---
 
