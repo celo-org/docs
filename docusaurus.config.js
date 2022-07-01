@@ -371,28 +371,12 @@ module.exports = {
           label: "Support",
           items: [
             {
-              to: "https://github.com/celo-org/docs/issues",
-              label: "Issues",
-            },
-            // {
-            //   to: "https://github.com/celo-org/docs/discussions",
-            //   label: "Discussions",
-            // },
-            {
               to: "https://forum.celo.org/",
-              label: "Forum",
+              label: "Read the Forum",
             },
             {
-              to: "https://discord.com/invite/6yWMkgM",
-              label: "Chat",
-            },
-            {
-              to: "https://explorer.celo.org/",
-              label: "Explorer",
-            },
-            {
-              to: "https://explorer.celo.org/stats",
-              label: "Analytics",
+              to: "https://github.com/celo-org/docs/issues/new",
+              label: "Create an Issue",
             },
           ],
         },
