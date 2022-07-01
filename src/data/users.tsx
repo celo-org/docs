@@ -80,7 +80,7 @@ export type User = {
 export const Tags: { [type in TagType]: Tag } = {
   // DO NOT USE THIS TAG: we choose sites to add to appss
   favorite: {
-    label: translate({ message: "favorite" }),
+    label: translate({ message: "Favorite" }),
     description: translate({
       message: "Our favorite Celo daApps that you must absolutely check out!",
       id: "showcase.tag.favorite.description",
@@ -185,23 +185,15 @@ const Users: User[] = [
   {
     title: 'Valora',
     description: 'The crypto wallet with 12% rewards to buy, send, spend, earn, and collect NFTs on the Celo blockchain.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/valora.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
   },
   {
     title: 'Impact Market',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    description: 'impactMarket enables any vulnerable community to implement poverty alleviation mechanisms, like Unconditional Basic Income.',
     preview: require('./showcase/impact-market.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Corsali',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -209,7 +201,7 @@ const Users: User[] = [
   {
     title: 'Umoja',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/umoja.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -217,7 +209,7 @@ const Users: User[] = [
   {
     title: 'Mobius',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/mobius.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -225,7 +217,7 @@ const Users: User[] = [
   {
     title: 'Ubeswap',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/ube-swap.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -233,7 +225,7 @@ const Users: User[] = [
   {
     title: 'Moola Market',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/moola.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -241,7 +233,7 @@ const Users: User[] = [
   {
     title: 'Good Ghosting',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/good-ghosting.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -249,7 +241,7 @@ const Users: User[] = [
   {
     title: 'Symmetric',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/symmetric.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -257,7 +249,7 @@ const Users: User[] = [
   {
     title: 'Resource',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/resource.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -265,7 +257,7 @@ const Users: User[] = [
   {
     title: 'MetaCelo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/metacelo.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -273,7 +265,7 @@ const Users: User[] = [
   {
     title: 'Pinnata',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pinnata.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -281,7 +273,7 @@ const Users: User[] = [
   {
     title: 'Nomspace',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/nom-space.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -289,7 +281,7 @@ const Users: User[] = [
   {
     title: 'Celo Terminal',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/celo-terminal.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -297,7 +289,7 @@ const Users: User[] = [
   {
     title: 'Kaala',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/kaala.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -305,7 +297,7 @@ const Users: User[] = [
   {
     title: 'Pago',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pago.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -313,7 +305,7 @@ const Users: User[] = [
   {
     title: 'Celo Wallet',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/celo-wallet.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -321,7 +313,7 @@ const Users: User[] = [
   {
     title: 'Masa',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/masa.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -329,7 +321,7 @@ const Users: User[] = [
   {
     title: 'Poof',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/poof.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -337,7 +329,7 @@ const Users: User[] = [
   {
     title: 'Optics',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/optics.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -345,15 +337,15 @@ const Users: User[] = [
   {
     title: 'Pool Together',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pool-together.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
   },
   {
-    title: 'AriSwaap',
+    title: 'AriSwap',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/ari-swap.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -361,7 +353,7 @@ const Users: User[] = [
   {
     title: 'Porio',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/porio.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -369,7 +361,7 @@ const Users: User[] = [
   {
     title: 'Aijia',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/aijia.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -377,7 +369,7 @@ const Users: User[] = [
   {
     title: 'Guild',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/guild.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -385,7 +377,7 @@ const Users: User[] = [
   {
     title: 'CreateSafe',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/create-safe.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -393,15 +385,7 @@ const Users: User[] = [
   {
     title: 'CyberBox',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Autocomp Finance',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/cyber-box.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -409,7 +393,7 @@ const Users: User[] = [
   {
     title: 'Kresko',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/kresko.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -417,7 +401,7 @@ const Users: User[] = [
   {
     title: 'AllBridge',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/all-bridge.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -425,7 +409,7 @@ const Users: User[] = [
   {
     title: 'Celer Bridge',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/celer-bridge.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -433,7 +417,7 @@ const Users: User[] = [
   {
     title: 'Kotani Pay',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/kotani-pay.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -441,7 +425,7 @@ const Users: User[] = [
   {
     title: 'CeloDance',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/celo-dance.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -449,7 +433,7 @@ const Users: User[] = [
   {
     title: 'SushiSwap',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/sushi-swap.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -457,7 +441,7 @@ const Users: User[] = [
   {
     title: 'SocialStack',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/social-stack.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -465,7 +449,7 @@ const Users: User[] = [
   {
     title: 'Doni | GoFund',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/doni.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -473,7 +457,7 @@ const Users: User[] = [
   {
     title: 'Wildchain',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/wild-chain.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -481,7 +465,7 @@ const Users: User[] = [
   {
     title: 'Wren',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/wren.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -489,7 +473,7 @@ const Users: User[] = [
   {
     title: 'GoodDollar',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/gooddollar.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -497,7 +481,7 @@ const Users: User[] = [
   {
     title: 'Help Each Other',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/help-each-other.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -505,15 +489,7 @@ const Users: User[] = [
   {
     title: 'Grameen Foundation',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Phillippines Typhoon Relief',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/grameen-foundation.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -521,7 +497,7 @@ const Users: User[] = [
   {
     title: 'Keyko',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/keyko.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -529,7 +505,7 @@ const Users: User[] = [
   {
     title: 'Moss',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/moss.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -537,7 +513,7 @@ const Users: User[] = [
   {
     title: 'CoCo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/coco.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -545,7 +521,7 @@ const Users: User[] = [
   {
     title: 'Coperacha',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/coperacha.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -553,7 +529,7 @@ const Users: User[] = [
   {
     title: 'KnoxEdge',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/knox-edge.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -561,15 +537,15 @@ const Users: User[] = [
   {
     title: 'Celo Tracker',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/celo-tracker.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
   },
   {
-    title: 'Inter the Verse',
+    title: 'Into the Verse',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/into-the-verse.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -577,7 +553,7 @@ const Users: User[] = [
   {
     title: 'Beefy Finance',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/beefy-finance.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -585,7 +561,7 @@ const Users: User[] = [
   {
     title: 'Space',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/space.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -593,7 +569,7 @@ const Users: User[] = [
   {
     title: 'Talent Protocol',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/talent-protocol.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -601,7 +577,7 @@ const Users: User[] = [
   {
     title: 'La Stabilite',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/la-stabilite.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -609,15 +585,7 @@ const Users: User[] = [
   {
     title: 'Solaris',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Yanda',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/solaris.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -625,7 +593,7 @@ const Users: User[] = [
   {
     title: 'Tradegen',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/trade-gen.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -633,15 +601,7 @@ const Users: User[] = [
   {
     title: 'DeFi Yield',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Plock',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/defi-yield.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -649,15 +609,7 @@ const Users: User[] = [
   {
     title: 'Hummingbot',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Santym',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/humming-bot.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -665,23 +617,7 @@ const Users: User[] = [
   {
     title: 'Ensuro',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Unifty',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'DELO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/ensuro.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -689,7 +625,7 @@ const Users: User[] = [
   {
     title: 'BlockCash',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/block-cash.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -697,7 +633,7 @@ const Users: User[] = [
   {
     title: 'Cent',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/cent.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -705,23 +641,7 @@ const Users: User[] = [
   {
     title: 'Pixelava',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'The Box',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Mark-at!',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pixel-ava.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -729,7 +649,7 @@ const Users: User[] = [
   {
     title: 'WeTrust',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/we-trust.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -737,7 +657,7 @@ const Users: User[] = [
   {
     title: 'Pesabase',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pesa-base.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -745,15 +665,7 @@ const Users: User[] = [
   {
     title: 'Sempo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'DuniaPay',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/sempo.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -761,7 +673,7 @@ const Users: User[] = [
   {
     title: 'Bitssa',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/bitssa.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -769,7 +681,7 @@ const Users: User[] = [
   {
     title: 'FoxWallet',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/fox-wallet.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -777,7 +689,7 @@ const Users: User[] = [
   {
     title: 'YellowCard',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/yellow-card.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -785,15 +697,7 @@ const Users: User[] = [
   {
     title: 'W.WAM',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Celo Mail',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/w-wam.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -801,23 +705,7 @@ const Users: User[] = [
   {
     title: 'Paychant',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Celo SMS Wallet',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Celo Discord Bot',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pay-chant.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -825,7 +713,7 @@ const Users: User[] = [
   {
     title: 'MetaMask',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/meta-mask.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -833,7 +721,7 @@ const Users: User[] = [
   {
     title: 'Kite Financial',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/kite.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -841,7 +729,7 @@ const Users: User[] = [
   {
     title: 'Dexfair',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/dex-fair.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -849,7 +737,7 @@ const Users: User[] = [
   {
     title: 'Abra',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/abra.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -857,7 +745,7 @@ const Users: User[] = [
   {
     title: 'Beam & Go',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/beam-and-go.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -865,7 +753,7 @@ const Users: User[] = [
   {
     title: 'Bidali',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/bidali.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -873,7 +761,7 @@ const Users: User[] = [
   {
     title: 'Bitfy',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/bitfy.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -881,7 +769,7 @@ const Users: User[] = [
   {
     title: 'CoinPayments',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/coin-payments.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -889,7 +777,7 @@ const Users: User[] = [
   {
     title: 'Dove Wallet',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/dove-wallet.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -897,7 +785,7 @@ const Users: User[] = [
   {
     title: 'utrust',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/u-trust.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -905,7 +793,7 @@ const Users: User[] = [
   {
     title: 'Coin98 Wallet',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/coin-98.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -913,7 +801,7 @@ const Users: User[] = [
   {
     title: 'BitWage',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/bit-wage.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -921,7 +809,7 @@ const Users: User[] = [
   {
     title: 'LoveCrypto',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/love-crypto.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -929,7 +817,7 @@ const Users: User[] = [
   {
     title: 'Paysail',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/pay-sail.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -937,7 +825,7 @@ const Users: User[] = [
   {
     title: 'Flywallet',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/fly-wallet.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -945,7 +833,7 @@ const Users: User[] = [
   {
     title: 'DataUnion',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/data-union.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -953,7 +841,7 @@ const Users: User[] = [
   {
     title: 'Tegger',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/tegger.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -961,7 +849,7 @@ const Users: User[] = [
   {
     title: 'Gitcoin Bounties',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/git-coin.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
@@ -969,15 +857,7 @@ const Users: User[] = [
   {
     title: 'Coinbase',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
-    website: 'https://valoraapp.com/',
-    source: 'https://github.com/valora-inc',
-    tags: ['apps'],
-  },
-  {
-    title: 'Helpi',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/coin-base.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
