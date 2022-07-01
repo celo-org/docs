@@ -372,7 +372,7 @@ module.exports = {
           items: [
             {
               to: "https://forum.celo.org/",
-              label: "Read the Forum",
+              label: "View the Forum",
             },
             {
               to: "https://github.com/celo-org/docs/issues/new",

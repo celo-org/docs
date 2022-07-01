@@ -37,8 +37,7 @@ const TITLE = translate({message: 'Celo Ecosystem Showcase'});
 const DESCRIPTION = translate({
   message: 'List of decentralized applications and tools in the Celo ecosystem.',
 });
-const EDIT_URL = 'https://github.com/celo-org/docs/edit/main/src/data/users.tsx';
-  
+const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data/users.tsx';
 
 type UserState = {
   scrollTopPosition: number;
