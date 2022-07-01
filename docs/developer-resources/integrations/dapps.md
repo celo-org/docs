@@ -20,6 +20,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
   - Read: beneficiary status, unclaimed UBI, total claimed UBI
   - Write: donate, claim UBI
 
+**[esolidar](http://web3.esolidar.com)**- Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sustainable project or cause can choose to receive Celo stablecoins as donations.
+
+- [GitHub](https://github.com/esolidar/web3)
+- [Contracts](https://github.com/esolidar/sweepstake-contracts)
+
 ## **💰 Saving**
 
 **[GoodGhosting](https://goodghosting.com/#/)** - a gamified savings protocol where savings pools reward regular savers with higher interest rates and extra rewards by taking some interest away from those who don’t. Powered by [Moola](https://moola.market/) and [Mobius](https://www.mobius.money/#/swap).
