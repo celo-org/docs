@@ -193,7 +193,7 @@ const Users: User[] = [
   {
     title: 'Impact Market',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    preview: require('./showcase/agilets.png'),
+    preview: require('./showcase/impact-market.png'),
     website: 'https://valoraapp.com/',
     source: 'https://github.com/valora-inc',
     tags: ['apps'],
