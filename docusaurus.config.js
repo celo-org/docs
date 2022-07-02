@@ -395,6 +395,10 @@ module.exports = {
           items: [
             { to: "command-line-interface/introduction", label: "CLI" },
             {
+              to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
+              label: "SDK",
+            },
+            {
               to: "https://github.com/heymateag/celoiossdk",
               label: "iOS",
             },
