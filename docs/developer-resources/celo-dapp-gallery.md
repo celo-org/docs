@@ -151,7 +151,9 @@ Poof.cash is a protocol for decentralized, private transactions. It is the first
 
 ### Talent Protocol
 
-Talent Protocol is a web3 platform where talent can easily launch a social token (called Talent Tokens) to accelerate their career, and where supporters can back people they believe in.
+**Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
+Their mission is to help the **next generation of talent** achieve success and fulfilment by enabling **collective careers**.
+Until now careers have mostly been a single-player game where only a privileged few can win. With web3, careers are becoming multiplayer journeys where early support is rewarded and success is shared.
 
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)

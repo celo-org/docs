@@ -152,6 +152,17 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 - [Documentation](https://integrations.simplex.com/wallet-api-integration)
 
+## 🌐 DAOs
+
+**[Talent Protocol](https://talentprotocol.com/)** - **Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
+
+- [GitHub](https://github.com/talentprotocol)
+- [Contracts](https://github.com/talentprotocol/contracts)
+  - Relevant function calls
+    - Read: stakes (supporter - talent token relationships), total supply, available minting
+    - Write: create talent token, stake, claim rewards, unstake
+- [About us](https://www.notion.so/talentprotocol/Talent-Protocol-101-26a6c4b9f8284e5e8f55603a38629e76)
+
 # Thank you
 
 Special thanks to @0xHuman and the Node team for putting together this resource for Node's [Berkeley Blockchain Hackathon](https://thenode.fi/hackathon).
