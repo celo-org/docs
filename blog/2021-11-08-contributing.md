@@ -1,22 +1,13 @@
 ---
-title: Contributing to the Blog
-description: How to contribute to the blog
+title: Submit a Tutorial
+description: How to submit a tutorial
 slug: blog-contributions
-authors:
-  - name: Josh Crites
-    title: Developer Relations, cLabs
-    url: https://github.com/critesjosh
-    image_url: https://github.com/critesjosh.png
 tags: [contribute]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
 ---
 
-Contribute to Celo.
-
-## Open Source
-
-Celo is an open source project and without community contributions from people like you Celo wouldn't exist. We welcome contributions to our [codebase](https://github.com/celo-org), [documentation](https://github.com/celo-org/docs), [translations](https://celo.crowdin.com/) and [blog](https://github.com/celo-org/docs/blog).
+Celo is an open source project and without community contributions from people like you Celo wouldn't exist. We welcome contributions to our [codebase](https://github.com/celo-org), [documentation](https://github.com/celo-org/docs), [translations](https://celo.crowdin.com/) and [blog](https://medium.com/celodevelopers).
 
 It can be difficult to find ways to meaningfully contribute to a new project, but writing a guest post on our blog is a great way to get started!
 

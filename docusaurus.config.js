@@ -16,10 +16,10 @@ module.exports = {
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-//  i18n: {
-//    defaultLocale: "en",
-//    locales: ["en", "es"],
-//  },
+  //  i18n: {
+  //    defaultLocale: "en",
+  //    locales: ["en", "es"],
+  //  },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [
     {
@@ -258,11 +258,30 @@ module.exports = {
         ],
       },
     ],
+    [
+      "ideal-image",
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ],
   ],
   themeConfig: {
+    announcementBar: {
+      id: "support_us",
+      content:
+        '🌱 If you like Celo, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/celo-monorepo">GitHub</a> and follow <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloDevs">@CeloDevs</a> and <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloOrg">@CeloOrg </a> 🌱',
+      backgroundColor: "#18191A",
+      textColor: "#ffffff",
+      isCloseable: false,
+    },
     docs: {
-      sidebar: { hideable: true,
-      },
+      sidebar: { hideable: true },
     },
     prism: {
       additionalLanguages: ["solidity"],
@@ -308,41 +327,43 @@ module.exports = {
         //   label: "Learn",
         //   position: "left",
         // },
+        { to: "showcase", label: "Showcase", position: "left" },
         {
-          type: "dropdown",
+          to: "/blog",
+          label: "Tutorials",
           position: "left",
-          label: "Learn",
-          items: [
-            {
-              label: "Celo Composer",
-              to: "https://github.com/celo-org/celo-composer#celo-composer",
-            },
-            {
-              label: "Developer Blog",
-              to: "https://medium.com/celodevelopers/",
-            },
-            {
-              label: "Code Tutorials",
-              to: "blog",
-            },
-            {
-              label: "EVM Basics",
-              to: "https://ethereum.org/en/developers/docs/",
-            },
-            {
-              label: "Celo Blog",
-              to: "https://medium.com/celoorg",
-            },
-            {
-              label: "Figment",
-              to: "https://learn.figment.io/protocols/celo",
-            },
-            {
-              label: "Dacade",
-              to: "https://dacade.org/communities/celo",
-            },
-          ],
         },
+        // {
+        //   type: "dropdown",
+        //   position: "left",
+        //   label: "Tutorials",
+        //   items: [
+        //     {
+        //       label: "Code Tutorials",
+        //       to: "blog",
+        //     },
+        //     {
+        //       label: "Developer Blog",
+        //       to: "https://medium.com/celodevelopers/",
+        //     },
+        //     {
+        //       label: "EVM Basics",
+        //       to: "https://ethereum.org/en/developers/docs/",
+        //     },
+        //     {
+        //       label: "Celo Blog",
+        //       to: "https://medium.com/celoorg",
+        //     },
+        //     {
+        //       label: "Figment",
+        //       to: "https://learn.figment.io/protocols/celo",
+        //     },
+        //     {
+        //       label: "Dacade",
+        //       to: "https://dacade.org/communities/celo",
+        //     },
+        //   ],
+        // },
         // {
         //   type: "localeDropdown",
         //   position: "right",
@@ -359,28 +380,12 @@ module.exports = {
           label: "Support",
           items: [
             {
-              to: "https://github.com/celo-org/docs/issues",
-              label: "Issues",
-            },
-            // {
-            //   to: "https://github.com/celo-org/docs/discussions",
-            //   label: "Discussions",
-            // },
-            {
               to: "https://forum.celo.org/",
-              label: "Forum",
+              label: "View the Forum",
             },
             {
-              to: "https://discord.com/invite/6yWMkgM",
-              label: "Chat",
-            },
-            {
-              to: "https://explorer.celo.org/",
-              label: "Explorer",
-            },
-            {
-              to: "https://explorer.celo.org/stats",
-              label: "Analytics",
+              to: "https://github.com/celo-org/docs/issues/new",
+              label: "Create an Issue",
             },
           ],
         },
@@ -390,6 +395,10 @@ module.exports = {
           label: "APIs & SDKs",
           items: [
             { to: "command-line-interface/introduction", label: "CLI" },
+            {
+              to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
+              label: "SDK",
+            },
             {
               to: "https://github.com/heymateag/celoiossdk",
               label: "iOS",
@@ -413,6 +422,10 @@ module.exports = {
               to:
                 "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
               label: "React Native",
+            },
+            {
+              label: "Celo Composer",
+              to: "https://github.com/celo-org/celo-composer#celo-composer",
             },
           ],
         },
@@ -553,10 +566,10 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         blog: {
-          blogTitle: "Celo Blog",
+          blogTitle: "Celo Tutorials",
           blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
-          showReadingTime: true,
+          // blogSidebarCount: "ALL",
+          showReadingTime: false,
           blogListComponent: require.resolve(
             "./src/components/CustomBlogListPage.module.tsx"
           ),
