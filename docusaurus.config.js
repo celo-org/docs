@@ -28,6 +28,7 @@ module.exports = {
     },
   ],
   plugins: [
+    require.resolve("docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
@@ -513,6 +514,9 @@ module.exports = {
     },
     fathomAnalytics: {
       siteId: "AZMFWALB",
+    },
+    hubspot: {
+      accountId: 8568019,
     },
   },
   presets: [
