@@ -62,7 +62,7 @@ Explore Celo data to view the reserve, network, dapps, and additional analytics.
 
 ### APIs & SDKs
 
-Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more!
+Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 
 - [CLI](command-line-interface/introduction)
 - [IOS](https://github.com/heymateag/celoiossdk)
