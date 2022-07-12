@@ -18,7 +18,7 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 :::tip Celo ❤️ Feedback
 
-If you have any ideas to improve the docs please make an [issue](https://github.com/celo-org/docs/issues/new), discuss in the [forum](https://forum.celo.org/), or [become a contibutor](/community/guidelines).
+If you have any ideas to improve the docs please make an [issue](https://github.com/celo-org/docs/issues/new), discuss in the [forum](https://forum.celo.org/), or [become a contributor](/community/guidelines).
 
 :::
 
