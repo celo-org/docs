@@ -5,7 +5,7 @@ description: Overview of the Celo Stack including it's blockchain, core contract
 
 # Architecture
 
-Overview of the Celo Stack including it's blockchain, core contracts, and applications.
+Overview of the Celo Stack including its blockchain, core contracts, and applications.
 
 ---
 
@@ -21,7 +21,7 @@ To achieve this, Celo takes a full-stack approach, where each layer of the stack
 
 ## Celo Blockchain
 
-An open cryptographic protocol that allows applications to make transactions with and run smart contracts in a secure and decentralized fashion. The Celo blockchain code has shared ancestry with[ Ethereum](https://www.ethereum.org/) and maintains full EVM compatibility for smart contracts. However, it uses a[ Byzantine Fault Tolerant](http://pmg.csail.mit.edu/papers/osdi99.pdf) (BFT) consensus mechanism (Proof-of-Stake) rather than Proof-of-Work and has different block format, transaction format, client synchronization protocols, and gas payment and pricing mechanisms.
+An open cryptographic protocol that allows applications to make transactions with and run smart contracts in a secure and decentralized fashion. The Celo blockchain code has shared ancestry with[ Ethereum](https://www.ethereum.org/) and maintains full EVM compatibility for smart contracts. However, it uses a[ Byzantine Fault Tolerant](http://pmg.csail.mit.edu/papers/osdi99.pdf) (BFT) consensus mechanism (Proof-of-Stake) rather than Proof-of-Work and has different block formats, transaction formats, client synchronization protocols, and gas payment and pricing mechanisms.
 
 ## Celo Core Contracts
 
@@ -53,7 +53,7 @@ Applications including the Celo Wallet will also run on each user's device an in
 
 ## Celo Wallet
 
-The Celo Wallet application is a fully unmanaged wallet that allows users to self custody their funds using their own keys and accounts. All critical features such as sending transactions and checking balances can be done in a trustless manner using the peer-to-peer light client protocol. However, the wallet does use a few centralized cloud services to improve the user experience where possible, e.g.:
+The Celo Wallet application is a fully unmanaged wallet that allows users self custody of their funds, using their own keys and accounts. All critical features such as sending transactions and checking balances can be done in a trustless manner using the peer-to-peer light client protocol. However, the wallet does use a few centralized cloud services to improve the user experience where possible, e.g.:
 
 - **Google Play Services:** to pre-load invitations in the app
 - **Celo Wallet Notification Service:** sends device push notifications when a user receives a payment or requests for payment
