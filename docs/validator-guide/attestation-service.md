@@ -15,7 +15,6 @@ Please check the updated provider guidance to make sure your Attestation Service
 
 :::
 
-
 :::tip
 
 Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator-guide/celo-foundation-voting-policy.md), running a reliable Attestation Service is a requirement for eligibility.
@@ -28,7 +27,7 @@ The Attestation Service is part of the [Celo identity protocol](/celo-codebase/p
 
 ![](https://storage.googleapis.com/celo-website/docs/attestations-flow.jpg)
 
-Validators receive a fee (set by [on-chain governance](/celo-holder-guide/voting-governance.md), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. In a future release, validators will be able claim and withdraw this fee.
+Validators receive a fee (set by [on-chain governance](/celo-holder-guide/voting-governance.md), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. Validators can claim and withdraw this fee using: [`celocli identity:withdraw-attestation-rewards`](https://docs.celo.org/command-line-interface/identity#celocli-identitywithdraw-attestation-rewards).
 
 ## Outline
 
@@ -41,6 +40,10 @@ This guide steps you through setting up an Attestation Service:
 - Deploy the attestation service
 - Configure and publish validator metadata so that clients can find your attestation service
 - Configure monitoring for the attestation service and the full node (if applicable)
+
+:::tip
+If you have any questions or feedback after reading the documentation, please feel free to share them with us on GitHub: [celo-org > identity > Discussions](https://github.com/celo-org/identity/discussions/categories/help-q-a). We will happily get back to you and 
+:::
 
 ## Recent releases
 
