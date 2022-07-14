@@ -41,6 +41,10 @@ This guide steps you through setting up an Attestation Service:
 - Configure and publish validator metadata so that clients can find your attestation service
 - Configure monitoring for the attestation service and the full node (if applicable)
 
+:::tip
+If you have any questions or feedback after reading the documentation, please feel free to share them with us on GitHub: [celo-org > identity > Discussions](https://github.com/celo-org/identity/discussions/categories/help-q-a). We will happily get back to you and 
+:::
+
 ## Recent releases
 
 - [Attestation Service v1.5.0](https://github.com/celo-org/celo-monorepo/releases/tag/attestation-service-v1.5.0) (latest production release)
