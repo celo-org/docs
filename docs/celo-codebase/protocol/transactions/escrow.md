@@ -14,10 +14,12 @@ The Escrow smart contract ([Escrow.sol](https://github.com/celo-org/celo-monorep
 
 The contract provides two options for claiming an escrowed payment:
 
-1. using the recipient's phone number as proof of identity, and
+1. using the recipient's phone number as proof of identity[^1], and
 2. using a secret private key as proof of identity.
 
 The payments are stored in the contract and can be withdrawn by the recipient or the sender (more in this below).
+
+[^1]: Here we focus on phone numbers for simplicity, but for completeness, any proof of identity can be used and escrow payments can be keyed any generic `identifier` can be used. So for example, an escrow payment could be mapped to 
 
 ## Payment flows
 
@@ -159,6 +161,11 @@ struct EscrowedPayment {
   uint256 minAttestations; // Optional: Required proof(s) of ownership over Bob's phone number
 }
 ```
+
+<!-- TODO: 
+- [ ] EscrowedPayment table with fields
+- [ ] diagram visualising mapping from payment id to Escrowpayment struct
+ -->
 
 Each [Escrow.sol](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/protocol/contracts/identity/Escrow.sol) function can be called using the [Escrow.ts](https://github.com/celo-org/celo-monorepo/blob/master/packages/sdk/contractkit/src/wrappers/Escrow.ts) wrapper in [ContractKit](https://docs.celo.org/developer-guide/contractkit/contracts-wrappers-registry#interacting-with-other-celo-contracts).
 
