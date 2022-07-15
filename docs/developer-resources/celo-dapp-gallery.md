@@ -53,7 +53,7 @@ Biscoint is working on an out-of-the-box [CELO and Celo Dollar hot wallet](https
 
 ### Paychant
 
-Paychant is developing an open source web wallet developed on the Celo blockchain.
+Paychant is developing an open-source web wallet developed on the Celo blockchain.
 
 - [Website](https://paychant.com)
 - [GitHub](https://github.com/paychant/)
@@ -74,7 +74,7 @@ LeafCelo is developing lenrefugee, a guarantor-backed DeFi lending platform for 
 
 ### El Dorado
 
-El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the way financial products and services are designed, especially for people living in unstable economies. We are going to provide all the services a Bank can offer and more. USD savings accounts and P2P payments/exchange. All powered by Open Blockchains."
+El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the way financial products and services are designed, especially for people living in unstable economies. We are going to provide all the services a bank can offer and more. USD savings accounts and P2P payments/exchange. All powered by Open Blockchains."
 
 - [Website](https://eldorado.io/)
 - [GitHub](https://github.com/eldoradoio)
@@ -88,7 +88,7 @@ The ReSource Network is building a resource-based mutual credit blockchain proto
 
 ### Pesabase
 
-An integration of a Celo Dollar (Mento Stablecoin) and Mpesa, showing flows of payment between an Mpesa User and a Celo Blockchain wallet from anywhere in the world. Our aim with Pesabase is to provide African’s with a cheap and social option to remit and pay for goods and services.
+An integration of a Celo Dollar (Mento Stablecoin) and Mpesa, showing flows of payment between a Mpesa User and a Celo Blockchain wallet from anywhere in the world. Our aim with Pesabase is to provide Africans with a cheap and social option to remit and pay for goods and services.
 
 - [Android App](https://play.google.com/store/apps/details?id=com.pesabase.app)
 - [GitHub](https://github.com/Kesholabs/celoBackend)
@@ -108,18 +108,18 @@ impactMarket enables any vulnerable community to create its own unconditional ba
 
 ### Celo Toolkit by MugglePay
 
-MugglePay provides a payment SDK for merchants to accept cryptocurrencies. Mugglepay makes crypto payment easy and thousands of merchants are onboarded with MugglePay SDK. For the Celo Camp 2020, we will integrate with cUSD/CELO for payments on Celo blockchain.
+MugglePay provides a payment SDK for merchants to accept cryptocurrencies. Mugglepay makes crypto payment easy and thousands of merchants are onboarded with MugglePay SDK. For the Celo Camp 2020, we will integrate with cUSD/CELO for payments on the Celo blockchain.
 
 - [Website](https://mugglepay.com/)
 
-Celo Toolkit is the open source interface for managing Celo accounts on Web. Celo developer might start with a funded Celo account (Testnet) now in 1 minute. Phone number or app downloads are not necessary.
+Celo Toolkit is the open source interface for managing Celo accounts on the Web. Celo developer might start with a funded Celo account (Testnet) now in 1 minute. A Phone number or app downloads are not necessary.
 
 - [Website](https://celo.mugglepay.com)
 - [GitHub](https://github.com/MugglePay/celo-toolkit)
 
 ### Dunia Pay Wallet
 
-At Dunia Payment, we are building an electronic wallet that will let people in Sub Saharan Africa send and receive money directly on their phone.The app will use the Celo light client to process transactions faster, even in low internet connection areas common in Africa. The wallet will be built on top of the Celo platform and also using a set of external open source smart contracts.
+At Dunia Payment, we are building an electronic wallet that will let people in Sub-Saharan Africa send and receive money directly on their phones. The app will use the Celo light client to process transactions faster, even in low internet connection areas common in Africa. The wallet will be built on top of the Celo platform and also using a set of external open source smart contracts.
 
 - [GitHub](https://github.com/duniapay/Dunia-Wallet-Celo)
 
@@ -131,7 +131,7 @@ Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces 
 
 ### Cryptum Woocommerce NFT
 
-Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces, providing easy and fast Celo NFT creation and integration through a nocode interface - with marketplace goods for merchants, offering customers unique experiences and extending NFT possibilities for many marketplaces.
+Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces, providing easy and fast Celo NFT creation and integration through a no-code interface - with marketplace goods for merchants, offering customers unique experiences and extending NFT possibilities for many marketplaces.
 
 - [GitHub](https://github.com/blockforce-official/cryptum-nft-wordpress-plugin)
 
@@ -160,13 +160,13 @@ Talent Protocol is a web3 platform where talent can easily launch a social token
 
 ## Decentralized Impact Incubator Winners
 
-The Decentralized Impact Incubator is a 6-week program to ideate and prototype blockchain-based solutions to global social and environmental challenges. During the period, participants from around the world gather to form teams, design business models, draft proposals and code. Teams need to pass through weekly checkpoints and are guided by mentors throughout the process. Winning projects will receive grants to support continued development.
+The Decentralized Impact Incubator is a 6-week program to ideate and prototype blockchain-based solutions to global social and environmental challenges. During the period, participants from around the world gather to form teams, design business models, and draft proposals and code. Teams need to pass through weekly checkpoints and are guided by mentors throughout the process. Winning projects will receive grants to support continued development.
 
 - [Website](https://blockchainforsocialimpact.com/incubator-winners-2020/)
 
 ### Multiply.Charity by Abundance
 
-Multiply the impact of charitable donations by providing liquidity in credit tokens where the legacy financial system fails. Compared to cash donations, like GiveDirectly, this process has two major advantages: The credit tokens 1) fill a demand for liquidity (which banks fail to deliver), thus increasing the incentive to produce goods and services and 2) stay in the local economy longer, resulting in a larger impact (or lower cost overhead) per donation. Early field tests demonstrate up to 20x impact over traditional donations and double the velocity (the rate at which the money is traded) to the US Dollar.
+Multiply the impact of charitable donations by providing liquidity in credit tokens where the legacy financial system fails. Compared to cash donations, like GiveDirectly, this process has two major advantages: The credit tokens 1) fill a demand for liquidity (which banks fail to deliver), thus increasing the incentive to produce goods and services, and 2) stay in the local economy longer, resulting in a larger impact (or lower cost overhead) per donation. Early field tests demonstrate up to 20x impact over traditional donations and double the velocity (the rate at which the money is traded) to the US Dollar.
 
 - [Website](https://multiply.charity/)
 - [GitHub](https://github.com/abundance-stack)
@@ -190,7 +190,7 @@ Ubeswap is a mobile-first DeFi exchange, a mobile compatible fork of Uniswap run
 
 ### Celo Vote
 
-Celovote automatically distributes your stake to preferred validator groups that have high estimated APY (annual percentage yield) and automatically rebalances votes if any of the voted groups fails to maintain high uptime. You retain full custody of your CELO and receive 100% of your rewards.
+Celovote automatically distributes your stake to preferred validator groups that have high estimated APY (annual percentage yield) and automatically rebalances votes if any voted groups fail to maintain high uptime. You retain full custody of your CELO and receive 100% of your rewards.
 
 - [Website](https://celovote.com/)
 
@@ -215,14 +215,14 @@ Lovecrypto enables people to earn cUSD to do tasks in their phones.
 
 ### Cent Wallet
 
-Cent is a mobile wallet for buying and holding crypto as well as using Wallet Connect to authorise transactions on exchanges and other services. Cent is open source on GitHub and available on Android and iOS through the app store.
+Cent is a mobile wallet for buying and holding crypto as well as using Wallet Connect to authorize transactions on exchanges and other services. Cent is open source on GitHub and available on Android and iOS through the app store.
 
 - [Website](https://cent.finance/)
 - [GitHub](https://github.com/centfinance/Cent.Wallet)
 
 ### Symmetric
 
-Symmetric is a fork of Balancer for Celo. Symmetric is open source on GitHub, has a tokenomics model that includes a risk fund protecting traders, is to be DAO controlled and has a roadmap of new features.
+Symmetric is a fork of Balancer for Celo. Symmetric is open source on GitHub, has a tokenomics model that includes a risk fund protecting traders, is to be DAO controlled, and has a roadmap of new features.
 
 - [Website](https://symmetric.finance/)
 - [GitHub](https://github.com/centfinance)
@@ -248,7 +248,7 @@ Santym is a platform that allows Africans to have access to U.S Banking with cry
 
 ## Into The Verse
 
-Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have a Play2Earn NFT Dungeon Loot Game, game storefront and Token Swaps on Celo. Open Sourced on GitHub, we aim to bridge Defi and Gaming through token gated Pixel Metaverses.
+Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have a Play2Earn NFT Dungeon Loot Game, game storefront, and Token Swaps on Celo. Open Sourced on GitHub, we aim to bridge Defi and Gaming through token-gated Pixel Metaverses.
 
 - [GitHub](https://github.com/Into-The-Verse/)
 
