@@ -1178,7 +1178,6 @@ const sidebars = {
             },
           ],
         },
-        /Users/martinvol/celo/docs/docs/community/running-oracles.md
         {
           type: "category",
           label: "Important Information",
