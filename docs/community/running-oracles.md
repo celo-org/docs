@@ -85,11 +85,9 @@ docker run --name celo-oracle --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURC
 
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](...). To find more details about how the governance process work, [check here](...). Before submiting 
+The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](TODO). To find more details about how the governance process work, [check here](TODO). Before submiting 
 
 ## Using kubernets
-
-## Debugging
 
 ## metrics
 https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md
