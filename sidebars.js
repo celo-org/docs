@@ -1147,6 +1147,39 @@ const sidebars = {
           ],
         },
         {
+          type: "doc",
+          label: "Running oracles",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "community/release-process/README",
+            },
+            {
+              type: "doc",
+              label: "Smart Contracts",
+              id: "community/release-process/smart-contracts",
+            },
+            {
+              type: "doc",
+              label: "Blockchain Client",
+              id: "community/release-process/blockchain-client",
+            },
+            {
+              type: "doc",
+              label: "CeloCLI and ContractKit",
+              id:
+                "community/release-process/base-cli-contractkit-dappkit-utils",
+            },
+            {
+              type: "doc",
+              label: "Attestation Service",
+              id: "community/release-process/attestation-service",
+            },
+          ],
+        },
+        /Users/martinvol/celo/docs/docs/community/running-oracles.md
+        {
           type: "category",
           label: "Important Information",
           items: [
