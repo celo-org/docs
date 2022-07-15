@@ -39,7 +39,7 @@ GoodGosting is a no-loss DeFi saving game. Users can compete with others to get 
 
 ### Infibridge
 
-Infibridge is a Metamask-like browser extension wallet for Celo. It will support payment of gas fees in Celo or stable currencies like cUSD and cEUR. It has deep integration with Celo to allow staking, voting, and token swaps.
+Infibridge is a Metamask-like browser extension wallet for Celo. It will support payment of gas fees in Celo or stable currencies like cUSD and cEUR. It has deep integration with Celo to allow staking, voting and token swaps.
 
 - [Website](https://www.infibridge.com)
 - [GitHub](https://github.com/infibridge/browser-extension-wallet)

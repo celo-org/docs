@@ -57,6 +57,6 @@ The Celo Wallet application is a fully unmanaged wallet that allows users to sel
 
 - **Google Play Services:** to pre-load invitations in the app
 - **Celo Wallet Notification Service:** sends device push notifications when a user receives a payment or requests for payment
-- **Celo Wallet Blockchain API:** provides a GraphQL API to query transactions on the blockchain on a per-account basis, used to implement a users' activity feed.
+- **Celo Wallet Blockchain API:** provides a GraphQL API to query transactions on the blockchain on a per-account basis, used to implement a user's activity feed.
 
 When end-users download the Celo Wallet from, for example, the Google Play Store, users are trusting both cLabs (or the entity that has made the application available in the Play Store) and Google to deliver a correct binary, and most users would feel that relying on these centralized services to provide this additional functionality is worthwhile.
