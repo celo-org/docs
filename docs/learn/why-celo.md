@@ -18,10 +18,10 @@ Celo was designed to enable a new universe of financial solutions accessible for
 - [EVM compatible](https://medium.com/celoorg/donut-hardfork-is-live-on-celo-585e2e294dcb)
 - [Proof-of-stake](https://medium.com/celoorg/celos-proof-of-stake-mechanism-31061fbebea)
 - [Carbon negative](https://medium.com/celoorg/cryptocurrency-for-a-beautiful-planet-e47299dfb1c3)
-- [Mobile-first identity](http://localhost:3000/celo-codebase/protocol/odis)
-- [Ultra-light clients](celo-codebase/protocol/plumo)
+- [Mobile-first identity](/celo-codebase/protocol/odis)
+- [Ultra-light clients](/celo-codebase/protocol/plumo)
 - [Localized stablecoins (cUSD, cEUR, cREAL)](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c)
-- [Gas payable in multiple currencies](celo-codebase/protocol/transactions/erc20-transaction-fees)
+- [Gas payable in multiple currencies](/celo-codebase/protocol/transactions/erc20-transaction-fees)
 
 ## What is the Celo Platform?
 
