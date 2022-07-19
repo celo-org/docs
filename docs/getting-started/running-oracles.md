@@ -3,9 +3,7 @@ title: Running oracles
 description: How to run an oracle for Ment, the stability protocol.
 ---
 
-Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their propose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL.
-
-TODO link this: https://deploy-preview-394--celo-docs.netlify.app/celo-codebase/protocol/stability/oracles
+Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their propose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL. You can read the [Celo Oracle documentation](celo-codebase/protocol/stability/oracles) to get an overview of how they work.
 
 # Getting started
 
@@ -15,7 +13,7 @@ An implementation of such client is written in TypeScript [here](https://github.
 
 ## Requriments
 * One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
-* A dedicated full node running in its own VM. Minimal hardware and instructiosn to run a full node can be found [here](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
+* A dedicated full node running in its own VM. Minimal hardware and instructiosn to run a full node can be found [here](/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
 * An address. It can be hosted via a private key, HMS or accounts hosted in the full nodes itselfs.
 
 It is not strictly required but it is recommended to have the celocli avaiable at least in your local enviroment, and ideally in each vm. It could be specially useful to respond to on-call.
@@ -57,14 +55,13 @@ This method is not recommended in production as the private key remains unencryp
 
 You can create a new private key with:
 
-`celocli account:new`
+`$ celocli account:new`
 
-The output field of `privateKey` should be stored to a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. `WALLET_TYPE` should also be set to `PRIVATE_KEY`. This private key should have some gas used to sign the report transactions.
-
+The output field of `privateKey` should be stored to a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. Aditionally `WALLET_TYPE` should also be set to `PRIVATE_KEY`. This private key should have some CELO balance used for gas to sign the report transactions.
 
 ### Setting up your keys in the node
 
-In the instructions to run a full node the steps to generate an account and store it the [node can be found](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#create-an-account-and-get-its-address).
+In the instructions to generate an account and store it the [node can be found here](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#create-an-account-and-get-its-address).
 
 ### Recommended configuration
 
@@ -94,11 +91,13 @@ If your oracle it's not yet enabled by governance, you'll see these messages in 
 As soon as governance enables it the node should start reporting automatically.
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](https://docs.celo.org/celo-codebase/protocol/governance). Before submiting 
+The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](/celo-codebase/protocol/governance). Before submiting 
 
 ## Using kubernets
 
-## metrics
+Reference [Helm Charts](https://helm.sh/docs/topics/charts/) used by cLabs can be found in the [celo-monorepo repository](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle).
+
+## Metrics
 
 Available metrics and their configuration can be found in the [technical documentation](https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md)
 
