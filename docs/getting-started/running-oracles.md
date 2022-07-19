@@ -5,6 +5,8 @@ description: How to run an oracle for Ment, the stability protocol.
 
 Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their propose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL.
 
+TODO link this: https://deploy-preview-394--celo-docs.netlify.app/celo-codebase/protocol/stability/oracles
+
 # Getting started
 
 Oracles work by running a client that fetches the price from the centralized exchanges (CEX) and push them on chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](TODO LINK).
@@ -97,12 +99,12 @@ The last step to run an oracle is to enable their addresses on-chain. Only addre
 ## Using kubernets
 
 ## metrics
-https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md
+
+Available metrics and their configuration can be found in the [technical documentation](https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md)
 
 ## Monitoring
 
-TODO point to community Grafana cloud.
+There are two public dashboards deployed where the community can watch how individual oracle is performing:
 
-
-
-## Running the thing
+1. [One with high sampling but short timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-2d?orgId=2)
+2. [One with low sampling but longer timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-1M?orgId=2)

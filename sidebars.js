@@ -230,6 +230,11 @@ const sidebars = {
                   label: "Hosted Nodes",
                   id: "getting-started/hosted-nodes",
                 },
+                {
+                  type: "doc",
+                  label: "Running an oracle",
+                  id: "getting-started/running-oracles",
+                },
               ],
             },
           ],
