@@ -33,7 +33,7 @@ Using Forno or other public full node providers to run the oracles in production
 
 :::
 
-The oracle is configured by passing individual enviroment variables or a en env file when starting th edocker container. You'll need to create a env file named `.env.prod` in your oracle vm. A template env file in a format accepted by docker can be found in the [Github repository](TODO). A list of all the available as well as required variables can be found [here](https://github.com/celo-org/celo-oracle/blob/main/README-config.md).
+The oracle is configured by passing individual enviroment variables or a en env file when starting the Docker container. You'll need to create a env file named `.env.prod` in your oracle vm. A template env file in a format accepted by docker can be found in the [Github repository](https://github.com/celo-org/celo-oracle/blob/main/.env.prod). A list of all the available, as well as required variables, can be found [here](https://github.com/celo-org/celo-oracle/blob/main/README-config.md).
 
 ### Running with HSM
 
@@ -57,7 +57,7 @@ You can create a new private key with:
 
 `celocli account:new`
 
-The output field of `privateKey` should be stored to a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. `WALLET_TYPE` should also be set to `PRIVATE_KEY`.
+The output field of `privateKey` should be stored to a file and its path should be set in the env variable `PRIVATE_KEY_PATH`. `WALLET_TYPE` should also be set to `PRIVATE_KEY`. This private key should have some gas used to sign the report transactions.
 
 
 ### Setting up your keys in the node
@@ -68,18 +68,19 @@ In the instructions to run a full node the steps to generate an account and stor
 
 :::warning
 
-WARNING: it is encouraged that before running the oracles in production, they should run for at least a week in one of the Celo Public testnets.`
+WARNING: it is encouraged that before running the oracles in production, they should run for at least a week in one of the Celo Public testnets.
 
 :::
 
 The configuration currently run by cLabs in production can be found [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle) for each stable token. It is strongly advised not to modify the recommended values, specially the exchange sources, at least there is good data to support it.
 
-
-## Running with node
-
-Once all the enviroment variables are set in the vm and and the keys, an oracle can be started with.
+The only variable that is not set in the env file is the `PRICE_SOURCES`
 
 `export PRICE_SOURCES=$(cat PRICE_SOURCES)`
+
+## Running the node
+
+Once all the enviroment variables are set in the vm, an oracle can be started with:
 
 
 `docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc1`
@@ -91,7 +92,7 @@ If your oracle it's not yet enabled by governance, you'll see these messages in 
 As soon as governance enables it the node should start reporting automatically.
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](TODO). To find more details about how the governance process work, [check here](TODO). Before submiting 
+The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](https://docs.celo.org/celo-codebase/protocol/governance). Before submiting 
 
 ## Using kubernets
 
