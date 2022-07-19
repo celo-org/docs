@@ -79,10 +79,16 @@ The configuration currently run by cLabs in production can be found [here](https
 
 Once all the enviroment variables are set in the vm and and the keys, an oracle can be started with.
 
-export PRICE_SOURCES=$(cat PRICE_SOURCES)
-docker run --name celo-oracle --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc1
+`export PRICE_SOURCES=$(cat PRICE_SOURCES)`
 
 
+`docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc1`
+
+If your oracle it's not yet enabled by governance, you'll see these messages in the terminal:
+
+`Account 0x... is not whitelisted as an oracle for YOUR_PAIR`
+
+As soon as governance enables it the node should start reporting automatically.
 ## Governance
 
 The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](TODO). To find more details about how the governance process work, [check here](TODO). Before submiting 
