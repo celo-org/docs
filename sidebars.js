@@ -230,11 +230,6 @@ const sidebars = {
                   label: "Hosted Nodes",
                   id: "getting-started/hosted-nodes",
                 },
-                {
-                  type: "doc",
-                  label: "Running an oracle",
-                  id: "getting-started/running-oracles",
-                },
               ],
             },
           ],
@@ -927,6 +922,11 @@ const sidebars = {
           type: "doc",
           label: "Celo Oracles",
           id: "celo-codebase/protocol/oracles/oracles-on-celo",
+        },
+        {
+          type: "doc",
+          label: "Running an oracle",
+          id: "getting-started/running-oracles",
         },
         {
           type: "doc",
