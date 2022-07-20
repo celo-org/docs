@@ -3,7 +3,6 @@ title: C# mobile App to display Celo NFTs
 description: How to create mobile apps with c# and interact with celo network.
 authors:
   - name: ✍️ Lucas Espinosa
-  - url: [https://github.com/lucasespinosa28/DisplayNFTCelo](https://github.com/lucasespinosa28/DisplayNFTCelo)
 tags: [c#, mobile,android, nft]
 hide_table_of_contents: false
 ---
@@ -11,6 +10,7 @@ hide_table_of_contents: false
 # C# mobile App to display Celo NFTs
 The idea with this tutorial is not build complex app is show new possibilities to use Celo and other EVM (Ethereum virtual machine) with languages other than JavaScript in this case C#, You will learning how build an android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.
 
+### [Source code](https://github.com/lucasespinosa28/DisplayNFTCelo)
 ## Prerequisites
  - [Visual Studio 2022, with the Mobile development with .NET workload installed](https://visualstudio.microsoft.com/)
  - [Knowledge of C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
