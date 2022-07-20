@@ -78,7 +78,7 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 **[Zeroswap](https://exchange.zeroswap.io)** - Zeroswap is a multi-chain compatible decentralized exchange aggregator protocol focused on making zero-fee transactions possible.
 
 - [GitHub](https://github.com/ZeroSwapLabs/zerodex)
-- [Contracts](https://docs.google.com/spreadsheets/d/1fzjJ5H6eD9cWLVGfbmlKn4KYmQ6RoXLmGjctT1T2cp8/edit#gid=1123835792)
+- [Contracts](https://docs.google.com/spreadsheets/d/1fzjJ5H6eD9cWLVGfbmlKn4KYmQ6RoXLmGjctT1T2cp8/edit#gid=1123835792) 
 
 ## **🏦 Lending Markets**
 
