@@ -258,3 +258,10 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
+
+## ZEROSWAP
+
+Zeroswap is a multi-chain compatible decentralized exchange aggregator protocol focused on making zero-fee transactions possible
+
+- [Website](https://exchange.zeroswap.io/)
+- [GitHub](https://github.com/ZeroSwapLabs/zerodex)
