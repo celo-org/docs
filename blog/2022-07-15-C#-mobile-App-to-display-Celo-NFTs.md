@@ -3,7 +3,7 @@ title: C# mobile App to display Celo NFTs
 description: How to create mobile apps with c# and interact with celo network.
 authors:
   - name: ✍️ Lucas Espinosa
-  - url: [https://github.com/critesjosh](https://github.com/lucasespinosa28/DisplayNFTCelo)
+  - url: [https://github.com/lucasespinosa28/DisplayNFTCelo](https://github.com/lucasespinosa28/DisplayNFTCelo)
 tags: [c#, mobile,android, nft]
 hide_table_of_contents: false
 ---
