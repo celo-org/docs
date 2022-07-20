@@ -75,6 +75,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 - [GitHub](https://github.com/centfinance)
 - [Contracts](https://docs.google.com/spreadsheets/d/12HS-AMMYqvqqxb9qL9LJsG2X9EQkR3gxH5J0GB3DM0I/edit#gid=324163664)
 
+**[Zeroswap](https://exchange.zeroswap.io)** - Zeroswap is a multi-chain compatible decentralized exchange aggregator protocol focused on making zero-fee transactions possible.
+
+- [GitHub](https://github.com/ZeroSwapLabs/zerodex)
+- [Contracts](https://docs.google.com/spreadsheets/d/1fzjJ5H6eD9cWLVGfbmlKn4KYmQ6RoXLmGjctT1T2cp8/edit#gid=1123835792)
+
 ## **🏦 Lending Markets**
 
 **[Moola](https://moola.market/)**- a money market that allows users to lend cUSD, cEUR, and CELO to borrowers in return for a premium for forgoing their liquidity. Moola deposits receive mTokens which are currency denominated and accrue interest similar to dividend payments–they are essentially interest-bearing stablecoins.
