@@ -32,7 +32,8 @@ After create the app, go in “DisplayNFTCelo” and find the file MainPage.xaml
 [XAML](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-6.0) is a declarative markup language. As applied to the .NET Core programming model, XAML simplifies creating a UI for a .NET Core app, it's similar to HTML about without CSS, [Link if you want learning more about Xaml](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/xaml/?view=netdesktop-6.0).
 
 ### Writing the Xaml code
-Delete the default code inside <StackLayout> </StackLayout> and add a new code with the app title.
+Delete the default code inside &lt;StackLayout> &lt;/tackLayout> and add a new code with the app title.
+
 ```xaml 
 <StackLayout>
     <Frame BackgroundColor="Lime" Padding="8" CornerRadius="0">
@@ -40,12 +41,15 @@ Delete the default code inside <StackLayout> </StackLayout> and add a new code w
     </Frame>
 </StackLayout>
 ```
-After ```</Frame>``` add the code with text input to get the address of the NFT contract, <Editor> is an input text that lets you write in it, I choose the address of [CeloToadz](https://tofunft.com/collection/celotoads/items) because his images load faster.
+
+After &lt;/Frame> add the code with text input to get the address of the NFT contract, &lt;Editor> is an input text that lets you write in it, I choose the address of [CeloToadz](https://tofunft.com/collection/celotoads/items) because his images load faster.
+
 ```xaml 
 <Label Text="NFT contract address" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
 <Editor x:Name="Address" Margin="20,0" Text="0x6Fc1C8d59FdC261c55273f9b8e64B7E88C45E208" FontAttributes="Bold" FontSize="Medium"/>
 ```
-After ```<Editor>``` add the code to create an entry that will receive the NFT id and a button to call the contract and get the NFT metadata.
+After &lt;Editor> add the code to create an entry that will receive the NFT id and a button to call the contract and get the NFT metadata.
+
 ```xaml 
 <Label Text="NFT contract address" Margin="0,20,0,0" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
 <Editor x:Name="Address" Margin="20,0" Text="0x6Fc1C8d59FdC261c55273f9b8e64B7E88C45E208" FontAttributes="Bold" FontSize="Medium"/>
