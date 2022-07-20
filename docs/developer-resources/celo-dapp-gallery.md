@@ -264,4 +264,4 @@ Non-custodial multichain NFT marketplace, connected to Celo
 Zeroswap is a multi-chain compatible decentralized exchange aggregator protocol focused on making zero-fee transactions possible
 
 - [Website](https://exchange.zeroswap.io/)
-- [GitHub](https://github.com/ZeroSwapLabs/zerodex)
+- [GitHub](https://github.com/ZeroSwapLabs/zerodex) 
