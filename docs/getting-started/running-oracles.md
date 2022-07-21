@@ -73,37 +73,74 @@ WARNING: it is encouraged that before running the oracles in production, they sh
 
 The configuration currently run by cLabs in production can be found [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle) for each stable token. It is strongly advised not to modify the recommended values, specially the exchange sources, at least there is good data to support it.
 
-The only variable that is not set in the env file is the `PRICE_SOURCES`
+The only variable that is not set in the env file is `PRICE_SOURCES`. This sets what exchanges and prices shall be used to report. It is recommended to store this in a file called `price_sources` and the export to the env variable with `cat`.
 
-`export PRICE_SOURCES=$(cat PRICE_SOURCES)`
+`export PRICE_SOURCES=$(cat price_sources)`
+
+An example of such file for CELO/USD is:
+
+```
+[
+  [{ exchange: 'BITTREX', symbol: 'CELOUSD', toInvert: false }],
+  [{ exchange: 'COINBASE', symbol: 'CELOUSD', toInvert: false }],
+  [{ exchange: 'OKCOIN', symbol: 'CELOUSD', toInvert: false }],
+  [
+    { exchange: 'BINANCE', symbol: 'CELOBUSD', toInvert: false },
+    { exchange: 'COINBASE', symbol: 'BUSDUSD', toInvert: false },
+  ],
+]
+```
+
+:::tip
+
+Note that this example configuration is using three direct pairs, and the last one is an implicit pair calculated using two exchanges. This is useful in the case two extra liquidity is required to calculate the price.
+
+:::
+
+#### Existing exchange connectos
+Available connectors are: 
+* Binance
+* Bitso
+* Bittrex
+* Coinbase
+* Coinbase
+* Novadax
+* OkCoin
+
+(in alphabetical order)
 
 ## Running the node
 
 Once all the enviroment variables are set in the vm, an oracle can be started with:
 
 
-`docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc1`
+`docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc2`
 
 If your oracle it's not yet enabled by governance, you'll see these messages in the terminal:
 
-`Account 0x... is not whitelisted as an oracle for YOUR_PAIR`
+`Account 0x... is not whitelisted as an oracle for CURRENCY_PAIR`
 
-As soon as governance enables it the node should start reporting automatically.
+As soon as governance enables it, the node should start reporting automatically.
+
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit it on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](/celo-codebase/protocol/governance). Before submiting 
+The last step to run an oracle is to enable their addresses on-chain. Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](/celo-codebase/protocol/governance).
 
 ## Using kubernets
 
-Reference [Helm Charts](https://helm.sh/docs/topics/charts/) used by cLabs can be found in the [celo-monorepo repository](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle).
+Reference [Helm Charts](https://helm.sh/docs/topics/charts/) configuration used by cLabs can be found in the [celo-monorepo repository](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle).
 
 ## Metrics
 
-Available metrics and their configuration can be found in the [technical documentation](https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md)
+The oracle client supports metrics suitable for Prometheus. Available metrics and their configuration can be found in the [technical documentation](https://github.com/celo-org/celo-oracle/blob/main/README-metrics.md).
 
 ## Monitoring
 
-There are two public dashboards deployed where the community can watch how individual oracle is performing:
+There are two public dashboards deployed where the community can watch how individual oracle is performing on mainnet:
 
 1. [One with high sampling but short timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-2d?orgId=2)
 2. [One with low sampling but longer timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-1M?orgId=2)
+
+## Building from source
+
+Instructions can be found in the [development documentation](https://github.com/celo-org/celo-oracle#running).
