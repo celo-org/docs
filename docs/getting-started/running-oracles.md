@@ -7,7 +7,7 @@ Oracles are a fundamental piece for Mento, the stability protocol behind Celo st
 
 # Getting started
 
-Oracles work by running a client that fetches the price from the centralized exchanges (CEX) and push them on chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](TODO LINK).
+Oracles work by running a client that fetches the price from the centralized exchanges (CEX) and push them on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](https://docs.celo.org/community/release-process/smart-contracts).
 
 An implementation of such client is written in TypeScript [here](https://github.com/celo-org/celo-oracle) and would be used for this guide. Releases for this client can be found [here](https://github.com/celo-org/celo-oracle/releases).
 
