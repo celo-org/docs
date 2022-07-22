@@ -5,7 +5,7 @@ description: Details of the release process for updating the Celo Oracles for th
 
 # Celo Oracles Release Process
 
-Details of the release process for updating the Celo Oracles for the Mento Stability Protocol
+Details of the release process for updating the Celo Oracles Client for the Mento Stability Protocol.
 
 
 # Versioning
@@ -22,7 +22,7 @@ Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/d
 
 ### Git branches
 
-Development is done on the `main` branch, which corresponds to the next major or minor version. Changes to be included in a patch release of an existing minor version are cherry-picked to that existing release branch.
+Code for the client is stored in the [Celo Oracles GitHub repository](https://github.com/celo-org/celo-oracle). Development is done on the `main` branch, which corresponds to the next major or minor version.
 
 ### Git tags
 
@@ -45,6 +45,8 @@ Docker images are stored in the repository ` us-west1-docker.pkg.dev/celo-testne
 As well as automated CI tests, all releases are expected to go through manual testing as needed to verify security properties, accuracy of documentation, and compatibility with current node operators production set up.
 
 ## Promotion process
+
+Cherry picked branch changes shall be added to a `releases` protected branch. When merging code to this branch, the version number should be updated accordinly. 
 
 ### Source control
 
