@@ -18,7 +18,7 @@ A [reference implementation](https://github.com/celo-org/celo-oracle) of such cl
 
 It is not strictly required but it is recommended to have the [Celo CLI](/command-line-interface/introduction#what-is-the-celo-cli) avaiable at least in your local enviroment, and ideally in each VM. It could be specially useful to respond to on-call.
 
-## Setting up the enviromnet
+## Setting up the environment
 
 Find the latest stable Docker Image for the oracle in the oracle releases [here](https://github.com/celo-org/celo-oracle/releases).
 
