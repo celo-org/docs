@@ -14,12 +14,12 @@ The Escrow smart contract ([Escrow.sol](https://github.com/celo-org/celo-monorep
 
 The contract provides two options for claiming an escrowed payment:
 
-1. using the recipient's phone number as proof of identity[^1], and
+1. using the recipient's phone number[^1] as proof of identity, and
 2. using a secret private key as proof of identity.
 
 The payments are stored in the contract and can be withdrawn by the recipient or the sender (more in this below).
 
-[^1]: Here we focus on phone numbers for simplicity, but for completeness, any proof of identity can be used and escrow payments can be keyed any generic `identifier` can be used. So for example, an escrow payment could be mapped to 
+[^1]: In this example we focus on phone numbers for simplicity, but for completeness, escrow payments can be keyed by any generic `identifier`.
 
 ## Payment flows
 
@@ -31,8 +31,9 @@ For ease of reference, here is some terminology for the following page:
 - with the associated `public address` they are altogether referred to as an "account"
 - a temporary `private key` and `public key` are referred to as "temporary keys", and
 - the associated temporary `public address` is referred to as a "`paymentId`"
-- the keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\)
 - a proof of ownership over a phone number is referred to as an "attestation"
+
+The keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\).
 
 ### Option 1: Private key-based proof of identity
 
