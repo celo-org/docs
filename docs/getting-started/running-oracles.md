@@ -60,7 +60,7 @@ The output field of `privateKey` should be stored to a file and its path should 
 
 ### Setting up your keys in the node
 
-In the instructions to generate an account and store it the node can be found [here](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#create-an-account-and-get-its-address).
+Instructions to generate an account and store it in the node can be found [here](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#create-an-account-and-get-its-address).
 
 ### Recommended configuration
 
