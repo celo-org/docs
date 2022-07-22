@@ -17,7 +17,7 @@ The contract provides two options for claiming an escrowed payment:
 1. using the recipient's phone number[^1] as proof of identity, and
 2. using a secret private key as proof of identity.
 
-The payments are stored in the contract and can be withdrawn by the recipient or the sender (more in this below).
+The payments are stored in the contract and can be withdrawn by the recipient or the sender (more on this below).
 
 [^1]: In this example we focus on phone numbers for simplicity, but for completeness, escrow payments can be keyed by any generic `identifier`.
 
