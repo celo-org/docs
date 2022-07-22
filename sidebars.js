@@ -844,6 +844,11 @@ const sidebars = {
               label: "Attestation Service",
               id: "community/release-process/attestation-service",
             },
+            {
+              type: "doc",
+              label: "Celo Oracles",
+              id: "community/release-process/oracles.md",
+            },
           ],
         },
       ],
