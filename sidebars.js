@@ -847,7 +847,7 @@ const sidebars = {
             {
               type: "doc",
               label: "Celo Oracles",
-              id: "community/release-process/celo-oracles.md",
+              id: "community/release-process/celo-oracles",
             },
           ],
         },
