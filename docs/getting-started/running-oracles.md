@@ -1,7 +1,9 @@
 ---
-title: Running oracles
+title: Running Oracles
 description: How to run an oracle for Mento, the stability protocol.
 ---
+
+# Running oracles
 
 Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their propose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL. You can read the [Celo Oracle documentation](celo-codebase/protocol/stability/oracles) to get an overview of how they work.
 
