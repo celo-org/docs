@@ -35,54 +35,9 @@ For ease of reference, here is some terminology for the following page:
 
 The keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\).
 
-### Option 1: Private key-based proof of identity
+### Option 1: Phone number-based proof of identity
 
-Scenario:
-
-- Alice wants to pay Bob, but Bob doesn't have an account yet.
-- The escrow payment is facilitated by secretly sharing a private key
-
-[![Flow diagram for private key-based payment and proof of identity](https://mermaid.ink/img/pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)](https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)
-
-<!-- 
-Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
-
-Mermaid diagram: https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw
--->
-
-You can **randomly** generate the `paymentId` (public address), `private key` and `public key` by:
-
-1. calling [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
-
-    ```ts
-    function generateKeys(
-        mnemonic: string,
-        password?: string,
-        changeIndex: number = 0,
-        addressIndex: number = 0,
-        bip39ToUse: Bip39 = bip39Wrapper,
-        derivationPath: string = CELO_DERIVATION_PATH_BASE
-    ): Promise<{ privateKey: string; publicKey: string; address: string }> {
-        const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
-        return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
-    }
-    ```
-
-2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
-
-    ```ts
-    const publicKeyToAddress = (publicKey: string) =>
-        toChecksumAddress(
-            ensureLeading0x(pubToAddress(toBuffer(ensureLeading0x(publicKey)), true).toString('hex'))
-        )
-    ```
-
-### Option 2: Phone number-based proof of identity
-
-Scenario:
-
-- Alice wants pay to Bob, but Bob doesn't have an account yet.
-- The payment is facilitated by using Bob's phone number
+Scenario: The payment is facilitated using Bob's phone number[^1]
 
 [![Flow diagram for phone number-based payment and proof of identity](https://mermaid.ink/img/pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilNoRRCoT0agmzNrkVsSZXkXUzIsbc-QvtyeZKOLNvr9W7akPpg9PNp5puZb6SHKFccoySy-L1GmeMHwdaGVakE-ljulIHrUuQYFjQzTuRCM-mA-eU7lueq9jML12F4iNSsqVC6T9yjvmGllWGmgc_YHGJzJZ0hvx56Y3OjtgurykNcprI7XSiJHvheZScWvrTT27rK0Bw_8BzZECdZSWW3UDslR4baFMDp6dWVRyWwJYvWxwVO-ZUYstr5AXCFVp44KNiGqEnoXTbY-TJIwZl1Njs_u4jhfLmk39nFfM8PudnLbkLmLDz9-hFQt8ohqA2aKUobsWG0d49NDLrOaHdvzDg3aO3U15DLBO6l2h71NMK8ubiEt--WnvYSFotFgKLk0wC72MYB-hT1LveCkwqefv885vV10Q10dmEOMkyAo0NTCSks6YOVZQNrlGjIuoVZbYVcQxBXEMF8ymtk6oWsYDacmXuVdTrb6yFPstd_AhW7R9t7-mvh490hH4xnT1NpV2hmcxBy1EgkSQ5WYy5WjccZanth0LvwUtaGrIPaUi5sIXQX7CgTPfFdkc99fbvfpMj_nfC2iC9omzYvJa4cqFVoUE8hN9jaH3XhLI2sWEuodRr9S5HPNMHr5Dj20rVRm2s7SXZA7y63A2YV03ZKy19AI8NU8GtHgTvmhJK2LTtdbx-Rtwnn082DXPdkR7IqmagGMUIo2N5NPtSTLvmMWB3jeCjTrXAFN2w7lWk4PbwFB1kgNaDY7NrDtkF3RaYUaaKxMqqaaHefUm8-npR-06rRV0dOW8EVeMTk8TcizDUTvE2okNRfhaCbDrck_yBO3isziqOKGoTA9BY_eINpRM4qTKOEhhxXrC5dGsVhq0CxLlzY829VGqXykWzUmpPVGy7oPYuSFSstxi3gayPzKHGmxh7UPfQd6vEPwz-9JA)](https://mermaid.live/edit#pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilNoRRCoT0agmzNrkVsSZXkXUzIsbc-QvtyeZKOLNvr9W7akPpg9PNp5puZb6SHKFccoySy-L1GmeMHwdaGVakE-ljulIHrUuQYFjQzTuRCM-mA-eU7lueq9jML12F4iNSsqVC6T9yjvmGllWGmgc_YHGJzJZ0hvx56Y3OjtgurykNcprI7XSiJHvheZScWvrTT27rK0Bw_8BzZECdZSWW3UDslR4baFMDp6dWVRyWwJYvWxwVO-ZUYstr5AXCFVp44KNiGqEnoXTbY-TJIwZl1Njs_u4jhfLmk39nFfM8PudnLbkLmLDz9-hFQt8ohqA2aKUobsWG0d49NDLrOaHdvzDg3aO3U15DLBO6l2h71NMK8ubiEt--WnvYSFotFgKLk0wC72MYB-hT1LveCkwqefv885vV10Q10dmEOMkyAo0NTCSks6YOVZQNrlGjIuoVZbYVcQxBXEMF8ymtk6oWsYDacmXuVdTrb6yFPstd_AhW7R9t7-mvh490hH4xnT1NpV2hmcxBy1EgkSQ5WYy5WjccZanth0LvwUtaGrIPaUi5sIXQX7CgTPfFdkc99fbvfpMj_nfC2iC9omzYvJa4cqFVoUE8hN9jaH3XhLI2sWEuodRr9S5HPNMHr5Dj20rVRm2s7SXZA7y63A2YV03ZKy19AI8NU8GtHgTvmhJK2LTtdbx-Rtwnn082DXPdkR7IqmagGMUIo2N5NPtSTLvmMWB3jeCjTrXAFN2w7lWk4PbwFB1kgNaDY7NrDtkF3RaYUaaKxMqqaaHefUm8-npR-06rRV0dOW8EVeMTk8TcizDUTvE2okNRfhaCbDrck_yBO3isziqOKGoTA9BY_eINpRM4qTKOEhhxXrC5dGsVhq0CxLlzY829VGqXykWzUmpPVGy7oPYuSFSstxi3gayPzKHGmxh7UPfQd6vEPwz-9JA)
 
@@ -123,6 +78,48 @@ You can find Valora's implementation of the phone number-based escrow payment in
 <!-- Arthur todo: add link to attestation overview -->
 
 <!-- Here are also some links to learn more about attestations, phone number mappings and phone number peppers from ODIS. -->
+
+### Option 2: Private key-based proof of identity
+
+Scenario:
+
+- Alice wants to pay Bob, but Bob doesn't have an account yet.
+- The escrow payment is facilitated by secretly sharing a private key
+
+[![Flow diagram for private key-based payment and proof of identity](https://mermaid.ink/img/pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)](https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)
+
+<!-- 
+Interim fix for a known bug that adds whitespace to large diagrams: https://github.com/celo-org/docs/pull/331#issuecomment-1155590026
+
+Mermaid diagram: https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw
+-->
+
+You can **randomly** generate the `paymentId` (public address), `private key` and `public key` by:
+
+1. calling [`generateKeys()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L400) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts)
+
+    ```ts
+    function generateKeys(
+        mnemonic: string,
+        password?: string,
+        changeIndex: number = 0,
+        addressIndex: number = 0,
+        bip39ToUse: Bip39 = bip39Wrapper,
+        derivationPath: string = CELO_DERIVATION_PATH_BASE
+    ): Promise<{ privateKey: string; publicKey: string; address: string }> {
+        const seed: Buffer = await generateSeed(mnemonic, password, bip39ToUse)
+        return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
+    }
+    ```
+
+2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+    ```ts
+    const publicKeyToAddress = (publicKey: string) =>
+        toChecksumAddress(
+            ensureLeading0x(pubToAddress(toBuffer(ensureLeading0x(publicKey)), true).toString('hex'))
+        )
+    ```
 
 ### Comparison
 
