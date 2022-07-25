@@ -32,8 +32,11 @@ For ease of reference, here is some terminology for the following page:
 - a temporary `private key` and `public key` are referred to as "temporary keys", and
 - the associated temporary `public address` is referred to as a "`paymentId`"
 - a proof of ownership over a phone number is referred to as an "attestation"
+- an `identifier` is the _obfuscated_ representation of a plain text phone number[^2]
 
 The keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\).
+
+[^2]: In this example we focus on phone numbers for simplicity, but for completeness, an `identifier` is simply the obfuscated representation of any generic string. An `identifier` is a 64 character hex string, e.g. `75501186bd735f926f35767a94be1ad9a7af5afe894763769ece9fa67cae6917`.
 
 ### Option 1: Phone number-based proof of identity
 
