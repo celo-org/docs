@@ -857,6 +857,14 @@ const Users: User[] = [
     tags: ['apps','earn'],
   },
   {
+    title: 'Infibridge',
+    description: 'Infibridge is a Metamask-like browser extension wallet for Celo. It will support payment of gas fees in Celo or stable currencies like cUSD or cEUR. It has deep integration with Celo to allow staking, voting, and token swaps.',
+    preview: require('./showcase/infibridge.png'),
+    website: 'https://www.infibridge.com/',
+    source: 'https://www.infibridge.com/',
+    tags: ['apps','earn'],
+  },
+  {
     title: 'Coinbase',
     description: 'Simply and securely buy, sell, and manage hundreds of cryptocurrencies.',
     preview: require('./showcase/coin-base.png'),
