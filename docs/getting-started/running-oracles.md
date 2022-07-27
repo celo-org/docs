@@ -105,7 +105,6 @@ Available connectors are, in alphabetical order:
 * Bitso
 * Bittrex
 * Coinbase
-* Coinbase
 * Novadax
 * OkCoin
 
