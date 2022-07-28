@@ -16,10 +16,10 @@ module.exports = {
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-  //  i18n: {
-  //    defaultLocale: "en",
-  //    locales: ["en", "es"],
-  //  },
+   i18n: {
+     defaultLocale: "en",
+     locales: ["en", "es"],
+   },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [
     {
@@ -364,16 +364,16 @@ module.exports = {
         //     },
         //   ],
         // },
-        // {
-        //   type: "localeDropdown",
-        //   position: "right",
-        //   dropdownItemsAfter: [
-        //     {
-        //       to: "https://celo.crowdin.com/",
-        //       label: "Help us translate",
-        //     },
-        //   ],
-        // },
+        {
+          type: "localeDropdown",
+          position: "right",
+          dropdownItemsAfter: [
+            {
+              to: "https://celo.crowdin.com/",
+              label: "Help us translate",
+            },
+          ],
+        },
         {
           type: "dropdown",
           position: "right",

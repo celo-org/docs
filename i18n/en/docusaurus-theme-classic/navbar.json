@@ -18,5 +18,81 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.Developers": {
+    "message": "Developers",
+    "description": "Navbar item with label Developers"
+  },
+  "item.label.Validators": {
+    "message": "Validators",
+    "description": "Navbar item with label Validators"
+  },
+  "item.label.Integrations": {
+    "message": "Integrations",
+    "description": "Navbar item with label Integrations"
+  },
+  "item.label.Showcase": {
+    "message": "Showcase",
+    "description": "Navbar item with label Showcase"
+  },
+  "item.label.Tutorials": {
+    "message": "Tutorials",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Support": {
+    "message": "Support",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.APIs & SDKs": {
+    "message": "APIs & SDKs",
+    "description": "Navbar item with label APIs & SDKs"
+  },
+  "item.label.View the Forum": {
+    "message": "View the Forum",
+    "description": "Navbar item with label View the Forum"
+  },
+  "item.label.Create an Issue": {
+    "message": "Create an Issue",
+    "description": "Navbar item with label Create an Issue"
+  },
+  "item.label.CLI": {
+    "message": "CLI",
+    "description": "Navbar item with label CLI"
+  },
+  "item.label.SDK": {
+    "message": "SDK",
+    "description": "Navbar item with label SDK"
+  },
+  "item.label.iOS": {
+    "message": "iOS",
+    "description": "Navbar item with label iOS"
+  },
+  "item.label.Java": {
+    "message": "Java",
+    "description": "Navbar item with label Java"
+  },
+  "item.label.React": {
+    "message": "React",
+    "description": "Navbar item with label React"
+  },
+  "item.label.Flutter": {
+    "message": "Flutter",
+    "description": "Navbar item with label Flutter"
+  },
+  "item.label.Python": {
+    "message": "Python",
+    "description": "Navbar item with label Python"
+  },
+  "item.label.JavaScript": {
+    "message": "JavaScript",
+    "description": "Navbar item with label JavaScript"
+  },
+  "item.label.React Native": {
+    "message": "React Native",
+    "description": "Navbar item with label React Native"
+  },
+  "item.label.Celo Composer": {
+    "message": "Celo Composer",
+    "description": "Navbar item with label Celo Composer"
   }
 }
