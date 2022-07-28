@@ -1,7 +1,6 @@
-# project_id: '478619'
+project_id: ""
 preserve_hierarchy: true
-# api_token_env: "CROWDIN_PERSONAL_TOKEN"
-# api_token_env: "ENT_CROWDIN_PERSONAL_TOKEN"
+api_token: ""
 base_url: "https://celo.crowdin.com"
 files: [
     # JSON translation files
