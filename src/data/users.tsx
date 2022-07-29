@@ -824,6 +824,14 @@ const Users: User[] = [
     source: 'https://github.com/celo-tools/mento-fi',
     tags: ['apps','defi', 'popular'],
   },
+   {
+    title: 'Mybitstore',
+    description: 'The best cryptocurrency platform to buy, sell, store and convert cryptocurrencies and also trade peer-to-peer with over 200 payment methods.',
+    preview: require('./showcase/mybitstore.png'),
+    website: 'https://www.mybitstore.com',
+    source: 'https://www.mybitstore.com',
+    tags: ['apps','earn','wallets'],
+  },
   {
     title: 'Flywallet',
     description: 'The only all-in-one budgeting platform designed just for travelers. Get custom savings plans, destination insights, cheap flights and more.',
