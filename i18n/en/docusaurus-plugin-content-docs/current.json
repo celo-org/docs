@@ -3,6 +3,10 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.docs.category.General": {
+    "message": " General",
+    "description": "The label for category General in sidebar docs"
+  },
   "sidebar.docs.category. Overview": {
     "message": " Overview",
     "description": "The label for category  Overview in sidebar docs"
@@ -742,5 +746,17 @@
   "sidebar.cli.doc.ValidatorGroup": {
     "message": "ValidatorGroup",
     "description": "The label for the doc item ValidatorGroup in sidebar cli, linking to the doc command-line-interface/validatorgroup"
+  },
+  "sidebar.docs.category. General": {
+    "message": " General",
+    "description": "The label for category  General in sidebar docs"
+  },
+  "sidebar.docs.doc.Welcome": {
+    "message": "Welcome",
+    "description": "The label for the doc item Welcome in sidebar docs, linking to the doc welcome"
+  },
+  "sidebar.docs.doc.Celo": {
+    "message": "Celo",
+    "description": "The label for the doc item Celo in sidebar docs, linking to the doc general/what-is"
   }
 }

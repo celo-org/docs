@@ -1,5 +1,5 @@
 ---
-id: what-is
+id: celo
 title: What is Celo?
 description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 ---

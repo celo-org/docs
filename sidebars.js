@@ -5,7 +5,7 @@ const sidebars = {
       type: "category",
       label: " General",
       items: [
-        { type: "doc", label: "What is?", id: "general/what-is" },
+        { type: "doc", label: "Celo", id: "general/celo" },
         { type: "doc", label: "Architecture", id: "general/architecture" },
         { type: "doc", label: "Whitepapers", id: "general/whitepapers" },
         { type: "doc", label: "Glossary", id: "general/glossary" },
