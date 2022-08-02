@@ -303,17 +303,17 @@ module.exports = {
         //     "position": "left"
         // },
         {
-          to: "developer-guide/overview",
+          to: "developer/",
           label: "Developers",
           position: "left",
         },
         {
-          to: "validator-guide/overview",
+          to: "validator/",
           label: "Validators",
           position: "left",
         },
         {
-          to: "developer-guide/integrations",
+          to: "integration/",
           label: "Integrations",
           position: "left",
         },
@@ -394,7 +394,7 @@ module.exports = {
           position: "right",
           label: "APIs & SDKs",
           items: [
-            { to: "command-line-interface/introduction", label: "CLI" },
+            { to: "cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "SDK",

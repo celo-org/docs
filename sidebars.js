@@ -1,6 +1,7 @@
 const sidebars = {
   docs: [
     { type: "doc", label: "Welcome", id: "welcome" },
+    // General
     {
       type: "category",
       label: "General",
@@ -13,16 +14,110 @@ const sidebars = {
         { type: "doc", label: "FAQs", id: "general/faqs" },
       ],
     },
+    // Wallets
     {
       type: "category",
-      label: "Wallet",
+      label: "Wallets",
       items: [
-        { type: "doc", label: "Celo", id: "general/celo" },
-        { type: "doc", label: "Architecture", id: "general/architecture" },
-        { type: "doc", label: "Whitepapers", id: "general/whitepapers" },
-        { type: "doc", label: "Glossary", id: "general/glossary" },
-        { type: "doc", label: "Gallery", id: "general/gallery" },
-        { type: "doc", label: "FAQs", id: "general/faqs" },
+        {
+          type: "link",
+          label: "Valora",
+          href:
+            "https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89",
+        },
+        {
+          type: "category",
+          label: "MetaMask",
+          items: [
+            {
+              type: "link",
+              label: "MetaMask Setup",
+              href:
+                "https://medium.com/celodevelopers/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587",
+            },
+            {
+              type: "doc",
+              label: "Programmatic Setup",
+              id:
+                "wallet/metamask/setup",
+            },
+            {
+              type: "doc",
+              label: "MetaMask and Valora",
+              id:
+                "wallet/metamask/import",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Celo Wallet",
+          items: [
+            { type: "link", label: "Celo Wallet Setup", href: "https://celowallet.app/" },
+            { type: "doc", label: "Functionality", id: "wallet/celo-wallet/functionality" },
+            { type: "doc", label: "Verification", id: "wallet/celo-wallet/verification" },
+            { type: "doc", label: "Invitation", id: "wallet/celo-wallet/invitation" },
+            { type: "doc", label: "Node Sync", id: "wallet/celo-wallet/ultralight-node-sync" }
+          ],
+        },
+        {
+          type: "category",
+          label: "Mobile Wallet",
+          items: [
+            {
+              type: "doc",
+              label: "Mobile Wallet Setup",
+              id: "getting-started/alfajores-testnet/using-the-mobile-wallet",
+            },
+            {
+              type: "doc",
+              label: "Running the Wallet Locally",
+              id: "celo-codebase/wallet/intro",
+            },
+            {
+              type: "doc",
+              label: "Testnet Faucet",
+              id: "getting-started/alfajores-testnet/faucet",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Ledger Wallet",
+          items: [
+            {
+              type: "doc",
+              label: "Ledger Wallet Setup",
+              id: "celo-holder-guide/ledger",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Terminal",
+              id: "celo-holder-guide/connecting-ledger-celo-terminal-wallet",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Web Wallet",
+              id: "celo-holder-guide/connecting-ledger-celo-web-wallet",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo CLI",
+              id: "celo-holder-guide/connecting-ledger-celocli",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Digital Wallets",
+          id: "getting-started/wallets/index",
+        },
+        {
+          type: "link",
+          label: "Staking",
+          href:
+            "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
+        },
       ],
     },
     // Networks
@@ -348,7 +443,6 @@ const sidebars = {
         },
       ],
     },
-
     // Protocol
     {
       type: "category",
@@ -574,52 +668,23 @@ const sidebars = {
       type: "category",
       label: "Bridges",
       items: [
-        {
-          type: "doc",
-          label: "Celo Bridges",
-          id: "celo-codebase/protocol/bridging/bridging-to-celo",
-        },
+        { type: "doc", label: "Overview", id: "bridge/index" },
         {
           type: "category",
           label: "Etherscan",
           items: [
-            {
-              type: "doc",
-              label: "Native Assets with Etherscan",
-              id: "celo-codebase/protocol/bridging/bridging-native-assets",
-            },
-            {
-              type: "doc",
-              label: "Tokens with Etherscan",
-              id:
-                "celo-codebase/protocol/bridging/bridging-tokens-with-etherscan",
-            },
+            { type: "doc", label: "Native Assets with Etherscan", id: "bridge/etherscan/native-assets" },
+            { type: "doc", label: "Tokens with Etherscan", id: "bridge/etherscan/tokens" },
           ],
         },
         {
           type: "category",
           label: "Optics",
           items: [
-            {
-              type: "doc",
-              label: "Optics Bridge GUI",
-              id: "celo-codebase/protocol/bridging/optics-gui",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge",
-              id: "celo-codebase/protocol/optics",
-            },
-            {
-              type: "doc",
-              label: "Migrating to Optics v2",
-              id: "celo-codebase/protocol/bridging/migrating-to-optics-v2",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge FAQ",
-              id: "celo-codebase/protocol/bridging/optics-bridge-faq",
-            },
+            { type: "doc", label: "Overview", id: "bridge/optics/index" },
+            { type: "doc", label: "Optics Bridge GUI", id: "bridge/optics/gui" },
+            { type: "doc", label: "Migrating to Optics v2", id: "bridge/optics/migration-v2" },
+            { type: "doc", label: "Optics Bridge FAQ", id: "bridge/optics/faq" },
           ],
         },
         {
@@ -639,21 +704,12 @@ const sidebars = {
       type: "category",
       label: "Oracles",
       items: [
-        {
-          type: "doc",
-          label: "Celo Oracles",
-          id: "celo-codebase/protocol/oracles/oracles-on-celo",
-        },
-        {
-          type: "doc",
-          id: "celo-codebase/protocol/oracles/band-protocol-how-to",
-        },
-        {
-          type: "doc",
-          id: "celo-codebase/protocol/oracles/redstone-protocol-how-to",
-        },
+        { type: "doc", label: "Overview", id: "oracle/index" },
+        { type: "doc", id: "oracle/band-protocol" },
+        { type: "doc", id: "oracle/redstone" },
       ],
     },
+    // Addresses
     {
       type: "category",
       label: "Addresses",
@@ -672,32 +728,6 @@ const sidebars = {
           label: "Contributors",
           id: "community/guidelines",
         },
-        // { type: "doc", label: "Contributors", id: "community/contributing" },
-        // {
-        //   type: "doc",
-        //   label: "Developer Events",
-        //   id: "community/developer-events",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "Code",
-        //   id: "community/code-contributors",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "Translations",
-        //   id: "community/translation-contributors",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "Docs",
-        //   id: "community/documentation-contributors",
-        // },
-        // {
-        //   type: "doc",
-        //   label: "CIPs",
-        //   id: "community/CIP-contributors",
-        // },
         {
           type: "doc",
           label: "Fundraising",
@@ -724,36 +754,6 @@ const sidebars = {
           href:
             "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
         },
-        // {
-        //   type: "category",
-        //   label: "Resources",
-        //   items: [
-        //     {
-        //       type: "category",
-        //       label: "Quick Guides",
-        //       items: [
-        //         { type: "doc", label: "Celo", id: "learn/celo-summary" },
-        //         {
-        //           type: "doc",
-        //           label: "Celo Protocol",
-        //           id: "learn/celo-protocol-summary",
-        //         },
-        //         { type: "doc", label: "Valora", id: "learn/valora-summary" },
-        //         { type: "doc", label: "CELO", id: "learn/CELO-coin-summary" },
-        //         {
-        //           type: "doc",
-        //           label: "Celo Stablecoins",
-        //           id: "learn/platform-native-stablecoins-summary",
-        //         },
-        //       ],
-        //     },
-        //     {
-        //       type: "doc",
-        //       label: "Celo Resources",
-        //       id: "learn/celo-resources",
-        //     },
-        //   ],
-        // },
       ],
     },
   ],
@@ -766,49 +766,49 @@ const sidebars = {
     {
       type: "doc",
       label: "Introduction",
-      id: "command-line-interface/introduction",
+      id: "cli/index",
     },
-    { type: "doc", label: "Account", id: "command-line-interface/account" },
-    { type: "doc", label: "Commands", id: "command-line-interface/commands" },
-    { type: "doc", label: "Config", id: "command-line-interface/config" },
-    { type: "doc", label: "DKG", id: "command-line-interface/dkg" },
-    { type: "doc", label: "Election", id: "command-line-interface/election" },
-    { type: "doc", label: "Exchange", id: "command-line-interface/exchange" },
+    { type: "doc", label: "Account", id: "cli/account" },
+    { type: "doc", label: "Commands", id: "cli/commands" },
+    { type: "doc", label: "Config", id: "cli/config" },
+    { type: "doc", label: "DKG", id: "cli/dkg" },
+    { type: "doc", label: "Election", id: "cli/election" },
+    { type: "doc", label: "Exchange", id: "cli/exchange" },
     {
       type: "doc",
       label: "Governance",
-      id: "command-line-interface/governance",
+      id: "cli/governance",
     },
     {
       type: "doc",
       label: "Grandamento",
-      id: "command-line-interface/grandamento",
+      id: "cli/grandamento",
     },
-    { type: "doc", label: "Help", id: "command-line-interface/help" },
-    { type: "doc", label: "Identity", id: "command-line-interface/identity" },
+    { type: "doc", label: "Help", id: "cli/help" },
+    { type: "doc", label: "Identity", id: "cli/identity" },
     {
       type: "doc",
       label: "LockedGold",
-      id: "command-line-interface/lockedgold",
+      id: "cli/lockedgold",
     },
-    { type: "doc", label: "Multisig", id: "command-line-interface/multisig" },
-    { type: "doc", label: "Network", id: "command-line-interface/network" },
-    { type: "doc", label: "Node", id: "command-line-interface/node" },
-    { type: "doc", label: "Oracle", id: "command-line-interface/oracle" },
-    { type: "doc", label: "Plugins", id: "command-line-interface/plugins" },
+    { type: "doc", label: "Multisig", id: "cli/multisig" },
+    { type: "doc", label: "Network", id: "cli/network" },
+    { type: "doc", label: "Node", id: "cli/node" },
+    { type: "doc", label: "Oracle", id: "cli/oracle" },
+    { type: "doc", label: "Plugins", id: "cli/plugins" },
     {
       type: "doc",
       label: "ReleaseGold",
-      id: "command-line-interface/releasegold",
+      id: "cli/releasegold",
     },
-    { type: "doc", label: "Reserve", id: "command-line-interface/reserve" },
-    { type: "doc", label: "Rewards", id: "command-line-interface/rewards" },
-    { type: "doc", label: "Transfer", id: "command-line-interface/transfer" },
-    { type: "doc", label: "Validator", id: "command-line-interface/validator" },
+    { type: "doc", label: "Reserve", id: "cli/reserve" },
+    { type: "doc", label: "Rewards", id: "cli/rewards" },
+    { type: "doc", label: "Transfer", id: "cli/transfer" },
+    { type: "doc", label: "Validator", id: "cli/validator" },
     {
       type: "doc",
       label: "ValidatorGroup",
-      id: "command-line-interface/validatorgroup",
+      id: "cli/validatorgroup",
     },
   ],
 };
