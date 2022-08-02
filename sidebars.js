@@ -10,11 +10,11 @@ const sidebars = {
         { type: "doc", label: "Architecture", id: "learn/celo-stack" },
         { type: "doc", label: "Whitepapers", id: "learn/celo-whitepapers" },
         { type: "doc", label: "Glossary", id: "getting-started/glossary" },
-        {
-          type: "doc",
-          label: "Gallery",
-          id: "developer-resources/celo-dapp-gallery",
-        },
+        // {
+        //   type: "doc",
+        //   label: "Gallery",
+        //   id: "developer-resources/celo-dapp-gallery",
+        // },
         { type: "doc", label: "FAQs", id: "faqs" },
       ],
     },
