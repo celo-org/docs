@@ -32,15 +32,43 @@ For ease of reference, here is some terminology for the following page:
 - a temporary `private key` and `public key` are referred to as "temporary keys", and
 - the associated temporary `public address` is referred to as a "`paymentId`"
 - a proof of ownership over a phone number is referred to as an "attestation"
-- an `identifier` is the _obfuscated_ representation of a plain text phone number[^2]
+- an `identifier` is an _obfuscated_ representation of a plain text phone number[^2]
 
-The keys are generated _randomly_ or _deterministically_ depending on the payment flow of choice \(more on this below\).
-
-[^2]: In this example we focus on phone numbers for simplicity, but for completeness, an `identifier` is simply the obfuscated representation of any generic string. An `identifier` is a 64 character hex string, e.g. `75501186bd735f926f35767a94be1ad9a7af5afe894763769ece9fa67cae6917`.
+[^2]: In this example we focus on phone numbers for simplicity, but for completeness, an `identifier` is simply the obfuscated representation of any generic string. More specifically, an `identifier` is a 64 character hex string, e.g. `75501186bd735f926f35767a94be1ad9a7af5afe894763769ece9fa67cae6917` derived by hashing a set of inputs.
 
 ### Option 1: Phone number-based proof of identity
 
-Scenario: The payment is facilitated using Bob's phone number[^1]
+In this scenario, the payment is facilitated using Bob's phone number[^1] with the following steps:
+
+You can **deterministically** generate the `paymentId` (public address) and `private key` using Bob's phone number by:
+
+Escrow payment to phone number:
+
+1. get the ODIS pepper for the plain text phone number
+2. get the phone number `identifier` (using the ODIS pepper)
+3. get the `paymentId` using the identifier
+
+```ts
+import { generateDeterministicInviteCode } from '@cryptographic-utils'
+import { } from '@celo/utils'
+
+
+```
+
+4. generating a `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts) and the recipient's phone number `pepper` from ODIS
+
+5. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
+
+
+<!-- Eela comment: 
+key steps that are missing here are that you need to generate the recipient identifier (ideally using an ODIS derived pepper) and that the recipient needs to verify this same phone number identifier ****<-> account. Ideally you can show those steps in the snippet as well so people could immediately use it:
+
+get ODIS pepper for PN
+get PN identifier
+get the paymentID using generateDeterministicInviteCode using this hash + pepper, etc.
+call the escrow transfer function
+Then you could talk about how Bob can deterministically compute the same paymentID + keys (private key is still required to withdraw funds), verify his account <-> PN Identifier (maybe link the attestation service docs) and upon completing the required attestations, can withdraw the funds that Alice escrowed.
+ -->
 
 [![Flow diagram for phone number-based payment and proof of identity](https://mermaid.ink/img/pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilNoRRCoT0agmzNrkVsSZXkXUzIsbc-QvtyeZKOLNvr9W7akPpg9PNp5puZb6SHKFccoySy-L1GmeMHwdaGVakE-ljulIHrUuQYFjQzTuRCM-mA-eU7lueq9jML12F4iNSsqVC6T9yjvmGllWGmgc_YHGJzJZ0hvx56Y3OjtgurykNcprI7XSiJHvheZScWvrTT27rK0Bw_8BzZECdZSWW3UDslR4baFMDp6dWVRyWwJYvWxwVO-ZUYstr5AXCFVp44KNiGqEnoXTbY-TJIwZl1Njs_u4jhfLmk39nFfM8PudnLbkLmLDz9-hFQt8ohqA2aKUobsWG0d49NDLrOaHdvzDg3aO3U15DLBO6l2h71NMK8ubiEt--WnvYSFotFgKLk0wC72MYB-hT1LveCkwqefv885vV10Q10dmEOMkyAo0NTCSks6YOVZQNrlGjIuoVZbYVcQxBXEMF8ymtk6oWsYDacmXuVdTrb6yFPstd_AhW7R9t7-mvh490hH4xnT1NpV2hmcxBy1EgkSQ5WYy5WjccZanth0LvwUtaGrIPaUi5sIXQX7CgTPfFdkc99fbvfpMj_nfC2iC9omzYvJa4cqFVoUE8hN9jaH3XhLI2sWEuodRr9S5HPNMHr5Dj20rVRm2s7SXZA7y63A2YV03ZKy19AI8NU8GtHgTvmhJK2LTtdbx-Rtwnn082DXPdkR7IqmagGMUIo2N5NPtSTLvmMWB3jeCjTrXAFN2w7lWk4PbwFB1kgNaDY7NrDtkF3RaYUaaKxMqqaaHefUm8-npR-06rRV0dOW8EVeMTk8TcizDUTvE2okNRfhaCbDrck_yBO3isziqOKGoTA9BY_eINpRM4qTKOEhhxXrC5dGsVhq0CxLlzY829VGqXykWzUmpPVGy7oPYuSFSstxi3gayPzKHGmxh7UPfQd6vEPwz-9JA)](https://mermaid.live/edit#pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilNoRRCoT0agmzNrkVsSZXkXUzIsbc-QvtyeZKOLNvr9W7akPpg9PNp5puZb6SHKFccoySy-L1GmeMHwdaGVakE-ljulIHrUuQYFjQzTuRCM-mA-eU7lueq9jML12F4iNSsqVC6T9yjvmGllWGmgc_YHGJzJZ0hvx56Y3OjtgurykNcprI7XSiJHvheZScWvrTT27rK0Bw_8BzZECdZSWW3UDslR4baFMDp6dWVRyWwJYvWxwVO-ZUYstr5AXCFVp44KNiGqEnoXTbY-TJIwZl1Njs_u4jhfLmk39nFfM8PudnLbkLmLDz9-hFQt8ohqA2aKUobsWG0d49NDLrOaHdvzDg3aO3U15DLBO6l2h71NMK8ubiEt--WnvYSFotFgKLk0wC72MYB-hT1LveCkwqefv885vV10Q10dmEOMkyAo0NTCSks6YOVZQNrlGjIuoVZbYVcQxBXEMF8ymtk6oWsYDacmXuVdTrb6yFPstd_AhW7R9t7-mvh490hH4xnT1NpV2hmcxBy1EgkSQ5WYy5WjccZanth0LvwUtaGrIPaUi5sIXQX7CgTPfFdkc99fbvfpMj_nfC2iC9omzYvJa4cqFVoUE8hN9jaH3XhLI2sWEuodRr9S5HPNMHr5Dj20rVRm2s7SXZA7y63A2YV03ZKy19AI8NU8GtHgTvmhJK2LTtdbx-Rtwnn082DXPdkR7IqmagGMUIo2N5NPtSTLvmMWB3jeCjTrXAFN2w7lWk4PbwFB1kgNaDY7NrDtkF3RaYUaaKxMqqaaHefUm8-npR-06rRV0dOW8EVeMTk8TcizDUTvE2okNRfhaCbDrck_yBO3isziqOKGoTA9BY_eINpRM4qTKOEhhxXrC5dGsVhq0CxLlzY829VGqXykWzUmpPVGy7oPYuSFSstxi3gayPzKHGmxh7UPfQd6vEPwz-9JA)
 
@@ -50,31 +78,6 @@ Interim fix for a known bug that adds whitespace to large diagrams: https://gith
 Mermaid diagram: https://mermaid.live/edit#pako:eNqlVc1q3DAQfpXBl-xSZ0lDlhIfAilNoRRCoT0agmzNrkVsSZXkXUzIsbc-QvtyeZKOLNvr9W7akPpg9PNp5puZb6SHKFccoySy-L1GmeMHwdaGVakE-ljulIHrUuQYFjQzTuRCM-mA-eU7lueq9jML12F4iNSsqVC6T9yjvmGllWGmgc_YHGJzJZ0hvx56Y3OjtgurykNcprI7XSiJHvheZScWvrTT27rK0Bw_8BzZECdZSWW3UDslR4baFMDp6dWVRyWwJYvWxwVO-ZUYstr5AXCFVp44KNiGqEnoXTbY-TJIwZl1Njs_u4jhfLmk39nFfM8PudnLbkLmLDz9-hFQt8ohqA2aKUobsWG0d49NDLrOaHdvzDg3aO3U15DLBO6l2h71NMK8ubiEt--WnvYSFotFgKLk0wC72MYB-hT1LveCkwqefv885vV10Q10dmEOMkyAo0NTCSks6YOVZQNrlGjIuoVZbYVcQxBXEMF8ymtk6oWsYDacmXuVdTrb6yFPstd_AhW7R9t7-mvh490hH4xnT1NpV2hmcxBy1EgkSQ5WYy5WjccZanth0LvwUtaGrIPaUi5sIXQX7CgTPfFdkc99fbvfpMj_nfC2iC9omzYvJa4cqFVoUE8hN9jaH3XhLI2sWEuodRr9S5HPNMHr5Dj20rVRm2s7SXZA7y63A2YV03ZKy19AI8NU8GtHgTvmhJK2LTtdbx-Rtwnn082DXPdkR7IqmagGMUIo2N5NPtSTLvmMWB3jeCjTrXAFN2w7lWk4PbwFB1kgNaDY7NrDtkF3RaYUaaKxMqqaaHefUm8-npR-06rRV0dOW8EVeMTk8TcizDUTvE2okNRfhaCbDrck_yBO3isziqOKGoTA9BY_eINpRM4qTKOEhhxXrC5dGsVhq0CxLlzY829VGqXykWzUmpPVGy7oPYuSFSstxi3gayPzKHGmxh7UPfQd6vEPwz-9JA
 -->
 
-You can **deterministically** generate the `paymentId` (public address) and `private key` using Bob's phone number by:
-
-1. generating a `private key` and a `public key` using [`generateDeterministicInviteCode()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts#L412) from [@celo/utils/lib/account](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/account.ts) and the recipient's phone number `pepper` from ODIS
-
-    ```ts
-    function generateDeterministicInviteCode(
-        recipientPhoneHash: string,
-    recipientPepper: string,
-    addressIndex: number = 0,
-    changeIndex: number = 0,
-    derivationPath: string = CELO_DERIVATION_PATH_BASE
-    ): { privateKey: string; publicKey: string } {
-        const seed = keccak256(recipientPhoneHash + recipientPepper) as Buffer
-    return generateKeysFromSeed(seed, changeIndex, addressIndex, derivationPath)
-    }
-    ```
-
-2. converting the `public key` into a `public address` (referred to as the `paymentId` in this context) using [`publicKeyToAddress()`](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts#L38) from [@celo/utils/lib/address](https://github.com/celo-org/celo-monorepo/blob/6b6ce69fde8f4868b54abd8dd267e5313c3ddedd/packages/sdk/utils/src/address.ts).
-
-    ```ts
-    const publicKeyToAddress = (publicKey: string) =>
-        toChecksumAddress(
-            ensureLeading0x(pubToAddress(toBuffer(ensureLeading0x(publicKey)), true).toString('hex'))
-        )
-    ```
 
 You can find Valora's implementation of the phone number-based escrow payment in [Github > valora-inc > wallet > src > escrow](https://github.com/valora-inc/wallet/tree/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow) ([> saga.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/saga.ts) and [> utils.ts](https://github.com/valora-inc/wallet/blob/2ec5767ac55197c8e97d449c2ea6479c3520859d/src/escrow/utils.ts)).
 
@@ -84,10 +87,7 @@ You can find Valora's implementation of the phone number-based escrow payment in
 
 ### Option 2: Private key-based proof of identity
 
-Scenario:
-
-- Alice wants to pay Bob, but Bob doesn't have an account yet.
-- The escrow payment is facilitated by secretly sharing a private key
+In this scenario, the escrow payment is facilitated by secretly sharing a private key.
 
 [![Flow diagram for private key-based payment and proof of identity](https://mermaid.ink/img/pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)](https://mermaid.live/edit#pako:eNqtVU1r3DAQ_SuDLt0FJ4QlufgQSGkOpbSX9GgoY2vWFrElV5J3MSHH3voT2j-XX9KR5c3a67QNpcti9PE082bes_wgCiNJpMLR1450Qe8UlhabTAP_sPDGwk2tCooLLVqvCtWi9oBh-QsWhenCzMFNHC6RLfYNaf9eBtRnalpj0fbwgfoltjDaW84boLeusGZ_7ky9xOUm_23uSPutyTM9LnTe6K7Jycb5UBGcnV1fB1QKe47oAk3wJqwkkHc-DEAacvqNhwp3BKjhkLKnMZcl5mrLfLW5uExgc3XFj4vL9SwPp5k1K-VwDp5-fIuoT8YTmB3ZU1Rr1Q557576BNou593ZGKW05FyMQlqeMhrJTBmFmgKfSfsiG23g6ef3U0Iz2L_ROfbg2QYpWNTSNHUPJWmyHNSBo8IemnokMDnzyvSwej4z1jw3amByMFkKDd6TO2Rh9f-oSHI8V2BdK10CT7Xbkl2tQemFYU8F2QQtxsfCIoMTYxe4Ma5Crmb-tsBqpxDuPt4l0HClWAYGjuwuhGDHoza-YtJ77NcTFV5h1KHgmrYezDYSCUZhKoM0E9-vMuFUqaFrM_E3S71g8P_gp0O6iRY1quYoYudiW0IjT_o3NJVvoZzJnFILr_1S373ylbS4f1nf58tqUT93m9TuaC0Xjmvas7Kxq3J-Zb18L8V5i0oOZee0NZag4j_KiSrnIhEN2YZxfJM_hFiZYCc0lImUh5K22NU-E0ncqkiVlY974WrMRKYfOUbXSmZ2KxVfnyLdYu0oGQB3vS5E6m1HB9D4mRhRj78A75cbgw)
 
