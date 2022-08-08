@@ -33,4 +33,4 @@ When the client wants to ensure that their transaction is processed quickly, the
 
 ## Transaction Fee Recipients
 
-The required portion of gas fee, known as the **base**, is set as `base = gas_price_minimum * gas_used` and is sent to the [Community Fund](/celo-codebase/protocol/proof-of-stake/community-fund.md). The rest of the gas fee, known as the **tip**, is rewarded to the validator that proposes the block. Block producers only receive the tip and not the base of the gas fee, which means that they do not have an incentive to artificially inflate the gas price minimum by flooding the network with transactions.
+The required portion of gas fee, known as the **base**, is set as `base = gas_price_minimum * gas_used` and is sent to the [Community Fund](/protocol/pos/epoch-rewards-community-fund). The rest of the gas fee, known as the **tip**, is rewarded to the validator that proposes the block. Block producers only receive the tip and not the base of the gas fee, which means that they do not have an incentive to artificially inflate the gas price minimum by flooding the network with transactions.

@@ -43,6 +43,12 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Metmask and Celo",
+              id:
+                "wallet/metamask/use",
+            },
+            {
+              type: "doc",
               label: "MetaMask and Valora",
               id:
                 "wallet/metamask/import",
@@ -81,7 +87,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Digital Wallets",
+          label: "Other Wallets",
           id: "wallet/other-wallets",
         },
         {
@@ -489,7 +495,7 @@ const sidebars = {
             "protocol/stability/granda-mento",
             "protocol/stability/oracles",
             "protocol/stability/stability-fees",
-            "protocol/stability/adding_stable_assets",
+            "protocol/stability/adding-stable-assets",
             "protocol/stability/tobin-tax",
           ],
         },
@@ -547,7 +553,7 @@ const sidebars = {
             {
               type: "doc",
               label: "Overview",
-              id: "community/release-process/README",
+              id: "community/release-process/index",
             },
             {
               type: "doc",

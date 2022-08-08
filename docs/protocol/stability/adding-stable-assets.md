@@ -10,7 +10,7 @@ ___
 
 :::tip Note
 
-This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/celo-codebase/protocol/stability/doto.md).
+This example assumes we want to add to the platform a new stable asset `cX` tracking the value of X (where X can be a fiat currency like ARS or MXN), using the [Mento exchange](/protocol/stability/doto).
 
 :::
 
@@ -33,7 +33,7 @@ A good criteria to a successfully decide a pre-mint amount is to check by how mu
 
 ### Including contracts on the registry
 
-Currently, the addition of new assets is tied to the [Contract Release Cycle](../../../community/release-process/smart-contracts.mdx), as the contracts `ExchangeX` and `StableTokenX` need to be checked in [^1]. These new contracts inherit from Exchange and StableToken, that are the ones originally used for `cUSD`. As StableToken `cX` will be initialized by the contract release, key parameters like `spread` and `reserveFraction` should be included, although they can be later modified by setters in the following governance proposals. The only value that can't be changed is the pre-mint amount.
+Currently, the addition of new assets is tied to the [Contract Release Cycle](/community/release-process/smart-contracts.mdx), as the contracts `ExchangeX` and `StableTokenX` need to be checked in [^1]. These new contracts inherit from Exchange and StableToken, that are the ones originally used for `cUSD`. As StableToken `cX` will be initialized by the contract release, key parameters like `spread` and `reserveFraction` should be included, although they can be later modified by setters in the following governance proposals. The only value that can't be changed is the pre-mint amount.
 
 ### Freezing
 
@@ -48,7 +48,7 @@ As new contracts are added to the registry, new **constitution parameters** need
 
 ### Oracle activation
 
-A following governance proposal needs to be submitted to enable [oracles](/celo-codebase/protocol/stability/oracles.md) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
+A following governance proposal needs to be submitted to enable [oracles](/protocol/stability/oracles) to report. This oracle proposal needs to enable addresses to report to the `StableTokenX` address and, optionally, fund them to pay for gas fees. An example of this proposal is the [cEUR oracle activation proposal](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0033.md)[^2].
 
 ### Full activation
 

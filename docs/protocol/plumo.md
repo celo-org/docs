@@ -23,7 +23,7 @@ If these users are to trustlessly sync and interact with a blockchain network, t
 
 Celo uses a proof of stake (PoS) consensus sytem, enabling it to offer a better light client sync experience, right off the bat: 
 
-1. First, Celo light clients only need to download epoch block headers, which contain information about the current validator set. [The validator set](/celo-codebase/protocol/consensus/validator-set-differences.md) in Celo changes once every epoch, roughly about once per day. This means instead of downloading a block header for every block on the Celo network, they can just download one a day.
+1. First, Celo light clients only need to download epoch block headers, which contain information about the current validator set. [The validator set](/protocol/consensus/validator-set-differences) in Celo changes once every epoch, roughly about once per day. This means instead of downloading a block header for every block on the Celo network, they can just download one a day.
 
 2. Second, Celo uses BLS signatures to aggregate validator signatures. Similar to Tendermint consensus, Celo's IBFT consensus mechanism requires a quorum of 2/3 or more validators to sign each block to commit it to the blockchain. Instead of having each of these signatures be separately stored on-chain, Celo uses BLS signatures which can combine them into one signature per block.
 

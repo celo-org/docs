@@ -12,7 +12,7 @@ Computationally expensive password hashing functions, such as PBKDF and scrypt, 
 ODIS implements hashing (i.e. PRF evaluation) with a rate limit controlled by the committee of ODIS operators, and can be used to harden a password into a stronger cryptographic key.
 As long as this committee remains collectively honest and secure, an attacker cannot make more guesses at a users password than ODIS allows, making it extremely unlikely a good password will be broken.
 
-Using ODIS for key hardening allows passwords to be used in a number of applications, including to create [encrypted account backups](/celo-codebase/protocol/identity/encrypted-cloud-backup) and as a factor in [smart contract account recovery](/celo-codebase/protocol/identity/smart-contract-accounts).
+Using ODIS for key hardening allows passwords to be used in a number of applications, including to create [encrypted account backups](/protocol/identity/encrypted-cloud-backup) and as a factor in [smart contract account recovery](/protocol/identity/smart-contract-accounts).
 
 ## Rate limiting
 
@@ -23,15 +23,15 @@ The appropriate rate limit is related to how much entropy the user secret has.
 * An average user password can tolerate a moderate rate limit, allowing hundreds of attempts.
 * A 4 or 6 digit PIN can tolerate tens of attempts before the attacker has a significant chance of success.
 
-Because the right rate limit is context specific, [Domains](../domains) can be configured to the needs of the user.
-The [Sequential Delay Domain](../domains/sequential-delay-domain) is designed for the use case of PIN and password hashing, and can be used to allow for a fixed number of attempts over a configurable time period (e.g. 15 attempts over 3 days).
+Because the right rate limit is context specific, [Domains](/protocol/identity/odis-domain) can be configured to the needs of the user.
+The [Sequential Delay Domain](/protocol/identity/odis-domain-sequential-delay-domain) is designed for the use case of PIN and password hashing, and can be used to allow for a fixed number of attempts over a configurable time period (e.g. 15 attempts over 3 days).
 The Sequential Delay Domain additionally supports signature-based authentication to prevent quota from being consumed by any except the intended user.
 
 ## Salting
 
 Even with the use of ODIS to prevent brute-force guessing of a password, it remains important to include a user-specific value in the hashing request as a salt to prevent [rainbow table attacks](https://wikipedia.org/wiki/Rainbow_table).
 A salt can be included in the Domain parameter of the request to ODIS to ensure a rate limit is enforced specific to the user's context.
-Using a random salt value is recommended, however a client identifier such as a username or [phone number hash](/celo-codebase/protocol/odis/use-cases/phone-number-privacy) can also be used.
+Using a random salt value is recommended, however a client identifier such as a username or [phone number hash](/protocol/identity/odis-use-case-phone-number-privacy) can also be used.
 
 ## Password filtering
 

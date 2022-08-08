@@ -24,7 +24,7 @@ The Celo protocol will support **gateway fees**. These fees create an incentive 
 
 ## Optional Fields
 
-A pair of optional fields in the transaction structure, the `GatewayFee` and `GatewayFeeRecipient`, may be specified by light clients to identify the full node which is acting as their gateway to the Celo network. Light clients will set the `GatewayFeeRecipient` to the Etherbase of the serving full node and the `GatewayFee` field to a small amount of CELO, or [alternative fee currency](/celo-codebase/protocol/transactions/erc20-transaction-fees.md), which will be sent to the recipient at the point that the transaction is processed and included in a block. Note that the gateway fee is paid even if the transaction is reverted.
+A pair of optional fields in the transaction structure, the `GatewayFee` and `GatewayFeeRecipient`, may be specified by light clients to identify the full node which is acting as their gateway to the Celo network. Light clients will set the `GatewayFeeRecipient` to the Etherbase of the serving full node and the `GatewayFee` field to a small amount of CELO, or [alternative fee currency](/protocol/transactions/erc20-transaction-fees), which will be sent to the recipient at the point that the transaction is processed and included in a block. Note that the gateway fee is paid even if the transaction is reverted.
 
 ## Transaction Payments
 

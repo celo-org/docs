@@ -96,15 +96,15 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 
  1. When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
 
- 2. The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/protocol/identity/smart-contract-accounts.md).
+ 2. The Valora wallet uses two types of accounts: externally owned accounts and meta-transaction wallets. There are important consequences for wallet developers and dapp developers building on Celo as Valora is one of the main interfaces for Celo users. You can find more information about [Valora accounts here](/protocol/identity/smart-contract-accounts).
 
 ## Deploying Ethereum Contracts to Celo
 
 Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Figment Datahub](https://figment.io/datahub/celo/). 
 
-[This tutorial](./walkthroughs/hellocontracts.md) goes over how to start an ultralight node that runs locally and use it to deploy a contract to the Alfajores testnet using Truffle.
+[This tutorial](/developer/walkthroughs/hellocontracts) goes over how to start an ultralight node that runs locally and use it to deploy a contract to the Alfajores testnet using Truffle.
 
-[This tutorial](./walkthroughs/hello-contract-remote-node.md) goes over how to connect to a remote node and use ContractKit to deploy a contract to Alfajores using Truffle.
+[This tutorial](/developer/walkthroughs/hello-contract-remote-node) goes over how to connect to a remote node and use ContractKit to deploy a contract to Alfajores using Truffle.
 
 ## Protocol Differences
 

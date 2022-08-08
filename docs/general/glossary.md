@@ -153,13 +153,13 @@ The very first block in the blockchain, provided as configuration to Celo Blockc
 
 [go-ethereum](https://github.com/ethereum/go-ethereum), a Golang implementation of the Ethereum protocol from which the Celo Blockchain software is forked.
 
-## [Governance](celo-codebase/protocol/governance.md)
+## [Governance](/protocol/governance)
 
 A part of Celo that allow the protocol to be upgraded, and other actions to be taken on behalf of the network, by holding a referendum process in which [CELO](#celo-native-asset) holders vote for proposals submitted by the community.
 
 ## Governable
 
-A smart contract that is owned by the Celo [Governance](celo-codebase/protocol/governance.md) mechanism and so can be changed or updated by an on-chain governance proposal.
+A smart contract that is owned by the Celo [Governance](/protocol/governance) mechanism and so can be changed or updated by an on-chain governance proposal.
 
 ## Group Share
 
@@ -177,7 +177,7 @@ Hardware Security Module. A hardware device that hosts one or more private keys 
 
 The creation of a new cryptographic key to replace an existing key in active use.
 
-## [Community Fund](celo-codebase/protocol/proof-of-stake/community-fund.md)
+## [Community Fund](/protocol/pos/epoch-rewards-community-fund)
 
 An account that supports the development and operational costs of the Celo protocol. The Community Fund is maintained by a transfer made as part of Epoch Rewards, and is intended to cover costs beyond the other specific incentives provided to validators and validator groups. Awards can be made through an on-chain governance proposal.
 
@@ -189,7 +189,7 @@ Istanbul, or IBFT, is the original name of the implementation of the Byzantine F
 
 A device or computer running the Celo Blockchain software that keeps typically only the most recent blockchain state, such that it can send transactions and identify what other data to request as necessary. Every Celo Wallet installation includes a Celo Blockchain light client.
 
-## [Locked Gold](celo-codebase/protocol/proof-of-stake/locked-gold.md)
+## [Locked Gold](/protocol/pos/epoch-rewards-locked-gold)
 
 [CELO](#celo-native-asset) balances held in escrow at the Locked Gold contract for the account that deposited it there. This permits that balance to be used for voting in validator elections, governance proposals, and to meet staking requirements for registering a validator or validator group.
 

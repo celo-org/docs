@@ -4,7 +4,7 @@ description: Account access and reward details for self-custodying holder of CEL
 ---
 # Self-Custody CELO
 
-Account access and reward details for self-custodying holder of CELO on the Celo [Mainnet](../getting-started/mainnet)
+Account access and reward details for self-custodying holder of CELO on the Celo [Mainnet](/network/mainnet/)
 
 ___
 
@@ -14,11 +14,11 @@ This guide assumes:
 
 - You are self-custodying (you hold the private key to your address), and that you have provided that address directly to cLabs. If you are using a custody provider ([Anchorage](https://anchorage.com), [Coinbase](https://custody.coinbase.com), [CoinList](https://coinlist.co), or others), please contact them for directions.
 
-- Your address is the beneficiary of a [ReleaseGold](/celo-holder-guide/release-gold.md) contract, which releases CELO programmatically to a beneficiary over a period of time.
+- Your address is the beneficiary of a [ReleaseGold](/holder/manage/release-gold) contract, which releases CELO programmatically to a beneficiary over a period of time.
 
 - You have been informed by cLabs that the `ReleaseGold` instance corresponding to your address has been deployed.
 
-- You have your private key held on a [Ledger Nano S or Ledger Nano X](/celo-holder-guide/ledger.md) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#Using-a-single-Ledger).
+- You have your private key held on a [Ledger Nano S or Ledger Nano X](/wallet/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#Using-a-single-Ledger).
 
 :::caution
 
@@ -30,7 +30,7 @@ This guide assumes:
 
 If you have any questions or need assistance with these instructions, please contact cLabs or ask in the `#celo-holders` channel on [Celo's Discord server](https://chat.celo.org). Remember that Discord is a public channel: never disclose recovery phrases (also known as backup keys, or mnemonics), private keys, unsantized log output, or personal information.
 
-Please refer to the [Ledger Troubleshooting](/celo-holder-guide/connecting-ledger-celocli.md#troubleshooting) for issues using Ledgers with the Celo CLI.
+Please refer to the [Ledger Troubleshooting](/wallet/ledger/to-celo-cli#troubleshooting) for issues using Ledgers with the Celo CLI.
 
 ## Outline
 
@@ -40,7 +40,7 @@ In this guide, you will:
 - Access the `ReleaseGold` account associated with your address using your existing Ledger
 - Authorize a voting key, which you will hold on a new, second Ledger
 - Lock some of the Gold in your `ReleaseGold` account
-- Use that Locked Gold to vote for Validator Groups to operate Celo's [Proof of Stake](/celo-codebase/protocol/proof-of-stake) network (and in doing so be ready to receive epoch rewards of 6% when the community enables them in a forthcoming governance proposal)
+- Use that Locked Gold to vote for Validator Groups to operate Celo's [Proof of Stake](/protocol/pos/) network (and in doing so be ready to receive epoch rewards of 6% when the community enables them in a forthcoming governance proposal)
 
 ## Preparing Ledgers
 
@@ -50,25 +50,25 @@ You will need:
 
 - Your **Vote Signer Ledger:** One Ledger Nano S or X configured with a new, unused key. This will become a "warm wallet" you can use whenever you want to participate in validator elections or governance proposals.
 
-As a first step, follow [these instructions](celo-holder-guide/ledger.md) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Alfajores test network.
+As a first step, follow [these instructions](/wallet/ledger/setup) for both Ledgers to install the Ledger Celo app, obtain and verify the associated addresses, and (recommended) run a test transaction on the Alfajores test network.
 
 :::info
 
-The latest version of the Celo Ledger app is 1.0.3. If you are already using a Ledger with an earlier version installed, please [upgrade](celo-holder-guide/ledger.md).
+The latest version of the Celo Ledger app is 1.1.8. If you are already using a Ledger with an earlier version installed, please [upgrade](/wallet/ledger/setup).
 
 :::
 
-The remainder of this guide assumes you are using the first address available on each Ledger. You can add the flags described in [these instructions](celo-holder-guide/ledger.md) to commands below to use different addresses.
+The remainder of this guide assumes you are using the first address available on each Ledger. You can add the flags described in [these instructions](/wallet/ledger/setup) to commands below to use different addresses.
 
 ### Using a single Ledger
 
 If you only have a single Ledger, and are comfortable losing the security advantage of keeping the beneficiary key offline when voting, you can configure a second address on the same Ledger as your voting key.
 
-First, read [these instructions](celo-holder-guide/ledger.md) carefully. Then, whereever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#Support).
+First, read [these instructions](/wallet/ledger/setup) carefully. Then, whereever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#Support).
 
 ## Deployment
 
-If you haven't already, open a terminal window and install the [Celo CLI](https://docs.celo.org/command-line-interface/introduction):
+If you haven't already, open a terminal window and install the [Celo CLI](/cli/):
 
 ```bash
  npm install -g @celo/celocli
@@ -82,12 +82,12 @@ celocli --version
 
 And if not, upgrade by running the same command as above.
 
-You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](/getting-started/mainnet/index.md) network. There are two options:
+You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](/network/mainnet/) network. There are two options:
 
 - **Local Celo Blockchain node**: You can run a full node on your local machine which will communicate
   with other nodes and cryptographically verify all data it receives. Since this approach does not require you to trust the network, it is most secure.
 
-  To do this, follow the tutorial for [running a full node](../getting-started/mainnet/running-a-full-node-in-mainnet) (and make sure to pass `--usb`).
+  To do this, follow the tutorial for [running a full node](/network/mainnet/run-full-node) (and make sure to pass `--usb`).
 
   Then run:
 
@@ -112,7 +112,7 @@ First, copy the beneficiary address into the clipboard, and set it in an environ
 export CELO_BENEFICIARY_ADDRESS=<Beneficiary>
 ```
 
-Next, you will find the address of the `ReleaseGold` contract deployed for your beneficiary address. The `ReleaseGold` contract has its own address and is separate from the beneficiary address, but there are certain aspects of it that can be controlled only by the beneficiary. For more details, please refer to the [Understanding ReleaseGold page](/celo-holder-guide/release-gold.md).
+Next, you will find the address of the `ReleaseGold` contract deployed for your beneficiary address. The `ReleaseGold` contract has its own address and is separate from the beneficiary address, but there are certain aspects of it that can be controlled only by the beneficiary. For more details, please refer to the [Understanding ReleaseGold page](/holder/manage/release-gold).
 
 Open the list of [all ReleaseGold deployments](https://storage.googleapis.com/celo-website/releasegold/CeloMainnetReleaseGoldAll.json) and locate your address (use Edit>Find in your browser, then paste the beneficiary address). Copy the matching value next to `ContractAddress` into your clipboard.
 
@@ -138,7 +138,7 @@ Next, check the details of your `ReleaseGold` contract:
 celocli releasegold:show --contract $CELO_RG_ADDRESS
 ```
 
-Verify the configuration, balance, and beneficiary details. You can find an explanation of these parameters on the [ReleaseGold](/celo-holder-guide/release-gold.md) page.
+Verify the configuration, balance, and beneficiary details. You can find an explanation of these parameters on the [ReleaseGold](/holder/manage/release-gold) page.
 
 If any of these details appear to be incorrect, please contact cLabs, and do not proceed with the remainder of this guide.
 
@@ -148,11 +148,11 @@ Otherwise, you're all set. You don't need to take any further action right now.
 
 ## Authorize Vote Signer Keys
 
-To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](https://docs.celo.org/validator-guide/summary/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
+To allow you to keep your Beneficiary Ledger offline on a day-to-day basis, it’s recommended to use a separate [Authorized Vote Signer Account](/validator/key-management/detailed#authorized-vote-signers) that will vote on behalf of the beneficiary.
 
 :::info
 
-A vote signer can either be another Ledger device or a cloud Hardware Security Module (HSM). Explore [this guide](/developer-guide/integrations/cloud-hsm) to learn more about cloud HSM setup and celocli integration.
+A vote signer can either be another Ledger device or a cloud Hardware Security Module (HSM). Explore [this guide](/integration/cloud-hsm) to learn more about cloud HSM setup and celocli integration.
 
 :::
 
@@ -267,9 +267,9 @@ celocli lockedgold:show $CELO_RG_ADDRESS
 
 ## Vote for a Validator Group
 
-Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](/getting-started/glossary#epoch-rewards).
+Similar to staking or delegating in other Proof of Stake cryptocurrency protocols, CELO holders can lock CELO and vote for Validator Groups on the Celo network. By doing this, not only do you contribute to the health and security of the network, but you can also earn [epoch rewards](/general/glossary#epoch-rewards).
 
-For more details, check out the [Voting for Validators page](/celo-holder-guide/voting-validators.md), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
+For more details, check out the [Voting for Validators page](/holder/vote/validator), which contains useful background on how voting Validator Elections work, as well as more guidance on how to select a Validator Group to vote for. For now, all you need to know is that:
 
 - in Celo, CELO holders vote for Validator Groups, not Validators directly
 - you only earn epoch rewards if the Validator Group you voted gets at least 1 Validator elected
@@ -369,11 +369,11 @@ Or by searching for your `ReleaseGold` address on the [Block Explorer](https://e
 
 You are now set up to participate in the Celo network!
 
-You might want to read more about [choosing a Validator Group](/celo-holder-guide/voting-validators.md) to vote for, and how [voter rewards](/celo-codebase/protocol/proof-of-stake/locked-gold-rewards.md) are calculated. You can vote for up to ten different Groups from a single account.
+You might want to read more about [choosing a Validator Group](/holder/vote/validator) to vote for, and how [voter rewards](/protocol/pos/epoch-rewards-locked-gold) are calculated. You can vote for up to ten different Groups from a single account.
 
-Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](/celo-holder-guide/voting-governance.md). You can do this without affecting any vote you have made for Validator Groups.
+Now you've locked CELO, you can use it to participate in voting for or against [Governance proposals](/holder/vote/governance). You can do this without affecting any vote you have made for Validator Groups.
 
-You can also read more about how Celo's [Proof of Stake](/celo-codebase/protocol/proof-of-stake/index.md) and on-chain [Governance](/celo-codebase/protocol/governance.md) mechanisms work.
+You can also read more about how Celo's [Proof of Stake](/protocol/pos/) and on-chain [Governance](/protocol/governance) mechanisms work.
 
 ## Revoking Votes
 

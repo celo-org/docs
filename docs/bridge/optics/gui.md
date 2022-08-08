@@ -68,7 +68,7 @@ Other translations: [zh_cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
 We demo how to send assets from Celo to Polygon, but the process is the same for sending between other networks as well.
 
 - Install Metamask from [https://metamask.io](https://metamask.io).
-- [Add the Celo network to Metamask](../../../getting-started/wallets/using-metamask-with-celo/manual-setup.md)
+- [Add the Celo network to Metamask](/wallet/metamask/setup)
 
 ![add Celo to MM.png](https://github.com/critesjosh/images/blob/main/optics-gui/add%20Celo%20to%20MM.png?raw=true)
 

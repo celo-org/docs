@@ -24,7 +24,7 @@ ContractKit currently supports the following types of claim:
 
 - **Name Claim** - An account can claim a human-readable name. This claim is not verifiable.
 
-- **Attestation Service URL Claim** - For the [lightweight identity layer](../), validators can make a claim under which their Attestation Service is reachable to provide attestations. This claim is not verifiable.
+- **Attestation Service URL Claim** - For the [lightweight identity layer](/protocol/identity), validators can make a claim under which their Attestation Service is reachable to provide attestations. This claim is not verifiable.
 
 - **Keybase User Claim** - Accounts can make claims on [Keybase](https://keybase.io) usernames. This claim is verifiable by signing a message with the account and hosting it on the publicly accessible path of the Keybase file system.
 
@@ -36,7 +36,7 @@ In the future ContractKit may support other types of claim, including:
 
 ## Handling Metadata
 
-You can interact with metadata files easily through the [CLI](/command-line-interface/account.md), or in your own scripts, tools or DApps via [ContractKit](/developer-resources/contractkit/index.md). Most commands require a node being available under `http://localhost:8545` to make view calls, and to modify metadata files, you'll need the relevant account to be unlocked to sign the files.
+You can interact with metadata files easily through the [CLI](/cli/account), or in your own scripts, tools or DApps via [ContractKit](/developer/contractkit/). Most commands require a node being available under `http://localhost:8545` to make view calls, and to modify metadata files, you'll need the relevant account to be unlocked to sign the files.
 
 You can create an empty metadata file with:
 

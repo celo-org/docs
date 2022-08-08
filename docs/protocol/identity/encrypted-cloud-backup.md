@@ -22,7 +22,7 @@ In order to provide additional security, the account key backup should be encryp
 This way, the users account key backup is only accessible to someone who can access their cloud storage account _and_ knows their secret.
 
 Because user-chosen secrets, especially PINs, are susceptible to guessing, this secret must be [hardened](<https://wikipedia.org/wiki/Hardening_(computing)>) before it can be used as an encryption key.
-Using [ODIS](/celo-codebase/protocol/odis) for [key hardening](/celo-codebase/protocol/odis/use-cases/key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
+Using [ODIS](/protocol/identity/odis) for [key hardening](/protocol/identity/odis-use-case-key-hardening), this scheme derives an encryption key for the account key backup that is resistant to guessing attacks.
 
 With these core components, we can construct an account recovery system that allows users who remember their password or PIN, and maintain access to a cloud storage account, to quickly and reliably recover their account while providing solid security guarantees.
 
@@ -77,7 +77,7 @@ Creating a backup file consists of a number of steps to derive the encryption ke
 1. Generate a random nonce and hash it with the password or PIN input to get the initial key.
 2. Generate a random fuse key and hash it with the initial key to get an updated key.
    Encrypt this fuse key to the public key of the circuit breaker service and discard the plaintext fuse key.
-3. Send the key as a blinded message to the ODIS to be hashed under a [password hardening domain](/celo-codebase/protocol/odis/use-cases/key-hardening).
+3. Send the key as a blinded message to the ODIS to be hashed under a [password hardening domain](/protocol/identity/odis/use-case-key-hardening).
    Use an authentication key derived from the backup nonce such that only a user with access to the backup can make queries to ODIS.
    Hash the response from ODIS together with the key to generate the hardened key.
 4. Encrypt the account mnemonic phrase with the hardened encryption key, and assemble it together with the nonce, ODIS domain information, encrypted fuse key, and environment metadata for ODIS and the circuit breaker.
@@ -90,7 +90,7 @@ In order to open the backup and recover the users account mnemonic the encrypted
 
 1. Hash the password or PIN input with the nonce in the backup to get the initial key.
 2. Query the circuit breaker to unwrap the encrypted fuse key and hash it with the initial key to get an updated key.
-3. Send the key as a blinded message to the ODIS to be hashed under the included [password hardening domain](/celo-codebase/protocol/odis/use-cases/key-hardening).
+3. Send the key as a blinded message to the ODIS to be hashed under the included [password hardening domain](/protocol/identity/odis-use-case-key-hardening).
    Use an authentication key derived from the backup nonce.
    Hash the response from ODIS together with the key to generate the hardened key.
 4. Decrypt the backup data with the hardened decryption key and return it as the account mnemonic.

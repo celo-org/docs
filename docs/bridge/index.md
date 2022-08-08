@@ -23,11 +23,11 @@ Be sure you understand and review the risks pages when bridging assets between c
 * [Moss](https://bridge.moss.earth/)
 * [Wormhole](https://www.portalbridge.com/#/transfer)
 
-* [Optics Bridge](../optics.md)
+* [Optics Bridge](/bridge/optics/)
   * Optics Web UIs
     * [cLabs Optics Bridge](https://optics.app)
-      * View the tutorial: [en](./optics-gui.md), [zh-cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
+      * View the tutorial: [en](/bridge/optics/gui), [zh-cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
     * [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
   * Manually Using Etherscan
-    * [Bridge Native Tokens via Etherscan](bridging-native-assets.md)
-    * [Bridge ERC-20 Tokens via Etherscan](bridging-tokens-with-etherscan.md)
+    * [Bridge Native Tokens via Etherscan](/bridge/etherscan/native-assets.md)
+    * [Bridge ERC-20 Tokens via Etherscan](/bridge/etherscan/tokens.md)

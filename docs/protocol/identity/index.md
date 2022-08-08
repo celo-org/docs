@@ -17,7 +17,7 @@ Celo’s unique purpose is to make financial tools accessible to anyone with a m
 
 To allow Bob to find an address mapped to her phone number, Alice can use the decentralized attestations protocol to link an account address to her phone number. Alice starts by making a request to the `Attestations` contract; transferring a fee along with her request. After a brief waiting time of `4` blocks (20 seconds), the `Attestations` contract will use the `Random` contract to produce a random selection of validators, from the current elected set in the `Validators` contract, to issue the attestation challenges.
 
-As part of the expectation of validators, they run the attestation service whose endpoint they register in their [Metadata](/celo-codebase/protocol/identity/metadata.md). After attestation issuers have been selected for their requests, Alice determine the validators' attestation service URLs from her [Metadata](/celo-codebase/protocol/identity/metadata.md) and requests an attestation message to her phone number by sending a direct HTTPS request. In turn, the attestation service produces a signed secret message attesting to the ownership of the given phone number by the requesting account. The validator sends the message to Alice's phone number via SMS. Read more under [attestation service](#attestation-service).
+As part of the expectation of validators, they run the attestation service whose endpoint they register in their [Metadata](/protocol/identity/metadata). After attestation issuers have been selected for their requests, Alice determine the validators' attestation service URLs from her [Metadata](/protocol/identity/metadata) and requests an attestation message to her phone number by sending a direct HTTPS request. In turn, the attestation service produces a signed secret message attesting to the ownership of the given phone number by the requesting account. The validator sends the message to Alice's phone number via SMS. Read more under [attestation service](#attestation-service).
 
 When Alice receives the text message, she can take that signed message to the `Attestations` contract, which can verify that the attestation came from the validator indeed. Upon a successful attestation, the validator can redeem for the attestation request fee to pay them for the cost of sending the SMS. In the end, we have recorded an attestation by the validator to a mapping of Alice’s phone number to her account address.
 
@@ -33,7 +33,7 @@ There are additional measures we can take to further secure the integrity of the
 
 ### Preventing harvesting of phone numbers
 
-To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](/celo-codebase/protocol/odis/use-cases/phone-number-privacy.md)
+To protect user privacy by preventing mass harvesting of phone numbers, the Celo platform includes a service that obfuscates the information saved on the blockchain. The service is enabled by default for all Celo Wallet users. Details of its functionality and architecture are explained in [Phone Number Privacy](/protocol/identity/odis-use-case-phone-number-privacy)
 
 ### Attestation service
 
@@ -45,4 +45,4 @@ The attestation service is a simple Node.js service that validators run to send 
 
 ### Future improvements to privacy
 
-Celo is committed to meet the privacy needs of its users. More details about areas for future research can be found in [Privacy Research](/celo-codebase/protocol/identity/privacy-research.md)
+Celo is committed to meet the privacy needs of its users. More details about areas for future research can be found in [Privacy Research](/protocol/identity/privacy-research)

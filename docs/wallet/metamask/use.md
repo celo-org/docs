@@ -23,12 +23,12 @@ Since Celo network's [Donut Hardfork](https://github.com/celo-org/celo-proposals
 
 ### **For end users:**
 
-* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](manual-setup.md)
-* [Setup a Ledger to Work with MetaMask to Work With Celo](using-a-ledger-with-metamask.md)
+* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](/wallet/metamask/setup)
+* [Setup a Ledger to Work with MetaMask to Work With Celo](/wallet/ledger/setup)
 
 ### **For developers:**
 
-* [Setup MetaMask to Work with Your dApp](programmatic-setup.md)
+* [Setup MetaMask to Work with Your dApp](/wallet/metamask/setup)
 
 ## **Things to Keep in Mind**
 
@@ -40,12 +40,12 @@ Celo and Ethereum use different derivation paths for generating seed phrases. Be
 
   * You can't import an existing Celo account into the MetaMask wallet using its seed phrase, as you'd get the Ethereum version of it. Instead, you have to import it using the associated private key.
   * If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/)) you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
-  * See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](metamask-valora-import.md)
-  * See these guides if you accidentally sent [ETH to CELO addresses](../../../celo-holder-guide/celo-recovery.md) or [CELO to ETH addresses.](../../..//celo-holder-guide/eth-recovery.md)
+  * See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](/wallet/metamask/import)
+  * See these guides if you accidentally sent [ETH to CELO addresses](/holder/recover/from-celo-address) or [CELO to ETH addresses.](/holder/recover/from-eth-address)
 
 ## **Gas Fees Require CELO**
 
-While gas on Celo can usually be paid in [many different currencies](../../../celo-codebase/protocol/transactions/erc20-transaction-fees.md), when using MetaMask, gas fees will automatically be paid in CELO. This is because MetaMask will be using the [Ethereum-compatible Celo transaction format](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), which doesn't include the `feecurrency` field.
+While gas on Celo can usually be paid in [many different currencies](/protocol/transactions/erc20-transaction-fees), when using MetaMask, gas fees will automatically be paid in CELO. This is because MetaMask will be using the [Ethereum-compatible Celo transaction format](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), which doesn't include the `feecurrency` field.
 
 ## **Incorrect Logo**
 
@@ -53,6 +53,6 @@ In some cases, the MetaMask UI may display the Ethereum logo in places where it 
 
 :::info
 
-MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose a Celo native wallet [here](../index.md).
+MetaMask is primarily used for interacting with the Ethereum blockchain and does not natively support Celo compatibility. Alternatively, you may choose a Celo native wallet [here](/wallet/metamask/setup).
 
 :::

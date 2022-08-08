@@ -18,6 +18,6 @@ Ultralight nodes download approximately 17,000 times fewer headers than light no
 
 :::tip note
 
-In the future, Celo will support zk-SNARK-based proofs of the ultralight sync mode called [Plumo](/celo-codebase/protocol/plumo.md), which will lower the sync time even more.
+In the future, Celo will support zk-SNARK-based proofs of the ultralight sync mode called [Plumo](/protocol/plumo), which will lower the sync time even more.
 
 :::

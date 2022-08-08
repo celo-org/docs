@@ -18,7 +18,8 @@ module.exports = {
   projectName: "docs", // Usually your repo name.
    i18n: {
      defaultLocale: "en",
-     locales: ["en", "es"],
+     locales: ["en"],
+    //  locales: ["en", "es"],
    },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [

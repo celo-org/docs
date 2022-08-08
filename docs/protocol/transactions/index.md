@@ -13,6 +13,6 @@ ___
 
 Transactions in the Celo protocol include payments, contract calls, and other operation which modifies state. They are similar to Ethereum transaction with the following key differences.
 
-- Gas prices must meet or exceed the [gas price minimum](/celo-codebase/protocol/transactions/gas-pricing.md).
-- [Gateway fees](/celo-codebase/protocol/transactions/full-node-incentives.md) may be included to incentivize full nodes to serve the transaction.
+- Gas prices must meet or exceed the [gas price minimum](/protocol/transactions/gas-pricing).
+- [Gateway fees](/protocol/transactions/full-node-incentives) may be included to incentivize full nodes to serve the transaction.
 - Gas and gateway fees may be paid in currencies other than the native CELO.

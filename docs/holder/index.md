@@ -25,21 +25,21 @@ CELO is listed on 20+ exchanges worldwide.
 
 ## Manage Celo Assets
 
-- [Self-Custody CELO](/celo-owner-guide/quick-start)
-- [Asset Management](/celo-owner-guide/cusd)
-- [Understand ReleaseGold](/celo-owner-guide/release-gold)
-- [Exchange Celo Assets](/celo-owner-guide/celo-exchange-bot)
+- [Self-Custody CELO](/holder/manage/self-custody)
+- [Asset Management](/holder/manage/asset)
+- [Understand ReleaseGold](/holder/manage/release-gold)
+- [Exchange Celo Assets](/holder/manage/exchange)
 
 ## Voting as a Celo Owner
 
-- [Voting for Validators](/celo-owner-guide/voting-validators)
-- [Voting on Governance](/celo-owner-guide/voting-governance)
-- [Governance Cheatsheet](/celo-owner-guide/governance-cheat-sheet)
+- [Voting for Validators](/holder/vote/validator)
+- [Voting on Governance](/holder/vote/governance)
+- [Governance Cheatsheet](/holder/vote/governance-parameters)
 
 ## Asset Recovery
 
-- [Recover ETH from a Celo Address](/celo-owner-guide/eth-recovery)
-- [Recover CELO from an Ethereum Address](/celo-owner-guide/celo-recovery)
+- [Recover ETH from a Celo Address](/holder/recover/from-eth-address)
+- [Recover CELO from an Ethereum Address](/holder/recover/from-celo-address)
 
 :::tip
 

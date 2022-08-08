@@ -14,7 +14,7 @@ In order to support use cases such as password hardening, and future application
 A Domain instance is structured message sent to ODIS along with the secret blinded message.
 Unlike the blinded message, the Domain instance is visible to the ODIS service and allows the client to specify context information about their request.
 This context information is used to decide what rate limit and/or authentication should be applied to the request, and is combined into the result to ensure output is unique to the context.
-The Domain instance and blinded message are both passed to the ODIS partially oblivious pseudorandom function (POPRF), which is a new construction extending upon the [OPRF function](/celo-codebase/protocol/odis) used in the [phone number privacy service](/celo-codebase/protocol/odis/use-cases/phone-number-privacy).
+The Domain instance and blinded message are both passed to the ODIS partially oblivious pseudorandom function (POPRF), which is a new construction extending upon the [OPRF function](/protocol/identity/odis) used in the [phone number privacy service](/protocol/identity/odis/use-case-phone-number-privacy).
 
 As an example, a Domain for hashing an account password might specify an application username of "vitalik.eth" (context) and a cap of 10 password attempts (rate-limiting parameter).
 These would be combined with the user's password (blinded input) in the POPRF, which acts as a one-way function, to form the final output.
@@ -35,7 +35,7 @@ A full specification of Domains and the related ODIS APIs is available in CIP-40
 
 ## Implemented Domains
 
-- [Sequential Delay Domain](/celo-codebase/protocol/odis/domains/sequential-delay-domain)
+- [Sequential Delay Domain](/protocol/identity/odis-domain-sequential-delay-domain)
 
 ## Creating a Domain Type
 

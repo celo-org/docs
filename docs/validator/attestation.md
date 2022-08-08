@@ -27,7 +27,7 @@ The Attestation Service is part of the [Celo identity protocol](/protocol/identi
 
 ![](https://storage.googleapis.com/celo-website/docs/attestations-flow.jpg)
 
-Validators receive a fee (set by [on-chain governance](/holder/vote-governance), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. Validators can claim and withdraw this fee using: [`celocli identity:withdraw-attestation-rewards`](/cli/identity#celocli-identitywithdraw-attestation-rewards).
+Validators receive a fee (set by [on-chain governance](/holder/vote/governance), currently 0.05 cUSD) for every attestation that they process and that is then successfully redeemed on-chain by the user. Validators can claim and withdraw this fee using: [`celocli identity:withdraw-attestation-rewards`](/cli/identity#celocli-identitywithdraw-attestation-rewards).
 
 ## Outline
 

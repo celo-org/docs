@@ -44,7 +44,7 @@ Unlike in other proof-of-stake systems, holding Locked Gold or voting for a grou
 
 ## Implementation
 
-Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](/protocol//governance) process.
+Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and as such can be changed through Celo's on-chain [Governance](/protocol/governance) process.
 
 - [`Accounts.sol`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/Accounts.sol) manages key delegation and metadata for all accounts including Validators, Groups and Locked Gold holders.
 
@@ -56,6 +56,6 @@ Most of Celo's proof-of-stake mechanism is implemented as smart contracts, and a
 
 In Celo blockchain:
 
-- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](/protocol//consensus/validator-set-differences).
+- [`consensus/istanbul/backend/backend.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/backend.go) performs validator elections in the last block of the epoch and calculates the new [validator set diff](/protocol/consensus/validator-set-differences).
 
 - [`consensus/istanbul/backend/pos.go`](https://github.com/celo-org/celo-blockchain/blob/master/consensus/istanbul/backend/pos.go) is called in the last block of the epoch to process validator uptime scores and make epoch rewards.

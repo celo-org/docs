@@ -31,7 +31,7 @@ For more specific use-cases for exchanges, please checkout the [Custody and Exch
 
 ### Celo Native Asset and Stable Value Currencies
 
-There are key assets on the Celo network, the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/developer-guide/celo-for-eth-devs#the-celo-native-asset-and-the-celo-dollar) section of the docs.
+There are key assets on the Celo network, the Celo native asset (CELO) and Celo-powered Stable Value Currencies, such as Celo Dollar (cUSD) and Celo Euro (cEUR). CELO was formerly called Celo Gold (cGLD) when the contract was deployed, so you will often see references to Celo Gold and CGLD in the codebase. To learn more about the two, please read [this](/developer/migrate/from-ethereum#the-celo-native-asset-and-the-celo-dollar) section of the docs.
 
 You can also view the CGP proposal regarding the name change [here](https://github.com/celo-org/celo-proposals/blob/master/CGPs/0003.md) and the forum post about the name change [here](https://forum.celo.org/t/proposal-to-rename-celo-gold-to-celo-native-asset/528).
 
@@ -138,7 +138,7 @@ $ curl https://thecelo.com/api/v0.1.js?method=ex_celocusd
 
 To learn about the Celo Protocol, please refer to the [whitepaper](https://celo.org/papers/Celo_A_Multi_Asset_Cryptographic_Protocol_for_Decentralized_Social_Payments.pdf).
 
-If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](https://docs.celo.org/#useful-links) page.
+If you need more information to explore other aspects of the Celo Protocol, there’s a [useful links](/general/) page.
 
 To learn more about the Stability Mechanism, you can find it over [here](https://docs.celo.org/celo-codebase/protocol/stability). 
 The [Stability Analysis Whitepaper](https://celo.org/papers/Celo_Stability_Analysis.pdf) and [blog post](https://medium.com/celohq/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5) will provide a lot more information on the stability algorithm.

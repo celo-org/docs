@@ -5,7 +5,7 @@ description: How to recover CELO (previously Celo Gold) if you accidentally tran
 
 # Recover CELO from an Ethereum Address
 
-How to recover [CELO (previously Celo Gold)](overview.md#background-and-key-concepts) if you accidentally transferred them to an account generated using an Ethereum wallet.
+How to recover [CELO (previously Celo Gold)](/general/overview#background-and-key-concepts) if you accidentally transferred them to an account generated using an Ethereum wallet.
 
 :::note
 
@@ -61,12 +61,12 @@ This guide assumes that you have access to the following:
   - [Windows](https://www.howtogeek.com/270810/how-to-quickly-launch-a-bash-shell-from-windows-10s-file-explorer/)
   - [Mac](https://macpaw.com/how-to/use-terminal-on-mac)
   - [Linux](https://askubuntu.com/questions/196212/how-do-you-open-a-command-line)
-- [Celo Command Line Interface](command-line-interface/introduction.md) installed on your computer
+- [Celo Command Line Interface](/cli/) installed on your computer
 - The [24-word recovery phrase](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) of your Ethereum address
 
 ### Steps
 
-Please follow the instructions below closely, because missteps can lead to errors or permanent loss of your tokens. To understand these steps, please read [What is Ethereum](https://ethereum.org/en/what-is-ethereum/) and [Celo Overview](https://docs.celo.org/overview).
+Please follow the instructions below closely, because missteps can lead to errors or permanent loss of your tokens. To understand these steps, please read [What is Ethereum](https://ethereum.org/en/what-is-ethereum/) and [Celo Overview](/general/).
 
 #### Prepare your recovery phases
 

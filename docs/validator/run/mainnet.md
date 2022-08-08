@@ -4,7 +4,7 @@ description: How to get a Validator node running on the Celo Mainnet.
 ---
 # Running a Validator
 
-How to get a Validator node running on the Celo [Mainnet](/getting-started/mainnet).
+How to get a Validator node running on the Celo [Mainnet](/network/mainnet).
 
 ___
 

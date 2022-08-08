@@ -23,7 +23,7 @@ This tutorial will go over:
 2. Compile the contract with compiler version `0.6.11`.
 3. Switch to the Deploy tab of Remix.
    1. Select "Injected Web3" in the Environment dropdown in the top left to connect Metamask.
-   2. Make sure that Metamask is connected to the Alfajores test network. You can read about adding Alfajores to Metamask [here](/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask).
+   2. Make sure that Metamask is connected to the Alfajores test network. You can read about adding Alfajores to Metamask [here](/wallet/metamask/use#adding-a-celo-network-to-metamask).
 
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/remix-environment.png" alt="environment" width="400" />
 

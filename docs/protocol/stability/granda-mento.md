@@ -11,7 +11,7 @@ ___
 
 ## What is Granda Mento?
 
-Granda Mento, described in [CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md), is a mechanism for exchanging large amounts of CELO for Celo stable tokens that aren't suitable for [Mento](doto.md) or over-the-counter (OTC).
+Granda Mento, described in [CIP 38](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0038.md), is a mechanism for exchanging large amounts of CELO for Celo stable tokens that aren't suitable for [Mento](doto) or over-the-counter (OTC).
 
 Mento has proven effective at maintaining the stability of Celo's stable tokens, but the intentionally limited liquidity of its constant-product market maker results in meaningful slippage when exchanging tens of thousands of tokens at a time. Slippage is the price movement experienced by a trade. Generally speaking, larger volume trades will incur more slippage and execute at a less favorable price for the trader.
 
@@ -54,7 +54,7 @@ The approver multi-sig that is ultimately responsible for approving an exchange 
 
 Refer to [CIP 46](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0046.md) for information surrounding processes.
 
-The easiest way create an exchange proposal on-chain is using the `celocli grandamento:propose` command ([docs](https://docs.celo.org/command-line-interface/commands/grandamento#celocli-grandamento-propose)). For example:
+The easiest way create an exchange proposal on-chain is using the `celocli grandamento:propose` command ([docs](/cli/grandamento#celocli-grandamento-propose)). For example:
 
 ```
 celocli grandamento:propose --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --sellCelo=true --stableToken=cUSD --value=20000000000000000000000
@@ -64,13 +64,13 @@ celocli grandamento:propose --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --
 
 Exchange proposal information, including the tokens and quantities being sold and bought, can be easily viewed using celocli.
 
-To list all exchange proposals that have been proposed and are not yet cancelled, vetoed, or executed, use the `celocli grandamento:list` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentolist)). For example:
+To list all exchange proposals that have been proposed and are not yet cancelled, vetoed, or executed, use the `celocli grandamento:list` command ([docs](/cli/grandamento#celocli-grandamentolist)). For example:
 
 ```
 celocli grandamento:list
 ```
 
-To show a specific exchange proposal regardless of it being proposed, cancelled, vetoed, or executed, use the `celocli grandamento:show` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentoshow)). For example:
+To show a specific exchange proposal regardless of it being proposed, cancelled, vetoed, or executed, use the `celocli grandamento:show` command ([docs](/cli/grandamento#celocli-grandamentoshow)). For example:
 
 ```
 celocli grandamento:show --proposalID 1
@@ -78,7 +78,7 @@ celocli grandamento:show --proposalID 1
 
 ### Cancel an exchange proposal
 
-The exchanger of an exchange proposal can cancel the exchange proposal if the proposal has not yet been approved. This can be done using the `celocli grandamento:cancel` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentocancel)). For example:
+The exchanger of an exchange proposal can cancel the exchange proposal if the proposal has not yet been approved. This can be done using the `celocli grandamento:cancel` command ([docs](/cli/grandamento#celocli-grandamentocancel)). For example:
 
 ```
 celocli grandamento:cancel --proposalID 1
@@ -88,7 +88,7 @@ If an exchange proposal has already been approved or someone other than the exch
 
 ### Execute an exchange proposal
 
-Anyone is able to execute an exchange proposal that has been approved as long as the veto period has elapsed since the time of approval. This can be done using the `celocli grandamento:execute` command ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentoexecute)). For example:
+Anyone is able to execute an exchange proposal that has been approved as long as the veto period has elapsed since the time of approval. This can be done using the `celocli grandamento:execute` command ([docs](/cli/grandamento#celocli-grandamentoexecute)). For example:
 
 ```
 celocli grandamento:execute --proposalID 1
@@ -96,7 +96,7 @@ celocli grandamento:execute --proposalID 1
 
 ### View the buy amount for a hypothetical exchange proposal
 
-The amount of the token being bought in an exchange proposal is calculated when the exchange proposal is created according to the current oracle price and the spread. To view the amount of the token being bought that a hypothetical exchange proposal would receive for a provided amount of the token sold, `celocli grandamento:get-buy-amount` can be used ([docs](https://docs.celo.org/command-line-interface/grandamento#celocli-grandamentoget-buy-amount)). For example:
+The amount of the token being bought in an exchange proposal is calculated when the exchange proposal is created according to the current oracle price and the spread. To view the amount of the token being bought that a hypothetical exchange proposal would receive for a provided amount of the token sold, `celocli grandamento:get-buy-amount` can be used ([docs](/cli/grandamento#celocli-grandamentoget-buy-amount)). For example:
 
 ```
 celocli grandamento:get-buy-amount --stableToken cUSD --sellCelo true --value 20000000000000000000000
@@ -104,7 +104,7 @@ celocli grandamento:get-buy-amount --stableToken cUSD --sellCelo true --value 20
 
 ### View current Granda Mento parameters
 
-Granda Mento's governable parameters can be viewed using the `celocli network:parameters` command ([docs](https://docs.celo.org/command-line-interface/network#celocli-networkparameters)). For example:
+Granda Mento's governable parameters can be viewed using the `celocli network:parameters` command ([docs](/cli/network#celocli-networkparameters)). For example:
 
 ```
 celocli network:parameters

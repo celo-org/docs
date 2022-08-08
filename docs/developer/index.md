@@ -48,7 +48,7 @@ Easily build Celo dApps with Celo Composer.
 
 ## Integrations
 
-- [Integrations](/integration/index)
+- [Integrations](/integration/)
 
 ## Developer Tools
 

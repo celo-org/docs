@@ -21,7 +21,7 @@ In this case you can think of the smart contract account as the primary account,
 ### Separation of signer and payer
 
 When new users create a wallet, they start with an empty balance.
-This makes it difficult for the new users to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/celo-codebase/protocol/identity/index.md)).
+This makes it difficult for the new users to verify their phone number as they need to pay for both the Celo transactions and the Attestation Service fees ([see here for more details](/protocol/identity/)).
 To make this experience more intuitive and frictionless for new users, cLabs operates an [onboarding service called Komenci](https://github.com/celo-org/komenci/) that pays for the transactions on behalf of the user.
 It does this by first deploying a meta-transaction wallet contract and setting the wallet EOA address as the signer.
 At this point, the EOA can sign transactions and submit them to Komenci.
@@ -60,13 +60,13 @@ To look up a wallet using a phone number:
 3. Use the on-chain identifier to get the account address
 4. Use the account address to get the wallet address (EOA)
 
-The first two steps are covered extensively in [this guide](/developer-resources/contractkit/odis.md).
+The first two steps are covered extensively in [this guide](/developer/contractkit/odis).
 
 To get the account address (step 3) you can use the [Attestation contract method `lookupAccountsForIdentifier`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Attestations.ts#L472).
 
 To get the wallet address from the account (step 4) you can use the [Account contract method `getWalletAddress`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L318).
 
-It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/celo-codebase/protocol/transactions/tx-comment-encryption.md)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
+It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/protocol/transactions/tx-comment-encryption)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
 
 You can view a working example of this all tied together in [the `celocli` command `identity:get-attestations`](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/identity/get-attestations.ts).
 

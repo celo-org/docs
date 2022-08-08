@@ -61,7 +61,7 @@ Github branches/tags and Github releases are used to coordinate past and ongoing
 
 ## Release Process
 
-There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](/command-line-interface/introduction.md)) for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
+There are several scripts provided (under `packages/protocol` in [celo-org/celo-monorepo](https://github.com/celo-org/celo-monorepo) and via [celocli](/cli/)) for use in the release process and with contract upgrade governance proposals to give participating stakeholders increased confidence.
 
 :::warning
 
@@ -411,7 +411,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/celo-codebase/protocol/governance">
+          <a href="/protocol/governance">
             governance process.
           </a>
           <ul>
