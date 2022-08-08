@@ -18,7 +18,7 @@ A [reference implementation](https://github.com/celo-org/celo-oracle) of such cl
 * A dedicated full node running in its own VM. Minimal hardware requirements and instructiosn on how to run a full node can be found [here](/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
 * The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
 
-It is not strictly required but it is recommended to have the [Celo CLI](/command-line-interface/introduction#what-is-the-celo-cli) avaiable at least in your local enviroment, and ideally in each VM. It could be specially useful to respond to on-call.
+It is not strictly required but it is recommended to have the [Celo CLI](/command-line-interface/introduction#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
 
 ## Setting up the environment
 
@@ -30,11 +30,11 @@ From the oracle VM, make sure you can access your node. This can be done via the
 
 :::warning
 
-Using Forno or other public full node providers to run the oracles in production is strongly unencouraged. Oracles doing so wouldn't be elegible for rewards.
+Using Forno or other public full node providers to run the oracles in production is strongly discouraged. Oracles doing so wouldn't be elegible for rewards.
 
 :::
 
-The oracle is configured by passing individual enviroment variables or an env file when starting the Docker container. You'll need to create a env file named `.env.prod` in your oracle VM. A template env file in a format accepted by Docker can be found in the [Github repository](https://github.com/celo-org/celo-oracle/blob/main/.env.prod). A list of all the available, as well as required variables, can be found [here](https://github.com/celo-org/celo-oracle/blob/main/README-config.md).
+The oracle is configured by passing individual environment variables or an env file when starting the Docker container. You'll need to create an env file named `.env.prod` in your oracle VM. A template env file in a format accepted by Docker can be found in the [Github repository](https://github.com/celo-org/celo-oracle/blob/main/.env.prod). A list of all the available, as well as required variables, can be found [here](https://github.com/celo-org/celo-oracle/blob/main/README-config.md).
 
 ### Running with HSM
 
@@ -72,7 +72,7 @@ WARNING: it is encouraged that before running the oracles in production, they sh
 
 :::
 
-The configuration currently run by cLabs in production can be found [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle) for each stable token. It is strongly advised not to modify the recommended values, specially the exchange sources, at least there is good data to support it.
+The configuration currently run by cLabs in production can be found [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle) for each stable token. It is strongly advised not to modify the recommended values, especially the exchange sources, unless there is good data to support it.
 
 The only variable that is not set in the env file is `PRICE_SOURCES`. This sets what exchanges and prices shall be used to report. It is recommended to store this in a file called `price_sources` and the export the content to a new env variable with `cat`.
 
@@ -111,12 +111,12 @@ Available connectors are, in alphabetical order:
 
 ## Running the node
 
-Once all the enviroment variables are set in the VM, an oracle can be started with:
+Once all the environment variables are set in the VM, an oracle can be started with:
 
 
 `docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc2`
 
-If your oracle it's not yet enabled by governance, you'll see these messages in the terminal:
+If your oracle is not yet enabled by governance, you'll see these messages in the terminal:
 
 `Account 0x... is not whitelisted as an oracle for CURRENCY_PAIR`
 
@@ -126,7 +126,7 @@ As soon as governance enables it, the node should start reporting automatically.
 
 The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/celo-codebase/protocol/governance#what-is-celo-governance). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](/celo-codebase/protocol/governance).
 
-## Using kubernets
+## Using kubernetes
 
 Reference [Helm Charts](https://helm.sh/docs/topics/charts/) configuration used by cLabs can be found in the [celo-monorepo repository](https://github.com/celo-org/celo-monorepo/tree/master/packages/helm-charts/oracle).
 
