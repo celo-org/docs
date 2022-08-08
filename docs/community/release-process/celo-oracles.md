@@ -46,7 +46,7 @@ As well as automated CI tests, all releases are expected to go through manual te
 
 ## Promotion process
 
-Cherry picked branch changes shall be added to a `releases` protected branch. When merging code to this branch, the version number should be updated accordinly. 
+Cherry picked branch changes shall be added to a `releases` protected branch. When merging code to this branch, the version number should be updated accordingly. 
 
 ### Source control
 
@@ -88,7 +88,7 @@ Cherry picked branch changes shall be added to a `releases` protected branch. Wh
 
 ### Emergency Patches
 
-Security fixes or hotfixes may not have a public commit attached to them in case the vulnerability needs to be patched before disclosing to the general public to prevent an attacker to explit a vulnerability before operatos patch their services. Emergency patches will be distributed using the same method described in [Git tags](#git-tags)
+Security fixes or hotfixes may not have a public commit attached to them in case the vulnerability needs to be patched before disclosing to the general public to prevent an attacker to exploit a vulnerability before operators patch their services. Emergency patches will be distributed using the same method described in [Git tags](#git-tags)
 
 
 ## Vulnerability Disclosure
