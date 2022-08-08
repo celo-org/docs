@@ -925,6 +925,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Running an oracle",
+          id: "getting-started/running-oracles",
+        },
+        {
+          type: "doc",
           id: "celo-codebase/protocol/oracles/band-protocol-how-to",
         },
         {
