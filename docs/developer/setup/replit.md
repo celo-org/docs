@@ -11,7 +11,7 @@ ___
 
 ## Introduction to Replit
 
-[Replit](https://replit.com/~) is a coding platform that lets you write code and host apps. It also has many educational features built-in, making it great for teachers and learners too. Every repl you create is a fully functional development and production environment. [Hosting from your editor](https://amasad.me/hosting) makes it easy to iterate quickly on your work, collaborate with others, and get feedback.
+[Replit](https://replit.com/) is a coding platform that lets you write code and host apps. It also has many educational features built-in, making it great for teachers and learners too. Every repl you create is a fully functional development and production environment. [Hosting from your editor](https://amasad.me/hosting) makes it easy to iterate quickly on your work, collaborate with others, and get feedback.
 
 [Replit added Solidity](https://blog.replit.com/solidity) to its available programming languages, giving all of the features and functionality Replit provides to Web3 developers creating smart contracts. In this guide, you’ll learn how to make use of these features to build and deploy a smart contract on Celo.
 
@@ -54,7 +54,7 @@ The README provides an overview of the workspace and gives details on how to mak
 
 ## Deploy on Celo
 
-Deploying on Celo with Replit is easy. If you don’t have a wallet with funds, complete [Set up a Development Test Wallet](./testnet-wallet.md) so that you are prepared to deploy and interact with your smart contract.
+Deploying on Celo with Replit is easy. If you don’t have a wallet with funds, complete [Set up a Development Test Wallet](/developer/setup/wallet) so that you are prepared to deploy and interact with your smart contract.
 
 * Select **Run** to install all relevant packages, start up the contract deployment UI, and compile your **contract.sol** file
 

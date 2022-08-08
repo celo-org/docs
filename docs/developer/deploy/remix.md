@@ -41,7 +41,7 @@ To learn more about the features available to you as a smart contract developer 
 
 * Click the **Deploy and Run Transactions Icon** on the left side menu.
 * Choose **Injected Web3** as your environment.
-* [Connect MetaMask to Celo](/getting-started/wallets/using-metamask-with-celo) testnet and verify that the environment reads:
+* [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
   * **Custom (44787) network** for Celo testnet
   * **Custom (42220) network** for Celo mainnet
 * Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction

@@ -1,5 +1,4 @@
 ---
-id: faqs
 title: Celo FAQ
 description: Answers to frequently asked questions about Celo.
 ---
@@ -47,7 +46,7 @@ Separate entities are aimed at Celo’s promotion and preservation. The dedicate
 
 ### Where can I see a list with all the apps developed on Celo?
 
-[Celo DApp Gallery](./developer-guide/celo-dapp-gallery)
+[Celo DApp Gallery](/general/gallery)
 
 ### What is the unique selling point of Celo?
 
@@ -85,7 +84,7 @@ There are a number of exchanges that listed Celo, you can find us on Binance and
 
 ### Where can I swap tokens related to Celo’s ecosystem?
 
-[Ubeswap](https://docs.ubeswap.org/tutorial/swapping-tokens) and [Sushiswap](https://sushi.com/).
+[Uniswap](https://uniswap.org/), [Ubeswap](https://docs.ubeswap.org/tutorial/swapping-tokens) and [Sushiswap](https://dev.sushi.com/docs/Tutorials/How%20to%20Multichain:%20Celo).
 
 ### What is Celo's supply?
 
@@ -119,7 +118,7 @@ The Valora team just spun out of cLabs and their CEO is currently reviewing thei
 
 For DeFi - today the easiest experience is to visit a dApp’s website and either use Valora on mobile or Metamask chrome plugin on desktop (advanced users only)
 
-[How to add Celo to MetaMask docs here](./getting-started/wallets/using-metamask-with-celo)
+[How to add Celo to MetaMask docs here](/wallet/metamask/use)
 
 ---
 
@@ -149,7 +148,7 @@ Staking tokens in a pool gives you a token called a liquidity provider token (or
 
 ### How can I provide liquidity and farm tokens of Celo’s ecosystem?
 
-[Ubeswap](https://ubeswap.org/) (more info [here](https://docs.ubeswap.org/tutorial/providing-liquidity))and [SushiSwap](https://sushi.com/) offer liquidity provision and farming functionalities on Celo.
+[Uniswap](https://uniswap.org/), [Ubeswap](https://ubeswap.org/) (more info [here](https://docs.ubeswap.org/tutorial/providing-liquidity))and [SushiSwap](https://sushi.com/) offer liquidity provision and farming functionalities on Celo.
 
 ### What about borrowing, lending, and interest-earning on Celo?
 
@@ -165,7 +164,7 @@ As with any new technology, not all risks can be eliminated. Some of them are sm
 
 ### How is Celo different from Ethereum?
 
-You can see the key differences between Celo and Ethereum [here](./developer-guide/celo-for-eth-devs).
+You can see the key differences between Celo and Ethereum [here](/developer/migrate/from-ethereum).
 
 ### When building for mobile, what native SDKs are available?
 
@@ -173,4 +172,4 @@ You can see the key differences between Celo and Ethereum [here](./developer-gui
 
 ### When building for web2 what SDKs or libraries are available?
 
-A basic example of using wallet connect with Valora can be found [here](/developer-resources/walkthroughs/valora-wc-v1). If you prefer more granular control, take a look at [use-contractkit](https://github.com/celo-tools/use-contractkit).
+A basic example of using wallet connect with Valora can be found [here](/developer-resources/walkthroughs/valora-wc-v1). If you prefer more granular control, take a look at [react-celo](https://github.com/celo-org/react-celo).

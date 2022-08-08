@@ -17,35 +17,35 @@ Celo Validators participate in the consensus of the Celo protocol. They help sec
 
 :::tip
 
-Not ready to become a Celo Validator? [Learn more about Celo](../../docs/welcome.md).
+Not ready to become a Celo Validator? [Learn more about Celo](/).
 
 :::
 
 ## Run a Validator
 
-- [Run a Baklava Testnet Validator](/getting-started/baklava-testnet/running-a-validator-in-baklava)
-- [Run a Mainnet Validator](/getting-started/mainnet/running-a-validator-in-mainnet)
+- [Run a Baklava Testnet Validator](/network/baklava/run-validator)
+- [Run a Mainnet Validator](/network/mainnet/run-validator)
 
 ## Important Information
 
-- [Attestation Service](/validator-guide/attestation-service)
-- [Key Management](/validator-guide/summary)
+- [Attestation Service](/validator/attestation-service)
+- [Key Management](/validator/summary)
 
 ## Nodes and Services
 
-- [Securing Celo Nodes and Services](/validator-guide/securing-nodes-and-services)
-- [Upgrading a Node](/validator-guide/node-upgrades)
+- [Securing Celo Nodes and Services](/validator/security)
+- [Upgrading a Node](/validator/node-upgrade)
 
-- [Monitoring](/validator-guide/monitoring)
-- [Running Proxies](/validator-guide/proxy)
+- [Monitoring](/validator/monitoring)
+- [Running Proxies](/validator/proxy)
 
 ## Validator Tools
 
-- [Validator Explorer](/validator-guide/validator-explorer)
+- [Validator Explorer](/validator/validator-explorer)
 
 ## Voting Policy
 
-- [Celo Foundation Voting Policy](/validator-guide/celo-foundation-voting-policy)
+- [Celo Foundation Voting Policy](/validator/celo-foundation-voting-policy)
 
 :::tip
 

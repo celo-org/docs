@@ -17,8 +17,9 @@ ___
 
 To deploy on Celo using Hardhat, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
-* [Using Windows](./develop-on-windows.md)
-* [Using Mac](./using-mac.md)
+- [Using Windows](/developer/setup/windows)
+- [Using Mac](/developer/setup/mac)
+- [Using Replit](/developer/setup/replit)
 
 ## Create Hardhat Project
 
@@ -48,7 +49,7 @@ If you choose to [Set up a Local Development Chain](./walkthroughs/development-c
 
 ### Connect to Testnet using Forno
 
-Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    alfajores: {
@@ -69,7 +70,7 @@ Celo uses a different account derivation path than Ethereum, so you have to spec
 
 ### Connect to Mainnet using Forno
 
-Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    celo: {
@@ -84,7 +85,7 @@ Using [Forno](./forno/index.md) also allows you to connect to the Celo main bloc
 
 :::tip
 
-[Forno](./forno/index.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+[Forno](/network/node/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 :::
 

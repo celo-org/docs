@@ -1,5 +1,4 @@
 ---
-id: architecture
 title: Architecture
 description: Overview of the Celo Stack including it's blockchain, core contracts, and applications.
 ---

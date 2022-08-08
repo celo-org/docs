@@ -1,5 +1,4 @@
 ---
-id: glossary
 title: Glossary
 description: List of key terms related to the Celo platform, networks, tools, and blockchain technology.
 ---
@@ -18,9 +17,9 @@ Identifies an account on Celo. There are two types of account. **Externally owne
 
 A unique identifier for an account on the Celo blockchain.
 
-## [Alfajores](/getting-started/alfajores-testnet)
+## [Alfajores](/network/alfajores)
 
-The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](important-information/alfajores-testnet-disclaimer.md).
+The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
 
 ## Attestation
 
@@ -30,9 +29,9 @@ Generally, support for an entity having an associated identity. In Celo, each at
 
 A service operated by validators that sends signed SMS messages in order to allow accounts to prove they have access to a phone number.
 
-## [Baklava](/getting-started/baklava-testnet)
+## [Baklava](/network/baklava)
 
-The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](important-information/baklava-testnet-disclaimer.md).
+The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
 ## Block
 
@@ -234,7 +233,7 @@ The process, when a node joins the network, of requesting and receiving block he
 
 ## SDK
 
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](/developer-guide/dappkit) and [ContractKit](/developer-resources/contractkit/index.md).
+Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](/developer/dappkit) and [ContractKit](/developer/contractkit).
 
 ## Slashing
 
@@ -244,13 +243,13 @@ The reduction in the stake of a validator, a validator group, or both, for a par
 
 A variable that is tracked for each validator group by the proof-of-stake mechanism that causes rewards to the group, its validators and its voters to be temporarily reduced because of a recent slashing.
 
-## [Solidity](https://solidity.readthedocs.io/en/v0.5.10/)
+## [Solidity](https://docs.soliditylang.org/)
 
 The preferred language for writing Smart Contracts on the Celo platform.
 
 ## Smart Contracts
 
-Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://solidity.readthedocs.io/en/v0.5.10/).
+Programs that are deployed to a blockchain and execute on its nodes. They operate on data on the blockchain, and on external inputs received in transactions or messages to the blockchain, and may update the state of the blockchain, including account balances. On Celo and Ethereum, smart contracts are written in languages like [Solidity](https://docs.soliditylang.org/).
 
 ## Stablecoin
 

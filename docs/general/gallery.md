@@ -1,5 +1,4 @@
 ---
-id: gallery
 title: Celo DApp Gallery
 description: List of featured DApp examples to help you start building on Celo.
 ---
@@ -35,7 +34,7 @@ Celo Camp is a virtual accelerator and competition focused on helping startups a
 GoodGosting is a no-loss DeFi saving game. Users can compete with others to get higher interest rates than when they would save by themselves. We created a shared saving pool smart contract, which plugs into existing Celo DeFi projects (e.g. Moola) to generate interest for all winning players.
 
 - [Website](https://www.goodghosting.com)
-- [GitHub](https://github.com/Good-Ghosting/goodghosting-smart-contracts/tree/feature/celo)
+- [GitHub](https://github.com/good-ghosting)
 
 ### Infibridge
 
@@ -70,7 +69,7 @@ Moola is working on algorithmic money markets on Celo.
 LeafCelo is developing lenrefugee, a guarantor-backed DeFi lending platform for refugees.
 
 - [Website](https://leafglobalfintech.com/)
-- [GitHub](https://github.com/LeafGlobalFintech/leafcelo.git)
+- [GitHub](https://github.com/LeafGlobalFintech/leafcelo)
 
 ### El Dorado
 
@@ -83,8 +82,8 @@ El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the
 
 The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
 
-- [Website](http://www.resourcenetwork.co/)
-- [GitHub](https://github.com/ReSource-Network/Resource-Ethereum)
+- [Website](https://resource.finance/)
+- [GitHub](https://github.com/ReSource-Network)
 
 ### Pesabase
 

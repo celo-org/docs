@@ -15,7 +15,7 @@ While developing and deploying dApps on Celo, it’s helpful to have a wallet pr
 
 :::tip
 
-This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/getting-started/alfajores-testnet) tokens). You can also use the [Celo Extension Wallet](/getting-started/wallets#celoextensionwallet) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo mainnet.
+This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/network/alfajores/) tokens). You can also use the [Celo Extension Wallet](/wallet/other-wallets#celoextensionwallet) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo mainnet.
 
 :::
 
@@ -24,11 +24,11 @@ This guide will focus on funding an account on MetaMask with Celo ([Alfajores te
 When deploying a dApp, you will need to pay for transactions that write data to the Celo blockchain. This is done using a wallet funded with Celo on your preferred network.
 
 - Download [MetaMask](https://metamask.io/) for your browser
-- If using MetaMask, [Connect MetaMask to Celo](/getting-started/wallets/using-metamask-with-celo) ([video](https://www.youtube.com/watch?v=JLHeCb01fzs)) to access Celo network options from your wallet
+- If using MetaMask, [Connect MetaMask to Celo](/wallet/metamask/use) ([video](https://www.youtube.com/watch?v=JLHeCb01fzs)) to access Celo network options from your wallet
 
 ## Create your Account
 
-You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/command-line-interface/introduction.md).
+You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/cli/).
 
 ### Using a wallet
 
@@ -70,7 +70,7 @@ ganache-cli --port 7545
 
 Ganache will return a list of available accounts, private keys, and additional wallet details that you can access on port 7545.
 
-Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer-guide/development-chain#1-use-the-celo-devchain-npm-package).
+Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer/setup/development-chain#1-use-the-celo-devchain-npm-package).
 
 ![ganache terminal output](/img/doc-images/testnet-wallet/image4.png)
 

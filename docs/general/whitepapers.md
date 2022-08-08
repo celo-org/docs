@@ -1,5 +1,4 @@
 ---
-id: whitepapers
 title: Celo Whitepapers
 description: Overview of Celo Whitepapers describing Celo's protocol, economics, and social impact.
 ---

@@ -23,10 +23,11 @@ To learn more about the features available to you as a smart contract developer 
 
 To deploy on Celo using Truffle, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
-- [Using Windows](/developer-guide/start/develop-on-windows)
-- [Using Mac](./using-mac.md)
+- [Using Windows](/developer/setup/windows)
+- [Using Mac](/developer/setup/mac)
+- [Using Replit](/developer/setup/replit)
 
-If you are new to Truffle, complete the [Celo truffle installation instructions](./using-mac.md#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
+If you are new to Truffle, complete the [Celo truffle installation instructions](/developer/setup/mac#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
 ## Project Setup
 
@@ -56,7 +57,7 @@ truffle init
 
 **Open Project**
 
-Open your project in [Visual Studio code](https://www.microsoft.com/en-us/resilience/remote-development-solutions/?&ef_id=Cj0KCQjwtrSLBhCLARIsACh6RmixaTeMbvlNJN4yrdykHGg5e4aN2Px1-Vf_oUq2edhP86n2C1-8lDIaAkxcEALw_wcB:G:s&OCID=AID2200893_SEM_Cj0KCQjwtrSLBhCLARIsACh6RmixaTeMbvlNJN4yrdykHGg5e4aN2Px1-Vf_oUq2edhP86n2C1-8lDIaAkxcEALw_wcB:G:s) or your preferred IDE.
+Open your project in [Visual Studio code](https://code.visualstudio.com/) or your preferred IDE.
 
 ```shell
 code .
@@ -109,7 +110,7 @@ If you created a different smart contract, update the variable name, file requir
 
 **Mnemonic .env**
 
-If you don’t yet have a mnemonic or are unsure how to create one, see [Set up a Development Wallet](./testnet-wallet.md) for more details. When you’re ready, create a **.env** file in your root directory and populate it with your development wallet mnemonic (example below).
+If you don’t yet have a mnemonic or are unsure how to create one, see [Set up a Development Wallet](/developer/setup/wallet) for more details. When you’re ready, create a **.env** file in your root directory and populate it with your development wallet mnemonic (example below).
 
 ```text
 MNEMONIC="turtle cash neutral drift brisk young swallow raw payment drill mail wear penalty vibrant entire adjust near chapter mistake size angry planet slam demand"
@@ -164,13 +165,13 @@ local: {
 
 :::tip
 
-If you choose to <a href="https://docs.celo.org/developer-guide/development-chain">Set up a Local Development Chain</a>, your blockchain will also be running on a private development network on localhost. This same configuration can be used to connect to the local development chain.
+If you choose to [Set up a Development Wallet](/developer/setup/wallet), your blockchain will also be running on a private development network on localhost. This same configuration can be used to connect to the local development chain.
 
 :::
 
 **Connect to Testnet using Forno**
 
-Using [Forno](./forno/index.md) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) allows you to connect to the Celo test blockchain without running a local node. The testnet configuration uses Forno to connect you to the Celo Testnet (Alfajores) using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
 testnet: {
@@ -184,7 +185,7 @@ testnet: {
 
 **Connect to Mainnet using Forno**
 
-Using [Forno](./forno/index.md) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
 mainnet: {
@@ -198,7 +199,7 @@ mainnet: {
 
 :::tip
 
-[Forno](./forno/index.md) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+[Forno](/network/node/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 :::
 

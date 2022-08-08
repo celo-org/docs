@@ -12,7 +12,7 @@ ___
 
 ## How does Wallet Verification work?
 
-The Celo Wallet leverages the [Lightweight Identity](../../protocol/identity/) protocol to construct mappings of phone number hashes to addresses.
+The Celo Wallet leverages the [Lightweight Identity](/protocol/identity/) protocol to construct mappings of phone number hashes to addresses.
 
 ### Phone Number Verification in the Wallet
 
@@ -20,7 +20,7 @@ During the final step of new user onboarding in the Celo Wallet, a user complete
 
 ### Verifications
 
-When verification is in progress, the celo wallet sends a request for three SMS attestations. The process of selecting the senders of each of these three messages is detailed in the [Lightweight Identity](../../protocol/identity/) documentation.
+When verification is in progress, the celo wallet sends a request for three SMS attestations. The process of selecting the senders of each of these three messages is detailed in the [Lightweight Identity](/protocol/identity/) documentation.
 
 The following diagrams depict the user flows for the celo wallet:
 

@@ -24,15 +24,15 @@ Easily build Celo dApps with Celo Composer.
 
 ## Local Environmennt
 
-- [Using Mac](/developer-resources/using-mac)
-- [Using Windows](/developer-guide/start/develop-on-windows)
+- [Using Mac](/developer/setup/mac)
+- [Using Windows](/developer/setup/windows)
+- [Using Replit](/developer/setup/replit)
 
 ## Deploy on Celo
 
-- [Using Remix](/developer-resources/deploy-remix)
-- [Using Truffle](/developer-resources/deploy-truffle)
-- [Using Hardhat](/developer-resources/deploy-hardhat)
-- [Using Replit](/developer-resources/deploy-replit)
+- [Using Remix](/developer/deploy/remix)
+- [Using Truffle](/developer/deploy/truffle)
+- [Using Hardhat](/developer/deploy/hardhat)
 
 ## Code Examples
 
@@ -44,14 +44,14 @@ Easily build Celo dApps with Celo Composer.
 
 ## Migrate to Celo
 
-- [Ethereum Developers](/developer-guide/celo-for-eth-devs)
+- [Ethereum Developers](/developer/migrate/from-ethereum)
 
 ## Integrations
 
-- [Integrations](/developer-guide/integrations)
+- [Integrations](/integration/index)
 
 ## Developer Tools
 
-- [EVM Compatible Tooling](/learn/evm-compatible-tooling)
+- [EVM Compatible Tooling](/developer/evm-tools)
 - [Block Explorer](https://explorer.celo.org/)
 - [Testnet Faucet](https://celo.org/developers/faucet)

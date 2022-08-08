@@ -11,7 +11,7 @@ How to deploy a dApp on Celo.
 
 ---
 
-The fastest way to deploy on Celo is to [Set up a Testnet Development Wallet](./testnet-wallet.md) and [Deploy with Remix](./deploy-remix.md). This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
+The fastest way to deploy on Celo is to [Set up a Testnet Development Wallet](/developer/setup/wallet) and [Deploy with Remix](/developer/deploy/remix). This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
 
 :::tip
 
@@ -23,7 +23,6 @@ Just getting started learning about how to write smart contracts? [The Solidity 
 
 ## Deploy on Celo
 
-- [Using Remix](/developer-resources/deploy-remix)
-- [Using Truffle](/developer-resources/deploy-truffle)
-- [Using Hardhat](/developer-resources/deploy-hardhat)
-- [Using Replit](/developer-resources/deploy-replit)
+- [Using Remix](/developer/deploy/remix)
+- [Using Truffle](/developer/deploy/truffle)
+- [Using Hardhat](/developer/deploy/hardhat)

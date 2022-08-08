@@ -21,7 +21,7 @@ The production Celo network, Mainnet was previously known as the Release Candida
 
 ## Alfajores, the Developer Testnet
 
-If you're a developer considering building on the Celo platform, or want to try out the [Celo Wallet](https://celo.org/build/wallet), start with [Alfajores](/getting-started/alfajores-testnet). You can [obtain a balance](https://celo.org/build/faucet) immediately and use it for experimenting with. The [SDK tutorials](/developer-guide/start) assume you are using Alfajores. The network is managed by cLabs, who operate all of its validators, and its software and deployed contracts will track mainnet.
+If you're a developer considering building on the Celo platform, or want to try out the [Celo Wallet](https://celo.org/build/wallet), start with [Alfajores](/network/alfajores/). You can [obtain a balance](https://celo.org/build/faucet) immediately and use it for experimenting with. The [SDK tutorials](/developer-guide/start) assume you are using Alfajores. The network is managed by cLabs, who operate all of its validators, and its software and deployed contracts will track mainnet.
 
 - [Alfajores Testnet Block Explorer](https://alfajores-blockscout.celo-testnet.org)
 - [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org)
@@ -32,13 +32,13 @@ If you're a developer considering building on the Celo platform, or want to try 
 
 :::info
 
-Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaimer](/important-information/alfajores-testnet-disclaimer).
+Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
 
 :::
 
 ## Baklava, the Node Operator Testnet
 
-If you're interested in operating one or more nodes that make up Celo's infrastructure, start with [Baklava](/getting-started/baklava-testnet). Baklava's validators and full nodes are operated by the community. It is intended to provide a venue to test new builds of the Celo Blockchain software, trial on-chain governance proposals, and for node operators to build operational best practices. Support for developers and users of the Wallet is not the primary focus.
+If you're interested in operating one or more nodes that make up Celo's infrastructure, start with [Baklava](/network/baklava/). Baklava's validators and full nodes are operated by the community. It is intended to provide a venue to test new builds of the Celo Blockchain software, trial on-chain governance proposals, and for node operators to build operational best practices. Support for developers and users of the Wallet is not the primary focus.
 
 - [Baklava Network Block Explorer](https://baklava-blockscout.celo-testnet.org)
 - [Baklava Network Status](https://baklava-celostats.celo-testnet.org)
@@ -60,6 +60,6 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 
 :::info
 
-Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/important-information/baklava-testnet-disclaimer).
+Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
 :::

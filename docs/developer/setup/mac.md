@@ -10,7 +10,7 @@ ___
 
 :::tip
 
-While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer-guide/start/develop-on-windows).
+While many commands will be the same, you may need to follow the instructions for your specific OS when installing software. The Celo docs have some resources for [Windows development](/developer/setup/windows).
 
 :::
 
@@ -150,7 +150,7 @@ docker --version Docker version 19.03.13, build 4484c46d9d
 
 ### Truffle 
 
-Since the Celo Blockchain has [shared ancestry with Ethereum](/developer-guide/celo-for-eth-devs) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying. 
+Since the Celo Blockchain has [shared ancestry with Ethereum](/developer/migrate/from-ethereum) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying. 
 
 Similar to how you might use a framework like React instead of vanilla JavaScript, you can use Truffle to abstract away a lot of the imperative details from Solidity (the language used to write smart contracts).
 
@@ -162,7 +162,7 @@ npm install -g truffle
 
 **Confugring Truffle**
 
-You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer-resources/contractkit/index.md). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
+You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer/contractkit/). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
 
 The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like: 
 
@@ -186,11 +186,11 @@ alfajores: {
 
 ### Local Development Blockchain
 
-See [Local Development Chain w/ Protocol Contracts](/developer-guide/development-chain) for how to get started with developing on a local test environment.
+See [Local Development Chain w/ Protocol Contracts](/developer/setup/development-chain) for how to get started with developing on a local test environment.
 
 ### Celo CLI
 
-The [Celo CLI](../command-line-interface/introduction.md) is a command-line tool for interacting with the Celo Protocol smart contracts. Some of the things you can do with it include looking at accounts, checking balances, and signing transactions.
+The [Celo CLI](/cli/) is a command-line tool for interacting with the Celo Protocol smart contracts. Some of the things you can do with it include looking at accounts, checking balances, and signing transactions.
 
 **Install Celo CLI**
 

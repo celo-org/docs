@@ -22,10 +22,10 @@ Importing a Celo Account to MetaMask allows you to extend Celo to any applicatio
 
 Before getting started, it’s important to have downloaded MetaMask, Valora, and have completed some basic configuration on each account. Follow the links below for additional guides on each topic.
 
-* [Download MetaMask](https://metamask.io/download.html) and create an account.
+* [Download MetaMask](https://metamask.io/download/) and create an account.
 * [Download Valora](https://valoraapp.com/) and create an account.
-* Configure [MetaMask to work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo)
-* Install the [celocli](https://docs.celo.org/command-line-interface/introduction)
+* Configure [MetaMask to work with Celo](/wallet/metamask/use)
+* Install the [celocli](/cli/)
 ## Set up your project
 
 Create a new project directory.

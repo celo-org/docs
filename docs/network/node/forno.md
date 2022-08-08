@@ -14,13 +14,13 @@ Forno is a cLabs hosted node service for interacting with the Celo network. This
 
 :::tip
 
-Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using [Figment Datahub](/learn/developer-tools#figment-datahub) or [Quicknode](/learn/developer-tools#quicknode).
+Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using [Figment Datahub](/developer/tools#figment-datahub) or [Quicknode](/developer/tools#quicknode).
 
 :::
 
 Forno has HTTP and websocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access historic state.
 
-Forno can be used as an `Http Provider` with [ContractKit](/developer-guide/contractkit).
+Forno can be used as an `Http Provider` with [ContractKit](/developer/contractkit).
 
 ```javascript
 const Web3 = require("web3");
