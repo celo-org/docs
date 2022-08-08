@@ -12,7 +12,7 @@ Details of the release process for updating the Celo Oracles Client for the Ment
 
 Releases of are made as needed. Releases are numbered according to semantic versioning, as described at [semver.org](https://semver.org).
 
-Development builds should be identified with `-dev`, and only one commit should exist with a released version `x.y.z` for any `(x, y, z)`. Release candidates should be identified with `-RCX`, where X is the version of the release candidate.
+Development builds should be identified with a `-dev` suffix, and only one commit should exist with a released version `x.y.z` for any `(x, y, z)`. Release candidates should be identified with a `-rCX` suffix, where X is the version of the release candidate.
 
 ## Documentation
 
