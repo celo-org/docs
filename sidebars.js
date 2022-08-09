@@ -624,6 +624,7 @@ const sidebars = {
         { type: "doc", label: "Overview", id: "oracle/index" },
         { type: "doc", id: "oracle/band-protocol" },
         { type: "doc", id: "oracle/redstone" },
+        { type: "doc", id: "oracle/run" },
       ],
     },
     // Addresses
