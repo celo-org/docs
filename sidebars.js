@@ -625,6 +625,24 @@ const sidebars = {
         { type: "doc", id: "oracle/band-protocol" },
         { type: "doc", id: "oracle/redstone" },
         { type: "doc", id: "oracle/run" },
+        {
+          type: "doc",
+          label: "Celo Oracles",
+          id: "celo-codebase/protocol/oracles/oracles-on-celo",
+        },
+        {
+          type: "doc",
+          label: "Running an oracle",
+          id: "getting-started/running-oracles",
+        },
+        {
+          type: "doc",
+          id: "celo-codebase/protocol/oracles/band-protocol-how-to",
+        },
+        {
+          type: "doc",
+          id: "celo-codebase/protocol/oracles/redstone-protocol-how-to",
+        },
       ],
     },
     // Addresses
