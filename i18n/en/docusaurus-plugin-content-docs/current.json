@@ -7,10 +7,6 @@
     "message": " General",
     "description": "The label for category General in sidebar docs"
   },
-  "sidebar.docs.category. Overview": {
-    "message": " Overview",
-    "description": "The label for category  Overview in sidebar docs"
-  },
   "sidebar.docs.category.Wallets": {
     "message": "Wallets",
     "description": "The label for category Wallets in sidebar docs"
@@ -58,14 +54,6 @@
   "sidebar.docs.category.Developers": {
     "message": "Developers",
     "description": "The label for category Developers in sidebar docs"
-  },
-  "sidebar.docs.category.Local Environment": {
-    "message": "Local Environment",
-    "description": "The label for category Local Environment in sidebar docs"
-  },
-  "sidebar.docs.category.Deploy on Celo": {
-    "message": "Deploy on Celo",
-    "description": "The label for category Deploy on Celo in sidebar docs"
   },
   "sidebar.docs.category.Migrate to Celo": {
     "message": "Migrate to Celo",
@@ -271,189 +259,169 @@
     "message": "Code of Conduct",
     "description": "The label for link Code of Conduct in sidebar docs, linking to https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md"
   },
-  "sidebar.docs.doc.Welcome to Celo": {
-    "message": "Welcome to Celo",
-    "description": "The label for the doc item Welcome to Celo in sidebar docs, linking to the doc welcome"
-  },
-  "sidebar.docs.doc.What is Celo?": {
-    "message": "What is Celo?",
-    "description": "The label for the doc item What is Celo? in sidebar docs, linking to the doc learn/why-celo"
-  },
   "sidebar.docs.doc.Architecture": {
     "message": "Architecture",
-    "description": "The label for the doc item Architecture in sidebar docs, linking to the doc learn/celo-stack"
+    "description": "The label for the doc item Architecture in sidebar docs, linking to the doc general/architecture"
   },
   "sidebar.docs.doc.Whitepapers": {
     "message": "Whitepapers",
-    "description": "The label for the doc item Whitepapers in sidebar docs, linking to the doc learn/celo-whitepapers"
+    "description": "The label for the doc item Whitepapers in sidebar docs, linking to the doc general/whitepapers"
   },
   "sidebar.docs.doc.Glossary": {
     "message": "Glossary",
-    "description": "The label for the doc item Glossary in sidebar docs, linking to the doc getting-started/glossary"
+    "description": "The label for the doc item Glossary in sidebar docs, linking to the doc general/glossary"
   },
   "sidebar.docs.doc.Gallery": {
     "message": "Gallery",
-    "description": "The label for the doc item Gallery in sidebar docs, linking to the doc developer-resources/celo-dapp-gallery"
-  },
-  "sidebar.docs.doc.FAQs": {
-    "message": "FAQs",
-    "description": "The label for the doc item FAQs in sidebar docs, linking to the doc faqs"
+    "description": "The label for the doc item Gallery in sidebar docs, linking to the doc general/gallery"
   },
   "sidebar.docs.doc.Programmatic Setup": {
     "message": "Programmatic Setup",
-    "description": "The label for the doc item Programmatic Setup in sidebar docs, linking to the doc getting-started/wallets/using-metamask-with-celo/programmatic-setup"
+    "description": "The label for the doc item Programmatic Setup in sidebar docs, linking to the doc wallet/metamask/setup"
   },
   "sidebar.docs.doc.MetaMask and Valora": {
     "message": "MetaMask and Valora",
-    "description": "The label for the doc item MetaMask and Valora in sidebar docs, linking to the doc getting-started/wallets/using-metamask-with-celo/metamask-valora-import"
-  },
-  "sidebar.docs.doc.MetaMask and Ledger": {
-    "message": "MetaMask and Ledger",
-    "description": "The label for the doc item MetaMask and Ledger in sidebar docs, linking to the doc getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask"
+    "description": "The label for the doc item MetaMask and Valora in sidebar docs, linking to the doc wallet/metamask/import"
   },
   "sidebar.docs.doc.Functionality": {
     "message": "Functionality",
-    "description": "The label for the doc item Functionality in sidebar docs, linking to the doc celo-codebase/wallet/how-the-wallet-works/README"
+    "description": "The label for the doc item Functionality in sidebar docs, linking to the doc wallet/celo-wallet/functionality"
   },
   "sidebar.docs.doc.Verification": {
     "message": "Verification",
-    "description": "The label for the doc item Verification in sidebar docs, linking to the doc celo-codebase/wallet/how-the-wallet-works/verification"
+    "description": "The label for the doc item Verification in sidebar docs, linking to the doc wallet/celo-wallet/verification"
   },
   "sidebar.docs.doc.Mobile Wallet Setup": {
     "message": "Mobile Wallet Setup",
-    "description": "The label for the doc item Mobile Wallet Setup in sidebar docs, linking to the doc getting-started/alfajores-testnet/using-the-mobile-wallet"
+    "description": "The label for the doc item Mobile Wallet Setup in sidebar docs, linking to the doc wallet/mobile-wallet/setup"
   },
   "sidebar.docs.doc.Running the Wallet Locally": {
     "message": "Running the Wallet Locally",
-    "description": "The label for the doc item Running the Wallet Locally in sidebar docs, linking to the doc celo-codebase/wallet/intro"
+    "description": "The label for the doc item Running the Wallet Locally in sidebar docs, linking to the doc wallet/mobile-wallet/run-local"
   },
   "sidebar.docs.doc.Testnet Faucet": {
     "message": "Testnet Faucet",
-    "description": "The label for the doc item Testnet Faucet in sidebar docs, linking to the doc getting-started/alfajores-testnet/faucet"
+    "description": "The label for the doc item Testnet Faucet in sidebar docs, linking to the doc wallet/faucet-testnet"
   },
   "sidebar.docs.doc.Ledger Wallet Setup": {
     "message": "Ledger Wallet Setup",
-    "description": "The label for the doc item Ledger Wallet Setup in sidebar docs, linking to the doc celo-holder-guide/ledger"
+    "description": "The label for the doc item Ledger Wallet Setup in sidebar docs, linking to the doc wallet/ledger/setup"
   },
   "sidebar.docs.doc.Connect to Celo Terminal": {
     "message": "Connect to Celo Terminal",
-    "description": "The label for the doc item Connect to Celo Terminal in sidebar docs, linking to the doc celo-holder-guide/connecting-ledger-celo-terminal-wallet"
+    "description": "The label for the doc item Connect to Celo Terminal in sidebar docs, linking to the doc wallet/ledger/to-celo-terminal"
   },
   "sidebar.docs.doc.Connect to Celo Web Wallet": {
     "message": "Connect to Celo Web Wallet",
-    "description": "The label for the doc item Connect to Celo Web Wallet in sidebar docs, linking to the doc celo-holder-guide/connecting-ledger-celo-web-wallet"
+    "description": "The label for the doc item Connect to Celo Web Wallet in sidebar docs, linking to the doc wallet/ledger/to-celo-web"
   },
   "sidebar.docs.doc.Connect to Celo CLI": {
     "message": "Connect to Celo CLI",
-    "description": "The label for the doc item Connect to Celo CLI in sidebar docs, linking to the doc celo-holder-guide/connecting-ledger-celocli"
-  },
-  "sidebar.docs.doc.Digital Wallets": {
-    "message": "Digital Wallets",
-    "description": "The label for the doc item Digital Wallets in sidebar docs, linking to the doc getting-started/wallets/index"
+    "description": "The label for the doc item Connect to Celo CLI in sidebar docs, linking to the doc wallet/ledger/to-celo-cli"
   },
   "sidebar.docs.doc.Overview": {
     "message": "Overview",
-    "description": "The label for the doc item Overview in sidebar docs, linking to the doc community/release-process/README"
+    "description": "The label for the doc item Overview in sidebar docs, linking to the doc oracle/index"
   },
   "sidebar.docs.doc.Forno": {
     "message": "Forno",
-    "description": "The label for the doc item Forno in sidebar docs, linking to the doc developer-resources/forno/index"
+    "description": "The label for the doc item Forno in sidebar docs, linking to the doc network/node/forno"
   },
   "sidebar.docs.doc.Mainnet Full Node": {
     "message": "Mainnet Full Node",
-    "description": "The label for the doc item Mainnet Full Node in sidebar docs, linking to the doc getting-started/mainnet/running-a-full-node-in-mainnet"
+    "description": "The label for the doc item Mainnet Full Node in sidebar docs, linking to the doc network/node/run-mainnet"
   },
   "sidebar.docs.doc.Alfajores Full Node": {
     "message": "Alfajores Full Node",
-    "description": "The label for the doc item Alfajores Full Node in sidebar docs, linking to the doc getting-started/alfajores-testnet/running-a-full-node-in-alfajores"
+    "description": "The label for the doc item Alfajores Full Node in sidebar docs, linking to the doc network/node/run-alfajores"
   },
   "sidebar.docs.doc.Baklava Full Node": {
     "message": "Baklava Full Node",
-    "description": "The label for the doc item Baklava Full Node in sidebar docs, linking to the doc getting-started/baklava-testnet/running-a-full-node-in-baklava"
+    "description": "The label for the doc item Baklava Full Node in sidebar docs, linking to the doc network/node/run-baklava"
   },
   "sidebar.docs.doc.Hosted Nodes": {
     "message": "Hosted Nodes",
-    "description": "The label for the doc item Hosted Nodes in sidebar docs, linking to the doc getting-started/hosted-nodes"
+    "description": "The label for the doc item Hosted Nodes in sidebar docs, linking to the doc network/node/run-hosted"
   },
   "sidebar.docs.doc.Mainnet": {
     "message": "Mainnet",
-    "description": "The label for the doc item Mainnet in sidebar docs, linking to the doc important-information/mainnet-network-disclaimer"
+    "description": "The label for the doc item Mainnet in sidebar docs, linking to the doc network/mainnet/disclaimer"
   },
   "sidebar.docs.doc.Alfajores Testnet": {
     "message": "Alfajores Testnet",
-    "description": "The label for the doc item Alfajores Testnet in sidebar docs, linking to the doc important-information/alfajores-testnet-disclaimer"
+    "description": "The label for the doc item Alfajores Testnet in sidebar docs, linking to the doc network/alfajores/disclaimer"
   },
   "sidebar.docs.doc.Baklava Testnet": {
     "message": "Baklava Testnet",
-    "description": "The label for the doc item Baklava Testnet in sidebar docs, linking to the doc important-information/baklava-testnet-disclaimer"
+    "description": "The label for the doc item Baklava Testnet in sidebar docs, linking to the doc network/baklava/disclaimer"
   },
   "sidebar.docs.doc.Using Mac": {
     "message": "Using Mac",
-    "description": "The label for the doc item Using Mac in sidebar docs, linking to the doc developer-resources/using-mac"
+    "description": "The label for the doc item Using Mac in sidebar docs, linking to the doc developer/setup/mac"
   },
   "sidebar.docs.doc.Using Windows": {
     "message": "Using Windows",
-    "description": "The label for the doc item Using Windows in sidebar docs, linking to the doc developer-resources/develop-on-windows"
+    "description": "The label for the doc item Using Windows in sidebar docs, linking to the doc developer/setup/windows"
   },
   "sidebar.docs.doc.Testnet Wallet": {
     "message": "Testnet Wallet",
-    "description": "The label for the doc item Testnet Wallet in sidebar docs, linking to the doc developer-resources/testnet-wallet"
+    "description": "The label for the doc item Testnet Wallet in sidebar docs, linking to the doc developer/setup/wallet"
   },
   "sidebar.docs.doc.Using Remix": {
     "message": "Using Remix",
-    "description": "The label for the doc item Using Remix in sidebar docs, linking to the doc developer-resources/deploy-remix"
+    "description": "The label for the doc item Using Remix in sidebar docs, linking to the doc developer/deploy/remix"
   },
   "sidebar.docs.doc.Using Truffle": {
     "message": "Using Truffle",
-    "description": "The label for the doc item Using Truffle in sidebar docs, linking to the doc developer-resources/deploy-truffle"
+    "description": "The label for the doc item Using Truffle in sidebar docs, linking to the doc developer/deploy/truffle"
   },
   "sidebar.docs.doc.Using Hardhat": {
     "message": "Using Hardhat",
-    "description": "The label for the doc item Using Hardhat in sidebar docs, linking to the doc developer-resources/deploy-hardhat"
+    "description": "The label for the doc item Using Hardhat in sidebar docs, linking to the doc developer/deploy/hardhat"
   },
   "sidebar.docs.doc.Using Replit": {
     "message": "Using Replit",
-    "description": "The label for the doc item Using Replit in sidebar docs, linking to the doc developer-resources/deploy-replit"
+    "description": "The label for the doc item Using Replit in sidebar docs, linking to the doc developer/setup/replit"
   },
   "sidebar.docs.doc.Ethereum Developers": {
     "message": "Ethereum Developers",
-    "description": "The label for the doc item Ethereum Developers in sidebar docs, linking to the doc developer-resources/celo-for-eth-devs"
+    "description": "The label for the doc item Ethereum Developers in sidebar docs, linking to the doc developer/migrate/from-ethereum"
   },
   "sidebar.docs.doc.EVM Tools": {
     "message": "EVM Tools",
-    "description": "The label for the doc item EVM Tools in sidebar docs, linking to the doc learn/evm-compatible-tooling"
+    "description": "The label for the doc item EVM Tools in sidebar docs, linking to the doc developer/evm-tools"
   },
   "sidebar.docs.doc.Dapps": {
     "message": "Dapps",
-    "description": "The label for the doc item Dapps in sidebar docs, linking to the doc developer-resources/integrations/dapps"
+    "description": "The label for the doc item Dapps in sidebar docs, linking to the doc integration/dapps"
   },
   "sidebar.docs.doc.General": {
     "message": "General",
-    "description": "The label for the doc item General in sidebar docs, linking to the doc developer-resources/integrations/general"
+    "description": "The label for the doc item General in sidebar docs, linking to the doc integration/general"
   },
   "sidebar.docs.doc.Checklist": {
     "message": "Checklist",
-    "description": "The label for the doc item Checklist in sidebar docs, linking to the doc developer-resources/integrations/checklist"
+    "description": "The label for the doc item Checklist in sidebar docs, linking to the doc integration/checklist"
   },
   "sidebar.docs.doc.Custody": {
     "message": "Custody",
-    "description": "The label for the doc item Custody in sidebar docs, linking to the doc developer-resources/integrations/custody"
+    "description": "The label for the doc item Custody in sidebar docs, linking to the doc integration/custody"
   },
   "sidebar.docs.doc.Listings": {
     "message": "Listings",
-    "description": "The label for the doc item Listings in sidebar docs, linking to the doc developer-resources/integrations/listings"
+    "description": "The label for the doc item Listings in sidebar docs, linking to the doc integration/listings"
   },
   "sidebar.docs.doc.Cloud HSM": {
     "message": "Cloud HSM",
-    "description": "The label for the doc item Cloud HSM in sidebar docs, linking to the doc developer-resources/integrations/cloud-hsm"
+    "description": "The label for the doc item Cloud HSM in sidebar docs, linking to the doc integration/cloud-hsm"
   },
   "sidebar.docs.doc.Mainnet Validator": {
     "message": "Mainnet Validator",
-    "description": "The label for the doc item Mainnet Validator in sidebar docs, linking to the doc getting-started/mainnet/running-a-validator-in-mainnet"
+    "description": "The label for the doc item Mainnet Validator in sidebar docs, linking to the doc validator/run/mainnet"
   },
   "sidebar.docs.doc.Baklava Validator": {
     "message": "Baklava Validator",
-    "description": "The label for the doc item Baklava Validator in sidebar docs, linking to the doc getting-started/baklava-testnet/running-a-validator-in-baklava"
+    "description": "The label for the doc item Baklava Validator in sidebar docs, linking to the doc validator/run/baklava"
   },
   "sidebar.docs.doc.Attestation Service": {
     "message": "Attestation Service",
@@ -461,135 +429,135 @@
   },
   "sidebar.docs.doc.Summary": {
     "message": "Summary",
-    "description": "The label for the doc item Summary in sidebar docs, linking to the doc validator-guide/key-management/summary"
+    "description": "The label for the doc item Summary in sidebar docs, linking to the doc validator/key-management/summary"
   },
   "sidebar.docs.doc.Key Management": {
     "message": "Key Management",
-    "description": "The label for the doc item Key Management in sidebar docs, linking to the doc validator-guide/key-management/detailed"
+    "description": "The label for the doc item Key Management in sidebar docs, linking to the doc validator/key-management/detailed"
   },
   "sidebar.docs.doc.Key Rotation": {
     "message": "Key Rotation",
-    "description": "The label for the doc item Key Rotation in sidebar docs, linking to the doc validator-guide/key-management/key-rotation"
+    "description": "The label for the doc item Key Rotation in sidebar docs, linking to the doc validator/key-management/key-rotation"
   },
   "sidebar.docs.doc.Nodes and Services": {
     "message": "Nodes and Services",
-    "description": "The label for the doc item Nodes and Services in sidebar docs, linking to the doc validator-guide/securing-nodes-and-services"
+    "description": "The label for the doc item Nodes and Services in sidebar docs, linking to the doc validator/security"
   },
   "sidebar.docs.doc.Monitoring": {
     "message": "Monitoring",
-    "description": "The label for the doc item Monitoring in sidebar docs, linking to the doc validator-guide/monitoring"
+    "description": "The label for the doc item Monitoring in sidebar docs, linking to the doc validator/monitoring"
   },
   "sidebar.docs.doc.DevOps Best Practices": {
     "message": "DevOps Best Practices",
-    "description": "The label for the doc item DevOps Best Practices in sidebar docs, linking to the doc validator-guide/devops-best-practices"
+    "description": "The label for the doc item DevOps Best Practices in sidebar docs, linking to the doc validator/devops-best-practices"
   },
   "sidebar.docs.doc.Node Upgrades": {
     "message": "Node Upgrades",
-    "description": "The label for the doc item Node Upgrades in sidebar docs, linking to the doc validator-guide/node-upgrades"
+    "description": "The label for the doc item Node Upgrades in sidebar docs, linking to the doc validator/node-upgrade"
   },
   "sidebar.docs.doc.Running Proxies": {
     "message": "Running Proxies",
-    "description": "The label for the doc item Running Proxies in sidebar docs, linking to the doc validator-guide/proxy"
+    "description": "The label for the doc item Running Proxies in sidebar docs, linking to the doc validator/proxy"
   },
   "sidebar.docs.doc.Validator Explorer": {
     "message": "Validator Explorer",
-    "description": "The label for the doc item Validator Explorer in sidebar docs, linking to the doc validator-guide/validator-explorer"
+    "description": "The label for the doc item Validator Explorer in sidebar docs, linking to the doc validator/validator-explorer"
   },
   "sidebar.docs.doc.Voting Policy": {
     "message": "Voting Policy",
-    "description": "The label for the doc item Voting Policy in sidebar docs, linking to the doc validator-guide/celo-foundation-voting-policy"
+    "description": "The label for the doc item Voting Policy in sidebar docs, linking to the doc validator/celo-foundation-voting-policy"
   },
   "sidebar.docs.doc.Celo Signal": {
     "message": "Celo Signal",
-    "description": "The label for the doc item Celo Signal in sidebar docs, linking to the doc validator-guide/celo-signal"
+    "description": "The label for the doc item Celo Signal in sidebar docs, linking to the doc validator/celo-signal"
   },
   "sidebar.docs.doc.Validator FAQ": {
     "message": "Validator FAQ",
-    "description": "The label for the doc item Validator FAQ in sidebar docs, linking to the doc getting-started/validator-troubleshooting-faq"
+    "description": "The label for the doc item Validator FAQ in sidebar docs, linking to the doc validator/troubleshooting-faq"
   },
   "sidebar.docs.doc.Self-Custody": {
     "message": "Self-Custody",
-    "description": "The label for the doc item Self-Custody in sidebar docs, linking to the doc celo-holder-guide/quick-start"
+    "description": "The label for the doc item Self-Custody in sidebar docs, linking to the doc holder/manage/self-custody"
   },
   "sidebar.docs.doc.Release Gold": {
     "message": "Release Gold",
-    "description": "The label for the doc item Release Gold in sidebar docs, linking to the doc celo-holder-guide/release-gold"
+    "description": "The label for the doc item Release Gold in sidebar docs, linking to the doc holder/manage/release-gold"
   },
   "sidebar.docs.doc.Exchange Assets": {
     "message": "Exchange Assets",
-    "description": "The label for the doc item Exchange Assets in sidebar docs, linking to the doc celo-holder-guide/celo-exchange-bot"
+    "description": "The label for the doc item Exchange Assets in sidebar docs, linking to the doc holder/manage/exchange"
   },
   "sidebar.docs.doc.Asset Management": {
     "message": "Asset Management",
-    "description": "The label for the doc item Asset Management in sidebar docs, linking to the doc celo-holder-guide/cusd"
+    "description": "The label for the doc item Asset Management in sidebar docs, linking to the doc holder/manage/asset"
   },
   "sidebar.docs.doc.Validator Elections": {
     "message": "Validator Elections",
-    "description": "The label for the doc item Validator Elections in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/validator-elections"
+    "description": "The label for the doc item Validator Elections in sidebar docs, linking to the doc protocol/pos/validator-elections"
   },
   "sidebar.docs.doc.Voting on Governance": {
     "message": "Voting on Governance",
-    "description": "The label for the doc item Voting on Governance in sidebar docs, linking to the doc celo-holder-guide/voting-governance"
+    "description": "The label for the doc item Voting on Governance in sidebar docs, linking to the doc holder/vote/governance"
   },
   "sidebar.docs.doc.Governable Parameters": {
     "message": "Governable Parameters",
-    "description": "The label for the doc item Governable Parameters in sidebar docs, linking to the doc celo-holder-guide/governance-cheat-sheet"
+    "description": "The label for the doc item Governable Parameters in sidebar docs, linking to the doc holder/vote/governance-parameters"
   },
   "sidebar.docs.doc.Recover from ETH Address": {
     "message": "Recover from ETH Address",
-    "description": "The label for the doc item Recover from ETH Address in sidebar docs, linking to the doc celo-holder-guide/eth-recovery"
+    "description": "The label for the doc item Recover from ETH Address in sidebar docs, linking to the doc holder/recover/from-eth-address"
   },
   "sidebar.docs.doc.Recover from Celo Address": {
     "message": "Recover from Celo Address",
-    "description": "The label for the doc item Recover from Celo Address in sidebar docs, linking to the doc celo-holder-guide/celo-recovery"
+    "description": "The label for the doc item Recover from Celo Address in sidebar docs, linking to the doc holder/recover/from-celo-address"
   },
   "sidebar.docs.doc.Validator Groups": {
     "message": "Validator Groups",
-    "description": "The label for the doc item Validator Groups in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/validator-groups"
+    "description": "The label for the doc item Validator Groups in sidebar docs, linking to the doc protocol/pos/validator-groups"
   },
   "sidebar.docs.doc.Locked CELO": {
     "message": "Locked CELO",
-    "description": "The label for the doc item Locked CELO in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/locked-gold"
+    "description": "The label for the doc item Locked CELO in sidebar docs, linking to the doc protocol/pos/locked-gold"
   },
   "sidebar.docs.doc.Validator Rewards": {
     "message": "Validator Rewards",
-    "description": "The label for the doc item Validator Rewards in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/validator-rewards"
+    "description": "The label for the doc item Validator Rewards in sidebar docs, linking to the doc protocol/pos/epoch-rewards-validator"
   },
   "sidebar.docs.doc.Locked CELO Rewards": {
     "message": "Locked CELO Rewards",
-    "description": "The label for the doc item Locked CELO Rewards in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/locked-gold-rewards"
+    "description": "The label for the doc item Locked CELO Rewards in sidebar docs, linking to the doc protocol/pos/epoch-rewards-locked-gold"
   },
   "sidebar.docs.doc.Community Fund": {
     "message": "Community Fund",
-    "description": "The label for the doc item Community Fund in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/community-fund"
+    "description": "The label for the doc item Community Fund in sidebar docs, linking to the doc protocol/pos/epoch-rewards-community-fund"
   },
   "sidebar.docs.doc.Carbon Offsetting Fund": {
     "message": "Carbon Offsetting Fund",
-    "description": "The label for the doc item Carbon Offsetting Fund in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund"
+    "description": "The label for the doc item Carbon Offsetting Fund in sidebar docs, linking to the doc protocol/pos/epoch-rewards-carbon-offsetting-fund"
   },
   "sidebar.docs.doc.Penalties": {
     "message": "Penalties",
-    "description": "The label for the doc item Penalties in sidebar docs, linking to the doc celo-codebase/protocol/proof-of-stake/penalties"
+    "description": "The label for the doc item Penalties in sidebar docs, linking to the doc protocol/pos/penalties"
   },
   "sidebar.docs.doc.Validator Set Differences": {
     "message": "Validator Set Differences",
-    "description": "The label for the doc item Validator Set Differences in sidebar docs, linking to the doc celo-codebase/protocol/consensus/validator-set-differences"
+    "description": "The label for the doc item Validator Set Differences in sidebar docs, linking to the doc protocol/consensus/validator-set-differences"
   },
   "sidebar.docs.doc.Locating Nodes": {
     "message": "Locating Nodes",
-    "description": "The label for the doc item Locating Nodes in sidebar docs, linking to the doc celo-codebase/protocol/consensus/locating-nodes"
+    "description": "The label for the doc item Locating Nodes in sidebar docs, linking to the doc protocol/consensus/locating-nodes"
   },
   "sidebar.docs.doc.Ultralight Sync": {
     "message": "Ultralight Sync",
-    "description": "The label for the doc item Ultralight Sync in sidebar docs, linking to the doc celo-codebase/protocol/consensus/ultralight-sync"
+    "description": "The label for the doc item Ultralight Sync in sidebar docs, linking to the doc protocol/consensus/ultralight-sync"
   },
   "sidebar.docs.doc.Governance": {
     "message": "Governance",
-    "description": "The label for the doc item Governance in sidebar docs, linking to the doc celo-codebase/protocol/governance"
+    "description": "The label for the doc item Governance in sidebar docs, linking to the doc protocol/governance"
   },
   "sidebar.docs.doc.Ultralight Client": {
     "message": "Ultralight Client",
-    "description": "The label for the doc item Ultralight Client in sidebar docs, linking to the doc celo-codebase/protocol/plumo"
+    "description": "The label for the doc item Ultralight Client in sidebar docs, linking to the doc protocol/plumo"
   },
   "sidebar.docs.doc.Smart Contracts": {
     "message": "Smart Contracts",
@@ -603,37 +571,25 @@
     "message": "CeloCLI and ContractKit",
     "description": "The label for the doc item CeloCLI and ContractKit in sidebar docs, linking to the doc community/release-process/base-cli-contractkit-dappkit-utils"
   },
-  "sidebar.docs.doc.Celo Bridges": {
-    "message": "Celo Bridges",
-    "description": "The label for the doc item Celo Bridges in sidebar docs, linking to the doc celo-codebase/protocol/bridging/bridging-to-celo"
-  },
   "sidebar.docs.doc.Native Assets with Etherscan": {
     "message": "Native Assets with Etherscan",
-    "description": "The label for the doc item Native Assets with Etherscan in sidebar docs, linking to the doc celo-codebase/protocol/bridging/bridging-native-assets"
+    "description": "The label for the doc item Native Assets with Etherscan in sidebar docs, linking to the doc bridge/etherscan/native-assets"
   },
   "sidebar.docs.doc.Tokens with Etherscan": {
     "message": "Tokens with Etherscan",
-    "description": "The label for the doc item Tokens with Etherscan in sidebar docs, linking to the doc celo-codebase/protocol/bridging/bridging-tokens-with-etherscan"
+    "description": "The label for the doc item Tokens with Etherscan in sidebar docs, linking to the doc bridge/etherscan/tokens"
   },
   "sidebar.docs.doc.Optics Bridge GUI": {
     "message": "Optics Bridge GUI",
-    "description": "The label for the doc item Optics Bridge GUI in sidebar docs, linking to the doc celo-codebase/protocol/bridging/optics-gui"
-  },
-  "sidebar.docs.doc.Optics Bridge": {
-    "message": "Optics Bridge",
-    "description": "The label for the doc item Optics Bridge in sidebar docs, linking to the doc celo-codebase/protocol/optics"
+    "description": "The label for the doc item Optics Bridge GUI in sidebar docs, linking to the doc bridge/optics/gui"
   },
   "sidebar.docs.doc.Migrating to Optics v2": {
     "message": "Migrating to Optics v2",
-    "description": "The label for the doc item Migrating to Optics v2 in sidebar docs, linking to the doc celo-codebase/protocol/bridging/migrating-to-optics-v2"
+    "description": "The label for the doc item Migrating to Optics v2 in sidebar docs, linking to the doc bridge/optics/migration-v2"
   },
   "sidebar.docs.doc.Optics Bridge FAQ": {
     "message": "Optics Bridge FAQ",
-    "description": "The label for the doc item Optics Bridge FAQ in sidebar docs, linking to the doc celo-codebase/protocol/bridging/optics-bridge-faq"
-  },
-  "sidebar.docs.doc.Celo Oracles": {
-    "message": "Celo Oracles",
-    "description": "The label for the doc item Celo Oracles in sidebar docs, linking to the doc celo-codebase/protocol/oracles/oracles-on-celo"
+    "description": "The label for the doc item Optics Bridge FAQ in sidebar docs, linking to the doc bridge/optics/faq"
   },
   "sidebar.docs.doc.Contracts": {
     "message": "Contracts",
@@ -657,106 +613,126 @@
   },
   "sidebar.cli.doc.Introduction": {
     "message": "Introduction",
-    "description": "The label for the doc item Introduction in sidebar cli, linking to the doc command-line-interface/introduction"
+    "description": "The label for the doc item Introduction in sidebar cli, linking to the doc cli/index"
   },
   "sidebar.cli.doc.Account": {
     "message": "Account",
-    "description": "The label for the doc item Account in sidebar cli, linking to the doc command-line-interface/account"
+    "description": "The label for the doc item Account in sidebar cli, linking to the doc cli/account"
   },
   "sidebar.cli.doc.Commands": {
     "message": "Commands",
-    "description": "The label for the doc item Commands in sidebar cli, linking to the doc command-line-interface/commands"
+    "description": "The label for the doc item Commands in sidebar cli, linking to the doc cli/commands"
   },
   "sidebar.cli.doc.Config": {
     "message": "Config",
-    "description": "The label for the doc item Config in sidebar cli, linking to the doc command-line-interface/config"
+    "description": "The label for the doc item Config in sidebar cli, linking to the doc cli/config"
   },
   "sidebar.cli.doc.DKG": {
     "message": "DKG",
-    "description": "The label for the doc item DKG in sidebar cli, linking to the doc command-line-interface/dkg"
+    "description": "The label for the doc item DKG in sidebar cli, linking to the doc cli/dkg"
   },
   "sidebar.cli.doc.Election": {
     "message": "Election",
-    "description": "The label for the doc item Election in sidebar cli, linking to the doc command-line-interface/election"
+    "description": "The label for the doc item Election in sidebar cli, linking to the doc cli/election"
   },
   "sidebar.cli.doc.Exchange": {
     "message": "Exchange",
-    "description": "The label for the doc item Exchange in sidebar cli, linking to the doc command-line-interface/exchange"
+    "description": "The label for the doc item Exchange in sidebar cli, linking to the doc cli/exchange"
   },
   "sidebar.cli.doc.Governance": {
     "message": "Governance",
-    "description": "The label for the doc item Governance in sidebar cli, linking to the doc command-line-interface/governance"
+    "description": "The label for the doc item Governance in sidebar cli, linking to the doc cli/governance"
   },
   "sidebar.cli.doc.Grandamento": {
     "message": "Grandamento",
-    "description": "The label for the doc item Grandamento in sidebar cli, linking to the doc command-line-interface/grandamento"
+    "description": "The label for the doc item Grandamento in sidebar cli, linking to the doc cli/grandamento"
   },
   "sidebar.cli.doc.Help": {
     "message": "Help",
-    "description": "The label for the doc item Help in sidebar cli, linking to the doc command-line-interface/help"
+    "description": "The label for the doc item Help in sidebar cli, linking to the doc cli/help"
   },
   "sidebar.cli.doc.Identity": {
     "message": "Identity",
-    "description": "The label for the doc item Identity in sidebar cli, linking to the doc command-line-interface/identity"
+    "description": "The label for the doc item Identity in sidebar cli, linking to the doc cli/identity"
   },
   "sidebar.cli.doc.LockedGold": {
     "message": "LockedGold",
-    "description": "The label for the doc item LockedGold in sidebar cli, linking to the doc command-line-interface/lockedgold"
+    "description": "The label for the doc item LockedGold in sidebar cli, linking to the doc cli/lockedgold"
   },
   "sidebar.cli.doc.Multisig": {
     "message": "Multisig",
-    "description": "The label for the doc item Multisig in sidebar cli, linking to the doc command-line-interface/multisig"
+    "description": "The label for the doc item Multisig in sidebar cli, linking to the doc cli/multisig"
   },
   "sidebar.cli.doc.Network": {
     "message": "Network",
-    "description": "The label for the doc item Network in sidebar cli, linking to the doc command-line-interface/network"
+    "description": "The label for the doc item Network in sidebar cli, linking to the doc cli/network"
   },
   "sidebar.cli.doc.Node": {
     "message": "Node",
-    "description": "The label for the doc item Node in sidebar cli, linking to the doc command-line-interface/node"
+    "description": "The label for the doc item Node in sidebar cli, linking to the doc cli/node"
   },
   "sidebar.cli.doc.Oracle": {
     "message": "Oracle",
-    "description": "The label for the doc item Oracle in sidebar cli, linking to the doc command-line-interface/oracle"
+    "description": "The label for the doc item Oracle in sidebar cli, linking to the doc cli/oracle"
   },
   "sidebar.cli.doc.Plugins": {
     "message": "Plugins",
-    "description": "The label for the doc item Plugins in sidebar cli, linking to the doc command-line-interface/plugins"
+    "description": "The label for the doc item Plugins in sidebar cli, linking to the doc cli/plugins"
   },
   "sidebar.cli.doc.ReleaseGold": {
     "message": "ReleaseGold",
-    "description": "The label for the doc item ReleaseGold in sidebar cli, linking to the doc command-line-interface/releasegold"
+    "description": "The label for the doc item ReleaseGold in sidebar cli, linking to the doc cli/releasegold"
   },
   "sidebar.cli.doc.Reserve": {
     "message": "Reserve",
-    "description": "The label for the doc item Reserve in sidebar cli, linking to the doc command-line-interface/reserve"
+    "description": "The label for the doc item Reserve in sidebar cli, linking to the doc cli/reserve"
   },
   "sidebar.cli.doc.Rewards": {
     "message": "Rewards",
-    "description": "The label for the doc item Rewards in sidebar cli, linking to the doc command-line-interface/rewards"
+    "description": "The label for the doc item Rewards in sidebar cli, linking to the doc cli/rewards"
   },
   "sidebar.cli.doc.Transfer": {
     "message": "Transfer",
-    "description": "The label for the doc item Transfer in sidebar cli, linking to the doc command-line-interface/transfer"
+    "description": "The label for the doc item Transfer in sidebar cli, linking to the doc cli/transfer"
   },
   "sidebar.cli.doc.Validator": {
     "message": "Validator",
-    "description": "The label for the doc item Validator in sidebar cli, linking to the doc command-line-interface/validator"
+    "description": "The label for the doc item Validator in sidebar cli, linking to the doc cli/validator"
   },
   "sidebar.cli.doc.ValidatorGroup": {
     "message": "ValidatorGroup",
-    "description": "The label for the doc item ValidatorGroup in sidebar cli, linking to the doc command-line-interface/validatorgroup"
-  },
-  "sidebar.docs.category. General": {
-    "message": " General",
-    "description": "The label for category  General in sidebar docs"
+    "description": "The label for the doc item ValidatorGroup in sidebar cli, linking to the doc cli/validatorgroup"
   },
   "sidebar.docs.doc.Welcome": {
     "message": "Welcome",
     "description": "The label for the doc item Welcome in sidebar docs, linking to the doc welcome"
   },
-  "sidebar.docs.doc.Celo": {
-    "message": "Celo",
-    "description": "The label for the doc item Celo in sidebar docs, linking to the doc general/what-is"
+  "sidebar.docs.category.Setup": {
+    "message": "Setup",
+    "description": "The label for category Setup in sidebar docs"
+  },
+  "sidebar.docs.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category Deployment in sidebar docs"
+  },
+  "sidebar.docs.doc.Metmask and Celo": {
+    "message": "Metmask and Celo",
+    "description": "The label for the doc item Metmask and Celo in sidebar docs, linking to the doc wallet/metamask/use"
+  },
+  "sidebar.docs.doc.Invitation": {
+    "message": "Invitation",
+    "description": "The label for the doc item Invitation in sidebar docs, linking to the doc wallet/celo-wallet/invitation"
+  },
+  "sidebar.docs.doc.Node Sync": {
+    "message": "Node Sync",
+    "description": "The label for the doc item Node Sync in sidebar docs, linking to the doc wallet/celo-wallet/node-sync"
+  },
+  "sidebar.docs.doc.Other Wallets": {
+    "message": "Other Wallets",
+    "description": "The label for the doc item Other Wallets in sidebar docs, linking to the doc wallet/other-wallets"
+  },
+  "sidebar.docs.doc.Sequential Delay Domain": {
+    "message": "Sequential Delay Domain",
+    "description": "The label for the doc item Sequential Delay Domain in sidebar docs, linking to the doc protocol/identity/odis-domain-sequential-delay-domain"
   }
 }
