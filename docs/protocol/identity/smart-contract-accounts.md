@@ -66,7 +66,7 @@ To get the account address (step 3) you can use the [Attestation contract method
 
 To get the wallet address from the account (step 4) you can use the [Account contract method `getWalletAddress`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L318).
 
-It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/protocol/transactions/tx-comment-encryption)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
+It may also be necessary to lookup the data encryption key (ex. [for comment encryption](/protocol/transaction/tx-comment-encryption)). This key can similarly be queried with the account by using the [Account contract method `getDataEncryptionKey`](https://github.com/celo-org/celo-monorepo/blob/e6fdaf798a662ffe2c12f9a74b28e0fa1c1f8101/packages/sdk/contractkit/src/wrappers/Accounts.ts#L310).
 
 You can view a working example of this all tied together in [the `celocli` command `identity:get-attestations`](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/src/commands/identity/get-attestations.ts).
 

@@ -4,7 +4,7 @@ description: How to get a full node running on the Baklava Network using a prebu
 ---
 # Run a Baklava Full Node
 
-How to get a full node running on the [Baklava Network](/getting-started/baklava-testnet) using a prebuilt Docker image.
+How to get a full node running on the [Baklava Network](/network/baklava) using a prebuilt Docker image.
 
 ___
 
@@ -130,7 +130,7 @@ You will have fully synced with the network once you have pulled the latest bloc
 
 ## Command Line Interface
 
-Once the full node is running, it can serve the [Command Line Interface](/command-line-interface/introduction.md) tool `celocli`. For example:
+Once the full node is running, it can serve the [Command Line Interface](/cli/) tool `celocli`. For example:
 
 ```bash
 $ npm install -g @celo/celocli
@@ -143,4 +143,4 @@ $ celocli account:new
 
 ## Light Client Serving
 
-Light clients may connect to you as people run the [Celo Mobile Wallet](/getting-started/alfajores-testnet/using-the-mobile-wallet) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/celo-codebase/protocol/transactions/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.
+Light clients may connect to you as people run the [Celo Mobile Wallet](/network/alfajores/use-mobile-wallet) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

@@ -90,8 +90,8 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
  2. Celo transaction objects are slightly different from transaction objects on Ethereum. 
  Ethereum transaction objects include fields to, value, gas, gasPrice, data, nonce, signature (v,r,s). 
  Celo transaction objects include the same fields as Ethereum transaction objects, plus feeCurrency, gatewayFee and gatewayFeeRecipient. 
- These additional fields are included to provide [full node incentives](/protocol/transactions/full-node-incentives#incentives-for-operating-full-nodes) 
- and to allow users to [pay transaction fees in different currencies.](/protocol/transactions/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
+ These additional fields are included to provide [full node incentives](/protocol/transaction/full-node-incentives#incentives-for-operating-full-nodes) 
+ and to allow users to [pay transaction fees in different currencies.](/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
 
 
  1. When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
@@ -118,7 +118,7 @@ Celo includes all of the precompiled contracts in Ethereum, but also adds additi
 
 ### Core Contract Calls
 
-The blockchain client makes some core contract calls at the end of a block, outside of transactions.  Many are done on epoch blocks ([epoch rewards](/protocol/pos/epoch-rewards), [validator elections](/protocol/pos/validator-elections), etc.), but not all.  For example, the [gas price minimum](/protocol/transactions/gas-pricing) update can happen on any block.
+The blockchain client makes some core contract calls at the end of a block, outside of transactions.  Many are done on epoch blocks ([epoch rewards](/protocol/pos/epoch-rewards), [validator elections](/protocol/pos/validator-elections), etc.), but not all.  For example, the [gas price minimum](/protocol/transaction/gas-pricing) update can happen on any block.
 Logs created by these contract changes are included in a single additional receipt in that block, which references the block hash as its transaction hash, even though there is no transaction with this hash. If no logs were created by such calls in that block, no receipt is added.
 
 ### Node management APIs

@@ -16,7 +16,7 @@ The Celo Wallet can be used to send and request payments with anyone who has ver
 
 ### Comment Encryption
 
-Comments are encrypted using the `messageEncryptionKey` of the sender and the recipient to ensure that comment contents are kept private. These encrypted comments are then stored on chain. For more details, please refer to the [Encrypted Payment Comments](/celo-codebase/protocol/transactions/tx-comment-encryption.md) section of protocol documentation.
+Comments are encrypted using the `messageEncryptionKey` of the sender and the recipient to ensure that comment contents are kept private. These encrypted comments are then stored on chain. For more details, please refer to the [Encrypted Payment Comments](/celo-codebase/protocol/transaction/tx-comment-encryption.md) section of protocol documentation.
 
 ### Requesting
 

@@ -45,7 +45,7 @@ Celo and Ethereum use different derivation paths for generating seed phrases. Be
 
 ## **Gas Fees Require CELO**
 
-While gas on Celo can usually be paid in [many different currencies](/protocol/transactions/erc20-transaction-fees), when using MetaMask, gas fees will automatically be paid in CELO. This is because MetaMask will be using the [Ethereum-compatible Celo transaction format](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), which doesn't include the `feecurrency` field.
+While gas on Celo can usually be paid in [many different currencies](/protocol/transaction/erc20-transaction-fees), when using MetaMask, gas fees will automatically be paid in CELO. This is because MetaMask will be using the [Ethereum-compatible Celo transaction format](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md), which doesn't include the `feecurrency` field.
 
 ## **Incorrect Logo**
 
