@@ -142,13 +142,6 @@ A decentralized app that helps users to create reliable savings communities by u
 - [Website](https://bloinx.io/)
 - [GitHub](https://github.com/Bloinx/bloinx-mobile)
 
-### Poof.cash
-
-Poof.cash is a protocol for decentralized, private transactions. It is the first native privacy tool for Celo users.
-
-- [Website](https://poof.cash)
-- [GitHub](https://github.com/poofcash)
-
 ### Talent Protocol
 
 Talent Protocol is a web3 platform where talent can easily launch a social token (called Talent Tokens) to accelerate their career, and where supporters can back people they believe in.
