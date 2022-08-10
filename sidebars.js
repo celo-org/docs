@@ -11,7 +11,7 @@ const sidebars = {
         { type: "doc", label: "Whitepapers", id: "general/whitepapers" },
         { type: "doc", label: "Glossary", id: "general/glossary" },
         { type: "doc", label: "Gallery", id: "general/gallery" },
-        { type: "doc", label: "FAQs", id: "general/faqs" },
+        // { type: "doc", label: "FAQs", id: "general/faqs" },
       ],
     },
     // Wallets
