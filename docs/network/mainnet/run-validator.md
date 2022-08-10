@@ -94,7 +94,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/command-line-interface/introduction.md)for instructions on how to get set up.
+  See [Command Line Interface \(CLI\) ](/cli/index.md)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
