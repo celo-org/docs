@@ -11,7 +11,7 @@ module.exports = {
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
@@ -138,8 +138,8 @@ module.exports = {
             from: ["/celo-holder-guide/cusd"],
           },
           {
-            to: "/celo-owner-guide/eth-recovery",
-            from: ["/celo-holder-guide/eth-recovery"],
+            to: "/celo-holder-guide/eth-recovery",
+            from: ["/celo-owner-guide/eth-recovery"],
           },
           {
             to: "/celo-owner-guide/celo-recovery",
@@ -218,7 +218,7 @@ module.exports = {
             from: ["/cli/commands/plugins"],
           },
           {
-            to: "/cli/introduction",
+            to: "/cli",
             from: [
               "/cli/commands/registry",
               "/cli/registry",
