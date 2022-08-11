@@ -25,7 +25,7 @@ Before getting started, it’s important to have downloaded MetaMask, Valora, an
 * [Download MetaMask](https://metamask.io/download.html) and create an account.
 * [Download Valora](https://valoraapp.com/) and create an account.
 * Configure [MetaMask to work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo)
-* Install the [celocli](https://docs.celo.org/command-line-interface/introduction)
+* Install the [celocli](https://docs.celo.org/cli)
 ## Set up your project
 
 Create a new project directory.

@@ -190,7 +190,7 @@ See [Local Development Chain w/ Protocol Contracts](/developer-guide/development
 
 ### Celo CLI
 
-The [Celo CLI](../command-line-interface/introduction.md) is a command-line tool for interacting with the Celo Protocol smart contracts. Some of the things you can do with it include looking at accounts, checking balances, and signing transactions.
+The [Celo CLI](/cli/index.md) is a command-line tool for interacting with the Celo Protocol smart contracts. Some of the things you can do with it include looking at accounts, checking balances, and signing transactions.
 
 **Install Celo CLI**
 

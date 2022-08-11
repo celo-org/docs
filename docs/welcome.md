@@ -26,12 +26,12 @@ If you have any ideas to improve the docs please make an [issue](https://github.
 
 Learn the Celo Basics to get an overview of our mission, vision, whitepapers, and resources.
 
-<LinkCardsWrapper>
+<!-- <LinkCardsWrapper>
   <LinkCard title="Database" description="A dedicated, scalable Postgres database" />
   <LinkCard title="Auth" description="User management with Row Level Security" />
   <LinkCard title="File Storage" description="Store, organize, and serve large files" />
   <LinkCard title="Auto-generated APIs" description="Instantly generate APIs for your database" />
-</LinkCardsWrapper>
+</LinkCardsWrapper> -->
 
 - [What is Celo?](learn/why-celo)
 - [Showcase](/showcase)
@@ -64,7 +64,7 @@ Explore Celo data to view the reserve, network, dapps, and additional analytics.
 
 Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 
-- [CLI](command-line-interface/introduction)
+- [CLI](cli)
 - [IOS](https://github.com/heymateag/celoiossdk)
 - [Java](https://github.com/blaize-tech/celo-sdk-java)
 - [React](https://github.com/celo-org/react-celo)

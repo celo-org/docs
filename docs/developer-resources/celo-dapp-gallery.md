@@ -189,7 +189,7 @@ Celovote automatically distributes your stake to preferred validator groups that
 
 ### Celo Tools
 
-Celo Tools is an accessible frontend to the [Celo CLI](/command-line-interface/introduction.md). Anyone and everyone participating in the Celo network should be able to stake and vote on governance proposals, Celo Tools provides this functionality for those without the know-how to access a command line.
+Celo Tools is an accessible frontend to the [Celo CLI](/cli/index.md). Anyone and everyone participating in the Celo network should be able to stake and vote on governance proposals, Celo Tools provides this functionality for those without the know-how to access a command line.
 
 - [Website](https://celotools.com/)
 

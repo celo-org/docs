@@ -36,7 +36,7 @@ In the future ContractKit may support other types of claim, including:
 
 ## Handling Metadata
 
-You can interact with metadata files easily through the [CLI](/command-line-interface/account.md), or in your own scripts, tools or DApps via [ContractKit](/developer-resources/contractkit/index.md). Most commands require a node being available under `http://localhost:8545` to make view calls, and to modify metadata files, you'll need the relevant account to be unlocked to sign the files.
+You can interact with metadata files easily through the [CLI](/cli/account.md), or in your own scripts, tools or DApps via [ContractKit](/developer-resources/contractkit/index.md). Most commands require a node being available under `http://localhost:8545` to make view calls, and to modify metadata files, you'll need the relevant account to be unlocked to sign the files.
 
 You can create an empty metadata file with:
 

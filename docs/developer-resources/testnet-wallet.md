@@ -28,7 +28,7 @@ When deploying a dApp, you will need to pay for transactions that write data to 
 
 ## Create your Account
 
-You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/command-line-interface/introduction.md).
+You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/cli/index.md).
 
 ### Using a wallet
 

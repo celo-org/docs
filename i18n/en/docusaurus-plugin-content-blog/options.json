@@ -1,6 +1,6 @@
 {
   "title": {
-    "message": "Blog",
+    "message": "Celo Tutorials",
     "description": "The title for the blog used in SEO"
   },
   "description": {
@@ -8,7 +8,7 @@
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "Recent posts",
+    "message": "All posts",
     "description": "The label for the left sidebar"
   }
 }

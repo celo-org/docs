@@ -11,15 +11,16 @@ module.exports = {
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-  //  i18n: {
-  //    defaultLocale: "en",
-  //    locales: ["en", "es"],
-  //  },
+   i18n: {
+     defaultLocale: "en",
+     locales: ["en"],
+    //  locales: ["en", "es"],
+   },
   themes: ["@docusaurus/theme-live-codeblock"],
   scripts: [
     {
@@ -137,8 +138,8 @@ module.exports = {
             from: ["/celo-holder-guide/cusd"],
           },
           {
-            to: "/celo-owner-guide/eth-recovery",
-            from: ["/celo-holder-guide/eth-recovery"],
+            to: "/celo-holder-guide/eth-recovery",
+            from: ["/celo-owner-guide/eth-recovery"],
           },
           {
             to: "/celo-owner-guide/celo-recovery",
@@ -153,99 +154,99 @@ module.exports = {
             from: ["/v/master/developer-guide/start"],
           },
           {
-            to: "/command-line-interface/account",
-            from: ["/command-line-interface/commands/account"],
+            to: "/cli/account",
+            from: ["/cli/commands/account"],
           },
           {
-            to: "/command-line-interface/autocomplete",
-            from: ["/command-line-interface/commands/autocomplete"],
+            to: "/cli/autocomplete",
+            from: ["/cli/commands/autocomplete"],
           },
           {
-            to: "/command-line-interface/commands",
-            from: ["/command-line-interface/commands/commands"],
+            to: "/cli/commands",
+            from: ["/cli/commands/commands"],
           },
           {
-            to: "/command-line-interface/config",
-            from: ["/command-line-interface/commands/config"],
+            to: "/cli/config",
+            from: ["/cli/commands/config"],
           },
           {
-            to: "/command-line-interface/dkg",
-            from: ["/command-line-interface/commands/dkg"],
+            to: "/cli/dkg",
+            from: ["/cli/commands/dkg"],
           },
           {
-            to: "/command-line-interface/election",
-            from: ["/command-line-interface/commands/election"],
+            to: "/cli/election",
+            from: ["/cli/commands/election"],
           },
           {
-            to: "/command-line-interface/exchange",
-            from: ["/command-line-interface/commands/exchange"],
+            to: "/cli/exchange",
+            from: ["/cli/commands/exchange"],
           },
           {
-            to: "/command-line-interface/governance",
-            from: ["/command-line-interface/commands/governance"],
+            to: "/cli/governance",
+            from: ["/cli/commands/governance"],
           },
           {
-            to: "/command-line-interface/help",
-            from: ["/command-line-interface/commands/help"],
+            to: "/cli/help",
+            from: ["/cli/commands/help"],
           },
           {
-            to: "/command-line-interface/identity",
-            from: ["/command-line-interface/commands/identity"],
+            to: "/cli/identity",
+            from: ["/cli/commands/identity"],
           },
           {
-            to: "/command-line-interface/lockedgold",
-            from: ["/command-line-interface/commands/lockedgold"],
+            to: "/cli/lockedgold",
+            from: ["/cli/commands/lockedgold"],
           },
           {
-            to: "/command-line-interface/multisig",
-            from: ["/command-line-interface/commands/multisig"],
+            to: "/cli/multisig",
+            from: ["/cli/commands/multisig"],
           },
           {
-            to: "/command-line-interface/network",
-            from: ["/command-line-interface/commands/network"],
+            to: "/cli/network",
+            from: ["/cli/commands/network"],
           },
           {
-            to: "/command-line-interface/node",
-            from: ["/command-line-interface/commands/node"],
+            to: "/cli/node",
+            from: ["/cli/commands/node"],
           },
           {
-            to: "/command-line-interface/oracle",
-            from: ["/command-line-interface/commands/oracle"],
+            to: "/cli/oracle",
+            from: ["/cli/commands/oracle"],
           },
           {
-            to: "/command-line-interface/plugins",
-            from: ["/command-line-interface/commands/plugins"],
+            to: "/cli/plugins",
+            from: ["/cli/commands/plugins"],
           },
           {
-            to: "/command-line-interface/introduction",
+            to: "/cli",
             from: [
-              "/command-line-interface/commands/registry",
-              "/command-line-interface/registry",
+              "/cli/commands/registry",
+              "/cli/registry",
             ],
           },
           {
-            to: "/command-line-interface/releasegold",
-            from: ["/command-line-interface/commands/releasegold"],
+            to: "/cli/releasegold",
+            from: ["/cli/commands/releasegold"],
           },
           {
-            to: "/command-line-interface/reserve",
-            from: ["/command-line-interface/commands/reserve"],
+            to: "/cli/reserve",
+            from: ["/cli/commands/reserve"],
           },
           {
-            to: "/command-line-interface/rewards",
-            from: ["/command-line-interface/commands/rewards"],
+            to: "/cli/rewards",
+            from: ["/cli/commands/rewards"],
           },
           {
-            to: "/command-line-interface/transfer",
-            from: ["/command-line-interface/commands/transfer"],
+            to: "/cli/transfer",
+            from: ["/cli/commands/transfer"],
           },
           {
-            to: "/command-line-interface/validator",
-            from: ["/command-line-interface/commands/validator"],
+            to: "/cli/validator",
+            from: ["/cli/commands/validator"],
           },
           {
-            to: "/command-line-interface/validatorgroup",
-            from: ["/command-line-interface/commands/validatorgroup"],
+            to: "/cli/validatorgroup",
+            from: ["/cli/commands/validatorgroup"],
           },
           {
             to: "/celo-codebase/protocol/odis/use-cases/phone-number-privacy",
@@ -303,17 +304,17 @@ module.exports = {
         //     "position": "left"
         // },
         {
-          to: "developer-guide/overview",
+          to: "developer/",
           label: "Developers",
           position: "left",
         },
         {
-          to: "validator-guide/overview",
+          to: "validator/",
           label: "Validators",
           position: "left",
         },
         {
-          to: "developer-guide/integrations",
+          to: "integration/",
           label: "Integrations",
           position: "left",
         },
@@ -364,16 +365,16 @@ module.exports = {
         //     },
         //   ],
         // },
-        // {
-        //   type: "localeDropdown",
-        //   position: "right",
-        //   dropdownItemsAfter: [
-        //     {
-        //       to: "https://celo.crowdin.com/",
-        //       label: "Help us translate",
-        //     },
-        //   ],
-        // },
+        {
+          type: "localeDropdown",
+          position: "right",
+          dropdownItemsAfter: [
+            {
+              to: "https://celo.crowdin.com/",
+              label: "Help us translate",
+            },
+          ],
+        },
         {
           type: "dropdown",
           position: "right",
@@ -394,7 +395,7 @@ module.exports = {
           position: "right",
           label: "APIs & SDKs",
           items: [
-            { to: "command-line-interface/introduction", label: "CLI" },
+            { to: "cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "SDK",
@@ -454,10 +455,10 @@ module.exports = {
               label: "Home",
               to: "/",
             },
-            {
-              label: "Blog",
-              to: "/blog",
-            },
+            // {
+            //   label: "Blog",
+            //   to: "/blog",
+            // },
             // {
             //   href: "https://celo.crowdin.com/celo-docs",
             //   label: "Help translate",
@@ -565,22 +566,29 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        // blog: {
+        //   blogTitle: "Celo Tutorials",
+        //   blogSidebarTitle: "All posts",
+        //   // blogSidebarCount: "ALL",
+        //   showReadingTime: false,
+        //   blogListComponent: require.resolve(
+        //     "./src/components/CustomBlogListPage.module.tsx"
+        //   ),
+        //   readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+        //     // allows per post reading time override in frontmatter
+        //     frontMatter.hide_reading_time
+        //       ? undefined
+        //       : defaultReadingTime({
+        //           content,
+        //           options: { wordsPerMinute: 300 },
+        //         }),
+        // },
         blog: {
-          blogTitle: "Celo Tutorials",
+          blogTitle: 'Celo Tutorials',
+          blogDescription: 'A Docusaurus powered blog!',
+          postsPerPage: 'ALL',
           blogSidebarTitle: "All posts",
-          // blogSidebarCount: "ALL",
-          showReadingTime: false,
-          blogListComponent: require.resolve(
-            "./src/components/CustomBlogListPage.module.tsx"
-          ),
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            // allows per post reading time override in frontmatter
-            frontMatter.hide_reading_time
-              ? undefined
-              : defaultReadingTime({
-                  content,
-                  options: { wordsPerMinute: 300 },
-                }),
+          blogSidebarCount: "ALL",
         },
       },
     ],

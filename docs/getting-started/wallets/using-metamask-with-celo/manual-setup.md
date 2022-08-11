@@ -21,16 +21,6 @@ Make sure to have MetaMask installed. See [here](https://metamask.io/download.ht
 1. Open MetaMask, click your profile image on the top right corner, and then click "Settings". Next, scroll down to "Networks" and click. Finally, press the "Add Network" button.
 2. Fill in the following values depending on which Celo network you would like to connect to: Alfajores, Baklava, or Mainnet.
 
-<!-- <Tabs
-defaultValue='celo'
-values={[
-{label: 'Celo Mainnet', value: 'celo'},
-{label: 'Alfajores Testnet', value: 'alfajores'},
-{label: 'Baklava Testnet', value: 'baklava'},
-]}
-
-> <TabItem value='celo'> -->
-
 ```text
 Network Name: Celo (Mainnet)
 New RPC URL: https://forno.celo.org
@@ -38,9 +28,6 @@ Chain ID: 42220
 Currency Symbol (Optional): CELO
 Block Explorer URL (Optional): https://explorer.celo.org
 ```
-
-<!-- </TabItem>
-<TabItem value='alfajores'> -->
 
 ```text
 Network Name: Celo (Alfajores Testnet)
@@ -50,9 +37,6 @@ Currency Symbol (Optional): CELO
 Block Explorer URL (Optional): https://alfajores-blockscout.celo-testnet.org
 ```
 
-<!-- </TabItem>
-<TabItem value='baklava'> -->
-
 ```text
 Network Name: Celo (Baklava Testnet)
 New RPC URL: https://baklava-forno.celo-testnet.org
@@ -61,10 +45,7 @@ Currency Symbol (Optional): CELO
 Block Explorer URL (Optional): https://baklava-blockscout.celo-testnet.org
 ```
 
-<!-- </TabItem>
-</Tabs> -->
-
-3. Press "Save". The Celo network you just configured should now show up under MetaMask's "Networks" dropdown list.
+1. Press "Save". The Celo network you just configured should now show up under MetaMask's "Networks" dropdown list.
 
 ## **Adding Tokens \(e.g. cUSD, cEUR\)**
 
@@ -73,33 +54,15 @@ Block Explorer URL (Optional): https://baklava-blockscout.celo-testnet.org
 
 The following are examples for cUSD and cEUR.
 
-<!-- <Tabs
-defaultValue='celo'
-values={[
-{label: 'Celo Mainnet', value: 'celo'},
-{label: 'Alfajores Testnet', value: 'alfajores'},
-{label: 'Baklava Testnet', value: 'baklava'},
-]}
-
-> <TabItem value='celo'> -->
-
 - Token Contract Address for cUSD: `0x765de816845861e75a25fca122bb6898b8b1282a`
 - Token Contract Address for cEUR: `0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73`
 
-<!-- </TabItem>
-<TabItem value='alfajores'> -->
 
 - Token Contract Address for cUSD: `0x874069fa1eb16d44d622f2e0ca25eea172369bc1`
 - Token Contract Address for cEUR: `0x10c892a6ec43a53e45d0b916b4b7d383b1b78c0f`
 
-<!-- </TabItem>
-<TabItem value='baklava'> -->
-
 - Token Contract Address for cUSD: `0x62492A644A588FD904270BeD06ad52B9abfEA1aE`
 - Token Contract Address for cEUR: `0xf9ecE301247aD2CE21894941830A2470f4E774ca`
-
-<!-- </TabItem>
-</Tabs> -->
 
 ## Sending assets to Metamask
 

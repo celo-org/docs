@@ -12,7 +12,7 @@ ___
 
 Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.
 
-Celo Accounts can be designated as Locked Gold Accounts or authorized as signer keys on behalf of a Locked Gold Account by sending special transactions using [celocli](/command-line-interface/introduction.md). Note that Celo accounts that have not been designated as Locked Gold Accounts or authorized signers may not be able to send certain transactions related to proof-of-stake.
+Celo Accounts can be designated as Locked Gold Accounts or authorized as signer keys on behalf of a Locked Gold Account by sending special transactions using [celocli](/cli/index.md). Note that Celo accounts that have not been designated as Locked Gold Accounts or authorized signers may not be able to send certain transactions related to proof-of-stake.
 
 ## Locked Gold Accounts
 

@@ -15,7 +15,7 @@ Access and account management for holding, exchanging, or sending Celo Dollars (
 This guide assumes:
 
 - You have read [Key Management](/validator-guide/key-management/summary.md) on Celo
-- You have installed the [Celo Command Line Interface](/command-line-interface/introduction.md) (Celo CLI)
+- You have installed the [Celo Command Line Interface](/cli/index.md) (Celo CLI)
 
 ## Choose a Node
 
