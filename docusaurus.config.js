@@ -329,11 +329,11 @@ module.exports = {
         //   position: "left",
         // },
         { to: "showcase", label: "Showcase", position: "left" },
-        // {
-        //   to: "/blog",
-        //   label: "Tutorials",
-        //   position: "left",
-        // },
+        {
+          to: "/blog",
+          label: "Tutorials",
+          position: "left",
+        },
         // {
         //   type: "dropdown",
         //   position: "left",
@@ -583,6 +583,13 @@ module.exports = {
         //           options: { wordsPerMinute: 300 },
         //         }),
         // },
+        blog: {
+          blogTitle: 'Celo Tutorials',
+          blogDescription: 'A Docusaurus powered blog!',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL",
+        },
       },
     ],
   ],
