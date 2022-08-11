@@ -78,7 +78,7 @@ The process will finish and print `Ganache started`. Leave this terminal window 
 
 Now that we have a Celo development chain running, we probably want to know what accounts we have access to, how much cGLD and cUSD they have as well as the addresses of the deployed protocol contracts.
 
-We can use the [Celo CLI tool](../command-line-interface/introduction) for this, or we can use the and the [ContractKit](../developer-guide/contractkit) npm package in a node script.
+We can use the [Celo CLI tool](../cli) for this, or we can use the and the [ContractKit](../developer-guide/contractkit) npm package in a node script.
 ### **Celo CLI**
 
 You can install the CLI using npm by running `npm install -g @celo/celocli`. You can see the [package details here](https://www.npmjs.com/package/@celo/celocli). Once it is installed, you should be able to access the tool from the terminal by running `$ celocli`. Try `$ celocli help`.
