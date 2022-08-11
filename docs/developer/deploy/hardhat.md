@@ -43,7 +43,7 @@ Using Celo Ganache CLI creates test accounts at the localhost on port 7545. The 
 
 :::tip
 
-If you choose to [Set up a Local Development Chain](./walkthroughs/development-chain.md), your blockchain will also be hosted on a private network on localhost. This same configuration can be used to connect to the local development chain.
+If you choose to [Set up a Local Development Chain](/developer/setup/development-chain), your blockchain will also be hosted on a private network on localhost. This same configuration can be used to connect to the local development chain.
 
 :::
 

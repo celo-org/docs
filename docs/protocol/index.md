@@ -24,7 +24,7 @@ There are a number of substantial changes and additions have been made in servic
 - [Consensus](/protocol/consensus)
 - [Governance](/protocol/pos)
 - [Stability Mechanism](/protocol/stability)
-- [Transactions](/protocol/transactions)
+- [Transactions](/protocol/transaction)
 - [Identity](/protocol/identity)
 - [Optics](/protocol/optics)
 - [Plumo Ultralight Sync](/protocol/plumo)

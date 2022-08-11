@@ -59,7 +59,7 @@ Celo主网资产跨链到Polygon(Matic)上的过程与Celo和以太坊主网间�
 
 - 首先您需要已经正确安装了小狐狸钱包 [https://metamask.io](https://metamask.io)。
 - 接着将Celo主网和Polygon(Matic)主网添加到小狐狸钱包，Celo主网信息、Polygon(Matic)主网信息如下图所示：
-- [Add the Celo network to Metamask](../../../getting-started/wallets/using-metamask-with-celo/manual-setup.md)
+- [Add the Celo network to Metamask](/wallet/metamask/setup)
 
 ![add Celo to MM.png](https://github.com/critesjosh/images/blob/main/optics-gui/add%20Celo%20to%20MM.png?raw=true)
 

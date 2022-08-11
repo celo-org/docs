@@ -11,7 +11,7 @@ ___
 
 :::tip
 
-Other translations: [zh_cn](./optics-gui-zh_cn.md), [kr](./optics-gui-kr.md)
+Other translations: [zh_cn](/bridge/optics/gui-zh-cn), [kr](/bridge/optics/gui-kr)
 
 :::
 ## Sending ETH From Ethereum to Celo
