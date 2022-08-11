@@ -64,7 +64,7 @@ Explore Celo data to view the reserve, network, dapps, and additional analytics.
 
 Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 
-- [CLI](command-line-interface/introduction)
+- [CLI](cli)
 - [IOS](https://github.com/heymateag/celoiossdk)
 - [Java](https://github.com/blaize-tech/celo-sdk-java)
 - [React](https://github.com/celo-org/react-celo)

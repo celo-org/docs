@@ -19,7 +19,7 @@ A [reference implementation](https://github.com/celo-org/celo-oracle) of such cl
 * A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
 * The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
 
-It is not strictly required but it is recommended to have the [Celo CLI](/command-line-interface/introduction#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
+It is not strictly required but it is recommended to have the [Celo CLI](/cli#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
 
 ## Setting up the environment
 

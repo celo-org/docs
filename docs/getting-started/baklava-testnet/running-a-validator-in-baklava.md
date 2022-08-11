@@ -420,7 +420,7 @@ You can run multiple proxies by deploying additional proxies per the instruction
 
 ### Register the Accounts
 
-You've now done all the infrastructure setup to get a validator and proxy running. The cLabs team will review your submission to receive funds and send you 12,000 Baklava testnet CELO to each of your Validator and Validator Group account addresses. These funds have no real world value but will allow you to submit transactions to the network via [`celocli`](https://docs.celo.org/command-line-interface/introduction) and put up a stake to register as a validator and validator group.
+You've now done all the infrastructure setup to get a validator and proxy running. The cLabs team will review your submission to receive funds and send you 12,000 Baklava testnet CELO to each of your Validator and Validator Group account addresses. These funds have no real world value but will allow you to submit transactions to the network via [`celocli`](https://docs.celo.org/cli) and put up a stake to register as a validator and validator group.
 
 You can view your CELO balances by running the following commands:
 
@@ -504,7 +504,7 @@ You can view information about your Validator Group by running the following com
 celocli validatorgroup:show $CELO_VALIDATOR_GROUP_ADDRESS
 ```
 
-Next, register your Validator by running the following command. Note that because we have authorized a Validator signer, this step could also be performed on the Validator machine. Running it on the local machine allows us to avoid needing to install the [`celocli`](https://docs.celo.org/command-line-interface/introduction) on the Validator machine.
+Next, register your Validator by running the following command. Note that because we have authorized a Validator signer, this step could also be performed on the Validator machine. Running it on the local machine allows us to avoid needing to install the [`celocli`](https://docs.celo.org/cli) on the Validator machine.
 
 ```bash
 # On your local machine

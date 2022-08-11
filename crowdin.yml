@@ -1,5 +1,5 @@
-project_id: ""
-api_token: ""
+project_id: "9"
+api_token: "826e86ccd3463d0ff70be80c72f2d37d2174c4b0483a890a1d1b40a3eaa47e3eace21468f200494b"
 preserve_hierarchy: true
 base_url: "https://celo.crowdin.com"
 files: [

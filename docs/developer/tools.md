@@ -49,7 +49,7 @@ WalletConnect is a standard across EVM compatible blockchains to connect wallets
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
-<PageRef url="/command-line-interface/introduction" pageName="Celo CLI" />
+<PageRef url="/cli" pageName="Celo CLI" />
 
 ### Celo SDK Reference Docs
 

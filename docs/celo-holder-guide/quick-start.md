@@ -69,7 +69,7 @@ First, read [these instructions](celo-holder-guide/ledger.md) carefully. Then, w
 
 ## Deployment
 
-If you haven't already, open a terminal window and install the [Celo CLI](https://docs.celo.org/command-line-interface/introduction):
+If you haven't already, open a terminal window and install the [Celo CLI](https://docs.celo.org/cli):
 
 ```bash
  npm install -g @celo/celocli

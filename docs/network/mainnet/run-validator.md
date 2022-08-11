@@ -518,7 +518,7 @@ You can view information about your Validator Group by running the following com
 celocli validatorgroup:show $CELO_VALIDATOR_GROUP_ADDRESS
 ```
 
-Next, register your Validator by running the following command. Note that because we have authorized a Validator signer, this step could also be performed on the Validator machine. Running it on the local machine allows us to avoid needing to install the [`celocli`](https://docs.celo.org/command-line-interface/introduction) on the Validator machine.
+Next, register your Validator by running the following command. Note that because we have authorized a Validator signer, this step could also be performed on the Validator machine. Running it on the local machine allows us to avoid needing to install the [`celocli`](https://docs.celo.org/cli) on the Validator machine.
 
 ```bash
 # On your local machine

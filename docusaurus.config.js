@@ -329,11 +329,11 @@ module.exports = {
         //   position: "left",
         // },
         { to: "showcase", label: "Showcase", position: "left" },
-        {
-          to: "/blog",
-          label: "Tutorials",
-          position: "left",
-        },
+        // {
+        //   to: "/blog",
+        //   label: "Tutorials",
+        //   position: "left",
+        // },
         // {
         //   type: "dropdown",
         //   position: "left",
@@ -455,10 +455,10 @@ module.exports = {
               label: "Home",
               to: "/",
             },
-            {
-              label: "Blog",
-              to: "/blog",
-            },
+            // {
+            //   label: "Blog",
+            //   to: "/blog",
+            // },
             // {
             //   href: "https://celo.crowdin.com/celo-docs",
             //   label: "Help translate",
@@ -566,23 +566,23 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        blog: {
-          blogTitle: "Celo Tutorials",
-          blogSidebarTitle: "All posts",
-          // blogSidebarCount: "ALL",
-          showReadingTime: false,
-          blogListComponent: require.resolve(
-            "./src/components/CustomBlogListPage.module.tsx"
-          ),
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            // allows per post reading time override in frontmatter
-            frontMatter.hide_reading_time
-              ? undefined
-              : defaultReadingTime({
-                  content,
-                  options: { wordsPerMinute: 300 },
-                }),
-        },
+        // blog: {
+        //   blogTitle: "Celo Tutorials",
+        //   blogSidebarTitle: "All posts",
+        //   // blogSidebarCount: "ALL",
+        //   showReadingTime: false,
+        //   blogListComponent: require.resolve(
+        //     "./src/components/CustomBlogListPage.module.tsx"
+        //   ),
+        //   readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+        //     // allows per post reading time override in frontmatter
+        //     frontMatter.hide_reading_time
+        //       ? undefined
+        //       : defaultReadingTime({
+        //           content,
+        //           options: { wordsPerMinute: 300 },
+        //         }),
+        // },
       },
     ],
   ],

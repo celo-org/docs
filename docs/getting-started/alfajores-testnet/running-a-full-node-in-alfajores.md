@@ -123,7 +123,7 @@ You will have fully synced with the network once you have pulled the latest bloc
 
 ## Command Line Interface
 
-Once the full node is running, it can serve the [Command Line Interface](/command-line-interface/introduction) tool `celocli`. For example:
+Once the full node is running, it can serve the [Command Line Interface](/cli) tool `celocli`. For example:
 
 ```bash
 $ npm install -g @celo/celocli

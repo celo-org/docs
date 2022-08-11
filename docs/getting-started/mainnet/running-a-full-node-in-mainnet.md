@@ -138,7 +138,7 @@ In `celo-blockchain`, this is called gcmode which refers to the concept of garba
 
 ## Command Line Interface
 
-Once the full node is running, it can serve the [Command Line Interface](/command-line-interface/introduction) tool `celocli`. For example:
+Once the full node is running, it can serve the [Command Line Interface](/cli) tool `celocli`. For example:
 
 ```bash
 $ npm install -g @celo/celocli

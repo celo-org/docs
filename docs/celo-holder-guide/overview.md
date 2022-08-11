@@ -30,7 +30,7 @@ Not ready to use Celo? [Learn more about Celo](../../docs/welcome.md).
 
 <PageRef url="/celo-codebase/protocol" pageName="Celo Protocol" />
 <PageRef url="/getting-started/choosing-a-network" pageName="Networks" />
-<PageRef url="/command-line-interface/introduction" pageName="Command Line" />
+<PageRef url="/cli" pageName="Command Line" />
 
 ## Advanced Features
 
