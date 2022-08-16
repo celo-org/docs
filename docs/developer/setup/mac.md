@@ -41,7 +41,7 @@ While Xcode falls under the Celo Prerequisites, Xcode takes a long time to downl
 #### Install Node and npm via nvm
 
 ```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 Verify the installation by running:
@@ -52,17 +52,7 @@ command -v nvm
 
 which should output nvm.
 
-You can now install Node with `nvm install <version>`. Celo requires using **Node v12.x**, so you need to install and use that specific version. 
-
-```shell
-~ >> nvm install 12
-Downloading and installing node v12.22.7...
-Downloading https://nodejs.org/dist/v12.22.7/node-v12.22.7-darwin-x64.tar.xz...
-######################################################################### 100.0%
-Computing checksum with sha256sum
-Checksums matched!
-Now using node v12.22.7 (npm v6.14.15)
-```
+You can now install Node with `nvm install <version>`.
 
 :::info
 
@@ -81,7 +71,7 @@ nvm use <version>
 **Install Homebrew**
 
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Get the latest packages
@@ -138,19 +128,19 @@ Docker is an application focused on build and deployment tools. It allows develo
 
 #### Install Docker
 
-You'll need to install [Docker Desktop for your OS](https://docs.docker.com/get-docker/).
+You might need to install [Docker Desktop for your OS](https://docs.docker.com/get-docker/).
 
 Once you've done that, you can access `docker` via your cli.
 
 ```shell
-docker --version Docker version 19.03.13, build 4484c46d9d
+docker --version
 ```
 
 ## Celo Prerequisites
 
 ### Truffle 
 
-Since the Celo Blockchain has [shared ancestry with Ethereum](/developer/migrate/from-ethereum) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying. 
+Since the Celo Blockchain has [shared ancestry with Ethereum](/developer/migrate/from-ethereum) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying.
 
 Similar to how you might use a framework like React instead of vanilla JavaScript, you can use Truffle to abstract away a lot of the imperative details from Solidity (the language used to write smart contracts).
 
@@ -160,7 +150,7 @@ Similar to how you might use a framework like React instead of vanilla JavaScrip
 npm install -g truffle
 ```
 
-**Confugring Truffle**
+**Configuring Truffle**
 
 You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer/contractkit/). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
 
@@ -199,8 +189,8 @@ npm install -g @celo/celocli
  
 ... # lots of logs
  
-+ @celo/celocli@0.0.60
-added 966 packages from 1135 contributors in 91.815s
++ @celo/celocli@x.x.xx
+added x packages from x contributors in x.xs
 ```
 
 :::info
