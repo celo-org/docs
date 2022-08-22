@@ -38,20 +38,6 @@ module.exports = {
       {
         redirects: [
           {
-            to: "/wallet/ledger/",
-            from: [
-              "/operations-manual/key-management/using-a-ledger-wallet",
-              "/operations-manual/key-management/ledger",
-              "/operations-manual/summary/ledger",
-              "/operations-manual/using-a-ledger-wallet",
-              "/validator-guide/key-management/using-a-ledger-wallet",
-              "/validator-guide/key-management/ledger",
-              "/validator-guide/summary/ledger",
-              "/validator-guide/using-a-ledger-wallet",
-              "/celo-gold-holder-guide/ledger",
-            ],
-          },
-          {
             to:
               "/network/baklava/run-full-node",
             from: [
@@ -59,10 +45,6 @@ module.exports = {
               "/getting-started/running-a-validator",
               "/getting-started/running-a-full-node-in-baklava",
             ],
-          },
-          {
-            to: "/getting-started/using-the-wallet",
-            from: ["/getting-started/using-the-mobile-wallet"],
           },
           {
             to: "/holder/manage/release-gold",
@@ -73,7 +55,7 @@ module.exports = {
             ],
           },
           {
-            to: "/developer/index",
+            to: "/developer/",
             from: [
               "/developer-guide/overview/introduction",
               "/developer-resources/overview",
@@ -731,7 +713,7 @@ module.exports = {
             from: "/getting-started/choosing-a-network"
           },
           {
-            to: "/wallet/other-wallets",
+            to: "/wallet/",
             from: "/getting-started/wallets/index"
           },
           {
