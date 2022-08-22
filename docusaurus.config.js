@@ -256,7 +256,7 @@ module.exports = {
             to: "/celo-codebase/protocol/identity/smart-contract-accounts",
             from: ["/celo-codebase/protocol/identity/valora-accounts"],
           },
-          // previous links before docs re-structure
+          // re-links between pre and post re-structure
           {
             to: "/wallet/mobile-wallet/run-local",
             from: "/celo-codebase/wallet/intro"
@@ -363,7 +363,7 @@ module.exports = {
           },
           {
             to: "/protocol/pos/epoch-rewards-carbon-offsetting-fund",
-            from: "/celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund"
+            from: ["/celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund", "/celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund"]
           },
           {
             to: "/protocol/pos/epoch-rewards-community-fund",
@@ -507,11 +507,11 @@ module.exports = {
           },
           {
             to: "/holder/manage/exchange",
-            from: "/celo-holder-guide/celo-exchange-bot"
+            from: ["/celo-holder-guide/celo-exchange-bot", "/celo-owner-guide/celo-exchange-bot"]
           },
           {
             to: "/holder/recover/from-celo-address",
-            from: "/celo-holder-guide/celo-recovery"
+            from: ["/celo-holder-guide/celo-recovery", "/celo-owner-guide/celo-recovery"]
           },
           {
             to: "/wallet/ledger/to-celo-terminal",
@@ -527,7 +527,7 @@ module.exports = {
           },
           {
             to: "/holder/manage/asset",
-            from: "/celo-holder-guide/cusd"
+            from: ["/celo-holder-guide/cusd", "/celo-owner-guide/cusd"]
           },
           {
             to: "/holder/recover/from-eth-address",
@@ -535,11 +535,11 @@ module.exports = {
           },
           {
             to: "/holder/vote/governance-parameters",
-            from: "/celo-holder-guide/governance-cheat-sheet"
+            from: ["/celo-holder-guide/governance-cheat-sheet", "/celo-owner-guide/governance-cheat-sheet"]
           },
           {
             to: "/wallet/ledger/setup",
-            from: "/celo-holder-guide/ledger"
+            from: ["/celo-holder-guide/ledger", "/celo-owner-guide/ledger"]
           },
           {
             to: "/holder/index",
@@ -547,19 +547,19 @@ module.exports = {
           },
           {
             to: "/holder/manage/self-custody",
-            from: "/celo-holder-guide/quick-start"
+            from: ["/celo-holder-guide/quick-start", "/celo-owner-guide/quick-start"]
           },
           {
             to: "/holder/manage/release-gold",
-            from: "/celo-holder-guide/release-gold"
+            from: ["/celo-holder-guide/release-gold", "/celo-owner-guide/release-gold"]
           },
           {
             to: "/holder/vote/governance",
-            from: "/celo-holder-guide/voting-governance"
+            from: ["/celo-holder-guide/voting-governance", "/celo-owner-guide/voting-governance"]
           },
           {
             to: "/holder/vote/validator",
-            from: "/celo-holder-guide/voting-validators"
+            from: ["/celo-holder-guide/voting-validators", "/celo-owner-guide/voting-validators"]
           },
           {
             to: "/developer/setup/mac",
@@ -571,11 +571,11 @@ module.exports = {
           },
           {
             to: "/developer/index",
-            from: "/developer-resources/overview"
+            from: ["/developer-resources/overview", "/developer-guide/overview"]
           },
           {
             to: "/developer/setup/windows",
-            from: "/developer-resources/develop-on-windows"
+            from: ["/developer-resources/develop-on-windows", "/developer-guide/start/develop-on-windows"]
           },
           {
             to: "/developer/deploy/truffle",
@@ -584,6 +584,370 @@ module.exports = {
           {
             to: "/developer/setup/replit",
             from: "/developer-resources/deploy-replit"
+          },
+          {
+            to: "/developer/deploy/remix",
+            from: "/developer-resources/deploy-remix"
+          },
+          {
+            to: "/developer/deploy/hardhat",
+            from: "/developer-resources/deploy-hardhat"
+          },
+          {
+            to: "/developer/deploy/index",
+            from: "/developer-resources/deploy-dapp"
+          },
+          {
+            to: "/developer/migrate/from-ethereum",
+            from: ["/developer-resources/celo-for-eth-devs", "/developer-guide/celo-for-eth-devs"]
+          },
+          {
+            to: "/general/gallery",
+            from: ["/developer-resources/celo-dapp-gallery", "/developer-guide/celo-dapp-gallery"]
+          },
+          {
+            to: "/developer/setup/development-chain",
+            from: ["/developer-resources/walkthroughs/development-chain", "/developer-guide/development-chain"]
+          },
+          {
+            to: "/developer/walkthrough/hello-contract-remote-node",
+            from: ["/developer-resources/walkthroughs/hello-contract-remote-node", "/developer-guide/start/hello-contract-remote-node"]
+          },
+          {
+            to: "/developer/walkthrough/hello-celo",
+            from: ["/developer-resources/walkthroughs/hellocelo", "/developer-guide/start/hellocelo"]
+          },
+          {
+            to: "/developer/walkthrough/hello-contracts",
+            from: ["/developer-resources/walkthroughs/hellocontracts", "/developer-guide/start/hellocontracts"]
+          },
+          {
+            to: "/developer/walkthrough/no-code-erc20",
+            from: "/developer-resources/walkthroughs/no-code-erc20"
+          },
+          {
+            to: "/developer/walkthrough/no-code-erc721",
+            from: "/developer-resources/walkthroughs/no-code-erc721"
+          },
+          {
+            to: "/network/alfajores/index",
+            from: "/developer-resources/networks/alfajores-testnet"
+          },
+          {
+            to: "/network/baklava/index",
+            from: "/developer-resources/networks/baklava-testnet"
+          },
+          {
+            to: "/network/mainnet/index",
+            from: "/developer-resources/networks/celo-mainnet"
+          },
+          {
+            to: "/integration/checklist",
+            from: ["/developer-resources/integrations/checklist", "/developer-guide/integrations/checklist"]
+          },
+          {
+            to: "/integration/cloud-hsm",
+            from: ["/developer-resources/integrations/cloud-hsm", "/developer-guide/integrations/cloud-hsm"]
+          },
+          {
+            to: "/integration/custody",
+            from: ["/developer-resources/integrations/custody", "/developer-guide/integrations/custody"]
+          },
+          {
+            to: "/integration/dapps",
+            from: ["/developer-resources/integrations/dapps", "/developer-guide/integrations/dapps"]
+          },
+          {
+            to: "/integration/general",
+            from: ["/developer-resources/integrations/general", "/developer-guide/integrations/general"]
+          },
+          {
+            to: "/integration/index",
+            from: ["/developer-resources/integrations/integrations", "/developer-guide/integrations/integrations"]
+          },
+          {
+            to: "/integration/listings",
+            from: ["/developer-resources/integrations/listings", "/developer-guide/integrations/listings"]
+          },
+          {
+            to: "/network/node/forno",
+            from: ["/developer-resources/forno/index", "/developer-guide/forno"]
+          },
+          {
+            to: "/developer/dappkit/index",
+            from: ["/developer-resources/dappkit/index", "/developer-guide/dappkit"]
+          },
+          {
+            to: "/developer/dappkit/setup",
+            from: ["/developer-resources/dappkit/setup", "/developer-guide/dappkit/setup"]
+          },
+          {
+            to: "/developer/dappkit/usage",
+            from: ["/developer-resources/dappkit/usage", "/developer-guide/dappkit/usage"]
+          },
+          {
+            to: "/developer/contractkit/contracts-wrappers-registry",
+            from: ["/developer-resources/contractkit/contracts-wrappers-registry", "/developer-guide/contractkit/contracts-wrappers-registry"]
+          },
+          {
+            to: "/developer/contractkit/data-encryption-key",
+            from: "/developer-resources/contractkit/data-encryption-key"
+          },
+          {
+            to: "/developer/contractkit/index",
+            from: ["/developer-resources/contractkit/index", "/developer-guide/contractkit"]
+          },
+          {
+            to: "/developer/contractkit/migrating-to-contractkit-v1",
+            from: ["/developer-resources/contractkit/migrating-to-contractkit-v1", "/developer-guide/contractkit/migrating-to-contractkit-v1"]
+          },
+          {
+            to: "/developer/contractkit/migrating-to-contractkit-v2",
+            from: ["/developer-resources/contractkit/migrating-to-contractkit-v2", "/developer-guide/contractkit/migrating-to-contractkit-v2"]
+          },
+          {
+            to: "/developer/contractkit/notes-web3-with-contractkit",
+            from: ["/developer-resources/contractkit/notes-web3-with-contractkit", "/developer-guide/contractkit/notes-web3-with-contractkit"]
+          },
+          {
+            to: "/developer/contractkit/odis",
+            from: ["/developer-resources/contractkit/odis", "/developer-guide/contractkit/odis"]
+          },
+          {
+            to: "/developer/contractkit/setup",
+            from: ["/developer-resources/contractkit/setup", "/developer-guide/contractkit/setup"]
+          },
+          {
+            to: "/developer/contractkit/setup",
+            from: ["/developer-resources/contractkit/usage", "/developer-guide/contractkit/usage"]
+          },
+          {
+            to: "/validator/troubleshooting-faq",
+            from: "/getting-started/validator-troubleshooting-faq"
+          },
+          {
+            to: "/protocol/oracle/run",
+            from: "/getting-started/running-oracles"
+          },
+          {
+            to: "/network/node/run-hosted",
+            from: "/getting-started/hosted-nodes"
+          },
+          {
+            to: "/general/glossary",
+            from: "/getting-started/glossary"
+          },
+          {
+            to: "/network/index",
+            from: "/getting-started/choosing-a-network"
+          },
+          {
+            to: "/wallet/other-wallets",
+            from: "/getting-started/wallets/index"
+          },
+          {
+            to: "/wallet/ledger/to-metamask",
+            from: "/getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask"
+          },
+          {
+            to: "/network/mainnet/index",
+            from: "/getting-started/mainnet/index"
+          },
+          {
+            to: "/network/mainnet/run-full-node",
+            from: "/getting-started/mainnet/running-a-full-node-in-mainnet"
+          },
+          {
+            to: "/network/mainnet/run-validator",
+            from: "/getting-started/mainnet/running-a-validator-in-mainnet"
+          },
+          {
+            to: "/network/baklava/index",
+            from: "/getting-started/baklava-testnet/index"
+          },
+          {
+            to: "/network/baklava/run-full-node",
+            from: "/getting-started/baklava-testnet/running-a-full-node-in-baklava"
+          },
+          {
+            to: "/network/baklava/run-validator",
+            from: "/getting-started/baklava-testnet/running-a-validator-in-baklava"
+          },
+          {
+            to: "/network/alfajores/index",
+            from: "/getting-started/alfajores-testnet/index"
+          },
+          {
+            to: "/network/alfajores/run-full-node",
+            from: "/getting-started/alfajores-testnet/running-a-full-node-in-alfajores"
+          },
+          {
+            to: "/network/alfajores/faucet",
+            from: "/getting-started/alfajores-testnet/faucet"
+          },
+          {
+            to: "/network/alfajores/use-mobile-wallet",
+            from: "/getting-started/alfajores-testnet/using-the-mobile-wallet"
+          },
+          {
+            to: "/network/alfajores/disclaimer",
+            from: "/important-information/alfajores-testnet-disclaimer"
+          },
+          {
+            to: "/network/baklava/disclaimer",
+            from: "/important-information/baklava-testnet-disclaimer"
+          },
+          {
+            to: "/network/mainnet/disclaimer",
+            from: "/important-information/mainnet-testnet-disclaimer"
+          },
+          {
+            to: "/validator/validator-explorer",
+            from: "/validator-guide/validator-explorer"
+          },
+          {
+            to: "/validator/security",
+            from: "/validator-guide/securing-nodes-and-services"
+          },
+          {
+            to: "/validator/proxy",
+            from: "/validator-guide/proxy"
+          },
+          {
+            to: "/validator/index",
+            from: "/validator-guide/overview"
+          },
+          {
+            to: "/validator/node-upgrade",
+            from: "/validator-guide/node-upgrades"
+          },
+          {
+            to: "/validator/monitoring",
+            from: "/validator-guide/monitoring"
+          },
+          {
+            to: "/validator/devops-best-practices",
+            from: "/validator-guide/devops-best-practices"
+          },
+          {
+            to: "/validator/celo-signal",
+            from: "/validator-guide/celo-signal"
+          },
+          {
+            to: "/validator/celo-foundation-voting-policy",
+            from: "/validator-guide/celo-foundation-voting-policy"
+          },
+          {
+            to: "/validator/attestation",
+            from: "/validator-guide/attestation-service"
+          },
+          {
+            to: "/validator/key-management/detailed",
+            from: "/validator-guide/key-management/detailed"
+          },
+          {
+            to: "/validator/key-management/key-rotation",
+            from: "/validator-guide/key-management/key-rotation"
+          },
+          {
+            to: "/validator/key-management/summary",
+            from: "/validator-guide/key-management/summary"
+          },
+          {
+            to: "/cli/account",
+            from: "/command-line-interface/account"
+          },
+          {
+            to: "/cli/autocomplete",
+            from: "/command-line-interface/autocomplete"
+          },
+          {
+            to: "/cli/commands",
+            from: "/command-line-interface/commands"
+          },
+          {
+            to: "/cli/config",
+            from: "/command-line-interface/config"
+          },
+          {
+            to: "/cli/dkg",
+            from: "/command-line-interface/dkg"
+          },
+          {
+            to: "/cli/election",
+            from: "/command-line-interface/election"
+          },
+          {
+            to: "/cli/exchange",
+            from: "/command-line-interface/exchange"
+          },
+          {
+            to: "/cli/governance",
+            from: "/command-line-interface/governance"
+          },
+          {
+            to: "/cli/grandamento",
+            from: "/command-line-interface/grandamento"
+          },
+          {
+            to: "/cli/help",
+            from: "/command-line-interface/help"
+          },
+          {
+            to: "/cli/identity",
+            from: "/command-line-interface/identity"
+          },
+          {
+            to: "/cli/index",
+            from: "/command-line-interface/index"
+          },
+          {
+            to: "/cli/lockedgold",
+            from: "/command-line-interface/lockedgold"
+          },
+          {
+            to: "/cli/multisig",
+            from: "/command-line-interface/multisig"
+          },
+          {
+            to: "/cli/network",
+            from: "/command-line-interface/network"
+          },
+          {
+            to: "/cli/node",
+            from: "/command-line-interface/node"
+          },
+          {
+            to: "/cli/oracle",
+            from: "/command-line-interface/oracle"
+          },
+          {
+            to: "/cli/plugins",
+            from: "/command-line-interface/plugins"
+          },
+          {
+            to: "/cli/releasegold",
+            from: "/command-line-interface/releasegold"
+          },
+          {
+            to: "/cli/reserve",
+            from: "/command-line-interface/reserve"
+          },
+          {
+            to: "/cli/rewards",
+            from: "/command-line-interface/rewards"
+          },
+          {
+            to: "/cli/transfer",
+            from: "/command-line-interface/transfer"
+          },
+          {
+            to: "/cli/validator",
+            from: "/command-line-interface/validator"
+          },
+          {
+            to: "/cli/validatorgroup",
+            from: "/command-line-interface/validatorgroup"
           },
         ],
       },

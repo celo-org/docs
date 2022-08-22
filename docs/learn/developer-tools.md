@@ -87,7 +87,7 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 ### ODIS
 
-[ODIS](/developer-resources/contractkit/odis.md) (Oblivious decentralized identity service) is a lightweight identity layer that makes it easy to send cryptocurrency to a phone number
+[ODIS](/protocol/identity/odis) (Oblivious decentralized identity service) is a lightweight identity layer that makes it easy to send cryptocurrency to a phone number
 
 <PageRef url="/getting-started/wallets" pageName="ODIS" />
 
@@ -115,13 +115,13 @@ RPC Endpoint Services
 
 ### Forno
 
-[Forno](../developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+[Forno](/network/node/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
 
 Forno can be used as an HTTP Provider with ContractKit.
 
-<PageRef url="../developer-guide/forno" pageName="Forno" />
+<PageRef url="/network/node/forno" pageName="Forno" />
 
 ### Ankr
 
@@ -149,6 +149,6 @@ All That Node supports public and private RPC nodes for mainnet, alfajores and b
 
 ## Celo Wallets
 
-[Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
+[Celo Wallets](/wallet/) are tools that create accounts, manage keys, and help users transact on the Celo network.
 
-<PageRef url="../getting-started/wallets" pageName="Celo Wallets" />
+<PageRef url="../wallet/" pageName="Celo Wallets" />
