@@ -57,7 +57,7 @@ To see all available flags for a command, add the flag `--globalHelp` to the com
 
 ## Optional: Run a Full Node
 
-Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](../developer-resources/forno/index.md) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](../getting-started/mainnet/running-a-full-node-in-mainnet.md) instructions for more details on running a full node.
+Commands need to connect to a Celo node to execute most functionality. You can either use [Forno](/network/node/forno) (this is the easiest way) or run your own full node if you prefer. See the [Running a Full Node](/network/mainnet/run-full-node) instructions for more details on running a full node.
 
 The easiest way to connect `celocli` to the Celo network is by running the following command in your terminal with `celocli` installed:
 
@@ -87,7 +87,7 @@ Or you can use a Ledger hardware wallet. (preferred, see below)
 
 ## Using a Ledger Wallet
 
-The Celo CLI supports using a [Ledger hardware wallet](../celo-holder-guide/ledger.md) to sign transactions. Just add the `--useLedger` flag to a command that requires a signature.
+The Celo CLI supports using a [Ledger hardware wallet](/wallet/ledger/setup) to sign transactions. Just add the `--useLedger` flag to a command that requires a signature.
 
 You can specify the number of addresses to get for local signing with the `--ledgerAddresses` flag.
 

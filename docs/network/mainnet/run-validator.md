@@ -4,7 +4,7 @@ description: How to get a Validator node running on the Celo Mainnet.
 ---
 # Running a Validator
 
-How to get a Validator node running on the Celo [Mainnet](/getting-started/mainnet).
+How to get a Validator node running on the Celo [Mainnet](/network/mainnet/).
 
 ___
 
@@ -26,7 +26,7 @@ While other Validator Groups will exist on the Celo Network, the fastest way to 
 
 Because of the importance of Validator security and availability, Validators are expected to run a "proxy" node in front of each Validator node. In this setup, the Proxy node connects with the rest of the network, and the Validator node communicates only with the Proxy, ideally via a private network.
 
-Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](/celo-codebase/protocol/identity), to provide attestations that allow users to map their phone number to a Celo address.
+Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](/protocol/identity/), to provide attestations that allow users to map their phone number to a Celo address.
 
 [Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa)
 
@@ -34,9 +34,9 @@ Additionally, Validators are expected to run an [Attestation Service](https://gi
 
 ### Staking Requirements
 
-Celo uses a [proof-of-stake](/celo-codebase/protocol/proof-of-stake) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
+Celo uses a [proof-of-stake](/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/getting-started/baklava-testnet/running-a-validator-in-baklava.md)
+If you do not have the required CELO to lock up, you can try out of the process of creating a validator on the Baklava network by following the [Running a Validator in Baklava guide](/network/baklava/run-validator)
 
 We will not discuss obtaining CELO here, but it is a prerequisite that you obtain the required CELO.
 
@@ -94,7 +94,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/index.md)for instructions on how to get set up.
+  See [Command Line Interface \(CLI\) ](/cli/)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
@@ -113,7 +113,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of value.
 
-This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator-guide/summary)
+This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
 
 #### Unlocking
 
@@ -433,7 +433,7 @@ At this point your Validator and Proxy machines should be configured, and both s
 
 :::info
 
-You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/getting-started/mainnet/running-a-validator-in-mainnet.md#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
+You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/network/mainnet/running-validator#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
 
 :::
 
@@ -489,7 +489,7 @@ celocli lockedgold:show $CELO_VALIDATOR_ADDRESS
 
 ### Run for election
 
-In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/celo-codebase/protocol/proof-of-stake/validator-groups.md#group-share), which is the fraction of epoch rewards paid to the group by its members.
+In order to be elected as a Validator, you will first need to register your group and Validator. Note that when registering a Validator Group, you need to specify a [commission](/protocol/pos/validator-groups#group-share), which is the fraction of epoch rewards paid to the group by its members.
 We don't want to use our account key for validating, so first let's authorize the validator signing key:
 
 ```bash
@@ -611,7 +611,7 @@ celocli validator:show $CELO_VALIDATOR_ADDRESS
 
 ## Running the Attestation Service
 
-Validators are expected to run an [Attestation Service](/validator-guide/attestation-service.md) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator-guide/attestation-service.md).
+Validators are expected to run an [Attestation Service](/validator/attestation) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator/attestation).
 
 ## Deployment Tips
 

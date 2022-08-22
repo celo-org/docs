@@ -585,23 +585,23 @@ const sidebars = {
       type: "category",
       label: "Bridges",
       items: [
-        { type: "doc", label: "Overview", id: "bridge/index" },
+        { type: "doc", label: "Overview", id: "protocol/bridge/index" },
         {
           type: "category",
           label: "Etherscan",
           items: [
-            { type: "doc", label: "Native Assets with Etherscan", id: "bridge/etherscan/native-assets" },
-            { type: "doc", label: "Tokens with Etherscan", id: "bridge/etherscan/tokens" },
+            { type: "doc", label: "Native Assets with Etherscan", id: "protocol/bridge/etherscan-native-asset" },
+            { type: "doc", label: "Tokens with Etherscan", id: "protocol/bridge/etherscan-token" },
           ],
         },
         {
           type: "category",
           label: "Optics",
           items: [
-            { type: "doc", label: "Overview", id: "bridge/optics/index" },
-            { type: "doc", label: "Optics Bridge GUI", id: "bridge/optics/gui" },
-            { type: "doc", label: "Migrating to Optics v2", id: "bridge/optics/migration-v2" },
-            { type: "doc", label: "Optics Bridge FAQ", id: "bridge/optics/faq" },
+            { type: "doc", label: "Overview", id: "protocol/bridge/optics" },
+            { type: "doc", label: "Optics Bridge GUI", id: "protocol/bridge/optics-gui" },
+            { type: "doc", label: "Migrating to Optics v2", id: "protocol/bridge/optics-migration-v2" },
+            { type: "doc", label: "Optics Bridge FAQ", id: "protocol/bridge/optics-faq" },
           ],
         },
         {
