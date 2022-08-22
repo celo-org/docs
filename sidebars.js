@@ -88,7 +88,7 @@ const sidebars = {
         {
           type: "doc",
           label: "Other Wallets",
-          id: "wallet/other-wallets",
+          id: "wallet/index",
         },
         {
           type: "link",

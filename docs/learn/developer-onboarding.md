@@ -37,16 +37,14 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 ## Set up Local Environment
 
 * [Using Windows](/developer/setup/windows) 
-* [Using Mac](/developer/setup/mac)
+* [Using Mac](/developer/setup/mac) 
+* [Using Replit](/developer/setup/replit) 
 
 ## Deploy a dApp with Celo
 
-* [Deploy a dApp with Celo](../developer-resources/deploy-dapp) 
-* [Set up a Tesnet Wallet](../developer-resources/testnet-wallet)
 * [Deploy with Remix](/developer/deploy/remix) 
 * [Deploy with Truffle](/developer/deploy/truffle) 
-* [Deploy with Hardhat](/developer/deploy/hardhat) 
-* [Deploy with Replit](/developer/deploy/replit) 
+* [Deploy with Hardhat](/developer/deploy/hardhat)
 
 ## Celo Developer Pathway
 
@@ -68,7 +66,7 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 
 ## Create a Mobile friendly dApp with Celo
 
-* [Valora + Wallet Connect](../developer-resources/walkthroughs/valora-wc-v1.md)
+* [Valora + Wallet Connect](/blog/2022-01-08-valora-wc-v1)
 
 ## Create a Web dApp with Celo
 
