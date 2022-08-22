@@ -290,11 +290,11 @@ module.exports = {
             from: "/celo-codebase/protocol/plumo"
           },
           {
-            to: "/bridge/optics/index",
+            to: "/protocol/bridge/optics",
             from: "/celo-codebase/protocol/optics"
           },
           {
-            to: "/protocol/index",
+            to: "/protocol/",
             from: "/celo-codebase/protocol/index"
           },
           {
@@ -318,7 +318,7 @@ module.exports = {
             from: "/celo-codebase/protocol/transactions/gas-pricing"
           },
           {
-            to: "/protocol/transaction/index",
+            to: "/protocol/transaction/",
             from: "/celo-codebase/protocol/transactions/index"
           },
           {
@@ -342,7 +342,7 @@ module.exports = {
             from: "/celo-codebase/protocol/stability/granda-mento"
           },
           {
-            to: "/protocol/stability/index",
+            to: "/protocol/stability/",
             from: "/celo-codebase/protocol/stability/index"
           },
           {
@@ -374,7 +374,7 @@ module.exports = {
             from: "/celo-codebase/protocol/proof-of-stake/epoch-rewards"
           },
           {
-            to: "/protocol/pos/index",
+            to: "/protocol/pos/",
             from: "/celo-codebase/protocol/proof-of-stake/index"
           },
           {
@@ -406,7 +406,7 @@ module.exports = {
             from: "/celo-codebase/protocol/oracles/band-protocol-how-to"
           },
           {
-            to: "/protocol/oracle/index",
+            to: "/protocol/oracle/",
             from: "/celo-codebase/protocol/oracles/oracles-on-celo"
           },
           {
@@ -438,7 +438,7 @@ module.exports = {
             from: "/celo-codebase/protocol/identity/encrypted-cloud-backup"
           },
           {
-            to: "/protocol/identity/index",
+            to: "/protocol/identity/",
             from: "/celo-codebase/protocol/identity/index"
           },
           {
@@ -458,7 +458,7 @@ module.exports = {
             from: "/celo-codebase/protocol/identity/smart-contract-accounts"
           },
           {
-            to: "/protocol/consensus/index",
+            to: "/protocol/consensus/",
             from: "/celo-codebase/protocol/consensus/index"
           },
           {
@@ -478,7 +478,7 @@ module.exports = {
             from: "/celo-codebase/protocol/bridging/bridging-native-assets"
           },
           {
-            to: "/protocol/bridge/index",
+            to: "/protocol/bridge/",
             from: "/celo-codebase/protocol/bridging/bridging-to-celo"
           },
           {
@@ -542,7 +542,7 @@ module.exports = {
             from: ["/celo-holder-guide/ledger", "/celo-owner-guide/ledger"]
           },
           {
-            to: "/holder/index",
+            to: "/holder/",
             from: "/celo-holder-guide/owners"
           },
           {
@@ -570,7 +570,7 @@ module.exports = {
             from: "/developer-resources/testnet-wallet"
           },
           {
-            to: "/developer/index",
+            to: "/developer/",
             from: ["/developer-resources/overview", "/developer-guide/overview"]
           },
           {
@@ -594,7 +594,7 @@ module.exports = {
             from: "/developer-resources/deploy-hardhat"
           },
           {
-            to: "/developer/deploy/index",
+            to: "/developer/deploy/",
             from: "/developer-resources/deploy-dapp"
           },
           {
@@ -630,15 +630,15 @@ module.exports = {
             from: "/developer-resources/walkthroughs/no-code-erc721"
           },
           {
-            to: "/network/alfajores/index",
+            to: "/network/alfajores/",
             from: "/developer-resources/networks/alfajores-testnet"
           },
           {
-            to: "/network/baklava/index",
+            to: "/network/baklava/",
             from: "/developer-resources/networks/baklava-testnet"
           },
           {
-            to: "/network/mainnet/index",
+            to: "/network/mainnet/",
             from: "/developer-resources/networks/celo-mainnet"
           },
           {
@@ -662,7 +662,7 @@ module.exports = {
             from: ["/developer-resources/integrations/general", "/developer-guide/integrations/general"]
           },
           {
-            to: "/integration/index",
+            to: "/integration/",
             from: ["/developer-resources/integrations/integrations", "/developer-guide/integrations/integrations"]
           },
           {
@@ -674,7 +674,7 @@ module.exports = {
             from: ["/developer-resources/forno/index", "/developer-guide/forno"]
           },
           {
-            to: "/developer/dappkit/index",
+            to: "/developer/dappkit/",
             from: ["/developer-resources/dappkit/index", "/developer-guide/dappkit"]
           },
           {
@@ -694,7 +694,7 @@ module.exports = {
             from: "/developer-resources/contractkit/data-encryption-key"
           },
           {
-            to: "/developer/contractkit/index",
+            to: "/developer/contractkit/",
             from: ["/developer-resources/contractkit/index", "/developer-guide/contractkit"]
           },
           {
@@ -738,7 +738,7 @@ module.exports = {
             from: "/getting-started/glossary"
           },
           {
-            to: "/network/index",
+            to: "/network/",
             from: "/getting-started/choosing-a-network"
           },
           {
@@ -750,7 +750,7 @@ module.exports = {
             from: "/getting-started/wallets/using-metamask-with-celo/using-a-ledger-with-metamask"
           },
           {
-            to: "/network/mainnet/index",
+            to: "/network/mainnet/",
             from: "/getting-started/mainnet/index"
           },
           {
@@ -762,7 +762,7 @@ module.exports = {
             from: "/getting-started/mainnet/running-a-validator-in-mainnet"
           },
           {
-            to: "/network/baklava/index",
+            to: "/network/baklava/",
             from: "/getting-started/baklava-testnet/index"
           },
           {
@@ -774,7 +774,7 @@ module.exports = {
             from: "/getting-started/baklava-testnet/running-a-validator-in-baklava"
           },
           {
-            to: "/network/alfajores/index",
+            to: "/network/alfajores/",
             from: "/getting-started/alfajores-testnet/index"
           },
           {
@@ -814,7 +814,7 @@ module.exports = {
             from: "/validator-guide/proxy"
           },
           {
-            to: "/validator/index",
+            to: "/validator/",
             from: "/validator-guide/overview"
           },
           {
@@ -854,7 +854,7 @@ module.exports = {
             from: "/validator-guide/key-management/summary"
           },
           {
-            to: "/cli/index",
+            to: "/cli/",
             from: "/command-line-interface/introduction"
           },
           {
@@ -900,10 +900,6 @@ module.exports = {
           {
             to: "/cli/identity",
             from: "/command-line-interface/identity"
-          },
-          {
-            to: "/cli/index",
-            from: "/command-line-interface/index"
           },
           {
             to: "/cli/lockedgold",
