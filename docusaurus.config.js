@@ -854,6 +854,10 @@ module.exports = {
             from: "/validator-guide/key-management/summary"
           },
           {
+            to: "/cli/index",
+            from: "/command-line-interface/introduction"
+          },
+          {
             to: "/cli/account",
             from: "/command-line-interface/account"
           },

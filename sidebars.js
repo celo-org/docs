@@ -621,10 +621,10 @@ const sidebars = {
       type: "category",
       label: "Oracles",
       items: [
-        { type: "doc", label: "Overview", id: "oracle/index" },
-        { type: "doc", id: "oracle/band-protocol" },
-        { type: "doc", id: "oracle/redstone" },
-        { type: "doc", id: "oracle/run" },
+        { type: "doc", label: "Overview", id: "protocol/oracle/index" },
+        { type: "doc", id: "protocol/oracle/band-protocol" },
+        { type: "doc", id: "protocol/oracle/redstone" },
+        { type: "doc", id: "protocol/oracle/run" },
       ],
     },
     // Addresses
