@@ -38,7 +38,7 @@ module.exports = {
       {
         redirects: [
           {
-            to: "/celo-owner-guide/ledger",
+            to: "/wallet/ledger/",
             from: [
               "/operations-manual/key-management/using-a-ledger-wallet",
               "/operations-manual/key-management/ledger",
@@ -53,7 +53,7 @@ module.exports = {
           },
           {
             to:
-              "/getting-started/baklava-testnet/running-a-full-node-in-baklava",
+              "/network/baklava/run-full-node",
             from: [
               "/getting-started/running-a-full-node",
               "/getting-started/running-a-validator",
@@ -65,7 +65,7 @@ module.exports = {
             from: ["/getting-started/using-the-mobile-wallet"],
           },
           {
-            to: "/celo-owner-guide/release-gold",
+            to: "/holder/manage/release-gold",
             from: [
               "/celo-codebase/protocol/release-gold",
               "/celo-holder-guide/release-gold",
@@ -73,84 +73,73 @@ module.exports = {
             ],
           },
           {
-            to: "/developer-guide/start",
-            from: [
-              "/developer-guide/start/celo-truffle-box",
-              "/developer-resources/walkthroughs/hello-mobile-dapp",
-            ],
-          },
-          {
-            to: "/developer-guide/overview",
+            to: "/developer/index",
             from: [
               "/developer-guide/overview/introduction",
               "/developer-resources/overview",
             ],
           },
           {
-            to: "/developer-guide/development-chain",
+            to: "/developer/setup/development-chain",
             from: ["/developer-guide/start/development-chain"],
           },
           {
-            to: "/important-information/mainnet-network-disclaimer",
+            to: "/network/mainnet/disclaimer",
             from: ["/important-information/rc-network-disclaimer"],
           },
           {
-            to: "/getting-started/mainnet",
+            to: "/network/mainnet/",
             from: ["/getting-started/rc1"],
           },
           {
-            to: "/getting-started/mainnet/running-a-full-node-in-mainnet",
+            to: "/network/mainnet/run-full-node",
             from: [
               "/getting-started/rc1/running-a-full-node-in-rc1",
               "/getting-started/running-a-full-node-in-mainnet",
             ],
           },
           {
-            to: "/getting-started/mainnet/running-a-validator-in-mainnet",
+            to: "/network/mainnet/run-validator",
             from: [
               "/getting-started/rc1/running-a-validator-in-rc1",
               "/getting-started/running-a-validator-in-mainnet",
             ],
           },
           {
-            to: "/celo-owner-guide/quick-start",
+            to: "/holder/",
             from: [
               "/celo-gold-holder-guide/quick-start",
               "/celo-holder-guide/quick-start",
             ],
           },
           {
-            to: "/celo-owner-guide/voting-governance",
+            to: "/holder/vote/governance",
             from: [
               "/celo-gold-holder-guide/voting-governance",
               "/celo-holder-guide/voting-governance",
             ],
           },
           {
-            to: "/celo-owner-guide/voting-validators",
+            to: "/holder/vote/validator",
             from: [
               "/celo-gold-holder-guide/voting-validators",
               "/celo-holder-guide/voting-validators",
             ],
           },
           {
-            to: "/celo-owner-guide/cusd",
-            from: ["/celo-holder-guide/cusd"],
-          },
-          {
-            to: "/celo-holder-guide/eth-recovery",
+            to: "/holder/recover/from-eth-address",
             from: ["/celo-owner-guide/eth-recovery"],
           },
           {
-            to: "/celo-owner-guide/celo-recovery",
+            to: "/holder/recover/from-celo-address",
             from: ["/celo-holder-guide/celo-recovery"],
           },
           {
-            to: "/developer-guide/overview",
+            to: "/developer/",
             from: ["/v/master/developer-guide/overview"],
           },
           {
-            to: "/developer-guide/start",
+            to: "/developer/",
             from: ["/v/master/developer-guide/start"],
           },
           {
@@ -249,11 +238,11 @@ module.exports = {
             from: ["/cli/commands/validatorgroup"],
           },
           {
-            to: "/celo-codebase/protocol/odis/use-cases/phone-number-privacy",
+            to: "/protocol/identity/odis-use-case-phone-number-privacy",
             from: ["/celo-codebase/protocol/identity/phone-number-privacy"],
           },
           {
-            to: "/celo-codebase/protocol/identity/smart-contract-accounts",
+            to: "/protocol/identity/smart-contract-accounts",
             from: ["/celo-codebase/protocol/identity/valora-accounts"],
           },
           // re-links between pre and post re-structure

@@ -123,7 +123,7 @@ truffle(test)> contract.getName()
 
 ## Deploy to Alfajores
 
-When you are ready to deploy your contract to Alfajores, you'll need a Celo client connected to the testnet. We'll run a node somewhat similarly to the [Instructions of running a full node on Baklava](/getting-started/baklava-testnet/running-a-full-node-in-baklava):
+When you are ready to deploy your contract to Alfajores, you'll need a Celo client connected to the testnet. We'll run a node somewhat similarly to the [Instructions of running a full node on Baklava](/network/baklava/run-full-node):
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:alfajores
@@ -182,7 +182,7 @@ You can follow the logs with
 docker logs -f celo-ultralight-node
 ```
 
-After a few seconds of syncing (with [Celo's ultralight sync](/celo-codebase/protocol/consensus/ultralight-sync)), you should be able to query the balance of your account:
+After a few seconds of syncing (with [Celo's ultralight sync](/protocol/consensus/ultralight-sync)), you should be able to query the balance of your account:
 
 ```bash
 docker exec celo-ultralight-node geth attach --exec 'eth.getBalance("<YOUR-ACCOUNT-ADDRESS>")'
