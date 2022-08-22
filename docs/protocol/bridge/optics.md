@@ -9,7 +9,7 @@ Introduction to Optics, it's core concepts, architecture, process, and implement
 ___
 
 :::info
-Migrating to v2? Go [here](https://docs.celo.org/celo-codebase/protocol/bridging/migrating-to-optics-v2) to learn how to migrate from v1.
+Migrating to v2? Go [here](/protocol/bridge/optics-migration-v2) to learn how to migrate from v1.
 :::
 
 ## What is Optics?

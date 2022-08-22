@@ -256,6 +256,335 @@ module.exports = {
             to: "/celo-codebase/protocol/identity/smart-contract-accounts",
             from: ["/celo-codebase/protocol/identity/valora-accounts"],
           },
+          // previous links before docs re-structure
+          {
+            to: "/wallet/mobile-wallet/run-local",
+            from: "/celo-codebase/wallet/intro"
+          },
+          {
+            to: "/wallet/celo-wallet/invitation",
+            from: "/celo-codebase/wallet/how-the-wallet-works/invitations"
+          },
+          {
+            to: "/wallet/celo-wallet/invitation",
+            from: "/celo-codebase/wallet/how-the-wallet-works/invitations"
+          },
+          {
+            to: "/wallet/celo-wallet/functionality",
+            from: "/celo-codebase/wallet/how-the-wallet-works/README"
+          },
+          {
+            to: "/wallet/celo-wallet/payment",
+            from: "/celo-codebase/wallet/how-the-wallet-works/sending-and-requesting-payments"
+          },
+          {
+            to: "/wallet/celo-wallet/node-sync",
+            from: "/celo-codebase/wallet/how-the-wallet-works/ultralight-node-sync"
+          },
+          {
+            to: "/wallet/celo-wallet/verification",
+            from: "/celo-codebase/wallet/how-the-wallet-works/verification"
+          },
+          {
+            to: "/protocol/plumo",
+            from: "/celo-codebase/protocol/plumo"
+          },
+          {
+            to: "/bridge/optics/index",
+            from: "/celo-codebase/protocol/optics"
+          },
+          {
+            to: "/protocol/index",
+            from: "/celo-codebase/protocol/index"
+          },
+          {
+            to: "/protocol/governance",
+            from: "/celo-codebase/protocol/governance"
+          },
+          {
+            to: "/protocol/transaction/erc20-transaction-fees",
+            from: "/celo-codebase/protocol/transactions/erc20-transaction-fees"
+          },
+          {
+            to: "/protocol/transaction/escrow",
+            from: "/celo-codebase/protocol/transactions/escrow"
+          },
+          {
+            to: "/protocol/transaction/full-node-incentives",
+            from: "/celo-codebase/protocol/transactions/full-node-incentives"
+          },
+          {
+            to: "/protocol/transaction/gas-pricing",
+            from: "/celo-codebase/protocol/transactions/gas-pricing"
+          },
+          {
+            to: "/protocol/transaction/index",
+            from: "/celo-codebase/protocol/transactions/index"
+          },
+          {
+            to: "/protocol/transaction/native-currency",
+            from: "/celo-codebase/protocol/transactions/native-currency"
+          },
+          {
+            to: "/protocol/transaction/tx-comment-encryption",
+            from: "/celo-codebase/protocol/transactions/tx-comment-encryption"
+          },
+          {
+            to: "/protocol/stability/adding-stable-assets",
+            from: "/celo-codebase/protocol/stability/adding_stable_assets"
+          },
+          {
+            to: "/protocol/stability/doto",
+            from: "/celo-codebase/protocol/stability/doto"
+          },
+          {
+            to: "/protocol/stability/granda-mento",
+            from: "/celo-codebase/protocol/stability/granda-mento"
+          },
+          {
+            to: "/protocol/stability/index",
+            from: "/celo-codebase/protocol/stability/index"
+          },
+          {
+            to: "/protocol/stability/oracles",
+            from: "/celo-codebase/protocol/stability/oracles"
+          },
+          {
+            to: "/protocol/stability/stability-fees",
+            from: "/celo-codebase/protocol/stability/stability-fees"
+          },
+          {
+            to: "/protocol/stability/tobin-tax",
+            from: "/celo-codebase/protocol/stability/tobin-tax"
+          },
+          {
+            to: "/protocol/pos/becoming-a-validator",
+            from: "/celo-codebase/protocol/proof-of-stake/becoming-a-validator"
+          },
+          {
+            to: "/protocol/pos/epoch-rewards-carbon-offsetting-fund",
+            from: "/celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund"
+          },
+          {
+            to: "/protocol/pos/epoch-rewards-community-fund",
+            from: "/celo-codebase/protocol/proof-of-stake/community-fund"
+          },
+          {
+            to: "/protocol/pos/epoch-rewards",
+            from: "/celo-codebase/protocol/proof-of-stake/epoch-rewards"
+          },
+          {
+            to: "/protocol/pos/index",
+            from: "/celo-codebase/protocol/proof-of-stake/index"
+          },
+          {
+            to: "/protocol/pos/epoch-rewards-locked-gold",
+            from: "/celo-codebase/protocol/proof-of-stake/locked-gold-rewards"
+          },
+          {
+            to: "/protocol/pos/locked-gold",
+            from: "/celo-codebase/protocol/proof-of-stake/locked-gold"
+          },
+          {
+            to: "/protocol/pos/penalties",
+            from: "/celo-codebase/protocol/proof-of-stake/penalties"
+          },
+          {
+            to: "/protocol/pos/validator-elections",
+            from: "/celo-codebase/protocol/proof-of-stake/validator-elections"
+          },
+          {
+            to: "/protocol/pos/validator-groups",
+            from: "/celo-codebase/protocol/proof-of-stake/validator-groups"
+          },
+          {
+            to: "/protocol/pos/epoch-rewards-validator",
+            from: "/celo-codebase/protocol/proof-of-stake/validator-rewards"
+          },
+          {
+            to: "/protocol/oracle/band-protocol",
+            from: "/celo-codebase/protocol/oracles/band-protocol-how-to"
+          },
+          {
+            to: "/protocol/oracle/index",
+            from: "/celo-codebase/protocol/oracles/oracles-on-celo"
+          },
+          {
+            to: "/protocol/oracle/redstone",
+            from: "/celo-codebase/protocol/oracles/redstone-protocol-how-to"
+          },
+          {
+            to: "/protocol/identity/odis",
+            from: "/celo-codebase/protocol/odis/index"
+          },
+          {
+            to: "/protocol/identity/odis-use-case-key-hardening",
+            from: "/celo-codebase/protocol/odis/use-cases/key-hardening"
+          },
+          {
+            to: "/protocol/identity/odis-use-case-phone-number-privacy",
+            from: "/celo-codebase/protocol/odis/use-cases/phone-number-privacy"
+          },
+          {
+            to: "/protocol/identity/odis-domain",
+            from: "/celo-codebase/protocol/odis/domains/index"
+          },
+          {
+            to: "/protocol/identity/odis-domain-sequential-delay-domain",
+            from: "/celo-codebase/protocol/odis/domains/sequential-delay-domain"
+          },
+          {
+            to: "/protocol/identity/encrypted-cloud-backup",
+            from: "/celo-codebase/protocol/identity/encrypted-cloud-backup"
+          },
+          {
+            to: "/protocol/identity/index",
+            from: "/celo-codebase/protocol/identity/index"
+          },
+          {
+            to: "/protocol/identity/metadata",
+            from: "/celo-codebase/protocol/identity/metadata"
+          },
+          {
+            to: "/protocol/identity/privacy-research",
+            from: "/celo-codebase/protocol/identity/privacy-research"
+          },
+          {
+            to: "/protocol/identity/randomness",
+            from: "/celo-codebase/protocol/identity/randomness"
+          },
+          {
+            to: "/protocol/identity/smart-contract-accounts",
+            from: "/celo-codebase/protocol/identity/smart-contract-accounts"
+          },
+          {
+            to: "/protocol/consensus/index",
+            from: "/celo-codebase/protocol/consensus/index"
+          },
+          {
+            to: "/protocol/consensus/locating-nodes",
+            from: "/celo-codebase/protocol/consensus/locating-nodes"
+          },
+          {
+            to: "/protocol/consensus/ultralight-sync",
+            from: "/celo-codebase/protocol/consensus/ultralight-sync"
+          },
+          {
+            to: "/protocol/consensus/validator-set-differences",
+            from: "/celo-codebase/protocol/consensus/validator-set-differences"
+          },
+          {
+            to: "/protocol/bridge/etherscan-native-asset",
+            from: "/celo-codebase/protocol/bridging/bridging-native-assets"
+          },
+          {
+            to: "/protocol/bridge/index",
+            from: "/celo-codebase/protocol/bridging/bridging-to-celo"
+          },
+          {
+            to: "/protocol/bridge/etherscan-token",
+            from: "/celo-codebase/protocol/bridging/bridging-tokens-with-etherscan"
+          },
+          {
+            to: "/protocol/bridge/optics-migration-v2",
+            from: "/celo-codebase/protocol/bridging/migrating-to-optics-v2"
+          },
+          {
+            to: "/protocol/bridge/optics-faq",
+            from: "/celo-codebase/protocol/bridging/optics-bridge-faq"
+          },
+          {
+            to: "/protocol/bridge/optics-gui-kr",
+            from: "/celo-codebase/protocol/bridging/optics-gui-kr"
+          },
+          {
+            to: "/protocol/bridge/optics-gui-zh-cn",
+            from: "/celo-codebase/protocol/bridging/optics-gui-zh_cn"
+          },
+          {
+            to: "/protocol/bridge/optics-gui",
+            from: "/celo-codebase/protocol/bridging/optics-gui"
+          },
+          {
+            to: "/holder/manage/exchange",
+            from: "/celo-holder-guide/celo-exchange-bot"
+          },
+          {
+            to: "/holder/recover/from-celo-address",
+            from: "/celo-holder-guide/celo-recovery"
+          },
+          {
+            to: "/wallet/ledger/to-celo-terminal",
+            from: "/celo-holder-guide/connecting-ledger-celo-terminal-wallet"
+          },
+          {
+            to: "/wallet/ledger/to-celo-web",
+            from: "/celo-holder-guide/connecting-ledger-celo-web-wallet"
+          },
+          {
+            to: "/wallet/ledger/to-celo-cli",
+            from: "/celo-holder-guide/connecting-ledger-celocli"
+          },
+          {
+            to: "/holder/manage/asset",
+            from: "/celo-holder-guide/cusd"
+          },
+          {
+            to: "/holder/recover/from-eth-address",
+            from: "/celo-holder-guide/eth-recovery"
+          },
+          {
+            to: "/holder/vote/governance-parameters",
+            from: "/celo-holder-guide/governance-cheat-sheet"
+          },
+          {
+            to: "/wallet/ledger/setup",
+            from: "/celo-holder-guide/ledger"
+          },
+          {
+            to: "/holder/index",
+            from: "/celo-holder-guide/owners"
+          },
+          {
+            to: "/holder/manage/self-custody",
+            from: "/celo-holder-guide/quick-start"
+          },
+          {
+            to: "/holder/manage/release-gold",
+            from: "/celo-holder-guide/release-gold"
+          },
+          {
+            to: "/holder/vote/governance",
+            from: "/celo-holder-guide/voting-governance"
+          },
+          {
+            to: "/holder/vote/validator",
+            from: "/celo-holder-guide/voting-validators"
+          },
+          {
+            to: "/developer/setup/mac",
+            from: "/developer-resources/using-mac"
+          },
+          {
+            to: "/developer/setup/wallet",
+            from: "/developer-resources/testnet-wallet"
+          },
+          {
+            to: "/developer/index",
+            from: "/developer-resources/overview"
+          },
+          {
+            to: "/developer/setup/windows",
+            from: "/developer-resources/develop-on-windows"
+          },
+          {
+            to: "/developer/deploy/truffle",
+            from: "/developer-resources/deploy-truffle"
+          },
+          {
+            to: "/developer/setup/replit",
+            from: "/developer-resources/deploy-replit"
+          },
         ],
       },
     ],

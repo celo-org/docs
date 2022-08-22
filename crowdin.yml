@@ -1,5 +1,5 @@
-api_token_env: "CROWDIN_PERSONAL_TOKEN"
-api_token_env: "ENT_CROWDIN_PERSONAL_TOKEN"
+project_id: ""
+api_token: ""
 preserve_hierarchy: true
 base_url: "https://celo.crowdin.com"
 files: [

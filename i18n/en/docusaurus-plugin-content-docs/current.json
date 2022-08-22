@@ -734,9 +734,5 @@
   "sidebar.docs.doc.Sequential Delay Domain": {
     "message": "Sequential Delay Domain",
     "description": "The label for the doc item Sequential Delay Domain in sidebar docs, linking to the doc protocol/identity/odis-domain-sequential-delay-domain"
-  },
-  "sidebar.docs.doc.FAQs": {
-    "message": "FAQs",
-    "description": "The label for the doc item FAQs in sidebar docs, linking to the doc general/faqs"
   }
 }

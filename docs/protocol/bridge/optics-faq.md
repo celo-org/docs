@@ -23,7 +23,7 @@ It typically takes 1 hour for funds to arrive at the destination chain, but can 
 
 ## How do I convert my v1 tokens into v2?
 
-For converting Optics Bridge v1 wETH, wBTC, cUSDC to v2 you should use the Mobius + Celo one-for-one [migration tool](https://mobius.money/#/opensum). [This tutorial](https://docs.celo.org/celo-codebase/protocol/bridging/migrating-to-optics-v2) guides you through the process.
+For converting Optics Bridge v1 wETH, wBTC, cUSDC to v2 you should use the Mobius + Celo one-for-one [migration tool](https://mobius.money/#/opensum). [This tutorial](/protocol/bridge/optics-migration-v2) guides you through the process.
 
 
 ## How can I check the status of my transaction?
