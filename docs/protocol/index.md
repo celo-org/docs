@@ -26,5 +26,5 @@ There are a number of substantial changes and additions have been made in servic
 - [Stability Mechanism](/protocol/stability)
 - [Transactions](/protocol/transaction)
 - [Identity](/protocol/identity)
-- [Optics](/protocol/optics)
+- [Optics](/protocol/bridge/optics)
 - [Plumo Ultralight Sync](/protocol/plumo)

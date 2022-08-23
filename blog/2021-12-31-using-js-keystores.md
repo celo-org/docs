@@ -39,7 +39,7 @@ The components of the library are roughly as follows:
 
 For accounts containing significant funds or otherwise requiring a high degree of security, we **do not** recommend this keystore library! This is only for managing keys for low-risk hot wallets and signers.
 
-For more stringent security requirements, check out the guide to [Choosing a Wallet](/getting-started/wallets).
+For more stringent security requirements, check out the guide to [Choosing a Wallet](/wallet/).
 
 :::
 

@@ -89,7 +89,7 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 [ODIS](/protocol/identity/odis) (Oblivious decentralized identity service) is a lightweight identity layer that makes it easy to send cryptocurrency to a phone number
 
-<PageRef url="/getting-started/wallets" pageName="ODIS" />
+<PageRef url="/protocol/identity/odis" pageName="ODIS" />
 
 ### The Graph
 

@@ -5,13 +5,13 @@ description: How to run a full node on the Celo Mainnet Network using a prebuilt
 
 # Run a Full Node
 
-How to run on the [Mainnet Network](/getting-started/mainnet) using a prebuilt Docker image.
+How to run on the [Mainnet Network](/network/mainnet/) using a prebuilt Docker image.
 
 ___
 
 :::tip Hosted Nodes
 
-If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/getting-started/hosted-nodes) documentation.
+If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.
 
 :::
 
@@ -151,4 +151,4 @@ $ celocli account:new
 
 ## Light Client Serving
 
-Light clients may connect to you as people run the [Celo Mobile Wallet](/getting-started/alfajores-testnet/using-the-mobile-wallet) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.
+Light clients may connect to you as people run the [Celo Mobile Wallet](/network/alfajores/use-mobile-wallet) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

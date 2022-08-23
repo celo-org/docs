@@ -16,7 +16,7 @@ A [reference implementation](https://github.com/celo-org/celo-oracle) of such cl
 
 ## Requriments
 * One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
-* A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
+* A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/network/mainnet/run-full-node#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
 * The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
 
 It is not strictly required but it is recommended to have the [Celo CLI](/cli#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
@@ -63,7 +63,7 @@ The output field of `privateKey` should be stored to a file and its path should 
 
 ### Setting up your keys in the node
 
-Instructions to generate an account and store it in the node can be found [here](https://docs.celo.org/getting-started/mainnet/running-a-full-node-in-mainnet#create-an-account-and-get-its-address).
+Instructions to generate an account and store it in the node can be found [here](/network/mainnet/run-full-node#create-an-account-and-get-its-address).
 
 ### Recommended configuration
 

@@ -46,7 +46,7 @@ Get up and running as a Celo holder, validator, developer, using tools in the Ce
 - [Developers](developer-guide/overview)
 - [Validators](validator-guide/overview)
 - [Holders](celo-holder-guide/owners)
-- [Integrations](developer-guide/integrations)
+- [Integrations](/integration/)
 - [Bridges](celo-codebase/protocol/bridging/bridging-to-celo)
 - [Oracles](celo-codebase/protocol/oracles/oracles-on-celo)
 

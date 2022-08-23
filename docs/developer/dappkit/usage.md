@@ -91,7 +91,7 @@ this.setState({ cUSDBalance, isLoadingBalance: false });
 
 ## Checking attestations for the phone number
 
-If the user is using a Valora version that passes the `pepper` that Valora has for a `phone_number`, you can use both pieces of information to determine attestations for the identifier (learn more about the [lightweight identity protocol here](../../celo-codebase/protocol/identity)):
+If the user is using a Valora version that passes the `pepper` that Valora has for a `phone_number`, you can use both pieces of information to determine attestations for the identifier (learn more about the [lightweight identity protocol here](/protocol/identity/)):
 
 ```javascript
 import { PhoneNumberUtils } from "@celo/utils";

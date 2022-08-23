@@ -4,7 +4,7 @@ description: How to run a full node on the Alfajores Network using a prebuilt Do
 ---
 # Run an Alfajores Full Node
 
-How to run a full node on the [Alfajores Network](/getting-started/alfajores-testnet) using a prebuilt Docker image.
+How to run a full node on the [Alfajores Network](/network/alfajores/) using a prebuilt Docker image.
 
 ___
 
@@ -14,7 +14,7 @@ Full nodes play a special purpose in the Celo ecosystem, acting as a bridge betw
 
 :::tip
 
-If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/getting-started/hosted-nodes) documentation.
+If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.
 
 :::
 

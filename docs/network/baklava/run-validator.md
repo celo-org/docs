@@ -11,7 +11,7 @@ ___
 
 ## Why run a Baklava Testnet Validator?
 
-The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/getting-started/mainnet).
+The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/network/mainnet/).
 
 :::info
 
@@ -116,7 +116,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 Private keys are the central primitive of any cryptographic system and need to be handled with extreme care. Loss of your private key can lead to irreversible loss of value.
 
-This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator-guide/summary)
+This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
 
 #### Unlocking
 
@@ -412,7 +412,7 @@ At this point your Validator and Proxy machines should be configured, and both s
 
 :::info
 
-You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/getting-started/baklava-testnet/running-a-validator-in-baklava#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
+You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/network/baklava/run-validator#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
 
 :::
 

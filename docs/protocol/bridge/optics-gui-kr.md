@@ -89,8 +89,8 @@ Celo에서 Polygon으로 자산을 보내는 방법을 시연하지만, 다른 �
 
 - Install Metamask from [https://metamask.io](https://metamask.io/).
 - [https://metamask.io](https://metamask.io/)에서 메타마스크를 설치합니다.
-- [Add the Celo network to Metamask](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup)
-- [Celo 네트워크를 메타마스크에 추가합니다.](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup)
+- [Add the Celo network to Metamask](/wallet/metamask/setup)
+- [Celo 네트워크를 메타마스크에 추가합니다.](/wallet/metamask/setup)
 
 ![add Celo to MM.png](https://github.com/critesjosh/images/blob/main/optics-gui/add%20Celo%20to%20MM.png?raw=true)
 

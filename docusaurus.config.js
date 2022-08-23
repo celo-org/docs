@@ -48,11 +48,7 @@ module.exports = {
           },
           {
             to: "/holder/manage/release-gold",
-            from: [
-              "/celo-codebase/protocol/release-gold",
-              "/celo-holder-guide/release-gold",
-              "/celo-gold-holder-guide/release-gold",
-            ],
+            from: "/celo-codebase/protocol/release-gold",
           },
           {
             to: "/developer/",
@@ -96,25 +92,15 @@ module.exports = {
           },
           {
             to: "/holder/vote/governance",
-            from: [
-              "/celo-gold-holder-guide/voting-governance",
-              "/celo-holder-guide/voting-governance",
-            ],
+            from: "/celo-gold-holder-guide/voting-governance"
           },
           {
             to: "/holder/vote/validator",
-            from: [
-              "/celo-gold-holder-guide/voting-validators",
-              "/celo-holder-guide/voting-validators",
-            ],
+            from: "/celo-gold-holder-guide/voting-validators"
           },
           {
             to: "/holder/recover/from-eth-address",
             from: ["/celo-owner-guide/eth-recovery"],
-          },
-          {
-            to: "/holder/recover/from-celo-address",
-            from: ["/celo-holder-guide/celo-recovery"],
           },
           {
             to: "/developer/",
@@ -231,10 +217,6 @@ module.exports = {
           {
             to: "/wallet/mobile-wallet/run-local",
             from: "/celo-codebase/wallet/intro"
-          },
-          {
-            to: "/wallet/celo-wallet/invitation",
-            from: "/celo-codebase/wallet/how-the-wallet-works/invitations"
           },
           {
             to: "/wallet/celo-wallet/invitation",
@@ -517,10 +499,6 @@ module.exports = {
             from: "/celo-holder-guide/owners"
           },
           {
-            to: "/holder/manage/self-custody",
-            from: ["/celo-holder-guide/quick-start", "/celo-owner-guide/quick-start"]
-          },
-          {
             to: "/holder/manage/release-gold",
             from: ["/celo-holder-guide/release-gold", "/celo-owner-guide/release-gold"]
           },
@@ -542,7 +520,7 @@ module.exports = {
           },
           {
             to: "/developer/",
-            from: ["/developer-resources/overview", "/developer-guide/overview"]
+            from: "/developer-guide/overview"
           },
           {
             to: "/developer/setup/windows",

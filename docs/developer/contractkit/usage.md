@@ -2,7 +2,7 @@
 title: Using the Kit
 ---
 
-The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](/developer/walkthroughs/hello-contracts#deploy-to-alfajores)
+The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](/developer/walkthrough/hello-contracts#deploy-to-alfajores)
 
 ___
 
