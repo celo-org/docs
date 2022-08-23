@@ -43,12 +43,12 @@ Run the following commands in the Linux terminal.
 
 ```text
 # Installing Nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.bashrc
 
-# Setting up the right version of Nvm
-nvm install 12
-nvm alias default 12
+# Setting up the desired Nvm version
+nvm install x
+nvm alias default x
 ```
 
 Running `$ node -v` in the terminal should print a node version if it is installed correctly.

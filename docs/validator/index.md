@@ -28,8 +28,8 @@ Not ready to become a Celo Validator? [Learn more about Celo](/).
 
 ## Important Information
 
-- [Attestation Service](/validator/attestation-service)
-- [Key Management](/validator/summary)
+- [Attestation Service](/validator/attestation)
+- [Key Management](/validator/key-management/summary)
 
 ## Nodes and Services
 

@@ -25,7 +25,7 @@ To learn more about the features available to you as a smart contract developer 
 
 To deploy on Celo using Replit, you don’t need any local environment. You should have a wallet available with testnet funds so that you can deploy and test transactions.
 
-- [Set up a Development Test Wallet](./testnet-wallet.md)
+- [Set up a Development Test Wallet](/developer/setup/wallet)
 - [Create a Replit account](https://replit.com/~)
 
 If you are new to Replit, it will also help to review the [Solidity announcement](https://blog.replit.com/solidity) and [Replit documentation](https://docs.replit.com/).

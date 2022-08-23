@@ -15,10 +15,6 @@
     "message": "Home",
     "description": "The label of footer link with label=Home linking to /"
   },
-  "link.item.label.Blog": {
-    "message": "Blog",
-    "description": "The label of footer link with label=Blog linking to /blog"
-  },
   "link.item.label.Docs GitHub": {
     "message": "Docs GitHub",
     "description": "The label of footer link with label=Docs GitHub linking to https://github.com/celo-org/docs"

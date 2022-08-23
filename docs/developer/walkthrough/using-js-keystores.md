@@ -1,22 +1,12 @@
 ---
 title: Using Keystores Library for Local Key Management
 description: Introduction to the keystores library and how to use it for local key management.
-slug: /developer-guide/start/using-js-keystores
-authors:
-  - name: Josh Crites
-    title: Developer Relations, cLabs
-    url: https://github.com/critesjosh
-    image_url: https://github.com/critesjosh.png
-tags: [keystores]
-image: https://dl.airtable.com/.attachmentThumbnails/a7e530eb72ac8f30f37c0a3447ef0e7d/72e944da
-hide_table_of_contents: false
 ---
-
 # Keystores Library
 
 Introduction to the keystores library and how to use it for local key management.
 
-<!--truncate-->
+___
 
 ## Getting Started
 

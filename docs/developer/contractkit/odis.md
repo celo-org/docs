@@ -25,12 +25,12 @@ There are two methods for ODIS:
 
 :::tip
 
-See [this overview document](/celo-codebase/protocol/odis/use-cases/phone-number-privacy.md) for more details on ODIS. 
+See [this overview document](/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS. 
 
 :::
 ## Authentication
 
-Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer-resources/contractkit/data-encryption-key.md)
+Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer/contractkit/data-encryption-key)
 
 You may use the `EncryptionKeySigner` for your `AuthSigner` by passing in the raw private key:
 

@@ -10,21 +10,18 @@ ___
 
 ## Code Examples
 
-* [Sending Celo and cUSD](https://docs.celo.org/developer-guide/start/hellocelo)
-* [Deploy a Contract using a Local Node](https://docs.celo.org/developer-guide/start/hellocontracts)
-* [Deploy and Interact with Remote Contracts](https://docs.celo.org/developer-guide/start/hello-contract-remote-node)
-* [Deply an ERC20 Token to Celo](https://docs.celo.org/developer-resources/walkthroughs/no-code-erc20)
-* [Deploy and NFT to Celo](https://docs.celo.org/developer-resources/walkthroughs/no-code-erc721)
-* [Create a React Native app on Celo with Truffle](https://docs.celo.org/developer-guide/start/hello-mobile)
-* [Create a Voting dApp with React Native on Celo](https://docs.celo.org/developer-guide/start/web-dapp)
-* [Integrate WalletConnect with your dApp](https://docs.celo.org/developer-guide/start/wallet-connect)
-* [Local Key Management using Keystores](https://docs.celo.org/developer-guide/start/using-js-keystores)
+* [Sending Celo and cUSD](/developer/walkthrough/hello-celo)
+* [Deploy a Contract using a Local Node](/developer/walkthrough/hello-contracts)
+* [Deploy and Interact with Remote Contracts](/developer/walkthrough/hello-contract-remote-node)
+* [Deply an ERC20 Token to Celo](/developer/walkthrough/no-code-erc20)
+* [Deploy and NFT to Celo](/developer/walkthrough/no-code-erc721)
+* [Create a Voting dApp with React Native on Celo](/developer/walkthrough/web-dapp)
+* [Local Key Management using Keystores](/developer/walkthrough/using-js-keystores)
 
 ## Developer Guide
 
-* [Local Development Chain with Protocol Contracts](https://docs.celo.org/developer-guide/development-chain)
-* [Celo for Ethereum Developers](https://docs.celo.org/developer-guide/celo-for-eth-devs)
-* [Celo dApp Gallery](https://docs.celo.org/developer-guide/celo-dapp-gallery)
+* [Local Development Chain with Protocol Contracts](/developer/setup/development-chain)
+* [Celo for Ethereum Developers](/developer/migrate/from-ethereum)
 
 ## Tech Talks
 

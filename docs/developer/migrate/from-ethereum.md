@@ -102,9 +102,9 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 
 Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Figment Datahub](https://figment.io/datahub/celo/). 
 
-[This tutorial](/developer/walkthroughs/hellocontracts) goes over how to start an ultralight node that runs locally and use it to deploy a contract to the Alfajores testnet using Truffle.
+[This tutorial](/developer/walkthrough/hello-contracts) goes over how to start an ultralight node that runs locally and use it to deploy a contract to the Alfajores testnet using Truffle.
 
-[This tutorial](/developer/walkthroughs/hello-contract-remote-node) goes over how to connect to a remote node and use ContractKit to deploy a contract to Alfajores using Truffle.
+[This tutorial](/developer/walkthrough/hello-contract-remote-node) goes over how to connect to a remote node and use ContractKit to deploy a contract to Alfajores using Truffle.
 
 ## Protocol Differences
 
