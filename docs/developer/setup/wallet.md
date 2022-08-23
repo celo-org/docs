@@ -15,7 +15,7 @@ While developing and deploying dApps on Celo, it’s helpful to have a wallet pr
 
 :::tip
 
-This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/network/alfajores/) tokens). You can also use the [Celo Extension Wallet](/wallet/index#celoextensionwallet) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo mainnet.
+This guide will focus on funding an account on MetaMask with Celo ([Alfajores testnet](/network/alfajores/) tokens). You can also use the [Celo Extension Wallet](/wallet/) if you prefer. Additionally, you can fund your wallet with real Celo if you would like to deploy to the Celo mainnet.
 
 :::
 

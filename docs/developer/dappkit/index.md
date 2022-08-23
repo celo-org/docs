@@ -12,7 +12,7 @@ ___
 
 :::warning
 
-While DAppKit is functional, it is no longer being actively maintained in favor of WalletConnect. If WalletConnect does not work for your use case, you can use deep links directly. You can read more about how Valora handles this [here](https://github.com/valora-inc/wallet/blob/main/packages/mobile/docs/deeplinks.md). You can read more about how to use WalletConnect with Valora [here](/blog/2022-01-08-valora-wc-v1).
+While DAppKit is functional, it is no longer being actively maintained in favor of WalletConnect. If WalletConnect does not work for your use case, you can use deep links directly. You can read more about how Valora handles this [here](https://github.com/valora-inc/wallet/blob/main/packages/mobile/docs/deeplinks.md). You can read more about how to use WalletConnect with Valora [here](/blog/2022/01/08/valora-wc-v1).
 
 :::
 
