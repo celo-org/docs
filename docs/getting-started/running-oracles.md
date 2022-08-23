@@ -15,6 +15,7 @@ Oracles work by running a client that fetches the price from centralized exchang
 A [reference implementation](https://github.com/celo-org/celo-oracle) of such client is written in TypeScript and would be used for this guide. Releases for this client can be found [here](https://github.com/celo-org/celo-oracle/releases).
 
 ## Requriments
+
 * One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
 * A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/getting-started/mainnet/running-a-full-node-in-mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
 * The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
@@ -28,6 +29,8 @@ Find the latest stable Docker Image for the oracle in the oracle releases [here]
 From the oracle VM, make sure you can access your node. This can be done via the Celo CLI with this command:
 
 `celocli node:synced --node YOUR_NODE_HOSTNAME:YOUR_NODE_PORT`
+
+Also make sure your node is accesible via WS, usually full nodes listen in port `8546`.
 
 :::warning
 
