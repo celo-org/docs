@@ -1,7 +1,6 @@
 ---
 title: "Use onchain randomness"
 description: How to use onchain randomness in your smart contracts.
-slug: /developer-guide/start/randomness
 authors:
   - name: Josh Crites
     title: Developer Relations, cLabs

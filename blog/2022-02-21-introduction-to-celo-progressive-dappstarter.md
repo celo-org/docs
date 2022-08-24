@@ -109,7 +109,7 @@ Import a new MetaMask account using your private key to view your newly funded T
 
 :::info MetaMask Setup
 
-Learn more about setting up your Alfajores Testnet with MetaMask [here](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask)
+Learn more about setting up your Alfajores Testnet with MetaMask [here](/wallet/metamask/setup#adding-a-celo-network-to-metamask)
 
 :::
 

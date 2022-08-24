@@ -38,7 +38,7 @@ Currently hosted core developer keys include:
 
 ## Documentation
 
-Documentation for client features, such as APIs and commands, are maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](https://docs.celo.org/celo-codebase/protocol).
+Documentation for client features, such as APIs and commands, are maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](/protocol/).
 
 ## Identifying releases:
 

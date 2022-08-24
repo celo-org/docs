@@ -36,17 +36,15 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 
 ## Set up Local Environment
 
-* [Using Windows](../developer-guide/start/develop-on-windows) 
-* [Using Mac](../developer-resources/using-mac) 
+* [Using Windows](/developer/setup/windows) 
+* [Using Mac](/developer/setup/mac) 
+* [Using Replit](/developer/setup/replit) 
+
 ## Deploy a dApp with Celo
 
-* [Deploy a dApp with Celo](../developer-resources/deploy-dapp) 
-* [Set up a Tesnet Wallet](../developer-resources/testnet-wallet) 
-* [Deploy a dApp with Celo](../developer-resources/deploy-dapp) 
-* [Deploy with Remix](../developer-resources/deploy-remix) 
-* [Deploy with Truffle](../developer-resources/deploy-truffle) 
-* [Deploy with Hardhat](../developer-resources/deploy-hardhat) 
-* [Deploy with Replit](../developer-resources/deploy-replit) 
+* [Deploy with Remix](/developer/deploy/remix) 
+* [Deploy with Truffle](/developer/deploy/truffle) 
+* [Deploy with Hardhat](/developer/deploy/hardhat)
 
 ## Celo Developer Pathway
 
@@ -61,14 +59,14 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 
 ## Code Examples with Celo
 
-* [Sending Celo](../developer-guide/start/hellocelo)
-* [Deploy a Contract (local node)](../developer-guide/start/hellocontracts)
-* [Deploy and Interact with Contracts (Remotely)](../developer-guide/start/hello-contract-remote-node)
-* [Use onchain randomness in your contract](../developer-guide/start/randomness)
+* [Sending Celo](/developer/walkthrough/hello-celo)
+* [Deploy a Contract (local node)](/developer/walkthrough/hello-contracts)
+* [Deploy and Interact with Contracts (Remotely)](/developer/walkthrough/hello-contract-remote-node)
+* [Use onchain randomness in your contract](/blog/2022/01/07/on-chain-randomness)
 
 ## Create a Mobile friendly dApp with Celo
 
-* [Valora + Wallet Connect](../developer-resources/walkthroughs/valora-wc-v1.md)
+* [Valora + Wallet Connect](/blog/2022/01/08/valora-wc-v1)
 
 ## Create a Web dApp with Celo
 

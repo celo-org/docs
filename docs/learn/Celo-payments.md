@@ -42,7 +42,7 @@ The following is a short description of each of the package directories:
 
 #### Regarding the CELO private key
 
-For one-off uses, simply use `celocli account:new`. To get the CELO CLI, follow the instructions here: https://docs.celo.org/command-line-interface/introduction.
+For one-off uses, simply use `celocli account:new`. To get the CELO CLI, follow the instructions here: https://docs.celo.org/cli.
 
 To make things a bit simpler, I recommend running that command to create a .env file for testing:
 

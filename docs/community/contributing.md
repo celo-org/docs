@@ -29,7 +29,7 @@ Find your purpose and join a community focused on building the conditions of pro
 - [Contributors](/community/guidelines)
 - [Code of Conduct](/community/code-of-conduct)
 - [Grant Playbook](/community/grant-playbook)
-- [Release Process](/community/release-process/README)
+- [Release Process](/community/release-process/)
 - [Join the Community](/community/join-the-community)
 
 :::tip
