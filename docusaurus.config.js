@@ -1240,12 +1240,12 @@ module.exports = {
             {
               href:
                 "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
-              label: "Celo Signal",
+              label: "Celo Signal Calendar",
             },
             {
               href:
                 "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
-              label: "Calendar",
+              label: "Community Calendar",
             },
           ],
         },
