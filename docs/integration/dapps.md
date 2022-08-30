@@ -95,6 +95,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 - Relevant contracts
   - Social recovery multisig, gasless wallet multisig
 
+**[Cyberbox](https://cyberbox.art)** - ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
+
+- [GitHub](https://github.com/cybertime-eth/cyberbox)
+- [Contracts](https://github.com/cybertime-eth/CyberBox-NFT-Marketplace/tree/main/contracts)
+
 ## **🤑 Yield Chasers**
 
 **[Beefy](https://beefy.finance/)** - an auto-compound protocol for yield farmers.

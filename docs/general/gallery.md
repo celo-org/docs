@@ -257,3 +257,10 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
+
+### Cyberbox
+
+Cyberbox is ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
+
+- [Website](https://cyberbox.art)
+- [GitHub](https://github.com/cybertime-eth/cyberbox)
