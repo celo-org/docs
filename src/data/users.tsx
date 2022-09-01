@@ -864,6 +864,14 @@ const Users: User[] = [
     source: 'https://www.coinbase.com/price/celo',
     tags: ['apps','earn'],
   },
+  {
+    title: 'Binusu',
+    description: 'A Personalized Crypto Experience.',
+    preview: require('./showcase/binusu.png'),
+    website: 'https://www.binusu.com',
+    source: 'https://www.binusu.com',
+    tags: ['apps','earn','defi','impact','wallets'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
