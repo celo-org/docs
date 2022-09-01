@@ -7,7 +7,7 @@ description: How to deploy a Smart Contract to Celo using Hardhat
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Hardhat](https://hardhat.org/).
 
-___
+---
 
 ## Introduction to Hardhat
 
@@ -17,15 +17,15 @@ ___
 
 To deploy on Celo using Hardhat, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
-- [Using Windows](/developer/setup/windows)
-- [Using Mac](/developer/setup/mac)
-- [Using Replit](/developer/setup/replit)
+-   [Using Windows](/developer/setup/windows)
+-   [Using Mac](/developer/setup/mac)
+-   [Using Replit](/developer/setup/replit)
 
 ## Create Hardhat Project
 
 Choose one of the following items to prepare a dApp to deploy on Celo.
 
-* Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract. 
+-   Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract.
 
 ## Update the hardhat.config.js file
 
@@ -96,6 +96,7 @@ Run the following command from your root project directory to deploy to Celo Alf
 ```shell
 npx hardhat run scripts/sample-script.js --network alfajores
 ```
+
 ...or run this command to deploy to Celo mainnet.
 
 ```shell
@@ -113,24 +114,6 @@ Copy your **contract address** from the terminal and navigate to the [block expl
 Learn more about building and deploying dApps using the <a href="https://hardhat.org/">HardHat documentation</a>.
 
 :::
-
-## Verify Smart Contract
-
-### Using Blockscout
-
-Verifying a smart contract allows developers to review your code from within the Celo Block Explorer.
-
-* Navigate to the Code tab at the Explorer page for your contract's address
-* Click Verify & Publish to enter the smart contract verification page
-
-![github](/img/doc-images/deploy-hardhat/image2.png)
-
-* Upload your smart contract (example: HelloCelo.sol) and it’s .json file (example: HelloCelo.json) found in **build > contracts** folder.
-
-![github](/img/doc-images/deploy-hardhat/image3.png)
-
-* Click **Verify & Publish**
-* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.
 
 ### Hardhat-deploy plugin
 
