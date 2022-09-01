@@ -872,6 +872,14 @@ const Users: User[] = [
     source: 'https://www.binusu.com',
     tags: ['apps','earn','defi','impact','wallets'],
   },
+  {
+    title: 'Mybitstore',
+    description: 'The best cryptocurrency platform to buy, sell, store and convert cryptocurrencies and also trade peer-to-peer with over 200 payment methods.',
+    preview: require('./showcase/mybitstore.png'),
+    website: 'https://www.mybitstore.com',
+    source: 'https://www.mybitstore.com',
+    tags: ['apps','earn','wallets'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
