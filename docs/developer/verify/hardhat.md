@@ -86,3 +86,5 @@ Celo Mainnet
 ```bash
 npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network celo
 ```
+
+Alternatively, You can read an in depth guide about how to deploy and verify contracts on Celo Block Explorer (sourcify) programmatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).
