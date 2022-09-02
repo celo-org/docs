@@ -7,7 +7,7 @@ description: How to deploy a Smart Contract to Celo using Truffle
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Truffle](https://www.trufflesuite.com/).
 
-___
+---
 
 ## Introduction to Truffle
 
@@ -23,9 +23,9 @@ To learn more about the features available to you as a smart contract developer 
 
 To deploy on Celo using Truffle, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
-- [Using Windows](/developer/setup/windows)
-- [Using Mac](/developer/setup/mac)
-- [Using Replit](/developer/setup/replit)
+-   [Using Windows](/developer/setup/windows)
+-   [Using Mac](/developer/setup/mac)
+-   [Using Replit](/developer/setup/replit)
 
 If you are new to Truffle, complete the [Celo truffle installation instructions](/developer/setup/mac#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
@@ -95,11 +95,11 @@ If you would like to create a different smart contract or learn more about Solid
 Create a file named **2_deploy_contracts.js** in the **./migrations/** folder and populate it with the code below.
 
 ```js
-var HelloCelo = artifacts.require('HelloCelo')
+var HelloCelo = artifacts.require("HelloCelo");
 
 module.exports = function (deployer) {
- deployer.deploy(HelloCelo)
-}
+    deployer.deploy(HelloCelo);
+};
 ```
 
 :::tip
@@ -179,7 +179,7 @@ testnet: {
     return new HDWalletProvider(process.env.MNEMONIC, "https://alfajores-forno.celo-testnet.org")
   },
   network_id: 44787,
-  gas: 20000000      
+  gas: 20000000
 }
 ```
 
@@ -193,7 +193,7 @@ mainnet: {
     return new HDWalletProvider(process.env.MNEMONIC, "https://forno.celo.org")
   },
   network_id: 42220,
-  gas: 4000000     
+  gas: 4000000
 }
 ```
 
@@ -242,9 +242,11 @@ Deploy to your chosen Celo network running one of the following commands.
 ```shell
 truffle deploy --network alfajores
 ```
+
 ```shell
 truffle deploy --network celo
 ```
+
 ```shell
 truffle deploy --network local
 ```
@@ -256,6 +258,7 @@ Use the **---reset** flag to redeploy contracts with a new contract address if y
 ```shell
 truffle deploy --network NETWORK --reset
 ```
+
 ```shell
 truffle migrate --network NETWORK --reset
 ```
@@ -272,30 +275,12 @@ Copy your **contract address** from the terminal and navigate to the [block expl
 
 **View Deployed Contract**
 
-Navigate to [BlockScout](https://explorer.celo.org/) and select the network of your deployed contract. 
+Navigate to [BlockScout](https://explorer.celo.org/) and select the network of your deployed contract.
 
-* Paste your contract address from the **terminal window** and search for it in **BlockExplorer**.
-
-![github](/img/doc-images/deploy-truffle/image1.png)
+-   Paste your contract address from the **terminal window** and search for it in **BlockExplorer**.
 
 :::tip
 
 Learn more about exploring the Celo network and smart contract details in BlockScout <a href="https://docs.blockscout.com/">here</a>.
 
 :::
-
-## Verify Smart Contract
-
-Verifying a smart contract allows developers to review your code from within the Celo Block Explorer. 
-
-* Navigate to the Code tab at the Explorer page for your contract's address
-* Click Verify & Publish to enter the smart contract verification page
-
-![github](/img/doc-images/deploy-truffle/image2.png)
-
-* Upload your smart contract (example: HelloCelo.sol) and it’s .json file (example: HelloCelo.json) found in **build > contracts** folder.
-
-![github](/img/doc-images/deploy-truffle/image3.png)
-
-* Click** Verify & Publish**
-* Navigate to the **Contract Address Details Page** in the block explore to, use the **Code**, **Read Contract**, and **Write Contract** panels to view and interact with your deployed smart contract.

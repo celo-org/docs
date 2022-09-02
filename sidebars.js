@@ -339,6 +339,16 @@ const sidebars = {
                             label: "Using Celo Explorer",
                             id: "developer/verify/celo-explorer",
                         },
+                        {
+                            type: "doc",
+                            label: "Using Celoscan",
+                            id: "developer/verify/celoscan",
+                        },
+                        {
+                            type: "doc",
+                            label: "Using Remix",
+                            id: "developer/verify/remix",
+                        },
                     ],
                 },
                 {

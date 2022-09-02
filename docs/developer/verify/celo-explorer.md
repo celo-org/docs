@@ -3,7 +3,7 @@ title: Verify with Celo Explorer
 description: How to verify a Smart Contract on Celo using Celo Explorer
 ---
 
-# Verify Contracts using Celo Explorer
+# Verify Smart Contract using Celo Explorer
 
 Verifying a smart contract allows developers to review your code from within the Celo Block Explorer.
 
