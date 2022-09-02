@@ -64,3 +64,10 @@ To learn more about the features available to you as a smart contract developer 
 -   Explore the details of your deployed smart contract and learn more about the explorer [here](http://docs.blockscout.com).
 
 ![github](/img/doc-images/deploy-remix/image6.png)
+
+## Verify Contracts on Celo
+
+-   [Using Celo Explorer](/developer/verify/celo-explorer)
+-   [Using Remix](/developer/verify/remix)
+-   [Using CeloScan](/developer/verify/celoscan)
+-   [Using Hardhat](/developer/verify/hardhat)

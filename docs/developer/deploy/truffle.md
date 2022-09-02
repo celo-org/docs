@@ -284,3 +284,10 @@ Navigate to [BlockScout](https://explorer.celo.org/) and select the network of y
 Learn more about exploring the Celo network and smart contract details in BlockScout <a href="https://docs.blockscout.com/">here</a>.
 
 :::
+
+## Verify Contracts on Celo
+
+-   [Using Celo Explorer](/developer/verify/celo-explorer)
+-   [Using Remix](/developer/verify/remix)
+-   [Using CeloScan](/developer/verify/celoscan)
+-   [Using Hardhat](/developer/verify/hardhat)

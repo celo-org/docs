@@ -115,6 +115,9 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 :::
 
-### Hardhat-deploy plugin
+## Verify Contracts on Celo
 
-You can read an in depth guide about how to deploy and verify contracts on Celo programmatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).
+-   [Using Celo Explorer](/developer/verify/celo-explorer)
+-   [Using Remix](/developer/verify/remix)
+-   [Using CeloScan](/developer/verify/celoscan)
+-   [Using Hardhat](/developer/verify/hardhat)

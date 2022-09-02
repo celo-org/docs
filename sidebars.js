@@ -349,6 +349,11 @@ const sidebars = {
                             label: "Using Remix",
                             id: "developer/verify/remix",
                         },
+                        {
+                            type: "doc",
+                            label: "Using Hardhat",
+                            id: "developer/verify/hardhat",
+                        },
                     ],
                 },
                 {
