@@ -293,3 +293,10 @@ The Front Page of Celo. Track and manage all your assets from one place. We supp
 
 - [Website](https://celotracker.com/)
 - [GitHub](https://github.com/celo-tracker/)
+
+### Cyberbox
+
+Cyberbox is ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
+
+- [Website](https://cyberbox.art)
+- [GitHub](https://github.com/cybertime-eth/cyberbox)
