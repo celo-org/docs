@@ -276,5 +276,12 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces. 
 
-* [Website](https://birden.io/)
-* [GitHub](https://github.com/fffilimonov/birden)
+- [Website](https://birden.io/)
+- [GitHub](https://github.com/fffilimonov/birden)
+
+## Celo Tracker
+
+The Front Page of Celo. Track and manage all your assets from one place. We support all major projects on Celo, allow swapping using the best exchange rate on Celo and also track and show NFTs.
+
+- [Website](https://celotracker.com/)
+- [GitHub](https://github.com/celo-tracker/)
