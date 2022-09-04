@@ -15,7 +15,7 @@ The Celo Wallet first fetches the latest header to learn about the likely latest
 
 ## Validate Headers
 
-The wallet then validates each of the epoch headers by updating the set of validators at every epoch, and using that set to verify signatures. Once the wallet has reached the latest epoch, it can verify the signatures of all header is that epoch, including the latest one.
+The wallet then validates each of the epoch headers by updating the set of validators at every epoch, and using that set to verify signatures. Once the wallet has reached the latest epoch, it can verify the signatures of all header in that epoch, including the latest one.
 
 ## Fetch Blocks
 
