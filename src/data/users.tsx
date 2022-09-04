@@ -512,6 +512,23 @@ const Users: User[] = [
     tags: ['apps', 'impact'],
   },
   {
+    title: 'Etherspot',
+    description: 'The only SDK you need to Go Multichain (batched transactions, NFTs, ENS, p2p payment channels and more). Drive liquidity from any EVM chain to Celo based dApps',
+    preview: require('./showcase/etherspot.png'),
+    website: 'https://etherspot.io/',
+    source: 'https://github.com/etherspot/etherspot-sdk',
+    tags: ['apps','impact'],
+  },
+  {
+    title: 'AirdropMe',
+    description: 'The most cost-effective tool for airdrops, token distributions in bulk & DAO rewards',
+    preview: require('./showcase/adm.png'),
+    website: 'https://airdropme.io/',
+    source: 'https://airdropme.io/',
+    tags: ['apps'],
+
+  },
+  {
     title: 'KnoxEdge',
     description: 'Cogintive platform: blending man + machine intelligence since what you think, really matters to you.',
     preview: require('./showcase/knox-edge.png'),
