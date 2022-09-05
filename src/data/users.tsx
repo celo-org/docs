@@ -872,6 +872,7 @@ const Users: User[] = [
     source: 'https://github.com/AndinaDeFi/',
     tags: ['apps','wallets','defi'],
   },
+  {
     title: 'Binusu',
     description: 'A Personalized Crypto Experience.',
     preview: require('./showcase/binusu.png'),
