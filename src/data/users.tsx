@@ -869,6 +869,7 @@ const Users: User[] = [
     description: 'A self-custodial multiblockchain mobile wallet. Your gateway to a decentralized world.',
     preview: require('./showcase/defiant.png'),
     website: 'https://defiantapp.tech/',
+    source: 'https://github.com/AndinaDeFi/',
     tags: ['apps','wallets','defi'],
   },
   /*
