@@ -19,6 +19,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
   - Read: beneficiary status, unclaimed UBI, total claimed UBI
   - Write: donate, claim UBI
 
+**[esolidar](http://web3.esolidar.com)**- Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sustainable project or cause can choose to receive Celo stablecoins as donations.
+
+- [GitHub](https://github.com/esolidar/web3)
+- [Contracts](https://github.com/esolidar/sweepstake-contracts)
+- 
 ## **💰 Saving**
 
 **[GoodGhosting](https://goodghosting.com/#/)** - a gamified savings protocol where savings pools reward regular savers with higher interest rates and extra rewards by taking some interest away from those who don’t. Powered by [Moola](https://moola.market/) and [Mobius](https://www.mobius.money/#/swap).
@@ -95,6 +100,11 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 - Relevant contracts
   - Social recovery multisig, gasless wallet multisig
 
+**[Cyberbox](https://cyberbox.art)** - ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
+
+- [GitHub](https://github.com/cybertime-eth/cyberbox)
+- [Contracts](https://github.com/cybertime-eth/CyberBox-NFT-Marketplace/tree/main/contracts)
+
 ## **🤑 Yield Chasers**
 
 **[Beefy](https://beefy.finance/)** - an auto-compound protocol for yield farmers.
@@ -151,6 +161,18 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 - [Documentation](https://integrations.simplex.com/wallet-api-integration)
 
+
+## 🌐 DAOs
+
+**[Talent Protocol](https://talentprotocol.com/)** - **Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
+
+- [GitHub](https://github.com/talentprotocol)
+- [Contracts](https://github.com/talentprotocol/contracts)
+  - Relevant function calls
+    - Read: stakes (supporter - talent token relationships), total supply, available minting
+    - Write: create talent token, stake, claim rewards, unstake
+- [About us](https://www.notion.so/talentprotocol/Talent-Protocol-101-26a6c4b9f8284e5e8f55603a38629e76)
+- 
 # Thank you
 
 Special thanks to @0xHuman and the Node team for putting together this resource for Node's [Berkeley Blockchain Hackathon](https://thenode.fi/hackathon).

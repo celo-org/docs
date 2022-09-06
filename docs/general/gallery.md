@@ -158,11 +158,19 @@ Poof.cash is a protocol for decentralized, private transactions. It is the first
 
 ### Talent Protocol
 
-Talent Protocol is a web3 platform where talent can easily launch a social token (called Talent Tokens) to accelerate their career, and where supporters can back people they believe in.
+**Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
+Their mission is to help the **next generation of talent** achieve success and fulfilment by enabling **collective careers**.
+Until now careers have mostly been a single-player game where only a privileged few can win. With web3, careers are becoming multiplayer journeys where early support is rewarded and success is shared.
 
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)
 
+### NEFTME 
+
+NEFTME is a decentralized social NFT-powered network that allows anyone, anywhere to create, share and sell an NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
+
+- [Website](https://neftme.com)
+- [GitHub](https://github.com/NEFTME)
 ---
 
 ## Decentralized Impact Incubator Winners
@@ -183,6 +191,12 @@ Multiply the impact of charitable donations by providing liquidity in credit tok
 Decentralized application to help coordinate and improve the impact metric of non-profit organizations that work with migrants in Latin America.
 
 - [GitHub](https://github.com/nestorbonilla/bienvenir)
+
+### Symbiotic Protocol
+
+Decentralized and autonomous protocol built for multi-chain social impact, the play-for-good solution for crypto donation, connecting Gamers and Nonprofits.
+
+- [GitHub](https://github.com/Symbiotic-Protocol)
 
 ---
 
@@ -265,3 +279,24 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
+
+## Birden
+
+Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces. 
+
+- [Website](https://birden.io/)
+- [GitHub](https://github.com/fffilimonov/birden)
+
+## Celo Tracker
+
+The Front Page of Celo. Track and manage all your assets from one place. We support all major projects on Celo, allow swapping using the best exchange rate on Celo and also track and show NFTs.
+
+- [Website](https://celotracker.com/)
+- [GitHub](https://github.com/celo-tracker/)
+
+### Cyberbox
+
+Cyberbox is ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
+
+- [Website](https://cyberbox.art)
+- [GitHub](https://github.com/cybertime-eth/cyberbox)
