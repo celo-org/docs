@@ -53,11 +53,11 @@ Celo is a proof-of-stake network, which has different hardware requirements than
 #### Validator node
 
 - Memory: 16 GB RAM
-- CPU: Quad core 3GHz (64-bit)
+- CPU: 4 core / 8 thread 64-bit CPU with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
 - Disk: 512 GB of SSD storage, plus a secondary HDD desirable
 - Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
 
-#### Proxy or full node
+#### Proxy or Full node
 
 - Memory: 8 GB RAM
 - CPU: Quad core 3GHz (64-bit)
