@@ -50,6 +50,15 @@ The recommended Celo Validator setup involves continually running three instance
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
+#### Validator node
+
+- Memory: 16 GB RAM
+- CPU: 4 core / 8 thread 64-bit CPU with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Disk: 512 GB of SSD storage, plus a secondary HDD desirable
+- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+
+#### Proxy or Full node
+
 - Memory: 8 GB RAM
 - CPU: Quad core 3GHz (64-bit)
 - Disk: 256 GB of SSD storage, plus a secondary HDD desirable
