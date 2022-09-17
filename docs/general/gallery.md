@@ -165,6 +165,13 @@ Until now careers have mostly been a single-player game where only a privileged 
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)
 
+### esolidar
+
+Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sustainable project or cause can choose to receive Celo stablecoins as donations.
+
+- [Website](https://web3.esolidar.com)
+- [GitHub](https://github.com/esolidar/web3)
+
 ### NEFTME 
 
 NEFTME is a decentralized social NFT-powered network that allows anyone, anywhere to create, share and sell an NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
