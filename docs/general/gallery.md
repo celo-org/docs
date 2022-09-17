@@ -287,6 +287,13 @@ Non-custodial multichain NFT marketplace, connected to Celo
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
 
+## Bru Finance
+
+Globally the largest issuer of tokenized real world assets ($600 Million & Counting), Brú Finance is  a new paradigm of DeFi 2.5 that brings Tokenized Emerging Market Asset Backed Bonds to decentralised finance.
+
+- [Website](https://bru.finance)
+- [Github](https://gitlab.com/abhib.work/bruapp/-/tree/prod)
+
 ## EcoBytes - Earn Your Mobile Data Dividend
 
 EcoBytes is a Regenerative Crypto platform that rewards consumers with crypto for efficient use of mobile data networks thus saving Mobile Operators billions of networking and retention costs as user data consumption skyrockets. EcoBytes is a native mobile-first DApp that directly connects to Celo and a Valora wallet which allows users to redeem their network efficiency points to cUSD and a sponsored "relationship" reward token via a success-sharing arrangement with their Operator. These freely-earned tokens can be used to direct donations to their favorite causes or used in a marketplace for acquiring goods or services. With wide adoption, many Millions of dollars/month will flow passively from Operators to their EcoByte enabled customers as they maximize their WiFi usage. DApps interested in being in the EcoByte marketplace can contact us.
