@@ -1001,6 +1001,14 @@ const Users: User[] = [
     source: 'https://github.com/MugglePay/celo-toolkit',
     tags: ['apps','earn'],
   },
+  {
+    title: 'Defiant',
+    description: 'A self-custodial multiblockchain mobile wallet. Your gateway to a decentralized world.',
+    preview: require('./showcase/defiant.png'),
+    website: 'https://defiantapp.tech/',
+    source: 'https://github.com/AndinaDeFi/',
+    tags: ['apps','wallets','defi'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
