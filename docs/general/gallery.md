@@ -280,6 +280,13 @@ Non-custodial multichain NFT marketplace, connected to Celo
 - [Website](https://raregems.io/)
 - [Celo NFT collections](https://raregems.io/celo)
 
+## EcoBytes - Earn Your Mobile Data Dividend
+
+EcoBytes is a Regenerative Crypto platform that rewards consumers with crypto for efficient use of mobile data networks thus saving Mobile Operators billions of networking and retention costs as user data consumption skyrockets. EcoBytes is a native mobile-first DApp that directly connects to Celo and a Valora wallet which allows users to redeem their network efficiency points to cUSD and a sponsored "relationship" reward token via a success-sharing arrangement with their Operator. These freely-earned tokens can be used to direct donations to their favorite causes or used in a marketplace for acquiring goods or services. With wide adoption, many Millions of dollars/month will flow passively from Operators to their EcoByte enabled customers as they maximize their WiFi usage. DApps interested in being in the EcoByte marketplace can contact us.
+
+- [GitHub](https://github.com/shoelacewireless/ecobytes-celo-integration)
+- [Website](http://www.3cobytes.com)
+
 ## Birden
 
 Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces. 
