@@ -807,6 +807,17 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Contracts",
+          items: [
+            {
+              type: "doc",
+              label: "Add A Contract",
+              id: "protocol/contracts/add-contract",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: " Release Process",
           items: [
             {
