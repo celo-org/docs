@@ -248,6 +248,7 @@ module.exports = {
             to: "/protocol/",
             from: "/celo-codebase/protocol/index",
           },
+
           {
             to: "/protocol/governance",
             from: "/celo-codebase/protocol/governance",
