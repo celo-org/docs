@@ -817,6 +817,14 @@ const Users: User[] = [
     tags: ['apps','earn'],
   },
   {
+    title: 'Flan',
+    description: 'Flan is a freelancing platform that offers users with multiple tools to streamline gig-posting, asset ownership, project processes, and payments for freelancers and clients operating in the creative/digital space.',
+    preview: require('./showcase/flan.png'),
+    website: 'https://www.flan.design/',
+    source: 'https://www.flan.design/',
+    tags: ['apps','earn'],
+  },
+  {
     title: 'LoveCrypto',
     description: 'As menores taxas de coversao do mercado.',
     preview: require('./showcase/love-crypto.png'),
