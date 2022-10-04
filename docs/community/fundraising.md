@@ -102,7 +102,7 @@ While new forms of funding models emerge in Web3 and a comprehensive list will g
 
 2. **SAFE** (Simple Agreement for Future Equity) - YCombinator’s SAFE document has become an industry standard used for early stage fundraising and for good reasons - they provide speed and flexibility for both investors and entrepreneurs. They’re a form of a convertible note however, unlike convertible debt, SAFEs remove the need for interest payments and repayment of the debt. The capital invested on a SAFE is generally expected to convert into shares of preferred equity in a priced equity round. YCombinator’s website [https://www.ycombinator.com/documents/#about](https://www.ycombinator.com/documents/#about) provides excellent best practices on SAFEs and templates as well.
 
-3. **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens which are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer the investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
+3 **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens which are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer the investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
 
 4. **SAFE + Token Warrants** - A combination of a SAFE and a token warrant has become increasingly popular for fundraising in Web3. Unlike SAFTs, these token warrants typically come in the form of an optional side letter and don’t guarantee the deployment of tokens - therefore avoiding the legal complications faced by its predecessor. As a result, companies are more commonly raising capital on SAFEs along with a token warrant that offers investors the right to tokens in the amount that can be proportional to their equity ownership of the company. In this manner, investors have exposure to both equity and potential tokens if the companies decide to launch one.
 
@@ -176,37 +176,49 @@ If you’re building on Celo and looking for fundraising, start with our Celo Ec
 
 ![fundraising](/img/doc-images/fundraising/1.png)
 
-Celo Camp: Celo Camp is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this link - [https://www.celocamp.com/](https://www.celocamp.com/)
+## Celo Camp
 
-Celo Web3 Studio (via Bld.ai): [Bld.ai](https://www.bld.ai/) runs a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you to assess a market opportunity and provide a dedicated team to help you build your product in return for a small amount of equity/token grant. To learn more about Celo Web3 Studio, please visit this link - [https://web3studio.bld.ai/](https://web3studio.bld.ai/)
+Celo Camp is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this link - [https://www.celocamp.com/](https://www.celocamp.com/)
 
-Celo Community Fund: Celo Community Fund I (CCF I) is the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding can apply to CCF I, which is managed by three community stewards, or they can submit their own governance spend proposal to be voted on by CELO owners. Focus areas include on/off ramps, community tools, research and education. To learn more about the Celo Community Fund, please visit this link - [https://celocommunityfund.org/#grants-process](https://celocommunityfund.org/#grants-process)
+## Celo Web3 Studio (via Bld.ai)
 
-Celo Foundation Grant Program: The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. To learn more about Bld.ai - please visit this link - ​​[https://www.bld.ai/](https://www.bld.ai/)
 
-Celo Scout Investors: Celo Scouts are individual investors who are hand selected by the Celo Foundation to invest in mission-aligned founders building on Celo. These investors tend to focus on early stage companies who may be looking for angel/pre-seed like funding and write check sizes between 25-50K cUSD on average.
+## Celo Community Fund
 
-Dedicated Institutional Celo Ecosystem Funds: Celo Ecosystem Funds are firms that the Celo Foundation has partnered with to evaluate larger private equity and/or token investments into companies building on Celo.
+Celo Community Fund I (CCF I) is the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding can apply to CCF I, which is managed by three community stewards, or they can submit their own governance spend proposal to be voted on by CELO owners. Focus areas include on/off ramps, community tools, research and education. To learn more about the Celo Community Fund, please visit this link - [https://celocommunityfund.org/#grants-process](https://celocommunityfund.org/#grants-process)
+
+## Celo Foundation Grant Program
+
+The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+
+## Celo Scout Investors
+
+Celo Scouts are individual investors who are hand selected by the Celo Foundation to invest in mission-aligned founders building on Celo. These investors tend to focus on early stage companies who may be looking for angel/pre-seed like funding and write check sizes between 25-50K cUSD on average.
+
+## Dedicated Institutional Celo Ecosystem Funds
+
+Celo Ecosystem Funds are firms that the Celo Foundation has partnered with to evaluate larger private equity and/or token investments into companies building on Celo.
 
 ![fundraising](/img/doc-images/fundraising/2.png)
 
 ### Flori Ventures
 
-Flori Ventures is a seed stage venture fund already partnered with many projects built with Celo’s technology. Their aim is to work with the financial innovators that help foster an inclusive financial system and are closely working with the Celo Foundation to achieve this goal. Co-Founder and Managing Partner, Maria Alegre, was the former Co-Founder and CEO of Chartboost (acquired by Zynga) and raised $21M in funding from Sequoia Capital and other stellar investors. Co-Founder and General Partner, Tomer Bariach, has a long history as an expert in token economics and is well versed in economically impactful technologies.
+Flori Ventures is a seed stage venture fund already partnered with many projects built with Celo’s technology. Their aim is to work with the financial innovators that help foster an inclusive financial system and are closely working with the Celo Foundation to achieve this goal. Co-Founder and Managing Partner, Maria Alegre, was the former Co-Founder and CEO of Chartboost (acquired by Zynga) and raised \$21M in funding from Sequoia Capital and other stellar investors. Co-Founder and General Partner, Tomer Bariach, has a long history as an expert in token economics and is well versed in economically impactful technologies.
 
 - **Stage Focus:** Pre-Seed & Seed
 - **Geography Focus:** Global
 - **Sector Focus:** Companies that bring crypto to real world use cases & enable prosperity for all
-- **Average Check Size:** $100K
+- **Average Check Size:** \$100K
 
 ### Unicorn Growth Fund
 
-Unicorn Growth Capital is a Seed & Series A venture fund focused on partnering exclusively with founders innovating financial services in Africa. They’re particularly excited about FinTech infrastructure, embedded finance products and broad digital financial services that can foster an inclusive financial ecosystem.
+Unicorn Growth Capital is a Seed & Series A venture fund focused on partnering exclusively with founders innovating financial services in Africa. They’re particularly excited about FinTech & DeFi infrastructure, embedded finance products and broad digital financial services that can foster an inclusive financial ecosystem.
 
-- **Stage Focus:** Seed & Series A
-- **Geography Focus:** Africa
-- **Sector Focus:** FinTech Infrastructure, Embedded Finance, Financial Services
-- **Average Check Size:** $500K for Seed and >$2.5M for Series A
+**Stage Focus:** Seed & Series A
+**Geography Focus:** Africa
+**Sector Focus:** FinTech & DeFi Infrastructure, Embedded Finance, Financial Services
+**Average Check Size:** $500K for Seed and <$1.5M for Series A
 
 ### Lightshift Capital
 
@@ -215,7 +227,7 @@ Lightshift Capital is an early stage fund focused on partnering with groundbreak
 - **Stage Focus:** Pre-Seed & Seed
 - **Geography Focus:** Europe, U.S. and Asia
 - **Sector Focus:** Financial Services, DeFi, Infrastructure and Scalability
-- **Average Check Size:** $250K - 500K
+- **Average Check Size:** \$250K - 500K
 
 ### TKX Digital Group
 
