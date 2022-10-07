@@ -256,14 +256,6 @@ const Users: User[] = [
     tags: ['apps', 'defi', 'favorite'],
   },
   {
-    title: 'Poof',
-    description: 'Poof is a decentralized, private DeFi protocol. Users can privately lend, borrow, send, and request crypto.',
-    preview: require('./showcase/poof.png'),
-    website: 'https://poof.cash/',
-    source: 'https://github.com/poofcash/poof-core',
-    tags: ['apps', 'defi', 'favorite'],
-  },
-  {
     title: 'Optics',
     description: 'Optics is a new design for radically cheaper cross-chain communication without header verification.',
     preview: require('./showcase/optics.png'),
