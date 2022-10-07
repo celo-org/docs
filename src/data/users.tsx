@@ -276,7 +276,7 @@ const Users: User[] = [
     description: 'Discover, collect, and sell extraordinary physical and digital assets as NFTs.',
     preview: require('./showcase/ari-swap.png'),
     website: 'https://ariswap.co/',
-    source: 'https://github.com/airswap',
+    source: 'https://github.com/ariswap',
     tags: ['apps', 'defi'],
   },
   {
