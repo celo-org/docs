@@ -54,9 +54,9 @@ export type Tag = {
 
 export type TagType =
   | "popular"
-  | "apps"
-  | "impact"
-  | "defi"
+  | "foundation"
+  | "figment"
+  | "dacade"
   | "earn"
   | "wallets";
 
@@ -86,49 +86,31 @@ export const Tags: { [type in TagType]: Tag } = {
 
   // For open-source sites, a link to the source code is required
   // The source should be your *website's* source, not your project's source!
-  apps: {
-    label: translate({ message: "Apps" }),
+  foundation: {
+    label: translate({ message: "foundation" }),
     description: translate({
-      message: "",
-      id: "showcase.tag.apps.description",
+      message: "Check these out",
+      id: "showcase.tag.foundation.description",
     }),
     color: "#39ca30",
   },
 
-  impact: {
-    label: translate({ message: "Impact" }),
+  figment: {
+    label: translate({ message: "Figment" }),
     description: translate({
       message: "",
-      id: "showcase.tag.impact.description",
+      id: "showcase.tag.figment.description",
     }),
     color: "#dfd545",
   },
 
-  defi: {
-    label: translate({ message: "DeFi" }),
+  dacade: {
+    label: translate({ message: "Dacade" }),
     description: translate({
       message: "",
-      id: "showcase.tag.defi.description",
+      id: "showcase.tag.dacade.description",
     }),
     color: "#a44fb7",
-  },
-
-  earn: {
-    label: translate({ message: "Earn" }),
-    description: translate({
-      message: "",
-      id: "showcase.tag.earn.description",
-    }),
-    color: "#127f82",
-  },
-
-  wallets: {
-    label: translate({ message: "Wallets" }),
-    description: translate({
-      message: "",
-      id: "showcase.tag.wallets.description",
-    }),
-    color: "#fe6829",
   },
 };
 
@@ -392,6 +374,14 @@ const Users: User[] = [
     tags: ['apps'],
   },
   {
+    title: 'Run a Celo full node in a Virtual Machine',
+    description: 'Learn how to setup & run a Celo full node in a Virtual Machine.',
+    preview: require('./showcase/celo.png'),
+    website: 'https://learn.figment.io/tutorials/how-to-run-a-celo-full-node-in-a-virtual-machine',
+    source: 'https://learn.figment.io/tutorials/how-to-run-a-celo-full-node-in-a-virtual-machine',
+    tags: ['apps'],
+  },
+  {
     title: 'Verifying Contracts with Hardhat',
     description: 'Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains.',
     preview: require('./showcase/celo.png'),
@@ -493,14 +483,6 @@ const Users: User[] = [
     preview: require('./showcase/celo.png'),
     website: 'https://learn.figment.io/tutorials/celo-contract-from-ethereum',
     source: 'https://learn.figment.io/tutorials/celo-contract-from-ethereum',
-    tags: ['apps'],
-  },
-  {
-    title: 'Deploy and Interact with Contracts (Remotely)',
-    description: 'How to deploy and interact your own smart contracts using a remote node.',
-    preview: require('./showcase/celo.png'),
-    website: 'https://docs.celo.org/blog/developer-guide/start/hello-contract-remote-node',
-    source: 'https://docs.celo.org/blog/developer-guide/start/hello-contract-remote-node',
     tags: ['apps'],
   },
   {
