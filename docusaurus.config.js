@@ -1075,6 +1075,7 @@ module.exports = {
         //   position: "left",
         // },
         { to: "showcase", label: "Showcase", position: "left" },
+        { to: "tutorials", label: "Tutorials", position: "left" },
         {
           to: "/blog",
           label: "Tutorials",
