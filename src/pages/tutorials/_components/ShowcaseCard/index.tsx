@@ -17,7 +17,7 @@ import {
   type TagType,
   type User,
   type Tag,
-} from '@site/src/data/users';
+} from '@site/src/data-tutorials/users';
 import {sortBy} from '@site/src/utils/jsUtils';
 import Tooltip from '../ShowcaseTooltip';
 import styles from './styles.module.css';

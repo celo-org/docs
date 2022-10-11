@@ -15,7 +15,7 @@ import React, {
 } from 'react';
 import {useHistory, useLocation} from '@docusaurus/router';
 import {toggleListItem} from '@site/src/utils/jsUtils';
-import type {TagType} from '@site/src/data/users';
+import type {TagType} from '@site/src/data-tutorials/users';
 
 import {prepareUserState} from '../../index';
 import styles from './styles.module.css';
