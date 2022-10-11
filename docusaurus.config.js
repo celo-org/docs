@@ -1076,11 +1076,11 @@ module.exports = {
         // },
         { to: "showcase", label: "Showcase", position: "left" },
         { to: "tutorials", label: "Tutorials", position: "left" },
-        {
-          to: "/blog",
-          label: "Tutorials",
-          position: "left",
-        },
+        // {
+        //   to: "/blog",
+        //   label: "Tutorials",
+        //   position: "left",
+        // },
         // {
         //   type: "dropdown",
         //   position: "left",
