@@ -188,6 +188,10 @@ Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs brin
 
 Celo Community Fund I (CCF I) was the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding could apply to CCF I, which was managed by three community stewards. As of April 2022, the fund is closed due to achieving its objective and disbursing the amount of Celo recieved.
 
+## Prezenti
+
+Prezenti is the next iteration of the CCF1 and was developed with the support of CCF1. A new onchain [spend approval](https://celo.stake.id/#/proposal/61) was proposed and accepted resulting in 800,000 Celo able to be deployed to people wanting to build their dreams upon the Celo protocol. It is managed by three new stewards and has four focus areas - Education, Research, Community Tooling and Other. Anyone is welcome to apply for a grant from the [Prezenti Website](https://prezenti.xyz) and we use [Questbook](https://questbook.app) to distribute the funds and manage the grants.
+
 ## Celo Foundation Grant Program
 
 The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
