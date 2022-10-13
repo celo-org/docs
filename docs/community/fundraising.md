@@ -184,9 +184,9 @@ Celo Camp is an independent initiative managed by our partners at [Upright](http
 
 Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. To learn more about Bld.ai - please visit this link - ​​[https://www.bld.ai/](https://www.bld.ai/)
 
-## Celo Community Fund
+## Celo Community Fund[Closed]
 
-Celo Community Fund I (CCF I) is the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding can apply to CCF I, which is managed by three community stewards, or they can submit their own governance spend proposal to be voted on by CELO owners. Focus areas include on/off ramps, community tools, research and education. To learn more about the Celo Community Fund, please visit this link - [https://celocommunityfund.org/#grants-process](https://celocommunityfund.org/#grants-process)
+Celo Community Fund I (CCF I) was the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding could apply to CCF I, which was managed by three community stewards. As of April 2022, the fund is closed due to achieving its objective and disbursing the amount of Celo recieved.
 
 ## Celo Foundation Grant Program
 
