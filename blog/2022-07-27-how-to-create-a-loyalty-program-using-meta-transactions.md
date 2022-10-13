@@ -129,7 +129,21 @@ Luckily, [OpenZeppelin](https://openzeppelin.com/) makes it easy. OpenZeppelin h
 **Here is the code for the ERC20Permit Token:**
 
 ```js reference title="Token.sol"
-https://github.com/therealharpaljadeja/devault/blob/main/src/App.js
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
+
+/**
+    @notice Token contract which can be used as payment without paying for gas, uses Permit for approve via signatures
+    @author Harpalsinh Jadeja
+    @title Token
+ */
+contract Token is ERC20, ERC20Permit {
+    constructor() ERC20Permit("Payment Token") ERC20("Payment Token", "PAY") {
+        _mint(msg.sender, 500 * 10**18);
+    }
+}
 ```
 
 You start with a constructor where you provide the `name` for the ERC20Permit token and the same `name` must be provided to the ERC20, along with the `symbol`.
@@ -182,7 +196,44 @@ You should have a pretty fair understanding of why the ERC20Permit is being used
 The code for LoyaltyToken is below.
 
 ```sol reference title="LoyaltyToken.sol"
-https://gist.github.com/therealharpaljadeja/a08abbe23f9c0aea9f6d1479a60f6c84#file-loyaltytoken-sol
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
+import "./Token.sol";
+
+/**
+    @notice token contract which will act as the rewards for the program.
+    @author Harpalsinh Jadeja
+    @title LoyaltyToken
+ */
+contract LoyaltyToken is ERC20 {
+    address loyaltyProgram;
+
+    constructor() ERC20("Loyalty Token", "LOYAL") {
+        loyaltyProgram = msg.sender;
+    }
+
+    modifier onlyProgram() {
+        require(
+            msg.sender == loyaltyProgram,
+            "Only Loyalty Program contract can reward users"
+        );
+        _;
+    }
+
+    /**
+        @notice function that rewards the user by minting more reward tokens
+        @param user the address of user to be rewarded
+        @param amount the amount of the reward tokens to be minted
+     */
+    function rewardUser(address user, uint256 amount) external onlyProgram {
+        _mint(user, amount);
+        emit Rewarded(user, amount);
+    }
+
+    event Rewarded(address indexed user, uint256 indexed amount);
+}
 ```
 
 LoyaltyToken is a standard ERC20 token with the additional functionality of rewarding users.
@@ -205,7 +256,67 @@ You can now implement the most interesting part, the `LoyaltyProgram` contract!
 Following is the code for the `LoyaltyProgram.sol` contract,
 
 ```sol reference title="LoyaltyProgram.sol"
-https://gist.github.com/therealharpaljadeja/d4de7832268c190f924494a5d3a3e067#file-loyaltyprogram-sol
+pragma solidity ^0.8.0;
+
+import "./LoyaltyToken.sol";
+import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import "./Token.sol";
+
+/**
+@notice This contract is the responsible for rewarding users, and acts as a middleman during a transaction between payer and vendor.
+@author Harpalsinh Jadeja
+@title LoyaltyProgram
+ */
+contract LoyaltyProgram {
+    LoyaltyToken public immutable loyaltyToken;
+    Token public immutable token;
+
+    mapping(address => bool) public isVendorRegistered;
+
+    constructor(Token _token) {
+        loyaltyToken = new LoyaltyToken();
+        token = _token;
+    }
+
+    /**
+        @notice function to register vendor, if already registered reverts.
+     */
+    function registerVendor() external {
+        require(!isVendorRegistered[msg.sender], "VENDOR_ALREADY_REGISTERED");
+        isVendorRegistered[msg.sender] = true;
+        emit VendorRegistered(msg.sender);
+    }
+
+    /**
+        @notice function to make transactions via vendor relayer, permit is called on the respective token and the transfer is made along with rewarding the user.
+        @param payer the person paying for goods & services
+        @param amount the amount involved in the transaction
+        @param deadline the time by which the signed transaction needs to utilized
+    */
+    function payViaSignature(
+        address payer,
+        uint256 amount,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external {
+        require(isVendorRegistered[msg.sender], "ONLY_VENDORS_CAN_RELAY");
+        token.permit(payer, address(this), amount, deadline, v, r, s);
+        token.transferFrom(payer, msg.sender, amount);
+        loyaltyToken.rewardUser(payer, (amount * 10) / 100);
+        emit Transaction(payer, msg.sender, amount);
+        emit Rewarded(payer, (amount * 10) / 100);
+    }
+
+    event VendorRegistered(address indexed vendor);
+    event Transaction(
+        address indexed payer,
+        address indexed vendor,
+        uint256 indexed amount
+    );
+    event Rewarded(address indexed payer, uint256 indexed amount);
+}
 ```
 
 -   First, you have 2 variables `loyaltyToken` & `token` keeping track of the token that acts as a reward and the one that acts as a payment token.
@@ -246,7 +357,209 @@ Let’s have a look at the tests.
 This is the code I have made available for testing. Feel free to add more to your own repository.
 
 ```js reference title="loyalty.spec.js"
-https://gist.github.com/therealharpaljadeja/a746fb31002f515ff1ab071203e1622c#file-loyalty-spec-js
+const { ethers } = require("hardhat");
+const { utils } = ethers;
+const { expect } = require("chai");
+
+function parseEther(amount) {
+    return utils.parseEther(amount);
+}
+
+// function to generate signature
+async function getPermitSignature(signer, token, spender, value, deadline) {
+    const [nonce, name, version, chainId] = await Promise.all([
+        token.nonces(signer.address),
+        token.name(),
+        "1",
+        signer.getChainId(),
+    ]);
+
+    return utils.splitSignature(
+        await signer._signTypedData(
+            {
+                name,
+                version,
+                chainId,
+                verifyingContract: token.address,
+            },
+            {
+                Permit: [
+                    {
+                        name: "owner",
+                        type: "address",
+                    },
+                    {
+                        name: "spender",
+                        type: "address",
+                    },
+                    {
+                        name: "value",
+                        type: "uint256",
+                    },
+                    {
+                        name: "nonce",
+                        type: "uint256",
+                    },
+                    {
+                        name: "deadline",
+                        type: "uint256",
+                    },
+                ],
+            },
+            {
+                owner: signer.address,
+                spender,
+                value,
+                nonce,
+                deadline,
+            }
+        )
+    );
+}
+
+let Token, token;
+
+let LoyaltyProgram, loyaltyProgram, loyaltyTokenAddress, loyaltyToken;
+
+let deployer, payer, vendor, invalidVendor;
+
+describe("Loyalty Program", () => {
+    before(async () => {
+        [deployer, payer, vendor, invalidVendor] = await ethers.getSigners();
+
+        Token = await ethers.getContractFactory("Token");
+        token = await Token.deploy();
+        await token.deployed();
+
+        // the deployer has the token that can be used as payment so giving out some to the payer who will later pay for goods & services and receive loyalty rewards
+        await token.transfer(payer.address, parseEther("50"));
+
+        LoyaltyProgram = await ethers.getContractFactory("LoyaltyProgram");
+        loyaltyProgram = await LoyaltyProgram.deploy(token.address);
+        await loyaltyProgram.deployed();
+
+        loyaltyTokenAddress = await loyaltyProgram.loyaltyToken();
+        loyaltyToken = await ethers.getContractAt(
+            "LoyaltyToken",
+            loyaltyTokenAddress
+        );
+    });
+
+    describe("Deployment", async () => {
+        it("On Deployment Payer should have some tokens to pay for services", async () => {
+            expect(await token.balanceOf(payer.address)).to.be.eq(
+                parseEther("50")
+            );
+        });
+
+        // any vendor should be able to register.
+        it("Vendor should be able to register", async () => {
+            await loyaltyProgram.connect(vendor).registerVendor();
+            expect(await loyaltyProgram.isVendorRegistered(vendor.address)).to
+                .be.true;
+        });
+    });
+
+    describe("After Vendor Registrated", async () => {
+        // Payer is paying 10 tokens and expect 1 loyaltyToken consider 10% loyalty rewards.
+        it("Payer should be able to relay payment transaction to Vendor and in return receive 10% reward", async () => {
+            const amount = parseEther("10");
+            const deadline = ethers.constants.MaxUint256;
+            const { v, r, s } = await getPermitSignature(
+                payer,
+                token,
+                loyaltyProgram.address,
+                amount,
+                deadline
+            );
+
+            await loyaltyProgram
+                .connect(vendor)
+                .payViaSignature(payer.address, amount, deadline, v, r, s);
+
+            expect(await token.balanceOf(payer.address)).to.be.eq(
+                parseEther("40")
+            );
+            expect(await token.balanceOf(vendor.address)).to.be.eq(
+                parseEther("10")
+            );
+            expect(await loyaltyToken.balanceOf(payer.address)).to.be.eq(
+                parseEther("1")
+            );
+        });
+
+        // The entity relaying the transaction is not a registered vendor.
+        it("Invalid Vendor trying to relay transaction", async () => {
+            const amount = parseEther("10");
+            const deadline = ethers.constants.MaxUint256;
+            const { v, r, s } = await getPermitSignature(
+                payer,
+                token,
+                loyaltyProgram.address,
+                amount,
+                deadline
+            );
+
+            await expect(
+                loyaltyProgram
+                    .connect(invalidVendor)
+                    .payViaSignature(payer.address, amount, deadline, v, r, s)
+            ).to.be.revertedWith("ONLY_VENDORS_CAN_RELAY");
+        });
+
+        // Vendor is trying to get payment from someone other than the payer.
+        it("Valid vendor passing invalid payer address", async () => {
+            const amount = parseEther("10");
+            const deadline = ethers.constants.MaxUint256;
+            const { v, r, s } = await getPermitSignature(
+                payer,
+                token,
+                loyaltyProgram.address,
+                amount,
+                deadline
+            );
+
+            await expect(
+                loyaltyProgram
+                    .connect(vendor)
+                    .payViaSignature(
+                        deployer.address,
+                        amount,
+                        deadline,
+                        v,
+                        r,
+                        s
+                    )
+            ).to.be.revertedWith("ERC20Permit: invalid signature");
+        });
+
+        // Vendor is trying to get more payment then the payer has signed for.
+        it("Vendor passing invalid amount", async () => {
+            const amount = parseEther("10");
+            const deadline = ethers.constants.MaxUint256;
+            const { v, r, s } = await getPermitSignature(
+                payer,
+                token,
+                loyaltyProgram.address,
+                amount,
+                deadline
+            );
+
+            await expect(
+                loyaltyProgram
+                    .connect(vendor)
+                    .payViaSignature(
+                        deployer.address,
+                        parseEther("11"),
+                        deadline,
+                        v,
+                        r,
+                        s
+                    )
+            ).to.be.revertedWith("ERC20Permit: invalid signature");
+        });
+    });
+});
 ```
 
 **What does this file do?**
