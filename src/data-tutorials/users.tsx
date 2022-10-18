@@ -54,6 +54,7 @@ export type Tag = {
 
 export type TagType =
   | "popular"
+  | "favorite"
   | "foundation"
   | "figment"
   | "dacade"
@@ -113,14 +114,15 @@ export type TagType =
   | "usecontractkit"
   | "valora"
   | "verification"
-  | "walletconnect";
+  | "walletconnect"
+  | "video";
 
 export type User = {
   title: string;
   description: string;
   preview: string;
   website: string;
-  source: string | null;
+  // source: string | null;
   tags: TagType[];
 };
 
@@ -167,6 +169,14 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#35D07F",
   },
+  favorite: {
+    label: translate({ message: "Favorite" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.favorite.description",
+    }),
+    color: "#35D07F",
+  },
 
   figment: {
     label: translate({ message: "Figment" }),
@@ -176,7 +186,6 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#FBCC5C",
   },
-
   dacade: {
     label: translate({ message: "Dacade" }),
     description: translate({
@@ -641,6 +650,14 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#3488EC",
   },
+  video: {
+    label: translate({ message: "Video" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.video.description",
+    }),
+    color: "#35D07F",
+  },
 
   // wallets: {
   //   label: translate({ message: "Wallets" }),
@@ -655,20 +672,43 @@ export const Tags: { [type in TagType]: Tag } = {
 // Add your site to this list
 // prettier-ignore
 const Users: User[] = [
+  // Paths
+  // {
+  //   title: 'Celo Composer',
+  //   description: 'Quickly build dApps with Celo Composer.',
+  //   preview: require('./showcase/1.png'),
+  //   website: '/tutorials?tags=composer',
+  //   tags: ['favorite'],
+  // },
+  // {
+  //   title: 'Celo Basics',
+  //   description: 'Quickly build dApps with Celo Composer.',
+  //   preview: require('./showcase/2.png'),
+  //   website: '/tutorials?tags=composer',
+  //   tags: ['favorite'],
+  // },
+  // {
+  //   title: 'Web2 to Web3',
+  //   description: 'Quickly build dApps with Celo Composer.',
+  //   preview: require('./showcase/3.png'),
+  //   website: '/tutorials?tags=composer',
+  //   tags: ['favorite'],
+  // },
+
+  // Posts
+
   {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/1.png'),
     website: 'https://docs.celo.org/blog/2022/07/15/csharp-mobile-app-to-display-celo-nfts',
-    source: 'https://docs.celo.org/blog/2022/07/15/csharp-mobile-app-to-display-celo-nfts',
-    tags: ['foundation', 'mobile', 'android', 'nft'],
+    tags: ['foundation', 'mobile', 'android', 'nft', 'popular'],
   },
   {
     title: 'Flutter & Celo - Easily build Flutter Mobile dApps',
     description: 'Celo Composer now supports Flutter. Quickly develop mobile apps on Celo.',
     preview: require('./showcase/flutter-and-celo-easily-build-flutter-mobile-dapps.png'),
     website: 'https://medium.com/celodevelopers/flutter-celo-easily-build-flutter-mobile-dapps-6f1bab7dee65',
-    source: 'https://medium.com/celodevelopers/flutter-celo-easily-build-flutter-mobile-dapps-6f1bab7dee65',
     tags: ['foundation', 'flutter', 'composer'],
   },
   {
@@ -676,7 +716,6 @@ const Users: User[] = [
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/composer-series-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
     website: 'https://medium.com/celodevelopers/composer-series-build-a-crowdfunding-refi-dapp-with-celo-composer-d1a169f8a78d',
-    source: 'https://medium.com/celodevelopers/composer-series-build-a-crowdfunding-refi-dapp-with-celo-composer-d1a169f8a78d',
     tags: ['foundation', 'crowdfunding', 'composer'],
   },
   {
@@ -684,7 +723,6 @@ const Users: User[] = [
     description: 'Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.',
     preview: require('./showcase/react-native-and-celo-easily-build-react-native-dapps-on-celo.png'),
     website: 'https://medium.com/celodevelopers/celo-composer-react-native-easily-build-react-native-dapps-on-celo-bdc57080772f',
-    source: 'https://medium.com/celodevelopers/celo-composer-react-native-easily-build-react-native-dapps-on-celo-bdc57080772f',
     tags: ['foundation', 'reactnative', 'composer'],
   },
   {
@@ -692,7 +730,6 @@ const Users: User[] = [
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/how-to-quickly-build-an-nft-collection-on-celo.png'),
     website: 'https://medium.com/celodevelopers/how-to-quickly-build-an-nft-collection-on-celo-c79dd276b442',
-    source: 'https://medium.com/celodevelopers/how-to-quickly-build-an-nft-collection-on-celo-c79dd276b442',
     tags: ['foundation', 'nft', 'foundation'],
   },
   {
@@ -700,7 +737,6 @@ const Users: User[] = [
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/2.png'),
     website: 'https://medium.com/celodevelopers/introduction-to-creating-nfts-on-celo-eb7240a71cc0',
-    source: 'https://medium.com/celodevelopers/introduction-to-creating-nfts-on-celo-eb7240a71cc0',
     tags: ['foundation', 'nft', 'erc721'],
   },
   {
@@ -708,7 +744,6 @@ const Users: User[] = [
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/building-for-the-celo-connect-mobile-hackathon.png'),
     website: 'https://medium.com/celodevelopers/building-for-the-celo-connect-mobile-hackathon-a78707b7431c',
-    source: 'https://medium.com/celodevelopers/building-for-the-celo-connect-mobile-hackathon-a78707b7431c',
     tags: ['foundation'],
   },
   {
@@ -716,7 +751,6 @@ const Users: User[] = [
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/celo-composer-extend-and-customize-your-full-stack-modile-dapps.png'),
     website: 'https://medium.com/celodevelopers/celo-dappstarter-customize-your-full-stack-mobile-dapps-on-celo-232d85b7a2c5',
-    source: 'https://medium.com/celodevelopers/celo-dappstarter-customize-your-full-stack-mobile-dapps-on-celo-232d85b7a2c5',
     tags: ['foundation', 'composer'],
   },
   {
@@ -724,7 +758,6 @@ const Users: User[] = [
     description: 'How to access the Celo Blockchain with JavaScript using ContractKit.',
     preview: require('./showcase/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts.png'),
     website: 'https://medium.com/celodevelopers/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts-ea49541975c',
-    source: 'https://medium.com/celodevelopers/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts-ea49541975c',
     tags: ['foundation', 'contractkit'],
   },
   {
@@ -732,7 +765,6 @@ const Users: User[] = [
     description: 'Send, pay, and spend cryptocurrency like everyday money — all from the palm of your hand.',
     preview: require('./showcase/3-simple-steps-to-get-started-with-valora-on-celo.png'),
     website: 'https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89',
-    source: 'https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89',
     tags: ['foundation', 'valora'],
   },
   {
@@ -740,7 +772,6 @@ const Users: User[] = [
     description: 'How the Celo light client became 1.7 million times lighter than Ethereum.',
     preview: require('./showcase/plumo-an-ultralight-blockchain-client-on-celo.png'),
     website: 'https://medium.com/celodevelopers/plumo-an-ultralight-blockchain-client-on-celo-471577cbaef1',
-    source: 'https://medium.com/celodevelopers/plumo-an-ultralight-blockchain-client-on-celo-471577cbaef1',
     tags: ['foundation', 'nft'],
   },
   {
@@ -748,7 +779,6 @@ const Users: User[] = [
     description: 'Deploy an Airdrop contract to Celo and claim ERC20 tokens using the web3 SDK.',
     preview: require('./showcase/a-boilerplate-guide-to-airdropping-on-celo.png'),
     website: 'https://medium.com/celodevelopers/a-boilerplate-guide-to-airdropping-on-celo-ea7905754ff',
-    source: 'https://medium.com/celodevelopers/a-boilerplate-guide-to-airdropping-on-celo-ea7905754ff',
     tags: ['foundation', 'airdrop'],
   },
   {
@@ -756,7 +786,6 @@ const Users: User[] = [
     description: 'Introduction to DAOs and the advantages of building a DAO on Celo.',
     preview: require('./showcase/getting-started-with-daos-on-celo.png'),
     website: 'https://medium.com/celodevelopers/getting-started-with-daos-on-celo-a6c6761024a',
-    source: 'https://medium.com/celodevelopers/getting-started-with-daos-on-celo-a6c6761024a',
     tags: ['foundation', 'dao'],
   },
   {
@@ -764,7 +793,6 @@ const Users: User[] = [
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local network using Hardhat.',
     preview: require('./showcase/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat.png'),
     website: 'https://medium.com/celodevelopers/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat-747f42ad0788',
-    source: 'https://medium.com/celodevelopers/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat-747f42ad0788',
     tags: ['foundation', 'hardhat'],
   },
   {
@@ -772,7 +800,6 @@ const Users: User[] = [
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
     preview: require('./showcase/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-truffle.png'),
     website: 'https://medium.com/celodevelopers/the-ultimate-guide-to-deploy-on-celo-with-truffle-65f862bae077',
-    source: 'https://medium.com/celodevelopers/the-ultimate-guide-to-deploy-on-celo-with-truffle-65f862bae077',
     tags: ['foundation', 'truffle'],
   },
   {
@@ -780,7 +807,6 @@ const Users: User[] = [
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
     website: 'https://medium.com/celodevelopers/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix-a0d1f0a33ef3',
-    source: 'https://medium.com/celodevelopers/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix-a0d1f0a33ef3',
     tags: ['foundation', 'remix'],
   },
   {
@@ -788,7 +814,6 @@ const Users: User[] = [
     description: 'A step-by-step tutorial to add the Celo network to your MetaMask wallet.',
     preview: require('./showcase/3-simple-steps-to-connect-your-metamask-wallet-to-celo.png'),
     website: 'https://medium.com/celodevelopers/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587',
-    source: 'https://medium.com/celodevelopers/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587',
     tags: ['foundation', 'metamask'],
   },
   {
@@ -796,7 +821,6 @@ const Users: User[] = [
     description: 'Explore the Celo blockchain using a command-line interface.',
     preview: require('./showcase/celo-cli-a-practical-guide-to-energize-your-celo-toolkit.png'),
     website: 'https://medium.com/celodevelopers/celo-cli-a-practical-guide-to-energize-your-celo-toolkit-9253067fff3a',
-    source: 'https://medium.com/celodevelopers/celo-cli-a-practical-guide-to-energize-your-celo-toolkit-9253067fff3a',
     tags: ['foundation', 'cli'],
   },
   {
@@ -804,7 +828,6 @@ const Users: User[] = [
     description: 'Quickly develop full-stack progressive web applications on Celo with the Celo Composer.',
     preview: require('./showcase/celo-composer-easily-build-full-stack-modile-dapps-on-celo.png'),
     website: 'https://medium.com/celodevelopers/build-celo-dapps-in-15-minutes-or-less-438ea954d0b1',
-    source: 'https://medium.com/celodevelopers/build-celo-dapps-in-15-minutes-or-less-438ea954d0b1',
     tags: ['foundation', 'composer'],
   },
   {
@@ -812,7 +835,6 @@ const Users: User[] = [
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/17-smart-contracts-powering-the-celo-protocol.png'),
     website: 'https://medium.com/celodevelopers/17-powerful-celo-protocol-core-contracts-you-need-to-know-d84c1fbc5a6',
-    source: 'https://medium.com/celodevelopers/17-powerful-celo-protocol-core-contracts-you-need-to-know-d84c1fbc5a6',
     tags: ['foundation', 'metamask'],
   },
   {
@@ -820,7 +842,6 @@ const Users: User[] = [
     description: 'Quickly develop full-stack progressive web applications on the Celo blockchain.',
     preview: require('./showcase/3.png'),
     website: 'https://docs.celo.org/blog/2022/02/21/introduction-to-celo-progressive-dappstarter',
-    source: 'https://docs.celo.org/blog/2022/02/21/introduction-to-celo-progressive-dappstarter',
     tags: ['foundation', 'react', 'materialui', 'dappstarter', 'progressive'],
   },
   {
@@ -828,7 +849,6 @@ const Users: User[] = [
     description: 'Everything you need to get started with Celo.',
     preview: require('./showcase/celo-spotlight.png'),
     website: 'https://medium.com/celodevelopers/celo-spotlight-build-a-financial-system-that-creates-the-conditions-for-prosperity-for-everyone-7b1830efc254',
-    source: 'https://medium.com/celodevelopers/celo-spotlight-build-a-financial-system-that-creates-the-conditions-for-prosperity-for-everyone-7b1830efc254',
     tags: ['foundation', 'celo', 'beginner'],
   },
   {
@@ -836,7 +856,6 @@ const Users: User[] = [
     description: 'How to use WalletConnect version 1 in a DApp to connect to Valora.',
     preview: require('./showcase/4.png'),
     website: 'https://medium.com/celodevelopers/celo-valora-walletconnect-v1-7fc105455779',
-    source: 'https://medium.com/celodevelopers/celo-valora-walletconnect-v1-7fc105455779',
     tags: ['foundation', 'react', 'valora', 'walletconnect'],
   },
   {
@@ -844,7 +863,6 @@ const Users: User[] = [
     description: 'Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.',
     preview: require('./showcase/5.png'),
     website: 'https://docs.celo.org/blog/2022/01/07/on-chain-randomness',
-    source: 'https://docs.celo.org/blog/2022/01/07/on-chain-randomness',
     tags: ['foundation', 'solidity', 'randomness', 'oracle'],
   },
   {
@@ -852,7 +870,6 @@ const Users: User[] = [
     description: 'The basics of developing a decentralised application (DApp) on Celo.',
     preview: require('./showcase/6.png'),
     website: 'https://docs.celo.org/blog/developer-guide/start/web-dapp',
-    source: 'https://docs.celo.org/blog/developer-guide/start/web-dapp',
     tags: ['foundation', 'dapp', 'react', 'nextjs', 'usecontractkit', 'sdk'],
   },
   {
@@ -860,7 +877,6 @@ const Users: User[] = [
     description: 'How to deploy ERC721 tokens (NFTs) on the Celo network using autogenerated code.',
     preview: require('./showcase/7.png'),
     website: 'https://docs.celo.org/blog/2022/01/05/no-code-erc721',
-    source: 'https://docs.celo.org/blog/2022/01/05/no-code-erc721',
     tags: ['foundation', 'tokens', 'erc721', 'mint', 'nft', 'ipfs', 'pinata', 'solidity', 'remix'],
   },
   {
@@ -868,7 +884,6 @@ const Users: User[] = [
     description: 'How to deploy a token contract that use the ERC20 token standard to Celo without writing code.',
     preview: require('./showcase/8.png'),
     website: 'https://docs.celo.org/blog/2022/01/04/no-code-erc20',
-    source: 'https://docs.celo.org/blog/2022/01/04/no-code-erc20',
     tags: ['foundation', 'tokens', 'ERC20', 'mint', 'solidity', 'openzeppelin', 'remix'],
   },
   {
@@ -876,7 +891,6 @@ const Users: User[] = [
     description: 'How to deploy and interact your own smart contracts using a remote node.',
     preview: require('./showcase/1.png'),
     website: 'https://docs.celo.org/blog/developer-guide/start/hello-contract-remote-node',
-    source: 'https://docs.celo.org/blog/developer-guide/start/hello-contract-remote-node',
     tags: ['foundation', 'smartcontract', 'remote', 'deploy'],
   },
   {
@@ -884,7 +898,6 @@ const Users: User[] = [
     description: 'How to deploy your own smart contracts onto a Celo local node.',
     preview: require('./showcase/2.png'),
     website: 'https://docs.celo.org/blog/developer-guide/start/hellocontracts',
-    source: 'https://docs.celo.org/blog/developer-guide/start/hellocontracts',
     tags: ['foundation', 'smartcontract'],
   },
   {
@@ -892,7 +905,6 @@ const Users: User[] = [
     description: 'How to connect to the Celo test network and tranfer tokens using ContractKit.',
     preview: require('./showcase/3.png'),
     website: 'https://docs.celo.org/blog/developer-guide/start/hellocelo',
-    source: 'https://docs.celo.org/blog/developer-guide/start/hellocelo',
     tags: ['foundation', 'tokens', 'celowallet', 'contractkit', 'sdk', 'ledger'],
   },
   {
@@ -900,7 +912,6 @@ const Users: User[] = [
     description: 'Introduction to the keystores library and how to use it for local key management.',
     preview: require('./showcase/4.png'),
     website: 'https://docs.celo.org/blog/developer-guide/start/using-js-keystores',
-    source: 'https://docs.celo.org/blog/developer-guide/start/using-js-keystores',
     tags: ['foundation', 'keystores'],
   },
   {
@@ -908,7 +919,6 @@ const Users: User[] = [
     description: 'Open up Cello Wallet and make sure you can see “Account Balance Details” then select “Add a new currency/token.',
     preview: require('./showcase/5.png'),
     website: 'https://docs.celo.org/blog/add-token-celo-wallet',
-    source: 'https://docs.celo.org/blog/add-token-celo-wallet',
     tags: ['foundation', 'tokens', 'celowallet'],
   },
   {
@@ -916,7 +926,6 @@ const Users: User[] = [
     description: 'Learn how to setup & run a Celo full node in a Virtual Machine.',
     preview: require('./showcase/6.png'),
     website: 'https://learn.figment.io/tutorials/how-to-run-a-celo-full-node-in-a-virtual-machine',
-    source: 'https://learn.figment.io/tutorials/how-to-run-a-celo-full-node-in-a-virtual-machine',
     tags: ['figment', 'intermediate', 'nodejs'],
   },
   {
@@ -924,7 +933,6 @@ const Users: User[] = [
     description: 'Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains.',
     preview: require('./showcase/7.png'),
     website: 'https://docs.celo.org/blog/hardhat-deploy-verify',
-    source: 'https://docs.celo.org/blog/hardhat-deploy-verify',
     tags: ['foundation', 'hardhat', 'sourcify', 'verification'],
   },
   {
@@ -932,7 +940,6 @@ const Users: User[] = [
     description: 'Observable HQ is a Javascript notebook tool that makes it easy to share executable Javascript code right in the browser.',
     preview: require('./showcase/4.png'),
     website: 'https://docs.celo.org/blog/observable-intro',
-    source: 'https://docs.celo.org/blog/observable-intro',
     tags: ['foundation', 'observable'],
   },
   {
@@ -940,7 +947,6 @@ const Users: User[] = [
     description: 'The Graph protocol makes it easy to get historical blockchain data.',
     preview: require('./showcase/1.png'),
     website: 'https://docs.celo.org/blog/using-the-graph',
-    source: 'https://docs.celo.org/blog/using-the-graph',
     tags: ['foundation', 'graph', 'dapp'],
   },
   {
@@ -948,7 +954,6 @@ const Users: User[] = [
     description: 'Connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.',
     preview: require('./showcase/2.png'),
     website: 'https://docs.celo.org/blog/code-metamask',
-    source: 'https://docs.celo.org/blog/code-metamask',
     tags: ['foundation', 'codeplayground'],
   },
   {
@@ -956,7 +961,6 @@ const Users: User[] = [
     description: 'This post provides an introduction to the live code editor that is included as a feature in this blog.',
     preview: require('./showcase/3.png'),
     website: 'https://docs.celo.org/blog/code-playground',
-    source: 'https://docs.celo.org/blog/code-playground',
     tags: ['foundation', 'codeplayground'],
   },
   {
@@ -964,7 +968,6 @@ const Users: User[] = [
     description: "Celo is an open source project and without community contributions from people like you Celo wouldn't exist. We welcome contributions to our codebase, documentation, translations and blog.",
     preview: require('./showcase/4.png'),
     website: 'https://docs.celo.org/blog/blog-contributions',
-    source: 'https://docs.celo.org/blog/blog-contributions',
     tags: ['foundation', 'contribute'],
   },
   {
@@ -972,7 +975,6 @@ const Users: User[] = [
     description: 'Throughout this intermediate course you are going to learn about NFTs, contract development with Hardhat and how to build a React frontend with use-contractkit.',
     preview: require('./showcase/5.png'),
     website: 'https://dacade.org/communities/celo/courses/celo-201',
-    source: 'https://dacade.org/communities/celo/courses/celo-201',
     tags: ['dacade', 'smartcontract', 'html', 'javascript', 'nft', 'hardhat'],
   },
   {
@@ -980,7 +982,6 @@ const Users: User[] = [
     description: 'Learn smart contract development and build a Dapp on Celo.',
     preview: require('./showcase/6.png'),
     website: 'https://dacade.org/communities/celo/courses/celo-development-101',
-    source: 'https://dacade.org/communities/celo/courses/celo-development-101',
     tags: ['dacade', 'smartcontract', 'html', 'javascript'],
   },
   {
@@ -988,7 +989,6 @@ const Users: User[] = [
     description: 'In this course, you will learn the most important blockchain concepts that you will need to navigate the Celo ecosystem.',
     preview: require('./showcase/7.png'),
     website: 'https://dacade.org/communities/celo/courses/celo-bc-101',
-    source: 'https://dacade.org/communities/celo/courses/celo-bc-101',
     tags: ['dacade', 'smartcontract', 'html', 'javascript'],
   },
   {
@@ -996,7 +996,6 @@ const Users: User[] = [
     description: 'How to create fungible tokens on Celo using the Remix IDE.',
     preview: require('./showcase/8.png'),
     website: 'https://learn.figment.io/tutorials/celo-erc20-token-on-remix',
-    source: 'https://learn.figment.io/tutorials/celo-erc20-token-on-remix',
     tags: ['figment', 'beginner', 'solidity', 'metamask', 'remix'],
   },
   {
@@ -1004,7 +1003,6 @@ const Users: User[] = [
     description: 'We will learn how to use Truffle and ContractKit to deploy smart contracts to Celo.',
     preview: require('./showcase/1.png'),
     website: 'https://learn.figment.io/tutorials/deploying-smart-contracts-on-celo-with-truffle',
-    source: 'https://learn.figment.io/tutorials/deploying-smart-contracts-on-celo-with-truffle',
     tags: ['figment', 'beginner', 'solidity', 'metamask', 'remix'],
   },
   {
@@ -1012,7 +1010,6 @@ const Users: User[] = [
     description: 'Learn how to successfully set up a Celo Wallet with a React Native DApp using Redux.',
     preview: require('./showcase/2.png'),
     website: 'https://learn.figment.io/tutorials/how-to-successfully-connect-to-a-celo-wallet-with-a-react-native-dapp',
-    source: 'https://learn.figment.io/tutorials/how-to-successfully-connect-to-a-celo-wallet-with-a-react-native-dapp',
     tags: ['figment', 'intermediate', 'reactnative', 'nodejs'],
   },
   {
@@ -1020,7 +1017,6 @@ const Users: User[] = [
     description: 'Learn how to convert & customize an existing Ethereum Smart Contract for Celo network',
     preview: require('./showcase/3.png'),
     website: 'https://learn.figment.io/tutorials/celo-contract-from-ethereum',
-    source: 'https://learn.figment.io/tutorials/celo-contract-from-ethereum',
     tags: ['figment', 'intermediate', 'nodejs', 'smartcontract', 'truffle'],
   },
   {
@@ -1028,7 +1024,6 @@ const Users: User[] = [
     description: 'This tutorial is a part of DeFi series where people can learn how to participate in DeFi on the Celo Blockchain.',
     preview: require('./showcase/4.png'),
     website: 'https://learn.figment.io/tutorials/moola-market',
-    source: 'https://learn.figment.io/tutorials/moola-market',
     tags: ['figment', 'beginner'],
   },
   {
@@ -1036,7 +1031,6 @@ const Users: User[] = [
     description: 'We will learn how to use Truffle in order to test smart contracts on Celo.',
     preview: require('./showcase/5.png'),
     website: 'https://learn.figment.io/tutorials/celo-testing-truffle',
-    source: 'https://learn.figment.io/tutorials/celo-testing-truffle',
     tags: ['figment', 'intermediate', 'nodejs', 'smartcontract', 'truffle', 'javascript'],
   },
   {
@@ -1044,7 +1038,6 @@ const Users: User[] = [
     description: 'Learn how to make a Distributed File Manager using the IPFS protocol for storing files on the Celo network',
     preview: require('./showcase/6.png'),
     website: 'https://learn.figment.io/tutorials/distributed-file-manager-using-ipfs-celo-reactjs',
-    source: 'https://learn.figment.io/tutorials/distributed-file-manager-using-ipfs-celo-reactjs',
     tags: ['figment'],
   },
   {
@@ -1052,7 +1045,6 @@ const Users: User[] = [
     description: 'In this tutorial we are going to make counter dapp with expo (react native).',
     preview: require('./showcase/7.png'),
     website: 'https://learn.figment.io/tutorials/introduction-to-dappkit',
-    source: 'https://learn.figment.io/tutorials/introduction-to-dappkit',
     tags: ['figment', 'intermediate', 'reactnative', 'nodejs', 'truffle'],
   },
   {
@@ -1060,7 +1052,6 @@ const Users: User[] = [
     description: 'Build a functioning DAO by writing the Solidity smart contract and building a React Native dApp',
     preview: require('./showcase/8.png'),
     website: 'https://learn.figment.io/tutorials/build-a-dao-on-celo',
-    source: 'https://learn.figment.io/tutorials/build-a-dao-on-celo',
     tags: ['figment'],
   },
   {
@@ -1068,7 +1059,6 @@ const Users: User[] = [
     description: 'Learn how to re-deploy Ethereum Dapps on the Celo network.',
     preview: require('./showcase/1.png'),
     website: 'https://learn.figment.io/tutorials/redeploy-ethereum-dapps-on-celo',
-    source: 'https://learn.figment.io/tutorials/redeploy-ethereum-dapps-on-celo',
     tags: ['figment', 'beginner', 'truffle', 'javascript', 'cli'],
   },
   {
@@ -1076,7 +1066,6 @@ const Users: User[] = [
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
     preview: require('./showcase/2.png'),
     website: 'https://learn.figment.io/tutorials/create-vault-smart-contract',
-    source: 'https://learn.figment.io/tutorials/create-vault-smart-contract',
     tags: ['figment', 'advanced', 'react', 'nodejs', 'smartcontract', 'truffle'],
   },
   {
@@ -1084,7 +1073,6 @@ const Users: User[] = [
     description: 'Learn how to connect to the Celo test network and transfer tokens using ContractKit',
     preview: require('./showcase/3.png'),
     website: 'https://learn.figment.io/tutorials/send-celo-and-cusd',
-    source: 'https://learn.figment.io/tutorials/send-celo-and-cusd',
     tags: ['figment', 'cusd', 'celo'],
   },
   {
@@ -1092,7 +1080,6 @@ const Users: User[] = [
     description: 'Learn how to integrate The Graph with CELO',
     preview: require('./showcase/4.png'),
     website: 'https://learn.figment.io/tutorials/celo-subgraphs',
-    source: 'https://learn.figment.io/tutorials/celo-subgraphs',
     tags: ['figment', 'subgraphs'],
   },
   {
@@ -1100,7 +1087,6 @@ const Users: User[] = [
     description: 'Learn how to create a simple mobile DApp using dAppKit and the React Native Expo framework',
     preview: require('./showcase/5.png'),
     website: 'https://learn.figment.io/tutorials/hello-mobile-dapp',
-    source: 'https://learn.figment.io/tutorials/hello-mobile-dapp',
     tags: ['figment', 'mobile'],
   },
   {
@@ -1108,7 +1094,6 @@ const Users: User[] = [
     description: 'Learn how to use Remix IDE for deploying Celo smart contracts',
     preview: require('./showcase/6.png'),
     website: 'https://learn.figment.io/tutorials/celo-for-remix',
-    source: 'https://learn.figment.io/tutorials/celo-for-remix',
     tags: ['foundation', 'remix'],
   },
   {
@@ -1116,7 +1101,6 @@ const Users: User[] = [
     description: 'Learn how to write a smart contract using the Solidity language and a contract from the Openzeppelin library for ERC1155 tokens.',
     preview: require('./showcase/7.png'),
     website: 'https://learn.figment.io/tutorials/celo-hardhat-deploy-and-nft-app',
-    source: 'https://learn.figment.io/tutorials/celo-hardhat-deploy-and-nft-app',
     tags: ['figment', 'erc1155', 'nft', 'hardhat'],
   },
   {
@@ -1124,7 +1108,6 @@ const Users: User[] = [
     description: 'Learn how to create a Smart Contract which facilitates crowdfunding.',
     preview: require('./showcase/8.png'),
     website: 'https://learn.figment.io/tutorials/celo-crowd-funding-project',
-    source: 'https://learn.figment.io/tutorials/celo-crowd-funding-project',
     tags: ['figment', 'advanced', 'smartcontract', 'truffle', 'solidity'],
   },
   {
@@ -1132,7 +1115,6 @@ const Users: User[] = [
     description: 'What if users could get rewarded for transactions and not pay gas? This tutorial will show you how!',
     preview: require('./showcase/creating-loyalty-programs-using-meta-transactions.png'),
     website: 'https://medium.com/celodevelopers/how-to-create-a-loyalty-program-using-meta-transactions-686ae036b976',
-    source: 'https://medium.com/celodevelopers/how-to-create-a-loyalty-program-using-meta-transactions-686ae036b976',
     tags: ['foundation'],
   },
   {
@@ -1140,7 +1122,6 @@ const Users: User[] = [
     description: 'Build a decentralized news feed using React, Tailwind, IPFS, and Celo Composer.',
     preview: require('./showcase/composer-series-building-a-decentralized-newsfeed-with-celo-composer.png'),
     website: 'https://medium.com/celodevelopers/composer-series-building-a-decentralized-news-feed-with-celo-composer-a85b25027609',
-    source: 'https://medium.com/celodevelopers/composer-series-building-a-decentralized-news-feed-with-celo-composer-a85b25027609',
     tags: ['foundation', 'composer'],
   },
   {
@@ -1148,7 +1129,6 @@ const Users: User[] = [
     description: 'Everything you need to know about upgradable smart contracts.',
     preview: require('./showcase/how-to-create-an-upgradable-smart-contract-in-celo.png'),
     website: 'https://medium.com/celodevelopers/how-to-create-an-upgradeable-smart-contract-in-celo-52ae4fa8681d',
-    source: 'https://medium.com/celodevelopers/how-to-create-an-upgradeable-smart-contract-in-celo-52ae4fa8681d',
     tags: ['foundation', 'flutter', 'composer'],
   },
   {
@@ -1156,7 +1136,6 @@ const Users: User[] = [
     description: 'Wormhole has enabled the Celo chain.',
     preview: require('./showcase/bridging-tokens-to-and-from-celo-via-wormhole.png'),
     website: 'https://medium.com/celodevelopers/bridging-token-to-and-from-celo-via-wormhole-83cae48dfcff',
-    source: 'https://medium.com/celodevelopers/bridging-token-to-and-from-celo-via-wormhole-83cae48dfcff',
     tags: ['foundation'],
   },
   {
@@ -1164,9 +1143,125 @@ const Users: User[] = [
     description: 'Creating the world’s first carbon-neutral blockchain was just the beginning.',
     preview: require('./showcase/9-sustainable-defi-projects-built-on-celo.png'),
     website: 'https://medium.com/celodevelopers/9-sustainable-defi-projects-built-on-celo-606a265f88e5',
-    source: 'https://medium.com/celodevelopers/9-sustainable-defi-projects-built-on-celo-606a265f88e5',
     tags: ['foundation'],
   },
+
+  // Videos
+
+  {
+    title: 'Panel Talk: Empowering Social Impact Through Web3',
+    description: 'Join Nestor as he discusses social impact through Web3.',
+    preview: require('./showcase/1.png'),
+    website: 'https://www.youtube.com/watch?v=ZQUYGEI3yHQ',
+    tags: ['video'],
+  },
+  {
+    title: 'Tech Talk: Utilizing the ReFi Stack Thesis to Propel Web3 Project Idea Generation',
+    description: 'Join Nirvaan from Climate Collective, and Nestor from Celo Foundation DevRel as they discuss the ReFi stack thesis to propel web3 project ideas.',
+    preview: require('./showcase/2.png'),
+    website: 'https://www.youtube.com/watch?v=J7jyoDUIx3E&t=529s',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Introduction to Solidity and Remix',
+    description: 'Join Harpal Jadeja (Twitter: @HarpalJadeja11) for a discussion with Viraz Malhotra from GoodGhosting (Twitter: @Viraz04). You will learn how to get started with Solidity and Remix online IDE.',
+    preview: require('./showcase/3.png'),
+    website: 'https://www.youtube.com/watch?v=jr_P-26SdbE&t=656s',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Build a frontend for your smart contracts using react-celo',
+    description: 'Join Nestor Bonilla (Twitter: @0xNestor) and Aaron Deruvo for this workshop! You will learn to utilize react-celo as a resource for frontend development by dissecting react-celo into a development approach for various javascript frameworks.',
+    preview: require('./showcase/4.png'),
+    website: 'https://www.youtube.com/watch?v=3BT0sjXW1Uw',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Introduction to Hardhat',
+    description: 'Join Harpal Jadeja (Twitter: @HarpalJadeja11) and learn how to utilize Hardhat to deploy and test your smart contracts.',
+    preview: require('./showcase/5.png'),
+    website: 'https://www.youtube.com/watch?v=W7nGdHKcIFw&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=6',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Build a DeFi staking dApp on Celo using Solidity',
+    description: 'Join Ernest Nnmadi (Twitter: @ErnestElijah) for this workshop! You will learn how to build a DeFi stacking dApp on Celo.',
+    preview: require('./showcase/6.png'),
+    website: 'https://www.youtube.com/watch?v=ke5OPItFaOQ&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=7',
+    tags: ['video'],
+  },
+  {
+    title: 'Tech Talk: Smart Contract Security and Auditing',
+    description: 'Join Ryon Shamloo for this Tech Talk! He will discuss best security practices and known vulnerabilities.',
+    preview: require('./showcase/7.png'),
+    website: 'https://www.youtube.com/watch?v=CxIzZmG2bBI&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=8',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Integrating Programmable Carbon with Toucan',
+    description: 'Join Harpal Jadeja (Twitter: @HarpalJadeja11)  and Alex Lazar for this workshop! You will learn about Toucan and how you can integrate their offerings into your hackathon project.',
+    preview: require('./showcase/8.png'),
+    website: 'https://www.youtube.com/watch?v=Y0-hzz_QbKg&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=9',
+    tags: ['video'],
+  },
+  {
+    title: 'Tech talk: stCelo',
+    description: 'Join Harpal Jadeja (Twitter: @HarpalJadeja11)  and Mathieu for this workshop! You will learn about stCelo and how you can integrate their offerings into your hackathon project.',
+    preview: require('./showcase/1.png'),
+    website: 'https://www.youtube.com/watch?v=0PL31bwzdKA&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=10',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Token gating content using Unlock Protocol',
+    description: 'Join Harpal Jadeja (Twitter: @HarpalJadeja11)  and Angela Steffens for this workshop!',
+    preview: require('./showcase/2.png'),
+    website: 'https://www.youtube.com/watch?v=B2O6FcgvXAI&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=12',
+    tags: ['video'],
+  },
+  {
+    title: 'Tech Talk: Smart Contract Security 201',
+    description: 'Ryon Shamloo takes you through part two of his best security practices talk!',
+    preview: require('./showcase/3.png'),
+    website: 'https://www.youtube.com/watch?v=HIEcAXshU8U&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=13',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Building an exchange on Celo',
+    description: 'Use Celo composer and Fiat-connect to build an exchange, Part I',
+    preview: require('./showcase/4.png'),
+    website: 'https://www.youtube.com/watch?v=O6DjaYFGLmE&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=15',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Building an exchange on Celo, Part II',
+    description: 'Use Celo composer and Fiat-connect to build an exchange, Part II',
+    preview: require('./showcase/5.png'),
+    website: 'https://www.youtube.com/watch?v=xxLWRUmAKvs&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=16',
+    tags: ['video'],
+  },
+  {
+    title: 'Introduction to Valora',
+    description: 'Join this workshop for an introduction to Valora',
+    preview: require('./showcase/6.png'),
+    website: 'https://www.youtube.com/watch?v=foamzu62nZk&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=18',
+    tags: ['video'],
+  },
+  {
+    title: 'Workshop: Building an NFT collection on Celo using Celo composer',
+    description: 'Join Ewerton Lopes Pereira to build an NFT collection on Celo',
+    preview: require('./showcase/7.png'),
+    website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
+    tags: ['video'],
+  },
+  {
+    title: 'Introduction to Mento',
+    description: 'Join Nestor Bonilla for an introduction to the Mento protocol',
+    preview: require('./showcase/8.png'),
+    website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
+    tags: ['video'],
+  },
+
+
   
   /*
   Pro Tip: add your site in alphabetical order.
@@ -1179,8 +1274,8 @@ function sortUsers() {
   let result = Users;
   // Sort by site name
   result = sortBy(result, (user) => user.title.toLowerCase());
-  // Sort by apps tag, appss first
-  result = sortBy(result, (user) => !user.tags.includes("apps"));
+  // Sort by apps tag, popular first
+  result = sortBy(result, (user) => !user.tags.includes("favorite"));
   return result;
 }
 

@@ -129,7 +129,7 @@ function ShowcaseHeader() {
         target="_blank"
         rel="noreferrer">
         <Translate id="showcase.header.button">
-          🙏 Please add your site
+          🙏 Please add your tutorial
         </Translate>
       </a>
     </section>
@@ -280,7 +280,7 @@ function ShowcaseCards() {
                 )}>
                 <h2>
                   <Translate id="showcase.favoritesList.title">
-                    Most Popular
+                    Choose your path
                   </Translate>
                 </h2>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
