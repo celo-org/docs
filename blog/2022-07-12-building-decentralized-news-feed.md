@@ -44,7 +44,6 @@ Here's a list of what we'll cover in this article:
 - ✅ Step 3: Deploying your smart contract.
 - ✅ Step 4: Getting started with the frontend.
 - ✅ Step 5: Interacting with your smart contract from the frontend.
-- ✅ Step 6: Deploying your Defi application.
 
 ---
 
@@ -281,7 +280,9 @@ This concludes everything we have to do in the components folder.
 
 ---
 
-### HomePage.tsx
+### Step 5: Interacting with your smart contract from the frontend  ✅
+
+#### HomePage.tsx
 
 Navigate to `react-app/pages` directory, and create a new file called `HomePage.tsx`. Please copy the code from [here](https://gist.github.com/Ernesto-tha-great/4fdbe33cefdd51c3dad5ca3895f12037) and paste it into your newly created file.
 
