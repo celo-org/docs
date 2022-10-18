@@ -168,35 +168,9 @@ const sidebars = {
               id: "network/node/forno",
             },
             {
-              type: "category",
-              label: "Providers",
-              items: [
-                {
-                  type: "link",
-                  label: "Ankr",
-                  href: "https://www.ankr.com/protocol/public/celo/",
-                },
-                {
-                  type: "link",
-                  label: "Tatum",
-                  href: "https://pages.tatum.io/celo",
-                },
-                {
-                  type: "link",
-                  label: "Figment",
-                  href: "https://www.figment.io/datahub/celo",
-                },
-                {
-                  type: "link",
-                  label: "Quicknode",
-                  href: "https://www.quicknode.com/chains/celo",
-                },
-                {
-                  type: "link",
-                  label: "All that Node",
-                  href: "https://www.allthatnode.com/celo.dsrv",
-                },
-              ],
+              type: "doc",
+              label: "As a Service",
+              id: "network/node/as-a-service",
             },
             {
               type: "category",
@@ -326,6 +300,27 @@ const sidebars = {
               label: "Using Hardhat",
               id: "developer/deploy/hardhat",
             },
+          ],
+        },
+        {
+          type: "category",
+          label: "Libraries",
+          items: [
+            {
+              type: "doc",
+              label: "contractkit",
+              id: "developer/contractkit/index",
+            },
+            {
+              type: "doc",
+              label: "react-celo",
+              id: "developer/react-celo/index",
+            },
+            {
+              type: "doc",
+              label: "rainbowkit-celo",
+              id: "developer/rainbowkit-celo/index",
+            }
           ],
         },
         {
