@@ -17,6 +17,8 @@ How cool would it be if the users of your dApp did not need need to pay gas for 
 
 MASS-ADOOOOOOOOOPTION!
 
+<!--truncate-->
+
 ---
 
 ### Here’s what we’ll cover
