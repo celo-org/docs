@@ -37,7 +37,7 @@ const TITLE = translate({message: 'Celo Development Tutorials'});
 const DESCRIPTION = translate({
   message: 'Welcome to our curated list of community tutorials.',
 });
-const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data-tutorials/users.tsx';
+const EDIT_URL = 'https://github.com/celo-org/docs/edit/main/src/data-tutorials/users.tsx';
 
 type UserState = {
   scrollTopPosition: number;
