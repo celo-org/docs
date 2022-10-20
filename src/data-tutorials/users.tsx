@@ -736,7 +736,7 @@ const Users: User[] = [
     title: 'How to quickly build an NFT collection on Celo',
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/how-to-quickly-build-an-nft-collection-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/how-to-quickly-build-an-nft-collection-on-celo-c79dd276b442',
+    website: 'blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo',
     tags: ['basics','foundation', 'nft', 'foundation'],
   },
   {
