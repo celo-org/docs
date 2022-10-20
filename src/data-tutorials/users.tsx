@@ -799,7 +799,7 @@ const Users: User[] = [
     title: 'Hardhat and Celo | The Ultimate Guide to Deploy Celo dApps using Hardhat',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local network using Hardhat.',
     preview: require('./showcase/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat.png'),
-    website: 'https://medium.com/celodevelopers/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat-747f42ad0788',
+    website: 'blog/tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat',
     tags: ['basics','foundation', 'hardhat'],
   },
   {
