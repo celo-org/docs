@@ -8,6 +8,7 @@ authors:
     image_url: https://github.com/Ernesto-tha-great.png
 tags: [React, IPFS, composer]
 hide_table_of_contents: true
+slug: tutorials/building-a-decentralized-newsfeed-with-celo-composer
 ---
 
 # Composer series - Building a decentralized news feed with Celo Composer
@@ -69,7 +70,7 @@ Do follow the commands in the `README-md` file to get started with setting up yo
 
 There are two options to setting up your environment.
 
-** Using the Template:** Navigate to the [Celo Composer](https://github.com/celo-org/celo-composer) repository and follow the step by step guide entailed in the `README-md ` .
+** Using the Template:** Navigate to the [Celo Composer](https://github.com/celo-org/celo-composer) repository and follow the step by step guide entailed in the `README-md` .
 
 ![celo-composer](https://miro.medium.com/max/4800/1*qD1LSXBWSYAlwQL8GijNoA.png)
 
@@ -190,7 +191,7 @@ The final setup for our tailwind configuration is to import the `global.css` fil
 
 to the list of imports, and voila! You are ready to start using tailwind in your project.
 
-The next stop is the `pages/index.tsx file`. Delete everything in the file and replace it with [this code](https://gist.github.com/Ernesto-tha-great/8b698bf944ac622f8c12e36236401039). Your `index.tsx `file should look like this:
+The next stop is the `pages/index.tsx file`. Delete everything in the file and replace it with [this code](https://gist.github.com/Ernesto-tha-great/8b698bf944ac622f8c12e36236401039). Your `index.tsx`file should look like this:
 
 ![index.tsx](https://miro.medium.com/max/4800/0*EGFvak1xkxAtUraE)
 

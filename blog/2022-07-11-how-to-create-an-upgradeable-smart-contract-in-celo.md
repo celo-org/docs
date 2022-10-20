@@ -8,6 +8,7 @@ authors:
     image_url: https://github.com/viral-sangani.png
 tags: [flutter, composer]
 hide_table_of_contents: true
+slug: /tutorials/how-to-create-an-upgradeable-smart-contract-in-celo
 ---
 
 # Flutter & Celo: Easily build Flutter Mobile dApps
@@ -38,8 +39,8 @@ When we use OpenZeppelin’s upgradeable plugin to deploy the contract, three co
 - **Proxy Contract** — The contract that the end-user interacts with. All the data and state of the contract are stored in the context of the Proxy contract. This Proxy Contract is an implementation of the [EIP1967 standard](https://eips.ethereum.org/EIPS/eip-1967).
 - **ProxyAdmin Contract** — This contract links the Proxy and Implementation contract.
 
->What is ProxyAdmin? (According to OpenZeppelin docs)
->A ProxyAdmin is a contract that acts as the owner of all your proxies. Only one per network gets deployed. When you start your project, the ProxyAdmin is owned by the deployer address, but you can transfer ownership of it by calling transferOwnership.
+> What is ProxyAdmin? (According to OpenZeppelin docs)
+> A ProxyAdmin is a contract that acts as the owner of all your proxies. Only one per network gets deployed. When you start your project, the ProxyAdmin is owned by the deployer address, but you can transfer ownership of it by calling transferOwnership.
 
 When a user calls the proxy contract, the call is [delegated](https://docs.soliditylang.org/en/v0.8.12/introduction-to-smart-contracts.html?highlight=delegatecall#delegatecall-callcode-and-libraries) to the implementation contract. Now to upgrade the contract, what we have to do is:
 
@@ -107,14 +108,14 @@ Create a file called `1.Greeter.test.ts` and add the following content.
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers } from "hardhat";
-describe("Greeter", function () {
+describe("Greeter", function() {
   let greeter: Contract;
-beforeEach(async function () {
+  beforeEach(async function() {
     const Greeter = await ethers.getContractFactory("Greeter");
     greeter = await Greeter.deploy();
     await greeter.deployed();
   });
-it("should greet correctly before and after changing value", async function () {
+  it("should greet correctly before and after changing value", async function() {
     await greeter.setGreeting("Celo to the Moon");
     expect(await greeter.greet()).to.equal("Celo to the Moon");
   });
@@ -145,7 +146,7 @@ async function main() {
   const Greeter = await ethers.getContractFactory("Greeter");
   console.log("Deploying Greeter...");
   const greeter = await upgrades.deployProxy(Greeter);
-console.log(greeter.address, " greeter(proxy) address");
+  console.log(greeter.address, " greeter(proxy) address");
   console.log(
     await upgrades.erc1967.getImplementationAddress(greeter.address),
     " getImplementationAddress"
@@ -204,18 +205,18 @@ Writing unit tests for GreeterV2 before deploying.
 import { expect } from "chai";
 import { BigNumber, Contract } from "ethers";
 import { ethers } from "hardhat";
-describe("Greeter V2", function () {
+describe("Greeter V2", function() {
   let greeterV2: Contract;
-beforeEach(async function () {
+  beforeEach(async function() {
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     greeterV2 = await GreeterV2.deploy();
     await greeterV2.deployed();
   });
-it("should retrieve value previously stored", async function () {
+  it("should retrieve value previously stored", async function() {
     await greeterV2.setGreeting("Celo to the Moon");
     expect(await greeterV2.greet()).to.equal("Celo to the Moon");
   });
-it("should increment value correctly", async function () {
+  it("should increment value correctly", async function() {
     expect(await greeterV2.counter()).to.equal(BigNumber.from("0"));
     await greeterV2.increment();
     expect(await greeterV2.counter()).to.equal(BigNumber.from("1"));
@@ -246,20 +247,20 @@ The above test was designed to only test `GreeterV2.sol` not the upgraded versio
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V2", function () {
+describe("Greeter (proxy) V2", function() {
   let greeter: Contract;
   let greeterV2: Contract;
-beforeEach(async function () {
+  beforeEach(async function() {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
-greeter = await upgrades.deployProxy(Greeter);
-// setting the greet value so that it can be checked after upgrade
+    greeter = await upgrades.deployProxy(Greeter);
+    // setting the greet value so that it can be checked after upgrade
     await greeter.setGreeting("WAGMI");
-greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
+    greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
   });
-it("should retrieve value previously stored correctly", async function () {
+  it("should retrieve value previously stored correctly", async function() {
     expect(await greeterV2.greet()).to.equal("WAGMI");
-await greeter.setGreeting("Celo to the Moon");
+    await greeter.setGreeting("Celo to the Moon");
     expect(await greeterV2.greet()).to.equal("Celo to the Moon");
   });
 });
@@ -298,7 +299,7 @@ async function main() {
   console.log("upgrade to GreeterV2...");
   const greeterV2 = await upgrades.upgradeProxy(proxyAddress, GreeterV2);
   console.log(greeterV2.address, " GreeterV2 address(should be the same)");
-console.log(
+  console.log(
     await upgrades.erc1967.getImplementationAddress(greeterV2.address),
     " getImplementationAddress"
   );
@@ -368,27 +369,27 @@ Let’s write test cases to deploy and test `GreeterV3` . Create a file called `
 import { expect } from "chai";
 import { BigNumber, Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V3 with name", function () {
+describe("Greeter (proxy) V3 with name", function() {
   let greeter: Contract;
   let greeterV2: Contract;
   let greeterV3: Contract;
-beforeEach(async function () {
+  beforeEach(async function() {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     const GreeterV3 = await ethers.getContractFactory("GreeterV3");
     greeter = await upgrades.deployProxy(Greeter);
-// setting the greet value so that it can be checked after upgrade
+    // setting the greet value so that it can be checked after upgrade
     await greeter.setGreeting("WAGMI");
-greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
+    greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
     greeterV3 = await upgrades.upgradeProxy(greeter.address, GreeterV3);
   });
-it("should retrieve value previously stored and increment correctly", async function () {
+  it("should retrieve value previously stored and increment correctly", async function() {
     expect(await greeterV2.greet()).to.equal("WAGMI ");
     expect(await greeterV3.counter()).to.equal(BigNumber.from("0"));
     await greeterV2.increment();
     expect(await greeterV3.counter()).to.equal(BigNumber.from("1"));
   });
-it("should set name correctly in V3", async function () {
+  it("should set name correctly in V3", async function() {
     expect(await greeterV3.name()).to.equal("");
     const name = "Viral";
     await greeterV3.setName(name);
@@ -431,7 +432,7 @@ async function main() {
   console.log("upgrade to GreeterV3...");
   const greeterV3 = await upgrades.upgradeProxy(proxyAddress, GreeterV3);
   console.log(greeterV3.address, " GreeterV3 address(should be the same)");
-console.log(
+  console.log(
     await upgrades.erc1967.getImplementationAddress(greeterV3.address),
     " getImplementationAddress"
   );
@@ -501,24 +502,24 @@ Let’s write test cases for `GreeterV4.sol`
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V4 with getName", function () {
+describe("Greeter (proxy) V4 with getName", function() {
   let greeter: Contract;
   let greeterV2: Contract;
   let greeterV3: Contract;
   let greeterV4: Contract;
-beforeEach(async function () {
+  beforeEach(async function() {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     const GreeterV3 = await ethers.getContractFactory("GreeterV3");
     const GreeterV4 = await ethers.getContractFactory("GreeterV4");
-greeter = await upgrades.deployProxy(Greeter);
+    greeter = await upgrades.deployProxy(Greeter);
     greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
     greeterV3 = await upgrades.upgradeProxy(greeter.address, GreeterV3);
     greeterV4 = await upgrades.upgradeProxy(greeter.address, GreeterV4);
   });
-it("should setName and getName correctly in V4", async function () {
+  it("should setName and getName correctly in V4", async function() {
     expect(await greeterV4.getName()).to.equal("");
-const greetername = "Celo";
+    const greetername = "Celo";
     await greeterV4.setName(greetername);
     expect(await greeterV4.getName()).to.equal(greetername);
   });
@@ -631,7 +632,7 @@ Since we called `upgrades.upgradeProxy` in the deploy script, it did two things,
 
 Run the following command —
 
-  ```bash
+```bash
 yarn hardhat run scripts/GreeterV3.deploy.ts --network alfajores
 ```
 
@@ -676,7 +677,7 @@ This will point the proxy contract to the latest `GreeterV4` .
 
 ### Conclusion
 
- =
+=
 Congratulations 💪 on making it to the end. I know this article is a bit long, but now you know how upgradeable smart contracts work under the hood. You have built and deployed proxy contracts in the local testnet and Alfajores testnet. If you have doubts or just fancy saying Hi 👋🏻, you can reach out to me on [Twitter](https://twitter.com/viral_sangani_) or Discord[0xViral (Celo)#6692].
 
 [Celo Discord](https://discord.gg/6yWMkgM)
