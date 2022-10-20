@@ -80,11 +80,11 @@ This criteria assumes the validators perform well in the main and supporting cri
 The following new deadlines will be established for the next 3 cohorts as fixed dates.
 Each cohort will last 12 months, there’s a 4 months gap between each cohort.
 
-* Cohort 8: November 1 new date for voting in
+* Cohort 11: November 1 new date for voting in
 
-* Cohort 9: March 1 new date for voting in
+* Cohort 12: March 1 new date for voting in
 
-* Cohort 10: July 1 new date for voting in
+* Cohort 13: July 1 new date for voting in
 
 For each cohort, the deadline to apply/be evaluated (if you are reapplying) is exactly 1 month prior to the date of being voted in. So for Cohort 8, it’ll be October 1 for the deadline, etc.
 
