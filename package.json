@@ -29,6 +29,7 @@
     "@popperjs/core": "^2.11.5",
     "@saucelabs/theme-github-codeblock": "^0.1.1",
     "@walletconnect/web3-provider": "^1.6.6",
+    "react-lite-youtube-embed": "^2.2.2",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
     "clsx": "^1.1.1",

@@ -247,7 +247,7 @@ html[data-theme="dark"] {
 
 div[class^="announcementBar_"] {
   --site-announcement-bar-stripe-color1: hsl(
-    var(--site-primary-hue-saturation) 85%  
+    var(--site-primary-hue-saturation) 85%
   );
   --site-announcement-bar-stripe-color2: hsl(
     var(--site-primary-hue-saturation) 95%

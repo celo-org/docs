@@ -855,9 +855,9 @@ const Users: User[] = [
     title: 'Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.',
     description: 'Everything you need to get started with Celo.',
     preview: require('./showcase/celo-spotlight.png'),
-    website: 'https://medium.com/celodevelopers/celo-spotlight-build-a-financial-system-that-creates-the-conditions-for-prosperity-for-everyone-7b1830efc254',
+    website: 'blog/celo-spotlight/celo-spotlight',
     tags: ['basics','foundation', 'celo', 'basics'],
-  },
+  }, 
   {
     title: 'Celo Valora + WalletConnect v1',
     description: 'How to use WalletConnect version 1 in a DApp to connect to Valora.',
@@ -1121,7 +1121,7 @@ const Users: User[] = [
     title: 'How to create a Loyalty Program using Meta-transactions',
     description: 'What if users could get rewarded for transactions and not pay gas? This tutorial will show you how!',
     preview: require('./showcase/creating-loyalty-programs-using-meta-transactions.png'),
-    website: 'https://medium.com/celodevelopers/how-to-create-a-loyalty-program-using-meta-transactions-686ae036b976',
+    website: '/blog/2022/07/27/how-to-create-a-loyalty-program-using-meta-transactions',
     tags: ['foundation', 'advanced'],
   },
   {
