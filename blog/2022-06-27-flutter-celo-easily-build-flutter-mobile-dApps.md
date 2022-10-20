@@ -8,6 +8,7 @@ authors:
     image_url: https://github.com/viral-sangani.png
 tags: [flutter, composer]
 hide_table_of_contents: true
+slug: /tutorials/flutter-celo-easily-build-flutter-mobile-dApps
 ---
 
 # Flutter & Celo: Easily build Flutter Mobile dApps
@@ -197,11 +198,11 @@ To register the fonts, open the `pubspec.yaml file and add the fonts info under 
 
 ```yaml
 fonts:
-    - family: Schyler
-      fonts:
-        - asset: fonts/Schyler-Regular.ttf
-        - asset: fonts/Schyler-Italic.ttf
-          style: italic
+  - family: Schyler
+    fonts:
+      - asset: fonts/Schyler-Regular.ttf
+      - asset: fonts/Schyler-Italic.ttf
+        style: italic
 ```
 
 Set the font using `fontFamily` inside the Text widget as shown below:
@@ -221,7 +222,7 @@ Go to `lib/utils/theme_data.dart`. This will contain the code for configuring th
 
 [theme_config.dart](https://gist.github.com/viral-sangani/167b65bfddee2e9a80482263f49c9f85)
 
-To use the theme, goto *app.dart* and wrap the `Material` app with `Consumer`.
+To use the theme, goto _app.dart_ and wrap the `Material` app with `Consumer`.
 
 ```dart
 class App extends StatelessWidget {
@@ -252,7 +253,7 @@ Switch(
 
 #### Add new dependencies
 
-To add dependencies, go to [pub.dev](https://pub.dev/) for that specific dependency. Copy the install version and paste it into the *pubspec.yaml* file:
+To add dependencies, go to [pub.dev](https://pub.dev/) for that specific dependency. Copy the install version and paste it into the _pubspec.yaml_ file:
 
 ```yaml
 dependencies:

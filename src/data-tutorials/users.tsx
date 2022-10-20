@@ -715,7 +715,7 @@ const Users: User[] = [
     title: 'Flutter & Celo - Easily build Flutter Mobile dApps',
     description: 'Celo Composer now supports Flutter. Quickly develop mobile apps on Celo.',
     preview: require('./showcase/flutter-and-celo-easily-build-flutter-mobile-dapps.png'),
-    website: 'https://medium.com/celodevelopers/flutter-celo-easily-build-flutter-mobile-dapps-6f1bab7dee65',
+    website: 'blog/tutorials/flutter-celo-easily-build-flutter-mobile-dApps',
     tags: ['intermediate','foundation', 'flutter', 'composer'],
   },
   {
@@ -729,7 +729,7 @@ const Users: User[] = [
     title: 'React Native & Celo - Easily build React Native dApps on Celo',
     description: 'Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.',
     preview: require('./showcase/react-native-and-celo-easily-build-react-native-dapps-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/celo-composer-react-native-easily-build-react-native-dapps-on-celo-bdc57080772f',
+    website: 'blog/tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo',
     tags: ['intermediate','foundation', 'reactnative', 'composer'],
   },
   {
@@ -1128,21 +1128,21 @@ const Users: User[] = [
     title: 'Composer series: Building a decentralized news feed with Celo Composer',
     description: 'Build a decentralized news feed using React, Tailwind, IPFS, and Celo Composer.',
     preview: require('./showcase/composer-series-building-a-decentralized-newsfeed-with-celo-composer.png'),
-    website: 'https://medium.com/celodevelopers/composer-series-building-a-decentralized-news-feed-with-celo-composer-a85b25027609',
+    website: 'blog/tutorials/building-a-decentralized-newsfeed-with-celo-composer',
     tags: ['foundation', 'composer', 'advanced'],
   },
   {
     title: 'How to create an upgradeable smart contract in Celo',
     description: 'Everything you need to know about upgradable smart contracts.',
     preview: require('./showcase/how-to-create-an-upgradable-smart-contract-in-celo.png'),
-    website: 'https://medium.com/celodevelopers/how-to-create-an-upgradeable-smart-contract-in-celo-52ae4fa8681d',
+    website: 'blog/tutorials/how-to-create-an-upgradeable-smart-contract-in-celo',
     tags: ['foundation', 'flutter', 'composer', 'advanced'],
   },
   {
     title: 'Bridging tokens to and from Celo via Wormhole',
     description: 'Wormhole has enabled the Celo chain.',
     preview: require('./showcase/bridging-tokens-to-and-from-celo-via-wormhole.png'),
-    website: 'https://medium.com/celodevelopers/bridging-token-to-and-from-celo-via-wormhole-83cae48dfcff',
+    website: 'blog/tutorials/bridging-token-to-and-from-celo-via-wormhole',
     tags: ['foundation', 'advanced'],
   },
   {
