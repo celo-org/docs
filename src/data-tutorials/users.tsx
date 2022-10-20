@@ -855,7 +855,7 @@ const Users: User[] = [
     title: 'Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.',
     description: 'Everything you need to get started with Celo.',
     preview: require('./showcase/celo-spotlight.png'),
-    website: 'blog/celo-spotlight/celo-spotlight',
+    website: 'blog/tutorials/celo-spotlight',
     tags: ['basics','foundation', 'celo', 'basics'],
   }, 
   {
