@@ -57,3 +57,7 @@ A [slashing penalty](/protocol/pos/penalties), initially `1.0`, is also tracked 
 ## Metadata
 
 Both validators and validator groups can use [Accounts Metadata](/protocol/identity/metadata) to provide unverified metadata (such as name and organizational affiliation) as well as claims that can be verified off-chain for control of third-party accounts. All validators are encouraged to make a verifiable claim for [domain names](/validator/validator-explorer).
+
+## Dissolving of a Validator Group
+
+There is a 180 day unlocking period for Celo locked when creating a validator group.
