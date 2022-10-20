@@ -2,9 +2,10 @@
 title: Bridging tokens to and from Celo via Wormhole
 description: Wormhole has enabled the Celo chain.
 authors:
-    - name: ✍️ Harpal Jadeja
+  - name: ✍️ Harpal Jadeja
 tags: [bridge, celo, wormhole]
 hide_table_of_contents: true
+slug: /tutorials/bridging-token-to-and-from-celo-via-wormhole
 ---
 
 # Bridging tokens to and from Celo via Wormhole
@@ -15,9 +16,9 @@ Meaning now you can bridge tokens in and out of the Celo ecosystem 🥳.
 
 **In this article, you will learn:**
 
--   ✅ [How to bridge Wormhole supported tokens to the Celo blockchain](#how-to-bridge-wormhole-supported-tokens-to-the-celo-blockchain)
--   ✅ [How to bridge Wormhole supported tokens out of the Celo blockchain](#how-to-bridge-wormhole-supported-tokens-from-the-celo-blockchain)
--   ✅ [How to bridge your own custom tokens](#how-to-bridge-your-own-custom-tokens) 🥳
+- ✅ [How to bridge Wormhole supported tokens to the Celo blockchain](#how-to-bridge-wormhole-supported-tokens-to-the-celo-blockchain)
+- ✅ [How to bridge Wormhole supported tokens out of the Celo blockchain](#how-to-bridge-wormhole-supported-tokens-from-the-celo-blockchain)
+- ✅ [How to bridge your own custom tokens](#how-to-bridge-your-own-custom-tokens) 🥳
 
 ---
 
@@ -51,8 +52,8 @@ From this interface select the Tokens tab if it is not already selected.
 
 ![tokens-tab](https://user-images.githubusercontent.com/38040789/195807295-b35844d4-6bfb-494c-ade8-a527db3defa5.png)
 
--   Select the chains from which you wish to bridge. For this example, I will bridge from Polygon to Celo.
--   Connect your wallet by clicking the Connect button.
+- Select the chains from which you wish to bridge. For this example, I will bridge from Polygon to Celo.
+- Connect your wallet by clicking the Connect button.
 
 ![wormhole-connect-wallet](https://user-images.githubusercontent.com/38040789/195807428-ca9ab917-61ac-4a57-99a0-bd60260118d0.png)
 
@@ -94,8 +95,8 @@ You will now be prompted to approve the amount of tokens you wish to bridge.
 
 The prompt for approval looks like the image shown above.
 
--   Review and confirm the requested bridging amount.
--   If correct click **Confirm**.
+- Review and confirm the requested bridging amount.
+- If correct click **Confirm**.
 
 ![click-transfer](https://user-images.githubusercontent.com/38040789/195828313-cee63b57-3d82-4000-827f-6251d0fb1553.png)
 
@@ -280,9 +281,9 @@ On successful redeem, you will get a button **Add to Metamask** click it to add 
 
 That is it! You now know how to bridge tokens including custom tokens! If you face any problems or have any questions don’t hesitate to reach out [me](https://twitter.com/harpaljadeja11) harpaljadeja.eth#2927 on Discord.
 
--   [Celo Discord](https://discord.gg/6yWMkgM)
--   [Celo Twitter](https://twitter.com/CeloOrg)
--   [Wormhole Docs](https://docs.wormholenetwork.com/wormhole/)
+- [Celo Discord](https://discord.gg/6yWMkgM)
+- [Celo Twitter](https://twitter.com/CeloOrg)
+- [Wormhole Docs](https://docs.wormholenetwork.com/wormhole/)
 
 [View on Medium ↗️](https://developers.celo.org/bridging-token-to-and-from-celo-via-wormhole-83cae48dfcff)
 

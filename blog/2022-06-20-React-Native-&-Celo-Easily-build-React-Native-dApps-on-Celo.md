@@ -2,9 +2,10 @@
 title: React Native & Celo - Easily build React Native dApps on Celo
 description: Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.
 authors:
-    - name: ✍️ Harpal Jadeja
+  - name: ✍️ Harpal Jadeja
 tags: [react native, composer]
 hide_table_of_contents: true
+slug: /tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo
 ---
 
 # React Native & Celo - Easily build React Native dApps on Celo
@@ -19,13 +20,13 @@ In this article, you will go through the React Native version of the template. Y
 
 Here’s a list of things will we cover 🗒
 
--   ✅ [Prerequisites](#prerequisites)
--   ✅ [Setting up the project](#setting-up-the-project)
--   ✅ [Deploying smart contracts](#deploying-smart-contracts)
--   ✅ [Downloading testnet Valora](#downloading-testnet-valora)
--   ✅ [Funding Valora with testnet coins](#funding-wallet-with-testnet-coins)
--   ✅ [Exploring the Mobile dApp](#exploring-the-mobile-dapp)
--   ✅ [Customizing the dApp](#customizing-the-dapp)
+- ✅ [Prerequisites](#prerequisites)
+- ✅ [Setting up the project](#setting-up-the-project)
+- ✅ [Deploying smart contracts](#deploying-smart-contracts)
+- ✅ [Downloading testnet Valora](#downloading-testnet-valora)
+- ✅ [Funding Valora with testnet coins](#funding-wallet-with-testnet-coins)
+- ✅ [Exploring the Mobile dApp](#exploring-the-mobile-dapp)
+- ✅ [Customizing the dApp](#customizing-the-dapp)
 
 ---
 
@@ -33,10 +34,10 @@ Here’s a list of things will we cover 🗒
 
 Before we get started you will need some packages and dependencies to be installed beforehand, here is a list of them.
 
--   Node v12+
--   Yarn / NPM
--   Python (node-gyp requires this)
--   windows-build-tools (only for windows)
+- Node v12+
+- Yarn / NPM
+- Python (node-gyp requires this)
+- windows-build-tools (only for windows)
 
 Once you have the dependencies installed, it’s time we start setting up the template.
 
@@ -46,8 +47,8 @@ Once you have the dependencies installed, it’s time we start setting up the te
 
 ![celo-composer-on-github](https://user-images.githubusercontent.com/38040789/195801629-9908b213-e3f2-42cc-91a3-e83ce6a33905.png)
 
--   Access the repo [here](https://github.com/celo-org/celo-composer).
--   Click the Use this template button to get it into your GitHub profile.
+- Access the repo [here](https://github.com/celo-org/celo-composer).
+- Click the Use this template button to get it into your GitHub profile.
 
 Once done, clone the repo to work on it on your local machine.
 
@@ -143,7 +144,7 @@ To interact with smart contracts on the blockchain we need a wallet specifically
 
 In this post, you’ll use the Alfajores testnet with the Valora app. This allows you to create dApps using test funds which allows you to avoid spending real money during development.
 
--   Download Celo Alfajores Wallet from the Play Store or App Store.
+- Download Celo Alfajores Wallet from the Play Store or App Store.
 
 ![celo-testnet-wallet-play-store](https://user-images.githubusercontent.com/38040789/195802138-cd12afe9-7cf3-460a-998c-e40d7136b132.png)
 
@@ -173,8 +174,8 @@ In the browser go to — https://celo.org/developers/faucet
 
 ![funding-testnet-wallet](https://user-images.githubusercontent.com/38040789/195802514-fced0fbc-87b5-4028-bc1e-1a852e718896.png)
 
--   Paste your address, complete the captcha, and tap Get Started.
--   After a few seconds, if you go back to your app, you should see the token received from the faucet.
+- Paste your address, complete the captcha, and tap Get Started.
+- After a few seconds, if you go back to your app, you should see the token received from the faucet.
 
 ![valora-balance-screen](https://user-images.githubusercontent.com/38040789/195802574-907e15ac-a03a-4ae1-963e-636da5abd6aa.png)
 
@@ -224,8 +225,8 @@ Since you are doing a write operation on the contract we need to sign this trans
 
 You should see a screen like this, Alfajores is asking if you want to proceed with the transaction.
 
--   Click **Allow** to proceed this will perform an update on the Greeter Contract.
--   Once done if you switch back to the Expo App we can tap the **Read Greeter Contract** to see our update Greeting.
+- Click **Allow** to proceed this will perform an update on the Greeter Contract.
+- Once done if you switch back to the Expo App we can tap the **Read Greeter Contract** to see our update Greeting.
 
 ![greeter-contract-read-result](https://user-images.githubusercontent.com/38040789/195803171-1943b181-4e19-46a0-af7d-3c3df2a33881.png)
 
@@ -245,17 +246,17 @@ We have tried to provide a fair amount of customizations that can be done on the
 
 For now, here is a list of things you can do:
 
--   **Add a splash screen**: Add the splash screen image inside `/assets/images`
--   **Change app colors**: Edit `Colors.ts` in `/constants`
--   **Add touchable opacity to buttons**: Inside `/components` you will see I have added some modified `TouchableOpacitycomponent` to look like a button with color, feel free to edit it as you like.
--   **Organize component styles**: There is also a `ThemeProvider.ts` in `/context` which uses React Native StyleSheet for organizing styles for components, play with it as you like.
--   **Organize your styles**: It is not necessary to take the template as-is for design purposes, you can have your own way of code organization for colors and styles.
--   **Add more screens**: To add more screens to your app, there is `/screens` folder to add more screen files this is for code organization purposes.
--   **Add to the interface**: However, to add it to the interface check out the `LinkingConfiguration.ts` in `/navigation`
--   **Add tabs**: index.tsx inside `/navigation` has the code to the `BottomTab` navigation where you can add more tabs to various screens.
--   **Add drawer navigation**: After 3 to 4 screens `BottomTab` might not be the right choice to add more tabs so check out the docs to the Drawer Navigation.
--   **Change app names**: Refer to edit it inside `index.js` line number 15.
--   **Add contracts**: Add solidity files to in `/hardhat/contracts`
+- **Add a splash screen**: Add the splash screen image inside `/assets/images`
+- **Change app colors**: Edit `Colors.ts` in `/constants`
+- **Add touchable opacity to buttons**: Inside `/components` you will see I have added some modified `TouchableOpacitycomponent` to look like a button with color, feel free to edit it as you like.
+- **Organize component styles**: There is also a `ThemeProvider.ts` in `/context` which uses React Native StyleSheet for organizing styles for components, play with it as you like.
+- **Organize your styles**: It is not necessary to take the template as-is for design purposes, you can have your own way of code organization for colors and styles.
+- **Add more screens**: To add more screens to your app, there is `/screens` folder to add more screen files this is for code organization purposes.
+- **Add to the interface**: However, to add it to the interface check out the `LinkingConfiguration.ts` in `/navigation`
+- **Add tabs**: index.tsx inside `/navigation` has the code to the `BottomTab` navigation where you can add more tabs to various screens.
+- **Add drawer navigation**: After 3 to 4 screens `BottomTab` might not be the right choice to add more tabs so check out the docs to the Drawer Navigation.
+- **Change app names**: Refer to edit it inside `index.js` line number 15.
+- **Add contracts**: Add solidity files to in `/hardhat/contracts`
 
 In the end, it is an Expo-based React Native project, so it can be customized as you want. Feel free to report any issues under the **Issues** tab in the [Github repo](https://github.com/celo-org/celo-composer) and if you plan to contribute we will welcome you with open hands. 🤝
 
@@ -265,12 +266,12 @@ In the end, it is an Expo-based React Native project, so it can be customized as
 
 Here are some links that can help if you wish to explore more.
 
--   [**React Native**](https://reactnative.dev/docs/getting-started) — Library to build cross-platform apps.
--   [**Expo**](https://docs.expo.dev/) — React Native Framework.
--   [**React Navigation**](https://reactnavigation.org/docs/getting-started) — Library to help with navigation of screens.
--   [**Hardhat**](https://reactnavigation.org/docs/getting-started) — Library to help with smart contract testing and deployment.
--   [**Solidity**](https://reactnavigation.org/docs/getting-started) — Language used to write smart contracts.
--   [**WalletConnect**](https://reactnavigation.org/docs/getting-started) — Library to access mobile install wallets in our dApps.
+- [**React Native**](https://reactnative.dev/docs/getting-started) — Library to build cross-platform apps.
+- [**Expo**](https://docs.expo.dev/) — React Native Framework.
+- [**React Navigation**](https://reactnavigation.org/docs/getting-started) — Library to help with navigation of screens.
+- [**Hardhat**](https://reactnavigation.org/docs/getting-started) — Library to help with smart contract testing and deployment.
+- [**Solidity**](https://reactnavigation.org/docs/getting-started) — Language used to write smart contracts.
+- [**WalletConnect**](https://reactnavigation.org/docs/getting-started) — Library to access mobile install wallets in our dApps.
 
 [View on Medium ↗️](https://medium.com/celodevelopers/celo-composer-react-native-easily-build-react-native-dapps-on-celo-bdc57080772f)
 

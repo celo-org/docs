@@ -1345,7 +1345,7 @@ module.exports = {
           blogTitle: "Celo Tutorials",
           blogDescription: "A Docusaurus powered blog!",
           postsPerPage: "ALL",
-          blogSidebarTitle: "Recent posts",
+          blogSidebarTitle: "Latest posts",
           blogSidebarCount: 7,
         },
       },
