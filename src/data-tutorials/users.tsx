@@ -778,7 +778,7 @@ const Users: User[] = [
     title: 'Plumo - An Ultralight Blockchain Client on Celo',
     description: 'How the Celo light client became 1.7 million times lighter than Ethereum.',
     preview: require('./showcase/plumo-an-ultralight-blockchain-client-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/plumo-an-ultralight-blockchain-client-on-celo-471577cbaef1',
+    website: 'blog/tutorials/plumo-an-ultralight-blockchain-client-on-celo',
     tags: ['basics', 'foundation', 'nft'],
   },
   {
