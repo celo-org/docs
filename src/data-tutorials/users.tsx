@@ -834,7 +834,7 @@ const Users: User[] = [
     title: 'Celo Composer - Easily Build Full-Stack Mobile dApps on Celo',
     description: 'Quickly develop full-stack progressive web applications on Celo with the Celo Composer.',
     preview: require('./showcase/celo-composer-easily-build-full-stack-modile-dapps-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/build-celo-dapps-in-15-minutes-or-less-438ea954d0b1',
+    website: 'blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo',
     tags: ['basics','foundation', 'composer'],
   },
   {
