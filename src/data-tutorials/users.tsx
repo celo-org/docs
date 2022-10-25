@@ -792,7 +792,7 @@ const Users: User[] = [
     title: 'Getting started with DAOs on Celo',
     description: 'Introduction to DAOs and the advantages of building a DAO on Celo.',
     preview: require('./showcase/getting-started-with-daos-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/getting-started-with-daos-on-celo-a6c6761024a',
+    website: 'blog/tutorials/getting-started-with-daos-on-celo',
     tags: ['basics','foundation', 'dao'],
   },
   {
