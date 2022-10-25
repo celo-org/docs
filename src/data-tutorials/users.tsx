@@ -1149,7 +1149,7 @@ const Users: User[] = [
     title: '9 Sustainable DeFi Projects Built on Celo',
     description: 'Creating the world’s first carbon-neutral blockchain was just the beginning.',
     preview: require('./showcase/9-sustainable-defi-projects-built-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/9-sustainable-defi-projects-built-on-celo-606a265f88e5',
+    website: 'blog/tutorials/9-sustainable-defi-projects-built-on-celo',
     tags: ['foundation', 'basics'],
   },
 
