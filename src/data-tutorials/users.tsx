@@ -785,7 +785,7 @@ const Users: User[] = [
     title: 'A Boilerplate guide to Airdropping on Celo',
     description: 'Deploy an Airdrop contract to Celo and claim ERC20 tokens using the web3 SDK.',
     preview: require('./showcase/a-boilerplate-guide-to-airdropping-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/a-boilerplate-guide-to-airdropping-on-celo-ea7905754ff',
+    website: 'blog/tutorials/a-boilerplate-guide-to-airdropping-on-celo',
     tags: ['intermediate','foundation', 'airdrop'],
   },
   {
