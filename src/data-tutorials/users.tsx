@@ -841,7 +841,7 @@ const Users: User[] = [
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/17-smart-contracts-powering-the-celo-protocol.png'),
-    website: 'https://medium.com/celodevelopers/17-powerful-celo-protocol-core-contracts-you-need-to-know-d84c1fbc5a6',
+    website: 'blog/tutorials/17-smart-contracts-powering-the-celo-protocol',
     tags: ['basics','foundation', 'metamask'],
   },
   {
