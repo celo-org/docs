@@ -771,7 +771,7 @@ const Users: User[] = [
     title: '3 Simple Steps to Get Started with Valora on Celo',
     description: 'Send, pay, and spend cryptocurrency like everyday money — all from the palm of your hand.',
     preview: require('./showcase/3-simple-steps-to-get-started-with-valora-on-celo.png'),
-    website: 'https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89',
+    website: 'blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo',
     tags: ['basics','foundation', 'valora'],
   },
   {
