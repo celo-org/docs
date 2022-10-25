@@ -862,7 +862,7 @@ const Users: User[] = [
     title: 'Celo Valora + WalletConnect v1',
     description: 'How to use WalletConnect version 1 in a DApp to connect to Valora.',
     preview: require('./showcase/4.png'),
-    website: 'https://medium.com/celodevelopers/celo-valora-walletconnect-v1-7fc105455779',
+    website: 'blog/tutorials/celo-valora-and-walletconnect-v1',
     tags: ['intermediate','foundation', 'react', 'valora', 'walletconnect'],
   },
   {
