@@ -813,7 +813,7 @@ const Users: User[] = [
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
-    website: 'https://medium.com/celodevelopers/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix-a0d1f0a33ef3',
+    website: 'blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix',
     tags: ['basics','foundation', 'remix'],
   },
   {
