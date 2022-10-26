@@ -757,7 +757,7 @@ const Users: User[] = [
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/celo-composer-extend-and-customize-your-full-stack-modile-dapps.png'),
-    website: 'https://medium.com/celodevelopers/celo-dappstarter-customize-your-full-stack-mobile-dapps-on-celo-232d85b7a2c5',
+    website: 'blog/tutorials/celo-composer-customize-your-full-stack-mobile-dapps-on-celo',
     tags: ['intermediate','foundation', 'composer'],
   },
   {
