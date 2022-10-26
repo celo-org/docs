@@ -9,15 +9,15 @@ Join a growing community of content creators supporting the Celo ecosystem.
 
 ---
 
-## Create, earn, and grow as a Celo content creator.
+## Create, earn, and grow as a Celo content creator
 
 Celo Sages are Celo community members who are passionate about expanding Celo’s mission of prosperity for all. They are developers, educators and content creators interested in creating and sharing technical content with the Celo community.
 
 - **Create:** Write blogs, documentation, videos, or designs to help developers build on Celo.
-- **Earn:** Receive bounties from your work, learn and earn for your contributions to the ecosystem.
+- **Earn:** Receive bounties (Upto $500) from your work, learn and earn for your contributions to the ecosystem.
 - **Grow:** Work closely with members of the Celo Community to find new opportunities.
 
-✅ [Submit an application](https://forms.gle/nhQfkXZygrb3YFRs9)
+✅ [Submit an application](/community/celo-sage/submit-application)
 
 :::tip
 
@@ -43,7 +43,7 @@ View the [Celo Development Tutorials](/tutorials) for examples of our work.
 
 - **Submit application**: Complete the [application form](https://forms.gle/nhQfkXZygrb3YFRs9) to be considered for the program.
 - **Create content**: Suggest new ideas or pick up requests from our [public roadmap](https://trello.com/invite/b/IVRaj2QO/ATTI2d1247ea85d4c68a97451aefbcdd0e4f61AE76DC/celo-sage).
-- **Earn rewards**: Earn between $200-$500 by submitting approved content to our [GitHub](https://github.com/celo-org/celo-sage).
+- **Earn rewards**: Earn between $200-$500 by submitting approved content to our [GitHub](https://github.com/celo-org/docs).
 
 ## Payments
 
@@ -55,7 +55,7 @@ Explore these resources to learn more about the Celo Sage program.
 
 - [Introducing Celo Sage](https://celo.hashnode.dev/preview/633edf652f2c80cc262ffd7a)
 - [Roadmap](https://trello.com/invite/b/IVRaj2QO/ATTI2d1247ea85d4c68a97451aefbcdd0e4f61AE76DC/celo-sage)
-- [GitHub](https://github.com/celo-org/celo-sage)
+- [GitHub](https://github.com/celo-org/docs)
 
 :::tip
 
