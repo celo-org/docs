@@ -30,11 +30,12 @@ Then Celo Signal Mailing List is a great way to keep up with everything happenin
 * Hardfork Updates
 * Celo Core Contract Release schedule
 * Core Community Happy Hour
+* Ongoing or Upcoming Hackathons & Updates
 
 
 :::note
 
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://celo.activehosted.com/f/15).
+If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list here](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
 
 :::
 
