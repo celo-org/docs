@@ -7,19 +7,21 @@ description: Answers to frequently asked questions about becoming a Celo Sage.
 
 Answers to frequently asked questions about becoming a Celo Sage.
 
-**Q. What is a Celo Sage?**
+---
 
-**A.** Celo Sages are Celo community members who are passionate about expanding Celo’s mission of prosperity for all. They are developers, educators and content creators interested in creating and sharing technical content with the Celo community.
+### What is a Celo Sage?
 
-**Q. Why should I become a Celo Sage?**
+Celo Sages are Celo community members who are passionate about expanding Celo’s mission of prosperity for all. They are developers, educators and content creators interested in creating and sharing technical content with the Celo community.
 
-**A.** Celo Sages are part of a passionate ecosystem of technical content creators growing the Celo community.
+### Why should I become a Celo Sage?
+
+Celo Sages are part of a passionate ecosystem of technical content creators growing the Celo community.
 
 - **Connect:** Attend monthly Sage calls to connect and exchange ideas and connect
 - **Collaborate:** Work closely with members of the Celo Foundation and the Celo Community
 - **Earn:** Receive bounties from your work, learn and earn for your contributions to the ecosystem.
 
-**Q. What will I create as a Celo Sage?**
+### What will I create as a Celo Sage?
 
 **A.** You’ll make blogs, documentation, videos, or designs to help developers build on Celo.
 
@@ -27,17 +29,17 @@ Answers to frequently asked questions about becoming a Celo Sage.
 - **Video:** Create technical video tutorials for the Celo Developer Community YouTube Channel
 - **Design:** Create technical infographics & designs focused on visualizing Celo
 
-**Q. How do I earn as a Celo Sage?**
+### How do I earn as a Celo Sage?
 
-**A.** Payments are awarded in cUSD or CELO to your Wallet Address through Gitcoin based on the activities you complete. These may either be paid per project or per length of engagement as defined in your project scope.
+Payments are awarded in cUSD or CELO to your Wallet Address through Gitcoin based on the activities you complete. These may either be paid per project or per length of engagement as defined in your project scope.
 
-**Q. Can I become a Celo Sage?**
+### Can I become a Celo Sage?
 
-**A.** Yes! If you have experience as a developer and enjoy creating technical content you’ll be an excellent fit as a Celo Sage.[Submit an application](/community/celo-sage/submit-application) to get started.
+Yes! If you have experience as a developer and enjoy creating technical content you’ll be an excellent fit as a Celo Sage.[Submit an application](/community/celo-sage/submit-application) to get started.
 
-**Q. Can I request content from a Celo Sage?**
+### Can I request content from a Celo Sage?\*\*
 
-**A.** Yes! Fill out [content request form](https://forms.gle/Y53FGt4qyJ461yJ87).
+Yes! Fill out [Content Request Form](https://forms.gle/Y53FGt4qyJ461yJ87).
 
 :::tip
 

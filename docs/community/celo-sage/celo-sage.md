@@ -13,10 +13,6 @@ Join a growing community of content creators supporting the Celo ecosystem.
 
 Celo Sages are Celo community members who are passionate about expanding Celo’s mission of prosperity for all. They are developers, educators and content creators interested in creating and sharing technical content with the Celo community.
 
-- **Create:** Write blogs, documentation, videos, or designs to help developers build on Celo.
-- **Earn:** Receive bounties (Upto $500) from your work, learn and earn for your contributions to the ecosystem.
-- **Grow:** Work closely with members of the Celo Community to find new opportunities.
-
 ✅ [Submit an application](/community/celo-sage/submit-application)
 
 :::tip
@@ -24,6 +20,12 @@ Celo Sages are Celo community members who are passionate about expanding Celo’
 Need to request technical content from a Celo Sage? Fill out the [content request form](https://forms.gle/Y53FGt4qyJ461yJ87)!
 
 :::
+
+## Why become a Celo Sage?
+
+- **Create:** Write blogs, documentation, videos, or designs to help developers build on Celo.
+- **Earn:** Receive bounties (Upto \$500) from your work, learn and earn for your contributions to the ecosystem.
+- **Grow:** Work closely with members of the Celo Community to find new opportunities.
 
 ## What you'll create
 
@@ -53,12 +55,12 @@ Payments are awarded in cUSD or CELO to your Wallet Address through [Gitcoin](ht
 
 Explore these resources to learn more about the Celo Sage program.
 
-- [Introducing Celo Sage](https://celo.hashnode.dev/preview/633edf652f2c80cc262ffd7a)
+- [Introducing Celo Sage](/blog/tutorials/introducing-celo-sage)
 - [Roadmap](https://trello.com/invite/b/IVRaj2QO/ATTI2d1247ea85d4c68a97451aefbcdd0e4f61AE76DC/celo-sage)
 - [GitHub](https://github.com/celo-org/docs)
 
 :::tip
 
-Contact us on [Discord](https://discord.com/invite/6yWMkgM) at #celo-sage for more information.
+Contact us on [Discord](https://discord.com/invite/6yWMkgM) at **#celo-sage** for more information.
 
 :::
