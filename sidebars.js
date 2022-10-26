@@ -320,7 +320,7 @@ const sidebars = {
               type: "doc",
               label: "rainbowkit-celo",
               id: "developer/rainbowkit-celo/index",
-            }
+            },
           ],
         },
         {
@@ -944,6 +944,11 @@ const sidebars = {
           type: "doc",
           label: "Contributors",
           id: "community/guidelines",
+        },
+        {
+          type: "doc",
+          label: "Celo Sage Program",
+          id: "community/celo-sage",
         },
         {
           type: "doc",
