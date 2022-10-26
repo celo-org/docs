@@ -1,5 +1,5 @@
 ---
-title: Celo Sage Announcement
+title: Introducing Celo Sage
 description: Providing opportunities for growth and development in the Celo Community.
 authors:
   - name: Viral Sangani

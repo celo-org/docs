@@ -713,7 +713,7 @@ const Users: User[] = [
 
   // Posts
   {
-    title: 'Celo Sage Announcement',
+    title: 'Introducing Celo Sage',
     description: 'Create. Earn. Grow. Providing opportunities for growth and development in the Celo Community.',
     preview: require('./showcase/celo-sage.png'),
     website: 'blog/tutorials/introducing-celo-sage',
