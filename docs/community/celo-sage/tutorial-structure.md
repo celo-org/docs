@@ -3,7 +3,7 @@ title: Celo Sage Structure
 description: Tutorial Structure to be followed for Celo Sage Tutorials
 ---
 
-# 🌱 Tutorial Structure for Celo Sage Tutorials
+# 🌱 Structure for Celo Sage Tutorials
 
 ## Introduction
 
@@ -14,22 +14,22 @@ This section is for you to explain the context for this tutorial and why it matt
 - Explain this section like you're explaining it to 5-year-old (**[ELI5](https://www.dictionary.com/e/slang/eli5/)**)
 - Explain everything in 5-6 lines maximum.
 
-*For example:*
+_For example:_
 
 A lot of blockchain projects promise to build a new financial system,but few have thought about mainstream adoption as hard as Celo. With a mobile-first approach where a phone number is all you need to participate in the network, Celo makes cryptocurrency user-friendly and simplifies access to global financial services. Plus, it’s compatible with Ethereum!
 
-## **Prerequisites**
+## Prerequisites
 
 The Prerequisites heading **must** be H1: # Prerequisites
 
 This section is for you to explain any prior knowledge needed or any existing tutorials that need to be completed first, any tokens that are needed, mention them here.
 
-*For example:*
+_For example:_
 
 - In this tutorial, we're going to build a Voting dApp on Celo so before we proceed further make sure to complete the first tutorial "Connect to Celo using hardhat".
 - Complete the Example Tutorial, first.
 
-## **Requirements**
+## Requirements
 
 The Requirements heading **must** be H1: # Requirements
 
@@ -37,7 +37,7 @@ The Requirements heading **must** be H1: # Requirements
 
 Any technology that needs to be installed **prior** to starting the tutorial and that the tutorial will not cover (`Metamask`, `node`, `truffle`, etc). Do not list packages that will be installed during the tutorial.
 
-*For example:*
+_For example:_
 
 - We'll need Metamask in this tutorial, install it from [HERE](https://metamask.io/).
 - Make sure to have NodeJS 12.0.1+ version installed.
@@ -45,30 +45,30 @@ Any technology that needs to be installed **prior** to starting the tutorial and
 ## Body of the Tutorial
 
 - Please do not use "Body of the Tutorial" as a heading, use your own heading that is relevant to the material. "Getting started" is acceptable if you can't think of anything else 😉
-- Add any text content necessary to guide readers through your tutorial, and ***remember to proofread your content*** for spelling and grammar before you submit your tutorial. [Grammarly](http://grammarly.com) is a good free program that can help you to avoid spelling and grammar problems.
+- Add any text content necessary to guide readers through your tutorial, and **_remember to proofread your content_** for spelling and grammar before you submit your tutorial. [Grammarly](http://grammarly.com) is a good free program that can help you to avoid spelling and grammar problems.
 
 Points to remember:
 
 - Keep all sub-headings at H2**,** don't go into H3 or lower**:**
-- Add only necessary comments in code blocks. ***Do not*** add # style comments to terminal input code blocks.
+- Add only necessary comments in code blocks. **_Do not_** add # style comments to terminal input code blocks.
 - Add all relevant code blocks:
-- Markdown syntax for code blocks is three backticks at the beginning and the end of the code block. Also make sure that all code blocks have a newline before and after the backticks. *For example*:
+- Markdown syntax for code blocks is three backticks at the beginning and the end of the code block. Also make sure that all code blocks have a newline before and after the backticks. _For example_:
 
-```text
+````text
   ```js
   const testVariable = 'some string';
   someFunctionCall();
   ///```
-```
+````
 
-- ALL code blocks ***must*** have a syntax highlighting type, use ```text if you are not sure.
+- ALL code blocks **_must_** have a syntax highlighting type, use ```text if you are not sure.
 
-- ` ```bash` should *only* be used for code blocks where you need to have # style comments. This must be done carefully because in many situations the # character will render as a markdown heading.
+- ` ```bash ` should _only_ be used for code blocks where you need to have # style comments. This must be done carefully because in many situations the # character will render as a markdown heading.
 
-- Do not use `pre-formatted text` for emphasis - only use **bold** or *italic* text for emphasis.
+- Do not use `pre-formatted text` for emphasis - only use **bold** or _italic_ text for emphasis.
 - Add Images or code blocks to reflect expected terminal output.
 
-- Take an error-driven approach when writing your tutorial: Add common errors and steps to troubleshoot the errors, *for example:*
+- Take an error-driven approach when writing your tutorial: Add common errors and steps to troubleshoot the errors, _for example:_
 
 > **Not able to connect to the Celo Node, getting an error on executing `node connect.js`**
 
@@ -80,9 +80,10 @@ If you're getting an error message like `UnauthorizedError: {"message": "Invalid
 Make sure to have the `.env` file saved in your project root folder.
 
 Make sure `NODE_URL` in the `.env` file is correct.
+
 >
 
-## **Conclusion**
+## Conclusion
 
 The Conclusion heading **must** be H1: # Conclusion
 
@@ -96,16 +97,16 @@ Use this section to explain what can be done next after this tutorial for contin
 Feel free to add recommended projects and articles here which are related to this tutorial.
 If you're working on any other advanced tutorials, you can briefly mention them here.
 
-## About the **Author**
+## About the Author
 
 The About the Author heading **must** be H1: # About the Author
 
 Keep it short. One or two lines at most. You can include a link to your GitHub profile + Twitter profile.
 
-## **References**
+## References
 
 The References heading **must** be H1: # References
 
-This section ***must*** be present if you have taken any help in writing this tutorial from other documents, GitHub repos and existing tutorials.
+This section **_must_** be present if you have taken any help in writing this tutorial from other documents, GitHub repos and existing tutorials.
 
 Credit sources by adding their name and a link to the document when possible.
