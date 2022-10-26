@@ -56,6 +56,7 @@ export type TagType =
   | "popular"
   | "favorite"
   | "foundation"
+  | "celosage"
   | "figment"
   | "dacade"
   | "advanced"
@@ -166,6 +167,14 @@ export const Tags: { [type in TagType]: Tag } = {
     description: translate({
       message: "",
       id: "showcase.tag.foundation.description",
+    }),
+    color: "#35D07F",
+  },
+  celosage: {
+    label: translate({ message: "Celo Sage" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.celosage.description",
     }),
     color: "#35D07F",
   },
@@ -703,7 +712,13 @@ const Users: User[] = [
   },
 
   // Posts
-
+  {
+    title: 'Celo Sage Announcement',
+    description: 'CREATE. EARN. GROW. Providing opportunities for growth and development in the Celo Community.',
+    preview: require('./showcase/1.png'),
+    website: 'blog/tutorials/introducing-celo-sage',
+    tags: ['celosage', 'favorite'],
+  },
   {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
