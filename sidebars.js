@@ -320,7 +320,7 @@ const sidebars = {
               type: "doc",
               label: "rainbowkit-celo",
               id: "developer/rainbowkit-celo/index",
-            }
+            },
           ],
         },
         {
@@ -754,7 +754,6 @@ const sidebars = {
               id: "protocol/identity/index",
             },
             "protocol/identity/metadata",
-            "protocol/identity/randomness",
             "protocol/identity/smart-contract-accounts",
             "protocol/identity/encrypted-cloud-backup",
             {
@@ -794,6 +793,11 @@ const sidebars = {
               ],
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "Celo Randomness",
+          id: "protocol/randomness",
         },
         {
           type: "doc",
