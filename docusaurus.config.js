@@ -409,7 +409,7 @@ module.exports = {
             from: "/celo-codebase/protocol/identity/privacy-research",
           },
           {
-            to: "/protocol/identity/randomness",
+            to: "/protocol/randomness",
             from: "/celo-codebase/protocol/identity/randomness",
           },
           {
