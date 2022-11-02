@@ -2,8 +2,11 @@
 title: Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer
 description: How to quickly create and deploy a full-stack crowdfunding dApp on Celo.
 authors:
-  - name: ✍️ Ernest Nnamdi
-tags: [crowdfunding, composer]
+  - name: Ernest Nnamdi
+    title: Developer Relations, Celo Foundation
+    url: https://github.com/Ernesto-tha-great
+    image_url: https://github.com/Ernesto-tha-great.png
+tags: [React, composer, crowdfunding, foundsation]
 hide_table_of_contents: true
 ---
 
