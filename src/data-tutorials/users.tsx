@@ -779,7 +779,7 @@ const Users: User[] = [
     title: 'ContractKit - A Practical Guide to Interacting with the Celo Core Contracts',
     description: 'How to access the Celo Blockchain with JavaScript using ContractKit.',
     preview: require('./showcase/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts.png'),
-    website: 'https://medium.com/celodevelopers/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts-ea49541975c',
+    website: 'blog/tutorials/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts',
     tags: ['intermediate','foundation', 'contractkit'],
   },
   {
