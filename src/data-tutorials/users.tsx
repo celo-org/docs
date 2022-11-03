@@ -842,7 +842,7 @@ const Users: User[] = [
     title: 'Celo CLI - A Practical Guide to Energize your Celo Toolkit',
     description: 'Explore the Celo blockchain using a command-line interface.',
     preview: require('./showcase/celo-cli-a-practical-guide-to-energize-your-celo-toolkit.png'),
-    website: 'https://medium.com/celodevelopers/celo-cli-a-practical-guide-to-energize-your-celo-toolkit-9253067fff3a',
+    website: 'blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo',
     tags: ['basics','foundation', 'cli'],
   },
   {
