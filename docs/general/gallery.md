@@ -321,3 +321,10 @@ Cyberbox is ReFi NFT Marketplace that helps anyone become carbon neutral by offs
 
 - [Website](https://cyberbox.art)
 - [GitHub](https://github.com/cybertime-eth/cyberbox)
+
+### inTheory NFTs
+
+inTheory is a DeSci funding platform that allows crypto users to fund, support, and track scientific reserach through the trading of AI-generative artworks. This application allows users to mint NFTs based on their research interests prior to the launch of the full inTheory platform.
+
+- [Website](https://intheory.impact-finance.io/)
+- [GitHub](https://github.com/Impact-Finance/intheory-mobile-nft-mint-celo)
