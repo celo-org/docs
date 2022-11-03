@@ -737,7 +737,7 @@ const Users: User[] = [
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/composer-series-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
-    website: 'https://medium.com/celodevelopers/composer-series-build-a-crowdfunding-refi-dapp-with-celo-composer-d1a169f8a78d',
+    website: 'blog/2022/06/21/composer-series-build-a-crowdfunding-refi-dApp-with-celo-composer',
     tags: ['advanced', 'foundation', 'crowdfunding', 'composer'],
   },
   {
@@ -1166,6 +1166,13 @@ const Users: User[] = [
     preview: require('./showcase/9-sustainable-defi-projects-built-on-celo.png'),
     website: 'blog/tutorials/9-sustainable-defi-projects-built-on-celo',
     tags: ['foundation', 'basics'],
+  },
+  {
+    title: 'Composer Series - Building a Staking Defi App with Celo Composer',
+    description: 'Building a Defi application to create, stake and receive rewards on your token using Celo composer.',
+    preview: require('./showcase/stakeImg.png'),
+    website: 'blog/2022/10/27/building-a-defi-staking-dapp',
+    tags: ['foundation', 'intermediate', 'composer', 'react', ],
   },
 
   // Videos
