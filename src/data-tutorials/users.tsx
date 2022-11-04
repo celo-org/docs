@@ -682,43 +682,43 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   // Paths
+  // {
+  //   title: '1. Celo Composer',
+  //   description: 'Quickly build and deploy Celo dApps with Celo Composer',
+  //   preview: require('./showcase/1.png'),
+  //   website: '/tutorials?tags=composer',
+  //   tags: ['favorite'],
+  // },
   {
-    title: '1. Celo Composer',
-    description: 'Quickly build and deploy Celo dApps with Celo Composer',
-    preview: require('./showcase/1.png'),
-    website: '/tutorials?tags=composer',
-    tags: ['favorite'],
-  },
-  {
-    title: '2. Celo Basics',
-    description: 'Curated list of basic Celo developer tutorials.',
-    preview: require('./showcase/6.png'),
+    title: '1. Beginner Tutorials',
+    description: 'Curated list of beginner Celo developer tutorials.',
+    preview: require('./showcase/beginner-tutorials.png'),
     website: '/tutorials?tags=basics',
     tags: ['favorite'],
   },
   {
-    title: '3. Intermediate Tutorials',
+    title: '2. Intermediate Tutorials',
     description: 'Curated list of intermediate Celo developer tutorials.',
-    preview: require('./showcase/4.png'),
+    preview: require('./showcase/intermediate-tutorials.png'),
     website: '/tutorials?tags=intermediate',
     tags: ['favorite'],
   },
   {
-    title: '4. Advanced Tutorials',
+    title: '3. Advanced Tutorials',
     description: 'Curated list of advanced Celo developer tutorials.',
-    preview: require('./showcase/5.png'),
+    preview: require('./showcase/advanced-tutorials.png'),
     website: '/tutorials?tags=advanced',
     tags: ['favorite'],
   },
 
   // Posts
-  {
-    title: 'Introducing Celo Sage',
-    description: 'Create. Earn. Grow. Providing opportunities for growth and development in the Celo Community.',
-    preview: require('./showcase/celo-sage.png'),
-    website: 'blog/tutorials/introducing-celo-sage',
-    tags: ['celosage', 'favorite'],
-  },
+  // {
+  //   title: 'Introducing Celo Sage',
+  //   description: 'Create. Earn. Grow. Providing opportunities for growth and development in the Celo Community.',
+  //   preview: require('./showcase/celo-sage.png'),
+  //   website: 'blog/tutorials/introducing-celo-sage',
+  //   tags: ['celosage', 'favorite'],
+  // },
   {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',

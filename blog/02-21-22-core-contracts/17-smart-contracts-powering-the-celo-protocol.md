@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Making sense of the logic driving the Celo platform._
 
+![header](images/header.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

@@ -14,6 +14,10 @@ slug: /tutorials/bridging-token-to-and-from-celo-via-wormhole
 
 Meaning now you can bridge tokens in and out of the Celo ecosystem 🥳.
 
+---
+
+![hero](images/hero.png)
+
 **In this article, you will learn:**
 
 - ✅ [How to bridge Wormhole supported tokens to the Celo blockchain](#how-to-bridge-wormhole-supported-tokens-to-the-celo-blockchain)

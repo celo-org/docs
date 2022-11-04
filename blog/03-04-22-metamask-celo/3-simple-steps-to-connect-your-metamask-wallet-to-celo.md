@@ -14,7 +14,7 @@ import YouTube from '@components/YouTube';
 
 _A step-by-step tutorial to add the Celo network to your MetaMask wallet._
 
-<!-- ![hero-image](images/1.png) -->
+![hero](images/hero.png)
 
 ## Hello Developers 🌱
 
