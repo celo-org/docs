@@ -10,13 +10,11 @@ slug: /tutorials/bridging-token-to-and-from-celo-via-wormhole
 
 # Bridging tokens to and from Celo via Wormhole
 
+![header](../../src/data-tutorials/showcase/advanced/bridging-tokens-to-and-from-celo-via-wormhole.png)
+
 ## Wormhole has enabled the Celo chain.
 
 Meaning now you can bridge tokens in and out of the Celo ecosystem 🥳.
-
----
-
-![hero](images/hero.png)
 
 **In this article, you will learn:**
 

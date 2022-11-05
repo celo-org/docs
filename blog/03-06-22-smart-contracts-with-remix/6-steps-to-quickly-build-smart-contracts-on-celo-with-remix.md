@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix._
 
+![header](../../src/data-tutorials/showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

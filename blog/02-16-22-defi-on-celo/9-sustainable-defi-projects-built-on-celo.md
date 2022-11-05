@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Creating the world’s first carbon-neutral blockchain was just the beginning._
 
+![header](../../src/data-tutorials/showcase/beginner/9-sustainable-defi-projects-built-on-celo.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

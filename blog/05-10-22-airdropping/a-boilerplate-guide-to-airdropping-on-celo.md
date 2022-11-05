@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Deploy an Airdrop contract to Celo and claim ERC20 tokens using the web3 SDK._
 
+![header](../../src/data-tutorials/showcase/intermediate/a-boilerplate-guide-to-airdropping-on-celo.png)
+
 ## Hello Developers 🌱
 
 I can’t say I have a Web2 analog for cryptocurrency airdrops. It is a method unique to the web3 space and has a reputation for building communities in a matter of days around a product, protocol, or cause.

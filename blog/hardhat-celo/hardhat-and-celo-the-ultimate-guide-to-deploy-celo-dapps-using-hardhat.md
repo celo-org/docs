@@ -12,7 +12,7 @@ slug: /tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-
 
 _How to deploy a smart contract to Celo testnet, mainnet, or a local network using Hardhat._
 
-<!-- ![image](images/1.png) -->
+![header](../../src/data-tutorials/showcase/beginner/the-ultimate-guide-to-deploy-celo-dapps-using-hardhat.png)
 
 ## Hello Developers 🌱
 

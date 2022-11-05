@@ -10,6 +10,8 @@ hide_table_of_contents: false
 
 import styles from '../styles.css'
 
+![header](../../src/data-tutorials/showcase/intermediate/using-the-graph-with-celo.png)
+
 [The Graph protocol](https://thegraph.com/) makes it easy to get historical blockchain data. This can be useful when you want to check a users history of using a specific token or interacting with a specific contract. It may also be useful when collecting data about the activity around a specific contract, or set of contracts. The Graph also makes this data easy to transform, organize and share across applications.
 
 In this post I explore

@@ -706,7 +706,7 @@ const Users: User[] = [
   {
     title: '3. Advanced Tutorials',
     description: 'Curated list of advanced Celo developer tutorials.',
-    preview: require('./showcase/advanced-tutorials.png'),
+    preview: require('./showcase/advanced/advanced-tutorials.png'),
     website: '/tutorials?tags=advanced',
     tags: ['favorite'],
   },
@@ -793,7 +793,7 @@ const Users: User[] = [
     title: 'Plumo - An Ultralight Blockchain Client on Celo',
     description: 'How the Celo light client became 1.7 million times lighter than Ethereum.',
     preview: require('./showcase/beginner/plumo-an-ultralight-blockchain-client-on-celo.png'),
-    website: 'blog/tutorials/beginner/plumo-an-ultralight-blockchain-client-on-celo',
+    website: 'blog/tutorials/plumo-an-ultralight-blockchain-client-on-celo',
     tags: ['beginner', 'foundation', 'nft'],
   },
   {
@@ -842,7 +842,7 @@ const Users: User[] = [
     title: 'Celo CLI - A Practical Guide to Energize your Celo Toolkit',
     description: 'Explore the Celo blockchain using a command-line interface.',
     preview: require('./showcase/beginner/celo-cli-a-practical-guide-to-energize-your-celo-toolkit.png'),
-    website: 'blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo',
+    website: 'blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit',
     tags: ['beginner','foundation', 'cli'],
   },
   {
@@ -954,21 +954,21 @@ const Users: User[] = [
     title: 'Verifying Contracts with Hardhat',
     description: 'Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains.',
     preview: require('./showcase/intermediate/verifying-contracts-with-hardhat.png'),
-    website: 'https://docs.celo.org/blog/hardhat-deploy-verify',
+    website: '/blog/hardhat-deploy-verify',
     tags: ['intermediate','foundation', 'hardhat', 'sourcify', 'verification'],
   },
   {
     title: 'Demos with ObservableHQ',
     description: 'Observable HQ is a Javascript notebook tool that makes it easy to share executable Javascript code right in the browser.',
     preview: require('./showcase/intermediate/demos-with-observable-hq.png'),
-    website: 'https://docs.celo.org/blog/observable-intro',
+    website: '/blog/observable-intro',
     tags: ['intermediate','foundation', 'observable'],
   },
   {
     title: 'Using the Graph with Celo',
     description: 'The Graph protocol makes it easy to get historical blockchain data.',
     preview: require('./showcase/intermediate/using-the-graph-with-celo.png'),
-    website: 'https://docs.celo.org/blog/using-the-graph',
+    website: '/blog/using-the-graph',
     tags: ['intermediate','foundation', 'graph', 'dapp'],
   },
   {

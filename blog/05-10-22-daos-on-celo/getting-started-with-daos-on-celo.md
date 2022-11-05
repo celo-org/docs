@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Introduction to DAOs and the advantages of building a DAO on Celo._
 
+![header](../../src/data-tutorials/showcase/beginner/getting-started-with-daos-on-celo.png)
+
 ## Hello Developers 🌱
 
 This article gives a brief overview of DAOs and the advantages of building a DAO on Celo. Throughout this article, we’ll look at some of the popular types of DAOs and then look at what benefits Celo brings to the DAO ecosystem.

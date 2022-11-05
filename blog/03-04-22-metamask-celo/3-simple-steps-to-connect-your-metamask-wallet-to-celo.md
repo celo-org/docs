@@ -14,7 +14,7 @@ import YouTube from '@components/YouTube';
 
 _A step-by-step tutorial to add the Celo network to your MetaMask wallet._
 
-![hero](../../src/data-tutorials/showcase/beginner/3-simple-steps-to-connect-your-metamask-wallet-to-celo.png)
+![header](../../src/data-tutorials/showcase/beginner/3-simple-steps-to-connect-your-metamask-wallet-to-celo.png)
 
 ## Hello Developers 🌱
 

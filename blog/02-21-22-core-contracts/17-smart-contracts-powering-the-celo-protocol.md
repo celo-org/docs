@@ -14,7 +14,7 @@ import YouTube from '@components/YouTube';
 
 _Making sense of the logic driving the Celo platform._
 
-![header](images/header.png)
+![header](../../src/data-tutorials/showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png)
 
 ## Hello Developers 🌱
 

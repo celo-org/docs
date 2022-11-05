@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Send, pay, and spend cryptocurrency like everyday money — all from the palm of your hand._
 
+![header](../../src/data-tutorials/showcase/beginner/3-simple-steps-to-get-started-with-valora-on-celo.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

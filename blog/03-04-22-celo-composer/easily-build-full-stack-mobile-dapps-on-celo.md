@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Quickly develop full-stack progressive web applications on Celo with the Celo Composer._
 
+![header](../../src/data-tutorials/showcase/beginner/celo-composer-easily-full-stack-mobile-dapps-on-celo.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

@@ -14,7 +14,7 @@ import YouTube from '@components/YouTube';
 
 _How the Celo light client became 1.7 million times lighter than Ethereum._
 
-<!-- ![image](images/1.png) -->
+![header](../../src/data-tutorials/showcase/beginner/plumo-an-ultralight-blockchain-client-on-celo.png)
 
 ## Hello Developers 🌱
 
