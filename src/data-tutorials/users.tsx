@@ -905,7 +905,7 @@ const Users: User[] = [
     title: 'Deploy & Mint a Token',
     description: 'How to deploy a token contract that use the ERC20 token standard to Celo without writing code.',
     preview: require('./showcase/beginner/deploy-and-mint-a-token-on-celo.png'),
-    website: 'https://docs.celo.org/blog/2022/01/04/no-code-erc20',
+    website: '/blog/2022/01/04/no-code-erc20',
     tags: ['beginner','foundation', 'tokens', 'ERC20', 'mint', 'solidity', 'openzeppelin', 'remix'],
   },
   {
@@ -940,7 +940,7 @@ const Users: User[] = [
     title: 'Add an ERC20 Token to Your Celo Wallet',
     description: 'Open up Cello Wallet and make sure you can see “Account Balance Details” then select “Add a new currency/token.',
     preview: require('./showcase/beginner/add-an-erc20-token-to-your-celo-wallet.png'),
-    website: 'https://docs.celo.org/blog/add-token-celo-wallet',
+    website: '/blog/add-token-celo-wallet',
     tags: ['beginner','foundation', 'tokens', 'celowallet'],
   },
   {
@@ -975,14 +975,14 @@ const Users: User[] = [
     title: 'Code Playground -- Metamask',
     description: 'Connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.',
     preview: require('./showcase/beginner/code-playground-metamask-and-celo.png'),
-    website: 'https://docs.celo.org/blog/code-metamask',
+    website: '/blog/code-metamask',
     tags: ['beginner','foundation', 'codeplayground'],
   },
   {
     title: 'Introduction to the Code Playground',
     description: 'This post provides an introduction to the live code editor that is included as a feature in this blog.',
     preview: require('./showcase/beginner/introduction-to-the-celo-code-playground.png'),
-    website: 'https://docs.celo.org/blog/code-playground',
+    website: '/blog/code-playground',
     tags: ['beginner','foundation', 'codeplayground'],
   },
   {
