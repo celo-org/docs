@@ -12,7 +12,7 @@ slug: /tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-t
 
 _How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle._
 
-<!-- ![image](images/1.png) -->
+![header](../../src/data-tutorials/showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png)
 
 ## Hello Developers 🌱
 

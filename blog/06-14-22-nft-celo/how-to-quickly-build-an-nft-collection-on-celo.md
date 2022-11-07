@@ -12,7 +12,7 @@ slug: /tutorials/how-to-quickly-build-an-nft-collection-on-celo
 
 _How to deploy a smart contract to Celo testnet, mainnet, or a local network using Hardhat._
 
-<!-- ![image](images/1.png) -->
+![header](../../src/data-tutorials/showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png)
 
 ## Hello Developers 🌱
 

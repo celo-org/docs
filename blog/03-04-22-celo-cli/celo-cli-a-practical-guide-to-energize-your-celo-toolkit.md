@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Explore the Celo blockchain using a command-line interface._
 
+![header](../../src/data-tutorials/showcase/beginner/celo-cli-a-practical-guide-to-energize-your-celo-toolkit.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into bite-sized pieces to help you learn and apply your new skills in the real world.

@@ -14,6 +14,8 @@ import YouTube from '@components/YouTube';
 
 _Step-by-step guide to create a new custom dApp using the Celo Composer._
 
+![header](../../src/data-tutorials/showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png)
+
 ## Hello Developers 🌱
 
 Welcome to today’s post, where we’ll break down a blockchain topic into byte-sized pieces to help you learn and apply your new skills in the real world.

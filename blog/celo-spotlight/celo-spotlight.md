@@ -12,9 +12,9 @@ import YouTube from '@components/YouTube';
 
 # Celo Spotlight: Building a Financial System that Creates the Conditions for Prosperity - for Everyone.
 
-## Everything you need to get started with Celo.
+_Everything you need to get started with Celo._
 
-![hero-image](images/1.png)
+![header](../../src/data-tutorials/showcase/beginner/celo-spotlight-everything-you-need-to-get-started-with-celo.png)
 
 ## Hello Developers 🌱
 

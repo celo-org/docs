@@ -8,6 +8,8 @@ image: https://dl.airtable.com/.attachmentThumbnails/22e935b11333f80ed706c943717
 hide_table_of_contents: false
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/verifying-contracts-with-hardhat.png)
+
 Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains. Hardhat is a great tool for developing smart contracts for Celo--you can find more information about this in the Celo documentation [here](/developer-resources/deploy-hardhat).
 
 In this tutorial I will go over how to use the [hardhat-deploy plugin](https://github.com/wighawag/hardhat-deploy) for hardhat, specifically to verify deployed contracts on the [Celo block explorer](https://explorer.celo.org/) via [Sourcify](https://sourcify.dev/). You can verify contracts with the plugin whether you deployed them using the plugin or not.
@@ -41,7 +43,7 @@ npm install -D hardhat-deploy
 Import the plugin in your `hardhat.config.js` file.
 
 ```js
-require('hardhat-deploy');
+require("hardhat-deploy");
 ```
 
 Since `hardhat-deploy-ethers` is a fork of `@nomiclabs/hardhat-ethers` and that other plugin might have an hardcoded dependency on `@nomiclabs/hardhat-ethers` the best way to install `hardhat-deploy-ethers` and ensure compatibility is the following:
@@ -68,7 +70,7 @@ module.exports = {
 ...
 ```
 
-You can see my source file [here](https://github.com/critesjosh/celo-hardhat/blob/085cf7bc304ec3b0924de1419fe32e37b57e7185/hardhat.config.js#L23).  
+You can see my source file [here](https://github.com/critesjosh/celo-hardhat/blob/085cf7bc304ec3b0924de1419fe32e37b57e7185/hardhat.config.js#L23).
 
 ### Deploy
 
@@ -78,16 +80,16 @@ Deployment scripts used by `hardhat-deploy` live in a folder called `deploy` in 
 
 ```js
 // deploy/00_deploy_my_contract.js
-module.exports = async ({getNamedAccounts, deployments}) => {
-   const {deploy} = deployments;
-   const {deployer} = await getNamedAccounts();
-   await deploy('Greeter', {
-     from: deployer,
-     args: ["hello world"],
-     log: true,
-   });
- };
- module.exports.tags = ['Greeter'];
+module.exports = async ({ getNamedAccounts, deployments }) => {
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
+  await deploy("Greeter", {
+    from: deployer,
+    args: ["hello world"],
+    log: true,
+  });
+};
+module.exports.tags = ["Greeter"];
 ```
 
 It is a simple function that takes the `namedAccounts`, configuration info and the contract constructor arguments and deploys the contract. You can read more about deploy scripts [here](https://github.com/wighawag/hardhat-deploy#deploy-scripts).
@@ -126,4 +128,4 @@ You can check the verification on the block explorer, [https://alfajores-blocksc
 
 I hope this is helpful and feel free to [join the Celo Discord](https://chat.celo.org) server and reach out if you have any questions. My handle is joshc#0001.
 
-You can view my hardhat-deploy repository for reference on GitHub here: [https://github.com/critesjosh/celo-hardhat/tree/hardhat-deploy](https://github.com/critesjosh/celo-hardhat/tree/hardhat-deploy )
+You can view my hardhat-deploy repository for reference on GitHub here: [https://github.com/critesjosh/celo-hardhat/tree/hardhat-deploy](https://github.com/critesjosh/celo-hardhat/tree/hardhat-deploy)

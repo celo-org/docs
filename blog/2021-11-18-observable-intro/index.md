@@ -8,6 +8,8 @@ image: https://dl.airtable.com/.attachmentThumbnails/7d8f17f343965c3ed93eafadc81
 hide_table_of_contents: false
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/demos-with-observable-hq.png)
+
 ## What is Observable?
 
 [Observable HQ](https://observablehq.com/) is a Javascript notebook tool that makes it easy to share executable Javascript code right in the browser. This greatly reduces the friction around introducing and educating people about tools or features. Observable is designed primarily as a data visualization tool, but I have found it to be helpful for explaining and demonstrating concepts and behaviors for web3 as well.

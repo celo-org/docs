@@ -12,6 +12,8 @@ image: https://dl.airtable.com/.attachmentThumbnails/a7e530eb72ac8f30f37c0a3447e
 hide_table_of_contents: false
 ---
 
+![header](../src/data-tutorials/showcase/beginner/code-playground-metamask-and-celo.png)
+
 Let's see how we can interact with Metamask from the code playground. We can connect to Metamask, switch networks, add tokens to the Metamask asset list and send them to other accounts.
 
 This post uses a live code editor. Check out [this post](2021-11-15-code-playground.md) to learn more about how it works.
