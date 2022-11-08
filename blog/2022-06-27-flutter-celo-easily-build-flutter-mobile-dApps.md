@@ -13,7 +13,9 @@ slug: /tutorials/flutter-celo-easily-build-flutter-mobile-dApps
 
 # Flutter & Celo: Easily build Flutter Mobile dApps
 
-## Celo Composer now supports Flutter 🎉. Quickly develop mobile apps on Celo
+Celo Composer now supports Flutter 🎉. Quickly develop mobile apps on Celo
+
+![header](../src/data-tutorials/showcase/intermediate/flutter-and-celo-easily-build-flutter-mobile-dapps.png)
 
 ### Introduction
 

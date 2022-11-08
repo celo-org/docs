@@ -12,11 +12,11 @@ hide_table_of_contents: true
 
 # Composer Series: Build a Crowdfunding ReFi dApp with Celo Composer
 
-## How to quickly create and deploy a full-stack crowdfunding dApp on Celo.
+How to quickly create and deploy a full-stack crowdfunding dApp on Celo.
 
 ---
 
-![hero-image](https://cdn-images-1.medium.com/max/800/1*g1xWZEG5ehWEXfuNEqYQVQ.jpeg)
+![header](../src/data-tutorials/showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png)
 
 Gm. 😎
 
@@ -59,7 +59,7 @@ In this article, we are building a crowdfunding DeFi application. This is in lin
 
 ![complete-image2](https://miro.medium.com/max/720/0*EchvtClmwGgRLPVu)
 
-You can find the complete project on [Github](https://github.com/Ernesto-tha-great/celo-crowdfunding), follow the commands in the `README.md ` file.
+You can find the complete project on [Github](https://github.com/Ernesto-tha-great/celo-crowdfunding), follow the commands in the `README.md` file.
 
 Let's get building!
 
@@ -83,7 +83,7 @@ Refer to this [comprehensive guide](https://developers.celo.org/build-celo-dapps
 
 ### Step 1: Create your smart contract
 
-- Navigate to `packages/hardhat/contracts/` and create a new file called `CrowdFund.sol `.
+- Navigate to `packages/hardhat/contracts/` and create a new file called `CrowdFund.sol`.
 
 - Copy the code here and paste it into the `CrowdFund.sol` file
 
@@ -133,7 +133,7 @@ module.exports.tags = ["CrowdFund"];
 
 Now you are done with the smart contract and it's time to deploy it. You can deploy your smart contract and it will be visible on the [Celo block explorer](https://explorer.celo.org/alfajores/)
 
-Open your terminal and run `yarn deploy` from within the `packages/hardhat `folder.
+Open your terminal and run `yarn deploy` from within the `packages/hardhat`folder.
 
 ```
 yarn deploy
@@ -184,7 +184,7 @@ Now, navigate to the layout/AppLayout which is nested in the components folder a
 
 ![applayout](https://cdn-images-1.medium.com/max/800/0*x1LMqPzHyaUzT0JA)
 
-The above should be what your `AppLayout.tsx` file will look like. Similarly, for the `layout/Header.tsx `file, delete everything and paste in this [code](https://gist.github.com/Ernesto-tha-great/e86e907206e3e294d68dda9f30235002). Your `Header.tsx `component should now look like this.
+The above should be what your `AppLayout.tsx` file will look like. Similarly, for the `layout/Header.tsx`file, delete everything and paste in this [code](https://gist.github.com/Ernesto-tha-great/e86e907206e3e294d68dda9f30235002). Your `Header.tsx`component should now look like this.
 
 ![applayout](https://cdn-images-1.medium.com/max/800/1*RyR4JI_cK0St0kXoyy9pCg.png)
 
@@ -242,7 +242,7 @@ await contract.methods.startProject(stableTokenAddress, title, desc, img, durati
 
 ```
 
-This functions interacts with your smart contract by calling it methods, which are functions declared in your smart contract. `kit` and `address` are obtained from the `useCelo()` function and makes easy, the task of getting your `stableTokenAddress`, `gasPrice `and your `address`. Your address is gotten when you login with your metamask wallet. This is done in the `components/layout/Header.tsx` component.
+This functions interacts with your smart contract by calling it methods, which are functions declared in your smart contract. `kit` and `address` are obtained from the `useCelo()` function and makes easy, the task of getting your `stableTokenAddress`, `gasPrice`and your `address`. Your address is gotten when you login with your metamask wallet. This is done in the `components/layout/Header.tsx` component.
 
 For reference, this is the code block that fetches your wallet address and logs you into the application.
 
@@ -292,11 +292,11 @@ setResults(data2)
 
 ```
 
-The `fetchProjects` function nested in the `useEffect` hook interacts with two contracts. The `CrowdFund.sol` to call the `returnProjects() `function to return the address of all created projects and then loop through these addresses to create a new instance of projectContract by passing the `deployedContracts.abi ` which is the `Project.sol `abi and `result[i]` which is the address of the projects created.
+The `fetchProjects` function nested in the `useEffect` hook interacts with two contracts. The `CrowdFund.sol` to call the `returnProjects()`function to return the address of all created projects and then loop through these addresses to create a new instance of projectContract by passing the `deployedContracts.abi` which is the `Project.sol`abi and `result[i]` which is the address of the projects created.
 
 **_ Note:_** Only the `CrowdFund.sol` was deployed. The `Project.sol` contract was not deployed. A new instance of the Project contract is created each time we want to interact with the contract methods.
 
-After creating an instance of the contract, we call the `await projectContract.methods.getDetails()` which is a function in the `Project.sol `contract for returning the details of each created project.
+After creating an instance of the contract, we call the `await projectContract.methods.getDetails()` which is a function in the `Project.sol`contract for returning the details of each created project.
 
 ---
 

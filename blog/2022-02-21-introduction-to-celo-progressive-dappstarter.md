@@ -12,6 +12,8 @@ import YouTube from '@components/YouTube';
 
 Quickly develop full-stack progressive web applications on the Celo blockchain.
 
+![header](../src/data-tutorials/showcase/beginner/introduction-to-celo-composer.png)
+
 <!--truncate-->
 
 ---

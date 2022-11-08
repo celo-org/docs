@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 # Composer Series - Building a Staking Defi App with Celo Composer and React
 
-![hero-image](https://miro.medium.com/max/4800/1*XGZ0aaQxP6ZIq8RhyyZ1nQ.png)
+![header](../src/data-tutorials/showcase/intermediate/celo-composer-building-a-staking-defi-dapp.png)
 
 **Hello there!! 🙋🏾‍♂️**
 

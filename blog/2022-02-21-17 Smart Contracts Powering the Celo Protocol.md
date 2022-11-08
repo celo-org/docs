@@ -11,6 +11,8 @@ hide_table_of_contents: true
 
 Making sense of the logic driving the Celo platform.
 
+![header](../src/data-tutorials/showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png)
+
 [View the full post ↗️](https://medium.com/celodevelopers/17-powerful-celo-protocol-core-contracts-you-need-to-know-d84c1fbc5a6)
 
 <!--truncate-->

@@ -12,7 +12,7 @@ slug: /tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo
 
 ## Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.
 
-![hero-image](https://user-images.githubusercontent.com/38040789/195801087-9b68f263-2e49-454e-a378-80eb96cfa6f8.png)
+![header](../src/data-tutorials/showcase/intermediate/easily-build-react-native-dapps-on-celo.png)
 
 [**Celo Composer**](https://github.com/celo-org/celo-composer) is a set of templates created by Celo to reduce time-to-first-output for developers building dApps in the Celo Ecosystem. The objective is to improve the developer experience. The template is set up to work right out of the box, but also make customization as easy as possible.
 
