@@ -17,6 +17,8 @@ slug: /tutorials/how-to-create-an-upgradeable-smart-contract-in-celo
 
 Usually, when we deploy a smart contract, it’s impossible to update or change the code since it’s on-chain, and that’s how it should be. This increases the safety and trust of users who interact with that contact.
 
+![header](../src/data-tutorials/showcase/advanced/how-to-create-an-upgradable-smart-contract-on-celo.png)
+
 <!--truncate-->
 
 But there might be cases where you want to upgrade your smart contract, like fixing severe bugs and adding some critical features for the users. Traditionally doing this is not possible. The best one can deploy is a new smart contract with bug fixes with all the information migrated. This does not end here; one must update the references where the old contract address was used and inform existing users to use the new contract.

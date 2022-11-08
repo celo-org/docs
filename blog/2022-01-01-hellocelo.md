@@ -16,6 +16,8 @@ hide_table_of_contents: false
 
 How to connect to the Celo test network and tranfer tokens using ContractKit.
 
+![header](../src/data-tutorials/showcase/intermediate/sending-celo-and-stable-assets.png)
+
 <!--truncate-->
 
 ## Hello Celo: sending value with Celo

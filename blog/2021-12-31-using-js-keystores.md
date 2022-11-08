@@ -16,6 +16,8 @@ hide_table_of_contents: false
 
 Introduction to the keystores library and how to use it for local key management.
 
+![header](../src/data-tutorials/showcase/advanced/using-keystores-library-for-local-key-management.png)
+
 <!--truncate-->
 
 ## Getting Started

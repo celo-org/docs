@@ -2,7 +2,7 @@
 title: How to create a Loyalty Program using Meta-transactions
 description: This tutorial will show you how you can reward users for transactions and also pay gas on behalf of them.
 authors:
-    - name: ✍️ Harpal Jadeja
+  - name: ✍️ Harpal Jadeja
 tags: [meta-transactions]
 hide_table_of_contents: true
 ---
@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 ## What if users could get rewarded for transactions and not pay gas? This tutorial will show you how!
 
-![hero-image](https://miro.medium.com/max/1400/1*afvjAg5CAAQVGbicWaZs7g.jpeg)
+![header](../src/data-tutorials/showcase/advanced/how-to-create-a-loyalty-program-using-meta-transactions.png)
 
 How cool would it be if the users of your dApp did not need need to pay gas for transactions? What if they received rewards instead?
 
@@ -25,13 +25,13 @@ MASS-ADOOOOOOOOOPTION!
 
 In this tutorial, you will learn how to create dApps that support Meta-transactions and how to implement a Loyalty program to reward users. I will cover:
 
--   ✅ [What are Meta-Transactions?](#what-are-meta-transactions)
--   ✅ [Why do we need ERC20Permit?](#why-do-we-need-erc20permit)
--   ✅ [Setting up the Project](#setting-up-the-project)
--   ✅ [Implementing the ERC20Permit type Token](#implementing-the-erc20permit-type-token)
--   ✅ [Implementing the LoyaltyReward Token](#implementing-the-loyaltyreward-token)
--   ✅ [Implementing the LoyaltyProgram Contract](#implementing-the-loyaltyprogram-contract)
--   ✅ [Testing Contracts](#testing-contracts)
+- ✅ [What are Meta-Transactions?](#what-are-meta-transactions)
+- ✅ [Why do we need ERC20Permit?](#why-do-we-need-erc20permit)
+- ✅ [Setting up the Project](#setting-up-the-project)
+- ✅ [Implementing the ERC20Permit type Token](#implementing-the-erc20permit-type-token)
+- ✅ [Implementing the LoyaltyReward Token](#implementing-the-loyaltyreward-token)
+- ✅ [Implementing the LoyaltyProgram Contract](#implementing-the-loyaltyprogram-contract)
+- ✅ [Testing Contracts](#testing-contracts)
 
 ---
 
@@ -99,8 +99,8 @@ At this point, you have all the information you need to implement the Loyalty pr
 
 All the code you are about to write is available [here](https://github.com/therealharpaljadeja/meta-transactions-loyalty-program) for reference.
 
--   Create a folder for your project and open a terminal on the same path
--   Execute the command given below in order to get a project starter template
+- Create a folder for your project and open a terminal on the same path
+- Execute the command given below in order to get a project starter template
 
 ```bash
 npx hardhat init
@@ -110,9 +110,9 @@ You should get the following output:
 
 ![hardhat-init-terminal-output](https://miro.medium.com/max/1400/1*hySUd0utdI1f_O8ClwxwIA.png)
 
--   For this tutorial, select **Create a Javascript project**
--   You might be asked to install additional dependencies if yes then type `Y` and hit `Enter`
--   Once it completes, you should have a project structure like this (excluding the node_modules folder)
+- For this tutorial, select **Create a Javascript project**
+- You might be asked to install additional dependencies if yes then type `Y` and hit `Enter`
+- Once it completes, you should have a project structure like this (excluding the node_modules folder)
 
 ![init-project-file-structure](https://miro.medium.com/max/1400/1*I5LrkiGvozs9IdNOSc5ZSg.png)
 
@@ -168,8 +168,8 @@ Why?
 
 Specifying the contract address allows only the specified contract address to verify the signature provided.
 
--   The `chainid` is extremely important. We don’t want a contract with the same contract address on another chain to be able to verify the signature, thus performing actions on other chains.
--   The `version` is used in case your contract is upgradeable. You can specify which version of your contract the signature is meant to be verifiable.
+- The `chainid` is extremely important. We don’t want a contract with the same contract address on another chain to be able to verify the signature, thus performing actions on other chains.
+- The `version` is used in case your contract is upgradeable. You can specify which version of your contract the signature is meant to be verifiable.
 
 All of this is to prevent re-use and replay of the signature provided by the payer to the vendor.
 
@@ -189,12 +189,12 @@ https://github.com/celo-org/DevRel/blob/main/education/06-loyalty-program-using-
 
 LoyaltyToken is a standard ERC20 token with the additional functionality of rewarding users.
 
--   First, you have the constructor, we are calling it the `ERC20` constructor, and passing in the `name` and `symbol`
--   Inside the constructor, you assign the `msg.sender` as the `loyaltyProgram` address so we can keep track of it
--   Next, you have a `modifier onlyProgram` that let’s us mark functions that can only be called by our `loyaltyProgram` address. We don’t want anyone to call `rewardUser` and reward themselves 😅
--   `function rewardUser` is fairly simple, just `mint` the provided `amount` of tokens to the `user` and `emit` an event called `Rewarded` for off-chain services on your frontend. Notice, the reward ratio is 10% of the payment amount.
--   The function is marked `external` making it available to be called by anyone but will only execute when called by `loyaltyProgram` because we have a modifier `onlyProgram` applied to it.
--   Lastly, we define the `Rewarded` event on what is to be `indexed`
+- First, you have the constructor, we are calling it the `ERC20` constructor, and passing in the `name` and `symbol`
+- Inside the constructor, you assign the `msg.sender` as the `loyaltyProgram` address so we can keep track of it
+- Next, you have a `modifier onlyProgram` that let’s us mark functions that can only be called by our `loyaltyProgram` address. We don’t want anyone to call `rewardUser` and reward themselves 😅
+- `function rewardUser` is fairly simple, just `mint` the provided `amount` of tokens to the `user` and `emit` an event called `Rewarded` for off-chain services on your frontend. Notice, the reward ratio is 10% of the payment amount.
+- The function is marked `external` making it available to be called by anyone but will only execute when called by `loyaltyProgram` because we have a modifier `onlyProgram` applied to it.
+- Lastly, we define the `Rewarded` event on what is to be `indexed`
 
 That’s it for the `loyalty` token.
 
@@ -210,28 +210,28 @@ Following is the code for the `LoyaltyProgram.sol` contract,
 https://github.com/celo-org/DevRel/blob/main/education/06-loyalty-program-using-meta-transactions/LoyaltyProgram.sol
 ```
 
--   First, you have 2 variables `loyaltyToken` & `token` keeping track of the token that acts as a reward and the one that acts as a payment token.
-    -You have a `mapping` called `isVendorRegistered`, which keeps track of addresses that are registered vendors who can receive payment via this contract and also relay transactions for their respective payers.
--   In the constructor, you are deploying the `loyaltyToken` making this contract able to call `rewardUser` on the `loyaltyToken`. The constructor also takes in token address which acts as the payment token.
--   `function registerVendor()` lets any address register themselves as a vendor on the `loyaltyProgram` in order to receive payment and able to relay transactions. It checks if the vendor is already registered and if they are not, it reverts.
--   `function payViaSignature()` this is the main function that does most of the work. This function takes in the `payer`, `amount`, `deadline`, `v`, `r` & `s`
+- First, you have 2 variables `loyaltyToken` & `token` keeping track of the token that acts as a reward and the one that acts as a payment token.
+  -You have a `mapping` called `isVendorRegistered`, which keeps track of addresses that are registered vendors who can receive payment via this contract and also relay transactions for their respective payers.
+- In the constructor, you are deploying the `loyaltyToken` making this contract able to call `rewardUser` on the `loyaltyToken`. The constructor also takes in token address which acts as the payment token.
+- `function registerVendor()` lets any address register themselves as a vendor on the `loyaltyProgram` in order to receive payment and able to relay transactions. It checks if the vendor is already registered and if they are not, it reverts.
+- `function payViaSignature()` this is the main function that does most of the work. This function takes in the `payer`, `amount`, `deadline`, `v`, `r` & `s`
 
 Let’s go one-by-one:
 
--   `payer` — The address of the user who is going to make a payment
--   `amount` — The amount to be transferred to the vendor in this payment
--   `deadline` — This signature can be configured to expire after a particular deadline and becomes useless
--   `v` — A recovery factor, this is related to elliptic curves where the point can lie either on +ve y-axis or -ve y-axis this `v` factor helps pick the right one
--   `r`,`s` — These 2 factors are used to recover the public address who signed the signature
+- `payer` — The address of the user who is going to make a payment
+- `amount` — The amount to be transferred to the vendor in this payment
+- `deadline` — This signature can be configured to expire after a particular deadline and becomes useless
+- `v` — A recovery factor, this is related to elliptic curves where the point can lie either on +ve y-axis or -ve y-axis this `v` factor helps pick the right one
+- `r`,`s` — These 2 factors are used to recover the public address who signed the signature
 
 > You can read more about v, r & s [here](https://medium.com/mycrypto/the-magic-of-digital-signatures-on-ethereum-98fe184dc9c7)
 
 In the first line of the function, you check whether the sender of the transaction is a registered `vendor` or not. Remember the `vendor` is the transaction sender since it is a meta-transaction. If the sender is not registered, it reverts.
 
--   The function then calls `permit` on the payment token so as to get the approval to transfer token on behalf of `payer` to the `vendor`
--   The next line transfers the token from `payer` to `vendor`
--   Once the transfer is complete, we now reward the user by calling `rewardUser` on `loyaltyToken` this is being called in the context of `loyaltyProgram` so it is allowed.
--   Lastly, you emit `Transaction` and `Rewarded` events to indicate successful transfer and reward delivery for off-chain applications and frontends.
+- The function then calls `permit` on the payment token so as to get the approval to transfer token on behalf of `payer` to the `vendor`
+- The next line transfers the token from `payer` to `vendor`
+- Once the transfer is complete, we now reward the user by calling `rewardUser` on `loyaltyToken` this is being called in the context of `loyaltyProgram` so it is allowed.
+- Lastly, you emit `Transaction` and `Rewarded` events to indicate successful transfer and reward delivery for off-chain applications and frontends.
 
 **Why specify payer, amount & deadline?**
 
@@ -276,15 +276,15 @@ That’s everything it takes to implement a basic Loyalty Program! If you’d li
 
 _Here are some ideas you can take and perform on the Loyalty program._
 
--   Implement it in a way that you are able to modify the reward percentage
--   Implement a pausing mechanism where the program organizer can suspend the reward program (for a certain period of time or completely)
--   The current implementation supports only one single payment token, try implementing it in a way that it supports more ERC20Permit compliant tokens as payment
+- Implement it in a way that you are able to modify the reward percentage
+- Implement a pausing mechanism where the program organizer can suspend the reward program (for a certain period of time or completely)
+- The current implementation supports only one single payment token, try implementing it in a way that it supports more ERC20Permit compliant tokens as payment
 
 References
 
--   [EIP712 Implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/draft-EIP712.sol)
--   [ERC20 Implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
--   [ERC20 Permit](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/draft-ERC20Permit.sol)
+- [EIP712 Implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/draft-EIP712.sol)
+- [ERC20 Implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
+- [ERC20 Permit](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/draft-ERC20Permit.sol)
 
 #### Contact
 

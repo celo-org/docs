@@ -15,6 +15,8 @@ import PageRef from '@components/PageRef';
 
 Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.
 
+![header](../src/data-tutorials/showcase/intermediate/use-on-chain-randomness.png)
+
 <!--truncate-->
 
 <PageRef url="/protocol/randomness" pageName="Randomness" />

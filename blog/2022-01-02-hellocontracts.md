@@ -16,6 +16,8 @@ hide_table_of_contents: false
 
 How to deploy your own smart contracts onto a Celo local node.
 
+![header](../src/data-tutorials/showcase/intermediate/deploy-a-contract-on-celo-local-node.png)
+
 <!--truncate-->
 
 :::tip
@@ -71,7 +73,7 @@ Let's create a migration to deploy the contract. For that, we need to create a f
 ```javascript
 var HelloWorld = artifacts.require("HelloWorld");
 
-module.exports = function (deployer) {
+module.exports = function(deployer) {
   deployer.deploy(HelloWorld);
 };
 ```

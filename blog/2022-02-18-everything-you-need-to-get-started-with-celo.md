@@ -11,6 +11,8 @@ hide_table_of_contents: true
 
 Everything you need to get started with Celo.
 
+![header](../src/data-tutorials/showcase/beginner/celo-spotlight-everything-you-need-to-get-started-with-celo.png)
+
 [View the full post ↗️](https://medium.com/celodevelopers/celo-spotlight-build-a-financial-system-that-creates-the-conditions-for-prosperity-for-everyone-7b1830efc254)
 
 <!--truncate-->

@@ -15,6 +15,8 @@ slug: tutorials/building-a-decentralized-newsfeed-with-celo-composer
 
 **Hello, friends! 🙋🏾‍♂️ **
 
+![header](../src/data-tutorials/showcase/intermediate/celo-composer-building-a-staking-defi-dapp.png)
+
 ### Stacks
 
 ** What is the conventional wisdom for getting involved in web3? ** Something involving solidity.
