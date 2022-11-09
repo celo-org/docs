@@ -37,7 +37,7 @@ const TITLE = translate({message: 'Celo Documentation'});
 const DESCRIPTION = translate({
   message: 'Build decentralized applications that create the conditions for prosperity — for everyone.',
 });
-const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data/users.tsx';
+const EDIT_URL = 'general';
 
 type UserState = {
   scrollTopPosition: number;
@@ -126,10 +126,11 @@ function ShowcaseHeader() {
       <a
         className="button button--primary"
         href={EDIT_URL}
-        target="_blank"
-        rel="noreferrer">
-        <Translate id="showcase.header.button">
-          🙏 Please add your site
+        // target="_blank"
+        // rel="noreferrer"
+        >
+        <Translate>
+          🚀 Get started with Celo
         </Translate>
       </a>
     </section>
