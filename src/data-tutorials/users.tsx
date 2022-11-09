@@ -720,6 +720,13 @@ const Users: User[] = [
     tags: ['beginner','favorite','celosage'],
   },
   {
+    title: 'Example Tutorial',
+    description: 'Example branch to show tutorial submission process.',
+    preview: require('./showcase/beginner/example-tutorial.png'),
+    website: 'blog/tutorials/introducing-celo-sage',
+    tags: ['beginner','favorite'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
