@@ -1079,8 +1079,13 @@ module.exports = {
         // },
         { to: "showcase", label: "Showcase", position: "left" },
         {
-          to: "/Tutorials",
+          to: "/tutorials",
           label: "Tutorials",
+          position: "left",
+        },
+        {
+          to: "/home",
+          label: "Home",
           position: "left",
         },
         // {

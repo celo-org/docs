@@ -20,7 +20,7 @@ import {
   TagList,
   type User,
   type TagType,
-} from '@site/src/data/users';
+} from '@site/src/data-home/users';
 import ShowcaseTagSelect, {
   readSearchTags,
 } from './_components/ShowcaseTagSelect';
@@ -33,9 +33,9 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'Celo Ecosystem Showcase'});
+const TITLE = translate({message: 'Celo Documentation'});
 const DESCRIPTION = translate({
-  message: 'List of decentralized applications and tools in the Celo ecosystem.',
+  message: 'Build and deploy dApps that create the conditions for prosperity — for everyone.',
 });
 const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data/users.tsx';
 
@@ -210,6 +210,9 @@ function ShowcaseFilters() {
 const favoriteUsers = sortedUsers.filter((user) =>
   user.tags.includes('favorite'),
 );
+const developers = sortedUsers.filter((user) =>
+  user.tags.includes('developers'),
+);
 const otherUsers = sortedUsers.filter(
   (user) => !user.tags.includes('favorite'),
 );
@@ -284,7 +287,7 @@ function ShowcaseCards() {
                   </Translate>
                 </h2>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                <SearchBar />
+                {/* <SearchBar /> */}
               </div>
               <ul
                 className={clsx(
@@ -298,9 +301,67 @@ function ShowcaseCards() {
               </ul>
             </div>
           </div>
+          <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate id="showcase.favoritesList.title">
+                    Most Popular
+                  </Translate>
+                </h2>
+                {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
+                {/* <SearchBar /> */}
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {favoriteUsers.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Showcase Developers */}
+          <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate id="showcase.favoritesList.title">
+                    Developers
+                  </Translate>
+                </h2>
+                {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
+                {/* <SearchBar /> */}
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {developers.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          {/* End showcase developers */}
+
+          </div>
           <div className="container margin-top--lg">
             <h2 className={styles.showcaseHeader}>
-              <Translate id="showcase.usersList.allUsers">All tutorials</Translate>
+              <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </h2>
             <ul className={clsx('clean-list', styles.showcaseList)}>
               {otherUsers.map((user) => (
@@ -334,7 +395,7 @@ export default function Showcase(): JSX.Element {
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
         <ShowcaseHeader />
-        <ShowcaseFilters />
+        {/* <ShowcaseFilters /> */}
         <ShowcaseCards />
       </main>
     </Layout>
