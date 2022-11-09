@@ -52,7 +52,12 @@ export type Tag = {
   color: string;
 };
 
-export type TagType = "popular" | "favorite" | "developers";
+export type TagType =
+  | "popular"
+  | "favorite"
+  | "developers"
+  | "integrations"
+  | "validators";
 
 export type User = {
   title: string;
@@ -70,7 +75,7 @@ export type User = {
 export const Tags: { [type in TagType]: Tag } = {
   // DO NOT USE THIS TAG: we choose sites to add to appss
   popular: {
-    label: translate({ message: "Popular" }),
+    label: translate({ message: "Favorite" }),
     description: translate({
       message: "",
       id: "showcase.tag.popular.description",
@@ -93,45 +98,174 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#35D07F",
   },
+  integrations: {
+    label: translate({ message: "Integrations" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.integrations.description",
+    }),
+    color: "#35D07F",
+  },
+  validators: {
+    label: translate({ message: "Validators" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.validators.description",
+    }),
+    color: "#35D07F",
+  },
 };
 
 // Add your site to this list
 // prettier-ignore
 const Users: User[] = [
+
+  // Get Started with Celo
   {
-    title: '1. Beginner Tutorials',
-    description: 'Curated list of beginner Celo developer tutorials.',
-    preview: require('./showcase/beginner/beginner-tutorials.png'),
-    website: '/tutorials?tags=beginner',
+    title: ' Developers',
+    description: 'Build, deploy, and manage applications on the Celo blockchain.',
+    preview: require('./showcase/favorites/developers.png'),
+    website: '/developer',
     tags: ['favorite'],
   },
   {
-    title: '2. Intermediate Tutorials',
-    description: 'Curated list of intermediate Celo developer tutorials.',
-    preview: require('./showcase/intermediate/intermediate-tutorials.png'),
-    website: '/tutorials?tags=intermediate',
+    title: ' Validators',
+    description: 'Secure the network by staking Celo and operating a node to validate on Celo.',
+    preview: require('./showcase/favorites/validators.png'),
+    website: '/validator',
     tags: ['favorite'],
   },
   {
-    title: '3. Advanced Tutorials',
-    description: 'Curated list of advanced Celo developer tutorials.',
-    preview: require('./showcase/advanced/advanced-tutorials.png'),
-    website: '/tutorials?tags=advanced',
+    title: ' Integrations',
+    description: 'Integrate an application, tool, wallet, and oracle with Celo.',
+    preview: require('./showcase/favorites/integrations.png'),
+    website: '/integration',
     tags: ['favorite'],
   },
   {
-    title: 'Celo Sage',
-    description: 'Get started with Celo in 5 minutes or less.',
-    preview: require('./showcase/celo-sage.png'),
-    website: '/tutorials?tags=advanced',
+    title: 'Tutorials',
+    description: 'Learn Celo using our curated list of community tutorials.',
+    preview: require('./showcase/favorites/tutorials.png'),
+    website: '/tutorials',
     tags: ['favorite'],
   },
+
+  // Developers
   {
-    title: 'Developers',
-    description: 'Get started with Celo in 5 minutes or less.',
-    preview: require('./showcase/celo-sage.png'),
+    title: 'Celo Composer',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/developers/celo-composer.png'),
+    website: 'https://github.com/celo-org/celo-composer',
+    tags: ['developers'],
+  },
+  {
+    title: 'Local Environment',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/developers/local-environment.png'),
+    website: '/developer/setup/mac',
+    tags: ['developers'],
+  },
+  {
+    title: 'Deploy on Celo',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/developers/deploy-on-celo.png'),
+    website: '/developer/deploy',
+    tags: ['developers'],
+  },
+  {
+    title: 'Native SDKs',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/developers/native-sdks.png'),
     website: '/tutorials?tags=advanced',
     tags: ['developers'],
+  },
+
+    // Validators
+    {
+      title: 'Run a Validator',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preview: require('./showcase/validators/run-a-validator.png'),
+      website: '/tutorials?tags=advanced',
+      tags: ['validators'],
+    },
+    {
+      title: 'Nodes and Services',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preview: require('./showcase/validators/nodes-and-services.png'),
+      website: '/tutorials?tags=advanced',
+      tags: ['validators'],
+    },
+    {
+      title: 'Validator Tools',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preview: require('./showcase/validators/validator-tools.png'),
+      website: '/tutorials?tags=advanced',
+      tags: ['validators'],
+    },
+    {
+      title: 'Voting Policy',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preview: require('./showcase/validators/voting-policy.png'),
+      website: '/tutorials?tags=advanced',
+      tags: ['validators'],
+    },
+
+  // Integrations
+  {
+    title: 'Run a Full Node',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/run-a-full-node.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Deploy Smart Contracts',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/deploy-smart-contracts.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Network Details',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/network-details.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Integration Checklist',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/integration-checklist.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Bridges',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/bridges.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Oracles',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/oracles.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Listings',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/listings.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
+  },
+  {
+    title: 'Contract Addresses',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    preview: require('./showcase/integrations/contract-addresses.png'),
+    website: '/tutorials?tags=advanced',
+    tags: ['integrations'],
   },
   
   /*

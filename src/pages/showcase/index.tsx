@@ -280,7 +280,7 @@ function ShowcaseCards() {
                 )}>
                 <h2>
                   <Translate id="showcase.favoritesList.title">
-                    Most Popular
+                    Most popular
                   </Translate>
                 </h2>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />

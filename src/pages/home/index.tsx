@@ -35,7 +35,7 @@ import styles from './styles.module.css';
 
 const TITLE = translate({message: 'Celo Documentation'});
 const DESCRIPTION = translate({
-  message: 'Build and deploy dApps that create the conditions for prosperity — for everyone.',
+  message: 'Build decentralized applications that create the conditions for prosperity — for everyone.',
 });
 const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data/users.tsx';
 
@@ -213,9 +213,16 @@ const favoriteUsers = sortedUsers.filter((user) =>
 const developers = sortedUsers.filter((user) =>
   user.tags.includes('developers'),
 );
-const otherUsers = sortedUsers.filter(
-  (user) => !user.tags.includes('favorite'),
+const integrations = sortedUsers.filter((user) =>
+  user.tags.includes('integrations'),
 );
+const validators = sortedUsers.filter((user) =>
+  user.tags.includes('validators'),
+);
+
+// const otherUsers = sortedUsers.filter(
+//   (user) => !user.tags.includes('favorite'),
+// );
 
 function SearchBar() {
   const history = useHistory();
@@ -274,6 +281,7 @@ function ShowcaseCards() {
     <section className="margin-top--lg margin-bottom--xl">
       {filteredUsers.length === sortedUsers.length ? (
         <>
+        {/* Get Started with Celo */}
           <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
@@ -282,35 +290,8 @@ function ShowcaseCards() {
                   styles.showcaseFavoriteHeader,
                 )}>
                 <h2>
-                  <Translate id="showcase.favoritesList.title">
-                    Most Popular
-                  </Translate>
-                </h2>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                {/* <SearchBar /> */}
-              </div>
-              <ul
-                className={clsx(
-                  'container',
-                  'clean-list',
-                  styles.showcaseList,
-                )}>
-                {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.title} user={user} />
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className={styles.showcaseFavorite}>
-            <div className="container">
-              <div
-                className={clsx(
-                  'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
-                )}>
-                <h2>
-                  <Translate id="showcase.favoritesList.title">
-                    Most Popular
+                  <Translate>
+                    Get started with Celo
                   </Translate>
                 </h2>
                 {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
@@ -329,7 +310,7 @@ function ShowcaseCards() {
             </div>
           </div>
 
-          {/* Showcase Developers */}
+        {/* Developers */}
           <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
@@ -338,7 +319,7 @@ function ShowcaseCards() {
                   styles.showcaseFavoriteHeader,
                 )}>
                 <h2>
-                  <Translate id="showcase.favoritesList.title">
+                  <Translate>
                     Developers
                   </Translate>
                 </h2>
@@ -356,18 +337,76 @@ function ShowcaseCards() {
                 ))}
               </ul>
             </div>
-          {/* End showcase developers */}
-
           </div>
+          {/* Developers */}
+
+        {/* Integrations */}
+        <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate>
+                    Integrations
+                  </Translate>
+                </h2>
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {integrations.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        {/* Integrations */}
+
+        {/* Validators */}
+        <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate>
+                    Validators
+                  </Translate>
+                </h2>
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {validators.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Validators */}
+
+
+
           <div className="container margin-top--lg">
-            <h2 className={styles.showcaseHeader}>
+            {/* <h2 className={styles.showcaseHeader}>
               <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </h2>
             <ul className={clsx('clean-list', styles.showcaseList)}>
               {otherUsers.map((user) => (
                 <ShowcaseCard key={user.title} user={user} />
               ))}
-            </ul>
+            </ul> */}
           </div>
         </>
       ) : (
@@ -379,11 +418,11 @@ function ShowcaseCards() {
             )}>
             <SearchBar />
           </div>
-          <ul className={clsx('clean-list', styles.showcaseList)}>
+          {/* <ul className={clsx('clean-list', styles.showcaseList)}>
             {filteredUsers.map((user) => (
               <ShowcaseCard key={user.title} user={user} />
             ))}
-          </ul>
+          </ul> */}
         </div>
       )}
     </section>

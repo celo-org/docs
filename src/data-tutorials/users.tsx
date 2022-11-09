@@ -690,6 +690,13 @@ const Users: User[] = [
   //   tags: ['favorite'],
   // },
   {
+    title: ' Celo Composer',
+    description: 'Build on Celo in 5 minutes of less with Celo Composer.',
+    preview: require('./showcase/celo-composer.png'),
+    website: '/tutorials?tags=composer',
+    tags: ['favorite'],
+  },
+  {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
@@ -717,7 +724,7 @@ const Users: User[] = [
     description: 'Create. Earn. Grow. Providing opportunities for growth and development in the Celo Community.',
     preview: require('./showcase/celo-sage.png'),
     website: 'blog/tutorials/introducing-celo-sage',
-    tags: ['beginner','favorite','celosage'],
+    tags: ['beginner','celosage'],
   },
   {
     title: 'C# mobile App to display Celo NFTs',
