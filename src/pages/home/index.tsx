@@ -292,7 +292,7 @@ function ShowcaseCards() {
                 )}>
                 <h2>
                   <Translate>
-                    Get started with Celo
+                    Choose your role
                   </Translate>
                 </h2>
                 {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
