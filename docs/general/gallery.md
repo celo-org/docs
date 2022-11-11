@@ -328,3 +328,9 @@ inTheory is a DeSci funding platform that allows crypto users to fund, support, 
 
 - [Website](https://intheory.impact-finance.io/)
 - [GitHub](https://github.com/Impact-Finance/intheory-mobile-nft-mint-celo)
+
+### Escrow Wallet
+
+Blockchain wallet helping homeless people recover financially through monitored goals
+- [GitLab](https://gitlab.com/juancarrillodev/escrow-wallet)
+
