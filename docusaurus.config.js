@@ -1152,35 +1152,33 @@ module.exports = {
             { to: "cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-              label: "SDK",
+              label: "Celo SDK",
+            },
+            {
+              to: "/developer/react-celo",
+              label: "React-Celo",
+            },
+            {
+              to: "/developer/contractkit",
+              label: "ContractKit",
+            },
+            {
+              to: "/developer/rainbowkit-celo",
+              label: "Rainbowkit-Celo",
             },
             {
               to: "https://github.com/heymateag/celoiossdk",
-              label: "iOS",
+              label: "iOS SDK",
             },
             {
               to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java",
+              label: "Java SDK",
             },
-            {
-              to: "https://github.com/celo-org/react-celo",
-              label: "React",
-            },
-            { to: "https://docs.flutter.dev/", label: "Flutter" },
             {
               to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python",
+              label: "Python SDK",
             },
-            {
-              to:
-                "https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit",
-              label: "JavaScript",
-            },
-            {
-              to:
-                "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
-              label: "React Native",
-            },
+
             {
               label: "Celo Composer",
               to: "https://github.com/celo-org/celo-composer#celo-composer",

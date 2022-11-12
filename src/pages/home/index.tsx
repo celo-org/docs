@@ -292,7 +292,7 @@ function ShowcaseCards() {
                 )}>
                 <h2>
                   <Translate>
-                    Choose your role
+                    Getting started
                   </Translate>
                 </h2>
                 {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}

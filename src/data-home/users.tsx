@@ -176,7 +176,7 @@ const Users: User[] = [
     title: 'Native SDKs',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     preview: require('./showcase/developers/native-sdks.png'),
-    website: '/tutorials?tags=advanced',
+    website: '../developer/sdks/celo-sdks',
     tags: ['developers'],
   },
 

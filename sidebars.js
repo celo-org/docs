@@ -308,6 +308,11 @@ const sidebars = {
           items: [
             {
               type: "doc",
+              label: "Overview",
+              id: "developer/sdks/celo-sdks",
+            },
+            {
+              type: "doc",
               label: "contractkit",
               id: "developer/contractkit/index",
             },
@@ -1012,6 +1017,11 @@ const sidebars = {
             "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
         },
       ],
+    },
+    {
+      type: "doc",
+      label: "CLI",
+      id: "cli/index",
     },
   ],
 
