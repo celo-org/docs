@@ -256,6 +256,11 @@ const sidebars = {
           items: [
             {
               type: "doc",
+              label: "Overview",
+              id: "developer/setup/overview",
+            },
+            {
+              type: "doc",
               label: "Using Mac",
               id: "developer/setup/mac",
             },

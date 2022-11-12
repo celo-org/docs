@@ -35,7 +35,6 @@ Not ready to become a Celo Validator? [Learn more about Celo](/).
 
 - [Securing Celo Nodes and Services](/validator/security)
 - [Upgrading a Node](/validator/node-upgrade)
-
 - [Monitoring](/validator/monitoring)
 - [Running Proxies](/validator/proxy)
 

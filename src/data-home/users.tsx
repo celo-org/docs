@@ -159,10 +159,10 @@ const Users: User[] = [
     tags: ['developers'],
   },
   {
-    title: 'Local Environment',
+    title: 'Setup Environment',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    preview: require('./showcase/developers/local-environment.png'),
-    website: '/developer/setup/mac',
+    preview: require('./showcase/developers/setup-environment.png'),
+    website: '/developer/setup/overview',
     tags: ['developers'],
   },
   {
