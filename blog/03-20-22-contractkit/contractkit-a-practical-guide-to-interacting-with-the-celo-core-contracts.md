@@ -158,7 +158,7 @@ const Web3 = require("web3");
 
 ### Define web3
 
-Using `Web3` allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network ([Alfajores](https://docs.celo.org/getting-started/alfajores-testnet)) using a hosted node service named [Forno](https://docs.celo.org/developer-guide/forno).
+Using `Web3` allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network ([Alfajores](/network) using a hosted node service named [Forno](/network/node/forno).
 
 ```
 const web3 = new Web3(`https://alfajores-forno.celo-testnet.org`);

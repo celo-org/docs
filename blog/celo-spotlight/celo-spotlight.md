@@ -265,7 +265,7 @@ Make use of [Celo Dollars (cUSD)](https://coinmarketcap.com/currencies/celo-doll
 
 ### Get Test Funds
 
-Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](https://docs.celo.org/getting-started/alfajores-testnet). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://celo.org/developers/faucet).
+Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](/network). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://celo.org/developers/faucet).
 
 :::tip
 
