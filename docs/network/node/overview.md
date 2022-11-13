@@ -1,11 +1,11 @@
 ---
-title: Node as a Service
+title: Nodes and Services
 description: Nodes as a Service
 ---
 
-# Celo Nodes
+# Nodes and Services
 
-Run and connect to nodes in the Celo Ecosystem.
+Connect to nodes and services in the Celo Ecosystem.
 
 ---
 

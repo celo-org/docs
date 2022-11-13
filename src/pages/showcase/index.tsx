@@ -33,7 +33,7 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'Celo Ecosystem Showcase'});
+const TITLE = translate({message: 'Celo DApp Showcase'});
 const DESCRIPTION = translate({
   message: 'List of decentralized applications and tools in the Celo ecosystem.',
 });

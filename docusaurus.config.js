@@ -1147,7 +1147,7 @@ module.exports = {
         {
           type: "dropdown",
           position: "right",
-          label: "APIs & SDKs",
+          label: "Libraries & SDKs",
           items: [
             { to: "cli/", label: "CLI" },
             {
