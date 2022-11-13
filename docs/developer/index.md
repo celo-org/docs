@@ -28,7 +28,7 @@ Easily build Celo dApps with Celo Composer.
 - [Using Windows](/developer/setup/windows)
 - [Using Replit](/developer/setup/replit)
 
-## Deploy on Celo
+## Build on Celo
 
 - [Using Remix](/developer/deploy/remix)
 - [Using Truffle](/developer/deploy/truffle)

@@ -1077,7 +1077,7 @@ module.exports = {
         //   label: "Learn",
         //   position: "left",
         // },
-        { to: "showcase", label: "Showcase", position: "left" },
+        { to: "showcase", label: "DApps", position: "left" },
         {
           to: "/tutorials",
           label: "Tutorials",
@@ -1140,7 +1140,7 @@ module.exports = {
             },
             {
               to: "https://github.com/celo-org/docs/issues/new",
-              label: "Create an Issue",
+              label: "Leave Feedback",
             },
           ],
         },

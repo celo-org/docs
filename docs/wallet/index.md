@@ -1,13 +1,13 @@
 ---
-title: Digital Wallets for Celo
+title: Celo Wallets
 description: Overview of digital wallets available to send, spend, and earn Celo assets.
 ---
 
-# Digital Wallets for Celo
+# Celo Wallets
 
 Overview of digital wallets available to send, spend, and earn Celo assets.
 
-___
+---
 
 ## Choosing a Wallet
 

@@ -1,13 +1,13 @@
 ---
-title: Celo SDKs
-description: List of Celo SDKs
+title: Celo Libraries & SDKs
+description: List of Celo libraries & SDKs
 ---
 
 import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Celo SDKs
+# Celo Libraries & SDKs
 
 List of Celo SDKs.
 
