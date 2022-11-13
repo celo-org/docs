@@ -243,7 +243,7 @@ Make global peer-to-peer payments simple and accessible to anyone with Valora. I
 
 ### MetaMask
 
-Connect Celo to any EVM-compatible application with MetaMask. [Install MetaMask](https://metamask.io/download/), configure it to [work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo), and [import Valora](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/metamask-valora-import) (optional ) to start managing Celo assets.
+Connect Celo to any EVM-compatible application with MetaMask. [Install MetaMask](https://metamask.io/download/), configure it to [work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo), and [import Valora](/wallet/metamask/import) (optional) to start managing Celo assets.
 
 :::tip
 
@@ -315,7 +315,7 @@ Deploy a dApp on Celo using [Remix](https://docs.celo.org/developer-resources/de
 
 ### Accelerate your development
 
-Expand your toolkit with [Celo Progressive Dappstarter](https://github.com/celo-org/celo-progressive-dapp-starter), [ContractKit](https://docs.celo.org/developer-guide/contractkit), [use-contractkit](https://docs.celo.org/developer-resources/use-contractkit), [DAppKit](https://docs.celo.org/learn/walletconnect), [ethers.js wrapper](https://docs.celo.org/developer-resources/ethers-js-wrapper), [ganache-cli](https://github.com/celo-org/ganache-cli) and a growing collection of Celo tools built on the [Celo GitHub](https://github.com/celo-org).
+Expand your toolkit with [Celo Progressive Dappstarter](https://github.com/celo-org/celo-progressive-dapp-starter), [ContractKit](https://docs.celo.org/developer-guide/contractkit), [use-contractkit](https://docs.celo.org/developer-resources/use-contractkit), [ethers.js wrapper](https://docs.celo.org/developer-resources/ethers-js-wrapper), [ganache-cli](https://github.com/celo-org/ganache-cli) and a growing collection of Celo tools built on the [Celo GitHub](https://github.com/celo-org).
 
 :::info
 
