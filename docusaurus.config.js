@@ -8,7 +8,7 @@ const DefaultLocale = "en";
 module.exports = {
   title: "Celo Documentation",
   tagline: "Documentation for the Celo platform.",
-  url: "https://docs.celo.org",
+  url: "https://docs.celo.org/",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
@@ -1081,11 +1081,6 @@ module.exports = {
         {
           to: "/tutorials",
           label: "Tutorials",
-          position: "left",
-        },
-        {
-          to: "/home",
-          label: "Home",
           position: "left",
         },
         // {

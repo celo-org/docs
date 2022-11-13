@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Celo Libraries & SDKs
 
-List of Celo SDKs.
+List of Celo libraries & SDKs
 
 ---
 

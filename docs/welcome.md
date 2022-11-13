@@ -2,7 +2,7 @@
 title: Welcome to Celo
 description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 id: welcome
-slug: /
+# slug: /
 ---
 
 import YouTube from '@components/YouTube';
