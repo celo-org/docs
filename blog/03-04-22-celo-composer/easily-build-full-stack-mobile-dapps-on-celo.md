@@ -152,7 +152,7 @@ Check that your network is set to Celo (Alfajores Tesnet).
 
 :::tip
 
-MetaMask Setup: Learn more about setting up your Alfajores Testnet with MetaMask [here](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask)
+MetaMask Setup: Learn more about setting up your Alfajores Testnet with MetaMask [here](/wallet/metamask/setup#adding-a-celo-network-to-metamask)
 
 :::
 

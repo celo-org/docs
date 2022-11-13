@@ -121,7 +121,7 @@ One major roadblock in adopting cryptocurrency as money is its high price volati
 
 ### Identity Layer
 
-Public blockchains are permissionless by nature, making it difficult for some dapps that need to know about their users. Celo’s [Identity Protocol](https://docs.celo.org/celo-codebase/protocol/identity) allows users to associate their phone number with one or more addresses on celo Network helping them find each other easily.
+Public blockchains are permissionless by nature, making it difficult for some dapps that need to know about their users. Celo’s [Identity Protocol](/protocol/identity) allows users to associate their phone number with one or more addresses on celo Network helping them find each other easily.
 
 Socially-oriented DAOs, where the rule is 1 member = 1 vote can also leverage this functionality to know their user's individuality to some extent.
 

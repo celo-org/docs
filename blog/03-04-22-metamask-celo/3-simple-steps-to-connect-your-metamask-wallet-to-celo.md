@@ -120,12 +120,6 @@ Add the Celo **network details** to MetaMask (shown below)
 
 ![image](images/7.png)
 
-:::tip
-
-Learn more: If you’d like to connect to a test network you can find the network details [here](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup#adding-a-celo-network-to-metamask).
-
-:::
-
 - After adding Celo network details select Save
 - You can view the Celo network configuration from the MetaMask Networks screen
 

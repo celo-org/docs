@@ -592,7 +592,7 @@ Preparing upgrade to GreeterV4...
 
 ### Deploying all the contracts to Celo’s Alfajores Network
 
-First, we need to add Alfajores RPC details in hardhat.config.ts . Refer to this site for the latest RPC details — [https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup)
+First, we need to add Alfajores RPC details in hardhat.config.ts. Refer to this site for the latest RPC details — [/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo](/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo)
 
 ```json
 alfajores: {
