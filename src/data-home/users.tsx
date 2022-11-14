@@ -152,9 +152,9 @@ const Users: User[] = [
 
   // Developers
   {
-    title: ' Start Building',
+    title: ' Build with Celo',
     description: 'Build and deploy decentralized applications on Celo.',
-    preview: require('./showcase/developers/start-building.png'),
+    preview: require('./showcase/developers/build-with-celo.png'),
     website: '/developer/deploy',
     tags: ['developers'],
   },

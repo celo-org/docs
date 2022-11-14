@@ -15,7 +15,7 @@ Developers can build with Celo using many [Ethereum](https://ethereum.org/en/) c
 
 ## Using Celo Composer
 
-Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
+[Celo Composer](https://github.com/celo-org/celo-composer) allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
 
 ```jsx
 npx @celo/celo-composer create
