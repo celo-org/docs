@@ -28,6 +28,11 @@ const sidebars = {
       label: "Wallets",
       items: [
         {
+          type: "doc",
+          label: "Overview",
+          id: "wallet/index",
+        },
+        {
           type: "link",
           label: "Valora",
           href:
@@ -139,11 +144,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "Other Wallets",
-          id: "wallet/index",
-        },
-        {
           type: "link",
           label: "Staking",
           href:
@@ -164,13 +164,13 @@ const sidebars = {
           items: [
             {
               type: "doc",
-              label: "Forno",
-              id: "network/node/forno",
+              label: "Overview",
+              id: "network/node/overview",
             },
             {
               type: "doc",
-              label: "As a Service",
-              id: "network/node/as-a-service",
+              label: "Forno",
+              id: "network/node/forno",
             },
             {
               type: "category",
@@ -256,6 +256,11 @@ const sidebars = {
           items: [
             {
               type: "doc",
+              label: "Overview",
+              id: "developer/setup/overview",
+            },
+            {
+              type: "doc",
               label: "Using Mac",
               id: "developer/setup/mac",
             },
@@ -278,7 +283,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Deployment",
+          label: "Build",
           items: [
             {
               type: "doc",
@@ -304,8 +309,13 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Libraries",
+          label: "Libraries & SDKs",
           items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "developer/sdks/celo-sdks",
+            },
             {
               type: "doc",
               label: "contractkit",

@@ -8,7 +8,7 @@ const DefaultLocale = "en";
 module.exports = {
   title: "Celo Documentation",
   tagline: "Documentation for the Celo platform.",
-  url: "https://docs.celo.org",
+  url: "https://docs.celo.org/",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
@@ -1025,7 +1025,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 Want to improve the docs? give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">Suggest an Improvement</a> or create content as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -1077,9 +1077,9 @@ module.exports = {
         //   label: "Learn",
         //   position: "left",
         // },
-        { to: "showcase", label: "Showcase", position: "left" },
+        { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "/Tutorials",
+          to: "/tutorials",
           label: "Tutorials",
           position: "left",
         },
@@ -1135,47 +1135,45 @@ module.exports = {
             },
             {
               to: "https://github.com/celo-org/docs/issues/new",
-              label: "Create an Issue",
+              label: "Leave Feedback",
             },
           ],
         },
         {
           type: "dropdown",
           position: "right",
-          label: "APIs & SDKs",
+          label: "Libraries & SDKs",
           items: [
             { to: "cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-              label: "SDK",
+              label: "Celo SDK",
+            },
+            {
+              to: "/developer/react-celo",
+              label: "React-Celo",
+            },
+            {
+              to: "/developer/contractkit",
+              label: "ContractKit",
+            },
+            {
+              to: "/developer/rainbowkit-celo",
+              label: "Rainbowkit-Celo",
             },
             {
               to: "https://github.com/heymateag/celoiossdk",
-              label: "iOS",
+              label: "iOS SDK",
             },
             {
               to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java",
+              label: "Java SDK",
             },
-            {
-              to: "https://github.com/celo-org/react-celo",
-              label: "React",
-            },
-            { to: "https://docs.flutter.dev/", label: "Flutter" },
             {
               to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python",
+              label: "Python SDK",
             },
-            {
-              to:
-                "https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit",
-              label: "JavaScript",
-            },
-            {
-              to:
-                "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
-              label: "React Native",
-            },
+
             {
               label: "Celo Composer",
               to: "https://github.com/celo-org/celo-composer#celo-composer",

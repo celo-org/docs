@@ -1,27 +1,33 @@
 ---
 title: Deploy on Celo
-description: How to deploy a dApp on Celo.
+description: How to build and deploy a dApp on Celo.
 ---
 
 import PageRef from '@components/PageRef'
 
-# Deploy on Celo
+# Build with Celo
 
-How to deploy a dApp on Celo.
+How to build and deploy a dApp with Celo.
 
 ---
 
-The fastest way to deploy on Celo is to [Set up a Testnet Development Wallet](/developer/setup/wallet) and [Deploy with Remix](/developer/deploy/remix). This doesn’t require installing anything on your local device and gives you access to powerful web-based tools for dApp development. Alternatively, you can set up a local development environment and deploy using many popular dApp deployment tools.
+## Using Celo Composer
+
+[Celo Composer](https://github.com/celo-org/celo-composer) allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
+
+```jsx
+npx @celo/celo-composer create
+```
 
 :::tip
 
-Developers can build on Celo using many [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
-
-Just getting started learning about how to write smart contracts? [The Solidity docs](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html) are a great place to start.
+Learn more about Celo Composer in the [README](https://github.com/celo-org/celo-composer) and [Documentation](https://celo-composer.gitbook.io/docs/)
 
 :::
 
-## Deploy on Celo
+## Using EVM Tools
+
+Developers can build with Celo using many [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
 
 - [Using Remix](/developer/deploy/remix)
 - [Using Truffle](/developer/deploy/truffle)

@@ -20,7 +20,7 @@ import {
   TagList,
   type User,
   type TagType,
-} from '@site/src/data/users';
+} from '@site/src/data-home/users';
 import ShowcaseTagSelect, {
   readSearchTags,
 } from './_components/ShowcaseTagSelect';
@@ -33,11 +33,11 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'Celo DApp Showcase'});
+const TITLE = translate({message: 'Celo Documentation'});
 const DESCRIPTION = translate({
-  message: 'List of decentralized applications and tools in the Celo ecosystem.',
+  message: 'Build decentralized applications that create the conditions for prosperity — for everyone.',
 });
-const EDIT_URL = 'https://github.com/celo-org/docs/edit/showcase-page/src/data/users.tsx';
+const EDIT_URL = 'general';
 
 type UserState = {
   scrollTopPosition: number;
@@ -126,10 +126,11 @@ function ShowcaseHeader() {
       <a
         className="button button--primary"
         href={EDIT_URL}
-        target="_blank"
-        rel="noreferrer">
-        <Translate id="showcase.header.button">
-          🙏 Please add your site
+        // target="_blank"
+        // rel="noreferrer"
+        >
+        <Translate>
+          🚀 Get started with Celo
         </Translate>
       </a>
     </section>
@@ -210,9 +211,19 @@ function ShowcaseFilters() {
 const favoriteUsers = sortedUsers.filter((user) =>
   user.tags.includes('favorite'),
 );
-const otherUsers = sortedUsers.filter(
-  (user) => !user.tags.includes('favorite'),
+const developers = sortedUsers.filter((user) =>
+  user.tags.includes('developers'),
 );
+const integrations = sortedUsers.filter((user) =>
+  user.tags.includes('integrations'),
+);
+const validators = sortedUsers.filter((user) =>
+  user.tags.includes('validators'),
+);
+
+// const otherUsers = sortedUsers.filter(
+//   (user) => !user.tags.includes('favorite'),
+// );
 
 function SearchBar() {
   const history = useHistory();
@@ -271,6 +282,7 @@ function ShowcaseCards() {
     <section className="margin-top--lg margin-bottom--xl">
       {filteredUsers.length === sortedUsers.length ? (
         <>
+        {/* Get Started with Celo */}
           <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
@@ -279,12 +291,12 @@ function ShowcaseCards() {
                   styles.showcaseFavoriteHeader,
                 )}>
                 <h2>
-                  <Translate id="showcase.favoritesList.title">
-                    Most popular
+                  <Translate>
+                    Getting started
                   </Translate>
                 </h2>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                <SearchBar />
+                {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
+                {/* <SearchBar /> */}
               </div>
               <ul
                 className={clsx(
@@ -298,15 +310,104 @@ function ShowcaseCards() {
               </ul>
             </div>
           </div>
+
+        {/* Developers */}
+          <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate>
+                    Developers
+                  </Translate>
+                </h2>
+                {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
+                {/* <SearchBar /> */}
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {developers.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Developers */}
+
+        {/* Integrations */}
+        <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate>
+                    Integrations
+                  </Translate>
+                </h2>
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {integrations.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        {/* Integrations */}
+
+        {/* Validators */}
+        <div className={styles.showcaseFavorite}>
+            <div className="container">
+              <div
+                className={clsx(
+                  'margin-bottom--md',
+                  styles.showcaseFavoriteHeader,
+                )}>
+                <h2>
+                  <Translate>
+                    Validators
+                  </Translate>
+                </h2>
+              </div>
+              <ul
+                className={clsx(
+                  'container',
+                  'clean-list',
+                  styles.showcaseList,
+                )}>
+                {validators.map((user) => (
+                  <ShowcaseCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Validators */}
+
+
+
           <div className="container margin-top--lg">
-            <h2 className={styles.showcaseHeader}>
-              <Translate id="showcase.usersList.allUsers">All tutorials</Translate>
+            {/* <h2 className={styles.showcaseHeader}>
+              <Translate id="showcase.usersList.allUsers">All sites</Translate>
             </h2>
             <ul className={clsx('clean-list', styles.showcaseList)}>
               {otherUsers.map((user) => (
                 <ShowcaseCard key={user.title} user={user} />
               ))}
-            </ul>
+            </ul> */}
           </div>
         </>
       ) : (
@@ -318,11 +419,11 @@ function ShowcaseCards() {
             )}>
             <SearchBar />
           </div>
-          <ul className={clsx('clean-list', styles.showcaseList)}>
+          {/* <ul className={clsx('clean-list', styles.showcaseList)}>
             {filteredUsers.map((user) => (
               <ShowcaseCard key={user.title} user={user} />
             ))}
-          </ul>
+          </ul> */}
         </div>
       )}
     </section>
@@ -334,7 +435,7 @@ export default function Showcase(): JSX.Element {
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
         <ShowcaseHeader />
-        <ShowcaseFilters />
+        {/* <ShowcaseFilters /> */}
         <ShowcaseCards />
       </main>
     </Layout>
