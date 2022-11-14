@@ -37,7 +37,7 @@
  const DESCRIPTION = translate({
    message: 'Build decentralized applications that create the conditions for prosperity — for everyone.',
  });
- const EDIT_URL = 'general';
+ const EDIT_URL = '/developer/deploy';
  
  type UserState = {
    scrollTopPosition: number;
@@ -130,7 +130,7 @@
          // rel="noreferrer"
          >
          <Translate>
-           🚀 Get started with Celo
+           🚀 Build with Celo
          </Translate>
        </a>
      </section>

@@ -143,10 +143,10 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
-    title: 'Leave Feedback',
-    description: "Help improve the docs by sharing ideas, feedback, and suggestions!",
-    preview: require('./showcase/favorites/feedback.png'),
-    website: 'https://github.com/celo-org/docs/issues/new',
+    title: ' Basic Concepts',
+    description: "Get started with the basics of the Celo platform.",
+    preview: require('./showcase/favorites/basic-concepts.png'),
+    website: '/general',
     tags: ['favorite'],
   },
 
