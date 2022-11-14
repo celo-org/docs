@@ -130,7 +130,7 @@
          // rel="noreferrer"
          >
          <Translate>
-           🚀 Build with Celo
+           🚀 Start Building
          </Translate>
        </a>
      </section>
