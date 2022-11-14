@@ -23,7 +23,8 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 - [GitHub](https://github.com/esolidar/web3)
 - [Contracts](https://github.com/esolidar/sweepstake-contracts)
-- 
+-
+
 ## **💰 Saving**
 
 **[GoodGhosting](https://goodghosting.com/#/)** - a gamified savings protocol where savings pools reward regular savers with higher interest rates and extra rewards by taking some interest away from those who don’t. Powered by [Moola](https://moola.market/) and [Mobius](https://www.mobius.money/#/swap).
@@ -126,7 +127,7 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 - Relevant function calls
   - Reserve a name, fetch name for an address
 
-[Celo Identity](https://docs.celo.org/celo-codebase/protocol/identity)\*\* - map a wallet address to a phone number, which allows users to send money to people who haven’t signed up yet (hold in escrow contract until phone number has been verified by 3/3 Celo validators)
+[Celo Identity](/protocol/identity)\*\* - map a wallet address to a phone number, which allows users to send money to people who haven’t signed up yet (hold in escrow contract until phone number has been verified by 3/3 Celo validators)
 
 ## **🌉 Bridges**
 
@@ -161,7 +162,6 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 - [Documentation](https://integrations.simplex.com/wallet-api-integration)
 
-
 ## 🌐 DAOs
 
 **[Talent Protocol](https://talentprotocol.com/)** - **Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
@@ -175,15 +175,16 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **:iphone: Social**
 
-**[NEFTME](https://neftme.com)**- A decentralized social NFT-powered network, that allows anyone, anywhere to create, share and sell a NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
+**[NEFTME](https://neftme.com)**- A decentralized social NFT-powered network, that allows anyone, anywhere to create, share and sell a NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with \$NEFT token.
 
 - [GitHub](https://github.com/NEFTME)
 - [NFT(ERC721) Contract](https://alfajores-blockscout.celo-testnet.org/address/0xA8C40bdE8BE47D47999d3637dD9683C5F1dc317B/transactions)
 - [Token(ERC20) Contract](https://alfajores-blockscout.celo-testnet.org/address/0x6A50e7f557D2295F6af98fc10171ecDdF34400fB)
 - Relevant function calls
-  - Read: $NEFT Balance, NFT Stakers Info, NFT's total staked amount
+  - Read: \$NEFT Balance, NFT Stakers Info, NFT's total staked amount
   - Write: Mint, Bid, Stake, Cancel Bid
-  - 
+  -
+
 # Thank you
 
 Special thanks to @0xHuman and the Node team for putting together this resource for Node's [Berkeley Blockchain Hackathon](https://thenode.fi/hackathon).

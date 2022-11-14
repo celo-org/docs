@@ -73,7 +73,7 @@ Changes to core smart contracts are made using on-chain Governance approximately
 
 :::tip
 
-Learn more: [Celo Core Contract Release Process](../../docs/community/release-process/smart-contracts.md)
+Learn more: [Celo Core Contract Release Process](/community/release-process/smart-contracts)
 
 :::
 
@@ -272,7 +272,7 @@ Address: 0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972
 
 ### Granda Mento
 
-A mechanism for exchanging large amounts of CELO for Celo stable tokens that aren’t suitable for [Mento](https://docs.celo.org/celo-codebase/protocol/stability/doto) or over-the-counter (OTC).
+A mechanism for exchanging large amounts of CELO for Celo stable tokens that aren’t suitable for [Mento](/protocol/stability/doto) or over-the-counter (OTC).
 
 ![image](images/17.png)
 

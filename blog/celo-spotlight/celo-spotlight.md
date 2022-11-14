@@ -243,7 +243,7 @@ Make global peer-to-peer payments simple and accessible to anyone with Valora. I
 
 ### MetaMask
 
-Connect Celo to any EVM-compatible application with MetaMask. [Install MetaMask](https://metamask.io/download/), configure it to [work with Celo](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo), and [import Valora](https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/metamask-valora-import) (optional ) to start managing Celo assets.
+Connect Celo to any EVM-compatible application with MetaMask. [Install MetaMask](https://metamask.io/download/), configure it to [work with Celo](/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo), and [import Valora](/wallet/metamask/import) (optional) to start managing Celo assets.
 
 :::tip
 
@@ -265,7 +265,7 @@ Make use of [Celo Dollars (cUSD)](https://coinmarketcap.com/currencies/celo-doll
 
 ### Get Test Funds
 
-Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](https://docs.celo.org/getting-started/alfajores-testnet). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://celo.org/developers/faucet).
+Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](/network). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://celo.org/developers/faucet).
 
 :::tip
 
@@ -315,7 +315,7 @@ Deploy a dApp on Celo using [Remix](https://docs.celo.org/developer-resources/de
 
 ### Accelerate your development
 
-Expand your toolkit with [Celo Progressive Dappstarter](https://github.com/celo-org/celo-progressive-dapp-starter), [ContractKit](https://docs.celo.org/developer-guide/contractkit), [use-contractkit](https://docs.celo.org/developer-resources/use-contractkit), [DAppKit](https://docs.celo.org/learn/walletconnect), [ethers.js wrapper](https://docs.celo.org/developer-resources/ethers-js-wrapper), [ganache-cli](https://github.com/celo-org/ganache-cli) and a growing collection of Celo tools built on the [Celo GitHub](https://github.com/celo-org).
+Expand your toolkit with [Celo Composer](https://github.com/celo-org/celo-composer), [ContractKit](https://docs.celo.org/developer-guide/contractkit), [celo-react](https://github.com/celo-org/react-celo), and a growing collection of Celo tools built on the [Celo GitHub](https://github.com/celo-org).
 
 :::info
 
@@ -363,7 +363,7 @@ Build dApps that connect to external data using [Celo Reserve Oracles](https://d
 
 ### Verify mobile identity
 
-Connect to mobile with a [lightweight identity layer](https://docs.celo.org/celo-codebase/protocol/identity) that allows you to identify users by their phone number, utilize an [attestation service](https://docs.celo.org/validator-guide/attestation-service), and [query on-chain identifiers](https://docs.celo.org/developer-guide/contractkit/odis).
+Connect to mobile with a [lightweight identity layer](/protocol/identity) that allows you to identify users by their phone number, utilize an [attestation service](https://docs.celo.org/validator-guide/attestation-service), and [query on-chain identifiers](https://docs.celo.org/developer-guide/contractkit/odis).
 
 :::tip
 

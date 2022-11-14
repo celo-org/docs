@@ -109,11 +109,11 @@ DAOs and other Dapps can use the following advantages of Celo when building thei
 
 ### Mobile-First
 
-Celo is a [Mobile-First](https://docs.celo.org/why-celo) Blockchain with an [ultra-light client](https://docs.celo.org/celo-codebase/protocol/plumo) for low-end mobile devices. This technological advancement can help bring the concept of decentralization in DAOs to a much larger scale than it currently is. Setting up a DAO, managing the tasks, and getting push notifications can be much easier with Celo with its mobile-first strategy.
+Celo is a [Mobile-First](/general) Blockchain with an [ultra-light client](/protocol/plumo) for low-end mobile devices. This technological advancement can help bring the concept of decentralization in DAOs to a much larger scale than it currently is. Setting up a DAO, managing the tasks, and getting push notifications can be much easier with Celo with its mobile-first strategy.
 
 ### Proof-of-Stake
 
-Celo’s [Proof-of-Stake](https://docs.celo.org/celo-codebase/protocol/proof-of-stake) mechanism will help develop DAO tooling without worrying about carbon footprint. Celo also aims to have a reserve of Natural-backed assets, which can help in establishing environmentally-concerned DAOs.
+Celo’s [Proof-of-Stake](/protocol/pos) mechanism will help develop DAO tooling without worrying about carbon footprint. Celo also aims to have a reserve of Natural-backed assets, which can help in establishing environmentally-concerned DAOs.
 
 ### Stablecoins
 
@@ -121,7 +121,7 @@ One major roadblock in adopting cryptocurrency as money is its high price volati
 
 ### Identity Layer
 
-Public blockchains are permissionless by nature, making it difficult for some dapps that need to know about their users. Celo’s [Identity Protocol](https://docs.celo.org/celo-codebase/protocol/identity) allows users to associate their phone number with one or more addresses on celo Network helping them find each other easily.
+Public blockchains are permissionless by nature, making it difficult for some dapps that need to know about their users. Celo’s [Identity Protocol](/protocol/identity) allows users to associate their phone number with one or more addresses on celo Network helping them find each other easily.
 
 Socially-oriented DAOs, where the rule is 1 member = 1 vote can also leverage this functionality to know their user's individuality to some extent.
 

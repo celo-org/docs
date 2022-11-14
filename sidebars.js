@@ -31,7 +31,7 @@ const sidebars = {
           type: "link",
           label: "Valora",
           href:
-            "https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89",
+            "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
         },
         {
           type: "category",
@@ -41,7 +41,7 @@ const sidebars = {
               type: "link",
               label: "MetaMask Setup",
               href:
-                "https://medium.com/celodevelopers/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587",
+                "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
             },
             {
               type: "doc",
