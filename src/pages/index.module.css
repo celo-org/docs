@@ -3,11 +3,24 @@
  * and scoped locally.
  */
 
- .heroBanner {
+.heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.firstDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.getStarted {
+  align-self: flex-start;
+}
+
+.section {
+  display: flex;
 }
 
 @media screen and (max-width: 966px) {
@@ -16,8 +29,127 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  margin-bottom: 80px;
+  word-wrap: break-word;
+  background: rgba(97, 97, 97, 0.15);
+  background-clip: border-box;
+  border: 1px solid rgba(68, 67, 67, 0.18);
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 420px;
+  height: 160px;
+}
+
+.cardTitle {
+  padding-left: 10px;
+  margin-top: 10px;
+  align-self: flex-start;
+  color: rgb(35, 238, 35);
+}
+
+.headerTitle {
+  margin-top: -20px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.desc {
+  align-self: flex-start;
+  text-align: start;
+  padding-left: 10px;
+  /* margin-left: -20px; */
+}
+
+.button {
+  background-color: rgb(13, 209, 13);
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: small;
+  font-weight: 600;
+}
+
+.topSection {
+  padding-bottom: 80px;
+}
+
+.headerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.overviewText {
+  text-align: left;
+}
+
+.cardButton {
+  background-color: rgb(13, 209, 13);
+  color: white;
+  padding: 4px 2px 4px 2px;
+  margin: 0px 2px 0px 2px;
+  border-radius: 3px;
+  border: 0px;
+  font-size: small;
+  font-weight: 600;
+  display: flex;
+  align-self: flex-end;
+}
+
+.engage {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.engageBody {
+  text-align: left;
+}
+
+.tutorial {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.tutorialSection ::-webkit-scrollbar {
+  display: none !important;
+}
+
+.tutorialSection {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
 }

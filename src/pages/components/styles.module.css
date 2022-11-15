@@ -1,0 +1,50 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.card {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  margin-bottom: 80px;
+  word-wrap: break-word;
+  background: rgba(97, 97, 97, 0.15);
+  background-clip: border-box;
+  border: 1px solid rgba(68, 67, 67, 0.18);
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 420px;
+  height: 160px;
+}
+
+.cardTitle {
+  padding-left: 10px;
+  margin-top: 10px;
+  align-self: flex-start;
+  color: rgb(35, 238, 35);
+}
+
+.desc {
+  align-self: flex-start;
+  text-align: start;
+  padding-left: 10px;
+  /* margin-left: -20px; */
+}
+
+@media screen and (max-width: 966px) {
+  .card {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    background: rgba(210, 6, 6, 0.15);
+    background-clip: border-box;
+    border: 1px solid rgba(68, 67, 67, 0.18);
+    border-radius: 10px;
+    margin-left: 10px;
+    width: 320px;
+    height: 170px;
+  }
+}
