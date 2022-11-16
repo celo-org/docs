@@ -2,11 +2,12 @@
 title: Upgrade a Celo Node
 description: How to upgrade to the newest available version of a Celo node.
 ---
+
 # Upgrade a Node
 
 How to upgrade to the newest available version of a Celo node.
 
-___
+---
 
 ## Recent Releases
 
@@ -44,10 +45,10 @@ docker rm celo-fullnode
 
 Start the new node using `docker run` as detailed in the appropriate section of the getting started guide. Remember to recover any environment variables, if using a new terminal, before running the documented commands.
 
-- [Full node](/network/mainnet/run-full-node#start-the-node)
-- [Accounts node](/network/mainnet/run-validator#start-your-accounts-node)
-- [Attestion node](/network/mainnet/run-validator#running-the-attestation-service)
-- [Proxy node](/network/mainnet/run-validator#deploy-a-proxy)
+- [Full node](/validator/run/mainnet#start-the-node)
+- [Accounts node](/validator/run/mainnet#start-your-accounts-node)
+- [Attestion node](/validator/run/mainnet#running-the-attestation-service)
+- [Proxy node](/validator/run/mainnet#deploy-a-proxy)
 
 ## Upgrading a Validating Node
 

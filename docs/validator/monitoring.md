@@ -7,7 +7,7 @@ description: Commands, metrics, APIs, and services for monitoring Validators and
 
 Commands, metrics, APIs, and services for monitoring Validators and Proxies.
 
-___
+---
 
 ## Monitoring Validators and Proxies
 
@@ -36,7 +36,7 @@ Celo Blockchain inherits [go-ethereum's metrics](https://github.com/ethereum/go-
 
 Metrics reporting is enabled with the `--metrics` flag.
 
-Pull-based metrics are available using the ` --pprof` flag. This enables the `pprof` debugging HTTP server, by default on `http://localhost:6060`. The `--pprof.addr` and `--pprof.port` options can be used to configure the interface and port respectively. If the node is running inside a Docker container, you will need to set `--pprof.addr 0.0.0.0`, then on your Docker command line add `-p 127.0.0.1:6060:6060`.
+Pull-based metrics are available using the `--pprof` flag. This enables the `pprof` debugging HTTP server, by default on `http://localhost:6060`. The `--pprof.addr` and `--pprof.port` options can be used to configure the interface and port respectively. If the node is running inside a Docker container, you will need to set `--pprof.addr 0.0.0.0`, then on your Docker command line add `-p 127.0.0.1:6060:6060`.
 
 :::caution
 
@@ -46,7 +46,7 @@ Be sure never to expose the `pprof` service to the public internet.
 
 [Prometheus](https://prometheus.io) format metrics are available at `http://localhost:6060/debug/metrics/prometheus`.
 
-[ExpVar](https://golang.org/pkg/expvar/) format metrics are available at `http://localhost:6060/debug/metrics`.  
+[ExpVar](https://golang.org/pkg/expvar/) format metrics are available at `http://localhost:6060/debug/metrics`.
 
 Support for pushing metrics to [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) is available via `--metrics.influxdb` and related flags. This works without the `pprof` server.
 
@@ -93,9 +93,9 @@ A number of metrics are tracked for the parent of the last sealed block received
 
 - `consensus_istanbul_blocks_signedbyus`: Counts the blocks for which this validator was elected and its signature was included in the seal. This means the validator completed consensus correctly, sent a `COMMIT`, its commit was received in time to make the seal of the parent received by the next proposer, or was received directly by the next proposer itself, and so the block will not count as downtime. Consider monitoring the rate.
 
-- `consensus_istanbul_blocks_missedbyus`: Counts the blocks for which this validator was elected but not included in the child's parent seal (this block could count towards downtime if 12 successive blocks are missed).  Consider monitoring the rate.
+- `consensus_istanbul_blocks_missedbyus`: Counts the blocks for which this validator was elected but not included in the child's parent seal (this block could count towards downtime if 12 successive blocks are missed). Consider monitoring the rate.
 
-- `consensus_istanbul_blocks_missedbyusinarow`: (_since 1.0.2_) Counts the blocks for which this validator was elected but not included in the child's parent seal in a row.  Consider monitoring the gauge.
+- `consensus_istanbul_blocks_missedbyusinarow`: (_since 1.0.2_) Counts the blocks for which this validator was elected but not included in the child's parent seal in a row. Consider monitoring the gauge.
 
 - `consensus_istanbul_blocks_proposedbyus`: (_since 1.0.2_) Counts the blocks for which this validator was elected and for which a block it proposed was succesfully included in the chain. Consider monitoring the rate.
 
@@ -150,14 +150,12 @@ It is also important to [monitor Attestation Service](/validator/attestation#mon
 
 ### [Vladiator Labs Signature & Attestation Viewer (Celo Vido)](https://vido.vladiatorlabs.io/block-map)
 
-* Visualizer of current and historic data on validator signatures collected in each block on Mainnet and Baklava.
-* Visualizer of current and historic attestation requests and completions, and attestation endpoint versions and status on Mainnet and Baklava.
+- Visualizer of current and historic data on validator signatures collected in each block on Mainnet and Baklava.
+- Visualizer of current and historic attestation requests and completions, and attestation endpoint versions and status on Mainnet and Baklava.
 
 ### [Virtual Hive Celo Network Validator Exporter](https://github.com/virtualhive/celo-network-validator-exporter)
 
 Prometheus exporter that scrapes downtime and meta information for a specified validator signer address from the Celo blockchain. All data is collected from a blockchain node via RPC.
-
-_Please raise a Pull Request against [this page](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/celo-holder-guide/voting-validators.md) to add/amend details of any community services!_
 
 <!--
 ## Monitoring Network Health, Elections, and Accounts
