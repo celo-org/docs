@@ -91,6 +91,11 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Payment",
+              id: "wallet/celo-wallet/payment",
+            },
+            {
+              type: "doc",
               label: "Node Sync",
               id: "wallet/celo-wallet/node-sync",
             },
@@ -279,6 +284,11 @@ const sidebars = {
               label: "Testnet Wallet",
               id: "developer/setup/wallet",
             },
+            {
+              type: "doc",
+              label: "Local Chain",
+              id: "developer/setup/development-chain",
+            },
           ],
         },
         {
@@ -317,9 +327,35 @@ const sidebars = {
               id: "developer/sdks/celo-sdks",
             },
             {
-              type: "doc",
-              label: "contractkit",
-              id: "developer/contractkit/index",
+              type: "category",
+              label: "ContractKit",
+              items: [
+                {
+                  type: "doc",
+                  label: "Overview",
+                  id: "developer/contractkit/index",
+                },
+                {
+                  type: "doc",
+                  label: "Setup",
+                  id: "developer/contractkit/setup",
+                },
+                {
+                  type: "doc",
+                  label: "Using the Kit",
+                  id: "developer/contractkit/usage",
+                },
+                {
+                  type: "doc",
+                  label: "Core Contracts Registry",
+                  id: "developer/contractkit/contracts-wrappers-registry",
+                },
+                {
+                  type: "doc",
+                  label: "Interact with Contracts",
+                  id: "developer/walkthrough/hello-contract-remote-node",
+                },
+              ],
             },
             {
               type: "doc",

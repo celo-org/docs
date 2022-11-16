@@ -2,15 +2,16 @@
 title: Celo Forno
 description: How to connect to Celo without running a full node using Forno.
 ---
+
 # Forno
 
 How to connect to Celo without running a full node using Forno.
 
-___
+---
 
 ## What is Forno?
 
-Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node. 
+Forno is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 :::tip
 
@@ -30,7 +31,7 @@ const web3 = new Web3("https://forno.celo.org");
 const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
-Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno. The [Hello Celo](/developer/walkthrough/hello-celo) guide shows you how to connect to the Alfajores testnet with Forno and use it to sign and send transactions on the network.
+Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno. The [Hello Celo](/blog/developer-guide/start/hellocelo) guide shows you how to connect to the Alfajores testnet with Forno and use it to sign and send transactions on the network.
 
 ## Forno networks
 

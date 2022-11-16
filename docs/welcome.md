@@ -33,7 +33,7 @@ Learn the Celo Basics to get an overview of our mission, vision, whitepapers, an
   <LinkCard title="Auto-generated APIs" description="Instantly generate APIs for your database" />
 </LinkCardsWrapper> -->
 
-- [What is Celo?](learn/why-celo)
+- [What is Celo?](/general)
 - [Showcase](/showcase)
 - [Explorer](https://explorer.celo.org/)
 - [Website](https://celo.org/)
@@ -43,12 +43,11 @@ Learn the Celo Basics to get an overview of our mission, vision, whitepapers, an
 
 Get up and running as a Celo holder, validator, developer, using tools in the Celo ecosystem.
 
-- [Developers](developer-guide/overview)
-- [Validators](validator-guide/overview)
-- [Holders](celo-holder-guide/owners)
+- [Developers](/developer)
+- [Validators](/validator)
 - [Integrations](/integration/)
-- [Bridges](celo-codebase/protocol/bridging/bridging-to-celo)
-- [Oracles](celo-codebase/protocol/oracles/oracles-on-celo)
+- [Bridges](/protocol/bridge)
+- [Oracles](/protocol/oracle)
 
 ### Explore Celo Data
 
@@ -56,7 +55,7 @@ Explore Celo data to view the reserve, network, dapps, and additional analytics.
 
 - [Celo Analytics](https://explorer.celo.org/stats)
 - [Celo Reserve](https://celoreserve.org/)
-- [DappLooker](https://dapplooker.com/category/celo?type=dashboard)
+- [DappLooker](https://dapplooker.com/browse/dashboards?sort=popular&tags=celo&pg=1)
 - [Celo Stats](https://stats.celo.org/)
 - [The Celo](https://thecelo.com/)
 
@@ -71,7 +70,6 @@ Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 - [Flutter](https://github.com/viral-sangani/walletconnect_flutter)
 - [Python](https://github.com/blaize-tech/celo-sdk-py/)
 - [Javascript](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit)
-- [React Native](https://github.com/therealharpaljadeja/celo-progressive-dapp-starter/tree/react-native-app/packages/react-native-app/)
 
 ### Join the Community
 

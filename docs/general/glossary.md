@@ -7,7 +7,7 @@ description: List of key terms related to the Celo platform, networks, tools, an
 
 List of key terms related to the Celo platform, networks, tools, and blockchain technology.
 
-___
+---
 
 ## Account
 
@@ -17,7 +17,7 @@ Identifies an account on Celo. There are two types of account. **Externally owne
 
 A unique identifier for an account on the Celo blockchain.
 
-## [Alfajores](/network/alfajores)
+## Alfajores
 
 The first public Celo test network, available for developers to use freely subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
 
@@ -29,7 +29,7 @@ Generally, support for an entity having an associated identity. In Celo, each at
 
 A service operated by validators that sends signed SMS messages in order to allow accounts to prove they have access to a phone number.
 
-## [Baklava](/network/baklava)
+## Baklava
 
 The second public Celo test network, intended for use as a testing ground for protocol changes and validator configurations. It is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
@@ -233,7 +233,7 @@ The process, when a node joins the network, of requesting and receiving block he
 
 ## SDK
 
-Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform. Celo's SDK currently comprises two components, [DAppKit](/developer/dappkit) and [ContractKit](/developer/contractkit).
+Software Development Kit. Generally, a suite of developer tools that enable applications to be built on a platform.
 
 ## Slashing
 

@@ -2,12 +2,12 @@
 title: Running the Wallet Locally
 description: How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
 ---
+
 # Running the Wallet Locally
 
 How to setup the Celo Wallet locally, complete basic wallet functions, and troubleshoot common issues.
 
-___
-
+---
 
 ## Wallet Setup
 
@@ -105,7 +105,7 @@ Next, the VM snapshot settings should be modified:
 2.  It's a known [detox issue](https://github.com/wix/Detox/issues/1255) that test will fail if a emulator is renamed.
 3.  Make sure the emulator is not running before runing the tests.
 
-For information on how to run and extend the e2e tests, refer to the [e2e readme](https://github.com/celo-org/wallet/blob/master/packages/mobile/e2e/README.md).
+For information on how to run and extend the e2e tests, refer to the [e2e readme](https://github.com/valora-inc/wallet/tree/main/e2e#end-to-end-tests).
 
 ### Generating GraphQL Types
 
