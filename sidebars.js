@@ -355,6 +355,11 @@ const sidebars = {
                   label: "Interact with Contracts",
                   id: "developer/walkthrough/hello-contract-remote-node",
                 },
+                {
+                  type: "doc",
+                  label: "Query On-Chain Identifiers with ODIS",
+                  id: "developer/contractkit/odis",
+                },
               ],
             },
             {
@@ -802,6 +807,11 @@ const sidebars = {
             "protocol/identity/metadata",
             "protocol/identity/smart-contract-accounts",
             "protocol/identity/encrypted-cloud-backup",
+            {
+              type: "doc",
+              label: "Privacy Research",
+              id: "protocol/identity/privacy-research",
+            },
             {
               type: "category",
               label: "ODIS",

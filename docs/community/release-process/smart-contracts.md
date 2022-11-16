@@ -9,7 +9,7 @@ export const N = "N";
 
 Details of the release process for updating smart contracts on the Celo platform.
 
-___
+---
 
 :::warning
 
@@ -131,7 +131,7 @@ This should be used in tandem with `verify-deployed -b $PREVIOUS_RELEASE -n $NET
 
 ### Deploy the release candidate
 
-Use the following script to build and deploy a candidate release. This takes as input the corresponding backwards compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy). 
+Use the following script to build and deploy a candidate release. This takes as input the corresponding backwards compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
 STORAGE updates are adopted by deploying a new proxy/implementation pair. This script outputs a JSON contract upgrade governance proposal.
 
 ```bash
@@ -341,11 +341,7 @@ Deploying a new contract release should occur with the following process. On-cha
           governance proposal.
           <ul>
             <li>
-              Transition proposal through Baklava{" "}
-              <a href="/celo-codebase/protocol/governance">
-                {" "}
-                governance process.
-              </a>
+              Transition proposal through Baklava governance process.
             </li>
             <li>
               Update your forum post with the Baklava <code>PROPOSAL_ID</code>,
