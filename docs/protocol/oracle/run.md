@@ -5,20 +5,19 @@ description: How to run an oracle for Mento, the stability protocol.
 
 # Running oracles
 
-Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their purpose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL. You can read the [Celo Oracle documentation](celo-codebase/protocol/stability/oracles) to get an overview of how they work.
+Oracles are a fundamental piece for Mento, the stability protocol behind Celo stable assets. Their purpose is to forward to the blockchain the price of CELO/USD, CELO/EUR and CELO/BRL.
 
 # Getting started
 
 Oracles work by running a client that fetches the price from centralized exchanges (CEX) and pushes those prices on-chain by calling `SortedOracles.report(address token, uint256 value, address lesserKey, address greaterKey)`. SortedOracles is a [Celo Core Contract](/community/release-process/smart-contracts).
 
-
 A [reference implementation](https://github.com/celo-org/celo-oracle) of such client is written in TypeScript and would be used for this guide. Releases for this client can be found [here](https://github.com/celo-org/celo-oracle/releases).
 
 ## Requirements
 
-* One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
-* A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/network/mainnet/run-full-node#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
-* The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
+- One VM dedicated for each oracle is recommended, but it is acceptable that they run multiple instances in the case they are for different stables.
+- A dedicated full node running in its own VM. Minimal hardware requirements and instructions on how to run a full node can be found [here](/validator/run/mainnet#:~:text=Full%20nodes%20play%20a%20special,other%20full%20nodes%20and%20validators.).
+- The private key of an address on Celo, which can be stored on a private key file, on a HMS or hosted in the full nodes itself. More information about each can be found below.
 
 It is not strictly required but it is recommended to have the [Celo CLI](/cli#what-is-the-celo-cli) available at least in your local environment, and ideally in each VM. It could be especially useful to respond to on-call.
 
@@ -45,12 +44,14 @@ The oracle is configured by passing individual environment variables or an env f
 Using HSM is the recommended way to store the keys for the oracles. Currently supported HSM are Azure and AWS. If you're have already configured HSM, the relevant variables to add to your `.env.prod` are:
 
 AWS:
-* `WALLET_TYPE=AWS_HSM`
-* `AWS_KEY_REGION`
+
+- `WALLET_TYPE=AWS_HSM`
+- `AWS_KEY_REGION`
 
 Azure:
-* `WALLET_TYPE=AZURE_HSM`
-* `AZURE_KEY_VAULT_NAME`
+
+- `WALLET_TYPE=AZURE_HSM`
+- `AZURE_KEY_VAULT_NAME`
 
 ### Using a private key
 
@@ -66,7 +67,7 @@ The output field of `privateKey` should be stored to a file and its path should 
 
 ### Setting up your keys in the node
 
-Instructions to generate an account and store it in the node can be found [here](/network/mainnet/run-full-node#create-an-account-and-get-its-address).
+Instructions to generate an account and store it in the node can be found [here](/validator/run/mainnet#create-an-account-and-get-its-address).
 
 ### Recommended configuration
 
@@ -104,19 +105,18 @@ Note that this example configuration is using three direct pairs, and the last o
 
 #### Existing exchange connectos
 
-Available connectors are, in alphabetical order: 
-* Binance
-* Bitso
-* Bittrex
-* Coinbase
-* Novadax
-* OkCoin
+Available connectors are, in alphabetical order:
 
+- Binance
+- Bitso
+- Bittrex
+- Coinbase
+- Novadax
+- OkCoin
 
 ## Running the node
 
 Once all the environment variables are set in the VM, an oracle can be started with:
-
 
 `docker run --name celo-oracle -it --restart unless-stopped --env-file .env.prod -e PRICE_SOURCES=$PRICE_SOURCES us-west1-docker.pkg.dev/celo-testnet-production/celo-oracle/celo-oracle:1.0.0-rc2`
 
@@ -128,7 +128,7 @@ As soon as governance enables it, the node should start reporting automatically.
 
 ## Governance
 
-The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/celo-codebase/protocol/governance#what-is-celo-governance). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md). To find more details about how the governance process work, [check here](/celo-codebase/protocol/governance).
+The last step to run an oracle is to enable their addresses on-chain using the [Celo Governance Process](/protocol/governance). Only addresses allowed by governance are allowed to report. Thus, the first step to spin up a new oracle is creating a governance proposal and submit on-chain for community voting. An example of such proposal can be found [here](https://github.com/celo-org/governance/blob/main/CGPs/cgp-0057.md).
 
 ## Using kubernetes
 
@@ -142,8 +142,8 @@ The oracle client supports metrics suitable for Prometheus. Available metrics an
 
 There are two public dashboards deployed where the community can watch how individual oracle is performing on mainnet:
 
-1. [One with high sampling but short timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-2d?orgId=2)
-2. [One with low sampling but longer timeframe](https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-1M?orgId=2)
+1. [One with high sampling but short timeframe](<https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-2d?orgId=2>)
+2. [One with low sampling but longer timeframe](<https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-1M?orgId=2>)
 
 ## Building from source
 

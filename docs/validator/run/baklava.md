@@ -7,11 +7,11 @@ description: How to get a Validator node running on the Celo Mainnet (Celo's Nod
 
 How to get a Validator node running on the Celo Baklava Testnet (Celo's Node Operator Testnet).
 
-___
+---
 
 ## Why run a Baklava Testnet Validator?
 
-The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to [Mainnet](/network/mainnet/).
+The Baklava testnet is the best place to get started running a validator, or test out new validator configurations before deploying to Mainnet.
 
 :::info
 

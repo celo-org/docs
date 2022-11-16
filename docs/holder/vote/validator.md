@@ -7,7 +7,7 @@ description: Overview of Validator elections for validator groups including tech
 
 Resources for Validator Groups elections including technical details, policies, and Validator explorers.
 
-___
+---
 
 ## What are Validators?
 
@@ -53,7 +53,7 @@ As a CELO holder, you have the opportunity to impact the Celo network by voting 
 
 - **Runs an Attestation Service**: The [Attestation Service](/protocol/identity/) is an important service that Validators can run that allows users to verify that they have access to a phone number and map it to an address. Supporting Validators that run this service makes it easier for new users to begin using Celo.
 
-- **Runs a Validator on Baklava**: A group that runs a Validator on the [Baklava](/network/baklava/) helps maintain the testnet and verify that upgrades to the Celo Blockchain software can be deployed smoothly.
+- **Runs a Validator on Baklava**: A group that runs a Validator on the [Baklava](/network/) helps maintain the testnet and verify that upgrades to the Celo Blockchain software can be deployed smoothly.
 
 ### Community
 
@@ -114,5 +114,3 @@ Celovote shows ranking of validator groups based on their estimated annual rate 
 ### [Cauldron](https://cauldron.pretoriaresearchlab.io/block-map) ( [Pretoria Research Lab GmbH](https://pretoriaresearchlab.io))
 
 Cauldron is a tooling site containing a signed blocks explorer for Mainnet and Baklava testnet, visualizing missed blocks and patterns for the validator group set, and developer faucets for the Alfajores and Baklava test networks.
-
-_Please raise a Pull Request against [this page](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/celo-holder-guide/voting-validators.md) to add/amend details of any community services!_

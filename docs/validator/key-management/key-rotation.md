@@ -7,7 +7,7 @@ description: How to manage signer key rotations as a Celo Validator.
 
 How to manage signer key rotations as a Celo Validator.
 
-___
+---
 
 ## Why Rotate Keys?
 
@@ -17,7 +17,7 @@ As detailed in [the Celo account roles description page](/validator/key-manageme
 
 Because the Validator signer key is constantly in use to sign consensus messages, special care must be taken when authorizing a new Validator signer key. The following steps detail the recommended procedure for rotating the validator signer key of an active and elected validator:
 
-1. Create a new Validator instance as detailed in the [Deploy a Validator](/network/mainnet/run-validator#deploy-a-validator-machine) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
+1. Create a new Validator instance as detailed in the [Deploy a Validator](/validator/run/mainnet#deploy-a-validator-machine) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
 
 :::caution
 
@@ -37,14 +37,12 @@ docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account proof-of-possession 
 
 1. If `VALIDATOR_ACCOUNT_ADDRESS` corresponds to a key you possess:
 
-
 ```bash
 # From a node with access to the key for VALIDATOR_ACCOUNT_ADDRESS
 celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
 ```
 
 2. If `VALIDATOR_ACCOUNT_ADDRESS` is a `ReleaseGold` contract:
-
 
 ```bash
 # From a node with access to the beneficiary key of VALIDATOR_ACCOUNT_ADDRESS
@@ -60,7 +58,7 @@ Please note that the BLS key will change along with the validator signer ECDSA k
 1. **Leave all validator and proxy nodes running** until the next epoch change. At the start the next epoch, the new Validator signer should take over participation in consensus.
 
 2. Verify that key rotation was successful. Here are some ways to check:
-<!-- TODO: The following URL assumes that the user is running against the baklava network. This will need to be updated -->
+   <!-- TODO: The following URL assumes that the user is running against the baklava network. This will need to be updated -->
 
 - Open `baklava-blockscout.celo-testnet.org/address/<SIGNER_TO_AUTHORIZE>/validations` to confirm that blocks are being proposed.
 - Open `baklava-celostats.celo-testnet.org` to confirm that your node is signing blocks.

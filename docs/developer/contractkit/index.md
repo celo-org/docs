@@ -30,8 +30,8 @@ Contractkit includes common functionality to make it easier to get started build
 - Utilities
 - Query on-chain identifier for a phone number
 
-<PageRef url="/developer/contractkit/setup" pageName="Setup"/>
+## Use ContractKit
 
-<PageRef url="/developer/contractkit/usage" pageName="Using the kit"/>
-
-<PageRef url="https://celo-sdk-docs.readthedocs.io/" pageName="SDK Reference Docs"/>
+- [Setup](contractkit/setup)
+- [Using the kit](contractkit/usage)
+- [SDK Reference Docs](https://celo-sdk-docs.readthedocs.io/)

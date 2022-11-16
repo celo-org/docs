@@ -2,11 +2,12 @@
 title: Celo Local Development Environment Using Mac
 description: How to set up a local development environment for Celo using Mac.
 ---
+
 # Using Mac
 
 How to set up a local development environment for Celo using Mac.
 
-___
+---
 
 :::tip
 
@@ -32,7 +33,7 @@ While Xcode falls under the Celo Prerequisites, Xcode takes a long time to downl
 
 ### NPM
 
-`npm` stands for Node Package Manager and [is the world's largest software registry](https://docs.npmjs.com/about-npm). npm is what you'll use for installing published JS packages. npm comes bundled with Node, so you won't need to install it separately. 
+`npm` stands for Node Package Manager and [is the world's largest software registry](https://docs.npmjs.com/about-npm). npm is what you'll use for installing published JS packages. npm comes bundled with Node, so you won't need to install it separately.
 
 ### NVM
 
@@ -56,7 +57,7 @@ You can now install Node with `nvm install <version>`.
 
 :::info
 
-You can switch node versions using 
+You can switch node versions using
 
 ```shell
 nvm use <version>
@@ -105,7 +106,7 @@ Option 2: Install `yarn` with Homebrew
 ```shell
 # Update brew if you haven't recently
 $ brew update
- 
+
 # Install yarn
 $ brew install yarn
 ```
@@ -138,7 +139,7 @@ docker --version
 
 ## Celo Prerequisites
 
-### Truffle 
+### Truffle
 
 Since the Celo Blockchain has [shared ancestry with Ethereum](/developer/migrate/from-ethereum) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying.
 
@@ -154,7 +155,7 @@ npm install -g truffle
 
 You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer/contractkit/). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
 
-The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like: 
+The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like:
 
 ```shell
 Error:  *** Deployment Failed ***
@@ -162,15 +163,15 @@ Error:  *** Deployment Failed ***
 "Migrations" -- invalid argument 0: json: cannot unmarshal invalid hex string into Go value of type hexutil.Bytes.
 ```
 
-You can resolve this by specifying the `gas` field in the network details in `truffle.config.js`. 
+You can resolve this by specifying the `gas` field in the network details in `truffle.config.js`.
 
 For example:
 
 ```js
 alfajores: {
   provider: kit.connection.web3.currentProvider,
-  network_id: 44787,                  
-  gas: 4000000,                        
+  network_id: 44787,
+  gas: 4000000,
 }
 ```
 
@@ -186,9 +187,9 @@ The [Celo CLI](/cli/) is a command-line tool for interacting with the Celo Proto
 
 ```shell
 npm install -g @celo/celocli
- 
+
 ... # lots of logs
- 
+
 + @celo/celocli@x.x.xx
 added x packages from x contributors in x.xs
 ```
@@ -203,7 +204,7 @@ Installation can take over a minute, so be patient depending on your internet co
 
 Celo Wallet is the development wallet to onboard onto the Celo network, manage funds, and send payments. Since Celo does not have a web wallet, you will need to use the mobile wallet.
 
-There is a [detailed write-up](https://github.com/celo-org/celo-monorepo/tree/master/packages/mobile#mobile-celo-wallet) on the celo-monorepo for the Celo Wallet. This guide only includes the summarized installation instructions for macOS. If you're on another OS, please refer to that guide instead of this document.
+There is a [detailed write-up](https://github.com/celo-org/celo-monorepo) on the celo-monorepo for the Celo Wallet. This guide only includes the summarized installation instructions for macOS. If you're on another OS, please refer to that guide instead of this document.
 
 :::info
 
@@ -224,7 +225,7 @@ You can install [Watchman](https://facebook.github.io/watchman/docs/install.html
 ```shell
 # Update brew if you haven't recently
 $ brew update
- 
+
 # Install watchman
 $ brew install watchman
 ```
@@ -237,7 +238,7 @@ Xcode allows you to build and deploy the Celo Wallet. If you do not have an iOS 
 
 **Install Xcode**
 
-Download Xcode from the [Apple Developer website](https://developer.apple.com/download/). It is massive (10.6 GB), so we will start this first so it can be downloaded while we do everything else. 
+Download Xcode from the [Apple Developer website](https://developer.apple.com/download/). It is massive (10.6 GB), so we will start this first so it can be downloaded while we do everything else.
 
 Once this is done downloading, install it.
 
@@ -249,10 +250,10 @@ Navigate to the iOS directory of the mobile package (/celo-monorepo/packages/mob
 # install cocopods and bundler if you don't already have it
 $ gem install cocoapods # you might need to run with sudo if this fails
 $ gem install bundler
- 
+
 # download the project dependencies
 $ bundle install
- 
+
 # run inside mobile/ios
 $ bundle exec pod install
 ```
@@ -322,7 +323,7 @@ Under OSX High Sierra and later, you'll get a message that you need to [approve 
 
 Do that, and then repeat the line above.
 
-Then make sure the ADB path is set correctly in Genymotion — set Preferences > ADB > Use custom Android SDK tools to /usr/local/share/android-sdk (same as $ANDROID_HOME)
+Then make sure the ADB path is set correctly in Genymotion — set Preferences > ADB > Use custom Android SDK tools to /usr/local/share/android-sdk (same as \$ANDROID_HOME)
 
 ### Extras
 

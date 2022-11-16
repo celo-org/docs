@@ -2,11 +2,13 @@
 title: Validator Explorer
 description: How to use the Validator Explorer to view Validator performance.
 ---
+
 # Validator Explorer
 
 How to use the Validator Explorer to view Validator performance.
 
-___
+---
+
 ## Introduction to the Explorer
 
 You can interact with the Validator Explorer that allows you to have a complete view of how the different validators are performing. This is one resource voters may use to find validator groups to vote for. The Validator Explorer tool is available in the following address:
@@ -18,7 +20,7 @@ If you are looking to see how your validator is performing, you should first fin
 
 If you are running a validator group, one way to demonstrate your credibility to voters is claiming your validator badges by following the instructions [here](https://github.com/celo-org/website/blob/master/validator-badges/README.md).
 
-A critical element of this explorer is the Validator Group name, which can help voters recognize organizations or active community members. This name is fetched from the `account` information registered on-chain for your validator and validator group. In order to combat name impersonation, a group can register a domain claim within their metadata, which you can read more about [here](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/celo-codebase/protocol/identity/metadata.md). This verification is done by adding a [TXT record](https://wikipedia.org/wiki/TXT_record) to their domain which includes a signature of their domain claim signed by their associated account. This claim is then verified by the validator explorer. Individual users may also verify a claim using `celocli account:get-metdata`.
+A critical element of this explorer is the Validator Group name, which can help voters recognize organizations or active community members. This name is fetched from the `account` information registered on-chain for your validator and validator group. In order to combat name impersonation, a group can register a domain claim within their metadata. This verification is done by adding a [TXT record](https://wikipedia.org/wiki/TXT_record) to their domain which includes a signature of their domain claim signed by their associated account. This claim is then verified by the validator explorer. Individual users may also verify a claim using `celocli account:get-metdata`.
 
 For example, if a group was run by the owners of `example.com`, they may want to register their Validator Group with the name `Example`. The name does not need to be the same as the name of your domain, but for simplicity we do so here. To give credence to this name, they may want to add a DNS claim. They can do this by adding a DNS claim to their metadata, claiming the URL `example.com`, while simultaneously adding a `TXT Record` to `example.com` that includes this claim signed by their group address. Let’s go through this example in detail, using a `ReleaseGold` contract as our validator group.
 
@@ -26,12 +28,12 @@ Assuming you have already deployed your Validator Group via a `ReleaseGold` cont
 
 ### Environment variables
 
-| Variable                             | Explanation                                                                                                                          |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| CELO_VALIDATOR_GROUP_RG_ADDRESS         | The `ReleaseGold` contract address for the Validator Group                                                                                          |
-| CELO_VALIDATOR_RG_ADDRESS         | The `ReleaseGold` contract address for the Validator                                                                                                 |
-| CELO_VALIDATOR_SIGNER_ADDRESS        | The address of the validator signer authorized by the validator account                                                              |
-| CELO_VALIDATOR_GROUP_SIGNER_ADDRESS  | The address of the validator (group) signer authorized by the validator account
+| Variable                            | Explanation                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------- |
+| CELO_VALIDATOR_GROUP_RG_ADDRESS     | The `ReleaseGold` contract address for the Validator Group                      |
+| CELO_VALIDATOR_RG_ADDRESS           | The `ReleaseGold` contract address for the Validator                            |
+| CELO_VALIDATOR_SIGNER_ADDRESS       | The address of the validator signer authorized by the validator account         |
+| CELO_VALIDATOR_GROUP_SIGNER_ADDRESS | The address of the validator (group) signer authorized by the validator account |
 
 First let's create the metadata file:
 
@@ -86,7 +88,7 @@ celocli account:create-metadata ./validator_metadata.json --from $CELO_VALIDATOR
 celocli account:claim-account ./validator_metadata.json --address $CELO_VALIDATOR_GROUP_RG_ADDRESS --from $CELO_VALIDATOR_SIGNER_ADDRESS
 ```
 
-And then host both metadata files somewhere reachable via HTTP. You can use a service like gist.github.com. Create two gists, each with the contents of the respective files and then click on the Raw buttton to receive the permalinks to the machine-readable file. If you had already registered a metadata URL for your `validator` you just need to update that registerd gist, so you can skip the `validator` metadata registration below. 
+And then host both metadata files somewhere reachable via HTTP. You can use a service like gist.github.com. Create two gists, each with the contents of the respective files and then click on the Raw buttton to receive the permalinks to the machine-readable file. If you had already registered a metadata URL for your `validator` you just need to update that registerd gist, so you can skip the `validator` metadata registration below.
 
 Now we can register these URLs on each account:
 

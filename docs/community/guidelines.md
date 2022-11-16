@@ -115,7 +115,7 @@ To edit an existing page in the documentation, create a fork of the repo, commit
 
 #### Add/remove pages
 
-To add a new page to the documentation, create a fork, add the new pages and update the [table of contents file](https://github.com/celo-org/celo-monorepo/blob/master/packages/docs/SUMMARY.md) to include your new pages in the appropriate location and submit a PR.
+To add a new page to the documentation, create a fork, add the new pages and update the table of contents file to include your new pages in the appropriate location and submit a PR.
 
 - Add or delete pages directly in Github
 - Put new pages where you think makes the most sense, we can move them later
@@ -171,10 +171,6 @@ Translators support the community expanding Celo to non-English speaking communi
 - Start translating!
 - Submit questions with Crowdin Messages
 - Translation request form
-
-#### Other languages
-
-View [Translation Contributions](/community/translation-contributors) for details about translating documentation.
 
 :::tip
 

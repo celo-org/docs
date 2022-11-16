@@ -27,7 +27,7 @@ And if not, upgrade by running the same command as above.
 
 You will now need to point the Celo CLI to a node that is synchronized with one of Celo’s networks.
 
-#### [Configure for Celo Mainnet](/network/mainnet/)
+#### Configure for Celo Mainnet
 
 Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
 
@@ -41,7 +41,7 @@ Connecting celocli to an untrusted node may allow that node to influence the tra
 
 :::
 
-#### [Configure for Celo Alfajores Testnet](/network/alfajores/).
+#### Configure for Celo Alfajores Testnet
 
 Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
 

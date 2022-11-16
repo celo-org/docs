@@ -2,11 +2,12 @@
 title: Self-Custody CELO
 description: Account access and reward details for self-custodying holder of CELO on the Celo Mainnet.
 ---
+
 # Self-Custody CELO
 
 Account access and reward details for self-custodying holder of CELO on the Celo [Mainnet](/network/mainnet/)
 
-___
+---
 
 ## Prerequisites
 
@@ -82,12 +83,12 @@ celocli --version
 
 And if not, upgrade by running the same command as above.
 
-You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](/network/mainnet/) network. There are two options:
+You will now need to point the Celo CLI to a node that is synchronized with the [Mainnet](/network) network. There are two options:
 
 - **Local Celo Blockchain node**: You can run a full node on your local machine which will communicate
   with other nodes and cryptographically verify all data it receives. Since this approach does not require you to trust the network, it is most secure.
 
-  To do this, follow the tutorial for [running a full node](/network/mainnet/run-full-node) (and make sure to pass `--usb`).
+  To do this, follow the tutorial for [running a full node](/network/node/run-mainnet) (and make sure to pass `--usb`).
 
   Then run:
 

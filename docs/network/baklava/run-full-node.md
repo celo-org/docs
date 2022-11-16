@@ -2,15 +2,16 @@
 title: Run a Baklava Full Node
 description: How to get a full node running on the Baklava Network using a prebuilt Docker image.
 ---
+
 # Run a Baklava Full Node
 
 How to get a full node running on the [Baklava Network](/network/baklava) using a prebuilt Docker image.
 
-___
+---
 
 ## What is a Baklava Full Node?
 
-Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes. 
+Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
 
 :::info
 
@@ -143,4 +144,4 @@ $ celocli account:new
 
 ## Light Client Serving
 
-Light clients may connect to you as people run the [Celo Mobile Wallet](/network/alfajores/use-mobile-wallet) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.
+Light clients may connect to you as people run the [Celo Mobile Wallet](/wallet/mobile-wallet/setup) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

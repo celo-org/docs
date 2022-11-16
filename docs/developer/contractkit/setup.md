@@ -7,13 +7,13 @@ description: ContractKit requirements, installation, and initialization.
 
 ContractKit requirements, installation, and initialization.
 
-___
+---
 
 ## Installation and System Requirements
 
 To install, run the following:
 
-```bash npm2yarn 
+```bash npm2yarn
 npm install web3 @celo/contractkit
 ```
 
@@ -21,13 +21,13 @@ You will need Node.js v12.x.
 
 ## Initializing the Kit
 
-To start working with ContractKit you need a `kit` instance and a valid net to connect with. In this example will use `alfajores` (you can read more about it [here](/network/alfajores/))
+To start working with ContractKit you need a `kit` instance and a valid net to connect with. In this example will use `alfajores` (you can read more about it [here](/network))
 
 ```ts
 import Web3 from "web3";
 import { newKitFromWeb3 } from "@celo/contractkit";
 
-const web3 = new Web3("https://alfajores-forno.celo-testnet.org")
+const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 const kit = newKitFromWeb3(web3);
 ```
 
@@ -35,7 +35,7 @@ Go to the [page about Forno](/network/node/forno) for details about different co
 
 ## Initialize the Kit with your own node
 
-If you are hosting your own node (you can follow [this guide](/network/mainnet/run-full-node) to run one) you can connect our ContractKit to it.
+If you are hosting your own node (you can follow [this guide](/network/node/run-mainnet) to run one) you can connect our ContractKit to it.
 
 ```js
 import Web3 from "web3";

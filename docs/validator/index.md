@@ -23,8 +23,8 @@ Not ready to become a Celo Validator? [Learn more about Celo](/).
 
 ## Run a Validator
 
-- [Run a Baklava Testnet Validator](/network/baklava/run-validator)
-- [Run a Mainnet Validator](/network/mainnet/run-validator)
+- [Run a Baklava Testnet Validator](/validator/run/baklava)
+- [Run a Mainnet Validator](/validator/run/mainnet)
 
 ## Important Information
 
