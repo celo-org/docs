@@ -19,9 +19,8 @@ module.exports = {
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
-    //  locales: ["en", "es"],
   },
-  themes: ["@docusaurus/theme-live-codeblock"],
+  themes: ["@docusaurus/theme-live-codeblock","@saucelabs/theme-github-codeblock"],
   scripts: [
     {
       src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
@@ -56,7 +55,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 If you like Celo, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/celo-monorepo">GitHub</a> and follow <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloDevs">@CeloDevs</a> and <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloOrg">@CeloOrg </a> 🌱',
+      '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -78,11 +77,6 @@ module.exports = {
         src: "img/color-logo.png",
       },
       items: [
-        // {
-        //     "to": "welcome",
-        //     "label": "Basics",
-        //     "position": "left"
-        // },
         {
           to: "developer/",
           label: "Developers",
@@ -98,53 +92,12 @@ module.exports = {
           label: "Integrations",
           position: "left",
         },
-        // {
-        //   to: "/community/contributing",
-        //   label: "Stake",
-        //   position: "left",
-        // },
-        // {
-        //   to: "/blog",
-        //   label: "Learn",
-        //   position: "left",
-        // },
-        { to: "showcase", label: "Showcase", position: "left" },
+        { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "/blog",
+          to: "/tutorials",
           label: "Tutorials",
           position: "left",
         },
-        // {
-        //   type: "dropdown",
-        //   position: "left",
-        //   label: "Tutorials",
-        //   items: [
-        //     {
-        //       label: "Code Tutorials",
-        //       to: "blog",
-        //     },
-        //     {
-        //       label: "Developer Blog",
-        //       to: "https://medium.com/celodevelopers/",
-        //     },
-        //     {
-        //       label: "EVM Basics",
-        //       to: "https://ethereum.org/en/developers/docs/",
-        //     },
-        //     {
-        //       label: "Celo Blog",
-        //       to: "https://medium.com/celoorg",
-        //     },
-        //     {
-        //       label: "Figment",
-        //       to: "https://learn.figment.io/protocols/celo",
-        //     },
-        //     {
-        //       label: "Dacade",
-        //       to: "https://dacade.org/communities/celo",
-        //     },
-        //   ],
-        // },
         {
           type: "localeDropdown",
           position: "right",
@@ -166,43 +119,43 @@ module.exports = {
             },
             {
               to: "https://github.com/celo-org/docs/issues/new",
-              label: "Create an Issue",
+              label: "Leave Feedback",
             },
           ],
         },
         {
           type: "dropdown",
           position: "right",
-          label: "APIs & SDKs",
+          label: "Libraries & SDKs",
           items: [
             { to: "cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-              label: "SDK",
+              label: "Celo SDK",
+            },
+            {
+              to: "/developer/react-celo",
+              label: "React-Celo",
+            },
+            {
+              to: "/developer/contractkit",
+              label: "ContractKit",
+            },
+            {
+              to: "/developer/rainbowkit-celo",
+              label: "Rainbowkit-Celo",
             },
             {
               to: "https://github.com/heymateag/celoiossdk",
-              label: "iOS",
+              label: "iOS SDK",
             },
             {
               to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java",
+              label: "Java SDK",
             },
-            { to: "https://github.com/celo-org/react-celo", label: "React" },
-            { to: "https://docs.flutter.dev/", label: "Flutter" },
             {
               to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python",
-            },
-            {
-              to:
-                "https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit",
-              label: "JavaScript",
-            },
-            {
-              to:
-                "https://github.com/celo-org/celo-composer/tree/main/packages/react-native-app",
-              label: "React Native",
+              label: "Python SDK",
             },
             {
               label: "Celo Composer",
@@ -235,14 +188,6 @@ module.exports = {
               label: "Home",
               to: "/",
             },
-            // {
-            //   label: "Blog",
-            //   to: "/blog",
-            // },
-            // {
-            //   href: "https://celo.crowdin.com/celo-docs",
-            //   label: "Help translate",
-            // },
             {
               label: "Docs GitHub",
               href: "https://github.com/celo-org/docs",
@@ -352,29 +297,12 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        // blog: {
-        //   blogTitle: "Celo Tutorials",
-        //   blogSidebarTitle: "All posts",
-        //   // blogSidebarCount: "ALL",
-        //   showReadingTime: false,
-        //   blogListComponent: require.resolve(
-        //     "./src/components/CustomBlogListPage.module.tsx"
-        //   ),
-        //   readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-        //     // allows per post reading time override in frontmatter
-        //     frontMatter.hide_reading_time
-        //       ? undefined
-        //       : defaultReadingTime({
-        //           content,
-        //           options: { wordsPerMinute: 300 },
-        //         }),
-        // },
         blog: {
           blogTitle: "Celo Tutorials",
           blogDescription: "A Docusaurus powered blog!",
           postsPerPage: "ALL",
-          blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
+          blogSidebarTitle: "Latest posts",
+          blogSidebarCount: 7,
         },
       },
     ],
