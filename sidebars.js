@@ -749,10 +749,11 @@ const sidebars = {
               label: "Locating Nodes",
               id: "protocol/consensus/locating-nodes",
             },
+            //remove ultralight sync from docs
             {
               type: "doc",
-              label: "Ultralight Sync",
-              id: "protocol/consensus/ultralight-sync",
+              label: "Plumo Ultralight Sync",
+              id: "protocol/plumo",
             },
           ],
         },
@@ -854,11 +855,6 @@ const sidebars = {
           type: "doc",
           label: "Celo Randomness",
           id: "protocol/randomness",
-        },
-        {
-          type: "doc",
-          label: "Ultralight Client",
-          id: "protocol/plumo",
         },
         {
           type: "category",

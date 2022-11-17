@@ -73,23 +73,11 @@ Once logged in, you’ll be able to view your account details.
 
 Do you notice anything amazing? 🤔
 
-Not yet?
+Check out the line that says Balances verified with Plumo as shown below.
 
-Select the button that says Connected on the bottom right of your screen.
+![image](images/8.png)
 
-![image](images/3.png)
-
-This will show you the Connection Status. Take note of the Last Block Number and close this window. Here it is **12946675**.
-
-![image](images/4.png)
-
-Wait a few seconds… 🦗🦗🦗
-
-Now select the Connected button again!
-
-![image](images/5.png)
-
-You should see that the Last Block Number is showing a newer block than it was before. In the image above the block is **12946680**…an entire 5 blocks have synced since last checked.
+In this case, Plumo is trustlessly verifying the balances in the users wallet.
 
 What you’re seeing is one of many possible examples of Plumo in action. It’s live syncing Celo network data to your device in real-time using an ultralight client. This could happen on a computer, a tablet, a phone, and even a cheap phone with low bandwidth-and before Plumo it could never happen so fast.
 
