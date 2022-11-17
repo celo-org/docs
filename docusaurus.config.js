@@ -20,7 +20,10 @@ module.exports = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  themes: ["@docusaurus/theme-live-codeblock","@saucelabs/theme-github-codeblock"],
+  themes: [
+    "@docusaurus/theme-live-codeblock",
+    "@saucelabs/theme-github-codeblock",
+  ],
   scripts: [
     {
       src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
@@ -35,7 +38,12 @@ module.exports = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: [],
+        redirects: [
+          {
+            to: "/protocol/plumo",
+            from: ["/protocol/consensus/ultralight-sync"],
+          },
+        ],
       },
     ],
     [
@@ -55,7 +63,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-      '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
