@@ -38,12 +38,7 @@ module.exports = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: [
-          {
-            to: "/protocol/plumo",
-            from: ["/protocol/consensus/ultralight-sync"],
-          },
-        ],
+        redirects: [],
       },
     ],
     [
