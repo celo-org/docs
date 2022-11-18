@@ -22,7 +22,7 @@ In addition to the blockchain client, some core components of the Celo protocol 
 There are a number of substantial changes and additions have been made in service of Celo's product goals, including the following:
 
 - [Consensus](/protocol/consensus)
-- [Governance](/protocol/pos)
+- [Governance](/protocol/governance)
 - [Stability Mechanism](/protocol/stability)
 - [Transactions](/protocol/transaction)
 - [Identity](/protocol/identity)
