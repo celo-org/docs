@@ -753,8 +753,13 @@ const sidebars = {
             {
               type: "doc",
               label: "Plumo Ultralight Sync",
-              id: "protocol/plumo",
+              id: "protocol/consensus/ultralight-sync",
             },
+            // {
+            //   type: "doc",
+            //   label: "Plumo Ultralight Sync",
+            //   id: "protocol/plumo",
+            // },
           ],
         },
         {
