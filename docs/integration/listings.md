@@ -59,7 +59,7 @@ The following are useful API endpoints available to you that would help you in y
 For querying the API on total coins in circulation in CELO, which are the total amount of coins in existence right now, the following endpoint will provide you with that:
 
 ```sh
-$ curl  [https://thecelo.com/api/v0.1.js?method=ex_totalcoins](https://thecelo.com/api/v0.1.js?method=ex_totalcoins) {"code":"200","msg":"success","data":{"CELO":608485841.9959723,"cUSD":10250632.56099673}}
+$ curl https://thecelo.com/api/v0.1.js?method=ex_totalcoins {"code":"200","msg":"success","data":{"CELO":608485841.9959723,"cUSD":10250632.56099673}}
 ```
 
 ##### Stable Value Currencies
