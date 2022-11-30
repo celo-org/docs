@@ -8,8 +8,6 @@ authors:
 
 - name: Aviraj Khare
 
-title: Smart Contract Developer
-
 url: https://github.com/avirajkhare00
 
 image_url: https://github.com/avirajkhare00.png
