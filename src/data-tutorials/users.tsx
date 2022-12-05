@@ -1296,6 +1296,20 @@ const Users: User[] = [
     website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
     tags: ['intermediate', 'video'],
   },
+  {
+    title: 'Contract Calls with Celo and Hardhat',
+    description: 'How to create and test contract calls on Celo with Hardhat',
+    preview: require('./showcase/other/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png'),
+    website: './blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat',
+    tags: ['intermediate', 'hardhat'],
+  },
+  {
+    title: 'Unit Testing with Celo and Hardhat',
+    description: 'How to Write unit testing for smart contracts with Hardhat',
+    preview: require('./showcase/other/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
+    website: './blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
+    tags: ['intermediate', 'hardhat'],
+  },
 
 
   
