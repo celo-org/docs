@@ -1297,21 +1297,12 @@ const Users: User[] = [
     tags: ['intermediate', 'video'],
   },
   {
-    title: 'Contract Calls with Celo and Hardhat',
-    description: 'How to create and test contract calls on Celo with Hardhat',
-    preview: require('./showcase/other/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png'),
-    website: './blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat',
-    tags: ['intermediate', 'hardhat'],
+    title: 'Solidity Vulnerabilities: DelegatedCall',
+    description: 'Understanding and preventing solidity vulnerabilities.',
+    preview: require('./showcase/intermediate/solidity-vulnerabilities-delegated-call.png'),
+    website: 'blog/tutorials/solidity-vulnerabilities-delegated-call',
+    tags: ['intermediate', 'solidity'],
   },
-  {
-    title: 'Unit Testing with Celo and Hardhat',
-    description: 'How to Write unit testing for smart contracts with Hardhat',
-    preview: require('./showcase/other/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
-    website: './blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: ['intermediate', 'hardhat'],
-  },
-
-
   
   /*
   Pro Tip: add your site in alphabetical order.
