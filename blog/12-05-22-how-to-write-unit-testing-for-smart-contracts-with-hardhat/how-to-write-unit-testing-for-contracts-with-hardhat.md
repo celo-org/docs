@@ -8,7 +8,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-write-unit-testing-for-contracts-with-hardhat
 ---
 
-![header](../../src/data-tutorials/showcase/other/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png)
+![header](../../src/data-tutorials/showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png)
 
 # Introduction
 

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-create-and-test-contract-calls-on-hardhat
 ---
 
-![header](../../src/data-tutorials/showcase/other/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png)
+![header](../../src/data-tutorials/showcase/intermediate/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png)
 
 # Introduction
 
