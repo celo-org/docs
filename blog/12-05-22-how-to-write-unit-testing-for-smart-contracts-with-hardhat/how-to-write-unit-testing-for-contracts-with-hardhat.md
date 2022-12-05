@@ -1,6 +1,14 @@
-# How to Write Unit Testing for Smart Contracts with Hardhat
+---
+title: Unit Testing with Hardhat and Celo
+description: How to Write Unit Testing for Smart Contracts with Hardhat
+authors:
+  - name: ✍️ Mayowa Julius
+tags: [hardhat]
+hide_table_of_contents: true
+slug: /tutorials/how-to-write-unit-testing-for-contracts-with-hardhat
+---
 
-![header](../../src/data-tutorials/showcase/other/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png)
+![header](../../src/data-tutorials/showcase/other/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png)
 
 # Introduction
 
@@ -8,7 +16,7 @@ Unit testing is considered one of the most effective ways to ensure validating a
 
 On completing this tutorial, you will learn everything you need to know about writing effective unit tests for your smart contracts.
 
-# Prerequisitess
+# Prerequisites
 
 Throughout this tutorial you’ll need to have worked with or have a basic knowledge of the following;
 
@@ -85,78 +93,70 @@ contract Sample {
     address public owner;
     uint256 public fav_num;
 }
-
 ```
 
 b. Next, the contract has a constructor that assigns the address of the contract’s deployer to the `owner` variable and assigns the value 200 to `fav_num`. add the code below to update your contract:
 
 ```solidity
-   constructor() {
-        owner = msg.sender;
-        fav_num = 200;
-    }
-
+constructor() {
+    owner = msg.sender;
+    fav_num = 200;
+}
 ```
 
 c. The next function `store` simply takes an input and updates the value of the `fav_num` to the input integer value. Add the code below to update your contract:
 
 ```solidity
-    function store(uint256 _number) public {
-        fav_num = _number;
-    }
-
+function store(uint256 _number) public {
+    fav_num = _number;
+}
 ```
 
 d. The next function `retrieve` simply returns the current value `fav_num`.
 Copy and add the code below to your contract:
 
 ```solidity
-    function retrieve() public view returns (uint256) {
-        return (fav_num);
-    }
-
+function retrieve() public view returns (uint256) {
+    return (fav_num);
+}
 ```
 
 e. The next is a modifier function `isOwner` that requires whoever is calling its parent function to be the owner(deployer of the contract), or the function will be reverted. Copy and add the code below:
 
 ```solidity
-    modifier isOwner() {
-        require(msg.sender == owner, "Caller is not the owner");
-        _;
-    }
-
+modifier isOwner() {
+    require(msg.sender == owner, "Caller is not the owner");
+    _;
+}
 ```
 
 f. The next function `changeOwner` takes in an address as an argument and uses the previously created modifier to only allow the owner of the contract to call the function to switch the owner’s role to the input address. Copy and add the code below to your contract:
 
 ```solidity
-    function changeOwner(address newOwner) public isOwner {
-        owner = newOwner;
-    }
-
+function changeOwner(address newOwner) public isOwner {
+    owner = newOwner;
+}
 ```
 
 g. The next function `fundIn` allows anyone to deposit a minimum of 0.01 ETH into the contract or else it reverts the function call. Copy and add the code below to your contract:
 
 ```solidity
-    function fundIn() public payable {
-        require(
-            msg.value >= 0.01 * 10**18,
-            "you need to send at least 0.01 ETH"
-        );
-    }
-
+function fundIn() public payable {
+    require(
+        msg.value >= 0.01 * 10**18,
+        "you need to send at least 0.01 ETH"
+    );
+}
 ```
 
 h. And finally, the last function `withdraw` accepts an input `_amount` it requires the amount value to be a maximum of 0.1 ETH else it reverts the function without a message. Copy and add the code below to your contract:
 
 ```solidity
-   function withdraw(uint _amount) public payable {
-       // users can only withdraw .1 ETH at a time, feel free to change this!
-       require(_amount <= 100000000000000000);
-       payable(msg.sender).transfer(_amount);
-   }
-
+function withdraw(uint _amount) public payable {
+    // users can only withdraw .1 ETH at a time, feel free to change this!
+    require(_amount <= 100000000000000000);
+    payable(msg.sender).transfer(_amount);
+}
 ```
 
 On completing your `Sample.sol` contract, Your smart contract should look exactly like the code below, You should update your contract with the code below for uniformity's sake:
@@ -207,7 +207,6 @@ contract Sample {
         payable(msg.sender).transfer(_amount);
     }
 }
-
 ```
 
 Now that you know the different functions in the sample.sol contract and you’re familiar with what they do. Next, you’ll learn how to create a unit test script to test subsections of the contract you just made.
@@ -269,7 +268,6 @@ const runMain = async () => {
 runMain();
 
 module.exports.tags = ["all", "sample"];
-
 ```
 
 The code above is created to simply deploy your Sample.sol contract.
@@ -323,6 +321,7 @@ a. The first test for the constructor checks if the owner variable is equal to t
 ```
 
 Now run the command `npx hardhat test` to run the test, which should return a result like the image below.
+
 ![first test](https://user-images.githubusercontent.com/69092079/203424204-5591691e-3c00-4363-b047-a5d2742775ea.jpg)
 
 Also run `npx hardhat coverage`, which should return a tabular representation of your contract’s tests like in the image below.
@@ -361,7 +360,6 @@ c. The next unit test `changeOwner` describes the test for the `changeOwner` fun
       await expect(response).to.equal(result);
     });
   });
-
 ```
 
 Now run the command `npx hardhat test` to run the test, which should look like the image below.
@@ -406,7 +404,6 @@ e. The next unit test describes the `withdraw` function, the first test case rev
       await expect(sample.withdraw(withdrawAmount)).to.be.reverted;
     });
   });
-
 ```
 
 Finally completing your `Sample.test.js` script, your code should look exactly like the one below, you can copy and update your testing code with the code below for uniformity's sake. When you run the command `npx hardhat test` this should be the result of the test.
