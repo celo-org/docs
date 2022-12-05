@@ -1296,6 +1296,14 @@ const Users: User[] = [
     website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
     tags: ['intermediate', 'video'],
   },
+  {
+    title: 'Solidity Vulnerabilities: DelegatedCall',
+    description: 'Understanding and preventing solidity vulnerabilities.',
+    preview: require('./showcase/intermediate/solidity-vulnerabilities-delegated-call.png'),
+    website: 'blog/tutorials/solidity-vulnerabilities-delegated-call',
+    tags: ['intermediate', 'solidity'],
+  },
+
 
 
   
