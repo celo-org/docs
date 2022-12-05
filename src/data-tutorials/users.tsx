@@ -1305,7 +1305,7 @@ const Users: User[] = [
   },
   {
     title: 'Unit Testing with Celo and Hardhat',
-    description: 'How to Write Unit Testing for Smart Contracts with Hardhat',
+    description: 'How to Write unit testing for smart contracts with Hardhat',
     preview: require('./showcase/other/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: './blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
     tags: ['intermediate', 'hardhat'],
