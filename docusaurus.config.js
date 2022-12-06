@@ -32,12 +32,12 @@ module.exports = {
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    [
-      // "@docusaurus/plugin-client-redirects",
-      // {
-      //   redirects: [],
-      // },
-    ],
+    // [
+    //   "@docusaurus/plugin-client-redirects",
+    //   {
+    //     redirects: [],
+    //   },
+    // ],
     [
       "ideal-image",
       /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
