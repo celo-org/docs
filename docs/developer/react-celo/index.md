@@ -11,7 +11,7 @@ The easiest way to access [ContractKit](https://www.npmjs.com/package/@celo/cont
 
 ## react-celo
 
-The easiest way to access [Celo](https://www.npmjs.com/package/@celo/contractkit) in your React applications 🔥. `react-celo` is a [React hook](https://reactjs.org/docs/hooks-intro.html) for managing access to Celo with a built-in headless modal system for connecting to your users wallet of choice.
+The easiest way to access [Celo](https://www.npmjs.com/package/@celo/contractkit) in your React applications 🔥. `react-celo` is a [React hook](https://reactjs.org/docs/hooks-intro.html) for managing access to Celo with a built-in headless modal system for connecting to your user's wallet of choice.
 
 Now your DApp can be made available to everyone in the Celo ecosystem, from Valora users to self custodied Ledger users.
 
