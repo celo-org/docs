@@ -12,13 +12,14 @@ Solidity is a contract-oriented programming high-level language for writing and 
 
 Below is a list of what we’ll cover
 
-
 💡 Types of Solidity Contracts
 
-
 💡 Step by step of writing and running a Solidity Smart Contract on Remix
+
 💡 Step by Step on Debugging Smart contract using Remix Debugger
+
 💡 A glossary of some Solidity commands and how to run them
+
 # Introduction to Remix IDE
 
 To write and deploy a Solidity smart contract on Remix is a simple and interesting task if only the appropriate procedures are taken. Let’s take a practical step by writing and running a simple, smart contract as follows;
@@ -73,7 +74,9 @@ The SPDX-License-Identifier (SPDX) is an open-source standard for communicating 
 
 
 💡 Apache 2.0: This identifier is used for software released under the Apache 2.0 license.
+
 💡 GPLv2: This identifier is used for software released under the GNU General Public License, Version 2.
+
 💡 MIT: This identifier is used for software released under the MIT license.
 
 # Saving and Running Solidity Code in Remix
