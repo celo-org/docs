@@ -15,7 +15,7 @@ With Metamask, recovery is easy because you just switch Metamask to the network 
 
 :::
 
-___
+---
 
 ## Prerequisites
 
@@ -92,7 +92,7 @@ This command will return you with:
 - `privateKey`: the private key associated with your address -- please record this private key on paper and not share with anyone else
 - `publicKey`: the public key associated with your address
 
-***Note***
+**_Note_**
 
 Using the `eth` derivation path as above will work for the default Ethereum path used by nearly all Ethereum wallets (`"m/44'/60'/0'/0/0"`). If your address was generated using a different derivation path you can specify that using a combination of the flags `addressIndex`, `changeIndex` and `derivationPath`.
 

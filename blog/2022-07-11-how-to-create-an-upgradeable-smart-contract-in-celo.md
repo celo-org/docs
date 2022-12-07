@@ -110,14 +110,14 @@ Create a file called `1.Greeter.test.ts` and add the following content.
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers } from "hardhat";
-describe("Greeter", function() {
+describe("Greeter", function () {
   let greeter: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
     greeter = await Greeter.deploy();
     await greeter.deployed();
   });
-  it("should greet correctly before and after changing value", async function() {
+  it("should greet correctly before and after changing value", async function () {
     await greeter.setGreeting("Celo to the Moon");
     expect(await greeter.greet()).to.equal("Celo to the Moon");
   });
@@ -207,18 +207,18 @@ Writing unit tests for GreeterV2 before deploying.
 import { expect } from "chai";
 import { BigNumber, Contract } from "ethers";
 import { ethers } from "hardhat";
-describe("Greeter V2", function() {
+describe("Greeter V2", function () {
   let greeterV2: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     greeterV2 = await GreeterV2.deploy();
     await greeterV2.deployed();
   });
-  it("should retrieve value previously stored", async function() {
+  it("should retrieve value previously stored", async function () {
     await greeterV2.setGreeting("Celo to the Moon");
     expect(await greeterV2.greet()).to.equal("Celo to the Moon");
   });
-  it("should increment value correctly", async function() {
+  it("should increment value correctly", async function () {
     expect(await greeterV2.counter()).to.equal(BigNumber.from("0"));
     await greeterV2.increment();
     expect(await greeterV2.counter()).to.equal(BigNumber.from("1"));
@@ -249,10 +249,10 @@ The above test was designed to only test `GreeterV2.sol` not the upgraded versio
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V2", function() {
+describe("Greeter (proxy) V2", function () {
   let greeter: Contract;
   let greeterV2: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     greeter = await upgrades.deployProxy(Greeter);
@@ -260,7 +260,7 @@ describe("Greeter (proxy) V2", function() {
     await greeter.setGreeting("WAGMI");
     greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
   });
-  it("should retrieve value previously stored correctly", async function() {
+  it("should retrieve value previously stored correctly", async function () {
     expect(await greeterV2.greet()).to.equal("WAGMI");
     await greeter.setGreeting("Celo to the Moon");
     expect(await greeterV2.greet()).to.equal("Celo to the Moon");
@@ -371,11 +371,11 @@ Let’s write test cases to deploy and test `GreeterV3` . Create a file called `
 import { expect } from "chai";
 import { BigNumber, Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V3 with name", function() {
+describe("Greeter (proxy) V3 with name", function () {
   let greeter: Contract;
   let greeterV2: Contract;
   let greeterV3: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     const GreeterV3 = await ethers.getContractFactory("GreeterV3");
@@ -385,13 +385,13 @@ describe("Greeter (proxy) V3 with name", function() {
     greeterV2 = await upgrades.upgradeProxy(greeter.address, GreeterV2);
     greeterV3 = await upgrades.upgradeProxy(greeter.address, GreeterV3);
   });
-  it("should retrieve value previously stored and increment correctly", async function() {
+  it("should retrieve value previously stored and increment correctly", async function () {
     expect(await greeterV2.greet()).to.equal("WAGMI ");
     expect(await greeterV3.counter()).to.equal(BigNumber.from("0"));
     await greeterV2.increment();
     expect(await greeterV3.counter()).to.equal(BigNumber.from("1"));
   });
-  it("should set name correctly in V3", async function() {
+  it("should set name correctly in V3", async function () {
     expect(await greeterV3.name()).to.equal("");
     const name = "Viral";
     await greeterV3.setName(name);
@@ -504,12 +504,12 @@ Let’s write test cases for `GreeterV4.sol`
 import { expect } from "chai";
 import { Contract } from "ethers";
 import { ethers, upgrades } from "hardhat";
-describe("Greeter (proxy) V4 with getName", function() {
+describe("Greeter (proxy) V4 with getName", function () {
   let greeter: Contract;
   let greeterV2: Contract;
   let greeterV3: Contract;
   let greeterV4: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
     const GreeterV2 = await ethers.getContractFactory("GreeterV2");
     const GreeterV3 = await ethers.getContractFactory("GreeterV3");
@@ -519,7 +519,7 @@ describe("Greeter (proxy) V4 with getName", function() {
     greeterV3 = await upgrades.upgradeProxy(greeter.address, GreeterV3);
     greeterV4 = await upgrades.upgradeProxy(greeter.address, GreeterV4);
   });
-  it("should setName and getName correctly in V4", async function() {
+  it("should setName and getName correctly in V4", async function () {
     expect(await greeterV4.getName()).to.equal("");
     const greetername = "Celo";
     await greeterV4.setName(greetername);

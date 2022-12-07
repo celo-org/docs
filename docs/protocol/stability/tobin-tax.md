@@ -2,11 +2,12 @@
 title: Celo Tobin Tax
 description: Overview of the Tobin Tax and its effect on the Celo reserve.
 ---
+
 # Tobin Tax
 
 Overview of the Tobin Tax and its effect on the Celo reserve.
 
-___
+---
 
 :::info
 

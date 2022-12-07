@@ -3,11 +3,11 @@ title: Celo Custody Integrations
 description: Details for custodians, exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user.
 ---
 
-# Custody 
+# Custody
 
 Details for custodians, exchanges, and other services that intend to custody Celo assets such as Celo Dollar and CELO on behalf of a user.
 
-___
+---
 
 ## Custody Overview
 

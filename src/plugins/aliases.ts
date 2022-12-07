@@ -1,16 +1,16 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = function (context, options) {
   return {
-    name: 'aliases',
+    name: "aliases",
     configureWebpack() {
       return {
         resolve: {
           alias: {
-            '@components': path.resolve(__dirname, '../../src/components/'),
-          }
-        }
-      }
-    }
-  }
-}
+            "@components": path.resolve(__dirname, "../../src/components/"),
+          },
+        },
+      };
+    },
+  };
+};

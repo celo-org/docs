@@ -15,7 +15,7 @@ The fastest way to verify on Celo is to use [hardhat-celo](/developer/verify/har
 
 ## Verify Contracts on Celo
 
--   [Using Celo Explorer](/developer/verify/celo-explorer)
--   [Using Remix](/developer/verify/remix)
--   [Using CeloScan](/developer/verify/celoscan)
--   [Using Hardhat](/developer/verify/hardhat)
+- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Remix](/developer/verify/remix)
+- [Using CeloScan](/developer/verify/celoscan)
+- [Using Hardhat](/developer/verify/hardhat)

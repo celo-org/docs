@@ -7,7 +7,7 @@ description: Introduction to the Celo Network's topology including validators, f
 
 Introduction to the Celo Network's topology including validators, full nodes, light clients, and wallets.
 
-___
+---
 
 ## What is the Celo Network Topology?
 
@@ -31,8 +31,8 @@ Applications including the Celo Wallet will also run on each user's device an in
 
 The Celo Wallet application is a fully unmanaged wallet that allows users to self custody their funds using their own keys and accounts. All critical features such as sending transactions and checking balances can be done in a trustless manner using the peer-to-peer light client protocol. However, the wallet does use a few centralized cloud services to improve the user experience where possible, e.g.:
 
-* **Google Play Services:** to pre-load invitations in the app
-* **Celo Wallet Notification Service:** sends device push notifications when a user receives a payment or requests for payment
-* **Celo Wallet Blockchain API:** provides a GraphQL API to query transactions on the blockchain on a per-account basis, used to implement a users' activity feed.
+- **Google Play Services:** to pre-load invitations in the app
+- **Celo Wallet Notification Service:** sends device push notifications when a user receives a payment or requests for payment
+- **Celo Wallet Blockchain API:** provides a GraphQL API to query transactions on the blockchain on a per-account basis, used to implement a users' activity feed.
 
 When end-users download the Celo Wallet from, for example, the Google Play Store, users are trusting both cLabs (or the entity that has made the application available in the Play Store) and Google to deliver a correct binary, and most users would feel that relying on these centralized services to provide this additional functionality is worthwhile.

@@ -2,11 +2,12 @@
 title: Celo Voting on Governance Proposals
 description: How to use the Celo CLI to participate in Goverance and create a Governance proposal.
 ---
+
 # Voting on Governance Proposals
 
 How to use the [Celo CLI](/cli/) to participate in Goverance and create a Governance proposal.
 
-___
+---
 
 ## Governance
 
@@ -35,9 +36,10 @@ celocli governance:list
 ```
 
 Included will be three lists of proposals by status:
-* **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
-* **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [protocol documentation](/protocol/governance).
-* **Expired** proposals are no longer being considered.
+
+- **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
+- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [protocol documentation](/protocol/governance).
+- **Expired** proposals are no longer being considered.
 
 ## Understanding Proposal Details
 
@@ -105,7 +107,7 @@ At a defined frequency, which can be checked with the `celocli network:parameter
 After a proposal is dequeued, it will first enter the Approval phase.
 In this phase, the [Governance Approver](/protocol/governance#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
 
-Once a proposal has reached the Referendum phase, it is open to community for voting. 
+Once a proposal has reached the Referendum phase, it is open to community for voting.
 
 ```bash
 celocli governance:vote --proposalID=<PROPOSAL_ID> --value=<Abstain|Yes|No> --from=<YOUR_VOTER_ADDRESS>

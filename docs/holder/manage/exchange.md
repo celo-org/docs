@@ -7,8 +7,7 @@ description: How to use the Celo exchange bot to exchange CELO and Celo stable t
 
 How to use the Celo exchange bot to exchange CELO and Celo stable tokens.
 
-___
-
+---
 
 ## Celo Exchange Bot
 

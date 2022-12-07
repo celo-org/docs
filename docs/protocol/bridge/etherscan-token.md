@@ -10,18 +10,18 @@ import TabItem from '@theme/TabItem';
 
 How to bridge ERC-20 tokens from Ethereum and Polygon to Celo.
 
-___
+---
 
 ## Approve the Bridge
 
 Start by approving token usage on the bridge.
 
-* Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://polygonscan.com/)) page  for the token you want to send
-* Open the **Write Contract** pane > **connect your wallet** > and select **approve**
+- Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://polygonscan.com/)) page for the token you want to send
+- Open the **Write Contract** pane > **connect your wallet** > and select **approve**
 
 ![Bridging Tokens with Etherescan 1](https://github.com/joenyzio/assets/blob/main/celo-docs/bridging-tokens-with-etherscan/bridging-tokens-with-etherscan-1.png?raw=true)
 
-* For **spender** enter the BridgeRouter address:
+- For **spender** enter the BridgeRouter address:
 
 <Tabs>
   <TabItem value="Ethereum" label="Ethereum" default>
@@ -32,13 +32,14 @@ Start by approving token usage on the bridge.
   </TabItem>
 </Tabs>
 
-* For **amount** enter the number of tokens you'd like to send in that token's smallest unit.
+- For **amount** enter the number of tokens you'd like to send in that token's smallest unit.
 
 :::tip
 
 If you're unsure, check the decimals in the Read Contract pane
-* For most tokens the number of digits is 18
-* The + button next will help you fill in the right number 
+
+- For most tokens the number of digits is 18
+- The + button next will help you fill in the right number
 
 :::
 
@@ -48,7 +49,7 @@ Approving too much is usually ok, but not approving enough will cause your next 
 
 :::
 
-* Select **write** > sign the transaction > then send it to the network.
+- Select **write** > sign the transaction > then send it to the network.
 
 ## Call the Bridge
 
@@ -71,12 +72,12 @@ You can now start sending tokens on the approved Bridge.
   </TabItem>
 </Tabs>
 
-* Open the **Write as Proxy** pane > connect your wallet > and select send
+- Open the **Write as Proxy** pane > connect your wallet > and select send
 
 ![Bridging Tokens with Etherescan 2](https://github.com/joenyzio/assets/blob/main/celo-docs/bridging-tokens-with-etherscan/bridging-tokens-with-etherscan-2.png?raw=true)
 
-* For **_token**, enter the address of the token you want to send
-* For **_amount**, enter the amount of tokens you'd like to send in that token's smallest unit.
+- For **\_token**, enter the address of the token you want to send
+- For **\_amount**, enter the amount of tokens you'd like to send in that token's smallest unit.
 
 :::info
 
@@ -84,7 +85,7 @@ This should be the same number you approved earlier.
 
 :::
 
-* For **_destination**, enter the domain ID of the chain to which you'd like to send tokens.
+- For **\_destination**, enter the domain ID of the chain to which you'd like to send tokens.
 
 <Tabs>
   <TabItem value="Celo" label="On Celo" default>
@@ -107,9 +108,9 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 :::
 
-* For **_recipient**, enter the address of the recipient on the destination chain.
-    * To help support future chains with longer addresses, Optics uses 32-byte addresses.
-    * To convert an Ethereum, Celo, or Polygon address to bytes32 you can add 24 0s after the 0x prefix
+- For **\_recipient**, enter the address of the recipient on the destination chain.
+  - To help support future chains with longer addresses, Optics uses 32-byte addresses.
+  - To convert an Ethereum, Celo, or Polygon address to bytes32 you can add 24 0s after the 0x prefix
 
 :::tip
 
@@ -121,8 +122,8 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
 
 :::
 
-* Select **write** > **sign the transaction** > then **send** it to the network.
+- Select **write** > **sign the transaction** > then **send** it to the network.
 
-##  Wait 
+## Wait
 
 Wait for a moment for your transaction to finalize on the network.

@@ -2,11 +2,12 @@
 title: Paying for Gas in Tokens
 description: How to pay Celo gas fees using whitelisted ERC20 tokens.
 ---
+
 # Paying for Gas in Tokens
 
 How to pay Celo gas fees using whitelisted ERC20 tokens.
 
-___
+---
 
 ## Transaction Fees
 

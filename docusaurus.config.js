@@ -20,7 +20,10 @@ module.exports = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  themes: ["@docusaurus/theme-live-codeblock","@saucelabs/theme-github-codeblock"],
+  themes: [
+    "@docusaurus/theme-live-codeblock",
+    "@saucelabs/theme-github-codeblock",
+  ],
   scripts: [
     // {
     //   src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
@@ -55,7 +58,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-      '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -75,6 +78,8 @@ module.exports = {
       logo: {
         alt: "Celo Logo",
         src: "img/color-logo.png",
+        height: 32,
+        width: 32,
       },
       items: [
         {
@@ -218,13 +223,11 @@ module.exports = {
               href: "https://www.reddit.com/r/celo/",
             },
             {
-              href:
-                "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
+              href: "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
               label: "Celo Signal Calendar",
             },
             {
-              href:
-                "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
+              href: "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
               label: "Community Calendar",
             },
           ],

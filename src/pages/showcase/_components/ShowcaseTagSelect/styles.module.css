@@ -10,7 +10,7 @@
   box-shadow: 0 0 2px 1px var(--ifm-color-secondary-darkest);
 }
 
-input[type='checkbox'] + .checkboxLabel {
+input[type="checkbox"] + .checkboxLabel {
   display: flex;
   align-items: center;
   cursor: pointer;

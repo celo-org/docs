@@ -7,7 +7,7 @@ description: Introduction to validator penalties, enforcement mechanisms, and co
 
 Introduction to validator penalties, enforcement mechanisms, and conditions.
 
-___
+---
 
 ## What is Slashing?
 

@@ -7,7 +7,8 @@ description: How invitations allow users to create accounts in the Celo wallet.
 
 How invitations allow users to create accounts in the Celo wallet.
 
-___
+---
+
 ## Overview
 
 To be able to use the wallet and create an account, a user must be invited through their phone number by a verified user. The inviter will send an _invitation code_ to the invitee, which they can later redeem upon downloading the app.

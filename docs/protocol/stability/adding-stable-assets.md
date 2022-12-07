@@ -2,11 +2,12 @@
 title: Add Stable Assets to Celo
 description: Overview of the requirements and steps to add a new stable asset to the Celo platform.
 ---
+
 # Add Stable Assets
 
 Overview of the requirements and steps to add a new stable asset to the Celo platform.
 
-___
+---
 
 :::tip Note
 
@@ -29,6 +30,7 @@ It is possible to pre-mint a fixed amount at the time of launching a new stable 
 A good criteria to a successfully decide a pre-mint amount is to check by how much it would affect the reserve collateralization ratio, this is, the ratio of all stable assets, divided by all the reserve holdings. Reserve information, as well as the collateralization ration can be found on the [Reserve website](https://celoreserve.org/).
 
 :::
+
 ## Procedure
 
 ### Including contracts on the registry
@@ -44,6 +46,7 @@ For the [deployment of cEUR](https://github.com/celo-org/celo-proposals/blob/mas
 ### Constitutional parameters
 
 <!-- TODO: SDK urls will need to be changed when the SDK type docs are separated from the rest of docs -->
+
 As new contracts are added to the registry, new **constitution parameters** need to be set. There's an [issue open](https://forum.celo.org/t/governance-proposals-for-march-2021/816) to include this in the tooling to support it as part of the Contract Release.
 
 ### Oracle activation
@@ -61,21 +64,20 @@ The last governance proposal is expected to unfreeze the contract and attach the
 5. In case necessary, parameters such as `reserveFraction` and `spread` can also be updated in this governance proposal.
 6. Granda Mento activation
 
-
 After passing this last proposal, `cX` should be fully activated.
 
 ## Tooling
 
 Adding a new stable asset involves updating many parts of the tooling, such as:
 
-* Update the Ledger app integration such that it displays the names of the newly added token.
-* Update oracles and generating their keys and addresses.
-* Adding support on `contractkit`.
-* Adding support on [kliento](https://github.com/celo-org/kliento).
-* Adding support on [eksportisto](https://github.com/celo-org/eksportisto).
-* Update on the cli, an example list of things to add are included on [this issue](https://github.com/celo-org/celo-monorepo/issues/6793).
-* Supporting alfajores faucet.
-* Supporting on Dapp kit.
+- Update the Ledger app integration such that it displays the names of the newly added token.
+- Update oracles and generating their keys and addresses.
+- Adding support on `contractkit`.
+- Adding support on [kliento](https://github.com/celo-org/kliento).
+- Adding support on [eksportisto](https://github.com/celo-org/eksportisto).
+- Update on the cli, an example list of things to add are included on [this issue](https://github.com/celo-org/celo-monorepo/issues/6793).
+- Supporting alfajores faucet.
+- Supporting on Dapp kit.
 
 [^1] There are opened issues trying to de-couple the addition of new assets to the reserve to the release cycle.
 
