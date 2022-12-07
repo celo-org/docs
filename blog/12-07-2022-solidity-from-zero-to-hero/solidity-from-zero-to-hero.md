@@ -26,20 +26,20 @@ To write and deploy a Solidity smart contract on Remix is a simple and interesti
 1. Go to https://remix.ethereum.org/.
 2. A browser window will open displaying the Remix web-based development environment as below.
     
-    ![remix IDE](Solidity%20from%20Zero%20to%20Hero%2047dd51cb4dab499b995e88b9b063f9d8/Untitled.png)
+    ![remix IDE](images/1.png)
     
 
 3. In the left column of the Remix window, expand the Solidity folder and then click on the Contracts folder.
 
-![Remix IDE](Solidity%20from%20Zero%20to%20Hero%2047dd51cb4dab499b995e88b9b063f9d8/Untitled%201.png)
+![Remix IDE](images/2.png)
 
 4 In the right column of the Remix window, click on the New file button.
 
-![Remix IDE](Solidity%20from%20Zero%20to%20Hero%2047dd51cb4dab499b995e88b9b063f9d8/Untitled%202.png)
+![Remix IDE](images/3.png)
 
 5. In the Name text box, enter HelloWorld. The name should end with .sol and not .tx
     
-    ![Remix IDE](Solidity%20from%20Zero%20to%20Hero%2047dd51cb4dab499b995e88b9b063f9d8/Untitled%203.png)
+    ![Remix IDE](images/4.png)
     
 
 # HelloWorld Program in Solidity
@@ -65,7 +65,7 @@ contract HelloWorld {
 
 Pragma solidity is a compiler directive that tells the compiler which version of Solidity you are using so that you can identify any errors more quickly. In the example contract, we are using version 0.4.13. Some other versions are; 0.4.18; 0.5.0; 0.5.2; 0.5.4
 
-![Remix IDE](Solidity%20from%20Zero%20to%20Hero%2047dd51cb4dab499b995e88b9b063f9d8/Untitled%204.png)
+![Remix IDE](images/5.png)
 
 # What is SPDX-License-Identifier?
 
