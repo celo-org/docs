@@ -11,7 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/getting-started-on-celo-with-ardhat
 ---
 
-<!-- Introduction​ -->
+# Introduction
+​
 Since the bubbling part of the Web3-learning stream features more about tooling than writing code, many aspiring web3 developers often are exposed to boilerplate code where most of the things happening are abstracted. Picking the right choice of tools and knowing how to use them effectively will give you a better experience as a web3 developer and increase your efficiency. This is one of the goals of Celo as a platform. 
 
 # Prerequisites​
@@ -87,12 +88,12 @@ If all goes well, Your project folder/file structure should look like this:
 
 Let’s examine the structure and how we can configure it to make the best use of them.
 	
-## contracts: 
+**contracts**: 
 This folder contains smart contract files written in solidity. When you invoke hardhat to compile your contracts i.e, `npx hardhat compile`, The instruction is passed to the default solidity compiler - `“solc”` to execute compilation instruction on every file with `.sol` extension inside the contacts folder. In other words, contracts are an array of solidity files. You can override the compiler version by explicitly defining the version of `solc` that will be used to compile all of the solidity files by explicitly speecifying a preferred list of `solc` versions in the `hardhatconfig.js`. Don't worry much about this. I will show you as we progress.
 
 As a good practice, you could separate concerns among the different `.sol` files by filtering them into groups.
 
-**_Example_**: Under the contract folder, you could have: 
+_Example_: Under the contract folder, you could have: 
 -  contracts: 
   -  interfaces
   -  libraries 
@@ -105,7 +106,7 @@ Let’s take a look at the example contract (Lock.sol)  under the contracts fold
 An artifact folder is created that contains the compile contracts from which we can fetch the contract’s JSONInterface i.e ABI and other information.
 
 
-## scripts: 
+**scripts**: 
 
 This folder contains Javascript files used for special tasks such as deployments. `“scripts/deploy.js”` is a deployment file that fetches and deploy compiled contracts from the artifacts that were generated when `npx hardhat compile` was run. To actively run any `.js` file under the scripts, for example, `“deploy.js”`, use the command in the format:
 
@@ -145,7 +146,7 @@ It uses a JSON RPC Websocket server that runs on port `http://127.0.0.1:8545`. A
 ![image](images/16.png)
 
 
-## test:
+**test**:
 
 As the name implies, the test holds all of the test files we have written for our smart programs. To run test files, we invoke the command:
 
@@ -154,7 +155,7 @@ As the name implies, the test holds all of the test files we have written for ou
 To run a specific test file, use: `npx hardhat test/somefileName.js` where _‘somefileName’_ is the name of the target file.
 
 
-## hardhat.config.js: 
+**hardhat.config.js**: 
 
 This is the heart of hardhat which connect and serve every other part. From smart contract compilation to deployment to testing, Hardhat manages the processes by injecting some variables globally via the `hardhat.config.js`. It allows us to define however we want to interact with our DApp. Let’s set up our configuration to use either Celo testnet or mainnet each time we run designated commands.
 
@@ -205,37 +206,37 @@ From the image, we defined just after the network parameter a configuration for 
   -  settings/optimizer/enabled: If enabled, it optimizes our contract by pruning unnecessary and unused code to reduce contract size. If the contract size exceeds a certain range, their deployment may be rejected by the target network. 
 
 
-## .gitignore: 
+**.gitignore**: 
 
 Some folders are too big to commit to the repository. An example of such is the “node_modules” that houses all of our dependencies. Another example is the `.env` that holds sentitive information such as the environment variables we do not wish to commit to source control.
 
-## package.json: 
+**package.json**: 
 
 This serves as the heart of most projects that use node js. It records the functional attributes of a project that npm uses to install dependencies, run scripts, and identify the entry point of our application.
 
-## README.md: 
+**README.md**:
 
 Use this file to describe your project : how to run and test it.
 
 --------------------------------------------
 
-# Common Mistakes Or Errors You Might likely Encounter:
+## Common Mistakes Or Errors You Might likely Encounter:
 
-## Invalid account Error
+**Invalid account Error**
 
 ![image](images/3.png)
 
 
 Most errors like this are triggered as a result of one or more issues in the “hardhat.config.js”. The message complains of an invalid account because hardhat could not find any private key from which to generate an account and send a transaction. If you have defined something like `“process.env.PRIVATE_KEY”` under the `“account”` field in the network object, you will need to provide where to find this variable. Such variables are sensitive and should be kept private as much as possible. Often, we use a `.env` file to manage it. Create a **.env** file in the project directory, and add the private key 
 
-**Solution**
+_Solution_
 
 This should keep the error away.
 
 ![image](images/8.png)
 
 
-## Invalid value undefined for HardhatConfig.networks.solidity.url
+**Invalid value undefined for HardhatConfig.networks.solidity.url**
 
 ![image](images/15.png)
 
@@ -244,12 +245,12 @@ This error is prompted when you add a solidity object as part of network field o
 ![image](images/10.png)
 
 
-**Solution**
+_Solution_
 
 Simply terminate the network object before defining a solidity object. Add closing curly brace between the network object and the solidity object.
 
 
-## Connection timeout
+**Connection timeout**
 
 When you are not connected to the network or your network is bad, you get errors like below. All you need is ensure you are connected to the internet when trying to deploy to the testnet or mainnet.
 
