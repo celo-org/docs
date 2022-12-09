@@ -1296,6 +1296,13 @@ const Users: User[] = [
     website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
     tags: ['intermediate', 'video'],
   },
+  {
+    title: 'How to Fractionalize an NFT on the Celo Platform',
+    description: 'Building a dApp to fractionalize an NFT on top of Celo.',
+    preview: require('./showcase/advanced/how-to-fractionalize-an-nft-on-the-celo-platform.png'),
+    website: 'blog/tutorials/how-to-fractionalize-nft-on-celo-platform',
+    tags: ['advanced', 'nft', 'celo', 'celosage'],
+  },
 
 
   
