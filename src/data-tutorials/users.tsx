@@ -1303,8 +1303,27 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-fractionalize-nft-on-celo-platform',
     tags: ['advanced', 'nft', 'celo', 'celosage'],
   },
-
-
+  {
+    title: 'Solidity Vulnerabilities: DelegatedCall',
+    description: 'Understanding and preventing solidity vulnerabilities.',
+    preview: require('./showcase/intermediate/solidity-vulnerabilities-delegated-call.png'),
+    website: 'blog/tutorials/solidity-vulnerabilities-delegated-call',
+    tags: ['intermediate', 'solidity'],
+  },
+  {
+    title: 'Contract Calls with Celo and Hardhat',
+    description: 'How to create and test contract calls with Celo and Hardhat.',
+    preview: require('./showcase/intermediate/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png'),
+    website: 'blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat',
+    tags: ['intermediate', 'hardhat'],
+  },
+  {
+    title: 'Unit Testing with Solidity and Hardhat',
+    description: 'How to write unit testing for smart contracts with Hardhat.',
+    preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
+    website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
+    tags: ['intermediate', 'hardhat'],
+  },
   
   /*
   Pro Tip: add your site in alphabetical order.

@@ -22,22 +22,22 @@ module.exports = {
   },
   themes: ["@docusaurus/theme-live-codeblock","@saucelabs/theme-github-codeblock"],
   scripts: [
-    {
-      src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
-      async: true,
-    },
+    // {
+    //   src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
+    //   async: true,
+    // },
   ],
   plugins: [
     require.resolve("docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [],
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-client-redirects",
+    //   {
+    //     redirects: [],
+    //   },
+    // ],
     [
       "ideal-image",
       /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
