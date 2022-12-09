@@ -41,4 +41,17 @@ Depending on the type of node you'd like to launch (see the above list), the `gc
 gcloud compute instances create <INSTANCE_NAME> --image <IMAGE_NAME> --image-project devopsre --project <YOUR_GCP_PROJECT>
 ```
 
+If you are running a image with `full` syncmode, please increase the disk size and instance type, and optionally use a `SSD` disk:
+
+```bash
+--boot-disk-size 250 --boot-disk-type pd-ssd --machine-type=n2-standard-4 
+```
+
+For full sync mode, it will take several days to sync the whole chain. You can check the status running the next command:
+
+```bash
+container_name=celo-full-node
+docker exec -it $container_name geth attach --exec 'eth.syncing'
+```
+
 For more information please check the excellent [GCP documentation](https://cloud.google.com/compute/docs/images) on how to launch a compute instance from a public image.
