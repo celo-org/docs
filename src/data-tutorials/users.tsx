@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'foundation'],
   },
   {
+    title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
+    description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
+    preview: require(''),
+    website: 'blog/tutorials/How to build a Bookshop Marketplace Dapp',
+    tags: ['celosage','celowallet', 'celo', 'solidity','html','remix','smartcontract','intermediate'],
+  },
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
