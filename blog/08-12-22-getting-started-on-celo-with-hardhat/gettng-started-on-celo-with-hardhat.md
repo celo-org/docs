@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/bobeu.png
 tags: [hardhat, celo, developer, beginner]
 hide_table_of_contents: true
-slug: /tutorials/getting-started-on-celo-with-ardhat
+slug: /tutorials/getting-started-on-celo-with-hardhat
 ---
 
 # Introduction
@@ -57,24 +57,33 @@ These simple commands create a new project folder with the name tag **“celo-ha
 
 Still in the project directory, run: `yarn add hardhat` or `npm install hardhat`, whichever package manager you prefer. Be sure to have an internet connection as the command downloads hardhat set-up scripts in the project’s root directory. You may experience delays with Git bash as sometimes it takes longer to install hardhat successfully. If this is the case, switch to using the system’s command prompt or that of VSCode but split the commands instead by removing the `“&&”` operator. After that, run:
 
-  -  npm install --save-dev hardhat
+```
+npm install --save-dev hardhat
+
+```
 
 Here, we are installing the Hardhat setup script as a dependency. When the installation is complete, we will create an instance of a hardhat boilerplate project. To do this, run:
 
-  -  npx hardhat
+```
+npx hardhat
+
+```
 
 This command initializes a new instance of the Hardhat development environment. 
 `Note`: If you run `'npx hardhat'` using Bash CLI, you get a weird error like this.
 
-![image](image/14.png)
+![image](images/14.png)
 
 This is a known compatibility issue with Git bash to create an instance of hardhat. To solve it, simply navigate to the project’s folder in a new terminal other than Git bash (one you opened earlier), run the same command in the command prompt or VSCode terminal, and “Viola” works fine.
 
-![image](image/2.png)
+![image](images/2.png)
 
 A warm display showing installation success and a dialogue section will pop up in the terminal asking for your preferences. Select Javascript as the preferred language (for this tutorial) by clicking `“Enter”` on your keyboard. Next, you will be asked to install nomiclabs tools. There are a couple of dependencies/packages we need for our project. They’re compressed in “@nomicfoundation/hardhat-toolbox” so you do not have to download them separately such as `“@nomiclabs/hardhat-waffle”`, `“@etherproject”` plus a few others.  Watch out for it in the terminal. Copy-paste it back to the terminal and run it. In a few minutes, the installation should be complete. Open the boilerplate code from the current CLI. Run `code .` (i.e code space dot).
 
-  -  npm install --save-dev "hardhat@^2.12.2" "@nomicfoundation/hardhat-toolbox@^2.0.0"
+```
+npm install --save-dev "hardhat@^2.12.2" "@nomicfoundation/hardhat-toolbox@^2.0.0"
+
+```
 
 If all goes well, Your project folder/file structure should look like this: 
 - Celo-hardhat-example (Project/root directory)
@@ -101,7 +110,10 @@ _Example_: Under the contract folder, you could have:
 
 Let’s take a look at the example contract (Lock.sol)  under the contracts folder. The contract is written for example purposes. So you should not try to deploy to production. The first thing we want to do is compile the contract.
 
-  -  npx hardhat compile
+```
+npx hardhat compile
+
+```
 
 An artifact folder is created that contains the compile contracts from which we can fetch the contract’s JSONInterface i.e ABI and other information.
 
@@ -110,14 +122,19 @@ An artifact folder is created that contains the compile contracts from which we 
 
 This folder contains Javascript files used for special tasks such as deployments. `“scripts/deploy.js”` is a deployment file that fetches and deploy compiled contracts from the artifacts that were generated when `npx hardhat compile` was run. To actively run any `.js` file under the scripts, for example, `“deploy.js”`, use the command in the format:
 
-  -  npx hardhat run scripts/deploy.js
+```
+npx hardhat run scripts/deploy.js
+
+```
 
 If you have files other than `deploy.js` and want to specifically point to it, you only need to substitute `“deploy.js”` for it.
 
 Let’s try to deploy our **_Lock.sol_** contract to the Celo testnet. We will use the same command except for additional arguments to show we want to deploy to a specific network.
 
+```
+npx hardhat run scripts/deploy.js –network alfajores
 
-  -  npx hardhat run scripts/deploy.js –network alfajores
+```
 
 The above command starts by invoking node package manager - **_npm_**, which goes into the `node_modules` (a folder containing all of the dependencies we need to run the program successfully), looks for hardhat, checks for **“run”** in its command list, invoke it on **“deploy.js”** file and instruct hardhat to deploy the outcome of the file to the selected network **“alfajores”** which is Celo testnet. 
 
@@ -126,7 +143,10 @@ The above command starts by invoking node package manager - **_npm_**, which goe
 `Note`: Hardhat will always perform a new compilation instruction if changes to previously compiled contract (s) exist. This is done using the cache file that will be generated soon as hardhat command is invoked.
 To deploy to Celo mainnet, we point the command to Celo as in: 
 
-  -  npx hardhat run scripts/deploy.js –network celo
+```
+npx hardhat run scripts/deploy.js –network celo
+
+```
 
 Alternatively, you may need to first deploy your contracts locally before sending it to a live network. This enables you to test extensively, debug and catch potential errors ahead of time. Hardhat provides you with two hardhat-based network options:
 
@@ -134,14 +154,21 @@ An In-memory instance of Hardhat Network created by default on start-up. When yo
 
 The second option is a standalone hardhat network, that allows external clients, such as web3 wallets e.g. Metamask, to connect to it. To use this option, you have to run it as a node.
 
-  -  npx hardhat node
+```
+npx hardhat node
+
+```
 
 ![image](images/11.png)
 
 It uses a JSON RPC Websocket server that runs on port `http://127.0.0.1:8545`. A set of pre-funded accounts is generated, and you can connect external clients like Metamask. In the following tutorial, we will learn how to do that. To deploy to the server, run:
 
 
-  -  npx hardhat run scripts/deploy.js --network localhost
+```
+
+npx hardhat run scripts/deploy.js --network localhost
+
+```
 
 ![image](images/16.png)
 
@@ -150,7 +177,10 @@ It uses a JSON RPC Websocket server that runs on port `http://127.0.0.1:8545`. A
 
 As the name implies, the test holds all of the test files we have written for our smart programs. To run test files, we invoke the command:
 
-  -  npx hardhat test
+```
+npx hardhat test
+
+```
 
 To run a specific test file, use: `npx hardhat test/somefileName.js` where _‘somefileName’_ is the name of the target file.
 
@@ -218,7 +248,6 @@ This serves as the heart of most projects that use node js. It records the funct
 
 Use this file to describe your project : how to run and test it.
 
---------------------------------------------
 
 ## Common Mistakes Or Errors You Might likely Encounter:
 
@@ -278,3 +307,4 @@ This is foundational knowledge you need to work with hardhat as a Celo developer
 
 # References​
 - [Hardhat](https://hardhat.org/)
+- [Celo developer resources](https://docs.celo.org/developer/)
