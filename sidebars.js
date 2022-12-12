@@ -1006,6 +1006,11 @@ const sidebars = {
           id: "community/guidelines",
         },
         {
+          type: "doc",
+          label: "Events",
+          id: "community/events",
+        },
+        {
           type: "category",
           label: "Celo Sage",
           items: [
