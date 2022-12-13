@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/bobeu.png
 tags: [hardhat, celo]
 hide_table_of_contents: true
-slug: /tutorials/advance-hardhat-configration-on-celo-using-plugins
+slug: /tutorials/advance-hardhat-configuration-on-celo-using-plugins
 ---
 
 ![header](images/1.png)
@@ -34,7 +34,7 @@ To get started, ensure you have the following tools installed on the machine:
   - Code editor. VSCode recommended.
   - NodeJs version >=14.0.0. 
 
-*Note:* I am using Node version "18.12.1"
+_Note:_ I am using Node version "18.12.1"
 
 ## Hardhat plugins
 
@@ -65,7 +65,7 @@ extendEnvironment((hre) => {
 
 Hardhat lets you add instances of these tools to its environment object by installing and initializing them once in "hardhatconfig.js". Soon as they feature in the Hardhat global variables, they’ll be available for use across every Hardhat component. Firstly, we will install and configure the plugins we need, then we will apply the usage. 
 
-*Note:* Hardhat components are files/folders within Hardhat context i.e. within the scope of its reach, such as “test” folder. 
+_Note:_ Hardhat components are files/folders within Hardhat context i.e. within the scope of its reach, such as “test” folder. 
 
 ## @nomicfoundation/hardhat-toolbox
 
@@ -416,7 +416,7 @@ Output => “deploy/00_deploy.js”
 **Run compile:**
 Before you compile, comment out these dependencies.
 
-```js
+```bash js
 // require("@nomicfoundation/hardhat-toolbox");
 // require("hardhat-typechain");
  
@@ -620,7 +620,7 @@ Remove the existing “Lock.js” test file. Make a new file under the test fold
 
 In the new test file, paste the following code:
 
-```bash
+```bash js
 const { expect } = require("chai");
 const { BigNumber } = require("bignumber.js");
 const {ethers, getNamedAccounts} = require("hardhat");
