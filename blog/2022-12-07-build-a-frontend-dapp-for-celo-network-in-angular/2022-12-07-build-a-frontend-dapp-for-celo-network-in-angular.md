@@ -3,7 +3,7 @@ title: Build a Frontend dApp for Celo Network in Angular
 description: How to build a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular 
 authors:
   - name: ✍️ Yinka Tanimomo
-tags: [angular, hardhat]
+tags: [hardhat]
 hide_table_of_contents: false
 slug: /tutorials/build-a-frontend-dapp-for-celo-network-in-angular
 ---
@@ -16,8 +16,6 @@ In this tutorial, we will be building a frontend for an NFT Auction dApp that ru
 
 Our dApp will allow NFT owners to create Auctions for NFTs they own, and bidders can make bids on the NFTs. Successful bidders will get the NFTs they bidded for transferred to them, and the sellers will get the CELO paid by the bidders sent to their wallets.
 
-
-
 - During Auction
   - The seller of NFT deploys this contract.
   - Auction lasts for seven days.
@@ -27,13 +25,9 @@ Our dApp will allow NFT owners to create Auctions for NFTs they own, and bidders
   1. The highest bidder becomes the new owner of NFT.
   1. The seller receives the highest bid of ETH.
 
-
-
 You can see a sample of what we will be building here.
 
 ![image](images/1.png)
-
-
 
 # Prerequisites
 
@@ -49,14 +43,10 @@ You will also need the following
 - Typescript
 - Angular Basics
 
-
-
 # Getting Started
 I assume that anyone going through this tutorial already understands and use Angular, so I will skip the setup involved in getting Angular to work on your development computer. That means I assume you already have Node and Angular setup on your PC.
 
-\*If you are entirely new to Angular, here( <https://angular.io/start> ) is a good tutorial you can learn from.
-
-
+\*If you are entirely new to Angular, [here](https://angular.io/start) is a good tutorial you can learn from.
 
 To bootstrap our Angular dApp, we will be using **Celo Composer**. 
 
@@ -71,37 +61,34 @@ To start our Angular App Project, we will use the Celo Composer CLI; the CLI mak
     npx @celo/celo-composer create
 ```
 
-
 - Choose Angular when asked for the framework
 
 - Choose hardhat (Only Hardhat is available at the time of writing this tutorial)
 
 - Skip subgraph, we won't use it in this tutorial.
 
-
-
 Your Project will now be created; you can check to make sure it has the following folders
 
 - packages/hardhat - Your Hardhat Folder - Where you can keep your Contracts
 - packages/angular-app - Your Angular project
 
-
 # Setup the Smart Contract
 
-- Open your Hardhat project folder (packages/hardhat) 
+- Open your Hardhat project folder (`packages/hardhat`) 
 
 - Copy the *.envexample* to a new file called *.env*. This is where the private key you use to deploy your contracts will be saved.
 
 - Fill in the private key with your Celo wallet private key. You might want to get some Alfajores (Testnet) coins from the Celo Faucet
 
 - Install the needed packages  
-```text
+
+```bash
   npm i
 ```
 
 - Open your Contracts folder (packages/hardhat/contracts)
 
-- Add a new contract in the folder called NFTAuctionManager.sol 
+- Add a new contract in the folder called `NFTAuctionManager.sol` 
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -149,15 +136,13 @@ contract NFTAuctionManager {
 }
 ```
 
-The NFTAuctionManager Contract has two functions 
+The `NFTAuctionManager` Contract has two functions 
 
 **CreateAuction**: allows you to create a new Auction; it stores the created Auction in the auctions mapping
 
 **GetAuctionAddress**: an helper method to access existing auctions through their index
 
-
-
-- Add another Contract called NFTAuction.sol
+- Add another Contract called `NFTAuction.sol`
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -256,7 +241,6 @@ contract NFTAuction {
 }
 ```
 
-
 The **NFTAuction** contract implements the Auction Sale. It has the following functions
 
 **Start**: The ***start*** function allows you to transfer the NFT you want to sell to this contract and begin the sale. Only the seller can call this function.
@@ -267,50 +251,42 @@ The **NFTAuction** contract implements the Auction Sale. It has the following fu
 
 **End**: This function ends the auction sale once the auction deadline has been reached. If the auction was successful, the NFT will be transferred to the highest bidder and the Celos transferred to the seller.
 
-
-
 These are the contracts we will be interacting with via our Angular dApp Frontend.
 
 
 ## Deploy Your Smart contract
 
-
 Your hardhat project was set up with the hardhat-deploy plugin which makes deployments very easy.
 
-To deploy, go to the deploy folder, open the 00-deploy.js file, and you will see an example deployment function for the existing Greeter contract.
+To deploy, go to the deploy folder, open the `00-deploy.js` file, and you will see an example deployment function for the existing Greeter contract.
 
-Copy the 00-deploy.js file and paste it to a new file called 01-deploy-NFTAuction.js. 
+Copy the `00-deploy.js` file and paste it to a new file called `01-deploy-NFTAuction.js`. 
 
-Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the 00-deploy file first, then run the 01-deploy-nftauction.js file next.
+Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the `00-deploy` file first, then run the `01-deploy-nftauction.js` file next.
 
-Now open the 01-deploy-NFTAuction.js file.
+Now open the `01-deploy-NFTAuction.js` file.
 
-Update the code to deploy the NFTAuctionManager Contract.
+Update the code to deploy the `NFTAuctionManager` Contract.
 
 Your code should look like this
 
 ```js
 
 await deploy("NFTAuctionManager", {
-from: deployer,
-args: [],
-log: true,
+  from: deployer,
+  args: [],
+  log: true,
 })
 
 module.exports.tags = ["NFTAuctionManager"];
 
 ```
 
-
-
-
 Deploy the Contracts by running the following commands on any terminal (make sure you are in the packages/hardhat directory)
 
-```text
+```bash
 npx hardhat deploy –network alfajores
 ```
-
-
 
 If all is well, you should see a message from hardhat with the transaction hash of your Contract deployment and the address of your new Contract
 
@@ -322,23 +298,19 @@ Before we go on, Our dApp will be running in the browser, so you will need a wal
 
 Also, once you have Metamask installed, ensure you add the CELO Networks - Mainnet and Alfajores ( TestNet ) - to it. If you are unsure how to go about this, You can use this tutorial ( <https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587> ) as a guide.
 
-
-
 # DAPP Frontend
 
 Switch to the angular project in your terminal
 
-```text
+```bash
 cd packages/angular-app
 ```
 
-
 Now install the needed packages
 
-```text
+```bash
 npm i
 ```
-
 
 Once the packages install, let's run the code to see how it looks first with the base Celo composer code
 
@@ -354,10 +326,7 @@ The first thing we need to do is figure out a way to get access to our Web3 prov
 
 This Web3 provider allows your application to communicate with an Ethereum Node. Providers take JSON-RPC requests and return the response. 
 
-
-
-The /core/web3 file contains an injection token that allows you to get access to the web provider.	
-
+The `/core/web3` file contains an injection token that allows you to get access to the web provider.	
 
 ```js
 
@@ -373,7 +342,7 @@ export const WEB3 = new InjectionToken<Web3>('web3', {
 
 Now that we know how to get access to the web3 provider, Most of your interactions with the blockchain are going to be happening through the web3Service so let's go through that also.
 
-Open the **packages\angular-app\src\app\services\contract\web3.services.ts** file 
+Open the `packages\angular-app\src\app\services\contract\web3.services.ts` file 
 
 Now let's go through the code
 
@@ -386,7 +355,6 @@ First, we import the libraries we will need. There are three important libraries
 
 1. **Web3 Js:**  This is a collection of JS libraries that lets you interact with an Ethereum node remotely or locally. CELO Composer comes preinstalled with web3 js.
 
-
 Now, let's have a look at some of the class variables
 
 All the Web3 Wallet accounts our DAPP is connected to are saved in the ***accounts*** array. 
@@ -397,18 +365,13 @@ The ***provider*** variable will store a reference to our web3 provider as provi
 
 ***balance*** shows the current Native Coin (CELO) Balance of our connected wallet.
 
-
-In lines 27 - 53 (web3.services.ts), we configure our options for web3modal.
-
-
+In lines 27 - 53 (`web3.services.ts`), we configure our options for web3modal.
 
 The ***walletconnect*** option allows us to set up the wallet that we would like to support in our dApp. You can connect through different types of connections 
 
 - Injected Wallets:-  e.g, Metamask - supports wallets that injects an Ethereum Provider into the browser or window
 - Mobile Wallets: - e.g Valora - Wallet connect allows users to connect via scanning QR codes that deep links to the apps.
 - Remote Nodes - e.g, Infura, Alchemy, etc - These -allow you to "plug in" to the blockchain via nodes managed by some trusted third party. Wallet Connect allows you to specify an InfuraId in the options.  If you don't have one, go to <https://www.infura.io/> now to create an account
-
-
 
 Let's look at the next lines
 
@@ -425,16 +388,11 @@ Let's look at the next lines
 
 ```  
 
-
-
-
-
 In ***connectAccount***, we call the Web3modal's connect method to display our wallet connection dialog. This will display a dialog with all the options of wallets we configured earlier in WalletConnect.
 
 After you select a wallet and get connected to an account, web3modal returns a provider. We will need this provider to create our web3js instance. Once we have our web3js instance, we can request our account.
 
-Lastly, in the web3.service, the ***accountInfo*** method allows you to get the balance of the currently connected account.
-
+Lastly, in the `web3.service`, the ***accountInfo*** method allows you to get the balance of the currently connected account.
 
 Ok, let's change the web3service a little to make it easier to use with type checking
 
@@ -525,8 +483,7 @@ export class Web3Service {
 }
 ```
 
-
-Now let's visit the AppComponent (/src/app/app.component.ts) to see how our web3service is used.
+Now let's visit the AppComponent (`/src/app/app.component.ts`) to see how our web3service is used.
 
 In the ***Connect*** method, we call the web3service ***connectAccount*** method to connect through our web3modal and then we log the response.
 
@@ -536,33 +493,21 @@ If all goes well, you should see your connected wallet address on the page.
 
 Congrats, you have made your first web3 interaction 
 
-
 ## Add Bootstrap UI Framework
-
 
 We are going to be modifying our DAPPs UI a little, and we will find it better to use a UI framework to keep our UI looking a little reasonable. I find it more straightforward to use bootstrap but you can use any framework you prefer.
 
 Tailwind is installed, so I will disable it, and add **bootstrap** instead. So go to styles.css and remove all the stylings there.
 
-
-
 There are two ways to install bootstrap.
-
 - Via a CDN or 
 - Via an Angular plugin
 
+While using an angular plugin is preferable, we won't be doing that as that's outside the scope of this tutorial, you can look up this tutorial to see how to setup bootstrap via the angular plugin. <https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application> 
 
-
-While using an angular plugin is preferable, we won't be doing that as that's outside the scope of this tutorial, you can look up this tutorial to see how to setup bootstrap via the angular plugin.   <https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application> 
-
-
-
-For now, go to <https://getbootstrap.com/docs/5.2/getting-started/introduction/> and copy the bootstrap css files and scripts and add it to the head and body section in your index.html(/src/index.html)
-
-
+For now, go to <https://getbootstrap.com/docs/5.2/getting-started/introduction/> and copy the bootstrap css files and scripts and add it to the head and body section in your `index.html`(`/src/index.html`)
 
 We can now change the code in our app-component to use a more "bootstrappy" theme and we will also add support for routing by adding a Router Outlet. 
-
 
 ```html
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
@@ -618,10 +563,7 @@ We can now change the code in our app-component to use a more "bootstrappy" them
 </div>
 ```
 
-
-
-
-Now open the app.module file(**src/app/app.module.ts**), let's configure our app module to support routing. Add this import to the file (under existing imports)
+Now open the `app.module` file(**src/app/app.module.ts**), let's configure our app module to support routing. Add this import to the file (under existing imports)
 
 ```js
 import {RouterModule, Routes } from '@angular/router';
@@ -646,7 +588,6 @@ Finally, in your NgModule, add the router module to the imports
 })
 export class AppModule {}
 ```
-
 
 Your App Module should look like this now
 
@@ -675,15 +616,13 @@ const routes: Routes = [];
 export class AppModule { }
 ```
 
-
 Let's add a new Home Component and setup a route for it. We can do this from the Angular-cli, so run this on your terminal (from the root angular folder path)
 
-```text
+```bash
 ng g c home
 ```
 
-
-Open the newly added Home view (/src/app/home/home.html) and update it to
+Open the newly added Home view (`/src/app/home/home.html`) and update it to
 
 ```html
 <div class="row">
@@ -693,7 +632,7 @@ Open the newly added Home view (/src/app/home/home.html) and update it to
 </div>
 ```
 
-Then add a route for your home page (update the routes array in your app.module)
+Then add a route for your home page (update the routes array in your `app.module`)
 
 ```js
 const routes: Routes = [
@@ -702,22 +641,15 @@ const routes: Routes = [
 ]
 ```
 
-
-
 Now, check your running application in your browser, it should still be working, good. And now it has a nav menu, and some page structure, great.
 
-
 ## Display Connected Wallet Information
-
 
 So far, our connect button is working and shows us the account it's connected to, we will extend this a bit.
 
 Go back to the app.component.ts file
 
 Change the ***Connect*** method to an async method, rename the ***data*** class variable to ***accounts*** and update the ***Connect*** method to reflect this.
-
-` `**~~`data`~~**` accounts: any[]|undefined;`
-
 
 ```js 
 accounts: any[]|undefined;
@@ -729,24 +661,17 @@ async Connect() {
 }
 ```  
 
-
-
 We will update the view to reflect the changes
 
 Let's add a condition on the UI to display the connect button when the accounts variable is undefined and show the principal(first) account when it's defined
 
-
-
 Change from 
-
 
 ```html
   <button class="bg-orange-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" (click)="Connect()" >
       Connect your wallet
   </button>
 ```  
-
-
 
 to this 
 
@@ -757,15 +682,9 @@ to this
   </button>
 ```  
 
-
-
 Now whenever you are connected, it now shows your principal connected account.  
 
 We can display the balance also when you are connected. We can use the ***accountInfo*** method of ***web3service*** to do that.
-
-
-
-
 
 ```js
 async Connect() {
@@ -778,14 +697,9 @@ async Connect() {
 }
 ```
 
-
-
 We have added a variable called ***balance*** to the component.
 
-
-
 The only thing left to do is to display the ***balance*** on the UI
-
 
 ```html
 <div *ngIf="accounts "> <span>{{balance}} CELO </span> {{accounts[0]}}</div>
@@ -796,8 +710,6 @@ The only thing left to do is to display the ***balance*** on the UI
 
 ## Add Pages  
 We are going to create 3 pages for this DAPP  
-
-
 
 1. A Create Auction page - allows you to create an Auction for an NFT you own
 1. Auction page - allows you to participate in an ongoing auction.
@@ -824,8 +736,7 @@ Let's create our first page, the Auction creation page
 
 Add a new component from the angular cli
 
-
-```text
+```bash
 ng g c create-auction
 ```
 
@@ -842,10 +753,7 @@ Ensure you import the right reference for the component. You can test whether th
 
 Let's discuss what we are going to do on this page.
 
-
-
 On this page, we are going to add a form to allow users to input their ***NFTAddress*** and their ***TokenId***. We will take these values, and send them to our **NFTAuctionManger** Contract to create an **Auction** for us. We will set up a reactive form to do this, so let's import the **ReactiveFormsModule** into our **AppModule**
-
 
 ```js
 ...
@@ -858,7 +766,7 @@ imports: [
 ]
 ```
 
-Setup the form in your CreateAuctionComponent
+Setup the form in your `CreateAuctionComponent`
 
 ```js
 import { Component, OnInit } from '@angular/core';
@@ -866,7 +774,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Web3Service } from '../services/contract/web3.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Location} from '@angular/common';
-
 
 @Component({
   selector: 'app-create-auction',
@@ -893,7 +800,6 @@ export class CreateAuctionComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   }
 
   get f() {
@@ -910,7 +816,6 @@ export class CreateAuctionComponent implements OnInit {
 
 }
 ```
-
 
 Add a form to our Create-Auction View
 
@@ -972,8 +877,7 @@ Add a form to our Create-Auction View
 </div>
 ```
 
-
-Let's update our onSubmit function with the smart contract call to submit the auction details.
+Let's update our `onSubmit` function with the smart contract call to submit the auction details.
 
 We will need the ABI of our deployed contracts and the address deployed, to make any call to our smart contract.
 
@@ -983,7 +887,6 @@ An ABI - Application Binary Interface - defines the methods, types, and structur
 
 Hardhat often generates the ABIs for our contracts when we compile them, and the ABIs are often stored in the artifacts folder.
 
-
 Let's copy our Contract ABIs into our project.
 
 Create two files in your Angular Assets folder.
@@ -991,13 +894,13 @@ Create two files in your Angular Assets folder.
 - NFTAuctionManager.json
 - NFTAuction.json
 
-Now go to the *packages/hardhat/artifacts/contracts/NFTAuctionManager.sol/NFTAuctionManager* file
+Now go to the `packages/hardhat/artifacts/contracts/NFTAuctionManager.sol/NFTAuctionManager` file
 
 Copy the ABI section of the json file and paste it into the *NFTAuctionManager.json* file you have just created. Copy only the Array, not the whole field.
 
 ![image](images/3.png)
 
-Repeat the same for the NFTAuction file.
+Repeat the same for the `NFTAuction` file.
 
 Now import the ABIs you just added, and add them to the top of the **CreateAuctionComponent**
 
@@ -1005,32 +908,29 @@ Now import the ABIs you just added, and add them to the top of the **CreateAucti
 const NFTAuctionManagerABI = require('../../assets/NFTAuctionManager.json'); // ensure this is the right path
 ```
 
-
 Now update your ***onSubmit*** method in your CreateAuction Component
 
 ```js
 async onSubmit() {
-    this.submitted = true;
-    if (this.mainFormGroup.valid) {
+  this.submitted = true;
+  if (this.mainFormGroup.valid) {
 
-      console.table(this.mainFormGroup.value);
+    console.table(this.mainFormGroup.value);
 
-      const nftAuctionManagerContract = new this.web3.web3js!.eth.Contract(NFTAuctionManagerABI,'0xb61dC7AB47915d41C7e0bEee1ABe42BE121B88f9');
+    const nftAuctionManagerContract = new this.web3.web3js!.eth.Contract(NFTAuctionManagerABI,'0xb61dC7AB47915d41C7e0bEee1ABe42BE121B88f9');
 
-      const startPrice = this.web3.web3js!.utils.toWei(this.mainFormGroup.get('startPrice')?.value.toString() , 'ether')
+    const startPrice = this.web3.web3js!.utils.toWei(this.mainFormGroup.get('startPrice')?.value.toString() , 'ether')
 
-      const receipt = await nftAuctionManagerContract.methods
-        .createAuction(this.mainFormGroup.get('nftAddress')?.value, this.mainFormGroup.get('tokenId')?.value, startPrice)
-        .send({from: this.web3.accounts![0]})
-	const newAuctionId = receipt.events.AuctionCreated.returnValues.auctionId;
+    const receipt = await nftAuctionManagerContract.methods
+      .createAuction(this.mainFormGroup.get('nftAddress')?.value, this.mainFormGroup.get('tokenId')?.value, startPrice)
+      .send({from: this.web3.accounts![0]})
+    const newAuctionId = receipt.events.AuctionCreated.returnValues.auctionId;
 
-      this.router.navigate(['/view-auction', newAuctionId]);
+    this.router.navigate(['/view-auction', newAuctionId]);
 
-    }
+  }
 }
 ```
-
-
 
 We create a contract Instance that allows us to interact with our smart contract, using the ABI we just added.
 
@@ -1047,14 +947,14 @@ A receipt object is returned back to us when we make the function call. This rec
 
 Once we have our New **AuctionId**, we can redirect to our **view-Auction** page. The View Auction page will allow us to interact with an existing auction specified by the Auction ID. Let's add a new page for our View Auction
 
-```text
-ng g c **view**-auction
+```bash
+ng g c view-auction
 
 ```
 
 Now, we will add our View Auction Component to our route table, specifying the auctionId as a path parameter to the route
 
-Our Route table(app.module) should now look like this
+Our Route table(`app.module`) should now look like this
 
 ```js
 const routes: Routes = [
@@ -1066,7 +966,6 @@ const routes: Routes = [
 
 ```
 
-
 To make it easy to access our Contract address, let's add it to the environment file.
 
 ```js
@@ -1077,7 +976,7 @@ export const environment = {
 };
 ```
 
-Now let's modify our **ViewAuctionComponent** code.
+Now let's modify our `ViewAuctionComponent` code.
 
 We are going to make an HTTP request for the NFT metadata with Angular's HttpClient, so add the ***HttpClientModule*** to the App Module.
 
@@ -1088,7 +987,6 @@ The ***StartAuction*** function in our Component will ask the seller to first ap
 Bids are submitted by Non-Owners via the Bid method.
 
 Lastly, we will display the NFT image by querying the NFT for its metadata and then reading the image property.
-
 
 ```js
 import { Component, OnInit } from '@angular/core';
@@ -1270,7 +1168,6 @@ export class ViewAuctionComponent implements OnInit {
 }
 ```
 
-
 **The View** 
 
 ```html
@@ -1369,14 +1266,13 @@ export class ViewAuctionComponent implements OnInit {
 </div>
 ```
 
-
 **Auction Lists Page**
 
 Now to our last page, the Auction List page.
 
 Add a new component for our ***AuctionList***
 
-```text
+```bash
 ng g c auction-list
 ```
 
@@ -1392,15 +1288,12 @@ const routes: Routes = [
 ];
 ```
 
-
-
 In our Auctions list page, we will query the **NFTAuctionManager** contract to retrieve a list of all the Auctions it has issued. 
 If you take a look at the smart contract, you will see that Auctions are stored in a mapping.
 
 ```js
 mapping(uint => address) public auctions;
 ```
-
 
 There is no way to return all the elements of a mapping from a view function in Solidity at once, so we have to be innovative with the way we get the list of auctions. This is where our ***AuctionCount*** variable in the contract comes in.
 
@@ -1436,12 +1329,9 @@ await Promise.all(
 
 		  }
 
-
-
 	  })            
 );
 ```
-
 
 So our AuctionListComponent code will be
 
@@ -1558,9 +1448,6 @@ export class AuctionListComponent implements OnInit {
               }catch{
 
               }
-
-
-
           })            
       );
 
@@ -1581,12 +1468,9 @@ export class AuctionListComponent implements OnInit {
 }
 ```
 
-
 For our View, we just need to use a For loop (ngFor) to iterate through all the auctions and display them how we want.
 
-
 ```html
-
 <div class="row">
     <div class="col">
         <div class="card ">
@@ -1658,10 +1542,7 @@ For our View, we just need to use a For loop (ngFor) to iterate through all the 
         </div>
     </div>
 </div>
-
 ```
-
-
 
 Now try to compile your Angular DAPP, see if its running fine. You can visit the following [repo](https://github.com/layinka/build-angular-dapp-with-celo) to compare codes.
 
@@ -1691,8 +1572,3 @@ Yinka Tan is a full-stack blockchain developer who is fascinated with DeFi, NFTs
 - <https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587>
 - <https://pastel.network/what-exactly-is-nft-metadata/> 
 - English Auction <https://solidity-by-example.org/app/english-auction/> 
-
-
-
-
-
