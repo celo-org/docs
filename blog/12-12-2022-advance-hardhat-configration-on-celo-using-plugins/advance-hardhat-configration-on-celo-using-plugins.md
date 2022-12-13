@@ -20,7 +20,7 @@ As a web3 developer, you know you move up the ladder when your productivity spee
 # Prerequisites​
 
 This tutorial focuses on advance practical methods of configuring and using Hardhat. so you should:
-  - Know how to set up a basic Hardhat project. Please complete the previous example tutorial [here](https://github.com/celo-org/docs/blog/08-12-2022-getting-started-on-celo-with-hardhat) as we’ll also make use of the previous example [here](https://github.com/bobeu/advanced-hardhat-for-celo-dev). Clone the project, and navigate to the project directory.
+- Know how to set up a basic Hardhat project. Please complete the previous example tutorial [here](https://github.com/celo-org/docs/blog/08-12-2022-getting-started-on-celo-with-hardhat) as we’ll also make use of the previous example [here](https://github.com/bobeu/advanced-hardhat-for-celo-dev). Clone the project, and navigate to the project directory.
 
 ```bash
 git clone https://github.com/bobeu/advanced-hardhat-for-celo-dev.git
@@ -34,7 +34,7 @@ To get started, ensure you have the following tools installed on the machine:
   - Code editor. VSCode recommended.
   - NodeJs version >=14.0.0. 
 
-**Note:** I am using Node version **18.12.1** 
+*Note:* I am using Node version "18.12.1"
 
 ## Hardhat plugins
 
@@ -43,13 +43,13 @@ An important highlight of Hardhat is the plugins that are external to Hardhat it
 
 Using plugins with Hardhat is one flexibility advantage over Truffle, which simply extends the Hardhat Runtime Environment - HRE . Some of them are in-built, while others are built by the community. Now, let’s examine some of the higher-level libraries rather called *plugins*, and how to integrate and use them.
 
-  - @nomicfoundation/hardhat-toolbox
-  - @nomicfoundation/hardhat-chai-matchers
-  - @openzeppelin/hardhat-upgrades
-  - @nomiclabs/hardhat-ethers
-  - _@typechain/hardhat_
-  - Hardhat-deploy
-  - Hardhat-react
+- @nomicfoundation/hardhat-toolbox
+- @nomicfoundation/hardhat-chai-matchers
+- @openzeppelin/hardhat-upgrades
+- @nomiclabs/hardhat-ethers
+- _@typechain/hardhat_
+- Hardhat-deploy
+- Hardhat-react
 
 Under the hood, these plugins extend Hardhat functionalities by extending the config file. 
 Example:
@@ -121,11 +121,11 @@ Openzeppelin/hardhat-upgrades depend on etherjs library as peer dependency to fu
 ```bash
 npm install --save-dev @nomiclabs/hardhat-ethers ethers
 ```
-Activate it in `hardhatconfig.js`:
+Activate it in "hardhatconfig.js":
 
 ```js
 require("@nomicfoundation/hardhat-chai-matchers");
-require('@openzeppelin/hardhat-upgrades');        /* < ======== */
+require("@openzeppelin/hardhat-upgrades");        /* < ======== */
  
 ```
 
@@ -135,15 +135,17 @@ require('@openzeppelin/hardhat-upgrades');        /* < ======== */
 This is an official plugin from the Nomic Foundation that wraps the Ethereum library (Etherjs), abstracts the complexities and provides you with a hardhat-configured version for easy interaction with Ethereum-compatible blockchains without creating additional tasks. It depends on the "ether.js" library and works very well with versions from v5.0.0 and above, it adds ethers objects to the Hardhat environment using the same APIs as ether.js .
 
 It adds helpful functionalities to the ethers object which you need to be aware of, such as
-  - Libraries interface, 
-  - FactoryOptions interface, 
-  - deployContract()
-  - getContractFactory(), 
-  - getSigners() etc.
+
+- Libraries interface, 
+- FactoryOptions interface, 
+- deployContract()
+- getContractFactory(), 
+- getSigners() etc.
+
 The return value of each of the helper functions (_Contracts_ and _ContractFactory_) are by default connected to the first signer returned by the "getSigners()" API.
 
 ```bash
-npm install --save-dev '@nomiclabs/hardhat-ethers' 'ethers@^5.0.0'
+npm install --save-dev "@nomiclabs/hardhat-ethers" "ethers@^5.0.0"
 ```
 
 Include it in the configuration file:
@@ -160,24 +162,24 @@ require("@nomiclabs/hardhat-ethers");  /* < ======== */
 Of all mentioned plugins, this is the easiest as it adds Typescript support for smart contracts at compile time. It generates Typescript binding you will need in your test and/or frontend if you use Typescript in your project. This might be very helpful if your project features Typescript, but since this tutorial is based on Javascript, we will only jump over it.
 
 ```bash
-npm install --save-dev typechain '@typechain/hardhat' '@typechain/ethers-v5'
+npm install --save-dev typechain "@typechain/hardhat" "@typechain/ethers-v5"
 ```
 
 ## Hardhat-deploy
 
-If you need a more elegant deployment method (aside from using the 'scripts/<somefile>'  method) that keeps track of all the networks your contracts are deployed to, can also replicate same in your testing environment, “Hardhat-deploy” is the tool you need. In fact, it is one of the plugins I love using. It has interesting features that make your work much easier by adding and modifying existing hardhat tasks. An example task is “deploy”. Before installing hardhat-deploy, if you try to run “npx hardhat deploy”, you get a warning that there is no such task. By adding the tool, the task becomes available.
+If you need a more elegant deployment method (aside from using the "scripts/<somefile>"  method) that keeps track of all the networks your contracts are deployed to, can also replicate same in your testing environment, “Hardhat-deploy” is the tool you need. In fact, it is one of the plugins I love using. It has interesting features that make your work much easier by adding and modifying existing hardhat tasks. An example task is “deploy”. Before installing hardhat-deploy, if you try to run “npx hardhat deploy”, you get a warning that there is no such task. By adding the tool, the task becomes available.
 
 With this tool, you can write more straightforward tests, assign custom names to addresses to make tracking the address deployed that contract easier, track networks, etc. 
 Here are some of its features, all for a better developer experience as itemized in the documentation:
 
--   Chain configuration export.
--   It enables deterministic deployments across selected networks.
--   It enhances library linking at the time of deployment.
--   Developers are able to create specific deploy scripts per network.
--   Deployment retrying (by saving pending transactions): and you can feel confident when making deployment since you can always recover them.
--   It lists deployed contracts’ information i.e. contracts’ addresses and abis. This is useful for web applications.
--   It allows you to only deploy what is needed.
--   Support for openzeppelin transparent proxies. You are able to make proxy deployments with the ability to upgrade them transparently, only if code changes. 
+- Chain configuration export.
+- It enables deterministic deployments across selected networks.
+- It enhances library linking at the time of deployment.
+- Developers are able to create specific deploy scripts per network.
+- Deployment retrying (by saving pending transactions): and you can feel confident when making deployment since you can always recover them.
+- It lists deployed contracts’ information i.e. contracts’ addresses and abis. This is useful for web applications.
+- It allows you to only deploy what is needed.
+- Support for openzeppelin transparent proxies. You are able to make proxy deployments with the ability to upgrade them transparently, only if code changes. 
 
 For more of the features, please refer to the  [documentation](https://www.npmjs.com/package/hardhat-deploy).
 
@@ -217,16 +219,17 @@ require('hardhat-deploy'); /* < ======== */
 A hardhat plugin for react application. When run, it generates react hook components from your smart contract that is hot-loaded into your React application. It could also be helpful where your application uses Typescript, as everything is typed and initialized for you. It automatically hooks into “hardhat-deploy” when you run “npx hardhat node --watch“ and you can alway run it manually with “npx hardhat react” .
 
 It uses the following peer plugins to maximize results:
--   hardhat 
--   hardhat-deploy 
--   hardhat-deploy-ethers 
--   hardhat-typechain 
--   ts-morph 
--   ts-node 
--   typescript 
--   ts-generator 
--   typechain@4.0.0 
--   @typechain/ethers-v5
+
+- hardhat 
+- hardhat-deploy 
+- hardhat-deploy-ethers 
+- hardhat-typechain 
+- ts-morph 
+- ts-node 
+- typescript 
+- ts-generator 
+- typechain@4.0.0 
+- @typechain/ethers-v5
 
 Interestingly, you can install all of the dependencies with just one command.
 
@@ -258,9 +261,9 @@ Now that we have installed all the tools we need, let’s discuss how we can use
 ```bash
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomicfoundation/hardhat-chai-matchers");
-require('@openzeppelin/hardhat-upgrades');
+require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-ethers");
-require('hardhat-deploy');
+require("hardhat-deploy");
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-deploy-ethers");
 require("hardhat-deploy");
@@ -272,7 +275,7 @@ const { extendEnvironment } = require("hardhat/config");
  
 config();
  
-/** @type import('hardhat/config').HardhatUserConfig */
+/** @type import("hardhat/config").HardhatUserConfig */
 module.exports = {
   networks: {
     localhost: {
@@ -307,7 +310,7 @@ module.exports = {
 ```
 To make a more advanced deployment and testing, we will leverage some of the tools we have installed. 
 
-**Modifying 'Lock.sol'**
+**Modifying "Lock.sol"**
 For this task, we will modify the Lock contract to make it look more advanced with another dependency contract, and use “hardhat-deploy” to deploy the contracts to the “alfajores” network and save the deployment information anywhere we want for later use which is not available to us in the previous deployment method. Secondly, we want the deployment to run only if changes are made to the contracts. In the contract folder, create a new “.sol” file and name it “Beneficiary.sol”.
 Make a new folder as “interface”. Add a new file named “Beneficiary.sol”.
 Rename “Lock.sol” to “Bank.sol”, then paste the following code to their respective destination.
@@ -386,10 +389,10 @@ contract Beneficiaries {
 ```
 
 **IBeneficiary.sol**
-path: `interface/IBeneficiary.sol`
+path: "interface/IBeneficiary.sol"
 
 ```bash
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
  
 interface IBeneficiary {
@@ -398,7 +401,7 @@ interface IBeneficiary {
 ```
 *Note*: The above contracts are for testing purposes and may contain potential bugs. Do not use in production.
 
-In the project directory, make a new folder called "deploy", navigate into it and create a new file "00_deploy.js". You could as well name it whatever you want as long as it is ".js' extended and inside the "deploy" folder, Hardhat-deploy will find it. Inside this file, we will write a script that executes the task we want.
+In the project directory, make a new folder called "deploy", navigate into it and create a new file "00_deploy.js". You could as well name it whatever you want as long as it is ".js" extended and inside the "deploy" folder, Hardhat-deploy will find it. Inside this file, we will write a script that executes the task we want.
 
 ```bash
 mkdir deploy
@@ -424,7 +427,7 @@ With “require("@nomicfoundation/hardhat-toolbox")” active you may get _“un
 npm install –save-dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
 ```
 
-If you get a prompt in the terminal to install the above dependencies, install them using ‘Yarn’. With Yarn, you do not have to worry about incompatible dependencies. Yarn’s installation is smooth. 
+If you get a prompt in the terminal to install the above dependencies, install them using Yarn. With Yarn, you do not have to worry about incompatible dependencies. Yarn’s installation is smooth. 
 
 ```bash
 yarn add –dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
@@ -486,14 +489,14 @@ module.exports.tags = ['Beneficiaries', 'Bank'];
 
 The “00_deploy.js” is a module that accepts two parameters from the hardhat environment (hardhatconfig) when invoked: 
 
-`deployments` (line 2): This function returns a couple of utility functions, but we only need the `deploy()` so we extract by destructuring.
+_deployments_ (line 2): This function returns a couple of utility functions, but we only need the "deploy()" so we extract by destructuring.
 
-`getNamedAccounts` : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
+_getNamedAccount_ : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
 	
 ![image](images/7.png)
 
-Line 9: `deploy()` function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
-We will need to make some changes in the config file under the `namedAcccounts` object so we can perform deployment either to “Hardhat” or “Testnet”.  However, we will need accounts with signing capability to deploy to Alfajores since the default 10 accounts are meant to be used locally, and an account to sign transaction during testing. To achieve this, one thing we could do is to make a reference to the “env” file. Perhaps we need accounts with private key access. Since public keys are often derived from private keys, we can set the private key in the secret file i.e “.env”, then import it to the point it is needed. We will as well keep the rest two accounts we need as parameters in the same “.env” file. Add  "CHILD_1" and "CHILD_2" private keys.
+Line 9: "deploy()" function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
+We will need to make some changes in the config file under the "namedAcccounts" object so we can perform deployment either to “Hardhat” or “Testnet”.  However, we will need accounts with signing capability to deploy to Alfajores since the default 10 accounts are meant to be used locally, and an account to sign transaction during testing. To achieve this, one thing we could do is to make a reference to the “env” file. Perhaps we need accounts with private key access. Since public keys are often derived from private keys, we can set the private key in the secret file i.e “.env”, then import it to the point it is needed. We will as well keep the rest two accounts we need as parameters in the same “.env” file. Add  "CHILD_1" and "CHILD_2" private keys.
 
 ![image](images/8.png)
 
@@ -527,14 +530,14 @@ When the deployment is done, “hardhat-deploy” generates the following output
 
 ![image](images/10.png)
 
-If you check the content of the `.chainId` file, you’ll see `44787` which represents the network we just deployed to i.e Alfajores.
+If you check the content of the _.chainId_ file, you’ll see _44787_ which represents the network we just deployed to i.e Alfajores.
 The code in your “hardhatconfig.js” file should look like this:
 
-```js
+```bash js
 require("@nomicfoundation/hardhat-chai-matchers");
-require('@openzeppelin/hardhat-upgrades');
+require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-ethers");
-require('hardhat-deploy');
+require("hardhat-deploy");
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-deploy-ethers");
 require("hardhat-deploy");
@@ -543,7 +546,7 @@ const {config} = require("dotenv");
  
 config();
  
-/** @type import('hardhat/config').HardhatUserConfig */
+/** @type import("hardhat/config").HardhatUserConfig */
 module.exports = {
  
   networks: {
@@ -618,9 +621,9 @@ Remove the existing “Lock.js” test file. Make a new file under the test fold
 In the new test file, paste the following code:
 
 ```bash
-const { expect } = require('chai');
+const { expect } = require("chai");
 const { BigNumber } = require("bignumber.js");
-const {ethers, getNamedAccounts} = require('hardhat');
+const {ethers, getNamedAccounts} = require("hardhat");
  
  
 const toBN = (x) => {
@@ -629,10 +632,10 @@ const toBN = (x) => {
  
 describe('Beneficiaries', () => {
  
-  it('Test1: Should confirm child_1 status as false', async function () {
-    await deployments.fixture(['Beneficiaries']);
+  it("Test1: Should confirm child_1 status as false", async function () {
+    await deployments.fixture(["Beneficiaries"]);
     const { deployer, child_1 } = await getNamedAccounts();
-    const Instance = await ethers.getContract('Beneficiaries', deployer);
+    const Instance = await ethers.getContract("Beneficiaries", deployer);
  
     // Note: For approval, it used default account i.e account[0] which is also the deployer
     await Instance.approval(child_1).then((tx) =>
@@ -640,10 +643,10 @@ describe('Beneficiaries', () => {
     );
   });
  
-  it('Test2: Should approve child_2', async function () {
-    await deployments.fixture(['Beneficiaries']);
+  it("Test2: Should approve child_2", async function () {
+    await deployments.fixture(["Beneficiaries"]);
     const { deployer, child_2 } = await getNamedAccounts();
-    const Instance = await ethers.getContract('Beneficiaries', deployer);
+    const Instance = await ethers.getContract("Beneficiaries", deployer);
  
     // At this point, child_2 is not approved
     await Instance.approval(child_2).then((tx) =>
@@ -659,11 +662,11 @@ describe('Beneficiaries', () => {
     );
   });
  
-  it('Test3: Should withdraw successfully', async function () {
-    await deployments.fixture(['Beneficiaries', 'Bank']);
+  it("Test3: Should withdraw successfully", async function () {
+    await deployments.fixture(["Beneficiaries", "Bank"]);
     const { deployer, child_1, child_2 } = await getNamedAccounts();
-    const Beneficiaries = await ethers.getContract('Beneficiaries', deployer, child_1, child_2);
-    const Bank = await ethers.getContract('Bank', deployer);
+    const Beneficiaries = await ethers.getContract("Beneficiaries", deployer, child_1, child_2);
+    const Bank = await ethers.getContract("Bank", deployer);
     const initialBalance = await Bank.getBalance(child_2);
     const bankBalance = await Bank.getBalance(Bank.address);
  
@@ -683,7 +686,7 @@ describe('Beneficiaries', () => {
 ```
 
 The above set of tests cover for “Beneficiaries.sol”  and “Bank.sol” contracts. Let’s examine the code so you can better understand the structure.
-We are using the deployments information from the “00_deploy.js” when we call “await deployments.fixtures([‘Beneficiaries’])”, the script is run and it returns deployment information for which of the valid tags we specify. In this case ‘Beneficiaries’. We also have access to the `namedAccount` we used earlier by destructuring the returned values. 
+We are using the deployments information from the “00_deploy.js” when we call “await deployments.fixtures([‘Beneficiaries’])”, the script is run and it returns deployment information for which of the valid tags we specify. In this case ‘Beneficiaries’. We also have access to the "namedAccount" we used earlier by destructuring the returned values. 
 
 ```bash
 const { deployer, child_1, child_2 } = await getNamedAccounts();
@@ -693,7 +696,7 @@ const { deployer, child_1, child_2 } = await getNamedAccounts();
 Thereafter, we get a single contract object by calling the “getContract” method provided by the plugin. 
 
 ```bash
-const Instance = await ethers.getContract('Beneficiaries', deployer);
+const Instance = await ethers.getContract("Beneficiaries", deployer);
  
 ```
 
