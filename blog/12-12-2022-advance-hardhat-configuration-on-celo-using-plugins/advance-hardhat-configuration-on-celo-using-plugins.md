@@ -31,10 +31,10 @@ cd advanced-hardhat-for-celo-dev
 # Requirements​
 
 To get started, ensure you have the following tools installed on the machine:
-  - Code editor. VSCode recommended.
-  - NodeJs version >=14.0.0. 
+- Code editor. VSCode recommended.
+- NodeJs version >=14.0.0. 
 
-_Note:_ I am using Node version "18.12.1"
+**Note:** I am using Node version "18.12.1"
 
 ## Hardhat plugins
 
@@ -47,7 +47,7 @@ Using plugins with Hardhat is one flexibility advantage over Truffle, which simp
 - @nomicfoundation/hardhat-chai-matchers
 - @openzeppelin/hardhat-upgrades
 - @nomiclabs/hardhat-ethers
-- _@typechain/hardhat_
+- @typechain/hardhat
 - Hardhat-deploy
 - Hardhat-react
 
@@ -65,7 +65,7 @@ extendEnvironment((hre) => {
 
 Hardhat lets you add instances of these tools to its environment object by installing and initializing them once in "hardhatconfig.js". Soon as they feature in the Hardhat global variables, they’ll be available for use across every Hardhat component. Firstly, we will install and configure the plugins we need, then we will apply the usage. 
 
-_Note:_ Hardhat components are files/folders within Hardhat context i.e. within the scope of its reach, such as “test” folder. 
+**Note:** Hardhat components are files/folders within Hardhat context i.e. within the scope of its reach, such as “test” folder. 
 
 ## @nomicfoundation/hardhat-toolbox
 
@@ -93,7 +93,6 @@ npm install --save-dev @nomicfoundation/hardhat-chai-matchers chai @nomiclabs/ha
 Or
 
 ```bash
-
 yarn add --dev @nomicfoundation/hardhat-chai-matchers chai @nomiclabs/hardhat-ethers ethers
 
 ```
@@ -121,12 +120,12 @@ Openzeppelin/hardhat-upgrades depend on etherjs library as peer dependency to fu
 ```bash
 npm install --save-dev @nomiclabs/hardhat-ethers ethers
 ```
+
 Activate it in "hardhatconfig.js":
 
-```js
+```bash js
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@openzeppelin/hardhat-upgrades");        /* < ======== */
- 
 ```
 
 
@@ -188,11 +187,11 @@ The following command installs "hardhat-deploy" together with peer dependencies 
 ```bash
 npm install --save-dev  @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers
 ```
-If you use the above command, in your config file, you will need to write require("@nomiclabs/hardhat-ethers") instead of require("hardhat-deploy-ethers")
+If you use the above command, in your config file, you will need to write **require("@nomiclabs/hardhat-ethers")** instead of **require("hardhat-deploy-ethers")**
 
 ![image](images/2.png)
 
-Since we’d already installed “ether” and “nomiclabs/hardhat-ethers”, we only need to install “hardhat-deploy-ethers”.
+Since we’d already installed “ether” and **“nomiclabs/hardhat-ethers”**, we only need to install **“hardhat-deploy-ethers”**.
 
 ```bash
 npm install -D hardhat-deploy 
@@ -201,7 +200,7 @@ npm install -D hardhat-deploy
 Or
 
 ```bash
-yarn add –dev hardhat-deploy
+yarn add --dev hardhat-deploy
 ```
 
 Then activate in hardhat file:
@@ -210,8 +209,7 @@ Then activate in hardhat file:
 require("@nomicfoundation/hardhat-chai-matchers");
 require('@openzeppelin/hardhat-upgrades');
 require("@nomiclabs/hardhat-ethers");
-require('hardhat-deploy'); /* < ======== */
- 
+require("hardhat-deploy"); /* < ======== */
 ```
 
 ## Hardhat-react
@@ -399,7 +397,7 @@ interface IBeneficiary {
   function getApproval(address) external view returns(bool);
 }
 ```
-*Note*: The above contracts are for testing purposes and may contain potential bugs. Do not use in production.
+**Note**: The above contracts are for testing purposes and may contain potential bugs. Do not use in production.
 
 In the project directory, make a new folder called "deploy", navigate into it and create a new file "00_deploy.js". You could as well name it whatever you want as long as it is ".js" extended and inside the "deploy" folder, Hardhat-deploy will find it. Inside this file, we will write a script that executes the task we want.
 
@@ -409,7 +407,7 @@ cd deploy
 touch 00_deploy.js
 
 ```
-Output => “deploy/00_deploy.js” 
+Output => **“deploy/00_deploy.js”** 
 
 ![image](images/3.png)
 
@@ -421,23 +419,24 @@ Before you compile, comment out these dependencies.
 // require("hardhat-typechain");
  
 ```
-With “require("@nomicfoundation/hardhat-toolbox")” active you may get _“unresolved dependency error”_ and may be required to install the following dependencies:
+
+With **“require("@nomicfoundation/hardhat-toolbox")”** active you may get “_unresolved dependency error_” and may be required to install the following dependencies:
 
 ```bash
-npm install –save-dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
+npm install --save-dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
 ```
 
 If you get a prompt in the terminal to install the above dependencies, install them using Yarn. With Yarn, you do not have to worry about incompatible dependencies. Yarn’s installation is smooth. 
 
 ```bash
-yarn add –dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
+yarn add --dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0"
 ```
 
-Also, you get the following error if you try to compile while “@nomicfoundation/hardhat-toolbox” is imported alongside previous dependencies. This is because we had manually installed some of the dependencies which also exist in the toolbox. Most times you get typechain error.
+Also, you get the following error if you try to compile while **“@nomicfoundation/hardhat-toolbox”** is imported alongside previous dependencies. This is because we had manually installed some of the dependencies which also exist in the toolbox. Most times you get typechain error.
 
 ![image](images/4.png)
 
-There is more than one copy of the Typechain plugin all competing for usage hence the naming conflict. To resolve this issue, we simply remove “@nomicfoundation/hardhat-toolbox” from the hardhatconfig.js so we can have only the manually installed dependencies. 
+There is more than one copy of the Typechain plugin all competing for usage hence the naming conflict. To resolve this issue, we simply remove **“@nomicfoundation/hardhat-toolbox”** from the hardhatconfig.js so we can have only the manually installed dependencies. 
 
 You will also get an error like this if “hardhat-typechain” is present because it works plainly with Typescript. Since we are not using Typescript we simply remove it.
 
@@ -489,13 +488,13 @@ module.exports.tags = ['Beneficiaries', 'Bank'];
 
 The “00_deploy.js” is a module that accepts two parameters from the hardhat environment (hardhatconfig) when invoked: 
 
-_deployments_ (line 2): This function returns a couple of utility functions, but we only need the "deploy()" so we extract by destructuring.
+**deployments** (line 2): This function returns a couple of utility functions, but we only need the "deploy()" so we extract by destructuring.
 
-_getNamedAccount_ : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
+**getNamedAccount** : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
 	
 ![image](images/7.png)
 
-Line 9: "deploy()" function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
+Line 9: **"deploy()"** function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
 We will need to make some changes in the config file under the "namedAcccounts" object so we can perform deployment either to “Hardhat” or “Testnet”.  However, we will need accounts with signing capability to deploy to Alfajores since the default 10 accounts are meant to be used locally, and an account to sign transaction during testing. To achieve this, one thing we could do is to make a reference to the “env” file. Perhaps we need accounts with private key access. Since public keys are often derived from private keys, we can set the private key in the secret file i.e “.env”, then import it to the point it is needed. We will as well keep the rest two accounts we need as parameters in the same “.env” file. Add  "CHILD_1" and "CHILD_2" private keys.
 
 ![image](images/8.png)
@@ -520,9 +519,9 @@ If you perhaps would need deployment information, paste the following in the “
 
 ```bash
 paths: {
-    deploy: 'deploy',
-    deployments: 'deployments',
-    imports: 'imports'
+    deploy: "deploy",
+    deployments: "deployments",
+    imports: "imports"
   },
  
 ```
@@ -616,7 +615,7 @@ module.exports = {
 **Testing**
 
 Testing smart contracts enables us to be sure our solidity code is working as intended. We have 2 contracts to test: “Beneficiaries.sol” and ”Bank.sol”. 
-Remove the existing “Lock.js” test file. Make a new file under the test folder and name it ”Beneficiaries.js”. We will write a short, concise, simple unit test using the script we wrote in “deploy/00_deploy.js”.  Since we are testing locally, we will require deployments to be done locally. Here, we are leveraging “hardhat-deploy” and “hardhat-deploy-ethers”.
+Remove the existing “Lock.js” test file. Make a new file under the test folder and name it ”Beneficiaries.js”. We will write a short, concise, simple unit test using the script we wrote in **“deploy/00_deploy.js”**.  Since we are testing locally, we will require deployments to be done locally. Here, we are leveraging “hardhat-deploy” and **“hardhat-deploy-ethers”**.
 
 In the new test file, paste the following code:
 
@@ -685,12 +684,11 @@ describe('Beneficiaries', () => {
 
 ```
 
-The above set of tests cover for “Beneficiaries.sol”  and “Bank.sol” contracts. Let’s examine the code so you can better understand the structure.
-We are using the deployments information from the “00_deploy.js” when we call “await deployments.fixtures([‘Beneficiaries’])”, the script is run and it returns deployment information for which of the valid tags we specify. In this case ‘Beneficiaries’. We also have access to the "namedAccount" we used earlier by destructuring the returned values. 
+The above set of tests cover for **“Beneficiaries.sol”**  and “Bank.sol” contracts. Let’s examine the code so you can better understand the structure.
+We are using the deployments information from the “00_deploy.js” when we call **“await deployments.fixtures([‘Beneficiaries’])”**, the script is run and it returns deployment information for which of the valid tags we specify. In this case ‘Beneficiaries’. We also have access to the "namedAccount" we used earlier by destructuring the returned values. 
 
 ```bash
 const { deployer, child_1, child_2 } = await getNamedAccounts();
-
 ```
 
 Thereafter, we get a single contract object by calling the “getContract” method provided by the plugin. 
@@ -742,7 +740,7 @@ Congratulations on completing this tutorial. What we have learned so far:
 You can go over this tutorial as many times as you can to fully understand all of the concepts we have discussed so far. Practice makes perfect. Make some time to try out new things on your own and you will be able to deploy your own dApp on Celo. If you’re looking for related tutorials, I recommend to browse through _[the Celo blog](https://docs.celo.org/tutorials)_;
 
 # About the Author​
-**Isaac Jesse**, aka Bobelr is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on. He has also contributed to Web3 projects.
+**Isaac Jesse** , aka _Bobelr_ is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on as content producer. He has also contributed to Web3 projects as a developer.
 
 # References​
 - [Celo developers resources](https://docs.celo.org/developer/)
