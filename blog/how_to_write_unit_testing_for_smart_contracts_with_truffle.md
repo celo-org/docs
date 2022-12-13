@@ -1,5 +1,3 @@
-
-
 # How to Write Unit Testing for Smart Contracts with Truffle
 
 # Introduction
@@ -25,6 +23,7 @@ To install the truffle suite using your terminal. Create a workspace, head over 
 
 Now, run the command `npx truffle init` to fire up the development environment.
 You’ll notice a new file structure appears in your file explorer, something like the image below:
+
 ![truffle_init](https://user-images.githubusercontent.com/69092079/206867332-0a1c4244-b0df-4211-8c68-efe50dd44990.jpg)
 
 
