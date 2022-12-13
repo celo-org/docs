@@ -46,9 +46,11 @@ Basically, Hardhat was built to target blockchain platforms that are compatible 
 Open up a git bash terminal and the system terminal side by side. We don’t need two command lines, but I want to show you a common challenge most web3 developers often encounter and a simple hack that saves you the headache.
 ![image](images/4.png)
 
-Make a new directory in the `git bash` terminal for this tutorial. And name it _**celo-hardhat-example**_ . 
+Make a new directory in the "git bash" terminal for this tutorial. And name it _**celo-hardhat-example**_ . 
+
 Run: 
-```
+
+```bash
 mkdir celo-hardhat-example && cd celo-hardhat-example
 
 ```
@@ -57,16 +59,16 @@ These simple commands create a new project folder with the name tag **“celo-ha
 
 ![image](images/1.png)
 
-Still in the project directory, run: `yarn add hardhat` or `npm install hardhat`, whichever package manager you prefer. Be sure to have an internet connection as the command downloads hardhat set-up scripts in the project’s root directory. You may experience delays with Git bash as sometimes it takes longer to install hardhat successfully. If this is the case, switch to using the system’s command prompt or that of VSCode but split the commands instead by removing the `“&&”` operator. After that, run:
+Still in the project directory, run: "yarn add hardhat" or "npm install hardhat", whichever package manager you prefer. Be sure to have an internet connection as the command downloads hardhat set-up scripts in the project’s root directory. You may experience delays with Git bash as sometimes it takes longer to install hardhat successfully. If this is the case, switch to using the system’s command prompt or that of VSCode but split the commands instead by removing the `“&&”` operator. After that, run:
 
-```
+```bash
 npm install --save-dev hardhat
 
 ```
 
 Here, we are installing the Hardhat setup script as a dependency. When the installation is complete, we will create an instance of a hardhat boilerplate project. To do this, run:
 
-```
+```bash
 npx hardhat
 
 ```
@@ -80,9 +82,9 @@ This is a known compatibility issue with Git bash to create an instance of hardh
 
 ![image](images/2.png)
 
-A warm display showing installation success and a dialogue section will pop up in the terminal asking for your preferences. Select Javascript as the preferred language (for this tutorial) by clicking `“Enter”` on your keyboard. Next, you will be asked to install nomiclabs tools. There are a couple of dependencies/packages we need for our project. They’re compressed in “@nomicfoundation/hardhat-toolbox” so you do not have to download them separately such as `“@nomiclabs/hardhat-waffle”`, `“@etherproject”` plus a few others.  Watch out for it in the terminal. Copy-paste it back to the terminal and run it. In a few minutes, the installation should be complete. Open the boilerplate code from the current CLI. Run `code .` (i.e code space dot).
+A warm display showing installation success and a dialogue section will pop up in the terminal asking for your preferences. Select Javascript as the preferred language (for this tutorial) by clicking “Enter” on your keyboard. Next, you will be asked to install nomiclabs tools. There are a couple of dependencies/packages we need for our project. They’re compressed in “@nomicfoundation/hardhat-toolbox” so you do not have to download them separately such as “@nomiclabs/hardhat-waffle”, “@etherproject” plus a few others.  Watch out for it in the terminal. Copy-paste it back to the terminal and run it. In a few minutes, the installation should be complete. Open the boilerplate code from the current CLI. Run "code ." (i.e code space dot).
 
-```
+```bash
 npm install --save-dev "hardhat@^2.12.2" "@nomicfoundation/hardhat-toolbox@^2.0.0"
 
 ```
@@ -100,9 +102,9 @@ If all goes well, Your project folder/file structure should look like this:
 Let’s examine the structure and how we can configure it to make the best use of them.
 	
 **contracts**: 
-This folder contains smart contract files written in solidity. When you invoke hardhat to compile your contracts i.e, `npx hardhat compile`, The instruction is passed to the default solidity compiler - `“solc”` to execute compilation instruction on every file with `.sol` extension inside the contacts folder. In other words, contracts are an array of solidity files. You can override the compiler version by explicitly defining the version of `solc` that will be used to compile all of the solidity files by explicitly speecifying a preferred list of `solc` versions in the `hardhatconfig.js`. Don't worry much about this. I will show you as we progress.
+This folder contains smart contract files written in solidity. When you invoke hardhat to compile your contracts i.e, "npx hardhat compile", The instruction is passed to the default solidity compiler - “solc” to execute compilation instruction on every file with ".sol" extension inside the contacts folder. In other words, contracts are an array of solidity files. You can override the compiler version by explicitly defining the version of "solc" that will be used to compile all of the solidity files by explicitly speecifying a preferred list of "solc" versions in the "hardhatconfig.js". Don't worry much about this. I will show you as we progress.
 
-As a good practice, you could separate concerns among the different `.sol` files by filtering them into groups.
+As a good practice, you could separate concerns among the different ".sol" files by filtering them into groups.
 
 _Example_: Under the contract folder, you could have: 
 -  contracts: 
@@ -112,7 +114,7 @@ _Example_: Under the contract folder, you could have:
 
 Let’s take a look at the example contract (Lock.sol)  under the contracts folder. The contract is written for example purposes. So you should not try to deploy to production. The first thing we want to do is compile the contract.
 
-```
+```bash
 npx hardhat compile
 
 ```
@@ -122,18 +124,18 @@ An artifact folder is created that contains the compile contracts from which we 
 
 **scripts**: 
 
-This folder contains Javascript files used for special tasks such as deployments. `“scripts/deploy.js”` is a deployment file that fetches and deploy compiled contracts from the artifacts that were generated when `npx hardhat compile` was run. To actively run any `.js` file under the scripts, for example, `“deploy.js”`, use the command in the format:
+This folder contains Javascript files used for special tasks such as deployments. “scripts/deploy.js” is a deployment file that fetches and deploy compiled contracts from the artifacts that were generated when _npx hardhat compile_ was run. To actively run any ".js" file under the scripts, for example, “deploy.js”, use the command in the format:
 
-```
+```bash
 npx hardhat run scripts/deploy.js
 
 ```
 
-If you have files other than `deploy.js` and want to specifically point to it, you only need to substitute `“deploy.js”` for it.
+If you have files other than "deploy.js" and want to specifically point to it, you only need to substitute “deploy.js” for it.
 
 Let’s try to deploy our **_Lock.sol_** contract to the Celo testnet. We will use the same command except for additional arguments to show we want to deploy to a specific network.
 
-```
+```bash
 npx hardhat run scripts/deploy.js –network alfajores
 
 ```
@@ -145,18 +147,18 @@ The above command starts by invoking node package manager - **_npm_**, which goe
 `Note`: Hardhat will always perform a new compilation instruction if changes to previously compiled contract (s) exist. This is done using the cache file that will be generated soon as hardhat command is invoked.
 To deploy to Celo mainnet, we point the command to Celo as in: 
 
-```
+```bash
 npx hardhat run scripts/deploy.js –network celo
 
 ```
 
 Alternatively, you may need to first deploy your contracts locally before sending it to a live network. This enables you to test extensively, debug and catch potential errors ahead of time. Hardhat provides you with two hardhat-based network options:
 
-An In-memory instance of Hardhat Network created by default on start-up. When you run `“npx hardhat deploy”` without using the `“--network”` flag, the in-memory network is used.
+An In-memory instance of Hardhat Network created by default on start-up. When you run “npx hardhat deploy” without using the `“--network”` flag, the in-memory network is used.
 
 The second option is a standalone hardhat network, that allows external clients, such as web3 wallets e.g. Metamask, to connect to it. To use this option, you have to run it as a node.
 
-```
+```bash
 npx hardhat node
 
 ```
@@ -166,8 +168,7 @@ npx hardhat node
 It uses a JSON RPC Websocket server that runs on port `http://127.0.0.1:8545`. A set of pre-funded accounts is generated, and you can connect external clients like Metamask. In the following tutorial, we will learn how to do that. To deploy to the server, run:
 
 
-```
-
+```bash
 npx hardhat run scripts/deploy.js --network localhost
 
 ```
@@ -179,7 +180,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 As the name implies, the test holds all of the test files we have written for our smart programs. To run test files, we invoke the command:
 
-```
+```bash
 npx hardhat test
 
 ```
@@ -195,8 +196,8 @@ The network parameters we will use are defined in **[Celo’s documentation](htt
 
 Hardhat config file is a module that exports a JSON object with which hardhat exposes an object called `networks` - a JSON object that contains network information. Since we could connect to Celo’s testnet or mainnet, let’s populate the network field. Copy the following and replace the `module.exports`: 
 
-```
-   /** @type import('hardhat/config').HardhatUserConfig */
+```bash
+  /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
  

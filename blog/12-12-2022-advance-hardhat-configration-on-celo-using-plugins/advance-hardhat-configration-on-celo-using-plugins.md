@@ -729,17 +729,17 @@ If you expand the deployment folder, you should have the following structure gen
 Congratulations on completing this tutorial. What we have learned so far:
 
 - Hardhat plugins
-    - What they are.
-    - How they work under the hood.
-    - How we can manipulate them to achieve desired results.
+  - What they are.
+  - How they work under the hood.
+  - How we can manipulate them to achieve desired results.
 - Advanced hardhat configuration using plugins with examples.
 - Lastly, we learn how to harmonize deployment to write clear and concise tests.
 
-# Next Steps​
+# What next?​
 You can go over this tutorial as many times as you can to fully understand all of the concepts we have discussed so far. Practice makes perfect. Make some time to try out new things on your own and you will be able to deploy your own dApp on Celo. If you’re looking for related tutorials, I recommend to browse through _[the Celo blog](https://docs.celo.org/tutorials)_;
 
 # About the Author​
-Isaac Jesse, aka Bobelr is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on. He has also contributed to Web3 projects.
+**Isaac Jesse**, aka Bobelr is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on. He has also contributed to Web3 projects.
 
 # References​
 - [Celo developers resources](https://docs.celo.org/developer/)
