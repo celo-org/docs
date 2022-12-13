@@ -2,7 +2,10 @@
 title: Advance hardhat configration on celo using plugins
 description: Leveraging plug-ins for better developer experience
 authors:
-  - name: ✍️ Isaac Jesse
+  - name: Isaac Jesse
+    title: Web3, Smart Contract Developer
+    url: https://github.com/bobeu
+    image_url: https://github.com/bobeu.png
 tags: [hardhat, celo]
 hide_table_of_contents: true
 slug: /tutorials/advance-hardhat-configration-on-celo-using-plugins
@@ -64,7 +67,7 @@ Hardhat lets you add instances of these tools to its environment object by insta
 
 *Note:* Hardhat components are files/folders within Hardhat context i.e. within the scope of its reach, such as “test” folder. 
 
-**@nomicfoundation/hardhat-toolbox**
+## @nomicfoundation/hardhat-toolbox
 
 A set of coordinated tools developed and recommended by the hardhat officials that bundles the commonly used packages and plugins. When you initialize a hardhat project, “@nomicfoundation/hardhat-toolbox” will be the default umbrella package that houses other tools such as “@nomiclabs/hardhat-etherscan”, “@nomiclabs/hardhat-ethers” etc. Importing the library alongside the pre-installed tools will only make them redundant. 
 
@@ -108,12 +111,12 @@ import "@nomicfoundation/hardhat-chai-matchers";
 ```
 
 
-**@openzeppelin/hardhat-upgrades**
+## @openzeppelin/hardhat-upgrades
 
 This tool reduces your tasks when writing upgradeable contracts by modifying Hardhat scripts adding new functions that enable you to deploy and manage proxied contracts, so anytime you release a new version of your dApp, you only need a minimal command to update it, and your users can start interacting with the newer version.
 If you’re looking for a tutorial on how to write upgradeable contracts, [this blogpost](https://docs.celo.org/blog/tutorials/how-to-create-an-upgradeable-smart-contract-in-celo) might be helpful.
 
-	Openzeppelin/hardhat-upgrades depend on etherjs library as peer dependency to function properly. We will install it as a dev dependency. alongside the peer.
+Openzeppelin/hardhat-upgrades depend on etherjs library as peer dependency to function properly. We will install it as a dev dependency. alongside the peer.
 
 ```bash
 npm install --save-dev @nomiclabs/hardhat-ethers ethers
@@ -127,7 +130,7 @@ require('@openzeppelin/hardhat-upgrades');        /* < ======== */
 ```
 
 
-**@nomiclab/hardhat-ethers**
+## @nomiclab/hardhat-ethers
 	
 This is an official plugin from the Nomic Foundation that wraps the Ethereum library (Etherjs), abstracts the complexities and provides you with a hardhat-configured version for easy interaction with Ethereum-compatible blockchains without creating additional tasks. It depends on the "ether.js" library and works very well with versions from v5.0.0 and above, it adds ethers objects to the Hardhat environment using the same APIs as ether.js .
 
@@ -152,7 +155,7 @@ require("@nomiclabs/hardhat-ethers");  /* < ======== */
  
 ```
 
-**@typechain/hardhat**
+## @typechain/hardhat
 
 Of all mentioned plugins, this is the easiest as it adds Typescript support for smart contracts at compile time. It generates Typescript binding you will need in your test and/or frontend if you use Typescript in your project. This might be very helpful if your project features Typescript, but since this tutorial is based on Javascript, we will only jump over it.
 
@@ -160,7 +163,7 @@ Of all mentioned plugins, this is the easiest as it adds Typescript support for 
 npm install --save-dev typechain '@typechain/hardhat' '@typechain/ethers-v5'
 ```
 
-**Hardhat-deploy**
+## Hardhat-deploy
 
 If you need a more elegant deployment method (aside from using the 'scripts/<somefile>'  method) that keeps track of all the networks your contracts are deployed to, can also replicate same in your testing environment, “Hardhat-deploy” is the tool you need. In fact, it is one of the plugins I love using. It has interesting features that make your work much easier by adding and modifying existing hardhat tasks. An example task is “deploy”. Before installing hardhat-deploy, if you try to run “npx hardhat deploy”, you get a warning that there is no such task. By adding the tool, the task becomes available.
 
@@ -185,7 +188,7 @@ npm install --save-dev  @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethe
 ```
 If you use the above command, in your config file, you will need to write require("@nomiclabs/hardhat-ethers") instead of require("hardhat-deploy-ethers")
 
-[image](images/2.png)
+![image](images/2.png)
 
 Since we’d already installed “ether” and “nomiclabs/hardhat-ethers”, we only need to install “hardhat-deploy-ethers”.
 
@@ -209,7 +212,7 @@ require('hardhat-deploy'); /* < ======== */
  
 ```
 
-**Hardhat-react**
+## Hardhat-react
 
 A hardhat plugin for react application. When run, it generates react hook components from your smart contract that is hot-loaded into your React application. It could also be helpful where your application uses Typescript, as everything is typed and initialized for you. It automatically hooks into “hardhat-deploy” when you run “npx hardhat node --watch“ and you can alway run it manually with “npx hardhat react” .
 
@@ -304,12 +307,12 @@ module.exports = {
 ```
 To make a more advanced deployment and testing, we will leverage some of the tools we have installed. 
 
-__Modifying 'Lock.sol'__
+**Modifying 'Lock.sol'**
 For this task, we will modify the Lock contract to make it look more advanced with another dependency contract, and use “hardhat-deploy” to deploy the contracts to the “alfajores” network and save the deployment information anywhere we want for later use which is not available to us in the previous deployment method. Secondly, we want the deployment to run only if changes are made to the contracts. In the contract folder, create a new “.sol” file and name it “Beneficiary.sol”.
 Make a new folder as “interface”. Add a new file named “Beneficiary.sol”.
 Rename “Lock.sol” to “Bank.sol”, then paste the following code to their respective destination.
 
-__Bank.sol__
+**Bank.sol**
 This is a simple time-lock contract that allows only approved child address to withdraw from the bank. The Bank makes an external gasless call to the “Beneficiaries” contract to verify if the caller is an approved beneficiary. The former depends on the latter.
 
 ```bash
@@ -348,7 +351,7 @@ contract Bank {
 
 ```
 
-__Beneficiary.sol__
+**Beneficiary.sol**
 An independent contract that returns whether the queried address is a beneficiary or not. Owner is able to approve or disapprove the beneficiary. 
 
 ```bash
@@ -382,7 +385,7 @@ contract Beneficiaries {
 }
 ```
 
-__IBeneficiary.sol__
+**IBeneficiary.sol**
 path: `interface/IBeneficiary.sol`
 
 ```bash
@@ -405,9 +408,9 @@ touch 00_deploy.js
 ```
 Output => “deploy/00_deploy.js” 
 
-[image](images/3.png)
+![image](images/3.png)
 
-__Run compile:__
+**Run compile:**
 Before you compile, comment out these dependencies.
 
 ```js
@@ -429,23 +432,23 @@ yarn add –dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundat
 
 Also, you get the following error if you try to compile while “@nomicfoundation/hardhat-toolbox” is imported alongside previous dependencies. This is because we had manually installed some of the dependencies which also exist in the toolbox. Most times you get typechain error.
 
-[image](images/4.png)
+![image](images/4.png)
 
 There is more than one copy of the Typechain plugin all competing for usage hence the naming conflict. To resolve this issue, we simply remove “@nomicfoundation/hardhat-toolbox” from the hardhatconfig.js so we can have only the manually installed dependencies. 
 
 You will also get an error like this if “hardhat-typechain” is present because it works plainly with Typescript. Since we are not using Typescript we simply remove it.
 
-[image](images/5.png)
+![image](images/5.png)
 
 Now we can compile
 
 ```bash
 npx hardhat compile
 ```
-[image](images/6.png)
+![image](images/6.png)
 
 
-__Deploy to Alfajores:__
+**Deploy to Alfajores:**
 
 Remember we had earlier created a file inside the deploy folder - “00_deploy.js”. [Copy/paste this code](https://github.com/bobeu/advanced-hardhat-for-celo-dev)'
 
@@ -487,18 +490,18 @@ The “00_deploy.js” is a module that accepts two parameters from the hardhat 
 
 `getNamedAccounts` : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
 	
-[image](images/7.png)
+![image](images/7.png)
 
 Line 9: `deploy()` function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
 We will need to make some changes in the config file under the `namedAcccounts` object so we can perform deployment either to “Hardhat” or “Testnet”.  However, we will need accounts with signing capability to deploy to Alfajores since the default 10 accounts are meant to be used locally, and an account to sign transaction during testing. To achieve this, one thing we could do is to make a reference to the “env” file. Perhaps we need accounts with private key access. Since public keys are often derived from private keys, we can set the private key in the secret file i.e “.env”, then import it to the point it is needed. We will as well keep the rest two accounts we need as parameters in the same “.env” file. Add  "CHILD_1" and "CHILD_2" private keys.
 
-[image](images/8.png)
+![image](images/8.png)
 
 In the “hardhatconfig.js”, modify the “namedAccount” object as shown below. Pay attention to how I configured each of the accounts. The “default” key points to accounts generated by Hardhat. To set accounts for Alfajores, we must use the network’s chainId as the key otherwise we get errors. The same method applies if you are deploying to the Celo mainnet.
 
 Notice I prefixed the value for the deployer under “44787” with “privatekey://”. This is to enable Hardhat to know that we are using a full signer account since the deployer will need to sign transactions while deploying to the live network. Lastly, we loaded the values programmatically using “process.env” .
 
-[image](images/9.png)
+![image](images/9.png)
 
 
 We can then run: 
@@ -506,7 +509,7 @@ We can then run:
 ```bash
 npx hardhat deploy --network alfajores
 ```
-[image](images/10.png)
+![image](images/10.png)
 
 
 You should see the above messages printed to the console. If you get any error, please go over it again to ensure you follow all the steps as itemized. 
@@ -522,7 +525,7 @@ paths: {
 ```
 When the deployment is done, “hardhat-deploy” generates the following outputs.
 
-[image](images/10.png)
+![image](images/10.png)
 
 If you check the content of the `.chainId` file, you’ll see `44787` which represents the network we just deployed to i.e Alfajores.
 The code in your “hardhatconfig.js” file should look like this:
@@ -607,7 +610,7 @@ module.exports = {
  
 ```
 
-__Testing__
+**Testing**
 
 Testing smart contracts enables us to be sure our solidity code is working as intended. We have 2 contracts to test: “Beneficiaries.sol” and ”Bank.sol”. 
 Remove the existing “Lock.js” test file. Make a new file under the test folder and name it ”Beneficiaries.js”. We will write a short, concise, simple unit test using the script we wrote in “deploy/00_deploy.js”.  Since we are testing locally, we will require deployments to be done locally. Here, we are leveraging “hardhat-deploy” and “hardhat-deploy-ethers”.
@@ -711,16 +714,16 @@ await Bank.connect(signer).withdraw();
 We can now run the test.
 npx hardhat test
 
-[image](images/12.png)
+![image](images/12.png)
 
 Boom! We made it and our test passed as expected. The complete code for this tutorial can be found here.
 
 
-___Deployments folder__
+**_Deployments folder**
 
 If you expand the deployment folder, you should have the following structure generated by the plugin.
 
-[image](images/13.png)
+![image](images/13.png)
 
 # Conclusion​
 Congratulations on completing this tutorial. What we have learned so far:
@@ -733,7 +736,7 @@ Congratulations on completing this tutorial. What we have learned so far:
 - Lastly, we learn how to harmonize deployment to write clear and concise tests.
 
 # Next Steps​
-You can go over this tutorial as many times as you can to fully understand all of the concepts we have discussed so far. Practice makes perfect. Make some time to try out new things on your own and you will be able to deploy your own dApp on Celo. If you’re looking for related tutorials, I recommend _[this]()_ and  _[this]()_ ;
+You can go over this tutorial as many times as you can to fully understand all of the concepts we have discussed so far. Practice makes perfect. Make some time to try out new things on your own and you will be able to deploy your own dApp on Celo. If you’re looking for related tutorials, I recommend to browse through _[the Celo blog](https://docs.celo.org/tutorials)_;
 
 # About the Author​
 Isaac Jesse, aka Bobelr is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on. He has also contributed to Web3 projects.
