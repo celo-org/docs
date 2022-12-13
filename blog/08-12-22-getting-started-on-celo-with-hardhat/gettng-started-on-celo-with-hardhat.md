@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/getting-started-on-celo-with-hardhat
 ---
 
+![header](images/17.png)
+
 # Introduction
 ​
 Since the bubbling part of the Web3-learning stream features more about tooling than writing code, many aspiring web3 developers often are exposed to boilerplate code where most of the things happening are abstracted. Picking the right choice of tools and knowing how to use them effectively will give you a better experience as a web3 developer and increase your efficiency. This is one of the goals of Celo as a platform. 
