@@ -144,7 +144,7 @@ The above command starts by invoking node package manager - **_npm_**, which goe
 
 ![image](images/7.png)
 
-`Note`: Hardhat will always perform a new compilation instruction if changes to previously compiled contract (s) exist. This is done using the cache file that will be generated soon as hardhat command is invoked.
+> Note: Hardhat will always perform a new compilation instruction if changes to previously compiled contract (s) exist. This is done using the cache file that will be generated soon as hardhat command is invoked.
 To deploy to Celo mainnet, we point the command to Celo as in: 
 
 ```bash
