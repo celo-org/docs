@@ -1,68 +1,49 @@
+---
 title: How to Build a Bookshop Marketplace Dapp
 description: Learn how to build a bookshop marketplace platform on celo blockchain
 authors:
-  - name: Tevin Isaac
+
+- name: Tevin Isaac
     title: Blockchain Developer, Dacade Evangelist
-    url: https://github.com/Tevin-Isaac
-    image_url: https://github.com/Tevin-Isaac.png
+    url: <https://github.com/Tevin-Isaac>
+    image_url: <https://github.com/Tevin-Isaac.png>
 tags: [web3.js,Solidity]
 hide_table_of_contents: true
 slug: /tutorials/How to build a Bookshop Marketplace Dapp
+---
 
-##  How to build  a Bookshop marketplace Dapp on Celo Blockchain
-Reference: Dacade Celo Development 101
-
- ## contents
-Introduction​	
-Prerequisites​	
-Requirements​	
-Tutorial	
-Step 1: Creating our Smart Contract	
-Defining Our Smart Contract	
-What is a Token?	
-What is ERC-20?	
-Prerequisites	
-Interface	
-Methods	
-Events	
-Structs	
-Step 2: Compiling and Deploying Smart Contract	
-Step 3	
-Conclusion​	
-Next Steps​	
-About the Author​	
-References​	
+# How to build  a Bookshop marketplace Dapp on Celo Blockchain
 
 ## Introduction​
+
 Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone.
 
 ## Prerequisites​
-Celo has a documentation for developers for you to install all the tools that you need to build on Celo. Here is the link: https://docs.celo.org/developer
- Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality. This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum. 
+
+Celo has a documentation for developers for you to install all the tools that you need to build on Celo. Here is the link: <https://docs.celo.org/developer>
+ Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality. This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
+
 ## Requirements​
+
 Installations
 NPM from V12.or higher
 Node.js from  V10. or higher
-Solidity 
+Solidity
 Celo contractkit
+
 ## Tutorial
-
-
 
 Here is a preview of what we are about to create.
 ![1_zspF9bqV7Z4m0_MsdyNbGQ](https://user-images.githubusercontent.com/81568615/206859476-c5f8f03c-b471-4442-9d31-2566b9bd5aa5.gif)
 
 ## Step 1: Creating our Smart Contract
+
 First we are going to build our smart contract and with this you will be required to have a bit of  knowledge of Solidity. To learn more about solidity contracts and the structures of a contract you can check out this link.
 
-
-We are also going to use Remix as our IDE. Remix is mainly used to write Solidity contracts for Ethereum but can also be used to write Solidity contracts for Celo. The Remix IDE is an open source tool that helps you write Solidity contracts in your browser. 
+We are also going to use Remix as our IDE. Remix is mainly used to write Solidity contracts for Ethereum but can also be used to write Solidity contracts for Celo. The Remix IDE is an open source tool that helps you write Solidity contracts in your browser.
 
 Click here to open your remix IDE.
 ![1_Cz8GoBKaBuW5va1_0EBtWA](https://user-images.githubusercontent.com/81568615/206859320-d9c490d3-5807-42b6-94f3-ab12702060b2.gif)
-
-
-
 
 While the development of Celo on Remix is quite similar to Ethereum on Remix, there are some differences. The main difference is that you must use Celo or cUSD for transactions and gas prices instead of Ether. Additionally, you will deploy to the Celo blockchain and the Celo testnets, Alfajores, instead of the Ethereum Blockchain or its testnets. To do that, you will use a Celo plugin for Remix, where you can compile, test, and deploy Solidity contracts for Celo.
 
@@ -73,6 +54,7 @@ Contracts in Solidity are similar to classes in object-oriented languages. Each 
 Click here to learn about the structure of a contract.
 
 Our Overall marketplace.sol smart contract will look like this:
+
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
@@ -181,7 +163,7 @@ adminAddress = _address;
 }
 ```
 
- ## Defining Our Smart Contract
+## Defining Our Smart Contract
 
 In reference to the smart contract above let us define the meaning of each structure on the smart contract and what it means.
 
@@ -190,13 +172,13 @@ In reference to the smart contract above let us define the meaning of each struc
 pragma solidity >=0.7.0 <0.9.0;
 ```
 
-In the first line, you specify the license the contract uses. Here is a comprehensive list of the available licenses https://spdx.org/licenses/.So remember the first line is always the license Identifier.
+In the first line, you specify the license the contract uses. Here is a comprehensive list of the available licenses <https://spdx.org/licenses/.So> remember the first line is always the license Identifier.
 
 On the next structure of the smart contract it looks like this.
+
 ```
 interface IERC20Token { function transfer(address, uint256) external returns (bool); function approve(address, uint256) external returns (bool); function transferFrom(address, address, uint256) external returns (bool); function totalSupply() external view returns (uint256); function balanceOf(address) external view returns (uint256); function allowance(address, address) external view returns (uint256); event Transfer(address indexed from, address indexed to, uint256 value); event Approval(address indexed owner, address indexed spender, uint256 value);}
 ```
-
 
 ## What is a Token?
 
@@ -229,7 +211,6 @@ get the current token balance of an account
 get the total supply of the token available on the network
 approve whether an amount of token from an account can be spent by a third-party account
 
-
 If a Smart Contract implements the following methods and events it can be called an ERC-20 Token Contract and, once deployed, it will be responsible to keep track of the created tokens on Ethereum.
 
 ## Interface
@@ -244,44 +225,35 @@ Interface can not have state variables
 Interface can have enum, structs which can be accessed using interface name dot notation.
 
 ## Methods
-function name() public view returns (string)
 
+function name() public view returns (string)
 
 function symbol() public view returns (string)
 
-
 function decimals() public view returns (uint8)
-
 
 function totalSupply() public view returns (uint256)
 
-
 function balanceOf(address _owner) public view returns (uint256 balance)
 
+function transfer(address _to, uint256_value) public returns (bool success)
 
-function transfer(address _to, uint256 _value) public returns (bool success)
+function transferFrom(address _from, address_to, uint256_value) public returns (bool success)
 
+function approve(address _spender, uint256_value) public returns (bool success)
 
-function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)
-
-
-function approve(address _spender, uint256 _value) public returns (bool success)
-
-
-function allowance(address _owner, address _spender) public view returns (uint256 remaining)
-
-
+function allowance(address _owner, address_spender) public view returns (uint256 remaining)
 
 ## Events
-event Transfer(address indexed _from, address indexed _to, uint256 _value)
 
+event Transfer(address indexed _from, address indexed_to, uint256_value)
 
-2event Approval(address indexed _owner, address indexed _spender, uint256 _value)
-
+2event Approval(address indexed _owner, address indexed_spender, uint256_value)
 
 I hope you now have a basis of how an ERC20 token will always look like.
 
 Next on our smart contract code is this line :
+
 ```
 library SafeMath { /** * @dev Returns the addition of two unsigned integers, reverting on * overflow. * * Counterpart to Solidity's `+` operator. * * Requirements: * * -- Addition cannot overflow. */ function add(uint256 a, uint256 b) internal pure returns (uint256) { uint256 c = a + b; require(c >= a, "SafeMath: addition overflow"); return c; }}
 ```
@@ -298,10 +270,10 @@ Next we will now define our contract name with this line.
 
 contract Marketplace { uint internal productsLength = 0; address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1; address public adminAddress; using SafeMath for uint; struct Product { address payable owner; string name; string image; string description; string location; uint price; uint sold; bool verified; }
 
-
 You define your contract with the keyword contract and give it a name.
 
 You need to specify the type of the variable on the contract.If in this case, it’s a string (Learn more about types). You can define the visibility of the variable with the keyword public because you want users to access it from outside the contract and use an automatically generated getter function (Learn more about visibility). a good example is this line of code
+
 ```
 contract Marketplace { string public product = “Book”; }
 ```
@@ -312,7 +284,7 @@ you need to know the address of the cUSD ERC-20 token on the Celo Alfajores test
 
 Here it is below.
 
-https://explorer.celo.org/alfajores/address/0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1/transactions
+<https://explorer.celo.org/alfajores/address/0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1/transactions>
 
 ## Structs
 
@@ -320,6 +292,7 @@ Structs are custom defined types that can group several variables (see Structs i
 In Solidity, you use structs to define new types that can group variables. A struct behaves similar to an object in javascript (Learn more about structs).
 
 Next line we have a constructor
+
 ```
 constructor(){ adminAddress = msg.sender; }
 ```
@@ -338,6 +311,7 @@ In case, no constructor is defined, a default constructor is present in the cont
 The msg. sender is the address that has called or initiated a function or created a transaction. Now, this address could be of a contract or even a person like you and me
 
 Next our in our line of code is this:
+
 ```
 modifier isVerified(uint _index) { require(products[_index].verified == true, "this product is not verified"); _; } modifier isAdmin() { require(msg.sender == adminAddress, "only callable by admin"); _; }
 ```
@@ -348,6 +322,7 @@ Overloading, that is, having the same modifier name with different parameters, i
 Like functions, modifiers can be overridden.
 
 Next we have mappings on our contract with this line of code:
+
 ```
 mapping (uint => Product) public products;
 ```
@@ -357,6 +332,7 @@ Mappings can map keys to values. You will get a collection of key-value pairs, s
 To create a mapping you use the keyword mapping and assign a key type to a value type. You will use an unsigned integer (non-negative), an uint as the key type for the index and a string type for the value, your product. You need to define the visibility, in this case, internal or public and a name for the mapping. You can call it public products.
 
 Next we have this line of code
+
 ```
 function writeProduct( string memory _name, string memory _image, string memory _description, string memory _location, uint _price ) public { require(bytes(_image).length > 0, "Please enter a valid image URL"); require(bytes(_description).length > 0, "Please enter a valid description"); require(bytes(_name).length > 0, "Please enter a valid name"); require(_price > 0, "enter a valid price"); uint _sold = 0; bool _verified = false; products[productsLength] = Product( payable(msg.sender), _name, _image, _description, _location, _price, _sold, _verified ); productsLength = productsLength.add(1); }
 ```
@@ -370,11 +346,12 @@ When a user adds a new product to your marketplace contract, you set _sold to th
 You have to specify the type of parameters of the function. In this case, it’s just a string. A string is technically a special type of array. For arrays, you have to annotate the location where it is stored. For public function parameters, use memory (Learn more about data location). Don’t worry about the data location for now.
 
 In computing, the term endianness corresponds to how bytes are ordered (and stored) in a computer or any machine. Therefore, it defines the internal ordering of the memory.
-We refer to multi-byte data types as type of data (uint, float, string, etc…). There are two ways for ordering multi-byte data types in computer: in little-endian or big-endian format (where format = order).click here to learn more about 
+We refer to multi-byte data types as type of data (uint, float, string, etc…). There are two ways for ordering multi-byte data types in computer: in little-endian or big-endian format (where format = order).click here to learn more about
 
-Bytes: https://jeancvllr.medium.com/solidity-tutorial-all-about-bytes-9d88fdb22676
+Bytes: <https://jeancvllr.medium.com/solidity-tutorial-all-about-bytes-9d88fdb22676>
 
 Next we have this line of code
+
 ```
 function buyProduct(uint _index) public payable isVerified(_index) { require(products[_index].owner != address(0), "enter a valid product index"); require( IERC20Token(cUsdTokenAddress).transferFrom( msg.sender, products[_index].owner, products[_index].price ), "Transfer failed." ); products[_index].sold = products[_index].sold.add(1); }
 ```
@@ -394,6 +371,7 @@ Finally, you need the amount of cUSD token that will be transferred, which, in t
 If there was a problem with the transaction, display an error message. Otherwise, increase the number of products[_index].sold for the product that was sold.
 
 Next we have this line of code
+
 ```
 function getProductsLength() public view returns (uint) { return (productsLength); }
 ```
@@ -401,6 +379,7 @@ function getProductsLength() public view returns (uint) { return (productsLength
 When the first product is created, productsLength is 0, so the index where this product is stored is 0. After it is saved, productsLength is set to 1. productsLength represents how many products you have stored and you can use it as the index of the next product you will store.
 
 This function simply gets the arrays structures of the product eg the name, location, price, description etc.
+
 ```
 // admin can verify a product function verifyProduct(uint _index) public isAdmin { products[_index].verified = true; }
 ```
@@ -408,42 +387,38 @@ This function simply gets the arrays structures of the product eg the name, loca
 This line basically makes sure that admin can verify a product for it to be purchased.
 
 Finally our last line of smart contract is this
+
 ```
 function revokeOwnership(address _address) public isAdmin { 
 adminAddress = _address; }
 ```
 
 This function shows that admin has the rights to revoke ownership of the product.
+
 ## Step 2: Compiling and Deploying Smart Contract
+
 Now that we have created our celo contract we now need to deploy it.
 
 But first you will create a Celo wallet and deploy your contract to the Celo testnet alfajores.
 
 Install the CeloExtensionWallet from the Google Chrome Store.
 
-
 Create a wallet
 ![celo_install_celo_extension_wallet](https://user-images.githubusercontent.com/81568615/206867627-595d5f4b-009a-45a3-a624-de0090e5bbe6.gif)
 
-
-Get Celo token for the alfajores testnet from https://celo.org/developers/faucet
+Get Celo token for the alfajores testnet from <https://celo.org/developers/faucet>
 
 ![celo_get_token_from_faucet](https://user-images.githubusercontent.com/81568615/206867828-910e3f67-85e3-468d-9fc0-e024083c130a.gif)
 
 ![celo_create_wallet](https://user-images.githubusercontent.com/81568615/206867880-99866ed5-832c-4931-b5db-1429d751ec99.gif)
 
-
-
-
 Install the Celo  plugin on remix then compile  and deploy your contract
 ![celo_install_remix_plugin_and_deploy_contract (1)](https://user-images.githubusercontent.com/81568615/206871674-33ec8922-c000-42a6-8707-3cd976ebc940.gif)
 
-
-
-
-
 Congratulations on reaching this stage so far, You have successfully created your smart contract and deployed it on the Celo blockchain.
+
 ## Step 3
+
 Now we are going to build our front end.You can use different libraries to build your front end such as react etc.
 
 For easier learning we are going to build our front end using web 3.js.
@@ -453,15 +428,11 @@ so first create a folder on your pc.Open your terminal and run this commands bel
 
 mkdir Bookshop
 
-
 cd Bookshop
-
 
 npm init -y
 
-
 npm install --save-dev webpack webpack-cli
-
 
 Create webpack.config.js in the root and copy the contents of the generated file
 Create folders src and inside it create main.js file and also create a utils folder and create a file named constants.js  inside the utils folder.
@@ -472,11 +443,13 @@ Create a docs folder also where we will input our javascript and html code for d
 Alternatively if that is a challenge to you ,you can view this dacade repository, clone it and use the package.json files and dependencies inside it:
 
 On your terminal run:
+
 ```
 git clone https://github.com/dacadeorg/celo-boilerplate-web-dapp
 ```
 
 Our package.json file will look like this:
+
 ```
 {
 "main": "index.js",
@@ -499,6 +472,7 @@ Our package.json file will look like this:
 ```
 
 Our index.js file will look like this:
+
 ```
 let path = require("path");
 let webpack = require("webpack");
@@ -518,8 +492,8 @@ let port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on ${port}`));
 ```
 
-To shorten your work view all the installed files on this repository.click 
-here:https://github.com/Tevin-Isaac/Dacade-Bookshop
+To shorten your work view all the installed files on this repository.click
+here:<https://github.com/Tevin-Isaac/Dacade-Bookshop>
 
 I am hoping you have all that code in your project now.
 
@@ -527,6 +501,7 @@ Lets Define some code in our Front-End
 
 You can modify how you want your interface to look like.mine is just simple with a navbar and a footer and a header photo.you can always structure yours however you want.
 You are going to use the contractKit library to interact with the Celo Blockchain. ContractKit includes web3.js, a very popular collection of libraries also used for ethereum, that allows you to get access to a web3 object and interact with node’s JSON RPC API (Learn more about contractKit).
+
 ```
 import Web3 from 'web3'
 import { newKitFromWeb3 } from '@celo/contractkit' 
@@ -535,21 +510,25 @@ const ERC20_DECIMALS = 18 let kit
 ```
 
 The above shows you will establish a connection to the Celo Blockchain and read out the cUSD balance of your connected account.
+
 ```
 const connectCeloWallet = async function () { if (window.celo) { notification("⚠️ Please approve this DApp to use it.") try { await window.celo.enable() notificationOff() const web3 = new Web3(window.celo) kit = newKitFromWeb3(web3) } catch (error) { notification(`⚠️ ${error}.`) } } else { notification("⚠️ Please install the CeloExtensionWallet.") } }
 ```
 
 This code above enables you to connect to the Celo extension wallet.
+
 ```
 const connectCeloWallet = async function () { if (window.celo) { notification("⚠️ Please approve this DApp to use it.") try { await window.celo.enable() notificationOff() const web3 = new Web3(window.celo) kit = newKitFromWeb3(web3) const accounts = await kit.web3.eth.getAccounts() kit.defaultAccount = accounts[0] } catch (error) { notification(`⚠️ ${error}.`) } } else { notification("⚠️ Please install the CeloExtensionWallet.") } }
 ```
 
 This code above enables you to access the account of the user.
+
 ```
 const getBalance = async function () { const totalBalance = await kit.getTotalBalance(kit.defaultAccount) const cUSDBalance = totalBalance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2) document.querySelector("#balance").textContent = cUSDBalance }
 ```
 
 This code  enables you to get the account balance and display it.
+
 ```
 window.addEventListener('load', async () => { notification("⌛ Loading...") await connectCeloWallet() await getBalance() notificationOff() });
 ```
@@ -566,18 +545,18 @@ When you compile your contract in Remix, Remix also creates the ABI in the form 
 After the deployment of your marketplace contract, you will receive the address of the contract which you need in order to find your contract and interact with it.
 
 Import the json files on the main.js file from the contract folder that you created.
+
 ```
 import marketplaceAbi from "../contract/marketplace.abi.json"
 import erc20Abi from "../contract/erc20.abi.json"
 ```
 
-
 This simple code enables you to import the ABI files to function on the front end.
 
-To check if you have done it correctly check out this link:https://github.com/Tevin-Isaac/Dacade-Bookshop/tree/master/contract
+To check if you have done it correctly check out this link:<https://github.com/Tevin-Isaac/Dacade-Bookshop/tree/master/contract>
 
 Run your dapp and test it.if its working well you can deploy and host it on github pages.
-simply run npm run build  on your terminal 
+simply run npm run build  on your terminal
 and it will build automatically on github pages.
 
 Now, you should have an HTML and JS file inside the docs folder of your project.
@@ -591,22 +570,23 @@ It might take a few minutes until you are able to visit your DApp under the URL 
 ## Conclusion​
 
 That’s it! Congratulations! You are done with the tutorial and have built your  DApp! on Celo blockchain🎉 .
+
 ## Next Steps​
+
 For your learning purpose you can challenge yourself further by adding the delete book function on the front end and on the smart contract that way a user or admin can be able to delete a book that was created.
+
 ## About the Author​
 
 I am a Mobile and Web 3 Developer who is always building on blockchain technology.You can always Reach me here.
 
-Linktree:https://linktr.ee/tevinisaac
-Github:https://github.com/Tevin-Isaac
-Twitter:https://twitter.com/isaactevin
+Linktree:<https://linktr.ee/tevinisaac>
+Github:<https://github.com/Tevin-Isaac>
+Twitter:<https://twitter.com/isaactevin>
 
 ## References​
+
 This project is inspired by Dacade.To  join Dacade you can use my referral link here:
 
-https://dacade.org/signup?invite=Tevin
+<https://dacade.org/signup?invite=Tevin>
 
 Referral code: Tevin
-
-
-
