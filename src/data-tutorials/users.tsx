@@ -1324,6 +1324,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
     tags: ['intermediate', 'hardhat'],
   },
+  {
+    title: ' An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
+    description: ' Explaining the key differences between layer 1 and layer 2 protocols.',
+    preview: require('.src\data-tutorials\showcase\beginner\beginner-tutorials.png'),
+    website: 'blog//tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
+    tags: ['celosage',],
+  },
   
   /*
   Pro Tip: add your site in alphabetical order.
