@@ -74,7 +74,8 @@ npx hardhat
 ```
 
 This command initializes a new instance of the Hardhat development environment. 
-`Note`: If you run `'npx hardhat'` using Bash CLI, you get a weird error like this.
+
+> Note: If you run `'npx hardhat'` using Bash CLI, you get a weird error like this.
 
 ![image](images/14.png)
 
