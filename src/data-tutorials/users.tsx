@@ -1297,6 +1297,13 @@ const Users: User[] = [
     tags: ['intermediate', 'video'],
   },
   {
+    title: 'How to Fractionalize an NFT on the Celo Platform',
+    description: 'Building a dApp to fractionalize an NFT on top of Celo.',
+    preview: require('./showcase/advanced/how-to-fractionalize-an-nft-on-the-celo-platform.png'),
+    website: 'blog/tutorials/how-to-fractionalize-nft-on-celo-platform',
+    tags: ['advanced', 'nft', 'celo', 'celosage'],
+  },
+  {
     title: 'Solidity Vulnerabilities: DelegatedCall',
     description: 'Understanding and preventing solidity vulnerabilities.',
     preview: require('./showcase/intermediate/solidity-vulnerabilities-delegated-call.png'),
