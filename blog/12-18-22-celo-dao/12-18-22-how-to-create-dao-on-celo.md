@@ -3,7 +3,7 @@ title: How to Create your own DAO on Celo
 description: Build your own DAO with on-chain governance
 authors:
   - name: Nikhil Bhintade
-tags: [intermediate, hardhat, solidity, dao]
+tags: [celosage, intermediate, hardhat, solidity, dao]
 hide_table_of_contents: true
 slug: "/tutorials/how-to-create-a-dao-on-celo"
 ---
