@@ -1325,6 +1325,13 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
+    title: 'How to Create your own DAO on Celo',
+    description: 'Build your own DAO with on-chain governance',
+    preview: require('./showcase/intermediate/how-to-create-your-own-dao-on-celo.png'),
+    website: 'blog/tutorials/how-to-create-your-own-dao-on-celo',
+    tags: ['intermediate', 'hardhat', 'solidity', 'dao'],
+  },
+  {
     title: 'Unit Testing with Solidity and Hardhat',
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
