@@ -36,7 +36,7 @@ To write and deploy a Solidity smart contract on Remix is a simple and interesti
 
 4 In the right column of the Remix window, click on the New file button.
 
-![Remix IDE](images/3.png)
+    ![Remix IDE](images/3.png)
 
 5. In the Name text box, enter HelloWorld. The name should end with .sol and not .tx
     
