@@ -24,7 +24,7 @@ Below is a list of what we’ll cover
 
 To write and deploy a Solidity smart contract on Remix is a simple and interesting task if only the appropriate procedures are taken. Let’s take a practical step by writing and running a simple, smart contract as follows;
 
-1. Go to https://remix.ethereum.org/.
+1. Go to [https://remix.ethereum.org/](https://remix.ethereum.org/).
 2. A browser window will open displaying the Remix web-based development environment as below.
     
     ![remix IDE](images/1.png)
