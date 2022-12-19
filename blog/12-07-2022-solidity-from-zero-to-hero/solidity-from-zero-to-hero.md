@@ -286,7 +286,7 @@ contract Test {
 
 To avoid collisions between different contracts on the blockchain, it is best practice to namespace your contracts using PascalCase. For example, HelloWorld would be a good name for a contract written by you. It is, however, also a common practice to prefix contracts with an organization or individual's name (e.g., MyCompanyContract).
 
-## **Inheritance
+## Inheritance
 
 Inheritance is a key concept in object-oriented programming that allows you to create new classes that inherit the properties and methods of existing classes. This powerful tool can be used to create contracts that are more modular and easier to maintain.
 
