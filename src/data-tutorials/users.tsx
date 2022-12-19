@@ -1329,7 +1329,7 @@ const Users: User[] = [
     description: 'Build your own DAO with on-chain governance',
     preview: require('./showcase/intermediate/how-to-create-your-own-dao-on-celo.png'),
     website: 'blog/tutorials/how-to-create-your-own-dao-on-celo',
-    tags: ['intermediate', 'hardhat', 'solidity', 'dao'],
+    tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'dao'],
   },
   {
     title: 'Unit Testing with Solidity and Hardhat',
