@@ -134,7 +134,7 @@ The value 5 is input into the function add() , resulting in a value of 10 being 
 
 # Solidity Language Features
 
-## Contract*
+## Contract
 A contract is a collection of code (functionality) and data that resides on the blockchain. These contracts are written in Solidity, then compiled into bytecode, and later deployed to the network. And when a network is deployed, its code is executed by all nodes on the network.
 
 Solidity declares a contract by specifying the contract keyword, followed by the contract's name and parameter list. Parameters can be of any type, including structs and arrays.
