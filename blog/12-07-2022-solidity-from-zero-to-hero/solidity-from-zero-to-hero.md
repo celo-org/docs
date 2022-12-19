@@ -32,7 +32,7 @@ To write and deploy a Solidity smart contract on Remix is a simple and interesti
 
 3. In the left column of the Remix window, expand the Solidity folder and then click on the Contracts folder.
 
-![Remix IDE](images/2.png)
+    ![Remix IDE](images/2.png)
 
 4 In the right column of the Remix window, click on the New file button.
 
