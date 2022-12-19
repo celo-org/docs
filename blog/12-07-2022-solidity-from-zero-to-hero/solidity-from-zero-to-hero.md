@@ -395,7 +395,7 @@ struct Instructor {
 	uint age;
 	uint first_name; 
 	uint last_name; 
-}*
+}
 ```
 
 ## Enums
