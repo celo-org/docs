@@ -391,7 +391,7 @@ This will make C inherit both the foo and bar functions from contract B. The baz
 Structs are data types that allow you to group related data. They are similar to objects in other programming languages but are immutable—meaning they cannot be changed after they have been created. Structs are often used to represent complex data types such as addresses or balances.
 
 ```solidity
-*struct Instructor { 
+struct Instructor { 
 	uint age;
 	uint first_name; 
 	uint last_name; 
