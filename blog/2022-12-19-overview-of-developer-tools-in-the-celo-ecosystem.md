@@ -1,6 +1,6 @@
 ---
 title: Overview of Developer Tools in the Celo Ecosystem
-description: This article is to help you choose the right
+description: This article is to help you choose the right tool in the Celo ecosystem
 authors:
   - name: Justin Obi
 url: https://github.com/cjustinobi
