@@ -5,8 +5,9 @@ authors:
   - name: Justin Obi
 url: https://github.com/cjustinobi
 image_url: https://github.com/cjustinobi.png
-tags: [React, Composer, ContrackKit, CLI]
+tags: [celosage, react, composer, contractkit, cli]
 hide_table_of_contents: true
+slug: /tutorials/overview-of-developer-tools-in-the-celo-ecosystem
 ---
 
 # Overview of Developer Tools in the Celo Ecosystem
@@ -53,7 +54,7 @@ npm install @celo/connect
 
 **Basic Usage of @celo/connect**
 
-![Celo connect](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/celoconnect.png?raw=true)
+![Celo connect](./images/celoconnect.png)
 
 ### ContractKit
 
@@ -69,7 +70,7 @@ npm install @celo/contractkit
 
 **Basic usage of @celo/contractkit**
 
-![Contract Kit](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/contractkit.png?raw=true)
+![Contract Kit](./images/contractkit.png)
 
 ### React Celo
 
@@ -88,7 +89,7 @@ has once connected to your dApp is now a breeze in _react-celo_.
 
 Below, is the react-celo modal system for connecting to your user's wallet of choice.
 
-![React Celo](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/react-celo.png?raw=true)
+![React Celo](./images/react-celo.png)
 
 **Installation**
 
@@ -98,7 +99,7 @@ npm install @celo/react-celo @celo/contractkit
 
 **Basic Usage of @celo/react-celo**
 
-![React Celo usage](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/react-celo-usage.png?raw=true)
+![React Celo usage](./images/react-celo-usage.png)
 
 ### Celo Composer
 
@@ -121,7 +122,7 @@ a front-end application of your choice alongside with Solidity development frame
 The directory structure looks like the image below. Inside the packages folder, is the front-end (react-app) and 
 Solidity (hardhat) frameworks we chose to work with.
 
-![Celo Composer](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/dir.png?raw=true)
+![Celo Composer](./images/dir.png)
 
 
 ### Rainbowkit Celo
@@ -140,11 +141,11 @@ npm install @celo/rainbowkit-celo
 
 **Basic Usage of @celo/rainbowkit-celo**
 
-![Raibowkit Celo](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/rainbowkit.png?raw=true)
+![Raibowkit Celo](./images/rainbowkit.png)
 
 You should have an interface that looks like the one below after starting the app.
 
-![Raibowkit Celo UI](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/ui.png?raw=true)
+![Raibowkit Celo UI](./images/ui.png)
 
 **Getting an error during package installation?**
 
@@ -180,7 +181,7 @@ npx celocli
 
 After successful installation, if you run ```celocli```, you will see the list of the available commands.
 
-![Celo CLI commands](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/celocli-commands.png?raw=true)
+![Celo CLI commands](./images/celocli-commands.png)
 
 **Basic Usage of @celo/celocli**
 
@@ -199,7 +200,7 @@ celocli account:balance <enter your Celo wallet address here>
 
 You will now have your Celo wallet balances listed like below.
 
-![Celo CLI account](https://github.com/cjustinobi/overview-of-developer-tools-in-the-celo-ecosystem/blob/main/celocli-account.png?raw=true)
+![Celo CLI account](./images/celocli-account.png)
 
 To know more about the account module run
 
