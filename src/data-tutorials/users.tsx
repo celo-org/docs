@@ -1063,6 +1063,13 @@ const Users: User[] = [
     tags: ['beginner', 'figment'],
   },
   {
+    title: 'Hackathons 101- How These Events Can Transform Your Life and Tips for Winning',
+    description: 'In this article we will discuss the benefits of attending events, including networking, learning new skills, and gaining exposure to new ideas.',
+    preview: require('./showcase/beginner/how-to-use-moolas-money-market.png'),
+    website: '/blog/tutorials/hackathons-101-how-these-events-can-transform-your-life-and-tips-for-winning',
+    tags: ['celosage', 'beginner' ],
+  },
+  {
     title: 'Testing Celo Smart Contracts with Truffle',
     description: 'We will learn how to use Truffle in order to test smart contracts on Celo.',
     preview: require('./showcase/intermediate/testing-celo-smart-contracts-with-truffle.png'),
