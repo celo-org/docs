@@ -764,9 +764,9 @@ const Users: User[] = [
   {
     title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
-    preview: require(''),
-    website: 'blog/tutorials/How to build a Bookshop Marketplace Dapp',
-    tags: ['celosage','celowallet', 'celo', 'solidity','html','remix','smartcontract','intermediate'],
+    preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
+    website: 'blog/tutorials/how-to-build-a-bookshop-marketplace-dapp',
+    tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
   },
   {
     title: 'Introduction to creating NFTs on Celo',
