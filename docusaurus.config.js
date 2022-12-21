@@ -223,6 +223,10 @@ module.exports = {
               href: "https://www.reddit.com/r/celo/",
             },
             {
+              href: "https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j",
+              label: "Celo Signal Mailing List",
+            },
+            {
               href: "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
               label: "Celo Signal Calendar",
             },
