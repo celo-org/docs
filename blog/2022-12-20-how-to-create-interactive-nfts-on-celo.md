@@ -10,8 +10,6 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-create-interactive-nfts-on-celo
 ---
 
-# How to create interactive NFTs on Celo
-
 ## Introduction​
 
 NFTs have taken the market by storm, and the industry is now whopping billions of dollars.
@@ -21,15 +19,15 @@ Later in 2020, NFT became a hot topic, and everyone was talking about it, and th
 
 ## Prerequisites​
 
- - Prior knowledge of Solidity is required.
- - Prior knowledge of HTML, CSS, and JavaScript is required.
- - Knowledge of ERC-721, ERC-1155 specification is required.
- - Knowledge of how to deploy smart contracts via Remix.
+- Prior knowledge of Solidity is required.
+- Prior knowledge of HTML, CSS, and JavaScript is required.
+- Knowledge of ERC-721, ERC-1155 specification is required.
+- Knowledge of how to deploy smart contracts via Remix.
 
 ## Requirements
 
- - Remix IDE to write smart contract.
- - Knowledge of HTML, CSS, and JavaScript to code the frontend so we can interact with the smart contract to create an NFT.
+- Remix IDE to write smart contract.
+- Knowledge of HTML, CSS, and JavaScript to code the frontend so we can interact with the smart contract to create an NFT.
 
 ## So what is an NFT?
 
@@ -57,22 +55,22 @@ This is what the ERC721 Metadata JSON Schema looks like:
 
 ```js
 {
-    "title": "Asset Metadata",
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string",
-            "description": "Identifies the asset to which this NFT represents"
-        },
-        "description": {
-            "type": "string",
-            "description": "Describes the asset to which this NFT represents"
-        },
-        "image": {
-            "type": "string",
-            "description": "A URI pointing to a resource with mime type image/* representing the asset to which this NFT represents. Consider making any images at a width between 320 and 1080 pixels and aspect ratio between 1.91:1 and 4:5 inclusive."
-        }
-    }
+  "title": "Asset Metadata",
+  "type": "object",
+  "properties": {
+  "name": {
+    "type": "string",
+    "description": "Identifies the asset to which this NFT represents"
+  },
+  "description": {
+    "type": "string",
+    "description": "Describes the asset to which this NFT represents"
+  },
+  "image": {
+    "type": "string",
+    "description": "A URI pointing to a resource with mime type image/* representing the asset to which this NFT represents. Consider making any images at a width between 320 and 1080 pixels and aspect ratio between 1.91:1 and 4:5 inclusive."
+  }
+  }
 }
 ```
 
@@ -88,8 +86,7 @@ Interactive NFTs are the NFTs with which you can interact. We have these traditi
 With interactive NFTs, you can also change the smart contract's state.
 In this tutorial, we won’t be changing the smart contract's state, but we will be able to interact with it.
 
-
-## Enough talking. Show me the code!
+## Enough talking. Show me the code
 
 In the interactive NFT, we have two parts. One is the smart contract. Another one is the Metadata of the NFT. We will hack the metadata to make our NFT interactive.
 
@@ -111,43 +108,43 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract MyNFT0 is ERC721, ERC721URIStorage, Ownable {
-    using Counters for Counters.Counter;
-    Counters.Counter private _tokenIdCounter;
+  using Counters for Counters.Counter;
+  Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("MyNFT0", "MNFT0") {}
+  constructor() ERC721("MyNFT0", "MNFT0") {}
 
-    function _baseURI() internal pure override returns (string memory) {
-        return "https://ipfs.filebase.io/ipfs/";
-    }
+  function _baseURI() internal pure override returns (string memory) {
+    return "https://ipfs.filebase.io/ipfs/";
+  }
 
-    function supportsInterface(bytes4 interfaceId)
-        public view virtual override(ERC721) 
-        returns (bool) {
-        return super.supportsInterface(interfaceId);
-    }
+  function supportsInterface(bytes4 interfaceId)
+    public view virtual override(ERC721) 
+    returns (bool) {
+    return super.supportsInterface(interfaceId);
+  }
 
-    function mintNFT(address to, string memory uri) public onlyOwner {
-        _tokenIdCounter.increment();
-        uint256 tokenId = _tokenIdCounter.current();
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
-    }
+  function mintNFT(address to, string memory uri) public onlyOwner {
+    _tokenIdCounter.increment();
+    uint256 tokenId = _tokenIdCounter.current();
+    _safeMint(to, tokenId);
+    _setTokenURI(tokenId, uri);
+  }
 
 
-    // The following functions are overrides required by Solidity.
+  // The following functions are overrides required by Solidity.
 
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
-    }
+  function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+    super._burn(tokenId);
+  }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
-    {
-        return super.tokenURI(tokenId);
-    }
+  function tokenURI(uint256 tokenId)
+    public
+    view
+    override(ERC721, ERC721URIStorage)
+    returns (string memory)
+  {
+    return super.tokenURI(tokenId);
+  }
 }
 ```
 
@@ -197,29 +194,29 @@ A constructor is a special function that is called when a smart contract is init
 
 ```js
 function _baseURI() internal pure override returns (string memory) {
-        return "https://ipfs.filebase.io/ipfs/";
-    }
+    return "https://ipfs.filebase.io/ipfs/";
+  }
 ```
 
 `_baseURI()` function returns the URI. In our case, URI is pointing toward the IPFS domain name.
 
 ```js
 function supportsInterface(bytes4 interfaceId)
-        public view virtual override(ERC721) 
-        returns (bool) {
-        return super.supportsInterface(interfaceId);
-    }
+    public view virtual override(ERC721) 
+    returns (bool) {
+    return super.supportsInterface(interfaceId);
+  }
 ```
 
 Returns true if this contract implements the interface defined by `interfaceId`.
 
 ```js
 function mintNFT(address to, string memory uri) public onlyOwner {
-        _tokenIdCounter.increment();
-        uint256 tokenId = _tokenIdCounter.current();
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
-    }
+    _tokenIdCounter.increment();
+    uint256 tokenId = _tokenIdCounter.current();
+    _safeMint(to, tokenId);
+    _setTokenURI(tokenId, uri);
+  }
 ```
 
 `mintNFT()` function is used to mint an NFT. It takes two arguments, an address and an IPFS hash.
@@ -232,21 +229,21 @@ It sets the `tokenId` to the IPFS hash.
 
 ```js
 function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
-    }
+    super._burn(tokenId);
+  }
 ```
 
 `_burn()` is used to destroy the NFT token. It takes `tokenId` as an argument. It does not return anything.
 
 ```js
 function tokenURI(uint256 tokenId)
-        public
-        view
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
-    {
-        return super.tokenURI(tokenId);
-    }
+    public
+    view
+    override(ERC721, ERC721URIStorage)
+    returns (string memory)
+  {
+    return super.tokenURI(tokenId);
+  }
 }
 ```
 
@@ -266,39 +263,39 @@ It’s time to define our Metadata.
 
 ```js
 {
-    "title": "MyNFT0",
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string",
-            "description": "MyNFT0"
-        },
-        "description": {
-            "type": "string",
-            "description": "This is an interactive NFT."
-        },
-        "image": {
-            "type": "string",
-            "description": ""
-        },
-        "js": {
-            "type": "string",
-            "description": "QmUS8szs3GkafJPLXQjjJe19xUyeSeUWiQLSmJKW1EorXc
+  "title": "MyNFT0",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "MyNFT0"
+    },
+    "description": {
+      "type": "string",
+      "description": "This is an interactive NFT."
+    },
+    "image": {
+      "type": "string",
+      "description": ""
+    },
+    "js": {
+      "type": "string",
+      "description": "QmUS8szs3GkafJPLXQjjJe19xUyeSeUWiQLSmJKW1EorXc
 "
-        }
     }
+  }
 }
 ```
 
 Here we are extending ERC-721 metadata and including the JavaScript code that will be executed to make an NFT interactive.
 
-First, we must upload an image and js code file in IPFS. To do that, I am using https://filebase.com
+First, we must upload an image and js code file in IPFS. To do that, I am using <https://filebase.com>
 
 You need to upload the following JS code in the IPFS.
 
 ```js
 function flip () {
-    return true || false;
+  return true || false;
 }
 ```
 
@@ -308,7 +305,7 @@ Once you upload all these two things, your filebase dashboard will look somethin
 
 ![Filebase dashboard](https://i.imgur.com/l7z7sce.png)
 
-Now go to https://remix.ethereum.org and paste the smart contract code I have already provided.
+Now go to <https://remix.ethereum.org> and paste the smart contract code I have already provided.
 
 Deploy the smart contract in the `VM` as of now. Once you deploy it, go to the approve tab and give your wallet address in the to field and copy the IPFS hash of the `metadata.json` file from filebase dashboard.
 
@@ -318,14 +315,13 @@ You may go ahead and deploy the smart contract to the **CELO** testnet if you wa
 
 Now it’s time to code the frontend part.We will be using plain HTML, CSS, JavaScript, and Bootstrap for this.
 
-Here is the repository: https://github.com/avirajkhare00/celo-interactive-nft-tutorial
+Here is the repository: <https://github.com/avirajkhare00/celo-interactive-nft-tutorial>
 
 Clone this repository and run this code. You may run this code by serving the file via any http server.
 
 If Python 3 is installed on your machine, you can execute the following command: `python3 -m http.server`
 
-Here is the doc for http server: ​​https://docs.python.org/3/library/http.server.html
-
+Here is the doc for http server: ​​<https://docs.python.org/3/library/http.server.html>
 
 Let’s try to understand what frontend JS code is doing.
 
@@ -335,28 +331,28 @@ const MyNFT0ContractAddress = "0xC1A6E6C2FDBd58d8AE952e3888E18B231cBc48f1";
 const MyNFT0Contract = new web3.eth.Contract(MyNFT0ABI, MyNFT0ContractAddress);
 
 async function getResult() {
-    let result = await MyNFT0Contract.methods.tokenURI(2).call();
-    console.log(result);
+  let result = await MyNFT0Contract.methods.tokenURI(2).call();
+  console.log(result);
 
-    fetch(result)
-      .then(response => response.json())
+  fetch(result)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      console.log(data.properties.js.description);
+      let jsCodeHash = data.properties.js.description;
+      let baseURL = 'https://ipfs.filebase.io/ipfs/';
+
+      fetch(baseURL + jsCodeHash)
+      .then(response => response.text())
       .then(data => {
-          console.log(data);
-          console.log(data.properties.js.description);
-          let jsCodeHash = data.properties.js.description;
-          let baseURL = 'https://ipfs.filebase.io/ipfs/';
-
-          fetch(baseURL + jsCodeHash)
-            .then(response => response.text())
-            .then(data => {
-              eval(data);
-              console.log(flip());
-              document.getElementById('flipBtn').onclick = () => {
-                  document.getElementById('flipValue').innerText = flip().toString();
-                            };
-                        });
-                });
-        };
+        eval(data);
+        console.log(flip());
+        document.getElementById('flipBtn').onclick = () => {
+          document.getElementById('flipValue').innerText = flip().toString();
+              };
+            });
+        });
+    };
 
 getResult();
 ```
@@ -381,8 +377,8 @@ Create a simple game in the form of dynamic NFT.
 ## About the author
 
 Aviraj Khare: Into web3 space since 2016.
-GitHub: https://github.com/avirajkhare00
+GitHub: <https://github.com/avirajkhare00>
 
 ## References
 
- - https://docs.celo.org/
+- <https://docs.celo.org/>
