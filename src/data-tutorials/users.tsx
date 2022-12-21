@@ -867,10 +867,17 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'composer'],
   },
   {
+    title: 'A beginners Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More',
+    description: 'Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and its ecosystem.',
+    preview: require('./showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More.png'),
+    website: '/blog//tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png'),
-    website: 'blog/tutorials/17-smart-contracts-powering-the-celo-protocol',
+    website: '/blog/tutorials/17-smart-contracts-powering-the-celo-protocol',
     tags: ['intermediate','foundation', 'metamask'],
   },
   {
