@@ -1,14 +1,25 @@
+---
+title: Solidity from Zero to Hero
+description: In this article you will learn Solidity language.
+authors:
+  - name: Oyeniyi Abiola Peace
+tags: [solidity]
+hide_table_of_contents: true
+slug: /tutorials/solidity-from-zero-to-Hero
+---
+
+
 # Solidity from Zero to Hero
 
-# Introduction
+## Introduction
 
 Remix is one of the online programs that can be used to write and deploy the Solidity Smart contract on the Ethereum Blockchain. It is a powerful tool that can also be used to debug and prevent errors in the Solidity contracts. In this article, I’ll show you how to use Remix for writing and deploying, debugging Solidity smart contracts, and how to enter some Solidity commands. This tutorial assumes you are familiar with the basics of blockchain, the Ethereum platform, and programming languages like JavaScript, Python, and C++. If you're ready to start coding, then let's get started!
 
-# Background
+## Background
 
-Solidity is a contract-oriented programming high-level language for writing and deploying Smart Contracts on the Ethereum blockchain.  It was designed to make it as user-friendly as possible by Gavin Wood—the co-founder of Ethereum.
+Solidity is a contract-oriented programming high-level language for writing and deploying Smart Contracts on the Ethereum blockchain. It was designed to make it as user-friendly as possible by Gavin Wood—the co-founder of Ethereum.
 
-# The Course Outline
+## The Course Outline
 
 Below is a list of what we’ll cover
 
@@ -20,28 +31,26 @@ Below is a list of what we’ll cover
 
 💡 A glossary of some Solidity commands and how to run them
 
-# Introduction to Remix IDE
+## Introduction to Remix IDE
 
 To write and deploy a Solidity smart contract on Remix is a simple and interesting task if only the appropriate procedures are taken. Let’s take a practical step by writing and running a simple, smart contract as follows;
 
 1. Go to [https://remix.ethereum.org/](https://remix.ethereum.org/).
 2. A browser window will open displaying the Remix web-based development environment as below.
-    
-    ![remix IDE](images/1.png)
-    
 
-3. In the left column of the Remix window, expand the Solidity folder and then click on the Contracts folder.
+   ![remix IDE](images/1.png)
 
-    ![Remix IDE](images/2.png)
+3) In the left column of the Remix window, expand the Solidity folder and then click on the Contracts folder.
+
+   ![Remix IDE](images/2.png)
 
 4 In the right column of the Remix window, click on the New file button.
 
     ![Remix IDE](images/3.png)
 
 5. In the Name text box, enter HelloWorld. The name should end with .sol and not .tx
-    
-    ![Remix IDE](images/4.png)
-    
+
+   ![Remix IDE](images/4.png)
 
 # HelloWorld Program in Solidity
 
@@ -49,16 +58,12 @@ The code below is a simple hello world code in Solidity Code.
 
 ```solidity
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.4.13;
 
 contract HelloWorld {
-
-		string public message; 
-
-		function setMessage(string _message) public { message = _message; } 
-
-		function getMessage() public view returns (string) { return message; } 
+ string public message;
+ function setMessage(string _message) public { message = _message; }
+ function getMessage() public view returns (string) { return message; }
 }
 ```
 
@@ -71,7 +76,6 @@ Pragma solidity is a compiler directive that tells the compiler which version of
 # What is SPDX-License-Identifier?
 
 The SPDX-License-Identifier (SPDX) is an open-source standard for communicating a software license and its associated metadata. SPDX allows developers, organizations, and legal teams to easily identify the exact license that applies to any given piece of software. SPDX eliminates the ambiguity in determining which licenses are most applicable to a project. SPDX reduces the risks and costly time associated with software license compliance. The Linux Foundation maintains SPDX. Some of the more common ones include:
-
 
 💡 Apache 2.0: This identifier is used for software released under the Apache 2.0 license.
 
@@ -99,9 +103,9 @@ This code will not work. You can use Remix debugger to correct the errors and re
 
 ```solidity
 contract Example {
-	function add(uint x, uint y) returns (uint) { 
-		//returns x + yl
-	} 
+ function add(uint x, uint y) returns (uint) {
+  //returns x + yl
+ }
 }
 ```
 
@@ -116,9 +120,9 @@ Here is how you can use Remix debugger to correct such errors and others.
 - Select the function that you want to debug.
 
 ```solidity
-function add(uint x, uint y) returns (uint) { 
-	//returns x + y
-	return x + y;
+function add(uint x, uint y) returns (uint) {
+ //returns x + y
+ return x + y;
 }
 ```
 
@@ -135,6 +139,7 @@ The value 5 is input into the function add() , resulting in a value of 10 being 
 # Solidity Language Features
 
 ## Contract
+
 A contract is a collection of code (functionality) and data that resides on the blockchain. These contracts are written in Solidity, then compiled into bytecode, and later deployed to the network. And when a network is deployed, its code is executed by all nodes on the network.
 
 Solidity declares a contract by specifying the contract keyword, followed by the contract's name and parameter list. Parameters can be of any type, including structs and arrays.
@@ -143,11 +148,10 @@ Here's an example of a Solidity contract declaration:
 
 ```solidity
 //SPDX-license-Identifier: GPL-3.0
-
 pragma solidity^0.4.13
 
 contract MyContract {
-	// everything else inside this block 😁😁
+ // everything else inside this block 😁😁
 }
 ```
 
@@ -156,18 +160,18 @@ contract MyContract {
 Functions are the basic building blocks of contracts. A function has the following form:
 
 ```solidity
-function name(argument_1, argument_2, ...) { 
-	// Body of the function 
+function name(argument_1, argument_2, ...) {
+ // Body of the function
 }
 ```
 
 ```solidity
 function multiply(uint a, uint b) returns (uint c) {
-	c = a * b;return c;
+ c = a * b;return c;
 }
 ```
 
-# **Data types**:
+# **Data types**
 
 There are six data types: uint, int, bool, string, address, and bytes32.
 
@@ -177,11 +181,11 @@ The unsigned integer (uint) is used to store unsigned integers (positive numbers
 
 ```solidity
 contract MyContract {
-	uint256 public someNumber;
-	
-	function change() public {
-		someNumber = 5;
-	}
+ uint256 public someNumber;
+
+ function change() public {
+  someNumber = 5;
+ }
 }
 ```
 
@@ -191,11 +195,11 @@ The signed integer (int) can be used to store signed integers (negative and posi
 
 ```solidity
 contract MyContract {
-	int256 public someNumber;
-	
-	function change() {
-		someNumber = -5;
-	}
+ int256 public someNumber;
+
+ function change() {
+  someNumber = -5;
+ }
 }
 ```
 
@@ -204,26 +208,26 @@ contract MyContract {
 The boolean data type can be used to store either a true or false value. Booleans can be used in conditional statements, such as if statements. For example, the following code will only execute the second statement if the boolean is true:
 
 ```jsx
-if (bool) { 
-	// Statements to execute if bool is true.
-} else { 
-	// Statements to execute if bool is false.
-} 
+if (bool) {
+  // Statements to execute if bool is true.
+} else {
+  // Statements to execute if bool is false.
+}
 ```
 
 Another example:
 
 ```solidity
 contract Bool {
-	bool public value;
+ bool public value;
 
-	function setValue(bool newValue) {
-		value = newValue;
-	}
+ function setValue(bool newValue) {
+  value = newValue;
+ }
 
-	function getValue() constant returns (bool) {
-		return value;
-	}
+ function getValue() constant returns (bool) {
+  return value;
+ }
 }
 ```
 
@@ -244,21 +248,17 @@ address myAddress = 0xA870daB9b7c72C3d9a7b728Ae6Bf1f359D5F2773; //
 ```
 
 ## Modifiers
+
 Modifiers are a powerful tool in Solidity that allow you to control who can call a function and when they can call it. You can use a modifier, for example, to ensure that a function can only be called by the contract owner.
 
 ```solidity
 pragma solidity ^0.5.0;
 
 contract Abstract {
-
-function foo() public returns (uint256) {} // Abstract method
-
-function bar() public view returns (uint256) { // Abstract method with a defined body
-
-return 5;
-
-}
-
+ function foo() public returns (uint256) {} // Abstract method
+ function bar() public view returns (uint256) { // Abstract method with a defined body
+  return 5;
+ }
 }
 ```
 
@@ -270,15 +270,14 @@ In Solidity, variables are scoped to the block in which they are declared. This 
 pragma solidity ^0.4.24;
 
 contract Test {
-	uint public a = 1;
+ uint public a = 1;
+ function setA(uint x) public {
+  a = x
+ };
 
-	function setA(uint x) public {
-		a = x
-	};
-
-	function getA() public view returns (uint) {
-		return a;
-	}
+ function getA() public view returns (uint) {
+  return a;
+ }
 }
 ```
 
@@ -300,8 +299,8 @@ To create a child contract, you need to specify the name of the parent contract 
 
 ```solidity
 constructor(address _parent) public {
-	require(_parent != 0x0); 
-	// prevent accidental creation of child contracts
+ require(_parent != 0x0);
+ // prevent accidental creation of child contracts
 }
 ```
 
@@ -311,23 +310,23 @@ The following code example shows how to use inheritance in Solidity:
 
 ```solidity
 contract Parent {
-	string name; 
-	// a basic data type
-	function setName(string _name) { 
-		// a function that modifies data member
-		name = _name; 
-		// sets name member to _name value
-	}
+ string name;
+ // a basic data type
+ function setName(string _name) {
+  // a function that modifies data member
+  name = _name;
+  // sets name member to _name value
+ }
 }
 
-contract Child is Parent { 
-		// declares Child as a sub-contract of Parent
-		function getName() returns (string) { 
-			// returns string value stored in name member in Parent Contract
-			return name; 
-			// returns name member from Parent Contract 
-		} 
-		// other functions defined here... 
+contract Child is Parent {
+ // declares Child as a sub-contract of Parent
+ function getName() returns (string) {
+  // returns string value stored in name member in Parent Contract
+  return name;
+  // returns name member from Parent Contract
+ }
+ // other functions defined here...
 }
 ```
 
@@ -339,11 +338,11 @@ Abstract contracts are templates for contracts that can be inherited by other co
 pragma solidity ^0.5.0;
 
 contract Abstract {
-function foo() public returns (uint256) {} // Abstract method
+ function foo() public returns (uint256) {} // Abstract method
 
-function bar() public view returns (uint256) { // Abstract method with a defined body
-return 5;
-}
+ function bar() public view returns (uint256) { // Abstract method with a defined body
+  return 5;
+ }
 }
 ```
 
@@ -355,15 +354,16 @@ To use a library in Solidity, you first need to import it. You can do this by ad
 
 ```solidity
 library Token {
-	function transfer(address to, uint amount) returns (bool success) {
-		// Check that the sender has enough funds
-		// Send the tokens to the given address
-		// Return success or failure
-	}
+ function transfer(address to, uint amount) returns (bool success) {
+  // Check that the sender has enough funds
+  // Send the tokens to the given address
+  // Return success or failure
+ }
 }
 ```
 
 # Interfaces
+
 An interface is a special type of contract that can be implemented by other contracts. It defines a set of methods that must be implemented by any contract that wants to implement it. This allows you to verify that a contract implements the required methods without inspecting the code itself.
 
 Interfaces can be used to verify that a contract implements the required methods without having to inspect the code itself. To implement an interface, a contract must specify the name of the interface and the keyword "implements".
@@ -373,12 +373,12 @@ Interfaces are like abstract contracts but only provide an interface, not an imp
 For example, suppose you have the following code:
 
 ```solidity
-contract A { 
-	function foo() public {};
+contract A {
+ function foo() public {};
 }
 
-contract B is A { 
-	function bar() public {} 
+contract B is A {
+ function bar() public {}
 }
 
 // contract B can be seen as an interface that defines two functions, foo and bar. Contract C can then be defined as follows:contract C is B { function baz() public {} }
@@ -391,31 +391,32 @@ This will make C inherit both the foo and bar functions from contract B. The baz
 Structs are data types that allow you to group related data. They are similar to objects in other programming languages but are immutable—meaning they cannot be changed after they have been created. Structs are often used to represent complex data types such as addresses or balances.
 
 ```solidity
-struct Instructor { 
-	uint age;
-	uint first_name; 
-	uint last_name; 
+struct Instructor {
+ uint age;
+ uint first_name;
+ uint last_name;
 }
 ```
 
 ## Enums
+
 Enums are data types that define a set of named values. They can be used to create more expressive code and improve readability. Enums are often used to represent states or status codes. For example:
 
 ```solidity
 enum DaysOfTheWeek {
-	Sunday, 
-	Monday, 
-	Tuesday, 
-	Wednesday, 
-	Thursday, 
-	Friday, 
-	Saturday
+ Sunday,
+ Monday,
+ Tuesday,
+ Wednesday,
+ Thursday,
+ Friday,
+ Saturday
 }
 
 contract DaysOfTheWeek {
-	function toDays() public returns(uint) {
-		return DaysOfTheWeek.Tuesday;
-	}
+ function toDays() public returns(uint) {
+  return DaysOfTheWeek.Tuesday;
+ }
 }
 ```
 
@@ -434,16 +435,16 @@ Loops commands are used to repeat a set of statements, often for a fixed number 
 The for loop is used to repeat a set of statements a fixed number of times. The syntax for the for loop is as follows:
 
 ```solidity
-for(initialization; condition; increment) { 
-	// Statements 
+for(initialization; condition; increment) {
+ // Statements
 }
 ```
 
 The initialization expression sets the initial value of the loop counter. The condition expression checks whether the loop counter has reached the desired value. If it has not, the loop continues to execute the statements in the block body. The increment expression increments (or decrements) the loop counter by a given amount.
 
 ```solidity
-while(condition) { 
-	// Statements 
+while(condition) {
+ // Statements
 }
 ```
 
@@ -455,14 +456,12 @@ Solidity supports conditional statements, which allow you to execute certain cod
 
 ```solidity
 if (condition) {
-	// Code to be executed if condition is true
+ // Code to be executed if condition is true
 } else {
-	// Code to be executed if condition is false
+ // Code to be executed if condition is false
 }
 ```
 
 # About the Author
 
 Oyeniyi Abiola Peace (@iamoracle) is a blockchain software and full-stack developer with over five years of experience in JavaScript, Python, PHP, and Solidity. He is currently the CTO of DFMLab and a DevRel Community Moderator at the Celo Blockchain. When not building or teaching about blockchain, he enjoys reading and spending time with loved ones. You can check my blog at [iamoracle.hashnode.dev](iamoracle.hashnode.dev).
-
-
