@@ -47,6 +47,7 @@ As defined on the official website, _Hardhat is a development environment for Et
 Basically, Hardhat was built to target blockchain platforms that are compatible with Ethereum Virtual Machine - EVM, of which Celo happens to be one. Its flexibility of use and extendability makes it one of a kind. Hardhat potentially allows the installation of plugins, and it can even be configured to use other competitive tools, such as the Truffle framework. Let’s do a basic Hardhat installation and set up; to automate connection to Celo networks. As a reminder, you should have the aforementioned prerequisites set up before attempting this section.
 
 Open up a git bash terminal and the system terminal side by side. We don’t need two command lines, but I want to show you a common challenge most web3 developers often encounter and a simple hack that saves you the headache.
+
 ![image](images/4.png)
 
 Make a new directory in the "git bash" terminal for this tutorial. And name it _**celo-hardhat-example**_ .

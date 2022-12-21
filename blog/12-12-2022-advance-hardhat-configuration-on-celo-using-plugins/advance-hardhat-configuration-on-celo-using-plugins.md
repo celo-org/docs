@@ -495,6 +495,7 @@ The “00_deploy.js” is a module that accepts two parameters from the hardhat 
 **deployments** (line 2): This function returns a couple of utility functions, but we only need the "deploy()" so we extract by destructuring.
 
 **getNamedAccount** : A function that returns predefined named accounts from the “hardhatconfig.js”. For our contract, we are required to supply two arguments (a)child_1 (b) child_2 and a deployer address. By default, hardhat generates 10 default accounts with signers that enable us to make transactions without providing private keys or mnemonic phrases. We extracted the first 3 signers by setting the key/value pair in the “hardhatconfig.js” as below.
+
 ![image](images/7.png)
 
 Line 9: **"deploy()"** function accepts two arguments - Contract name and an optional argument of type object where we specified “from”, “gaslimit” and “args”. The function resolves to an object from which we extracted the address of the deployed contracts. What we just did is a local deployment. Now let’s deploy to a live network, i.e Alfajores (Celo’s testnet).
