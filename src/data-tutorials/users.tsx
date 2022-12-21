@@ -1063,10 +1063,10 @@ const Users: User[] = [
     tags: ['beginner', 'figment'],
   },
   {
-    title: 'Hackathons 101- How These Events Can Transform Your Life and Tips for Winning',
+    title: 'Hackathons 101 - Everything you need to know about Hackathons',
     description: 'In this article we will discuss the benefits of attending events, including networking, learning new skills, and gaining exposure to new ideas.',
     preview: require('./showcase/beginner/how-to-use-moolas-money-market.png'),
-    website: '/blog/tutorials/hackathons-101-how-these-events-can-transform-your-life-and-tips-for-winning',
+    website: '/blog/tutorials//tutorials/hackathons-101-everything-you-need-to-know-about-hackathons',
     tags: ['celosage', 'beginner' ],
   },
   {
