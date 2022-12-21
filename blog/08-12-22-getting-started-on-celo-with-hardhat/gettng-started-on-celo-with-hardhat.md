@@ -15,10 +15,9 @@ slug: /tutorials/getting-started-on-celo-with-hardhat
 
 ## Introduction
 
-​
 Since the bubbling part of the Web3-learning stream features more about tooling than writing code, many aspiring web3 developers often are exposed to boilerplate code where most of the things happening are abstracted. Picking the right choice of tools and knowing how to use them effectively will give you a better experience as a web3 developer and increase your efficiency. This is one of the goals of Celo as a platform.
 
-## Prerequisites​
+## Prerequisites
 
 This tutorial exposes you to Hardhat (basic setup and configuration) as one of the many tools you need to successfully deploy smart programs on Celo. You need to be familiar with the following:
 
@@ -28,7 +27,7 @@ This tutorial exposes you to Hardhat (basic setup and configuration) as one of t
 
 If you need some headstarts, there are a couple of tutorials on **[Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** documentation that prepare your way.
 
-## Requirements​
+## Requirements
 
 To get started, you will need to have the following technologies installed to make the journey smooth:
 
@@ -192,7 +191,6 @@ Hardhat config file is a module that exports a JSON object with which hardhat ex
   /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
-
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
@@ -205,13 +203,11 @@ module.exports = {
       accounts: [`${process.env.PRIVATE_KEY}`],
       chainId: 44787,
     },
-
     celo: {
       url: "https://forno.celo.org",
       accounts: [`${process.env.PRIVATE_KEY}`],
       chainId: 42220,
     },
-
   solidity: {
     version: "0.8.9",
     settings: {
@@ -274,7 +270,7 @@ When you are not connected to the network or your network is bad, you get errors
 
 ![image](images/5.png)
 
-## Conclusion​
+## Conclusion
 
 We have learned:
 
@@ -283,17 +279,16 @@ We have learned:
 - We have also gained an understanding of how things work under the hood.
 - And lastly, we learned about few errors or mistakes that might likely arise during development.
 
+
 ## What next?
 
 I hope that you will try this on your own. Create a new project. Try it several times and you will get used to it. As soon as you understand how things work, you will increase in speed and knowledge of web3 development.
 
 This is foundational knowledge you need to work with hardhat as a Celo developer. In my next tutorial, I will show you more advanced interesting stuff you can do while developing DApps on Celo.
 
-## About the Author​
 
 **Isaac Jesse** , aka _Bobelr_ is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on as content producer. He has also contributed to Web3 projects as a developer.
 
-## References​
-
+## References
 - [Hardhat](https://hardhat.org/)
 - [Celo developer resources](https://docs.celo.org/developer/)
