@@ -1318,6 +1318,13 @@ const Users: User[] = [
     tags: ['intermediate', 'video'],
   },
   {
+    title: 'Overview of Developer Tools in the Celo Ecosystem',
+    description: 'This article is to help you choose the right tool in the Celo ecosystem',
+    preview: require('./showcase/beginner/overview-of-developer-tools-in-the-celo-ecosystem.png'),
+    website: 'blog/tutorials/overview-of-developer-tools-in-the-celo-ecosystem',
+    tags: ['celosage', 'react', 'composer', 'contractkit', 'cli', 'beginner'],
+  },
+  {
     title: 'How to Fractionalize an NFT on the Celo Platform',
     description: 'Building a dApp to fractionalize an NFT on top of Celo.',
     preview: require('./showcase/advanced/how-to-fractionalize-an-nft-on-the-celo-platform.png'),
