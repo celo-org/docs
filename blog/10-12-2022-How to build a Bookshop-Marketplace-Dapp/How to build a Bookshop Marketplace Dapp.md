@@ -8,7 +8,7 @@ authors:
   image_url: https://github.com/Tevin-Isaac.png
 tags: [solidity]
 hide_table_of_contents: true
-slug: /tutorials/How to build a Bookshop Marketplace Dapp
+slug: /tutorials/how-to-build-a-bookshop-marketplace-dapp
 ---
 
 # How to build  a Bookshop marketplace Dapp on Celo Blockchain

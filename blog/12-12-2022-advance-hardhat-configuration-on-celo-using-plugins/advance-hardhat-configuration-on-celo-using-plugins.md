@@ -163,7 +163,7 @@ npm install --save-dev typechain "@typechain/hardhat" "@typechain/ethers-v5"
 
 ## Hardhat-deploy
 
-If you need a more elegant deployment method (aside from using the "scripts/<somefile>" method) that keeps track of all the networks your contracts are deployed to, can also replicate same in your testing environment, “Hardhat-deploy” is the tool you need. In fact, it is one of the plugins I love using. It has interesting features that make your work much easier by adding and modifying existing hardhat tasks. An example task is “deploy”. Before installing hardhat-deploy, if you try to run “npx hardhat deploy”, you get a warning that there is no such task. By adding the tool, the task becomes available.
+If you need a more elegant deployment method (aside from using the `scripts/<somefile>` method) that keeps track of all the networks your contracts are deployed to, can also replicate same in your testing environment, “Hardhat-deploy” is the tool you need. In fact, it is one of the plugins I love using. It has interesting features that make your work much easier by adding and modifying existing hardhat tasks. An example task is “deploy”. Before installing hardhat-deploy, if you try to run “npx hardhat deploy”, you get a warning that there is no such task. By adding the tool, the task becomes available.
 
 With this tool, you can write more straightforward tests, assign custom names to addresses to make tracking the address deployed that contract easier, track networks, etc.
 Here are some of its features, all for a better developer experience as itemized in the documentation:
