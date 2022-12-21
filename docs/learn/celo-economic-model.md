@@ -2,14 +2,14 @@
 title: Celo Economic Model
 description: Celo’s economic model is derived from research in Sacred Economics and Theory of Change.
 ---
-import YouTube from '@components/YouTube';
 
+import YouTube from '@components/YouTube';
 
 # Economic Model
 
 Celo’s economic model is derived from research in **Sacred Economics** and **Theory of Change**.
 
-___
+---
 
 ## Features of Money
 

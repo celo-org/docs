@@ -23,9 +23,9 @@ To learn more about the features available to you as a smart contract developer 
 
 To deploy on Celo using Truffle, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
--   [Using Windows](/developer/setup/windows)
--   [Using Mac](/developer/setup/mac)
--   [Using Replit](/developer/setup/replit)
+- [Using Windows](/developer/setup/windows)
+- [Using Mac](/developer/setup/mac)
+- [Using Replit](/developer/setup/replit)
 
 If you are new to Truffle, complete the [Celo truffle installation instructions](/developer/setup/mac#truffle) and complete their [Quickstart Tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) to get more familiar with this tool.
 
@@ -98,7 +98,7 @@ Create a file named **2_deploy_contracts.js** in the **./migrations/** folder an
 var HelloCelo = artifacts.require("HelloCelo");
 
 module.exports = function (deployer) {
-    deployer.deploy(HelloCelo);
+  deployer.deploy(HelloCelo);
 };
 ```
 
@@ -277,7 +277,7 @@ Copy your **contract address** from the terminal and navigate to the [block expl
 
 Navigate to [BlockScout](https://explorer.celo.org/) and select the network of your deployed contract.
 
--   Paste your contract address from the **terminal window** and search for it in **BlockExplorer**.
+- Paste your contract address from the **terminal window** and search for it in **BlockExplorer**.
 
 :::tip
 
@@ -287,7 +287,7 @@ Learn more about exploring the Celo network and smart contract details in BlockS
 
 ## Verify Contracts on Celo
 
--   [Using Celo Explorer](/developer/verify/celo-explorer)
--   [Using Remix](/developer/verify/remix)
--   [Using CeloScan](/developer/verify/celoscan)
--   [Using Hardhat](/developer/verify/hardhat)
+- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Remix](/developer/verify/remix)
+- [Using CeloScan](/developer/verify/celoscan)
+- [Using Hardhat](/developer/verify/hardhat)

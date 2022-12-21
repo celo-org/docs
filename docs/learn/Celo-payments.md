@@ -2,22 +2,29 @@
 title: Celo Payments SDK
 description: Celo’s Pay is a standard protocol along with a few reference implementations on how developers can integrate decentralized payments into their dApps, wallets and services.
 ---
+
 # Celo Protocol
+
 Summary of the Celo Payments Protocol and the value it provides to the community.
 [Read the specification.](https://github.com/celo-org/payments/blob/main/README.md)
-___
+
+---
 
 ## The Platform for Mobile Payments
-The Celo blockchain has a transaction finality of less than five seconds with less than $0.001 fees, it is fully decentralized and it's a carbon negative blockchain to preserve our most precious resources. 
+
+The Celo blockchain has a transaction finality of less than five seconds with less than $0.001 fees, it is fully decentralized and it's a carbon negative blockchain to preserve our most precious resources.
 
 ## Stable Value Currencies
-Powered by a platform algorithmic native stable coins, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals (cREAL) are ideal for making payments on your local currency through your mobile phone number. These stablecoins can be used for our merchant payments API and developers can choose which ones they want to expose for their users. 
+
+Powered by a platform algorithmic native stable coins, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals (cREAL) are ideal for making payments on your local currency through your mobile phone number. These stablecoins can be used for our merchant payments API and developers can choose which ones they want to expose for their users.
 
 ## Supporting Wallets
-* Valora [iOS](https://vlra.app/webappstore) [Android](https://vlra.app/webplaystore))
- 
+
+- Valora [iOS](https://vlra.app/webappstore) [Android](https://vlra.app/webplaystore))
+
 ### Coming Soon
-* Node Wallet [BETA iOS](https://testflight.apple.com/join/BHXMFq0x) [Android Wailist](https://www.nodewallet.xyz/android) 
+
+- Node Wallet [BETA iOS](https://testflight.apple.com/join/BHXMFq0x) [Android Wailist](https://www.nodewallet.xyz/android)
 
 ## Requirements
 
@@ -51,7 +58,7 @@ To make things a bit simpler, I recommend running that command to create a .env 
 celocli config:set --node https://alfajores-forno.celo-testnet.org/
 
 If this is the first time you're running this command, the script will create a blockchain account/private-key for you and ask you to fund it using Celo faucet. Then this account will be used automatically to pay for the requested payment.
- 
+
 # Create an account and store it well formatted in an .env file
 celocli account:new | sed -E 's/: (.+)/="\1"/g' | grep '=' > .env
 source .env
@@ -101,20 +108,22 @@ You may also omit all the flags to run the command interactively.
 
 The reference servers implements two types of payments: KYC and SIMPLE, you try both via the `-r` flag. If you decide to implement a new purchase example, you can find them in the folder `packages/server/src/storage/items`.
 
+## Accepting Payments
 
-## Accepting Payments 
 This is the main export that wallets will want to integrate with. It allows you to get the payment info and subsequently make the payment transaction.
 
 Example run through of Charge usage
 
-Here is the api url that the Charge instance will be communicating with. 
+Here is the api url that the Charge instance will be communicating with.
+
 ```typescript
-const apiBase = 'merchantpayments.com/api';
+const apiBase = "merchantpayments.com/api";
 ```
+
 The id of the payment request used by the api. The api will need to create a payment object for the SDK to respond to. This will need to have the info in the PaymentInfo type and the referenceId will refer to this object.
 
 ```typescript
-const referenceId = '123abc';
+const referenceId = "123abc";
 ```
 
 The 'ChainHandler' instance imported from the payments-sdk and initialized with a contract kit instance. This kit will represent the Payer in the process.
@@ -122,11 +131,15 @@ The 'ChainHandler' instance imported from the payments-sdk and initialized with 
 ```typescript
 const chainHandler = new ContractKitTransactionHandler(kit);
 ```
+
 Whether or not a DEK should be used for authorizing on chain transactions.
+
 ```typescript
 const useAuthentication = true;
 ```
+
 How many times requests should be retried.
+
 ```typescript
 const retries = 4;
 
@@ -138,19 +151,23 @@ const charge = new Charge(
   retries
 );
 ```
+
 The info regarding the payment matching the reference id coming from the api. See @celo/payment-types PaymentInfo. Includes the requiredPayerData field that must be used for the submit method. Also, includes payment meta data to show to the user.
+
 ```typescript
-const paymentInfo: PaymentInfo = await charge.getInfo()
+const paymentInfo: PaymentInfo = await charge.getInfo();
 ```
 
-### Examples 
-How much you want to set as the payment: 
+### Examples
+
+How much you want to set as the payment:
 
 ```typescript
 console.log(paymentInfo.action.amount);
 ```
 
-Specifying the token you want to use 
+Specifying the token you want to use
+
 ```typescript
 console.log(paymentInfo.action.currency);
 ```
@@ -164,30 +181,36 @@ const payerDataExample = {
 
 try {
 ```
-This is the method to submit the transaction on chain 
+
+This is the method to submit the transaction on chain
+
 ```typescript
   await charge.submit(payerDataExample);
 } catch(e) {
 
 ```
+
 If for some reason the transaction fails to submit the promise returned by submit will be rejected.
 The charge can be aborted to let the api know not to continue watching for the transaction. See @celo/payment-types AbortCodes for abort code options.
 
 ```typescript
-  charge.abort(AbortCodes.INSUFFICIENT_FUNDS)
+charge.abort(AbortCodes.INSUFFICIENT_FUNDS);
 ```
+
 Reaching here would mean the payment was successfully submitted on chain.
 
 ```typescript
 console.log("Payment submitted");
-
 ```
+
 ## ChainHandlers
+
 Wrappers to help the PaymentsSDK interact with the blockchain.
 
 ### ContractKitTransactionHandler
+
 Used to wrap ContractKit to make a ChainHandler for the Charge class
 
-
 ## Helpers
+
 A variety of helper methods to facilitate payments-sdk interactions

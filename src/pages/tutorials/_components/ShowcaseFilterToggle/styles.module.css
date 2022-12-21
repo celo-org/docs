@@ -31,7 +31,7 @@
 
 .checkboxLabel::after {
   position: absolute;
-  content: '';
+  content: "";
   inset: 0;
   width: calc(var(--width) / 2);
   height: 100%;

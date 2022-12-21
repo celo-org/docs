@@ -5,39 +5,40 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useMemo, useEffect} from 'react';
-import clsx from 'clsx';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate, {translate} from '@docusaurus/Translate';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {usePluralForm} from '@docusaurus/theme-common';
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import { useHistory, useLocation } from "@docusaurus/router";
+import { usePluralForm } from "@docusaurus/theme-common";
+import Translate, { translate } from "@docusaurus/Translate";
+import clsx from "clsx";
+import React, { useEffect, useMemo, useState } from "react";
 
-import Layout from '@theme/Layout';
-import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
+import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import {
   sortedUsers,
-  Tags,
   TagList,
-  type User,
+  Tags,
   type TagType,
-} from '@site/src/data-home/users';
+  type User,
+} from "@site/src/data-home/users";
+import Layout from "@theme/Layout";
+import ShowcaseCard from "./_components/ShowcaseCard";
+import ShowcaseFilterToggle, {
+  readOperator,
+  type Operator,
+} from "./_components/ShowcaseFilterToggle";
 import ShowcaseTagSelect, {
   readSearchTags,
-} from './_components/ShowcaseTagSelect';
-import ShowcaseFilterToggle, {
-  type Operator,
-  readOperator,
-} from './_components/ShowcaseFilterToggle';
-import ShowcaseCard from './_components/ShowcaseCard';
-import ShowcaseTooltip from './_components/ShowcaseTooltip';
+} from "./_components/ShowcaseTagSelect";
+import ShowcaseTooltip from "./_components/ShowcaseTooltip";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-const TITLE = translate({message: 'Celo Documentation'});
+const TITLE = translate({ message: "Celo Documentation" });
 const DESCRIPTION = translate({
-  message: 'Build decentralized applications that create the conditions for prosperity — for everyone.',
+  message:
+    "Build decentralized applications that create the conditions for prosperity — for everyone.",
 });
-const EDIT_URL = 'general';
+const EDIT_URL = "general";
 
 type UserState = {
   scrollTopPosition: number;
@@ -45,13 +46,12 @@ type UserState = {
 };
 
 function restoreUserState(userState: UserState | null) {
-  const {scrollTopPosition, focusedElementId} = userState ?? {
+  const { scrollTopPosition, focusedElementId } = userState ?? {
     scrollTopPosition: 0,
     focusedElementId: undefined,
   };
-  // @ts-expect-error: if focusedElementId is undefined it returns null
   document.getElementById(focusedElementId)?.focus();
-  window.scrollTo({top: scrollTopPosition});
+  window.scrollTo({ top: scrollTopPosition });
 }
 
 export function prepareUserState(): UserState | undefined {
@@ -65,7 +65,7 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
-const SearchNameQueryKey = 'name';
+const SearchNameQueryKey = "name";
 
 function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
@@ -75,12 +75,12 @@ function filterUsers(
   users: User[],
   selectedTags: TagType[],
   operator: Operator,
-  searchName: string | null,
+  searchName: string | null
 ) {
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
     users = users.filter((user) =>
-      user.title.toLowerCase().includes(searchName.toLowerCase()),
+      user.title.toLowerCase().includes(searchName.toLowerCase())
     );
   }
   if (selectedTags.length === 0) {
@@ -90,7 +90,7 @@ function filterUsers(
     if (user.tags.length === 0) {
       return false;
     }
-    if (operator === 'AND') {
+    if (operator === "AND") {
       return selectedTags.every((tag) => user.tags.includes(tag));
     }
     return selectedTags.some((tag) => user.tags.includes(tag));
@@ -99,7 +99,7 @@ function filterUsers(
 
 function useFilteredUsers() {
   const location = useLocation<UserState>();
-  const [operator, setOperator] = useState<Operator>('OR');
+  const [operator, setOperator] = useState<Operator>("OR");
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
@@ -114,7 +114,7 @@ function useFilteredUsers() {
 
   return useMemo(
     () => filterUsers(sortedUsers, selectedTags, operator, searchName),
-    [selectedTags, operator, searchName],
+    [selectedTags, operator, searchName]
   );
 }
 
@@ -128,29 +128,27 @@ function ShowcaseHeader() {
         href={EDIT_URL}
         // target="_blank"
         // rel="noreferrer"
-        >
-        <Translate>
-          🚀 Get started with Celo
-        </Translate>
+      >
+        <Translate>🚀 Get started with Celo</Translate>
       </a>
     </section>
   );
 }
 
 function useSiteCountPlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (sitesCount: number) =>
     selectMessage(
       sitesCount,
       translate(
         {
-          id: 'showcase.filters.resultCount',
+          id: "showcase.filters.resultCount",
           description:
             'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: '1 site|{sitesCount} sites',
+          message: "1 site|{sitesCount} sites",
         },
-        {sitesCount},
-      ),
+        { sitesCount }
+      )
     );
 }
 
@@ -159,7 +157,7 @@ function ShowcaseFilters() {
   const siteCountPlural = useSiteCountPlural();
   return (
     <section className="container margin-top--l margin-bottom--lg">
-      <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
+      <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
         <div>
           <h2>
             <Translate id="showcase.filters.title">Filters</Translate>
@@ -168,9 +166,9 @@ function ShowcaseFilters() {
         </div>
         <ShowcaseFilterToggle />
       </div>
-      <ul className={clsx('clean-list', styles.checkboxList)}>
+      <ul className={clsx("clean-list", styles.checkboxList)}>
         {TagList.map((tag, i) => {
-          const {label, description, color} = Tags[tag];
+          const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
 
           return (
@@ -178,13 +176,14 @@ function ShowcaseFilters() {
               <ShowcaseTooltip
                 id={id}
                 text={description}
-                anchorEl="#__docusaurus">
+                anchorEl="#__docusaurus"
+              >
                 <ShowcaseTagSelect
                   tag={tag}
                   id={id}
                   label={label}
                   icon={
-                    tag === 'favorite' ? (
+                    tag === "favorite" ? (
                       <FavoriteIcon svgClass={styles.svgIconFavoriteXs} />
                     ) : (
                       <span
@@ -192,7 +191,7 @@ function ShowcaseFilters() {
                           backgroundColor: color,
                           width: 10,
                           height: 10,
-                          borderRadius: '50%',
+                          borderRadius: "50%",
                           marginLeft: 8,
                         }}
                       />
@@ -209,16 +208,16 @@ function ShowcaseFilters() {
 }
 
 const favoriteUsers = sortedUsers.filter((user) =>
-  user.tags.includes('favorite'),
+  user.tags.includes("favorite")
 );
 const developers = sortedUsers.filter((user) =>
-  user.tags.includes('developers'),
+  user.tags.includes("developers")
 );
 const integrations = sortedUsers.filter((user) =>
-  user.tags.includes('integrations'),
+  user.tags.includes("integrations")
 );
 const validators = sortedUsers.filter((user) =>
-  user.tags.includes('validators'),
+  user.tags.includes("validators")
 );
 
 // const otherUsers = sortedUsers.filter(
@@ -237,8 +236,8 @@ function SearchBar() {
       <input
         id="searchbar"
         placeholder={translate({
-          message: 'Search for site name...',
-          id: 'showcase.searchBar.placeholder',
+          message: "Search for site name...",
+          id: "showcase.searchBar.placeholder",
         })}
         value={value ?? undefined}
         onInput={(e) => {
@@ -254,7 +253,7 @@ function SearchBar() {
             state: prepareUserState(),
           });
           setTimeout(() => {
-            document.getElementById('searchbar')?.focus();
+            document.getElementById("searchbar")?.focus();
           }, 0);
         }}
       />
@@ -282,28 +281,24 @@ function ShowcaseCards() {
     <section className="margin-top--lg margin-bottom--xl">
       {filteredUsers.length === sortedUsers.length ? (
         <>
-        {/* Get Started with Celo */}
+          {/* Get Started with Celo */}
           <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
                 className={clsx(
-                  'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
-                )}>
+                  "margin-bottom--md",
+                  styles.showcaseFavoriteHeader
+                )}
+              >
                 <h2>
-                  <Translate>
-                    Getting started
-                  </Translate>
+                  <Translate>Getting started</Translate>
                 </h2>
                 {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
                 {/* <SearchBar /> */}
               </div>
               <ul
-                className={clsx(
-                  'container',
-                  'clean-list',
-                  styles.showcaseList,
-                )}>
+                className={clsx("container", "clean-list", styles.showcaseList)}
+              >
                 {favoriteUsers.map((user) => (
                   <ShowcaseCard key={user.title} user={user} />
                 ))}
@@ -311,28 +306,24 @@ function ShowcaseCards() {
             </div>
           </div>
 
-        {/* Developers */}
+          {/* Developers */}
           <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
                 className={clsx(
-                  'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
-                )}>
+                  "margin-bottom--md",
+                  styles.showcaseFavoriteHeader
+                )}
+              >
                 <h2>
-                  <Translate>
-                    Developers
-                  </Translate>
+                  <Translate>Developers</Translate>
                 </h2>
                 {/* <FavoriteIcon svgClass={styles.svgIconFavorite} /> */}
                 {/* <SearchBar /> */}
               </div>
               <ul
-                className={clsx(
-                  'container',
-                  'clean-list',
-                  styles.showcaseList,
-                )}>
+                className={clsx("container", "clean-list", styles.showcaseList)}
+              >
                 {developers.map((user) => (
                   <ShowcaseCard key={user.title} user={user} />
                 ))}
@@ -341,54 +332,46 @@ function ShowcaseCards() {
           </div>
           {/* Developers */}
 
-        {/* Integrations */}
-        <div className={styles.showcaseFavorite}>
+          {/* Integrations */}
+          <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
                 className={clsx(
-                  'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
-                )}>
+                  "margin-bottom--md",
+                  styles.showcaseFavoriteHeader
+                )}
+              >
                 <h2>
-                  <Translate>
-                    Integrations
-                  </Translate>
+                  <Translate>Integrations</Translate>
                 </h2>
               </div>
               <ul
-                className={clsx(
-                  'container',
-                  'clean-list',
-                  styles.showcaseList,
-                )}>
+                className={clsx("container", "clean-list", styles.showcaseList)}
+              >
                 {integrations.map((user) => (
                   <ShowcaseCard key={user.title} user={user} />
                 ))}
               </ul>
             </div>
           </div>
-        {/* Integrations */}
+          {/* Integrations */}
 
-        {/* Validators */}
-        <div className={styles.showcaseFavorite}>
+          {/* Validators */}
+          <div className={styles.showcaseFavorite}>
             <div className="container">
               <div
                 className={clsx(
-                  'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
-                )}>
+                  "margin-bottom--md",
+                  styles.showcaseFavoriteHeader
+                )}
+              >
                 <h2>
-                  <Translate>
-                    Validators
-                  </Translate>
+                  <Translate>Validators</Translate>
                 </h2>
               </div>
               <ul
-                className={clsx(
-                  'container',
-                  'clean-list',
-                  styles.showcaseList,
-                )}>
+                className={clsx("container", "clean-list", styles.showcaseList)}
+              >
                 {validators.map((user) => (
                   <ShowcaseCard key={user.title} user={user} />
                 ))}
@@ -396,8 +379,6 @@ function ShowcaseCards() {
             </div>
           </div>
           {/* Validators */}
-
-
 
           <div className="container margin-top--lg">
             {/* <h2 className={styles.showcaseHeader}>
@@ -413,10 +394,8 @@ function ShowcaseCards() {
       ) : (
         <div className="container">
           <div
-            className={clsx(
-              'margin-bottom--md',
-              styles.showcaseFavoriteHeader,
-            )}>
+            className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
+          >
             <SearchBar />
           </div>
           {/* <ul className={clsx('clean-list', styles.showcaseList)}>

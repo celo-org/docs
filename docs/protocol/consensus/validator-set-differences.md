@@ -7,7 +7,7 @@ description: How validator sets are elected and managed with the Celo protocol.
 
 How validator sets are elected and managed with the Celo protocol.
 
-___
+---
 
 ## Computing Set Differences
 

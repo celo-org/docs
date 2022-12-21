@@ -2,11 +2,12 @@
 title: Celo Alfajores Testnet Disclaimer
 description: Important considerations, warnings, and legal regulations for users of the Alfajores Testnet.
 ---
+
 # Alfajores Testnet Disclaimer
 
 Important considerations, warnings, and legal regulations for users of the Alfajores Testnet.
 
-___
+---
 
 ## Terms and Conditions
 
