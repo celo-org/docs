@@ -11,8 +11,6 @@ hide_table_of_contents: true
 slug: '/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons'
 ---
 
-## Hackathons 101:How These events can Transform your Life and Tips for winning
-
 ## Introduction
 
 As soon as the word Hackathon comes, I make sure I give attention. Let's start with answering what Hackathon is; on paper, it's just that you have a limited time, and you have to make a product that fulfills specific criteria by the organizers.
