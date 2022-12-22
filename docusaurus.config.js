@@ -409,7 +409,7 @@ module.exports = {
             from: "/celo-codebase/protocol/identity/privacy-research",
           },
           {
-            to: "/protocol/identity/randomness",
+            to: "/protocol/randomness",
             from: "/celo-codebase/protocol/identity/randomness",
           },
           {
@@ -1025,7 +1025,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 If you like Celo, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/celo-monorepo">GitHub</a> and follow <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloDevs">@CeloDevs</a> and <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/CeloOrg">@CeloOrg </a> 🌱',
+        '🌱 Want to improve the docs? give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">Suggest an Improvement</a> or create content as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -1224,6 +1224,10 @@ module.exports = {
         {
           title: "Community",
           items: [
+            {
+              href: "/community/guidelines",
+              label: "Contributors",
+            },
             {
               href: "/community/guidelines",
               label: "Contributors",

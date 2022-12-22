@@ -17,7 +17,7 @@ Onchain randomness is used for selecting validators to perform phone number veri
 
 <!--truncate-->
 
-<PageRef url="/celo-codebase/protocol/identity/randomness" pageName="Randomness" />
+<PageRef url="/protocol/randomness" pageName="Randomness" />
 
 This randomness can be used by any smart contracts deployed to a Celo network.
 
