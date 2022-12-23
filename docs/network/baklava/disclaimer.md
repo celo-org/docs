@@ -2,11 +2,12 @@
 title: Celo Baklava Testnet Disclaimer
 description: Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
 ---
+
 # Baklava Testnet Disclaimer
 
 Important considerations, warnings, and legal regulations for users of the Baklava Testnet.
 
-___
+---
 
 ## Terms and Conditions
 

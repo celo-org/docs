@@ -7,7 +7,7 @@ description: Introduction to Celo validator elections and management of groups a
 
 Introduction to Celo validator elections and management of groups and votes throughout the process.
 
-___
+---
 
 ## Updating the Active Validator Set
 

@@ -3,7 +3,7 @@ title: Celo's Escrow Contract
 description: Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
 ---
 
-# Escrow 
+# Escrow
 
 Introduction to the Celo Escrow contract and how to use it to withdraw, revoke, and reclaim funds.
 

@@ -7,25 +7,26 @@ description: How to import your Celo account to MetaMask from a Valora wallet.
 
 How to import your Celo account to MetaMask from a Valora wallet.
 
-___
+---
 
 ## Getting Started
 
 Importing a Celo Account to MetaMask allows you to extend Celo to any application that integrates with MetaMask. This guide helps you import your Celo account using a Valora Wallet and so you to access your Celo account using MetaMask.
 
-* Prerequisites required to start using MetaMask and Celo
-* Create a simple project directory to temporarily store project information
-* Access your Valora account and private key with the celocli
-* Import your private key to MetaMask to access your Celo account
+- Prerequisites required to start using MetaMask and Celo
+- Create a simple project directory to temporarily store project information
+- Access your Valora account and private key with the celocli
+- Import your private key to MetaMask to access your Celo account
 
 ## Prerequisites
 
 Before getting started, it’s important to have downloaded MetaMask, Valora, and have completed some basic configuration on each account. Follow the links below for additional guides on each topic.
 
-* [Download MetaMask](https://metamask.io/download/) and create an account.
-* [Download Valora](https://valoraapp.com/) and create an account.
-* Configure [MetaMask to work with Celo](/wallet/metamask/use)
-* Install the [celocli](/cli/)
+- [Download MetaMask](https://metamask.io/download/) and create an account.
+- [Download Valora](https://valoraapp.com/) and create an account.
+- Configure [MetaMask to work with Celo](/wallet/metamask/use)
+- Install the [celocli](/cli/)
+
 ## Set up your project
 
 Create a new project directory.
@@ -54,7 +55,7 @@ open valora-recovery-phrase.txt
 
 ### Valora Private Keys
 
-* Open the Valora App, navigate to **Menu > Recovery Phrase**, and Enter PIN to reveal your Recovery Phrase.
+- Open the Valora App, navigate to **Menu > Recovery Phrase**, and Enter PIN to reveal your Recovery Phrase.
 
 :::caution
 
@@ -78,7 +79,7 @@ Open your terminal and type the following command to read your account informati
 celocli account:new --mnemonicPath valora-recovery-phrase.txt
 ```
 
-This command will display your Valora wallet mnemonic, accountAddress, privateKey, publicKey, and address. 
+This command will display your Valora wallet mnemonic, accountAddress, privateKey, publicKey, and address.
 
 ```
 mnemonic: one two three four five six seven...
@@ -88,14 +89,13 @@ publicKey: ...
 address: 0x...
 ```
 
-* Copy the **privateKey** from your terminal window.
+- Copy the **privateKey** from your terminal window.
 
 :::note
 
 This celocli command also shows your <strong>accountAddress</strong>. You won’t be using this in this guide, but it is important to verify that this is the correct address for your Valora wallet. Before moving on, confirm that the digits of the <strong>Account Address</strong> from your Valora Wallet match the <strong>accountAddress</strong> displayed in your terminal.
 
 :::
-
 
 :::caution
 
@@ -105,13 +105,13 @@ Anyone that has access to your private key will be able to access and control th
 
 ### Import Private Key
 
-* Open MetaMask and select **Celo (Mainnet)** as your network.`
-* Select **Settings > Import Account **select type** Private Key **and paste the private key from your terminal window.
-* Select **Import** to import your Celo Account from your Valora Wallet.
+- Open MetaMask and select **Celo (Mainnet)** as your network.`
+- Select **Settings > Import Account **select type** Private Key **and paste the private key from your terminal window.
+- Select **Import** to import your Celo Account from your Valora Wallet.
 
 ### Delete Project Directory
 
-MetaMask is now connected to your Valora wallet. The value of your Valora wallet should show in your MetaMask account and you can now use MetaMask to access your funds. 
+MetaMask is now connected to your Valora wallet. The value of your Valora wallet should show in your MetaMask account and you can now use MetaMask to access your funds.
 
 :::note
 

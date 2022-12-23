@@ -7,8 +7,7 @@ description: Overview of full node incentives available to node operators using 
 
 Overview of full node incentives available to node operators using gateway fees and transaction payments.
 
-___
-
+---
 
 :::info
 

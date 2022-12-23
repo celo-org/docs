@@ -2,6 +2,7 @@
 title: Celo Randomness
 description: How unpredictable pseudo-randomness is achieved on the Celo blockchain.
 ---
+
 # Randomness
 
 How unpredictable pseudo-randomness is achieved on the Celo blockchain and offered as a service for dapp developers.
@@ -10,7 +11,7 @@ ___
 
 ## Producing Pseudo-randomness
 
-Producing unpredictable pseudo-randomness without a trusted third party is not trivial. Several solutions for this problem exist or are being currently researched. They include Verifiable Random Functions \(for example, based on BLS threshold signatures\), Verifiable Delay Functions, and commit-reveal schemes. 
+Producing unpredictable pseudo-randomness without a trusted third party is not trivial. Several solutions for this problem exist or are being currently researched. They include Verifiable Random Functions \(for example, based on BLS threshold signatures\), Verifiable Delay Functions, and commit-reveal schemes.
 
 Currently, Celo implements a simple [RANDAO](https://eth2book.info/altair/part2/building_blocks/randomness#the-randao) commit-reveal scheme which is secure enough for many uses, offering validators only 1 bit of influence: a validator can affect randomness only by choosing *not to propose* a block, which results in the next validator revealing their pre-commited randomness. A more sophisticated solution might be implemented as the network evolves, especially if randomness becomes necessary for other purposes that require stronger assumptions about the randomness’s security \(for example if it was decided that a randomized leader election algorithm should replace the current round robin\).
 

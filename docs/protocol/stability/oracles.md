@@ -2,11 +2,12 @@
 title: Oracles
 description: How the SortedOracles smart contract uses governance to collect reports and maintain the oraclized rate or the Celo dollar.
 ---
+
 # Oracles
 
 How the **SortedOracles** smart contract uses governance to collect reports and maintain the oraclized rate or the Celo dollar.
 
-___
+---
 
 ## SortedOracles Smart Contract
 

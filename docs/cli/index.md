@@ -13,6 +13,7 @@ Introduction to the Celo Command Line Interface and installation instructions.
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
 It’s a command-line interface around the ContractKit. It allows you to interact with the Celo Protocol and smart contracts using command-line tools rather than writing JavaScript. It provides modules for interacting with modules on the ContractKit and is an excellent code reference when defining your own modules. Some common features you may want to consider are helping users participate in elections or in on-chain governance, voting for validators, or helping users interact with multi-sig contracts.
+
 ## NPM Package
 
 The Celo CLI is published as a node module on NPM. Assuming you have [npm](https://www.npmjs.com/get-npm) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) both installed, you can install the Celo CLI using the following command:
@@ -93,7 +94,7 @@ You can specify the number of addresses to get for local signing with the `--led
 
 You can specify an array of index addresses for local signing. Example `--ledgerCustomAddresses "[4,99]"`.
 
-For example: 
+For example:
 
 ```shell
 celocli transfer:celo --to <addressOfChoice> --value 1000000 --from <accountAddress> --useLedger

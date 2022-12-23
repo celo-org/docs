@@ -1,12 +1,13 @@
 ---
 title: Hosted Nodes
-description: How to get a preconfigured Celo blockchain node running on one of the major cloud providers. 
+description: How to get a preconfigured Celo blockchain node running on one of the major cloud providers.
 ---
+
 # Hosted Nodes
 
-How to get a preconfigured Celo blockchain node running on one of the major cloud providers. 
+How to get a preconfigured Celo blockchain node running on one of the major cloud providers.
 
-___
+---
 
 ## Before getting started
 

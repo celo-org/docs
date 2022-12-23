@@ -2,11 +2,13 @@
 title: Celo Metadata and Claims
 description: How the Celo protocol's metadata and claims feature makes it possible to connect on-chain with off-chain identities.
 ---
+
 # Metadata and Claims
 
 How the Celo protocol's **metadata and claims** feature makes it possible to connect on-chain with off-chain identities.
 
-___
+---
+
 ## Use Cases
 
 - Tools want to present public metadata supplied by a validator or validator group as part of a list of candidate groups, or a list of current elected validators.
