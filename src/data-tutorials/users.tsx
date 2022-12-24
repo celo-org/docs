@@ -825,6 +825,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'hardhat'],
   },
   {
+    title: 'How to become a Web3 Developer',
+    description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/How to become a Web3 Developer',
+    tags: ['beginner','celo', 'celosage'],
+  },
+  {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
