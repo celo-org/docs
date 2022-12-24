@@ -832,6 +832,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'hardhat'],
   },
   {
+    title: 'How Uniswap Works',
+    description: 'In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain.',
+    preview: require('./showcase/beginner/celo-blockchain-101.png'),
+    website: 'blog/tutorials/How Uniswap Works',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
