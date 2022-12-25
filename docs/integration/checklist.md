@@ -7,7 +7,7 @@ description: Checklist for applications building and integrating on Celo.
 
 Checklist for applications building and integrating on Celo.
 
-___
+---
 
 ## General
 
@@ -27,7 +27,7 @@ Please read more under [Custody](/integration/custody), but here is a shortened 
 
 ### Detect Transfers
 
-Stable-value currencies, currently cUSD and cEUR, are contracts, `StableToken` and `StableTokenEUR` respectively, that can be accessed via the ERC20 interface.  The native asset CELO can be accessed via the `GoldToken` ERC20 interface, or natively, similar to ETH on Ethereum.
+Stable-value currencies, currently cUSD and cEUR, are contracts, `StableToken` and `StableTokenEUR` respectively, that can be accessed via the ERC20 interface. The native asset CELO can be accessed via the `GoldToken` ERC20 interface, or natively, similar to ETH on Ethereum.
 
 Addresses for those contracts can be found by querying the [registry](/developer/contractkit/contracts-wrappers-registry) or in the [Listing Guide](/integration/listings).
 

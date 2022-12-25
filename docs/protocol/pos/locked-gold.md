@@ -2,17 +2,18 @@
 title: Locked CELO and Voting
 description: Introduction to locked CELO and how to use validator elections to participate in voting.
 ---
+
 # Locked CELO and Voting
 
 Introduction to Celo locked gold (CELO) and how to use validator elections to participate in voting.
 
 :::note
 
-This page references "Locked Gold". The native asset of Celo was called Celo Gold (cGLD), but is now called CELO. Many references have been updated, but code and smart contract references may still mention Gold as it is more difficult to reliably and securely update the protocol code.  
+This page references "Locked Gold". The native asset of Celo was called Celo Gold (cGLD), but is now called CELO. Many references have been updated, but code and smart contract references may still mention Gold as it is more difficult to reliably and securely update the protocol code.
 
 :::
 
-___
+---
 
 ## Validator Election Participation
 

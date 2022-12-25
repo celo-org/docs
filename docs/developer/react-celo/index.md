@@ -55,16 +55,16 @@ yarn add @celo/react-celo @celo/contractkit
 react-celo uses [React's Context.Provider](https://reactjs.org/docs/context.html#contextprovider) under the hood to inject state throughout your application. You need to make sure your application is wrapped with the provider in order to be able to access all the goodies react-celo provides.
 
 ```javascript
-import { CeloProvider } from '@celo/react-celo';
-import '@celo/react-celo/lib/styles.css';
+import { CeloProvider } from "@celo/react-celo";
+import "@celo/react-celo/lib/styles.css";
 
 function WrappedApp() {
   return (
     <CeloProvider
       dapp={{
-        name: 'My awesome dApp',
-        description: 'My awesome description',
-        url: 'https://example.com',
+        name: "My awesome dApp",
+        description: "My awesome description",
+        url: "https://example.com",
       }}
     >
       <App />
@@ -84,9 +84,9 @@ react-celo provides a list of default wallets (CeloExtensionWallet, Injected, Le
 ```javascript
 <CeloProvider
   dapp={{
-    name: 'My awesome dApp',
-    description: 'My awesome description',
-    url: 'https://example.com',
+    name: "My awesome dApp",
+    description: "My awesome description",
+    url: "https://example.com",
   }}
   connectModal={{
     // This options changes the title of the modal and can be either a string or a react element
@@ -117,21 +117,21 @@ You can also add new custom wallets that don't exist in the registry or aren't i
 ```javascript
 <CeloProvider
   dapp={{
-    name: 'My awesome dApp',
-    description: 'My awesome description',
-    url: 'https://example.com',
+    name: "My awesome dApp",
+    description: "My awesome description",
+    url: "https://example.com",
   }}
   // Use the theme to customize the colors.
   // If you provide a theme, you must provide all values below!
   theme={{
-    primary: '#6366f1',
-    secondary: '#eef2ff',
-    text: '#000000',
-    textSecondary: '#1f2937',
-    textTertiary: '#64748b',
-    muted: '#e2e8f0',
-    background: '#ffffff',
-    error: '#ef4444',
+    primary: "#6366f1",
+    secondary: "#eef2ff",
+    text: "#000000",
+    textSecondary: "#1f2937",
+    textTertiary: "#64748b",
+    muted: "#e2e8f0",
+    background: "#ffffff",
+    error: "#ef4444",
   }}
   connectModal={{
     title: <span>Connect your ExampleWallet</span>,
@@ -140,40 +140,40 @@ You can also add new custom wallets that don't exist in the registry or aren't i
       additionalWCWallets: [
         // see https://github.com/WalletConnect/walletconnect-registry/#schema for a schema example
         {
-          id: 'example-wallet',
-          name: 'Example Wallet',
-          description: 'Lorem ipsum',
-          homepage: 'https://example.com',
-          chains: ['eip:4220'],
+          id: "example-wallet",
+          name: "Example Wallet",
+          description: "Lorem ipsum",
+          homepage: "https://example.com",
+          chains: ["eip:4220"],
           // IMPORTANT
           // This is the version of WC. We only support version 1 at the moment.
-          versions: ['1'],
+          versions: ["1"],
           logos: {
-            sm: 'https://via.placeholder.com/40/000000/FFFFFF',
-            md: 'https://via.placeholder.com/80/000000/FFFFFF',
-            lg: 'https://via.placeholder.com/160/000000/FFFFFF',
+            sm: "https://via.placeholder.com/40/000000/FFFFFF",
+            md: "https://via.placeholder.com/80/000000/FFFFFF",
+            lg: "https://via.placeholder.com/160/000000/FFFFFF",
           },
           app: {
-            browser: '...',
-            ios: '...',
-            android: '...',
-            mac: '...',
-            windows: '..',
-            linux: '...',
+            browser: "...",
+            ios: "...",
+            android: "...",
+            mac: "...",
+            windows: "..",
+            linux: "...",
           },
           mobile: {
-            native: '...',
-            universal: '...',
+            native: "...",
+            universal: "...",
           },
           desktop: {
-            native: '...',
-            universal: '...',
+            native: "...",
+            universal: "...",
           },
           metadata: {
-            shortName: '...',
+            shortName: "...",
             colors: {
-              primary: '...',
-              secondary: '...',
+              primary: "...",
+              secondary: "...",
             },
           },
           responsive: {
@@ -196,7 +196,7 @@ You can also add new custom wallets that don't exist in the registry or aren't i
 react-celo provides a `connect` function that will open a modal with a list of wallets your user can connect to.
 
 ```javascript
-import { useCelo } from '@celo/react-celo';
+import { useCelo } from "@celo/react-celo";
 
 function App() {
   const { connect, address } = useCelo();
@@ -247,7 +247,7 @@ Initially connecting to a user's account is one thing, handled via the `connect`
 react-celo will remember a user's last connected address when they navigate back to or refresh your DApp. Ensure that when developing your DApp nothing changes in the UI whether or not the user has a `kit.defaultAccount` property set.
 
 ```javascript
-import { useCelo } from '@celo/react-celo';
+import { useCelo } from "@celo/react-celo";
 
 const { address } = useCelo();
 ```
@@ -259,7 +259,7 @@ When a user refreshes or navigates back to your page, they may not necessarily h
 For that functionality we have the `performActions` and `getConnectedKit` methods. Usage looks a little like this for `getConnectedKit`:
 
 ```javascript
-import { useCelo } from '@celo/react-celo';
+import { useCelo } from "@celo/react-celo";
 
 function App() {
   const { getConnectedKit } = useCelo();
@@ -267,7 +267,7 @@ function App() {
   async function transfer() {
     const kit = await getConnectedKit();
     const cUSD = await kit.contracts.getStableToken();
-    await cUSD.transfer('0x...', 10000).sendAndWaitForReceipt();
+    await cUSD.transfer("0x...", 10000).sendAndWaitForReceipt();
   }
 
   return <button onClick={transfer}>Transfer</button>;
@@ -277,7 +277,7 @@ function App() {
 and this for `performActions`:
 
 ```javascript
-import { useCelo } from '@celo/react-celo';
+import { useCelo } from "@celo/react-celo";
 
 function App() {
   const { performActions } = useCelo();
@@ -285,7 +285,7 @@ function App() {
   async function transfer() {
     await performActions(async (kit) => {
       const cUSD = await kit.contracts.getStableToken();
-      await cUSD.transfer('0x...', 10000).sendAndWaitForReceipt();
+      await cUSD.transfer("0x...", 10000).sendAndWaitForReceipt();
     });
   }
 
@@ -337,7 +337,7 @@ function App () {
 Be sure to check the react-celo example application for a showcase of how network management works in more depth. Usually you'll want to show a dropdown to your users allowing them to select the network to connect to.
 
 ```javascript
-import { useCelo } from '@celo/react-celo';
+import { useCelo } from "@celo/react-celo";
 
 function App() {
   const { network, updateNetwork } = useCelo();
