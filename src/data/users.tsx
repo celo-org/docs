@@ -833,6 +833,14 @@ const Users: User[] = [
     tags: ['apps','earn'],
   },
   {
+    title: 'OGP Bulk Sender',
+    description: 'Send your Celo native coins, tokens, and NFTs in batches.',
+    preview: require('./showcase/ogpbulksender.png'),
+    website: 'https://www.offgridplatform.com/apps/bulk-sender',
+    source: 'https://www.offgridplatform.com/apps/bulk-sender',
+    tags: ['apps','wallets','defi'],
+  },
+  {
     title: 'Paysail',
     description: 'Paysail leverages asset-backed stablecoins to offer an innovative global B2B invoicing solution with immediate access to incoming funds.',
     preview: require('./showcase/pay-sail.png'),
