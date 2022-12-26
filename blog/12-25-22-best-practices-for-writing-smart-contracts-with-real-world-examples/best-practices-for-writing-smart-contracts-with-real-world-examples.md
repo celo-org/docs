@@ -125,13 +125,13 @@ Sometimes, one may need to write more code than expected. Having code with fewer
 			- Common.sol
 			- IHusbandToBe.sol
 			- IWifeTobe.sol
-			- IInlaw.sol
+			- IParent.sol
 		-	wealth
 			-	CashInBank.sol
 			-	Properties.sol
 		- HusbandToBe.sol
 		- WifeToBe.sol
-		- Inlaw.sol
+		- Parent.sol
 
 Our contract code size is a bit bigger and we have successfully broken them down to implement a modular style.
 
