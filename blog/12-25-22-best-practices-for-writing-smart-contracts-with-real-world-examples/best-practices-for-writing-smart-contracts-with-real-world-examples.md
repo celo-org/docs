@@ -141,23 +141,23 @@ This acts as a stopper or a switch that breaks executions. In the event a bug is
 
 Your files should look like these:
 
-```HusbandToBe.sol
-```
+_HusbandToBe.sol_
+
 ![image](images/15.png)
 
 
-```bash WifeToBe.sol
-```
+_WifeToBe.sol_
+
 ![image](images/16.png)
 
 
-```bash Inlaw.sol renamed to Parent.sol
-```
+_Inlaw.sol renamed to Parent.sol_
+
 ![image](images/17.png)
 
 
-```bash Bank.sol
-```
+_Bank.sol_
+
 ![image](images/18.png)
 
 The openzeppelin library makes available for us two internal functions to activate the breaker. They hold so much power that care must be taken who calls them.
@@ -207,39 +207,40 @@ A good practice is to always tag or name that contracts we do not trust as “un
 On Line 78, we perform a high-level callback into whoever is calling to read their profile. In this case, we expect that the caller should be a contract of type “HusbandToBe”. In our case, the “_msgSender()” is a trusted party so we do not have to worry about malicious code hijacking control flow. The flow terminates as soon as the execution of “getProfile()” completes, and the result is tracked in the “_p” variable (user-defined type from an elementary type ‘struct’). Assume we are using a low-level call, we could something like:
 
 ```bash
-bytes memory _calldata = abi.encodeWithSignature(“getProfile()”);
-(bool done, bytes memory returndata) = _msgSender().call(_calldata);
+	bytes memory _calldata = abi.encodeWithSignature(“getProfile()”);
+	(bool done, bytes memory returndata) = _msgSender().call(_calldata);
 ```
+
 If “_msgSender()” is a bad actor, they could execute malicious code that might cause serious damages to the calling contract. As much as possible, avoid low-level calls especially with in-line assembly except if you know what you’re doing. And if you need to make an external call, 
 Avoid state changes after the call.
 Avoid delegating to code you do not trust.
 Below is an example how “delegatecall()” can cause loss of funds and the contract destroyed.
 
 ```bash
-contract BadActor {
-	function performActionOnMyBehalf() external {
-	selfdestruct(0);
-}
-}
+	contract BadActor {
+		function performActionOnMyBehalf() external {
+			selfdestruct(0);
+		}
+	}
 
-contract Enquirer {
-	function getProfile(address proxy) public returns(string memory) {
-	// Unsafe call
-	proxy.delegatecall(bytes4(keccak256(“performActionOnMyBehalf()”)))
-}
-}
+	contract Enquirer {
+		function getProfile(address proxy) public returns(string memory) {
+			// Unsafe call
+			proxy.delegatecall(bytes4(keccak256(“performActionOnMyBehalf()”)))
+		}
+	}
 ```
 The potential danger here is allowing users to supply an argument to the “getProfile” function. This should be discouraged.
 
 Let’s fix an issue in the WifeToBe.sol contract.
 
-- Before
+_Before_
+
 ![image](images/21.png)
 
+_After_
 
-After
 ![image](images/22.png)
-
 
 ## Upgradability
 
@@ -371,11 +372,12 @@ Data is sent to a contract but no match for function in the data.
 Sending ether to a contract without data via “.transfer()” or “.send()” triggers the contract’s fallback function. To receive ether, fallback must be payable. The syntax is often written as:
 
 ```bash
-fallback () external payable { 
-}
+	fallback () external payable { }
 ```
+
 Fallback function also serves a good use case in implementing upgradable contracts.
-Example:
+
+_Example:_
 
 ```bash
 	pragma solidity 0. 5.4;
@@ -402,18 +404,19 @@ Example:
 ```
 > Warning! This is for example purpose, do not use in production
 
-From version 0.6.x an improvement was released that splitted the fallback function into two separate functions: 
-fallback() external payable { }
-receive external payable { }
+From version 0.6.x an improvement was released that splitted the fallback function into two separate functions:
+
+-	fallback() external payable { }
+-	receive external payable { }
 
 Using payable with “fallback()” is now optional, and the function is used when no other function in the contract matches the call data. It always receives data and it is declared without the “function” keyword. If you intend to only use the fallback function for logging received Ether, you should always check if the call contains any data or not. 
 
 ```bash
-// …
-fallback() external payable  { 
-	require(msg.data.length = = 0, “”);
-	emit DepositConfirmed(msg.sender); 
-}
+	// …
+	fallback() external payable  { 
+		require(msg.data.length = = 0, “”);
+		emit DepositConfirmed(msg.sender); 
+	}
 ```
 
 The receive function should be used where call data is empty and any value is sent via “.send()” or “.transfer()”. A contract cannot have more than one “receive” function, and it is declared without the “function” keyword with its visibility marked as “external”. 
@@ -458,7 +461,7 @@ Different Kinds of visibility in solidity are :
 
 When accepting a contract addresses arguments to functions, it is advisable to use the interface type rather than accepting an address type so as to enable the compiler guarantee type safety throughout the input lifecycle.
 
-Example:
+_Example:_
 
 ```bash 
 	contract Somecontract {
@@ -485,34 +488,36 @@ On line 84 we accept input of type contract for the proposer and proposedTo argu
 
 If you’re creating token (s) for your project, ensure they follow acceptable and stable token standard by implementing corresponding token interface such as [EIP20](https//github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) or ERC20, [EIP721](https//github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)
 
-Example:
+_Example:_
+
 ![image](images/8.png)
 
 
 In the code above, we create a new ERC20 compatible token by inheriting the openzeppelin ERC20 module which already has the interface implemented.
 
 Let’s compile the code. Run :
-```bash
-npx hardhat compile
-```
-![image](images/12.png)
 
+```bash
+	npx hardhat compile
+```
+
+![image](images/12.png)
 
 Deploy locally.
 
 ```bash
-npx hardhat run scripts/deploy.js
+	npx hardhat run scripts/deploy.js
 ```
-![image](images/11.png)
 
+![image](images/11.png)
 
 Deploying to Celo’s testnet (Alfajores)
 
 ```bash
-npx hardhat run scripts/deploy.js – testnet alfajores
+	npx hardhat run scripts/deploy.js – testnet alfajores
 ```
-![image](images/13.png)
 
+![image](images/13.png)
 
 # Conclusion​
 
@@ -524,5 +529,6 @@ The example we adopted in this tutorial is a real-world case. It can be extended
 
 # About the Author​
 Isaac Jesse, aka Bobelr is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on. He has also contributed to Web3 projects.
-References​
+
+# References​
 [Complete tutorial source code](https://github.com/bobeu/advanced-hardhat-for-celo-dev)
