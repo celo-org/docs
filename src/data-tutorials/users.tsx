@@ -727,6 +727,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Como Construir em Celo Usando Tatum',
+    description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
+    preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
+    website: 'blog/tutorials/como-construir-em-celo-usando-tatum',
+    tags: ['beginner','celosage','ERC20','smartcontract','video'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
