@@ -17,7 +17,7 @@ slug: /tutorials/Why-should-you-use-Celo-Blockchain
 
 Despite claims of causing long-awaited changes in the financial system, several blockchain projects have failed to attain global mainstream adoption.
 
-To bring blockchain technology to the masses, the **Celo** protocol has taken a WhatsApp-style approach, making it possible for anyone with a phone number to join this ground-breaking network. 
+To bring blockchain technology to the masses, the [Celo protocol](https://celo.org/) has taken a WhatsApp-style approach, making it possible for anyone with a phone number to join this ground-breaking network. 
 
 It's fine if you've only recently heard of **Celo**. This article dives into what Celo is and why you should start using it immediately.
  
@@ -28,7 +28,8 @@ Let's begin by taking a look at what **Celo** is.
 
 You may not understand the full value of what Celo intends to achieve until you discover that Blockchain alone consumes more than 1% of America's electrical production. Blockchain's general acceptance as a payment method has been limited by its high energy demand and technological difficulties for the average individual. But with Celo, only a phone number is needed as a public key for cryptocurrency transactions.
 
-The Celo Platform, like other DeFi chains, facilitates the development of smart contracts and can host DApps. This has marked it as a mobile-based Web 3 hub for many. 
+The Celo Platform, like other DeFi chain
+s, facilitates the development of smart contracts and can host DApps. This has marked it as a mobile-based Web 3 hub for many. 
 
 CELO, its native token, and the stablecoins cUSD, cEUR, and cREAL are its primary tokens.
 
@@ -73,7 +74,7 @@ Any network that wants to compete in the blockchain industry on any level needs 
 
 The Celo development team planned for this and built it into the system from the beginning. After launching with cUSD as its primary stablecoin, Celo has since added cEUR and cREAL to the mix. 
 
-The three **stablecoins** are backed by Ethereum, the CELO token, and other coins such as BTC and USDT. Through a hybrid of the crypto collateralization model and seigniorage shares, Celo has created decentralized stablecoins that are easily corrected for any price fluctuations away from the peg.
+[The three stablecoins are backed by Ethereum](https://messari.io/asset/celo-dollar/profile), the CELO token, and other coins such as BTC and USDT. Through a hybrid of the crypto collateralization model and seigniorage shares, Celo has created decentralized stablecoins that are easily corrected for any price fluctuations away from the peg.
 
 The three stablecoins are compatible with both centralized and decentralized apps, with transaction times as fast as 5 seconds. To top it all off, the total gas fees for all transactions come to less than one cent. With stablecoins, you can easily avoid volatility. And because we consider stable tokens as a hybrid kind of algorithmic and collateralized , they are easier to keep pegged.
 
@@ -111,7 +112,7 @@ Using its lightweight client, you can quickly move assets from other chains to C
 
 
 ## How Does Celo Keep Spammers From Harvesting Users' Contact Information?
-This is a common question that people ask a lot about Celo. Celo knows that phone numbers are used as public keys, which puts its users at risk of being hacked by harvesters. As a result, Celo uses a one-way hash of the address instead of the address itself as a workaround, which they outline in their whitepaper. Adding pepper to a text before it is hashed to increase its entropy works like a charm and makes it more difficult to reverse the hash.
+This is a common question that people ask a lot about Celo. Celo knows that phone numbers are used as public keys, which puts its users at risk of being hacked by harvesters. As a result, Celo uses a one-way hash of the address instead of the address itself as a workaround, which they [outline in their whitepaper](https://celo.org/papers/whitepaper). Adding pepper to a text before it is hashed to increase its entropy works like a charm and makes it more difficult to reverse the hash.
 
 
 
@@ -126,15 +127,15 @@ Adefolalu Adegboyega is a freelance content writer specializing in creating blog
 # References
 Celo Whitepapers
 
-https://twitter.com/marek_/status/1524109003403366400
+[https://twitter.com/marek_/status/1524109003403366400]
 
-Celo docs
+[Celo docs](https://docs.celo.org/learn/why-celo)
 
-Ledger 
+[Ledger](https://www.ledger.com/academy/what-is-celo-blockchain) 
 
-Marek | Celo Blog
+[Marek | Celo Blog](https://link.medium.com/yu6l63Jmxvb)
 
-Celo Developers
+[Celo Developers](https://celo.org/developers)
 
-CrytoTicker
+[CrytoTicker](https://cryptoticker.io/en/celo-blockchain-10x-investors/)
 
