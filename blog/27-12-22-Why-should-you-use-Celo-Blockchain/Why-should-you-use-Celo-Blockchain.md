@@ -12,7 +12,7 @@ slug: /tutorials/Why-should-you-use-Celo-Blockchain
 
 # Why should you Use CELO Blockchain?
 
-![header](C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo.png)
+(C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo.png)
 
 
 Despite claims of causing long-awaited changes in the financial system, several blockchain projects have failed to attain global mainstream adoption.
@@ -53,7 +53,7 @@ These act as intermediaries between validator nodes and light clients. They take
 These are the network's backbone, responsible for creating new blocks and verifying transactions or staking. At any given time, there are 100 validators, and the only requirement to join their ranks and earn voting rights is to stake 10,000 CELO. Each validator is given a slice of the block reward for every successful transaction and block creation.
 
 
-![header](C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo2.png)
+(C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo2.png)
 
 # What is Special About Celo?
 Celo is, of course, a layer one chain, but with layer one and two chains appearing faster than we can blink, we have to wonder what makes Celo unique.
@@ -108,7 +108,7 @@ This EVM compatibility ensures that working on CELO projects as a developer will
 
 Using its lightweight client, you can quickly move assets from other chains to Celo. 
 
-![header](C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo3.jpg)
+(C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo3.jpg)
 
 
 ## How Does Celo Keep Spammers From Harvesting Users' Contact Information?
