@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
   },
   {
+    title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
+    description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
+    preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
+    website: 'blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum',
+    tags: ['intermediate','celosage','erc721','smartcontract','video'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
