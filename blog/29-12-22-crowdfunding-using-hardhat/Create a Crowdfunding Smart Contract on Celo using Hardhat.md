@@ -22,6 +22,7 @@ Let’s jump into it.
 It is a good practice in blockchain in blockchain engineering to have a fair understanding of an ecosystem as a developer before attempting to build smart contracts or DApps on it.
 
 Thus, we shall examine Celo briefly:
+
 First of all, Celo is a self-sufficient layer-1 blockchain protocol that uses a battle-tested proof-of-stake consensus mechanism and is compatible with the Ethereum Virtual Machine. That means developers can use the same languages and frameworks used to build on Ethereum to build on Celo. The main thing that will change is switching the configuration when it is time to deploy.
 
 But while they are both interoperable, Celo is distinct in terms of its architecture, ecological friendliness, economic model, and transaction processing technicalities.
