@@ -872,7 +872,7 @@ describe("Deploy Raisemoney", function () {
 });
 ```
 Once you have compiled it, this should show on your terminal:
-
+![compile and test](images/test%20celo.jpeg)
 
 Now, we can move to the next phase, which is deployment to the Celo Alfajores Testnet testnet.
 
@@ -925,6 +925,7 @@ module.exports = {
 ```
 Then deploy the contract with `hardhat run scripts/deploy.js --network alfajores`. This was the contract address of our contract: 0xEF87eDE6F4713De16d83Ca08cf0f8A6a263Db60A.
 
+![deploy](images/celo%20result.jpeg)
 
 You can always verify your contracts at [Celoscan](https://alfajores.celoscan.io/)  
 # Conclusion
