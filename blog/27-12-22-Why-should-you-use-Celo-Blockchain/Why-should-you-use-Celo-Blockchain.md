@@ -11,7 +11,7 @@ slug: /tutorials/Why-should-you-use-Celo-Blockchain
 
 
 # Why should you Use CELO Blockchain?
-
+ 
 (C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo.png)
 
 
@@ -23,7 +23,7 @@ It's fine if you've only recently heard of **Celo**. This article dives into wha
  
 # What is Celo?
 Let's begin by taking a look at what **Celo** is.
-
+ 
 **Celo** is a blockchain platform that allows people worldwide to conduct simple cryptocurrency transactions using their mobile phones. This opens up a whole new world of financial products that can be accessed via mobile devices. The protocol also lets you pay transaction/gas fees in any currency, which are then split evenly among the 100 validators on the network.
 
 You may not understand the full value of what Celo intends to achieve until you discover that Blockchain alone consumes more than 1% of America's electrical production. Blockchain's general acceptance as a payment method has been limited by its high energy demand and technological difficulties for the average individual. But with Celo, only a phone number is needed as a public key for cryptocurrency transactions.
@@ -33,7 +33,7 @@ s, facilitates the development of smart contracts and can host DApps. This has m
 
 CELO, its native token, and the stablecoins cUSD, cEUR, and cREAL are its primary tokens.
 
-Its native token, the CELO, was initially called CGLD after its first deployment. Even though the name has changed, there may still be references to Celo Gold in the code base. The token is the platform's native asset and the driving force behind the growth of the CELO ecosystem and the blockchain. As a CELO holder, you can vote in governance polls, stake with validators, and earn incentive tokens.
+Its native token, the **CELO**, was initially called CGLD after its first deployment. Even though the name has changed, there may still be references to Celo Gold in the code base. The token is the platform's native asset and the driving force behind the growth of the CELO ecosystem and the blockchain. As a CELO holder, you can vote in governance polls, stake with validators, and earn incentive tokens.
 
 
 # How Does Celo Work?
