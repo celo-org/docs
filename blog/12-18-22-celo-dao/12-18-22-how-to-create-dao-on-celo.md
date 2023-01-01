@@ -39,7 +39,7 @@ Remove all the files from the contracts and test folder once the hardhat setup i
 We will need to install some dev dependencies so that the hardhat project will work properly. To install those, run the following command in the terminal:
 
 ```bash
-npm install --save-dev "hardhat@^2.12.2" "@nomicfoundation/hardhat-toolbox@^2.0.0" "hardhat-coverage"
+npm install --save-dev "hardhat@^2.12.2" "@nomicfoundation/hardhat-toolbox@^2.0.0" "solidity-coverage"
 ```
 
 We will also need to install OpenZeppelin Library as dependency for our project:
@@ -51,7 +51,7 @@ npm install "@openzeppelin/contracts"
 Let’s see what these can help us with:
 - `hardhat`: Hardhat is an extensible developer tool that helps smart contract developers increase productivity by reliably bringing together the tools they want.
 - `@nomicfoundation/hardhat-toolbox`: It bundles all the commonly used packages and Hardhat plugins.
-- `hardhat-coverage`: It is a solidity code coverage plugin for Hardhat.
+- `solidity-coverage`: It is a solidity code coverage plugin for Hardhat.
 - `@openzeppelin/contracts`: It is a secure smart contract library for solidity
 
 # Governance Token Smart Contract
