@@ -834,7 +834,7 @@ const Users: User[] = [
   },
   {
     title: 'OGP Bulk Sender',
-    description: 'Send your Celo native coins, tokens, and NFTs in batches.',
+    description: 'Send your native coins, tokens, and NFTs in batches using Bulk Sender by Off Grid Platform.',
     preview: require('./showcase/ogpbulksender.png'),
     website: 'https://www.offgridplatform.com/apps/bulk-sender',
     source: 'https://www.offgridplatform.com/apps/bulk-sender',
