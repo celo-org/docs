@@ -1352,6 +1352,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
     tags: ['intermediate', 'hardhat'],
   },
+  {
+title: 'The Celo Extension Wallet',
+description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
+preview: require('./showcase/intermediate/how-to-odownloa-dand-test-the-Celo-extension-wallet-on-your-browser.png'),
+website: 'blog/tutorials/how-to-odownloa-dand-test-the-Celo-extension-wallet-on-your-browser',
+tags: ['celosage', 'video'],
+},
   
   /*
   Pro Tip: add your site in alphabetical order.
