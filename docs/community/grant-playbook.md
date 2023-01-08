@@ -7,12 +7,14 @@ description: Summary of best practices that grantees are encouraged to follow to
 
 Summary of best practices that grantees are encouraged to follow to further the Celo mission.
 
-___
+---
 
 ## Code of Conduct
 
 The Celo Foundation believes in investing in projects that share Celo’s mission of building an open financial system that creates conditions of prosperity for everyone. Everyone who engages with the Celo ecosystem must abide by the [Code of Conduct](https://celo.org/code-of-conduct). Please take the time to read through it with your team.
+
 ## Communication Guidelines
+
 ### Social Media Engagement
 
 Creating an ecosystem that supports and encourages each other is important to the Celo community. As a team, please make sure to actively engage in social media.
@@ -32,7 +34,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 - Write a blog post at least once per month/milestone outlining your progress to date (i.e. accomplishments and challenges). Include links to repos, demos, or social media.
 - If using Medium, please share your Medium profile tag with [community@celo.org](mailto:community@celo.org) so we may add you as a writer for the Celo Medium Publication
 - Here are some writing tips:
-  - [Celo Blogging Guide](https://docs.google.com/document/d/1pzlosMQxnOAxxHnLa7ES8pgQBRWC7ArMObI9OwU8mBI/edit?usp=sharing)  
+  - [Celo Blogging Guide](https://docs.google.com/document/d/1pzlosMQxnOAxxHnLa7ES8pgQBRWC7ArMObI9OwU8mBI/edit?usp=sharing)
   - [How to write a killer press release](https://medium.com/@DaveCorn/how-to-write-a-killer-press-release-cd34791d6533)
   - [How to write a new product announcement](https://medium.com/@emilylope18/how-do-you-write-a-new-product-announcement-4706454adbad)
 
@@ -49,7 +51,7 @@ To make sure teams are making progress on projects, send us bi-weekly updates to
 
 ### Chat
 
-- Make sure to ask questions in a relevant Discord channel. [You can join the Celo Discord here.](https://discord.gg/vRbExjv) The cLabs protocol and product teams are all there and available for questions. Try not to take conversations to direct messages -- by having conversations in an open channel, other groups can also benefit from the technical discussions and learnings. You can tag mentors in public channel messages to ensure your messages are seen. cLabs mentors handles are:  `@joshc | cLabs`
+- Make sure to ask questions in a relevant Discord channel. [You can join the Celo Discord here.](https://discord.gg/vRbExjv) The cLabs protocol and product teams are all there and available for questions. Try not to take conversations to direct messages -- by having conversations in an open channel, other groups can also benefit from the technical discussions and learnings. You can tag mentors in public channel messages to ensure your messages are seen. cLabs mentors handles are: `@joshc | cLabs`
 
 - Please make an effort to remain visible on #general-applications and/or #mobile-development channels in the App Developer section. These channels are dedicated to teams working on projects on the Celo ecosystem. There is a good chance someone has encountered similar challenges. It’s also a great way to find ways to integrate with other projects in the space.
 - Please make sure your entire team is in this chat room.

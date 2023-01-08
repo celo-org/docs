@@ -1,12 +1,13 @@
 ---
 title: Querying on-chain identifiers with ODIS
-description: How to use ODIS to query the on-chain identifier given a phone number. 
+description: How to use ODIS to query the on-chain identifier given a phone number.
 ---
+
 # Query On-Chain Identifiers with ODIS
 
-How to use ODIS to query the on-chain identifier given a phone number. 
+How to use ODIS to query the on-chain identifier given a phone number.
 
-___
+---
 
 ## What is ODIS?
 
@@ -25,9 +26,10 @@ There are two methods for ODIS:
 
 :::tip
 
-See [this overview document](/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS. 
+See [this overview document](/protocol/identity/odis-use-case-phone-number-privacy) for more details on ODIS.
 
 :::
+
 ## Authentication
 
 Both methods require authentication to the ODIS server, which can be performed by either the main wallet key or the data-encryption key (DEK) associated with the wallet key. This is managed by `AuthSigner`, which can be either a `WalletKeySigner` for a wallet key or an `EncryptionKeySigner` for the DEK. The DEK method is preferred, since it doesn't require the user to access the same key that manages their funds. [You can learn more about DEK here.](/developer/contractkit/data-encryption-key)
@@ -63,19 +65,19 @@ const serviceContext: ServiceContext = {
 
 The ODIS endpoint URL for each environment can be found here:
 
-| Environment | Key |
-|---|---|
+| Environment       | Key                                                                  |
+| ----------------- | -------------------------------------------------------------------- |
 | Alfajores Staging | https://us-central1-celo-phone-number-privacy-stg.cloudfunctions.net |
-| Alfajores | https://us-central1-celo-phone-number-privacy.cloudfunctions.net |
-| Mainnet | https://us-central1-celo-pgpnp-mainnet.cloudfunctions.net |
+| Alfajores         | https://us-central1-celo-phone-number-privacy.cloudfunctions.net     |
+| Mainnet           | https://us-central1-celo-pgpnp-mainnet.cloudfunctions.net            |
 
 The ODIS public key for each environment can be found here:
 
-| Environment | Key |
-|---|---|
+| Environment       | Key                                                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Alfajores Staging | 7FsWGsFnmVvRfMDpzz95Np76wf/1sPaK0Og9yiB+P8QbjiC8FV67NBans9hzZEkBaQMhiapzgMR6CkZIZPvgwQboAxl65JWRZecGe5V3XO4sdKeNemdAZ2TzQuWkuZoA |
-| Alfajores | kPoRxWdEdZ/Nd3uQnp3FJFs54zuiS+ksqvOm9x8vY6KHPG8jrfqysvIRU0wtqYsBKA7SoAsICMBv8C/Fb2ZpDOqhSqvr/sZbZoHmQfvbqrzbtDIPvUIrHgRS0ydJCMsA |
-| Mainnet | FvreHfLmhBjwxHxsxeyrcOLtSonC9j7K3WrS4QapYsQH6LdaDTaNGmnlQMfFY04Bp/K4wAvqQwO9/bqPVCKf8Ze8OZo8Frmog4JY4xAiwrsqOXxug11+htjEe1pj4uMA |
+| Alfajores         | kPoRxWdEdZ/Nd3uQnp3FJFs54zuiS+ksqvOm9x8vY6KHPG8jrfqysvIRU0wtqYsBKA7SoAsICMBv8C/Fb2ZpDOqhSqvr/sZbZoHmQfvbqrzbtDIPvUIrHgRS0ydJCMsA |
+| Mainnet           | FvreHfLmhBjwxHxsxeyrcOLtSonC9j7K3WrS4QapYsQH6LdaDTaNGmnlQMfFY04Bp/K4wAvqQwO9/bqPVCKf8Ze8OZo8Frmog4JY4xAiwrsqOXxug11+htjEe1pj4uMA |
 
 ## Query phone number identifier
 

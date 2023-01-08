@@ -1,13 +1,13 @@
 ---
 title: Celo Gas Pricing
-description: Introduction to gas prices, calculations, transactions, and fees on the Celo network. 
+description: Introduction to gas prices, calculations, transactions, and fees on the Celo network.
 ---
 
 # Gas Pricing
 
-Introduction to gas prices, calculations, transactions, and fees on the Celo network. 
+Introduction to gas prices, calculations, transactions, and fees on the Celo network.
 
-___
+---
 
 ## Gas Price Minimum
 

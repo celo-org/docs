@@ -2,11 +2,12 @@
 title: Celo Validator Groups
 description: Celo's proof-of-stake mechanism introduces the concept of Validator Groups as intermediaries between voters and validators.
 ---
+
 # Validator Groups
 
 Celo's proof-of-stake mechanism introduces the concept of **Validator Groups** as intermediaries between voters and validators.
 
-___
+---
 
 ## What is a Validator Group?
 

@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'foundation'],
   },
   {
+    title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
+    description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
+    preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
+    website: 'blog/tutorials/how-to-build-a-bookshop-marketplace-dapp',
+    tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
+  },
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
@@ -860,10 +867,17 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'composer'],
   },
   {
+    title: 'A beginners Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More',
+    description: 'Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and its ecosystem.',
+    preview: require('./showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More.png'),
+    website: '/blog//tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png'),
-    website: 'blog/tutorials/17-smart-contracts-powering-the-celo-protocol',
+    website: '/blog/tutorials/17-smart-contracts-powering-the-celo-protocol',
     tags: ['intermediate','foundation', 'metamask'],
   },
   {
@@ -1054,6 +1068,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-use-moolas-money-market.png'),
     website: 'https://learn.figment.io/tutorials/moola-market',
     tags: ['beginner', 'figment'],
+  },
+  {
+    title: 'Hackathons 101 - Everything you need to know about Hackathons',
+    description: 'In this article we will discuss the benefits of attending events, including networking, learning new skills, and gaining exposure to new ideas.',
+    preview: require('./showcase/beginner/how-to-use-moolas-money-market.png'),
+    website: '/blog/tutorials//tutorials/hackathons-101-everything-you-need-to-know-about-hackathons',
+    tags: ['celosage', 'beginner' ],
   },
   {
     title: 'Testing Celo Smart Contracts with Truffle',
@@ -1295,6 +1316,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/introduction-to-mento.png'),
     website: 'https://www.youtube.com/watch?v=hf5gTAQ8G10&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=19',
     tags: ['intermediate', 'video'],
+  },
+  {
+    title: 'Overview of Developer Tools in the Celo Ecosystem',
+    description: 'This article is to help you choose the right tool in the Celo ecosystem',
+    preview: require('./showcase/beginner/overview-of-developer-tools-in-the-celo-ecosystem.png'),
+    website: 'blog/tutorials/overview-of-developer-tools-in-the-celo-ecosystem',
+    tags: ['celosage', 'react', 'composer', 'contractkit', 'cli', 'beginner'],
   },
   {
     title: 'How to Fractionalize an NFT on the Celo Platform',

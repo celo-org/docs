@@ -7,13 +7,14 @@ description: How to send ETH From Ethereum to Celo using the Optics Bridge GUI.
 
 How to send ETH From Ethereum to Celo using the Optics Bridge GUI.
 
-___
+---
 
 :::tip
 
 Other translations: [zh_cn](/protocol/bridge/optics-gui-zh-cn), [kr](/protocol/bridge/optics-gui-kr)
 
 :::
+
 ## Sending ETH From Ethereum to Celo
 
 - Install Metamask from [https://metamask.io](https://metamask.io).

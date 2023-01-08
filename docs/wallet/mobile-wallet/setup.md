@@ -2,11 +2,12 @@
 title: Using the Mobile Wallet
 description: How to get started with the Alfajores Testnet using the Celo Mobile wallet.
 ---
+
 # Mobile Wallet
 
 How to get started with the Alfajores Testnet using the Celo Mobile wallet.
 
-___
+---
 
 ### Getting Started
 
