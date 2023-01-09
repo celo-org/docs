@@ -11,18 +11,6 @@ hide_table_of_contents: true
 slug: /tutorials/How to become a Web3 Developer
 ---
 
-# How to become a Web3 Developer
-
-Page title
-
-How to become a Web3 Developer
-
-Meta description
-
-There's an increasing need for more web3 developers as the internet gradually shifts from web2 to web3 technology. Learn how you can start your learning journey.
-blog/23-12-22- how-to-become-a-web3-developer/images/rear-view-programmer-working-all-night-long (1).jpg
-Image by [pressfoto](https://www.freepik.com/free-photo/rear-view-programmer-working-all-night-long_5698334.htm#query=web%20developer&position=3&from_view=search&track=sph) on Freepik
-
 ## Introduction
 
 The Web3 Industry is rapidly expanding. Hundreds of decentralized networks, cryptocurrencies, and other blockchain-powered applications are anticipated to be launched on the internet and in the global finance industry in the future.
@@ -45,7 +33,7 @@ There are still less than 20,000 Web3 developers working in the whole space. To 
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
-blog/23-12-22- how-to-become-a-web3-developer/images/pie-chart.svg
+![Pie Chart](./images/pie-chart.png)
 
 Breaking into the web3 Industry as a budding developer can be difficult. Many blogs and productivity experts would advise you first to define your goals, who you want to be, locate a niche, etc.
 
@@ -53,12 +41,11 @@ But how will you know since you most likely need more real-world experience to u
 
 ## Web3 developer roadmap
 
-blog/23-12-22- how-to-become-a-web3-developer/images/pexels-kevin-ku-577585 (1).jpg
-Photo by [Kevin Ku](https://www.pexels.com/photo/data-codes-through-eyeglasses-577585/)
+![Roadmap](./images/pexels-kevin-ku-577585.jpg)
 
 A roadmap for web3 developers provides step-by-step instructions on beginning a career as a Web3 developer. It is used by numerous institutions, training organizations, job seekers, and specialists in the web3 field. In this article, we'll go over the most crucial abilities required of web3 developers. We have also compiled a lengthy list of tools and ideas you should learn to get into the field.
 
-## **Understand the basics of several Web2 computer programming languages**
+## Understand the basics of several Web2 computer programming languages
 
 As aforementioned, there are mandatory prerequisites that beginners and intermediates should be aware of. This includes basic or in-depth knowledge of coding/programming in basic languages like [HTML](https://www.w3schools.com/html/), [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/tutorial/tutorial.html), and more.
 
@@ -66,7 +53,7 @@ Your Web2 knowledge will help you advance to Web3 and expose you to fundamental 
 
 To fully understand the basic concept of programming, free resources and websites like [Celo Developer resources](https://docs.celo.org/developer), [Future Learn](https://www.futurelearn.com/subjects/it-and-computer-science-courses/coding-programming), and [Freecodecamp](https://www.freecodecamp.org/) provide the public with thousands of videos, articles, and interactive coding lessons.
 
-## **Learn the fundamentals of blockchain**
+## Learn the fundamentals of blockchain
 
 Although they are brilliant pieces of technology, blockchains are difficult to comprehend. The blockchain is a shared, unchangeable ledger that keeps track of transactions, assets, and trust. While it may take some time to learn blockchain thoroughly, there are certain key aspects to keep an eye out for:
 
@@ -97,16 +84,16 @@ You can create clients that communicate with the Ethereum Blockchain using Web3J
 Dapp stands for Decentralized Application and describes the programs constructed on top of blockchains. DApps can be created as a website or a mobile application because they are used in the majority of functional ways like any other software program. There are tutorials and introductions to Dapps in several well-known ecosystems, some of which include:
 
 - [Introduction to Dapps by Celo](https://docs.celo.org/showcase)
-- [What Is a Decentralized Application?](https://www.coindesk.com/learn/what-is-a-decentralized-application/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)[Learn to Code Blockchain DApps By Building Simple Games](https://cryptozombies.io/)
+- [What Is a Decentralized Application?](https://www.coindesk.com/learn/what-is-a-decentralized-application/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [Learn to Code Blockchain DApps By Building Simple Games](https://cryptozombies.io/)
 - [The Complete Guide to Full Stack Web3 Development](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-web3-development-4g74)
 
 ## Build
 
 Now that you have mastered Blockchain development, It's time to practice your Blockchain development skills with some great projects. Here are some resources that will help:
 
-[How to Build a Full Stack NFT Marketplace on Ethereum with Polygon and Next.js](https://www.youtube.com/watch?v=GKJBEEXUha0)
-
-[Learn Web3 By Building Projects – Remote3](https://remote3.co/learn-web3)
+- [How to Build a Full Stack NFT Marketplace on Ethereum with Polygon and Next.js](https://www.youtube.com/watch?v=GKJBEEXUha0)
+- [Learn Web3 By Building Projects – Remote3](https://remote3.co/learn-web3)
 
 ## Web3 developer certification
 
@@ -116,7 +103,8 @@ Knowing which certification to get might be challenging, given the wide variety 
 
 ## Web3 developer vs blockchain developer
 
-blog/23-12-22- how-to-become-a-web3-developer/images/43028.jpg
+![Web3 developer vs blockchain developer](./images/43028.jpg)
+
 Image by [rawpixel.com](https://www.freepik.com/free-vector/security-concept-illustration-people-holding-chain_3226083.htm#query=blockchain&position=6&from_view=search&track=sph)
 
 The terms "web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
@@ -141,7 +129,7 @@ Web3 developer job description entails the need for a job developer by the compa
 
 ## Are web3 developers in demand?
 
-There is a high demand for web3 developers in the labor market. Companies and startups looking to create decentralized products for the public require highly skilled professionals in DApp language to bring these products to life.
+There is a high demand for web3 developers in the market. Companies and startups looking to create decentralized products for the public require highly skilled professionals in DApp language to bring these products to life.
 
 ## Why the Celo ecosystem is perfect for every developer
 
@@ -165,21 +153,17 @@ You can also join the [Celo Developer community](https://celo.org/community), wh
 
 For beginner and intermediate web3 developers, follow up with:
 
-[Learn Solidity By Building Projects – Buildspace](https://buildspace.so/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
-
-[Building an Ethereum Dapp using Ether.js](https://www.zastrin.com/tutorials/build-an-ethereum-dapp-using-ethersjs?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
-
-[Official Ether.js Documentation](https://docs.ethers.io/v5/getting-started/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
-
-[How to Test Ethereum Smart Contracts](https://betterprogramming.pub/how-to-test-ethereum-smart-contracts-35abc8fa199d?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
-
-[How to write Smart Contract Tests](https://www.youtube.com/watch?v=nqaiSvsXIEk?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [Learn Solidity By Building Projects – Buildspace](https://buildspace.so/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [Building an Ethereum Dapp using Ether.js](https://www.zastrin.com/tutorials/build-an-ethereum-dapp-using-ethersjs?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [Official Ether.js Documentation](https://docs.ethers.io/v5/getting-started/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [How to Test Ethereum Smart Contracts](https://betterprogramming.pub/how-to-test-ethereum-smart-contracts-35abc8fa199d?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
+- [How to write Smart Contract Tests](https://www.youtube.com/watch?v=nqaiSvsXIEk?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)
 
 ## About the Author
 
 Elijah Sorinola
 
-Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands. [Let's connect on Twitter.](https://twitter.com/ElijahSorinola)
+Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands.
 
 ## Reference
 
