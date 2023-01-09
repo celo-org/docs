@@ -225,7 +225,7 @@ function mintNFTWithRoyalty(address recipient, string memory tokenURI, address r
 
 Here we have two functions. In our NFTMinter smart contract, we will call `mintNFTWithRoyalty()` function. This function takes `recipient`, `tokenURI`, `royaltyReceiver` and `feeNumerator`.
 
-Here, `recipient` takes an address whose NFT we need to mint.
+- `recipient` takes an address whose NFT we need to mint.
 `tokenURI` contains IPFS hash of an image.
 `royaltyReceiver` takes an address where we do need to send the royalty.
 `feeNumerator` takes an integer, here we decide how much royalty do we need to send to the creator.
