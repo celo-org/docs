@@ -130,6 +130,7 @@ We need to store any proposal that is made. By creating a mapping called `propos
     uint256 public proposalIndex;
     mapping(uint256 => Proposal) public proposals;
 ```
+
 ## Create Proposal
 
 After putting up everything related to proposals, there is just a function left that allows us to construct proposals. Starting off, let's define the function `createProposal` with visibility as `public`. This function returns the index of the created proposal (type `uint256`) and accepts the title (type `bytes32`) argument.
