@@ -1,6 +1,6 @@
 ---
 title: How Uniswap Works
-description: In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain. 
+description: In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem like Uniswap on the Celo blockchain. 
 authors:
   - name: Obafemi Joel
     title: Content Writer, Celo Foundation
@@ -12,14 +12,14 @@ slug: /tutorials/How Uniswap Works
 
 ---
 
-How Uniswap Works: A Complete Beginner's Guide
+## How Uniswap Works: A Complete Beginner's Guide
 
 Meta Description:
 
 Uniswap is the largest functional decentralized exchange on the Ethereum blockchain, offering seamless digital assets transactions. Here's how it works:
 
-Introduction 
-blog\23-12-22-how-uniswap-works\images\Defi 3.jpg
+## Introduction 
+![Uniswap](blog\23-12-22-how-uniswap-works\images\Defi 3.jpg "Uniswap")
 Image by Satheesh Sankaran
 
 Uniswap is undoubtedly the largest functional decentralized exchange (DEX) on the Ethereum blockchain network. It implements a unique exchange protocol with benefits like trustless swapping ERC20 tokens between users –a contrast to the “traditional order book model.” 
@@ -28,7 +28,7 @@ Ideally, Uniswap pools tokens into smart contracts that users can trade against�
 
 In this article, we'd explore the nitty-gritty of how Uniswap works and how as a beginner, you can maximize all the opportunities it provides. Notably, Uniswap has a simple interface for optimum user experience. Still, there's more to Uniswap than meets the eye, and you'd learn more about everything behind the scenes. Let's dive right in!
 
-What is Uniswap and How does it Work?
+## What is Uniswap and How does it Work?
 Uniswap is a unique exchange platform, especially since it's fully decentralized. This means Uniswap isn't owned, operated, or controlled by any single entity. Also, Uniswap utilizes a refreshing model of trading known as the  “automated liquidity protocol,” a concept that automatically links a swap transaction to its respective liquidity pool.
 
 The Uniswap platform is essentially built on the Ethereum blockchain –the second-largest cryptocurrency and it is available on Celo. As a platform, Uniswap was implemented for swapping and use in the year 2018. Since Uniswap is built on the Ethereum network, it is compatible with all ERC-20-based tokens and frameworks like the MyEther and MetaMask wallets.
@@ -37,18 +37,20 @@ Fundamentally Uniswap runs on two smart contracts, the “Exchange” contract a
 
 Both contracts are automated computer programs designed for specific uses and functions with conditions attached. For example, the factory smart contract works to add new tokens to the Uniswap platform, while the exchange contract eases all processes involved in token swaps and “trades.” Although Uniswap has seen many improvements and currently uses the third version of its platform, ERC20-based tokens can still be swapped across the updated Uniswap v.2 platforms.
 
-How do Uniswap Liquidity Pools Work?
+## How do Uniswap Liquidity Pools Work?
 https://www.youtube.com/watch?v=PS1h8Mftk58&t=0s
 UniSwap Tutorial: Beginners Guide on How to use UniSwap to Exchange & Add Liquidity
 
 Trading and exchanging tokens between Uniswap users is only possible with a liquidity pool. The best way to define a liquidity pool is a pool of tokens that allows users to swap between tokens and trade them for a profit. Tokens in the liquidity pool are usually added by liquidity providers (LPs). Liquidity providers are essentially end users who lock their tokens to smart contracts and earn fees when other users or traders swap their tokens with the availability of a liquidity pool.
-blog\23-12-22-how-uniswap-works\images\Defi 5.png
+
+![Top Tokens on Uniswap](blog\23-12-22-how-uniswap-works\images\Defi 5.png "Top Tokens on Uniswap")
 
 
 Uniswap has progressively contributed to seamless digital currency transactions. The Uniswap V2 is even more intriguing because it allows traders to swap between ERC-20 tokens without hassle directly. Technically, Uniswap users do not trade with each other, as that might not mitigate the risk of token loss due to some end-user dishonesty. Instead, users deal with a liquidity token pool with a considerable reserved amount of both tokens involved in this user's trade. 
 
 Each Uniswap liquidity pool is designated as an avenue for trading a set pair of ERC-20 tokens. But, there are quite a lot of pairs, and it might take forever for each user to find a fitting liquidity pool for their transaction. Still, Uniswap takes the burden off users by automatically routing traders to the matching liquidity pool for their transactions.
-blog\23-12-22-how-uniswap-works\images\Defi 4.png
+
+![Token Swap](blog\23-12-22-how-uniswap-works\images\Defi 4.png "Token Swap")
 
 Uniswap solves the liquidity problem of centralized exchanges through the automated liquidity protocol. This includes incentivizing people trading on the exchange when they become liquidity providers (LPs). In turn, it allows Uniswap users to pool their money together, creating a reserve fund that's used in the execution of all trades and token swaps on the platform. Every listed token has its designated pool for the user's contribution. 
 
@@ -56,7 +58,8 @@ This system helps buyers and sellers eradicate wait time, as you'd experience in
 
 
 For example, a contribution of $5,000 to a liquidity pool worth $50,000 means/you would get a 10% of the total reward the collection earns. The liquidity pool usually makes money by charging a fee for each swap and exchange transaction that occurs within the pool. In this case, Uniswap charges a 0.30% flat fee on every trade and swap transaction on the platform.
-blog\23-12-22-how-uniswap-works\images\Defi 6.png
+
+![Liquidity Pool](blog\23-12-22-how-uniswap-works\images\Defi 6.png "Liquidity Pool")
 
 
 If a liquidity provider wishes to stop providing, they will receive the total fees they've earned from the reserve. After receiving their rewards, the tokens that keep a record of what the user owns are then destroyed. All the arrangements and protocols discussed are the basic framework of Uniswap's liquidity pool. 
@@ -84,8 +87,8 @@ Now, you are set to start utilizing your Metamask wallet for swapping and transa
 
 
 
-What are Uniswap Tokens Used For?
-blog\23-12-22-how-uniswap-works\images\Defi 2.jpg
+## What are Uniswap Tokens Used For?
+![Uniswap Tokens](blog\23-12-22-how-uniswap-works\images\Defi 2.jpg "Uniswap Tokens")
 Image by Satheesh Sankaran
 
 The Uniswap platform is open-source, and it uses blockchain-based smart contracts for facilitating decentralized trading between different and varying digital assets. 
