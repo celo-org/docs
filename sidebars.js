@@ -1,6 +1,5 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Welcome", id: "welcome" },
     // General
     {
       type: "category",
