@@ -5,22 +5,21 @@ authors:
   - name: Kunal Dawar
 url: https://github.com/developerkunal
 image_url: https://avatars.githubusercontent.com/u/35455566?v=4
-tags: ['intermediate', 'solidity','celosage','erc721','truffle']
+tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"]
 hide_table_of_contents: true
-slug: /tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo
+slug: /tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dApp-on-celo
 ---
 
-![header](images/1.png)
-
-# 🌱 Introduction
+## 🌱 Introduction
 
 Welcome Developers, to the Step-by-Step Guide to Deploying your First Full-Stack Dapp on Celo! In this guide, we will walk you through the process of building and deploying a full-stack decentralized application (Dapp) on the Celo platform.
 
 Celo is a decentralized platform that enables fast, secure, and scalable transactions on a global scale. It is built on top of the Ethereum blockchain and is designed to be easily accessible to developers and users alike.
 
-Whether you are a seasoned blockchain developer or just getting started, this guide will provide the knowledge and tools you need to build and deploy your own Dapp on Celo. 
+Whether you are a seasoned blockchain developer or just getting started, this guide will provide the knowledge and tools you need to build and deploy your own Dapp on Celo.
 
 So let's get started!
+
 ## 🗈 Prerequisites
 
 - A computer with an internet connection. You will need a computer with a stable internet connection to follow along with this guide.
@@ -29,13 +28,12 @@ So let's get started!
 
 - Node.js and npm installed. You will need to have Node.js and npm (the package manager for Node.js) installed on your computer. You can check if you have them installed by running the following commands in your terminal:
 
-```
+```bash
 node -v
 npm -v
 ```
 
 - A code editor. You will need a code editor to write and edit your code. Some popular options include Visual Studio Code and Atom.
-
 - A Metamask account. You will need a Metamask account to interact with the Celo blockchain from your web browser. If you don't already have one, you can create one by installing the Metamask extension for Chrome or Firefox.
 
 ## ⚠️ Requirements
@@ -46,58 +44,61 @@ npm -v
 - next: Next.js is a framework for building server-rendered or statically-exported React applications.
 - CeloCli - The celocli lets you interact with the Celo Protocol smart contracts.
 
-# What are NFT's?
+## What are NFTs?
 
 Non-fungible tokens (NFTs) are digital assets that represent ownership of a unique item or concept. They are stored on a blockchain and cannot be exchanged for something else of equal value, like traditional currencies. NFTs are often used to represent digital art, collectibles, and other unique items and are bought and sold in online marketplaces. Their value is determined by their rarity and perceived value to collectors. NFTs provide a way to prove ownership and authenticity of digital assets and allow for the creation of scarcity in the digital world, which can increase the value of certain items. They are created using smart contracts on a blockchain platform, such as Ethereum, and are often represented as ERC-721 tokens.
 
-*** Let's start building the future together! ***
+**_ Let's start building the future together! _**
 
-## Steps to set up truffle project and its configs
+## Steps to set up the truffle project and its configs
 
 1. Install Node.js by following the instructions on the [official website](https://nodejs.org/en/download/).
 
 2. Install Yarn by running the following command:
 
-```
+```bash
 npm install -g yarn
 ```
+
 3. Install Truffle by running the following command:
 
-```
+```bash
 yarn global add truffle
 ```
 
 4. Install HDWalletProvider by running the following command:
 
-```
+```bash
 npm install @truffle/hdwallet-provider --save
 
 ```
-![image](images/2.png)
+
+![image](./images/2.png)
 
 5. Install Celo Command Line Interface also install dotenv
 
-```
+```bash
 npm install -g @celo/celocli
 npm install dotenv
-// dotenv will help us to load .env file as environment variables 
+// dotenv will help us to load .env file as environment variables
 
 ```
 
 6. Create a new Truffle project by running the following command:
 
-```
+```bash
 mkdir NFTsmartcontract
 cd NFTsmartcontract
 truffle init
 ```
+
 :::tip
 Learn more: If you are new to Truffle check out the [Truffle docs](https://www.trufflesuite.com/docs).
 :::
 
 This will create a new directory with the following structure:
 
-```
+```text
 NFTsmartcontract/
 ├── contracts/
 │ └── Migrations.sol
@@ -107,9 +108,10 @@ NFTsmartcontract/
 ├── truffle-config.js
 └── truffle.js
 ```
+
 7. Navigate to the `truffle-config.js` file in your project directory and Replace the following configuration for the Celo testnet:
 
-```
+```js
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 require("dotenv").config();
 module.exports = {
@@ -162,24 +164,26 @@ module.exports = {
   },
 };
 ```
+
 8. Create A Celo Account using Celo Cli
 
-```
+```bash
 celocli account:new
 ```
+
 ![image](images/3.png)
 
-9. Create a .env File in root directory and add PRIVATE_KEY that we got from Celocli Command or You can use PRIVATE_KEY From Metamask.
+9. Create a .env File in the root directory and add `PRIVATE_KEY` that we got from Celocli Command or You can use `PRIVATE_KEY` from Metamask.
 
-```
+```text
 PRIVATE_KEY="62dda1a6a6ee2dasdasdsadasdassdas1e2200095661a1b1e9dsadsdsdsadasasd"
 ```
 
-10. Create .gitignore file
+10. Create `.gitignore` file
 
-It is important to hide your mnemonic and other important files while developing applications. When using Git or GitHub, you can populate a .gitignore file with the code below to ensure you don’t accidentally publish these files.
+It is important to hide your mnemonic and other important files while developing applications. When using Git or GitHub, you can populate a `.gitignore` file with the code below to ensure you don’t accidentally publish these files.
 
-```
+```text
 # dependencies
 /node_modules
 
@@ -189,14 +193,16 @@ It is important to hide your mnemonic and other important files while developing
 #hidden files
 .env
 ```
-*** Now we are done with setting up truffle ***
 
-## Steps for creating ERC721 Contract and Truffle Migration File.
+**_ Now we are done with setting up truffle _**
 
-1. Create a NFT.sol File in contracts/ folder.
+## Steps for creating ERC721 Contract and Truffle Migration File
 
-2. Add the following Code in it.
-```
+1. Create a `NFT.sol` file in `contracts/` folder.
+
+2. Add the following code to it.
+
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
@@ -239,26 +245,26 @@ contract NFT is ERC721, ERC721URIStorage, Ownable {
 Use the [OpenZeppelin Wizard](https://wizard.openzeppelin.com/) to easily create, deploy, and interact with smart contracts using the OpenZeppelin library.
 :::
 
-3. Install openzeppelin Library by running this command in root folder.
+3. Install openzeppelin Library by running this command in the root folder.
 
-```
+```bash
 npm install @openzeppelin/contracts
 ```
 
-4. Create a 2_deploy_contracts.js File in the migrations folder and follow code.
+4. Create a 2_deploy_contracts.js File in the migrations folder and follow the code.
 
-```
+```js
 const NFT = artifacts.require("NFT");
 module.exports = function(deployer) {
   deployer.deploy(NFT);
 };
 ```
 
-*** Now we are done creating NFT.sol And its Migration Config, next we gonna deploy it on Celo testnet Blockchain ***
+**_ Now we are done creating NFT.sol And its Migration Config, next we gonna deploy it on Celo testnet Blockchain _**
 
 ## Steps to deploy Smart Contract
 
-1. We need Faucet For deploying Smart contract on Celo Blockchain. Use [Celo Testnet Faucet](https://celo.org/developers/faucet) to get faucet money input your address which we got from celocli.
+1. We need Faucet For deploying smart contracts on Celo Blockchain. Use [Celo Testnet Faucet](https://celo.org/developers/faucet) to get faucet money input your address which we got from celocli.
 
 2. Now we Gonna Compile the Smart Contract and Check if there are any problems with it.
 
@@ -277,50 +283,57 @@ truffle deploy --network alfajores
 //We can use other Chain as well by adding them in truffle-config.js
 
 ```
+
 ![image](images/4.png)
 
 4. After We Got our Smart Contract Address we can check it on Celo Blockchain explorer using [Block Explorer](https://explorer.celo.org/alfajores).
 
-*** ヾ(´⌣`)ノ Hurray we Deployed our First ERC721 Smart Contract Make Sure to Save the Smart Contract Address in a File We Gonna use it in Our Frontend. As For Our Smart Contract we have deployed is [smart contract](https://explorer.celo.org/alfajores/address/0xa5Dcc3EB1eC8E417A4eA6CA51bBE4119D323d6E4) ***
+**_ ヾ(´⌣`)ノ Hurray we Deployed our First ERC721 Smart Contract Make Sure to Save the Smart Contract Address in a File We Gonna use it in Our Frontend. As For Our Smart Contract we have deployed is [smart contract](https://explorer.celo.org/alfajores/address/0xa5Dcc3EB1eC8E417A4eA6CA51bBE4119D323d6E4) _**
 
-# let's Start with Frontend using NextJS
+## Frontend using NextJS
 
-## Steps
+### Steps
 
 1. Set up a Next.js project:
 
-- Install Next.js and create a new Next.js project by running the following commands:
+Install Next.js and create a new Next.js project by running the following commands:
 
-```
+```bash
 npm init next-app
 cd next-app
 npm run dev
 ```
-![image](images/5.png)
-2. Install Ethers.js:
-- Ethers.js is a JavaScript library that allows you to interact with the Ethereum blockchain. To install it, run the following command in your terminal:
 
-```
+![image](images/5.png)
+
+2. Install Ethers.js:
+
+Ethers.js is a JavaScript library that allows you to interact with the Ethereum blockchain. To install it, run the following command in your terminal:
+
+```bash
 npm install ethers
 ```
-3. Install React-Bootstrap 
 
-```
+3. Install React-Bootstrap
+
+```bash
 npm install react-bootstrap bootstrap
 ```
-![image](images/6.png)
-4. Now we have installed react-bootstrap we need to add its CSS to the _app.js file.
 
-```
+![image](images/6.png)
+
+4. Now we have installed react-bootstrap we need to add its CSS to the `\_app.js` file.
+
+```bash
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ```
 
-5. Now We have Our Libraries which we gonna use. Now let's Edit Our pages/index.js File
+5. Now We have our libraries which we gonna use. Now let's edit our `pages/index.js` file
 
-```
+```js
 import React from 'react';
-import { ethers } from 'ethers'; 
+import { ethers } from 'ethers';
 import contractAbi from "./abi/NFT.json";
 import { Button, Card, Container, Nav, Navbar } from 'react-bootstrap';
 
@@ -354,7 +367,7 @@ function App() {
       console.error(error);
     }
   };
-  
+
   const disconnectFromWallet = async () => {
     try {
       await window.ethereum.request({ method: 'eth_requestAccounts', accounts: [] });
@@ -383,8 +396,10 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            {!walletAddress? <><Nav.Link href="#" onClick={connectToWallet}>Connect</Nav.Link></>:
- <><Nav.Link href="#" onClick={disconnectFromWallet}>Disconnect</Nav.Link></>}
+            { !walletAddress ?
+              <Nav.Link href="#" onClick={connectToWallet}>Connect</Nav.Link> :
+              <Nav.Link href="#" onClick={disconnectFromWallet}>Disconnect</Nav.Link>
+            }
             <Nav.Link href="viewnft">View NFTs</Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -401,47 +416,49 @@ function App() {
         </Card>
       </Container>
     </div>
-  );  
+  );
 }
 
 export default App;
 ```
-6. We need to copy the Abi Json file from our smart contract folder truffle_abis/NFT.json and Create a new folder in our pages folder name as abi and paste it over there.
+
+6. We need to copy the Abi Json file from our smart contract folder truffle_abis/NFT.json and Create a new folder in our pages folder named ABI and paste it over there.
 
 7. Now we can run Our Command to Test it out.
 
-```
+```bash
 npm run dev
 ```
+
 ![image](images/7.png)
 
-*** ヾ(´⌣`)ノ Hurray We are done with our frontend Mint Function. ***
+**_ ヾ(´⌣`)ノ Hurray We are done with our frontend Mint Function. _**
 
-# Let's Complete Our Tutorial With View NFT 
+## Let's Complete Our Tutorial With View NFT
 
-## Steps To Create View NFT's Page
+### Steps To Create View NFT's Page
 
-1. Create a new file in pages with name viewnft.js
+1. Create a new file in pages with the name `viewnft.js`
 
-2. Install axios in Project to fetch data from ipfs json link.
+2. Install `axios` in the project to fetch data from IPFS JSON link.
 
-```
+```bash
 npm install axios
 ```
 
-3. lets import all the files which we needed
+3. Let's import all the files which we needed
 
-```
+```js
 import React from 'react';
-import { ethers } from 'ethers'; 
+import { ethers } from 'ethers';
 import contractAbi from "./abi/NFT.json";
 import { Button, Card, Container, Nav, Navbar,Row,Col } from 'react-bootstrap';
 import axios from 'axios';
 ```
 
-4. after importing all files we gonna create functions to fetch all user nfts.
+4. After importing all files we gonna create functions to fetch all user nfts.
 
-```
+```js
 async function listTokensOfOwner() {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
 
@@ -453,31 +470,31 @@ async function listTokensOfOwner() {
     const receivedLogs = await contract.queryFilter(
       contract.filters.Transfer(null, walletAddress),
     );
-  
+
     const logs = sentLogs.concat(receivedLogs)
       .sort(
         (a, b) =>
           a.blockNumber - b.blockNumber ||
           a.transactionIndex - b.TransactionIndex,
       );
-  
+
     const owned = new Set();
-  
+
     for (const log of logs) {
       const { from, to, tokenId } = log.args;
-      
+
       if (addressEqual(to, walletAddress)) {
         owned.add(tokenId.toString());
       } else if (addressEqual(from, walletAddress)) {
         owned.delete(tokenId.toString());
       }
     }
-   
+
     const uri = [];
     for (const own of owned) {
         const tokenuri = await tokenUri(own);
         const response = await axios.get(tokenuri);
-    
+
         uri.push(response.data)
     }
     setuserNFT(uri);
@@ -494,11 +511,12 @@ function addressEqual(a, b) {
   return a.toLowerCase() === b.toLowerCase();
 }
 ```
-5. Lets look our Complete `viewnft.js` How it looks.
 
-```
+5. Let's look at our Complete `viewnft.js`` How it looks.
+
+```js
 import React from 'react';
-import { ethers } from 'ethers'; 
+import { ethers } from 'ethers';
 import contractAbi from "./abi/NFT.json";
 import { Button, Card, Container, Nav, Navbar,Row,Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -546,38 +564,38 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
 
     const contract = new ethers.Contract(contractAddress, contractAbi.abi, provider);
-    
+
     const sentLogs = await contract.queryFilter(
       contract.filters.Transfer(walletAddress, null),
     );
     const receivedLogs = await contract.queryFilter(
       contract.filters.Transfer(null, walletAddress),
     );
-  
+
     const logs = sentLogs.concat(receivedLogs)
       .sort(
         (a, b) =>
           a.blockNumber - b.blockNumber ||
           a.transactionIndex - b.TransactionIndex,
       );
-  
+
     const owned = new Set();
-  
+
     for (const log of logs) {
       const { from, to, tokenId } = log.args;
-      
+
       if (addressEqual(to, walletAddress)) {
         owned.add(tokenId.toString());
       } else if (addressEqual(from, walletAddress)) {
         owned.delete(tokenId.toString());
       }
     }
-   
+
     const uri = [];
     for (const own of owned) {
         const tokenuri = await tokenUri(own);
         const response = await axios.get(tokenuri);
-    
+
         uri.push(response.data)
     }
     setuserNFT(uri);
@@ -608,7 +626,7 @@ function addressEqual(a, b) {
       </Navbar>
       <Container>
       {walletAddress && (<>
-      
+
         <Row  xs={1} md={4} className="g-4">
         {userNFt && userNFt.map((item,i)=>{return(
             <Col>
@@ -627,26 +645,26 @@ function addressEqual(a, b) {
             )}
       </Container>
     </div>
-  );  
+  );
 }
 
 export default App;
 ```
+
 6. Now we again gonna run `npm run dev` to start our application locally.
 
 ![image](images/8.png)
 
-
-*** 🥳🥳🥳 Congratulations! 🥳🥳🥳 You have successfully deployed your full stack Dapp on the Celo blockchain. ***
+**_ 🥳🥳🥳 Congratulations! 🥳🥳🥳 You have successfully deployed your full stack Dapp on the Celo blockchain. _**
 
 # Conclusion
 
-In conclusion, the full stack dapp we have built using Next.js, Ether.js, and a smart contract is a powerful tool for creating decentralized applications. The use of a smart contract on the Ethereum blockchain ensures that our dapp is transparent, secure, and immutable, while the frontend built with Next.js allows for a smooth and intuitive user experience. The combination of these technologies has allowed us to create a truly decentralized application that can be used by anyone, anywhere, at any time. With the potential to revolutionize the way we interact and transact online, the future looks bright for dapps like ours.
+In conclusion, the full stack dApp we have built using Next.js, Ether.js, and a smart contract is a powerful tool for creating decentralized applications. The use of a smart contract on the Ethereum blockchain ensures that our dApp is transparent, secure, and immutable, while the frontend built with Next.js allows for a smooth and intuitive user experience. The combination of these technologies has allowed us to create a truly decentralized application that can be used by anyone, anywhere, at any time. With the potential to revolutionize the way we interact and transact online, the future looks bright for dApps like ours.
 
-# About Author 
+# About Author
 
 Hi! My name is Kunal Dawar and I am a Full Stack web2/web3 Developer. I have participated in numerous hackathons and have been fortunate enough to win many of them.
 
-One thing that I am truly passionate about is creating things that are reliable and don't break easily. I believe that creating high-quality products is important not only for the users, but also for the overall growth and success of a business.
+One thing that I am truly passionate about is creating things that are reliable and don't break easily. I believe that creating high-quality products is important not only for the users but also for the overall growth and success of a business.
 
 In my free time, I enjoy learning about new technologies and staying up-to-date with the latest trends in the field. I also love to share my knowledge with others and mentor those who are interested in pursuing a career in web development.
