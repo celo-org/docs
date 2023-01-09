@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'flutter', 'composer'],
   },
   {
+    title: 'Step-by-Step Guide to Deploying your First Full-Stack Dapp on Celo.',
+    description: 'Building a Full Stack Web3 Dapp to mint an NFT.',
+    preview: require('./showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png'),
+    website: '/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo',
+    tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
@@ -830,6 +837,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-celo-dapps-using-hardhat.png'),
     website: 'blog/tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat',
     tags: ['beginner','foundation', 'hardhat'],
+  },
+  {
+    title: 'How to become a Web3 Developer',
+    description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/How to become a Web3 Developer',
+    tags: ['beginner','celo', 'celosage'],
   },
   {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
@@ -1351,6 +1365,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
     tags: ['intermediate', 'hardhat'],
+  },
+  {
+    title: ' An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
+    description: 'Explaining the key differences between layer 1 and layer 2 protocols.',
+    preview: require('.src\data-tutorials\showcase\beginner\beginner-tutorials.png'),
+    website: 'blog//tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
+    tags: ['celosage',],
   },
   
   /*
