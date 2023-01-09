@@ -73,8 +73,9 @@ contract Token is ERC20 {
 }
 ```
 
-Please go here to read more about how the above snippet works. We can now go to the smart contract for the DAO.
-DAO Smart Contract
+Please go [here](https://docs.openzeppelin.com/contracts/4.x/erc20-supply#fixed-supply) to read more about how the above snippet works. We can now go to the smart contract for the DAO.
+
+# DAO Smart Contract
 
 To get things going, we'll construct an empty smart contract called `DAO` in the `DAO.sol` file and import `IERC20.sol` from the openzeppelin library.
 
@@ -120,7 +121,8 @@ The option to propose and vote on proposals will be available to anyone who has 
 ```
 
 > Note: Everything other than functions goes above the constructor, and all the functions go below the constructor. Just a tip on organizing smart contracts
-Storing Created Proposals
+
+## Storing Created Proposals
 
 We need to store any proposal that is made. By creating a mapping called `proposals`, we will achieve this. The proposal will serve as the value, and the proposal's index, which we will track using the `proposalIndex` variable, will be the key in the mapping.
 
@@ -128,7 +130,7 @@ We need to store any proposal that is made. By creating a mapping called `propos
     uint256 public proposalIndex;
     mapping(uint256 => Proposal) public proposals;
 ```
-Create Proposal
+## Create Proposal
 
 After putting up everything related to proposals, there is just a function left that allows us to construct proposals. Starting off, let's define the function `createProposal` with visibility as `public`. This function returns the index of the created proposal (type `uint256`) and accepts the title (type `bytes32`) argument.
 
