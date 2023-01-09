@@ -987,4 +987,4 @@ For more real-time visual testing, I recommend you test this contract on Remix, 
 
 # About the Author
 
-John Fawole is a blockchain technical writer and Solidity dev. He tweets about content marketing and Web3; connect with him on [Twitter](https://twitter.com/jofawole).
+John Fawole is a blockchain technical writer and Solidity dev.
