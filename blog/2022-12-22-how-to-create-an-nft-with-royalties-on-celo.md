@@ -286,7 +286,7 @@ address public MyNFTContractAddress;
 
 We have defined three variables here.
 - `owner`: holds owner address. One who instantiate smart contract becomes an owner.
-`basePrice`: Price at which we are minting the NFT.
+- `basePrice`: Price at which we are minting the NFT.
 `MyNFTContractAddress`: It holds contract address of `MyNFT` smart contract.
 
 ```js
