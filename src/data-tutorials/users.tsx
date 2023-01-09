@@ -1326,7 +1326,7 @@ const Users: User[] = [
   },
   {
     title: ' An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
-    description: ' Explaining the key differences between layer 1 and layer 2 protocols.',
+    description: 'Explaining the key differences between layer 1 and layer 2 protocols.',
     preview: require('.src\data-tutorials\showcase\beginner\beginner-tutorials.png'),
     website: 'blog//tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
     tags: ['celosage',],
