@@ -213,7 +213,7 @@ function mintNFT(address recipient, string memory tokenURI)
       return newItemId;
   }
 
-  function mintNFTWithRoyalty(address recipient, string memory tokenURI, address royaltyReceiver, uint96 feeNumerator)
+function mintNFTWithRoyalty(address recipient, string memory tokenURI, address royaltyReceiver, uint96 feeNumerator)
     public onlyOwner
     returns (uint256) {
       uint256 tokenId = mintNFT(recipient, tokenURI);
