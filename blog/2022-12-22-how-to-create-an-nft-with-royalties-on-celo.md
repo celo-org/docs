@@ -228,7 +228,7 @@ Here we have two functions. In our NFTMinter smart contract, we will call `mintN
 - `recipient` takes an address whose NFT we need to mint.
 - `tokenURI` contains IPFS hash of an image.
 - `royaltyReceiver` takes an address where we do need to send the royalty.
-`feeNumerator` takes an integer, here we decide how much royalty do we need to send to the creator.
+- `feeNumerator` takes an integer, here we decide how much royalty do we need to send to the creator.
 
 Now comes our second smart contract. `NFTMinter.sol`. Below is the code.
 
