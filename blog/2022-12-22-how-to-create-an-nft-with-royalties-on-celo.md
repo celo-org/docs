@@ -360,7 +360,7 @@ You can see that your NFT is getting displayed, now put it on sale for whatever 
 
 Now ask your friend or choose another wallet and purchase the NFT.
 
-Check for Etherscan transactions. You will see that `0.001` ether went to the address who minted NFT and 2.5 % went to the creater of the NFT.
+Check for Etherscan transactions. You will see that `0.001` ether went to the address who minted NFT and 2.0 % went to the creater of the NFT.
 
 Check the screenshot below:
 
