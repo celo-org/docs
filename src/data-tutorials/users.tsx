@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'flutter', 'composer'],
   },
   {
+    title: 'Step-by-Step Guide to Deploying your First Full-Stack Dapp on Celo.',
+    description: 'Building a Full Stack Web3 Dapp to mint an NFT.',
+    preview: require('./showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png'),
+    website: '/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo',
+    tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
