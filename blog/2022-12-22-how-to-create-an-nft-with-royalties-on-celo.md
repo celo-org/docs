@@ -192,7 +192,7 @@ function _burn(uint256 tokenId) internal virtual override {
     _resetTokenRoyalty(tokenId);
   }
 
-  function burnNFT(uint256 tokenId)
+function burnNFT(uint256 tokenId)
     public onlyOwner {
       _burn(tokenId);
   }
