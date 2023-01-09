@@ -245,6 +245,168 @@ export default function HomePage(): JSX.Element {
             </div> */}
           </div>
         </section>
+
+        {/* section 4 */}
+
+        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+          <div className="text-3xl text-center font-bold">
+            Browse our Docs by Category
+          </div>
+
+          <div className="grid md:grid-cols-4 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
+            <div className="items-center">
+              <div className="text-2xl font-bold">Wallets</div>
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="items-center">
+              <div className="text-2xl font-bold">Developer</div>
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="items-center">
+              <div className="text-2xl font-bold">Protocol</div>
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="items-center">
+              <div className="text-2xl font-bold">Community</div>
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section 4 end */}
+
+        {/* section 5 */}
+
+        <section className="mt-12">
+          <div className="text-4xl font-semibold px-2 w-full">
+            Join our booming ecosystem
+          </div>
+          <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-gray-100 dark:bg-gray-900 hover:cursor-pointer  rounded-lg">
+              <div className="w-2/3 flex flex-col justify-between h-full">
+                <span className="text-3xl font-semibold">
+                  Create, earn, and grow as a Celo content creator
+                </span>
+                {buildKnowMoreButton("https://google.com")}
+              </div>
+              <div className="w-8/12">
+                <img
+                  className="rounded-md"
+                  src="/img/homepage/celo-sage.webp"
+                />
+              </div>
+            </div>
+
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-gray-100 dark:bg-gray-900 hover:cursor-pointer  rounded-lg">
+              <div className="w-2/3 flex flex-col justify-between h-full">
+                <span className="text-3xl font-semibold">
+                  Receive Funding to Build Your Blockchain Projects
+                </span>
+                {buildKnowMoreButton("https://google.com")}
+              </div>
+              <div className="w-1/2">
+                <img src="/img/homepage/celo-camp.webp" />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-4 mt-8">
+                <img
+                  src="img/doc-images/logos/infura-logo.webp"
+                  alt="Infura Logo"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 className="font-bold">What is Celo?</h4>
+                  <p className="text-sm">Learn the basics about Celo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section 5 end */}
       </main>
     </Layout>
   );
