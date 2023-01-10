@@ -54,7 +54,7 @@ The tutorial above also has a couple of functions that will help you learn how t
 2. The `Sample.sol` contract will have the following functionalities:
 a. First, the contract is created, and the variables `name`, and `age` are also created and by default, have no value.
   
-```Solidity
+```solidity
 // SPDX-License-Identifier: MIT
  
 pragma solidity ^0.8.17;
