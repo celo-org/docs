@@ -697,6 +697,13 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
+    title: 'How to Transition from Web2 to Web3',
+    description: 'Learn the basics of blockchain technology and web3 development',
+    preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
+    website: 'blog/tutorials/how-to-transition-from-web2-to-web3',
+    tags: ['beginner','celo'],
+  },
+  {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
