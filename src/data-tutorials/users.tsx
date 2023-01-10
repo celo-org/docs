@@ -825,6 +825,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'airdrop'],
   },
   {
+    title: 'Create an Escrow NFT Platform on Celo with Python',
+    description: 'Create an Escrow NFT Platform with Brownie Python',
+    preview: require('./showcase/intermediate/create-an-escrow-nft-platform-on-celo-with-python.png'),
+    website: 'blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python',
+    tags: ['intermediate','nft'],
+  },
+  {
     title: 'Getting started with DAOs on Celo',
     description: 'Introduction to DAOs and the advantages of building a DAO on Celo.',
     preview: require('./showcase/beginner/getting-started-with-daos-on-celo.png'),
