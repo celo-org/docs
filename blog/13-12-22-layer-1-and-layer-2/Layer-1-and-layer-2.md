@@ -34,7 +34,7 @@ This network should be able to handle an increasing number of transactions, user
 
 ## How Do Layer 1 Scaling Solutions Work?
 
-![Layer 1](./images/img1.png)
+![Layer 1](images/img1.png)
 
 Most Layer 1 protocols, as you might expect, have scaling issues. All transactions, in general, require validation by multiple nodes. This results in the formation of an ecosystem in which mining nodes compete to solve complex computational puzzles. Miners who succeed are rewarded in the network's native cryptocurrency. However, this consensus mechanism consumes a large amount of energy and creates a lag in transaction speed.
 
@@ -50,7 +50,7 @@ Sharding is a Layer-1 scalability method that most protocols use. Instead of hav
 
 ### How do Layer 2 Scaling Solutions Work?
 
-![Image 2](./images/img2.png)
+![Image 2](images/img2.png)
 
 We've established that the Layer 2 protocols use Layer 1 as a foundational base. The Layer 2 solutions include:
 
