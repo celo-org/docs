@@ -1,4 +1,16 @@
-# How to Write Unit Testing for Smart Contracts with Truffle
+---
+title: Unit Testing with Truffle and Celo
+description:How to Write Unit Testing for Smart Contracts with Truffle
+
+authors:
+  - name: Mayowa Julius Ogungbola
+    title: Software Engineer, Technical writer @Celo Foundation
+    url: https://github.com/Julius170
+    image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
+tags: [celo,intermediate,celosage,truffle,smartcontract,solidity]
+hide_table_of_contents: true
+slug: /tutorials/how-to-write-unit-testing-for-smart-contract-with-truffle
+---
 
 # Introduction
 When creating decentralized applications that leverage smart contracts, it is important to ensure that there are little or no vulnerabilities to prevent an attacker from compromising your application.
@@ -68,6 +80,7 @@ contract Sample {
 ```
  
 b. Next, the contract’s constructor function assigns the address of the deployer of the contract to the variable `owner` and assigns the string "deployer" to the `name` variable.
+
  ```solidity
     constructor() {
         owner = msg.sender;
@@ -76,6 +89,7 @@ b. Next, the contract’s constructor function assigns the address of the deploy
  ```
 
 c. The next function `rename` accepts a string value as argument and assigns it to the variable `name`.
+
 ```solidity
   
   function rename(string memory _name) public {
@@ -93,6 +107,7 @@ d. The next function `describe` simply return the current values of the global v
 ```
 
 e. Next is a modifier function `ownerOnly` that only allows the contract owner to call its parent function when added to any function.
+
 ```solidity
     modifier ownerOnly() {
         require(
@@ -115,6 +130,7 @@ f. The following function `changeOwner` uses the previously created `ownerOnly` 
 
 
 g. The next function `deposit` allows anyone to send a minimum of *1 ETH* to the contract.
+
 ```solidity
     function deposit() public payable {
         require(
@@ -125,6 +141,7 @@ g. The next function `deposit` allows anyone to send a minimum of *1 ETH* to the
 ```
 
 h. Finally, the last function in the `Sample.sol` contract allows anyone calling the contract to withdraw funds from the contract, as long as you pass in the number of tokens to withdraw as an argument. This transaction will also be terminated if the amount passed in exceeds than *10 ETH*.
+
 ```solidity
     function withdraw(uint256 _amount) public payable {
         require(_amount <= 100000000000000000);
@@ -133,6 +150,7 @@ h. Finally, the last function in the `Sample.sol` contract allows anyone calling
 ```
 
 If you’ve completed your `Sample.sol` contract, Your smart contract should look exactly like the code below; You should update your contract with the code below for uniformity sake:
+
 ```solidity
 // SPDX-License-Identifier: MIT
  
@@ -182,6 +200,7 @@ contract Sample {
 ```
 
 To confirm you have no existing errors in your contract, run the command `npx truffle compile` on your terminal, and a successful result should look like the image below.
+
 ![compiling_contract](https://user-images.githubusercontent.com/69092079/206871446-9219cf8b-727d-4750-b88a-11739d9c27d6.jpg)
 
 
@@ -200,7 +219,8 @@ b. *Act*: Next, is the part where you run your testing functions and store the r
 c. *Assert*:  Since you already know the correct result of the test, then you compare your expected result with the response of the test you ran. If the test returns the expected result, it passes else, the test does not pass.
                                               
 Also following the format:
-```JavaScript 
+
+```javaScript 
  describe(<"functionName">, async function () {
   beforeEach(async function() {
 <what should happen before each test is run>
@@ -219,7 +239,7 @@ In the next few steps, you will learn the basic format of how to write unit test
 
 * First,  head over to the `migrations` folder and create a script file called `1_deploy_contract.js` and copy the code below into the script.
 
-```JavaScript 
+```javaScript 
 const Sample = artifacts.require("Sample");
 // const MetaCoin = artifacts.require("MetaCoin");
  
@@ -237,19 +257,21 @@ The code above is created to simply deploy your `Sample.sol` contract.
 Next, navigate to the `test` folder and create a new test script, `SampleTest.js`.
 
 1. Firstly, you’ll need to import the contract as a variable `Sample` in the first line of code.
-```JavaScript 
+
+```javaScript 
 const Sample = artifacts.require("Sample");
 ```
 
 2. Next, you’ll need to initialize the contract test with the following code below. This contract - Sample will cover all the unit test functions that will be carried out on the named contract.
-```JavaScript 
+
+```javaScript 
 contract("Sample", (accounts) => {
 })
 ```
 
 3. Using the `describe` keyword to define a specific test for each function in the contract, you can carry out multiple tests using the `it` keyword for a specific function. The first test `constructor` tests the constructor function in the contract. Copy and add the code below.
 
-```JavaScript
+```javaScript
   describe("constructor", async function () {
     it("should have the correct name", async () => {
       const sample = await Sample.deployed();
@@ -269,13 +291,14 @@ The function has two tests with string descriptions of what each of them is mean
 The first test check for the initialization of the `name` variable and checks the value of the owner variable to the address of the deployer. The test passes if the result returns as expected and reverts with an error otherwise.
 
 Now, run the command `npx truffle test`, and a successful result should look like the image below.
+
 ![test(2)](https://user-images.githubusercontent.com/69092079/206874950-bafc9f03-3188-4abf-8df4-e907372b48d2.jpg)
 
 
 4. The next unit test describes the `rename` and `describe` function from the smart contract; the function carries out a single test on the `rename` and `describe` function. 
 The test updates the name variable's value and checks the current the variable's current value if it has been updated. Copy and add the code below.
   
-```JavaScript
+```javaScript
   describe("rename & describe", async function () {
     it("should be able to rename", async () => {
       const sample = await Sample.deployed();
@@ -293,7 +316,7 @@ Now, run the command `npx truffle test` and a successful result should look like
 5. The next unit test describes the `changeOwner` function in the smart contract; the test first uses the right address to attempt to change the owner, which should pass successfully. And then uses another random address to change the ownership role, which is meant to be reverted.
 Copy and add the code below.
 
-```JavaScript
+```javaScript
 describe("changeOwner", async function () {
     it("should change the owner", async () => {
       const sample = await Sample.deployed();
@@ -316,11 +339,13 @@ describe("changeOwner", async function () {
  ```
   
 Now, run the command `npx truffle test` and a successful result should look like the image below.
+
 ![test(3)](https://user-images.githubusercontent.com/69092079/206875185-f08b1bcc-e9bc-48cf-9694-103f6641a88c.jpg)
 
 
 6. The next function tests the `deposit` function of the contract. The first test will verify the deposit function works correctly which allows deposits of 0.01 ETH or greater. The second test verifies that the deposit function correctly rejects deposits of less than 0.01 ETH. Copy and paste the code below.
-```JavaScript
+
+```javaScript
   describe("deposit", async function () {
     it("should allow deposits", async () => {
       const sample = await Sample.deployed();
@@ -343,7 +368,8 @@ Now, run the command `npx truffle test` and a successful result should look like
 ![test(4)](https://user-images.githubusercontent.com/69092079/206875243-bc86bd7d-768e-4726-90d7-0e02ea996409.jpg)
 
 7. This next describe function tests the `withdraw` function in the contract. The first test is attempting to withdraw 0.01 ether from the contract. The second test is attempting to withdraw an amount greater than the balance to ensure that the withdrawal fails. If the test fails, it will return an error message with the word `revert`.
-```JavaScript
+
+```javaScript
   describe("withdraw", async function () {
     it("should allow withdrawals", async () => {
       const sample = await Sample.deployed();
@@ -369,7 +395,7 @@ Finally, run the command `npx truffle test` and a successful result should look 
 After completing your test script, your code should look exactly like the one below.
 For uniformity, sake replaces the entire code with this code test.
 
-```JavaScript
+```javaScript
 const Sample = artifacts.require("Sample");
  
 contract("Sample", (accounts) => {
@@ -454,18 +480,19 @@ contract("Sample", (accounts) => {
 
 
 
-# Conclusion
+## Conclusion
 Writing unit tests for smart contracts can help a great deal in ensuring a secure and proficient contract, by suggesting fixes and improvements after discovering errors, issues, and security vulnerabilities in your contract. 
 You have successfully created your unit test script for a simple sample contract using truffle. Now that you understand how unit tests are written, you can move on to writing more complex test scripts for other smart contracts.
 You can also read about how to run the unit test for smart contracts using Truffle.
 
-# Next Steps
+## Next Steps
 Here is some other tutorial article.
 [Unit testing with Hardhat and Celo](https://docs.celo.org/blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat)
 [How to create and Test contract calls with Celo and Hardhat](https://docs.celo.org/blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat)
-# About the Author
+
+## About the Author
 ***Mayowa Julius Ogungbola***
 
-A Software Engineer and technical writer who is always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/), and you could also find out what I tweet about and connect with me on [Twitter](https://twitter.com/JuliusAyoola1) 
+A Software Engineer and technical writer who is always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/), and you could also find out what I tweet about and connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/) 
 # References
 Here is a [link](https://github.com/Julius170/smart-contract-unit-testing-with-truffle) to the complete tutorial sample code on my GitHub, Leave a ⭐on the repository if you find it helpful.
