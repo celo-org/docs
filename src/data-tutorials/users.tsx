@@ -1402,11 +1402,18 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
+    title: 'The Celo Extension Wallet',
+    description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/how-to-odownloa-dand-test-the-Celo-extension-wallet-on-your-browser',
+    tags: ['celosage', 'video'],
+  },
+  {
     title: 'An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
     description: 'Explaining the key differences between layer 1 and layer 2 protocols.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
     website: 'blog/tutorials/an-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
-    tags: ['celosage',],
+    tags: ['celosage'],
   },
   
   /*
