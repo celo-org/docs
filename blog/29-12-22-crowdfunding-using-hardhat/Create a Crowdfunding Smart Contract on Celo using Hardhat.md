@@ -1,23 +1,13 @@
 ---
-
 title: Create a Crowdfunding Smart Contract on Celo using Hardhat
-
 description: This tutorial teach developers how to build a crowdfunding contract on Celo, using Solidity and Hardhat framework.
-
-author:
-
+authors:
   - name: John Fawole
-
     title: Technical Writer
-
     url: https://www.linkedin.com/in/johnfawole/
-
     image_url: https://github.com/johnfawole.png
-
 tags: [Solidity, Ether.js, Hardhat]
-
 hide_table_of_contents: true
-
 slug: /tutorials/crowdfunding-celo-build-hardhat
 
 ---
