@@ -1,7 +1,7 @@
 # How to Write Unit Testing for Smart Contracts with Truffle
 
 # Introduction
-When creating decentralized applications that leverage smart contracts, it is important to ensure that little or no vulnerabilities to prevent an attacker from compromising your application.
+When creating decentralized applications that leverage smart contracts, it is important to ensure that there are little or no vulnerabilities to prevent an attacker from compromising your application.
 
 Unit testing helps you ensure that all functionalities in your contract are working as expected, and development environments like Truffle give you the same tools to help you write proficient tests for your contracts before final deployment.
 
