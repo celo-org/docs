@@ -1,6 +1,6 @@
 ---
 title: Unit Testing with Truffle and Celo
-description:How to Write Unit Testing for Smart Contracts with Truffle
+description: How to Write Unit Testing for Smart Contracts with Truffle
 
 authors:
   - name: Mayowa Julius Ogungbola
