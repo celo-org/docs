@@ -165,11 +165,11 @@
   },
   "sidebar.docs.link.Valora": {
     "message": "Valora",
-    "description": "The label for link Valora in sidebar docs, linking to https://medium.com/celodevelopers/4-simple-steps-to-get-started-with-valora-on-celo-58f92f801d89"
+    "description": "The label for link Valora in sidebar docs, linking to /blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo"
   },
   "sidebar.docs.link.MetaMask Setup": {
     "message": "MetaMask Setup",
-    "description": "The label for link MetaMask Setup in sidebar docs, linking to https://medium.com/celodevelopers/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587"
+    "description": "The label for link MetaMask Setup in sidebar docs, linking to /blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo"
   },
   "sidebar.docs.link.Celo Wallet Setup": {
     "message": "Celo Wallet Setup",
@@ -321,7 +321,7 @@
   },
   "sidebar.docs.doc.Overview": {
     "message": "Overview",
-    "description": "The label for the doc item Overview in sidebar docs, linking to the doc oracle/index"
+    "description": "The label for the doc item Overview in sidebar docs, linking to the doc protocol/oracle/index"
   },
   "sidebar.docs.doc.Forno": {
     "message": "Forno",
@@ -369,7 +369,7 @@
   },
   "sidebar.docs.doc.Using Remix": {
     "message": "Using Remix",
-    "description": "The label for the doc item Using Remix in sidebar docs, linking to the doc developer/deploy/remix"
+    "description": "The label for the doc item Using Remix in sidebar docs, linking to the doc developer/verify/remix"
   },
   "sidebar.docs.doc.Using Truffle": {
     "message": "Using Truffle",
@@ -377,7 +377,7 @@
   },
   "sidebar.docs.doc.Using Hardhat": {
     "message": "Using Hardhat",
-    "description": "The label for the doc item Using Hardhat in sidebar docs, linking to the doc developer/deploy/hardhat"
+    "description": "The label for the doc item Using Hardhat in sidebar docs, linking to the doc developer/verify/hardhat"
   },
   "sidebar.docs.doc.Using Replit": {
     "message": "Using Replit",
@@ -573,23 +573,23 @@
   },
   "sidebar.docs.doc.Native Assets with Etherscan": {
     "message": "Native Assets with Etherscan",
-    "description": "The label for the doc item Native Assets with Etherscan in sidebar docs, linking to the doc bridge/etherscan/native-assets"
+    "description": "The label for the doc item Native Assets with Etherscan in sidebar docs, linking to the doc protocol/bridge/etherscan-native-asset"
   },
   "sidebar.docs.doc.Tokens with Etherscan": {
     "message": "Tokens with Etherscan",
-    "description": "The label for the doc item Tokens with Etherscan in sidebar docs, linking to the doc bridge/etherscan/tokens"
+    "description": "The label for the doc item Tokens with Etherscan in sidebar docs, linking to the doc protocol/bridge/etherscan-token"
   },
   "sidebar.docs.doc.Optics Bridge GUI": {
     "message": "Optics Bridge GUI",
-    "description": "The label for the doc item Optics Bridge GUI in sidebar docs, linking to the doc bridge/optics/gui"
+    "description": "The label for the doc item Optics Bridge GUI in sidebar docs, linking to the doc protocol/bridge/optics-gui"
   },
   "sidebar.docs.doc.Migrating to Optics v2": {
     "message": "Migrating to Optics v2",
-    "description": "The label for the doc item Migrating to Optics v2 in sidebar docs, linking to the doc bridge/optics/migration-v2"
+    "description": "The label for the doc item Migrating to Optics v2 in sidebar docs, linking to the doc protocol/bridge/optics-migration-v2"
   },
   "sidebar.docs.doc.Optics Bridge FAQ": {
     "message": "Optics Bridge FAQ",
-    "description": "The label for the doc item Optics Bridge FAQ in sidebar docs, linking to the doc bridge/optics/faq"
+    "description": "The label for the doc item Optics Bridge FAQ in sidebar docs, linking to the doc protocol/bridge/optics-faq"
   },
   "sidebar.docs.doc.Contracts": {
     "message": "Contracts",
@@ -734,5 +734,117 @@
   "sidebar.docs.doc.Sequential Delay Domain": {
     "message": "Sequential Delay Domain",
     "description": "The label for the doc item Sequential Delay Domain in sidebar docs, linking to the doc protocol/identity/odis-domain-sequential-delay-domain"
+  },
+  "sidebar.docs.category.Build": {
+    "message": "Build",
+    "description": "The label for category Build in sidebar docs"
+  },
+  "sidebar.docs.category.Libraries & SDKs": {
+    "message": "Libraries & SDKs",
+    "description": "The label for category Libraries & SDKs in sidebar docs"
+  },
+  "sidebar.docs.category.ContractKit": {
+    "message": "ContractKit",
+    "description": "The label for category ContractKit in sidebar docs"
+  },
+  "sidebar.docs.category.Verification": {
+    "message": "Verification",
+    "description": "The label for category Verification in sidebar docs"
+  },
+  "sidebar.docs.category.Contracts": {
+    "message": "Contracts",
+    "description": "The label for category Contracts in sidebar docs"
+  },
+  "sidebar.docs.category.Celo Sage": {
+    "message": "Celo Sage",
+    "description": "The label for category Celo Sage in sidebar docs"
+  },
+  "sidebar.docs.doc.Payment": {
+    "message": "Payment",
+    "description": "The label for the doc item Payment in sidebar docs, linking to the doc wallet/celo-wallet/payment"
+  },
+  "sidebar.docs.doc.Local Chain": {
+    "message": "Local Chain",
+    "description": "The label for the doc item Local Chain in sidebar docs, linking to the doc developer/setup/development-chain"
+  },
+  "sidebar.docs.doc.Setup": {
+    "message": "Setup",
+    "description": "The label for the doc item Setup in sidebar docs, linking to the doc developer/contractkit/setup"
+  },
+  "sidebar.docs.doc.Using the Kit": {
+    "message": "Using the Kit",
+    "description": "The label for the doc item Using the Kit in sidebar docs, linking to the doc developer/contractkit/usage"
+  },
+  "sidebar.docs.doc.Core Contracts Registry": {
+    "message": "Core Contracts Registry",
+    "description": "The label for the doc item Core Contracts Registry in sidebar docs, linking to the doc developer/contractkit/contracts-wrappers-registry"
+  },
+  "sidebar.docs.doc.Interact with Contracts": {
+    "message": "Interact with Contracts",
+    "description": "The label for the doc item Interact with Contracts in sidebar docs, linking to the doc developer/walkthrough/hello-contract-remote-node"
+  },
+  "sidebar.docs.doc.Query On-Chain Identifiers with ODIS": {
+    "message": "Query On-Chain Identifiers with ODIS",
+    "description": "The label for the doc item Query On-Chain Identifiers with ODIS in sidebar docs, linking to the doc developer/contractkit/odis"
+  },
+  "sidebar.docs.doc.react-celo": {
+    "message": "react-celo",
+    "description": "The label for the doc item react-celo in sidebar docs, linking to the doc developer/react-celo/index"
+  },
+  "sidebar.docs.doc.rainbowkit-celo": {
+    "message": "rainbowkit-celo",
+    "description": "The label for the doc item rainbowkit-celo in sidebar docs, linking to the doc developer/rainbowkit-celo/index"
+  },
+  "sidebar.docs.doc.Using Celo Explorer": {
+    "message": "Using Celo Explorer",
+    "description": "The label for the doc item Using Celo Explorer in sidebar docs, linking to the doc developer/verify/celo-explorer"
+  },
+  "sidebar.docs.doc.Using Celoscan": {
+    "message": "Using Celoscan",
+    "description": "The label for the doc item Using Celoscan in sidebar docs, linking to the doc developer/verify/celoscan"
+  },
+  "sidebar.docs.doc.Privacy Research": {
+    "message": "Privacy Research",
+    "description": "The label for the doc item Privacy Research in sidebar docs, linking to the doc protocol/identity/privacy-research"
+  },
+  "sidebar.docs.doc.Celo Randomness": {
+    "message": "Celo Randomness",
+    "description": "The label for the doc item Celo Randomness in sidebar docs, linking to the doc protocol/randomness"
+  },
+  "sidebar.docs.doc.Add A Contract": {
+    "message": "Add A Contract",
+    "description": "The label for the doc item Add A Contract in sidebar docs, linking to the doc protocol/contracts/add-contract"
+  },
+  "sidebar.docs.doc.Celo Oracles": {
+    "message": "Celo Oracles",
+    "description": "The label for the doc item Celo Oracles in sidebar docs, linking to the doc community/release-process/celo-oracles"
+  },
+  "sidebar.docs.doc.Add New Token": {
+    "message": "Add New Token",
+    "description": "The label for the doc item Add New Token in sidebar docs, linking to the doc protocol/bridge/optics-add-new-token"
+  },
+  "sidebar.docs.doc.Celo Sage Program": {
+    "message": "Celo Sage Program",
+    "description": "The label for the doc item Celo Sage Program in sidebar docs, linking to the doc community/celo-sage/celo-sage"
+  },
+  "sidebar.docs.doc.Submit an Application": {
+    "message": "Submit an Application",
+    "description": "The label for the doc item Submit an Application in sidebar docs, linking to the doc community/celo-sage/submit-application"
+  },
+  "sidebar.docs.doc.Complete your Tutorial": {
+    "message": "Complete your Tutorial",
+    "description": "The label for the doc item Complete your Tutorial in sidebar docs, linking to the doc community/celo-sage/complete-your-tutorial"
+  },
+  "sidebar.docs.doc.Contribution Guidelines": {
+    "message": "Contribution Guidelines",
+    "description": "The label for the doc item Contribution Guidelines in sidebar docs, linking to the doc community/celo-sage/contribution-guidelines"
+  },
+  "sidebar.docs.doc.Tutorial Structure": {
+    "message": "Tutorial Structure",
+    "description": "The label for the doc item Tutorial Structure in sidebar docs, linking to the doc community/celo-sage/tutorial-structure"
+  },
+  "sidebar.docs.doc.FAQs": {
+    "message": "FAQs",
+    "description": "The label for the doc item FAQs in sidebar docs, linking to the doc community/celo-sage/faq"
   }
 }
