@@ -11,7 +11,7 @@ In this tutorial, you’ll create an exemplary contract and learn how to write a
 Throughout this tutorial you’ll need to have worked with or have a basic knowledge of the following:
 * Truffle Suite: [Truffle suite](https://www.kaleido.io/blockchain-platform/truffle) is a Development Environment that acts as a pipeline for interacting with the EVM and also provides essential features and valuable libraries for testing Ethereum smart contracts and makes it easy to interact with the blockchain.
 * Solidity: [Solidity](https://docs.soliditylang.org/) is a high-level programming language used for creating smart contracts.
-Javascript: This tutorial will make use of Javascript, therefore you should be familiar with basic Javascript coding and algorithms.
+* Javascript: This tutorial will make use of Javascript, therefore you should be familiar with basic Javascript coding and algorithms.
 
 
 # Requirements
