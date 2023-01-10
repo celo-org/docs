@@ -255,63 +255,102 @@ export default function HomePage(): JSX.Element {
 
           <div className="grid md:grid-cols-4 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
             <div className="items-center">
-              <div className="text-2xl font-bold">Wallets</div>
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              <div className="text-2xl font-bold">Understanding Celo</div>
+              {/* item 1 */}
+              {sectionFourCard(
+                "what is Celo?",
+                "Learn the basics about Celo",
+                "img/doc-images/logos/color-logo.png"
+              )}
+
+              {sectionFourCard(
+                "Architecture",
+                "Overview of the Celo stack including core contracts and applications",
+                "img/doc-images/logos/arch.png"
+              )}
+
+              {sectionFourCard(
+                "Whitepapers",
+                "Overview of the Celo whitepapers describing the Celo protocol and social impact",
+                "img/doc-images/logos/whitepaper.png"
+              )}
+
+              {sectionFourCard(
+                "Protocol",
+                "Learn about the Celo protocol and its relationship to Ethereum",
+                "img/doc-images/logos/protocol.png"
+              )}
+            </div>
+
+            {/* item 2 */}
+
+            <div className="items-center">
+              <div className="text-2xl font-bold">Developer Tools</div>
+              {sectionFourCard(
+                "ContractKit",
+                "Overview of ContractKit, features and purpose",
+                "img/doc-images/logos/contractKit.png"
+              )}
+
+              {sectionFourCard(
+                "React-celo",
+                "Easiest way to access ContractKit in your React applications",
+                "img/doc-images/logos/react.png"
+              )}
+
+              {sectionFourCard(
+                "RainbowKit-celo",
+                "Overview of RainbowKit-celo",
+                "img/doc-images/logos/rainbow.svg"
+              )}
+
+              {sectionFourCard(
+                "Celo CLI",
+                "Use Celo CLI to interact with the Celo blockchain",
+                "img/doc-images/logos/cli.png"
+              )}
             </div>
 
             <div className="items-center">
-              <div className="text-2xl font-bold">Developer</div>
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              <div className="text-2xl font-bold">Build on Celo</div>
+              {sectionFourCard(
+                "Celo composer",
+                "Build and deploy your dApp under 5 minutes",
+                "img/doc-images/logos/composer.png"
+              )}
+
+              {sectionFourCard(
+                "Migrate to Celo",
+                "Overview of similarities and differences between Celo and Ethereum",
+                "img/doc-images/logos/color-logo.png"
+              )}
+
+              {sectionFourCard(
+                "Oracles",
+                "Explore onchain Oracles on Celo",
+                "img/doc-images/logos/oracle.png"
+              )}
             </div>
 
             <div className="items-center">
-              <div className="text-2xl font-bold">Protocol</div>
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
-            </div>
+              <div className="text-2xl font-bold">Validators</div>
+              {sectionFourCard(
+                "Run a Validator",
+                "Secure the Celo network by running a validator",
+                "img/doc-images/logos/validate.png"
+              )}
 
-            <div className="items-center">
-              <div className="text-2xl font-bold">Community</div>
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              {sectionFourCard(
+                "Node and Services",
+                "Connect to nodes and services on Celo",
+                "img/doc-images/logos/node.png"
+              )}
+
+              {sectionFourCard(
+                "Attestation Service",
+                "How to run an attestation service on Celo",
+                "img/doc-images/logos/attest.png"
+              )}
             </div>
           </div>
         </section>
@@ -355,53 +394,23 @@ export default function HomePage(): JSX.Element {
 
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              {sectionFourCard(
+                "Contribute",
+                "Our community includes a group of contributors that help develop, write, translate and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.",
+                "img/doc-images/logos/volunteer.png"
+              )}
 
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              {sectionFourCard(
+                "Ambassadors",
+                "Celo Ambassadors is a community driven initiative helping grow and support the Celo ecosystem of developers, designers, dreamers, and doers around the world.",
+                "img/doc-images/logos/ambassador.png"
+              )}
 
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-x-4 mt-8">
-                <img
-                  src="img/doc-images/logos/infura-logo.webp"
-                  alt="Infura Logo"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <h4 className="font-bold">What is Celo?</h4>
-                  <p className="text-sm">Learn the basics about Celo</p>
-                </div>
-              </div>
+              {sectionFourCard(
+                "Connect with our community",
+                "Join and connect with our team and community of doers on discord. its a space where you can share and immerse yourself in a wealth of knowledge and information.",
+                "img/doc-images/logos/connect.png"
+              )}
             </div>
           </div>
         </section>
@@ -433,3 +442,17 @@ export default function HomePage(): JSX.Element {
     );
   }
 }
+
+export const sectionFourCard = (
+  title: string,
+  description: string,
+  url: string
+) => (
+  <div className="flex items-center gap-x-4 mt-8 hover:text-green-400  transition hover:ease-in-out duration-150">
+    <img src={url} alt="Infura Logo" className="w-10 h-10 rounded-full" />
+    <div>
+      <h4 className="font-bold">{title}</h4>
+      <p className="text-sm">{description}</p>
+    </div>
+  </div>
+);
