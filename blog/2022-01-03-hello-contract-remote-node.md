@@ -106,7 +106,7 @@ After compiling the contract, you need to create a migration to deploy the contr
 ```javascript title="migrations/2_deploy_helloworld.js"
 var HelloWorld = artifacts.require("HelloWorld");
 
-module.exports = function(deployer) {
+module.exports = function (deployer) {
   deployer.deploy(HelloWorld);
 };
 ```
@@ -238,8 +238,8 @@ The entire deployment script is about 20 lines of code.
 const Web3 = require("web3");
 const ContractKit = require("@celo/contractkit");
 const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
-const privateKeyToAddress = require("@celo/utils/lib/address")
-  .privateKeyToAddress;
+const privateKeyToAddress =
+  require("@celo/utils/lib/address").privateKeyToAddress;
 const kit = ContractKit.newKitFromWeb3(web3);
 require("dotenv").config();
 const HelloWorld = require("./build/contracts/HelloWorld.json");

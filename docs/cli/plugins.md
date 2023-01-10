@@ -2,7 +2,6 @@
 
 list installed plugins
 
-
 ## `celocli plugins`
 
 list installed plugins

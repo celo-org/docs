@@ -6,7 +6,9 @@ description: Detailed description of the various account roles found in the Celo
 # Detailed Role Descriptions
 
 Detailed description of the various account roles found in the Celo protocol with examples of how to designate an account as playing a particular role.
-___
+
+---
+
 ## Celo Accounts
 
 Any private key generated for use in the Celo protocol has a corresponding address. The account address is the last 20 bytes of the hash of the corresponding public key, just as in Ethereum. Celo account keys can be used to sign and send transactions on the Celo network.
@@ -17,7 +19,7 @@ Celo Accounts can be designated as Locked Gold Accounts or authorized as signer 
 
 [Locked Gold](/protocol/pos/locked-gold) Account keys have the highest level of privilege in the Celo protocol. These keys can be used to lock and unlock CELO in order to be used in proof-of-stake. Furthermore, Locked Gold Account keys can be used to authorize other keys to sign transactions and messages on behalf of the Locked Gold Account.
 
-In *most* cases, the Locked Gold Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked Gold Account with both the authorized vote signer *and* the Locked Gold Account.
+In _most_ cases, the Locked Gold Account key has all the privileges as any authorized signers. For example, if a voter signer is authorized, a user can place votes on behalf of the Locked Gold Account with both the authorized vote signer _and_ the Locked Gold Account.
 
 Because of the significant priveleges afforded to the Locked Gold Account, it is best to store this key securely and access it as infrequently as is possible. Authorizing other signers is one way to minimize how frequently you need to access your Locked Gold Account key. The Locked Gold Account key will only be used to send transactions and **can be stored on a Ledger hardware wallet.**
 
@@ -43,8 +45,8 @@ Note that the vote signer must first generate a "proof-of-possession" indicating
 
 Authorized vote signers can only be used to send voting transactions and **can be stored on a Ledger hardware wallet**.
 
-
 ### Authorizing a Vote Signer
+
 A Celo account may be authorized as a vote signer on behalf of a Locked Gold Account by running the following commands:
 
 ```shell
@@ -66,14 +68,17 @@ celocli account:show $SIGNER_TO_AUTHORIZE
 Any Locked Gold Account may optionally authorize a Celo account as a validator signer. Authorized validator signers can be used to register and manage a validator or validator group on behalf of the Locked Gold Account. If the authorized validator signer is used to register and run a validator, the signer key is also used to sign consensus messages.
 
 ### Authorized Validator Signers for Validator Groups
+
 An authorized validator signer key that will be used to register a validator group can be used to send group management transactions (e.g. register, add member A, queue commission update to 0.25, etc.) Because this key does not participate directly in consensus it **can be stored on a Ledger hardware wallet.**
 
 ### Authorized Validator Signers for Validators
+
 An authorized validator signer key that will be used to register a validator can be used to send validator management transactions (e.g. register, affiliate with group A, etc.) This key will also be used to sign consensus messages and thus **cannot be stored on a Ledger hardware wallet** as signing consensus messages is not currently supported by the Celo Ledger App.
 
 Note that the validator signer must first generate a "proof-of-possession" indicating the signer's willingness to be authorized on behalf of the Locked Gold Account.
 
 ### Authorizing a Validator Signer
+
 A Celo account may be authorized as a validator signer on behalf of a Locked Gold Account by running the following commands:
 
 ```shell
@@ -102,13 +107,14 @@ When registering a Validator on behalf of a Locked Gold Account, users must prov
 
 By default users can derive the BLS key directly from their authorized validator signer key. From a key management and security perspective, this means that the authorized BLS signer key is **exactly the same** as the authorized validator signer key.
 
-Most users will only need to think about BLS signer keys when registering a validator, or when authorizing a new validator signer *after* registering a validator. It follows that when a validator authorizes a new validator signer, the BLS public key and proof-of-possession for the new authorized validator signer should be provided as well.
+Most users will only need to think about BLS signer keys when registering a validator, or when authorizing a new validator signer _after_ registering a validator. It follows that when a validator authorizes a new validator signer, the BLS public key and proof-of-possession for the new authorized validator signer should be provided as well.
 
 Advanced users may optionally derive their BLS key separately, but that is out of the scope of this documentation.
 
 ### Deriving a BLS public key
 
 To derive a BLS public key and proof-of-possession from the authorized validator signer key, and use that information to register a validator, run the following commands:
+
 ```shell
 # Derive the BLS public key and create a proof-of-possession. Note that the signer private key must be available.
 # Also note that BLS proof-of-possessions are not currently supported by celocli
@@ -132,8 +138,8 @@ Note that the Celo Ledger App does yet not support signing attestation messages 
 
 Note that the attestation signer must first be used to generate a "proof-of-possession" indicating the signer's willingness to be authorized on behalf of the Locked Gold Account.
 
-
 ### Authorizing an Attestation Signer
+
 A Celo account may be authorized as a vote signer on behalf of a Locked Gold Account by running the following commands:
 
 ```shell

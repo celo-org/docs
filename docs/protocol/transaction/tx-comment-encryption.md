@@ -2,15 +2,16 @@
 title: Celo Encrypted Payment Comments
 description: Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
 ---
+
 # Encrypted Payment Comments
 
 Overview of encrypted payment comments and its technical details related to symmetric and asymmetric encryption.
 
-___
+---
 
 ### Introduction to Comment Encryption
 
-As part of Celo’s identity protocol, a public encryption key is stored along with a user’s address in the `Accounts` contract. 
+As part of Celo’s identity protocol, a public encryption key is stored along with a user’s address in the `Accounts` contract.
 
 Both the address key pair and the encryption key pair are derived from the backup phrase. When sending a transaction the encryption key of the recipient is retrieved when getting his or her address. The comment is then encrypted using a 128 bit hybrid encryption scheme \(ECDH on secp256k1 with AES-128-CTR\). This system ensures that comments can only be read by the sending and receiving parties and that messages will be recovered when restoring a wallet from its backup phrase.
 

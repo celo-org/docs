@@ -2,11 +2,12 @@
 title: Carbon Offsetting Fund
 description: Introduction to the Carbon Offsetting fund, its purpose, and governance process.
 ---
+
 # Carbon Offsetting Fund
 
 Introduction to the Carbon Offsetting fund, its purpose, and governance process.
 
-___
+---
 
 ## What is the Carbon Offsetting Fund?
 
