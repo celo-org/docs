@@ -5,10 +5,10 @@ authors:
   - name: Obafemi Joel
     title: Content Writer, Celo Foundation
     url: https://github.com/Joel-web3
-    image_url: "C:\Users\HUAWEI\Downloads\defi 31.png"
+    image_url: "./defi 31.png"
 tags: [celo]
 hide_table_of_contents: true
-slug: /tutorials/How Uniswap Works
+slug: '/tutorials/How Uniswap Works'
 
 ---
 
@@ -19,6 +19,7 @@ Meta Description:
 Uniswap is the largest functional decentralized exchange on the Ethereum blockchain, offering seamless digital assets transactions. Here's how it works:
 
 ## Introduction 
+
 ![Uniswap](../blog/23-12-22-how-uniswap-works/images/Defi 3.jpg "Uniswap")
 Image by Satheesh Sankaran
 
@@ -29,6 +30,7 @@ Ideally, Uniswap pools tokens into smart contracts that users can trade against�
 In this article, we'd explore the nitty-gritty of how Uniswap works and how as a beginner, you can maximize all the opportunities it provides. Notably, Uniswap has a simple interface for optimum user experience. Still, there's more to Uniswap than meets the eye, and you'd learn more about everything behind the scenes. Let's dive right in!
 
 ## What is Uniswap and How does it Work?
+
 Uniswap is a unique exchange platform, especially since it's fully decentralized. This means Uniswap isn't owned, operated, or controlled by any single entity. Also, Uniswap utilizes a refreshing model of trading known as the  “automated liquidity protocol,” a concept that automatically links a swap transaction to its respective liquidity pool.
 
 The Uniswap platform is essentially built on the Ethereum blockchain –the second-largest cryptocurrency and it is available on Celo. As a platform, Uniswap was implemented for swapping and use in the year 2018. Since Uniswap is built on the Ethereum network, it is compatible with all ERC-20-based tokens and frameworks like the MyEther and MetaMask wallets.
@@ -38,6 +40,7 @@ Fundamentally Uniswap runs on two smart contracts, the “Exchange” contract a
 Both contracts are automated computer programs designed for specific uses and functions with conditions attached. For example, the factory smart contract works to add new tokens to the Uniswap platform, while the exchange contract eases all processes involved in token swaps and “trades.” Although Uniswap has seen many improvements and currently uses the third version of its platform, ERC20-based tokens can still be swapped across the updated Uniswap v.2 platforms.
 
 ## How do Uniswap Liquidity Pools Work?
+
 https://www.youtube.com/watch?v=PS1h8Mftk58&t=0s
 UniSwap Tutorial: Beginners Guide on How to use UniSwap to Exchange & Add Liquidity
 
@@ -67,7 +70,8 @@ If a liquidity provider wishes to stop providing, they will receive the total fe
 Progressively upon upgrade to V2, Uniswaps introduced a more promising reward like a protocol fee which can be turned on and off by community vote. It sends a 0.05% and 0.30% trading fee to a designated Uniswap fund to finance future development.
 
 Uniswap V3 was recently deployed on the Celo blockchain to launch “Green Asset” liquidity pools and expand its reach to billions of smartphone users. As you may know, Celo is a mobile-first DeFi platform that provides fast, secure, and stable digital payment with near-zero fees. So this collaboration makes complete sense as Uniswap’s pools will be easily accessible by thousands of Celo users.
-How Does Uniswap Work With Metamask?
+
+## How Does Uniswap Work With Metamask?
 
 A lot can be said about the almost endless possibilities that lie with Uniswap. One of the most intriguing topics would be how Uniswap integrates and optimizes Metamask for more functionality and limitless potential. But how do the two work?  What are the underlying reasons why Uniswap works seamlessly with a wallet like Metamask? Let's find out!
 
@@ -88,6 +92,7 @@ Now, you are set to start utilizing your Metamask wallet for swapping and transa
 
 
 ## What are Uniswap Tokens Used For?
+
 ![Uniswap Tokens](../blog/23-12-22-how-uniswap-works/images/Defi 2.jpg "Uniswap Tokens")
 Image by Satheesh Sankaran
 
@@ -107,31 +112,35 @@ But it doesn't end there! They also take part in Uniswap governance. UNI token h
 
 To cash in their rewards from providing liquidity, the UNI that represents the LP reward is paid and then destroyed irrevocably to ensure transparency and security. 
 
-Conclusion
+## Conclusion
+
 Digital currencies are rapidly evolving, which creates an increasing influx of traders craving absolute decentralization. Platforms like Celo make the technology more accessible to billions of users through their mobile-first DeFi solution. As a result, users of decentralized exchanges like Uniswap continue to rise. 
 
 However, a complete understanding of Uniswap's operation gives operational traders an edge to maximize the opportunities with DEX exchanges like Uniswap. We've explored core concepts of Uniswap, like Liquidity pools, liquidity providers, Uniswap tokens, and integrated wallets like Metamask. 
 
-Next Steps
+## Next Steps
+
 You can maximize the opportunities Uniswap presents right away by downloading the Celo Alfajores Wallet on your mobile device, giving you access to Uniswap’s liquidity pools.
 
-About the Author​
+## About the Author​
+
 Joel Obafemi
 
 A marketer, copywriter, and collab manager for web3 brands. You can connect with me on Linkedin.
 
-References
-https://www.coindesk.com/business/2021/02/04/what-is-uniswap-a-complete-beginners-guide/
+## References
+
+<https://www.coindesk.com/business/2021/02/04/what-is-uniswap-a-complete-beginners-guide/>
 
 
-https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools
+<https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools>
 
 
 UniSwap Tutorial: Beginners Guide on How to use UniSwap to Exchange & Add Liquidity
 
-https://docs.uniswap.org/contracts/v1/guides/pool-liquidity
+<https://docs.uniswap.org/contracts/v1/guides/pool-liquidity>
 
-https://www.investopedia.com/news/what-erc20-and-what-does-it-mean-ethereum
+<https://www.investopedia.com/news/what-erc20-and-what-does-it-mean-ethereum>
 
 
 
