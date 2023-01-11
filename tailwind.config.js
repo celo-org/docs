@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-varient": "#004151",
-        "light-varient": "##E5E7EB",
+        "dark-varient": "#1f2937",
+        "light-varient": "#E5E7EB",
         "darker-varient": "#111827",
         "lighter-varient": "#F3F4F6",
       },
