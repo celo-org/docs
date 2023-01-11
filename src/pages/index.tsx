@@ -140,7 +140,7 @@ export default function HomePage(): JSX.Element {
         </section>
 
         {/* Section 3 */}
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-light-varient dark:bg-dark-varient rounded-lg">
           <span className="text-3xl font-bold">
             Jumpstart your build journey
           </span>
@@ -223,7 +223,7 @@ export default function HomePage(): JSX.Element {
 
         {/* section 4 */}
 
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-light-varient dark:bg-dark-varient rounded-lg">
           <div className="text-3xl text-center font-bold">
             Browse our Docs by Category
           </div>
@@ -449,7 +449,7 @@ export const sectionFourCard = (
 ) => (
   <Link
     href={redirectUrl}
-    className="text-black dark:text-white flex items-start gap-x-4 mt-8 hover:bg-dark-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
+    className="text-black dark:text-white flex items-start gap-x-4 mt-8 dark:hover:bg-darker-varient hover:bg-lighter-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
   >
     <img src={url} alt={title} className="w-10 h-10 rounded-full" />
     <div>
