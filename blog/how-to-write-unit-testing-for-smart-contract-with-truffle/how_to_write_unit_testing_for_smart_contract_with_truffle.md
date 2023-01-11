@@ -487,6 +487,7 @@ You can also read about how to run the unit test for smart contracts using Truff
 
 ## Next Steps
 Here is some other tutorial article.
+	
 [Unit testing with Hardhat and Celo](https://docs.celo.org/blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat)
 	
 [How to create and Test contract calls with Celo and Hardhat](https://docs.celo.org/blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat)
