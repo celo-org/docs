@@ -7,7 +7,6 @@ description: View details about the network, like contracts and parameters
 
 View details about the network, like contracts and parameters
 
-
 ## `celocli network:contracts`
 
 Lists Celo core contracts and their addesses.

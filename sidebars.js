@@ -1,6 +1,5 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Welcome", id: "welcome" },
     // General
     {
       type: "category",
@@ -35,8 +34,7 @@ const sidebars = {
         {
           type: "link",
           label: "Valora",
-          href:
-            "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
+          href: "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
         },
         {
           type: "category",
@@ -45,8 +43,7 @@ const sidebars = {
             {
               type: "link",
               label: "MetaMask Setup",
-              href:
-                "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
+              href: "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
             },
             {
               type: "doc",
@@ -151,8 +148,7 @@ const sidebars = {
         {
           type: "link",
           label: "Staking",
-          href:
-            "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
+          href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
         },
       ],
     },
@@ -841,8 +837,7 @@ const sidebars = {
                     {
                       type: "doc",
                       label: "Sequential Delay Domain",
-                      id:
-                        "protocol/identity/odis-domain-sequential-delay-domain",
+                      id: "protocol/identity/odis-domain-sequential-delay-domain",
                     },
                   ],
                 },
@@ -893,8 +888,7 @@ const sidebars = {
             {
               type: "doc",
               label: "CeloCLI and ContractKit",
-              id:
-                "community/release-process/base-cli-contractkit-dappkit-utils",
+              id: "community/release-process/base-cli-contractkit-dappkit-utils",
             },
             {
               type: "doc",
@@ -1064,8 +1058,7 @@ const sidebars = {
         {
           type: "link",
           label: "Code of Conduct",
-          href:
-            "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+          href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
         },
       ],
     },

@@ -7,7 +7,7 @@ description: Important considerations, warnings, and legal regulations for users
 
 Important considerations, warnings, and legal regulations for users of Celo mainnet.
 
-___
+---
 
 ## Terms and Conditions
 
@@ -19,6 +19,6 @@ Users also understand that release candidates may be replaced, in which event th
 
 To the fullest extent permitted by law, in no event shall the Parties Involved have any liability whatsoever to any person for any direct or indirect loss, liability, cost, claim, expense or damage of any kind, whether in contract or in tort, including negligence or otherwise, arising out of or related to the use of all or part of Celo.
 
-The Celo software is not subject to the EAR based on Section 734.7 of the U.S. Export Administration Regulations ("EAR", 15 CFR Parts 730-774) and Section 742.15(b) of the EAR, which applies to software containing or designed for use with encryption software that is publicly available as open-source. However, products developed using Celo  may be subject to the EAR or local laws/regulations. The User is responsible for compliance with U.S. and local country export/import laws and regulations.
+The Celo software is not subject to the EAR based on Section 734.7 of the U.S. Export Administration Regulations ("EAR", 15 CFR Parts 730-774) and Section 742.15(b) of the EAR, which applies to software containing or designed for use with encryption software that is publicly available as open-source. However, products developed using Celo may be subject to the EAR or local laws/regulations. The User is responsible for compliance with U.S. and local country export/import laws and regulations.
 
 Celo software may not be exported/reexported, either directly or indirectly, to any destination subject to U.S. embargoes or trade sanctions unless formally authorized by the U.S. Government. The embargoed destinations are subject to change and the scope of what is included in the embargo is specific to each embargoed country. For the most current information on U.S. embargoed and sanctioned countries, see the [Treasury Department regulations](https://www.treasury.gov/resource-center/sanctions/Programs/Pages/Programs.aspx).

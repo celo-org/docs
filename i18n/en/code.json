@@ -38,9 +38,6 @@
   "showcase.tag.wallets.description": {
     "message": ""
   },
-  "Celo Ecosystem Showcase": {
-    "message": "Celo Ecosystem Showcase"
-  },
   "List of decentralized applications and tools in the Celo ecosystem.": {
     "message": "List of decentralized applications and tools in the Celo ecosystem."
   },
@@ -475,5 +472,431 @@
   "theme.Playground.liveEditor": {
     "message": "Live Editor",
     "description": "The live editor label of the live codeblocks"
+  },
+  "Favorite": {
+    "message": "Favorite"
+  },
+  "showcase.tag.favorite.description": {
+    "message": ""
+  },
+  "Developers": {
+    "message": "Developers"
+  },
+  "showcase.tag.developers.description": {
+    "message": ""
+  },
+  "Integrations": {
+    "message": "Integrations"
+  },
+  "showcase.tag.integrations.description": {
+    "message": ""
+  },
+  "Validators": {
+    "message": "Validators"
+  },
+  "showcase.tag.validators.description": {
+    "message": ""
+  },
+  "Celo Documentation": {
+    "message": "Celo Documentation"
+  },
+  "Build decentralized applications that create the conditions for prosperity — for everyone.": {
+    "message": "Build decentralized applications that create the conditions for prosperity — for everyone."
+  },
+  "Getting started": {
+    "message": "Getting started"
+  },
+  "Foundation": {
+    "message": "Foundation"
+  },
+  "showcase.tag.foundation.description": {
+    "message": ""
+  },
+  "Celo Sage": {
+    "message": "Celo Sage"
+  },
+  "showcase.tag.celosage.description": {
+    "message": ""
+  },
+  "Figment": {
+    "message": "Figment"
+  },
+  "showcase.tag.figment.description": {
+    "message": ""
+  },
+  "Dacade": {
+    "message": "Dacade"
+  },
+  "showcase.tag.dacade.description": {
+    "message": ""
+  },
+  "Advanced": {
+    "message": "Advanced"
+  },
+  "showcase.tag.advanced.description": {
+    "message": ""
+  },
+  "Airdrop": {
+    "message": "Airdrop"
+  },
+  "showcase.tag.airdrop.description": {
+    "message": ""
+  },
+  "Android": {
+    "message": "Android"
+  },
+  "showcase.tag.android.description": {
+    "message": ""
+  },
+  "Beginner": {
+    "message": "Beginner"
+  },
+  "showcase.tag.beginner.description": {
+    "message": ""
+  },
+  "Celo": {
+    "message": "Celo"
+  },
+  "showcase.tag.celo.description": {
+    "message": ""
+  },
+  "Celo Wallet": {
+    "message": "Celo Wallet"
+  },
+  "showcase.tag.celowallet.description": {
+    "message": ""
+  },
+  "CLI": {
+    "message": "CLI"
+  },
+  "showcase.tag.cli.description": {
+    "message": ""
+  },
+  "Code Playground": {
+    "message": "Code Playground"
+  },
+  "showcase.tag.codeplayground.description": {
+    "message": ""
+  },
+  "Composer": {
+    "message": "Composer"
+  },
+  "showcase.tag.composer.description": {
+    "message": ""
+  },
+  "ContractKit": {
+    "message": "ContractKit"
+  },
+  "showcase.tag.contractkit.description": {
+    "message": ""
+  },
+  "Contribute": {
+    "message": "Contribute"
+  },
+  "showcase.tag.contribute.description": {
+    "message": ""
+  },
+  "Crowdfunding": {
+    "message": "Crowdfunding"
+  },
+  "showcase.tag.crowdfunding.description": {
+    "message": ""
+  },
+  "cUSD": {
+    "message": "cUSD"
+  },
+  "showcase.tag.cusd.description": {
+    "message": ""
+  },
+  "DAO": {
+    "message": "DAO"
+  },
+  "showcase.tag.dao.description": {
+    "message": ""
+  },
+  "Dapp": {
+    "message": "Dapp"
+  },
+  "showcase.tag.dapp.description": {
+    "message": ""
+  },
+  "Dappstarter": {
+    "message": "Dappstarter"
+  },
+  "showcase.tag.dappstarter.description": {
+    "message": ""
+  },
+  "Deploy": {
+    "message": "Deploy"
+  },
+  "showcase.tag.deploy.description": {
+    "message": ""
+  },
+  "erc1155": {
+    "message": "erc1155"
+  },
+  "showcase.tag.erc1155.description": {
+    "message": ""
+  },
+  "ERC20": {
+    "message": "ERC20"
+  },
+  "showcase.tag.erc20.description": {
+    "message": ""
+  },
+  "ERC721": {
+    "message": "ERC721"
+  },
+  "showcase.tag.erc721.description": {
+    "message": ""
+  },
+  "flutter": {
+    "message": "flutter"
+  },
+  "showcase.tag.flutter.description": {
+    "message": ""
+  },
+  "Graph": {
+    "message": "Graph"
+  },
+  "showcase.tag.graph.description": {
+    "message": ""
+  },
+  "Hardhat": {
+    "message": "Hardhat"
+  },
+  "showcase.tag.hardhat.description": {
+    "message": ""
+  },
+  "HTML": {
+    "message": "HTML"
+  },
+  "showcase.tag.html.description": {
+    "message": ""
+  },
+  "Intermediate": {
+    "message": "Intermediate"
+  },
+  "showcase.tag.intermediate.description": {
+    "message": ""
+  },
+  "IPFS": {
+    "message": "IPFS"
+  },
+  "showcase.tag.ipfs.description": {
+    "message": ""
+  },
+  "Javascript": {
+    "message": "Javascript"
+  },
+  "showcase.tag.javascript.description": {
+    "message": ""
+  },
+  "Keystores": {
+    "message": "Keystores"
+  },
+  "showcase.tag.keystores.description": {
+    "message": ""
+  },
+  "Ledger": {
+    "message": "Ledger"
+  },
+  "showcase.tag.ledger.description": {
+    "message": ""
+  },
+  "Material UI": {
+    "message": "Material UI"
+  },
+  "showcase.tag.material-ui.description": {
+    "message": ""
+  },
+  "Metamask": {
+    "message": "Metamask"
+  },
+  "showcase.tag.metamask.description": {
+    "message": ""
+  },
+  "Mint": {
+    "message": "Mint"
+  },
+  "showcase.tag.mint.description": {
+    "message": ""
+  },
+  "Mobile": {
+    "message": "Mobile"
+  },
+  "showcase.tag.mobile.description": {
+    "message": ""
+  },
+  "Nextjs": {
+    "message": "Nextjs"
+  },
+  "showcase.tag.nextjs.description": {
+    "message": ""
+  },
+  "NFT": {
+    "message": "NFT"
+  },
+  "showcase.tag.nft.description": {
+    "message": ""
+  },
+  "Nodejs": {
+    "message": "Nodejs"
+  },
+  "showcase.tag.nodejs.description": {
+    "message": ""
+  },
+  "Obervable": {
+    "message": "Obervable"
+  },
+  "showcase.tag.observable.description": {
+    "message": ""
+  },
+  "Open Zeppelin": {
+    "message": "Open Zeppelin"
+  },
+  "showcase.tag.openzeppelin.description": {
+    "message": ""
+  },
+  "Oracle": {
+    "message": "Oracle"
+  },
+  "pinata": {
+    "message": "pinata"
+  },
+  "showcase.tag.pinata.description": {
+    "message": ""
+  },
+  "Progressive": {
+    "message": "Progressive"
+  },
+  "showcase.tag.progressive.description": {
+    "message": ""
+  },
+  "Randomness": {
+    "message": "Randomness"
+  },
+  "showcase.tag.randomness.description": {
+    "message": ""
+  },
+  "React": {
+    "message": "React"
+  },
+  "showcase.tag.react.description": {
+    "message": ""
+  },
+  "React Native": {
+    "message": "React Native"
+  },
+  "showcase.tag.reactnative.description": {
+    "message": ""
+  },
+  "Remix": {
+    "message": "Remix"
+  },
+  "showcase.tag.remix.description": {
+    "message": ""
+  },
+  "Remote": {
+    "message": "Remote"
+  },
+  "showcase.tag.remote.description": {
+    "message": ""
+  },
+  "SDK": {
+    "message": "SDK"
+  },
+  "showcase.tag.sdk.description": {
+    "message": ""
+  },
+  "Smart Contract": {
+    "message": "Smart Contract"
+  },
+  "showcase.tag.smartcontract.description": {
+    "message": ""
+  },
+  "Solidity": {
+    "message": "Solidity"
+  },
+  "showcase.tag.solidity.description": {
+    "message": ""
+  },
+  "Sourcify": {
+    "message": "Sourcify"
+  },
+  "showcase.tag.sourcify.description": {
+    "message": ""
+  },
+  "Subgraphs": {
+    "message": "Subgraphs"
+  },
+  "showcase.tag.subgraphs.description": {
+    "message": ""
+  },
+  "Tokens": {
+    "message": "Tokens"
+  },
+  "showcase.tag.tokens.description": {
+    "message": ""
+  },
+  "Truffle": {
+    "message": "Truffle"
+  },
+  "showcase.tag.truffle.description": {
+    "message": ""
+  },
+  "use-contractkit": {
+    "message": "use-contractkit"
+  },
+  "showcase.tag.usecontractkit.description": {
+    "message": ""
+  },
+  "Valora": {
+    "message": "Valora"
+  },
+  "showcase.tag.valora.description": {
+    "message": ""
+  },
+  "Verification": {
+    "message": "Verification"
+  },
+  "showcase.tag.verification.description": {
+    "message": ""
+  },
+  "Wallet Connect": {
+    "message": "Wallet Connect"
+  },
+  "showcase.tag.walletconnect.description": {
+    "message": ""
+  },
+  "Video": {
+    "message": "Video"
+  },
+  "showcase.tag.video.description": {
+    "message": ""
+  },
+  "Celo DApp Showcase": {
+    "message": "Celo DApp Showcase"
+  },
+  "🚀 Get started with Celo": {
+    "message": "🚀 Get started with Celo"
+  },
+  "Celo Development Tutorials": {
+    "message": "Celo Development Tutorials"
+  },
+  "Welcome to our curated list of community tutorials.": {
+    "message": "Welcome to our curated list of community tutorials."
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   }
 }

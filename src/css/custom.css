@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* stylelint-disable docusaurus/copyright-header */
 /**
  * Any CSS included here will be global. The classic template
@@ -7,7 +11,6 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #35d07e;
   /* Alternate Color (Green is hard to read) */
   /* --ifm-color-primary: #3476F2; */
   --ifm-color-primary-dark: rgb(33, 175, 144);
@@ -18,6 +21,27 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #1E002B;
+  --ifm-background-surface-color: #1E002B;
+  --ifm-color-primary: #FCFF52;
+  --docsearch-searchbox-background: #000!important;
+  /* .DocSearch-Hit[aria-selected=true].a: */
+}
+
+html[data-theme='dark'] .DocSearch-Hit[aria-selected=true] a {
+  --docsearch-hit-active-color: #476520;
+  /* background-color:rgb(26, 136, 112) */
+}
+
+html[data-theme='light'] {
+  --ifm-background-color: #FCF6F1;
+  --ifm-background-surface-color: #FCF6F1;
+  --ifm-color-primary: #476520;
+  --ifm-footer-background-color: #1E002B;
+  --docsearch-searchbox-background: #E7E3D4;
 }
 
 .docusaurus-highlight-code-line {
@@ -240,11 +264,6 @@ html[data-theme="dark"] .header-github-link:before {
     var(--ifm-navbar-padding-horizontal);
 }
 
-html[data-theme="dark"] {
-  --ifm-background-color: #111214;
-  --ifm-background-surface-color: #111214;
-}
-
 div[class^="announcementBar_"] {
   --site-announcement-bar-stripe-color1: hsl(
     var(--site-primary-hue-saturation) 85%
@@ -319,4 +338,9 @@ div[class^="announcementBar_"] {
   .DocSearch-Modal {
     padding-top: 50px;
   }
+}
+
+.container-border {
+  border: 2px;
+  border-color: #808080;
 }

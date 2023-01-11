@@ -2,11 +2,12 @@
 title: Celo General Integration Information
 description: General information about integrations regardless of your service or use case.
 ---
+
 # General
 
 General information about integrations regardless of your service or use case.
 
-___
+---
 
 ## Accessing the chain
 
