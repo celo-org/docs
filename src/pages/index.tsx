@@ -153,7 +153,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Faucet
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 Fund your Testnet Account
               </span>
             </a>
@@ -166,7 +166,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Scan
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 Explore transactions on Celo Network
               </span>
             </a>
@@ -177,7 +177,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Bridge
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 How to bridge assets from Ethereum, Polygon, and Solana to Celo.
               </span>
             </a>
@@ -189,7 +189,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Wallets
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 Overview of digital wallets available to send, spend, and earn
                 Celo assets.
               </span>
@@ -202,7 +202,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Libraries & SDKs
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 Work with vast range of Libraries and SDKs made by Celo.
               </span>
             </Link>
@@ -214,7 +214,7 @@ export default function HomePage(): JSX.Element {
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Deploy
               </span>
-              <span className="text-base text-dark-varient dark:text-light-varient mt-1">
+              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
                 How to build and deploy a dApp with Celo.
               </span>
             </Link>
