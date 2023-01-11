@@ -1409,6 +1409,13 @@ const Users: User[] = [
     tags: ['intermediate', 'truffle', 'smartcontract', 'celosage'],
   },
   {
+    title: 'Proof Of Stack Consensus',
+    description: 'A Deep Dive into Celo Proof of Stake Consensus.',
+    preview: require('./showcase/intermediate/a-deep-dive-into-celo-proof-of-stake-consensus.png'),
+    website: 'blog/tutorials/a-deep-dive-into-celo-proof-of-stake-consensus',
+    tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
+  },
+  {
     title: 'The Celo Extension Wallet',
     description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
