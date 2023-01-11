@@ -21,7 +21,7 @@
   },
   "link.item.label.Contributors": {
     "message": "Contributors",
-    "description": "The label of footer link with label=Contributors linking to /community/contributing"
+    "description": "The label of footer link with label=Contributors linking to /community/guidelines"
   },
   "link.item.label.Forum": {
     "message": "Forum",
@@ -66,5 +66,17 @@
   "copyright": {
     "message": "Copyright © 2022 Celo Foundation, Inc. Built with Docusaurus.",
     "description": "The footer copyright"
+  },
+  "link.item.label.Celo Signal Mailing List": {
+    "message": "Celo Signal Mailing List",
+    "description": "The label of footer link with label=Celo Signal Mailing List linking to https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j"
+  },
+  "link.item.label.Celo Signal Calendar": {
+    "message": "Celo Signal Calendar",
+    "description": "The label of footer link with label=Celo Signal Calendar linking to https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com"
+  },
+  "link.item.label.Community Calendar": {
+    "message": "Community Calendar",
+    "description": "The label of footer link with label=Community Calendar linking to https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com"
   }
 }
