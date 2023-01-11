@@ -1399,7 +1399,14 @@ const Users: User[] = [
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: ['intermediate', 'hardhat'],
+    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract'],
+  },
+  {
+    title: 'Unit Testing with Solidity and Truffle',
+    description: 'How to write unit testing for smart contracts with Truffle.',
+    preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-truffle.png'),
+    website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-truffle',
+    tags: ['intermediate', 'truffle', 'smartcontract', 'celosage'],
   },
   {
     title: 'The Celo Extension Wallet',
