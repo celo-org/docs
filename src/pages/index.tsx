@@ -51,7 +51,7 @@ export default function HomePage(): JSX.Element {
           </div>
           <img
             className="md:w-1/2 w-full rounded-xl mt-5 md:mt-0"
-            src="img/doc-images/logos/hero.webp"
+            src="img/doc-images/hero.webp"
           />
         </section>
 
