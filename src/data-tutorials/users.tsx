@@ -1402,6 +1402,13 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
+    title: 'Unit Testing with Solidity and Truffle',
+    description: 'How to write unit testing for smart contracts with Tuffle.',
+    preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-truffle.png'),
+    website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-truffle',
+    tags: ['intermediate', 'truffle', 'solidity', 'smartcontract', 'celo', 'celosage'],
+  },
+  {
     title: 'The Celo Extension Wallet',
     description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
