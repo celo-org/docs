@@ -4,7 +4,7 @@ description: This tutorial will show you how you can reward users for transactio
 authors:
   - name: ✍️ Harpal Jadeja
 tags: [meta-transactions]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to create a Loyalty Program using Meta-transactions

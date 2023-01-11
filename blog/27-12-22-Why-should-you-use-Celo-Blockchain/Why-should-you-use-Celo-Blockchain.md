@@ -5,7 +5,7 @@ authors:
   - name: Adefolalu Adegboyega
     url: https://github.com/profnica
 tags: [Celo, Blockchain]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/Why-should-you-use-Celo-Blockchain
 ---
 

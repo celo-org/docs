@@ -4,7 +4,7 @@ description: Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix
 authors:
   - name: ✍️ Joe Nyzio
 tags: [nft, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-quickly-build-an-nft-collection-on-celo
 ---
 

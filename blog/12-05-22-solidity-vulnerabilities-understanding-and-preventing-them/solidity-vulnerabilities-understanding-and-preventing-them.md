@@ -4,7 +4,7 @@ description: Understanding and preventing solidity vulnerabilities
 authors:
   - name: ✍️ Oyeniyi Abiola Peace
 tags: [solidity]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/solidity-vulnerabilities-delegated-call"
 ---
 

@@ -6,7 +6,7 @@ authors:
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
 tags: [NFT, royalty, erc-721, erc-2981]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-create-an-nft-with-royalties-on-celo
 ---
 
