@@ -30,6 +30,7 @@
     "@saucelabs/theme-github-codeblock": "^0.1.1",
     "@walletconnect/web3-provider": "^1.6.6",
     "assert": "^2.0.0",
+    "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
     "clsx": "^1.1.1",
     "crypto-browserify": "^3.12.0",
@@ -42,6 +43,7 @@
     "mermaid": "^9.1.1",
     "net": "^1.0.2",
     "os-browserify": "^0.3.0",
+    "postcss": "^8.4.20",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-lite-youtube-embed": "^2.2.2",
@@ -51,6 +53,7 @@
     "remark-math": "3",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "tailwindcss": "^3.2.4",
     "url": "^0.11.0",
     "web3": "^1.6.0"
   },
