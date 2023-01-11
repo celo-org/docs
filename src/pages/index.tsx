@@ -50,7 +50,7 @@ export default function HomePage(): JSX.Element {
             </span>
           </div>
           <img
-            className="md:w-1/2 w-full rounded-xl mt-5 md:mt-0"
+            className="md:w-1/2 w-full mt-5 md:mt-0"
             src="img/doc-images/hero.webp"
           />
         </section>
@@ -63,7 +63,7 @@ export default function HomePage(): JSX.Element {
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  rounded-lg">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Use Celo Composer CLI and start building in Celo
+                  Use Celo Composer CLI and start building on Celo
                 </span>
                 {buildKnowMoreButton("/developer/deploy")}
               </div>
@@ -75,7 +75,7 @@ export default function HomePage(): JSX.Element {
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Learn Celo smart contract development from out tutorials
+                  Learn Celo smart contract development from our tutorials
                 </span>
                 {buildKnowMoreButton("/tutorials")}
               </div>
@@ -140,7 +140,7 @@ export default function HomePage(): JSX.Element {
         </section>
 
         {/* Section 3 */}
-        <section className="mt-20 md:p-8 p-4 bg-light-varient dark:bg-dark-varient rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
           <span className="text-3xl font-bold">
             Jumpstart your build journey
           </span>
@@ -154,7 +154,7 @@ export default function HomePage(): JSX.Element {
                 Faucet
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Fund your Testnet Account
+                Fund your Testnet Account.
               </span>
             </a>
 
@@ -167,7 +167,7 @@ export default function HomePage(): JSX.Element {
                 Celo Scan
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Explore transactions on Celo Network
+                Explore transactions on Celo Network.
               </span>
             </a>
             <a
@@ -223,7 +223,7 @@ export default function HomePage(): JSX.Element {
 
         {/* section 4 */}
 
-        <section className="mt-20 md:p-8 p-4 bg-light-varient dark:bg-dark-varient rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
           <div className="text-3xl text-center font-bold">
             Browse our Docs by Category
           </div>
@@ -449,7 +449,7 @@ export const sectionFourCard = (
 ) => (
   <Link
     href={redirectUrl}
-    className="text-black dark:text-white flex items-start gap-x-4 mt-8 dark:hover:bg-darker-varient hover:bg-lighter-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
+    className="text-black dark:text-white flex items-start gap-x-4 mt-8 hover:bg-dark-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
   >
     <img src={url} alt={title} className="w-10 h-10 rounded-full" />
     <div>

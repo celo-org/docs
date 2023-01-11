@@ -66,6 +66,7 @@ module.exports = {
     },
   ],
   themeConfig: {
+    image: "img/color-favicon.png",
     announcementBar: {
       id: "support_us",
       content:
@@ -89,9 +90,10 @@ module.exports = {
       title: "Celo Docs",
       logo: {
         alt: "Celo Logo",
-        src: "img/color-logo.png",
+        src: "img/logo.png",
+        srcDark: "img/logo-dark.png",
         height: 32,
-        width: 32,
+        width: 96,
       },
       items: [
         {
