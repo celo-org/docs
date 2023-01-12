@@ -48,7 +48,7 @@ Trading and exchanging tokens between Uniswap users is only possible with a liqu
 
 Uniswap has progressively contributed to seamless digital currency transactions. The Uniswap V2 is even more intriguing because it allows traders to swap between ERC-20 tokens without hassle directly. Technically, Uniswap users do not trade with each other, as that might not mitigate the risk of token loss due to some end-user dishonesty. Instead, users deal with a liquidity token pool with a considerable reserved amount of both tokens involved in this user's trade. 
 
-Each [Uniswap liquidity pool](https://docs.uniswap.org/contracts/v1/guides/pool-liquidity) is designated as an avenue for trading a set pair of ERC-20 tokens. But, there are quite a lot of pairs, and it might take forever for each user to find a fitting liquidity pool for their transaction. Still, Uniswap takes the burden off users by automatically routing traders to the matching liquidity pool for their transactions.
+Each [Uniswap Liquidity Pool](https://docs.uniswap.org/contracts/v1/guides/pool-liquidity) is designated as an avenue for trading a set pair of ERC-20 tokens. But, there are quite a lot of pairs, and it might take forever for each user to find a fitting liquidity pool for their transaction. Still, Uniswap takes the burden off users by automatically routing traders to the matching liquidity pool for their transactions.
 
 ![](.\blog\23-12-22-how-uniswap-works\images\Defi 4.png)
 
@@ -119,7 +119,7 @@ You can maximize the opportunities Uniswap presents right away by downloading th
 # **About the Author[​](https://docs.celo.org/community/celo-sage/tutorial-structure#about-the-author)**
 Joel Obafemi
 
-A marketer, copywriter, and collab manager for web3 brands. You can connect with me on [Linkedin](https://www.linkedin.com/in/joel-obafemi-a7179b19a/).
+A marketer, copywriter, and collab manager for web3 brands. You can connect with me on [LinkedIn](https://www.linkedin.com/in/joel-obafemi-a7179b19a/).
 
 # **References**
 <https://www.coindesk.com/business/2021/02/04/what-is-uniswap-a-complete-beginners-guide/>
