@@ -1,6 +1,17 @@
-# Buy Me A Coffee Android App Using the Celo Java-SDK
+---
+title: Buy Me A Coffee Android App Using the Celo Java-SDK
+description: This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account.
+authors:
+  - name: Glory Agatevure
+    title: Blockchain Engineer | Technical Writer
+    url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
+    image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
+tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora']
+hide_table_of_contents: true
+slug: /tutorials/buy-me-a-coffee-android-app-using-the-celo-java-sdk
 
-# Introduction​
+---
+## Introduction​
 
 This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account. We will walk you through the process of setting up the Celo Java SDK and integrating it into your app, so you can start accepting payments in no time. By the end of this tutorial, you will have a working Android app that allows users to make payments using the Celo network.
 
@@ -10,20 +21,20 @@ He is a quick look at what we will build in this tutorial.
 **Fig: 0-1** dApp UI
 
 ![dapp-ui](./images/dapp-ui.png)
-# Prerequisites​
+## Prerequisites​
 To successfully follow this tutorial, you will need basic knowledge of blockchain technology and Android development.
 
 - You will need to create five generated accounts using the celocli. To set this up, this guide will be helpful.
 
 - To test the functionality of the Celo Java SDK you will need to have some test tokens. This can be gotten from the faucet.
 
-# Requirements​
+## Requirements​
 
 - Alfajores  Testnet Account - required to connect to the dApp and make test transactions.
 - Android Studio - required to build an app that runs on an emulator or a physical android phone. To run the completed code, the minimum version of Android Studio 5.0 or newer and 
 - Java SDK version 11 or higher 
 
-# Workspace Setup and Configuration in Android Studio
+## Workspace Setup and Configuration in Android Studio
 To get started, your Android Studio should be up and running. Add all necessary dependencies to your app/build.gradle file. To start using the Celo Java SDK, here are the dependencies you would need.
 
 ```java
@@ -38,7 +49,7 @@ implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 [Circleimageview](https://docs.web3j.io/4.8.7/) library is used for making an image circular.
 
-# Create an Android project
+## Create an Android project
 Start up Android Studio and create a new Project. Select basic activity.
 
 **Fig 1- 0:** Create New Project
@@ -49,20 +60,20 @@ Start up Android Studio and create a new Project. Select basic activity.
 
 **Note:** Constant.java file holds the constants for the app.
 
-# Account Creation
+## Account Creation
 Celo provides us with several options to create an account. These include downloading the mobile wallet (Valora or Alfajores), and using Ganache and Celo CLI. For development purposes, any of these options will be good to easily create or generate Celo accounts. For this tutorial, we will use the Celo CLI to generate 5 Celo Testnet accounts. For more details on account creation, you can check the Celo Developer Doc for [Testnet Wallet Setup](https://docs.celo.org/developer/setup/wallet).
 
 To set up the Celo CLI on your machine, follow this [guide](https://docs.celo.org/blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit#introduction-to-the-celo-cli). After successful setup, from your terminal, run this command to create a new account.
 
 `celocli account:new`
 
-# Funding an Account
+## Funding an Account
 To fund your Celo Testnet account, copy the address of the wallet or from your generated account after running the above command. Simply go to the faucet and paste the address to get it funded. If you need more funds, paste your address in the input field and check the captcha and click on the get started button. That should get your account funded immediately.
 
 **Fig 1-3:** Celo Faucet
 ![Faceut](./images/faceut.png)
 
-# Checking Account Balance
+## Checking Account Balance
 There are several ways to check your account balance. You can use the Celocli command, the Celo Java SDK or simply enter your account address in the Alfajores Celo Scan explorer.
 
 Using the Celocli run this command to check account balance
@@ -110,7 +121,7 @@ This code should not be run on the main UI thread otherwise, the app will scratc
 The output will look like this 👇
 ![Account balance log](./images/account-balance-log-output.png)
 
-# Manifest.xml
+## Manifest.xml
 Inside your manifest.xml file add network permission and network state. This will prevent the app from crashing. And it also notifies the app that internet connection is required.
 
 ```java
@@ -118,9 +129,9 @@ Inside your manifest.xml file add network permission and network state. This wil
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-# Data Model, Data Source, Constant and Recyclerview Adapter
+## Data Model, Data Source, Constant and Recyclerview Adapter
 
-## Data Model
+### Data Model
 The **BeneficiaryModel.java** file handles the data model popularly called pojo. This defines the initial data object.
 
 ```java
@@ -224,7 +235,7 @@ public class Constant {
 }
 ```
 
-# Data Source
+## Data Source
 This is the local data source, used to populate the data in the recyclerview. The data source can be found in the **DataSource.java** file.
 
 ```java
@@ -267,7 +278,7 @@ public class DataSource {
 }
 ```
 
-# Recyclerview Adapter
+## Recyclerview Adapter
 This handles the populating of the list. The Recyclerview adapter can be found in the **BeneficiaryAdapter.java** file.
 
 ```java
@@ -353,7 +364,7 @@ holder.donation_received.setText(String.valueOf(String.format("Donations Receive
 }
 ```
 
-# Custom Method For Getting the Account Balance of Each of the Creators in the List
+## Custom Method For Getting the Account Balance of Each of the Creators in the List
 This method requires connecting to the Celo Afajores Testnet Network. To get the account balance for each of the recipients in the recyclerview. This can be found in the **BeneficiaryAccountBalance.java** file.
 
 ```java
@@ -826,7 +837,7 @@ This is the detail fragment. And the UI looks like this
        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-# Interacting and Logging Output of the Celo Java SDK Contract Kit
+## Interacting and Logging Output of the Celo Java SDK Contract Kit
 The below code snippet can be found in **FirstFragment.java** file. To test the functionalities of the code, we will be logging and displaying the output in a screenshot.
 
 ```java
@@ -901,17 +912,17 @@ System.out.println( "Exchange Hash" + sellTxHash);
 **Fig 3-4** Output
 ![transaction-hash](./images/transaction-hash-log-output.png)
 
-# Conclusion​
+## Conclusion​
  Congratulations on finishing this tutorial! Thank you for taking the time to complete it. In this tutorial, you have learned how to create an Android dApp from scratch using the Celo SDk-Java and how to handle deep linking to connect to the Valora or Alfajores wallet to make payments.
 
 To have access to the full codebase, here is the link to the project repo on [github](https://github.com/gconnect/Buyme-A-Coffee-Celo-Dapp).
 
-# About the Author​
+## About the Author​
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on Linkedin and Github.
 
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
-# References​
+## References​
 - https://docs.celo.org/developer/walkthrough/hello-contract-remote-node
 - https://docs.celo.org/blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit#introduction-to-the-celo-cli
 - https://docs.celo.org/developer/setup/wallet
