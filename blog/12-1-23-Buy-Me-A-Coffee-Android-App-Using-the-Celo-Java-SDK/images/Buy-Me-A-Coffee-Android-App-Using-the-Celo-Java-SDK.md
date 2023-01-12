@@ -429,7 +429,7 @@ public class BeneficiaryAccountBalance {
    }
 }
 ```
-# FirstFragment.java
+## FirstFragment.java
 In the FirstFragment.java file, inside the onViewCreated add the below code snippet. This will populate the local datasource in the recyclerview.
 
 ```java
@@ -461,7 +461,7 @@ NavHostFragment.findNavController(FirstFragment.this)
        .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle );
 ```
 
-# SecondFragment.java - Make Payment
+## SecondFragment.java - Make Payment
 Your detail page code snippet should look like this. This fragment handles the detail page of each of the creators/beneficiaries. This also handles payment using deeplink making interactions with the Valora or Alfajores wallet.
 
 ```java
@@ -582,7 +582,7 @@ public class SecondFragment extends Fragment {
 **Fig: 3-1** Payment UI
 ![payment pop-up](./images/paymentpopup.jpeg)
 ![payment page](./images/paymentPage.jpeg)
-# Android Views
+## Android Views
 This consists of the XML files which handles the UIs.
 
 Beneficiary List Item
