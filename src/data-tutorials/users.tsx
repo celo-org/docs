@@ -697,6 +697,13 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
+    title: 'How to Transition from Web2 to Web3',
+    description: 'Learn the basics of blockchain technology and web3 development',
+    preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
+    website: 'blog/tutorials/how-to-transition-from-web2-to-web3',
+    tags: ['beginner','celo'],
+  },
+  {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
@@ -781,6 +788,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
     website: 'blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo',
     tags: ['beginner','foundation', 'nft', 'foundation'],
+  },
+  {
+    title: 'How should you use Celo Blockchain',
+    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners. We will provide an overview of Celo and its ecosystem, as well as discuss the tools and resources available to help you get started. By the end of this tutorial, you will have a basic understanding of the Celo blockchain and how to use it for your development projects. Whether you are new to blockchain technology or an experienced developer, this tutorial will provide you with the knowledge you need to get started with Celo.',
+    preview: require('./showcase/beginner/Why-should-you-use-Celo-Blockchain.png'),
+    website: '/blog/tutorials/Why-should-you-use-Celo-Blockchain',
+    tags: ['celosage','celo'], 
   },
   {
     title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
@@ -1374,6 +1388,13 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
+    title: 'How to Create your own DAO on Celo',
+    description: 'Build your own DAO with on-chain governance',
+    preview: require('./showcase/intermediate/how-to-create-your-own-dao-on-celo.png'),
+    website: 'blog/tutorials/how-to-create-your-own-dao-on-celo',
+    tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'dao'],
+  },
+  {
     title: 'Unit Testing with Solidity and Hardhat',
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
@@ -1381,11 +1402,18 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
-    title: ' An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
+    title: 'The Celo Extension Wallet',
+    description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/how-to-odownloa-dand-test-the-Celo-extension-wallet-on-your-browser',
+    tags: ['celosage', 'video'],
+  },
+  {
+    title: 'An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
     description: 'Explaining the key differences between layer 1 and layer 2 protocols.',
-    preview: require('.src\data-tutorials\showcase\beginner\beginner-tutorials.png'),
-    website: 'blog//tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
-    tags: ['celosage',],
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/an-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
+    tags: ['celosage'],
   },
   
   /*

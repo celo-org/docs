@@ -18,7 +18,7 @@ module.exports = {
   projectName: "docs", // Usually your repo name.
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "es", "pt"],
   },
   themes: [
     "@docusaurus/theme-live-codeblock",
@@ -53,8 +53,20 @@ module.exports = {
         disableInDev: true,
       }),
     ],
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
   themeConfig: {
+    image: "img/color-favicon.png",
     announcementBar: {
       id: "support_us",
       content:
@@ -72,14 +84,16 @@ module.exports = {
     },
     colorMode: {
       defaultMode: "dark",
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Celo Docs",
       logo: {
         alt: "Celo Logo",
-        src: "img/color-logo.png",
+        src: "img/logo.png",
+        srcDark: "img/logo-dark.png",
         height: 32,
-        width: 32,
+        width: 96,
       },
       items: [
         {
