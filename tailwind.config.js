@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         "dark-varient": "#1f2937",
         "light-varient": "#E5E7EB",
-        "darker-varient": "#111827",
+        "darker-varient": "#7CC0FF",
         "lighter-varient": "#F3F4F6",
       },
     },

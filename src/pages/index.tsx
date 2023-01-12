@@ -51,19 +51,19 @@ export default function HomePage(): JSX.Element {
           </div>
           <img
             className="md:w-1/2 w-full mt-5 md:mt-0"
-            src="img/doc-images/hero.webp"
+            src="img/logo-cube-animation.gif"
           />
         </section>
 
         <section className="mt-12">
           <div className="text-3xl font-bold px-2 w-full">
-            Learn how to build on Celo
+            Learn How to Build with Celo
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  rounded-lg">
+            <div className="flex-1 py-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Use Celo Composer CLI and start building on Celo
+                  Get started with Celo Composer CLI
                 </span>
                 {buildKnowMoreButton("/developer/deploy")}
               </div>
@@ -72,10 +72,10 @@ export default function HomePage(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient ">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Learn Celo smart contract development from our tutorials
+                  Learn smart contract development with us
                 </span>
                 {buildKnowMoreButton("/tutorials")}
               </div>
@@ -88,12 +88,12 @@ export default function HomePage(): JSX.Element {
 
         {/* Section 2 */}
         <section className="mt-12">
-          <div className="text-3xl font-bold mx-2">Start building</div>
+          <div className="text-3xl font-bold mx-2">Explore Providers and Frameworks</div>
           <div className="px-2 grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-4 mt-8">
             <a
               href="https://docs.infura.io/infura/"
               target="_blank"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  font-semibold"
             >
               <img
                 src="img/doc-images/logos/infura-logo.webp"
@@ -105,7 +105,7 @@ export default function HomePage(): JSX.Element {
             <a
               href="https://www.quicknode.com/chains/celo"
               target="_blank"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  font-semibold"
             >
               <img
                 src="img/doc-images/logos/quicknode-logo.webp"
@@ -116,7 +116,7 @@ export default function HomePage(): JSX.Element {
             </a>
             <Link
               href="/developer/deploy/hardhat"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  font-semibold"
             >
               <img
                 src="img/doc-images/logos/hardhat-logo.webp"
@@ -127,7 +127,7 @@ export default function HomePage(): JSX.Element {
             </Link>
             <a
               href="/developer/deploy/truffle"
-              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  font-semibold"
             >
               <img
                 src="img/doc-images/logos/truffle-logo.webp"
@@ -140,15 +140,15 @@ export default function HomePage(): JSX.Element {
         </section>
 
         {/* Section 3 */}
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 ">
           <span className="text-3xl font-bold">
-            Jumpstart your build journey
+            Start Your Journey
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
               href="https://celo.org/developers/faucet"
               target={"_blank"}
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Faucet
@@ -161,7 +161,7 @@ export default function HomePage(): JSX.Element {
             <a
               href="https://celoscan.io/"
               target={"_blank"}
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Scan
@@ -172,50 +172,49 @@ export default function HomePage(): JSX.Element {
             </a>
             <a
               href="/protocol/bridge"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Bridge
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                How to bridge assets from Ethereum, Polygon, and Solana to Celo.
+                How to bridge assets accross chains.
               </span>
             </a>
 
             <Link
               href="/wallet"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Wallets
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Overview of digital wallets available to send, spend, and earn
-                Celo assets.
+                Overview of ecosystem wallets.
               </span>
             </Link>
 
             <Link
               href="/developer/sdks/celo-sdks"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Celo Libraries & SDKs
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Work with vast range of Libraries and SDKs made by Celo.
+                Search our vast range of libraries and SDKs.
               </span>
             </Link>
 
             <Link
               href="/developer/deploy"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
                 Deploy
               </span>
               <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                How to build and deploy a dApp with Celo.
+                How to build and deploy a dApp.
               </span>
             </Link>
           </div>
@@ -223,7 +222,7 @@ export default function HomePage(): JSX.Element {
 
         {/* section 4 */}
 
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 ">
           <div className="text-3xl text-center font-bold">
             Browse our Docs by Category
           </div>
@@ -235,22 +234,22 @@ export default function HomePage(): JSX.Element {
               </div>
               {/* item 1 */}
               {sectionFourCard(
-                "what is Celo?",
-                "Learn the basics about Celo",
+                "What is Celo?",
+                "Learn the basics about our Layer 1 approach",
                 "img/doc-images/logos/color-logo.png",
                 "/general"
               )}
 
               {sectionFourCard(
                 "Architecture",
-                "Overview of the Celo stack including core contracts and applications",
+                "Overview of our stack and core contracts",
                 "img/doc-images/logos/arch.png",
                 "/general/architecture"
               )}
 
               {sectionFourCard(
                 "Whitepapers",
-                "Overview of the Celo whitepapers describing the Celo protocol and social impact",
+                "Dive in to understand our protocol and social impact",
                 "img/doc-images/logos/whitepaper.png",
                 "/general/whitepapers"
               )}
@@ -300,7 +299,7 @@ export default function HomePage(): JSX.Element {
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                Build on Celo
+                Build with Celo
               </div>
               {sectionFourCard(
                 "Celo composer",
@@ -356,34 +355,34 @@ export default function HomePage(): JSX.Element {
 
         <section className="mt-12">
           <div className="text-4xl font-semibold px-2 w-full">
-            Join our booming ecosystem
+            Join Our Ecosystem
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold">
-                  Create, earn, and grow as a Celo content creator
+                <span className="text-3xl font-semibold pb-7">
+                  Create, Earn, and Grow as a Celo Sage Content Creator
                 </span>
                 {buildKnowMoreButton("/community/celo-sage")}
               </div>
-              <div className="w-8/12">
+              {/* <div className="w-8/12">
                 <img
                   className="rounded-md"
                   src="/img/homepage/celo-sage.webp"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold">
+                <span className="text-3xl font-semibold pb-7">
                   Receive Funding to Build Your Blockchain Projects
                 </span>
                 {buildKnowMoreButton("/community/grant-playbook")}
               </div>
-              <div className="w-1/2">
+              {/* <div className="w-1/2">
                 <img src="/img/homepage/celo-camp.webp" />
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -392,21 +391,21 @@ export default function HomePage(): JSX.Element {
               {sectionFourCard(
                 "Contribute",
                 "Our community includes a group of contributors that help develop, write, translate and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.",
-                "img/doc-images/logos/volunteer.png",
+                "img/doc-images/logos/contribute.svg",
                 "/community/guidelines"
               )}
 
               {sectionFourCard(
                 "Ambassadors",
                 "Celo Ambassadors is a community driven initiative helping grow and support the Celo ecosystem of developers, designers, dreamers, and doers around the world.",
-                "img/doc-images/logos/ambassador.png",
+                "img/doc-images/logos/ambassador.svg",
                 "https://celocommunity.xyz/join-the-ambassador-program"
               )}
 
               {sectionFourCard(
                 "Connect with our community",
                 "Join and connect with our team and community of doers on discord. its a space where you can share and immerse yourself in a wealth of knowledge and information.",
-                "img/doc-images/logos/connect.png",
+                "img/doc-images/logos/connect.svg",
                 "https://celo.org/community"
               )}
             </div>
@@ -449,7 +448,7 @@ export const sectionFourCard = (
 ) => (
   <Link
     href={redirectUrl}
-    className="text-black dark:text-white flex items-start gap-x-4 mt-8 hover:bg-dark-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
+    className="text-black dark:text-white flex items-start gap-x-4 mt-8 hover:bg-dark-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4  cursor-pointer hover:no-underline"
   >
     <img src={url} alt={title} className="w-10 h-10 rounded-full" />
     <div>
