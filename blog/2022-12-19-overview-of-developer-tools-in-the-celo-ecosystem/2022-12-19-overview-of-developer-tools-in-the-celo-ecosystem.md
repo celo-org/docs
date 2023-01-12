@@ -10,6 +10,8 @@ hide_table_of_contents: true
 slug: /tutorials/overview-of-developer-tools-in-the-celo-ecosystem
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/overview-of-developer-tools-in-the-celo-ecosystem.png)
+
 ## Introduction
 
 Every technology has its tools and tooling approach and blockchain networks are no different. For one that has decided to develop on the Celo blockchain, there are numerous tools available for potential Celo developers and those already developing on the Celo network to make their work easy.

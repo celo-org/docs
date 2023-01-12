@@ -11,9 +11,6 @@ hide_table_of_contents: true
 slug: /tutorials/como-construir-em-celo-usando-tatum
 ---
 
-
-
-
 ![header](../../src/data-tutorials/showcase/beginner/como-construir-em-celo-usando-tatum.png)
 
 # Introdução
@@ -35,15 +32,11 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 - Criar uma conta no Tatum
 - Utilizar uma ferramenta para consulta de API como Postman
 
-
 ## Tutorial
 
 Confira no video como utilizar Tatum para realizar o deploy, consultas e transferências em Celo.
 
-
-[![Como Construir em Celo usando Tatum](../../src/data-tutorials/showcase/beginner/youtube-como-construir-em-celo-usando-tatum.jpg)](https://www.youtube.com/watch?v=XXDWaloLmvs)
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXDWaloLmvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Conclusão
 

@@ -8,25 +8,28 @@ hide_table_of_contents: true
 slug: "/tutorials/how-to-create-a-dao-on-celo"
 ---
 
-# Introduction​
+![header](../../src/data-tutorials/showcase/intermediate/how-to-create-your-own-dao-on-celo.png)
+
+## Introduction​
 
 In this article, we'll cover how to build an on-chain DAO with Hardhat, Solidity, and JavaScript. If you're unaware, many crypto projects are attempting to utilize DAOs (decentralized autonomous organizations) for project governance. The decentralized nature of cryptocurrency makes DAOs a popular governance model in the blockchain industry.
 
 With this one, we're getting right into the code.  The DAO's governance token will be an ERC20 token. This ERC20 token will be used to create and vote on proposals.
 
-# Prerequisites​
+## Prerequisites​
 
 You must be familiar with the following to fully understand this tutorial:
+
 - HardHat: Hardhat is an extensible developer tool that helps smart contract developers.
 - Solidity: A high-level programming language.
 - Javascript: You should be familiar with the language's fundamentals.
 - Chai: To test smart contracts, we'll use a javascript testing package.
 
-# Requirements​
+## Requirements​
 
 To follow along, your computer must have the most recent version of Node.js installed. Ensure Node is at least version 16.0.0 or higher if it is already installed.
 
-# Hardhat Project Setup
+## Hardhat Project Setup
 
 Create a folder called DAO and open it in VS Code. Run the following command to set up a new hardhat project in the terminal:
 
@@ -49,12 +52,13 @@ npm install "@openzeppelin/contracts"
 ```
 
 Let’s see what these can help us with:
+
 - `hardhat`: Hardhat is an extensible developer tool that helps smart contract developers increase productivity by reliably bringing together the tools they want.
 - `@nomicfoundation/hardhat-toolbox`: It bundles all the commonly used packages and Hardhat plugins.
 - `solidity-coverage`: It is a solidity code coverage plugin for Hardhat.
 - `@openzeppelin/contracts`: It is a secure smart contract library for solidity
 
-# Governance Token Smart Contract
+## Governance Token Smart Contract
 
 Using the ERC20 token standard, we will develop a governance token for our DAO. Open `Token.sol` and insert the following code:
 
@@ -75,7 +79,7 @@ contract Token is ERC20 {
 
 Please go [here](https://docs.openzeppelin.com/contracts/4.x/erc20-supply#fixed-supply) to read more about how the above snippet works. We can now go to the smart contract for the DAO.
 
-# DAO Smart Contract
+## DAO Smart Contract
 
 To get things going, we'll construct an empty smart contract called `DAO` in the `DAO.sol` file and import `IERC20.sol` from the openzeppelin library.
 
@@ -89,7 +93,8 @@ contract DAO {
  
 }
 ```
-## Constructor Definition
+
+### Constructor Definition
 
 Now that we have a blank smart contract, we can declare a variable inside of it with the name `token` of type `IERC20`.
 
@@ -105,7 +110,8 @@ contract DAO {
     }
 }
 ```
-## Defining Proposal
+
+### Defining Proposal
 
 The option to propose and vote on proposals will be available to anyone who has a governance token and chooses to participate in the governance process. We must outline the structure of those proposals. A struct will define the format for each proposal we will create named `Proposal`.
 
@@ -122,7 +128,7 @@ The option to propose and vote on proposals will be available to anyone who has 
 
 > Note: Everything other than functions goes above the constructor, and all the functions go below the constructor. Just a tip on organizing smart contracts
 
-## Storing Created Proposals
+### Storing Created Proposals
 
 We need to store any proposal that is made. By creating a mapping called `proposals`, we will achieve this. The proposal will serve as the value, and the proposal's index, which we will track using the `proposalIndex` variable, will be the key in the mapping.
 
@@ -131,7 +137,7 @@ We need to store any proposal that is made. By creating a mapping called `propos
     mapping(uint256 => Proposal) public proposals;
 ```
 
-## Create Proposal
+### Create Proposal
 
 After putting up everything related to proposals, there is just a function left that allows us to construct proposals. Starting off, let's define the function `createProposal` with visibility as `public`. This function returns the index of the created proposal (type `uint256`) and accepts the title (type `bytes32`) argument.
 
@@ -150,10 +156,8 @@ To access the proposals mapping with the current value of `proposalIndex`, we wi
     }
 ```
 
-
 There is a problem; we only want governance token holders to have access to this service; we don't want anyone else to be able to create proposals. This can be resolved by introducing a modifier called `onlyTokenHolders` that checks to see if the caller's balance of their governance token is greater than zero and rejects the call otherwise. We can check the balance by using the `token` variable's `balanceOf` method.
 
- 
 ```js
     modifier onlyTokenHolders() {
         require(
@@ -170,7 +174,7 @@ This modifier can be added to the `createProposal` function.
 function createProposal(bytes32 _proposal) public onlyTokenHolders returns(uint256)
 ```
 
-## Vote on the Proposal
+### Vote on the Proposal
 
 We've made it possible to propose, and now we can write a function so that token holders can vote on proposals. Only token holders who hadn't already voted before the deadline should be allowed to cast a vote.
 
@@ -206,7 +210,8 @@ We will fetch the proposal with the index supplied as an argument to the `voteOn
  
     }
 ```
-## Execute Proposal
+
+### Execute Proposal
 
 When the time has passed, the proposal will be executed by emitting an event. First, let's define the event called the `winner`. This event will take arguments, the proposal's index, its title, and the number of votes it received.
 
@@ -240,7 +245,7 @@ We must first determine whether the proposal is active; if it is, we cannot exec
     }
 ```
 
-# Testing Smart Contract
+## Testing Smart Contract
 
 To test the contract, we're going to a chai and mocha library. To ascertain how many components of the smart contract have been tested, we will also use the hardhat coverage plugin. First, let's configure the hardhat coverage plugin. The only thing left to do is add the following to `hardhat.config.js`, as we have already installed hardhat coverage in the beginning:
 
@@ -258,13 +263,12 @@ This is the intended result:
 
 ![Test result with zero coverage of the smart contract](./images/zero-coverage.png)
 
-
 Write some tests right away. You should feel comfortable running tests with chai and mocha. Some basics are as follows: Tests are created within `it` function and are arranged using `describe`. Please read [this](https://hardhat.org/tutorial/testing-contracts) if you want to learn more about testing.
 
 We'll use the AAA writing format, which stands for Arrange, Action, and Assert. We first create the necessary conditions for the test (arrange), then we perform the activity we are testing (act), and last, we evaluate if we are getting the results we were expecting (assert).
 
 We need to do imports from `chai`, `ethers`, and `@nomicfoundation/hardhat-network-helpers` in the `dao.test.js` file.
- 
+
 ```js
 const {
   time,
@@ -391,22 +395,23 @@ We can use the coverage command once more to run all of the tests and see how mu
 
 ![Test Result for partial coverage of the smart contract](./images/partial-coverage.png)
 
-# Conclusion
+## Conclusion
 
 You have successfully learned the following things from this article:
+
 - The on-chain DAO's workings
 - Interaction between ERC20 tokens from other contracts
 - Using Chai and Mocha to test solidity contracts
 - Use of the solidity coverage plugin
 
-# Next Steps​
+## Next Steps​
 
 We have tested the contract, but as you can see, we didn't test it completely. As a next step, apply what you learned in this article and work to reach as close to 100% test coverage as you can.
 
-# About the Author​
+## About the Author​
 
 Nikhil Bhintade is the author of the article. Nikhil works as a product manager. He enjoys writing about cutting-edge technology and the things he is learning. You can see his most recent work on [GitHub](https://github.com/nikbhintade).
 
-# References​
+## References​
 
 [Here](https://github.com/nikbhintade/dao-celo) is a reference to a project that was finished with tests that had 100% coverage. To understand more about using Hardhat, you may also refer to [this page](https://hardhat.org/tutorial).
