@@ -568,13 +568,16 @@ public class SecondFragment extends Fragment {
    }
 }
 ```
-
+**Fig: 3-1** Payment UI
+![payment pop-up](./images/paymentpopup.jpeg)
+![payment page](./images/paymentPage.jpeg)
 # Android Views
 This consists of the XML files which handles the UIs.
 
 Beneficiary List Item
 The **beneficiary_list_item.xml** file is used in the BeneficiaryAdapter to display the List items. The UI looks like this 👇
 
+**Fig 3-2** List Page
 ![landing-page](./images/listpage.jpeg)
 
 ```java
@@ -706,6 +709,7 @@ fragment_first.xml
 fragment_second.xml
 This is the detail fragment. And the UI looks like this
 
+**Fig 3-3** Detail Page
 ![detail-page](./images/detailpage.jpeg)
 
 ```java
@@ -894,7 +898,7 @@ System.out.println( "Exchange Hash" + sellTxHash);
                    Log.i(TAG, "receipt1 " + gson.toJson(receipt1, EthSendTransaction.class ));
 ```
 
-**Output**
+**Fig 3-4** Output
 ![transaction-hash](./images/transaction-hash-log-output.png)
 
 # Conclusion​
