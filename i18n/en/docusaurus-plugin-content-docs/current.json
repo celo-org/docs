@@ -7,10 +7,6 @@
     "message": " General",
     "description": "The label for category General in sidebar docs"
   },
-  "sidebar.docs.category.Wallets": {
-    "message": "Wallets",
-    "description": "The label for category Wallets in sidebar docs"
-  },
   "sidebar.docs.category.MetaMask": {
     "message": "MetaMask",
     "description": "The label for category MetaMask in sidebar docs"
@@ -34,10 +30,6 @@
   "sidebar.docs.category.Nodes": {
     "message": "Nodes",
     "description": "The label for category Nodes in sidebar docs"
-  },
-  "sidebar.docs.category.Providers": {
-    "message": "Providers",
-    "description": "The label for category Providers in sidebar docs"
   },
   "sidebar.docs.category.Run a Node": {
     "message": "Run a Node",
@@ -179,25 +171,9 @@
     "message": "Staking",
     "description": "The label for link Staking in sidebar docs, linking to https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5"
   },
-  "sidebar.docs.link.Ankr": {
-    "message": "Ankr",
-    "description": "The label for link Ankr in sidebar docs, linking to https://www.ankr.com/protocol/public/celo/"
-  },
-  "sidebar.docs.link.Tatum": {
-    "message": "Tatum",
-    "description": "The label for link Tatum in sidebar docs, linking to https://pages.tatum.io/celo"
-  },
   "sidebar.docs.link.Figment": {
     "message": "Figment",
     "description": "The label for link Figment in sidebar docs, linking to https://learn.figment.io/protocols/celo"
-  },
-  "sidebar.docs.link.Quicknode": {
-    "message": "Quicknode",
-    "description": "The label for link Quicknode in sidebar docs, linking to https://www.quicknode.com/chains/celo"
-  },
-  "sidebar.docs.link.All that Node": {
-    "message": "All that Node",
-    "description": "The label for link All that Node in sidebar docs, linking to https://www.allthatnode.com/celo.dsrv"
   },
   "sidebar.docs.link.Network Stats": {
     "message": "Network Stats",
@@ -703,17 +679,9 @@
     "message": "ValidatorGroup",
     "description": "The label for the doc item ValidatorGroup in sidebar cli, linking to the doc cli/validatorgroup"
   },
-  "sidebar.docs.doc.Welcome": {
-    "message": "Welcome",
-    "description": "The label for the doc item Welcome in sidebar docs, linking to the doc welcome"
-  },
   "sidebar.docs.category.Setup": {
     "message": "Setup",
     "description": "The label for category Setup in sidebar docs"
-  },
-  "sidebar.docs.category.Deployment": {
-    "message": "Deployment",
-    "description": "The label for category Deployment in sidebar docs"
   },
   "sidebar.docs.doc.Metmask and Celo": {
     "message": "Metmask and Celo",
@@ -726,10 +694,6 @@
   "sidebar.docs.doc.Node Sync": {
     "message": "Node Sync",
     "description": "The label for the doc item Node Sync in sidebar docs, linking to the doc wallet/celo-wallet/node-sync"
-  },
-  "sidebar.docs.doc.Other Wallets": {
-    "message": "Other Wallets",
-    "description": "The label for the doc item Other Wallets in sidebar docs, linking to the doc wallet/other-wallets"
   },
   "sidebar.docs.doc.Sequential Delay Domain": {
     "message": "Sequential Delay Domain",
@@ -846,5 +810,9 @@
   "sidebar.docs.doc.FAQs": {
     "message": "FAQs",
     "description": "The label for the doc item FAQs in sidebar docs, linking to the doc community/celo-sage/faq"
+  },
+  "sidebar.docs.category.Wallets": {
+    "message": "Wallets",
+    "description": "The label for category Wallets in sidebar docs"
   }
 }
