@@ -66,8 +66,8 @@ module.exports = {
     },
   ],
   themeConfig: {
-    twitterImage: "img/color-favicon.png",
-    image: "img/color-favicon.png",
+    twitterImage: "img/preview.png",
+    image: "img/preview.png",
     announcementBar: {
       id: "support_us",
       content:

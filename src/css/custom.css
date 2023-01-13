@@ -44,12 +44,16 @@ html[data-theme='light'] {
   --docsearch-searchbox-background: #E7E3D4;
 }
 
-[data-theme="dark"] .dark\:bg-dark-varient {
-  /* --tw-bg-opacity: 1; */
-  background-color: #1E002B!important;
+[data-theme="dark"] .dark\:bg-fig {
   border-style: solid;
   border-width: 2px;
   border-color: #331e3f;
+}
+
+[data-theme="light"] .dark\:bg-fig {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #cccccc;
 }
 
 .docusaurus-highlight-code-line {
