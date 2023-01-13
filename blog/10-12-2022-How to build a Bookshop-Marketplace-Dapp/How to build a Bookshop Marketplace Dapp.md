@@ -2,10 +2,10 @@
 title: How to Build a Bookshop Marketplace Dapp
 description: Learn how to build a bookshop marketplace platform on celo blockchain
 authors:
-- name: Tevin Isaac
-    title: Blockchain Developer, Dacade Evangelist
-    url: <https://github.com/Tevin-Isaac>
-    image_url: <https://github.com/Tevin-Isaac.png>
+    - name: Tevin Isaac
+        title: Blockchain Developer, Dacade Evangelist
+        url: <https://github.com/Tevin-Isaac>
+        image_url: <https://github.com/Tevin-Isaac.png>
 tags: [solidity]
 hide_table_of_contents: true
 slug: /tutorials/How to build a Bookshop Marketplace Dapp
