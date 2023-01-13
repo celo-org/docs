@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
+    description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account.',
+    preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
+    website: '/blog/tutorials/buyme-a-coffee-android-app-using-the-celo-java-sdk',
+    tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
+  },
+  {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
