@@ -1406,7 +1406,7 @@ const Users: User[] = [
     description: 'How to Minting your ERC1155 Token on Celo using Remix',
     preview: require('./showcase/intermediate/how-to-mint-your-erc1155-nft-on-celo-with-remix.png'),
     website: 'blog/tutorials/how-to-mint-your-erc1155-nft-on-celo-with-remix',
-    tags: ['intermediate', 'hardhat'],
+    tags: [celo, intermediate, celosage, deploy, smartcontract, solidity, tokens, ipfs, remix],
   },
   {
     title: 'The Celo Extension Wallet',
