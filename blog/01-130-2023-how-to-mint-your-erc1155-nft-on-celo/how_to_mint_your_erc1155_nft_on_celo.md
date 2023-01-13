@@ -7,7 +7,7 @@ authors:
     title: Software Engineer, Technical writer @Celo Foundation
     url: https://github.com/Julius170
     image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
-tags: [celo, intermediate, celosage, deploy, smartcontract, solidity, tokens, ipfs]
+tags: [celo, intermediate, celosage, deploy, smartcontract, solidity, tokens, ipfs, remix]
 hide_table_of_contents: true
 slug: /tutorials/how-to-mint-your-erc1155-nft-on-celo-with-remix
 ---
