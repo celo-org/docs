@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
@@ -41,6 +42,20 @@ export default function HomePage(): JSX.Element {
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CeloOrg" />
+        <meta name="twitter:title" content="Celo Documentation" />
+        <meta
+          name="twitter:description"
+          content="Build decentralized applications that create the conditions for
+              prosperity — for everyone."
+        />
+        <meta
+          name="twitter:image"
+          content="https://github.com/celo-org/docs/blob/main/static/img/preview.png?raw=true"
+        />
+      </Head>
       <main className="margin-vert--lg max-w-7xl mx-auto px-4">
         <section className="w-full flex md:flex-row flex-col items-center px-2 md:px-10">
           <div className="md:w-1/2 w-full">
@@ -88,7 +103,9 @@ export default function HomePage(): JSX.Element {
 
         {/* Section 2 */}
         <section className="mt-12">
-          <div className="text-3xl font-bold mx-2">Explore Providers and Frameworks</div>
+          <div className="text-3xl font-bold mx-2">
+            Explore Providers and Frameworks
+          </div>
           <div className="px-2 grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-4 mt-8">
             <a
               href="https://docs.infura.io/infura/"
@@ -141,9 +158,7 @@ export default function HomePage(): JSX.Element {
 
         {/* Section 3 */}
         <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
-          <span className="text-3xl font-bold">
-            Start Your Journey
-          </span>
+          <span className="text-3xl font-bold">Start Your Journey</span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
               href="https://celo.org/developers/faucet"
