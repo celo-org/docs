@@ -30,6 +30,7 @@ This is a list of what we’ll cover 🗒
 - ✅ **Step 2:** Write project code
 - ✅ **Step 3:** Configure deployment settings
 - ✅ **Step 4:** Deploy your Contract
+- ✅ **Step 5:** Integration with frontend
 
 ## **Step 1:** Project setup
 First, we will create a new directory for our project. Open your terminal and run the following command to create a new directory called `escrow-nft` and change directory to it.
@@ -572,11 +573,34 @@ brownie run scripts/main.py --network celo-mainnet
 result if the deployment is successful
 ![brownie run](images/4.png)
 
+## **Step 5:** Integration with frontend
+Now that we have deployed our smart contract to the blockchain, we need to integrate it with our frontend. You can clone the frontend we have created for this tutorial. Use the following command to clone the frontend.
+
+```bash
+# Clone the frontend
+git clone https://github.com/yafiabiyyu/CeloSageFE.git
+
+# Go to the frontend directory
+cd CeloSageFE
+
+# Install the dependencies
+npm install --save
+```
+After cloning the frontend, we need to update the `src/utils/contract.tsx`, You need to update the contract address and ABI. You can get the contract address from the deployment result and you can get the ABI from the brownie project folder `build/contracts/escrowNFT.json`.
+
+after updating the contract address and ABI, You can run the frontend using the following command.
+
+```bash
+npm start
+```
+result if the frontend is running successfully
+![frontend result](images/5.png)
+
 ## Conclusion
 In this tutorial, we have learned how to create an escrow smart contract using Solidity and Brownie. We have also learned how to deploy the smart contract to the Celo blockchain.
 
 ## Next Steps
-For your next steps, you can try to create a frontend for your smart contract. You can also try to create a marketplace smart contract where you can list your NFTs for sale.
+For your next steps, if you a python developer and want to learn how to create a smart contract using python, you can check about vyper. Vyper is a python-based smart contract programming language. You can check the [Vyper documentation](https://vyper.readthedocs.io/en/stable/) to learn more about Vyper.
 
 ## About the Author
 I am a blockchain and crypto enthusiast. I am also a software engineer. I love to learn new things and share my knowledge with others. You can find me on [GitHub](https://github.com/yafiabiyyu)) and [LinkedIn](https://www.linkedin.com/in/abiyyuyafi/).
