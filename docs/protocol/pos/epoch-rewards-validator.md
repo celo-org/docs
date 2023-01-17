@@ -7,7 +7,7 @@ description: Overview of epoch rewards for Validators and Validator Groups.
 
 Overview of epoch rewards for Validators and Validator Groups.
 
-___
+---
 
 The protocol aims to incentivize validator uptime performance and penalize past poor behavior in future rewards, while ensuring that payments are economically reasonable in size independent of fluctuations of the price of CELO.
 

@@ -5,7 +5,7 @@ description: How to migrate from v1 to v2 ContractKit suite of packages and make
 
 How to migrate from v1 to v2 of the Celo SDK suite of packages and make use of their latest features.
 
-___
+---
 
 ## Why v2?
 
@@ -33,7 +33,7 @@ The prize of no longer needing a full `kit` is that it became possible to create
 
 ## Get Started
 
-Upgrade your project packages to the latest (in this case release beta, but anything over 2 will work when it's out of beta).  For example, with ContractKit and Celo utils:
+Upgrade your project packages to the latest (in this case release beta, but anything over 2 will work when it's out of beta). For example, with ContractKit and Celo utils:
 
 `yarn add @celo/contractkit@beta @celo/utils@beta`
 
@@ -41,7 +41,7 @@ If you are directly importing any other `@celo/*` packages, upgrade them as well
 
 If you need them, append `@celo/phone-utils@beta` `@celo/cryptographic-utils@beta`.
 
-*(see section on breaks in [@celo/utils](#celoutils) to know if you need them)*
+_(see section on breaks in [@celo/utils](#celoutils) to know if you need them)_
 
 ## Breaking changes
 
@@ -53,7 +53,6 @@ Because of how we publish packages, all packages will be upgraded to v2. However
 ### @celo/contractkit
 
 Most changes are about eliminating the need to construct an entire kit to use other classes and functions.
-
 
 #### AddressRegistry
 
@@ -84,23 +83,21 @@ The `WrapperCache` takes care of this while constructing them and most likely th
 
 `authorizeValidatorSigner` method now requires a `ValidatorsWrapper` be passed in as final argument.
 
-*v1*
+_v1_
 
 ```ts
-const accountsInstance = await kit.contracts.getAccountsWrapper()
+const accountsInstance = await kit.contracts.getAccountsWrapper();
 
-accountsInstance.authorizeValidatorSigner(signer, sig)
+accountsInstance.authorizeValidatorSigner(signer, sig);
 ```
 
-*v2*
+_v2_
 
 ```ts
+const accountsInstance = await kit.contracts.getAccountsWrapper();
+const validatorsInstance = await kit.contracts.getValidatorsWrapper();
 
-const accountsInstance = await kit.contracts.getAccountsWrapper()
-const validatorsInstance = await kit.contracts.getValidatorsWrapper()
-
-accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
-
+accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance);
 ```
 
 ##### AttestationsWrapper
@@ -110,16 +107,14 @@ accountsInstance.authorizeValidatorSigner(signer, sig, validatorsInstance)
 These functions now require an array of fee payable token addresses. You can get these from the CeloTokens class, the Registry, or Token Contracts
 
 ```typescript
-const celoTokens = kit.celoTokens
-const eachTokenAddress = await celoTokens.getAddresses()
-const addresses = Object.values(eachTokenAddress)
+const celoTokens = kit.celoTokens;
+const eachTokenAddress = await celoTokens.getAddresses();
+const addresses = Object.values(eachTokenAddress);
 
-AttestationsWrapper.getConfig(addresses)
+AttestationsWrapper.getConfig(addresses);
 // OR
-AttestationsWrapper.getHumanReadableConfig(addresses)
-
+AttestationsWrapper.getHumanReadableConfig(addresses);
 ```
-
 
 #### Web3ContractCache
 

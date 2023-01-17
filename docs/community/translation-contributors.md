@@ -7,7 +7,7 @@ description: Join a community of developers, designers, dreamers, and doers buil
 
 How to contribute to the Celo community as a translator.
 
-___
+---
 
 ## Who are Translation Contributors?
 
@@ -15,11 +15,11 @@ Translators support the community expanding Celo to non-English speaking communi
 
 ## How to Contribute
 
-* Go to [https://celo.crowdin.com/](https://celo.crowdin.com/)
-* Create an account
-* Start translating!
-* Submit questions with Crowdin Messages
-* Translation request form
+- Go to [https://celo.crowdin.com/](https://celo.crowdin.com/)
+- Create an account
+- Start translating!
+- Submit questions with Crowdin Messages
+- Translation request form
 
 :::tip
 

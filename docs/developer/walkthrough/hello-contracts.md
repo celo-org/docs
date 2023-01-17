@@ -1,5 +1,5 @@
 ---
-title: 'Deploy a Contract on Celo (local node)'
+title: "Deploy a Contract on Celo (local node)"
 description: How to deploy your own smart contracts onto Celo from a local node.
 ---
 
@@ -7,13 +7,14 @@ description: How to deploy your own smart contracts onto Celo from a local node.
 
 How to deploy your own smart contracts onto a Celo local node.
 
-___
+---
 
 :::tip
 
 As Celo is fully EVM compliant, we inherit the rich developer ecosystem and tooling of the Ethereum community. We will be deploying a typical hello world smart contract onto the Alfajores testnet with typical Ethereum tools like Truffle and Ganache.
 
 :::
+
 ## Setup
 
 This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup (Node.js v12.x). If so, you can install truffle with:

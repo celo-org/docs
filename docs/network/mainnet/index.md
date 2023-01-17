@@ -7,7 +7,7 @@ description: Collection of resources to get started with Celo Mainnet (Celo's pr
 
 Collection of resources to get started with Celo **Mainnet** (Celo's production network).
 
-___
+---
 
 :::note
 
@@ -20,6 +20,7 @@ Celo Mainnet was previously known as the Release Candidate 1 network.
 Please refer to [Key Concepts](/overview#background-and-key-concepts) for background on blockchains and an explanation of terms used in the section.
 
 :::
+
 ## Useful links
 
 - [Mainnet Validator Explorer](https://validators.celo.org/) - to view the current status of Validator elections

@@ -2,17 +2,18 @@
 title: Celo Stability Fees
 description: Overview of stability fee parameters, timing, frequency, amounts, management, and updates.
 ---
+
 # Stability Fees
 
 Overview of stability fee parameters, timing, frequency, amounts, management, and updates.
 
-___
+---
 
 ### Parameters Governing the Stability Fee
 
 `inflationPeriod` how long to wait between rounds of applying inflation
 
-`inflationRate` the multiplier by which the inflation factor is adjusted per `inflationPeriod` 
+`inflationRate` the multiplier by which the inflation factor is adjusted per `inflationPeriod`
 
 ### Timing, Frequency, and Amount of Fee
 

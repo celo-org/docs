@@ -2,13 +2,14 @@
 title: Celo DAppKit
 description: Introduction to DAppKit and resources to help you gets started.
 ---
+
 # DAppKit
 
 import PageRef from '@components/PageRef'
 
 Introduction to DAppKit and resources to help you gets started.
 
-___
+---
 
 :::warning
 
