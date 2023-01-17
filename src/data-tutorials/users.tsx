@@ -1413,7 +1413,21 @@ const Users: User[] = [
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: ['intermediate', 'hardhat'],
+    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract'],
+  },
+  {
+    title: 'Unit Testing with Solidity and Truffle',
+    description: 'How to write unit testing for smart contracts with Truffle.',
+    preview: require('./showcase/beginner/how-to-write-unit-testing-for-contracts-with-truffle.png'),
+    website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-truffle',
+    tags: ['intermediate', 'truffle', 'smartcontract', 'celosage'],
+  },
+  {
+    title: 'Proof Of Stack Consensus',
+    description: 'A Deep Dive into Celo Proof of Stake Consensus.',
+    preview: require('./showcase/beginner/a-deep-dive-into-celo-proof-of-stake-consensus.png'),
+    website: 'blog/tutorials/a-deep-dive-into-celo-proof-of-stake-consensus',
+    tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
   },
   {
     title: 'Minting your ERC1155 Token on Celo',
