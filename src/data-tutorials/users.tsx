@@ -1416,6 +1416,13 @@ const Users: User[] = [
     tags: ['intermediate', 'hardhat'],
   },
   {
+    title: 'Minting your ERC1155 Token on Celo',
+    description: 'How to Minting your ERC1155 Token on Celo using Remix',
+    preview: require('./showcase/intermediate/how-to-mint-your-erc1155-nft-on-celo-with-remix.png'),
+    website: 'blog/tutorials/how-to-mint-your-erc1155-nft-on-celo-with-remix',
+    tags: ['celo', 'intermediate', 'celosage', 'solidity', 'erc1155'],
+  },
+  {
     title: 'The Celo Extension Wallet',
     description: 'How To Download and Test The Celo Extension Wallet on Your Browser.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
