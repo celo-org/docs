@@ -951,6 +951,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'react', 'valora', 'walletconnect'],
   },
   {
+    title: 'Create an Escrow NFT Platform on Celo with Python',
+    description: 'Learn how to create an escrow NFT platform on Celo with Eth-Brownie Python',
+    preview: require('./showcase/intermediate/create-an-escrow-nft-platform-on-celo-with-python.png'),
+    website: '/blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python',
+    tags: ['intermediate','nft'],
+  },
+  {
     title: 'Use onchain randomness',
     description: 'Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.',
     preview: require('./showcase/intermediate/use-on-chain-randomness.png'),
