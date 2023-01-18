@@ -9,12 +9,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-varient": "#1f2937",
-        "light-varient": "#E5E7EB",
-        "darker-varient": "#111827",
-        "lighter-varient": "#F3F4F6",
+        /** primary */
+        "prosperity": "#FCFF52",
+        "forest": "#476520",
+        /** base */
+        "gypsum": "#FCF6F1",
+        "sand": "#E7E3D4",
+        "wood": "#655947",
+        "fig": "#1E002B",
+        /** functional */
+        "snow": "#FFFFFF",
+        "onyx": "#CCCCCC",
+        "success": "#329F3B",
+        "error": "#E70532",
+        "disabled": "#9B9B9B",
+        /** accent */
+        "sky": "#7CC0FF",
+        "citrus": "#FF9A51",
+        "lotus": "#FFA3EB",
+        "lavender": "#B490FF"
       },
     },
   },
-  plugins: [],
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ]
 };

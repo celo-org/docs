@@ -5,7 +5,7 @@ description: How to bridge from Ethereum, Polygon, and Solana to Celo.
 
 # Celo Bridges
 
-How to bridge assets from Ethereum, Polygon, and Solana to Celo.
+How to bridge assets from Ethereum, Polygon, Solana, and others to Celo.
 
 ---
 
@@ -19,15 +19,13 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 :::
 
-- [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC)
-- [Moss](https://bridge.moss.earth/)
+- [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
 - [Wormhole](https://www.portalbridge.com/#/transfer)
-
-- [Optics Bridge](/protocol/bridge/optics)
-  - Optics Web UIs
-    - [cLabs Optics Bridge](https://optics.app)
-      - View the tutorial: [en](/protocol/bridge/optics-gui), [zh-cn](/protocol/bridge/optics-gui-zh-cn), [kr](/protocol/bridge/optics-gui-kr)
-    - [Ubeswap Optics Web UI](https://app.ubeswap.org/#/bridge)
-  - Manually Using Etherscan
-    - [Bridge Native Tokens via Etherscan](/protocol/bridge/etherscan-native-asset)
-    - [Bridge ERC-20 Tokens via Etherscan](/protocol/bridge/etherscan-token)
+- [Hyperlane](https://www.hyperlane.xyz)
+- [Layer Zero](https://layerzero.network)
+- [Orbit Bridge](https://bridge.orbitchain.io)
+- [Celer Network](https://cbridge.celer.network/1/10/WETH)
+- [Axelar Network](https://axelar.network)
+- [Multichain (Previously Anyswap)](https://multichain.org)
+- [Moss](https://bridge.moss.earth)
+- [Optics](https://optics.app)
