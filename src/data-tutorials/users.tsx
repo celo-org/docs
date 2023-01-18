@@ -804,6 +804,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'Pros and cons of using Celo API to create Defi applications',
+    description: ' A foray in to building on Celo using Celo API',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-api',
+    tags: ['beginner', 'foundation'],
+  },
+  {
     title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
