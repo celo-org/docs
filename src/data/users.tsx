@@ -114,6 +114,15 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#a44fb7",
   },
 
+  refi: {
+    label: translate({ message: "ReFi" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.refi.description",
+    }),
+    color: "#476520",
+  },
+
   earn: {
     label: translate({ message: "Earn" }),
     description: translate({
@@ -1105,7 +1114,7 @@ const Users: User[] = [
     website: 'https://www.gainforest.earth/',
     source: 'https://github.com/GainForest',
     tags: ['refi'],
-  },
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.

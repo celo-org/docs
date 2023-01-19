@@ -26,6 +26,12 @@
   "showcase.tag.defi.description": {
     "message": ""
   },
+  "ReFi": {
+    "message": "ReFi"
+  },
+  "showcase.tag.refi.description": {
+    "message": ""
+  },
   "Earn": {
     "message": "Earn"
   },
