@@ -1254,7 +1254,7 @@ const Users: User[] = [
   {
     title: 'Build an On-Chain Puzzle Game on Celo',
     description: 'Learn how to build a On-Chain Puzzle Game on Celo using Solidity and Hardhat.',
-    // preview: require('./showcase/beginner/beginner-tutorials.png'),
+    preview: require('./showcase/intermediate/on-chain-puzzle-game.png'),
     website: '/blog/tutorials/build-an-on-chain-puzzle-game-on-celo',
     tags: ['celosage', 'intermediate', 'solidity', 'hardhat'],
   },
