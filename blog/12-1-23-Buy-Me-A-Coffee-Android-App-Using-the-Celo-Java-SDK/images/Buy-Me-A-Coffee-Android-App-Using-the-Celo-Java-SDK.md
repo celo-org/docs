@@ -918,8 +918,6 @@ System.out.println( "Exchange Hash" + sellTxHash);
 To have access to the full codebase, here is the link to the project repo on [github](https://github.com/gconnect/Buyme-A-Coffee-Celo-Dapp).
 
 ## About the Author​
-Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on Linkedin and Github.
-
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
 ## References​
