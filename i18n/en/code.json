@@ -38,9 +38,6 @@
   "showcase.tag.wallets.description": {
     "message": ""
   },
-  "Celo Ecosystem Showcase": {
-    "message": "Celo Ecosystem Showcase"
-  },
   "List of decentralized applications and tools in the Celo ecosystem.": {
     "message": "List of decentralized applications and tools in the Celo ecosystem."
   },
@@ -475,5 +472,614 @@
   "theme.Playground.liveEditor": {
     "message": "Live Editor",
     "description": "The live editor label of the live codeblocks"
+  },
+  "Favorite": {
+    "message": "Favorite"
+  },
+  "showcase.tag.favorite.description": {
+    "message": ""
+  },
+  "Developers": {
+    "message": "Developers"
+  },
+  "showcase.tag.developers.description": {
+    "message": ""
+  },
+  "Integrations": {
+    "message": "Integrations"
+  },
+  "showcase.tag.integrations.description": {
+    "message": ""
+  },
+  "Validators": {
+    "message": "Validators"
+  },
+  "showcase.tag.validators.description": {
+    "message": ""
+  },
+  "Celo Documentation": {
+    "message": "Celo Documentation"
+  },
+  "Build decentralized applications that create the conditions for prosperity — for everyone.": {
+    "message": "Build decentralized applications that create the conditions for prosperity — for everyone."
+  },
+  "Getting started": {
+    "message": "Getting started"
+  },
+  "Foundation": {
+    "message": "Foundation"
+  },
+  "showcase.tag.foundation.description": {
+    "message": ""
+  },
+  "Celo Sage": {
+    "message": "Celo Sage"
+  },
+  "showcase.tag.celosage.description": {
+    "message": ""
+  },
+  "Figment": {
+    "message": "Figment"
+  },
+  "showcase.tag.figment.description": {
+    "message": ""
+  },
+  "Dacade": {
+    "message": "Dacade"
+  },
+  "showcase.tag.dacade.description": {
+    "message": ""
+  },
+  "Advanced": {
+    "message": "Advanced"
+  },
+  "showcase.tag.advanced.description": {
+    "message": ""
+  },
+  "Airdrop": {
+    "message": "Airdrop"
+  },
+  "showcase.tag.airdrop.description": {
+    "message": ""
+  },
+  "Android": {
+    "message": "Android"
+  },
+  "showcase.tag.android.description": {
+    "message": ""
+  },
+  "Beginner": {
+    "message": "Beginner"
+  },
+  "showcase.tag.beginner.description": {
+    "message": ""
+  },
+  "Celo": {
+    "message": "Celo"
+  },
+  "showcase.tag.celo.description": {
+    "message": ""
+  },
+  "Celo Wallet": {
+    "message": "Celo Wallet"
+  },
+  "showcase.tag.celowallet.description": {
+    "message": ""
+  },
+  "CLI": {
+    "message": "CLI"
+  },
+  "showcase.tag.cli.description": {
+    "message": ""
+  },
+  "Code Playground": {
+    "message": "Code Playground"
+  },
+  "showcase.tag.codeplayground.description": {
+    "message": ""
+  },
+  "Composer": {
+    "message": "Composer"
+  },
+  "showcase.tag.composer.description": {
+    "message": ""
+  },
+  "ContractKit": {
+    "message": "ContractKit"
+  },
+  "showcase.tag.contractkit.description": {
+    "message": ""
+  },
+  "Contribute": {
+    "message": "Contribute"
+  },
+  "showcase.tag.contribute.description": {
+    "message": ""
+  },
+  "Crowdfunding": {
+    "message": "Crowdfunding"
+  },
+  "showcase.tag.crowdfunding.description": {
+    "message": ""
+  },
+  "cUSD": {
+    "message": "cUSD"
+  },
+  "showcase.tag.cusd.description": {
+    "message": ""
+  },
+  "DAO": {
+    "message": "DAO"
+  },
+  "showcase.tag.dao.description": {
+    "message": ""
+  },
+  "Dapp": {
+    "message": "Dapp"
+  },
+  "showcase.tag.dapp.description": {
+    "message": ""
+  },
+  "Dappstarter": {
+    "message": "Dappstarter"
+  },
+  "showcase.tag.dappstarter.description": {
+    "message": ""
+  },
+  "Deploy": {
+    "message": "Deploy"
+  },
+  "showcase.tag.deploy.description": {
+    "message": ""
+  },
+  "erc1155": {
+    "message": "erc1155"
+  },
+  "showcase.tag.erc1155.description": {
+    "message": ""
+  },
+  "ERC20": {
+    "message": "ERC20"
+  },
+  "showcase.tag.erc20.description": {
+    "message": ""
+  },
+  "ERC721": {
+    "message": "ERC721"
+  },
+  "showcase.tag.erc721.description": {
+    "message": ""
+  },
+  "flutter": {
+    "message": "flutter"
+  },
+  "showcase.tag.flutter.description": {
+    "message": ""
+  },
+  "Graph": {
+    "message": "Graph"
+  },
+  "showcase.tag.graph.description": {
+    "message": ""
+  },
+  "Hardhat": {
+    "message": "Hardhat"
+  },
+  "showcase.tag.hardhat.description": {
+    "message": ""
+  },
+  "HTML": {
+    "message": "HTML"
+  },
+  "showcase.tag.html.description": {
+    "message": ""
+  },
+  "Intermediate": {
+    "message": "Intermediate"
+  },
+  "showcase.tag.intermediate.description": {
+    "message": ""
+  },
+  "IPFS": {
+    "message": "IPFS"
+  },
+  "showcase.tag.ipfs.description": {
+    "message": ""
+  },
+  "Javascript": {
+    "message": "Javascript"
+  },
+  "showcase.tag.javascript.description": {
+    "message": ""
+  },
+  "Keystores": {
+    "message": "Keystores"
+  },
+  "showcase.tag.keystores.description": {
+    "message": ""
+  },
+  "Ledger": {
+    "message": "Ledger"
+  },
+  "showcase.tag.ledger.description": {
+    "message": ""
+  },
+  "Material UI": {
+    "message": "Material UI"
+  },
+  "showcase.tag.material-ui.description": {
+    "message": ""
+  },
+  "Metamask": {
+    "message": "Metamask"
+  },
+  "showcase.tag.metamask.description": {
+    "message": ""
+  },
+  "Mint": {
+    "message": "Mint"
+  },
+  "showcase.tag.mint.description": {
+    "message": ""
+  },
+  "Mobile": {
+    "message": "Mobile"
+  },
+  "showcase.tag.mobile.description": {
+    "message": ""
+  },
+  "Nextjs": {
+    "message": "Nextjs"
+  },
+  "showcase.tag.nextjs.description": {
+    "message": ""
+  },
+  "NFT": {
+    "message": "NFT"
+  },
+  "showcase.tag.nft.description": {
+    "message": ""
+  },
+  "Nodejs": {
+    "message": "Nodejs"
+  },
+  "showcase.tag.nodejs.description": {
+    "message": ""
+  },
+  "Obervable": {
+    "message": "Obervable"
+  },
+  "showcase.tag.observable.description": {
+    "message": ""
+  },
+  "Open Zeppelin": {
+    "message": "Open Zeppelin"
+  },
+  "showcase.tag.openzeppelin.description": {
+    "message": ""
+  },
+  "Oracle": {
+    "message": "Oracle"
+  },
+  "pinata": {
+    "message": "pinata"
+  },
+  "showcase.tag.pinata.description": {
+    "message": ""
+  },
+  "Progressive": {
+    "message": "Progressive"
+  },
+  "showcase.tag.progressive.description": {
+    "message": ""
+  },
+  "Randomness": {
+    "message": "Randomness"
+  },
+  "showcase.tag.randomness.description": {
+    "message": ""
+  },
+  "React": {
+    "message": "React"
+  },
+  "showcase.tag.react.description": {
+    "message": ""
+  },
+  "React Native": {
+    "message": "React Native"
+  },
+  "showcase.tag.reactnative.description": {
+    "message": ""
+  },
+  "Remix": {
+    "message": "Remix"
+  },
+  "showcase.tag.remix.description": {
+    "message": ""
+  },
+  "Remote": {
+    "message": "Remote"
+  },
+  "showcase.tag.remote.description": {
+    "message": ""
+  },
+  "SDK": {
+    "message": "SDK"
+  },
+  "showcase.tag.sdk.description": {
+    "message": ""
+  },
+  "Smart Contract": {
+    "message": "Smart Contract"
+  },
+  "showcase.tag.smartcontract.description": {
+    "message": ""
+  },
+  "Solidity": {
+    "message": "Solidity"
+  },
+  "showcase.tag.solidity.description": {
+    "message": ""
+  },
+  "Sourcify": {
+    "message": "Sourcify"
+  },
+  "showcase.tag.sourcify.description": {
+    "message": ""
+  },
+  "Subgraphs": {
+    "message": "Subgraphs"
+  },
+  "showcase.tag.subgraphs.description": {
+    "message": ""
+  },
+  "Tokens": {
+    "message": "Tokens"
+  },
+  "showcase.tag.tokens.description": {
+    "message": ""
+  },
+  "Truffle": {
+    "message": "Truffle"
+  },
+  "showcase.tag.truffle.description": {
+    "message": ""
+  },
+  "use-contractkit": {
+    "message": "use-contractkit"
+  },
+  "showcase.tag.usecontractkit.description": {
+    "message": ""
+  },
+  "Valora": {
+    "message": "Valora"
+  },
+  "showcase.tag.valora.description": {
+    "message": ""
+  },
+  "Verification": {
+    "message": "Verification"
+  },
+  "showcase.tag.verification.description": {
+    "message": ""
+  },
+  "Wallet Connect": {
+    "message": "Wallet Connect"
+  },
+  "showcase.tag.walletconnect.description": {
+    "message": ""
+  },
+  "Video": {
+    "message": "Video"
+  },
+  "showcase.tag.video.description": {
+    "message": ""
+  },
+  "Celo DApp Showcase": {
+    "message": "Celo DApp Showcase"
+  },
+  "🚀 Get started with Celo": {
+    "message": "🚀 Get started with Celo"
+  },
+  "Celo Development Tutorials": {
+    "message": "Celo Development Tutorials"
+  },
+  "Welcome to our curated list of community tutorials.": {
+    "message": "Welcome to our curated list of community tutorials."
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "home.general.knowMore": {
+    "message": "Know more"
+  },
+  "home.header.title": {
+    "message": "Build decentralized applications that create the conditions for prosperity — for everyone."
+  },
+  "home.section1.title": {
+    "message": "Learn How to Build with Celo"
+  },
+  "home.section1.box1": {
+    "message": "Get started with Celo Composer CLI"
+  },
+  "home.section1.box2": {
+    "message": "Learn smart contract development with us"
+  },
+  "home.section2.title": {
+    "message": "Explore Providers and Frameworks"
+  },
+  "home.section3.title": {
+    "message": "Start Your Journey"
+  },
+  "home.section3.faucet.title": {
+    "message": "Faucet"
+  },
+  "home.section3.faucet.description": {
+    "message": "Fund your Testnet Account."
+  },
+  "home.section3.celoScan.title": {
+    "message": "Celo Scan"
+  },
+  "home.section3.celoScan.description": {
+    "message": "Explore transactions on Celo Network."
+  },
+  "home.section3.celoBridge.title": {
+    "message": "Celo Bridge"
+  },
+  "home.section3.celoBridge.description": {
+    "message": "How to bridge assets accross chains."
+  },
+  "home.section3.wallets.title": {
+    "message": "Wallets"
+  },
+  "home.section3.wallets.description": {
+    "message": "Overview of ecosystem wallets."
+  },
+  "home.section3.celoLibraries.title": {
+    "message": "Celo Libraries & SDKs"
+  },
+  "home.section3.celoLibraries.description": {
+    "message": "Search our vast range of libraries and SDKs."
+  },
+  "home.section3.deploy.title": {
+    "message": "Deploy"
+  },
+  "home.section3.deploy.description": {
+    "message": "How to build and deploy a dApp."
+  },
+  "home.section4.title": {
+    "message": "Browse our Docs by Category"
+  },
+  "home.section4.understanding": {
+    "message": "Understanding Celo"
+  },
+  "home.section4.understanding.whatIs.title": {
+    "message": "What is Celo?"
+  },
+  "home.section4.understanding.whatIs.description": {
+    "message": "Learn the basics about our Layer 1 approach"
+  },
+  "home.section4.understanding.architecture.title": {
+    "message": "Architecture"
+  },
+  "home.section4.understanding.architecture.description": {
+    "message": "Overview of our stack and core contracts"
+  },
+  "home.section4.understanding.whitepapers.title": {
+    "message": "Whitepapers"
+  },
+  "home.section4.understanding.whitepapers.description": {
+    "message": "Dive in to understand our protocol and social impact"
+  },
+  "home.section4.understanding.protocol.title": {
+    "message": "Protocol"
+  },
+  "home.section4.understanding.protocol.description": {
+    "message": "Learn about our protocol and its relationship to Ethereum"
+  },
+  "home.section4.developer": {
+    "message": "Developer Tools"
+  },
+  "home.section4.developer.contractKit.title": {
+    "message": "ContractKit"
+  },
+  "home.section4.developer.contractKit.description": {
+    "message": "Explore Contractkit usage and features"
+  },
+  "home.section4.developer.reactCelo.title": {
+    "message": "React-celo"
+  },
+  "home.section4.developer.reactCelo.description": {
+    "message": "Access Contractkit in React applications"
+  },
+  "home.section4.developer.rainbowKitCelo.title": {
+    "message": "RainbowKit-celo"
+  },
+  "home.section4.developer.rainbowKitCelo.description": {
+    "message": "Add a wallet connection to dapps using Rainbowkit"
+  },
+  "home.section4.developer.celoCli.title": {
+    "message": "Celo CLI"
+  },
+  "home.section4.developer.celoCli.description": {
+    "message": "Interact with Celo Blockchain and its core smart contract"
+  },
+  "home.section4.build": {
+    "message": "Build with Celo"
+  },
+  "home.section4.build.celoComposer.title": {
+    "message": "Celo composer"
+  },
+  "home.section4.build.celoComposer.description": {
+    "message": "Build and deploy your dapp in under 5 minutes"
+  },
+  "home.section4.build.migrate.title": {
+    "message": "Migrate to Celo"
+  },
+  "home.section4.build.migrate.description": {
+    "message": "Review the compatibility of Celo and Ethereum"
+  },
+  "home.section4.build.oracles.title": {
+    "message": "Oracles"
+  },
+  "home.section4.build.oracles.description": {
+    "message": "Check out our on-chain Oracles"
+  },
+  "home.section4.validators": {
+    "message": "Validators"
+  },
+  "home.section4.validators.run.title": {
+    "message": "Run a Validator"
+  },
+  "home.section4.validators.run.description": {
+    "message": "Secure the network by running a validator"
+  },
+  "home.section4.validators.node.title": {
+    "message": "Node and Services"
+  },
+  "home.section4.validators.node.description": {
+    "message": "Connect to nodes and services"
+  },
+  "home.section4.validators.attestation.title": {
+    "message": "Attestation Service"
+  },
+  "home.section4.validators.attestation.description": {
+    "message": "How to run an attestation service"
+  },
+  "home.section5.title": {
+    "message": "Join Our Ecosystem"
+  },
+  "home.section5.box1": {
+    "message": "Create, Earn, and Grow as a Celo Sage Content Creator"
+  },
+  "home.section5.box2": {
+    "message": "Receive Funding to Build Your Blockchain Projects"
+  },
+  "home.section6.contribute.title": {
+    "message": "Contribute"
+  },
+  "home.section6.contribute.description": {
+    "message": "Our community includes a group of contributors that help develop, write, translate and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem."
+  },
+  "home.section6.ambassadors.title": {
+    "message": "Ambassadors"
+  },
+  "home.section6.ambassadors.description": {
+    "message": "Celo Ambassadors is a community driven initiative helping grow and support the Celo ecosystem of developers, designers, dreamers, and doers around the world."
+  },
+  "home.section6.connect.title": {
+    "message": "Connect with our community"
+  },
+  "home.section6.connect.description": {
+    "message": "Join and connect with our team and community of doers on discord. its a space where you can share and immerse yourself in a wealth of knowledge and information."
   }
 }

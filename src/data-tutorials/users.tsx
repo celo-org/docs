@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
+    description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account.',
+    preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
+    website: '/blog/tutorials/buyme-a-coffee-android-app-using-the-celo-java-sdk',
+    tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
+  },
+  {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
@@ -942,6 +949,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/celo-valora-and-walletconnect-v1.png'),
     website: '/blog/tutorials/celo-valora-and-walletconnect-v1',
     tags: ['intermediate','foundation', 'react', 'valora', 'walletconnect'],
+  },
+  {
+    title: 'Create an Escrow NFT Platform on Celo with Python',
+    description: 'Learn how to create an escrow NFT platform on Celo with Eth-Brownie Python',
+    preview: require('./showcase/intermediate/create-an-escrow-nft-platform-on-celo-with-python.png'),
+    website: '/blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python',
+    tags: ['intermediate','nft'],
   },
   {
     title: 'Use onchain randomness',
@@ -1399,7 +1413,28 @@ const Users: User[] = [
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: ['intermediate', 'hardhat'],
+    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract'],
+  },
+  {
+    title: 'Unit Testing with Solidity and Truffle',
+    description: 'How to write unit testing for smart contracts with Truffle.',
+    preview: require('./showcase/beginner/how-to-write-unit-testing-for-contracts-with-truffle.png'),
+    website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-truffle',
+    tags: ['intermediate', 'truffle', 'smartcontract', 'celosage'],
+  },
+  {
+    title: 'Proof Of Stack Consensus',
+    description: 'A Deep Dive into Celo Proof of Stake Consensus.',
+    preview: require('./showcase/beginner/a-deep-dive-into-celo-proof-of-stake-consensus.png'),
+    website: 'blog/tutorials/a-deep-dive-into-celo-proof-of-stake-consensus',
+    tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
+  },
+  {
+    title: 'Minting your ERC1155 Token on Celo',
+    description: 'How to Minting your ERC1155 Token on Celo using Remix',
+    preview: require('./showcase/intermediate/how-to-mint-your-erc1155-nft-on-celo-with-remix.png'),
+    website: 'blog/tutorials/how-to-mint-your-erc1155-nft-on-celo-with-remix',
+    tags: ['celo', 'intermediate', 'celosage', 'solidity', 'erc1155'],
   },
   {
     title: 'The Celo Extension Wallet',
