@@ -1,11 +1,13 @@
-import Link from "@docusaurus/Link";
+import BreadCrumbs from "@site/src/components/BreadCrumbs";
+import GoBackBtn from "@site/src/components/GoBackBtn";
 import Header from "@theme-original/BlogPostItem/Header";
 import React from "react";
 
 export default function HeaderWrapper(props) {
   return (
     <>
-      <Link href="/tutorials">Go back</Link>
+      <GoBackBtn />
+      <BreadCrumbs title="Hello world" />
       <Header {...props} />
     </>
   );
