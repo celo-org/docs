@@ -66,6 +66,7 @@ If a liquidity provider wishes to stop providing, they will receive the total fe
 Progressively upon upgrade to V2, Uniswaps introduced a more promising reward like a protocol fee which can be turned on and off by community vote. It sends a 0.05% and 0.30% trading fee to a designated Uniswap fund to finance future development.
 
 Uniswap V3 was recently deployed on the Celo blockchain to launch “Green Asset” liquidity pools and expand its reach to billions of smartphone users. As you may know, [Celo is a mobile-first DeFi platform](https://celo.org/) that provides fast, secure, and stable digital payment with near-zero fees. So this collaboration makes complete sense as Uniswap’s pools will be easily accessible by thousands of Celo users.
+
 ## **How Does Uniswap Work With Metamask?**
 
 A lot can be said about the almost endless possibilities that lie with Uniswap. One of the most intriguing topics would be how Uniswap integrates and optimizes Metamask for more functionality and limitless potential. But how do the two work?  What are the underlying reasons why Uniswap works seamlessly with a wallet like Metamask? Let's find out!
