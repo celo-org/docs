@@ -23,7 +23,7 @@ Uniswap is the largest functional decentralized exchange on the Ethereum blockch
 
 [*Image by Satheesh Sankaran*](https://www.flickr.com/photos/justanothercreativesoul/52389652739/in/photolist-2nPuEwP-2jom5cE-2kM7MDJ-2nUcpho-2mLaM9z-2k1yKbh-2nU77Uc-2nUcpEn-2mRb4ei-2mHorL4-2nU77VV-2nVoHJ9-2jvxxDR-2nVu8gR-2nNun9V-2nv7chU-2nAcp13-2nzDUaU-2nUb8kG-2kApGsP-2n7F2nX-2jHBF7S-2mzW7zL-2jEsXHo-2jvSReL-2jEW8jX-2kwzLQB-2jv5rzq-2kYyDym-2jG2TvP-2moUrw9-2kRMbnh-2nKi9je-2mf7oNa-2jJigBL-2jzTA8c-2nVsLU1-2nKj6eG-2mbkjWy-2jvSBBR-2n6Xswr-2jHBkNM-2nVtH2A-2nisvrE-2mbQERj-2jtRBs8-2m95iq7-2m23KUM-2mhwHkj-2nUcpj7)
 
-Uniswap is undoubtedly the largest functional decentralized exchange (DEX) on the Ethereum blockchain network. It implements a unique exchange protocol with benefits like trustless swapping ERC20 tokens between users –a contrast to the “traditional order book model.” 
+Uniswap is undoubtedly the largest functional decentralized exchange (DEX) on the Ethereum blockchain network. It implements a unique exchange protocol with benefits like trustless swapping ERC20 tokens between users –a contrast to the “traditional order book model”. 
 
 Ideally, Uniswap pools tokens into smart contracts that users can trade against—giving every user the option of swapping tokens, adding tokens to a pool (liquidity pool) while earning fees, and listing tokens on Uniswap.
 
@@ -61,7 +61,7 @@ For example, a contribution of $5,000 to a liquidity pool worth $50,000 means/yo
 
 ![](.\blog\23-12-22-how-uniswap-works\images\Defi 6.png)
 
-If a liquidity provider wishes to stop providing, they will receive the total fees they've earned from the reserve. After receiving their rewards, the tokens that keep a record of what the user owns are then destroyed. All the arrangements and protocols discussed are the basic framework of Uniswap's liquidity pool. 
+If a liquidity provider wishes to stop providing, they will receive the total fees they've earned from the reserve. After receiving their rewards, the tokens that keep a record of what the user owns are then destroyed. All the arrangements and protocols discussed are the basic framework of Uniswap's Liquidity Pool. 
 
 Progressively upon upgrade to V2, Uniswaps introduced a more promising reward like a protocol fee which can be turned on and off by community vote. It sends a 0.05% and 0.30% trading fee to a designated Uniswap fund to finance future development.
 
