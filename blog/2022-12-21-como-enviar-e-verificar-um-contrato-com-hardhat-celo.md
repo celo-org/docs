@@ -1,8 +1,9 @@
 ---
 title: Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo
 description: Aprenda como enviar e verificar um contrato inteligente na blockchain Celo
-tags: [solidity, portuguese, video, hardhat]
+tags: [celosage, solidity, video, hardhat]
 hide_table_of_contents: false
+slug: /tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo
 ---
 
 import YouTube from '@components/YouTube';

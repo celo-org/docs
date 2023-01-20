@@ -1331,7 +1331,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
     tags: ['intermediate', 'hardhat'],
   },
-  
+  {
+    title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
+    description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
+    preview: require(''),
+    website: 'blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo',
+    tags: ['celosage', 'solidity', 'video', 'hardhat'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
