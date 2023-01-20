@@ -1450,6 +1450,13 @@ const Users: User[] = [
     website: 'blog/tutorials/an-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
     tags: ['celosage'],
   },
+  {
+    title: 'Como criar uma carteira para a blockchain Celo',
+    description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
+    preview: require(''),
+    website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
+    tags: ['celosage', 'video', 'beginner'],
+  },
   
   /*
   Pro Tip: add your site in alphabetical order.
