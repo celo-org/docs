@@ -4,7 +4,7 @@ description: Deploy an Airdrop contract to Celo and claim ERC20 tokens using the
 authors:
   - name: ✍️ Jesse Sawa
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/a-boilerplate-guide-to-airdropping-on-celo"
 ---
 

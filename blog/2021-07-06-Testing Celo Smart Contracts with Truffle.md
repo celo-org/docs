@@ -4,7 +4,7 @@ description: We will learn how to use Truffle in order to test smart contracts o
 authors:
   - name: ✍️ Alex Reyes  ·  🔗 External
 tags: [figment, intermediate, nodejs, smart contract, truffle, javascript]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Testing Celo Smart Contracts with Truffle
