@@ -7,7 +7,7 @@ authors:
     url: https://github.com/Ishanpathak1
     image_url: https://github.com/ishanpathak1.png
 tags: [celosage, beginner]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: '/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons'
 ---
 

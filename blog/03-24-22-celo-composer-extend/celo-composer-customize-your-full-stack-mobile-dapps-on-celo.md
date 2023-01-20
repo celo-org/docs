@@ -4,7 +4,7 @@ description: Step-by-step guide to create a new custom dApp using the Celo Compo
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/celo-composer-customize-your-full-stack-mobile-dapps-on-celo"
 ---
 

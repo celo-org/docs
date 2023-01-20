@@ -7,7 +7,7 @@ authors:
   url: https://github.com/Tevin-Isaac
   image_url: https://github.com/Tevin-Isaac.png
 tags: [solidity]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-build-a-bookshop-marketplace-dapp
 ---
 

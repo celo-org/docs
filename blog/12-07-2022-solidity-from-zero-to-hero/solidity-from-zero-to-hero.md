@@ -4,7 +4,7 @@ description: In this article you will learn Solidity language.
 authors:
   - name: Oyeniyi Abiola Peace
 tags: [solidity]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/solidity-from-zero-to-Hero
 ---
 

@@ -6,7 +6,7 @@ authors:
 url: https://github.com/cjustinobi
 image_url: https://github.com/cjustinobi.png
 tags: [celosage, react, composer, contractkit, cli]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/overview-of-developer-tools-in-the-celo-ecosystem
 ---
 

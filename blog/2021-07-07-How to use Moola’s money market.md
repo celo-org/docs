@@ -4,7 +4,7 @@ description: This tutorial is a part of DeFi series where people can learn how t
 authors:
   - name: ✍️ Deepanshu Hooda  ·  🔗 External
 tags: [figment, beginner]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to use Moola’s money market

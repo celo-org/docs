@@ -4,7 +4,7 @@ description: Learn how to successfully set up a Celo Wallet with a React Native 
 authors:
   - name: ✍️ Segun Ogundipe & Emmanuel Oaikhenan  ·  🔗 External
 tags: [figment, intermediate, react native, nodejs]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to successfully connect to a Celo Wallet with a React Native DApp
