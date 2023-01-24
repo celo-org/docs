@@ -1450,7 +1450,14 @@ const Users: User[] = [
     website: 'blog/tutorials/an-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
     tags: ['celosage'],
   },
-  
+  {
+    title: 'Como Criar um Jogo de Roleta Russa na Blockchain Celo',
+    description: 'Aprenda como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.',
+    preview: require('./showcase/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo',
+    tags: ['advanced','celosage','smartcontract','video'],
+  },
+
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
