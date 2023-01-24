@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
+    title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
+    description: 'Explicar e construir um contract Factory na prática usando Remix',
+    preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
+    website: 'blog/tutorials/como-construir-e-realizar-deploy-de-contratos-Factory-no-blockchain-Celo',
+    tags: ['intermediate','celosage','solidity','smartcontract','video'],
+  },
+  {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
