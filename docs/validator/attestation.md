@@ -9,15 +9,13 @@ How to configure, run, and manage an attestation service as a Celo Validator.
 
 ---
 
-:::caution New update (as of March 2022)
+:::danger New update (as of January 2023)
 
-Please check the updated provider guidance to make sure your Attestation Service complies with 10DLC regulations in the US; in particular, look at: [Twilio](#verify-service-post-v140) and [Messagebird](#messagebird) configuration guidance below.
+Validators participating in the attestation protocol:
 
-:::
-
-:::tip
-
-Celo Validators are strongly encouraged to operate an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) instance. If you are a recipient of or considering applying to receive [votes from the Celo Foundation](/validator/celo-foundation-voting-policy), running a reliable Attestation Service is a requirement for eligibility.
+* may turn off their Attestation Service instances immediately including any full nodes and SMS API subscriptions (i.e. Twilio, Nexmo, and MessageBird) supporting them
+* should remain attestation signers on-chain 4 until Q1 2023 when a governance proposal will be voted on to make the Attestations contract read-only
+* more information on [forum post](https://forum.celo.org/t/validator-guidance-attestation-protocol-asv1-next-steps/4957)
 
 :::
 
