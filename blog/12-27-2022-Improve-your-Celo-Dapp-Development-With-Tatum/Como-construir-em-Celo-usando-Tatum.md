@@ -7,7 +7,7 @@ authors:
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, tatum, developers]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/como-construir-em-celo-usando-tatum
 ---
 

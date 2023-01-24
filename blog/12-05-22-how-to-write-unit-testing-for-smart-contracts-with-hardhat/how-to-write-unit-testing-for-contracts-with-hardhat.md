@@ -4,7 +4,7 @@ description: How to Write Unit Testing for Smart Contracts with Hardhat
 authors:
   - name: ✍️ Mayowa Julius
 tags: [hardhat]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-write-unit-testing-for-contracts-with-hardhat
 ---
 

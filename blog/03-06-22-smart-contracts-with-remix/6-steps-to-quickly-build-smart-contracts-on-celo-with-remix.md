@@ -4,7 +4,7 @@ description: How to create, deploy and interact with smart contracts on Celo tes
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix
 ---
 

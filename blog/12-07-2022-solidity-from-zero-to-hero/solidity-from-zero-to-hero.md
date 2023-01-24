@@ -4,8 +4,8 @@ description: In this article you will learn Solidity language.
 authors:
   - name: Oyeniyi Abiola Peace
 tags: [solidity]
-hide_table_of_contents: true
-slug: /tutorials/solidity-from-zero-to-hero
+hide_table_of_contents: false
+slug: /tutorials/solidity-from-zero-to-Hero
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png)

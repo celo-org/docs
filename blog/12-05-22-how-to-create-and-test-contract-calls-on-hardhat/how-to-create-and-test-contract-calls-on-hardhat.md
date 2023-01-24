@@ -4,7 +4,7 @@ description: How to Create and Test Contract Calls on Hardhat
 authors:
   - name: ✍️ Mayowa Julius
 tags: [hardhat]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-create-and-test-contract-calls-on-hardhat
 ---
 

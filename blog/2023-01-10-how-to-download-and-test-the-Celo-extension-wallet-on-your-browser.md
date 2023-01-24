@@ -6,8 +6,8 @@ authors:
 url: https://github.com/Southpaw0
 image_url:
 tags: [celosage, video]
-hide_table_of_contents: true
-slug: /tutorials/how-to-download-and-test-the-Celo-extension-wallet-on-your-browser
+hide_table_of_contents: false
+slug: /tutorials/how_to_download_and_test_the_Celo_extension_wallet_on_your_browser
 ---
 
 ![header](../src/data-tutorials/showcase/beginner/how-to-download-and-test-the-Celo-extension-wallet-on-your-browser.png)

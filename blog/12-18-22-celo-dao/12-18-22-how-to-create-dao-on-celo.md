@@ -4,7 +4,7 @@ description: Build your own DAO with on-chain governance
 authors:
   - name: Nikhil Bhintade
 tags: [celosage, intermediate, hardhat, solidity, dao]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/how-to-create-a-dao-on-celo"
 ---
 

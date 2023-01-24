@@ -7,8 +7,8 @@ authors:
     url: https://github.com/Brisa-Codes,
     image_url: https://avatars.githubusercontent.com/u/82726341?v=4
 tags: [celo, beginner]
-hide_table_of_contents: true
-slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more'
+hide_table_of_contents: false
+slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More'
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more.png)

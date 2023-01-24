@@ -24,7 +24,7 @@ Need to request technical content from a Celo Sage? Fill out the [content reques
 ## Why become a Celo Sage?
 
 - **Create:** Write blogs, documentation, videos, or designs to help developers build on Celo.
-- **Earn:** Receive bounties (Upto \$500) from your work, learn and earn for your contributions to the ecosystem.
+- **Earn:** Receive bounties (Up to 500 cUSD) from your work, learn and earn for your contributions to the ecosystem.
 - **Grow:** Work closely with members of the Celo Community to find new opportunities.
 
 ## What you'll create
@@ -45,11 +45,17 @@ View the [Celo Development Tutorials](/tutorials) for examples of our work.
 
 - **Submit application**: Complete the [application form](https://forms.gle/nhQfkXZygrb3YFRs9) to be considered for the program.
 - **Create content**: Suggest new ideas or pick up requests from our [public roadmap](https://trello.com/invite/b/IVRaj2QO/ATTI2d1247ea85d4c68a97451aefbcdd0e4f61AE76DC/celo-sage).
-- **Earn rewards**: Earn between $200-$500 by submitting approved content to our [GitHub](https://github.com/celo-org/docs).
+- **Earn rewards**: Earn between 200-500 cUSD by submitting approved content to our [GitHub](https://github.com/celo-org/docs).
+
+:::tip
+
+Reward amounts are determined before work begins and cannot be changed after getting started on the project. No more than 500 cUSD will be awarded for a project. Please keep this in mind when defining the scope of your work.
+
+:::
 
 ## Payments
 
-Payments are awarded in cUSD or CELO to your Wallet Address through [Gitcoin](https://gitcoin.co/) based on the activities you complete. These may either be paid per project or per length of engagement as defined in your project scope.
+Payments are awarded in cUSD to your Wallet Address based on the projects you complete. These may either be paid per project or per length of engagement as defined in your project scope.
 
 ## Additional Resources
 

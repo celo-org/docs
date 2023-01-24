@@ -4,7 +4,7 @@ description: Wormhole has enabled the Celo chain.
 authors:
   - name: ✍️ Harpal Jadeja
 tags: [bridge, celo, wormhole]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/bridging-token-to-and-from-celo-via-wormhole
 ---
 

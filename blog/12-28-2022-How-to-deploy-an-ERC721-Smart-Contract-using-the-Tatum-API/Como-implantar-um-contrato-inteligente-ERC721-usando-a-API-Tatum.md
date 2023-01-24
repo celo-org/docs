@@ -7,7 +7,7 @@ authors:
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, tatum, developers, ERC721]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum
 ---
 

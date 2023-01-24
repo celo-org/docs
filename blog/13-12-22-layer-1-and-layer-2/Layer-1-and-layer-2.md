@@ -4,8 +4,8 @@ description: In this tutorial, we will provide an introduction to the different 
 authors:
   - name: ✍️ Obafemi Joshua
 tags: [celo]
-hide_table_of_contents: true
-slug: '/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols'
+hide_table_of_contents: false
+slug: '/tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols'
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
