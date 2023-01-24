@@ -10,6 +10,8 @@ hide_table_of_contents: false
 slug: /tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dApp-on-celo
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
+
 ## 🌱 Introduction
 
 Welcome Developers, to the Step-by-Step Guide to Deploying your First Full-Stack Dapp on Celo! In this guide, we will walk you through the process of building and deploying a full-stack decentralized application (Dapp) on the Celo platform.

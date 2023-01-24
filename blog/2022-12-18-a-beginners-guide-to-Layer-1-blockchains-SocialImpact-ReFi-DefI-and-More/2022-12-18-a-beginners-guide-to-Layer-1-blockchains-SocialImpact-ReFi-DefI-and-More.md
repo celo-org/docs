@@ -11,6 +11,8 @@ hide_table_of_contents: false
 slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More'
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more.png)
+
 ## Introduction
 
 Blockchain technology has gained significant attention in recent years for its potential to revolutionize industries and change how we conduct transactions and exchange information. Blockchain technology can increase efficiency, reduce the risk of fraud, and give individuals and organizations greater control over their data.
@@ -122,18 +124,11 @@ A Software Developer, writer, community educator, and Country Ambassador at Celo
 
 ## References
 
-[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/)
-
-[https://docs.celo.org/general](https://docs.celo.org/general)
-
-[https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6](https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6)
-
-[https://docs.celo.org/protocol/identity/odis-domain](https://docs.celo.org/protocol/identity/odis-domain)
-
-[https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70](https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70)
-
-[http://medium.com/earthbanc](http://medium.com/earthbanc)
-
-[https://docs.impactmarket.com/](https://docs.impactmarket.com/)
-
-[https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html](https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html)
+- [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/)
+- [https://docs.celo.org/general](https://docs.celo.org/general)
+- [https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6](https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6)
+- [https://docs.celo.org/protocol/identity/odis-domain](https://docs.celo.org/protocol/identity/odis-domain)
+- [https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70](https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70)
+- [http://medium.com/earthbanc](http://medium.com/earthbanc)
+- [https://docs.impactmarket.com/](https://docs.impactmarket.com/)
+- [https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html](https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html)
