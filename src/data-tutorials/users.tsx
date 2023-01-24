@@ -735,7 +735,7 @@ const Users: User[] = [
   },
   {
     title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
-    description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account.',
+    description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee".',
     preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
     website: '/blog/tutorials/buyme-a-coffee-android-app-using-the-celo-java-sdk',
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
@@ -798,7 +798,7 @@ const Users: User[] = [
   },
   {
     title: 'How should you use Celo Blockchain',
-    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners. We will provide an overview of Celo and its ecosystem, as well as discuss the tools and resources available to help you get started. By the end of this tutorial, you will have a basic understanding of the Celo blockchain and how to use it for your development projects. Whether you are new to blockchain technology or an experienced developer, this tutorial will provide you with the knowledge you need to get started with Celo.',
+    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners.',
     preview: require('./showcase/beginner/Why-should-you-use-Celo-Blockchain.png'),
     website: '/blog/tutorials/Why-should-you-use-Celo-Blockchain',
     tags: ['celosage','celo'], 
