@@ -11,8 +11,6 @@ hide_table_of_contents: false
 slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More'
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more.png)
-
 ## Introduction
 
 Blockchain technology has gained significant attention in recent years for its potential to revolutionize industries and change how we conduct transactions and exchange information. Blockchain technology can increase efficiency, reduce the risk of fraud, and give individuals and organizations greater control over their data.
