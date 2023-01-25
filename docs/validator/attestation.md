@@ -13,7 +13,7 @@ How to configure, run, and manage an attestation service as a Celo Validator.
 
 Validators participating in the attestation protocol:
 
-* may turn off their Attestation Service instances immediately including any full nodes and SMS API subscriptions (i.e. Twilio, Nexmo, and MessageBird) supporting them
+* **may turn off their Attestation Service instances immediately** including any full nodes and SMS API subscriptions (i.e. Twilio, Nexmo, and MessageBird) supporting them
 * **should [remain attestation signers on-chain](https://docs.celo.org/validator/key-management/detailed#authorizing-an-attestation-signer) until Q1 2023** when a governance proposal will be voted on to make the Attestations contract read-only
 * more information on [forum post](https://forum.celo.org/t/validator-guidance-attestation-protocol-asv1-next-steps/4957)
 
