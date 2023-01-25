@@ -11,7 +11,7 @@ hide_table_of_contents: false
 slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More'
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more.png)
+![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more.png)
 
 ## Introduction
 

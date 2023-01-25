@@ -918,7 +918,7 @@ const Users: User[] = [
   {
     title: 'A beginners Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More',
     description: 'Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and its ecosystem.',
-    preview: require('./showcase/beginner/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more.png'),
+    preview: require('./showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more.png'),
     website: '/blog/tutorials/a-beginners-guide-to-Layer-1-blockchains-socialimpact-refi-defI-and-more',
     tags: ['celosage', 'celo', 'beginner'],
   },
