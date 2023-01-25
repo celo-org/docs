@@ -17,6 +17,7 @@ As the blockchain industry continues to evolve and grow, it's more important tha
 
 - Gain hands-on experience building on the Celo blockchain
 - Be part of a vibrant community of developers and contribute to the growth of the Celo ecosystem
+- Receive bounties (100 CUSD) weekly.
 - Learn about web3 development and stay ahead of the curve in the industry
 - Networking opportunities and job placement assistance upon completion of the program
 - Mentorship from industry experts to provide technical advice and career development
