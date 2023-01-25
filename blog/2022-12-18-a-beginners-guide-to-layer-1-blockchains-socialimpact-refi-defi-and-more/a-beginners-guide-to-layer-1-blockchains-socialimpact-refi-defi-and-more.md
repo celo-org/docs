@@ -2,7 +2,7 @@
 title: A beginner's Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More
 description: Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and it's ecosystem.
 authors:
-  - name: ✍️ Mukunde Brisa
+  - name: Mukunde Brisa
     title: Software Developer and Writer
     url: https://github.com/Brisa-Codes,
     image_url: https://avatars.githubusercontent.com/u/82726341?v=4
@@ -11,7 +11,7 @@ hide_table_of_contents: false
 slug: /tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more.png)
+![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi.png)
 
 ## Introduction
 
