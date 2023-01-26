@@ -1140,7 +1140,7 @@ export default Footer;
 ```
 
 ## AddCar.js
-
+This component is used to add a car to the smart contract. The convertToBool function is a helper function that is used to convert a string to boolean.
 ```js
 import { useState } from 'react';
 
@@ -1151,12 +1151,11 @@ const AddCar = props => {
     const [price, setPrice] = useState();
     const [isUsed, setIsUsed] = useState('false');
     const [description, setDescription] = useState('')
-    const [forRent, setForRent] = useState(false);
     const [forSale, setForSale] = useState(false);
 
     const submitHandler = (event) => {
         event.preventDefault();
-        props.addToCars(name, description, image, price, isUsed, forRent, forSale);
+        props.addToCars(name, description, image, price, isUsed, forSale);
         setName('');
         setImage('');
         setPrice('');
@@ -1191,16 +1190,6 @@ const AddCar = props => {
                             </div>
                             <div className="col-lg-6 form-group">
                                 <input type="number" placeholder="Price" required value = {price} onChange = {(e)=>setPrice(e.target.value)} />
-                            </div>
-                            <div className="col-lg-6 form-group">
-                                <select onChange = {(e)=>{
-                                    setForRent(convertToBool(e.target.value))
-                                    setForSale(!convertToBool(e.target.value))
-                                    }}>
-                                    <option>For Rent</option>
-                                    <option value = "true">True</option>
-                                    <option value = "false">False</option>
-                                </select>
                             </div>
                             <div className="col-lg-6 form-group">
                                 <select onChange = {(e)=>setIsUsed(convertToBool(e.target.value))}>
