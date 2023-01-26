@@ -104,6 +104,7 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#dfd545",
   },
 
+
   defi: {
     label: translate({ message: "DeFi" }),
     description: translate({
