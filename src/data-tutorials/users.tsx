@@ -797,6 +797,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'All you need to know about Celo to Ease your Web3 Development Journey you use Celo Blockchain',
+    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain the key features and benefits of using it for your web3 development projects. We will cover the basics of Celo and provide an overview of its technology and ecosystem, as well as discuss the tools and resources available to help you get started. By the end of this tutorial, you will have a better understanding of Celo and how it can support your web3 development journey. Whether you are just starting out or are an experienced developer, this tutorial will provide you with the knowledge you need to get started with Celo.',
+    preview: require('./showcase/beginner/Why-should-you-use-Celo-Blockchain.png'),
+    website: '/blog/tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-Journey',
+    tags: ['celosage','celo','remote','video'], 
+  },
+  {
     title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
