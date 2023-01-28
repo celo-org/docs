@@ -811,6 +811,13 @@ const Users: User[] = [
     tags: ['beginner', 'foundation', 'nft'],
   },
   {
+    title: 'Creating Smart Contracts For Liquidity Farming',
+    description: 'Users who own particular cryptocurrencies have the option of locking a portion of the asset in a smart contract.',
+    preview: require('./showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png'),
+    website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
+    tags: ['intermediate', 'foundation', 'celosage'],
+  },
+  {
     title: 'A Boilerplate guide to Airdropping on Celo',
     description: 'Deploy an Airdrop contract to Celo and claim ERC20 tokens using the web3 SDK.',
     preview: require('./showcase/intermediate/a-boilerplate-guide-to-airdropping-on-celo.png'),
