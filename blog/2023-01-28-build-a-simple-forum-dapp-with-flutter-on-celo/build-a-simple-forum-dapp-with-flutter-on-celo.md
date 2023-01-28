@@ -18,7 +18,7 @@ slug: /tutorials/build-a-simple-forum-dapp-with-flutter-on-celo
 
 In this tutorial, we're going to build a deployable smart contract and an accompanying Flutter widget to add comment threads to your apps.
 
-### Prerequisites
+### How the DAPP works
 
 Here's what we're aiming to build.
 
@@ -61,7 +61,7 @@ You can check out Celo Composer here [https://github.com/celo-org/celo-composer/
 
 To start our Flutter App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp. In other to do that you need to have Node set up on your PC and you can visit Node to get started. Run this on your terminal after setup Node.
 	
-```shell
+```bash
 npx @celo/celo-composer create
 ```
 
@@ -89,7 +89,7 @@ We will also need the following few things for our UI (Flutter):
  - A way to add a new comment
  - A way to receive updates about comments that have been added
 
-```javascript
+```solidity
 // SPDX-License-Identifier: MIT
 // ForumV1
 
@@ -159,7 +159,7 @@ To deploy, go to the deploy folder, open the 00-deploy.js file, and you will see
 
 Add the following code to the 00-deploy.js file
 
-```javascript
+```js
 await deploy(“ForumV1”, {
   from: deployer,
   args: [],
@@ -169,13 +169,13 @@ await deploy(“ForumV1”, {
 
 Then update the module.exports tags to include ForumV1 Contract like below.
 
-```json
+```js
 module.exports.tags = [..., "ForumV1];
 ```
 
 Deploy the Contracts by running the following commands on any terminal (make sure you are in the packages/hardhat directory)
 
-```shell
+```bash
 npx hardhat deploy –network alfajores
 ```
 
@@ -223,11 +223,11 @@ Then create a folder in the project folder directory lib and create a file named
 
 Run this in your terminal
 
-```shell
+```bash
 flutter pub run build_runner build
 ```
 or
-```shell
+```bash
 flutter pub run build_runner watch
 ```
 This will generate a dart file to represent our smart contract object named ```forumV1.g.dart```.
