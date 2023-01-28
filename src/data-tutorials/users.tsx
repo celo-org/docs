@@ -1516,7 +1516,7 @@ const Users: User[] = [
   {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
-    preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo'),
+    preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
     website: 'blog/tutorials/build-a-simple-forum-dapp-with-flutter-on-celo',
     tags: ['celosage'],
   },
