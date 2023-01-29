@@ -755,6 +755,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
+    title: 'Como criar uma carteira para a blockchain Celo',
+    description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
+    preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
+    tags: ['celosage', 'video', 'beginner'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
@@ -1449,13 +1456,6 @@ const Users: User[] = [
     preview: require('./showcase/beginner/beginner-tutorials.png'),
     website: 'blog/tutorials/an-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols',
     tags: ['celosage'],
-  },
-  {
-    title: 'Como criar uma carteira para a blockchain Celo',
-    description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
-    preview: require(''),
-    website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
-    tags: ['celosage', 'video', 'beginner'],
   },
   
   /*
