@@ -759,7 +759,7 @@ const Users: User[] = [
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
     website: 'blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo',
-    tags: ['celosage', 'solidity', 'video', 'hardhat'],
+    tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
   },
   {
     title: 'C# mobile App to display Celo NFTs',
