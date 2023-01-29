@@ -750,7 +750,7 @@ const Users: User[] = [
   {
     title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
     description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
-    preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png)'),
+    preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
     website: 'blog/tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix',
     tags: ['beginner','celosage','openzeppelin', 'solidity','smartcontract','video'],
   },
