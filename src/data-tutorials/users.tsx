@@ -750,7 +750,7 @@ const Users: User[] = [
   {
     title: 'Como Criar um Jogo de Roleta Russa na Blockchain Celo',
     description: 'Aprenda como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.',
-    preview: require('./showcase/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
+    preview: require('./showcase/advanced/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
     website: 'blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo',
     tags: ['advanced','celosage','smartcontract','video'],
   },
