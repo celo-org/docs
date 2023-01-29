@@ -10,6 +10,8 @@ hide_table_of_contents: false
 slug: /tutorials/how-to-create-interactive-nfts-on-celo
 ---
 
+![header](../src/data-tutorials/showcase/intermediate/how-to-create-interactive-nfts-on-celo.png)
+
 ## Introduction​
 
 NFTs have taken the market by storm, and the industry is now whopping billions of dollars.

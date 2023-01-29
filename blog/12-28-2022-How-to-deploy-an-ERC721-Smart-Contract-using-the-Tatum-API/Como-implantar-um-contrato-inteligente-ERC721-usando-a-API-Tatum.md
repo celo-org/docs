@@ -35,14 +35,11 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 - Criar uma conta no Tatum.io
 - Utilizar uma ferramenta para consulta de API como Postman
 
-
 ## Tutorial
 
 Confira no video como utilizar Tatum para realizar o deploy e mint de um NFT em Celo.
 
-[![Como  Implantar ERC721 em Celo usando Tatum](../../src/data-tutorials/showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum-thumb.jpg)](https://www.youtube.com/watch?v=7GKpSZL6irM)
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7GKpSZL6irM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Conclusão
 
