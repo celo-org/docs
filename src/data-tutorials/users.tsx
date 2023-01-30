@@ -888,6 +888,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'hardhat'],
   },
   {
+    title: 'How Uniswap Works',
+    description: 'In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain.',
+    preview: require('./showcase/beginner/how-uniswap-works.png'),
+    website: 'blog/tutorials/how-uniswap-works',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: 'How to become a Web3 Developer',
     description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
