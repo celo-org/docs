@@ -6,7 +6,7 @@ authors:
   title: Founder of Guizo Studios
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
-tags: [celo, solidity, developers, remix]
+tags: [celo, solidity, developers, remix, celosage]
 hide_table_of_contents: false
 slug: /tutorials/como-construir-e-realizar-deploy-de-contratos-Factory-no-blockchain-Celo
 ---
@@ -34,14 +34,11 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 
 - Criar duas contas na MetaMask usando a rede Alfajores da Celo
 
-
 ## Tutorial
 
 Confira no video como construir e realizar deploy de contratos Factory no blockchain Celo.
 
 [![Como construir e realizar deploy de contratos Factory no blockchain Celo](../../src/data-tutorials/showcase/intermediate/factory-contract.jpg)](https://youtu.be/FU7hXUmkBbc)
-
-
 
 ## Conclusão
 
