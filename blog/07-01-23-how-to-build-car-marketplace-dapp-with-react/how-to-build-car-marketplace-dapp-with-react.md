@@ -44,7 +44,7 @@ _In this tutorial, I have the assumption that the person following has a basic u
 
 ## Smart Contract Development
 
-We would begin this segment by building our smart contract first using Remix. Remix is a web based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. If you don't  knoow 
+We would begin this segment by building our smart contract first using Remix. Remix is a web based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
 
 Here is a preview of the Remix IDE:
 ![image](images/2.png)
@@ -158,7 +158,7 @@ In the next section, you will define a function to add the car to the smart cont
               _carimage,
               _price,
               _isUsed,
-              false,
+              false
         );
         carLength++;
     }
@@ -184,7 +184,7 @@ Up next, you would create a function that would read the products created in the
         string memory,
         uint,
         bool,
-        bool,
+        bool
     ) {
         Car storage car = cars[_index];
         return(
@@ -194,7 +194,7 @@ Up next, you would create a function that would read the products created in the
           car.carImage,
           car.price,
           car.isUsed,
-          car.isBought,
+          car.isBought
         );
     }
 ```
@@ -261,7 +261,7 @@ Here is the full code:
 
 
 ```js
-  // SPDX-License-Identifier: MIT  
+// SPDX-License-Identifier: MIT  
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -290,7 +290,6 @@ contract CarDealer{
         string carImage; 
         uint price;
         bool isUsed; 
-        bool isSale;
         bool isBought;
     }
     
@@ -301,7 +300,6 @@ contract CarDealer{
         string memory _carDescription,
         string memory _carimage,
         bool _isUsed,
-        bool _isSale,
         uint _price
     )public {
         cars[carLength] = Car(
@@ -311,8 +309,7 @@ contract CarDealer{
               _carimage,
               _price,
               _isUsed,
-              _isSale,
-              false,
+              false
         );
         carLength++;
     }
@@ -325,7 +322,7 @@ contract CarDealer{
         string memory,
         uint,
         bool,
-        bool,
+        bool
     ) {
         Car storage car = cars[_index];
         return(
@@ -335,7 +332,7 @@ contract CarDealer{
           car.carImage,
           car.price,
           car.isUsed,
-          car.isBought,
+          car.isBought
         );
     }
     
@@ -360,7 +357,7 @@ contract CarDealer{
 
     // function for user to sell his own car
     function sellCar(uint _index) public {
-        require(msg.sender == cars[_id].owner,"Accessible only to the owner");
+        require(msg.sender == cars[_index].owner,"Accessible only to the owner");
         cars[_index].isBought = false;
     }
     
@@ -368,8 +365,9 @@ contract CarDealer{
     function getCarLength() public view returns (uint) {
         return (carLength);
     }
-```
 
+} 
+```
 
 ## Contract Deployment
 
@@ -705,7 +703,7 @@ Update the state by calling `setcontract(contract); setCeloBalance(celoBalance);
 Up next, create a function called `getCars` that retrieves the cars information from the smart contract and updates the corresponding state variables.
 
 ```js
-  const getCars = async function () {
+ const getCars = async function () {
     const carLength = await contract.methods.getCarLength().call();
     const _cars = [];
 
@@ -720,20 +718,18 @@ Up next, create a function called `getCars` that retrieves the cars information 
           carImage: c[3],
           price: new BigNumber(c[4]),
           isUsed: c[5],
-          isSale:c[7],
-          isBought: c[8],
+          isBought: c[6],
         })
       });
 
       _cars.push(_car);
     }
-    const cars = await Promise.all(_cars);
-    
+    const cars = await Promise.all(_cars);   
     setCars(cars);
-
-    // return cars that have been bought or rented
+    console.log(cars);
+    // return cars that have been bought
     const _myCars = cars.filter((car)=>{
-      return (car.owner === address && (car.isSale === false));
+      return (car.owner === address && (car.isBought === true ));
     })    
     setMyCars(_myCars);
     
@@ -748,7 +744,7 @@ For each iteration, the function creates a new promise called `_car`, which retr
 
 The `_car` promise is then pushed to the `_cars` array. After the loop is finished, wait for all promises in the `_cars` array to be resolved by calling `await Promise.all(_cars)`, this will make sure that all the cars have been retrieved before moving on. Then it's updating the state with the cars array, by calling `setCars(cars);`
 
-The next step is filtering the cars that have been bought or rented by the user by checking the car.owner value and the isSale value and storing the result in _myCars variable, then it's updating the state with the _myCars variable.
+The next step is filtering the cars that have been bought by the user by checking the car.owner value and the isBought value and storing the result in _myCars variable, then it's updating the state with the _myCars variable.
 
 
 After creating these functions, you would need a way for them to be implemented in the application. In this case, the functions would need to be called every time the application starts. You would need to retrieve the balance and get the cars already created.
@@ -784,7 +780,7 @@ The third useEffect hooks calls the `getCars()` function when a contract is avai
 Next would be creating a function that allows users to add a car to the smart contract. You could call this function `addToCars()`
 
 ```js
-  const addtoCars = async (_name, _description, _image, _price, _isUsed, _isRent, _isSale) => {
+  const addtoCars = async (_name, _description, _image, _price, _isUsed) => {
     try {
       const price = new BigNumber(_price)
         .shiftedBy(ERC20_DECIMALS).toString();
@@ -797,7 +793,6 @@ Next would be creating a function that allows users to add a car to the smart co
           _image,
           _isUsed,
           _isRent,
-          _isSale,  
           price
         )
         .send({ from: address });
@@ -872,12 +867,9 @@ Next up will be the return statement with the following components which we woul
 
     <div className="content">
       <Header balance={cUSDBalance} celo = {celoBalance}/>
-      <Banner />
       <SalesCars cars={cars} buyCar = {buyCar}/>
-      <RentCars cars={cars} rentCar = {rentingCar}/>
       <AddCar addToCars={addtoCars} />
-      <MyCar cars = {myCars} sellCar = {sellCar} rentCar = {rentCar}/>
-      <Footer/>
+      <MyCar cars = {myCars} sellCar = {sellCar} />
     </div>
 
   );
@@ -944,13 +936,11 @@ export default Header
 This would represent the cars which are for sale. It checks if the item is for sale using the properties passed from App.js. If the item is for sale, we would display the item. 
 
 ```js
-import { Fragment } from 'react';
-
 
 const SalesCars = props => {
 
     return (
-        <Fragment>
+        <>
             <section className="choose-car-section pt-120 pb-120 section-bg">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -963,7 +953,7 @@ const SalesCars = props => {
                     </div>
                     <div className="row">
 
-                        {props.cars.map(car => (car.isSale === 'true' || car.isSale === true) && <div className="car-item col-lg-4 col-md-6 col-sm-12">
+                        {props.cars.map(car => ( car.isBought === false) && <div className="car-item col-lg-4 col-md-6 col-sm-12">
                             <div className="thumb">
                                 <img src={car.carImage} alt="item" />
                             </div>
@@ -1030,7 +1020,7 @@ const SalesCars = props => {
                 </div>
             </section>
 
-        </Fragment>
+        </>
 
 
     );
@@ -1094,9 +1084,9 @@ const MyCar = props => {
                         <div className="col-sm-6">
                             <ul className="payment-method d-flex justify-content-end">
                                 <li>We accept</li>
-                                <li><img src={one} alt="one" /></li>
-                                <li><img src={two} alt="two" /></li>
-                                <li><img src={three} alt="three" /></li>
+                                <li><img src={"put your own image"} alt="one" /></li>
+                                <li><img src={"put your own image"} alt="two" /></li>
+                                <li><img src={"put your own image"} alt="three" /></li>
                             </ul>
                         </div>
                     </div>
@@ -1107,36 +1097,6 @@ const MyCar = props => {
 }
 
 export default MyCar;
-```
-
-## Footer.js
-
-```js
-
-const Footer = props => {
-    return (
-        <div className="footer-bottom" style = {{backgroundColor: "#363636"}}>
-            <div className="container">
-                <div className="row justify-content-between">
-                    <div className="col-sm-6">
-                        <p className="copy-right-text"><a href="#">CeloDealer</a></p>
-                    </div>
-                    <div className="col-sm-6">
-                        <ul className="payment-method d-flex justify-content-end">
-                            <li>We accept</li>
-                            <li><img src={one} alt="one" /></li>
-                            <li><img src={two} alt="two" /></li>
-                            <li><img src={three} alt="three" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    )
-}
-
-export default Footer;
 ```
 
 ## AddCar.js
@@ -1151,11 +1111,10 @@ const AddCar = props => {
     const [price, setPrice] = useState();
     const [isUsed, setIsUsed] = useState('false');
     const [description, setDescription] = useState('')
-    const [forSale, setForSale] = useState(false);
 
     const submitHandler = (event) => {
         event.preventDefault();
-        props.addToCars(name, description, image, price, isUsed, forSale);
+        props.addToCars(name, description, image, price, isUsed);
         setName('');
         setImage('');
         setPrice('');
@@ -1221,7 +1180,7 @@ export default AddCar;
 ```
 
 Now try to compile your react dapp to see if it is working fine. If it is, you can deploy your dapp on github pages  or netlify.
-You can follow use this project as a reference to edit yours and get the required files, images e.t.c. <https://github.com/dahnny/CeloDealer>
+You can follow use this project as a reference to edit yours and get the required files, images e.t.c. <https://github.com/dahnny/cardealer-tutorial>
 
 ## Conclusion
 
