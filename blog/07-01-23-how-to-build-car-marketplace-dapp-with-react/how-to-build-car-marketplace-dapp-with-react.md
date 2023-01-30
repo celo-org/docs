@@ -1030,7 +1030,7 @@ export default SalesCars;
 ```
 
 ## MyCar.js
-This component would be used to retrieve the user's bought or sold cars on the frontend
+This component would be used to retrieve the user's bought  cars on the frontend
 
 ```js
 const MyCar = props => {
@@ -1180,14 +1180,14 @@ export default AddCar;
 ```
 
 Now try to compile your react dapp to see if it is working fine. If it is, you can deploy your dapp on github pages  or netlify.
-You can follow use this project as a reference to edit yours and get the required files, images e.t.c. <https://github.com/dahnny/cardealer-tutorial>
+You can follow or use this project as a reference to edit yours and get the required files, images e.t.c. <https://github.com/dahnny/cardealer-tutorial>
 
 ## Conclusion
 
 Congratulations 🎉, you were able to build your fullstack dapp using solidity and react on the celo smart contract. Great JOB!!
 
 ## Next steps
-You can challenge yourself by adding more functions and implementing them using react on the frontend. You can also look various celo smart contracts and see if you can build a dapp using react
+You can challenge yourself by adding more functions and implementing them using react on the frontend. You can also look at various celo smart contracts and see if you can build a dapp using react
 
 ## About the Author
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti
