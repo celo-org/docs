@@ -4,7 +4,7 @@ description: Learn how to create, deploy, and interact with Vault Smart Contract
 authors:
   - name: 🔗 External
 tags: [figment, advanced, react, nodejs, smart contract, truffle]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Create Vault Smart Contract

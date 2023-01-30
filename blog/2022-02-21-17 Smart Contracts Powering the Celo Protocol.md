@@ -4,7 +4,7 @@ description: Making sense of the logic driving the Celo platform.
 authors:
   - name: ✍️ Joe Nyzio  ·  🔗 External
 tags: [metamask, foundation]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # 17 Smart Contracts Powering the Celo Protocol

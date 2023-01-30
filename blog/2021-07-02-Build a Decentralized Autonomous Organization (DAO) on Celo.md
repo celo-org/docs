@@ -4,7 +4,7 @@ description: Build a functioning DAO by writing the Solidity smart contract and 
 authors:
   - name: ✍️ Segun Ogundipe & Emmanuel Oaikhenan  ·   🔗 External
 tags: [figment, advanced, react native, nodejs, truffle]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Build a Decentralized Autonomous Organization (DAO) on Celo

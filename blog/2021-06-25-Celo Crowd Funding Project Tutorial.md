@@ -4,7 +4,7 @@ description: Learn how to create a Smart Contract which facilitates crowdfunding
 authors:
   - name: ✍️ Alex Reyes & Neo Cho  ·  🔗 External
 tags: [figment, advanced, smart contract, truffle, solidity]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Celo Crowd Funding Project Tutorial

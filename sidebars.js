@@ -1,6 +1,5 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Welcome", id: "welcome" },
     // General
     {
       type: "category",
@@ -800,6 +799,11 @@ const sidebars = {
               type: "doc",
               label: "Overview",
               id: "protocol/identity/index",
+            },
+            {
+              type: "link",
+              label: "Social Connect",
+              href: "https://github.com/celo-org/identity",
             },
             "protocol/identity/metadata",
             "protocol/identity/smart-contract-accounts",
