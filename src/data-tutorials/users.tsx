@@ -1392,7 +1392,7 @@ const Users: User[] = [
     description: 'How to Re Deploy your Ethereum DApp to Celo with Hardhat.',
     preview: require('./showcase/intermediate/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat.png'),
     website: 'blog/tutorials/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat',
-    tags: ['intermediate', 'hardhat', celosage, smartcontract, deploy, solidity, celo],
+    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract', 'deploy', 'solidity', 'celo'],
   },
   {
     title: 'How to Create your own DAO on Celo',
