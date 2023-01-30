@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
+    title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
+    description: 'Explicar e construir um contract Factory na prática usando Remix',
+    preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
+    website: 'blog/tutorials/como-construir-e-realizar-deploy-de-contratos-Factory-no-blockchain-Celo',
+    tags: ['intermediate','celosage','solidity','smartcontract','video'],
+  },
+  {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
@@ -753,6 +760,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
     website: 'blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum',
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
+  },
+  {
+    title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
+    description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
+    preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
+    website: 'blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo',
+    tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
   },
   {
     title: 'C# mobile App to display Celo NFTs',
@@ -1512,7 +1526,7 @@ const Users: User[] = [
     preview: require('./showcase/beginner/an-introduction-to-layer-1-and-layer-2-blockchain-protocols.png'),
     website: 'blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols',
     tags: ['celosage'],
-  },
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
