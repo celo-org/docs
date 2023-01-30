@@ -1805,7 +1805,7 @@ Navigate to the frontend folder if you're not, then run:
 yarn run dev
 ```
 
-This dApp's frontend is deployed to Vercel and can be interacted with from **[here](https://stakingdapp2.vercel.app/)**
+This dApp's frontend is deployed to Vercel and can be interacted with from **[here](https://stakingdapp2.vercel.app/)**. Use desktop for optimal view.
 
 # Conclusion​
 
