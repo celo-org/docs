@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
+    title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
+    description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
+    preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
+    website: 'blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo',
+    tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
@@ -1519,7 +1526,7 @@ const Users: User[] = [
     preview: require('./showcase/beginner/an-introduction-to-layer-1-and-layer-2-blockchain-protocols.png'),
     website: 'blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols',
     tags: ['celosage'],
-  },
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
