@@ -1807,6 +1807,8 @@ yarn run dev
 
 This dApp's frontend is deployed to Vercel and can be interacted with from **[here](https://stakingdapp2.vercel.app/)**. Use desktop for optimal view.
 
+Watch **[this video](https://youtu.be/8H-tctoES3Q) to know to how to interact with the dapp.
+
 # Conclusion​
 
 Congratulations on completing this tutorial. What we have learned so far:
