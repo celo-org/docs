@@ -834,8 +834,8 @@ const Users: User[] = [
   {
     title: 'How Uniswap Works',
     description: 'In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain.',
-    preview: require('./showcase/beginner/celo-blockchain-101.png'),
-    website: 'blog/tutorials/How Uniswap Works',
+    preview: require('./showcase/beginner/how-uniswap-works.png'),
+    website: 'blog/tutorials/how-uniswap-works',
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
