@@ -4,7 +4,7 @@ description: How to deploy a smart contract to Celo testnet, mainnet, or a local
 authors:
   - name: ✍️ Joe Nyzio
 tags: [truffle, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat
 ---
 

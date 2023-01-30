@@ -4,7 +4,7 @@ description: Quickly develop full-stack progressive web applications on Celo wit
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/easily-build-full-stack-mobile-dapps-on-celo"
 ---
 

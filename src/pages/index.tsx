@@ -4,8 +4,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
-import { translate } from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import "./index.module.css";
 
@@ -41,29 +42,49 @@ export default function HomePage(): JSX.Element {
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CeloOrg" />
+        <meta name="twitter:title" content="Celo Documentation" />
+        <meta
+          name="twitter:description"
+          content="Build decentralized applications that create the conditions for
+              prosperity — for everyone."
+        />
+        <meta
+          name="twitter:image"
+          content="https://github.com/celo-org/docs/blob/main/static/img/preview.png?raw=true"
+        />
+      </Head>
       <main className="margin-vert--lg max-w-7xl mx-auto px-4">
         <section className="w-full flex md:flex-row flex-col items-center px-2 md:px-10">
           <div className="md:w-1/2 w-full">
             <span className="text-4xl font-bold text-center space-x-5">
-              Build decentralized applications that create the conditions for
-              prosperity — for everyone.
+              <Translate id="home.header.title">
+                Build decentralized applications that create the conditions for
+                prosperity — for everyone.
+              </Translate>
             </span>
           </div>
           <img
             className="md:w-1/2 w-full mt-5 md:mt-0"
-            src="img/doc-images/hero.webp"
+            src="img/logo-cube-animation.gif"
           />
         </section>
 
         <section className="mt-12">
           <div className="text-3xl font-bold px-2 w-full">
-            Learn how to build on Celo
+            <Translate id="home.section1.title">
+              Learn How to Build with Celo
+            </Translate>
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient  rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Use Celo Composer CLI and start building on Celo
+                  <Translate id="home.section1.box1">
+                    Get started with Celo Composer CLI
+                  </Translate>
                 </span>
                 {buildKnowMoreButton("/developer/deploy")}
               </div>
@@ -72,10 +93,12 @@ export default function HomePage(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  Learn Celo smart contract development from our tutorials
+                  <Translate id="home.section1.box2">
+                    Learn smart contract development with us
+                  </Translate>
                 </span>
                 {buildKnowMoreButton("/tutorials")}
               </div>
@@ -86,14 +109,18 @@ export default function HomePage(): JSX.Element {
           </div>
         </section>
 
-        {/* Section 2 */}
+        {/* Section 3 */}
         <section className="mt-12">
-          <div className="text-3xl font-bold mx-2">Start building</div>
+          <div className="text-3xl font-bold mx-2">
+            <Translate id="home.section2.title">
+              Explore Providers and Frameworks
+            </Translate>
+          </div>
           <div className="px-2 grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-4 mt-8">
             <a
               href="https://docs.infura.io/infura/"
               target="_blank"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
             >
               <img
                 src="img/doc-images/logos/infura-logo.webp"
@@ -105,7 +132,7 @@ export default function HomePage(): JSX.Element {
             <a
               href="https://www.quicknode.com/chains/celo"
               target="_blank"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
             >
               <img
                 src="img/doc-images/logos/quicknode-logo.webp"
@@ -116,7 +143,7 @@ export default function HomePage(): JSX.Element {
             </a>
             <Link
               href="/developer/deploy/hardhat"
-              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4  items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
             >
               <img
                 src="img/doc-images/logos/hardhat-logo.webp"
@@ -127,7 +154,7 @@ export default function HomePage(): JSX.Element {
             </Link>
             <a
               href="/developer/deploy/truffle"
-              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-dark-varient bg-light-varient rounded-lg font-semibold"
+              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
             >
               <img
                 src="img/doc-images/logos/truffle-logo.webp"
@@ -139,126 +166,155 @@ export default function HomePage(): JSX.Element {
           </div>
         </section>
 
-        {/* Section 3 */}
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        {/* Section 4 */}
+        <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
           <span className="text-3xl font-bold">
-            Jumpstart your build journey
+            <Translate id="home.section3.title">
+              Start Your Journey
+            </Translate>
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
               href="https://celo.org/developers/faucet"
               target={"_blank"}
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Faucet
+                <Translate id="home.section3.faucet.title">
+                  Faucet
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Fund your Testnet Account.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.faucet.description">
+                  Fund your Testnet Account.
+                </Translate>
               </span>
             </a>
 
             <a
               href="https://celoscan.io/"
               target={"_blank"}
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Celo Scan
+                <Translate id="home.section3.celoScan.title">
+                  Celo Scan
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Explore transactions on Celo Network.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.celoScan.description">
+                  Explore transactions on Celo Network.
+                </Translate>
               </span>
             </a>
             <a
               href="/protocol/bridge"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Celo Bridge
+                <Translate id="home.section3.celoBridge.title">
+                  Celo Bridge
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                How to bridge assets from Ethereum, Polygon, and Solana to Celo.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.celoBridge.description">
+                  How to bridge assets accross chains.
+                </Translate>
               </span>
             </a>
 
             <Link
               href="/wallet"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Wallets
+                <Translate id="home.section3.wallets.title">
+                  Wallets
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Overview of digital wallets available to send, spend, and earn
-                Celo assets.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.wallets.description">
+                  Overview of ecosystem wallets.
+                </Translate>
               </span>
             </Link>
 
             <Link
               href="/developer/sdks/celo-sdks"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Celo Libraries & SDKs
+                <Translate id="home.section3.celoLibraries.title">
+                  Celo Libraries & SDKs
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                Work with vast range of Libraries and SDKs made by Celo.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.celoLibraries.description">
+                  Search our vast range of libraries and SDKs.
+                </Translate>
               </span>
             </Link>
 
             <Link
               href="/developer/deploy"
-              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer rounded-lg"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                Deploy
+                <Translate id="home.section3.deploy.title">
+                  Deploy
+                </Translate>
               </span>
-              <span className="text-base text-darker-varient dark:text-lighter-varient mt-1">
-                How to build and deploy a dApp with Celo.
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home.section3.deploy.description">
+                  How to build and deploy a dApp.
+                </Translate>
               </span>
             </Link>
           </div>
         </section>
 
-        {/* section 4 */}
+        {/* section 5 */}
 
-        <section className="mt-20 md:p-8 p-4 bg-gray-300 dark:bg-gray-800 rounded-lg">
+        <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
           <div className="text-3xl text-center font-bold">
-            Browse our Docs by Category
+            <Translate id="home.section4.title">
+              Browse our Docs by Category
+            </Translate>
           </div>
 
           <div className="grid md:grid-cols-4 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                Understanding Celo
+                <Translate id="home.section4.understanding">
+                  Understanding Celo
+                </Translate>
               </div>
               {/* item 1 */}
               {sectionFourCard(
-                "what is Celo?",
-                "Learn the basics about Celo",
-                "img/doc-images/logos/color-logo.png",
+                translate({ id:"home.section4.understanding.whatIs.title" }),
+                translate({ id:"home.section4.understanding.whatIs.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/general"
               )}
 
               {sectionFourCard(
-                "Architecture",
-                "Overview of the Celo stack including core contracts and applications",
-                "img/doc-images/logos/arch.png",
+                translate({ id:"home.section4.understanding.architecture.title" }),
+                translate({ id:"home.section4.understanding.architecture.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/general/architecture"
               )}
 
               {sectionFourCard(
-                "Whitepapers",
-                "Overview of the Celo whitepapers describing the Celo protocol and social impact",
-                "img/doc-images/logos/whitepaper.png",
+                translate({ id:"home.section4.understanding.whitepapers.title" }),
+                translate({ id:"home.section4.understanding.whitepapers.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/general/whitepapers"
               )}
 
               {sectionFourCard(
-                "Protocol",
-                "Learn about the Celo protocol and its relationship to Ethereum",
-                "img/doc-images/logos/protocol.png",
+                translate({ id:"home.section4.understanding.protocol.title" }),
+                translate({ id:"home.section4.understanding.protocol.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/protocol"
               )}
             </div>
@@ -267,153 +323,167 @@ export default function HomePage(): JSX.Element {
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                Developer Tools
+                <Translate id="home.section4.developer">
+                  Developer Tools
+                </Translate>
               </div>
               {sectionFourCard(
-                "ContractKit",
-                "Overview of ContractKit, features and purpose",
-                "img/doc-images/logos/contractKit.png",
+                translate({ id:"home.section4.developer.contractKit.title" }),
+                translate({ id:"home.section4.developer.contractKit.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/developer/contractkit"
               )}
 
               {sectionFourCard(
-                "React-celo",
-                "Easiest way to access ContractKit in your React applications",
-                "img/doc-images/logos/react.png",
+                translate({ id:"home.section4.developer.reactCelo.title" }),
+                translate({ id:"home.section4.developer.reactCelo.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/developer/react-celo"
               )}
 
               {sectionFourCard(
-                "RainbowKit-celo",
-                "Overview of RainbowKit-celo",
-                "img/doc-images/logos/rainbow.svg",
+                translate({ id:"home.section4.developer.rainbowKitCelo.title" }),
+                translate({ id:"home.section4.developer.rainbowKitCelo.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/developer/rainbowkit-celo"
               )}
 
               {sectionFourCard(
-                "Celo CLI",
-                "Use Celo CLI to interact with the Celo blockchain",
-                "img/doc-images/logos/cli.png",
+                translate({ id:"home.section4.developer.celoCli.title" }),
+                translate({ id:"home.section4.developer.celoCli.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/cli"
               )}
             </div>
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                Build on Celo
+                <Translate id="home.section4.build">
+                  Build with Celo
+                </Translate>
               </div>
               {sectionFourCard(
-                "Celo composer",
-                "Build and deploy your dApp under 5 minutes",
-                "img/doc-images/logos/composer.png",
+                translate({ id:"home.section4.build.celoComposer.title" }),
+                translate({ id:"home.section4.build.celoComposer.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "developer/deploy"
               )}
 
               {sectionFourCard(
-                "Migrate to Celo",
-                "Overview of similarities and differences between Celo and Ethereum",
-                "img/doc-images/logos/color-logo.png",
+                translate({ id:"home.section4.build.migrate.title" }),
+                translate({ id:"home.section4.build.migrate.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/developer/migrate/from-ethereum"
               )}
 
               {sectionFourCard(
-                "Oracles",
-                "Explore onchain Oracles on Celo",
-                "img/doc-images/logos/oracle.png",
+                translate({ id:"home.section4.build.oracles.title" }),
+                translate({ id:"home.section4.build.oracles.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/protocol/oracle"
               )}
             </div>
 
             <div className="items-center">
-              <div className="text-2xl font-bold text-center">Validators</div>
+              <div className="text-2xl font-bold text-center">
+                <Translate id="home.section4.validators">
+                  Validators
+                </Translate>
+              </div>
               {sectionFourCard(
-                "Run a Validator",
-                "Secure the Celo network by running a validator",
-                "img/doc-images/logos/validate.png",
+                translate({ id:"home.section4.validators.run.title" }),
+                translate({ id:"home.section4.validators.run.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/validator"
               )}
 
               {sectionFourCard(
-                "Node and Services",
-                "Connect to nodes and services on Celo",
-                "img/doc-images/logos/node.png",
+                translate({ id:"home.section4.validators.node.title" }),
+                translate({ id:"home.section4.validators.node.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/validator/security"
               )}
 
               {sectionFourCard(
-                "Attestation Service",
-                "How to run an attestation service on Celo",
-                "img/doc-images/logos/attest.png",
+                translate({ id:"home.section4.validators.attestation.title" }),
+                translate({ id:"home.section4.validators.attestation.description" }),
+                "img/doc-images/logos/bullet.svg",
                 "/validator/attestation"
               )}
             </div>
           </div>
         </section>
 
-        {/* section 4 end */}
+        {/* section 5 end */}
 
-        {/* section 5 */}
+        {/* section 6 */}
 
         <section className="mt-12">
           <div className="text-4xl font-semibold px-2 w-full">
-            Join our booming ecosystem
+            <Translate id="home.section5.title">
+              Join Our Ecosystem
+            </Translate>
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold">
-                  Create, earn, and grow as a Celo content creator
+                <span className="text-3xl font-semibold pb-7">
+                  <Translate id="home.section5.box1">
+                    Create, Earn, and Grow as a Celo Sage Content Creator
+                  </Translate>
                 </span>
                 {buildKnowMoreButton("/community/celo-sage")}
               </div>
-              <div className="w-8/12">
+              {/* <div className="w-8/12">
                 <img
                   className="rounded-md"
                   src="/img/homepage/celo-sage.webp"
                 />
-              </div>
+              </div> */}
             </div>
 
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-lighter-varient dark:bg-darker-varient hover:cursor-pointer  rounded-lg">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold">
-                  Receive Funding to Build Your Blockchain Projects
+                <span className="text-3xl font-semibold pb-7">
+                  <Translate id="home.section5.box2">
+                    Receive Funding to Build Your Blockchain Projects
+                  </Translate>
                 </span>
                 {buildKnowMoreButton("/community/grant-playbook")}
               </div>
-              <div className="w-1/2">
+              {/* <div className="w-1/2">
                 <img src="/img/homepage/celo-camp.webp" />
-              </div>
+              </div> */}
             </div>
           </div>
 
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
               {sectionFourCard(
-                "Contribute",
-                "Our community includes a group of contributors that help develop, write, translate and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.",
-                "img/doc-images/logos/volunteer.png",
+                translate({ id:"home.section6.contribute.title" }),
+                translate({ id:"home.section6.contribute.description" }),
+                "img/doc-images/logos/contribute.svg",
                 "/community/guidelines"
               )}
 
               {sectionFourCard(
-                "Ambassadors",
-                "Celo Ambassadors is a community driven initiative helping grow and support the Celo ecosystem of developers, designers, dreamers, and doers around the world.",
-                "img/doc-images/logos/ambassador.png",
+                translate({ id:"home.section6.ambassadors.title" }),
+                translate({ id:"home.section6.ambassadors.description" }),
+                "img/doc-images/logos/ambassador.svg",
                 "https://celocommunity.xyz/join-the-ambassador-program"
               )}
 
               {sectionFourCard(
-                "Connect with our community",
-                "Join and connect with our team and community of doers on discord. its a space where you can share and immerse yourself in a wealth of knowledge and information.",
-                "img/doc-images/logos/connect.png",
+                translate({ id:"home.section6.connect.title" }),
+                translate({ id:"home.section6.connect.description" }),
+                "img/doc-images/logos/connect.svg",
                 "https://celo.org/community"
               )}
             </div>
           </div>
         </section>
 
-        {/* section 5 end */}
+        {/* section 6 end */}
       </main>
     </Layout>
   );
@@ -421,7 +491,11 @@ export default function HomePage(): JSX.Element {
   function buildKnowMoreButton(url: string) {
     return (
       <Link href={url} target="_blank" className="flex space-x-2 items-center">
-        <span className="text-lg font-semibold">Know more </span>
+        <span className="text-lg font-semibold">
+          <Translate id="home.general.knowMore">
+            Know more
+          </Translate>
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -449,7 +523,7 @@ export const sectionFourCard = (
 ) => (
   <Link
     href={redirectUrl}
-    className="text-black dark:text-white flex items-start gap-x-4 mt-8 hover:bg-dark-varient hover:text-green-400  transition hover:ease-in-out duration-150 pt-5 px-4 rounded-lg cursor-pointer hover:no-underline"
+    className="text-black bg-gypsum dark:bg-fig dark:text-white flex items-start gap-x-4 mt-8 hover:bg-forest hover:text-snow dark:hover:bg-forest transition hover:ease-in-out duration-150 pt-5 px-4 cursor-pointer hover:no-underline"
   >
     <img src={url} alt={title} className="w-10 h-10 rounded-full" />
     <div>

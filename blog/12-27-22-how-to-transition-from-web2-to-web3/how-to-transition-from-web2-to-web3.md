@@ -4,7 +4,7 @@ description: Learn the basics of blockchain technology and web3 development
 authors:
   - name: ✍️ Tomiwa Oladipo
 tags: [beginner, celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/how-to-transition-from-web2-to-web3"
 ---
 

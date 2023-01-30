@@ -4,7 +4,7 @@ description: Everything you need to get started with Celo.
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/celo-spotlight"
 ---
 

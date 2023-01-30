@@ -6,9 +6,11 @@ authors:
 url: https://github.com/developerkunal
 image_url: https://avatars.githubusercontent.com/u/35455566?v=4
 tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dApp-on-celo
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
 
 ## 🌱 Introduction
 

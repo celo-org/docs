@@ -4,7 +4,7 @@ description: Send, pay, and spend cryptocurrency like everyday money — all fro
 authors:
   - name: ✍️ Joe Nyzio
 tags: [nft, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/3-simple-steps-to-get-started-with-valora-on-celo
 ---
 
