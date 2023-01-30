@@ -800,6 +800,11 @@ const sidebars = {
               label: "Overview",
               id: "protocol/identity/index",
             },
+            {
+              type: "link",
+              label: "Social Connect",
+              href: "https://github.com/celo-org/identity",
+            },
             "protocol/identity/metadata",
             "protocol/identity/smart-contract-accounts",
             "protocol/identity/encrypted-cloud-backup",

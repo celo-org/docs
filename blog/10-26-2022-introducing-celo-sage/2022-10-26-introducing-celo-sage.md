@@ -7,7 +7,7 @@ authors:
     url: https://github.com/viral-sangani
     image_url: https://github.com/viral-sangani.png
 tags: [favorite, Celo Sage]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/introducing-celo-sage
 ---
 

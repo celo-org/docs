@@ -4,7 +4,7 @@ description: Quickly develop Android and iOS apps on Celo using the Celo Compose
 authors:
   - name: ✍️ Harpal Jadeja
 tags: [react native, composer]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo
 ---
 

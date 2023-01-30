@@ -6,9 +6,11 @@ authors:
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
 tags: [NFT, interactive, erc-721]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-create-interactive-nfts-on-celo
 ---
+
+![header](../src/data-tutorials/showcase/intermediate/how-to-create-interactive-nfts-on-celo.png)
 
 ## Introduction​
 

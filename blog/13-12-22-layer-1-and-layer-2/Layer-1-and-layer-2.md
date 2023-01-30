@@ -4,9 +4,11 @@ description: In this tutorial, we will provide an introduction to the different 
 authors:
   - name: ✍️ Obafemi Joshua
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: '/tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols'
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
 
 ## Introduction
 
@@ -87,14 +89,11 @@ The search for improved scalability is an unending one, and it has taken precede
 
 Joshua Obafemi
 
-A web3 content writer. You can connect with me on Linkedin [https://www.linkedin.com/in/joshua-obafemi-ba2014199/].
+A web3 content writer. You can connect with me on [Linkedin](https://www.linkedin.com/in/joshua-obafemi-ba2014199/).
 
 ## References
 
-<https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
-
-<https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
-
-<https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
-
-<https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>
+- <https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
+- <https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
+- <https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
+- <https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>
