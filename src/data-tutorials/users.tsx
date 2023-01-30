@@ -888,6 +888,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'hardhat'],
   },
   {
+    title: 'How Uniswap Works',
+    description: 'In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain.',
+    preview: require('./showcase/beginner/how-uniswap-works.png'),
+    website: 'blog/tutorials/how-uniswap-works',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: 'How to become a Web3 Developer',
     description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
@@ -1414,6 +1421,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png'),
     website: 'blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat',
     tags: ['intermediate', 'hardhat'],
+  },
+  {
+    title: 'Redeploying Dapp to Celo.',
+    description: 'How to Re Deploy your Ethereum DApp to Celo with Hardhat.',
+    preview: require('./showcase/intermediate/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat.png'),
+    website: 'blog/tutorials/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat',
+    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract', 'deploy', 'solidity', 'celo'],
   },
   {
     title: 'How to Create your own DAO on Celo',
