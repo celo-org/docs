@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
+    title: 'Build In Public-Tips for making an impact',
+    description: 'In this article we will discuss the benefits of attending events, including networking, learning new skills, and gaining exposure to new ideas.',
+    preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
+    website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
