@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Blockchain Basics- An Introduction to Web3 Terms and Concepts with Celo',
+    description: 'In this article we will be leanring about the basics of the blockchain and the technologies around it such as NFT, DAO, DEFI and also about the Web3 with Celo.',
+    preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
+    website: '/blog/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
