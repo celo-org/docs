@@ -814,5 +814,9 @@
   "sidebar.docs.category.Wallets": {
     "message": "Wallets",
     "description": "The label for category Wallets in sidebar docs"
+  },
+  "sidebar.docs.link.Social Connect": {
+    "message": "Social Connect",
+    "description": "The label for link Social Connect in sidebar docs, linking to https://github.com/celo-org/identity"
   }
 }
