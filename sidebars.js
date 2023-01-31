@@ -461,7 +461,7 @@ const sidebars = {
         {
           type: "link",
           label: "Faucet",
-          href: "https://celo.org/developers/faucet",
+          href: "https://faucet.celo.org",
         },
       ],
     },

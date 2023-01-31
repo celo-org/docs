@@ -50,7 +50,7 @@ MetaMask allows you to connect to the Celo blockchain from your browser. To get 
 ![image](images/1.png)
 
 - Add Alfajores Testnet to MetaMask using the manual setup option here
-- Add CELO to your test account using the [Alfajores Testnet Faucet](https://celo.org/developers/faucet)
+- Add CELO to your test account using the [Alfajores Testnet Faucet](https://faucet.celo.org)
 
 :::tip
 
