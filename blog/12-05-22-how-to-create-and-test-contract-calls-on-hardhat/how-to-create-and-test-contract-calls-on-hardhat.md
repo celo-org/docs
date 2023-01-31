@@ -60,7 +60,7 @@ To make transactions on the Alfajores Testnet you need CELO Testnet **tokens**.
 Following this tutorial, you will need **CELO faucets** to deploy and transact on the Celo Alfajores blockchain.
 Getting faucets is always as easy as taking these few baby steps:
 
-1. Head over to the [faucet](https://celo.org/developers/faucet) site for the testnet you need. For example, a Celo Alfajore faucet will give you tokens to interact with the Celo Alfajore testnet (which you will also use in this tutoria).
+1. Head over to the [faucet](https://faucet.celo.org) site for the testnet you need. For example, a Celo Alfajore faucet will give you tokens to interact with the Celo Alfajore testnet (which you will also use in this tutoria).
 
 2. Copy your wallet address from metamask or your preferred wallet and paste it into the tab.
 

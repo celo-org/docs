@@ -127,7 +127,7 @@ Here are the steps to go through to deploy the contract to the Alfajores testnet
 
 1. Connect to Forno \(a remote Celo node service provider\)
 2. Get personal account information \(generate a private key if required, stored in `./.env`\)
-3. Get your personal account address and fund it via the [faucet](https://celo.org/build/faucet)
+3. Get your personal account address and fund it via the [faucet](https://faucet.celo.org)
 4. Get the compiled contract bytecode
 5. Create and sign the contract deployment transaction
 6. Send transaction to the network
@@ -153,7 +153,7 @@ console.log(web3.eth.accounts.create());
 
 The provided code will print a private key / account pair in the terminal. Copy and paste the printed `priavteKey` into a `PRIVATE_KEY` variable in a file called `.env`, similar to what is shown in the `.envexample` file. The `address` that is printed with the private key is the account that we will fund with the faucet.
 
-If you go to the [Alfajores Faucet Page](https://celo.org/build/faucet), you can faucet your account some CELO and see your balance increase.
+If you go to the [Alfajores Faucet Page](https://faucet.celo.org), you can faucet your account some CELO and see your balance increase.
 
 ### Deploy the contract
 
@@ -248,7 +248,7 @@ async function awaitWrapper() {
   kit.connection.addAccount(process.env.PRIVATE_KEY); // this account must have a CELO balance to pay transaction fees
 
   // This account must have a CELO balance to pay tx fees
-  // get some testnet funds at https://celo.org/build/faucet
+  // get some testnet funds at https://faucet.celo.org
   const address = privateKeyToAddress(process.env.PRIVATE_KEY);
   console.log(address);
 
@@ -309,7 +309,7 @@ The `setName()` function is a bit more involved. First, it gets the account key 
 ```javascript title="helloWorld.js"
 async function setName(instance, newName) {
   // Add your account to ContractKit to sign transactions
-  // This account must have a CELO balance to pay tx fees, get some https://celo.org/build/faucet
+  // This account must have a CELO balance to pay tx fees, get some https://faucet.celo.org
   kit.connection.addAccount(process.env.PRIVATE_KEY);
   const address = privateKeyToAddress(process.env.PRIVATE_KEY);
 
