@@ -317,4 +317,4 @@ The above method shows a more detail about how to create custom deployment trans
 
 As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo.
 
-Check out [https://celo.org/build](https://celo.org/build) for more resources!
+Check out [https://celo.org/developers](https://celo.org/developers) for more resources!

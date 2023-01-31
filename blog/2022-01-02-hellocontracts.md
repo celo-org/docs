@@ -218,4 +218,4 @@ truffle migrate --network alfajores
 
 You can verify your contract deployment on [Blockscout](https://alfajores-blockscout.celo-testnet.org/), as well as interact with your new contract with the `truffle console --network alfajores`. Congratulations!
 
-As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo. Check out [https://celo.org/build](https://celo.org/build) for more resources!
+As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo. Check out [https://celo.org/developers](https://celo.org/developers) for more resources!
