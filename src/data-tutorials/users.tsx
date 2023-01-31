@@ -1541,6 +1541,13 @@ const Users: User[] = [
     website: 'blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols',
     tags: ['celosage'],
   }
+  {
+  title: 'Creating Your First Smart Contract on the Celo Blockchain',
+  description: 'This tutorial teaches you how to create your first smart contract and deploy it on the celo blockchain',
+  preview: require('./showcase/beginner/creating-your-first-smart-contract-on-the-celo-blockchain.png'),
+  website: 'blog/tutorials/creating-your-first-smart-ontract-on-the-celo-blockchain',
+  tags: ['celosage','smartcontract'],
+},
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
