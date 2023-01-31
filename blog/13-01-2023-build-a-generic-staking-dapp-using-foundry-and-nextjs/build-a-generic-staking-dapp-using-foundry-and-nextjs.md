@@ -15,13 +15,13 @@ slug: /tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs
 
 # Introduction
 
-In the past years, Javascript has been very helpful in web3 development : compiling, testing, deployment and interacting with smart contracts. It was however argued that Hardhat was a significant improvement over Truffle especially in testing and deploying smart contracts. While they both use Javascript under the hood, however, a notably new tool called foundry not relying on Javascript was said to be more efficient. Let's see if the statement is true by building a generic staking DApp using foundry with frontend to interact with it. 
+In the past years, Javascript has been very helpful in web3 development such as compiling, testing, deploying and interacting with smart contracts. However, it was argued Hardhat gained significant improvement over Truffle, most especially in testing and deploying smart contracts. While both tools leverage Javascript under the hood, however, a notably new tool called foundry does not rely on Javascript and was said to be more efficient. Let's see if the statement is true by building a generic staking DApp using foundry with a frontend to interact with it. 
 
 # Prerequisites​
 
-Above beginner level, you should have knowledge of general programming. If you're a Rust developer, you might want to dig deeper into how to things work underneath. Basically, you do not have to worry about this. 
+Above beginner level, you should know general programming. If you're a Rust developer, you might want to dig deeper into how to things work underneath. Basically, you do not have to worry about this. 
 
-- Have knowledge of solidity programming.
+- Know solidity programming.
 - You should understand Typescript and/or Javascript, and
 - NextJs or ReactJs.
 
@@ -252,7 +252,7 @@ interface IVault {
 }
 ```
 
-> Note: The next three files may not need to be explicitly written since we could just import them directly from the Openzeppelin contracts modules. But, for the sake of this tutorial, it is relevant to specify which of the OZ modules we are working with. I made a few twist to the imported contract files to achieve optimum compatibility. You should always avoid direct alteration of such as the OZ library except you know what you're doing.
+> Note: The next three files may not need to be explicitly written out in separate files since we could simply import them directly from the Openzeppelin library. But for the sake of this tutorial, it is relevant to specify which of the OZ modules we are working with. I made a few twist to the imported contract files to achieve optimum compatibility. You should always avoid direct alteration of such as the OZ library except you know what you're doing.
 
 ```bash ERC20.sol
 // SPDX-License-Identifier: MIT
@@ -1805,9 +1805,13 @@ Navigate to the frontend folder if you're not, then run:
 yarn run dev
 ```
 
-This dApp's frontend is deployed to Vercel and can be interacted with from **[here](https://stakingdapp2.vercel.app/)**. Use desktop for optimal view.
+Please visit **[this link](https://stakingdapp2.vercel.app/)** to interact with the dApp.
 
-Watch **[this video](https://youtu.be/8H-tctoES3Q) to know to how to interact with the dapp.
+> Note Not optmimized for mobile view. Use desktop to get the best result.
+
+A demo video **[here](https://youtu.be/8H-tctoES3Q)** explains how to interact it.
+
+**[You can find the complete source code on the github](https://github.com/bobeu/stakingdapp-on-celo/)**. 
 
 # Conclusion​
 
