@@ -15,9 +15,9 @@ slug: /tutorials/How to become a Web3 Developer
 
 Page title
 
-How to become a Web3 Developer
+**How to become a Web3 Developer**
 
-Meta description
+Meta description:
 
 There's an increasing need for more web3 developers as the internet gradually shifts from web2 to web3 technology. Learn how you can start your learning journey.
 blog/23-12-22- how-to-become-a-web3-developer/images/rear-view-programmer-working-all-night-long (1).jpg
