@@ -1,3 +1,12 @@
+---
+title: creating smart contract for liquidity farming 
+description: describing smart contract for liquidity farming and the technical side of creating them.
+authors:
+  - name: ✍️ Adewale Emmanuel
+tags: [celo]
+hide_table_of_contents: true
+slug: /tutorials/creating-smart-contract-for-liquidity-farming 
+---
 
 CREATING SMART CONTRACTS FOR LIQUIDITY FARMING
 
@@ -182,7 +191,7 @@ function setStableCoin(address \_stableCoin) public {
 
 \```
 
-- As discussed in the previous section, a smart contract can be as simple as moving funds from one wallet to another or even more complex or advanced.
+- As discussed in the previous sections, a smart contract can be as simple as moving funds from one wallet to another or even more complex or advanced.
 
 
 - CONCLUSION. 
