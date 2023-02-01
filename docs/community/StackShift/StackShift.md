@@ -11,6 +11,8 @@ Unlock Your Web3 Potential with the Celo StackShift Program.
 
 As the blockchain industry continues to evolve and grow, it's more important than ever for developers to stay ahead of the curve and gain the skills and knowledge they need to succeed in the web3 ecosystem. That's why we're excited to announce the launch of the Celo StackShift program, an initiative aimed at providing resources and support for developers, builders, and creators in the web3 ecosystem.
 
+This program will introduce new talent into building with Celo through weekly sessions, live coding, tutorials, and projects. In the medium to long term, the first cohort of the StackShift program will be a part of a talent pool for companies seeking to build with Celo and have the support to establish their own companies.
+
 ✅ [Signup for StackShift](https://forms.gle/UoLpYpadJvkzPXch6)
 
 ## Why join Stackshift?
@@ -37,12 +39,6 @@ As the blockchain industry continues to evolve and grow, it's more important tha
 - The program is divided into two tracks: Frontend development and Blockchain development
 - Participants will engage in live coding, tutorials, and work on projects to gain the skills and knowledge they need to succeed in the web3 ecosystem
 - The program will have a mentorship aspect, where mentors will be selected from the industry and paired with participants
-
-:::tip
-
-Reward amounts are determined before work begins and cannot be changed after getting started on the project. No more than 500 cUSD will be awarded for a project. Please keep this in mind when defining the scope of your work.
-
-:::
 
 ## Payments
 
