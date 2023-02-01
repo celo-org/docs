@@ -17,7 +17,7 @@ In this example, we will be using IPFS for off-chain storage, but you can use wh
 
 1. Install [Metamask](https://metamask.io/).
 2. [Add the Celo network]((/wallet/metamask/setup#adding-a-celo-network-to-metamask) to Metamask. We suggest adding the Alfajores testnet to Metamask as well, so you can test contract deployments before deploying to mainnet.
-3. Add a small amount of CELO to your Metamask account. In this example, we will deploy to the Alfajores testnet, so we need Alfajores CELO, which you can get from the faucet [here](https://celo.org/developers/faucet).
+3. Add a small amount of CELO to your Metamask account. In this example, we will deploy to the Alfajores testnet, so we need Alfajores CELO, which you can get from the faucet [here](https://faucet.celo.org).
 
 ## Prepare the NFT metadata
 
