@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
+    title: 'Creating smart contracts for liquidity farming',
+    description: ' Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.',
+    preview: require('./showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png'),
+    website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
