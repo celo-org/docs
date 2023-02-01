@@ -143,6 +143,15 @@ const Users: User[] = [
     source: 'https://github.com/valora-inc',
     tags: ['apps', 'wallets', 'popular'],
   },
+  const Users: User[] = [
+    {
+      title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
+      description: 'Learn to build a flashloan contract with Solidity using the Aave implementations, and deploy on Celo blockchain',
+      preview: require('./aave/valora.png'),
+      website: 'https://aave.com/',
+      source: 'https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts',
+      tags: ['solidity', 'flashloan', 'aave'],
+    },
   {
     title: 'Impact Market',
     description: 'impactMarket enables any vulnerable community to implement poverty alleviation mechanisms, like Unconditional Basic Income.',
