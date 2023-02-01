@@ -1504,7 +1504,7 @@ const Users: User[] = [
     description: 'Leveraging plug-ins for better developer experience',
     preview: require('./showcase/intermediate/advance-hardhat-configuration-on-celo-using-plugins.png'),
     website: 'blog/tutorials/advance-hardhat-configuration-on-celo-using-plugins',
-    tags: ['celosage'],
+    tags: ['celosage', 'hardhat', 'intermediate', 'javascript'],
   },
   {
     title: 'Solidity from Zero to Hero',
@@ -1518,7 +1518,7 @@ const Users: User[] = [
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage',
     preview: require('./showcase/beginner/getting-started-on-celo-with-hardhat.png'),
     website: 'blog/tutorials/getting-started-on-celo-with-hardhat',
-    tags: ['celosage'],
+    tags: ['celosage', 'hardhat', 'smartcontract', 'solidity'],
   },
   {
     title: 'Regenerative Finance - What it is and Why it Matters',
@@ -1532,7 +1532,7 @@ const Users: User[] = [
     description: 'Showing some of the best practices for writing smart contracts',
     preview: require('./showcase/intermediate/best-practices-for-writing-smart-contracts-with-real-world-examples.png'),
     website: 'blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples',
-    tags: ['celosage'],
+    tags: ['celosage', 'intermediate', 'solidity', 'hardhat'],
   },
   {
     title: 'An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
@@ -1540,7 +1540,14 @@ const Users: User[] = [
     preview: require('./showcase/beginner/an-introduction-to-layer-1-and-layer-2-blockchain-protocols.png'),
     website: 'blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols',
     tags: ['celosage'],
-  }
+  },
+  {
+    title: 'Build a generic staking dapp using Foundry and NextJs',
+    description: 'Compiling, testing and deploying contracts using foundry with frontend using Nextjs',
+    preview: require('./showcase/advanced/build-a-generic-staking-dapp-using-foundry-and-nextjs.png'),
+    website: 'blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
