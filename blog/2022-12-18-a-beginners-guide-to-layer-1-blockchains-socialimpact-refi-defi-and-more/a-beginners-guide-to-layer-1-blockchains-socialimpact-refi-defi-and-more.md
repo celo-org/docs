@@ -2,14 +2,16 @@
 title: A beginner's Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More
 description: Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and it's ecosystem.
 authors:
-  - name: ✍️ Mukunde Brisa
-    title: SOftware Developer and Writer
+  - name: Mukunde Brisa
+    title: Software Developer and Writer
     url: https://github.com/Brisa-Codes,
     image_url: https://avatars.githubusercontent.com/u/82726341?v=4
 tags: [celo, beginner]
-hide_table_of_contents: true
-slug: '/tutorials/a-beginners-guide-to-Layer-1-blockchains-SocialImpact-ReFi-DefI-and-More'
+hide_table_of_contents: false
+slug: /tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more
 ---
+
+![header](../../src/data-tutorials/showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi.png)
 
 ## Introduction
 
@@ -122,18 +124,11 @@ A Software Developer, writer, community educator, and Country Ambassador at Celo
 
 ## References
 
-[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/)
-
-[https://docs.celo.org/general](https://docs.celo.org/general)
-
-[https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6](https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6)
-
-[https://docs.celo.org/protocol/identity/odis-domain](https://docs.celo.org/protocol/identity/odis-domain)
-
-[https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70](https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70)
-
-[http://medium.com/earthbanc](http://medium.com/earthbanc)
-
-[https://docs.impactmarket.com/](https://docs.impactmarket.com/)
-
-[https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html](https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html)
+- [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8598042/)
+- [https://docs.celo.org/general](https://docs.celo.org/general)
+- [https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6](https://blog.celo.org/consensus-and-proof-of-stake-in-the-celo-protocol-3ff8eee331f6)
+- [https://docs.celo.org/protocol/identity/odis-domain](https://docs.celo.org/protocol/identity/odis-domain)
+- [https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70](https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70)
+- [http://medium.com/earthbanc](http://medium.com/earthbanc)
+- [https://docs.impactmarket.com/](https://docs.impactmarket.com/)
+- [https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html](https://www.nec.com/en/global/solutions/blockchain/blockchain-for-digital-identity.html)

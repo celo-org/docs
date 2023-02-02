@@ -6,9 +6,11 @@ authors:
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
 tags: [NFT, royalty, erc-721, erc-2981]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-create-an-nft-with-royalties-on-celo
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/how-to-create-an-nft-with-royalties-on-celo.png)
 
 ## Introduction
 
@@ -47,7 +49,7 @@ First, I want to explain what Royalty is?
 
 NFT royalties are payouts that compensate the original creator every time a secondary sale of their digital asset occurs. The royalty percentage is set by the creator at the time of minting, commonly around 5-10%. This percentage is taken from the sale price and sent to the creator.
 
-## Enough talking, show me the code.
+## Enough talking, show me the code
 
 So we are going to code two smart contracts this time.
 
@@ -140,10 +142,10 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 Here, we are importing couple of libraries. Below I will tell you what each library does.
 
- - **ERC2981:** Implementation of the NFT Royalty Standard, a standardized way to retrieve royalty payment information.
- - **ERC721URIStorage:** ERC721 token with storage based token URI management.
- - **Ownable:** Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions.
- - **Counters:** Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids.
+- **ERC2981:** Implementation of the NFT Royalty Standard, a standardized way to retrieve royalty payment information.
+- **ERC721URIStorage:** ERC721 token with storage based token URI management.
+- **Ownable:** Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions.
+- **Counters:** Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number of elements in a mapping, issuing ERC721 ids, or counting request ids.
 
  ```js
 contract MyNFT is ERC721URIStorage, ERC2981, Ownable {}
@@ -174,7 +176,7 @@ function _baseURI() internal pure override returns (string memory) {
     }
 ```
 
-`_baseURI()` returns the base URI, we did setup our base URI to https://ipfs.filebase.io/ipfs.
+`_baseURI()` returns the base URI, we did setup our base URI to <https://ipfs.filebase.io/ipfs>.
 
 ```js
 function supportsInterface(bytes4 interfaceId)
@@ -285,6 +287,7 @@ address public MyNFTContractAddress;
 ```
 
 We have defined three variables here.
+
 - `owner`: holds owner address. One who instantiate smart contract becomes an owner.
 - `basePrice`: Price at which we are minting the NFT.
 - `MyNFTContractAddress`: It holds contract address of `MyNFT` smart contract.
@@ -338,7 +341,7 @@ If person is not an owner, it checks if CELO sent greater then or equal to `base
 
 If enough CELO is sent, it transfer CELO to the owner, then it mints NFT for the given address.
 
-I have checked in both smart contracts and frontend here: https://github.com/avirajkhare00/celo-blogs/tree/main/nft-with-royalty.
+I have checked in both smart contracts and frontend here: <https://github.com/avirajkhare00/celo-blogs/tree/main/nft-with-royalty>.
 
 It's time to code frontend part.
 
@@ -350,11 +353,11 @@ This is how frontend will look like:
 
 I have already uploaded an image to IPFS, here is the hash: `QmWwtPHgG6G2679oNA9nMxuXeARjYrmVaaBHEDbr9pMg4E`
 
-When we will be minting the NFT, you can use this or insert an image of your choice. You can use https://filebase.com to upload an image to IPFS.
+When we will be minting the NFT, you can use this or insert an image of your choice. You can use <https://filebase.com> to upload an image to IPFS.
 
 Since Rarible does not support Celo Testnet, I will be using goreli testnet to show you how royalty is transferred.
 
-Go ahead and run the frontend code by using any http server. Mint an NFT, then go to Rarible testnet here: https://testnet.rarible.com/.
+Go ahead and run the frontend code by using any http server. Mint an NFT, then go to Rarible testnet here: <https://testnet.rarible.com/>.
 
 You can see that your NFT is getting displayed, now put it on sale for whatever amount you wish for.
 

@@ -7,12 +7,9 @@ authors:
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, tatum, developers]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/como-construir-em-celo-usando-tatum
 ---
-
-
-
 
 ![header](../../src/data-tutorials/showcase/beginner/como-construir-em-celo-usando-tatum.png)
 
@@ -27,7 +24,7 @@ Neste video mostraremos como você pode realizar um deploy do smart contract ERC
 Para este tutorial não é necessário conhecimento prévio. As ferramentas utilizadas serão:
 
 - Tatum: [Tatum](https://tatum.io/) é a maneira mais rápida de criar, testar e executar aplicativos blockchain. Eles oferecem APIs e SDKs para você implementar sua ideia usando blockchain
-- Faucet: [Faucet](https://celo.org/developers/faucet) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores
+- Faucet: [Faucet](https://faucet.celo.org) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores
 - Alfajores: É a rede de teste da Celo que utilizaremos para demonstração a implantação de um contrato inteligente e também realizar transações dos ativos
 
 ## Requisitos
@@ -35,15 +32,11 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 - Criar uma conta no Tatum
 - Utilizar uma ferramenta para consulta de API como Postman
 
-
 ## Tutorial
 
 Confira no video como utilizar Tatum para realizar o deploy, consultas e transferências em Celo.
 
-
-[![Como Construir em Celo usando Tatum](../../src/data-tutorials/showcase/beginner/youtube-como-construir-em-celo-usando-tatum.jpg)](https://www.youtube.com/watch?v=XXDWaloLmvs)
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXDWaloLmvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Conclusão
 

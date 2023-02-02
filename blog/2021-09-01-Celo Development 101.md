@@ -4,7 +4,7 @@ description: Learn smart contract development and build a Dapp on Celo.
 authors:
   - name: ✍️ Deepanshu Hooda  ·  🔗 External
 tags: [dacade, smart contract, html, javascript]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Celo Development 101

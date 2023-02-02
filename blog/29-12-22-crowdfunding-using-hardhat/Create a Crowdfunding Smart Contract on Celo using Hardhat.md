@@ -7,7 +7,7 @@ authors:
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
 tags: [Solidity, Ether.js, Hardhat]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/crowdfunding-celo-build-hardhat
 
 ---
@@ -34,7 +34,7 @@ These are the prerequisites you will need for this tutorial:
 
 - Have a [Metamask extension](https://metamask.io/)
 - [Configure](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo) your Metamask to Celo
-- [Fund your Celo account](https://celo.org/developers/faucet) on Metamask
+- [Fund your Celo account](https://faucet.celo.org) on Metamask
 
 ### A Brief Overview of Celo
 
