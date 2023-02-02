@@ -825,6 +825,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation'],
   },
   {
+    title: 'Build Your Own Full-Stack NFT Marketplace on Celo',
+    description: 'Build a full stack Nft Marketplace on the celo block-chain using ipfs and web3.storage for metadata storage.',
+    preview: require('./showcase/intermediate/'),
+    website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
+    tags: ['celosage', 'nft', 'solidity', 'celo'],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
