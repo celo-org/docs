@@ -1583,6 +1583,13 @@ const Users: User[] = [
     website: 'blog/tutorials/create-a-crowdfunding-smart-contract-on-celo-using-hardhat',
     tags: ['celosage', 'solidity', 'hardhat'],
   },
+  {
+    title: 'Why should you use Celo Blockchain',
+    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners.',
+    preview: require('./showcase/beginner/why-should-you-use-celo-blockchain.png'),
+    website: '/blog/tutorials/why-should-you-use-celo',
+    tags: ['celosage','celo'], 
+  },
 
   /*
   Pro Tip: add your site in alphabetical order.
