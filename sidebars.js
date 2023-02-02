@@ -1042,6 +1042,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "StackShift",
+          id: "community/StackShift/StackShift",
+        },
+        {
+          type: "doc",
           label: "Fundraising",
           id: "community/fundraising",
         },
