@@ -1455,7 +1455,14 @@ const Users: User[] = [
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: ['intermediate', 'hardhat', 'celosage', 'smartcontract'],
+    tags: ['celo', 'intermediate', 'celosage', 'smartcontract', 'solidity'],
+  },
+  {
+    title: 'Creating, Deploying, Minting your ERC1155 Token on Celo',
+    description: 'How to Creating, Deploying, Minting your ERC1155 Token on Celo using Hardhat',
+    preview: require('./showcase/intermediate/how-to-create-deploy-and-mint-your-erc1155-token-on-celo-with-hardhat.png'),
+    website: 'blog/tutorials/how-to-create-deploy-and-mint-your-erc1155-token-on-celo-with-hardhat',
+    tags: ['celo', 'intermediate', 'celosage', 'deploy', 'smartcontract', 'solidity', 'tokens', 'ipfs', 'hardhat'],
   },
   {
     title: 'Unit Testing with Solidity and Truffle',
@@ -1463,6 +1470,7 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-write-unit-testing-for-contracts-with-truffle.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-truffle',
     tags: ['intermediate', 'truffle', 'smartcontract', 'celosage'],
+
   },
   {
     title: 'Proof Of Stack Consensus',
