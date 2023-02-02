@@ -1548,6 +1548,13 @@ const Users: User[] = [
   website: 'blog/tutorials/creating-your-first-smart-ontract-on-the-celo-blockchain',
   tags: ['celosage','smartcontract'],
 },
+  {
+    title: 'Crypto Wallets The Celo Way',
+    description: 'This tutorials teaches you all you need to know about Crypto Wallets',
+    preview: require('./showcase/beginner/Crypto-Wallets-The-Celo-Way.png'),
+    website: 'blog/tutorials/Crypto-Wallets-The-Celo-Way',
+    tags: ['celosage','wallet'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
