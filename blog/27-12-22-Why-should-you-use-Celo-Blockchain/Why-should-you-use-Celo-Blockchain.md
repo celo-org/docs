@@ -6,8 +6,10 @@ authors:
     url: https://github.com/profnica
 tags: [Celo, Blockchain]
 hide_table_of_contents: false
-slug: /tutorials/Why-should-you-use-Celo-Blockchain
+slug: /tutorials/why-should-you-use-celo-blockchain
 ---
+
+![header](../../src/data-tutorials/showcase/beginner/why-should-you-use-celo-blockchain.png)
 
 Despite claims of causing long-awaited changes in the financial system, several blockchain projects have failed to attain global mainstream adoption.
 
