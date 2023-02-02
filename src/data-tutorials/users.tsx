@@ -1586,7 +1586,7 @@ const Users: User[] = [
   {
     title: 'Why should you use Celo Blockchain',
     description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners.',
-    preview: require('./showcase/beginner/why-should-you-use-celo-blockchain.png'),
+    preview: require('./showcase/beginner/why-should-you-use-celo.png'),
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo'], 
   },
