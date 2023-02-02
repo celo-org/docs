@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
+    title: 'Build In Public - Tips for making an impact',
+    description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
+    preview: require('./showcase/beginner/build-in-public.png'),
+    website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
@@ -753,6 +760,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
     website: 'blog/tutorials/como-construir-em-celo-usando-tatum',
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
+  },
+  {
+    title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
+    description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
+    preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
+    website: 'blog/tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix',
+    tags: ['beginner','celosage','openzeppelin', 'solidity','smartcontract','video'],
   },
   {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
@@ -1504,7 +1518,7 @@ const Users: User[] = [
     description: 'Leveraging plug-ins for better developer experience',
     preview: require('./showcase/intermediate/advance-hardhat-configuration-on-celo-using-plugins.png'),
     website: 'blog/tutorials/advance-hardhat-configuration-on-celo-using-plugins',
-    tags: ['celosage'],
+    tags: ['celosage', 'hardhat', 'intermediate', 'javascript'],
   },
   {
     title: 'Solidity from Zero to Hero',
@@ -1518,7 +1532,7 @@ const Users: User[] = [
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage',
     preview: require('./showcase/beginner/getting-started-on-celo-with-hardhat.png'),
     website: 'blog/tutorials/getting-started-on-celo-with-hardhat',
-    tags: ['celosage'],
+    tags: ['celosage', 'hardhat', 'smartcontract', 'solidity'],
   },
   {
     title: 'Regenerative Finance - What it is and Why it Matters',
@@ -1532,7 +1546,7 @@ const Users: User[] = [
     description: 'Showing some of the best practices for writing smart contracts',
     preview: require('./showcase/intermediate/best-practices-for-writing-smart-contracts-with-real-world-examples.png'),
     website: 'blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples',
-    tags: ['celosage'],
+    tags: ['celosage', 'intermediate', 'solidity', 'hardhat'],
   },
   {
     title: 'An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
@@ -1546,8 +1560,16 @@ const Users: User[] = [
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
     preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
     website: 'blog/tutorials/build-a-simple-forum-dapp-with-flutter-on-celo',
-    tags: ['celosage'],
-  }
+    tags: ['celosage', 'flutter'],
+  },
+  {
+    title: 'Build a generic staking dapp using Foundry and NextJs',
+    description: 'Compiling, testing and deploying contracts using foundry with frontend using Nextjs',
+    preview: require('./showcase/advanced/build-a-generic-staking-dapp-using-foundry-and-nextjs.png'),
+    website: 'blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
+
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.

@@ -12,3 +12,5 @@ Here lists all on-chain Oracles:
 - [Celo Reserve Oracles](/protocol/stability/oracles)
 - [RedStone Oracles](/protocol/oracle/redstone)
 - [Band Protocol](/protocol/oracle/band-protocol)
+- [Pyth Network](https://pyth.network/)
+- [Witnet](https://witnet.io/)
