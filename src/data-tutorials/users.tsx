@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
   },
   {
+    title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
+    description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
+    preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
+    website: 'blog/tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix',
+    tags: ['beginner','celosage','openzeppelin', 'solidity','smartcontract','video'],
+  },
+  {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
