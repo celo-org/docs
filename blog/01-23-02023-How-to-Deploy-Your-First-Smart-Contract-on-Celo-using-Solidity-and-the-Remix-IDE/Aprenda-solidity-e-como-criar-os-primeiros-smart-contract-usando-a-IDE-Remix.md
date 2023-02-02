@@ -11,9 +11,6 @@ hide_table_of_contents: false
 slug: /tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix
 ---
 
-
-
-
 ![header](../../src/data-tutorials/showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png)
 
 ## Introdução
