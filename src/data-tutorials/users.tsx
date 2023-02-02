@@ -1556,12 +1556,20 @@ const Users: User[] = [
     tags: ['celosage'],
   },
   {
+    title: 'Build a Simple Forum Dapp with Flutter on Celo',
+    description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
+    preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
+    website: 'blog/tutorials/build-a-simple-forum-dapp-with-flutter-on-celo',
+    tags: ['celosage', 'flutter'],
+  },
+  {
     title: 'Build a generic staking dapp using Foundry and NextJs',
     description: 'Compiling, testing and deploying contracts using foundry with frontend using Nextjs',
     preview: require('./showcase/advanced/build-a-generic-staking-dapp-using-foundry-and-nextjs.png'),
     website: 'blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs',
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
   },
+
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
