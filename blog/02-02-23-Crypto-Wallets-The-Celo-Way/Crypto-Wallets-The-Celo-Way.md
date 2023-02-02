@@ -1,17 +1,15 @@
-
-![crypto-wallets](https://user-images.githubusercontent.com/104994589/216370370-bb2fbf5d-bed1-48fb-b0fe-d12c2ccf2d33.png)
-
 ---
 title: Crypto-Wallets-The-Celo-Way
 description: This tutorials teaches you all you need to know about Crypto Wallets 
 authors:
   - name: Israel Okunaya
 url: https://github.com/Southpaw0
-image_url:
+image_url: ![crypto-wallets](https://user-images.githubusercontent.com/104994589/216370370-bb2fbf5d-bed1-48fb-b0fe-d12c2ccf2d33.png)
 tags: [celosage, wallet]
 hide_table_of_contents: true
 slug: /tutorials/crypto-wallets-the-celo-way
 ---
+![crypto-wallets](https://user-images.githubusercontent.com/104994589/216370370-bb2fbf5d-bed1-48fb-b0fe-d12c2ccf2d33.png)
 
 
 ## Introduction
