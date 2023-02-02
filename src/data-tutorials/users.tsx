@@ -825,13 +825,6 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'foundation'],
   },
   {
-    title: 'Why should you use Celo Blockchain',
-    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners.',
-    preview: require('./showcase/beginner/why-should-you-use-celo-blockchain.png'),
-    website: '/blog/tutorials/why-should-you-use-celo',
-    tags: ['celosage','celo'], 
-  },
-  {
     title: 'How to build a Bookshop Marketplace Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
