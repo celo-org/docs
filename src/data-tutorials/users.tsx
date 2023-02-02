@@ -741,7 +741,7 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
-    title: 'Build In Public-Tips for making an impact',
+    title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
