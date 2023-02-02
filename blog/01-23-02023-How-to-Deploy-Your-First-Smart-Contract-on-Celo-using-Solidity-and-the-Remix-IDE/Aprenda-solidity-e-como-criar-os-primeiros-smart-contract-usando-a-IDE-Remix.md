@@ -6,7 +6,7 @@ authors:
   title: Founder of Guizo Studios
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
-tags: [celo, solidity, developers, remix]
+tags: [celo, solidity, developers, remix, celosage]
 hide_table_of_contents: false
 slug: /tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix
 ---
@@ -16,13 +16,13 @@ slug: /tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usand
 
 ![header](../../src/data-tutorials/showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png)
 
-# Introdução
+## Introdução
 
 Bem-vindo ao nosso tutorial sobre Solidity e como criar o seu primeiro smart contract usando a IDE Remix. Solidity é a linguagem de programação principalmente utilizada para escrever smart contracts commpatíveis com a EVM (Máquina virtual Ethereum) como é o caso da Celo. Neste tutorial, você aprenderá os conceitos básicos de Solidity e como usar a IDE Remix para criar e testar seu primeiro smart contract. Acompanhe-nos nesta jornada para aprender como criar seus próprios contratos inteligentes e se tornar um desenvolvedor blockchain habilitado.
 
 Neste video mostraremos como você pode realizar um deploy do smart contract na rede **Alfajores (rede de teste)** da Celo, e também como realizar uma recarga utilizando a **Faucet**.
 
-# Pré-requisitos
+## Pré-requisitos
 
 Para este tutorial não é necessário conhecimento prévio. As ferramentas utilizadas serão:
 
@@ -34,14 +34,13 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 
 - Criar duas contas na MetaMask na rede Alfajores Celo.
 
-
 ## Tutorial
 
 Confira no video como criar o seu primeiro smart contract em Celo usando a IDE Remix.
 
 [![Como criar o seu primeiro smart contract em Celo usando a IDE Remix.](../../src/data-tutorials/showcase/intermediate/primeiro-smart-contract.jpg)](https://youtu.be/JU8V7lQykj0)
 
-
+[Click here to watch the video](https://youtu.be/JU8V7lQykj0)
 
 ## Conclusão
 
