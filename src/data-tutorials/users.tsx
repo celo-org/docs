@@ -777,7 +777,7 @@ const Users: User[] = [
   },
   {
     title: 'Dynamic NFT Creation using SVG to build in Smart Contract on Celo.',
-    description: 'Welcome to our tutorial on dynamic NFT creation using SVG to build in a smart contract on Celo! In this tutorial, we will show you how to deploy a smart contract that receives information and creates a dynamic NFT based on that information. By using SVG, we can create highly customizable and visually appealing NFTs that can be used for a variety of purposes, such as art, collectibles, or even as proof of ownership or authenticity. Whether you are a developer looking to get started with NFTs on the Celo platform or just want to learn more about dynamic NFT creation, this tutorial will provide valuable insights and guidance. Follow along with our step-by-step guide and you will have all the tools you need to deploy your own dynamic NFT smart contract on Celo.',
+    description: 'Welcome to our tutorial on dynamic NFT creation using SVG to build in a smart contract on Celo!',
     preview: require('./showcase/intermediate/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo.png'),
     website: '/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo',
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
