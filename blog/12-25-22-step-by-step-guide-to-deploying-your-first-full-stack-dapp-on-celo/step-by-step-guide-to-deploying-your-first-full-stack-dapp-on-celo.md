@@ -266,7 +266,7 @@ module.exports = function(deployer) {
 
 ## Steps to deploy Smart Contract
 
-1. We need Faucet For deploying smart contracts on Celo Blockchain. Use [Celo Testnet Faucet](https://celo.org/developers/faucet) to get faucet money input your address which we got from celocli.
+1. We need Faucet For deploying smart contracts on Celo Blockchain. Use [Celo Testnet Faucet](https://faucet.celo.org) to get faucet money input your address which we got from celocli.
 
 2. Now we Gonna Compile the Smart Contract and Check if there are any problems with it.
 
