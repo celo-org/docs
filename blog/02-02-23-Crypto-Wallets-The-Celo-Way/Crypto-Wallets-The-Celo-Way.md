@@ -1,3 +1,6 @@
+
+![crypto-wallets](https://user-images.githubusercontent.com/104994589/216370370-bb2fbf5d-bed1-48fb-b0fe-d12c2ccf2d33.png)
+
 ---
 title: Crypto-Wallets-The-Celo-Way
 description: This tutorials teaches you all you need to know about Crypto Wallets 
