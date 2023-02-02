@@ -1399,14 +1399,14 @@ const Users: User[] = [
     description: 'How to write unit testing for smart contracts with Hardhat.',
     preview: require('./showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png'),
     website: 'blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat',
-    tags: [celo, intermediate, celosage, deploy, smartcontract, solidity, tokens, ipfs, hardhat],
+    tags: ['celo', 'intermediate', 'celosage', 'deploy', 'smartcontract', 'solidity', 'tokens', 'ipfs', 'hardhat'],
   },
   {
     title: 'Creating, Deploying, Minting your ERC1155 Token on Celo',
     description: 'How to Creating, Deploying, Minting your ERC1155 Token on Celo using Hardhat',
     preview: require('./showcase/intermediate/how-to-create-deploy-and-mint-your-erc1155-token-on-celo-with-hardhat.png'),
     website: 'blog/tutorials/how-to-create-deploy-and-mint-your-erc1155-token-on-celo-with-hardhat',
-    tags: ['intermediate', 'hardhat'],
+    tags: ['celo', 'intermediate', 'celosage', 'deploy', 'smartcontract', 'solidity', 'tokens', 'ipfs', 'hardhat'],
   },
   {
     title: 'The Celo Extension Wallet',
