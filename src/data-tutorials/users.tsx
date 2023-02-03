@@ -1606,7 +1606,7 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
 
-,  /*
+  /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
    */
