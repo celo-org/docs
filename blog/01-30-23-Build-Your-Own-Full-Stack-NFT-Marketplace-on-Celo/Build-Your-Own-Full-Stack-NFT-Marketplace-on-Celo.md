@@ -10,19 +10,13 @@ hide_table_of_contents: false
 slug: "/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo"
 ---
 
-
-
-# Build Your Own Full-Stack NFT Marketplace on Celo
-
 ![header](../../src/data-tutorials/showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png)
-
 
 ### Introduction
 
 NFTs or Non-Fungible Tokens have a lot of unique benefits to the blockchain ecosystem. One of those benefits is the ability to create and trade digital items or a representation of a physical item. In this tutorial, you’ll learn how to create a simple decentralized application for Buying and selling vintage items as  NFTs on the Celo Blockchain. Hopefully one day you will use this knowledge to create the next open sea 🙂.
 
 Here’s a demo [link](https://aquamarine-unicorn-2f3217.netlify.app/) of what you’ll be creating.
-
 
 ### Prerequisites
 
@@ -106,15 +100,12 @@ Click on [this](https://github.com/4undRaiser/VintageNFTMarketplace) repo from y
 └── README.md
 ```
 
-
-
 ### SmartContract
 
 In this chapter, we’ll be creating two separate smart contracts for our decentralized application. You can use either remix, visual studio or hardhat to write the smart contract.
 
 First, we’ll create a smart contract for minting nfts and next we’ll create another one for the marketplace.
 Splitting smart-contract this way is considered best practice in the solidity community.
-
 
 #### NFT Minter
 
@@ -182,7 +173,7 @@ contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ow
 
 #### Breakdown
 
-The first step is to import all the necessary OpenZeppelin contracts. 
+The first step is to import all the necessary OpenZeppelin contracts.
 
 ```solidity
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -196,7 +187,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 These contracts provide functionality for creating ERC721 tokens, as well as additional functionality for enumeration, URI storage, Burnable, Ownable, and Counters. OpenZeppelin is an open-source secure framework for building smart contracts. To learn more about open zeppelin smart contracts, [click here](https://docs.openzeppelin.com/contracts/4.x/).
 We’ll be using the ERC721 Token standard.
-
 
 Next, we’ll inherit all the imported open zeppelin contracts and create our constructors and variables.
 
@@ -213,7 +203,6 @@ contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ow
 
 In the First line, we inherited all the open zeppelin contracts. Next, we declare the _tokenIdCounter variable using the inherited features from the Counters open zeppelin secured contracts which will be incremented every time an NFT is minted.
 Finally, we declared our constructor for the ERC721 token with the name and Symbol of our token.
-
 
 Next, we’ll create the main function for minting NFTs.
 
@@ -234,7 +223,6 @@ Next, call the  `_safeMint` function that we inherited from the Openzeppelin ERC
 Finally, call the `_setTokenURI` function which is inherited from open zeppelin `erc721uristorage`, and return the `tokenId`.
 
 The rest of the functions are overrides that are required by solidity.
-
 
 #### Marketplace Contract
 
@@ -334,6 +322,7 @@ function sell(uint256 _Id) external onlyNftOwner(_Id){
 #### Breakdown
 
 First we import all the necessary contracts from openzeppelin.
+
 ```solidity
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -375,7 +364,6 @@ We need a mapping that will store our listings so create mapping called `listing
 
 And finally, for this section, add in a modifier with uint parameter `_Id` and then add a `require` statement to make sure the owner(seller) is the one making the request.
 
-
 Next, let's move to the functions and see how they work.
 
 ```solidity
@@ -392,7 +380,7 @@ Next, let's move to the functions and see how they work.
   }
 ```
 
-Let’s work on our first function. 
+Let’s work on our first function.
 
 Declare a function called `listNFT` with a couple of parameters such as An `ERC721` standard NFT `address _nft`, a `uint tokenId`, and a `uint price`. Let's also make the function `external`.
 
@@ -419,7 +407,6 @@ Inside the function create an instance of the listing using the `_id` from the f
 
 Finally, transfer the nft from the owner to the marketplace using the `transferFrom` function and set the value of the `forSale` variable to true so that the Nft will now be available for sale.
 
-
 Next the `cancelSale` function.
 
 ```solidity
@@ -437,7 +424,6 @@ Create a function called `cancelSale` with a `uint` parameter, make it external,
 Next, create an instance of the listing using the `uint Id` argument of the function just like we did with the `sell` function. Add a `require` statement to make sure the value of the `forSale` property is true.
 
 Finally, transfer the Nft back to the owner and set the `forSale` value to false.
-
 
 Let’s look at the buy Function.
 
@@ -475,13 +461,12 @@ Finally, let’s look at two last functions.
         return numOfListing.current();
     }
 ```
+
 Create a public view function called `getNFTListing` which takes a `uint _Id` parameter and returns a Listing with the `uint` argument as the key.
 
 Also, Create a public view function called `getListingLength` with no input parameters and it should only return the current value of the `numOfListing` variable.
 
-
 That’s it For the smart contract. Next, we’ll be looking at the front end.
-
 
 ### Front end
 
@@ -638,7 +623,7 @@ main()
   });
 ```
 
-The Script Above will deploy both of the smart contracts and create a contract folder for the abi and contract address for both the marketplace contract and the NFT minter contract.
+The Script Above will deploy both of the smart contracts and create a contract folder for the ABI and contract address for both the marketplace contract and the NFT minter contract.
 
 Deploy the smart contracts to the celo block-chain by running this command
 
@@ -648,8 +633,6 @@ You should see something like this in the terminal
 
 `NFTMarketplace deployed to: 0xBD3FCDD45E917d6572ff4F7989073afb244004ee`
 `MyNFT deployed to: 0x49F39D9531B826826EDc7066161F20570105AFb1`
-
-
 
 Now Let’s look at the index.js file in the root of the project.
 
@@ -696,18 +679,15 @@ ReactDOM.render(
 reportWebVitals();
 ```
 
-
 In the Index.js we made some necessary imports like the ContractKitProvider, Alfajores, and NetworkNames from the use-contract kit.
 
 Next, we wrapped our ContractKitProvider around the app Component to enable our app to connect to the celo test network.
 
 [Click here](https://docs.celo.org/developer/contractkit) to learn more about ContractKit
 
-
 #### Hooks
 
 In our hooks folder, we have three files, `useBalance`, `useContract`, `useMarketplaceContract`, and `useMinterContract`.
-
 
 For the useBalance.js file,
 
@@ -738,7 +718,6 @@ export const useBalance = () => {
 
 The `useBalance.js` file uses the `useBalance` custom hook which is used to get the balance of an account that is connected to the dapp.
 
-
 For the `useContract.js` file
 
 ```javascript
@@ -766,7 +745,6 @@ export const useContract = (abi, contractAddress) => {
 
 The `useContract.js` file uses the `useContract` custom hook which is used to get an instance of a smart contract.
 
-
 For the `useMarketplace` Contract and the `useMinterContract`.
 
 ```javascript
@@ -788,8 +766,7 @@ export const useMinterContract = () =>
 
 ```
 
-Both files import the abi and contract address from the json files that we generated when we run the deploy scripts which are then used to create and export an instance of their smart contracts.
-
+Both files import the ABI and contract address from the JSON files that we generated when we run the deploy scripts which are then used to create and export an instance of their smart contracts.
 
 Inside the utils folder open the minter file, it should look like this.
 
@@ -1023,8 +1000,7 @@ import { Web3Storage } from "web3.storage/dist/bundle.esm.min.js";
 
 First, we imported the necessary files from their packages including the contract address for our NFTminter and NFTMarketplace address.
 
-
-Now let’s setup Web3.storage for storing our nft metadata
+Now let’s setup Web3.storage for storing our NFT metadata
 
 ```javascript
 const getAccessToken = () => {
@@ -1054,210 +1030,24 @@ Next, we create a client object from the web3storage package. Then we create a f
 
 There you have it. You can now fully interact with your smart contract by simply making contract calls on your smart contracts.
 
-
 ### Next Steps
 
 I hope you learned a lot from this tutorial. Here are some relevant links that would aid your learning further.
 
-https://docs.celo.org/
-
-https://solidity-by-example.org/
-
-https://www.openzeppelin.com/contracts
-
-https://docs.soliditylang.org/en/v0.8.17/
-
+- <https://docs.celo.org/>
+- <https://solidity-by-example.org/>
+- <https://www.openzeppelin.com/contracts>
+- <https://docs.soliditylang.org/en/v0.8.17/>
 
 ### About the author
 
 I'm Jonathan Iheme, A full stack block-chain Developer from nigeria Rounding up my computer science degree.
 
-
 ### References
 
-https://web3.storage/docs/
-
-https://docs.celo.org/developer/contractkit/
-
-https://docs.celo.org/
-
-https://dacade.org/communities/celo/courses/celo-201/learning-modules/30a4b854-6722-488f-937f-c26591b89f2e
-
+- <https://web3.storage/docs/>
+- <https://docs.celo.org/developer/contractkit/>
+- <https://docs.celo.org/>
+- <https://dacade.org/communities/celo/courses/celo-201/learning-modules/30a4b854-6722-488f-937f-c26591b89f2e>
 
 Thank You!!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
