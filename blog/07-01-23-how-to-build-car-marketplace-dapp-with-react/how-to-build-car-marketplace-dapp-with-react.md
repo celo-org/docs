@@ -15,22 +15,22 @@ slug: /tutorials/how-to-build-car-marketplace-dapp-with-react
 
 ## Introduction
 Celo blockchain enables fast, secure, and low-cost financial transactions. It is built on top of the Ethereum Virtual Machine (EVM), which is a standardized environment for running smart contracts (self-executing code that can be used to facilitate, verify, and enforce the negotiation or performance of a contract). 
-One of the main features of Celo is its use of proof-of-stake (PoS) consensus, which means that the network is secured by a group of "validators" who stake (or pledge) a certain amount of the platform's native cryptocurrency  in order to participate in the validation of transactions. 
+One of the main features of Celo is its use of proof-of-stake (PoS) consensus, which means that the network is secured by a group of "validators" who stake (or pledge) a certain amount of the platform's native cryptocurrency to participate in the validation of transactions. 
 
 ## Prerequisites
-This tutorials exposes you to how building a simple fullstack dapp (decentralized application) using react. You will need to have familiarity of the following:
+This tutorial exposes you to how to build a simple full-stack dapp (decentralized application) using react. You will need to have familiarity with the following:
 
 - Prior knowledge of javascript
 - Familiarity with the command line
 - Basic understanding of blockchain concepts
-- Have some knowledge on solidity and its concepts
-- Have a basic understanding of **[React](https://react.org)**. Knowledge on JSX, props, state and hooks.
+- Have some knowledge of solidity and its concepts
+- Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
 
 ## Requirements
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
 - A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
 - A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
-- An Internet Browser and good internet connection
+- An Internet Browser and a good internet connection
 - **[Remix](https://remix.ethereum.org)**
 - **[Celo Extension Wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)**.
 
@@ -40,11 +40,11 @@ Here is a screenshot of what our dapp would look like
 
 ![image](images/1.png)
 
-_In this tutorial, I have the assumption that the person following has a basic understanding of React and has react already downloaded and fully setup. If you don't, I would highly suggest you have a grasp of React. You can start **[here](https://reactjs.org/docs/getting-started.html)**._
+_In this tutorial, I have the assumption that the person following has a basic understanding of React and has React already downloaded and fully set up. If you don't, I would highly suggest you have a grasp of React. You can start **[here](https://reactjs.org/docs/getting-started.html)**._
 
 ## Smart Contract Development
 
-We would begin this segment by building our smart contract first using Remix. Remix is a web based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
+We would begin this segment by building our smart contract first using Remix. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
 
 Here is a preview of the Remix IDE:
 ![image](images/2.png)
@@ -52,7 +52,7 @@ Here is a preview of the Remix IDE:
 On Remix, We would create a new workspace and then a new file which we would name `cardealer.sol`
 
 
-Starting out in the first line, you include a statement that specifies the license under which the code is being released.
+Starting in the first line, you include a statement that specifies the license under which the code is being released.
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -86,13 +86,13 @@ interface IERC20Token {
 
 ERC-20 tokens are a widely-used standard for creating digital assets on the Ethereum blockchain, and cUSD is one of them.
 
-These tokens have pre-defined functions and events that can be easily used in contracts, and do not require any additional implementation. For example, you will be using the ERC-20 token's interface to interact with it, so that your contract can communicate with the token.
+These tokens have pre-defined functions and events that can be easily used in contracts and do not require any additional implementation. For example, you will be using the ERC-20 token's interface to interact with it, so that your contract can communicate with the token.
 
 You can find more information on how to use these functions and events in the Celo **[documentation](https://docs.celo.org/developer-guide/celo-for-eth-devs)**. The documentation also provides more details on how to interact with ERC-20 tokens and how to use them with the Celo network.
 
 
 
-Following this, You define your smart contract by giving it a name. In our case our contract name is `CarDealer`. You can name it anything you want but ensure you keep it descriptive.
+Following this, You define your smart contract by giving it a name. In our case, our contract name is `CarDealer`. You can name it anything you want but ensure you keep it descriptive.
 
 ```js
 contract CarDealer{
@@ -103,12 +103,12 @@ contract CarDealer{
 ```
 
 In the next line, you define a state variable carLength, this is going to keep track of the cars in our contract. It is of a `uint` type which means it can only store integer values. [(Learn more about data types in solidity)](https://docs.soliditylang.org/en/latest/types.html)
-We also define the visibility of our variable to `internal` which means it cannot be accessed from external smart contracts or addresses and can only be modified within the smart contract. ([Learn more about visiblity](https://docs.soliditylang.org/en/latest/contracts.html#visibility-and-getters))
+We also define the visibility of our variable as `internal` which means it cannot be accessed from external smart contracts or addresses and can only be modified within the smart contract. ([Learn more about visiblity](https://docs.soliditylang.org/en/latest/contracts.html#visibility-and-getters))
 
 Next, To interact with the cUSD ERC-20 token on the Celo alfajores test network, you need to know the address of the token.
 
 
-After defining the single variables used in the contract, you want to create a "model" for a car, give the car its properties and group variables together.
+After defining the single variables used in the contract, you want to create a "model" for a car, give the car its properties, and group variables together.
 
 ```js
     struct Car{
@@ -131,13 +131,13 @@ For this tutorial, these would be the variables that you would store in the stru
 2. carName - This stores the name of the car. It is of type string
 3. carImage - stores the url of the car. Type string
 4. carDescription - car description.  Type string
-5. price - This stores the price of the car. Its a number so its of type uint
+5. price - This stores the price of the car. It's a number so its of type uint
 6. isUsed - This would store if the car is used or not. It would be a boolean type. True or false
 7. isSale - This keeps track of when a car is on sale or not. Boolean type
 8. isBought - This keeps track of when a car has been bought. Boolean type
 
 
-To handle multiple cars, a mapping is needed where you can access the value of a car through their key. Just like dictionaries in python or objects in Javascript.
+To handle multiple cars, a mapping is needed where you can access the value of a car through its key. Just like dictionaries in python or objects in Javascript.
 To create a mapping, you use the keyword `mapping` and assign a key type to a value type. In this case, your key would be an integer and the value would be the struct Car we just created.
 
 
@@ -164,14 +164,14 @@ In the next section, you will define a function to add the car to the smart cont
     }
 ```
 
-You have to specify the parameters type in the function. In this case, we need to pass the name, description, image, price and isUsed (all with an underscore to differentiate them from the struct values) as parameters to the function. Name the function `setCar` with a visibility of public.
+You have to specify the type of parameter in the function. In this case, we need to pass the name, description, image, price and isUsed (all with an underscore to differentiate them from the struct values) as parameters to the function. Name the function `setCar` with the visibility of public.
 
-Next, associate the key carLength with a new Car structure in the cars mapping.
+Next, associate the key carLength with a new Car structure in the `cars` mapping.
 
 The first field of the struct is the address of the owner who can receive payments. The msg.sender function returns the address of the entity that initiated the call and is capable of receiving payments. This address will be stored as the owner's address.
 You also need to assign values to the other variables using the provided parameters.
 
-The isBought value should be set to false, because on creating a car alias, the car default state should be for sale.
+The isBought value should be set to false because on creating a car alias, the car default state should be for sale.
 
 
 Up next, you would create a function that would read the products created in the preceding function.
@@ -204,7 +204,7 @@ In this case, it would be a tuple corresponding to the variables declared in the
 The function needs to return the address of the owner, the strings and the boolean values of `isUsed` and `isBought`
 
 
-Proceeding, you need to create a function that enables a user buy a car from your contract. 
+Proceeding, you need to create a function that enables a user to buy a car from your contract. 
 
 ```js
     function buyCar(uint _index) public  payable {
@@ -249,11 +249,11 @@ In the final section of the smart contract, you would create a function to sell 
     }
 ```
 
-The `sellCar` function is a public function because we need it to be accessed outside the contract.
+The `sellCar` function is public because you need it to be accessed outside the contract.
 
-The function will use the require function to make sure that the sender of this transaction is actually the owner of the car if not return an error.
+The function will use the require function to make sure that the sender of this transaction is the owner of the car if not return an error.
 
-If that succeeds, then change the isBought function to false so others now  have the opportunity to buy it.
+If that succeeds, then change the isBought function to false so others now have the opportunity to buy it.
 
 Next in line, create a public function that will iterate over the stored cars in the frontend and return the total number of cars.
 
@@ -376,16 +376,16 @@ To deploy the contract, we would need:
 2. [ Celo Faucet](https://celo.org/developers/faucet) 
 3. Celo Remix Plugin
 
-Download the Celo Extension Wallet from the Google chrome store using the link above. After doing that, create a wallet, store your key phrase in a very safe place to avoid permanently losing your funds.
+Download the Celo Extension Wallet from the Google chrome store using the link above. After doing that, create a wallet, and store your key phrase in a very safe place to avoid permanently losing your funds.
 
-After downloading and creating your wallet, you will need to fund it using the Celo Faucet. Copy the address to your wallet, click the link to the faucet above and the paste the address into the text field and confirm.
+After downloading and creating your wallet, you will need to fund it using the Celo Faucet. Copy the address to your wallet, click the link to the faucet above and paste the address into the text field, and confirm.
 
 Next up, on remix, download and activate the celo plugin from the plugin manager. Connect your wallet and deploy your contract.
 
 
 ## Frontend Development
 
-To get setup with building your react dapp, you would have to setup your new react project. 
+To get set up with building your react dapp, you would have to set up your new react project. 
 1.  - Run this on your terminal
 ```bash 
     npx create-react-app cardealer
@@ -458,7 +458,7 @@ This should open a vscode window with the cardealer directory.
 ## The HTML part of the Dapp
 In the next step of the tutorial, you will begin building the foundation of your decentralized application (DApp) using HTML.
 
-First off, you would add the following folder name `assets2` to the public folder. This has some CSS properties and images that you would be using to enable you build your dapp swiftly. ([Download it here](https://github.com/dahnny/CeloDealer/tree/main/public/assets2))
+First off, you would add the following folder name `assets2` to the public folder. This has some CSS properties and images that would be used to enable you to build your dapp swiftly. ([Download it here](https://github.com/dahnny/CeloDealer/tree/main/public/assets2))
 
 Open the index.html file located in the public folder of your project, and let's begin.
 
@@ -503,7 +503,7 @@ Afterwards, you will import some external stylesheets.
 ```
 From our `assets2` folder, we import some stylesheets that will be used to give our frontend a specific feel.
 
-_Disclaimer: This method of importing css files is not recommended for building large scale applications and is only used here for the purpose of keeping this tutorial simple and concise._
+_Disclaimer: This method of importing css files is not recommended for building large-scale applications and is only used here to keep this tutorial simple and concise._
 
 Up next, you would add the body of the html and add specific script tags which would give our dapp some functionality.
 
@@ -555,7 +555,7 @@ Up next, you would add the body of the html and add specific script tags which w
 
 ## App.js
 The App.js file is the starting point for the React frontend of the application. The App component is responsible for the layout and organization of the other components. It includes the App component, which acts as a container for all other components. 
-At the beginning of the App.js file, necessary libraries, components and hooks are imported.
+At the beginning of the App.js file, necessary libraries, components, and hooks are imported.
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -570,9 +570,9 @@ const contractAddress = "0x83dce46765c4420b8E93eE1b2e9Fc79d254E9212";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 ```
 
-You will start  off by importing standard react hooks like `useState` and `useEffect` from the react library.
+You will start by importing standard react hooks like `useState` and `useEffect` from the react library.
 
-Then we import the web3, contractkit and bignumber js objects from their libraries.
+Then we import the web3, contractkit, and bignumber js objects from their libraries.
 
 Celo's operations often deal with numbers that are too large for Javascript to handle. To handle these numbers, we will use bignumber.js.
 
@@ -614,7 +614,7 @@ For the next lines, a `components` folder would need to be created inside the `s
 Create the files in the components folder as seen above. `Header.js`, `SalesCars.js`, `AddCar.js`, `MyCar.js`. 
 These sections would be discussed later.
 
-Next up, we would be using useState to keep track of some variables through out the dapp. 
+Next up, we would be using useState to keep track of some variables throughout the dapp. 
 
 
 ```js
@@ -804,7 +804,7 @@ Next would be creating a function that allows users to add a car to the smart co
   }
 ```
 
-You start by creating a new BigNumber instance with the _price argument, and then it's shifting it by ERC20_DECIMALS, this is a way to represent the price in terms of smaller units. Then it's converting the value to a string and storing it in the "price" variable.
+You start by creating a new BigNumber instance with the _price argument, and then it's shifting it by ERC20_DECIMALS, this is a way to represent the price in terms of smaller units. Then it's converting the value to a string and stores it in the "price" variable.
 
 Then you use the `contract.methods.setCar(..)` method to add the car to the smart contract. You also use the "send" method, passing in the user's address as the "from" property. This sends the transaction to the smart contract and adds the car to the smart contract.
 
@@ -847,7 +847,7 @@ After this function, we would add two functions which would be to initiate the b
   };
 ```
 
-The "buyCar" function takes two arguments: _price, and _index. The function starts by creating a new cUSD contract instance using the ERC20 ABI and cUSD contract address. Then it creates a new BigNumber instance with the _price argument, and then it's shifting it by ERC20_DECIMALS, this is a way to represent the price in terms of smaller units. Then it's converting the value to a string and storing it in the "cost" variable.
+The "buyCar" function takes two arguments: _price and _index. The function starts by creating a new cUSD contract instance using the ERC20 ABI and cUSD contract address. Then it creates a new BigNumber instance with the _price argument, and then it's shifting it by ERC20_DECIMALS, this is a way to represent the price in terms of smaller units. Then it's converting the value to a string and stores it in the "cost" variable.
 
 The function then uses the "cUSDContract.methods.approve(contractAddress, cost)" method to approve the spending of cUSD tokens to the contract address, passing in the cost variable as an argument, and the user's address as the "from" property.
 
