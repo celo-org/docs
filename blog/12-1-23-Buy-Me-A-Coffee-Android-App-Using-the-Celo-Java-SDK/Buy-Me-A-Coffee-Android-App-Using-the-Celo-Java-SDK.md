@@ -6,11 +6,13 @@ authors:
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
-tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora']
+tags: [celosage, android, celo, celowallet, cli, contractkit, dapp, mobile, sdk, valora]
 hide_table_of_contents: true
 slug: /tutorials/buy-me-a-coffee-android-app-using-the-celo-java-sdk
-
 ---
+
+![header](../../src/data-tutorials/showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png)
+
 ## Introduction​
 
 This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee", will allow users to make a donation to any one of their choice using their Celo account. We will walk you through the process of setting up the Celo Java SDK and integrating it into your app, so you can start accepting payments in no time. By the end of this tutorial, you will have a working Android app that allows users to make payments using the Celo network.

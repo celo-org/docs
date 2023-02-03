@@ -3,7 +3,7 @@ title: How to Create and Test Contract Calls with Celo and Hardhat
 description: How to Create and Test Contract Calls on Hardhat
 authors:
   - name: ✍️ Mayowa Julius
-tags: [hardhat]
+tags: [hardhat, celosage]
 hide_table_of_contents: false
 slug: /tutorials/how-to-create-and-test-contract-calls-on-hardhat
 ---
