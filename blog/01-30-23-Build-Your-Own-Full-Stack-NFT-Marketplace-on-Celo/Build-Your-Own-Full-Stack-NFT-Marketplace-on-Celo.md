@@ -12,13 +12,13 @@ slug: "/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo"
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png)
 
-### Introduction
+## Introduction
 
 NFTs or Non-Fungible Tokens have a lot of unique benefits to the blockchain ecosystem. One of those benefits is the ability to create and trade digital items or a representation of a physical item. In this tutorial, you’ll learn how to create a simple decentralized application for Buying and selling vintage items as  NFTs on the Celo Blockchain. Hopefully one day you will use this knowledge to create the next open sea 🙂.
 
 Here’s a demo [link](https://aquamarine-unicorn-2f3217.netlify.app/) of what you’ll be creating.
 
-### Prerequisites
+## Prerequisites
 
 To fully follow up with these tutorials, you should have a basic understanding of the following technologies.
 
@@ -27,7 +27,7 @@ Hardhat.
 React.
 Basic web Development.
 
-### Requirements
+## Requirements
 
 - Solidity.
 - OpenZeppelin.
@@ -38,7 +38,7 @@ Basic web Development.
 - NodeJS 12.0.1 upwards installed.
 - MetaMask.
 
-### Installation
+## Installation
 
 Click on [this](https://github.com/4undRaiser/VintageNFTMarketplace) repo from your github.
 
@@ -46,7 +46,7 @@ Click on [this](https://github.com/4undRaiser/VintageNFTMarketplace) repo from y
 - open the project from from vscode.
 - Run `npm install` command to install all the dependencies required to run the app locally.
 
-### Folder structure
+## Folder structure
 
 ```text
 ├── build
@@ -100,14 +100,14 @@ Click on [this](https://github.com/4undRaiser/VintageNFTMarketplace) repo from y
 └── README.md
 ```
 
-### SmartContract
+## SmartContract
 
 In this chapter, we’ll be creating two separate smart contracts for our decentralized application. You can use either remix, visual studio or hardhat to write the smart contract.
 
 First, we’ll create a smart contract for minting nfts and next we’ll create another one for the marketplace.
 Splitting smart-contract this way is considered best practice in the solidity community.
 
-#### NFT Minter
+## NFT Minter
 
 The NFT Minter Contract will look like this.
 
@@ -171,7 +171,7 @@ contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ow
 }
 ```
 
-#### Breakdown
+## Breakdown
 
 The first step is to import all the necessary OpenZeppelin contracts.
 
@@ -224,7 +224,7 @@ Finally, call the `_setTokenURI` function which is inherited from open zeppelin 
 
 The rest of the functions are overrides that are required by solidity.
 
-#### Marketplace Contract
+### Marketplace Contract
 
 This is how the Completed Marketplace Contract will look like
 
@@ -319,7 +319,7 @@ function sell(uint256 _Id) external onlyNftOwner(_Id){
 }
 ```
 
-#### Breakdown
+### Breakdown
 
 First we import all the necessary contracts from openzeppelin.
 
@@ -468,9 +468,9 @@ Also, Create a public view function called `getListingLength` with no input para
 
 That’s it For the smart contract. Next, we’ll be looking at the front end.
 
-### Front end
+## Front end
 
-#### Stack
+### Stack
 
 We’ll use the following stack for this section.
 
@@ -479,7 +479,7 @@ Web3.Storage
 useContractKit
 IPFS
 
-#### Setup
+### Setup
 
 Clone the full project from [this Repository](https://github.com/4undRaiser/VintageNFTMarketplace) to follow up with this section.
 
@@ -490,7 +490,7 @@ MNEMONIC=""
 REACT_APP_STORAGE_API_KEY=""
 ```
 
-#### Deployment
+### Deployment
 
 We’ll use hardhat to deploy our smart-contracts to the celo blockchain.
 
@@ -685,7 +685,7 @@ Next, we wrapped our ContractKitProvider around the app Component to enable our 
 
 [Click here](https://docs.celo.org/developer/contractkit) to learn more about ContractKit
 
-#### Hooks
+### Hooks
 
 In our hooks folder, we have three files, `useBalance`, `useContract`, `useMarketplaceContract`, and `useMinterContract`.
 
@@ -1030,7 +1030,7 @@ Next, we create a client object from the web3storage package. Then we create a f
 
 There you have it. You can now fully interact with your smart contract by simply making contract calls on your smart contracts.
 
-### Next Steps
+## Next Steps
 
 I hope you learned a lot from this tutorial. Here are some relevant links that would aid your learning further.
 
@@ -1039,11 +1039,11 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 - <https://www.openzeppelin.com/contracts>
 - <https://docs.soliditylang.org/en/v0.8.17/>
 
-### About the author
+## About the author
 
 I'm Jonathan Iheme, A full stack block-chain Developer from nigeria Rounding up my computer science degree.
 
-### References
+## References
 
 - <https://web3.storage/docs/>
 - <https://docs.celo.org/developer/contractkit/>
