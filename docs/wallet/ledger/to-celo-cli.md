@@ -99,7 +99,7 @@ Before using your address on the Celo Mainnet, you may want to test it on the Ce
 
 Visit the Alfajores Faucet and send yourself some testnet CELO at the following URL:
 
-https://celo.org/developers/faucet
+https://faucet.celo.org
 
 Check that you received the funds with the following command:
 

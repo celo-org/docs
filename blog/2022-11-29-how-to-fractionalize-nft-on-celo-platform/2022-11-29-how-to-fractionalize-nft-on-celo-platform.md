@@ -1,20 +1,18 @@
 ---
-title: How to fractionalize an NFT on Celo Platform
+title: How to Fractionalize an NFT on the Celo Platform
 description: Building a dApp to fractionalize an NFT on top of Celo.
 authors:
   - name: Aviraj Khare
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
-tags: [NFT, fractionalization]
+tags: [advanced, nft, celo, celosage, NFT, fractionalization]
 hide_table_of_contents: false
 slug: /tutorials/how-to-fractionalize-nft-on-celo-platform
 ---
 
-# How to fractionalize an NFT on Celo Platform
+![header](../../src/data-tutorials/showcase/advanced/how-to-fractionalize-an-nft-on-the-celo-platform.png)
 
-![header](../src/data-tutorials/showcase/advanced/how-to-fractionalize-an-nft-on-the-celo-platform.png)
-
-### Introduction
+## Introduction
 
 NFTs have taken the market by storm, and the industry is now whopping billions of dollars.
 
@@ -22,19 +20,19 @@ NFT is not a new concept. The concept first came into existence in 2014 with the
 
 Later in 2020, NFT became a hot topic, and everyone was talking about it, and their market grew by \$250 million. Since then, sales of NFTs have sky-rocketed.
 
-### Prerequisites​
+## Prerequisites​
 
 - Prior knowledge of Solidity is required.
 - Prior knowledge of HTML, CSS, and JavaScript is required.
 - Knowledge of ERC-20, ERC-721 specification is required.
 - Knowledge of how to deploy smart contracts via Remix.
 
-### Requirements
+## Requirements
 
 - Remix IDE to write smart contract
 - Knowledge of HTML, CSS, and JavaScript to code the frontend so we can interact with the smart contract to create an NFT.
 
-### What are NFTs?​
+## What are NFTs?​
 
 A non-fungible token or NFT is a permanent record in blockchain linked to a digital or physical asset. For example, if I have a unique image and insert its location inside the token, that piece is called a non-fungible token.
 
@@ -42,7 +40,7 @@ But first, we need to understand what “fungible” means.
 
 A “fungible” item is replaceable with a similar item bearing the same value; that means every fungible item has the same utility and intrinsic value. An example of this would be a $10 bill that can be used to replace any other $10 bill—you can swap your $10 bill with your friend’s without actually causing its value to dip. However, if you have a $10 bill that some celebrity has signed or a unique serial number like all eights, it could be worth up to $1,000 or even more. Why so? Because a mere celebrity autograph can make a regular $10 bill rare, special, and hence, non-fungible.
 
-### What are fractionalized NFTs?​
+## What are fractionalized NFTs?​
 
 As the name suggests, a fractionalized NFT is an NFT spitted into fractions that can be sold individually. Each fraction represents ownership of an NFT, enabling multiple people to own a single NFT.
 
@@ -52,7 +50,7 @@ Fractionalized NFTs work just like shares of a company or shared ownership of a 
 
 When an NFT is fractionalized, the original NFT is locked up in a vault, and a limited supply of fungible tokens representing fractions of the NFT’s ownership is issued. Interested buyers can then invest in these individual fractions of the NFT and claim shared ownership.
 
-### How to fractionalize an NFT?​
+## How to fractionalize an NFT?​
 
 Both ERC-721 and ERC-1155 are used to create NFTs on Ethereum. However, to create alt tokens, the ERC-20 specification is used.
 
@@ -65,18 +63,18 @@ Now let’s dive deeper and understand the process to fractionalize an NFT:
 - From deciding on the number of ERC-20 tokens to be created to fixing each token’s price, the owner of the NFT makes all major decisions regarding the fractionalization process.
 - An open sale is then organized for the fractional shares at a fixed price for a set period or until they are sold out.
 
-### Enough talking. Let’s get to the coding!​
+## Enough talking. Let’s get to the coding!​
 
 We will need two smart contracts to achieve this task.
 
 - **NFT smart contract**: This is a simple NFT smart contract
 - **Fractionalized NFT smart contract**: This smart contract fractionalizes the NFT and gives out ERC-20 token. Users can also buy NFT from this NFT. Once a sale is made, ERC-20(fraction) holders can redeem their tokens with ETH.
 
-Go to Open Zepplin wizard and create an ERC-721 token: https://docs.openzeppelin.com/contracts/4.x/wizard
+Go to Open Zepplin wizard and create an ERC-721 token: <https://docs.openzeppelin.com/contracts/4.x/wizard>
 
 It looks like this.
 
-[![Open Zepplin Wizard](https://i.imgur.com/AL5tAgo.png)](https://docs.openzeppelin.com/contracts/4.x/wizard)
+![Open Zepplin Wizard](https://i.imgur.com/AL5tAgo.png)](<https://docs.openzeppelin.com/contracts/4.x/wizard>)
 
 Give your NFT smart contract name and symbol. Make sure you select Ownable from the menu.
 
@@ -140,46 +138,46 @@ import  "@openzeppelin/contracts@4.6.0/token/ERC20/extensions/draft-ERC20Permit.
 import  "@openzeppelin/contracts@4.6.0/token/ERC721/utils/ERC721Holder.sol";
 
 contract  FractionalizedNFT  is  ERC20, Ownable, ERC20Permit, ERC721Holder {
-	IERC721  public  collection;
-	uint256  public  tokenId;
-	bool  public  initialized = false;
-	bool  public  forSale = false;
-	uint256  public  salePrice;
-	bool  public  canRedeem = false;
+ IERC721  public  collection;
+ uint256  public  tokenId;
+ bool  public  initialized = false;
+ bool  public  forSale = false;
+ uint256  public  salePrice;
+ bool  public  canRedeem = false;
 
-	constructor() ERC20("MyToken", "MTK") ERC20Permit("MyToken") {}
+ constructor() ERC20("MyToken", "MTK") ERC20Permit("MyToken") {}
 
-	function  initialize(address  _collection, uint256  _tokenId, uint256  _amount) external  onlyOwner {
-		require(!initialized, "Already initialized");
-		require(_amount > 0, "Amount needs to be more than 0");
-		collection = IERC721(_collection);
-		collection.safeTransferFrom(msg.sender, address(this), _tokenId);
-		tokenId = _tokenId;
-		initialized = true;
-		_mint(msg.sender, _amount);
-	}
+ function  initialize(address  _collection, uint256  _tokenId, uint256  _amount) external  onlyOwner {
+  require(!initialized, "Already initialized");
+  require(_amount > 0, "Amount needs to be more than 0");
+  collection = IERC721(_collection);
+  collection.safeTransferFrom(msg.sender, address(this), _tokenId);
+  tokenId = _tokenId;
+  initialized = true;
+  _mint(msg.sender, _amount);
+ }
 
-	function  putForSale(uint256  price) external  onlyOwner {
-		salePrice = price;
-		forSale = true;
-	}
+ function  putForSale(uint256  price) external  onlyOwner {
+  salePrice = price;
+  forSale = true;
+ }
 
-	function  purchase() external  payable {
-		require(forSale, "Not for sale");
-		require(msg.value >= salePrice, "Not enough CELO sent");
-		collection.transferFrom(address(this), msg.sender, tokenId);
-		forSale = false;
-		canRedeem = true;
-	}
+ function  purchase() external  payable {
+  require(forSale, "Not for sale");
+  require(msg.value >= salePrice, "Not enough CELO sent");
+  collection.transferFrom(address(this), msg.sender, tokenId);
+  forSale = false;
+  canRedeem = true;
+ }
 
 
-	function  redeem(uint256  _amount) external {
-		require(canRedeem, "Redemption not available");
-		uint256  totalCelo = address(this).balance;
-		uint256  toRedeem = _amount * totalCelo / totalSupply();
-		_burn(msg.sender, _amount);
-		payable(msg.sender).transfer(toRedeem);
-	}
+ function  redeem(uint256  _amount) external {
+  require(canRedeem, "Redemption not available");
+  uint256  totalCelo = address(this).balance;
+  uint256  toRedeem = _amount * totalCelo / totalSupply();
+  _burn(msg.sender, _amount);
+  payable(msg.sender).transfer(toRedeem);
+ }
 }
 ```
 
@@ -215,13 +213,13 @@ This is the function it runs when the smart contract is deployed. ERC20 takes th
 
 ```js
 function  initialize(address  _collection, uint256  _tokenId, uint256  _amount) external  onlyOwner {
-	require(!initialized, "Already initialized");
-	require(_amount > 0, "Amount needs to be more than 0");
-	collection = IERC721(_collection);
-	collection.safeTransferFrom(msg.sender, address(this), _tokenId);
-	tokenId = _tokenId;
-	initialized = true;
-	_mint(msg.sender, _amount);
+ require(!initialized, "Already initialized");
+ require(_amount > 0, "Amount needs to be more than 0");
+ collection = IERC721(_collection);
+ collection.safeTransferFrom(msg.sender, address(this), _tokenId);
+ tokenId = _tokenId;
+ initialized = true;
+ _mint(msg.sender, _amount);
 }
 ```
 
@@ -233,8 +231,8 @@ It checks if the contract is already initialized. If not, it checks for the othe
 
 ```js
 function  putForSale(uint256 price) external  onlyOwner {
-	salePrice = price;
-	forSale = true;
+ salePrice = price;
+ forSale = true;
 }
 ```
 
@@ -242,11 +240,11 @@ function  putForSale(uint256 price) external  onlyOwner {
 
 ```js
 function  purchase() external  payable {
-	require(forSale, "Not for sale");
-	require(msg.value >= salePrice, "Not enough CELO sent");
-	collection.transferFrom(address(this), msg.sender, tokenId);
-	forSale = false;
-	canRedeem = true;
+ require(forSale, "Not for sale");
+ require(msg.value >= salePrice, "Not enough CELO sent");
+ collection.transferFrom(address(this), msg.sender, tokenId);
+ forSale = false;
+ canRedeem = true;
 }
 ```
 
@@ -258,12 +256,12 @@ First, it checks if the forSale flag is true and if the sent CELO is greater tha
 
 ```js
 function  redeem(uint256 _amount) external {
-	require(canRedeem, "Redemption not available");
-	uint256 totalCelo = address(this).balance;
-	uint256 toRedeem = _amount * totalCelo / totalSupply();
+ require(canRedeem, "Redemption not available");
+ uint256 totalCelo = address(this).balance;
+ uint256 toRedeem = _amount * totalCelo / totalSupply();
 
-	_burn(msg.sender, _amount);
-	payable(msg.sender).transfer(toRedeem);
+ _burn(msg.sender, _amount);
+ payable(msg.sender).transfer(toRedeem);
 }
 ```
 
@@ -355,10 +353,10 @@ I hope you loved this tutorial.
 
 Thank You
 
-### About the Author
+## About the Author
 
 - Aviraj Khare: Ex Gojek, Into Web3 space since 2016
 
-### References
+## References
 
 - **[https://docs.celo.org/](https://docs.celo.org/)**

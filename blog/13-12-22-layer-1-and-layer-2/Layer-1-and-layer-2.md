@@ -8,6 +8,8 @@ hide_table_of_contents: false
 slug: '/tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols'
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
+
 ## Introduction
 
 We can't talk of blockchain solutions without mentioning Layer 1 and Layer 2 protocols and how they uniquely contribute to blockchain scalability. It is essential to know that Layer 1 primarily serves as the framework for Layer 2 and its solutions. Without Layer 1 scaling solutions, the consensus protocol, sharding, and the lightning network would not be possible.
@@ -87,14 +89,11 @@ The search for improved scalability is an unending one, and it has taken precede
 
 Joshua Obafemi
 
-A web3 content writer. You can connect with me on Linkedin [https://www.linkedin.com/in/joshua-obafemi-ba2014199/].
+A web3 content writer. You can connect with me on [Linkedin](https://www.linkedin.com/in/joshua-obafemi-ba2014199/).
 
 ## References
 
-<https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
-
-<https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
-
-<https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
-
-<https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>
+- <https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
+- <https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
+- <https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
+- <https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>

@@ -3,11 +3,12 @@ title: Why should you use Celo Blockchain
 description: introduction to the Celo blockchain and why you should use it
 authors:
   - name: Adefolalu Adegboyega
-    url: https://github.com/profnica
 tags: [Celo, Blockchain]
 hide_table_of_contents: false
-slug: /tutorials/Why-should-you-use-Celo-Blockchain
+slug: /tutorials/why-should-you-use-celo-blockchain
 ---
+
+![header](../../src/data-tutorials/showcase/beginner/why-should-you-use-celo.png)
 
 Despite claims of causing long-awaited changes in the financial system, several blockchain projects have failed to attain global mainstream adoption.
 
@@ -49,8 +50,6 @@ These act as intermediaries between validator nodes and light clients. They take
 ### Validator Nodes
 
 These are the network's backbone, responsible for creating new blocks and verifying transactions or staking. At any given time, there are 100 validators, and the only requirement to join their ranks and earn voting rights is to stake 10,000 CELO. Each validator is given a slice of the block reward for every successful transaction and block creation.
-
-(C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo2.png)
 
 ## What is Special About Celo?
 
@@ -110,8 +109,6 @@ But much more than that is its compatibility with the Ethereum Application Layer
 This EVM compatibility ensures that working on CELO projects as a developer will be an Ethereum offshoot. Being a true layer 1 chain, your tools and signature schedule work perfectly well here.
 
 Using its lightweight client, you can quickly move assets from other chains to Celo.
-
-(C:\Users\pc\docs\blog\27-12-22-Why-should-you-use-Celo-Blockchain\images\celo3.jpg)
 
 ### How Does Celo Keep Spammers From Harvesting Users' Contact Information?
 

@@ -3,14 +3,16 @@ title: Build a Frontend dApp for Celo Network in Angular
 description: How to build a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular 
 authors:
   - name: ✍️ Yinka Tanimomo
-tags: [hardhat]
+tags: [hardhat, celosage]
 hide_table_of_contents: false
 slug: /tutorials/build-a-frontend-dapp-for-celo-network-in-angular
 ---
 
-# Introduction
+![header](../../src/data-tutorials/showcase/intermediate/build-a-frontend-dapp-for-celo-network-in-angular.png)
 
-In this tutorial, we will be building a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular. 
+## Introduction
+
+In this tutorial, we will be building a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular.
 
 ## How the dApp works
 
@@ -44,20 +46,22 @@ You will also need the following
 - Angular Basics
 
 # Getting Started
+
 I assume that anyone going through this tutorial already understands and use Angular, so I will skip the setup involved in getting Angular to work on your development computer. That means I assume you already have Node and Angular setup on your PC.
 
 \*If you are entirely new to Angular, [here](https://angular.io/start) is a good tutorial you can learn from.
 
-To bootstrap our Angular dApp, we will be using **Celo Composer**. 
+To bootstrap our Angular dApp, we will be using **Celo Composer**.
 
 **Celo Composer** is a set of tools and starter templates that makes it easy for you to start your Celo-based web3 projects.
 
 You can check out Celo Composer here <https://github.com/celo-org/celo-composer/tree/main/packages/angular-app>.
 
-To start our Angular App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp. 
+To start our Angular App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp.
 
- - Run this on your terminal 
-```text 
+- Run this on your terminal
+
+```text
     npx @celo/celo-composer create
 ```
 
@@ -74,7 +78,7 @@ Your Project will now be created; you can check to make sure it has the followin
 
 # Setup the Smart Contract
 
-- Open your Hardhat project folder (`packages/hardhat`) 
+- Open your Hardhat project folder (`packages/hardhat`)
 
 - Copy the *.envexample* to a new file called *.env*. This is where the private key you use to deploy your contracts will be saved.
 
@@ -88,7 +92,7 @@ Your Project will now be created; you can check to make sure it has the followin
 
 - Open your Contracts folder (packages/hardhat/contracts)
 
-- Add a new contract in the folder called `NFTAuctionManager.sol` 
+- Add a new contract in the folder called `NFTAuctionManager.sol`
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -136,7 +140,7 @@ contract NFTAuctionManager {
 }
 ```
 
-The `NFTAuctionManager` Contract has two functions 
+The `NFTAuctionManager` Contract has two functions
 
 **CreateAuction**: allows you to create a new Auction; it stores the created Auction in the auctions mapping
 
@@ -253,14 +257,13 @@ The **NFTAuction** contract implements the Auction Sale. It has the following fu
 
 These are the contracts we will be interacting with via our Angular dApp Frontend.
 
-
 ## Deploy Your Smart contract
 
 Your hardhat project was set up with the hardhat-deploy plugin which makes deployments very easy.
 
 To deploy, go to the deploy folder, open the `00-deploy.js` file, and you will see an example deployment function for the existing Greeter contract.
 
-Copy the `00-deploy.js` file and paste it to a new file called `01-deploy-NFTAuction.js`. 
+Copy the `00-deploy.js` file and paste it to a new file called `01-deploy-NFTAuction.js`.
 
 Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the `00-deploy` file first, then run the `01-deploy-nftauction.js` file next.
 
@@ -316,7 +319,7 @@ Once the packages install, let's run the code to see how it looks first with the
 
 ![image](images/2.png)
 
-Click on the connect button, and you will see how it works for now.	
+Click on the connect button, and you will see how it works for now.
 
 You can now connect to a crypto wallet, and the response from your connection is also displayed back to you. Now, let's go through the code that produced that.
 
@@ -324,9 +327,9 @@ Open **src/app/core/web3.ts**
 
 The first thing we need to do is figure out a way to get access to our Web3 provider.
 
-This Web3 provider allows your application to communicate with an Ethereum Node. Providers take JSON-RPC requests and return the response. 
+This Web3 provider allows your application to communicate with an Ethereum Node. Providers take JSON-RPC requests and return the response.
 
-The `/core/web3` file contains an injection token that allows you to get access to the web provider.	
+The `/core/web3` file contains an injection token that allows you to get access to the web provider.
 
 ```js
 
@@ -342,14 +345,14 @@ export const WEB3 = new InjectionToken<Web3>('web3', {
 
 Now that we know how to get access to the web3 provider, Most of your interactions with the blockchain are going to be happening through the web3Service so let's go through that also.
 
-Open the `packages\angular-app\src\app\services\contract\web3.services.ts` file 
+Open the `packages\angular-app\src\app\services\contract\web3.services.ts` file
 
 Now let's go through the code
 
 First, we import the libraries we will need. There are three important libraries to take note of.
 
-1. **WalletConnect:** This is an open-source protocol that helps implement established connections between various crypto wallets and[ ](https://learn.bybit.com/glossary/defi/)decentralized finance (DeFi) DAPPs. The protocol establishes a remote, encrypted connection between the wallets and apps. Simply put, WalletConnect forms a bridge connecting any mobile wallet to any decentralized web application. 
-   With WalletConnect, users can connect over 170[ ](https://learn.bybit.com/crypto/walletconnect-compatible-wallets/)WalletConnect-compatible wallets, such as[ ](https://learn.bybit.com/crypto/what-is-metamask-and-how-to-use-it/)MetaMask, Valora, and[ ](https://learn.bybit.com/defi/what-is-trust-wallet/)Trust Wallet, and several DAPPs
+1. **WalletConnect:** This is an open-source protocol that helps implement established connections between various crypto wallets and[](https://learn.bybit.com/glossary/defi/)decentralized finance (DeFi) DAPPs. The protocol establishes a remote, encrypted connection between the wallets and apps. Simply put, WalletConnect forms a bridge connecting any mobile wallet to any decentralized web application.
+   With WalletConnect, users can connect over 170[](https://learn.bybit.com/crypto/walletconnect-compatible-wallets/)WalletConnect-compatible wallets, such as[](https://learn.bybit.com/crypto/what-is-metamask-and-how-to-use-it/)MetaMask, Valora, and[](https://learn.bybit.com/defi/what-is-trust-wallet/)Trust Wallet, and several DAPPs
 
 1. **Web3 Modal:** This is an easy-to-use library to help developers add support for multiple providers in their apps with a simple, customizable configuration. With Web3modal, you can easily support injected providers like (Metamask, Brave Wallet, Dapper, Frame, Gnosis Safe, Tally, Web3 Browsers, etc) and WalletConnect.
 
@@ -357,7 +360,7 @@ First, we import the libraries we will need. There are three important libraries
 
 Now, let's have a look at some of the class variables
 
-All the Web3 Wallet accounts our DAPP is connected to are saved in the ***accounts*** array. 
+All the Web3 Wallet accounts our DAPP is connected to are saved in the ***accounts*** array.
 
 In Web3, a DAPP might be connected to different wallets at the same time; requesting for all connected accounts will always return an array. Most times, though, most DAPPS simply use the first member of the array as the active account.
 
@@ -367,7 +370,7 @@ The ***provider*** variable will store a reference to our web3 provider as provi
 
 In lines 27 - 53 (`web3.services.ts`), we configure our options for web3modal.
 
-The ***walletconnect*** option allows us to set up the wallet that we would like to support in our dApp. You can connect through different types of connections 
+The ***walletconnect*** option allows us to set up the wallet that we would like to support in our dApp. You can connect through different types of connections
 
 - Injected Wallets:-  e.g, Metamask - supports wallets that injects an Ethereum Provider into the browser or window
 - Mobile Wallets: - e.g Valora - Wallet connect allows users to connect via scanning QR codes that deep links to the apps.
@@ -491,7 +494,7 @@ The response from the Connect call is bound to the header in our view, so you ca
 
 If all goes well, you should see your connected wallet address on the page.
 
-Congrats, you have made your first web3 interaction 
+Congrats, you have made your first web3 interaction
 
 ## Add Bootstrap UI Framework
 
@@ -500,14 +503,15 @@ We are going to be modifying our DAPPs UI a little, and we will find it better t
 Tailwind is installed, so I will disable it, and add **bootstrap** instead. So go to styles.css and remove all the stylings there.
 
 There are two ways to install bootstrap.
-- Via a CDN or 
+
+- Via a CDN or
 - Via an Angular plugin
 
-While using an angular plugin is preferable, we won't be doing that as that's outside the scope of this tutorial, you can look up this tutorial to see how to setup bootstrap via the angular plugin. <https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application> 
+While using an angular plugin is preferable, we won't be doing that as that's outside the scope of this tutorial, you can look up this tutorial to see how to setup bootstrap via the angular plugin. <https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application>
 
 For now, go to <https://getbootstrap.com/docs/5.2/getting-started/introduction/> and copy the bootstrap css files and scripts and add it to the head and body section in your `index.html`(`/src/index.html`)
 
-We can now change the code in our app-component to use a more "bootstrappy" theme and we will also add support for routing by adding a Router Outlet. 
+We can now change the code in our app-component to use a more "bootstrappy" theme and we will also add support for routing by adding a Router Outlet.
 
 ```html
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
@@ -571,7 +575,7 @@ import {RouterModule, Routes } from '@angular/router';
 
 Also create an array for storing our routes
 
-```js 
+```js
 const routes: Routes = [];
 ```
 
@@ -579,11 +583,11 @@ Finally, in your NgModule, add the router module to the imports
 
 ```js
 @NgModule({
-	...
+ ...
   imports: [
-	....
-	RouterModule.forRoot(routes)
-	],
+ ....
+ RouterModule.forRoot(routes)
+ ],
   ...
 })
 export class AppModule {}
@@ -608,7 +612,7 @@ const routes: Routes = [];
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-	RouterModule.forRoot(routes)
+ RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -651,13 +655,13 @@ Go back to the app.component.ts file
 
 Change the ***Connect*** method to an async method, rename the ***data*** class variable to ***accounts*** and update the ***Connect*** method to reflect this.
 
-```js 
+```js
 accounts: any[]|undefined;
 ...
 async Connect() {
   let accounts = await this.web3.connectAccount();
-	console.log(accounts);
-	this.accounts = accounts;
+ console.log(accounts);
+ this.accounts = accounts;
 }
 ```  
 
@@ -665,7 +669,7 @@ We will update the view to reflect the changes
 
 Let's add a condition on the UI to display the connect button when the accounts variable is undefined and show the principal(first) account when it's defined
 
-Change from 
+Change from
 
 ```html
   <button class="bg-orange-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" (click)="Connect()" >
@@ -673,7 +677,7 @@ Change from
   </button>
 ```  
 
-to this 
+to this
 
 ```html
   <div *ngIf="accounts "> {{accounts[0]}}</div>
@@ -689,10 +693,10 @@ We can display the balance also when you are connected. We can use the ***accoun
 ```js
 async Connect() {
   let accounts = await this.web3.connectAccount();
-	console.log(accounts);
-	this.accounts = accounts;
+ console.log(accounts);
+ this.accounts = accounts;
 
-	this.balance =  await this.web3.accountInfo(this.accounts![0]);
+ this.balance =  await this.web3.accountInfo(this.accounts![0]);
 
 }
 ```
@@ -709,6 +713,7 @@ The only thing left to do is to display the ***balance*** on the UI
 ```
 
 ## Add Pages  
+
 We are going to create 3 pages for this DAPP  
 
 1. A Create Auction page - allows you to create an Auction for an NFT you own
@@ -740,7 +745,7 @@ Add a new component from the angular cli
 ng g c create-auction
 ```
 
-This should create a ***CreateAuctionComponent***. Add it to your routes 
+This should create a ***CreateAuctionComponent***. Add it to your routes
 
 ```js
 {
@@ -749,7 +754,7 @@ This should create a ***CreateAuctionComponent***. Add it to your routes
 },
 ```
 
-Ensure you import the right reference for the component. You can test whether the route is working by visiting /create-auction in your browser. 
+Ensure you import the right reference for the component. You can test whether the route is working by visiting /create-auction in your browser.
 
 Let's discuss what we are going to do on this page.
 
@@ -761,8 +766,8 @@ On this page, we are going to add a form to allow users to input their ***NFTAdd
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 imports: [
-	...
-	ReactiveFormsModule
+ ...
+ ReactiveFormsModule
 ]
 ```
 
@@ -883,7 +888,7 @@ We will need the ABI of our deployed contracts and the address deployed, to make
 
 **What is an ABI?**
 
-An ABI - Application Binary Interface - defines the methods, types, and structures used to interact with your binary smart contract. You can think of it like an API, they both expose the structure or interfaces that allow other contracts or programs to call them. The ABI exposes the function signatures and variable declarations in a smart contract and is often represented in JSON. 
+An ABI - Application Binary Interface - defines the methods, types, and structures used to interact with your binary smart contract. You can think of it like an API, they both expose the structure or interfaces that allow other contracts or programs to call them. The ABI exposes the function signatures and variable declarations in a smart contract and is often represented in JSON.
 
 Hardhat often generates the ABIs for our contracts when we compile them, and the ABIs are often stored in the artifacts folder.
 
@@ -934,11 +939,11 @@ async onSubmit() {
 
 We create a contract Instance that allows us to interact with our smart contract, using the ABI we just added.
 
-Currency values in blockchain are usually represented by BigNumber (Crypto Currencies are usually denominated in up to 18 decimal places) and it's required that we send their values in Wei. 
+Currency values in blockchain are usually represented by BigNumber (Crypto Currencies are usually denominated in up to 18 decimal places) and it's required that we send their values in Wei.
 
 So We use a Web3js utility to convert the ***startPrice*** value to Wei. We pass in the other values and call the ***CreateAucton*** function on our smart contract.
 
-A receipt object is returned back to us when we make the function call. This receipt object contains the 
+A receipt object is returned back to us when we make the function call. This receipt object contains the
 
 - Transaction Hash - Which you can use on a block explorer to examine the state of the event
 - Events - Smart Contract state-changing functions do not return values, so the only way to send back return values from the functions are via events that you emit events. The events object maps event names as keys and events as properties. We will get the ID of our created Auction through the ***AuctionCreated*** event
@@ -1168,7 +1173,7 @@ export class ViewAuctionComponent implements OnInit {
 }
 ```
 
-**The View** 
+**The View**
 
 ```html
 <div class="row">
@@ -1288,7 +1293,7 @@ const routes: Routes = [
 ];
 ```
 
-In our Auctions list page, we will query the **NFTAuctionManager** contract to retrieve a list of all the Auctions it has issued. 
+In our Auctions list page, we will query the **NFTAuctionManager** contract to retrieve a list of all the Auctions it has issued.
 If you take a look at the smart contract, you will see that Auctions are stored in a mapping.
 
 ```js
@@ -1299,25 +1304,25 @@ There is no way to return all the elements of a mapping from a view function in 
 
 If we can get the Number of Auctions that have been listed, then we can iterate from zero to that number and get every Auction associated with our current index. This is made possible because we have made our Ids sequential.
 
-We will use the ***Promise.All*** methods to get all the auctions in parallel. 
+We will use the ***Promise.All*** methods to get all the auctions in parallel.
 
 ```js
 await Promise.all(
-	Array(parseInt( auctionCount))
-	  .fill(undefined)  
-	  .map(async (element, index) => {
+ Array(parseInt( auctionCount))
+   .fill(undefined)  
+   .map(async (element, index) => {
 
 
-		  const auctionAddress = await this.nftAuctionManagerContract.methods.getAuctionAddress(index + 1).call();
+    const auctionAddress = await this.nftAuctionManagerContract.methods.getAuctionAddress(index + 1).call();
 
-		  const nftAuctionContract = new this.web3.web3js!.eth.Contract(NFTAuctionABI, auctionAddress);
+    const nftAuctionContract = new this.web3.web3js!.eth.Contract(NFTAuctionABI, auctionAddress);
 
-		  const auction = await nftAuctionContract.methods.details().call();
+    const auction = await nftAuctionContract.methods.details().call();
 
-		  const nftTokenContract = new this.web3.web3js!.eth.Contract(tokenURIABI, auction._nft);
+    const nftTokenContract = new this.web3.web3js!.eth.Contract(tokenURIABI, auction._nft);
 
-		  this.auctions.push(auction);
-		  try{ 
+    this.auctions.push(auction);
+    try{ 
 
         (await this.getNFTMetadata(nftTokenContract, auction._nftId) ).subscribe(
           (response) => {                                   
@@ -1325,11 +1330,11 @@ await Promise.all(
             console.log(auction.nftMetadata);
           });
 
-		  }catch{
+    }catch{
 
-		  }
+    }
 
-	  })            
+   })            
 );
 ```
 
@@ -1548,12 +1553,14 @@ Now try to compile your Angular DAPP, see if its running fine. You can visit the
 
 Once you have the DAPP compiling well and running well via ng serve, try to create an Auction for an NFT you own in a Testnet wallet. Switch your wallet to another, and try to bid on it.
 
-Was your bid successful? 
+Was your bid successful?
 
 # Conclusion
-Congratulations, you have now learned how to build a real-world dApp using Angular. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain. 
+
+Congratulations, you have now learned how to build a real-world dApp using Angular. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain.
 
 # Next Steps
+
 Try to study some existing dApps in the Celo ecosystem, can you build a dApp for them in Angular?
 
 Let me know in the comments if you have any questions
@@ -1566,9 +1573,9 @@ Yinka Tan is a full-stack blockchain developer who is fascinated with DeFi, NFTs
 
 - Celo Composer <https://github.com/celo-org/celo-composer>
 - Angular <https://angular.io>
-- Web 3 Js <https://web3js.readthedocs.io/en/v1.8.1/web3-eth-contract.html> 
+- Web 3 Js <https://web3js.readthedocs.io/en/v1.8.1/web3-eth-contract.html>
 - Wallet Connect: <https://docs.walletconnect.com>
 - Web3Modal: <https://gitlab.com/minds/web3modal-angular>
 - <https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587>
-- <https://pastel.network/what-exactly-is-nft-metadata/> 
-- English Auction <https://solidity-by-example.org/app/english-auction/> 
+- <https://pastel.network/what-exactly-is-nft-metadata/>
+- English Auction <https://solidity-by-example.org/app/english-auction/>

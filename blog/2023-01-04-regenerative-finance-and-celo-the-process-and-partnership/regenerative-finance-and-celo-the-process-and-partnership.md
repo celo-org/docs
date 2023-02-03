@@ -1,3 +1,16 @@
+---
+title: Regenerative Finance - What it is and Why it Matters
+description: In this article, we'll look into the financial protocol behind the Celo blockchain, the 'how' and the 'helps'
+authors:
+  - name: Israel Okunaya
+url: https://github.com/Southpaw0
+image_url:
+tags: [celosage]
+hide_table_of_contents: true
+slug: /tutorials/regenerative-finance-and-celo-the-process-and-partnership
+---
+
+![header](../../src/data-tutorials/showcase/beginner/regenerative-finance-and-celo-the-process-and-partnership.png)
 
 ## Introduction
 
@@ -5,15 +18,16 @@ The current traditional financial methods are too limited to offer needed soluti
 
 *P.S: The primary focus is on tackling unfavorable effects in [these areas.](https://www.c2es.org/content/changes-in-climate/)*
 
-![global temperature](https://drive.google.com/file/d/1IOhzZAQzJdPbOdIBV6IsCFmUop6nOho0/view)
+![global temperature](./images/images-1.png)
 
 ## Prerequisites
 
-In this article, we'll look into the financial protocol behind the Celo blockchain, the 'how' and the 'helps.' It will help if you get familiar with the Celo blockchain before reading, as the knowledge will help you contextualize and understand better. 
+In this article, we'll look into the financial protocol behind the Celo blockchain, the 'how' and the 'helps.' It will help if you get familiar with the Celo blockchain before reading, as the knowledge will help you contextualize and understand better.
 
 ## Requirements
 
 Follow the links for video explainers on the working of the Celo blockchain economy and the ReFi system:
+
 - [https://youtube.com/@CeloOrg](https://youtube.com/@CeloOrg)
 - [https://www.youtube.com/watch?v=6s1O_s9pZW4](https://www.youtube.com/watch?v=6s1O_s9pZW4)
 
@@ -27,13 +41,13 @@ By ‘financing good deeds,’ ReFi offers an advancement to the traditional sys
 
 ### The ReFi Process
 
-![the ReFi process chart](https://drive.google.com/file/d/1IH7LtqoAMX-GLXXtwNWY-tPUeJ9__FmS/view)
+![the ReFi process chart](./images/image-2.jpeg)
 
 ReFi is a thorough process that pays attention to the interconnected nature of the causes and consequences of these ‘good deeds.’ Also, the ReFi process sees to the equitable distribution of capital. This is possible by eliminating repayment terms and collateral conditions that drain resources from communities.
 
 For an effective process, ReFi adjusts exclusionary credit criteria, engages core stakeholders in the decision-making process, and rebalances the hierarchies of economic control.
 
-Beyond the transactional aspects, ReFi also pays attention to the existing relationships. With these relationships, regenerative finance ensures the effectiveness of its other features. 
+Beyond the transactional aspects, ReFi also pays attention to the existing relationships. With these relationships, regenerative finance ensures the effectiveness of its other features.
 
 ### Introducing Celo: A Real-Life ReFi Use Case
 
@@ -41,14 +55,15 @@ The next generation of the internet, [Web3,](https://www.coindesk.com/learn/what
 
 Then comes the Celo project as a blockchain ecosystem that works to connect crypto users to smartphone users. With the EVM (Ethereum Virtual Machine) developed for mobile users, the Celo blockchain platform guarantees affordable transition fees that anyone can pay using stablecoins or tokens.
 
-Following the Celo project's main net launch in 2020, Celo users can now send money to any recipient straight from their mobile devices thanks to a decentralized network and digital contracts. 
+Following the Celo project's main net launch in 2020, Celo users can now send money to any recipient straight from their mobile devices thanks to a decentralized network and digital contracts.
 
 The Celo blockchain platform leverages phone numbers as public keys and creates a native stable-value token ($cUSD) to rid the obstacles to crypto-assets adoption.
 
 Lastly, the Celo decentralized network encourages the creation of decentralized apps and smart contracts. And through the Celo Wallet, Celo delivers a mobile-focused social payment system.
 
 ### Celo and ReFi: A Partnership for the Society
-![celo and ReFi](https://drive.google.com/file/d/1IcA8ezwYtHa-XWN7xaTxklpXi4XElxRS/view)
+
+![celo and ReFi](./images/image-3.webp)
 
 As an application of ReFi, Celo is an ecologically friendly platform as it utilizes the POS consensus mechanism throughout its setup. At the core of the Celo framework is the vision to create a prosperous world for everyone. To achieve this vision, the Celo platform writes a new page in the money narrative with ReFi ideals.
 
@@ -58,13 +73,13 @@ The implementation of ReFi ideals through the Celo platform eliminates the power
 
 - Supporting Societal Good
 
-According to Charles Eisenstein in the book Sacred Economics, *"If you back the money with more of the things you wish to see in the world, you will obtain more of those things."* This idea defines ReFi and the efforts of the Celo team. 
+According to Charles Eisenstein in the book Sacred Economics, *"If you back the money with more of the things you wish to see in the world, you will obtain more of those things."* This idea defines ReFi and the efforts of the Celo team.
 
 Like ReFi, Celo encourages sustainable development by creating a platform and funding for projects targeted at societal good. The Celo ecosystem utilizes its services to ensure social and environmental projects are transparent, accessible, and beneficial.
 
 - A Platform for All
 
-Sticking to the permissionless ideal of ReFi, Celo allows anyone to contribute, use, and study in its ecosystem. Also, by leveraging the power of blockchain and smart contracts, the permissionless nature of Celo enables the achievement of its climate goals. 
+Sticking to the permissionless ideal of ReFi, Celo allows anyone to contribute, use, and study in its ecosystem. Also, by leveraging the power of blockchain and smart contracts, the permissionless nature of Celo enables the achievement of its climate goals.
 
 ### ReFi Projects Built on the Celo Blockchain
 
@@ -82,11 +97,12 @@ Sticking to the permissionless ideal of ReFi, Celo allows anyone to contribute, 
 
 ReFi is a crucial part of the web3 ecosystem as it betters the technology and its methods, benefits nature, and, of course, yields rewards. In the same vein, the Celo blockchain platform sets out to prove the prospect of a carbon-negative, regenerative economic system.
 
-We are in the early stages of ReFi, and with platforms like Celo, the stage is set for the realization of the full potential of this financial system. 
+We are in the early stages of ReFi, and with platforms like Celo, the stage is set for the realization of the full potential of this financial system.
 
 # Next Steps
 
 Follow these links to video and textual explainers of the ReFi and Celo relationship for better understanding:
+
 - [https://blog.celo.org/the-celo-foundation-climate-collective-and-toucan-collaboration-deepens-to-bring-refi-to-the-e714700b96d0](https://blog.celo.org/the-celo-foundation-climate-collective-and-toucan-collaboration-deepens-to-bring-refi-to-the-e714700b96d0)
 - [https://forum.celo.org/t/regenerative-finance-refi-and-prosperity-for-all/3907](https://forum.celo.org/t/regenerative-finance-refi-and-prosperity-for-all/3907)
 - [https://youtu.be/KoXWQqWMOrs](https://youtu.be/KoXWQqWMOrs)
@@ -94,7 +110,7 @@ Follow these links to video and textual explainers of the ReFi and Celo relation
 
 # About the Author
 
-I am [Israel Okunaya,](https://meetisraelokunaya.curious.page/) a lover of everything DeFi, ReFi, HyFi, and blockchain protocols in these aspects. So, I write about them! 
+I am [Israel Okunaya,](https://meetisraelokunaya.curious.page/) a lover of everything DeFi, ReFi, HyFi, and blockchain protocols in these aspects. So, I write about them!
 
 # References
 
