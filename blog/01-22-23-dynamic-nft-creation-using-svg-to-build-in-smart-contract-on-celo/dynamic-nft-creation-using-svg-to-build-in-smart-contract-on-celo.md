@@ -3,12 +3,15 @@ title: Dynamic NFT Creation using SVG to build in Smart Contract on Celo.
 description: Welcome to our tutorial on dynamic NFT creation using SVG to build in a smart contract on Celo!
 authors:
   - name: Kunal Dawar
-url: https://github.com/developerkunal
-image_url: https://avatars.githubusercontent.com/u/35455566?v=4
+    title: Community Member, Celo Foundation
+    url: https://github.com/developerkunal
+    image_url: https://avatars.githubusercontent.com/u/35455566?v=4
 tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"]
 hide_table_of_contents: false
 slug: /tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo.png)
 
 ## 🌱 Introduction
 
