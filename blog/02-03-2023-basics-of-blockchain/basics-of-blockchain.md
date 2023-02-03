@@ -13,11 +13,13 @@ slug: '/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-w
 
 ![header](../../src/data-tutorials/showcase/beginner/blockchain-basics.png)
 
-## Introduction:
+## Introduction: 
+
 Oh, what the hell is this new Genz word going around, I don’t know this, Bitcoin and Ethereum all will just vanish, if these are your thoughts this article will help to clear misunderstandings,
 Blockchain is just the name of a train with coaches, each coach has unique transactional data with it, and once that coach is added to the train you cannot change or remove that, and in the train, every coach has people inside in it traveling and everyone is smart so they know the number of the coaches in front of them and on the backside of them, so anyone cannot fool a coach without letting the people of other coaches know, so this makes it very difficult to rob a single coach. Wow, so exciting right? Let’s find out more
 
 ## Prerequisites:
+
 Just a little bit of knowledge of the working of the web and the general terms around that.
 
 ## Disclaimer:
@@ -30,6 +32,7 @@ The first thing which pops into our mind after hearing the word blockchain is Bi
 So first we have to know certain things before jumping into the beautiful world of Web3, and Web3 is also one of the use cases of blockchain technology.
 
 ### Let's start from the root by knowing the below-mentioned topics
+
 1. What is Blockchain?
 Blockchain is a decentralized and distributed ledger, which is used to record transactions over a network of computers. It is designed in a way to be secure and tamper-proof. If we divide the word blockchain we get the words block and chain, which means it is a chain made up of blocks.
 Data is stored in the “Block” and every block has a unique hash of its own and also the hash of the previous block, and this is how the chain is created with the blocks, The stored transactions are encrypted using the SHA-256 algorithm, new blocks won’t be able to overwrite the old blocks, once a block is added it cannot be deleted or changed it will create a permanent unchangeable record of all the transactions made on that network
@@ -56,6 +59,7 @@ Most public blockchain arrives at a consensus by “Proof of work” or “Proof
 Now let's understand what is POW-Proof of Work and POS-Proof of Stake
 
 ### POW-Proof of work
+
 This method is used by Bitcoin and it was also used by Ethereum
 In proof of work users known as “miners” use their computing power to solve complex mathematical problems which are known as “Mining”.
 When a Miner successfully solves the problem it has to be validated by the nodes and then the miner is rewarded with the cryptocurrency and they are also allowed to add the new block- this is known as mining a block.
@@ -64,6 +68,7 @@ One of the major drawbacks of this is that it consumes very much energy, which h
 What is merge- Ethereum Network was also on the POW and then in 2022 it shifted to POS, which is considered one of the biggest events in the world of blockchain,(Ahh that pandas and POS were the day to celebrate, (Only the one who saw the merge would understand this))
 
 ### POS-Proof of Stake
+
 In proof of stake instead of using computational power for solving complex mathematical problems, users are chosen to validate the block based on the holdings of the token of the network, this is known as “staking”
 
 In proof of stake, the users are known as “Validators”.
@@ -138,6 +143,7 @@ Users will be here dealing in the Native currencies to protocols, just like the 
 In short, when we hear Web2.0 we know that mainly it contains Frontend, Backend, and the database, replace that database with the blockchain and you have the Web3.0
 
 ### So what do I mean by Native Payments?
+
 Native Payments is exactly the opposite of what we are using today, here you don’t have to give you any data, here we use Wallets like Valora, Metamask, etc. which will provide you with secure international payments and transactions.
 
 Web 3.0 gives you ownership of your digital assets, so your asset’s future won’t be tied to any app or website. Also the censorship, we all know about the incident of OnlyFans, if you are unaware I will try to give it a go in short, In 2021 OnlyFans announced that it will ban sexually explicit content. This created outrage in the users, and they felt like they were cheated because the users helped the platform to be where it is right now and now the platform is going against them. Fortunately, after this, the decision got reversed which highlights the current problem of the power difference. Web 3.0 solves this problem as the reputation is tied to you.
@@ -146,6 +152,7 @@ So after this I feel like Web 3.0 is not the future, it is the present.
 
 
 ### Conclusion
+
 After reading this we found out that, this emerging technology has very potential to solve the current problems and advancement of human society. We as developers try to get the masses into this by making the transition very smooth.
 And also educate fellow developers to encourage them to contribute by this we can make crazy dApps.
 
