@@ -13,6 +13,8 @@ slug: /tutorials/how-to-build-car-marketplace-dapp-with-react
 
 # How to Build a Car Marketplace dapp using React
 
+![header](../../src/data-tutorials/showcase/intermediate/how-to-build-car-marketplace-using-react.png)
+
 ## Introduction
 Celo blockchain enables fast, secure, and low-cost financial transactions. It is built on top of the Ethereum Virtual Machine (EVM), which is a standardized environment for running smart contracts (self-executing code that can be used to facilitate, verify, and enforce the negotiation or performance of a contract). 
 One of the main features of Celo is its use of proof-of-stake (PoS) consensus, which means that the network is secured by a group of "validators" who stake (or pledge) a certain amount of the platform's native cryptocurrency to participate in the validation of transactions. 
