@@ -3,12 +3,14 @@ title: How to Transition from Web2 to Web3
 description: Learn the basics of blockchain technology and web3 development
 authors:
   - name: ✍️ Tomiwa Oladipo
-tags: [beginner, celo]
+tags: [celosage, beginner, celo]
 hide_table_of_contents: false
 slug: "/tutorials/how-to-transition-from-web2-to-web3"
 ---
 
-## How To Transition From Web2 To Web3
+![header](../../src/data-tutorials/showcase/beginner/how-to-transition-from-web2-to-web3.png)
+
+## Introduction
 
 The online world is continuously developing, expanding, fixing bugs, and adding new features to overcome limitations. Some advances, such as the rise of social media, have marked each generation of the Internet since the beginning. There will be a manageable break in continuity as Web2's shortcomings will likely be addressed by Web3 systems.
 

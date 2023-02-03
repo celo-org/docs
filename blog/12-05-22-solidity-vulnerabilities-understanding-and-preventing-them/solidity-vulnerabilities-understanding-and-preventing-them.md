@@ -3,7 +3,7 @@ title: Preventing Vulnerabilities in Solidity - Delegate Call
 description: Understanding and preventing solidity vulnerabilities
 authors:
   - name: ✍️ Oyeniyi Abiola Peace
-tags: [solidity]
+tags: [celosage, solidity, intermediate]
 hide_table_of_contents: false
 slug: "/tutorials/solidity-vulnerabilities-delegated-call"
 ---

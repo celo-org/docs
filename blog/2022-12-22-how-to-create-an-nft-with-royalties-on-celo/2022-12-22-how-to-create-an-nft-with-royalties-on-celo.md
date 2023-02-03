@@ -1,11 +1,11 @@
 ---
-title: How to create an NFT with royalties on Celo.
+title: How to create an NFT with royalties on Celo
 description: Building a dApp to mint an NFT with royalty.
 authors:
   - name: Aviraj Khare
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
-tags: [NFT, royalty, erc-721, erc-2981]
+tags: [celosage, nft, royalty, erc-721, erc-2981]
 hide_table_of_contents: false
 slug: /tutorials/how-to-create-an-nft-with-royalties-on-celo
 ---

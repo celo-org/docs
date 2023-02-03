@@ -6,7 +6,7 @@ authors:
   title: Founder of Guizo Studios
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
-tags: [celo, tatum, developers]
+tags: [beginner, celosage, ERC20, smartcontract, video]
 hide_table_of_contents: false
 slug: /tutorials/como-construir-em-celo-usando-tatum
 ---
