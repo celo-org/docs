@@ -14,7 +14,7 @@ slug: "/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo"
 
 # Build Your Own Full-Stack NFT Marketplace on Celo
 
-
+![header](../../src/data-tutorials/showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png)
 
 
 ### Introduction
