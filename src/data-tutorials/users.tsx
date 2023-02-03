@@ -827,7 +827,7 @@ const Users: User[] = [
   {
     title: 'Build Your Own Full-Stack NFT Marketplace on Celo',
     description: 'Build a full stack Nft Marketplace on the celo block-chain using ipfs and web3.storage for metadata storage.',
-    preview: require('./showcase/intermediate/'),
+    preview: require('./showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png'),
     website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
     tags: ['celosage', 'nft', 'solidity', 'celo'],
   },
