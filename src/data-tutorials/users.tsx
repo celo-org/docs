@@ -780,7 +780,7 @@ const Users: User[] = [
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
     preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
     website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
-    tags: ['celosage', 'video', 'beginner'],
+    tags: ['celosage', 'video', 'beginner', "celo", "metamask"],
   },
   {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
