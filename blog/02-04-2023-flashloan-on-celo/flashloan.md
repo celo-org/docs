@@ -63,9 +63,9 @@ Click on injected web3 inside the Remix IDE to ensure that your Goerli network i
 
 ## Step 1: Setting up your Code 
 
-To begin, you'll need to create a new contract that you will call and which will be called by the Aave Protocol's LendingPool contract. This can be two separate contracts, however, for ease of understanding, we'll consolidate those functions into one contract.
+You'll need to create a new contract that both you and the Aave protocol's lending contract can call. They can be separate , however, for ease of understanding, we'll merge those functions into one contract.
 
-In Remix, add a new file and name it, e.g. myFlashLoan.sol and add the following code to it:
+Add a new file and name it myFlashLoan.sol and add the following code to it:
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
