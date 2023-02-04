@@ -1571,13 +1571,6 @@ const Users: User[] = [
     tags: ['celosage'],
   }
   {
-  title: 'Creating Your First Smart Contract on the Celo Blockchain',
-  description: 'This tutorial teaches you how to create your first smart contract and deploy it on the celo blockchain',
-  preview: require('./showcase/beginner/creating-your-first-smart-contract-on-the-celo-blockchain.png'),
-  website: 'blog/tutorials/creating-your-first-smart-ontract-on-the-celo-blockchain',
-  tags: ['celosage','smartcontract'],
-},
-  {
     title: 'Crypto Wallets The Celo Way',
     description: 'This tutorials teaches you all you need to know about Crypto Wallets',
     preview: require('./showcase/beginner/Crypto-Wallets-The-Celo-Way.png'),
