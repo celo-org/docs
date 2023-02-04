@@ -236,6 +236,8 @@ In our case it’s the Goerli Testnet’s USDC contract, which is 0x9FD21bE27A2B
 
 When calling the function, MetaMask should prompt you for transaction approval. When you confirm the transaction, you should see a success message. You should see a URL in Remix's terminal. Click on that and you should be redirected to Etherscan.
 
+![execute2](images/execute2.jpg)
+
 * The yellow highlight indicates the transfer of 1 USDC from LendingPool to our contract.
 * The red highlight indicates the payback of 1 USDC and the fees to the Landing pool.
 * The green highlight shows the interest generated USDC, which has its separate utility.
