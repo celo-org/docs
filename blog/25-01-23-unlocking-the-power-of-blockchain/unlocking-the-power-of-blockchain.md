@@ -10,15 +10,19 @@ tags: ["beginner", "cryptography", "celosage", "blockchain", "nfts"]
 hide_table_of_contents: true
 slug: /tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography
 ---
+![header](C:\Users\HP\docs\src\data-tutorials\showcase\beginner\celo-beginner-tutorial-unlocking-the-power-of-blockchain-nfts.png)
 
 ## Blockchain Technology, NFTs, and Cryptography
 
-Meta Description:
+
+---
+
+### Meta Description:
 
 Security in blockchain technology protects smart contracts and APIs built for [tokenomics](https://cointelegraph.com/trading-for-beginners/what-is-tokenomics-a-beginners-guide-on-supply-and-demand-of-cryptocurrencies) (crypto economy). Find more details about blockchain cryptographic security.
 
 
-### Introduction
+## Introduction
 
 Does 'blockchain' sound new to you? 
 
@@ -27,26 +31,25 @@ Does 'blockchain' sound new to you?
 You’ll also learn how blockchain works, why it is important, and how you can use this to gain a positional advantage in the global economy.
 
 
-### Prerequisites 
+## Prerequisites 
 
 Before this tutorial, you should have a basic knowledge about:
 
 
-* Web3 (the future of web) and it's improved features over Web-2 (the incumbent)
+
+* Web3 (the future of web) and its improved features over Web-2 (the incumbent)
 * Have a background knowledge of decentralized finance (DeFi) and the application of Blockchain technology to DeFi.
 
 
-### Requirements 
+## Requirements 
 
 Nil
 
 
-### Blockchain and the Future of Web
+## Blockchain and the Future of Web
 
 
-
-
-![alt_text](images/image1.jpg "image_tooltip")
+![alt_text](C:\Users\HP\docs\blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 1.jpg)
 
 
 Image credit: [Freepik](https://www.freepik.com/free-vector/blockchain-background-with-isometric-shapes_2619730.htm#query=free%20blockchain&position=0&from_view=search&track=ais)
@@ -62,7 +65,7 @@ Future (already begun) web interactions will feature commercial operations inclu
 What will not magnify without these commercial functions is a barter-free exchange economy where services and goods cost nothing next to one another in their referent frames of values or mismatched currency pairs.
 
 
-## What is Crypto-currency?
+### What is Crypto-currency?
 
 Crypto-currency means  "_Encrypted currency_"
 
@@ -75,23 +78,21 @@ These currencies are printed and each is assigned a note value. The exchange rat
 However, when coins built by cryptographic modules came in, we have currencies like Bitcoin and Ethereum built on rebase and debase systems digital exchange and trading Apps (DApps) to fit tad-second sensitivity fluctuating volume trades and tick-time exchange rate values when paired with fiat currencies and other encrypted coins listed.
 
 
-## NFTs and Cryptocurrency - Digital assets and their price tags
+### NFTs and Cryptocurrency - Digital assets and their price tags
 
-Non-fungible Tokens (NFTs)
-
-
+### Non-fungible Tokens (NFTs)
 
 
-![alt_text](images/image2.jpg "image_tooltip")
+![alt_text](C:\Users\HP\docs\blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 2.jpg)
 
 
 Source images courtesy: [Bored Ape Yacht Club](https://www.newyorker.com/culture/infinite-scroll/why-bored-ape-avatars-are-taking-over-twitter)
 
 NFTs are digital assets that represent real-world objects such as art, music, in-game items, and videos. They are bought and sold online, often in cryptocurrencies, and are usually encoded with the same underlying software as many cryptocurrencies
 
-NFTs are individual tokens that store valuable information. Its value is largely determined by the market and demand, so it can be bought and sold like any other physical type of art. Proprietary data from NFTs makes it easy to verify and verify ownership and transfer of tokens between owners.
+NFTs are individual tokens that store valuable information. Its value is largely determined by the market and demand, so it can be bought and sold like any other physical type of art. Proprietary data from NFTs makes it easy to verify ownership and transfer tokens between owners.
 
-More physical assets and other valuable stocks get approved with unique pixel-grafted tokens such as art collections i.e NFTs are used in the conversion and auctioneering power of real arts.
+More physical assets and other valuable stocks get approved with unique pixel-grafted tokens such as art collections i.e NFTs are used in the conversion and auctioneering power of real art.
 
 NFTs are also usually unique, or at least with very limited editions tagged with unique identification codes. 
 
@@ -100,7 +101,7 @@ This is in stark contrast to most digital works, which are almost always infinit
 “_Fundamentally, NFTs create a digital shortage,”_ said Arry Yu, chairman of the Washington Tech Industry Association’s Cascadia Blockchain Council and executive director of Yellow Umbrella Ventures.
 
 
-## NFTs are digital artworks, why sell big?
+### NFTs are digital artworks, why sell big?
 
 Yes, NFTs sell big!
 
@@ -108,21 +109,19 @@ For example, renowned digital artist Mike Winkleman (better known as "Beeple") c
 
 If anyone can view individual images or entire collages online for free, why are people willing to pay millions of dollars for something they can scan or download?
 
-NFTs are unique digital assets that provide traffic, sometimes, for real-life products and services, established for projects that are bidded in the crypto economy. 
+NFTs are unique digital assets that provide traffic, sometimes, for real-life products and services, established for projects that are bidden in the crypto economy. 
 
 Additionally, it includes built-in authentication that serves as proof of ownership. Collectors value these "digital bragging rights" more than the objects themselves.
 
-Raising the crypto trading power of NFTs against a drastically low volume of global product demands and erratic product sales supersedes all erratic intra-/inter-national policies leveraged against local trades and international product exchange in local currencies. i.e. a boosted salespower of digital products can salvage the threats to an undermined product-service trading economy.
+Raising the crypto trading power of NFTs against a drastically low volume of global product demands and erratic product sales supersedes all erratic intra- & inter-national policies leveraged against local trades and international product exchange in local currencies. i.e. a boosted salespower of digital products can salvage the threats to an undermined product-service trading economy.
 
  
 
 
-## Why Blockchain Technology?
+### Why Blockchain Technology?
 
 
-
-
-![alt_text](images/image3.jpg "image_tooltip")
+![alt_text](C:\Users\HP\docs\blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 3.jpg)
 
 
 [Image by Fullvector on Freepik](https://www.freepik.com/free-vector/server-room-rack-blockchain-technology-token-api-access-data-center_2910154.htm#query=blockchain%20technology&position=0&from_view=keyword)
@@ -145,22 +144,21 @@ Stemming the rise of inequalities and building a sustainable finance, are a pair
 
 Blockchain's transformative potential lies in its ability to secure, track, segment and transfer wealth over the internet with real-time inventory of the whole population sharing a consensual participation in the risks and hence, benefits of economic functions, most especially in trading/exchange - In short, whatever the internet was to a caste social media as a core technology, blockchain is more to the potential of a true sharing economy.
 
-Having a decentralized digital ledger that stores transactions on thousands of computers around the world, it is easy to code-register every exchange in such a way as to prevent data manipulation, avoid fund mismanagement or laundering, set stock limits, e.t.c. 
+Having a decentralized digital ledger that stores transactions on thousands of computers around the world, it is easy to code-register every exchange in such a way as to prevent data manipulation, avoid fund mismanagement or laundering, set stock limits, etc. 
 
 _N.B: A Blockchain is a repeat-record chain of information arranged in an order that makes it impossible or difficult for the system to be changed, bypassed, hacked, or manipulated. _
 
-Indicators and signals made available in DApps and other DEx platforms make it easy to read and predict in-time data for breakthrough analysis, risk potential, recession,  (among other fiscal analyses). This is practically identified in the bullish and bearish markets spotted by indicating trade volume -  So, proactive rebase and debase coin responses prevent futuristic economic crises that might be as terrible as the COVID-19 aftermath.
+Indicators and signals made available in DApps and other DEx platforms make it easy to read and predict in-time data for breakthrough analysis, risk potential, and recession,  (among other fiscal analyses). This is practically identified in the bullish and bearish markets spotted by indicating trade volume -  So, proactive rebase and debase coin responses prevent futuristic economic crises that might be as terrible as the COVID-19 aftermath.
 
 Blockchain technology enhances security and speeds up information exchange, making it cost-effective and transparent. It also removes third parties (such as notaries and banks) whose primary role is to provide trust and authentication in legal transactions.
 
 The high importance of blockchain has attracted the attention of organizations from various sectors, with the banking sector being the most active at this stage. Blockchain has created thousands of new jobs and new startups, from mobile payment solutions to product/service digital-link sales, even in healthcare applications.
 
 
-## Blockchain and Cryptography 
+### Blockchain and Cryptography 
 
 
-
-![alt_text](images/image4.jpg "image_tooltip")
+![alt_text](C:\Users\HP\docs\blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 4.jpg)
 
 
 Image Credits: Yuichiro Chino / Getty Images
@@ -192,21 +190,19 @@ Simply put, a digital ledger is like a Google spreadsheet shared by multiple com
 Conversely, nobody jumps in the middle of the queue (chain) or ahead of it by mere clout. Unlike the usual global economic models of appreciation and devaluation, recession, taxation, revenue, and profit calculations among others, blockchain technology gives an instituted solidity to sellers and buyers who join peers with their share of cryptocurrency and digital assets (NFTs) and engage in crypto transactions. 
 
 
-## Cryptography - the security of blockchain transactions 
+### Cryptography - the security of blockchain transactions 
 
 
+![alt_text](C:\Users\HP\docs\blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 5.jpeg)
 
 
-![alt_text](images/image5.jpg "image_tooltip")
-
-
-## Image Credits: _Yuichiro Chino /Moment/ Getty Images_##
+Image Credit: _Yuichiro Chino /Moment/ Getty Images_
 
 Privacy is a core concern in security for decentralized finance. Cryptocurrency allows every asset owner to know if a crypto wallet address corresponds to a certain individual, you can track all the transactions that an individual has made through their wallet on any public blockchain, including Bitcoin and Ethereum.
 
 Some cryptographers think the solution to crypto’s privacy concerns lies in zero-knowledge proofs (ZKPs), a technique that allows for a transaction to be verified on a blockchain without the underlying data being shared. While zero-knowledge proofs could indeed improve privacy and scalability for some of the most popular blockchains, they are far from being the only cryptographic method that could accelerate progress in web3.
 
-Ravital Solomon, co-founder and CEO of Sunscreen, thinks fully homomorphic encryption (FHE) is even more promising in its potential to bolster privacy in web3. 
+Ravital Solomon, co-founder, and CEO of Sunscreen, thinks fully homomorphic encryption (FHE) is even more promising in its potential to bolster privacy in web3. 
 
 "_The technology allows for individuals to perform computations on encrypted data without needing to decrypt it_," Solomon explained. 
 
@@ -218,16 +214,20 @@ Solomon explained that it’s very difficult to write FHE programs because the s
 
 FHE is a subset of lattice cryptography, an area still considered as the most plausible niche even within the cryptography space
 
-With every new chain, technologists can build integrations between that chain and other protocols such as FileCoin to hide the underlying data from users, and can leverage both ZKPs and FHE together, at a lower cost.
+With every new chain, technologists can build integrations between that chain and other protocols such as FileCoin to hide the underlying data from users and can leverage both ZKPs and FHE together, at a lower cost.
 
 
-# Conclusion
+## Conclusion
 
 Cryptographic blockchain technology provides a steady-safe security solution to DeFi and the algorithmic systems by which digital transactions are enabled. Platforms like [Celo](https://celo.org/about) let you know the latest attributes of blockchain technology and how your web identity is best kept in a secure manner helping you to get hands-on experience for safe crypto-transacts and token mining on web3 decentralized spaces.
 
 
+## Next Steps
 
-# About the Author
+Nil
+
+
+## About the Author
 
 Imole Peter L.
 
@@ -236,7 +236,7 @@ A web3 enthusiast, content writer for web3 brands, visual artist, and a seasoned
 Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
 
-# References
+## References
 
 [https://www.google.com/amp/s/techcrunch.com/2022/07/18/crypto-blockchain-web3-privacy-cryptography-fully-homomorphic-encryption-startup-sunscreen/amp/](https://www.google.com/amp/s/techcrunch.com/2022/07/18/crypto-blockchain-web3-privacy-cryptography-fully-homomorphic-encryption-startup-sunscreen/amp/)
 
@@ -245,7 +245,3 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 [https://www.reuters.com/lifestyle/digital-only-artwork-fetches-nearly-70-million-christies-2021-03-12/](https://www.reuters.com/lifestyle/digital-only-artwork-fetches-nearly-70-million-christies-2021-03-12/)
 
 [https://www.forbes.com/advisor/in/investing/cryptocurrency/what-is-an-nft-how-do-nfts-work/](https://www.forbes.com/advisor/in/investing/cryptocurrency/what-is-an-nft-how-do-nfts-work/)
-
-
-
-                                                                           
