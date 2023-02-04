@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Build a Decentralized Parking Ticket Payments DApp on Celo',
+    description: 'Build and deploy a decentralized Parking Tickets issuing and payments dapp on Celo alfajores network.',
+    preview: require('./showcase/intermediate/build-a-decentralized-parking-ticket-payments-dapp-on-celo.png'),
+    website: '/blog/tutorials/build-a-decentralized-parking-ticket-payments-dapp-on-celo',
+    tags: ['celosage', 'intermediate', 'solidity', 'hardhat', 'smartcontract'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
