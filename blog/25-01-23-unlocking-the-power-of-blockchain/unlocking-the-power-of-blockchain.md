@@ -10,7 +10,7 @@ tags: ["beginner", "cryptography", "celosage", "blockchain", "nfts"]
 hide_table_of_contents: true
 slug: /tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography
 ---
-![header](C:\Users\HP\docs\src\data-tutorials\showcase\beginner\celo-beginner-tutorial-unlocking-the-power-of-blockchain-nfts.png)
+![header](../../src/data-tutorials/showcase/beginner/celo-beginner-tutorial-unlocking-the-power-of-blockchain-nfts.png)
 
 ## Blockchain Technology, NFTs, and Cryptography
 
