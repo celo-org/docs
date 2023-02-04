@@ -16,11 +16,13 @@ slug: /tutorials/understanding the decentralized storage system
 
 
 # Introduction​
+
 Decentralized storage systems are becoming increasingly popular as a way to store data securely and efficiently. With the rise of blockchain technology, decentralized storage systems have become even more attractive due to their ability to provide secure, distributed storage solutions. One such system is Celo, which is a decentralized storage system built on the Ethereum blockchain. 
 
 Celo provides a secure, distributed storage solution that is both cost-effective and reliable. In this article, we will discuss the benefits of building a decentralized storage system on Celo and how to go about doing so. We will also explore the advantages of using Celo as a decentralized storage system and how it can be used to store data securely and efficiently.
 
 ## Prerequisites​
+
 This tutorial assumes you have a fundamental knowledge of the following concepts
 
 * Knowledge of distributed systems: A decentralized storage system requires an understanding of distributed systems and how they work. 
@@ -36,6 +38,7 @@ This tutorial assumes you have a fundamental knowledge of the following concepts
 
 
 # What is a Decentralized Storage System
+
 A decentralized system is a type of system that relies on a distributed network of computers to manage, store and process data, instead of relying on a single centralized source. This type of system has many advantages over traditional centralized systems, such as increased security and reliability, and they provide greater flexibility and control over data ownership and access.
 
 
@@ -48,6 +51,7 @@ Additionally, decentralized storage systems provide users with greater control o
 
 
 # The Benefits of a Decentralized Storage Systems
+
 Decentralized storage systems offer many benefits for those looking to store large amounts of data. 
 By eliminating the need for a centralized server, decentralized storage systems allow individuals and businesses to securely store and share data without having to worry about physical or virtual security threats. 
 
@@ -75,6 +79,7 @@ Some other benefits of the decentralized storage system are;
 
 
 # Types Of Decentralized Storage Systems
+
 One of the most common types of decentralized storage systems is Peer-to-Peer (P2P) networks. In a P2P network, each node in the network can access and store files from other nodes in the network without the need for a central server. This allows for a more secure, decentralized system as the data is not all stored in one place, making it much harder for hackers to access. Additionally, as the data is spread out across multiple nodes, it is easier for users to access the data they need, resulting in faster access times. 
 
 Another type of decentralized storage system is blockchain-based storage. In this type of system, data is stored on the blockchain, a distributed ledger that records data in an immutable and secure manner. This makes it much harder for hackers to access or tamper with the data, and also allows users to access the data they need quickly. 
@@ -139,16 +144,19 @@ On the other hand, if you want to build decentralized storage from scratch, you 
 7. Test and deploy: Test the system thoroughly to make sure it is secure
 
 ## Conclusion​
+
 Understanding the decentralized storage system with Celo is important for those looking to benefit from the technology. By leveraging the distributed storage of Celo, users can gain better control of their data and use it in a more secure and private environment.
 
 Celo offers a low-cost solution for businesses and organizations looking to store data securely and reliably. With its advanced security and reliability, Celo can help users maintain their data privacy and ensure the integrity of their data. It is a great solution for those looking for a secure, reliable storage solution in the decentralized world.
 
 ## Next Steps​
+
 Here are some other related tutorial articles you can follow up on to learn more about the Decentralilzed Storage:
 
 * [Decentralized Storage Decoded: A Guide to Implementing IPFS DAGs and Merkle Trees](https://www.celosage.com/decentralized-storage-decoded-a-guide-to-implementing-ipfs-dags-and-merkle-trees/)
 
 ## About the Author​
+
 Mayowa Julius Ogungbola
 
 Is a Sotware Engineer and Technical writer @Celo, always open to working on new ideas. I enjoy working on [Github](https://github.com/Julius170/), you can connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/).
