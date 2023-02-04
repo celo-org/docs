@@ -42,7 +42,7 @@ On this note, this tutorial will show you how to deploy the flashloan smart cont
 * Using the provided Celo address as the addressProvider
 * Getting testnet cUSD instead of Goerli Eth
 * Deploying to Celo mainnet or Alfajores Testnet 
-Having clarified that, we shall continute with our tutorial.
+Having clarified that, we shall continue with our tutorial.
 
 ## Setting up with Remix
 We will be using the Remix IDE for the purposes of this tutorial. 
