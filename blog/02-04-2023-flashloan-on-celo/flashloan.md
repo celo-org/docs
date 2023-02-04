@@ -195,16 +195,16 @@ Switch to the "Solidity Compiler" tab. Set the compiler to 0.8.17 and click "Com
 ![Alt text](images/deploy1.jpg)
 
 We will move on to deploy the contract to the Goerli network. Switch to the "Deploy & Run Transactions" tab.
-![deploy2](deploy2.jpg)
+![deploy2](images/deploy2.jpg)
 
 You should ensure that the “CONTRACT” field is set to “MyV2FlashLoan.sol”, [the full code is also available here](https://gist.github.com/johnfawole/a536dcd65ca563eab0bcc83a78956a25) for reference. Provide the LendingPool address in the text field that is next to the deploy button. 
 
 In our case, it will be 0x5E52dEc931FFb32f609681B8438A51c675cc232d. Then click “Deploy”. It should open up MetaMask. After that, you should confirm the transaction on your wallet.
-![deploy3](deploy3.jpg)
+![Alt text](images/deploy3.jpg)
 
 ## Step 5: Funding The Flash Loan
 
-![funding1](funding1.jpg)
+![funding1](images/funding1.jpg)
 
 Under the new “Deployed Contracts” tab, you can copy the deployed contract's address. Hold on while we address this later.
 
@@ -212,15 +212,15 @@ In the meantime, we need to add USDC to our Flash Loan contract. This is because
 
 We can [mint some testnet USDC for ourselves here](https://gist.github.com/johnfawole/a536dcd65ca563eab0bcc83a78956a25). Under write contract you should connect your wallet and mint some USDC.
 
-![funding2](funding2.jpg)
+![funding2](images/funding2.jpg)
 
 Note that USDC has 6 decimals.
 
-![funding3](funding3.jpg)
+![funding3](images/funding3.jpg)
 
 After receiving transaction confirmation, we will add the USDC token to MetaMask. To do so, launch MetaMask. At the bottom, click the "Add Token" button. Fill out the "Token Contract Address" field with 0x9FD21bE27A2B059a288229361E2fA632D8D2d074. This is USDC's contract address on Goerli's testnet. After clicking "Next," the USDC you minted earlier should be displayed.
 
-![funding4](funding4.jpg)
+![funding4](images/funding4.jpg)
 
 Then, select the USDC token. Clicking "Send" should open a window similar to the one shown below, where we enter our Flash Loan's contract address and send some USDC (preferably 100), then click "Next" to confirm the transaction!
 
@@ -229,7 +229,7 @@ Head back to Remix. Under the deployed Flash Loan contract, there’s another �
 
 In our case it’s the Goerli Testnet’s USDC contract, which is 0x9FD21bE27A2B059a288229361E2fA632D8D2d074. With that field correctly filled in, you can now hit the “transact” button as shown below.
 
-![execute1](execute1.jpg)
+![execute1](images/execute1.jpg)
 
 When calling the function, MetaMask should prompt you for transaction approval. When you confirm the transaction, you should see a success message. You should see a URL in Remix's terminal. Click on that and you should be redirected to Etherscan.
 
