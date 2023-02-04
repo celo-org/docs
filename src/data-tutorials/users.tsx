@@ -804,6 +804,13 @@ const Users: User[] = [
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
+    title: 'Dynamic NFT Creation using SVG to build in Smart Contract on Celo.',
+    description: 'Welcome to our tutorial on dynamic NFT creation using SVG to build in a smart contract on Celo!',
+    preview: require('./showcase/intermediate/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo.png'),
+    website: '/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo',
+    tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
@@ -844,6 +851,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
     website: 'https://medium.com/celodevelopers/building-for-the-celo-connect-mobile-hackathon-a78707b7431c',
     tags: ['intermediate','foundation'],
+  },
+  {
+    title: 'Build Your Own Full-Stack NFT Marketplace on Celo',
+    description: 'Build a full stack Nft Marketplace on the celo block-chain using ipfs and web3.storage for metadata storage.',
+    preview: require('./showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png'),
+    website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
+    tags: ['celosage', 'nft', 'solidity', 'celo'],
   },
   {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
