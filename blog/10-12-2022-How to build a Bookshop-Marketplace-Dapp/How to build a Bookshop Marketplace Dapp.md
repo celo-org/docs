@@ -6,7 +6,7 @@ authors:
   title: Blockchain Developer, Dacade Evangelist
   url: https://github.com/Tevin-Isaac
   image_url: https://github.com/Tevin-Isaac.png
-tags: [solidity]
+tags: [celosage,celowallet, celo, solidity, html, remix, smartcontract, intermediate]
 hide_table_of_contents: false
 slug: /tutorials/how-to-build-a-bookshop-marketplace-dapp
 ---

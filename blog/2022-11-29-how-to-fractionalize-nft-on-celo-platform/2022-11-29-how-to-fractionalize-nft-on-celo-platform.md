@@ -1,11 +1,11 @@
 ---
-title: How to fractionalize an NFT on Celo Platform
+title: How to Fractionalize an NFT on the Celo Platform
 description: Building a dApp to fractionalize an NFT on top of Celo.
 authors:
   - name: Aviraj Khare
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
-tags: [NFT, fractionalization]
+tags: [advanced, nft, celo, celosage, NFT, fractionalization]
 hide_table_of_contents: false
 slug: /tutorials/how-to-fractionalize-nft-on-celo-platform
 ---
