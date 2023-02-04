@@ -18,7 +18,7 @@ module.exports = {
   projectName: "docs", // Usually your repo name.
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "es", "pt"],
   },
   themes: [
     "@docusaurus/theme-live-codeblock",
@@ -53,12 +53,25 @@ module.exports = {
         disableInDev: true,
       }),
     ],
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
   themeConfig: {
+    twitterImage: "img/preview.png",
+    image: "img/preview.png",
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>, or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -72,14 +85,16 @@ module.exports = {
     },
     colorMode: {
       defaultMode: "dark",
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Celo Docs",
       logo: {
         alt: "Celo Logo",
-        src: "img/color-logo.png",
+        src: "img/logo.png",
+        srcDark: "img/logo-dark.png",
         height: 32,
-        width: 32,
+        width: 96,
       },
       items: [
         {
@@ -306,10 +321,13 @@ module.exports = {
         },
         blog: {
           blogTitle: "Celo Tutorials",
-          blogDescription: "A Docusaurus powered blog!",
-          postsPerPage: "ALL",
-          blogSidebarTitle: "Latest posts",
-          blogSidebarCount: 7,
+          blogDescription: "Celo blog!",
+          blogSidebarCount: 0,
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            frontMatter.hide_reading_time
+              ? undefined
+              : defaultReadingTime({ content }),
         },
       },
     ],

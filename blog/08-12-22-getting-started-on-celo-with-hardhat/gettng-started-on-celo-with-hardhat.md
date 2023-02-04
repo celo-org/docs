@@ -7,7 +7,7 @@ authors:
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
 tags: [hardhat, celo, developer, beginner]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/getting-started-on-celo-with-hardhat
 ---
 

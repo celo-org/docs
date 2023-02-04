@@ -53,4 +53,4 @@ Easily build Celo dApps with Celo Composer.
 
 - [EVM Compatible Tooling](/developer/evm-tools)
 - [Block Explorer](https://explorer.celo.org/)
-- [Testnet Faucet](https://celo.org/developers/faucet)
+- [Testnet Faucet](https://faucet.celo.org)

@@ -4,9 +4,11 @@ description: In this tutorial, we will provide an introduction to the different 
 authors:
   - name: ✍️ Obafemi Joshua
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: '/tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols'
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png)
 
 ## Introduction
 
@@ -34,7 +36,7 @@ This network should be able to handle an increasing number of transactions, user
 
 ## How Do Layer 1 Scaling Solutions Work?
 
-![Layer 1](./blog/13-12-22-layer-1-and-layer-2/images/img1.png)
+![Layer 1](images/img1.png)
 
 Most Layer 1 protocols, as you might expect, have scaling issues. All transactions, in general, require validation by multiple nodes. This results in the formation of an ecosystem in which mining nodes compete to solve complex computational puzzles. Miners who succeed are rewarded in the network's native cryptocurrency. However, this consensus mechanism consumes a large amount of energy and creates a lag in transaction speed.
 
@@ -50,7 +52,7 @@ Sharding is a Layer-1 scalability method that most protocols use. Instead of hav
 
 ### How do Layer 2 Scaling Solutions Work?
 
-![Image 2](./blog/13-12-22-layer-1-and-layer-2/images/img2.png)
+![Image 2](images/img2.png)
 
 We've established that the Layer 2 protocols use Layer 1 as a foundational base. The Layer 2 solutions include:
 
@@ -87,14 +89,11 @@ The search for improved scalability is an unending one, and it has taken precede
 
 Joshua Obafemi
 
-A web3 content writer. You can connect with me on Linkedin [https://www.linkedin.com/in/joshua-obafemi-ba2014199/].
+A web3 content writer. You can connect with me on [Linkedin](https://www.linkedin.com/in/joshua-obafemi-ba2014199/).
 
 ## References
 
-<https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
-
-<https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
-
-<https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
-
-<https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>
+- <https://blog.celo.org/why-build-on-the-celo-blockchain-9ceab3d11b70>
+- <https://academy.binance.com/en/articles/blockchain-scalability-sidechains-and-payment-channels>
+- <https://medium.com/the-capital/layer-1-vs-layer-2-what-you-need-to-know-about-different-blockchain-layer-solutions-69f91904ce40>
+- <https://academy.binance.com/en/articles/blockchain-layer-1-vs-layer-2-scaling-solutions>

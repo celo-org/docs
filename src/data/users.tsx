@@ -56,6 +56,7 @@ export type TagType =
   | "popular"
   | "apps"
   | "impact"
+  | "refi"
   | "defi"
   | "earn"
   | "wallets";
@@ -111,6 +112,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.defi.description",
     }),
     color: "#a44fb7",
+  },
+
+  refi: {
+    label: translate({ message: "ReFi" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.refi.description",
+    }),
+    color: "#476520",
   },
 
   earn: {
@@ -1026,6 +1036,94 @@ const Users: User[] = [
     source: 'https://github.com/AndinaDeFi/',
     tags: ['apps','wallets','defi'],
   },
+  {
+    title: 'Kolektivo',
+    description: 'A collection of institutional technologies that allow local communities to launch, finance, and govern their own regenerative economies',
+    preview: require('./showcase/kolektivo.png'),
+    website: 'https://www.kolektivo.network/',
+    source: 'https://github.com/Kolektivo',
+    tags: ['refi'],
+  },
+  {
+    title: 'Toucan Protocol',
+    description: 'Catalytic infrastructure that powers a vibrant on-chain carbon market with the sole purpose of addressing climate change',
+    preview: require('./showcase/toucan.png'),
+    website: 'https://toucan.earth/',
+    source: 'https://github.com/ToucanProtocol',
+    tags: ['refi'],
+  },
+  {
+    title: 'Astral Protocol',
+    description: 'Geospatial tooling for smart contracts',
+    preview: require('./showcase/astral.png'),
+    website: 'https://astral.global/',
+    source: 'https://github.com/AstralProtocol/astralprotocol',
+    tags: ['refi'],
+  },
+  {
+    title: 'Spirals',
+    description: 'Regenerative proof-of-stake infrastructure to fund climate action',
+    preview: require('./showcase/spirals.png'),
+    website: 'https://www.spirals.so/',
+    source: 'https://github.com/spiralsprotocol',
+    tags: ['refi'],
+  },
+  {
+    title: 'MRV Studio',
+    description: 'Metadata platform for digital MRV such as remote sensing, drones, Internet of Things, DNA monitoring, etc.',
+    preview: require('./showcase/mrv.png'),
+    website: 'https://mrvcollective.org/',
+    source: 'https://github.com/MRV-Studio',
+    tags: ['refi'],
+  },
+  {
+    title: 'Untangled Finance',
+    description: 'Decentralized credit protocol offering loans for regenerative projects and real-world assets',
+    preview: require('./showcase/untangled.png'),
+    website: 'https://untangled.finance/',
+    source: 'https://github.com/untangledfinance',
+    tags: ['refi'],
+  },
+  {
+    title: 'Wildchain',
+    description: 'Play-to-impact mobile game that lets you digitally adopt endangered animals and support real-world conservation initiatives',
+    preview: require('./showcase/wildchain.png'),
+    website: 'https://www.wildchain.io/',
+    source: 'https://github.com/wildchain',
+    tags: ['refi'],
+  },
+  {
+    title: 'Athena Protocol',
+    description: 'MRV protocol utilizing an Internet-of-Things (IoT) mesh network to measure wildfire and drought risk',
+    preview: require('./showcase/athena.png'),
+    website: 'https://www.athena.tech/',
+    source: 'https://github.com/Athena-Protocol',
+    tags: ['refi'],
+  },
+  {
+    title: 'Closer',
+    description: 'Suite of web3 tools to bootstrap regenerative action and meaningful governance in local communities',
+    preview: require('./showcase/closer.png'),
+    website: 'https://www.wildchain.io/',
+    source: 'https://github.com/closerearth',
+    tags: ['refi'],
+  },
+  {
+    title: 'Kolor',
+    description: 'Land conservation in Patagonia through Land NFTs',
+    preview: require('./showcase/kolor.png'),
+    website: 'https://www.kolorapp.com/',
+    source: 'https://github.com/yieniggu/kolor-contracts',
+    tags: ['refi'],
+  },
+  {
+    title: 'GainForest',
+    description: 'Decentralised fund using artificial intelligence to measure and reward sustainable nature stewardship',
+    preview: require('./showcase/gainForest.png'),
+    website: 'https://www.gainforest.earth/',
+    source: 'https://github.com/GainForest',
+    tags: ['refi'],
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.

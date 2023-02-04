@@ -7,7 +7,7 @@ authors:
     url: https://github.com/Ernesto-tha-great
     image_url: https://github.com/Ernesto-tha-great.png
 tags: [React, composer]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Composer Series - Building a Staking Defi App with Celo Composer and React
