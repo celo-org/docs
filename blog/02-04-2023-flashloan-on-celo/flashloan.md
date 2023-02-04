@@ -192,15 +192,18 @@ function executeOperation(
 
 ## Step 4: Deploying The Contract
 Switch to the "Solidity Compiler" tab. Set the compiler to 0.8.17 and click "Compile myFlashLoan.sol". oanYou should see some warnings but no error message.
-![Alt text](images/deploy1.jpg)
+
+![deploy1](images/deploy1.jpg)
 
 We will move on to deploy the contract to the Goerli network. Switch to the "Deploy & Run Transactions" tab.
+
 ![deploy2](images/deploy2.jpg)
 
 You should ensure that the “CONTRACT” field is set to “MyV2FlashLoan.sol”, [the full code is also available here](https://gist.github.com/johnfawole/a536dcd65ca563eab0bcc83a78956a25) for reference. Provide the LendingPool address in the text field that is next to the deploy button. 
 
 In our case, it will be 0x5E52dEc931FFb32f609681B8438A51c675cc232d. Then click “Deploy”. It should open up MetaMask. After that, you should confirm the transaction on your wallet.
-![Alt text](images/deploy3.jpg)
+
+![deploy3](images/deploy3.jpg)
 
 ## Step 5: Funding The Flash Loan
 
