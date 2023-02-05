@@ -828,7 +828,7 @@ const Users: User[] = [
     title: 'How to become a Web3 Developer',
     description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
-    website: 'blog/tutorials/How to become a Web3 Developer',
+    website: 'blog/tutorials/How-to-become-a-Web3-Developer',
     tags: ['beginner','celo', 'celosage'],
   },
   {

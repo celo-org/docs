@@ -8,7 +8,7 @@ authors:
     image_url: blog/23-12-22- how-to-become-a-web3-developer/images/web3 32.png
 tags: [beginner, Celo Sage]
 hide_table_of_contents: true
-slug: /tutorials/How to become a Web3 Developer
+slug: /tutorials/How-to-become-a-Web3-Developer
 ---
 
 # How to become a Web3 Developer
