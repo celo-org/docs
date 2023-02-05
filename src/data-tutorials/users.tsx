@@ -958,6 +958,13 @@ const Users: User[] = [
     tags: ['intermediate', 'figment', 'nodejs'],
   },
   {
+    title: 'How to become a Web3 Developer',
+    description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
+    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    website: 'blog/tutorials/How-to-become-a-Web3-Developer',
+    tags: ['beginner','celo', 'celosage'],
+  },
+  {
     title: 'Verifying Contracts with Hardhat',
     description: 'Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains.',
     preview: require('./showcase/intermediate/verifying-contracts-with-hardhat.png'),
