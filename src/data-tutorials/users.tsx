@@ -846,6 +846,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+    title: 'Pros and cons of using Celo API to create Defi applications',
+    description: ' A foray in to building on Celo using Celo API',
+    preview: require('./showcase/beginner/pros.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-api',
+    tags: ['beginner', 'foundation'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
