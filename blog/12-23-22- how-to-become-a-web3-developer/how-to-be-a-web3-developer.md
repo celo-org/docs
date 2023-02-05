@@ -24,7 +24,7 @@ Image by [pressfoto](https://www.freepik.com/free-photo/rear-view-programmer-wor
 
 ## Introduction
 
-The Web3 Industry is rapidly expanding. Hundreds of decentralized networks, cryptocurrencies, and other blockchain-powered applications are anticipated to be launched on the internet and in the global finance industry in the future.
+The Web3 industry is rapidly expanding. Hundreds of decentralized networks, cryptocurrencies, and other blockchain-powered applications are anticipated to be launched on the internet and in the global finance industry in the future.
 
 However, there's a need for more web3 developers to create and implement these projects to accelerate the development of the space further.
 
@@ -34,13 +34,13 @@ This tutorial is designed for intermediate and beginner developers looking to po
 
 ## Requirement
 
-Ensure you install the necessary programming languages before starting on a PC or desktop. This allows learning to be easier and more convenient. In addition, ensure you download the necessary packages (which will not be fully explained) to ease learning.
+Ensure you install the necessary programming languages before starting on a PC or desktop. This makes learning easier and more convenient. In addition, ensure you download the necessary packages (which will not be fully explained) to ease learning.
 
 ## Getting started
 
 According to [SlashData](https://www.developernation.net/developer-reports/dn22), a developer statistics organization, there were over 30 million software developers worldwide in the first quarter of 2022. Despite this enormous quantity, there are surprisingly few Web3 developers available.
 
-There are still less than 20,000 Web3 developers working in the whole space. To put this in a better perspective, that's less than the number of developers working for Web2 brands like Meta alone. The number only accounts for less than 1% of developers worldwide.
+There are still fewer than 20,000 Web3 developers working in the whole space. To put this in a better perspective, that's less than the number of developers working for Web2 brands like Meta alone. The number only accounts for less than 1% of developers worldwide.
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
@@ -71,11 +71,11 @@ Although they are brilliant pieces of technology, blockchains are difficult to c
 
 - The significance of blockchain technology
 - Use cases and the blockchain's operation
-- Immutable Records, Smart Contracts, and Distributed Ledger Technology (DLT) are the three main components of the blockchain.
+- Immutable records, smart contracts, and distributed ledger technology (DLT) are the three main components of the blockchain.
 - Learn about the decentralization of Web3, consensus methods, hashing operations, mining, security, and cryptocurrencies.
 - Include Web3 elements such as blocks, block indexes, timestamps, block hashes, block times, and others.
 
-To understand better, there are free online courses from blockchain professionals. These include the free [Celo YouTube channel for developers](https://youtube.com/@CeloOrg), the Blockchain Developer Nano degree on Udacity, and the Blockchain Developer Course by Pluralsight.
+To understand blockchain technology better, there are free online courses from blockchain professionals. These include the free [Celo YouTube channel for developers](https://youtube.com/@CeloOrg), the Blockchain Developer Nano degree on Udacity, and the Blockchain Developer Course by Pluralsight.
 
 ## Learn cryptography
 
@@ -83,7 +83,7 @@ Cryptography is the most crucial and essential requirement for building a blockc
 
 ## Learn about Bitcoin, Ethereum, Celo, and any equivalent
 
-Now that you have an understanding of how Blockchain looks like and functions, explore more about the working of a Blockchain. This [documentation](https://docs.celo.org/developer) helps you understand and build on Celo; for an interactive learning experience.
+Now that you have an understanding of what blockchain technology is and how it functions, It’ll be great if you learn more about blockchain architecture. This [documentation](https://docs.celo.org/developer) helps you understand and build on Celo; for an interactive learning experience.
 
 ## Understand smart contracts
 
@@ -93,7 +93,7 @@ You can create clients that communicate with the Ethereum Blockchain using Web3J
 
 ## Learn DApps (Web3 programming languages) – Solidity
 
-Dapp stands for Decentralized Application and describes the programs constructed on top of blockchains. DApps can be created as a website or a mobile application because they are used in the majority of functional ways like any other software program. There are tutorials and introductions to Dapps in several well-known ecosystems, some of which include:
+Dapps stands for decentralized applications and describe the programs built on top of a blockchain. Dpps can be created as a website or mobile application since they are used in most functional ways like any other software program. There are tutorials and introductions to Dapps in several well-known ecosystems, some of which include:
 
 - [Introduction to Dapps by Celo](https://docs.celo.org/showcase)
 - [What Is a Decentralized Application?](https://www.coindesk.com/learn/what-is-a-decentralized-application/?utm_source=remote3.co&utm_medium=remote3.co&utm_campaign=remote3.co)[Learn to Code Blockchain DApps By Building Simple Games](https://cryptozombies.io/)
@@ -109,18 +109,18 @@ Now that you have mastered Blockchain development, It's time to practice your Bl
 
 ## Web3 developer certification
 
-The most important phase in the process of becoming a certified web3 specialist would be selecting a trustworthy certification. With trustworthy web3 credentials, you have a higher chance of landing a career or a high-paying position. Even though abilities are a requirement, a certificate raises your appeal.
+The most important phase in the process of becoming a certified web3 specialist would be selecting a trustworthy certification. With trustworthy Web3 credentials, you have a higher chance of landing a career or a high-paying position. Even though abilities are a requirement, a certificate raises your appeal.
 
-Knowing which certification to get might be challenging, given the wide variety available. Ensure you obtain certification from a reputable educational organization in any desired web3 development area.
+Knowing which certification to get might be challenging, given the wide variety available. Ensure you obtain certification from a reputable educational organization in any desired Web3 development area.
 
 ## Web3 developer vs blockchain developer
 
 blog/12-09-22-how-to-become-a-web3-developer-sage/images/43028.jpg
 Image by [rawpixel.com](https://www.freepik.com/free-vector/security-concept-illustration-people-holding-chain_3226083.htm#query=blockchain&position=6&from_view=search&track=sph)
 
-The terms "web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
+The terms "Web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
 
-As the name suggests, a Web3 developer develops blockchain-based applications. Web applications are made by web3 developers using the design and protocol of web3 architects. These programmers also oversee the stack that dApps run on and develop their front-end and back-end.
+As the name suggests, a Web3 developer develops blockchain-based applications. Web applications are made by Web3 developers using the design and protocol of Wweb3 architects. These programmers also oversee the stack dApps run on and develop their front-end and back-end.
 
 Applications built using the blockchain architecture and protocol are the responsibility of blockchain software developers. They make smart contracts, which are blockchain-based programs that execute automatically when certain circumstances are satisfied. There are two categories of blockchain developers:
 
@@ -158,7 +158,7 @@ Congratulations on being one of the many finishing the tutorial. Getting into we
 
 If you choose to go self-paced (that is, self-teaching), ensure you understand basic programming, read up on the blockchain, and understand smart contracts, for better understanding.
 
-You can also join the [Celo Developer community](https://celo.org/community), where you can connect with many like-minds who will be willing to help guide you toward taking the right step in your web3 development journey.
+You can also join the [Celo Developer community](https://celo.org/community), where you can connect with many like-minded people willing to help guide you toward taking the right step in your web3 development journey.
 
 ## What's Next?
 
