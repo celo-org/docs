@@ -11,7 +11,6 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-car-marketplace-dapp-with-react
 ---
 
-# How to Build a Car Marketplace dapp using React
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-build-car-marketplace-using-react.png)
 
