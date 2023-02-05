@@ -4,8 +4,7 @@ description: In this tutorial, we will show you how to become a web3 developer a
 authors:
   - name: Elijah Sorinola
     title: Content Writer, Celo Sage
-    url: https://twitter.com/ElijahSorinola
-    image_url: blog/23-12-22- how-to-become-a-web3-developer/images/web3 32.png
+    image_url: blog/12-09-22-how-to-become-a-web3-developer-sage/images/web3 32.png
 tags: [beginner, Celo Sage]
 hide_table_of_contents: true
 slug: /tutorials/How-to-become-a-Web3-Developer
@@ -20,7 +19,7 @@ Page title
 Meta description:
 
 There's an increasing need for more web3 developers as the internet gradually shifts from web2 to web3 technology. Learn how you can start your learning journey.
-blog/23-12-22- how-to-become-a-web3-developer/images/rear-view-programmer-working-all-night-long (1).jpg
+blog/12-09-22-how-to-become-a-web3-developer-sage/images/rear-view-programmer-working-all-night-long (1).jpg
 Image by [pressfoto](https://www.freepik.com/free-photo/rear-view-programmer-working-all-night-long_5698334.htm#query=web%20developer&position=3&from_view=search&track=sph) on Freepik
 
 ## Introduction
@@ -45,7 +44,7 @@ There are still less than 20,000 Web3 developers working in the whole space. To 
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
-blog/23-12-22- how-to-become-a-web3-developer/images/pie-chart.svg
+blog/12-09-22-how-to-become-a-web3-developer-sage/images/pie-chart.svg
 
 Breaking into the web3 Industry as a budding developer can be difficult. Many blogs and productivity experts would advise you first to define your goals, who you want to be, locate a niche, etc.
 
@@ -53,7 +52,7 @@ But how will you know since you most likely need more real-world experience to u
 
 ## Web3 developer roadmap
 
-blog/23-12-22- how-to-become-a-web3-developer/images/pexels-kevin-ku-577585 (1).jpg
+blog/12-09-22-how-to-become-a-web3-developer-sage/images/pexels-kevin-ku-577585 (1).jpg
 Photo by [Kevin Ku](https://www.pexels.com/photo/data-codes-through-eyeglasses-577585/)
 
 A roadmap for web3 developers provides step-by-step instructions on beginning a career as a Web3 developer. It is used by numerous institutions, training organizations, job seekers, and specialists in the web3 field. In this article, we'll go over the most crucial abilities required of web3 developers. We have also compiled a lengthy list of tools and ideas you should learn to get into the field.
@@ -116,7 +115,7 @@ Knowing which certification to get might be challenging, given the wide variety 
 
 ## Web3 developer vs blockchain developer
 
-blog/23-12-22- how-to-become-a-web3-developer/images/43028.jpg
+blog/12-09-22-how-to-become-a-web3-developer-sage/images/43028.jpg
 Image by [rawpixel.com](https://www.freepik.com/free-vector/security-concept-illustration-people-holding-chain_3226083.htm#query=blockchain&position=6&from_view=search&track=sph)
 
 The terms "web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
@@ -179,7 +178,7 @@ For beginner and intermediate web3 developers, follow up with:
 
 Elijah Sorinola
 
-Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands. [Let's connect on Twitter.](https://twitter.com/ElijahSorinola)
+Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands. [Let's connect on Linedin.](https://www.linkedin.com/in/sorinola/)
 
 ## Reference
 
