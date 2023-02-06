@@ -42,20 +42,22 @@ This tutorial assumes you have a fundamental knowledge of the following concepts
 
 ### Requirements​
 
-* We'll need Metamask Install it from here If you don’t have it
+* We'll need Metamask Install it from here If you don`t have it
     
 * NodeJS 12.0.1+ version
     
 
 ### Creating the project
 
-We're going to use hardhat for smart contract development since it comes bundled with most of the tools and libraries we need for successful development. **Install hardhat into your workspace with either npm or yarn**
+We're going to use hardhat for smart contract development since it comes bundled with most of the tools and libraries we need for successful development. 
+
+**Install hardhat into your workspace with either npm or yarn**
 
 ```bash
 yarn add hardhat
 ```
 
-After the installation is successful, run ‘npx hardhat’ to initialize a new hardhat project and select Create a JavaScript project
+After the installation is successful, run `npx hardhat` to initialize a new hardhat project and select Create a JavaScript project
 
 ```bash
 $ npx hardhat
@@ -88,19 +90,19 @@ This will scaffold a new hardhat project as shown below;
 
 ![image](folders.PNG)
 
-With the basic hardhat setup, it is enough to start building and testing smart contracts. But I like to make it more convenient by  using hardhat with another library called 'hardhat deploy'
+With the basic hardhat setup, it is enough to start building and testing smart contracts. But I like to make it more convenient by  using hardhat with another library called `hardhat deploy`
 
 It helps shorten the deployment script and enhance testing.
 
 Install hardhat deploy with `yarn add --dev hardhat-deploy`
 
-For  compatibility with  'hardhat-deploy', we need to override the baked-in deploy feature with a new plugin using the following  command;
+For  compatibility with  `hardhat-deploy`, we need to override the baked-in deploy feature with a new plugin using the following  command;
 
 ```bash
 yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers
 ```
 
-Open the ‘hardhat.config.js’ file on top of it add the following line;
+Open the `hardhat.config.js` file on top of it add the following line;
 
 ```javascript
 require('hardhat-deploy')
@@ -126,11 +128,11 @@ Before we start writing the code, we need to first list out the functionalities.
 
 > Note: The Vehicle plate number is very important to feature on the ticket object because it will be unique and will help us traverse, filter and search for ticket objects in the contract. So keep track of it.
 
-#### Admin Address
+### Admin Address
 
-Under the contracts folder, create a new contract and name it ‘Ledger.sol’.
+Under the contracts folder, create a new contract and name it `Ledger.sol`.
 
-```solidity
+```Solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
@@ -145,18 +147,18 @@ Declare a contract and name it `Ledger`
 
 Going back to our workflow, we need to have an admin address that will create tickets for users. This will be the only address that will be whitelisted to be able to create tickets for divers.
 
-```solidity
+```Solidity
     address immutable private i_admin;
     uint256 private s_ticketCount;
 ```
 
-We make the address immutable and private by default using the ‘immutable’ & ‘private’ keywords. By doing so, after initialization, the admin address will be fixed and can’t be changed.
+We make the address immutable and private by default using the `immutable` & `private` keywords. By doing so, after initialization, the admin address will be fixed and can't be changed.
 
 But we may need to be able to read the admin address, currently, we can't do that because we've made the address private. To query the admin address from the contract, we'll explicitly create a public function that will return the address from the contract.
 
-We may also need to track the number of tickets issued in the contract, so we've added the s\_ticketCount property.
+We may also need to track the number of tickets issued in the contract, so we've added the `s_ticketCount` property.
 
-```solidity
+```Solidity
     function getAdminAddress() public view returns (address) {
         return i_admin;
     }
@@ -166,22 +168,22 @@ We make the function public so anyone can call it.
 
 ### The Constructor
 
-In practice, smart contracts may have initial values set globally within them. These values may be defined initially during deployment or by special functions to update them. In our case, we have the ‘i\_admin’ and ‘s\_ticketCount’. We want these variables to have values assigned at deployment. The constructor function is invoked only once during deployment with our ‘i\_admin’ and ‘s\_ticketCount’ set to ‘msg.sender’ and ‘0’ respectively.
+In practice, smart contracts may have initial values set globally within them. These values may be defined initially during deployment or by special functions to update them. In our case, we have the `i_admin` and `s_ticketCount`. We want these variables to have values assigned at deployment. The constructor function is invoked only once during deployment with our `i_admin` and `s_ticketCount` set to `msg.sender` and `0` respectively.
 
 Set the constructor;
 
-```solidity
+```Solidity
     constructor() {
         i_admin = msg.sender;
         s_ticketCount = 0;
     }
 ```
 
-#### Ticket data
+### Ticket data
 
 We will create an object that holds all the ticket data as follow, and here's how we can do it;
 
-```solidity
+```Solidity
     struct Ticket {
         uint256 ticketNumber;
         string location;
@@ -198,15 +200,15 @@ We also want to track all the tickets in the contract in an array so we can perf
 
 In this case, we'll use
 
-```solidity
+```Solidity
     Ticket[] private s_tickets;
 ```
 
-With the ‘s\_tickets’ array, we'll be able to store new tickets.
+With the `s_tickets` array, we'll be able to store new tickets.
 
-Let's create a readOnly function that will fetch the ‘s\_tickets’ from storage.
+Let's create a readOnly function that will fetch the `s_tickets` from storage.
 
-```solidity
+```Solidity
   function getAllTickets() public view returns (Ticket[] memory) {
         return s_tickets;
     }
@@ -214,13 +216,13 @@ Let's create a readOnly function that will fetch the ‘s\_tickets’ from stora
 
 This function will return all the tickets in the contract
 
-#### Create Ticket
+### Create Ticket
 
 We need a way of creating a new ticket in our smart contract and the best way to do this is by assigning a function to do that.
 
 Add the function below your constructor;
 
-```solidity
+```Solidity
     function createTicket(
         string memory enteredLocation,
         string memory carPlate,
@@ -239,27 +241,27 @@ Add the function below your constructor;
     }
 ```
 
-The ’createTicket’ function accepts three arguments, ‘enteredLocation’, ‘carPlate’, and ‘tixPrice’; these are parameters that end up in the ‘Ticket’ struct.
+The `createTicket` function accepts three arguments, `enteredLocation`, `carPlate`, and `tixPrice`; these are parameters that end up in the `Ticket` struct.
 
-Firstly, we want to ensure only the admin has permission to issue new tickets to users and we make this check by comparing the calling address - 'msg.sender' property to the ‘s\_admin’ stored in the state. If they do not match, the contract reverts with a custom error - ‘Ledger\_\_NotPermitted()’.
+Firstly, we want to ensure only the admin has permission to issue new tickets to users and we make this check by comparing the calling address - `msg.sender` property to the `s_admin` stored in the state. If they do not match, the contract reverts with a custom error - `Ledger__NotPermitted()`.
 
-###### Custom Revert Messages
+### Custom Revert Messages
 
 > Note: Solidity supports custom error messages out of the box if you need to have explicit and readable error messages.
 
-We define our custom error messages on top of the file with the ‘error NameOfErrorMessge()’
+We define our custom error messages on top of the file with the `error NameOfErrorMessge()`
 
-In the case of ‘Ledger\_\_NotPermitted()’, we name-spaced the error message starting with the contract name ‘Ledger’ followed by ‘\_\_\_’ so that we can easily identify which contract is emitting the errors.
+In the case of `Ledger__NotPermitted()`, we name-spaced the error message starting with the contract name `Ledger` followed by `___` so that we can easily identify which contract is emitting the errors.
 
 At the top of the contract add this code;
 
-```solidity
+```Solidity
 error Ledger__NotPermitted();
 ```
 
-Next, we create an instance of the ticket object with expected data, then pushed to the ‘s\_tickets’ array.
+Next, we create an instance of the ticket object with expected data, then pushed to the `s_tickets` array.
 
-```solidity
+```Solidity
         s_tickets.push(
             Ticket(enteredLocation, carPlate, tixPrice, block.timestamp, false)
         );
@@ -267,25 +269,25 @@ Next, we create an instance of the ticket object with expected data, then pushed
 
 **Events**
 
-Lastly, we fired an event using the keyword ‘emit’.
+Lastly, we fired an event using the keyword `emit`.
 
 > Note: Events are relevant for creating awareness to show that an action took place in the contract. We use front-end/clients to listen to events. We may then execute logic based on the fired events.
 
-In this case, we fired a ‘NewTicketIssued()’ event when a new ticket was created. To create an event instance, we use the ‘event EventName()’ to create the event and emit it using ‘emit EventName()’.
+In this case, we fired a `NewTicketIssued()` event when a new ticket was created. To create an event instance, we use the `event EventName()` to create the event and emit it using `emit EventName()`.
 
 Events are functions too. Hence, they can accept arguments.
 
 Paste the following code above the constructor;
 
-`solidity event NewTicketIssued(string indexed carPlate, string indexed location);`
+`Solidity event NewTicketIssued(string indexed carPlate, string indexed location);`
 
-Emit the event in the ‘createTicket’ function like this:
+Emit the event in the `createTicket` function like this:
 
-`solidity emit NewTicketIssued(carPlate, enteredLocation);`
+`Solidity emit NewTicketIssued(carPlate, enteredLocation);`
 
 Our code so far;
 
-```solidity
+```Solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
@@ -368,11 +370,11 @@ contract Ledger {
 }
 ```
 
-We'll need to scrutinize the vehicle's specific ticket info such as parking tickets assigned to each vehicle’s registration number.
+We'll need to scrutinize the vehicle's specific ticket info such as parking tickets assigned to each vehicle's registration number.
 
 We can do this in several ways. Either;
 
-1. Filter the ‘s\_tickets’ array on the front end and return only the required tickets to a vehicle’s registration number. Or,
+1. Filter the `s_tickets` array on the front end and return only the required tickets to a vehicle's registration number. Or,
     
 2. We could create a function that will filter the vehicle's tickets and return an already filtered array to the front end.
     
@@ -381,15 +383,15 @@ In my opinion, option 2 is more efficient since it uses an already-baked on-chai
 
 ### Extending CreateTicket
 
-We defined the ‘s\_vehicleTickets’ mapping that accepts a ‘string’ property and returns an array of 'Tickets' data mapped to the ‘string’. In this case, this `string` will be the vehicle's registration number.
+We defined the `s_vehicleTickets` mapping that accepts a `string` property and returns an array of 'Tickets' data mapped to the `string`. In this case, this `string` will be the vehicle's registration number.
 
-A mapping works similarly to a dictionary in python where there is a key-value pair relationship. In this case, the `string` is the key to the ‘Ticket\[\]’.
+A mapping works similarly to a dictionary in python where there is a key-value pair relationship. In this case, the `string` is the key to the `Ticket[]`.
 
-During data entry, we'll store a Ticket object that corresponds to the vehicle’s registration number so we can easily pull the target data without having to loop through a giant pile of tickets.
+During data entry, we'll store a Ticket object that corresponds to the vehicle's registration number so we can easily pull the target data without having to loop through a giant pile of tickets.
 
-Go to the ‘createTicket’ function, and add the following code to create a ticket in the storage;
+Go to the `createTicket` function, and add the following code to create a ticket in the storage;
 
-```solidity
+```Solidity
    s_vehicleTickets[carPlate].push(
             Ticket(
                 s_ticketCount,
@@ -404,7 +406,7 @@ Go to the ‘createTicket’ function, and add the following code to create a ti
 
 Your function should be like this. ;
 
-```solidity
+```Solidity
     function createTicket(
         string memory enteredLocation,
         string memory carPlate,
@@ -442,11 +444,11 @@ Your function should be like this. ;
     }
 ```
 
-Finally, we'll create a function to return all the tickets in storage when we supply the vehicle’s registration number.
+Finally, we'll create a function to return all the tickets in storage when we supply the vehicle's registration number.
 
-Add this code to the ‘getVehicleTickets’ function. ;
+Add this code to the `getVehicleTickets` function. ;
 
-```solidity
+```Solidity
     function getVehicleTickets(
         string memory carPlate
     ) public view returns (Ticket[] memory) {
@@ -462,15 +464,16 @@ We are going to begin by filtering unpaid tickets.
 
 Add the following at the top of your contract;
 
-```solidity
+```Solidity
     mapping(string => Ticket[]) private s_vehicleUpaidTickets;
+    
 ```
 
-'s\_vehicleUpaidTickets' will hold or store all unpaid tickets. Let’s create a function that retrieves all unpaid tickets from storage.
+`s_vehicleUpaidTickets` will hold or store all unpaid tickets. Let's create a function that retrieves all unpaid tickets from storage.
 
 Below the constructor, add the following function.
 
-```solidity
+```Solidity
     function getVehicleUnPaidTickets(
         string memory carPlate
     ) public view returns (Ticket[] memory) {
@@ -480,13 +483,13 @@ Below the constructor, add the following function.
 
 > Note: Later, we will create a function to retrieve paid tickets after we have created a function to pay tickets.
 
-\*\*Pay Ticket \*\*
+**Pay Ticket**
 
-At this point, we need the driver to be able to clear the outstanding ticket for their vehicle. We’d want to make it as dynamic as possible for anyone to pay for a ticket. That is, any address can make the payment. We need to be able to keep track of who pays for tickets and when.
+At this point, we need the driver to be able to clear the outstanding ticket for their vehicle. We`d want to make it as dynamic as possible for anyone to pay for a ticket. That is, any address can make the payment. We need to be able to keep track of who pays for tickets and when.
 
-Let’s create the ‘payTicket’ function.
+Let's create the `payTicket` function.
 
-```solidity
+```Solidity
  function payTicket(
         string memory carPlate,
         uint256 ticketNo
@@ -497,11 +500,11 @@ Let’s create the ‘payTicket’ function.
 
 > Note that we annotate the above function with the `payable` property. This allows the function to accept Celo
 
-The function accepts ‘carPlate’ and ‘ticketNo’ arguments to enable us to filter and index the specific ticket that the driver is paying for.
+The function accepts `carPlate` and `ticketNo` arguments to enable us to filter and index the specific ticket that the driver is paying for.
 
 We retrieve the target ticket from the storage and store it in memory.
 
-```solidity
+```Solidity
 // Get the required ticket
     Ticket memory vehicleTicket = s_vehicleTickets[carPlate][ticketNo];
     uint256 tixPrice = vehicleTicket.price;
@@ -509,44 +512,44 @@ We retrieve the target ticket from the storage and store it in memory.
 
 Thereafter, we verify that the caller is paying the right amount.
 
-To do this, we compare the incoming value to the ticket price in storage and check if the condition is false otherwise it fails and reverts with the custom error ‘Ledger\_\_NotEnoughFundsPaid()’.
+To do this, we compare the incoming value to the ticket price in storage and check if the condition is false otherwise it fails and reverts with the custom error `Ledger__NotEnoughFundsPaid()`.
 
-```solidity
+```Solidity
     // Verify to see that they'repaying the right ticket amount
     if (msg.value < tixPrice) {
         revert Ledger__NotEnoughFundsPaid();
     }
 ```
 
-Now that the important checks are done, we can now update the ticket ‘isPaid’ status from ‘false’ to ‘true’ in storage.
+Now that the important checks are done, we can now update the ticket `isPaid` status from `false` to `true` in storage.
 
-To remove the paid ticket from the unpaid list, we’ll invoke solidity's global ‘delete’ keyword on the ‘s\_vehicleUnpaidTickets’ mapping.
+To remove the paid ticket from the unpaid list, we'll invoke solidity's global `delete` keyword on the `s_vehicleUnpaidTickets` mapping.
 
-```solidity
+```Solidity
         // Clear / Remove the ticket from the vehicle's unpaid tickets
         delete s_vehicleUpaidTickets[carPlate][ticketNo];
 ```
 
 **Paid Tickets**
 
-Now that we have the needed functionalities written, we need a way to return all unpaid tickets. The best place to do this is in the ‘payTicket’ function. After removing the paid ticket from the unpaid ones in storage, we may then push them to storage.
+Now that we have the needed functionalities written, we need a way to return all unpaid tickets. The best place to do this is in the `payTicket` function. After removing the paid ticket from the unpaid ones in storage, we may then push them to storage.
 
 Add this above the constructor.
 
-```solidity
+```Solidity
     mapping(string => Ticket[]) private s_vehiclePaidTickets;
 ```
 
-Then add this to the ‘payTicket’ function.
+Then add this to the `payTicket` function.
 
-```solidity
+```Solidity
         // Add it to the paid tickets array;
         s_vehiclePaidTickets[carPlate].push(vehicleTicket);
 ```
 
 Lastly, add a function that returns all paid tickets.
 
-```solidity
+```Solidity
     function getVehiclePaidTickets(
         string memory carPlate
     ) public view returns (Ticket[] memory) {
@@ -554,9 +557,9 @@ Lastly, add a function that returns all paid tickets.
     }
 ```
 
-Let’s examine what we have written so far.
+Let's examine what we have written so far.
 
-```solidity
+```Solidity
 /**
  *Submitted for verification at alfajores.celoscan.io on 2023-01-29
 */
@@ -748,7 +751,7 @@ contract Ledger {
 
 **Compiling the Contract**
 
-Let’s compile the contract. Run the following command in the terminal:
+Let`s compile the contract. Run the following command in the terminal:
 
 ```bash
 PS C:\Users\Desktop\Celosage\parkingticketsdapp> npx hardhat compile
@@ -765,7 +768,7 @@ Hooray! Our contract compiles successfully.
 
 ### Deploying the contract
 
-The next step is to deploy the compiled contract. Using Hardhat CLI, we will deploy it to the local network. The hardhat ‘node’ is good for local deployment and testing before deploying to a live network since it uses test Celo.
+The next step is to deploy the compiled contract. Using Hardhat CLI, we will deploy it to the local network. The hardhat node is good for local deployment and testing before deploying to a live network since it uses test Celo.
 
 To see what the hardhat local network looks like, open the terminal and type the following command.
 
@@ -797,7 +800,7 @@ This spin-off is a local chain so we can deploy our contract and run tests.
 
 ***Deploy script***
 
-To deploy the contract, we need to write a script for it. In your project’s root directory, Under the ‘script’ folder create a file named ‘01-deploy-ledger.js’. We use the naming convention prefixed with a "01", to give a hierarchy of how our contracts will be deployed. For example, if we have multiple contracts in our projects that all need to be deployed, we'll put them in different deploy scripts and deploy them in order of the prefixed number before the file name. In our case, we only have one contract to deploy.
+To deploy the contract, we need to write a script for it. In your project's root directory, Under the `script` folder create a file named `01-deploy-ledger.js`. We use the naming convention prefixed with a "01", to give a hierarchy of how our contracts will be deployed. For example, if we have multiple contracts in our projects that all need to be deployed, we'll put them in different deploy scripts and deploy them in order of the prefixed number before the file name. In our case, we only have one contract to deploy.
 
 **Hardhat config file** For the deploy script to work, we need some special variables. The hardhat config file contains the following:
 
@@ -808,7 +811,7 @@ To deploy the contract, we need to write a script for it. In your project’s ro
 3. The compiler version to use and so on.
     
 
-Populate the ‘hardhat.config.js’ with the following code:
+Populate the `hardhat.config.js` with the following code:
 
 ```JavaScript
 require('@nomicfoundation/hardhat-toolbox')
@@ -843,15 +846,15 @@ module.exports = {
 }
 ```
 
-We have created a ‘networks’ property that consists of different networks and their corresponding chain IDs. We have a network with chainID 31337 which we will initially deploy our contract. Also is localhost, which is the local hardhat node that we previously used using the ‘npx hardhat node’ command. The node is active as long as the designated terminal is not interrupted. Finally, we have alfajores i.e Celo testnet which is the final destination for the contract in this tutorial.
+We have created a `networks` property that consists of different networks and their corresponding chain IDs. We have a network with chainID 31337 which we will initially deploy our contract. Also is localhost, which is the local hardhat node that we previously used using the `npx hardhat node` command. The node is active as long as the designated terminal is not interrupted. Finally, we have alfajores i.e Celo testnet which is the final destination for the contract in this tutorial.
 
-> Note Sensitive information like the PRIVATE KEY and RPC URLs are kept in the ‘.env’ file and are accessed using the ‘process.env’ property.
+> Note Sensitive information like the PRIVATE KEY and RPC URLs are kept in the `.env` file and are accessed using the `process.env` property.
 
 You can get the alfajores network RPC from Celo documentation here
 
 Get your private key from your browser wallet. In my case I use MetaMask.
 
-The ‘namedAccounts’ is where we define the deployer who is specified from the PRIVATE KEY configured. Who is chosen from the `accounts` array.
+The `namedAccounts` is where we define the deployer who is specified from the PRIVATE KEY configured. Who is chosen from the `accounts` array.
 
 **Deploy Script** Inside our deploy file, we need to write and export an async function like;
 
@@ -861,17 +864,17 @@ The ‘namedAccounts’ is where we define the deployer who is specified from th
     }
 ```
 
-We can extract the ‘getNamedAccounts’ and ‘deployments’ from the function injected by the hardhat config influenced by the ‘hardhat-deploy’ plugin. Because we need a deployer account to deploy our contract, we'll extract them from the ‘getNamedAccounts’ function ;
+We can extract the `getNamedAccounts` and `deployments` from the function injected by the hardhat config influenced by the `hardhat-deploy` plugin. Because we need a deployer account to deploy our contract, we'll extract them from the `getNamedAccounts` function ;
 
-The ‘deployments’ data returns a function that we'll use to deploy the contract.
+The `deployments` data returns a function that we'll use to deploy the contract.
 
-We get the deploy function from destructuring the ‘deployment’ property.
+We get the deploy function from destructuring the `deployment` property.
 
 ```JavaScript
   const { deployer, log } = await getNamedAccounts()
 ```
 
-The ‘log’ attribute is used for logging information to the console.
+The `log` attribute is used for logging information to the console.
 
 ```JavaScript
   const args = []
@@ -885,7 +888,7 @@ The ‘log’ attribute is used for logging information to the console.
   })
 ```
 
-The ‘deploy’ function accepts a string - contract name, as the first argument and an object as the second argument.
+The `deploy` function accepts a string - contract name, as the first argument and an object as the second argument.
 
 1. **from**: The deployer of the contract.
     
@@ -896,7 +899,7 @@ The ‘deploy’ function accepts a string - contract name, as the first argumen
 4. **log**: Log status / print back info after deployment.
     
 
-Finally, we export the 'tags' to the deploy script. These tags are needed during testing to select specific contracts for deployment.
+Finally, we export the tags to the deploy script. These tags are needed during testing to select specific contracts for deployment.
 
 Our script so far;
 
@@ -940,13 +943,13 @@ Ledger contract deployed --------------
 
 ### Unit Testing
 
-Let’s write some unit tests. It is very important to programmatically test your smart contracts before deploying them. Not only does it enable you to detect potential bugs ahead of time, including unexpected behaviors during interaction but also helps you simulate how users will be able to interact with your contract.
+Let's write some unit tests. It is very important to programmatically test your smart contracts before deploying them. Not only does it enable you to detect potential bugs ahead of time, including unexpected behaviors during interaction but also helps you simulate how users will be able to interact with your contract.
 
 It is advisable to test along as you write your contract so you can test your logic on the go. We did not use this method because I didn't want to introduce complexity in this tutorial. We write the contract first, then write the tests later.
 
 **Set up**
 
-Under the test folder, create a file named, ‘Ledger.test.js’. The convention is to use the contact name + ‘.test’ and ‘.js’. We use this naming so that the hardhat CLI compiler can find the file when we run the test script.
+Under the test folder, create a file named, `Ledger.test.js`. The convention is to use the contact name + `.test` and `.js`. We use this naming so that the hardhat CLI compiler can find the file when we run the test script.
 
 To keep this fairly short and precise, we'll have only one test script, and it will be for the constructor. Just to give an overview of the rest of the functions, because it's fairly the same process over again.
 
@@ -957,13 +960,13 @@ const { getNamedAccounts, deployments, ethers } = require('hardhat')
 const { assert, expect } = require('chai')
 ```
 
-We import the ‘getNamedAccounts’ and ‘deployments’ again because we'll need to access the deployer and the deployed contract fixtures again.
+We import the `getNamedAccounts` and `deployments` again because we'll need to access the deployer and the deployed contract fixtures again.
 
-The ‘assert’ and ‘expect’ properties are imported from ‘chai’. These will help us in defining the test scripts.
+The `assert` and `expect` properties are imported from `chai`. These will help us in defining the test scripts.
 
 Writing tests is not different from any other unit tests done in JavaScript. Chai is one of the standard libraries in JavaScript for testing.
 
-A test script could consist of a ‘describe()’ function that acts as a parent of smaller separated test scripts that run independently of one another.
+A test script could consist of a `describe()` function that acts as a parent of smaller separated test scripts that run independently of one another.
 
 Let's take a look at what the function looks like;
 
@@ -979,7 +982,7 @@ The function takes in two arguments,
 2. A callback function to have test scripts defined there.
     
 
-Inside the callback function, we have a ‘beforeEach()’, a function that accepts an async callback function.
+Inside the callback function, we have a `beforeEach()`, a function that accepts an async callback function.
 
 ```JavaScript
     beforeEach(async function(){
@@ -987,9 +990,9 @@ Inside the callback function, we have a ‘beforeEach()’, a function that acce
     })
 ```
 
-Similar to the ‘constructor()’ function in smart contracts, the ‘beforeEach()’ is executed once when the test script runs. This property makes it a very good place to deploy and return global variables we're planning to use later in testing. For example, the deployer, deployed contract instance, address, signers, etc.
+Similar to the `constructor()` function in smart contracts, the `beforeEach()` is executed once when the test script runs. This property makes it a very good place to deploy and return global variables we're planning to use later in testing. For example, the deployer, deployed contract instance, address, signers, etc.
 
-Paste the following code in the ‘describe’ function.
+Paste the following code in the `describe` function.
 
 ```JavaScript
 describe('Ledger', function () {
@@ -1016,29 +1019,29 @@ describe('Ledger', function () {
 
 We declare global variables at the top of the function;
 
-1. ***signer***: This will be the connected account to the contract that can interact with the contract. In this case, we declared a global variable called 'signer'.
+1. ***signer***: This will be the connected account to the contract that can interact with the contract. In this case, we declared a global variable called `signer`.
     
-2. ***ledgerContract***: This is the signed contract instance that we'll invoke the contract’s functions on. This instance of the contract will be connected to the signer.
+2. ***ledgerContract***: This is the signed contract instance that we'll invoke the contract's functions on. This instance of the contract will be connected to the signer.
     
 3. ***ledgerAddress***: We will need the deployed contract address, and we have declared it in this variable.
     
 
-We use the ‘deployments.fixture’ with an ‘all’ tag to reference the specified tag that we declared in the deploy script as ‘module.exports.tags’.
+We use the `deployments.fixture` with an `all` tag to reference the specified tag that we declared in the deploy script as `module.exports.tags`.
 
-Also, we use ethers to get the contract instance with the ‘.getContract()’ that accepts the contract name as an argument.
+Also, we use ethers to get the contract instance with the `.getContract()` that accepts the contract name as an argument.
 
-From the contract, we can use the ‘.address’ property to get the contract's address.
+From the contract, we can use the `.address` property to get the contract's address.
 
-Etherjs has the ‘.getSigners()’ function that returns a list of test accounts. We will get only one signer from the function.  
-Lastly, we want the signer to connect to the contract, so we'll invoke the ‘.connect()’ function on the contract instance, and pass in the signer as an argument. This will return a signed contract instance, thereafter, we'll store it in the ‘ledgerContract’ variable.
+Etherjs has the `.getSigners()` function that returns a list of test accounts. We will get only one signer from the function.  
+Lastly, we want the signer to connect to the contract, so we'll invoke the `.connect()` function on the contract instance, and pass in the signer as an argument. This will return a signed contract instance, thereafter, we'll store it in the `ledgerContract` variable.
 
 Now, we have everything we need to start writing our first test script. And as you would notice, we'll start with the constructor.
 
-**Testing the constructor function**: We can declare as many describe functions as we want. But typically, every function meant to be tested is scoped to a describe function of its own. Inside the describe function, we can have another ‘beforeEach()’ function as well.
+**Testing the constructor function**: We can declare as many describe functions as we want. But typically, every function meant to be tested is scoped to a describe function of its own. Inside the describe function, we can have another `beforeEach()` function as well.
 
-Commonly, most of the test function logic is written in a built-in function ‘it()’. It accepts two arguments, a simple description of the test logic and an async function for the test logic.
+Commonly, most of the test function logic is written in a built-in function `it()`. It accepts two arguments, a simple description of the test logic and an async function for the test logic.
 
-> Note: The ‘beforeEach()’ is optional. It can be left out.
+> Note: The `beforeEach()` is optional. It can be left out.
 
 Creating a test constructor.
 
@@ -1062,13 +1065,13 @@ In our contract function, one of the variables we're setting is the admin addres
 2. The set contract admin address is the same as the deployer/signer address.
     
 
-We get the signer address from the ‘signer.address’ property and use the ‘getAdminAddress()’ from our smart contract to return the set admin contract address. We then compare the two to verify that these are the same using the ‘assert.equal()’ function.
+We get the signer address from the `signer.address` property and use the `getAdminAddress()` from our smart contract to return the set admin contract address. We then compare the two to verify that these are the same using the `assert.equal()` function.
 
-Do not forget to stringify the returned admin address data so that JavaScript can understand the data from the chain as shown in the assert function using, adminAddress.toString();
+Do not forget to stringify the returned admin address data so that JavaScript can understand the data from the chain as shown in the assert function using, `adminAddress.toString();`
 
 **Running tests**
 
-Tests are conventionally run from top to bottom using the ‘npx hardhat test’ command. This will execute and run all tests giving pass or fail according to the required logic. But most of the time we may want to run specific test functions individually, and this is done using the ‘--grep "Test description’. In the grep quotes, we can pass the test description from the ‘it()’ function or the function name in the ‘describe()’ function. This will execute all the tests corresponding to the information accordingly.
+Tests are conventionally run from top to bottom using the `npx hardhat test` command. This will execute and run all tests giving pass or fail according to the required logic. But most of the time we may want to run specific test functions individually, and this is done using the `--grep "Test description`. In the grep quotes, we can pass the test description from the `it()` function or the function name in the `describe()` function. This will execute all the tests corresponding to the information accordingly.
 
 In your terminal you run;
 
@@ -1122,13 +1125,13 @@ We've successfully tested the constructor function, and made sure it successfull
 
 ### Testing the CreateTicket Function
 
-We want to make sure that the 'createTicket' function successfully creates and adds a new ticket to the contract while passing in all the required arguments.
+We want to make sure that the `createTicket` function successfully creates and adds a new ticket to the contract while passing in all the required arguments.
 
-We want to have the flexibility to test the contract's functions in isolation. Also, be able to jump in and test any part of the function that we want. To achieve this, it's important to separate any contract functions into their own 'describe()' functions.
+We want to have the flexibility to test the contract's functions in isolation. Also, be able to jump in and test any part of the function that we want. To achieve this, it's important to separate any contract functions into their own `describe()` functions.
 
 In this function, we want to test that the tickets are successfully added to the contract
 
-Let's create a new 'describe()' function for 'createTicket'
+Let's create a new `describe()` function for 'createTicket'
 
 ```JavaScript
 describe('CreateTicket', function() {
@@ -1148,11 +1151,11 @@ describe('CreateTicket', function() {
 })
 ```
 
-We have defined a new 'it()' function with a description of 'Should successfully add a ticket to the contract'.
+We have defined a new `it()` function with a description of 'Should successfully add a ticket to the contract'.
 
-Onto the 'ledgerContract' instance we can call the '.createTicket()' function and pass in the args; location, vehicle plate Number, and the price of the ticket.
+Onto the `ledgerContract` instance we can call the '.createTicket()' function and pass in the args; location, vehicle plate Number, and the price of the ticket.
 
-We then query the '.getAllTickets()' function on the 'ledgerContract' instance and verify that the response is of an array using the 'assert.isArray()' function from chai.
+We then query the `.getAllTickets()` function on the `ledgerContract` instance and verify that the response is of an array using the `assert.isArray()` function from chai.
 
 To run our test type;
 
@@ -1176,9 +1179,9 @@ C:\Users\Desktop\Celosage\parkingticketsdapp>npx hardhat test --grep "CreateTick
 
 ### Testing the PayTicket Function
 
-Using the same logic we used for testing the 'createTicket()' function, we also want to test 'payTicketFunction()'
+Using the same logic we used for testing the `createTicket()` function, we also want to test `payTicketFunction()`
 
-Add a new 'describe()' function for 'PayTicket()';
+Add a new `describe()` function for `PayTicket();`
 
 ```JavaScript
 describe('PayTicket', function() {
@@ -1204,15 +1207,15 @@ describe('PayTicket', function() {
 })
 ```
 
-On the 'ledgerContract' instance, call 'payTicket()' and we pass in the vehicle plate number and the number of the ticket we're intending to pay as arguments.
+On the `ledgerContract` instance, call `payTicket()` and we pass in the vehicle plate number and the number of the ticket we're intending to pay as arguments.
 
 As the second parameter of the function, we pass it as an object with a 'value: ' as the ticket price payable to the contract.
 
 To verify that the function successfully pays the ticket, we need to make sure that the paid ticket is successfully added to the vehicle's paid tickets array.
 
-So we call the '.getVehiclePaidTickets()' function and pass in the vehicle's plate number as an argument.
+So we call the `.getVehiclePaidTickets()` function and pass in the vehicle's plate number as an argument.
 
-'assert.isArray()' will verify if the returned test is an array containing the new ticket.
+`assert.isArray()` will verify if the returned test is an array containing the new ticket.
 
 In your terminal run;
 
@@ -1242,7 +1245,7 @@ Note: If you want to go more in-depth on how to test your smart contracts, you c
 
 All along we've been testing our smart contract to a local network. Now we want to deploy our contract to the Celo network (Alfajores), a celo test network.
 
-To deploy the contract to Alfajores, we need to alter the network configurations in the ‘hardhat.config.js’ file.
+To deploy the contract to Alfajores, we need to alter the network configurations in the `hardhat.config.js` file.
 
 In the hardhat config file, we need to add the RPC URL for Celo Alfajores network, and this can be created from a various number of Node providers like Infura.
 
@@ -1250,7 +1253,7 @@ You can create your RPC URL from Infura here
 
 create an account and a new app for Celo Alfajores and copy the RPC URL
 
-Save your RPC URL in the ‘.env’ file. Then import it in the ‘hardhat.config.js’ file.
+Save your RPC URL in the `.env` file. Then import it in the `hardhat.config.js` file.
 
 **Getting Deployer's Private Key**:
 
@@ -1260,12 +1263,12 @@ We can get the deployer's private key from any wallet of your choice. In this ca
 
 1. Click on the three dots
     
-2. Click the ‘Export Private key’ button
+2. Click the `Export Private key` button
     
 3. Enter your password and copy the private key to the clipboard.
     
 
-Paste the private key in the ‘.env’ file and import it as shown below;
+Paste the private key in the `.env` file and import it as shown below;
 
 ```JavaScript
     const { ALFAJORES_URL, PRIVATE_KEY } = process.env
@@ -1330,7 +1333,7 @@ module.exports = {
 }
 ```
 
-We specified a custom path where we are going to save our compiled artifacts to a new folder ‘/client/backend’. We do this because we want our front end to have parent-level access to the contract's ABI, and hardhat will always update the artifacts to the latest one every time we compile them.
+We specified a custom path where we are going to save our compiled artifacts to a new folder `/client/backend`. We do this because we want our front end to have parent-level access to the contract's ABI, and hardhat will always update the artifacts to the latest one every time we compile them.
 
 Our config file is ready and set to deploy to the Celo test network. To deploy our contract, inside your terminal run the;
 
@@ -1338,7 +1341,7 @@ Our config file is ready and set to deploy to the Celo test network. To deploy o
 npx hardhat deploy --network alfajores
 ```
 
-We use the ‘--network’ flag with ‘alfajores’ to explicitly tell hardhat we want to deploy the compiled contract to the alfajores network, not the hardhat network.
+We use the `--network` flag with `alfajores` to explicitly tell hardhat we want to deploy the compiled contract to the alfajores network, not the hardhat network.
 
 Output;
 
@@ -1358,9 +1361,9 @@ Congratulations! Your contract has been successfully deployed to Celo testnet an
 0xd74664Ed0bBc5bBA2D5B65E9d36Eb363ea1ccfCF
 ```
 
-Feel free to inspect the contract at ‘https://alfajores.celoscan.io/address/’
+Feel free to inspect the contract at `https://alfajores.celoscan.io/address/`
 
-Finally, we're done with the smart contract and we've deployed it to Celo test network alfajores at the address ‘0xd74664Ed0bBc5bBA2D5B65E9d36Eb363ea1ccfCF’.
+Finally, we're done with the smart contract and we've deployed it to Celo test network alfajores at the address `0xd74664Ed0bBc5bBA2D5B65E9d36Eb363ea1ccfCF`.
 
 ### Connecting with the frontend
 
@@ -1372,9 +1375,9 @@ Here are a few steps to help you set up the front end.
 
 1. Clone the repo from [here](https://github.com/JovanMwesigwa/celo-parking-ticketing-dapp)
     
-2. Navigate to the ‘/client’ and run ‘npm install’ or ‘yarn’ to install all the dependencies
+2. Navigate to the `/client` and run `npm install` or `yarn` to install all the dependencies
     
-3. Inside the ‘/client’ folder, navigate to ‘/client/constants/index.js’ and replace my contract address and admin address with yours respectively;
+3. Inside the `/client` folder, navigate to `/client/constants/index.js` and replace my contract address and admin address with yours respectively;
     
 
 ```JavaScript
@@ -1382,7 +1385,7 @@ export const CONTRACT_ADDRESS = ''"
 export const AMDMIN_ADDRESS = ''"
 ```
 
-1. Run ‘yarn run dev’ or ‘npm run dev’ to test out your project
+1. Run `yarn run dev` or `npm run dev` to test out your project
     
 
 ### Conclusion
@@ -1391,7 +1394,7 @@ The architecture of building and writing smart contract-powered applications has
 
 ### Next Steps​​
 
-Building on the blockchain is as exciting and incredibly simple as you’ve seen. There’s a lot of functionality we can add to the Dapp, for example, we can add the ability to whitelist admin-only addresses that can create new tickets, or we can let drivers create a profile and link them to their vehicle, and so on. All leave this to you to expand it on your own.
+Building on the blockchain is as exciting and incredibly simple as you've seen. There's a lot of functionality we can add to the Dapp, for example, we can add the ability to whitelist admin-only addresses that can create new tickets, or we can let drivers create a profile and link them to their vehicle, and so on. All leave this to you to expand it on your own.
 
 ### About the Author​
 
