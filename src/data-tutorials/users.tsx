@@ -1578,6 +1578,13 @@ const Users: User[] = [
     tags: ['celosage'],
   },
   {
+    title: 'Crypto Wallets The Celo Way',
+    description: 'This tutorials teaches you all you need to know about Crypto Wallets',
+    preview: require('./showcase/beginner/crypto-wallets.png'),
+    website: 'blog/tutorials/Crypto-Wallets-The-Celo-Way',
+    tags: ['celosage'],
+  },
+  {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
     preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
@@ -1619,7 +1626,6 @@ const Users: User[] = [
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo'], 
   },
-
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
