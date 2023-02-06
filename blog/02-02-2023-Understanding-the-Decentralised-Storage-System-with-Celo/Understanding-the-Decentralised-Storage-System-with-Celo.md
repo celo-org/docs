@@ -6,7 +6,7 @@ authors:
   - name: Mayowa Julius Ogungbola
     title: Software Engineer, Technical writer @Celo Foundation
     url: https://github.com/Julius170
-    image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
+    image_url: /showcase/intermediate/understanding-the-decentralized-storage-system.png
 tags: [celo,intermediate,celosage,]
 hide_table_of_contents: true
 slug: /tutorials/understanding the decentralized storage system
@@ -15,7 +15,7 @@ slug: /tutorials/understanding the decentralized storage system
 ![header](https://user-images.githubusercontent.com/69092079/216377599-79056c47-ea78-467b-bf16-53c378bdcae0.png)
 
 
-# Introduction​
+## Introduction​
 
 Decentralized storage systems are becoming increasingly popular as a way to store data securely and efficiently. With the rise of blockchain technology, decentralized storage systems have become even more attractive due to their ability to provide secure, distributed storage solutions. One such system is Celo, which is a decentralized storage system built on the Ethereum blockchain. 
 
@@ -37,7 +37,7 @@ This tutorial assumes you have a fundamental knowledge of the following concepts
 
 
 
-# What is a Decentralized Storage System
+## What is a Decentralized Storage System
 
 A decentralized system is a type of system that relies on a distributed network of computers to manage, store and process data, instead of relying on a single centralized source. This type of system has many advantages over traditional centralized systems, such as increased security and reliability, and they provide greater flexibility and control over data ownership and access.
 
@@ -50,7 +50,7 @@ Decentralized storage systems typically utilize a peer-to-peer (P2P) network, wh
 Additionally, decentralized storage systems provide users with greater control over their data, as they can choose who can access and modify the data. This helps to ensure that only authorized users have access to sensitive information. Finally, decentralized storage systems are much more cost-effective than traditional centralized storage systems, as they do not require expensive hardware or software to maintain.
 
 
-# The Benefits of a Decentralized Storage Systems
+## The Benefits of a Decentralized Storage Systems
 
 Decentralized storage systems offer many benefits for those looking to store large amounts of data. 
 By eliminating the need for a centralized server, decentralized storage systems allow individuals and businesses to securely store and share data without having to worry about physical or virtual security threats. 
@@ -78,7 +78,7 @@ Some other benefits of the decentralized storage system are;
 
 
 
-# Types Of Decentralized Storage Systems
+## Types Of Decentralized Storage Systems
 
 One of the most common types of decentralized storage systems is Peer-to-Peer (P2P) networks. In a P2P network, each node in the network can access and store files from other nodes in the network without the need for a central server. This allows for a more secure, decentralized system as the data is not all stored in one place, making it much harder for hackers to access. Additionally, as the data is spread out across multiple nodes, it is easier for users to access the data they need, resulting in faster access times. 
 
@@ -98,7 +98,7 @@ Some other types of decentralized storage systems are;
 5. Object Storage: Object storage is a type of storage system that stores data in the form of objects. Objects are stored in a distributed manner across multiple servers and can be accessed using APIs. Object storage is often used for storing large amounts of unstructured data, such as images, videos, and audio files.
 
 
-# Short Comings Of the Decentralized Storage System
+## Short Comings Of the Decentralized Storage System
 
 One of the primary short comings of decentralized storage systems is their scalability. As more data is added to the system, the performance of the system can suffer. This is due to the fact that all the data must be replicated across all the nodes in the system. 
 
@@ -116,7 +116,7 @@ Decentralized storage systems are also not always as secure as other storage sol
 5. Complexity: Decentralized storage systems are often complex and difficult to manage due to the fact that they require multiple nodes to communicate with each other in order to access and store data. This can result in increased complexity for organizations that use decentralized storage solutions.
 
 
-# Building a Decentralized Storage on Celo
+## Building a Decentralized Storage on Celo
 
 Building a decentralized storage system on Celo with the use of a few different technologies. First, you'll need to use the Celo blockchain platform to store the data. This means setting up a Celo node with the ability to store and retrieve data. You'll also need to use a distributed ledger technology such as Ethereum to secure the data.
 Finally, you'll need a file storage protocol such as IPFS (InterPlanetary File System) to store and distribute the data across the network. 
