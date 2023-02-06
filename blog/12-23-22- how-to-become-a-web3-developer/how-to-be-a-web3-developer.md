@@ -4,7 +4,7 @@ description: There's an increasing need for more web3 developers as the internet
 authors:
   - name: Elijah Sorinola
     title: Content Writer, Celo Sage
-    image_url: blog/12-23-22- how-to-become-a-web3-developer/images/web3.png
+    image_url: https://dl.airtable.com/.attachmentThumbnails/dd1b24f2e572bdf951dcc727ddf043ac/76b5253c
 tags: [beginner, Celo Sage]
 hide_table_of_contents: true
 slug: /tutorials/How-to-become-a-Web3-Developer
