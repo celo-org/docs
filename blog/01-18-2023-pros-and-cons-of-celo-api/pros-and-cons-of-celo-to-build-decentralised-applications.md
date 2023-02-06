@@ -4,8 +4,8 @@ description: Pros and cons of using Celo to create Decentralised Applications
 authors:
   - name: Maxwell Onyeka
     title: Technical writer 
-   image_url: https://avatars.githubusercontent.com/u/80678178?v=4
-tags: [beginner, foundation, celosage, ]
+  image_url: https://avatars.githubusercontent.com/u/80678178?v=4
+tags: [beginner, foundation, celosage,]
 hide_table_of_contents: true
 slug: /tutorials/pros-and-cons-of-using-celo
 ---
