@@ -1569,13 +1569,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/an-introduction-to-layer-1-and-layer-2-blockchain-protocols.png'),
     website: 'blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols',
     tags: ['celosage'],
-  }
+  },
   {
     title: 'Crypto Wallets The Celo Way',
     description: 'This tutorials teaches you all you need to know about Crypto Wallets',
-    preview: require('./showcase/beginner/Crypto-Wallets-The-Celo-Way.png'),
+    preview: require('./showcase/beginner/crypto-wallets.png'),
     website: 'blog/tutorials/Crypto-Wallets-The-Celo-Way',
-    tags: ['celosage','wallet'],
+    tags: ['celosage'],
   },
   {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
