@@ -11,9 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-a-decentralized-parking-ticket-payments-dapp-on-celo
 ---
 
-# Build a Decentralized Parking Ticket Payments DApp on Celo
-
-Build a functioning DAO by writing the Solidity smart contract and building a React Native dApp
+![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-parking-ticket-payments-dapp-on-celo.png)
 
 <!--truncate-->
 
@@ -31,27 +29,27 @@ In this tutorial, we are going to create a smart contract that will enable anyon
 
 This tutorial assumes you have a fundamental knowledge of the following concepts
 
-* How the blockchain works and how Smart Contracts operate on a higher level.
+ How the blockchain works and how Smart Contracts operate on a higher level.
     
-* Basics of Solidity programming language like mappings, structs, and functions
+ Basics of Solidity programming language like mappings, structs, and functions
     
-* How to work with JavaScript and ethers JS
+ How to work with JavaScript and ethers JS
     
-* Working with ReactJs
+ Working with ReactJs
     
 
 ### Requirements​
 
-* We'll need Metamask Install it from here If you don`t have it
+ We'll need Metamask Install it from here If you don`t have it
     
-* NodeJS 12.0.1+ version
+ NodeJS 12.0.1+ version
     
 
 ### Creating the project
 
 We're going to use hardhat for smart contract development since it comes bundled with most of the tools and libraries we need for successful development. 
 
-**Install hardhat into your workspace with either npm or yarn**
+### Install hardhat into your workspace with either npm or yarn
 
 ```bash
 yarn add hardhat
@@ -117,13 +115,13 @@ Before we start writing the code, we need to first list out the functionalities.
 2. An object containing ticket data such as ;
     
 
-* price
+### price
     
-* date created
+### date created
     
-* vehicle's registration number
+### vehicle's registration number
     
-* a way to verify or check whether the ticket has been paid or not.
+### a way to verify or check whether the ticket has been paid or not.
     
 
 > Note: The Vehicle plate number is very important to feature on the ticket object because it will be unique and will help us traverse, filter and search for ticket objects in the contract. So keep track of it.
@@ -267,7 +265,7 @@ Next, we create an instance of the ticket object with expected data, then pushed
         );
 ```
 
-**Events**
+### Events 
 
 Lastly, we fired an event using the keyword `emit`.
 
@@ -483,7 +481,7 @@ Below the constructor, add the following function.
 
 > Note: Later, we will create a function to retrieve paid tickets after we have created a function to pay tickets.
 
-**Pay Ticket**
+### Pay Ticket 
 
 At this point, we need the driver to be able to clear the outstanding ticket for their vehicle. We`d want to make it as dynamic as possible for anyone to pay for a ticket. That is, any address can make the payment. We need to be able to keep track of who pays for tickets and when.
 
@@ -530,7 +528,7 @@ To remove the paid ticket from the unpaid list, we'll invoke solidity's global `
         delete s_vehicleUpaidTickets[carPlate][ticketNo];
 ```
 
-**Paid Tickets**
+### Paid Tickets 
 
 Now that we have the needed functionalities written, we need a way to return all unpaid tickets. The best place to do this is in the `payTicket` function. After removing the paid ticket from the unpaid ones in storage, we may then push them to storage.
 
@@ -749,7 +747,7 @@ contract Ledger {
 }
 ```
 
-**Compiling the Contract**
+### Compiling the Contract 
 
 Let`s compile the contract. Run the following command in the terminal:
 
@@ -798,11 +796,12 @@ Private Key: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
 
 This spin-off is a local chain so we can deploy our contract and run tests.
 
-***Deploy script***
+### Deploy script  
 
 To deploy the contract, we need to write a script for it. In your project's root directory, Under the `script` folder create a file named `01-deploy-ledger.js`. We use the naming convention prefixed with a "01", to give a hierarchy of how our contracts will be deployed. For example, if we have multiple contracts in our projects that all need to be deployed, we'll put them in different deploy scripts and deploy them in order of the prefixed number before the file name. In our case, we only have one contract to deploy.
 
-**Hardhat config file** For the deploy script to work, we need some special variables. The hardhat config file contains the following:
+### Hardhat config file 
+  For the deploy script to work, we need some special variables. The hardhat config file contains the following:
 
 1. The script needs to know which chain it is deploying the contract to.
     
@@ -856,7 +855,8 @@ Get your private key from your browser wallet. In my case I use MetaMask.
 
 The `namedAccounts` is where we define the deployer who is specified from the PRIVATE KEY configured. Who is chosen from the `accounts` array.
 
-**Deploy Script** Inside our deploy file, we need to write and export an async function like;
+### Deploy Script:
+ Inside our deploy file, we need to write and export an async function like;
 
 ```JavaScript
     module.exports = async({ getNamedAccounts, deployments }) => {
@@ -890,13 +890,13 @@ The `log` attribute is used for logging information to the console.
 
 The `deploy` function accepts a string - contract name, as the first argument and an object as the second argument.
 
-1. **from**: The deployer of the contract.
+1. from: The deployer of the contract.
     
-2. **args**: This is an array of constructor arguments for our contract but, in this case, the contract does not expect any argument.
+2.  args: This is an array of constructor arguments for our contract but, in this case, the contract does not expect any argument.
     
-3. **waitConfirmations**: Number of blocks to wait for a transaction to be confirmed.
+3.  waitConfirmations : Number of blocks to wait for a transaction to be confirmed.
     
-4. **log**: Log status / print back info after deployment.
+4.  log : Log status / print back info after deployment.
     
 
 Finally, we export the tags to the deploy script. These tags are needed during testing to select specific contracts for deployment.
@@ -947,7 +947,7 @@ Let's write some unit tests. It is very important to programmatically test your 
 
 It is advisable to test along as you write your contract so you can test your logic on the go. We did not use this method because I didn't want to introduce complexity in this tutorial. We write the contract first, then write the tests later.
 
-**Set up**
+### Set up 
 
 Under the test folder, create a file named, `Ledger.test.js`. The convention is to use the contact name + `.test` and `.js`. We use this naming so that the hardhat CLI compiler can find the file when we run the test script.
 
@@ -1019,11 +1019,14 @@ describe('Ledger', function () {
 
 We declare global variables at the top of the function;
 
-1. ***signer***: This will be the connected account to the contract that can interact with the contract. In this case, we declared a global variable called `signer`.
+1. ### signer: 
+  This will be the connected account to the contract that can interact with the contract. In this case, we declared a global variable called `signer`.
     
-2. ***ledgerContract***: This is the signed contract instance that we'll invoke the contract's functions on. This instance of the contract will be connected to the signer.
+2. ### ledgerContract: 
+  This is the signed contract instance that we'll invoke the contract's functions on. This instance of the contract will be connected to the signer.
     
-3. ***ledgerAddress***: We will need the deployed contract address, and we have declared it in this variable.
+3. ### ledgerAddress: 
+  We will need the deployed contract address, and we have declared it in this variable.
     
 
 We use the `deployments.fixture` with an `all` tag to reference the specified tag that we declared in the deploy script as `module.exports.tags`.
@@ -1037,7 +1040,8 @@ Lastly, we want the signer to connect to the contract, so we'll invoke the `.con
 
 Now, we have everything we need to start writing our first test script. And as you would notice, we'll start with the constructor.
 
-**Testing the constructor function**: We can declare as many describe functions as we want. But typically, every function meant to be tested is scoped to a describe function of its own. Inside the describe function, we can have another `beforeEach()` function as well.
+## Testing the constructor function: 
+  We can declare as many describe functions as we want. But typically, every function meant to be tested is scoped to a describe function of its own. Inside the describe function, we can have another `beforeEach()` function as well.
 
 Commonly, most of the test function logic is written in a built-in function `it()`. It accepts two arguments, a simple description of the test logic and an async function for the test logic.
 
@@ -1056,7 +1060,7 @@ Creating a test constructor.
   })
 ```
 
-***What we are testing***
+### What we are testing
 
 In our contract function, one of the variables we're setting is the admin address. So, to know that the deployment was successful, we need to verify that:
 
@@ -1069,7 +1073,7 @@ We get the signer address from the `signer.address` property and use the `getAdm
 
 Do not forget to stringify the returned admin address data so that JavaScript can understand the data from the chain as shown in the assert function using, `adminAddress.toString();`
 
-**Running tests**
+### Running tests
 
 Tests are conventionally run from top to bottom using the `npx hardhat test` command. This will execute and run all tests giving pass or fail according to the required logic. But most of the time we may want to run specific test functions individually, and this is done using the `--grep "Test description`. In the grep quotes, we can pass the test description from the `it()` function or the function name in the `describe()` function. This will execute all the tests corresponding to the information accordingly.
 
@@ -1079,7 +1083,7 @@ In your terminal you run;
     npx hardhat test
 ```
 
-**A failed test**
+### A failed test
 
 A failed test will output a bunch of failed errors and a reason as to why it failed. for example;
 
@@ -1103,7 +1107,7 @@ PS C:\Users\Desktop\Celosage\parkingticketsdapp> npx hardhat test --grep "Should
 
 Here is a script of a failed test script that does not prove the set admin address is the same as the signer's address.
 
-**Passed test script output**
+### Passed test script output 
 
 Here is a passed test script of our constructor that successfully proves that the set admin address is equal to the signer address.
 
@@ -1255,7 +1259,7 @@ create an account and a new app for Celo Alfajores and copy the RPC URL
 
 Save your RPC URL in the `.env` file. Then import it in the `hardhat.config.js` file.
 
-**Getting Deployer's Private Key**:
+### Getting Deployer's Private Key:
 
 Next, remember that when using the local network, we didn't have to care so much about the employer's account because hardhat is smart enough to automatically point it to the first test account and award it some test funds to deploy the contract. This will not work for Alfojores. We need to declare the deployer's Private Key to fund deploying the contract.
 
@@ -1274,7 +1278,8 @@ Paste the private key in the `.env` file and import it as shown below;
     const { ALFAJORES_URL, PRIVATE_KEY } = process.env
 ```
 
-**Funding the Deployer's account**: Right now, our deployer doesn't have funds in their wallet. They will not be able to fund the deployment of the contract. We need to give the deployer some funds. Celo has a test faucet site that awards test funds of 1 CEL and 1 cUSD to any address that you request.
+### Funding the Deployer's account : 
+  Right now, our deployer doesn't have funds in their wallet. They will not be able to fund the deployment of the contract. We need to give the deployer some funds. Celo has a test faucet site that awards test funds of 1 CEL and 1 cUSD to any address that you request.
 
 Copy the deployer's s address and visit the faucet to funds to your wallet.
 
