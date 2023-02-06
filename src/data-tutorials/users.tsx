@@ -776,6 +776,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
+    title: 'Como criar uma carteira para a blockchain Celo',
+    description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
+    preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
+    tags: ['celosage', 'video', 'beginner', "celo", "metamask"],
+  },
+  {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
@@ -844,6 +851,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
     website: 'https://medium.com/celodevelopers/introduction-to-creating-nfts-on-celo-eb7240a71cc0',
     tags: ['beginner','foundation', 'nft', 'erc721'],
+  },
+  {
+    title: ' How to Build Car Marketplace dapp Using React',
+    description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
+    preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
+    website: 'blog/tutorials/how-to-build-car-marketplace-dapp-with-react',
+    tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
   },
   {
     title: 'Building for the Celo Connect Mobile Hackathon',
@@ -1578,6 +1592,13 @@ const Users: User[] = [
     tags: ['celosage'],
   },
   {
+    title: 'Crypto Wallets The Celo Way',
+    description: 'This tutorials teaches you all you need to know about Crypto Wallets',
+    preview: require('./showcase/beginner/crypto-wallets.png'),
+    website: 'blog/tutorials/Crypto-Wallets-The-Celo-Way',
+    tags: ['celosage'],
+  },
+  {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
     preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
@@ -1619,7 +1640,6 @@ const Users: User[] = [
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo'], 
   },
-
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
