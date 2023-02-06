@@ -1,14 +1,13 @@
 ---
-title: Pros and cons of using Celo API to create Defi applications
-description: A foray in to building on Celo using Celo's API
+title: Pros and cons of using Celo to create Decentralised Applications
+description: Pros and cons of using Celo to create Decentralised Applications
 authors:
   - name: Maxwell Onyeka
     title: Technical writer 
-    url: https://github.com/maxzysparks
-    image_url: https://avatars.githubusercontent.com/u/80678178?v=4
-tags: [celo, intermediate, celosage, ]
+   image_url: https://avatars.githubusercontent.com/u/80678178?v=4
+tags: [beginner, foundation, celosage, ]
 hide_table_of_contents: true
-slug: /tutorials/pros-and-cons-of-using-celo-api
+slug: /tutorials/pros-and-cons-of-using-celo
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/pros.png)
@@ -112,14 +111,14 @@ In conclusion, the Celo API provides dApp developers with a number of advantages
 
 
 ## References:
-Celo documentation: https://docs.celo.org/developer
-Celo whitepaper: https://celo.org/papers/whitepaper
+[Celo documentation](https://docs.celo.org/developer)
+[Celo whitepaper](https://celo.org/papers/whitepaper)
  
  
 ## About the Author:
  
-Maxwell Onyeka is a solutions-focused, meticulous, strategy- and results-driven manager with more than five years' experience building paid and organic marketing funnels for SaaS companies.
-I'm well-versed in the major social media networks, including Facebook, LinkedIn, Twitter, and Instagram. My great communication abilities enable me to create engaging tweets and blogs that increase traffic and user interaction.
+Maxwell Onyeka is a solutions-focused, meticulous, strategy- and results-driven manager with more than five years' experience building paid and organic marketing funnels for SaaS companies. [LinkedIn](https://www.linkedin.com/in/maxwell-onyeka-3b4b1118b/) 
+
 
 
 
