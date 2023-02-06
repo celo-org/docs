@@ -853,6 +853,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+    title: ' How to Build Car Marketplace dapp Using React',
+    description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
+    preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
+    website: 'blog/tutorials/how-to-build-car-marketplace-dapp-with-react',
+    tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
