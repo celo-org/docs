@@ -36,7 +36,6 @@ You’ll also learn how blockchain works, why it is important, and how you can u
 Before this tutorial, you should have a basic knowledge about:
 
 
-
 * Web3 (the future of web) and its improved features over Web-2 (the incumbent)
 * Have a background knowledge of decentralized finance (DeFi) and the application of Blockchain technology to DeFi.
 
@@ -49,7 +48,7 @@ Nil
 ## Blockchain and the Future of Web
 
 
-blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 1.jpg
+![image_1](./images/image%20body%201.jpg)
 
 
 Image credit: [Freepik](https://www.freepik.com/free-vector/blockchain-background-with-isometric-shapes_2619730.htm#query=free%20blockchain&position=0&from_view=search&track=ais)
@@ -83,7 +82,7 @@ However, when coins built by cryptographic modules came in, we have currencies l
 ### Non-fungible Tokens (NFTs)
 
 
-blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 2.jpg
+![image_2](./images/image%20body%202.jpg)
 
 
 Source images courtesy: [Bored Ape Yacht Club](https://www.newyorker.com/culture/infinite-scroll/why-bored-ape-avatars-are-taking-over-twitter)
@@ -121,7 +120,7 @@ Raising the crypto trading power of NFTs against a drastically low volume of glo
 ### Why Blockchain Technology?
 
 
-blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 3.jpg
+![image_3](./images/image%20body%203.jpg)
 
 
 [Image by Fullvector on Freepik](https://www.freepik.com/free-vector/server-room-rack-blockchain-technology-token-api-access-data-center_2910154.htm#query=blockchain%20technology&position=0&from_view=keyword)
@@ -158,7 +157,7 @@ The high importance of blockchain has attracted the attention of organizations f
 ### Blockchain and Cryptography 
 
 
-blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 4.jpg
+![image_4](./images/image%20body%204.jpg)
 
 
 Image Credits: Yuichiro Chino / Getty Images
@@ -193,8 +192,7 @@ Conversely, nobody jumps in the middle of the queue (chain) or ahead of it by me
 ### Cryptography - the security of blockchain transactions 
 
 
-blog\25-01-23-unlocking-the-power-of-blockchain\images\image body 5.jpeg
-
+![image_5](./images/image%20body%205.jpeg)
 
 Image Credit: _Yuichiro Chino /Moment/ Getty Images_
 
