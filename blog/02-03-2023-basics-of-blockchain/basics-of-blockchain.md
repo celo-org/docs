@@ -1,6 +1,6 @@
 ---
 title: Blockchain Basics- An Introduction to Web3 Terms and Concepts with Celo
-description: In this article we will be leanring about the basics of the blockchain and the technologies around it such as NFT, DAO, DEFI and also about the Web3 with Celo.
+description: Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo
 authors:
   - name: Ishan Pathak
     title: Community Member, Celo Foundation
@@ -113,6 +113,7 @@ Static NFTs are more common to see around.
 After reading these portions if you want to be the owner of a cool NFT, you can check that out on these amazing marketplaces- OpenSea, Rarible, SuperRare, and KnownOrigin
 
 2. DAO
+
 I am pretty sure that you must have heard of this word, DAO stands for Decentralised Autonomous Organisations, I know after hearing the word organization there will be a misconception which I would like to clear up right now, you may think this as of the organizations which we are seeing around us right now like an organization have a central authority and employees and all the hierarchy, but DAO is exactly opposite of that, it is not controlled by a central authority or some group of people, all decisions are made by the members of that DAO, decisions are made with the help of the voting, DAO has its rules encoded with the smart contract, you may ask who members in a DAO the one who holds tokens or the NFT is a member of the DAO, other DAO can have different criteria also, It can differ. 
 Just a tip, get into the DAO and you will learn more and more about the technology and the things around it by being an active member of the DAO.
 
