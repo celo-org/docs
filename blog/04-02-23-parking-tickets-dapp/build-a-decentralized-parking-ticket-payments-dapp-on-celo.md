@@ -79,10 +79,6 @@ $ npx hardhat
 
 This will prompt you to install several dependencies make sure you install them before proceeding.
 
-This will scaffold a new hardhat project as shown below;
-
-![image](folders.PNG)
-
 ```bash
 You need to install these dependencies to run the sample project:
   yarn add --dev "hardhat@^2.11.1" "@nomicfoundation/hardhat-toolbox@^2.0.0" "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "chai@^4.2.0" "ethers@^5.4.7" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.0" "@typechain/hardhat@^6.1.2" "typechain@^8.1.0" "@typechain/ethers-v5@^10.1.0" "@ethersproject/abi@^5.4.7" "@ethersproject/providers@^5.4.7"
@@ -90,7 +86,7 @@ You need to install these dependencies to run the sample project:
 
 This will scaffold a new hardhat project as shown below;
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1674028878658/bf5375c8-af6e-4375-9b6f-87ef8882be6f.png align="center")
+![image](folders.PNG)
 
 With the basic hardhat setup, it is enough to start building and testing smart contracts. But I like to make it more convenient by  using hardhat with another library called 'hardhat deploy'
 
