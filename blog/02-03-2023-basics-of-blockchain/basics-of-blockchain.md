@@ -23,6 +23,7 @@ Blockchain is just the name of a train with coaches, each coach has unique trans
 Just a little bit of knowledge of the working of the web and the general terms around that.
 
 ## Disclaimer:
+
 Thoughts can differ, We may have different opinions, but what’s stated in this article is written after combining thoughts of the minds around me and according to my understanding.
 
 ## Blockchain basics:-An introduction to web3 terms and concepts with CELO
@@ -34,13 +35,18 @@ So first we have to know certain things before jumping into the beautiful world 
 ### Let's start from the root by knowing the below-mentioned topics
 
 1. What is Blockchain?
+
 Blockchain is a decentralized and distributed ledger, which is used to record transactions over a network of computers. It is designed in a way to be secure and tamper-proof. If we divide the word blockchain we get the words block and chain, which means it is a chain made up of blocks.
 Data is stored in the “Block” and every block has a unique hash of its own and also the hash of the previous block, and this is how the chain is created with the blocks, The stored transactions are encrypted using the SHA-256 algorithm, new blocks won’t be able to overwrite the old blocks, once a block is added it cannot be deleted or changed it will create a permanent unchangeable record of all the transactions made on that network
+
 - Blockchain as a technology got recognition when the white paper was published Bitcoin: A Peer-to-Peer Electronic Cash System, it was under the name of Satoshi Nakamoto and an interesting fact about Satoshi Nakamoto is that no one knows who he is and where he is. In the paper, the technology Blockchain was used to enable transactions without the need for any bank or any central authority or in short without centralization. The paper laid the foundation of the cryptocurrency Bitcoin, so because of that many associate bitcoin with blockchain, but it is not true.
+
 The paper was published in the year 2008 and the first block was mined in January 2009 which is also known as Genesis Block.
 
 ### Let's see how the blockchain works
+
 Smart Contracts-
+
 Ah, the word which you have heard around, the meaning is as simple as it sounds, it's a contract which is a smart contract is a computer program that runs automatically when certain conditions are met, a self-executing line of code. This can help to eliminate the need for a middleman.
 Smart contract relies on the blockchain it is deployed on.
 The smart contract can be written with the help of the language of the blockchains, like for Ethereum, solidity is used, and for Solana, rust, Solidity sounds interesting right want to be a smart contract developer, CELO comes to your help:- Start with this [https://docs.celo.org/blog/tutorials/solidity-from-zero-to-Hero](https://docs.celo.org/blog/tutorials/solidity-from-zero-to-Hero), for learning solidity and help yourself with other amazing blogs on the [https://docs.celo.org](https://docs.celo.org)
@@ -48,6 +54,7 @@ The smart contract can be written with the help of the language of the blockchai
 After knowing the smart contracts let's know about a block.
 A block in a blockchain is a unit of data that contains multiple transactions. Each block contains a record of several recent transactions, and once a block is added to the blockchain, the transactions it contains are considered to be confirmed and permanent.
 When a new block is added, it is broadcasted to all the computers on the networks known as “Nodes”.The majority of the nodes have to verify and confirm the legitimacy of the transaction, after it is verified it is grouped with other transactions and then added to the blockchain which is known as Consensus Mechanisms
+
 As mentioned earlier, each block contains the unique “Hash”, that links the block to its previous block, as the hash also includes the reference of the previous block’s hash, which will make it impossible to change any previous block without affecting the whole chain.
 
 It is transparent, which means anyone can see the transactions on the record, but it is anonymous as the identity of users is protected with the help of the “public key” and “private keys”.
@@ -62,9 +69,13 @@ Now let's understand what is POW-Proof of Work and POS-Proof of Stake
 
 This method is used by Bitcoin and it was also used by Ethereum
 In proof of work users known as “miners” use their computing power to solve complex mathematical problems which are known as “Mining”.
+
 When a Miner successfully solves the problem it has to be validated by the nodes and then the miner is rewarded with the cryptocurrency and they are also allowed to add the new block- this is known as mining a block.
+
 The mathematical problems which are solved are quite difficult, and saving them requires a lot of computational power. The difficulty is adjusted dynamically in bitcoin so that every 10 min a block is mined.
+
 One of the major drawbacks of this is that it consumes very much energy, which has many major backs, that’s why “The Merge” happened,
+
 What is merge- Ethereum Network was also on the POW and then in 2022 it shifted to POS, which is considered one of the biggest events in the world of blockchain,(Ahh that pandas and POS were the day to celebrate, (Only the one who saw the merge would understand this))
 
 ### POS-Proof of Stake
@@ -77,12 +88,15 @@ Proof of Stake is considered more energy consumable than proof of work mechanism
 
 So, Now I think after this much information you are ready to know why Blockchain can revolutionize and why it is necessary in today’s world
 Some of the advantages of blockchain technology, I think that these advantages will soon be a necessity, like messaging free without any tariff plans was an advantage and nowadays thanks to WhatsApp and apps like telegram and other messaging services it is now a necessity, same as that I think that some of the advantages fall into this category.
+
 Building trust in a government- A pew research study was published stating that America's trust in government is near an all-time low. Only about one-quarter of Americans say they can trust the government in Washington to do what is right “Just about always”(2%). Only 18 percent of Americans say that they can trust the government to do what are right most of the time.
+
 So I think the blockchain is the biggest advantage as with the help of this they would be able to build trust, by allowing participating stakeholders to see and verify data.(Credits-[https://simplilearn.com](https://simplilearn.com))
 
 So that transparency factor helps to build strong trust, and because of that we will be able to get a more authentic approach than before
 
 And another such advantage that I would like to discuss here is security, Because we see every there and here we hear that this data has been leaked and whatnot, big companies or governments compromised because of hackers and, it has exposed names, Social Security Numbers, birthdays, addresses, and driver’s license numbers of millions of Americans.
+
 The Department of Homeland Security is researching blockchain approaches to data security.
 
 So one of the major sectors which can take the advantage of the technology is the government and banking sectors, and I am in hope that these sectors take the blockchain seriously because these sectors have the maximum possibility to make the transition from the web2 tech stack to web3 tech stack smoothly for the daily users, the transition has to be so smooth that they should be even aware of that the backend part has been updated or changed because we all know the majority of daily users are not worried about the technology the app or product is using, they just want to have a smoother hassle-free experience.
@@ -90,6 +104,7 @@ So one of the major sectors which can take the advantage of the technology is th
 After knowing these things let me tell you some of the other use cases where the blockchain is used like the below-mentioned things
 
 1. NFT
+
 NFT stands for Non-Fungible Token, it's much more than just ape pictures and a million-dollar rock picture. In short, it is a digital asset that represents the ownership of a unique item, NFT means that you cannot exchange that for the same item which makes them unique. They are stored on the Blockchain.
 Now many of us may wonder how the prices of NFT are decided, why one NFT is worth millions of dollars while the other just gets free by minting.
 In short the more rare and popular it is, the more price it has, if the NFT has its fanbase kind of thing, it will also affect the prices by a big factor.
@@ -118,6 +133,7 @@ I am pretty sure that you must have heard of this word, DAO stands for Decentral
 Just a tip, get into the DAO and you will learn more and more about the technology and the things around it by being an active member of the DAO.
 
 3. DEFI
+
 DEFI stands for decentralized finance, in simple terms it is just a financial system made on the technology of the blockchain, and you are reading this all on CELO, so let's give a little bit of space to a section where I can say that CELO aims to bring DEFI access to all the 6 billion worldwide smartphones users.
 DEFI aims to bring transparency and security to the financial systems
 
@@ -138,7 +154,9 @@ According to a tweet:- Web3.0 is referred to as read-write-own, the premise was 
 Web3 utilizes blockchains, cryptocurrencies, and NFTs to give ownership to the users.
 
 Web3 is decentralized as I mentioned it is backed by the technology of blockchain. It is distributed and robust again one of the benefits of Web 3.0 made on the blockchain. As it is decentralized it is permissionless as it is not controlled by any central authority or a group of people. It is crustless as you don’t have to trust anyone with your data.
+
 In Web 3.0 there won’t be a server-client model like in Web 2.0, it will run on a blockchain, a P2P server model (Peer-to-Peer). These apps are known as dApps(decentralized apps).
+
 Users will be here dealing in the Native currencies to protocols, just like the AWS model.
 
 In short, when we hear Web2.0 we know that mainly it contains Frontend, Backend, and the database, replace that database with the blockchain and you have the Web3.0
