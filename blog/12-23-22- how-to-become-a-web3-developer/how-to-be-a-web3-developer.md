@@ -34,7 +34,7 @@ There are still fewer than 20,000 Web3 developers working in the whole space. To
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
-![Pie-chart-data](blog/12-09-22-how-to-become-a-web3-developer-sage/images/pie-chart.svg)
+![Pie-chart-data](./images/pie-chart.svg)
 
 Breaking into the web3 Industry as a budding developer can be difficult. Many blogs and productivity experts would advise you first to define your goals, who you want to be, locate a niche, etc.
 
