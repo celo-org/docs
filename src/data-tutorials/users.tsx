@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Build a Decentralized Lottery Game on Celo',
+    description: 'Learn to build a Decentralized Lottery Game on Celo along with a frontend.',
+    preview: require('./showcase/intermediate/build-a-decentralized-lottery-game-on-celo.png'),
+    website: '/blog/tutorials/build-a-decentralized-lottery-game-on-celo',
+    tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'randomness', 'javascript'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
