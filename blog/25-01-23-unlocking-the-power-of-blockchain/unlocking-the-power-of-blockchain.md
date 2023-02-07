@@ -48,7 +48,8 @@ Nil
 ## Blockchain and the Future of Web
 
 
-![image_1](./images/image%20body%201.jpg)
+![blockchainshapes](./images/image%20body%201.jpg)
+Blocks of Blockchain
 
 
 Image credit: [Freepik](https://www.freepik.com/free-vector/blockchain-background-with-isometric-shapes_2619730.htm#query=free%20blockchain&position=0&from_view=search&track=ais)
@@ -82,7 +83,8 @@ However, when coins built by cryptographic modules came in, we have currencies l
 ### Non-fungible Tokens (NFTs)
 
 
-![image_2](./images/image%20body%202.jpg)
+![BoredApeNft](./images/image%20body%202.jpg)
+Mutant Bored-Ape Nft
 
 
 Source images courtesy: [Bored Ape Yacht Club](https://www.newyorker.com/culture/infinite-scroll/why-bored-ape-avatars-are-taking-over-twitter)
@@ -120,8 +122,8 @@ Raising the crypto trading power of NFTs against a drastically low volume of glo
 ### Why Blockchain Technology?
 
 
-![image_3](./images/image%20body%203.jpg)
-
+![Blockchaindata](./images/image%20body%203.jpg)
+Blockchain data
 
 [Image by Fullvector on Freepik](https://www.freepik.com/free-vector/server-room-rack-blockchain-technology-token-api-access-data-center_2910154.htm#query=blockchain%20technology&position=0&from_view=keyword)
 
@@ -157,8 +159,8 @@ The high importance of blockchain has attracted the attention of organizations f
 ### Blockchain and Cryptography 
 
 
-![image_4](./images/image%20body%204.jpg)
-
+![Crypticdata](./images/image%20body%204.jpg)
+Cryptography modules
 
 Image Credits: Yuichiro Chino / Getty Images
 
@@ -192,7 +194,8 @@ Conversely, nobody jumps in the middle of the queue (chain) or ahead of it by me
 ### Cryptography - the security of blockchain transactions 
 
 
-![image_5](./images/image%20body%205.jpeg)
+![smartsecure](./images/image%20body%205.jpeg)
+Smart contract Security
 
 Image Credit: _Yuichiro Chino /Moment/ Getty Images_
 
