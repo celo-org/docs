@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
   },
   {
+    title: 'Como Criar um Jogo de Roleta Russa na Blockchain Celo',
+    description: 'Aprenda como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.',
+    preview: require('./showcase/advanced/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo',
+    tags: ['advanced','celosage','smartcontract','video', 'hardhat'],
+  },
+  {
     title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
     description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
     preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
