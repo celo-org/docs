@@ -34,7 +34,7 @@ There are still fewer than 20,000 Web3 developers working in the whole space. To
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
-![Pie-chart-data](./images/pie_chart.svg)
+![Pie-chart-data](./blog/12-23-22-how-to-become-a-web3-developer/images/43028.jpg)
 
 Breaking into the web3 Industry as a budding developer can be difficult. Many blogs and productivity experts would advise you first to define your goals, who you want to be, locate a niche, etc.
 
@@ -42,7 +42,7 @@ But how will you know since you most likely need more real-world experience to u
 
 ## Web3 developer roadmap
 
-![Kevin](./images/img3.jpg)
+![Kevin](./blog/12-23-22-how-to-become-a-web3-developer/images/img3.jpg)
 Photo by [Kevin Ku](https://www.pexels.com/photo/data-codes-through-eyeglasses-577585/)
 
 A roadmap for web3 developers provides step-by-step instructions on beginning a career as a Web3 developer. It is used by numerous institutions, training organizations, job seekers, and specialists in the web3 field. In this article, we'll go over the most crucial abilities required of web3 developers. We have also compiled a lengthy list of tools and ideas you should learn to get into the field.
@@ -57,7 +57,7 @@ To fully understand the basic concept of programming, free resources and website
 
 ## Learn the fundamentals of blockchain
 
-![blockchain](./images/img1.jpg)
+![blockchain](./blog/12-23-22-how-to-become-a-web3-developer/images/img1.jpg)
 
 Although they are brilliant pieces of technology, blockchains are difficult to comprehend. The blockchain is a shared, unchangeable ledger that keeps track of transactions, assets, and trust. While it may take some time to learn blockchain thoroughly, there are certain key aspects to keep an eye out for:
 
@@ -94,7 +94,7 @@ Dapps stands for decentralized applications and describe the programs built on t
 
 ## Build
 
-![programming-in-the-dark](./images/web3.png)
+![programming-in-the-dark](/Users/olumidesorinola/sage-how-to-become-a-web3-developer/sage-how-to-become-a-web3-developer/blog/12-23-22-how-to-become-a-web3-developer/images/img3.jpg)
 
 Now that you have mastered Blockchain development, It's time to practice your Blockchain development skills with some great projects. Here are some resources that will help:
 
@@ -110,7 +110,7 @@ Knowing which certification to get might be challenging, given the wide variety 
 
 ## Web3 developer vs blockchain developer
 
-![rawpixel](./images/43028.jpg)
+![rawpixel](./blog/12-23-22-how-to-become-a-web3-developer/images/43028.jpg)
 Image by [rawpixel.com](https://www.freepik.com/free-vector/security-concept-illustration-people-holding-chain_3226083.htm#query=blockchain&position=6&from_view=search&track=sph)
 
 The terms "Web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
