@@ -57,7 +57,7 @@ To fully understand the basic concept of programming, free resources and website
 
 ## Learn the fundamentals of blockchain
 
-![blockchain](./images/img1.jpg)
+![blockchain](blog/12-23-22-how-to-become-a-web3-developer/images/img1.jpg)
 
 Although they are brilliant pieces of technology, blockchains are difficult to comprehend. The blockchain is a shared, unchangeable ledger that keeps track of transactions, assets, and trust. While it may take some time to learn blockchain thoroughly, there are certain key aspects to keep an eye out for:
 
