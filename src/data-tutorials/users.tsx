@@ -1515,6 +1515,13 @@ const Users: User[] = [
     tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
   },
   {
+  title: 'Understanding the Decentralized Storage System',
+  description: 'This tutorial is a comprehensive and explanatory guide to understanding the decentralized storage system',
+  preview: require('./showcase/intermediate/understanding-the-decentralized-storage-system.png'),
+  website: 'blog/tutorials/understanding-the-decentralized-storage-system',
+  tags: ['celo', 'intermediate', 'celosage'],
+},
+  {
     title: 'Minting your ERC1155 Token on Celo',
     description: 'How to Minting your ERC1155 Token on Celo using Remix',
     preview: require('./showcase/intermediate/how-to-mint-your-erc1155-nft-on-celo-with-remix.png'),
