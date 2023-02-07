@@ -899,7 +899,7 @@ const Users: User[] = [
     description: 'In this tutorial, we will introduce you to the Celo blockchain and explain the key features and benefits of using it for your web3 development projects.',
     preview: require('./showcase/beginner/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development.png'),
     website: '/blog/tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-Journey',
-    tags: ["celosage, celo, video, remote"],
+    tags: ['celosage, celo, video, remote'],
   },
   {
     title: 'Plumo - An Ultralight Blockchain Client on Celo',
