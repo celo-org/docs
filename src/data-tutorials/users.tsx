@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
+    description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
+    preview: require('./showcase/beginner/blockchain-basics.png'),
+    website: '/blog/tutorials/basics-of-blockchain-with-celo',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
@@ -760,6 +767,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
     website: 'blog/tutorials/como-construir-em-celo-usando-tatum',
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
+  },
+  {
+    title: 'Como Criar um Jogo de Roleta Russa na Blockchain Celo',
+    description: 'Aprenda como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.',
+    preview: require('./showcase/advanced/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo',
+    tags: ['advanced','celosage','smartcontract','video', 'hardhat'],
   },
   {
     title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
@@ -1510,6 +1524,13 @@ const Users: User[] = [
     website: 'blog/tutorials/a-deep-dive-into-celo-proof-of-stake-consensus',
     tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
   },
+  {
+  title: 'Understanding the Decentralized Storage System',
+  description: 'This tutorial is a comprehensive and explanatory guide to understanding the decentralized storage system',
+  preview: require('./showcase/intermediate/understanding-the-decentralized-storage-system.png'),
+  website: 'blog/tutorials/understanding-the-decentralized-storage-system',
+  tags: ['celo', 'intermediate', 'celosage'],
+},
   {
     title: 'Minting your ERC1155 Token on Celo',
     description: 'How to Minting your ERC1155 Token on Celo using Remix',
