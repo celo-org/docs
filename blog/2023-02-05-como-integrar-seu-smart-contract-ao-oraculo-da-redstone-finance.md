@@ -36,11 +36,13 @@ E dos seguintes conhecimentos prévios:
 
 Confira no video como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.
 
-<YouTube videoId="ULPn1sNzaXg"/>
+<YouTube videoId="INlXTxLTc2Y"/>
 
 :::info Descrição
 
-[Código](https://github.com/itxtoledo/celo-sage-examples/tree/main/russian-roulette-solidity)
+[Código](https://github.com/itxtoledo/celo-sage-examples/tree/main/redstone-finance-integration)
+[Redstone Finance](https://redstone.finance)
+
 
 :::
 
@@ -50,3 +52,18 @@ Entre no [Servidor Discord da Celo](https://chat.celo.org/) ou acesse diretament
 [aqui](https://discord.com/channels/600834479145353243/956679819406491708).
 
 :::
+
+
+## Conclusão
+
+Parabéns! Você concluiu o tutorial e aprendeu como conectar seu smart contract e dApp ao oráculo da Redstone Finance 🎉.
+
+## Próximos passos
+
+Como próximos passos sugiro a você experimentar as outras funções do Redstone Finance, como o [Randomness](https://docs.redstone.finance/docs/smart-contract-devs/randomness).
+
+## Sobre o Autor
+
+Sou um desenvolvedor com o objetivo de melhorar a vida das pessoas através do compartilhamento do meu conhecimento em programação, estou sempre disponível para ajudar a comunidade Celo.
+
+[LinkedIn](https://www.linkedin.com/in/itxtoledo/)
