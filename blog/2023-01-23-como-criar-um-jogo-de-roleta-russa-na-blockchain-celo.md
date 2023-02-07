@@ -44,3 +44,17 @@ Entre no [Servidor Discord da Celo](https://chat.celo.org/) ou acesse diretament
 [aqui](https://discord.com/channels/600834479145353243/956679819406491708).
 
 :::
+
+## Conclusão
+
+Parabéns! Você concluiu o tutorial e aprendeu como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo 🎉.
+
+## Próximos passos
+
+Como próximos passos sugiro a você criar um front-end para seu smart contract e começar a desenvolver outros jogos neste mesmo estilo.
+
+## Sobre o Autor
+
+Sou um desenvolvedor com o objetivo de melhorar a vida das pessoas através do compartilhamento do meu conhecimento em programação, estou sempre disponível para ajudar a comunidade Celo.
+
+[LinkedIn](https://www.linkedin.com/in/itxtoledo/)
