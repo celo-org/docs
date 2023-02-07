@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['celosage','android','celo','celowallet','cli','contractkit','dapp', 'mobile', 'sdk','valora'],
   },
   {
+    title: 'On-Chain Randomness with Celo using Subgraphs',
+    description: 'The latest tutorial idea that I have is to create a lottery club, where users can establish their own lottery clubs with rewards of their choosing, including native coin (Celo), stablecoin (cUSD, cEUR, etc.) and also NFTs. In this idea, I will utilize Subgraph to index the smart contract of the lottery clubs created by users, and to ensure that the selection of winners for each lottery club will be determined by randomly generated numbers obtained from Celo Randomness, thereby reducing the potential for fraud in the process of selecting winners for each lottery club.',
+    preview: require('./showcase/intermediate/on-chain-randomness-with-celo-using-subgraphs.png'),
+    website: '/blog/tutorials/on-chain-randomness-with-celo-using-subgraphs',
+    tags: ['celosage','intermediate', 'subgraphs', 'randomness'],
+  },
+  {
     title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
