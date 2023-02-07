@@ -10,7 +10,7 @@ slug: /tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo
 ---
 
 
-![header](../src/data-tutorials/showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png)
+![header](../../src/data-tutorials/showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png)
 
 ## Introduction
 
