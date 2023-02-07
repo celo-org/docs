@@ -4,7 +4,7 @@ description: There's an increasing need for more web3 developers as the internet
 authors:
   - name: Elijah Sorinola
     title: Content Writer, Celo Sage
-    image_url: blog/12-23-22-how-to-become-a-web3-developer/images/pi.jpg
+    image_url: https://avatars.githubusercontent.com/u/86154565?s=400&v=4
 tags: [beginner, Celo Sage]
 hide_table_of_contents: true
 slug: /tutorials/How-to-become-a-Web3-Developer
@@ -34,7 +34,7 @@ There are still fewer than 20,000 Web3 developers working in the whole space. To
 
 With a small number of web developers and a growing market, the web3 sector desperately needs skilled programmers like YOU.
 
-![Pie-chart-data](./images/pie-chart.svg)
+![Pie-chart-data](./images/pie_chart.svg)
 
 Breaking into the web3 Industry as a budding developer can be difficult. Many blogs and productivity experts would advise you first to define your goals, who you want to be, locate a niche, etc.
 
