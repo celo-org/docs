@@ -43,7 +43,6 @@ Confira no video como criar um smart contract de aposta que funciona como uma ro
 [Código](https://github.com/itxtoledo/celo-sage-examples/tree/main/redstone-finance-integration)
 [Redstone Finance](https://redstone.finance)
 
-
 :::
 
 :::info Obtenha suporte
@@ -52,7 +51,6 @@ Entre no [Servidor Discord da Celo](https://chat.celo.org/) ou acesse diretament
 [aqui](https://discord.com/channels/600834479145353243/956679819406491708).
 
 :::
-
 
 ## Conclusão
 
