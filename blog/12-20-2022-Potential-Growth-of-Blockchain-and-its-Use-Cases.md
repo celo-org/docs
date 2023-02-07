@@ -8,6 +8,8 @@ hide_table_of_contents: false
 slug: /tutorials/potential-growth-of-blockchain-and-its-use-cases
 ---
 
+![header](../src/data-tutorials/showcase/beginner/potential-growth-of-blockchain-and-its-use-cases.png)
+
 ## How Much More Can Blockchain Grow As Regards Use Cases?
 
 What else does blockchain technology have to offer after all the utilities we've seen in the past decade? If you're thinking along these lines, you're not alone. We've seen multiple applications in the years since blockchain technology was introduced. Some of these applications include money transfers, lending, voting, non-fungible tokens, and lots more. In this article, we go over many of the blockchain utilities we've seen and take a peek into what the future holds as it concerns blockchain utilities.

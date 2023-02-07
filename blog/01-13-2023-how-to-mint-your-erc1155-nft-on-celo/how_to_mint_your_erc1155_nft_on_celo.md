@@ -36,7 +36,7 @@ To follow this tutorial you should have the following:
 
 * [**Celo Wallet Extension**](https://docs.celo.org/wallet): This tutorial will require you to have an account on an installed celo wallet extension, or if you’re using another wallet like metamask, you should have the celo alfajores network added. Here is a link to guide you on how to add the alfajores testnet to your custom wallet.
 
-* [**Faucets**](https://celo.org/developers/faucet): You should also have your wallet funded with Celo test funds. Here is a link to request celo faucets.
+* [**Faucets**](https://faucet.celo.org): You should also have your wallet funded with Celo test funds. Here is a link to request celo faucets.
 
 * [**Node & node package management**](https://nodejs.org/en/download/) `npm` or `yarn`: This tutorial will require you to use a preinstalled node package manager, `yarn`. You should also know about working with any package manager: `npm` or `yarn`.
 

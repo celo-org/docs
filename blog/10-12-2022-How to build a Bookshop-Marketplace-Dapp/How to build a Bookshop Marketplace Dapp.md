@@ -1,17 +1,17 @@
 ---
-title: How to Build a Bookshop Marketplace Dapp
+title: How to build a Bookshop Marketplace Dapp on Celo Blockchain
 description: Learn how to build a bookshop marketplace platform on celo blockchain
 authors:
 - name: Tevin Isaac
   title: Blockchain Developer, Dacade Evangelist
   url: https://github.com/Tevin-Isaac
   image_url: https://github.com/Tevin-Isaac.png
-tags: [solidity]
+tags: [celosage,celowallet, celo, solidity, html, remix, smartcontract, intermediate]
 hide_table_of_contents: false
 slug: /tutorials/how-to-build-a-bookshop-marketplace-dapp
 ---
 
-# How to build  a Bookshop marketplace Dapp on Celo Blockchain
+![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png)
 
 ## Introduction​
 
@@ -475,14 +475,14 @@ But first you will create a Celo wallet and deploy your contract to the Celo tes
 - Create a wallet
 ![celo_install_celo_extension_wallet](https://user-images.githubusercontent.com/81568615/206867627-595d5f4b-009a-45a3-a624-de0090e5bbe6.gif)
 
-- Get Celo token for the alfajores testnet from <https://celo.org/developers/faucet>
+- Get Celo token for the alfajores testnet from <https://faucet.celo.org>
 
 ![celo_get_token_from_faucet](https://user-images.githubusercontent.com/81568615/206867828-910e3f67-85e3-468d-9fc0-e024083c130a.gif)
 
 ![celo_create_wallet](https://user-images.githubusercontent.com/81568615/206867880-99866ed5-832c-4931-b5db-1429d751ec99.gif)
 
 - Install the Celo plugin on remix then compile and deploy your contract
-  
+
 ![celo_install_remix_plugin_and_deploy_contract (1)](https://user-images.githubusercontent.com/81568615/206871674-33ec8922-c000-42a6-8707-3cd976ebc940.gif)
 
 Congratulations on reaching this stage so far, You have successfully created your smart contract and deployed it on the Celo blockchain.

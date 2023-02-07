@@ -11,6 +11,8 @@ hide_table_of_contents: false
 slug: '/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons'
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/hackathons-101-everything-you-need-to-know-about-hackathons.png)
+
 ## Introduction
 
 As soon as the word Hackathon comes, I make sure I give attention. Let's start with answering what Hackathon is; on paper, it's just that you have a limited time, and you have to make a product that fulfills specific criteria by the organizers.
