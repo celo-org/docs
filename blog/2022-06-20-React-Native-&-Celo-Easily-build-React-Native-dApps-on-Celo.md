@@ -170,7 +170,7 @@ Copy your address.
 
 ![valora-wallet-address](https://user-images.githubusercontent.com/38040789/195802458-f76995ec-99c2-4312-84a6-ddf5c60516b3.png)
 
-In the browser go to — https://celo.org/developers/faucet
+In the browser go to — https://faucet.celo.org
 
 ![funding-testnet-wallet](https://user-images.githubusercontent.com/38040789/195802514-fced0fbc-87b5-4028-bc1e-1a852e718896.png)
 

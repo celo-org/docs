@@ -259,7 +259,7 @@ Learn more: [Celo CLI: A practical guide to energize your Celo toolkit](https://
 
 ### Fund your account
 
-The [Alfajores testnet faucet](https://celo.org/developers/faucet) helps you fund your account with test tokens. Copy your address from the terminal and paste it into the site to fund your account. This should send you tokens within a few seconds.
+The [Alfajores testnet faucet](https://faucet.celo.org) helps you fund your account with test tokens. Copy your address from the terminal and paste it into the site to fund your account. This should send you tokens within a few seconds.
 
 ![image](images/17.png)
 
