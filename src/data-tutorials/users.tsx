@@ -1094,7 +1094,7 @@ const Users: User[] = [
     title: 'Pros and cons of using Celo to create Decentralized applications',
     description: 'Pros and cons of using Celo to create Decentralized applications',
     preview: require('./showcase/beginner/pros.png'),
-    website: 'blog/tutorials/pros-and-cons-of-using-celo',
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications',
     tags: ['beginner', 'foundation', 'celosage'],
   },
   {
