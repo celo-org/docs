@@ -1,6 +1,6 @@
 ---
-title: Pros and cons of using Celo to create Decentralized Applications
-description: Pros and cons of using Celo to create Decentralized Applications
+title: Pros and Cons of using Celo to create Decentralized Applications
+description: Pros and Cons of using Celo to create Decentralized Applications
 authors:
   - name: Maxwell Onyeka
     title: Technical writer 
