@@ -65,3 +65,4 @@ Como próximos passos sugiro a você experimentar as outras funções do Redston
 Sou um desenvolvedor com o objetivo de melhorar a vida das pessoas através do compartilhamento do meu conhecimento em programação, estou sempre disponível para ajudar a comunidade Celo.
 
 [LinkedIn](https://www.linkedin.com/in/itxtoledo/)
+[GitHub](https://github.com/itxtoledo)
