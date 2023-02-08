@@ -747,6 +747,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
     tags: ['celosage','beginner'],
   },
+    {
+  title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
+  description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
+  preview: require('./showcase/advanced/aave-on-celo.png'),
+  website: '/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave',
+  tags: ['celosage','advanced', 'smart contract', 'solidity'],
+},
   {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
