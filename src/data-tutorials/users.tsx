@@ -1007,6 +1007,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'tokens', 'celowallet'],
   },
   {
+    title: 'Pros and cons of using Celo to create Decentralized applications',
+    description: 'Pros and cons of using Celo to create Decentralized applications',
+    preview: require('./showcase/beginner/pros.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo',
+    tags: ['celosage', 'beginner', 'foundation'],
+  },
+  {
     title: 'Run a Celo full node in a Virtual Machine',
     description: 'Learn how to setup & run a Celo full node in a Virtual Machine.',
     preview: require('./showcase/intermediate/run-a-celo-full-node-in-a-virtual-machine.png'),
