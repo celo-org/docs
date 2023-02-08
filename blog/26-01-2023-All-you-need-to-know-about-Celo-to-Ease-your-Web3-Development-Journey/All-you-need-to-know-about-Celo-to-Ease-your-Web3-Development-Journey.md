@@ -5,7 +5,7 @@ authors:
   - name: Abdulateef Sanni
     title: Content creation, Celo Sage
     url: https://github.com/Latsan
-    image_url: https://github.com/Latsan.png
+    image_url: https://avatars.githubusercontent.com/u/78388641?v=4
 tags: [celo, celosage, beginner, Web3, Web3 development]
 hide_table_of_contents: true
 slug: /tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-Journey
@@ -15,4 +15,4 @@ slug: /tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-J
 
 ## Video Link
 
-[ All you need to know about Celo to ease your web3 development](https://youtu.be/ZpWLdkSTyyc)
+[All you need to know about Celo to ease your web3 development](https://youtu.be/ZpWLdkSTyyc)
