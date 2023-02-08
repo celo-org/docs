@@ -9,7 +9,7 @@ authors:
 tags: [celo, celosage, beginner, Web3, Web3 development]
 hide_table_of_contents: true
 slug: /tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-Journey
-----
+---
 
 ![header](../../src/data-tutorials/showcase/beginner/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development.png)
 
