@@ -213,4 +213,4 @@ Make sure to have a strong portfolio, keep adding your projects,keep everything 
 I am Ishan Pathak, technical writer @CELO , I am a Frontend Developer, and I am a UI/UX designer, I am still in college and also maintaining a community of my own to help all the students around me.
 
 My GitHub:- github.com/ishanpathak1
-My Linkdln:-<https://www.linkedin.com/in/ishan-pathak-96852a1b7/>
+My Linkedln:-<https://www.linkedin.com/in/ishan-pathak-96852a1b7/>
