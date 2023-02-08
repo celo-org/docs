@@ -751,7 +751,7 @@ const Users: User[] = [
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
-    website: '/blog/tutorials/basics-of-blockchain-with-celo',
+    website: '/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo',
     tags: ['celosage','beginner'],
   },
   {

@@ -1,6 +1,6 @@
 ---
-title: Blockchain Basics- An Introduction to Web3 Terms and Concepts with Celo
-description: Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo
+title: Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo
+description: Basics of blockchain and NFTs, DEFI, and Web3 terms with Celo
 authors:
   - name: Ishan Pathak
     title: Community Member, Celo Foundation
@@ -13,16 +13,16 @@ slug: '/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-w
 
 ![header](../../src/data-tutorials/showcase/beginner/blockchain-basics.png)
 
-## Introduction: 
+## Introduction
 
 Oh, what the hell is this new Genz word going around, I don’t know this, Bitcoin and Ethereum all will just vanish, if these are your thoughts this article will help to clear misunderstandings,
 Blockchain is just the name of a train with coaches, each coach has unique transactional data with it, and once that coach is added to the train you cannot change or remove that, and in the train, every coach has people inside in it traveling and everyone is smart so they know the number of the coaches in front of them and on the backside of them, so anyone cannot fool a coach without letting the people of other coaches know, so this makes it very difficult to rob a single coach. Wow, so exciting right? Let’s find out more
 
-## Prerequisites:
+## Prerequisites
 
 Just a little bit of knowledge of the working of the web and the general terms around that.
 
-## Disclaimer:
+## Disclaimer
 
 Thoughts can differ, We may have different opinions, but what’s stated in this article is written after combining thoughts of the minds around me and according to my understanding.
 
@@ -108,13 +108,14 @@ After knowing these things let me tell you some of the other use cases where the
 NFT stands for Non-Fungible Token, it's much more than just ape pictures and a million-dollar rock picture. In short, it is a digital asset that represents the ownership of a unique item, NFT means that you cannot exchange that for the same item which makes them unique. They are stored on the Blockchain.
 Now many of us may wonder how the prices of NFT are decided, why one NFT is worth millions of dollars while the other just gets free by minting.
 In short the more rare and popular it is, the more price it has, if the NFT has its fanbase kind of thing, it will also affect the prices by a big factor.
-A longer answer, it also has the same policy as any other product in the market, its price is determined by the demand and supply of that NFT, and the reputation and popularity of not only the art but of the artist also matter. 
+A longer answer, it also has the same policy as any other product in the market, its price is determined by the demand and supply of that NFT, and the reputation and popularity of not only the art but of the artist also matter.
 In other tan art pieces the NFTs can also be used to show the ownership of the virtual digital assets, any in-game accessories, or any weapon which can be used in any game if you have that NFT on your address, and seeing the METAverse getting all the attention more and more nowadays, this thing will be utilized in many unique and many ways then we can think of today.
 Building towards that future.
 
 There are different types of NFT, and some of them I would like to discuss are
+
 - Art NFTS-As the name suggests they represent the ownership of unique art
-- Music NFTs- they represent the ownership of unique music 
+- Music NFTs- they represent the ownership of unique music
 And such like that there are other NFTs such as Utility NFTs, Ticket NFTs, Video NFTs, Collectible NFTs
 
 There are two general types of NFT Static NFTs and Dynamic NFTs
@@ -129,7 +130,7 @@ After reading these portions if you want to be the owner of a cool NFT, you can 
 
 2. DAO
 
-I am pretty sure that you must have heard of this word, DAO stands for Decentralised Autonomous Organisations, I know after hearing the word organization there will be a misconception which I would like to clear up right now, you may think this as of the organizations which we are seeing around us right now like an organization have a central authority and employees and all the hierarchy, but DAO is exactly opposite of that, it is not controlled by a central authority or some group of people, all decisions are made by the members of that DAO, decisions are made with the help of the voting, DAO has its rules encoded with the smart contract, you may ask who members in a DAO the one who holds tokens or the NFT is a member of the DAO, other DAO can have different criteria also, It can differ. 
+I am pretty sure that you must have heard of this word, DAO stands for Decentralised Autonomous Organisations, I know after hearing the word organization there will be a misconception which I would like to clear up right now, you may think this as of the organizations which we are seeing around us right now like an organization have a central authority and employees and all the hierarchy, but DAO is exactly opposite of that, it is not controlled by a central authority or some group of people, all decisions are made by the members of that DAO, decisions are made with the help of the voting, DAO has its rules encoded with the smart contract, you may ask who members in a DAO the one who holds tokens or the NFT is a member of the DAO, other DAO can have different criteria also, It can differ.
 Just a tip, get into the DAO and you will learn more and more about the technology and the things around it by being an active member of the DAO.
 
 3. DEFI
@@ -167,8 +168,7 @@ Native Payments is exactly the opposite of what we are using today, here you don
 
 Web 3.0 gives you ownership of your digital assets, so your asset’s future won’t be tied to any app or website. Also the censorship, we all know about the incident of OnlyFans, if you are unaware I will try to give it a go in short, In 2021 OnlyFans announced that it will ban sexually explicit content. This created outrage in the users, and they felt like they were cheated because the users helped the platform to be where it is right now and now the platform is going against them. Fortunately, after this, the decision got reversed which highlights the current problem of the power difference. Web 3.0 solves this problem as the reputation is tied to you.
 
-So after this I feel like Web 3.0 is not the future, it is the present. 
-
+So after this I feel like Web 3.0 is not the future, it is the present.
 
 ### Conclusion
 
@@ -189,7 +189,7 @@ And after this, you can make some projects with the help of [https://solidity-by
 
 And after this try to master yourself in every aspect by participating in Hackathon, now how to do that, just check this article out [https://docs.celo.org/blog/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons](https://docs.celo.org/blog/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons)
 
-And being a part of the community is the best thing- So join us at CELO discord with this link [https://discord.gg/celo] (https://discord.gg/celo)
+And being a part of the community is the best thing- So join us at CELO discord with this link [https://discord.gg/celo] (<https://discord.gg/celo>)
 
 You can also deep dive in the space, make a Twitter account (how to deep dive efficiently -read here [https://docs.celo.org/blog/tutorials/build-in-public-tips-for-making-an-impact])search for the folks around which you know that are active in the space, throwing some links towards you, you can start with
 
@@ -213,4 +213,4 @@ Make sure to have a strong portfolio, keep adding your projects,keep everything 
 I am Ishan Pathak, technical writer @CELO , I am a Frontend Developer, and I am a UI/UX designer, I am still in college and also maintaining a community of my own to help all the students around me.
 
 My GitHub:- github.com/ishanpathak1
-My Linkdln:-https://www.linkedin.com/in/ishan-pathak-96852a1b7/
+My Linkedln:-<https://www.linkedin.com/in/ishan-pathak-96852a1b7/>
