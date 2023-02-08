@@ -45,11 +45,10 @@ Faucetted funds will come as 2 transactions, one for your validator address and 
 
 ### Hardware requirements
 
-The recommended Celo Validator setup involves continually running three instances:
+The recommended Celo Validator setup involves continually running two instances:
 
 - 1 **Validator node**: should be deployed to single-tenant hardware in a secure, high availability data center
 - 1 **Validator Proxy node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), but requires high availability
-- 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
@@ -58,23 +57,19 @@ Celo is a proof-of-stake network, which has different hardware requirements than
 - Disk: 256 GB of SSD storage, plus a secondary HDD desirable
 - Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
 
-Attestation Service nodes consume less resources and can run on machines with less memory and compute.
-
 In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
 
 ### Networking requirements
 
-In order for your Validator to participate in consensus and complete attestations, it is **critically** important to configure your network correctly.
+In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
 
-Your Proxy and Attestations nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
+Your Proxy node must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
 
 On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
 
 On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
 
-On the Proxy and Attestations machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-On the Attestations machine, port 80 should accept TCP connections from all IP addresses. This port is used by users to request attestations from you.
+On the Proxy machine, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
 
 To illustrate this, you may refer to the following table:
 
@@ -82,7 +77,6 @@ To illustrate this, you may refer to the following table:
 | ---------------------- | -------------------- | ------------------- | --------------- |
 | Validator              |                      |                     | tcp:30503       |
 | Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-| Attestation            | tcp:80               |                     |                 |
 
 ### Software requirements
 
@@ -152,10 +146,6 @@ There are a number of environment variables in this guide, and you may use this 
 | PROXY_ENODE                                 | The enode address for the Validator proxy                                                                                            |
 | PROXY_INTERNAL_IP                           | (Optional) The internal IP address over which your Validator can communicate with your proxy                                         |
 | PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
-| CELO_ATTESTATION_SIGNER_ADDRESS             | The address of the attestation signer authorized by the Validator Account                                                            |
-| CELO_ATTESTATION_SIGNER_SIGNATURE           | The proof-of-possession of the attestation signer key                                                                                |
-| CELO_ATTESTATION_SERVICE_URL                | The URL to access the deployed Attestation Service                                                                                   |
-| METADATA_URL                                | The URL to access the metadata file for your Attestation Service                                                                     |
 | DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
 | APP_SIGNATURE                               | The hash with which clients can auto-read SMS messages on android                                                                    |
 | SMS_PROVIDERS                               | A comma-separated list of providers you want to configure, Celo currently supports `nexmo` & `twilio`                                |
@@ -196,10 +186,9 @@ Running a Celo Validator node requires the management of several different keys,
 
 | Name of the key        | Purpose                                                                                                                                                                                                                                                          |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator, and attestation keys. Note that the account key also has all of the permissions of the other keys. |
+| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
 | Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
 | Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
-| Attestation signer key | This key is used to sign attestations in Celo's lightweight identity protocol.                                                                                                                                                                                   |
 
 Note that Account and all the signer keys must be unique and may not be reused.
 
@@ -604,10 +593,6 @@ You can see additional information about your validator, including uptime score,
 # On your local machine
 celocli validator:show $CELO_VALIDATOR_ADDRESS
 ```
-
-## Running the Attestation Service
-
-Validators are expected to run an [Attestation Service](/validator/attestation) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator/attestation).
 
 ## Deployment Tips
 
