@@ -143,7 +143,6 @@ There are a number of environment variables in this guide, and you may use this 
 | PROXY_INTERNAL_IP                           | (Optional) The internal IP address over which your Validator can communicate with your proxy                                         |
 | PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
 | DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
-| SMS_PROVIDERS                               | A comma-separated list of providers you want to configure, Celo currently supports `nexmo` & `twilio`                                |
 
 ## Network Deployment Timeline
 
