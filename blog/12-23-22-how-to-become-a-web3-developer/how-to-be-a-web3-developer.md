@@ -57,7 +57,7 @@ To fully understand the basic concept of programming, free resources and website
 
 ## Learn the fundamentals of blockchain
 
-![blockchain](blog/12-23-22-how-to-become-a-web3-developer/images/img1.jpg)
+![blockchain](./images/img1.jpg)
 
 Although they are brilliant pieces of technology, blockchains are difficult to comprehend. The blockchain is a shared, unchangeable ledger that keeps track of transactions, assets, and trust. While it may take some time to learn blockchain thoroughly, there are certain key aspects to keep an eye out for:
 
@@ -94,7 +94,7 @@ Dapps stands for decentralized applications and describe the programs built on t
 
 ## Build
 
-![programming-in-the-dark](.images/img3.jpg)
+![programming-in-the-dark](./images/img3.jpg)
 
 Now that you have mastered Blockchain development, It's time to practice your Blockchain development skills with some great projects. Here are some resources that will help:
 
