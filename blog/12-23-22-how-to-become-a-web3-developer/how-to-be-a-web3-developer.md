@@ -49,7 +49,7 @@ A roadmap for web3 developers provides step-by-step instructions on beginning a 
 
 ## Understand the basics of several Web2 computer programming languages
 
-As aforementioned, there are mandatory prerequisites that beginners and intermediates should be aware of. This includes basic or in-depth knowledge of coding/programming in basic languages like [HTML](https://www.w3schools.com/html/), [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/tutorial/tutorial.html), and more.
+Highlighted below are prerequisites beginners and intermediates should be aware of. They include a basic or in-depth knowledge of basic languages like [HTML](https://www.w3schools.com/html/), [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/tutorial/tutorial.html), and more
 
 Your Web2 knowledge will help you advance to Web3 and expose you to fundamental computer concepts (such as operating systems and networking) and problem-solving techniques necessary for web2 and web3 programming.
 
@@ -59,10 +59,10 @@ To fully understand the basic concept of programming, free resources and website
 
 ![blockchain](./images/img1.jpg)
 
-Although they are brilliant pieces of technology, blockchains are difficult to comprehend. The blockchain is a shared, unchangeable ledger that keeps track of transactions, assets, and trust. While it may take some time to learn blockchain thoroughly, there are certain key aspects to keep an eye out for:
+Although blockchain are brilliant technological innovation, blockchains can be difficult to comprehend. Blockchain is a distributed and public, ledger that keeps track of transactions, and asset. Blockchain as a technology might take some time and devotion to learning, but there are certain key aspects to keep an eye out for when starting out and they include:
 
-- The significance of blockchain technology
-- Use cases and the blockchain's operation
+The significance of blockchain
+
 - Immutable records, smart contracts, and distributed ledger technology (DLT) are the three main components of the blockchain.
 - Learn about the decentralization of Web3, consensus methods, hashing operations, mining, security, and cryptocurrencies.
 - Include Web3 elements such as blocks, block indexes, timestamps, block hashes, block times, and others.
@@ -75,11 +75,11 @@ Cryptography is the most crucial and essential requirement for building a blockc
 
 ## Learn about Bitcoin, Ethereum, Celo, and any equivalent
 
-Now that you have an understanding of what blockchain technology is and how it functions, It’ll be great if you learn more about blockchain architecture. This [documentation](https://docs.celo.org/developer) helps you understand and build on Celo; for an interactive learning experience.
+Now, let’s take a closer look at blockchain architecture now. This [documentation](https://docs.celo.org/developer) helps you understand and build on Celo; for an interactive learning experience
 
 ## Understand smart contracts
 
-On a blockchain, smart contracts are self-executing programs that run when certain conditions are satisfied. Most of the time, they are used to automate transaction performance so that everyone may know the outcome immediately without involving a third party or losing time.
+Smart contracts are self-executing programs that run when certain conditions are satisfied on a blockchain. They are used to automate transaction performance so that everyone may know the outcome immediately without involving a third party or losing time.
 
 You can create clients that communicate with the Ethereum Blockchain using Web3JS or build a full and lightweight framework for gaining access to the Ethereum Blockchain and its ecosystem on the ethers.js library.
 
@@ -113,7 +113,7 @@ Knowing which certification to get might be challenging, given the wide variety 
 ![rawpixel](./images/43028.jpg)
 Image by [rawpixel.com](https://www.freepik.com/free-vector/security-concept-illustration-people-holding-chain_3226083.htm#query=blockchain&position=6&from_view=search&track=sph)
 
-The terms "Web3 developer" and "blockchain developer" are frequently used interchangeably. Although they both play a part in the web3 platform, their jobs are distinct, they call for different skill sets, and their salaries vary.
+The terms Web3 developer and "blockchain developer" are usually confused by newbies and people outside the community and are frequently interchangeably. While they both play a part in the web3 development, their jobs are distinct, and call for different skill sets.
 
 As the name suggests, a Web3 developer develops blockchain-based applications. Web applications are made by Web3 developers using the design and protocol of Wweb3 architects. These programmers also oversee the stack dApps run on and develop their front-end and back-end.
 
