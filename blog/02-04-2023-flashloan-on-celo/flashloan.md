@@ -1,4 +1,17 @@
+---
+title: How to Build and Deploy Flashloan Contracts on Celo with Aave
+description: In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.
+author:
+  - name: John Fawole
+    title: Technical Writer
+    url: https://www.linkedin.com/in/johnfawole/
+    image_url: https://github.com/johnfawole.png
+tags: [Solidity]
+hide_table_of_contents: true
+slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
+---
 # How to Build and Deploy Flashloan Contracts on Celo with Aave
+![Alt text](images/cover.png)
 # Introduction
 A relatively new method of borrowing assets on the blockchain is through Flash Loans. Other popular Defi protocols like dYdX immediately added this new feature after Aave introduced it.
 
