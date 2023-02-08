@@ -3,14 +3,14 @@ title: How to Create and Test Contract Calls with Celo and Hardhat
 description: How to Create and Test Contract Calls on Hardhat
 authors:
   - name: ✍️ Mayowa Julius
-tags: [hardhat]
-hide_table_of_contents: true
+tags: [hardhat, celosage]
+hide_table_of_contents: false
 slug: /tutorials/how-to-create-and-test-contract-calls-on-hardhat
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-create-and-test-contract-calls-with-celo-and-hardhat.png)
 
-# Introduction
+## Introduction
 
 One of the most essential and helpful tools a blockchain developer has as an arsenal is making contract calls. When working on complex and multi-contract projects, it is very likely, that you won't be deploying a single, smart contract file for the whole production. You might even deploy some contracts earlier than others.
 
@@ -26,7 +26,7 @@ This way, rather than having a messy long line of code, you have a network of co
 - Create a proficient test script on a hardhat.
 - And make contract calls on your deployed contract using hardhat test scripts.
 
-# Prerequisites
+## Prerequisites
 
 To get the best out of this tutorial, you should have a basic and foundational understanding of the following:
 
@@ -37,22 +37,22 @@ To get the best out of this tutorial, you should have a basic and foundational u
 
 You should have the node package manager `npm` pre-installed. Follow the links for more information on installing `node` and node package manager `npm`.
 
-# Requirements
+## Requirements
 
 - We'll need Metamask in this tutorial. Install it from [HERE](https://metamask.io/).
 - Make sure to have NodeJS 12.0.1+ version installed.
 
-# A brief definition of Keywords
+## A brief definition of Keywords
 
 Before you get started with this tutorial, here is a quick recap of the keywords you'll be working with during this tutorial.
 
-## Celo Alfajores
+### Celo Alfajores
 
 The [Celo Alfajores](https://blog.celo.org/introducing-alfajores-1b162ebcb44d) is a test network run by the Celo Team. It is a blockchain simulation that enables deployments and testing of smart contracts on a testing blockchain. Although it is regarded as a testing blockchain, it primarily simulates deploying and testing contracts on the Celo Blockchain.
 
 It functions exactly as effectively as on the Celo mainnets, except you call transactions using faucet funding (testnet money).
 
-## Faucets
+### Faucets
 
 [These](https://coinmarketcap.com/alexandria/article/what-is-a-crypto-faucet) are simply **testnet money** funded into your wallet only to interact with a **Testnet Blockchain**.
 To make transactions on the Alfajores Testnet you need CELO Testnet **tokens**.
@@ -60,17 +60,17 @@ To make transactions on the Alfajores Testnet you need CELO Testnet **tokens**.
 Following this tutorial, you will need **CELO faucets** to deploy and transact on the Celo Alfajores blockchain.
 Getting faucets is always as easy as taking these few baby steps:
 
-1. Head over to the [faucet](https://celo.org/developers/faucet) site for the testnet you need. For example, a Celo Alfajore faucet will give you tokens to interact with the Celo Alfajore testnet (which you will also use in this tutoria).
+1. Head over to the [faucet](https://faucet.celo.org) site for the testnet you need. For example, a Celo Alfajore faucet will give you tokens to interact with the Celo Alfajore testnet (which you will also use in this tutoria).
 
 2. Copy your wallet address from metamask or your preferred wallet and paste it into the tab.
 
 3. Complete the authentication process, usually, **_I am not a robot captcha_**. Click the send button and wait for about 15 to 90 seconds, depending on the requesting network, and you'll notice an increase in your wallet balance.
 
-## HardHat
+### HardHat
 
 [This](https://hardhat.org/) is an Ethereum Development Environment that runs on `ether-js`, and other basic EVM-compatible libraries. It is used for compiling, running, and deploying solidity smart contracts.
 
-## Calling Contracts
+### Calling Contracts
 
 What are the contract calls referred to in this tutorial?
 Making a contract call simply means calling the functions from a deployed contract into another deployed contract on the blockchain.
@@ -78,7 +78,7 @@ The calls can be made to retrieve data from a query function, to a payable funct
 
 Now that you've been reminded of the tools we'll need, it's time to get your hands dirty with writing code to understand the purpose of this tutorial.
 
-# Installing and Setting up Hardhat
+## Installing and Setting up Hardhat
 
 To get started with the coding part o this tutorial, you need to install Hardhat.
 In the next couple of steps, you will learn how to install Hardhat into your local work environment using yarn on your preferred package manager.
@@ -95,13 +95,13 @@ In the next couple of steps, you will learn how to install Hardhat into your loc
 
 Now that you have successfully installed and Setup up your hardhat development environment. next you will create the exemplary contracts you need to test the contract calls.
 
-# Creating your Smart Contracts
+## Creating your Smart Contracts
 
 To simulate a contract call, you will need to create two smart contracts. These two contracts will be deployed on the Celo Blockchain.
 
 One of the contracts will have the calling functions `TestContract.sol`, while the other contract, `Person.sol` will have the functions you will be calling from the previous contract, `TestContract.sol`.
 
-## The Calling Contract **`Person`**:
+### The Calling Contract **`Person`**
 
 Navigate to the contract folder in your workspace and rename the existing contract from `Lock.sol` to `Person.sol`.
 
@@ -199,7 +199,7 @@ contract Person {
 }
 ```
 
-## The Caller Contract **`TestContract`**:
+### The Caller Contract **`TestContract`**
 
 The second contract `TestContract.sol` will be the testing contract that will make the contract calls to the `Person.sol` contract.
 The contract will also have four different functions to call the four different functions from the first contract, `Person.sol`.
@@ -303,7 +303,7 @@ contract TestContract{
 
 Next, you'll be deploying the contracts you've created to the Celo Blockchain.
 
-# Deploying to Celo Alfajores
+## Deploying to Celo Alfajores
 
 Hopefully, you should be familiar with deploying a contract on the Celo blockchain. If not, here is a quick guide on deploying to the Celo Blockchain.
 In the next few steps, you will deploy both of the previously created contracts to the Celo blockchain to begin making the contract calls.
@@ -392,7 +392,7 @@ Ensure that the `.env` file is added to your `.gitignore` file if you'll be push
 
 **_And Voila, Contracts Deployed...🥂📝_**
 
-# Making Contract Calls
+## Making Contract Calls
 
 Now it's time to make those contract calls.
 You'll use the built-in hardhat tool **Hardhat Console** to interact with the contracts on the blockchain and make the contract calls.
@@ -461,24 +461,24 @@ A successful transaction should look like the image below:
 
 ![Test Contract Call](https://user-images.githubusercontent.com/69092079/200297582-975041d8-986a-4582-917c-6380a9ea6aa8.jpg)
 
-# Conclusion
+## Conclusion
 
 Finálè, you have completed and learned quite a lot of new things here. You created two smart contracts, one will call functions and the other to make contract calls across the blockchain; you deployed both contracts to the Celo Blockchain successfully. You also interacted with the deployed contract using the Hardhat Console, and you made several contract calls on the celo blockchain.
 
 **_Congratulations on taking another big step into the web3 rabbit hole._**
 
-# Next Steps
+## Next Steps
 
 You can also read about how to run the unit test for smart contracts using Truffle, and
 how to run the unit test for smart contracts using Hardhat.
 Here are some other tutorial articles you might be interested in.
 
-# About the Author
+## About the Author
 
 Mayowa Julius Ogungbola
 
 A Software Engineer and technical writer always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/) and you could also find out what I tweet about and connect with me on [Twitter](https://twitter.com/JuliusAyoola1).
 
-# References
+## References
 
 Here is a [link](https://github.com/Julius170/Making_Contract_Calls.demo) to the complete tutorial sample code on my GitHub, Leave a ⭐on the repository if you find it helpful.

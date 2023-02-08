@@ -4,7 +4,7 @@ description: Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix
 authors:
   - name: ✍️ Joe Nyzio
 tags: [nft, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-quickly-build-an-nft-collection-on-celo
 ---
 
@@ -50,7 +50,7 @@ MetaMask allows you to connect to the Celo blockchain from your browser. To get 
 ![image](images/1.png)
 
 - Add Alfajores Testnet to MetaMask using the manual setup option here
-- Add CELO to your test account using the [Alfajores Testnet Faucet](https://celo.org/developers/faucet)
+- Add CELO to your test account using the [Alfajores Testnet Faucet](https://faucet.celo.org)
 
 :::tip
 

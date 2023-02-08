@@ -32,7 +32,7 @@ Ask questions, find answers, and get in touch.
 - [Celo Forum](https://forum.celo.org/)
 - [Celo Developer Chat on Discord](https://chat.celo.org/)
 - [Celo Subreddit](https://www.reddit.com/r/celo/)
-- [Celo Website](https://celo.org/build)
+- [Celo Website](https://celo.org/developers)
 - [Host a Meetup](https://airtable.com/shrTCM7LddTxOm3r6)
 
 ## Contributions
@@ -42,4 +42,4 @@ Browse the code, raise an issue, or contribute a pull request.
 - [Monorepo GitHub Page](https://github.com/celo-org/celo-monorepo)
 - [Celo Client GitHub Page](https://github.com/celo-org/celo-blockchain)
 - [Contributing Guide](https://docs.celo.org/community/contributing)
-- [Celo Build Page](https://celo.org/build)
+- [Celo Developers Page](https://celo.org/developers)

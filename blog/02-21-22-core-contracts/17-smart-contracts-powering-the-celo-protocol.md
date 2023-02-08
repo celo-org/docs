@@ -4,7 +4,7 @@ description: Making sense of the logic driving the Celo platform.
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/17-smart-contracts-powering-the-celo-protocol
 ---
 
