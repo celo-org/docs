@@ -8,15 +8,15 @@ hide_table_of_contents: true
 slug: "/tutorials/build-an-on-chain-puzzle-game-on-celo"
 ---
 
-# Introduction
+## Introduction
 
 In this tutorial, we will be building a puzzle game where the solution to each game will be hashed and stored on the blockchain. This tutorial is designed to teach you about Solidity development, testing, and deployment, as well as how hashing works. Let's get started!
 
-# Prerequisites
+## Prerequisites
 
 To follow this tutorial, it is recommended that you have a basic understanding of Solidity and JavaScript. If you are already familiar with the Hardhat, that will be helpful, but if not, don't worry—we will cover a few things about Hardhat in this tutorial as well. Having some familiarity with these technologies will make it easier for you to understand and follow along with the tutorial, but even if you are new to Solidity and JavaScript, you should still be able to follow along and learn a lot from this tutorial.
 
-# Requirements
+## Requirements
 
 To follow this tutorial, you will need to have the latest version of Node.js installed on your machine.  In this tutorial, we will be using Node.js to run and test our Solidity code, so it is important that you have it installed on your machine. To check if you have installed Node.js installed on your machine, you can run following command in terminal:
 
@@ -26,11 +26,11 @@ node -v
 
 If you don't have Node.js installed, you can download it from the [official website](https://nodejs.org/) and follow the instructions provided there to install it on your machine. Once you have Node.js installed, you will be ready to follow along with this tutorial.
 
-# How the Puzzle Game Works
+## How the Puzzle Game Works
 
 In our puzzle game, there will be two types of people: creators and players. Creators will be responsible for creating puzzles, while players will try to solve the puzzles that have been created. When a creator creates a puzzle, they will provide a question or hint for the puzzle, as well as the hashed answer, which will be stored on-chain. To hash the answer, the creator will use a hashing function on their own machine, and then push the hashed answer to the smart contract. When a player wants to solve a puzzle, they can submit their guess to the smart contract, which will then hash the guess and compare it to the stored hashed answer for that puzzle. If the hashes match, the player's guess is correct, and they have successfully solved the puzzle.
 
-# Understanding Hashing and Its Role in the Puzzle Game
+## Understanding Hashing and Its Role in the Puzzle Game
 
 Hashing is a process of generating a fixed-size output (called a hash or hash value) from a variable-size input (such as a message or a file). The input data is processed through a mathematical algorithm (called a hash function) that produces a unique, fixed-size output. The output of a hash function is often referred to as a "digest" or a "fingerprint" of the input data, as it is unique to that specific input and can be used to identify it.
 
@@ -40,7 +40,7 @@ When a player wants to solve the puzzle, they can submit their guess to the smar
 
 Hashing is useful in this context because it allows us to store the solution to the puzzle on the blockchain in a secure and tamper-proof way. Since the hash function is deterministic and collision-resistant, it is very difficult for an attacker to forge or manipulate the solution without being detected. This ensures that the puzzle game is fair and transparent for all players.
 
-# Setting Up the Hardhat Project
+## Setting Up the Hardhat Project
 
 To set up a new Hardhat project for this tutorial, you will need to create a folder called "Puzzle" and open it in a code editor such as Visual Studio Code. Once you have the folder open, you can use the terminal to run the following command:
 
@@ -64,7 +64,7 @@ require('solidity-covergae')
 
 Once the hardhat project has been set up, you will need to remove all the files from the `contracts` and `test` directories. Then, you can create a new Solidity file called `Puzzle.sol` in the `contracts` directory, and a new test file called `puzzle.test.js` in the `test` directory. These files will be used to develop and test your puzzle game smart contract. After creating these files, you should be ready to start coding your smart contract.
 
-# Writing the Puzzle Game Smart Contract
+## Writing the Puzzle Game Smart Contract
 
 To begin writing the smart contract for the puzzle game, we will open `Puzzle.sol` and write our code in it. First, we will specify the license under which the code is released and the version of Solidity that the code is compatible with using the "pragma" directive. Then, we will define an empty smart contract called `Puzzle`, where we will implement all of the functions for our game. 
 
@@ -138,7 +138,7 @@ To check if the submitted answer is the same as the stored answer, we will first
     }
 ```
 
-# Testing the Puzzle Smart Contract
+## Testing the Puzzle Smart Contract
 
 To test the smart contract, we need to import certain functions and libraries that will allow us to interact with the contract and perform various checks. At the top of the file `puzzle.test.js`, we can start by importing the following:
 
@@ -261,7 +261,7 @@ The test results should be displayed in the terminal should look similar to foll
 
 ![Output of test command on terminal](./images/test-output.png)
 
-# Coverage of Smart Contract Tests
+## Coverage of Smart Contract Tests
 
 To check the coverage of our smart contract using the `solidity-coverage` plugin, run following command in terminal:
 
@@ -275,21 +275,21 @@ You should see report line this in the terminal:
 
 This command will run all of the tests in your project and generate a coverage report that shows which lines of code were covered by the tests. The report will also be saved in the **`coverage`** folder of your project and can be viewed by opening the **`index.html`** file in a web browser.
 
-# Conclusion
+## Conclusion
 
 In this tutorial, we learned about hashing and how it can be used in smart contracts. We implemented this concept using the `keccak256` function in our puzzle smart contract. We then wrote tests to ensure that the contract was functioning correctly. Overall, this tutorial provided a great introduction to hashing and its practical application in Solidity.
 
-# Next Steps
+## Next Steps
 
 In this tutorial, we not only learned about the concept of hashing in general, but we also implemented it using the `keccak256` function in our puzzle game smart contract. However, there are other ways to implement hashing in smart contracts, such as using the `sha256` function or creating a custom hashing function. It would be interesting to explore these other options and compare their benefits and drawbacks.
 
 Additionally, although we have tested our puzzle game contract and achieved 100% test coverage, there may be other tests that could be added to further improve the robustness of our tests. Some ideas could include testing edge cases, such as trying to solve a puzzle with a very long or very short answer, or testing the contract's behavior when there are a large number of puzzles in the mapping. By adding these additional tests, we can increase our confidence in the contract's correctness and ensure that it is working as expected.
 
-# About the Author
+## About the Author
 
 Nikhil Bhintade is the author of the article. Nikhil is currently working as a product manager/technical writer and is actively seeking new opportunities in this field. He enjoys writing about cutting-edge technology and the things he is learning. You can see his most recent work on [GitHub](https://github.com/nikbhintade). You can also connect with Nikhil on [Linkedin](https://linkedin.com/in/nikbhintade). If you have any questions or ideas, feel free to send Nikhil a message on LinkedIn.
 
-# References
+## References
 
 You can find all the code for this tutorial on the provided link. Additionally, you can learn more about the concept of hashing and the specific function of keccak256 on the provided resources. 
 
