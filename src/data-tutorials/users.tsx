@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
+    description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
+    preview: require('./showcase/beginner/blockchain-basics.png'),
+    website: '/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
@@ -762,6 +769,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','ERC20','smartcontract','video'],
   },
   {
+    title: 'Como Criar um Jogo de Roleta Russa na Blockchain Celo',
+    description: 'Aprenda como criar um smart contract de aposta que funciona como uma roleta russa na blockchain Celo.',
+    preview: require('./showcase/advanced/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo',
+    tags: ['advanced','celosage','smartcontract','video', 'hardhat'],
+  },
+  {
     title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
     description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
     preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
@@ -774,6 +788,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
     website: 'blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum',
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
+  },
+  {
+    title: 'Como criar uma carteira para a blockchain Celo',
+    description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
+    preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
+    website: 'blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo',
+    tags: ['celosage', 'video', 'beginner', "celo", "metamask"],
   },
   {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
@@ -801,6 +822,13 @@ const Users: User[] = [
     description: 'Building a Full Stack Web3 Dapp to mint an NFT.',
     preview: require('./showcase/intermediate/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo.png'),
     website: '/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo',
+    tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+  {
+    title: 'Dynamic NFT Creation using SVG to build in Smart Contract on Celo.',
+    description: 'Welcome to our tutorial on dynamic NFT creation using SVG to build in a smart contract on Celo!',
+    preview: require('./showcase/intermediate/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo.png'),
+    website: '/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo',
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
@@ -839,11 +867,25 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+    title: ' How to Build Car Marketplace dapp Using React',
+    description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
+    preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
+    website: 'blog/tutorials/how-to-build-car-marketplace-dapp-with-react',
+    tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
     website: 'https://medium.com/celodevelopers/building-for-the-celo-connect-mobile-hackathon-a78707b7431c',
     tags: ['intermediate','foundation'],
+  },
+  {
+    title: 'Build Your Own Full-Stack NFT Marketplace on Celo',
+    description: 'Build a full stack Nft Marketplace on the celo block-chain using ipfs and web3.storage for metadata storage.',
+    preview: require('./showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png'),
+    website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
+    tags: ['celosage', 'nft', 'solidity', 'celo'],
   },
   {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
@@ -1473,6 +1515,13 @@ const Users: User[] = [
     tags: ['intermediate', 'smartcontract', 'celosage', 'celo'],
   },
   {
+  title: 'Understanding the Decentralized Storage System',
+  description: 'This tutorial is a comprehensive and explanatory guide to understanding the decentralized storage system',
+  preview: require('./showcase/intermediate/understanding-the-decentralized-storage-system.png'),
+  website: 'blog/tutorials/understanding-the-decentralized-storage-system',
+  tags: ['celo', 'intermediate', 'celosage'],
+},
+  {
     title: 'Minting your ERC1155 Token on Celo',
     description: 'How to Minting your ERC1155 Token on Celo using Remix',
     preview: require('./showcase/intermediate/how-to-mint-your-erc1155-nft-on-celo-with-remix.png'),
@@ -1557,6 +1606,13 @@ const Users: User[] = [
     tags: ['celosage'],
   },
   {
+    title: 'Crypto Wallets The Celo Way',
+    description: 'This tutorials teaches you all you need to know about Crypto Wallets',
+    preview: require('./showcase/beginner/crypto-wallets.png'),
+    website: 'blog/tutorials/Crypto-Wallets-The-Celo-Way',
+    tags: ['celosage'],
+  },
+  {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
     preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
@@ -1605,7 +1661,6 @@ const Users: User[] = [
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo'], 
   },
-
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
