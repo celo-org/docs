@@ -11,7 +11,7 @@ hide_table_of_contents: false
 slug: /tutorials/connect-and-interact-with-celo-using-web3onboard=library
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/connect-and-interact-with-celo-using-web3onboard-library.png)
+![header](images/3.png)
 
 # Introduction
 
