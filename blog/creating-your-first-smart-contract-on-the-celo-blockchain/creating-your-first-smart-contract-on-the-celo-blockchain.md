@@ -1,3 +1,18 @@
+---
+title: How to create your first smart contract on the celo blockchain,
+description: This tutorials teaches you how to create your first sample smart contract and deploy it on the celo blockchain,
+
+authors:
+  - name: Israel Okunaya
+    title: Software Engineer, Technical writer @Celo Foundation
+    url: https://github.com/Southpaw0
+    image_url: 
+tags: [celosage, smartcontract, solidity, remix]
+hide_table_of_contents: true
+slug: /tutorials/create-your-first-smart-contract-on-celo
+---
+
+
 ## Introduction​
 In this article, we will be building a crowdfunding smart contract using [hardhat](https://hardhat.org/) and deploying the smart contract to the Celo blockchain. Hardhat is a development environment for Ethereum software. With hardhat, you can write your smart contract, deploy them, run tests, and debug your code.
 
