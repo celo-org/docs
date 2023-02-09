@@ -867,11 +867,21 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+
+    title: 'Pros and Cons of using Celo to create Decentralized Applications',
+    description: 'Pros and Cons of using Celo to create Decentralized Applications',
+    preview: require('./showcase/beginner/pros.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications',
+    tags: ['beginner', 'foundation', 'celosage'],
+    },
+    {
+
     title: ' How to Build Car Marketplace dapp Using React',
     description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
     preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
     website: 'blog/tutorials/how-to-build-car-marketplace-dapp-with-react',
     tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
+
   },
   {
     title: 'Building for the Celo Connect Mobile Hackathon',
