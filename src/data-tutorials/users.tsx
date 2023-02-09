@@ -979,6 +979,14 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'cli'],
   },
   {
+
+    title: 'Pros and Cons of using Celo to create Decentralized Applications',
+    description: 'Pros and Cons of using Celo to create Decentralized Applications',
+    preview: require('./showcase/beginner/pros.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications',
+    tags: ['celosage', 'beginner', 'foundation'],
+    },
+  {
     title: 'Celo Composer - Easily Build Full-Stack Mobile dApps on Celo',
     description: 'Quickly develop full-stack progressive web applications on Celo with the Celo Composer.',
     preview: require('./showcase/beginner/celo-composer-easily-build-full-stack-mobile-dapps-on-celo.png'),
