@@ -846,6 +846,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+    title: "Introduction to Zero-Knowledge Technology and it's Blockchain Applications",
+    description: "Zero knowledge is a unique technology that helps push the boundary of what is possible in the web3 space. Building scalable trustless applications is vital for us to achieve a fully decentralized web. In this tutorial, I will be introducing the technology and how it works and also it's different blockchain applications.",
+    preview: require('./showcase/intermediate/introduction-to-zero-knowledge-technology-and-its-blockchain-applications.png'),
+    website: "blog/tutorials/Introduction-to-Zero-Knowledge-Technology-and-it's-Blockchain-Applications",
+    tags: ['celosage', 'intermediate'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
