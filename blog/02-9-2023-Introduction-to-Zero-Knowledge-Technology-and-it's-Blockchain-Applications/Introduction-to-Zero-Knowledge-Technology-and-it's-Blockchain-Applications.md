@@ -1,6 +1,6 @@
 ---
 title: Introduction to Zero-Knowledge Technology and it's Blockchain Applications
-description: Zero knowledge is a unique technology that helps push the boundary of what is possible in the web3 space. Building scalable trustless applications is vital for us to achieve a fully decentralized web. In this tutorial, I'll be introducing the technology and how it works and also it's different blockchain applications.
+description: This tutorial is an introduction to zero-knowledge technology and some use cases in the blockchain space
 authors:
   - name: ✍️ Jonathan Iheme
 url: https://github.com/4undRaiser
