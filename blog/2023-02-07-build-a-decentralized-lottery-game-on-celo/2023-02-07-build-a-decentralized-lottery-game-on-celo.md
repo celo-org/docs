@@ -39,7 +39,7 @@ To set up a new Hardhat project for this tutorial, follow these steps:
 - Create a directory called `Lottery` and open it in your code editor.
 - In the terminal, run the following command to set up the Hardhat project:
 
-```
+```bash
 npx hardhat .
 ```
 
@@ -48,7 +48,7 @@ This will create the necessary files and directories, such as a `package.json` f
 - Remove all files from the `contracts` and `test` directories, and create a new Solidity file called `Lottery.sol` in the `contracts` directory and a new test file called `lottery.test.js` in the `test` directory.
 - Run the following command in the terminal to install dependencies:
 
-```
+```bash
 npm install dotenv
 ```
 
@@ -247,7 +247,7 @@ Next, we will test the ticket purchasing feature. In this test, we will verify t
 - Ensure that a user can purchase a ticket by paying the correct ticket price.
 - Ensure that the owner is restricted from purchasing a ticket.
 
-```jsx
+```js
 describe("Purchases", function () {
 	it("Should throw error for wrong ticket price", async function() {
 		const { lottery, otherAccount } = await loadFixture(deployFixture);
@@ -385,7 +385,7 @@ Earlier, we compiled the contract and this generated the `artifacts` directory, 
 
 To import both components, add the following code snippet at the top of the file:
 
-```jsx
+```js
 import data from "./Lottery.json";
 ```
 
