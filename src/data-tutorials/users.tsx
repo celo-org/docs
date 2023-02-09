@@ -1571,6 +1571,13 @@ const Users: User[] = [
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
   },
   {
+    title: 'Connect and interact with Celo using Web3Onboard library',
+    description: 'Alternative to Celo composer for connecting to Celo networks',
+    preview: require('./showcase/intermediate/connect-and-interact-with-celo-using-webonboard-library'),
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3onboard-library',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
+  {
     title: 'Proof of Work vs Proof of Stake - A Comprehensive Comparison',
     description: 'In this article, we will provide a comprehensive comparison of proof of work and proof of stake.',
     preview: require('./showcase/beginner/proof-of-work-vs-proof-of-stake-a-comprehensive-comparison.png'),
