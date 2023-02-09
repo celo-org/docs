@@ -434,7 +434,7 @@ Learning about smart contracts and blockchain technology through auction program
 
 
 
-## Conclusion
+### Conclusion
 
 
 Meanwhile, we learned about auction programming and how to use the Solidity programming language to implement it on the Ethereum blockchain. We talked about the fundamentals of auction programming and the syntax used in Solidity to make it happen. 
@@ -447,7 +447,7 @@ Always be curious, and never be afraid to ask questions!
 
 
 
-## Next Steps
+### Next Steps
 
 
 There are several things you can do next to continue learning about auction programming in Solidity:
@@ -465,14 +465,14 @@ There are several things you can do next to continue learning about auction prog
 
 
 
-## Author
+### Author
 
 
 Maxwell Onyeka is a solutions-focused, meticulous, strategy- and results-driven manager with more than five years experience building paid and organic marketing funnels for SaaS companies and a technical writer for web3. [LinkedIn](https://www.linkedin.com/in/maxwell-onyeka-3b4b1118b/)
 
 
 
-## References
+### References
 
 
 - [Ethereum's official Solidity documentation](https://solidity.readthedocs.io/en/v0.8.2/)
