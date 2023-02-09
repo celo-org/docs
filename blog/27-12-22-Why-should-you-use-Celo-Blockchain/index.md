@@ -1,11 +1,11 @@
 ---
 title: Why should you use Celo Blockchain
-description: introduction to the Celo blockchain and why you should use it
+description: Introduction to the Celo blockchain and why you should use it
 authors:
   - name: Adefolalu Adegboyega
 tags: [Celo, Blockchain]
 hide_table_of_contents: false
-slug: /tutorials/why-should-you-use-celo-blockchain
+slug: /tutorials/why-should-you-use-celo
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/why-should-you-use-celo.png)
@@ -24,8 +24,7 @@ Let's begin by taking a look at what **Celo** is.
 
 You may not understand the full value of what Celo intends to achieve until you discover that Blockchain alone consumes more than 1% of America's electrical production. Blockchain's general acceptance as a payment method has been limited by its high energy demand and technological difficulties for the average individual. But with Celo, only a phone number is needed as a public key for cryptocurrency transactions.
 
-The Celo Platform, like other DeFi chain
-s, facilitates the development of smart contracts and can host DApps. This has marked it as a mobile-based Web 3 hub for many.
+The Celo Platform, like other DeFi chains, facilitates the development of smart contracts and can host DApps. This has marked it as a mobile-based Web 3 hub for many.
 
 CELO, its native token, and the stablecoins cUSD, cEUR, and cREAL are its primary tokens.
 
