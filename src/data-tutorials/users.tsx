@@ -1573,7 +1573,7 @@ const Users: User[] = [
   {
     title: 'Connect and interact with Celo using Web3Onboard library',
     description: 'Alternative to Celo composer for connecting to Celo networks',
-    preview: require('./showcase/intermediate/connect-and-interact-with-celo-using-webonboard-library'),
+    preview: require('./showcase/intermediate/connect-and-interact-with-celo-using-webonboard-library.png'),
     website: 'blog/tutorials/connect-and-interact-with-celo-using-web3onboard-library',
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
   },
