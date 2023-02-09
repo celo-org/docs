@@ -1482,6 +1482,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'hardhat'],
   },
   {
+    title: 'Understanding the Fundamentals of Auction Programming in Solidity',
+    description: 'Gain a comprehensive understanding of the fundamental concepts and programming techniques for building decentralized auction applications using Solidity.',
+    preview: require('./showcase/intermediate/Auction.png'),
+    website: 'blog/tutorials/Understanding-the-Fundamentals-of-Auction-Programming-in-Solidity',
+    tags: ['celo', 'intermediate', 'celosage'],
+  },
+  {
     title: 'Redeploying Dapp to Celo.',
     description: 'How to Re Deploy your Ethereum DApp to Celo with Hardhat.',
     preview: require('./showcase/intermediate/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat.png'),
