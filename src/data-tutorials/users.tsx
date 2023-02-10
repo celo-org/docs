@@ -1627,11 +1627,11 @@ const Users: User[] = [
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
   },
   {
-    title: 'Connect and interact with Celo using Web3onboard library',
+    title: 'Connect and interact with Celo using web3onboard library',
     description: 'A convenient library for connecting to Celo blockchain',
     preview: require('./showcase/intermediate/connect-and-interact-with-celo-using-web3onboard-library.png'),
-    website: 'blog/tutorials/connect-and-interact-with-celo-usin-web3onboard-library',
-    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3onboard-library',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
   },
   {
     title: 'Proof of Work vs Proof of Stake - A Comprehensive Comparison',
