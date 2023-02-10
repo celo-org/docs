@@ -13,11 +13,11 @@ slug: /tutorials/connect-and-interact-with-celo-using-web3onboard-library
 
 ![header](images/3.png)
 
-# Introduction
+## Introduction
 
 An essential feature of a blockchain-powered application is the ability to read and write to the blockchain. Unlike web2 databases, blockchains as immutable databases require agents that interface with them and the frontend. Such agents are called web3Provider. There are couple of them such as etherjs, web3js, web3Modal and so on.
 
-# Prerequisites​
+## Prerequisites​
 
 This tutorial will walk you through comprehensive guidelines and steps for connecting to the Celo blockchain  using web3Modal. Getting the most out of this cook requires that you are at the imtermediate level in the following skill sets:
 
@@ -26,7 +26,7 @@ This tutorial will walk you through comprehensive guidelines and steps for conne
 - Knowledge of typescript may be helpful
 - Learn how to use foundry for smart contract development. Please refer to **[this artile](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)** for complete tutorial.
 
-# Requirements​
+## Requirements​
 
 Before you proceed, be sure to have the following tools installed:
 
@@ -34,7 +34,7 @@ Before you proceed, be sure to have the following tools installed:
 - NodeJs version >=14.0.0. I use version 18.12.1
 - [Install foundry](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs).
 
-# What we are building
+**What we are building**
 
 A simple generic staking dApp that enables $Celo holders commit their asset to the vault to earn the platform token - $RTK.
 The dApp will be in two parts.
@@ -510,10 +510,9 @@ export default function Home() {
 
   return <>{!isUserAuthenticated ? <LandingPage isUserAuthenticated={isUserAuthenticated} handleConnect={handleConnect} /> : <App logout={logout} reconnect={connect} />}</>;
 }
-
 ```
 
-## components/ConnectButton.tsx
+**components/ConnectButton.tsx**
 
 Make a new file name `ConnectButton.tsx` inside `components` folder. We are simply separating the 'Button' component as against what we currently have in `components/LandingPage.tsx`.
 
@@ -551,7 +550,6 @@ function ConnectButton(props: ConnectButtonProp) {
 }
 
 export default ConnectButton;
-
 ```
 
 **components/LandingPage.tsx**
@@ -1085,7 +1083,7 @@ async function sendtransaction(options: OptionProps) {
 export default sendtransaction;
 ```
 
-# Conclusion​
+## Conclusion​
 
 Thumbs up for seeing it to the end. So far, we have learned:
 
@@ -1094,15 +1092,15 @@ Thumbs up for seeing it to the end. So far, we have learned:
 - How to build a simple frontend and connect the backend.
 - Manage your dApp using web3Onboard.
 
-# What next?
+## What next?
 ​
 You can edit the code to your taste. At this point, you should be able to launch your own project as Celo developer. If you are confused anywhere in the tutorial, I left a link to the full source code at the _references_ section. Go over it as many times as you can. In no time, you will get a good grasp. Celo is EVM-compatible blockchain. You can leverage the various web3 tools to build your dream application. Get started with **[Celo documentation](https://docs.celo.org/tutorials)**
 
-# About the Author​
+## About the Author​
 
 **Isaac Jesse** , aka _Bobelr_ is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on as content producer. He has also contributed to Web3 projects as a developer.
 
-# References​
+## References​
 
 - [Celo developers resources](https://docs.celo.org/developer/)
 - [Web3Onbaord doc](https://onboard.blocknative.com)
