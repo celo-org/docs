@@ -95,6 +95,7 @@ Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 function stakeOnBehalf(address who) external returns(bool);
 ```
 _src/interfaces/IVault.sol_
+
 ![image](images/2.png)
 
 **src/Vault.sol**
