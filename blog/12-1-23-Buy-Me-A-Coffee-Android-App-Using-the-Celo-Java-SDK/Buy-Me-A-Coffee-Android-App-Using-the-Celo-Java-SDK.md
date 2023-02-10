@@ -6,7 +6,7 @@ authors:
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
-tags: [celosage, android, celo, celowallet, cli, contractkit, dapp, mobile, sdk, valora]
+tags: [celosage, android, celo, dapp, mobile, sdk, valora, advanced]
 hide_table_of_contents: true
 slug: /tutorials/buy-me-a-coffee-android-app-using-the-celo-java-sdk
 ---

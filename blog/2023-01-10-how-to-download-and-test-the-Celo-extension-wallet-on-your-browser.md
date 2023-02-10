@@ -5,7 +5,7 @@ authors:
   - name: Israel Okunaya
 url: https://github.com/Southpaw0
 image_url:
-tags: [celosage, video]
+tags: [celosage, video, beginner]
 hide_table_of_contents: false
 slug: /tutorials/how-to-download-and-test-the-Celo-extension-wallet-on-your-browser
 ---
