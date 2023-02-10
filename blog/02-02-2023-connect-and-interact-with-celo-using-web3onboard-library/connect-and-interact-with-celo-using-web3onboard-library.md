@@ -6,9 +6,9 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, web3onboard]
+tags: [foundry, celo, solidity, react]
 hide_table_of_contents: false
-slug: /tutorials/connect-and-interact-with-celo-using-web3onboard=library
+slug: /tutorials/connect-and-interact-with-celo-using-web3onboard-library
 ---
 
 ![header](images/3.png)
