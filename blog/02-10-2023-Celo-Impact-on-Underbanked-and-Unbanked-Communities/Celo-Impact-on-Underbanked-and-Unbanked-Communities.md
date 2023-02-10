@@ -66,7 +66,7 @@ This means you have remote access to conduct transactions and make payments, wit
 
 The Celo Dollar is also very simple to use that supports currency exchange. All you need is a **mobile wallet app** to store and spend your Celo Dollars. This means you won't have to deal with complicated financial systems.
 
-The Celo Dollar is a stable coin that can be used for transactions and payments. The Celo Dollar, by being pegged to the value of the US dollar, provides stability and security to people in underbanked and unbanked communities who require access to financial services. So, the next time you hear about the Celo network and the Celo Dollar, you'll know it's a fantastic way to access financial services and make transactions and payments from your smartphone!
+The Celo Dollar is a stable coin that can be used for transactions and payments. The Celo Dollar, by being pegged to the value of the US dollar, provides stability and security to people in underbanked and unbanked communities who require access to financial services. So, the next time you hear about the Celo network and the Celo Dollar, you'll know it's a fantastic way to access financial services and make transactions and payments from your smartphone! 
 
 ## The Celo Network: Making Financial Services Accessible Through Your Smartphone
 
