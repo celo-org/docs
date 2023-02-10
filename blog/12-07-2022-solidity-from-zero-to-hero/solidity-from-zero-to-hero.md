@@ -3,7 +3,7 @@ title: Solidity from Zero to Hero
 description: In this article you will learn Solidity language.
 authors:
   - name: Oyeniyi Abiola Peace
-tags: [solidity]
+tags: [solidity, intermediate]
 hide_table_of_contents: false
 slug: /tutorials/solidity-from-zero-to-Hero
 ---
