@@ -874,6 +874,13 @@ const Users: User[] = [
     tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
   },
   {
+    title: 'Celo Impact on Underbanked and Unbanked Communities',
+    description: 'Celo a blockchain platform aimed at providing financial inclusion and access to financial services for underbanked and unbanked communities',
+    preview: require('./showcase/intermediate/Unbanked.png'),
+    website: '/blog/tutorials/Celo-Impact-on-Underbanked-and-Unbanked-Communities',
+    tags: ['celo', 'intermediate', 'celosage'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
