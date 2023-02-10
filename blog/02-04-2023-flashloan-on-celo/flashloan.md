@@ -67,7 +67,7 @@ You'll need to create a new contract that both you and the Aave protocol's lendi
 
 Add a new file and name it myFlashLoan.sol and add the following code to it:
 
-```solidity
+```
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
@@ -108,7 +108,8 @@ Next, add the function that will be called to initiate the Flash Loan process. L
 We will limit access to it to the owner (i.e. you), this will help guard against griefing attacks. You will request a Flash Loan of 1 USDC (1* 10^6 as USDC has 6 decimal places). We don't need data for the flash loan, so we are passing an empty string. 
 
 This function then calls the `flashloan()` function on the lending pool contract for you to receive the tokens.
-```solidity
+
+``` solidity
     function myFlashLoanCall(address _tokenAddress) public onlyOwner {
         address receiverAddress = address(this);
 
