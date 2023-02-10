@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/Celo-Impact-on-Underbanked-and-Unbanked-Communities
 ---
 
-![header](../../src/data/showcase/intermediate/Unbanked.png)
+![header](../../src/data-tutorials/showcase/intermediate/Unbanked.png)
 
 ## Introduction
 
@@ -50,7 +50,7 @@ The Celo network can ensure that more people have access to the financial servic
 - The Celo network also provides mobile wallets like [Valora](https://valoraapp.com/), a unique app that allows people to store and use money.
   These wallets are designed to be user friendly, so that anyone can take advantage of the financial services provided by the Celo network.
 
-* These collaborations and initiatives are significant because they help to make the Celo network more accessible to more people.
+- These collaborations and initiatives are significant because they help to make the Celo network more accessible to more people.
   The Celo network and these organizations can help empower people in underbanked and unbanked communities to take control of their financial future by collaborating.
 
 ## The Celo Dollar: A Stablecoin for Transactions and Payments
@@ -123,5 +123,3 @@ Furthermore, the development of mobile wallets and other tools makes the platfor
 ### About the Author
 
 Maxwell Onyeka is a solutions-focused, meticulous, strategy- and results-driven manager with more than five years of experience building paid and organic marketing funnels for SaaS companies and a technical writer for web3. [Twitter](https://twitter.com/Maxwellowy)
-
-
