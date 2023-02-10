@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/Celo-Impact-on-Underbanked-and-Unbanked-Communities
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/Unbanked.png)
+![header](../../src/data-tutorials/showcase/intermediate/unbanked.png)
 
 ## Introduction
 
