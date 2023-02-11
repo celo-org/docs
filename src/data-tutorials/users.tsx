@@ -955,7 +955,7 @@ const Users: User[] = [
     description: 'This tutorial covers how to build a decentralized social media dapp on the celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain.png'),
     website: 'blog/tutorials/How-to-Build-a-Full-Stack-Social-Media-Dapp-on-the-Celo-Blockchain',
-    tags: ['celosage', 'solidity', 'celo'],
+    tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
