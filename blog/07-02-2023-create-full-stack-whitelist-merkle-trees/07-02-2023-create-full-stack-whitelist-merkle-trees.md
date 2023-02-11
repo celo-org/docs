@@ -86,26 +86,26 @@ To Derive the Leaf Nodes, let's create an array that contains our whitelisted ad
 
 ```js
 const leafNodes = [
-Â  Â  {"address": "0x4ABda0097D7545dE58608F7E36e0C1cac68b4943", "balance": 400},
-Â  Â  {"address":"0x00000005Fa950023724931D2EcbA50bE1688abFf","balance":11500},
-Â  Â  {"address":"0x70997970c51812dc3a010c7d01b50e0d17dc79c8","balance":7500},
-Â  Â  {"address":"0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc","balance":11000},
-Â  Â  {"address":"0x0000000a8dEA75E8f8000BF18C22948c7EAb3b9D","balance":8500},
-Â  Â  {"address":"0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199","balance":10500}
+    {"address": "0x4ABda0097D7545dE58608F7E36e0C1cac68b4943", "balance": 400},
+    {"address":"0x00000005Fa950023724931D2EcbA50bE1688abFf","balance":11500},
+    {"address":"0x70997970c51812dc3a010c7d01b50e0d17dc79c8","balance":7500},
+    {"address":"0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc","balance":11000},
+    {"address":"0x0000000a8dEA75E8f8000BF18C22948c7EAb3b9D","balance":8500},
+    {"address":"0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199","balance":10500}
 ]
 const arr = leafNodes.map((i,ix) => {
-Â  Â  Â  const packed = ethers.utils.solidityPack(["address","uint256"], [ i.address, toWei(i.balance)])
-Â  Â  Â  return keccak256(packed);
-Â });
+      const packed = ethers.utils.solidityPack(["address","uint256"], [ i.address, toWei(i.balance)])
+      return keccak256(packed);
+ });
 ```
 
 Once we have our leafNodes array, we can then use the MerkeTree Js library to do all the hard work of hashing and generating our Merkle root for us.
 
 ```js
 // Generate merkleTree from leafNodes
-Â  const merkleTree = new MerkleTree(arr, keccak256, { sortPairs: true });
-Â  // Get root hash from merkle tree\
-Â  const rootHash = merkleTree.getRoot();
+  const merkleTree = new MerkleTree(arr, keccak256, { sortPairs: true });
+  // Get root hash from merkle tree\
+  const rootHash = merkleTree.getRoot();
 ```
 
 We now have our root hash which we can then pass in to our **Airdropper** contract when deploying it.
@@ -165,40 +165,40 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 contract AirDropper is Ownable, ReentrancyGuard {  
 
-Â  Â  using SafeERC20 for IERC20;  
+    using SafeERC20 for IERC20;  
 
-Â  Â  bytes32 public immutable root;
+    bytes32 public immutable root;
 
-Â  Â  address tokenAddress ;
+    address tokenAddress ;
 
-Â  Â  mapping(address => bool) claimed;  
+    mapping(address => bool) claimed;  
 
-Â  Â  constructor(bytes32 _root, address token) {
-Â  Â  Â  Â  root = _root;
-Â  Â  Â  Â  tokenAddress=token;
-Â  Â  }  
+    constructor(bytes32 _root, address token) {
+        root = _root;
+        tokenAddress=token;
+    }  
 
-Â  Â  function hasClaimed() external view returns (bool) {
-Â  Â  Â  Â  return _hasClaimed(msg.sender);
-Â  Â  }
+    function hasClaimed() external view returns (bool) {
+        return _hasClaimed(msg.sender);
+    }
 
-	function _hasClaimed(address user) private view Â returns (bool) {
-Â  Â  Â  Â  return claimed[user];
-Â  Â  }
+	function _hasClaimed(address user) private view  returns (bool) {
+        return claimed[user];
+    }
 
-Â  Â  function claim(bytes32[] calldata _proof, uint amount) external nonReentrant {
+    function claim(bytes32[] calldata _proof, uint amount) external nonReentrant {
 
-Â  Â  Â  Â  address claimer = msg.sender;
-Â  Â  Â  Â  require(!claimed[claimer], "Already claimed air drop");
-Â  Â  Â  Â  claimed[claimer] = true;
-Â  Â  Â  Â  bytes32 _leaf = keccak256(abi.encodePacked(claimer, amount));
-Â  Â  Â  Â  require(
-Â  Â  Â  Â  Â  Â  MerkleProof.verify(_proof, root, _leaf),
-Â  Â  Â  Â  Â  Â  "Incorrect merkle proof"
-Â  Â  Â  Â  );
-Â  Â  Â  Â  require( IERC20(tokenAddress).balanceOf(address(this)) > amount, 'AIRDROP CLAIM: No token to release by airdropper');
-Â  Â  Â  Â  IERC20(tokenAddress).safeTransfer(claimer, amount);
-Â  Â  }
+        address claimer = msg.sender;
+        require(!claimed[claimer], "Already claimed air drop");
+        claimed[claimer] = true;
+        bytes32 _leaf = keccak256(abi.encodePacked(claimer, amount));
+        require(
+            MerkleProof.verify(_proof, root, _leaf),
+            "Incorrect merkle proof"
+        );
+        require( IERC20(tokenAddress).balanceOf(address(this)) > amount, 'AIRDROP CLAIM: No token to release by airdropper');
+        IERC20(tokenAddress).safeTransfer(claimer, amount);
+    }
 }
 
 ```
@@ -576,12 +576,12 @@ Rewards.json (`/src/assets/rewards.json`)
 
 ```js
 const leafNodes = [
-Â  Â  {"address": "0x4ABda0097D7545dE58608F7E36e0C1cac68b4943", "balance": 400},
-Â  Â  {"address":"0x00000005Fa950023724931D2EcbA50bE1688abFf","balance":11500},
-Â  Â  {"address":"0x70997970c51812dc3a010c7d01b50e0d17dc79c8","balance":7500},
-Â  Â  {"address":"0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc","balance":11000},
-Â  Â  {"address":"0x0000000a8dEA75E8f8000BF18C22948c7EAb3b9D","balance":8500},
-Â  Â  {"address":"0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199","balance":10500}
+    {"address": "0x4ABda0097D7545dE58608F7E36e0C1cac68b4943", "balance": 400},
+    {"address":"0x00000005Fa950023724931D2EcbA50bE1688abFf","balance":11500},
+    {"address":"0x70997970c51812dc3a010c7d01b50e0d17dc79c8","balance":7500},
+    {"address":"0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc","balance":11000},
+    {"address":"0x0000000a8dEA75E8f8000BF18C22948c7EAb3b9D","balance":8500},
+    {"address":"0x8626f6940e2eb28930efb4cef49b2d1f2c9c1199","balance":10500}
 ]
 ```
 
@@ -819,27 +819,27 @@ The actual Claim process is implemented in the \_claim function
 
 ```js
 
-Â  async _claim() {Â  Â 
-Â  Â  const contract = this.airdropperContract; 
-Â  Â  try{
-Â  Â  Â  const claimable = await this.getClaimableBalance();
-Â  Â  Â  const packed = this.web3Service.web3js.utils.encodePacked(
-Â  Â  Â  Â  {value: this.account, type: 'address'},
-Â  Â  Â  Â  {value: this.toWei(claimable).toString(), type: 'uint256'}
-Â  Â  Â  );
-Â  Â  Â  const proof = this.merkleTree.getHexProof(keccak256(packed));
-Â  Â  Â  await contract.methods.claim(proof, this.toWei(claimable)).send({from: this.account});
-Â  Â  Â  return 'succeeded' ;
-Â  Â  }catch(err){
-Â  Â  Â  return 'failed';
-Â  Â  } Â  Â 
-Â  }
-Â  
+  async _claim() {   
+    const contract = this.airdropperContract; 
+    try{
+      const claimable = await this.getClaimableBalance();
+      const packed = this.web3Service.web3js.utils.encodePacked(
+        {value: this.account, type: 'address'},
+        {value: this.toWei(claimable).toString(), type: 'uint256'}
+      );
+      const proof = this.merkleTree.getHexProof(keccak256(packed));
+      await contract.methods.claim(proof, this.toWei(claimable)).send({from: this.account});
+      return 'succeeded' ;
+    }catch(err){
+      return 'failed';
+    }    
+  }
+  
 ```
 
 To claim, we generate a Merkle proof , using the users wallet address and their claimable balance, we send this to the contract , and if valid, the user is sent their tokens.
 
-Now try to compile your Angular DAPP, see if its running fine. You can visit the following repo to compare codes.
+Now try to compile your Angular DAPP, see if its running fine. You can visit the following [repo](https://github.com/layinka/celo-whitelist-merkle) to compare codes.
 
 Switch wallets between participants and try to make a claim.
 
