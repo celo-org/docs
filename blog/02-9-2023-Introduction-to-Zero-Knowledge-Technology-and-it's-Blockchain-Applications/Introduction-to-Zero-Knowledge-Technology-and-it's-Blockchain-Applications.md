@@ -6,7 +6,7 @@ authors:
 url: https://github.com/4undRaiser
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, intermediate]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: "/tutorials/Introduction-to-Zero-Knowledge-Technology-and-it's-Blockchain-Applications"
 ---
 
