@@ -952,7 +952,7 @@ const Users: User[] = [
   },
   {
     title: 'How to Build a Full Stack Social Media Dapp on the Celo Blockchain',
-    description: 'This tutorial covers how to build a decentralized social media dapp onchain',
+    description: 'This tutorial covers how to build a decentralized social media dapp on the celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain.png'),
     website: 'blog/tutorials/How-to-Build-a-Full-Stack-Social-Media-Dapp-on-the-Celo-Blockchain',
     tags: ['celosage', 'solidity', 'celo'],

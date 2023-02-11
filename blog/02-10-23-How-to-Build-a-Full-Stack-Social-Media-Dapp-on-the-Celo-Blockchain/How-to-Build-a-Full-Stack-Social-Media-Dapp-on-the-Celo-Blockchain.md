@@ -1,6 +1,6 @@
 ---
 title: How to Build a Full Stack Social Media Dapp on the Celo Blockchain
-description: This tutorial covers how to build a decentralized social media dapp onchain.
+description: This tutorial covers how to build a decentralized social media dapp on the celo blockchain.
 authors:
   - name: ✍️ Jonathan Iheme
 url: https://github.com/4undRaiser
