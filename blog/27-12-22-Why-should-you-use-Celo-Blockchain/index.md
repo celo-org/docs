@@ -3,7 +3,7 @@ title: Why should you use Celo Blockchain
 description: Introduction to the Celo blockchain and why you should use it
 authors:
   - name: Adefolalu Adegboyega
-tags: [Celo, Blockchain]
+tags: [Celo, Blockchain, beginner]
 hide_table_of_contents: false
 slug: /tutorials/why-should-you-use-celo
 ---

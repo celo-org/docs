@@ -3,7 +3,7 @@ title: An Introduction to Layer 1 and Layer 2 Blockchain Protocols
 description: In this tutorial, we will provide an introduction to the different types of blockchain protocols and explain the key differences between layer 1 and layer 2 protocols.
 authors:
   - name: ✍️ Obafemi Joshua
-tags: [celo]
+tags: [celo, celosage, beginner]
 hide_table_of_contents: false
 slug: '/tutorials/An-Introduction-to-Layer-1-and-Layer-2-Blockchain-Protocols'
 ---

@@ -5,7 +5,7 @@ authors:
   - name: Israel Okunaya
 url: https://github.com/Southpaw0
 image_url:
-tags: [celosage]
+tags: [celosage, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/regenerative-finance-and-celo-the-process-and-partnership
 ---

@@ -5,7 +5,7 @@ authors:
   - name: ✍️ Jonathan Iheme
 url: https://github.com/4undRaiser
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
-tags: [celosage, nft, solidity, celo]
+tags: [celosage, nft, solidity, celo, advanced]
 hide_table_of_contents: false
 slug: "/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo"
 ---
