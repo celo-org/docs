@@ -1659,7 +1659,7 @@ const Users: User[] = [
     description: 'Learn how you can use Merkle trees, a powerful data structure hierarchy, to efficiently verify if a particular data is part of a dataset',
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
-    tags: ['advanced', 'hardhat', 'celosage', 'solidity', 'angular'],
+    tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
