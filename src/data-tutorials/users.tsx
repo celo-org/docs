@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
+    description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
+    preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
+    website: 'blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT',
+    tags: ['beginner', 'erc721', 'celosage'],
+  },
+  {
     title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
     description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee".',
     preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
