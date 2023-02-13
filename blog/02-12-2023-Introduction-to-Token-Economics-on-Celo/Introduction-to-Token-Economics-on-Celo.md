@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/80678178?v=4
 tags: [celo, intermediate, celosage]
 hide_table_of_contents: true
-slug: /tutorials/Introduction-to-Token-Economics-on-Celo
+slug: /tutorials/introduction-to-Token-Economics-on-Celo
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/token.png) 
