@@ -84,15 +84,11 @@ forge install --no-commit https://github.com/foundry-rs/forge-std
 forge install --no-commit https://github.com/OpenZeppelin/openzeppelin-contracts
 ```
 
->Note: If you get an error such as in the image, ignore it.
-
-![image](images/8.png)
-
-- Without change to the current contrat behavior, we will extend the 'Vault' contract to reflect a new feature we'll be adding shortly. With the new feature, $Celo holders can perform compounded Staking where current stake are added to the previous one.
+- Without changing the current contract behavior, we will extend the 'Vault' contract to reflect a new feature we'll be adding shortly. With the new feature, $Celo holders can perform compounded Staking where current stake are added to the previous one.
 
 Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 
-- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is simply a function declaration/interface for interacting with the main function that will be implemented in the 'Vault' contract. 
+- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is a function declaration/interface for interacting with the main application that will be implemented in the 'Vault' contract. 
 
 ```bash
 function compoundStaking() external payable returns(bool);
@@ -177,7 +173,7 @@ forge build
 ```
 _Compile successful_
 
-![image](images/9.png)
+![image](images/4.png)
 
 
 **Testing**
@@ -202,8 +198,17 @@ Run the command, and the test should pass as expected.
 ```bash
 forge test
 ```
-![image](images/10.png)
+![image](images/5.png)
 
+**Deployment**
+
+```bash Vault.sol
+forge create --rpc-url https://alfajores-forno.celo-testnet.org --constructor-args 100000000000000000 --private-key <paste privake key here> src/Vault.sol:Vault
+```
+
+```bash RewardToken.sol
+forge create --rpc-url https://alfajores-forno.celo-testnet.org --constructor-args 0x066F3BF47Eff52235b188c505E6C4e2aB5cbbaBf 500000000 --private-key <paste privake key here> src/reward/RewardToken.sol:RewardToken
+```
 
 ## Frontend
 
@@ -224,9 +229,9 @@ Our focus is to have a simple user interface that can interact with our contract
 
 **What is web3React?**
 
-<!-- It is a single web3 provider for almost all ethereum-compatible wallets. That is, bringing mutiple web3 providers to a single spot. Web3Modal helps web3 developers to easily onboard users to decentralized applications, switching between blockchain networks, unified wallets interface,  a conveinient interface for watching balances, switch between networks, disconnect wallets, notification support, and so on. -->
+Web3React developed by 'Noah Zinnsmeister' is one of the known and popular methods of integrating wallet provider into dapps. 
 
-Having a single provider in your dapp could amount to a single point of failure if the provider experience a downtime. One of the benefits of web3React is to provider a smooth web3 experience interacting with the blockchain. It supports varieties of wallets such as such as Metamask, Coinbase, walletConnect, etc. An interesting part is that each of the supported wallets i.e providers can be installed as a standalone package/plugin for web3React. However, you are free to implement whichever wallet (s) best fits your need. In this guide, we are implementing three (3) providers: Metamask and WalletConnect each of which will gives us similar functionalities interacting with the Celo network.
+Having a single provider in your dapp could amount to a single point of failure if the provider experience a downtime. One of the benefits of web3React is to provider a smooth web3 experience interacting with the blockchain. It supports varieties of wallets such as such as Metamask, Coinbase, walletConnect, etc. A very interesting side is that each of the supported wallets i.e providers can be installed as a standalone package/plugin for web3React. However, you are free to implement whichever wallet (s) best fits your need. In this guide, we are implementing three (2) providers: Metamask and WalletConnect, each of which gives us similar functionalities for interacting with the Celo network.
 
 **Installation**
 
@@ -534,7 +539,4 @@ You can edit the code to your taste. At this point, you should be able to launch
 ## References​
 
 - [Celo developers resources](https://docs.celo.org/developer/)
-<!-- - [Web3Onbaord doc](https://onboard.blocknative.com) -->
-<!-- - [Official doc](https://www.npmjs.com/packages/@web3-onboard/core) -->
 - [Source code](https://github.com/bobeu/connect-and-interact-with-celo-using-web3react)
-<!-- - [Demo](https://connect-to-celo-using-web3onboard-library.vercel.app/) -->
