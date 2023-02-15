@@ -5,7 +5,7 @@ author:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: [solidity, smart contract]
+tags: ['solidity', 'smart contract']
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
 ---
