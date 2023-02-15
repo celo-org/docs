@@ -1,12 +1,11 @@
 ---
-title: How to Build and Deploy Flashloan Contracts on Celo with Aave
 description: In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.
 author:
   - name: John Fawole
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: [Solidity]
+tags: [solidity, smart contract]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
 ---
@@ -67,7 +66,7 @@ You'll need to create a new contract that both you and the Aave protocol's lendi
 
 Add a new file and name it myFlashLoan.sol and add the following code to it:
 
-```
+``` solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
