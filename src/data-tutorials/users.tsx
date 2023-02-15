@@ -1564,6 +1564,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner'],
   },
   {
+    title: 'Overview of NFTs on the Celo Platform',
+    description: 'In this tutorial, we explore NFTs and what NFTs platforms are on Celo',
+    preview: require('./showcase/beginner/potential-growth-of-blockchain-and-its-use-cases.png'),
+    website: 'blog/tutorials/overview-of-nfts-on-the-celo-platform',
+    tags: ['celosage', 'nft', 'celo', 'beginner'],
+  },
+  {
     title: 'Advance hardhat configration on celo using plugins',
     description: 'Leveraging plug-ins for better developer experience',
     preview: require('./showcase/intermediate/advance-hardhat-configuration-on-celo-using-plugins.png'),
