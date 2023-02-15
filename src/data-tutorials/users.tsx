@@ -1659,7 +1659,7 @@ const Users: User[] = [
     description: 'In this tutorial, we will show you how to create donation dApp to reward your favourite content creator.',
     preview: require('./showcase/advanced/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator.png'),
     website: '/blog/tutorials/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator',
-    tags: ['celosage','celo'], 
+    tags: ['celosage','celo', 'advanced'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
