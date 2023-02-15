@@ -1654,6 +1654,13 @@ const Users: User[] = [
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo', 'beginner'], 
   },
+  {
+    title: 'Build a Donation dApp on Celo to award your Favorite Content Creator',
+    description: 'In this tutorial, we will show you how to create donation dApp to reward your favourite content creator.',
+    preview: require('./showcase/advanced/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator.png'),
+    website: '/blog/tutorials/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator',
+    tags: ['celosage','celo', 'advanced'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
