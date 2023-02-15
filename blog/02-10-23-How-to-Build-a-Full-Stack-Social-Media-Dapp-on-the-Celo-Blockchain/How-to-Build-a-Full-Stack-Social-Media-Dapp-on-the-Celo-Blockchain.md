@@ -7,7 +7,7 @@ url: https://github.com/4undRaiser
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, solidity, celo, react]
 hide_table_of_contents: true
-slug: "/tutorials/How-to-Build-a-Full-Stack-Social-Media-Dapp-on-the-Celo-Blockchain"
+slug: "/tutorials/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain"
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain..png)
