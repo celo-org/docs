@@ -15,16 +15,16 @@ slug: /tutorials/connect-and-interact-with-celo-using-web3react
 
 ## Introduction
 
-Building a user-centric blockchain-based application requires creating welcome experiences that makes your users want to perform an action irrespective of known complexities or ones that may arise in the course of developing your product. There are couple of libraries or provider and they introduce difference user experience. Here, you will learn about one of them.
+Building a user-centric blockchain-based application requires creating welcome experiences that make your users want to perform an action irrespective of known complexities or ones that may arise in the course of developing your product. There is a couple of libraries or provider that introduce different user experience. Here, you will learn about one of them.
 
 ## Prerequisites​
 
-In this tutorial, I will walk you through the standard way of connecting to the Celo blockchain using web3React. You should be at least at the imtermediate level in the following skill sets:
+In this tutorial, I will walk you through the standard way of connecting to the Celo blockchain using web3React. You should be at least at the intermediate level in the following skill sets:
 
 - Solidity development
 - Javascript
 - Knowledge of typescript may be helpful
-- Learn how to use foundry for smart contract development. Please refer to **[this artile](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)** for complete tutorial. Earlier, I made a similar tutorial that uses web3Onboard library **[here]()**. Reading through the post will help you make the right choice of blockchain/web3 provider. 
+- Learn how to use foundry for smart contract development. Please refer to **[this artile](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)** for a complete tutorial. Earlier, I made a similar tutorial that uses web3Onboard library **[here]()**. Reading through the post will help you make the right choice of blockchain/web3 provider. 
 
 ## Requirements​
 
@@ -45,7 +45,7 @@ The dApp was built in two parts.
 
 **Smart contracts**
 
-We will import previous contracts that was used **[here](https://github.com/bobeu/connect-to-celo-using-web3onboard-library)**, deployed to Celo Alfajores. You can find the demo **[here](https://connect-to-celo-using-web3onboard-library.vercel.app/)**.
+We will import previous contracts that were used **[here](https://github.com/bobeu/connect-to-celo-using-web3onboard-library)**, and deploy them to Celo Alfajores. You can find the demo **[here](https://connect-to-celo-using-web3onboard-library.vercel.app/)**.
 
 - **[Visit the repository](https://github.com/bobeu/connect-to-celo-using-web3onboard-library)**.
 
@@ -66,7 +66,7 @@ On successful installation, your file structure should look like this:
 
 ![image](images/1.png)
 
-- Remove everything under 'foundry/lib' folder. Then navigate into the foundry directory.
+- Remove everything under the 'foundry/lib' folder. Then navigate to the foundry directory.
 
 ```bash
 cd foundry
@@ -84,7 +84,7 @@ forge install --no-commit https://github.com/foundry-rs/forge-std
 forge install --no-commit https://github.com/OpenZeppelin/openzeppelin-contracts
 ```
 
-- Without changing the current contract behavior, we will extend the 'Vault' contract to reflect a new feature we'll be adding shortly. With the new feature, $Celo holders can perform compounded Staking where current stake are added to the previous one.
+- Without changing the current contract behavior, we will extend the 'Vault' contract to reflect a new feature we'll be adding shortly. With the new feature, $Celo holders can perform compounded Staking where current stakes are added to the previous one.
 
 Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 
@@ -102,7 +102,7 @@ _src/interfaces/IVault.sol_
 In this file, we need to make some adjustments.
 
 - Replace the "_stake()" function with the following code. 
-- To accommodate compounded staking, we introduced a flag `isCompounded` to differentiate whether an user is staking as usual or in compounded mode.
+- To accommodate compounded staking, we introduced a flag `isCompounded` to differentiate whether a user is staking as usual or in compounded mode.
 - We use the `speed` property to determine the reward.
 
 ```bash
@@ -149,7 +149,7 @@ In this file, we need to make some adjustments.
 > ...
 ```
 
-- Lastly, inside `unstake()` function, we add the speed to actual amount staked. You are free to use your own computation to determine reward for compounded staking. Our goal is to compound reward each time an user commits more $Celo to the vault using `compoundStaking` function.
+- Lastly, inside `unstake()` function, we add the speed to the actual amount staked. You are free to use your own computation to determine the reward for compounded staking. Our goal is to compound reward each time a user commits more $Celo to the vault using `compoundStaking` function.
 
 ```bash
   /**@dev Unstake Celo from the vault.
@@ -171,7 +171,7 @@ The updated code is now compatible with the previous version.
 ```bash
 forge build
 ```
-_Compile successful_
+_Compile successfully_
 
 ![image](images/4.png)
 
@@ -212,7 +212,7 @@ forge create --rpc-url https://alfajores-forno.celo-testnet.org --constructor-ar
 
 ## Frontend
 
-The previous tutorial **[here](https://github.com/bobeu/stakingdapp-on-celo.git)** uses web3Onboard library. We will edit it to use web3react instead. Both libraries tends to achieve similar goal but are different in context and one is more richer in feature. Move into frontend folder.
+The previous tutorial **[here](https://github.com/bobeu/stakingdapp-on-celo.git)** uses web3Onboard library. We will edit it to use web3react instead. Both libraries tend to achieve a similar goal but are different in context and one is richer in features. Move into the frontend folder.
 
 ```bash
 cd stakingdapp-on-celo/frontend
@@ -223,15 +223,15 @@ cd stakingdapp-on-celo/frontend
 ```bash
 yarn install
 ```
-Our focus is to have a simple user interface that can interact with our contracts. The current backend uses multiple providers and 'etherjs' internally.
+Our focus is to have a simple user interface that can interact with our contracts. The current backend uses multiple providers and 'ethers' internally.
 
-> Note: If you use coinbase browser extension, the wallet pop up experience from the injected function is handled by the Coinbase wallet popup.
+> Note: If you use Coinbase browser extension, the wallet pop-up experience from the injected function is handled by the Coinbase wallet popup.
 
 **What is web3React?**
 
-Web3React developed by 'Noah Zinnsmeister' is one of the known and popular methods of integrating wallet provider into dapps. 
+Web3React developed by 'Noah Zinnsmeister' is one of the known and popular methods of integrating wallet providers into dApps. 
 
-Having a single provider in your dapp could amount to a single point of failure if the provider experience a downtime. One of the benefits of web3React is to provider a smooth web3 experience interacting with the blockchain. It supports varieties of wallets such as such as Metamask, Coinbase, walletConnect, etc. A very interesting side is that each of the supported wallets i.e providers can be installed as a standalone package/plugin for web3React. However, you are free to implement whichever wallet (s) best fits your need. In this guide, we are implementing three (2) providers: Metamask and WalletConnect, each of which gives us similar functionalities for interacting with the Celo network.
+Having a single provider in your dapp could amount to a single point of failure if the provider experiences downtime. One of the benefits of web3React is to provide a smooth web3 experience interacting with the blockchain. It supports varieties of wallets such as such as Metamask, Coinbase, walletConnect, etc. A fascinating side is that each of the supported wallets i.e providers can be installed as a standalone package/plugin for web3React. However, you are free to implement whichever wallet (s) best fits your need. In this guide, we are implementing three (2) providers: Metamask and WalletConnect, each of which gives us similar functionalities for interacting with the Celo network.
 
 **Installation**
 
@@ -284,7 +284,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 - Import 'Web3ReactProvider' and use it as our top-level tag that wraps the entire application.
 
-- The component accepts an argument - _getLibrary_ and we supply the `fetchLibrary()` which also accepts a provider of type 'any'. This is because we cannot determine ahead of time the choice of provider users will make. On initialization, the function is called and the injected wallet is parsed as the default connector, 
+- The component accepts an argument - _getLibrary_ and we supply the `fetchLibrary()` which also accepts a provider of type 'any'. This is because we cannot determine the choice of provider users will make ahead of time. On initialization, the function is called and the injected wallet is parsed as the default connector, 
 
 **pages/index.tsx**
 
@@ -357,8 +357,8 @@ export default function Home() {
 
 - Import the connectors packages.
 - Create new instances of the connectors with parameters correctly supplied. We supplied `44787` as the only supported chains to the constructors.
-- We will ask users to select from list of availble providers.
-- When users first visit your dapp, they might not be connected to your supported network. You could automate the process of switching or add the supported network to users' wallet if they trigger an action. They will be notified if they really want to complete the action. You could use the library's provider to achieve this but I prefer a custom `switchNetwork` method. 
+- We will ask users to select from a list of available providers.
+- When users first visit your dapp, they might not be connected to your supported network. You could automate the process of switching or add the supported network to users' wallets if they trigger an action. They will be notified if they really want to complete the action. You could use the library's provider to achieve this but I prefer a custom `switchNetwork` method. 
 
 **components/LandingPage.tsx**
 
@@ -429,16 +429,16 @@ import { useWeb3React } from '@web3-react/core';
 import { Web3Provider } from "@ethersproject/providers";
 ```
 
-- With the hook, we access the `account`, `library` and `active` variables.
-  - 'account' : An address type that represents the user's connected account. When user switch account in wallet, web3React auto-updates the account variable.
-  - library is otherwise the provider object that is returned when wallet is successfully connected.
+- With the hook, we access the `account`, `library`, and `active` variables.
+  - 'account': An address type that represents the user's connected account. When the user switches accounts in the wallet, web3React auto-updates the account variable.
+  - the ‘library’ is otherwise the provider object that is returned when the wallet is successfully connected.
   - 'active' is the state of the provider with regards to your dapp.
 
   ```bash
     const { account, active, library  } = useWeb3React<Web3Provider>();
   ```
 
-  - We run an 'async' in the useEffect function where we gave the library as argument to the provider parameter
+  - We run an 'async' in the useEffect function where we gave the library as an argument to the provider parameter
 
 ```bash
   React.useEffect(() => {
@@ -500,7 +500,7 @@ case 'compoundStaking':
 
 **components/api/index.tx**
 
-- Lastly, the functionalies in this file remain unchanged except that we added a new feature in the switch statement for the function we introduced in our contract.
+- Lastly, the functionality in this file remains unchanged except that we added a new feature in the switch statement for the function we introduced in our contract.
 
 ```bash
   // >...
@@ -516,25 +516,25 @@ case 'compoundStaking':
   // >...
 ```
 
-In case you missed any or confused with the explanation, the complete source code can be found **[here](https://github.com/bobeu/connect-and-interact-with-celo-using-web3react)**.
+In case you need clarification with the explanation, the complete source code can be found **[here](https://github.com/bobeu/connect-and-interact-with-celo-using-web3react)**.
 
 
 ## Conclusion​
 
 What we have learned so far:
 
-- Writing, compiling, deploying and testing smart contracts using foundry.
-- How to install, set up, and use web3React library.
+- Writing, compiling, deploying, and testing smart contracts using foundry.
+- How to install, set up, and use the web3React library.
 - How to build a simple frontend and connect the backend.
 - Manage your dApp using web3React.
 
 ## What next?
 ​
-You can edit the code to your taste. At this point, you should be able to launch your own project as Celo developer. If you are confused anywhere in the tutorial, I left a link to the full source code at the _references_ section. Go over it as many times as you can. In no time, you will get a good grasp. Celo is EVM-compatible blockchain. You can leverage the various web3 tools to build your dream application. Get started with **[Celo documentation](https://docs.celo.org/tutorials)**
+You can edit the code to your taste. At this point, you should be able to launch your own project as a Celo developer. If you are confused anywhere in the tutorial, I left a link to the full source code in the _references_ section. Go over it as many times as you can. In no time, you will get a good grasp. Celo is an EVM-compatible blockchain. You can leverage the various web3 tools to build your dream application. Get started with **[Celo documentation](https://docs.celo.org/tutorials)**
 
 ## About the Author​
 
-**Isaac Jesse** , aka _Bobelr_ is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on as content producer. He has also contributed to Web3 projects as a developer.
+**Isaac Jesse** , aka _Bobelr_ is a smart contract/Web3 developer. He has been in the field since 2018, worked as an ambassador with several projects like Algorand and so on as a content producer. He has also contributed to Web3 projects as a developer.
 
 ## References​
 
