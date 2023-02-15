@@ -1566,7 +1566,7 @@ const Users: User[] = [
   {
     title: 'Overview of NFTs on the Celo Platform',
     description: 'In this tutorial, we explore NFTs and what NFTs platforms are on Celo',
-    preview: require('./showcase/beginner/potential-growth-of-blockchain-and-its-use-cases.png'),
+    preview: require('./showcase/beginner/overview-of-NFTs-on-the-Celo-platform.png'),
     website: 'blog/tutorials/overview-of-nfts-on-the-celo-platform',
     tags: ['celosage', 'nft', 'celo', 'beginner'],
   },
