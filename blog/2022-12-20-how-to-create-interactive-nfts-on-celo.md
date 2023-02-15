@@ -5,7 +5,7 @@ authors:
   - name: Aviraj Khare
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
-tags: [celosage, NFT, interactive, erc-721]
+tags: [celosage, NFT, advanced, erc-721]
 hide_table_of_contents: false
 slug: /tutorials/how-to-create-interactive-nfts-on-celo
 ---

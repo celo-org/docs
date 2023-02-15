@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import Image from "@theme/IdealImage";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import {
-  Tags,
   TagList,
+  Tags,
+  type Tag,
   type TagType,
   type User,
-  type Tag,
 } from "@site/src/data/users";
 import { sortBy } from "@site/src/utils/jsUtils";
+import Image from "@theme/IdealImage";
+import clsx from "clsx";
+import React from "react";
 import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
 
@@ -62,9 +62,12 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
 function ShowcaseCard({ user }: { user: User }) {
   return (
     <li key={user.title} className="card shadow--md">
-      <div className={clsx("card__image", styles.showcaseCardImage)}>
+      <Link
+        href={user.website}
+        className={clsx("card__image", styles.showcaseCardImage)}
+      >
         <Image img={user.preview} alt={user.title} />
-      </div>
+      </Link>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
           <h4 className={styles.showcaseCardTitle}>
