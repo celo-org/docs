@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/pros.png)
+![header](../src/data-tutorials/showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png)
 
 ## Introduction
 
