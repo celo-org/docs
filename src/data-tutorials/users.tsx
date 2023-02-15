@@ -1669,6 +1669,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator',
     tags: ['celosage','celo', 'advanced'], 
   },
+  {
+    title: 'Create a Full Stack Whitelist dApp with Merkle Trees on CELO',
+    description: 'Learn how you can use Merkle trees, a powerful data structure hierarchy, to efficiently verify if a particular data is part of a dataset',
+    preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
+    website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
+    tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
