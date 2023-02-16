@@ -101,7 +101,7 @@ Celo’s principal mission— to create the conditions for prosperity for everyo
 
 This new roadmap ensures the achievement of this mission by delivering a more-enabled platform that encourages builders to reimagine money to meet the needs of their communities and build towards that purpose.
 
-# Conclusion​
+## Conclusion​
 The Celo 2.0 roadmap is available for both builders presently in the Celo ecosystem and others willing to join. Ensure you do the following to harness the potential in this new chapter with Celo as a builder:
 
 * Join the Celo community on [Discord](https://discord.gg/celo) and pick your role as a Developer in the “Pick your Roles” channel.
