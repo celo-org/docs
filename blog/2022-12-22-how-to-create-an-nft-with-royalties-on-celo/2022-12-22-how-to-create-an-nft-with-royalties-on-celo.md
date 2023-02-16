@@ -5,7 +5,7 @@ authors:
   - name: Aviraj Khare
 url: https://github.com/avirajkhare00
 image_url: https://github.com/avirajkhare00.png
-tags: [celosage, nft, royalty, erc-721, erc-2981]
+tags: [celosage, nft, royalty, erc-721, erc-2981, advanced]
 hide_table_of_contents: false
 slug: /tutorials/how-to-create-an-nft-with-royalties-on-celo
 ---
