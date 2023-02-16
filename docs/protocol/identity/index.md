@@ -2,11 +2,13 @@
 title: Celo Identity Overview
 description: How Celo maps wallet addresses to phone numbers to make financial tools more accessible to mobile phone users.
 ---
+
 # Identity Overview
 
 How Celo maps wallet addresses to phone numbers to make financial tools more accessible to mobile phone users.
 
-___
+---
+
 ## Introduction to Identity on Celo
 
 Celo’s unique purpose is to make financial tools accessible to anyone with a mobile phone. One barrier for the usage of many other platforms is their required usage of 30+ hexadecimal-character-long strings as addresses. It’s like bank account numbers, but worse. Hard to remember, easy to mess up. They are so hard to use that the predominant way of exchanging addresses is usually via copy-paste over an existing messaging channel or via QR-codes in person. Both approaches are practically interactive protocols and thus do not cover many use cases in which people would like to transact. Celo offers an optional lightweight identity layer that starts with a decentralized mapping of phone numbers to wallet addresses, allowing users to transact with one another via the most common identity scheme everyone is familiar with: their address book.
@@ -40,7 +42,7 @@ To protect user privacy by preventing mass harvesting of phone numbers, the Celo
 The attestation service is a simple Node.js service that validators run to send signed messages for attestations. It can be configured with SMS providers, as different providers have different characteristics like reliability, trustworthiness and performance in different regions. The attestation service currently supports [Twilio](https://www.twilio.com) and [Nexmo](https://nexmo.com). Celo should widen the number of supported providers over time.
 
 <!--
- We have been experimenting with a SMS provider that we would like community feedback on. Instead of sending the SMS via conventional providers like Twilio, users of a `Rewards Mobile App` could register themselves with a `Verification Pool` and be made responsible for sending those text messages. It would allow users with cheap or leftover SMS capacity from their cell phone plan to effectively acquire a share of the attestation request fees. It would represent a unique on-ramp for users who do not have access to classic on-ramps like exchanges. Validators could configure their attestation service to use such a SMS provider which could in theory provide better inclusion and performance. 
+ We have been experimenting with a SMS provider that we would like community feedback on. Instead of sending the SMS via conventional providers like Twilio, users of a `Rewards Mobile App` could register themselves with a `Verification Pool` and be made responsible for sending those text messages. It would allow users with cheap or leftover SMS capacity from their cell phone plan to effectively acquire a share of the attestation request fees. It would represent a unique on-ramp for users who do not have access to classic on-ramps like exchanges. Validators could configure their attestation service to use such a SMS provider which could in theory provide better inclusion and performance.
  -->
 
 ### Future improvements to privacy

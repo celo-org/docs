@@ -4,7 +4,7 @@ description: Learn how to write a smart contract using the Solidity language and
 authors:
   - name: ✍️ Lucas Espinosa  ·  🔗 External
 tags: [figment, erc1155, nft, hardhat]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to create a ERC1155 NFT in Celo Network with Hardhat

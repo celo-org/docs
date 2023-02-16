@@ -4,7 +4,7 @@ description: How to deploy a smart contract to Celo testnet, mainnet, or a local
 authors:
   - name: ✍️ Joe Nyzio
 tags: [truffle, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle
 ---
 
@@ -239,7 +239,7 @@ Learn more: [Celo CLI: A practical guide to energize your Celo toolkit](https://
 
 ### Fund your account
 
-The [Alfajores testnet faucet](https://celo.org/developers/faucet) helps you fund your account with test tokens. Copy your address from the terminal and paste it into the site to fund your account. This should send you tokens within a few seconds.
+The [Alfajores testnet faucet](https://faucet.celo.org) helps you fund your account with test tokens. Copy your address from the terminal and paste it into the site to fund your account. This should send you tokens within a few seconds.
 
 ![image](images/16.png)
 

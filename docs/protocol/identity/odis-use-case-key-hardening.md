@@ -19,9 +19,10 @@ Using ODIS for key hardening allows passwords to be used in a number of applicat
 Choosing an appropriately restrictive rate limit is crucial.
 Using a rate limit that is too restrictive may cause users to become frustrated as their access is denied if they take too many tries to recall their password, and a rate limit that is too loose can allow an attacker a much better chance at guessing the users password.
 The appropriate rate limit is related to how much entropy the user secret has.
-* A strong user password can tolerate a loose rate limit, allowing millions of attempts without significant chance of attacker success.
-* An average user password can tolerate a moderate rate limit, allowing hundreds of attempts.
-* A 4 or 6 digit PIN can tolerate tens of attempts before the attacker has a significant chance of success.
+
+- A strong user password can tolerate a loose rate limit, allowing millions of attempts without significant chance of attacker success.
+- An average user password can tolerate a moderate rate limit, allowing hundreds of attempts.
+- A 4 or 6 digit PIN can tolerate tens of attempts before the attacker has a significant chance of success.
 
 Because the right rate limit is context specific, [Domains](/protocol/identity/odis-domain) can be configured to the needs of the user.
 The [Sequential Delay Domain](/protocol/identity/odis-domain-sequential-delay-domain) is designed for the use case of PIN and password hashing, and can be used to allow for a fixed number of attempts over a configurable time period (e.g. 15 attempts over 3 days).

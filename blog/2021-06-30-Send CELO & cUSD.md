@@ -4,7 +4,7 @@ description: Learn how to connect to the Celo test network and transfer tokens u
 authors:
   - name: 🔗 External
 tags: [figment, cusd, celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Send CELO & cUSD

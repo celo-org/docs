@@ -4,7 +4,7 @@ description: Creating the world’s first carbon-neutral blockchain was just the
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/9-sustainable-defi-projects-built-on-celo"
 ---
 

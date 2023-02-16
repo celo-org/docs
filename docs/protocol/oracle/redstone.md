@@ -18,6 +18,7 @@ This document will cover:
 RedStone is a data ecosystem that delivers fast and accurate financial information in a decentralised fashion using an innovative approach of on-demand data fetching.
 
 RedStone offers a radically different design of Oracles catering for the needs of modern Defi protocols.
+
 - Leverage Arweave blockchain as a cheap and permanent storage
 - Use token incentives to motivate data providers to maintain data integrity and the uninterrupted service
 - Use signed meta-transactions to deliver prices on-chain
@@ -26,6 +27,7 @@ RedStone offers a radically different design of Oracles catering for the needs o
 You can read much more about the RedStone protocol [in the RedStone compiled documentation.](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
 
 ## 📈 What data is available
+
 Thanks to our innovative architecture, we offer more than one thousand of pricing data feeds, including tokens, stocks, ETFs, commodities, and much more for a fraction of regular Oracles integration costs.
 
 You can check available assets and data providers using [app.redstone.finance.](https://app.redstone.finance/)
@@ -39,10 +41,12 @@ Please read this [short documentation](https://github.com/redstone-finance/redst
 💡 Note: currently RedStone is integrated only with `ethers.js` library, so in order to use it on Celo blockchain dApps you should use [ethers.js](https://docs.ethers.io/v5/) along with [@celo-tools/celo-ethers-wrapper](https://www.npmjs.com/package/@celo-tools/celo-ethers-wrapper).
 
 ## 👨‍💻 Code examples
+
 - [Repo with examples](https://github.com/redstone-finance/redstone-evm-connector-examples)
 - [Generating pseudo-random values](https://github.com/redstone-finance/redstone-evm-connector-examples/blob/main/contracts/example-pseudo-random.sol)
 - [Example with multiple contracts](https://github.com/redstone-finance/redstone-evm-connector-examples/tree/main/contracts/example-proxy-calldata)
 - [Synthetic commodities dApp on Celo](https://github.com/redstone-finance/komodo-celo)
 
 ## 🙋‍♂️ Need help?
+
 Please feel free to contact RedStone team [on Discord](https://redstone.finance/discord) if you have any questions.
