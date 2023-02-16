@@ -87,7 +87,7 @@ OpenZeppelin provides a powerful set of tools to help you create your token on E
 Contributor
 
 Here is an example of ERC20
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -155,7 +155,7 @@ Let's go over each item in the code to help you if you are a new Solidity develo
 To tokenize physical assets on Celo, you can use a standard called ERC-721. You can also start your contract with Openzeppelin and then customize it for your needs.
 
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
