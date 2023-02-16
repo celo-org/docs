@@ -1654,6 +1654,13 @@ const Users: User[] = [
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo'], 
   },
+  {
+    title: 'Simplifying the Celo 2.0 Roadmap for Celo Builders',
+    description: 'This article breaks down the details of the Celo 2.0 roadmap into specific features, building requirements and outlooks as well as pointing out the developments that will follow this new roadmap.',
+    preview: require('./showcase/beginner/simplifying-the-celo-2.0-roadmap-for-celo-builders.png'),
+    website: '/blog/tutorials/simplifying-the-celo-2.0-roadmap-for-celo-builders',
+    tags: ['celosage','celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
