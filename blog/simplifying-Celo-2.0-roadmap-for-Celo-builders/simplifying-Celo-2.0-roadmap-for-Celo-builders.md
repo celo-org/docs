@@ -13,6 +13,7 @@ slug: /tutorials/simplifying-celo-2.0-roadmap-for-celo-builders
 ---
 
 
+
 ## Introduction​
 Since the [Celo whitepaper](https://celo.org/papers/whitepaper) launch in 2018, the mission —to create prosperity for all by reimagining money for the greater good— remains unchanged and developments in the last 5 years have reemphasized this position. Following [the Celo Mainnet going live in May 2020](https://blog.celo.org/its-official-celo-mainnet-is-here-6a3a71763f68#:~:text=We%27re%20excited%20to%20share,April%2022%2C%20is%20officially%20Mainnet!), Celo has consistently delivered easy-to-use payments sent directly to mobile numbers, allow simple stable-value transfers, promote community currencies like Kolektivo Guilder backed by natural assets (ReFi), and provided social dividends by disbursing over $3.3M to 536,000 people across 26 emerging economies through projects like ImpactMarket and GoodDollar.
 
