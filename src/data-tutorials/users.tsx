@@ -979,6 +979,14 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'cli'],
   },
   {
+
+    title: 'Pros and Cons of using Celo to create Decentralized Applications',
+    description: 'Pros and Cons of using Celo to create Decentralized Applications',
+    preview: require('./showcase/beginner/pros.png'),
+    website: 'blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications',
+    tags: ['celosage', 'beginner', 'foundation'],
+    },
+  {
     title: 'Celo Composer - Easily Build Full-Stack Mobile dApps on Celo',
     description: 'Quickly develop full-stack progressive web applications on Celo with the Celo Composer.',
     preview: require('./showcase/beginner/celo-composer-easily-build-full-stack-mobile-dapps-on-celo.png'),
@@ -1660,6 +1668,20 @@ const Users: User[] = [
     preview: require('./showcase/beginner/why-should-you-use-celo.png'),
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo', 'beginner'], 
+  },
+  {
+    title: 'Build a Donation dApp on Celo to award your Favorite Content Creator',
+    description: 'In this tutorial, we will show you how to create donation dApp to reward your favourite content creator.',
+    preview: require('./showcase/advanced/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator.png'),
+    website: '/blog/tutorials/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator',
+    tags: ['celosage','celo', 'advanced'], 
+  },
+  {
+    title: 'Create a Full Stack Whitelist dApp with Merkle Trees on CELO',
+    description: 'Learn how you can use Merkle trees, a powerful data structure hierarchy, to efficiently verify if a particular data is part of a dataset',
+    preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
+    website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
+    tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
