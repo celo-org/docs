@@ -867,10 +867,10 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
-    title: "Introduction to Zero-Knowledge Technology and it's Blockchain Applications",
-    description: "This tutorial is an introduction to zero-knowledge technology and some use cases in the blockchain space",
+    title: 'Introduction to Zero-Knowledge Technology and it\'s Blockchain Applications',
+    description: 'This tutorial is an introduction to zero-knowledge technology and some use cases in the blockchain space',
     preview: require('./showcase/intermediate/introduction-to-zero-knowledge-technology-and-its-blockchain-applications.png'),
-    website: "blog/tutorials/Introduction-to-Zero-Knowledge-Technology-and-it's-Blockchain-Applications",
+    website: 'blog/tutorials/introduction-to-zero-knowledge-technology-and-it\'s-blockchain-applications',
     tags: ['celosage', 'intermediate'],
   },
   {
