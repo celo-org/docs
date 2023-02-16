@@ -10,7 +10,8 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain..png)
+![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain.png)
+
 
 ## Introduction
 
