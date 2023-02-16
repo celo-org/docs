@@ -1,13 +1,13 @@
 ---
-title: 'Introduction to Zero-Knowledge Technology and it\'s Blockchain Applications'
+title: "Introduction to Zero-Knowledge Technology and it\'s Blockchain Applications"
 description: This tutorial is an introduction to zero-knowledge technology and some use cases in the blockchain space
 authors:
   - name: ✍️ Jonathan Iheme
-url: https://github.com/4undRaiser
+url: https://github.com/4undRaise
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, intermediate]
 hide_table_of_contents: true
-slug: '/tutorials/introduction-to-zero-knowledge-technology-and-it\'s-blockchain-applications'
+slug: "/tutorials/introduction-to-zero-knowledge-technology-and-it\'s-blockchain-applications"
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/introduction-to-zero-knowledge-technology-and-its-blockchain-applications.png)
