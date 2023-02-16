@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/80678178?v=4
 tags: [celo, intermediate, celosage]
 hide_table_of_contents: true
-slug: /tutorials/introduction-to-Token-Economics-on-Celo
+slug: /tutorials/introduction-to-token-economics-on-celo
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/token.png) 
@@ -134,14 +134,14 @@ By following these steps, you can continue to gain a better understanding of Cel
 
 ### References
 
-Because you've just learned about Celo's intricate token economics, it's time to look deeper into this exciting new ecosystem. We strongly advise you to explore the following resources to further your education [Celo's official website](https://celo.org/) This is the best place to keep up with everything Celo does, including new developments and upcoming events.
+- Because you've just learned about Celo's intricate token economics, it's time to look deeper into this exciting new ecosystem. We strongly advise you to explore the following resources to further your education [Celo's official website](https://celo.org/) This is the best place to keep up with everything Celo does, including new developments and upcoming events.
 
-[Celo Community](https://community.celo.org/) Join the conversation with other Celo fans to stay up-to-date on the latest news and discussions in the community.
+- [Celo Community](https://community.celo.org/) Join the conversation with other Celo fans to stay up-to-date on the latest news and discussions in the community.
 
-[Technical Documentation for Celo](https://docs.celo.org/developers/overview) This is the place to start if you're a developer looking to build on the Celo platform. You'll find all of the technical information you need to get started right here.
+- [Technical Documentation for Celo](https://docs.celo.org/developers/overview) This is the place to start if you're a developer looking to build on the Celo platform. You'll find all of the technical information you need to get started right here.
 
-[Blog Celo](https://blog.celo.org/) By reading the official Celo blog, you can stay up-to-date on the latest Celo developments and trends.
+- [Blog Celo](https://blog.celo.org/) By reading the official Celo blog, you can stay up-to-date on the latest Celo developments and trends.
 
-**Social Media** To stay connected with the community, follow Celo on [Twitter](https://twitter.com/CeloOrg), and join their [Telegram](https://t.me/celoorg) and [Discord](https://discord.gg/celo) channels.
+- **Social Media** To stay connected with the community, follow Celo on [Twitter](https://twitter.com/CeloOrg), and join their [Telegram](https://t.me/celoorg) and [Discord](https://discord.gg/celo) channels.
 
 You'll be well on your way to becoming an expert in Celo's token economics and participating in this exciting new network if you take advantage of these resources. So, why delay? Begin exploring the future of decentralized finance today!
