@@ -7,7 +7,7 @@ authors:
   - title: Product Manager, Technical Writer/Contributor @CeloFoundation
     url: https://github.com/Southpaw0
 image: 
-tags: [celosage, celo2.0, celodocs, roadmap]
+tags: [celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/simplifying-celo-2.0-roadmap-for-celo-builders
 ---
