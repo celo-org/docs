@@ -1478,7 +1478,7 @@ const Users: User[] = [
     title: "Gas Optimization Techniques in Solidity on Celo",
     description:
       "Optimizing smart contract performance is an essential aspect of blockchain development.",
-    preview: require("./showcase/advanced/gas-optimization-techniques-in-solidity.png"),
+    preview: require("./showcase/advanced/advanced-tutorials.png"),
     website: "/blog/tutorials/gas-optimization-techniques-in-solidity",
     tags: ["celosage", "advanced", "solidity"],
   },
