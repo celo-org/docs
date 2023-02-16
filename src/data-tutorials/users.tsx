@@ -867,6 +867,14 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
   {
+    title: 'Introduction to Zero-Knowledge Technology and its Blockchain Applications',
+    description: 'This tutorial is an introduction to zero-knowledge technology and some use cases in the blockchain space',
+    preview: require('./showcase/intermediate/introduction-to-zero-knowledge-technology-and-its-blockchain-applications.png'),
+    website: 'blog/tutorials/introduction-to-zero-knowledge-technology-and-its-blockchain-applications',
+    tags: ['celosage', 'intermediate'],
+  },
+
+  {
     title: ' How to Build Car Marketplace dapp Using React',
     description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
     preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
