@@ -1,6 +1,6 @@
 ---
 title: How to listen to smart contract On-Chain events with Celo 
-description: This tutorail teaches it's readers about reading celo on-chain event
+description: This tutorial teaches it's readers about reading celo on-chain event
 authors:
   - name: Mayowa Julius Ogungbola
     title: Software Engineer, Technical writer @Celo Foundation
