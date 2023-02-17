@@ -7,7 +7,7 @@ authors:
     url: https://github.com/Ernesto-tha-great
     image_url: https://github.com/Ernesto-tha-great.png
 tags: [React, IPFS, composer]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: tutorials/building-a-decentralized-newsfeed-with-celo-composer
 ---
 

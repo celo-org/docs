@@ -7,7 +7,7 @@ authors:
     url: https://twitter.com/ElijahSorinola
     image_url: blog/23-12-22- how-to-become-a-web3-developer/images/web3 32.png
 tags: [beginner, Celo Sage]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/How to become a Web3 Developer
 ---
 

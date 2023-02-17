@@ -25,7 +25,7 @@ If you're a developer considering building on the Celo platform, or want to try 
 
 - [Alfajores Testnet Block Explorer](https://alfajores-blockscout.celo-testnet.org)
 - [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org)
-- [Alfajores Testnet Faucet](https://celo.org/build/faucet)
+- [Alfajores Testnet Faucet](https://faucet.celo.org)
 - [Celo Wallet for Alfajores](https://celo.org/build/wallet)
 
 **Chain ID:** `44787`

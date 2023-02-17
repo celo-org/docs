@@ -7,7 +7,7 @@ authors:
     url: https://github.com/Ernesto-tha-great
     image_url: https://github.com/Ernesto-tha-great.png
 tags: [React, composer, crowdfunding, foundsation]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Composer Series: Build a Crowdfunding ReFi dApp with Celo Composer

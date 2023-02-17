@@ -4,7 +4,7 @@ description: Learn how to deploy your own smart contracts on the Celo network
 authors:
   - name: 🔗 External
 tags: [figment, beginner]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Deploy and Interact with Contracts (Remotely)
