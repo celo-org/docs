@@ -5,7 +5,7 @@ authors:
   - name: Elijah Sorinola
     title: Content Writer, Celo Sage
     image_url: https://avatars.githubusercontent.com/u/86154565?s=400&v=4
-tags: [beginner, Celo Sage]
+tags: [beginner, celosage]
 hide_table_of_contents: true
 slug: /tutorials/How-to-become-a-Web3-Developer
 ---
