@@ -7,7 +7,6 @@ description: Details of the release process for updating the Celo Oracles for th
 
 Details of the release process for updating the Celo Oracles Client for the Mento Stability Protocol.
 
-
 # Versioning
 
 Releases of are made as needed. Releases are numbered according to semantic versioning, as described at [semver.org](https://semver.org).
@@ -46,7 +45,7 @@ As well as automated CI tests, all releases are expected to go through manual te
 
 ## Promotion process
 
-Cherry picked branch changes shall be added to a `releases` protected branch. When merging code to this branch, the version number should be updated accordingly. 
+Cherry picked branch changes shall be added to a `releases` protected branch. When merging code to this branch, the version number should be updated accordingly.
 
 ### Source control
 
@@ -89,7 +88,6 @@ Cherry picked branch changes shall be added to a `releases` protected branch. Wh
 ### Emergency Patches
 
 Security fixes or hotfixes may not have a public commit attached to them in case the vulnerability needs to be patched before disclosing to the general public to prevent an attacker to exploit a vulnerability before operators patch their services. Emergency patches will be distributed using the same method described in [Git tags](#git-tags)
-
 
 ## Vulnerability Disclosure
 

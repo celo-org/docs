@@ -4,7 +4,7 @@ description: Everything you need to get started with Celo.
 authors:
   - name: ✍️ Joe Nyzio  ·  🔗 External
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.

@@ -12,21 +12,21 @@ import React, {
   type ComponentProps,
   type ReactNode,
   type ReactElement,
-} from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {toggleListItem} from '@site/src/utils/jsUtils';
-import type {TagType} from '@site/src/data-tutorials/users';
+} from "react";
+import { useHistory, useLocation } from "@docusaurus/router";
+import { toggleListItem } from "@site/src/utils/jsUtils";
+import type { TagType } from "@site/src/data-tutorials/users";
 
-import {prepareUserState} from '../../index';
-import styles from './styles.module.css';
+import { prepareUserState } from "../../index";
+import styles from "./styles.module.css";
 
-interface Props extends ComponentProps<'input'> {
-  icon: ReactElement<ComponentProps<'svg'>>;
+interface Props extends ComponentProps<"input"> {
+  icon: ReactElement<ComponentProps<"svg">>;
   label: ReactNode;
   tag: TagType;
 }
 
-const TagQueryStringKey = 'tags';
+const TagQueryStringKey = "tags";
 
 export function readSearchTags(search: string): TagType[] {
   return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
@@ -40,8 +40,8 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
 }
 
 function ShowcaseTagSelect(
-  {id, icon, label, tag, ...rest}: Props,
-  ref: React.ForwardedRef<HTMLLabelElement>,
+  { id, icon, label, tag, ...rest }: Props,
+  ref: React.ForwardedRef<HTMLLabelElement>
 ) {
   const location = useLocation();
   const history = useHistory();
@@ -67,19 +67,19 @@ function ShowcaseTagSelect(
         id={id}
         className="screen-reader-only"
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+          if (e.key === "Enter") {
             toggleTag();
           }
         }}
         onFocus={(e) => {
           if (e.relatedTarget) {
             e.target.nextElementSibling?.dispatchEvent(
-              new KeyboardEvent('focus'),
+              new KeyboardEvent("focus")
             );
           }
         }}
         onBlur={(e) => {
-          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent('blur'));
+          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("blur"));
         }}
         onChange={toggleTag}
         checked={selected}

@@ -7,7 +7,7 @@ description: How to use Web3 from ContractKit to read data from the Celo blockch
 
 How to use Web3 from ContractKit to read data from the Celo blockchain.
 
-___
+---
 
 :::tip
 
@@ -22,17 +22,17 @@ Because of this, the `Ethereum` JSON-RPC calls done via the web3 (except some sp
 For example:
 
 ```ts
-const web3 = kit.web3
+const web3 = kit.web3;
 
-web3.eth.getBalance(someAddress)
+web3.eth.getBalance(someAddress);
 ```
 
 or
 
 ```ts
-const web3 = kit.web3
+const web3 = kit.web3;
 
-web3.eth.getBlock("latest")
+web3.eth.getBlock("latest");
 ```
 
 will work the same way.
@@ -41,7 +41,7 @@ will work the same way.
 
 As you have read in our guide, Celo uses some extra fields: `feeCurrency`, `gatewayFeeRecipient` and `gatewayFee`, that among other things allows you to pay gas with ERC20 Tokens. These fields are expected by the node.
 
-To facilitate the life of every developer, we decided to wrap the `Provider` set in the `Web3` instance, and add our way to handle local signing using these new fields. Similar to what *Metamask* does, we intercept every transaction and perform a local signing when required. This wrapper is called `CeloProvider`.
+To facilitate the life of every developer, we decided to wrap the `Provider` set in the `Web3` instance, and add our way to handle local signing using these new fields. Similar to what _Metamask_ does, we intercept every transaction and perform a local signing when required. This wrapper is called `CeloProvider`.
 
 This let you use the Web3 instance to interact with node's Json RPC API in a transparent way, just deciding which Provider do you need.
 

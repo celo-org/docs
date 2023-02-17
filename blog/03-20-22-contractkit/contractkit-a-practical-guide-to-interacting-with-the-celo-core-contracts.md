@@ -4,7 +4,7 @@ description: How to access the Celo Blockchain with JavaScript using ContractKit
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts"
 ---
 
