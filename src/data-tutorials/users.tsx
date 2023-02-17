@@ -804,6 +804,13 @@ const Users: User[] = [
     tags: ['celosage', 'video', 'beginner', "celo", "metamask"],
   },
   {
+    title: 'Como integrar seu smart contract ao oráculo da Redstone Finance',
+    description: 'Aprenda como conectar seu smart contract à rede de oráculos da Redstone Finance',
+    preview: require('./showcase/advanced/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance.png'),
+    website: 'blog/tutorials/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance',
+    tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
+  },
+  {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
