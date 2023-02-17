@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'flutter', 'composer'],
   },
   {
+    title: 'How to build a Basic CRUD App in Solidity',
+    description: 'This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.',
+    preview: require('./showcase/celo-sage.png'),
+    website: 'blog/tutorials/how-to-build-a-basic-crud-app-in-solidity',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),

@@ -1,8 +1,21 @@
+---
+title: How to build a Basic CRUD App in Solidity
+description: This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.
+authors:
+  - name: Oyeniyi Abiola Peace
+    title: Community Moderator, Celo
+    url: https://github.com/iamoracle
+    image_url: https://github.com/iamoracle.png
+tags: [CRUD, Celo Sage, Solidity]
+hide_table_of_contents: true
+slug: /tutorials/how-to-build-a-basic-crud-app-in-solidity
+---
+
 # How to build a Basic CRUD App in Solidity
 
 ## Introduction
 
-Ever pondered the process of developing a blockchain application? With Ethereum, smart contracts are the foundation. This post will teach you how to create a basic Ethereum smart contract and test it with the Truffle framework. Our smart contract will carry out the crucial create, read, update, and delete (CRUD) actions. We'll concentrate on Solidity-based smart contracts. The Ethereum blockchain will be installed locally using the Truffle Suite, and smart contracts will be created using the Ethereum Virtual Machine (EVM).
+Ever pondered the process of developing a blockchain application? With Ethereum Virtual Machine (EVM), smart contracts are the foundation. This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework. Our smart contract will carry out the crucial create, read, update, and delete (CRUD) actions. We'll concentrate on Solidity-based smart contracts.
 
 ## Prerequisites
 
@@ -50,41 +63,48 @@ This tutorial will not concentrate on React or a browser-based UI. Instead, we'l
 The client is a React project folder where we can design the application's user interface. The compiled smart contracts in JSON format are kept in a folder called `client/src/contracts`. When we compile our smart contracts, these files are generated. They include the ABI, bytecode, and other data.
 
 ```json
-[{
-		"inputs": [],
-		"name": "last_completed_migration",
-		"outputs": [{
-			"internalType": "uint256",
-			"name": "",
-			"type": "uint256"
-		}],
-		"stateMutability": "view",
-		"type": "function",
-		"constant": true
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [{
-			"internalType": "address",
-			"name": "",
-			"type": "address"
-		}],
-		"stateMutability": "view",
-		"type": "function",
-		"constant": true
-	},
-	{
-		"inputs": [{
-			"internalType": "uint256",
-			"name": "completed",
-			"type": "uint256"
-		}],
-		"name": "setCompleted",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	}
+[
+  {
+    "inputs": [],
+    "name": "last_completed_migration",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "completed",
+        "type": "uint256"
+      }
+    ],
+    "name": "setCompleted",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
 ]
 ```
 
@@ -356,7 +376,6 @@ The “svelte” item has been deleted from the list
 Creating smart contracts and deploying them on the blockchain is both entertaining and powerful. It provides a fresh perspective on traditional programming. Using these techniques, you can create a variety of applications such as online voting, digital banks, wallets, auctions, and so on.
 
 With the understanding of how to implement CRUD features with solidity, there’s a lot you can build and do with it. Get creative and build something amazing!
-
 
 ## Author
 
