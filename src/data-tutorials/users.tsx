@@ -796,6 +796,13 @@ const Users: User[] = [
     website: '/blog/tutorials/Why-should-you-use-Celo-Blockchain',
     tags: ['celosage','celo'], 
   },
+   {
+    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
+    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
+    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
+    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
+    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
+  },
   {
     title: 'How to build a Bookshop-Marketplace-Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',

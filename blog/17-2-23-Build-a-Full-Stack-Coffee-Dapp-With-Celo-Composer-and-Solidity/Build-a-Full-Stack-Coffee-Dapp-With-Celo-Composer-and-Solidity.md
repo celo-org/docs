@@ -6,7 +6,7 @@ authors:
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
-tags: ['celosage','celocomposer','celo','celowallet','reactcelo','contractkit','dapp','valora']
+tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced']
 hide_table_of_contents: true
 slug: /tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity
 
