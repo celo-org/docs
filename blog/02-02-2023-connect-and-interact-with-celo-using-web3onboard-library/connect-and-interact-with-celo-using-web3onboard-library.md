@@ -92,7 +92,7 @@ Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 
 - Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is simply a function declaration/interface for interacting with the main function that will be implemented in the 'Vault' contract. 
 
-```bash
+```js
 function stakeOnBehalf(address who) external returns(bool);
 ```
 _src/interfaces/IVault.sol_
@@ -107,31 +107,28 @@ In this file, we need to make a few twists to avoid function redundancy. Since w
   - An address.
   - A Value of type 'uint256'. 
 
-```bash
-> ...
+```js
+// > ...
   ///@dev deposit $Celo to vault
   function _stake(address who, uint value) private returns(bool){
     // code here
   }
-> ...
-
+// > ...
 ```
 
 - Transfer the contents of existing _stake()_ function to the newly-created _stake(address who, uint value)_ function. Thereafter, replace wherever _msg.sender_ appears with _who_, and _msg.value_ with _value_.
 
-```bash
-> ...
-
+```js
+// > ...
   ///@dev deposit $Celo to vault
   function stake() public payable override returns(bool) {
     
   }
-> ...
-
+// > ...
 ```
 
-```bash
-> ...
+```js
+// > ...
   ///@dev deposit $Celo to vault
   function _stake(address who, uint value) private returns(bool){
     address alc;
@@ -151,23 +148,22 @@ In this file, we need to make a few twists to avoid function redundancy. Since w
 
     return true;
   }
-> ...
-
+// > ...
 ```
 
 - The existing _stake_ function should be empty by now. To make the function retain previous behavior, replace the function with the code below.
 
-```bash
-> ...
+```js
+// > ...
   ///@dev deposit $Celo to vault
   function stake() public payable override returns(bool) {
       return _stake(msg.sender, msg.value);
   }
-> ...
+// > ...
 ```
 - Create another function named _stakeOnBehalf()_ with an address parameter. If Bob wants to stake on behalf of Alice, they only need to give Alice's address and specify the amount on the frontend as msg.value. We then call the _stake()_ and supply the address and amount as arguments.
 
-```bash
+```js
   ///@dev Stake on behalf of @param who Account to stake for
   function stakeOnBehalf(address who) public payable override returns(bool){
     require(msg.sender != who, "please use designated function");
@@ -191,7 +187,7 @@ _Compile successful_
 
 Before running the test command, we need to write test for a new feature we just introduced in the Vault contract. With the current state of the test file in `foundry/test/Vault.t.sol`, there is only one interactive account - _VaultTest_. This account will act as the account staking on behalf of other account. For the other account, we will create a separate contract to represent account that is staked for. Just above the existing contract, paste the following code.
 
-```bash
+```js
 contract AnonymousStaker is Test {
   Vault public vaultContract;
   RewardToken public token;
@@ -225,7 +221,7 @@ contract AnonymousStaker is Test {
 
 We then add two new functions in the main tester account - _VaultTest.sol_ to test the new feature.
 
-```bash
+```js
 > ...
 function testStakeOnBehalf() public {
     uint depositTime = block.timestamp;
@@ -244,8 +240,7 @@ function testStakeOnBehalf() public {
     require(token.balanceOf(stk.account) == 1e15, "Zero token reward");
     assertEq(stk.celoAmount, 0);
   }
-> ...
-
+// > ...
 ```
 
 Now, run the command, and the test should pass as expected.
@@ -304,7 +299,7 @@ To get the full experience, you might want to install coinbase and Metamask brow
 
 - Import the required modules.
 
-```bash
+```ts
 import { init } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
 import coinbaseWallet from "@web3-onboard/coinbase";
@@ -315,8 +310,8 @@ import { ethers } from "ethers";
 
 - Activate the sdks and fetch the API key. To get your API key, Go to your **[blocknative dashboard](https://explorer.blocknative.com)**. Using the key gives us access to more features.
 
-```bash
-> ...
+```ts
+>...
 const API_KEY = process.env.BLOCKNATIVE_API_KEY
 const injected = injectedModule();
 const coinbase = coinbaseWallet();
@@ -325,7 +320,7 @@ const walletconnect = walletConnectModule();
 
 - Set up requires that we intialize with a list of network or chain that the web3Onboard with connect our dapp to. In this case, we only want Alfajores. The expected data type for the chain Id is `string`. Alfajores' chainId is `44787`. Let's quickly create a utility that can help us convert it to a hexadecimals value in string format using etherJs 'hexlify'function.
 
-```bash
+```ts
 > ...
 // Converts chain id in number mode to hex value
 export function hexlify(chainid: number) {
@@ -334,7 +329,7 @@ export function hexlify(chainid: number) {
 ```
 
 - Set up the network list.
-```bash
+```ts
 > ...
 const ALFAJORES: ChainParams = {
   key: 1,
@@ -361,7 +356,7 @@ const CHAINS = [
 
 >Note: `celologopng.png` resides in the public folder.
 
-```bash
+```ts
 export const web3Onboard = init({
   wallets: [injected, coinbase, walletconnect],
   chains: [...CHAINS],
@@ -413,7 +408,7 @@ The `init()` method initializes and maintain a separate state for our dapp which
 
 - Import required modules
 
-```bash
+```ts
 import LandingPage from "../components/LandingPage";
 import { useConnectWallet, useSetChain, useWallets } from "@web3-onboard/react";
 import { web3Onboard } from "@/components/apis/web3Onboard/setup";
@@ -421,7 +416,7 @@ import { web3Onboard } from "@/components/apis/web3Onboard/setup";
 
 - Inside the 'Home' component, we import the `useConnectWallet` hook from the `@web3-onboard/react` library. Through array destructuring, we extracted `connect` and `disconnect` functions to authenticate and log them out of the dApp.
 
-```bash
+```ts
 export default function Home() {
   const [isUserAuthenticated, setAuthentication] = React.useState<boolean>(false);
 
@@ -433,9 +428,8 @@ export default function Home() {
 
 - Create a function to properly ask for permission to connect to user's wallet. Place it inside the component. If the step is successful, only then can we display the app to the user. Users are presented with three wallet options. We could make the dApp to remember user's last connected wallet or connect to a specific wallet. Visit the **[official documentation](https://www.npmjs.com/packages/@web3-onboard/core)** to learn more about.
 
-```bash
->...
-
+```ts
+//>...
   async function handleConnect() {
     if (isUserAuthenticated) return;
     try {
@@ -462,9 +456,8 @@ export default function Home() {
   - Display current connected chain/network.
   - Switch between available networks
 
-```bash
->...
-
+```ts
+// >...
   async function logout() {
     if (!isUserAuthenticated) throw new Error("User not authenticated");
     await disconnect().then(() => {
@@ -476,7 +469,7 @@ export default function Home() {
 
 Your `pages/index.tsx` should look like this.
 
-```bash
+```ts
 import React from "react";
 import App from "../components/App";
 import LandingPage from "../components/LandingPage";
@@ -518,7 +511,7 @@ Make a new file name `ConnectButton.tsx` inside `components` folder. We are simp
 
 Since we already initialized web3Onboard, we can use any of the `@web3-onboard/react` hook anywhere in the application. Since connecting users' wallet is done via an asynchronous function, the 'connecting' property returned by the 'useConnectWallet' hook helps us deactivate the connectButton when the connection has been invoked but not yet ready so users don't continiously click the button.
 
-```bash
+```ts
 import React from "react";
 import { Button, Typography } from "@mui/material";
 import { ConnectButtonProp } from "../interfaces";
@@ -556,7 +549,7 @@ export default ConnectButton;
 
 Import the ConnectButton into the `LandingPage.tsx` and the new code should look thus:
 
-```bash
+```ts
 import React, { useState} from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -596,7 +589,6 @@ export default function LandingPage(props: PageProps) {
     </React.Fragment>
   );
 }
-
 ```
 
 **components/App.tsx** - 
@@ -612,7 +604,7 @@ export default function LandingPage(props: PageProps) {
 - Add a new case to the switch statement to handle `stakeOnBehalf` when it is called.
 - Add a new `TextField` component to take 'account' address from user.
 
-```bash
+```ts
 import React, { useMemo, Key } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -932,14 +924,13 @@ export default function App(props: AppProps) {
     </React.Fragment>
   );
 }
-
 ```
 
 **components/api/contractdata.ts**
 
 Update this file with the latest contract addresses from the last deployment we made.
 
-```bash
+```ts
 import vault from "../../../foundry/out/Vault.sol/Vault.json";
 import token from "../../../foundry/out/RewardToken.sol/RewardToken.json";
 
@@ -951,7 +942,6 @@ export default function getContractData() {
     tokenAddr: "0xefA906f63ea950318d8d5Af13ae2E5D2aC221Fe4" //<===
   }
 }
-
 ```
 
 **components/api/index.ts - (changes)**
@@ -969,7 +959,7 @@ import { EIP1193Provider } from "@web3-onboard/core";
 
 - Create a function that accepts any valid external provider and return a valid web3 provider.
 
-```bash
+```ts
 // Return ether's web3 provider
 function wrappedProvider(provider: EIP1193Provider) {
   if (!provider) alert('Provider not ready');
@@ -981,7 +971,7 @@ function wrappedProvider(provider: EIP1193Provider) {
 
 > Note: Contract instance with provider property is enough to read from the blockchain.
 
-```bash
+```ts
 // get contract instances
 function contractInstances(props: InstanceProps) {
   const { tokenAbi, vaultAbi, tokenAddr,vaultAddr, provider } = props;
@@ -999,7 +989,7 @@ function contractInstances(props: InstanceProps) {
 
 > Note: We wait for at least two block confirmation before updating the user about their transaction status.
 
-```bash
+```ts
 async function sendtransaction(options: OptionProps) {
   const { provider, cancelLoading, functionName, value, account, who } = options;
   const { vaultAbi, tokenAbi, vaultAddr, tokenAddr } = getContractData();
