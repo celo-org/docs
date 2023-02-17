@@ -1,5 +1,5 @@
 ---
-title: Cryptography in Blockchain\: An Overview of Hash Functions and Digital Signatures
+title: Cryptography in Blockchain - An Overview of Hash Functions and Digital Signatures
 description: Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years.
 authors:
   - name: Oyeniyi Abiola Peace
