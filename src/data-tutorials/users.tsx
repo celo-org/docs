@@ -877,7 +877,7 @@ const Users: User[] = [
     title: 'Celo Impact on Underbanked and Unbanked Communities',
     description: 'Celo a blockchain platform aimed at providing financial inclusion and access to financial services for underbanked and unbanked communities',
     preview: require('./showcase/intermediate/unbanked.png'),
-    website: '/blog/tutorials/Celo-Impact-on-Underbanked-and-Unbanked-Communities',
+    website: '/blog/tutorials/celo-impact-on-underbanked-and-unbanked-communities',
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
