@@ -867,20 +867,6 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'nft', 'foundation'],
   },
   {
-    title: 'How should you use Celo Blockchain',
-    description: 'In this tutorial, we will introduce you to the Celo blockchain and explain its key features and benefits in a way that is easy to understand, even for complete beginners. We will provide an overview of Celo and its ecosystem, as well as discuss the tools and resources available to help you get started. By the end of this tutorial, you will have a basic understanding of the Celo blockchain and how to use it for your development projects. Whether you are new to blockchain technology or an experienced developer, this tutorial will provide you with the knowledge you need to get started with Celo.',
-    preview: require('./showcase/beginner/Why-should-you-use-Celo-Blockchain.png'),
-    website: '/blog/tutorials/Why-should-you-use-Celo-Blockchain',
-    tags: ['celosage','celo'], 
-  },
-   {
-    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
-    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
-    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
-    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
-    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
-  },
-  {
     title: 'How to build a Bookshop Marketplace Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
@@ -993,12 +979,12 @@ const Users: User[] = [
     website: 'blog/tutorials/how-uniswap-works',
     tags: ['celosage', 'celo', 'beginner'],
   },
-  {
-    title: 'How to become a Web3 Developer',
-    description: 'In this tutorial, we will show you how to become a web3 developer and build decentralized applications on the Celo blockchain.',
-    preview: require('./showcase/beginner/beginner-tutorials.png'),
-    website: 'blog/tutorials/How to become a Web3 Developer',
-    tags: ['beginner','celo', 'celosage'],
+ {
+    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
+    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
+    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
+    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
+    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
   },
   {
     title: 'How to Build a Full Stack Social Media Dapp on the Celo Blockchain',
