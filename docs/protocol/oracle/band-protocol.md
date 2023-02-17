@@ -27,7 +27,7 @@ This tutorial will go over:
 
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/remix-environment.png" alt="environment" width="400" />
 
-4. Enter the Alfajores testnet Band reference data aggregator contract address (`0x71046b955Cdd96bC54aCa5E66fd69cfb5780f3BB`) to the `DemoOracle` constructor and deploy the contract. You can access the reference data aggregator contract on mainnet at `0xDA7a001b254CD22e46d3eAB04d937489c93174C3`. 
+4. Enter the Alfajores testnet Band reference data aggregator contract address (`0x71046b955Cdd96bC54aCa5E66fd69cfb5780f3BB`) to the `DemoOracle` constructor and deploy the contract. You can access the reference data aggregator contract on mainnet at `0xDA7a001b254CD22e46d3eAB04d937489c93174C3`.
 
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/deploy.png" alt="environment" />
 
@@ -53,7 +53,7 @@ The "savePrice" function will save any base/quote rate that is passed to it in t
 
 ## Mainnet Reference Data Contract
 
-You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3/transactions)`. 
+You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3/transactions)`.
 
 ## Available Reference Data
 

@@ -4,7 +4,7 @@ description: How the Celo light client became 1.7 million times lighter than Eth
 authors:
   - name: ✍️ Joe Nyzio
 tags: [nft, basics]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/plumo-an-ultralight-blockchain-client-on-celo
 ---
 

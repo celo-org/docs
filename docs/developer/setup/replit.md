@@ -1,13 +1,13 @@
 ---
 title: Deploy with Replit
-description: How to deploy a smart contract to Celo testnet, mainnet, or a local network using Replit.  
+description: How to deploy a smart contract to Celo testnet, mainnet, or a local network using Replit.
 ---
 
 # Deploy on Celo with Replit
 
 How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Replit](https://replit.com/).
 
-___
+---
 
 ## Introduction to Replit
 
@@ -42,7 +42,7 @@ After creating your Replit account, your home screen will include a dashboard wh
 
 ## Explore the Workspace
 
-By creating a project, you now have a fully functional online IDE that allows you to edit, view, and deploy your smart contracts. It also creates a front-end for your smart contract that you can publish to an easily sharable URL. Read [Solidity on Replit](https://blog.replit.com/solidity) for an overview of some of these features.  
+By creating a project, you now have a fully functional online IDE that allows you to edit, view, and deploy your smart contracts. It also creates a front-end for your smart contract that you can publish to an easily sharable URL. Read [Solidity on Replit](https://blog.replit.com/solidity) for an overview of some of these features.
 
 ![replit solidity template](/img/doc-images/deploy-replit/image2.png)
 
@@ -56,16 +56,16 @@ The README provides an overview of the workspace and gives details on how to mak
 
 Deploying on Celo with Replit is easy. If you don’t have a wallet with funds, complete [Set up a Development Test Wallet](/developer/setup/wallet) so that you are prepared to deploy and interact with your smart contract.
 
-* Select **Run** to install all relevant packages, start up the contract deployment UI, and compile your **contract.sol** file
+- Select **Run** to install all relevant packages, start up the contract deployment UI, and compile your **contract.sol** file
 
 ![compile](/img/doc-images/deploy-replit/image3.png)
 
-* Select **Connect wallet**, select your account, then choose **Connect**.
+- Select **Connect wallet**, select your account, then choose **Connect**.
 
 ![connect](/img/doc-images/deploy-replit/image4.png)
 
-* Select the contract you would like to deploy from the dropdown (ex. MathTest, SimpleStorage).
-* To deploy this contract, select **Deploy** and confirm the transaction from your wallet.
+- Select the contract you would like to deploy from the dropdown (ex. MathTest, SimpleStorage).
+- To deploy this contract, select **Deploy** and confirm the transaction from your wallet.
 
 You can now interact with your contract using the provided user interface or from a sharable URL shown on the interface.
 
@@ -75,7 +75,7 @@ You can now interact with your contract using the provided user interface or fro
 
 To view your deployed contract, copy your **account address** navigate to the [Celo explorer](https://explorer.celo.org/), and search for your account (verify that you are searching the correct network).
 
-* View the most recently deployed contract to find additional information on your deployment.
+- View the most recently deployed contract to find additional information on your deployment.
 
 ![block explorer](/img/doc-images/deploy-replit/image6.png)
 
@@ -91,25 +91,25 @@ Your dApp is now live and can be shared with the world. You can use this workspa
 
 **Front-end updates**
 
-Using **tools > ui.jsx** you can make changes to the front end of your dApp. To start, you can update the on-screen text from  **Ethereum** to **Celo** and **ETH** to **CELO**.
+Using **tools > ui.jsx** you can make changes to the front end of your dApp. To start, you can update the on-screen text from **Ethereum** to **Celo** and **ETH** to **CELO**.
 
 - Use the files panel to navigate to **tools > ui.jsx**.
 
 ![ui](/img/doc-images/deploy-replit/image7.png)
 
-* Update **Replit & Ethereum** to read **Replit & Celo** on (will be around lines 446 and 528).
-* Update **ETH** to **CELO** next to the wallet address (will be around line 701).
+- Update **Replit & Ethereum** to read **Replit & Celo** on (will be around lines 446 and 528).
+- Update **ETH** to **CELO** next to the wallet address (will be around line 701).
 
 ![ui updates](/img/doc-images/deploy-replit/image8.png)
 
 After making these basic changes, users will be able to determine that they are interacting with a Celo dApp. They can use the sharable URL to visit your dApp and make transactions from their wallet.
 
-* Select **Version Control** from the left panel and click **Connect to GitHub**.
+- Select **Version Control** from the left panel and click **Connect to GitHub**.
 
 ![connect to github](/img/doc-images/deploy-replit/image9.png)
 
-* Name your GitHub Repo, select your preferences, and click **Create GitHub repository**.
-* After your GitHub Repo is created, click the Repo link to go to your new repository.
+- Name your GitHub Repo, select your preferences, and click **Create GitHub repository**.
+- After your GitHub Repo is created, click the Repo link to go to your new repository.
 
 ![github](/img/doc-images/deploy-replit/image10.png)
 
@@ -119,18 +119,18 @@ You can now manage any additional changes using GitHub from the user interface p
 
 Among many other features, Replit allows you to publish your projects to a personal profile. After publishing, projects will show up on your spotlight page for others to explore, interact with, clone, and collaborate.
 
-* Select the **project title** at the top of the screen.
-* Complete your project name and description and click **Publish**.
+- Select the **project title** at the top of the screen.
+- Complete your project name and description and click **Publish**.
 
 ![publish](/img/doc-images/deploy-replit/image11.png)
 
-* Add a cover image, tags (try a **Celo** tag), and additional details for your project.
+- Add a cover image, tags (try a **Celo** tag), and additional details for your project.
 
 ![cover image](/img/doc-images/deploy-replit/image12.png)
 
-* After publishing, navigate to the **Spotlight page** to view your project.
+- After publishing, navigate to the **Spotlight page** to view your project.
 
-Your project is now available for other developers to view, share, fork, and comment on. 
+Your project is now available for other developers to view, share, fork, and comment on.
 
 :::tip
 

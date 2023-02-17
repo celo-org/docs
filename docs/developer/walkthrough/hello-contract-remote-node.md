@@ -96,7 +96,7 @@ After compiling the contract, you need to create a migration to deploy the contr
 var HelloWorld = artifacts.require("HelloWorld");
 
 module.exports = function (deployer) {
-    deployer.deploy(HelloWorld);
+  deployer.deploy(HelloWorld);
 };
 ```
 
@@ -116,7 +116,7 @@ Here are the steps to go through to deploy the contract to the Alfajores testnet
 
 1. Connect to Forno \(a remote Celo node service provider\)
 2. Get personal account information \(generate a private key if required, stored in `./.env`\)
-3. Get your personal account address and fund it via the [faucet](https://celo.org/build/faucet)
+3. Get your personal account address and fund it via the [faucet](https://faucet.celo.org)
 4. Get the compiled contract bytecode
 5. Create and sign the contract deployment transaction
 6. Send transaction to the network
@@ -142,7 +142,7 @@ console.log(web3.eth.accounts.create());
 
 The provided code will print a private key / account pair in the terminal. Copy and paste the printed `priavteKey` into a `PRIVATE_KEY` variable in a file called `.env`, similar to what is shown in the `.envexample` file. The `address` that is printed with the private key is the account that we will fund with the faucet.
 
-If you go to the [Alfajores Faucet Page](https://celo.org/build/faucet), you can faucet your account some CELO and see your balance increase.
+If you go to the [Alfajores Faucet Page](https://faucet.celo.org), you can faucet your account some CELO and see your balance increase.
 
 ### Deploy the contract
 
@@ -210,8 +210,8 @@ You are finally ready to deploy the contract. Use the `kit`to create a custom tr
 
 ```javascript title="celo_deploy.js"
 let tx = await kit.connection.sendTransaction({
-    from: address,
-    data: HelloWorld.bytecode, // from ./build/contracts/HelloWorld.json
+  from: address,
+  data: HelloWorld.bytecode, // from ./build/contracts/HelloWorld.json
 });
 ```
 
@@ -228,26 +228,26 @@ const Web3 = require("web3");
 const ContractKit = require("@celo/contractkit");
 const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 const privateKeyToAddress =
-    require("@celo/utils/lib/address").privateKeyToAddress;
+  require("@celo/utils/lib/address").privateKeyToAddress;
 const kit = ContractKit.newKitFromWeb3(web3);
 require("dotenv").config();
 const HelloWorld = require("./build/contracts/HelloWorld.json");
 
 async function awaitWrapper() {
-    kit.connection.addAccount(process.env.PRIVATE_KEY); // this account must have a CELO balance to pay transaction fees
+  kit.connection.addAccount(process.env.PRIVATE_KEY); // this account must have a CELO balance to pay transaction fees
 
-    // This account must have a CELO balance to pay tx fees
-    // get some testnet funds at https://celo.org/build/faucet
-    const address = privateKeyToAddress(process.env.PRIVATE_KEY);
-    console.log(address);
+  // This account must have a CELO balance to pay tx fees
+  // get some testnet funds at https://faucet.celo.org
+  const address = privateKeyToAddress(process.env.PRIVATE_KEY);
+  console.log(address);
 
-    let tx = await kit.connection.sendTransaction({
-        from: address,
-        data: HelloWorld.bytecode,
-    });
+  let tx = await kit.connection.sendTransaction({
+    from: address,
+    data: HelloWorld.bytecode,
+  });
 
-    const receipt = await tx.waitReceipt();
-    console.log(receipt);
+  const receipt = await tx.waitReceipt();
+  console.log(receipt);
 }
 
 awaitWrapper();
@@ -265,20 +265,20 @@ The first function, `initContract()`, reads the deployed contract information fr
 
 ```javascript title="helloWorld.js"
 async function initContract() {
-    // Check the Celo network ID
-    const networkId = await web3.eth.net.getId();
+  // Check the Celo network ID
+  const networkId = await web3.eth.net.getId();
 
-    // Get the contract associated with the current network
-    const deployedNetwork = HelloWorld.networks[networkId];
+  // Get the contract associated with the current network
+  const deployedNetwork = HelloWorld.networks[networkId];
 
-    // Create a new contract instance with the HelloWorld contract info
-    let instance = new kit.web3.eth.Contract(
-        HelloWorld.abi,
-        deployedNetwork && deployedNetwork.address
-    );
+  // Create a new contract instance with the HelloWorld contract info
+  let instance = new kit.web3.eth.Contract(
+    HelloWorld.abi,
+    deployedNetwork && deployedNetwork.address
+  );
 
-    getName(instance);
-    setName(instance, "hello world!");
+  getName(instance);
+  setName(instance, "hello world!");
 }
 ```
 
@@ -288,8 +288,8 @@ The `getName()` function will call, return and print the `getName()` function of
 
 ```javascript title="helloWorld.js"
 async function getName(instance) {
-    let name = await instance.methods.getName().call();
-    console.log(name);
+  let name = await instance.methods.getName().call();
+  console.log(name);
 }
 ```
 
@@ -297,19 +297,19 @@ The `setName()` function is a bit more involved. First, it gets the account key 
 
 ```javascript title="helloWorld.js"
 async function setName(instance, newName) {
-    // Add your account to ContractKit to sign transactions
-    // This account must have a CELO balance to pay tx fees, get some https://celo.org/build/faucet
-    kit.connection.addAccount(process.env.PRIVATE_KEY);
-    const address = privateKeyToAddress(process.env.PRIVATE_KEY);
+  // Add your account to ContractKit to sign transactions
+  // This account must have a CELO balance to pay tx fees, get some https://faucet.celo.org
+  kit.connection.addAccount(process.env.PRIVATE_KEY);
+  const address = privateKeyToAddress(process.env.PRIVATE_KEY);
 
-    // Encode the transaction to HelloWorld.sol according to the ABI
-    let txObject = await instance.methods.setName(newName);
+  // Encode the transaction to HelloWorld.sol according to the ABI
+  let txObject = await instance.methods.setName(newName);
 
-    // Send the transaction
-    let tx = await kit.sendTransactionObject(txObject, { from: address });
+  // Send the transaction
+  let tx = await kit.sendTransactionObject(txObject, { from: address });
 
-    let receipt = await tx.waitReceipt();
-    console.log(receipt);
+  let receipt = await tx.waitReceipt();
+  console.log(receipt);
 }
 ```
 
@@ -317,4 +317,4 @@ The above method shows a more detail about how to create custom deployment trans
 
 As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo.
 
-Check out [https://celo.org/build](https://celo.org/build) for more resources!
+Check out [https://celo.org/developers](https://celo.org/developers) for more resources!

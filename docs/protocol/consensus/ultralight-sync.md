@@ -7,10 +7,11 @@ description: Introduction to Celo's ultralight sync mode and how it improves the
 
 Introduction to Celo's ultralight sync mode and how it improves the speed of the Celo network.
 
-___
+---
+
 ## Introduction to Ultralight Sync
 
-In addition to the **full**, **fast**, and **light** sync modes supported by Ethereum, Celo supports an **ultralight** sync mode. Ultralight nodes compute the validator set for the current epoch by downloading the last header of each previous epoch and applying the validator set diff. They then download the latest block header, which can be verified by checking that at least two-thirds of the validator set for the current epoch signed the block header. 
+In addition to the **full**, **fast**, and **light** sync modes supported by Ethereum, Celo supports an **ultralight** sync mode. Ultralight nodes compute the validator set for the current epoch by downloading the last header of each previous epoch and applying the validator set diff. They then download the latest block header, which can be verified by checking that at least two-thirds of the validator set for the current epoch signed the block header.
 
 ## Ultralight Sync Speed
 

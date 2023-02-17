@@ -132,7 +132,7 @@ function MetamaskAddToken() {
 
 Let's try to send some CELO on Alfajores. Make sure you are connected to the Alfajores testnet, you can double check by clicking the `Connect to Alfajores Testnet` button above again.
 
-Make sure you have some Alfajores CELO to send. If you need some, you can get some from [the faucet here](https://celo.org/developers/faucet).
+Make sure you have some Alfajores CELO to send. If you need some, you can get some from [the faucet here](https://faucet.celo.org).
 
 ```jsx live
 function MetamaskSendCelo() {

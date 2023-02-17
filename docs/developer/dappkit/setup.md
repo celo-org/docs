@@ -2,11 +2,12 @@
 title: Celo DAppKit Setup
 description: How to configure and install DAppKit to begin building on Celo.
 ---
+
 # Setup
 
 How to configure and install DAppKit to begin building on Celo.
 
-___
+---
 
 ## Quick Start
 
@@ -14,7 +15,7 @@ To get started, it is easiest to just use our Truffle Box template at [https://g
 
 ## Configuration
 
-Read on for more details about how to set up and configure DappKit. 
+Read on for more details about how to set up and configure DappKit.
 
 ### Installation
 
@@ -57,60 +58,60 @@ yarn add node-libs-react-native vm-browserify
 You will need to add the following `metro.config.js` to your project root and make sure that the associated npm packages are installed.
 
 ```js
-const crypto = require.resolve('crypto-browserify')
-const url = require.resolve('url/')
+const crypto = require.resolve("crypto-browserify");
+const url = require.resolve("url/");
 module.exports = {
   resolver: {
     extraNodeModules: {
       crypto,
       url,
-      fs: require.resolve('expo-file-system'),
-      http: require.resolve('stream-http'),
-      https: require.resolve('https-browserify'),
-      net: require.resolve('react-native-tcp'),
-      os: require.resolve('os-browserify/browser.js'),
-      path: require.resolve('path-browserify'),
-      stream: require.resolve('readable-stream'),
-    }
-  }
-}
+      fs: require.resolve("expo-file-system"),
+      http: require.resolve("stream-http"),
+      https: require.resolve("https-browserify"),
+      net: require.resolve("react-native-tcp"),
+      os: require.resolve("os-browserify/browser.js"),
+      path: require.resolve("path-browserify"),
+      stream: require.resolve("readable-stream"),
+    },
+  },
+};
 ```
 
 This should allow you to build the project, however some dependencies might expect certain invariants on the global environment. For that you should create a file `global.ts` with the following contents and then add `import './global'` at the top of your `App.js/tsx` file:
 
 ```typescript
 export interface Global {
-  btoa: any
-  self: any
-  Buffer: any
-  process: any
-  location: any
+  btoa: any;
+  self: any;
+  Buffer: any;
+  process: any;
+  location: any;
 }
 
-declare var global: Global
-if (typeof global.self === 'undefined') {
-  global.self = global
+declare var global: Global;
+if (typeof global.self === "undefined") {
+  global.self = global;
 }
-if (typeof btoa === 'undefined') {
+if (typeof btoa === "undefined") {
   global.btoa = function (str) {
-    return new Buffer(str, 'binary').toString('base64')
-  }
+    return new Buffer(str, "binary").toString("base64");
+  };
 }
 
-global.Buffer = require('buffer').Buffer
-global.process = require('process')
+global.Buffer = require("buffer").Buffer;
+global.process = require("process");
 global.location = {
-  protocol: 'https',
-}
+  protocol: "https",
+};
 ```
 
 You may also get two warnings that can be ignored, you can suppress them in the yellow banner with the following in your `App.js/tsx`.
 
 ```typescript
-import { YellowBox } from 'react-native'
+import { YellowBox } from "react-native";
 
 YellowBox.ignoreWarnings([
   "Warning: The provided value 'moz",
   "Warning: The provided value 'ms-stream",
-])
+]);
 ```
