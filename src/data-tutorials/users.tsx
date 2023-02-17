@@ -1072,6 +1072,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'solidity', 'randomness', 'oracle'],
   },
   {
+    title: 'Understanding the Fundamentals of Auction Programming in Solidity',
+    description: 'Gain a comprehensive understanding of the fundamental concepts and programming techniques for building decentralized auction applications using Solidity.',
+    preview: require('./showcase/intermediate/Auction.png'),
+    website: 'blog/tutorials/Understanding-the-Fundamentals-of-Auction-Programming-in-Solidity',
+    tags: ['celo', 'intermediate', 'celosage'],
+  },
+  { 
     title: 'Create a React Based DApp on Celo',
     description: 'The beginner of developing a decentralised application (DApp) on Celo.',
     preview: require('./showcase/intermediate/create-a-react-based-dapp-on-celo.png'),
