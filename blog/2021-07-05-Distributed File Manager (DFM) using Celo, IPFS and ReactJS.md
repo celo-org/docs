@@ -14,7 +14,7 @@ tags:
     solidity,
     ipfs,
   ]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Distributed File Manager (DFM) using Celo, IPFS and ReactJS

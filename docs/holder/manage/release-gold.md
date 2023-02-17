@@ -5,9 +5,9 @@ description: Introduction to ReleaseGold including examples, use cases, and FAQ.
 
 # Understanding ReleaseGold
 
-Introduction to ReleaseGold including examples, use cases, and FAQ. 
+Introduction to ReleaseGold including examples, use cases, and FAQ.
 
-___
+---
 
 ## What is ReleaseGold?
 
@@ -35,15 +35,15 @@ The beneficiary does not yet have full rights to the remaining 70 unreleased CEL
 
 ## Addresses Involved
 
-*Beneficiary*
+_Beneficiary_
 
 The `beneficiary` address is the recipient of the CELO in the `ReleaseGold` contract. As the CELO is released over time, it is incrementally made withdrawable solely to the beneficiary. The beneficiary is also able to use both unreleased and released CELO to participate in Celo’s Proof of Stake consensus protocol, via locking gold and voting or validating.
 
-*Release Owner*
+_Release Owner_
 
 The `releaseOwner` is the address involved in administering the `ReleaseGold` contract. The release owner may be able to perform actions including [setting the liquidity provision](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L268) for the contract, setting the maximum withdrawal amount, or [revoking](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L362) the contract, depending on the ReleaseGold configuration.
 
-*Refund Address*
+_Refund Address_
 
 The `refundAddress` is the address where funds that have not been released will be sent if a `ReleaseGold` contract is revoked. Contracts that are not revocable do not have a `refundAddress`.
 
@@ -53,7 +53,7 @@ Two anticipated use cases for `ReleaseGold` contracts are for “holders” and 
 
 In the “holder” case, a recipient may have purchased or been awarded an amount of CELO, but is subject to a distribution schedule limiting the amount of CELO that can be liquidated at any given time. These recipients may be able to validate and vote with the full `ReleaseGold` balance, and also are not subject to the contract’s revocation by another party (eg. an employer).
 
-In the “earner” case, a grant recipient may have entered a legal contract wherein an exchange of services earns them an amount of CELO over a releasing, or vesting, schedule. These grants are characterized by extra restrictions because the total grant amount is still being *earned*. The `ReleaseGold` balance cannot be used for running a validator, but it can be used to vote for validators and governance proposals on the Celo network. Additionally, these contracts may be revocable and may be subject to the `liquidityProvision` flag, which prevents CELO distribution when markets are incapable of absorbing additional CELO without significant slippage.
+In the “earner” case, a grant recipient may have entered a legal contract wherein an exchange of services earns them an amount of CELO over a releasing, or vesting, schedule. These grants are characterized by extra restrictions because the total grant amount is still being _earned_. The `ReleaseGold` balance cannot be used for running a validator, but it can be used to vote for validators and governance proposals on the Celo network. Additionally, these contracts may be revocable and may be subject to the `liquidityProvision` flag, which prevents CELO distribution when markets are incapable of absorbing additional CELO without significant slippage.
 
 ## Release Schedule
 
@@ -62,7 +62,7 @@ In `ReleaseGold` smart contracts, a fixed amount of CELO becomes accessible to t
 The following arguments specify a ReleaseGold smart contract schedule:
 
 - `releasePeriod` - the frequency, in seconds, at which CELO is released
-    - Some common values: monthly (2628000), every 3 months (7884000)
+  - Some common values: monthly (2628000), every 3 months (7884000)
 - `amountReleasedPerPeriod` - the amount of CELO to be released each `releasePeriod`
 - `numReleasePeriods` - the number of `releasePeriods` in which CELO will be released
 - `releaseCliff` - the time at which the release cliff expires.
@@ -96,7 +96,7 @@ Can I move the CELO released by the `ReleaseGold` contract to another address?
 
 Why do I need to authorize separate keys for voting and validating? Can’t I do it using the private key for my beneficiary address?
 
-- You may use any keys for your voting and validating signers, so long as those keys are not for a registered account or for another signing purpose. This means you *could* use your `beneficiary` address as one of your signing roles, but you would need another account for an additional role.
+- You may use any keys for your voting and validating signers, so long as those keys are not for a registered account or for another signing purpose. This means you _could_ use your `beneficiary` address as one of your signing roles, but you would need another account for an additional role.
 
 Can I change the beneficiary?
 

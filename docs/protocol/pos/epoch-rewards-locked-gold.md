@@ -2,11 +2,12 @@
 title: Celo Locked CELO Rewards
 description: How to earn locked CELO rewards and adjust the rate for voting participation, target schedule, and deductions.
 ---
+
 # Locked CELO Rewards
 
 How to earn locked CELO rewards and adjust the rate for voting participation, target schedule, and deductions.
 
-___
+---
 
 ## Introduction to Locked CELO Rewards
 
