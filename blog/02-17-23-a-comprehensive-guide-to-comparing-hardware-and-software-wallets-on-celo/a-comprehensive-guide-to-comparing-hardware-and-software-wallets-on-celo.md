@@ -22,8 +22,6 @@ https://docs.celo.org/blog/tutorials/crypto-wallets-the-celo-way
 
 # What is a Wallet?
 
-![Source: Ledger Nano]("./images/1.png")
-
 A cryptocurrency wallet is a tool that allows individuals to store, send, and receive digital currencies and monitor their balance. It can be a piece of software that runs on a PC, a mobile application, or a hardware device. This wallet stores your private key (a secure digital code known only to you) and public key (a digital code connected to a certain amount of currency). 
 
 A wallet can be used to track ownership, receive, or spend cryptocurrencies. They work by securely holding the private and public keys associated with a user's cryptocurrency holdings. In other words, a cryptocurrency wallet acts as a digital bank account for your cryptocurrencies, providing a secure and easy way to manage your crypto assets.
