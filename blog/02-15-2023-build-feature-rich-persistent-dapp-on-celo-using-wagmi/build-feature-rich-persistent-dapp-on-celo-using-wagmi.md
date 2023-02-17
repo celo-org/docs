@@ -24,11 +24,11 @@ In this tutorial, I will walk you through the standard way of connecting to the 
 - Solidity development
 - Javascript
 - Knowledge of typescript may be helpful
-- Learn how to use foundry for smart contract development. Please refer to **[this artile](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)** for a complete tutorial. Reading through the post will enhance your understanding of web3 provider. 
+- Learn how to use foundry for smart contract development. Please refer to **[this artile](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)** for a complete tutorial. Earlier, I made a similar tutorial that uses web3Onboard library **[here]()**. Reading through the post will help you make the right choice of blockchain/web3 provider. 
 
 ## Requirements​
 
-Before you proceed, ensure you have install the following tools:
+Before you proceed, be sure to have the following tools installed:
 
 - For an editor. I recommend VSCode.
 - NodeJs version >=14.0.0. I use version 18.12.1
@@ -105,7 +105,7 @@ In this file, we need to make some adjustments.
 - To accommodate compounded staking, we introduced a flag `isCompounded` to differentiate whether a user is staking as usual or in compounded mode.
 - We use the `speed` property to determine the reward.
 
-```js
+```bash
 > ...
   function _stake(address who, uint value, bool isCompounded) private returns(bool){
     address alc;
@@ -140,18 +140,18 @@ In this file, we need to make some adjustments.
 - Create a function to subscribe to compounded staking.
 - An obvious difference is the boolean flag that differentiates it from the usual `stake()` function.
 
-```js
-//>...
+```bash
+> ...
   ///@dev Subscribe to compounded staking
   function compoundStaking() public payable override returns(bool) {
       return _stake(msg.sender, msg.value, true);
   }
-// >...
+> ...
 ```
 
 - Lastly, inside `unstake()` function, we add the speed to the actual amount staked. You are free to use your own computation to determine the reward for compounded staking. Our goal is to compound reward each time a user commits more $Celo to the vault using `compoundStaking` function.
 
-```js
+```bash
   /**@dev Unstake Celo from the vault.
   */
   function unstake() public override returns(bool) {
@@ -180,7 +180,7 @@ _Compile successfully_
 
 Before running the test command, we should test our new function to ensure it works as expected. In `foundry/test/Vault.t.sol`, paste the following code.
 
-```js
+```bash
   function testCompoundStaking() public {
     uint depositTime = block.timestamp;
     (bool doneStaking) = vault.compoundStaking{value: stakeAmt}();
@@ -247,7 +247,7 @@ yarn add "@web3-react/core" "@web3-react/walletlink-connector" "@web3-react/wall
 
 **pages/_app.tsx**
 
-```js
+```bash
 import React from 'react'
 import '@/styles/globals.css';
 import Head from 'next/head';
@@ -288,7 +288,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 **pages/index.tsx**
 
-```js
+```bash
 import React from "react";
 import App from "../components/App";
 import LandingPage from "../components/LandingPage";
@@ -362,8 +362,9 @@ export default function Home() {
 
 **components/LandingPage.tsx**
 
-```js
+```bash
 // >...
+
 // >...
 
 export default function LandingPage(props: PageProps) {
@@ -423,7 +424,7 @@ export default function LandingPage(props: PageProps) {
 
 - Import `useWeb3React` hook that provides us access to provider utilities. Remember we wrapped the whole application using Web3React provider, this is why we can access the utilities in the context of web3React.
 
-```js
+```bash
 import { useWeb3React } from '@web3-react/core';
 import { Web3Provider } from "@ethersproject/providers";
 ```
@@ -439,7 +440,7 @@ import { Web3Provider } from "@ethersproject/providers";
 
   - We run an 'async' in the useEffect function where we gave the library as an argument to the provider parameter
 
-```js
+```bash
   React.useEffect(() => {
     const abortProcess = new AbortController();
     async function getTokenBalance() {
@@ -462,7 +463,7 @@ import { Web3Provider } from "@ethersproject/providers";
 
 - `handleClick()` accepts an id of type number to programmatically select the choice of connector.
 
-```js
+```bash
   const handleClick = async(index:number) => { 
     setConnecting(true);
     await handleConnect(index).then(() => {
@@ -473,7 +474,7 @@ import { Web3Provider } from "@ethersproject/providers";
 
 - We filter the contract methods for the ones we need using the `displayContractFunctions` function.
 
-```js
+```bash
   const displayContractFunctions = useMemo(() => {
     let filt: any;
     if (!vaultAbi) return [];
@@ -491,7 +492,7 @@ import { Web3Provider } from "@ethersproject/providers";
 
 - Inside the `handleSubmit` function, add a new case to the switch statement to handle the new feature.
 
-```js
+```bash
 case 'compoundStaking':
   result = await stake();
   break;
@@ -501,7 +502,7 @@ case 'compoundStaking':
 
 - Lastly, the functionality in this file remains unchanged except that we added a new feature in the switch statement for the function we introduced in our contract.
 
-```js
+```bash
   // >...
   case 'compoundStaking':
     const txn1 = await vault_ins.compoundStaking({value: value });
