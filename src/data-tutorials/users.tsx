@@ -697,6 +697,13 @@ const Users: User[] = [
     tags: ['favorite'],
   },
   {
+    title: ' A Comprehensive Guide to Comparing Hardware and Software Wallets on Celo',
+    description: 'This tutorial will explain the differences between software and hardware wallets, and how to choose the right one for you.',
+    preview: require('./showcase/celo-sage.png'),
+    website: '/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo',
+    tags: ['beginner'],
+  },
+  {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
     preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
