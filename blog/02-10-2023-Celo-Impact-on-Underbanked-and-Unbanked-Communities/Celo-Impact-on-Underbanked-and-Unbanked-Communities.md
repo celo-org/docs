@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/80678178?v=4
 tags: [celo, intermediate, celosage]
 hide_table_of_contents: true
-slug: /tutorials/Celo-Impact-on-Underbanked-and-Unbanked-Communities
+slug: /tutorials/celo-impact-on-underbanked-and-unbanked-communities
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/unbanked.png)
