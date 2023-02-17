@@ -1719,6 +1719,13 @@ const Users: User[] = [
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
+  {
+    title: 'Connect and interact with Celo using Web3React',
+    description: 'Alternative method of connecting to Celo using web3React',
+    preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3react.png'),
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3react',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
