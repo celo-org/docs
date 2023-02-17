@@ -748,6 +748,13 @@ const Users: User[] = [
     tags: ['celosage', 'android', 'celo', 'dapp', 'mobile', 'sdk', 'valora', 'advanced'],
   },
   {
+    title: 'Cryptography in Blockchain: An Overview of Hash Functions and Digital Signatures',
+    description: ' Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years.',
+    preview: require('./showcase/celo-sage.png'),
+    website: '/blog/tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures',
+    tags: ['celosage', 'beginner'],
+  },
+  {
     title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
