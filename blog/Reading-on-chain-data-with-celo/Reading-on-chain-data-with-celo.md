@@ -12,6 +12,7 @@ slug: /tutorials/how-to-listen-to-smart-contract-on-chain-event-with-celo
 ---
 
 
+![listening-to-onchain-events](https://user-images.githubusercontent.com/69092079/219810690-b55e339d-a7f4-4703-bb1f-1415e8cf8810.png)
 
 ## Introduction​
 
