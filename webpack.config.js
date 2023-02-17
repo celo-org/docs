@@ -1,3 +1,3 @@
-module.exports {
-	resolve: { fallback: { "url": require.resolve("url/") },
-}
+module.exports = {
+  resolve: { fallback: { url: require.resolve("url/") } },
+};

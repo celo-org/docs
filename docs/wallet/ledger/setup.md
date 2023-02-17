@@ -2,11 +2,12 @@
 title: Set up a Ledger Wallet with Celo
 description: How to set up a Ledger Nano S or X hardware wallet with Celo.
 ---
+
 # Set up a Ledger Wallet with Celo
 
 How to set up a [Ledger](https://www.ledger.com/) Nano S or X hardware wallet.
 
-___
+---
 
 ## Hardware Security Module
 
@@ -21,11 +22,13 @@ The steps below require technical knowledge. You should be comfortable with the 
 ## Requirements
 
 Make sure to have the following before you begin:
-* Initialized your [Ledger Nano X or S](https://support.ledger.com/hc/en-us/articles/360018784134)
-* The [latest firmware](https://support.ledger.com/hc/en-us/articles/360013349800) is installed
-* [Ledger Live](https://www.ledger.com/ledger-live) is ready to be used.
+
+- Initialized your [Ledger Nano X or S](https://support.ledger.com/hc/en-us/articles/360018784134)
+- The [latest firmware](https://support.ledger.com/hc/en-us/articles/360013349800) is installed
+- [Ledger Live](https://www.ledger.com/ledger-live) is ready to be used.
 
 ## Installation Instructions
+
 ### Install the Celo Application
 
 Start by installing the Celo application and setting a PIN on your Ledger device by following steps 1 and 2 [on this page](https://www.ledger.com/start/).
@@ -68,6 +71,6 @@ The Celo app is now ready for use and you should see `Application is ready` on t
 
 #### Connect your Leger to Celo applications
 
-  - [Celo Terminal App](/wallet/ledger/to-celo-terminal)
-  - [Celo Web Wallet](/wallet/ledger/to-celo-web)
-  - [Celo CLI](/wallet/ledger/to-celo-cli)
+- [Celo Terminal App](/wallet/ledger/to-celo-terminal)
+- [Celo Web Wallet](/wallet/ledger/to-celo-web)
+- [Celo CLI](/wallet/ledger/to-celo-cli)

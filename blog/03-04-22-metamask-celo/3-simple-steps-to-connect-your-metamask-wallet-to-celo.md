@@ -4,7 +4,7 @@ description: A step-by-step tutorial to add the Celo network to your MetaMask wa
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo, metamask]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo"
 ---
 

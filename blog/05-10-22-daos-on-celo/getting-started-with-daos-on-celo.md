@@ -4,7 +4,7 @@ description: Introduction to DAOs and the advantages of building a DAO on Celo.
 authors:
   - name: ✍️ Abhinil Agarwal
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/getting-started-with-daos-on-celo"
 ---
 

@@ -7,7 +7,7 @@ description: How to recover ETH or ERC-20 tokens if you accidentally transferred
 
 How to recover ETH or ERC-20 tokens if you accidentally transferred them to a [CELO (previously Celo Gold)](/general/#background-and-key-concepts) address.
 
-___
+---
 
 ## Prerequisites
 
@@ -32,15 +32,15 @@ Please follow the instructions below closely because missteps can lead to errors
 2. Open MEW and click on **Access My Wallet > Software > Mnemonic Phrase > Continue**
 3. Change to a 24 Value mnemonic and enter in the words from your Recovery Phrase. Then click **Continue**
 4. Change the HD Derivation Path to **Add Custom path**
-5. Call your Alias "Celo" for easy reference. Enter in your Path as `m/44'/52752'/0'/0`. Click **Add Custom Path.** 
+5. Call your Alias "Celo" for easy reference. Enter in your Path as `m/44'/52752'/0'/0`. Click **Add Custom Path.**
 6. Go back to your Derivation Path dropdown and select **Celo (m/44'/52752'/0'/0)**. You should see the addresses change. Select the address that matches your Valora Account Number (it's usually the first one).
 7. Accept the Terms
 8. Click **Access My Wallet**
 9. Now you can send your token back to your original address:
-    1. Click on **Send Transaction**
-    2. Fill in the **Type, Amount,** and **To Address**.
-    3. Confirm that the information is correct and you have enough funds to cover any fees.
-    4. Click **Send Transaction**.
+   1. Click on **Send Transaction**
+   2. Fill in the **Type, Amount,** and **To Address**.
+   3. Confirm that the information is correct and you have enough funds to cover any fees.
+   4. Click **Send Transaction**.
 
 ### MyCrypto
 
@@ -53,8 +53,8 @@ Please follow the instructions below closely because missteps can lead to errors
 7. Scroll down and look for a button that says **Scan For Tokens**. Click it.
 8. You should be able to see your token.
 9. Now you can send your token back to your original address:
-    1. Enter your address in the **To Address** box
-    2. Change the currency.
-    3. Fill in the **Amount** or click the "double up-arrow" icon to send your entire balance.
-    4. Confirm that the information is correct and you have enough funds to cover any fees.
-    5. Click **Send Transaction**
+   1. Enter your address in the **To Address** box
+   2. Change the currency.
+   3. Fill in the **Amount** or click the "double up-arrow" icon to send your entire balance.
+   4. Confirm that the information is correct and you have enough funds to cover any fees.
+   5. Click **Send Transaction**

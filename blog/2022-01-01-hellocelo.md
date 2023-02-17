@@ -194,7 +194,7 @@ Run this script again with `node helloCelo.js`. This will print `0`, as we have 
 
 ## Using the faucet
 
-We can get free test CELO and cUSDs on the test network for development via [the Celo Alfajores faucet](https://celo.org/build/faucet).
+We can get free test CELO and cUSDs on the test network for development via [the Celo Alfajores faucet](https://faucet.celo.org).
 
 Copy your randomly generated account address from the console output mentioned above, and paste it into the faucet.
 

@@ -49,3 +49,20 @@ Example - `<https://github.com/celo-org/docs/compare/main>...<branchname>?templa
 If you have issue getting the PR Template, you can get the template from here - [Celo Sage PR Template](https://gist.github.com/viral-sangani/ac48d47da93d808b2b59bd415d11ae09).
 
 :::
+
+## Best Practices
+
+- Before creating a PR, make sure to pull the code from `main` branch - **`git pull upstream main`.**
+- Add your article in the `src/data-tutorials/users.tsx` file.
+- Make sure to add the `celosage` tag in your article's frontmatter and `src/data-tutorials/users.tsx` file
+- Don't use any `#` tag in your article. Please use `##` for titles, `###` for subtitles.
+- Don't use `**` or `***` in your titles or subtitles. Use `##` or `###` instead. `##` and `###` will automatically bold the text.
+- Add a header image just after frontmatter. The image should look something like this - `![header](../src/data-tutorials/showcase/<beginner/intermediate/advance>/<image-name>.png)`
+- Please run the prettier in your markdown file before creating a PR. You can use the prettier extension in VS Code or you can use the prettier online tool - [Prettier Online](https://prettier.io/playground/).
+- To use prettier in VSCode, you can press `Cmd/Ctrl + shift + p` and search for `Format Document with` and select `Prettier - Code formatter`.
+- If you have images in your articles, then create a folder in `blogs/` directory, and add the markdkown file and images in `images/` folder.
+- If the paragraph is too big, then please break it into multiple lines. It will help in reviewing the PR.
+- If you want to be nested lists, follow [this](https://linuxhint.com/markdown-nested-lists/) article.
+- Don't add the title of your article to your blog, as it will be added automatically.
+- Before creating a PR, make sure your code is well formatted and there are no errors in the console.
+- Make sure to add a header image of your article in `src/data-tutorials/users.tsx`. You can get the header image from your Trello card.
