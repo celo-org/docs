@@ -172,12 +172,13 @@ Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sust
 - [Website](https://web3.esolidar.com)
 - [GitHub](https://github.com/esolidar/web3)
 
-### NEFTME 
+### NEFTME
 
 NEFTME is a decentralized social NFT-powered network that allows anyone, anywhere to create, share and sell an NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
 
 - [Website](https://neftme.com)
 - [GitHub](https://github.com/NEFTME)
+
 ---
 
 ## Decentralized Impact Incubator Winners
@@ -289,7 +290,7 @@ Non-custodial multichain NFT marketplace, connected to Celo
 
 ## Bru Finance
 
-Globally the largest issuer of tokenized real world assets ($600 Million & Counting), Brú Finance is  a new paradigm of DeFi 2.5 that brings Tokenized Emerging Market Asset Backed Bonds to decentralised finance.
+Globally the largest issuer of tokenized real world assets ($600 Million & Counting), Brú Finance is a new paradigm of DeFi 2.5 that brings Tokenized Emerging Market Asset Backed Bonds to decentralised finance.
 
 - [Website](https://bru.finance)
 - [Github](https://gitlab.com/abhib.work/bruapp/-/tree/prod)
@@ -303,7 +304,7 @@ EcoBytes is a Regenerative Crypto platform that rewards consumers with crypto fo
 
 ## Birden
 
-Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces. 
+Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces.
 
 - [Website](https://birden.io/)
 - [GitHub](https://github.com/fffilimonov/birden)

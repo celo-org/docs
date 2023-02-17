@@ -4,7 +4,7 @@ description: Everything you need to get started with Celo.
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/celo-spotlight"
 ---
 
@@ -265,7 +265,7 @@ Make use of [Celo Dollars (cUSD)](https://coinmarketcap.com/currencies/celo-doll
 
 ### Get Test Funds
 
-Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](/network). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://celo.org/developers/faucet).
+Get testnet funds by switching your [Celo Wallet](https://celo.org/developers/wallet) or [MetaMask Wallet](https://docs.celo.org/developer-resources/testnet-wallet) to the [Alfajores testnet](/network). Send your wallet funds for testing or development using the [Alfajores testnet faucet](https://faucet.celo.org).
 
 :::tip
 

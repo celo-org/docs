@@ -4,7 +4,7 @@ description: Quickly develop full-stack progressive web applications on Celo wit
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/easily-build-full-stack-mobile-dapps-on-celo"
 ---
 
@@ -140,7 +140,7 @@ Copy your `PRIVATE_KEY` and testnet account address into a place you can easily 
 
 ![image](images/9.png)
 
-Copy the testnet `account address`, paste it into the [Celo Testnet Faucet](https://celo.org/developers/faucet) and select Get Started to transfer funds into your testnet account.
+Copy the testnet `account address`, paste it into the [Celo Testnet Faucet](https://faucet.celo.org) and select Get Started to transfer funds into your testnet account.
 
 ![image](images/10.png)
 

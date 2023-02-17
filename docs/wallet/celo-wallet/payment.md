@@ -2,11 +2,12 @@
 title: Payments and Exchanging
 description: How the Celo wallet facilitates payments and exchanges using Celo assets.
 ---
+
 # Payments and Exchanging
 
 How the Celo wallet facilitates payments and exchanges using Celo assets.
 
-___
+---
 
 ## Payments
 
@@ -34,6 +35,7 @@ For non-essential functionality that is not detrimental to interoperability, a p
 In order for notifications to work in a fork of the Celo Wallet, creation of another firebase service for the forked wallet is necessary.
 
 :::
+
 ## Exchanging
 
 The Mobile Exchange experience implements the uniswap-style exchange detailed in [Stability Mechanism Documentation](../../protocol/stability/doto.md). For this reason, rates provided are an overestimate of the current rate and subject to change \(such changes are presented to the user if they result in a less favorable rate\)

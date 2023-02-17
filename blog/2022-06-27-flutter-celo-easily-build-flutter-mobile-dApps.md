@@ -7,7 +7,7 @@ authors:
     url: https://github.com/viral-sangani
     image_url: https://github.com/viral-sangani.png
 tags: [flutter, composer]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/flutter-celo-easily-build-flutter-mobile-dApps
 ---
 
@@ -70,7 +70,7 @@ flutter run
 
 #### Get some testnet Celo tokens on Valora
 
-Get your address from the Valora app and go to the [Celo faucet](https://celo.org/developers/faucet) site.
+Get your address from the Valora app and go to the [Celo faucet](https://faucet.celo.org) site.
 
 ![Celo Faucet](./images/1_e-0iwxIiYVRnXc5-_ZhLIg.png)
 
