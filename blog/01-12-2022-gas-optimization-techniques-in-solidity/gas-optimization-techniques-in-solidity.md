@@ -23,7 +23,7 @@ Solidity can be run on Remix, a web browser-based IDE that allows you to write, 
 
 A Solidity contract is a collection of code (its functions) and data (its state) stored at a specific address on the Ethereum blockchain. Developers can use Solidity to create contracts for voting, crowdfunding, blind auctions, multi-signature wallets, and other purposes.
 
-# What is Gas and Gas Optimization in Solidity ?
+## What is Gas and Gas Optimization in Solidity ?
 
 We need to understand Gas fully before we can optimize its usage in any way. We will first look at it from a high-level view and then go deeper into it.
 
@@ -70,7 +70,7 @@ All Ethereum operations that users wish to carry out must provide gas for the fo
 - To cover its entire computation
   Now that we've covered the fundamentals, you might be asking yourself the question “Why do we have this Gas System ?”
 
-# Why do we have this Gas system?
+## Why do we have this Gas system?
 
 The answer is simple - incentivization
 
@@ -86,7 +86,7 @@ This fee is known as the miner's, and it incentivizes miners to participate acti
 
 Let’s dig into it !
 
-# 10 SOLIDITY GAS OPTIMIZATION TECHNIQUES
+## Solidity Gas Optimization Techniques
 
 ## Use Mappings instead of Arrays
 
@@ -469,6 +469,6 @@ In summary, avoiding the use of the uint8 data type in Solidity can be an effect
 
 In conclusion, optimizing gas usage in Solidity is an important consideration for improving the performance and efficiency of Ethereum contracts. In this article, we discussed ways to optimize gas in Solidity, including using the right modifiers, not using the uint8 data type, packing your variables, and more. By following these best practices, it's possible to reduce gas usage and improve the performance and efficiency of your Solidity contracts.
 
-## Author
+# Author
 
 [Oyeniyi Abiola Peace](https://twitter.com/_iamoracle) is a seasoned software and blockchain developer. With a degree in Telecommunication Science from the University of Ilorin and over five years experience in JavaScript, Python, PHP, and Solidity, he is no stranger to the tech industry. Peace currently works as the CTO at DFMLab and is a Community Moderator at Celo Blockchain. When he's not coding or teaching, he loves to read and spend time with family and friends.
