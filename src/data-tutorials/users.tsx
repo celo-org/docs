@@ -888,6 +888,13 @@ const Users: User[] = [
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
   {
+    title: 'Build Your Own Full Stack DAO On the Celo Blockchain',
+    description: 'This tutorial will show you how to build a full stack decenralized autonomous organization on the celo blockchain',
+    preview: require('./showcase/intermediate/build-your-own-full-stack-dao-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/build-your-own-full-stack-dao-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
