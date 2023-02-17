@@ -1261,6 +1261,13 @@ const Users: User[] = [
     tags: ['advanced', 'figment', 'react', 'nodejs', 'smartcontract', 'truffle'],
   },
   {
+    title: 'Introduction to Token Economics on Celo',
+    description: 'A brief overview of the economic principles governing the Celo network and its native token',
+    preview: require('./showcase/intermediate/token.png'),
+    website: 'blog/tutorials/introduction-to-token-economics-on-celo',
+    tags: ['celo', 'intermediate', 'celosage'],
+  },
+  {
     title: 'Send CELO & cUSD',
     description: 'Learn how to connect to the Celo test network and transfer tokens using ContractKit',
     preview: require('./showcase/intermediate/send-celo-and-cusd.png'),
