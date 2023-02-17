@@ -733,12 +733,19 @@ const Users: User[] = [
     website: 'https://docs.celo.org/blog/2022/07/15/csharp-mobile-app-to-display-celo-nfts',
     tags: ['advanced','foundation', 'mobile', 'android', 'nft', 'popular'],
   },
-  {
+   {
     title: 'Flutter & Celo - Easily build Flutter Mobile dApps',
     description: 'Celo Composer now supports Flutter. Quickly develop mobile apps on Celo.',
     preview: require('./showcase/intermediate/flutter-and-celo-easily-build-flutter-mobile-dapps.png'),
     website: 'blog/tutorials/flutter-celo-easily-build-flutter-mobile-dApps',
     tags: ['intermediate','foundation', 'flutter', 'composer'],
+  },
+  {
+    title: 'Cryptography in Blockchain: An Overview of Hash Functions and Digital Signatures',
+    description: 'Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years.',
+    preview: require('./showcase/celo-sage.png'),
+    website: '/blog/tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures',
+    tags: ['beginner'],
   },
   {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
