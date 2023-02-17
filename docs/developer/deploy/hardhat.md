@@ -17,15 +17,15 @@ How to deploy a smart contract to Celo testnet, mainnet, or a local network usin
 
 To deploy on Celo using Hardhat, you should have Celo set up Celo in your local environment. If you prefer to deploy without a local environment, you can deploy using Remix or Replit.
 
--   [Using Windows](/developer/setup/windows)
--   [Using Mac](/developer/setup/mac)
--   [Using Replit](/developer/setup/replit)
+- [Using Windows](/developer/setup/windows)
+- [Using Mac](/developer/setup/mac)
+- [Using Replit](/developer/setup/replit)
 
 ## Create Hardhat Project
 
 Choose one of the following items to prepare a dApp to deploy on Celo.
 
--   Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract.
+- Follow the [installation instructions and quickstart](https://hardhat.org/getting-started/#installation) to build and deploy your smart contract.
 
 ## Update the hardhat.config.js file
 
@@ -117,7 +117,7 @@ Learn more about building and deploying dApps using the <a href="https://hardhat
 
 ## Verify Contracts on Celo
 
--   [Using Celo Explorer](/developer/verify/celo-explorer)
--   [Using Remix](/developer/verify/remix)
--   [Using CeloScan](/developer/verify/celoscan)
--   [Using Hardhat](/developer/verify/hardhat)
+- [Using Celo Explorer](/developer/verify/celo-explorer)
+- [Using Remix](/developer/verify/remix)
+- [Using CeloScan](/developer/verify/celoscan)
+- [Using Hardhat](/developer/verify/hardhat)

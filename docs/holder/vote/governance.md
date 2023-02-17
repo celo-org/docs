@@ -2,11 +2,12 @@
 title: Celo Voting on Governance Proposals
 description: How to use the Celo CLI to participate in Goverance and create a Governance proposal.
 ---
+
 # Voting on Governance Proposals
 
 How to use the [Celo CLI](/cli/) to participate in Goverance and create a Governance proposal.
 
-___
+---
 
 ## Governance
 
@@ -35,9 +36,10 @@ celocli governance:list
 ```
 
 Included will be three lists of proposals by status:
-* **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
-* **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [protocol documentation](/protocol/governance).
-* **Expired** proposals are no longer being considered.
+
+- **Queued** proposals have been submitted, but are not yet being considered. Voters can upvote proposals in this list, and proposals with the most upvotes from this list will be moved from the queue to be considered.
+- **Dequeued** proposals are actively being considered and will pass through the Approval, Referendum, and Execution stages, as discussed in the [protocol documentation](/protocol/governance).
+- **Expired** proposals are no longer being considered.
 
 ## Understanding Proposal Details
 
@@ -70,13 +72,15 @@ metadata:
 stage: Referendum
 upvotes: 0
 votes:
-  Yes: 95934607718520408413613056 (~9.593e+25)
+  Yes: 30992399904903465125627698 (~3.099e+25)
   No: 0
   Abstain: 0
 passing: true
-requirements:
-  participation: 0.2009694258486
-  agreement: 90%
+requirements: 
+  constitutionThreshold: 0.7 
+  support: 0.99883105743491071638 
+  required: 29107673282861669327494319.531832308424 (~2.910e+25)
+  total: 30992399904903465125627698 (~3.099e+25)
 isApproved: true
 isProposalPassing: true
 timeUntilStages:
@@ -84,6 +88,10 @@ timeUntilStages:
   execution: 57 minutes, 59 seconds
   expiration: 3 days, 57 minutes, 59 seconds
 ```
+
+To see how many votes a proposal needs to pass (depending on what type of commands are being executed), you can refer to the **requirements** section of the respose.
+
+In the proposal above, there is a **constitutionThreshold** target of "0.7" or 70% of votes must be in support, "0.998" or 99.8% of votes have currently voted "yes", the number of votes required to pass are 29.1M CELO, with 30.9M CELO currently voted in total.
 
 ## Voting on Proposals
 
@@ -105,7 +113,7 @@ At a defined frequency, which can be checked with the `celocli network:parameter
 After a proposal is dequeued, it will first enter the Approval phase.
 In this phase, the [Governance Approver](/protocol/governance#approval) may choose to approve the proposal, which will allow it to proceed to the Referendum phase after the configured length of time.
 
-Once a proposal has reached the Referendum phase, it is open to community for voting. 
+Once a proposal has reached the Referendum phase, it is open to community for voting.
 
 ```bash
 celocli governance:vote --proposalID=<PROPOSAL_ID> --value=<Abstain|Yes|No> --from=<YOUR_VOTER_ADDRESS>

@@ -1,12 +1,14 @@
 ---
 title: React based DApp
-description: The basics of developing a decentralised application (DApp) on Celo. 
+description: The basics of developing a decentralised application (DApp) on Celo.
 ---
+
 # React Based DApp
 
-The basics of developing a decentralised application (DApp) on Celo. 
+The basics of developing a decentralised application (DApp) on Celo.
 
-___
+---
+
 ## Getting Started
 
 This example will develop using one of the core Celo contracts, [Governance.sol](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/Governance.sol), and allowing users of our DApp to vote on active [Celo Governance proposals](/holder/vote/governance).
@@ -74,13 +76,13 @@ Leveraging our previously added [@celo-tools/use-contractkit](https://github.com
 Update pages/index.js with the following:
 
 ```javascript title="pages/index.js"
-import React from 'react';
-import { useContractKit } from '@celo-tools/use-contractkit';
-import { ContractKitProvider } from '@celo-tools/use-contractkit';
-import '@celo-tools/use-contractkit/lib/styles.css';
+import React from "react";
+import { useContractKit } from "@celo-tools/use-contractkit";
+import { ContractKitProvider } from "@celo-tools/use-contractkit";
+import "@celo-tools/use-contractkit/lib/styles.css";
 
-function App () {
-  const { address, connect } = useContractKit()
+function App() {
+  const { address, connect } = useContractKit();
 
   return (
     <main>
@@ -88,17 +90,17 @@ function App () {
       <p>{address}</p>
       <button onClick={connect}>Click here to connect your wallet</button>
     </main>
-  )
+  );
 }
 
 function WrappedApp() {
   return (
     <ContractKitProvider
       dapp={{
-          name: "My awesome dApp",
-          description: "My awesome description",
-          url: "https://example.com",
-        }}
+        name: "My awesome dApp",
+        description: "My awesome description",
+        url: "https://example.com",
+      }}
     >
       <App />
     </ContractKitProvider>
@@ -126,26 +128,29 @@ For the purposes of this tutorial, we'll only be looking at dequeued proposals, 
 Here's how it looks using a combination of the `useEffect` and `useCallback` hooks to request and display all dequeued proposals from the blockchain.
 
 ```javascript title="pages/index.js"
-import React, { useCallback, useEffect, useState } from 'react'
-import { useContractKit } from '@celo-tools/use-contractkit'
+import React, { useCallback, useEffect, useState } from "react";
+import { useContractKit } from "@celo-tools/use-contractkit";
 
 function GovernanceApp() {
-  const { address, connect, kit, getConnectedKit } = useContractKit()
-  const [proposals, setProposals] = useState([])
+  const { address, connect, kit, getConnectedKit } = useContractKit();
+  const [proposals, setProposals] = useState([]);
 
   const fetchProposals = useCallback(async () => {
-    const governance = await kit.contracts.getGovernance()
-    const dequeue = await governance.getDequeue()
+    const governance = await kit.contracts.getGovernance();
+    const dequeue = await governance.getDequeue();
 
     const fetchedProposals = await Promise.all(
-      dequeue.map(async (id) => ({ id, ...(await governance.getProposalRecord(id)) }))
-    )
-    setProposals(fetchedProposals)
-  }, [kit])
+      dequeue.map(async (id) => ({
+        id,
+        ...(await governance.getProposalRecord(id)),
+      }))
+    );
+    setProposals(fetchedProposals);
+  }, [kit]);
 
   useEffect(() => {
-    fetchProposals()
-  }, [fetchProposals])
+    fetchProposals();
+  }, [fetchProposals]);
 
   return (
     <div>
@@ -164,9 +169,19 @@ function GovernanceApp() {
           {proposals.map((proposal) => (
             <tr>
               <td>{proposal.id.toString()}</td>
-              <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
               <td>
-                <a href={proposal.metadata.descriptionURL} target="_blank" style={{ color: 'blue', textDecoration: 'underline' }} >
+                {proposal.passed
+                  ? "Passed"
+                  : proposal.approved
+                  ? "Approved"
+                  : "Not approved"}
+              </td>
+              <td>
+                <a
+                  href={proposal.metadata.descriptionURL}
+                  target="_blank"
+                  style={{ color: "blue", textDecoration: "underline" }}
+                >
                   Link
                 </a>
               </td>
@@ -175,7 +190,7 @@ function GovernanceApp() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 ```
 
@@ -186,10 +201,10 @@ function WrappedApp() {
   return (
     <ContractKitProvider
       dapp={{
-          name: "My awesome dApp",
-          description: "My awesome description",
-          url: "https://example.com",
-        }}
+        name: "My awesome dApp",
+        description: "My awesome description",
+        url: "https://example.com",
+      }}
     >
       <GovernanceApp />
     </ContractKitProvider>
@@ -202,28 +217,28 @@ This works pretty well however it makes sense to additionally show whether the u
 ```js title="pages/index.js"
 const fetchProposals = useCallback(async () => {
   if (!address) {
-    return
+    return;
   }
 
-  const governance = await kit.contracts.getGovernance()
-  const dequeue = await governance.getDequeue()
+  const governance = await kit.contracts.getGovernance();
+  const dequeue = await governance.getDequeue();
 
   const fetchedProposals = await Promise.all(
     dequeue.map(async (id) => {
       const [record, voteRecord] = await Promise.all([
         governance.getProposalRecord(id),
         governance.getVoteRecord(address, id),
-      ])
+      ]);
 
       return {
         id,
         ...record,
         vote: voteRecord ? voteRecord.value : undefined,
-      }
+      };
     })
-  )
-  setProposals(fetchedProposals)
-}, [kit, address])
+  );
+  setProposals(fetchedProposals);
+}, [kit, address]);
 ```
 
 Now we have access to whether the user voted on this proposal, we can render that information in our table.
@@ -243,18 +258,28 @@ return (
       {proposals.map((proposal) => (
         <tr>
           <td>{proposal.id.toString()}</td>
-          <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
           <td>
-            <a style={{ color: 'blue', textDecoration: 'underline' }} href={proposal.metadata.descriptionURL} target="_blank">
+            {proposal.passed
+              ? "Passed"
+              : proposal.approved
+              ? "Approved"
+              : "Not approved"}
+          </td>
+          <td>
+            <a
+              style={{ color: "blue", textDecoration: "underline" }}
+              href={proposal.metadata.descriptionURL}
+              target="_blank"
+            >
               Link
             </a>
           </td>
-          <td>{proposal.vote ?? 'No vote yet'}</td>
+          <td>{proposal.vote ?? "No vote yet"}</td>
         </tr>
       ))}
     </tbody>
   </table>
-)
+);
 ```
 
 ### Locking Celo (optional)
@@ -262,16 +287,17 @@ return (
 A prerequisite to [voting on Celo governance proposals](/holder/vote/governance) is having locked Celo to vote with. We won't cover the various flows for locking, unlocking and relocking Celo in this tutorial but you can check the implementation in [Celo Tools](https://github.com/alexbharley/celo-tools) or take inspiration from the following script:
 
 ```javascript
-const lockValue = new BigNumber(res.flags.value)
+const lockValue = new BigNumber(res.flags.value);
 
-const lockedGold = await this.kit.contracts.getLockedGold()
-const pendingWithdrawalsValue = await lockedGold.getPendingWithdrawalsTotalValue(address)
-const relockValue = BigNumber.minimum(pendingWithdrawalsValue, value)
-const lockValue = value.minus(relockValue)
+const lockedGold = await this.kit.contracts.getLockedGold();
+const pendingWithdrawalsValue =
+  await lockedGold.getPendingWithdrawalsTotalValue(address);
+const relockValue = BigNumber.minimum(pendingWithdrawalsValue, value);
+const lockValue = value.minus(relockValue);
 
-const txos = await lockedGold.relock(address, relockValue)
+const txos = await lockedGold.relock(address, relockValue);
 for (const txo of txos) {
-  await kit.sendAndWaitForReceipt({ from: address })
+  await kit.sendAndWaitForReceipt({ from: address });
 }
 ```
 
@@ -286,13 +312,13 @@ To actually vote on a proposal we need to again interact with the [Governance.so
 ```typescript title="pages/index.js"
 const vote = useCallback(
   async (id: string, value: VoteValue) => {
-    const kit = await getConnectedKit()
-    const governance = await kit.contracts.getGovernance()
-    await (await governance.vote(id, value)).sendAndWaitForReceipt()
-    fetchProposals()
+    const kit = await getConnectedKit();
+    const governance = await kit.contracts.getGovernance();
+    await (await governance.vote(id, value)).sendAndWaitForReceipt();
+    fetchProposals();
   },
   [kit, fetchProposals]
-)
+);
 ```
 
 How you handle calling that function is up to you. With [Celo Tools](https://github.com/alexbharley/celo-tools) we opted for simple upwards and downwards facing arrows to handle voting on proposals, however the data can be rendered however you'd prefer.
@@ -300,12 +326,18 @@ How you handle calling that function is up to you. With [Celo Tools](https://git
 Here's a simple example showing buttons for `Yes` or `No` votes when no vote has been cast.
 
 ```javascript title="pages/index.js"
-import { VoteValue } from '@celo/contractkit/lib/wrappers/Governance'
+import { VoteValue } from "@celo/contractkit/lib/wrappers/Governance";
 
 return (
   <tr>
     <td>{proposal.id.toString()}</td>
-    <td>{proposal.passed ? 'Passed' : proposal.approved ? 'Approved' : 'Not approved'}</td>
+    <td>
+      {proposal.passed
+        ? "Passed"
+        : proposal.approved
+        ? "Approved"
+        : "Not approved"}
+    </td>
     <td>
       <a href={proposal.descriptionURL} target="_blank">
         Description link
@@ -322,7 +354,7 @@ return (
       )}
     </td>
   </tr>
-)
+);
 ```
 
 ## Best practices

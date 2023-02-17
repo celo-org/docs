@@ -7,7 +7,7 @@ description: Introduction to Granda Mento (CIP 38), its design, and how to manag
 
 Introduction to Granda Mento (CIP 38), its design, and how to manage exchange proposals.
 
-___
+---
 
 ## What is Granda Mento?
 
@@ -41,7 +41,7 @@ Processes surrounding Granda Mento exchanges, like how to achieve rough consensu
 The approver multi-sig that is ultimately responsible for approving an exchange proposal that has achieved rough consensus from the community is `0xf10011424A0F35B8411e9abcF120eCF067E4CF27` ([link](https://explorer.celo.org/address/0xf10011424A0F35B8411e9abcF120eCF067E4CF27/transactions)) and has the following signers:
 
 | **Name**        | **Affiliation**                       | **Discord Handle**        | **Address**                                  |
-|-----------------|---------------------------------------|---------------------------|----------------------------------------------|
+| --------------- | ------------------------------------- | ------------------------- | -------------------------------------------- |
 | Andrew Shen     | [Bi23 Labs](https://bi23.com/)        | `Shen \| Bi23 Labs #6675` | `0xBecc041a5090cD08AbD3940ab338d4CC94d2Ed3c` |
 | Pinotio         | [Pinotio](https://pinotio.com/)       | `Pinotio.com #5357`       | `0x802FE32083fD341D8e9A35E3a351291d948a83E6` |
 | Serge Kiema     | [DuniaPay](https://www.duniapay.net/) | `serge_duniapay #5152`    | `0xdcac99458a3c5957d8ae7b92e4bafc88a32b80e4` |

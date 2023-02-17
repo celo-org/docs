@@ -2,12 +2,12 @@
 title: Celo Transactions Overview
 description: Introduction to Celo transactions, gas prices, and gateway fees.
 ---
+
 # Transactions
 
 Introduction to Celo transactions, gas prices, and gateway fees.
 
-___
-
+---
 
 ## Celo vs Ethereum Transactions
 

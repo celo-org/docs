@@ -12,7 +12,6 @@ description: Sending ETH From Ethereum to Celo
 - Make sure you have ETH in your account.
 - 계정에 ETH가 있는지 확인합니다.
 
-
 - Go to the Optics Bridge app.
 - Optics Bridge 앱으로 이동합니다.
   - Connect Metamask
@@ -46,6 +45,7 @@ description: Sending ETH From Ethereum to Celo
 - ETH가 연결되기를 기다립니다. 브리징이 완료되면 WETH가 지정된 계정 주소에 표시됩니다.
 
 ## Sending WETH from Celo to Ethereum
+
 ### Celo에서 Ethereum#으로 WETH를 보내기
 
 - Install Metamask from [https://metamask.io](https://metamask.io).
@@ -81,6 +81,7 @@ description: Sending ETH From Ethereum to Celo
 - Optics가 자산을 대상 네트워크로 보낼 때까지 기다립니다.
 
 ## Sending Assets from Celo to Polygon#
+
 ### 자산을 Celo에서 Polygon#으로 보내기
 
 We demo how to send assets from Celo to Polygon, but the process is the same for sending between other networks as well.
@@ -102,11 +103,11 @@ Celo에서 Polygon으로 자산을 보내는 방법을 시연하지만, 다른 �
 - Make sure you have Celo assets to send.
 - 보낼 Celo 자산이 있는지 확인합니다.
 - Go to the Optics Bridge app.
--  앱으로 이동합니다.
-  - Connect metamask
-  - 메타마스크를 연결합니다.
-  - Make sure metamask is connected to the Celo network
-  - 메타 마스크가 Celo 네트워크에 연결되어 있는지 확인하십시오.
+- 앱으로 이동합니다.
+- Connect metamask
+- 메타마스크를 연결합니다.
+- Make sure metamask is connected to the Celo network
+- 메타 마스크가 Celo 네트워크에 연결되어 있는지 확인하십시오.
 - Enter the amount, destination chain (Polygon in this case) and destination address. The sending address is filled by default.
 - 금액, 대상 체인(이 경우 폴리곤) 및 대상 주소를 입력하십시오. 송신 주소는 기본적으로 채워집니다.
 
@@ -132,7 +133,5 @@ Celo에서 Polygon으로 자산을 보내는 방법을 시연하지만, 다른 �
 - Once your transaction is approved your transaction details may not appear in the transaction history immediately. This does not mean that your transaction wasn’t successful. If you don’t see your transaction details, check a block explorer of the source network to verify that your transaction to the bridge was successful.
 - 거래가 승인되면 거래 내역이 즉시 나타나지 않을 수 있습니다. 그렇다고 해서 거래가 성공하지 못한 것은 아닙니다. 트랜잭션 세부 정보가 표시되지 않으면 소스 네트워크의 블록 탐색기를 확인하여 브리지로의 트랜잭션이 성공했는지 확인합니다.
 
-
 - Wait for Optics to send your assets to the destination network.
 - Optics가 자산을 대상 네트워크로 보낼 때까지 기다립니다.
-

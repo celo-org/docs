@@ -101,7 +101,7 @@ npx hardhat create-account
 
 ![dappstarter](/img/doc-images/introduction-to-celo-progressive-dappstarter/7.png)
 
-Copy the testnet account address, paste it into the [Celo Testnet Faucet](https://celo.org/developers/faucet) and select **Get Started** to transfer funds into your testnet account.
+Copy the testnet account address, paste it into the [Celo Testnet Faucet](https://faucet.celo.org) and select **Get Started** to transfer funds into your testnet account.
 
 ![dappstarter](/img/doc-images/introduction-to-celo-progressive-dappstarter/8.png)
 

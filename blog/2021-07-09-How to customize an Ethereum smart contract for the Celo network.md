@@ -4,7 +4,7 @@ description: Learn how to convert & customize an existing Ethereum Smart Contrac
 authors:
   - name: ✍️ Brittany Deventer  ·  🔗 External
 tags: [figment, intermediate, nodejs, smart contract, truffle]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to customize an Ethereum smart contract for the Celo network

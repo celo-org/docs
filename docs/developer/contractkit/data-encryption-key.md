@@ -9,8 +9,9 @@ An account may register a data encryption key (DEK) that can be used for lightwe
 Most Valora users automatically register a DEK with their wallet when they go through the onboarding flow. The DEK can be set during account creation or registered after as follows:
 
 ```ts
-  const accountWrapper: AccountsWrapper = await contractKit.contracts.getAccounts()
-  const setKeyTx = accountWrapper.setAccountDataEncryptionKey(dekPublicKey)
+const accountWrapper: AccountsWrapper =
+  await contractKit.contracts.getAccounts();
+const setKeyTx = accountWrapper.setAccountDataEncryptionKey(dekPublicKey);
 ```
 
 When using the DEK, it's important to check that the DEK is the latest that's registered for a user. This can be done by querying the account contract and comparing the resulting public key with the key that's expected.
