@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity
 
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png)
 ## Introduction​
 
 This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee. Buy Me A Coffee is a platform that will enable individuals to support the creative works of creators. The dApp will be built using Celo composer, react, solidity, hardhat, Pinta IPFS, and deployment to Fleek. This will enable payment to be made using CELO native token.
