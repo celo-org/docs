@@ -1588,7 +1588,7 @@ const Users: User[] = [
 },
 {
   title: 'How to listen to smart contract On-Chain events with Celo',
-  description: 'This tutorial teaches it's readers about reading celo on-chain event',
+  description: 'This tutorial teaches its readers about reading celo on-chain event',
   preview: require('./showcase/intermediate/how-to-listen-to-smart-contract-on-chain-event-with-celo.png'),
   website: 'blog/tutorials/how-to-listen-to-smart-contract-on-chain-event-with-celo',
   tags: ['celo', 'intermediate', 'celosage'],
