@@ -13,6 +13,9 @@ slug: /tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-pl
 
 # Integrating Blockchain Technology into Legacy Systems on Celo
 
+![header](../../src/data-tutorials/showcase/beginner/blockchain-integration-updating-legacy-systems-with-the-celo-platform.png)
+]
+
 ## Introduction
 
 Blockchain technology is a powerful tool for businesses looking to increase efficiency, security, and transparency. It is a decentralized, distributed ledger that allows secure and transparent recording of transactions and has the potential to revolutionize various industries, including finance, supply chain management, and healthcare. However, integrating blockchain into legacy systems can be challenging due to resistance to change, lack of interoperability, and lack of standardization in the blockchain industry. Despite these challenges, the potential benefits make it worth pursuing many businesses. This article will explore the strategies for successful integration, case studies of companies that have done so, and the best practices from these cases.
@@ -192,3 +195,7 @@ The adoption of blockchain technology in the business world is likely to acceler
 # Conclusion
 
 Integrating blockchain into legacy systems can be a complex process that requires careful planning and consideration of compatibility, scalability, and security. However, the benefits of using blockchain technology, including increased security, transparency, and efficiency, make it a promising solution for many industries.
+
+# About the Author
+
+Oyeniyi Abiola Peace (@iamoracle) is a blockchain software and full-stack developer with over five years of experience in JavaScript, Python, PHP, and Solidity. He is currently the CTO of DFMLab and a DevRel Community Moderator at the Celo Blockchain. When not building or teaching about blockchain, he enjoys reading and spending time with loved ones. You can check my blog at [iamoracle.hashnode.dev](iamoracle.hashnode.dev).
