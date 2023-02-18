@@ -1608,6 +1608,13 @@ const Users: User[] = [
     tags: ['celosage', 'nft', 'advanced'],
   },
   {
+    title: 'How to build a marketplace for selling shoes on the celo blockchain',
+    description: 'Learn how to build a marketplace for seliing shoes on the celo blockchain.',
+    preview: require('./showcase/intermediate/how-to-build-a-marketplace-for-Selling-Shoes-on-Celo.png'),
+    website: 'blog/tutorials/how-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'intermediate'],
+  },
+  {
     title: 'Build a Frontend dApp for Celo Network in Angular',
     description: 'How to build a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular',
     preview: require('./showcase/intermediate/build-a-frontend-dapp-for-celo-network-in-angular.png'),
