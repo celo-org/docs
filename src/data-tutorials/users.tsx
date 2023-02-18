@@ -689,6 +689,15 @@ const Users: User[] = [
   //   website: '/tutorials?tags=composer',
   //   tags: ['favorite'],
   // },
+
+
+  {
+    title: 'How to Use Hardware Tools with the Celo Blockchain',
+    description: 'In this series, we will explore how hardware is driving the adoption of the Celo blockchain',
+    preview: require('./showcase/celo-sage.png'),
+    website: 'blog/tutorials/how-to-use-hardware-tools-with-the-celo-blockchain',
+    tags: ['backend','intermediate','technical'],
+  },
   {
     title: ' Celo Composer',
     description: 'Build on Celo in 5 minutes of less with Celo Composer.',
