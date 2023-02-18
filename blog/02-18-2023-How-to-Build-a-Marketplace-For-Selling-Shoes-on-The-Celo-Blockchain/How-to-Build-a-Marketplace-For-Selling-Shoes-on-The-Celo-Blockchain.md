@@ -1,3 +1,4 @@
+---
 title: How to build a marketplace for selling shoes on the celo blockchain
 description: Learn how to build a marketplace for seliing shoes on the celo blockchain
 authors:
@@ -7,7 +8,7 @@ authors:
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/ How-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain
+slug: /tutorials/How-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain
 ---
 
 
