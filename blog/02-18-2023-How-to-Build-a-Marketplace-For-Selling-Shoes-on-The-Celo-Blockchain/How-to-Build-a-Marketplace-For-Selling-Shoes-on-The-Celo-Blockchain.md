@@ -47,11 +47,6 @@ In order to build our smart contract we will be using Remix for developing our s
 To get started with remix click on this link (https://remix.ethereum.org/)
 
 
-**A pictorial view of the front page of remix.**
-
-<img src="images\Remix.png" alt="remix img"/>
-
-
 
 On Remix we would start by creating a new file called Product.sol. We then open the file and start with the following statements
 
