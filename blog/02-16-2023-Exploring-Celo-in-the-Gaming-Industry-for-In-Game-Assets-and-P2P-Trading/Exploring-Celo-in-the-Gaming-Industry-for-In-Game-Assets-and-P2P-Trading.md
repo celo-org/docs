@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png)
+![header](../../src/data-tutorials/showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png) 
 
 ## Introduction
 
