@@ -1,6 +1,6 @@
 ---
 title: How to listen to smart contract On-Chain events with Celo 
-description: This tutorial teaches it's readers about reading celo on-chain event
+description: This tutorial teaches its readers about reading celo on-chain event
 authors:
   - name: Mayowa Julius Ogungbola
     title: Software Engineer, Technical writer @Celo Foundation
@@ -40,6 +40,7 @@ Celo provides developers with the ability to listen to events emitted by smart c
 Events can be used to monitor the status of a smart contract and its execution. By monitoring events, developers can gain insights into the behavior of their smart contracts and take action as needed.
 
 ## On-Chain Events and How They Work? 
+
 On-chain events communicate with the blockchain, allowing applications to be notified when certain predetermined conditions have been met. They are triggered by transactions and events on the blockchain, and they can be used to send notifications out to applications. By listening to on-chain events, applications can keep up with the latest blockchain state and respond accordingly.
 
 
@@ -50,6 +51,7 @@ When the event is triggered, the application will receive the data associated wi
 
 
 ## Reading On-Chain Data
+
 The process of reading on-chain data on the blockchain can be accomplished using either an API or direct access to the blockchain data. An API offers a convenient method to retrieve the information, as it provides access to the blockchain data through an endpoint that can be hosted on a public access to the blockchain data through an endpoint. This endpoint can be hosted on a public or private node.
 
 With the data returned from the API, you can gain insight into specific accounts, transactions, and other on-chain data in the Celo blockchain.
@@ -60,15 +62,18 @@ In conclusion, reading on-chain data on the Celo blockchain is essential for dev
 Here are a list of tools that make it easy to read on-chain data off the celo blockchain:
 
 ## The Celo API
+
 [The Celo API](https://explorer.celo.org/mainnet/api-docs) provides access to the Celo blockchain data, allowing developers to retrieve information about accounts transactions, and other on-chain data.
 Once you have access to the Celo API endpoint, you can use it to retrieve information from the Celo blockchain. For example, you can retrieve information about an account’s transaction list by sending a GET request to the following endpoint: `https://explorer.celo.org/mainnet/api?module=account&action=pendingtxlist&address={address}`
 The Parameter should be replaced with the address of the account you want to retrieve information about. Here is a [link](https://explorer.celo.org/mainnet/api_docs) to get started with the Celo API.
 You can also consider creating an API for your decentralized application for example to read on-chain events from the celo blockchain.
 
 ## The Graph 
+
 The Graph is an indexing and querying layer for blockchain networks like Ethereum and IPFS. In other words, the graph acts as a decentralized search engine for transactions that happen on the blockchain network. The graph makes data on the blockchain accessible by building and publishing public APIs known as subgraphs.
 
 ### What are Subgraphs
+
 Subgraphs are decentralized networks of Ethereum-compatible nodes that are connected in a peer-to-peer fashion. Subgraphs allow developers to query data from the Ethereum blockchain efficiently and securely. This is useful for applications that require large amounts of data or that need to interact with smart contracts.
 
 ## Reading On-chain Data with the Graph
@@ -87,14 +92,17 @@ Although both of these can be used to query on-chain data, the only difference i
 
 
 ## Conclusion​
+
 The process of Reading On-chain events from the Celo blockchain when creating Dapp is made quite easy for developers to explore with the available resources. Now you have the required knowledge and tools you need to get started with querying data on the Celo blockchain.
 
 ## About the Author​
+
 Mayowa Julius Ogungbola
 
 is a Software Engineer and Technical writer always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/) and you could also find out what I tweet about and connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/).
 
 ## References​
+
 * [How to create an API](https://www.youtube.com/watch?v=GK4Pl-GmPHk&t=81s)
 * [Building subgraphs with the Graph](https://www.youtube.com/watch?v=ct1UMSpZLgk&t=943s)
 * [A guide to on-chain analysis and how it works](https://www.youtube.com/watch?v=tvW9VKJ58Lg)
