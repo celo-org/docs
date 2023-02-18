@@ -11,6 +11,9 @@ hide_table_of_contents: true
 slug: /tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures.png)
+
+
 # Cryptography in Blockchain: An Overview of Hash Functions and Digital Signatures
 
 ## Introduction
