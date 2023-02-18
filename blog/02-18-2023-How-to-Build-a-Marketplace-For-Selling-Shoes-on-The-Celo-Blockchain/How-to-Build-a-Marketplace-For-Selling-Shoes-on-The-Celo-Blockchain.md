@@ -33,10 +33,6 @@ According to Dapp University, smart contracts are where all the business logic o
 - Have a basic knowledge of [Solidity](https://soliditylang.org/).
   
 
-**A pictorial view of the front page of remix.**
-
-<img src="images\Remix.png" alt="remix img"/>
-
  
 ### Now lets begin by creating our smart contract
 
@@ -48,6 +44,12 @@ According to Dapp University, smart contracts are where all the business logic o
 We’ll build a smart contract for buying and selling shoes on the Celo blockchain.
 In order to build our smart contract we will be using Remix for developing our smart contracts.
 To get started with remix click on this link (https://remix.ethereum.org/)
+
+
+**A pictorial view of the front page of remix.**
+
+<img src="images\Remix.png" alt="remix img"/>
+
 
 
 On Remix we would start by creating a new file called Product.sol. We then open the file and start with the following statements
@@ -439,3 +441,38 @@ Next up, on Remix, download and activate the celo plugin from the plugin manager
 
  # Conclusion
  Good job on successfully creating a smart contract for selling shoes on the celo blockchain, Congratulations on your achievement! 🎉
+
+ ### Next Steps
+
+I hope you have gained a lot of valuable information from this tutorial. If you're interested in furthering your learning, here are some helpful links to explore:
+
+The official Celo documentation: https://docs.celo.org/
+
+Solidity By Example, a website with code examples for learning Solidity: https://solidity-by-example.org/
+
+OpenZeppelin Contracts, a library of secure, tested smart contract code: https://www.openzeppelin.com/contracts/
+
+Solidity documentation for version 0.8.17: https://docs.soliditylang.org/en/v0.8.17/
+
+I hope these resources prove to be useful to you!
+
+### About the author
+
+My name is David Ikanji, and I'm a web3 developer based in Nigeria. I have a passion for working with blockchain technology.
+
+### References
+
+These are the references used in the tutorial:
+
+Web3.Storage documentation: https://web3.storage/docs/
+
+Celo ContractKit documentation: https://docs.celo.org/developer/contractkit/
+
+Official Celo documentation: https://docs.celo.org/
+
+I hope this helps!
+
+
+
+
+
