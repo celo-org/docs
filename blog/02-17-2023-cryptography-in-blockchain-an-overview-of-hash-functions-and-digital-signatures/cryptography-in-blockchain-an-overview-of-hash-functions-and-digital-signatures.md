@@ -150,3 +150,7 @@ This is a digital signature algorithm that is based on the concept of modular ar
 # Conclusion
 
 Cryptography is the security backbone of the blockchain, and understanding hash functions, which are an essential cryptographic tool, gives you a better insight into how secure the blockchain is and the possibilities that lie ahead. Hash functions ensure the integrity of data stored and transmitted; they are ideal for passwords, hashing, data integrity checks, and many other functions vital to properly running a Blockchain.
+
+# About the Author
+
+Oyeniyi Abiola Peace (@iamoracle) is a blockchain software and full-stack developer with over five years of experience in JavaScript, Python, PHP, and Solidity. He is currently the CTO of DFMLab and a DevRel Community Moderator at the Celo Blockchain. When not building or teaching about blockchain, he enjoys reading and spending time with loved ones. You can check my blog at [iamoracle.hashnode.dev](iamoracle.hashnode.dev).
