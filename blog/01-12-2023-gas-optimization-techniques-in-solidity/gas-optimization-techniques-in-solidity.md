@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/gas-optimization-techniques-in-solidity
 ---
 
+![header](../../src/data-tutorials/showcase/advanced/gas-optimization-techniques-in-solidity.png)
+
 # Introduction
 
 Optimizing smart contract performance is an essential aspect of blockchain development. Solidity, the most popular programming language for creating smart contracts on the Ethereum platform, provides several techniques to help improve the efficiency of your contracts. In this article, we'll go over some of these techniques and how you can use them to improve the performance of your Solidity code. We'll discuss how to save gas, avoid unnecessary computations, and improve contract readability.
