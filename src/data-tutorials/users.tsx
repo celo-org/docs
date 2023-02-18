@@ -1405,7 +1405,7 @@ const Users: User[] = [
     title: 'How to Create your own DAO on Celo',
     description: 'Build your own DAO with on-chain governance',
     preview: require('./showcase/intermediate/how-to-create-your-own-dao-on-celo.png'),
-    website: '/blog/tutorials/how-to-create-your-own-dao-on-celo',
+    website: 'blog/tutorials/how-to-create-your-own-dao-on-celo',
     tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'dao'],
   },
   {
