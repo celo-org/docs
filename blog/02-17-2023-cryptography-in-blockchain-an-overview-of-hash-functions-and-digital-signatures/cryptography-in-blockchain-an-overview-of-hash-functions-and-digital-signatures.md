@@ -14,8 +14,6 @@ slug: /tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-di
 ![header](../../src/data-tutorials/showcase/intermediate/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures.png)
 
 
-# Cryptography in Blockchain: An Overview of Hash Functions and Digital Signatures
-
 ## Introduction
 
 Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years. This article overviews three critical cryptographic concepts essential to understanding how the blockchain works: hash functions, digital signatures, and zero-knowledge proofs.
@@ -31,7 +29,7 @@ participating nodes. This distributed structure makes them resistant to censorsh
 
 In addition, blockchains are transparent by design, meaning that all transactions are recorded and made available for anyone to view. This transparency helps build trust and accountability and can create more efficient and effective systems.
 
-# Overview of Cryptography in Blockchain
+## Overview of Cryptography in Blockchain
 
 Cryptography is a branch of mathematics that deals with the study of secure communication techniques. It plays a crucial role in ensuring the security and privacy of information
 transmitted over the internet and is especially important in blockchain technology.
@@ -49,7 +47,7 @@ Zero-knowledge proofs, also known as zk-SNARKs, are a type of cryptographic proo
 knowledge without revealing the actual knowledge itself. This property makes zero-knowledge proofs particularly useful in blockchain technology, as they can be used to ensure privacy and scalability. 
 
 
-# Hash Functions
+## Hash Functions
 
 Hash functions are a fundamental concept in computer science and cryptography and play a crucial role in ensuring the security and integrity of data transmitted over the internet. Here is a mathematical algorithm that takes an input of any size and produces a fixed-size output, known as a hash or a digest. The output of a hash function is unique, meaning that any change to the input will result in a completely different output. This property makes hash functions ideal for various applications, including password hashing, data integrity checks, and cryptographic signing.
 
@@ -102,7 +100,7 @@ Hash functions are an essential part of the security of a blockchain. The output
 
 In summary, hash functions play a crucial role in the operation of a blockchain, helping to create blocks, verify transactions, and provide security. They are an essential component of blockchain technology and help ensure the integrity and reliability of the data stored on the blockchain. 
 
-# Digital Signatures
+## Digital Signatures
 
 Digital signatures are an essential part of blockchain technology, as they ensure the authenticity and integrity of transactions on the blockchain. A digital signature is a type of electronic signature used to authenticate the identity of the sender of a message or document and to ensure that the original content of the message or document has not been altered.
 
@@ -147,10 +145,10 @@ This is a widely-used digital signature algorithm based on the public key crypto
 
 This is a digital signature algorithm that is based on the concept of modular arithmetic. Several different cryptocurrencies, including Nxt and Peercoin, use it.
 
-# Conclusion
+## Conclusion
 
 Cryptography is the security backbone of the blockchain, and understanding hash functions, which are an essential cryptographic tool, gives you a better insight into how secure the blockchain is and the possibilities that lie ahead. Hash functions ensure the integrity of data stored and transmitted; they are ideal for passwords, hashing, data integrity checks, and many other functions vital to properly running a Blockchain.
 
-# About the Author
+## About the Author
 
 Oyeniyi Abiola Peace (@iamoracle) is a blockchain software and full-stack developer with over five years of experience in JavaScript, Python, PHP, and Solidity. He is currently the CTO of DFMLab and a DevRel Community Moderator at the Celo Blockchain. When not building or teaching about blockchain, he enjoys reading and spending time with loved ones. You can check my blog at [iamoracle.hashnode.dev](iamoracle.hashnode.dev).
