@@ -14,7 +14,6 @@ slug: /tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-pl
 # Integrating Blockchain Technology into Legacy Systems on Celo
 
 ![header](../../src/data-tutorials/showcase/beginner/blockchain-integration-updating-legacy-systems-with-the-celo-platform.png)
-]
 
 ## Introduction
 
