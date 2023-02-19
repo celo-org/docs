@@ -40,6 +40,7 @@ Basic web Development.
 - Remix IDE
 
 ## SmartContract
+
 Let's begin writing our smart contract in Remix IDE
 
 The completed code Should look like this.
@@ -355,7 +356,7 @@ Next, we need to fund our newly created wallet which can done using the celo alf
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
-### Frontend
+## Frontend
 
 Click on [this](https://github.com/4undRaiser/celo-dao) repo from your github.
 
@@ -533,6 +534,7 @@ export default App;
 
 ```
 ### Break down
+
 Let's take a look at the `App.js` file and break it down.
 
 
