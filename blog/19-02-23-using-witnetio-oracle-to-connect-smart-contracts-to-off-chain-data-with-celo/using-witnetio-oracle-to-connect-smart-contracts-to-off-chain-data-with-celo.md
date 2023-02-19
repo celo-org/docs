@@ -58,7 +58,7 @@ Dynamic NFTs, also known as Non-Fungible Tokens, are unique digital assets that 
 **_ Let's start building the future together! _**
 
 :::tip
-To learn more about setting up the environment to create NFTs using Witnet.io and Celo, check out the **(step-by-step guide to deploying your first full-stack dApp on Celo)[https://docs.celo.org/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo#steps-to-set-up-the-truffle-project-and-its-configs]**, which provides detailed instructions on getting started.
+To learn more about setting up the environment to create NFTs using Witnet.io and Celo, check out the **[step-by-step guide to deploying your first full-stack dApp on Celo](https://docs.celo.org/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo#steps-to-set-up-the-truffle-project-and-its-configs)**, which provides detailed instructions on getting started.
 :::
 
 ## Smart Contract to Create Dynamic Price Feed NFT using Witnet.io Off-chain data on Celo Blockchain.
