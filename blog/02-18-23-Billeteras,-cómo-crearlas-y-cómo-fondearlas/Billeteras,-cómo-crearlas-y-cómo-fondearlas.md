@@ -21,10 +21,10 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 
 
 ## Prerrequisitos​
-Debes conocer el concepto de Blockchain y cómo funciona.
-Debes conocer acerca de las especificidades de la Blockchain de Celo.
-Que es una cuenta en una Blockchain y una dirección asociada a esta cuenta.
-Cómo funciona el Protocolo de Identidad en Celo para realizar el mapeo descentralizado de números de teléfono a direcciones de billetera.
+- Debes conocer el concepto de Blockchain y cómo funciona.
+- Debes conocer acerca de las [especificidades de la Blockchain de Celo](https://docs.celo.org/general).
+- Que es una cuenta en una Blockchain y una dirección asociada a esta cuenta.
+- Cómo funciona el [Protocolo de Identidad en Celo](https://docs.celo.org/protocol/identity) para realizar el mapeo descentralizado de números de teléfono a direcciones de billetera.
 
 ## Requisitos​
 - Necesitaremos Instalar Metamask, puedes usar estos links: https://metamask.io/
@@ -36,7 +36,7 @@ Cómo funciona el Protocolo de Identidad en Celo para realizar el mapeo descentr
 
 ## Empecemos
 ### Metamask
-1. Descarga la App de su sitio web o de las tiendas AppStore o PlayStore.
+1. Descarga la App de su [sitio web](https://metamask.io/) o de las tiendas AppStore o PlayStore.
  
 2. Una vez que hayas descargado Metamask, puedes abrirlo e iniciar el proceso de creación de tu cuenta:
 
@@ -71,7 +71,7 @@ Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna
 
 
 ### Valora
-1. Descarga la App de su sitio web o de las tiendas AppStore o PlayStore.
+1. Descarga la App de su [sitio web](https://valoraapp.com/) o de las tiendas AppStore o PlayStore.
 2. Una vez que hayas descargado Valora, puedes abrirlo e iniciar el proceso de creación de tu cuenta Valora:
     
     Debes introducir un nombre y número de teléfono.
@@ -109,11 +109,11 @@ Siempre guarda tu Frase Semilla o Clave Secreta de Recuperación, esta es la ún
 7. Crea un plan en caso de accidentes
 
 Algunas opciones para guardar tu Frase Semilla:
-- Blockplate
-- Cryptosteel
-- Hodlinox
-- Coldbit
-- Privacy pros
+- [Blockplate](https://www.blockplate.com/collections/frontpage)
+- [Cryptosteel](https://cryptosteel.com/shop/?csr=666)
+- [Hodlinox](https://hodlinox.com/order/)
+- [Coldbit](https://coldbit.com/product/coldbit-steel/)
+- [Privacy pros](https://privacypros.io/collections/billfodls/?afmc=ag&utm_campaign=ag&utm_medium=affiliate&utm_source=leaddyno)
 
 ## Siguientes Pasos
 - Realiza una transacción.
