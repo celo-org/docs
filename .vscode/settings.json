@@ -1,7 +1,0 @@
-{
-    "prettier.requireConfig": true,
-    "prettier.requirePragma": true,
-    "prettier.resolveGlobalModules": true,
-    "prettier.singleAttributePerLine": true,
-    "prettier.singleQuote": false
-}
