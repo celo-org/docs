@@ -14,7 +14,7 @@ Step-by-step instructions to complete your Celo Sage tutorial.
 After submitting your tutorial, it will be reviewed by a team member from the Celo Foundation. After review your tutorial submission will either be accepted, rejected, or you will receive feedback on how to improve the idea.
 
 - **Accepted**: Move forward with instructions below on how to complete your tutorial.
-- **Rejected**: This idea does not meet the legel standards or best practices for a Celo Sage tutorial.
+- **Rejected**: This idea does not meet the legal standards or best practices for a Celo Sage tutorial.
 - **Improve**: The idea may need some additional support before getting started. Please address the feedback you receive and work with the team until your idea is **Accepted**.
 
 :::tip
