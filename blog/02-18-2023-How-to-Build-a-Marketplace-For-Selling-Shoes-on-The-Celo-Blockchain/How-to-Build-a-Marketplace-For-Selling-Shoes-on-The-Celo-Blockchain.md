@@ -17,36 +17,40 @@ slug: /tutorials/How-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockc
 ## INTRODUCTION
 
 ### What is blockchain all about?
+
 Blockchain is a system of recording information in a way that makes it difficult or impossible to alter, hack or cheat the system.
 
 ### What is the Celo blockchain? 
+
 Celo is a carbon-negative, permissionless, layer-1 blockchain with a rich ecosystem of global partners building innovative Web3 dapps to support a more inclusive financial system. You can read more about Celo by visiting this [page](https://celo.org).
+
 ### What are smart contract? 
+
 According to Dapp University, smart contracts are where all the business logic of our applications lives. Smart contracts are in charge of reading and writing data to the blockchain, as well as executing business logic. Smart contracts are written in a programming language called Solidity, which looks a lot like Javascript.
 
 # REQUIREMENT
+
 - A code editor or text editor, for this tutorial we will be using [Remix](https://remix.ethereum.org/).
 - An Internet Browser and a good internet connection.
   
 # PREREQUISITE 
+
 - Basic knowledge of [Javascript](https://www.javascript.com/).
 - Understand how Blockchain works.
 - Have a basic knowledge of [Solidity](https://soliditylang.org/).
   
-
- 
 ### Now lets begin by creating our smart contract
 
 ##  Who this course is for:
+
 - Anyone who wants to get started with smart contracts.
 - Take this tutorial if you want to get a clear understanding of how the Celo blockchain works.
  
 ## What We’ll Be Building
+
 We’ll build a smart contract for buying and selling shoes on the Celo blockchain.
 In order to build our smart contract we will be using Remix for developing our smart contracts.
 To get started with remix click on this link (https://remix.ethereum.org/)
-
-
 
 On Remix we would start by creating a new file called Product.sol. We then open the file and start with the following statements
 
@@ -60,12 +64,14 @@ The SPDX license identifiers assist us so we can specify what license the contra
 The Pragma is used to specify what version of Solidity our smart contracts use and thereby help the compiler to decide on the required.
 
 **How do you know which version of Solidity to use?** <br>
+
 It's always good to use the latest version of solidity except if you have some limiting factors.
 Pragma solidity >=0.7.0 <0.9.0: This means that our smart contract code is to be compiled with a version of Solidity that is greater than or equal to 0.7.0 but less than 0.9.0.
 
 Next, we would be discussing the IERC20 token which enables us to carry out transactions with the Celo Usd stable coin (cUSD).
 
 ## What is ERC20?
+
 Put simply, the ERC20 standard defines a set of functions to be implemented by all ERC20 tokens such as cUSD, to allow integration with other contracts, wallets, or marketplaces. 
 We can find the functions and events of the interface in the Celo documentation (https://docs.celo.org/)
 
@@ -436,6 +442,7 @@ After downloading and creating your wallet, you will need to fund it using the C
 Next up, on Remix, download and activate the celo plugin from the plugin manager. Connect your wallet and deploy your contract.
 
  # Conclusion
+ 
  Good job on successfully creating a smart contract for selling shoes on the celo blockchain, Congratulations on your achievement! 🎉
 
  ### Next Steps
