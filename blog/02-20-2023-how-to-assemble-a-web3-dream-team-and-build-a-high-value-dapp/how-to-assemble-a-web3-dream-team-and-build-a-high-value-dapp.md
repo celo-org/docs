@@ -39,19 +39,24 @@ According to Investopedia, there are four key reasons why a new business fails.
 
 4 - Deficiencies in marketing
 
+
 # Prerequisites​
 Although formal education is not required to become a successful entrepreneur, real-life skills would be crucial. Here’s a list of my recommended reading and podcasts to help you build a Web3 dream team and build a high-value dApp. 
 
 
 [Mindset by Carol Dweck](https://amzn.to/3jQ0lsh)
+
 [Grit by Angela Ducksworth](https://amzn.to/3HU5APs)
-Traction: Get a Grip on Your Business by Gino Wickman
-Multiplier by Liz Wiseman 
-Deep Work by Cal Newport
+
+[Traction: Get a Grip on Your Business by Gino Wickman](https://amzn.to/3S2nWCG)
+
+[Multiplier by Liz Wiseman](https://amzn.to/3XwEMuz)
+
+[Deep Work by Cal Newport](https://amzn.to/3XAoLUe)
 
 
 # 4 Reasons Why Businesses Fail
-Lack of Working Capital and Lack Funding
+## Lack of Working Capital and Lack Funding
 
 What is working capital and how is this related to assembling a web3 dream team? Having the right people on board would make or break your project. Can you hire the best people possible without sufficient funding?
 
@@ -67,7 +72,8 @@ From experience, I always budget double the cost and twice as long.
 
 Here, you should have someone on your team with significant experience in financial planning, accounting, and operations.
 
-Incompetent Management
+
+## Incompetent Management
 
 Incompetency is the lack of ability to deliver. Many startup management teams are the owners themselves. Oftentimes, they do not have experience operating prior companies. But people don’t know what they don’t know. The management team may not know their shortcomings, which means they do not reach out for help.
 
@@ -79,7 +85,8 @@ So what are your strengths and weaknesses? Let’s take some time to list them d
 
 To resolve this, you should have at least 3 - 5 advisors who can give you honest feedback. Don’t have the budget? Most advisors will consider equity for their time. 
 
-Insufficient Business Planning
+
+## Insufficient Business Planning
 
 Insufficient business planning is like going camping in Canadian winter with just a hoodie and a pair of shorts. You are not going to make it. 
 
@@ -92,8 +99,7 @@ Tokenomics is the economic and monetary system of your ecosystem.
 Please find an economist, and not a marketer, to conduct a full analysis of your tokenomics. Especially if you are building a high-value dApp with your native token. 
 
 
-
-Deficiencies in Marketing
+## Deficiencies in Marketing
 
 Traditional industries often fail in delivering the right marketing strategies. Web3 makes it even more complicated as it is fast changing and web3 users often hang out at different places than your traditional markets. 
 
@@ -105,25 +111,35 @@ After all, one size fits no one. Customize your marketing strategy, based on you
 
 Attract a marketer who is excited about your product and understands your audience! Also, don’t forget SEO! Even if you built the world’s most needed dApp, if people don’t know about you and cannot find you, you don’t exist!
 
-Where to Find Them?
+
+# Where to Find Them?
 
 Now you know what are the key failures in a new business and which roles you should consider, where can you find them? Here are some places to start:
 
-Utilize Professional Networks
+
+## Utilize Professional Networks
 Connect with people in your industry or field and ask for referrals or recommendations for individuals with the desired hard skills. As you know, web3 is such a new and exciting industry. Most of us in the industry now are eager to help you grow and put you in touch with those who can help you grow!
 
-Post Job Listings
+
+## Post Job Listings
 Advertise job openings on job boards, social media, and professional networking sites. Be sure to include a list of required hard skills in the job listing. Although mostly web2 focused, LinkedIn has worked fairly well for me.
 
-Web3 Events
+
+## Web3 Events
 Web3 events are focused on specific industries or fields, making it easier to find candidates with the desired hard skills. These events are perfect for networking and building your dream team.
 
-Recruitment Agencies
+
+## Recruitment Agencies
 Recruitment agencies have access to a wide range of candidates and can help you find individuals with the specific hard skills you are looking for. This is especially useful when you just don’t have the time to allocate to finding the right person. 
 
-Conclusion​
+
+# Conclusion​
 Now you know the four key reasons why businesses fail, who you should have on your dream team to avoid falling into the four traps, and where to find your dream team, you are ready to build a dApp that the market needs!
-Next Steps​
+
+
+# Next Steps​
 I still recommend continuous improvement on non-technical skills, aka soft skills, such as leadership, negotiation, communication, etc. The journey of entrepreneurship is endless self-improvement. Look forward to seeing your dApp and the next unicorn. 
-About the Author​
+
+
+# About the Author​
 Alice has been dabbling in cryptocurrency since 2017. Alice consults on operations and growth for projects that are listed for both IPO and ICO. Alice also has over 15 years of real estate development experience before the web3 rabbit hole. She has built a few companies with one exit. Alice is also a published author in web3, with the first crypto handbook using non-technical definitions and real-life analogies.
