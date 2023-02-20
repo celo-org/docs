@@ -23,7 +23,7 @@ Why are these important?
 
 Within the first year, 20% of small businesses fail. Another 30% will fail in their second year. 50% will fail after five years. Finally, before 10 years in business, 70% would fail.
 
-Even worse, only 8% of blockchain projects last more than a couple of years, with an average lifespan of 1.22 years. Ouch!
+Even worse, only 8% of blockchain projects last more than a couple of years, with an average lifespan of 1.22 years. Ouch! 
 
 So, how do we avoid becoming just another statistic?
 
@@ -44,7 +44,7 @@ Although formal education is not required to become a successful entrepreneur, r
 
 
 [Mindset by Carol Dweck](https://amzn.to/3jQ0lsh)
-Grit by Angela Ducksworth
+[Grit by Angela Ducksworth](https://amzn.to/3HU5APs)
 Traction: Get a Grip on Your Business by Gino Wickman
 Multiplier by Liz Wiseman 
 Deep Work by Cal Newport
