@@ -28,12 +28,12 @@ Celo is a carbon-negative, permissionless, layer-1 blockchain with a rich ecosys
 
 According to Dapp University, smart contracts are where all the business logic of our applications lives. Smart contracts are in charge of reading and writing data to the blockchain, as well as executing business logic. Smart contracts are written in a programming language called Solidity, which looks a lot like Javascript.
 
-# REQUIREMENT
+## REQUIREMENT
 
 - A code editor or text editor, for this tutorial we will be using [Remix](https://remix.ethereum.org/).
 - An Internet Browser and a good internet connection.
   
-# PREREQUISITE 
+## PREREQUISITE 
 
 - Basic knowledge of [Javascript](https://www.javascript.com/).
 - Understand how Blockchain works.
@@ -454,7 +454,7 @@ After downloading and creating your wallet, you will need to fund it using the C
 
 Next up, on Remix, download and activate the celo plugin from the plugin manager. Connect your wallet and deploy your contract.
 
- # Conclusion
+ ## Conclusion
 
  Good job on successfully creating a smart contract for selling shoes on the celo blockchain, Congratulations on your achievement! 🎉
 
