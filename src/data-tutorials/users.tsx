@@ -733,6 +733,13 @@ const Users: User[] = [
     website: 'blog/tutorials/introducing-celo-sage',
     tags: ['beginner','celosage'],
   },
+   {
+    title: 'Introducing Celo Sage',
+    description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
+    preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
+    website: 'blog/tutorials//preventing-vulnerabilities-in-solidity-reentrancy-attack',
+    tags: ['intermediate','celosage'],
+  },
   {
     title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
     description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
