@@ -734,15 +734,6 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
-    title: 'Integrating Blockchain Technology into Legacy Systems on Celo',
-    description:
-      'Blockchain technology can facilitate new forms of collaboration and innovation by enabling the exchange of information and value between different parties.',
-    preview: require('./showcase/intermediate/blockchain-integration-updating-legacy-systems-with-the-celo-platform.png'),
-    website:
-      '/blog/tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-platform',
-    tags: ['intermediate', 'celo'],
-  },
-  {
     title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
     description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
     preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
