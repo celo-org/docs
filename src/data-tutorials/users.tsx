@@ -896,6 +896,13 @@ const Users: User[] = [
     tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
   },
   {
+    title: 'How to Build a Seed Marketplace dApp using Celo, Solidity, and Javascript',
+    description: 'Learn how to build a seed marketplace on the blockchain using Celo, Solidity and Javascript',
+    preview: require('./showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png'),
+    website: 'blog/tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript',
+    tags: ['celosage', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate', 'javascript'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
