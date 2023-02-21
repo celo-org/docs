@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: "/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain"
 ---
 
-![header](../../src/data-tutorials/showcase/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png)
+![header](../../src/data-tutorials/showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png)
 
 ## Introduction
 
