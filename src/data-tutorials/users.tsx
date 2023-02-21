@@ -1386,6 +1386,13 @@ const Users: User[] = [
     website: 'blog/2022/10/27/building-a-defi-staking-dapp',
     tags: ['intermediate', 'foundation', 'composer', 'react', ],
   },
+  {
+    title: 'A Practical Comparison Between ERC-1155 and ERC-721',
+    description: 'An informative and practical comparison of two popular NFT standards, ERC-1155 and ERC-721, that delves into their technical details.',
+    preview: require('./showcase/beginner/a-practical-comparison-between-erc-1155-and-erc-721.png'),
+    website: '/blog/tutorials/a-practical-comparison-between-erc-1155-and-erc-721',
+    tags: ['celosage', 'intermediate', 'erc1155', 'erc721', 'nft'],
+  },
 
   // Videos
 
