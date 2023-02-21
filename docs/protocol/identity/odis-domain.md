@@ -1,4 +1,4 @@
----
+serializable---
 title: ODIS Domains
 ---
 
@@ -24,7 +24,7 @@ This allows the parameters to be tuned to the needs of the individual user or ap
 Queries with distinct domain specifiers will receive uncorrelated output.
 For example, output from ODIS with the phone number domain and message `18002738255` will be distinct from and unrelated to the output when requesting with a password domain and message `18002738255`.
 
-In order to make this scheme flexible, allowing for user-defined tuning of rate-limits and the introduction of new rate limiting and authorization rules in the future, domains are defined as serializeable structs.
+In order to make this scheme flexible, allowing for user-defined tuning of rate-limits and the introduction of new rate limiting and authorization rules in the future, domains are defined as serializable structs.
 New domain types, with associated rate-limiting rules, may be added in the future to meet the needs of new applications.
 
 ## Specification
