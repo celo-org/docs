@@ -6,7 +6,7 @@ authors:
 url: https://github.com/4undRaiser
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, nft, solidity, celo, advanced]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: "/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain"
 ---
 
@@ -19,7 +19,6 @@ This tutorial, i will teach you how to build an NFT Game On the Celo Blockchain.
 Monster War is an nft game where players can mint a monster and upgrade their monster by paying 0.5 celo per upgrade. Each upgrade will add 1 power value point to their monster. Players can also Swallow another player NFT monster but this can only be done if the attacker has minted his own nft and the power value of his monster is more than the power value of the monster they are attacking.
 
 Essentially it's battle between players where each player is able to collect and upgrade NFTs. Players are able to mint their own NFTs, upgrade the power value of their NFTs, and swallow other players’ NFTs depending on the power value of their NFTs. Players are also able to remove their NFTs from the game.
-
 
 Here’s a demo [link](https://luxury-daffodil-d1fa4d.netlify.app/) of what you’ll be creating.
 
@@ -54,7 +53,6 @@ Click on [this](https://github.com/4undRaiser/celo-monster-nft-game) repo from y
 - open the project from from vscode.
 - Run `npm install` command to install all the dependencies required to run the app locally.
 
-
 ## SmartContract
 
 Let's dive into the smart contract to understand how it works.
@@ -72,7 +70,6 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-
 
 contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
@@ -835,7 +832,6 @@ export const createNft = async (minterContract, performActions, name) => {
 
 First, we made the necessary import and then we declared the `createNft()` function. This function is used to mint an NFT. It takes the `minterContract` and `performActions` as arguments, along with the name of the NFT. It then uses the `defaultAccount` from the kit to mint the NFT. 
 
-
 ```javascript
 export const getNfts = async (minterContract) => {
   try {
@@ -976,7 +972,6 @@ export const remove = async (minterContract, performActions, index) => {
 ```
 
 The `remove()` function is used to remove an NFT. It takes the `minterContract` and `performActions` as arguments, along with the index of the NFT. It then uses the `defaultAccount` from the kit to call the remove method and remove the NFT.
-
 
 There you have it. We have successfully interacted with our smart contract.
 
