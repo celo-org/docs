@@ -12,7 +12,7 @@ In most wallets, the EOA is generated and stored on the user's mobile device and
 
 A smart contract account on the other hand is a smart contract that can be used to interact with other smart contracts on behalf of the owner.
 Celo provides an open-source implementation of a smart contract account; the [meta-transaction wallet](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/common/MetaTransactionWallet.sol) (MTW).
-In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions my signing a meta-transaction containing the details of the authorized transaction.
+In general, ownership can be determined in arbitrary ways, but most commonly an EOA is designated as the owner and can authorize transactions by signing a meta-transaction containing the details of the authorized transaction.
 This is how the meta-transaction wallet works.
 In this case you can think of the smart contract account as the primary account, and the EOA as the controller of this account.
 
@@ -27,7 +27,7 @@ It does this by first deploying a meta-transaction wallet contract and setting t
 At this point, the EOA can sign transactions and submit them to Komenci.
 Komenci will wrap the signed transaction into a meta-transaction, which it pays for and submits to the network.
 
-In general, smart contract accounts allow the someone other than the account owner to pay for the transaction fees required to submit a transaction to the blockchain, enabling a number of useful operations not otherwise possible.
+In general, smart contract accounts allow someone other than the account owner to pay for the transaction fees required to submit a transaction to the blockchain, enabling a number of useful operations not otherwise possible.
 
 ### Account recovery
 
