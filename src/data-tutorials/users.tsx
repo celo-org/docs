@@ -1726,6 +1726,13 @@ const Users: User[] = [
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
+  {
+    title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
+    description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
+    preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
+    website: 'blog/tutorials/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer',
+    tags: ['intermediate', 'hardhat', 'celosage', 'solidity', 'celo-composer', 'react-celo', 'gas-fee-support'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
