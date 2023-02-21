@@ -488,7 +488,7 @@ Going futher we will be building our frontend to interact with our smart contrac
 
 Next we need to open a command line interface in the folder or directory where you want to build the frontend and run the code below:
 
-```js
+```sh
 git clone https://github.com/dacadeorg/celo-boilerplate-web-dapp
 ```
 This will create a folder called celo-boilerplate-web-dapp. The folder contains neccessary setup files and folders needed to build our frontend and connect it with our smart contract. The three main folder you should watch out for is the: 
@@ -501,19 +501,19 @@ This will create a folder called celo-boilerplate-web-dapp. The folder contains 
 
 Next we move to our root directory on the same command line interface by run this code
 
-```js
+```sh
 cd celo-boilerplate-web-dapp
 ``` 
 The code change the directory in the command line interface to the root directory inorder for us to install the dependences that comes with the boilerplate.
 
 To install all the dependencies we type the code below and hit enter.
 
-```js
+```sh
 npm install
 ```
 Installing of all dependencies might take a while. After the dependencies have been installed, we can start up the server by running the code:
 
-```js
+```sh
 npm run dev
 ```
 Your project should be running here http://localhost:3000/ and a browser window should pop up showwing "hello world".
@@ -1220,6 +1220,7 @@ Again, you also need to specify who is going to spend the cUSD token. In this ca
 
 
 Up next we create an asynchronous function called getBalance which we use in getting cUSD of the user and displaying it on the navbar we created in our html file.
+
 ```js
   // gets the balance of the connected account
 const getBalance = async function () {
@@ -1487,7 +1488,8 @@ After the catch block might have handle the error by displaying it as a notifica
 
 Next, we would be creating the buy functionalilty which will enable us to buy seeds from a farmer.
 
-```js// implements the buy functionalities on the modal
+```js
+// implements the buy functionalities on the modal
 document.querySelector("#addModal1").addEventListener("click", async (e) => {
     if (e.target.className.includes("buyBtn")) {
 
@@ -1516,8 +1518,8 @@ In the next line of instruction we are going to create 6 variables. The first va
 
 The next line pop  a notification to tell the user that their request is being processed after which we are going to use a try block to approve the price of the seed we intend to buy by calling the approve method and passing the price of the seed as its parameter.
 
-
 After payment is being approved we are going to display another notification let the user know that we are waiting for their confirmation. Then we are going to use a try block to call the buySeed function of our smart contract.
+
 ```js
 notification(`⌛ Awaiting payment for "${listedSeeds[index].seedName}"...`)
       try {
@@ -1561,6 +1563,7 @@ Next we are going to create a variable called result, this will be used to store
 The notification function gives the user the impression that something is processing and they should wait for it.
 
 Up next we are going to create a try block that will fetch the seed purchased by that user.
+
 ```js
 try {
            result = await contract.methods.getPurchasedSeeds().call();
@@ -1577,6 +1580,7 @@ var convertToMilliseconds = timestamp * 1000;
 // create an object for it.
 var date = new Date(convertToMilliseconds);
 ```
+
 The try block firstly calls the getPurchasedSeeds from the smart contract and stores the promise in the result variable we created. notificationOff turns off the notification. After that we have to check if the result list is not empty. If true we get the innerHTML of the id  `purchasedProduct` and set it to be empty because we are going to render some html template in it using the forEach loop later on. Before rendering, we need to convert each timestamp that is fetch into a format that can understood by the user. 
 
 
@@ -1668,7 +1672,7 @@ We use the else if to check if the button clicked contain the class name `showpr
 
 Up next we will be looking at how to deploy our app on github page. Before that we need to ensure that our app is working smoothly. After that you can build your DApp in the root directory command-line interface of our `celo-boilerplate-web-dapp`  with the command.
 
-```js
+```sh
 npm run build
 ```
 After building it successfully, you should have an HTML and JS file inside the docs folder of your project.
@@ -1681,9 +1685,11 @@ After building it successfully, you should have an HTML and JS file inside the d
 
 
 ##Conclusion​
+
 Congrats 🎉, you were able to build and deploy your fullstack dApp using Solidity and Javascript on the Celo blockchain.
 
 ##Next Steps​
+
 You can challenge yourself by adding more functions to your smart contract and implement them using Javascript. You can also look at various Celo smart contracts and see if you can build a dApp using javascript.
 
 The source code of this project is hosted [here](https://github.com/SamsonAmos/AgroCelo1). You can use it as a source of reference to edit yours.
@@ -1691,6 +1697,7 @@ The source code of this project is hosted [here](https://github.com/SamsonAmos/A
 - [Live Demo](https://samsonamos.github.io/AgroCelo1/)
 
 ##About the Author​
+
 Samson Amos is a web2 and a web3 developer who loves coding as well as teaching others. You can reach me out on Twitter [@SamsonAmoz](https://twitter.com/SamsonAmoz)
 
 ##References​
