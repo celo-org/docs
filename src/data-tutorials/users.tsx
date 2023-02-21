@@ -910,6 +910,13 @@ const Users: User[] = [
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
   {
+    title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
+    description: 'Build a full stack NFT on chain game on the celo blockchain.',
+    preview: require('./showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain',
+    tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
