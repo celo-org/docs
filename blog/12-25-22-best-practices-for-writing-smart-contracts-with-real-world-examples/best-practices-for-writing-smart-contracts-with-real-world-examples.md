@@ -11,7 +11,7 @@ hide_table_of_contents: false
 slug: /tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples
 ---
 
-![header](images/3.png)
+![header](../../src/data-tutorials/showcase/intermediate/best-practices-for-writing-smart-contracts-with-real-world-examples.png)
 
 ## Introduction
 
