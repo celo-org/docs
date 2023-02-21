@@ -9,6 +9,8 @@ hide_table_of_contents: true
 slug: /tutorials/a-practical-comparison-between-erc-1155-and-erc-721
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/a-practical-comparison-between-erc-1155-and-erc-721.png)
+
 ## Introduction
 
 When it comes to Non-Fungible Tokens (NFTs), the first standard that often comes to mind is ERC-721. It's true, ERC-721 has been widely adopted and has paved the way for the explosion of NFTs in the art, collectibles, and gaming industries. But there is another player in town that is making waves, and that is ERC-1155. In this article, we will take a deep dive into the world of NFTs and compare ERC-1155 and ERC-721, two of the most popular standards in the industry. You may be surprised by the differences and similarities between these two standards, and how they can be used to create unique and innovative digital assets. So, whether you're a seasoned NFT enthusiast or just starting to explore this exciting world, buckle up and get ready to learn about ERC-1155, the lesser-known but powerful NFT standard.
@@ -55,9 +57,9 @@ Additionally, ERC-1155 enables batch transfers of tokens, which can dramatically
 
 ## Conclusion
 
-In conclusion, the Non-Fungible token (NFT) market has several relevant standards, including ERC-721 and ERC-1155. The first standard to open the door for NFTs in the art, collectibles, and gaming industries was ERC-721, which has since gained widespread adoption. 
+In conclusion, the Non-Fungible token (NFT) market has several relevant standards, including ERC-721 and ERC-1155. The first standard to open the door for NFTs in the art, collectibles, and gaming industries was ERC-721, which has since gained widespread adoption.
 
-ERC-1155, on the other hand, offers an alternative strategy by enabling the development of both non-fungible and semi-fungible tokens. Its adaptability makes it a potent standard for developing distinctive and cutting-edge digital assets. 
+ERC-1155, on the other hand, offers an alternative strategy by enabling the development of both non-fungible and semi-fungible tokens. Its adaptability makes it a potent standard for developing distinctive and cutting-edge digital assets.
 
 The decision between ERC-721 and ERC-1155 ultimately depends on the particular requirements of each project. Both ERC-721 and ERC-1155 have strengths and limitations. Whatever the case, the future of NFTs is promising, and the possibilities for digital assets are virtually limitless because of the ongoing development of both ERC-721 and ERC-1155.
 
