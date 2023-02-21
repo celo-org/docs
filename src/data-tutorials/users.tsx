@@ -699,7 +699,7 @@ const Users: User[] = [
   {
     title: ' A Comprehensive Guide to Comparing Hardware and Software Wallets on Celo',
     description: 'This tutorial will explain the differences between software and hardware wallets, and how to choose the right one for you.',
-    preview: require('./showcase/A-Comprehensive-Guide-to-Comparing-Hardware-and-Software-Wallets-What-You-Need-to-Know.png'),
+    preview: require('./showcase/beginner/A-Comprehensive-Guide-to-Comparing-Hardware-and-Software-Wallets-What-You-Need-to-Know.png'),
     website: '/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo',
     tags: ['beginner','celosage','celo'],
   },
