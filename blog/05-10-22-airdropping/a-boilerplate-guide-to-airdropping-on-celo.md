@@ -4,7 +4,7 @@ description: Deploy an Airdrop contract to Celo and claim ERC20 tokens using the
 authors:
   - name: ✍️ Jesse Sawa
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/a-boilerplate-guide-to-airdropping-on-celo"
 ---
 
@@ -34,7 +34,7 @@ So, want to learn how to build and deploy an Airdrop contract on the worlds only
 - ✅ **Step 6:** Fund the contract
 - ✅ **Step 7:** Claim the airdrop
 
-By the end of this post, you’ll be able to deploy an Airdrop contract to Alfajores (Celo’s testnet), fund the contract using the [Alfajores faucet](https://celo.org/developers/faucet), and claim the ERC20 tokens using the [web3 SDK](https://web3js.readthedocs.io/en/v1.7.3/).
+By the end of this post, you’ll be able to deploy an Airdrop contract to Alfajores (Celo’s testnet), fund the contract using the [Alfajores faucet](https://faucet.celo.org), and claim the ERC20 tokens using the [web3 SDK](https://web3js.readthedocs.io/en/v1.7.3/).
 
 :::tip
 
@@ -86,7 +86,7 @@ In the context of this tutorial, using a Merkle tree allows us to verify a user 
 
 ## ✅ Step 1: Create your account
 
-Fund your Celo address using the [Alfajores faucet](https://celo.org/developers/faucet) (to generate a new key pair, run node `tutorial/createAccount.js` from the root directory)
+Fund your Celo address using the [Alfajores faucet](https://faucet.celo.org) (to generate a new key pair, run node `tutorial/createAccount.js` from the root directory)
 
 Afterwords create the `.env` file by running the following command:
 
@@ -226,7 +226,7 @@ In the above example, that would be:
 0x6cA1217BdA63ff36c37F48516803015138D66cE6
 ```
 
-If you are using a token other than Celo or one of its stable coins, you’ll need to send a sufficient amount to that address to accommodate for this airdrop. Otherwise, head back over to the [Alfajores faucet](https://celo.org/developers/faucet) and fund the contract address.
+If you are using a token other than Celo or one of its stable coins, you’ll need to send a sufficient amount to that address to accommodate for this airdrop. Otherwise, head back over to the [Alfajores faucet](https://faucet.celo.org) and fund the contract address.
 
 :::tip
 

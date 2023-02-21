@@ -18,26 +18,29 @@ module.exports = {
   projectName: "docs", // Usually your repo name.
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "es", "pt"],
   },
-  themes: ["@docusaurus/theme-live-codeblock","@saucelabs/theme-github-codeblock"],
+  themes: [
+    "@docusaurus/theme-live-codeblock",
+    "@saucelabs/theme-github-codeblock",
+  ],
   scripts: [
-    {
-      src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
-      async: true,
-    },
+    // {
+    //   src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
+    //   async: true,
+    // },
   ],
   plugins: [
     require.resolve("docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [],
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-client-redirects",
+    //   {
+    //     redirects: [],
+    //   },
+    // ],
     [
       "ideal-image",
       /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
@@ -50,12 +53,25 @@ module.exports = {
         disableInDev: true,
       }),
     ],
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
   themeConfig: {
+    twitterImage: "img/preview.png",
+    image: "img/preview.png",
     announcementBar: {
       id: "support_us",
       content:
-      '🌱 Want to improve the docs? Give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a> or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>, or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -69,12 +85,16 @@ module.exports = {
     },
     colorMode: {
       defaultMode: "dark",
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Celo Docs",
       logo: {
         alt: "Celo Logo",
-        src: "img/color-logo.png",
+        src: "img/logo.png",
+        srcDark: "img/logo-dark.png",
+        height: 32,
+        width: 96,
       },
       items: [
         {
@@ -218,13 +238,15 @@ module.exports = {
               href: "https://www.reddit.com/r/celo/",
             },
             {
-              href:
-                "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
+              href: "https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j",
+              label: "Celo Signal Mailing List",
+            },
+            {
+              href: "https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com",
               label: "Celo Signal Calendar",
             },
             {
-              href:
-                "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
+              href: "https://calendar.google.com/calendar/u/0/r?cid=c_asn0b4c1emdgsq3urlh2ei2dig@group.calendar.google.com",
               label: "Community Calendar",
             },
           ],
@@ -299,10 +321,13 @@ module.exports = {
         },
         blog: {
           blogTitle: "Celo Tutorials",
-          blogDescription: "A Docusaurus powered blog!",
-          postsPerPage: "ALL",
-          blogSidebarTitle: "Latest posts",
-          blogSidebarCount: 7,
+          blogDescription: "Celo blog!",
+          blogSidebarCount: 0,
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            frontMatter.hide_reading_time
+              ? undefined
+              : defaultReadingTime({ content }),
         },
       },
     ],

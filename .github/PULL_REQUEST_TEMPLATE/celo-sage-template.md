@@ -11,6 +11,7 @@ Please confirm the following before submitting your tutorial for review -
 [ ] I've thoroughly explained the code, with inline code comments and text explanations.
 [ ] I've run a linter & prettifier to format my code blocks.
 [ ] I've run the tutorial to test it and the code works.
+[ ] I've followed all the best practices mentioned in the [here](https://docs.celo.org/community/celo-sage/complete-your-tutorial#best-practices).
 
 > NOTE: We cannot review your Pull Request if it does not meet the standard outlined above.
 > Reviewers - @joenyzio & @viral-sangani

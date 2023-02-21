@@ -10,7 +10,8 @@ import TabItem from '@theme/TabItem';
 
 How to bridge native assets from ETH and Matic to Celo with Etherscan.
 
-___
+---
+
 ## Call the EthHelper
 
 Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://polygonscan.com/)) page for the EthHelper.
@@ -24,21 +25,21 @@ Navigate to the [Etherscan](https://etherscan.io/) (or [Polygonscan](https://pol
   </TabItem>
 </Tabs>
 
-* Open the **Write Contract** pane > **connect your wallet** > then select **sendToEVMLike**
-    * Optics is designed to support multiple non-EVM chains
-    * This function helps you send ETH to another chain that uses EVM-style addresses
+- Open the **Write Contract** pane > **connect your wallet** > then select **sendToEVMLike**
+  - Optics is designed to support multiple non-EVM chains
+  - This function helps you send ETH to another chain that uses EVM-style addresses
 
 ![Bridging Native Assets with Etherescan](https://github.com/joenyzio/assets/blob/main/celo-docs/bridging-native-assets-with-etherscan/bridging-native-assets-with-etherscan.png?raw=true)
 
-* For **payableAmount** enter the amount you'd like to send in ETH.
+- For **payableAmount** enter the amount you'd like to send in ETH.
 
 :::tip
 
-1 wei = 1 / 10 ** 18 ETH.
+1 wei = 1 / 10 \*\* 18 ETH.
 
 :::
 
-* For **_domain**, enter the domain ID of the chain to which you'd like to send tokens.
+- For **\_domain**, enter the domain ID of the chain to which you'd like to send tokens.
 
 Domain IDs are like phone numbers. They represent the chain you're going to call.
 
@@ -54,10 +55,9 @@ Domain IDs are like phone numbers. They represent the chain you're going to call
   </TabItem>
 </Tabs>
 
-* For **_to**, enter the address of the recipient on the destination chain.
-* Select **write** > **sign the transaction** > then **send** it to the network.
+- For **\_to**, enter the address of the recipient on the destination chain.
+- Select **write** > **sign the transaction** > then **send** it to the network.
 
-
-## Wait 
+## Wait
 
 Wait for a moment for your transaction to finalize on the network.
