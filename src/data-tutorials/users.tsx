@@ -1610,7 +1610,7 @@ const Users: User[] = [
   {
     title: 'How to build a marketplace for selling shoes on the celo blockchain',
     description: 'Learn how to build a marketplace for seliing shoes on the celo blockchain.',
-    preview: require('./showcase/intermediate/how-to-build-a-marketplace-for-Selling-Shoes-on-Celo.png'),
+    preview: require('./showcase/intermediate/How-to-Build-a-Marketplace-for-Selling-Shoes-on-Celo.png'),
     website: 'blog/tutorials/how-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain',
     tags: ['celosage', 'solidity', 'intermediate'],
   },
