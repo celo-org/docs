@@ -9,7 +9,7 @@ Setting up a unit/migration test suit for the contract you just created in celo-
 
 ## After initial contract creation
 
-After contract was created and it’s ready to be tested run `yarn build` to generate typechain which is essentially a TS wrapper for the contract. Keep in mind that everytime you change your contract you have to run yarn build once again.
+After contract was created and it’s ready to be tested run `yarn build` to generate typechain which is essentially a TS wrapper for the contract. Keep in mind that every time you change your contract you have to run yarn build once again.
 
 ## Unit tests
 
