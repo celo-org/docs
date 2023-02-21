@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Preventing Vulnerabilities in Solidity: Ownership Attack',
+    description: "In Solidity, an ownership attack takes advantage of a smart contract's vulnerabilities and gives illegal and unauthorized access to a foreign party.",
+    preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-ownership-attack.png'),
+    website: 'blog/tutorials/preventing-vulnerabilities-in-solidity-ownership-attack',
+    tags: ['intermediate','celosage'],
+  },
+  {
     title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
     description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
     preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
