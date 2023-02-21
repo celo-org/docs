@@ -36,7 +36,7 @@ Each proposal starts on the **Proposal Queue** where it may receive upvotes to m
 
 Any user may submit a Proposal to the `Governance` smart contract, along with a small deposit of CELO. This deposit is required to avoid spam proposals, and is refunded to the proposer if the proposal reaches the Approval stage. A Proposal consists of a list of transactions, and a description URL where voters can get more information about the proposal. It is encouraged that this description URL points to a CGP document in the [celo-org/celo-proposals](https://github.com/celo-org/celo-proposals) repository. Transaction data in the proposal includes the destination address, data, and value. If the proposal passes, the included transactions will be executed by the `Governance` contract.
 
-Submitted proposals are added to the queue of proposals. While a proposal is on this queue, voters may use their [Locked Celo](/protocol/pos/epoch-rewards-locked-gold) to **upvote** the proposal. Once per day the top three proposals, by weight of the Locked Celo upvoting them, are dequeued and moved into the Approval phase. Note that if there are fewer than three proposals on the queue, all may be dequeued even if they have no upvotes. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
+Submitted proposals are added to the queue of proposals. While a proposal is on this queue, voters may use their [Locked Celo](/protocol/pos/epoch-rewards-locked-gold) to **upvote** the proposal. Once per day the top three proposals, by weight of the Locked Celo upvoting them, are dequeued and moved into the Approval phase. Note that if there are fewer than three proposals on the queue, all may be dequeued even if they have no upvotes. If a proposal has been on the queue for more than 4 weeks, it expires and the deposit is forfeited.
 
 ### Approval
 
@@ -83,4 +83,4 @@ Note that this means the validators may not always know the contents of the prop
 
 ## Celo Blockchain Software Upgrades
 
-Some changes cannot be made through the on-chain governance process (via proposal or hotfix) alone. Examples include changes to the underlying consensus protocol and changes which would result in a hard-fork. When Celo Blockchain software upgrades are required to continue operating correctly on the network, a "Minimum Client Version" parameter is set to indicate the minimum version that it required.
+Some changes cannot be made through the on-chain governance process (via proposal or hotfix) alone. Examples include changes to the underlying consensus protocol and changes which would result in a hard-fork. When Celo Blockchain software upgrades are required to continue operating correctly on the network, a "Minimum Client Version" parameter is set to indicate the minimum version that is required.
