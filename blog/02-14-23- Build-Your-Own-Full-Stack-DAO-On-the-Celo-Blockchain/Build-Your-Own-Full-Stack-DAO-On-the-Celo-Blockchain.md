@@ -170,6 +170,7 @@ contract CELODAO {
 pragma solidity ^0.8.0;
 
 ```
+
 First, we declared our license and the solidity version.
 
 ```solidity
@@ -220,6 +221,7 @@ Here we declare several events that will be emitted when certain actions are tak
     }
 
 ```
+
 In this section, we declares a new struct called `Proposal` that will be used to store information about each proposal. It contains several fields, including the ID of the proposal, the address of the proposer, a description of the proposal, the number of yes votes, the number of no votes, a mapping of each member's vote, and a flag to indicate whether the proposal has been executed.
 
 We also declare a public mapping called proposals that maps a proposal ID to a Proposal struct. proposalCount will keep track of the total number of proposals in our DAO.
@@ -237,7 +239,8 @@ Lastly, we added a constructor function for the CELODAO contract. It sets the ow
     }
 
 ```
-Next we add a new function called `addMember` this function adds a new member to our DAO contract. It takes two arguments `_address`, which is the address of the new member, and `_votingPower`, which is the voting power of the new member. The function first checks to make sure that the caller of the function is the contract owner, and that the given _address is not already a member. It then increases the member count, creates a new MemberInfo struct for the new member, and adds it to the members mapping using the _address as the key. Finally, it emits a NewMember event with the new member's address and voting power.
+
+Next we add a new function called `addMember` this function adds a new member to our DAO contract. It takes two arguments `_address`, which is the address of the new member, and `_votingPower`, which is the voting power of the new member. The function first checks to make sure that the caller of the function is the contract owner, and that the given _address is not already a member. It then increases the member count, creates a new MemberInfo struct for the new member, and adds it to the members mapping using the_address as the key. Finally, it emits a NewMember event with the new member's address and voting power.
 
 ```solidity
  function removeMember(address _address) public {
@@ -345,14 +348,13 @@ The `executeProposal()` is a function that allows the proposer of a proposal to 
 
 Finally, the `getProposalsLength()` is a simple function that returns the number of proposals that have been created in the contract. It simply returns the value of the proposalCount variable.
 
-
 With that, we have gone through all of the code in our DAO Contract. This contract allows members to add and remove other members, create and vote on proposals, and execute proposals that have been approved by the members. It is a basic implementation of a DAO, and it can be extended or modified to suit the needs of a particular use case.
 
 ## Deployment
 
 To deploy our smart contract successfully, we need the celo extention wallet which can be downloaded from [here](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
 
-Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet) 
+Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet)
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
@@ -533,10 +535,10 @@ export default App;
 
 
 ```
+
 ### Break down
 
 Let's take a look at the `App.js` file and break it down.
-
 
 ```javascript
 import "./App.css";
@@ -547,12 +549,14 @@ import Web3 from "web3";
 import { newKitFromWeb3 } from "@celo/contractkit";
 import celodao from "./contracts/celo-dao.abi.json";
 ```
-The first step is to import the necessary components and libraries. We start by importing the Home and Proposals components from the components folder. We then import the `useState`, `useEffect`, and `useCallback` hooks from React, as well as the Web3 library for interacting with the Ethereum blockchain. Lastly, we import the contract ABI (Application Binary Interface) for the Celo-Dao contract from the contracts folder. 
+
+The first step is to import the necessary components and libraries. We start by importing the Home and Proposals components from the components folder. We then import the `useState`, `useEffect`, and `useCallback` hooks from React, as well as the Web3 library for interacting with the Ethereum blockchain. Lastly, we import the contract ABI (Application Binary Interface) for the Celo-Dao contract from the contracts folder.
 
 ```javascript
 const ERC20_DECIMALS = 18;
 const contractAddress = "0x69dfb020bA12Ce303118E3eF81f9b9E4eB08cE17";
 ```
+
 We then set the ERC20 decimals and the contract address of our smart contract.
 
 ```javascript
@@ -562,7 +566,8 @@ We then set the ERC20 decimals and the contract address of our smart contract.
   const [cUSDBalance, setcUSDBalance] = useState(0);
   const [proposals, setProposals] = useState([]);
 ```
-Next, we create the state variables for the app. We use the useState hook to create the contract, address, kit, cUSDBalance, and proposals state variables. 
+
+Next, we create the state variables for the app. We use the useState hook to create the contract, address, kit, cUSDBalance, and proposals state variables.
 
 ```javascript
 const connectToWallet = async () => {
@@ -586,6 +591,7 @@ const connectToWallet = async () => {
     }
   };
 ```
+
 Next, we created a the `connectToWallet()` function that allows the user to connect to their wallet and sets the address and kit.
 
 ```javascript
@@ -601,6 +607,7 @@ const getBalance = useCallback(async () => {
     }
   }, [address, kit]);
 ```
+
 The `getBalance()` function allows us to get the user's cUSD balance and set the contract.
 
 ```javascript
@@ -627,7 +634,8 @@ The `getBalance()` function allows us to get the user's cUSD balance and set the
     setProposals(_proposals);
   }, [contract]);
 ```
-The `getProposals()` function is used to get the list of proposals from the contract. We use the getProposalsLength method to get the number of proposals, and loop through each proposal to get its properties. We then store the proposals in the proposals state variable. 
+
+The `getProposals()` function is used to get the list of proposals from the contract. We use the getProposalsLength method to get the number of proposals, and loop through each proposal to get its properties. We then store the proposals in the proposals state variable.
 
 ```javascript
  const addProposal = async (_description) => {
@@ -641,6 +649,7 @@ The `getProposals()` function is used to get the list of proposals from the cont
     }
   };
 ```
+
 The addProposal function is used to add a proposal to the contract. We use the `createProposal` method to add the proposal, and then call the `getProposals()` function to update the proposals state variable.
 
 ```javascript
@@ -689,7 +698,7 @@ const vote = async (_proposalId, _vote) => {
   };
 ```
 
-The `vote()` and `executeProposal()` functions are used to vote on proposals and execute them. We use the `vote()` and `executedProposal()` methods to vote and execute proposals, and then call the `getProposals()` function to update the proposals state variable. 
+The `vote()` and `executeProposal()` functions are used to vote on proposals and execute them. We use the `vote()` and `executedProposal()` methods to vote and execute proposals, and then call the `getProposals()` function to update the proposals state variable.
 
 ```javascript
 useEffect(() => {
@@ -710,7 +719,7 @@ useEffect(() => {
 
 ```
 
-We use the `useEffect` hook to call the `connectToWallet()`, `getBalance()`, and `getProposals()` functions. This ensures that the application is always up to date with the latest data from the contract. 
+We use the `useEffect` hook to call the `connectToWallet()`, `getBalance()`, and `getProposals()` functions. This ensures that the application is always up to date with the latest data from the contract.
 
 ```javascript
 return (
