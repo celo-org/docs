@@ -1,11 +1,11 @@
 ---
 title: Plumo Ultralight Sync
-description: Introduction to Plumo (Ultralight Sync), it's core concepts, architecture, process, and implementation.
+description: Introduction to Plumo (Ultralight Sync), its core concepts, architecture, process, and implementation.
 ---
 
 # Plumo Ultralight Sync
 
-Introduction to Plumo Ultralight Sync, it's core concepts, architecture, process, and implementation.
+Introduction to Plumo Ultralight Sync, its core concepts, architecture, process, and implementation.
 
 ---
 
@@ -15,13 +15,13 @@ Plumo is a zk-SNARK based system that allows mobile and resource constrained nod
 
 ## Background
 
-Celo is a mobile-first blockchain platform with a mission to enable the conditions for prosperity across the world. This means that may of Celo and the Valora wallet's first users will be in emerging markets. In these countries, while mobile phone penetration has significantly increased, data plans and device hardware still lags. This means that for average users, data is a scarce commodity and devices are underpowered in compute relative to the latest and greatest iPhone or Android devices.
+Celo is a mobile-first blockchain platform with a mission to enable the conditions for prosperity across the world. This means that many of Celo and the Valora wallet's first users will be in emerging markets. In these countries, while mobile phone penetration has significantly increased, data plans and device hardware still lags. This means that for average users, data is a scarce commodity and devices are underpowered in compute relative to the latest and greatest iPhone or Android devices.
 
 If these users are to trustlessly sync and interact with a blockchain network, they'll need to run a [light client](https://www.parity.io/what-is-a-light-client/) on devices. However, traditional light clients in proof of work (PoW) blockchains need to download every block header, which grows linearly with new blocks. Over time, this becomes untenable, and even light clients [take minutes to sync](https://ethereum.stackexchange.com/questions/82568/whats-the-status-of-ethereum-light-client).
 
 ### Proof of Stake Light Clients
 
-Celo uses a proof of stake (PoS) consensus sytem, enabling it to offer a better light client sync experience, right off the bat:
+Celo uses a proof of stake (PoS) consensus system, enabling it to offer a better light client sync experience, right off the bat:
 
 1. First, Celo light clients only need to download epoch block headers, which contain information about the current validator set. [The validator set](/protocol/consensus/validator-set-differences) in Celo changes once every epoch, roughly about once per day. This means instead of downloading a block header for every block on the Celo network, they can just download one a day.
 
@@ -54,11 +54,11 @@ The Plumo MPC setup is broken up into two phases:
 - Phase 2 - Plumo circuit
   - In this phase, the participants contribute to the Plumo circuit keys, which would be used by provers to create proofs and verifiers to verify them.
 
-Phase 1 will take place starting early December 2020, and continue until January 2021. It will consist of multiple rounds of 6–10 contributors each running the Plumo setup for approximately 36 hours. While much of the activity is passive and involves simply running the computation continuously, contributors should not expect to use their machines for other intensive activies through the duration of the setup.
+Phase 1 will take place starting early December 2020, and continue until January 2021. It will consist of multiple rounds of 6–10 contributors each running the Plumo setup for approximately 36 hours. While much of the activity is passive and involves simply running the computation continuously, contributors should not expect to use their machines for other intensive activities through the duration of the setup.
 
 Phase 2 will commence roughly a month after Phase 1.
 
-Contributors will also receieve a gift for the time and efforts, and be recognized for their contributions to the Celo network.
+Contributors will also receive a gift for the time and efforts, and be recognized for their contributions to the Celo network.
 
 ### Pre-requisites
 
@@ -74,7 +74,7 @@ You can run the contributor software locally or on cloud VMs, but desktop machin
 - Operating system: Linux, macOS, Windows
 - Recommended internet connection speed: 10Mbit upload
 
-With these kind of machines, participiation in the setup should take around 30 hours, potentially a bit more or much less, depending on your specific hardware and internet connection.
+With these kinds of machines, participation in the setup should take around 30 hours, potentially a bit more or much less, depending on your specific hardware and internet connection.
 
 ## Running the Setup
 
@@ -129,7 +129,7 @@ cLabs is running the coordinator server, which has a list of approved participan
 
 - You will be asked for your passphrase - enter the same one from earlier.
   - Follow the same process from earlier when prompted for additional entropy.
-- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are succesfully running the contributor binary.
+- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are successfully running the contributor binary.
 
 Once this is running, you can leave the machine running -- no direct action is needed. This will run for about ~36 hours, after which the software will terminate running and you will have finished contributing to the Plumo setup!
 
@@ -184,7 +184,7 @@ cLabs is running the coordinator server, which has a list of approved participan
 
 - You will be asked for your passphrase - enter the same one from earlier.
   - Follow the same process from earlier when prompted for additional entropy.
-- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are succesfully running the contributor binary.
+- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are successfully running the contributor binary.
 
 Once this is running, you can leave the machine running -- no direct action is needed. This will run for about ~36 hours, after which the software will terminate running and you will have finished contributing to the Plumo setup!
 
