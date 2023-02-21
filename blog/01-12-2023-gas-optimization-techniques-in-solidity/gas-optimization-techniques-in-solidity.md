@@ -13,11 +13,11 @@ slug: /tutorials/gas-optimization-techniques-in-solidity
 
 ![header](../../src/data-tutorials/showcase/advanced/gas-optimization-techniques-in-solidity.png)
 
-# Introduction
+## Introduction
 
 Optimizing smart contract performance is an essential aspect of blockchain development. Solidity, the most popular programming language for creating smart contracts on the Ethereum platform, provides several techniques to help improve the efficiency of your contracts. In this article, we'll go over some of these techniques and how you can use them to improve the performance of your Solidity code. We'll discuss how to save gas, avoid unnecessary computations, and improve contract readability.
 
-# What is Solidity?
+## What is Solidity?
 
 Solidity is an object-oriented programming language used to implement smart contracts on various blockchain platforms, most notably Ethereum. Christian Reitwiessner, Alex Beregszaszi, and several former Ethereum core contributors created it. Solidity programs run on the Ethereum Virtual Machine.
 
@@ -467,10 +467,10 @@ Now, the x variable is of type uint, which means it uses a 256-bit storage slot.
 
 In summary, avoiding the use of the uint8 data type in Solidity can be an effective optimization technique for reducing gas usage. By choosing more efficient data types, such as uint or uint256, it's possible to minimize the amount of gas required to store and manipulate variables and data structures. This can improve the performance and efficiency of the contract, as well as reduce gas usage.
 
-# Conclusion
+## Conclusion
 
 In conclusion, optimizing gas usage in Solidity is an important consideration for improving the performance and efficiency of Ethereum contracts. In this article, we discussed ways to optimize gas in Solidity, including using the right modifiers, not using the uint8 data type, packing your variables, and more. By following these best practices, it's possible to reduce gas usage and improve the performance and efficiency of your Solidity contracts.
 
-# Author
+## Author
 
 [Oyeniyi Abiola Peace](https://twitter.com/_iamoracle) is a seasoned software and blockchain developer. With a degree in Telecommunication Science from the University of Ilorin and over five years experience in JavaScript, Python, PHP, and Solidity, he is no stranger to the tech industry. Peace currently works as the CTO at DFMLab and is a Community Moderator at Celo Blockchain. When he's not coding or teaching, he loves to read and spend time with family and friends.
