@@ -28,8 +28,8 @@ As a result, 5 of the 7 parties must cooperate in order to produce an output fro
 
 ### Security properties
 
-The goal the distributed key generation is to make it harder for a hacker, or a corrupt ODIS operator, to compromise the security of ODIS.
-In particular, if an attacker has control over any less then the threshold $$k$$ of keys, they cannot make an unauthorized computation (e.g. querying the pepper for a phone number without quota) of the OPRF function.
+The goal of the distributed key generation is to make it harder for a hacker, or a corrupt ODIS operator, to compromise the security of ODIS.
+In particular, if an attacker has control over any less than the threshold $$k$$ of keys, they cannot make an unauthorized computation (e.g. querying the pepper for a phone number without quota) of the OPRF function.
 Additionally, as long as $$k$$ operators remain honest and have access to their keys, honest users will continue to be able to use the service even if $$m-k$$ corrupt operators are refusing their requests.
 
 For example, consider the phone number privacy protocol when there are 7 ODIS operators and the required threshold is 5. An attacker may compute the pepper for all phone numbers if 5 operators are compromised or corrupt. If 3 are corrupt or taken offline (e.g. by DDoS attack) then an attacker may prevent the rest of the operators from generating the pepper for users.
@@ -54,7 +54,7 @@ This blinding process preserves the privacy of underlying message (e.g. a mobile
 In addition to protecting the user's privacy, it reduces the risk of targeted censorship.
 ODIS operators compute the OPRF against this hidden input value, and return a result which is also hidden from the operators.
 After the application receives the response, it unblinds it to receive the final evaluation result.
-Note that this blinding process provides privacy to the user _even_ if all of the ODIS operators where corrupted.
+Note that this blinding process provides privacy to the user _even_ if all of the ODIS operators were corrupted.
 This blinding process is what makes the oblivious pseudo random function (OPRF) "oblivious".
 
 ## Verification
@@ -82,7 +82,7 @@ Rate limits depend on the application context in which ODIS is being used (e.g. 
 The original API, targeted for phone number privacy, enforces a rate limit based on the actions, balance, and verification status or the user on the Celo blockchain.
 In order to measure the quota for a given requester, ODIS must check their on-chain account information.
 To prove ownership over their account, the POST request contains an Authorization header with the signed message body.
-When ODIS nodes receive the request, it authenticates the user by recovering the message signer from the header and comparing it to the value in the message body.
+When ODIS nodes receive the request, it authenticates the user by recovering the message signer from the header and comparing it to the value on the message body.
 
 ### Domains
 
