@@ -39,7 +39,7 @@ Valora is currently working to implement encrypted account recovery, using the u
 ## User experience
 
 Here we describe the user experience of the protocol as designed.
-Wallets may alter this flow to suite the needs of their users.
+Wallets may alter this flow to suit the needs of their users.
 
 ### Onboarding
 
@@ -105,7 +105,7 @@ This ensures that an attacker who has compromised ODIS cannot leverage their att
 
 ### PIN Blocklist
 
-When using a 4 or 6 digit PIN code to encrypt a backup, there are a number of PINs that are far more common than common than others.
+When using a 4 or 6 digit PIN code to encrypt a backup, there are a number of PINs that are far more common than others.
 Sequences (123456), patterns (124578) and important dates (110989) are chosen most frequently.
 Within 30 guesses, an attacker has a 5-9% chance of guessing a users first-choice PIN code, as suggested by [research into PIN security](https://this-pin-can-be-easily-guessed.github.io/).
 In order to address this, it is highly recommended to block the most easily guessed PINs.
