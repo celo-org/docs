@@ -25,7 +25,7 @@ In this article, we will look at an example of how the ownership attack works. W
 
 To properly understand this guide, you must have a solid knowledge of creating smart contracts with Solidity. The link below will come in handy:
 
-https://docs.celo.org/blog/tutorials/solidity-from-zero-to-hero
+<https://docs.celo.org/blog/tutorials/solidity-from-zero-to-hero>
 
 ## Requirements
 
@@ -282,8 +282,8 @@ This article shows us the risk of leaving our contracts without access control. 
 
 After learning about the ownership attack in Solidity, the next thing to do is to implement its preventive measures in future codes. It is also important to learn about more vulnerabilities in Solidity. Check out the following links to learn more:
 
-- https://docs.celo.org/blog/tutorials/solidity-vulnerabilities-delegated-call
-- https://docs.celo.org/blog/tutorials/preventing-vulnerabilities-in-solidity-denial-of-service-attack
+- <https://docs.celo.org/blog/tutorials/solidity-vulnerabilities-delegated-call>
+- <https://docs.celo.org/blog/tutorials/preventing-vulnerabilities-in-solidity-denial-of-service-attack>
 
 ## References
 
