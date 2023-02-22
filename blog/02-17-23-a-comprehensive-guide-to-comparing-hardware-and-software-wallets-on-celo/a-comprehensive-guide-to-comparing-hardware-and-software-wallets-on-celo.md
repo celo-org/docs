@@ -12,11 +12,12 @@ slug: /a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo
 
 ![A_Comprehensive_Guide_to_Comparing_Hardware_and_Software_Wallets_What_You_Need_to_Know](https://user-images.githubusercontent.com/47746690/220213232-c7b9c60d-6859-468f-beb3-841bd7e0772c.png)
 
-## Introduction​
+## Introduction
 
 Over the past decade, cryptocurrencies have evolved from an undervalued asset to an exceedingly popular investment. Today, cryptocurrencies make up a significant part of the average trader's investment portfolio. Therefore, a wallet is a necessity if you must purchase, trade, or use cryptocurrencies in any other way. This article will compare hardware and software wallets in detail, highlighting the key differences between the two wallet types and their different advantages and disadvantages. 
 
-## Prerequisites​
+## Prerequisites
+
 Knowing what crypto wallets are and their applications and possibilities on the Celo blockchain will come in handy for this article. Check out the [link](https://docs.celo.org/blog/tutorials/crypto-wallets-the-celo-way).
 
 
@@ -36,6 +37,7 @@ They are often considered the most convenient type of software wallets, as they 
 
 
 ### What is a Hardware Wallet? 
+
 ![ledger](https://user-images.githubusercontent.com/47746690/220213670-3615d676-864b-4338-8ad8-737576710ba4.png)
 
 
@@ -111,15 +113,16 @@ Below are some highlighted differences:
 - The user may permanently lose access to the assets if they lose their smartphone or forget their password.
 - They could be impacted by viruses, malware, and other cyberattacks. 
 
-## Conclusion​
+## Conclusion
 
 In summary, when it comes to storing cryptocurrency, both hardware and software wallets have their pros and cons. Hardware wallets provide a more secure form of storage, while software wallets are more convenient for everyday use. The choice between them will depend on an individual's specific needs and preferences and the supported coins that determine the type of wallet.
 
-## About the Author​
+## About the Author
 
-Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto for a more inclusive future. You can follow me on Twitter using this [link](https://twitter.com/livingcisco)
+Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto for a more inclusive future. You can follow me on LinkedIn using this [link](https://www.linkedin.com/in/hardwareguy/).
 
-## References​
+## References
+
 - [Bitcoin-Wallet](https://www.investopedia.com/terms/b/bitcoin-wallet.asp) 
 - [Crypto Wallet](https://www.coinbase.com/learn/crypto-basics/what-is-a-crypto-wallet)
 - [Hardware vs. Software Wallet Choices ](https://www.cryptopolitan.com/hardware-wallet-vs-software-wallet-crypto-wallet-choices/)
