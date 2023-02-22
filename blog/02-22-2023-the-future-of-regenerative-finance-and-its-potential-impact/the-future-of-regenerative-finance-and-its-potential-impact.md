@@ -6,12 +6,12 @@ authors:
     title: Software Developer, Writer, Celo Ambassador
     url: https://github.com/Brisa-Codes,
     image_url: https://avatars.githubusercontent.com/u/82726341?v=4
-tags: [celosage, celo, ReFi, beginner]
+tags: [celosage, celo, beginner]
 hide_table_of_contents: false
 slug: /tutorials/the-future-of-regenerative-finance-and-its-potential-impact
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/ReFi2023.png)
+![header](../../src/data-tutorials/showcase/beginner/the-future-of-regenerative-finance-and-its-potential-impact.png)
 
 ## Introduction
 Regenerative finance has gained a big platform over the recent years because of its sustainable approach towards the financial industry. This has become increasingly necessary towards addressing problems associated with traditional finance and its impact on the environment and society.
@@ -19,7 +19,7 @@ Regenerative finance has gained a big platform over the recent years because of 
 In this article, we will explore Celo’s mission and how it's committed to building a regenerative world, its potential impact, and the future of ReFi. we will further explore the challenges, the potential impact of ReFi and different use cases in the Celo ecosystem.
 Celo’s Mission and ReFi
 
-![Building a regenerative economy](./images/building-a-regenerative-economy.png)
+![Building a regenerative economy](./images/building-regenerative-economy.png)
 *Image Source: [notboring.co](https://bit.ly/3x2z5cS)*
 
 Celo is a mobile-first blockchain that makes decentralised financial (DeFi) tools and services accessible to anyone with a mobile phone, anywhere in the world. It’s unique in many ways, with features like a family of stablecoins (cUSD, cEUR, and cREAL), phone number mapping, and many others.
@@ -46,7 +46,7 @@ Modern approaches to the economy have contributed to scarcity, competition, and 
 
 When you take a look at the current money systems, scarcity and growth are built into them as interest-bearing debt. Banks don't let someone who doesn't create goods and services get a share of these resources. The money goes towards those who will create more of it.
 
-![Explaining the roots of sacred economics](./images/traditional-finance.png)
+![Explaining the roots of sacred economics](./images/traditional-finance-chart.png)
 
 For economic growth to happen in different communities and societies, we have to find something that was once free and natural and make it a good, or was once a gift relationship and make it into a service. You have to find something that people once got for free or did for themselves for each other and take it away and sell it back to them somehow.
 
@@ -60,7 +60,7 @@ ReFi largely focuses on correcting the results of traditional finance, which fre
 
 ## Understanding ReFi
 
-![Refi](./images/refi-celo.jpg)
+![Refi](./images/Refi.jpg)
 Image Source: [HackerEarth](https://s3-ap-southeast-1.amazonaws.com/he-public-data/Build-with-Celo-Prizes-ReFi0dde910.jpg)
 
 Many researchers have described ReFi in many ways. According to [ReFi DAO](https://www.youtube.com/@refidao), ReFi is an exploration into how we can redesign money to be in greater harmony with the earth.
@@ -146,7 +146,7 @@ DeFi has the potential to increase and open access to capital for anyone with an
 
 ### Support for sustainable and regenerative practices
 
-![Sustainable practices](./images/sustainable-practices.jpeg)
+![Sustainable practices](./images/sustainable-practice.jpeg)
 *Image source: [ClimatePromise](https://climatepromise.undp.org/sites/default/files/styles/large_2x/public/callout_image/thumbnail_Aerial%20view%20of%20forests%2C%20Lao%20PDR%2C%202016_Credit%20UNDP%20-%20Source%20UNDP%20EBD%20Flickr.jpg?itok=7zgyvuiG)*
 
 ReFi supports sustainable and regenerative practices through different approaches that prioritise the environment with financial returns, for example, positive screening(identifying companies and projects that have a positive social impact on the environment), impact measurement, long-term focus(investments designed to have a positive impact over a long run), and community engagement(companies and projects actively engaging the communities where they operate to ensure friendly environmental outcomes).
