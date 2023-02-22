@@ -703,12 +703,6 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-transition-from-web2-to-web3',
     tags: ['celosage', 'beginner','celo'],
   },
-  title: 'How to Tokenize Physical Assets on Celo',
-  description: 'Understand how to start the tokenization on Celo',
-  preview: require('./showcase/beginner/how-to-tokenize.png'),
-  website: 'blog/tutorials/how-to-tokenize-a-physical-asset-on-celo',
-  tags: ['celosage', 'beginner','celo', 'smartcontract'],
-},
   {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
