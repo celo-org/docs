@@ -11,8 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript
 ---
 
-
-##How to Build a Seed Marketplace dApp using Celo, Solidity, and Javascript
+![header](../../src/data-tutorials/showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png)
 
 ##Introduction​
 
@@ -557,7 +556,7 @@ Your project should be running here http://localhost:3000/ and a browser window 
 
 After starting the server we need to open the celo-boilerplate-web-dapp folder which is the root folder in an IDE you can use any IDE for it, but preferably you use vscode.
 
-## The HTML part of the Dapp
+### The HTML part of the Dapp
 
 In the next step of the tutorial, you will begin building the foundation of your decentralized application (DApp) using HTML.
 To do this we need to go to the root directory of the folder and find the src folder,  open the folder and click on the index.html file in our IDE. clear all that it written and type this: 
@@ -1163,7 +1162,7 @@ Here is the full code for the html part:
 
 ```
 
-## Reading and Writing on Our SmartContract
+### Reading and Writing on Our SmartContract
 
 Before going into the main.js file,  we need to be able to read and write from our smart contract in our Javascript file and to be able to do that we need to go to Remix IDE and where we already wrote our smart contract, compile it and deploy on the celo network.
 
@@ -1174,7 +1173,7 @@ When you compile your contract in Remix, Remix also creates the ABI in the form 
 After that you need to copy the smart contract code and paste in your marketplace.js. When all this is done we can now move  to our main.js but take note of the address in which your contract is being deployed to because we will need it in our main.js file to interact with the smart contract.
 
 
-## main.js
+### Editing the DApp (main.js)
 
 The main.js file is file that enable us interact with our smart contract from our frontend. In the beginning of the main.js file, necessary libraries and files are imported.
 
@@ -1821,8 +1820,8 @@ Samson Amos is a web2 and a web3 developer who loves coding as well as teaching 
 
 ##References​
 
-- Dacade Tutorial Link: https://dacade.org/communities/celo/courses/celo-development-101
-- Decade Celo Github boilerplate: https://github.com/dacadeorg/celo-boilerplate-web-dapp 
+- Dacade Tutorial [Link](https://dacade.org/communities/celo/courses/celo-development-101)
+- Decade Celo Github [boilerplate](https://github.com/dacadeorg/celo-boilerplate-web-dapp) 
 
 
 
