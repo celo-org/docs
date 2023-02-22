@@ -11,7 +11,6 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png)
 
 ##How to Build a Seed Marketplace dApp using Celo, Solidity, and Javascript
 
