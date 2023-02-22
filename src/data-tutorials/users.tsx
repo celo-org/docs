@@ -701,9 +701,9 @@ const Users: User[] = [
   {
     title: 'Why Should You Build Your Next Project on the Celo Blockchain?',
     description: 'This tutorial examines the features and capabilities of the Celo Blockchain',
-    preview: require('./showcase/celo-sage.png'),
+    preview: require('./showcase/beginner/why-you-should-build-your-next-project-on-the-celo-blockchain.png'),
     website: '/blog/tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain',
-    tags: ['duplicate','beginner','theoretical'],
+    tags: ['celosage','beginner','theoretical','celo'],
   },
   {
     title: " Celo Composer",
