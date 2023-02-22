@@ -14,13 +14,13 @@ slug: "/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchai
 
 ## Introduction
 
-This tutorial, i will teach you how to build an NFT Game On the Celo Blockchain.
+In this tutorial, I will teach you how to build an NFT Game On the Celo Blockchain.
 
-Monster War is an nft game where players can mint a monster and upgrade their monster by paying 0.5 celo per upgrade. Each upgrade will add 1 power value point to their monster. Players can also Swallow another player NFT monster but this can only be done if the attacker has minted his own nft and the power value of his monster is more than the power value of the monster they are attacking.
+Monster War is an NFT game where players can mint and upgrade their monsters by paying 0.5 celo per upgrade. Each upgrade will add one power value point to their monster. Players’ NFT monsters can also Swallow other players’ NFT monsters, but this can only be done if the attacker has minted his NFT and the power value of his monster is more than the power value of the monster they are attacking.
 
-Essentially it's battle between players where each player is able to collect and upgrade NFTs. Players are able to mint their own NFTs, upgrade the power value of their NFTs, and swallow other players’ NFTs depending on the power value of their NFTs. Players are also able to remove their NFTs from the game.
+It's a battle between players where each player can collect and upgrade NFTs. Players can mint their own NFTs, boost the power value of their NFTs, and swallow other players’ NFTs depending on the power value of their NFTs. Players are also able to remove their NFTs from the game.
 
-Here’s a demo [link](https://luxury-daffodil-d1fa4d.netlify.app/) of what you’ll be creating.
+Here is a demo app [link](https://luxury-daffodil-d1fa4d.netlify.app/) of what you’ll be creating.
 
 And a Screenshot
 
@@ -30,7 +30,7 @@ And a Screenshot
 
 To fully follow up with these tutorials, you should have a basic understanding of the following technologies.
 
-Solidity, smart-contract and blockchain concepts.
+Solidity, smart-contract, and blockchain concepts.
 Hardhat.
 React.
 Basic web Development.
@@ -881,7 +881,7 @@ export const minted = async (minterContract, _address) => {
 };
  ```
 
- The `minted()` function is used to check if a particular address has minted an NFT. It takes the `minterContract` and the `address` as arguments and returns a boolean. 
+ The `minted()` function checks if a particular address has minted an NFT. It takes the `minterContract` and the `address` as arguments and returns a boolean. 
 
  ```javascript
 export const checkPowervalue = async (minterContract, _address, _index) => {
