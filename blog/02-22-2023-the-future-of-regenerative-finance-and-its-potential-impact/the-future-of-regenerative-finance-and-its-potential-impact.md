@@ -61,7 +61,7 @@ ReFi largely focuses on correcting the results of traditional finance, which fre
 ## Understanding ReFi
 
 ![Refi](./images/Refi.jpg)
-Image Source: [HackerEarth](https://s3-ap-southeast-1.amazonaws.com/he-public-data/Build-with-Celo-Prizes-ReFi0dde910.jpg)
+*Image Source: [HackerEarth](https://s3-ap-southeast-1.amazonaws.com/he-public-data/Build-with-Celo-Prizes-ReFi0dde910.jpg)*
 
 Many researchers have described ReFi in many ways. According to [ReFi DAO](https://www.youtube.com/@refidao), ReFi is an exploration into how we can redesign money to be in greater harmony with the earth.
 Other researchers, define ReFi as a form of using money to solve systematic problems for the good of the community. But how do you redesign money to use it for the good of the community?
@@ -147,7 +147,6 @@ DeFi has the potential to increase and open access to capital for anyone with an
 ### Support for sustainable and regenerative practices
 
 ![Sustainable practices](./images/sustainable-practice.jpeg)
-
 *Image source: [ClimatePromise](https://climatepromise.undp.org/sites/default/files/styles/large_2x/public/callout_image/thumbnail_Aerial%20view%20of%20forests%2C%20Lao%20PDR%2C%202016_Credit%20UNDP%20-%20Source%20UNDP%20EBD%20Flickr.jpg?itok=7zgyvuiG)*
 
 ReFi supports sustainable and regenerative practices through different approaches that prioritise the environment with financial returns, for example, positive screening(identifying companies and projects that have a positive social impact on the environment), impact measurement, long-term focus(investments designed to have a positive impact over a long run), and community engagement(companies and projects actively engaging the communities where they operate to ensure friendly environmental outcomes).
