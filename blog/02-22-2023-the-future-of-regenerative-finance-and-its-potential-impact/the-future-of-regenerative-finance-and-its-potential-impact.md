@@ -61,6 +61,7 @@ ReFi largely focuses on correcting the results of traditional finance, which fre
 ## Understanding ReFi
 
 ![Refi](./images/Refi.jpg)
+
 *Image Source: [HackerEarth](https://s3-ap-southeast-1.amazonaws.com/he-public-data/Build-with-Celo-Prizes-ReFi0dde910.jpg)*
 
 Many researchers have described ReFi in many ways. According to [ReFi DAO](https://www.youtube.com/@refidao), ReFi is an exploration into how we can redesign money to be in greater harmony with the earth.

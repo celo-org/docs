@@ -1513,7 +1513,7 @@ const Users: User[] = [
   {
     title: 'The Future of Regenerative Finance and its potential impact',
     description: 'Learn about how Celo is committed to its mission of building a regenerative economy, potential impact of ReFi, the future of ReFi and more',
-    preview: require('./showcase/beginner/ReFi2023.png'),
+    preview: require('./showcase/beginner/the-future-of-regenerative-finance-and-its-potential-impact.png'),
     website: '/blog/tutorials/the-future-of-regenerative-finance-and-its-potential-impact',
     tags: ['beginner', 'celo', 'celosage'],
   },
