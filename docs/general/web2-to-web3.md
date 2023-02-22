@@ -11,7 +11,8 @@ Overview of the anatomy of a dApp and its architecture difference from a web2 ap
 
 _This article assumes you have experience writing front-ends for web apps (called web2 apps here) and want to gain an an understanding of the differences and commonalities when creating front-ends for web3 apps._
 
-Web3 dApps expand on the front-end architectural systems of Web2 Applications. Concepts like SinglePageApp, State and UI Management, Data Fetching and Caching are serve as the foundation of any Web3 Dapp. Compared to web2 dapps, even more computation is pushed to the client/browser as computing on the blockchain costs literal money while running your own traditional backend between the blockchain and frontend increases centralization and is not used by most web3 dApps. 
+Web3 dApps expand on the front-end architectural systems of Web2 Applications. Concepts like SinglePageApp, State and UI Management, Data Fetching and Caching serve as the foundation of any Web3 dApp. Compared to Web2 Apps, even more computation is pushed to the client/browser as computing on the blockchain costs literal money while running your own traditional backend between the blockchain and frontend increases centralization and is not used by most web3 dApps.
+
 
 Typical DApp Stack looks something like this:
 
