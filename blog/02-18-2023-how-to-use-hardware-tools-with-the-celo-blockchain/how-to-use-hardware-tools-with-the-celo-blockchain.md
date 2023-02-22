@@ -8,6 +8,8 @@ hide_table_of_contents: false
 slug: /tutorials/how-to-use-hardware-tools-with-the-celo-blockchain
 ---
 
+![how-to-use-hardware-tools-with-the-celo-blockchain](https://user-images.githubusercontent.com/47746690/220504935-bded7d46-b644-42d9-bb17-5f955876a076.png)
+
 ## Introduction
 
 The application of hardware technology in the Web 3 space is rising. Specifically, the Celo blockchain has a lot to benefit from the use of hardware tools. 
