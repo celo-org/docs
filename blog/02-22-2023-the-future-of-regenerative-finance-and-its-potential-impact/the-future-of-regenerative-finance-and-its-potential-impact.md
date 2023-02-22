@@ -1,6 +1,6 @@
 ---
-title: A beginners Guide to Layer 1 blockchains, Social Impact, ReFi, Defi and More
-description: Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and it's ecosystem.
+title: The Future of Regenerative Finance and its potential impact
+description: Learn about how Celo is committed to its mission of building a regenerative economy, potential impact of ReFi, the future of ReFi and more
 authors:
   - name: Mukunde Brisa
     title: Software Developer, Writer, Celo Ambassador
