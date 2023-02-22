@@ -8,22 +8,27 @@ hide_table_of_contents: false
 slug: /tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain
 ---
 
-# **Why Should You Build Your Next Project on the Celo Blockchain?**
 
-# Introduction​
+![why-you-should-build-your-next-project-on-the-celo-blockchain](https://user-images.githubusercontent.com/47746690/220511855-bca99671-1162-435c-9b00-b824b071d244.png)
+
+## Introduction
+
 Are you a developer or blockchain enthusiast looking for a platform to host your next web3 project on? The Celo Blockchain is your best option. In this article, we'll show you why you should choose Celo for your next project. We'll start by exploring the different types of projects you can build on Celo, such as stablecoins, digital assets, and smart contracts. Then, we'll compare Celo to other popular blockchains, highlighting its advantages and why it's the best choice for your project. So sit tight and keep reading to discover why you should build your next project on Celo!
 
-# Prerequisites​
+## Prerequisites
+
 Before reading this article, it would be helpful to have a basic understanding of blockchain technology, and its applications, as well as the ideas of stablecoins, digital assets, and smart contracts. It would also be helpful to have some basic knowledge of decentralized exchanges (DEXs) and decentralized apps (DApps). 
 
 You can find resources to help with this on the Celo docs page through this [link](https://docs.celo.org/). 
 
 # Introducing the Celo Blockchain
+
 Layer-1 protocol, EVM compatible, Proof-of-stake, Carbon negative, Mobile-first identity, Ultra-light clients, Localized stablecoins, Gas payable in multiple currencies, what exactly is the Celo blockchain?
 
 The Celo blockchain is a decentralized platform that enables the creation of stablecoins, digital assets, and smart contracts. The features and properties of Celo have positioned the Celo blockchain as one of the fastest, most secure, and carbon-efficient web3 platforms for building a wide range of projects. At the core of the Celo Blockchain is its **mobile-first nature**, the platform is optimized for mobile phones, making sending payments and digital assets as easy as sending a text, to anyone with an internet connection, anywhere in the world. 
 
 # What Can You Build on Celo?
+
 Stablecoins, digital assets, and smart contracts are the major foundations for all projects which can be built on the Celo Blockchain. 
 
 ## **Stablecoins**
@@ -123,16 +128,20 @@ Furthermore, by incorporating hardware wallets into its mobile-first design, Cel
 
 Simply put, Celo's mobile-first strategy is a significant advantage over competing blockchains because it makes the Celo blockchain an appealing platform for developing decentralized applications and smart contract projects that are intended for users everywhere, regardless of their location, financial situation, or technical expertise.
 
-# Conclusion​
+## Conclusion
+
 The Celo Blockchain offers an excellent platform and building blocks for programmers to create decentralized applications and financial services. This platform is an enabling option for anyone looking to start a new project in the blockchain industry thanks to its fast transaction speeds, low fees, and high security. The Celo network is unquestionably something you should take into consideration if you are looking for a safe and reliable platform to build your next project.
 
-# Next Steps​
+## Next Steps
+
 To gain a deeper understanding of the Celo platform, you can continue learning about the Celo blockchain by exploring the various projects and initiatives that are being built on it. If you're interested in building your projects on the Celo blockchain, you can visit the official Celo developer documentation, where you can find all the information you need to get started. Additionally, you can also participate in the community by becoming a Celo validator, contributing to the development of the Celo blockchain.
 
-# About the Author​
+## About the Author
+
 Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto, for a more inclusive future. 
 
-# References​
+## References
+
 - [Celo ecosystem projects raise $77.3M in support of interoperability, ReFi](https://cointelegraph.com/news/celo-ecosystem-projects-raise-77-3m-in-support-of-interoperability-refi)
 - [11 Celo projects that are built with Toucan carbon](https://blog.toucan.earth/11-celo-projects-building-with-carbon/)
 - [What Are Smart Contracts on the Blockchain and How They Work](https://www.investopedia.com/terms/s/smart-contracts.asp)
