@@ -783,6 +783,12 @@ const Users: User[] = [
     website: 'blog/tutorials/como-construir-e-realizar-deploy-de-contratos-Factory-no-blockchain-Celo',
     tags: ['intermediate','celosage','solidity','smartcontract','video'],
   },
+  {title: 'Como melhorar a segurança de seu smart contract',
+  description: 'Explicarei os casos mais comuns de ataques e como proteger seu smart contract contra eles.',
+  preview: require('./showcase/intermediate/como-melhorar-a-seguranca-do-seu-smart-contract.png.png'),
+  website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
+  tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
+  },
   {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
