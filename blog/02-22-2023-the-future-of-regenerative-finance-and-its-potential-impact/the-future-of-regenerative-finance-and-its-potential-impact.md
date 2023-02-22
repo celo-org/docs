@@ -14,10 +14,12 @@ slug: /tutorials/the-future-of-regenerative-finance-and-its-potential-impact
 ![header](../../src/data-tutorials/showcase/beginner/the-future-of-regenerative-finance-and-its-potential-impact.png)
 
 ## Introduction
+
 Regenerative finance has gained a big platform over the recent years because of its sustainable approach towards the financial industry. This has become increasingly necessary towards addressing problems associated with traditional finance and its impact on the environment and society.
 
 In this article, we will explore Celo’s mission and how it's committed to building a regenerative world, its potential impact, and the future of ReFi. we will further explore the challenges, the potential impact of ReFi and different use cases in the Celo ecosystem.
-Celo’s Mission and ReFi
+
+## Celo’s Mission and ReFi
 
 ![Building a regenerative economy](./images/building-regenerative-economy.png)
 *Image Source: [notboring.co](https://bit.ly/3x2z5cS)*
@@ -31,15 +33,19 @@ Various communities are taking shape in the ReFi sector with the same purpose in
 The foundations of Celo’s vision are based on connectedness, unique purpose, theory of change and sacred economics that introduces us to ReFi;
 
 ### Connectedness
+
 Celo envisions a worldwide interconnected society where people live inside a healthy and joyful whole, where they are healthier and happier, and where they are a member of a strong social collective with meaningful interactions. Celo aims to link individuals and their communities globally.
 
-###Unique Purpose
+### Unique Purpose
+
 Every individual has a distinct path and purpose, and personal fulfilment of that path is dependent on the tools and abilities to which people have access. Celo aspires to create a world in which everyone has equal access to conditions that create prosperity for everyone.
 
 ### Theory of change
+
 We believe that short-term actions have a long-term impact on society, people, and the environment. Celo bases this mindset to guide every ecosystem project to have the greatest impact.
 
 ### Sacred Economics
+
 The idea was first introduced in Charles Eisenstein's book Sacred Economics. If you back the money with more things you want to see in the world, you will get more of those things. 
 
 Modern approaches to the economy have contributed to scarcity, competition, and the destruction of our communities and the natural world. However, we want to use our economy for good: to create connected, ecological, and sustainable ways of living.
@@ -155,6 +161,7 @@ ReFi supports sustainable and regenerative practices through different approache
 By following these approaches, ReFi can shape and build a more sustainable and friendly economy for future generations to come.
 
 ### Alignment of financial and ecological goals
+
 The 2030 Agenda is a plan of action for people, the planet and prosperity. It provides, with the SDGs, universal goals and targets or a blueprint to achieve a better and more sustainable future for all.
 
 Generally, regenerative finance integrates financial and ecological goals by investing in initiatives and businesses that emphasize the health and resilience of both the natural environment and human communities, as well as by investing over time and using an ecosystem-based approach.
@@ -164,6 +171,7 @@ ReFi aligns with UN SDGs, in particular, those related to conserving the environ
 ReFi recognizes [SDG Aligned Finance](https://www.oecd.org/development/financing-sustainable-development/Framework-for-SDG-Aligned-Finance-OECD-UNDP.pdf) in many ways and supports projects with practices that align with the SDGs to foster long-term quality investment. For example, Refi invests in projects that promote SDG 6, 7, 12, 13, 14 and 15 thereby contributing to the conservation of the environment, reducing greenhouse emissions and promoting a more sustainable future.
 
 ### Driving innovation
+
 ReFi accelerates innovation in many ways through contributions to the development of new sustainable technologies, circular economy initiatives, regenerative agricultural practices, etc which are driving innovation and promoting a sustainable future. For example [carbon markets](https://climatepromise.undp.org/news-and-stories/what-are-carbon-markets-and-why-are-they-important). One tradable carbon credit equals one tonne of carbon dioxide or the equivalent amount of a different greenhouse gas reduced, sequestered or avoided. 
 
 
@@ -204,9 +212,11 @@ Flowcarbon is creating infrastructure to tokenize carbon offset units(COUs), all
 [Wren](https://www.wren.co/) is an approachable on-ramp to climate action. Wren is a platform for anyone who wants to tackle the climate crisis but isn’t sure where to start.
 
 ### Moss. 
+
 [Moss](http://moss.earth/) is a climate tech with a common objective to combat climate change. Moss unites companies and people with the same goal. They simplify the offsetting process and guarantee the traceability and transparency of everything using blockchain technology.
 
 ### Wasset. 
+
 [Wasset](http://wasset.io/) is a blockchain protocol that incentivizes conscious waste management actions. Their efforts are to keep our planet safe and strive to solve global waste management issues from the ground up. 
 
 ## The Future of ReFi
@@ -226,6 +236,7 @@ However, as the ReFi industry evolves, there will be challenges and dangers, suc
 Finally, the potential impact of ReFi is huge, and we must all work together to fully realize it. By promoting and investing in ReFi, we can ensure a more sustainable and just future for ourselves and future generations.
 
 ## About the Author​
+
 A software developer, writer, and Web3 community educator.
 Connect with me on [LinkedIn](https://www.linkedin.com/in/mukundebrisa/) and [GitHub](https://github.com/Brisa-Codes)
 
