@@ -8,9 +8,7 @@ hide_table_of_contents: false
 slug: /tutorials/how-to-use-hardware-tools-with-the-celo-blockchain
 ---
 
-# How to Use Hardware Tools on the Celo Blockchain? 
-
-# Introduction​
+## Introduction
 
 The application of hardware technology in the Web 3 space is rising. Specifically, the Celo blockchain has a lot to benefit from the use of hardware tools. 
 
@@ -23,7 +21,7 @@ Also, we will discuss the hardware's role in enabling payment and driving positi
 - Current application of hardware on the blockchain
 - Future use of blockchain on the Celo blockchain
 
-# Prerequisites​
+## Prerequisites
 
 For a proper understanding of this series, it is very important to have prior knowledge of: 
 
@@ -36,7 +34,7 @@ The following links will help:
 - [Regenerative Finance - What it is and why it Matters](https://docs.celo.org/blog/tutorials/regenerative-finance-and-celo-the-process-and-partnership)
 - [Web3.0 explained.](https://www.investopedia.com/web-20-web-30-5208698#:~:text=Web%202.0%20is%20the%20current,greater%20utility%20for%20its%20users)
 
-# Requirements​
+## Requirements
 
 You will need your mobile phone, any mobile crypto wallet supported by Celo, and access to the internet. 
 Also, you should check out an introduction to the Celo blockchain and its potential use in Africa through the link below: 
@@ -59,9 +57,11 @@ On the flip side, on the blockchain, rather than having a central ledger, numero
 Indeed, the first application of Blockchain technology might be cryptocurrencies. However, as platforms like the Celo blockchain shows us, that's just the tip of the iceberg. The idea of decentralization or distribution to be exact is applicable in several ways and hardware technology increases these possibilities.
 
 - ## The Need for Trust and Enhanced Security on the Blockchain
+
 Blockchain technology features a medley of numerous built-in security features like cryptography, software-mediated contracts, and identity controls. With these features, the technology provides an impressive level of data protection and integrity as it enables a distributed way to verify access, authenticate transaction records, and ensure privacy never gets compromised.
 
 The presence of these security features, however, does not exempt the blockchain market from security challenges. Atlas VPN reports that “decentralized finance-related breaches constituted 76% of all major hacks in 2021, with over $1 billion lost in the third quarter alone.” Also, a research report from SlowMist shows that the third quarter of 2021 saw 20% more blockchain-based hacking incidents compared to the number of attacks in all of 2020. 
+
 - ## How Does Hardware Provide that Extra Trust and Security?
 
 With hardware technology, devices used on the blockchain are designed for a specific purpose. Such devices can be optimized for security and speed thanks to their specific architecture which gets rid of loopholes common to most general-purpose systems.
@@ -108,13 +108,20 @@ Other potential applications of the blockchain and hardware technology include b
 - Integration of Sensor Nodes and OracleS into More Blockchain Systems.
 - Widespread and Low-End Blockchain Adoption Thanks to Hardware Integrations
 
-# Conclusion​
+## Conclusion
+
 The Celo blockchain has all the prerequisites for the adoption of both existing and future applications of hardware technology in the blockchain. Some of these applications already exist while more of them get integrated now and then. The potentials of hardware technology and blockchain in the Celo ecosystem are endless and the future is even brighter.
-# Next Steps​
+
+## Next Steps
+
 In the subsequent part of this series, I will walk you through how you can utilize the available existing applications like decentralized storage and hardware wallets.
-# About the Author
+
+## About the Author
+
 Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto, for a more inclusive future. 
-# References​
+
+## References
+
 - [Layer 2 Solution Explained](https://www.ledger.com/academy/layer-2-blockchains-explained) 
 - [Top 5 crypto points of sales](https://nowpayments.io/blog/top-5-cryptocurrency-point-of-sale) 
 - [Potential Growth of blockchain and its use cases](https://docs.celo.org/blog/tutorials/potential-growth-of-blockchain-and-its-use-cases)
