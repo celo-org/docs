@@ -29,9 +29,11 @@ The assumption made in this tutorial is that you are already familiar with solid
  - Understanding of concepts like smart contract deployment, transactions, gas, and Web3 providers.
 
 ## Getting Started
+
 To bootstrap our React DAPP, we will be using **Celo Composer**.
 
 ### Celo Composer
+
 Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides several frameworks, examples, and Celo-specific functionality to help you get started with your next dApp.
 
 You can check out Celo Composer here [https://github.com/celo-org/celo-composer/tree/main/packages/react-app](https://github.com/celo-org/celo-composer/tree/main/packages/react-app).
@@ -251,6 +253,7 @@ You can now view your contract on the CELO explorer (Alfajores) using the addres
 Now that we have deployed our contract let’s build the dApp.
 
 ## The UI
+
 Switch to the angular project in your terminal
 
 ```bash
@@ -281,6 +284,7 @@ Now that you can connect to a cryptocurrency wallet, the result of your connecti
 ![select hardhart](./images/screenshot-6.png)
 
 ### ABI (Application Binary Interface)
+
 We will need the ABI of our deployed contracts and the address deployed, to make any call to our smart contract.
 Let’s copy our Contract ABIs into our project.
 
@@ -291,6 +295,7 @@ Now go to the packages/hardhat/artifacts/contracts/**CeloMarketPlace.sol** file
 Copy the ABI section of the json file and paste it into the **CeloMarketPlace.json** file you have just created. Copy only the Array, not the whole field.
 
 ### Add utils
+
 We are going to create a folder for utils in our project directory named utils, basically we logger util and address util to validate and shorten the user address.
 
 **Create address file**
@@ -888,6 +893,7 @@ Note: Gas price must be set manually because contractkit pre-populates it and it
 
 
 ## Conclusion
+
 Congratulations, you have now learned how to add support for Stablecoin gas fees using Celo Composer. You have seen how to connect with a blockchain wallet, interact with Smart Contracts using Celo-Contractkit. 
 
 ## About the Author
