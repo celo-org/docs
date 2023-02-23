@@ -7,7 +7,7 @@ authors:
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, solidity, developers, remix, celosage]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/como-melhorar-a-seguranca-de-seu-smart-contract
 ---
 
