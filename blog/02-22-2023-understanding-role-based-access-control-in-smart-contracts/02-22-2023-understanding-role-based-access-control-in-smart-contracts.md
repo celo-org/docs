@@ -5,7 +5,7 @@ authors:
   - name: Nikhil Bhintade
     url: https://github.com/nikbhintade
 tags: [celosage, intermediate, solidity, hardhat, openzeppelin, react]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/understanding-role-based-access-control-in-smart-contracts
 ---
 
