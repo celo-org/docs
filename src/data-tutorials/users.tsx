@@ -860,6 +860,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'reactnative', 'composer'],
   },
   {
+    title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
+    description: 'There are multiple factors to consider when assembling a web3 dream team.',
+    preview: require('./showcase/beginner/How_to_Assemble_a_Web3_Dream_Team_and_Build_a_High_Value_dApp.png'),
+    website: 'blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp',
+    tags: ['celo', 'dapp', 'beginner', 'celosage'],
+  },
+  {
     title: 'How to quickly build an NFT collection on Celo',
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
