@@ -784,7 +784,7 @@ const Users: User[] = [
   },
   {title: 'Como melhorar a segurança de seu smart contract',
   description: 'Explicarei os casos mais comuns de ataques e como proteger seu smart contract contra eles.',
-  preview: require('./showcase/intermediate/como-melhorar-a-seguranca-do-seu-smart-contract.png.png'),
+  preview: require('./showcase/intermediate/como-melhorar-a-seguranca-do-seu-smart-contract.png'),
   website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
   tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
   },
