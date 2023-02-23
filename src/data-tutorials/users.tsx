@@ -741,6 +741,13 @@ const Users: User[] = [
     tags: ['beginner', 'erc721', 'celosage'],
   },
   {
+  title: 'Product Discovery é a chave para criar produtos de NFT de sucesso no blockchain Celo',
+  description: 'Aprenda como criar produtos de NFT de sucesso no blockchain Celo através de processos de product discovery',
+  preview: require('./showcase/intermediate/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo.png'),
+  website: 'blog/tutorials/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo',
+  tags: ['intermediate', 'erc721', 'celosage'],
+  },
+  {
     title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
     description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee".',
     preview: require('./showcase/advanced/buyme-a-coffee-android-app-using-the-celo-java-sdk.png'),
