@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png) 
+![header](../../src/data-tutorials/showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png)
 
 ## Introduction
 
@@ -64,10 +64,10 @@ Oluwalana is a writer and a firm believer in fostering strong relationships to a
 
 ## References
 
-https://docs.celo.org/general
-https://metacelo.io/
-https://www.accesswire.com/689027/MetaCelo--The-New-Star-in-Celo-Ecosystem
-https://docs.metacelo.io/
-https://docs.metacelo.io/tokenomics
-https://docs.celolaunch.io/ecosystem/amm
-https://docs.celo.org/tutorials
+<https://docs.celo.org/general>
+<https://metacelo.io/>
+<https://www.accesswire.com/689027/MetaCelo--The-New-Star-in-Celo-Ecosystem>
+<https://docs.metacelo.io/>
+<https://docs.metacelo.io/tokenomics>
+<https://docs.celolaunch.io/ecosystem/amm>
+<https://docs.celo.org/tutorials>
