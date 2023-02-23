@@ -112,6 +112,7 @@ export type TagType =
   | "subgraphs"
   | "tokens"
   | "truffle"
+  | "typescript"
   | "usecontractkit"
   | "valora"
   | "verification"
@@ -1660,6 +1661,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/why-should-you-use-celo.png'),
     website: '/blog/tutorials/why-should-you-use-celo',
     tags: ['celosage','celo', 'beginner'], 
+  },
+  {
+    title: 'Build feature rich persistent dapp on celo using wagmi',
+    description: 'Learn one of efficient methods of connecting to Celo blockchain',
+    preview: require('./showcase/advanced/build-feature-rich-persistent-dapp-on-celo-using-wagmi.png'),
+    website: '/blog/tutorials/build-feature-rich-persistent-dapp-on-celo-using-wagmi',
+    tags: ['hardhat', 'celo', 'solidity', 'react', 'nextjs', 'materialui', 'typescript'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
