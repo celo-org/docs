@@ -720,7 +720,7 @@ In this file, we fetch the abis for SwapLab and Token contracts, and export both
 
 The complete code for this tutorial can be found **[here](https://github.com/bobeu/feature-rich-persistent-dapp-on-celo-using-wagmi)**.
 
-Visit to interact with this dapp [here](https://vercel.com/feature-rich-persistent-dapp-on-celo-using-wagmi).
+Visit to interact with this dapp [here](https://persistent-dapp-on-celo-using-wagmi.vercel.app/).
 
 ## Conclusion​
 
