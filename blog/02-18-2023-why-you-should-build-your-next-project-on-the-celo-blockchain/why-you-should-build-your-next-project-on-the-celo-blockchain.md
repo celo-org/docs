@@ -21,17 +21,17 @@ Before reading this article, it would be helpful to have a basic understanding o
 
 You can find resources to help with this on the Celo docs page through this [link](https://docs.celo.org/). 
 
-# Introducing the Celo Blockchain
+## Introducing the Celo Blockchain
 
 Layer-1 protocol, EVM compatible, Proof-of-stake, Carbon negative, Mobile-first identity, Ultra-light clients, Localized stablecoins, Gas payable in multiple currencies, what exactly is the Celo blockchain?
 
 The Celo blockchain is a decentralized platform that enables the creation of stablecoins, digital assets, and smart contracts. The features and properties of Celo have positioned the Celo blockchain as one of the fastest, most secure, and carbon-efficient web3 platforms for building a wide range of projects. At the core of the Celo Blockchain is its **mobile-first nature**, the platform is optimized for mobile phones, making sending payments and digital assets as easy as sending a text, to anyone with an internet connection, anywhere in the world. 
 
-# What Can You Build on Celo?
+## What Can You Build on Celo?
 
 Stablecoins, digital assets, and smart contracts are the major foundations for all projects which can be built on the Celo Blockchain. 
 
-## **Stablecoins**
+### **Stablecoins**
 
 Stablecoins are a type of cryptocurrency with the value of the digital asset pegged to a reference asset, which is either fiat currencies, exchange-traded commodities, or another cryptocurrency. The Celo platform has its native stablecoin, the Celo Dollar (cUSD) pegged to the US dollar, and is designed to provide a stable and reliable currency for transactions on the platform. Other native stablecoins on the Celo platform are the Celo Euro (cEUR), and Celo Real (cReal) which track the value of the euro and the Brazilian real.
 
@@ -46,7 +46,7 @@ In addition, the Celo blockchain allows for the creation of custom stablecoins t
     * E-commerce and online payments.
     * P2P Payments.
 
-## **Digital Assets**
+### **Digital Assets**
 
 Digital assets on a blockchain refer to digital representations of value or ownership that are stored, transferred, and managed on a blockchain network. The most important use cases for digital assets on the Celo blockchain is the creation and management of stablecoins such as the cUSD as discussed above. But, that is only scratching the surface, with its fast, secure, and low-cost transactions coupled with Celo’s mobile-first approach, the Celo blockchain provides a convenient and accessible platform for people to manage and trade digital assets. Some use cases for digital assets projects that can be built on the Celo blockchain include:
 
@@ -57,7 +57,7 @@ Digital assets on a blockchain refer to digital representations of value or owne
 3. **Decentralized Exchanges (DEXes):** The Celo blockchain allows the development of decentralized exchanges, which would enable users to trade digital assets without the need for intermediaries. A good example of this is Ubeswap, a mobile-first DeFi exchange on Celo.
 4. **Digital Asset Management and Custody Solutions:** Celo's secure and decentralized infrastructure enables the creation of digital asset management and custody solutions, providing investors with peace of mind and protection against theft and loss.
 
-## **Smart Contracts**
+### **Smart Contracts**
 
 A smart contract is a self-executing contract with the terms of the agreement between buyer and seller being directly written into lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network. The code controls the execution, and transactions are trackable and irreversible. 
 
@@ -72,7 +72,7 @@ More so; [Celo runs the EVM which means that all smart contracts written for Eth
 
 A very practical use case of a DApp(Decentralized App) project running on Smart contracts on the Celo blockchain is the impact market. Impact market is a social impact platform, that enables users to monitor the impact of their contributions to poverty alleviation initiatives and helps organizations that work in this area to raise funds more efficiently. By building on the Celo blockchain, Impactmarket has been able to ensure that the funds donated by users reach the intended recipients and are being used for the intended purpose, bringing transparency and accountability to the aid and development sector.
 
-# Why Build on Celo?
+## Why Build on Celo?
 
 The Celo platform, which focuses on financial inclusion, security, and accessibility, continues to draw more users and developers and is quickly emerging as a top platform for decentralized applications and smart contract projects. It has several competitive advantages over its rivals, which makes it a desirable platform for stablecoins, decentralized apps, and smart contract initiatives. Some of the key advantages of building on the Celo blockchain include:
 
@@ -109,7 +109,7 @@ Regenerative finance aka ReFi refers to a financial system that prioritizes envi
 
 The [Wildchain](https://www.wildchain.io/) project is an illustration of a ReFi application on the Celo blockchain. This endeavor is a play-to-impact mobile app that enables you to adopt endangered animals online and contribute to actual conservation efforts.
 
-# Celo’s Mobile First Approach
+## Celo’s Mobile First Approach
 
 At the core of the Celo Blockchain is its mobile-first nature, the platform is optimized for mobile phones and mobile phone numbers, making sending payments and digital assets as easy as sending a text, to anyone with or without an internet connection, anywhere in the world. 
 
@@ -138,7 +138,7 @@ To gain a deeper understanding of the Celo platform, you can continue learning a
 
 ## About the Author
 
-Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto, for a more inclusive future. 
+Boyejo Oluwafemi is a hardware product developer working at the intersection of hardware and blockchain technology. He’s working to leverage his wealth of experience working on several products ranging from smart health devices to sporting gadgets to deliver smart payment solutions for crypto, for a more inclusive future. You can follow me on LinkedIn using the [link](https://www.linkedin.com/in/hardwareguy/). 
 
 ## References
 
