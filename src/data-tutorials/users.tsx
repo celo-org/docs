@@ -1046,6 +1046,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'truffle'],
   },
   {
+    title: 'Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading',
+    description: 'Learn how Celo is utilized in the Gaming Industry for In-Game Assets and P2P Trading',
+    preview: require('./showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png'),
+    website: 'blog/tutorials/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading',
+    tags: ['celosage', 'celowallet', 'celo', 'cusd', 'ledger'],
+  },
+  {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
