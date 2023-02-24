@@ -8,6 +8,8 @@ hide_table_of_contents: true
 slug: "/tutorials/build-an-on-chain-puzzle-game-on-celo"
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/on-chain-puzzle-game.png)
+
 ## Introduction
 
 In this tutorial, we will be building a puzzle game where the solution to each game will be hashed and stored on the blockchain. This tutorial is designed to teach you about Solidity development, testing, and deployment, as well as how hashing works. Let's get started!
