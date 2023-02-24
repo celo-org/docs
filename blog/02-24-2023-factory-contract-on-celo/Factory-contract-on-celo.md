@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo-blockchain
 ---
 
-![Alt text](images/factory%20cover.png)-
+![factorycover](https://user-images.githubusercontent.com/105144630/221163509-38ce5809-85bb-4915-9f97-b5b2148528d3.png)
 
 ## Introduction
 Smart contracts are programs running on blockchains. As a result, some design patterns and programming principles that apply to traditional software development also apply to smart contracts. A factory contract is similar to a class in object-oriented programming. In Solidity, a factory contract is a parent contract that will deploy other child contracts.
@@ -139,25 +139,28 @@ Lastly, we have our getToken function. This function takes an uint256 number rep
 ### Step 3: Testing with Remix
 Switch to the "Solidity Compiler" tab and compile both contracts by pressing the "ctrl" + "s" keys ("Command+S" for Mac users) simultaneously.
 
-![Alt text](images/compile.png)
+![compile](https://user-images.githubusercontent.com/105144630/221164942-49b23bed-3114-4faa-bd39-864516fa326e.png)
 
 Now, we are all set to deploy the contract. Switch to "Deploy & Run Transactions" tab and deploy the [TokenFactory contract](https://gist.github.com/johnfawole/f03a43c1a099cf1418bca0ba70d3c49c).
 
-![Alt text](images/Tokenfactory.png)
+![Tokenfactory](https://user-images.githubusercontent.com/105144630/221164737-ec039086-8651-4858-9acd-193cadecf197.png)
 
 You should ensure that the "CONTRACT" field is set to "TokenFactory" before you click "Deploy" the full code is also [available here](https://gist.github.com/johnfawole/f03a43c1a099cf1418bca0ba70d3c49c) for reference.
 
 ## Interacting with the Deployed Contract
 
-![Alt text](images/deployed1.png)
+![deployed1](https://user-images.githubusercontent.com/105144630/221164595-07894e77-5d5c-4654-b9d1-e7f8d5f90b48.png)
+
 
 Under the new "Deployed Contracts" tab, you can see the deployed factory contract. You should proceed to call the createToken function. This function takes the token name, symbol and initial supply as arguments. After the successful contract call, we can get a token at index "0" by calling the getToken function to get the token information stored on the factory contract.
 
-![Alt text](images/TT1.png)
+![TT1](https://user-images.githubusercontent.com/105144630/221164346-6e8280d8-8a83-452a-8d3c-d6a33250c464.png)
+
 
 We can also call the createToken function to create another ERC20 token from the factory contract using different parameters.
 
-![Alt text](images/TT2.png)
+![TT2](https://user-images.githubusercontent.com/105144630/221164508-edca4653-7b23-418e-953b-be40c7cd4e3b.png)
+
 
 ## Conclusion
 
