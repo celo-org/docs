@@ -877,7 +877,6 @@ const Users: User[] = [
     tags: ["celosage", "advanced", "solidity"],
   },
   {
-
     title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
     description: 'There are multiple factors to consider when assembling a web3 dream team.',
     preview: require('./showcase/beginner/How_to_Assemble_a_Web3_Dream_Team_and_Build_a_High_Value_dApp.png'),
@@ -890,23 +889,21 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
     website: 'blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo',
     tags: ['beginner','foundation', 'nft', 'foundation'],
-},
-{
+  },
+  {
     title: "React Native & Celo - Easily build React Native dApps on Celo",
     description:
       "Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.",
     preview: require("./showcase/intermediate/easily-build-react-native-dapps-on-celo.png"),
     website:
       "blog/tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo",
-   
     tags: ["beginner", "foundation", "nft", "foundation"],
-
   },
   {
     title: 'How to build a Bookshop Marketplace Dapp on Celo Blockchain',
     description: 'Learn how to build a bookshop marketplace platform on celo blockchain',
     preview: require('./showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png'),
-   
+    website: 'blog/tutorials/how-to-build-a-bookshop-marketplace-dapp',
     tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
   },
   {
@@ -923,7 +920,6 @@ const Users: User[] = [
     website: 'blog/tutorials/introduction-to-zero-knowledge-technology-and-its-blockchain-applications',
     tags: ['celosage', 'intermediate'],
   },
-
   {
     title: ' How to Build Car Marketplace dapp Using React',
     description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
