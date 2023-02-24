@@ -1,5 +1,5 @@
 ---
-title: Creating Smart Contracts for liquidity farming 
+title: Creating Smart Contracts For Liquidity Farming 
 description: Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.
 authors:
   - name: ✍️ Adewale Emmanuel
@@ -10,7 +10,7 @@ slug: /tutorials/creating-smart-contracts-for-liquidity-farming
 
 CREATING SMART CONTRACTS FOR LIQUIDITY FARMING
 
-![]blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO SMART CONTRACTS.jpg
+blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO SMART CONTRACTS.jpg
 
 Liquidity and smart contracts are essential parts of any financial system, liquidity describes how quickly financial assets can be converted into cash, while smart contracts represent decentralized financial agreements in the form of a computer program stored on the blockchain. The global adoption of blockchain technology has created and fueled the development of various prospective blockchain projects. Celo with one of such projects has created an Ethereum-compatible decentralized payment framework for easy access to financial instruments. 
 
@@ -18,7 +18,7 @@ Liquidity and smart contracts are essential parts of any financial system, liqui
 
 Smart Contracts are decentralized agreements created between parties involved in any form of financial transaction, such as trading, investing, borrowing, and lending protocols, which will be the focus of this article. The application of Smart Contracts has however expanded to being implemented in health care, the transformation of corporate structures, and gaming applications.
 
-![]blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO WHAT ARE SMART CONTRACTS.jpg	
+blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO WHAT ARE SMART CONTRACTS.jpg
 
 Smart Contracts are simply computer programs written in the form of code and stored on a blockchain-based platform that run or trigger when certain existing conditions outlined in the program are met. Smart Contracts are used to automate the execution of a specific agreement so that all parties involved can be certain of the outcome instantly without the intervention of any user or intermediary, thus decentralizing. 
 
@@ -41,6 +41,7 @@ Do note that this article does not serve as investment advice and it will be foc
 The Remix IDE is an important tool for developing Smart Contracts. It allows for a simple deployment process on any blockchain of your choice. Remix IDE is a no-setup tool with a Graphics based operating system interface. It is used by most developers, and it is going to be where you create and deploy your smart contracts going forward.
 
 SMART CONTRACTS THAT ALLOW FOR LIQUIDITY FARMING!
+
 []blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo.jpg
 
 As earlier described, Smart Contracts are decentralized financial agreements outlined in a block of code. In contrast to the traditional buyers and sellers in the centralized financial market, where one party could easily betray the terms of an agreement, Smart Contract are designed such that they possess the ability to hold financial assets within a POOL, once the terms of the agreement in the contract have been met and verified, the contract is executed without authorization from any intermediary. Smart Contracts work by eliminating centralized financial intermediaries, thereby allowing participants to interact directly with one another. Users who engage in liquidity farming lend their assets by adding them to a smart contract.
