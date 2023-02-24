@@ -741,6 +741,13 @@ const Users: User[] = [
     website: 'blog/tutorials/preventing-vulnerabilities-in-solidity-ownership-attack',
     tags: ['intermediate','celosage'],
   },
+  {
+    title: 'Exploring the Robust Structure of Celos Protocol Design',
+    description: "Exploring the Robust Structure of Celo's Protocol Design",
+    preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
+    website: 'blog/tutorials/exploring-the-robust-structure-of-celo-protocol-design',
+    tags: ['intermediate','celosage'],
+  },
    {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
