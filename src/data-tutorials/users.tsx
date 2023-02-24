@@ -112,6 +112,7 @@ export type TagType =
   | "subgraphs"
   | "tokens"
   | "truffle"
+  | "typescript"
   | "usecontractkit"
   | "valora"
   | "verification"
@@ -1815,6 +1816,13 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },
+  {
+    title: 'Build feature-rich, persistent dapp on celo using wagmi',
+    description: 'An alternative method of connecting to Celo networks',
+    preview: require('./showcase/advanced/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi.png'),
+    website: 'blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi',
+    tags: ['hardhat', 'celo', 'solidity', 'react', 'nextjs', 'materialui', 'typescript'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
