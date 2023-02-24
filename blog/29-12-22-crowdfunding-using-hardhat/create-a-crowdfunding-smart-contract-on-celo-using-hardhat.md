@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: [celosage, solidity, hardhat]
+tags: [celosage, solidity, hardhat, advanced]
 hide_table_of_contents: false
 slug: /tutorials/create-a-crowdfunding-smart-contract-on-celo-using-hardhat
 
