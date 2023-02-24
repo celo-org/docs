@@ -46,7 +46,7 @@ We believe that short-term actions have a long-term impact on society, people, a
 
 ### Sacred Economics
 
-The idea was first introduced in Charles Eisenstein's book Sacred Economics. If you back the money with more things you want to see in the world, you will get more of those things. 
+The idea was first introduced in Charles Eisenstein's book Sacred Economics. If you back the money with more things you want to see in the world, you will get more of those things.
 
 Modern approaches to the economy have contributed to scarcity, competition, and the destruction of our communities and the natural world. However, we want to use our economy for good: to create connected, ecological, and sustainable ways of living.
 
@@ -56,7 +56,7 @@ When you take a look at the current money systems, scarcity and growth are built
 
 For economic growth to happen in different communities and societies, we have to find something that was once free and natural and make it a good, or was once a gift relationship and make it into a service. You have to find something that people once got for free or did for themselves for each other and take it away and sell it back to them somehow.
 
-Money facilitates, tracks, and shapes economic activity. People produced more gold when money was backed by gold to have more money to spend on other things. If money can be created through central bank lending at an interest rate, it forces the economy to grow, to repay ever-increasing debts. Money enables humans to coordinate, communicate, and translate assets, distances, and time. 
+Money facilitates, tracks, and shapes economic activity. People produced more gold when money was backed by gold to have more money to spend on other things. If money can be created through central bank lending at an interest rate, it forces the economy to grow, to repay ever-increasing debts. Money enables humans to coordinate, communicate, and translate assets, distances, and time.
 
 [Consider](https://www.notboring.co/p/celo-building-a-regenerative-economy?s=r) one of the natural capital assets that could be used to back a currency: rainforests. The rainforest is essentially a limited and valuable resource. It can be used as a reserve asset, supporting currencies in the same way as gold is used to back the US dollar. The difference is that gold can be melted into bars, put in a vault somewhere, and readily be recorded and counted; rainforests, on the other hand, must stay where they are to be valued and are considerably more difficult to track. This has been accomplished, however, with the use of current technology such as satellites, improved sensors, and artificial intelligence.
 
@@ -73,9 +73,9 @@ ReFi largely focuses on correcting the results of traditional finance, which fre
 Many researchers have described ReFi in many ways. According to [ReFi DAO](https://www.youtube.com/@refidao), ReFi is an exploration into how we can redesign money to be in greater harmony with the earth.
 Other researchers, define ReFi as a form of using money to solve systematic problems for the good of the community. But how do you redesign money to use it for the good of the community?
 
-When you look at the [concept of money](https://www.youtube.com/watch?v=2xo43tkr1TY&t=311s), it has its revolution that started way back in communities, tribes and societies, from barter trade systems, when farmers exchanged their harvest and crops, for example, milk from cow pastoralists. 
+When you look at the [concept of money](https://www.youtube.com/watch?v=2xo43tkr1TY&t=311s), it has its revolution that started way back in communities, tribes and societies, from barter trade systems, when farmers exchanged their harvest and crops, for example, milk from cow pastoralists.
 
-However, this flow of value changed over time, which was observed at a human-to-human level without accounting for things we were creating with and where they came from. Money as a form of value was established and used as a mechanism of value or something you can receive, or able to get what you want and vice versa. 
+However, this flow of value changed over time, which was observed at a human-to-human level without accounting for things we were creating with and where they came from. Money as a form of value was established and used as a mechanism of value or something you can receive, or able to get what you want and vice versa.
 
 For example, a farmer can keep their money in summer and can spend it the next winter, without worrying about their natural assets or community resources losing value, or even worrying about exchanging chicken, even in divisible pieces, to get an exact value in form of litres of milk in a barter trade system.
 
@@ -111,9 +111,9 @@ What Web3 and blockchain technology do is, open up entirely who has access and t
 
 UBI proposes providing every person or citizen of a community or country with a regular unconditional income. The distribution can vary depending on the specific methodologies. The goal of UBI is to eradicate poverty and provide economic security. The best example use case in the Celo ecosystem is [Impact Market.](https://www.impactmarket.com/)
 
-### Natural Capital-Backed currencies.
+### Natural Capital-Backed currencies
 
-According to Charles Eisenstein's book Sacred Economics, If you back the money with more things you want to see in the world, you will get more of those things. 
+According to Charles Eisenstein's book Sacred Economics, If you back the money with more things you want to see in the world, you will get more of those things.
 
 ### Community Currencies, or a network of local currencies
 
@@ -127,11 +127,11 @@ The major difference between regenerative and traditional finance is in their go
 
 In traditional finance, success is defined by the financial return on capital, while any positive social or environmental impacts that may occur are a by-product. Incentives in the traditional financial system are set to maximize profit and to see money as a goal rather than as a tool.
 
-Traditional finance primarily focuses on financial returns and generating profits for investors. It also often results in investments that prioritize short-term gains over long-term sustainability and may ignore the social and environmental impacts of the investments being made. 
+Traditional finance primarily focuses on financial returns and generating profits for investors. It also often results in investments that prioritize short-term gains over long-term sustainability and may ignore the social and environmental impacts of the investments being made.
 
 On the other hand, the success of ReFi is to make positive change possible, with the financial return as an inevitable secondary result. The goal of ReFi is not specifically about raising profits. It is to be used as a means to create shared value and to further sustainable progress.
 
-ReFi uses financial resources as instruments to regenerate natural environments, help communities, and overcome systemic problems. 
+ReFi uses financial resources as instruments to regenerate natural environments, help communities, and overcome systemic problems.
 
 Most financial institutions’ processes typically ignore the impact on the environment and social factors. Unlike traditional financing, ReFi considers all stakeholders' views in the decision-making process, thereby redistributing economic control to entities that have invested the most and are likely to face the outcomes.
 
@@ -143,7 +143,7 @@ In general, ReFi is a larger strategy that considers the impact of investments o
 
 Decentralized finance differs from traditional, centralized financial institutions and banking. In centralized finance, money is held by central banks and third parties who facilitate money movement between two parties.
 
-Financial transactions in decentralized finance (DeFi) are handled on blockchain-based platforms that are transparent, secure, and trustless. This means that users can deal with one another without the assistance of intermediaries such as banks or payment processors hence making accountability easy and open for anyone in the ReFi space. 
+Financial transactions in decentralized finance (DeFi) are handled on blockchain-based platforms that are transparent, secure, and trustless. This means that users can deal with one another without the assistance of intermediaries such as banks or payment processors hence making accountability easy and open for anyone in the ReFi space.
 
 > Any DeFi product that is to succeed in these new conditions(regenerative economics and decentralized finance) must solve for two fundamental principles: the creation of new value and institutional use cases. ReFi is uniquely positioned to address both of these” - [FlowCarbon](https://www.flowcarbon.com/knowcarbon/regenerative-finance-is-the-future-of-web3)
 
@@ -166,32 +166,31 @@ The 2030 Agenda is a plan of action for people, the planet and prosperity. It pr
 
 Generally, regenerative finance integrates financial and ecological goals by investing in initiatives and businesses that emphasize the health and resilience of both the natural environment and human communities, as well as by investing over time and using an ecosystem-based approach.
 
-ReFi aligns with UN SDGs, in particular, those related to conserving the environment, by prioritizing and investing in companies or projects that promote and apply sustainable and regenerative practices. 
+ReFi aligns with UN SDGs, in particular, those related to conserving the environment, by prioritizing and investing in companies or projects that promote and apply sustainable and regenerative practices.
 
 ReFi recognizes [SDG Aligned Finance](https://www.oecd.org/development/financing-sustainable-development/Framework-for-SDG-Aligned-Finance-OECD-UNDP.pdf) in many ways and supports projects with practices that align with the SDGs to foster long-term quality investment. For example, Refi invests in projects that promote SDG 6, 7, 12, 13, 14 and 15 thereby contributing to the conservation of the environment, reducing greenhouse emissions and promoting a more sustainable future.
 
 ### Driving innovation
 
-ReFi accelerates innovation in many ways through contributions to the development of new sustainable technologies, circular economy initiatives, regenerative agricultural practices, etc which are driving innovation and promoting a sustainable future. For example [carbon markets](https://climatepromise.undp.org/news-and-stories/what-are-carbon-markets-and-why-are-they-important). One tradable carbon credit equals one tonne of carbon dioxide or the equivalent amount of a different greenhouse gas reduced, sequestered or avoided. 
-
+ReFi accelerates innovation in many ways through contributions to the development of new sustainable technologies, circular economy initiatives, regenerative agricultural practices, etc which are driving innovation and promoting a sustainable future. For example [carbon markets](https://climatepromise.undp.org/news-and-stories/what-are-carbon-markets-and-why-are-they-important). One tradable carbon credit equals one tonne of carbon dioxide or the equivalent amount of a different greenhouse gas reduced, sequestered or avoided.
 
 ## Challenges still facing ReFi
 
-### Lack of understanding and awareness.
+### Lack of understanding and awareness
 
 The complexity of financial tools or products makes it difficult to assess the alignment with regenerative goals. This is due to a lack of awareness and understanding of what regenerative finance is, and how it differs from traditional finance.
 
-### Regulatory barriers. 
+### Regulatory barriers
 
 Certain policies favour traditional financial models over regenerative finance models, making regenerative finance efforts more difficult to implement.
 
-### Failure to capture widely accepted metrics. 
+### Failure to capture widely accepted metrics
 
-ReFi is still a new concept, and there are no defined criteria or evaluation frameworks in place to assess its impact. This has made its potential impact, evaluation, and its value of efforts to the funders and stakeholders difficult. 
+ReFi is still a new concept, and there are no defined criteria or evaluation frameworks in place to assess its impact. This has made its potential impact, evaluation, and its value of efforts to the funders and stakeholders difficult.
 
 The problem, according to [Ben Caldecott](https://www.smithschool.ox.ac.uk/people/bcaldecott.html), Director of the Oxford Sustainable Finance Programme, is one of data capture. While other industries, such as commerce, media and even professional sports, have been transformed by big data, our understanding of how business decisions affect the environment is still out-of-date. Caldecott believes technologies such as AI and machine learning can be put in place to [develop accurate sustainability metrics](https://www.weforum.org/agenda/2018/09/data-capture-not-disclosure-is-the-way-to-meet-our-climate-goals/), steering companies toward a more sustainable future.
 
-### Technological limitations. 
+### Technological limitations
 
 Technology has its own potential limits towards ReFi, i.e. technology has limited access or the ability to bridge the gap to financial capital or knowledge, algorithmic bias resulting from technological tools that are trained on past data that make financial decisions and end up reflecting systemic issues, inequalities and biases in finance
 
@@ -201,23 +200,23 @@ Technology has its own potential limits towards ReFi, i.e. technology has limite
 
 [Flow Carbon](https://www.flowcarbon.com/) is accelerating decarbonization through the preservation and protection of the earth’s natural ecosystems, which are among the most immediate and cost-effective carbon sinks while investing in longer-term carbon removal and reduction projects.
 
-Flowcarbon is creating infrastructure to tokenize carbon offset units(COUs), allowing anyone to access them and use them across the DeFi ecosystem. Tokenized carbon credits to back stablecoins are the most interesting use case. 
+Flowcarbon is creating infrastructure to tokenize carbon offset units(COUs), allowing anyone to access them and use them across the DeFi ecosystem. Tokenized carbon credits to back stablecoins are the most interesting use case.
 
-### Climate Collective. 
+### Climate Collective
 
-[Climate collective](https://climatecollective.org/) is an expanding coalition of companies building at the nexus of web3 and climate action. Climate collective’s mission is to build a trusted market for high-quality, digital environmental assets that enable people and the planet to thrive. By using mass-coordination tools to solve mass-coordination problems, they are advancing planetary health and a regenerative financial system. 
+[Climate collective](https://climatecollective.org/) is an expanding coalition of companies building at the nexus of web3 and climate action. Climate collective’s mission is to build a trusted market for high-quality, digital environmental assets that enable people and the planet to thrive. By using mass-coordination tools to solve mass-coordination problems, they are advancing planetary health and a regenerative financial system.
 
-### Wren. 
+### Wren
 
 [Wren](https://www.wren.co/) is an approachable on-ramp to climate action. Wren is a platform for anyone who wants to tackle the climate crisis but isn’t sure where to start.
 
-### Moss. 
+### Moss
 
 [Moss](http://moss.earth/) is a climate tech with a common objective to combat climate change. Moss unites companies and people with the same goal. They simplify the offsetting process and guarantee the traceability and transparency of everything using blockchain technology.
 
-### Wasset. 
+### Wasset
 
-[Wasset](http://wasset.io/) is a blockchain protocol that incentivizes conscious waste management actions. Their efforts are to keep our planet safe and strive to solve global waste management issues from the ground up. 
+[Wasset](http://wasset.io/) is a blockchain protocol that incentivizes conscious waste management actions. Their efforts are to keep our planet safe and strive to solve global waste management issues from the ground up.
 
 ## The Future of ReFi
 
@@ -242,24 +241,24 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/mukundebrisa/) and [Gi
 
 ## References​
 
-ReFi DAO, https://www.youtube.com/@refidao 
+ReFi DAO, <https://www.youtube.com/@refidao>
 
-OECD, UNDP 2020, Framework for SDG Aligned Finance. 
-https://www.oecd.org/development/financing-sustainable-development/Framework-for-SDG-Aligned-Finance-OECD-UNDP.pdf
+OECD, UNDP 2020, Framework for SDG Aligned Finance.
+<https://www.oecd.org/development/financing-sustainable-development/Framework-for-SDG-Aligned-Finance-OECD-UNDP.pdf>
 
 The Future of ReFi, Celo Connect Salon at EthCC Paris
-https://www.youtube.com/watch?v=NupjIleVIeQ&ab_channel=Celo 
+<https://www.youtube.com/watch?v=NupjIleVIeQ&ab_channel=Celo>
 
-ReFi In Action, 
-https://www.youtube.com/watch?v=gSpGF2c-nHs&ab_channel=Celo
+ReFi In Action,
+<https://www.youtube.com/watch?v=gSpGF2c-nHs&ab_channel=Celo>
 
-https://bwnews.pr/3Ya5rhM
+<https://bwnews.pr/3Ya5rhM>
 
-https://celo.org/vision 
+<https://celo.org/vision>
 
-https://www.youtube.com/watch?v=-GoFzU3cRE4&t=201s&ab_channel=Re%2FCultureFilms 
-https://bit.ly/3KnSVac 
+<https://www.youtube.com/watch?v=-GoFzU3cRE4&t=201s&ab_channel=Re%2FCultureFilms>
+<https://bit.ly/3KnSVac>
 
-https://www.investopedia.com/decentralized-finance-defi-5113835 
+<https://www.investopedia.com/decentralized-finance-defi-5113835>
 
-https://www.weforum.org/agenda/2018/12/how-the-finance-industry-can-save-the-world-regenerative-capitalism/ 
+<https://www.weforum.org/agenda/2018/12/how-the-finance-industry-can-save-the-world-regenerative-capitalism/>
