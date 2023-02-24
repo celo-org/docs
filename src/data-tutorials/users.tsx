@@ -817,6 +817,13 @@ const Users: User[] = [
     website: 'blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum',
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
+ {
+  title: 'How to Build and Deploy Factory Contracts on Celo',
+  description: 'This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications.',
+  preview: require('./showcase/intermediate/factorycover.png'),
+  website: 'blog/tutorials/how-to-build-and-deploy-factory-contracts-on-celo',
+  tags: ['solidity', 'intermediate', 'celosage', 'smartcontract', 'celo'],
+  },
   {
     title: 'Como criar uma carteira para a blockchain Celo',
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
