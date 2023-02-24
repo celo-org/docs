@@ -1120,6 +1120,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   { 
+    title: 'Understanding the Role of Proposals and Referendums in Celo Governance',
+    description: 'A Comprehensive Breakdown of the Role of Proposals and Referendums in Celo Governance',
+    preview: require('./showcase/intermediate/Understanding-the-Role-of-Proposals-and-Referendums-in-Celo-Governance.png'),
+    website: 'blog/tutorials/Understanding-the-Role-of-Proposals-and-Referendums-in-Celo-Governance',
+    tags: ['intermediate','celo', 'celosage'],
+  },
+  { 
     title: 'Create a React Based DApp on Celo',
     description: 'The beginner of developing a decentralised application (DApp) on Celo.',
     preview: require('./showcase/intermediate/create-a-react-based-dapp-on-celo.png'),
