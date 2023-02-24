@@ -8,6 +8,8 @@ hide_table_of_contents: false
 slug: "/tutorials/build-a-decentralized-lottery-game-on-celo"
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-lottery-game-on-celo.png)
+
 ## Introduction
 
 Welcome to a step-by-step guide to creating a decentralized lottery game. This tutorial will take you through the process of generating a random number on Celo and using it to build a functional decentralized lottery game with a user-friendly web app. By the end, you'll have a solid understanding of how to create a decentralized lottery game using smart contracts and a web app that interacts with it. Additionally, you'll have a working decentralized lottery game that can serve as a foundation for future projects. Let's get started!
