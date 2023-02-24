@@ -65,7 +65,8 @@ Proposals are suggestions for changes or additions to the Celo network. They are
 You can view information about a specific proposal with the following command:
 
 
-```celocli governance:show --proposalID=<PROPOSAL_ID>
+```
+celocli governance:show --proposalID=<PROPOSAL_ID>
 ```
 
 Here is an example of what a proposal looks like:
@@ -141,12 +142,14 @@ Referendums are used to make decisions that affect the entire network. These dec
 
 When a proposal is queued, you can upvote the proposal to indicate you'd like it to be considered with the following command.
 
-```celocli governance:upvote --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
+```
+celocli governance:upvote --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
 ```
 
 Once a proposal has reached the Referendum phase, it is open to the community for voting. You can do that using the following command 
 
-```celocli governance:vote --proposalID=<PROPOSAL_ID>--value=<Abstain|Yes|No> --from=<YOUR_VOTER_ADDRESS>
+```
+celocli governance:vote --proposalID=<PROPOSAL_ID>--value=<Abstain|Yes|No> --from=<YOUR_VOTER_ADDRESS>
 ```
 The community then has a voting period of 5 days to vote yes or no on the proposal. If a proposal receives a majority of votes in favor, it is implemented on the Celo network. This could include changes to the network's technical parameters or changes to the governance structure itself. If a proposal is rejected, it can be revised and resubmitted in the future.
 
