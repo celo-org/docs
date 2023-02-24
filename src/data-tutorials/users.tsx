@@ -937,6 +937,13 @@ const Users: User[] = [
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
   {
+    title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
+    description: 'Build a full stack NFT on chain game on the celo blockchain.',
+    preview: require('./showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain',
+    tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
+  },
+  {
     title: 'Build Your Own Full Stack DAO On the Celo Blockchain',
     description: 'This tutorial will show you how to build a full stack decenralized autonomous organization on the celo blockchain',
     preview: require('./showcase/intermediate/build-your-own-full-stack-dao-on-the-celo-blockchain.png'),
