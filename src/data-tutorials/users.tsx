@@ -1437,6 +1437,13 @@ const Users: User[] = [
     website: '/blog/tutorials/a-practical-comparison-between-erc-1155-and-erc-721',
     tags: ['celosage', 'intermediate', 'erc1155', 'erc721', 'nft'],
   },
+  {
+    title: 'Understanding Role Based Access Control in Smart Contracts',
+    description: 'In this tutorial, we will explore how to create a role-based control using openzeppelin library.',
+    preview: require('./showcase/intermediate/understanding-role-based-access-control-in-smart-contracts.png'),
+    website: '/blog/tutorials/understanding-role-based-access-control-in-smart-contracts',
+    tags: ["celosage", "intermediate", "solidity", "hardhat", "openzeppelin", "react"],
+  },
 
   // Videos
 
