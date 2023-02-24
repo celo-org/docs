@@ -7,7 +7,7 @@ authors:
   url: https://github.com/Kyrian212
   image_url: https://avatars.githubusercontent.com/u/33249458?v=4
 tags: [intermediate, celo, protocol]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/exploring-the-robust-structure-of-celo-protocol-design
 ---
 
@@ -15,6 +15,7 @@ slug: /tutorials/exploring-the-robust-structure-of-celo-protocol-design
 
 
 ## Exploring the Robust Structure of Celo's Protocol Design
+
 Celo's protocol design offers a strong and reliable framework that leverages blockchain technology to establish a decentralized platform for financial services. In this article, we will examine the robust structure of Celo's protocol in detail, including its consensus mechanism, token economics, and governance model. 
 
 Whether you're an experienced blockchain professional or just starting out, this article provides a comprehensive overview of Celo's innovative protocol design, revealing its unique features and the potential impact it could have on the financial industry. Get ready to delve into the technicalities of Celo's protocol and discover why it stands out as a leader in the blockchain world.
