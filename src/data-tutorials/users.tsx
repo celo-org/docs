@@ -1511,6 +1511,13 @@ const Users: User[] = [
     tags: ['intermediate', 'video'],
   },
   {
+    title: 'The Future of Regenerative Finance and its potential impact',
+    description: 'Learn about how Celo is committed to its mission of building a regenerative economy, potential impact of ReFi, the future of ReFi and more',
+    preview: require('./showcase/beginner/the-future-of-regenerative-finance-and-its-potential-impact.png'),
+    website: '/blog/tutorials/the-future-of-regenerative-finance-and-its-potential-impact',
+    tags: ['beginner', 'celo', 'celosage'],
+  },
+  {
     title: 'Workshop: Building an exchange on Celo',
     description: 'Use Celo composer and Fiat-connect to build an exchange, Part I',
     preview: require('./showcase/intermediate/workshop-building-an-exchange-on-celo.png'),
