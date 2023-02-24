@@ -692,13 +692,6 @@ const Users: User[] = [
 
 
   {
-    title: 'How to Use Hardware Tools with the Celo Blockchain',
-    description: 'In this series, we will explore how hardware is driving the adoption of the Celo blockchain',
-    preview: require('./showcase/celo-sage.png'),
-    website: '/blog/tutorials/how-to-use-hardware-tools-with-the-celo-blockchain',
-    tags: ['backend','intermediate','technical'],
-  },
-  {
     title: 'Why Should You Build Your Next Project on the Celo Blockchain?',
     description: 'This tutorial examines the features and capabilities of the Celo Blockchain',
     preview: require('./showcase/beginner/why-you-should-build-your-next-project-on-the-celo-blockchain.png'),
