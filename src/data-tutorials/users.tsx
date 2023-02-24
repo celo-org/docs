@@ -804,6 +804,12 @@ const Users: User[] = [
     website: 'blog/tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix',
     tags: ['beginner','celosage','openzeppelin', 'solidity','smartcontract','video'],
   },
+  {title: 'Como melhorar a segurança de seu smart contract',
+  description: 'Explicarei os casos mais comuns de ataques e como proteger seu smart contract contra eles.',
+  preview: require('./showcase/intermediate/como-melhorar-a-seguranca-do-seu-smart-contract.png'),
+  website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
+  tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
+  },
   {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
@@ -879,7 +885,7 @@ const Users: User[] = [
   {
     title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
     description: 'There are multiple factors to consider when assembling a web3 dream team.',
-    preview: require('./showcase/beginner/How_to_Assemble_a_Web3_Dream_Team_and_Build_a_High_Value_dApp.png'),
+    preview: require('./showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png'),
     website: 'blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp',
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
   },
@@ -939,6 +945,13 @@ const Users: User[] = [
     description: 'Build a full stack Nft Marketplace on the celo block-chain using ipfs and web3.storage for metadata storage.',
     preview: require('./showcase/intermediate/build-your-own-full-stack-nft-marketplace-on-celo.png'),
     website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
+    tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
+  },
+  {
+    title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
+    description: 'Build a full stack NFT on chain game on the celo blockchain.',
+    preview: require('./showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain',
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
   {
@@ -1435,6 +1448,13 @@ const Users: User[] = [
     website: '/blog/tutorials/a-practical-comparison-between-erc-1155-and-erc-721',
     tags: ['celosage', 'intermediate', 'erc1155', 'erc721', 'nft'],
   },
+  {
+    title: 'Understanding Role Based Access Control in Smart Contracts',
+    description: 'In this tutorial, we will explore how to create a role-based control using openzeppelin library.',
+    preview: require('./showcase/intermediate/understanding-role-based-access-control-in-smart-contracts.png'),
+    website: '/blog/tutorials/understanding-role-based-access-control-in-smart-contracts',
+    tags: ["celosage", "intermediate", "solidity", "hardhat", "openzeppelin", "react"],
+  },
 
   // Videos
 
@@ -1514,6 +1534,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/tech-talk-smart-contract-security-201.png'),
     website: 'https://www.youtube.com/watch?v=HIEcAXshU8U&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=13',
     tags: ['intermediate', 'video'],
+  },
+  {
+    title: 'The Future of Regenerative Finance and its potential impact',
+    description: 'Learn about how Celo is committed to its mission of building a regenerative economy, potential impact of ReFi, the future of ReFi and more',
+    preview: require('./showcase/beginner/the-future-of-regenerative-finance-and-its-potential-impact.png'),
+    website: '/blog/tutorials/the-future-of-regenerative-finance-and-its-potential-impact',
+    tags: ['beginner', 'celo', 'celosage'],
   },
   {
     title: 'Workshop: Building an exchange on Celo',

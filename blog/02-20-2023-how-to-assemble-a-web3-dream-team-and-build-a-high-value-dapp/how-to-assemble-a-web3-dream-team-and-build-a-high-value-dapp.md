@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/How_to_Assemble_a_Web3_Dream_Team_and_Build_a_High_Value_dApp.png)
+![header](../../src/data-tutorials/showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png)
 
 ## Introduction​
 
