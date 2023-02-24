@@ -883,20 +883,26 @@ const Users: User[] = [
     tags: ["celosage", "advanced", "solidity"],
   },
   {
+    title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
+    description: 'There are multiple factors to consider when assembling a web3 dream team.',
+    preview: require('./showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png'),
+    website: 'blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp',
+    tags: ['celo', 'dapp', 'beginner', 'celosage'],
+  },
+  {
+    title: 'How to quickly build an NFT collection on Celo',
+    description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
+    preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
+    website: 'blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo',
+    tags: ['beginner','foundation', 'nft', 'foundation'],
+  },
+  {
     title: "React Native & Celo - Easily build React Native dApps on Celo",
     description:
       "Quickly develop Android and iOS apps on Celo using the Celo Composer for React Native.",
     preview: require("./showcase/intermediate/easily-build-react-native-dapps-on-celo.png"),
     website:
       "blog/tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo",
-    tags: ["intermediate", "foundation", "reactnative", "composer"],
-  },
-  {
-    title: "How to quickly build an NFT collection on Celo",
-    description:
-      "Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.",
-    preview: require("./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png"),
-    website: "blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo",
     tags: ["beginner", "foundation", "nft", "foundation"],
   },
   {
@@ -920,7 +926,6 @@ const Users: User[] = [
     website: 'blog/tutorials/introduction-to-zero-knowledge-technology-and-its-blockchain-applications',
     tags: ['celosage', 'intermediate'],
   },
-
   {
     title: ' How to Build Car Marketplace dapp Using React',
     description: 'Learn how to build a Car Marketplace on the Celo Blockchain with React as frontend framework',
