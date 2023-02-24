@@ -179,6 +179,15 @@ const Users: User[] = [
     tags: ['apps', 'impact'],
   },
   {
+  title: 'Factory Contracts',
+  description: 'This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications.',
+  preview: require('./showcase/factorycover.png'),
+  website: 'https://www.celo.com/',
+  source: 'https://gist.github.com/johnfawole/f03a43c1a099cf1418bca0ba70d3c49c',
+  tags: ['solidity', 'intermediate'],
+},
+
+  {
     title: 'Mobius',
     description: 'Cross-chain stableswap exchange.',
     preview: require('./showcase/mobius.png'),
