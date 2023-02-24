@@ -64,10 +64,10 @@ Oluwalana is a writer and a firm believer in fostering strong relationships to a
 
 ## References
 
-<https://docs.celo.org/general>
-<https://metacelo.io/>
-<https://www.accesswire.com/689027/MetaCelo--The-New-Star-in-Celo-Ecosystem>
-<https://docs.metacelo.io/>
-<https://docs.metacelo.io/tokenomics>
-<https://docs.celolaunch.io/ecosystem/amm>
-<https://docs.celo.org/tutorials>
+- <https://docs.celo.org/general>
+- <https://metacelo.io/>
+- <https://www.accesswire.com/689027/MetaCelo--The-New-Star-in-Celo-Ecosystem>
+- <https://docs.metacelo.io/>
+- <https://docs.metacelo.io/tokenomics>
+- <https://docs.celolaunch.io/ecosystem/amm>
+- <https://docs.celo.org/tutorials>
