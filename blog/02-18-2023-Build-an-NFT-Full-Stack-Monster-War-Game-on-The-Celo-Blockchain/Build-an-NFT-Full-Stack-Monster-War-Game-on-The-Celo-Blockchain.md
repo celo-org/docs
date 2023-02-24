@@ -131,12 +131,12 @@ contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
 // swallowing an nft and tranfering the nft from the owner to the attacker if the modifier is satisfied
      function swallowNFT(uint _index) external hasmint(msg.sender) canSwallow(msg.sender, _index){
-	       require(msg.sender != nfts[_index].owner, "can't swallow your own nft");         
+        require(msg.sender != nfts[_index].owner, "can't swallow your own nft");         
            _transfer(nfts[_index].owner, msg.sender, nfts[_index].tokenId);
            playerpowervalue[nfts[_index].owner] -= nfts[_index].powerValue;
            playerpowervalue[msg.sender] += nfts[_index].powerValue;
            nfts[_index].owner = payable(msg.sender);
-	 }
+  }
 
 // increasing the powervalue of an NFT by its owner and paying 0.5 celo for the transaction
      function upgradeNFT(uint _index) external payable{
@@ -172,12 +172,12 @@ contract MyNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
 // remove the nft from war room
     function remove(uint _index) external {
-	        require(msg.sender == nfts[_index].owner, "can't remove this nft");         
+         require(msg.sender == nfts[_index].owner, "can't remove this nft");         
             nfts[_index] = nfts[allNFTs - 1];
             delete nfts[allNFTs - 1];
             allNFTs--; 
             _transfer(address(this), msg.sender, nfts[_index].tokenId);
-	 }
+  }
 // getting the length of save the planet nfts in the list
      function getNFTlength() public view returns (uint256) {
         return allNFTs;
@@ -294,7 +294,7 @@ We also declare three mappings. First, `minters` (a mapping addresses to boolean
     }
 ```
 
-Next we added two modifiers. 
+Next we added two modifiers.
 
 `hasmint` This modifier checks whether the address calling the function has already minted an NFT by verifying that the address is a valid minter. If the address is not a valid minter, the function execution is aborted. otherwise, it is allowed to proceed.
 
@@ -327,11 +327,11 @@ Let's declare a function called `mint()` The Mint function allows a player to mi
     }
 ```
 
-The `AddNFT()` function adds the NFT to the game. The function takes a `tokenId` and a name as parameters. It then creates a new NFT struct with the given parameters and adds it to the internal NFTs mapping. It also adds the player to the minters mapping and increments the `allNFTs` variable. 
+The `AddNFT()` function adds the NFT to the game. The function takes a `tokenId` and a name as parameters. It then creates a new NFT struct with the given parameters and adds it to the internal NFTs mapping. It also adds the player to the minters mapping and increments the `allNFTs` variable.
 
 ```solidity
 function swallowNFT(uint _index) external hasmint(msg.sender) canSwallow(msg.sender, _index){
-	       require(msg.sender != nfts[_index].owner, "can't swallow your own nft");         
+        require(msg.sender != nfts[_index].owner, "can't swallow your own nft");         
            _transfer(nfts[_index].owner, msg.sender, nfts[_index].tokenId);
            playerpowervalue[nfts[_index].owner] -= nfts[_index].powerValue;
            playerpowervalue[msg.sender] += nfts[_index].powerValue;
@@ -339,7 +339,7 @@ function swallowNFT(uint _index) external hasmint(msg.sender) canSwallow(msg.sen
   }
 ```
 
-The `SwallowNFT()` function allows a player to swallow another player’s NFT. This function takes an index as a parameter which is used to specify the NFT to be swallowed. The function is protected by two modifiers. `hasmint` and `canSwallow`. The `hasmint` modifier checks if the address has minted an NFT and the `canSwallow` modifier checks if the power value of the attacker is greater than the power value of the owner. If both the modifiers pass, the function transfers the NFT from the owner to the attacker, decreases the power value of the owner and increases the power value of the attacker. 
+The `SwallowNFT()` function allows a player to swallow another player’s NFT. This function takes an index as a parameter which is used to specify the NFT to be swallowed. The function is protected by two modifiers. `hasmint` and `canSwallow`. The `hasmint` modifier checks if the address has minted an NFT and the `canSwallow` modifier checks if the power value of the attacker is greater than the power value of the owner. If both the modifiers pass, the function transfers the NFT from the owner to the attacker, decreases the power value of the owner and increases the power value of the attacker.
 
 ```solidity
  function upgradeNFT(uint _index) external payable{
@@ -350,7 +350,7 @@ The `SwallowNFT()` function allows a player to swallow another player’s NFT. T
      }
 ```
 
-The `UpgradeNFT()` function allows a player to upgrade the power value of their NFT. This function takes an `index` as a parameter which is used to specify the NFT to be upgraded. The function requires that the sender of the transaction is the owner of the NFT. If this requirement is met, the function transfers 0.5 Celo from the owner of the nft to the contract owner and increases the power value of the NFT and the player. 
+The `UpgradeNFT()` function allows a player to upgrade the power value of their NFT. This function takes an `index` as a parameter which is used to specify the NFT to be upgraded. The function requires that the sender of the transaction is the owner of the NFT. If this requirement is met, the function transfers 0.5 Celo from the owner of the nft to the contract owner and increases the power value of the NFT and the player.
 
 ```solidity
  function canSwallowNFT(address _address, uint _index) public view returns(bool){
@@ -362,7 +362,7 @@ The `UpgradeNFT()` function allows a player to upgrade the power value of their 
     }
 ```
 
-The `CanSwallowNFT()` function returns true if the power value of the attacker is greater than the power value of the owner of the NFT. The function takes an `address` and an `index` as parameters. The address is used to specify the attacker, and the index is used to specify the NFT to be swallowed. The function returns true if the power value of the attacker is greater than the power value of the owner of the nft. 
+The `CanSwallowNFT()` function returns true if the power value of the attacker is greater than the power value of the owner of the NFT. The function takes an `address` and an `index` as parameters. The address is used to specify the attacker, and the index is used to specify the NFT to be swallowed. The function returns true if the power value of the attacker is greater than the power value of the owner of the nft.
 
 ```solidity
  function hasMinted(address _address) public view returns(bool){
@@ -386,15 +386,15 @@ The `GetAllNFTS()` function returns all NFTs. The function takes an `index` as a
 
 ```solidity
  function remove(uint _index) external {
-	        require(msg.sender == nfts[_index].owner, "can't remove this nft");         
+         require(msg.sender == nfts[_index].owner, "can't remove this nft");         
             nfts[_index] = nfts[allNFTs - 1];
             delete nfts[allNFTs - 1];
             allNFTs--; 
             _transfer(address(this), msg.sender, nfts[_index].tokenId);
-	 }
+  }
 ```
 
-The `Remove()` function removes an NFT from the game. The function takes an `index` as a parameter to specify the NFT to be removed. The function requires that the sender of the transaction is the owner of the NFT. If this requirement is met, the function transfers the NFT from the contract to the owner and deletes the NFT from the internal nfts mapping. 
+The `Remove()` function removes an NFT from the game. The function takes an `index` as a parameter to specify the NFT to be removed. The function requires that the sender of the transaction is the owner of the NFT. If this requirement is met, the function transfers the NFT from the contract to the owner and deletes the NFT from the internal nfts mapping.
 
 ```solidity
  function getNFTlength() public view returns (uint256) {
@@ -402,7 +402,7 @@ The `Remove()` function removes an NFT from the game. The function takes an `ind
     }
 ```
 
-The `GetNFTlength()` function returns the length of the NFTs in the list. The function returns the value of the `allNFTs` variable which is the length of all monster NFTs in the list. 
+The `GetNFTlength()` function returns the length of the NFTs in the list. The function returns the value of the `allNFTs` variable which is the length of all monster NFTs in the list.
 
 The rest of the functions are overrides that are required by solidity.
 
@@ -414,8 +414,8 @@ That’s it For the smart contract. Next, we’ll be looking at the front end.
 
 We’ll use the following stack for this section.
 
-* Hardhat
-* React
+- Hardhat
+- React
 
 ### Setup
 
@@ -830,7 +830,7 @@ export const createNft = async (minterContract, performActions, name) => {
 };
 ```
 
-First, we made the necessary import and then we declared the `createNft()` function. This function is used to mint an NFT. It takes the `minterContract` and `performActions` as arguments, along with the name of the NFT. It then uses the `defaultAccount` from the kit to mint the NFT. 
+First, we made the necessary import and then we declared the `createNft()` function. This function is used to mint an NFT. It takes the `minterContract` and `performActions` as arguments, along with the name of the NFT. It then uses the `defaultAccount` from the kit to mint the NFT.
 
 ```javascript
 export const getNfts = async (minterContract) => {
@@ -858,7 +858,7 @@ export const getNfts = async (minterContract) => {
 };
 ```
 
-The `getNfts()` function is used to fetch all NFTs stored on the smart contract. It takes the `minterContract` as an argument and returns an array of NFTs. 
+The `getNfts()` function is used to fetch all NFTs stored on the smart contract. It takes the `minterContract` as an argument and returns an array of NFTs.
 
 ```javascript
 export const fetchNftOwner = async (minterContract, index) => {
@@ -869,7 +869,8 @@ export const fetchNftOwner = async (minterContract, index) => {
   }
 };
 ```
- The `fetchNftOwner()` function is used to get the owner address of an NFT. It takes the `minterContract` and the index of the NFT as arguments and returns the owner address. 
+
+ The `fetchNftOwner()` function is used to get the owner address of an NFT. It takes the `minterContract` and the index of the NFT as arguments and returns the owner address.
 
  ```javascript
 export const minted = async (minterContract, _address) => {
@@ -881,7 +882,7 @@ export const minted = async (minterContract, _address) => {
 };
  ```
 
- The `minted()` function checks if a particular address has minted an NFT. It takes the `minterContract` and the `address` as arguments and returns a boolean. 
+ The `minted()` function checks if a particular address has minted an NFT. It takes the `minterContract` and the `address` as arguments and returns a boolean.
 
  ```javascript
 export const checkPowervalue = async (minterContract, _address, _index) => {
@@ -893,7 +894,7 @@ export const checkPowervalue = async (minterContract, _address, _index) => {
 };
  ```
 
- The `checkPowervalue()` function is used to check the power value of an NFT. It takes the `minterContract`, `address`, and `index` of the NFT as arguments and returns a boolean. 
+ The `checkPowervalue()` function is used to check the power value of an NFT. It takes the `minterContract`, `address`, and `index` of the NFT as arguments and returns a boolean.
 
  ```javascript
 export const fetchNftContractOwner = async (minterContract) => {
@@ -950,7 +951,7 @@ export const upgrade = async (minterContract, performActions, index) => {
 };
 ```
 
-The `upgrade()` function is used to upgrade an NFT. It takes the `minterContract` and `performActions` as arguments, along with the index of the NFT. It then uses the `defaultAccount` from the kit to call the `upgradeNFT` method and upgrade the NFT. 
+The `upgrade()` function is used to upgrade an NFT. It takes the `minterContract` and `performActions` as arguments, along with the index of the NFT. It then uses the `defaultAccount` from the kit to call the `upgradeNFT` method and upgrade the NFT.
 
 ```javascript
 export const remove = async (minterContract, performActions, index) => {
