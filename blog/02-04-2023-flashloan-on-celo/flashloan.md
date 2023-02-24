@@ -1,12 +1,27 @@
-# How to Build and Deploy Flashloan Contracts on Celo with Aave
-# Introduction
+---
+title: How to Build and Deploy Flashloan Contracts on Celo with Aave
+description: In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.
+author:
+  - name: John Fawole
+    title: Technical Writer
+    url: https://www.linkedin.com/in/johnfawole/
+    image_url: https://github.com/johnfawole.png
+tags: ['solidity', 'smart contract']
+hide_table_of_contents: true
+slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
+---
+![Alt text](images/cover.png)
+
+## Introduction
+
 A relatively new method of borrowing assets on the blockchain is through Flash Loans. Other popular Defi protocols like dYdX immediately added this new feature after Aave introduced it.
 
 With a Flash Loan, a user can borrow assets without providing any upfront security as long as they are returned together with a fee in the same blockchain transaction. You will need to build a contract that requests a Flash Loan. 
 
 The contract will then need to execute some custom logic, e.g. arbitrage and pay back the loan + interest and fees, all within the same transaction.
 
-# About Aave
+## About Aave
+
 Aave has catapulted to the forefront of the Defi space with over 3.93 billion dollars worth of value in it ($3.93b TVL). Aave was the first to come up with the idea of a Flash Loan. 
 
 Before flash loans, you would need to stake an over-collateralized asset to loan another asset. For example, if we wanted to borrow 10 USDC, we would have to deposit another cryptocurrency that exceeded that value, e.g. one ETH. 
@@ -31,7 +46,8 @@ On this note, this tutorial will show you how to deploy flash loan smart contrac
 
 Having clarified that, we shall continue with our tutorial.
 
-# Setting up with Remix
+## Setting up with Remix
+
 We will be using the Remix IDE for this tutorial. 
 
 Before we begin writing our smart contracts, we'll need to install a browser extension that allows us to interact with the Ethereum blockchain. 
@@ -46,9 +62,9 @@ This article assumes you already have the following configuration:
 
 Click on injected web3 inside the Remix IDE to ensure that your Goerli network is connected to your smart contract, as shown below:
 
+![Alt text](images/metamask%20remix.jpg)
 
-
-## Step 1: Setting up your Code 
+### Step 1: Setting up your Code 
 
 You'll need to create a new contract that both you and the Aave protocol's lending contract can call. They can be separate, however, for ease of understanding, we'll merge those functions into one contract.
 
@@ -81,6 +97,7 @@ Although remix can import solidity source files directly from GitHub, In the fir
 * [Libraries.sol](https://gist.github.com/johnfawole/353940d436643123603a8375703646ec)
 * [Ownable.sol](https://gist.github.com/johnfawole/8e37c45d86315744339b952a2846ff84)
 
+![Alt text](images/remix%20contracts.jpg)
 
 The `MyFlashLoan` contract inherits from the `FlashLoanReceiverBase` and Ownable contract.
 
@@ -88,12 +105,14 @@ On line 20, we are passing in a constructor argument of an address to the inheri
 
 We can find the `_addressProvider` from [the documentation](https://docs.aave.com/developers/v/2.0/deployed-contracts/deployed-contracts) as we'll be passing in the relevant LendingPoolAddressProvider value at deployment.
 
-## Step 2: Implementing your Flash Loan function
+### Step 2: Implementing your Flash Loan function
+
 Next, add the function that will be called to initiate the Flash Loan process. Let's call the function `myFlashLoanCall()` and this function will take the address of the token you want to flash loan as an argument. 
 
 We will limit access to it to the owner (i.e. you), this will help guard against griefing attacks. You will request a Flash Loan of 1 USDC (1* 10^6 as USDC has 6 decimal places). We don't need data for the flash loan, so we are passing an empty string. 
 
 This function then calls the `flashloan()` function on the lending pool contract for you to receive the tokens.
+
 ```solidity
     function myFlashLoanCall(address _tokenAddress) public onlyOwner {
         address receiverAddress = address(this);
@@ -125,11 +144,12 @@ This function then calls the `flashloan()` function on the lending pool contract
 }
 ```
 
-## Step 3: Executing your Flash Loan operation
+### Step 3: Executing your Flash Loan operation
+
 If we have requested a valid amount from a valid reserve, then the LendingPool contract will call the `executeOperation()` function in our contract. This is where we utilize the funds received from the lending pool. It checks if we received the appropriate loan amount or will throw an error message.
 As shown below, we can include our `executeOperation()` function:
 
-``` solidity
+```solidity
     function executeOperation(
         address[] calldata assets,
         uint256[] calldata amounts,
@@ -166,7 +186,7 @@ Before the end of the execution, you must approve the Lending pool to pull (payb
 
 Kindly note that the `executeOperation()` function signature must match exactly. When the LendingPool contract calls your `executeOperation()` function, it will pass in the assets, amounts, premiums, initiator, and params for you to use in your operation.
 
-``` solidity
+```solidity
 function executeOperation(
         address[] calldata assets,
         uint256[] calldata amounts,
@@ -179,23 +199,25 @@ function executeOperation(
         returns (bool);
 ```
 
-## Step 4: Deploying The Contract
+### Step 4: Deploying The Contract
+
 Switch to the `Solidity Compiler` tab. Set the compiler to 0.8.17 and click `Compile myFlashLoan.sol`. You should see some warnings but no error message.
 
-
+![Alt text](images/deploy1.jpg)
 
 We will move on to deploy the contract to the Goerli network. Switch to the `Deploy & Run Transactions` tab.
 
+![Alt text](images/deploy2.jpg)
 
 You should ensure that the `contract` field is set to `MyV2FlashLoan.sol`, the full code is also available [here](https://gist.github.com/johnfawole/a536dcd65ca563eab0bcc83a78956a25) for reference. Provide the LendingPool address in the text field that is next to the deploy button. 
 
+![Alt text](images/deploy3.jpg)
+
 In our case, it will be `0x5E52dEc931FFb32f609681B8438A51c675cc232d`. Then click `Deploy`. It should open up MetaMask. After that, you should confirm the transaction on your wallet.
 
+### Step 5: Funding The Flash Loan
 
-
-## Step 5: Funding The Flash Loan
-
-
+![Alt text](images/funding1.jpg)
 
 Under the new `Deployed Contracts tab, you can copy the deployed contract's address. Hold on while we address this later.
 
@@ -203,42 +225,44 @@ In the meantime, we need to add USDC to our Flash Loan contract. This is because
 
 We can mint some testnet USDC for ourselves [here](https://gist.github.com/johnfawole/a536dcd65ca563eab0bcc83a78956a25). Under `write contract` you should connect your wallet and mint some USDC.
 
-
+![Alt text](images/funding2.jpg)
 
 Note that USDC has 6 decimals.
 
-
+![Alt text](images/funding3.jpg)
 
 After receiving transaction confirmation, we will add the USDC token to MetaMask. To do so, launch MetaMask. At the bottom, click the `Add Token` button. Fill out the `Token Contract Address` field with `0x9FD21bE27A2B059a288229361E2fA632D8D2d074`. This is USDC's contract address on Goerli's testnet. After clicking `Next`, the USDC you minted earlier should be displayed.
 
-
+![Alt text](images/funding4.jpg)
 
 Then, select the USDC token. Clicking `Send` should open a window like the one shown below, where we enter our Flash Loan's contract address and send some USDC (preferably 100), then click `Next` to confirm the transaction!
 
-## Step 6: Executing The Flash Loan
+### Step 6: Executing The Flash Loan
+
 Head back to Remix. Under the deployed Flash Loan contract, there’s another `myFlashLoanCall` text field. This field takes the contract address of the asset we want to borrow as an argument.
 
 In our case, it’s the Goerli Testnet’s USDC contract, which is `0x9FD21bE27A2B059a288229361E2fA632D8D2d074`. With that field correctly filled in, you can now hit the `transact` button, as shown below.
 
-
+![Alt text](images/execute1.jpg)
 
 When calling the function, MetaMask should prompt you for transaction approval. When you confirm the transaction, you should see a success message. You should see a URL in Remix's terminal. Click on that, and you should be redirected to Etherscan.
 
-
+![Alt text](images/execute2.jpg)
 
  * The yellow highlight indicates the transfer of 1 USDC from LendingPool to our contract.
  * The red highlight indicates the payback of 1 USDC and the fees to the Landing pool.
  * The green highlight shows the interest generated by USDC, which has its separate utility.
 
-# Conclusion
+## Conclusion
+
 We successfully wrote the smart contract for a Flash Loan! In a single transaction, we could borrow USDC from the pool, pay the Flash Loan fee, and repay the borrowed amount. You just borrowed money with no collateral!
 
-# Next Steps
+## Next Steps
 Since you have successfully deployed a flash loan smart contract with Aave, it is high time you started delving deeper into deeper DeFi smart contract development. 
 
 A fun project you can embark on next is to create a flash loan with tight security from scratch without using the Aave implementations.
 
-# About the Author
+## About the Author
 John Fawole is a blockchain technical writer and Solidity dev; connect with him on [LinkedIn](https://www.linkedin.com/in/johnfawole/).
 
 
