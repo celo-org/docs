@@ -14,11 +14,13 @@ slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo-blockchain
 ![factorycover](https://user-images.githubusercontent.com/105144630/221163509-38ce5809-85bb-4915-9f97-b5b2148528d3.png)
 
 ## Introduction
+
 Smart contracts are programs running on blockchains. As a result, some design patterns and programming principles that apply to traditional software development also apply to smart contracts. A factory contract is similar to a class in object-oriented programming. In Solidity, a factory contract is a parent contract that will deploy other child contracts.
 
 This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications. Let's dive right in.
 
 ## The Factory Contract
+
 A Contract Factory, is a design pattern that allows you to create and deploy a new contract based on a template. It does this by using the new keyword in Solidity. A common naming convention for factory contracts is `somethingContractFactory.`
 
 The concept behind the factory design pattern is simple: instead of creating objects directly, you have a single object (the factory) that does it for you. This also applies to Solidity because smart contracts are objects.
@@ -26,6 +28,7 @@ The concept behind the factory design pattern is simple: instead of creating obj
 A basic factory contract should be able to deploy multiple instances of the same contract, store these created instances on the blockchain, and retrieve them when needed. You can add more functionality for managing deployed contracts, such as retrieving a specific instance of the contract, retrieving detailed information from or writing to a specific contract instance, and so on.
 
 ## Using the `new` Keyword
+
 The `new` keyword in Solidity deploys and creates a new contract instance. It initializes the contract instance by deploying the contract, initializing the state variables, running its constructor, incrementing the nonce value by one, and returning the new contract address to the caller.
 
 Deploying a contract involves checking whether the deployer has provided enough gas to complete deployment, generating a new address for the contract deployment using the deployer's address and nonce value, and passing on any Ether sent along with it.
@@ -53,11 +56,13 @@ This is one method for significantly reducing the cost of each deployment, resul
 It entails radical restructuring, heavy use of libraries, and proxy contracts, resulting in a minimal payload to deploy each time.
 
 ## Setting Up With Remix
+
 We will use the [Remix IDE](https://remix.ethereum.org/) for this tutorial. This tutorial assumes you have a decent grasp of Solidity and Remix IDE.
 
 When you load up Remix in your browser, you will be greeted by this menu. For this example, we will be creating an ERC20 token factory contract. The intention is to deploy the token factory once and make as many ERC20 tokens as possible without having to deploy them ourselves.
 
-### Step 1: Writing the ERC20 Token Code: 
+### Step 1: Writing the ERC20 Token Code
+
 Create a fairly standard ERC20 contract. This is the template contract or instance that the Factory contract will reproduce. Create a new solidity file called Token.sol inside the contracts folder and add the following code.
 
 ``` solidity
@@ -137,6 +142,7 @@ Lastly, we have our getToken function. This function takes an uint256 number rep
 * Total Supply of the tokens
 
 ### Step 3: Testing with Remix
+
 Switch to the "Solidity Compiler" tab and compile both contracts by pressing the "ctrl" + "s" keys ("Command+S" for Mac users) simultaneously.
 
 ![compile](https://user-images.githubusercontent.com/105144630/221164942-49b23bed-3114-4faa-bd39-864516fa326e.png)
@@ -151,16 +157,13 @@ You should ensure that the "CONTRACT" field is set to "TokenFactory" before you 
 
 ![deployed1](https://user-images.githubusercontent.com/105144630/221164595-07894e77-5d5c-4654-b9d1-e7f8d5f90b48.png)
 
-
 Under the new "Deployed Contracts" tab, you can see the deployed factory contract. You should proceed to call the createToken function. This function takes the token name, symbol and initial supply as arguments. After the successful contract call, we can get a token at index "0" by calling the getToken function to get the token information stored on the factory contract.
 
 ![TT1](https://user-images.githubusercontent.com/105144630/221164346-6e8280d8-8a83-452a-8d3c-d6a33250c464.png)
 
-
 We can also call the createToken function to create another ERC20 token from the factory contract using different parameters.
 
 ![TT2](https://user-images.githubusercontent.com/105144630/221164508-edca4653-7b23-418e-953b-be40c7cd4e3b.png)
-
 
 ## Conclusion
 
@@ -169,7 +172,9 @@ In this article, we've explored factory contracts by building a factory token co
 In this guide, you learned about the factory contract method and how to implement them using Remix. Well done!
 
 ## Next Step
+
 Most DEXs in Web3 utilized factory contracts to facilitate their operations. You can look into how Uniswap implements factory contracts and do the same. Another fun project you can do next is to study common vulnerabilities in most smart contracts.
 
 ## About the Author
+
 John Fawole is a blockchain technical writer and Solidity developer; connect with him on [LinkedIn](https://www.linkedin.com/in/johnfawole/).
