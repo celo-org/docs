@@ -1078,7 +1078,7 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'smartcontract'],
   },
   {
-    title: 'Designing a User-Friendly Celo DApp- A Beginners Guide to UI/UX)',
+    title: 'Designing a User-Friendly Celo DApp- A Beginners Guide to UI/UX',
     description: 'In this tutorial, we will teach interested persons how to create wireframes for their own web projects',
     preview: require('./showcase/intermediate/deploy-and-interact-with-contracts-remotely.png'),
     website: '/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux',
