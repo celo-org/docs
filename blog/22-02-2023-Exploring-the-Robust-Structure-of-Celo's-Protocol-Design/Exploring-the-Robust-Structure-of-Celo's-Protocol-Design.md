@@ -1,6 +1,6 @@
 ---
-title: Exploring the Robust Structure of Celo's Protocol Design
-description: A Comprehensive Breakdown of Celo's Protocol Design
+title: Exploring the Robust Structure of Celos Protocol Design
+description: A Comprehensive Breakdown of Celos Protocol Design
 authors:
 - name: Kyrian Chigozie
   title: Technical Writer
