@@ -6,7 +6,7 @@ authors:
   - name: Israel Okunaya
     title: Software Engineer, Technical writer @Celo Foundation
     url: https://github.com/Southpaw0
-    image_url: 
+    image_url: https://trello.com/1/cards/6377506298df5d0124ebc444/attachments/63967068635aec01899ef4de/download/13.png
 tags: [celosage, smartcontract, solidity, remix]
 hide_table_of_contents: true
 slug: /tutorials/create-your-first-smart-contract-on-celo
