@@ -75,7 +75,7 @@ In our contract, we have a variable `owner` of type `address`, which we will use
 
 Next, we set up our contract’s constructor, which will require the value of the minimum amount a contributor can make to the smart contract, as its input.
 
-```Solidity
+```solidity
 constructor(uint minimum) { 
        owner = payable(msg.sender); 
        minimumContribution = minimum; 
