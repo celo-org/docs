@@ -4,7 +4,7 @@ description: This tutorials teaches you how to create your first sample smart co
 
 authors:
   - name: Israel Okunaya
-    title: Software Engineer, Technical writer @Celo Foundation
+    title: Product Manager, Technical Writer @Celo Foundation
     url: https://github.com/Southpaw0
     image_url: https://avatars.githubusercontent.com/u/63967068635aec01899ef4de/download/13.png
 tags: [celosage, smartcontract, solidity, remix]
