@@ -54,7 +54,7 @@ cd starter-code
 
 This will clone the starter project to your local development environment.
 
-Open the project in your favorable IDE, and install the dependencies with:
+Open the project in your favorable IDE, and install the dependencies with;
 
 ```bash
  yarn or npm install.
@@ -72,7 +72,7 @@ The src folder has the `App.jsx` and `components` folders, where most of our cod
 
 Inside the `App.jsx`, we have the `NavbarComponent` and the `SelectTokenModal` imported at the top.
 
-We have some simple state management and corresponding functions as shown below:
+We have some simple state management and corresponding functions as shown below;
 
 ```js
 ...
@@ -634,7 +634,7 @@ Finally, as with any blockchain-based application, security should always be a t
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
-Reach out:
+Reach out;
 Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
