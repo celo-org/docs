@@ -759,6 +759,14 @@ const Users: User[] = [
     source: 'https://www.coinbase.com/price/celo',
     tags: ['apps','earn'],
   },
+  {
+    title: 'Footprint Analytics',
+    description: 'Explore community-built analysis and create chartswith no code required.',
+    preview: require('https://files.readme.io/5336301-180.png'),
+    website: 'https://www.footprint.network/',
+    source: 'https://www.footprint.network/',
+    tags: ['apps','analytics']
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
