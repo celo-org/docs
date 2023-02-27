@@ -14,9 +14,10 @@ slug: /tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-an
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api.png)
 
+
 <!--truncate-->
 
-# Introduction​
+## Introduction​
 
 In this tutorial, we will build a full-stack token swap application on the Celo blockchain using React and 0x API. Our application will utilize the 0x API swap endpoint, which allows users to fetch available quotes across the liquidity supply and use smart order routing to split up a transaction across decentralized exchange networks to be filled with the lowest slippage possible while minimizing transaction costs. Major wallets and exchanges like MetaMask and Coinbase Wallet use this tool.
 
@@ -24,7 +25,7 @@ We will use React, a popular JavaScript library for building user interfaces, to
 
 Whether you're a beginner or an experienced web3 developer, this tutorial will provide a step-by-step guide on creating a fully-functional token swap application on the Celo blockchain. So let's get started!
 
-# Prerequisites​
+## Prerequisites​
 
 Some familiarity with React working with Vite, in particular
 
@@ -32,7 +33,7 @@ Some understanding of Tailwind CSS
 
 Understanding of basic terminal commands
 
-# Requirements​
+## Requirements​
 
 `npm (npx)` or`yarn`
 node version v18.12.0
@@ -616,7 +617,7 @@ git clone https://github.com/JovanMwesigwa/celo-sage-0x-swap/tree/make-swap
 
 ```
 
-# Conclusion​
+## Conclusion​
 
 Congratulations! you have learned how to leverage 0x API's smart order routing capabilities to minimize transaction costs and swap tokens on Celo. You have also seen how to connect your application to the Celo network using web3.js.
 
@@ -630,7 +631,7 @@ In addition, you may want to further your knowledge in web3 development and bloc
 
 Finally, as with any blockchain-based application, security should always be a top priority. Make sure to thoroughly test and audit your code, and consider seeking feedback from other developers or security experts. By continuing to learn and improve your skills, you can build even more powerful and secure applications on the Celo network and beyond.
 
-# About the Author​
+## About the Author​
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
@@ -639,7 +640,7 @@ Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-# References​
+## References​
 
 [Developers Celo](https://celo.org/developers) For Celo dev setup
 [0x API Docs](https://docs.0x.org/0x-api-swap/api-references) 0x API for swap documentation
