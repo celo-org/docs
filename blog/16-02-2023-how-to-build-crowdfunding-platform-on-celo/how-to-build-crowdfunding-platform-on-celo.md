@@ -510,7 +510,7 @@ Also, when anyone will fund a cause. This is how the transaction will look like:
 
 ![Token Transfer](https://i.imgur.com/WhQLCC1.png)
 
-Also, here is the complete source code: https://github.com/avirajkhare00/celo-crowdfunding-platform
+Also, here is the complete source code: [GitHub Repo](https://github.com/avirajkhare00/celo-crowdfunding-platform)
 
 Thank you so much for following this tutorial so far 🙏 
 
