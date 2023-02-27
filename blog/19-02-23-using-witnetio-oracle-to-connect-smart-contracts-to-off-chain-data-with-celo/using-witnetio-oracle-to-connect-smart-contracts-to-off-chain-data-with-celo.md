@@ -350,6 +350,7 @@ library Base64 {
     }
 }
 ```
+
 **The smart contract defines several functions that are used to create dynamic NFTs using Witnet.io Coins Price Data. Here is a breakdown of the functions and their purpose:**
 
 - The Functions getCeloUsdPrice(), getBTCUsdPrice(), getCELOEurPrice(), getETHUsdPrice(), getNCTCeloPrice(), getNCTUsdPrice() are internal views that retrieve price data from the Witnet.io Oracle network using the WitnetPriceRouter contract. The functions each correspond to a specific data feed for various tokens, including CELO, BTC, ETH, and NCT, and their respective values are returned as 256-bit signed integers. The functions utilize bytes4 identifiers to reference the specific data feeds on the Oracle network. By calling these functions, a smart contract on the Celo platform can securely and accurately receive off-chain price data, which can be used to inform various operations within the contract, such as setting prices or triggering events.
@@ -372,15 +373,19 @@ Use the [OpenZeppelin Wizard](https://wizard.openzeppelin.com/) to easily create
 
 **_ The Smart Contract creates dynamic NFT with currency name and price using off-chain data from witnet.io! _**
 
+:::tip
+Access Deployed Project on [Github](https://github.com/developerkunal/Celo-frontend) to easily understand, how it works.
+:::
+
 ## Why should we use Off-Chain Data?
 
 One example of a use case for Witnet.io on the Celo platform is in the creation of a decentralized exchange (DEX). A DEX requires real-time pricing data to enable the trading of assets on-chain. Witnet.io can be used to provide real-time pricing data from off-chain sources, ensuring that the DEX operates accurately and securely.
 
-# Conclusion
+## Conclusion
 
 In conclusion, this tutorial has showcased the powerful capabilities of using Witnet.io oracles to connect smart contracts to off-chain data on the Celo platform. By leveraging this technology, we were able to create dynamic NFTs using SVG that update in real-time with live price feeds. This opens up new possibilities for NFT creation, enabling developers to create unique and visually stunning NFTs that can serve various purposes, such as art, collectibles, or proof of ownership. Whether you are a seasoned developer or simply interested in exploring the potential of NFTs on Celo, this tutorial has provided valuable insights and practical guidance. With the step-by-step guide provided, you now have the knowledge and tools to deploy your own dynamic NFT smart contract on the Celo platform, opening up a world of possibilities for NFT creation and innovation.
 
-# About Author
+## About Author
 
 Hi! My name is Kunal Dawar and I am a Full Stack web2/web3 Developer. I have participated in numerous hackathons and have been fortunate enough to win many of them.
 
