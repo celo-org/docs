@@ -4,7 +4,7 @@ description: The likes of Bored Ape, Cryptopunks, and more have become so popula
 authors:
   - name: Fadipe Temitope
 tags: [celosage, celo, beginner]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/overview-of-nfts-on-the-celo-platform
 ---
 
