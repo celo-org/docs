@@ -761,7 +761,7 @@ const Users: User[] = [
   },
   {
     title: 'Footprint Analytics',
-    description: 'Explore community-built analysis and create chartswith no code required.',
+    description: 'Explore community-built analysis and create charts with no code required.',
     preview: require('https://files.readme.io/5336301-180.png'),
     website: 'https://www.footprint.network/',
     source: 'https://www.footprint.network/',
