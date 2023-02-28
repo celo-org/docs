@@ -1815,6 +1815,12 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },{
+    title: 'Building A Decentralized Twitter on the Celo Blockchain',
+    description: 'Building A Decentralized Twitter on the Celo Blockchain',
+    preview: require(''),
+    website: 'blog/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain',
+    tags: ['celosage', 'dacade', 'smartcontract', 'solidity',],
   },
   /*
   Pro Tip: add your site in alphabetical order.
