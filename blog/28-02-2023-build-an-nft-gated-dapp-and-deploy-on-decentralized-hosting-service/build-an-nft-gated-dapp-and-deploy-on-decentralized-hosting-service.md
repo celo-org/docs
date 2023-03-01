@@ -1,12 +1,12 @@
 ---
-title: Build an nft-gated dapp and deploy on decentralized hosting service
-description: An alternative method of connecting to Celo networks
+title: Build an nft-gated dapp and deploy on a decentralized hosting service
+description: An interesting use case for NFTs on the Celo network
 authors:
   - name: Isaac Jesse
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, solidity, react, nextjs, materialui, typescript]
+tags: [advanced, solidity, nextjs, materialui]
 hide_table_of_contents: true
 slug: /tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service
 ---
@@ -15,14 +15,14 @@ slug: /tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-ser
 
 ## Introduction
 
-In the past years, Non-Fungible Token category have gained popularity through myriad of use cases and inventions infuenced by virtual machines. The NFT industry witnesses liquidity counting to billions of dollars, and this is only made possible through people's creativity and sustainable blockchain networks such as Celo. As a web3 developer, as important as your role is, so you need to understand NFT use cases to build a disruptive Dapp.
+In the past years, the Non-Fungible Token category has gained popularity through the myriad of use cases and inventions influenced by virtual machines. The NFT industry witnesses liquidity counting to billions of dollars and this is only made possible through people's creativity and sustainable blockchain networks such as Celo. As a web3 developer, as important as your role is, you need to understand NFT use cases to build a disruptive Dapp.
 
 ## Prerequisites​
 
-As an extenstion of the previous tutorial on **[how to build a persistent Dapp on Celo using wagmi](https://docs.celo.org/blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi)**, I have prepared this tutorial to depict one of the many NFT use cases which we will deploy to Celo's testnet - _Alfajores_. We will also build a user interface using Nextjs, react and materialUi to interact with the Dapp. The frontend will be deployed on Fauna - _a decentralized hosting service_. This is an advance tutorial, and it reqiures that you have a sound background in the following areas.
+As an extension of the previous tutorial on **[how to build a persistent Dapp on Celo using wagmi](https://docs.celo.org/blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi)**, I have prepared this tutorial to depict one of the many NFT use cases which we will deploy to Celo's testnet - _Alfajores_. We will also build a user interface using Nextjs, react, and materialUi to interact with the Dapp. The frontend will be deployed on Fauna - _a decentralized hosting service_. This is an advanced tutorial, and it requires that you have a sound background in the following areas.
 
 - Smart contract development using solidity.
-- You should know Javascript and considerable knowledge of typescript.
+- You should know Javascript and have considerable knowledge of typescript.
 - For how to use hardhat for smart contract development, please refer to **[this](https://docs.celo.org/blog/tutorials/getting-started-on-celo-with-hardhat)** and **[this](https://docs.celo.org/blog/tutorials/advance-hardhat-configuration-on-celo-using-plugins)**.
 
 ## Requirements​
@@ -37,11 +37,11 @@ Before you proceed, please install the following tools:
 
 We will build a decentralized application for swapping ERC20 tokens to $Celo. Detail can be found in the **[readme](https://github.com/bobeu/nft-gated-dapp-dexHosting/README.md)**.
 
-The dApp will be in two parts. The first part is the smart contract that houses the Dapp's logic while the other manages the user interface. 
+The dApp will be in two parts. The first part is the smart contract that houses Dapp's logic while the other manages the user interface. 
 
 **Smart contracts**
 
-- Clone project or use it as a template, then clone to your machine.
+- Clone the project or use it as a template, then clone it to your computer.
 
 ```bash
 git clone https://github.com/bobeu/persistent-dapp-on-celo-using-wagmi.git
@@ -61,12 +61,12 @@ All files in the contract folder remain intact as we extend its functionalities 
 
 ## contracts
 
-- `SwapLab.sol` contains the main contract functions for adding and removing liquidity, and swapping Celo's ERC20 token for $Celo coin.
+- `SwapLab.sol` contains the main contract functions for adding and removing liquidity and swapping Celo's ERC20 token for the $Celo coin.
 
 - `TestToken.sol` has the asset code we will use for testing the swap contract.
 
 - Add a new folder named `erc721` under the contract folder.
-  - The OZ's ERC721 contract module with path `@openzeppelin/contracts/interfaces/IERC721.sol` is a standard interface for interacting with a non-fungible tokens on the blockchain. But we need to extend its reach so we can mint a membership token with ability to cancel it. On the frontend, we'll require that users own a membership nft before they can interact with the Dapp.
+  - The OZ's ERC721 contract module with path `@openzeppelin/contracts/interfaces/IERC721.sol` is a standard interface for interacting with non-fungible tokens on the blockchain. But we need to extend its reach so we can mint a membership token with the ability to cancel it. On the frontend, we'll require that users own a membership nft before they can interact with the Dapp.
 
   - `contracts/interfaces/IERC721Extended.sol`
 
@@ -89,17 +89,17 @@ All files in the contract folder remain intact as we extend its functionalities 
   - `Membership.sol`
     - Import and inherit `Pausable.sol` and `Ownable.sol` from the openzeppelin modules.
 
-    - Previously, we declared two addtional function interfaces. It then becomes imperative that we implement these functions in the current file. Here, we implement the `mint` and `burn` functions.
+    - Previously, we declared two additional function interfaces. It then becomes imperative that we implement these functions in the current file. Here, we implement the `mint` and `burn` functions.
 
-    - The `notZeroAddress` modifier ensures that the target addresses is not empty.
+    - The `notZeroAddress` modifier ensures that the target address is not empty.
 
-    - NFTs are unique properties or elements of a collection. They could share similar parent i.e be part of a collection but are never thesame in property. To introduce uniqueness, we generate a new NFT by increasing `tokenId`. 
+    - NFTs are unique properties or elements of a collection. They could share similar parents i.e be part of a collection but are never the same in properties. To introduce uniqueness, we generate a new NFT by increasing `tokenId`. 
 
-    - Users addresses that have minted the membership nft are kept in `isMember` storage for reference purpose. This method ensures that no address can mint twice.
+    - User addresses that have minted the membership nft are kept in `isMember` storage for reference purposes. This method ensures that no address can mint twice.
 
-    - To encourage users to mint our membership nft, we have lowered the swapping fee. But they need to pay a tiny amount in order to have their membership minted. This method have introduced a vulnerability that we need to guard against. A user could mint and trasnfer or resell to other users. We do not want this to happen. To prevent the occurrence of such event, we will intercept to place a barrier in the internal function by overriding `_transfer()` so that no one is able to transfer membership. The right to do this is given to the owner.
+    - To encourage users to mint our membership nft, we have lowered the swapping fee. But they need to pay a tiny amount in order to have their membership minted. This method has introduced a vulnerability that we need to guard against. A user could mint and transfer or resell to other users. We do not want this to happen. To prevent the occurrence of such an event, we will intercept to place a barrier in the internal function by overriding `_transfer()` so that no one is able to transfer membership. The right to do this is given to the owner.
 
-    - We effcted the circuit breaker by implementing the `pause` and `unpause` functions.
+    - We effected the circuit breaker by implementing the `pause` and `unpause` functions.
     
 
   ```js
@@ -197,7 +197,7 @@ npx hardhat compile
 
 - Testing
 
-I have modifies the test file to ensure that no function runs unless the nft balance of the calling account is greater than zero.
+I have modified the test file to ensure that no function runs unless the nft balance of the calling account is more significant than zero.
 
 ```bash
 npx hardhat test
@@ -207,17 +207,17 @@ npx hardhat test
 
 - Deploy
 
-The hardhat config file already has the right configuration to enable us deploy to the Celo testnet.
+The hardhat config file already has the right configuration to enable us to deploy to the Celo testnet.
 
 ```bash
 yarn deploy
 ```
 
-Deployment artifacts is saved in `deployments` folder.
+Deployment artifacts are saved in the `deployments` folder.
 
 ## Frontend
 
-This project is NFT-gated hence users will be denied access to the Dapp interactive page unless they already owned our nft. We will build an intelligence that automatically detects if users own membership nft otherwise we'll ask them to mint first before granting them access.
+This project is NFT-gated hence users will be denied access to the Dapp interactive page unless they already owned our nft. We will build intelligence that automatically detects if users own membership nft otherwise we'll ask them to mint first before granting them access.
 
 
 Exit the current directory into the root folder and install the dependencies: 
@@ -228,9 +228,9 @@ cd frontend
 yarn install
 ```
 
-The project uses wagmi to manage the Dapp. To know how to set up wagmi project, please refer to the **[previous tutorial](https://docs.celo.org/blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi)**.
+The project uses wagmi to manage the Dapp. To know how to set up the wagmi project, please refer to the **[previous tutorial](https://docs.celo.org/blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi)**.
 
-We are going to modify the `components/App` directory. There are only two files in this folder - `CardComponent.tsx` and `index.tsx`. Both the landing and interactive pages are contained in the index file. We need to separate them so users can be routed to the landing page if their wallet is not activated otherwise they're shown the interactive view but will be disbled if no membership is detected. Let's separate the file as follows:
+We are going to modify the `components/App` directory. Only two files are in this folder - `CardComponent.tsx` and `index.tsx`. Both the landing and interactive pages are contained in the index file. We need to separate them so users can be routed to the landing page if their wallet is not activated otherwise they're shown the interactive view but will be disabled if no membership is detected. Let's separate the file as follows:
 
 - `components/App/Home/index.tsx`
 
@@ -286,9 +286,9 @@ export function Home () {
 ```
 - `components/App/Mint/index.tsx`
 
-In this file, we mint new membership nft for new users. In the useEffect function, we watch for user's balance and compare if greater than zero to authenticate them.
+In this file, we mint new membership nft for new users. In the useEffect function, we watch for the user's balance and compare if greater than zero to authenticate them.
 
-The component renders a button that calls `handleMint` when clicked. It the operation is successful, it will be hidden and the Dapp component is rendered. 
+The component renders a button that calls `handleMint` when clicked. If the operation is successful, it will be hidden and the Dapp component is rendered. 
 
 ```ts
 import Stack from '@mui/material/Stack';
@@ -366,7 +366,7 @@ export function Mint (props: SignUprops) {
 
   Move the content of the previous `App/index.tsx` into this file and make the following changes.
 
-  - import the `Mint` component. By default, if user does not own the $SLU nft, the button components are disabled until otherwise proven true. 
+  - import the `Mint` component. By default, if the user does not own the $SLU nft, the button components are disabled until otherwise proven true. 
 
   ```ts
   import getContractData from '../../apis/contractdata';
@@ -381,7 +381,7 @@ export function Mint (props: SignUprops) {
     }
   ```
 
-  - Add additional case block to the switch statement in `afterTrx` function that watches for 'mint' to be true. The nft balance from the resulting operation from `handleClik` is extracted and passed to `afterTrx`. Then in the `mint` case, we set the pass by calling `setauth` if the balance is greater than zero. In your Dapp, you'd want to handle it in a manner that allows your Dapp read from a collection of nfts, and you can filter out the current user.
+  - Add an additional case block to the switch statement in the `afterTrx` function that watches for 'mint' to be true. The nft balance from the resulting operation from `handleClik` is extracted and passed to `afterTrx`. Then in the `mint` case, we set the pass by calling `setauth` if the balance is greater than zero. In your Dapp, you'd want to handle it in a manner that allows your Dapp read from a collection of nfts, and you can filter out the current user.
 
   ```ts
     const afterTrx = (x:string, result: Result) => {
@@ -412,9 +412,9 @@ export function Mint (props: SignUprops) {
   }
   ```
 
-- Since we reduced the swap fee in the SwapLab contract, we will effect it on the frontend. A place to do that is in the `handleClick` function. 
+- Since we reduced the swap fee in the SwapLab contract, we will affect it on the frontend. A place to do that is in the `handleClick` function. 
 
-Reset the conditional statement that checks if functionName equals `'swap'`, then set swap fee in variable `value` to 1e14 wei equavalent to 0.0001 Celo.
+Reset the conditional statement that checks if functionName equals `'swap'`, then set the swap fee in variable `value` to 1e14 wei equivalent to 0.0001 Celo.
 
 Set additional statement to check for `'mint'` function, then set `value` to 1e16 wei. For the first time that the mint function is executed for the current user, if no error is thrown, then a membership nft is minted for the user. We can then set the pass to true.  
 
@@ -469,13 +469,13 @@ yarn run dev
 npm run dev
 ```
 
-If everything work correctly, you should have the view as follows.
+If everything works correctly, you should have the view as follows.
 
 - Landing page
 
 ![image](images/4.png)
 
-- Page after provider is activated but membership nft not yet minted, and the buttons are disabled.
+- Page after the provider is activated but membership nft is not yet minted, and the buttons are disabled.
 
 ![image](images/7.png)
 
@@ -490,24 +490,74 @@ If everything work correctly, you should have the view as follows.
 
 ## Deploying to decentralized hosting service
 
+At this point, our Dapp's frontend is ready to be deployed to a hosting service. Although there are a couple of decentralized hosting services that we could consider, I have selected to deploy to "Spheron" for its easy, simple, and faster deployment rate.
+
+Firstly, let us understand what decentralized hosting means. Just as the name implies, it is a method of uploading or storing data to a server not owned and controlled by a central authority. Unlike centralized counterpart, decentralized service uses distributed networks most of which resemble blockchain. When files are uploaded, they're hashed into compartments and distributed across nodes of the computer so that no single node is able to claim the monopoly of storage.
+
+Spheron provides an easy method of deploying Dapps to developers. With a few clicks, you're there. [Read more](https://spheron.network/). To deploy on either Filecoin or IPFS using Spheron, you will need to sign up on the [website](https://spheron.network/). Select the convenient method. It is recommended to authenticate using GitHub so as to easily extract repositories.  
+
+  - ![image](images/8.png)
+
+Thereafter, follow these steps:
+
+- After you're logged in, click on dashboard, then 'New Project' at the top right-hand corner.
+
+  - ![image](images/13.png)
+
+- Select the repository to link and give permissions to the app.
+
+  - ![image](images/11.png)
+
+- Connect using your favorite provider.
+
+  - ![image](images/9.png)
+
+>Note: Be sure to trust the app you are granting permission to access your GitHub account.
+
+- Review to select the desired permission. For me, I'd prefer to allow access to selected repositories. 
+
+  - ![image](images/10.png)
+
+- Next step is to pick a protocol. I have selected IPFS.
+
+  - ![image](images/14.png)
+
+- Review the deployment settings
+
+  - ![image](images/15.png)
+
+  - In the `ROOT DIRECTORY` column, we will type `'frontend/` as the root directory to deploy from.
+
+  - Pick `Nextjs` as the `FRAMEWORK` and leave the build command as it is.
+  - Under the `Node Engine`, be sure to select Node version 16 and above otherwise you'd likely get a build error. Then Click `deploy`.
+    - ![image](images/16.png)
+
+- While deploying, you can inspect the deploy log for the failed attempt.
+![image](images/18.png)
+
+- From the log, you can find the stream information such as the content hash.
+
+![image](images/19.png)
+
+- Deploy success.
+
+![image](images/17.png)
 
 
-The complete code for this tutorial can be found **[here](https://github.com/bobeu/feature-rich-persistent-dapp-on-celo-using-wagmi)**.
+**Demo**
 
-Visit to interact with this dapp [here](https://persistent-dapp-on-celo-using-wagmi.vercel.app/).
+This Dapp is deployed to IPFS using Spheron, and you can interact with it via this **[link](https://nft-gated-dapp-dexhosting-1b22e1.spheron.app/)**
+
+The complete code for this tutorial can be found **[here](https://github.com/bobeu/nft-gated-dapp-dexHosting)**.
+
 
 ## Conclusion​
 
-What we have learned so far:
-
-- Writing, compiling, testing, and deploying smart contracts using hardhat.
-- How to install, set up, and use wagmi.
-- How to build a simple frontend and connect the backend.
-- Manage your dApp using wagmi.
+Congratulation on completing this tutorial. You're a step away from building your dream Dapp on Celo. So far, we have learned to build a full Dapp using solidity, compile, test, and deployed to Celo Alfajores. We also build an interface for users to interact with what we've built. Lastly, we deployed the Dapp to a decentralized hosting service - Spheron. If you're for more tutorials relating to Celo, **[here](https://docs.celo.org/blog/tutorials/)** is a place to get started.
 
 ## What next?
 ​
-Are you a developer? thinking of launching your own project on Celo blockchain? We have dozens of materials and tutorials to help you get started. Pay a visit to **[Celo documentation](https://docs.celo.org/tutorials)**
+Are you thinking of launching your own project on the Celo blockchain right now? Kindly visit the **[developers documentation](https://docs.celo.org/tutorials)**. 
 
 ## About the Author​
 
@@ -518,4 +568,4 @@ Are you a developer? thinking of launching your own project on Celo blockchain? 
 - [Celo developers resources](https://docs.celo.org/developer/)
 - [Source code](https://github.com/bobeu/feature-rich-persistent-dapp-on-celo-using-wagmi)
 - [Wagmi doc](https://wagmi.sh/)
-
+- [Spheron](https://spheron.network/)
