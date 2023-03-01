@@ -171,6 +171,11 @@ Lembre-se de que o processo de Product Discovery é iterativo e deve ser repetid
 
 Além disso, é importante ter em mente que o desenvolvimento de produtos de NFT no blockchain da Celo requer uma compreensão sólida dos princípios e tecnologias de blockchain, incluindo a arquitetura do Celo e suas características únicas, como a escalabilidade, a segurança e a governança. É recomendável fazer uma pesquisa aprofundada sobre esses tópicos antes de começar a desenvolver um produto de NFT no blockchain da Celo.
 
+## Próximos passos
+
+Sugiro ler também o artigo [Como usar a metodologia de gestão de produtos para criar soluções com NFT](https://docs.celo.org/blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT).
+
+Aqui você pode acessar outros artigos sobre [NFT](https://docs.celo.org/tutorials?tags=nft).
 
 
 ## Sobre o Autor
