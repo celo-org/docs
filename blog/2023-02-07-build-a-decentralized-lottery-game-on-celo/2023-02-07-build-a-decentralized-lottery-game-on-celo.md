@@ -116,7 +116,7 @@ To store data and track events on the blockchain, we will add the following vari
 ```solidity
 contract Lottery {
 
-		address owner;
+  address owner;
     uint256 public endTime;
     uint256 public playerCount;
 
@@ -130,7 +130,7 @@ contract Lottery {
     event enteredLottery(address player);
     event announceWinner(address winner);
 
-		// All the functions in the contract should be placed below this line.
+  // All the functions in the contract should be placed below this line.
 
 }
 ```
@@ -138,19 +138,19 @@ contract Lottery {
 Let's write the constructor, which will set the end time of the game and the owner. The end time will be 30 minutes after the deployment of the contract, and the owner will be whoever deploys the contract.
 
 ```solidity
-		constructor() {
+  constructor() {
         endTime = block.timestamp + 30 minutes;
-				owner = msg.sender;
+    owner = msg.sender;
     }
 ```
 
 The next step is to write the `getRandom`function. This function will generate a random number using the `Random` contract. First, the function will get the address of the `Random` contract using the `getAddress` function of the `Registry` contract. Then, the function will pass that address to the `IRandom` interface and call the `random` function, which will return a random value of type `bytes32`.
 
 ```solidity
-		function getRandom() internal view returns (bytes32 randomness) {
-				randomness = IRandom(
-		        IRegistry(0x000000000000000000000000000000000000ce10).getAddressFor(
-		            keccak256(abi.encodePacked("Random"))
+  function getRandom() internal view returns (bytes32 randomness) {
+    randomness = IRandom(
+          IRegistry(0x000000000000000000000000000000000000ce10).getAddressFor(
+              keccak256(abi.encodePacked("Random"))
             )
         ).random();
     }
@@ -165,16 +165,16 @@ To allow players to enter the lottery, we will write the `purchaseTicket` functi
 If all conditions are met, the function will add the player's details to the `players` mapping, emit the `enteredLottery` event with the player's address, and increase the `playerCount`.
 
 ```solidity
-		function purchaseTicket() public payable {
-				require(block.timestamp <= endTime, "Lottery has ended");
-		    require(msg.value == 1 ether, "Incorrect ticket price");
-				require(msg.sender != owner, "Owner can not enter lottery");
-		        
-				players[playerCount] = player(msg.sender, true);
-		        
-				emit enteredLottery(msg.sender);
-		
-				playerCount++;
+  function purchaseTicket() public payable {
+    require(block.timestamp <= endTime, "Lottery has ended");
+      require(msg.value == 1 ether, "Incorrect ticket price");
+    require(msg.sender != owner, "Owner can not enter lottery");
+          
+    players[playerCount] = player(msg.sender, true);
+          
+    emit enteredLottery(msg.sender);
+  
+    playerCount++;
     }
 ```
 
@@ -183,16 +183,16 @@ To complete the lottery game, we need a function for selecting the winner from a
 If the game has ended and the owner has called the function, we will generate randomness using the `getRandom` function and determine the index of the winner. To end the game, we will emit an event called `announceWinner` and send the collected fees as a reward to the winner's address.
 
 ```solidity
-		function selectWinner() public payable {
+  function selectWinner() public payable {
         require(block.timestamp > endTime, "Lottery has not ended");
-				require(msg.sender == owner, "Only the owner can select the winner");
-		
-				uint256 winnerIndex = uint256(getRandom()) % playerCount;
-		    address winner = players[winnerIndex].player;
-		        
-				emit announceWinner(winner);
-		
-				payable(winner).transfer(address(this).balance);
+    require(msg.sender == owner, "Only the owner can select the winner");
+  
+    uint256 winnerIndex = uint256(getRandom()) % playerCount;
+      address winner = players[winnerIndex].player;
+          
+    emit announceWinner(winner);
+  
+    payable(winner).transfer(address(this).balance);
     }
 ```
 
@@ -204,8 +204,8 @@ We have completed writing the smart contract, now it's time to test its function
 
 ```js
 const {
-	time,
-	loadFixture,
+ time,
+ loadFixture,
 } = require("@nomicfoundation/hardhat-network-helpers");
 const { expect } = require("chai");
 const { minutes } = require("@nomicfoundation/hardhat-network-helpers/dist/src/helpers/time/duration");
@@ -251,19 +251,19 @@ Next, we will test the ticket purchasing feature. In this test, we will verify t
 
 ```js
 describe("Purchases", function () {
-	it("Should throw error for wrong ticket price", async function() {
-		const { lottery, otherAccount } = await loadFixture(deployFixture);
+ it("Should throw error for wrong ticket price", async function() {
+  const { lottery, otherAccount } = await loadFixture(deployFixture);
 
-		await expect(lottery.connect(otherAccount).purchaseTicket({ value: 2 }))
-			.to.be.revertedWith("Incorrect ticket price");
-	});
+  await expect(lottery.connect(otherAccount).purchaseTicket({ value: 2 }))
+   .to.be.revertedWith("Incorrect ticket price");
+ });
 
-	it("Should throw error if owner enters", async function() {
-		const { lottery } = await loadFixture(deployFixture);
+ it("Should throw error if owner enters", async function() {
+  const { lottery } = await loadFixture(deployFixture);
 
-		await expect(lottery.purchaseTicket({ value: ethers.utils.parseUnits("1", "ether") }))
-			.to.be.revertedWith("Owner can not enter lottery");
-	});
+  await expect(lottery.purchaseTicket({ value: ethers.utils.parseUnits("1", "ether") }))
+   .to.be.revertedWith("Owner can not enter lottery");
+ });
 });
 ```
 
@@ -316,8 +316,8 @@ We will build the frontend for the Lottery Game using React. Our focus while bui
 
 - Wallet Interactions: Initial connection with the wallet
 - Contract Interactions:
-    - Purchase a ticket or enter the game (for players)
-    - Select a winner (for the owner)
+  - Purchase a ticket or enter the game (for players)
+  - Select a winner (for the owner)
 
 Let's examine how these actions can be performed on the frontend. Before we begin building the frontend, we need to set up the React project. To set up the React project, run the following command in the terminal:
 
@@ -339,37 +339,37 @@ import "./App.css";
 import { useState } from "react";
 /* 
 NOTE: After deploying the contract you have to change this variable to
-			address of your contract.
+   address of your contract.
 */
 const address = "0xB06779b05cfaa33Eee1E0eB0B66A7C68b50Ab72f"
 
 function App() {
-		const [contract, setContract] = useState();
-	
-		const connect = async () => { 
-		    // implementation of connect function
-		};
-		const purchaseTicket = async () => { 
-		    // implementation of purchaseTicket function
-		};
-		const selectWinner = () => { 
-		    // implementation of selectWinner function
-		};
+  const [contract, setContract] = useState();
+ 
+  const connect = async () => { 
+      // implementation of connect function
+  };
+  const purchaseTicket = async () => { 
+      // implementation of purchaseTicket function
+  };
+  const selectWinner = () => { 
+      // implementation of selectWinner function
+  };
 
-		return (
-		    <div className="App">
-		        <div className="row">
-		            <h1>Lottery Game</h1>
-		            <button onClick={connect}>
-		                {contract ? "Connected" : "Connect"}
-		            </button>
-		        </div>
-		        <div className="row">
-		            <button onClick={purchaseTicket}>Purchase Ticket</button>
-		            <button onClick={selectWinner}>Select Winner</button>
-		        </div>
-		    </div>
-		);
+  return (
+      <div className="App">
+          <div className="row">
+              <h1>Lottery Game</h1>
+              <button onClick={connect}>
+                  {contract ? "Connected" : "Connect"}
+              </button>
+          </div>
+          <div className="row">
+              <button onClick={purchaseTicket}>Purchase Ticket</button>
+              <button onClick={selectWinner}>Select Winner</button>
+          </div>
+      </div>
+  );
 }
 ```
 
@@ -401,19 +401,19 @@ If no Ethereum provider is found, the function logs a message to install a Celo 
 
 ```js
 const connect = async () => {
-		const { ethereum } = window;
-		if (ethereum) {
-			const provider = new ethers.providers.Web3Provider(ethereum);
-			const accounts = await provider.send("eth_requestAccounts", []);
-			const account = accounts[0];
-			console.log(account);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(address, data.abi, signer);
-			setContract(contract);
-		} else {
-			console.log("Install any Celo wallet");
-		}
-	};
+  const { ethereum } = window;
+  if (ethereum) {
+   const provider = new ethers.providers.Web3Provider(ethereum);
+   const accounts = await provider.send("eth_requestAccounts", []);
+   const account = accounts[0];
+   console.log(account);
+   const signer = provider.getSigner();
+   const contract = new ethers.Contract(address, data.abi, signer);
+   setContract(contract);
+  } else {
+   console.log("Install any Celo wallet");
+  }
+ };
 ```
 
 The next function we can write is called `purchaseTicket`, which will allow players to enter the game by paying a small fee of 1 Celo.
@@ -424,12 +424,12 @@ A try-catch block is used to handle any errors that may occur when calling the `
 
 ```js
 const purchaseTicket = async () => {
-		try {
-			const result = await contract.purchaseTicket({ value: ethers.utils.parseUnits("1", "ether") });
-			console.log(result);
-		} catch (error) {
-			console.error(error.reason);
-		}
+  try {
+   const result = await contract.purchaseTicket({ value: ethers.utils.parseUnits("1", "ether") });
+   console.log(result);
+  } catch (error) {
+   console.error(error.reason);
+  }
 }
 ```
 
@@ -441,12 +441,12 @@ The function uses a try-catch block to handle any errors that may occur when cal
 
 ```js
 const selectWinner = async () => {
-		try {
-			const result = await contract.selectWinner();
-			console.log(result);
-		} catch (error) {
-			console.error(error.reason);
-		}
+  try {
+   const result = await contract.selectWinner();
+   console.log(result);
+  } catch (error) {
+   console.error(error.reason);
+  }
 };
 ```
 
@@ -454,32 +454,32 @@ Add the following CSS to the `App.css` file for styling the app.
 
 ```css
 .App {
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .row {
-	  display: flex;
-	  flex-direction: row;
-	  justify-content: center;
-	  align-items: center;
-	  flex-wrap: wrap;
-	  align-content: space-between;
-	  width: 500px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   align-content: space-between;
+   width: 500px;
 }
 
 button {
-	  background-color: #225dff;
-	  border: none;
-	  border-radius: 10px;
-	  padding: 10px;
-	  margin-left: 20px;
-	  height: 50px;
-	  font-family: inherit;
-	  cursor: pointer;
-	  color: #ffffff;
+   background-color: #225dff;
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+   margin-left: 20px;
+   height: 50px;
+   font-family: inherit;
+   cursor: pointer;
+   color: #ffffff;
 }
 ```
 
@@ -507,18 +507,18 @@ Then, add configuration for the Alfajores testnet and Celo mainnet in the `modul
 ```js
 defaultNetwork: "hardhat",
 networks: {
-		hardhat: {
-		},
-		alfajores: {
-				url: "https://alfajores-forno.celo-testnet.org",
-				accounts: [process.env.PRIVATE_KEY],
-				chainId: 44787,
-		},
-		celo: {
-				url: "https://forno.celo.org",
-				accounts: [process.env.PRIVATE_KEY],
-				chainId: 42220,
-		},
+  hardhat: {
+  },
+  alfajores: {
+    url: "https://alfajores-forno.celo-testnet.org",
+    accounts: [process.env.PRIVATE_KEY],
+    chainId: 44787,
+  },
+  celo: {
+    url: "https://forno.celo.org",
+    accounts: [process.env.PRIVATE_KEY],
+    chainId: 42220,
+  },
 },
 ```
 
@@ -528,21 +528,21 @@ Before deployment, create a script to deploy the contract. In the `scripts` dire
 const hre = require("hardhat");
 
 async function main() {
-		try {
-			const Lottery = await hre.ethers.getContractFactory("Lottery");
-			const lottery = await Lottery.deploy();
-	
-			await lottery.deployed(); 
-	
-			console.log(`Lottery is deployed at ${lottery.address}`);
-		} catch (error) {
-			console.error(`Error deploying the Lottery contract: ${error.message}`);
-		}
+  try {
+   const Lottery = await hre.ethers.getContractFactory("Lottery");
+   const lottery = await Lottery.deploy();
+ 
+   await lottery.deployed(); 
+ 
+   console.log(`Lottery is deployed at ${lottery.address}`);
+  } catch (error) {
+   console.error(`Error deploying the Lottery contract: ${error.message}`);
+  }
 }
 
 main().catch((error) => {
-	  console.error(error);
-	  process.exitCode = 1;
+   console.error(error);
+   process.exitCode = 1;
 });
 ```
 
