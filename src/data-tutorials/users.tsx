@@ -1924,6 +1924,13 @@ const Users: User[] = [
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   {
+    title: 'Simplifying the Celo 2.0 Roadmap for Celo Builders',
+    description: 'This article breaks down the details of the Celo 2.0 roadmap into specific features, building requirements and outlooks as well as pointing out the developments that will follow this new roadmap.',
+    preview: require('./showcase/beginner/simplifying-the-celo-2.0-roadmap-for-celo-builders.png'),
+    website: '/blog/tutorials/simplifying-the-celo-2.0-roadmap-for-celo-builders',
+    tags: ['celosage','celo'], 
+  },
+  {
     title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
@@ -1950,7 +1957,6 @@ const Users: User[] = [
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
-
   },
   /*
   Pro Tip: add your site in alphabetical order.
