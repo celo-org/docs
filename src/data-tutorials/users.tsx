@@ -882,6 +882,13 @@ const Users: User[] = [
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
+    title: 'Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo',
+    description: 'Connecting smart contracts to off-chain data on the Celo platform is made possible through the integration of the decentralized oracle network, Witnet.io!',
+    preview: require('./showcase/intermediate/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo.png'),
+    website: '/blog/tutorials/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo',
+    tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
