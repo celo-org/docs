@@ -1981,9 +1981,5 @@ function sortUsers() {
   return result;
 }
 
-<<<<<<< HEAD
-export const sortedUsers = sortUsers();
-=======
 export const sortedUsers = sortUsers();
 2;
->>>>>>> main
