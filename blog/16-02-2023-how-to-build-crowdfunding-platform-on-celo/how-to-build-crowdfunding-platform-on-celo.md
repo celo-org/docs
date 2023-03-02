@@ -18,20 +18,21 @@ Hello everyone. Today we are going to build a crowdfunding platform on Celo. If 
 
 ## Prerequisites
 
- - Knowledge of Solidity.
- - Knowledge of HTML, CSS, and JavaScript.
+- Knowledge of Solidity.
+- Knowledge of HTML, CSS, and JavaScript.
 
 ## Requirements
 
- - **Hardhat:** We will use hardhat to write the smart contract.
- - **Code editor:** Code editor of your choice.
+- **Hardhat:** We will use hardhat to write the smart contract.
+- **Code editor:** Code editor of your choice.
 
 ## Let's go 🔥🔥🔥
 
 Here is a list of what we are going to cover in this tutorial:
- - **Creating the smart contract using hardhat.**
- - **Deploying smart contract on CELO testnet using hardhat.**
- - **Creating frontend using vanilla HTML, CSS and JavaScript.**
+
+- **Creating the smart contract using hardhat.**
+- **Deploying smart contract on CELO testnet using hardhat.**
+- **Creating frontend using vanilla HTML, CSS and JavaScript.**
 
 In this dApp, any user can create a cause. Any user can fund it. Funds will go directly toward the creator of a cause. Once we hit the target, the cause will be funded and no one can further fund it.
 
@@ -56,6 +57,7 @@ Let's add the following lines in the code editor.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 ```
+
 In the above lines, I have added the MIT license and we will be using a solidity version greater than `0.8.9`.
 
 Now, we will create a contract named `CrowdFund`.
@@ -95,6 +97,7 @@ event NewCauseLog(string name, string description, string ipfsHash, uint256 targ
 
 event CauseFundLog(string name, string description, string ipfsHash, uint256 target, uint256 raised, address indexed wallet);
 ```
+
 We will be firing these events inside functions.
 
 We will emit events in two cases, when a new cause is created and when someone will fund a cause.
@@ -115,6 +118,7 @@ function createCause(string memory _name, string memory _description, string mem
     emit NewCauseLog(_name, _description, _ipfsHash, _target, 0, msg.sender);
 }
 ```
+
 Here, in this function `createCause`, it is taking `name`, `description`, `ipfsHash`, `target` as arguments. First, this function pushes the data inside `causes` array, then it emits `NewCauseLog`.
 
 Now, we want to know the total number of causes, so we will just create a function for that so that we can know how many total `causes` are there.
@@ -132,6 +136,7 @@ function causeById(uint _id) public view returns(string memory, string memory, s
     return (causes[_id].name, causes[_id].description, causes[_id].ipfsHash, causes[_id].target, causes[_id].raised);
 }
 ```
+
 `causeById` function takes `_id` as an argument and returns `name`, `description`, `ipfsHash`, `target` and `raised`.
 
 Now, it's time for our main function, called `fundCauseById` which takes cause `id` and is a `payable` function.
@@ -147,11 +152,12 @@ function fundCauseById(uint _id) public payable {
     emit CauseFundLog(causes[_id].name, causes[_id].description, causes[_id].ipfsHash, causes[_id].target, causes[_id].raised, causes[_id].wallet);
 }
 ```
+
 In this function, in the beginning, we have set up three required conditions.
 
- - `CELO` sent should be greater than 0.
- - `CELO` sent should be less than the target amount of the cause.
- - If a cause raised the required funds, then it won't accept any new donations for the cause.
+- `CELO` sent should be greater than 0.
+- `CELO` sent should be less than the target amount of the cause.
+- If a cause raised the required funds, then it won't accept any new donations for the cause.
 
 In the fourth line, `causes[_id].raised += msg.value`, we are incrementing the raised variable every time a new donation is made.
 
@@ -159,6 +165,7 @@ In the fourth line, `causes[_id].raised += msg.value`, we are incrementing the r
 (bool sent, bytes memory data) = causes[_id].wallet.call{value: msg.value}("");
 require(sent, "Failed to send Ether");
 ```
+
 In the above line, we are transferring the `CELO` to the wallet address of a person who created a cause and we are checking that `CELO` is sent successfully to the creator.
 
 At last, we are emitting `CauseFundLog`.
@@ -270,7 +277,7 @@ Once the script runs, you will see output something like this.
 
 Once you deploy it, you will get the smart contract address.
 
-### Creating frontend using vanilla HTML, CSS and JavaScript.
+### Creating frontend using vanilla HTML, CSS and JavaScript
 
 It's time to get started with the frontend code.
 
@@ -431,6 +438,7 @@ if (typeof window.ethereum !== 'undefined') {
     alert('Please install Metamask first.');
 }
 ```
+
 Here, we are checking if Metamask is installed or not. If Metamask is not installed then it will alert the user to install the Metamask first.
 
 ```js
@@ -439,6 +447,7 @@ async function getAccount() {
     return accounts[0];
 }
 ```
+
 `getAccount()` function fetches the account from the Metamask. It is a wrapper over `await ethereum.request({ method: 'eth_requestAccounts' });`.
 
 ```js
@@ -447,6 +456,7 @@ function getTotalCauses() {
     return causes;
 }
 ```
+
 This function returns all the total causes in the smart contract. It calls `totalCauses()` function of the smart contract.
 
 ```js
@@ -455,6 +465,7 @@ async function createCause(name, description, ipfsHash, target) {
     await contract.methods.createCause(name, description, ipfsHash, target).send({ from: account });
 }
 ```
+
 This function is called when a user presses submit button to create a cause. When this function is executed, Metamask will ask you to sign the transaction.
 
 ```js
@@ -464,6 +475,7 @@ async function fundCauseById(causeId){
     await contract.methods.fundCauseById(causeId).send({from: account, value: amount});
 }
 ```
+
 This function is invoked when a user presses the `Fund` button of the cause. Whatever amount the user gives in `Wei`, CELO will be transferred towards the creator of the cause.
 
 ```js
@@ -500,6 +512,7 @@ async function fillCauseDOM() {
         }
 }
 ```
+
 `fillCauseDOM()` is used to iterate through all the causes and dynamically add the data to the DOM.
 
 This is how your frontend will look like if you are followed the tutorial so far:
@@ -512,7 +525,7 @@ Also, when anyone will fund a cause. This is how the transaction will look like:
 
 Also, here is the complete source code: [GitHub Repo](https://github.com/avirajkhare00/celo-crowdfunding-platform)
 
-Thank you so much for following this tutorial so far 🙏 
+Thank you so much for following this tutorial so far 🙏
 
 ## About the author
 
@@ -520,7 +533,8 @@ Aviraj Khare
 Ex Gojek, into web3 space since 2016.
 
 ## References
- - https://web3js.readthedocs.io/en/v1.8.2/
- - https://getbootstrap.com/
- - https://docs.soliditylang.org/en/v0.8.18/
- - https://hardhat.org/
+
+- <https://web3js.readthedocs.io/en/v1.8.2/>
+- <https://getbootstrap.com/>
+- <https://docs.soliditylang.org/en/v0.8.18/>
+- <https://hardhat.org/>
