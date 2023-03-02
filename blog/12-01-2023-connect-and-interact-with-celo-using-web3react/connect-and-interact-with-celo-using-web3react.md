@@ -6,12 +6,12 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [foundry, celo, solidity, react]
+tags: [advanced, celosage, solidity, react]
 hide_table_of_contents: true
 slug: /tutorials/connect-and-interact-with-celo-using-web3react
 ---
 
-![header](images/1.png)
+![header](../../src/data-tutorials/showcase/advanced/connect-and-interact-with-celo-using-web3react.png)
 
 ## Introduction
 
@@ -54,10 +54,13 @@ We will import previous contracts that were used **[here](https://github.com/bob
 ```bash
 git clone https://github.com/bobeu/connect-to-celo-using-web3onboard-library.git
 ```
+
 - Navigate into the root folder.
+
 ```bash
 cd connect-to-celo-using-web3onboard-library
 ```
+
 The contracts files reside in the folder named 'foundry' with its path as 'connect-to-celo-using-web3onboard-library/foundry/src'.
 
 > Note:  Before you proceed further, be sure to have completed the steps for setting up foundry **[here](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)**.
@@ -71,6 +74,7 @@ On successful installation, your file structure should look like this:
 ```bash
 cd foundry
 ```
+
 Run the command to install the forge standard library.
 
 ```bash
@@ -88,11 +92,12 @@ forge install --no-commit https://github.com/OpenZeppelin/openzeppelin-contracts
 
 Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 
-- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is a function declaration/interface for interacting with the main application that will be implemented in the 'Vault' contract. 
+- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is a function declaration/interface for interacting with the main application that will be implemented in the 'Vault' contract.
 
 ```bash
 function compoundStaking() external payable returns(bool);
 ```
+
 _src/interfaces/IVault.sol_
 
 ![image](images/2.png)
@@ -101,7 +106,7 @@ _src/interfaces/IVault.sol_
 
 In this file, we need to make some adjustments.
 
-- Replace the "_stake()" function with the following code. 
+- Replace the "_stake()" function with the following code.
 - To accommodate compounded staking, we introduced a flag `isCompounded` to differentiate whether a user is staking as usual or in compounded mode.
 - We use the `speed` property to determine the reward.
 
@@ -171,10 +176,10 @@ The updated code is now compatible with the previous version.
 ```bash
 forge build
 ```
+
 _Compile successfully_
 
 ![image](images/4.png)
-
 
 **Testing**
 
@@ -193,11 +198,13 @@ Before running the test command, we should test our new function to ensure it wo
     assertEq(token.balanceOf(stk.account), 0);
   }
 ```
+
 Run the command, and the test should pass as expected.
 
 ```bash
 forge test
 ```
+
 ![image](images/5.png)
 
 **Deployment**
@@ -223,19 +230,21 @@ cd stakingdapp-on-celo/frontend
 ```bash
 yarn install
 ```
+
 Our focus is to have a simple user interface that can interact with our contracts. The current backend uses multiple providers and 'ethers' internally.
 
 > Note: If you use Coinbase browser extension, the wallet pop-up experience from the injected function is handled by the Coinbase wallet popup.
 
 **What is web3React?**
 
-Web3React developed by 'Noah Zinnsmeister' is one of the known and popular methods of integrating wallet providers into dApps. 
+Web3React developed by 'Noah Zinnsmeister' is one of the known and popular methods of integrating wallet providers into dApps.
 
 Having a single provider in your dapp could amount to a single point of failure if the provider experiences downtime. One of the benefits of web3React is to provide a smooth web3 experience interacting with the blockchain. It supports varieties of wallets such as such as Metamask, Coinbase, walletConnect, etc. A fascinating side is that each of the supported wallets i.e providers can be installed as a standalone package/plugin for web3React. However, you are free to implement whichever wallet (s) best fits your need. In this guide, we are implementing three (2) providers: Metamask and WalletConnect, each of which gives us similar functionalities for interacting with the Celo network.
 
 **Installation**
 
 Install Web3React along with the provider packages:
+
 - WalletConnect SDK, and
 - Injected Wallet SDK
 
@@ -284,7 +293,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 - Import 'Web3ReactProvider' and use it as our top-level tag that wraps the entire application.
 
-- The component accepts an argument - _getLibrary_ and we supply the `fetchLibrary()` which also accepts a provider of type 'any'. This is because we cannot determine the choice of provider users will make ahead of time. On initialization, the function is called and the injected wallet is parsed as the default connector, 
+- The component accepts an argument - _getLibrary_ and we supply the `fetchLibrary()` which also accepts a provider of type 'any'. This is because we cannot determine the choice of provider users will make ahead of time. On initialization, the function is called and the injected wallet is parsed as the default connector,
 
 **pages/index.tsx**
 
@@ -358,7 +367,7 @@ export default function Home() {
 - Import the connectors packages.
 - Create new instances of the connectors with parameters correctly supplied. We supplied `44787` as the only supported chains to the constructors.
 - We will ask users to select from a list of available providers.
-- When users first visit your dapp, they might not be connected to your supported network. You could automate the process of switching or add the supported network to users' wallets if they trigger an action. They will be notified if they really want to complete the action. You could use the library's provider to achieve this but I prefer a custom `switchNetwork` method. 
+- When users first visit your dapp, they might not be connected to your supported network. You could automate the process of switching or add the supported network to users' wallets if they trigger an action. They will be notified if they really want to complete the action. You could use the library's provider to achieve this but I prefer a custom `switchNetwork` method.
 
 **components/LandingPage.tsx**
 
@@ -517,7 +526,6 @@ case 'compoundStaking':
 
 In case you need clarification with the explanation, the complete source code can be found **[here](https://github.com/bobeu/connect-and-interact-with-celo-using-web3react)**.
 
-
 ## Conclusion​
 
 What we have learned so far:
@@ -528,6 +536,7 @@ What we have learned so far:
 - Manage your dApp using web3React.
 
 ## What next?
+
 ​
 You can edit the code to your taste. At this point, you should be able to launch your own project as a Celo developer. If you are confused anywhere in the tutorial, I left a link to the full source code in the _references_ section. Go over it as many times as you can. In no time, you will get a good grasp. Celo is an EVM-compatible blockchain. You can leverage the various web3 tools to build your dream application. Get started with **[Celo documentation](https://docs.celo.org/tutorials)**
 
