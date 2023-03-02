@@ -112,6 +112,7 @@ export type TagType =
   | "subgraphs"
   | "tokens"
   | "truffle"
+  | "typescript"
   | "usecontractkit"
   | "valora"
   | "verification"
@@ -689,12 +690,20 @@ const Users: User[] = [
   //   website: '/tutorials?tags=composer',
   //   tags: ['favorite'],
   // },
+
   {
     title: " Celo Composer",
     description: "Build on Celo in 5 minutes of less with Celo Composer.",
     preview: require("./showcase/celo-composer.png"),
     website: "/tutorials?tags=composer",
     tags: ["favorite"],
+  },
+  {
+    title: ' A Comprehensive Guide to Comparing Hardware and Software Wallets on Celo',
+    description: 'This tutorial will explain the differences between software and hardware wallets, and how to choose the right one for you.',
+    preview: require('./showcase/beginner/A-Comprehensive-Guide-to-Comparing-Hardware-and-Software-Wallets-What-You-Need-to-Know.png'),
+    website: '/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo',
+    tags: ['beginner','celosage','celo'],
   },
   {
     title: 'How to Transition from Web2 to Web3',
@@ -1110,13 +1119,6 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain',
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
-   {
-    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
-    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
-    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
-    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
-    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
-  },
   {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
@@ -1159,7 +1161,14 @@ const Users: User[] = [
     preview: require('./showcase/beginner/pros.png'),
     website: 'blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications',
     tags: ['celosage', 'beginner', 'foundation'],
-    },
+  },
+  {
+    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
+    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
+    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
+    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
+    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
+  },
   {
     title: 'Celo Composer - Easily Build Full-Stack Mobile dApps on Celo',
     description: 'Quickly develop full-stack progressive web applications on Celo with the Celo Composer.',
@@ -1222,6 +1231,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/Auction.png'),
     website: 'blog/tutorials/Understanding-the-Fundamentals-of-Auction-Programming-in-Solidity',
     tags: ['celo', 'intermediate', 'celosage'],
+  },
+  { 
+    title: 'Understanding the Role of Proposals and Referendums in Celo Governance',
+    description: 'A Comprehensive Breakdown of the Role of Proposals and Referendums in Celo Governance',
+    preview: require('./showcase/intermediate/celo-governance.png'),
+    website: 'blog/tutorials/Understanding-the-Role-of-Proposals-and-Referendums-in-Celo-Governance',
+    tags: ['intermediate','celo', 'celosage'],
   },
   { 
     title: 'Create a React Based DApp on Celo',
@@ -1929,6 +1945,27 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },
+  {
+    title: 'How to Use Hardware Tools with the Celo Blockchain',
+    description: 'In this series, we will explore how hardware is driving the adoption of the Celo blockchain',
+    preview: require('./showcase/intermediate/how-to-use-hardware-tools-with-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-use-hardware-tools-with-the-celo-blockchain',
+    tags: ['intermediate','celo','celosage'],
+  },
+  {
+    title: 'Build feature-rich, persistent dapp on celo using wagmi',
+    description: 'An alternative method of connecting to Celo networks',
+    preview: require('./showcase/advanced/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi.png'),
+    website: 'blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi',
+    tags: ['hardhat', 'celosage', 'solidity', 'react', 'nextjs', 'materialui', 'typescript'],
+  },
+  {
+    title: 'Why you should Build your Next Project on the Celo Blockchain',
+    description: 'This tutorial examines the features and capabilities of the Celo Blockchain',
+    preview: require('./showcase/beginner/why-you-should-build-your-next-project-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain',
+    tags: ['celosage','beginner','celo'],
   },
   {
     title: 'Simplifying the Celo 2.0 Roadmap for Celo Builders',
