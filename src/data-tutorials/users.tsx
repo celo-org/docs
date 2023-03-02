@@ -1731,7 +1731,7 @@ const Users: User[] = [
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
     website: 'blog/tutorials/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer',
-    tags: ['intermediate', 'hardhat', 'celosage', 'solidity', 'celo-composer', 'react-celo', 'gas-fee-support'],
+    tags: ['intermediate', 'hardhat', 'celosage', 'solidity'],
   },
   /*
   Pro Tip: add your site in alphabetical order.

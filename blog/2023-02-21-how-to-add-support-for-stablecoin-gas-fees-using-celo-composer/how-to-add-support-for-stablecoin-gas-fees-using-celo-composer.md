@@ -22,11 +22,11 @@ This tutorial will show you how to use Celo Composer to add support for stableco
 
 The assumption made in this tutorial is that you are already familiar with solidity and are aware of how smart contracts operate. It will be expected that you are familiar with how to use your preferred web3 tooling to deploy smart contracts to a network (Hardhat, Truffle, etc). Due to Celo's compatibility with the Ethereum Virtual Machine (EVM), all the languages and workflows you learnt when developing for other EVM chains also apply to Celo.
 
- - Basic knowledge of JavaScript and ReactJS.
- - Understanding of the basics of blockchain and Ethereum.
- - Knowledge of Solidity, the programming language for - writing smart contracts on CELO.
- - A wallet for interacting with the CELO network, such as Celo Wallet Extension, Valora etc.
- - Understanding of concepts like smart contract deployment, transactions, gas, and Web3 providers.
+- Basic knowledge of JavaScript and ReactJS.
+- Understanding of the basics of blockchain and Ethereum.
+- Knowledge of Solidity, the programming language for - writing smart contracts on CELO.
+- A wallet for interacting with the CELO network, such as Celo Wallet Extension, Valora etc.
+- Understanding of concepts like smart contract deployment, transactions, gas, and Web3 providers.
 
 ## Getting Started
 
@@ -46,12 +46,12 @@ npx @celo/celo-composer create
 
 ![create celo-composer](./images/screenshot-1.png)
 
- - If you don’t have celo-compoer installed press enter to continue
- - Choose React when asked for the framework
+- If you don’t have celo-compoer installed press enter to continue
+- Choose React when asked for the framework
 
 ![select react app](./images/screenshot-2.png)
 
- - Then choose React Celo for the web3 library
+- Then choose React Celo for the web3 library
 
 ![select web3 library](./images/screenshot-3.png)
 
@@ -59,26 +59,24 @@ Choose hardhat (Only Hardhat is available at the time of writing this tutorial)
 
 ![select hardhart](./images/screenshot-4.png)
 
- - Skip subgraph, we won’t use it in this tutorial.
-	
-
+- Skip subgraph, we won’t use it in this tutorial.
+ 
 Your Project will now be created; you can check to make sure it has the following folders
 
- - packages/hardhat - Your Hardhat Folder - Where you can keep your Contracts
- - packages/react-app - Your React project
+- packages/hardhat - Your Hardhat Folder - Where you can keep your Contracts
+- packages/react-app - Your React project
 
 ## Setup the Smart Contract
 
- - Open your Hardhat project folder (packages/hardhat) 
+- Open your Hardhat project folder (packages/hardhat)
 
- - Copy the .envexample to a new file called .env. This is where the private key you use to deploy your contracts will be saved.
+- Copy the .envexample to a new file called .env. This is where the private key you use to deploy your contracts will be saved.
 
- - Fill in the private key with your Celo wallet private key. You might want to get some Alfajores (Testnet) coins from the Celo Faucet
+- Fill in the private key with your Celo wallet private key. You might want to get some Alfajores (Testnet) coins from the Celo Faucet
 
- - Open your Contracts folder (packages/hardhat/contracts)
+- Open your Contracts folder (packages/hardhat/contracts)
 
- - Add a new contract in the folder called CeloMarketPlace.sol
-
+- Add a new contract in the folder called CeloMarketPlace.sol
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -216,12 +214,12 @@ The **CeloMarketPlace** contract implements the following functions:
 Note: At the time of writing this article there is no way to implement paying the gas fee with a stable token in your smart contract but thanks to **@celo/contractkit** allow us to set what token to use for the gas fee in our frontend.
 
 ### Deploy Your Smart contract
-	
+ 
 Your hardhat project was set up with the hardhat-deploy plugin which makes deployments very easy.
 
 To deploy, go to the deploy folder, open the 00-deploy.js file, and you will see an example deployment function for the existing Greeter contract.
 
-Copy the 00-deploy.js file and paste it to a new file called 01-deploy-CeloMarketPlace.js. 
+Copy the 00-deploy.js file and paste it to a new file called 01-deploy-CeloMarketPlace.js.
 
 Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the 00-deploy file first, and then run the 01-deploy-nftauction.js file next.
 
@@ -245,7 +243,6 @@ Deploy the Contracts by running the following commands on any terminal (make sur
 npx hardhat deploy –network alfajores
 ```
 
-
 If all is well, you should see a message from hardhat with the transaction hash of your Contract deployment and the address of your new Contract
 
 You can now view your contract on the CELO explorer (Alfajores) using the address.
@@ -259,7 +256,6 @@ Switch to the angular project in your terminal
 ```bash
 cd packages/react-app
 ```
-
 
 Now install the needed packages
 
@@ -505,7 +501,6 @@ let [componentInitialized, setComponentInitialized] = useState(false);
 
 Inside Header component, with useEffect we are checking if user already connect their wallet then show user their address and a disconnect button else a connect button. So basically we modified the section below to add user wallet address using one of the function we have in our utils/address.ts file and also created another components named Identicon to render an icon for for user based on their wallet address.
 
-
 ```javascript
       {componentInitialized && address ? (
         <>
@@ -532,11 +527,9 @@ Inside Header component, with useEffect we are checking if user already connect 
       )}
 ```
 
-
 **Create Product Card**
 
 Open the components folder, and create a file component to render the user product. Here our product card props have two values data with type Product & buy method means that the user will able to click on buy if the product is yet to be bought else the buy button is disabled.
-
 
 ```javascript
 import { shortenAddress } from "@/utils/address";
@@ -706,7 +699,6 @@ export default function Home() {
 
 The home page is where most of our logic has been implemented.
 
-
 ```javascript
 import ProductCard from "@/components/ProductCard";
 import { useContract } from "@/hooks/useContract";
@@ -836,8 +828,7 @@ export default function Home() {
  };
 ```
 
-
-**handleBuy**: This is where most of your logic happens like handling gas fee payments and processing the buy method from the blockchain. performActions is an async method from useCelo in **@celo/react-celo** package that returns a miniContractKit method which can be used to connect to any contract. 
+**handleBuy**: This is where most of your logic happens like handling gas fee payments and processing the buy method from the blockchain. performActions is an async method from useCelo in **@celo/react-celo** package that returns a miniContractKit method which can be used to connect to any contract.
 
 ```javascript
 const handleBuy = async (product: Product) => {
@@ -891,10 +882,9 @@ Note: Gas price must be set manually because contractkit pre-populates it and it
 
 ![select hardhart](./images/screenshot-8.png)
 
-
 ## Conclusion
 
-Congratulations, you have now learned how to add support for Stablecoin gas fees using Celo Composer. You have seen how to connect with a blockchain wallet, interact with Smart Contracts using Celo-Contractkit. 
+Congratulations, you have now learned how to add support for Stablecoin gas fees using Celo Composer. You have seen how to connect with a blockchain wallet, interact with Smart Contracts using Celo-Contractkit.
 
 ## About the Author
 
@@ -911,13 +901,3 @@ Solidity by example [https://solidity-by-example.org/](https://solidity-by-examp
 Celo Contractkit: [https://docs.celo.org/developer/contractkit/usage](https://docs.celo.org/developer/contractkit/usage)
 
 Stable Coin Gas Fee Support: [https://github.com/Mujhtech/stable-coin-gas-fee-support](https://github.com/Mujhtech/stable-coin-gas-fee-support)
-
-
-
-
-
-
-
-
-
-
