@@ -20,6 +20,8 @@ Upgradable smart contracts allow developers to change the functionality of a dep
 
 There are several tools and frameworks that can be used to create upgradable smart contracts, but in this tutorial we will focus on using Hardhat with the OpenZeppelin Upgrades Plugins. Hardhat is a popular development environment for building and testing smart contracts, while the OpenZeppelin Upgrades Plugins provide a simple and secure way to create upgradable smart contracts. [click here](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable) to learn more about openzeppelin upgradable smart contract.
 
+[Click Here](https://github.com/4undRaiser/upgradable-smartcontract-tutorial) to get the full code from the repository
+
 ## Requirements
 
 NodeJS 12.0.1 upwards installed.
@@ -361,6 +363,8 @@ MessageContract Upgrade
   2 passing (3s)
 ```
 Congrat!! You have Sucessfully upgraded your smart contracts
+
+[Click Here](https://github.com/4undRaiser/upgradable-smartcontract-tutorial) to get the full code from the repository
 
 ## Conclusions
 
