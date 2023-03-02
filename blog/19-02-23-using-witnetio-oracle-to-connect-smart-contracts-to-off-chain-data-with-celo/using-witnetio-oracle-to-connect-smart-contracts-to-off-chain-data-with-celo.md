@@ -1,5 +1,5 @@
 ---
-title: Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo.
+title: Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo
 description: Connecting smart contracts to off-chain data on the Celo platform is made possible through the integration of the decentralized oracle network, Witnet.io!
 authors:
   - name: Kunal Dawar
@@ -11,7 +11,7 @@ hide_table_of_contents: false
 slug: /tutorials/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo
 ---
 
-![header](https://i.imgur.com/9aGo8gm.png)
+![header](../../src/data-tutorials/showcase/intermediate/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo.png)
 
 ## 🌱 Introduction
 
@@ -61,7 +61,7 @@ Dynamic NFTs, also known as Non-Fungible Tokens, are unique digital assets that 
 To learn more about setting up the environment to create NFTs using Witnet.io and Celo, check out the **[step-by-step guide to deploying your first full-stack dApp on Celo](https://docs.celo.org/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo#steps-to-set-up-the-truffle-project-and-its-configs)**, which provides detailed instructions on getting started.
 :::
 
-## Smart Contract to Create Dynamic Price Feed NFT using Witnet.io Off-chain data on Celo Blockchain.
+## Smart Contract to Create Dynamic Price Feed NFT using Witnet.io Off-chain data on Celo Blockchain
 
 ```solidity
 // SPDX-License-Identifier: MIT
