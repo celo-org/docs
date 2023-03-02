@@ -19,12 +19,12 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 - [Portal (Wormhole)](https://www.portalbridge.com/#/transfer)
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
-- [Multichain (Previously Anyswap)](multichain.org)
+- [Multichain (Previously Anyswap)](https://multichain.org)
 - [Satellite (Axelar)](https://satellite.money/)
 - [Celer](https://cbridge.celer.network/1/10/USDC)
 - [O3](https://o3swap.com/)
 - [Orbit Bridge](https://bridge.orbitchain.io/)
-- [Optics](optics.app)
+- [Optics](https://optics.app)
 
 ## Cross-Chain Messaging
 
@@ -32,4 +32,4 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [Wormhole](https://wormhole.com/)
 - [Layer Zero](https://layerzero.network/)
 - [Axelar Network](https://axelar.network/)
-- [Optics](optics.app)
+- [Optics](https://optics.app)

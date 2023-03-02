@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,intermediate,celosage,truffle,smartcontract,solidity,flutter]
+tags: [celo,celosage,truffle,smartcontract,solidity,flutter, advanced]
 hide_table_of_contents: true
 slug: /tutorials/build-a-simple-forum-dapp-with-flutter-on-celo
 ---
@@ -27,40 +27,41 @@ Here's what we're aiming to build.
 By adding comment threads such as this around our app we can let our users have conversations anywhere about anything!
 
 ## Prerequisites
+
 First, This tutorial assumes that you are already familiar with solidity and understand how smart contracts work and also assumes that you already know the basics of using Flutter or you can  please clone the [flutter web3 celo](https://github.com/Mujhtech/flutter-web3-celo). You'll also want to make sure you've installed the MetaMask Mobile App and have a MetaMask account. If you'd like, see our prior tutorial Setting Up Your Wallet for more details on this.
 
 For this project we'll be using a few interesting dependencies & dev dependencies:
 
- - [walletconnect_dart](https://pub.dev/packages/walletconnect_dart/example)
- - [provider](https://pub.dev/packages/provider/example)
- - [http](https://pub.dev/packages/http/example)
- - [url_launcher](https://pub.dev/packages/url_launcher/example)
- - [jazzicon](https://pub.dev/packages/jazzicon/example)
- - [web3dart](https://pub.dev/packages/web3dart/example)
+- [walletconnect_dart](https://pub.dev/packages/walletconnect_dart/example)
+- [provider](https://pub.dev/packages/provider/example)
+- [http](https://pub.dev/packages/http/example)
+- [url_launcher](https://pub.dev/packages/url_launcher/example)
+- [jazzicon](https://pub.dev/packages/jazzicon/example)
+- [web3dart](https://pub.dev/packages/web3dart/example)
 
 For dev dependencies:
- - [build_runner](https://pub.dev/packages/build_runner)
- - [web3dart_builders](https://pub.dev/packages/web3dart_builders)
+
+- [build_runner](https://pub.dev/packages/build_runner)
+- [web3dart_builders](https://pub.dev/packages/web3dart_builders)
 
 We'll walk you through each one as we go and show you how to use them in combination to write some awesome dapps.
 
 ## Getting Started
+
 I assume that anyone going through this tutorial already understands and uses Flutter, so I will skip the setup involved in getting Flutter to work on your development computer. That means I assume you already have VS Code/Android Studio together with Android SDK and Flutter setup on your PC.
 
 *If you are entirely new to Flutter, here [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) is a good tutorial you can learn from.
 
-
-To get started, you can clone this repository flutter-web3-celo or make use of Celo Composer. 
+To get started, you can clone this repository flutter-web3-celo or make use of Celo Composer.
 
 Celo Composer is a set of tools and starter templates that makes it easy for you to start your Celo-based web3 projects.
-
 
 You can check out Celo Composer here [https://github.com/celo-org/celo-composer/tree/main/packages/flutter-app](https://github.com/celo-org/celo-composer/tree/main/packages/flutter-app).
 
 ### Using Celo Composer
 
 To start our Flutter App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp. In other to do that you need to have Node set up on your PC and you can visit Node to get started. Run this on your terminal after setup Node.
-	
+ 
 ```bash
 npx @celo/celo-composer create
 ```
@@ -68,26 +69,31 @@ npx @celo/celo-composer create
 Choose Flutter when asked for the framework
 
 Choose hardhat (Only Hardhat is available at the time of writing this tutorial)
-	
-
+ 
 Your Project will now be created; you can check to make sure it has the following folders
 
 packages/hardhat - Your Hardhat Folder - Where you can keep your Contracts
 packages/flutter-app - Your Flutter project
+
 ## Setup the Smart Contract
+
 Okay, now that everything is set up, let's start with our smart contract.
+
 ### Design
+
 For comments, we'll need a data structure that should contain the following information:
- - An id
- - The topic to which the comment belongs
- - A message
- - The creator
- - A timestamp
+
+- An id
+- The topic to which the comment belongs
+- A message
+- The creator
+- A timestamp
 
 We will also need the following few things for our UI (Flutter):
- - A way to fetch a list of comments for a specific topic
- - A way to add a new comment
- - A way to receive updates about comments that have been added
+
+- A way to fetch a list of comments for a specific topic
+- A way to add a new comment
+- A way to receive updates about comments that have been added
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -139,19 +145,20 @@ contract ForumV1 {
 
 The ForumV1 Contract has two functions
 
- - addComment: allows you to create a new comment; it stores the created comments using topic in the commentsByTopic mapping
- - getComments: a method to access all comments by topic
+- addComment: allows you to create a new comment; it stores the created comments using topic in the commentsByTopic mapping
+- getComments: a method to access all comments by topic
 
 ### Deploy Smart contract
- - Open your Hardhat project folder (packages/hardhat) 
 
- - Copy the .envexample to a new file called .env. This is where the private key you use to deploy your contracts will be saved.
+- Open your Hardhat project folder (packages/hardhat)
 
- - Fill in the private key with your Celo wallet private key. You might want to get some Alfajores (Testnet) coins from the Celo Faucet
+- Copy the .envexample to a new file called .env. This is where the private key you use to deploy your contracts will be saved.
 
- - Open your Contracts folder (packages/hardhat/contracts)
+- Fill in the private key with your Celo wallet private key. You might want to get some Alfajores (Testnet) coins from the Celo Faucet
 
- - Add a new contract in the folder called ForumV1.sol and paste the above contract into the contract file.
+- Open your Contracts folder (packages/hardhat/contracts)
+
+- Add a new contract in the folder called ForumV1.sol and paste the above contract into the contract file.
 
 Your hardhat project was set up with the hardhat-deploy plugin which makes deployments very easy.
 
@@ -179,7 +186,6 @@ Deploy the Contracts by running the following commands on any terminal (make sur
 npx hardhat deploy –network alfajores
 ```
 
-
 If all is well, you should see a message from hardhat with the transaction hash of your Contract deployment and the address of your new Contract
 
 You can now view your contract on the CELO explorer (Alfajores) using the address.
@@ -187,34 +193,37 @@ You can now view your contract on the CELO explorer (Alfajores) using the addres
 Now that we have deployed our contract let’s build the dApp.
 
 ## The UI (Flutter)
+
 If you have a look at CELO Composer you'll see that the starter code came with some UI boilerplate. Run your flutter project and you should be able to get the following UI.
 
 ![boiler-plate splash screen](./images/boilerplate-screen1.png)![boiler-plate home screen](./images/boilerplate-screen2.png)
 
 ### Directory Structure
- - ```.vscode``` — VSCode settings including code snippets, recommended extensions etc.
- - ```android``` — Contains all the Android-specific code.
- - ```ios``` — Contains all the IOS-specific code.
- - ```lib``` — Core modules, controllers, UI Code, constants, etc.
- - ```.gitignore``` — A gitignore file specifies intentionally untracked files that Git should ignore.
- - ```pubspec.yaml``` — A pubspec is generated when you create a new Flutter project.
+
+- ```.vscode``` — VSCode settings including code snippets, recommended extensions etc.
+- ```android``` — Contains all the Android-specific code.
+- ```ios``` — Contains all the IOS-specific code.
+- ```lib``` — Core modules, controllers, UI Code, constants, etc.
+- ```.gitignore``` — A gitignore file specifies intentionally untracked files that Git should ignore.
+- ```pubspec.yaml``` — A pubspec is generated when you create a new Flutter project.
 
 First, make sure that the following packages are all installed and to do so you can check your ```pubspec.yaml``` file
 
- - [walletconnect_dart](https://pub.dev/packages/walletconnect_dart/example) : WalletConnect is an open-source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking. A user can interact securely with any Dapp from their mobile phone, making WalletConnect wallets a safer choice compared to desktop or browser extension wallets.
+- [walletconnect_dart](https://pub.dev/packages/walletconnect_dart/example) : WalletConnect is an open-source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking. A user can interact securely with any Dapp from their mobile phone, making WalletConnect wallets a safer choice compared to desktop or browser extension wallets.
 
- - [provider](https://pub.dev/packages/provider/example) : A simple flutter package to manage state
- - [http](https://pub.dev/packages/http/example) : A composable, Future-based library for making HTTP requests.
- - [url_launcher](https://pub.dev/packages/url_launcher/example) :  A Flutter plugin for launching a URL.
- - [jazzicon](https://pub.dev/packages/jazzicon/example) : This package contains how to make Idention. Identicon usually uses as an avatar of your wallet/crypto avatar. it is unique because generated by your address.
- - [web3dart](https://pub.dev/packages/web3dart/example) : A dart library that connects to interact with the Ethereum blockchain. It connects to an Ethereum node to send transactions, interact with smart contracts, and much more!
- - [build_runner](https://pub.dev/packages/build_runner) : This package provides a concrete way of generating files using Dart code, outside of tools like pub
- - [web3dart_builders](https://pub.dev/packages/web3dart_builders) : This package is an extension of the web3dart package that includes the dart contract generator from ABI.
+- [provider](https://pub.dev/packages/provider/example) : A simple flutter package to manage state
+- [http](https://pub.dev/packages/http/example) : A composable, Future-based library for making HTTP requests.
+- [url_launcher](https://pub.dev/packages/url_launcher/example) :  A Flutter plugin for launching a URL.
+- [jazzicon](https://pub.dev/packages/jazzicon/example) : This package contains how to make Idention. Identicon usually uses as an avatar of your wallet/crypto avatar. it is unique because generated by your address.
+- [web3dart](https://pub.dev/packages/web3dart/example) : A dart library that connects to interact with the Ethereum blockchain. It connects to an Ethereum node to send transactions, interact with smart contracts, and much more!
+- [build_runner](https://pub.dev/packages/build_runner) : This package provides a concrete way of generating files using Dart code, outside of tools like pub
+- [web3dart_builders](https://pub.dev/packages/web3dart_builders) : This package is an extension of the web3dart package that includes the dart contract generator from ABI.
 
 We will need the ABI of our deployed contracts and the address deployed, to make any call to our smart contract.
 
 ### What is an ABI?
-An ABI - Application Binary Interface - defines the methods, types, and structures used to interact with your binary smart contract. You can think of it like an API, they both expose the structure or interfaces that allow other contracts or programs to call them. The ABI exposes the function signatures and variable declarations in a smart contract and is often represented in JSON. 
+
+An ABI - Application Binary Interface - defines the methods, types, and structures used to interact with your binary smart contract. You can think of it like an API, they both expose the structure or interfaces that allow other contracts or programs to call them. The ABI exposes the function signatures and variable declarations in a smart contract and is often represented in JSON.
 Hardhat often generates the ABIs for our contracts when we compile them, and the ABIs are often stored in the artifacts folder.
 
 Let’s copy our Contract ABIs into our project.
@@ -226,13 +235,17 @@ Run this in your terminal
 ```bash
 flutter pub run build_runner build
 ```
+
 or
+
 ```bash
 flutter pub run build_runner watch
 ```
+
 This will generate a dart file to represent our smart contract object named ```forumV1.g.dart```.
 
 ### Models
+
 Forum Model is an object to represent the incoming data from our smart contract.
 
 ```dart
@@ -461,8 +474,8 @@ class _ChatInputFieldState extends State<ChatInputField> {
 }
 
 ```
-Message Component is a simple custom widget that displays comment and their creator and it makes use of the Jazzicon widget to render user avatars based on their wallet address.
 
+Message Component is a simple custom widget that displays comment and their creator and it makes use of the Jazzicon widget to render user avatars based on their wallet address.
 
 ```dart
 /// lib/components/message.dart
@@ -540,7 +553,9 @@ class _MessageState extends State<Message> {
 }
 
 ```
+
 ### Constants
+
 This file provides some constant us with some constant variables like color, RPC Url, chainId, etc.
 
 ```dart
@@ -566,6 +581,7 @@ class GlobalConstants {
 ```
 
 ### Utilities
+
 ```WalletConnectEthereumCredentials``` is  a class object that implements a custom transaction sender object on the web3dart package
 
 ```dart
@@ -635,6 +651,7 @@ class WalletConnectEthereumCredentials extends CustomTransactionSender {
 }
 
 ```
+
 ```WalletConnectHelper``` is a simple object utility class for implementing Walletconnect protocol using deep linking to connect to different wallet apps e.g Trust Wallet, Metamask etc. Note at the time of testing this didn’t work with Valora Wallet App
 
 ```dart
@@ -776,6 +793,7 @@ class WalletConnectHelper {
 }
 
 ```
+
 DeeplinkUtil is a utility class to extract deep link URLs based on mobile platform OS.
 
 ```dart
@@ -805,7 +823,9 @@ class DeeplinkUtil {
 }
 
 ```
+
 ### Controllers
+
 WalletController is an object that implements the ChangeNotifier object and notifies our UI of any changes like when user connect their wallet, user add new comments, the user disconnects their wallet, etc.
 
 ```dart
@@ -947,6 +967,7 @@ class WalletController extends ChangeNotifier {
 }
 
 ```
+
 Basically below are some methods in WalletConnect Controller and their uses.
 
 ```connectWallet```: This method gets called when the user clicks to connect their wallet app and with the help of wallet connect helper it automatically opens a deep link URL for a user to select and compatible wallet app and continue after a successful connection is initiated a web3 client is been created which will be used to interact with our blockchain network i.e Celo Testnet network then get the user wallet address and get user balance in case we want to display user wallet balance based on the selected network.
@@ -960,8 +981,8 @@ Basically below are some methods in WalletConnect Controller and their uses.
 Note: Throughout this tutorial, we are using ```Celo Sage``` as our topic in the smart contract which means to have many topics you can make use of any local storage package to save user topics and fetch comments based on those topics [shared_preferences](https://pub.dev/packages/shared_preferences) is an excellent example of local storage package to go with.
 
 ### Views
-Our app entry point listened to a Multiprovider, in this case, we are only listening to WalletConnectController then redirecting users to a splash screen where user can connect their wallet app for authentication.
 
+Our app entry point listened to a Multiprovider, in this case, we are only listening to WalletConnectController then redirecting users to a splash screen where user can connect their wallet app for authentication.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -1012,6 +1033,7 @@ class MyApp extends StatelessWidget {
 }
 
 ```
+
 Splash Screen: First screen show the user to connect their wallet address.
 
 ```dart
@@ -1063,6 +1085,7 @@ class SplashPage extends StatelessWidget {
 }
 
 ```
+
 ```Home page```: This page renders all comments based on the topic provider ```Celo Sage``` and chat input field for the user to enter new comments
 
 ```dart
@@ -1131,18 +1154,15 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 ## Conclusion
-Congratulations, you have now learned how to build a real-world dApp using Flutter. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain. 
+
+Congratulations, you have now learned how to build a real-world dApp using Flutter. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain.
 
 ## About the Author
+
 I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blockchain) also and Ex-GDSC Leads.
 
 ## References
 
 - Celo Composer [https://github.com/celo-org/celo-composer](https://github.com/celo-org/celo-composer)
 - Flutter [https://flutter.dev](https://flutter.dev)
-- Solidity by example [https://solidity-by-example.org/](https://solidity-by-example.org/) 
-
-
-
-
-
+- Solidity by example [https://solidity-by-example.org/](https://solidity-by-example.org/)
