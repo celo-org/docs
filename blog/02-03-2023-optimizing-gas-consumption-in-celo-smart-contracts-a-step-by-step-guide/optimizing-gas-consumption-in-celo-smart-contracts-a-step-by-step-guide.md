@@ -1,6 +1,6 @@
 ---
 title: Optimizing Gas Consumption in Celo Smart Contracts: A Step-by-Step Guide
-description: In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas. You will gain a deep understanding of gas, the key metric for measuring the cost of executing a smart contract on the Celo network. Through hands-on examples and best practices, you will discover how to write more efficient code and minimize gas usage in your Celo dApps. Whether you're a seasoned blockchain developer or just starting out, this tutorial will equip you with the skills and knowledge to build scalable, cost-effective smart contracts on the Celo platform.
+description: In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.
 
 
 authors:
@@ -14,11 +14,11 @@ slug: /tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-st
 
 ![header](../../src/data-tutorials/showcase/intermediate/Optimizing_Gas_Consumption_in_Celo_Smart_Contracts.png)
 
-# Introduction​
+## Introduction​
 
 Gas is the unit of currency used to pay transaction fees on the Celo blockchain. This makes optimizing gas consumption an important consideration when developing smart contracts professionally. In this tutorial, we'll explore some techniques for minimizing gas usage in Solidity smart contracts and demonstrate how to use the Hardhat gas reporter to test the efficiency of our code.
 
-# Prerequisites​
+## Prerequisites​
 
 To follow this tutorial, you will need:
 
@@ -27,7 +27,7 @@ To follow this tutorial, you will need:
 
 * An understanding of gas fees and how they are calculated on the Celo network. This knowledge will help us understand the optimizations we will make in this tutorial.
 
-# Requirements
+## Requirements
 
 To follow along with this tutorial, you will need the following:
 
@@ -48,7 +48,7 @@ yarn add hardhat
 
 * Basic knowledge of JavaScript and familiarity with testing frameworks like Mocha and Chai.
 
-# Setting up your environment
+## Setting up your environment
 
 Before we get started, we need to set up our development environment. As we said before, we'll be using hardhat for the major development of the project.
 
@@ -449,15 +449,15 @@ Here's the unoptimized report:
 
 ![unoptimized report](./images/first-gas-log.PNG)
 
-# Conclusion
+## Conclusion
 
 In conclusion, optimizing gas usage in Solidity smart contracts is essential for reducing transaction costs and improving contract efficiency. By using techniques such as using private instead of public for constants, using view and pure functions, declaring variables with specific data types, and avoiding expensive operations such as loops, developers can significantly reduce gas usage and optimize the contract's performance. With the ever-increasing demand for blockchain-based applications, optimizing gas usage is becoming more critical than ever before, and developers should take it seriously when designing and deploying smart contracts.
 
-# Next Steps
+## Next Steps
 
 After optimizing gas consumption in your Celo smart contracts with the techniques outlined in this step-by-step guide, there are several next steps you can take to continue improving the efficiency and performance of your contracts. Firstly, you can explore using the Solidity optimizer to further optimize the bytecode of your contracts. Additionally, you can consider implementing more advanced gas optimization techniques, such as using storage arrays instead of memory arrays, using structs to group related data, and leveraging the benefits of function modifiers. You can also explore using gas reporting tools and conducting regular gas audits to monitor the gas usage of your contracts over time. Finally, it's always a good idea to stay up-to-date with the latest developments in the Celo ecosystem and Solidity language to ensure you're taking advantage of the most efficient and effective techniques for optimizing gas consumption in your contracts.
 
-# About the Author​
+## About the Author​
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
@@ -466,7 +466,7 @@ Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-# References​
+## References​
 
 [Hardhat docs](https://hardhat.org/hardhat-runner/docs/getting-started#quick-start) | For hardhat set-up
 [Project code](https://github.com/JovanMwesigwa/gas-optimisation-in-celo-smart-contracts) | Github
