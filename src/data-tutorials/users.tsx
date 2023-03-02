@@ -1831,6 +1831,13 @@ const Users: User[] = [
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   {
+    title: 'How to build a crowdfunding platform on Celo',
+    description: 'In this tutorial, we will guide you through the process of building a crowdfunding platform on the Celo blockchain',
+    preview: require('./showcase/advanced/how-to-build-a-crowdfunding-platform-on-celo.png'),
+    website: '/blog/tutorials/how-to-build-a-crowdfunding-platform-on-celo',
+    tags: ['celosage','celo', 'advanced'], 
+  },
+  {
     title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
