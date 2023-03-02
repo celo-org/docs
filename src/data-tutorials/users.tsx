@@ -1817,7 +1817,7 @@ const Users: User[] = [
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   {
-    title: 'Build an nft-gated dapp and deploy on decentralized hosting service',
+    title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',

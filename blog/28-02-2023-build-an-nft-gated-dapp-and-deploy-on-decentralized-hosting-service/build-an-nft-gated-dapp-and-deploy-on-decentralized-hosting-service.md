@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service
 ---
 
-![header](images/1.png)
+![header](../../src/data-tutorials/showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png)
 
 ## Introduction
 
@@ -37,7 +37,7 @@ Before you proceed, please install the following tools:
 
 We will build a decentralized application for swapping ERC20 tokens to $Celo. Detail can be found in the **[readme](https://github.com/bobeu/nft-gated-dapp-dexHosting/README.md)**.
 
-The dApp will be in two parts. The first part is the smart contract that houses Dapp's logic while the other manages the user interface. 
+The dApp will be in two parts. The first part is the smart contract that houses Dapp's logic while the other manages the user interface.
 
 **Smart contracts**
 
@@ -46,6 +46,7 @@ The dApp will be in two parts. The first part is the smart contract that houses 
 ```bash
 git clone https://github.com/bobeu/persistent-dapp-on-celo-using-wagmi.git
 ```
+
 - Navigate to the root folder
 
 ```bash
@@ -57,7 +58,8 @@ cd persistent-dapp-on-celo-using-wagmi/backend
 ```bash
 yarn install
 ```
-All files in the contract folder remain intact as we extend its functionalities by adding a non-fungible asset using the Openzeppelin library. 
+
+All files in the contract folder remain intact as we extend its functionalities by adding a non-fungible asset using the Openzeppelin library.
 
 ## contracts
 
@@ -93,14 +95,13 @@ All files in the contract folder remain intact as we extend its functionalities 
 
     - The `notZeroAddress` modifier ensures that the target address is not empty.
 
-    - NFTs are unique properties or elements of a collection. They could share similar parents i.e be part of a collection but are never the same in properties. To introduce uniqueness, we generate a new NFT by increasing `tokenId`. 
+    - NFTs are unique properties or elements of a collection. They could share similar parents i.e be part of a collection but are never the same in properties. To introduce uniqueness, we generate a new NFT by increasing `tokenId`.
 
     - User addresses that have minted the membership nft are kept in `isMember` storage for reference purposes. This method ensures that no address can mint twice.
 
     - To encourage users to mint our membership nft, we have lowered the swapping fee. But they need to pay a tiny amount in order to have their membership minted. This method has introduced a vulnerability that we need to guard against. A user could mint and transfer or resell to other users. We do not want this to happen. To prevent the occurrence of such an event, we will intercept to place a barrier in the internal function by overriding `_transfer()` so that no one is able to transfer membership. The right to do this is given to the owner.
 
     - We effected the circuit breaker by implementing the `pause` and `unpause` functions.
-    
 
   ```js
   // SPDX-License-Identifier: Unlicense
@@ -193,6 +194,7 @@ All files in the contract folder remain intact as we extend its functionalities 
 ```bash
 npx hardhat compile
 ```
+
 ![image](images/2.png)
 
 - Testing
@@ -219,8 +221,7 @@ Deployment artifacts are saved in the `deployments` folder.
 
 This project is NFT-gated hence users will be denied access to the Dapp interactive page unless they already owned our nft. We will build intelligence that automatically detects if users own membership nft otherwise we'll ask them to mint first before granting them access.
 
-
-Exit the current directory into the root folder and install the dependencies: 
+Exit the current directory into the root folder and install the dependencies:
 
 ```bash
 cd ..
@@ -284,11 +285,12 @@ export function Home () {
   )
 }
 ```
+
 - `components/App/Mint/index.tsx`
 
 In this file, we mint new membership nft for new users. In the useEffect function, we watch for the user's balance and compare if greater than zero to authenticate them.
 
-The component renders a button that calls `handleMint` when clicked. If the operation is successful, it will be hidden and the Dapp component is rendered. 
+The component renders a button that calls `handleMint` when clicked. If the operation is successful, it will be hidden and the Dapp component is rendered.
 
 ```ts
 import Stack from '@mui/material/Stack';
@@ -366,14 +368,14 @@ export function Mint (props: SignUprops) {
 
   Move the content of the previous `App/index.tsx` into this file and make the following changes.
 
-  - import the `Mint` component. By default, if the user does not own the $SLU nft, the button components are disabled until otherwise proven true. 
+  - import the `Mint` component. By default, if the user does not own the $SLU nft, the button components are disabled until otherwise proven true.
 
   ```ts
   import getContractData from '../../apis/contractdata';
   import { Mint } from '../Mint';
   ```
 
-  - We dynamically hide some components based on the outcome of the `Mint` component using `getOpacity` function. Every child components in the `Stack` component are blurred out when `getOpacity` returned 0 vice versa. 
+  - We dynamically hide some components based on the outcome of the `Mint` component using `getOpacity` function. Every child components in the `Stack` component are blurred out when `getOpacity` returned 0 vice versa.
 
   ```ts
     const getOpacity = () => {
@@ -412,7 +414,7 @@ export function Mint (props: SignUprops) {
   }
   ```
 
-- Since we reduced the swap fee in the SwapLab contract, we will affect it on the frontend. A place to do that is in the `handleClick` function. 
+- Since we reduced the swap fee in the SwapLab contract, we will affect it on the frontend. A place to do that is in the `handleClick` function.
 
 Reset the conditional statement that checks if functionName equals `'swap'`, then set the swap fee in variable `value` to 1e14 wei equivalent to 0.0001 Celo.
 
@@ -487,7 +489,6 @@ If everything works correctly, you should have the view as follows.
 
 ![image](images/5.png)
 
-
 ## Deploying to decentralized hosting service
 
 At this point, our Dapp's frontend is ready to be deployed to a hosting service. Although there are a couple of decentralized hosting services that we could consider, I have selected to deploy to "Spheron" for its easy, simple, and faster deployment rate.
@@ -496,7 +497,7 @@ Firstly, let us understand what decentralized hosting means. Just as the name im
 
 Spheron provides an easy method of deploying Dapps to developers. With a few clicks, you're there. [Read more](https://spheron.network/). To deploy on either Filecoin or IPFS using Spheron, you will need to sign up on the [website](https://spheron.network/). Select the convenient method. It is recommended to authenticate using GitHub so as to easily extract repositories.  
 
-  - ![image](images/8.png)
+- ![image](images/8.png)
 
 Thereafter, follow these steps:
 
@@ -514,7 +515,7 @@ Thereafter, follow these steps:
 
 >Note: Be sure to trust the app you are granting permission to access your GitHub account.
 
-- Review to select the desired permission. For me, I'd prefer to allow access to selected repositories. 
+- Review to select the desired permission. For me, I'd prefer to allow access to selected repositories.
 
   - ![image](images/10.png)
 
@@ -543,21 +544,20 @@ Thereafter, follow these steps:
 
 ![image](images/17.png)
 
-
 **Demo**
 
 This Dapp is deployed to IPFS using Spheron, and you can interact with it via this **[link](https://nft-gated-dapp-dexhosting-1b22e1.spheron.app/)**
 
 The complete code for this tutorial can be found **[here](https://github.com/bobeu/nft-gated-dapp-dexHosting)**.
 
-
 ## Conclusion​
 
 Congratulation on completing this tutorial. You're a step away from building your dream Dapp on Celo. So far, we have learned to build a full Dapp using solidity, compile, test, and deployed to Celo Alfajores. We also build an interface for users to interact with what we've built. Lastly, we deployed the Dapp to a decentralized hosting service - Spheron. If you're for more tutorials relating to Celo, **[here](https://docs.celo.org/blog/tutorials/)** is a place to get started.
 
 ## What next?
+
 ​
-Are you thinking of launching your own project on the Celo blockchain right now? Kindly visit the **[developers documentation](https://docs.celo.org/tutorials)**. 
+Are you thinking of launching your own project on the Celo blockchain right now? Kindly visit the **[developers documentation](https://docs.celo.org/tutorials)**.
 
 ## About the Author​
 
