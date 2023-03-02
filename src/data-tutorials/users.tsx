@@ -756,12 +756,21 @@ const Users: User[] = [
     tags: ['beginner', 'erc721', 'celosage'],
   },
   {
+    title: 'Integrating Blockchain Technology into Legacy Systems on Celo',
+    description:
+      'Blockchain technology can facilitate new forms of collaboration and innovation by enabling the exchange of information and value between different parties.',
+    preview: require('./showcase/intermediate/blockchain-integration-updating-legacy-systems-with-the-celo-platform.png'),
+    website:
+      '/blog/tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-platform',
+    tags: ['intermediate', 'celosage'],
+  },
+  {
     title: 'Product Discovery é a chave para criar produtos de NFT de sucesso no blockchain Celo',
     description: 'Aprenda como criar produtos de NFT de sucesso no blockchain Celo através de processos de product discovery',
     preview: require('./showcase/intermediate/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo.png'),
     website: 'blog/tutorials/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo',
     tags: ['intermediate', 'erc721', 'celosage'],
-    },
+  },
   {
     title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
     description: 'This tutorial will show you how to create a simple Android app that allows users to make payments using the Celo Java SDK. The app, called "Buy Me A Coffee".',
