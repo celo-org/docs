@@ -1782,6 +1782,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner'],
   },
   {
+    title: 'How to create your first smart contract on the celo blockchain',
+    description: 'This tutorials teaches you how to create your first sample smart contract and deploy it on the celo blockchain',
+    preview: require('./showcase/beginner/create-your-first-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/create-your-first-smart-contract-on-celo',
+    tags: ['celosage', 'remix', 'smartcontract', 'solidity'],
+  },
+  {
     title: 'Build a Simple Forum Dapp with Flutter on Celo',
     description: 'In this tutorial, we will guide you through the process of writing and deploying a simple forum smart contract on the Celo network, and then using Flutter to build a user-friendly interface for interacting with the contract.',
     preview: require('./showcase/intermediate/build-a-simple-forum-dapp-with-flutter-on-celo.png'),
