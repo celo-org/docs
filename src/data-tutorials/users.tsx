@@ -1033,7 +1033,7 @@ const Users: User[] = [
   },
   {
     title: 'Optimizing Gas Consumption in Celo Smart Contracts: A Step-by-Step Guide',
-    description: 'In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas. You will gain a deep understanding of gas, the key metric for measuring the cost of executing a smart contract on the Celo network. Through hands-on examples and best practices, you will discover how to write more efficient code and minimize gas usage in your Celo dApps. Whether you re a seasoned blockchain developer or just starting out, this tutorial will equip you with the skills and knowledge to build scalable, cost-effective smart contracts on the Celo platform.',
+    description: 'In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.',
     preview: require('./showcase/intermediate/Optimizing_Gas_Consumption_in_Celo_Smart_Contracts.png'),
     website: '/blog/tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide',
     tags: ['celosage', 'celo', 'intermediate', 'solidity'],
