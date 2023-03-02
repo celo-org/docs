@@ -901,6 +901,13 @@ const Users: User[] = [
     tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
   },
   {
+    title: 'How to Write Upgradable Smart Contracts and Deploy to the Celo Blockchain',
+    description: 'This tutorial will show you how to write upgradable smart contracts and deploy to the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
