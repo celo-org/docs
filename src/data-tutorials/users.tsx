@@ -748,11 +748,11 @@ const Users: User[] = [
     tags: ['celosage', 'android', 'celo', 'dapp', 'mobile', 'sdk', 'valora', 'advanced'],
   },
   {
-    title: 'Cryptography in Blockchain: An Overview of Hash Functions and Digital Signatures',
+    title: 'Cryptography in Blockchain - An Overview of Hash Functions and Digital Signatures',
     description: ' Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years.',
-    preview: require('./showcase/celo-sage.png'),
+    preview: require('./showcase/intermediate/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures.png'),
     website: '/blog/tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures',
-    tags: ['celosage', 'beginner'],
+    tags: ['celosage', 'intermediate'],
   },
   {
     title: 'Build In Public - Tips for making an impact',
