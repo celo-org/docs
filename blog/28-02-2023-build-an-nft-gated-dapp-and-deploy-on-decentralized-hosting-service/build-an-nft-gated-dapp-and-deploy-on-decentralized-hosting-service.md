@@ -566,6 +566,6 @@ Are you thinking of launching your own project on the Celo blockchain right now?
 ## References​
 
 - [Celo developers resources](https://docs.celo.org/developer/)
-- [Source code](https://github.com/bobeu/feature-rich-persistent-dapp-on-celo-using-wagmi)
+- [Source code](https://github.com/bobeu/nft-gated-dapp-dexHosting)
 - [Wagmi doc](https://wagmi.sh/)
 - [Spheron](https://spheron.network/)
