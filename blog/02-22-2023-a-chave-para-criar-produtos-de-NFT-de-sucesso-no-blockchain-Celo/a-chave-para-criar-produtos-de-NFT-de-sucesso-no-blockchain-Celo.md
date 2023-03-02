@@ -11,9 +11,6 @@ hide_table_of_contents: true
 slug: /tutorials/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo
 ---
 
-
-
-
 ![header](../../src/data-tutorials/showcase/intermediate/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo.png)
 
 ## Introdução
@@ -26,13 +23,13 @@ Antes de avançarmos para o Product Discovery, é importante entender dois conce
 
 O espaço do problema refere-se ao conjunto de problemas e desafios que os usuários enfrentam e que o produto deve resolver.
 
- - O foco aqui é: Atacando o problema certo.
+- O foco aqui é: Atacando o problema certo.
 
 **Espaço da solução**
 
 O espaço da solução, por outro lado, é a combinação de recursos, funcionalidades e benefícios que o produto oferece para resolver esses problemas.
 
- - O foco aqui é: Construindo a solução certa.
+- O foco aqui é: Construindo a solução certa.
 
 Em outras palavras, o espaço do problema é o ponto de partida para o desenvolvimento do produto, uma vez que é a compreensão dos problemas e desafios dos usuários que orienta a concepção do produto. O espaço da solução, por sua vez, é o resultado do processo de design, onde o produto é criado para atender às necessidades dos usuários, resolvendo os problemas que eles enfrentam.
 
@@ -93,7 +90,6 @@ Também é importante pesquisar plataformas e coletar dados de mercado para iden
 
 Ao entender o mercado nos preparamos para identificar nosso nicho, público-alvo e suas necessidades, buscando construir produtos que tratem uma dor e que permaneçam competitivos no mercado.
 
-
 **Etapa 2: Definir as personas de cliente**
 
 A próxima etapa do processo de Product Discovery é definir as personas de clientes. Uma persona de cliente é uma representação fictícia do seu cliente ideal, baseada em dados e pesquisas de mercado. Isso ajuda a entender melhor quem são seus clientes e quais são suas necessidades, desejos e preocupações com base em um nicho de atuação.
@@ -102,23 +98,22 @@ Para produtos de NFTs, as personas de cliente podem ser colecionadores de arte, 
 
 **Os principais questionamentos aqui são:**
 
- - Qual é o nicho de partida que meu produto vai atuar? 
- - Como é o perfil de cliente ideal que meu produto atenderá?
+- Qual é o nicho de partida que meu produto vai atuar?
+- Como é o perfil de cliente ideal que meu produto atenderá?
 
 Além de características relacionadas aos perfis comportamental e emocional de seu público-alvo, considere também informações demográficas.
 
 Com o entendimento do mercado e perfil ideal, é hora de identificar as necessidades do público-alvo.
 
-
 **Etapa 3: Identificar os problemas e necessidades do cliente**
 
 A terceira etapa do processo de Product Discovery é identificar os problemas e necessidades do público-alvo. Isso envolve fazer perguntas como:
 
--   Quais são as dores e frustrações dos perfis mapeados na etapa anterior?    
--   Quais são seus objetivos e desejos?
--   Quais são os problemas que eles estão tentando resolver?
--   Quais são as oportunidades de negócio não atendidas no mercado?
-    
+- Quais são as dores e frustrações dos perfis mapeados na etapa anterior?
+- Quais são seus objetivos e desejos?
+- Quais são os problemas que eles estão tentando resolver?
+- Quais são as oportunidades de negócio não atendidas no mercado?
+
 Tais perguntas podem ser respondidas por pesquisas qualitativas, de mercado e análise de Jobs-to-be-done.
 
 Realize também entrevistas com usuários que correspondam às personas que identificou. As entrevistas podem ajudá-lo a entender as necessidades dos usuários, bem como os problemas que eles enfrentam ao usar produtos similares. Certifique-se de fazer perguntas abertas e deixe o usuário falar sobre suas experiências.
@@ -126,7 +121,6 @@ Realize também entrevistas com usuários que correspondam às personas que iden
 Identifique os problemas que o seu público-alvo enfrenta no mercado de NFT atual e como o seu produto pode ajudar a resolvê-los.
 
 A resposta dessas perguntas vai ajudar a definir as funcionalidades e características do produto.
-
 
 **Etapa 4: Gerar ideias de produto**
 
@@ -136,10 +130,9 @@ Uma técnica simples e útil para gerar ideias de produto é a sessão de brains
 
 Com base nas necessidades do público-alvo e nas oportunidades identificadas no mercado, defina as funcionalidades e características da primeira versão de seu produto.
 
--   Qual solução melhor atenderia os problemas / oportunidades mapeadas para o público identificado?
--   Quais funcionalidades e características serão incluídas no produto?
--   Quais serão as prioridades?
-
+- Qual solução melhor atenderia os problemas / oportunidades mapeadas para o público identificado?
+- Quais funcionalidades e características serão incluídas no produto?
+- Quais serão as prioridades?
 
 **Etapa 5: Priorizar as ideias de produto**
 
@@ -148,7 +141,6 @@ A quinta etapa do processo de Product Discovery é priorizar as ideias de produt
 Uma técnica comum para priorizar ideias de produto é o método de Pontuação de Recursos. Nesse método, cada ideia é avaliada em uma escala de 1 a 10 com base em critérios como dificuldade técnica, potencial de mercado e adequação às personas de cliente. As ideias com a maior pontuação são priorizadas para o desenvolvimento.
 
 Essa definição vai ajudar a estabelecer uma estratégia para o desenvolvimento do produto, incluindo um roadmap e um plano de ação.
-
 
 **Etapa 6: Desenvolver um MVP (Minimum Viable Product)**
 
@@ -161,7 +153,6 @@ Porém, antes mesmo de lançar seu MVP, selecione um grupo de usuários que seja
 Um protótipo é uma representação inicial do produto, geralmente com base em wireframes ou mockups. O objetivo de um protótipo é testar a funcionalidade e a usabilidade do produto antes de ser desenvolvido totalmente. Um protótipo pode ser interativo e permitir que os usuários testem a navegação e a funcionalidade do produto. É uma maneira eficaz de coletar feedback e iterar rapidamente antes de começar o desenvolvimento de seu MVP.
 
 Um MVP é uma versão inicial do produto que contém o mínimo de recursos necessários para ser lançado no mercado e para testar a demanda. Geralmente, um MVP tem uma funcionalidade básica e é limitado em recursos, mas deve ser funcional e atender às necessidades dos usuários. O objetivo de um MVP é coletar feedback e validar hipóteses sobre o produto e o mercado, para que o produto possa ser aprimorado com base nessas informações.
-
 
 ## Conclusão
 
@@ -176,7 +167,6 @@ Além disso, é importante ter em mente que o desenvolvimento de produtos de NFT
 Sugiro ler também o artigo [Como usar a metodologia de gestão de produtos para criar soluções com NFT](https://docs.celo.org/blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT).
 
 Aqui você pode acessar outros artigos sobre [NFT](https://docs.celo.org/tutorials?tags=nft).
-
 
 ## Sobre o Autor
 
