@@ -1933,6 +1933,13 @@ const Users: User[] = [
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   {
+    title: 'How to Use Hardware Tools with the Celo Blockchain',
+    description: 'In this series, we will explore how hardware is driving the adoption of the Celo blockchain',
+    preview: require('./showcase/intermediate/how-to-use-hardware-tools-with-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-use-hardware-tools-with-the-celo-blockchain',
+    tags: ['intermediate','celo','celosage'],
+  },
+  {
     title: 'Build feature-rich, persistent dapp on celo using wagmi',
     description: 'An alternative method of connecting to Celo networks',
     preview: require('./showcase/advanced/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi.png'),
