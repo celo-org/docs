@@ -1,5 +1,5 @@
 ---
-title: How to create your first smart contract on the celo blockchain,
+title: How to create your first smart contract on the celo blockchain
 description: This tutorials teaches you how to create your first sample smart contract and deploy it on the celo blockchain,
 
 authors:
@@ -12,6 +12,7 @@ hide_table_of_contents: true
 slug: /tutorials/create-your-first-smart-contract-on-celo
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/create-your-first-smart-contract-on-celo.png)
 
 ## Introduction​
 
@@ -280,10 +281,9 @@ So far, we have been able to initialize our project folder, create a crowdfundin
 
 The next step is to verify your smart contract on the Celo explorer. Follow the guidelines in this Celo doc to [verify your smart contract on Celo explorer](https://explorer.celo.org/).
 
-
 ### About the Author​
 
-[Israel Okunaya](https://meetisraelokunaya.curious.page/) is a food and blockchain writer, content marketer and a product manager with a flair for simplifying complexities especially in the blockchain and web3 space. 
+[Israel Okunaya](https://meetisraelokunaya.curious.page/) is a food and blockchain writer, content marketer and a product manager with a flair for simplifying complexities especially in the blockchain and web3 space.
 
 ### References​
 
