@@ -747,7 +747,7 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/blockchain-integration-updating-legacy-systems-with-the-celo-platform.png'),
     website:
       '/blog/tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-platform',
-    tags: ['intermediate', 'celo'],
+    tags: ['intermediate', 'celosage'],
   },
   {
     title: 'Buy Me A Coffee Android App Using the Celo Java-SDK',
