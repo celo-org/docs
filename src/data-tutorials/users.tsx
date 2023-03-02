@@ -793,6 +793,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Build a Decentralized Parking Ticket Payments DApp on Celo',
+    description: 'Build and deploy a decentralized Parking Tickets issuing and payments dapp on Celo alfajores network.',
+    preview: require('./showcase/intermediate/build-a-decentralized-parking-ticket-payments-dapp-on-celo.png'),
+    website: '/blog/tutorials/build-a-decentralized-parking-ticket-payments-dapp-on-celo',
+    tags: ['celosage', 'intermediate', 'solidity', 'hardhat', 'smartcontract'],
+  },
+  {
     title: 'Build a FullStack Token Swap Application on Celo using React and 0x API',
     description: 'This tutorial will guide you through the process of building a full-stack token swap application on the Celo blockchain using React and the 0x API.',
     preview: require('./showcase/intermediate/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api.png'),
