@@ -1816,6 +1816,13 @@ const Users: User[] = [
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
+  {
+    title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
+    description: 'An interesting use case for NFTs on Celo network',
+    preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
+    website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
+    tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
