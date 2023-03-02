@@ -1,18 +1,19 @@
 ---
-title: Simplifying Celo 2.0 Roadmap for Celo Builders
+title: Simplifying the Celo 2.0 Roadmap for Celo Builders
 description: This article breaks down the details of the Celo 2.0 roadmap into specific features, requirements and outlooks as well as pointing out the developments that will follow this new roadmap.
-
 authors:
   - name: Israel Okunaya
-  - title: Product Manager, Technical Writer/Contributor @CeloFoundation
+    title: Product Manager, Technical Writer/Contributor @CeloFoundation
     url: https://github.com/Southpaw0
-image: ![simplifying-the-celo-2 0-roadmap-for-celo-builders png](https://user-images.githubusercontent.com/104994589/220441827-a604271d-65bf-4ed1-8b95-0e73197696eb.png)
-tags: [celosage, celo]
+image: https://user-images.githubusercontent.com/104994589/220441827-a604271d-65bf-4ed1-8b95-0e73197696eb.png
+tags: [celosage, celo, beginner]
 hide_table_of_contents: true
-slug: /tutorials/simplifying-celo-2.0-roadmap-for-celo-builders
+slug: /tutorials/simplifying-the-celo-2.0-roadmap-for-celo-builders
 ---
 
 
+
+![header](../../src/data-tutorials/showcase/beginner/simplifying-the-celo-2.0-roadmap-for-celo-builders.png)
 
 ## Introduction​
 
@@ -23,6 +24,7 @@ Having achieved this much, it’s incredible to discover that there is more to c
 ## Prerequisites​
 
 For a good grasp of what the Celo 2.0 roadmap offers, you must first understand Celo, the platform’s journey and growth so far (Celo 1.0), how these helped to push the platform’s mission, and how Regenerative finance works on Celo. The following links will come in handy:
+
 * [Regenerative Finance and Celo: The Process and Partnership](https://docs.celo.org/blog/tutorials/regenerative-finance-and-celo-the-process-and-partnership)
 * [Celo Docs](https://docs.celo.org/general)
 
@@ -35,7 +37,7 @@ For Celo, it is an ever-burning desire to create and foster prosperity for all. 
 
 ### How Did Celo 2.0 Come to Be?
 
-To develop Celo 2.0, Celo designed a public co-creation process that began in April 2022. This process involved over 75 sessions and lasted for over 150 hours. Most of those involved in this process were Celo stakeholders with considerable impact on the ecosystem. 
+To develop Celo 2.0, Celo designed a public co-creation process that began in April 2022. This process involved over 75 sessions and lasted for over 150 hours. Most of those involved in this process were Celo stakeholders with considerable impact on the ecosystem.
 
 In the aforementioned blog post, Celo took time to laud these stakeholders again for their contribution to the growth of the brand by facilitating true consensus for a decentralized, permissionless platform that enables broad influence and requires trust and strength.
 
@@ -45,18 +47,19 @@ The final output was announced in January and major developments have followed e
 
 The most prominent change that followed the introduction of Celo 2.0 is the new brand design. Now, the brand’s signature interlocking circles have made way for a new block system design.
 
-The new block system design symbolizes a foundational base to represent the ecosystem’s connection to the rest of the world. Also, it exemplifies the transformative impact this connection enables for underserved and unbanked communities as well as the environment. This description is thanks to an explanation of the new logo’s specifics. 
+The new block system design symbolizes a foundational base to represent the ecosystem’s connection to the rest of the world. Also, it exemplifies the transformative impact this connection enables for underserved and unbanked communities as well as the environment. This description is thanks to an explanation of the new logo’s specifics.
 
 Finally, although the fundamental colors of Prosperity Yellow remain constant, the new visual scheme is complemented by fluid typography and warm color treatment.
 
 Aside from the design, Celo 2.0 also welcomes certain events and developments as listed below:
+
 * **The Celo Block Party:** With the first-ever Celo Block Party happening on January 13 at 11 am ET, Celo 2.0 announces a new virtual, quarterly event. This event will celebrate the new brand, with prominent builders and provide an avenue to share ecosystem-wide updates. There will also be special guest appearances from Celo founders and partners.
 
 * **Opera’s Integration:** Celo also announced that Opera’s Crypto Browser has integrated Mento stable asset cUSD into its Opera Mini Wallet. This latest addition is available to over 70 million users in Africa and we look forward to the launch of GoodDollar on Celo this month.
 
-* **Evolua:** Celo users can now take part in a one-week NFT auction, “Evolua,” created in partnership with Valora and Arigallery. For this auction, Celo features eight global artists, including  Marzia Braggion (Portugal), Mercy Thokozane Minah (South Africa), and Juan Jose Giraldo Campuzano (Colombia). 
+* **Evolua:** Celo users can now take part in a one-week NFT auction, “Evolua,” created in partnership with Valora and Arigallery. For this auction, Celo features eight global artists, including  Marzia Braggion (Portugal), Mercy Thokozane Minah (South Africa), and Juan Jose Giraldo Campuzano (Colombia).
 
-* **CoinMarketCap’s Animated Video Series:** CoinMarketCap is set to release animated video series to educate users globally about the blockchain’s regenerative ecosystem and how leveraging Mento stable assets can foster real-world application. 
+* **CoinMarketCap’s Animated Video Series:** CoinMarketCap is set to release animated video series to educate users globally about the blockchain’s regenerative ecosystem and how leveraging Mento stable assets can foster real-world application.
 
 * **Featured on Brave’s Browser:** Also, Brave Browser’s spotlight campaign featured the new Celo brand identity, on Jan. 23rd.
 
@@ -88,11 +91,11 @@ More so, recognizing that cost-effective blob storage is essential for L2s to wo
 
 Providing swift L1 block times and high throughput is non-negotiable for every builder today, as well as future L2s. Therefore, in conjunction with Mysten Labs, Celo 2.0 will continue a program of cutting-edge distributed systems and concurrency research to deliver scale-up strategies for Celo to deliver every ounce of single-chain performance, without neglecting full EVM compatibility.
 
-Also, Celo 2.0 is developing a proposal to facilitate throughput improvements by parallelizing transaction execution across all the cores of a server-class machine without compromising EVM compatibility. 
+Also, Celo 2.0 is developing a proposal to facilitate throughput improvements by parallelizing transaction execution across all the cores of a server-class machine without compromising EVM compatibility.
 
 4. ### Improving Celo Tokenomics for More Impact
 
-The present Celo’s implementation of EIP-1559 sees the base portion of every transaction fee go to a Community Fund. Celo 2.0 now plans to have Celo burn this base automatically. That way, CELO becomes deflationary under certain conditions. 
+The present Celo’s implementation of EIP-1559 sees the base portion of every transaction fee go to a Community Fund. Celo 2.0 now plans to have Celo burn this base automatically. That way, CELO becomes deflationary under certain conditions.
 
 Also, Celo 2.0 will allow on-chain governance to utilize fees paid to the Community Fund in other assets to buy back CELO and burn that. That also will essentially optimize value for CELO holders.
 
@@ -110,7 +113,7 @@ Thanks to the public beta of SocialConnect, an evolution of Celo’s initial dec
 
 ## Impacts of Celo 2.0 on Celo’s Mission
 
-Celo’s principal mission — to create the conditions for prosperity for everyone — is what fuels everything the Celo 2.0 roadmap highlights. With the specifics from this new chapter in Celo, this mission as well as the platform’s ReFi and mobile-first ideals are on course for more fruition. 
+Celo’s principal mission — to create the conditions for prosperity for everyone — is what fuels everything the Celo 2.0 roadmap highlights. With the specifics from this new chapter in Celo, this mission as well as the platform’s ReFi and mobile-first ideals are on course for more fruition.
 
 This new roadmap ensures the achievement of this mission by delivering a more-enabled platform that encourages builders to reimagine money to meet the needs of their communities and build towards that purpose.
 
@@ -122,14 +125,16 @@ The Celo 2.0 roadmap is available for both builders presently in the Celo ecosys
 
 * Sign up for [the Celo Forum](https://forum.celo.org/) to stay in touch with other Celo builders and get access to information necessary for a hitch-free building.
 
-* Follow Celo on [Twitter](https://twitter.com/CeloOrg?s=20) to not miss out on any updates. 
+* Follow Celo on [Twitter](https://twitter.com/CeloOrg?s=20) to not miss out on any updates.
 
 Links to every other platform you need to be a part of to get the best from this new chapter in the Celo ecosystem are in the link below:
-* [Join the Community](https://docs.celo.org/community/join-the-community) 
+
+* [Join the Community](https://docs.celo.org/community/join-the-community)
 
 ## Next Steps​
 
-After joining the communities and you are ready to build, ensure you go through the Celo docs through the link below to seamlessly navigate the Celo platform and the right tools. 
+After joining the communities and you are ready to build, ensure you go through the Celo docs through the link below to seamlessly navigate the Celo platform and the right tools.
+
 * [Celo Docs](https://docs.celo.org/)
 
 ## About the Author​
