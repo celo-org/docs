@@ -749,7 +749,7 @@ const Users: User[] = [
   },
   {
     title: 'Build a FullStack Token Swap Application on Celo using React and 0x API',
-    description: 'This tutorial will guide you through the process of building a full-stack token swap application on the Celo blockchain using React and the 0x API. You will learn how to create a user-friendly interface for users to trade tokens, and how to interact with the Celo network and 0x API to execute trades. The end result will be a functional token swap application that demonstrates how to integrate different technologies and utilize the features of the Celo platform. Whether you are a beginner or an experienced developer, this tutorial will provide you with a solid foundation for building decentralized applications on Celo.',
+    description: 'This tutorial will guide you through the process of building a full-stack token swap application on the Celo blockchain using React and the 0x API.',
     preview: require('./showcase/intermediate/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api.png'),
     website: '/blog/tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api',
     tags: ['celosage', 'celo', 'intermediate', 'react'],
@@ -1637,3 +1637,4 @@ function sortUsers() {
 }
 
 export const sortedUsers = sortUsers();
+2;
