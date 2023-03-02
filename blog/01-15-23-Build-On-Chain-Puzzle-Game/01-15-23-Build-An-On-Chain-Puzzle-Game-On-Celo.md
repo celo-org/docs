@@ -68,7 +68,7 @@ Once the hardhat project has been set up, you will need to remove all the files 
 
 ## Writing the Puzzle Game Smart Contract
 
-To begin writing the smart contract for the puzzle game, we will open `Puzzle.sol` and write our code in it. First, we will specify the license under which the code is released and the version of Solidity that the code is compatible with using the "pragma" directive. Then, we will define an empty smart contract called `Puzzle`, where we will implement all of the functions for our game. 
+To begin writing the smart contract for the puzzle game, we will open `Puzzle.sol` and write our code in it. First, we will specify the license under which the code is released and the version of Solidity that the code is compatible with using the "pragma" directive. Then, we will define an empty smart contract called `Puzzle`, where we will implement all of the functions for our game.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -100,9 +100,9 @@ In order to keep track of important events in the puzzle game, we will define tw
     event solved( address solver, uint256 index);
 ```
 
-To create a new puzzle, we will write a function called `createPuzzle` with `public` visibility. The function will take two arguments: `clue` and `answer`, both of which are of type `bytes32`. The `clue` argument will represent the clue for the puzzle, and the `answer` argument will represent the hashed answer for the puzzle. 
+To create a new puzzle, we will write a function called `createPuzzle` with `public` visibility. The function will take two arguments: `clue` and `answer`, both of which are of type `bytes32`. The `clue` argument will represent the clue for the puzzle, and the `answer` argument will represent the hashed answer for the puzzle.
 
-Inside the function, we will access the `puzzles` mapping using the current value of `puzzleCounter` as the key, and assign it a new puzzle using the `puzzle` struct, passing in the clue and answer arguments from the function parameters and setting the solved status to `false` to indicate that the puzzle has not yet been solved. 
+Inside the function, we will access the `puzzles` mapping using the current value of `puzzleCounter` as the key, and assign it a new puzzle using the `puzzle` struct, passing in the clue and answer arguments from the function parameters and setting the solved status to `false` to indicate that the puzzle has not yet been solved.
 
 After creating the puzzle, we will emit the `newPuzzle` event, passing in the address of the creator and the index of the new puzzle as arguments. Finally, we will increment the `puzzleCounter` variable to keep track of the number of puzzles that have been created and to use it as the index for the next puzzle.
 
@@ -293,7 +293,7 @@ Nikhil Bhintade is the author of the article. Nikhil is currently working as a p
 
 ## References
 
-You can find all the code for this tutorial on the provided link. Additionally, you can learn more about the concept of hashing and the specific function of keccak256 on the provided resources. 
+You can find all the code for this tutorial on the provided link. Additionally, you can learn more about the concept of hashing and the specific function of keccak256 on the provided resources.
 
 Puzzle Game Project: [Project Repo](https://github.com/nikbhintade/puzzle-celo)
 
