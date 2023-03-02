@@ -6,12 +6,12 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [foundry, celo, solidity, react]
+tags: [celosage, intermediate, solidity, react]
 hide_table_of_contents: true
 slug: /tutorials/connect-and-interact-with-celo-using-web3onboard-library
 ---
 
-![header](images/3.png)
+![header](../../src/data-tutorials/showcase/intermediate/connect-and-interact-with-celo-using-web3onboard-library.png)
 
 ## Introduction
 
@@ -53,10 +53,13 @@ We will import previous contracts that was used **[here](https://github.com/bobe
 ```bash
 git clone https://github.com/bobeu/stakingdapp-on-celo.git
 ```
+
 - Navigate into the root folder.
+
 ```bash
 cd stakingdapp-on-celo
 ```
+
 The contracts files reside in the folder named 'foundry' with its path as 'stakingdapp-on-celo/foundry/src'.
 
 > Note:  Before you proceed further, be sure to have completed the steps for setting up foundry **[here](https://docs.celo.org/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs)**.
@@ -70,6 +73,7 @@ On successful installation, your file structure should look like this:
 ```bash
 cd foundry
 ```
+
 Run the command to install the forge standard library.
 
 ```bash
@@ -90,11 +94,12 @@ forge install --no-commit https://github.com/OpenZeppelin/openzeppelin-contracts
 - Let's extend (without altering the initial behavior) the 'Vault' contract by adding a new feature that allows an account to stake or deposit to the vault on behalf of another account. The stake and earnings will be recorded in favor of the preset address. For now, only the account that was staked for can unstake for themselves.
 Two files will be altered. 'IVault.sol' and 'Vault.sol'.
 
-- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is simply a function declaration/interface for interacting with the main function that will be implemented in the 'Vault' contract. 
+- Find **src/interfaces/IVault.sol** file and paste the code below the last function. This is simply a function declaration/interface for interacting with the main function that will be implemented in the 'Vault' contract.
 
 ```js
 function stakeOnBehalf(address who) external returns(bool);
 ```
+
 _src/interfaces/IVault.sol_
 
 ![image](images/2.png)
@@ -105,7 +110,7 @@ In this file, we need to make a few twists to avoid function redundancy. Since w
 
 - Create a new function named "_stake()" with visibilty set to private and return type is boolean. It should accept two arguments:
   - An address.
-  - A Value of type 'uint256'. 
+  - A Value of type 'uint256'.
 
 ```js
 // > ...
@@ -161,6 +166,7 @@ In this file, we need to make a few twists to avoid function redundancy. Since w
   }
 // > ...
 ```
+
 - Create another function named _stakeOnBehalf()_ with an address parameter. If Bob wants to stake on behalf of Alice, they only need to give Alice's address and specify the amount on the frontend as msg.value. We then call the _stake()_ and supply the address and amount as arguments.
 
 ```js
@@ -178,10 +184,10 @@ With the new twists, we achieve compatibility with previous version. Now we have
 ```bash
 forge build
 ```
+
 _Compile successful_
 
 ![image](images/9.png)
-
 
 **Testing**
 
@@ -217,6 +223,7 @@ contract AnonymousStaker is Test {
   }
 }
 ```
+
 > Note : Since the above account is not responsible for performing the staking task, we will not have a function for it. But 'unstake' is initiated from it.
 
 We then add two new functions in the main tester account - _VaultTest.sol_ to test the new feature.
@@ -248,12 +255,12 @@ Now, run the command, and the test should pass as expected.
 ```bash
 forge test
 ```
-![image](images/10.png)
 
+![image](images/10.png)
 
 ## Frontend
 
-We will edit and twist the previous project to give us what we want. 
+We will edit and twist the previous project to give us what we want.
 Navigate back to project directory we previously clone **[here](https://github.com/bobeu/stakingdapp-on-celo.git)** and again into 'frontend' until you're in the root folder - `stakingdapp-on-celo/frontend`.
 
 **Install dependencies**
@@ -261,6 +268,7 @@ Navigate back to project directory we previously clone **[here](https://github.c
 ```bash
 yarn install
 ```
+
 Our focus is to have a simple user interface that can interact with our contracts. The current backend uses pure 'etherjs' and the injected browser wallet - **Metamask** as the only provider to interact with the Celo blockchain. Since this tutorial aims to show how to use web3Onboard instead, we will go through the following steps.
 
 **What is web3Onboard**
@@ -274,6 +282,7 @@ Having a single provider in your dapp could amount to a single point of failure 
 **Installation**
 
 Install Web3Onboard along with 3 provider packages:
+
 - Coinbase Wallet SDK
 - WalletConnect SDK, and
 - Injected Wallet SDK
@@ -283,6 +292,7 @@ Run:
 ```bash
 yarn add "@web3-onboard/coinbase" "@web3-onboard/core" "@web3-onboard/injected-wallets" "@web3-onboard/react" "@web3-onboard/walletconnect"
 ```
+
 Create a new folder under 'frontend/components/apis' named 'web3Onboard'. Then a file - 'setup.ts'.
 
 ```bash
@@ -293,6 +303,7 @@ touch frontend/components/apis/web3Onboard/setup.ts
 **setUp.tx**
 
 To get the full experience, you might want to install coinbase and Metamask browser extensions if you don't already have them.
+
 1. Add coinbase **[wallet extension](https://chrome.google.com/webstore/detail/coinbase-wallet-extension/hnfanknocfeofbddgcijnmhnfnkdnaad?hl=en)**
 
 2. Add **[Metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)**
@@ -329,6 +340,7 @@ export function hexlify(chainid: number) {
 ```
 
 - Set up the network list.
+
 ```ts
 > ...
 const ALFAJORES: ChainParams = {
@@ -398,9 +410,10 @@ export const web3Onboard = init({
   },
 });
 ```
+
 The above code is a typical web3Onboard setup. We created a new instance of the package using `init()` imported from `@web3-onboard/react`. The instance is initialized when the application is mounted. This is necessary so we can use a few hooks provided by "@web3-onboard/react" anywhere in our application.
 
-The `init()` method initializes and maintain a separate state for our dapp which we can subscribe to. It then construct a new object containing utility APIs we need to onboard users and do other tasks. 
+The `init()` method initializes and maintain a separate state for our dapp which we can subscribe to. It then construct a new object containing utility APIs we need to onboard users and do other tasks.
 
 > Note: Log the instance to the console to examine the contents. It gives an overview of what to do with the feedback.
 
@@ -465,6 +478,7 @@ export default function Home() {
     });
   }
 ```
+
 ![image](images/14.png)
 
 Your `pages/index.tsx` should look like this.
@@ -591,7 +605,7 @@ export default function LandingPage(props: PageProps) {
 }
 ```
 
-**components/App.tsx** - 
+**components/App.tsx** -
 
 - Lastly, modify the `components/App.tsx` file to reflect our changes. The following are the important changes I have made to the file.
 
@@ -985,7 +999,7 @@ function contractInstances(props: InstanceProps) {
 }
 ```
 
-- The next function accepts an object as argument with a property - 'functioname' of type `string`. We use a switch statement that run the desired function based on the truth established between each of the cases and the functionName. Simply put, each of the cases in the switch statement runs if the entry macthes the functionName. 
+- The next function accepts an object as argument with a property - 'functioname' of type `string`. We use a switch statement that run the desired function based on the truth established between each of the cases and the functionName. Simply put, each of the cases in the switch statement runs if the entry macthes the functionName.
 
 > Note: We wait for at least two block confirmation before updating the user about their transaction status.
 
@@ -1083,6 +1097,7 @@ Thumbs up for seeing it to the end. So far, we have learned:
 - Manage your dApp using web3Onboard.
 
 ## What next?
+
 ​
 You can edit the code to your taste. At this point, you should be able to launch your own project as Celo developer. If you are confused anywhere in the tutorial, I left a link to the full source code at the _references_ section. Go over it as many times as you can. In no time, you will get a good grasp. Celo is EVM-compatible blockchain. You can leverage the various web3 tools to build your dream application. Get started with **[Celo documentation](https://docs.celo.org/tutorials)**
 
