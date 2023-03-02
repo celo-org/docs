@@ -3,13 +3,12 @@ title: Solidity from Zero to Hero
 description: In this article you will learn Solidity language.
 authors:
   - name: Oyeniyi Abiola Peace
-tags: [solidity]
-hide_table_of_contents: true
+tags: [solidity, intermediate]
+hide_table_of_contents: false
 slug: /tutorials/solidity-from-zero-to-Hero
 ---
 
-
-# Solidity from Zero to Hero
+![header](../../src/data-tutorials/showcase/intermediate/how-to-build-a-bookshop-marketplace-dapp.png)
 
 ## Introduction
 
@@ -38,19 +37,19 @@ To write and deploy a Solidity smart contract on Remix is a simple and interesti
 1. Go to [https://remix.ethereum.org/](https://remix.ethereum.org/).
 2. A browser window will open displaying the Remix web-based development environment as below.
 
-   ![remix IDE](images/1.png)
+![remix IDE](images/1.png)
 
 3) In the left column of the Remix window, expand the Solidity folder and then click on the Contracts folder.
 
-   ![Remix IDE](images/2.png)
+![Remix IDE](images/2.png)
 
 4 In the right column of the Remix window, click on the New file button.
 
-   ![Remix IDE](images/3.png)
+![Remix IDE](images/3.png)
 
 5. In the Name text box, enter HelloWorld. The name should end with .sol and not .tx
 
-   ![Remix IDE](images/4.png)
+![Remix IDE](images/4.png)
 
 # HelloWorld Program in Solidity
 

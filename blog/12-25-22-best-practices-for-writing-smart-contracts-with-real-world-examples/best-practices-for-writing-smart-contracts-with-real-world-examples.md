@@ -7,11 +7,11 @@ authors:
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
 tags: [solidity, celo, alfajores, smart-contract]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples
 ---
 
-![header](images/3.png)
+![header](../../src/data-tutorials/showcase/intermediate/best-practices-for-writing-smart-contracts-with-real-world-examples.png)
 
 ## Introduction
 

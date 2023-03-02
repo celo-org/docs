@@ -321,10 +321,13 @@ module.exports = {
         },
         blog: {
           blogTitle: "Celo Tutorials",
-          blogDescription: "A Docusaurus powered blog!",
-          postsPerPage: "ALL",
-          blogSidebarTitle: "Latest posts",
-          blogSidebarCount: 7,
+          blogDescription: "Celo blog!",
+          blogSidebarCount: 0,
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            frontMatter.hide_reading_time
+              ? undefined
+              : defaultReadingTime({ content }),
         },
       },
     ],
