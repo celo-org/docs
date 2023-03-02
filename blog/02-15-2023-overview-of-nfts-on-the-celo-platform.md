@@ -4,7 +4,7 @@ description: In this tutorial, we explore NFTs and what NFTs platforms are on Ce
 authors:
   - name: Fadipe Temitope
 tags: [celosage, celo, beginner]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/overview-of-nfts-on-the-celo-platform
 ---
 
@@ -64,21 +64,15 @@ Dynamic NFTs (dNFTs) are created on blockchain networks to be both interactive a
 
 ### Static NFTs
 
-Static NFTs are non-fungible tokens that are immutable after minting, they are used to represent digital assets that shouldn’t be changed or exchanged like digital IDs, artworks, or even collectibles. They are more secure, efficient, and compatible when compared to dNFT. Since static NFTs can’t be altered, they are less flexible than dNFTs. Static NFTs are the more common type of NFTs since their use cases are more all-encompassing. Use cases of static NFTs include ID verification, document storage, digital collectibles, and in-game assets.
-
-Both static and dynamic NFTs excel in their use cases; however, they both have drawbacks that you should be aware of before deciding to work with either. Security and flexibility play an important role in deciding which you’ll likely have to work with. If security is preferred, then you should choose static; however, if you’re looking for some flexibility, then dNFT is better.
+Static NFTs are non-fungible tokens that are immutable after minting, they are used to represent digital assets that shouldn’t be changed or exchanged like digital IDs, artworks, or even collectibles. They are more secure, efficient, and compatible when compared to dNFT. Since static NFTs can’t be altered, they are less flexible than dNFTs. Static NFTs are the more common type of NFTs since their use cases are more all-encompassing. Use cases of static NFTs include ID verification, document storage, digital collectibles, and in-game assets. Both static and dynamic NFTs excel in their use cases; however, they both have drawbacks that you should be aware of before deciding to work with either. Security and flexibility play an important role in deciding which you’ll likely have to work with. If security is preferred, then you should choose static; however, if you’re looking for some flexibility, then dNFT is better.
 
 ## Where can I get NFTs?
 
-NFTs can be minted, bought, and traded on marketplaces. There are currently dozens of NFT marketplaces where you can get NFTs. Opensea is currently the largest NFT marketplace where you can mint and buy art, collectibles, domain names, music, photography, sports, trading cards, utility, and the metaverse. Some other top marketplaces you can get NFTs are Larva labs, NBA Top Shots, LooksRare, Rarible, SuperRare, Foundation, Nifty gateway, and Mintable.
-
-If you’re a music artist looking for a marketplace where you can mint and sell music NFTs; then you should use music NFT marketplaces like Opensea, Audius, Zora, MIntable, Rarible, and sound.xyz. Certain NFT marketplaces are blockchain dominate, for example, if you’re looking for an Ethereum NFT marketplace then you should use Opensea, Blur, LooksRare, Decentraland, or Sandbox. If you prefer Solana and would prefer a blockchain with a low mint price and gas fee then you can try Magic Eden, SolanaArt, DigitalEyes Market, Solsea, and Solana Monkey Business. There are also BNB, Polygon, Tron, and Celo NFT marketplaces to mention a few.
+NFTs can be minted, bought, and traded on marketplaces. There are currently dozens of NFT marketplaces where you can get NFTs. Opensea is currently the largest NFT marketplace where you can mint and buy art, collectibles, domain names, music, photography, sports, trading cards, utility, and the metaverse. Some other top marketplaces you can get NFTs are Larva labs, NBA Top Shots, LooksRare, Rarible, SuperRare, Foundation, Nifty gateway, and Mintable. If you’re a music artist looking for a marketplace where you can mint and sell music NFTs; then you should use music NFT marketplaces like Opensea, Audius, Zora, MIntable, Rarible, and sound.xyz. Certain NFT marketplaces are blockchain dominate, for example, if you’re looking for an Ethereum NFT marketplace then you should use Opensea, Blur, LooksRare, Decentraland, or Sandbox. If you prefer Solana and would prefer a blockchain with a low mint price and gas fee then you can try Magic Eden, SolanaArt, DigitalEyes Market, Solsea, and Solana Monkey Business. There are also BNB, Polygon, Tron, and Celo NFT marketplaces to mention a few.
 
 ## The Celo Network and NFTs
 
-Celo blockchain is a global payment provider with mobile users as the main target. Celo’s main goal is to make financial transactions available all around the world with just your phone number. Aside from being a payment platform, their blockchain also supports dApps. The Celo blockchain network has two native tokens: the Celo token, which can be held or used for voting on changes in the network, and the cUSD token, a stablecoin that mirrors the US dollar.
-
-The Celo network supports NFT minting, buying, and selling on their marketplace which is CO2-free. NFT marketplaces on the Celo blockchain are Cyberbox, Plastiks, Mintdropz, Ariswap, and Tatum.
+Celo blockchain is a global payment provider with mobile users as the main target. Celo’s main goal is to make financial transactions available all around the world with just your phone number. Aside from being a payment platform, their blockchain also supports dApps. The Celo blockchain network has two native tokens: the Celo token, which can be held or used for voting on changes in the network, and the cUSD token, a stablecoin that mirrors the US dollar. The Celo network supports NFT minting, buying, and selling on their marketplace which is CO2-free. NFT marketplaces on the Celo blockchain are Cyberbox, Plastiks, Mintdropz, Ariswap, and Tatum.
 
 ### Cyberbox
 
