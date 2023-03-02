@@ -1,5 +1,5 @@
 ---
-title: How to Tokenize a Physical Asset on Celo
+title: How to Tokenize Physical Assets on Celo
 description: Understand how to start the tokenization on Celo
 authors:
 - name: Ewerton Lopes
@@ -36,7 +36,7 @@ The tokenization of government assets has the potential to transform the way pub
 
 To get started with **tokenizing physical assets on Celo**, you'll need to do some research and planning to determine what kind of asset you want to tokenize, how you want to structure your tokens, and what kind of smart contracts and other infrastructure you'll need to create. Once you have a plan in place, you can use tools like OpenZeppelin to help you execute your vision and bring your tokenized asset to life on the blockchain.
 
-## Mechanics of on-chain asset tokenization:
+## Mechanics of on-chain asset tokenization
 
 **Build the ecosystem:** Service providers ensure that technology integration is seamlessly done with a large ecosystem of vendors so that issuers can create an end-to-end customized solution (e.g., custody, KYC/AML provider, legal, marketing, advisory, tax, etc.).
 
@@ -47,7 +47,6 @@ To get started with **tokenizing physical assets on Celo**, you'll need to do so
 **Store, manage, and distribute the token:** Tokens are stored in a software "vault" and supported by a custody service to manage digital twins (i.e., to maintain the link between an existing asset and its digital token representative). Tokenization service providers offer issuers an automated and reportable way to manage token distribution as well as future distribution events.
 
 **Execute corporate acts:** Allows the issuer to input some details and create a corporate action, for which the mechanism determines rights, schedules communications, distributes capital (if necessary), and updates records. Tokenization significantly reduces the costs of these corporate actions.
-
 
 ## The life cycle of an asset
 
@@ -77,7 +76,7 @@ To tokenize a physical asset on the Celo blockchain, you will need to follow the
 
 *Create a smart contract on the Celo blockchain* that represents the asset and defines its ownership and transfer rules. This smart contract should specify the conditions under which the asset can be bought, sold, or transferred, as well as any restrictions or limitations on these actions.
 
-## Different types of ERC can be used to represent different types of assets on Celo.
+## Different types of ERC can be used to represent different types of assets on Celo
 
 Ethereum Request for Comment (ERC) standards are technical specifications that define how tokens can be created and used on the Celo blockchain. Several different ERC standards can be used for tokenization, including ERC-20, ERC-721, ERC-1400, ERC-3643, and ERC-1404.
 
@@ -87,6 +86,7 @@ OpenZeppelin provides a powerful set of tools to help you create your token on E
 Contributor
 
 Here is an example of ERC20
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
@@ -96,25 +96,24 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
   
 contract TokenizationOfPhysicalAsset is ERC20, ERC20Burnable, Pausable, Ownable {
-	constructor() ERC20("Tokenization of Physical Asset", "Tokenize") {
-	_mint(msg.sender, 100 * 10 ** decimals());
+ constructor() ERC20("Tokenization of Physical Asset", "Tokenize") {
+ _mint(msg.sender, 100 * 10 ** decimals());
 }
 function pause() public onlyOwner {
-	_pause();
+ _pause();
 }
 function unpause() public onlyOwner {
-	_unpause();
+ _unpause();
 }
   
 function mint(address to, uint256 amount) public onlyOwner {
-	_mint(to, amount);
+ _mint(to, amount);
 }
 function _beforeTokenTransfer(address from, address to, uint256 amount) internal whenNotPaused override {
-	super._beforeTokenTransfer(from, to, amount);
+ super._beforeTokenTransfer(from, to, amount);
 }
 }
 ```
-
 
 Let's go over each item in the code to help you if you are a new Solidity developer:
 
@@ -134,7 +133,7 @@ Let's go over each item in the code to help you if you are a new Solidity develo
 
 *8.  constructor() ERC20("Tokenization of Physical Asset", "Tokenize") {:* This is the constructor for the contract, which is called when the contract is first deployed. It initializes the token with the name "Tokenization of Physical Asset" and a symbol of "Tokenize". The ERC20 contract's constructor is also called, which sets up some initial variables.
 
-*9.  _mint(msg.sender, 100 * 10 ** decimals());:* This function call mints 100 tokens to the address that deployed the contract, which is represented by msg.sender. The number is multiplied by 10 ** decimals(), which sets the number of decimal places for the token. By default, the ERC20 standard has 18 decimal places, so this call will mint 100 tokens with 18 decimal places.
+*9.  _mint(msg.sender, 100* 10 ** decimals());:* This function call mints 100 tokens to the address that deployed the contract, which is represented by msg.sender. The number is multiplied by 10 ** decimals(), which sets the number of decimal places for the token. By default, the ERC20 standard has 18 decimal places, so this call will mint 100 tokens with 18 decimal places.
 
 *10.  function pause() public onlyOwner {:* This function is used to pause the token contract. It can only be called by the contract owner.
 
@@ -148,16 +147,13 @@ Let's go over each item in the code to help you if you are a new Solidity develo
 
 *15.  function _beforeTokenTransfer(address from, address to, uint256 amount) internal whenNotPaused override {* This is a function that is defined in the TokenizationOfPhysicalAsset contract. It overrides the _beforeTokenTransfer function inherited from the ERC20 contract, which is called before every transfer of tokens.
 
-
-
 **ERC-721** is a standard for creating non-fungible tokens, which are unique tokens that represent one-of-a-kind assets. ERC-721 tokens are also created using smart contracts and are stored in Ethereum wallets. They can be traded on exchanges and used to represent ownership of unique assets.
 
 To tokenize physical assets on Celo, you can use a standard called ERC-721. You can also start your contract with Openzeppelin and then customize it for your needs.
 
-
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^ 0.8 .9;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
@@ -165,41 +161,47 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 contract TokenizationNFT is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
-	using Counters for Counters.Counter;
-	Counters.Counter private _tokenIdCounter;
-constructor() ERC721("Tokenization NFT", "NFT") {}
-function _baseURI() internal pure override returns (string memory) {
-	return "ipfs://sdsdsdfdfdfdfdfcx2323sds";
-}
-function pause() public onlyOwner {
-	_pause();
-}
-function unpause() public onlyOwner {
-	_unpause();
-}
-function safeMint(address to, string memory uri) public onlyOwner {
-	uint256 tokenId = _tokenIdCounter.current();
-	_tokenIdCounter.increment();
-	_safeMint(to, tokenId);
-	_setTokenURI(tokenId, uri);
-}
-function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize) internal whenNotPaused override{
-	super._beforeTokenTransfer(from, to, tokenId, batchSize);
-}
-// The following functions are overrides required by Solidity.
-function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-	super._burn(tokenId);
-}
-function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
-	return super.tokenURI(tokenId);
-}
+    using Counters
+    for Counters.Counter;
+    Counters.Counter private _tokenIdCounter;
+    constructor() ERC721("Tokenization NFT", "NFT") {}
+
+    function _baseURI() internal pure override returns(string memory) {
+        return "ipfs://sdsdsdfdfdfdfdfcx2323sds";
+    }
+
+    function pause() public onlyOwner {
+        _pause();
+    }
+
+    function unpause() public onlyOwner {
+        _unpause();
+    }
+
+    function safeMint(address to, string memory uri) public onlyOwner {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
+
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize) internal whenNotPaused override {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
+    }
+    // The following functions are overrides required by Solidity.
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns(string memory) {
+        return super.tokenURI(tokenId);
+    }
 }
  ```
 
+Let's go over each item in the code to help you if you are a new Solidity developer:
 
- Let's go over each item in the code to help you if you are a new Solidity developer:
-
-  *-   // SPDX-License-Identifier: MIT:* This is a comment that specifies the license under which the code is released.
+*-   // SPDX-License-Identifier: MIT:* This is a comment that specifies the license under which the code is released.
 
 *-   pragma solidity ^0.8.9;:* This line specifies the version of Solidity being used.
 
@@ -229,32 +231,27 @@ The safeMint function is used to mint a new token and associate it with the spec
 
 The _beforeTokenTransfer function is a hook that is called before a token transfer is executed. It checks to make sure that the contract is not paused before the transfer is executed.
 
-The _burn function overrides the _burn function from ERC721URIStorage and ERC721. This function is called to burn or destroy a token.
+The _burn function overrides the_burn function from ERC721URIStorage and ERC721. This function is called to burn or destroy a token.
 
 The tokenURI function is another override that returns the URI associated with the specified token ID.
 
-
-
 **ERC-1400** is a standard for creating security tokens, which are tokens that represent ownership in a company or other type of investment. ERC-1400 tokens are designed to comply with securities regulations and can be used to represent ownership in a wide range of assets, including equity, debt, and real estate.
 
--   Treatment and notification of documents
+- Treatment and notification of documents
 
--   Security token controls and permissions, including delegation and forced token transfers
+- Security token controls and permissions, including delegation and forced token transfers
 
--   Partial fungibility - improving transparency for investors regarding their ownership rights
-
+- Partial fungibility - improving transparency for investors regarding their ownership rights
 
 **ERC-3643** is a standard for creating utility tokens, which are tokens that can be used to access products or services. It manages compliance by leveraging blockchain security with an automatic validation system. This system applies transfer rules related to users (identities) and those related to the offering. The issuer of the securities, or their agent, always maintains control over the tokens and transfers.
 
--   Block and unblock tokens
+- Block and unblock tokens
 
--   Token recovery process
+- Token recovery process
 
--   Permission for multiple agents
+- Permission for multiple agents
 
--   Management of involved identities
-
-
+- Management of involved identities
 
 **ERC-1404** is a standard for creating restricted tokens, which are tokens that have limitations on their transferability. ERC-1404 tokens can be used to represent assets that have restrictions on their ownership or transfer, such as assets that are subject to regulatory restrictions or assets that are owned by a specific individual or group. Gives token issuers more control over circulation, as well as visibility of holders. The ability to freeze supply and identify token holders sets it apart from the typical ERC-20 standard, which is often used for altcoins.
 
@@ -270,9 +267,8 @@ Various types of assets can be tokenized on the Celo blockchain, including tradi
 
 Overall, **on-chain asset tokenization** on the Celo blockchain provides a secure, transparent, and efficient way to digitize assets and create new opportunities for investment and innovation.
 
-## Sobre o Autor
+## About Author
 
 I am a serial entrepreneur, founder of Guizo Studios, and always available to help the Celo ecosystem.
 
 [LinkedIn](https://www.linkedin.com/in/ewertonlopes/)
-
