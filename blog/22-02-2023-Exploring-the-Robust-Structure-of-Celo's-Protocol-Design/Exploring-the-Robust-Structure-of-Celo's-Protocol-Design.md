@@ -13,13 +13,12 @@ slug: /tutorials/exploring-the-robust-structure-of-celo-protocol-design
 
 ![header](../../src/data-tutorials/showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png)
 
-
 ## Exploring the Robust Structure of Celo's Protocol Design
 
-Celo's protocol design offers a strong and reliable framework that leverages blockchain technology to establish a decentralized platform for financial services. In this article, we will examine the robust structure of Celo's protocol in detail, including its consensus mechanism, token economics, and governance model. 
+Celo's protocol design offers a strong and reliable framework that leverages blockchain technology to establish a decentralized platform for financial services. In this article, we will examine the robust structure of Celo's protocol in detail, including its consensus mechanism, token economics, and governance model.
 
 Whether you're an experienced blockchain professional or just starting out, this article provides a comprehensive overview of Celo's innovative protocol design, revealing its unique features and the potential impact it could have on the financial industry. Get ready to delve into the technicalities of Celo's protocol and discover why it stands out as a leader in the blockchain world.
-Here's an overview of what we'll cover 
+Here's an overview of what we'll cover
 
 - ✅ Introduction to Celo’s blockchain technology
 - ✅ Overview of Celo’s Protocol Design
@@ -27,11 +26,6 @@ Here's an overview of what we'll cover
 - ✅ Benefits of Celo’s Protocol Design
 - ✅ Use cases for Celo’s Protocol Design
 - ✅ Conclusion
-
-
-
-
-
 
 ![Celo](images/celo-02.png)
 
@@ -43,15 +37,13 @@ The unique mobile-first design of Celo's blockchain technology enables users to 
 
 Celo's blockchain technology serves as a great basis for a variety of decentralized apps and use cases because of its scalability, usability, and security. As a result, it is suitable for assisting a variety of efforts within the decentralized banking sector and elsewhere.
 
-
 ## Overview of Celo’s Protocol Design
 
 Celo is a decentralized platform that enables secure, fast, and affordable financial transactions using blockchain technology. Celo’s protocol design is a robust structure that combines various features to create a decentralized platform that is accessible to everyone. We will explore the key components of Celo’s protocol design that make it a unique and robust platform.
 
-
 ## Celo’s Protocol Design
 
-The Celo blockchain and Celo Core Contracts together comprise the Celo Protocol. This term describes both what services the decentralized Celo network provides to applications and the way in which nodes in the network cooperate to achieve this. This section introduces some of these services. 
+The Celo blockchain and Celo Core Contracts together comprise the Celo Protocol. This term describes both what services the decentralized Celo network provides to applications and the way in which nodes in the network cooperate to achieve this. This section introduces some of these services.
 
 ### Consensus Mechanism
 
@@ -106,19 +98,17 @@ The smart contract platform from Celo is made to be user-friendly for developers
 
 Smart contracts are an essential feature of Celo's design protocol, enabling automation and the secure enforcement of network rules. The platform's developer-friendly approach ensures that innovation can thrive, driving the growth and expansion of the Celo ecosystem.
 
-
 ## Benefits of Celo’s Protocol Design
 
-Celo's protocol design offers several benefits that contribute to the success of its blockchain platform. It prioritizes security, scalability, inclusivity, and accessibility, all while creating a user-friendly platform that encourages innovation and growth 
+Celo's protocol design offers several benefits that contribute to the success of its blockchain platform. It prioritizes security, scalability, inclusivity, and accessibility, all while creating a user-friendly platform that encourages innovation and growth
 
-* The emphasis on security in Celo's protocol architecture is one of its main advantages. By using multi-party computation (MPC) to secure private keys and a system of smart contracts that are subject to third-party security audits, the platform helps to lower the risk of attacks and safeguard the network from potential weaknesses.
+- The emphasis on security in Celo's protocol architecture is one of its main advantages. By using multi-party computation (MPC) to secure private keys and a system of smart contracts that are subject to third-party security audits, the platform helps to lower the risk of attacks and safeguard the network from potential weaknesses.
 
-* Scalability is another important feature of celo's protocol design. Transactions may be processed cheaper and faster on the celo platform thanks to the Proof-of-Stake (PoS) consensus method, which is nevertheless very safe and decentralized. As a result, consumers who may not be able to afford high transaction charges will find the platform to be more usable.
+- Scalability is another important feature of celo's protocol design. Transactions may be processed cheaper and faster on the celo platform thanks to the Proof-of-Stake (PoS) consensus method, which is nevertheless very safe and decentralized. As a result, consumers who may not be able to afford high transaction charges will find the platform to be more usable.
 
-* Inclusion and accessibility are also emphasized in the design of the Celo protocol. The platform's collaborations with organizations, nonprofits, and governments contribute to the development of a more inclusive financial system and widen financial access for those who may not have previously had it. The platform's grants to entrepreneurs and developers foster growth and innovation on the network, which benefits users.
+- Inclusion and accessibility are also emphasized in the design of the Celo protocol. The platform's collaborations with organizations, nonprofits, and governments contribute to the development of a more inclusive financial system and widen financial access for those who may not have previously had it. The platform's grants to entrepreneurs and developers foster growth and innovation on the network, which benefits users.
 
-* The goal of the protocol design for Celo is to create a user-friendly platform that is simple to operate. The platform is more accessible to users who might not have a technological background due to its mobile-first strategy and usage of simple, human-readable addresses.
-
+- The goal of the protocol design for Celo is to create a user-friendly platform that is simple to operate. The platform is more accessible to users who might not have a technological background due to its mobile-first strategy and usage of simple, human-readable addresses.
 
 ## Use cases for Celo’s Protocol Design
 
@@ -132,13 +122,12 @@ Celo's protocol design is optimized for mobile payments, decentralized finance, 
 
 4. Identification and Reputation: is a unique feature on Celo that makes it easier for users to trust one another online,  and it essentially enables people to create a digital identity that can be used to prove their reputation and identity in a variety of contexts, such as when you're making a payment or conversing with someone.
 
-5. Social Impact: The desire of Celo to help those who lack access to traditional banking services makes them even more outstanding. Because of this, they designed their platform so that everyone may use it, even those with limited resources. You can send small amounts of cash, send money abroad, and even give to a good cause with Celo without incurring significant fees. 
-
-
+5. Social Impact: The desire of Celo to help those who lack access to traditional banking services makes them even more outstanding. Because of this, they designed their platform so that everyone may use it, even those with limited resources. You can send small amounts of cash, send money abroad, and even give to a good cause with Celo without incurring significant fees.
 
 ## Conclusion
 
 And that brings us to the end of today's topic on “Exploring the Robust Structure of Celo's Protocol Design”. To recap, you can find a summary of all the topics we covered below.
+
 - ✅ Introduction to Celo’s blockchain technology
 - ✅ Overview of Celo’s Protocol Design
 - ✅ Celo’s Protocol Design
@@ -146,20 +135,16 @@ And that brings us to the end of today's topic on “Exploring the Robust Struct
 - ✅ Use cases for Celo’s Protocol Design
 - ✅ Conclusion
 
-
 ## Next Steps​
 
 I hope you learned a lot from this tutorial. Please check out the [Celo Documentation](https://docs.celo.org/) to aid your learning further.
-
 
 ## About the Author​
 
 Kyrian Chigozie is a Technical Writer with a passion for web3 technology. Connect with me on [Twitter](https://twitter.com/Kyrian_M).  
 
-
 ## References​
 
-* https://docs.celo.org/learn/celo-protocol#consensus-and-proof-of-stake
-* https://docs.celo.org/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more#celos-consensus
-* https://docs.celo.org/blog/tutorials/getting-started-with-daos-on-celo#mobile-first
-
+- <https://docs.celo.org/learn/celo-protocol#consensus-and-proof-of-stake>
+- <https://docs.celo.org/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more#celos-consensus>
+- <https://docs.celo.org/blog/tutorials/getting-started-with-daos-on-celo#mobile-first>
