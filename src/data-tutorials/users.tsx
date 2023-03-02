@@ -1741,6 +1741,13 @@ const Users: User[] = [
   website: 'blog/tutorials/understanding-the-decentralized-storage-system',
   tags: ['celo', 'intermediate', 'celosage'],
 },
+{
+  title: 'How to listen to smart contract On-Chain events with Celo',
+  description: 'This tutorial teaches its readers about reading celo on-chain event',
+  preview: require('./showcase/intermediate/how-to-listen-to-smart-contract-on-chain-event-with-celo.png'),
+  website: 'blog/tutorials/how-to-listen-to-smart-contract-on-chain-event-with-celo',
+  tags: ['celo', 'intermediate', 'celosage'],
+},
   {
     title: 'Minting your ERC1155 Token on Celo',
     description: 'How to Minting your ERC1155 Token on Celo using Remix',
