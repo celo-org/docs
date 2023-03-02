@@ -1507,6 +1507,13 @@ const Users: User[] = [
     tags: ['intermediate', 'foundation', 'composer', 'react', ],
   },
   {
+    title: 'Build an On-Chain Puzzle Game on Celo',
+    description: 'Learn how to build a On-Chain Puzzle Game on Celo using Solidity and Hardhat.',
+    preview: require('./showcase/intermediate/on-chain-puzzle-game.png'),
+    website: '/blog/tutorials/build-an-on-chain-puzzle-game-on-celo',
+    tags: ['celosage', 'intermediate', 'solidity', 'hardhat'],
+  },
+  {
     title: 'A Practical Comparison Between ERC-1155 and ERC-721',
     description: 'An informative and practical comparison of two popular NFT standards, ERC-1155 and ERC-721, that delves into their technical details.',
     preview: require('./showcase/beginner/a-practical-comparison-between-erc-1155-and-erc-721.png'),
