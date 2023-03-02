@@ -1822,7 +1822,7 @@ const Users: User[] = [
     description: 'An alternative method of connecting to Celo networks',
     preview: require('./showcase/advanced/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi.png'),
     website: 'blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi',
-    tags: ['hardhat', 'celo', 'solidity', 'react', 'nextjs', 'materialui', 'typescript'],
+    tags: ['hardhat', 'celosage', 'solidity', 'react', 'nextjs', 'materialui', 'typescript'],
   },
   /*
   Pro Tip: add your site in alphabetical order.

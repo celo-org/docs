@@ -6,16 +6,16 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, solidity, react, nextjs, materialui, typescript]
+tags: [hardhat, celosage, solidity, react, nextjs, materialui, typescript]
 hide_table_of_contents: true
 slug: /tutorials/build-feature-rich-persistent-dapp-on-celo-using-wagmi
 ---
 
-![header](images/1.png)
+![header](../../src/data-tutorials/showcase/advanced/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi.png)
 
 ## Introduction
 
-Since Ethereum emerged, there has been a high demand for web3 developers. Unlike traditional applications, building for blockchain requires extra effort to give the users the experience they need to keep coming back. To build a good user interface, this article will introduce you to one of the many libraries that help you get started. 
+Since Ethereum emerged, there has been a high demand for web3 developers. Unlike traditional applications, building for blockchain requires extra effort to give the users the experience they need to keep coming back. To build a good user interface, this article will introduce you to one of the many libraries that help you get started.
 
 ## Prerequisites​
 
@@ -49,6 +49,7 @@ The dApp was built in two parts.
 ```bash
 git clone https://github.com/bobeu/feature-rich-persistent-dapp-on-celo-using-wagmi.git
 ```
+
 - Navigate to the root folder
 
 ```bash
@@ -60,6 +61,7 @@ cd feature-rich-persistent-dapp-on-celo-using-wagmi/backend
 ```bash
 yarn install
 ```
+
 Now, let's examine the core functionalities.
 
 **Backend file/folder structure**
@@ -117,6 +119,7 @@ Now, let's examine the core functionalities.
   ```js
   import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
   ```
+
 The SwapLab contract inherits the properties and public attributes of `Ownable.sol` and `ReentrancyGuard.sol`.
 
 ```js
@@ -149,6 +152,7 @@ contract Test {
   }
 }
 ```
+
 The same applies to the way we use the 'Address' library.
 Next, we declare a few custom errors.
 
@@ -159,7 +163,7 @@ Next, we declare a few custom errors.
   error ContractAddressNotAllowed(address);
 ```
 
-For every swappable ERC20 asset, they must be supported. Not a good practice to allow users to supply contract addresses of their choice. A user with bad intent could create a malicious contract and give the address as a parameter. It could pose a serious threat resulting to devastating. 
+For every swappable ERC20 asset, they must be supported. Not a good practice to allow users to supply contract addresses of their choice. A user with bad intent could create a malicious contract and give the address as a parameter. It could pose a serious threat resulting to devastating.
 
 - We set custom data for supported assets and providers using the `struct` keyword. They will be used as values in mappings whose keys are of address type.
 
@@ -190,6 +194,7 @@ For every swappable ERC20 asset, they must be supported. Not a good practice to 
 ```
 
 **Modifiers**
+
 - `onlyEOA()` permits only non-contract accounts to call the function it is invoked on.
 
 - `isProvider` gives access to liquidity providers only.
@@ -253,7 +258,7 @@ In the future, we may support more pairs, therefore, we configure a function for
 
 **Functions**
 
-- Swapping is only possible when the corresponding amount in Celo coin is available in the contract. Liquidity providers will call `addLiquidity()` to deposit Celo into the pool. 
+- Swapping is only possible when the corresponding amount in Celo coin is available in the contract. Liquidity providers will call `addLiquidity()` to deposit Celo into the pool.
   - It is payable because it accepts $Celo.
   - Users must take cognizance of the swapping fee otherwise it may fail.
   - Only non-contract accounts can call.
@@ -396,7 +401,7 @@ contract SwapLab is Ownable, ReentrancyGuard {
 
 **Compile**
 
-In the `backend` directory, run: 
+In the `backend` directory, run:
 
 ```bash
 npx hardhat compile
@@ -404,12 +409,12 @@ npx hardhat compile
 
 ![image](images/3.png)
 
-
 **Test**
 
 ```bash
 npx hardhat test
 ```
+
 ![image](images/5.png)
 
 **Deploy**
@@ -420,10 +425,9 @@ yarn deploy
 
 When you run the deploy command,  a folder named `deployments` is created where the deployment information is saved. There we'll import the 'Abi' and 'contract address' to the frontend where we'll need them.
 
-
 ## Frontend
 
-Exit the current directory into the root folder and install the dependencies: 
+Exit the current directory into the root folder and install the dependencies:
 
 ```bash
 cd ..
@@ -438,6 +442,7 @@ If we are to create a new project from scratch, let's assume we're in the root d
 ```bash
 npm init wagmi -- --template next-connectkit
 ```
+
 Select the choice of provider.
 
 ![image](images/2.png)
@@ -448,7 +453,6 @@ Installation success
 
 The command takes extra arguments `--template` and `next-connectkit` to start the project with a boilerplate that uses connectkit compatible with NextJs to display information to users on the frontend.
 
-
 Follow the instructions to choose your choice. For this project, I have selected the 'default' option that uses 'NextJs'. You really do not need to do anything else. Much of the work is done for you in the background.
 
 Before setting up wagmi, let's understand what Wagmi aims to achieve.
@@ -458,9 +462,9 @@ Wagmi is a library for interacting with Ethereum-based applications. It comprise
 
 - `wagmi.ts`
 
-For wagmi to work effectively, we need to use it as a provider and top-level tag for the application or the part where we need it. The provider requires a client to be parsed as a property. So first, we will configure and export the wagmi client. Below we set the value of `getDefaultClient()` from 'connectKit' being the provider argument to the `createClient` function imported from 'wagmi'. The return value is an object parameter expected by the wagmi provider component. It works more like a plugin. The 'getDefaultClient' function internally sets up known connectors for us. No need to configure providers like Metamask, Coinbase, and Walletconnect explicitly. This is one of the advantages of using wagmi over other libraries such as web3React. 
+For wagmi to work effectively, we need to use it as a provider and top-level tag for the application or the part where we need it. The provider requires a client to be parsed as a property. So first, we will configure and export the wagmi client. Below we set the value of `getDefaultClient()` from 'connectKit' being the provider argument to the `createClient` function imported from 'wagmi'. The return value is an object parameter expected by the wagmi provider component. It works more like a plugin. The 'getDefaultClient' function internally sets up known connectors for us. No need to configure providers like Metamask, Coinbase, and Walletconnect explicitly. This is one of the advantages of using wagmi over other libraries such as web3React.
 
-Lastly, we get the already configured `celoAlfajores` network information from the `'wagmi/chains'` module. Now, the work is a lot easier. 
+Lastly, we get the already configured `celoAlfajores` network information from the `'wagmi/chains'` module. Now, the work is a lot easier.
 
 ```ts
 import { getDefaultClient } from 'connectkit'
@@ -528,7 +532,7 @@ It accepts a couple of mandated and optional arguments but we only parsed the on
 
 - `formatUnits` tells the hook which format you want the balance to be. The various available options are: `ether`, `wei`, `mWei`, `gwei`, `szabo`, `kwei` and `finney`.
 
-- The `watch` property listens to changes in the balance and notifies to update the frontend. 
+- The `watch` property listens to changes in the balance and notifies to update the frontend.
 
 - Alternatively, you can optionally set the 'token' property in place of 'address' to fetch the native token balance instead of $CELO's.
 
@@ -604,14 +608,13 @@ function Header() {
 export default Header;
 ```
 
-For example, I displayed the balance of the connected account in the header to showcase the usage of the `useAccount` and `useBalance` hooks through property destructuring. The 'data' property returned by 'useBalance' contains the user's account information. From the object, we accessed `data?.formatted` - an already formatted value of `data?.value` which is in bigNumber format. Much of the conversion task is done for us. 
+For example, I displayed the balance of the connected account in the header to showcase the usage of the `useAccount` and `useBalance` hooks through property destructuring. The 'data' property returned by 'useBalance' contains the user's account information. From the object, we accessed `data?.formatted` - an already formatted value of `data?.value` which is in bigNumber format. Much of the conversion task is done for us.
 
 The output of the 'ConnectKitButton' is displayed at the top right side of the dapp.
 ![header](images/7.png)
-                                                                        
+
 Connect wallet.
 ![header](images/8.png)
-
 
 - `components/App/index.tsx`
   - _loading_ determines when the 'Spinner' component should render.
@@ -620,7 +623,7 @@ Connect wallet.
   - _allowance_: We'll fetch the user's allowance and store it here.
   - _balance_: User's native asset's balance.
   - _Records error message from the most recent transaction.
-  - Next, we call the 'useAccount()' hook to get the user's connected account address and the selected provider. 
+  - Next, we call the 'useAccount()' hook to get the user's connected account address and the selected provider.
 
   >Note: The connector property is an object that represents the user's selected wallet. We accessed the provider object using `connector?.getProvider()`. We need the provider to send transaction requests to Celo Alfajores.
 
@@ -950,8 +953,8 @@ In this file, we fetch the abis for SwapLab and Token contracts, and export both
 
   - The `sendTransaction()` expects an object of type OptionProps.
   - Get the contract instances, abis, and contract addresses.
-  - We use a switch statement to run desired function. 
-  - The Celo blockchain requires us to connect to it using any of the available web3 providers. In our case, we use either library. 
+  - We use a switch statement to run desired function.
+  - The Celo blockchain requires us to connect to it using any of the available web3 providers. In our case, we use either library.
 
   >Note: 'ethers' is a web3 provider, and we need a wallet provider to run transactions on the Celo blockchain. So, we extract the wallet provider from the 'connector' property returned by the `useAccount` hook and give it to ethers to extract the signer. Signer is an object that contains the public key of the user and the capacity to carry out a signed transaction. This is the point where Metamask or the selected wallet pops up to ask the user for permission to submit a transaction requested by the dapp. When the user accepts, a signature is obtained and included in the signer object. `ethers` then broadcast the transaction to the Celo blockchain for execution if the signature corresponds otherwise, the wallet provider will not allow the action to pass.
 
@@ -1045,6 +1048,7 @@ What we have learned so far:
 - Manage your dApp using wagmi.
 
 ## What next?
+
 ​
 Are you a developer? thinking of launching your own project on Celo blockchain? We have dozens of materials and tutorials to help you get started. Pay a visit to **[Celo documentation](https://docs.celo.org/tutorials)**
 
