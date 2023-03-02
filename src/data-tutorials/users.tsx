@@ -689,6 +689,7 @@ const Users: User[] = [
   //   website: '/tutorials?tags=composer',
   //   tags: ['favorite'],
   // },
+
   {
     title: " Celo Composer",
     description: "Build on Celo in 5 minutes of less with Celo Composer.",
@@ -1929,6 +1930,13 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },
+  {
+    title: 'Why you should Build your Next Project on the Celo Blockchain',
+    description: 'This tutorial examines the features and capabilities of the Celo Blockchain',
+    preview: require('./showcase/beginner/why-you-should-build-your-next-project-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain',
+    tags: ['celosage','beginner','celo'],
   },
   {
     title: 'Simplifying the Celo 2.0 Roadmap for Celo Builders',
