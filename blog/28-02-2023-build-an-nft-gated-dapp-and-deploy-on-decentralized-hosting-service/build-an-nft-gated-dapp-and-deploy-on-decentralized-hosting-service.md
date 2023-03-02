@@ -6,7 +6,7 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [advanced, solidity, nextjs, materialui]
+tags: [advanced, solidity, nextjs, celosage]
 hide_table_of_contents: true
 slug: /tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service
 ---

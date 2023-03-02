@@ -1821,7 +1821,7 @@ const Users: User[] = [
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
-    tags: ['advanced', 'solidity', 'nextjs', 'materialui'],
+    tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
