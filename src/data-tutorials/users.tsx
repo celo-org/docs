@@ -1875,6 +1875,13 @@ const Users: User[] = [
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
   {
+    title: 'Connect and interact with Celo using Web3React',
+    description: 'Alternative method of connecting to Celo using web3React',
+    preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3react.png'),
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3react',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
+  {
     title: 'How to build a crowdfunding platform on Celo',
     description: 'In this tutorial, we will guide you through the process of building a crowdfunding platform on the Celo blockchain',
     preview: require('./showcase/advanced/how-to-build-a-crowdfunding-platform-on-celo.png'),
