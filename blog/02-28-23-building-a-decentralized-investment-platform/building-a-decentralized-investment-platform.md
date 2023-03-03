@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-investment-platform
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/building-a-decentralized-investment-platform.png)
+
 ## Introduction
 Welcome to another tutorial on the celo blockchain. In this tutorial, we would build a mock investment platform that returns a 10% profit. This would be build on the celo blockchain. 
 

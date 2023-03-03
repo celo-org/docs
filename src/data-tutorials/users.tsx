@@ -853,6 +853,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'remix'],
   },
   {
+    title: 'Building A Decentralized Investment Platform on the Celo blockchain',
+    description: 'In this tutorial, we would build a mock investment platform that returns profit on the celo blockchain',
+    preview: require('./showcase/intermediate/building-a-decentralized-investment-platform.png'),
+    website: 'blog/tutorials/building-a-decentralized-investment-platform',
+    tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
+  },
+  {
     title: '3 Simple Steps to Connect your MetaMask Wallet To Celo',
     description: 'A step-by-step tutorial to add the Celo network to your MetaMask wallet.',
     preview: require('./showcase/beginner/3-simple-steps-to-connect-your-metamask-wallet-to-celo.png'),
