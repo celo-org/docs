@@ -131,7 +131,7 @@ mapping (uint => Flower) internal flowers;
 ```
 The mapping, named `flowers`, maps a key of type `uint` to a value of type `Flower`. This data structure allows for a unique `uint` key to be associated with a specific "Flower" object, allowing for efficient look-up and retrieval of "Flower" values based on their associated keys.
 
-A state variable named `flowersLength` is being declared in the next line as a data type of `uint`. This variable will store the number of flowers permanently in the contract and only accept unsigned integer values.<br>
+A state variable named `flowersLength` is being declared in the next line as a data type of `uint`. This variable will store the number of flowers permanently in the contract and only accept unsigned integer values.
 
 Furthermore, to make our smart contract more interesting we begin to add functions. The first function we will be adding is the `createFlower` function.
 
