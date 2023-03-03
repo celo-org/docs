@@ -930,6 +930,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
+    title: 'Deploy and Interact with Smart Contracts on the Celo Blockchain',
+    description: 'Learn to deploy and interact with self-executing tamper-proof agreements developing smart contracts with Solidity on Celo Blockchain',
+    preview: require('./showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
+    website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png'),
