@@ -1112,6 +1112,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-uniswap-works',
     tags: ['celosage', 'celo', 'beginner'],
   },
+ {
+    title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
+    description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
+    preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
+    website: 'blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity',
+    tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','valora','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate', 'advanced'],
+  },
   {
     title: 'How to Build a Full Stack Social Media Dapp on the Celo Blockchain',
     description: 'This tutorial covers how to build a decentralized social media dapp on the celo blockchain',

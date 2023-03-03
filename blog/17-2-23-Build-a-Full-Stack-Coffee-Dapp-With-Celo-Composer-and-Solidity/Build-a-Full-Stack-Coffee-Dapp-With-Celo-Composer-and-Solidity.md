@@ -994,8 +994,8 @@ To have access to the full codebase, here is the link to the project repo on [gi
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
 ## References​
-- https://github.com/celo-org/celo-composer
-- https://blog.fleek.co/posts/fleek-nextJS
+- [celo-composer](https://github.com/celo-org/celo-composer)
+- [fleek-nextJS](https://blog.fleek.co/posts/fleek-nextJS)
 
 
 
