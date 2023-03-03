@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs
 ---
 
-![header](../../src/data-tutorials/showcase\intermediate\FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png.png)
+![header](../../src/data-tutorials/showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png.png)
 
 
  # A Detailed Guide on How to Create a Smart Contract for a Flowers Marketplace on the Celo Blockchain
@@ -19,13 +19,16 @@ slug: /tutorials/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs
 
 ### What is Celo?
 
- Celo is a decentralized platform that aims to make financial tools accessible to people everywhere, especially in emerging markets. It uses a blockchain to secure transactions and allow for fast, cheap, and secure transfers of its stablecoin, CELO, which is pegged to the value of a basket of national currencies to reduce volatility. The Celo network is maintained by a network of validators who run its blockchain software and are incentivized with CELO tokens. The platform also includes a suite of dApps to offer financial services such as remittances, loans, and payments.<br>
+ Celo is a decentralized platform that aims to make financial tools accessible to people everywhere, especially in emerging markets. It uses a blockchain to secure transactions and allow for fast, cheap, and secure transfers of its stablecoin, CELO, which is pegged to the value of a basket of national currencies to reduce volatility. The Celo network is maintained by a network of validators who run its blockchain software and are incentivized with CELO tokens. The platform also includes a suite of dApps to offer financial services such as remittances, loans, and payments.
 
 ## PREREQUISITE 
 
 To take this tutorial, you will need:
+
 - A desktop computer with internet and a Chrome web browser.
-- A basic understanding of blockchain technology and smart contracts. If you're not familiar with this, we suggest taking our Introduction to Blockchain course first.
+  
+- A basic understanding of blockchain technology and smart contracts.  
+  
 - A desktop computer with internet and a Chrome web browser.
 
 ## REQUIREMENT
