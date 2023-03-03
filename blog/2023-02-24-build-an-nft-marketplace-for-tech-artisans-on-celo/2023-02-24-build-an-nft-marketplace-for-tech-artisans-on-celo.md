@@ -14,16 +14,19 @@ slug: /tutorials/build-an-nft-marketplace-for-tech-artisans-on-celo
 ![header](../../src/data-tutorials/showcase/intermediate/build-an-nft-marketplace-for-tech-artisans-on-celo.png)
 
 ## Introduction​
+
 Welcome to our tutorial on building an NFT marketplace for tech artisans on Celo! This tutorial will show you how to use React, Solidity, react-celo, and IPFS to create a platform that connects creators and collectors in the NFT market space. Our marketplace will allow creators to create and showcase their NFT. 
 
 Metrics, such as the number of NFT transactions and amounts received from clients, are used to determine outstanding creators. This tutorial is perfect for those looking to build a platform that connects tech artisans and clients in a decentralized, secure, and efficient manner.
 
 ## Prerequisites​
+
 To successfully follow along in this tutorial, you need basic knowledge of the following:
 HTML, CSS, and React
 Blockchain, Solidity, and Hardhat
 
 ## Requirements​
+
 - [Remix](https://remix.ethereum.org/) - Online editor for writing smart contracts or any code editor you choose.
 - [Metamask](https://metamask.io/) - For managing our wallet.
 - [Hardhat](https://hardhat.org/) - For compiling and deploying the smart contract
@@ -43,6 +46,7 @@ The backend of the dApp was written in Solidity using Remix IDE.
 IPFS allows decentralized storage for our NFT files and their corresponding metadata.
 
 ## Smart Contract
+
 The NFT minter section was generated with Open Zeppelin wizard, which has the basic functionalities to get us to hit the ground running in this project. Feel free to head to their docs to familiarize yourself with the many audited and secured contracts they have created to ease smart contract development.
 
 I would walk us through some significant functions of the Dapp.
@@ -179,6 +183,7 @@ function sellNFT(uint256 tokenId) public noReentrant payable {
 `sellNFT` enables the listing of an NFT for sale on the marketplace. The function takes a unique NFT identifier called `tokenId` as a parameter, declares two storage variables, and then performs several checks to ensure that the caller is the owner of the NFT, that it hasn't already been listed for sale, and that the amount of Celo sent by the caller matches the NFT's list price. If all checks pass, the contract owner is paid the list price, the NFT is transferred from the caller to the contract, and the `forSale` flag is set to true for both the `_listedNFT` and `_myNFT` structs. Finally, the function emits an event with information about the newly listed NFT. The `noReentrant` modifier is used to prevent re-entrancy attacks that could occur if the function is called multiple times before it has finished executing.
 
 ## Frontend
+
 In this section, you will learn how to establish a connection between the user interface of your decentralized application (DApp) and the smart contract running on the Celo blockchain. This connection will enable your DApp to communicate and interact with your smart contract.
 
 Here is what the `src` directory structure looks like.
@@ -218,6 +223,7 @@ The file imports two external modules, `@nomicfoundation/hardhat-toolbox` and `d
 The Hooks and Utils directories are where many of the functions in this project are located. Therefore, we will be exploring these directories and describing the purpose of each file within them.
 
 ## Hooks
+
 This is where all the custom hooks are located. You might be wondering at this moment what hook is in React.
 
 In React, a hook is a function that enables the use of state and other React features within functional components. They are designed to provide a way to reuse stateful logic across different components without relying on class components or higher-order components.
@@ -267,6 +273,7 @@ The `useEffect` hook calls the `getContract` function once the address property 
 Finally, the `useContract` hook returns the contract state variable, which can be used by the component that calls this hook to interact with the smart contract on the blockchain.
 
 ## Utils
+
 This typically contains various utility functions and modules that can be used throughout the application. These functions and modules are generally designed to perform specific tasks or provide reusable pieces of code that can be utilized across different application parts.
 
 ### constants.js
@@ -302,13 +309,13 @@ export const toCheckSum  = (kit, address) => kit.connection.web3.utils.toChecksu
 ```
 
 
-**truncate:** This function takes a string input and truncates it to a length of 9 characters by taking the first five characters, adding an ellipsis (...), and then adding the last four characters of the string. The truncated string is then returned.
+- truncate: This function takes a string input and truncates it to a length of 9 characters by taking the first five characters, adding an ellipsis (...), and then adding the last four characters of the string. The truncated string is then returned.
 
-**priceToWei:** Takes two parameters:  the `kit` object and a `price` value. It converts the price from Ether to Wei, which is the smallest unit of Ether. The toWei function is called on the web3.utils property of the connection property of the kit object, passing in the price value as a string and the string 'ether' to specify the unit of the input value. The converted value is returned.
+- priceToWei: Takes two parameters:  the `kit` object and a `price` value. It converts the price from Ether to Wei, which is the smallest unit of Ether. The toWei function is called on the web3.utils property of the connection property of the kit object, passing in the price value as a string and the string 'ether' to specify the unit of the input value. The converted value is returned.
 
-**formatPrice:** This function takes two parameters:  the `kit` object and a `price` value. It converts the price from Wei to Ether and returns it as a string. If the price is falsy (i.e., null, undefined, 0, NaN, false, or an empty string), an empty string is returned. The `fromWei` function is called on the `web3.utils` property of the `connection` property of the `kit` object, passing in the price value as a string.
+- formatPrice: This function takes two parameters:  the `kit` object and a `price` value. It converts the price from Wei to Ether and returns it as a string. If the price is falsy (i.e., null, undefined, 0, NaN, false, or an empty string), an empty string is returned. The `fromWei` function is called on the `web3.utils` property of the `connection` property of the `kit` object, passing in the price value as a string.
 
-**toCheckSum:** This function takes two parameters: a `kit` object and an `address` value. It converts the address value to its checksummed form, a case-sensitive representation of the Ethereum address with a specific format that helps prevent certain errors. The toChecksumAddress function is called on the web3.utils property of the connection property of the kit object, passing in the address value. The `checksummed` address is returned.
+- toCheckSum: This function takes two parameters: a `kit` object and an `address` value. It converts the address value to its checksummed form, a case-sensitive representation of the Ethereum address with a specific format that helps prevent certain errors. The toChecksumAddress function is called on the web3.utils property of the connection property of the kit object, passing in the address value. The `checksummed` address is returned.
 
 
 ### interact.js
@@ -500,12 +507,15 @@ The `JSONToIPFS` function takes a JSON object, sends it to Pinata using the `pin
 The `getNFTMeta` function takes a URI of an NFT metadata JSON file, retrieves the file from IPFS using Axios, and returns the parsed JSON object.
 
 ## Conclusion
+
 We built an NFT marketplace for tech artisans to connect with their prospective clients with a metric to highlight freelancers with frequent sales. [Here](https://tech-artisans.vercel.app/) is the final demo of what we built. [Here](https://github.com/cjustinobi/tech-artisans-nft-marketplace) is the link to the complete code.
 
 ## About the Author​
+
 A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to call myself VueDetective. Connect with me on LinkedIn and Github
 
 ## References​
+
 [https://docs.celo.org/developer](https://docs.celo.org/developer)
 [https://docs.alchemy.com/docs/how-to-build-an-nft-marketplace-from-scratch](https://docs.alchemy.com/docs/how-to-build-an-nft-marketplace-from-scratch)
 
