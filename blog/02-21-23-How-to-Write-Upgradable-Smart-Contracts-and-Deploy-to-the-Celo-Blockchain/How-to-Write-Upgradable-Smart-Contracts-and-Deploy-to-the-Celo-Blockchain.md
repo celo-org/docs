@@ -29,7 +29,6 @@ NodeJS 12.0.1 upwards installed.
 ## Prerequisites
 
 * [Solidity](https://docs.soliditylang.org/en/v0.8.17/)
-* [Remix IDE](https://remix.ethereum.org/)
 * [Hardhat](https://hardhat.org/docs)
 
 ## Create a New Hardhat Project
@@ -302,7 +301,7 @@ You can now scan this address on [celoscan](https://alfajores.celoscan.io/) to v
 
 ## Testing Your Smart Contract
 
-Lets create a script for testing our our smart contract.
+Lets create a script for testing our smart contract.
 
 Go to the test folder and create a new file called `MessageContract.js` and the following code.
 
