@@ -36,7 +36,7 @@ To take this tutorial, you will need:
 
 ## Tutorial Overview
 
-In this tutorial, we would be building a smart contract for buying and selling flowers on the Celo blockchain. The contract contains a set of rules and conditions that must be met before the transaction can take place. The conditions include the price of the flowers and any other relevant terms. Once the conditions are met, the contract automatically executes the transaction, transferring ownership of the flowers and the payment between the buyer and the seller in a secure, transparent, and tamper-proof manner. This eliminates the need for intermediaries and ensures that the transaction is fair, efficient, and reliable.<br>
+In this tutorial, we would be building a smart contract for buying and selling flowers on the Celo blockchain. The contract contains a set of rules and conditions that must be met before the transaction can take place. The conditions include the price of the flowers and any other relevant terms. Once the conditions are met, the contract automatically executes the transaction, transferring ownership of the flowers and the payment between the buyer and the seller in a secure, transparent, and tamper-proof manner. This eliminates the need for intermediaries and ensures that the transaction is fair, efficient, and reliable.
 
 Now let's begin writing our smart contract.
 
@@ -49,7 +49,7 @@ After creating a new file we start by declaring some statements in our smart con
 
 pragma solidity >=0.7.0 <0.9.0;
 ```
-The line `SPDX-License-Identifier: MIT` is an identifier for the license of the code, in this case, the `MIT License`. [The SPDX (Software Package Data Exchange)](https://spdx.dev/) identifier is a standardized way to identify open-source licenses.<br>
+The line `SPDX-License-Identifier: MIT` is an identifier for the license of the code, in this case, the `MIT License`. [The SPDX (Software Package Data Exchange)](https://spdx.dev/) identifier is a standardized way to identify open-source licenses.
 
 The next line is the declaration of the version of the Solidity programming language used in the smart contract, specifically stating that the code is written in Solidity version 0.7.0 or later, but not later than 0.9.0. 
 
