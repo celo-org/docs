@@ -67,7 +67,7 @@ source .env
 echo $accountAddress | pbcopy
 
 # Head to the faucet to get some money and paste your account address there
-open https://celo.org/developers/faucet
+open https://faucet.celo.org
 
 # Verify you got money successfully
 celocli account:balance $accountAddress

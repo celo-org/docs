@@ -13,7 +13,7 @@ Overview of Celo Whitepapers describing Celo's protocol, economics, and social i
 
 Celo Whitepaper: A Multi-Asset Cryptographic Protocol for Decentralized Social Payments
 
-- [Read paper](https://celo.org/papers/whitepaper)
+- [Read paper](https://celo.org/papers)
 - [阅读](https://celo.org/papers/whitepaper/chinese)
 
 Plumo: Towards Scalable Interoperable Blockchains Using Ultra Light Validation Systems

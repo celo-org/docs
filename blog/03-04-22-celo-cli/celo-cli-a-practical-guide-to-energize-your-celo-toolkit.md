@@ -4,7 +4,7 @@ description: Explore the Celo blockchain using a command-line interface.
 authors:
   - name: ✍️ Joe Nyzio
 tags: [celo]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: "/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit"
 ---
 
