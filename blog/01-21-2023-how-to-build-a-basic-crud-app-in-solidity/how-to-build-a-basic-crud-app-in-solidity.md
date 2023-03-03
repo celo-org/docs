@@ -6,7 +6,7 @@ authors:
     title: Community Moderator, Celo
     url: https://github.com/iamoracle
     image_url: https://github.com/iamoracle.png
-tags: [CRUD, Celo Sage, Solidity]
+tags: [beginner, Solidity]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-basic-crud-app-in-solidity
 ---
