@@ -915,9 +915,9 @@ const Users: User[] = [
   {
     title: 'FloralNft Smart Contract for Buying and Gifting Flowers as NFTs',
     description: 'FloralNft is a smart contract built on the Celo blockchain that allows users to create and trade unique digital flowers as non-fungible tokens (NFTs).',
-    preview: require('./showcase/intermediate/FloralNft-Smart-Contract-for-Buying and-Gifting-Flowers as-NFTs.png'),
-    website: 'blog/tutorials/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs',
-    tags: ['celosage', 'solidity', 'intermediate'],
+    preview: require('./showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png'),
+    website: 'blog/tutorials/floralNft-smart-contract-for-buying-and-gifting-flowers-as-nfts',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo'],
   },
   {
     title: "Flutter & Celo - Easily build Flutter Mobile dApps",
