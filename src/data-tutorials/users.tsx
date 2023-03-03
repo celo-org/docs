@@ -153,7 +153,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#39ca30",
   // },
-
   // impact: {
   //   label: translate({ message: "Impact" }),
   //   description: translate({
@@ -162,7 +161,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#dfd545",
   // },
-
   foundation: {
     label: translate({ message: "Foundation" }),
     description: translate({
@@ -668,15 +666,14 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#35D07F",
   },
-
-  // wallets: {
-  //   label: translate({ message: "Wallets" }),
-  //   description: translate({
-  //     message: "",
-  //     id: "showcase.tag.wallets.description",
-  //   }),
-  //   color: "#fe6829",
-  // },
+  typescript: {
+    label: translate({ message: "Typescript" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.typescript.description",
+    }),
+    color: "#3488EC",
+  },
 };
 
 // Add your site to this list
@@ -755,6 +752,13 @@ const Users: User[] = [
     description: "In Solidity, an ownership attack takes advantage of a smart contract's vulnerabilities and gives illegal and unauthorized access to a foreign party.",
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-ownership-attack.png'),
     website: 'blog/tutorials/preventing-vulnerabilities-in-solidity-ownership-attack',
+    tags: ['intermediate','celosage'],
+  },
+  {
+    title: 'Exploring the Robust Structure of Celos Protocol Design',
+    description: "Exploring the Robust Structure of Celo's Protocol Design",
+    preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
+    website: 'blog/tutorials/exploring-the-robust-structure-of-celo-protocol-design',
     tags: ['intermediate','celosage'],
   },
    {
