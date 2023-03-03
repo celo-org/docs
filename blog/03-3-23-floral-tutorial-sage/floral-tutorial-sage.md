@@ -13,8 +13,6 @@ slug: /tutorials/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs
 ![header](../../src/data-tutorials/showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png.png)
 
 
- # A Detailed Guide on How to Create a Smart Contract for a Flowers Marketplace on the Celo Blockchain
-
 ## INTRODUCTION
 
 ### What is Celo?
