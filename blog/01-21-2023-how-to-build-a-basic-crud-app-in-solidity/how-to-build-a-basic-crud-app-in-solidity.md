@@ -342,8 +342,7 @@ undefined
 
 The transaction will be held as a result. This operation adds a value to the array, changing the data. Therefore, it is recorded as a transaction. Remember that all read operations are free, but any operation that results in a change to the blockchain incurs a gas fee.
 
-Now we can read the array again to see what's inside
-Let's add a few more technologies to the mix:
+Now, we can read the array again to see what's inside. Let's add a few more technologies to the mix:
 
 ```javascript
 await instance.addTech("React");
@@ -360,16 +359,14 @@ The above image shows that "React.js'' was misspelled as "React." Let's fix it w
 
 `> await instance.updateTech(1, "React.js")`
 
-Let’s check the array again
-The spelling is successfully fixed
+Let’s check the array again, the spelling is successfully fixed.
 
 ### Deleting a Technology name
 
 The last operation is to delete a value:
 `> await instance.deleteTech(5)`
 
-Read the array
-The “svelte” item has been deleted from the list
+Read the array, the “svelte” item has been deleted from the list
 
 # Conclusion
 
