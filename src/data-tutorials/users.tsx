@@ -769,6 +769,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','solidity','smartcontract','video'],
   },
   {
+    title: 'Signature Replay Attack',
+    description: ' A signature replay attack is an attack whereby a previously executed valid transaction is fraudulently or maliciously repeated on the same blockchain or a different blockchain.',
+    preview: require('./showcase/advanced/solidity-vulnerabilities-signature-replay-attack.png'),
+    website: '/blog/tutorials/solidity-vulnerabilities-signature-replay-attack',
+    tags: ['celosage','advanced', 'solidity'],
+  },
+  {
     title: 'Como Construir em Celo Usando Tatum',
     description: 'Aprenda como realizar um deploy ERRC20 em Celo usando Tatum.',
     preview: require('./showcase/beginner/como-construir-em-celo-usando-tatum.png'),
