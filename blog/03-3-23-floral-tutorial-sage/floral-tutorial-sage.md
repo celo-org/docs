@@ -5,9 +5,9 @@ authors:
   - name: Ogoyi Thompson
     title: Technical Writer
 url: https://github.com/Ogoyi
-tags: [solidity, intermediate, celo]
+tags: [celo sage, solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs
+slug: /tutorials/floralNft-smart-contract-for-buying-and-gifting-flowers-as-nfts
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png.png)
