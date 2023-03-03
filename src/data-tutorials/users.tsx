@@ -153,7 +153,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#39ca30",
   // },
-
   // impact: {
   //   label: translate({ message: "Impact" }),
   //   description: translate({
@@ -162,7 +161,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#dfd545",
   // },
-
   foundation: {
     label: translate({ message: "Foundation" }),
     description: translate({
@@ -668,15 +666,14 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#35D07F",
   },
-
-  // wallets: {
-  //   label: translate({ message: "Wallets" }),
-  //   description: translate({
-  //     message: "",
-  //     id: "showcase.tag.wallets.description",
-  //   }),
-  //   color: "#fe6829",
-  // },
+  typescript: {
+    label: translate({ message: "Typescript" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.typescript.description",
+    }),
+    color: "#3488EC",
+  },
 };
 
 // Add your site to this list
