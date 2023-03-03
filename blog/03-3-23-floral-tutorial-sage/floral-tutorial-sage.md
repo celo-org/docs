@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/floralNft-smart-contract-for-buying-and-gifting-flowers-as-nfts
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png.png)
+![header](../../src/data-tutorials/showcase/intermediate/FloralNft-Smart-Contract-for-Buying-and-Gifting-Flowers-as-NFTs.png)
 
 
 ## INTRODUCTION
