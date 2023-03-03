@@ -52,9 +52,10 @@ The goal of today's example dapp is to achieve a payment using the CELO blockcha
 
 ## Vanilla 🍦
 
-As this is very minimal dapp, this only supports Metamask out of the box, this is where librairies and framework come in handy. 
-  - _For instance, to support many more wallets without them, you would have to get into the documentation (if it exists) of each wallet and do a custom connector for each of them._
-The example focuses on two buttons: `Connect wallet` and `Transfer 0.1 CELO`. Let's go over each one.
+As this is very minimal dapp, this only supports Metamask out of the box, this is where librairies and framework come in handy.
+
+- _For instance, to support many more wallets without them, you would have to get into the documentation (if it exists) of each wallet and do a custom connector for each of them._
+  The example focuses on two buttons: `Connect wallet` and `Transfer 0.1 CELO`. Let's go over each one.
 
 ### Connecting a wallet
 
@@ -73,18 +74,18 @@ const metaMaskProvider = new ethers.providers.Web3Provider(window.ethereum);
 const signer = metaMaskProvider.getSigner();
 // This is the CELO smart-contract representation in our code
 const CELOContract = new ethers.Contract(
-    TESTNET.NATIVE_TOKEN, // 0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9
-    TESTNET.NATIVE_TOKEN_ABI, // the content of abi.json
-    signer
-  );
+  TESTNET.NATIVE_TOKEN, // 0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9
+  TESTNET.NATIVE_TOKEN_ABI, // the content of abi.json
+  signer
+);
 ```
 
 So now, we have this `CELOContract` object… great?! But how does this help us?
 
-You can use it to call smart-contract methods (written in solidity) directly in your Javascript code! Such as `CELOContract.balanceOf` which is what's gonna determine if our user can transfer CELOs or not. 
+You can use it to call smart-contract methods (written in solidity) directly in your Javascript code! Such as `CELOContract.balanceOf` which is what's gonna determine if our user can transfer CELOs or not.
 
 ```js
-// All 
+// All
 State.balance = await CELOContract.balanceOf(State.address);
 if (State.balance.gte(TESTNET.AMOUNT)) {
   // enable the transfer button!
@@ -95,7 +96,7 @@ We're now sure the user has enough CELO, so let's now send a request to MetaMask
 
 ```js
 // 0.1 CELO in CELO Wei, where one CELO = 10**18 CELO Wei.
-const amount = ethers.utils.parseUnits("0.1") 
+const amount = ethers.utils.parseUnits("0.1")
 // You'll notice no trace of the sender's address, metamask handles it for us
 const receipt = await CELOContract.transfer(/* RECEPIENT ADDRESS */, amount);
 // Wait for 1 confirmation (around ~5 seconds on CELO)
@@ -104,17 +105,22 @@ const { blockNumber } = await receipt.wait(1);
 
 That's it! You've made your first transaction! You can find the full code in the codesandbox embed right below
 
-
-<iframe src="https://codesandbox.io/embed/celo-example-vanilla-tduwuz?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="celo-example-vanilla"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+<iframe
+  src="https://codesandbox.io/embed/celo-example-vanilla-tduwuz?fontsize=14&hidenavigation=1&theme=dark"
+  style={{
+    width: "100%",
+    height: "500px",
+    border: 0,
+    borderRadius: "4px",
+    overflow: "hidden",
+  }}
+  title="celo-example-vanilla"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## React ⚛
 
-
-You can see doing things without a UI or a wallet library can be very cumbersome. This is why we're providing a second example, using React and RainbowKit, our two other recommended frameworks. The dapp is doing the same thing, connect your users' wallets and transfer a small amount of CELO (on Alfajores). While you may be familiar with React coming from web2, RainbowKit probably doesn't ring a bell. As the Rainbow team themselves put it, it's the _"The best way to connect a wallet"_ and does *all* the heavy lifting for you so you can focus on building your product, and not how to handle all types of different wallets.
+You can see doing things without a UI or a wallet library can be very cumbersome. This is why we're providing a second example, using React and RainbowKit, our two other recommended frameworks. The dapp is doing the same thing, connect your users' wallets and transfer a small amount of CELO (on Alfajores). While you may be familiar with React coming from web2, RainbowKit probably doesn't ring a bell. As the Rainbow team themselves put it, it's the _"The best way to connect a wallet"_ and does _all_ the heavy lifting for you so you can focus on building your product, and not how to handle all types of different wallets.
 
 You can find the [full react example repository right here](https://github.com/aaronmgdr/simple-spender.)
