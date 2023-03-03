@@ -1995,6 +1995,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
   },
+ {
+    title: 'How to Create a Decentralized Application Using React-Celo',
+    description: 'This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo',
+    preview: require('./showcase/intermediate/how-to-create-a-decentralized-application-using-react-celo.png'),
+    website: 'blog/tutorials/how-to-create-a-decentralized-application-using-react-celo',
+    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'react-celo', 'hardhat', 'crowdfunding', 'intermediate'],
+  }, 
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
