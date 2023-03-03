@@ -1999,6 +1999,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
   },
+  {
+    title: 'Example architectures for a simple payment dapp',
+    description: 'This post will focus on the front-end part of how to create a simple payment dapp',
+    preview: require('./showcase/beginner/example-architectures-for-a-simple-payment-dapp.png'),
+    website: 'blog/tutorials/example-architectures-for-a-simple-payment-dapp',
+    tags: ['javascript', 'react', 'beginner', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
