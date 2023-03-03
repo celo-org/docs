@@ -1,5 +1,5 @@
 ---
-title: Solidity Vulnerabilities: Signature Replay Attack
+title: Solidity Vulnerabilities - Signature Replay Attack
 description: A signature replay attack is an attack whereby a previously executed valid transaction is fraudulently or maliciously repeated on the same blockchain or a different blockchain.
 authors:
   - name: Oyeniyi Abiola Peace
