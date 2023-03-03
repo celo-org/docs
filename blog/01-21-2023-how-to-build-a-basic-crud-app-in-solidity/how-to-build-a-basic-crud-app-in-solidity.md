@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-basic-crud-app-in-solidity
 ---
 
-# How to build a Basic CRUD App in Solidity
+![header](../../src/data-tutorials/showcase/beginner/how-to-build-a-basic-crud-app-in-solidity.png)
 
 ## Introduction
 
