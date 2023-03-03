@@ -1,5 +1,5 @@
 ---
-title: Optimizing Gas Consumption in Celo Smart Contracts: A Step-by-Step Guide
+title: Optimizing Gas Consumption in Celo Smart Contracts A Step-by-Step Guide
 description: In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.
 
 
