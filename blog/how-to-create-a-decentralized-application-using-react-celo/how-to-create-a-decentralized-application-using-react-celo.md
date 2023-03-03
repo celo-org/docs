@@ -7,7 +7,7 @@ authors:
     title: Product Manager, Technical Writer @Celo Foundation
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/222725870-c8393024-302f-4c3d-9d0c-814688c62b15.png
-tags: [celosage, smartcontract, solidity, react, react-celo, hardhat, crowdfunding, intermediate]
+tags: [celosage, smartcontract, solidity, react, hardhat, crowdfunding, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/how-to-create-a-decentralized-application-using-react-celo
 ---
