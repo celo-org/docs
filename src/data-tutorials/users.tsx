@@ -1439,13 +1439,6 @@ const Users: User[] = [
     website: 'https://learn.figment.io/tutorials/redeploy-ethereum-dapps-on-celo',
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
-    {
-    title: 'Building A Decentralized Investment Platform on the Celo blockchain',
-    description: 'In this tutorial, we would build a mock investment platform that returns profit on the celo blockchain',
-    preview: require('./showcase/intermediate/building-a-decentralized-investment-platform.png'),
-    website: 'blog/tutorials/building-a-decentralized-investment-platform',
-    tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
-  },
   {
     title: 'Create Vault Smart Contract',
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
