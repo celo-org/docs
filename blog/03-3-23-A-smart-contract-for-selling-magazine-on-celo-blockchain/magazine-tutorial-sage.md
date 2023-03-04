@@ -17,9 +17,9 @@ slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-f
 
  ## INTRODUCTION
 
-Celo is a blockchain platform that enables developers to build and deploy smart contracts. Smart contracts are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code. They can be used to automate a wide range of financial and non-financial transactions, such as the transfer of assets, the management of supply chains, and the execution of legal agreements.
+ Celo is a decentralized platform that enables developers to build and deploy smart contracts on it's blockchain. Smart contracts are self-executing contracts that strikes an agreement between buyer and seller to execute and event, which is directly written into lines of code. They can be used to automate a wide range of financial and non-financial transactions, such as the transfer of assets, the management of supply chains, and the execution of legal agreements.
 
-Celo's smart contract functionality is centered on the Solidity programming language, which is also used by the Ethereum blockchain. This means that developers familiar with Ethereum's smart contract ecosystem can easily migrate their projects to Celo.
+ Celo's smart contract functionality is centered on the Solidity programming language, also used by the Ethereum blockchain. This means developers familiar with Ethereum's smart contract ecosystem can easily migrate their projects to Celo.
 
 One of the key benefits of Celo's smart contract platform is its focus on accessibility. Celo is designed to be mobile-first, which means that smart contracts can be created and executed directly from smartphones. This is a significant advantage in parts of the world where smartphones are the primary means of accessing the internet.
 
@@ -31,11 +31,11 @@ Overall, Celo's smart contract platform is a powerful tool for developers lookin
 
 To follow this tutorial and create a smart contract on the Celo blockchain, you will need the following:
 
-- A code editor or text editor: You can use any code editor or text editor of your choice, but for this tutorial, we will be using Remix, a web-based IDE for Solidity development.
+-  **A code editor or text editor**: You can use any code editor or text editor of your choice, but for this tutorial, we will use Remix, a web-based IDE for Solidity development.
   
-- An internet browser: You will need a web browser to access Remix and interact with the Celo blockchain.
+- **An internet browser**: You will need a web browser to access Remix and interact with the Celo blockchain.
   
-- A good internet connection: As the Celo blockchain is decentralized and relies on a network of nodes to process transactions, a stable and reliable internet connection is important for smooth operation.
+- **A good internet connection**: As the Celo blockchain is decentralized and relies on a network of nodes to process transactions, a stable and reliable internet connection is important for smooth operation.
   
 By having these requirements in place, you'll be ready to start building your first smart contract on the Celo blockchain using Remix.
 
@@ -454,17 +454,17 @@ contract Magazino {
 
 To deploy the Magazine smart contract on the Celo blockchain, follow the steps below:
 
-- Install Celo Extension Wallet: Download and install the Celo Extension Wallet from the Google Chrome store. Create a wallet and securely store your key phrase.
+- **Install Celo Extension Wallet**: Download and install the Celo Extension Wallet from the Google Chrome store. Create a wallet and securely store your key phrase.
 
-- Fund your wallet: Copy your wallet address and paste it into the Celo Faucet. Confirm the transaction to receive Celo tokens in your wallet.
+- **Fund your wallet**: Copy your wallet address and paste it into the Celo Faucet. Confirm the transaction to receive Celo tokens in your wallet.
 
-- Open Remix and create a new Solidity file: Paste the Magazine contract code into the file. Ensure that the Solidity compiler is set to version 0.8.7 or later.
+- **Open Remix and create a new Solidity file**: Paste the Magazine contract code into the file. Ensure that the Solidity compiler is set to version 0.8.7 or later.
 
-- Compile the contract: Click the "Compile Magazine.sol" button in the Solidity Compiler tab in Remix.
+- **Compile the contract**: Click the "Compile Magazine.sol" button in the Solidity Compiler tab in Remix.
 
-- Deploy the contract: In the "Deploy & Run Transactions" tab, select the Celo network from the dropdown menu. Connect your wallet to Remix by clicking "Connect to wallet". Select "Magazine" from the "Contract" dropdown menu. Click the "Deploy" button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+- **Deploy the contract**: In the "Deploy & Run Transactions" tab, select the Celo network from the dropdown menu. Connect your wallet to Remix by clicking "Connect to wallet". Select "Magazine" from the "Contract" dropdown menu. Click the "Deploy" button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
 
-- Interact with the contract: Once the transaction is confirmed, the FloralNft contract will be deployed on the Celo blockchain. You can interact with it using Remix.
+- **Interact with the contract**: Once the transaction is confirmed, the FloralNft contract will be deployed on the Celo blockchain. You can interact with it using Remix.
 
 ## Conclusion
 
@@ -478,3 +478,11 @@ Great job! It's always helpful to provide additional resources for further learn
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
 
+## References
+https://web3.storage/docs/
+
+https://docs.celo.org/developer/contractkit/
+
+https://docs.celo.org/
+ 
+Thank you!!
