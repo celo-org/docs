@@ -1,6 +1,6 @@
 ---
 title: How to Create a Decentralized Application Using React-Celo
-description: This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo,
+description: This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo
 
 authors:
   - name: Israel Okunaya
