@@ -1,7 +1,7 @@
 ---
 title: How to Build and Deploy Factory Contracts on Celo Blockchain
 description: This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications.
-author:
+authors:
   - name: John Fawole
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
