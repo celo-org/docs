@@ -104,8 +104,8 @@ Now that your contract is compiled, you can deploy your smart contract to the ne
 
 ### Directory structure
 
-<img src="./images/screenshot-3.png" width="180px" alt="Directory structure before" /><img src="./images/screenshot-4.png" width="180px" alt="Directory structure after" />
-
+![Directory structure before](./images/screenshot-3.png)
+![Directory structure after](./images/screenshot-4.png)
 **Before and After**
 
 Let’s copy our Contract ABIs into our project.
@@ -124,11 +124,11 @@ or
 flutter pub run build_runner watch
 ```
 
-<img src="./images/screenshot-5.png" alt="Runner command output"/>
+![runner command output](./images/screenshot-5.png)
 
 This will generate a dart file to represent our smart contract object named **tictactoev1.g.dart**.
 
-<img src="./images/screenshot-6.png" alt="Code output"/>
+![code output](./images/screenshot-6.png)
 
 ### Dart Implementation
 
@@ -170,7 +170,7 @@ void main() async {
 
 We can access the different functions and events that exist in our dart implementation of the TicTacToeV1 smart contract. By running ```dart lib/main.dart```. we can easily see that we have been able to interact seamlessly with our deployed smart contract.
 
-<img src="./images/screenshot-7.png" alt="smart contract output"/>
+![smart contract output](./images/screenshot-7.png)
 
 ## Conclusion
 
