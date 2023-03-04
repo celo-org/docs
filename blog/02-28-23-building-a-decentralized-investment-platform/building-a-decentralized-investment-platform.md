@@ -62,7 +62,7 @@ The Solidity version pragma specifies the version of the Solidity programming la
 
 Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD). 
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
@@ -88,7 +88,7 @@ You can find more information on how to use these functions and events in the Ce
 
 Next up, you would need to create a contract(in this case you name the contract `celoinvest`) and then define a way for investments to be tracked on the blockchain, including who made the investment, how much they invested, and when the investment matures and is paid back.
 
-```js
+```solidity
 contract celoinvest{
     struct Investment{
         address payable investor;
@@ -115,7 +115,7 @@ Inside the contract, there is a data structure defined called "Investment". The 
   
 After this, we would declare some variables with various data types. If you would like to learn more about this dat-types, I gave a simple explanation to some data types in my previous tutorial. View it [here](https://docs.celo.org/blog/tutorials/how-to-build-car-marketplace-dapp-with-react)
 
-```js
+```solidity
     uint internal taxFee = 1000000000000000000;
     mapping (uint => Investment) internal investments;
         uint internal investmentLength = 0;
@@ -131,7 +131,7 @@ The third line declares a variable named `cUsdTokenAddress` and assigns it a val
 
 You are then going to declare the modifiers. Modifiers are like functions that can modify the behaviour of other functions or methods they are applied to.
 
-```js
+```solidity
     modifier isAdmin(uint _id){
          require(msg.sender == address(this),"Accessible only to the admin");
         _;
@@ -151,7 +151,7 @@ _Please note that the isAdmin variable can take any address as this address woul
 
 Following the previous declarations, you would then write the `invest` function which is a public function, meaning that it can be called by anyone who has access to the smart contract.
 
-```js
+```solidity
 function invest(
         string memory _name,
         string memory _identification,
@@ -190,7 +190,7 @@ If the transfer is successful, then a new `Investment` object is created in the 
 
 The next function would be called `getInvestments` which retrieves the details of an investment based on its index in the `investments` array.
 
-```js
+```solidity
     function getInvestments(uint _index) public view isAdmin(_index) returns(
         address payable,
         string memory,
@@ -225,7 +225,7 @@ The investment details are retrieved from the `investments` array using the spec
 
 After you are done with this, you create a function to check if an investment is mature. 
 
-```js
+```solidity
     function isInvestmentMature(uint _index)public view isAdmin(_index)returns(bool) {
         if(block.timestamp > (investments[_index].timestamp + 2 minutes)){
             return true;
@@ -240,7 +240,7 @@ This function checks whether the current block timestamp (measured in seconds si
 
 You are then going to create the `payInvestor` and `isUserAdmin` functions. The `payInvestor` function would be used to pay the investor while the `isUserAdmin` function would be used to make sure the address inputed is the admin address.
 
-```js
+```solidity
     function payInvestor(uint _index) public isAdmin(_index){
         require(
               IERC20Token(cUsdTokenAddress).transfer(
@@ -266,7 +266,7 @@ The `isUserAdmin` function checks if the given address is the same as the contra
 
 Your final function would be the `getInvestmentLength()` which is marked with the `public` and `view` visibility modifiers. This function provides a way for external parties to read the value of the `investmentLength` state variable without modifying the state of the contract.
 
-```js
+```solidity
     function getInvestmentLength() public view returns (uint){
         return investmentLength;
     }
@@ -279,7 +279,7 @@ The function returns a value of type `uint`, which is an unsigned integer. This 
 
 Here is the full code:
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
@@ -1044,7 +1044,8 @@ export default MyInvestments;
 
 After completing the development of your React DApp, you should attempt to compile it to ensure that it is functioning correctly. If everything appears to be working correctly, you can then deploy your DApp on platforms such as Github Pages or Netlify. For reference, you can use the project available at <https://github.com/dahnny/celoinvest> as an example and obtain necessary files and images to edit your own project.
 
-## Concl
+## Conclusion
+Congratulations 🎉, you now know what you need to build an investment platform on the celo blockchain. Great JOB!!
 
 ## Next steps
 You can challenge yourself by using more dynamic timestamp functions and implementing them in the frontend
