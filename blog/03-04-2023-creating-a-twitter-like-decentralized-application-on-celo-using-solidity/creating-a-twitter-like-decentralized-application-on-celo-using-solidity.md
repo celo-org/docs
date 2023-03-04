@@ -11,7 +11,6 @@ slug: "/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain"
 # Building A Decentralized Twitter on the Celo Blockchain 
 
 ## Table of Contents
-- [Building A Decentralized Twitter on the Celo Blockchain](#building-a-decentralized-twitter-on-the-celo-blockchain)
   * [Introduction](#introduction)
   * [Prerequisites](#prerequisites)
   * [Intro to Solidity](#intro-to-solidity)
