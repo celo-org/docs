@@ -8,8 +8,6 @@ hide_table_of_contents: false
 slug: "/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain"
 ---
 
-# Building A Decentralized Twitter on the Celo Blockchain 
-
 ## Table of Contents
   * [Introduction](#introduction)
   * [Prerequisites](#prerequisites)
