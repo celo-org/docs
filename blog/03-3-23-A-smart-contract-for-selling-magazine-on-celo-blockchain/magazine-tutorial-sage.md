@@ -65,14 +65,14 @@ To begin building your smart contract for buying and selling magazines on the Ce
 
 - Open the "Magazine.sol" file and start by defining the necessary statements for the smart contract. This will include importing any necessary libraries or contracts and defining the contract itself. 
 
-  ```js
+  ```solidity
  // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 ```
 Note that we're using Solidity version >=0.7.0 <0.9.0 in this tutorial. You may need to adjust the version depending on your specific requirements.
 
-```js
+```solidity
 Next, we add our ERC20 token interface.
 
 interface IERC20Token {
@@ -123,7 +123,8 @@ By including this interface in your smart contract code, you can interact with a
 
 Next we would be declaring the smart contract with the “Contract keyword, followed by the contract name `Magazino`
 
-```js
+```solidity
+
 contract Magazino {
      uint internal magazinesLength = 0;
       address internal cUsdTokenAddress =  0x686c626E48bfC5DC98a30a9992897766fed4Abd3;
@@ -142,7 +143,8 @@ What is `event` in solidity?
 
 An `event` is a way for a smart contract to emit a notification to external systems or applications about a specific action or state change that has occurred in the contract. The notification can include one or more parameters that provide additional information about the event.
 
-```js
+```solidity
+
         event unpublishMagazineEvent(uint256 magazineId);
         event createMagazineEvent(
         string image,
@@ -158,7 +160,8 @@ The second event is named `createMagazineEvent` and takes four parameters: image
 
 Next, we add our struct.
 
-```js
+```solidity
+
    struct Magazine{
            address payable owner;
            string image;
@@ -192,7 +195,8 @@ In this tutorial, the Magazine struct contains six variables:
 Together, these variables represent the properties of a magazine stored in the contract. This struct can be used to create new magazines, update existing ones, and retrieve information about them. For example, a function in the contract might create a new Magazine struct and add it to an array of magazines stored in the contract.
 
 In the next step, we create our mapping.
-```js
+
+```solidity
  mapping (uint =>  Magazine) internal magazines;
 ```
 
@@ -206,7 +210,7 @@ For example, if the mapping contains a Magazine struct with magazineId equal to 
 
 Up next, we would create a `getMagazine` function that will be used to retrieve data about a specific magazine in the contract.
 
-```js
+```solidity
   function getMagazine(uint _index) public view returns (
         address payable,
         string memory,
@@ -256,7 +260,7 @@ When the function is called, it retrieves the magazine at the specified _index f
 
 Furthermore, we create a function that will be used to add magazines to the blockchain.
 
-```js
+```solidity
 
            function addMagazine (
         string memory _image,
@@ -302,7 +306,7 @@ Finally, the magazinesLength and magazinesId variables are incremented to keep t
 
 Proceeding, we will need to create a function that enables a user to buy a magazine from our contract. 
 
-```js
+```solidity
 
           function buyMagazine(uint _index) public payable  {
         require(
@@ -329,7 +333,7 @@ Otherwise, the magazine purchase is successful, and the buyer can access the mag
 
 In the final section of the smart contract, we would create a function to unpublish a magazine from the blockchain and also get the total magazines.
 
-```js
+```solidity
   function unpublishMagazine(uint _index) external {
              require(msg.sender == magazines[_index].owner, "Only owner can unublish magazine");      
             uint256 magazineId = magazines[_index].magazineId;      
@@ -361,7 +365,7 @@ Finally, the magazinesLength variable is decremented to reflect the removal of t
 
 Below is the complete code to this session:
 
-```js
+```solidity
  // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
@@ -446,7 +450,7 @@ contract Magazino {
 
 ```
 
-## Conclusion
+## Contract deployment
 
 To deploy the Magazine smart contract on the Celo blockchain, follow the steps below:
 
