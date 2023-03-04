@@ -688,6 +688,13 @@ const Users: User[] = [
   //   tags: ['favorite'],
   // },
 
+   {
+    title: "Leveraging Blockchain and IoT for ReFi and Climate Actions through Celo",
+    description: "We look into how carbon sensors, rain sensors, etc. can be used with oracles to provide on-chain data for ReFi applications",
+    preview: require('./showcase/beginner/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo.png'),
+    website: '/blog/tutorials/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo',
+    tags: ['beginner','celosage','celo'],
+  },
   {
     title: " Celo Composer",
     description: "Build on Celo in 5 minutes of less with Celo Composer.",
