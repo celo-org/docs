@@ -2000,7 +2000,7 @@ const Users: User[] = [
     description: 'This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo',
     preview: require('./showcase/intermediate/how-to-create-a-decentralized-application-using-react-celo.png'),
     website: 'blog/tutorials/how-to-create-a-decentralized-application-using-react-celo',
-    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'react-celo', 'hardhat', 'crowdfunding', 'intermediate'],
+    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'hardhat', 'crowdfunding', 'intermediate'],
   }, 
   /*
   Pro Tip: add your site in alphabetical order.
