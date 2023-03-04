@@ -1,7 +1,7 @@
 ---
 title: How to Build and Deploy Flashloan Contracts on Celo with Aave
 description: In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.
-author:
+authors:
   - name: John Fawole
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
