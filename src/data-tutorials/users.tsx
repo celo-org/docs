@@ -2006,6 +2006,13 @@ const Users: User[] = [
     website: 'blog/tutorials/example-architectures-for-a-simple-payment-dapp',
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
+  {
+    title: 'Interact with Celo Blockchain using web3dart',
+    description: 'This article explains how to construct a dart program to communicate with the Celo blockchain using web3dart',
+    preview: require('./showcase/beginner/interact-with-celo-blockchain-using-web3dart.png'),
+    website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
+    tags: ['dart', 'web3dart', 'flutter', 'beginner', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
