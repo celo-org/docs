@@ -1,5 +1,5 @@
 ---
-title: Building A Decentralized Twitter on the Celo Blockchain
+title: Creating a Twitter-Like Decentralized Application on Celo usintg solidity
 description: Building a decentralized Twitter on the Celo blockchain refers to the creation of a social media platform that utilizes blockchain technology to enable users to communicate and share information in a decentralized and censorship-resistant manner.
 authors:
   - name: ✍️ Anish Gupta
