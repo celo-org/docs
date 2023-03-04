@@ -10,9 +10,9 @@ tags: [celo,solidity,smartcontract,hardhat,advanced]
 hide_table_of_contents: false
 slug: "/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2"
 ---
-
+<!--
 ![header](../../src/data-tutorials/showcase/advanced/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2.png)
-
+ -->
 ## Introduction
 
 In this tutorial we will write a multi-signatures smart contracts, in Solidity, using Hardhat. Multi-Signatures are way to secure your crypto assets and secure the ownership of your smart contract. The multi-signatures will act as a wallet in itself, able to execute transaction to transfer ethereum or call other smart contract. Ideally we will set multiple owners for this multi-signatures contract and so for any transaction to be executed by this contract, multiple private keys need to sign the transaction.
@@ -42,6 +42,7 @@ So if one of your private key ever get compromised, your funds and contract owne
 Go on [GitHub](https://github.com), on the top right, click on your profile picture, then on **Your repository**.
 > **Note**
 > If you don't have a GitHub account, create one [GitHub Sign-up](https://github.com/signup)
+
 ![Your repository](./images/github_your_repository.png)
 
 On your GitHub account, in your repository, click on **New**
@@ -154,4 +155,21 @@ We will use some of these dependencies a bit later to setup our Hardhat configur
 
 ### Setup the Hardhat setting with Celo blockchain
 
-Open **hardhat.config.js**, to setup Celo blockchain.
+Open **hardhat.config.js**, to setup Celo blockchain, originally this file should look like:
+
+![Original Hardhat Config](./images/orgiginal_hardhat_config.png)
+
+At the top of the file, we will import some of the Hardhat plugins and dependencies we have previously installed in our project.
+
+So add following the last **require()**:
+
+```js
+require("hardhat-awesome-cli");
+require("dotenv").config();
+```
+
+This way we will have access to the local environment variables we will set to not compromise our private key and other secrets by committing them to GitHub by mistakes and we will have access to the **cli** task for easier use of Hardhat.
+
+Now the top of this file, should look like:
+
+![Hardhat Config Require Plugins](./images/hardhat_config_require_plugins.png)
