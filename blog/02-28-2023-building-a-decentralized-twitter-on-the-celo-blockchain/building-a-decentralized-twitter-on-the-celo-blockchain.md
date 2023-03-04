@@ -24,10 +24,10 @@ slug: "/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain"
   * [Deploying the Contract on the blockchain](#deploying-the-contract-on-the-blockchain)
   * [Conclusion](#conclusion)
 
-## Introduction
+# Introduction
 In this series, we will create a Twitter-like decentralized application that runs on the Celo blockchain. It is a two part series and this is part one of the series where we will learn how to create a smart contract in Solidity for our Twitter dapp.  
 
-## Prerequisites
+# Prerequisites
 - Basic knowledge of [Solidity](https://docs.soliditylang.org) programming language
 - Basic knowledge of working with [Ethereum](https://ethereum.org/en/) or the [Celo](https://celo.org/) blockchain  
 
@@ -330,7 +330,7 @@ contract Twitter{
 
  ``` 
 
- ## Deploying the Contract on the blockchain 
+## Deploying the Contract on the blockchain 
 
  Now we are at the final stage of deploying our simple Twitter-like smart contract on our preferable network. In this tutorial, we will deploy our smart contract to the Alfajores Testnet.   
 
@@ -342,7 +342,7 @@ contract Twitter{
 
 (4) At last we have to compile and deploy our code on Alfajores Testnet. You can use this [guide](https://docs.celo.org/developer/deploy/remix) for compilation and deployment guide.
 
-## Conclusion
+# Conclusion
 
 Now we are at the end of the first part of our series where we created our smart contract and deployed it to the Alfajores testnet.  
 
@@ -360,4 +360,5 @@ What will we learn in part two of our series?
 
 (6) Answering to <b>some big and universal questions! How decentralization will help to solve the major issues listed above? And how the second diagram will solve the problem?</b>
 
-<b>If you have any suggestion or change you think should be made then you can make a pull request or DM me on Github or Discord </b>
+# About the Author
+My name is Anish Gupta and I am a blockchain engineer. With my passion for technology and cryptography, I am on a mission to encrypt the world! I believe that the power of encryption can create a more secure and trustworthy digital future for all. 

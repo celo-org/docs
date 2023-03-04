@@ -1818,7 +1818,7 @@ const Users: User[] = [
   },{
     title: 'Building A Decentralized Twitter on the Celo Blockchain',
     description: 'Building A Decentralized Twitter on the Celo Blockchain',
-    preview: require(''),
+    preview: require('./showcase/intermediate/building-a-decentralized-twitter-on-the-celo-blockchain.png'),
     website: 'blog/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain',
     tags: ['celosage', 'dacade', 'smartcontract', 'solidity',],
   },
