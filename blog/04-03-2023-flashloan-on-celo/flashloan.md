@@ -63,7 +63,7 @@ This article assumes you already have the following configuration:
 
 Click on injected web3 inside the Remix IDE to ensure that your Goerli network is connected to your smart contract, as shown below:
 
-![Uploading metamask remix.jpg…]()
+![metamask remix](https://user-images.githubusercontent.com/105144630/222907205-1de49510-f4c1-4334-bbee-105701441d56.jpg)
 
 ### Step 1: Setting up your Code 
 
