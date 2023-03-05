@@ -689,7 +689,7 @@ const Users: User[] = [
   // },
 
   {
-    title: 'Exclusive List of Hardware Wallets that Support the Celo Networko',
+    title: 'Exclusive List of Hardware Wallets that Support the Celo Network',
     description: 'This tutorial aims to provide an exclusive list of hardware wallets that support the Celo network',
     preview: require('./showcase/beginner/exclusive-list-of-hardware-wallets-that-support-the-celo-network.png'),
     website: '/blog/tutorials/exclusive-list-of-hardware-wallets-that-support-the-celo-network',
