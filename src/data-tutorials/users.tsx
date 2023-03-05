@@ -2006,6 +2006,13 @@ const Users: User[] = [
     website: 'blog/tutorials/example-architectures-for-a-simple-payment-dapp',
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
+  {
+    title: 'Build a Tic Tac Toe game with Flutter using Celo Composer',
+    description: 'This tutorial will guide you through building an example using Celo Composer, a Tic Tac To game applications on the Celo blockchain using Flutter.',
+    preview: require('./showcase/intermediate/sage-build-a-tic-tac-toe-game-with-flutter-using-celo-composer.png'),
+    website: 'blog/tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer',
+    tags: ['flutter', 'solidity', 'intermediate', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
