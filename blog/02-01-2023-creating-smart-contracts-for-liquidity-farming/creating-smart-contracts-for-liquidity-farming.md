@@ -1,16 +1,19 @@
 ---
-title: Creating Smart Contracts For Liquidity Farming 
-description: Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.
+title: Creating Smart Contracts for Liquidity Farming  
+description: Describing Smart Contract For Liquidity Farming and the technical side of creating them
 authors:
-  - name: ✍️ Adewale Emmanuel
-tags: [celo]
+  - name: Adewale Emmanuel
+    title: Software Developer, Technical writer @Celo Foundation
+    url: https://github.com/Manuel-dre
+    image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
+tags: [celo, intermediate, celosage, solidity, 'smartcontract']
 hide_table_of_contents: true
-slug: /tutorials/creating-smart-contracts-for-liquidity-farming 
+slug: /tutorials/creating-smart-contracts-for-liquidity-farming
 ---
 
 CREATING SMART CONTRACTS FOR LIQUIDITY FARMING
 
-blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO SMART CONTRACTS.jpg
+![header](../../blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO SMART CONTRACTS.jpg)
 
 Liquidity and smart contracts are essential parts of any financial system, liquidity describes how quickly financial assets can be converted into cash, while smart contracts represent decentralized financial agreements in the form of a computer program stored on the blockchain. The global adoption of blockchain technology has created and fueled the development of various prospective blockchain projects. Celo with one of such projects has created an Ethereum-compatible decentralized payment framework for easy access to financial instruments. 
 
@@ -18,7 +21,7 @@ Liquidity and smart contracts are essential parts of any financial system, liqui
 
 Smart Contracts are decentralized agreements created between parties involved in any form of financial transaction, such as trading, investing, borrowing, and lending protocols, which will be the focus of this article. The application of Smart Contracts has however expanded to being implemented in health care, the transformation of corporate structures, and gaming applications.
 
-blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO WHAT ARE SMART CONTRACTS.jpg
+![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\CELO WHAT ARE SMART CONTRACTS.jpg)
 
 Smart Contracts are simply computer programs written in the form of code and stored on a blockchain-based platform that run or trigger when certain existing conditions outlined in the program are met. Smart Contracts are used to automate the execution of a specific agreement so that all parties involved can be certain of the outcome instantly without the intervention of any user or intermediary, thus decentralizing. 
 
@@ -42,7 +45,7 @@ The Remix IDE is an important tool for developing Smart Contracts. It allows for
 
 SMART CONTRACTS THAT ALLOW FOR LIQUIDITY FARMING!
 
-[]blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo.jpg
+![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo.jpg)
 
 As earlier described, Smart Contracts are decentralized financial agreements outlined in a block of code. In contrast to the traditional buyers and sellers in the centralized financial market, where one party could easily betray the terms of an agreement, Smart Contract are designed such that they possess the ability to hold financial assets within a POOL, once the terms of the agreement in the contract have been met and verified, the contract is executed without authorization from any intermediary. Smart Contracts work by eliminating centralized financial intermediaries, thereby allowing participants to interact directly with one another. Users who engage in liquidity farming lend their assets by adding them to a smart contract.
 
@@ -84,11 +87,11 @@ an “if” phrase to execute a true or false operation and branch out according
 
 Smart Contracts are designed to be executed at any point in the future “when” the terms of an agreement have been met.
 
-![]blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\DEMO SMART CONTRACT.jpg
+![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\DEMO SMART CONTRACT.jpg)
 
 The picture above shows a design for a smart contract on the Remix IDE. 
 
-*AN ILLUSTRATION;* 
+AN ILLUSTRATION; 
 
 The following section describes an example of how to create a smart contract that allows for liquidity farming on the Ethereum blockchain using the Solidity programming language. 
 
@@ -97,25 +100,25 @@ The following section describes an example of how to create a smart contract tha
 - In simple terms, this code creates a way for users to earn rewards by providing liquidity to trading pairs on a decentralized exchange using a stable coin, with all the action being monitored by the smart contracts.
 
 
-+\
+```solidity
 
 enum Status {
-
-`    `Success,
-
-`    `Failure
+  
+  Success,
+  
+  Failure
 
 }
 
 interface StableCoin {
+  
+  function approve(address spender, uint value) public returns (Status);
 
-`    `function approve(address spender, uint value) public returns (Status);
+  function transferFrom(address from, address to, uint value) public returns (Status);
 
-`    `function transferFrom(address from, address to, uint value) public returns (Status);
+  function transfer(address to, uint value) public returns (Status);
 
-`    `function transfer(address to, uint value) public returns (Status);
-
-`    `function balanceOf(address owner) public view returns (uint);
+  function balanceOf(address owner) public view returns (uint);
 
 }
 
@@ -127,76 +130,75 @@ StableCoin public stableCoin;
 
 constructor() public {
 
-`    `owner = msg.sender;
+ owner = msg.sender;
 
 }
 
 function deposit() public payable {
+  
+  require(msg.value > 0, "Cannot deposit zero or negative value.");
 
-`    `require(msg.value > 0, "Cannot deposit zero or negative value.");
+  require(stableCoin.transfer(address(this), msg.value), "Transfer failed.");
 
-`    `require(stableCoin.transfer(address(this), msg.value), "Transfer failed.");
-
-`    `farmers[msg.sender] += msg.value;
+  farmers[msg.sender] += msg.value;
 
 }
 
 function withdraw(uint value) public {
 
-`    `require(value > 0, "Cannot withdraw zero or negative value.");
+  require(value > 0, "Cannot withdraw zero or negative value.");
 
-`    `require(farmers[msg.sender] >= value, "Insufficient balance.");
+  require(farmers[msg.sender] >= value, "Insufficient balance.");
 
-`    `require(stableCoin.transfer(msg.sender, value), "Transfer failed.");
+  require(stableCoin.transfer(msg.sender, value), "Transfer failed.");
 
-`    `farmers[msg.sender] -= value;
+  farmers[msg.sender] -= value;
 
 }
 
 function addFarmer(address farmer) public {
 
-`    `require(msg.sender == owner, "Only the owner can add farmers.");
+  require(msg.sender == owner, "Only the owner can add farmers.");
 
-`    `require(farmer != address(0), "Invalid address.");
+  require(farmer != address(0), "Invalid address.");
 
-`    `farmers[farmer] = 0;
+  farmers[farmer] = 0;
 
 }
 
 function removeFarmer(address farmer) public {
+  
+  require(msg.sender == owner, "Only the owner can remove farmers.");
 
-`    `require(msg.sender == owner, "Only the owner can remove farmers.");
+  require(farmer != address(0), "Invalid address.");
 
-`    `require(farmer != address(0), "Invalid address.");
-
-`    `farmers[farmer] = 0;
+  farmers[farmer] = 0;
 
 }
 
 function checkBalance(address farmer) public view returns (uint) {
-
-`    `return farmers[farmer];
+  
+  return farmers[farmer];
 
 }
 
 function setStableCoin(address \_stableCoin) public {
-
-`    `require(msg.sender == owner, "Only the owner can set the stable coin.");
-
-`    `require(\_stableCoin != address(0), "Invalid address.");
-
-`    `stableCoin = StableCoin(\_stableCoin);
-
-`    `require(stableCoin.approve(address(this), uint(-1)), "Approval failed.");
-
+  
+  require(msg.sender == owner, "Only the owner can set the stable coin.");
+  
+  require(\_stableCoin != address(0), "Invalid address.");
+  
+  stableCoin = StableCoin(\_stableCoin);
+  
+  require(stableCoin.approve(address(this), uint(-1)), "Approval failed.");
 }
 
-+\
+```
 
 - As discussed in the previous section, a smart contract can be as simple as moving funds from one wallet to another or even more complex or advanced.
 
 
-- CONCLUSION. 
+## Conclusion
 
 Congratulations on coming this far in this tutorial, where we discussed certain terminologies in decentralized financial systems, including Liquidity, Liquidity Pools, Decentralized Apps, Liquidity Farming, and Smart Contracts, we also described the concept of smart contracts and the major role they will play in the future of blockchain technology. 
 
@@ -206,11 +208,15 @@ Going forward, it is important to familiarize yourself with the fundamentals of 
 
 The two illustrations given in the closing section are relatively basic examples that, if applied in production, will require thorough testing and multiple security audits.
 
-- ABOUT THE AUTHOR
+## About the Author
 
-ADEWALE EMMANUEL is a crypto enthusiast and a Web 3.0 content creator. He is devoted to the mission of helping organizations with potential blockchain projects create educational content to attract and interest people in prospective decentralized financial infrastructures.
+ADEWALE EMMANUEL 
+
+is a crypto enthusiast and a Web 3.0 content creator. He is devoted to the mission of helping organizations with potential blockchain projects create educational content to attract and interest people in prospective decentralized financial infrastructures.
 
 Connect with him on Twitter through the link <https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
+
+## References​
 
 Click here to find a demo tutorial video on how to create a Smart Contract to be deployed on the Ethereum chain. <https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn>
 
