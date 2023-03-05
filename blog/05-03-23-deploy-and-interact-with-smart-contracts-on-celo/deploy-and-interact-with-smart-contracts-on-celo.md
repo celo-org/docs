@@ -70,7 +70,8 @@ Step 2: Write the code for your smart contract in Solidity.
 For example, you could write a simple smart contract that stores a string:
 
 
-  ```pragma solidity ^0.8.0;
+  ```solidity
+  pragma solidity ^0.8.0;
 
 contract MyContract {
     string public myString;
@@ -78,7 +79,8 @@ contract MyContract {
     function setMyString(string memory _myString) public {
         myString = _myString;
     }
-}```
+}
+```
 
 Step 3: Save the file with a .sol extension (e.g., MyContract.sol).
 
@@ -92,7 +94,8 @@ Step 2: Run the following command to compile the smart contract:
 
 
 
-```pragma solidity ^0.8.0;
+```solidity
+pragma solidity ^0.8.0;
 
  solc MyContract.sol --bin --abi --optimize -o ./build
 ```
