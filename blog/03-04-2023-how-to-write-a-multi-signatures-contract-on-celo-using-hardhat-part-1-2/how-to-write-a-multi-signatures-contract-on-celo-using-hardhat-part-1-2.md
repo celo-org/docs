@@ -277,7 +277,7 @@ After setting up all of this, we are ready to write the contract. First of all, 
 
 Let's also change the content of the file for an empty contract for now. Replace all by this:
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
@@ -297,7 +297,7 @@ OpenZeppelin is one of the most trustworthy open-source libraries to build smart
 
 At the top of our contract, below the **pragma** statement and before the **contract** keyword, we will add the following code:
 
-```js
+```solidity
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 ```
@@ -311,7 +311,7 @@ Like this
 
 To ensure that our contract has access to the imported contracts, we need to inherit from them. To do so, we will change the contract line to:
 
-```js
+```solidity
 contract CeloMultiSig is ReentrancyGuard, EIP712 {
 
 }
@@ -323,7 +323,7 @@ contract CeloMultiSig is ReentrancyGuard, EIP712 {
 
 To use storage in our contract, we need to declare it within the contract {} block. Therefore, we will add the following code:
 
-```js
+```solidity
 uint16 private _ownerCount;
 uint16 private _threshold;
 uint96 private _nonce;
@@ -353,7 +353,7 @@ When we execute a transaction or other function in our contract, we want to emit
 
 Therefore, under the last line that we added, let's add some events:
 
-```js
+```solidity
 event OwnerAdded(address indexed owner);
 event OwnerRemoved(address indexed owner);
 event ThresholdChanged(uint256 indexed threshold);
@@ -387,7 +387,7 @@ During the deployment of our contract, we will want to set the different owners'
 
 Therefore, under the last line we added, let's add the following code:
 
-```js
+```solidity
 constructor(address[] memory owners_, uint16 threshold_) EIP712(name(), version()) {
   require(owners_.length <= 2 ** 16 - 1, 'CeloMultiSig: cannot add owner above 2^16 - 1');
   uint256 length = owners_.length;
@@ -420,7 +420,7 @@ Now it's time to add the bulk of the logic to our contract, including all the fu
 
 Therefore, under the last line we added, let's add the following code:
 
-```js
+```solidity
 /// @notice Retrieves the contract name
 /// @return The name as a string memory.
 function name() public pure returns (string memory) {
@@ -476,7 +476,7 @@ Now let's add some housekeeping functions to add, remove, or change owners and t
 
 After the last line, add the following code:
 
-```js
+```solidity
 /// @notice Adds an owner
 /// @param owner The address to be added as an owner.
 /// @dev This function can only be called inside a multisig transaction.
@@ -532,7 +532,7 @@ The last 4 functions we added are very powerful and can be used to change the ow
 
 Therefore, near the top of our contract, after the last event and before the constructor function, we will add:
 
-```js
+```solidity
 modifier onlyThis() {
   require(msg.sender == address(this), 'CeloMultiSig: only this contract can call this function');
   _;
@@ -549,7 +549,7 @@ Now, we need to add the main function in our contract, which will validate the s
 
 Add the following code after the **function isOwner(address owner)** and before the **function addOwner(address owner)**:
 
-```js
+```solidity
   /// @notice Executes a transaction
   /// @param to The address to which the transaction is made.
   /// @param value The amount of Ether to be transferred.
