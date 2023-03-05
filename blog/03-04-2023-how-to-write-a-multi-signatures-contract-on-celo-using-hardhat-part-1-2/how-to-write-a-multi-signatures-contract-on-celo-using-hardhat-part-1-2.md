@@ -10,9 +10,9 @@ tags: [celo,solidity,smartcontract,hardhat,advanced]
 hide_table_of_contents: false
 slug: "/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2"
 ---
-<!--
+
 ![header](../../src/data-tutorials/showcase/advanced/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2.png)
- -->
+
 ## Introduction
 
 In this tutorial, we will write a multi-signature smart contract in Solidity using Hardhat. Multi-signatures are a secure way to protect your cryptocurrency assets and the ownership of your smart contract. The multi-signature contract acts as a wallet, capable of executing transactions to transfer Ethereum or call other smart contracts.

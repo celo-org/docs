@@ -1014,7 +1014,7 @@ const Users: User[] = [
   {
     title: 'How to write a multi-signatures contract on Celo using Hardhat | Part 1/2',
     description: 'Building a multi-signatures contract on Celo blockchain using Hardhat, multi-signatures are one of the best way to keep your crypto assets or ownership of your contracts safe and remove a central point of failure.',
-    preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
+    preview: require('./showcase/advanced/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2.png'),
     website: 'blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2',
     tags: ['celo', 'solidity', 'smartcontract', 'hardhat', 'advanced'],
   },
