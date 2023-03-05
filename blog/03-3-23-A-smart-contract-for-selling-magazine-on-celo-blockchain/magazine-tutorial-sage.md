@@ -43,11 +43,11 @@ By having these requirements in place, you'll be ready to start building your fi
 
 In this tutorial, you will learn how to create a basic smart contract using remix. To learn smart contract development, you should have a basic knowledge of the following:
 
-- JavaScript: A programming language used for web development, including building front-end user interfaces for dApps.
+- **JavaScript**: A programming language used for web development, including building front-end user interfaces for dApps.
   
-- Blockchain: The technology that underlies decentralized applications (dApps). You should have a basic understanding of how blockchain works, including concepts such as distributed ledgers, consensus mechanisms, and smart contracts.
+- **Blockchain**: The technology that underlies decentralized applications (dApps). You should have a basic understanding of how blockchain works, including concepts such as distributed ledgers, consensus mechanisms, and smart contracts.
   
-- Solidity: A programming language used for writing smart contracts on the Celo blockchain. You should have a good understanding of Solidity's syntax and structure, as well as its key concepts such as functions, variables, events, and modifiers.
+- **Solidity**: A programming language used for writing smart contracts on the Celo blockchain. You should have a good understanding of Solidity's syntax and structure, as well as its key concepts such as functions, variables, events, and modifiers.
 
 If you are new to these concepts, it's recommended that you take some time to learn them before attempting to build smart contracts. There are plenty of online resources available, including tutorials, videos, and documentation, that can help you get started. Once you have a basic understanding of these concepts, you can begin to learn how to write and deploy smart contracts on the blockchain.
 
@@ -103,21 +103,21 @@ interface IERC20Token {
 
 The IERC20Token interface is a standard interface for implementing tokens on the Celo blockchains. It defines a set of functions that must be implemented by any contract that wants to be recognized as an ERC20 token. Let's break down the functions and events in this interface:
 
- - transfer: This function allows users to transfer tokens from one address to another. It takes two arguments - the address of the recipient and the amount of tokens to be transferred. It returns a Boolean value indicating whether the transfer was successful or not.
+ - **transfer**: This function allows users to transfer tokens from one address to another. It takes two arguments - the address of the recipient and the amount of tokens to be transferred. It returns a Boolean value indicating whether the transfer was successful or not.
 
-- approve: This function is used to allow another address to spend tokens on behalf of the caller. It takes two arguments - the address of the spender and the amount of tokens to be approved. It returns a boolean value indicating whether the approval was successful or not.
+-**approve**: This function is used to allow another address to spend tokens on behalf of the caller. It takes two arguments - the address of the spender and the amount of tokens to be approved. It returns a boolean value indicating whether the approval was successful or not.
 
-- transferFrom: This function is used to transfer tokens from one address to another, on behalf of the owner. It takes three arguments the address of the owner, the address of the recipient, and the amount of tokens to be transferred. It returns a boolean value indicating whether the transfer was successful or not.
+- **transferFrom**: This function is used to transfer tokens from one address to another, on behalf of the owner. It takes three arguments the address of the owner, the address of the recipient, and the amount of tokens to be transferred. It returns a boolean value indicating whether the transfer was successful or not.
 
-- totalSupply: This function returns the total supply of tokens that exist in circulation.
+- **totalSupply**: This function returns the total supply of tokens that exist in circulation.
 
-- balanceOf: This function returns the balance of tokens held by a particular address.
+- **balanceOf**: This function returns the balance of tokens held by a particular address.
 
-- allowance: This function returns the amount of tokens that a spender is allowed to spend on behalf of an owner.
+- **allowance**: This function returns the amount of tokens that a spender is allowed to spend on behalf of an owner.
 
-- Transfer: This event is emitted when tokens are transferred from one address to another. It contains three parameters - the address of the sender, the address of the recipient, and the amount of tokens transferred.
+- **Transfer**: This event is emitted when tokens are transferred from one address to another. It contains three parameters - the address of the sender, the address of the recipient, and the amount of tokens transferred.
 
-- Approval: This event is emitted when the allowance of a spender to spend tokens on behalf of an owner is changed. It contains three parameters - the address of the owner, the address of the spender, and the amount of tokens approved.
+- **Approval**: This event is emitted when the allowance of a spender to spend tokens on behalf of an owner is changed. It contains three parameters - the address of the owner, the address of the spender, and the amount of tokens approved.
 
 By including this interface in your smart contract code, you can interact with any ERC20 token on the Ethereum or Celo blockchains.
 
@@ -479,10 +479,11 @@ Great job! It's always helpful to provide additional resources for further learn
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
 
 ## References
-https://web3.storage/docs/
+[Web3 Storage docs](https://web3.storage/docs/)
 
-https://docs.celo.org/developer/contractkit/
+[Developer contract kit](https://docs.celo.org/developer/contractkit/)
 
-https://docs.celo.org/
+[celo docs](https://https://docs.celo.org/)
+
  
 Thank you!!
