@@ -122,7 +122,7 @@ The `IERC20Token` interface is a standard interface for implementing tokens on t
  
  You can interact with any ERC20 token on the Ethereum or Celo blockchains by including this interface in your smart contract code.
 
-Next we would be declaring the smart contract with the “Contract keyword, followed by the contract name `Magazino`
+Next, we would be declaring the smart contract with the “Contract keyword, followed by the contract name `Magazino`
 
 ```solidity
 
@@ -136,7 +136,7 @@ contract Magazino {
 
 Next, we would declare an address variable named `cUsdTokenAddress` and initializes it with the value `0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1`. This value represents the address of the smart contract on the Celo blockchain. The internal keyword again indicates that this variable can only be accessed within the smart contract and any derived contracts.
 
-Additionally, we declare an internal variable named `magazineId` of type uint256 and initialize its value to 0. This variable will be used for keeping track of the ID of magazines created by the contract or any contracts inherit from it.
+Additionally, we declare an internal variable named `magazineId` of type uint256 and initialize its value to 0. This variable will be used for keeping track of the ID of magazines created by the contract or any contracts inherited from it.
 
 Furthermore, we add `event` to the smart contract.
 
@@ -155,9 +155,9 @@ An `event` is a way for a smart contract to emit a notification to external syst
     );
 ```
 
- In this tutorial, the first event is named `unpublishMagazineEvent` and takes a single parameter magazineId of type uint256. This event will be used to emit when a magazine is unpublished or removed from the contract, and the magazineId parameter provides the identifier of the magazine that was unpublished.
+ In this smart contract, the first event is named `unpublishMagazineEvent` and takes a single parameter magazineId of type uint256. This event will be used to emit when a magazine is unpublished or removed from the contract, and the magazineId parameter provides the identifier of the magazine that was unpublished.
 
-The second event is named `createMagazineEvent` and takes four parameters: image of type string, name of type string, edition of type string, and price of type uint. This event is emitted when a new magazine is created in the contract or any contracts that inherit from it. The parameters provide information about the magazine that was created, including its image, name, edition, and price.
+ The second event is named `createMagazineEvent` and takes four parameters: the `image` of type `string`, `name` of type `string`, `edition` of type `string`, and `price` of type `uint`. This event is emitted when a new magazine is created in the contract or any contracts that inherit from it. The parameters provide information about the magazine that was created including its `image`, `name`, `edition`, and `price`.
 
 Next, we add our struct.
 
@@ -179,19 +179,19 @@ A struct is a user-defined data type that can group together variables of differ
 
 In this tutorial, the Magazine struct contains six variables:
 
-- owner of type address payable - the Ethereum address of the owner of the magazine, declared as a payable address so that it can receive payments.
+- `owner` of type address `payable` - the Ethereum address of the owner of the magazine, declared as a payable address so that it can receive payments.
   
-- image of type string - the image URL of the magazine.
+- `image` of type `string` - the image URL of the magazine.
   
-- name of type string - the name of the magazine.
+- `name` of type `string` - the name of the magazine.
   
-- edition of type string - the edition of the magazine.
+- `edition` of type `string` - the edition of the magazine.
   
-- price of type uint - the price of the magazine in cUsd.
+- `price` of type `uint` - the price of the magazine in cUsd.
   
-- magazineId of type uint256 - the unique identifier of the magazine.
+- `magazineId` of type `uint256` - the unique identifier of the magazine.
   
-- createdAt of type uint - the timestamp when the magazine was created.
+- `createdAt` of type `uint` - the timestamp when the magazine was created.
   
 Together, these variables represent the properties of a magazine stored in the contract. This struct can be used to create new magazines, update existing ones, and retrieve information about them. For example, a function in the contract might create a new Magazine struct and add it to an array of magazines stored in the contract.
 
@@ -205,9 +205,9 @@ A mapping is a key-value store in Solidity that can be used to associate one val
 
 The internal visibility modifier specifies that this mapping can only be accessed within the contract or any contracts that inherit from it.
 
-The mapping is named magazines, and it associates a Magazine struct with each uint key. This means that the contract can use an integer value (the "key") to look up a specific magazine (the "value") stored in the magazines mapping.
+The mapping is named `magazines`, and it associates a Magazine `struct` with each `uint` key. This means that the contract can use an integer value (the "key") to look up a specific magazine (the "value") stored in the magazines mapping.
 
-For example, if the mapping contains a Magazine struct with magazineId equal to 123, the contract can access this struct by calling magazines[123]. This would return the Magazine struct associated with the key 123 in the mapping.
+For example, if the mapping contains a Magazine `struct` with `magazineId` equal to `123`, the contract can access this struct by calling `magazines[123]`. This would return the Magazine struct associated with the key `123` in the mapping.
 
 Up next, we would create a `getMagazine` function that will be used to retrieve data about a specific magazine in the contract.
 
@@ -242,22 +242,22 @@ The function is defined as public, which means it can be called by any external 
 
 The function returns seven values, which represent the properties of the magazine stored in the magazines mapping:
 
-- owner of type address payable - the Ethereum address of the owner of the magazine, declared as payable so that it can receive payments.
+- `owner` of type `address` `payable` - the Ethereum address of the owner of the magazine, declared as payable so that it can receive payments.
   
-- image of type string memory - the URL of the magazine's image.
+- `image` of type  `string` `memory` - the URL of the magazine's image.
   
-- name of type string memory - the name of the magazine.
+- `name` of type `string` `memory` - the name of the magazine.
   
-- edition of type string memory - the edition of the magazine.
+- `edition` of type `string` `memory` - the edition of the magazine.
   
-- price of type uint - the price of the magazine in Ether or another cryptocurrency.
+- `price` of type `uint` - the price of the magazine in Ether or another cryptocurrency.
   
-- magazineId of type uint256 - the unique identifier of the magazine.
+- `magazineId` of type `uint256` - the unique identifier of the magazine.
   
-- createdAt of type uint256 - the timestamp when the magazine was created.
+- `createdAt` of type `uint256` - the timestamp when the magazine was created.
 The values are returned as a tuple in the same order they are declared in the function definition.
 
-When the function is called, it retrieves the magazine at the specified _index from the magazines mapping and returns the associated data to the caller. This function could be used by external systems or applications to retrieve specific magazine data from the contract.
+When the function is called, it retrieves the magazine at the specified  `_index` from the magazines mapping and returns the associated data to the caller. This function could be used by external systems or applications to retrieve specific magazine data from the contract.
 
 Furthermore, we create a function that will be used to add magazines to the blockchain.
 
@@ -289,15 +289,15 @@ Furthermore, we create a function that will be used to add magazines to the bloc
 
 The function takes four input parameters:
 
-- _image of type string memory - the URL or IPFS hash of the magazine's image.
+- `_image` of type `string` `memory` - the URL or IPFS hash of the magazine's image.
 
-- _name of type string memory - the name of the magazine.
+- `_name` of type `string` `memory` - the name of the magazine.
 
-- _edition of type string memory - the edition of the magazine.
+- `_edition` of type `string` `memory` - the edition of the magazine.
 
-- _price of type uint - the price of the magazine in cUsd.
+- `_price` of type `uint` - the price of the magazine in cUsd.
 
-The function is defined as public, which means it can be called by any external system or application that has access to the contract.
+The function is defined as `public`, which means it can be called by any external system or application that has access to the contract.
 
 Inside the function, a new Magazine struct is created with the specified parameters and added to the magazines mapping at the index magazinesLength. The payable keyword is used to specify that the magazine owner's address is able to receive cUsd payments.
 
@@ -322,7 +322,7 @@ Proceeding, we will need to create a function that enables a user to buy a magaz
         }
 ```
 
-The function takes one input parameter _index of type uint, which represents the index of the magazine to be purchased from the magazines mapping.
+The function takes one input parameter `_index` of type `uint`, which represents the index of the magazine to be purchased from the magazines mapping.
 
 The function is defined as public and payable, which means it can be called by any external system or application that has access to the contract, and cUsd must be sent along with the transaction to purchase the magazine.
 
@@ -352,7 +352,7 @@ In the final section of the smart contract, we would create a function to unpubl
 
 ```
 
-The function takes one input parameter _index of type uint, which represents the index of the magazine to be unpublished from the magazines mapping.
+The function takes one input parameter `_index` of type `uint`, which represents the index of the magazine to be unpublished from the magazines mapping.
 
 The function is defined as external, which means it can only be called from outside the contract by an external system or application.
 
@@ -477,7 +477,7 @@ Great job! It's always helpful to provide additional resources for further learn
 
 ## About the author
 
-My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria, you can connect with me on [twitter](https://twitter.com/thompsonogoyi). I am enthusiastic about working with blockchain technology.
 
 ## References
 [Web3 Storage docs](https://web3.storage/docs/)
