@@ -15,7 +15,7 @@ Since verifying your phone number costs gas, you have to be invited to the platf
 
 If you already have an account \(and the corresponding seed phrase\), you can download the Celo wallet from the [play store](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores) and follow instructions in the app to import your wallet using the seed phrase.
 
-If you need more funds, you can always visit [celo.org/build/faucet](https://celo.org/build/faucet) and enter your address to get more Celo Dollars.
+If you need more funds, you can always visit [faucet.celo.org](https://faucet.celo.org) and enter your address to get more Celo Dollars.
 
 ![Verifying your phone number with an invitation code](https://storage.googleapis.com/celo-website/docs/celo-onboarding.gif)
 

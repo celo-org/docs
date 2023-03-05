@@ -14,7 +14,7 @@ import YouTube from '@components/YouTube';
 
 _Quickly develop full-stack progressive web applications on Celo with the Celo Composer._
 
-![header](../../src/data-tutorials/showcase/beginner/celo-composer-easily-full-stack-mobile-dapps-on-celo.png)
+![header](../../src/data-tutorials/showcase/beginner/celo-composer-easily-build-full-stack-mobile-dapps-on-celo.png)
 
 ## Hello Developers 🌱
 
@@ -140,7 +140,7 @@ Copy your `PRIVATE_KEY` and testnet account address into a place you can easily 
 
 ![image](images/9.png)
 
-Copy the testnet `account address`, paste it into the [Celo Testnet Faucet](https://celo.org/developers/faucet) and select Get Started to transfer funds into your testnet account.
+Copy the testnet `account address`, paste it into the [Celo Testnet Faucet](https://faucet.celo.org) and select Get Started to transfer funds into your testnet account.
 
 ![image](images/10.png)
 
