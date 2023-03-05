@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,celosage,truffle,smartcontract,solidity,flutter, web3dart, beginner]
+tags: [celo,celosage,truffle,smartcontract,solidity,flutter, beginner]
 hide_table_of_contents: true
 slug: /tutorials/interact-with-celo-blockchain-using-web3dart
 ---
