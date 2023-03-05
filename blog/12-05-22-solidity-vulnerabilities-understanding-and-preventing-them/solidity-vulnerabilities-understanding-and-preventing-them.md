@@ -1,26 +1,26 @@
 ---
-title: Solidity Vulnerabilities - DelegatedCall
+title: Preventing Vulnerabilities in Solidity - Delegate Call
 description: Understanding and preventing solidity vulnerabilities
 authors:
   - name: ✍️ Oyeniyi Abiola Peace
-tags: [solidity]
+tags: [celosage, solidity, advanced]
 hide_table_of_contents: false
 slug: "/tutorials/solidity-vulnerabilities-delegated-call"
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/solidity-vulnerabilities-delegated-call.png)
 
-# Introduction
+## Introduction
 
 Despite being a fairly new programming language, **Solidity** **is** widely adopted by many developers. It is used to compile the **bytecodes** of many Ethereum smart contracts available today.
 
 However, the downside to its newness is revealed in specific bugs and vulnerabilities affecting users and developers in the past. This article talks about one of these vulnerabilities, and the preventive techniques that can be implemented against it.
 
-# DelegateCall Attack
+## DelegateCall Attack
 
 Before we dive into the concept of the **`DelegateCall`** Attack, we will first discuss how solidity interacts and sends messages to contract functions. In Solidity, there are two low-level interfaces to perform such operations. These interfaces are known as `Call` and `DelegateCall`.
 
-## The Call Interface:
+## The Call Interface
 
 The `call` function or opcode sends standard external message calls to contracts. In a call function, the code is executed under the conditions of the external contract/function (caller or receiver). Let us consider the code below to understand how the **call** function works.
 
@@ -243,7 +243,7 @@ contract AttackVulnerable {
 }
 ```
 
-### Storage Layout Vulnerability.
+### Storage Layout Vulnerability
 
 To get a proper understanding of this vulnerability, we need to know how Solidity stores state variables. Check this [article](https://docs.soliditylang.org/en/v0.8.17/internals/layout_in_storage.html) to find out about that. Done? Now, let’s move on.
 
@@ -323,19 +323,19 @@ contract AttackVulnerable {
 From the above code, our attacker is the contract called `AttackVulnerable`. The first thing we observe is that this contract has three state variables. These variables are in the same layout as the ones in the `Vulnerable` contract. It also has a state variable that holds the address of the `Vulnerable` contract. The actual value of the variable is assigned in the constructor
 
 ```solidity
-		 // The storage layout is the same as Vulnerable
+   // The storage layout is the same as Vulnerable
     // This will allow the attacker to correctly update the state variables
     address public lib;
     address public owner;
     uint public num;
 
-		//The state variable to store the address of the contract, Vulnerable
+  //The state variable to store the address of the contract, Vulnerable
     Vulnerable public vulnerable;
 
-		//constructor
-		constructor(Vulnerable _vulnerable) {
-		        vulnerable = Vulnerable(_vulnerable);
-		    }
+  //constructor
+  constructor(Vulnerable _vulnerable) {
+          vulnerable = Vulnerable(_vulnerable);
+      }
 ```
 
 Next, the attacker defines a function called `attack()`. In this function, the attacker calls the `performOperation()` function inside the `Vulnerable` contract twice.
@@ -375,7 +375,7 @@ At this point, the execution of the first call is completed. So what happens whe
 - Also, since `msg.sender` is the attacker’s address, `Vulnerable`'s address will be updated to the attacker’s address, making him the new owner of the `Vulnerable` contract.
 - Once again, our contract has been hijacked dues to the inappropriate use of `delegatecall`.
 
-## How To Prevent Attacks From DelegateCall.
+## How To Prevent Attacks From DelegateCall
 
 Solidity provides the `Library` keyword that helps to ensure our library contracts are stateless. We could have used a library keyword when writing our `Lib` contract in both examples. Using this, our `Lib` contract would have had to use stateless variables and not be a victim of the attacks.
 

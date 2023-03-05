@@ -5,7 +5,7 @@ authors:
   - name: Abiyyu Yafu
 url: https://github.com/yafiabiyyu
 image_url: https://github.com/yafiabiyyu.png
-tags: [NFT]
+tags: [celosage, intermediate, nft]
 hide_table_of_contents: true
 slug: /tutorials/create-an-escrow-nft-platform-on-celo-with-python
 ---

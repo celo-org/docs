@@ -124,7 +124,7 @@ If you created an account using option 2 or 3, you can now import these accounts
 
 No matter where you created your accounts, you can send them testnet funds using your **Account Address** and the testnet faucet.
 
-- Navigate to the [Alfajores Testnet Faucet](https://celo.org/developers/faucet)
+- Navigate to the [Alfajores Testnet Faucet](https://faucet.celo.org)
 - Copy your address from your terminal or wallet
 - Paste this address into the **Testnet Faucet**, complete the **Captcha**, and click **Get Started**
 
