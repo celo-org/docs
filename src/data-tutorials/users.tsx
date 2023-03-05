@@ -153,7 +153,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#39ca30",
   // },
-
   // impact: {
   //   label: translate({ message: "Impact" }),
   //   description: translate({
@@ -162,7 +161,6 @@ export const Tags: { [type in TagType]: Tag } = {
   //   }),
   //   color: "#dfd545",
   // },
-
   foundation: {
     label: translate({ message: "Foundation" }),
     description: translate({
@@ -668,15 +666,14 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#35D07F",
   },
-
-  // wallets: {
-  //   label: translate({ message: "Wallets" }),
-  //   description: translate({
-  //     message: "",
-  //     id: "showcase.tag.wallets.description",
-  //   }),
-  //   color: "#fe6829",
-  // },
+  typescript: {
+    label: translate({ message: "Typescript" }),
+    description: translate({
+      message: "",
+      id: "showcase.tag.typescript.description",
+    }),
+    color: "#3488EC",
+  },
 };
 
 // Add your site to this list
@@ -762,6 +759,13 @@ const Users: User[] = [
     description: "In Solidity, an ownership attack takes advantage of a smart contract's vulnerabilities and gives illegal and unauthorized access to a foreign party.",
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-ownership-attack.png'),
     website: 'blog/tutorials/preventing-vulnerabilities-in-solidity-ownership-attack',
+    tags: ['intermediate','celosage'],
+  },
+  {
+    title: 'Exploring the Robust Structure of Celos Protocol Design',
+    description: "Exploring the Robust Structure of Celo's Protocol Design",
+    preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
+    website: 'blog/tutorials/exploring-the-robust-structure-of-celo-protocol-design',
     tags: ['intermediate','celosage'],
   },
    {
@@ -2001,6 +2005,13 @@ const Users: User[] = [
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
     website: 'blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service',
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
+  },
+  {
+    title: 'Example architectures for a simple payment dapp',
+    description: 'This post will focus on the front-end part of how to create a simple payment dapp',
+    preview: require('./showcase/beginner/example-architectures-for-a-simple-payment-dapp.png'),
+    website: 'blog/tutorials/example-architectures-for-a-simple-payment-dapp',
+    tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
