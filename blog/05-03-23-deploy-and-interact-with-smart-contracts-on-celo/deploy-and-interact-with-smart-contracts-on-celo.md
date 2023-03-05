@@ -72,9 +72,8 @@ Step 2: Write the code for your smart contract in Solidity.
 
 For example, you could write a simple smart contract that stores a string:
 
-**C#>>**
+Solidity:
 
-```
   ```pragma solidity ^0.8.0;
 
 contract MyContract {
@@ -84,7 +83,7 @@ contract MyContract {
         myString = _myString;
     }
 }```
-```
+
 
 Step 3: Save the file with a .sol extension (e.g., MyContract.sol).
 
@@ -97,9 +96,8 @@ Step 1: Open your terminal and navigate to the smart contract file's directory.
 
 Step 2: Run the following command to compile the smart contract:
 
-**CSS>>** 
-
  
+Bash:
 
 ```
  solc MyContract.sol --bin --abi --optimize -o ./build
@@ -126,7 +124,7 @@ Step 2: Open a new terminal window and navigate to the smart contract file's dir
 
 Step 3: Run the following command to deploy the smart contract:
 
-**Python>>**
+Bash:
 
 ```
   celocli contract deploy MyContract.bin MyContract.abi --from <YOUR-CELO-ADDRESS>
@@ -149,9 +147,8 @@ Step 2: Write the code to interact with the smart contract.
 
 For example, you could write a script that sets the value of the string in the smart contract:
 
-**Javascript>>**
+Js:
 
-```
  ```const Web3 = require('web3');
 const contractABI = require('./MyContract.abi.json');
 
@@ -175,10 +172,10 @@ Replace &lt;YOUR-CELO-RPC-ENDPOINT>, &lt;YOUR-CONTRACT-ADDRESS>, and &lt;YOUR-CE
 
 Step 3: Save the file with a .js extension (e.g., interact.js).
 
-Step 4: Run the script by running the following command in your terminal:
+Step 4: Run the bash script by running the following command in your terminal:
 
 ```
- node interact.js
+ bash interact.sh
 ```
 
 This will set the value of the string in the smart contract to "Hello, World!".
