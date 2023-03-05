@@ -937,6 +937,14 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'react', 'materialui', 'dappstarter', 'progressive'],
   },
   {
+    title: 'Deploy and Interact with Smart Contracts on the Celo Blockchain',
+    description: 'Learn to deploy and interact with self-executing tamper-proof agreements developing smart contracts with Solidity on Celo Blockchain',
+    preview: require('./showcase/beginner/deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
+    website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+
+  {
     title: 'Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.',
     description: 'Everything you need to get started with Celo.',
     preview: require('./showcase/beginner/celo-spotlight-everything-you-need-to-get-started-with-celo.png'),
