@@ -15,37 +15,44 @@ slug: "/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat
  -->
 ## Introduction
 
-In this tutorial we will write a multi-signatures smart contracts, in Solidity, using Hardhat. Multi-Signatures are way to secure your crypto assets and secure the ownership of your smart contract. The multi-signatures will act as a wallet in itself, able to execute transaction to transfer ethereum or call other smart contract. Ideally we will set multiple owners for this multi-signatures contract and so for any transaction to be executed by this contract, multiple private keys need to sign the transaction.
+In this tutorial, we will write a multi-signature smart contract in Solidity using Hardhat. Multi-signatures are a secure way to protect your cryptocurrency assets and the ownership of your smart contract. The multi-signature contract acts as a wallet, capable of executing transactions to transfer Ethereum or call other smart contracts.
 
-So if one of your private key ever get compromised, your funds and contract ownership are still safe as multiple private keys (wallet) are still required. This contract can also be used to decentralize the ownership of a contract between the different team member.
+In this contract, we will set multiple owners, and any transaction executed by the contract will require multiple private keys to sign the transaction. This added security means that if one of your private keys is compromised, your funds and contract ownership are still safe, as multiple private keys (wallets) are required.
+
+Additionally, this contract can be used to decentralize the ownership of a contract between different team members, ensuring that no single individual has complete control over the contract. By utilizing a multi-signature contract, you can ensure that your cryptocurrency assets and smart contract ownership are protected against any potential security breaches or malicious activity.
 
 ## Prerequisites
 
+To follow this tutorial, you will need:
+
 - A GitHub account [GitHub](https://github.com)
 - Some knowledge of [Solidity](https://docs.soliditylang.org)
-- Understanding of the multi-signatures concept (you can read more [What Is a Multisig Wallet?](https://www.coindesk.com/learn/what-is-a-multisig-wallet/))
-- Multi-Signature language:
+- Understanding of the multi-signatures concept (you can read more about it in [What Is a Multisig Wallet?](https://www.coindesk.com/learn/what-is-a-multisig-wallet/))
+- Familiarity with the following multi-signature contract terms:
 
-  - **owners**      - addresses that can sign and executes transactions on this wallet contract
-  - **threshold**   - amount of owners signatures require for a transaction to be executed
-  - **nonce**       - a unique number that identify each request to prevent signatures to be use on more than one transaction
+  - **Owners** - Addresses that can sign and execute transactions on this wallet contract.
+  - **Threshold** - The number of owner signatures required for a transaction to be executed.
+  - **Nonce** - A unique number that identifies each request to prevent signatures from being used on more than one transaction.
 
 ## Requirements​
+
+To complete this tutorial, you will need:
 
 - Node.js [Node.js](https://nodejs.org/)
 - VS Code [VS Code](https://code.visualstudio.com/)
 
-## Creating a GitHub repository, cloning it and setting up Hardhat
+## Creating a GitHub Repository, Cloning it, and Setting Up Hardhat
 
-### Create a Github repository
+### Creating a GitHub Repository
 
-Go on [GitHub](https://github.com), on the top right, click on your profile picture, then on **Your repository**.
+Go to [GitHub](https://github.com) and click on your profile picture in the top right corner, click on **Your repositories** to view your existing repositories.
+
 > **Note**
-> If you don't have a GitHub account, create one [GitHub Sign-up](https://github.com/signup)
+> If you don't have a GitHub account, create one at [GitHub Sign-up](https://github.com/signup).
 
 ![Your repository](./images/github_your_repository.png)
 
-On your GitHub account, in your repository, click on **New**
+Click on the **New** button to create a new repository.
 
 ![Create a new repository](./images/create_a_new_repository.png)
 
@@ -54,17 +61,19 @@ Then click on **Create repository**
 
 ![Repository details](./images/create_a_new_repository_detail.png)
 
-### Clone the repository on your computer
+You have now created a new GitHub repository.
 
-Now that you have created a repository for this project, copy the repository url by clicking on **Code**
+### Clone the Repository on Your Computer
+
+Now that you have created a repository for this project, copy the repository URL by clicking on **Code** on your GitHub repository page.
 
 ![Copy Repository URL](./images/create_a_new_repository_git_url.png)
 
-Now open VS Code and open a new termianl, you can press Ctrl. + Shift + P to get the control pallet and search for **Create New Terminal** and enter or go in Terminal > New Terminal in the top bar.
+Open VS Code and open a new terminal by pressing "Ctrl + Shift + P" to get the control palette, and then searching for **Create New Terminal** and enter or go in **Terminal > New Terminal** in the top bar.
 
 ![Control Pallet - New Terminal](./images/vs_code_create_new_terminal.png)
 
-In the terminal clone your repository by typing
+In the terminal, clone your repository by typing:
 
 ```bash
 git clone <repository url>
@@ -72,7 +81,7 @@ git clone <repository url>
 
 ![Cloning repository](./images/create_a_new_repository_git_clone.png)
 
-This will have created a new folder with the name of your repo, so we need to move inside this folder, we can use File > Open Folder in the top bar or the cd command.
+This will have created a new folder with the name of your repo, so we need to move inside this folder using the cd command in the terminal, alternatively you can also use File > Open Folder in the top bar of VS Code to open the repository folder directly in the editor.
 
 ```bash
 cd <repository name>
@@ -80,8 +89,9 @@ cd <repository name>
 
 ![CD in repository](./images/create_a_new_repository_cd.png)
 
-Now that we are inside our project (our repository) let's initialize a Javascript project by running NPM init.
-(Alternatively you can forgo the -y and set manually all the options.)
+Now that we are inside our project (our repository), let's initialize a Node.js project by running npm init. This will create a package.json file that will contain the project's metadata and dependencies.
+
+In the terminal, run the following command:
 
 ### Install and setup this Hardhat project
 
@@ -89,15 +99,16 @@ Now that we are inside our project (our repository) let's initialize a Javascrip
 npm init -y
 ```
 
+The -y flag will create a default package.json file without asking any questions. Alternatively, you can omit the -y flag to manually set all the options for your project.
+
 ![NPM init](./images/npm_init.png)
 
-Ounce it's done you should see a **package.json** file in the root of your project.
-This file has basic information on your project and more importantly, it will keep track of all your project dependencies.
+Once it's done, you should see a **package.json** file in the root of your project. This file has basic information about your project and, more importantly, it will keep track of all your project dependencies.
 
 ![NPM init created](./images/npm_init_created.png)
 
 
-Now install Hardhat in your project, by running this command.
+You can install Hardhat in your project by running the following command in your terminal:
 
 ```bash
 npm install hardhat --save-dev
@@ -105,11 +116,11 @@ npm install hardhat --save-dev
 
 ![Install Hardhat](./images/npm_i_hardhat.png)
 
-After running this, you should see **hardhat** in your package.json as devDependencies.
+This will install Hardhat as a development dependency and add it to your project's **package.json** file under the **devDependencies** section.
 
 ![Hardhat devDependencies](./images/hardhat_devDependencies.png)
 
-Now add the basic boilerplate for Hardhat, by running
+To begin using Hardhat, start by adding the basic boilerplate code. You can do this by running the following command:
 
 ```bash
 npx hardhat
@@ -117,19 +128,18 @@ npx hardhat
 
 ![NPX Hardhat](./images/npx_hardhat.png)
 
-In this menu, you can use the **Up** and **Down** arrow key and **Enter** to select **Create a JavaScript project**.
-Then press 3x **Emter**, to add the .gitignore and Hardhat toolbox.
+In this menu, you can use the **Up** and **Down** arrow keys to navigate and select **Create a JavaScript project** using the **Enter** key. Once you have made your selection, press **Enter** three times to add the .gitignore file and the Hardhat toolbox.
 
 ![Install Hardhat Boilerplate](./images/hardhat_install_boilerplate.png)
 
-After this, you should have the basic boilerplate of Hardhat. Here a quick description of the different folders and files added:
+After completing the previous step, you should now have the basic Hardhat boilerplate code. Here is a quick description of the folders and files that have been added:
 
-- **contracts/**            - Folder to contain all your smart contract
-- **scripts/**              - Folder to contain scripts we will write, to deploy our contract
-- **test/**                 - Folder tp contain all the Hardhat tests, to test our contract
-- **.gitignore**            - File that list all the files we don't want to upload on GitHub
-- **hardhat.config.js**     - File that has all the settings for Hardhat
-- **README.md**             - File that serve as a documentation and a home page for this repository
+- **contracts/**            - This folder contains all your smart contract code.
+- **scripts/**              - This folder contains scripts that we will write to deploy our contracts.
+- **test/**                 - This folder contains all the Hardhat tests used to test our contracts.
+- **.gitignore**            - This file lists all the files we don't want to upload on GitHub.
+- **hardhat.config.js**     - This file contains all the settings for Hardhat.
+- **README.md**             - This file serves as documentation and the homepage for this repository.
 
 ### Install more dependencies
 
@@ -155,27 +165,28 @@ We will use some of these dependencies a bit later to setup our Hardhat configur
 
 ### Setup the Hardhat setting with Celo blockchain
 
-Open **hardhat.config.js**, to setup Celo blockchain, originally this file should look like:
+Open **hardhat.config.js** to set up Celo blockchain. Initially, this file should look like:
 
 ![Original Hardhat Config](./images/orgiginal_hardhat_config.png)
 
 At the top of the file, we will import some of the Hardhat plugins and dependencies we have previously installed in our project.
 
-So add following the last **require()**:
+So, add the following below the last **require()**:
 
 ```js
 require("hardhat-awesome-cli");
 require("dotenv").config();
 ```
 
-This way we will have access to the local environment variables we will set to not compromise our private key and other secrets by committing them to GitHub by mistakes and we will have access to the **cli** task for easier use of Hardhat.
+This way, we will have access to the local environment variables we will set to avoid compromising our private key and other secrets by committing them to GitHub by mistake, and we will have access to the **cli** task for easier use of Hardhat.
 
-Now the top of this file, should look like:
+Now, the top of this file should look like:
 
 ![Hardhat Config Require Plugins](./images/hardhat_config_require_plugins.png)
 
-New, let's change the hardhat settings to be able to tests our contract locally, as well as on Celo Testnet Alfajores and on Celo Mainnet, while keeping our private key secure.
-So let's replace all the content of hardhat.config.js after the lines we just add by
+Now, let's change the Hardhat settings to be able to test our contract locally, as well as on Celo Testnet Alfajores and on Celo Mainnet, while keeping our private key secure.
+
+So, let's replace all the content of `hardhat.config.js` after the lines we just added by:
 
 ```js
 const {
@@ -236,8 +247,7 @@ Like this:
 
 ### Setup your environment variables
 
-Create a file **.env** in the root of this project with the 3 secrets we have use in **hardhat.config.js**
-
+Create a file `.env` in the root of this project with the 3 secrets we have used in `hardhat.config.js`.
 
 ```txt
 # Mnemonic
@@ -250,10 +260,9 @@ CELO_API_KEY=""
 
 ![Create .env file](./images/create_env_file.png)
 
-Enter your mnemonic in this file between the "", in this tutorial, I use mnemonics as it contain multiple wallets and we will eventually need multiple wallets to test our multi-signature contract, but you can also use private key by changing the setting in **hardhat.config.js** following this documentation [Hardhat config documentation](https://hardhat.org/hardhat-runner/docs/config).
+Enter your mnemonic in this file between the `""`. In this tutorial, I use mnemonics as it contains multiple wallets, and we will eventually need multiple wallets to test our multi-signature contract. However, you can also use a private key by changing the setting in `hardhat.config.js` following this documentation [Hardhat config documentation](https://hardhat.org/hardhat-runner/docs/config).
 
-Next step, to make sure these secrets never get compromised and committed to GitHub, we will add this new file **.env** to **.gitignore**.
-Simply add one line to .gitignore
+The next step is to make sure these secrets never get compromised and committed to GitHub. We will add this new file `.env` to `.gitignore`. Simply add one line to `.gitignore`.
 
 ```txt
 .env
@@ -263,14 +272,14 @@ Simply add one line to .gitignore
 
 ## Start writing the Multi-Signature contract
 
-After setting up all this, we are ready to write the contract.
-First of all, we will rename the boilerplate contract that Hardhat has added to our project.
+After setting up all of this, we are ready to write the contract. First of all, we will rename the boilerplate contract that Hardhat has added to our project.
 
-Go in **contracts/** and rename the file **Lock.sol** to **CeloMultiSig.sol**
+1. Go to `contracts/`.
+2. Rename the file `Lock.sol` to `CeloMultiSig.sol`.
 
 ![Rename Contract Name](./images/Rename_contract_name.png)
 
-Let's also change the content of the file for a empty contract for now. Replace all by this:
+Let's also change the content of the file for an empty contract for now. Replace all by this:
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -286,12 +295,11 @@ contract CeloMultiSig {
 
 ![Empty Contract](./images/replace_with_empty_contract.png)
 
-### Import OpenZeppelin contracts in our contract
+### Importing OpenZeppelin contracts in our contract
 
-OpenZeppelin is one of the most trustworthy open-source library to build smart contract, so we will import 2 contract from the **@openzeppelin/contracts** package we previously installed in our project.
+OpenZeppelin is one of the most trustworthy open-source libraries to build smart contracts. Therefore, we will import two contracts from the **@openzeppelin/contracts** package, which we previously installed in our project.
 
-At the top of our contract, under the **pragma** statement and before the **contract** keyword. We will add:
-
+At the top of our contract, below the **pragma** statement and before the **contract** keyword, we will add the following code:
 
 ```js
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
@@ -302,10 +310,10 @@ Like this
 
 ![Contract with imports](./images/contract_with_imports.png)
 
-- **ReentrancyGuard.sol**   - Is used to secure our contract against a attack vector called **reentrancy**, you can read more here [Reentrancy Attack in Smart Contracts](https://www.geeksforgeeks.org/reentrancy-attack-in-smart-contracts/)
-- **EIP712.sol**            - Is use to sign the transaction in a secure way following the latest signature standard **EIP712** [What is EIP712 and how to use it](https://medium.com/metamask/eip712-is-coming-what-to-expect-and-how-to-use-it-bb92fd1a7a26)
+- `ReentrancyGuard.sol` is used to secure our contract against an attack vector called `reentrancy`. You can read more about this attack in smart contracts [here](https://www.geeksforgeeks.org/reentrancy-attack-in-smart-contracts/).
+- `EIP712.sol` is used to sign transactions in a secure way following the latest signature standard `EIP712`. You can read more about `EIP712` and how to use it [here](https://medium.com/metamask/eip712-is-coming-what-to-expect-and-how-to-use-it-bb92fd1a7a26).
 
-For our contract to has access to the contracts we imported, we need to inherit from them, to do so we will change the contract line by:
+To ensure that our contract has access to the imported contracts, we need to inherit from them. To do so, we will change the contract line to:
 
 ```js
 contract CeloMultiSig is ReentrancyGuard, EIP712 {
@@ -315,9 +323,9 @@ contract CeloMultiSig is ReentrancyGuard, EIP712 {
 
 ![Add Inheritance to the contract](./images/Contract_add_inheritance.png)
 
-### Assigning some storage for our contract
+### Assigning Storage for Our Contract
 
-We now need to declare some storage to be used by our contract, so inside the contract {} we will add:
+To use storage in our contract, we need to declare it within the contract {} block. Therefore, we will add the following code:
 
 ```js
 uint16 private _ownerCount;
@@ -334,19 +342,20 @@ Like this:
 
 ![Contract Storage](./images/contract_storage.png)
 
-Here is the description of the purpose of each storage/variables:
+Here is a description of the purpose of each storage/variable:
 
-- **_ownerCount**           - The amount of owners of this contract
-- **_threshold**            - The amount of owners signatures required to execute a transaction
-- **_nonce**                - The next nonce to be used, by the next transaction
-- **_owners**               - The mapping of each address to a bool (true/false) (true = they are a owner of the contract)
-- **_ownerNonceUsed**       - The mapping of each nonces used by the contract (true/fakse) (true = the nonce has been used already)
-- **_TRANSACTION_TYPEHASH** - A constant value representing the types of the different element hashed to form the signature use to validate each signature (this is a constant so it does not use any storage)
+- **_ownerCount**: Represents the number of owners of this contract.
+- **_threshold**: Represents the number of owners' signatures required to execute a transaction.
+- **_nonce**: Represents the next nonce to be used by the next transaction.
+- **_owners**: Represents the mapping of each address to a bool value. True means the address is an owner of the contract.
+- **_ownerNonceUsed**: Represents the mapping of each nonce used by the contract to a bool value. True means the nonce has already been used.
+- **_TRANSACTION_TYPEHASH**: A constant value representing the types of different elements hashed to form the signature used to validate each signature. This value is constant and does not use any storage.
 
-### Declaring some events
+### Declaring Events
 
-When we will execute transaction or other function of our contract, we want to emit events to be able to track more easily what happen, to do so we first need to declare some events before using them.
-So under the last line we added, let's add some events:
+When we execute a transaction or other function in our contract, we want to emit events to be able to track what happens more easily. To do so, we need to declare some events before using them. 
+
+Therefore, under the last line that we added, let's add some events:
 
 ```js
 event OwnerAdded(address indexed owner);
@@ -374,13 +383,13 @@ Like this:
 
 ![Add events in contract](./images/contract_add_events.png)
 
-These event don't execute any logic, they only emit events that we can then find inside the receipt of the transaction, or query the blockchain to list all the events a smart contract has emitted.
+These events do not execute any logic; they only emit events that we can later find inside the transaction receipt or query the blockchain to list all the events a smart contract has emitted.
 
 ### Create the constructor function
 
-At the deployment of our contract, we will want to set the different owners addresses and the threshold for the contract to be able to be used. To do so, we will add a constructor function, this will make sure these value are written in storage at the same time we deploy the contract.
+During the deployment of our contract, we will want to set the different owners' addresses and the threshold for the contract to be used. To do this, we will add a constructor function that will ensure that these values are written in storage at the same time we deploy the contract.
 
-So under the last line we added, let's add:
+Therefore, under the last line we added, let's add the following code:
 
 
 ```js
@@ -402,19 +411,19 @@ Like this:
 
 ![Add constructor in contract](./images/contract_add_constructor.png)
 
-So this constructor function take 2 arguments:
+So, this constructor function takes 2 arguments:
 
-- **address[] memory owners_**    - A list of owners address
-- **uint16 threshold_**           - The minimum quantity of owners that need to sign a transaction for the transaction to be execute (this number need to be greater than 0 but smaller or equal to the amount of owners)
+- **address[] memory owners_** - A list of owners' addresses
+- **uint16 threshold_** - The minimum number of owners required to sign a transaction for the transaction to be executed (this number needs to be greater than 0 but smaller or equal to the number of owners).
 
 >**Note**
->At this stage it's normal to have some warning that there is error in our contract, the logic inside our constructor function call other functions that we have not yet write.
+>At this stage, it's normal to have some warnings indicating errors in our contract. The logic inside our constructor function calls other functions that we have not yet written.
 
 ### Add functions to the contract
 
-Now it's time to add the bulk of the logic to our contract, all the functions. So let's start by adding all the view & pure function, these function are read call that don't require any transaction to be accessed.
+Now it's time to add the bulk of the logic to our contract, including all the functions. Let's start by adding all the view and pure functions, which are read-only calls that don't require any transaction to be accessed.
 
-Under the last line we added, we wil add:
+Therefore, under the last line we added, let's add the following code:
 
 ```js
 /// @notice Retrieves the contract name
@@ -459,18 +468,18 @@ Like this:
 
 ![Add read function in contract](./images/contract_add_read_functions.png)
 
-Here is the list of the functions we added and there purposes:
+Here is the list of functions we added and their purposes:
 
-- **name()**                 - Return the name of the contract (mainly used to form the signature)
-- **version()**              - Return the version of the contract (mainly used to form the signature)
-- **threshold()**            - Return the threshold of the contract
-- **ownerCount()**           - Return the ownerCount of the contract
-- **nonce()**                - Return the next nonce of the contract to be used to assemble the signature
-- **isOwner(address owner)** - Return true or false if an address is a owner of the contract
+- **name()**: Returns the name of the contract (mainly used to form the signature).
+- **version()**: Returns the version of the contract (mainly used to form the signature).
+- **threshold()**: Returns the threshold of the contract.
+- **ownerCount()**: Returns the owner count of the contract.
+- **nonce()**: Returns the next nonce of the contract to be used to assemble the signature.
+- **isOwner(address owner)**: Returns true or false if an address is an owner of the contract.
 
-Now let's add some house keeping function to add, remove or change owners and to change the threshold.
+Now let's add some housekeeping functions to add, remove, or change owners and to change the threshold.
 
-After the last line, add:
+After the last line, add the following code:
 
 ```js
 /// @notice Adds an owner
@@ -517,17 +526,16 @@ Like this:
 
 ![Add housekeeping functions](./images/contract_add_housekeeping_functions.png)
 
-Here is the list of the functions we added and there purposes:
+Here is the list of the functions we added and their purposes:
 
-- **addOwner(address owner)**                           - Add an address to the list of owners
-- **removeOwner(address owner)**                        - Remove an address from the list of owners (will only work if the new ownersCount is still higher or equal to the current threshold)
-- **changeThreshold(uint16 newThreshold)**              - Change the amount of owners required to sign a transaction for the transaction to be executed
-- **replaceOwner(address oldOwner, address newOwner)**  - Replace one owner address by a different owner address (will only work if old owner, was owner and new owner is not already a owner)
+- **addOwner(address owner)**: Add an address to the list of owners.
+- **removeOwner(address owner)**: Remove an address from the list of owners (will only work if the new owner count is still higher or equal to the current threshold).
+- **changeThreshold(uint16 newThreshold)**: Change the number of owners required to sign a transaction for the transaction to be executed.
+- **replaceOwner(address oldOwner, address newOwner)**: Replace one owner address with a different owner address (will only work if the old owner was an owner and the new owner is not already an owner).
 
-The 4 last functions we added are very powerful and can be used to change the ownership of this contract and the amount of owners required to authorize and execute a transaction. So to keep things save you can see in the header of all these function the modifier **onlyThis**, this is a modifier, a piece of reusable logic that will be executed before the function is executed. It's time to add this logic.
+The last 4 functions we added are very powerful and can be used to change the ownership of this contract and the number of owners required to authorize and execute a transaction. To keep things safe, you can see in the header of all these functions the modifier **onlyThis**. This is a modifier, a piece of reusable logic that will be executed before the function is executed. It's time to add this logic.
 
-So near the top of our contract, after the last event and before the constructor function we will add:
-
+Therefore, near the top of our contract, after the last event and before the constructor function, we will add:
 
 ```js
 modifier onlyThis() {
@@ -540,11 +548,11 @@ Like this:
 
 ![Add modifier to the contract](./images/contract_add_modifier.png)
 
-Since msg.sender equal the address that is sending the transaction, and address(this) equal the address of the contract, we allow the transaction to proceed **only** if the sender of the transaction is the contract itself. This way the only way to add, remove or change a owner or to change the threshold (after the deployment of the contract) is that a sufficient number of owners sign a transaction to call for example addOwner() and execute the transaction.
+Since **msg.sender** is equal to the address that is sending the transaction, and **address(this)** is equal to the address of the contract, we allow the transaction to proceed **only** if the sender of the transaction is the contract itself. This ensures that the only way to add, remove or change an owner or to change the threshold (after the deployment of the contract) is if a sufficient number of owners sign a transaction to call, for example, addOwner() and execute the transaction.
 
-And so we are now just missing the main piece in our contract, the main function that will validate the signatures and execute the transaction.
+Now, we need to add the main function in our contract, which will validate the signatures and execute the transaction.
 
-Go after the **function isOwner(address owner)** and before the **function addOwner(address owner)** and add:
+Add the following code after the **function isOwner(address owner)** and before the **function addOwner(address owner)**:
 
 ```js
   /// @notice Executes a transaction
@@ -617,33 +625,25 @@ Like this:
 
 ![Add executeTransaction function](./images/contract_add_executeTransaction_function.png)
 
-Now let's try to explain what our function execTransaction does. First let's look at the arguments it take:
+Let's explain what our `execTransaction` function does. First, let's take a look at the arguments it takes:
 
-- **address to**                 - The address of the target contract or user
-- **uint256 value**              - The value to be sent with this transaction (in Celo) (if calling a smart contract, if your function don't require Celo, pass in 0)
-- **bytes memory data**          - The call data of the transaction (like any transaction, you can pass some call data, if you are calling a smart contract function, this is where you will enter the encoded function signature and arguments)
-- **uint256 txnGas**             - The maximum gas to be used by this transaction, if the call consume more gas than this, the transaction will fail
-- **bytes memory signatures**    - The signatures of all the owners that approved this transactions
+- `address to`: The address of the target contract or user.
+- `uint256 value`: The value to be sent with this transaction in Celo. If you're calling a smart contract and the function doesn't require Celo, pass in 0.
+- `bytes memory data`: The call data of the transaction. You can pass in some call data like any transaction. If you're calling a smart contract function, this is where you'll enter the encoded function signature and arguments.
+- `uint256 txnGas`: The maximum gas to be used by this transaction. If the call consumes more gas than this, the transaction will fail.
+- `bytes memory signatures`: The signatures of all the owners that approved this transaction.
 
-Inside the logic of the function, our first verification **if (signatures.length < 65 * threshold_)** is to verify that the signatures argument is at least equal or longer than the length of a regular signature multiply by the threshold of the contract.
+Inside the logic of the function, our first verification is to check that `signatures` argument is at least as long as the length of a regular signature multiplied by the threshold of the contract. We use the `hashTypedDataV4` function in `EIP712.sol` from OpenZeppelin to independently hash all the arguments, the same way the owners would have hashed them prior to signing them, with the following code: `hashTypedDataV4(keccak256(abi.encode(_TRANSACTION_TYPEHASH, to, value, keccak256(data), txnGas, _nonce)))`. This way, we can retrieve the signer of each signature to verify that they are the right owners.
 
-After this, using the function in EIP712.sol from OpenZeppelin, we independently hash all the arguments, the same way the owners will have hash them prior to signing them, with **_hashTypedDataV4(keccak256(abi.encode(_TRANSACTION_TYPEHASH, to, value, keccak256(data), txnGas, _nonce)))**. This way we will be able to retrieve the signer of each signatures to verify that they are the right owners.
+We use a loop to verify each signature for up to the amount of threshold using an internal function, `_getCurrentOwner()`. This internal function uses assembly, a lower-level programming language that allows us to perform simple operations (in this case, byte manipulation) at lower gas cost. The main purpose of this internal function is to split the different signatures that we had previously concatenated all together and finally call `ecrecover()` to retrieve the signer of each signature.
 
-Then we use a loop **for (uint16 i; i < threshold_; )** to verify each signatures for up to the amount of threshold, using a internal function _getCurrentOwner().
-This internal function use assembly, a lower level programming language that allow us to do more simple operation (in this case bytes manipulation) at lower gas cost.
-The main purpose of this internal function, is to split the different signatures that we had previously concatenated all together and to finally call ecrecover() to retrieve the signer of each signature.
+We then verify that this owner has not already signed this transaction and that they are an owner. After verifying all signatures, we save in storage that the owner has signed this transaction, and we increment the nonce so that it cannot be used again. This prevents replay attacks.
 
-We then verify that this owner has not already sign this transaction (so an owner can't trick the contract in signing multiple time the same transaction) and we verify that he is an owner.
-Then we save in storage the fact that he signed this transaction and after having verify all signatures, we increment the nonce so this nonce use to generate the signatures can't be used again (therefore these signatures can't be reused (preventing a replay attack)).
-
-We then execute the call (the transaction) and record the gas used (by looking at gasLeft() before and after) and make sure it did not consume more than the limit that was pass as argument.
-
-And finally we emit a event with the result of the call, either **TransactionExecuted** or **TransactionFailed** with the detail of this transaction.
+We then execute the call (the transaction) and record the gas used by looking at `gasLeft()` before and after, making sure it did not consume more than the limit passed as an argument. Finally, we emit an event with the result of the call, either `TransactionExecuted` or `TransactionFailed`, with the details of this transaction.
 
 ## Compile the contract
 
-We have finish writing our contract, now it's time to see if our contract compile!
-To do so, let's run:
+We have finished writing our contract, and now it's time to see if our contract compiles! To do so, let's run:
 
 ```bash
 npx hardhat compile
