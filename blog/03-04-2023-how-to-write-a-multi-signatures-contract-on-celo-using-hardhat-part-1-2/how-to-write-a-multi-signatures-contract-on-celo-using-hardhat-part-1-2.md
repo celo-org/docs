@@ -4,9 +4,9 @@ description: Building a multi-signatures contract on Celo blockchain using Hardh
 authors:
   - name: Marc-Aurèle Besner
     title: 🚀 Full-Stack Web3 & Solidity Engineer
-    url:   https://github.com/marc-aurele-besner
-    image_url:  https://avatars.githubusercontent.com/u/82244926?v=4
-tags: [celo,solidity,smartcontract,hardhat,advanced]
+    url: https://github.com/marc-aurele-besner
+    image_url: https://avatars.githubusercontent.com/u/82244926?v=4
+tags: [celo, solidity, smartcontract, hardhat, advanced]
 hide_table_of_contents: false
 slug: "/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2"
 ---
@@ -107,7 +107,6 @@ Once it's done, you should see a **package.json** file in the root of your proje
 
 ![NPM init created](./images/npm_init_created.png)
 
-
 You can install Hardhat in your project by running the following command in your terminal:
 
 ```bash
@@ -134,20 +133,20 @@ In this menu, you can use the **Up** and **Down** arrow keys to navigate and sel
 
 After completing the previous step, you should now have the basic Hardhat boilerplate code. Here is a quick description of the folders and files that have been added:
 
-- **contracts/**            - This folder contains all your smart contract code.
-- **scripts/**              - This folder contains scripts that we will write to deploy our contracts.
-- **test/**                 - This folder contains all the Hardhat tests used to test our contracts.
-- **.gitignore**            - This file lists all the files we don't want to upload on GitHub.
-- **hardhat.config.js**     - This file contains all the settings for Hardhat.
-- **README.md**             - This file serves as documentation and the homepage for this repository.
+- **contracts/** - This folder contains all your smart contract code.
+- **scripts/** - This folder contains scripts that we will write to deploy our contracts.
+- **test/** - This folder contains all the Hardhat tests used to test our contracts.
+- **.gitignore** - This file lists all the files we don't want to upload on GitHub.
+- **hardhat.config.js** - This file contains all the settings for Hardhat.
+- **README.md** - This file serves as documentation and the homepage for this repository.
 
 ### Install more dependencies
 
 Let's install a few more dependencies:
 
-- **dotenv**                   - [dotenv](https://www.npmjs.com/package/dotenv)
-- **hardhat-awesome-cli**      - [hardhat-awesome-cli](https://www.npmjs.com/package/hardhat-awesome-cli)
-- **@openzeppelin/contracts**  - [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
+- **dotenv** - [dotenv](https://www.npmjs.com/package/dotenv)
+- **hardhat-awesome-cli** - [hardhat-awesome-cli](https://www.npmjs.com/package/hardhat-awesome-cli)
+- **@openzeppelin/contracts** - [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 
 ```bash
 npm install dotenv hardhat-awesome-cli --save-dev
@@ -189,18 +188,15 @@ Now, let's change the Hardhat settings to be able to test our contract locally, 
 So, let's replace all the content of `hardhat.config.js` after the lines we just added by:
 
 ```js
-const {
-  CELO_MAINNET_MNEMONIC,
-  CELO_TESTNET_MNEMONIC,
-  CELO_API_KEY
-} = process.env
+const { CELO_MAINNET_MNEMONIC, CELO_TESTNET_MNEMONIC, CELO_API_KEY } =
+  process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   networks: {
     localhost: {
       accounts: {
-        mnemonic: 'test test test test test test test test test test test junk',
+        mnemonic: "test test test test test test test test test test test junk",
       },
       chainId: 31337,
     },
@@ -228,7 +224,7 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: '0.8.18',
+        version: "0.8.18",
         settings: {
           optimizer: {
             enabled: true,
@@ -302,8 +298,8 @@ OpenZeppelin is one of the most trustworthy open-source libraries to build smart
 At the top of our contract, below the **pragma** statement and before the **contract** keyword, we will add the following code:
 
 ```js
-import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
-import '@openzeppelin/contracts/utils/cryptography/EIP712.sol';
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 ```
 
 Like this
@@ -344,16 +340,16 @@ Like this:
 
 Here is a description of the purpose of each storage/variable:
 
-- **_ownerCount**: Represents the number of owners of this contract.
-- **_threshold**: Represents the number of owners' signatures required to execute a transaction.
-- **_nonce**: Represents the next nonce to be used by the next transaction.
-- **_owners**: Represents the mapping of each address to a bool value. True means the address is an owner of the contract.
-- **_ownerNonceUsed**: Represents the mapping of each nonce used by the contract to a bool value. True means the nonce has already been used.
-- **_TRANSACTION_TYPEHASH**: A constant value representing the types of different elements hashed to form the signature used to validate each signature. This value is constant and does not use any storage.
+- **\_ownerCount**: Represents the number of owners of this contract.
+- **\_threshold**: Represents the number of owners' signatures required to execute a transaction.
+- **\_nonce**: Represents the next nonce to be used by the next transaction.
+- **\_owners**: Represents the mapping of each address to a bool value. True means the address is an owner of the contract.
+- **\_ownerNonceUsed**: Represents the mapping of each nonce used by the contract to a bool value. True means the nonce has already been used.
+- **\_TRANSACTION_TYPEHASH**: A constant value representing the types of different elements hashed to form the signature used to validate each signature. This value is constant and does not use any storage.
 
 ### Declaring Events
 
-When we execute a transaction or other function in our contract, we want to emit events to be able to track what happens more easily. To do so, we need to declare some events before using them. 
+When we execute a transaction or other function in our contract, we want to emit events to be able to track what happens more easily. To do so, we need to declare some events before using them.
 
 Therefore, under the last line that we added, let's add some events:
 
@@ -391,7 +387,6 @@ During the deployment of our contract, we will want to set the different owners'
 
 Therefore, under the last line we added, let's add the following code:
 
-
 ```js
 constructor(address[] memory owners_, uint16 threshold_) EIP712(name(), version()) {
   require(owners_.length <= 2 ** 16 - 1, 'CeloMultiSig: cannot add owner above 2^16 - 1');
@@ -413,11 +408,11 @@ Like this:
 
 So, this constructor function takes 2 arguments:
 
-- **address[] memory owners_** - A list of owners' addresses
-- **uint16 threshold_** - The minimum number of owners required to sign a transaction for the transaction to be executed (this number needs to be greater than 0 but smaller or equal to the number of owners).
+- **address[] memory owners\_** - A list of owners' addresses
+- **uint16 threshold\_** - The minimum number of owners required to sign a transaction for the transaction to be executed (this number needs to be greater than 0 but smaller or equal to the number of owners).
 
->**Note**
->At this stage, it's normal to have some warnings indicating errors in our contract. The logic inside our constructor function calls other functions that we have not yet written.
+> **Note**
+> At this stage, it's normal to have some warnings indicating errors in our contract. The logic inside our constructor function calls other functions that we have not yet written.
 
 ### Add functions to the contract
 
