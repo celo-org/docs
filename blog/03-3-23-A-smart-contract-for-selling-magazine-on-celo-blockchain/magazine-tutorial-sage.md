@@ -72,9 +72,10 @@ pragma solidity >=0.7.0 <0.9.0;
 ```
 Note that we're using Solidity version >=0.7.0 <0.9.0 in this tutorial. You may need to adjust the version depending on your specific requirements.
 
-```solidity
 Next, we add our ERC20 token interface.
 
+```solidity
+ 
 interface IERC20Token {
    function transfer(address, uint256) external returns (bool);
 
@@ -101,7 +102,7 @@ interface IERC20Token {
 }
 ```
 
-The IERC20Token interface is a standard interface for implementing tokens on the Celo blockchains. It defines a set of functions that must be implemented by any contract that wants to be recognized as an ERC20 token. Let's break down the functions and events in this interface:
+The `IERC20Token` interface is a standard interface for implementing tokens on the Celo blockchains. It defines a set of functions that must be implemented by any contract that wants to be recognized as an ERC20 token. Let's break down the functions and events in this interface:
 
  - **transfer**: This function allows users to transfer tokens from one address to another. It takes two arguments - the address of the recipient and the amount of tokens to be transferred. It returns a Boolean value indicating whether the transfer was successful or not.
 
@@ -118,8 +119,8 @@ The IERC20Token interface is a standard interface for implementing tokens on the
 - **Transfer**: This event is emitted when tokens are transferred from one address to another. It contains three parameters - the address of the sender, the address of the recipient, and the amount of tokens transferred.
 
 - **Approval**: This event is emitted when the allowance of a spender to spend tokens on behalf of an owner is changed. It contains three parameters - the address of the owner, the address of the spender, and the amount of tokens approved.
-
-By including this interface in your smart contract code, you can interact with any ERC20 token on the Ethereum or Celo blockchains.
+ 
+ You can interact with any ERC20 token on the Ethereum or Celo blockchains by including this interface in your smart contract code.
 
 Next we would be declaring the smart contract with the “Contract keyword, followed by the contract name `Magazino`
 
