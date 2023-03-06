@@ -285,3 +285,6 @@ ABI encoding and opcodes are low-level features that allow developers to interac
 4. ["Using Assembly in Solidity" by ConsenSys](https://consensys.net/blog/developers/using-assembly-in-solidity/)
 5. ["Gas-Efficient Solidity Smart Contracts" by OpenZeppelin](https://blog.openzeppelin.com/gas-efficient-solidity-smart-contracts-eda6fa8d8f86/)
 
+## Author
+
+[Oyeniyi Abiola Peace](https://twitter.com/_iamoracle) is a seasoned software and blockchain developer. With a degree in Telecommunication Science from the University of Ilorin and over five years experience in JavaScript, Python, PHP, and Solidity, he is no stranger to the tech industry. Peace currently works as the CTO at DFMLab. When he's not coding or teaching, he loves to read and spend time with family and friends.
