@@ -214,7 +214,7 @@ ADEWALE EMMANUEL
 
 is a crypto enthusiast and a Web 3.0 content creator. He is devoted to the mission of helping organizations with potential blockchain projects create educational content to attract and interest people in prospective decentralized financial infrastructures.
 
-Connect with him on Twitter through the link <https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
+Connect with him on[Twitter through the link]<https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
 
 ## References​
 
