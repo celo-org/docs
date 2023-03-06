@@ -768,6 +768,100 @@ Doing so, we should have the following result:
 
 ![Run tests again](./images/npx_hardhat_test_part5.png)
 
+### Add tests of regular ethereum transactions
+
+Let's add a few tests of regular ethereum transactions. So going back to the `test/CeloMultiSig.test.js` file and add the following code:
+
+```javascript
+  it('Execute transaction without data but 1 ETH in value', async function () {
+    await owner01.sendTransaction({ to: contract.address, value: ethers.utils.parseEther('1'), data: '', gasLimit: 30000 })
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
+  })
+
+  it('Execute transaction without data but 2x 1 ETH in value', async function () {
+    await owner01.sendTransaction({ to: contract.address, value: ethers.utils.parseEther('2'), data: '', gasLimit: 30000 })
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
+    await Helper.test.execTransaction(contract, owner02, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
+  })
+```
+
+The result should look like this:
+
+![Add tests of regular ethereum transactions](./images/build_test_file_part5.png)
+
+We can now run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part6.png)
+
+As you can see, we have our second test failing. We succeed to execute transaction that were calling our contract functions, but we can't send ethereum to our contract successfully. This is because our multi-signatures contract does not has a **receive** function.
+
+### Add a receive function
+
+Let's fix this issue by adding a **receive** function, so going back to the `contracts/CeloMultiSig.sol` file and add the following code at the end of the contract:
+
+```javascript
+  /// @notice Receives Ether
+  receive() external payable {}
+```
+
+The result should look like this:
+
+![Add a receive function](./images/add_receive_function.png)
+
+We can now run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part7.png)
+
+As you can see, all our tests are now passing. So far we tested all our contract functions, we tested that we can use this multi-signatures contract to send ethereum to another address, but one thing we did not tested yet, is that we can use this contract to interact with other contracts.
+
+### Add tests of contract interactions
+
+To test that we can use this contract to interact with other contracts, we will use the [Hardhat-Awesome-CLI](https://www.npmjs.com/package/hardhat-awesome-cli) to add a couple mock contracts to our project. So run the following command:
+
+```bash
+npx hardhat cli
+```
+
+Doing so, you should see the following menu:
+
+![Hardhat-Awesome-CLI menu](./images/npx_awesome_cli.png)
+
+Press 7 time on the down arrow key to select the **Create Mock contracts** option:
+
+![Select Create Mock contracts](./images/npx_awesome_cli_select.png) 
+
+Then press enter. You should see the following menu:
+
+![Create Mock contracts menu](./images/npx_awesome_cli_create_mock_contracts.png)
+
+Now select the **MockERC20** option by pressing enter. You should see the following menu:
+
+![Create MockERC20 menu](./images/npx_awesome_cli_create_mock_contracts_part2.png)
+
+Now select **no** by pressing the down arrow and enter. You should see the following menu:
+
+![Create MockERC20 menu](./images/npx_awesome_cli_create_mock_contracts_part3.png)
+
+Now select **yes** by pressing the down arrow and enter. After a few seconds, you should see one new file in the `contracts` folder and one new file in the `test` folder:
+
+![Add MockERC20](./images/add_MockERC20_contract_and_test.png)
+
+Let's organize these new files better, let's add the `MockERC20.sol` contract in the `contracts/mocks` folder and the `MockERC20.test.js` test file in the `test/mocks` folder. So go back to the `contracts` folder and create a new folder named `mocks` and move the `MockERC20.sol` contract in it. Then go back to the `test` folder and create a new folder named `mocks` and move the `MockERC20.test.js` test file in it. The result should look like this:
+
+![Organize files](./images/add_MockERC20_contract_and_test_part2.png)
+
 ## Deploy the Multi-Signature Contract on Celo Alfajores Testnet
 
 ## Conclusion
