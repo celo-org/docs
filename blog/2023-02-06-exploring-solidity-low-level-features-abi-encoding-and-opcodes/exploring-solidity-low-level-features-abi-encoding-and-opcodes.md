@@ -3,9 +3,9 @@ title: Exploring Solidity Low-Level Features - ABI Encoding and Opcodes
 description: Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.
 authors:
    - name: Oyeniyi Abiola Peace
-    title: CTO, DFMLab Limited
-    url: https://github.com/iamoracle
-    image_url: https://github.com/iamoracle.png
+     title: CTO, DFMLab Limited
+     url: https://github.com/iamoracle
+     image_url: https://github.com/iamoracle.png
 tags: [celosage, intermediate, blockchain]
 hide_table_of_contents: true
 slug: /tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes
