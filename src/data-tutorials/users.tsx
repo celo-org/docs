@@ -755,6 +755,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Exploring Solidity Low-Level Features - ABI Encoding and Opcodes',
+    description: ' Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.',
+    preview: require('./showcase/intermediate/exploring-solidity-low-level-features-abi-encoding-and-opcodes.png'),
+    website: '/blog/tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes',
+    tags: ['celosage', 'intermediate', 'blockchain'],
+  },
+  {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
