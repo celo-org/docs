@@ -214,9 +214,9 @@ ADEWALE EMMANUEL
 
 is a crypto enthusiast and a Web 3.0 content creator. He is devoted to the mission of helping organizations with potential blockchain projects create educational content to attract and interest people in prospective decentralized financial infrastructures.
 
-Connect with him on[Twitter through the link]<https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
+Connect with him on [Twitter through the link]<https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
 
 ## References​
 
-Click here to find a demo tutorial video on how to create a Smart Contract to be deployed on the Ethereum chain. <https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn>
+Click here to find a demo tutorial video on [how to create a Smart Contract to be deployed on the Ethereum chain.] <https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn>
 
