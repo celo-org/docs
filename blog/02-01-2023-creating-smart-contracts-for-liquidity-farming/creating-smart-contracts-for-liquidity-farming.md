@@ -13,7 +13,7 @@ slug: /tutorials/creating-smart-contracts-for-liquidity-farming
 
 ## CREATING SMART CONTRACTS FOR LIQUIDITY FARMING
 
-![header](../../blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo-smart-contracts.jpg)
+![header](images/celo-smart-contracts.jpg)
 
 Liquidity and smart contracts are essential parts of any financial system, liquidity describes how quickly financial assets can be converted into cash, while smart contracts represent decentralized financial agreements in the form of a computer program stored on the blockchain. The global adoption of blockchain technology has created and fueled the development of various prospective blockchain projects. Celo with one of such projects has created an Ethereum-compatible decentralized payment framework for easy access to financial instruments. 
 
@@ -21,7 +21,7 @@ Liquidity and smart contracts are essential parts of any financial system, liqui
 
 Smart Contracts are decentralized agreements created between parties involved in any form of financial transaction, such as trading, investing, borrowing, and lending protocols, which will be the focus of this article. The application of Smart Contracts has however expanded to being implemented in health care, the transformation of corporate structures, and gaming applications.
 
-![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo-what-are-smart-contracts.jpg)
+![image](images/celo-what-are-smart-contracts.jpg)
 
 Smart Contracts are simply computer programs written in the form of code and stored on a blockchain-based platform that run or trigger when certain existing conditions outlined in the program are met. Smart Contracts are used to automate the execution of a specific agreement so that all parties involved can be certain of the outcome instantly without the intervention of any user or intermediary, thus decentralizing. 
 
@@ -45,7 +45,7 @@ The Remix IDE is an important tool for developing Smart Contracts. It allows for
 
 ## SMART CONTRACTS THAT ALLOW FOR LIQUIDITY FARMING.
 
-![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo.jpg)
+![image](images/celo.jpg)
 
 As earlier described, Smart Contracts are decentralized financial agreements outlined in a block of code. In contrast to the traditional buyers and sellers in the centralized financial market, where one party could easily betray the terms of an agreement, Smart Contract are designed such that they possess the ability to hold financial assets within a POOL, once the terms of the agreement in the contract have been met and verified, the contract is executed without authorization from any intermediary. Smart Contracts work by eliminating centralized financial intermediaries, thereby allowing participants to interact directly with one another. Users who engage in liquidity farming lend their assets by adding them to a smart contract.
 
@@ -87,7 +87,7 @@ an “if” phrase to execute a true or false operation and branch out according
 
 Smart Contracts are designed to be executed at any point in the future “when” the terms of an agreement have been met.
 
-![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\demo-smart-contract.jpg)
+![image](images/demo-smart-contract.jpg)
 
 The picture above shows a design for a smart contract on the Remix IDE. 
 
@@ -214,9 +214,9 @@ ADEWALE EMMANUEL
 
 is a crypto enthusiast and a Web 3.0 content creator. He is devoted to the mission of helping organizations with potential blockchain projects create educational content to attract and interest people in prospective decentralized financial infrastructures.
 
-Connect with him on [Twitter through the link]<https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09>
+Connect with him on [Twitter through the link](https://twitter.com/Walemaths___?t=28jbNdJ5hBxGMRdS1JzXUQ&s=09)
 
 ## References​
 
-Click here to find a demo tutorial video on [how to create a Smart Contract to be deployed on the Ethereum chain.] <https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn>
+Click here to find a demo tutorial video on [how to create a Smart Contract to be deployed on the Ethereum chain.] (https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn) 
 
