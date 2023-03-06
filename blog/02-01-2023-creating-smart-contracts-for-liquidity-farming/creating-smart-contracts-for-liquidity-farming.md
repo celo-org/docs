@@ -198,7 +198,7 @@ function setStableCoin(address \_stableCoin) public {
 - As discussed in the previous section, a smart contract can be as simple as moving funds from one wallet to another or even more complex or advanced.
 
 
-### Conclusion
+## Conclusion
 
 Congratulations on coming this far in this tutorial, where we discussed certain terminologies in decentralized financial systems, including Liquidity, Liquidity Pools, Decentralized Apps, Liquidity Farming, and Smart Contracts, we also described the concept of smart contracts and the major role they will play in the future of blockchain technology. 
 
@@ -218,5 +218,5 @@ Connect with him on [Twitter through the link](https://twitter.com/Walemaths___?
 
 ## References​
 
-Click here to find a demo tutorial video on [how to create a Smart Contract to be deployed on the Ethereum chain.] (https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn) 
+Click here to find a demo tutorial video on [how to create a Smart Contract to be deployed on the Ethereum chain.](https://www.youtube.com/watch?v=nalMdCI_pv8&ab_channel=Simplilearn)  
 
