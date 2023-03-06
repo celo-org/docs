@@ -37,7 +37,7 @@ The following tools are what you need to work with to deploy and operate smart c
 5. Ganache CLI (for local development)
 6. Solidity compiler (e.g., solc)
 
-# Steps to Deploying and Interacting with Smart Contracts on Celo Blockchain
+## Steps to Deploying and Interacting with Smart Contracts on Celo Blockchain
 
 1. Setting up a Local Development Environment
 
@@ -93,7 +93,6 @@ Step 1: Open your terminal and navigate to the smart contract file's directory.
 Step 2: Run the following command to compile the smart contract:
 
 
-
 ```solidity
 pragma solidity ^0.8.0;
 
@@ -120,7 +119,6 @@ Step 2: Open a new terminal window and navigate to the smart contract file's dir
 Step 3: Run the following command to deploy the smart contract:
 
 
-
 ```bash
   celocli contract deploy MyContract.bin MyContract.abi --from <YOUR-CELO-ADDRESS>
 ```
@@ -140,8 +138,6 @@ Step 1: Open a new file in your text editor.
 Step 2: Write the code to interact with the smart contract.
 
 For example, you could write a script that sets the value of the string in the smart contract:
-
-
 
  ```js
  const Web3 = require('web3');
