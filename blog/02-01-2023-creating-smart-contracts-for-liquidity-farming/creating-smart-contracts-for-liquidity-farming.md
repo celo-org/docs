@@ -13,7 +13,7 @@ slug: /tutorials/creating-smart-contracts-for-liquidity-farming
 
 ## CREATING SMART CONTRACTS FOR LIQUIDITY FARMING
 
-![header](images/celo-smart-contracts.jpg)
+![header](../../src/data-tutorials/showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png)
 
 Liquidity and smart contracts are essential parts of any financial system, liquidity describes how quickly financial assets can be converted into cash, while smart contracts represent decentralized financial agreements in the form of a computer program stored on the blockchain. The global adoption of blockchain technology has created and fueled the development of various prospective blockchain projects. Celo with one of such projects has created an Ethereum-compatible decentralized payment framework for easy access to financial instruments. 
 
