@@ -1229,6 +1229,13 @@ const Users: User[] = [
     website: 'blog/tutorials/Understanding-the-Fundamentals-of-Auction-Programming-in-Solidity',
     tags: ['celo', 'intermediate', 'celosage'],
   },
+  {
+    title: 'Exploring the Decentralized Identity Features of Celo',
+    description: 'Discover the powerful decentralized identity capabilities of Celo, a blockchain platform that enables secure, fast, and affordable transactions.',
+    preview: require('./showcase/advanced/did.png'),
+    website: 'blog/tutorials/exploring-the-decentralized-identity-features-of-celo',
+    tags: ['celo', 'advanced', 'celosage'],
+  },
   { 
     title: 'Understanding the Role of Proposals and Referendums in Celo Governance',
     description: 'A Comprehensive Breakdown of the Role of Proposals and Referendums in Celo Governance',
