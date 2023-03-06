@@ -43,7 +43,7 @@ REMIX IDE
 
 The Remix IDE is an important tool for developing Smart Contracts. It allows for a simple deployment process on any blockchain of your choice. Remix IDE is a no-setup tool with a Graphics based operating system interface. It is used by most developers, and it is going to be where you create and deploy your smart contracts going forward.
 
-## SMART CONTRACTS THAT ALLOW FOR LIQUIDITY FARMING!
+## SMART CONTRACTS THAT ALLOW FOR LIQUIDITY FARMING.
 
 ![image](blog\02-01-2023-creating-smart-contracts-for-liquidity-farming\images\celo.jpg)
 
