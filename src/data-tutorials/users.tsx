@@ -939,14 +939,6 @@ const Users: User[] = [
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
-    title: 'Deploy and Interact with Smart Contracts on the Celo Blockchain',
-    description: 'Learn to deploy and interact with self-executing tamper-proof agreements developing smart contracts with Solidity on Celo Blockchain',
-    preview: require('./showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
-    website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
-    tags: ['celosage', 'celo', 'beginner'],
-  },
-
-  {
     title: 'Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo',
     description: 'Connecting smart contracts to off-chain data on the Celo platform is made possible through the integration of the decentralized oracle network, Witnet.io!',
     preview: require('./showcase/intermediate/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo.png'),
@@ -1209,7 +1201,6 @@ const Users: User[] = [
     website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
     tags: ['celosage', 'celo', 'beginner'],
   },
-
   {
     title: 'Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.',
     description: 'Everything you need to get started with Celo.',
