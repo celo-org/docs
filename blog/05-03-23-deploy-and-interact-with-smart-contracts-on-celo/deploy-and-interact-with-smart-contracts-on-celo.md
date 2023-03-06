@@ -18,15 +18,15 @@ In this tutorial, you’ll learn how to deploy and interact with smart contracts
 
 ---
 
-# Introduction:
+### Introduction:
 
 The Celo Blockchain is a platform designed specifically for Ethereum. The platform hosts a set of Solidity programs for implementing smart contracts. You may already be aware that smart contracts are self-executing programs that carry out a contract's terms on your behalf. The open-source platform Celo Blockchain enables users to build decentralized applications and smart contracts. You will discover how to deploy and work with smart contracts on the Celo blockchain in this guide. 
 
-# Prerequisites:
+### Prerequisites:
 
 You need to have a fundamental knowledge of the Celo network and blockchain technology to follow this course. Solidity is a programming language that is used to create smart contracts on the Ethereum and Celo networks, therefore you should be familiar with that as well. Also, you need to set up a local development environment, have access to the [Celo Command Line Interface (CLI)](https://docs.celo.org/cli), and have a Celo account.
 
-# Requirements:
+### Requirements:
 
 The following tools are what you need to work with to deploy and operate smart contracts on the Celo blockchain:
 
@@ -212,15 +212,15 @@ To solve this problem, either increase the gas limit for the transaction or opti
 
 These are the common errors you may encounter while following this guide. If a different error occurs, see the error message for details and determine the cause of the problem. You can also do a quick online search to find solutions to other common mistakes.
 
-# Conclusion:
+### Conclusion:
 
 This tutorial taught us how to deploy and interact with smart contracts on the Celo blockchain. We started by setting up a local development environment, and proceeded to write a simple smart contract in Solidity, compiled and deployed the smart contract using the Celo CLI, and finally interacted with the smart contract using a Node.js script.
 
-# Next Steps:
+### Next Steps:
 
 Now that you have deployed and interacted with a simple smart contract on the Celo blockchain, you can explore more advanced features and functionalities of smart contracts, such as; event logging, function modifiers, and inheritance. You can also explore other tools and frameworks for building decentralized applications on the Celo network, such as Truffle and Hardhat. Enjoy coding!
 
-# About the Author:
+### About the Author:
 
 Imole Peter L.
 
@@ -228,7 +228,7 @@ A web3 enthusiast, content writer for web3 brands, visual artist, and a seasoned
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
-# References:
+### References:
 
 1. [https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
 2. [https://docs.celo.org/cli](https://docs.celo.org/cli)
