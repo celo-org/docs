@@ -287,7 +287,6 @@ const getEventFromReceipt = async (contract, receipt, eventName) => {
         try {
             return contract.interface.parseLog(log)
         } catch (e) {
-            console.log('e', e)
             return
         }
     })
@@ -330,24 +329,26 @@ We still have the main helper function to add, that will be used to test the exe
 ```js
 const execTransaction = async (contract, submitter, owners, to, value, data, gas = 30000, errorMsg, extraEvents, signatures) => {
     // Prepare signatures if not provided
-    if (!signatures) signatures = await prepareSignatures(contract, owners, to, value, data, gas)
+    if (!signatures) signatures = await prepareSignatures(contract, owners, to, value, data, gas);
     // Prepare transaction
-    const input = await contract.connect(submitter).populateTransaction.execTransaction(to, value, data, gas, signatures)
+    const input = await contract.connect(submitter).populateTransaction.execTransaction(to, value, data, gas, signatures);
   
     // Send the transaction and check the result
-    const receipt = await checkRawTxnResult(input, submitter, errorMsg)
+    const receipt = await checkRawTxnResult(input, submitter, errorMsg);
     if (!errorMsg) {
         // Check the event emitted (if transaction should succeed)
-        const event = await getEventFromReceipt(contract, receipt, 'TransactionExecuted')
+        const event = await getEventFromReceipt(contract, receipt, 'TransactionExecuted');
+        let found = false;
         for (var i = 0; i < event.length; i++) {
             if (event[i] && event[i].name === 'TransactionExecuted') {
                 // If the event is found, check the parameters
-                expect(event[i].args.sender).to.be.equal(submitter.address)
-                expect(event[i].args.to).to.be.equal(to)
-                expect(event[i].args.value).to.be.equal(value)
-                expect(event[i].args.data).to.be.equal(data)
-                expect(event[i].args.txnGas).to.be.equal(gas)
-                return receipt
+                expect(event[i].args.sender).to.be.equal(submitter.address);
+                expect(event[i].args.to).to.be.equal(to);
+                expect(event[i].args.value).to.be.equal(value);
+                expect(event[i].args.data).to.be.equal(data);
+                expect(event[i].args.txnGas).to.be.equal(gas);
+                found = true;
+                return receipt;
             } else {
                 // If the event is not found, check if the transaction failed
                 if (
@@ -357,15 +358,16 @@ const execTransaction = async (contract, submitter, owners, to, value, data, gas
                     event[i].name === 'TransactionFailed'
                 ) {
                     // If the transaction failed, check the parameters and if we expect a failure
-                    expect(event[i].args.sender).to.be.equal(submitter.address)
-                    expect(event[i].args.to).to.be.equal(to)
-                    expect(event[i].args.value).to.be.equal(value)
-                    expect(event[i].args.data).to.be.equal(data)
-                    expect(event[i].args.txnGas).to.be.equal(gas)
-                    return receipt
+                    expect(event[i].args.sender).to.be.equal(submitter.address);
+                    expect(event[i].args.to).to.be.equal(to);
+                    expect(event[i].args.value).to.be.equal(value);
+                    expect(event[i].args.data).to.be.equal(data);
+                    expect(event[i].args.txnGas).to.be.equal(gas);
+                    found = true;
+                    return receipt;
                 } else {
                     // If the transaction failed but we don't expect it, throw an error
-                    expect.fail('TransactionExecuted event not found')
+                    if (found) expect.fail('TransactionExecuted event not found')
                 }
             }
         }
@@ -374,11 +376,11 @@ const execTransaction = async (contract, submitter, owners, to, value, data, gas
         // If we expect an extra event, check if it is emitted
         if (extraEvents && extraEvents.length > 0) {
             for (let i = 1; i < extraEvents.length; i++) {
-                const eventsFound = await getEventFromReceipt(contract, receipt, event)
+                const eventsFound = await getEventFromReceipt(contract, receipt, event);
                 for (var ii = 0; i < eventsFound.length; ii++) {
                     if (eventsFound[ii]) {
-                        expect(submitter.address).to.be.equal(eventsFound[ii].sender)
-                        return receipt
+                        expect(submitter.address).to.be.equal(eventsFound[ii].sender);
+                        return receipt;
                     }
                 }
             }
@@ -747,8 +749,8 @@ Time to add some tests expecting the transaction to fail. So going back to the `
   it('Cannot reuse a signature', async function () {
     const data = contract.interface.encodeFunctionData('addOwner(address)', [user02.address])
     const signatures = await Helper.test.prepareSignatures(contract, [owner01, owner02], contract.address, 0, data)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, Helper.DEFAULT_GAS, undefined, ['OwnerAdded'], signatures)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, Helper.DEFAULT_GAS, Helper.errors.INVALID_OWNER, undefined, signatures)
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, 30000, undefined, ['OwnerAdded'], signatures)
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, 30000, Helper.errors.INVALID_OWNER, undefined, signatures)
   })
 ```
 
@@ -862,7 +864,125 @@ Let's organize these new files better, let's add the `MockERC20.sol` contract in
 
 ![Organize files](./images/add_MockERC20_contract_and_test_part2.png)
 
+Now if we run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part8.png)
+
+We see that there is more tests for our mock ERC20 contract (a basic token contract), our next step is to add test in our `CeloMultiSig.test.js` file to test that we can deploy the Mock ERC20 contract, then use our multi-signatures contract to interact with it.
+Let's open first the `test/mocks/MockERC20.test.js` file to copy the deployment code of the Mock ERC20 contract:
+
+```javascript
+const MockERC20 = await ethers.getContractFactory('MockERC20')
+mockERC20 = await MockERC20.deploy()
+await mockERC20.deployed()
+```
+
+This is the code that deploy the mock ERC20 contract, so let's go back to the `test/CeloMultiSig.test.js` file and add the following code at the end of the file:
+
+```javascript
+  it('Deploy MockERC20 contract and mint token using the multi-signatures', async function () {
+    const MockERC20 = await ethers.getContractFactory('MockERC20')
+    mockERC20 = await MockERC20.deploy()
+    await mockERC20.deployed()
+
+    const data = mockERC20.interface.encodeFunctionData('mint(address,uint256)', [user02.address, 1000000])
+    const signatures = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data, 50000)
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data, 50000, undefined, ['Transfer'], signatures)
+    expect(await mockERC20.balanceOf(user02.address)).to.equal(1000000)
+  })
+
+  it('Deploy MockERC20 contract and mint token using the multi-signatures then burn them using the multi-signatures', async function () {
+    const MockERC20 = await ethers.getContractFactory('MockERC20')
+    mockERC20 = await MockERC20.deploy()
+    await mockERC20.deployed()
+
+    const data1 = mockERC20.interface.encodeFunctionData('mint(address,uint256)', [contract.address, 1000000])
+    const signatures1 = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data1, 50000)
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data1, 50000, undefined, ['Transfer'], signatures1)
+    expect(await mockERC20.balanceOf(contract.address)).to.equal(1000000)
+
+    const data2 = mockERC20.interface.encodeFunctionData('burn(uint256)', [1000000])
+    const signatures2 = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data2, 50000)
+    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data2, 50000, undefined, ['Transfer'], signatures2)
+    expect(await mockERC20.balanceOf(contract.address)).to.equal(0)
+  })
+```
+
+It should look like this:
+
+![Add tests](./images/build_test_file_part6.png)
+
+Now if we run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part9.png)
+
+Perfect! We did it! We have now a multi-signatures contract that can interact with other contracts and be used for regular transaction. Now let's deploy our multi-signatures contract on the Celo Alfajores Testnet.
+
 ## Deploy the Multi-Signature Contract on Celo Alfajores Testnet
+
+It's time to deploy our multi-signatures contract on the Celo Alfajores Testnet. Let's go back to the `scripts/deploy.js` file and add change the file for the following code:
+
+```javascript
+const Helper = require('../test/helper');
+
+async function main() {
+  const [, owner01, owner02, owner03] = await Helper.setupProviderAndWallets();
+
+  const owners = [owner01.address, owner02.address, owner03.address]
+  const contract = await Helper.deployContract(owners, 2);
+
+  console.log(`Contract CeloMultiSig deployed to ${contract.address}`);
+  console.log(`Owners: ${owners}`);
+  console.log(`Required confirmations (threshold): 2`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
+
+It should look like this:
+
+![Deploy script](./images/hardhat_script_deploy.png)
+
+### Deploy locally
+
+Now let's run the following command to deploy our contract:
+
+```bash
+npx hardhat run scripts/deploy.js
+```
+
+Doing so, we should have the following result:
+
+![Deploy contract locally](./images/hardhat_run_deploy_local.png)
+
+### Deploy on Celo Alfajores Testnet
+
+We now deployed our contract locally, but we want to deploy it on the Celo Alfajores Testnet. If you have setup your mnemonic phrase in the `.env` file, you can run the following command to deploy your contract on the Celo Alfajores Testnet:
+
+```bash
+npx hardhat run scripts/deploy.js --network celoAlfajores
+```
+
+Doing so, we should have the following result:
+
+![Deploy contract on Celo Alfajores Testnet](./images/hardhat_run_deploy_alfajores.png)
+
+We now deployed our contract on the Celo Alfajores Testnet.
 
 ## Conclusion
 
