@@ -968,6 +968,13 @@ const Users: User[] = [
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
   },
   {
+    title: 'Leveraging the Power of Smart Contracts to Enhance Voting Security',
+    description: 'Discover how the implementation of smart contracts can strengthen the security and transparency of voting systems, revolutionizing the way we approach democracy.',
+    preview: require('./showcase/intermediate/ballot.png'),
+    website: 'blog/tutorials/leveraging-the-power-of-smart-contracts-to-enhance-voting-security',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
+  },
+  {
     title: 'How to quickly build an NFT collection on Celo',
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
