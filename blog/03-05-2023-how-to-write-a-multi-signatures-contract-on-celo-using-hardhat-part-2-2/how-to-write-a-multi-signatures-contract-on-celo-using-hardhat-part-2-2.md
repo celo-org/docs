@@ -68,7 +68,7 @@ This should give you the following structure:
 In the `errors.js` file, we will add the following code:
 
 ```js
-module.export = {
+module.exports = {
     NOT_SELF: 'CeloMultiSig: only this contract can call this function',
     MAX_OWNERS_COUNT_EXCEEDED: 'CeloMultiSig: cannot add owner above 2^16 - 1',
     INVALID_SIGNATURE: 'CeloMultiSig: invalid signatures',
@@ -97,7 +97,7 @@ In the `utils.js` file, we will add the following code:
 ```js
 const { ethers, network, addressBook } = require('hardhat');
 
-module.export = {
+module.exports = {
     setupProviderAndWallets: async function () {
         const provider = ethers.provider;
         let owner01;
@@ -133,12 +133,12 @@ module.export = {
         // Retrieve the contract factory
         const CeloMultiSig = await ethers.getContractFactory('CeloMultiSig');
         // Deploy the contract with the specified parameters for the constructor
-        const contract = await CeloMultiSig.deploy(owners, threshold);
+        const contract = await CeloMultiSig.deploy(owners, threshold, { gasLimit: 10000000 });
         // Wait for the contract to be deployed
         await contract.deployed();
         // Save the contract address in the address book
         await addressBook.saveContract(
-            contractName,
+            'CeloMultiSig',
             contract.address,
             network.name,
             contract.deployTransaction.from,
@@ -147,7 +147,7 @@ module.export = {
             contract.deployTransaction.blockNumber,
             undefined,
             {
-              owners: ownersAddresses,
+              owners,
               threshold,
             }
           );
@@ -173,7 +173,7 @@ In the `signature.js` file, we will add the following code:
 ```js
 const { network } = require('hardhat');
 
-module.export = {
+module.exports = {
   signTransaction: async function (
     contractAddress,
     wallet,
@@ -444,7 +444,7 @@ It should now look like this:
 And lastly, we need to export all the helper functions. Add the following code at the end of the file:
 
 ```js
-module.export = {
+module.exports = {
     checkRawTxnResult,
     prepareSignatures,
     execTransaction,
@@ -471,7 +471,7 @@ const test = require('./test');
 const signature = require('./signatures');
 const utils = require('./utils');
 
-module.export = {
+module.exports = {
     errors,
     test,
     signature,
@@ -486,6 +486,204 @@ It should now look like this:
 ![Export all the test helpers](./images/create_index_helper_files.png)
 
 ## Write our first test
+
+Now that we have all the helper functions ready, we can start writing our first test. In the `test` folder, rename the `Lock.js` file that Hardhat had added for us to `CeloMultiSig.test.js`. Then, replace all the content of the file by the following code:
+
+![Test file to rename](./images/rename_test_file.png)
+![Test file renamed](./images/renamed_test_file.png)
+
+```js
+const { expect } = require('chai');
+const { ethers } = require('hardhat');
+
+const Helper = require('./helper');
+
+let provider;
+let owner01;
+let owner02;
+let owner03;
+let ownerCount;
+let user01;
+let user02;
+let user03;
+let contract;
+
+describe('CeloMultiSig', function () {
+  before(async function () {
+    [provider, owner01, owner02, owner03, user01, user02, user03] = await Helper.setupProviderAndWallets()
+  })
+
+  beforeEach(async function () {
+    const owners = [owner01.address, owner02.address, owner03.address]
+    ownerCount = owners.length
+    contract = await Helper.deployContract(
+      [owner01.address, owner02.address, owner03.address],
+      2
+    )
+  })
+
+  it('Contract return correct contract name', async function () {
+    expect(await contract.name()).to.be.equal('CeloMultiSig')
+  })
+
+  it('Contract return correct contract version', async function () {
+    expect(await contract.version()).to.be.equal('1.0')
+  })
+})
+```
+
+It should now look like this:
+
+![Build test file](./images/build_test_file_part1.png)
+
+Now that we have some test, we can run them using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have our first error! Like this:
+
+![First error](./images/npx_hardhat_test_part1.png)
+
+The important part of the error is the following:
+
+```bash
+Error: VM Exception while processing transaction: reverted with reason string 'CeloMultiSig: only this contract can call this function'
+```
+
+This error is telling us that somewhere in our constructor function logic, we call a function that is not allowed to be called by anyone else than the contract itself. Let's fix that!
+
+### Fix the constructor function
+
+This is our constructor function:
+
+```solidity
+constructor(address[] memory owners_, uint16 threshold_) EIP712(name(), version()) {
+  require(owners_.length <= 2 ** 16 - 1, 'CeloMultiSig: cannot add owner above 2^16 - 1');
+  uint256 length = owners_.length;
+  for (uint256 i = 0; i < length; ) {
+    _owners[owners_[i]] = true;
+    unchecked {
+      ++i;
+    }
+  }
+  _ownerCount = uint16(owners_.length);
+  changeThreshold(threshold_);
+}
+```
+
+The last line of this logic is calling the `changeThreshold` function. Let's take a look at this function:
+
+```solidity
+function changeThreshold(uint16 newThreshold) public onlyThis {
+  require(newThreshold > 0, 'CeloMultiSig: threshold must be greater than 0');
+  require(newThreshold <= _ownerCount, 'CeloMultiSig: threshold must be less than or equal to owner count');
+  _threshold = newThreshold;
+}
+```
+
+This function is using the `onlyThis` modifier. Let's take a look at this modifier:
+
+```solidity
+modifier onlyThis() {
+  require(msg.sender == address(this), 'CeloMultiSig: only this contract can call this function');
+  _;
+}
+```
+
+This modifier is checking that the `msg.sender` is the contract itself. This is not what we want in our constructor function. We want to allow anyone to call this function. So there is different way to solve the issue, we could paste in the logic of the `changeThreshold` function in the constructor function, or we could make a private `_changeThreshold` function that will not use the `onlyThis` modifier. Let's do the second option.
+
+One thing we don't want to do, to fix the issue, will be to simply remove the `onlyThis` modifier. This will allow anyone to call the `changeThreshold` function, and we don't want that. We want to allow anyone to call the constructor function, but we don't want to allow anyone to call the `changeThreshold` function.
+
+So replace the `changeThreshold` function by the following code:
+
+```solidity
+function _changeThreshold(uint16 newThreshold) private {
+  require(newThreshold > 0, 'CeloMultiSig: threshold must be greater than 0');
+  require(newThreshold <= _ownerCount, 'CeloMultiSig: threshold must be less than or equal to owner count');
+  _threshold = newThreshold;
+}
+
+/// @notice Changes the threshold
+/// @param newThreshold The new threshold.
+/// @dev This function can only be called inside a multisig transaction.
+function changeThreshold(uint16 newThreshold) public onlyThis {
+    _changeThreshold(newThreshold);
+}
+```
+
+The result should look like this:
+
+![Fix changeThreshold function](./images/fix_changeThreshold.png)
+
+Now in the constructor function, we can call the `_changeThreshold` function instead of the `changeThreshold` function. So replace the `changeThreshold` function by changing the last line of the constructor function by the following code:
+
+```solidity
+_changeThreshold(threshold_);
+```
+
+The constructor function should now look like this:
+
+![Fix constructor function](./images/fix_constructor.png)
+
+### Run the tests again
+
+Now that we have fixed the issue, we can run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part2.png)
+
+### Add more read functions tests
+
+Now let's add more tests to our test file. We so going back to the `test/CeloMultiSig.test.js` file and add the following code:
+
+```javascript
+  it('Contract return correct threshold', async function () {
+    expect(await contract.threshold()).to.be.equal(2)
+  })
+
+  it('Contract return correct ownerCount', async function () {
+    expect(await contract.ownerCount()).to.be.equal(ownerCount)
+  })
+
+  it('Contract return correct nonce', async function () {
+    expect(await contract.nonce()).to.be.equal(0)
+  })
+
+  it('Contract return true when calling isOwner for the original owners addresses', async function () {
+    expect(await contract.isOwner(owner01.address)).to.be.true
+    expect(await contract.isOwner(owner02.address)).to.be.true
+    expect(await contract.isOwner(owner03.address)).to.be.true
+  })
+
+  it('Contract return false when calling isOwner for non owners addresses', async function () {
+    expect(await contract.isOwner(user01.address)).to.be.false
+    expect(await contract.isOwner(user02.address)).to.be.false
+    expect(await contract.isOwner(user03.address)).to.be.false
+  })
+```
+
+The result should look like this:
+
+![Add more read functions tests](./images/build_test_file_part2.png)
+
+These tests are simple but important. They are testing the read functions of our contract. We are testing that the contract return the correct threshold, the correct ownerCount, the correct nonce, and that the contract return the correct value when calling the `isOwner` function for the original owners addresses and for non owners addresses.
+
+We can now run the tests again using the following command:
+
+```bash
+npx hardhat test
+```
+
+Doing so, we should have the following result:
+
+![Run tests again](./images/npx_hardhat_test_part3.png)
 
 ## Deploy the Multi-Signature Contract on Celo Alfajores Testnet
 
