@@ -3,12 +3,13 @@ title: Creating a Twitter-Like Decentralized Application on Celo usintg solidity
 description: Building a decentralized Twitter on the Celo blockchain refers to the creation of a social media platform that utilizes blockchain technology to enable users to communicate and share information in a decentralized and censorship-resistant manner.
 authors:
   - name: ✍️ Anish Gupta
-tags: [celo,dapp,social-network]
-hide_table_of_contents: false
+tags: [celo,dapp,social-network,celosage]
+hide_table_of_contents: true
 slug: "/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain"
 ---
 
 ## Table of Contents
+
   * [Introduction](#introduction)
   * [Prerequisites](#prerequisites)
   * [Intro to Solidity](#intro-to-solidity)
@@ -21,10 +22,12 @@ slug: "/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain"
   * [Deploying the Contract on the blockchain](#deploying-the-contract-on-the-blockchain)
   * [Conclusion](#conclusion)
 
-# Introduction
+## Introduction
+
 In this series, we will create a Twitter-like decentralized application that runs on the Celo blockchain. It is a two part series and this is part one of the series where we will learn how to create a smart contract in Solidity for our Twitter dapp.  
 
-# Prerequisites
+## Prerequisites
+
 - Basic knowledge of [Solidity](https://docs.soliditylang.org) programming language
 - Basic knowledge of working with [Ethereum](https://ethereum.org/en/) or the [Celo](https://celo.org/) blockchain  
 
@@ -52,9 +55,7 @@ In our dapp which will be built by us in this series, we will use the Celo block
 
 ## Intro to Solidity 
 
-***Solidity is an object-oriented programming language for writing smart contracts. It is used for implementing smart contracts on various blockchain platforms, most notably, Ethereum.*** 
-
- <p align="right">- Wikipedia</p> 
+According to Wikipedia, ***Solidity is an object-oriented programming language for writing smart contracts. It is used for implementing smart contracts on various blockchain platforms, most notably, Ethereum.*** 
 
 Solidity is an advanced programming language for implementing smart contracts on EVM (Ethereum Virtual Machine). It is highly influenced by Javascript, C++, and Python and was created by Gavin Wood. It is a statically typed language where variables are explicitly declared.  
 
@@ -102,7 +103,7 @@ contract Twitter{}
 ```  
 ## Structure of a Tweet 
 
-<b>If you have experience with C/C++ programming language then it will be easy to code in Solidity because Solidity and C/C++ are both statically typed language and Solidity borrow some syntax from C/C++.</b> 
+**If you have experience with C/C++ programming language then it will be easy to code in Solidity because Solidity and C/C++ are both statically typed language and Solidity borrow some syntax from C/C++.** 
 
 Our Twitter dapp is made by tweets that are tweeted by different users. We can define the structure of a tweet in Solidity as:
 
@@ -164,6 +165,7 @@ event Tweeting(string body, bytes32 hash, uint time, address indexed tweeter);
 The above code is the definition of an event that stores the tweet information like the body also known as the tweet statement, a unique hash of the tweet, the time when the blockchain recorded the tweet, and the address which made this tweet. 
 
 ## Creating Tweet on the Celo blockchain 
+
 We will write a function that takes a string argument and return a true variable if the tweet is successfully created. 
 
 ```solidity 
@@ -207,7 +209,7 @@ The above code states that there is a function named `createTweet()` which takes
 
  In the `createTweet` function, there is an unsigned variable named `time` which takes the transaction's created time as a UNIX timestamp in its value. A `hash` variable is created which is a  derive primitive type of bytes32 which holds 32 bytes. The `hash` variable takes a invoke nested function return. 
 
-`keccak256` is a function that computes the Keccak-256 hash of the input. It gives a signature hash of the input data.  <b>`keccak256` shouldn't be confused with sha256. They both are relatively the same.</b> 
+`keccak256` is a function that computes the Keccak-256 hash of the input. It gives a signature hash of the input data.  **`keccak256` shouldn't be confused with sha256. They both are relatively the same.**
 
   
 `keccak256` takes another function as input. `abi.encodePacked` takes a list of different data types and returns bytes of memory. `abi.encodePacked` performs packed encoding (Packed Encoding also called ASN.1 which takes any kind of data type or cross-platform data and return a single encoded data.) `abi.encodePacked` gives an ambiguous encoding which doesn't mean anything.  
@@ -221,6 +223,7 @@ We named a variable `_temporaryTweet` that is a local variable and doesn't store
 At Last, we need to return `true` because we have successfully created a tweet in the `tweets` state array variable like database and made a Transaction Log on the Transaction block that a Tweet had been created so at the end we ```return true```. 
 
 ## Getting the Tweet which is recorded on the Celo blockchain network 
+
 For reading the tweets from the Celo blockchain network. We are creating two function named ```getAllTweets``` and ```getTweetsByUser```. 
 
 ```solidity
@@ -339,7 +342,7 @@ contract Twitter{
 
 (4) At last we have to compile and deploy our code on Alfajores Testnet. You can use this [guide](https://docs.celo.org/developer/deploy/remix) for compilation and deployment guide.
 
-# Conclusion
+## Conclusion
 
 Now we are at the end of the first part of our series where we created our smart contract and deployed it to the Alfajores testnet.  
 
@@ -355,7 +358,8 @@ What will we learn in part two of our series?
 
 (5) Deploying on Mainnet. 
 
-(6) Answering to <b>some big and universal questions! How decentralization will help to solve the major issues listed above? And how the second diagram will solve the problem?</b>
+(6) Answering to **some big and universal questions! How decentralization will help to solve the major issues listed above? And how the second diagram will solve the problem?**
 
-# About the Author
+## About the Author
+
 My name is Anish Gupta and I am a blockchain engineer. With my passion for technology and cryptography, I am on a mission to encrypt the world! I believe that the power of encryption can create a more secure and trustworthy digital future for all. 
