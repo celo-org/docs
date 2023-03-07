@@ -833,6 +833,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api',
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
+    {
+    title: 'Build a Scan to Pay Shareable Link dApp on Celo',
+    description: 'Learn how to build a dApp on the Celo blockchain that enables users to quickly and easily make payments using a simple scan-to-pay feature.',
+    preview: require('./showcase/intermediate/build-a-scan-to-pay-shareable-link-dapp-on-celo.png'),
+    website: '/blog/tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask', 'valora' ],
+  },
   {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
