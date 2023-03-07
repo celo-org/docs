@@ -962,7 +962,7 @@ const Users: User[] = [
   },
   {
     title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
-    description: 'Learn how to build a dapp for seliing football tickets on the celo blockchain.',
+    description: 'There are multiple factors to consider when assembling a web3 dream team.',
     preview: require('./showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png'),
     website: 'blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp',
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
@@ -970,7 +970,7 @@ const Users: User[] = [
   {
     title: 'How to Build a Full Stack Dapp For Selling Football Tickets on Celo',
     description: 'Learn how to build a dapp for seliing football tickets on the celo blockchain',
-    preview: require('./showcase/beginner/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png'),
+    preview: require('./showcase/intermediate/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png'),
     website: 'blog/tutorials/how-to-build-a-fullstack-dapp-for-selling-football-tickets-on-celo',
     tags: ['celo', 'dapp', 'intermediate', 'celosage'],
   },
