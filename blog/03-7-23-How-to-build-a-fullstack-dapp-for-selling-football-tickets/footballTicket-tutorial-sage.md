@@ -41,7 +41,7 @@ To effectively follow these tutorials, it is recommended that you have a foundat
 
 - React
   
-  ## Requirements
+ ## Requirements
 
 - Solidity.
   
