@@ -874,6 +874,12 @@ const Users: User[] = [
   website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
   tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
   },
+  {title: 'Escrow service on Celo that holds funds until certain conditions are met',
+  description: 'This is an example of a smart contract where a guarantee can be defined between buyer and seller.',
+  preview: require('./showcase/intermediate/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met.png'),
+  website: 'blog/tutorials/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met',
+  tags: ['intermediate','celosage', 'solidity','smartcontract','remix'],
+  },
   {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
