@@ -12,7 +12,7 @@ slug: /tutorials/how-to-build-a-fullstack-dapp-for-selling-football-tickets-on-c
 ---
 
 
- ![How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets png](https://user-images.githubusercontent.com/94527318/223388582-2fc82ce3-6ed7-4fa8-9725-055b5be0f7e9.png)
+![header](https://user-images.githubusercontent.com/94527318/223388582-2fc82ce3-6ed7-4fa8-9725-055b5be0f7e9.png)
 
 
 
