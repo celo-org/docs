@@ -10,6 +10,7 @@ tags: ["beginner", "smart contracts", "celosage", "blockchain", "solidity"]
 hide_table_of_contents: true
 slug: /tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain
 ---
+
 ![header](../../src/data-tutorials/showcase/beginner/deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png)
 
 ## Deploy and Interact with Smart Contracts on the Celo Blockchain
@@ -18,15 +19,15 @@ In this tutorial, you’ll learn how to deploy and interact with smart contracts
 
 ---
 
-### Introduction:
+## Introduction:
 
-The Celo Blockchain is a platform designed specifically for Ethereum. The platform hosts a set of Solidity programs for implementing smart contracts. You may already be aware that smart contracts are self-executing programs that carry out a contract's terms on your behalf. The open-source platform Celo Blockchain enables users to build decentralized applications and smart contracts. You will discover how to deploy and work with smart contracts on the Celo blockchain in this guide. 
+The Celo Blockchain is a platform designed specifically for Ethereum. The platform hosts a set of Solidity programs for implementing smart contracts. You may already be aware that smart contracts are self-executing programs that carry out a contract's terms on your behalf. The open-source platform Celo Blockchain enables users to build decentralized applications and smart contracts. You will discover how to deploy and work with smart contracts on the Celo blockchain in this guide.
 
-### Prerequisites:
+## Prerequisites:
 
 You need to have a fundamental knowledge of the Celo network and blockchain technology to follow this course. Solidity is a programming language that is used to create smart contracts on the Ethereum and Celo networks, therefore you should be familiar with that as well. Also, you need to set up a local development environment, have access to the [Celo Command Line Interface (CLI)](https://docs.celo.org/cli), and have a Celo account.
 
-### Requirements:
+## Requirements:
 
 The following tools are what you need to work with to deploy and operate smart contracts on the Celo blockchain:
 
@@ -37,7 +38,7 @@ The following tools are what you need to work with to deploy and operate smart c
 5. Ganache CLI (for local development)
 6. Solidity compiler (e.g., solc)
 
-## Steps to Deploying and Interacting with Smart Contracts on Celo Blockchain
+### Steps to Deploying and Interacting with Smart Contracts on Celo Blockchain
 
 1. Setting up a Local Development Environment
 
@@ -69,16 +70,13 @@ Step 2: Write the code for your smart contract in Solidity.
 
 For example, you could write a simple smart contract that stores a string:
 
-
-  ```solidity
-  pragma solidity ^0.8.0;
-
+```solidity
+pragma solidity ^0.8.0;
 contract MyContract {
-    string public myString;
-
-    function setMyString(string memory _myString) public {
-        myString = _myString;
-    }
+  string public myString;
+  function setMyString(string memory _myString) public {
+      myString = _myString;
+  }
 }
 ```
 
@@ -92,17 +90,15 @@ Step 1: Open your terminal and navigate to the smart contract file's directory.
 
 Step 2: Run the following command to compile the smart contract:
 
-
 ```solidity
 pragma solidity ^0.8.0;
-
  solc MyContract.sol --bin --abi --optimize -o ./build
 ```
 
-This command compiles the smart contract and generates two files: 
+This command compiles the smart contract and generates two files:
 
-* MyContract.bin, and 
-* MyContract.abi. 
+- MyContract.bin, and
+- MyContract.abi.
 
 The .bin file contains the bytecode of the compiled smart contract, and the .abi file contains the Application Binary Interface (ABI) that describes how to interact with the smart contract.
 
@@ -118,14 +114,13 @@ Step 2: Open a new terminal window and navigate to the smart contract file's dir
 
 Step 3: Run the following command to deploy the smart contract:
 
-
 ```bash
   celocli contract deploy MyContract.bin MyContract.abi --from <YOUR-CELO-ADDRESS>
 ```
 
 Replace &lt;YOUR-CELO-ADDRESS> with your Celo address.
 
-Step 4: The celocli command will return the contract address of the deployed smart contract. 
+Step 4: The celocli command will return the contract address of the deployed smart contract.
 
 Step 5: Copy the contract address for use in the next step.
 
@@ -139,24 +134,20 @@ Step 2: Write the code to interact with the smart contract.
 
 For example, you could write a script that sets the value of the string in the smart contract:
 
- ```js
- const Web3 = require('web3');
-const contractABI = require('./MyContract.abi.json');
-
-const web3 = new Web3('<YOUR-CELO-RPC-ENDPOINT>');
-
-const myContract = new web3.eth.Contract(
-    contractABI,
-    '<YOUR-CONTRACT-ADDRESS>'
-);
-
-myContract.methods.setMyString('Hello, World!').send({
-    from: '<YOUR-CELO-ADDRESS>',
-    gas: 500000
-})
-.then((receipt) => {
+```js
+const Web3 = require("web3");
+const contractABI = require("./MyContract.abi.json");
+const web3 = new Web3("<YOUR-CELO-RPC-ENDPOINT>");
+const myContract = new web3.eth.Contract(contractABI, "<YOUR-CONTRACT-ADDRESS>");
+myContract.methods
+  .setMyString("Hello, World!")
+  .send({
+    from: "<YOUR-CELO-ADDRESS>",
+    gas: 500000,
+  })
+  .then((receipt) => {
     console.log(receipt);
-});
+  });
 ```
 
 Replace &lt;YOUR-CELO-RPC-ENDPOINT>, &lt;YOUR-CONTRACT-ADDRESS>, and &lt;YOUR-CELO-ADDRESS> with your Celo RPC endpoint, contract address, and Celo address, respectively.
@@ -171,7 +162,7 @@ Step 4: Run the bash script by running the following command in your terminal:
 
 This will set the value of the string in the smart contract to "Hello, World!".
 
-## Common Errors Encountered and How to Fix them
+### Common Errors Encountered and How to Fix them
 
 Here are some common errors you might encounter while following this tutorial, along with their corrections:
 
@@ -182,7 +173,6 @@ This error occurs when the web3 module is not installed in your project. To fix 
 ```bash
 npm install web3
 ```
-
 
 2. Error: "TypeError: Cannot read property 'options' of undefined"
 
@@ -196,7 +186,7 @@ This error occurs when the RPC endpoint is invalid or not responding. To resolve
 
 To resolve this issue, check the error message returned by the transaction and change the smart contract code as needed or increase the gas limit.
 
-5. Error: "Error: Private key does not match any account" 
+5. Error: "Error: Private key does not match any account"
 
 This error occurs when the private key used to sign the transaction does not match the account on the Celo network. To resolve this issue, please ensure that your private key and address are correct and that your account has been properly credited.
 
@@ -208,15 +198,15 @@ To solve this problem, either increase the gas limit for the transaction or opti
 
 These are the common errors you may encounter while following this guide. If a different error occurs, see the error message for details and determine the cause of the problem. You can also do a quick online search to find solutions to other common mistakes.
 
-### Conclusion:
+## Conclusion:
 
 This tutorial taught us how to deploy and interact with smart contracts on the Celo blockchain. We started by setting up a local development environment, and proceeded to write a simple smart contract in Solidity, compiled and deployed the smart contract using the Celo CLI, and finally interacted with the smart contract using a Node.js script.
 
-### Next Steps:
+## Next Steps:
 
 Now that you have deployed and interacted with a simple smart contract on the Celo blockchain, you can explore more advanced features and functionalities of smart contracts, such as; event logging, function modifiers, and inheritance. You can also explore other tools and frameworks for building decentralized applications on the Celo network, such as Truffle and Hardhat. Enjoy coding!
 
-### About the Author:
+## About the Author:
 
 Imole Peter L.
 
@@ -224,7 +214,7 @@ A web3 enthusiast, content writer for web3 brands, visual artist, and a seasoned
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
-### References:
+## References:
 
 1. [https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract](https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract)
 2. [https://docs.celo.org/cli](https://docs.celo.org/cli)
