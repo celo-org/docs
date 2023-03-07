@@ -28,7 +28,7 @@ Here are some reasons why you should prepare for auditing your smart contract:
  
 **Increase User Trust:** Auditing can help increase user trust in your smart contract, as users will be more likely to use and interact with a contract that has undergone a thorough auditing process.
 
-**Accuracy** The code in smart contracts is executed automatically without human intervention, making accuracy crucial. Auditing helps ensure that the code is accurate and functions as intended.
+**Accuracy:** The code in smart contracts is executed automatically without human intervention, making accuracy crucial. Auditing helps ensure that the code is accurate and functions as intended.
 
 **Reputation:** A smart contract with a security breach or coding error can damage the reputation of the project or organization. Auditing helps prevent such incidents and enhances the reputation of the project.
 
@@ -38,7 +38,7 @@ Here are some reasons why you should prepare for auditing your smart contract:
 
 During a smart contract audit, the auditor reviews the code and conducts testing to identify any potential security risks or vulnerabilities. The auditor provides a report summarizing their findings and recommendations for addressing any issues. The report typically includes a description of the issues identified and their severity level. Here are the levels of issues that may be found in a smart contract audit report:
 
-**Critical:** A critical issue is a severe vulnerability that could result in the loss or theft of assets. This includes issues such as the ability for an attacker to execute arbitrary code or steal user funds. These issues require immediate attention and remediation.
+**Critical:** A critical issue is a severe vulnerability that could result in the loss or theft of assets. This includes issues such as the ability of an attacker to execute arbitrary code or steal user funds. These issues require immediate attention and remediation.
 
 **High:** A high issue is a serious vulnerability that could lead to the compromise of the contract's security. This includes issues such as denial-of-service attacks, which could render the contract unusable. These issues also require immediate attention and remediation.
 
@@ -96,7 +96,7 @@ Here are some steps to prepare for auditing your smart contract:
 
 **Gas Optimisation:** is a crucial aspect of smart contract development that can greatly impact the efficiency, cost, and security of the contract. Here are some tips on how to prepare for a smart contract audit report by optimizing gas usage:
 
- - *Minimize Storage Usage:* Every piece of data that is stored on the blockchain incurs a gas cost. Therefore, minimizing the amount of storage used by the contract can significantly reduce gas costs. This can be achieved by using data structures that are optimized for gas usage, such as arrays, bytes, and structs.
+ - *Minimize Storage Usage:* Every piece of data that is stored on the blockchain incurs a gas cost. Therefore, minimizing the amount of storage used by the contract can significantly reduce gas costs. This can be achieved by using data structures that are optimized for gas usage, such as *arrays*, *bytes*, and *structs*.
 
  - *Reduce Loops and Iterations:* Loops and iterations are computationally expensive operations that can consume a lot of gas. Therefore, minimizing the number of loops and iterations in the contract can reduce gas costs. This can be achieved by using optimized algorithms and data structures.
 
@@ -157,9 +157,9 @@ Here are some key considerations for data validation in smart contract developme
 
 **Event emission on critical functions:** is an important aspect of smart contract development. Events are a way for contracts to communicate with external systems and notify them when important actions or changes occur within the contract. Emitting events on critical functions can provide valuable information to users and external systems about the status and actions of the contract.
 
-When a critical function is executed in a smart contract, such as a transfer of tokens or an update to the contract state, emitting an event can provide transparency and accountability for the action. By emitting an event, the contract can notify external systems and users of the action and provide relevant details such as the sender, receiver, amount, and timestamp of the action. This can help to prevent fraud or errors, and improve trust in the contract.
+When a critical function is executed in a smart contract, such as a transfer of tokens or an update to the contract state, emitting an event can provide transparency and accountability for the action. By emitting an event, the contract can notify external systems and users of the action and provide relevant details such as the sender, receiver, amount, and timestamp of the action. This can help to prevent fraud or errors and improve trust in the contract.
 
-In addition, emitting events on critical functions can provide valuable insights and analytics for contract owners and users. By analyzing the events emitted by the contract, users can gain insights into the usage and behavior of the contract, and identify any potential issues or areas for improvement.
+In addition, emitting events on critical functions can provide valuable insights and analytics for contract owners and users. By analyzing the events emitted by the contract, users can gain insights into the usage and behavior of the contract and identify any potential issues or areas for improvement.
 
 It is important to note that emitting events on critical functions should be done thoughtfully and with consideration for the privacy and security of users. The events emitted should provide relevant information without exposing sensitive information or compromising the security of the contract.
 
@@ -203,7 +203,7 @@ Once a smart contract has been audited, it is important to follow post-auditing 
 
 **Implement Continuous Monitoring:** Once your smart contract is live, it is important to implement continuous monitoring to identify any potential security threats or issues. This can help you address issues as soon as they arise and ensure the ongoing security and functionality of your smart contract.
 
-**Keep Your Contract Up-to-Date:** As technology and security threats evolve, it is important to keep your smart contract up-to-date. This may involve making updates to the contract code or implementing new security measures to ensure its ongoing security and functionality.
+**Keep Your Contract Up to Date:** As technology and security threats evolve, it is important to keep your smart contract up-to-date. This may involve making updates to the contract code or implementing new security measures to ensure its ongoing security and functionality.
 
 By following these post-auditing best practices, you can ensure the security, functionality, and user trust of your smart contract. It is important to take a proactive approach to smart contract development and maintenance to ensure that your contract is secure and trustworthy for its users.
 
@@ -216,12 +216,12 @@ As the world of smart contracts and decentralized finance continues to grow, it 
 
 ## Next step
 
-As next steps I suggest you consult other Celo tutorials [here](https://docs.celo.org/tutorials).
+As the next steps, I suggest you consult other Celo tutorials [here](https://docs.celo.org/tutorials).
 
 
 
 ## About the author
 
-I am a serial entrepreneur, founder of Guizo Studios and always available to help the Celo ecosystem.
+I am a serial entrepreneur, founder of Guizo Studios, and always available to help the Celo ecosystem.
 
 [LinkedIn](https://www.linkedin.com/in/ewertonlopes/)
