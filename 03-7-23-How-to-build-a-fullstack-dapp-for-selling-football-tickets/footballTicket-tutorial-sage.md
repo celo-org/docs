@@ -12,14 +12,20 @@ slug: /tutorials/how-to-build-a-fullstack-dapp-for-selling-football-tickets-on-c
 ---
 
 
-![header](../../src/data-tutorials/showcase/intermediate/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png)
+ ![How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets png](https://user-images.githubusercontent.com/94527318/223388582-2fc82ce3-6ed7-4fa8-9725-055b5be0f7e9.png)
+
 
 
 ## Introduction
 
 In this tutorial, we will delve into the fascinating world of blockchain football ticketing dapp built on the Celo blockchain. This tutorial will provide you with an introduction to the concept of blockchain football ticket dapp, and guide you through the process of setting up and interacting with this type of application. Upon completion of this tutorial, you will have the knowledge and skills necessary to start building and utilizing your very own blockchain football ticket dapp dapp. Let's begin!
 
-[Live demo](https://zesty-capybara-8b518c.netlify.app/) of what we will be building
+[Live demo](https://zesty-capybara-8b518c.netlify.app/) of what we will be building.
+
+Here is a picture of how our dapp will look like.
+
+![React App - Google Chrome 3_4_2023 9_55_56 AM (2)](https://user-images.githubusercontent.com/94527318/223389414-85aafa20-2195-4c9f-9b23-57dfaed22b44.png)
+
 
 ## Prerequisites
 
