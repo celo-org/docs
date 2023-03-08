@@ -328,12 +328,12 @@ Oluwalana is a technical writer and a generalist. As an analog-by-birth and digi
 
 ## References
 
-(https://www.investopedia.com/terms/r/remittance.asp)
-(https://docs.celo.org/developer/deploy/truffle)
-(https://docs.celo.org/developer/setup/wallet)
-(https://faucet.celo.org/)
-(https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js)
-(https://docs.celo.org/blog/code-metamask)
-(https://docs.celo.org/developer)
-(https://docs.soliditylang.org/en/latest/installing-solidity.html)
-(https://explorer.celo.org/alfajores/)
+[Investopedia](https://www.investopedia.com/terms/r/remittance.asp)
+[Deploy on Celo with Truffle](https://docs.celo.org/developer/deploy/truffle)
+[Testnet Wallets](https://docs.celo.org/developer/setup/wallet)
+[Fund your Celo Testnet Account](https://faucet.celo.org/)
+[Celo Truffle Configuration](https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js)
+[Code Playground - Metamask](https://docs.celo.org/blog/code-metamask)
+[Celo Developers](https://docs.celo.org/developer)
+[Installing the Solidity Compiler](https://docs.soliditylang.org/en/latest/installing-solidity.html)
+[Alfajores Celo Explorer](https://explorer.celo.org/alfajores/)
