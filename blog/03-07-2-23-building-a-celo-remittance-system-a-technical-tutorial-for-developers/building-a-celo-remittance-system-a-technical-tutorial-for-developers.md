@@ -11,14 +11,13 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-remittance-system-a-technical-tutorial-for-developers
 ---
 
-
 ## Introduction
 
 Celo is a blockchain platform, designed to enable a new universe of financial solutions accessible, including remittance systems. In this tutorial, we will explore the technical aspects of building a remittance system on the Celo network. We will cover topics such as Celo's secure messaging protocol, smart contract architecture, and decentralized governance. This tutorial is aimed at developers interested in building remittance systems and those looking to expand their knowledge of Celo's technical capabilities. By the end of this tutorial, you will have learned how to build a basic remittance system on the Celo network using Solidity and Truffle.
 
 ## Prerequisites
 
-To get the most out of this tutorial, you should have a solid understanding of Solidity and experience with building smart contracts. Familiarity with Celo's messaging protocol and smart contract architecture is also recommended. You should also have a basic understanding of blockchain concepts and terminology. Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one here (https://docs.celo.org/developer/setup/wallet).
+To get the most out of this tutorial, you should have a solid understanding of Solidity and experience with building smart contracts. Familiarity with Celo's messaging protocol and smart contract architecture is also recommended. You should also have a basic understanding of blockchain concepts and terminology. Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one [here] (https://docs.celo.org/developer/setup/wallet).
 
 ## Requirements
 
@@ -28,9 +27,9 @@ Celo SDK: This is a set of tools for building and deploying smart contracts on t
 
 Truffle: This is a popular development framework for building Ethereum-based applications. You can install it using npm by running ‘npm install -g truffle’.
 
-You will also need a text editor of your choice and a web3-enabled browser such as Chrome. 
+You will also need a text editor of your choice and a web3-enabled browser such as Chrome.
 Finally, it is recommended that you have some familiarity with using the command line interface. Note the installation of these tools will not be covered in this tutorial.
-  
+
 ## Getting Started:
 
 A remittance is money that is sent from one party to another. Broadly speaking, any payment of an invoice or a bill can be called a remittance. However, the term is most often used nowadays to describe a sum of money sent by someone working abroad to their family back home. The term is derived from the word remit, which means to send back.
@@ -62,7 +61,7 @@ The first step in building our remittance system is to create the smart contract
 
 Defining the Remittance Contract
 Create a new file called ‘Remittance.sol’ in the contracts directory of your project.
-Add the following code to this file: 
+Add the following code to this file:
 
 ```solidity
 / SPDX-License-Identifier:MIT
@@ -117,7 +116,7 @@ struct RemittanceStruct {
         remittance.value = 0;
         msg.sender.transfer(value);
     }
-} 
+}
 ```
 
 Let's examine what's happening in this added code. When a user creates a remittance, the ‘createRemittance’ function is called, and a new ‘RemittanceStruct’ is created with the provided ‘hash’ and ‘value’. The value must be greater than ‘zero’, and the ‘hash’ must not already exist in the ‘remittances’ mapping.
@@ -126,7 +125,7 @@ When a recipient wants to withdraw the funds, they must provide two passphrases 
 
 The added secure messaging protocol ensures that only the recipient with knowledge of the correct passphrases can withdraw the funds, thereby adding an additional layer of security to our remittance system.
 
-This what your complete smart contract should  look like:
+This what your complete smart contract should look like:
 
 ```
 / SPDX-License-Identifier:MIT
@@ -170,9 +169,8 @@ struct RemittanceStruct {
         remittance.value = 0;
         msg.sender.transfer(value);
     }
-} 
+}
 ```
-
 
 ## Deploying the Remittance System to the Celo Network
 
@@ -183,21 +181,21 @@ Truffle installed on our computer.
 The Celo SDK installed on our computer.
 Node.js installed on our computer.
 
-If you don't have a Celo wallet with testnet funds, you can create one by following the instructions on the Celo Testnet Faucet (https://celo.org/developers/faucet).
-
-
+If you don't have a Celo wallet with testnet funds, you can create one by following the instructions on the [Celo Testnet Faucet](https://celo.org/developers/faucet).
 
 To install Truffle, run the following command:
+
 ```bash
 npm install -g truffle
 ```
 
 To install the Celo SDK, run the following command:
+
 ```bash
 npm install -g @celo/contractkit
 ```
 
-To install Node.js, visit https://nodejs.org/en/ and download the version for your operating system.
+To install Node.js, visit [here](https://nodejs.org/en/) and download the version for your operating system.
 
 ## Creating a Truffle Project
 
@@ -210,6 +208,7 @@ mkdir remittance-system
 cd remittance-system
 truffle init
 ```
+
 ![image](./images/4.png)
 
 This will create a new Truffle project with the following directory structure:
@@ -301,7 +300,7 @@ You might get an error like this:
 
 The error indicates there are not sufficient funds in the contract address, this address should be funded. You can either fund this address by sending funds to it from the testnet faucet or metamask.
 
-Running the  "truffle deploy --network alfajores" command again, will deploy the smart contract to the Celo network, and you should see an output similar to this:
+Running the "truffle deploy --network alfajores" command again, will deploy the smart contract to the Celo network, and you should see an output similar to this:
 
 ![image](./images/8.png)
 
@@ -319,21 +318,22 @@ Implementing secure messaging protocols to enhance the security of the remittanc
 
 ## Next Steps
 
-Now that you have completed this tutorial, here are some ideas for continued learning and exploration. You can experiment with different user interfaces for your remittance system, such as building a mobile app or a web-based interface.  You can also explore adding more features to the remittance system, such as transaction tracking, user authentication, or automatic conversion to local currencies.
+Now that you have completed this tutorial, here are some ideas for continued learning and exploration. You can experiment with different user interfaces for your remittance system, such as building a mobile app or a web-based interface. You can also explore adding more features to the remittance system, such as transaction tracking, user authentication, or automatic conversion to local currencies.
 
 It is strongly recommended that as you build on Celo, you check out Celo's documentation, and join the Celo Developer Discord community to connect with other developers.
 
 ## About the Author
+
 Oluwalana is a technical writer and a generalist. As an analog-by-birth and digital-by-nature individual, Oluwalana leverages his unique perspective to craft compelling stories and thought-provoking content.
 
 ## References
 
-https://www.investopedia.com/terms/r/remittance.asp
-https://docs.celo.org/developer/deploy/truffle
-https://docs.celo.org/developer/setup/wallet
-https://faucet.celo.org/
-https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js
-https://docs.celo.org/blog/code-metamask
-https://docs.celo.org/developer
-https://docs.soliditylang.org/en/latest/installing-solidity.html
-https://explorer.celo.org/alfajores/
+(https://www.investopedia.com/terms/r/remittance.asp)
+(https://docs.celo.org/developer/deploy/truffle)
+(https://docs.celo.org/developer/setup/wallet)
+(https://faucet.celo.org/)
+(https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js)
+(https://docs.celo.org/blog/code-metamask)
+(https://docs.celo.org/developer)
+(https://docs.soliditylang.org/en/latest/installing-solidity.html)
+(https://explorer.celo.org/alfajores/)
