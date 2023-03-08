@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-remittance-system-a-technical-tutorial-for-developers
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/building-a-celo-remittance-system-a-technical-tutorial-for-developers.png)
+
 ## Introduction
 
 Celo is a blockchain platform, designed to enable a new universe of financial solutions accessible, including remittance systems. In this tutorial, we will explore the technical aspects of building a remittance system on the Celo network. We will cover topics such as Celo's secure messaging protocol, smart contract architecture, and decentralized governance. This tutorial is aimed at developers interested in building remittance systems and those looking to expand their knowledge of Celo's technical capabilities. By the end of this tutorial, you will have learned how to build a basic remittance system on the Celo network using Solidity and Truffle.
