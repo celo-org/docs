@@ -10,6 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/a-comparison-of-hardware-software-and-human-oracles
 ---
 
+![a-comparison-of-hardware-software-and-human-oracles](https://user-images.githubusercontent.com/47746690/223860476-1f130734-99f5-4661-8bd6-004d1b4a9a5e.png)
 
 ## Introduction
 
