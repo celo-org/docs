@@ -688,6 +688,13 @@ const Users: User[] = [
   //   tags: ['favorite'],
   // },
 
+   {
+    title: 'A Comparison of Hardware, Software and Human Oracles',
+    description: 'In this article, we will examine the differences between Human, Hardware and software Oracle',
+    preview: require('./showcase/beginner/a-comparison-of-hardware-software-and-human-oracles.png'),
+    website: '/blog/tutorials/a-comparison-of-hardware-software-and-human-oracles',
+    tags: ['beginner','celosage','celo','oracle'],
+  },
   {
     title: " Celo Composer",
     description: "Build on Celo in 5 minutes of less with Celo Composer.",
