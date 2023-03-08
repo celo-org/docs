@@ -120,11 +120,11 @@ Boyejo Oluwafemi is a hardware product developer working at the intersection of 
 
 ## References
 
-* [Oracles on Celo]()
-* [DApps on Celo]()
-* [“What are Blockchain Oracles?” LogRocket]()
-* [“Blockchain Oracles: Know about the Fundamentals.” 101Blockchains]()
-* [“An Introduction to Celo Oracles” Celo Docs]()
+* [Oracles on Celo](https://docs.celo.org/protocol/oracle)
+* [DApps on Celo](https://docs.celo.org/showcase)
+* [“What are Blockchain Oracles?” LogRocket](https://blog.logrocket.com/what-are-blockchain-oracles/#how-blockchain-oracles-work)
+* [“Blockchain Oracles: Know about the Fundamentals.” 101Blockchains](https://101blockchains.com/blockchain-oracles/#:~:text=Hardware%20oracles%20are%20oracles%20that,do%20it%20with%20hardware%20oracle.https://101blockchains.com/blockchain-oracles/#:~:text=Hardware%20oracles%20are%20oracles%20that,do%20it%20with%20hardware%20oracle.)
+* [“An Introduction to Celo Oracles” Celo Docs](https://blog.celo.org/an-introduction-to-celo-oracles-fd1a534669bb)
 
 
 
