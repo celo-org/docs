@@ -957,7 +957,6 @@ const Users: User[] = [
     website: 'blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle',
     tags: ['beginner','foundation', 'truffle'],
   },
-  
   {
     title: 'Building a Celo Remittance System A Technical Tutorial for Developers',
     description: 'Learn the technical aspects of building a remittance system on the Celo network',
