@@ -957,13 +957,7 @@ const Users: User[] = [
     website: 'blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle',
     tags: ['beginner','foundation', 'truffle'],
   },
-  {
-    title: 'Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading',
-    description: 'Learn how Celo is utilized in the Gaming Industry for In-Game Assets and P2P Trading',
-    preview: require('./showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png'),
-    website: 'blog/tutorials/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading',
-    tags: ['celosage', 'celowallet', 'celo', 'cusd', 'ledger'],
-  },
+  
   {
     title: 'Building a Celo Remittance System A Technical Tutorial for Developers',
     description: 'Learn the technical aspects of building a remittance system on the Celo network',
