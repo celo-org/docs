@@ -52,7 +52,7 @@ Create a new file called ‘.env’ in the root directory of your project. This 
 
 ![image](./images/1.png)
 
-Replace <your-mnemonic> with your own Celo account's mnemonic. You can find your mnemonic in your Celo account's settings.
+Replace "your-mnemonic" with your own Celo account's mnemonic. You can find your mnemonic in your Celo account's settings.
 
 ![image](./images/2.png)
 
