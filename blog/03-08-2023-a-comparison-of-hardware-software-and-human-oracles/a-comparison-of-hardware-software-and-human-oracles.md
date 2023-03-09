@@ -5,7 +5,7 @@ authors:
   - name: ✍️ Boyejo Oluwafemi
 url: https://github.com/boyfem
 image_url: https://github.com/boyfem
-tags: [beginner, celosage, celo]
+tags: [beginner, celosage, celo, oracle]
 hide_table_of_contents: true
 slug: /tutorials/a-comparison-of-hardware-software-and-human-oracles
 ---
