@@ -22,9 +22,9 @@ On completing this tutorial, the reader will better understand how cStables are 
 ## Prerequisites
 
 To continue with this tutorial, we need to understand the following well.
-Solidity and smart contracts
-Stable Coins
-The Celo Blockchain
+- Solidity and smart contracts
+- Stable Coins
+- The Celo Blockchain
 
 ## What is Mento
 
