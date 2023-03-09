@@ -6,7 +6,7 @@ authors:
      title: CTO, DFMLab Limited
      url: https://github.com/iamoracle
      image_url: https://github.com/iamoracle.png
-tags: [celosage, intermediate, blockchain]
+tags: [celosage, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes
 ---

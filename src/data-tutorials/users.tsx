@@ -957,7 +957,7 @@ const Users: User[] = [
     description: ' Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.',
     preview: require('./showcase/intermediate/exploring-solidity-low-level-features-abi-encoding-and-opcodes.png'),
     website: '/blog/tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes',
-    tags: ['celosage', 'intermediate', 'blockchain'],
+    tags: ['celosage', 'intermediate',],
   },
   {
     title: "Gas Optimization Techniques in Solidity on Celo",
