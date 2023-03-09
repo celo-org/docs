@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Step-by-step Guide to Creating an Algorithm-balanced Stablecoin on Celo',
+    description: 'This article will provide a step-by-step guide to creating an algorithm-balanced stablecoin using the Mento protocol, including the technical aspects. ',
+    preview: require('./showcase/advanced/step-by-step-guide-to-creating-an-algorithm-balanced-stablecoin-on-celo.png'),
+    website: '/blog/tutorials/step-by-step-guide-to-creating-an-algorithm-balanced-stablecoin-on-celo',
+    tags: ['advanced','celosage'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
