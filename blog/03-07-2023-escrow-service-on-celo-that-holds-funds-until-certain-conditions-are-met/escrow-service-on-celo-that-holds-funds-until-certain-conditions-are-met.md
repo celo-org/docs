@@ -17,8 +17,7 @@ slug: /tutorials/escrow-service-on-celo-that-holds-funds-until-certain-condition
 
 ## Prerequisite
 
-The [Remix IDE](https://remix-project.org/) is an open-source web and desktop application for creating and deploying Smart Contracts. Originally created for Ethereum, it fosters a fast development cycle and has a rich set of plugins with intuitive GUIs. Remix is used for the entire journey of contract development and is a playground for learning and teaching EVM-compatible blockchains like Celo.
-- [Build Smart Contract on Celo with Remix](https://docs.celo.org/blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix)
+- The [Remix IDE](https://remix-project.org/) is an open-source web and desktop application for creating and deploying Smart Contracts. Originally created for Ethereum, it fosters a fast development cycle and has a rich set of plugins with intuitive GUIs. Remix is used for the entire journey of contract development and is a playground for learning and teaching EVM-compatible blockchains like Celo. Before starting this tutorial, see how [Build Smart Contract on Celo with Remix](https://docs.celo.org/blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix)
 
 
 ## Introduction
@@ -280,7 +279,7 @@ Here's a brief explanation of each function:
 
 ## Full Code
 
-    ```solidity
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
@@ -433,7 +432,7 @@ contract escrow is ReentrancyGuard {
     }
 
 }
-    ```
+```
 
 ## Next step
 
