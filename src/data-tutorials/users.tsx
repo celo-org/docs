@@ -1202,6 +1202,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
+    title: 'Scalability - ensuring that your cryptography app can handle a large volume of transactions and users as it grows',
+    description: 'Learn how to use asymmetric cryptography for key management in your cryptography app',
+    preview: require('./showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png'),
+    website: '/blog/tutorials/ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows',
+    tags: ['celosage', 'celo', 'intermediate'],
+  },
+  {
     title: 'Celo Spotlight - Building a Financial System that Creates the Conditions for Prosperity — for Everyone.',
     description: 'Everything you need to get started with Celo.',
     preview: require('./showcase/beginner/celo-spotlight-everything-you-need-to-get-started-with-celo.png'),
