@@ -1895,6 +1895,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate'],
   },
   {
+    title: 'Build an NFT Marketplace for Tech Artisans on Celo',
+    description: 'This tutorial will show you how to use React, Solidity, react-celo, and IPFS to create a platform that connects creators and collectors in the NFT market space',
+    preview: require('./showcase/intermediate/build-an-nft-marketplace-for-tech-artisans-on-celo.png'),
+    website: 'blog/tutorials/build-an-nft-marketplace-for-tech-artisans-on-celo',
+    tags: ['celosage', 'intermediate', 'react', 'ipfs', 'nft'],
+  },
+  {
     title: 'Getting Started On Celo With Hardhat',
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage',
     preview: require('./showcase/beginner/getting-started-on-celo-with-hardhat.png'),
