@@ -6,12 +6,12 @@ authors:
     title: contributor, Celo sages
 url: https://github.com/SasaniEldis
 image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["beginner", "smart contracts", "celosage", "blockchain", "solidity"]
+tags: ["intermediate", "smart contracts", "celosage", "solidity"]
 hide_table_of_contents: true
 slug: /tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png)
+![header](../../src/data-tutorials/showcase/intermediate/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png)
 
 ## Deploy and Interact with Smart Contracts on the Celo Blockchain
 
