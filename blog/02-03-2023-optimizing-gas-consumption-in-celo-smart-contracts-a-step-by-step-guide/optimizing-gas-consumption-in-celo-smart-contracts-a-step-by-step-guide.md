@@ -12,7 +12,7 @@ hide_table_of_contents: true
 slug: /tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/Optimizing_Gas_Consumption_in_Celo_Smart_Contracts.png)
+![header](../../src/data-tutorials/showcase/intermediate/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide.png)
 
 ## Introduction​
 
