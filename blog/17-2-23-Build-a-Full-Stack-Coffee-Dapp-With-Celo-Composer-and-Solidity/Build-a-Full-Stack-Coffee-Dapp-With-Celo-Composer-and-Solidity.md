@@ -13,18 +13,20 @@ slug: /tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png)
+
 ## Introduction​
 
 This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee. Buy Me A Coffee is a platform that will enable individuals to support the creative works of creators. The dApp will be built using Celo composer, react, solidity, hardhat, Pinta IPFS, and deployment to Fleek. This will enable payment to be made using CELO native token.
 
-
 ## Prerequisites​
 
 To successfully follow along in this tutorial you need basic knowledge of:
+
 - HTML, CSS, React and Next.js
 - Blockchain, solidity and hardhat
 
 ## Requirements​
+
 - [Vscode](https://code.visualstudio.com/) - But you can use any code editor of your choice
 - [Hardhat](https://hardhat.org/) - used to deploy the smart contract
 - [Alfajores Testnet Account](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores&hl=en&gl=US&pli=1) - required to connect to the dApp and make test transactions.
@@ -36,10 +38,11 @@ The goal of this tutorial is to build the web3 version of Buy Me A Coffee. Buy M
 
 In this tutorial, we will be creating a smart contract we will use to interact with the dApp on the frontend using Celo Composer.
 
-With Celo Composer  gives us access to React, Next.js, Tailwind CSS and Hardhat options out of the box to interact with our smart contract. 
+With Celo Composer  gives us access to React, Next.js, Tailwind CSS and Hardhat options out of the box to interact with our smart contract.
 
-The frontend comprises of the following pages; 
-- The landing page that displays the list of creators 
+The frontend comprises of the following pages;
+
+- The landing page that displays the list of creators
 - Creator’s dashboard  Page
 - Support Page
 - Withdraw Tip Page
@@ -60,11 +63,11 @@ And you can use the [Celo Alfajores Block Explorer](https://explorer.celo.org/al
 ![Alfajores Block Explorer](./images/alfajores%20block%20explorer.png)
 
 ## Celo Composer
+
  [Celo Composer](https://github.com/celo-org/celo-composer) a tool built by the Celo team that allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
 To get started using Celo Composer run the below command.
 
 `npx @celo/celo-composer create`
-
 
 This will prompt you to select the framework and the template you want to use. For this tutorial we will be making use of React.
 
@@ -83,16 +86,18 @@ Before any else after the project has been created. Run  `npm install` or `yarn 
 To deploy your contract you can simply navigate within the hardhat folder. To run the frontend code you can navigate to the react-app folder and do `npm run dev`
 
 ## File Structure
+
 **Fig 3-2** File Structure
 
 ![File Structure1](./images/file%20structure%201.png)  
 ![File Structure2](./images/file%20structure%202.png)
 
 ## Smart Contract Creation
+
 The smart contract will be written using Solidity. [Solidity](https://docs.soliditylang.org/en/v0.8.18/) is an object-oriented, high-level language for implementing smart contracts. The smart contract comprises of the following functions;
 
 - **setCreatorDetails:** This function handles creation of the creator's account.
-- **getCreatorList:** This function returns the entire list of creators 
+- **getCreatorList:** This function returns the entire list of creators
 - **sendTip:** This function sends a CELO tip to the creator
 - **creatorWithdrawTip:** This function is called by the creator to withdraw tips received.
 
@@ -274,6 +279,7 @@ main()
    process.exit(1);
  });
 ```
+
 And your hardhat.config.tsx file should look like this 👇
 
 **Fig 1-0** Hardhat Config File
@@ -283,11 +289,9 @@ And your hardhat.config.tsx file should look like this 👇
 
 Your Private key should be in your .env file at the root of the hardhat folder.
 
-
 To deploy the smart contract navigate to your project directory and run this command on your terminal
 
 `npx hardhat run scripts/deploy.ts --network alfajores`
-
 
 Once this is done. You will get an output that shows you the contract address and the contract ABI will also be created. The contract address and ABI ( Application Binary Interface) will be used later on the frontend to interact with the contract.
 
@@ -299,10 +303,10 @@ Once this is done. You will get an output that shows you the contract address an
 ![Generated ABI](./images/contract%20abi.png)
 
 ## Setting up and Uploading Creators Photos to Pinata
+
 [Pinata](https://www.pinata.cloud/) is a decentralized storage platform for builders and creators of all kinds in web3.
 
 If you are new to Pinata click on the signup button to create an account.
-
 
 **Fig 2-1** Pinata Sign-up
 ![Pinata Sign-up](./images/Pinata%20Signup.png)
@@ -323,11 +327,11 @@ You will need to create a .env file at the root of your react-app directory. Als
 Your .env file should look like this 👇
 
 NEXT_PUBLIC_PINATA_JWT = YOUR PINTA JWT TOKEN
- 
+
 Note:
 In order for your next.js app to publicly access the values of your .env variables you will need to start the naming with NEXT_PUBLIC
 
-## Pinata Image Upload Code 
+## Pinata Image Upload Code
 
 Here is the code snippet required to upload photos to Pinata
 
@@ -365,7 +369,9 @@ export const pinFileToPinata = async (selectedFile : string | File | number | re
    }
 };
 ```
+
 ## Frontend Interaction with React Using Celo Composer
+
 All files in the component folder were auto generated by the Celo Composer. You can take a look at the Header, Footer and Layout file. For this tutorial we will make some modifications to the **Header.tsx** file.
 
 Here is what the **Header.tsx** file looks like.
@@ -500,8 +506,11 @@ export default function Header() {
    )
  }
 ```
+
 ## Contract Interaction Code
+
 **Interact.tsx**
+
 ```js
 import { BigNumber } from "ethers";
 import contractABI from "./Coffee.json"
@@ -567,6 +576,7 @@ export const creatorWithdrawTip = async (address: string | null | undefined, ind
 ```
 
 ## Code Snippet for the different Pages of the dApp
+
 **_app.tsx** file
 
 ```js
@@ -703,6 +713,7 @@ export default function CreateAccount() {
  )
 }
 ```
+
 The UI looks like this 👇
 
 **Fig 3-3** Create Account
@@ -834,6 +845,7 @@ export default function Support() {
    </div>
 )}
 ```
+
 The UI looks like this 👇
 
 **Fig 3-5** Support Page
@@ -955,6 +967,7 @@ The UI looks like this 👇
 ![Withdraw Page](./images/withdraw%20page.png)
 
 ## Deployment on Fleek 🌠
+
 Fleek is an IPFS decentralized deployment platform. To get started using Fleek you first need to create an account. You can create an account with your github account. This will connect your github account to fleek for easy access to your repositories and hence faster deployment.
 
 Once logged in, click on the add new site button. This will load the projects on your github account and you can select the project you want to add using the search field.
@@ -965,8 +978,7 @@ In my own case I have already added this project so it’s not going to show on 
 
 ![Fleek Landing Page](./images/fleek%20landing%20page.png)
 
-
-**Fig 4-2 ** Sign in with Git Provider
+**Fig 4-2** Sign in with Git Provider
 
 ![Sign in with Git Provider](./images/fleek%20login%20with%20git%20%20provider.png)
 
@@ -986,21 +998,16 @@ On your fleek dashboard click on the settings tab -> Build and Deploy -> Advance
 You can also change the generated domain url under Domain Management to your own custom domain. If you don’t have a custom domain you can change the generated site url to something more readable as long as the name is available. To do this click on Site Details  then click on the Change Site Button. That’s all you need to do!
 
 ## Conclusion​
+
 Congratulations 🎉 on finishing this tutorial! Thank you for taking the time to complete it. In this tutorial, you have learned how to create a full stack dApp using Celo Composer and Solidity.
 
 To have access to the full codebase, here is the link to the project repo on [github](https://github.com/gconnect/Sage-buymeacoffee).
 
 ## About the Author​
+
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
 ## References​
+
 - [celo-composer](https://github.com/celo-org/celo-composer)
 - [fleek-nextJS](https://blog.fleek.co/posts/fleek-nextJS)
-
-
-
-
-
-
-
-
