@@ -968,6 +968,13 @@ const Users: User[] = [
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
   },
   {
+    title: 'How to Build a Full Stack Dapp For Selling Football Tickets on Celo',
+    description: 'Learn how to build a dapp for seliing football tickets on the celo blockchain',
+    preview: require('./showcase/intermediate/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png'),
+    website: 'blog/tutorials/how-to-build-a-fullstack-dapp-for-selling-football-tickets-on-celo',
+    tags: ['celo', 'dapp', 'intermediate', 'celosage'],
+  },
+  {
     title: 'How to quickly build an NFT collection on Celo',
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
