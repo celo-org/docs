@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png)
+![header](../../src/data-tutorials/showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png)
 
 ## Deploy and Interact with Smart Contracts on the Celo Blockchain
 

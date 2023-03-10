@@ -1197,7 +1197,7 @@ const Users: User[] = [
   {
     title: 'Deploy and Interact with Smart Contracts on the Celo Blockchain',
     description: 'Learn to deploy and interact with self-executing tamper-proof agreements developing smart contracts with Solidity on Celo Blockchain',
-    preview: require('./showcase/beginner/deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
+    preview: require('./showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
     website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
     tags: ['celosage', 'celo', 'beginner'],
   },
