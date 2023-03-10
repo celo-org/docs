@@ -6,7 +6,7 @@ authors:
     title: contributor, Celo sages
 url: https://github.com/SasaniEldis
 image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["intermediate", "cryptography", "celosage", "smart contracts"]
+tags: ["intermediate", "cryptography", "celosage", "Smart contracts"]
 hide_table_of_contents: true
 slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume
 
