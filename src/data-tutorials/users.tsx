@@ -1683,6 +1683,13 @@ const Users: User[] = [
     website: 'https://www.youtube.com/watch?v=O6DjaYFGLmE&list=PLsQbsop73cfH5QYX9Olfw1fwu0rz3Slyj&index=15',
     tags: ['intermediate', 'video'],
   },
+    {
+    title: 'Building A Decentralized Investment Platform on the Celo blockchain',
+    description: 'In this tutorial, we would build a mock investment platform that returns profit on the celo blockchain',
+    preview: require('./showcase/intermediate/building-a-decentralized-investment-platform.png'),
+    website: 'blog/tutorials/building-a-decentralized-investment-platform',
+    tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
+  },
   {
     title: 'Workshop: Building an exchange on Celo, Part II',
     description: 'Use Celo composer and Fiat-connect to build an exchange, Part II',
