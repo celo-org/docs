@@ -6,11 +6,12 @@ authors:
     title: contributor, Celo sages
 url: https://github.com/SasaniEldis
 image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["beginner", "cryptography", "celosage", "blockchain", "nfts"]
+tags: ["intermediate", "cryptography", "celosage", "smart contracts"]
 hide_table_of_contents: true
-slug: /tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography
+slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume
+
 ---
-![header](../../src/data-tutorials/showcase/beginner/unlocking-the-power-of-blockchain-nft-and-cryptography.png)
+![header](../../src/data-tutorials/showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png)
 
 ## Scalability: ensuring that your cryptography app can handle a large volume of transactions and users as it grows
 
