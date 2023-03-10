@@ -6,7 +6,7 @@ authors:
   title: Founder of Guizo Studios
   url: https://github.com/guizostudios
   image_url: https://avatars.githubusercontent.com/u/97633823
-tags: [celo, tatum, developers, ERC721]
+tags: [intermediate, celosage, erc721, smartcontract, video]
 hide_table_of_contents: false
 slug: /tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum
 ---
@@ -27,7 +27,7 @@ Neste video mostraremos como você pode realizar um deploy do smart contract ERC
 Para este tutorial não é necessário conhecimento prévio. As ferramentas utilizadas serão:
 
 - Tatum: [Tatum](https://tatum.io/) é a maneira mais rápida de criar, testar e executar aplicativos blockchain. Eles oferecem APIs e SDKs para você implementar sua ideia usando blockchain
-- Faucet: [Faucet](https://celo.org/developers/faucet) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores
+- Faucet: [Faucet](https://faucet.celo.org) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores
 - Alfajores: É a rede de teste da Celo que utilizaremos para demonstração a implantação de um contrato inteligente e também realizar transações dos ativos
 
 ## Requisitos

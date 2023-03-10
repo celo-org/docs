@@ -13,6 +13,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Web2 to Web3",
+          id: "general/web2-to-web3",
+        },
+        {
+          type: "doc",
           label: "Whitepapers",
           id: "general/whitepapers",
         },
@@ -461,7 +466,7 @@ const sidebars = {
         {
           type: "link",
           label: "Faucet",
-          href: "https://celo.org/developers/faucet",
+          href: "https://faucet.celo.org",
         },
       ],
     },
@@ -1039,6 +1044,11 @@ const sidebars = {
               id: "community/celo-sage/faq",
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "StackShift",
+          id: "community/StackShift/StackShift",
         },
         {
           type: "doc",

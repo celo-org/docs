@@ -27,7 +27,7 @@ Neste video mostraremos como você pode realizar um deploy re um smart contract 
 Para este tutorial não é necessário conhecimento prévio. As ferramentas utilizadas serão:
 
 - Remix: [Remix](https://remix.ethereum.org/) é uma Integrated Development Environment (IDE) para desenvolvimento de smart contracts na blockchain Ethereum. Ele fornece uma plataforma fácil de usar para escrever, testar e depurar smart contracts escritos na linguagem Solidity. Além disso, a IDE Remix também fornece ferramentas para simular e executar smart contracts em diferentes ambientes de rede, incluindo a rede principal Ethereum e redes de teste. Ele é uma ferramenta popular entre desenvolvedores de smart contracts, pois oferece recursos avançados para facilitar o desenvolvimento e teste de contratos inteligentes.
-- Faucet: [Faucet](https://celo.org/developers/faucet) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores.
+- Faucet: [Faucet](https://faucet.celo.org) é utilizada para adicionar fundos a sua conta de teste na rede Alfajores.
 - Alfajores: É a rede de teste da Celo que utilizaremos para demonstração a implantação de um contrato inteligente e também realizar transações dos ativos.
 
 ## Requisitos

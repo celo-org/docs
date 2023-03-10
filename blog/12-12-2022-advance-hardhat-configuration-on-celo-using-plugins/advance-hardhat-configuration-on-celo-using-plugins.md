@@ -6,7 +6,7 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, developers]
+tags: [intermediate, celosage, hardhat, celo, developers]
 hide_table_of_contents: false
 slug: /tutorials/advance-hardhat-configuration-on-celo-using-plugins
 ---

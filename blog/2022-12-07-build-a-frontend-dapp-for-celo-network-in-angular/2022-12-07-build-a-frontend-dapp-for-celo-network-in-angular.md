@@ -3,7 +3,7 @@ title: Build a Frontend dApp for Celo Network in Angular
 description: How to build a frontend for an NFT Auction dApp that runs on the Celo blockchain using Angular 
 authors:
   - name: ✍️ Yinka Tanimomo
-tags: [hardhat]
+tags: [hardhat, celosage, advanced]
 hide_table_of_contents: false
 slug: /tutorials/build-a-frontend-dapp-for-celo-network-in-angular
 ---
