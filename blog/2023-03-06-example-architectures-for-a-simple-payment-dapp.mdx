@@ -1,0 +1,126 @@
+---
+title: Example architectures for a simple payment dapp
+description: This post will focus on the front-end part of how to create a simple payment dapp
+authors:
+  - name: Nicolas Brugneaux
+    title: Partner, Engineering at cLabs
+    url: https://github.com/nicolasbrugneaux
+    image_url: https://github.com/nicolasbrugneaux.png
+tags: [javascript, react, beginner, celo]
+hide_table_of_contents: true
+slug: /tutorials/example-architectures-for-a-simple-payment-dapp
+---
+
+# Example architectures for a simple payment dapp
+
+## Hello Developers 🌱
+
+Welcome to today's post, we'll go over the recommended way to start a simple payment dapp from scratch and hopefuly give you a starting point for your next great idea! This post will focus on the front-end part of the dapp and assume the purpose of your dapp is to only do payments or donations to a fixed address. We will not address smart contracts and how to write and deploy them in this blog, we will however learn how to interact with CELO's stables in JS.
+
+We cooked up two different paths for you, one with vanilla Javascript and the other using React.
+
+## Requirements ⚙️
+
+- For both of these tutorial, a couple Javascript concepts are necessary: `promises`, `callbacks`, `DOM` and `async functions` should all sound familiar.
+  - _If you do not understand these terms yet, or if you need a refresh, head over to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to learn more._
+- Another requirement is to have a wallet at the ready. No need to have funds, we will head over CELO's faucet in order to _finance_ our little experiment later in the tutorial.
+  - _If you do not have a wallet yet, head over to [this tutorial](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo) to learn more about wallets._
+
+## A couple key points ☝️
+
+While we will go over the vanilla JS example in just a moment, we do recommend using frameworks for any kind of serious projects, so you can leverage the thousands of hours poured by other experienced developer and bootstrap your app faster and safer. Not only do they abstract away concepts you may not be yet familiar with, but they are also well tested and usually already optimized for size and performance.
+
+As a matter of fact, you'll notice that even our vanilla examples will use a library called ethers to interact with the rpc node.
+
+## Recommended frameworks 🛠️
+
+Here's a recommended list of frameworks that can help you get started faster. For each of them you should take the time to familiarize yourself with them:
+
+- [react](https://reactjs.org/): to render your UI
+- [rainbowkit](https://www.rainbowkit.com/docs/introduction): to connect your users' wallets
+- [ethers](https://docs.ethers.org/): to interact with the blockchain and smart-contracts more easily.
+
+Fortunately, you can use [celo-composer](https://github.com/celo-org/celo-composer) in order to bootstrap your app with the recommended frameworks.
+
+With that being said, let's get started!
+
+## Today's goals 🎯
+
+The goal of today's example dapp is to achieve a payment using the CELO blockchain. We'll do a transfer from a user's wallet to an arbitrary address. Don't worry, **no real funds will be exchanged**, all our example's transactions will happen on [CELO's Testnet: Alfajores](https://docs.celo.org/network#alfajores-the-developer-testnet). This will allow to us experiment at will and learn without risks. Head to [CELO's faucet](https://faucet.celo.org/) in order to fund your wallet with a couple native tokens on the CELO blockchain.
+
+<!-- - Code examples: -->
+
+## Vanilla 🍦
+
+As this is very minimal dapp, this only supports Metamask out of the box, this is where librairies and framework come in handy.
+
+- _For instance, to support many more wallets without them, you would have to get into the documentation (if it exists) of each wallet and do a custom connector for each of them._
+  The example focuses on two buttons: `Connect wallet` and `Transfer 0.1 CELO`. Let's go over each one.
+
+### Connecting a wallet
+
+To not clutter the codebase, we're using the `@metamask/onboarding` package in order to check for the wallet's presence in the page. Once we're sure MetaMask is installed, we use the `window.ethereum` API to directly request the wallet's first address via the following line: `await ethereum.request({ method: "eth_requestAccounts" });`. With it, we're now able to assess that the user's wallet is connected. To make it easier for ourselves, we're storing all potential important information in a `State` object.
+
+### Your first transaction
+
+Once connected, ~~we can now enable our transfer button.~~ we need to check if we have enough CELO for our first transaction. While this _sounds_ trivial, you actually need to know a couple things beforehand. First thing to note, `CELO` is an ERC20 token, and as such you're going to need to [interact with its smart-contract](https://developers.celo.org/17-powerful-celo-protocol-core-contracts-you-need-to-know-d84c1fbc5a6). To make it easy, we've already grabbed its ABI from [CELO's explorer](https://explorer.celo.org/), and saved it as `abi.json`.
+
+We recommended earlier using `ethers`, and that's just what we're going to do. Not that it's impossible to interact directly with RPC nodes and contracts, but this is totally outside the scope of this exercise.
+
+```js
+// This is the MetaMask provider (ethereum is injected by the browser extension)
+const metaMaskProvider = new ethers.providers.Web3Provider(window.ethereum);
+// Boilerplate, a signer represent the user's account basically
+const signer = metaMaskProvider.getSigner();
+// This is the CELO smart-contract representation in our code
+const CELOContract = new ethers.Contract(
+  TESTNET.NATIVE_TOKEN, // 0xf194afdf50b03e69bd7d057c1aa9e10c9954e4c9
+  TESTNET.NATIVE_TOKEN_ABI, // the content of abi.json
+  signer
+);
+```
+
+So now, we have this `CELOContract` object… great?! But how does this help us?
+
+You can use it to call smart-contract methods (written in solidity) directly in your Javascript code! Such as `CELOContract.balanceOf` which is what's gonna determine if our user can transfer CELOs or not.
+
+```js
+// All
+State.balance = await CELOContract.balanceOf(State.address);
+if (State.balance.gte(TESTNET.AMOUNT)) {
+  // enable the transfer button!
+}
+```
+
+We're now sure the user has enough CELO, so let's now send a request to MetaMask
+
+```js
+// 0.1 CELO in CELO Wei, where one CELO = 10**18 CELO Wei.
+const amount = ethers.utils.parseUnits("0.1")
+// You'll notice no trace of the sender's address, metamask handles it for us
+const receipt = await CELOContract.transfer(/* RECEPIENT ADDRESS */, amount);
+// Wait for 1 confirmation (around ~5 seconds on CELO)
+const { blockNumber } = await receipt.wait(1);
+```
+
+That's it! You've made your first transaction! You can find the full code in the codesandbox embed right below
+
+<iframe
+  src="https://codesandbox.io/embed/celo-example-vanilla-tduwuz?fontsize=14&hidenavigation=1&theme=dark"
+  style={{
+    width: "100%",
+    height: "500px",
+    border: 0,
+    borderRadius: "4px",
+    overflow: "hidden",
+  }}
+  title="celo-example-vanilla"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## React ⚛
+
+You can see doing things without a UI or a wallet library can be very cumbersome. This is why we're providing a second example, using React and RainbowKit, our two other recommended frameworks. The dapp is doing the same thing, connect your users' wallets and transfer a small amount of CELO (on Alfajores). While you may be familiar with React coming from web2, RainbowKit probably doesn't ring a bell. As the Rainbow team themselves put it, it's the _"The best way to connect a wallet"_ and does _all_ the heavy lifting for you so you can focus on building your product, and not how to handle all types of different wallets.
+
+You can find the [full react example repository right here](https://github.com/aaronmgdr/simple-spender.)
