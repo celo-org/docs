@@ -882,6 +882,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
+    title: 'Creating Smart Contracts for liquidity farming',
+    description: ' Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.',
+    preview: require('./showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png'),
+    website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
     title: 'Como criar uma carteira para a blockchain Celo',
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
     preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
