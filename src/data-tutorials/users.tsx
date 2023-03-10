@@ -925,7 +925,7 @@ const Users: User[] = [
   {
     title: 'Unlocking the Power of Blockchain, NFTs, and Cryptography',
     description: 'Learn the potentials of web-3 decentralised finance',
-    preview: require('./showcase/beginner/celo-beginner-tutorial-unlocking-the-power-of-blockchain-nfts.png'),
+    preview: require('./showcase/beginner/unlocking-the-power-of-blockchain-nft-and-cryptography.png'),
     website: '/blog/tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography',
     tags: ['celosage', 'celo', 'beginner'],
   },
