@@ -1,5 +1,0 @@
-{
-    "prettier.vueIndentScriptAndStyle": true,
-    "prettier.requirePragma": false,
-    "workbench.settings.useSplitJSON": false
-}
