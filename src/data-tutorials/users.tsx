@@ -1199,13 +1199,6 @@ const Users: User[] = [
     description: 'Learn to deploy and interact with self-executing tamper-proof agreements developing smart contracts with Solidity on Celo Blockchain',
     preview: require('./showcase/beginner/Deploy-and-Interact-with-Smart-Contracts-on-the-Celo-Blockchain.png'),
     website: '/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain',
-    tags: ['celosage', 'celo', 'beginner'],
-  },
-  {
-    title: 'Scalability - ensuring that your cryptography app can handle a large volume of transactions and users as it grows',
-    description: 'Learn how to use asymmetric cryptography for key management in your cryptography app',
-    preview: require('./showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png'),
-    website: '/blog/tutorials/ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows',
     tags: ['celosage', 'celo', 'intermediate'],
   },
   {
