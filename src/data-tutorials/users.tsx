@@ -813,6 +813,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate'],
   },
   {
+    title: 'How to build a Basic CRUD App in Solidity',
+    description: 'This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.',
+    preview: require('./showcase/beginner/how-to-build-a-basic-crud-app-in-solidity.png'),
+    website: 'blog/tutorials/how-to-build-a-basic-crud-app-in-solidity',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
