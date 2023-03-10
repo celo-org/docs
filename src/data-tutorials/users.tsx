@@ -930,13 +930,6 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
-    title: 'Scalability - ensuring that your cryptography app can handle a large volume of transactions and users as it grows',
-    description: 'Learn how to use asymmetric cryptography for key management in your cryptography app',
-    preview: require('./showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png'),
-    website: '/blog/tutorials/ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows',
-    tags: ['celosage', 'celo', 'intermediate'],
-  },
-  {
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png'),

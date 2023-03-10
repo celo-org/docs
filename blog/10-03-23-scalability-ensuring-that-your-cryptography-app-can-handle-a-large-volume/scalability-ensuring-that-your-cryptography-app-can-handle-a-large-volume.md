@@ -33,11 +33,9 @@ It's crucial to have a fundamental knowledge of cryptography and the tenets of s
 
 In this tutorial, we'll be using Python and the Flask web framework to build a simple cryptography app. You'll also need to have the following software installed on your computer:
 
-
 - Python 3.x
 - Flask
 - SQLite
-
 
 ## Getting Started
 
