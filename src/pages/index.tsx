@@ -382,6 +382,13 @@ export default function HomePage(): JSX.Element {
                 "img/doc-images/logos/bullet.svg",
                 "/protocol/oracle"
               )}
+
+              {sectionFourCard(
+                translate({ id:"home.section4.build.architecture.title" }),
+                translate({ id:"home.section4.build.architecture.description" }),
+                "img/doc-images/logos/bullet.svg",
+                "/general/web2-to-web3"
+              )}
             </div>
 
             <div className="items-center">
