@@ -2076,6 +2076,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'What are PFP NFTs, How to Create Them?',
+    description: 'PFP NFTs are blockchain-based digital assets used as profile pictures. To create one, design an image, choose a blockchain platform and compatible wallet, and mint it on an NFT marketplace.',
+    preview: require('./showcase/intermediate/what-are-pfp-nfts-and-how-to-create-them.png'),
+    website: 'blog/tutorials/what-are-pfp-nfts-and-how-to-create-them',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
