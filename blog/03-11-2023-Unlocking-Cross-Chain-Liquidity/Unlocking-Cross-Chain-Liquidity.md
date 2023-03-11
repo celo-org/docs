@@ -26,7 +26,8 @@ We will show real-world illustrations of Celo's cross-chain liquidity solutions,
 ## Prerequisites
 
 Prior to delving into Celo's cross-chain liquidity solutions and their transformative potential for the blockchain industry, it is critical to first understand Celo's fundamentals. With this foundational understanding, we can now explore Celo's cross-chain liquidity solutions and their implications for the blockchain industry's future.
-Requirements
+
+## Requirements
 
 - [Vscode](https://code.visualstudio.com/download)
 - [Node.js](https://nodejs.org/en/download/)
