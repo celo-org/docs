@@ -49,7 +49,7 @@ On Remix, We would create a new workspace and then a new file which we would nam
 
 Starting in the first line, you include a statement that specifies the license under which the code is being released.
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 ```
@@ -87,7 +87,7 @@ You can find more information on how to use these functions and events in the Ce
 
 Next up, you would need to create a contract(in this case you name the contract `Loan`). You then define a `struct` called `LoanDetails` which holds information about a loan, such as the borrower's address, name, occupation, loan amount, loan tenure, and repayment status. This struct is intended to be used within the `Loan` contract to keep track of loans.
 
-```js
+```solidity
 contract Loan {
     struct LoanDetails {
         address payable borrowerAddress;
@@ -120,7 +120,7 @@ Let's go over each of these fields:
 
 After this, we would declare some variables with various data types. If you would like to learn more about this dat-types, I gave a simple explanation to some data types in my previous tutorial. View it [here](https://docs.celo.org/blog/tutorials/how-to-build-car-marketplace-dapp-with-react)
 
-```js
+```solidity
     uint256 loanLength = 0;
     uint256 loanRegistrationAmount = 1;
     mapping(uint256 => LoanDetails) internal loan;
@@ -137,7 +137,7 @@ You then have a variable called `bankAddress` and sets its value to the Celo add
 
 Next, you will define the modifiers in the Solidity contract. Modifiers are similar to functions, but they are used to modify the behavior of other functions or methods to which they are applied.
 
-```js
+```solidity
     modifier isAdmin(uint256 _id) {
         require(msg.sender == bankAddress, "Accessible only to the admin");
         _;
@@ -165,7 +165,7 @@ _Please note that the isAdmin variable can take any address as this address woul
 
 Moving on, you would start writing the dapp functions. We would start by writing the `submitLoan` function which allows a borrower to submit a loan request to the bank. The function takes in several input parameters such as the borrower's name, address, occupation, purpose of the loan, national ID, loan amount, and tenure.
 
-```js
+```solidity
  function submitLoan(
         string memory _name,
         string memory _borrowerHomeAddress,
@@ -211,7 +211,7 @@ After that, the new `LoanDetails` instance is stored in the `loan` mapping with 
 
 The next function on the list is the `getLoans` function that allows the admin to view the loan details associated with a given index. The function takes in an index as input and checks if the caller is an admin.
 
-```js
+``solidity
 function getLoans(uint256 _index)
         public
         view
@@ -252,7 +252,7 @@ If the caller is an admin, the function retrieves the `LoanDetails` struct insta
 After the above function, You then write two functions in the `Loan` contract. 
 The first function is called `verifyApplicant` and takes an input parameter `_index` of type `uint256`.
 
-```js
+```solidity
     function verifyApplicant(uint256 _index) public payable isAdmin(_index) {
         LoanDetails storage singleLoan = loan[_index];
         require(
@@ -277,7 +277,7 @@ The second function is called `unVerifyApplicant` and takes an input parameter _
 
 Following this, you would write the `redeemLoan` function to which a user can use to return the loan they borrowed with interest.
 
-```js
+```solidity
     function reedem(uint256 _index) public payable isOwner(_index) {
         LoanDetails storage singleLoan = loan[_index];
         require(
@@ -298,7 +298,7 @@ Inside the function, the code retrieves the `LoanDetails` struct associated with
 
 Almost going to the end, you would need a way to check if a user is the admin so it can be easily implemented in whatever frontend you choose.
 
-```js
+```solidity
     function isUserAdmin(address _address) public view returns (bool) {
         if (_address == bankAddress) {
             return true;
@@ -319,7 +319,7 @@ Simple right?😅
 
 Here is the full code:
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
