@@ -1456,7 +1456,7 @@ const Users: User[] = [
   {
     title: 'Unlocking Cross-Chain Liquidity',
     description: 'A Comprehensive Review of Celo Platform and its Role in Enabling Interoperability Between Blockchains',
-    preview: require('./showcase/intermediate/liquidity.png'),
+    preview: require('./showcase/advanced/liquidity.png'),
     website: 'blog/tutorials/unlocking-cross-chain-liquidity',
     tags: ['celo', 'advanced', 'celosage'],
   },

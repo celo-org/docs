@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/unlocking-cross-chain-liquidity
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/liquidity.png)
+![header](../../src/data-tutorials/showcase/advanced/liquidity.png)
 
 ## Introduction
 
