@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo-blockchain
 ---
 
-![factorycover](https://user-images.githubusercontent.com/105144630/221163509-38ce5809-85bb-4915-9f97-b5b2148528d3.png)
+![factorycover](https://user-images.githubusercontent.com/105144630/224481123-4d2c8504-7199-459c-8728-46cf518001b6.png)
 
 ## Introduction
 
