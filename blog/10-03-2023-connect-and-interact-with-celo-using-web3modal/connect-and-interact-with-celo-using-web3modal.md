@@ -481,6 +481,8 @@ In the frontend directory, run the command to interact with the Dapp.
 yarn run dev
 ```
 
+**[Get the complete source code](https://github.com/bobeu/connect-to-celo-using-web3modal)** 
+
 ## Conclusion​
 
 I'm happy that you complete this tutorial. You're a step away from building your dream Dapp on Celo. So far, we have learned to build a full Dapp using solidity, compile, test, and deployed it to Celo Alfajores. We also build an interface to showcase what we've built. If you're looking for more tutorials relating to Celo, **[here](https://docs.celo.org/blog/tutorials/)** is a place to get started.
