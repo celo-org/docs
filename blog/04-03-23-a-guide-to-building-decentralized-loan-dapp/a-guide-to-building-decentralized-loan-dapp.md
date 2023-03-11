@@ -497,7 +497,7 @@ contract Loan {
 }
 ```
 
-I am going to do something different in this tutorial by leaving the implementation of the frontend as a challenge. You can use whatever framework of your choice, you can also check out my previous tutorial to get some ideas. [Check It Out]((https://docs.celo.org/blog/tutorials/how-to-build-car-marketplace-dapp-with-react)).
+I am going to do something different in this tutorial by leaving the implementation of the frontend as a challenge. You can use whatever framework of your choice, you can also check out my previous tutorial to get some ideas. [Check It Out](https://docs.celo.org/blog/tutorials/how-to-build-car-marketplace-dapp-with-react).
 
 You could also use this link to check out a sample implementation. Check [here](https://github.com/dahnny/monyara-1)
 
