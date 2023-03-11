@@ -1454,6 +1454,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
+    title: 'Unlocking Cross-Chain Liquidity',
+    description: 'A Comprehensive Review of Celo Platform and its Role in Enabling Interoperability Between Blockchains',
+    preview: require('./showcase/intermediate/liquidity.png'),
+    website: 'blog/tutorials/unlocking-cross-chain-liquidity',
+    tags: ['celo', 'advanced', 'celosage'],
+  },
+  {
     title: 'Send CELO & cUSD',
     description: 'Learn how to connect to the Celo test network and transfer tokens using ContractKit',
     preview: require('./showcase/intermediate/send-celo-and-cusd.png'),
