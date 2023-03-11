@@ -2006,6 +2006,13 @@ const Users: User[] = [
     website: 'blog/tutorials/example-architectures-for-a-simple-payment-dapp',
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
+  {
+    title: 'Connect and interact with Celo using web3modal',
+    description: 'Alternative method of connecting to Celo using web3React',
+    preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3modal.png'),
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3modal',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
