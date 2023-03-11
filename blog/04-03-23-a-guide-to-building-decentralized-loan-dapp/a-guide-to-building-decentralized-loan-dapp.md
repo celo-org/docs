@@ -211,7 +211,7 @@ After that, the new `LoanDetails` instance is stored in the `loan` mapping with 
 
 The next function on the list is the `getLoans` function that allows the admin to view the loan details associated with a given index. The function takes in an index as input and checks if the caller is an admin.
 
-``solidity
+```solidity
 function getLoans(uint256 _index)
         public
         view
