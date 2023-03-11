@@ -923,11 +923,11 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
-    title: 'Unlocking the Power of Blockchain, NFTs, and Cryptography',
-    description: 'Learn the potentials of web-3 decentralised finance',
-    preview: require('./showcase/beginner/unlocking-the-power-of-blockchain-nft-and-cryptography.png'),
-    website: '/blog/tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography',
-    tags: ['celosage', 'celo', 'beginner'],
+    title: 'Scalability - ensuring that your cryptography app can handle a large volume of transactions and users as it grows',
+    description: 'Learn how to use asymmetric cryptography for key management in your cryptography app',
+    preview: require('./showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png'),
+    website: '/blog/tutorials/ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows',
+    tags: ['celosage', 'celo', 'intermediate'],
   },
   {
     title: '17 Smart Contracts Powering the Celo Protocol',
