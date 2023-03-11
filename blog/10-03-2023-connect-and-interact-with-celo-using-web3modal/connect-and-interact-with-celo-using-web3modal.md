@@ -8,10 +8,10 @@ authors:
     image_url: https://github.com/bobeu.png
 tags: [advanced, celosage, solidity, react]
 hide_table_of_contents: true
-slug: /tutorials/connect-and-interact-with-celo-using-webmodal
+slug: /tutorials/connect-and-interact-with-celo-using-web3modal
 ---
 
-../../src/data-tutorials/showcase/advanced/connect-and-interact-with-celo-using-webmodal.png
+![header](../../src/data-tutorials/showcase/advanced/connect-and-interact-with-celo-using-web3modal.png)
 
 ## Introduction
 
