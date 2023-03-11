@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/connect-and-interact-with-celo-using-webmodal
 ---
 
-![header](../../src/data-tutorials/showcase/advanced/connect-and-interact-with-celo-using-web3modal.png)
+../../src/data-tutorials/showcase/advanced/connect-and-interact-with-celo-using-webmodal.png
 
 ## Introduction
 
