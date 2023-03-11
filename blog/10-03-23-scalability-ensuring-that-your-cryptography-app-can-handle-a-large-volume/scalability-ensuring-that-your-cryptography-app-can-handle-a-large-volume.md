@@ -92,7 +92,7 @@ if __name__ == '__main__':
     app.run()
 ```
 
-This code sets up a new Flask app with two endpoints: /encrypt and /decrypt. Each endpoint expects a POST request with a JSON payload containing a plaintext message, and a secret key, and returns the encrypted or decrypted message.
+This code sets up a new Flask app with two endpoints: /encrypt and /decrypt. Each endpoint expects a POST request with a JSON payload containing a plaintext message and a secret key and returns the encrypted or decrypted message.
 
 
 - Test your app by running it and sending a test request using curl. 
@@ -221,7 +221,7 @@ This function takes an encrypted message and a private key as input and returns 
 
 - Step 4: Use Asymmetric Cryptography for Key Management
 
-Now that we have the functions to generate key pairs, to encrypt and decrypt messages, we can use asymmetric cryptography for key management.
+Now that we have the functions to generate key pairs to encrypt and decrypt messages, we can use asymmetric cryptography for key management.
 
 When a user registers on our platform, we generate a key pair for them and store the public key in the database. When the user wants to send a message to another user, they fetch the recipient's public key from the database and use it to encrypt the message. The recipient can then use their private key to decrypt the message.
 
@@ -258,7 +258,7 @@ After completing this tutorial's stages, you should now have a solid understandi
 As you continue to develop your cryptography app, there are several areas you may want to explore further:
 
 
-- Performance improvement: Asymmetric encryption can be slower and more resource-intensive than symmetric-key encryption, however it can also enhance key management and scalability. The efficiency of your software can be improved using a variety of methods, including key caching, elliptic curve cryptography, and multithreading.
+- Performance improvement: Asymmetric encryption can be slower and more resource-intensive than symmetric-key encryption. However, it can also enhance key management and scalability. The efficiency of your software can be improved using a variety of methods, including key caching, elliptic curve cryptography, and multithreading.
 
 - Security: Because cryptography is a complicated and rapidly changing topic, it's critical to stay up to date on security vulnerabilities and best practices. You can take measures to strengthen the security of your programs, such as utilizing the most recent encryption methods, carrying out appropriate key management and rotation, and utilizing safe hardware storage options.
 
@@ -271,9 +271,7 @@ You might want to look at how your app can integrate with these technologies to 
 
 Imole Peter L.
 
-A web3 enthusiast, content writer for web3 brands, visual artist, and a seasoned author (Pen name: [Sasani Eldis](https://www.amazon.com/Imole-Latona/e/B088F4KF7H))
-
-Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
+A web3 enthusiast, content writer for web3 brands, visual artist, and a seasoned author (Pen name: [Sasani Eldis](https://www.amazon.com/Imole-Latona/e/B088F4KF7H)). Connect with me on [LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
 ## References
 
