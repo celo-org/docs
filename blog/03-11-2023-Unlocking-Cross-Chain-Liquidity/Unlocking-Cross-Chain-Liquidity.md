@@ -343,6 +343,11 @@ Furthermore, you can further your understanding of blockchain technology and its
 
 You can also interact with the Celo community and contribute to the platform's ongoing development. There are many ways to get involved and help shape the future of this exciting technology, whether through social media discussions or by contributing to open-source projects.
 
+### Author
+
+I take pride in being a results-driven manager as well as a marketing and technical writing expert. I've spent the last five years honing my skills in building paid and organic marketing funnels for SaaS companies. Furthermore, I am a skilled Web 3 technical writer, allowing me to create compelling content that drives business growth. [LinkedIn](https://www.linkedin.com/in/maxwell-onyeka-3b4b1118b/) [Github](https://github.com/maxzysparks)
+
+
 ### References
 
 - [Celo Website](https://celo.org/)
