@@ -884,7 +884,7 @@ mockERC20 = await MockERC20.deploy()
 await mockERC20.deployed()
 ```
 
-This is the code that deploy the mock ERC20 contract, so let's go back to the `test/CeloMultiSig.test.js` file and add the following code at the end of the file:
+This is the code that deploys the mock ERC20 contract, so let's go back to the `test/CeloMultiSig.test.js` file and add the following code at the end of the file:
 
 ```javascript
   it('Deploy MockERC20 contract and mint token using the multi-signatures', async function () {
@@ -929,11 +929,11 @@ Doing so, we should have the following result:
 
 ![Run tests again](./images/npx_hardhat_test_part9.png)
 
-Perfect! We did it! We have now a multi-signatures contract that can interact with other contracts and be used for regular transaction. Now let's deploy our multi-signatures contract on the Celo Alfajores Testnet.
+Perfect! We did it! We now have a multi-signature contract that can interact with other contracts and be used for regular transactions. Now let's deploy our multi-signature contract on the Celo Alfajores Testnet.
 
 ## Deploy the Multi-Signature Contract on Celo Alfajores Testnet
 
-It's time to deploy our multi-signatures contract on the Celo Alfajores Testnet. Let's go back to the `scripts/deploy.js` file and add change the file for the following code:
+It's time to deploy our multi-signature contract on the Celo Alfajores Testnet. Let's go back to the `scripts/deploy.js` file and change the code to the following:
 
 ```javascript
 const Helper = require('../test/helper');
@@ -973,25 +973,25 @@ Doing so, we should have the following result:
 
 ### Deploy on Celo Alfajores Testnet
 
-We now deployed our contract locally, but we want to deploy it on the Celo Alfajores Testnet. If you have setup your mnemonic phrase in the `.env` file, you can run the following command to deploy your contract on the Celo Alfajores Testnet:
+We have now deployed our contract locally, but we want to deploy it on the Celo Alfajores Testnet. If you have set up your mnemonic phrase in the `.env` file, you can run the following command to deploy your contract on the Celo Alfajores Testnet:
 
 ```bash
 npx hardhat run scripts/deploy.js --network celoAlfajores
 ```
 
-Doing so, we should have the following result:
+By doing so, we should get the following result:
 
 ![Deploy contract on Celo Alfajores Testnet](./images/hardhat_run_deploy_alfajores.png)
 
-We now deployed our contract on the Celo Alfajores Testnet.
+We have successfully deployed our contract on the Celo Alfajores Testnet.
 
 ## Conclusion
 
-Congratulations! You've now learned how to write tests for a multi-signature smart contract in Javascript using Hardhat. By following this tutorial, you've gained a solid understanding of how multi-signature contracts work and how to use them using ethersJS, and you can now implement this secure form of contract ownership protection in your own projects.
+Congratulations! You have now learned how to write tests for a multi-signature smart contract in JavaScript using Hardhat. By following this tutorial, you have gained a solid understanding of how multi-signature contracts work and how to use them with ethers.js. You can now implement this secure form of contract ownership protection in your own projects.
 
 Don't forget that you can view, clone, or fork the full code of this tutorial on GitHub at [Celo Multi-Signatures Hardhat](https://github.com/marc-aurele-besner/celo-multi-signatures-hardhat). You can use this code as a reference for your own multi-signature contracts or modify it to suit your specific needs.
 
-I hope you found this tutorial helpful in your journey towards becoming a proficient blockchain developer. If you have any questions or feedback, please don't hesitate to reach out. Thank you for reading, and happy coding!
+I hope you found this tutorial helpful in your journey towards becoming a proficient blockchain developer. If you have any questions or feedback, please do not hesitate to reach out. Thank you for reading, and happy coding!
 
 ## About Me
 
