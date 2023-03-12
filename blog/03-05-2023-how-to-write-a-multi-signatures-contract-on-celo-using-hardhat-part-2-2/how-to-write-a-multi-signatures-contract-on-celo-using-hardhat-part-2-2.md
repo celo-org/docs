@@ -15,9 +15,9 @@ slug: "/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat
 
 ## Introduction
 
-In the [part 1](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2), we wrote a multi-signature smart contract in Solidity using Hardhat. Multi-signatures are a secure way to protect your cryptocurrency assets and the ownership of your smart contract. The multi-signature contract acts as a wallet, capable of executing transactions to transfer Ethereum or call other smart contracts.
+In [Part 1](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2), we wrote a multi-signature smart contract in Solidity using Hardhat. Multi-signatures are a secure way to protect your cryptocurrency assets and the ownership of your smart contract. The multi-signature contract acts as a wallet capable of executing transactions to transfer Ethereum or call other smart contracts.
 
-In this part 2, we will write tests for our multi-signature contract using Hardhat. We will also deploy our contract on the Celo Alfajores testnet.
+In this Part 2, we will write tests for our multi-signature contract using Hardhat. We will also deploy our contract on the Celo Alfajores testnet.
 
 ## Prerequisites
 
@@ -32,23 +32,23 @@ To follow this tutorial, you will need:
   - **Threshold** - The number of owner signatures required for a transaction to be executed.
   - **Nonce** - A unique number that identifies each request to prevent signatures from being used on more than one transaction.
 
-## Requirements​
+## Requirements
 
 To complete this tutorial, you will need:
 
 - Node.js [Node.js](https://nodejs.org/)
 - VS Code [VS Code](https://code.visualstudio.com/)
-- The Smart Contract Multi-Signature that we wrote in the [part 1](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2) available on [GitHub](https://github.com/marc-aurele-besner/celo-multi-signatures-hardhat/tree/part-1-2)
+- The Multi-Signature Smart Contract that we wrote in [Part 1](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2), available on [GitHub](https://github.com/marc-aurele-besner/celo-multi-signatures-hardhat/tree/part-1-2).
 
-## Setup our test helpers
+## Setup Our Test Helpers
 
 To help us write our tests more efficiently, minimize code duplication, improve the maintainability of our repository, and make our tests more readable, we will create a few helper functions that we can reuse in our tests.
 
-To do so, we will create a new folder called `helper` inside the `test` folder. Inside this folder, we will create a few files:
+To do so, we will create a new folder called `helpers` inside the `test` folder. Inside this folder, we will create a few files:
 
-- `errors.js` - This file will contain all the error messages that we will use in our tests. (errors messages from the require statements in our contract)
-- `utils.js` - This file will contain all the general purpose functions that we will use in our tests. (retrieve our wallets, deploy our contract, etc.)
-- `signature.js` - This file will contain the functions that we will use to sign the transactions request before sending them to the contract.
+- `errors.js` - This file will contain all the error messages that we will use in our tests (error messages from the `require` statements in our contract).
+- `utils.js` - This file will contain all the general-purpose functions that we will use in our tests (retrieve our wallets, deploy our contract, etc.).
+- `signature.js` - This file will contain the functions that we will use to sign the transaction requests before sending them to the contract.
 - `test.js` - This file will contain the helper functions that we will use to call the contract functions and verify the results.
 - `index.js` - This file will export all the functions from the other files.
 
@@ -57,9 +57,9 @@ To create the required directories and files, you can run the following commands
 ```bash
 mkdir test/helper
 touch test/helper/errors.js test/helper/utils.js test/helper/signature.js test/helper/test.js test/helper/index.js
-``` 
+```
 
-This should give you the following structure:
+This should give you the following directory structure:
 
 ![Test Helper](./images/create_test_helper_files.png)
 
@@ -84,7 +84,7 @@ module.exports = {
 }
 ```
 
-These error messages are the same as the ones we used in our contract. We simply copy and paste them here and assign them to a variable. This has the advantage of making our tests more readable and easier to maintain, this way if we change the error message in our contract, we will only have to change it in one place.
+These error messages are the same as the ones we used in our contract. We simply copied and pasted them here and assigned them to a variable. This has the advantage of making our tests more readable and easier to maintain. This way, if we change the error message in our contract, we will only have to change it in one place.
 
 This should give you the following result:
 
@@ -161,9 +161,9 @@ This file should now look like this:
 
 ![Utils helper](./images/build_utils_helper.png)
 
-In this file we added two functions:
+In this file, we added two functions:
 
-- `setupProviderAndWallets`: This function will setup the provider and the wallets we will use in our tests. It will also check if the network is configured with a mnemonic or not. If it is, it will use it to generate the wallets. If it is not, it will use the first 6 accounts in the network configuration.
+- `setupProviderAndWallets`: This function will set up the provider and the wallets we will use in our tests. It will also check if the network is configured with a mnemonic or not. If it is, it will use it to generate the wallets. If it is not, it will use the first 6 accounts in the network configuration.
 - `deployContract`: This function will deploy the contract with the specified parameters for the constructor. It will also save the contract address in the address book.
 
 ### Signature helper
@@ -228,7 +228,7 @@ module.exports = {
 ```
 
 > **Note**
-> This function use **_signTypedData** to sign the transaction as per ethersJS documentation [here](https://docs.ethers.io/v5/api/signer/#Signer-_signTypedData) but in future version of ethersJS, this function will be deprecated and replaced by **signTypedData**
+> This function uses **_signTypedData** to sign the transaction as per ethersJS documentation [here](https://docs.ethers.io/v5/api/signer/#Signer-_signTypedData). However, in future versions of ethersJS, this function will be deprecated and replaced by **signTypedData**.
 
 Like this:
 
@@ -294,7 +294,7 @@ const getEventFromReceipt = async (contract, receipt, eventName) => {
 }
 ```
 
-These functions are used to send raw transactions and check the result of the transaction. It also allows us to get the event from the receipt.
+These functions are used to send raw transactions and check the result of the transaction. They also allow us to get the event from the receipt.
 
 It should now look like this:
 
@@ -318,13 +318,13 @@ const prepareSignatures = async (contract, owners, to, value, data, gas = 30000)
 }
 ```
 
-This function will prepare the signatures of all the owners of the contract. By using each of the wallets we will pass to the function as a array of owners and sign the transaction with each of them, then concatenate the signatures and return them.
+This function will prepare the signatures of all the owners of the contract. We will pass an array of owners using their wallets to the function and sign the transaction with each of them. The signatures will be concatenated and returned. 
 
 It should now look like this:
 
 ![Prepare signatures](./images/build_test_helper_part2.png)
 
-We still have the main helper function to add, that will be used to test the execution of the transaction. Add the following code:
+We still need to add the main helper function for testing the execution of the transaction. Please add the following code:
 
 ```js
 const execTransaction = async (contract, submitter, owners, to, value, data, gas = 30000, errorMsg, extraEvents, signatures) => {
@@ -391,11 +391,11 @@ const execTransaction = async (contract, submitter, owners, to, value, data, gas
 
 This function will prepare the transaction, send it, and check the result. It will also check the event emitted by the transaction. This helper function is flexible and can be used to test the execution of a transaction, the failure of a transaction, or the execution of a transaction with extra event.
 
-It should now look like this:
+Please make sure the function looks like this:
 
 ![Exec transaction](./images/build_test_helper_part3.png)
 
-Last function to add but not the least, we will add the function that will be used to test the addOwner, removeOwner, changeThreshold and replaceOwner functions. Add the following code:
+Lastly, we need to add the function that will be used to test the addOwner, removeOwner, changeThreshold, and replaceOwner functions. Please add the following code:
 
 ```js
 const addOwner = async (contract, submitter, owners, ownerToAdd, gas = 30000, errorMsg, extraEvents) => {
@@ -435,15 +435,15 @@ const replaceOwner = async (contract, submitter, owners, ownerToAdd, ownerToRemo
 }
 ```
 
-These four functions make use of the `execTransaction` function to test the execution of the `addOwner`, `removeOwner`, `changeThreshold` and `replaceOwner` functions. They will also check if the owner was added, removed, or replaced correctly or if the threshold was changed correctly.
+These four functions make use of the `execTransaction` function to test the execution of the `addOwner`, `removeOwner`, `changeThreshold`, and `replaceOwner` functions. They will also check if the owner was added, removed, or replaced correctly or if the threshold was changed correctly.
 
-Since our main **execTransaction** function take a data as argument, it mean we need to encode our function call before sending it. We can do that using the `encodeFunctionData` function from the contract interface. This function will encode the function name and the arguments into a data string that can be used to call the function.
+As our main `execTransaction` function takes data as an argument, we need to encode our function call before sending it. We can do that using the `encodeFunctionData` function from the contract interface. This function will encode the function name and the arguments into a data string that can be used to call the function.
 
-It should now look like this:
+Please ensure the text looks like this:
 
 ![Add housekeeping helper functions](./images/build_test_helper_part4.png)
 
-And lastly, we need to export all the helper functions. Add the following code at the end of the file:
+Finally, we need to export all the helper functions. Please add the following code at the end of the file:
 
 ```js
 module.exports = {
@@ -457,9 +457,9 @@ module.exports = {
 }
 ```
 
-This way we can import all the helper functions in our test file.
+This way, we can import all the helper functions in our test file.
 
-It should now look like this:
+Please make sure the text looks like this:
 
 ![Export all the test helpers](./images/build_test_helper_part5.png)
 
@@ -481,15 +481,15 @@ module.exports = {
 };
 ```
 
-This way we can import all the helper functions in our test file by importing the `index.js` file.
+This way, we can import all the helper functions in our test file by importing the `index.js` file.
 
-It should now look like this:
+Please ensure the text looks like this:
 
 ![Export all the test helpers](./images/create_index_helper_files.png)
 
-## Write our first test
+## Writing our first test
 
-Now that we have all the helper functions ready, we can start writing our first test. In the `test` folder, rename the `Lock.js` file that Hardhat had added for us to `CeloMultiSig.test.js`. Then, replace all the content of the file by the following code:
+Now that we have all the helper functions ready, we can start writing our first test. In the `test` folder, rename the `Lock.js` file that Hardhat had added for us to `CeloMultiSig.test.js`. Then, replace all the content of the file with the following code:
 
 ![Test file to rename](./images/rename_test_file.png)
 ![Test file renamed](./images/renamed_test_file.png)
@@ -534,17 +534,17 @@ describe('CeloMultiSig', function () {
 })
 ```
 
-It should now look like this:
+Please make sure the text looks like this:
 
 ![Build test file](./images/build_test_file_part1.png)
 
-Now that we have some test, we can run them using the following command:
+Now that we have some tests, we can run them using the following command:
 
 ```bash
 npx hardhat test
 ```
 
-Doing so, we should have our first error! Like this:
+Doing so, we should have our first error! It should look something like this:
 
 ![First error](./images/npx_hardhat_test_part1.png)
 
@@ -554,7 +554,7 @@ The important part of the error is the following:
 Error: VM Exception while processing transaction: reverted with reason string 'CeloMultiSig: only this contract can call this function'
 ```
 
-This error is telling us that somewhere in our constructor function logic, we call a function that is not allowed to be called by anyone else than the contract itself. Let's fix that!
+This error is telling us that somewhere in our constructor function logic, we are calling a function that is not allowed to be called by anyone else than the contract itself. Let's fix that!
 
 ### Fix the constructor function
 
@@ -594,11 +594,11 @@ modifier onlyThis() {
 }
 ```
 
-This modifier is checking that the `msg.sender` is the contract itself. This is not what we want in our constructor function. We want to allow anyone to call this function. So there is different way to solve the issue, we could paste in the logic of the `changeThreshold` function in the constructor function, or we could make a private `_changeThreshold` function that will not use the `onlyThis` modifier. Let's do the second option.
+This modifier checks that `msg.sender` is the contract itself. This is not what we want in our constructor function, as we want to allow anyone to call this function. There are different ways to solve this issue. We could either paste the logic of the `changeThreshold` function in the constructor function or create a private `_changeThreshold` function that does not use the `onlyThis` modifier. Let's go with the second option.
 
-One thing we don't want to do, to fix the issue, will be to simply remove the `onlyThis` modifier. This will allow anyone to call the `changeThreshold` function, and we don't want that. We want to allow anyone to call the constructor function, but we don't want to allow anyone to call the `changeThreshold` function.
+However, we must not simply remove the `onlyThis` modifier to fix the issue. Doing so would allow anyone to call the `changeThreshold` function, which is not what we want. Instead, we want to allow anyone to call the constructor function but not the `changeThreshold` function.
 
-So replace the `changeThreshold` function by the following code:
+To achieve this, we can replace the `changeThreshold` function with the following code:
 
 ```solidity
 function _changeThreshold(uint16 newThreshold) private {
@@ -619,7 +619,7 @@ The result should look like this:
 
 ![Fix changeThreshold function](./images/fix_changeThreshold.png)
 
-Now in the constructor function, we can call the `_changeThreshold` function instead of the `changeThreshold` function. So replace the `changeThreshold` function by changing the last line of the constructor function by the following code:
+Now, in the constructor function, we can call the `_changeThreshold` function instead of the `changeThreshold` function. Therefore, we should replace the `changeThreshold` function by changing the last line of the constructor function with the following code:
 
 ```solidity
 _changeThreshold(threshold_);
@@ -643,7 +643,7 @@ Doing so, we should have the following result:
 
 ### Add more read functions tests
 
-Now let's add more tests to our test file. We so going back to the `test/CeloMultiSig.test.js` file and add the following code:
+Now let's add more tests to our test file. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
   it('Contract return correct threshold', async function () {
@@ -675,7 +675,7 @@ The result should look like this:
 
 ![Add more read functions tests](./images/build_test_file_part2.png)
 
-These tests are simple but important. They are testing the read functions of our contract. We are testing that the contract return the correct threshold, the correct ownerCount, the correct nonce, and that the contract return the correct value when calling the `isOwner` function for the original owners addresses and for non owners addresses.
+These tests are simple but important. They are testing the read functions of our contract. We are testing that the contract returns the correct threshold, the correct ownerCount, the correct nonce, and that the contract returns the correct value when calling the `isOwner` function for the original owners' addresses and for non-owners' addresses.
 
 We can now run the tests again using the following command:
 
@@ -689,7 +689,7 @@ Doing so, we should have the following result:
 
 ### Add the first write function test
 
-Now let's add the first test for a write function. We so going back to the `test/CeloMultiSig.test.js` file and add the following code:
+Now let's add the first test for a write function. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
   it('Can add a new owner', async function () {
@@ -728,7 +728,7 @@ Doing so, we should have the following result:
 
 ### Add tests expecting failures
 
-Time to add some tests expecting the transaction to fail. So going back to the `test/CeloMultiSig.test.js` file and add the following code:
+Time to add some tests expecting the transaction to fail. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
   it('Cannot add a new owner with just 10k gas', async function () {
@@ -758,7 +758,7 @@ The result should look like this:
 
 ![Add tests expecting failures](./images/build_test_file_part4.png)
 
-You can see that in these test, we use the errors object from the `Helper` object to pass to our test helper function the error message we expect to be thrown by the contract.
+You can see that in these tests, we use the errors object from the `Helper` object to pass to our test helper function the error message we expect to be thrown by the contract.
 
 We can now run the tests again using the following command:
 
@@ -772,7 +772,7 @@ Doing so, we should have the following result:
 
 ### Add tests of regular ethereum transactions
 
-Let's add a few tests of regular ethereum transactions. So going back to the `test/CeloMultiSig.test.js` file and add the following code:
+Let's add a few tests of regular Ethereum transactions. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
   it('Execute transaction without data but 1 ETH in value', async function () {
@@ -801,11 +801,12 @@ Doing so, we should have the following result:
 
 ![Run tests again](./images/npx_hardhat_test_part6.png)
 
-As you can see, we have our second test failing. We succeed to execute transaction that were calling our contract functions, but we can't send ethereum to our contract successfully. This is because our multi-signatures contract does not has a **receive** function.
+As you can see, we have our second test failing. We were able to execute transactions that called our contract functions, but we can't send Ethereum to our contract successfully. This is because our multisignature contract does not have a `receive` function.
 
-### Add a receive function
+### Add a receive Function
 
-Let's fix this issue by adding a **receive** function, so going back to the `contracts/CeloMultiSig.sol` file and add the following code at the end of the contract:
+Let's fix this issue by adding a `receive` function. We'll go back to the `contracts/CeloMultiSig.sol` file and add the following code at the end of the contract:
+
 
 ```javascript
   /// @notice Receives Ether
@@ -826,11 +827,11 @@ Doing so, we should have the following result:
 
 ![Run tests again](./images/npx_hardhat_test_part7.png)
 
-As you can see, all our tests are now passing. So far we tested all our contract functions, we tested that we can use this multi-signatures contract to send ethereum to another address, but one thing we did not tested yet, is that we can use this contract to interact with other contracts.
+As you can see, all our tests are now passing. So far, we have tested all our contract functions and tested that we can use this multisignature contract to send Ethereum to another address. However, one thing we have not tested yet is that we can use this contract to interact with other contracts.
 
 ### Add tests of contract interactions
 
-To test that we can use this contract to interact with other contracts, we will use the [Hardhat-Awesome-CLI](https://www.npmjs.com/package/hardhat-awesome-cli) to add a couple mock contracts to our project. So run the following command:
+To test that we can use this contract to interact with other contracts, we will use the [Hardhat-Awesome-CLI](https://www.npmjs.com/package/hardhat-awesome-cli) to add a couple of mock contracts to our project. So, run the following command:
 
 ```bash
 npx hardhat cli
