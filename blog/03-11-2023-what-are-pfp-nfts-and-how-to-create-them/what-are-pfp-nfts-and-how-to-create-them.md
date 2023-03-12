@@ -58,22 +58,27 @@ To learn more about setting up the environment to create PFP NFTs , check out th
 ## Steps To Create PFP NFTs
 
 ### Step 1: Decide on your concept
+
 The first step in creating a PFP NFT is to come up with a concept for your image. This can be anything from a digital portrait of yourself to a whimsical cartoon character. The key is to make it unique and interesting enough that someone would want to use it as their profile picture.
 
 ### Step 2: Create the artwork
+
 Once you have a concept in mind, it's time to create the artwork for your PFP NFT. This can be done using various digital art tools such as Photoshop, Illustrator, or Procreate. Make sure to save your final image as a high-resolution file in PNG or JPEG format.
 
 ### Step 3: Create a Smart Contract
+
 To create a PFP NFT, you will need to create a smart contract that represents the token. This smart contract should include all relevant information such as the title, description, and any additional details that potential buyers might be interested in.
 
 You can create a smart contract using various blockchain development tools such as Remix, Truffle, or Hardhat. Make sure to test your smart contract thoroughly before deploying it to the blockchain.
 
 ### Step 4: Deploy Smart Contract and Mint NFT
+
 Once your smart contract is ready, it's time to deploy it to the blockchain and mint your PFP NFT. This involves creating a digital token on a blockchain network (such as Ethereum) that represents ownership of the image.
 
 When minting your PFP NFT, make sure to include all relevant information such as the title, description, and any additional details that potential buyers might be interested in. You will also need to specify the number of NFTs you want to create, and their corresponding ID numbers.
 
 ### Step 5: Upload NFTs to IPFS
+
 Once your PFP NFTs are minted, it's time to upload them to a decentralized storage network like IPFS. This involves uploading the image files and the smart contract code to IPFS, and generating a base URL for your NFTs.
 
 You can use various IPFS upload tools such as Pinata, Infura, or Fleek. Make sure to test your IPFS links thoroughly to ensure that your NFTs are accessible to potential buyers.
@@ -338,10 +343,11 @@ contract FACEPFP is ERC721, Ownable {
 - The tokenURI() function returns the metadata URI for a given token ID. It concatenates the base URI, the token ID and the extension ".json" to form the complete URI. If the token ID does not exist, the function will revert with an error message.
 
 :::tip
-Use the [OpenZeppelin Wizard](https://wizard.openzeppelin.com/) to easily create, deploy, and interact with smart contracts using the OpenZeppelin library.
+Use the [OpenZeppelin Wizard](https://wizard.openzeppelin.com/) to easily create, deploy, and interact with smart contracts using the OpenZeppelin library. And For the Frontend You Can Go threw [Celo Frontend NFT Minter](https://github.com/developerkunal/Celo-frontend)
 :::
 
 ## Conclusion
+
 Creating a PFP NFT can be a fun and rewarding experience for digital artists and enthusiasts alike. By following these simple steps, you can create a unique and valuable digital asset that you can either use as your own profile picture or sell on an NFT marketplace. Remember to create a smart contract, deploy it to the blockchain, mint your NFTs, and upload them to a decentralized storage network like IPFS.
 
 ## About Author
