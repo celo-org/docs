@@ -6,14 +6,14 @@ authors:
     title: contributor, Celo sages
 url: https://github.com/SasaniEldis
 image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["intermediate", "cryptography", "celosage", "Smart contracts"]
+tags: ["intermediate", "asymmetric cryptography", "celosage", "Documentation"]
 hide_table_of_contents: true
 slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume
 
 ---
 ![header](../../src/data-tutorials/showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png)
 
-## Scalability: ensuring that your cryptography app can handle a large volume of transactions and users as it grows
+### Scalability: ensuring that your cryptography app can handle a large volume of transactions and users as it grows
 
 In this tutorial, you’ll learn how to improve key management and security in your messaging platform by implementing asymmetric cryptography. Discover how to generate key pairs, encrypt and decrypt messages, and ensure secure communication between users.
 
