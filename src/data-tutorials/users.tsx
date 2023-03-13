@@ -796,7 +796,7 @@ const Users: User[] = [
     description: 'This tutorial teaches how to connect to a node on the celo blockchain using docker',
     preview: require('./showcase/beginner/how-to-connect-to-a-node-on-celo-using-docker.png'),
     website: 'blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker',
-    tags: ['celo sage', 'celo, beginner', 'cli'], 
+    tags: ['celo sage', 'celo', 'beginner', 'cli'], 
   },
   {
     title: 'Product Discovery é a chave para criar produtos de NFT de sucesso no blockchain Celo',
