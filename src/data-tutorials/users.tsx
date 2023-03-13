@@ -794,7 +794,7 @@ const Users: User[] = [
   {
     title: 'How to Connect to a Node on Celo using Docker',
     description: 'This tutorial teaches how to connect to a node on the celo blockchain using docker',
-    preview: require('./showcase/beginner/how to connect to a node on celo using docker.png'),
+    preview: require('./showcase/beginner/how-to-connect-to-a-node-on-celo-using-docker.png'),
     website: 'blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker',
     tags: ['celo sage', 'celo, beginner', 'cli'], 
   },
