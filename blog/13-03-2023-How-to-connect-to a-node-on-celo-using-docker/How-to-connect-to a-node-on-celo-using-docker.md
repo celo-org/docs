@@ -14,9 +14,11 @@ slug: /tutorials/how-to-connect-to-a-node-on-celo-using-docker
 ![how-to-connect-to-a-node-on-celo-blockchain-using-docker](https://user-images.githubusercontent.com/69092079/224585198-b09ccdd8-a535-4bad-98f3-b98c382ed714.png)
 
 
+
 ## Introduction
 Celo is an open-source blockchain platform that enables fast, secure, and low-
 cost financial transactions. In this article, we will discuss how to set up a node on the Celo network, which is a crucial step to participate in the network as a validator or observer. 
+
 
 ## Prerequisites
 - A machine with at least 4 GB of RAM and 50 GB of disk space
@@ -35,6 +37,7 @@ It runs with the Node Package Manager (NPM), which is a repository of over 1 mil
 
 - [Celo-cli](https://docs.celo.org/cli): The Command Line Interface allows users to interact with the Celo Protocol smart contracts without having to write lines of javascript.
 - [Geth](https://geth.ethereum.org/docs/getting-started/installing-geth): A command line interface for running client nodes on the blockchain. It is used to connect to the different network, download the blockchain, and interact with smart contracts and decentralized applications.
+
 
 ## Getting Started 
 
@@ -262,13 +265,16 @@ It's important to note that while the `enode ID` for this bootnode is safe to sh
 ## Conclusion
 I hope that this tutorial has been helpful in getting you started with your Celo node. Keep in mind that maintaining a node requires ongoing attention and updates to ensure it stays in sync with the network and stays secure. We encourage you to stay informed about the latest developments in the Celo ecosystem and to join the community of developers, validators, and users who are working together to build a more inclusive and equitable financial system.
 
+
 ## Next Step
 - [Configuring and running a validator node](https://docs.celo.org/validator)
 - [Earning incentives as a node operator](https://docs.celo.org/protocol/transaction/full-node-incentives)
 
+
 ## About the Author​
 I am Dr Emiri Udogwu, a young Nigerian medical doctor who is passionate about blockchain technologies and tech generally. Proficient in Fullstack programming and writing smart contracts. 
 Connect with me on [Twitter](http://twitter.com/emiridbest) or [Linkedin](http://linkedin.com/emiridbest)
+
 
 ## References
 - [Celo CLI docs](https://docs.celo.org/cli)
