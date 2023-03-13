@@ -13,21 +13,20 @@ slug: /tutorials/how-to-connect-to-a-node-on-celo-using-docker
 
 ![how-to-connect-to-a-node-on-celo-blockchain-using-docker](https://user-images.githubusercontent.com/69092079/224585198-b09ccdd8-a535-4bad-98f3-b98c382ed714.png)
 
-
-
 ## Introduction
+
 Celo is an open-source blockchain platform that enables fast, secure, and low-
 cost financial transactions. In this article, we will discuss how to set up a node on the Celo network, which is a crucial step to participate in the network as a validator or observer. 
 
-
 ## Prerequisites
+
 - A machine with at least 4 GB of RAM and 50 GB of disk space
 - A stable and fast internet connection
 - Docker and Docker-Compose installed on your machine
 - A valid email address to receive notifications from the Celo network
 
-
 ## Requirements
+
 - [Docker](https://www.docker.com/products/docker-desktop/): Docker is a platform that allows developers to package and run their applications in a standardised way, regardless of the environment in which they are deployed. It is an open-source tool that uses containers to create, deploy, and manage applications.
 
 - [Node v12.22.12](https://nodejs.org/en/download/): an open-source, cross-platform runtime environment that allows developers to run JavaScript code on the server-side. It was first released in 2009 and has since become one of the most popular tools for building scalable and high-performance web applications. 
@@ -37,7 +36,6 @@ It runs with the Node Package Manager (NPM), which is a repository of over 1 mil
 
 - [Celo-cli](https://docs.celo.org/cli): The Command Line Interface allows users to interact with the Celo Protocol smart contracts without having to write lines of javascript.
 - [Geth](https://geth.ethereum.org/docs/getting-started/installing-geth): A command line interface for running client nodes on the blockchain. It is used to connect to the different network, download the blockchain, and interact with smart contracts and decentralized applications.
-
 
 ## Getting Started 
 
@@ -51,14 +49,11 @@ the following command:
 $ git clone https://github.com/celo-org/celo-blockchain.git
 ```
 
-
 This step creates an identical copy of the repository in our local environment. This enables us to navigate to the directory created by Git and use Git commands to manage the repository, such as making changes to the code, committing those changes, and pushing the changes back up to the remote repository.
 
 The expected output should be;
 
 ![cloning-into-celo](https://user-images.githubusercontent.com/69092079/224581769-60032f6a-3881-4929-91c5-22316a8541e6.png)
-
-
 
 
 * **Step 2**: Build the Celo Docker images Using Docker-Compose
@@ -68,7 +63,6 @@ following command:
 ```bash
 $ cd celo-blockchain
 ```
-
 
 We will have to create a new file that helps us run the next line command line.
 Docker-Compose is a tool for defining and running multi-container Docker applications. 
@@ -107,13 +101,11 @@ Copy and paste these lines of code into our newly created file:
 	command: ["docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo"]
 ```
 
-
 Now that we have created the docker-compose file, we can now run the command that enables docker build the images the file is pointing to.
 
 ```bash
 $ docker-compose build
 ```
-
 
 The expected output after running our code;
 
@@ -127,7 +119,6 @@ Command:
 $ docker-compose up -d
 ```
 
-
 The above command `docker-compose up -d` is used to start Docker containers defined in our Docker Compose file in detached mode as specified by the `-d` flag. 
 
 This ensures `docker-compose` runs in the background while the terminal is free to execute other commands. Since this is the first time of running `docker-compose up`, it will download the images needed for the services from Docker Hub or from the specified container registry as well as  start other linked services.
@@ -135,9 +126,6 @@ This ensures `docker-compose` runs in the background while the terminal is free 
 The expected output;
 
 ![docker ps](https://user-images.githubusercontent.com/6362475/224623058-b3cb9e08-031b-45c3-9fd3-1691d2c76d1c.png)
-
-
-
 
 
 * **Step 3**: Start Running the Celo Node
@@ -263,20 +251,23 @@ You will start seeing lines that look like this:
 It's important to note that while the `enode ID` for this bootnode is safe to share, your node's own `enode ID` is unique to your node and should be kept private. Sharing your node's `enode ID` could potentially allow others to connect directly to your node and potentially access or interfere with your node's data or operations.
 
 ## Conclusion
+
 I hope that this tutorial has been helpful in getting you started with your Celo node. Keep in mind that maintaining a node requires ongoing attention and updates to ensure it stays in sync with the network and stays secure. We encourage you to stay informed about the latest developments in the Celo ecosystem and to join the community of developers, validators, and users who are working together to build a more inclusive and equitable financial system.
 
-
 ## Next Step
+
 - [Configuring and running a validator node](https://docs.celo.org/validator)
 - [Earning incentives as a node operator](https://docs.celo.org/protocol/transaction/full-node-incentives)
 
 
 ## About the Author​
+
 I am Dr Emiri Udogwu, a young Nigerian medical doctor who is passionate about blockchain technologies and tech generally. Proficient in Fullstack programming and writing smart contracts. 
 Connect with me on [Twitter](http://twitter.com/emiridbest) or [Linkedin](http://linkedin.com/emiridbest)
 
 
 ## References
+
 - [Celo CLI docs](https://docs.celo.org/cli)
 - [Ubuntu](https://ubuntu.com/server/docs) 
 - [Installing Node](https://codedamn.com/news/nodejs/how-to-uninstall-node-js)
