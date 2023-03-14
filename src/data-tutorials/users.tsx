@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage'],
   },
   {
+    title: 'Introduction to ERC-20R and Reversible Transactions',
+    description: "This article provides a detailed look into the need for reversible transactions and a technical approach to how they function.",
+    preview: require('./showcase/beginner/introduction-to-erc-20r-and-reversible-transactions.png'),
+    website: 'blog/tutorials/introduction-to-erc-20r-and-reversible-transactions',
+    tags: ['beginner','celosage'],
+  },
+  {
     title: 'Exploring the Robust Structure of Celos Protocol Design',
     description: "Exploring the Robust Structure of Celo's Protocol Design",
     preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
