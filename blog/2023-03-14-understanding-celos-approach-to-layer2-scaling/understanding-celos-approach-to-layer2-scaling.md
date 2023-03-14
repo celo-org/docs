@@ -14,7 +14,6 @@ slug: /tutorials/Understanding-Celo-Approch-Layer-2-Scaling
 ![header](../../src/data-tutorials/showcase/intermediate/understanding-celos-approach-to-layer2.png)
 
 
-## Understanding Celo's Approach to Layer-2 Scaling: An Evaluation of Rollups, Sidechains, and State Channels
 
 
 As the demand for blockchain technology continues to grow, the issue of scalability has become increasingly important. Celo, a mobile-first blockchain platform, has implemented a variety of layer-2 scaling solutions to address this challenge, including rollups, sidechains, and state channels.
@@ -23,7 +22,7 @@ As the demand for blockchain technology continues to grow, the issue of scalabil
 This article provides a comprehensive evaluation of each of these approaches, explaining how they work. The article also explores the implications of Celo's layer-2 scaling solutions for the wider blockchain ecosystem, including how they may impact the user experience and the development of decentralized applications. The article is intended for developers, blockchain enthusiasts, and anyone interested in understanding how Celo's layer-2 scaling solutions are driving innovation in the blockchain industry.
 
 
-Here's an overview of what we'll cover
+Here's an overview of what we'll cover:
 
 
 ✅ Introduction to Celo’s approach to Layer-2 scaling
@@ -84,8 +83,7 @@ In an Optimistic Rollup, a fraud-proof mechanism is used to ensure the security 
 Here is a code example of how to implement Optimism Rollup on the Celo network using Solidity:
 
 
-```
-solidity
+```solidity
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -181,8 +179,7 @@ To implement a sidechain on the Celo network, we will use Celo's protocol for in
 To implement a sidechain on the Celo network, we will use Celo's protocol for interoperability called "Mento '' which allows for the creation of sidechains and cross-chain asset transfers. Here's an example of how to create a sidechain on the Celo network using Mento:
 
 
-```
-solidity
+```solidity
 //SPDX-License-Identifier: MIT
  pragma solidity ^0.8.0;
 
@@ -250,8 +247,7 @@ State channels allow for off-chain transactions between parties, reducing transa
 Here's an example of how to implement state channels on the Celo network using the celo-monorepo library:
 
 
-```
-solidity
+```solidity
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -308,7 +304,7 @@ With this implementation, we have created a state channel on the Celo network us
 Rollups, sidechains, and state channels are all layer-2 scaling solutions for blockchain networks, each designed to address specific use cases.
 
 
-- Rollups:
+- **Rollups**:
 
 
 Rollups are well-suited for use cases that require high throughput and complex smart contracts. They are capable of processing thousands of transactions per second, which makes them ideal for applications that require a high degree of scalability. Rollups also retain the security guarantees of the underlying blockchain and can support complex smart contracts.
@@ -317,7 +313,7 @@ Rollups are well-suited for use cases that require high throughput and complex s
 One common use case for rollups is decentralized exchanges (DEXs). DEXs require high throughput and complex smart contract functionality to support features such as limit orders and margin trading. Rollups can provide this functionality while maintaining the security and decentralization of the underlying blockchain.
 
 
-- Sidechains:
+- **Sidechains**:
 
 
 Sidechains are best suited for specific use cases that require specialized functionality. Sidechains can be designed to have their own consensus mechanisms, transaction fees, and block times, making them highly flexible. This flexibility allows sidechains to be tailored to specific use cases, such as gaming or asset exchange.
@@ -326,7 +322,7 @@ Sidechains are best suited for specific use cases that require specialized funct
 One popular use case for sidechains is gaming. Gaming requires high throughput, low latency, and specialized functionality such as non-fungible tokens (NFTs). Sidechains can provide these features while allowing for a seamless gaming experience that is not possible on the main blockchain.
 
 
-- State Channels:
+- **State Channels**:
 
 
 State channels are ideal for applications that require high throughput and low fees for simple transactions. State channels are limited to simple payment channels and cannot support complex smart contracts. However, they offer instant transaction processing and do not require every transaction to be processed on the blockchain.
@@ -337,18 +333,7 @@ One common use case for state channels is microtransactions. Microtransactions r
 
 ## Conclusion
 
-
-That brings us to the end of today's topic on “Understanding Celo’s approach to Layer-2 scaling”.
-To recap, you can find a summary of all the topics we covered below.
-
-
-✅ Introduction to Celo’s approach to Layer-2 scaling
-✅ Overview of Rollups, Sidechains, and State Channels
-✅ How do Rollups work?
-✅ How do Sidechains work?
-✅ How does State Channel work?
-✅ Evaluation of their Use Cases  
-✅ Conclusion
+This article introduces Celo's approach to layer-2 scaling solutions, which can help improve transaction speed and reduce gas prices for users of blockchain-based applications. Layer 2 solutions like rollups, sidechains, and state channels allow for more efficient and cost-effective transactions, enabling developers to scale their applications. Rollups, in particular, bundle transactions off-chain and then process them as a single transaction on-chain, increasing the number of transactions that can be processed. Optimistic rollups and zk-rollups are two types of rollups that differ in their security models. Celo's solutions can help developers build fast, efficient, and sustainable blockchain applications.
 
 
 ## Next Steps​
@@ -368,7 +353,7 @@ Kyrian Chigozie is a Technical Writer with a passion for web3 technology. Connec
 
 - [Celo docs](https://docs.celo.org/)
 - [Celo-sdk](https://celo-sdk-docs.readthedocs.io/en/latest/)
-- [Scaling] (https://ethereum.org/en/developers/docs/scaling/)
+- [Scaling](https://ethereum.org/en/developers/docs/scaling/)
 - [Fraud-proof](https://ethereum.org/en/glossary/#fraud-proof)
 - [Validity-proof](https://ethereum.org/en/glossary/#validity-proof)
 - [Remix](remix.ethereum.org/)
