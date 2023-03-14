@@ -22,19 +22,6 @@ As the demand for blockchain technology continues to grow, the issue of scalabil
 This article provides a comprehensive evaluation of each of these approaches, explaining how they work. The article also explores the implications of Celo's layer-2 scaling solutions for the wider blockchain ecosystem, including how they may impact the user experience and the development of decentralized applications. The article is intended for developers, blockchain enthusiasts, and anyone interested in understanding how Celo's layer-2 scaling solutions are driving innovation in the blockchain industry.
 
 
-Here's an overview of what we'll cover:
-
-
-✅ Introduction to Celo’s approach to Layer-2 scaling
-✅ Overview of Rollups, Sidechains, and State Channels
-✅ How do Rollups work?
-✅ How do Sidechains work?
-✅ How does State Channel work?
-✅ Evaluation of their Use Cases  
-✅ Conclusion
-
-
-By the end of this post, we gain insight into Celo’s approach to Layer-2 scaling. Let's go!
 
 
 ## Introduction to Celo’s approach to Layer-2 scaling
