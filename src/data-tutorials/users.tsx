@@ -847,6 +847,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api',
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
+    {
+    title: 'Build Your Own Full stack Token Airdrop dApp on Celo Blockchain',
+    description: 'In this tutorial, you will learn how to a dApp that allows users sign up for an airdrop and receive tokens automatically deposited into their Celo address.',
+    preview: require('./showcase/intermediate/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain.png'),
+    website: '/blog/tutorials/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain',
+    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
+  },
   {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
