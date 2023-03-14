@@ -962,6 +962,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
   },
   {
+    title: 'Build Your Own Full Stack NFT A.I Art Minter On The Celo Blockchain',
+    description: 'In this tutorial, we will build a full stack nft digital art minter that will generate our art with artificial intelligence.',
+    preview: require('./showcase/intermediate/build_your_own_full_stack_nft_a.i_art_minter_on_the_celo _blockchain.png'),
+    website: 'blog/tutorials/build-your-own-full-stack-nft-a.i-art-minter-on-the-celo -blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate'],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
