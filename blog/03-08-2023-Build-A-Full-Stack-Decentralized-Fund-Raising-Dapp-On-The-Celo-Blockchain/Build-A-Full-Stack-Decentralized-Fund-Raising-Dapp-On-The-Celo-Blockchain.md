@@ -341,7 +341,7 @@ Click on [this](https://github.com/4undRaiser/celo-fundraising-dapp) repo from y
 
 The completed code should look like this.
 
-```solidity
+```javascript
 import "./App.css";
 import Home from "./components/home";
 import { Campaigns } from "./components/Campaigns";
@@ -661,6 +661,6 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 
 ## About the author
 
-I'm Jonathan Iheme, A full stack block-chain Developer from Nigeria.
+I'm Jonathan Iheme, A full stack block-chain Developer from Nigeria. let's connect on (linkedIn)[https://www.linkedin.com/in/jonathan-iheme-31a63718b]
 
 Thank You!!
