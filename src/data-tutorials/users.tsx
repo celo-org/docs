@@ -783,6 +783,13 @@ const Users: User[] = [
     tags: ['beginner', 'erc721', 'celosage'],
   },
   {
+    title: 'Understanding Utility and Security Tokens',
+    description: 'Utility tokens are digital assets that lives on the blockchain and can be used to gain access to certain things, such as a game or a website.',
+    preview: require('./showcase/beginner/understanding-utility-and-security-tokens.png'),
+    website: 'blog/tutorials/understanding-utility-and-security-tokens',
+    tags: ['beginner', 'celosage'],
+  },
+  {
     title: 'Integrating Blockchain Technology into Legacy Systems on Celo',
     description:
       'Blockchain technology can facilitate new forms of collaboration and innovation by enabling the exchange of information and value between different parties.',
