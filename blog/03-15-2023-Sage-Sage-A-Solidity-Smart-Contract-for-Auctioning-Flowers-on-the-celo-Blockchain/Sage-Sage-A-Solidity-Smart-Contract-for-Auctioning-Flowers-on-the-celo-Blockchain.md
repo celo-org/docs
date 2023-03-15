@@ -237,7 +237,6 @@ If the new bid is higher, the function transfers the previous highest bid amount
 
 Finally, the function updates the highestBid and highestBidder properties of the Flower struct to reflect the new highest bid and the bidder who placed it.
 
-
 Up next is the `endAuction` function.
 
 ```solidity
@@ -445,13 +444,13 @@ Congratulations on your accomplishment! You have done an excellent job of develo
 
 I trust that you found this tutorial informative and learned a lot from it. If you would like to continue your education, I have provided some helpful links below that you may find useful to explore:
 
-The official Celo documentation: https://docs.celo.org/
+The official Celo documentation:[Click here to access celo docs](https://docs.celo.org/) 
 
-Solidity By Example, a website with code examples for learning Solidity: https://solidity-by-example.org/
+Solidity By Example, a website with code examples for learning Solidity: [Click here to learn more about solidity](https://solidity-by-example.org/)
 
-OpenZeppelin Contracts, a library of secure, tested smart contract code: https://www.openzeppelin.com/contracts/
+OpenZeppelin Contracts, a library of secure, tested smart contract code: [Click here tp know more about OpenZeppelin Contracts](https://www.openzeppelin.com/contracts/)
 
-Solidity documentation for version 0.8.17: https://docs.soliditylang.org/en/v0.8.17/
+Solidity documentation for version 0.8.17: [Click here to access solidity docs](https://docs.soliditylang.org/en/v0.8.17/)
 
 I hope these resources prove to be useful to you!
 
