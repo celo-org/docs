@@ -13,7 +13,6 @@ slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-bl
 
 ![header](../../src/data-tutorials/showcase/intermediate/A-Solidity-Smart-Contract-for-Auctioning-Flowers-on-the-celo-Blockchain.png)
 
-
 ## INTRODUCTION
 
 **What is Celo?**
@@ -167,7 +166,6 @@ It also sets the forSale field to the value of the _isSale parameter, which indi
 
 Finally, the function increments the flowersLength variable, which keeps track of the number of flowers that have been added to the mapping. This allows for easy iteration over the flowers mapping when displaying all the flowers available for auction.
 
-
 Next, we create the `getFlower` function.
 
 ```solidity
@@ -275,7 +273,6 @@ Up next is the `endAuction` function.
 ```
 
 This function is used to end the auction for a specific flower identified by its index. The function checks if the auction has ended based on the expiration time, and if it has not yet ended, it will throw an error. Then it checks if the flower is for sale and has not been sold yet. If the flower has not received any bids, it will remain unsold, and the 'forSale' flag is set to true. If there are bids, the highest bidder will transfer the highest bid amount to the owner of the flower using the 'transferFrom' function of the cUSD token contract. The 'forSale' flag is set to false, indicating that the flower is no longer available for purchase, and the 'sold' flag is set to true. Finally, the function resets the auction parameters, including the highest bidder, the highest bid amount, and the auction end time. It also emits an 'AuctionEnded' event, which logs the winner, highest bidder, and highest bid amount.
-
 
 The complete code for this session is provided below.
 
