@@ -2090,6 +2090,13 @@ const Users: User[] = [
     website: 'blog/tutorials/what-are-pfp-nfts-and-how-to-create-them',
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
   },
+  {
+    title: 'Developing a Crowdfunding Platform for Social Causes on Celo Blockchain - Part 1',
+    description: 'A Celo-based crowdfunding platform for social causes would enable social organizations, charities, and individuals to create campaigns and connect directly with donors to donate funds, leveraging the transparency and security of blockchain technology.',
+    preview: require('./showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
