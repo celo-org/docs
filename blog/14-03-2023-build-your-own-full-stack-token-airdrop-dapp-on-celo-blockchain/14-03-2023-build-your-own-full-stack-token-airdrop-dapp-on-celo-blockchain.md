@@ -14,11 +14,11 @@ slug: /tutorials/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain.png)
 
-# Introduction​
+## Introduction​
 
 Decentralized applications (dApps) are becoming increasingly popular as blockchain technology gains momentum. One of the most exciting use cases for dApps is the ability to facilitate token airdrops, where users can receive free tokens simply by signing up. In this tutorial, we'll explore how to build a full stack token airdrop dApp on the Celo blockchain. By following along with our step-by-step guide, you'll gain a solid understanding of how to create and deploy a smart contract, integrate with a web3 wallet, and build a user-friendly front-end interface. Let's get started!
 
-# Prerequisites​
+## Prerequisites​
 
 Here are some potential prerequisites and tools you may need to set up your development environment:
 
@@ -29,7 +29,7 @@ Here are some potential prerequisites and tools you may need to set up your deve
 * Node.js and npm installed on your system
 * A MetaMask wallet and some test Celo tokens for testing on the Celo testnet
 
-# Requirements​
+## Requirements​
 
 * Node.js version 12.13.0 or higher installed on your system
 * NPM version 6.12.0 or higher installed on your system
@@ -38,7 +38,7 @@ Here are some potential prerequisites and tools you may need to set up your deve
 * React version 17.0.1 or higher installed on your system
 * EthersJS version 5.0.32 or higher installed on your system
 
-# Setting up the project
+## Setting up the project
 
 1 . Install Node.js and NPM on your system if you haven't already. You can download them from the official Node.js [here](https://nodejs.org/en/)
 
@@ -501,11 +501,11 @@ When we check all the candidates' ADP token balances, we see that they now have 
 ![after-airdrop](https://user-images.githubusercontent.com/62109301/225000329-12aabafb-756a-4c7d-affe-13c6d2db5a47.PNG)
 
 
-# Conclusion​
+## Conclusion​
 
 We have created a basic smart contract that allows candidates to register for an airdrop and then an administrator airdrops tokens to those candidates. We also built a simple front end using React to interact with the smart contract. Through this tutorial, we have learned the basics of Solidity smart contract development and how to use React to interact with the Celo network.
 
-# Next Steps
+## Next Steps
 
 After this tutorial, feel free to widen your knowledge by expanding it in various ways.
 
@@ -515,7 +515,7 @@ After this tutorial, feel free to widen your knowledge by expanding it in variou
 
 3. Integrate with other dApps: You can integrate your AirToken contract with other dApps like wallets or exchanges, making it more accessible to other users. You can use dAppBridge or any other bridging technology to achieve this.
 
-# About the Author​
+## About the Author​
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
@@ -524,7 +524,7 @@ Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-# References​
+## References​
 
 [Hardhat docs](https://hardhat.org/hardhat-runner/docs/getting-started#quick-start) | For hardhat set-up
 [Celo Faucet](https://faucet.celo.org/) | For Celo faucet
