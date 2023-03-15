@@ -18,7 +18,7 @@ slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-bl
 
 **What is Celo?**
 
-  Celo is a decentralized platform with a goal to enable access to financial tools to people worldwide, particularly in developing markets. The platform uses blockchain technology to secure transactions and enable fast, low-cost, and safe transfers of its stablecoin, CELO. The value of CELO is linked to a basket of national currencies to mitigate fluctuations. The Celo network is maintained by a group of validators who operate the blockchain software and are incentivized with CELO tokens. Additionally, the platform comprises several decentralized applications (dApps) that offer financial services, including remittances, loans, and payments.
+Celo is a decentralized platform with a goal to enable access to financial tools to people worldwide, particularly in developing markets. The platform uses blockchain technology to secure transactions and enable fast, low-cost, and safe transfers of its stablecoin, CELO. The value of CELO is linked to a basket of national currencies to mitigate fluctuations. The Celo network is maintained by a group of validators who operate the blockchain software and are incentivized with CELO tokens. Additionally, the platform comprises several decentralized applications (dApps) that offer financial services, including remittances, loans, and payments.
 
 ## REQUIREMENT
 
@@ -31,8 +31,8 @@ To take this tutorial, you will need:
 ## PREREQUISITE 
 
  - Basic knowledge of Javascript.
-  - Understand how Blockchain works.
-  - Have a basic knowledge of solidity.
+ - Understand how Blockchain works.
+ - Have a basic knowledge of solidity.
   
 ## Tutorial Overview
 
@@ -103,7 +103,7 @@ event AuctionEnded(
 );
 ```
 
- The FloralAuction contract contains a data structure Flower which represents a flower that can be put up for auction. The Flower structure has several properties such as the current owner, the flower's name, description, image, initial price, current highest bid, highest bidder, and flags for indicating if the flower is for sale or has been sold.
+The FloralAuction contract contains a data structure Flower which represents a flower that can be put up for auction. The Flower structure has several properties such as the current owner, the flower's name, description, image, initial price, current highest bid, highest bidder, and flags for indicating if the flower is for sale or has been sold.
 
 The event AuctionEnded is an event that is emitted when the auction for a flower ends. It contains three parameters: winner which represents the address of the winner of the auction, highestBidder which represents the address of the highest bidder, and highestBid which represents the highest bid made during the auction. The event is useful for external applications that want to be notified when an auction ends, for example, to update the user interface with the latest information about the auction.
 
@@ -125,7 +125,8 @@ Next, we add out mapping
         auctionEndTime = block.timestamp + 24 hours;
     }
  ```
-  This code initializes a mapping called flowers that maps an unsigned integer (uint) to a Flower struct. The Flower struct contains various details about a flower, such as its owner, name, description, image, initial price, highest bid, highest bidder, and whether it is for sale or sold.
+ 
+This code initializes a mapping called flowers that maps an unsigned integer (uint) to a Flower struct. The Flower struct contains various details about a flower, such as its owner, name, description, image, initial price, highest bid, highest bidder, and whether it is for sale or sold.
 
 Additionally, the code initializes two unsigned integers: flowersLength and auctionEndTime. flowersLength is set to 0 by default, while auctionEndTime is set to the current block timestamp plus 24 hours.
 
@@ -154,8 +155,6 @@ Furthermore, to make our smart contract more interesting we begin to add functio
         );
         flowersLength++;
     }
-
-    
 ```
 
 The createFlower function is a public function that allows a user to create a new Flower struct in the flowers mapping. The Flower struct has several fields such as owner, name, description, image, initialPrice, highestBid, highestBidder, forSale, and sold.
@@ -196,7 +195,6 @@ Next, we create the `getFlower` function.
             flower.sold
         );
     }
-
 ```
 
 The getFlower function is a public view function that takes an input parameter `_index` which represents the index of the flower to retrieve from the flowers mapping.
@@ -277,7 +275,7 @@ Up next is the `endAuction` function.
 }
 ```
 
- This function is used to end the auction for a specific flower identified by its index. The function checks if the auction has ended based on the expiration time, and if it has not yet ended, it will throw an error. Then it checks if the flower is for sale and has not been sold yet. If the flower has not received any bids, it will remain unsold, and the 'forSale' flag is set to true. If there are bids, the highest bidder will transfer the highest bid amount to the owner of the flower using the 'transferFrom' function of the cUSD token contract. The 'forSale' flag is set to false, indicating that the flower is no longer available for purchase, and the 'sold' flag is set to true. Finally, the function resets the auction parameters, including the highest bidder, the highest bid amount, and the auction end time. It also emits an 'AuctionEnded' event, which logs the winner, highest bidder, and highest bid amount.
+This function is used to end the auction for a specific flower identified by its index. The function checks if the auction has ended based on the expiration time, and if it has not yet ended, it will throw an error. Then it checks if the flower is for sale and has not been sold yet. If the flower has not received any bids, it will remain unsold, and the 'forSale' flag is set to true. If there are bids, the highest bidder will transfer the highest bid amount to the owner of the flower using the 'transferFrom' function of the cUSD token contract. The 'forSale' flag is set to false, indicating that the flower is no longer available for purchase, and the 'sold' flag is set to true. Finally, the function resets the auction parameters, including the highest bidder, the highest bid amount, and the auction end time. It also emits an 'AuctionEnded' event, which logs the winner, highest bidder, and highest bid amount.
 
 
 The complete code for this session is provided below.
@@ -423,7 +421,7 @@ event AuctionEnded(
 
 ## CONTRACT DEPLOYMENT
 
- To deploy the flower smart contract on the Celo blockchain, you would need the following:
+To deploy the flower smart contract on the Celo blockchain, you would need the following:
 
 CeloExtensionWallet: Download and install the Celo Extension Wallet from the Google Chrome store, create a wallet, and securely store your key phrase. [Click here to intall the celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
 
