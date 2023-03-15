@@ -16,7 +16,7 @@ slug: /tutorials/building-a-crowdfunding-platform-on-celo-with-python
 
 ## Introduction
 
-Crowdfunding is a fundraising strategy that allows individuals or sets of individuals to acquire the necessary funding they need for their projects or ideas. Celo is a fully open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). In this tutorial, we will learn how to build a Crowdfunding application with Python on Celo. We will create a smart contract and deploy it on Celo Alfajores with the Python **[Web3.py](http://Web3.py)** library.
+Crowdfunding is a fundraising strategy that allows individuals or sets of individuals to acquire the necessary funding they need for their projects or ideas. Celo is a fully open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). In this tutorial, we will learn how to build a Crowdfunding application with Python on Celo. We will create a smart contract and deploy it on Celo Alfajores with the Python [Web3.py](http://Web3.py) library.
 
 ## Prerequisites
 
@@ -29,13 +29,13 @@ To understand this tutorial, you must be familiar with:
 
  You should have the following installed on your computer to execute all that is entailed in this tutorial:
 
-- **Python 3.7 or later**
-- **[Node.js](https://nodejs.org/en/download/)**
-- [**Celo Testnet account**](https://faucet.celo.org/)
-- **[Celo Wallet](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo)**
-- **[Python-dotenv](https://pypi.org/project/python-dotenv/) (for environment variables)**
-- **[Ganache](https://trufflesuite.com/ganache/) (local blockchain)**
-- **[Web3.py](https://web3py.readthedocs.io/en/stable/) (for interacting with the blockchain)**
+- Python 3.7 or later
+- [Node.js](https://nodejs.org/en/download/)
+- [Celo Testnet account](https://faucet.celo.org/)
+- [Celo Wallet](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo)
+- [Python-dotenv](https://pypi.org/project/python-dotenv/) (for environment variables)
+- [Ganache](https://trufflesuite.com/ganache/) (local blockchain)
+- [Web3.py](https://web3py.readthedocs.io/en/stable/) (for interacting with the blockchain)
 
 ### Setting up the Project
 
@@ -53,7 +53,7 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-To install the **ganache-cli**, **web3.py**, and **python-dotenv**:
+To install the ganache-cli, web3.py, and python-dotenv:
 
 ```bash
 npm install ganache --global
@@ -65,9 +65,9 @@ pip3 install python-dotenv web3
 
 ### Creating the Smart Contract
 
-Next, we have to build a smart contract for our crowdfunding application. Create a file called `**Crowdfunding.sol**` in a directory of your project.
+Next, we have to build a smart contract for our crowdfunding application. Create a file called `Crowdfunding.sol` in a directory of your project.
 
-`**Crowdfunding.sol**`
+`Crowdfunding.sol`
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -83,7 +83,7 @@ contract Crowdfunding {
 
     event Contribute(address indexed contributor, uint256 amount);
 
-    constructor(uint256 _goal) {
+    constructor(uint256 _goal) public {
         owner = msg.sender;
         goal = _goal;
     }
@@ -113,23 +113,23 @@ contract Crowdfunding {
 
 The smart contract above enables contributors to contribute to a crowdfunding campaign. The contract is completed once the total contributions reach the specified value by the owner of the campaign.
 
-- A **`_goal`** argument is specified in the constructor function which is used to set the amount needed to be reached by the campaign.
-- The **`contribute`** function is marked as **`payable`** (allows the function to accept payments from contributors) which adds the contributed amount to the `**totalContributions`** and ends the campaign once the goal has been reached.
-- The **`withdraw`** function makes sure that the owner of the campaign is the only one allowed to access the total contributions.
+- A `_goal` argument is specified in the constructor function which is used to set the amount needed to be reached by the campaign.
+- The `contribute` function is marked as `payable` (allows the function to accept payments from contributors) which adds the contributed amount to the `totalContributions` and ends the campaign once the goal has been reached.
+- The `withdraw` function makes sure that the owner of the campaign is the only one allowed to access the total contributions.
 
 ### Deploying the Smart Contract
 
 After we’ve created the smart contract, the next step is to compile and deploy the smart contract.
 
-Run the following command to install **`[py-solx](https://github.com/ethereum/py-solc)`** which is a python wrapper around the **`solc`** solidity compiler:
+Run the following command to install [py-solx](https://github.com/ethereum/py-solc) which is a python wrapper around the `solc` solidity compiler:
 
 ```bash
 pip install py-solc
 ```
 
-Create a new file called **`[deploy.py](http://deploy.py)`** and paste the following code:
+Create a new file called [deploy.py](http://deploy.py) and paste the following code:
 
-**`deploy.py`**
+`deploy.py`
 
 ```python
 import json
@@ -175,7 +175,7 @@ bytecode = compiled_sol["contracts"]["Crowdfunding.sol"]["Crowdfunding"]["evm"][
 abi = compiled_sol["contracts"]["Crowdfunding.sol"]["Crowdfunding"]["abi"]
 ```
 
-Run the following command to generate a JSON file called **`compiled_sol.json`** in your root directory:
+Run the following command to generate a JSON file called `compiled_sol.json` in your root directory:
 
 ```bash
 python deploy.py
@@ -197,7 +197,7 @@ You should see a list of private keys and public addresses to use to connect to 
 
 <img width="1137" alt="Screenshot 2023-03-15 at 11 04 35 AM" src="https://user-images.githubusercontent.com/104994589/225299429-8582a0b4-6251-4784-9204-472fba6c6757.png">
 
-Add the following code to **`deploy.py`:**
+Add the following code to `deploy.py`:
 
 ```python
 # for connecting to ganache
@@ -214,9 +214,9 @@ For security purposes, it’s best to store your private key as an environment v
 
 Create a .env file and add your private key to it:
 
-**`.env`**
+`.env`
 
-```python
+```env
 PRIVATE_KEY='0x......'
 ```
 
@@ -230,9 +230,9 @@ python deploy.py
 
 Let’s deploy our application on Celo Testnet also known as Alfajores. 
 
-Add the following code to **`deploy.py`:**
+Add the following code to `deploy.py`:
 
-**`deploy.py`**
+`deploy.py`
 
 ```python
 # Deploy to test net (Celo)
@@ -266,7 +266,7 @@ contract_address = tx_receipt['contractAddress']
 print(f'Contract deployed at address: {contract_address}')
 ```
 
-In the code above, RPC URL and chain ID are gotten from the **[Celo Alfajores network](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo).** The contract method on the w3.eth class takes in the ABI and bytecode to create the contract. The **`build_transaction`** builds a transaction and is passed as an argument to the **`sign_transaction`** which signs the transaction. The **`send_raw_transaction`** method finally sends the transaction and produces a receipt that contains the contract address of the deployed contract.
+In the code above, RPC URL and chain ID are gotten from the [Celo Alfajores network](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo). The contract method on the w3.eth class takes in the ABI and bytecode to create the contract. The `build_transaction` builds a transaction and is passed as an argument to the `sign_transaction` which signs the transaction. The `send_raw_transaction` method finally sends the transaction and produces a receipt that contains the contract address of the deployed contract.
 
 ## Conclusion
 
@@ -276,8 +276,8 @@ In this article, you learned how to create a crowdfunding application with Celo 
 
 To learn more about building on Celo using Python, you can explore the following resources:
 
-- **[Celo documentation](https://docs.celo.org/)**
-- **[Solidity](http://solidity-by-example.org)**
+- [Celo documentation](https://docs.celo.org/)
+- [Solidity](http://solidity-by-example.org)
 
 ## About the Author
 
@@ -285,5 +285,5 @@ To learn more about building on Celo using Python, you can explore the following
 
 ## References
 
-- **[Celo docs](https://docs.celo.org/)**
-- **[Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)**
+- [Celo docs](https://docs.celo.org/)
+- [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
