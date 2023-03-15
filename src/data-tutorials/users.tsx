@@ -1230,6 +1230,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
+    title: 'Unlocking the Power of Blockchain, NFTs, and Cryptography',
+    description: 'Learn the potentials of web-3 decentralised finance',
+    preview: require('./showcase/beginner/unlocking-the-power-of-blockchain-nft-and-cryptography.png'),
+    website: '/blog/tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
     title: '17 Smart Contracts Powering the Celo Protocol',
     description: 'Making sense of the logic driving the Celo platform.',
     preview: require('./showcase/intermediate/17-smart-contracts-powering-the-celo-protocol.png'),
