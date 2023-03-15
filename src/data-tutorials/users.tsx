@@ -790,6 +790,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','openzeppelin', 'solidity','smartcontract','video'],
   },
   {
+    title: 'A Solidity Smart Contract For Auctioning Flowers On The Celo Blockchain',
+    description: 'This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.',
+    preview: require('./showcase/intermediate/A-Solidity-Smart-Contract-for-Auctioning-Flowers-on-the-celo-Blockchain.png'),
+    website: 'blog/tutorials/A-Solidity-Smart-Contract-For-Auctioning-Flowers-On-The-Celo-Blockchain',
+    tags: ['celosage', 'solidity','smartcontract','intermediate', 'celo'],
+  },
+  {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
