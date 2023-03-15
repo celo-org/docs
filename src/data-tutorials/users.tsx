@@ -2076,6 +2076,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'How to build a Celo Price Tracker browser extension using Vite and Celo Contractkit.',
+    description: 'In this article, I will show developers how to create a Celo Price Tracker browser extension that works with any browser, such as Brave, Chrome, and Firefox, by using Vite (a React template), Crxjs Vite Plugin, and the Celo Contractkit package.',
+    preview: require('./showcase/beginner/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit.png'),
+    website: 'blog/tutorials/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit',
+    tags: ['celosage', 'react', 'beginner', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
