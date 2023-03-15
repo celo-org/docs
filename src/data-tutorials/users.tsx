@@ -2076,6 +2076,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'Building a Crowdfunding Platform on Celo with Python',
+    description: 'This tutorial provides a guide on how to use Eth-Brownie Python to build a decentralized crowdfunding platform on the Celo blockchain',
+    preview: require('./showcase/intermediate/building-a-crowdfunding-platform-on-celo-with-python.png'),
+    website: 'blog/tutorials/building-a-crowdfunding-platform-on-celo-with-python',
+    tags: ['celosage', 'crowdfunding', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
