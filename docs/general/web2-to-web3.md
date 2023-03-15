@@ -58,6 +58,8 @@ Whereas web2 apps will use a user name and password or auth service like SignInW
 
 ### Off Browser
 
-GraphQL (optional but common) — Originally a way of allow the client to specify which the data server would give it. GraphQL has been adopted by web3 for getting analytical type data via a tool called TheGraph. DApps make their own subgraph and index their smart contracts to show users info like change in Total Value Locked over time etc.  Note the connection from browser to GraphQL server will be read only.
+GraphQL (optional but common) — Originally a way to allow the client to specify which the data server would give it. GraphQL has been adopted by web3 for getting analytical type data via a tool called [TheGraph](https://thegraph.com/). DApps make their own subgraph and index their smart contracts to show users info like change in Total Value Locked over time etc.  Note the connection from browser to GraphQL server will be read only.
 
-Full Node The “server” that the frontend calls to interact with smart contracts on the chain. Most dApps use a [node as a service](/network/node/overview) although some also [run their own](/network/node/overview). Whereas Web2 dApps communicate with Restful JSON APIs over http and web-sockets, Dapp communication with the full node uses JSON RPC calls over http or web-sockets.
+### Full Node 
+
+The “server” that the frontend calls to interact with smart contracts on the chain. Most dApps use a [node as a service](/network/node/overview) although some also [run their own](/network/node/overview). Whereas Web2 dApps communicate with Restful JSON APIs over http and web-sockets, Dapp communication with the full node uses JSON RPC calls over http or web-sockets.
