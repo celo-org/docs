@@ -1496,6 +1496,13 @@ const Users: User[] = [
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
   {
+    title: 'Create Deploy and Mint your ERC223 contract on Celo with Hardhat',
+    description: 'This tutorial is an expository piece on the ERC223 token standard, also explaining how to create and deploy a sample ERC223 contract',
+    preview: require('./showcase/intermediate/ERC223-token-contract.png'),
+    website: 'https://learn.figment.io/tutorials/create-deploy-and-mint-your-eRC223-contract-on-celo-with-hardhat',
+    tags: ['intermediate', 'celo', 'celosage', 'javascript', 'hardhat', 'smartcontract', ],
+  },
+  {
     title: 'Create Vault Smart Contract',
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
     preview: require('./showcase/advanced/create-a-vault-smart-contract.png'),
