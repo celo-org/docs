@@ -128,7 +128,7 @@ npm install
 ![image](images/image16.jpg)
 
 
-### **Click "Continue with GitHub”**
+- Click "Continue with GitHub”
 
 ![image](images/image13.jpg)
 
