@@ -2088,7 +2088,7 @@ const Users: User[] = [
     description: 'Learn hoe to build chat app on celo network using react-native and web3js',
     preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
     website: 'blog/tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo',
-    tags: ['celo sage', 'react-native', 'intermediate', 'celo'], 
+    tags: ['celosage', 'react-native', 'intermediate', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
