@@ -280,13 +280,7 @@ def main():
 
 ```
 
-The deploy_lottery function gets the account we would use to deploy the contract.
-
-Deploy the contract:
-
-```bash
-
-```
+The deploy_lottery function gets the account we would use to deploy the contract
 
 [Screenshot](https://user-images.githubusercontent.com/104994589/225643259-30040976-23a9-41b3-a03e-ddf008850229.png)
 
