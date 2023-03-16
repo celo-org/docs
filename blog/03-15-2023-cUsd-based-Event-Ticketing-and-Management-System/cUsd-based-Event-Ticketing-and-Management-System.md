@@ -279,7 +279,7 @@ contract Evently {
 
 The code snippet above defines a smart contract called `Evently` that initializes a private variable named `eventsLength` to zero. The contract also has an internal address variable `cUsdTokenAddress`, which is assigned a specific address on the Celo blockchain.
 
-Furthermore, the contract includes a struct named `Event`, which has several properties such as `owner`, `image`, `theme`, `location`, `follow`, `price`, `sale`, and a mapping named `hasFollowed`. The `owner` property is the address of the event owner, while the `image`, `theme`, and `location` properties store details such as image URL, theme, and location of the event. The `follow` property counts the number of people following the event, while the `price` property holds the price of the event ticket in cUSD. The "sale" property is a boolean flag indicating whether the event tickets are on sale or not. The `hasFollowed` mapping is used to track the addresses that have followed the event.
+Furthermore, we declare a struct named `Event`, which has several properties such as `owner`, `image`, `theme`, `location`, `follow`, `price`, `sale`, and a mapping named `hasFollowed`. The `owner` property is the address of the event owner, while the `image`, `theme`, and `location` properties store details such as image URL, theme, and location of the event. The `follow` property counts the number of people following the event, while the `price` property holds the price of the event ticket in cUSD. The "sale" property is a boolean flag indicating whether the event tickets are on sale or not. The `hasFollowed` mapping is used to track the addresses that have followed the event.
 
 ```solidity
  mapping(uint => Event) internal events;
@@ -302,7 +302,7 @@ Furthermore, the contract includes a struct named `Event`, which has several pro
 
 ```
 
-The smart contract includes two mappings and three modifiers. The `events` mapping is used to store events, where each event is identified by a unique index number. The `exists` mapping is used to keep track of whether an event with a particular index number exists or not.
+Now we add our mappings and three modifiers. The `events` mapping is used to store events, where each event is identified by a unique index number. The `exists` mapping is used to keep track of whether an event with a particular index number exists or not.
 
 The first modifier named `checkPrice` checks if the price of an event is greater than zero, and if not, it throws an error with a message stating that the price should be at least one wei.
 
@@ -337,7 +337,7 @@ The third modifier named `exist` checks if an event with a particular index numb
 
 ```
 
-The `getEvent` function is a public and view function in a smart contract that takes an unsigned integer parameter called `_index` representing the index of an event to retrieve. This function does not change the state of the contract and can be called externally by any account.
+The `getEvent` function is a public and view function in our smart contract that takes an unsigned integer parameter called `_index` representing the index of an event to retrieve. This function does not change the state of the contract and can be called externally by any account.
 
 The function returns eight values, declared using tuple notation, that correspond to specific data associated with the event at the given index. These include the event owner's address, an image URL or IPFS hash, the event's theme or name, location, number of followers, price in cUsd, sale status, and whether the caller has followed the event or not.
 
@@ -392,7 +392,7 @@ Furthermore, we add the `createEvent` function that will be used to add events t
 
 ```
  
-This code snippet contains two functions for creating and buying events. The `createEvent()` function lets the contract owner create an event by providing an `image URL`, `theme`, `location`, and `price`. The function first checks that the price is greater than zero and that the image URL, theme, and location are not empty. If the conditions are met, the function creates a new event and adds it to an events array.
+Next, we add two functions that will help in creating and buying events. The `createEvent()` function lets the contract owner create an event by providing an `image URL`, `theme`, `location`, and `price`. The function works by first checking that the price is greater than zero and that the image URL, theme, and location are not empty. If the conditions are met, the function creates a new event and adds it to an events array.
 
 The `buyEvent()` function lets users buy an event from the events array by specifying the index of the event they want to purchase. Before executing, the function checks that the event exists and is available for purchase, and that the caller of the function is not already the owner of the event. If these conditions are met, the function transfers the event price from the caller to the event owner using the `transferFrom()` function. If the transfer succeeds, the function updates the event owner and marks the event as sold. If the transfer fails, the function throws an error.
 
