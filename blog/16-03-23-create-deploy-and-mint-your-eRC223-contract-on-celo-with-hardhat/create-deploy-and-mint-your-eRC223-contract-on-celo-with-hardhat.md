@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/create-deploy-and-mint-your-eRC223-contract-on-celo-with-hardhat
 ---
 
-![ERC223-token-contract](https://user-images.githubusercontent.com/69092079/225619279-62950fe2-6aca-4f1c-ae57-31ad270ec809.png)
+![header](https://user-images.githubusercontent.com/69092079/225647985-ad2c4435-6d8a-49dd-928c-79f53d4c4344.png)
 
 ## Introduction​
 
