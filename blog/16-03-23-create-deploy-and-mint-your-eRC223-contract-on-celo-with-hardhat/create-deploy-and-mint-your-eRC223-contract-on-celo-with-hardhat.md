@@ -328,7 +328,7 @@ contract MyToken is IERC223 {
 }
 
 ```
-
+***Note: [Here](https://github.com/Julius170/hardhat-ERC223-token-contract) is a link to the project on github, while following along the codebase in this tutorial.***
 
 - First, the contract defines an interface called "IERC223" which includes the standard functions that an ERC223 token should implement, such as `name`, `symbol`, `total supply`, `balance of`, and `transfer`.
 
