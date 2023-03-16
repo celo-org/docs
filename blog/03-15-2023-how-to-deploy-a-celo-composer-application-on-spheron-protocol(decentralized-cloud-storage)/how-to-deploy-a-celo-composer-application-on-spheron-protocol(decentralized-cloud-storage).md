@@ -58,24 +58,24 @@ npx @celo/celo-composer create
 
 2. Select *React* framework(NextJS)
 
-![Screenshot from 2023-02-05 20-06-28.png](./images/Screenshot_from_2023-02-05_20-06-28.png)
+![image](images/Screenshot_from_2023-02-05_20-06-28.png)
 
 3. Select *react-celo* as the web3 library
 
-![Screenshot from 2023-02-05 20-06-40.png](./images/Screenshot_from_2023-02-05_20-06-40.png)
+![image](images/Screenshot_from_2023-02-05_20-06-40.png)
 
 4. Select *none* for the smart contract framework since we’ll be working with the 0x Protocol API.
 
-![Screenshot from 2023-02-05 20-06-48.png](./images/Screenshot_from_2023-02-05_20-06-48.png)
+![image](images/Screenshot_from_2023-02-05_20-06-48.png)
 
 5. Select *No* for subgraph
     
-![Screenshot from 2023-02-05 20-06-56.png](./images/Screenshot_from_2023-02-05_20-06-56.png)
+![image](images/Screenshot_from_2023-02-05_20-06-56.png)
     
 
 6. Give a name to your project and you are done.
 
-![Screenshot from 2023-02-05 20-08-54.png](./images/Screenshot_from_2023-02-05_20-08-54.png)
+![image](images/Screenshot_from_2023-02-05_20-08-54.png)
 
 Launch the app in your code editor then install the dependencies required in the project. In the root directory, run 
 
@@ -94,19 +94,19 @@ npm install
 
 ### **Navigate to your repositories**
 
-![image1.jpg ](./images/image_1.jpg)
+![image](images/image_1.jpg)
 
 ### **Give the repository a name.**
 
-![image4.jpg](./images/image_4.jpg)
+![image](images/image_4.jpg)
 
 ### **Click on create repository or press enter.**
 
-![image3.jpg](./images/image_3.jpg)
+![image](images/image_3.jpg)
 
 ### **Follow the guide to upload your project on github**
 
-![image2.jpg](./images/image_2.jpg)
+![image](images/image_2.jpg)
 
 ---
 
@@ -119,68 +119,68 @@ npm install
 
 ### **Click "Deploy Now”**
 
-![image17.jpg](./images/image17.jpg)
+![image](images/image17.jpg)
 
 
 
 ### **Click "Sign Up”**
 
-![image16.jpg](./images/image16.jpg)
+![image](images/image16.jpg)
 
 
 ### **Click "Continue with GitHub”**
 
-![image13.jpg](./images/image13.jpg)
+![image](images/image13.jpg)
 
 
 ### **Select an organisation of your choice.**
 
-![image12.jpg](./images/image12.jpg)
+![image](images/image12.jpg)
 
 
 ### **Click "New Project”**
 
-![image8.jpg](./images/image8.jpg)
+![image](images/image8.jpg)
 
 
 ### **Click "Github”**
 
-![image1.jpg](./images/image1.jpg)
+![image](images/image1.jpg)
 
 
 ### **Pick the github account.**
 
-![image6.jpg](./images/image6.jpg)
+![image](images/image6.jpg)
 
 
 ### **Click the "Search repository" field and search the repository that you want to deploy.**
 
-![image11.jpg](./images/image11.jpg)
+![image](images/image11.jpg)
 
 
 ### **Select "Filecoin" or "IPFS”**
 
-![image14.jpg](./images/image14.jpg)
+![image](images/image14.jpg)
 
 
 ### **Input the directory with react application which is "packages/react-app”**
 
-![image2.jpg](./images/image2.jpg)
+![image](images/image2.jpg)
 
 
-### **Select NextJS.**
+### **Pick the Javascript framework i.e NextJS.**
 
-![image7.jpg](./images/image7.jpg)
+![image](images/image7.jpg)
 
 
 ### **Click "Deploy”**
 
-![image3.jpg](./images/image3.jpg)
+![image](images/image3.jpg)
 
 
 ### **Check the logs for the installation process.**
 
-![image9.jpg](./images/image9.jpg)
+![image](images/image9.jpg)
 
 
 ---
@@ -189,17 +189,17 @@ npm install
 
 ### **Click [celosage-spheron-dapp-c0ebae.spheron.app](celosage-spheron-dapp-c0ebae.spheron.app) to view your deployed site**
 
-![image10.jpg](./images/image10.jpg)
+![image](images/image10.jpg)
 
 
 ### **Click "Connect”**
 
-![image5.jpg](./images/image5.jpg)
+![image](images/image5.jpg)
 
 
 ### **Click "MetaMask” or any other wallet of your choice.**
 
-![image4.jpg](./images/image4.jpg)
+![image4](images/image4.jpg)
 
 
 ---
