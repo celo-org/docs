@@ -113,7 +113,7 @@ npm install
 
 ## Deploying the App on Spheron
 
-### Navigate to [https://spheron.network/](https://spheron.network/)
+- Navigate to [https://spheron.network/](https://spheron.network/)
 
 
 
