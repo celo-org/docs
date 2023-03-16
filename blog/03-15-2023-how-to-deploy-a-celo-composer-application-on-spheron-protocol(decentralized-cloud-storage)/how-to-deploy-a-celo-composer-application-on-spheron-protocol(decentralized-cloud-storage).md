@@ -100,7 +100,7 @@ npm install
 
 ![image](images/image_4.jpg)
 
-### **Click on create repository or press enter.**
+### Click on create repository or press enter.
 
 ![image](images/image_3.jpg)
 
