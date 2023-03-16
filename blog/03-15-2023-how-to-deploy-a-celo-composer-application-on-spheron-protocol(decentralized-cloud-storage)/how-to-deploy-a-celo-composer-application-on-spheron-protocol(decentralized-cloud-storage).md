@@ -92,19 +92,19 @@ npm install
 ## Upload Project to Github
 
 
-### **Navigate to your repositories**
+- **Navigate to your repositories**
 
 ![image](images/image_1.jpg)
 
-### **Give the repository a name.**
+- **Give the repository a name.**
 
 ![image](images/image_4.jpg)
 
-### **Click on create repository or press enter.**
+- **Click on create repository or press enter.**
 
 ![image](images/image_3.jpg)
 
-### **Follow the guide to upload your project on github**
+- **Follow the guide to upload your project on github**
 
 ![image](images/image_2.jpg)
 
@@ -113,72 +113,71 @@ npm install
 
 ## Deploying the App on Spheron
 
-### Navigate to [https://spheron.network/](https://spheron.network/)
+- **Navigate to [https://spheron.network/](https://spheron.network/)**
 
 
 
-### **Click "Deploy Now”**
+- **Click "Deploy Now”**
 
 ![image](images/image17.jpg)
 
 
-
-### **Click "Sign Up”**
+- **Click "Sign Up”**
 
 ![image](images/image16.jpg)
 
 
-### **Click "Continue with GitHub”**
+- **Click "Continue with GitHub”**
 
 ![image](images/image13.jpg)
 
 
-### **Select an organisation of your choice.**
+- **Select an organisation of your choice.**
 
 ![image](images/image12.jpg)
 
 
-### **Click "New Project”**
+- **Click "New Project”**
 
 ![image](images/image8.jpg)
 
 
-### **Click "Github”**
+- **Click "Github”**
 
 ![image](images/image1.jpg)
 
 
-### **Pick the github account.**
+- **Pick the github account.**
 
 ![image](images/image6.jpg)
 
 
-### **Click the "Search repository" field and search the repository that you want to deploy.**
+- **Click the "Search repository" field and search the repository that you want to deploy.**
 
 ![image](images/image11.jpg)
 
 
-### **Select "Filecoin" or "IPFS”**
+- **Select "Filecoin" or "IPFS”**
 
 ![image](images/image14.jpg)
 
 
-### **Input the directory with react application which is "packages/react-app”**
+- **Input the directory with react application which is "packages/react-app”**
 
 ![image](images/image2.jpg)
 
 
-### **Pick the Javascript framework i.e NextJS.**
+- **Pick the Javascript framework i.e NextJS.**
 
 ![image](images/image7.jpg)
 
 
-### **Click "Deploy”**
+- **Click "Deploy”**
 
 ![image](images/image3.jpg)
 
 
-### **Check the logs for the installation process.**
+- **Check the logs for the installation process.**
 
 ![image](images/image9.jpg)
 
@@ -187,17 +186,17 @@ npm install
 
 ## Testing the App
 
-### **Click [celosage-spheron-dapp-c0ebae.spheron.app](celosage-spheron-dapp-c0ebae.spheron.app) to view your deployed site**
+- **Click [celosage-spheron-dapp-c0ebae.spheron.app](celosage-spheron-dapp-c0ebae.spheron.app) to view your deployed site**
 
 ![image](images/image10.jpg)
 
 
-### **Click "Connect”**
+- **Click "Connect”**
 
 ![image](images/image5.jpg)
 
 
-### **Click "MetaMask” or any other wallet of your choice.**
+- **Click "MetaMask” or any other wallet of your choice.**
 
 ![image4](images/image4.jpg)
 
@@ -208,7 +207,7 @@ npm install
 
 With the assistance of Spheron protocol, you have the capability to continue developing your application, and once you push your changes to GitHub, they are automatically deployed through your deployed link. This is made possible by the built-in CI/CD workflow.
 
-###  **Why choose Spheron Protocol**
+**Why choose Spheron Protocol**
 
 Here are reasons why you should use spheron to deploy your decentralised app: 
 
