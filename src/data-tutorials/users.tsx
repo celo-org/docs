@@ -2087,7 +2087,7 @@ const Users: User[] = [
     title: 'Building an NFT Marketplace on Celo with Python',
     description: 'This tutorial provides a guide on how to use Python to build an NFT marketplace on the Celo blockchain',
     preview: require('./showcase/intermediate/building-an-nft-marketplace-on-celo-with-python.png'),
-    website: 'blog/tutorials/building-an-nfy-marketplace-on-celo-with-python',
+    website: 'blog/tutorials/building-an-nft-marketplace-on-celo-with-python',
     tags: ['celosage', 'nft', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
   },
   /*
