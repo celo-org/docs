@@ -73,7 +73,7 @@ brownie init
 
 This command generates some folders which look like this:
 
-+![Screenshot](https://user-images.githubusercontent.com/104994589/225643776-acffdc8e-371d-4668-8799-601a51e55c8e.png)
+![Screenshot](https://user-images.githubusercontent.com/104994589/225643776-acffdc8e-371d-4668-8799-601a51e55c8e.png)
 
 After initializing brownie into our project, in your root directory, create two files called .env and brownie-config.yaml. The .env file is used to store environment variables that shouldn’t be exposed to the public such as our private key, mnemonic phrase, etc, while brownie-config.yaml is used to configure brownie in our project.
 
@@ -119,7 +119,7 @@ You can see the list of networks that have been added to our brownie project:
 brownie networks list
 ```
 
-+![Screenshot](https://user-images.githubusercontent.com/104994589/225643608-6a3645a6-f0b7-4588-b975-219c8e950fb3.png)
+![Screenshot](https://user-images.githubusercontent.com/104994589/225643608-6a3645a6-f0b7-4588-b975-219c8e950fb3.png)
 
 ### Implementing the Smart Contract
 
@@ -251,7 +251,7 @@ Next, we need to compile and deploy the contract on the Celo Testnet, Run the fo
 brownie compile
 ```
 
-<img width="1127" alt="Screenshot 2023-03-16 at 2 37 58 PM" src="https://user-images.githubusercontent.com/104994589/225643393-810bd489-c110-47cd-95b3-9028862f49d6.png">
+![Screenshot](https://user-images.githubusercontent.com/104994589/225643393-810bd489-c110-47cd-95b3-9028862f49d6.png)
 
 To deploy the smart contract on Celo, create a new file called deploy.py in the scripts directory of your project.
 
@@ -282,7 +282,7 @@ def main():
 
 The deploy_lottery function gets the account we would use to deploy the contract
 
-[Screenshot](https://user-images.githubusercontent.com/104994589/225643259-30040976-23a9-41b3-a03e-ddf008850229.png)
+![Screenshot](https://user-images.githubusercontent.com/104994589/225643259-30040976-23a9-41b3-a03e-ddf008850229.png)
 
 ## Conclusion
 
