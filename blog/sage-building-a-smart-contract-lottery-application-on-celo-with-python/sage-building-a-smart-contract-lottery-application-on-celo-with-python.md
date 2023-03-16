@@ -19,14 +19,14 @@ slug: /tutorials/building-a-smart-contract-lottery-application-on-celo-with-pyth
 Lottery applications are one of the major applications of blockchain technology since the early days of Ethereum. Smart contracts enable the operation of secure and transparent lotteries that cannot be manipulated by centralized parties. Furthermore, they can automate many lottery-related processes, such as ticket sales, winner selection, and prize distribution.
 In this tutorial, we will learn how to to build a lottery smart contract and deploy it on the Celo blockchain with Python using brownie framework.
 
-## Prerequisites[](https://docs.celo.org/community/celo-sage/tutorial-structure#prerequisites)
+## Prerequisites
 
 To understand this tutorial, you must be familiar with:
 
 - Building Smart contracts
 - The Python Programming Language
 
-## Requirements[](https://docs.celo.org/community/celo-sage/tutorial-structure#requirements)
+## Requirements
 
  You should have the following installed on your computer to follow along:
 
@@ -73,7 +73,7 @@ brownie init
 
 This command generates some folders which look like this:
 
-<img width="271" alt="Screenshot 2023-03-16 at 2 13 03 PM" src="https://user-images.githubusercontent.com/104994589/225643776-acffdc8e-371d-4668-8799-601a51e55c8e.png">
++![Screenshot](https://user-images.githubusercontent.com/104994589/225643776-acffdc8e-371d-4668-8799-601a51e55c8e.png)
 
 After initializing brownie into our project, in your root directory, create two files called .env and brownie-config.yaml. The .env file is used to store environment variables that shouldn’t be exposed to the public such as our private key, mnemonic phrase, etc, while brownie-config.yaml is used to configure brownie in our project.
 
@@ -119,7 +119,7 @@ You can see the list of networks that have been added to our brownie project:
 brownie networks list
 ```
 
-<img width="1127" alt="Screenshot 2023-03-16 at 2 15 50 PM" src="https://user-images.githubusercontent.com/104994589/225643608-6a3645a6-f0b7-4588-b975-219c8e950fb3.png">
++![Screenshot](https://user-images.githubusercontent.com/104994589/225643608-6a3645a6-f0b7-4588-b975-219c8e950fb3.png)
 
 ### Implementing the Smart Contract
 
@@ -182,7 +182,7 @@ contract Lottery {
 Let’s go through the code step by step:
 
 ```solidity
-		address public manager;
+	address public manager;
     address payable[] public players;
     uint public minimumBet;
     uint public numTickets;
@@ -288,7 +288,7 @@ Deploy the contract:
 
 ```
 
-<img width="1127" alt="Screenshot 2023-03-16 at 2 57 57 PM" src="https://user-images.githubusercontent.com/104994589/225643259-30040976-23a9-41b3-a03e-ddf008850229.png">
+[Screenshot](https://user-images.githubusercontent.com/104994589/225643259-30040976-23a9-41b3-a03e-ddf008850229.png)
 
 ## Conclusion
 
