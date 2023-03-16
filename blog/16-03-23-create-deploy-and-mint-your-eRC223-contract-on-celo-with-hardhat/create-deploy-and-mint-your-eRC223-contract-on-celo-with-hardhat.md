@@ -14,11 +14,13 @@ slug: /tutorials/create-deploy-and-mint-your-eRC223-contract-on-celo-with-hardha
 ![ERC223-token-contract](https://user-images.githubusercontent.com/69092079/225619279-62950fe2-6aca-4f1c-ae57-31ad270ec809.png)
 
 ## Introduction​
+
 In the current state of web3 and its approach to decentralization, NFTs are now to the technical and non-technical web3 enthusiasts community. Understanding the different types of NFTs available and when they can use them would be a much more innovative way to implement these tokens in the real world.
 
 In this tutorial, you’ll learn about a new guy in play, the ERC223 token standard. This tutorial will explain in depth everything you need to know about the ERC223 token standard, how to create, Deploy and Mint them on the Celo blockchain how to interact with these tokens on the blockchain.
 
 ## Prerequisites​
+
 Before diving into creating, deploying, and minting ERC-223 tokens on Celo, it is essential to understand the prerequisites for the process. This includes having a basic understanding of the following. 
 
 * **Hardhat**: Hardhat is a development environment for building and testing smart contract applications on the Ethereum blockchain. It provides a suite of powerful and flexible tools and services that make developing, testing, and deploying smart contracts easier.
@@ -32,6 +34,7 @@ Before diving into creating, deploying, and minting ERC-223 tokens on Celo, it i
 
 
 ## Understanding the ERC223 Token Standard
+
 The ERC223 is a token standard for the Ethereum blockchain proposed in 2017 to improve the popular ERC20 token standard. One interesting fact about ERC223 is that it addresses a potential security issue in ERC20 that can result in the loss of tokens.
 
 In ERC20, if tokens are accidentally sent to a smart contract that does not support them, they can become irretrievable. This is because the contract does not have a way to handle incoming token transactions, so the tokens get stuck in the contract and cannot be returned to the sender. This problem is known as the "missing token" problem.
@@ -68,6 +71,7 @@ According to the ERC223 token standard contract creators, the basic motivation b
 10. Voting tokens: ERC223 tokens can be used for voting in decentralized autonomous organizations (DAO), giving token holders a say in the decision-making process.
 
 ## Setting up Hardhat
+
 To commence the minting of your contract, it is necessary to configure Hardhat as the development environment for Ethereum. In the forthcoming steps, you will establish a Hardhat workspace through npm or any other preferred Package Manager.
 
 1. Create a new workspace directory as the main directory in your preferred code editor.
@@ -449,10 +453,12 @@ runMain();
 
 
 ## Conclusion​
+
 Overall, creating and deploying an ERC223 smart contract on Celo is an exciting opportunity for developers to explore the potential of decentralized finance (DeFi) and create innovative new applications that can revolutionize the financial landscape. As the blockchain industry continues to grow and evolve, the use of smart contracts on platforms like Celo will become increasingly important, and developers who understand how to leverage this technology will be well-positioned for success in the future.
 
 
 ## Next Steps​
+
 Here are some other NFT-related tutorial articles you might be interested in reading about:
 
 * [Build an NFT collection on Celo](https://www.celosage.com/how-to-quickly-build-an-nft-collection-on-celo/)
@@ -461,10 +467,12 @@ Here are some other NFT-related tutorial articles you might be interested in rea
 * [Redeploying your Ethereum Dapp on Celo](https://www.celosage.com/how-to-re-deploy-your-ethereum-dapp-to-celo-with-hardhat/)
 
 ## About the Author​
+
 Mayowa Julius Ogungbola
 Is a Software Engineer and technical Writer always open to working on new Ideas. I enjoy working on [Github](https://github.com/Julius170/), and you can also find out what I [tweet](https://twitter.com/JuliusAyoola1) about and connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/).
 
 ## References​
+
 Here are links to relevant details about the ERC223 token standard:
 
 * [The ERC2233 contract](https://github.com/Dexaran/ERC223-token-standard/)
