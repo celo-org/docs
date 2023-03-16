@@ -24,6 +24,7 @@ slug: /how-to-deploy-a-celo-composer-application-on-spheron-protocol
   - [Deploying the App on Spheron](#deploying-the-app-on-spheron)
   - [Testing the App](#testing-the-app)
   - [Conclusion](#conclusion)
+  - [About the Author](#about-the-author)
   - [Resources](#resources)
 
 ## Introduction
@@ -237,6 +238,14 @@ Here are reasons why you should use spheron to deploy your decentralised app:
 - **Community support:** Spheron Protocol has an active and growing community of developers, users, and enthusiasts who are committed to building a decentralized data ecosystem. This community provides support, feedback, and resources to help developers build and deploy their decentralized apps on the platform.
 
 - **Use cases:** Spheron Protocol has a wide range of potential use cases in various industries such as healthcare, finance, supply chain management, and more. By deploying your decentralized app on Spheron Protocol, you can tap into this growing market and leverage the benefits of blockchain technology.
+
+
+## About the Author
+I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enthusiast. I have a strong passion for creating user-centered designs that are not only aesthetically pleasing but also efficient and intuitive to use. Over the years, I have honed my skills in developing web applications that are robust, scalable, and secure, thanks to my experience in full-stack development.
+
+As a blockchain enthusiast, I am constantly exploring and learning about the potential of this technology and how it can be applied in various industries. I believe that blockchain has the potential to revolutionize the way we do things, from finance to healthcare and beyond. Its ability to provide decentralized, secure, and transparent systems has the potential to bring about significant changes that will benefit society.
+
+Fun fact about me, i am into archeoastronomy.
 
 ## Resources
 
