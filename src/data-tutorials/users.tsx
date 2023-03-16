@@ -971,7 +971,7 @@ const Users: User[] = [
     description: 'In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.',
     preview: require(''),
     website: '/blog/tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol',
-    tags: ["intermediate", "celo-composer", "dapp", "spheron-protocol"],
+    tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy"],
   },
   {
     title: 'Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo',
