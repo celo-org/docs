@@ -122,7 +122,7 @@ npm install
 ![image](images/image17.jpg)
 
 
-- **Click "Sign Up”**
+- **Click "Sign Up” button**
 
 ![image](images/image16.jpg)
 
