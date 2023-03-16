@@ -11,8 +11,6 @@ hide_table_of_contents: false
 slug: /tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1
 ---
 
-## Developing a Crowdfunding Platform for Social Causes on Celo Blockchain - Part 1
-
 ![header](../../src/data-tutorials/showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png)
 
 ## 🌱 Introduction
@@ -336,38 +334,50 @@ contract Fundraiser is Ownable {
 - The contract includes a license declaration using SPDX, which is a standardized way of identifying open source licenses in source code. In this case, the contract is licensed under the MIT license.
 
 - Function `setBeneficiary(address payable _beneficiary)`
+
 This function is used to set the new beneficiary of the fundraiser. Only the owner of the contract can call this function.
 
 - Function `getImageUrls()`
+
 This function is used to get the URLs of the images associated with the fundraiser.
 
 - Function `getCategories()`
+
 This function is used to get the categories associated with the fundraiser.
 
 - Function `myDonationsCount()`
+
 This function is used to get the count of donations made by the caller of the function.
 
 - Function `allDonationsCount()`
+
 This function is used to get the count of all donations made to the fundraiser.
 
 - Function `donate()`
+
 This function is used to make a donation to the fundraiser. It creates a Donation struct to store the value of the donation and the timestamp of the donation. It also creates an allDonation struct to store the address of the donor, the value of the donation, and the timestamp of the donation. The Donation struct is stored in the _donations mapping with the address of the donor as the key. The allDonation struct is stored in the _allDonations mapping with the ID of the fundraiser as the key. The value of the donation is added to the totalDonations variable, and the donationsCount and totalDonationsCount variables are incremented. Finally, an event DonationReceived is emitted with the address of the donor and the value of the donation as the parameters.
 
 - Function `myDonations()`
+
 This function is used to get the values and timestamps of all the donations made by the caller of the function.
 
 - Function `allDonations()`
+
 This function is used to get the addresses, values, and timestamps of all the donations made to the fundraiser.
 
 - Function `withdraw()`
+
 This function is used to withdraw the balance of the contract to the beneficiary. Only the owner of the contract can call this function.
 
 - Function `receive()`
+
 This function is called when ether is sent to the contract without a function call. It increments the totalDonations and donationsCount variables with the value of the donation.
 
 ## Conclusion
 In this tutorial, we have developed a crowdfunding platform for social causes on the Celo blockchain. We used Truffle and React to build the smart contract and the front-end of the platform. We also deployed the smart contract to the Celo blockchain using Truffle.
 By using Celo, we can ensure that the crowdfunding platform is transparent, secure, and accessible to everyone, regardless of their location or financial status. We hope that this tutorial has been helpful in understanding how to develop decentralized applications on the Celo blockchain.
+
+**In conclusion, Part 1 of this tutorial has covered the Solidity code for developing a crowdfunding platform for social causes on the Celo blockchain. Stay tuned for Part 2, where we will dive into the frontend development of the platform.**
 
 ## About Author
 
