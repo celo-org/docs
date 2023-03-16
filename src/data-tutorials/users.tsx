@@ -969,7 +969,7 @@ const Users: User[] = [
    {
     title: 'How to deploy a celo composer application on spheron protocol(decentralized cloud storage).',
     description: 'In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.',
-    preview: require(''),
+    preview: require('./showcase/intermediate/how_to_deploy_a_Celo_Composer_application_on_Spherion_protocol.png'),
     website: '/blog/tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol',
     tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy"],
   },

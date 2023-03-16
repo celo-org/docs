@@ -12,20 +12,6 @@ slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 
 
 
-## Table of Content
-- [How to deploy a celo composer application on spheron protocol(decentralized cloud storage).](#how-to-deploy-a-celo-composer-application-on-spheron-protocol)
-  - [Introduction](#introduction)
-  - [Table of Content](#table-of-content)
-  - [Prerequisites](#prerequisites​)
-  - [Celo Composer](#celo-composer)
-  - [Spheron Protocol](#spheron-protocol)
-  - [Getting Started](#getting-started)
-  - [Upload Project to Github](#bootstrap-the-application)
-  - [Deploying the App on Spheron](#deploying-the-app-on-spheron)
-  - [Testing the App](#testing-the-app)
-  - [Conclusion](#conclusion)
-  - [About the Author](#about-the-author)
-  - [Resources](#resources)
 
 ## Introduction
 
