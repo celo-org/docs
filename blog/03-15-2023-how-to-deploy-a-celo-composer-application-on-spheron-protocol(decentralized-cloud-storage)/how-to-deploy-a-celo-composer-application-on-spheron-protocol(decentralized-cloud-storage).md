@@ -219,6 +219,8 @@ npm install
 
 ## Conclusion
 
+With the assistance of Spheron protocol, you have the capability to continue developing your application, and once you push your changes to GitHub, they are automatically deployed through your deployed link. This is made possible by the built-in CI/CD workflow.
+
 ###  **Why choose Spheron Protocol**
 
 Here are reasons why you should use spheron to deploy your decentralised app: 
