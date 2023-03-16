@@ -2083,6 +2083,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+   {
+    title: 'Building a Smart Contract Lottery Application on Celo with Python',
+    description: 'This tutorial provides a guide on how to use Python to build a smart contract lottery application on the Celo blockchain',
+    preview: require('./showcase/intermediate/building-a-smart-contract-lottery-application-on-celo-with-python.png'),
+    website: 'blog/tutorials/building-a-smart-contract-lottery-application-on-celo-with-python',
+    tags: ['celosage', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
