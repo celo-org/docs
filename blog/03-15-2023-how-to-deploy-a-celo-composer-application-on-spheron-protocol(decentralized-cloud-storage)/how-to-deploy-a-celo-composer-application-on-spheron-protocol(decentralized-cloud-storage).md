@@ -117,7 +117,7 @@ npm install
 
 
 
-### **Click "Deploy Now”**
+- Click "Deploy Now"
 
 ![image](images/image17.jpg)
 
