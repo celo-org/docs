@@ -4,7 +4,7 @@ description: In this tutorial, you will learn how to deploy a dapp built using c
 authors:
   - name: ✍️ Dennis Kimathi
     url: https://github.com/DennohKim
-  - image_url: https://avatars.githubusercontent.com/u/63696529?v=4
+    image_url: https://avatars.githubusercontent.com/u/63696529?v=4
 tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy"]
 hide_table_of_contents: true
 slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
