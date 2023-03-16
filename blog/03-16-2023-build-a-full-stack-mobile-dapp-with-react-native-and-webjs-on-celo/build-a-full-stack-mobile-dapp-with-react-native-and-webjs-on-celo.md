@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo
 ---
 
-![header](/images/header.png)
+![header](../../src/data-tutorials/showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png)
 ## Introduction
 
 As the importance of mobile Dapps grows, it's more important than ever to have a strong understanding of how to build and deploy them. This tutorial will provide a step-by-step guide to building a fully functional mobile Dapp on the Celo platform, making it an invaluable resource for any developer looking to get started. This article will demonstrate how to use React Native and Web.JS to build a full-stack mobile Dapp that interacts with a Solidity chat smart contract created with Remix. The messages will be stored on the smart contract, and they will be made available to authenticated users. Users' authentication is done using the Celo wallet address. Every eye loves seeing beautiful pages, which we will create together using TailwindCSS - “rapidly build modern websites without ever leaving your HTML. A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup”. Since this is a full-stack application, it is essential to make clear which tools and stacks we are focusing on today”. It is also worth noting that the code of this tutorial can run in a cross-platform environment, but the tutorial will be using Android as an example. Finally, we want to focus more on building on Celo. We pay less attention to stack usage and focus more on Celo integration. For that reason, we will be exploring the react-native-gifted-chat
