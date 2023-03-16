@@ -108,79 +108,79 @@ npm install
 ![image2.jpg](./images/image_2.jpg)
 
 ---
-<br>
+
 
 ## Deploying the App on Spheron
 
 ### Navigate to [https://spheron.network/](https://spheron.network/)
 
-<br>
+
 
 ### **Click "Deploy Now”**
 
 ![image17.jpg](./images/image17.jpg)
 
-<br>
+
 
 ### **Click "Sign Up”**
 
 ![image16.jpg](./images/image16.jpg)
-<br>
+
 
 ### **Click "Continue with GitHub”**
 
 ![image13.jpg](./images/image13.jpg)
-<br>
+
 
 ### **Select an organisation of your choice.**
 
 ![image12.jpg](./images/image12.jpg)
-<br>
+
 
 ### **Click "New Project”**
 
 ![image8.jpg](./images/image8.jpg)
-<br>
+
 
 ### **Click "Github”**
 
 ![image1.jpg](./images/image1.jpg)
-<br>
+
 
 ### **Pick the github account.**
 
 ![image6.jpg](./images/image6.jpg)
-<br>
+
 
 ### **Click the "Search repository" field and search the repository that you want to deploy.**
 
 ![image11.jpg](./images/image11.jpg)
-<br>
+
 
 ### **Select "Filecoin" or "IPFS”**
 
 ![image14.jpg](./images/image14.jpg)
-<br>
+
 
 ### **Input the directory with react application which is "packages/react-app”**
 
 ![image2.jpg](./images/image2.jpg)
-<br>
+
 
 ### **Select NextJS.**
 
 ![image7.jpg](./images/image7.jpg)
-<br>
+
 
 ### **Click "Deploy”**
 
 ![image3.jpg](./images/image3.jpg)
-<br>
+
 
 ### **Check the logs for the installation process.**
 
 ![image9.jpg](./images/image9.jpg)
-<br>
+
 
 ---
 
@@ -189,17 +189,17 @@ npm install
 ### **Click [celosage-spheron-dapp-c0ebae.spheron.app](celosage-spheron-dapp-c0ebae.spheron.app) to view your deployed site**
 
 ![image10.jpg](./images/image10.jpg)
-<br>
+
 
 ### **Click "Connect”**
 
 ![image5.jpg](./images/image5.jpg)
-<br>
+
 
 ### **Click "MetaMask” or any other wallet of your choice.**
 
 ![image4.jpg](./images/image4.jpg)
-<br>
+
 
 ---
 
