@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 ---
 
-
+![header](../../src/data-tutorials/showcase/intermediate/How_to_deploy_a_Celo_Composer_application_on_Spheron_protocol.png)
 
 
 ## Introduction
@@ -45,6 +45,7 @@ They provide a frictionless developer experience to take care of the hard things
 
 
 Let's start building:
+
 ---
 
 ## Getting Started
@@ -95,7 +96,7 @@ npm install
 
 ![image1.jpg ](./images/image_1.jpg)
 
-### **Input your repository name.**
+### **Give the repository a name.**
 
 ![image4.jpg](./images/image_4.jpg)
 
