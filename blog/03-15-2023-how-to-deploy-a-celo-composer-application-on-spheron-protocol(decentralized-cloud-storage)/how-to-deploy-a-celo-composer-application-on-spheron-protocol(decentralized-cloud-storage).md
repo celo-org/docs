@@ -96,7 +96,7 @@ npm install
 
 ![image](images/image_1.jpg)
 
-### **Give the repository a name.**
+### Give the repository a name.
 
 ![image](images/image_4.jpg)
 
