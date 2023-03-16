@@ -221,9 +221,9 @@ To deploy, go to the deploy folder, open the 00-deploy.js file, and you will see
 
 Copy the 00-deploy.js file and paste it to a new file called 01-deploy-CeloMarketPlace.js.
 
-Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the 00-deploy file first, and then run the 01-deploy-nftauction.js file next.
+Your hardhat-deploy plugin deploys your contracts serially using the naming of the file. So, when you run the deploy command, it will run the 00-deploy file first, and then run the 01-deploy-CeloMarketPlace.js file next.
 
-Now open the 01-deploy-NFTAuction.js file.
+Now open the 01-deploy-CeloMarketPlace.js file.
 
 Your code should look like this
 
