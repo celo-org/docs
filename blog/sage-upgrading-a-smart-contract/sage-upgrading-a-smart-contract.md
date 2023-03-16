@@ -51,7 +51,16 @@ The proxy contract approach will be used to demonstrate how to implement an upgr
 
 The first step is to draft the proxy contract, which will serve as an intermediary between the client and the implementation contract. The proxy contract should keep a reference to the current implementation contract and delegate all method calls to it. 
 
+Create a new directory and put all the code examples in this tutorial in it.
+
+```bash
+mkdir upgrading-smart-contracts
+cd upgrading-smart-contracts
+```
+
 Here is an example code:
+
+Create a file called CounterProxy.sol and put the following example code in it:
 
 CounterProxy.sol
 
