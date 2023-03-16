@@ -5,15 +5,15 @@ authors:
   - name: ✍️ Dennis Kimathi
 url: https://github.com/DennohKim
 image_url: https://avatars.githubusercontent.com/u/63696529?v=4
-tags: [beginner, celo-composer, dapp, spheron-protocol]
-hide_table_of_contents: false
-slug: /how-to-deploy-a-celo-composer-application-on-spheron-protocol
+tags: [intermediate, celo-composer, dapp, spheron-protocol]
+hide_table_of_contents: true
+slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 ---
 
 
 
 ## Table of Content
-- [How to deploy a celo composer application on spheron protocol(decentralized cloud storage).](#build-a-simple-token-swap-app-using-celo-composer-and-0x-protocol)
+- [How to deploy a celo composer application on spheron protocol(decentralized cloud storage).](#how-to-deploy-a-celo-composer-application-on-spheron-protocol)
   - [Introduction](#introduction)
   - [Table of Content](#table-of-content)
   - [Prerequisites](#prerequisites​)
