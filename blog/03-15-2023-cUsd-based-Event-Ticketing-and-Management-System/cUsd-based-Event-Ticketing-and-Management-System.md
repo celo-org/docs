@@ -221,7 +221,7 @@ pragma solidity >=0.7.0 <0.9.0;
 
 ```
 
-The code begins with two directives that play a significant role. The first directive specifies the open-source license that governs the usage of the code, while the second one indicates the range of Solidity versions that are compatible with the code. Using these directives helps ensure that the code is appropriately licensed and can be compiled using the intended Solidity version range.
+We start with this two directives that play a significant role. The first directive specifies the open-source license that governs the usage of the code, while the second one indicates the range of Solidity versions that are compatible with the code. Using these directives helps ensure that the code is appropriately licensed and can be compiled using the intended Solidity version range.
 
 ```solidity
 interface IERC20Token {
@@ -277,7 +277,7 @@ contract Evently {
     }
 ```
 
-The code snippet above defines a smart contract called `Evently` that initializes a private variable named `eventsLength` to zero. The contract also has an internal address variable `cUsdTokenAddress`, which is assigned a specific address on the Celo blockchain.
+We begin by declaring the name of our contract called `Evently` that initializes a private variable named `eventsLength` to zero. The contract also has an internal address variable `cUsdTokenAddress`, which is assigned a specific address on the Celo blockchain.
 
 Furthermore, we declare a struct named `Event`, which has several properties such as `owner`, `image`, `theme`, `location`, `follow`, `price`, `sale`, and a mapping named `hasFollowed`. The `owner` property is the address of the event owner, while the `image`, `theme`, and `location` properties store details such as image URL, theme, and location of the event. The `follow` property counts the number of people following the event, while the `price` property holds the price of the event ticket in cUSD. The "sale" property is a boolean flag indicating whether the event tickets are on sale or not. The `hasFollowed` mapping is used to track the addresses that have followed the event.
 
@@ -302,13 +302,13 @@ Furthermore, we declare a struct named `Event`, which has several properties suc
 
 ```
 
-Now we add our mappings and three modifiers. The `events` mapping is used to store events, where each event is identified by a unique index number. The `exists` mapping is used to keep track of whether an event with a particular index number exists or not.
+Now we add our mappings and three modifiers. The `events` mapping will be used to store events, where each event is identified by a unique index number. The `exists` mapping will be used to keep track of whether an event with a particular index number exists or not.
 
-The first modifier named `checkPrice` checks if the price of an event is greater than zero, and if not, it throws an error with a message stating that the price should be at least one wei.
+The first modifier named `checkPrice` help to check if the price of an event is greater than zero, and if not, it throws an error with a message stating that the price should be at least one wei.
 
-The second modifier named `checkStatus` checks if an event with a particular index number is currently on sale or not. If the event is not on sale, the modifier throws an error with a message stating that the event is not available for purchase.
+The second modifier named `checkStatus` help to check if an event with a particular index number is currently on sale or not on sale. If the event is not on sale, the modifier will throw an error with a message stating that the event is not available for purchase.
 
-The third modifier named `exist` checks if an event with a particular index number exists in the `events` mapping or not. If the event does not exist, the modifier throws an error with a message stating that the queried event does not exist.
+The third modifier named `exist` also help to check if an event with a particular index number exists in the `events` mapping or not. If the event does not exist, the modifier throws an error with a message stating that the queried event does not exist.
 
 ```solidity
     function getEvent(uint _index)
@@ -337,9 +337,9 @@ The third modifier named `exist` checks if an event with a particular index numb
 
 ```
 
-The `getEvent` function is a public and view function in our smart contract that takes an unsigned integer parameter called `_index` representing the index of an event to retrieve. This function does not change the state of the contract and can be called externally by any account.
+The `getEvent` function is a public and view function in our contract that takes an unsigned integer parameter called `_index` representing the index of an event to retrieve. This function does not change the state of the contract and can be called externally by any account.
 
-The function returns eight values, declared using tuple notation, that correspond to specific data associated with the event at the given index. These include the event owner's address, an image URL or IPFS hash, the event's theme or name, location, number of followers, price in cUsd, sale status, and whether the caller has followed the event or not.
+The function returns eight values, declared using tuple notation, that correspond to specific data associated with the event at the given index. These include the event owner's address, an image URL, the event's theme or name, location, number of followers, price in cUsd, sale status, and whether the caller has followed the event or not.
 
 To retrieve these values, the function accesses an array called `events` at the given index and retrieves the corresponding values. The events array is a data structure that stores information about each event, including its owner, image, theme, location, follow count, price, sale status, and a mapping of whether each account has followed the event or not.
 
@@ -394,9 +394,10 @@ Furthermore, we add the `createEvent` function that will be used to add events t
  
 Next, we add two functions that will help in creating and buying events. The `createEvent()` function lets the contract owner create an event by providing an `image URL`, `theme`, `location`, and `price`. The function works by first checking that the price is greater than zero and that the image URL, theme, and location are not empty. If the conditions are met, the function creates a new event and adds it to an events array.
 
-The `buyEvent()` function lets users buy an event from the events array by specifying the index of the event they want to purchase. Before executing, the function checks that the event exists and is available for purchase, and that the caller of the function is not already the owner of the event. If these conditions are met, the function transfers the event price from the caller to the event owner using the `transferFrom()` function. If the transfer succeeds, the function updates the event owner and marks the event as sold. If the transfer fails, the function throws an error.
+The `buyEvent()` function lets users buy an event from the events array by specifying the index of the event they want to purchase. Before executing, the function assist to check that the event exists and is available for purchase, and that the caller of the function is not already the owner of the event. If all these conditions are met, the function transfers the event price from the caller to the event owner using the `transferFrom()` function. If the transfer succeeds, the function updates the event owner and marks the event as sold. If the transfer fails, the function throws an error.
 
-Next, we add a function that will be used to `togglesale` and `changePrice`
+Next, we add a function that will be used to `togglesale` and `changePrice`.
+
 ```solidity
  /// @dev allows users to put an event back on sale or out of sale
     function toggleSale(uint _index) public exist(_index) {
@@ -416,9 +417,9 @@ Next, we add a function that will be used to `togglesale` and `changePrice`
 
 ```
 
-The first function, named `toggleSale`, takes one argument `_index` and allows users to put an event back on sale or out of sale. The function first checks whether the event exists by calling the exist modifier. Then, it verifies that the caller of the function is the owner of the event by comparing their addresses with msg.sender. If the owner is not the caller, the function throws an error message. Otherwise, it toggles the sale property of the event by negating its current value using the ! operator.
+The first function, named `toggleSale`, will take in one argument `_index` and will allow users to put an event back on sale or out of sale. The function first checks whether the event exists by calling the exist modifier. Then, it verifies that the caller of the function is the owner of the event by comparing their addresses with msg.sender. If the owner is not the caller, the function throws an error message. Otherwise, it toggles the sale property of the event by negating its current value using the ! operator.
 
-The second function, named `changePrice`, takes two arguments _index and _price and allows the owner of an event to change its price. Similar to the previous function, this function also first checks whether the event `exists`, and then it applies two modifiers, `checkPrice` and `checkStatus`, to ensure that the new price is valid and the event is not canceled. Then, it verifies that the caller of the function is the owner of the event. If not, the function throws an error message. Otherwise, it sets the sale property of the event to false to take it out of sale, and updates the price property of the event with the new price provided by the caller.
+Next we add another function named `changePrice`, this function takes two arguments `_index` and `_price` and allows the owner of an event to change its price. Similar to the previous function, this function also first checks whether the event `exists`, and then it applies two modifiers, `checkPrice` and `checkStatus`, to ensure that the new price is valid and the event is not canceled. Then, it verifies that the caller of the function is the owner of the event. If not, the function throws an error message. Otherwise, it sets the sale property of the event to false to take it out of sale, and updates the price property of the event with the new price provided by the caller.
 
 ```solidity
   function followEvent(uint _index) public exist(_index) {
@@ -448,15 +449,15 @@ The second function, named `changePrice`, takes two arguments _index and _price 
 
 Finally, we add this three functions, namely `followEvent`, `unfollowEvent`, and `getEventsLength`.
 
-The `followEvent` function takes an input parameter `_index`, which is an unsigned integer representing the index of an event in an array of events. This function is used to allow users to follow a specific event identified by the given index.
+The `followEvent`, this function takes an input parameter `_index`, which is an unsigned integer representing the index of an event in an array of events. This function is used to allow users to follow a specific event identified by the given index.
 
-The function first checks if the event exists at the given index by calling the exist modifier (not shown in the code snippet). If the event exists, it checks if the user has already followed the event by checking the value of the hasFollowed mapping associated with the event and the user's address. If the user has not followed the event, the function increments the follow counter associated with the event and updates the hasFollowed mapping to indicate that the user has followed the event.
+The function first checks if the event exists at the given index by calling the exist modifier (not shown in the code snippet). If the event exists, itthen check if the user has already followed the event by checking the value of the `hasFollowed` mapping associated with the event and the user's address. If the user has not followed the event, the function increments the follow counter associated with the event and updates the hasFollowed mapping to indicate that the user has followed the event.
 
 The `unfollowEvent` function takes an input parameter _index similar to followEvent and is used to allow users to unfollow a specific event identified by the given index.
 
 Similar to followEvent, the function first checks if the event exists at the given index and then checks if the user has already followed the event. If the user has followed the event, the function decrements the follow counter associated with the event and updates the hasFollowed mapping to indicate that the user has unfollowed the event.
 
-The `getEventsLength` function is a public view function that returns the total number of events currently stored in the contract's state variable eventsLength. This function does not modify the state of the contract and can be called by anyone without requiring any gas fees.
+The `getEventsLength` function. This is a public view function that returns the total number of events that is currently stored in the contract's state variable eventsLength. This function does not modify the state of the contract and can be called by anyone without requiring any gas fees.
 
 ## CONTRACT DEPLOYMENT
 
