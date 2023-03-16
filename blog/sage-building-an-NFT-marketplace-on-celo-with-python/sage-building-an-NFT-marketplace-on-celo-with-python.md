@@ -6,7 +6,7 @@ authors:
   - name: Israel Okunaya
     title: Product Manager, Technical Writer @Celo Foundation
     url: https://github.com/Southpaw0
-    image_url: https://user-images.githubusercontent.com/
+    image_url: https://user-images.githubusercontent.com/104994589/225652975-aed0c4de-027a-453a-b8fb-7cdc55e203cc.png
 tags: [celosage, celo, nft, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/building-an-nft-marketplace-on-celo-with-python
