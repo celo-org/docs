@@ -6,7 +6,7 @@ authors:
   - name: Israel Okunaya
     title: Product Manager, Technical Writer @Celo Foundation
     url: https://github.com/Southpaw0
-    image_url: https://user-images.githubusercontent.com/
+    image_url: https://user-images.githubusercontent.com/104994589/225657477-e6efa070-b0a0-4eb5-b509-178e5da9f39b.png
 tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/building-a-smart-contract-lottery-application-on-celo-with-python
