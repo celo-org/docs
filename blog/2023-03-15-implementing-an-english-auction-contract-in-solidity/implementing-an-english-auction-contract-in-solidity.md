@@ -1,6 +1,7 @@
 ---
 title: Implementing an English Auction Contract in Solidity
 description: An English auction is ideal for selling NFTs because it gives all potential buyers a fair chance at placing bids until only one bidder with the highest bid is left.
+authors:
   - name: Oyeniyi Abiola Peace
     title: Community Moderator, Celo
     url: https://github.com/iamoracle
