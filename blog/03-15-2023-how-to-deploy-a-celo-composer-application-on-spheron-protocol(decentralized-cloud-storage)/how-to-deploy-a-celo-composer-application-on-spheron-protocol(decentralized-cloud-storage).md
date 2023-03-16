@@ -104,7 +104,7 @@ npm install
 
 ![image](images/image_3.jpg)
 
-### **Follow the guide to upload your project on github**
+### Follow the guide to upload your project on github
 
 ![image](images/image_2.jpg)
 
