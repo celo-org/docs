@@ -1,11 +1,11 @@
 ---
 title: How to deploy a celo composer application on spheron protocol(decentralized cloud storage).
-description: This tutorial we'll be learning how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.
+description: In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.
 authors:
   - name: ✍️ Dennis Kimathi
 url: https://github.com/DennohKim
 image_url: https://avatars.githubusercontent.com/u/63696529?v=4
-tags: [intermediate, celo-composer, dapp, spheron-protocol]
+tags: ["intermediate", "celo-composer", "dapp", "spheron-protocol"]
 hide_table_of_contents: true
 slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 ---

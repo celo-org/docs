@@ -966,6 +966,13 @@ const Users: User[] = [
     website: '/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo',
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
+   {
+    title: 'How to deploy a celo composer application on spheron protocol(decentralized cloud storage).',
+    description: 'In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.',
+    preview: require(''),
+    website: '/blog/tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol',
+    tags: ["intermediate", "celo-composer", "dapp", "spheron-protocol"],
+  },
   {
     title: 'Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo',
     description: 'Connecting smart contracts to off-chain data on the Celo platform is made possible through the integration of the decentralized oracle network, Witnet.io!',
