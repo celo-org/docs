@@ -92,7 +92,7 @@ npm install
 ## Upload Project to Github
 
 
-### **Navigate to your repositories**
+### Navigate to your repositories
 
 ![image](images/image_1.jpg)
 
