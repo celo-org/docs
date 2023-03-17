@@ -234,7 +234,7 @@ args: [],
 log: true,
 })
 
-module.exports.tags = ["CeloMarketPlace];
+module.exports.tags = ["CeloMarketPlace"];
 ```
 
 Deploy the Contracts by running the following commands on any terminal (make sure you are in the packages/hardhat directory)
