@@ -25,7 +25,7 @@ To follow this tutorial, you will require:
 
 - An internet browser and a stable internet connection.
   
-## PREREQUISITE 
+## PREREQUISITE
 
 To successfully complete this tutorial, it is recommended that you have:
 
@@ -39,7 +39,7 @@ To successfully complete this tutorial, it is recommended that you have:
 
   The complete code:
 
-  ```solidity
+```solidity
    // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
@@ -211,14 +211,13 @@ contract Evently {
     }
 }
 
-  ```
+```
 
-  ## Analyzing the code:
+## Analyzing the code
 
-  ```solidity
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
-
 ```
 
 We start with this two directives that play a significant role. The first directive specifies the open-source license that governs the usage of the code, while the second one indicates the range of Solidity versions that are compatible with the code. Using these directives helps ensure that the code is appropriately licensed and can be compiled using the intended Solidity version range.
@@ -391,7 +390,7 @@ Furthermore, we add the `createEvent` function that will be used to add events t
     }
 
 ```
- 
+
 Next, we add two functions that will help in creating and buying events. The `createEvent()` function lets the contract owner create an event by providing an `image URL`, `theme`, `location`, and `price`. The function works by first checking that the price is greater than zero and that the image URL, theme, and location are not empty. If the conditions are met, the function creates a new event and adds it to an events array.
 
 The `buyEvent()` function lets users buy an event from the events array by specifying the index of the event they want to purchase. Before executing, the function assist to check that the event exists and is available for purchase, and that the caller of the function is not already the owner of the event. If all these conditions are met, the function transfers the event price from the caller to the event owner using the `transferFrom()` function. If the transfer succeeds, the function updates the event owner and marks the event as sold. If the transfer fails, the function throws an error.
@@ -478,4 +477,3 @@ Great job! It's always helpful to provide additional resources for further learn
 ## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
-
