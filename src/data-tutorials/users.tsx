@@ -2098,6 +2098,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
   },
   {
+    title: 'Developing a Crowdfunding Platform for Social Causes on Celo Blockchain - Part 1',
+    description: 'A Celo-based crowdfunding platform for social causes would enable social organizations, charities, and individuals to create campaigns and connect directly with donors to donate funds, leveraging the transparency and security of blockchain technology.',
+    preview: require('./showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
+  },
+  {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
     description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
     preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
