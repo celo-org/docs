@@ -3,8 +3,8 @@ title: How to deploy a celo composer application on spheron protocol(decentraliz
 description: In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.
 authors:
   - name: ✍️ Dennis Kimathi
-  - url: https://github.com/DennohKim
-  - image_url: https://avatars.githubusercontent.com/u/63696529?v=4
+    url: https://github.com/DennohKim
+    image_url: https://avatars.githubusercontent.com/u/63696529?v=4
 tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy"]
 hide_table_of_contents: true
 slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
@@ -39,6 +39,7 @@ The easiest way to get started with Celo Composer is using `@celo/celo-composer`
 - [Hardhat](https://hardhat.org/) Smart contract development environment
 
 ## Spheron Protocol
+
 [Spheron Protocol](https://spheron.network/) is an all-in-one decentralized platform for automating modern dapps.
 
 They provide a frictionless developer experience to take care of the hard things: deploying instantly, scaling automatically, and serving personalized content on decentralized networks.
@@ -229,6 +230,7 @@ Here are reasons why you should use spheron to deploy your decentralised app:
 
 
 ## About the Author
+
 I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enthusiast. I have a strong passion for creating user-centered designs that are not only aesthetically pleasing but also efficient and intuitive to use. Over the years, I have honed my skills in developing web applications that are robust, scalable, and secure, thanks to my experience in full-stack development.
 
 As a blockchain enthusiast, I am constantly exploring and learning about the potential of this technology and how it can be applied in various industries. I believe that blockchain has the potential to revolutionize the way we do things, from finance to healthcare and beyond. Its ability to provide decentralized, secure, and transparent systems has the potential to bring about significant changes that will benefit society.
