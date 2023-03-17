@@ -88,6 +88,9 @@ contract CounterProxy {
             default { return(ptr, size) }
         }
     }
+		receive() external  payable {
+
+    }
 }
 ```
 
@@ -115,7 +118,7 @@ The count variable is public and stores the current value of the counter and the
 
 ### Step3: Deploy the Proxy and Implementation Contract
 
-Next, deploy the proxy and implementation contract on the cell blockchain. You can follow this tutorial on [how to deploy a smart contract on Celo using Python](https://www.notion.so/Building-an-NFT-marketplace-on-Celo-with-Python-c351a9da2db34e679d2611c03e7e62af).
+Next, deploy the proxy and implementation contract on the Celo blockchain. You can follow this tutorial on [how to deploy a smart contract on Celo using Python](https://www.notion.so/Building-an-NFT-marketplace-on-Celo-with-Python-c351a9da2db34e679d2611c03e7e62af).
 
 After you have deployed the implementation contract, get its address and pass it to the constructor of the proxy contract.
 
@@ -124,6 +127,8 @@ The updated Proxy contract code to deploy:
 CounterProxy.sol
 
 ```solidity
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 import "./Counter.sol";
@@ -149,18 +154,21 @@ contract CounterProxy {
             default { return(ptr, size) }
         }
     }
-}
 
-contract CounterFactory {
-    function createCounter() public returns (address) {
-        Counter counter = new Counter();
-        CounterProxy proxy = new CounterProxy(address(counter));
-        return address(proxy);
+    function setImplementation(address _newImplementation) external {
+        require(msg.sender == address(this), "Only the contract itself can call this function");
+        implementation = _newImplementation;
+    }
+
+
+
+    receive() external  payable {
+
     }
 }
 ```
 
-In the code above, the "CounterFactory" contract includes a function called "createCounter," which generates a new instance of the "Counter" contract as well as a new instance of the "CounterProxy" contract. The "Counter" contract's address is passed to the "CounterProxy" contract's constructor. The address of the proxy contract is returned by the function.
+In the code above, the "CounterFactory" contract includes a function called "createCounter," which generates a new instance of the "Counter" contract as well as a new instance of the "CounterProxy" contract. The "Counter" contract's address is passed to the "CounterProxy" contract's constructor. The function returns the address of the proxy contract. The “setImplementation” function sets the contract to implement the new contract address.
 
 ### Step4: Upgrade the Implementation Contract
 
@@ -196,10 +204,10 @@ contract CounterFactory {
         return address(proxy);
     }
 
-    function upgradeCounter(address _proxy) public {
+    function upgradeCounter(address payable _proxy) public {
         Counter counter = new Counter();
         CounterProxy proxy = CounterProxy(_proxy);
-        proxy.implementation = address(counter);
+        proxy.setImplementation(address(counter));
     }
 }
 ```
