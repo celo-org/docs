@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celo sage, dapp, intermediate, celo]
+tags: [celosage, dapp, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo
 ---
