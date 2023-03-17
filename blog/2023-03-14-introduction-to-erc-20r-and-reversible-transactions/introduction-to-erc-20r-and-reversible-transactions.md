@@ -79,8 +79,8 @@ With intensive research and development, reversible transactions are rapidly evo
 
 ## References
 
-- Kaili Wang, Dan Boneh, and Qinchen Wang (October 2022), ERC-20 and ERC-721: Reversible Transactions on Ethereum. Available at https://arxiv.org/abs/2208.00543
-- Kaili Wang, (September 2022), Reversible Transactions on Ethereum: ERC-20R and ERC-721R Available at https://mirror.xyz/kaili.eth/gB-rx89sNAT3CVuxWo6xVFS5ptNcllW7cVWVCfcFa6k
+- Kaili Wang, Dan Boneh, and Qinchen Wang (October 2022), ERC-20 and ERC-721: Reversible Transactions on Ethereum. Available at [https://arxiv.org/abs/2208.00543](https://arxiv.org/abs/2208.00543)
+- Kaili Wang, (September 2022), Reversible Transactions on Ethereum: ERC-20R and ERC-721R Available at [https://mirror.xyz/kaili.eth/gB-rx89sNAT3CVuxWo6xVFS5ptNcllW7cVWVCfcFa6k](https://mirror.xyz/kaili.eth/gB-rx89sNAT3CVuxWo6xVFS5ptNcllW7cVWVCfcFa6k)
 
 ## Author
 
