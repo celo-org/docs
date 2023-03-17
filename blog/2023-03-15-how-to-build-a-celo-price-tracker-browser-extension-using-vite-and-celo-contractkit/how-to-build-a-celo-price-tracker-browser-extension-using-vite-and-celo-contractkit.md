@@ -732,9 +732,9 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 
 ## References
 
-- CRXJS [https://crxjs.dev/vite-plugin/getting-started/react/dev-basics](https://crxjs.dev/vite-plugin/getting-started/react/dev-basics)
-- Vite Js [https://vitejs.dev/guide/](https://vitejs.dev/guide/)
-- Celo Docs [https://docs.celo.org](https://docs.celo.org)
+- [CRXJS](https://crxjs.dev/vite-plugin/getting-started/react/dev-basics)
+- [Vite Js](https://vitejs.dev/guide/)
+- [Celo Docs](https://docs.celo.org)
 
 
 
