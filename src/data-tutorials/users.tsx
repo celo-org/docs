@@ -2086,7 +2086,7 @@ const Users: User[] = [
   {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
     description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
-    preview: require('./showcaseintermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
+    preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
     website: 'blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi',
     tags: ['celosage', 'erc721', 'intermediate', 'celo', 'solidity'], 
   },
