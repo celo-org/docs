@@ -1061,6 +1061,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
+    title: 'Celo Integration with Web3',
+    description: ' A Look at How the Platform is Bridging the Gap Between Centralized and Decentralized Systems',
+    preview: require('./showcase/advanced/web3.png'),
+    website: '/blog/tutorials/celo-integration-with-web3',
+    tags: ['celo', 'advanced', 'solidity', 'celosage'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
