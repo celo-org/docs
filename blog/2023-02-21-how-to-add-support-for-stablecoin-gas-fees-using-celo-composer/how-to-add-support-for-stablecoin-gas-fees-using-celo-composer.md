@@ -228,19 +228,23 @@ Now open the 01-deploy-CeloMarketPlace.js file.
 Your code should look like this
 
 ```javascript
-await deploy(“CeloMarketPlace”, {
-from: deployer,
-args: [],
-log: true,
-})
+module.exports = async ({ getNamedAccounts, deployments }) => {
+    const { deploy } = deployments;
+    const { deployer } = await getNamedAccounts();
 
+    await deploy("CeloMarketPlace", {
+        from: deployer,
+        args: [],
+        log: true,
+    });
+};
 module.exports.tags = ["CeloMarketPlace"];
 ```
 
 Deploy the Contracts by running the following commands on any terminal (make sure you are in the packages/hardhat directory)
 
 ```bash
-npx hardhat deploy –network alfajores
+npx hardhat deploy --network alfajores
 ```
 
 If all is well, you should see a message from hardhat with the transaction hash of your Contract deployment and the address of your new Contract
