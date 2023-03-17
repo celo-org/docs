@@ -2091,6 +2091,13 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
   {
+    title: 'What are PFP NFTs, How to Create Them?',
+    description: 'PFP NFTs are blockchain-based digital assets used as profile pictures. To create one, design an image, choose a blockchain platform and compatible wallet, and mint it on an NFT marketplace.',
+    preview: require('./showcase/intermediate/what-are-pfp-nfts-and-how-to-create-them.png'),
+    website: 'blog/tutorials/what-are-pfp-nfts-and-how-to-create-them',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
+  },
+  {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
     description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
     preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
