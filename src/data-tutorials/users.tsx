@@ -2104,6 +2104,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+   {
+    title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
+    description: 'Learn hoe to build chat app on celo network using react-native and web3js',
+    preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
+    website: 'blog/tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo',
+    tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
+  },
   {
     title: 'What are PFP NFTs, How to Create Them?',
     description: 'PFP NFTs are blockchain-based digital assets used as profile pictures. To create one, design an image, choose a blockchain platform and compatible wallet, and mint it on an NFT marketplace.',
