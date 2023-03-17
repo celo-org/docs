@@ -3,9 +3,9 @@ title: A Solidity Smart Contract for Auctioning Flowers on the celo Blockchain
 description: This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.
 authors:
   - name: David Ikanji
-    title: Technical Writer 
-    url:  https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ikanji201
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-blockchain
@@ -27,16 +27,16 @@ To take this tutorial, you will need:
 
 - A reliable internet browser and internet connection
 
-## PREREQUISITE 
+## PREREQUISITE
 
- - Basic knowledge of Javascript.
- - Understand how Blockchain works.
- - Have a basic knowledge of solidity.
-  
+- Basic knowledge of Javascript.
+- Understand how Blockchain works.
+- Have a basic knowledge of solidity.
+
 ## Tutorial Overview
 
- In this tutorial, we will be developing a smart contract for a flower auction platform on the Celo blockchain. The smart contract includes a set of conditions and rules that must be satisfied before a transaction can occur. These conditions include the minimum bid price, the auction duration, and other relevant terms. Once these conditions are met, the smart contract automatically executes the transaction, transferring ownership of the flowers to the highest bidder and the payment to the seller in a secure, transparent, and tamper-proof manner. This eliminates the need for intermediaries and ensures that the auction is fair, efficient, and trustworthy.
- 
+In this tutorial, we will be developing a smart contract for a flower auction platform on the Celo blockchain. The smart contract includes a set of conditions and rules that must be satisfied before a transaction can occur. These conditions include the minimum bid price, the auction duration, and other relevant terms. Once these conditions are met, the smart contract automatically executes the transaction, transferring ownership of the flowers to the highest bidder and the payment to the seller in a secure, transparent, and tamper-proof manner. This eliminates the need for intermediaries and ensures that the auction is fair, efficient, and trustworthy.
+
 Now let's begin writing our smart contract.
 
 To get started, we will create a new file on Remix called `flowerAuction.sol`. Click on this link to learn how to create a new file on Remix [(here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
@@ -48,9 +48,10 @@ After creating a new file we start by declaring some statements in our smart con
 
 pragma solidity >=0.7.0 <0.9.0;
 ```
+
 The line `SPDX-License-Identifier: MIT` is an identifier for the license of the code, in this case, the `MIT License`. [The SPDX (Software Package Data Exchange)](https://spdx.dev/) identifier is a standardized way to identify open-source licenses.
 
-The next line is the declaration of the version of the Solidity programming language used in the smart contract, specifically stating that the code is written in Solidity version 0.7.0 or later, but not later than 0.9.0. 
+The next line is the declaration of the version of the Solidity programming language used in the smart contract, specifically stating that the code is written in Solidity version 0.7.0 or later, but not later than 0.9.0.
 
 Next, we add our ERC20 token interface.
 
@@ -113,24 +114,24 @@ address internal ownerAddress = 0xb7BF999D966F287Cd6A1541045999aD5f538D3c6;
  address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 ```
 
-
 Next, we add out mapping
- ```solidity
-  mapping (uint => Flower) internal flowers;
-    uint internal flowersLength = 0;
-    uint public auctionEndTime;
 
-    constructor() {
-        auctionEndTime = block.timestamp + 24 hours;
-    }
- ```
- 
+```solidity
+ mapping (uint => Flower) internal flowers;
+   uint internal flowersLength = 0;
+   uint public auctionEndTime;
+
+   constructor() {
+       auctionEndTime = block.timestamp + 24 hours;
+   }
+```
+
 This code initializes a mapping called flowers that maps an unsigned integer (uint) to a Flower struct. The Flower struct contains various details about a flower, such as its owner, name, description, image, initial price, highest bid, highest bidder, and whether it is for sale or sold.
 
 Additionally, the code initializes two unsigned integers: flowersLength and auctionEndTime. flowersLength is set to 0 by default, while auctionEndTime is set to the current block timestamp plus 24 hours.
 
 The constructor function is a special function that is executed only once, when the contract is deployed. In this case, the constructor sets the auctionEndTime to 24 hours after the current block timestamp. This means that the auction will end exactly 24 hours after the contract is deployed.
- 
+
 Furthermore, to make our smart contract more interesting we begin to add functions. The first function we will be adding is the `createFlower` function.
 
 ```solidity
@@ -162,7 +163,7 @@ The function takes in several parameters such as the name of the flower, a descr
 
 When the function is called, it creates a new Flower struct and assigns the values of the parameters to the appropriate fields. It sets the owner of the flower as the address of the person who called the function (msg.sender) and sets the highestBid to 0, the highestBidder to address(0), indicating that no bids have been made yet.
 
-It also sets the forSale field to the value of the _isSale parameter, which indicates whether the flower is for sale or not, and sets the sold field to false.
+It also sets the forSale field to the value of the \_isSale parameter, which indicates whether the flower is for sale or not, and sets the sold field to false.
 
 Finally, the function increments the flowersLength variable, which keeps track of the number of flowers that have been added to the mapping. This allows for easy iteration over the flowers mapping when displaying all the flowers available for auction.
 
@@ -197,7 +198,7 @@ Next, we create the `getFlower` function.
 
 The getFlower function is a public view function that takes an input parameter `_index` which represents the index of the flower to retrieve from the flowers mapping.
 
-When the function is called, it creates a local variable flower of the Flower struct type and assigns it the value of the flower at the _index position in the flowers mapping.
+When the function is called, it creates a local variable flower of the Flower struct type and assigns it the value of the flower at the \_index position in the flowers mapping.
 
 Then, the function returns a tuple containing the different properties of the flower, such as owner, name, description, image, initialPrice, highestBid, highestBidder, forSale, and sold.
 
@@ -206,7 +207,7 @@ By using this function, other users of the contract can easily view the details 
 Next, we add a `bidFlower` function that will enable users to bid for flowers from the blockchain.
 
 ```solidity
-  
+
     function bid(uint _index) public payable {
         require(flowers[_index].forSale, "Flower is not for sale");
         require(block.timestamp < auctionEndTime, "Auction has already ended");
@@ -225,11 +226,11 @@ Next, we add a `bidFlower` function that will enable users to bid for flowers fr
     }
 ```
 
-This is the bid function in the FloralAuction contract. This function is used to place a bid on a specific flower identified by its _index in the flowers mapping.
+This is the bid function in the FloralAuction contract. This function is used to place a bid on a specific flower identified by its \_index in the flowers mapping.
 
 First, the function checks whether the flower is actually for sale by checking the `forSale` property of the Flower struct. It also checks whether the auction has already ended by comparing the current block timestamp with the auctionEndTime variable.
 
-Next, the function retrieves the Flower struct using the _index provided, and checks whether the new bid amount is higher than the current highest bid for the flower.
+Next, the function retrieves the Flower struct using the \_index provided, and checks whether the new bid amount is higher than the current highest bid for the flower.
 
 If the new bid is higher, the function transfers the previous highest bid amount to the previous highest bidder (if there was one) using the transfer function of the payable address type.
 
@@ -268,7 +269,6 @@ Up next is the `endAuction` function.
     flower.highestBid = 0;
     auctionEndTime = 0;
     emit AuctionEnded(flower.owner, flower.highestBidder, flower.highestBid);
-}
 }
 ```
 
@@ -437,11 +437,11 @@ Once the transaction is confirmed, the FloralNft contract will be deployed on th
 
 Congratulations on your accomplishment! You have done an excellent job of developing a smart contract for the auction of flowers on the Celo blockchain. Well done, and enjoy your success! 🎉
 
-## NEXT STEPS 
+## NEXT STEPS
 
 I trust that you found this tutorial informative and learned a lot from it. If you would like to continue your education, I have provided some helpful links below that you may find useful to explore:
 
-The official Celo documentation:[Click here to access celo docs](https://docs.celo.org/) 
+The official Celo documentation:[Click here to access celo docs](https://docs.celo.org/)
 
 Solidity By Example, a website with code examples for learning Solidity: [Click here to learn more about solidity](https://solidity-by-example.org/)
 
