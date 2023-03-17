@@ -910,6 +910,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
   {
+    title: 'cUsd-based Event Ticketing and Management System',
+    description: 'This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.',
+    preview: require('./showcase/intermediate/cUsd-based-event-ticketing-and-management-system.png'),
+    website: 'blog/tutorials/cUsd-based-event-ticketing-and-management-system',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
     title: 'Como criar uma carteira para a blockchain Celo',
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
     preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
@@ -1227,6 +1234,13 @@ const Users: User[] = [
     description: 'Learn about Layer 1 blockchains, DeFi, ReFi and more on Celo and its ecosystem.',
     preview: require('./showcase/beginner/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi.png'),
     website: 'blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more',
+    tags: ['celosage', 'celo', 'beginner'],
+  },
+  {
+    title: 'Unlocking the Power of Blockchain, NFTs, and Cryptography',
+    description: 'Learn the potentials of web-3 decentralised finance',
+    preview: require('./showcase/beginner/unlocking-the-power-of-blockchain-nft-and-cryptography.png'),
+    website: '/blog/tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography',
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
@@ -2082,6 +2096,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/what-are-pfp-nfts-and-how-to-create-them.png'),
     website: 'blog/tutorials/what-are-pfp-nfts-and-how-to-create-them',
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
+  },
+  {
+    title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
+    description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
+    preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
+    website: 'blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi',
+    tags: ['celosage', 'erc721', 'intermediate', 'celo', 'solidity'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
