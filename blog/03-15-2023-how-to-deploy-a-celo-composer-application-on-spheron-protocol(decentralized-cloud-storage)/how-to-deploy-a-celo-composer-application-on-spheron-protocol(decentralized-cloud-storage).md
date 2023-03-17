@@ -7,7 +7,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/63696529?v=4
 tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy", "celosage"]
 hide_table_of_contents: true
-slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
+slug: /tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/How_to_deploy_a_Celo_Composer_application_on_Spheron_protocol.png)
