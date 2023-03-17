@@ -12,11 +12,9 @@ slug: /tutorial/how-to-deploy-a-celo-composer-application-on-spheron-protocol
 
 ![header](../../src/data-tutorials/showcase/intermediate/How_to_deploy_a_Celo_Composer_application_on_Spheron_protocol.png)
 
-
 ## Introduction
 
 In this tutorial, we will be learning how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.
-
 
 ## Prerequisites​
 
@@ -26,7 +24,6 @@ To start building, you’ll need a basic understanding of web development, Node 
 - [Yarn](https://classic.yarnpkg.com/en/)
 - [Git](https://git-scm.com/)
 
-  
 ## Celo Composer
 
 The easiest way to get started with Celo Composer is using `@celo/celo-composer`
@@ -44,7 +41,6 @@ The easiest way to get started with Celo Composer is using `@celo/celo-composer`
 
 They provide a frictionless developer experience to take care of the hard things: deploying instantly, scaling automatically, and serving personalized content on decentralized networks.
 
-
 Let's start building:
 
 ---
@@ -57,31 +53,30 @@ Let's start building:
 npx @celo/celo-composer create
 ```
 
-2. Select *React* framework(NextJS)
+2. Select **React** framework(NextJS)
 
 ![image](images/Screenshot_from_2023-02-05_20-06-28.png)
 
-3. Select *react-celo* as the web3 library
+3. Select **react-celo** as the web3 library
 
 ![image](images/Screenshot_from_2023-02-05_20-06-40.png)
 
-4. Select *none* for the smart contract framework since we’ll be working with the 0x Protocol API.
+4. Select **none** for the smart contract framework since we’ll be working with the 0x Protocol API.
 
 ![image](images/Screenshot_from_2023-02-05_20-06-48.png)
 
-5. Select *No* for subgraph
-    
+5. Select **No** for subgraph
+
 ![image](images/Screenshot_from_2023-02-05_20-06-56.png)
-    
 
 6. Give a name to your project and you are done.
 
 ![image](images/Screenshot_from_2023-02-05_20-08-54.png)
 
-Launch the app in your code editor then install the dependencies required in the project. In the root directory, run 
+Launch the app in your code editor then install the dependencies required in the project. In the root directory, run
 
 ```bash
-yarn 
+yarn
 
 //or
 
@@ -91,7 +86,6 @@ npm install
 ---
 
 ## Upload Project to Github
-
 
 - **Navigate to your repositories**
 
@@ -111,77 +105,61 @@ npm install
 
 ---
 
-
 ## Deploying the App on Spheron
 
 - **Navigate to [https://spheron.network/](https://spheron.network/)**
-
-
 
 - **Click "Deploy Now”**
 
 ![image](images/image17.jpg)
 
-
 - **Click "Sign Up” button**
 
 ![image](images/image16.jpg)
-
 
 - **Click "Continue with GitHub”**
 
 ![image](images/image13.jpg)
 
-
 - **Select an organisation of your choice.**
 
 ![image](images/image12.jpg)
-
 
 - **Click "New Project”**
 
 ![image](images/image8.jpg)
 
-
 - **Click "Github”**
 
 ![image](images/image1.jpg)
-
 
 - **Pick the github account.**
 
 ![image](images/image6.jpg)
 
-
 - **Click the "Search repository" field and search the repository that you want to deploy.**
 
 ![image](images/image11.jpg)
-
 
 - **Select "Filecoin" or "IPFS”**
 
 ![image](images/image14.jpg)
 
-
 - **Input the directory with react application which is "packages/react-app”**
 
 ![image](images/image2.jpg)
-
 
 - **Pick the Javascript framework i.e NextJS.**
 
 ![image](images/image7.jpg)
 
-
 - **Click "Deploy”**
 
 ![image](images/image3.jpg)
 
-
 - **Check the logs for the installation process.**
 
 ![image](images/image9.jpg)
-
 
 ---
 
@@ -191,16 +169,13 @@ npm install
 
 ![image](images/image10.jpg)
 
-
 - **Click "Connect”**
 
 ![image](images/image5.jpg)
 
-
 - **Click "MetaMask” or any other wallet of your choice.**
 
 ![image4](images/image4.jpg)
-
 
 ---
 
@@ -210,7 +185,7 @@ With the assistance of Spheron protocol, you have the capability to continue dev
 
 **Why choose Spheron Protocol**
 
-Here are reasons why you should use spheron to deploy your decentralised app: 
+Here are reasons why you should use spheron to deploy your decentralised app:
 
 - **Secure data storage:** Spheron Protocol utilizes blockchain technology to provide secure and tamper-proof data storage. The data is distributed across the network and is protected by strong encryption and access controls, ensuring that it is only accessible to authorized parties.
 
@@ -228,7 +203,6 @@ Here are reasons why you should use spheron to deploy your decentralised app:
 
 - **Use cases:** Spheron Protocol has a wide range of potential use cases in various industries such as healthcare, finance, supply chain management, and more. By deploying your decentralized app on Spheron Protocol, you can tap into this growing market and leverage the benefits of blockchain technology.
 
-
 ## About the Author
 
 I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enthusiast. I have a strong passion for creating user-centered designs that are not only aesthetically pleasing but also efficient and intuitive to use. Over the years, I have honed my skills in developing web applications that are robust, scalable, and secure, thanks to my experience in full-stack development.
@@ -241,7 +215,3 @@ Fun fact about me, i am into archeoastronomy.
 
 - [Celo Composer](https://github.com/celo-org/celo-composer)
 - [Spheron Protocol](https://spheron.network/)
-
-
-
-
