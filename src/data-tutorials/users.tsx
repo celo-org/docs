@@ -687,7 +687,13 @@ const Users: User[] = [
   //   website: '/tutorials?tags=composer',
   //   tags: ['favorite'],
   // },
-
+{
+    title: 'Build a montly susbscription platform using Celo composer & Openzeppelin Defender',
+    description: 'This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.',
+    preview: require('./showcase/advanced/build-a-montly-susbscription-platform-using-celo-composer-openzeppelin-defender.png'),
+    website: '/blog/tutorials/build-a-montly-susbscription-platform-using-celo-composer-openzeppelin-defender',
+    tags: ['advanced','celosage','celo','fullstack','payments','subscription','defender','openzeppelin'],
+  },
   {
     title: 'Exclusive List of Hardware Wallets that Support the Celo Network',
     description: 'This tutorial aims to provide an exclusive list of hardware wallets that support the Celo network',
