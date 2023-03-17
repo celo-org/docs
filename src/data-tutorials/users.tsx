@@ -910,6 +910,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
   {
+    title: 'cUsd-based Event Ticketing and Management System',
+    description: 'This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.',
+    preview: require('./showcase/intermediate/cUsd-based-event-ticketing-and-management-system.png'),
+    website: 'blog/tutorials/cUsd-based-event-ticketing-and-management-system',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
     title: 'Como criar uma carteira para a blockchain Celo',
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
     preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
