@@ -520,7 +520,6 @@ After this tutorial, feel free to widen your knowledge by expanding it in variou
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
 Reach out:
-Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
