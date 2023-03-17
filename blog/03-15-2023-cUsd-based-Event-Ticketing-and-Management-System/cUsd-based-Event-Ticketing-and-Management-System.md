@@ -1,6 +1,6 @@
 ---
 title: cUsd-based Event Ticketing and Management System
-description: This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.
+description: This project is a smart contract written in the Solidity programming language on the celo blockchain.
 authors:
   - name: Ogoyi Thompson
     title: Technical Writer 
