@@ -762,6 +762,13 @@ const Users: User[] = [
     tags: ['intermediate','celosage'],
   },
   {
+    title: 'Introduction to ERC-20R and Reversible Transactions',
+    description: "This article provides a detailed look into the need for reversible transactions and a technical approach to how they function.",
+    preview: require('./showcase/beginner/introduction-to-erc-20r-and-reversible-transactions.png'),
+    website: 'blog/tutorials/introduction-to-erc-20r-and-reversible-transactions',
+    tags: ['beginner','celosage'],
+  },
+  {
     title: 'Exploring the Robust Structure of Celos Protocol Design',
     description: "Exploring the Robust Structure of Celo's Protocol Design",
     preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
@@ -781,6 +788,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
     website: 'blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT',
     tags: ['beginner', 'erc721', 'celosage'],
+  },
+  {
+    title: 'Understanding Utility and Security Tokens',
+    description: 'Utility tokens are digital assets that lives on the blockchain and can be used to gain access to certain things, such as a game or a website.',
+    preview: require('./showcase/beginner/understanding-utility-and-security-tokens.png'),
+    website: 'blog/tutorials/understanding-utility-and-security-tokens',
+    tags: ['beginner', 'celosage'],
   },
   {
     title: 'Integrating Blockchain Technology into Legacy Systems on Celo',
@@ -896,6 +910,13 @@ const Users: User[] = [
   tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
   },
   {
+    title: 'A Solidity Smart Contract For Auctioning Flowers On The Celo Blockchain',
+    description: 'This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.',
+    preview: require('./showcase/intermediate/A-Solidity-Smart-Contract-for-Auctioning-Flowers-on-the-celo-Blockchain.png'),
+    website: 'blog/tutorials/A-Solidity-Smart-Contract-For-Auctioning-Flowers-On-The-Celo-Blockchain',
+    tags: ['celosage', 'solidity','smartcontract','intermediate', 'celo'],
+  },
+  {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
@@ -907,6 +928,13 @@ const Users: User[] = [
     description: ' Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.',
     preview: require('./showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png'),
     website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
+    title: 'cUsd-based Event Ticketing and Management System',
+    description: 'This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.',
+    preview: require('./showcase/intermediate/cUsd-based-event-ticketing-and-management-system.png'),
+    website: 'blog/tutorials/cUsd-based-event-ticketing-and-management-system',
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
   {
@@ -965,6 +993,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo.png'),
     website: '/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo',
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
+  },
+   {
+    title: 'How to deploy a celo composer application on spheron protocol(decentralized cloud storage).',
+    description: 'In this tutorial, you will learn how to deploy a dapp built using celo composer on a decentalised cloud service called spheron protocol.',
+    preview: require('./showcase/intermediate/How_to_deploy_a_Celo_Composer_application_on_Spheron_protocol.png'),
+    website: '/blog/tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol',
+    tags: ["intermediate", "composer", "dapp", "dappstarter", "deploy", "celosage"],
   },
   {
     title: 'Using Witnet.io Oracle to Connect Smart Contracts to Off-Chain Data with Celo',
@@ -1494,6 +1529,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-redeploy-your-ethereum-dapp-on-celo.png'),
     website: 'https://learn.figment.io/tutorials/redeploy-ethereum-dapps-on-celo',
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
+  },
+  {
+    title: 'Create Deploy and Mint your ERC223 contract on Celo with Hardhat',
+    description: 'This tutorial is an expository piece on the ERC223 token standard, also explaining how to create and deploy a sample ERC223 contract',
+    preview: require('./showcase/intermediate/ERC223-token-contract.png'),
+    website: 'https://learn.figment.io/tutorials/create-deploy-and-mint-your-eRC223-contract-on-celo-with-hardhat',
+    tags: ['intermediate', 'celo', 'celosage', 'javascript', 'hardhat', 'smartcontract', ],
   },
   {
     title: 'Create Vault Smart Contract',
@@ -2090,7 +2132,34 @@ const Users: User[] = [
     website: 'blog/tutorials/deploying-a-proposal-for-daos-on-celo',
     tags: ['celosage', 'intermediate',  'celo'], 
   },
-
+   {
+    title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
+    description: 'Learn hoe to build chat app on celo network using react-native and web3js',
+    preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
+    website: 'blog/tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo',
+    tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
+  },
+  {
+    title: 'What are PFP NFTs, How to Create Them?',
+    description: 'PFP NFTs are blockchain-based digital assets used as profile pictures. To create one, design an image, choose a blockchain platform and compatible wallet, and mint it on an NFT marketplace.',
+    preview: require('./showcase/intermediate/what-are-pfp-nfts-and-how-to-create-them.png'),
+    website: 'blog/tutorials/what-are-pfp-nfts-and-how-to-create-them',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
+  },
+  {
+    title: 'Developing a Crowdfunding Platform for Social Causes on Celo Blockchain - Part 1',
+    description: 'A Celo-based crowdfunding platform for social causes would enable social organizations, charities, and individuals to create campaigns and connect directly with donors to donate funds, leveraging the transparency and security of blockchain technology.',
+    preview: require('./showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
+  },
+  {
+    title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
+    description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
+    preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
+    website: 'blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi',
+    tags: ['celosage', 'erc721', 'intermediate', 'celo', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
