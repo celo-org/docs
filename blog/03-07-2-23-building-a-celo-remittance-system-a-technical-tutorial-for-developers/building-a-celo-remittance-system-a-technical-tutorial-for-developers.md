@@ -331,13 +331,13 @@ Oluwalana is a technical writer and a generalist. As an analog-by-birth and digi
 
 ## References
 
-[Source Code](https://github.com/lanacreates/celo-remittance-system)
-[Investopedia](https://www.investopedia.com/terms/r/remittance.asp)
-[Deploy on Celo with Truffle](https://docs.celo.org/developer/deploy/truffle)
-[Testnet Wallets](https://docs.celo.org/developer/setup/wallet)
-[Fund your Celo Testnet Account](https://faucet.celo.org/)
-[Celo Truffle Configuration](https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js)
-[Code Playground - Metamask](https://docs.celo.org/blog/code-metamask)
-[Celo Developers](https://docs.celo.org/developer)
-[Installing the Solidity Compiler](https://docs.soliditylang.org/en/latest/installing-solidity.html)
-[Alfajores Celo Explorer](https://explorer.celo.org/alfajores/)
+1. [Source Code](https://github.com/lanacreates/celo-remittance-system)
+2. [Investopedia](https://www.investopedia.com/terms/r/remittance.asp)
+3. [Deploy on Celo with Truffle](https://docs.celo.org/developer/deploy/truffle)
+4. [Testnet Wallets](https://docs.celo.org/developer/setup/wallet)
+5. [Fund your Celo Testnet Account](https://faucet.celo.org/)
+6. [Celo Truffle Configuration](https://github.com/celo-org/DevRel/blob/main/configuration/truffle-config.js)
+7. [Code Playground - Metamask](https://docs.celo.org/blog/code-metamask)
+8. [Celo Developers](https://docs.celo.org/developer)
+9. [Installing the Solidity Compiler](https://docs.soliditylang.org/en/latest/installing-solidity.html)
+10. [Alfajores Celo Explorer](https://explorer.celo.org/alfajores/)
