@@ -132,7 +132,7 @@ The added secure messaging protocol ensures that only the recipient with knowled
 This what your complete smart contract should look like:
 
 ```
-/ SPDX-License-Identifier:MIT
+//SPDX-License-Identifier: MIT
 pragma solidity 0.5.16;
 
 contract Remittance {
