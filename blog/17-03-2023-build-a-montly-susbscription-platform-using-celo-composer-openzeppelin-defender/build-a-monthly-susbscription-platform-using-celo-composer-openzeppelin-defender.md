@@ -18,7 +18,7 @@ This comprehensive tutorial will guide you through setting up a crypto payment s
 
 ## Prerequisites
 
-To start building, you’ll need a basic understanding of web development, Node (v12), yarn, and Git.
+To start building, you’ll need a basic understanding of web development, Node (v16), yarn, and Git.
 
 * Your computer has Node.js installed. If not download from [here](https://nodejs.org/en/download/)
     
@@ -317,11 +317,13 @@ export default function Header() {
 }
 ```
 
-Your output should look like this..you can see the Alfajores network and your wallet address after connecting your wallet.
+Your output should look like below. You can see the Alfajores network and your wallet address after connecting your wallet.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677700379085/64c4e595-033b-4b95-bd01-403a25e6fe34.png)
 
-However, the address button is way to long and doesn't look nice, we can make this better by truncating the address. The tuncate method is a method ...... read more here. Add the following code below your imports and also call the truncate
+However, the address button is way to long and doesn't look nice, we can make this better by truncating the address.  
+
+Add the following code below your imports and also call the truncate
 
 ```js
 const truncateAddress = (address: string) => {
@@ -644,7 +646,7 @@ If there are no errors, you are good to go 😚
 
 If you would rather learn from a video, we have a recording available of this tutorial on our YouTube. Watch the video by clicking on the screenshot below.
 
-%[https://www.youtube.com/watch?v=PEg1nRugl6E&list=PLOQEgpQdIoOTTc3F2OwsGk0r_n1KLkO0C] 
+(Video Tutorial)[https://www.youtube.com/watch?v=PEg1nRugl6E&list=PLOQEgpQdIoOTTc3F2OwsGk0r_n1KLkO0C] 
 
 Finally we have successfully completed our payment subscription UI and the contract and the next step is to write test for our smart contract which would be done in the next tutorial.
 
@@ -725,6 +727,7 @@ describe("PaymentSubscription", function () {
     expect(basicPlan.price).to.equal(ethers.utils.parseEther("2"));
     expect(basicPlan.duration).to.equal(oneHour);
   });
+});
 ```
 
 In your terminal, run this command:
@@ -1034,7 +1037,7 @@ npx hardhat hardhat verify 0x95BD5b1B16C586025bF0750c21bd1de433de8D4c 0xEb3345B2
 
 If you prefer a video, you can click on the screenshot below and watch the video tutorial. In the next article, we will be **setting up Subgraph to query subscription details from the OpenZeppelin Defender Autotask script.**
 
-%[https://www.youtube.com/watch?v=DnBhqte2mZA]
+(Video Tutorial)[https://www.youtube.com/watch?v=DnBhqte2mZA]
 
 # Section 3
 
@@ -1256,7 +1259,7 @@ You have successfully setup subgraph to query subscription details from openzepp
 
 If you prefer a video, you can click on the screenshot below and watch the video tutorial. In the next article, we will **Connect UI to Smart Contract & Setup Defender Admin, Replay & Autotask**
 
-%[https://www.youtube.com/watch?v=VBedVdeHhZ8]
+(Video Tutorial)[https://www.youtube.com/watch?v=VBedVdeHhZ8]
 
 # Final Section
 
