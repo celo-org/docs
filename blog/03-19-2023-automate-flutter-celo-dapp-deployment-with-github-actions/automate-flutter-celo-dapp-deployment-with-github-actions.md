@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/automate-flutter-celo-dapp-deployment-with-github-actions
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/after.png)
+![header](../../src/data-tutorials/showcase/intermediate/automate-flutter-celo-dapp-deployment-with-github-actions.png)
 
 ## Introduction
 
