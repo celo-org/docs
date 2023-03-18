@@ -25,7 +25,7 @@ import { sortBy } from "@site/src/utils/jsUtils";
  * - A short (≤120 characters) description of your project
  * - Use relevant tags to categorize your site (read the tag descriptions below)
  * - Add a local image preview (decent screenshot of your Docusaurus site)
- * - The image MUST be added to the 
+ * - The image MUST be added to the  repository, and use `require("img")`
  
  
  
