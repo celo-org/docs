@@ -1,15 +1,17 @@
- ---
+---
 title: Song Marketplace Contract with ERC-20 Token Integration
-description: This project is a smart contract writ
+description: The Song Marketplace Contract with ERC-20 Token Integration is a smart contract built on the Celo blockchain that enables users to buy and sell songs using a stablecoin ERC-20 token called "cUSD".
 authors:
   - name: Ogoyi Thompson
     title: Technical Writer 
     url:   https://github.com/Ogoyi
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
-tags: [celosage, dapp, intermediate, celo]
+tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/cUsd-based-event-ticketing-and-management-system
+slug: /tutorials/song-marketplace-contract-with-ERC-20-token-integration
 ---
+
+![Sage Templatessss](https://user-images.githubusercontent.com/94527318/226135962-0434a059-5a01-4c50-83a5-eabd92c7fc9b.png)
 
 ## Introduction
 
