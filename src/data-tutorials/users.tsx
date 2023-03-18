@@ -2218,7 +2218,7 @@ const Users: User[] = [
   {
     title: 'Automate Flutter Celo DApp Deployment with GitHub Actions',
     description: 'Learn how to deploy and publish your Flutter DApp to Google Play Store or Google Drive using GitHub Actions.',
-    preview: require('./showcase/intermediate/after.png'),
+    preview: require('./showcase/intermediate/automate-flutter-celo-dapp-deployment-with-github-actions.png'),
     website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
