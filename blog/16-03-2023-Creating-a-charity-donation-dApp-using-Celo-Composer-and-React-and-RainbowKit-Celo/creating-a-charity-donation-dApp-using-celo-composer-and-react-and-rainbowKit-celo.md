@@ -1,4 +1,20 @@
+---
+title: Creating a Charity Donation dApp using Celo Composer, React and Rainbowkit Celo
+description: A step-by-step guide on how to build a charity donation dapp using Celo Composer and React and Rainbow Kit.
+authors:
+- name: Olubusayo Amowe
+  title: Web3 Developer Advocate, 
+  url: https://github.com/amoweolubusayo
+  image_url: https://github.com/amoweolubusayo.png
+tags: [solidity, celo, celosage, celocomposer, react, rainbowkitcelo, metamask, typescript, javascript]
+hide_table_of_contents: true
+slug: /tutorials/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo
+---
+
+
 ![tutorial-1](https://user-images.githubusercontent.com/20168921/225596664-52322c39-85a5-4580-871c-ef319cf62c53.png)
+
+## Introduction
 
 This article is a step-by-step guide on building a charity donation dapp using Celo Composer and React and Rainbow Kit.
 
