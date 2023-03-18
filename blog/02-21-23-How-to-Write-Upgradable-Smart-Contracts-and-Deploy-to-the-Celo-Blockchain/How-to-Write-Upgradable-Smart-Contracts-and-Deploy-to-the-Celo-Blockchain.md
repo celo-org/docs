@@ -3,9 +3,9 @@ title: How to Write Upgradable Smart Contracts and Deploy to the Celo Blockchain
 description: This tutorial will show you how to write upgradable smart contracts and deploy to the celo blockchain.
 authors:
   - name: ✍️ Jonathan Iheme
-url: https://github.com/4undRaiser
-image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
-tags: [celosage, solidity,  celo, intermediate]
+    url: https://github.com/4undRaiser
+    image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
+tags: [celosage, solidity, celo, intermediate]
 hide_table_of_contents: true
 slug: "/tutorials/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain"
 ---
@@ -28,8 +28,8 @@ NodeJS 12.0.1 upwards installed.
 
 ## Prerequisites
 
-* [Solidity](https://docs.soliditylang.org/en/v0.8.17/)
-* [Hardhat](https://hardhat.org/docs)
+- [Solidity](https://docs.soliditylang.org/en/v0.8.17/)
+- [Hardhat](https://hardhat.org/docs)
 
 ## Create a New Hardhat Project
 
@@ -86,10 +86,11 @@ contract MessageContract is Initializable, OwnableUpgradeable {
 
 }
 ```
+
 Let's go over the code to see what's happening.
 
-- We import the OwnableUpgradeable and Initializable contracts from the  OpenZeppelin Upgrades Plugins.
-- We define a new contract called `MessageContract`, which inherits from `Initializable` and `OwnableUpgradeable`. This  means we can use the initialize function to set the contract owner, and the `onlyOwner` modifier to restrict access to certain functions to the contract owner.
+- We import the OwnableUpgradeable and Initializable contracts from the OpenZeppelin Upgrades Plugins.
+- We define a new contract called `MessageContract`, which inherits from `Initializable` and `OwnableUpgradeable`. This means we can use the initialize function to set the contract owner, and the `onlyOwner` modifier to restrict access to certain functions to the contract owner.
 - We declare a private string variable `message` to store the message.
 - We define a function `setMessage()` that allows the contract owner to set the message. This function is restricted to the contract owner by the `onlyOwner` modifier.
 - We define a function `getMessage()` that allows anyone to retrieve the message.
@@ -104,7 +105,7 @@ npx hardhat compile
 
 This will compile your smart contract and generate the necessary artifacts in the artifacts folder of your Hardhat project.
 
-## Deploy Your Upgradable Smart-Contract 
+## Deploy Your Upgradable Smart-Contract
 
 The next step is to deploy your upgradable smart contract to the blockchain. To do this, we will use the OpenZeppelin Upgrades Plugins.
 
@@ -135,7 +136,7 @@ Let's go over the code to see what's happening.
 - We import the necessary packages from Hardhat and the OpenZeppelin Upgrades Plugins.
 - We define an async function called `main()` that will deploy our upgradable smart contract.
 - We use `ethers.getContractFactory` to get the `MessageContract` factory.
-- We use `upgrades.deployProxy` to deploy the `MessageContract` as an upgradable contract. This function takes three  arguments: the contract factory, an array of constructor arguments (which we don't have in this case), and an options object that specifies the initializer function.
+- We use `upgrades.deployProxy` to deploy the `MessageContract` as an upgradable contract. This function takes three arguments: the contract factory, an array of constructor arguments (which we don't have in this case), and an options object that specifies the initializer function.
 - We log the address of the deployed contract to the console.
 
 Next, Open your hardhat.config file and configure it to this.
@@ -178,8 +179,9 @@ To deploy your upgradable smart contract, run the following command in your term
 ```bash
  npx hardhat run scripts/deploy.js --network alfajores
 ```
+
 This will deploy your upgradable smart contract to the Celo Alfajores test network and get a reply like this.
-`proxy deployed to: 0x836f66a89081661E2dd6371C8301aB839D8930ed` 
+`proxy deployed to: 0x836f66a89081661E2dd6371C8301aB839D8930ed`
 
 ## Verifying Your Smart Contract
 
@@ -222,10 +224,10 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract MessageContractV2 is Initializable, OwnableUpgradeable {
 
-    
+
     string public message;
     string public messageTitle;
-    
+
 
     function initialize() public initializer {
         __Ownable_init();
@@ -250,7 +252,7 @@ contract MessageContractV2 is Initializable, OwnableUpgradeable {
 }
 ```
 
-The MessageContractV2 is an upgraded version of a previous contract. 
+The MessageContractV2 is an upgraded version of a previous contract.
 
 We defines two public string variables: `message` and `messageTitle`. It also includes the `initialize()` function which initializes the contract with the `__Ownable_init()` function from the `OwnableUpgradeable` contract.
 
@@ -280,7 +282,6 @@ main()
     console.error(error);
     process.exit(1);
   });
-
 ```
 
 This code uses the Hardhat framework and the ethers library to upgrade an existing smart contract on the Ethereum blockchain. It obtains a factory instance for the new version of the contract, then upgrades the existing contract to the new version using the upgrades library. If the upgrade is successful, the address of the upgraded contract is logged to the console. If an error occurs, the script exits with an error code.
@@ -361,6 +362,7 @@ MessageContract Upgrade
 
   2 passing (3s)
 ```
+
 Congrat!! You have Sucessfully upgraded your smart contracts
 
 [Click Here](https://github.com/4undRaiser/upgradable-smartcontract-tutorial) to get the full code from the repository
