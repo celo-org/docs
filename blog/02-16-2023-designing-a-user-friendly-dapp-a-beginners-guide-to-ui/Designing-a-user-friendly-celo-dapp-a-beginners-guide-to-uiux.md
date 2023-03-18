@@ -61,23 +61,23 @@ To provide a clear visual picture of page structure, layout, information archite
 While you have your screenshot of the app you want to create a wireframe for, let's get to work.
 
 **Step 1 Go to figma.com and select "New design file."**
-![image](images/1.png)
+![image](Images/1.png)
 
 **Step 2 Let's give this page a title.**
-![image](images/2.png)
+![image](Images/2.png)
 
 **_I named mine "Celo Wireframe" and hit return to save the title._**
-![image](images/3.png)
+![image](Images/3.png)
 
 **Step 3 Now let’s drag the screenshot that we have to the canvas and release it.**
-![image](images/4.png)
+![image](Images/4.png)
 
 **_The screenshot we dragged to the canvas might turn out very large or very small, so please zoom in or out accordingly. (Ctrl plus + or -)_**
 
-![image](images/5.png)
+![image](Images/5.png)
 
 **Step 4 Let’s rename the screenshot we just added to our canvas on the left-hand side underneath the layers.**
-![image](images/6.png)
+![image](Images/6.png)
 
 **_I named mine "Celo screenshot"_**
 
@@ -85,14 +85,14 @@ While you have your screenshot of the app you want to create a wireframe for, le
 And on top of that, we have everything that is needed to add a component.
 **Let's add a frame (simply press f) with the same width and height coordinates as the Celo screenshot.**
 W = 1440 and H = 2560 in my case.
-![image](images/7.png)
+![image](Images/7.png)
 
 _Creating a frame is like taking out a piece of paper to draw on it. We don't want to draw directly on our table or desk, which is why we want a paper_
 
 **Step 6 Let's place the frame right beside the screenshot, and make sure to adjust the size of the screenshot to match the size of the frame (make sure to press shift on your keyboard to maintain the ratio while adjusting the size of your image).**
-![image](images/8.png)
+![image](Images/8.png)
 
-![image](images/9.png)
+![image](Images/9.png)
 
 **_I renamed the frame we just created "Wireframe."_**
 
@@ -102,30 +102,30 @@ The first is how to use text, which is the t icon, and the second is how to use 
 
 **Let's start by adding a rectangle to the page to represent the most obvious components.**
 If the size doesn't look right, you can always adjust any of the edges or angles.
-![image](images/10.png)
+![image](Images/10.png)
 
-![image](images/11.png)
+![image](Images/11.png)
 
 _Don't mind the spacings when wireframing._
 
-![image](images/12.png)
+![image](Images/12.png)
 
 _Please take your time to represent everything on the screenshot that is not text with a rectangle._
 
-![image](images/13.png)
+![image](Images/13.png)
 
 _Here, we already have everything on the page, just not the texts._
 
 **Let's put the text that we need into our wireframe. Click the "t" icon on the top or simply hit "t" on your keyboard, then let's copy the text from our screenshot to our wireframe.**
-![image](images/14.png)
+![image](Images/14.png)
 
-![image](images/15.png)
+![image](Images/15.png)
 
 On the right-hand side, we can adjust the details of our text, such as changing the regular font to a medium font.
 The idea is to make it look the same as the screenshot.
 Worry less if you don't get the exact font style that was used in the screenshots; just a similar one is okay.
 
-![image](images/16.png)
+![image](Images/16.png)
 
 **Congratulations! You created your first wireframe.**
 
@@ -159,7 +159,7 @@ UX microcopy is the little words and sentences you come across on the internet, 
 It could be the tiniest error message or the navigation on a pop-up. It could be captions, buttons, loading, or error pages. Even that one message that tells you the website is using cookies
 That would be the formal definition of a UX microcopy. But what makes a good microcopy what it is is its power to encourage the users, gain their trust, and empower them. A good microcopy makes a difference and has a big impact.
 
-![image](images/17.png)
+![image](Images/17.png)
 
 **_An example of a good microcopy_**
 
