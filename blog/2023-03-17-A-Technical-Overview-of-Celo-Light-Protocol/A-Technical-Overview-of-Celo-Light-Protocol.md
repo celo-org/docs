@@ -86,7 +86,7 @@ Developers can create DApps that are usable by a wider range of users including 
 Overall, the Light Client Protocol is a critical component of the Celo ecosystem, enabling lightweight and efficient interactions with the blockchain. By working in conjunction with other Celo technologies, it enables developers to build a wide range of DApps that can help to create a more inclusive and equitable financial system.
 Here is an example code on how to implement light client protocol on Celo using the Web3.js library. Here's a code snippet that demonstrates how to use the light client protocol to query the Celo blockchain for the balance of a specific address:
 
-```
+```js
 const Web3 = require('web3');
 const CeloLightClient = require('@celo/contractkit/lib/celo-light-client');
 
