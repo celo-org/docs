@@ -1061,6 +1061,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
+    title: 'Building A Restaurant Coupon NFT System on Celo',
+    description: 'We would be going through building a restaurant coupon NFT system where restaurants can add their coupons and others can buy it',
+    preview: require('./showcase/advanced/building-a-restaurant-nft-coupon-system.png'),
+    website: '/blog/tutorials/building-a-restaurant-nft-coupon-system',
+    tags: ['celo', 'advanced', 'celosage', 'nft', 'hardhat'],
+  },
+  {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
     preview: require('./showcase/intermediate/building-for-the-celo-connect-mobile-hackathon.png'),
