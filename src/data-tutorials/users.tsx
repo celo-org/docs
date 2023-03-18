@@ -1058,6 +1058,13 @@ const Users: User[] = [
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
   },
   {
+    title: 'Leveraging the Power of Smart Contracts to Enhance Voting Security',
+    description: 'Discover how the implementation of smart contracts can strengthen the security and transparency of voting systems, revolutionizing the way we approach democracy.',
+    preview: require('./showcase/intermediate/ballot.png'),
+    website: 'blog/tutorials/leveraging-the-power-of-smart-contracts-to-enhance-voting-security',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
+  },
+  {
     title: 'How to Build a Full Stack Dapp For Selling Football Tickets on Celo',
     description: 'Learn how to build a dapp for seliing football tickets on the celo blockchain',
     preview: require('./showcase/intermediate/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png'),
@@ -1247,6 +1254,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
     website: 'blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle',
     tags: ['beginner','foundation', 'truffle'],
+  },
+  {
+    title: 'Building a Celo Remittance System A Technical Tutorial for Developers',
+    description: 'Learn the technical aspects of building a remittance system on the Celo network',
+    preview: require('./showcase/intermediate/building-a-celo-remittance-system-a-technical-tutorial-for-developers.png'),
+    website: 'blog/tutorials/building-a-celo-remittance-system-a-technical-tutorial-for-developers',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
     title: 'Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading',
