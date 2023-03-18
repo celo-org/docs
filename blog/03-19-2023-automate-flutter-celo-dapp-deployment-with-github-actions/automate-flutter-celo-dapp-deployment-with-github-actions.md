@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/automate-flutter-celo-dapp-deployment-with-github-actions
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png)
+![header](../../src/data-tutorials/showcase/intermediate/after.png)
 
 ## Introduction
 
