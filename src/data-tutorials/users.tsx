@@ -2082,6 +2082,12 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },{
+    title: 'Creating a Twitter-Like Decentralized Application on Celo using Solidity',
+    description: 'Building a decentralized Twitter on the Celo blockchain refers to the creation of a social media platform that utilizes blockchain technology to enable users to communicate and share information in a decentralized and censorship-resistant manner',
+    preview: require('./showcase/intermediate/creating-a-twitter-like-decentralized-application-on-celo-using-solidity.png'),
+    website: 'blog/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain',
+    tags: ['celosage', 'dacade', 'smartcontract', 'solidity',],
   },
   {
     title: 'How to Use Hardware Tools with the Celo Blockchain',
