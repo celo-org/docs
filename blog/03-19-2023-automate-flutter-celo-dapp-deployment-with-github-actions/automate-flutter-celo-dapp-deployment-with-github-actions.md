@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celo sage, dapp, intermediate, celo, flutter, github actions]
+tags: [celosage, dapp, intermediate, celo, flutter]
 hide_table_of_contents: true
 slug: /tutorials/automate-flutter-celo-dapp-deployment-with-github-actions
 ---
