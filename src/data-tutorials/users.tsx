@@ -2081,7 +2081,7 @@ const Users: User[] = [
     description: 'This article explains how to construct a dart program to communicate with the Celo blockchain using web3dart',
     preview: require('./showcase/beginner/interact-with-celo-blockchain-using-web3dart.png'),
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
-    tags: ['celosage', 'flutter', 'beginner', 'celo'],
+    tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
