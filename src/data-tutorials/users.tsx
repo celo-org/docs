@@ -26,7 +26,6 @@ import { sortBy } from "@site/src/utils/jsUtils";
  * - Use relevant tags to categorize your site (read the tag descriptions below)
  * - Add a local image preview (decent screenshot of your Docusaurus site)
  * - The image MUST be added to the  repository, and use `require("img")`
- repository, and use `require("img")`
  * - The image has to have minimum width 640 and an aspect of no wider than 2:1
  * - If your website is open-source, add your source link. The link should open
  *   to a directory containing the `docusaurus.config.js` file
