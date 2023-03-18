@@ -1080,9 +1080,9 @@ const Users: User[] = [
   {
     title: 'Designing a User-Friendly Celo DApp- A Beginners Guide to UI/UX',
     description: 'In this tutorial, we will teach interested persons how to create wireframes for their own web projects',
-    preview: require('./showcase/intermediate/deploy-and-interact-with-contracts-remotely.png'),
+    preview: require('./showcase/beginner/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux-new.png'),
     website: '/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux',
-    tags: ['celosage','beginner', 'celo', 'dApp', 'valora'],
+    tags: ['celosage','beginner', 'celo', 'dapp', 'valora'],
   },
   {
     title: 'Sending CELO & Stable Assets',
