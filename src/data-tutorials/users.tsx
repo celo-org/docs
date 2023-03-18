@@ -2167,6 +2167,13 @@ const Users: User[] = [
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
   },
   {
+    title: 'How to Create a Decentralized Application Using React-Celo',
+    description: 'This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo',
+    preview: require('./showcase/intermediate/how-to-create-a-decentralized-application-using-react-celo.png'),
+    website: 'blog/tutorials/how-to-create-a-decentralized-application-using-react-celo',
+    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'hardhat', 'crowdfunding', 'intermediate'],
+  },
+  {
     title: 'Example architectures for a simple payment dapp',
     description: 'This post will focus on the front-end part of how to create a simple payment dapp',
     preview: require('./showcase/beginner/example-architectures-for-a-simple-payment-dapp.png'),
