@@ -2,10 +2,10 @@
 title: Exploring Solidity Low-Level Features - ABI Encoding and Opcodes
 description: Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.
 authors:
-   - name: Oyeniyi Abiola Peace
-     title: CTO, DFMLab Limited
-     url: https://github.com/iamoracle
-     image_url: https://github.com/iamoracle.png
+  - name: Oyeniyi Abiola Peace
+    title: CTO, DFMLab Limited
+    url: https://github.com/iamoracle
+    image_url: https://github.com/iamoracle.png
 tags: [celosage, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes
@@ -17,11 +17,9 @@ slug: /tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes
 
 Solidity is a programming language for writing smart contracts on the Ethereum blockchain. It is an object-oriented, high-level language that is similar to JavaScript. However, Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.
 
-
 ## Prerequisites
 
 This tutorial is for already inclined and experienced developers with prior knowledge of smart contracts and the EVM, but it can also serve as a refresher for experienced developers.
-
 
 ## ABI Encoding
 
@@ -39,7 +37,7 @@ This function takes the function signature and its parameters as arguments and r
     function add(uint256 a, uint256 b) public pure returns (uint256) {
         return a + b;
     }
-    
+
     function test() public pure {
         uint256 a = 123;
         uint256 b = 456;
@@ -48,7 +46,6 @@ This function takes the function signature and its parameters as arguments and r
 ```
 
 In this example, the `add` function takes two `uint256` input parameters and returns a `uint256` value. The `test` function calls the `add` function and encodes the input parameters using the `abi.encodeWithSignature` function.
-
 
 ### 2. abi.encode
 
@@ -63,7 +60,6 @@ The abi.encode function takes the parameters as arguments and returns a byte arr
 ```
 
 In this example, the `test` function encodes the input parameters using the `abi.encode` function.
-
 
 ### 3. abi.encodePacked
 
@@ -93,29 +89,29 @@ However, it's important to note that gas cost can vary depending on the specific
 
 ```solidity
     pragma solidity ^0.8.0;
-    
+
     contract UnoptimizedContract {
         struct Person {
             string name;
             uint age;
         }
-        
+
         Person[] public people;
-        
+
         function addPerson(string memory _name, uint _age) public {
             people.push(Person(_name, _age));
         }
-        
+
         function getPerson(uint index) public view returns (bytes memory) {
             Person memory p = people[index];
             return abi.encode(p.name, p.age);
         }
     }
-```    
+```
 
 In this contract, we define a struct `Person` representing a person's name and age. We also define an array of `Person` structs called `people` and two functions, `addPerson` and `getPerson.`
 
-The `addPerson` function takes a `name` and `age` parameter and adds a new `Person` struct to the `people` array. 
+The `addPerson` function takes a `name` and `age` parameter and adds a new `Person` struct to the `people` array.
 
 The `getPerson` function takes an `index` parameter and returns the encoded value of the `name` and `age` of the `Person` at the specified index in the `people` array. We use the `abi.encode` function to produce an array containing the `name` and `age` values. However, this creates unnecessary overhead because the function pads the values to ensure they are of a certain length.
 
@@ -123,25 +119,25 @@ The `getPerson` function takes an `index` parameter and returns the encoded valu
 
 ```solidity
     pragma solidity ^0.8.0;
-    
+
     contract OptimizedContract {
         struct Person {
             string name;
             uint age;
         }
-        
+
         Person[] public people;
-        
+
         function addPerson(string memory _name, uint _age) public {
             people.push(Person(_name, _age));
         }
-        
+
         function getPerson(uint index) public view returns (bytes memory) {
             Person memory p = people[index];
             return abi.encodePacked(bytes(p.name), bytes32(p.age));
         }
     }
-```    
+```
 
 In the optimized contract, we use `abi.encodePacked` instead of `abi.encode` in the `getPerson` function to produce a tightly packed byte array that contains the `name` and `age` values, reducing the amount of gas required to store and transmit the data.
 
@@ -149,7 +145,7 @@ By using `abi.encodePacked` instead of `abi.encode`, we can optimize the gas con
 
 ## Hash Collision Problem
 
-Collisions can occur with `abi.encode` and `abi.encodePacked`. However, the likelihood of a collision occurring with `abi.encodePacked` is slightly higher because it produces a tightly packed byte array, potentially resulting in more collisions than `abi.encode`.  This can be a concern when using hashes to represent data in smart contracts, as it could potentially allow an attacker to manipulate the contract by providing a different input that produces the same hash as the original input.
+Collisions can occur with `abi.encode` and `abi.encodePacked`. However, the likelihood of a collision occurring with `abi.encodePacked` is slightly higher because it produces a tightly packed byte array, potentially resulting in more collisions than `abi.encode`. This can be a concern when using hashes to represent data in smart contracts, as it could potentially allow an attacker to manipulate the contract by providing a different input that produces the same hash as the original input.
 
 That said, the probability of a hash collision occurring is still relatively low. Proper testing and validation of the inputs used to generate the hash can mitigate this possibility. Additionally, you can also use larger hash sizes to reduce the likelihood of a collision occurring.
 
@@ -201,6 +197,7 @@ The add opcode adds two values together. The first argument is the value to add,
         }
     }
 ```
+
 In this example, the `test` function uses assembly language to add the values `a` and `b` together.
 
 ### sstore
@@ -224,24 +221,24 @@ In this example, the `test` function uses assembly language to store the value `
 Solidity provides built-in functions for arithmetic operations like addition, subtraction, multiplication, and division. However, using opcodes directly can be more efficient regarding gas usage. For example, instead of using Solidity's `add` function, you can use the `ADD` opcode directly to add two numbers.
 
 Look at the example below:
- 
+
 ### Unoptimized code
 
 ```solidity
     pragma solidity ^0.8.0;
-    
+
     contract OpcodeExample {
         uint256 public result;
-    
+
         function add(uint256 a, uint256 b) public {
             result = a + b;
         }
-    
+
         function sub(uint256 a, uint256 b) public {
             result = a - b;
         }
     }
-```    
+```
 
 In the above code, we define a simple contract, `OpcodeExample,` with two functions, `add` and `sub,` that performs basic arithmetic operations and stores the result in a state variable `result.`
 
@@ -249,16 +246,16 @@ In the above code, we define a simple contract, `OpcodeExample,` with two functi
 
 ```solidity
     pragma solidity ^0.8.0;
-    
+
     contract OpcodeExample {
         uint256 public result;
-    
+
         function add(uint256 a, uint256 b) public {
             assembly {
                 result := add(a, b)
             }
         }
-    
+
         function sub(uint256 a, uint256 b) public {
             assembly {
                 result := sub(a, b)
