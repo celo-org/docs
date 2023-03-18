@@ -2,12 +2,11 @@
 title: Build Your Own Full stack Token Airdrop dApp on Celo Blockchain
 description: In this tutorial, we'll explore how to build a full stack token airdrop dApp on the Celo blockchain.
 
-
 authors:
-  - name: Jovan Mwesigwa 
+  - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-tags: [celo, 'celosage', 'intermediate', 'react', 'solidity', 'hardhat']
+tags: [celo, "celosage", "intermediate", "react", "solidity", "hardhat"]
 hide_table_of_contents: true
 slug: /tutorials/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain
 ---
@@ -22,21 +21,21 @@ Decentralized applications (dApps) are becoming increasingly popular as blockcha
 
 Here are some potential prerequisites and tools you may need to set up your development environment:
 
-* A basic understanding of Solidity, Ethereum, and blockchain concepts
-* Familiarity with the Celo blockchain and its features
-* Knowledge of JavaScript and the React framework
-* A code editor such as VS Code or Sublime Text
-* Node.js and npm installed on your system
-* A MetaMask wallet and some test Celo tokens for testing on the Celo testnet
+- A basic understanding of Solidity, Ethereum, and blockchain concepts
+- Familiarity with the Celo blockchain and its features
+- Knowledge of JavaScript and the React framework
+- A code editor such as VS Code or Sublime Text
+- Node.js and npm installed on your system
+- A MetaMask wallet and some test Celo tokens for testing on the Celo testnet
 
 ## Requirements​
 
-* Node.js version 12.13.0 or higher installed on your system
-* NPM version 6.12.0 or higher installed on your system
-* A code editor such as VS Code or Sublime Text
-* Hardhat Ethereum development environment version 2.0.11 or higher installed on your system
-* React version 17.0.1 or higher installed on your system
-* EthersJS version 5.0.32 or higher installed on your system
+- Node.js version 12.13.0 or higher installed on your system
+- NPM version 6.12.0 or higher installed on your system
+- A code editor such as VS Code or Sublime Text
+- Hardhat Ethereum development environment version 2.0.11 or higher installed on your system
+- React version 17.0.1 or higher installed on your system
+- EthersJS version 5.0.32 or higher installed on your system
 
 ## Setting up the project
 
@@ -286,29 +285,28 @@ Now that the network configuration for the alfajores network is done, we can now
 Create a new file called `deploy.js` in the scripts folder, then add the following code:
 
 ```js
-
-const { ethers } = require('hardhat')
-const hre = require('hardhat')
+const { ethers } = require("hardhat");
+const hre = require("hardhat");
 
 async function main() {
-  const factory = await hre.ethers.getContractFactory('AirToken')
-  const [owner] = await hre.ethers.getSigners()
-  const contract = await factory.deploy()
+  const factory = await hre.ethers.getContractFactory("AirToken");
+  const [owner] = await hre.ethers.getSigners();
+  const contract = await factory.deploy();
 
-  await contract.deployed()
-  console.log('Contract deployed to: ', contract.address)
-  console.log('Contract deployed by (Owner): ', owner.address, '\n')
+  await contract.deployed();
+  console.log("Contract deployed to: ", contract.address);
+  console.log("Contract deployed by (Owner): ", owner.address, "\n");
 }
 
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
-First, we import the hardhat run-time  (`hre`) library.  A module that provides a set of Hardhat-specific APIs.
+First, we import the hardhat run-time (`hre`) library. A module that provides a set of Hardhat-specific APIs.
 
 Next, we define an asynchronous function called `main`. In this function, we first create an instance of the `AirToken` contract factory using the `getContractFactory` method from `hre.ethers`. We then get the contract owner's address by calling `hre.ethers.getSigners()` and using the first signer in the resulting array.
 
@@ -357,7 +355,6 @@ npm run dev
 This is what the initial UI should look like:
 
 ![init_UI](https://user-images.githubusercontent.com/62109301/224999667-35639a67-789a-4f41-9ac1-a826603823a0.png)
-
 
 The UI consists of a connect button that when pressed, launches a browser wallet extension, and also displays a list of all eligible wallet addresses.
 In this case, we have none, because the contract is still empty.
@@ -449,7 +446,7 @@ We also have three functions, `addUser`, `airDropTokens`, and `populateData`, th
 
 Finally, we are setting up three `useWeb3Contract` hooks to call the smart contract functions `getAllCandidates`, `airdrop`, and `addWallet`. These hooks provide an easy way to call smart contract functions by abstracting away the complexity of creating and signing transactions.
 
- We changed the default artifacts path in the `hardhat.config.js` file so that we can automatically update and populate them in the frontend `/backend` folder along with the contract's address.
+We changed the default artifacts path in the `hardhat.config.js` file so that we can automatically update and populate them in the frontend `/backend` folder along with the contract's address.
 
 In your `hardhat.config.js` file add :
 
@@ -468,18 +465,15 @@ To add the `AirDrop` token to the user's MetaMask wallet, press the `Import toke
 
 ![press-import](https://user-images.githubusercontent.com/62109301/224999832-4a80e7a7-9a22-44ab-a931-c9695cf3cb5e.PNG)
 
-
 Next, enter the token address which in our case is the address of the deployed smart contract and its symbol `ADP`.
 
 As shown below:
 
 ![token-details](https://user-images.githubusercontent.com/62109301/224999930-73c4aeab-cbb1-4c72-a64b-9f8fc5a586ea.PNG)
 
-
 After a successful token import, you can verify that the user currently has 0 ADP tokens in their wallet. After the airdrop, the user should have more ADP tokens in their wallet.
 
 ![current-bal](https://user-images.githubusercontent.com/62109301/225000220-9cedb59e-9bb6-4eb1-9295-21cc7224c8da.PNG)
-
 
 Head over to [Celo Faucet](https://faucet.celo.org/) and add some test funds to your wallet.
 
@@ -493,13 +487,11 @@ This should display all the added addresses as shown below:
 
 ![all-candidates](https://user-images.githubusercontent.com/62109301/225000222-b4dfc45f-8ab2-47a4-9bc6-efd231a6ed4c.png)
 
-
 To distribute the airdrop, change the currently connected account in your wallet to the deployer/owner, press the red `Air Drop` button, and confirm the transaction in MetaMask.
 
 When we check all the candidates' ADP token balances, we see that they now have 10 more ADP tokens after the airdrop.
 
 ![after-airdrop](https://user-images.githubusercontent.com/62109301/225000329-12aabafb-756a-4c7d-affe-13c6d2db5a47.PNG)
-
 
 ## Conclusion​
 
