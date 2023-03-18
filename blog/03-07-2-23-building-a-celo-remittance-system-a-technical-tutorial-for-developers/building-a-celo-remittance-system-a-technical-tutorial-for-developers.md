@@ -19,7 +19,7 @@ Celo is a blockchain platform, designed to enable a new universe of financial so
 
 ## Prerequisites
 
-To get the most out of this tutorial, you should have a solid understanding of Solidity and experience with building smart contracts. Familiarity with Celo's messaging protocol and smart contract architecture is also recommended. You should also have a basic understanding of blockchain concepts and terminology. Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one [here] (https://docs.celo.org/developer/setup/wallet).
+To get the most out of this tutorial, you should have a solid understanding of Solidity and experience with building smart contracts. Familiarity with Celo's messaging protocol and smart contract architecture is also recommended. You should also have a basic understanding of blockchain concepts and terminology. Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one [here](https://docs.celo.org/developer/setup/wallet).
 
 ## Requirements
 
@@ -30,6 +30,7 @@ Celo SDK: This is a set of tools for building and deploying smart contracts on t
 Truffle: This is a popular development framework for building Ethereum-based applications. You can install it using npm by running ‘npm install -g truffle’.
 
 You will also need a text editor of your choice and a web3-enabled browser such as Chrome.
+
 Finally, it is recommended that you have some familiarity with using the command line interface. Note the installation of these tools will not be covered in this tutorial.
 
 ## Getting Started:
@@ -330,6 +331,7 @@ Oluwalana is a technical writer and a generalist. As an analog-by-birth and digi
 
 ## References
 
+[Source Code](https://github.com/lanacreates/celo-remittance-system)
 [Investopedia](https://www.investopedia.com/terms/r/remittance.asp)
 [Deploy on Celo with Truffle](https://docs.celo.org/developer/deploy/truffle)
 [Testnet Wallets](https://docs.celo.org/developer/setup/wallet)
