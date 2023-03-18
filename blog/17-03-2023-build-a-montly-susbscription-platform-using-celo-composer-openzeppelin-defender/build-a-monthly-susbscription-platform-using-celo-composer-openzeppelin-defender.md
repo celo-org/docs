@@ -1,5 +1,5 @@
 ---
-title: Build a montly susbscription platform using Celo composer & Openzeppelin Defender
+title: Build a monthly susbscription platform using Celo composer & Openzeppelin Defender
 description: In this tutorial, we will show you how to create a subscription platform using the Celo composer react-app and the hardhat package. The platform will offer three subscription plans that users can choose from, and payment will be charged monthly in cUSD. We will also use the OpenZeppelin Defender autotask to handle the monthly subscription charges and an email service to notify users of the charge status. By the end of this tutorial, you will have a working subscription platform and the knowledge to customize and build upon it for your own use case.
 authors:
   - name: Oluwafemi Alofe
@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
 tags: ['celosage','composer','celo','openzeppelin','reactcelo','contractkit','dapp','graph','subgraphs','hardhat','defender','smartcontract', 'solidity', 'nextjs','favorite', 'intermediate', 'advanced']
 hide_table_of_contents: true
-slug: /tutorials/build-a-montly-susbscription-platform-using-celo-composer-openzeppelin-defender
+slug: /tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender
 
 ---
 
