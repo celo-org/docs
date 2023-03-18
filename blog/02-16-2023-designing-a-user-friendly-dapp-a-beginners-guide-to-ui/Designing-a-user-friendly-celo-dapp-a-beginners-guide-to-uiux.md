@@ -6,12 +6,12 @@ authors:
     title: Celo member , Celo foundation
     url: https://github.com/GideonNut
     image_url: https://github.com/GideonNut.png
-tags: [celo, beginner, dApp, celosage, valora]
+tags: [celo, beginner, dapp, celosage, valora]
 hide_table_of_contents: true
 slug: /tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux
 ---
 
-![header](../src/data-tutorials/showcase/beginner/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux-new.png)
+![header](../../src/data-tutorials/showcase/beginner/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux-new.png)
 
 ## Introduction​
 
