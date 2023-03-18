@@ -110,7 +110,7 @@ This smart contract is based on the ERC20 standard and uses the token name "MyTo
 ```javascript
 const ContractKit = require("@celo/contractkit");
 const Web3 = require("web3");
-const MyToken = require("./build/contracts/MyToken.json");
+const MyToken = require("./build/contracts/MyToken.sol");
 
 async function deploy() {
   // Create a new instance of ContractKit
