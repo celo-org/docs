@@ -810,7 +810,7 @@ const Users: User[] = [
     description: 'A comprehensive breakdown of celo light client protocol',
     preview: require('./showcase/intermediate/celo-light-client.png'),
     website: '/blog/tutorials/a-technical-overview=of-celo-light-client-protocol',
-    tags: ['intermediate','celo','sdk','valora'],
+    tags: ['intermediate','celo','sdk','valora','celosage'],
   },
   {
     title: 'Cryptography in Blockchain - An Overview of Hash Functions and Digital Signatures',
