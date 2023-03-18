@@ -347,7 +347,6 @@ You can also interact with the Celo community and contribute to the platform's o
 
 I take pride in being a results-driven manager as well as a marketing and technical writing expert. I've spent the last five years honing my skills in building paid and organic marketing funnels for SaaS companies. Furthermore, I am a skilled Web 3 technical writer, allowing me to create compelling content that drives business growth. [LinkedIn](https://www.linkedin.com/in/maxwell-onyeka-3b4b1118b/) [Github](https://github.com/maxzysparks)
 
-
 ### References
 
 - [Celo Website](https://celo.org/)
