@@ -1052,6 +1052,13 @@ const Users: User[] = [
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
   },
   {
+    title: 'Leveraging the Power of Smart Contracts to Enhance Voting Security',
+    description: 'Discover how the implementation of smart contracts can strengthen the security and transparency of voting systems, revolutionizing the way we approach democracy.',
+    preview: require('./showcase/intermediate/ballot.png'),
+    website: 'blog/tutorials/leveraging-the-power-of-smart-contracts-to-enhance-voting-security',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
+  },
+  {
     title: 'How to Build a Full Stack Dapp For Selling Football Tickets on Celo',
     description: 'Learn how to build a dapp for seliing football tickets on the celo blockchain',
     preview: require('./showcase/intermediate/How-To-Build-a-Fullstack-Dapp-For-Selling-Football-Tickets.png'),
