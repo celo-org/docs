@@ -652,7 +652,7 @@ Like this:
 
 Congratulations! You've now learned how to write a multi-signature smart contract in Solidity using Hardhat. By following this tutorial, you've gained a solid understanding of how multi-signature contracts work, and you can now implement this secure form of contract ownership protection in your own projects.
 
-In the second part of this tutorial, we'll explore how to test the multi-signature contract we've just written using Hardhat. Testing is an essential aspect of any smart contract development process, and it ensures that your code works as intended and meets all requirements.
+In [the second part of this tutorial](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-2-2), we'll explore how to test the multi-signature contract we've just written using Hardhat. Testing is an essential aspect of any smart contract development process, and it ensures that your code works as intended and meets all requirements.
 
 Don't forget that you can view, clone, or fork the full code of this tutorial on GitHub at [Celo Multi-Signatures Hardhat](https://github.com/marc-aurele-besner/celo-multi-signatures-hardhat). You can use this code as a reference for your own multi-signature contracts or modify it to suit your specific needs.
 

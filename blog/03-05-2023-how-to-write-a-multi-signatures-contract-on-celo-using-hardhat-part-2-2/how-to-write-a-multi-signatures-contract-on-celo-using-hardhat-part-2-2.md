@@ -69,19 +69,22 @@ In the `errors.js` file, we will add the following code:
 
 ```js
 module.exports = {
-    NOT_SELF: 'CeloMultiSig: only this contract can call this function',
-    MAX_OWNERS_COUNT_EXCEEDED: 'CeloMultiSig: cannot add owner above 2^16 - 1',
-    INVALID_SIGNATURE: 'CeloMultiSig: invalid signatures',
-    INVALID_OWNER: 'CeloMultiSig: invalid owner',
-    OWNER_ALREADY_SIGNED: 'CeloMultiSig: owner already signed',
-    NOT_ENOUGH_GAS: 'CeloMultiSig: not enough gas',
-    OWNER_COUNT_BELOW_THRESHOLD: 'CeloMultiSig: cannot remove owner below threshold',
-    THRESHOLD_IS_ZERO: 'CeloMultiSig: threshold must be greater than 0',
-    THRESHOLD_GREATER_THAN_OWNERS_COUNT: 'CeloMultiSig: threshold must be less than or equal to owner count',
-    OLD_OWNER_NOT_OWNER: 'CeloMultiSig: old owner must be an owner',
-    NEW_OWNER_ALREADY_OWNER: 'CeloMultiSig: new owner must not be an owner',
-    NEW_OWNER_IS_ZERO_ADDRESS: 'CeloMultiSig: new owner must not be the zero address',
-}
+  NOT_SELF: "CeloMultiSig: only this contract can call this function",
+  MAX_OWNERS_COUNT_EXCEEDED: "CeloMultiSig: cannot add owner above 2^16 - 1",
+  INVALID_SIGNATURE: "CeloMultiSig: invalid signatures",
+  INVALID_OWNER: "CeloMultiSig: invalid owner",
+  OWNER_ALREADY_SIGNED: "CeloMultiSig: owner already signed",
+  NOT_ENOUGH_GAS: "CeloMultiSig: not enough gas",
+  OWNER_COUNT_BELOW_THRESHOLD:
+    "CeloMultiSig: cannot remove owner below threshold",
+  THRESHOLD_IS_ZERO: "CeloMultiSig: threshold must be greater than 0",
+  THRESHOLD_GREATER_THAN_OWNERS_COUNT:
+    "CeloMultiSig: threshold must be less than or equal to owner count",
+  OLD_OWNER_NOT_OWNER: "CeloMultiSig: old owner must be an owner",
+  NEW_OWNER_ALREADY_OWNER: "CeloMultiSig: new owner must not be an owner",
+  NEW_OWNER_IS_ZERO_ADDRESS:
+    "CeloMultiSig: new owner must not be the zero address",
+};
 ```
 
 These error messages are the same as the ones we used in our contract. We simply copied and pasted them here and assigned them to a variable. This has the advantage of making our tests more readable and easier to maintain. This way, if we change the error message in our contract, we will only have to change it in one place.
@@ -95,66 +98,104 @@ This should give you the following result:
 In the `utils.js` file, we will add the following code:
 
 ```js
-const { ethers, network, addressBook } = require('hardhat');
+const { ethers, network, addressBook } = require("hardhat");
 
 module.exports = {
-    setupProviderAndWallets: async function () {
-        const provider = ethers.provider;
-        let owner01;
-        let owner02;
-        let owner03;
+  setupProviderAndWallets: async function () {
+    const provider = ethers.provider;
+    let owner01;
+    let owner02;
+    let owner03;
 
-        let user01;
-        let user02;
-        let user03;
+    let user01;
+    let user02;
+    let user03;
 
-        if (network.config.accounts && network.config.accounts.mnemonic) {
-            // If the network is configured with a mnemonic, use it to generate the wallets
-            owner01 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/0`).privateKey, provider);
-            owner02 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/1`).privateKey, provider);
-            owner03 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/2`).privateKey, provider);
+    if (network.config.accounts && network.config.accounts.mnemonic) {
+      // If the network is configured with a mnemonic, use it to generate the wallets
+      owner01 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/0`
+        ).privateKey,
+        provider
+      );
+      owner02 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/1`
+        ).privateKey,
+        provider
+      );
+      owner03 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/2`
+        ).privateKey,
+        provider
+      );
 
-            user01 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/3`).privateKey, provider);
-            user02 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/4`).privateKey, provider);
-            user03 = new ethers.Wallet(ethers.Wallet.fromMnemonic(network.config.accounts.mnemonic, `m/44'/60'/0'/0/5`).privateKey, provider);
-        } else {
-            // If the network is not configured with a mnemonic, use the 3 first accounts as owners and the 3 next as users
-            owner01 = new ethers.Wallet(network.config.accounts[0], provider);
-            owner02 = new ethers.Wallet(network.config.accounts[1], provider);
-            owner03 = new ethers.Wallet(network.config.accounts[2], provider);
+      user01 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/3`
+        ).privateKey,
+        provider
+      );
+      user02 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/4`
+        ).privateKey,
+        provider
+      );
+      user03 = new ethers.Wallet(
+        ethers.Wallet.fromMnemonic(
+          network.config.accounts.mnemonic,
+          `m/44'/60'/0'/0/5`
+        ).privateKey,
+        provider
+      );
+    } else {
+      // If the network is not configured with a mnemonic, use the 3 first accounts as owners and the 3 next as users
+      owner01 = new ethers.Wallet(network.config.accounts[0], provider);
+      owner02 = new ethers.Wallet(network.config.accounts[1], provider);
+      owner03 = new ethers.Wallet(network.config.accounts[2], provider);
 
-            user01 = new ethers.Wallet(network.config.accounts[3], provider);
-            user02 = new ethers.Wallet(network.config.accounts[4], provider);
-            user03 = new ethers.Wallet(network.config.accounts[5], provider);
-        }
-        return [provider, owner01, owner02, owner03, user01, user02, user03]
-    },
-    deployContract: async function (owners, threshold) {
-        // Retrieve the contract factory
-        const CeloMultiSig = await ethers.getContractFactory('CeloMultiSig');
-        // Deploy the contract with the specified parameters for the constructor
-        const contract = await CeloMultiSig.deploy(owners, threshold, { gasLimit: 10000000 });
-        // Wait for the contract to be deployed
-        await contract.deployed();
-        // Save the contract address in the address book
-        await addressBook.saveContract(
-            'CeloMultiSig',
-            contract.address,
-            network.name,
-            contract.deployTransaction.from,
-            network.config.chainId,
-            contract.deployTransaction.blockHash,
-            contract.deployTransaction.blockNumber,
-            undefined,
-            {
-              owners,
-              threshold,
-            }
-          );
-        // Return the contract
-        return contract;
+      user01 = new ethers.Wallet(network.config.accounts[3], provider);
+      user02 = new ethers.Wallet(network.config.accounts[4], provider);
+      user03 = new ethers.Wallet(network.config.accounts[5], provider);
     }
-}
+    return [provider, owner01, owner02, owner03, user01, user02, user03];
+  },
+  deployContract: async function (owners, threshold) {
+    // Retrieve the contract factory
+    const CeloMultiSig = await ethers.getContractFactory("CeloMultiSig");
+    // Deploy the contract with the specified parameters for the constructor
+    const contract = await CeloMultiSig.deploy(owners, threshold, {
+      gasLimit: 10000000,
+    });
+    // Wait for the contract to be deployed
+    await contract.deployed();
+    // Save the contract address in the address book
+    await addressBook.saveContract(
+      "CeloMultiSig",
+      contract.address,
+      network.name,
+      contract.deployTransaction.from,
+      network.config.chainId,
+      contract.deployTransaction.blockHash,
+      contract.deployTransaction.blockNumber,
+      undefined,
+      {
+        owners,
+        threshold,
+      }
+    );
+    // Return the contract
+    return contract;
+  },
+};
 ```
 
 This file should now look like this:
@@ -171,7 +212,7 @@ In this file, we added two functions:
 In the `signature.js` file, we will add the following code:
 
 ```js
-const { network } = require('hardhat');
+const { network } = require("hardhat");
 
 module.exports = {
   signTransaction: async function (
@@ -185,32 +226,32 @@ module.exports = {
   ) {
     const signature = await wallet._signTypedData(
       {
-        name: 'CeloMultiSig',
-        version: '1.0',
+        name: "CeloMultiSig",
+        version: "1.0",
         chainId: network.config.chainId,
         verifyingContract: contractAddress,
       },
       {
         Transaction: [
           {
-            name: 'to',
-            type: 'address',
+            name: "to",
+            type: "address",
           },
           {
-            name: 'value',
-            type: 'uint256',
+            name: "value",
+            type: "uint256",
           },
           {
-            name: 'data',
-            type: 'bytes',
+            name: "data",
+            type: "bytes",
           },
           {
-            name: 'gas',
-            type: 'uint256',
+            name: "gas",
+            type: "uint256",
           },
           {
-            name: 'nonce',
-            type: 'uint96',
+            name: "nonce",
+            type: "uint96",
           },
         ],
       },
@@ -223,12 +264,12 @@ module.exports = {
       }
     );
     return signature;
-  }
-}
+  },
+};
 ```
 
 > **Note**
-> This function uses **_signTypedData** to sign the transaction as per ethersJS documentation [here](https://docs.ethers.io/v5/api/signer/#Signer-_signTypedData). However, in future versions of ethersJS, this function will be deprecated and replaced by **signTypedData**.
+> This function uses **\_signTypedData** to sign the transaction as per ethersJS documentation [here](https://docs.ethers.io/v5/api/signer/#Signer-_signTypedData). However, in future versions of ethersJS, this function will be deprecated and replaced by **signTypedData**.
 
 Like this:
 
@@ -239,59 +280,61 @@ Like this:
 In the `test.js` file, we will add the following code:
 
 ```js
-const { ethers, network } = require('hardhat');
-const { expect } = require('chai');
+const { ethers, network } = require("hardhat");
+const { expect } = require("chai");
 
-const signature = require('./signatures');
+const signature = require("./signatures");
 
 const ZERO = ethers.BigNumber.from(0);
 
 const sendRawTxn = async (input, sender, ethers, provider) => {
-    // Get the nonce
-    const txCount = await provider.getTransactionCount(sender.address)
-    // Prepare the transaction
-    const rawTx = {
-        chainId: network.config.chainId,
-        nonce: ethers.utils.hexlify(txCount),
-        to: input.to,
-        value: input.value || 0x00,
-        gasLimit: ethers.utils.hexlify(3000000),
-        gasPrice: ethers.utils.hexlify(25000000000),
-        data: input.data,
-    }
-    // Sign the transaction
-    const rawTransactionHex = await sender.signTransaction(rawTx)
-    // Send the transaction
-    const { hash } = await provider.sendTransaction(rawTransactionHex)
-    // Wait for the transaction to be mined
-    return await provider.waitForTransaction(hash)
-  }
-  
+  // Get the nonce
+  const txCount = await provider.getTransactionCount(sender.address);
+  // Prepare the transaction
+  const rawTx = {
+    chainId: network.config.chainId,
+    nonce: ethers.utils.hexlify(txCount),
+    to: input.to,
+    value: input.value || 0x00,
+    gasLimit: ethers.utils.hexlify(3000000),
+    gasPrice: ethers.utils.hexlify(25000000000),
+    data: input.data,
+  };
+  // Sign the transaction
+  const rawTransactionHex = await sender.signTransaction(rawTx);
+  // Send the transaction
+  const { hash } = await provider.sendTransaction(rawTransactionHex);
+  // Wait for the transaction to be mined
+  return await provider.waitForTransaction(hash);
+};
+
 const checkRawTxnResult = async (input, sender, error) => {
-    let result
-    // Check if the transaction should fail or not
-    if (error)
-        if (network.name === 'hardhat' || network.name === 'localhost')
-            await expect(sendRawTxn(input, sender, ethers, ethers.provider)).to.be.revertedWith(error)
-        else expect.fail('AssertionError: ' + error)
-    else {
-        result = await sendRawTxn(input, sender, ethers, ethers.provider)
-        expect(result.status).to.equal(1)
-    }
-    return result
-}
+  let result;
+  // Check if the transaction should fail or not
+  if (error)
+    if (network.name === "hardhat" || network.name === "localhost")
+      await expect(
+        sendRawTxn(input, sender, ethers, ethers.provider)
+      ).to.be.revertedWith(error);
+    else expect.fail("AssertionError: " + error);
+  else {
+    result = await sendRawTxn(input, sender, ethers, ethers.provider);
+    expect(result.status).to.equal(1);
+  }
+  return result;
+};
 
 const getEventFromReceipt = async (contract, receipt, eventName) => {
-    // Parse the logs
-    const log = receipt.logs.map((log) => {
-        try {
-            return contract.interface.parseLog(log)
-        } catch (e) {
-            return
-        }
-    })
-    return log
-}
+  // Parse the logs
+  const log = receipt.logs.map((log) => {
+    try {
+      return contract.interface.parseLog(log);
+    } catch (e) {
+      return;
+    }
+  });
+  return log;
+};
 ```
 
 These functions are used to send raw transactions and check the result of the transaction. They also allow us to get the event from the receipt.
@@ -303,22 +346,37 @@ It should now look like this:
 Now after the last line you added, add the following code:
 
 ```js
-const prepareSignatures = async (contract, owners, to, value, data, gas = 30000) => {
-    // Query the next nonce
-    const nonce = await contract.nonce()
-    let signatures = '0x'
-    for (var i = 0; i < owners.length; i++) {
-        // For each owners, sign the transaction
-        const sig = await signature.signTransaction(contract.address, owners[i], to, value, data, gas, nonce)
-        // Concatenate the signatures
-        signatures += sig.substring(2)
-    }
-    // Return signatures of all owners
-    return signatures
-}
+const prepareSignatures = async (
+  contract,
+  owners,
+  to,
+  value,
+  data,
+  gas = 30000
+) => {
+  // Query the next nonce
+  const nonce = await contract.nonce();
+  let signatures = "0x";
+  for (var i = 0; i < owners.length; i++) {
+    // For each owners, sign the transaction
+    const sig = await signature.signTransaction(
+      contract.address,
+      owners[i],
+      to,
+      value,
+      data,
+      gas,
+      nonce
+    );
+    // Concatenate the signatures
+    signatures += sig.substring(2);
+  }
+  // Return signatures of all owners
+  return signatures;
+};
 ```
 
-This function will prepare the signatures of all the owners of the contract. We will pass an array of owners using their wallets to the function and sign the transaction with each of them. The signatures will be concatenated and returned. 
+This function will prepare the signatures of all the owners of the contract. We will pass an array of owners using their wallets to the function and sign the transaction with each of them. The signatures will be concatenated and returned.
 
 It should now look like this:
 
@@ -327,66 +385,93 @@ It should now look like this:
 We still need to add the main helper function for testing the execution of the transaction. Please add the following code:
 
 ```js
-const execTransaction = async (contract, submitter, owners, to, value, data, gas = 30000, errorMsg, extraEvents, signatures) => {
-    // Prepare signatures if not provided
-    if (!signatures) signatures = await prepareSignatures(contract, owners, to, value, data, gas);
-    // Prepare transaction
-    const input = await contract.connect(submitter).populateTransaction.execTransaction(to, value, data, gas, signatures);
-  
-    // Send the transaction and check the result
-    const receipt = await checkRawTxnResult(input, submitter, errorMsg);
-    if (!errorMsg) {
-        // Check the event emitted (if transaction should succeed)
-        const event = await getEventFromReceipt(contract, receipt, 'TransactionExecuted');
-        let found = false;
-        for (var i = 0; i < event.length; i++) {
-            if (event[i] && event[i].name === 'TransactionExecuted') {
-                // If the event is found, check the parameters
-                expect(event[i].args.sender).to.be.equal(submitter.address);
-                expect(event[i].args.to).to.be.equal(to);
-                expect(event[i].args.value).to.be.equal(value);
-                expect(event[i].args.data).to.be.equal(data);
-                expect(event[i].args.txnGas).to.be.equal(gas);
-                found = true;
-                return receipt;
-            } else {
-                // If the event is not found, check if the transaction failed
-                if (
-                    extraEvents &&
-                    extraEvents.find((extraEvent) => extraEvent === 'TransactionFailed') &&
-                    event[i] &&
-                    event[i].name === 'TransactionFailed'
-                ) {
-                    // If the transaction failed, check the parameters and if we expect a failure
-                    expect(event[i].args.sender).to.be.equal(submitter.address);
-                    expect(event[i].args.to).to.be.equal(to);
-                    expect(event[i].args.value).to.be.equal(value);
-                    expect(event[i].args.data).to.be.equal(data);
-                    expect(event[i].args.txnGas).to.be.equal(gas);
-                    found = true;
-                    return receipt;
-                } else {
-                    // If the transaction failed but we don't expect it, throw an error
-                    if (found) expect.fail('TransactionExecuted event not found')
-                }
-            }
+const execTransaction = async (
+  contract,
+  submitter,
+  owners,
+  to,
+  value,
+  data,
+  gas = 30000,
+  errorMsg,
+  extraEvents,
+  signatures
+) => {
+  // Prepare signatures if not provided
+  if (!signatures)
+    signatures = await prepareSignatures(
+      contract,
+      owners,
+      to,
+      value,
+      data,
+      gas
+    );
+  // Prepare transaction
+  const input = await contract
+    .connect(submitter)
+    .populateTransaction.execTransaction(to, value, data, gas, signatures);
+
+  // Send the transaction and check the result
+  const receipt = await checkRawTxnResult(input, submitter, errorMsg);
+  if (!errorMsg) {
+    // Check the event emitted (if transaction should succeed)
+    const event = await getEventFromReceipt(
+      contract,
+      receipt,
+      "TransactionExecuted"
+    );
+    let found = false;
+    for (var i = 0; i < event.length; i++) {
+      if (event[i] && event[i].name === "TransactionExecuted") {
+        // If the event is found, check the parameters
+        expect(event[i].args.sender).to.be.equal(submitter.address);
+        expect(event[i].args.to).to.be.equal(to);
+        expect(event[i].args.value).to.be.equal(value);
+        expect(event[i].args.data).to.be.equal(data);
+        expect(event[i].args.txnGas).to.be.equal(gas);
+        found = true;
+        return receipt;
+      } else {
+        // If the event is not found, check if the transaction failed
+        if (
+          extraEvents &&
+          extraEvents.find(
+            (extraEvent) => extraEvent === "TransactionFailed"
+          ) &&
+          event[i] &&
+          event[i].name === "TransactionFailed"
+        ) {
+          // If the transaction failed, check the parameters and if we expect a failure
+          expect(event[i].args.sender).to.be.equal(submitter.address);
+          expect(event[i].args.to).to.be.equal(to);
+          expect(event[i].args.value).to.be.equal(value);
+          expect(event[i].args.data).to.be.equal(data);
+          expect(event[i].args.txnGas).to.be.equal(gas);
+          found = true;
+          return receipt;
+        } else {
+          // If the transaction failed but we don't expect it, throw an error
+          if (found) expect.fail("TransactionExecuted event not found");
         }
-        // If the event is not found, throw an error
-        if (event.length == 0) expect.fail('TransactionExecuted event not found')
-        // If we expect an extra event, check if it is emitted
-        if (extraEvents && extraEvents.length > 0) {
-            for (let i = 1; i < extraEvents.length; i++) {
-                const eventsFound = await getEventFromReceipt(contract, receipt, event);
-                for (var ii = 0; i < eventsFound.length; ii++) {
-                    if (eventsFound[ii]) {
-                        expect(submitter.address).to.be.equal(eventsFound[ii].sender);
-                        return receipt;
-                    }
-                }
-            }
-        }
+      }
     }
-}
+    // If the event is not found, throw an error
+    if (event.length == 0) expect.fail("TransactionExecuted event not found");
+    // If we expect an extra event, check if it is emitted
+    if (extraEvents && extraEvents.length > 0) {
+      for (let i = 1; i < extraEvents.length; i++) {
+        const eventsFound = await getEventFromReceipt(contract, receipt, event);
+        for (var ii = 0; i < eventsFound.length; ii++) {
+          if (eventsFound[ii]) {
+            expect(submitter.address).to.be.equal(eventsFound[ii].sender);
+            return receipt;
+          }
+        }
+      }
+    }
+  }
+};
 ```
 
 This function will prepare the transaction, send it, and check the result. It will also check the event emitted by the transaction. This helper function is flexible and can be used to test the execution of a transaction, the failure of a transaction, or the execution of a transaction with extra event.
@@ -398,41 +483,124 @@ Please make sure the function looks like this:
 Lastly, we need to add the function that will be used to test the addOwner, removeOwner, changeThreshold, and replaceOwner functions. Please add the following code:
 
 ```js
-const addOwner = async (contract, submitter, owners, ownerToAdd, gas = 30000, errorMsg, extraEvents) => {
-    const data = contract.interface.encodeFunctionData('addOwner(address)', [ownerToAdd])
+const addOwner = async (
+  contract,
+  submitter,
+  owners,
+  ownerToAdd,
+  gas = 30000,
+  errorMsg,
+  extraEvents
+) => {
+  const data = contract.interface.encodeFunctionData("addOwner(address)", [
+    ownerToAdd,
+  ]);
 
-    await execTransaction(contract, submitter, owners, contract.address, ZERO, data, gas, errorMsg, extraEvents)
+  await execTransaction(
+    contract,
+    submitter,
+    owners,
+    contract.address,
+    ZERO,
+    data,
+    gas,
+    errorMsg,
+    extraEvents
+  );
 
-    if (!errorMsg) expect(await contract.isOwner(ownerToAdd)).to.be.true
-}
-  
-const removeOwner = async (contract, submitter, owners, ownerToRemove, gas = 30000, errorMsg, extraEvents) => {
-    const data = contract.interface.encodeFunctionData('removeOwner(address)', [ownerToRemove])
+  if (!errorMsg) expect(await contract.isOwner(ownerToAdd)).to.be.true;
+};
 
-    await execTransaction(contract, submitter, owners, contract.address, ZERO, data, gas, undefined, extraEvents)
+const removeOwner = async (
+  contract,
+  submitter,
+  owners,
+  ownerToRemove,
+  gas = 30000,
+  errorMsg,
+  extraEvents
+) => {
+  const data = contract.interface.encodeFunctionData("removeOwner(address)", [
+    ownerToRemove,
+  ]);
 
-    if (!errorMsg) expect(await contract.isOwner(ownerToRemove)).to.be.false
-    else expect(await contract.isOwner(ownerToRemove)).to.be.true
-}
-  
-const changeThreshold = async (contract, submitter, owners, newThreshold, gas = 30000, errorMsg, extraEvents) => {
-    const data = contract.interface.encodeFunctionData('changeThreshold(uint16)', [newThreshold])
+  await execTransaction(
+    contract,
+    submitter,
+    owners,
+    contract.address,
+    ZERO,
+    data,
+    gas,
+    undefined,
+    extraEvents
+  );
 
-    await execTransaction(contract, submitter, owners, contract.address, ZERO, data, gas, errorMsg, extraEvents)
+  if (!errorMsg) expect(await contract.isOwner(ownerToRemove)).to.be.false;
+  else expect(await contract.isOwner(ownerToRemove)).to.be.true;
+};
 
-    if (!errorMsg) expect(await contract.threshold()).to.be.equal(newThreshold)
-}
-  
-const replaceOwner = async (contract, submitter, owners, ownerToAdd, ownerToRemove, gas = 30000, errorMsg, extraEvents) => {
-    const data = contract.interface.encodeFunctionData('replaceOwner(address,address)', [ownerToRemove, ownerToAdd])
+const changeThreshold = async (
+  contract,
+  submitter,
+  owners,
+  newThreshold,
+  gas = 30000,
+  errorMsg,
+  extraEvents
+) => {
+  const data = contract.interface.encodeFunctionData(
+    "changeThreshold(uint16)",
+    [newThreshold]
+  );
 
-    await execTransaction(contract, submitter, owners, contract.address, ZERO, data, gas, errorMsg, extraEvents)
+  await execTransaction(
+    contract,
+    submitter,
+    owners,
+    contract.address,
+    ZERO,
+    data,
+    gas,
+    errorMsg,
+    extraEvents
+  );
 
-    if (!errorMsg) {
-        expect(await contract.isOwner(ownerToAdd)).to.be.true
-        expect(await contract.isOwner(ownerToRemove)).to.be.false
-    }
-}
+  if (!errorMsg) expect(await contract.threshold()).to.be.equal(newThreshold);
+};
+
+const replaceOwner = async (
+  contract,
+  submitter,
+  owners,
+  ownerToAdd,
+  ownerToRemove,
+  gas = 30000,
+  errorMsg,
+  extraEvents
+) => {
+  const data = contract.interface.encodeFunctionData(
+    "replaceOwner(address,address)",
+    [ownerToRemove, ownerToAdd]
+  );
+
+  await execTransaction(
+    contract,
+    submitter,
+    owners,
+    contract.address,
+    ZERO,
+    data,
+    gas,
+    errorMsg,
+    extraEvents
+  );
+
+  if (!errorMsg) {
+    expect(await contract.isOwner(ownerToAdd)).to.be.true;
+    expect(await contract.isOwner(ownerToRemove)).to.be.false;
+  }
+};
 ```
 
 These four functions make use of the `execTransaction` function to test the execution of the `addOwner`, `removeOwner`, `changeThreshold`, and `replaceOwner` functions. They will also check if the owner was added, removed, or replaced correctly or if the threshold was changed correctly.
@@ -447,14 +615,14 @@ Finally, we need to export all the helper functions. Please add the following co
 
 ```js
 module.exports = {
-    checkRawTxnResult,
-    prepareSignatures,
-    execTransaction,
-    addOwner,
-    removeOwner,
-    changeThreshold,
-    replaceOwner,
-}
+  checkRawTxnResult,
+  prepareSignatures,
+  execTransaction,
+  addOwner,
+  removeOwner,
+  changeThreshold,
+  replaceOwner,
+};
 ```
 
 This way, we can import all the helper functions in our test file.
@@ -468,16 +636,16 @@ Please make sure the text looks like this:
 In the `index.js` file, we will add the following code:
 
 ```js
-const errors = require('./errors');
-const test = require('./test');
-const signature = require('./signatures');
-const utils = require('./utils');
+const errors = require("./errors");
+const test = require("./test");
+const signature = require("./signatures");
+const utils = require("./utils");
 
 module.exports = {
-    errors,
-    test,
-    signature,
-    ...utils,
+  errors,
+  test,
+  signature,
+  ...utils,
 };
 ```
 
@@ -495,10 +663,10 @@ Now that we have all the helper functions ready, we can start writing our first 
 ![Test file renamed](./images/renamed_test_file.png)
 
 ```js
-const { expect } = require('chai');
-const { ethers } = require('hardhat');
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
 
-const Helper = require('./helper');
+const Helper = require("./helper");
 
 let provider;
 let owner01;
@@ -510,28 +678,29 @@ let user02;
 let user03;
 let contract;
 
-describe('CeloMultiSig', function () {
+describe("CeloMultiSig", function () {
   before(async function () {
-    [provider, owner01, owner02, owner03, user01, user02, user03] = await Helper.setupProviderAndWallets()
-  })
+    [provider, owner01, owner02, owner03, user01, user02, user03] =
+      await Helper.setupProviderAndWallets();
+  });
 
   beforeEach(async function () {
-    const owners = [owner01.address, owner02.address, owner03.address]
-    ownerCount = owners.length
+    const owners = [owner01.address, owner02.address, owner03.address];
+    ownerCount = owners.length;
     contract = await Helper.deployContract(
       [owner01.address, owner02.address, owner03.address],
       2
-    )
-  })
+    );
+  });
 
-  it('Contract return correct contract name', async function () {
-    expect(await contract.name()).to.be.equal('CeloMultiSig')
-  })
+  it("Contract return correct contract name", async function () {
+    expect(await contract.name()).to.be.equal("CeloMultiSig");
+  });
 
-  it('Contract return correct contract version', async function () {
-    expect(await contract.version()).to.be.equal('1.0')
-  })
-})
+  it("Contract return correct contract version", async function () {
+    expect(await contract.version()).to.be.equal("1.0");
+  });
+});
 ```
 
 Please make sure the text looks like this:
@@ -646,29 +815,29 @@ Doing so, we should have the following result:
 Now let's add more tests to our test file. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
-  it('Contract return correct threshold', async function () {
-    expect(await contract.threshold()).to.be.equal(2)
-  })
+it("Contract return correct threshold", async function () {
+  expect(await contract.threshold()).to.be.equal(2);
+});
 
-  it('Contract return correct ownerCount', async function () {
-    expect(await contract.ownerCount()).to.be.equal(ownerCount)
-  })
+it("Contract return correct ownerCount", async function () {
+  expect(await contract.ownerCount()).to.be.equal(ownerCount);
+});
 
-  it('Contract return correct nonce', async function () {
-    expect(await contract.nonce()).to.be.equal(0)
-  })
+it("Contract return correct nonce", async function () {
+  expect(await contract.nonce()).to.be.equal(0);
+});
 
-  it('Contract return true when calling isOwner for the original owners addresses', async function () {
-    expect(await contract.isOwner(owner01.address)).to.be.true
-    expect(await contract.isOwner(owner02.address)).to.be.true
-    expect(await contract.isOwner(owner03.address)).to.be.true
-  })
+it("Contract return true when calling isOwner for the original owners addresses", async function () {
+  expect(await contract.isOwner(owner01.address)).to.be.true;
+  expect(await contract.isOwner(owner02.address)).to.be.true;
+  expect(await contract.isOwner(owner03.address)).to.be.true;
+});
 
-  it('Contract return false when calling isOwner for non owners addresses', async function () {
-    expect(await contract.isOwner(user01.address)).to.be.false
-    expect(await contract.isOwner(user02.address)).to.be.false
-    expect(await contract.isOwner(user03.address)).to.be.false
-  })
+it("Contract return false when calling isOwner for non owners addresses", async function () {
+  expect(await contract.isOwner(user01.address)).to.be.false;
+  expect(await contract.isOwner(user02.address)).to.be.false;
+  expect(await contract.isOwner(user03.address)).to.be.false;
+});
 ```
 
 The result should look like this:
@@ -692,26 +861,81 @@ Doing so, we should have the following result:
 Now let's add the first test for a write function. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
-  it('Can add a new owner', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner02, owner03], user01.address, undefined, undefined, ['OwnerAdded'])
-  })
+it("Can add a new owner", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    user01.address,
+    undefined,
+    undefined,
+    ["OwnerAdded"]
+  );
+});
 
-  it('Can add a new owner and then use it to sign a new transaction replaceOwner', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner02, owner03], user01.address, undefined, undefined, [
-      'OwnerAdded',
-    ])
-    await Helper.test.replaceOwner(contract, owner01, [user01, owner02, owner03], user02.address, owner01.address, undefined, undefined, ['OwnerRemoved', 'OwnerAdded'])
-  })
+it("Can add a new owner and then use it to sign a new transaction replaceOwner", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    user01.address,
+    undefined,
+    undefined,
+    ["OwnerAdded"]
+  );
+  await Helper.test.replaceOwner(
+    contract,
+    owner01,
+    [user01, owner02, owner03],
+    user02.address,
+    owner01.address,
+    undefined,
+    undefined,
+    ["OwnerRemoved", "OwnerAdded"]
+  );
+});
 
-  it('Can add a new owner and then use it to sign a new transaction changeThreshold', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner02, owner03], user01.address, undefined, undefined, ['OwnerAdded'])
-    await Helper.test.changeThreshold(contract, owner01, [user01, owner02, owner03], 3, undefined, undefined, ['ThresholdChanged'])
-  })
+it("Can add a new owner and then use it to sign a new transaction changeThreshold", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    user01.address,
+    undefined,
+    undefined,
+    ["OwnerAdded"]
+  );
+  await Helper.test.changeThreshold(
+    contract,
+    owner01,
+    [user01, owner02, owner03],
+    3,
+    undefined,
+    undefined,
+    ["ThresholdChanged"]
+  );
+});
 
-  it('Can add a new owner and then use it to sign a new transaction removeOwner', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner02, owner03], user01.address, undefined, undefined, ['OwnerAdded'])
-    await Helper.test.removeOwner(contract, owner01, [user01, owner02, owner03], owner01.address, undefined, undefined, ['OwnerRemoved'])
-  })
+it("Can add a new owner and then use it to sign a new transaction removeOwner", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    user01.address,
+    undefined,
+    undefined,
+    ["OwnerAdded"]
+  );
+  await Helper.test.removeOwner(
+    contract,
+    owner01,
+    [user01, owner02, owner03],
+    owner01.address,
+    undefined,
+    undefined,
+    ["OwnerRemoved"]
+  );
+});
 ```
 
 The result should look like this:
@@ -731,27 +955,94 @@ Doing so, we should have the following result:
 Time to add some tests expecting the transaction to fail. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
-  it('Cannot add a new owner with just 10k gas', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner02, owner03], user01.address, 10000, Helper.errors.NOT_ENOUGH_GAS)
-  })
+it("Cannot add a new owner with just 10k gas", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    user01.address,
+    10000,
+    Helper.errors.NOT_ENOUGH_GAS
+  );
+});
 
-  it('Cannot add a new owner with 3x the signature of owner01', async function () {
-    await Helper.test.addOwner(contract, owner01, [owner01, owner01, owner01], user01.address, 30000, Helper.errors.OWNER_ALREADY_SIGNED
-    )
-  })
+it("Cannot add a new owner with 3x the signature of owner01", async function () {
+  await Helper.test.addOwner(
+    contract,
+    owner01,
+    [owner01, owner01, owner01],
+    user01.address,
+    30000,
+    Helper.errors.OWNER_ALREADY_SIGNED
+  );
+});
 
-  it('Cannot remove all owners', async function () {
-    await Helper.test.removeOwner(contract, owner01, [owner02, owner03], owner01.address, undefined, undefined, ['OwnerRemoved'])
-    await Helper.test.removeOwner(contract, owner02, [owner02, owner03], owner03.address, undefined, Helper.errors.OWNER_COUNT_BELOW_THRESHOLD, ['TransactionFailed'])
-    await Helper.test.removeOwner(contract, owner03, [owner02, owner03], owner02.address, undefined, Helper.errors.OWNER_COUNT_BELOW_THRESHOLD, ['TransactionFailed'])
-  })
+it("Cannot remove all owners", async function () {
+  await Helper.test.removeOwner(
+    contract,
+    owner01,
+    [owner02, owner03],
+    owner01.address,
+    undefined,
+    undefined,
+    ["OwnerRemoved"]
+  );
+  await Helper.test.removeOwner(
+    contract,
+    owner02,
+    [owner02, owner03],
+    owner03.address,
+    undefined,
+    Helper.errors.OWNER_COUNT_BELOW_THRESHOLD,
+    ["TransactionFailed"]
+  );
+  await Helper.test.removeOwner(
+    contract,
+    owner03,
+    [owner02, owner03],
+    owner02.address,
+    undefined,
+    Helper.errors.OWNER_COUNT_BELOW_THRESHOLD,
+    ["TransactionFailed"]
+  );
+});
 
-  it('Cannot reuse a signature', async function () {
-    const data = contract.interface.encodeFunctionData('addOwner(address)', [user02.address])
-    const signatures = await Helper.test.prepareSignatures(contract, [owner01, owner02], contract.address, 0, data)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, 30000, undefined, ['OwnerAdded'], signatures)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02], contract.address, 0, data, 30000, Helper.errors.INVALID_OWNER, undefined, signatures)
-  })
+it("Cannot reuse a signature", async function () {
+  const data = contract.interface.encodeFunctionData("addOwner(address)", [
+    user02.address,
+  ]);
+  const signatures = await Helper.test.prepareSignatures(
+    contract,
+    [owner01, owner02],
+    contract.address,
+    0,
+    data
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02],
+    contract.address,
+    0,
+    data,
+    30000,
+    undefined,
+    ["OwnerAdded"],
+    signatures
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02],
+    contract.address,
+    0,
+    data,
+    30000,
+    Helper.errors.INVALID_OWNER,
+    undefined,
+    signatures
+  );
+});
 ```
 
 The result should look like this:
@@ -775,16 +1066,50 @@ Doing so, we should have the following result:
 Let's add a few tests of regular Ethereum transactions. We'll go back to the `test/CeloMultiSig.test.js` file and add the following code:
 
 ```javascript
-  it('Execute transaction without data but 1 ETH in value', async function () {
-    await owner01.sendTransaction({ to: contract.address, value: ethers.utils.parseEther('1'), data: '', gasLimit: 30000 })
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
-  })
+it("Execute transaction without data but 1 ETH in value", async function () {
+  await owner01.sendTransaction({
+    to: contract.address,
+    value: ethers.utils.parseEther("1"),
+    data: "",
+    gasLimit: 30000,
+  });
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    owner01.address,
+    ethers.utils.parseEther("1"),
+    "0x",
+    30000
+  );
+});
 
-  it('Execute transaction without data but 2x 1 ETH in value', async function () {
-    await owner01.sendTransaction({ to: contract.address, value: ethers.utils.parseEther('2'), data: '', gasLimit: 30000 })
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
-    await Helper.test.execTransaction(contract, owner02, [owner01, owner02, owner03], owner01.address, ethers.utils.parseEther('1'), '0x', 30000)
-  })
+it("Execute transaction without data but 2x 1 ETH in value", async function () {
+  await owner01.sendTransaction({
+    to: contract.address,
+    value: ethers.utils.parseEther("2"),
+    data: "",
+    gasLimit: 30000,
+  });
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    owner01.address,
+    ethers.utils.parseEther("1"),
+    "0x",
+    30000
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner02,
+    [owner01, owner02, owner03],
+    owner01.address,
+    ethers.utils.parseEther("1"),
+    "0x",
+    30000
+  );
+});
 ```
 
 The result should look like this:
@@ -806,7 +1131,6 @@ As you can see, we have our second test failing. We were able to execute transac
 ### Add a receive Function
 
 Let's fix this issue by adding a `receive` function. We'll go back to the `contracts/CeloMultiSig.sol` file and add the following code at the end of the contract:
-
 
 ```javascript
   /// @notice Receives Ether
@@ -843,7 +1167,7 @@ Doing so, you should see the following menu:
 
 Press 7 time on the down arrow key to select the **Create Mock contracts** option:
 
-![Select Create Mock contracts](./images/npx_awesome_cli_select.png) 
+![Select Create Mock contracts](./images/npx_awesome_cli_select.png)
 
 Then press enter. You should see the following menu:
 
@@ -879,40 +1203,102 @@ We see that there is more tests for our mock ERC20 contract (a basic token contr
 Let's open first the `test/mocks/MockERC20.test.js` file to copy the deployment code of the Mock ERC20 contract:
 
 ```javascript
-const MockERC20 = await ethers.getContractFactory('MockERC20')
-mockERC20 = await MockERC20.deploy()
-await mockERC20.deployed()
+const MockERC20 = await ethers.getContractFactory("MockERC20");
+mockERC20 = await MockERC20.deploy();
+await mockERC20.deployed();
 ```
 
 This is the code that deploys the mock ERC20 contract, so let's go back to the `test/CeloMultiSig.test.js` file and add the following code at the end of the file:
 
 ```javascript
-  it('Deploy MockERC20 contract and mint token using the multi-signatures', async function () {
-    const MockERC20 = await ethers.getContractFactory('MockERC20')
-    mockERC20 = await MockERC20.deploy()
-    await mockERC20.deployed()
+it("Deploy MockERC20 contract and mint token using the multi-signatures", async function () {
+  const MockERC20 = await ethers.getContractFactory("MockERC20");
+  mockERC20 = await MockERC20.deploy();
+  await mockERC20.deployed();
 
-    const data = mockERC20.interface.encodeFunctionData('mint(address,uint256)', [user02.address, 1000000])
-    const signatures = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data, 50000)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data, 50000, undefined, ['Transfer'], signatures)
-    expect(await mockERC20.balanceOf(user02.address)).to.equal(1000000)
-  })
+  const data = mockERC20.interface.encodeFunctionData("mint(address,uint256)", [
+    user02.address,
+    1000000,
+  ]);
+  const signatures = await Helper.test.prepareSignatures(
+    contract,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data,
+    50000
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data,
+    50000,
+    undefined,
+    ["Transfer"],
+    signatures
+  );
+  expect(await mockERC20.balanceOf(user02.address)).to.equal(1000000);
+});
 
-  it('Deploy MockERC20 contract and mint token using the multi-signatures then burn them using the multi-signatures', async function () {
-    const MockERC20 = await ethers.getContractFactory('MockERC20')
-    mockERC20 = await MockERC20.deploy()
-    await mockERC20.deployed()
+it("Deploy MockERC20 contract and mint token using the multi-signatures then burn them using the multi-signatures", async function () {
+  const MockERC20 = await ethers.getContractFactory("MockERC20");
+  mockERC20 = await MockERC20.deploy();
+  await mockERC20.deployed();
 
-    const data1 = mockERC20.interface.encodeFunctionData('mint(address,uint256)', [contract.address, 1000000])
-    const signatures1 = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data1, 50000)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data1, 50000, undefined, ['Transfer'], signatures1)
-    expect(await mockERC20.balanceOf(contract.address)).to.equal(1000000)
+  const data1 = mockERC20.interface.encodeFunctionData(
+    "mint(address,uint256)",
+    [contract.address, 1000000]
+  );
+  const signatures1 = await Helper.test.prepareSignatures(
+    contract,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data1,
+    50000
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data1,
+    50000,
+    undefined,
+    ["Transfer"],
+    signatures1
+  );
+  expect(await mockERC20.balanceOf(contract.address)).to.equal(1000000);
 
-    const data2 = mockERC20.interface.encodeFunctionData('burn(uint256)', [1000000])
-    const signatures2 = await Helper.test.prepareSignatures(contract, [owner01, owner02, owner03], mockERC20.address, 0, data2, 50000)
-    await Helper.test.execTransaction(contract, owner01, [owner01, owner02, owner03], mockERC20.address, 0, data2, 50000, undefined, ['Transfer'], signatures2)
-    expect(await mockERC20.balanceOf(contract.address)).to.equal(0)
-  })
+  const data2 = mockERC20.interface.encodeFunctionData("burn(uint256)", [
+    1000000,
+  ]);
+  const signatures2 = await Helper.test.prepareSignatures(
+    contract,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data2,
+    50000
+  );
+  await Helper.test.execTransaction(
+    contract,
+    owner01,
+    [owner01, owner02, owner03],
+    mockERC20.address,
+    0,
+    data2,
+    50000,
+    undefined,
+    ["Transfer"],
+    signatures2
+  );
+  expect(await mockERC20.balanceOf(contract.address)).to.equal(0);
+});
 ```
 
 It should look like this:
@@ -936,12 +1322,12 @@ Perfect! We did it! We now have a multi-signature contract that can interact wit
 It's time to deploy our multi-signature contract on the Celo Alfajores Testnet. Let's go back to the `scripts/deploy.js` file and change the code to the following:
 
 ```javascript
-const Helper = require('../test/helper');
+const Helper = require("../test/helper");
 
 async function main() {
   const [, owner01, owner02, owner03] = await Helper.setupProviderAndWallets();
 
-  const owners = [owner01.address, owner02.address, owner03.address]
+  const owners = [owner01.address, owner02.address, owner03.address];
   const contract = await Helper.deployContract(owners, 2);
 
   console.log(`Contract CeloMultiSig deployed to ${contract.address}`);
