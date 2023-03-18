@@ -181,3 +181,4 @@ As a digital marketing and technical writing expert with a focus on Web3, I spec
 - [ERC20 token standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 - [Celo/contractkit](https://www.npmjs.com/package/@celo/contractkit)
 - [Openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
+- [Github Repo](https://github.com/maxzysparks/integration)
