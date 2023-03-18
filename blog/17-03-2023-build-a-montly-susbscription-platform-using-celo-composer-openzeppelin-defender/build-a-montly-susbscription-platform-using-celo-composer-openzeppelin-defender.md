@@ -49,17 +49,15 @@ npm i @celo/celocomposer -g
 npx celo-composer-create
 ```
 
-#### this will prompt you to select the framework and the template you want to use
+This will prompt you to select the framework and the template you want to use
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598536278/ae85c391-2e8a-455c-ad26-13dbea2d3753.png)
 
-#### After choosing the framework and the template, you'll be prompted to choose the smart contract development environment tool, decide whether or not to enable subgraph support, and give the project a name. Your terminal should seem like this at the end.
+After choosing the framework and the template, you'll be prompted to choose the smart contract development environment tool, decide whether or not to enable subgraph support, and give the project a name. Your terminal should seem like this at the end.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598808749/e840f3a2-9ec5-4d10-afed-9035b60c9536.png)
 
-Open up your folder on your VS Code and run ***<mark>yarn install</mark> to install the dependencies,*** and ***<mark>yarn run react:app dev </mark> i***n your terminal to start our local environment. your web interface should look like this.
-
-#screenshot.
+Open up your folder on your VS Code and run `yarn install` to install the dependencies, and `yarn run react:app dey` in your terminal to start our local environment. your web interface should look like this.
 
 Next, we need to create the cards as seen on the Create a new file called ***PaymentCard.js*** in your component folder and add the following code inside
 
@@ -445,7 +443,7 @@ export default function Header() {
 }
 ```
 
-After this we would be writing our smart contract that interacts with our subscription, so head over to your terminal and run this command ***<mark>"yarn run hardhat:accounts"</mark>*** to view the account that is set up. You should get an error message stating you do not have any account setup, therefore we need a deployer wallet. To do this rename the file ***env.example to*.env** and add a test private key that has already been given by celo [here](https://celo-composer-community-docs.vercel.app/docs/frameworks/react-app/installation-and-setup) and copy the private key already given to us .
+After this we would be writing our smart contract that interacts with our subscription, so head over to your terminal and run this command `yarn run hardhat:accounts` to view the account that is set up. You should get an error message stating you do not have any account setup, therefore we need a deployer wallet. To do this rename the file ***env.example** to **.env** and add a test private key that has already been given by celo [here](https://celo-composer-community-docs.vercel.app/docs/frameworks/react-app/installation-and-setup) and copy the private key already given to us.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677728444433/2940d0a2-d6cf-412c-ad21-5814e087115d.png)
 
@@ -691,7 +689,7 @@ Once the initial task is completed, we must organize our test cases in a way tha
 * Can a user subscribe to a plan without enough balance for the first charge?
     
 
-To run the first step add the following code to your subscription-test.js file
+To run the first step add the following code to your `subscription-test.js` file
 
 ```javascript
 const { expect, assert } = require("chai");
@@ -774,12 +772,13 @@ await this.paymentSubscription.subscribe(basic.plan, 12);
     const subscription = await this.paymentSubscription.subscriptions(
       this.deployer.address
     );
+});
 ```
 
 Your final code should look like this.
 
 ```javascript
- const { expect, assert } = require("chai");
+const { expect, assert } = require("chai");
 const { ethers } = require("hardhat");
 const helpers = require("@nomicfoundation/hardhat-network-helpers");
 
@@ -1403,7 +1402,7 @@ export default function Home() {
 
 Import the mock cUSD token we created with its contract address
 
-<img width="223" alt="Screenshot 2023-03-08 at 18 43 43" src="https://user-images.githubusercontent.com/52764879/223789773-9f8298fb-15d5-469b-94db-8e76dd52208d.png">
+![](https://user-images.githubusercontent.com/52764879/223789773-9f8298fb-15d5-469b-94db-8e76dd52208d.png)
 
 To test the UI , in your terminal run
 
@@ -1414,12 +1413,12 @@ yarn run dev
 
 and click on subscribe, your metamask should pop up and you should see the output below
 
-<img width="697" alt="Screenshot 2023-03-08 at 18 48 31" src="https://user-images.githubusercontent.com/52764879/223791237-ab018d43-097a-4f82-8ebb-33f2bd34ea6d.png">
+![](https://user-images.githubusercontent.com/52764879/223791237-ab018d43-097a-4f82-8ebb-33f2bd34ea6d.png)
 
 Sign the transaction and once succesfully executed, the subscribe button should change to unsubscribe.
 
 Verify your contract on celoscan and you should see your transaction.
-<img width="649" alt="Screenshot 2023-03-08 at 18 50 10" src="https://user-images.githubusercontent.com/52764879/223791788-e26a0c3f-398f-4c74-b609-b2a816bf8a48.png">
+![](https://user-images.githubusercontent.com/52764879/223791788-e26a0c3f-398f-4c74-b609-b2a816bf8a48.png)
 
 
 ## Step 2
@@ -1446,7 +1445,7 @@ send some celo to your relayer from your wallet.
 
 ## Step 4
 
-Transfer the ownership of the contract to the relayer, i will strongly advice that you watch the video tutorial link that would be attached at the end of the article from this step because it is easier to graps and understand.
+Transfer the ownership of the contract to the relayer, I will strongly advice that you watch the video tutorial link that would be attached at the end of the article from this step because it is easier to graps and understand.
 
 ![](https://user-images.githubusercontent.com/52764879/223862790-d1838654-57e5-4b72-a522-f7c57ee0c8d9.png)
 
