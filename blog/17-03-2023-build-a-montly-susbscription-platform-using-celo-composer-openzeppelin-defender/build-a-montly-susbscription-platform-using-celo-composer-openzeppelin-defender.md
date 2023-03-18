@@ -51,11 +51,11 @@ npx celo-composer-create
 
 #### this will prompt you to select the framework and the template you want to use
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598536278/ae85c391-2e8a-455c-ad26-13dbea2d3753.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598536278/ae85c391-2e8a-455c-ad26-13dbea2d3753.png)
 
 #### After choosing the framework and the template, you'll be prompted to choose the smart contract development environment tool, decide whether or not to enable subgraph support, and give the project a name. Your terminal should seem like this at the end.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598808749/e840f3a2-9ec5-4d10-afed-9035b60c9536.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677598808749/e840f3a2-9ec5-4d10-afed-9035b60c9536.png)
 
 Open up your folder on your VS Code and run ***<mark>yarn install</mark> to install the dependencies,*** and ***<mark>yarn run react:app dev </mark> i***n your terminal to start our local environment. your web interface should look like this.
 
@@ -63,7 +63,7 @@ Open up your folder on your VS Code and run ***<mark>yarn install</mark> to inst
 
 Next, we need to create the cards as seen on the Create a new file called ***PaymentCard.js*** in your component folder and add the following code inside
 
-```
+```js
 import React from 'react';
 
 export default function PaymentCard({ planName, price}) {
@@ -174,7 +174,7 @@ export default function PaymentCard({ planName, price}) {
 
 4 In your index.tx file , import your payment card, your final code should look like this.
 
-```
+```js
 import React, { useEffect, useState } from "react";
 import PaymentCard from "../components/PaymentCard";
 
@@ -206,11 +206,11 @@ export default function Home() {
 
 Result below. However you can choose to add more cards to your own project and play around the styling, but for this tutorial we are just going to stick to three different payment plan
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677640148664/77bcbf3e-3a6e-4ea3-b559-971243e3bf9c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677640148664/77bcbf3e-3a6e-4ea3-b559-971243e3bf9c.png)
 
 After this, click on your connect wallet button to see if it works, once it works its meant to show a disconnect button. However we also need to display the network its been connected to and the address of the wallet. So in your ***Header.tsx file,*** duplicate the button tag and add two more buttons to the header. Your final code should look like this
 
-```
+```js
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useCelo } from "@celo/react-celo";
@@ -321,11 +321,11 @@ export default function Header() {
 
 Your output should look like this..you can see the Alfajores network and your wallet address after connecting your wallet.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677700379085/64c4e595-033b-4b95-bd01-403a25e6fe34.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677700379085/64c4e595-033b-4b95-bd01-403a25e6fe34.png)
 
 However, the address button is way to long and doesn't look nice, we can make this better by truncating the address. The tuncate method is a method ...... read more here. Add the following code below your imports and also call the truncate
 
-```
+```js
 const truncateAddress = (address: string) => {
   return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
@@ -333,7 +333,7 @@ const truncateAddress = (address: string) => {
 
 Your final code should look like this
 
-```
+```js
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useCelo } from "@celo/react-celo";
@@ -447,15 +447,15 @@ export default function Header() {
 
 After this we would be writing our smart contract that interacts with our subscription, so head over to your terminal and run this command ***<mark>"yarn run hardhat:accounts"</mark>*** to view the account that is set up. You should get an error message stating you do not have any account setup, therefore we need a deployer wallet. To do this rename the file ***env.example to*.env** and add a test private key that has already been given by celo [here](https://celo-composer-community-docs.vercel.app/docs/frameworks/react-app/installation-and-setup) and copy the private key already given to us .
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677728444433/2940d0a2-d6cf-412c-ad21-5814e087115d.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677728444433/2940d0a2-d6cf-412c-ad21-5814e087115d.png)
 
 6 After this, re-run the above command and you should see an address in your terminal. Verify if the account as some celo in it via [celoscan](https://celoscan.io/) and if it doesn't you can request for a test token via [celo faucet](https://faucet.celo.org/). Head over to [open zepplin contracts](https://www.openzeppelin.com/contracts) and make use of the wizard shown below and copy the code generated into a new file created in the contract folder called ***MockCUSD.sol file***
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677729295502/cc133e24-48ea-402c-bced-7533fa27d873.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677729295502/cc133e24-48ea-402c-bced-7533fa27d873.png)
 
 Let's install some OpenZeppelin contracts so we can get access to the ERC-721 contracts. In your terminal, execute the following command:
 
-```
+```shell
 cd..
 cd hardhat
 yarn add @openzeppelin/contracts 
@@ -466,7 +466,7 @@ yarn add @openzeppelin/contracts
 * Now we would write some code in the ***PaymentSubscription.sol***. We would be importing [Openzeppelin's ERC721 Contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
     
 
-```
+```js
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -636,7 +636,7 @@ contract PaymentSubscription is Pausable, Ownable {
 
 Compile the contract, open up a terminal and execute these commands
 
-```
+```shell
 npx hardhat compile
 ```
 
@@ -664,7 +664,7 @@ Navigate into your test folder and create a new file called `subscription-test.j
 
 Head over to [Hardhat Network Helper](https://hardhat.org/hardhat-network-helpers/docs/overview) which gives you the ability to mine blocks up to a certain timestamp or block number. To install paste the below command into your terminal
 
-```powershell
+```shell
 yarn add --dev @nomicfoundation/hardhat-network-helpers
 ```
 
@@ -731,13 +731,13 @@ describe("PaymentSubscription", function () {
 
 In your terminal, run this command:
 
-```powershell
+```shell
  npx hardhat test test/subscription-test.js --network hardhat
 ```
 
 You should see the following result in your terminal
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678051597384/08b925db-17d9-488f-8451-cf687253abd4.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678051597384/08b925db-17d9-488f-8451-cf687253abd4.png)
 
 Also, we need to try this for our premium plan and enterprise plan. In that same file add the following code
 
@@ -757,7 +757,7 @@ it("Should have Enterprise plan", async function () {
 
 and run the same command in your terminal. Your terminal should look like this if properly executed.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678052443621/382c4bdc-925d-4d13-86c6-f182ef9dec59.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678052443621/382c4bdc-925d-4d13-86c6-f182ef9dec59.png)
 
 ## Step 2
 
@@ -827,7 +827,7 @@ const subscription = await this.paymentSubscription.subscriptions(
 
 Run the same command in your terminal, and your terminal should give you the following output below:
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678053462266/6df5b636-2b8c-4b90-b1c9-f95de8629095.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678053462266/6df5b636-2b8c-4b90-b1c9-f95de8629095.png)
 
 However, we need to confirm that the time a user subscribes is the actual current block time and that a user can subscribe to the wrong plan or the same plan twice. Paste the following code after the last function.
 
@@ -952,7 +952,7 @@ Run the same command in your terminal, and you should get the following results 
 
 Awesome! We now have all our tests working, and the next thing we need to do is verify our contract and run a test coverage. To do this head over to [solidity coverage](https://www.npmjs.com/package/solidity-coverage) and run the command below in your terminal
 
-```powershell
+```shell
 yarn add solidity-coverage --dev
 ```
 
@@ -964,11 +964,11 @@ require('solidity-coverage')
 
 In your terminal run,
 
-```powershell
+```shell
 npx hardhat coverage --testfiles "test/registry/*.ts" --network hardhat
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678100392588/633e5a1f-0eac-4930-8e4a-ab28e09159c3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678100392588/633e5a1f-0eac-4930-8e4a-ab28e09159c3.png)
 
 To verify your contract,
 
@@ -985,7 +985,7 @@ To verify your contract,
 
 In your terminal run
 
-```powershell
+```shell
 npx hardhat deploy --network alfajores
 ```
 
@@ -1015,7 +1015,7 @@ module.exports.tags = ['MockCUSD'];
 
 In your terminal, run
 
-```powershell
+```shell
 yarn run deploy
 ```
 
@@ -1023,13 +1023,13 @@ yarn run deploy
 
 And to verify our contracts we need to use the format below.
 
-```powershell
+```shell
 npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network alfajores
 ```
 
 To verify our subscription payment smart contract that was deployed above, the command to run will be:
 
-```powershell
+```shell
 npx hardhat hardhat verify 0x95BD5b1B16C586025bF0750c21bd1de433de8D4c 0xEb3345B25d59Ad1dD153DAf883b377258E8515F9 --network alfajores
 ```
 
@@ -1051,7 +1051,7 @@ Congrats on reaching this section! You've learned about smart contracts, UI with
     
 In the project folder run:
 
-```powershell
+```shell
 yarn subgraphs:get-abi
 ```
 
@@ -1059,12 +1059,11 @@ yarn subgraphs:get-abi
 
 To initialize the graph in our project, cd into the subgraph package folder and run
 
-```powershell
+```shell
 graph init
 ```
 
 Choose Ethereum for protocol, and hosted services, and add your GitHub username as your subgraph name. 
-
 
 
 Add celo-alfajores as the network, and you should see the output below if executed successfully.
@@ -1073,7 +1072,7 @@ Add celo-alfajores as the network, and you should see the output below if execut
 
 In our subgraph, a new folder called `ebook-payment-subscription-platform` has been created or in your own case whatever you named your folder name, Inside the folder, open the `schema.graphql` file and paste the following code inside.
 
-```graphql
+```js
 type Plan @entity(immutable: true) {
   id: Bytes!
   plan: Int!
@@ -1249,7 +1248,7 @@ The next action is to upload our subgraph , Head over to your dashboard and crea
 
 in your terminal run
 
-```bash
+```shell
 graph auth --product hosted-service<the number generated for you>
 graph deploy --product hosted-service<yourname-subgraphname>
 ```
@@ -1280,7 +1279,7 @@ Congrats on reaching this section! You've learned about smart contracts, UI with
 
 To begin, paste the following code in your index.tx file 
 
-```
+```js
 import React, { useEffect, useState } from "react";
 import PaymentCard from "../components/PaymentCard";
 import {
@@ -1408,7 +1407,7 @@ Import the mock cUSD token we created with its contract address
 
 To test the UI , in your terminal run
 
-```
+```shell
 yarn run dev
 
 ```
