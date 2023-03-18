@@ -3,8 +3,8 @@ title: A Comparison of Hardware, Software and Human Oracles
 description: In this article, we will examine the differences between Human, Hardware and software Oracle
 authors:
   - name: ✍️ Boyejo Oluwafemi
-url: https://github.com/boyfem
-image_url: https://github.com/boyfem
+    url: https://github.com/boyfem
+    image_url: https://github.com/boyfem
 tags: [beginner, celosage, celo, oracle]
 hide_table_of_contents: true
 slug: /tutorials/a-comparison-of-hardware-software-and-human-oracles
