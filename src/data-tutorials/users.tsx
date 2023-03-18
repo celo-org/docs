@@ -85,8 +85,6 @@ export type TagType =
   | "erc721"
   | "flutter"
   | "graph"
-  | "github"
-  | "githubactions"
   | "hardhat"
   | "html"
   | "intermediate"
@@ -2226,7 +2224,7 @@ const Users: User[] = [
     description: 'Learn how to deploy and publish your Flutter DApp to Google Play Store or Google Drive using GitHub Actions.',
     preview: require('./showcase/intermediate/after.png'),
     website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
-    tags: ['celosage', 'flutter', 'intermediate', 'celo', 'githubactions', 'github', 'deploy'], 
+    tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
