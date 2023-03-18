@@ -456,7 +456,7 @@ After this we would be writing our smart contract that interacts with our subscr
 Let's install some OpenZeppelin contracts so we can get access to the ERC-721 contracts. In your terminal, execute the following command:
 
 ```shell
-cd..
+cd ..
 cd hardhat
 yarn add @openzeppelin/contracts 
 ```
@@ -1037,7 +1037,7 @@ If you prefer a video, you can click on the screenshot below and watch the video
 
 %[https://www.youtube.com/watch?v=DnBhqte2mZA]
 
-# Sesction 3
+# Section 3
 
 Congrats on reaching this section! You've learned about smart contracts, UI with Nextjs and Tailwind, testing, and contract verification in the past two tutorials. In this article, we will provide step-by-step instructions for setting up a subgraph that queries subscription details from the OpenZeplin Defender autotask script. This will help you better understand the process.
 
@@ -1448,7 +1448,7 @@ send some celo to your relayer from your wallet.
 
 Transfer the ownership of the contract to the relayer, i will strongly advice that you watch the video tutorial link that would be attached at the end of the article from this step because it is easier to graps and understand.
 
-<img width="928" alt="Screenshot 2023-03-08 at 23 01 30" src="https://user-images.githubusercontent.com/52764879/223862790-d1838654-57e5-4b72-a522-f7c57ee0c8d9.png">
+![](https://user-images.githubusercontent.com/52764879/223862790-d1838654-57e5-4b72-a522-f7c57ee0c8d9.png)
 
 
 Make sure you go through the youtube tutorial [here](https://www.youtube.com/watch?v=5kBOtaRCxBs) for the last part of the project.
