@@ -26,7 +26,7 @@ In this article, we will be going through the process of setting up an automatio
 - GitHub Account
 - GitHub Actions
 
-> The list above is the basic knowledge and tools needed to be able to follow along in this tutorial, and a beginner's level of understanding of all this is enough.
+The list above is the basic knowledge and tools needed to be able to follow along in this tutorial, and a beginner's level of understanding of all this is enough.
 
 ## Term Definitions
 
