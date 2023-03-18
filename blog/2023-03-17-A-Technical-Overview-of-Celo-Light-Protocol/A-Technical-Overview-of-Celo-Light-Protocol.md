@@ -6,7 +6,7 @@ authors:
     title: Technical writer, Celo Foundation
     url: https://github.com/Kyrian212
     image_url: https://avatars.githubusercontent.com/u/33249458?v=4
-tags: [celo, intermediate ]
+tags: [celo, intermediate, celosage ]
 hide_table_of_contents: true
 slug: /tutorials/a-technical-overview=of-celo-light-client-protocol 
 ---
