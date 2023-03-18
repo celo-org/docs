@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux
 ---
 
-![header](../src/data-tutorials/showcase/beginner/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux.png)
+![header](../src/data-tutorials/showcase/beginner/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux-new.png)
 
 
 
