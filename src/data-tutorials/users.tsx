@@ -2083,6 +2083,14 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'Deploying a proposal for DAOs on Celo',
+    description: 'This article explains how to deploy a governance proposal on Celo',
+    preview: require('./showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png'),
+    website: 'blog/tutorials/deploying-a-proposal-for-daos-on-celo',
+    tags: ['celosage', 'intermediate',  'celo'], 
+  },
+
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
