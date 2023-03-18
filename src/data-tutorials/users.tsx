@@ -25,7 +25,11 @@ import { sortBy } from "@site/src/utils/jsUtils";
  * - A short (≤120 characters) description of your project
  * - Use relevant tags to categorize your site (read the tag descriptions below)
  * - Add a local image preview (decent screenshot of your Docusaurus site)
- * - The image MUST be added to the GitHub repository, and use `require("img")`
+ * - The image MUST be added to the 
+ 
+ 
+ 
+ repository, and use `require("img")`
  * - The image has to have minimum width 640 and an aspect of no wider than 2:1
  * - If your website is open-source, add your source link. The link should open
  *   to a directory containing the `docusaurus.config.js` file
@@ -116,6 +120,8 @@ export type TagType =
   | "usecontractkit"
   | "valora"
   | "verification"
+  | "github"
+  | "githubactions"
   | "walletconnect"
   | "video";
 
@@ -2193,6 +2199,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
     website: 'blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi',
     tags: ['celosage', 'erc721', 'intermediate', 'celo', 'solidity'], 
+  },
+  {
+    title: 'Automate Flutter Celo DApp Deployment with GitHub Actions',
+    description: 'Learn how to deploy and publish your Flutter DApp to Google Play Store or Google Drive using GitHub Actions.',
+    preview: require('./showcase/intermediate/automate-flutter-celo-dapp-deployment-with-github-actions.png'),
+    website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
+    tags: ['celosage', 'flutter', 'intermediate', 'celo', 'githubactions', 'github', 'deploy'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
