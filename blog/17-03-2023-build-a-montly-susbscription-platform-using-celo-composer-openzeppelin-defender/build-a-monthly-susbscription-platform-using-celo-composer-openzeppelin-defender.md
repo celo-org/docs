@@ -646,7 +646,7 @@ If there are no errors, you are good to go 😚
 
 If you would rather learn from a video, we have a recording available of this tutorial on our YouTube. Watch the video by clicking on the screenshot below.
 
-(Video Tutorial)[https://www.youtube.com/watch?v=PEg1nRugl6E&list=PLOQEgpQdIoOTTc3F2OwsGk0r_n1KLkO0C] 
+[Video Tutorial](https://www.youtube.com/watch?v=PEg1nRugl6E&list=PLOQEgpQdIoOTTc3F2OwsGk0r_n1KLkO0C)
 
 Finally we have successfully completed our payment subscription UI and the contract and the next step is to write test for our smart contract which would be done in the next tutorial.
 
@@ -1037,7 +1037,7 @@ npx hardhat hardhat verify 0x95BD5b1B16C586025bF0750c21bd1de433de8D4c 0xEb3345B2
 
 If you prefer a video, you can click on the screenshot below and watch the video tutorial. In the next article, we will be **setting up Subgraph to query subscription details from the OpenZeppelin Defender Autotask script.**
 
-(Video Tutorial)[https://www.youtube.com/watch?v=DnBhqte2mZA]
+[Video Tutorial](https://www.youtube.com/watch?v=DnBhqte2mZA)
 
 # Section 3
 
@@ -1259,7 +1259,7 @@ You have successfully setup subgraph to query subscription details from openzepp
 
 If you prefer a video, you can click on the screenshot below and watch the video tutorial. In the next article, we will **Connect UI to Smart Contract & Setup Defender Admin, Replay & Autotask**
 
-(Video Tutorial)[https://www.youtube.com/watch?v=VBedVdeHhZ8]
+[Video Tutorial](https://www.youtube.com/watch?v=VBedVdeHhZ8)
 
 # Final Section
 
