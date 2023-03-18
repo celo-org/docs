@@ -1030,6 +1030,13 @@ const Users: User[] = [
     tags: ['advanced', 'foundation', 'crowdfunding', 'composer'],
   },
   {
+    title: 'Exploring Solidity Low-Level Features - ABI Encoding and Opcodes',
+    description: ' Solidity also has low-level features that allow developers to interact with the Ethereum Virtual Machine (EVM) at a lower level. Two of these features are ABI encoding and opcodes.',
+    preview: require('./showcase/intermediate/exploring-solidity-low-level-features-abi-encoding-and-opcodes.png'),
+    website: '/blog/tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes',
+    tags: ['celosage', 'intermediate',],
+  },
+  {
     title: "Gas Optimization Techniques in Solidity on Celo",
     description:
       "Optimizing smart contract performance is an essential aspect of blockchain development.",
@@ -1043,6 +1050,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png'),
     website: 'blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp',
     tags: ['celo', 'dapp', 'beginner', 'celosage'],
+  },
+  {
+    title: 'Leveraging the Power of Smart Contracts to Enhance Voting Security',
+    description: 'Discover how the implementation of smart contracts can strengthen the security and transparency of voting systems, revolutionizing the way we approach democracy.',
+    preview: require('./showcase/intermediate/ballot.png'),
+    website: 'blog/tutorials/leveraging-the-power-of-smart-contracts-to-enhance-voting-security',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
   },
   {
     title: 'How to Build a Full Stack Dapp For Selling Football Tickets on Celo',
@@ -1248,6 +1262,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
     website: 'blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle',
     tags: ['beginner','foundation', 'truffle'],
+  },
+  {
+    title: 'Building a Celo Remittance System A Technical Tutorial for Developers',
+    description: 'Learn the technical aspects of building a remittance system on the Celo network',
+    preview: require('./showcase/intermediate/building-a-celo-remittance-system-a-technical-tutorial-for-developers.png'),
+    website: 'blog/tutorials/building-a-celo-remittance-system-a-technical-tutorial-for-developers',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
     title: 'Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading',
@@ -2160,6 +2181,13 @@ const Users: User[] = [
     tags: ['advanced', 'solidity', 'nextjs', 'celosage'],
   },
   {
+    title: 'How to Create a Decentralized Application Using React-Celo',
+    description: 'This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo',
+    preview: require('./showcase/intermediate/how-to-create-a-decentralized-application-using-react-celo.png'),
+    website: 'blog/tutorials/how-to-create-a-decentralized-application-using-react-celo',
+    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'hardhat', 'crowdfunding', 'intermediate'],
+  },
+  {
     title: 'Example architectures for a simple payment dapp',
     description: 'This post will focus on the front-end part of how to create a simple payment dapp',
     preview: require('./showcase/beginner/example-architectures-for-a-simple-payment-dapp.png'),
@@ -2167,6 +2195,13 @@ const Users: User[] = [
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
   {
+    title: 'Connect and interact with Celo using web3modal',
+    description: 'Alternative method of connecting to Celo using web3Modal',
+    preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3modal.png'),
+    website: 'blog/tutorials/connect-and-interact-with-celo-using-web3modal',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity', 'nextjs', 'materialui', 'react'],
+   },
+   {
     title: 'Interact with Celo Blockchain using web3dart',
     description: 'This article explains how to construct a dart program to communicate with the Celo blockchain using web3dart',
     preview: require('./showcase/beginner/interact-with-celo-blockchain-using-web3dart.png'),
