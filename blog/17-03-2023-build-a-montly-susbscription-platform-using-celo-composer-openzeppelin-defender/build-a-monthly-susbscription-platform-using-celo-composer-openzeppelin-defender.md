@@ -865,7 +865,7 @@ it("Should not allow user to subscribe to the wrong plan", async function () {
 
 Run the same command in your terminal, and you should get the following results if executed correctly:
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678058189074/27729e83-121f-489e-b256-9eeedf8541f8.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678058189074/27729e83-121f-489e-b256-9eeedf8541f8.png)
 
 ## Step 3
 
@@ -947,7 +947,7 @@ it("Should not allow user to subscribe to a plan without enough allowance", asyn
 
 Run the same command in your terminal, and you should get the following results if executed correctly:
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678096813584/c2a4dba3-8f44-45b6-b233-503fdd696089.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678096813584/c2a4dba3-8f44-45b6-b233-503fdd696089.png)
 
 Awesome! We now have all our tests working, and the next thing we need to do is verify our contract and run a test coverage. To do this head over to [solidity coverage](https://www.npmjs.com/package/solidity-coverage) and run the command below in your terminal
 
@@ -980,7 +980,7 @@ To verify your contract,
 * Paste the key in the space available for it in the `.env` file
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678100705430/1a47fdab-dad4-47a3-a4ae-826dbf4211e9.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678100705430/1a47fdab-dad4-47a3-a4ae-826dbf4211e9.png)
 
 In your terminal run
 
@@ -1018,7 +1018,7 @@ In your terminal, run
 yarn run deploy
 ```
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678104236910/f4ebeb47-47e5-48ff-83ee-6bf08aabcc74.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678104236910/f4ebeb47-47e5-48ff-83ee-6bf08aabcc74.png)
 
 And to verify our contracts we need to use the format below.
 
