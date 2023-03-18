@@ -85,6 +85,8 @@ export type TagType =
   | "erc721"
   | "flutter"
   | "graph"
+  | "github"
+  | "githubactions"
   | "hardhat"
   | "html"
   | "intermediate"
@@ -120,8 +122,6 @@ export type TagType =
   | "usecontractkit"
   | "valora"
   | "verification"
-  | "github"
-  | "githubactions"
   | "walletconnect"
   | "video";
 
