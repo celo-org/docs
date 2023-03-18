@@ -28,7 +28,6 @@ import { sortBy } from "@site/src/utils/jsUtils";
  * - The image MUST be added to the  repository, and use `require("img")`
  
  
- 
  repository, and use `require("img")`
  * - The image has to have minimum width 640 and an aspect of no wider than 2:1
  * - If your website is open-source, add your source link. The link should open
