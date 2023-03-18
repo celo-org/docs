@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-restaurant-coupon-nft-system
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/building-a-restaurant-coupon-nft-system.png)
+![header](../../src/data-tutorials/showcase/advanced/building-a-restaurant-coupon-nft-system.png)
 
 ## Introduction
 We are back people! In this tutorial, we would be doing a little something different! We would be building a restaurant NFT system. Restaurants are the most active industry in the world and have the most vibrant community and coupons which have become digital has become an ever rapid space. Bringing the NFT to the coupon space makes a coupon a collectible and the rarity of each coupon determines how valuable it should be.
