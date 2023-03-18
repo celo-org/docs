@@ -1,7 +1,6 @@
 ---
 title: How to Create a Decentralized Application Using React-Celo
-description: This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp) to interact with the created crowdfunding smart contract using React-Celo
-
+description: This sequel walks blockchain developers on the Celo network through the process of creating a Decentralized Application (dApp).
 authors:
   - name: Israel Okunaya
     title: Product Manager, Technical Writer @Celo Foundation
@@ -70,7 +69,6 @@ function viewContributors() public view onlyOwner returns (address[] memory) {
 return contributors;
  }
  }
-///
 ```
 
 In the smart contract code above, we created the contract class and called it CrowdFunding. In our smart contract, we defined a variable of owner to store the address of the creator of the smart contract, a variable defined as minimunContribution to store the minimum amount a contributor can contribute to the crowdfunding program, and a list of addresses to store the addresses of contributors. The smart contract also contains function calls that allow users to make contributions to the smart contract. For in-depth details on creating and deploying the smart contract, go through the tutorial on [creating your first smart contract on the celo blockchain](https://www.notion.so/Creating-a-Smart-Contract-Dapp-8f4b831ed38341c2a84e5eeb17ba42c5) before continuing with this tutorial.
@@ -81,7 +79,7 @@ We will be using React to build the Dapp/website. React is an open-source JavaSc
 
 First, you will need to create a new react app. In the previous tutorial, where we built our smart contract, we created a folder called crowdfunding-contract, it is in this folder we will also be creating our react app. In the terminal point to the crowdfunding-contract and type
 
-```Bash
+```bash
 mkdir dapp
 cd dapp
 yarn create react-app .
@@ -89,11 +87,11 @@ yarn create react-app .
 
 yarn creat react-app initializes a new React project for us. Once initialization of our React application is done, our dapp folder should look like this.
 
-<img width="184" alt="react-init" src="https://user-images.githubusercontent.com/104994589/222727815-e7f804a6-835b-4ad2-89fb-305d56eef4fe.png">
+![react-init](https://user-images.githubusercontent.com/104994589/222727815-e7f804a6-835b-4ad2-89fb-305d56eef4fe.png)
 
 For the styling of the Dapp, I will be using tailwindcss. Tailwindcss is a utility first CSS framework that provides us with predefined classes to build custom user interface. To install and initialize tailwindcss, copy and paste these commands in your terminal:
 
-```Bash
+```bash
 yarn add --dev tailwindcss
 npx tailwindcss init
 ///
@@ -110,7 +108,6 @@ module.exports = {
   },
   plugins: [],
 };
-///
 ```
 
 Add the @tailwind directives for each of Tailwind’s layers to your index.css file.
@@ -119,20 +116,18 @@ Add the @tailwind directives for each of Tailwind’s layers to your index.css f
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-///
 ```
 
 After react app has been successfully created and tailwindcss installed, we will have to install react-celo along with celo contract-kit in the dapp folder we created. react-celo is a React hook for managing access to Celo with a built-in headless modal system for connecting to your user's wallet of choice. To install react-celo and celo contract-kit run the following commands in your terminal.
 
-```Bash
+```bash
 yarn add @celo/react-celo @celo/contractkit
 ```
 
 We will have to make further configurations to our project folder to enable us to use react-celo without running into errors or bugs. This configuration involves installing webpack and other dependencies. To install webpack, type these commands in your terminal.
 
-```Bash
+```bash
 yarn add --dev webpack
-///
 ```
 
 After successfully installing webpack, create a webpack.config.js file in the dapp folder and paste the code in it.
@@ -149,14 +144,12 @@ module.exports = {
     net: "empty",
   },
 };
-///
 ```
 
 For the other dependencies, paste this in your terminal.
 
-```Bash
+```bash
 yarn add --dev react-app-rewired crypto-browserify stream-browserify assert stream-http https-browserify os-browserify url buffer process
-///
 ```
 
 Create config-overrides.js in the dapp folder with the content:
@@ -183,24 +176,22 @@ module.exports = function override(config) {
   ]);
   return config;
 };
-///
 ```
 
 In the package.json file, change the scripts field for start, build, and test. Replace react-scripts with react-app-rewired:
 
-```JSON
+```json
 "scripts": {
       "start": "react-app-rewired start",
       "build": "react-app-rewired build",
       "test": "react-app-rewired test",
       "eject": "react-scripts eject"
 },
-///
 ```
 
 Once we are done with the necessary configurations, the dapp folder should look like this:
 
-<img width="179" alt="config" src="https://user-images.githubusercontent.com/104994589/222730979-d070101d-6870-46a6-9acb-eeef9842e381.png">
+![config](https://user-images.githubusercontent.com/104994589/222730979-d070101d-6870-46a6-9acb-eeef9842e381.png)
 
 In the index.js file under the src folder, import the CeloProvider component and "@celo/react-celo/lib/styles.css”.
 
@@ -208,7 +199,6 @@ In the index.js file under the src folder, import the CeloProvider component and
 //src/index.js
 import { CeloProvider } from "@celo/react-celo";
 import "@celo/react-celo/lib/styles.css";
-///
 ```
 
 Then wrap the CeloProvider component around the <App/> component in the index.js file.
@@ -235,7 +225,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-///
 ```
 
 react-celo uses [React's Context.Provider](https://reactjs.org/docs/context.html#contextprovider) under the hood to inject state throughout your application. This is why it is important to wrap your application with the provider in order to be able to access all the goodies react-celo provides.
@@ -244,27 +233,25 @@ In the CeloProvider component, we will specify the props, dapp and connectModal 
 
 ```js
 //src/index.js
-…
 root.render(
-   <React.StrictMode>
-        <CeloProvider
-	 dapp
-	connectModal={{
-	    // This options changes the title of the modal and can be either a string or a react    element
-                title: <span>Connect your Wallet</span>,
-                // This option toggles on and off the searchbar
-                searchable: true,
-}}
-        >
-             <App />
-        </CeloProvider>
-   </React.StrictMode>
+  <React.StrictMode>
+    <CeloProvider
+      dapp
+      connectModal={{
+        // This options changes the title of the modal and can be either a string or a react    element
+        title: <span>Connect your Wallet</span>,
+        // This option toggles on and off the searchbar
+        searchable: true,
+      }}
+    >
+      <App />
+    </CeloProvider>
+  </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-///
 ```
 
 We can also hide specific wallets from the default list through the providersOptions. To learn more about using providersOptions to hide some default wallets, visit the [react-celo](https://docs.celo.org/developer/react-celo#default-wallets-and-customization) official documentation. In this tutorial, we will be going along with the wallet provided by react-celo.
@@ -273,16 +260,44 @@ Next, we will leave the index.js file and jump into the App.js to create the UI 
 
 ```js
 //src/App.js
-import {useCelo} from "@celo/react-celo";
-///```
+import { useCelo } from "@celo/react-celo";
+```
 
 Still in the App.js file, we will create the App component that will house our Dapp UI.
 
 ```js
 //src/App.js
-import {useCelo} from "@celo/react-celo";
-function App() { return ( <div className="flex flex-col justify-center items-center h-screen bg-[url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-cover bg-center bg-no-repeat"> <div className="text-center bg-[#7b7a82] text-white text-xl p-2"> <span>Welcome to our crowdfunding Dapp, where anyone can invest in innovative ideas and exciting projects.</span> <span>Join us today and become a part of the next big thing!</span> </div> <div className="mt-4"> {address ? ( <button className="bg-[#49cc90] text-white"> Donate </button> ) : ( <button onClick={connect} className="bg-[#bd8822] text-white py-2 px-4 rounded-md" > Connect Wallet </button> )} </div> </div> ); } export default App;
-///
+import { useCelo } from "@celo/react-celo";
+function App() {
+  return (
+    <div className="flex flex-col justify-center items-center h-screen bg-[url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-cover bg-center bg-no-repeat">
+      {" "}
+      <div className="text-center bg-[#7b7a82] text-white text-xl p-2">
+        {" "}
+        <span>
+          Welcome to our crowdfunding Dapp, where anyone can invest in
+          innovative ideas and exciting projects.
+        </span> <span>
+          Join us today and become a part of the next big thing!
+        </span>{" "}
+      </div> <div className="mt-4">
+        {" "}
+        {address ? (
+          <button className="bg-[#49cc90] text-white"> Donate </button>
+        ) : (
+          <button
+            onClick={connect}
+            className="bg-[#bd8822] text-white py-2 px-4 rounded-md"
+          >
+            {" "}
+            Connect Wallet{" "}
+          </button>
+        )}{" "}
+      </div>{" "}
+    </div>
+  );
+}
+export default App;
 ```
 
 In the App component, we created a parent div and centered its contents vertically and horizontally using flexbox by applying the predefined classes provided by tailwindcss for flexbox. In the parent div, we also conditionally rendered a button. The donate button gets rendered when the user has successfully connected their wallet to the Dapp and the address property is set to true. While the connect wallet button always gets rendered when a user hasn’t connected their wallet and the address property is set to false. Our next line of action is to destructure the connect function from the useCelo hook we imported, in order for us to be able to call it when the onClick event on the connect wallet button is triggered.
@@ -324,7 +339,6 @@ function App() {
   );
 }
 export default App;
-///
 ```
 
 In your terminal pointing to the dapp folder, run the yarn start to start the React development server. Once the server starts, the React application opens on localhost:3000.
@@ -417,10 +431,9 @@ function App() {
   );
 }
 export default App;
-///
 ```
 
-import the React useState and in the App component declare a openContributeModal state and give it a value of false. On the contribute button, declare an onClick event that calls a function which changes the state of the openContributeModal to true when the button is clicked. Then conditionally render the ContributionModal component and pass in the onClose props which calls a when that sets the openContributionModal to false and closes the modal.
+Import the React useState and in the App component declare a openContributeModal state and give it a value of false. On the contribute button, declare an onClick event that calls a function which changes the state of the openContributeModal to true when the button is clicked. Then conditionally render the ContributionModal component and pass in the onClose props which calls a when that sets the openContributionModal to false and closes the modal.
 
 In the crowdfunding.abi.js file, copy and paste this code.
 
@@ -481,14 +494,12 @@ export const abi = [
     type: "function",
   },
 ];
-///
 ```
 
 ## Getting User’s Wallet Balance
 
 ```bash
 yarn add bignumber.js
-///
 ```
 
 Many Celo operations operate on numbers that are outside the range of values used in Javascript. In this case we will use bignumber.js because it can handle these numbers.
@@ -496,7 +507,6 @@ Many Celo operations operate on numbers that are outside the range of values use
 ```js
 // src/App.js
 import { useCelo } from "@celo/react-celo"; import ContributeModal from "./contributeModal"; import { useState } from "react"; import BigNumber from "bignumber.js"; function App() { 	const {connect, address, getConnectedKit} = useCelo(); 	const [openContributeModal, setOpenContributeModal] = useState(false); 	const ERC20_DECIMALS = 18 return ( 	 ... ) } export default App;
-///
 ```
 
 Create the variable ERC20_DECIMALS and set it to 18. Since cUSD, the one that you are going to use here, is an ERC20 token, use ERC20_DECIMALS to convert values.
@@ -512,7 +522,6 @@ function App() { 	const {connect, address, getConnectedKit} = useCelo(); 	const 
   );
 }
 export default App;
-///
 ```
 
 Create a state variable totalBalance. We will store the value of the user balance in this state.
@@ -564,7 +573,6 @@ Copy the layout below and use it to replace the current layout you are returning
     ) : null}{" "}
   </div>{" "}
 </div>
-///
 ```
 
 Now you have an extra div that shows the user’s cUSD token balance. The content of the div will be the state variable we created to store the reduced value of the user’s cUSD token balance.
@@ -573,7 +581,6 @@ Your App.js file should now look like this.
 
 ```js
 function App() { const {connect, address, getConnectedKit} = useCelo(); 	const [openContributeModal, setOpenContributeModal] = useState(false); const [totalBalance, setTotalBalance] = useState(); const ERC20_DECIMALS = 18 	const getStableToken = async () => { const kit = await getConnectedKit(); const cUSDToken = await kit.contracts.getStableToken(); const usercUSDBalance = await cUSDToken.balanceOf(address); return usercUSDBalance; } const accountSummary = async () => { const totalBalance = await getStableToken(); const cUSDBalance = new BigNumber(totalBalance) .shiftedBy(-ERC20_DECIMALS) .toFixed(2); setTotalBalance(cUSDBalance); }; accountSummary(); return ( <div className="bg-[url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-cover bg-center bg-no-repeat"> <div className="text-end p-4">cUSD: {totalBalance}</div> <div className="flex flex-col justify-center items-center h-screen relative"> <div className="text-center bg-[#7b7a82] text-white text-xl p-2"> <span>Welcome to our crowdfunding Dapp, where anyone can invest in innovative ideas and exciting projects.</span> <span>Join us today and become a part of the next big thing!</span> </div> <div className="mt-4"> {address ? ( <button onClick={() => setOpenContributeModal(true)} className="bg-[#49cc90] text-white outline-none py-2 px-4 rounded-md" > Donate </button> ) : ( <button onClick={connect} className="bg-[#bd8822] text-white py-2 px-4 rounded-md outline-none" > Connect Wallet </button> )} </div> {openContributeModal ? ( <ContributeModal onClose={() => setOpenContributeModal(false)} /> ) : null} </div> </div> ); } export default App;
-///
 ```
 
 Pass the address as a prop in the ContibuteModal component. In the contributeModal.js file.
@@ -640,7 +647,6 @@ const ContributeModal = (props) => {
   );
 };
 export default ContributeModal;
-///
 ```
 
 Import React useState and useRef and useCelo from react-celo. Create a state to store the amount gotten from the user input, store the smart contract address in a variable.
