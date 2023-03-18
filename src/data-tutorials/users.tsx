@@ -1075,6 +1075,13 @@ const Users: User[] = [
     tags: ['celosage','celowallet', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate'],
   },
   {
+    title: 'How to Write Upgradable Smart Contracts and Deploy to the Celo Blockchain',
+    description: 'This tutorial will show you how to write upgradable smart contracts and deploy to the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
@@ -2089,6 +2096,12 @@ const Users: User[] = [
     preview: require('./showcase/advanced/create-full-stack-whitelist-dapp-with-merkle-trees-celo.png'),
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
+  },{
+    title: 'Creating a Twitter-Like Decentralized Application on Celo using Solidity',
+    description: 'Building a decentralized Twitter on the Celo blockchain refers to the creation of a social media platform that utilizes blockchain technology to enable users to communicate and share information in a decentralized and censorship-resistant manner',
+    preview: require('./showcase/intermediate/creating-a-twitter-like-decentralized-application-on-celo-using-solidity.png'),
+    website: 'blog/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain',
+    tags: ['celosage', 'dacade', 'smartcontract', 'solidity',],
   },
   {
     title: 'How to Use Hardware Tools with the Celo Blockchain',
