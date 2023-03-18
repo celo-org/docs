@@ -88,7 +88,7 @@ You can include a specific license according to the trust you want to build in t
 Now we need to touch the compiler versioning of the Solidity code. 
 
 ```solidity 
-pragma solidity = 0.8.9; 
+pragma solidity ^0.8.9; 
 
 ``` 
 
@@ -274,7 +274,7 @@ Here is your final Source code for this first series of Twitter Dapps.
 ```solidity
 
 //SPDX-License-Identifier: MIT
-pragma solidity = 0.8.9;
+pragma solidity ^0.8.9;
 
 contract Twitter{
 
