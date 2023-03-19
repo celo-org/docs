@@ -91,8 +91,7 @@ Step 1: Open your terminal and navigate to the smart contract file's directory.
 Step 2: Run the following command to compile the smart contract:
 
 ```solidity
-pragma solidity ^0.8.0;
- solc MyContract.sol --bin --abi --optimize -o ./build
+solc MyContract.sol --bin --abi --optimize -o ./build
 ```
 
 This command compiles the smart contract and generates two files:
@@ -138,7 +137,10 @@ For example, you could write a script that sets the value of the string in the s
 const Web3 = require("web3");
 const contractABI = require("./MyContract.abi.json");
 const web3 = new Web3("<YOUR-CELO-RPC-ENDPOINT>");
-const myContract = new web3.eth.Contract(contractABI, "<YOUR-CONTRACT-ADDRESS>");
+const myContract = new web3.eth.Contract(
+  contractABI,
+  "<YOUR-CONTRACT-ADDRESS>"
+);
 myContract.methods
   .setMyString("Hello, World!")
   .send({
@@ -154,10 +156,10 @@ Replace &lt;YOUR-CELO-RPC-ENDPOINT>, &lt;YOUR-CONTRACT-ADDRESS>, and &lt;YOUR-CE
 
 Step 3: Save the file with a .js extension (e.g., interact.js).
 
-Step 4: Run the bash script by running the following command in your terminal:
+Step 4: Run the nodejs script by running the following command in your terminal:
 
 ```bash
- bash interact.sh
+ node interact.js
 ```
 
 This will set the value of the string in the smart contract to "Hello, World!".
