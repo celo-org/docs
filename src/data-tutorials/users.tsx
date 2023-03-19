@@ -809,7 +809,7 @@ const Users: User[] = [
     title: 'A Technical Overview of Celo Light Client Protocol',
     description: 'A comprehensive breakdown of celo light client protocol',
     preview: require('./showcase/intermediate/celo-light-client.png'),
-    website: '/blog/tutorials/a-technical-overview=of-celo-light-client-protocol',
+    website: '/blog/tutorials/a-technical-overview-of-celo-light-client-protocol',
     tags: ['intermediate','celo','sdk','valora','celosage'],
   },
   {
