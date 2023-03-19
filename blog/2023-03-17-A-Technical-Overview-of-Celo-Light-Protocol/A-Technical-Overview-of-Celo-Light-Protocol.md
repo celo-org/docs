@@ -13,6 +13,8 @@ slug: /tutorials/a-technical-overview=of-celo-light-client-protocol
 
 ![header](../../src/data-tutorials/showcase/intermediate/celo-light-client.png)
 
+## Introduction
+
 Celo's Light Client Protocol is a crucial component of the Celo blockchain's infrastructure, providing a means for mobile and other resource-constrained devices to interact with the blockchain in a lightweight and efficient manner.
 
 This article offers a detailed technical overview of the protocol, covering key concepts such as Simplified Payment Verification (SPV), Merkle trees, and Bloom filter. We delve into the benefits of the protocol, including its ability to reduce bandwidth requirements and minimize the time and storage required for synchronization. It also explores the use cases for the protocol, highlighting its suitability for mobile wallet applications, peer-to-peer payments, and other decentralized applications.
