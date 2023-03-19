@@ -495,10 +495,10 @@ In this tutorial , we learnt and saw the versatility of Merkle trees in building
 
 ## Reference
 
-- https://hackernoon.com/evolution-of-airdrop-from-common-spam-to-the-merkle-tree-30caa2344170 
-- https://forum.openzeppelin.com/t/how-to-create-merkle-tree-airdrop-smartcontract/33463 
-- https://m.youtube.com/watch?v=xbBn5sj9pXM
-- https://steveng.medium.com/performing-merkle-airdrop-like-uniswap-85e43543a592 
+- [Evolution of airdrop from common spam to the merkle tree](https://hackernoon.com/evolution-of-airdrop-from-common-spam-to-the-merkle-tree-30caa2344170 )
+- [How to create merkle tree airdrop smartcontract](https://forum.openzeppelin.com/t/how-to-create-merkle-tree-airdrop-smartcontract/33463 
+- [Video](https://m.youtube.com/watch?v=xbBn5sj9pXM))
+- [Performing merkle airdrop like uniswap](https://steveng.medium.com/performing-merkle-airdrop-like-uniswap-85e43543a592)
 
 ## About Author
 
