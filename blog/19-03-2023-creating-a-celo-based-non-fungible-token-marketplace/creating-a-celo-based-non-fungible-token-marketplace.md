@@ -73,7 +73,7 @@ To resolve this issue, we can update your Node.js version to a newer version (pr
 
 4. Open the truffle-config.js file and add the following code to connect to the Celo network.
 
-```
+```js
 const ContractKit = require('@celo/contractkit')
 const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org')
 const privateKey = process.env.PRIVATE_KEY.replace('0x', '')
@@ -233,7 +233,7 @@ npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugi
 
 3. Create a new file named `.env` in the client directory and add the following code.
 
-```
+```bash
 REACT_APP_CONTRACT_ADDRESS=<NFTMarketplace contract address>
 REACT_APP_NETWORK=<Celo network URL>
 ```
@@ -372,7 +372,7 @@ cd <project directory>
 
 9. Start the development server by running the following command.
 
-```sql
+```bash
 npm run start
 ```
 
