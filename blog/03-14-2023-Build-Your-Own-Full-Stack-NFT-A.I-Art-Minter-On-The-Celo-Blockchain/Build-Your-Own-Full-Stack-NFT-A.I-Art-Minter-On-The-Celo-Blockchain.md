@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: "/tutorials/build-your-own-full-stack-nft-a.i-art-minter-on-the-celo -blockchain"
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/build_your_own_full_stack_nft_a.i_art_minter_on_the_celo _blockchain.png)
+![header](../../src/data-tutorials/showcase/intermediate/build-your-own-fullstack-nft-ai-art-minter-on-the-celo-blockchain.png)
 
 ## Introduction
 

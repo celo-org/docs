@@ -964,7 +964,7 @@ const Users: User[] = [
   {
     title: 'Build Your Own Full Stack NFT A.I Art Minter On The Celo Blockchain',
     description: 'In this tutorial, we will build a full stack nft digital art minter that will generate our art with artificial intelligence.',
-    preview: require('./showcase/intermediate/build_your_own_full_stack_nft_a.i_art_minter_on_the_celo _blockchain.png'),
+    preview: require('./showcase/intermediate/build-your-own-fullstack-nft-ai-art-minter-on-the-celo-blockchain.png'),
     website: 'blog/tutorials/build-your-own-full-stack-nft-a.i-art-minter-on-the-celo -blockchain',
     tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate'],
   },
