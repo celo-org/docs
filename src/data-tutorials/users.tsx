@@ -2278,6 +2278,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
+  {
+    title: 'Get started with CELO using Rust',
+    description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
+    preview: require('./showcase/beginner/get-started-with-celo-using-rust.png'),
+    website: 'blog/tutorials/get-started-with-celo-using-rust',
+    tags: ['celosage', 'beginner', 'celo', 'deploy'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
