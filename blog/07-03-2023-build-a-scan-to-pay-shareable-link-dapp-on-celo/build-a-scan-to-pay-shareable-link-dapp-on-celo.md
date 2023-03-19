@@ -6,7 +6,7 @@ authors:
   - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-tags: [celo, "celosage", "intermediate", "react", "ethers"]
+tags: ["celo", "celosage", "intermediate", "react", "ethers"]
 hide_table_of_contents: true
 slug: /tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo
 ---

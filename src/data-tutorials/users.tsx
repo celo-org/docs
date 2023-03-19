@@ -848,7 +848,7 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
     {
-    title: 'Build a Scan to Pay Shareable Link dApp on Celo',
+    title: 'Build a Scan-to-Pay Shareable Link dApp on Celo',
     description: 'Learn how to build a dApp on the Celo blockchain that enables users to quickly and easily make payments using a simple scan-to-pay feature.',
     preview: require('./showcase/intermediate/build-a-scan-to-pay-shareable-link-dapp-on-celo.png'),
     website: '/blog/tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo',
