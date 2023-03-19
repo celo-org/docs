@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/33249458?v=4
 tags: [celo, intermediate, celosage]
 hide_table_of_contents: true
-slug: /tutorials/a-technical-overview=of-celo-light-client-protocol
+slug: /tutorials/a-technical-overview-of-celo-light-client-protocol
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/celo-light-client.png)
