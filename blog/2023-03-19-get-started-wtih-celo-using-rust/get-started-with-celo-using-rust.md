@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,celosage,truffle,smartcontract,solidity,flutter, beginner]
+tags: [celo,celosage,truffle,smartcontract,solidity, beginner]
 hide_table_of_contents: true
 slug: /tutorials/get-started-with-celo-using-rust
 ---
