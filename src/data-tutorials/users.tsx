@@ -2257,6 +2257,13 @@ const Users: User[] = [
     website: 'blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi',
     tags: ['celosage', 'erc721', 'intermediate', 'celo', 'solidity'], 
   },
+  {
+    title: 'Automate Flutter Celo DApp Deployment with GitHub Actions',
+    description: 'Learn how to deploy and publish your Flutter DApp to Google Play Store or Google Drive using GitHub Actions.',
+    preview: require('./showcase/intermediate/automate-flutter-celo-dapp-deployment-with-github-actions.png'),
+    website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
+    tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
