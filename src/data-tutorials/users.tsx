@@ -2258,6 +2258,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'erc721', 'truffle'], 
   },
   {
+    title: 'Building Your Smart Contract Web Dapp With Celo Composer',
+    description: 'Learn how to initialize a Hardhat and React project using Celo-composer.',
+    preview: require('./showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png'),
+    website: 'blog/tutorials/building-your-smart-contract-web-dapp-with-celo-composer',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'react', 'nextjs', 'smartcontract'], 
+  },
+  {
     title: 'Developing a Crowdfunding Platform for Social Causes on Celo Blockchain - Part 1',
     description: 'A Celo-based crowdfunding platform for social causes would enable social organizations, charities, and individuals to create campaigns and connect directly with donors to donate funds, leveraging the transparency and security of blockchain technology.',
     preview: require('./showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png'),
