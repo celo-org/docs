@@ -6,7 +6,7 @@ authors:
     title: Web3 Developer,
     url: https://github.com/dahnny
     image_url: https://github.com/dahnny.png
-tags: [solidity, celo, celowallet]
+tags: [solidity, celo, celowallet,celosage]
 hide_table_of_contents: true
 slug: /tutorials/a-guide-to-building-decentralized-loan-dapp
 ---
