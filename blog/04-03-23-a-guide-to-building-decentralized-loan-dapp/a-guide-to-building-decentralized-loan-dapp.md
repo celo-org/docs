@@ -2,11 +2,11 @@
 title: A guide to building decentralized loan dapp on the celo blockchain
 description: This tutorial would put you through building a loan app where there would be little need for middlemen like banks
 authors:
-- name: Daniel Ogbuti
-  title: Web3 Developer, 
-  url: https://github.com/dahnny
-  image_url: https://github.com/dahnny.png
-tags: [solidity, celo, celowallet]
+  - name: Daniel Ogbuti
+    title: Web3 Developer,
+    url: https://github.com/dahnny
+    image_url: https://github.com/dahnny.png
+tags: [solidity, celo, celowallet,celosage]
 hide_table_of_contents: true
 slug: /tutorials/a-guide-to-building-decentralized-loan-dapp
 ---
@@ -14,12 +14,14 @@ slug: /tutorials/a-guide-to-building-decentralized-loan-dapp
 ![header](../../src/data-tutorials/showcase/intermediate/a-guide-to-building-decentralized-loan-dapp.png)
 
 ## Introduction
+
 Welcome! Welcome!! to another tutorial written by yours truly. If you have followed my tutorial previously, you would have figured that I love building mock dapps because I find them a more straight-forward method to learning about anything.
 However, in this tutorial, you would be building a decentralized loan dapp where a user would input his/her amount, it would get verified and then the user can then redeem the loan but with a fixed interest of 10%.
 
 As always, for the new birds here, we would always start out by understanding what is celo and what the ecosystem is trying to achieve
 
 ## What is Celo
+
 Celo is a blockchain platform that focuses on enabling mobile-first financial services. It is built using the Ethereum codebase and employs a proof-of-stake consensus mechanism for transaction validation. One unique aspect of Celo is its focus on usability and accessibility, aiming to create a more inclusive and decentralized financial system.
 
 ## Prerequisites
@@ -30,13 +32,13 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 - Have some knowledge of solidity and its concepts
 
 ## Requirements
+
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
 - A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
 - A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
 - An Internet Browser and a good internet connection
 - **[Remix](https://remix.ethereum.org)**
 - **[Celo Extension Wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)**.
-
 
 ## Development of the smart contract
 
@@ -59,7 +61,7 @@ The first line is a SPDX license identifier and a Solidity version pragma.
 SPDX (Software Package Data Exchange) is a specification that provides a standard way to declare the license of open source software packages. The SPDX-License-Identifier is a header that specifies the license of a given source code file.
 The Solidity version pragma specifies the version of the Solidity programming language used to write the smart contract code. The version range specified is greater than or equal to 0.7.0 and less than 0.9.0, meaning that the code should be compiled with a Solidity compiler version between 0.7.0 and 0.8.x.
 
-Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD). 
+Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD).
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -104,6 +106,7 @@ contract Loan {
     }
 ...
 ```
+
 Let's go over each of these fields:
 
 - `borrowerAddress`: A payable Ethereum address representing the borrower's address.
@@ -156,10 +159,9 @@ The `isAdmin` modifier is used to restrict access to certain functions within th
 
 The modifier takes an input parameter called `id` of type uint. It checks whether the sender of the current message, i.e. the user who is interacting with the contract, is the same as the contract itself. If the sender is not the contract, an error message "Accessible only to the admin" will be displayed and the function call will fail. If the sender is the contract, the function call will proceed and the code of the function being modified will be executed in place of the `_` placeholder.
 
-
 The `isOwner` modifier takes an input parameter called `_index` of type uint. This modifier checks whether the sender of the current message is the same as the address stored in the `loan` property of the `LoanDetail` struct associated with the given `index` in the `loans` mapping.
 
-If the sender is not the owner of that loan, then the function call will fail, and an error message "Accessible only to the owner" will be displayed. However, if the sender is the owner, then the function call will proceed, and the code of the function being modified will be executed in place of the "_" placeholder.
+If the sender is not the owner of that loan, then the function call will fail, and an error message "Accessible only to the owner" will be displayed. However, if the sender is the owner, then the function call will proceed, and the code of the function being modified will be executed in place of the "\_" placeholder.
 
 _Please note that the isAdmin variable can take any address as this address would be in charge of receiving the funds and also making other changes in the smart contract_
 
@@ -208,7 +210,6 @@ If the transfer is successful, the function will create a new `LoanDetails` stru
 
 After that, the new `LoanDetails` instance is stored in the `loan` mapping with a new unique identifier assigned to it, and the loan length counter is incremented by one. This indicates that a new loan has been successfully registered.
 
-
 The next function on the list is the `getLoans` function that allows the admin to view the loan details associated with a given index. The function takes in an index as input and checks if the caller is an admin.
 
 ```solidity
@@ -249,7 +250,7 @@ function getLoans(uint256 _index)
 
 If the caller is an admin, the function retrieves the `LoanDetails` struct instance from the `loan` mapping associated with the given index. The function then returns the borrower's address, name, home address, occupation, purpose of the loan, national ID, verification status, loan amount, loan tenure, repayment status, and timestamp of the loan request.
 
-After the above function, You then write two functions in the `Loan` contract. 
+After the above function, You then write two functions in the `Loan` contract.
 The first function is called `verifyApplicant` and takes an input parameter `_index` of type `uint256`.
 
 ```solidity
@@ -273,7 +274,7 @@ The first function is called `verifyApplicant` and takes an input parameter `_in
 
 The function is restricted to be executed only by the contract owner (i.e., the `isAdmin` modifier). The function first retrieves the `LoanDetails` struct for the given `_index` from the loan mapping. Then, it transfers the loan amount from the bank account to the borrower's address by calling the `transferFrom` function of the `IERC20Token` interface. If the transfer is successful, the function will then transfer the loan amount from the bank account to the borrower's account and update the verification status of the loan to "verified".
 
-The second function is called `unVerifyApplicant` and takes an input parameter _index of type uint256. It reverses the verification status of a loan application. This function is also restricted to be executed only by the contract owner (i.e., the isAdmin modifier). The function simply sets the verification field of the LoanDetails structure for the given _index to "unverified".
+The second function is called `unVerifyApplicant` and takes an input parameter \_index of type uint256. It reverses the verification status of a loan application. This function is also restricted to be executed only by the contract owner (i.e., the isAdmin modifier). The function simply sets the verification field of the LoanDetails structure for the given \_index to "unverified".
 
 Following this, you would write the `redeemLoan` function to which a user can use to return the loan they borrowed with interest.
 
@@ -291,10 +292,10 @@ Following this, you would write the `redeemLoan` function to which a user can us
         singleLoan.isPaid = true;
     }
 ```
+
 This function can only be called by the owner of the loan associated with the given `_index` because of the `isOwner` modifier.
 
 Inside the function, the code retrieves the `LoanDetails` struct associated with the given `_index` from the loan mapping and stores it in a variable called `singleLoan`. The function then attempts to transfer the loan amount plus 10% interest from the investor's wallet to the `bankAddress` using the IERC20Token interface. If the transfer is successful, the `isPaid` property of `singleLoan` is set to `true` to indicate that the loan has been redeemed. If the transfer fails, an error message "Did not reedem loan" will be displayed.
-
 
 Almost going to the end, you would need a way to check if a user is the admin so it can be easily implemented in whatever frontend you choose.
 
@@ -311,7 +312,7 @@ Almost going to the end, you would need a way to check if a user is the admin so
     }
 ```
 
-The `isUserAdmin` function checks if the input address _address is equal to the bankAddress. If they are equal, it returns `true`, which means that the input address is an admin. If they are not equal, it returns `false`, which means that the input address is not an admin.
+The `isUserAdmin` function checks if the input address \_address is equal to the bankAddress. If they are equal, it returns `true`, which means that the input address is an admin. If they are not equal, it returns `false`, which means that the input address is not an admin.
 
 The `getLoanLength` function simply returns the length of the loan array, which represents the number of loans that have been registered in the smart contract.
 
@@ -502,23 +503,15 @@ I am going to do something different in this tutorial by leaving the implementat
 You could also use this link to check out a sample implementation. Check [here](https://github.com/dahnny/monyara-1)
 
 ## Conclusion
-In conclusion, the smart contract presented is a loan management system that allows users to submit a loan application, verify the application, and redeem the loan if approved. 
+
+In conclusion, the smart contract presented is a loan management system that allows users to submit a loan application, verify the application, and redeem the loan if approved.
 
 ## Next steps
+
 From here, you could look into designing the frontend and challenge yourself by adding extra features to your smart contract like time stamps e.t.c.
 
 ## About the Author
+
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti
 
 See you soon!😉
-
-
-
-
-
-
-
-
-
-
-
