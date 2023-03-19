@@ -51,7 +51,27 @@ To do so, we will create a new folder called `helpers` inside the `test` folder.
 - `signature.js` - This file will contain the functions that we will use to sign the transaction requests before sending them to the contract.
 - `test.js` - This file will contain the helper functions that we will use to call the contract functions and verify the results.
 - `index.js` - This file will export all the functions from the other files.
-[What Is a Multisig Wallet?](https://www.coindesk.com/learn/what-is-a-multisig-wallet/))
+
+To create the required directories and files, you can run the following commands:
+
+```bash
+mkdir test/helper
+touch test/helper/errors.js test/helper/utils.js test/helper/signature.js test/helper/test.js test/helper/index.js
+```
+
+This should give you the following directory structure:
+
+![Test Helper](./images/create_test_helper_files.png)
+
+### Errors helper
+
+In the `errors.js` file, we will add the following code:
+
+```js
+module.exports = {
+  NOT_SELF: "CeloMultiSig: only this contract can call this function",
+  MAX_OWNERS_COUNT_EXCEEDED: "CeloMultiSig: cannot add owner above 2^16 - 1",
+  INVALID_SIGNATURE: "CeloMultiSig: invalid signatures",
   INVALID_OWNER: "CeloMultiSig: invalid owner",
   OWNER_ALREADY_SIGNED: "CeloMultiSig: owner already signed",
   NOT_ENOUGH_GAS: "CeloMultiSig: not enough gas",
