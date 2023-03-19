@@ -15,11 +15,12 @@ slug: /tutorials/build-a-library-based-dapp-on-celo
 
 ## Introduction
 
-Writing a robust smart contract relies on different factors. These factors range from understanding solidity concepts and conventions such as types, global variables, interfaces, libraries, etc. Library as one is a bit vast in scope hence developers should familiarize themselves with this concept so as to maximize its usage. 
+Writing a robust smart contract relies on different factors. These factors range from understanding solidity concepts and conventions such as types, global variables, interfaces, libraries, etc. Library as one is a bit vast in scope hence developers should familiarize themselves with this concept so as to maximize its usage.
 
 ## Prerequisites​
 
-Library in solidity is categorized under the advanced concept. To grab the full weight of this tutorial, you're expected to know solidity programming  
+Library in solidity is categorized under the advanced concept. To grab the full weight of this tutorial, you're expected to know solidity programming
+
 - For tutorials on how to get started with solidity, please refer to **[here](https://docs.celo.org/blog/tutorials/)**.
 
 ## Requirements​
@@ -34,13 +35,14 @@ Install the following tools:
 
 It is assumed that you have followed the link above and completed the hardhat setup. In your new setup, navigate to the 'contracts' folder and create a structure as follows:
 
+```bash
 - contracts - _top-level folder_
   - account - _folder_
   - interfaces - _folder_
   - lib - _folder_
   - reward - _folder_
   - Vault.sol - _file_
-
+```
 
 Before we proceed, let's understand what we're building. Our contracts will perform decentralized swapping of both ERC20 tokens to $Celo and ERC20 to ERC20. This is an extension of the previous contracts that were found **[here](https://github.com/bobeu/nft-gated-dapp-dexHosting/)**.
 
@@ -74,7 +76,7 @@ For safety, we will employ the use of a detached contract that will be launched 
       owner = msg.sender;
       rewardToken = _rewardToken;
     }
-    
+
     //Fallback
     receive() external payable {
       emit CeloReceived(msg.value);
@@ -86,32 +88,35 @@ For safety, we will employ the use of a detached contract that will be launched 
       _;
     }
 
-    ///@dev Withdraw Celo of @param amount : amount to withdraw from contract 
+    ///@dev Withdraw Celo of @param amount : amount to withdraw from contract
     function withdrawCelo(address to) external onlyOwner {
       uint balance = address(this).balance;
       (bool success,) = to.call{value: balance}("");
       require(success, "withdrawal failed");
     }
 
-    ///@dev Withdraw reward token 
+    ///@dev Withdraw reward token
     function withdrawERC20(address to) external onlyOwner {
       uint balance = IERC20(rewardToken).balanceOf(address(this));
       if(balance >  0) require(IERC20(rewardToken).transfer(to, balance), "Failed");
-    } 
+    }
   }
 ```
-The `Account` contract is uniquely mapped to each user while ownership is transferred to the user at construction/deployment. The only way we update the reward token is via the constructor. To withdraw  $CELO coin, the owner will call the `withdrawals` function while `withdrawERC20` withdraws ERC20 tokens.
+
+The `Account` contract is uniquely mapped to each user while ownership is transferred to the user at construction/deployment. The only way we update the reward token is via the constructor. To withdraw $CELO coin, the owner will call the `withdrawals` function while `withdrawERC20` withdraws ERC20 tokens.
 
 We will make interfaces for `Account`, `RewardToken`, and `Vault` contracts.
 
+```bash
 - interfaces
   - IAccount.sol
   - IERC20.sol
   - IVault.sol
+```
 
 For the sake of this tutorial, we write a mock token in the `reward` folder to be used as a reward for staking $CELO.
 
->Note: We'd want the owner's privilege for the main contract so it will be the sole caller of the `mint` function.
+> Note: We'd want the owner's privilege for the main contract so it will be the sole caller of the `mint` function.
 
 - `contracts/reward/RewardToken.sol`
 
@@ -138,14 +143,13 @@ For the sake of this tutorial, we write a mock token in the `reward` folder to b
       _mint(to, amount);
       return true;
     }
-    
+
   }
 ```
 
 **Libraries**
 
 All of the libraries we'll use reside in the `lib` folder. Libraries can be used in different contexts. In this case, we are going to use it in two different contexts.
-
 
 1. library as utility
 
@@ -155,18 +159,19 @@ Using the library as a utility is a way of moving reusable code that should have
 
 To explain a few of the utilities,
 
-- `assertChained_2` ensures that the two conditional parameters evaluate to true simultaneously otherwise execution terminates and the related `errormessasge` is returned. 
+- `assertChained_2` ensures that the two conditional parameters evaluate to true simultaneously otherwise execution terminates and the related `errormessasge` is returned.
 
->Note: The first argument in a library function can be used to invoke it. For example, `assertChained_2` can be invoked by the type of the first argument. 
-```js 
+> Note: The first argument in a library function can be used to invoke it. For example, `assertChained_2` can be invoked by the type of the first argument.
+
+```js
 uint n = 4; uint m = 2;
 
 function testZero(bool a, bool 2, string memory err1, string memory err2) internal {
   bool(n > 0).assertChained_2(m > 0, 'n is zero', 'm is zero');
 }
 ```
-From the example, in the `testZero()`, we use the boolean constructor to evaluate the expression `n > 0` to either 'true' or 'false'. The result will be a 'bool' type which has the same type as the first argument in the `testZero` function hence the function can be invoked using the result of the expression.
 
+From the example, in the `testZero()`, we use the boolean constructor to evaluate the expression `n > 0` to either 'true' or 'false'. The result will be a 'bool' type which has the same type as the first argument in the `testZero` function hence the function can be invoked using the result of the expression.
 
 ```js
   // SPDX-License-Identifier: MIT
@@ -180,22 +185,22 @@ From the example, in the `testZero()`, we use the boolean constructor to evaluat
     using Address for address;
     using SafeMath for uint256;
 
-    // ///@dev Requires the three conditions to be true 
+    // ///@dev Requires the three conditions to be true
     function assertChained_2(bool a, bool b, string memory errorMessage1, string memory errorMessage2) internal pure {
       require(a, errorMessage1);
       require(b, errorMessage2);
     }
 
-    ///@dev Requires the three conditions to be true 
+    ///@dev Requires the three conditions to be true
     function assertEqual(bool condition, bool value, string memory errorMessage) internal pure {
       require(condition == value, errorMessage);
     }
-    
+
     function assertUintGT(uint a, uint b, string memory errorMessage) internal pure {
       require(a > b, errorMessage);
     }
 
-    ///@dev Requires either of the conditions to be true 
+    ///@dev Requires either of the conditions to be true
     function assertEither(bool a, bool b, string memory errorMessage) internal pure {
       require(a || b, errorMessage);
     }
@@ -243,15 +248,15 @@ From the example, in the `testZero()`, we use the boolean constructor to evaluat
 
 2. library as storage.
 
-Don’t be confused with the context name, libraries in solidity are reusable code snippets, and cannot have state variables. They can only contain data that are constant i.e variables whose values are known ahead of time and do not change in form or context. We are only going to use it to access and modify storage that exists elsewhere. The code in this library file will be executed in the context of the contract that invokes it. This opens up more use cases as we can deploy as many libraries as we want and connect multiple contracts to them by simply referencing the library's addresses. 
+Don’t be confused with the context name, libraries in solidity are reusable code snippets, and cannot have state variables. They can only contain data that are constant i.e variables whose values are known ahead of time and do not change in form or context. We are only going to use it to access and modify storage that exists elsewhere. The code in this library file will be executed in the context of the contract that invokes it. This opens up more use cases as we can deploy as many libraries as we want and connect multiple contracts to them by simply referencing the library's addresses.
 
 - `StorageData` is the type of data in storage that this library will be compatible with. We grouped all of the storage data into a user-defined type using the `struct` keyword. You do not have to worry about where structs are placed in a file. Me, I love defining them outside the contract files either in the interface or globally. You can choose where to place a struct in your files.
 
-- Libraries are created using the keyword `library` followed by the reference name, and then the curly brace. Every other code logic comes in between the curly braces. Our library name is called `VaultLib`. 
+- Libraries are created using the keyword `library` followed by the reference name, and then the curly brace. Every other code logic comes in between the curly braces. Our library name is called `VaultLib`.
 
-- Library allows us to declare constant variables whose values are immutable and known at compile time. 
+- Library allows us to declare constant variables whose values are immutable and known at compile time.
 
-`contracts/libraryAsStorage/VaultLib.sol` 
+`contracts/libraryAsStorage/VaultLib.sol`
 
 ```js
   // SPDX-License-Identifier: MIT
@@ -333,9 +338,9 @@ Don’t be confused with the context name, libraries in solidity are reusable co
     }
 
     /**@dev Stake Celo for token reward.
-     * - The amount of Celo sent along the call must be greater 
+     * - The amount of Celo sent along the call must be greater
      *      than the minimum staking amount.
-     * - We check if caller has existing account otherwise we 
+     * - We check if caller has existing account otherwise we
      *      create a new account for them.
      * - We can make a dynamic staking i.e stakers can stake any amount
      *      Celo, anytime. Each stake is unique to another in timing and
@@ -405,7 +410,7 @@ Don’t be confused with the context name, libraries in solidity are reusable co
     function getStakeProfile(StorageData storage self, address who) internal view returns(IVault.Staker memory) {
       address _k = address(this);
       return self.stakers[who][_k][_k];
-    } 
+    }
 
     ///@dev returns account of @param who : any valid address
     function withdraw(StorageData storage self) public {
@@ -443,10 +448,9 @@ Don’t be confused with the context name, libraries in solidity are reusable co
 
 - `withdraw(StorageData storage self)` simultaneously withdraw both $Celo and token from the user's account.
 
-
 `contracts/Vault.sol`
 
-This is the main executable contract that will consume from the library - VaultLib. 
+This is the main executable contract that will consume from the library - VaultLib.
 
 ```js
   // SPDX-License-Identifier: MIT
@@ -476,7 +480,7 @@ This is the main executable contract that will consume from the library - VaultL
       data.setUpTokenPair(tokenA, tokenB, rate, _minStake);
     }
 
-    function stakeToken(uint pairId) public {  
+    function stakeToken(uint pairId) public {
       data.stakeToken(pairId);
     }
 
@@ -512,7 +516,7 @@ This is the main executable contract that will consume from the library - VaultL
   }
 ```
 
-- To use VaultLib, we have specified what we want to use the library for. in this case for `StorageData`. Since this is the executable contract, we must create slots in storage for 'StorageData'. 
+- To use VaultLib, we have specified what we want to use the library for. in this case for `StorageData`. Since this is the executable contract, we must create slots in storage for 'StorageData'.
 
 - At deployment, we update the `minimumStake` variable.
 
@@ -520,7 +524,7 @@ This is the main executable contract that will consume from the library - VaultL
 
 **Compilation**
 
-Run 
+Run
 
 ```
 bash npx hardhat compile
@@ -530,44 +534,43 @@ If your setup is correct, you should get a success message.
 
 **Deployment**
 
-We want our future contracts to feed on `VaultLib` hence it will be deployed ahead of them. 
+We want our future contracts to feed on `VaultLib` hence it will be deployed ahead of them.
 
 `scripts/deploy.ts`
 
 ```js
-  import { ethers } from "hardhat";
-  import Web3 from 'web3'
+import { ethers } from "hardhat";
+import Web3 from "web3";
 
-  async function main() {
-    const minimumStake = Web3.utils.toHex('100000000000000000');
-    const maxStake = Web3.utils.toHex('500000000000000000000000000');
-    const VaultLib = await ethers.getContractFactory("VaultLib");
-    const vaultLib = await VaultLib.deploy();
+async function main() {
+  const minimumStake = Web3.utils.toHex("100000000000000000");
+  const maxStake = Web3.utils.toHex("500000000000000000000000000");
+  const VaultLib = await ethers.getContractFactory("VaultLib");
+  const vaultLib = await VaultLib.deploy();
 
-    const Vault = await ethers.getContractFactory("Vault", {
-      libraries: {
-        VaultLib: vaultLib.address,
-      }
-    });
-    const RewardToken = await ethers.getContractFactory("RewardToken");
-
-    const vault = await Vault.deploy(minimumStake);
-    const token = await RewardToken.deploy(vault.address, maxStake);
-
-    await vault.deployed();
-    await token.deployed();
-
-    console.log(`Vault depoyed to ${vault.address}`);
-    console.log(`Token depoyed to ${token.address}`);
-  }
-
-  // We recommend this pattern to be able to use async/await everywhere
-  // and properly handle errors.
-  main().catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
+  const Vault = await ethers.getContractFactory("Vault", {
+    libraries: {
+      VaultLib: vaultLib.address,
+    },
   });
+  const RewardToken = await ethers.getContractFactory("RewardToken");
 
+  const vault = await Vault.deploy(minimumStake);
+  const token = await RewardToken.deploy(vault.address, maxStake);
+
+  await vault.deployed();
+  await token.deployed();
+
+  console.log(`Vault depoyed to ${vault.address}`);
+  console.log(`Token depoyed to ${token.address}`);
+}
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 ```
 
 - From the script, we extract and deploy the `VaultLib` artifacts. The library's address is accessible from `vaultLib`.
@@ -576,11 +579,11 @@ We want our future contracts to feed on `VaultLib` hence it will be deployed ahe
 
 An argument is an object, and we set the key as the library name i.e `VaultLib`. The value will be the library's address. From this point, for as many contracts as we wish to consume from the library, we only need to link them with the library's address.
 
->Note: You don't need this step if the library does not involve modifying the storage such as `Utility.sol`.
+> Note: You don't need this step if the library does not involve modifying the storage such as `Utility.sol`.
 
-**Deploy locally to hardhat** 
+**Deploy locally to hardhat**
 
-```bash 
+```bash
 npx hardhat run scripts/deploy.ts
 ```
 
@@ -594,8 +597,8 @@ npx hardhat run scripts/deploy.ts --testnet alfajores
 
 Congratulation on making it to this point. Working with libraries is a great way to write robust contracts, especially where the contracts exceed the deployable size. It could be a bit technical and advanced, but consistently practicing will help you in the long run. Visit **[here](https://docs.celo.org/blog/tutorials/)** For more celo-related tutorials.
 
-
 ## What next?
+
 ​
 Are you thinking of launching your own project on the Celo blockchain right now? Get started with the **[developers documentation](https://docs.celo.org/tutorials)**.
 
@@ -606,5 +609,5 @@ Are you thinking of launching your own project on the Celo blockchain right now?
 ## References​
 
 - [Celo developers resources](https://docs.celo.org/developer/)
-- [Source code](https://github.com/bobeu/build-a-library-based-dapp-on-celo                                                                                 )
+- [Source code](https://github.com/bobeu/build-a-library-based-dapp-on-celo)
 - [Solidity documentation](https://solidity.readthedocs.io/)
