@@ -147,7 +147,7 @@ This will generate a dart file to represent our smart contract object named **ti
 
 Leaderboard Widgets
 
-```dart
+```js
 // lib/shared/widgets/leaderboard_widget.dart
 import 'package:flutter/material.dart';
 import 'package:jazzicon/jazzicon.dart';
@@ -214,7 +214,7 @@ class _LeaderboardWidgetState extends State<LeaderboardWidget> {
 
 **O Widget**
 
-```dart
+```js
 // lib/shared/widgets/o_widget.dart
 import 'dart:math' as math;
 
@@ -306,7 +306,7 @@ class OPainter extends CustomPainter {
 
 **X Widget**
 
-```dart
+```js
 // lib/shared/widgets/x_widget.dart
 import 'dart:ui';
 
@@ -436,7 +436,7 @@ class XPainter extends CustomPainter {
 This is where our business logic is and how we interact with CELO Blockchain using wallet private key.
 Note: Our aims here is to be able to connect to smart contract, add player to leaderboard if not on the leaderboard then update user win record.
 
-```dart
+```js
 // lib/providers/contract_provider
 // ignore_for_file: depend_on_referenced_packages
 
@@ -555,7 +555,7 @@ class ContractProvider extends ChangeNotifier {
 
 **Home Screen** : This is the first page user get to see and click on start to select what shape to use for game or click leaderboard in order to see the list of players on the leaderboard list
 
-```dart
+```js
 // lib/home/view/home_page.dart
 
 import 'package:flutter/material.dart';
@@ -677,7 +677,7 @@ class HomePage extends StatelessWidget {
 
 **Choose Side Screen** : Note throughout this game, user will be playing with computer as opponent. On choose side page user get to select what shape/side to use for the game. You can go back to Shared Widgets section to see how both sides widget been implement with Animated builder
 
-```dart
+```js
 // lib/choose_side/view/choose_side_page.dart
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/app.dart';
@@ -793,7 +793,7 @@ class _LetterContainer extends StatelessWidget {
 
 **Leaderboard Screen** : Here is where user get to see list of leaderboard using Listview separated widget in order to give little space between each LeaderboardWidget.
 
-```dart
+```js
 // lib/leaderboard/view/leaderboard_page.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -862,7 +862,7 @@ class LeaderboardPage extends StatelessWidget {
 
 **Play game screen** : This page comprise a lot of logic and some widgets and this is where user get to play game together with opponents (Computer).
 
-```dart
+```js
 // lib/play_game/view/play_game_page.dart
 
 import 'dart:async';
@@ -1375,7 +1375,7 @@ class _BottomLoader extends HookWidget {
 
 **Victory Line Widget**
 
-```dart
+```js
 // lib/play_game/widgets/victory_line.dart
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/play_game/model/victory.dart';
@@ -1486,7 +1486,7 @@ class VictoryLinePainter extends CustomPainter {
 
 **Decision**
 
-```dart
+```js
 // lib/play_game/model/decision.dart
 class Decision {
   int row;
@@ -1498,7 +1498,7 @@ class Decision {
 
 **Game AI**
 
-```dart
+```js
 // lib/play_game/model/game_ai.dart
 import 'dart:math';
 
@@ -1630,7 +1630,7 @@ class GameAI {
 
 **Leaderboard**
 
-```dart
+```js
 // lib/play_game/model/leaderboard.dart
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class Leaderboard {
@@ -1646,7 +1646,7 @@ class Leaderboard {
 
 **Victory Checker**
 
-```dart
+```js
 // lib/play_game/model/victory_checker.dart
 import 'package:tic_tac_toe/play_game/model/victory.dart';
 
@@ -1729,7 +1729,7 @@ class VictoryChecker {
 
 **Decision**
 
-```dart
+```js
 // lib/play_game/model/victory.dart
 class Victory {
   int row;
@@ -1749,7 +1749,7 @@ enum Winner { ai, player, draw, none }
 
 This is where we wrapped our home page with material app widget and scaffold our app
 
-```dart
+```js
 // lib/app.dart
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/home/view/home_page.dart';
@@ -1788,7 +1788,7 @@ class MyApp extends StatelessWidget {
 
 This is the entry point of our wrapped with multi-provider
 
-```dart
+```js
 // lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
