@@ -282,8 +282,3 @@ To learn more about building on Celo using Python, you can explore the following
 ## About the Author
 
 [Israel Okunaya](https://meetisraelokunaya.curious.page/) is an ace writer with a flair for simplifying complexities and a knack for storytelling. He leverages over four years of experience to meet the most demanding writing needs in different niches, especially food and travel, blockchain, and marketing. He sees blockchain as a fascinating yet tricky affair. So, he is given to simplifying its complexities with text and video tutorials.
-
-## References
-
-- [Celo docs](https://docs.celo.org/)
-- [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
