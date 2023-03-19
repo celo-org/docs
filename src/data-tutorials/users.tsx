@@ -962,10 +962,10 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
   },
   {
-    title: 'Build Your Own Full Stack NFT A.I Art Minter On The Celo Blockchain',
+    title: 'Build Your Own Full Stack NFT AI Art Minter On The Celo Blockchain',
     description: 'In this tutorial, we will build a full stack nft digital art minter that will generate our art with artificial intelligence.',
     preview: require('./showcase/intermediate/build-your-own-fullstack-nft-ai-art-minter-on-the-celo-blockchain.png'),
-    website: 'blog/tutorials/build-your-own-full-stack-nft-a.i-art-minter-on-the-celo -blockchain',
+    website: 'blog/tutorials/build-your-own-full-stack-nft-ai-art-minter-on-the-celo-blockchain',
     tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate'],
   },
   {
