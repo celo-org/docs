@@ -42,7 +42,7 @@ It is assumed that you have followed the link above and completed the hardhat se
   - Vault.sol - _file_
 
 
-Before we proceed, let's understand what we're building. Our contracts will perform decentralized swapping of both ERC20 tokens to $Celo and ERC20 to ERC20. This is an extension of the previous contracts that were found **[here](https://github.com/bobeu/nft-gated-dapp-dexHosting/README.md)**.
+Before we proceed, let's understand what we're building. Our contracts will perform decentralized swapping of both ERC20 tokens to $Celo and ERC20 to ERC20. This is an extension of the previous contracts that were found **[here](https://github.com/bobeu/nft-gated-dapp-dexHosting/)**.
 
 We will use `Vault.sol` as the main deployable contract while the libraries go into the `lib` folder. The Vault contract will perform two categories of swap:
 
@@ -607,5 +607,5 @@ Are you thinking of launching your own project on the Celo blockchain right now?
 ## References​
 
 - [Celo developers resources](https://docs.celo.org/developer/)
-- [Source code](https://github.com/bobeu/nft-gated-dapp-dexHosting)
+- [Source code](https://github.com/bobeu/build-a-library-based-dapp-on-celo                                                                                 )
 - [Solidity documentation](https://solidity.readthedocs.io/)
