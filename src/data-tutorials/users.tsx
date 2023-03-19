@@ -2077,6 +2077,13 @@ const Users: User[] = [
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
   {
+    title: 'Build a library-based dapp on Celo',
+    description: 'Working with library in solidity',
+    preview: require('./showcase/advanced/build-a-library-based-dapp-on-celo.png'),
+    website: 'blog/tutorials/build-a-library-based-dapp-on-celo',
+    tags: ['advanced', 'solidity', 'hardhat', 'celosage'],
+  },
+  {
     title: 'Interact with Celo Blockchain using web3dart',
     description: 'This article explains how to construct a dart program to communicate with the Celo blockchain using web3dart',
     preview: require('./showcase/beginner/interact-with-celo-blockchain-using-web3dart.png'),
