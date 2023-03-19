@@ -6,13 +6,12 @@ authors:
     title: Community Moderator, Celo
     url: https://github.com/iamoracle
     image_url: https://github.com/iamoracle.png
-tags: [intermediate, Celo Sage]
+tags: [intermediate, celosage]
 hide_table_of_contents: true
 slug: /tutorials/implementing-an-english-auction-contract-in-solidity
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/implementing-an-english-auction-contract-in-solidity.png)
-
 
 ## Introduction
 
@@ -559,7 +558,7 @@ contract EnglishAuction{
 }
 ```
 
-# Demonstration Of How An English Auction Contract Works
+## Demonstration Of How An English Auction Contract Works
 
 Now that you have successfully built your English auction system with Solidity, you will see a demonstration of the contract in this section.
 
@@ -633,24 +632,23 @@ Since Bidder1 made two bids, he should be able to withdraw his first bid. This i
 
 ![](./images/image16.png)
 
-# Conclusion
+## Conclusion
 
 This article covered a step-by-step process of building an English auction contract in Solidity. You also saw some best practices to prevent attackers from hijacking your contract. You should be able to build your auction contract and keep it secure.
 
-# Next Steps
+## Next Steps
 
 After learning about the English auction contract, you should implement it in your projects. You can also get your hands dirty by building a Dutch auction system yourself. This [article](https://www.investopedia.com/terms/d/dutchauction.asp) contains information about what a Dutch auction is.
 
 In another article, We will walk you through how to build a Dutch auction system in Solidity. So you shouldn't worry much if you cannot build one yourself.
 
-# References
+## References
 
 The following sources served as inspirations and guides for writing this article:
 
 1. [English Auction](https://youtu.be/ZeFjGJpzI7E)
 
 2. [Solidity By Example](https://solidity-by-example.org/)
-
 
 ## Author
 
