@@ -739,6 +739,7 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 
 ## References
 
+- [Github Repo](https://github.com/Mujhtech/celo-vite-extension)
 - [CRXJS](https://crxjs.dev/vite-plugin/getting-started/react/dev-basics)
 - [Vite Js](https://vitejs.dev/guide/)
 - [Celo Docs](https://docs.celo.org)
