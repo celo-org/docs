@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,celosage,truffle,smartcontract,solidity,flutter, advanced]
+tags: [celo, celosage, truffle, smartcontract, solidity, flutter, advanced]
 hide_table_of_contents: true
 slug: /tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer
 ---
@@ -16,7 +16,7 @@ slug: /tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer
 
 ## Introduction
 
-In this tutorial, we'll go over the fundamentals of building a basic Tic Tac Toe game with the help of the well-known Flutter framework, the Celo Composer toolkit, and the Solidity smart contract programming language. You will have a fundamental understanding of how to make a Tic Tac Toe game with Flutter and Solidity by the end of this lesson, and you will be able to build on this knowledge to make more challenging games. 
+In this tutorial, we'll go over the fundamentals of building a basic Tic Tac Toe game with the help of the well-known Flutter framework, the Celo Composer toolkit, and the Solidity smart contract programming language. You will have a fundamental understanding of how to make a Tic Tac Toe game with Flutter and Solidity by the end of this lesson, and you will be able to build on this knowledge to make more challenging games.
 
 We'll begin by introducing Flutter, Celo Composer, and Solidity and outlining how to utilize each of them to create a Tic Tac Toe game. Next, we'll go over how to start up a fresh Flutter project using Celo Composer, install the required dependencies, and use Solidity to build a smart contract for the Ethereum network. We will next go over the fundamentals of building a user interface (UI) for our game using the Flutter framework and Celo Composer. Additionally, we'll go through how to use the web3.dart library to interface with the smart contract and use the smart contract to decide the game's winner. Then we'll test the game and make any required changes.
 
@@ -31,7 +31,7 @@ Here's what we're aiming to build.
 
 I assume that anyone going through this tutorial already understands and uses Flutter, so I will skip the setup involved in getting Flutter to work on your development computer. That means I assume you already have VS Code/Android Studio together with Android SDK and Flutter setup on your PC.
 
-*If you are entirely new to Flutter, here [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) is a good tutorial you can learn from.
+- If you are entirely new to Flutter, here [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) is a good tutorial you can learn from.
 
 To get started, you can clone this repository flutter-web3-celo or make use of Celo Composer.
 
@@ -42,7 +42,7 @@ You can check out Celo Composer here [https://github.com/celo-org/celo-composer/
 ### Using Celo Composer
 
 To start our Flutter App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp. In other to do that you need to have Node set up on your PC and you can visit Node to get started. Run this on your terminal after setup Node.
- 
+
 ```bash
 npx @celo/celo-composer create
 ```
@@ -50,7 +50,7 @@ npx @celo/celo-composer create
 Choose Flutter when asked for the framework
 
 Choose hardhat (Only Hardhat is available at the time of writing this tutorial)
- 
+
 Your Project will now be created; you can check to make sure it has the following folders
 
 packages/hardhat - Your Hardhat Folder - Where you can keep your Contracts
@@ -101,8 +101,8 @@ contract TicTacToeV1 {
 }
 ```
 
-
 ### Deploy Smart contract (Remix)
+
 Now that your contract is compiled, you can deploy your smart contract to the network. You can deploy to any Ethereum compatible network, and in this case we’ll be deploying the Celo testnet or mainnnet depending on your preference. If you’re brand new to this stick with testnet!
 
 - Click the Deploy and Run Transactions Icon on the left side menu.
@@ -112,6 +112,7 @@ Now that your contract is compiled, you can deploy your smart contract to the ne
 ![Deploy smart contract](./images/screenshot-3.png)
 
 ## The UI (Flutter)
+
 ![choose side screen](./images/screenshot-4.png)
 ![play game screen](./images/screenshot-5.png)
 ![winning screen](./images/screenshot-6.png)
@@ -122,7 +123,7 @@ Now that your contract is compiled, you can deploy your smart contract to the ne
 
 Let’s copy our Contract ABIs into our project.
 
-Then create a folder in the project folder directory lib  and create a file named **tictactoev1.abi.json**. Note your file name can be anything but make sure the file extension start and ends with **.abi.json**. With the help of **build_runner** & **web3dart_builders** we will be able to generate a dart contract object file which we will be using to interact with our smart contract.
+Then create a folder in the project folder directory lib and create a file named **tictactoev1.abi.json**. Note your file name can be anything but make sure the file extension start and ends with **.abi.json**. With the help of **build_runner** & **web3dart_builders** we will be able to generate a dart contract object file which we will be using to interact with our smart contract.
 
 Run this in your terminal
 
@@ -1627,7 +1628,6 @@ class GameAI {
 
 ```
 
-
 **Leaderboard**
 
 ```dart
@@ -1643,7 +1643,6 @@ class Leaderboard {
 }
 
 ```
-
 
 **Victory Checker**
 
@@ -1728,7 +1727,6 @@ class VictoryChecker {
 }
 ```
 
-
 **Decision**
 
 ```dart
@@ -1748,6 +1746,7 @@ enum Winner { ai, player, draw, none }
 ```
 
 ### App Scaffold
+
 This is where we wrapped our home page with material app widget and scaffold our app
 
 ```dart
@@ -1784,7 +1783,9 @@ class MyApp extends StatelessWidget {
 }
 
 ```
+
 ### Main
+
 This is the entry point of our wrapped with multi-provider
 
 ```dart
@@ -1808,7 +1809,7 @@ void main() {
 
 ## Conclusion
 
-Congratulations, you have now learned how to build a real-world dApp using Flutter. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain. 
+Congratulations, you have now learned how to build a real-world dApp using Flutter. You have seen how to connect with a blockchain wallet, interact with Smart Contracts, and read and write to the blockchain.
 
 ## About the Author
 
