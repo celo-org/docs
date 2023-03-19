@@ -1173,6 +1173,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
+    title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
+    description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
+    preview: require('./showcase/beginner/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential.png'),
+    website: 'blog/tutorials/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential',
+    tags: ['celosage', 'celo', 'beginner'], 
+  },
+  {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
