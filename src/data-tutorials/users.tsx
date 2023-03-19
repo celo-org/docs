@@ -1066,6 +1066,13 @@ const Users: User[] = [
     tags: ["celosage", "advanced", "solidity"],
   },
   {
+    title: 'Building a Crowdfunding Platform on Celo with Python',
+    description: 'This tutorial provides a guide on how to use Eth-Brownie Python to build a decentralized crowdfunding platform on the Celo blockchain',
+    preview: require('./showcase/intermediate/building-a-crowdfunding-platform-with-celo-python-sdk.png'),
+    website: 'blog/tutorials/building-a-crowdfunding-platform-on-celo-with-python',
+    tags: ['celosage', 'crowdfunding', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+  },
+  {
     title: 'How to Assemble a Web3 Dream Team and Build a High Value dApp',
     description: 'There are multiple factors to consider when assembling a web3 dream team.',
     preview: require('./showcase/beginner/How-to-Assemble-a-Web3-Dream-Team-and-Build-a-High-Value-dApp.png'),
