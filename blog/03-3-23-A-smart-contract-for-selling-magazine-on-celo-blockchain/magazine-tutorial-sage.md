@@ -3,23 +3,21 @@ title: A detailed guide on how to create a decentralized marketplace for magazin
 description: Learn how to build a marketplace for seliing magazine on the celo blockchain
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:   https://github.com/Ogoyi
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ogoyi
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celo sage, solidity, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
 ---
 
-
 ![header](../../src/data-tutorials/showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-celo-blockchain.png)
 
+## INTRODUCTION
 
- ## INTRODUCTION
+Celo is a decentralized platform that enables developers to build and deploy smart contracts on it's blockchain. Smart contracts are self-executing contracts that strikes an agreement between buyer and seller to execute and event, which is directly written into lines of code. They can be used to automate a wide range of financial and non-financial transactions, such as the transfer of assets, the management of supply chains, and the execution of legal agreements.
 
- Celo is a decentralized platform that enables developers to build and deploy smart contracts on it's blockchain. Smart contracts are self-executing contracts that strikes an agreement between buyer and seller to execute and event, which is directly written into lines of code. They can be used to automate a wide range of financial and non-financial transactions, such as the transfer of assets, the management of supply chains, and the execution of legal agreements.
-
- Celo's smart contract functionality is centered on the Solidity programming language, also used by the Ethereum blockchain. This means developers familiar with Ethereum's smart contract ecosystem can easily migrate their projects to Celo.
+Celo's smart contract functionality is centered on the Solidity programming language, also used by the Ethereum blockchain. This means developers familiar with Ethereum's smart contract ecosystem can easily migrate their projects to Celo.
 
 One of the key benefits of Celo's smart contract platform is its focus on accessibility. Celo is designed to be mobile-first, which means that smart contracts can be created and executed directly from smartphones. This is a significant advantage in parts of the world where smartphones are the primary means of accessing the internet.
 
@@ -31,12 +29,11 @@ Overall, Celo's smart contract platform is a powerful tool for developers lookin
 
 To follow this tutorial and create a smart contract on the Celo blockchain, you will need the following:
 
--  **A code editor or text editor**: You can use any code editor or text editor of your choice, but for this tutorial, we will use Remix, a web-based IDE for Solidity development.
-  
+- **A code editor or text editor**: You can use any code editor or text editor of your choice, but for this tutorial, we will use Remix, a web-based IDE for Solidity development.
+
 - **An internet browser**: You will need a web browser to access Remix and interact with the Celo blockchain.
-  
 - **A good internet connection**: As the Celo blockchain is decentralized and relies on a network of nodes to process transactions, a stable and reliable internet connection is important for smooth operation.
-  
+
 By having these requirements in place, you'll be ready to start building your first smart contract on the Celo blockchain using Remix.
 
 ## Prerequisites
@@ -44,9 +41,7 @@ By having these requirements in place, you'll be ready to start building your fi
 In this tutorial, you will learn how to create a basic smart contract using remix. To learn smart contract development, you should have a basic knowledge of the following:
 
 - **JavaScript**: A programming language used for web development, including building front-end user interfaces for dApps.
-  
 - **Blockchain**: The technology that underlies decentralized applications (dApps). You should have a basic understanding of how blockchain works, including concepts such as distributed ledgers, consensus mechanisms, and smart contracts.
-  
 - **Solidity**: A programming language used for writing smart contracts on the Celo blockchain. You should have a good understanding of Solidity's syntax and structure, as well as its key concepts such as functions, variables, events, and modifiers.
 
 If you are new to these concepts, it's recommended that you take some time to learn them before attempting to build smart contracts. There are plenty of online resources available, including tutorials, videos, and documentation, that can help you get started. Once you have a basic understanding of these concepts, you can begin to learn how to write and deploy smart contracts on the blockchain.
@@ -63,19 +58,21 @@ To begin building your smart contract for buying and selling magazines on the Ce
 
 - Create a new file called "Magazine.sol" by clicking on the "+" button in the file explorer panel on the left-hand side of the screen.
 
-- Open the "Magazine.sol" file and start by defining the necessary statements for the smart contract. This will include importing any necessary libraries or contracts and defining the contract itself. 
+- Open the "Magazine.sol" file and start by defining the necessary statements for the smart contract. This will include importing any necessary libraries or contracts and defining the contract itself.
 
   ```solidity
- // SPDX-License-Identifier: MIT
+  // SPDX-License-Identifier: MIT
+  ```
 
 pragma solidity >=0.7.0 <0.9.0;
-```
+
+````
 Note that we're using Solidity version >=0.7.0 <0.9.0 in this tutorial. You may need to adjust the version depending on your specific requirements.
 
 Next, we add our ERC20 token interface.
 
 ```solidity
- 
+
 interface IERC20Token {
    function transfer(address, uint256) external returns (bool);
 
@@ -100,11 +97,11 @@ interface IERC20Token {
         uint256 value
     );
 }
-```
+````
 
 The `IERC20Token` interface is a standard interface for implementing tokens on the Celo blockchains. It defines a set of functions that must be implemented by any contract that wants to be recognized as an ERC20 token. Let's break down the functions and events in this interface:
 
- - **transfer**: This function allows users to transfer tokens from one address to another. It takes two arguments - the address of the recipient and the amount of tokens to be transferred. It returns a Boolean value indicating whether the transfer was successful or not.
+- **transfer**: This function allows users to transfer tokens from one address to another. It takes two arguments - the address of the recipient and the amount of tokens to be transferred. It returns a Boolean value indicating whether the transfer was successful or not.
 
 -**approve**: This function is used to allow another address to spend tokens on behalf of the caller. It takes two arguments - the address of the spender and the amount of tokens to be approved. It returns a boolean value indicating whether the approval was successful or not.
 
@@ -119,8 +116,8 @@ The `IERC20Token` interface is a standard interface for implementing tokens on t
 - **Transfer**: This event is emitted when tokens are transferred from one address to another. It contains three parameters - the address of the sender, the address of the recipient, and the amount of tokens transferred.
 
 - **Approval**: This event is emitted when the allowance of a spender to spend tokens on behalf of an owner is changed. It contains three parameters - the address of the owner, the address of the spender, and the amount of tokens approved.
- 
- You can interact with any ERC20 token on the Ethereum or Celo blockchains by including this interface in your smart contract code.
+
+You can interact with any ERC20 token on the Ethereum or Celo blockchains by including this interface in your smart contract code.
 
 Next, we would be declaring the smart contract with the “Contract keyword, followed by the contract name `Magazino`
 
@@ -132,7 +129,7 @@ contract Magazino {
        uint256 internal magazinesId = 0;
 ```
 
- In the next line, we would declare an unsigned integer variable `named magazinesLength` and initializes it to 0. The internal keyword indicates that the variable can only be accessed within the smart contract and any derived contracts.
+In the next line, we would declare an unsigned integer variable `named magazinesLength` and initializes it to 0. The internal keyword indicates that the variable can only be accessed within the smart contract and any derived contracts.
 
 Next, we would declare an address variable named `cUsdTokenAddress` and initializes it with the value `0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1`. This value represents the address of the smart contract on the Celo blockchain. The internal keyword again indicates that this variable can only be accessed within the smart contract and any derived contracts.
 
@@ -155,9 +152,9 @@ An `event` is a way for a smart contract to emit a notification to external syst
     );
 ```
 
- In this smart contract, the first event is named `unpublishMagazineEvent` and takes a single parameter magazineId of type uint256. This event will be used to emit when a magazine is unpublished or removed from the contract, and the magazineId parameter provides the identifier of the magazine that was unpublished.
+In this smart contract, the first event is named `unpublishMagazineEvent` and takes a single parameter magazineId of type uint256. This event will be used to emit when a magazine is unpublished or removed from the contract, and the magazineId parameter provides the identifier of the magazine that was unpublished.
 
- The second event is named `createMagazineEvent` and takes four parameters: the `image` of type `string`, `name` of type `string`, `edition` of type `string`, and `price` of type `uint`. This event is emitted when a new magazine is created in the contract or any contracts that inherit from it. The parameters provide information about the magazine that was created including its `image`, `name`, `edition`, and `price`.
+The second event is named `createMagazineEvent` and takes four parameters: the `image` of type `string`, `name` of type `string`, `edition` of type `string`, and `price` of type `uint`. This event is emitted when a new magazine is created in the contract or any contracts that inherit from it. The parameters provide information about the magazine that was created including its `image`, `name`, `edition`, and `price`.
 
 Next, we add our struct.
 
@@ -180,19 +177,13 @@ A struct is a user-defined data type that can group together variables of differ
 In this tutorial, the Magazine struct contains six variables:
 
 - `owner` of type address `payable` - the Ethereum address of the owner of the magazine, declared as a payable address so that it can receive payments.
-  
 - `image` of type `string` - the image URL of the magazine.
-  
 - `name` of type `string` - the name of the magazine.
-  
 - `edition` of type `string` - the edition of the magazine.
-  
 - `price` of type `uint` - the price of the magazine in cUsd.
-  
 - `magazineId` of type `uint256` - the unique identifier of the magazine.
-  
 - `createdAt` of type `uint` - the timestamp when the magazine was created.
-  
+
 Together, these variables represent the properties of a magazine stored in the contract. This struct can be used to create new magazines, update existing ones, and retrieve information about them. For example, a function in the contract might create a new Magazine struct and add it to an array of magazines stored in the contract.
 
 In the next step, we create our mapping.
@@ -221,7 +212,7 @@ Up next, we would create a `getMagazine` function that will be used to retrieve 
         uint256,
          uint256
 ) {
-        return (  
+        return (
             magazines[_index].owner,
              magazines[_index].image,
               magazines[_index].name,
@@ -230,34 +221,28 @@ Up next, we would create a `getMagazine` function that will be used to retrieve 
                  magazines[_index].magazineId,
                   magazines[_index].createdAt
 
-                 
+
         );
-       
+
     }
 ```
 
-The function takes one input parameter _index of type uint, which is the index of the magazine to retrieve from the magazines mapping.
+The function takes one input parameter \_index of type uint, which is the index of the magazine to retrieve from the magazines mapping.
 
 The function is defined as public, which means it can be called by any external system or application that has access to the contract. The view modifier specifies that the function does not modify the state of the contract and only reads data from it, so it does not require any gas to execute.
 
 The function returns seven values, which represent the properties of the magazine stored in the magazines mapping:
 
 - `owner` of type `address` `payable` - the Ethereum address of the owner of the magazine, declared as payable so that it can receive payments.
-  
-- `image` of type  `string` `memory` - the URL of the magazine's image.
-  
+- `image` of type `string` `memory` - the URL of the magazine's image.
 - `name` of type `string` `memory` - the name of the magazine.
-  
 - `edition` of type `string` `memory` - the edition of the magazine.
-  
 - `price` of type `uint` - the price of the magazine in Ether or another cryptocurrency.
-  
 - `magazineId` of type `uint256` - the unique identifier of the magazine.
-  
 - `createdAt` of type `uint256` - the timestamp when the magazine was created.
-The values are returned as a tuple in the same order they are declared in the function definition.
+  The values are returned as a tuple in the same order they are declared in the function definition.
 
-When the function is called, it retrieves the magazine at the specified  `_index` from the magazines mapping and returns the associated data to the caller. This function could be used by external systems or applications to retrieve specific magazine data from the contract.
+When the function is called, it retrieves the magazine at the specified `_index` from the magazines mapping and returns the associated data to the caller. This function could be used by external systems or applications to retrieve specific magazine data from the contract.
 
 Furthermore, we create a function that will be used to add magazines to the blockchain.
 
@@ -305,7 +290,7 @@ Then, the createMagazineEvent event is emitted with the specified parameters to 
 
 Finally, the magazinesLength and magazinesId variables are incremented to keep track of the length of the magazines mapping and the ID of the next magazine to be created, respectively. This ensures that the next magazine added to the contract will have a unique ID.
 
-Proceeding, we will need to create a function that enables a user to buy a magazine from our contract. 
+Proceeding, we will need to create a function that enables a user to buy a magazine from our contract.
 
 ```solidity
 
@@ -330,20 +315,20 @@ Inside the function, a require statement is used to ensure that the transferFrom
 
 If the transferFrom function call fails, the error message "Transfer failed" is returned to the caller.
 
-Otherwise, the magazine purchase is successful, and the buyer can access the magazine using the getMagazine function and passing in the _index parameter to retrieve the magazine details.
+Otherwise, the magazine purchase is successful, and the buyer can access the magazine using the getMagazine function and passing in the \_index parameter to retrieve the magazine details.
 
 In the final section of the smart contract, we would create a function to unpublish a magazine from the blockchain and also get the total magazines.
 
 ```solidity
   function unpublishMagazine(uint _index) external {
-             require(msg.sender == magazines[_index].owner, "Only owner can unublish magazine");      
-            uint256 magazineId = magazines[_index].magazineId;      
+             require(msg.sender == magazines[_index].owner, "Only owner can unublish magazine");
+            uint256 magazineId = magazines[_index].magazineId;
             magazines[_index] = magazines[magazinesLength - 1];
             delete magazines[magazinesLength - 1];
-                  
-                  magazinesLength--; 
+
+                  magazinesLength--;
                    emit unpublishMagazineEvent(magazineId);
-                   
+
 }
 
   function getmagazineslength() public view returns (uint) {
@@ -480,11 +465,11 @@ Great job! It's always helpful to provide additional resources for further learn
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria, you can connect with me on [twitter](https://twitter.com/thompsonogoyi). I am enthusiastic about working with blockchain technology.
 
 ## References
+
 [Web3 Storage docs](https://web3.storage/docs/)
 
 [Developer contract kit](https://docs.celo.org/developer/contractkit/)
 
 [celo docs](https://https://docs.celo.org/)
 
- 
 Thank you!!
