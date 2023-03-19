@@ -11,23 +11,26 @@ hide_table_of_contents: true
 slug: /tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs
 ---
 
-# Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs
+## Introduction
 
-In this tutorial, we would be building a decentralized application that will give your users access to airdrops using merkle trees
+In this tutorial, we will show you how to create a subscription platform using the Celo composer react-app and the hardhat package. The platform will offer three subscription plans that users can choose from, and payment will be charged monthly in cUSD. We will also use the OpenZeppelin Defender autotask to handle the monthly subscription charges and an email service to notify users of the charge status. By the end of this tutorial, you will have a working subscription platform and the knowledge to customize and build upon it for your own use case.
 
 
-**Background Knowledge**
+![header](https://user-images.githubusercontent.com/7295729/226203842-6021c828-26d1-4c3e-af90-4ab79fa314d9.png)
+
+
+## Background Knowledge
 
 Merkle trees are a fundamental data structure to build blockchain systems. In a merkle tree, there are leaf nodes and non-leaf nodes. Each leaf nodes represent a data element while each non-leaf nodes represent the hash of its child nodes. There is also the Merkle root which is the hash of the entire tree. It also serves as a summary of all the data in the tree.
 
-**Requirements**
+## Requirements
 Before we begin, make sure to have a package manager installed on your machine. yarn and npm are perfect managers.
 
-**Github Code**
+## Github Code
 
 For your reference, you can use the completed tutorial [github code](https://github.com/alofeoluwafemi/merkle-proof-airdrop-tutorial)
 
-**Create a starter app with Celo Composer**
+## Create a starter app with Celo Composer
 
 In your terminal, run the following command
 
@@ -35,25 +38,29 @@ In your terminal, run the following command
 
 You will be prompted to select the framework you will like to work with which in our case is React.
 
-![](https://i.imgur.com/WPCMTH0.png)
+![007](https://user-images.githubusercontent.com/7295729/226204411-37cdaaff-9a68-4898-a79b-eb1f17e1c827.png)
+
 
 You will also be prompted to pick a web3 library for the react app. For this tutorial, we will pick RainbowKit
 
-![](https://i.imgur.com/lSkmoz3.png)
+![006](https://user-images.githubusercontent.com/7295729/226204405-e3859c6f-a37f-4ef2-8405-72cdd1f5abe5.png)
+
 
 Next up, you will be prompted to choose the smart contract framework you want to work with, Choose Hardhat.
 
-![](https://i.imgur.com/ZUA2MKk.png)
+![005](https://user-images.githubusercontent.com/7295729/226204387-24a94849-efe4-4ab7-aa3f-f98d3a5648af.png)
+
 
 For next steps, we will be prompted to create a Subgraph. We would not be creating a subgraph, so go ahead to select No
 
-![](https://i.imgur.com/Wvir6rZ.png)
+![004](https://user-images.githubusercontent.com/7295729/226204351-2106c5f7-8068-4dd4-9acb-20b7d005631f.png)
+
 
 Then, proceed to give your project a name
 
 You did it! You just created a starter project dApp in few minutes using Celo-Composer
 
-**Write out your smart contract**
+## Write out your smart contract
 
 What is next now is to cd into your project directory and open in your IDE
 
@@ -64,7 +71,8 @@ code .
 
 Go to the packages folder of your project and navigate to hardhat. 
 
-![](https://i.imgur.com/QQBdvTN.png)
+![003](https://user-images.githubusercontent.com/7295729/226204341-45b3de9f-7543-4049-a4ed-7cb3a4ac77b1.png)
+
 
 Go to contracts folder and create a new file called `MerkleAirdrop.sol `. We will create a constant to hold the merkle root and token contract that will be airdropped to the recipients. We will also keep track of people who claim eventually by creating a mapping.
 
@@ -155,7 +163,7 @@ Compile your contracts using this command
 npx hardhat compile
 ```
 
-**Testing your contract**
+## Testing your contract
 
 Testing a smart contract is quite essential because it helps for the smart contract to be secure and function well. We will test our contract to ensure that the functions as intended. In `packages >> hardhat >> test` , create a test javascript file and write all the possible tests that you think are applicable.      
 
@@ -282,10 +290,10 @@ You can proceed to test this by running the following command
 
 If successful, you should see an output similar to this
 
-![](https://i.imgur.com/lBfdKdk.png)
+![002](https://user-images.githubusercontent.com/7295729/226204286-b4c6efce-6a24-4a62-802a-d7d8f7ca944d.png)
 
 
-**Deploy your Smart Contract**
+## Deploy your Smart Contract
 
 Create a deployment script file in scripts folder. You can run this command
 
@@ -321,7 +329,7 @@ After a succesful deployment, you would see the message
 MerkleAirdrop address deployed to: 0x4004aD23277E51E1086beba0C0E8644Cb0DAe1d5
 ```
 
-**Starting out the Frontend**
+## Starting out the Frontend
 
 In the root of your project folder, create a file called `AirdropWrapper.js`. This will serve as a gateway between the contract deployed and our component class. We will call our contract in this file.
 
@@ -474,13 +482,14 @@ Proceed to your terminal to run this command
 
 It should compile and deploy to your localhost so you should see an interface similar to this
 
-![](https://i.imgur.com/GxcZImG.png)
+![001](https://user-images.githubusercontent.com/7295729/226204225-67f62db1-275e-4e79-80f7-7e6fc34101f8.png)
+
 
 The wallet connected is eligible for the airdrop hence we see that here. Proceed to claim the airdrop by clicking on the button. 
 
-There you have it. You have successfully implemented a dApp that gives your users access to claim airdrops using merkle trees. 
+There you have it. You have successfully implemented a dApp that gives your users access to claim airdrops using merkle trees.
 
-# Conclusion
+## Conclusion
 
 In this tutorial , we learnt and saw the versatility of Merkle trees in building decentralized applications and showcased how they can be used to provide access to airdrops. This demonstrates the real-world applicability of Merkle trees and their role in building secure and efficient blockchain systems.
 
