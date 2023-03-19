@@ -6,7 +6,7 @@ authors:
     title: Tech Ethusiast, Smart Contract Developer 
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celo sage, celo]
+tags: [celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential
 ---
