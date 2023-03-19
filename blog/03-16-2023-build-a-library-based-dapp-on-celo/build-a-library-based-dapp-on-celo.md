@@ -167,7 +167,6 @@ function testZero(bool a, bool 2, string memory err1, string memory err2) intern
 ```
 From the example, in the `testZero()`, we use the boolean constructor to evaluate the expression `n > 0` to either 'true' or 'false'. The result will be a 'bool' type which has the same type as the first argument in the `testZero` function hence the function can be invoked using the result of the expression.
 
-- 
 
 ```js
   // SPDX-License-Identifier: MIT
