@@ -1,45 +1,61 @@
 ---
 title: Build a monthly susbscription platform using Celo composer & Openzeppelin Defender
-description: In this tutorial, we will show you how to create a subscription platform using the Celo composer react-app and the hardhat package. The platform will offer three subscription plans that users can choose from, and payment will be charged monthly in cUSD. We will also use the OpenZeppelin Defender autotask to handle the monthly subscription charges and an email service to notify users of the charge status. By the end of this tutorial, you will have a working subscription platform and the knowledge to customize and build upon it for your own use case.
+description: In this tutorial, we will show you how to create a subscription platform using the Celo composer react-app and the hardhat package.
 authors:
   - name: Oluwafemi Alofe
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/oluwafemialofe/
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: ['celosage','composer','celo','openzeppelin','reactcelo','contractkit','dapp','graph','subgraphs','hardhat','defender','smartcontract', 'solidity', 'nextjs','favorite', 'intermediate', 'advanced']
+tags:
+  [
+    "celosage",
+    "composer",
+    "celo",
+    "openzeppelin",
+    "reactcelo",
+    "contractkit",
+    "dapp",
+    "graph",
+    "subgraphs",
+    "hardhat",
+    "defender",
+    "smartcontract",
+    "solidity",
+    "nextjs",
+    "favorite",
+    "intermediate",
+    "advanced",
+  ]
 hide_table_of_contents: true
 slug: /tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender
-
 ---
 
-# Introduction
+![header](../../src/data-tutorials/showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png)
+
+## Introduction
 
 This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo. By the end of this tutorial, you will have a working subscription platform and the knowledge to customize and expand it for your unique needs. This tutorial will be broken up into four parts; you must follow them in order as they build upon one another.
 
 ## Background Knowledge
-In the web2 world, its common place to offer subscription services and allow your customer link a debit card so you can charge them periodically for the time of thier subscription. With the advert of stable curreny and merchant accepting them alongside exisiting payment method such as Paypal and card, thier needs to be full compatibilty of auto payment charge. 
+
+In the web2 world, its common place to offer subscription services and allow your customer link a debit card so you can charge them periodically for the time of thier subscription. With the advert of stable curreny and merchant accepting them alongside exisiting payment method such as Paypal and card, thier needs to be full compatibilty of auto payment charge.
 
 ## Prerequisites
 
 To start building, you’ll need a basic understanding of web development, Node (v16), yarn, and Git.
 
-* Your computer has Node.js installed. If not download from [here](https://nodejs.org/en/download/)
-    
-* Familiar with React/Nextjs
-    
+- Your computer has Node.js installed. If not download from [here](https://nodejs.org/en/download/)
+- Familiar with React/Nextjs
 
 ## Requirements
 
 For our project, we would be needing the following tools and framework
 
-* Celo Composer React App - for UI
-    
-* Subgraph Packages - to index the data on the blockchain such that it's possible to query people's payments.
-    
-* OpenZeppelin Defender Admin
-    
-* Auto Task and Relayer
-  
+- Celo Composer React App - for UI
+- Subgraph Packages - to index the data on the blockchain such that it's possible to query people's payments.
+- OpenZeppelin Defender Admin
+- Auto Task and Relayer
+
 ## Github Code
 
 For your reference, you can use the completed tutorial ![github code](https://github.com/alofeoluwafemi/crypto-subscription-payment-platform)
@@ -50,7 +66,7 @@ To get started, we need to create our payment subscription Contract and UI with 
 
 Install the celo composer to set up out development environment and create a new celo composer. On your terminal run these two commands;
 
-```
+```bash
 npm i @celo/celocomposer -g
 npx celo-composer-create
 ```
@@ -65,14 +81,14 @@ After choosing the framework and the template, you'll be prompted to choose the 
 
 Open up your folder on your VS Code and run `yarn install` to install the dependencies, and `yarn run react:app dey` in your terminal to start our local environment. your web interface should look like this.
 
-Next, we need to create the cards as seen on the Create a new file called ***PaymentCard.js*** in your component folder and add the following code inside
+Next, we need to create the cards as seen on the Create a new file called **_PaymentCard.js_** in your component folder and add the following code inside
 
 ```js
-import React from 'react';
+import React from "react";
 
-export default function PaymentCard({ planName, price}) {
-    return (
-      <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+export default function PaymentCard({ planName, price }) {
+  return (
+    <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
       <h3 className="mb-4 text-2xl font-semibold">{planName}</h3>
       <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
         Best option for personal use &amp; for your next project.
@@ -172,7 +188,7 @@ export default function PaymentCard({ planName, price}) {
         Get started
       </a>
     </div>
-    );
+  );
 }
 ```
 
@@ -186,25 +202,16 @@ export default function Home() {
   return (
     <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
       <div className="flex">
-        <PaymentCard
-          planName={"Basic"}
-          price={2}
-        />
+        <PaymentCard planName={"Basic"} price={2} />
       </div>
       <div className="flex">
-        <PaymentCard
-          planName={"Premium"}
-          price={5}
-        />
+        <PaymentCard planName={"Premium"} price={5} />
       </div>
       <div className="flex">
-        <PaymentCard
-          planName={"Enterprise"}
-          price={12}
-        />
+        <PaymentCard planName={"Enterprise"} price={12} />
       </div>
     </div>
-);
+  );
 }
 ```
 
@@ -212,7 +219,7 @@ Result below. However you can choose to add more cards to your own project and p
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677640148664/77bcbf3e-3a6e-4ea3-b559-971243e3bf9c.png)
 
-After this, click on your connect wallet button to see if it works, once it works its meant to show a disconnect button. However we also need to display the network its been connected to and the address of the wallet. So in your ***Header.tsx file,*** duplicate the button tag and add two more buttons to the header. Your final code should look like this
+After this, click on your connect wallet button to see if it works, once it works its meant to show a disconnect button. However we also need to display the network its been connected to and the address of the wallet. So in your **_Header.tsx file,_** duplicate the button tag and add two more buttons to the header. Your final code should look like this
 
 ```js
 import { Disclosure } from "@headlessui/react";
@@ -327,7 +334,7 @@ Your output should look like below. You can see the Alfajores network and your w
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677700379085/64c4e595-033b-4b95-bd01-403a25e6fe34.png)
 
-However, the address button is way to long and doesn't look nice, we can make this better by truncating the address.  
+However, the address button is way to long and doesn't look nice, we can make this better by truncating the address.
 
 Add the following code below your imports and also call the truncate
 
@@ -451,26 +458,24 @@ export default function Header() {
 }
 ```
 
-After this we would be writing our smart contract that interacts with our subscription, so head over to your terminal and run this command `yarn run hardhat:accounts` to view the account that is set up. You should get an error message stating you do not have any account setup, therefore we need a deployer wallet. To do this rename the file ***env.example** to **.env** and add a test private key that has already been given by celo [here](https://celo-composer-community-docs.vercel.app/docs/frameworks/react-app/installation-and-setup) and copy the private key already given to us.
+After this we would be writing our smart contract that interacts with our subscription, so head over to your terminal and run this command `yarn run hardhat:accounts` to view the account that is set up. You should get an error message stating you do not have any account setup, therefore we need a deployer wallet. To do this rename the file **\*env.example** to **.env** and add a test private key that has already been given by celo [here](https://celo-composer-community-docs.vercel.app/docs/frameworks/react-app/installation-and-setup) and copy the private key already given to us.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677728444433/2940d0a2-d6cf-412c-ad21-5814e087115d.png)
 
-6 After this, re-run the above command and you should see an address in your terminal. Verify if the account as some celo in it via [celoscan](https://celoscan.io/) and if it doesn't you can request for a test token via [celo faucet](https://faucet.celo.org/). Head over to [open zepplin contracts](https://www.openzeppelin.com/contracts) and make use of the wizard shown below and copy the code generated into a new file created in the contract folder called ***MockCUSD.sol file***
+6 After this, re-run the above command and you should see an address in your terminal. Verify if the account as some celo in it via [celoscan](https://celoscan.io/) and if it doesn't you can request for a test token via [celo faucet](https://faucet.celo.org/). Head over to [open zepplin contracts](https://www.openzeppelin.com/contracts) and make use of the wizard shown below and copy the code generated into a new file created in the contract folder called **_MockCUSD.sol file_**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677729295502/cc133e24-48ea-402c-bced-7533fa27d873.png)
 
 Let's install some OpenZeppelin contracts so we can get access to the ERC-721 contracts. In your terminal, execute the following command:
 
-```shell
+```bash
 cd ..
 cd hardhat
-yarn add @openzeppelin/contracts 
+yarn add @openzeppelin/contracts
 ```
 
-* In the contracts folder, create a new Solidity file called ***PaymentSubscription.sol***
-    
-* Now we would write some code in the ***PaymentSubscription.sol***. We would be importing [Openzeppelin's ERC721 Contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
-    
+- In the contracts folder, create a new Solidity file called **_PaymentSubscription.sol_**
+- Now we would write some code in the **_PaymentSubscription.sol_**. We would be importing [Openzeppelin's ERC721 Contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol).
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -642,7 +647,7 @@ contract PaymentSubscription is Pausable, Ownable {
 
 Compile the contract, open up a terminal and execute these commands
 
-```shell
+```bash
 npx hardhat compile
 ```
 
@@ -670,32 +675,22 @@ Navigate into your test folder and create a new file called `subscription-test.j
 
 Head over to [Hardhat Network Helper](https://hardhat.org/hardhat-network-helpers/docs/overview) which gives you the ability to mine blocks up to a certain timestamp or block number. To install paste the below command into your terminal
 
-```shell
+```bash
 yarn add --dev @nomicfoundation/hardhat-network-helpers
 ```
 
 Once the initial task is completed, we must organize our test cases in a way that simplifies identifying what needs to be tested and the expected results. Below are the test cases we will use for this project:
 
-* Do we have three plans?
-    
-* Is the first plan what we expect?
-    
-* Is the third plan what we expect?
-    
-* Is the second plan what we expect?
-    
-* Can we subscribe to the right plan?
-    
-* Can we subscribe to the wrong plan?
-    
-* Can we subscribe to the same plan twice?
-    
-* Can a user subscribe to a plan without enough allowance?
-    
-* Can a user be charged 11 more times after the first charge?
-    
-* Can a user subscribe to a plan without enough balance for the first charge?
-    
+- Do we have three plans?
+- Is the first plan what we expect?
+- Is the third plan what we expect?
+- Is the second plan what we expect?
+- Can we subscribe to the right plan?
+- Can we subscribe to the wrong plan?
+- Can we subscribe to the same plan twice?
+- Can a user subscribe to a plan without enough allowance?
+- Can a user be charged 11 more times after the first charge?
+- Can a user subscribe to a plan without enough balance for the first charge?
 
 To run the first step add the following code to your `subscription-test.js` file
 
@@ -710,7 +705,7 @@ before(async function () {
   const [deployer, accountA, accountB, accountC] = await ethers.getSigners();
   const MockCUSD = await ethers.getContractFactory("MockCUSD");
   const cUSD = await MockCUSD.deploy();
-await cUSD.deployed();
+  await cUSD.deployed();
 
   const PaymentSubscription = await ethers.getContractFactory(
     "PaymentSubscription"
@@ -738,7 +733,7 @@ describe("PaymentSubscription", function () {
 
 In your terminal, run this command:
 
-```shell
+```bash
  npx hardhat test test/subscription-test.js --network hardhat
 ```
 
@@ -750,16 +745,16 @@ Also, we need to try this for our premium plan and enterprise plan. In that same
 
 ```javascript
 it("Should have Premium plan", async function () {
-    const premiumPlan = await this.paymentSubscription.plans(1);
-    expect(premiumPlan.price).to.equal(ethers.utils.parseEther("5"));
-    expect(premiumPlan.duration).to.equal(oneHour);
-  });
+  const premiumPlan = await this.paymentSubscription.plans(1);
+  expect(premiumPlan.price).to.equal(ethers.utils.parseEther("5"));
+  expect(premiumPlan.duration).to.equal(oneHour);
+});
 
 it("Should have Enterprise plan", async function () {
-    const enterprisePlan = await this.paymentSubscription.plans(2);
-    expect(enterprisePlan.price).to.equal(ethers.utils.parseEther("12"));
-    expect(enterprisePlan.duration).to.equal(oneHour);
-  });
+  const enterprisePlan = await this.paymentSubscription.plans(2);
+  expect(enterprisePlan.price).to.equal(ethers.utils.parseEther("12"));
+  expect(enterprisePlan.duration).to.equal(oneHour);
+});
 ```
 
 and run the same command in your terminal. Your terminal should look like this if properly executed.
@@ -772,15 +767,15 @@ Also, we want a user to be able to subscribe to a 12-month plan. To do this, we 
 
 ```javascript
 it("Should allow user to subscribe to a 12 months plan", async function () {
-    const basic = await this.paymentSubscription.plans(0);
-await this.cUSD.approve(
-      this.paymentSubscription.address,
-      basic.price.mul(ethers.BigNumber.from(12))
-    );
-await this.paymentSubscription.subscribe(basic.plan, 12);
-    const subscription = await this.paymentSubscription.subscriptions(
-      this.deployer.address
-    );
+  const basic = await this.paymentSubscription.plans(0);
+  await this.cUSD.approve(
+    this.paymentSubscription.address,
+    basic.price.mul(ethers.BigNumber.from(12))
+  );
+  await this.paymentSubscription.subscribe(basic.plan, 12);
+  const subscription = await this.paymentSubscription.subscriptions(
+    this.deployer.address
+  );
 });
 ```
 
@@ -960,19 +955,19 @@ Run the same command in your terminal, and you should get the following results 
 
 Awesome! We now have all our tests working, and the next thing we need to do is verify our contract and run a test coverage. To do this head over to [solidity coverage](https://www.npmjs.com/package/solidity-coverage) and run the command below in your terminal
 
-```shell
+```bash
 yarn add solidity-coverage --dev
 ```
 
 **Require** the plugin in `hardhat.config.js` by pasting this code
 
 ```javascript
-require('solidity-coverage')
+require("solidity-coverage");
 ```
 
 In your terminal run,
 
-```shell
+```bash
 npx hardhat coverage --testfiles "test/registry/*.ts" --network hardhat
 ```
 
@@ -980,20 +975,16 @@ npx hardhat coverage --testfiles "test/registry/*.ts" --network hardhat
 
 To verify your contract,
 
-* Head over to [Celoscan](https://celoscan.io/)
-    
-* Login or Signup
-    
-* Click on the API-KEYs menu on the sidebar and generate a key
-    
-* Paste the key in the space available for it in the `.env` file
-    
+- Head over to [Celoscan](https://celoscan.io/)
+- Login or Signup
+- Click on the API-KEYs menu on the sidebar and generate a key
+- Paste the key in the space available for it in the `.env` file
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1678100705430/1a47fdab-dad4-47a3-a4ae-826dbf4211e9.png)
 
 In your terminal run
 
-```shell
+```bash
 npx hardhat deploy --network alfajores
 ```
 
@@ -1001,29 +992,29 @@ To deploy, open up `deploy.js` file in the deploy folder and paste the following
 
 ```javascript
 module.exports = async ({ getNamedAccounts, deployments }) => {
-    const { deploy } = deployments;
-    const { deployer } = await getNamedAccounts();
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
 
-    const cUSD = await deploy('MockCUSD', {
-        from: deployer,
-        log: true
-    });
+  const cUSD = await deploy("MockCUSD", {
+    from: deployer,
+    log: true,
+  });
 
-    console.log('cUSD deployed to:', cUSD.address);
+  console.log("cUSD deployed to:", cUSD.address);
 
-    await deploy('PaymentSubscription', {
-        from: deployer,
-        args: [cUSD.address],
-        log: true
-    });
+  await deploy("PaymentSubscription", {
+    from: deployer,
+    args: [cUSD.address],
+    log: true,
+  });
 };
 
-module.exports.tags = ['MockCUSD'];
+module.exports.tags = ["MockCUSD"];
 ```
 
 In your terminal, run
 
-```shell
+```bash
 yarn run deploy
 ```
 
@@ -1031,13 +1022,13 @@ yarn run deploy
 
 And to verify our contracts we need to use the format below.
 
-```shell
+```bash
 npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network alfajores
 ```
 
 To verify our subscription payment smart contract that was deployed above, the command to run will be:
 
-```shell
+```bash
 npx hardhat hardhat verify 0x95BD5b1B16C586025bF0750c21bd1de433de8D4c 0xEb3345B25d59Ad1dD153DAf883b377258E8515F9 --network alfajores
 ```
 
@@ -1051,15 +1042,13 @@ Congrats on reaching this section! You've learned about smart contracts, UI with
 
 # Prerequisites
 
-* [Create](https://thegraph.com/en/) an account on the subgraph
-    
-* Click on sign in with GitHub
-    
-* Install the graph globally on your local machine using npm. In your terminal run
-    
+- [Create](https://thegraph.com/en/) an account on the subgraph
+- Click on sign in with GitHub
+- Install the graph globally on your local machine using npm. In your terminal run
+
 In the project folder run:
 
-```shell
+```bash
 yarn subgraphs:get-abi
 ```
 
@@ -1067,12 +1056,11 @@ yarn subgraphs:get-abi
 
 To initialize the graph in our project, cd into the subgraph package folder and run
 
-```shell
+```bash
 graph init
 ```
 
-Choose Ethereum for protocol, and hosted services, and add your GitHub username as your subgraph name. 
-
+Choose Ethereum for protocol, and hosted services, and add your GitHub username as your subgraph name.
 
 Add celo-alfajores as the network, and you should see the output below if executed successfully.
 
@@ -1160,7 +1148,7 @@ import {
   SubscriptionCharged as SubscriptionChargedEvent,
   SubscriptionCreated as SubscriptionCreatedEvent,
   PaymentSubscription as PaymentSubscriptionContract,
-  PaymentSubscription__subscriptionsResult
+  PaymentSubscription__subscriptionsResult,
 } from "../generated/PaymentSubscription/PaymentSubscription";
 import { Plan, SubscriptionP as Subscription } from "../generated/schema";
 
@@ -1256,7 +1244,7 @@ The next action is to upload our subgraph , Head over to your dashboard and crea
 
 in your terminal run
 
-```shell
+```bash
 graph auth --product hosted-service<the number generated for you>
 graph deploy --product hosted-service<yourname-subgraphname>
 ```
@@ -1275,17 +1263,13 @@ Congrats on reaching this section! You've learned about smart contracts, UI with
 
 # Prerequisites
 
-* [Create](https://thegraph.com/en/) an account on the subgraph
-    
-* Click on sign in with GitHub
-    
-* Install the graph globally on your local machine using npm. In your terminal run
-    
-
+- [Create](https://thegraph.com/en/) an account on the subgraph
+- Click on sign in with GitHub
+- Install the graph globally on your local machine using npm. In your terminal run
 
 ## Step 1
 
-To begin, paste the following code in your index.tx file 
+To begin, paste the following code in your index.tx file
 
 ```js
 import React, { useEffect, useState } from "react";
@@ -1415,7 +1399,7 @@ Import the mock cUSD token we created with its contract address
 
 To test the UI , in your terminal run
 
-```shell
+```bash
 yarn run dev
 
 ```
@@ -1429,25 +1413,25 @@ Sign the transaction and once succesfully executed, the subscribe button should 
 Verify your contract on celoscan and you should see your transaction.
 ![](https://user-images.githubusercontent.com/52764879/223791788-e26a0c3f-398f-4c74-b609-b2a816bf8a48.png)
 
-
 ## Step 2
 
 Head over to openzepplin, click on defender and sign up. Then click on add a contract
-* name : EbookSPP
-* network : celo alfajores
-* address : "your contract address"
+
+- name : EbookSPP
+- network : celo alfajores
+- address : "your contract address"
 
 NOTE: it might throw an error saying "unable to fetch abi" , copy and paste the contract abi and click on create
-
 
 ## Step 3
 
 Next we create a relay. A relay is like a private key that helps in creating a wallet that can be used like a relayer to interact with the smart contract. You can read more on relayer [here](https://docs.openzeppelin.com/defender/relay).
 
 To create a relayer follow these steps below:
-* click on relayer on the side bar
-* name : Ebook Relayer SPP
-* network : Celo alfajores
+
+- click on relayer on the side bar
+- name : Ebook Relayer SPP
+- network : Celo alfajores
 
 then click on create.
 send some celo to your relayer from your wallet.
@@ -1457,7 +1441,6 @@ send some celo to your relayer from your wallet.
 Transfer the ownership of the contract to the relayer, I will strongly advice that you watch the video tutorial link that would be attached at the end of the article from this step because it is easier to graps and understand.
 
 ![](https://user-images.githubusercontent.com/52764879/223862790-d1838654-57e5-4b72-a522-f7c57ee0c8d9.png)
-
 
 Make sure you go through the youtube tutorial [here](https://www.youtube.com/watch?v=5kBOtaRCxBs) for the last part of the project.
 
