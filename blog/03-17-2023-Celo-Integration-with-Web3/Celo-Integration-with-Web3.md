@@ -85,7 +85,7 @@ yarn add @celo/contractkit
 yarn add @openzeppelin/contracts
 ```
 
-- Then, create a new smart contract file named `MyToken.sol` and add the following code:
+- Then, create a folder inside your directory named contracts and in that make new smart contract file named `MyToken.sol` and add the following code:
 
 ```solidity
 
@@ -110,7 +110,7 @@ This smart contract is based on the ERC20 standard and uses the token name "MyTo
 ```javascript
 const ContractKit = require("@celo/contractkit");
 const Web3 = require("web3");
-const MyToken = require("./build/contracts/MyToken.sol");
+const MyToken = require("./contracts/MyToken.sol");
 
 async function deploy() {
   // Create a new instance of ContractKit
@@ -181,4 +181,4 @@ As a digital marketing and technical writing expert with a focus on Web3, I spec
 - [ERC20 token standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 - [Celo/contractkit](https://www.npmjs.com/package/@celo/contractkit)
 - [Openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
-- [Github Repo](https://github.com/maxzysparks/integration)
+- [Source Code](https://github.com/maxzysparks/integration)
