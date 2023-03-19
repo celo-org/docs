@@ -51,27 +51,7 @@ To do so, we will create a new folder called `helpers` inside the `test` folder.
 - `signature.js` - This file will contain the functions that we will use to sign the transaction requests before sending them to the contract.
 - `test.js` - This file will contain the helper functions that we will use to call the contract functions and verify the results.
 - `index.js` - This file will export all the functions from the other files.
-
-To create the required directories and files, you can run the following commands:
-
-```bash
-mkdir test/helper
-touch test/helper/errors.js test/helper/utils.js test/helper/signature.js test/helper/test.js test/helper/index.js
-```
-
-This should give you the following directory structure:
-
-![Test Helper](./images/create_test_helper_files.png)
-
-### Errors helper
-
-In the `errors.js` file, we will add the following code:
-
-```js
-module.exports = {
-  NOT_SELF: "CeloMultiSig: only this contract can call this function",
-  MAX_OWNERS_COUNT_EXCEEDED: "CeloMultiSig: cannot add owner above 2^16 - 1",
-  INVALID_SIGNATURE: "CeloMultiSig: invalid signatures",
+[What Is a Multisig Wallet?](https://www.coindesk.com/learn/what-is-a-multisig-wallet/))
   INVALID_OWNER: "CeloMultiSig: invalid owner",
   OWNER_ALREADY_SIGNED: "CeloMultiSig: owner already signed",
   NOT_ENOUGH_GAS: "CeloMultiSig: not enough gas",
@@ -1379,7 +1359,26 @@ Don't forget that you can view, clone, or fork the full code of this tutorial on
 
 I hope you found this tutorial helpful in your journey towards becoming a proficient blockchain developer. If you have any questions or feedback, please do not hesitate to reach out. Thank you for reading, and happy coding!
 
-## About Me
+## Next steps
+
+From here, there are multiple roads you can choose, depending if you are planning on using this multi-signature contract to secure the ownership or some access roles of your smart contract, or to secure your personal funds. As you can see from this tutorials, using a multi-signature to execute calls to other smart contracts adds a level of complexity, as you need to have the ABI of the contract you are calling, encode the call and assemble the different signature. So to make multi-signatures very flexible and user-friendly, it can be a daunting task. However, it can be pretty simple to integrate at a smaller scale in one specific project workflow, as a way to secure the ownership of a contract, and will often be a suggestion from the auditors.
+
+In a future set of tutorials we will look at how we can do a flexible DApp to manage the multi-signatures, and make it user friendly for the owners to sign transactions.
+
+In the meantime, I invite you to start planning yourself for this next tutorial, by starting designing the DApp we will be building. You can start by looking at the [Designing a User-Friendly Celo DApp- A Beginners Guide to UI/UX](https://docs.celo.org/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux).
+
+And if you want to go one step further, you can start setting up a react project, by following the [React based DApp](https://docs.celo.org/blog/developer-guide/start/web-dapp) tutorial.
+
+## References
+
+- [Tutorial Part 1](https://docs.celo.org/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2)
+- [This project repo](https://github.com/marc-aurele-besner/celo-multi-signatures-hardhat/tree/part-1-2)
+- [Solidity](https://docs.soliditylang.org)
+- [What Is a Multisig Wallet?](https://www.coindesk.com/learn/what-is-a-multisig-wallet/)
+- [Hardhat Documentation](https://hardhat.org/getting-started/)
+- [Ethers.js Documentation](https://docs.ethers.org/v5/)
+
+## About the author
 
 Hi there! My name is **Marc-Aurele**, but please feel free to call me **Mark**. Thank you for taking the time to read my tutorial. I am a Web3 full-stack and Solidity engineer with a passion for blockchain technology, smart contract development, and building open-source tools.
 
