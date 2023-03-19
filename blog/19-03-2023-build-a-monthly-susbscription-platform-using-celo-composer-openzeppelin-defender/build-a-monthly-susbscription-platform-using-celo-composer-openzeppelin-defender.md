@@ -58,7 +58,7 @@ For our project, we would be needing the following tools and framework
 
 ## Github Code
 
-For your reference, you can use the completed tutorial ![github code](https://github.com/alofeoluwafemi/crypto-subscription-payment-platform)
+For your reference, you can use the completed tutorial [github code](https://github.com/alofeoluwafemi/crypto-subscription-payment-platform)
 
 ## Getting Started
 
