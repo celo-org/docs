@@ -2055,6 +2055,16 @@ const Users: User[] = [
     website: 'blog/tutorials/build-an-nft-marketplace-for-tech-artisans-on-celo',
     tags: ['celosage', 'intermediate', 'react', 'ipfs', 'nft'],
   },
+    {
+    title:
+      "Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs",
+    description:
+      "Curious about how Uniswap and other projects are able to airdrop tokens to thousands of users? In this tutorial, we will show you how they use Merkle proof in Solidity and Javascript to accomplish this feat.",
+    preview: require("./showcase/advanced/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs.png"),
+    website:
+      "/blog/tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs.md",
+    tags: ["solidity", "react", "celo", "smartcontract", "nextjs", "advanced", "tokens"],
+  },
   {
     title: 'Getting Started On Celo With Hardhat',
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage',
