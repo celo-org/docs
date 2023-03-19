@@ -26,7 +26,7 @@ This article is a step-by-step guide on building a charity donation dapp using C
 1. Install Node.js and NPM (Node Package Manager) on your machine.
 2. Install the Celo Extension Wallet on your browser or add Celo test network (Alfajores) to your MetaMask Wallet
 
-
+If you will like to see the complete code, here is the Github link [charity dApp on celo](https://github.com/amoweolubusayo/charity-celo)
 ## Creating your project using Celo Composer
 
 In your terminal, run the following command
@@ -598,7 +598,12 @@ In this article, you learnt how to set up your development environment, create a
 ## Reference
 
 [Celo Composer Github](https://github.com/celo-org/celo-composer)
+
+
 [Rainbowkit docs](https://www.rainbowkit.com/docs/introduction)
+
+
+[Charity dApp on celo](https://github.com/amoweolubusayo/charity-celo)
 
 ## About the Author 
 
