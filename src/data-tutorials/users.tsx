@@ -827,6 +827,13 @@ const Users: User[] = [
     tags: ['celosage', 'android', 'celo', 'dapp', 'mobile', 'sdk', 'valora', 'advanced'],
   },
   {
+    title: 'A Technical Overview of Celo Light Client Protocol',
+    description: 'A comprehensive breakdown of celo light client protocol',
+    preview: require('./showcase/intermediate/celo-light-client.png'),
+    website: '/blog/tutorials/a-technical-overview-of-celo-light-client-protocol',
+    tags: ['intermediate','celo','sdk','valora','celosage'],
+  },
+  {
     title: 'Cryptography in Blockchain - An Overview of Hash Functions and Digital Signatures',
     description: ' Cryptography plays a critical role in ensuring the security and privacy of data in the blockchain, the Distributed Ledger Technology (DLT) that has gained widespread adoption in recent years.',
     preview: require('./showcase/intermediate/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures.png'),
