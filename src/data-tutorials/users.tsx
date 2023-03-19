@@ -2286,13 +2286,10 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
-    title:
-      "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
-    description:
-      "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
+    title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
+    description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
     preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
-    website:
-      "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
+    website: "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
     tags: ["advanced", "celosage", "celo", "openzeppelin"],
   },
   /*
@@ -2312,4 +2309,4 @@ function sortUsers() {
 }
 
 export const sortedUsers = sortUsers();
-2;
+2; 
