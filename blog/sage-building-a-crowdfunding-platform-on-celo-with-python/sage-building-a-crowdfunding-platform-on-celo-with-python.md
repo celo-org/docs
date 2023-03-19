@@ -286,4 +286,3 @@ To learn more about building on Celo using Python, you can explore the following
 ## References
 
 - [Celo docs](https://docs.celo.org/)
-- [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
