@@ -1173,6 +1173,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'composer'],
   },
   {
+    title: 'A guide to building decentralized loan dapp on the celo blockchain',
+    description: 'This tutorial would put you through building a loan app where there would be little need for middlemen like banks',
+    preview: require('./showcase/intermediate/a-guide-to-building-decentralized-loan-dapp.png'),
+    website: 'blog/tutorials/a-guide-to-building-decentralized-loan-dapp',
+    tags: ['celowallet', 'celo', 'solidity', 'celosage', 'intermediate'],
+  },
+  {
     title: 'ContractKit - A Practical Guide to Interacting with the Celo Core Contracts',
     description: 'How to access the Celo Blockchain with JavaScript using ContractKit.',
     preview: require('./showcase/intermediate/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts.png'),
