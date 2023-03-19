@@ -7,7 +7,7 @@ url: https://github.com/boyfem
 image_url: https://github.com/boyfem
 tags: [beginner, celosage, celo]
 hide_table_of_contents: true
-slug: /tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo
+slug: /tutorials/boyfem:leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo
 ---
 
 ![leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo](https://user-images.githubusercontent.com/47746690/222929818-e244e431-abe2-4698-8ac7-78c8fed4a716.png)
