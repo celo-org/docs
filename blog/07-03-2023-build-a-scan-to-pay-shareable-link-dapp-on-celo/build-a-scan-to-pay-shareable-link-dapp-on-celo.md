@@ -2,18 +2,16 @@
 title: Build a Scan-to-Pay Shareable Link dApp on Celo
 description: In this tutorial, you'll learn how to build a decentralized application (dApp) on the Celo blockchain that enables users to quickly and easily make payments using a simple scan-to-pay feature.
 
-
 authors:
-  - name: Jovan Mwesigwa 
+  - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-tags: [celo, 'celosage', 'intermediate', 'react', 'ethers']
+tags: [celo, "celosage", "intermediate", "react", "ethers"]
 hide_table_of_contents: true
 slug: /tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo
 ---
 
 ![build-a-scan-to-pay-shareable-link-dapp-on-celo](https://user-images.githubusercontent.com/62109301/223381258-92f4ce85-c30a-457e-96db-dd20c8efae83.png)
-
 
 ## Introduction
 
@@ -29,7 +27,7 @@ Before you begin this tutorial, there are a few prerequisites you should have:
 
 1. Basic programming knowledge: You should have some familiarity with programming concepts and basic coding skills. This tutorial assumes that you have a working knowledge of React JS.
 
-2. Familiarity with Celo blockchain: While it's not strictly necessary to have prior experience with Celo, it will be helpful to have a basic understanding of the Celo blockchain and its components, such as the Celo Valora wallet,  MetaMask, and the Celo network.
+2. Familiarity with Celo blockchain: While it's not strictly necessary to have prior experience with Celo, it will be helpful to have a basic understanding of the Celo blockchain and its components, such as the Celo Valora wallet, MetaMask, and the Celo network.
 
 3. Development environment: You'll need a development environment set up on your machine. We recommend using Visual Studio Code as your code editor, Node.js and NPM / Yarn for installing dependencies, and Git for version control.
 
@@ -59,8 +57,6 @@ You can clone the starter code from GitHub and get set up with all the required 
 
 ```bash
 git clone https://github.com/JovanMwesigwa/scan-qr-to-pay-shareable-link-dapp.git
-
-
 ```
 
 This will clone the starter project to your local development environment.
@@ -88,40 +84,31 @@ In the same folder, we have the `Pay.jsx` page that will display the QR code tha
 Inside the `Dashboard.jsx` file under the `/pages` folder, we have some library imports at the top:
 
 ```js
-
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 ```
 
 We import the `useState` function from `react` to handle multiple state changes in the page and `useNavigate()` from `react-router-dom`.
 
 ```js
-
-
 const Dashboard = () => {
   const [address, setAddress] = useState('')
   const [amount, setAmount] = useState(0.0)
   const [error, setError] = useState('')
 
   const [linkData, setLinkData] = useState(null)
-
-
 ```
 
 Using `useState` we handle several useful state variables on the page:
 
-* address: This will be the merchant's address to receive payment.
-* amount: The amount of CELO that the merchant intends to receive from a pay link.
-* error: To catch and display any error messages that may result from a failed response and feedback.
-* linkData: Handle the created link from the merchant's entered information.
+- address: This will be the merchant's address to receive payment.
+- amount: The amount of CELO that the merchant intends to receive from a pay link.
+- error: To catch and display any error messages that may result from a failed response and feedback.
+- linkData: Handle the created link from the merchant's entered information.
 
 On the form inputs:
 
 ```js
-
-
     <label htmlFor="address" className="text-sm text-gray-400 ">
         Paste your address
     </label>
@@ -131,7 +118,6 @@ On the form inputs:
         onChange={(e) => setAddress(e.target.value)}
         className="w-full border-1 py-4 outline-none border-gray-900"
     />
-
 ```
 
 On the address form input element we set the `value` prop to the `address` state variable and the `onChange()` method to update the `address` state.
@@ -139,8 +125,6 @@ On the address form input element we set the `value` prop to the `address` state
 This is the same logic we used for the `amount` form input element. As shown below:
 
 ```js
-
-
     <label htmlFor="addredd" className="text-sm text-gray-400 ">
       Enter CEL Amount
     </label>
@@ -151,40 +135,32 @@ This is the same logic we used for the `amount` form input element. As shown bel
           placeholder="0.0"
           className="w-1/2 border-[0.5px] py-2 rounded-md px-2 mt-2 outline-none border-gray-100"
         />
-
 ```
 
 The `amount` form input elements update the `amount` state, as defined in the code above.
 
-Closing off the form is the button that generates the code by calling the ```generateLink()``` that we'll define later on:
+Closing off the form is the button that generates the code by calling the `generateLink()` that we'll define later on:
 
 ```js
-
-    <button
-        onClick={generateLink}
-        className="bg-green-600  my-4 w-full p-3 rounded-md text-white"
-    >
-        Generate QR Link
-    </button>
-
+<button
+  onClick={generateLink}
+  className="bg-green-600  my-4 w-full p-3 rounded-md text-white"
+>
+  Generate QR Link
+</button>
 ```
 
 After generating the payment link, we want to display it so that the merchant can see and copy it.
 To do this, we've defined a clickable `div` link that we make sure only populates when the link is generated, as shown below:
 
 ```js
-
-
-
-    {linkData && !error && (
-        <div
-          onClick={openPayLink}
-          className="text-xs text-blue-400 cursor-pointer"
-        >
-          Open QR link
-        </div>
-    )}
-
+{
+  linkData && !error && (
+    <div onClick={openPayLink} className="text-xs text-blue-400 cursor-pointer">
+      Open QR link
+    </div>
+  );
+}
 ```
 
 The `openPayLink` is a method that when clicked, will navigate the user to a payment page with a scannable link QR code.
@@ -194,23 +170,19 @@ The `openPayLink` is a method that when clicked, will navigate the user to a pay
 The Generate QR Link button directly calls the `generateLink` function below:
 
 ```js
-
-
-  const generateLink = () => {
-    if (!address || amount === 0) {
-      setError('Make sure you complete all fields!')
-      return
-    }
-
-    setError('')
-
-    const data = { address: address, amount: amount }
-    const encodedData = encodeURIComponent(JSON.stringify(data))
-
-    setLinkData(encodedData)
+const generateLink = () => {
+  if (!address || amount === 0) {
+    setError("Make sure you complete all fields!");
+    return;
   }
 
+  setError("");
 
+  const data = { address: address, amount: amount };
+  const encodedData = encodeURIComponent(JSON.stringify(data));
+
+  setLinkData(encodedData);
+};
 ```
 
 The function, first verifies that all forms have been populated with information and that the user is not submitting empty information.
@@ -233,17 +205,12 @@ As shown in the line:
 
 ```
 
-Finally, we define the  `openPayLink` function that will allow the merchants to navigate to the pay page by passing in the link params in the URL.
+Finally, we define the `openPayLink` function that will allow the merchants to navigate to the pay page by passing in the link params in the URL.
 
 ```js
-
-
-
-  const openPayLink = () => {
-    navigate(`pay/${linkData}`)
-  }
-
-
+const openPayLink = () => {
+  navigate(`pay/${linkData}`);
+};
 ```
 
 ### Exploring the Pay page
@@ -261,13 +228,11 @@ As shown below:
 At the top of the `Pay.jsx` file, we have several libraries imported:
 
 ```js
-
-import React, { useEffect, useState } from 'react'
-import EthereumQRPlugin from 'ethereum-qr-code'
-import QRCode from 'qrcode.react'
-import { useParams } from 'react-router-dom'
-import { ethers } from 'ethers'
-
+import React, { useEffect, useState } from "react";
+import EthereumQRPlugin from "ethereum-qr-code";
+import QRCode from "qrcode.react";
+import { useParams } from "react-router-dom";
+import { ethers } from "ethers";
 ```
 
 1. `EthereumQRPlugin`: When we created the transaction to be signed by the user's wallet, all the QR code does is hold the created transaction instance that the user's wallet will sign to make the payment. The `ethereum-qr-code` package helps to transform the transaction data into `dataUrl` for the user's wallet signs. It's installed via [npm](https://www.npmjs.com/package/ethereum-qr-code) and helps to hold the signable transaction instance.
@@ -282,17 +247,12 @@ The first thing we need to do is extract the merchant's address and pay the amou
 const Pay = () => {
   const { session } = useParams()
   let decodedData = JSON.parse(decodeURIComponent(session))
-
-
 ```
 
 Defining a `qrData` state variable will allow us to save the instance of the created transaction to be signed.
 
 ```js
-
-
-  const [qrData, setQrData] = useState()
-
+const [qrData, setQrData] = useState();
 ```
 
 As soon as the user navigates to the payment page, we assume that they are ready to scan the QR code with their mobile phone. So we need immediately display the QR on the page.
@@ -300,12 +260,9 @@ As soon as the user navigates to the payment page, we assume that they are ready
 To achieve this, we define a `generateQrCode` function and call it in the useEffect function, so the code is generated on the initial render of the page.
 
 ```js
-
-  useEffect(() => {
-    generateQRCode()
-  }, [decodedData])
-
-
+useEffect(() => {
+  generateQRCode();
+}, [decodedData]);
 ```
 
 Using `decodedData` as a dependency in `useEffect` will allow the page to update whenever there's a change in the link parameters.
@@ -321,22 +278,18 @@ This then handles a promise using the `.then()` where we successfully set the cr
 As shown in the code:
 
 ```js
+const generateQRCode = async () => {
+  const qrData = qr.toDataUrl({
+    to: decodedData.address,
+    value: ethers.parseEther(decodedData.amount),
+    chainId: 44787,
+  });
 
-
-  const generateQRCode = async () => {
-    const qrData = qr.toDataUrl({
-      to: decodedData.address,
-      value: ethers.parseEther(decodedData.amount),
-      chainId: 44787,
-    })
-
-    qrData.then((code) => {
-      console.log('Your QR id generated:', code.value)
-      setQrData(code.value)
-    })
-  }
-
-
+  qrData.then((code) => {
+    console.log("Your QR id generated:", code.value);
+    setQrData(code.value);
+  });
+};
 ```
 
 Testing out the code:
@@ -397,11 +350,11 @@ Building a scan-to-pay shareable link dApp on the Celo blockchain is a great way
 
 Now that you have built your dApp, here are a few next steps you can take to continue exploring the possibilities of DeFi development.
 
-* Test your dApp thoroughly to ensure that it works as expected and identify any potential issues or bugs that need to be addressed.
-* Explore ways to expand your dApp by adding new features, such as the ability to send and receive other tokens or integrate with other DeFi protocols.
-* Join the Celo community to connect with other developers, learn about new tools and resources, and stay up to date on the latest developments in the ecosystem.
-* Consider deploying your dApp to a testnet or mainnet to make it available to a wider audience and gain real-world feedback.
-* Continue learning about blockchain development and DeFi by exploring additional tutorials, courses, and resources to deepen your knowledge and skills.
+- Test your dApp thoroughly to ensure that it works as expected and identify any potential issues or bugs that need to be addressed.
+- Explore ways to expand your dApp by adding new features, such as the ability to send and receive other tokens or integrate with other DeFi protocols.
+- Join the Celo community to connect with other developers, learn about new tools and resources, and stay up to date on the latest developments in the ecosystem.
+- Consider deploying your dApp to a testnet or mainnet to make it available to a wider audience and gain real-world feedback.
+- Continue learning about blockchain development and DeFi by exploring additional tutorials, courses, and resources to deepen your knowledge and skills.
 
 ## About the Author​
 
