@@ -820,13 +820,6 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner', 'cli'], 
   },
   {
-    title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
-    description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
-    preview: require('./showcase/beginner/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential.png'),
-    website: 'blog/tutorials/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential',
-    tags: ['celosage', 'celo', 'beginner'], 
-  },
-  {
     title: 'Product Discovery é a chave para criar produtos de NFT de sucesso no blockchain Celo',
     description: 'Aprenda como criar produtos de NFT de sucesso no blockchain Celo através de processos de product discovery',
     preview: require('./showcase/intermediate/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo.png'),
