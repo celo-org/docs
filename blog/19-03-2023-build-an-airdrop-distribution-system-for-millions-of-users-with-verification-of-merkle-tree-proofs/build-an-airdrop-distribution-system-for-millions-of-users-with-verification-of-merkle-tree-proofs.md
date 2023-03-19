@@ -493,6 +493,13 @@ There you have it. You have successfully implemented a dApp that gives your user
 
 In this tutorial , we learnt and saw the versatility of Merkle trees in building decentralized applications and showcased how they can be used to provide access to airdrops. This demonstrates the real-world applicability of Merkle trees and their role in building secure and efficient blockchain systems.
 
+## Reference
+
+- https://hackernoon.com/evolution-of-airdrop-from-common-spam-to-the-merkle-tree-30caa2344170 
+- https://forum.openzeppelin.com/t/how-to-create-merkle-tree-airdrop-smartcontract/33463 
+- https://m.youtube.com/watch?v=xbBn5sj9pXM
+- https://steveng.medium.com/performing-merkle-airdrop-like-uniswap-85e43543a592 
+
 ## About Author
 
 Oluwafemi Alofe is a Blockchain developer with 3 years of applicable knowledge and 8 years of total experience as a Software engineer. He has written and deployed vulnerability-free smart contracts as a blockchain developer on a variety of blockchains, including but not limited to Ethereum, BCS, and Celo. Oluwafemi has a strong interest in developing distributed systems, and continues to learn new things every day to stay current with technological advancements.
