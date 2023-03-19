@@ -882,6 +882,7 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo',
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask', 'valora' ],
   },
+  {
     title: 'Build Your Own Full stack Token Airdrop dApp on Celo Blockchain',
     description: 'In this tutorial, you will learn how to a dApp that allows users sign up for an airdrop and receive tokens automatically deposited into their Celo address.',
     preview: require('./showcase/intermediate/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain.png'),
