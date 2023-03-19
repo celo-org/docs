@@ -1,5 +1,5 @@
 ---
-title: Build Your Own Full Stack NFT A.I Art Minter On The Celo Blockchain
+title: Build Your Own Full Stack NFT AI Art Minter On The Celo Blockchain
 description: In this tutorial, we will build a full stack nft digital art minter that will generate our art with artificial intelligence
 authors:
   - name: ✍️ Jonathan Iheme
@@ -7,7 +7,7 @@ url: https://github.com/4undRaiser
 image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate']
 hide_table_of_contents: true
-slug: "/tutorials/build-your-own-full-stack-nft-a.i-art-minter-on-the-celo -blockchain"
+slug: "/tutorials/build-your-own-full-stack-nft-ai-art-minter-on-the-celo-blockchain"
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-your-own-fullstack-nft-ai-art-minter-on-the-celo-blockchain.png)
