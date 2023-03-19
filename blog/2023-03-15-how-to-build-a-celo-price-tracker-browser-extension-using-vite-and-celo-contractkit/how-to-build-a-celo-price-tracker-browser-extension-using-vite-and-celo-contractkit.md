@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,celosage,truffle,smartcontract,solidity,react, beginner]
+tags: [celo, celosage, truffle, smartcontract, solidity, react, beginner]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit
 ---
@@ -85,11 +85,11 @@ That's it! Your project directory should look like this:
 
 ### Load the extension in the broswer
 
-When the build completes, open Chrome or Edge and navigate to ***chrome://extensions***. Make sure to turn on the developer mode switch.
+When the build completes, open Chrome or Edge and navigate to **_chrome://extensions_**. Make sure to turn on the developer mode switch.
 
 ![screenshot 2](./images/screenshot-2.png)
 
-Drag your ***dist*** folder into the Extensions Dashboard to install it. Your extension icon will be in the top bar. The icon will be the first letter of the extension's name.
+Drag your **_dist_** folder into the Extensions Dashboard to install it. Your extension icon will be in the top bar. The icon will be the first letter of the extension's name.
 
 Once you've found the extension icon, right-click it and choose "Inspect popup window". This will open the popup and the popup dev tools window. We need to inspect the popup to keep it open while making changes.
 
@@ -133,7 +133,6 @@ export function areAddressesEqual(a1: string, a2: string) {
   validateAddress(a2, "compare");
   return getAddress(a1) === getAddress(a2);
 }
-
 ```
 
 amount.ts: here is where we convert a from wei to number or rounded figure
@@ -245,7 +244,7 @@ import { useEffect, useState } from "react";
 
 // Based on https://usehooks.com/useDebounce
 export function useDebounce<T>(value: T, delayMs = 500): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+  const [debouncedValue, setDebouncedValue] = useState < T > value;
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -401,7 +400,6 @@ Note: you might not be able to import providers from ethers package if you are u
 
 tokens.ts: List of all token on CELO both mainnet and testnet e.g CELO Native, cUSD, cEUR etc and their corresponding information like address.
 
-
 ```javascript
 import { areAddressesEqual } from "./addresses";
 
@@ -512,7 +510,6 @@ export function getTokenByAddress(address: string): Token {
   throw new Error(`No token found for address ${address}`);
 }
 ```
-
 
 ### Hooks
 
@@ -635,14 +632,24 @@ Update your index.css file
 .active {
   @apply bg-primary;
 }
-
 ```
 
 Inside assets folder, create celo.svg file for celo logo and paste the below code
 
 ```javascript
-<svg width="114" height="26" viewBox="0 0 114 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M25.9538 0H0.435547V25.682H25.9533V16.7172H21.7184C20.2586 19.9876 16.9728 22.2654 13.2125 22.2654C8.02853 22.2654 3.83037 18.0039 3.83037 12.823C3.83037 7.64221 8.02853 3.41712 13.2125 3.41712C17.0457 3.41712 20.3315 5.76873 21.7919 9.11197H25.9538V0ZM50.6663 16.7167C49.1698 19.987 45.9205 22.2647 42.1242 22.2649C37.086 22.2649 32.9608 18.2234 32.7783 13.1898H54.9012V0H29.3829V25.6814H54.9012V16.7167H50.6663ZM50.9934 10.0303H33.1782H33.1777C34.3093 5.80518 38.0696 3.41716 42.122 3.41716C46.1743 3.41716 49.6793 5.65795 50.9934 10.0303ZM110.005 12.8225C110.005 18.0398 105.843 22.2649 100.659 22.2649C95.5115 22.2649 91.3133 18.0033 91.3133 12.8225C91.3133 7.64169 95.4753 3.4166 100.659 3.4166C105.843 3.4166 110.005 7.60527 110.005 12.8225ZM113.436 0H87.918V25.682H113.436V0ZM80.4927 16.7167H84.7276V25.6814H58.2969V0H62.6046V12.8225C62.6046 18.5543 66.8395 22.2284 71.8772 22.2284C75.7833 22.2284 79.2148 20.0974 80.4927 16.7172V16.7167Z" fill="black"/>
+<svg
+  width="114"
+  height="26"
+  viewBox="0 0 114 26"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M25.9538 0H0.435547V25.682H25.9533V16.7172H21.7184C20.2586 19.9876 16.9728 22.2654 13.2125 22.2654C8.02853 22.2654 3.83037 18.0039 3.83037 12.823C3.83037 7.64221 8.02853 3.41712 13.2125 3.41712C17.0457 3.41712 20.3315 5.76873 21.7919 9.11197H25.9538V0ZM50.6663 16.7167C49.1698 19.987 45.9205 22.2647 42.1242 22.2649C37.086 22.2649 32.9608 18.2234 32.7783 13.1898H54.9012V0H29.3829V25.6814H54.9012V16.7167H50.6663ZM50.9934 10.0303H33.1782H33.1777C34.3093 5.80518 38.0696 3.41716 42.122 3.41716C46.1743 3.41716 49.6793 5.65795 50.9934 10.0303ZM110.005 12.8225C110.005 18.0398 105.843 22.2649 100.659 22.2649C95.5115 22.2649 91.3133 18.0033 91.3133 12.8225C91.3133 7.64169 95.4753 3.4166 100.659 3.4166C105.843 3.4166 110.005 7.60527 110.005 12.8225ZM113.436 0H87.918V25.682H113.436V0ZM80.4927 16.7167H84.7276V25.6814H58.2969V0H62.6046V12.8225C62.6046 18.5543 66.8395 22.2284 71.8772 22.2284C75.7833 22.2284 79.2148 20.0974 80.4927 16.7172V16.7167Z"
+    fill="black"
+  />
 </svg>
 ```
 
@@ -657,7 +664,7 @@ import { Alfajores, Celo } from "./utils/chains";
 import { TokenId } from "./utils/tokens";
 
 function App() {
-  const [toToken, setToToken] = useState<TokenId>(TokenId.cUSD);
+  const [toToken, setToToken] = useState < TokenId > TokenId.cUSD;
 
   const { isLoading, toAmount, rate } = useSwap(
     BigNumber(1).toString(),
@@ -717,10 +724,10 @@ export default App;
 ```
 
 ### Final build
+
 Boom!!!
 
 ![screenshot 4](./images/screenshot-4.png)
-
 
 ## Conclusion
 
@@ -735,15 +742,3 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 - [CRXJS](https://crxjs.dev/vite-plugin/getting-started/react/dev-basics)
 - [Vite Js](https://vitejs.dev/guide/)
 - [Celo Docs](https://docs.celo.org)
-
-
-
-
-
-
-
-
-
-
-
-
