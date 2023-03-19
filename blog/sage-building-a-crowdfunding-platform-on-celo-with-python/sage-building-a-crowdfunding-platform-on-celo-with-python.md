@@ -210,7 +210,7 @@ print(private_key)
 
 The address and private key are gotten from any of the ones that ganache provides for us and the URL is the RPC URL that ganache is running on your PC.
 
-For security purposes, it’s best to store your private key as an environment variable. 
+For security purposes, it is best to store your private key as an environment variable. 
 
 Create a .env file and add your private key to it:
 
@@ -228,7 +228,7 @@ python deploy.py
 
 ### Deploying on Celo Testnet
 
-Let’s deploy our application on Celo Testnet also known as Alfajores. 
+Let us deploy our application on Celo Testnet also known as Alfajores. 
 
 Add the following code to `deploy.py`:
 
@@ -281,8 +281,9 @@ To learn more about building on Celo using Python, you can explore the following
 
 ## About the Author
 
-[Israel Okunaya](https://meetisraelokunaya.curious.page/) is an ace writer with a flair for simplifying complexities and a knack for storytelling. He leverages over four years of experience to meet the most demanding writing needs in different niches, especially food and travel, blockchain, and marketing. He sees blockchain as a fascinating yet tricky affair. So, he's given to simplifying its complexities with text and video tutorials.
+[Israel Okunaya](https://meetisraelokunaya.curious.page/) is an ace writer with a flair for simplifying complexities and a knack for storytelling. He leverages over four years of experience to meet the most demanding writing needs in different niches, especially food and travel, blockchain, and marketing. He sees blockchain as a fascinating yet tricky affair. So, he is given to simplifying its complexities with text and video tutorials.
 
 ## References
 
 - [Celo docs](https://docs.celo.org/)
+- [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
