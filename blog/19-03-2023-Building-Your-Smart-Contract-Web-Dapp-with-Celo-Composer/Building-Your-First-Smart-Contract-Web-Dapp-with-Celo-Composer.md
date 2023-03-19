@@ -1,4 +1,18 @@
-# Building Your Smart Contract Web Dapp with Celo-Composer
+---
+title: Building Your Smart Contract Web Dapp with Celo-Composer
+description: Learn how to initialize a Hardhat and React project using Celo-composer.
+authors:
+- name: Joshua Moses
+  title: Frontend Web Developer | Technical Writer
+  url: https://github.com/J0shcodes
+  image_url: https://avatars.githubusercontent.com/u/7295729?v=4
+tags: [solidity, react, celo, smartcontract, nextjs, intermediate, composer, celosage]
+hide_table_of_contents: true
+slug: /tutorials/building-your-first-smart-contract-web-dapp-with-celo-composer
+---
+
+![building-your-smart-contract-web-dapp-with-celo-composer](https://user-images.githubusercontent.com/71826391/226214632-9251559e-33c1-42be-89b9-58b2fee5cbf6.png)
+
 
 ## Introduction
 
