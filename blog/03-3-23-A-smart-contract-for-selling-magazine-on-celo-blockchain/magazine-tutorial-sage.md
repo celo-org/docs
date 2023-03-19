@@ -60,13 +60,13 @@ To begin building your smart contract for buying and selling magazines on the Ce
 
 - Open the "Magazine.sol" file and start by defining the necessary statements for the smart contract. This will include importing any necessary libraries or contracts and defining the contract itself.
 
-  ```solidity
+```solidity
   // SPDX-License-Identifier: MIT
-  ```
-
+```
+```
 pragma solidity >=0.7.0 <0.9.0;
+```
 
-````
 Note that we're using Solidity version >=0.7.0 <0.9.0 in this tutorial. You may need to adjust the version depending on your specific requirements.
 
 Next, we add our ERC20 token interface.
@@ -97,7 +97,7 @@ interface IERC20Token {
         uint256 value
     );
 }
-````
+```
 
 The `IERC20Token` interface is a standard interface for implementing tokens on the Celo blockchains. It defines a set of functions that must be implemented by any contract that wants to be recognized as an ERC20 token. Let's break down the functions and events in this interface:
 
@@ -127,6 +127,7 @@ contract Magazino {
      uint internal magazinesLength = 0;
       address internal cUsdTokenAddress =  0x686c626E48bfC5DC98a30a9992897766fed4Abd3;
        uint256 internal magazinesId = 0;
+}
 ```
 
 In the next line, we would declare an unsigned integer variable `named magazinesLength` and initializes it to 0. The internal keyword indicates that the variable can only be accessed within the smart contract and any derived contracts.
