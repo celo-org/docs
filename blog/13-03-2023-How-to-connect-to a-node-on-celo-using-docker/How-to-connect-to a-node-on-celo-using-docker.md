@@ -6,7 +6,7 @@ authors:
     title: Tech Ethusiast, Smart Contract Developer 
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celo sage, celo, beginner, cli]
+tags: [celosage, celo, beginner, cli]
 hide_table_of_contents: true
 slug: /tutorials/how-to-connect-to-a-node-on-celo-using-docker
 ---
