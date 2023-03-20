@@ -25,7 +25,6 @@ To understand this tutorial, you must be familiar with the following:
 - Building Smart Contracts
 - The Python programming language
 
-
 ## Requirements
 
 You should have the following installed on your computer to follow along:
@@ -73,7 +72,7 @@ brownie int
 
 This command generates some folder which will look like this:
 
-<img width="247" alt="225621842-3acdca45-6cf7-4df9-ad9f-659a7fdc5b47" src="https://user-images.githubusercontent.com/104994589/226218209-ed885059-f1af-4b16-8e01-df704256724d.png">
+![image](https://user-images.githubusercontent.com/104994589/226218209-ed885059-f1af-4b16-8e01-df704256724d.png)
 
 After initializing brownie into our project, in your root directory, create two files called .env and brownie-config.yaml. The .env file is used to store environment variables that should not be exposed to the public such as our private key, mnemonic phrase, etc, while brownie-config.yaml is used to configure brownie in our project.
 
@@ -126,7 +125,7 @@ You can see the list of networs that have been added to our brownie project:
 ```bash
 brownie network list
 ```
-<img width="1103" alt="Screenshot 2023-03-16 at 10 21 47 AM" src="https://user-images.githubusercontent.com/104994589/225622515-bf69ebce-b3d9-4d38-b2a5-2dca80769694.png">
+![image](https://user-images.githubusercontent.com/104994589/225622515-bf69ebce-b3d9-4d38-b2a5-2dca80769694.png)
 
 ### Implementing the Smart Contract
 
@@ -324,7 +323,7 @@ Next, we need to compile and deploy the contract on the Celo Testnet, Run the fo
 ```bash
 brownie compile
 ```
-<img width="923" alt="Screenshot 2023-03-16 at 12 12 04 PM" src="https://user-images.githubusercontent.com/104994589/225622811-cb77d910-9c29-42a1-a8d0-3b30cd829aa1.png">
+![image](https://user-images.githubusercontent.com/104994589/225622811-cb77d910-9c29-42a1-a8d0-3b30cd829aa1.png)
 
 To deploy the smart contract on Celo create a new file called deploy.py in the scripts directory of your project.
 
@@ -354,7 +353,7 @@ The deploy_marketplace functino get the account we would use to deploy the contr
 brownie run scripts/deploy.py --network celo-alfajores
 ```
 
-<img width="923" alt="Screenshot 2023-03-16 at 12 33 50 PM" src="https://user-images.githubusercontent.com/104994589/225623002-ca2f848f-8e28-4129-8b21-92fb8576d034.png">
+![image](https://user-images.githubusercontent.com/104994589/225623002-ca2f848f-8e28-4129-8b21-92fb8576d034.png)
 
 
 ## Conclusion
