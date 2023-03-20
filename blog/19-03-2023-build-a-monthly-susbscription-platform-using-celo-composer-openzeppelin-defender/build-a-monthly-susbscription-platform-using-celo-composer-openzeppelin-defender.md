@@ -1450,7 +1450,6 @@ Thank you for making it through from the first part to the final part.
 
 By now, you must have gotten the idea of how you can build automated payment subscription platform for charging your customer in crypto (CUSD). You have learn 4 major things; how to write test, how to deploy and query a subgraph, what a relayer is and finally how to automate things in a smart contract.
 
-
 ## About Author
 
 Oluwafemi Alofe is a Blockchain developer with 3 years of applicable knowledge and 8 years of total experience as a Software engineer. He has written and deployed vulnerability-free smart contracts as a blockchain developer on a variety of blockchains, including but not limited to Ethereum, BCS, and Celo. Oluwafemi has a strong interest in developing distributed systems, and continues to learn new things every day to stay current with technological advancements.
