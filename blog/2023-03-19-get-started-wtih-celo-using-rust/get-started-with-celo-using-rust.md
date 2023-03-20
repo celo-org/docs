@@ -215,7 +215,6 @@ Note that you'll need to replace the ***contracts/tictactoe.abi.json*** and ***c
 
 The run your program, we can easily see that we have been able to interact seamlessly with our deployed smart contract.
 
-
 ![smart contract output](./images/screenshot-6.png)
 
 ## Conclusion
@@ -233,16 +232,3 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 - [web3 crate package/](https://crates.io/crates/web3)
 - [Get started with rust](https://www.rust-lang.org/learn/get-started)
 - [Learn solidity by example](https://solidity-by-example.org)
-
-
-
-
-
-
-
-
-
-
-
-
-
