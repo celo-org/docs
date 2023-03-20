@@ -11,14 +11,14 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment
 ---
 
-![how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment](https://user-images.githubusercontent.com/62109301/226399564-ebfda82d-f5dd-4fec-92f0-cc2827071215.png)
+![header](https://user-images.githubusercontent.com/62109301/226399564-ebfda82d-f5dd-4fec-92f0-cc2827071215.png)
 
 
-# Introduction
+## Introduction
 
 This tutorial covers automating smart contract verification using Hardhat on Celoscan. It includes setting up Hardhat, creating a simple smart contract, and automating the verification process on Celoscan without leaving your development environment. We explore the best practices for smart contract development and writing a deploy script. Any upgrade to the contract will be automatically verified on the chain.
 
-# Prerequisites
+## Prerequisites
 
 1. Basic knowledge of Solidity: You should have a basic understanding of Solidity, the programming language used for Ethereum smart contracts.
 
@@ -28,7 +28,7 @@ This tutorial covers automating smart contract verification using Hardhat on Cel
 
 4. An account on Celoscan: You'll need to create an account to celoscan to obtain the API keys that will allow us to verify the deployed contracts programmatically.
 
-# Requirements​
+## Requirements​
 
 1. Node.js and npm: You'll need Node.js and npm installed on your system to install and run Hardhat. You can download Node.js from the official website and npm will be installed automatically along with Node.js [here](https://nodejs.org/en/download).
 
@@ -78,7 +78,7 @@ Welcome to Hardhat v2.10.0
 
 Select a `Create JavaScript project` to scaffold a new hardhat configured project.
 
-## Creating the contract
+### Creating the contract
 
 Under the `/contracts` folder create a new contract `Blogger.sol`. This is where we've created a simply create and read the contract, as shown below,
 
@@ -136,7 +136,7 @@ In your terminal;
 npx hardhat compile
 ```
 
-## Writing the deploy script
+### Writing the deploy script
 
 The deploy script uses the Hardhat framework to interact with the Celo network and in this case, we'll use the built-in ethers js library that comes with hardhat.
 
@@ -167,7 +167,7 @@ The last few lines of the code use a recommended pattern for handling errors whe
 
 Note that this code does not automate the verification process on Celoscan. To automate the verification process, we need to add additional code to the deploy script which we will cover in the next section.
 
-## Configuring network paths and variables in hardhat config
+### Configuring network paths and variables in hardhat config
 
 The `hardhat.config.js` file is where we configure our project's network paths and variables for deployment. In this code, we have defined the default network as 'hardhat', which is a local network for testing. We have also defined two other networks, localhost, and alfajores.
 
@@ -236,7 +236,7 @@ The `ALFAJORES_API_KEY`, `ALFAJORES_URL`, and `PRIVATE_KEY` are environment vari
 
 The `ALFAJORES_API_KEY` will help us call the Celoscan to verify API to verify the contract programmatically. Therefore you need to obtain this before you can proceed with the tutorial.
 
-## Obtain API key from Celoscan
+### Obtain API key from Celoscan
 
 To get `ALFAJORES_API_KEY`, you need to create an account on Celoscan Explorer [here](https://celoscan.io/) and create an API key from your profile settings. This key will give you access to the Celo blockchain and enable you to interact with it programmatically.
 
@@ -256,7 +256,7 @@ Now that all our variables are successfully populated, we can now deploy the con
 
 Make sure your deployer account has some test funds to pay for the deployment gas fees. You can get test funds on the cel faucet [here](https://faucet.celo.org/)
 
-## Deploying the contract
+### Deploying the contract
 
 In your terminal, to deploy your contract, type,
 
@@ -283,7 +283,7 @@ There are two options we can take to verify the contract.
 2. We can create a separate verify function in the deploy script that automatically verifies the contract when it gets deployed to the network.
 By doing this, we won't even have to worry about opening the verify contract form every time we update the contract to a new address.
 
-## Creating the verified contact script
+### Creating the verified contact script
 
 As we explained in the previous bulletin, we'll create a separate verify script that will be automatically triggered when a new contract has been deployed to the network to verify it.
 
@@ -320,7 +320,7 @@ We call the run function with the `verify:verify` command, which tells Hardhat t
 
 Finally, we export the `verifyContract` function so we can use it in our deploy script.
 
-## Updating the deploy script
+### Updating the deploy script
 
 Now that the `verfyContract` functionality is complete, we can call it in the deploy script exactly after when the contract has been deployed.
 
@@ -372,11 +372,11 @@ This time, the contract has a nice tick to show that it's verified and the code 
 
 ![verified on chain](images/verified.png)
 
-# Conclusion​
+## Conclusion​
 
 In this tutorial, we've learned how to create, compile, deploy, and verify automatically a smart contract using Hardhat. We've also explored how to configure network paths and variables in the Hardhat config file. Hardhat is a powerful development environment that makes it easy to build, test, and deploy smart contracts, and we hope this tutorial has provided a helpful introduction to its capabilities.
 
-# Next Steps​
+## Next Steps​
 
 1. Explore the different features and plugins available in the Hardhat framework, such as testing and debugging tools, deployment scripts, and network management tools.
 
@@ -386,7 +386,7 @@ In this tutorial, we've learned how to create, compile, deploy, and verify autom
 
 4. Continue to improve your skills and knowledge by reading the celo documentation, attending workshops and conferences, and following the latest trends and best practices in celo blockchain.
 
-# About the Author​
+## About the Author​
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
