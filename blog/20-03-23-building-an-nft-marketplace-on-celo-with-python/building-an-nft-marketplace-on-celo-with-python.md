@@ -72,6 +72,7 @@ brownie int
 ```
 
 This command generates some folder which will look like this:
+
 <img width="247" alt="225621842-3acdca45-6cf7-4df9-ad9f-659a7fdc5b47" src="https://user-images.githubusercontent.com/104994589/226218209-ed885059-f1af-4b16-8e01-df704256724d.png">
 
 After initializing brownie into our project, in your root directory, create two files called .env and brownie-config.yaml. The .env file is used to store environment variables that should not be exposed to the public such as our private key, mnemonic phrase, etc, while brownie-config.yaml is used to configure brownie in our project.
