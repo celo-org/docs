@@ -13,8 +13,6 @@ slug: /tutorials/creating-a-celo-based-non-fungible-token-marketplace
 
 ![header](https://user-images.githubusercontent.com/125604535/226175102-36218388-8f06-4642-9d80-86492e5a07f4.png)
 
-
-
 ## Introduction
 
 Celo is a blockchain platform that offers a mobile-first approach to make cryptocurrency user-friendly and simplifies access to global financial services. With its compatibility with Ethereum, Celo provides an ideal platform for creating decentralized applications, including non-fungible token (NFT) marketplaces. This tutorial will guide you through the process of creating a Non-Fungible Token (NFT) marketplace using Celo's blockchain technology.
@@ -48,14 +46,14 @@ In this tutorial, we will be building an NFT marketplace where users can buy and
 To get started, you will need to set up a development environment and a Celo account. Follow the steps below to create a new project and connect it to the Celo network:
 
 1. Open a new terminal window and create a new directory for your project using the following commands:
-`mkdir nft-marketplace`, `cd nft-marketplace`
+   `mkdir nft-marketplace`, `cd nft-marketplace`
 
 2. Initialize a new npm project and install the required dependencies, using these commands:
-`npm init -y`, `npm install --save-dev truffle @celo/contractkit`
+   `npm init -y`, `npm install --save-dev truffle @celo/contractkit`
 
 3. Create a new truffle project using the following command.
 
-```bash 
+```bash
 truffle init
 ```
 
@@ -63,35 +61,33 @@ You might run into this error.
 
 ![image](https://user-images.githubusercontent.com/125604535/226174710-2fab79d0-f4b0-493a-b27e-f495a39b4308.png)
 
-
 The error indicates it seems like we are encountering a syntax error due to the Node.js version we are using. The optional chaining operator (?.) is supported from Node.js v14 onwards. We are currently using Node.js v12.22.12, which does not support this syntax.
 
 To resolve this issue, we can update your Node.js version to a newer version (preferably the latest LTS version). Doing that and we have this;
 
 ![image](https://user-images.githubusercontent.com/125604535/226174761-e4d111f4-5b82-46e6-a1ca-a4e7e349ea5f.png)
 
-
 4. Open the truffle-config.js file and add the following code to connect to the Celo network.
 
 ```js
-const ContractKit = require('@celo/contractkit')
-const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org')
-const privateKey = process.env.PRIVATE_KEY.replace('0x', '')
-const account = kit.web3.eth.accounts.privateKeyToAccount(privateKey)
-kit.defaultAccount = account.address
-kit.web3.eth.accounts.wallet.add(account)
+const ContractKit = require("@celo/contractkit");
+const kit = ContractKit.newKit("https://alfajores-forno.celo-testnet.org");
+const privateKey = process.env.PRIVATE_KEY.replace("0x", "");
+const account = kit.web3.eth.accounts.privateKeyToAccount(privateKey);
+kit.defaultAccount = account.address;
+kit.web3.eth.accounts.wallet.add(account);
 module.exports = {
-networks: {
-development: {
-host: "127.0.0.1",
-port: 8545,
-network_id: "*"
-},
-alfajores: {
-provider: kit.web3.currentProvider,
-network_id: 44787
-}
-}
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*",
+    },
+    alfajores: {
+      provider: kit.web3.currentProvider,
+      network_id: 44787,
+    },
+  },
 };
 ```
 
@@ -165,14 +161,12 @@ To deploy and test the NFT smart contract, we'll use Remix and Truffle again.
 
 ![image](https://user-images.githubusercontent.com/125604535/226174795-e4b3acbc-31b4-4cb7-ab28-bbd374cf5426.png)
 
-
 You should get no error if the compiler is successful.
 
 4. Click on the Deploy & Run Transactions tab.
 5. Select the Celo network from the Environment dropdown.
 
 ![image](https://user-images.githubusercontent.com/125604535/226174841-64c23d9e-b65e-4c79-a56b-e5f7b9456ad0.png)
-
 
 If Celo is not listed, click on the "Injected Provider - MetaMask”. In this tutorial we will be connecting to a celo account on the Celo(Alfajores Testnet)network.
 
@@ -181,35 +175,33 @@ If Celo is not listed, click on the "Injected Provider - MetaMask”. In this tu
 
 ![image](https://user-images.githubusercontent.com/125604535/226174860-4c06811a-a40c-49b0-b36d-dc873d0df8aa.png)
 
-
 After confirming, you should see the contract as deployed.
 
 ![image](https://user-images.githubusercontent.com/125604535/226174893-72d531f1-80d6-4afb-806e-bc22c0c96dbe.png)
-
 
 8. In the Deployed Contracts section, you should see the NFTMarketplace contract with a Deployed Contracts button next to it. Click on the button to interact with the contract.
 
 9. Use the sellNFT function to sell an NFT on the marketplace. You'll need to pass in the address of the NFT contract, the token ID, and the price. For example
 
-`scss
+```scss
 NFTMarketplace.sellNFT(0x123..., 1, 1000000000000000000)
-`
+```
 
 This will list the NFT with token ID 1 from the NFT contract with address 0x123... on the marketplace for 1 CELO.
 
 10. Use the setNFTPrice function to update the NFT price. You'll need to pass in the address of the NFT contract, the token ID, and the new price. For example
 
-`scss
+```scss
 NFTMarketplace.setNFTPrice(0x123..., 1, 2000000000000000000)
-`
+```
 
 This will update the price of the NFT with token ID 1 from the NFT contract with address 0x123... on the marketplace to 2 CELO.
 
 11. Use the buyNFT function to purchase an NFT from the marketplace. You'll need to pass in the address of the NFT contract and the token ID, and you'll also need to send the correct amount of CELO to the contract. For example
 
-`css
+```scss
 NFTMarketplace.buyNFT(0x123..., 1, {value: 2000000000000000000})
-`
+```
 
 This will purchase the NFT with token ID 1 from the NFT contract with address 0x123... on the marketplace for 2 CELO.
 
@@ -238,7 +230,7 @@ REACT_APP_CONTRACT_ADDRESS=<NFTMarketplace contract address>
 REACT_APP_NETWORK=<Celo network URL>
 ```
 
-Replace ```<NFTMarketplace contract address>``` with the address of your deployed NFTMarketplace contract, and ```<Celo network URL>``` with the URL of the Celo network you are using (e.g. https://forno.celo.org).
+Replace `<NFTMarketplace contract address>` with the address of your deployed NFTMarketplace contract, and `<Celo network URL>` with the URL of the Celo network you are using (e.g. https://forno.celo.org).
 
 4. Create a new file named `src/App.js` in the client directory and add the following code.
 
@@ -298,6 +290,7 @@ export default App;
 ```
 
 The App component defines three state variables:
+
 - loading: A boolean indicating whether the component is still loading data from the blockchain.
 - accounts: An array of Ethereum addresses associated with the current user's wallet.
 - nfts: An array of NFTs currently listed for sale on the marketplace.
@@ -309,21 +302,21 @@ In the return statement, we render a list of NFTs using the nfts state variable.
 5. Create a new file named `webpack.config.js` in the client directory and add the following code.
 
 ```javascript
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/dist',
+    filename: "bundle.js",
+    path: __dirname + "/dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html',
+      template: "./public/index.html",
+      filename: "index.html",
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: "./dist",
   },
 };
 ```
@@ -332,7 +325,7 @@ This file configures the Webpack bundler to compile our React app and serve it i
 
 6. Create a new file named `public/index.html` in the client directory and add the following code.
 
-```php
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -379,7 +372,6 @@ npm run start
 You might run into this error
 
 ![image](https://user-images.githubusercontent.com/125604535/226174945-c223a111-60cb-4dbe-a2f5-46f4bbc8db08.png)
-
 
 This error encountered indicates that there is no "start" script defined in the project's `package.json file`. To resolve this issue, you'll need to add a "start" script in the scripts section of your package.json.
 
