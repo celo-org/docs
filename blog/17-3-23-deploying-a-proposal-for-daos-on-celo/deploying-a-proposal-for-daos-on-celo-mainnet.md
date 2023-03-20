@@ -12,19 +12,21 @@ hide_table_of_contents: true
 slug: /tutorials/deploying-a-proposal-for-daos-on-celo
 ---
 
-# Introduction
+![header](../../src/data-tutorials/showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png)
+
+## Introduction
 
 This comprehensive tutorial will walk you through the process of deploying a proposal for DAOs on the Celo Mainnet. By the end of this tutorial, you will be able to interact with the celocli command, create a multisig wallet, connect your ledger to your celocli, and much more.
 
-# Prerequisites
+## Prerequisites
 
 To start building, you’ll need a basic understanding of Git and Github.
 
 Your computer has Node.js installed. If not download from [here](https://nodejs.org/en/download/)
-  
+
 Writing in Markdown
 
-# Requirements
+## Requirements
 
 For this tutorial, we would need the following :
 
@@ -137,7 +139,7 @@ Your output should look like this
 
 ![Terminal ](./images/screenshot-5.png)
 
-# Conclusion
+## Conclusion
 
 Congratulations! You have successfully deployed and executed a proposal on the Celo mainnet; if you have any blockers while following this tutorial, do not hesitate to reach out to me.
 
@@ -148,6 +150,6 @@ Here is a quick recap of everything we covered.
 -✅: Submit the proposal on-chain.
 -✅: Executing Proposal.
 
-About the Author
+## About the Author
 Khadijah is a software engineer and a Devrel. You can reach out to me via
 [Twitter](https://twitter.com/_khadeeejah) and [Github](https://github.com/Khadeeejah)
