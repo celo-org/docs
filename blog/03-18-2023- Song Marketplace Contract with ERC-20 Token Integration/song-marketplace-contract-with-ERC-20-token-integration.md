@@ -195,6 +195,7 @@ return (songsLength);
 }
                
 ```
+Now try to compile your smart contract to see if it is working fine. [Github repo](https://github.com/Ogoyi/Song-Marketplace-Contract-with-ERC-20-Token-Integration)
 
 To begin, we need to create a new file named `SongMarketplace.sol` on Remix. You can refer to the documentation on how to create a new file on Remix. [(here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
 
