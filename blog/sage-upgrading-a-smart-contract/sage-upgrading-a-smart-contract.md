@@ -1,5 +1,5 @@
 ---
-title: Upgrading a Smart Contract on Celo 
+title: Upgrading a Smart Contract on Celo
 description: This tutorial provides a guide to upgrading a smart contract on the Celo blockchain and its importance
 
 authors:
@@ -16,7 +16,7 @@ slug: /tutorials/upgrading-a-smart-contract-on-celo
 
 ## Introduction
 
-Smart Contract Upgradability is a state whereby changes or upgrades to a smart contract do not affect its state and functionality. This functionality allows smart contracts to be easily managed and improved upon over time. 
+Smart Contract Upgradability is a state whereby changes or upgrades to a smart contract do not affect its state and functionality. This functionality allows smart contracts to be easily managed and improved upon over time.
 
 Just like the normal software development lifecycle, where the software needs to be maintained, scaled, and optimized even after building its underlying infrastructure, smart contracts should undergo such a process too because bugs and vulnerabilities can be discovered even after a contract has been deployed, need for improvements maybe as a result of changes from the underlying blockchain protocol. But keep in mind that the process of upgrading a smart contract should be done with adequate planning so as to avoid bringing vulnerability attacks to your contract.
 
@@ -49,7 +49,7 @@ The proxy contract approach will be used to demonstrate how to implement an upgr
 
 ### Step1: Create a Proxy Contract
 
-The first step is to draft the proxy contract, which will serve as an intermediary between the client and the implementation contract. The proxy contract should keep a reference to the current implementation contract and delegate all method calls to it. 
+The first step is to draft the proxy contract, which will serve as an intermediary between the client and the implementation contract. The proxy contract should keep a reference to the current implementation contract and delegate all method calls to it.
 
 Create a new directory and put all the code examples in this tutorial in it.
 
@@ -98,7 +98,7 @@ In the code above, the constructor takes in the address of the implementation co
 
 ### Step2: Create the Actual Implementation Contract
 
-The next step is to create the implementation contract which contains the actual logic of incrementing the counter by one. 
+The next step is to create the implementation contract which contains the actual logic of incrementing the counter by one.
 
 Counter.sol
 
@@ -114,7 +114,7 @@ contract Counter {
 }
 ```
 
-The count variable is public and stores the current value of the counter and the increment function increases the counter by one. 
+The count variable is public and stores the current value of the counter and the increment function increases the counter by one.
 
 ### Step3: Deploy the Proxy and Implementation Contract
 
@@ -218,7 +218,7 @@ To upgrade the contract, we can use the address of the existing proxy contract t
 
 ## Conclusion
 
-In this tutorial, we explored what smart contract upgradability is and how we can implement them in solidity. We also looked at how we can implement contract upgradability patterns such as the Proxy contract, Eternal Storage and Upgradeable Libraries.  
+In this tutorial, we explored what smart contract upgradability is and how we can implement them in solidity. We also looked at how we can implement contract upgradability patterns such as the Proxy contract, Eternal Storage and Upgradeable Libraries.
 
 ## Next Steps
 
