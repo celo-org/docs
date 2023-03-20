@@ -1,3 +1,18 @@
+---
+title: How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment
+description: In this tutorial, we'll guide you through the step-by-step process of setting up Hardhat, creating a smart contract, and automating the verification process on Celoscan on every deployment.
+
+authors:
+  - name: Jovan Mwesigwa
+    title: Software Engineer
+    url: https://github.com/JovanMwesigwa
+tags: ["celo", "celosage", "intermediate", "solidity", "hardhat", "ethers"]
+hide_table_of_contents: true
+slug: /tutorials/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment
+---
+
+![how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment](https://user-images.githubusercontent.com/62109301/226399564-ebfda82d-f5dd-4fec-92f0-cc2827071215.png)
+
 
 # Introduction
 
