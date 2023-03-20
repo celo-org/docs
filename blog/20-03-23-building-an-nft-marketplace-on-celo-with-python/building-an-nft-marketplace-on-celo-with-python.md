@@ -367,11 +367,12 @@ We have learned how to implement an NFT exchange on Celo using brownie in  Pytho
 
 We can explore more functionalities that we can add to this contract, such as the ability for bidders to increase the current bid by a minimum increment, the ability to see auction history, time extension on bid time, etc.
 
-## Reference
+## References
 
 1. [Celo Developer Documentation](https://docs.celo.org/)
 2. [Solidity Documentation](https://solidity.readthedocs.io/)
 3. [Brownie Documentation](https://eth-brownie.readthedocs.io/en/stable/)
+4. [Github Repository](https://github.com/Divine572/NFT-Marketplace)
 
 ## About the Author
 
