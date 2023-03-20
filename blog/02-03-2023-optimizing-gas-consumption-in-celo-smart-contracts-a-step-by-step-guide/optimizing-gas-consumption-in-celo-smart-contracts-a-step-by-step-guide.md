@@ -1,7 +1,6 @@
 ---
 title: Optimizing Gas Consumption in Celo Smart Contracts A Step-by-Step Guide
 description: In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.
-
 authors:
   - name: Jovan Mwesigwa
     title: Software Engineer
@@ -117,7 +116,6 @@ Under the `contracts` folder, create a new contract file name `MyContract.sol`.
 Inside the file add:
 
 ```solidity
-
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
@@ -142,8 +140,6 @@ contract MyContract {
         balances += msg.value;
     }
 }
-
-
 ```
 
 First, there's an `owner` address, which is set when the contract is created by passing in an `adminAddress` as an argument. The `joinFee` is also set when the contract is created, with the `joinFee_` argument.
@@ -237,7 +233,6 @@ To run the tests go to the terminal and type:
 
 ```bash
 npx hardhat test
-
 ```
 
 This will run the tests and because we activated the `gasReporter` plugin in the `hardhat.config.js` file, hardhat will print out a gas report analysis of the contract.
@@ -270,14 +265,10 @@ Our goal is to improve and reduce the amount of gas consumed by calling `join()`
 In `MyContract.sol`, let's change the state variables to `private` as shown below:
 
 ```solidity
-
-...
     address private immutable i_owner;
     uint256 private immutable i_joinFee;
 
     uint256 private s_balances = 0;
-    ...
-
 ```
 
 Because the `owner` and `joinFee` are not going to change, it only makes sense to make them `immutable` while `balance` will always change when new users join the contract. So it's not `immutable` by default.
@@ -298,7 +289,6 @@ In your contract add:
 
 
 ...
-
     // View functions
     function getOwner() public view returns (address) {
         return i_owner;
@@ -311,8 +301,6 @@ In your contract add:
     function getBalances() public view returns (uint256) {
         return s_balances;
     }
-}
-
 ```
 
 A `view` function does not modify the state of the contract and returns some value. It is used to read the state of the contract or to perform calculations based on that state. Since it only reads data and does not modify it, it is a cost-effective way of retrieving data without incurring gas costs.
@@ -339,14 +327,10 @@ In the `join()` function, we're using `require()` to revert when a user doesn't 
 To define a custom error to handle verifying the `joinFee` amount add this line at the top of your contract:
 
 ```solidity
-
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
 error Not__EnoughFeesEntered();
-
-...
-
 ```
 
 Let's replace the `require()` use a more gas-optimal way.
@@ -354,16 +338,11 @@ Let's replace the `require()` use a more gas-optimal way.
 Inside `join()` change:
 
 ```solidity
-
-
 function join() public payable {
 
       if (msg.value < i_joinFee) {
           revert Not__EnoughFeesEntered();
       }
-
-...
-
 ```
 
 The if block checks whether the value sent by the transaction (`msg.value`) is greater than or equal to the required `i_joinFee`. If the condition evaluates to `false` (i.e., the sent value is less than the required fee), then the function execution is reverted with an error message using the custom error `Not__EnoughFeesEntered()`.
@@ -385,14 +364,9 @@ When you use a mapping to store data, the compiler does not create a getter func
 To update the contract with a `mapping`, we need to add a state variable that keeps track of all the members in the contract.
 
 ```solidity
-
-...
-
     uint256 private s_count = 0;
 
     mapping(uint256 => address) private members;
-...
-
 
 ```
 
@@ -401,17 +375,11 @@ Every new user that is added to the contract will be given the current number ac
 In `join()` add:
 
 ```solidity
-
-...
-
         members[s_count] = msg.sender;
 
         s_balances += msg.value;
         s_count += 1;
     }
-...
-
-
 ```
 
 The members mapping is updated by assigning the sender's address `msg.sender` to the key `s_count`.
@@ -426,7 +394,6 @@ In the terminal run:
 
 ```bash
 npx hardhat test
-
 ```
 
 Output:
