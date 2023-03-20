@@ -2,31 +2,42 @@
 title: Creating a Charity Donation dApp using Celo Composer, React and Rainbowkit Celo
 description: A step-by-step guide on how to build a charity donation dapp using Celo Composer and React and Rainbow Kit.
 authors:
-- name: Olubusayo Amowe
-  title: Web3 Developer Advocate, 
-  url: https://github.com/amoweolubusayo
-  image_url: https://github.com/amoweolubusayo.png
-tags: [solidity, celo, celosage, celocomposer, react, metamask, typescript, javascript]
+  - name: Olubusayo Amowe
+    title: Web3 Developer Advocate
+    url: https://github.com/amoweolubusayo
+    image_url: https://github.com/amoweolubusayo.png
+tags:
+  [
+    solidity,
+    celo,
+    celosage,
+    celocomposer,
+    react,
+    metamask,
+    typescript,
+    javascript,
+  ]
 hide_table_of_contents: true
 slug: /tutorials/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo
 ---
 
-
-![tutorial-1](https://user-images.githubusercontent.com/20168921/225596664-52322c39-85a5-4580-871c-ef319cf62c53.png)
+![header](https://user-images.githubusercontent.com/20168921/225596664-52322c39-85a5-4580-871c-ef319cf62c53.png)
 
 ## Introduction
 
-This article is a step-by-step guide on building a charity donation dapp using Celo Composer and React and Rainbow Kit. With the dApp, users can donate to their favorite charitable causes securely and transparently. Celo Composer is the building block or foundation of the dApp, when combined with React and Rainbowkit Celo, the final result gives a user-friendly interface that makes giving to charity a seamless experience. 
+This article is a step-by-step guide on building a charity donation dapp using Celo Composer and React and Rainbow Kit. With the dApp, users can donate to their favorite charitable causes securely and transparently. Celo Composer is the building block or foundation of the dApp, when combined with React and Rainbowkit Celo, the final result gives a user-friendly interface that makes giving to charity a seamless experience.
 
 ## Prerequisites
 
 - [RainbowKit](https://www.rainbowkit.com) is a React library that makes it easy to add a wallet connection to your dapp. You can customize it as you like as well. RainbowKit supports a good number of wallets it can also resolve addressesaddress to ENS and display balance, and much more! Rainbowkit rely on [ethers](https://github.com/ethers-io/ethers.js) and [wagmi](https://wagmi.sh).
 
 - Set up your development environment
+
 1. Install Node.js and NPM (Node Package Manager) on your machine.
 2. Install the Celo Extension Wallet on your browser or add Celo test network (Alfajores) to your MetaMask Wallet
 
 If you will like to see the complete code, here is the Github link [charity dApp on celo](https://github.com/amoweolubusayo/charity-celo)
+
 ## Creating your project using Celo Composer
 
 In your terminal, run the following command
@@ -37,37 +48,25 @@ We are working with React so when prompted to choose a front-end framework, sele
 
 ![Select FE framework](https://i.imgur.com/WPCMTH0.png)
 
-
-
 Next up, choose a web3 library for react app, select Rainbokit-celo
 
 ![Select web3 library](https://i.imgur.com/lSkmoz3.png)
 
-
-
-We are using built-in contracts from Celo-Composer and will be selecting the Hardhat framework, so select Hardhat 
+We are using built-in contracts from Celo-Composer and will be selecting the Hardhat framework, so select Hardhat
 
 ![Select contract framework](https://i.imgur.com/ZUA2MKk.png)
-
-
 
 For the next steps, we will be prompted to create a Subgraph. We willwould not be creating a subgraph, so go ahead to select No
 
 ![Subgraph](https://i.imgur.com/Wvir6rZ.png)
 
-
-
 Then, proceed to give your project a name
 
 ![Project Name](https://i.imgur.com/6BInaOQ.png)
 
-
-
 You did it! You just created a starter project dApp in a few minutes using Celo-Composer
 
 ![Project Creation](https://i.imgur.com/LZRt683.png)
-
-
 
 Navigate to your project, and let's continue building.
 
@@ -77,9 +76,7 @@ In your IDE, drill-down packages to see the hardhat folder. Here we will see con
 
 ![Vscode file explorer](https://i.imgur.com/KfOuJvO.png)
 
-
-
-Open the SupportToken.sol as this is the one we will be using. Here is how the code looks like 
+Open the SupportToken.sol as this is the one we will be using. Here is how the code looks like
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -128,13 +125,15 @@ contract SupportToken is ERC20 {
 }
 ```
 
-Basically, this contract allows users to donate to the project by sending funds to the contract address. It also allows the owner of the contract to withdraw the donated funds. 
+Basically, this contract allows users to donate to the project by sending funds to the contract address. It also allows the owner of the contract to withdraw the donated funds.
 
 Create a .env file to store your environment variables, copy your private key from your Celo/Metamask wallet as applicable
 
-CELO_NETWORK=https://alfajores-forno.celo-testnet.org 
+```bash
+CELO_NETWORK=https://alfajores-forno.celo-testnet.org
 
 PRIVATE_KEY=YOUR_PRIVATE_KEY
+```
 
 Compile the contract by running the following command in the terminal
 
@@ -143,14 +142,14 @@ cd packages/hardhat/contracts
 npm install --save-dev hardhat
 npx hardhat compile
 ```
- 
- After a successful compilation, here is what you should see, 
- 
+
+After a successful compilation, here is what you should see,
+
 ` Compiled x Solidity files successfully`
 
 ## Testing your Smart Contract
 
-It is good practice to test your code. In the test folder, create a new file called support-token-test.js and test for different use cases like below 
+It is good practice to test your code. In the test folder, create a new file called support-token-test.js and test for different use cases like below
 
 ```javascript
 import { ethers } from "hardhat";
@@ -166,7 +165,10 @@ describe("SupportToken", function () {
     [owner] = await ethers.getSigners();
 
     // Deploy the SupportToken contract
-    const supportTokenFactory = await ethers.getContractFactory("SupportToken", owner);
+    const supportTokenFactory = await ethers.getContractFactory(
+      "SupportToken",
+      owner
+    );
     supportToken = await supportTokenFactory.deploy();
 
     // Wait for the contract to be mined
@@ -184,7 +186,7 @@ describe("SupportToken", function () {
     // Send a donation to the contract
     await owner.sendTransaction({
       to: supportToken.address,
-      value: donationAmount
+      value: donationAmount,
     });
 
     // Check that the sentIn variable has been updated correctly
@@ -198,7 +200,7 @@ describe("SupportToken", function () {
     // Send a donation to the contract
     await owner.sendTransaction({
       to: supportToken.address,
-      value: donationAmount
+      value: donationAmount,
     });
 
     // Get the initial balance of the owner's address
@@ -250,16 +252,11 @@ You can also verify your contract on https://alfajores.celoscan.io
 
 ![Alfajores explorer](https://i.imgur.com/O4jjcBz.png)
 
-
-
 ## Creating your frontend
 
-Let us now start out our React frontend, we start by navigating to the react-app folder after the hardhat folder. 
+Let us now start out our React frontend, we start by navigating to the react-app folder after the hardhat folder.
 
 ![FE](https://i.imgur.com/9fBFUOw.png)
-
-
-
 
 Rainbowkit has saved us the stress of writing functionalities for connecting wallet, we can see this in our` HeaderRK.tsx` file under components
 
@@ -267,17 +264,15 @@ Rainbowkit has saved us the stress of writing functionalities for connecting wal
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 ```
 
-
 For starters, we need the web3 package so let's start by installing that running this command
 
 `npm install web3`
 
-Go to components folder and create a new component, you can call it Charities.tsx. In your component, import React like this 
+Go to components folder and create a new component, you can call it Charities.tsx. In your component, import React like this
 
 ```javascript
 import React, { useState } from "react";
 ```
-
 
 Then, create a charity card with props making your code look like this
 
@@ -301,8 +296,7 @@ const CharityCard = ({
   const [donationAmount, setDonationAmount] = useState("");
 ```
 
-
-Create a variable charities as well with values 
+Create a variable charities as well with values
 
 ```typescript
 const charities = [
@@ -327,7 +321,7 @@ const charities = [
 ];
 ```
 
-The rest of the code can look like this 
+The rest of the code can look like this
 
 ```javascript
 const Charities = () => {
@@ -486,9 +480,9 @@ const Charities = () => {
 };
 
 export default Charities;
-```  
-  
-Create a wrapper that handles the contract so in your root folder, create a SupportTokenWrapper.js file and call your contract 
+```
+
+Create a wrapper that handles the contract so in your root folder, create a SupportTokenWrapper.js file and call your contract
 
 ```javascript
 export async function getContract() {
@@ -534,10 +528,9 @@ export async function donate(amount) {
     value: amount,
   });
 }
-
 ```
 
-From here, notice the 2 transactions that will happen, first we will grant permission to access funds, next is transferring the funds from the donators account to the receivers address. 
+From here, notice the 2 transactions that will happen, first we will grant permission to access funds, next is transferring the funds from the donators account to the receivers address.
 
 Run your application by using this command
 
@@ -549,64 +542,45 @@ Your application will look like this
 
 ![Project interface](https://i.imgur.com/QA8JVdp.png)
 
-
-
 To see RainbowKit in action, click on connect the wallet to see a variety of wallets to choose from, then proceed to choose the one applicable to you
-
 
 ![Rainbowkit interface](https://i.imgur.com/98oXx2f.png)
 
-
-
 ![Project interface after wallet connection](https://i.imgur.com/lr2iMmZ.png)
-
-
 
 Fill in the donation amount in any charity of your choice and click donate. Your wallet will pop up as so, to first give access to funds
 
 ![Metamask trans1](https://i.imgur.com/4uev7TB.png)
 
-
-
 ![Metamask trans2](https://i.imgur.com/AoKZvOa.png)
-
 
 And then send to the receiving account
 
 ![Metamask trans3](https://i.imgur.com/XkxAslx.png)
 
-
-
-If you look through your wallet transactions, you will find these 
+If you look through your wallet transactions, you will find these
 
 ![Metamask](https://i.imgur.com/aVxYvXD.png)
 
-
-The recipient can confirm the tokens in their wallet as well by importing the token with the contract address 0x188AB17e37aF04a43f69f1454Fc4caC3edd3Af2D for this demo and check 
+The recipient can confirm the tokens in their wallet as well by importing the token with the contract address 0x188AB17e37aF04a43f69f1454Fc4caC3edd3Af2D for this demo and check
 
 ![Metamask](https://i.imgur.com/dmZwxwy.png)
 
+Great job! You just created a simple charity donation dApp with Celo Composer and React Rainbowkit!
 
-Great job! You just created a simple charity donation dApp with Celo Composer and React Rainbowkit! 
-
-## Conclusion 
-
+## Conclusion
 
 In this article, you learnt how to set up your development environment, create a project using Celo Composer, build your smart contract, test it, and integrate the RainbowKit library. This is really helpful if you are curious in making a practical dapp using Celo Composer.
-
 
 ## Reference
 
 [Celo Composer Github](https://github.com/celo-org/celo-composer)
 
-
 [Rainbowkit docs](https://www.rainbowkit.com/docs/introduction)
-
 
 [Charity dApp on celo](https://github.com/amoweolubusayo/charity-celo)
 
-## About the Author 
+## About the Author
 
 Busayo is a software engineer, a technical writer and a blockchain developer advocate passionate about building thriving developer communities.
 [Linkedin](https://linkedin.com/in/amoweolubusayo) | [Twitter](https://twitter.com/Amowe) | [Hashnode](https://amoweolubusayo.hashnode.dev)
-
