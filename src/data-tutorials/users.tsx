@@ -1161,6 +1161,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
+    title: 'Building A Restaurant Coupon NFT System on Celo',
+    description: 'We would be going through building a restaurant coupon NFT system where restaurants can add their coupons and others can buy it',
+    preview: require('./showcase/advanced/building-a-restaurant-coupon-nft-system.png'),
+    website: '/blog/tutorials/building-a-restaurant-coupon-nft-system',
+    tags: ['celo', 'advanced', 'celosage', 'nft', 'hardhat'],
+  },
+  {
     title: 'Celo Integration with Web3',
     description: ' A Look at How the Platform is Bridging the Gap Between Centralized and Decentralized Systems',
     preview: require('./showcase/advanced/web3.png'),
@@ -2260,6 +2267,13 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'solidity', 'intermediate', 'celo'], 
   },
   {
+    title: 'Build a library-based dapp on Celo',
+    description: 'Working with library in solidity',
+    preview: require('./showcase/advanced/build-a-library-based-dapp-on-celo.png'),
+    website: 'blog/tutorials/build-a-library-based-dapp-on-celo',
+    tags: ['advanced', 'solidity', 'hardhat', 'celosage'],
+  },
+  {
     title: 'Connect and interact with Celo using web3modal',
     description: 'Alternative method of connecting to Celo using web3Modal',
     preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3modal.png'),
@@ -2273,7 +2287,22 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
-   {
+  {
+    title: 'Deploying a proposal for DAOs on Celo',
+    description: 'This article explains how to deploy a governance proposal on Celo',
+    preview: require('./showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png'),
+    website: 'blog/tutorials/deploying-a-proposal-for-daos-on-celo',
+    tags: ['celosage', 'intermediate',  'celo'], 
+  },
+  {
+    title: 'How to build a Celo Price Tracker browser extension using Vite and Celo Contractkit.',
+    description: 'In this article, I will show developers how to create a Celo Price Tracker browser extension that works with any browser, such as Brave, Chrome, and Firefox, by using Vite (a React template), Crxjs Vite Plugin, and the Celo Contractkit package.',
+    preview: require('./showcase/beginner/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit.png'),
+    website: 'blog/tutorials/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit',
+    tags: ['celosage', 'react', 'beginner', 'celo'],
+  },
+
+  {
     title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
     description: 'Learn hoe to build chat app on celo network using react-native and web3js',
     preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
@@ -2307,6 +2336,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/automate-flutter-celo-dapp-deployment-with-github-actions.png'),
     website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
+  },
+  {
+    title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
+    description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
+    preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
+    website: "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
+    tags: ["advanced", "celosage", "celo", "openzeppelin"],
   },
   /*
   Pro Tip: add your site in alphabetical order.
