@@ -1343,6 +1343,13 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'cusd', 'ledger'],
   },
   {
+    title: 'Creating a Celo-based Non-Fungible Token (NFT) MarketPlace',
+    description: 'Learn the technical aspects of creating a Celo-based Non-Fungible Token (NFT) MarketPlace on the Celo network',
+    preview: require('./showcase/intermediate/creating-a-celo-based-non-fungible-token-marketplace.png'),
+    website: 'blog/tutorials/creating-a-celo-based-non-fungible-token-marketplace',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
+  },
+  {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
