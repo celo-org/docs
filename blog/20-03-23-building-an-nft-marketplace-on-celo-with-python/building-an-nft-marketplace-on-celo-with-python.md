@@ -24,7 +24,7 @@ To understand this tutorial, you must be familiar with the following:
 
 - Building Smart Contracts
 - The Python programming language
--
+
 
 ## Requirements
 
