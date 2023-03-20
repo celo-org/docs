@@ -80,18 +80,23 @@ Celo's decentralized identity features offer numerous advantages to developers c
 
 - **CeloPay** is a decentralized payment application that makes secure and instant payments possible by leveraging Celo's decentralized identity features. CeloPay allows users to control their own identity and data by leveraging Celo's DID system, ensuring that their personal information remains private. Furthermore, CeloPay authenticates users using verifiable credentials, ensuring that only authorized users can send and receive payments.
 
-``` Javascript
+```javascript
 // Import necessary libraries
-const celoSDK = require('@celo/contractkit');
-const Web3 = require('web3');
+const celoSDK = require("@celo/contractkit");
+const Web3 = require("web3");
 
 // Set up connection to Celo network
-const web3 = new Web3('https://<celo-network>.infura.io/v3/<infura-project-id>');
+const web3 = new Web3(
+  "https://<celo-network>.infura.io/v3/<infura-project-id>"
+);
 const kit = celoSDK.newKitFromWeb3(web3);
-const account = web3.eth.accounts.privateKeyToAccount('<private-key>');
+const account = web3.eth.accounts.privateKeyToAccount("<private-key>");
 
 // Initialize CeloPay contract
-const CeloPayContract = new web3.eth.Contract(<CeloPay-ABI>, <CeloPay-contract-address>);
+const CeloPayContract = new web3.eth.Contract(
+  `<CeloPay-ABI>`,
+  `<CeloPay-contract-address>`
+);
 const celoPay = CeloPayContract.methods;
 
 // Define payment function
@@ -101,34 +106,35 @@ async function makePayment(recipientAddress, amount) {
 
   // Generate verifiable credential
   const vc = {
-    '@context': 'https://www.w3.org/2018/credentials/v1',
-    type: ['VerifiableCredential', 'PaymentCredential'],
+    "@context": "https://www.w3.org/2018/credentials/v1",
+    type: ["VerifiableCredential", "PaymentCredential"],
     issuer: did,
     issuanceDate: new Date().toISOString(),
     credentialSubject: {
       id: did,
       payment: {
         to: recipientAddress,
-        amount: amount
-      }
-    }
+        amount: amount,
+      },
+    },
   };
 
   // Sign and send payment transaction
   const nonce = await web3.eth.getTransactionCount(account.address);
   const gasPrice = await kit.web3.eth.getGasPrice();
-  const tx = celoPay.pay(recipientAddress, amount)
-    .encodeABI();
+  const tx = celoPay.pay(recipientAddress, amount).encodeABI();
   const signedTx = await account.signTransaction({
-    to: <CeloPay-contract-address>,
+    to: `<CeloPay-contract-address>`,
     data: tx,
     gas: 500000,
     gasPrice: gasPrice,
     nonce: nonce,
     value: 0,
-    chainId: kit.networkId
+    chainId: kit.networkId,
   });
-  const txReceipt = await kit.web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+  const txReceipt = await kit.web3.eth.sendSignedTransaction(
+    signedTx.rawTransaction
+  );
 
   return txReceipt;
 }
@@ -139,18 +145,23 @@ This code outline demonstrates how to use Celo's decentralized identity features
 - **ImpactMarket** is a decentralized marketplace that makes use of Celo's decentralized identity features to enable secure and transparent transactions. ImpactMarket uses Celo's DID system to ensure that only verified users can participate in the marketplace, reducing the risk of fraud and protecting users from scams.
   Furthermore, ImpactMarket makes use of Celo's personal data vaults to give users control over the data shared with marketplace participants, ensuring that their personal information remains private.
 
-``` Javascript
+```javascript
 // Import necessary libraries
-const celoSDK = require('@celo/contractkit');
-const Web3 = require('web3');
+const celoSDK = require("@celo/contractkit");
+const Web3 = require("web3");
 
 // Set up connection to Celo network
-const web3 = new Web3('https://<celo-network>.infura.io/v3/<infura-project-id>');
+const web3 = new Web3(
+  "https://<celo-network>.infura.io/v3/<infura-project-id>"
+);
 const kit = celoSDK.newKitFromWeb3(web3);
-const account = web3.eth.accounts.privateKeyToAccount('<private-key>');
+const account = web3.eth.accounts.privateKeyToAccount("<private-key>");
 
 // Initialize ImpactMarket contract
-const ImpactMarketContract = new web3.eth.Contract(<ImpactMarket-ABI>, <ImpactMarket-contract-address>);
+const ImpactMarketContract = new web3.eth.Contract(
+  `<ImpactMarket-ABI>`,
+  `<ImpactMarket-contract-address>`
+);
 const impactMarket = ImpactMarketContract.methods;
 
 // Define function to add item to marketplace
@@ -160,39 +171,46 @@ async function addItem(itemName, price) {
 
   // Generate verifiable credential
   const vc = {
-    '@context': 'https://www.w3.org/2018/credentials/v1',
-    type: ['VerifiableCredential', 'MarketplaceCredential'],
+    "@context": "https://www.w3.org/2018/credentials/v1",
+    type: ["VerifiableCredential", "MarketplaceCredential"],
     issuer: did,
     issuanceDate: new Date().toISOString(),
     credentialSubject: {
       id: did,
       marketplace: {
         itemName: itemName,
-        price: price
-      }
-    }
+        price: price,
+      },
+    },
   };
 
   // Store verifiable credential in personal data vault
   const dataVaultId = await impactMarket.getDataVaultId(did);
-  const encryptedVc = await kit.web3.eth.personal.encrypt(JSON.stringify(vc), account.privateKey);
-  const addDataVaultResult = await impactMarket.addDataVault(dataVaultId, encryptedVc);
+  const encryptedVc = await kit.web3.eth.personal.encrypt(
+    JSON.stringify(vc),
+    account.privateKey
+  );
+  const addDataVaultResult = await impactMarket.addDataVault(
+    dataVaultId,
+    encryptedVc
+  );
 
   // Add item to marketplace
   const nonce = await web3.eth.getTransactionCount(account.address);
   const gasPrice = await kit.web3.eth.getGasPrice();
-  const tx = impactMarket.addItem(itemName, price)
-    .encodeABI();
+  const tx = impactMarket.addItem(itemName, price).encodeABI();
   const signedTx = await account.signTransaction({
-    to: <ImpactMarket-contract-address>,
+    to: `<ImpactMarket-contract-address>`,
     data: tx,
     gas: 500000,
     gasPrice: gasPrice,
     nonce: nonce,
     value: 0,
-    chainId: kit.networkId
+    chainId: kit.networkId,
   });
-  const txReceipt = await kit.web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+  const txReceipt = await kit.web3.eth.sendSignedTransaction(
+    signedTx.rawTransaction
+  );
 
   return txReceipt;
 }
@@ -230,115 +248,117 @@ _Here's a step-by-step breakdown of what the code does in Javascript_
 
 - Import the Celo SDK and Celo DID library
 
-```Javascript
-const CeloSDK = require('@celo/contractkit')
-const { CeloDID } = require('@celo/did')
+```javascript
+const CeloSDK = require("@celo/contractkit");
+const { CeloDID } = require("@celo/did");
 ```
 
 - Create a new Celo wallet and obtain its private key
 
-```Javascript
-const kit = CeloSDK.newKit('https://alfajores-forno.celo-testnet.org')
-const account = kit.web3.eth.accounts.create()
-const privateKey = account.privateKey
+```javascript
+const kit = CeloSDK.newKit("https://alfajores-forno.celo-testnet.org");
+const account = kit.web3.eth.accounts.create();
+const privateKey = account.privateKey;
 ```
 
 - Connect to the Celo network using the private key
 
-```Javascript
-kit.connection.addAccount(privateKey)
-const address = account.address
-kit.defaultAccount = address
+```javascript
+kit.connection.addAccount(privateKey);
+const address = account.address;
+kit.defaultAccount = address;
 ```
 
 - Create a new DID using the Celo DID library
 
-```Javascript
-const did = new CeloDID(kit, address)
+```javascript
+const did = new CeloDID(kit, address);
 ```
 
 - Add a verifiable credential to the DID
 
-```Javascript
+```javascript
 const credential = {
-  type: ['VerifiableCredential', 'UniversityDegreeCredential'],
-  issuer: 'did:example:123',
-  issuanceDate: '2022-03-05T13:00:00Z',
+  type: ["VerifiableCredential", "UniversityDegreeCredential"],
+  issuer: "did:example:123",
+  issuanceDate: "2022-03-05T13:00:00Z",
   credentialSubject: {
-    id: 'did:example:456',
+    id: "did:example:456",
     degree: {
-      type: 'BachelorDegree',
-      name: 'Bachelor of Science and Arts',
-      degreeType: 'double',
-      degreeLevel: 'bachelor',
-      fieldOfStudy: 'Computer Science',
-      issuer: 'University of Example',
+      type: "BachelorDegree",
+      name: "Bachelor of Science and Arts",
+      degreeType: "double",
+      degreeLevel: "bachelor",
+      fieldOfStudy: "Computer Science",
+      issuer: "University of Example",
     },
   },
-}
-const credentialResponse = await did.addVerifiableCredential(credential)
-console.log(credentialResponse)
+};
+const credentialResponse = await did.addVerifiableCredential(credential);
+console.log(credentialResponse);
 ```
 
 - Verify the verifiable credential
 
-```Javascript
-const verificationResponse = await did.verifyVerifiableCredential(credentialResponse)
-console.log(verificationResponse)
+```javascript
+const verificationResponse = await did.verifyVerifiableCredential(
+  credentialResponse
+);
+console.log(verificationResponse);
 ```
 
 The `credential` object represents a university degree credential, and it includes information such as the issuer, issuance date, and credential subject (i.e., the person who holds the degree). The `addVerifiableCredential` method adds the credential to the DID and returns a response that includes the credential and its proof. The `verifyVerifiableCredential` method verifies the credential and returns a response that indicates whether the credential is valid or not.
 
 Note that this code snippet is intended for demonstration purposes only and should not be used in production without appropriate security measures in place.
 
-```Javascript
-
-
+```javascript
 // Import the Celo SDK and DID library
-const CeloSDK = require('@celo/contractkit')
-const { CeloDID } = require('@celo/did')
+const CeloSDK = require("@celo/contractkit");
+const { CeloDID } = require("@celo/did");
 
 // Create a new Celo wallet
-const kit = CeloSDK.newKit('https://alfajores-forno.celo-testnet.org')
-const account = kit.web3.eth.accounts.create()
-const privateKey = account.privateKey
+const kit = CeloSDK.newKit("https://alfajores-forno.celo-testnet.org");
+const account = kit.web3.eth.accounts.create();
+const privateKey = account.privateKey;
 
 // Connect to the Celo network using the private key
-kit.connection.addAccount(privateKey)
-const address = account.address
-kit.defaultAccount = address
+kit.connection.addAccount(privateKey);
+const address = account.address;
+kit.defaultAccount = address;
 
 // Create a new DID using the Celo DID library
-const did = new CeloDID(kit, address)
+const did = new CeloDID(kit, address);
 
 // Add a verifiable credential to the DID
 const credential = {
-  type: ['VerifiableCredential', 'UniversityDegreeCredential'],
-  issuer: 'did:example:123',
-  issuanceDate: '2022-03-05T13:00:00Z',
+  type: ["VerifiableCredential", "UniversityDegreeCredential"],
+  issuer: "did:example:123",
+  issuanceDate: "2022-03-05T13:00:00Z",
   credentialSubject: {
-    id: 'did:example:456',
+    id: "did:example:456",
     degree: {
-      type: 'BachelorDegree',
-      name: 'Bachelor of Science and Arts',
-      degreeType: 'double',
-      degreeLevel: 'bachelor',
-      fieldOfStudy: 'Computer Science',
-      issuer: 'University of Example',
+      type: "BachelorDegree",
+      name: "Bachelor of Science and Arts",
+      degreeType: "double",
+      degreeLevel: "bachelor",
+      fieldOfStudy: "Computer Science",
+      issuer: "University of Example",
     },
   },
-}
-const credentialResponse = await did.addVerifiableCredential(credential)
-console.log(credentialResponse)
+};
+const credentialResponse = await did.addVerifiableCredential(credential);
+console.log(credentialResponse);
 
 // Verify the verifiable credential
-const verificationResponse = await did.verifyVerifiableCredential(credentialResponse)
-console.log(verificationResponse)
+const verificationResponse = await did.verifyVerifiableCredential(
+  credentialResponse
+);
+console.log(verificationResponse);
 ```
 
 This code creates a new Celo wallet, generates a new decentralized identifier (DID) using the Celo DID library, adds a verifiable credential to the DID and verifies the credential. With these basic steps, developers can start leveraging Celo's decentralized identity features to build secure and user-centric applications.
 
-### Conclusion
+## Conclusion
 
 In this article, we looked at decentralized identity and its role in blockchain ecosystems. We concentrated on Celo, a mobile-first blockchain platform that offers robust support for decentralized identity features, such as the ability to generate and manage decentralized identifiers (DIDs) through its DID library. The advantages of using Celo's DID library were discussed, including self-sovereign control over identity and data, interoperability with other blockchain networks, and support for verifiable credentials. We also provided a code skeleton for generating and managing DIDs on the Celo blockchain using Celo's DID library.
 
@@ -364,7 +384,7 @@ We recommend exploring Celo's documentation and community resources to learn mor
 
 Additionally, as the field of decentralized identity technology evolves and expands, keep an eye out for new developments. You can stay ahead of the curve and help shape the future of decentralized identity by staying up to date on the latest trends and innovations.
 
-### Author
+## Author
 
 I take pride in being a results-driven manager as well as a marketing and technical writing expert. I've spent the last five years honing my skills in building paid and organic marketing funnels for SaaS companies. Furthermore, I am a skilled Web 3 technical writer, allowing me to create compelling content that drives business growth. [LinkedIn](https://www.linkedin.com/in/maxwell-onyeka-3b4b1118b/) [Github](https://github.com/maxzysparks)
 
