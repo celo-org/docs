@@ -849,6 +849,13 @@ const Users: User[] = [
     website: '/blog/tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures',
     tags: ['celosage', 'intermediate'],
   },
+   {
+    title: 'Creating a Charity Donation dApp using Celo Composer, React and Rainbowkit Celo',
+    description: 'A step-by-step guide on how to build a charity donation dapp using Celo Composer and React and Rainbow Kit.',
+    preview: require('./showcase/intermediate/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo.png'),
+    website: '/blog/tutorials/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo',
+    tags: ['celosage', 'intermediate', 'composer', 'react', 'typescript', 'metamask', 'javascript'],
+  },
   {
     title: 'How to build a Basic CRUD App in Solidity',
     description: 'This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.',
