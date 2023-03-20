@@ -395,6 +395,6 @@ Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
 ## References​
 
-[Developers Celo](https://celo.org/developers) For Celo dev setup
-[Hardhat docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup) Installion configuration and verification
-[Project code](https://github.com/JovanMwesigwa/automate-smartcontract-verification-on-celoscan) Github
+- [Developers Celo](https://celo.org/developers) For Celo dev setup
+- [Hardhat docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup) Installion configuration and verification
+- [Project code](https://github.com/JovanMwesigwa/automate-smartcontract-verification-on-celoscan) Github
