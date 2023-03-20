@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/song-marketplace-contract-with-ERC-20-token-integration
 ---
 
-![Sage Templatessss](https://user-images.githubusercontent.com/94527318/226135962-0434a059-5a01-4c50-83a5-eabd92c7fc9b.png)
+![header](../../src/data-tutorials/showcase/intermediate/song-marketplace-contract-with-ERC-20-token-integration.png)
 
 ## Introduction
 
