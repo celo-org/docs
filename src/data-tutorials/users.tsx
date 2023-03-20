@@ -2267,6 +2267,13 @@ const Users: User[] = [
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
   {
+    title: 'Build a Tic Tac Toe game with Flutter using Celo Composer',
+    description: 'This tutorial will guide you through building an example using Celo Composer, a Tic Tac To game applications on the Celo blockchain using Flutter.',
+    preview: require('./showcase/intermediate/build-a-tic-tac-toe-game-with-flutter-using-celo-composer.png'),
+    website: 'blog/tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer',
+    tags: ['celosage', 'flutter', 'solidity', 'intermediate', 'celo'], 
+  },
+  {
     title: 'Build a library-based dapp on Celo',
     description: 'Working with library in solidity',
     preview: require('./showcase/advanced/build-a-library-based-dapp-on-celo.png'),
