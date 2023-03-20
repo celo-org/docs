@@ -812,6 +812,13 @@ const Users: User[] = [
       '/blog/tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-platform',
     tags: ['intermediate', 'celosage'],
   },
+   {
+    title: 'Song Marketplace Contract with ERC-20 Token Integration',
+    description: 'The Song Marketplace Contract with ERC-20 Token Integration is a smart contract built on the Celo blockchain that enables users to buy and sell songs using a stablecoin ERC-20 token called "cUSD".',
+    preview: require('./showcase/intermediate/song-marketplace-contract-with-ERC-20-token-integration.png'),
+    website: '/blog/tutorials/song-marketplace-contract-with-ERC-20-token-integration',
+    tags: ['intermediate', 'solidity', 'celosage', 'celo'],
+  },
   {
     title: 'How to Connect to a Node on Celo using Docker',
     description: 'This tutorial teaches how to connect to a node on the celo blockchain using docker',
