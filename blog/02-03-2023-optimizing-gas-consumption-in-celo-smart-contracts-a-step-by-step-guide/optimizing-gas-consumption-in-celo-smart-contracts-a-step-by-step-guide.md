@@ -2,12 +2,11 @@
 title: Optimizing Gas Consumption in Celo Smart Contracts A Step-by-Step Guide
 description: In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.
 
-
 authors:
-  - name: Jovan Mwesigwa 
+  - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-tags: [celo, 'celosage', 'intermediate', 'react', 'solidity', 'hardhat']
+tags: [celo, "celosage", "intermediate", "react", "solidity", "hardhat"]
 hide_table_of_contents: true
 slug: /tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide
 ---
@@ -22,31 +21,30 @@ Gas is the unit of currency used to pay transaction fees on the Celo blockchain.
 
 To follow this tutorial, you will need:
 
-* Basic knowledge of Solidity, Ethereum, and smart contracts.
-* A local development environment set up with [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), as well as the [Hardhat development environment](https://hardhat.org/getting-started/) installed. You can follow the Hardhat installation instructions to get set up.
+- Basic knowledge of Solidity, Ethereum, and smart contracts.
+- A local development environment set up with [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/), as well as the [Hardhat development environment](https://hardhat.org/getting-started/) installed. You can follow the Hardhat installation instructions to get set up.
 
-* An understanding of gas fees and how they are calculated on the Celo network. This knowledge will help us understand the optimizations we will make in this tutorial.
+- An understanding of gas fees and how they are calculated on the Celo network. This knowledge will help us understand the optimizations we will make in this tutorial.
 
 ## Requirements
 
 To follow along with this tutorial, you will need the following:
 
-* Basic knowledge of Solidity programming language and Celo blockchain.
+- Basic knowledge of Solidity programming language and Celo blockchain.
 
-* Node.js installed on your machine.
+- Node.js installed on your machine.
 
-* Hardhat development environment installed. You can install it by running the following command in your terminal:
+- Hardhat development environment installed. You can install it by running the following command in your terminal:
 
 ```bash
 yarn add hardhat
-
 ```
 
-* An Integrated Development Environment (IDE) such as Visual Studio Code (VS Code) or any other text editor of your choice.
+- An Integrated Development Environment (IDE) such as Visual Studio Code (VS Code) or any other text editor of your choice.
 
-* Basic knowledge of the command line interface (CLI) and the ability to use it to run commands.
+- Basic knowledge of the command line interface (CLI) and the ability to use it to run commands.
 
-* Basic knowledge of JavaScript and familiarity with testing frameworks like Mocha and Chai.
+- Basic knowledge of JavaScript and familiarity with testing frameworks like Mocha and Chai.
 
 ## Setting up your environment
 
@@ -56,7 +54,6 @@ You can clone the starter project here:
 
 ```bash
 git clone https://github.com/JovanMwesigwa/gas-optimisation-in-celo-smart-contracts/tree/starter
-
 ```
 
 Or create a new hardhat project from scratch using the following steps below:
@@ -67,7 +64,7 @@ Or create a new hardhat project from scratch using the following steps below:
 yarn add hardhat
 ```
 
-2. Scaffold a new hardhat project by running ```npx hardhat```:
+2. Scaffold a new hardhat project by running `npx hardhat`:
 
 ```bash
 $ npx hardhat
@@ -97,18 +94,16 @@ By default, the gas reporter plugin is disabled in the `hardhat.config.js` file.
 Open the `hardhat.config.js` file and add:
 
 ```js
-require('@nomicfoundation/hardhat-toolbox')
+require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: '0.8.17',
+  solidity: "0.8.17",
   gasReporter: {
     enabled: true,
-    currency: 'USD',
+    currency: "USD",
   },
-}
-
-
+};
 ```
 
 We set the `gasReporter` to `true` to allow hardhat to activate it and set `currency` to `USD`.
@@ -160,7 +155,7 @@ The contract is pretty simple, but it demonstrates some key concepts of smart co
 ## Logging the gas estimation
 
 Now that the contract is done, we can compile it.
-In the terminal run, ```npx hardhat compile```.
+In the terminal run, `npx hardhat compile`.
 
 To be able to see the contract's gas logs, we need to interact with the contract itself.
 
@@ -171,73 +166,70 @@ Inside the `test` folder, we have a `MyContract.js` file that has a prewritten t
 Here's the code:
 
 ```js
-
 const {
   time,
   loadFixture,
-} = require('@nomicfoundation/hardhat-network-helpers')
-const { anyValue } = require('@nomicfoundation/hardhat-chai-matchers/withArgs')
-const { expect } = require('chai')
-const { ethers } = require('hardhat')
+} = require("@nomicfoundation/hardhat-network-helpers");
+const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
 
-describe('GasOptimizer', function () {
+describe("GasOptimizer", function () {
   async function deployContractFixture() {
-    const [owner, otherAccount] = await ethers.getSigners()
-    const JOIN_FEE = ethers.utils.parseEther('0.02')
+    const [owner, otherAccount] = await ethers.getSigners();
+    const JOIN_FEE = ethers.utils.parseEther("0.02");
 
-    const MyContract = await ethers.getContractFactory('MyContract')
-    const myContract = await MyContract.deploy(owner.address, JOIN_FEE)
+    const MyContract = await ethers.getContractFactory("MyContract");
+    const myContract = await MyContract.deploy(owner.address, JOIN_FEE);
 
-    return { myContract, owner, otherAccount, JOIN_FEE }
+    return { myContract, owner, otherAccount, JOIN_FEE };
   }
 
-  describe('Deployment', function () {
-    it('Should set the join fee amount', async function () {
+  describe("Deployment", function () {
+    it("Should set the join fee amount", async function () {
       const { myContract, JOIN_FEE, owner } = await loadFixture(
         deployContractFixture
-      )
-      expect(await myContract.joinFee()).to.equal(JOIN_FEE)
-    })
+      );
+      expect(await myContract.joinFee()).to.equal(JOIN_FEE);
+    });
 
-    it('Should set the admin address', async function () {
+    it("Should set the admin address", async function () {
       const { myContract, JOIN_FEE, owner } = await loadFixture(
         deployContractFixture
-      )
-      const setOwner = await myContract.owner()
-      expect(setOwner.toString()).to.equal(owner.address)
-    })
-  })
+      );
+      const setOwner = await myContract.owner();
+      expect(setOwner.toString()).to.equal(owner.address);
+    });
+  });
 
-  describe('Join', function () {
-    it('Should add the a new member', async function () {
+  describe("Join", function () {
+    it("Should add the a new member", async function () {
       const { JOIN_FEE, otherAccount, myContract, owner } = await loadFixture(
         deployContractFixture
-      )
+      );
 
-      await myContract.join({ value: JOIN_FEE })
+      await myContract.join({ value: JOIN_FEE });
 
-      const balance = await myContract.balances()
+      const balance = await myContract.balances();
 
-      console.log('Balance: ', balance.toString())
-      console.log('JOIN FEE: ', JOIN_FEE)
+      console.log("Balance: ", balance.toString());
+      console.log("JOIN FEE: ", JOIN_FEE);
 
-      expect(balance.toString()).to.be.equal(JOIN_FEE)
-    })
-  })
-})
-
-
+      expect(balance.toString()).to.be.equal(JOIN_FEE);
+    });
+  });
+});
 ```
 
 The test function is testing the `join()` function of the `MyContract` smart contract.
 
 Here's what it's doing:
 
-* First, it defines a fixture function `deployContractFixture()` which deploys the `MyContract` contract with an `owner` address and a `JOIN_FEE` value on the constructor.
+- First, it defines a fixture function `deployContractFixture()` which deploys the `MyContract` contract with an `owner` address and a `JOIN_FEE` value on the constructor.
 
-* Then, it defines two tests in a `Deployment` section to check if the `joinFee` and `owner` are correctly set after the contract is deployed.
+- Then, it defines two tests in a `Deployment` section to check if the `joinFee` and `owner` are correctly set after the contract is deployed.
 
-* Finally, it defines a test in a `Join` section to test if a new member can join the contract and if the `balances` variable is correctly updated. It does this by calling the `join()` function on the `myContract` instance with the `JOIN_FEE` value and then checking the value of `balances`.
+- Finally, it defines a test in a `Join` section to test if a new member can join the contract and if the `balances` variable is correctly updated. It does this by calling the `join()` function on the `myContract` instance with the `JOIN_FEE` value and then checking the value of `balances`.
 
 Overall, this test suite ensures that the `MyContract` contract is correctly deployed and that the `join()` function can add new members to the contract and update the `balances` variable.
 
@@ -270,15 +262,15 @@ Our goal is to improve and reduce the amount of gas consumed by calling `join()`
 ## Optimizing the contract
 
 1. Use `private` rather than `public` for contract state constants:
-Declaring a variable as `public` in Solidity generates an additional getter function to read its value from outside the contract. This additional getter function can make contract execution more expensive in terms of gas costs. On the other hand, declaring a variable as `private` eliminates the need for a getter function, and can save gas costs during contract execution.
+   Declaring a variable as `public` in Solidity generates an additional getter function to read its value from outside the contract. This additional getter function can make contract execution more expensive in terms of gas costs. On the other hand, declaring a variable as `private` eliminates the need for a getter function, and can save gas costs during contract execution.
 
 2. Use `immutable` for one-time set variables:
-Declaring a variable as `immutable` means that its value is set only once during contract deployment and cannot be changed afterward. This eliminates the need for the storage slot to be writable and saves gas that would otherwise be spent on writing to storage. Additionally, making a variable private and not defining a getter function saves gas that would be spent on creating and executing a getter function.
+   Declaring a variable as `immutable` means that its value is set only once during contract deployment and cannot be changed afterward. This eliminates the need for the storage slot to be writable and saves gas that would otherwise be spent on writing to storage. Additionally, making a variable private and not defining a getter function saves gas that would be spent on creating and executing a getter function.
 
 In `MyContract.sol`, let's change the state variables to `private` as shown below:
 
 ```solidity
-    
+
 ...
     address private immutable i_owner;
     uint256 private immutable i_joinFee;
@@ -304,7 +296,7 @@ In your contract add:
 
 ```solidity
 
-    
+
 ...
 
     // View functions
@@ -327,7 +319,7 @@ A `view` function does not modify the state of the contract and returns some val
 
 Let's try and run the gas report to see the effects of our changes:
 
-In the terminal run ```npx hardhat test```
+In the terminal run `npx hardhat test`
 
 ![gas report after optimising storage state](./images/after-storage-optimization.PNG)
 
@@ -340,7 +332,7 @@ Just by doing the small changes in how we're writing the smart contract, we can 
 We can look at more ways we can improve it further.
 
 3. Use Custom Errors instead of Revert Strings
-Custom errors are more efficient than revert strings. When a contract reverts, all state changes made in the current transaction are undone, and gas is refunded. However, when a custom error is used, the state changes made before the error are not undone, and gas is not refunded. This means that using custom errors can save gas costs compared to using revert strings.
+   Custom errors are more efficient than revert strings. When a contract reverts, all state changes made in the current transaction are undone, and gas is refunded. However, when a custom error is used, the state changes made before the error are not undone, and gas is not refunded. This means that using custom errors can save gas costs compared to using revert strings.
 
 In the `join()` function, we're using `require()` to revert when a user doesn't enter the required `joinFee`. This is not very gas efficient as explained above.
 
@@ -362,10 +354,10 @@ Let's replace the `require()` use a more gas-optimal way.
 Inside `join()` change:
 
 ```solidity
-  
-  
+
+
 function join() public payable {
-  
+
       if (msg.value < i_joinFee) {
           revert Not__EnoughFeesEntered();
       }
@@ -426,7 +418,7 @@ The members mapping is updated by assigning the sender's address `msg.sender` to
 
 `s_balances` is then updated by adding the value of funds sent with the transaction to the current balance.
 
- `s_count` is incremented by 1, to reflect the addition of a new member.
+`s_count` is incremented by 1, to reflect the addition of a new member.
 
 Finally, we can now inspect our optimized gas contract in the reporter.
 
