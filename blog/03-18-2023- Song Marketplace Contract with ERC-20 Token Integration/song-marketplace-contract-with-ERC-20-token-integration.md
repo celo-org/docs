@@ -3,9 +3,9 @@ title: Song Marketplace Contract with ERC-20 Token Integration
 description: The Song Marketplace Contract with ERC-20 Token Integration is a smart contract built on the Celo blockchain that enables users to buy and sell songs using a stablecoin ERC-20 token called "cUSD".
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:   https://github.com/Ogoyi
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ogoyi
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/song-marketplace-contract-with-ERC-20-token-integration
@@ -24,7 +24,7 @@ To proceed with this tutorial, you will need the following:
 - A code editor or text editor, such as Remix, to write and edit code.
 
 - A reliable internet browser and a stable internet connection to access the necessary resources and interact with the Celo blockchain.
-  
+
 ## PREREQUISITE:
 
 Before starting this tutorial, it is recommended that you have:
@@ -106,7 +106,7 @@ uint256 internal songId = 0;
 
 
      ) {
-    return (  
+    return (
         songs[_index].owner,
          songs[_index].url,
           songs[_index].name,
@@ -115,9 +115,9 @@ uint256 internal songId = 0;
              songs[_index].songId,
               songs[_index].createdAt
 
-             
+
     );
-   
+
 }
 
        function addSong (
@@ -154,8 +154,8 @@ uint256 internal songId = 0;
       "Transfer failed."
     );
 
-    
-     
+
+
 }
 function getSongIdsByArtist(string memory _artist) public view returns (uint[] memory) {
     uint[] memory songIds = new uint[](songsLength);
@@ -193,8 +193,9 @@ return (songsLength);
 }
 
 }
-               
+
 ```
+
 Now try to compile your smart contract to see if it is working fine. [Github repo](https://github.com/Ogoyi/Song-Marketplace-Contract-with-ERC-20-Token-Integration)
 
 To begin, we need to create a new file named `SongMarketplace.sol` on Remix. You can refer to the documentation on how to create a new file on Remix. [(here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
@@ -284,7 +285,7 @@ To add more functionality to our smart contract, we'll start by defining some fu
 
 
      ) {
-    return (  
+    return (
         songs[_index].owner,
          songs[_index].url,
           songs[_index].name,
@@ -293,9 +294,9 @@ To add more functionality to our smart contract, we'll start by defining some fu
              songs[_index].songId,
               songs[_index].createdAt
 
-             
+
     );
-   
+
 }
 
 ```
@@ -303,19 +304,13 @@ To add more functionality to our smart contract, we'll start by defining some fu
 This is a function called `getSong` that will assist us in returning information about a specific song. It takes in an integer `_index` as an argument which represents the index of the song in the songs mapping. When called, it returns a tuple containing the following information about the song:
 
 - the address of the song's owner (`address payable`)
-  
 - the URL of the song (`string memory`)
-  
 - the name of the song (`string memory`)
 
 - the artist of the song (`string memory`)
-  
 - the price of the song (`uint`)
-  
 - the ID of the song (`uint256`)
-  
 - the timestamp when the song was created (`uint256`).
-  
 
 Furthermore, We add a function called `addSong()` that will be used to add songs to the blockchain.
 
@@ -430,23 +425,22 @@ If both requirements are satisfied, the song at the specified index is deleted f
 
 The `getSongsLength` function is a public view function that returns the length of the songs array, which represents the total number of songs stored in the contract. This function simply returns the value of the `songsLength` variable.
 
-
 ## Contract Deployment
 
- To deploy our smart contract on the Celo blockchain, there are several requirements that need to be met. These may include things such as:
+To deploy our smart contract on the Celo blockchain, there are several requirements that need to be met. These may include things such as:
 
 To ensure a smooth deployment of our smart contract, it is essential to download the Celo extension wallet from the given link, [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). This can be accomplished by accessing the Celo Alfojares faucet using the provided link.
 
- Once we have ensured that our wallet is funded, we can proceed to deploy the smart contract on the Celo blockchain using the Celo plugin that is available in the Remix environment.
+Once we have ensured that our wallet is funded, we can proceed to deploy the smart contract on the Celo blockchain using the Celo plugin that is available in the Remix environment.
 
- ## Conclusion
+## Conclusion
 
- Congratulations on successfully developing the smart contract for selling songs on the Celo blockchain! Your accomplishment is truly remarkable, and you should take pride in your hard work paying off. Keep up the excellent work and enjoy the fruits of your labor. 🎉
+Congratulations on successfully developing the smart contract for selling songs on the Celo blockchain! Your accomplishment is truly remarkable, and you should take pride in your hard work paying off. Keep up the excellent work and enjoy the fruits of your labor. 🎉
 
- ## Next step
+## Next step
 
- Excellent work! It's always beneficial to offer extra resources to aid in further learning. Please don't hesitate to contact me if you have any further inquiries or require additional assistance. You can easily reach out to me on Twitter by clicking on my profile. [Profile link](https://twitter.com/thompsonogoyi). Happy learning!
+Excellent work! It's always beneficial to offer extra resources to aid in further learning. Please don't hesitate to contact me if you have any further inquiries or require additional assistance. You can easily reach out to me on Twitter by clicking on my profile. [Profile link](https://twitter.com/thompsonogoyi). Happy learning!
 
- ## About the author
+## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
