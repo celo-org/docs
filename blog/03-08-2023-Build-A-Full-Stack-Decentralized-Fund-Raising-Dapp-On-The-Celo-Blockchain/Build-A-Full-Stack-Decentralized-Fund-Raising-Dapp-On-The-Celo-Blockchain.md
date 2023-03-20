@@ -3,15 +3,14 @@ title: Build A Full Stack Decentralized Fund Raising Dapp On The Celo Blockchain
 description: Build a full stack decentralized fundraising platform on the celo blockchain using solidity for the smart contract and reactJS for the front end
 authors:
   - name: ✍️ Jonathan Iheme
-url: https://github.com/4undRaiser
-image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
+    url: https://github.com/4undRaiser
+    image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, solidity, celo, react]
 hide_table_of_contents: true
 slug: /tutorials/build-a-full-stack-decentralized-fund-raising-dapp-on-the-celo-blockchain
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-full-stack-decentralized-fundraising-dapp-on-the-celo-blockchain.png)
-
 
 ## Introduction
 
@@ -75,17 +74,17 @@ contract Fundraising {
         uint totalRaised;
         uint goal;
     }
-    
+
     mapping(uint => Campaign) public campaigns;
-    
+
     event CampaignCreated(address indexed beneficiary, uint goal);
     event CampaignFunded(address indexed beneficiary, uint amount);
     event CampaignGoalReached(address indexed beneficiary);
 
     function createCampaign(
-        string memory _image, 
-        string memory _description, 
-        address _beneficiary, 
+        string memory _image,
+        string memory _description,
+        address _beneficiary,
         uint _goal
         ) public {
         require(msg.sender == _beneficiary);
@@ -97,18 +96,18 @@ contract Fundraising {
         campaign.totalRaised = 0;
         campaign.goal = _goal;
         totalCampaigns ++;
-        
+
         emit CampaignCreated(_beneficiary, _goal);
     }
-    
+
     function fundCampaign(uint _campaignId, uint _amount) public payable {
         Campaign storage campaign = campaigns[_campaignId];
-        
+
         require(msg.sender != campaign.beneficiary);
         require(campaign.totalRaised < campaign.goal, "Campaign goal reached");
-        
+
         campaign.totalRaised += _amount;
-        
+
          require(
             IERC20Token(cUsdTokenAddress).transferFrom(
                 msg.sender,
@@ -117,15 +116,15 @@ contract Fundraising {
             ),
             "Transfer failed."
         );
- 
-        
+
+
         emit CampaignFunded(campaign.beneficiary, _amount);
-        
+
         if (campaign.totalRaised >= campaign.goal) {
             emit CampaignGoalReached(campaign.beneficiary);
         }
     }
-    
+
     function getCampaign(uint256 _campaignId)
         public
         view
@@ -178,7 +177,7 @@ interface IERC20Token {
 }
 ```
 
-The `IERC20Token` interface provides functions to transfer tokens, approve tokens, and view the total supply and balance of tokens. To create the interface, we need to define each of the required functions: 
+The `IERC20Token` interface provides functions to transfer tokens, approve tokens, and view the total supply and balance of tokens. To create the interface, we need to define each of the required functions:
 
 `transfer` – This function is used to transfer tokens from one address to another. It takes two parameters: the address to send the tokens to and the amount of tokens to send.
 
@@ -209,9 +208,9 @@ contract Fundraising {
         uint totalRaised;
         uint goal;
     }
-    
+
     mapping(uint => Campaign) public campaigns;
-    
+
     event CampaignCreated(address indexed beneficiary, uint goal);
     event CampaignFunded(address indexed beneficiary, uint amount);
     event CampaignGoalReached(address indexed beneficiary);
@@ -230,8 +229,8 @@ Let's take a look at the `createCampaign` function.
 
 ```solidity
 function createCampaign(
-        string memory _image, 
-        string memory _description, 
+        string memory _image,
+        string memory _description,
         address _beneficiary, uint _goal
         ) public {
         require(msg.sender == _beneficiary);
@@ -243,7 +242,7 @@ function createCampaign(
         campaign.totalRaised = 0;
         campaign.goal = _goal;
         totalCampaigns ++;
-        
+
         emit CampaignCreated(_beneficiary, _goal);
     }
 ```
@@ -255,12 +254,12 @@ Next is the `fundCampaign` function.
 ```solidity
 function fundCampaign(uint _campaignId, uint _amount) public payable {
         Campaign storage campaign = campaigns[_campaignId];
-        
+
         require(msg.sender != campaign.beneficiary);
         require(campaign.totalRaised < campaign.goal, "Campaign goal reached");
-        
+
         campaign.totalRaised += _amount;
-        
+
          require(
             IERC20Token(cUsdTokenAddress).transferFrom(
                 msg.sender,
@@ -269,9 +268,9 @@ function fundCampaign(uint _campaignId, uint _amount) public payable {
             ),
             "Transfer failed."
         );
- 
+
         emit CampaignFunded(campaign.beneficiary, _amount);
-        
+
         if (campaign.totalRaised >= campaign.goal) {
             emit CampaignGoalReached(campaign.beneficiary);
         }
@@ -307,7 +306,7 @@ Next up is the `getCampain` function
     }
 ```
 
-The `getCampaign` function is used to get the details of a campaign using the `campaignId` parameter. It returns a tuple with the campaign's `image`, `description`, `beneficiary` address, `totalRaised`, and `goal`. 
+The `getCampaign` function is used to get the details of a campaign using the `campaignId` parameter. It returns a tuple with the campaign's `image`, `description`, `beneficiary` address, `totalRaised`, and `goal`.
 
 And finally the `getCampaignLength` function
 
@@ -319,13 +318,11 @@ And finally the `getCampaignLength` function
 
 The `getCampaignLength` function returns the total number of campaigns created so far by returning the current value of the `totalCampaigns` variable.
 
-
-
 ## Deployment
 
 To deploy our smart contract successfully, we need the celo extention wallet which can be downloaded from [here](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
 
-Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet) 
+Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet)
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
@@ -478,6 +475,7 @@ function App() {
 
 export default App;
 ```
+
 ### Break down
 
 Let's break down the `App.js` file.
@@ -496,6 +494,7 @@ const ERC20_DECIMALS = 18;
 const contractAddress = "0xadB1C74ce3b79344D3587BB2BC8530d95cDEEAa2";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 ```
+
 In the first few lines, the necessary dependencies and contracts are imported. Here, we are importing the `Home` and `Campaigns` components, React hooks, the `Web3` library, the `ContractKit` library, and the ABIs of the smart contracts.
 
 The `ERC20_DECIMALS`, `contractAddress`, and `cUSDContractAddress` are constants that represent the number of decimal places for the `ERC20` token, the address of the fundraising smart contract, and the address of the cUSD `ERC20` token contract on the Celo Blockchain.
@@ -508,129 +507,133 @@ function App() {
   const [cUSDBalance, setcUSDBalance] = useState(0);
   const [campaigns, setCampaigns] = useState([]);
 ```
+
 Next, we define a functional component called `App`. This component holds the state variables of the contract instance, the wallet address, the ContractKit instance, the cUSD balance, and the campaigns.
 
 ```javascript
 const connectToWallet = async () => {
-    if (window.celo) {
-      try {
-        await window.celo.enable();
-        const web3 = new Web3(window.celo);
-        let kit = newKitFromWeb3(web3);
+  if (window.celo) {
+    try {
+      await window.celo.enable();
+      const web3 = new Web3(window.celo);
+      let kit = newKitFromWeb3(web3);
 
-        const accounts = await kit.web3.eth.getAccounts();
-        const user_address = accounts[0];
-        kit.defaultAccount = user_address;
+      const accounts = await kit.web3.eth.getAccounts();
+      const user_address = accounts[0];
+      kit.defaultAccount = user_address;
 
-        await setAddress(user_address);
-        await setKit(kit);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert("Error Occurred");
+      await setAddress(user_address);
+      await setKit(kit);
+    } catch (error) {
+      console.log(error);
     }
-  };
+  } else {
+    alert("Error Occurred");
+  }
+};
 ```
+
 The `connectToWallet` function enables the user's wallet on the Celo network and sets the kit instance and user's address as the default account for the `ContractKit` instance.
 
 ```javascript
 const getBalance = useCallback(async () => {
-    try {
-      const balance = await kit.getTotalBalance(address);
-      const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+  try {
+    const balance = await kit.getTotalBalance(address);
+    const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
 
-      const contract = new kit.web3.eth.Contract(fundraising, contractAddress);
-      setcontract(contract);
-      setcUSDBalance(USDBalance);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [address, kit]);
+    const contract = new kit.web3.eth.Contract(fundraising, contractAddress);
+    setcontract(contract);
+    setcUSDBalance(USDBalance);
+  } catch (error) {
+    console.log(error);
+  }
+}, [address, kit]);
 ```
+
 The `getBalance` function uses the `ContractKit` instance to get the user's total balance, converts it to the cUSD balance, and sets the `contract` and `cUSDBalance` state variables.
 
 ```javascript
 const getCampaigns = useCallback(async () => {
-    const campaignsLength = await contract.methods.getCampaignLength().call();
-    const campaigns = [];
-    for (let index = 0; index < campaignsLength; index++) {
-      let _campaigns = new Promise(async (resolve, reject) => {
-        let campaign = await contract.methods.getCampaign(index).call();
+  const campaignsLength = await contract.methods.getCampaignLength().call();
+  const campaigns = [];
+  for (let index = 0; index < campaignsLength; index++) {
+    let _campaigns = new Promise(async (resolve, reject) => {
+      let campaign = await contract.methods.getCampaign(index).call();
 
-        resolve({
-          index: index,
-          image: campaign[0],
-          description: campaign[1],
-          beneficiary: campaign[2],
-          totalRaised: campaign[3],
-          goal: campaign[4],
-        });
+      resolve({
+        index: index,
+        image: campaign[0],
+        description: campaign[1],
+        beneficiary: campaign[2],
+        totalRaised: campaign[3],
+        goal: campaign[4],
       });
-      campaigns.push(_campaigns);
-    }
+    });
+    campaigns.push(_campaigns);
+  }
 
-    const _campaigns = await Promise.all(campaigns);
-    setCampaigns(_campaigns);
-  }, [contract]);
+  const _campaigns = await Promise.all(campaigns);
+  setCampaigns(_campaigns);
+}, [contract]);
 ```
+
 Next, we have the `getCampaigns` function which uses the `contract` object to retrieve a list of `campaigns`. It does this by calling the `getCampaignLength` method of the contract to get the number of `campaigns` and then iterating through them to get their details using the `getCampaign` method. The details are then added to an array and returned as a promise. Once all promises are resolved using Promise.all, the campaigns are set using `setCampaigns`.
 
-
-
 ```javascript
- const addCampaign = async (_image, _description, _beneficiary, _goal) => {
-    try {
-      await contract.methods
-        .createCampaign(_image, _description, _beneficiary, _goal)
-        .send({ from: address });
-      getCampaigns();
-    } catch (error) {
-      alert(error);
-    }
-  };
+const addCampaign = async (_image, _description, _beneficiary, _goal) => {
+  try {
+    await contract.methods
+      .createCampaign(_image, _description, _beneficiary, _goal)
+      .send({ from: address });
+    getCampaigns();
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
+
 After that, we have the `addCampaign` function, which takes in the required parameters to create a new campaign and sends a transaction using the `createCampaign` method of the contract object. It then calls the `getCampaigns` function to update the list of campaigns.
 
 ```javascript
- const fundCampaign = async (_index, _ammount) => {
-    try {
-      const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
+const fundCampaign = async (_index, _ammount) => {
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
 
-      await cUSDContract.methods
-        .approve(contractAddress, _ammount)
-        .send({ from: address });
-      await contract.methods
-        .fundCampaign(_index, _ammount)
-        .send({ from: address });
-      getCampaigns();
-      getBalance();
-      alert("you have successfully sent cusd to this user");
-    } catch (error) {
-      alert(error);
-    }
-  };
+    await cUSDContract.methods
+      .approve(contractAddress, _ammount)
+      .send({ from: address });
+    await contract.methods
+      .fundCampaign(_index, _ammount)
+      .send({ from: address });
+    getCampaigns();
+    getBalance();
+    alert("you have successfully sent cusd to this user");
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
+
 Lastly, we have the `fundCampaign` function which takes in the index of the campaign and the amount of cUSD to be sent. It first approves the contract to spend the specified amount of cUSD using the approve method of the `cUSDContract` object. It then sends a transaction to the contract to fund the `campaign` using the `fundCampaign` method. Finally, it calls the `getCampaigns` and `getBalance` functions to update the list of `campaigns` and the user's `cUSD` balance.
 
 ```javascript
 useEffect(() => {
-connectToWallet();
+  connectToWallet();
 }, []);
 
 useEffect(() => {
-if (kit && address) {
-getBalance();
-}
+  if (kit && address) {
+    getBalance();
+  }
 }, [kit, address, getBalance]);
 
 useEffect(() => {
-if (contract) {
-getCampaigns();
-}
+  if (contract) {
+    getCampaigns();
+  }
 }, [contract, getCampaigns]);
-
 ```
+
 We use useEffect to call the connectToWallet, getBalance, and getCampaigns functions at the appropriate times.
 
 ```javascript
@@ -649,6 +652,7 @@ return (
 export default App;
 
 ```
+
 And finally, we render the App component and return the Home and Campaigns components with the necessary props.
 
 ## Next Steps
