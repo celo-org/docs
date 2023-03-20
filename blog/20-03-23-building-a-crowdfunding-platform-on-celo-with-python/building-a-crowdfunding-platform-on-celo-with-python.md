@@ -1,5 +1,5 @@
 ---
-title: Building a Crowdfunding Platform on Celo with Python 
+title: Building a Crowdfunding Platform on Celo with Python
 description: This tutorial provides a guide on how to use Eth-Brownie Python to build a decentralized crowdfunding platform on the Celo blockchain
 
 authors:
@@ -23,7 +23,7 @@ Crowdfunding is a fundraising strategy that allows individuals or sets of indivi
 To understand this tutorail, you must be familiar with:
 
 - Building Smart contracts
-- The Python programming language 
+- The Python programming language
 
 ## Requirements
 
@@ -105,7 +105,7 @@ contract Crowdfunding {
 The smart contract above enables contributors to contribute to a crowdfunding campaign. The contract is completed once the total contributions reach the specified value by the owner of the campaign.
 
 - A `_goal` argument is specified in the constructor function which is used to set the amount needed to be reached by the campaign.
--  he `contribute` function is marked as `payable` (allows the function to accept payments from contributors) which adds the contributed amount to the `totalContributions` and ends the campaign once the goal has been reached.
+- he `contribute` function is marked as `payable` (allows the function to accept payments from contributors) which adds the contributed amount to the `totalContributions` and ends the campaign once the goal has been reached.
 - The `withdraw` function makes sure that the owner of the campaign is the only one allowed to access the total contributions.
 
 ## Deploying the Smart Contract
@@ -248,9 +248,10 @@ print(f'Contract deployed at address: {contract_address}')
 
 ```
 
-In the code above,  RPC URL and chain ID are gotten from the [Celo Alfajores network](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo). The contract method on the w3.eth class takes in the ABI and bytecode to create the contract. The `build_transaction` builds a transaction and is passed as an argument to the `sign_transaction` which signs the transaction. The `send_raw_transaction` method finally sends the transaction and produces a receipt that contains the contract address of the deployed contract.
+In the code above, RPC URL and chain ID are gotten from the [Celo Alfajores network](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo). The contract method on the w3.eth class takes in the ABI and bytecode to create the contract. The `build_transaction` builds a transaction and is passed as an argument to the `sign_transaction` which signs the transaction. The `send_raw_transaction` method finally sends the transaction and produces a receipt that contains the contract address of the deployed contract.
 
-## Conclusion 
+## Conclusion
+
 In this article, you learned how to create a crowdfunding application with Celo Python SDK. You implemented functionalities such as, creating the crowdfunding smart contract logic, and deploying it to the Celo blockchain
 
 ## Next Steps
