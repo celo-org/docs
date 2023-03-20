@@ -2308,6 +2308,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
+  {
+    title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
+    description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
+    preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
+    website: "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
+    tags: ["advanced", "celosage", "celo", "openzeppelin"],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
