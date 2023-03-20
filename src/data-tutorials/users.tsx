@@ -1329,6 +1329,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner'],
   },
   {
+    title: 'Optimizing Gas Consumption in Celo Smart Contracts A Step-by-Step Guide',
+    description: 'In this comprehensive tutorial, you will learn how to optimize your smart contracts on the Celo blockchain to consume less gas.',
+    preview: require('./showcase/intermediate/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide.png'),
+    website: '/blog/tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide',
+    tags: ['celosage', 'celo', 'intermediate', 'solidity'],
+  },
+  {
     title: 'Build a Full Stack Coffee Dapp With Celo Composer and Solidity',
     description: 'This tutorial will take you through a step-by-step guide on how to create a frontend and backend (Smart Contract) dApp explaining how to create a decentralized version of Buy Me A Coffee.',
     preview: require('./showcase/intermediate/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity.png'),
