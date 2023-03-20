@@ -417,6 +417,13 @@ You can now fund your wallet and deploy your contract using the celo plugin in r
 
 In conclusion, This tutorial have covered how to create a smart contract for a P2P Lending contract. It has explained the process for creating a loan, funding a loan, repaying a loan, and getting loan information. It has also explained how the borrower can withdraw their funds from the contract.
 
+## Next Steps
+
+I hope you learned a lot from this tutorial. Here are some relevant links that would aid your learning further.
+
+- [Celo Docs](https://docs.celo.org/)
+- [Solidity Docs](https://docs.soliditylang.org/en/v0.8.17/)
+
 ## About the author
 
 I'm Jonathan Iheme, A full stack block-chain Developer from Nigeria.
