@@ -2253,6 +2253,13 @@ const Users: User[] = [
     tags: ['javascript', 'react', 'beginner', 'celo'], 
   },
   {
+    title: 'Build a library-based dapp on Celo',
+    description: 'Working with library in solidity',
+    preview: require('./showcase/advanced/build-a-library-based-dapp-on-celo.png'),
+    website: 'blog/tutorials/build-a-library-based-dapp-on-celo',
+    tags: ['advanced', 'solidity', 'hardhat', 'celosage'],
+  },
+  {
     title: 'Connect and interact with Celo using web3modal',
     description: 'Alternative method of connecting to Celo using web3Modal',
     preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3modal.png'),
