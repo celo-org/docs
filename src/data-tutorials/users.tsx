@@ -2350,6 +2350,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+   {
+    title: 'Upgrading a Smart Contract on Celo',
+    description: 'This tutorial provides a guide to upgrading a smart contract on the Celo blockchain and its importance',
+    preview: require('./showcase/intermediate/upgrading-a-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/upgrading-a-smart-contract-on-celo',
+    tags: ['celosage', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+  },
   {
     title: 'Building a Smart Contract Lottery Application on Celo with Python',
     description: 'This tutorial provides a guide on how to use Python to build a smart contract lottery application on the Celo blockchain',
