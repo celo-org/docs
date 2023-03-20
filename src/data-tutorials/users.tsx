@@ -776,6 +776,14 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Integrating Rainbow-Kit Celo into Your DApps',
+    description: 'This sequel walks blockchain developers through the process of integrating the Rainbow-Kit Celo tool into their DApps for seamless financial operation and compatible wallet integration',
+    preview: require('./showcase/intermediate/integrating-rainbow-kit-celo-into-your-smart-contract-dapp.png'),
+    website: 'blog/tutorials/integrating-rainbow-kit-celo-into-your-dapps',
+    tags: ['celosage', 'smartcontract', 'solidity', 'react', 'hardhat', 'intermediate'], 
+  },
+
+  {
     title: 'Exploring the Robust Structure of Celos Protocol Design',
     description: "Exploring the Robust Structure of Celo's Protocol Design",
     preview: require('./showcase/intermediate/Exploring_the_Robust_Structure_of_Celo_s_Protocol_Design.png'),
