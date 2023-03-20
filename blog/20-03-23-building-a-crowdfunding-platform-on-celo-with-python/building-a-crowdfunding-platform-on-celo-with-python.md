@@ -264,6 +264,7 @@ To learn more about building on Celo using Python, you can explore the following
 
 - [Celo docs](https://docs.celo.org/)
 - [Web3.py](https://web3py.readthedocs.io/en/stable/quickstart.html)
+- [Github Repository](https://github.com/Divine572/celo-crowdfunding-python)
 
 ## About the Author
 
