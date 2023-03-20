@@ -2281,13 +2281,21 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
   {
+    title: 'Deploying a proposal for DAOs on Celo',
+    description: 'This article explains how to deploy a governance proposal on Celo',
+    preview: require('./showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png'),
+    website: 'blog/tutorials/deploying-a-proposal-for-daos-on-celo',
+    tags: ['celosage', 'intermediate',  'celo'], 
+  },
+  {
     title: 'How to build a Celo Price Tracker browser extension using Vite and Celo Contractkit.',
     description: 'In this article, I will show developers how to create a Celo Price Tracker browser extension that works with any browser, such as Brave, Chrome, and Firefox, by using Vite (a React template), Crxjs Vite Plugin, and the Celo Contractkit package.',
     preview: require('./showcase/beginner/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit.png'),
     website: 'blog/tutorials/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit',
     tags: ['celosage', 'react', 'beginner', 'celo'],
-    },
-   {
+  },
+
+  {
     title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
     description: 'Learn hoe to build chat app on celo network using react-native and web3js',
     preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
