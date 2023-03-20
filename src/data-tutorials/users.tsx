@@ -1440,6 +1440,13 @@ const Users: User[] = [
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
   {
+    title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
+    description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
+    preview: require('./showcase/advanced/aave-on-celo.png'),
+    website: '/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave',
+    tags: ['celosage', 'advanced', 'solidity', 'smart contract],
+  },
+  {
     title: 'Create Vault Smart Contract',
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
     preview: require('./showcase/advanced/create-a-vault-smart-contract.png'),
