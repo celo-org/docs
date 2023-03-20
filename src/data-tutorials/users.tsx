@@ -2259,6 +2259,7 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer',
     tags: ['celosage', 'flutter', 'solidity', 'intermediate', 'celo'], 
   },
+  {
     title: 'Connect and interact with Celo using web3modal',
     description: 'Alternative method of connecting to Celo using web3Modal',
     preview: require('./showcase/advanced/connect-and-interact-with-celo-using-web3modal.png'),
