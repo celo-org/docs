@@ -13,7 +13,6 @@ slug: /tutorials/how-to-automate-your-smart-contract-verification-programmatical
 
 ![header](https://user-images.githubusercontent.com/62109301/226399564-ebfda82d-f5dd-4fec-92f0-cc2827071215.png)
 
-
 ## Introduction
 
 This tutorial covers automating smart contract verification using Hardhat on Celoscan. It includes setting up Hardhat, creating a simple smart contract, and automating the verification process on Celoscan without leaving your development environment. We explore the best practices for smart contract development and writing a deploy script. Any upgrade to the contract will be automatically verified on the chain.
@@ -140,7 +139,7 @@ npx hardhat compile
 
 The deploy script uses the Hardhat framework to interact with the Celo network and in this case, we'll use the built-in ethers js library that comes with hardhat.
 
-```bash
+```js
 const { ethers } = require('hardhat')
 
 async function main() {
@@ -174,20 +173,20 @@ The `hardhat.config.js` file is where we configure our project's network paths a
 As shown in the code below;
 
 ```js
-require('@nomicfoundation/hardhat-toolbox')
-require('dotenv').config()
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
-const { ALFAJORES_API_KEY, ALFAJORES_URL, PRIVATE_KEY } = process.env
+const { ALFAJORES_API_KEY, ALFAJORES_URL, PRIVATE_KEY } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  defaultNetwork: 'hardhat',
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 31337,
     },
     localhost: {
-      url: 'http://127.0.0.1:8545',
+      url: "http://127.0.0.1:8545",
       chainId: 31337,
     },
     alfajores: {
@@ -199,13 +198,13 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: '0.8.9',
+        version: "0.8.9",
       },
       {
-        version: '0.8.7',
+        version: "0.8.7",
       },
       {
-        version: '0.6.6',
+        version: "0.6.6",
       },
     ],
   },
@@ -220,16 +219,16 @@ module.exports = {
     },
     customChains: [
       {
-        network: 'alfajores',
+        network: "alfajores",
         chainId: 44787,
         urls: {
-          apiURL: 'https://api-alfajores.celoscan.io/api',
-          browserURL: 'https://alfajores.celoscan.io/',
+          apiURL: "https://api-alfajores.celoscan.io/api",
+          browserURL: "https://alfajores.celoscan.io/",
         },
       },
     ],
   },
-}
+};
 ```
 
 The `ALFAJORES_API_KEY`, `ALFAJORES_URL`, and `PRIVATE_KEY` are environment variables that contain sensitive information that should not be hard-coded into your code. This is why we use the `.env` package to separate them from the main codebase.
@@ -268,7 +267,7 @@ Output:
 
 ```bash
 Compiled 1 Solidity file successfully
-Blogger deployed to 0x5B5495483D6fA7CEa7948f0DeA23B67819E0A0f9 
+Blogger deployed to 0x5B5495483D6fA7CEa7948f0DeA23B67819E0A0f9
 ```
 
 The contract was successfully deployed to Celo Alfajores at the address: [0x5B5495483D6fA7CEa7948f0DeA23B67819E0A0f9](https://alfajores.celoscan.io/address/0x5B5495483D6fA7CEa7948f0DeA23B67819E0A0f9#code)
@@ -281,7 +280,7 @@ There are two options we can take to verify the contract.
 
 1. Using the manual process on the celoscan website directly. But this is not suitable especially when you're constantly updating the contract and redeploying it on the chain, it'll mean that you have to redo it over and over again.
 2. We can create a separate verify function in the deploy script that automatically verifies the contract when it gets deployed to the network.
-By doing this, we won't even have to worry about opening the verify contract form every time we update the contract to a new address.
+   By doing this, we won't even have to worry about opening the verify contract form every time we update the contract to a new address.
 
 ### Creating the verified contact script
 
@@ -292,22 +291,22 @@ In the parent root of the project, create a new folder `/utils` and inside it, c
 Fill in the code as shown below:
 
 ```js
-const { run } = require('hardhat')
+const { run } = require("hardhat");
 
 const verifyContract = async (contractAddress) => {
-  console.log('Verifying contract...')
+  console.log("Verifying contract...");
   try {
-    await run('verify:verify', {
+    await run("verify:verify", {
       address: contractAddress,
-    })
+    });
 
-    console.log('Contract verified!')
+    console.log("Contract verified!");
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 
-module.exports = { verifyContract }
+module.exports = { verifyContract };
 ```
 
 The `verifyContract.js` will be responsible for automatically verifying the smart contract once it has been deployed to the network. This script uses Hardhat's built-in verify task to verify the contract's bytecode on the blockchain.
@@ -327,29 +326,28 @@ Now that the `verfyContract` functionality is complete, we can call it in the de
 Update the `deploy.js` script by defining the `verifyContract` function as shown below.
 
 ```js
-const { ethers } = require('hardhat')
-const { verifyContract } = require('../utils/verifyContract')
+const { ethers } = require("hardhat");
+const { verifyContract } = require("../utils/verifyContract");
 
 async function main() {
-  const Contract = await ethers.getContractFactory('Blogger')
-  const blogger = await Contract.deploy()
+  const Contract = await ethers.getContractFactory("Blogger");
+  const blogger = await Contract.deploy();
 
-  await blogger.deployed()
+  await blogger.deployed();
 
-  const contractAddress = blogger.address
+  const contractAddress = blogger.address;
 
-  console.log(`Blogger deployed to ${blogger.address}`)
+  console.log(`Blogger deployed to ${blogger.address}`);
 
-  console.log('Verifying contract -----------')
+  console.log("Verifying contract -----------");
 
-  await verifyContract(blogger.address)
+  await verifyContract(blogger.address);
 }
 
 main().catch((error) => {
-  console.error(error)
-  process.exitCode = 1
-})
-
+  console.error(error);
+  process.exitCode = 1;
+});
 ```
 
 Now we're calling the `verifyContract` function and passing in the deployed contract address to verify it on celoscan.
