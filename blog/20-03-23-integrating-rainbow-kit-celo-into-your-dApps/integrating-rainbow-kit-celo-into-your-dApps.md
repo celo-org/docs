@@ -1,5 +1,5 @@
 ---
-title: Integrating Rainbow-Kit Celo into Your DApps 
+title: Integrating Rainbow-Kit Celo into Your DApps
 description: This sequel walks blockchain developers through the process of integrating the Rainbow-Kit Celo tool into their DApps for seamless financial operation and compatible wallet integration.
 authors:
   - name: Israel Okunaya
@@ -42,6 +42,7 @@ First, create a folder where the hardhat project and your Dapp will go. In your 
 mkdir inheritance-smartContract
 cd inheritance-smartContract
 ```
+
 Then in the inheritance-smartContract folder, we will set up a Hardhat project.
 
 ```bash
@@ -72,7 +73,7 @@ Once your project is set up, create a new file in the contract folder and name i
 pragma solidity >=0.8.2 <0.9.0;
 contract Will {
     address private owner;
-    address private _heir; 
+    address private _heir;
     bool private isAlive;
     event OwnerChanged(address newOwner);
     event ChangeHeir(address newHeir);
@@ -107,19 +108,19 @@ contract Will {
         recipient.transfer(amount);
         emit FundsTransferred(recipient, amount);
     }
-    
+
     function getOwner() public view returns (address) {
         return owner;
     }
-    
+
     function getHeir() public view returns (address) {
         return _heir;
     }
-    
+
     function getIsAlive() public view returns (bool) {
         return isAlive;
     }
-    
+
     receive() external payable {}
 }
 ```
@@ -136,7 +137,7 @@ The contract also has three functions to allow anyone to view the current owner,
 
 The contract also includes several events that get emitted whenever the owner, heir, status, or funds are changed, to allow for easy monitoring of changes to the contract.
 
-***Note: This is just a simple smart contract example, and a real-world will would likely have more complex logic to handle edge cases and to ensure that the contract is secure and reliable***.
+**_Note: This is just a simple smart contract example, and a real-world will would likely have more complex logic to handle edge cases and to ensure that the contract is secure and reliable_**.
 
 ## Configure Deployment
 
@@ -158,7 +159,6 @@ main()
     console.log(error);
     process.exit(1);
   });
-
 ```
 
 Now create a `.env` in the `will-contract` folder and add your `MNEMONIC` key in the .env file like this
@@ -179,8 +179,8 @@ Next, open the `hardhat.config.js` file and replace the content of the file prov
 
 ```jsx
 require("@nomiclabs/hardhat-waffle");
-require('dotenv').config({path: '.env'});
-require('hardhat-deploy');
+require("dotenv").config({ path: ".env" });
+require("hardhat-deploy");
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 // Prints the Celo accounts associated with the mnemonic in .env
@@ -197,13 +197,13 @@ module.exports = {
   defaultNetwork: "alfajores",
   networks: {
     localhost: {
-        url: "http://127.0.0.1:7545"
+      url: "http://127.0.0.1:7545",
     },
     alfajores: {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
       //chainId: 44787
     },
@@ -211,10 +211,10 @@ module.exports = {
       url: "https://forno.celo.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
-      chainId: 42220
-    },     
+      chainId: 42220,
+    },
   },
   solidity: "0.8.4",
 };
@@ -239,8 +239,8 @@ The content of the `hardhat.config.js` file should now look like this.
 
 ```jsx
 require("@nomiclabs/hardhat-waffle");
-require('dotenv').config({path: '.env'});
-require('hardhat-deploy');
+require("dotenv").config({ path: ".env" });
+require("hardhat-deploy");
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 // Prints the Celo accounts associated with the mnemonic in .env
@@ -257,7 +257,7 @@ module.exports = {
   defaultNetwork: "alfajores",
   networks: {
     localhost: {
-        url: "http://127.0.0.1:7545"
+      url: "http://127.0.0.1:7545",
     },
     alfajores: {
       gasPrice: 200000000000,
@@ -265,7 +265,7 @@ module.exports = {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
       //chainId: 44787
     },
@@ -273,10 +273,10 @@ module.exports = {
       url: "https://forno.celo.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
-      chainId: 42220
-    },     
+      chainId: 42220,
+    },
   },
   solidity: "0.8.4",
 };
@@ -343,14 +343,12 @@ in the tailwind.config.js file, copy and paste this code.
 ```jsx
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
 Then replace the content of the `index.css` file with the **`@tailwind`** directives for each of Tailwind’s layers.
@@ -360,6 +358,7 @@ Then replace the content of the `index.css` file with the **`@tailwind`** direct
 @tailwind components;
 @tailwind utilities;
 ```
+
 Now we will install [Rainbowkit-celo](https://docs.celo.org/developer/rainbowkit-celo). To install Rainbowkit-celo, open up your terminal pointing to the dapp folder and run
 
 ```bash
@@ -378,7 +377,7 @@ Next we will install `webjs` and `@celo/contractkit`. We will be using the contr
 yarn add web3 @celo/contractkit
 ```
 
-We will have to make further configurations to our project folder to enable us use `web` and `@celo/contractkit`  without errors or bugs. These configurations involve installing webpack and other dependencies. To install webpack, type these commands in your terminal. Make sure your terminal still points to the `dapp` folder you created earlier.
+We will have to make further configurations to our project folder to enable us use `web` and `@celo/contractkit` without errors or bugs. These configurations involve installing webpack and other dependencies. To install webpack, type these commands in your terminal. Make sure your terminal still points to the `dapp` folder you created earlier.
 
 ```bash
 yarn add --dev webpack
@@ -395,7 +394,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
   },
   node: {
-    net: 'empty',
+    net: "empty",
   },
 };
 ```
@@ -409,28 +408,29 @@ yarn add --dev react-app-rewired crypto-browserify stream-browserify assert stre
 Create `config-overrides.js` in the dapp folder with the content:
 
 ```jsx
-const webpack = require('webpack');
+const webpack = require("webpack");
 module.exports = function override(config) {
-    const fallback = config.resolve.fallback || {};
-    Object.assign(fallback, {
-        "crypto": require.resolve("crypto-browserify"),
-        "stream": require.resolve("stream-browserify"),
-        "assert": require.resolve("assert"),
-        "http": require.resolve("stream-http"),
-        "https": require.resolve("https-browserify"),
-        "os": require.resolve("os-browserify"),
-        "url": require.resolve("url")
-    })
-    config.resolve.fallback = fallback;
-    config.plugins = (config.plugins || []).concat([
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
-            Buffer: ['buffer', 'Buffer']
-        })
-    ])
-    return config;
-}
+  const fallback = config.resolve.fallback || {};
+  Object.assign(fallback, {
+    crypto: require.resolve("crypto-browserify"),
+    stream: require.resolve("stream-browserify"),
+    assert: require.resolve("assert"),
+    http: require.resolve("stream-http"),
+    https: require.resolve("https-browserify"),
+    os: require.resolve("os-browserify"),
+    url: require.resolve("url"),
+  });
+  config.resolve.fallback = fallback;
+  config.plugins = (config.plugins || []).concat([
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+      Buffer: ["buffer", "Buffer"],
+    }),
+  ]);
+  return config;
+};
 ```
+
 In the `package.json` file, change the scripts field for start, build, and test. Replace react-scripts with react-app-rewired:
 
 ```jsx
@@ -441,16 +441,20 @@ In the `package.json` file, change the scripts field for start, build, and test.
     "eject": "react-scripts eject"
 },
 ```
+
 Now go to your index.js file in the dapp folder and copy and import the follow dependencies.
 
 ```jsx
-import { RainbowKitProvider, connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  RainbowKitProvider,
+  connectorsForWallets,
+} from "@rainbow-me/rainbowkit";
 import {
   metaMaskWallet,
   omniWallet,
-  walletConnectWallet
-} from '@rainbow-me/rainbowkit/wallets';
-import {Valora, CeloWallet, CeloDance} from "@celo/rainbowkit-celo/wallets"
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import { Valora, CeloWallet, CeloDance } from "@celo/rainbowkit-celo/wallets";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
@@ -488,13 +492,13 @@ const wagmiClient = createClient({
 });
 ```
 
-Now wrap the `<App/>` component with the `RainbowkitProvider` and `WagmiConfig` 
+Now wrap the `<App/>` component with the `RainbowkitProvider` and `WagmiConfig`
 
 ```jsx
 <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
-        <App />
-      </RainbowKitProvider>
+  <RainbowKitProvider chains={chains}>
+    <App />
+  </RainbowKitProvider>
 </WagmiConfig>
 ```
 
@@ -506,13 +510,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { RainbowKitProvider, connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  RainbowKitProvider,
+  connectorsForWallets,
+} from "@rainbow-me/rainbowkit";
 import {
   metaMaskWallet,
   omniWallet,
-  walletConnectWallet
-} from '@rainbow-me/rainbowkit/wallets';
-import {Valora, CeloWallet, CeloDance} from "@celo/rainbowkit-celo/wallets"
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import { Valora, CeloWallet, CeloDance } from "@celo/rainbowkit-celo/wallets";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import celoGroups from "@celo/rainbowkit-celo/lists";
@@ -574,7 +581,7 @@ function App() {
   const { data: signer } = useSigner();
   const [address, setAddress] = useState("");
   const [displayValue, setDisplayValue] = useState();
-  const willContractAddress = "0x24B1525F0061CA0c91bE9f966c41C652A9a8D383" //The address of your own smart contract;
+  const willContractAddress = "0x24B1525F0061CA0c91bE9f966c41C652A9a8D383"; //The address of your own smart contract;
   useEffect(() => {
     const getAddress = async () => {
       if (signer) {
@@ -657,10 +664,16 @@ function App() {
           >
             Owner
           </button>
-          <button onClick={getHeir} className="bg-green-400 py-2 px-4 text-white rounded-lg">
+          <button
+            onClick={getHeir}
+            className="bg-green-400 py-2 px-4 text-white rounded-lg"
+          >
             Heir
           </button>
-          <button onClick={getStatus} className="bg-green-400 py-2 px-4 text-white rounded-lg">
+          <button
+            onClick={getStatus}
+            className="bg-green-400 py-2 px-4 text-white rounded-lg"
+          >
             Status
           </button>
           <button className="bg-red-600 py-2 px-4 text-white rounded-lg">
@@ -676,7 +689,7 @@ export default App;
 
 In the code above we have a UI that has the `ConnectButton` provided by `@rainbow-me/rainbowkit` rendered. This custom button allows us to connect to default crypto wallets provided by Celo and other crypto wallets .that support Celo.
 
-The `getOwner()`, `getHeir(`) and `getStatus()`  are functions that are called when a user clicks a particular button. These functions connect with the smart contract we created and deployed to call the various methods we created in the smart contract.
+The `getOwner()`, `getHeir(`) and `getStatus()` are functions that are called when a user clicks a particular button. These functions connect with the smart contract we created and deployed to call the various methods we created in the smart contract.
 
 Start up the React app by running this command in your terminal to view the Dapp
 
@@ -690,7 +703,6 @@ This is how the Dapp should look when the application opens
 
 ![image](https://user-images.githubusercontent.com/104994589/223736033-b77b2163-60bf-49b4-9aba-bb49ad2a3f2c.png)
 
-
 ## Conclusion
 
 So far, we have been able to create a smart contract Dapp using React. We created the UI enabling a user to connect their wallet to the Dapp using Rainbowkit-celo. We also connected with the smart contract we deployed from the Dapp and called some of the methods we created in the smart contract.
@@ -698,11 +710,11 @@ So far, we have been able to create a smart contract Dapp using React. We create
 ## Next Step
 
 If you wish to read more on rainbowkit and Rainbowkit-celo, check out these docs links:
-- [The Official Github Page of Rainbow-kit Celo](https://github.com/celo-org/rainbowkit-celo) 
+
+- [The Official Github Page of Rainbow-kit Celo](https://github.com/celo-org/rainbowkit-celo)
 - [Rainbow-kit Docs](https://www.rainbowkit.com/docs/introduction)
 - [Github Repo](https://github.com/J0shcodes/inheritance-smartContract)
 
 ## About the Author
 
 [Israel Okunaya](https://meetisraelokunaya.curious.page/) is an ace writer with a flair for simplifying complexities and a knack for storytelling. He leverages over four years of experience to meet the most demanding writing needs in different niches, especially food and travel, blockchain, and marketing. He sees blockchain as a fascinating yet tricky affair. So, he's given to simplifying its complexities with text and video tutorials.
-
