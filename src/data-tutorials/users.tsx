@@ -1117,6 +1117,14 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'How To Create And Deploy A Peer To Peer Lending And Borrowing Smart Contract On The Celo Blockchain',
+    description: 'In this tutorial, we will learn how to create a fully functional p2p lending and borrowing smart contract on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
