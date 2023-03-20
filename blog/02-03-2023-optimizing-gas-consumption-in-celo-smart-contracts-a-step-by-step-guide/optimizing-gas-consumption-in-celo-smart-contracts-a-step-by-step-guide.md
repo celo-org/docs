@@ -286,9 +286,6 @@ To solve this, we need to create `view` functions that return those values when 
 In your contract add:
 
 ```solidity
-
-
-...
     // View functions
     function getOwner() public view returns (address) {
         return i_owner;
