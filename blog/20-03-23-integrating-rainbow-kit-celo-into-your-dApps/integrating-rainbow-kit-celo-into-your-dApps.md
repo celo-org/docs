@@ -700,8 +700,9 @@ So far, we have been able to create a smart contract Dapp using React. We create
 If you wish to read more on rainbowkit and Rainbowkit-celo, check out these docs links:
 - [The Official Github Page of Rainbow-kit Celo](https://github.com/celo-org/rainbowkit-celo) 
 - [Rainbow-kit Docs](https://www.rainbowkit.com/docs/introduction)
-
+- [Github Repo](https://github.com/J0shcodes/inheritance-smartContract)
 
 ## About the Author
 
 [Israel Okunaya](https://meetisraelokunaya.curious.page/) is an ace writer with a flair for simplifying complexities and a knack for storytelling. He leverages over four years of experience to meet the most demanding writing needs in different niches, especially food and travel, blockchain, and marketing. He sees blockchain as a fascinating yet tricky affair. So, he's given to simplifying its complexities with text and video tutorials.
+
