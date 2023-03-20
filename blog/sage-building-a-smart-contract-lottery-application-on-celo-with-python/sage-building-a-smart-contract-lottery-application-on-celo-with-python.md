@@ -305,3 +305,4 @@ Here are some additional resources to help you learn more about smart contract d
 1. [Celo Developer Documentation](https://docs.celo.org/)
 2. [Solidity Documentation](https://solidity.readthedocs.io/)
 3. [Brownie Documentation](https://eth-brownie.readthedocs.io/en/stable/)
+4. [Github Repo](https://github.com/Divine572/lottery)
