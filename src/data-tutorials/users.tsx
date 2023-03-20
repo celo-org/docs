@@ -813,6 +813,13 @@ const Users: User[] = [
     tags: ['intermediate', 'celosage'],
   },
   {
+    title: 'How to Connect to a Node on Celo using Docker',
+    description: 'This tutorial teaches how to connect to a node on the celo blockchain using docker',
+    preview: require('./showcase/beginner/how-to-connect-to-a-node-on-celo-using-docker.png'),
+    website: 'blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker',
+    tags: ['celosage', 'celo', 'beginner', 'cli'], 
+  },
+  {
     title: 'Implementing an English Auction Contract in Solidity',
     description:
       'An English auction is ideal for selling NFTs because it gives all potential buyers a fair chance at placing bids until only one bidder with the highest bid is left.',
