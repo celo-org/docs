@@ -813,6 +813,15 @@ const Users: User[] = [
     tags: ['intermediate', 'celosage'],
   },
   {
+    title: 'Implementing an English Auction Contract in Solidity',
+    description:
+      'An English auction is ideal for selling NFTs because it gives all potential buyers a fair chance at placing bids until only one bidder with the highest bid is left.',
+    preview: require('./showcase/intermediate/implementing-an-english-auction-contract-in-solidity.png'),
+    website:
+      '/blog/tutorials/implementing-an-english-auction-contract-in-solidity',
+    tags: ['intermediate', 'celosage'],
+  },
+  {
     title: 'Product Discovery é a chave para criar produtos de NFT de sucesso no blockchain Celo',
     description: 'Aprenda como criar produtos de NFT de sucesso no blockchain Celo através de processos de product discovery',
     preview: require('./showcase/intermediate/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo.png'),
