@@ -1190,6 +1190,13 @@ const Users: User[] = [
     tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
   },
   {
+    title: 'How to Build a Seed Marketplace dApp using Celo, Solidity and Javascript',
+    description: 'Learn how to build a seed marketplace on the blockchain using Celo, Solidity and Javascript',
+    preview: require('./showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png'),
+    website: 'blog/tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript',
+    tags: ['celosage', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate', 'javascript'],
+  },
+  {
     title: 'How to write a multi-signatures contract on Celo using Hardhat | Part 1/2',
     description: 'Building a multi-signatures contract on Celo blockchain using Hardhat, multi-signatures are one of the best way to keep your crypto assets or ownership of your contracts safe and remove a central point of failure.',
     preview: require('./showcase/advanced/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2.png'),
