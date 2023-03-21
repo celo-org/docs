@@ -1118,6 +1118,13 @@ const Users: User[] = [
     website: 'https://learn.figment.io/tutorials/hello-mobile-dapp',
     tags: ['beginner', 'mobile', 'figment'],
   },
+    {
+    title: 'How to build an NFT marketplace with Next.js,ipfs,ether.js and Redux',
+    description: ' Learn how to build an nft marketplace with next.js as the framework,Ipfs for storage and Redux for state management and Hardhat for compiling',
+    preview: require('./showcase/intermediate/nft minter.png'),
+    website:'/blog/2023/03/22/How to build an NFT marketplace with Next.js,ipfs,ether.js and Redux',
+    tags: ["celosage","metamask","dacade", "mint","nextjs","nft","intermediate","ipfs"],
+  },
   {
     title: 'Deploy Celo Smart contracts with Remix IDE',
     description: 'Learn how to use Remix IDE for deploying Celo smart contracts',
