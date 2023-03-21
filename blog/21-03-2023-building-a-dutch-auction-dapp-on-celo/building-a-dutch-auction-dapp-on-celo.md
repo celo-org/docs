@@ -5,7 +5,7 @@ authors:
   - name: Nikhil Bhintade
     title: Technical Writer
     url: https://github.com/nikbhintde
-tags: [intermediate, erc721, hardhat, react, solidity]
+tags: [intermediate, erc721, hardhat, react, solidity, celosage]
 hide_table_of_contents: true
 slug: /tutorials/building-a-dutch-auction-dapp-on-celo
 ---

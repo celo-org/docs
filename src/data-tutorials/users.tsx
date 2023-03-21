@@ -1776,7 +1776,7 @@ const Users: User[] = [
     description: 'A comprehensive guide for understanding and building Dutch auction dapp on Celo.',
     preview: require('./showcase/intermediate/build-a-dutch-auction-dapp-on-celo.png'),
     website: '/blog/tutorials/building-a-dutch-auction-dapp-on-celo',
-    tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity'],
+    tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity', 'celosage'],
   },
 
   // Videos
