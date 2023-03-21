@@ -2,35 +2,31 @@
 title: Escrow service on Celo that holds funds until certain conditions are met
 description: This is an example of a smart contract where a guarantee can be defined between buyer and seller
 authors:
-- name: Ewerton Lopes
-  title: Founder of Guizo Studios
-  url: https://github.com/guizostudios
-  image_url: https://avatars.githubusercontent.com/u/97633823
+  - name: Ewerton Lopes
+    title: Founder of Guizo Studios
+    url: https://github.com/guizostudios
+    image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, solidity, developers, remix, celosage]
 hide_table_of_contents: true
 slug: /tutorials/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met
 ---
 
-
 ![header](../../src/data-tutorials/showcase/intermediate/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met.png)
-
 
 ## Prerequisite
 
 - The [Remix IDE](https://remix-project.org/) is an open-source web and desktop application for creating and deploying Smart Contracts. Originally created for Ethereum, it fosters a fast development cycle and has a rich set of plugins with intuitive GUIs. Remix is used for the entire journey of contract development and is a playground for learning and teaching EVM-compatible blockchains like Celo. Before starting this tutorial, see how [Build Smart Contract on Celo with Remix](https://docs.celo.org/blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix)
 
-
 ## Introduction
 
 The contract allows the buyer and seller to deposit funds into the contract. The contract then holds these funds until the end date specified in the contract. If the buyer or seller fulfills their obligations, they can withdraw the funds after the end date. If neither party fulfills their obligations, either the buyer or the seller can withdraw their deposit.
-
 
 ## Code
 
 Here are the steps to code this contract:
 
 1. Import the required packages
-This contract uses two external libraries: OpenZeppelin's ReentrancyGuard and SafeMath. These libraries provide additional functionality for our smart contract and prevent certain vulnerabilities that can occur while executing smart contracts.
+   This contract uses two external libraries: OpenZeppelin's ReentrancyGuard and SafeMath. These libraries provide additional functionality for our smart contract and prevent certain vulnerabilities that can occur while executing smart contracts.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -45,19 +41,19 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 The contract has several variables that you need to declare. Here's a list of them and their types:
 
--   seller: address payable
--   buyer: address payable
--   feeAddress: address payable
--   contractBalance: uint256
--   sellerBalance: uint256
--   buyerBalance: uint256
--   securityDeposit: uint256
--   sellerPreAgreementAmount: uint256
--   buyerPreAgreementAmount: uint256
--   endDate: uint256
--   daysForWithdrawal: uint256
--   transferFee: uint256
--   fee: uint256
+- seller: address payable
+- buyer: address payable
+- feeAddress: address payable
+- contractBalance: uint256
+- sellerBalance: uint256
+- buyerBalance: uint256
+- securityDeposit: uint256
+- sellerPreAgreementAmount: uint256
+- buyerPreAgreementAmount: uint256
+- endDate: uint256
+- daysForWithdrawal: uint256
+- transferFee: uint256
+- fee: uint256
 
 Here's how to declare them:
 
@@ -91,7 +87,7 @@ event Deposit(address indexed contractAddress, address indexed from, uint amount
 ```
 
 4. Declare the SafeMath
-The code using SafeMath for uint256; is importing the SafeMath library and applying it to the uint256 data type.
+   The code using SafeMath for uint256; is importing the SafeMath library and applying it to the uint256 data type.
 
 In Solidity, the uint256 data type is an unsigned integer that has a range of 0 to 2^256-1. This data type is commonly used for storing and manipulating large numbers, such as those involved in cryptocurrency transactions.
 
@@ -104,7 +100,7 @@ By using the SafeMath library, developers can avoid these errors and ensure that
 ```
 
 5. Create the constructor
-Create the constructor that will initialize the contract with the required parameters: addresses of the seller and buyer, the security deposit, pre-agreement amounts, end date, days for withdrawal, and the fee address
+   Create the constructor that will initialize the contract with the required parameters: addresses of the seller and buyer, the security deposit, pre-agreement amounts, end date, days for withdrawal, and the fee address
 
 ```solidity
 constructor(
@@ -130,7 +126,7 @@ constructor(
 ```
 
 6. Create the fallback and receive functions
-The fallback and receive functions allow the contract to accept funds. Here's how to create them:
+   The fallback and receive functions allow the contract to accept funds. Here's how to create them:
 
 ```solidity
 fallback() external payable {
@@ -143,7 +139,7 @@ receive() external payable {
 ```
 
 7. Create the deposit function
-The deposit function allows either the seller or buyer to deposit funds into the contract. Here's how to create it:
+   The deposit function allows either the seller or buyer to deposit funds into the contract. Here's how to create it:
 
 ```solidity
 function deposit(address _user) external payable {
@@ -159,7 +155,7 @@ function deposit(address _user) external payable {
 ```
 
 8. Withdraw
-Function for the buyer or seller to withdraw the money.
+   Function for the buyer or seller to withdraw the money.
 
 ```solidity
 function withdraw(address _user) external payable nonReentrant {
@@ -171,7 +167,7 @@ function withdraw(address _user) external payable nonReentrant {
             require (seller == _user, "You are not the seller");
             seller.transfer(address(this).balance.sub(fee));
             feeAddress.transfer(fee);
-        }        
+        }
         // The buyer didn't withdraw the balance. So he or she backed out of the deal
         else if  (buyerBalance > securityDeposit && block.timestamp > endDate + (daysForWithdrawal * 1 days)) {
             require (buyer == _user, "You are not the buyer");
@@ -194,7 +190,7 @@ function withdraw(address _user) external payable nonReentrant {
                     sellerBalance = 0;
                 }
         }
-  
+
     }
 
 ```
@@ -207,77 +203,79 @@ Here's a brief explanation of each function:
 
 - returnSeller() - This function returns the address of the seller in the contract.
 
-    ```solidity
-    function returnSeller() public view returns(address){
-        return seller;
-    }
-    ```
+  ```solidity
+  function returnSeller() public view returns(address){
+      return seller;
+  }
+  ```
 
 - returnBuyer() - This function returns the address of the buyer in the contract.
 
-    ```solidity
-    function returnBuyer() public view returns(address){
-        return buyer;
-    }
-    ```
+  ```solidity
+  function returnBuyer() public view returns(address){
+      return buyer;
+  }
+  ```
 
 - returnSellerBalance() - This function returns the current balance of the seller in the contract.
 
-    ```solidity
-    function returnSellerBalance() public view returns(uint){
-        return sellerBalance;
-    }
-    ```
+  ```solidity
+  function returnSellerBalance() public view returns(uint){
+      return sellerBalance;
+  }
+  ```
 
 - returnBuyerBalance() - This function returns the current balance of the buyer in the contract.
 
-    ```solidity
-    function returnBuyerBalance() public view returns(uint){
-        return buyerBalance;
-    }
-    ```
+  ```solidity
+  function returnBuyerBalance() public view returns(uint){
+      return buyerBalance;
+  }
+  ```
 
 - returnSecurityDeposit() - This function returns the security deposit amount stored in the contract.
 
-    ```solidity
-    function returnSecurityDeposit() public view returns(uint){
-        return securityDeposit;
-    }
-    ```
+  ```solidity
+  function returnSecurityDeposit() public view returns(uint){
+      return securityDeposit;
+  }
+  ```
 
 - returnSellerPreAgreementAmount() - This function returns the amount that the seller had agreed to before the contract was created.
 
-    ```solidity
-    function returnSellerPreAgreementAmount() public view returns(uint){
-        return sellerPreAgreementAmount;
-    }
-    ```
+  ```solidity
+  function returnSellerPreAgreementAmount() public view returns(uint){
+      return sellerPreAgreementAmount;
+  }
+  ```
 
 - returnBuyerPreAgreementAmount() - This function returns the amount that the buyer had agreed to before the contract was created.
 
-    ```solidity
-    function returnBuyerPreAgreementAmount() public view returns(uint){
-        return buyerPreAgreementAmount;
-    }
-    ```
+  ```solidity
+  function returnBuyerPreAgreementAmount() public view returns(uint){
+      return buyerPreAgreementAmount;
+  }
+  ```
 
 - returnEndDate() - This function returns the end date of the contract.
 
-    ```solidity
-    function returnEndDate() public view returns(uint){
-        return endDate;
-    }
-    ```
+  ```solidity
+  function returnEndDate() public view returns(uint){
+      return endDate;
+  }
+  ```
 
 - returnDaysForWithdrawal() - This function returns the number of days allowed for withdrawal after the contract is created.
 
-    ```solidity
-    function returnDaysForWithdrawal() public view returns(uint){
-        return daysForWithdrawal;
-    }
-    ```
+  ```solidity
+  function returnDaysForWithdrawal() public view returns(uint){
+      return daysForWithdrawal;
+  }
+  ```
 
 ## Full Code
+
+You can see the full code below or access it on [github](https://github.com/guizostudios/escrow-servoce-on-celo)
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -334,7 +332,7 @@ contract escrow is ReentrancyGuard {
           //Fallback function
     fallback () external payable {
         emit Deposit(address(this), msg.sender, msg.value);
-    } 
+    }
 
     //Receive function
     receive () external payable {
@@ -354,7 +352,7 @@ contract escrow is ReentrancyGuard {
         emit FundsDeposited(_user, msg.value);
     }
 
-   
+
 
     // Function for the buyer or seller to withdraw the security deposit
 
@@ -367,7 +365,7 @@ contract escrow is ReentrancyGuard {
             require (seller == _user, "You are not the seller");
             seller.transfer(address(this).balance.sub(fee));
             feeAddress.transfer(fee);
-        }        
+        }
         // The buyer didn't withdraw the balance. So he or she backed out of the deal
         else if  (buyerBalance > securityDeposit && block.timestamp > endDate + (daysForWithdrawal * 1 days)) {
             require (buyer == _user, "You are not the buyer");
@@ -390,10 +388,10 @@ contract escrow is ReentrancyGuard {
                     sellerBalance = 0;
                 }
         }
-  
+
     }
 
- 
+
     function returnSeller() public view returns(address){
         return seller;
     }
@@ -410,7 +408,7 @@ contract escrow is ReentrancyGuard {
         return buyerBalance;
     }
 
-    
+
     function returnSecurityDeposit() public view returns(uint){
         return securityDeposit;
     }
@@ -437,8 +435,6 @@ contract escrow is ReentrancyGuard {
 ## Next step
 
 As the next steps, I suggest you consult other Celo tutorials using Remix [here](https://docs.celo.org/tutorials?tags=remix).
-
-
 
 ## About the author
 
