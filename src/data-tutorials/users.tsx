@@ -1032,6 +1032,13 @@ const Users: User[] = [
     tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
   },
   {
+    title: 'Como conectar o seu dApp a Celo Blockchain com a Lava',
+    description: 'Aprenda como conectar seu dApp a rede de full nodes da Lava',
+    preview: require('./showcase/beginner/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava.png'),
+    website: 'blog/tutorials/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava',
+    tags: ['celosage', 'video', 'beginner', "celo", "react"],
+  },
+  {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
