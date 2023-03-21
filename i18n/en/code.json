@@ -1040,6 +1040,12 @@
   "home.section4.build.oracles.description": {
     "message": "Check out our on-chain Oracles"
   },
+  "home.section4.build.architecture.title": {
+    "message": "New to Web3?"
+  },
+  "home.section4.build.architecture.description": {
+    "message": "Start here! Understand the anatomy of a dApp (Web2 to Web3)"
+  },
   "home.section4.validators": {
     "message": "Validators"
   },
