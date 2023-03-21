@@ -488,4 +488,4 @@ I am a React frontend developer with over 3 years of experience building for the
 
 If you wish to read more on celo-composer and react-celo check out these docs: 
 - official github page of [celo-composer](https://github.com/celo-org/celo-composer)
--  [react-celo docs](https://docs.celo.org/developer/react-celo)
+- [react-celo docs](https://docs.celo.org/developer/react-celo)
