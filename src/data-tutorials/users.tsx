@@ -2457,6 +2457,13 @@ const Users: User[] = [
     website: "/blog/tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs.md",
     tags: ["advanced", "celosage", "celo", "tokens"],
   },
+  {
+    title: "Lazy Minting NFTs A Cost-Effective and Flexible Approach to NFT Creation",
+    description: "Lazy Minting NFTs offer a budget-friendly and adaptable way of creating NFTs without sacrificing quality or control. Simplify the process with ease.",
+    preview: require("./showcase/intermediate/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation.png"),
+    website: "/blog/tutorials/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation",
+    tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
