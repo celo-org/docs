@@ -1208,6 +1208,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
+    title: 'How to Build a Decentralized Job Board Dapp On The Celo Blockchain Part 1',
+    description: 'This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo'],
+  },
+  {
     title: 'Truffle and Celo | The Ultimate Guide to Deploy Celo dApps with Truffle',
     description: 'How to deploy a smart contract to Celo testnet, mainnet, or a local blockchain using Truffle.',
     preview: require('./showcase/beginner/the-ultimate-guide-to-deploy-dapps-using-truffle.png'),
