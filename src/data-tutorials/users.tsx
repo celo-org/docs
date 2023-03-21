@@ -1730,6 +1730,13 @@ const Users: User[] = [
     tags: ['intermediate', 'celo', 'celosage', 'javascript', 'hardhat', 'smartcontract', ],
   },
   {
+    title: 'Getting started with Celo Python SDK'
+    description: 'This article will provide a step-by-step guide on how to get started with Celo Python SDK.',
+    preview: require('./showcase/intermediate/celo-python-sdk.png'),
+    website: 'https://learn.figment.io/tutorials/getting-started-with-celo-python-SDK',
+    tags: ['intermediate', 'celo', 'celosage', 'solidity']
+  },
+  {
     title: 'Create Vault Smart Contract',
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
     preview: require('./showcase/advanced/create-a-vault-smart-contract.png'),
