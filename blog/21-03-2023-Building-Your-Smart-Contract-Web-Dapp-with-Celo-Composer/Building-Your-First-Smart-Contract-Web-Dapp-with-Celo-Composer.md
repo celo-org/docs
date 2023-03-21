@@ -75,7 +75,7 @@ Open the project folder you created in a code editor (Vs code). The content of t
 
 <img width="188" alt="project-folder-content" src="https://user-images.githubusercontent.com/71826391/226184289-c4cd4545-0b30-44b7-9349-ed8574ac871c.png">
 
-**In the packages folder, you should see a hardhat and react-app folder. The hardhat folder contains a hardhat-project with the necessary setup we need to create and deploy our simple smart contract. While the react-app folder houses the react starter files for our dApp.
+In the packages folder, you should see a hardhat and react-app folder. The hardhat folder contains a hardhat-project with the necessary setup we need to create and deploy our simple smart contract. While the react-app folder houses the react starter files for our dApp.
 
 In your terminal pointing at the root project folder, type this command to point your terminal to the packages folder.
 
