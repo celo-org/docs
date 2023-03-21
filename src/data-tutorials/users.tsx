@@ -2243,6 +2243,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'Building Your Smart Contract Web Dapp With Celo Composer',
+    description: 'Learn how to initialize a Hardhat and React project using Celo-composer.',
+    preview: require('./showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png'),
+    website: 'blog/tutorials/building-your-smart-contract-web-dapp-with-celo-composer',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'react', 'nextjs', 'smartcontract'], 
+  },
    {
     title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
     description: 'Learn hoe to build chat app on celo network using react-native and web3js',
