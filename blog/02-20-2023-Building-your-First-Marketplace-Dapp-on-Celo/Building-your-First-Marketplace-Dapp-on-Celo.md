@@ -11,9 +11,10 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png)
+![header](https://user-images.githubusercontent.com/61073753/226502958-5f68c4ea-7300-4bd6-8b55-8a5cfa0844cb.png)
 
-##Introduction​
+
+## Introduction​
 
 The purpose of this tutorial is to know how to build and deploy a simple full stack dApp (decentralized application) on the Celo blockchain using Solidity (SmartContract) and Javascript (Frontend).
 
@@ -24,7 +25,7 @@ One of the main features of Celo is its use of proof-of-stake (PoS) consensus, w
 
 Ethereum applications are built using smart contracts. Smart contracts are programs written in languages like Solidity that produce bytecode for the Ethereum Virtual Machine or EVM, a runtime environment. Programs encoded in smart contracts receive messages and manipulate the blockchain ledger and are termed on-chain.
 
-##Prerequisites​
+## Prerequisites​
 
 This tutorial exposes you on how to build a simple fullstack dApp (decentralized application) on the Celo network using Solidity (SmartContract) and Javascript (Frontend). In order for us to move further, you will need to have a basic understanding of the following:
 
@@ -34,7 +35,7 @@ This tutorial exposes you on how to build a simple fullstack dApp (decentralized
 - Basic knowledge of HTML and Javascript.
 - Basic understanding on the command line.
 
-##Requirements​
+## Requirements​
 
 - Access to a computer with internet connection and a chrome web browser.
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
@@ -44,7 +45,7 @@ This tutorial exposes you on how to build a simple fullstack dApp (decentralized
  Celo Extension Wallet. Click **[here](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)** to download.
 - A github account.
 
-##Getting Started
+## Getting Started
 
 Below is a preview of what we are going to build.
 
@@ -1802,11 +1803,11 @@ After building it successfully, you should have an HTML and JS file inside the d
 - Click on visit site. It might take a minute or two before the site will be ready.
 
 
-##Conclusion​
+## Conclusion​
 
 Congrats 🎉, you were able to build and deploy your fullstack dApp using Solidity and Javascript on the Celo blockchain.
 
-##Next Steps​
+## Next Steps​
 
 You can challenge yourself by adding more functions to your smart contract and implement them using Javascript. You can also look at various Celo smart contracts and see if you can build a dApp using javascript.
 
@@ -1814,11 +1815,11 @@ The source code of this project is hosted [here](https://github.com/SamsonAmos/A
 
 - [Live Demo](https://samsonamos.github.io/AgroCelo1/)
 
-##About the Author​
+## About the Author​
 
 Samson Amos is a web2 and a web3 developer who loves coding as well as teaching others. You can reach me out on Twitter [@SamsonAmoz](https://twitter.com/SamsonAmoz)
 
-##References​
+## References​
 
 - Dacade Tutorial [Link](https://dacade.org/communities/celo/courses/celo-development-101)
 - Decade Celo Github [boilerplate](https://github.com/dacadeorg/celo-boilerplate-web-dapp) 
