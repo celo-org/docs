@@ -178,7 +178,9 @@ function cancelAuction(uint256 _index) public exists(_index) {
 
  ```
  
- To get started, you should create a new file on Remix called `LandAuction.sol`. The process of creating a new file on Remix can be found in the documentation, which you can refer to for guidance.[(click here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
+You can follow or use this project as a reference to edit yours and get the required files, images e.t.c [by clicking this link](https://github.com/Ikanji201/LandAuction)
+ 
+To get started, you should create a new file on Remix called `LandAuction.sol`. The process of creating a new file on Remix can be found in the documentation, which you can refer to for guidance.[(click here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
 
 After successfully creating the new file, the following step would be to specify some statements in our smart contract.
 
