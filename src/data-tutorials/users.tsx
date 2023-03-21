@@ -1499,6 +1499,13 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage'],
   },
   {
+    title: 'Building Your Smart Contract Web Dapp with Celo-Composer',
+    description: 'Learn how to initialize a Hardhat and React project using Celo-composer.',
+    preview: require('./showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png'),
+    website: 'blog/tutorials//building-your-first-smart-contract-web-dapp-with-celo-composer',
+    tags: ['celo', 'intermediate', 'celosage', 'conposer', 'nextjs', 'smartcontract', 'react', 'solidity'],
+  },
+  {
     title: 'Exploring the Decentralized Identity Features of Celo',
     description: 'Discover the powerful decentralized identity capabilities of Celo, a blockchain platform that enables secure, fast, and affordable transactions.',
     preview: require('./showcase/advanced/did.png'),
