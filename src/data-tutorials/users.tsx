@@ -776,6 +776,13 @@ const Users: User[] = [
     tags: ['intermediate','solidity','smartcontract', 'celosage'],
   },
    {
+    title: 'Understanding Celos Approach to layer-2 scaling',
+    description: "An evaluation of rollups, sidechains and state channels",
+    preview: require('./showcase/intermediate/understanding-celos-approach-to-layer2.png'),
+    website: 'blog/tutorials/understanding-celos-approach-to-layer2-scaling',
+    tags: ['celo','intermediate','solidity','smartcontract','celosage'],
+  },
+   {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
