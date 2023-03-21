@@ -1,5 +1,5 @@
 ---
-title: Building an NFT Marketplace on Celo with Python 
+title: Building an NFT Marketplace on Celo with Python
 description: This tutorial provides a guide on how to use Python to build an NFT marketplace on the Celo blockchain
 
 authors:
@@ -33,20 +33,18 @@ You should have the following installed on your computer to follow along:
 - [Nodejs](https://nodejs.org/en/download/)
 - [Celo Testnet account](https://faucet.celo.org/)
 - [Celo Wallet](https://docs.celo.org/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo)
-- [Python-dotenv](https://pypi.org/project/python-dotenv/) 
+- [Python-dotenv](https://pypi.org/project/python-dotenv/)
 - [Ganache](https://trufflesuite.com/ganache/)
 - [Eth-brownie](https://eth-brownie.readthedocs.io/en/stable/install.html)
 
-
 ### Setting Up Project
-To get started, we have to create a new directory for our project and install the following dependencies:
 
+To get started, we have to create a new directory for our project and install the following dependencies:
 
 ```bash
 mkdir nft-marketplace
 cd nft-nft-marketplace
 ```
-
 
 ```bash
 # Create virtual environment
@@ -77,7 +75,6 @@ This command generates some folder which will look like this:
 After initializing brownie into our project, in your root directory, create two files called .env and brownie-config.yaml. The .env file is used to store environment variables that should not be exposed to the public such as our private key, mnemonic phrase, etc, while brownie-config.yaml is used to configure brownie in our project.
 
 .env
-
 
 ```bash
 MNEMONIC="..."
@@ -125,6 +122,7 @@ You can see the list of networs that have been added to our brownie project:
 ```bash
 brownie network list
 ```
+
 ![image](https://user-images.githubusercontent.com/104994589/225622515-bf69ebce-b3d9-4d38-b2a5-2dca80769694.png)
 
 ### Implementing the Smart Contract
@@ -213,7 +211,7 @@ import "./IERC721Receiver.sol";
 import "./SafeMath.sol";
 ```
 
-The above code specifies our solidity version and imports the IERC721, 
+The above code specifies our solidity version and imports the IERC721,
 IERC721Receiver, and SafeMath (for blockchain math operations) interfaces.
 
 ```solidity
@@ -227,7 +225,6 @@ using SafeMath for uint256;
       bool active;
   }
 ```
-
 
 Enables us to use the SafeMath foe uint256 tyoe operations and the Auction struct defines the structure of the Auction.
 
@@ -253,7 +250,6 @@ event AuctionCreated(
     );
 ```
 
-
 These are the eents that are emitted when an auction is creares and ended.
 
 ```solidity
@@ -262,6 +258,7 @@ constructor() {
         feePercentage = 1; // 1% fee by default
     }
 ```
+
 This sets the owner of the contract and the default fee (in percentage).
 
 ```solidity
@@ -288,7 +285,7 @@ function createAuction(address _tokenAddress, uint256 _tokenId, uint256 _price, 
         seller.transfer(price.sub(fee));
         emit AuctionEnded(_tokenAddress, _tokenId, msg.sender, price);
     }
-    
+
 ```
 
 The `createAuction` function creates a new auction and the `endAuction` ends an active auction.
@@ -308,7 +305,6 @@ function setFeePercentage(uint256 _feePercentage) public {
 
 The setFeePercentage functino sets the percentage fee for the contract and the withdraw function enables the creator of the contract to withdraw the fund from it.
 
-
 ```solidity
 // fallback function
   receive() external payable {}
@@ -323,6 +319,7 @@ Next, we need to compile and deploy the contract on the Celo Testnet, Run the fo
 ```bash
 brownie compile
 ```
+
 ![image](https://user-images.githubusercontent.com/104994589/225622811-cb77d910-9c29-42a1-a8d0-3b30cd829aa1.png)
 
 To deploy the smart contract on Celo create a new file called deploy.py in the scripts directory of your project.
@@ -355,13 +352,11 @@ brownie run scripts/deploy.py --network celo-alfajores
 
 ![image](https://user-images.githubusercontent.com/104994589/225623002-ca2f848f-8e28-4129-8b21-92fb8576d034.png)
 
-
 ## Conclusion
 
 In this tutorial we implemented an NFT smart contract that allows users to create and participate in ERC721 token auctions. The contract charges a fee for each sale, which is determined by the contract's owner. When an auction concludes, the winning bidder receives the NFT, while the seller receives the sale price less the fee. The contract also gives the owner the option to withdraw funds from the contract.
 
-We have learned how to implement an NFT exchange on Celo using brownie in  Python. We explored topics such as the basics of setting up a development environment, creating a smart contract and finally compiling and deploying the contract on Celo Testnet or Afrajores.
-
+We have learned how to implement an NFT exchange on Celo using brownie in Python. We explored topics such as the basics of setting up a development environment, creating a smart contract and finally compiling and deploying the contract on Celo Testnet or Afrajores.
 
 ## Next Step
 
