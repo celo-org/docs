@@ -2,9 +2,9 @@
 title: Building A Dutch Auction Dapp on Celo
 description: A comprehensive guide for understanding and building Dutch auction dapp on Celo.
 authors:
-- name: Nikhil Bhintade
-  title: Technical Writer
-  url: https://github.com/nikbhintde
+  - name: Nikhil Bhintade
+    title: Technical Writer
+    url: https://github.com/nikbhintde
 tags: [intermediate, erc721, hardhat, react, solidity]
 hide_table_of_contents: true
 slug: /tutorials/building-a-dutch-auction-dapp-on-celo
@@ -249,17 +249,17 @@ To begin, we import necessary dependencies and create a **`describe`** block con
 
 ```js
 const {
-	days,
+  days,
 } = require("@nomicfoundation/hardhat-network-helpers/dist/src/helpers/time/duration");
 const {
-	loadFixture,
-	time,
+  loadFixture,
+  time,
 } = require("@nomicfoundation/hardhat-network-helpers");
 const { expect } = require("chai");
 const hre = require("hardhat");
 
 describe("Dutch Auction", async () => {
-	const deployFixture = async () => {};
+  const deployFixture = async () => {};
 });
 ```
 
@@ -268,72 +268,68 @@ We need to define the **`deployFixture`** function first. The fixture will deplo
 After creating the smart contracts, we will return instances of both the contracts and the two dummy addresses.
 
 ```js
-    const deployFixture = async () => {
-		const [owner, buyer] = await hre.ethers.getSigners();
-		let nft;
+const deployFixture = async () => {
+  const [owner, buyer] = await hre.ethers.getSigners();
+  let nft;
 
-		try {
-			const NFT = await hre.ethers.getContractFactory("NFT");
-			nft = await NFT.deploy();
+  try {
+    const NFT = await hre.ethers.getContractFactory("NFT");
+    nft = await NFT.deploy();
 
-			await nft.deployed();
-			await nft.awardItem(
-				owner.address,
-				"https://gist.githubusercontent.com/nikbhintade/97994377f414de00809dad098ca57bf2/raw/117c9db714b13425116c2496ed0b237e7c88d83b/nft.json"
-			);
-		} catch (err) {
-			console.log(err);
-		}
+    await nft.deployed();
+    await nft.awardItem(
+      owner.address,
+      "https://gist.githubusercontent.com/nikbhintade/97994377f414de00809dad098ca57bf2/raw/117c9db714b13425116c2496ed0b237e7c88d83b/nft.json"
+    );
+  } catch (err) {
+    console.log(err);
+  }
 
-		let dutchauction;
+  let dutchauction;
 
-		try {
-			const DutchAuction = await hre.ethers.getContractFactory(
-				"DutchAuction"
-			);
-			dutchauction = await DutchAuction.deploy(nft.address, 0);
+  try {
+    const DutchAuction = await hre.ethers.getContractFactory("DutchAuction");
+    dutchauction = await DutchAuction.deploy(nft.address, 0);
 
-			await dutchauction.deployed();
-		} catch (err) {
-			console.log(err);
-		}
+    await dutchauction.deployed();
+  } catch (err) {
+    console.log(err);
+  }
 
-		await nft.approve(dutchauction.address, 0);
-		return { dutchauction, nft, owner, buyer };
-	};
+  await nft.approve(dutchauction.address, 0);
+  return { dutchauction, nft, owner, buyer };
+};
 ```
 
 Our first test will check if the contracts are deployed correctly by verifying that the variables we set from the constructor have the expected values and that the auction contract is approved as an operator for the NFT being auctioned.
 
 ```js
-	it("should deploy contract set using correct parameters", async () => {
-		const { dutchauction, nft } = await loadFixture(deployFixture);
+it("should deploy contract set using correct parameters", async () => {
+  const { dutchauction, nft } = await loadFixture(deployFixture);
 
-		expect(await dutchauction.id()).to.be.equal(0);
-		expect(await dutchauction.startTime()).to.be.equal(
-			(await time.latest()) - 1
-		);
-		expect(await dutchauction.nft()).to.be.equal(nft.address);
+  expect(await dutchauction.id()).to.be.equal(0);
+  expect(await dutchauction.startTime()).to.be.equal((await time.latest()) - 1);
+  expect(await dutchauction.nft()).to.be.equal(nft.address);
 
-		expect(await nft.getApproved(0)).to.be.equal(dutchauction.address);
-	});
+  expect(await nft.getApproved(0)).to.be.equal(dutchauction.address);
+});
 ```
 
 We have learned about how the contract calculates the current price. Now, we will test if it accurately calculates the current price in the following test:
 
 ```js
-	it("should return the correct price", async () => {
-		const { dutchauction } = await loadFixture(deployFixture);
-	
-		const DISCOUNT_RATE = await dutchauction.discountRate();
-		const INITIAL_PRICE = await dutchauction.initialPrice();
-	
-		await time.increase(3600 - 1);
-	
-		const PRICE = hre.ethers.BigNumber.from(3600).mul(DISCOUNT_RATE);
-	
-		expect(await dutchauction.getPrice()).to.be.equal(INITIAL_PRICE.sub(PRICE));
-	});
+it("should return the correct price", async () => {
+  const { dutchauction } = await loadFixture(deployFixture);
+
+  const DISCOUNT_RATE = await dutchauction.discountRate();
+  const INITIAL_PRICE = await dutchauction.initialPrice();
+
+  await time.increase(3600 - 1);
+
+  const PRICE = hre.ethers.BigNumber.from(3600).mul(DISCOUNT_RATE);
+
+  expect(await dutchauction.getPrice()).to.be.equal(INITIAL_PRICE.sub(PRICE));
+});
 ```
 
 This test ensures that the **`getPrice()`** function accurately returns the current price by comparing the expected price, calculated based on the discount rate and initial price, with the actual price returned by the function.
@@ -341,35 +337,33 @@ This test ensures that the **`getPrice()`** function accurately returns the curr
 Next, let's test if the buy functionality works as expected. The expected behavior is that if a buyer buys the NFT at the current price, then the NFT will be transferred to the buyer's wallet. To test this, we will check if the **`Transfer`** event is emitted from the NFT contract with the correct arguments. The test code is as follows:
 
 ```js
-	it("should allow the buying of the NFT", async () => {
-		const { dutchauction, nft, buyer } = await loadFixture(deployFixture);
+it("should allow the buying of the NFT", async () => {
+  const { dutchauction, nft, buyer } = await loadFixture(deployFixture);
 
-		await time.increase(3600 - 1);
-		const PRICE = await dutchauction.getPrice();
+  await time.increase(3600 - 1);
+  const PRICE = await dutchauction.getPrice();
 
-		expect(await dutchauction.connect(buyer).buy({ value: PRICE }))
-			.to.emit(nft, "Transfer")
-			.withArgs(dutchauction.address, buyer.address, 0);
-	});
+  expect(await dutchauction.connect(buyer).buy({ value: PRICE }))
+    .to.emit(nft, "Transfer")
+    .withArgs(dutchauction.address, buyer.address, 0);
+});
 ```
 
 The **`buy()`** function also includes a refund option that refunds the buyer if they paid more than the current price. To test this functionality, we will send more ether than the current price and check if the balance of the smart contract is equal to the current price of the NFT, as the remaining amount will be refunded to the buyer. The test code is as follows:
 
 ```js
-	it("should refund the extra amount", async () => {
-		const { dutchauction, buyer } = await loadFixture(deployFixture);
+it("should refund the extra amount", async () => {
+  const { dutchauction, buyer } = await loadFixture(deployFixture);
 
-		await time.increase(3600);
+  await time.increase(3600);
 
-		await dutchauction
-			.connect(buyer)
-			.buy({ value: "999999999999999999999" });
-		const PRICE = await dutchauction.getPrice();
+  await dutchauction.connect(buyer).buy({ value: "999999999999999999999" });
+  const PRICE = await dutchauction.getPrice();
 
-		expect(
-			await hre.ethers.provider.getBalance(dutchauction.address)
-		).to.be.equal(hre.ethers.BigNumber.from(PRICE));
-	});
+  expect(
+    await hre.ethers.provider.getBalance(dutchauction.address)
+  ).to.be.equal(hre.ethers.BigNumber.from(PRICE));
+});
 ```
 
 The above test checks if the extra amount paid is refunded to the buyer by comparing the balance of the smart contract to the current price of the NFT.
@@ -377,31 +371,31 @@ The above test checks if the extra amount paid is refunded to the buyer by compa
 Next, let's test if the smart contract restricts the buying of the NFT after the end of the auction. To test this, we will increase the timestamp by 7 days and then call the **`buy()`** function. It should revert with the reason "Auction ended". The test code is as follows:
 
 ```js
-	it("should not allow buying after the auction ends", async () => {
-		const { dutchauction, buyer } = await loadFixture(deployFixture);
+it("should not allow buying after the auction ends", async () => {
+  const { dutchauction, buyer } = await loadFixture(deployFixture);
 
-		await time.increase(days(7));
+  await time.increase(days(7));
 
-		const PRICE = await dutchauction.getPrice();
-		await expect(
-			dutchauction.connect(buyer).buy({ value: PRICE })
-		).to.revertedWith("Auction ended");
-	});
+  const PRICE = await dutchauction.getPrice();
+  await expect(
+    dutchauction.connect(buyer).buy({ value: PRICE })
+  ).to.revertedWith("Auction ended");
+});
 ```
 
 We also need to test if the buyer can only buy the NFT at the current price or higher. To test this, we'll pay less than the current price and check if the function reverts with the reason "ETH < price". Here's the code:
 
 ```js
-	it("should not allow buying if less price is paid", async () => {
-		const { dutchauction, buyer } = await loadFixture(deployFixture);
+it("should not allow buying if less price is paid", async () => {
+  const { dutchauction, buyer } = await loadFixture(deployFixture);
 
-		await time.increase(3600);
+  await time.increase(3600);
 
-		const PRICE = await dutchauction.getPrice();
-		await expect(
-			dutchauction.connect(buyer).buy({ value: PRICE.sub(1000) })
-		).to.be.revertedWith("ETH < price");
-	});
+  const PRICE = await dutchauction.getPrice();
+  await expect(
+    dutchauction.connect(buyer).buy({ value: PRICE.sub(1000) })
+  ).to.be.revertedWith("ETH < price");
+});
 ```
 
 With these tests, we have covered most of the contract. We can now set up our project to see the code coverage. To set up the **`solidity-coverage`** plugin, we just need to import it in **`hardhat.config.js`**.
@@ -433,21 +427,21 @@ require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-	solidity: "0.8.17",
-	defaultNetwork: "hardhat",
-	networks: {
-		hardhat: {},
-		alfajores: {
-			url: "https://alfajores-forno.celo-testnet.org",
-			accounts: [process.env.PRIVATE_KEY],
-			chainId: 44787,
-		},
-		celo: {
-			url: "https://forno.celo.org",
-			accounts: [process.env.PRIVATE_KEY],
-			chainId: 42220,
-		},
-	},
+  solidity: "0.8.17",
+  defaultNetwork: "hardhat",
+  networks: {
+    hardhat: {},
+    alfajores: {
+      url: "https://alfajores-forno.celo-testnet.org",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 44787,
+    },
+    celo: {
+      url: "https://forno.celo.org",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 42220,
+    },
+  },
 };
 ```
 
@@ -457,36 +451,36 @@ We have configured our project to deploy to the Alfajores testnet. To deploy bot
 const hre = require("hardhat");
 
 async function main() {
-	const deployer = await hre.ethers.getSigner();
-	console.log(deployer.address);
+  const deployer = await hre.ethers.getSigner();
+  console.log(deployer.address);
 
-	const NFT = await hre.ethers.getContractFactory("NFT");
-	const nft = await NFT.deploy();
-	await nft.deployed();
+  const NFT = await hre.ethers.getContractFactory("NFT");
+  const nft = await NFT.deploy();
+  await nft.deployed();
 
-	console.log(`NFT contract address is ${nft.address}`);
+  console.log(`NFT contract address is ${nft.address}`);
 
-	const mintTxn = await nft.awardItem(
-		deployer.address,
-		"https://gist.githubusercontent.com/nikbhintade/97994377f414de00809dad098ca57bf2/raw/137da789cb4ba9710db60439c27e9c36deeee555/nft.json"
-	);
-	await mintTxn.wait();
+  const mintTxn = await nft.awardItem(
+    deployer.address,
+    "https://gist.githubusercontent.com/nikbhintade/97994377f414de00809dad098ca57bf2/raw/137da789cb4ba9710db60439c27e9c36deeee555/nft.json"
+  );
+  await mintTxn.wait();
 
-	const DutchAuction = await hre.ethers.getContractFactory("DutchAuction");
-	const dutchAuction = await DutchAuction.deploy(nft.address, 0);
-	await dutchAuction.deployed();
+  const DutchAuction = await hre.ethers.getContractFactory("DutchAuction");
+  const dutchAuction = await DutchAuction.deploy(nft.address, 0);
+  await dutchAuction.deployed();
 
-	console.log(`Dutch Auction contract is ${dutchAuction.address}`);
+  console.log(`Dutch Auction contract is ${dutchAuction.address}`);
 
-	const approvalTxn = await nft.approve(dutchAuction.address, 0);
-	await approvalTxn.wait();
+  const approvalTxn = await nft.approve(dutchAuction.address, 0);
+  await approvalTxn.wait();
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {
-	console.error(error);
-	process.exitCode = 1;
+  console.error(error);
+  process.exitCode = 1;
 });
 ```
 
@@ -503,7 +497,8 @@ You will see an output similar to the following:
 ![Deployment output](./images/deployment.png)
 
 ## Creating The Web App
-As we have tested and deployed our smart contract, we can proceed with building the web app. To create the web app, we need the contract ABI. We have generated the ABI while deployed contracts. Copy the `DutchAuction.json` and `NFT.json` from the  `artifacts/contracts/DutchAuction.sol` and `artifacts/contracts/NFT.sol` directory to  `frontend/src`.
+
+As we have tested and deployed our smart contract, we can proceed with building the web app. To create the web app, we need the contract ABI. We have generated the ABI while deployed contracts. Copy the `DutchAuction.json` and `NFT.json` from the `artifacts/contracts/DutchAuction.sol` and `artifacts/contracts/NFT.sol` directory to `frontend/src`.
 
 To start building the web app, open the `App.js` file in the `frontend/src` directory and paste the following code snippet. It creates the basic structure of the web app:
 
@@ -520,65 +515,65 @@ import "react-toastify/dist/ReactToastify.css";
 const CONTRACTADDRESS = "0x60b9752bF3e616f4Aa40e12cdB6B615fe5e14807";
 
 function App() {
-    const [state, setState] = useState({
-        contract: undefined,
-        address: "",
-        metadata: {},
-        sold: false,
-    });
-    const [price, setPrice] = useState();
+  const [state, setState] = useState({
+    contract: undefined,
+    address: "",
+    metadata: {},
+    sold: false,
+  });
+  const [price, setPrice] = useState();
 
-    // connect to wallet
-    const connect = async () => { };
+  // connect to wallet
+  const connect = async () => {};
 
-    const buy = async () => { };
+  const buy = async () => {};
 
-    return (
-        <div className="App">
-            <nav>
-                <p>Dutch Auction</p>
-                <button onClick={connect}>
-                    {state.address ? `${state.address}` : "Connect"}
-                </button>
-            </nav>
+  return (
+    <div className="App">
+      <nav>
+        <p>Dutch Auction</p>
+        <button onClick={connect}>
+          {state.address ? `${state.address}` : "Connect"}
+        </button>
+      </nav>
 
-            {state.address ? (
-                <div className="container">
-                    <div>
-                        <img
-                            id="nft"
-                            src={state.metadata.image}
-                            alt={state.metadata.description}
-                        />
-                    </div>
-
-                    <div className="buy">
-                        <h2>{state.metadata.name}</h2>
-                        <h4>{price}</h4>
-                        <button onClick={buy} disabled={state.sold}>
-                            {state.sold ? "NFT Sold" : "Buy Now!"}
-                        </button>
-                    </div>
-                </div>
-            ) : (
-                <h2>Not connected</h2>
-            )}
-
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeButton={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
+      {state.address ? (
+        <div className="container">
+          <div>
+            <img
+              id="nft"
+              src={state.metadata.image}
+              alt={state.metadata.description}
             />
+          </div>
+
+          <div className="buy">
+            <h2>{state.metadata.name}</h2>
+            <h4>{price}</h4>
+            <button onClick={buy} disabled={state.sold}>
+              {state.sold ? "NFT Sold" : "Buy Now!"}
+            </button>
+          </div>
         </div>
-    );
+      ) : (
+        <h2>Not connected</h2>
+      )}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeButton={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </div>
+  );
 }
 
 export default App;
@@ -609,68 +604,68 @@ The `connect` function is responsible for connecting a wallet to a web applicati
 The function retrieves information from the `sold`, `nft`, and `id` variables of the auction smart contract. After retrieving this information, it uses the `nft` and `id` variables to get metadata information from the NFT contract. Finally, it stores all the necessary data in the state using the `setState` function. If an error occurs during any of these steps, the function displays an error message using the `toast` library.
 
 ```js
-	const connect = async () => {
-		try {
-			const { ethereum } = window;
-			if (!ethereum) {
-				console.error("Install any Celo wallet");
-				return toast.error("No wallet installed!");
-			}
+const connect = async () => {
+  try {
+    const { ethereum } = window;
+    if (!ethereum) {
+      console.error("Install any Celo wallet");
+      return toast.error("No wallet installed!");
+    }
 
-			const provider = new ethers.providers.Web3Provider(ethereum);
-			const accounts = await provider.send("eth_requestAccounts", []);
-			const account = accounts[0];
+    const provider = new ethers.providers.Web3Provider(ethereum);
+    const accounts = await provider.send("eth_requestAccounts", []);
+    const account = accounts[0];
 
-			const signer = provider.getSigner();
-			const auction = new ethers.Contract(
-				CONTRACTADDRESS,
-				DutchAuction.abi,
-				signer
-			);
+    const signer = provider.getSigner();
+    const auction = new ethers.Contract(
+      CONTRACTADDRESS,
+      DutchAuction.abi,
+      signer
+    );
 
-			const [sold, nftAddress, id] = await Promise.all([
-				auction.sold(),
-				auction.nft(),
-				auction.id(),
-			]);
+    const [sold, nftAddress, id] = await Promise.all([
+      auction.sold(),
+      auction.nft(),
+      auction.id(),
+    ]);
 
-			const nft = new ethers.Contract(nftAddress, NFT.abi, signer);
-			const metadata = await fetch(await nft.tokenURI(id)).then((res) =>
-				res.json()
-			);
+    const nft = new ethers.Contract(nftAddress, NFT.abi, signer);
+    const metadata = await fetch(await nft.tokenURI(id)).then((res) =>
+      res.json()
+    );
 
-			setState({
-				contract: auction,
-				address: `${account.slice(0, 5)}...${account.slice(-5)}`,
-				metadata,
-				sold,
-			});
-		} catch (error) {
-			toast.error(error.reason);
-		}
-	};
+    setState({
+      contract: auction,
+      address: `${account.slice(0, 5)}...${account.slice(-5)}`,
+      metadata,
+      sold,
+    });
+  } catch (error) {
+    toast.error(error.reason);
+  }
+};
 ```
 
 We can write a `buy` function that enables users to purchase an NFT from an auction at its current price. The function begins by retrieving the current price of the NFT and invoking the smart contract's buy function with the appropriate amount. If the transaction is successful, a toast notification will appear. We then call the function again to check the NFT's sold status and save it in the application's state. In case of any errors during any of these steps, the function employs the `toast` library to display an error message.
 
 ```jsx
-	const buy = async () => {
-		try {
-			const _price = await state.contract.getPrice();
-			const buyTxn = await state.contract.buy({
-				value: ethers.utils.parseEther(_price),
-			});
-			await toast.promise(buyTxn.wait(), {
-				pending: "transaction executing",
-				success: "NFT bought",
-			});
-			const isSold = await state.contract.sold();
-			setState({ ...state, sold: isSold });
-		} catch (error) {
-			console.error(error);
-			toast.error(error.data?.message || error.message);
-		}
-	};
+const buy = async () => {
+  try {
+    const _price = await state.contract.getPrice();
+    const buyTxn = await state.contract.buy({
+      value: ethers.utils.parseEther(_price),
+    });
+    await toast.promise(buyTxn.wait(), {
+      pending: "transaction executing",
+      success: "NFT bought",
+    });
+    const isSold = await state.contract.sold();
+    setState({ ...state, sold: isSold });
+  } catch (error) {
+    console.error(error);
+    toast.error(error.data?.message || error.message);
+  }
+};
 ```
 
 To ensure that the price is consistently updated, we will use the **`useEffect`** hook and create a **`getPrice`** function. We will make **`state.contract`** a dependency of the **`useEffect`** hook to ensure that it is triggered whenever the state changes.
@@ -680,96 +675,95 @@ In the **`useEffect`** hook, we will first define the **`getPrice`** function. T
 Finally, we will include a **`clearInterval`** method in the **`return`** statement to clear the interval.
 
 ```js
-	useEffect(() => {
-		const getPrice = async () => {
-			console.log("hit");
-			if (state.contract !== undefined) {
-				try {
-					const price = await state.contract.getPrice();
-					setPrice(ethers.utils.formatEther(price));
-				} catch (e) {
-					console.log(e);
-				}
-			}
-		};
-		let interval;
-		if (state.contract !== undefined) {
-			interval = setInterval(() => {
-				getPrice();
-			}, 5000);
-		}
+useEffect(() => {
+  const getPrice = async () => {
+    console.log("hit");
+    if (state.contract !== undefined) {
+      try {
+        const price = await state.contract.getPrice();
+        setPrice(ethers.utils.formatEther(price));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+  let interval;
+  if (state.contract !== undefined) {
+    interval = setInterval(() => {
+      getPrice();
+    }, 5000);
+  }
 
-		return () => {
-			if (interval) {
-				clearInterval(interval);
-			}
-		};
-	}, [state.contract]);
+  return () => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  };
+}, [state.contract]);
 ```
 
 We have finished implementing the functionality of our application. To add styling to our application, please copy and paste the following CSS code into the **`app.css`** file:
 
 ```css
 * {
-	font-size: 14px;
-	
+  font-size: 14px;
 }
 
 body {
-    margin: 0;
-    font-family: "Martel", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #C5D0DD;
+  margin: 0;
+  font-family: "Martel", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #c5d0dd;
 }
 
 .App {
-    text-align: center;
+  text-align: center;
 }
 
 nav {
-    font-family: "Karla";
-	font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 30px;
+  font-family: "Karla";
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 30px;
 }
 nav > p {
-    font-size: 25px;
-    font-weight: 700;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 button {
-	background-color: #FDA5A4;
-	font-family: "Karla";
-    padding: 10px 30px;
-    border-style: none;
-	font-weight: 700;
-    cursor: pointer;
+  background-color: #fda5a4;
+  font-family: "Karla";
+  padding: 10px 30px;
+  border-style: none;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    padding: 5% 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  padding: 5% 10%;
 }
-.buy{
-    padding-top: 5%;
-    text-align: left;
+.buy {
+  padding-top: 5%;
+  text-align: left;
 }
 
 #nft {
-    width: 75%;
+  width: 75%;
 }
 
 h2 {
-    font-family: "Karla";
-	font-weight: 700;
-    font-size: 25px;
+  font-family: "Karla";
+  font-weight: 700;
+  font-size: 25px;
 }
 ```
 
