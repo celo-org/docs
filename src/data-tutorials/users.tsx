@@ -770,10 +770,10 @@ const Users: User[] = [
   },
   {
     title: 'Understanding Celos Approach to layer-2 scaling',
-    description: "An evaluation of rolllups,sidechains and state channels",
+    description: "An evaluation of rollups, sidechains and state channels",
     preview: require('./showcase/intermediate/understanding-celos-approach-to-layer2.png'),
     website: 'blog/tutorials/understanding-celos-approach-to-layer2-scaling',
-    tags: ['intermediate',,'solidity','smartcontract'],
+    tags: ['celo','intermediate','solidity','smartcontract','celosage'],
   },
    {
     title: 'Introducing Celo Sage',
