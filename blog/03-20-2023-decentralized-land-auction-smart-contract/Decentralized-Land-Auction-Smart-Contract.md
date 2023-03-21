@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/Decentralized-land-auction-smart-contract
 ---
 
+![Decentralize-land-auction-smart-contract](https://user-images.githubusercontent.com/115812158/226502025-95249a25-e909-45df-a0d2-642011d18cbb.png)
+
 
 ### Introduction
 
