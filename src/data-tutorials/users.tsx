@@ -914,6 +914,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
   {
+    title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
+    description: 'This tutorial will guide you through the step-by-step process of setting up Hardhat, creating a smart contract and automating the verification process on Celoscan on every deployment.',
+    preview: require('./showcase/intermediate/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment.png'),
+    website: '/blog/tutorials/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment',
+    tags: ['celosage', 'celo', 'intermediate', 'hardhat', 'solidity', 'smartcontract'],
+  },
+  {
     title: 'Build a Scan-to-Pay Shareable Link dApp on Celo',
     description: 'Learn how to build a dApp on the Celo blockchain that enables users to quickly and easily make payments using a simple scan-to-pay feature.',
     preview: require('./showcase/intermediate/build-a-scan-to-pay-shareable-link-dapp-on-celo.png'),
