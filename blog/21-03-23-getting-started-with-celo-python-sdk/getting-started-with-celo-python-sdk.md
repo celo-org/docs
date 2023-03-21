@@ -1,10 +1,10 @@
 ---
-title: Getting started with Celo Python SDK.
+title: Getting started with Celo Python SDK
 description: This article will provide a step-by-step guide on how to get started with Celo Python SDK.
 authors:
   - name: ✍️ Mayowa Julius Ogungbola
-url: https://github.com/Julius170/
-image_url: https://avatars.githubusercontent.com/u/69092079?v=4
+    url: https://github.com/Julius170/
+    image_url: https://avatars.githubusercontent.com/u/69092079?v=4
 tags: [celosage, solidity, celo, intermediate]
 hide_table_of_contents: true
 slug: "/tutorials/getting-started-with-celo-python-SDK"
@@ -16,10 +16,10 @@ slug: "/tutorials/getting-started-with-celo-python-SDK"
 
 Celo is a decentralized blockchain platform that enables users to create mobile-based decentralized applications that can be used to send and receive payments, as well as access other decentralized finance (DeFi) tools. To interact with the Celo blockchain, developers can use various software development kits (SDKs), one of which is the Python SDK. This SDK provides a convenient way for Python developers to interact with the celo blockchain by creating applications.
 
-
 In this article, we will explore how to get started with Celo's Python SDK. You will have an overview of what the Celo blockchain is and why it is useful. We will then introduce the Python SDK, highlighting its features and capabilities. Finally, we will walk through the process of setting up the SDK and creating a simple application that interacts with the Celo blockchain. By the end of this article, you will have a basic understanding of how to use Celo's Python SDK to build applications on the Celo blockchain.
 
 ## Prerequisites​
+
 To continue along this tutorial you need to have good experience with the following;
 
 - Python: To use the Celo Python SDK you should have a basic understanding of python programming language.
@@ -70,7 +70,7 @@ gold_token = kit.base_wrapper.create_and_get_contract_by_name('GoldToken')
 balance = gold_token.balance_of(address)
 ```
 
-- The `GoldToken` contract is a smart contract on the Celo blockchain that represents the Celo Gold token (cGLD). 
+- The `GoldToken` contract is a smart contract on the Celo blockchain that represents the Celo Gold token (cGLD).
 
 - The `create_and_get_contratc_by_name()` method creates an instance of the contract and returns a `Contract` object, which can be used to interact with the contract’s function and properties.
 - The `balance_of()` method of the `GoldToken` contract takes an Ethereum address as an input parameter and returns the balance of cGLD tokens held by that address. The `address` variable in the code is assumed to be a valid Ethereum address. The address variable in the code i assumed to be a valid Ethereum address that represents a Celo account.
@@ -103,7 +103,6 @@ tx = stable_token.transfer(recipient, wei_transfer_amount)
 
 - The first line of code `stable_token = kit.base_wrapper.create_and_get_contract_by_name('StableToken')` creates an instance of the `StableToken` contract, which represents a stablecoin on the Celo blockchain. This contract is used to represent a stable value asset on the Celo network, and the specific contract instance is created using the Celo SDK's `base_wrapper.create_and_get_contract_by_name()` method.
 
-
 - The second line of code gas_price_contract = kit.base_wrapper.create_and_get_contract_by_name('GasPriceMinimum') creates an instance of the GasPriceMinimum contract, which is a smart contract on the Celo blockchain that provides the minimum gas price required to execute a transaction on the Celo network.
 
 - The third line of code `gas_price_minimum = gas_price_contract.get_gas_price_minimum(stable_token.address)` retrieves the current minimum gas price required to execute a transaction using the `get_gas_price_minimum()` method of the `GasPriceMinimum` contract, passing the address of the `StableToken` contract as an input parameter.
@@ -114,9 +113,10 @@ tx = stable_token.transfer(recipient, wei_transfer_amount)
 
 - The final line of code tx = stable_token.transfer(recipient, wei_transfer_amount) initiates a transaction to transfer a specified amount of cUSD tokens (represented in wei) from the stable_token contract to a specified recipient address on the Celo blockchain. The transfer() function is a method provided by the StableToken contract wrapper and takes two input parameters - the recipient address and the amount of cUSD tokens to transfer (in wei). The resulting transaction hash is assigned to the tx variable.
 
-
 ## Adding New Key to the Wallet
+
 The default behavior of the Wallet object involves the generation of a private key. However, it is possible to specify an existing private key or generate a new one. In order to add a specific private key, the following steps should be taken:
+
 - This code below creates an instance of the `Kit` class from the `celo_sdk` package and specifies the endpoint of the Celo network to connect to (in this case, the Alfajores testnet). It then sets the `wallet_add_new_key` property of the Kit instance to a specific private key, which is used to sign transactions on the Celo blockchain.
 
 ```python
@@ -132,7 +132,6 @@ new_key = kit.generate_new_key()
 kit.wallet_add_new_key = new_key
 ```
 
-
 - The code retrieves a list of accounts associated with the Kit instance by accessing the accounts property of the wallet object.
 
 ```python
@@ -143,7 +142,7 @@ Its quite useful when determining which accounts are available for sending trans
 
 - The code below sets the `wallet_change_account` property of the Kit instance to an existing account address in `the __accounts` dictionary of the wallet object.
 
-```python 
+```python
 kit.wallet_change_account = existing_account_address  # address of account has to be in wallet.__accounts dict
 ```
 
@@ -170,6 +169,7 @@ signature = kit.wallet.active_account.sign_message(message)
 ## Interacting with Other Contracts
 
 Inside your contract directory you’ll notice the following contract:
+
 1. `GoldToken`: A contract wrapper for the Celo Gold (cGLD) token, which is the native cryptocurrency of the Celo blockchain.
 2. `StableToken`: A contract wrapper for a stablecoin on the Celo blockchain, which is represented by the StableToken contract. This wrapper provides methods for transferring stablecoins, getting the balance of a specified account, and getting the total supply of stablecoins.
 3. `GasPriceMinimum`: A contract wrapper for the GasPriceMinimum contract, which provides the minimum gas price required to execute a transaction on the Celo blockchain.
@@ -183,23 +183,24 @@ Inside your contract directory you’ll notice the following contract:
 
 ## Conclusion​
 
-The Celo's Python SDK provides a powerful set of tools for developers looking to build decentralized applications on the Celo blockchain. With its intuitive API and comprehensive documentation, developers can quickly get started building applications that utilize Celo's native assets, smart contracts, and secure messaging protocols. 
-Whether you're building a new decentralized finance application, creating a digital identity solution, or exploring the potential of blockchain technology in other industries. 
+The Celo's Python SDK provides a powerful set of tools for developers looking to build decentralized applications on the Celo blockchain. With its intuitive API and comprehensive documentation, developers can quickly get started building applications that utilize Celo's native assets, smart contracts, and secure messaging protocols.
+Whether you're building a new decentralized finance application, creating a digital identity solution, or exploring the potential of blockchain technology in other industries.
 
 The Celo Python SDK provides the necessary building blocks to get started. By following the steps outlined in this article, developers can quickly get up and running with the Celo Python SDK and start building decentralized applications that leverage the full potential of the Celo blockchain.
 
 ## About the Author​
+
 Mayowa Julius Ogungbola
 
 Is a Software Engineer, Web3 backend developer and Technical writer always open to working on new Ideas. I enjoy working on [Github](https://github.com/Julius170/). You could slao find out what I [Tweet](https://twitter.com/JuliusAyoola1) about and connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/).
 
 ## References​
+
 Here are links to relevant details about the celo python sdk:
 
 - [Celo python SDK](https://github.com/blaize-tech/celo-sdk-py)
 - [Celo python SDK Overview](https://blaize.tech/article-type/celo-project-python-sdk-overview/)
 - [Celo Libraries and SDKs](https://docs.celo.org/developer/sdks/celo-sdks)
-
 
 ## Next Step
 

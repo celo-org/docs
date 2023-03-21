@@ -1733,7 +1733,7 @@ const Users: User[] = [
     title: 'Getting started with Celo Python SDK',
     description: 'This article will provide a step-by-step guide on how to get started with Celo Python SDK.',
     preview: require('./showcase/intermediate/celo-python-sdk.png'),
-    website: 'https://learn.figment.io/tutorials/getting-started-with-celo-python-SDK',
+    website: '/blog/tutorials/getting-started-with-celo-python-SDK',
     tags: ['intermediate', 'celo', 'celosage', 'solidity'],
   },
   {
