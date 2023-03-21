@@ -6,7 +6,7 @@ authors:
     title: Blockchain Developer | Technical Writer
     url: https://github.com/alofeoluwafemi
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [solidity, react, celo, smartcontract, nextjs, advanced, tokens]
+tags: [solidity, react, celo, smartcontract, nextjs, advanced, tokens, celosage]
 hide_table_of_contents: true
 slug: /tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs
 ---
