@@ -926,7 +926,7 @@ const Users: User[] = [
     title: 'Scalability - ensuring that your cryptography app can handle a large volume of transactions and users as it grows',
     description: 'Learn how to use asymmetric cryptography for key management in your cryptography app',
     preview: require('./showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png'),
-    website: '/blog/tutorials/ensuring-that-your-cryptography-app-can-handle-a-large-volume',
+    website: '/blog/tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume',
     tags: ['celosage', 'celo', 'intermediate'],
   },
   {
