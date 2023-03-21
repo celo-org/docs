@@ -4,13 +4,13 @@ description: We look into how carbon sensors, rain sensors, etc. can be used wit
 authors:
   - name: ✍️ Boyejo Oluwafemi
 url: https://github.com/boyfem
-image_url: https://github.com/boyfem
+image_url: https://avatars.githubusercontent.com/u/47746690?v=4
 tags: [beginner, celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo
 ---
 
-![leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo](https://user-images.githubusercontent.com/47746690/222929818-e244e431-abe2-4698-8ac7-78c8fed4a716.png)
+![leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo](../../src/data-tutorials/showcase/beginner/leveraging-iot.png)
 
 
 ## Introduction​
