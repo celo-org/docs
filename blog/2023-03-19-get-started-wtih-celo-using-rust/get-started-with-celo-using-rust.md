@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: [celo,celosage,truffle,smartcontract,solidity, beginner]
+tags: [celo, celosage, truffle, smartcontract, solidity, beginner]
 hide_table_of_contents: true
 slug: /tutorials/get-started-with-celo-using-rust
 ---
@@ -16,7 +16,7 @@ slug: /tutorials/get-started-with-celo-using-rust
 
 ## Introduction
 
-In this tutorial, we'll go over the fundamentals of interacting with Solidity smart contract programming language using web3. You will have a fundamental understanding of how to make a contract call in the rust programming language. 
+In this tutorial, we'll go over the fundamentals of interacting with Solidity smart contract programming language using web3. You will have a fundamental understanding of how to make a contract call in the rust programming language.
 
 This tutorial will demonstrate how simple it is to interact with smart contracts, call functions, and listen to events in rust.
 
@@ -90,9 +90,10 @@ contract TicTacToeV1 {
 ### Deploy Smart contract (Remix)
 
 Now that your contract is compiled, you can deploy your smart contract to the network. You can deploy to any Ethereum compatible network, and in this case we’ll be deploying the Celo testnet or mainnnet depending on your preference. If you’re brand new to this stick with testnet!
- - Click the Deploy and Run Transactions Icon on the left side menu.
- - Choose Injected Web3 as your environment.
- - [Connect MetaMask to Celo](https://medium.com/@joenyzio/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) testnet and verify the network.
+
+- Click the Deploy and Run Transactions Icon on the left side menu.
+- Choose Injected Web3 as your environment.
+- [Connect MetaMask to Celo](https://medium.com/@joenyzio/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) testnet and verify the network.
 
 ![Deploy smart contract](./images/screenshot-2.png)
 
@@ -104,83 +105,83 @@ Now that your contract is compiled, you can deploy your smart contract to the ne
 
 Let’s copy our Contract ABIs into our project.
 
-Then create a folder in the project folder directory lib  and create a file named tictactoev1.abi.json. 
+Then create a folder in the project folder directory lib and create a file named tictactoev1.abi.json.
 
 ![code output](./images/screenshot-4.png)
 
 ```javascript
 [
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "uint256",
-        "name": "_index",
-        "type": "uint256"
-      }
+        internalType: "uint256",
+        name: "_index",
+        type: "uint256",
+      },
     ],
-    "name": "getLeaderboard",
-    "outputs": [
+    name: "getLeaderboard",
+    outputs: [
       {
-        "internalType": "address",
-        "name": "player",
-        "type": "address"
+        internalType: "address",
+        name: "player",
+        type: "address",
       },
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: "view",
+    type: "function",
   },
   {
-    "inputs": [],
-    "name": "getLeaderboardLength",
-    "outputs": [
+    inputs: [],
+    name: "getLeaderboardLength",
+    outputs: [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
     ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: "view",
+    type: "function",
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "uint256",
-        "name": "win",
-        "type": "uint256"
-      }
+        internalType: "uint256",
+        name: "win",
+        type: "uint256",
+      },
     ],
-    "name": "start",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: "start",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    "inputs": [
+    inputs: [
       {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      }
+        internalType: "uint256",
+        name: "index",
+        type: "uint256",
+      },
     ],
-    "name": "updateLeaderboard",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
+    name: "updateLeaderboard",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+];
 ```
 
 ### Rust Implementation
 
 ![rust implementation](./images/screenshot-5.png)
 
-```rust
+```js
 use std::str::FromStr;
 use web3::types::{Address, U256};
 use web3::{Web3, contract::Contract, contract::Options, transports};
@@ -211,7 +212,7 @@ async fn main() {
 
 In this example, we first set up a transport for the celo network using the transport Http struct method from web3. We then create a new web3 instance from the http transport we created. We then define the ABI and address of the smart contract we want to interact with. We use the Contract struct from web3 to connect to the contract, and then call a function on the contract using the query/call method. Finally, we get the result of the function call and print it out.
 
-Note that you'll need to replace the ***contracts/tictactoe.abi.json*** and ***contract_address*** values with the actual ABI and address of the smart contract you want to interact with. You can generate the ABI using a tool like abigen or solc, and you can get the contract address from a blockchain explorer or by deploying the contract yourself.
+Note that you'll need to replace the **_contracts/tictactoe.abi.json_** and **_contract_address_** values with the actual ABI and address of the smart contract you want to interact with. You can generate the ABI using a tool like abigen or solc, and you can get the contract address from a blockchain explorer or by deploying the contract yourself.
 
 The run your program, we can easily see that we have been able to interact seamlessly with our deployed smart contract.
 
