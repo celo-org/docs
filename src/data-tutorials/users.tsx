@@ -1792,6 +1792,13 @@ const Users: User[] = [
     website: 'https://learn.figment.io/tutorials/hello-mobile-dapp',
     tags: ['beginner', 'mobile', 'figment'],
   },
+  {
+    title: 'Building A Dutch Auction Dapp on Celo',
+    description: 'A comprehensive guide for understanding and building Dutch auction dapp on Celo.',
+    preview: require('./showcase/intermediate/build-a-dutch-auction-dapp-on-celo.png'),
+    website: '/blog/tutorials/building-a-dutch-auction-dapp-on-celo',
+    tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity', 'celosage'],
+  },
 
   // Videos
 
