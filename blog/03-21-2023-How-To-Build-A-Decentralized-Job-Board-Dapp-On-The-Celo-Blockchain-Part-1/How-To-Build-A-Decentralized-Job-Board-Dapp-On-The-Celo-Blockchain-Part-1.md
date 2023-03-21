@@ -1,5 +1,5 @@
 ---
-title: How to Build a Decentralized Job Board Dapp On The Celo Blockchain Part 1
+title: How to Build A Decentralized Job Board Dapp On The Celo Blockchain Part 1
 description: This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain.
 authors:
   - name: ✍️ Jonathan Iheme
