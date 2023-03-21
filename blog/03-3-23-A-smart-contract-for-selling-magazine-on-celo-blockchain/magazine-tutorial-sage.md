@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://github.com/Ogoyi
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
-tags: [celo sage, solidity, intermediate, celo]
+tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
 ---
@@ -54,7 +54,7 @@ Great, let's get started!
 
 To begin building your smart contract for buying and selling magazines on the Celo blockchain, follow these steps:
 
-- Open the Remix development environment by clicking on this link (https://remix.ethereum.org/). This is a popular development environment for writing and testing smart contracts on the Celo blockchains.
+- Open the Remix development environment by clicking on this [link](https://remix.ethereum.org/). This is a popular development environment for writing and testing smart contracts on the Celo blockchains.
 
 - Create a new file called "Magazine.sol" by clicking on the "+" button in the file explorer panel on the left-hand side of the screen.
 
