@@ -996,6 +996,12 @@ const Users: User[] = [
   website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
   tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
   },
+  {title: 'Escrow service on Celo that holds funds until certain conditions are met',
+  description: 'This is an example of a smart contract where a guarantee can be defined between buyer and seller.',
+  preview: require('./showcase/intermediate/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met.png'),
+  website: 'blog/tutorials/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met',
+  tags: ['intermediate','celosage', 'solidity','smartcontract','remix'],
+  },
   {
     title: 'A Solidity Smart Contract For Auctioning Flowers On The Celo Blockchain',
     description: 'This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.',
