@@ -13,7 +13,7 @@ slug: /tutorials/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava
 
 import YouTube from '@components/YouTube';
 
-![header](../src/data-tutorials/showcase/advanced/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava.png)
+![header](../src/data-tutorials/showcase/beginner/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava.png)
 
 ## Introdução
 
