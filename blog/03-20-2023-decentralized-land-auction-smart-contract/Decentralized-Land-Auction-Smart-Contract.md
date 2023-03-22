@@ -11,8 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/Decentralized-land-auction-smart-contract
 ---
 
-![Decentralize-land-auction-smart-contract](https://user-images.githubusercontent.com/115812158/226502025-95249a25-e909-45df-a0d2-642011d18cbb.png)
-
+ ![Decentralize-land-auction-smart-contract](https://user-images.githubusercontent.com/115812158/227044064-3e28fda8-f37b-4a06-ae6c-3951caeb4f20.png)
 
 ## Introduction
 
@@ -428,17 +427,21 @@ function cancelAuction(uint256 _index) public exists(_index) {
 }
 ```
 
-The `cancelAuction` function is used to cancel an ongoing auction for a land. Here is what each part of the function does:
+The `cancelAuction` function is used to cancel an ongoing auction for a land. 
 
-`function cancelAuction(uint256 _index) public exists(_index)`: This is the function declaration. It takes one input parameter, `_index`, which is the ID of the land to cancel the auction for. It is marked as `public`, which means it can be called from outside the smart contract. It also has a `modifier` `exists(_index)`, which checks that the land with the given `_index` `exists`.
+The `cancelAuction`, allows the owner of a piece of land to cancel an ongoing auction for that land. The function takes in a parameter _index, which is the index of the land in the lands array that the owner wants to cancel the auction for.
 
-`require(msg.sender == lands[_index].owner, "Only owner can cancel auction")`: This line checks that the sender of the transaction is the current `owner` of the land. Only the owner can cancel the auction for their land.
+The first line of the function checks that the land at the given index exists, which is done through the exists modifier. If the land does not exist, the function will revert.
 
-`require(!lands[_index].soldStatus, "Land has already been sold")`: This line checks that the land has not already been `sold`. If it has been sold, the auction cannot be canceled.
+The next line requires that the caller of the function is the owner of the land being auctioned. If the caller is not the owner, the function will revert with an error message.
 
-`if (lands[_index].highestBid != 0) { require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return highest bid") }`: This line of code is used to `return` the `highest bid` to the `highest bidder`, in case there was one. If there was no highest bid, this line of code will be skipped. If there was a `highest bid`, the send function is used to transfer the highest bid amount back to the highest bidder.
+The third line checks that the land has not already been sold. If the land has been sold, the function will revert with an error message.
 
-`lands[_index].auctionEndTime = block.timestamp`: Finally, this line sets the `auctionEndTime` for the land to the current `block timestamp`, effectively ending the auction.
+If the highest bid for the land is not 0 (i.e., there have been bids on the land), the fourth line of the function transfers the highest bid amount back to the highest bidder. If this transfer fails for some reason, the function will revert with an error message.
+
+Finally, the function sets the auctionEndTime for the land to the current block timestamp, effectively ending the auction.
+
+In summary, this function allows the owner of a piece of land to cancel an ongoing auction for that land, returning the highest bid to the highest bidder if there was one.
 
 ## Contract Deployment
 
