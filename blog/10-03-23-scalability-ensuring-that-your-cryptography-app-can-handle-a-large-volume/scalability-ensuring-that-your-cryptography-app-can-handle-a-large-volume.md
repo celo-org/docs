@@ -13,8 +13,6 @@ slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-la
 ---
 ![header](../../src/data-tutorials/showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png)
 
-### Scalability: ensuring that your cryptography app can handle a large volume of transactions and users as it grows
-
 In this tutorial, you’ll learn how to improve key management and security in your messaging platform by implementing asymmetric cryptography. Discover how to generate key pairs, encrypt and decrypt messages, and ensure secure communication between users.
 
 ---
