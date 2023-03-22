@@ -18,7 +18,6 @@ In this tutorial, we will be creating a Decentralized Multitoken wallet smart co
 
 [Project Repository](https://github.com/4undRaiser/celo-multi-token-wallet)
 
-
 ## Prerequisites
 
 To follow this tutorial, you will need the following:
