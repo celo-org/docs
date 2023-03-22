@@ -16,7 +16,7 @@ There are several NFT marketplaces that operate on the Celo blockchain, includin
 In this tutorial, you’ll learn how to mint NFTs and purchase them after minting them on the celo blockchain.
 
  ## Demo
- 
+ https://user-images.githubusercontent.com/81568615/176022936-90c189a5-1750-447a-89e2-ab5136496acd.mp4
 
 https://user-images.githubusercontent.com/81568615/176025390-e2a59d71-8772-4b14-8f73-e74e56071352.mp4
 
@@ -582,7 +582,7 @@ Our next line of code is this:
 
 The contract defines a struct _Item that stores information about each NFT being sold, including its status (active, sold, or cancelled), the NFT contract address, the current owner of the NFT, the creator of the NFT, the token ID, and the price.
 
-The sellItem function allows users to sell their NFTs by passing in the URI of the NFT, the price, and the NFT contract address. The function first checks that the price is greater than 0, that the user has paid the minting cost (specified in mintingCost), that the NFT contract address is valid, and that the URI is not empty.
+The 'sellItem' function allows users to sell their NFTs by passing in the URI of the NFT, the price, and the NFT contract address. The function first checks that the price is greater than 0, that the user has paid the minting cost (specified in mintingCost), that the NFT contract address is valid, and that the URI is not empty.
 
 If these conditions are met, the function creates a new _Item struct with the provided information and adds it to the Items mapping with a new item ID. It also increments the createdPerWallet mapping for the user who created the item and mints the NFT to the contract address. The function then emits an Item event with the relevant information.
 
@@ -736,7 +736,7 @@ This function fetches all the market items that are currently active and have no
 
 Next, it loops through all the items and checks if an item is unsold and active. If it is, then it stores that item in the items array at the current index and increments the index.
 
-Finally, it returns the items array containing all the unsold and active items in the market.
+ It also returns the items array containing all the unsold and active items in the market.
 
 Finally, let’s look at three last functions.
 
@@ -1024,6 +1024,43 @@ The script uses the recommended pattern of using async/await and proper error ha
 
 To run the script, you can use the command npx hardhat run scripts/deploy.js --network NETWORK_NAME, where NETWORK_NAME is the name of the network you want to deploy the contracts to, such as rinkeby or localhost.
 
+
+## next.config.js
+We also need to add a custom configuration file for Next.js  that is not included in the browser build.With this we can be able to configure our next.js application for it to interact with the server.
+To learn more about this file click here(https://nextjs.org/docs/api-reference/next.config.js/introduction)
+
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  env: {
+    NFT_MARKET_CONTRACT_ADDRESS:"0x6a84e7cd87d6A65303EdAA2DEcf51d8362B49636",
+    NFT_CONTRACT_ADDRESS:" 0x0ccEae723EdCe35a5e3570923cCE7D0E2424434e",
+    CHAIN_ID:44787
+  },
+  reactStrictMode: true,
+  images: {
+    domains: ['ipfs.infura.io'],
+  },
+}
+
+module.exports = nextConfig
+
+
+```
+The 'env' property specifies environment variables that will be available at runtime. In this case, the three variables that shows our deployed contract adresses is NFT_MARKET_CONTRACT_ADDRESS and NFT_CONTRACT_ADDRESS. The CHAIN_ID is the celo Alfajores testnet chain id that connects us to the celo network.
+
+The reactStrictMode property, when set to true, enforces React's strict mode, which can help catch potential issues in the application during development.
+
+The 'images' property is used to specify domains where images can be loaded from. In this case, its the IPFS domain from Infura where we will store our images.
+
+Finally, module.exports exports the nextConfig object so it can be used as a configuration file for a Next.js application.
+
+
+
+
+
+
+
 ## components
 Our componentes folder is where we have 3 files that will facilitate how our NFTs will look like once minted.The files are `Card.js`,`Navbar.js`and `Spinner.js`.
 
@@ -1215,7 +1252,7 @@ export default NavBar;
 ```
 This   is a  component that renders a navigation bar (NavBar) with links to different pages of the website. The component uses the Next.js Link component to create links to the different pages of the website. The component also uses Redux hooks such as useDispatch and useSelector to get the current account and connection provider from the Redux store. The component has a connectWallet function that allows users to connect to a wallet by clicking on the "Connect with wallet" link. The function checks if the user has MetaMask installed and then requests the user's accounts. The component also listens for account and chain changes and reloads the page when these changes occur to avoid errors. If the user is not connected to a wallet, the navigation bar displays only the "Connect with wallet" link. If the user is connected, the navigation bar displays links to the "Creator profile", "My Orders", and "Create NFT" pages.
 
-Finally our final component file is Spinner.js
+Finally our last component file is Spinner.js
 ```javascript
 import React from "react";
 
@@ -2249,7 +2286,7 @@ The next step is to create a composeEnhancers variable, which allows us to use t
 
 After that, the enhancer variable is created by calling composeEnhancers with applyMiddleware(...middleware) as an argument. This applies the thunk middleware to the store.
 
-Finally, the makeStore function is defined, which returns a new Redux store instance by calling createStore with the rootReducer and enhancer variables as arguments.
+ The makeStore function is defined, which returns a new Redux store instance by calling createStore with the rootReducer and enhancer variables as arguments.
 
 Finally, the createWrapper function is called with the makeStore function as an argument to create a wrapper around the Redux store. This wrapper is then exported as wrapper.
 
