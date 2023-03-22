@@ -222,7 +222,7 @@ The code above presents the interface for an ERC20 token in our smart contract. 
 
 - `allowance`: returns the remaining number of tokens that an approved account can transfer from another account.
 
-`- Transfer event`: emitted when tokens are successfully transferred from one account to another.
+- `Transfer event`: emitted when tokens are successfully transferred from one account to another.
 
 - `Approval event`: emitted when an approval event occurs, indicating that one account is authorized to withdraw from another account.
 
@@ -439,7 +439,6 @@ The `cancelAuction` function is used to cancel an ongoing auction for a land. He
 `if (lands[_index].highestBid != 0) { require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return highest bid") }`: This line of code is used to `return` the `highest bid` to the `highest bidder`, in case there was one. If there was no highest bid, this line of code will be skipped. If there was a `highest bid`, the send function is used to transfer the highest bid amount back to the highest bidder.
 
 `lands[_index].auctionEndTime = block.timestamp`: Finally, this line sets the `auctionEndTime` for the land to the current `block timestamp`, effectively ending the auction.
-
 
 ## Contract Deployment
 
