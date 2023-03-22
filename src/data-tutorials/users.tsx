@@ -2471,6 +2471,14 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
+
+    title: 'Get started with CELO using Rust',
+    description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
+    preview: require('./showcase/beginner/get-started-with-celo-using-rust.png'),
+    website: 'blog/tutorials/get-started-with-celo-using-rust',
+    tags: ['celosage', 'beginner', 'celo', 'deploy'], 
+  },
+  {
     title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
     description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
     preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
