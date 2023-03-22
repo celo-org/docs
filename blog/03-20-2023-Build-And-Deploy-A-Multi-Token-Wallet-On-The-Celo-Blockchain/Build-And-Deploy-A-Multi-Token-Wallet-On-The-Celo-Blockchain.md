@@ -16,6 +16,8 @@ slug: "/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain"
 
 In this tutorial, we will be creating a Decentralized Multitoken wallet smart contract that allows users to deposit and withdraw multiple ERC20 standard tokens in a single wallet. The contract is designed to support any ERC20 token that implements the IERC20 interface. The contract will also have functionality to set the maximum idle time for an account, as well as the ability to add or remove supported tokens.
 
+[Project Repository](https://github.com/4undRaiser/celo-multi-token-wallet)
+
 
 ## Prerequisites
 
@@ -37,18 +39,22 @@ pragma solidity ^0.8.0;
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
+
     function transfer(address to, uint256 value) external returns (bool);
-    function transferFrom(address from, address to, uint256 value) external returns (bool);
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool);
 }
 
 contract MultiTokenWallet {
-
-
     uint256 private _maxIdleTime = 30 minutes;
 
     address private contractOwner;
 
-    constructor(){
+    constructor() {
         contractOwner = msg.sender;
     }
 
@@ -56,15 +62,23 @@ contract MultiTokenWallet {
     mapping(address => bool) private _supportedTokens;
     mapping(address => uint256) private _lastSeen;
 
-    event Deposit(address indexed account, address indexed token, uint256 amount);
-    event Withdrawal(address indexed account, address indexed token, uint256 amount);
-
-  
-
+    event Deposit(
+        address indexed account,
+        address indexed token,
+        uint256 amount
+    );
+    event Withdrawal(
+        address indexed account,
+        address indexed token,
+        uint256 amount
+    );
 
     function deposit(address token, uint256 amount) external {
         require(_supportedTokens[token], "Unsupported token");
-        require(IERC20(token).transferFrom(msg.sender, address(this), amount), "Token transfer failed");
+        require(
+            IERC20(token).transferFrom(msg.sender, address(this), amount),
+            "Token transfer failed"
+        );
         _balances[msg.sender][token] += amount;
         _lastSeen[msg.sender] = block.timestamp;
         emit Deposit(msg.sender, token, amount);
@@ -72,18 +86,27 @@ contract MultiTokenWallet {
 
     function withdraw(address token, uint256 amount) external {
         require(_balances[msg.sender][token] >= amount, "Insufficient balance");
-        require(IERC20(token).transfer(msg.sender, amount), "Token transfer failed");
+        require(
+            IERC20(token).transfer(msg.sender, amount),
+            "Token transfer failed"
+        );
         _balances[msg.sender][token] -= amount;
         _lastSeen[msg.sender] = block.timestamp;
         emit Withdrawal(msg.sender, token, amount);
     }
 
-    function balanceOf(address account, address token) external view returns (uint256) {
+    function balanceOf(
+        address account,
+        address token
+    ) external view returns (uint256) {
         return _balances[account][token];
     }
 
     function setSupportedToken(address token, bool isSupported) external {
-        require(msg.sender == owner(), "Only owner can modify supported tokens");
+        require(
+            msg.sender == owner(),
+            "Only owner can modify supported tokens"
+        );
         _supportedTokens[token] = isSupported;
     }
 
@@ -93,7 +116,7 @@ contract MultiTokenWallet {
     }
 
     function owner() public view returns (address) {
-        return(contractOwner);
+        return (contractOwner);
     }
 }
 ```
@@ -214,7 +237,6 @@ Moving on, we have the `setSupportedToken` function:
 ```
 
 This function allows the contract owner to add or remove support for a particular `token`. The function takes in the `token` address and a boolean flag indicating whether the token should be supported or not. The function first checks that the caller of the function is the contract owner using the owner function, and reverts the transaction if this condition is not met. If the caller is the contract owner, the function updates the `_supportedTokens` mapping to reflect the new support status for the specified `token`.
-
 
 The `executeProposal()` is a function that allows the proposer of a proposal to execute it. The function first checks that the proposer is the one calling the function, that the proposal has not been executed yet, and that the number of "yes" votes is greater than the number of "no" votes. If all of these conditions are met, the function sets the executed flag to true, indicating that the proposal has been executed. Finally, any actions described in the proposal can be performed.
 
