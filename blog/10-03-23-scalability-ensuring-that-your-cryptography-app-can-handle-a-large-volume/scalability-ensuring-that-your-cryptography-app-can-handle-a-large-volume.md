@@ -28,6 +28,7 @@ Applications for encryption are essential for safeguarding private messages, onl
 
 It's crucial to have a fundamental knowledge of cryptography and the tenets of secure communication before starting this tutorial. Also, you must have an appreciable knowledge of creating and deploying apps in cloud settings.
 
+[Here](https://github.com/SasaniEldis/face_recognition.git) is a link to a sample scalable App (face-recognition App) that we'll be creating in this tutorial.
 
 ## Requirements
 
