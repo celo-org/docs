@@ -14,7 +14,7 @@ slug: /tutorials/Decentralized-land-auction-smart-contract
 ![Decentralize-land-auction-smart-contract](https://user-images.githubusercontent.com/115812158/226502025-95249a25-e909-45df-a0d2-642011d18cbb.png)
 
 
-### Introduction
+## Introduction
 
 This tutorial will guide you through the process of creating a smart contract for a land auction on the Celo blockchain. You will learn about the concept of blockchain-based auctions and how to set up and utilize this type of application. By the end of this tutorial, you will have the knowledge and skills to develop and use your own Celo-based marketplace for conducting land auctions. Let's get started!
 
@@ -28,7 +28,7 @@ Before starting this tutorial, make sure you have the following:
 
 ## Requirement:
 
- This tutorial assumes that you have a certain level of familiarity with certain topics before you begin. Specifically, it's recommended that you have a basic understanding of the following:
+This tutorial assumes that you have a certain level of familiarity with certain topics before you begin. Specifically, it's recommended that you have a basic understanding of the following:
  
  - JavaScript programming.
  
@@ -36,9 +36,9 @@ Before starting this tutorial, make sure you have the following:
  
  - Some basic knowledge of solidity
  
- ## What we will be building
+## What we will be building
  
- In this tutorial, we will be building a smart contract for a land auction on the Celo blockchain. This contract will allow users to participate in blockchain-based auctions and create their own marketplace for conducting land auctions on the Celo blockchain.
+In this tutorial, we will be building a smart contract for a land auction on the Celo blockchain. This contract will allow users to participate in blockchain-based auctions and create their own marketplace for conducting land auctions on the Celo blockchain.
  
  The complete code:
  
@@ -190,7 +190,7 @@ After successfully creating the new file, the following step would be to specify
 pragma solidity >=0.7.0 <0.9.0;
 ```
  
- In the provided code, we use the statement `SPDX-License-Identifier`: MIT to indicate that the code is licensed under the MIT License. This is achieved through the use of the SPDX (Software Package Data Exchange) identifier, which is a standard method of identifying open-source licenses.
+In the provided code, we use the statement `SPDX-License-Identifier`: MIT to indicate that the code is licensed under the MIT License. This is achieved through the use of the SPDX (Software Package Data Exchange) identifier, which is a standard method of identifying open-source licenses.
 
 The next line specifies the version of the Solidity programming language that our smart contract is written in. It is crucial to specify the correct version because different versions of Solidity may have distinct features and syntax, affecting the intended behavior of our code. For this particular contract, we use version 0.7.0 or later, but not beyond 0.9.0.
  
@@ -208,7 +208,7 @@ The next line specifies the version of the Solidity programming language that ou
   event Approval(address indexed owner, address indexed spender, uint256 value);
  ```
  
- The code above presents the interface for an ERC20 token in our smart contract. The interface specifies the functions that the ERC20 token must implement, which our smart contract will interact with.
+The code above presents the interface for an ERC20 token in our smart contract. The interface specifies the functions that the ERC20 token must implement, which our smart contract will interact with.
 
 - `transfer`: transfers tokens from the sender's account to another account.
 
@@ -218,13 +218,13 @@ The next line specifies the version of the Solidity programming language that ou
 
 - `totalSupply`: returns the total amount of tokens in existence.
 
-`balanceOf`: returns the balance of tokens in a specific account.
+- `balanceOf`: returns the balance of tokens in a specific account.
 
-`allowance`: returns the remaining number of tokens that an approved account can transfer from another account.
+- `allowance`: returns the remaining number of tokens that an approved account can transfer from another account.
 
-`Transfer event`: emitted when tokens are successfully transferred from one account to another.
+`- Transfer event`: emitted when tokens are successfully transferred from one account to another.
 
-`Approval event`: emitted when an approval event occurs, indicating that one account is authorized to withdraw from another account.
+- `Approval event`: emitted when an approval event occurs, indicating that one account is authorized to withdraw from another account.
 
 By including this interface, we enable our smart contract to interact with any ERC20 token that implements these functions. This means that our smart contract can transfer, approve, and transferFrom tokens for any ERC20 token that follows this standard.
 
@@ -297,6 +297,7 @@ In this code, we define two mappings:
 - `lands`: a private mapping that maps a `uint256 ID` to a Land struct object. This mapping will be used to keep track of all the lands that are being auctioned.
 
 - `_exists`: a private mapping that maps a `uint256 ID` to a boolean value indicating whether the land with the corresponding ID `exists`. This mapping is used to ensure that we are only accessing and modifying lands that actually exist in our contract.
+
 Additionally, we define two modifiers:
 
 - `exists`: a modifier that checks whether a land with a given ID exists in our system. If the land does not exist, the modifier throws an error.
@@ -335,7 +336,7 @@ We will enhance the functionality of our smart contract by defining some functio
 
 We will now define the `addLand()` function in our smart contract. This function will take input parameters such as the `location`, `description`, `price` in cUsd, and `auction end time` for a particular land. The function ensures that the auction end time is set in the future and creates a new Land object with the specified parameters. The object is then added to the lands mapping at the next available `index`, and the `_exists` mapping is updated to mark the index as occupied.
 
-n addition to the `addLand()` function, we will also define a `readLand()` function.
+In addition to the `addLand()` function, we will also define a `readLand()` function.
 
 ```solidity
   function readLand(uint256 _index) public view exists(_index) returns (Land memory) {
@@ -456,7 +457,7 @@ Well done on creating the smart contract for auctioning lands on the Celo blockc
 
  ## Next step
  
- I hope you found this tutorial informative and gained valuable knowledge from it. If you wish to continue expanding your skills and knowledge, I have compiled some helpful links below that you may find useful to explore further:
+I hope you found this tutorial informative and gained valuable knowledge from it. If you wish to continue expanding your skills and knowledge, I have compiled some helpful links below that you may find useful to explore further:
  
  [the official Celo documentation](https://docs.celo.org/)
 
