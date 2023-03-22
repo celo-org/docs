@@ -731,6 +731,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
   {
+    title: 'Prepare for Auditing Your Smart Contract',
+    description: 'Auditing is the process of reviewing your smart contracts code for errors, vulnerabilities, and potential weaknesses',
+    preview: require('./showcase/intermediate/prepare-for-auditing-your-smart-contract.png'),
+    website: 'blog/tutorials/prepare-for-auditing-your-smart-contract',
+    tags: ['celosage', 'intermediate','celo', 'smartcontract'],
+  },
+  {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
     preview: require('./showcase/beginner/beginner-tutorials.png'),
