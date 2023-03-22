@@ -16,6 +16,8 @@ slug: "/tutorials/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-
 
 In this tutorial, we will be building a peer to peer lending and borrowing smart contract. This contract enables users to create, fund, and repay loans using the celo cUSD as a form of payment. It also defines the minimum and maximum loan amounts, as well as the minimum and maximum interest rates that can be set for a loan. By the end of the tutorial, you should have a good strong foundational knowledge on building a p2p lending and borrowing smart contract. 
 
+[Project Repository](https://github.com/4undRaiser/celo-p2p-lending)
+
 ## Requirements
 
 - [Remix IDE](https://remix.ethereum.org/)
@@ -34,16 +36,13 @@ This is how the completed code should look like.
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-
 contract P2PLending {
     // The minimum and maximum amount of ETH that can be loaned
     uint public constant MIN_LOAN_AMOUNT = 0.1 ether;
     uint public constant MAX_LOAN_AMOUNT = 10 ether;
-
     // The minimum and maximum interest rate in percentage that can be set for a loan
     uint public constant MIN_INTEREST_RATE = 1;
     uint public constant MAX_INTEREST_RATE = 10;
-
     struct Loan {
         uint amount;
         uint interest;
@@ -55,10 +54,8 @@ contract P2PLending {
         bool active;
         bool repaid;
     }
-
     mapping(uint => Loan) public loans;
     uint public loanCount;
-
     event LoanCreated(
         uint loanId,
         uint amount,
@@ -70,12 +67,10 @@ contract P2PLending {
     );
     event LoanFunded(uint loanId, address funder, uint amount);
     event LoanRepaid(uint loanId, uint amount);
-
     modifier onlyActiveLoan(uint _loanId) {
         require(loans[_loanId].active, "Loan is not active");
         _;
     }
-
     modifier onlyBorrower(uint _loanId) {
         require(
             msg.sender == loans[_loanId].borrower,
@@ -83,7 +78,6 @@ contract P2PLending {
         );
         _;
     }
-
     function createLoan(
         uint _amount,
         uint _interest,
@@ -98,14 +92,10 @@ contract P2PLending {
             "Interest rate must be between MIN_INTEREST_RATE and MAX_INTEREST_RATE"
         );
         require(_duration > 0, "Loan duration must be greater than 0");
-
         uint _repaymentAmount = _amount + (_amount * _interest) / 100;
         uint _fundingDeadline = block.timestamp + (1 days);
-
         uint loanId = loanCount++;
-
         Loan storage loan = loans[loanId];
-
         loan.amount = _amount;
         loan.interest = _interest;
         loan.duration = _duration;
@@ -115,7 +105,6 @@ contract P2PLending {
         loan.lender = payable(address(0));
         loan.active = true;
         loan.repaid = false;
-
         emit LoanCreated(
             loanId,
             _amount,
@@ -126,7 +115,6 @@ contract P2PLending {
             address(0)
         );
     }
-
     function fundLoan(uint _loanId) external payable onlyActiveLoan(_loanId) {
         Loan storage loan = loans[_loanId];
         require(
@@ -141,10 +129,8 @@ contract P2PLending {
         payable(address(this)).transfer(msg.value);
         loan.lender = payable(msg.sender);
         loan.active = false;
-
         emit LoanFunded(_loanId, msg.sender, msg.value);
     }
-
     function repayLoan(
         uint _loanId
     ) external payable onlyActiveLoan(_loanId) onlyBorrower(_loanId) {
@@ -152,14 +138,11 @@ contract P2PLending {
             msg.value == loans[_loanId].repaymentAmount,
             "Incorrect repayment amount"
         );
-
         loans[_loanId].lender.transfer(msg.value);
         loans[_loanId].repaid = true;
         loans[_loanId].active = false;
-
         emit LoanRepaid(_loanId, msg.value);
     }
-
     function getLoanInfo(
         uint _loanId
     )
@@ -190,15 +173,12 @@ contract P2PLending {
             loan.repaid
         );
     }
-
     function withdrawFunds(uint _loanId) external onlyBorrower(_loanId) {
         Loan storage loan = loans[_loanId];
         require(loan.active = false);
-
         payable(msg.sender).transfer(loan.amount);
     }
 }
-
 ```
 
 Let's go over the code to see what's happening.
@@ -356,7 +336,6 @@ function repayLoan(
 ```
 
 Next, the `repayLoan()` is then created, which is used to repay a loan. This function requires the loan ID as a parameter. It then checks if the loan is active, and if the sender is the borrower. It also checks that the amount sent is equal to the repayment amount of the loan. It then transfers the repayment amount to the lender, sets the loan to inactive, and sets the repaid boolean to true. Finally, it emits a `LoanRepaid` event.
-
 
 ```solidity
 function getLoanInfo(
