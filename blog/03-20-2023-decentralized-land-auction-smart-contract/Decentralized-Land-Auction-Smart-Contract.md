@@ -3,15 +3,15 @@ title: Decentralized Land Auction Smart Contract
 description: The project aims to provide a decentralized platform for buying and selling land by allowing individuals to bid on available land parcels and purchase using cUSD
 authors:
   - name: David Ikanji
-    title: Technical Writer 
-    url:  https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ikanji201
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/Decentralized-land-auction-smart-contract
 ---
 
- ![Decentralize-land-auction-smart-contract](https://user-images.githubusercontent.com/115812158/227044064-3e28fda8-f37b-4a06-ae6c-3951caeb4f20.png)
+![header](https://user-images.githubusercontent.com/115812158/227044064-3e28fda8-f37b-4a06-ae6c-3951caeb4f20.png)
 
 ## Introduction
 
@@ -28,157 +28,157 @@ Before starting this tutorial, make sure you have the following:
 ## Requirement:
 
 This tutorial assumes that you have a certain level of familiarity with certain topics before you begin. Specifically, it's recommended that you have a basic understanding of the following:
- 
- - JavaScript programming.
- 
- - Knowledge of blockchain technology and its operations
- 
- - Some basic knowledge of solidity
- 
+
+- JavaScript programming.
+
+- Knowledge of blockchain technology and its operations
+
+- Some basic knowledge of solidity
+
 ## What we will be building
- 
+
 In this tutorial, we will be building a smart contract for a land auction on the Celo blockchain. This contract will allow users to participate in blockchain-based auctions and create their own marketplace for conducting land auctions on the Celo blockchain.
- 
- The complete code:
- 
- ```solidity
-  // SPDX-License-Identifier: MIT
+
+The complete code:
+
+```solidity
+ // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 
 interface IERC20Token {
-   function transfer(address, uint256) external returns (bool);
+  function transfer(address, uint256) external returns (bool);
 
-   function approve(address, uint256) external returns (bool);
+  function approve(address, uint256) external returns (bool);
 
-   function transferFrom(
-       address,
-       address,
-       uint256
-   ) external returns (bool);
+  function transferFrom(
+      address,
+      address,
+      uint256
+  ) external returns (bool);
 
-   function totalSupply() external view returns (uint256);
+  function totalSupply() external view returns (uint256);
 
-   function balanceOf(address) external view returns (uint256);
+  function balanceOf(address) external view returns (uint256);
 
-   function allowance(address, address) external view returns (uint256);
+  function allowance(address, address) external view returns (uint256);
 
-   event Transfer(address indexed from, address indexed to, uint256 value);
-   event Approval(
-       address indexed owner,
-       address indexed spender,
-       uint256 value
-   );
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(
+      address indexed owner,
+      address indexed spender,
+      uint256 value
+  );
 }
 
 contract LandAuction {
-   uint256 internal landsLength = 0;
+  uint256 internal landsLength = 0;
 
-   address internal cUsdTokenAddress =
-       0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+  address internal cUsdTokenAddress =
+      0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
-   struct Land {
-       address payable owner;
-       string location;
-       string description;
-       uint256 price;
-       uint256 sold;
-       bool soldStatus;
-       uint256 highestBid;
-       address payable highestBidder;
-       uint256 auctionEndTime;
-   }
-   mapping(uint256 => Land) private lands;
+  struct Land {
+      address payable owner;
+      string location;
+      string description;
+      uint256 price;
+      uint256 sold;
+      bool soldStatus;
+      uint256 highestBid;
+      address payable highestBidder;
+      uint256 auctionEndTime;
+  }
+  mapping(uint256 => Land) private lands;
 
-   mapping(uint256 => bool) private _exists;
+  mapping(uint256 => bool) private _exists;
 
-   // check if a land with id of _index exists
-   modifier exists(uint256 _index) {
-       require(_exists[_index], "Query of a nonexistent land");
-       _;
-   }
+  // check if a land with id of _index exists
+  modifier exists(uint256 _index) {
+      require(_exists[_index], "Query of a nonexistent land");
+      _;
+  }
 
-   // checks if the input data for location and description are non-empty values
-   modifier checkInputData(string calldata _location, string calldata _description) {
-       require(bytes(_location).length > 0, "Empty location");
-       require(bytes(_description).length > 0, "Empty description");
-       _;
-   }
+  // checks if the input data for location and description are non-empty values
+  modifier checkInputData(string calldata _location, string calldata _description) {
+      require(bytes(_location).length > 0, "Empty location");
+      require(bytes(_description).length > 0, "Empty description");
+      _;
+  }
 
-   function addLand(
-       string calldata _location,
-       string calldata _description,
-       uint256 _price,
-       uint256 _auctionEndTime
-   ) public checkInputData(_location, _description) {
-       require(_auctionEndTime > block.timestamp, "Auction end time must be in the future");
-       uint256 _sold = 0;
-       uint256 index = landsLength;
-       landsLength++;
-       lands[index] = Land(
-           payable(msg.sender),
-           _location,
-           _description,
-           _price,
-           _sold,
-           false,
-           0,
-           payable(address(0)),
-           _auctionEndTime
-       );
-       _exists[index] = true;
-   }
+  function addLand(
+      string calldata _location,
+      string calldata _description,
+      uint256 _price,
+      uint256 _auctionEndTime
+  ) public checkInputData(_location, _description) {
+      require(_auctionEndTime > block.timestamp, "Auction end time must be in the future");
+      uint256 _sold = 0;
+      uint256 index = landsLength;
+      landsLength++;
+      lands[index] = Land(
+          payable(msg.sender),
+          _location,
+          _description,
+          _price,
+          _sold,
+          false,
+          0,
+          payable(address(0)),
+          _auctionEndTime
+      );
+      _exists[index] = true;
+  }
 
-   function readLand(uint256 _index) public view exists(_index) returns (Land memory) {
-       return lands[_index];
-   }
+  function readLand(uint256 _index) public view exists(_index) returns (Land memory) {
+      return lands[_index];
+  }
 
 
-   function placeBid(uint256 _index) public payable exists(_index) {
-       require(block.timestamp < lands[_index].auctionEndTime, "Auction has ended");
-       require(msg.sender != lands[_index].owner, "Owner cannot place a bid");
-       require(msg.value > lands[_index].highestBid, "Bid must be higher than the current highest bid");
-       if (lands[_index].highestBid != 0) {
-           // if there is already a highest bid, return the previous bid amount to the previous highest bidder
-           require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return previous highest bid");
-       }
-       lands[_index].highestBid = msg.value;
-       lands[_index].highestBidder = payable(msg.sender);
-   }
+  function placeBid(uint256 _index) public payable exists(_index) {
+      require(block.timestamp < lands[_index].auctionEndTime, "Auction has ended");
+      require(msg.sender != lands[_index].owner, "Owner cannot place a bid");
+      require(msg.value > lands[_index].highestBid, "Bid must be higher than the current highest bid");
+      if (lands[_index].highestBid != 0) {
+          // if there is already a highest bid, return the previous bid amount to the previous highest bidder
+          require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return previous highest bid");
+      }
+      lands[_index].highestBid = msg.value;
+      lands[_index].highestBidder = payable(msg.sender);
+  }
 
-  function buyLand(uint256 _index) public payable exists(_index) {
-   require(lands[_index].auctionEndTime < block.timestamp, "Auction not ended");
-   require(!lands[_index].soldStatus, "Land already sold");
-   require(msg.sender != lands[_index].owner, "Owner cannot buy the land");
+ function buyLand(uint256 _index) public payable exists(_index) {
+  require(lands[_index].auctionEndTime < block.timestamp, "Auction not ended");
+  require(!lands[_index].soldStatus, "Land already sold");
+  require(msg.sender != lands[_index].owner, "Owner cannot buy the land");
 
-   if (lands[_index].highestBid > 0) {
-       // transfer the highest bid amount to the previous owner
-       require(IERC20Token(cUsdTokenAddress).transferFrom(msg.sender, lands[_index].owner, lands[_index].highestBid), "Transfer failed");
-   } else {
-       // transfer the price to the owner if there were no bids
-       require(IERC20Token(cUsdTokenAddress).transferFrom(msg.sender, lands[_index].owner, lands[_index].price), "Transfer failed");
-   }
+  if (lands[_index].highestBid > 0) {
+      // transfer the highest bid amount to the previous owner
+      require(IERC20Token(cUsdTokenAddress).transferFrom(msg.sender, lands[_index].owner, lands[_index].highestBid), "Transfer failed");
+  } else {
+      // transfer the price to the owner if there were no bids
+      require(IERC20Token(cUsdTokenAddress).transferFrom(msg.sender, lands[_index].owner, lands[_index].price), "Transfer failed");
+  }
 
-   // update the land sold status and owner
-   lands[_index].sold = lands[_index].highestBid > 0 ? lands[_index].highestBid : lands[_index].price;
-   lands[_index].soldStatus = true;
-   lands[_index].owner = payable(msg.sender);
+  // update the land sold status and owner
+  lands[_index].sold = lands[_index].highestBid > 0 ? lands[_index].highestBid : lands[_index].price;
+  lands[_index].soldStatus = true;
+  lands[_index].owner = payable(msg.sender);
 }
 function cancelAuction(uint256 _index) public exists(_index) {
-    require(msg.sender == lands[_index].owner, "Only owner can cancel auction");
-    require(!lands[_index].soldStatus, "Land has already been sold");
-    if (lands[_index].highestBid != 0) {
-        require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return highest bid");
-    }
-    lands[_index].auctionEndTime = block.timestamp; // set auction end time to current time to end auction
+   require(msg.sender == lands[_index].owner, "Only owner can cancel auction");
+   require(!lands[_index].soldStatus, "Land has already been sold");
+   if (lands[_index].highestBid != 0) {
+       require(lands[_index].highestBidder.send(lands[_index].highestBid), "Failed to return highest bid");
+   }
+   lands[_index].auctionEndTime = block.timestamp; // set auction end time to current time to end auction
 }
 
 }
 
- ```
- 
+```
+
 You can follow or use this project as a reference to edit yours and get the required files, images e.t.c [by clicking this link](https://github.com/Ikanji201/LandAuction)
- 
+
 To get started, you should create a new file on Remix called `LandAuction.sol`. The process of creating a new file on Remix can be found in the documentation, which you can refer to for guidance.[(click here)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
 
 After successfully creating the new file, the following step would be to specify some statements in our smart contract.
@@ -188,25 +188,25 @@ After successfully creating the new file, the following step would be to specify
 
 pragma solidity >=0.7.0 <0.9.0;
 ```
- 
+
 In the provided code, we use the statement `SPDX-License-Identifier`: MIT to indicate that the code is licensed under the MIT License. This is achieved through the use of the SPDX (Software Package Data Exchange) identifier, which is a standard method of identifying open-source licenses.
 
 The next line specifies the version of the Solidity programming language that our smart contract is written in. It is crucial to specify the correct version because different versions of Solidity may have distinct features and syntax, affecting the intended behavior of our code. For this particular contract, we use version 0.7.0 or later, but not beyond 0.9.0.
- 
- Afterward, we add the interface for our ERC20 token to the smart contract.
- 
- ```solidity
- interface IERC20Token {
-  function transfer(address, uint256) external returns (bool);
-  function approve(address, uint256) external returns (bool);
-  function transferFrom(address, address, uint256) external returns (bool);
-  function totalSupply() external view returns (uint256);
-  function balanceOf(address) external view returns (uint256);
-  function allowance(address, address) external view returns (uint256);
-  event Transfer(address indexed from, address indexed to, uint256 value);
-  event Approval(address indexed owner, address indexed spender, uint256 value);
- ```
- 
+
+Afterward, we add the interface for our ERC20 token to the smart contract.
+
+```solidity
+interface IERC20Token {
+ function transfer(address, uint256) external returns (bool);
+ function approve(address, uint256) external returns (bool);
+ function transferFrom(address, address, uint256) external returns (bool);
+ function totalSupply() external view returns (uint256);
+ function balanceOf(address) external view returns (uint256);
+ function allowance(address, address) external view returns (uint256);
+ event Transfer(address indexed from, address indexed to, uint256 value);
+ event Approval(address indexed owner, address indexed spender, uint256 value);
+```
+
 The code above presents the interface for an ERC20 token in our smart contract. The interface specifies the functions that the ERC20 token must implement, which our smart contract will interact with.
 
 - `transfer`: transfers tokens from the sender's account to another account.
@@ -427,9 +427,9 @@ function cancelAuction(uint256 _index) public exists(_index) {
 }
 ```
 
-The `cancelAuction` function is used to cancel an ongoing auction for a land. 
+The `cancelAuction` function is used to cancel an ongoing auction for a land.
 
-The `cancelAuction`, allows the owner of a piece of land to cancel an ongoing auction for that land. The function takes in a parameter _index, which is the index of the land in the lands array that the owner wants to cancel the auction for.
+The `cancelAuction`, allows the owner of a piece of land to cancel an ongoing auction for that land. The function takes in a parameter \_index, which is the index of the land in the lands array that the owner wants to cancel the auction for.
 
 The first line of the function checks that the land at the given index exists, which is done through the exists modifier. If the land does not exist, the function will revert.
 
@@ -457,11 +457,11 @@ After verifying that our wallet has sufficient funds, we can use the Celo plugin
 
 Well done on creating the smart contract for auctioning lands on the Celo blockchain! It's a remarkable achievement, and you should feel proud of the effort you put in. Keep up the great work and enjoy the rewards of your dedication! 🎉
 
- ## Next step
- 
+## Next step
+
 I hope you found this tutorial informative and gained valuable knowledge from it. If you wish to continue expanding your skills and knowledge, I have compiled some helpful links below that you may find useful to explore further:
- 
- [the official Celo documentation](https://docs.celo.org/)
+
+[the official Celo documentation](https://docs.celo.org/)
 
 [Solidity By Example, a website with code examples for learning Solidity](https://solidity-by-example.org/)
 
