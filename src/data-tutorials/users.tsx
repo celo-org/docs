@@ -687,9 +687,7 @@ const Users: User[] = [
   //   website: '/tutorials?tags=composer',
   //   tags: ['favorite'],
   // },
-beginner
-celosage
-celo
+
   {
     title: "Securing Multi-Sig Wallet Using Hardware Wallet; The Benefits for Securing Community Funds",
     description: "A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe",
