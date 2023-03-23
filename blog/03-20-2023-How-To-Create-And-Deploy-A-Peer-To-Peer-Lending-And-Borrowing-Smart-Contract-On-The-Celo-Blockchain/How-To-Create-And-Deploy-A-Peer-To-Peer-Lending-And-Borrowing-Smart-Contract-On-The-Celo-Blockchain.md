@@ -14,7 +14,7 @@ slug: "/tutorials/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-
 
 ## Introduction
 
-In this tutorial, we will be building a peer to peer lending and borrowing smart contract. This contract enables users to create, fund, and repay loans using the celo cUSD as a form of payment. It also defines the minimum and maximum loan amounts, as well as the minimum and maximum interest rates that can be set for a loan. By the end of the tutorial, you should have a good strong foundational knowledge on building a p2p lending and borrowing smart contract. 
+In this tutorial, we will be building a peer to peer lending and borrowing smart contract. This contract enables users to create, fund, and repay loans using the celo cUSD as a form of payment. It also defines the minimum and maximum loan amounts, as well as the minimum and maximum interest rates that can be set for a loan. By the end of the tutorial, you should have a good strong foundational knowledge on building a p2p lending and borrowing smart contract.
 
 [Project Repository](https://github.com/4undRaiser/celo-p2p-lending)
 
@@ -192,7 +192,7 @@ contract P2PLending {
     // The minimum and maximum amount of ETH that can be loaned
     uint constant public MIN_LOAN_AMOUNT = 0.1 ether;
     uint constant public MAX_LOAN_AMOUNT = 10 ether;
-    
+
     // The minimum and maximum interest rate in percentage that can be set for a loan
     uint constant public MIN_INTEREST_RATE = 1;
     uint constant public MAX_INTEREST_RATE = 10;
@@ -229,17 +229,17 @@ After the `loan` structure is defined, a mapping is created to store loan data. 
  event LoanCreated(uint loanId, uint amount, uint interest, uint duration, uint fundingDeadline, address borrower, address lender);
     event LoanFunded(uint loanId, address funder, uint amount);
     event LoanRepaid(uint loanId, uint amount);
-    
+
     modifier onlyActiveLoan(uint _loanId) {
         require(loans[_loanId].active, "Loan is not active");
         _;
     }
-    
+
     modifier onlyBorrower(uint _loanId) {
         require(msg.sender == loans[_loanId].borrower, "Only the borrower can perform this action");
         _;
     }
-    
+
 ```
 
 We created `Events` to log loan activities, such as `LoanCreated`, `LoanFunded` and `LoanRepaid`.
@@ -388,7 +388,7 @@ Finally, the `withdrawFunds()` function is created, which is used to withdraw fu
 
 To deploy our smart contract successfully, we need the celo extention wallet which can be downloaded from [here](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
 
-Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet) 
+Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet)
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
