@@ -15,18 +15,22 @@ slug: /tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-fo
 ## Introduction
 
 Securing community funds is essential in the world of cryptocurrencies. Using a hardware wallet and a multi-sig wallet is one efficient way to accomplish this. Storing large cryptocurrency holdings in a single wallet comes with inherent risks, but using a multi-sig wallet adds an extra layer of protection. In this tutorial, we'll review the benefits of securing community funds and the advantages of combining a hardware wallet with a multi-sig wallet.
-Prerequisites
+
+## Prerequisites
+
 Readers should have a fundamental understanding of Celo and be acquainted with hardware wallets before beginning this tutorial. You will more likely follow along with the technical content and complete this tutorial if you have these prerequisites.
 
 ## Requirements
 
 To complete this tutorial, you need a basic knowledge of  Celo and hardware wallets.
 
-What is a Hardware Wallet? 
+## What is a Hardware Wallet?
+
 A hardware wallet is a specialized tool to keep private keys safe and secure offline. This makes it extremely difficult for malware or hackers to access your keys and take your belongings. You can access assets and sign transactions on a hardware wallet even without connecting to a computer, because not all hardware wallets require connecting to one.
  
 Trezor, Ledger, and KeepKey are a few well-known hardware wallets.
-URL: https://unsplash.com/photos/pseVX5u0vBY Alt text: A Trezor WalletURL: https://unsplash.com/photos/U2fnmCXZK0M Alt text: A Ledger Wallet
+[A Trezor Wallet](https://unsplash.com/photos/pseVX5u0vBY)
+[A Ledger Wallet](https://unsplash.com/photos/U2fnmCXZK0M)
 What is a Multi-Sig Wallet?
 A multi-signature wallet is a cryptocurrency wallet that necessitates multiple signatures or approvals from various parties for a transaction to be carried out. This increases security and lowers the chance of theft or unauthorized access. Each party must have its own private key when setting up a multi-sig wallet and gather a certain number of signatures before a transaction can be approved. Celo Safe is a popular example.
 
