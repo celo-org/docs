@@ -1423,6 +1423,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
+    title: 'How to Build a Decentralized Job Board Dapp On The Celo Blockchain Part 1',
+    description: 'This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo'],
+  },
+  {
     title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
     description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
     preview: require('./showcase/beginner/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential.png'),
