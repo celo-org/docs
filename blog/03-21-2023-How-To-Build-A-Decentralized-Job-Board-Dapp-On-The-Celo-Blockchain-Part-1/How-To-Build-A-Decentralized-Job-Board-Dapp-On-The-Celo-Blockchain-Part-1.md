@@ -3,9 +3,9 @@ title: How to Build A Decentralized Job Board Dapp On The Celo Blockchain Part 1
 description: This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain.
 authors:
   - name: ✍️ Jonathan Iheme
-url: https://github.com/4undRaiser
-image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
-tags: [celosage, solidity,  celo, intermediate]
+    url: https://github.com/4undRaiser
+    image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
+tags: [celosage, solidity, celo, intermediate]
 hide_table_of_contents: true
 slug: "/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1"
 ---
@@ -15,7 +15,6 @@ slug: "/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockc
 ## Introduction
 
 The Job Board Smart Contract is a Solidity contract that enables employers to post job openings and job seekers to browse through job openings. The contract maintains a list of job postings along with their details such as job name, job description, and salary. Employers can post jobs, and job seekers can view the list of job openings. The contract also provides the functionality to remove job posts, but only the employer who posted the job can remove the job post.
-
 
 ## Prerequisites
 
@@ -35,26 +34,26 @@ The completed code Should look like this.
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// Job Board Smart Contract 
+// Job Board Smart Contract
 contract JobBoard {
 
     struct JobPosting {
         uint jobId;
-        address employer; 
+        address employer;
         string jobName;
-        string jobDescription; 
-        uint256 salary; 
+        string jobDescription;
+        uint256 salary;
     }
     uint private jobCount = 0;
 
     mapping(uint => JobPosting) jobs;
 
 
-   
+
     event JobPosted(
         uint jobId,
-        address employer, 
-        string jobName, 
+        address employer,
+        string jobName,
         string jobDescription,
         uint salary
     );
@@ -62,7 +61,7 @@ contract JobBoard {
 
     // Function to post a job
     function postJob(
-        string memory _jobName, 
+        string memory _jobName,
         string memory _jobDescription,
         uint256 _salary
     ) public {
@@ -82,8 +81,8 @@ contract JobBoard {
         // Emit the JobPosted event
         emit JobPosted(
             job.jobId,
-            job.employer, 
-            job.jobName, 
+            job.employer,
+            job.jobName,
             job.jobDescription,
             job.salary
         );
@@ -111,13 +110,13 @@ contract JobBoard {
     }
 
      function removeJobPost(uint _jobId) external {
-	        require(msg.sender == jobs[_jobId].employer, "not permmited");         
+	        require(msg.sender == jobs[_jobId].employer, "not permmited");
             jobs[_jobId] = jobs[jobCount - 1];
             delete jobs[jobCount - 1];
-            jobCount--; 
+            jobCount--;
 	 }
 
-    
+
 }
 ```
 
@@ -143,10 +142,10 @@ We will now define some variables, structs and mappings that will be used by our
 ```solidity
  struct JobPosting {
         uint jobId;
-        address employer; 
+        address employer;
         string jobName;
-        string jobDescription; 
-        uint256 salary; 
+        string jobDescription;
+        uint256 salary;
     }
 
      uint private jobCount = 0;
@@ -171,8 +170,8 @@ We will now define one events that will be emitted by our contract.
 ```solidity
   event JobPosted(
         uint jobId,
-        address employer, 
-        string jobName, 
+        address employer,
+        string jobName,
         string jobDescription,
         uint salary
     );
@@ -184,7 +183,7 @@ let's work on the functions.
 
 ```solidity
         function postJob(
-        string memory _jobName, 
+        string memory _jobName,
         string memory _jobDescription,
         uint256 _salary
     ) public {
@@ -199,8 +198,8 @@ let's work on the functions.
         jobCount++;
         emit JobPosted(
             job.jobId,
-            job.employer, 
-            job.jobName, 
+            job.employer,
+            job.jobName,
             job.jobDescription,
             job.salary
         );
@@ -211,7 +210,6 @@ let's work on the functions.
 This is the `postJob` function which allows employers to post job openings to the job board. It takes in the job name, job description, and salary as parameters.
 
 Inside the function, a new `JobPosting` struct is created with the `jobCount` as its `jobId`, the `msg.sender` as the employer and the provided `jobName`, `jobDescription`, and `salary`. The new `JobPosting` is stored in the jobs mapping using the `jobCoun`t as the key. The `jobCount` is then incremented to keep track of the new job posting.
-
 
 ```solidity
     function getJobposts(uint256 _jobId)
@@ -241,13 +239,12 @@ Next, is the `getJobposts` function which takes a job ID as a parameter and retu
 
 Inside the function, the `JobPosting` struct associated with the provided `jobId` is retrieved from the jobs mapping and stored in a local variable `job`. The details of the job posting are then returned as a tuple.
 
-
 ```solidity
     function removeJobPost(uint _jobId) external {
-        require(msg.sender == jobs[_jobId].employer, "not permmited");         
+        require(msg.sender == jobs[_jobId].employer, "not permmited");
         jobs[_jobId] = jobs[jobCount - 1];
         delete jobs[jobCount - 1];
-        jobCount--; 
+        jobCount--;
     }
 
 ```
@@ -262,7 +259,7 @@ To deploy our smart contract successfully, we need the celo extention wallet whi
 
 Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet)
 
-You can now fund your wallet and deploy your contract using the celo plugin in remix. 
+You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
 ## Next Steps
 
