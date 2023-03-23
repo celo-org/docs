@@ -3,9 +3,9 @@ title: Build And Deploy A Multi Token wallet On The Celo Blockchain.
 description: In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.
 authors:
   - name: ✍️ Jonathan Iheme
-url: https://github.com/4undRaiser
-image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
-tags: [celosage, solidity,  celo, react, intermediate]
+    url: https://github.com/4undRaiser
+    image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
+tags: [celosage, solidity, celo, react, intermediate]
 hide_table_of_contents: true
 slug: "/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain"
 ---
@@ -210,6 +210,7 @@ function withdraw(address token, uint256 amount) external {
     emit Withdrawal(msg.sender, token, amount);
 }
 ```
+
 The function first checks that the user has a sufficient balance of the specified token in the contract. If the user does not have enough balance, the function will revert and the transaction will not be executed. If the user has enough balance, the function will transfer the specified amount of tokens from the contract to the user's address using the transfer function from the `IERC20 interface`. The user's `balance` in the contract is then updated accordingly and the `_lastSeen` mapping is updated with the current `timestamp` to track the last time the user interacted with the contract. Finally, the function emits a Withdrawal event to notify external parties of the transaction.
 
 ### BalanceOf function
@@ -249,6 +250,7 @@ Lastly, we have the `setMaxIdleTime()` function:
     _maxIdleTime = idleTime;
 }
 ```
+
 This function allows the contract owner to set the maximum amount of time that can elapse without a user interacting with the contract before their tokens are considered "idle". The function takes in the idle time in seconds as an argument. The function first checks that the caller of the function is the contract owner using the owner function, and reverts the transaction if this condition is not met. If the caller is the contract owner, the function updates the `_maxIdleTime` variable to reflect the new maximum idle time.
 
 ## Deployment
