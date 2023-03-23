@@ -25,7 +25,7 @@ Applications for encryption are essential for safeguarding private messages, onl
 
 It's crucial to have a fundamental knowledge of cryptography and the tenets of secure communication before starting this tutorial. Also, you must have an appreciable knowledge of creating and deploying apps in cloud settings.
 
-[Here](https://github.com/SasaniEldis/corda.git) is a link to a sample project (Corda) that we'll be creating in this tutorial. Corda is an open-source blockchain platform that enables blockchain scalability & interoperability. 
+[Here](https://github.com/SasaniEldis/corda.git) is a link to a sample project (Corda) that we'll be creating in this tutorial. Corda is an open-source blockchain platform that enables blockchain scalability & interoperability.
 
 ## Requirements
 
