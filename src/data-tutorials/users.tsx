@@ -1557,6 +1557,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate','nft'],
   },
   {
+    title: 'Decentralized Land Auction Smart Contract',
+    description: 'The project aims to provide a decentralized platform for buying and selling land by allowing individuals to bid on available land parcels and purchase using cUSD',
+    preview: require('./showcase/intermediate/Decentralize-land-auction-smart-contract.png'),
+    website: 'blog/tutorials/Decentralized-land-auction-smart-contract',
+    tags: ['celo', 'solidity', 'celosage', 'intermediate'],
+  },
+  {
     title: 'Use onchain randomness',
     description: 'Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.',
     preview: require('./showcase/intermediate/use-on-chain-randomness.png'),
