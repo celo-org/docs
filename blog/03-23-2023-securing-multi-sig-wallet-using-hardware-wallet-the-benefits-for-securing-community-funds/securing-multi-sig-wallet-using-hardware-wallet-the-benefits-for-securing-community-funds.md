@@ -103,8 +103,9 @@ You can confidently set up and connect your hardware wallet to Celo Safe by foll
  
 **Step 1: Get Your Hardware Wallet**
 
-Getting a hardware wallet is the first step in setting it up. Several reliable companies, including Ledger, Trezor, and KeepKey, make hardware wallets. 
-Tip: Only buy from the manufacturer or a reputable reseller when purchasing. 
+Getting a hardware wallet is the first step in setting it up. Several reliable companies, including Ledger, Trezor, and KeepKey, make hardware wallets.
+
+_Tip: Only buy from the manufacturer or a reputable reseller when purchasing._
  
 **Step 2: Install the Required Software**
 
@@ -133,12 +134,14 @@ Once you have added the required people to "My Safes," the community funds can b
 
 **Step 6: Confirm the Transaction**
 
-On the hardware wallet of the authorized members, they will be prompted to confirm the transaction. They will verify the details, enter their PIN or passphrase, and confirm the transaction. 
-Tip: Always verify the address twice before sending any money there.
+On the hardware wallet of the authorized members, they will be prompted to confirm the transaction. They will verify the details, enter their PIN or passphrase, and confirm the transaction.
+
+_Tip: Always verify the address twice before sending any money there._
 
 **Step 7: Keep Your Hardware Wallet Secure**
 
 Remember to keep your hardware wallet safe and secure. Do not share your PIN or passphrase with anyone, and keep your hardware wallet in a safe place.
+
 _Tip: For maximum security, keep the firmware on your hardware wallet updated and do not divulge your recovery seed to anyone._
 
 ## Conclusion
