@@ -5,7 +5,7 @@ authors:
   - name: ✍️ Boyejo Oluwafemi
 url: https://github.com/boyfem
 image_url: https://github.com/boyfem
-tags: [beginner, celosage, celo-safe, celo]
+tags: [beginner, celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds
 ---
