@@ -949,6 +949,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
   },
   {
+    title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
+    description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
+    preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain',
+    tags: ['celosage', 'celo', 'intermediate', 'solidity'],
+  },
+  {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
@@ -1416,6 +1423,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
+    title: 'How to Build a Decentralized Job Board Dapp On The Celo Blockchain Part 1',
+    description: 'This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo'],
+  },
+  {
     title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
     description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
     preview: require('./showcase/beginner/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential.png'),
@@ -1541,6 +1555,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/create-an-escrow-nft-platform-on-celo-with-python.png'),
     website: '/blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python',
     tags: ['celosage', 'intermediate','nft'],
+  },
+  {
+    title: 'Decentralized Land Auction Smart Contract',
+    description: 'The project aims to provide a decentralized platform for buying and selling land by allowing individuals to bid on available land parcels and purchase using cUSD',
+    preview: require('./showcase/intermediate/Decentralize-land-auction-smart-contract.png'),
+    website: 'blog/tutorials/Decentralized-land-auction-smart-contract',
+    tags: ['celo', 'solidity', 'celosage', 'intermediate'],
   },
   {
     title: 'Use onchain randomness',
