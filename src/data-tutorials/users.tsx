@@ -949,6 +949,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
   },
   {
+    title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
+    description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
+    preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain',
+    tags: ['celosage', 'celo', 'intermediate', 'solidity'],
+  },
+  {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
