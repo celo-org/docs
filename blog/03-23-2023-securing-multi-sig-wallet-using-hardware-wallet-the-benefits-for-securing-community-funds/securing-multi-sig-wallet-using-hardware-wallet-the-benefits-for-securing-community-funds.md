@@ -113,7 +113,6 @@ Go to the official website of your hardware wallet and download the software req
 **Step 3: Connect Your Hardware Wallet to Celo Safe**
 
 Open the Celo Safe app and select "Create Safe" to create a new safe or "Add existing safe" if you already have one. Click on “Connect” and choose the type of hardware wallet you have, then follow the prompts to connect it. You can also tap on the wallet icon in the top-right corner of the screen to connect your wallet directly.
-Tip: Your hardware wallet should always be kept in a secure location.
 
 _Tip: Your hardware wallet should always be kept in a secure location._
 ![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/4.jpeg)
