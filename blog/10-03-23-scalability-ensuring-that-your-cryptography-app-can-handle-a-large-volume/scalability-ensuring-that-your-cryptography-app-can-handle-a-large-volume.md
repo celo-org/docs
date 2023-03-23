@@ -9,8 +9,8 @@ image_url: https://avatars.githubusercontent.com/u/107583957?v=4
 tags: ["intermediate", "asymmetric cryptography", "celosage", "Documentation"]
 hide_table_of_contents: true
 slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume
-
 ---
+
 ![header](../../src/data-tutorials/showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png)
 
 In this tutorial, you’ll learn how to improve key management and security in your messaging platform by implementing asymmetric cryptography. Discover how to generate key pairs, encrypt and decrypt messages, and ensure secure communication between users.
@@ -20,7 +20,6 @@ In this tutorial, you’ll learn how to improve key management and security in y
 ## Introduction
 
 Applications for encryption are essential for safeguarding private messages, online banking transactions, and other sensitive data and communications. It is crucial to make sure that these applications can manage large numbers of transactions and users without sacrificing security or performance as their popularity grows. This tutorial examines the fundamentals of scaling cryptographic programs and offers helpful advice to make sure your program can withstand expansion and rising usage.
-
 
 ## Prerequisites
 
@@ -40,17 +39,16 @@ In this tutorial, we'll be using Python and the Flask web framework to build a s
 
 Let's start by putting up a fundamental API endpoint that will enable us to encrypt and decrypt messages in a new Flask project.
 
-
 - Create a new directory for your project first, and open it in your terminal to get started:
 
- ```bash
+```bash
 mkdir crypto-app
 cd crypto-app
 ```
 
 - Next, create a new virtual environment for your project:
 
- ```bash
+```bash
 python3 -m venv venv
 ```
 
@@ -62,7 +60,7 @@ source venv/bin/activate
 
 - Install Flask:
 
- ```bash
+```bash
 pip install Flask
 ```
 
@@ -93,20 +91,18 @@ if __name__ == '__main__':
 
 This code sets up a new Flask app with two endpoints: /encrypt and /decrypt. Each endpoint expects a POST request with a JSON payload containing a plaintext message and a secret key and returns the encrypted or decrypted message.
 
-
-- Test your app by running it and sending a test request using curl. 
+- Test your app by running it and sending a test request using curl.
 - In a new terminal window, activate your virtual environment and start the Flask app:
 - In another terminal window, send a test request to the /encrypt endpoint:
 
-```bash 
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{"plaintext":"Hello, world!","key":"my-secret-key"}' http://localhost:5000/encrypt
 ```
-
 
 - You should see a response containing a ciphertext value:
 
 ```json
-{"ciphertext": "TODO"}
+{ "ciphertext": "TODO" }
 ```
 
 ### Ensuring Scalability
@@ -129,22 +125,22 @@ First, we need to generate a public and private key pair for each user. We can u
 async function generateKeyPair() {
   const keyPair = await window.crypto.subtle.generateKey(
     {
-      name: 'RSA-OAEP',
+      name: "RSA-OAEP",
       modulusLength: 2048,
       publicExponent: new Uint8Array([1, 0, 1]),
-      hash: {name: 'SHA-256'}
+      hash: { name: "SHA-256" },
     },
     true,
-    ['encrypt', 'decrypt']
+    ["encrypt", "decrypt"]
   );
 
   const publicKey = await window.crypto.subtle.exportKey(
-    'spki',
+    "spki",
     keyPair.publicKey
   );
 
   const privateKey = await window.crypto.subtle.exportKey(
-    'pkcs8',
+    "pkcs8",
     keyPair.privateKey
   );
 
@@ -163,19 +159,19 @@ Now that we have a public key for each user, we can use it to encrypt messages t
 ```js
 async function encryptMessage(message, publicKey) {
   const key = await window.crypto.subtle.importKey(
-    'spki',
+    "spki",
     publicKey,
     {
-      name: 'RSA-OAEP',
-      hash: {name: 'SHA-256'}
+      name: "RSA-OAEP",
+      hash: { name: "SHA-256" },
     },
     false,
-    ['encrypt']
+    ["encrypt"]
   );
 
   const encryptedMessage = await window.crypto.subtle.encrypt(
     {
-      name: 'RSA-OAEP'
+      name: "RSA-OAEP",
     },
     key,
     new TextEncoder().encode(message)
@@ -194,19 +190,19 @@ To decrypt a message, the user needs their private key. We can use the Web Crypt
 ```js
 async function decryptMessage(encryptedMessage, privateKey) {
   const key = await window.crypto.subtle.importKey(
-    'pkcs8',
+    "pkcs8",
     privateKey,
     {
-      name: 'RSA-OAEP',
-      hash: {name: 'SHA-256'}
+      name: "RSA-OAEP",
+      hash: { name: "SHA-256" },
     },
     false,
-    ['decrypt']
+    ["decrypt"]
   );
 
   const decryptedMessage = await window.crypto.subtle.decrypt(
     {
-      name: 'RSA-OAEP'
+      name: "RSA-OAEP",
     },
     key,
     encryptedMessage
@@ -226,7 +222,6 @@ When a user registers on our platform, we generate a key pair for them and store
 
 Here's how this process would work in more detail:
 
-
 1. User A wants to send a message to User B.
 2. User A fetches User B's public key from the database.
 3. User A encrypts the message using User B's public key.
@@ -240,7 +235,6 @@ It's worth noting that while asymmetric cryptography can improve scalability, it
 
 By using asymmetric cryptography for key management, we can improve scalability and eliminate the need for a shared secret. While there are some performance trade-offs, these can be mitigated by using a hybrid approach.
 
-
 ## Conclusion
 
 In this tutorial, we covered scalability and how to make sure that when our encryption application expands, it can manage large numbers of users and transactions. We examined the drawbacks of symmetric key encryption and how key management and scalability are enhanced by asymmetric encryption.
@@ -251,11 +245,9 @@ Also, we examined how to use the Web3.js framework to interface with private key
 
 After completing this tutorial's stages, you should now have a solid understanding of how to use asymmetric cryptography for key management in your cryptography app.
 
-
 ## Next Steps
 
 As you continue to develop your cryptography app, there are several areas you may want to explore further:
-
 
 - Performance improvement: Asymmetric encryption can be slower and more resource-intensive than symmetric-key encryption. However, it can also enhance key management and scalability. The efficiency of your software can be improved using a variety of methods, including key caching, elliptic curve cryptography, and multithreading.
 
@@ -264,7 +256,6 @@ As you continue to develop your cryptography app, there are several areas you ma
 - Integration with other technologies: Technologies like blockchains, secure messaging, and identity management are frequently used in conjunction with cryptography.
 
 You might want to look at how your app can integrate with these technologies to provide a more robust and secure solution.
-
 
 ## About the Author
 
