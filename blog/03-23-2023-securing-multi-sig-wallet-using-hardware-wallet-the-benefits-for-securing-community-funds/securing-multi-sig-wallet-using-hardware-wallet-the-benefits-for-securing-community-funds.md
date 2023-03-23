@@ -1,4 +1,16 @@
-Securing Multi-Sig Wallet Using Hardware Wallet: The Benefits of Securing Community Funds
+---
+title: Securing Multi-Sig Wallet Using Hardware Wallet; The Benefits for Securing Community Funds  
+description: A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe
+authors:
+  - name: ✍️ Boyejo Oluwafemi
+url: https://github.com/boyfem
+image_url: https://github.com/boyfem
+tags: [beginner, celosage, celo-safe, celo]
+hide_table_of_contents: true
+slug: /tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds
+---
+
+![header](../../src/data-tutorials/showcase/beginner/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds.png)
 
 ## Introduction
 
