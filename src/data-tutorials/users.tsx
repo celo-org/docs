@@ -2551,6 +2551,13 @@ const Users: User[] = [
     website: "/blog/tutorials/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation",
     tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"],
   },
+  {
+    title: 'Automate React Native Celo DApp Deployment with GitHub Actions',
+    description: 'Learn how to deploy and publish your React Native DApp to Google Play Store or Google Drive',
+    preview: require('./showcase/intermediate/automate-react-native-celo-dapp-deployment-with-github-actions.png'),
+    website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
+    tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
