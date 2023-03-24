@@ -2489,7 +2489,7 @@ const Users: User[] = [
 
   {
     title: 'Build a Full-Stack Mobile DApp with React Native and Web.JS on Celo',
-    description: 'Learn hoe to build chat app on celo network using react-native and web3js',
+    description: 'Learn how to build chat app on celo network using react-native and web3js',
     preview: require('./showcase/intermediate/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo.png'),
     website: 'blog/tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
@@ -2550,6 +2550,14 @@ const Users: User[] = [
     preview: require("./showcase/intermediate/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation.png"),
     website: "/blog/tutorials/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation",
     tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"],
+  },
+
+  {
+    title: 'Automate React Native Celo DApp Deployment with GitHub Actions',
+    description: 'Learn how to deploy and publish your React Native DApp to Google Play Store or Google Drive',
+    preview: require('./showcase/intermediate/automate-react-native-celo-dapp-deployment-with-github-actions.png'),
+    website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
+    tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
