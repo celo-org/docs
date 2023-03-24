@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/automate-react-native-celo-dapp-deployment-with-github-actions
 ---
 
-![header](../../src/data-tutorials/showcase/advanced/gas-optimization-techniques-in-solidity.png)
+![header](../../src/data-tutorials/showcase/intermediate/automate-react-native-celo-dapp-deployment-with-github-actions.png)
 
 ## Introduction
 
