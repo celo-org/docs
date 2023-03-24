@@ -29,7 +29,7 @@ In this article, we'll walk you through the process of setting up an automation 
 - Node.js and npm installed on your machine
 - Expo CLI installed on your machine
 
-A beginner's-level familiarity with everything on the aforementioned list is sufficient to be able to follow along in this session. 
+A beginner's-level familiarity with everything on the aforementioned list is sufficient to be able to follow along in this session.
 
 ### Important Terms
 
@@ -46,7 +46,7 @@ It is obvious to us that in order to protect privacy and prevent security breach
 
 A service JSON account, also known as an activity JSON account, is a JSON-based credential or set of data that enables simple access to and interaction with the Google Cloud Platform. It gives users access to the Google Play Store, the Google Drive API, and other GCP resources that are open for interaction. Here is a link to a 2-minute video that clarifies how to accomplish it. Now that the service account JSON has been downloaded successfully, we can go to the next stage in obtaining our subsequent credential.
 
-## Setting up  Google  Play Android and Google Drive Developer API
+## Setting up Google Play Android and Google Drive Developer API
 
 The following steps are essential for configuring the Google Drive API and the Google Play Android Developer API. Remember that they are extremely similar to the previously described approach for obtaining a service account JSON with just a few minor adjustments and a different option, so the video can potentially be followed by selecting the required and expected service instead, but with the same procedure. As they both require the same steps to be taken, I'm consolidating them here:
 
@@ -67,7 +67,6 @@ The following steps are essential for configuring the Google Drive API and the G
 
 It is very important to keep all these mentioned JSONs safe for security purposes; anybody who gains access to all the mentioned JSONs can push an app to our platform, and the bill will be on us. For security purposes, let’s pay attention to this very point.
 
-
 ## Add Expo Credentials Secrets
 
 Next, you need to add the EXPO_CREDENTIALS secret to your repository. This secret is used by the GitHub workflow to authenticate with Expo and upload your app to the app store.
@@ -80,7 +79,7 @@ We will use the strength of GitHub's security policy because, as was already est
 
 - Step 1: Go to the GitHub repository.
 - Step 2: Go to the "Settings" tab of the same repository as shown below
-![Settings](images/setting-btn.png)
+  ![Settings](images/setting-btn.png)
 
 - Step 3: Click on the `Secrets` tab in the left-hand sidebar.
   ![secrets](images/secret-action-btn.png)
@@ -90,15 +89,15 @@ We will use the strength of GitHub's security policy because, as was already est
 ![key](images/after-kkey.png)
 
 - Step 5: Enter the name and value of the secret. For example, you can create a secret called `SERVICE_ACCOUNT_KEY` and paste the contents of your JSON key file as the value.
-Repeat this process for the other secrets that you need, such as `GOOGLE_DRIVE_ACCESS_TOKEN`, `GOOGLE_DRIVE_REFRESH_TOKEN`, and `GOOGLE_PLAY_API_ACCESS_KEY`.
-Once you've added all the necessary secrets, you can reference them in your `YAML` file using the `${{ secrets.SECRET_NAME }}` syntax.
+  Repeat this process for the other secrets that you need, such as `GOOGLE_DRIVE_ACCESS_TOKEN`, `GOOGLE_DRIVE_REFRESH_TOKEN`, and `GOOGLE_PLAY_API_ACCESS_KEY`.
+  Once you've added all the necessary secrets, you can reference them in your `YAML` file using the `${{ secrets.SECRET_NAME }}` syntax.
 
 That's it! With the YAML file and secrets set up, you can now automate the process of uploading your APK file to Google Drive and the Google Play Store every time you make a new release of your Celo dApp.
 
 ## Before and After Look of the Repo
+
 ![before](images/after-key.png)
 ![after-repo](images/after-repo.png)
-
 
 ## Creating the Configurations
 
@@ -156,9 +155,10 @@ The `on` field specifies the events or actions that make the workflow run, in th
 
 The `jobs` field defines the jobs that the workflow will run. These are the various related tasks that need to be done. It could be a test job, a lint job, and so on, but in this case, there is only one job called `deploy.`
 
-The `runs-on` field specifies the type of virtual environment to run the job on. In this case, we're using Ubuntu-latest. This is another aspect of GitHub Actions. As React Native is cross-platform, it can run on Android, iOS, the web, and other platforms. But only Mac users can build iOS, but with the help of GitHub Actions, we can set up a Mac virtual machine with XCode installed that can handle that for us without thinking about getting a Mac Book. 
+The `runs-on` field specifies the type of virtual environment to run the job on. In this case, we're using Ubuntu-latest. This is another aspect of GitHub Actions. As React Native is cross-platform, it can run on Android, iOS, the web, and other platforms. But only Mac users can build iOS, but with the help of GitHub Actions, we can set up a Mac virtual machine with XCode installed that can handle that for us without thinking about getting a Mac Book.
 
-The `steps` field lists the individual steps that the job will run. These include 
+The `steps` field lists the individual steps that the job will run. These include
+
 1. Checking out the code
 2. Setting up NodeJS and React Native
 3. Install packages and dependencies
@@ -170,7 +170,7 @@ The `steps` field lists the individual steps that the job will run. These includ
 ## Breakdown of each of these 7 steps
 
 - Step 1: Checking out the code:
-The first step is to check out the code from the GitHub repository. You can use the `actions/checkout` action to do this. Here's an example:
+  The first step is to check out the code from the GitHub repository. You can use the `actions/checkout` action to do this. Here's an example:
 
 ```yaml
 - name: Checkout code
@@ -178,19 +178,19 @@ The first step is to check out the code from the GitHub repository. You can use 
 ```
 
 - Step 2: Setting up NodeJS and React Native:
-Next, you need to set up NodeJS and React Native on the build machine. You can use the `actions/setup-node` action to do this. Here's an example:
+  Next, you need to set up NodeJS and React Native on the build machine. You can use the `actions/setup-node` action to do this. Here's an example:
 
 ```yaml
 - name: Set up Node.js
   uses: actions/setup-node@v2
   with:
-    node-version: '14.x'
+    node-version: "14.x"
 - name: Install React Native CLI
   run: npm install -g react-native-cli
 ```
 
 - Step 3: Install packages and dependencies:
-You need to install all the packages and dependencies required for the app. You can use the npm install command for this.
+  You need to install all the packages and dependencies required for the app. You can use the npm install command for this.
 
 ```yaml
 - name: Install packages and dependencies
@@ -199,7 +199,7 @@ You need to install all the packages and dependencies required for the app. You 
 ```
 
 - Step 4: Building the release APK:
-You need to build the release APK for the app. You can use the expo build:android command for this. Here's an example:
+  You need to build the release APK for the app. You can use the expo build:android command for this. Here's an example:
 
 ```yaml
 - name: Build release APK
@@ -209,19 +209,19 @@ You need to build the release APK for the app. You can use the expo build:androi
 ```
 
 - Step 5: Authenticating the service account:
-You need to authenticate the service account that will be used to upload the APK to Google Drive and publish it to the Google Play Store. You can create a JSON key for your service account in the Google Cloud Console and store it as a secret in your GitHub repository. Here's an example of how to authenticate the service account:
+  You need to authenticate the service account that will be used to upload the APK to Google Drive and publish it to the Google Play Store. You can create a JSON key for your service account in the Google Cloud Console and store it as a secret in your GitHub repository. Here's an example of how to authenticate the service account:
 
 ```yaml
 - name: Authenticate service account
   uses: google-github-actions/setup-gcloud@master
   with:
-    version: '290.0.1'
+    version: "290.0.1"
     service_account_email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
     service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 ```
 
 - Step 6: Uploading the APK to Google Drive:
-You can use the `google-github-actions/upload-to-google-drive` action to upload the APK to Google Drive. Here's an example:
+  You can use the `google-github-actions/upload-to-google-drive` action to upload the APK to Google Drive. Here's an example:
 
 ```yaml
 - name: Upload APK to Google Drive
@@ -234,14 +234,14 @@ You can use the `google-github-actions/upload-to-google-drive` action to upload 
 ```
 
 - Step 7: Publishing the APK to the Google Play Store:
-Finally, you can use the `google-github-actions/publish-to-google-play-store` action to publish the APK to the Google Play Store. Here's an example:
+  Finally, you can use the `google-github-actions/publish-to-google-play-store` action to publish the APK to the Google Play Store. Here's an example:
 
 ```yaml
 - name: Publish APK to Google Play Store
   uses: google-github-actions/publish-to-google-play-store@master
   with:
     bundle_file_path: app-release.aab
-    track: 'internal'
+    track: "internal"
     service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 ```
 
@@ -251,6 +251,7 @@ The above is the explanation for the fields and key. It is necessary to examine 
  expo build:android -t apk --no-publish
  expo build:ios --no-publish
 ```
+
 The above contains three keys: `name`, `on`, with a subkey under “on” that is `push`, which in turn has a subkey `branches` with a value of `main`. It is important to note at this point that the subkeys are values for the parent key, and they always expect their own value. The structure means that when a push is made to the main branch, it executes the upcoming jobs that we will be having. The `name` key has a direct value, the name of the workflow.
 
 ```yaml
@@ -262,7 +263,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: "14.x"
       - name: Install dependencies
         run: |
           npm install
@@ -284,9 +285,9 @@ jobs:
           track: production
           apk: ./android/app/build/outputs/apk/release/app-release.apk
           releaseNotes: "Initial release"
-
 ```
-The `jobs` key has a single direct subkey (value), and it is the `deploy` job. In this section, we need a series of actions and tasks to deploy. For us to be able to deploy, we need a virtual environment to run our codes, just as we will do on our local machine. We are using `ubuntu-latest` here, which is the `runs-on` key function. followed by a series of steps, and each step is given a name for easy tracing in case of any issues or updates. The first thing to do is check out the code from the GitHub repository on the virtual machine we are running on. This is abstracted away by a package (`actions/checkout@v2`) built by the GitHub action team with the help of the `uses` key. This will be repeated for every task and job if it requires more than one job, as in our case. 
+
+The `jobs` key has a single direct subkey (value), and it is the `deploy` job. In this section, we need a series of actions and tasks to deploy. For us to be able to deploy, we need a virtual environment to run our codes, just as we will do on our local machine. We are using `ubuntu-latest` here, which is the `runs-on` key function. followed by a series of steps, and each step is given a name for easy tracing in case of any issues or updates. The first thing to do is check out the code from the GitHub repository on the virtual machine we are running on. This is abstracted away by a package (`actions/checkout@v2`) built by the GitHub action team with the help of the `uses` key. This will be repeated for every task and job if it requires more than one job, as in our case.
 
 The `with` specifies the dependencies that are required and needed to execute the defined task at that level. with the help of packages that can all be gotten from the GitHub Actions Marketplace. And lastly, let’s talk about accessing secrets in our YAML file. To do this, we will be using the keyword “secrets” with a dot (`.`) and attaching the name of the key we use in creating the GitHub secrets in one of the sections above.
 
