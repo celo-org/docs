@@ -689,7 +689,7 @@ const Users: User[] = [
   // },
 
   {
-    title: "Securing Multi-Sig Wallet Using Hardware Wallet; The Benefits for Securing Community Funds",
+    title: "Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds",
     description: "A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe",
     preview: require('./showcase/beginner/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds.png'),
     website: '/blog/tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds',

@@ -1,10 +1,10 @@
 ---
-title: Securing Multi-Sig Wallet Using Hardware Wallet; The Benefits for Securing Community Funds
+title: Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds
 description: A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe
 authors:
   - name: ✍️ Boyejo Oluwafemi
-url: https://github.com/boyfem
-image_url: https://github.com/boyfem
+    url: https://github.com/boyfem
+    image_url: https://github.com/boyfem
 tags: [beginner, celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds
@@ -28,10 +28,10 @@ To complete this tutorial, you need a basic knowledge of Celo and hardware walle
 
 A hardware wallet is a specialized tool to keep private keys safe and secure offline. This makes it extremely difficult for malware or hackers to access your keys and take your belongings. You can access assets and sign transactions on a hardware wallet even without connecting to a computer, because not all hardware wallets require connecting to one. Trezor, Ledger, and KeepKey are a few well-known hardware wallets.
 
-![A Trezor Wallet](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/1.jpeg)
+![A Trezor Wallet](images/1.jpeg)
 _A Trezor Wallet_
 
-![A Ledger Wallet](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/2.jpeg)
+![A Ledger Wallet](images/2.jpeg)
 _A Ledger Wallet_
 
 ## What is a Multi-Sig Wallet?
@@ -74,7 +74,7 @@ Additionally, if you lose your device or forget your PIN, it contains recovery s
 
 **Card Hardware Wallet:** Here is another preferred choice. Your private keys are kept in these credit-card-sized gadgets. Although they can cost more than other kinds of hardware wallets, they are sturdy and convenient to carry around. CoolWallet S is a popular example.
 
-![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/3.jpeg)
+![CoolWallet S](images/3.jpeg)
 _CoolWallet S_
 
 ## Choosing the Right Hardware Wallet: Tips
@@ -116,17 +116,17 @@ Go to the official website of your hardware wallet and download the software req
 Open the Celo Safe app and select "Create Safe" to create a new safe or "Add existing safe" if you already have one. Click on “Connect” and choose the type of hardware wallet you have, then follow the prompts to connect it. You can also tap on the wallet icon in the top-right corner of the screen to connect your wallet directly.
 
 _Tip: Your hardware wallet should always be kept in a secure location._
-![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/4.jpeg)
+![CoolWallet S](images/4.jpeg)
 
-![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/5.jpeg)
+![CoolWallet S](images/5.jpeg)
 
-![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/6.jpeg)
+![CoolWallet S](images/6.jpeg)
 
 **Step 4: Access Your Tokens Using Your Hardware Wallet**
 
 To access Celo tokens using your hardware wallet, open the Celo Safe app and select the "My Safes" tab. Your hardware wallet will be listed as one of the accounts. You can now add other people or accounts to 'My Safes' to manage community funds.
 
-![CoolWallet S](../../blog/03-23-2023-securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/images/7.jpeg)
+![CoolWallet S](images/7.jpeg)
 
 **Step 5: Transfer Celo Tokens to Your Hardware Wallet**
 
