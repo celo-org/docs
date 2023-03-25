@@ -1,6 +1,6 @@
 ---
 title: On-Chain Randomness with Celo using Subgraphs
-description: This tutorial covers using Celo Randomness and Subgraph to make a simple lottery game. Users can create lottery clubs with Native Coin prizes, stable tokens, or NFT Tokens. Celo Randomness guarantees fair and transparent draw results, while Subgraph allows users to query data from deployed smart contracts.
+description: This tutorial covers using Celo Randomness and Subgraph to make a simple lottery game. Users create lottery clubs with Native Coin prizes, stable tokens, or NFT Tokens.
 authors:
     - name: Abiyyu Yafi
 url: https://github.com/yafiabiyyu
