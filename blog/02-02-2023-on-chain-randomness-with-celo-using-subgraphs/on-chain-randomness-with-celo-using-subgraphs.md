@@ -1,11 +1,11 @@
 ---
 title: On-Chain Randomness with Celo using Subgraphs
-description: The latest tutorial idea that I have is to create a lottery club, where users can establish their own lottery clubs with rewards of their choosing, including native coin (Celo), stablecoin (cUSD, cEUR, etc.) and also NFTs. In this idea, I will utilize Subgraph to index the smart contract of the lottery clubs created by users, and to ensure that the selection of winners for each lottery club will be determined by randomly generated numbers obtained from Celo Randomness, thereby reducing the potential for fraud in the process of selecting winners for each lottery club.
+description: This tutorial covers using Celo Randomness and Subgraph to make a simple lottery game. Users can create lottery clubs with Native Coin prizes, stable tokens, or NFT Tokens. Celo Randomness guarantees fair and transparent draw results, while Subgraph allows users to query data from deployed smart contracts.
 authors:
     - name: Abiyyu Yafi
 url: https://github.com/yafiabiyyu
 image_url: https://github.com/yafiabiyyu.png
-tags: [subgraphs, randomness]
+tags: ['celosage','intermediate', 'subgraphs', 'randomness']
 hide_table_of_contents: true
 slug: /tutorials/on-chain-randomness-with-celo-using-subgraphs
 ---
@@ -28,14 +28,6 @@ This tutorial assumes prior knowledge of Hardhat and the Solidity programming la
 -   [Node.js](https://nodejs.org/en/download/) v14.17.6 LTS or higher
 -   [Hardhat](https://hardhat.org/getting-started/#overview)
 -   [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/)
-
-This is a list of what we'll cover in this tutorial 🗒:
-
-- ✅ **Step 1:** Understanding Celo Randomness & Subgraphs
-- ✅ **Step 2:** Project Setup
-- ✅ **Step 3:** Writing the Smart Contract
-- ✅ **Step 4:** Deploying the Smart Contract
-- ✅ **Step 5:** Integration with Subgraphs
 
 
 ## Step 1: Understanding Celo Randomness & Subgraphs
@@ -1445,7 +1437,7 @@ If the simulation process is successful, the following output will appear.
 After reviewing the output above, we can identify the address for the `Lottery Club NFT` that requires verification. Kindly save this address to be used during the verification process.
 
 
-### Verifikasi Kontrak
+### Contract Verification
 
 We will now proceed with verifying the contract we have created. This verification process will facilitate debugging of the contract and enable seamless integration with subgraphs.
 
@@ -1492,7 +1484,7 @@ To create a subgraph, we need to specify its name, subtitle, and description. On
 
 ![add subgraph](images/16.png)
 
-### Inisialisasi subgraph baru dengan Graph CLI
+### Initialize new subgraph with Graph CLI
 
 Next, install the Graph CLI:
 
@@ -1526,7 +1518,7 @@ Then we need to fill in some data as follows.
 
 Before proceeding to the next stage, we need to copy the three ABI files from the contract we created. We can obtain the ABI files from the `/artifacts/contracts` folder and then transfer them to the `/lotteryclub/abis` folder that the Graph CLI generated.
 
-### Definisikan Schema
+### Define Schema
 
 Next, we need to define the GraphQL schema that we will use for the subgraphs. The GraphQL schema is a data structure used to define the data we will use in the subgraph. To define the GraphQL schema, we need to edit the `schema.graphql` file located in the `/lotteryclub` folder.
 
@@ -1563,7 +1555,7 @@ type Club @entity {
 }
 ```
 
-### Konfigurasi subgraph dengan entity dan mappings
+### Configure subgraphs with entities and mappings
 
 To configure the `subgraph.yaml` file, we first need to modify the `dataSources.mapping.entities` section by adding the `Club` and `Manager` entities.
 
@@ -1603,7 +1595,7 @@ dataSources:
           file: ./src/mapping.ts
 ```
 
-### Menambahkan kontrak tambahan
+### Added additional contracts
 
 This tutorial utilizes the factory contract pattern, which enables a single contract to create and handle other contracts. To access the contracts we have established, we must include the `LotteryClubToken` and `LotteryClubNFT` contracts in the `subgraph.yaml` file.
 
@@ -1855,13 +1847,13 @@ After deployment, we can access our subgraphs on the dashboard page and test our
 
 ## Conclusion
 
-This tutorial teaches how to use a `subgraph` for querying data on the Celo blockchain. Additionally, it covers how to generate random numbers using Celo's provided RNG called `Celo Randomness`.
+In this tutorial, we have explored two blockchain technologies that can be used to create more transparent and trustworthy applications. Firstly, we learned about the Celo Randomness Contract that enables us to generate safe and fair random numbers on the Celo blockchain. This technology is particularly useful for creating lottery games and other applications that require random numbers.
+
+Next, we delved into Subgraph, a protocol that simplifies creating interactive views and executing queries on the blockchain. With Subgraph, we can design applications that are more interactive and transparent, giving users a clearer and more comprehensive understanding of transactions and activities on the blockchain.
+
+By combining the Celo Randomness Contract and Subgraph, we can develop blockchain applications that are more transparent, fair, and trustworthy, and offer real-time and more interactive data views. By mastering this technology, we can create safer and more sophisticated blockchain applications that users can trust.
 
 
 ## Next Step
 
-Moving forward, we can not only create but also use existing subgraphs to facilitate our access to data on the Celo blockchain. Additionally, we can use Celo Randomness to create a game that utilizes random numbers, which helps us prevent cheating.
-
-## About the Author
-
-I am a blockchain and crypto enthusiast. I am also a software engineer. I love to learn new things and share my knowledge with others. You can find me on [GitHub](https://github.com/yafiabiyyu) and [LinkedIn](https://www.linkedin.com/in/abiyyuyafi/).
+Setelah anda memahami cara kerja Celo Randomness Contract dan Subgraph, anda dapat mengembangkan aplikasi yang lebih canggih dengan menggunakan kedua teknologi ini. Untuk mempelajari lebih lanjut tentang Celo Randomness Contract dan Subgraph, untuk mempelajari lebih dalam tentang Celo Randomness Contract dan Subgraph, anda dapat mengunjungi [Celo Randomness Contract](https://docs.celo.org/protocol/randomness) dan [Subgraph](https://thegraph.com/docs/en/).
