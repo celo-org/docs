@@ -93,6 +93,56 @@ Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna
     
 3. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
 
+
+## Celo Wallet
+Celo Wallet es una billetera móvil segura y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios administrar, almacenar y realizar transacciones con tokens nativos de Celo, como CELO y Celo Dollars (cUSD), directamente desde sus dispositivos móviles o navegadores.
+
+1. Ingresa a [https://celowallet.app/setup](https://celowallet.app/setup) 
+2. Una vez que hayas ingresado al sitio web tendras las opciones de Create a New Account o Use Existing Account
+
+3. A continuación le damos click en Crear una nueva cuenta, nos va a mostrar información y recomendaciones para un correcto uso de nuestra wallet. Le damos continuar para seguir con el proceso de la creación.
+4. Ahora tendrás acceso a tu dirección publica y la frase secreta de recuperación. La frase secreta de recuperación que es la información más importante. 
+    - Escribe tu Frase Secreta de Recuperación en un papel. No las guardes en el ordenador. 
+    - Asegúrate de saber siempre dónde está guardada tu frase secreta de recuperación.
+    - Haz clic en la casilla que dice "Ver" y escribe tu frase secreta de recuperación.
+    - Después de escribir tu frase secreta de recuperación, toca las palabras en el orden en que aparecieron y pulsa "Continuar".
+5. El siguiente paso es crear una contraseña local para su billetera. 
+6. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
+
+
+## Celo Extension Wallet
+Celo Extension Wallet es una extensión de navegador segura y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios administrar y proteger sus cuentas de Celo directamente desde sus navegadores web, como Chrome o Brave.
+
+1. Ingresa a [https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
+2. Cuando ingresemos a esta direccion nos dara la oportunidad de añadir la extension de nuestra wallet a nuestro navegador chrome.
+3. Cuando le damos en añadir a Chrome, nos mostrara lo que esta extensión nos permite hacer  una vez terminemos el proceso, confirmamos en el botón de añadir extensión.
+4. Nos guiara en una nueva  pestaña donde tendremos un proceso para terminar la instalación de la extensión.
+5. Tenemos la opción de crear una nueva wallet o importar una que ya tengamos.
+6. Para este caso vamos a crear  una nueva wallet y a realizar todos los pasos para que podamos usar la extension. Una vez confirmamos una nueva wallet nos mostrara que hace y que no hace cuando instalamos la extensión. Le damos click en que estamos de acuerdo para continuar.
+7. El siguiente paso es crear una contraseña local para su billetera y aceptar los términos de uso de esta extension que pueden encontrar en el siguiente link:  [https://consensys.net/terms-of-use/](https://consensys.net/terms-of-use/) le damos crear y continuamos.
+
+8. Ahora tendrás acceso a tu frase secreta de recuperación. La frase secreta de recuperación que es la información más importante. 
+    - Escribe tu Frase Secreta de Recuperación en un papel. No las guardes en el ordenador. 
+    - Asegúrate de saber siempre dónde está guardada tu frase secreta de recuperación.
+    - Haz clic en la casilla que dice "Ver" y escribe tu frase secreta de recuperación.
+    - Después de escribir tu frase secreta de recuperación, toca las palabras en el orden en que aparecieron y pulsa "Continuar".
+
+9. Tendremos que confirmar nuestra frase de recuperacion en el orden que se nos asigno, luego le damos confirmar para revisar que nos haya quedado bien y tengamos anotada nuestra frase de recuperacion en un lugar seguro.
+10. Estaremos listos para usar nuestra billetera y nuestra extension en Chrome.
+
+
+## Celo Terminal
+Celo Terminal es una interfaz de usuario amigable y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios y desarrolladores administrar sus cuentas, realizar transacciones, ejecutar contratos inteligentes y explorar la red Celo de una manera más sencilla y accesible.
+
+1. Ingresa a [https://celoterminal.com/](https://celoterminal.com/)
+2. Debemos descargar Celo terminal para nuestro sistema operativo.
+3. Una vez descargado Seguimos las instrucciones de nuestro computador y abrimos la aplicación.
+4. Comenzaremos a crear nuestra cuenta, agregando una billetera nueva
+5. El siguiente paso es crear una contraseña local para su billetera. Una vez asignada la contraseña le damos un nombre a nuestra billetera.
+6. Ya tenemos nuestra billetera creada y lista para enviar o recibir transacciones.
+7. Puedes ingresar en tu cuenta para mirar tu frase de seguridad y anotarla en un lugar seguro.
+
+
 ## Conclusión​
 Recuerda que tu Frase Semilla es la representación en lenguaje de tu clave privada con la que puedes acceder a tu dirección crypto e importarla a cualquier billetera y de esta forma acceder a tus fondos.
 
