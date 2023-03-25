@@ -295,7 +295,7 @@ Summarily, the whole sample code can be gotten from the marketplace, and we can 
 
 ## Conclusion
 
-After successfully following the tutorial as it is on this repository, I believe you’ve been able to deploy your DApp to both Google Drive and the Google Play Store, and apart from that, you’ve been able to learn YAML and how to use YAML to configure the GitHub Actions to kick start the process of deployment through automation.
+After successfully following the tutorial as it is on [this repository](https://github.com/Taiwrash/celo-chats), I believe you’ve been able to deploy your DApp to both Google Drive and the Google Play Store, and apart from that, you’ve been able to learn YAML and how to use YAML to configure the GitHub Actions to kick start the process of deployment through automation.
 
 ## About the author
 
