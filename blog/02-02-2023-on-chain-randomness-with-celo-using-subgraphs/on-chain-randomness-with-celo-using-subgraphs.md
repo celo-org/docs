@@ -1856,4 +1856,9 @@ By combining the Celo Randomness Contract and Subgraph, we can develop blockchai
 
 ## Next Step
 
-Setelah anda memahami cara kerja Celo Randomness Contract dan Subgraph, anda dapat mengembangkan aplikasi yang lebih canggih dengan menggunakan kedua teknologi ini. Untuk mempelajari lebih lanjut tentang Celo Randomness Contract dan Subgraph, untuk mempelajari lebih dalam tentang Celo Randomness Contract dan Subgraph, anda dapat mengunjungi [Celo Randomness Contract](https://docs.celo.org/protocol/randomness) dan [Subgraph](https://thegraph.com/docs/en/).
+Once you understand how the Celo Randomness Contract and Subgraph work, you can develop more sophisticated applications using these two technologies. To learn more about them, visit the [Celo Randomness Contract](https://docs.celo.org/protocol/randomness) and [Subgraph](https://thegraph.com/docs/en/).
+
+
+## About the Author
+
+I am a blockchain and crypto enthusiast. I am also a software engineer. I love to learn new things and share my knowledge with others. You can find me on [GitHub](https://github.com/yafiabiyyu) and [LinkedIn](https://www.linkedin.com/in/abiyyuyafi/).
