@@ -1851,7 +1851,7 @@ In this tutorial, we have explored two blockchain technologies that can be used 
 
 Next, we delved into Subgraph, a protocol that simplifies creating interactive views and executing queries on the blockchain. With Subgraph, we can design applications that are more interactive and transparent, giving users a clearer and more comprehensive understanding of transactions and activities on the blockchain.
 
-By combining the Celo Randomness Contract and Subgraph, we can develop blockchain applications that are more transparent, fair, and trustworthy, and offer real-time and more interactive data views. By mastering this technology, we can create safer and more sophisticated blockchain applications that users can trust.
+By combining the Celo Randomness Contract and Subgraph, we can develop blockchain applications that are more transparent, fair, and trustworthy, and offer real-time and more interactive data views. By mastering this technology, we can create safer and more sophisticated blockchain applications that users can trust. For all the code in this tutorial, you can get it via a [GitHub repository](https://github.com/yafiabiyyu/LottreyClub-CeloSage).
 
 
 ## Next Step
