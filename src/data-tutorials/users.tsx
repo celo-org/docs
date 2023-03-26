@@ -688,7 +688,21 @@ const Users: User[] = [
   //   tags: ['favorite'],
   // },
 
+  {
+    title: "Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds",
+    description: "A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe",
+    preview: require('./showcase/beginner/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds.png'),
+    website: '/blog/tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds',
+    tags: ['beginner','celosage','celo'],
+  },
    {
+    title: "Leveraging Blockchain and IoT for ReFi and Climate Actions through Celo",
+    description: "We look into how carbon sensors, rain sensors, etc. can be used with oracles to provide on-chain data for ReFi applications",
+    preview: require('./showcase/beginner/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo.png'),
+    website: '/blog/tutorials/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo',
+    tags: ['beginner','celosage','celo'],
+  },
+  {
     title: 'A Comparison of Hardware, Software and Human Oracles',
     description: 'In this article, we will examine the differences between Human, Hardware and software Oracle',
     preview: require('./showcase/beginner/a-comparison-of-hardware-software-and-human-oracles.png'),
@@ -729,6 +743,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/how-to-tokenize.png'),
     website: 'blog/tutorials/how-to-tokenize-a-physical-asset-on-celo',
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
+  },
+  {
+    title: 'Prepare for Auditing Your Smart Contract',
+    description: 'Auditing is the process of reviewing your smart contracts code for errors, vulnerabilities, and potential weaknesses',
+    preview: require('./showcase/intermediate/prepare-for-auditing-your-smart-contract.png'),
+    website: 'blog/tutorials/prepare-for-auditing-your-smart-contract',
+    tags: ['celosage', 'intermediate','celo', 'smartcontract'],
   },
   {
     title: '1. Beginner Tutorials',
@@ -914,6 +935,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
   {
+    title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
+    description: 'This tutorial will guide you through the step-by-step process of setting up Hardhat, creating a smart contract and automating the verification process on Celoscan on every deployment.',
+    preview: require('./showcase/intermediate/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment.png'),
+    website: '/blog/tutorials/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment',
+    tags: ['celosage', 'celo', 'intermediate', 'hardhat', 'solidity', 'smartcontract'],
+  },
+  {
     title: 'Build a Scan-to-Pay Shareable Link dApp on Celo',
     description: 'Learn how to build a dApp on the Celo blockchain that enables users to quickly and easily make payments using a simple scan-to-pay feature.',
     preview: require('./showcase/intermediate/build-a-scan-to-pay-shareable-link-dapp-on-celo.png'),
@@ -928,6 +956,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
   },
   {
+    title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
+    description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
+    preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain',
+    tags: ['celosage', 'celo', 'intermediate', 'solidity'],
+  },
+  {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
@@ -935,11 +970,20 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+
+    title: 'Building an NFT Marketplace on Celo with Python',
+    description: 'This tutorial provides a guide on how to use Python to build an NFT marketplace on the Celo blockchain',
+    preview: require('./showcase/intermediate/building-an-nft-marketplace-on-celo-with-python.png'),
+    website: 'blog/tutorials/building-an-nft-marketplace-on-celo-with-python',
+    tags: ['celosage', 'nft', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+  }, 
+  {
     title: 'Building a Crowdfunding Platform on Celo with Python',
     description: 'This tutorial provides a guide on how to use Eth-Brownie Python to build a decentralized crowdfunding platform on the Celo blockchain',
     preview: require('./showcase/intermediate/building-a-crowdfunding-platform-on-celo-with-python.png'),
     website: 'blog/tutorials/building-a-crowdfunding-platform-on-celo-with-python',
     tags: ['celosage', 'crowdfunding', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
+
   },
   {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
@@ -982,6 +1026,12 @@ const Users: User[] = [
   website: 'blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract',
   tags: ['intermediate','celosage', 'solidity','smartcontract','video'],
   },
+  {title: 'Escrow service on Celo that holds funds until certain conditions are met',
+  description: 'This is an example of a smart contract where a guarantee can be defined between buyer and seller.',
+  preview: require('./showcase/intermediate/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met.png'),
+  website: 'blog/tutorials/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met',
+  tags: ['intermediate','celosage', 'solidity','smartcontract','remix'],
+  },
   {
     title: 'A Solidity Smart Contract For Auctioning Flowers On The Celo Blockchain',
     description: 'This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.',
@@ -1023,6 +1073,13 @@ const Users: User[] = [
     preview: require('./showcase/advanced/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance.png'),
     website: 'blog/tutorials/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance',
     tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
+  },
+  {
+    title: 'Como conectar o seu dApp a Celo Blockchain com a Lava',
+    description: 'Aprenda como conectar seu dApp a rede de full nodes da Lava',
+    preview: require('./showcase/beginner/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava.png'),
+    website: 'blog/tutorials/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava',
+    tags: ['celosage', 'video', 'beginner', "celo", "react"],
   },
   {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
@@ -1162,6 +1219,14 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'How To Create And Deploy A Peer To Peer Lending And Borrowing Smart Contract On The Celo Blockchain',
+    description: 'In this tutorial, we will learn how to create a fully functional p2p lending and borrowing smart contract on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  
+  {
     title: 'Introduction to creating NFTs on Celo',
     description: 'This tutorial will walk through the basic steps required to create an NFT collection (of ERC-721 tokens) on Celo. ',
     preview: require('./showcase/beginner/introduction-to-creating-nfts-on-celo.png'),
@@ -1181,6 +1246,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/how-to-build-car-marketplace-using-react.png'),
     website: 'blog/tutorials/how-to-build-car-marketplace-dapp-with-react',
     tags: ['celowallet', 'celo', 'solidity', 'react', 'celosage', 'intermediate'],
+  },
+  {
+    title: 'How to Build a Seed Marketplace dApp using Celo, Solidity and Javascript',
+    description: 'Learn how to build a seed marketplace on the blockchain using Celo, Solidity and Javascript',
+    preview: require('./showcase/intermediate/Building_your_First_Marketplace_Dapp_on_Celo.png'),
+    website: 'blog/tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript',
+    tags: ['celosage', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate', 'javascript'],
   },
   {
     title: 'How to write a multi-signatures contract on Celo using Hardhat | Part 1/2',
@@ -1358,6 +1430,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react'],
   },
   {
+    title: 'How to Build a Decentralized Job Board Dapp On The Celo Blockchain Part 1',
+    description: 'This tutorial covers how to build a smart contract for a decentralized job board on the celo blockchain',
+    preview: require('./showcase/intermediate/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo'],
+  },
+  {
     title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
     description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
     preview: require('./showcase/beginner/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential.png'),
@@ -1483,6 +1562,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/create-an-escrow-nft-platform-on-celo-with-python.png'),
     website: '/blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python',
     tags: ['celosage', 'intermediate','nft'],
+  },
+  {
+    title: 'Decentralized Land Auction Smart Contract',
+    description: 'The project aims to provide a decentralized platform for buying and selling land by allowing individuals to bid on available land parcels and purchase using cUSD',
+    preview: require('./showcase/intermediate/Decentralize-land-auction-smart-contract.png'),
+    website: 'blog/tutorials/Decentralized-land-auction-smart-contract',
+    tags: ['celo', 'solidity', 'celosage', 'intermediate'],
   },
   {
     title: 'Use onchain randomness',
@@ -1737,6 +1823,13 @@ const Users: User[] = [
     tags: ['intermediate', 'celo', 'celosage', 'javascript', 'hardhat', 'smartcontract', ],
   },
   {
+    title: 'Getting started with Celo Python SDK',
+    description: 'This article will provide a step-by-step guide on how to get started with Celo Python SDK.',
+    preview: require('./showcase/intermediate/celo-python-sdk.png'),
+    website: '/blog/tutorials/getting-started-with-celo-python-SDK',
+    tags: ['intermediate', 'celo', 'celosage', 'solidity'],
+  },
+  {
     title: 'Create Vault Smart Contract',
     description: 'Learn how to create, deploy, and interact with Vault Smart Contract on the Celo Ecosystem',
     preview: require('./showcase/advanced/create-a-vault-smart-contract.png'),
@@ -1777,6 +1870,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/hello-celo-mobile-dapp.png'),
     website: 'https://learn.figment.io/tutorials/hello-mobile-dapp',
     tags: ['beginner', 'mobile', 'figment'],
+  },
+  {
+    title: 'Building A Dutch Auction Dapp on Celo',
+    description: 'A comprehensive guide for understanding and building Dutch auction dapp on Celo.',
+    preview: require('./showcase/intermediate/build-a-dutch-auction-dapp-on-celo.png'),
+    website: '/blog/tutorials/building-a-dutch-auction-dapp-on-celo',
+    tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity', 'celosage'],
   },
 
   // Videos
@@ -2430,6 +2530,14 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
+
+    title: 'Get started with CELO using Rust',
+    description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
+    preview: require('./showcase/beginner/get-started-with-celo-using-rust.png'),
+    website: 'blog/tutorials/get-started-with-celo-using-rust',
+    tags: ['celosage', 'beginner', 'celo', 'deploy'], 
+  },
+  {
     title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
     description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
     preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
@@ -2440,8 +2548,22 @@ const Users: User[] = [
     title: "Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs",
     description: "Curious about how Uniswap and other projects are able to airdrop tokens to thousands of users? In this tutorial, we will show you how they use Merkle proof in Solidity and Javascript to accomplish this feat.",
     preview: require("./showcase/advanced/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs.png"),
-    website: "/blog/tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs.md",
+    website: "/blog/tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs",
     tags: ["advanced", "celosage", "celo", "tokens"],
+  },
+  {
+    title: "Lazy Minting NFTs A Cost-Effective and Flexible Approach to NFT Creation",
+    description: "Lazy Minting NFTs offer a budget-friendly and adaptable way of creating NFTs without sacrificing quality or control. Simplify the process with ease.",
+    preview: require("./showcase/intermediate/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation.png"),
+    website: "/blog/tutorials/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation",
+    tags: ["intermediate", "solidity", "celosage", "erc721", "truffle"],
+  },
+  {
+    title: 'Automate React Native Celo DApp Deployment with GitHub Actions',
+    description: 'Learn how to deploy and publish your React Native DApp to Google Play Store or Google Drive',
+    preview: require('./showcase/intermediate/automate-react-native-celo-dapp-deployment-with-github-actions.png'),
+    website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
+    tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
