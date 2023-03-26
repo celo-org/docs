@@ -437,6 +437,8 @@ contract Magazino {
 
 ```
 
+[Click here to get the complete code for this session](https://github.com/Ogoyi/Magazines)
+
 ## Contract deployment
 
 To deploy the Magazine smart contract on the Celo blockchain, follow the steps below:
