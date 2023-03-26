@@ -267,6 +267,7 @@ Congratulations 🎉, you are done with the first section of these two-part seri
 
 ## Next steps
 You can challenge yourself by implementing a frontend, I would be making a whole tutorial on that but if you are confident in your react skills then I implore you to go ahead 😉
+You can use this [link](https://github.com/dahnny/celcast-1) for reference 
 
 ## About the Author
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti
