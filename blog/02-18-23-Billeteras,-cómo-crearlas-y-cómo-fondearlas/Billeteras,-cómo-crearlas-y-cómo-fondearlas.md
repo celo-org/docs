@@ -4,13 +4,13 @@ description: xxxxxxxxxxxx
 authors:
   - name: ✍️ Juan José Giraldo
 url: https://github.com/Juancamp1987
-image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
+image_url: https://avatars.githubusercontent.com/u/91024217?v=4
 tags: [celosage, begginer]
 hide_table_of_contents: true
 slug: /tutorials/Billeteras-cómo-crearlas-y-cómo-fondearlas
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/introduction-to-zero-knowledge-technology-and-its-blockchain-applications.png)
+![header](Images/Billeteras-como-crearlas-y-como-fondearlas.png)
 
 ## Introducción
 Las billeteras son herramientas que crean cuentas, gestionan claves privadas y ayudan a los usuarios a transaccionar en la Blockchain (Nos enfocaremos en la red de Celo)
