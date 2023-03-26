@@ -135,7 +135,7 @@ contract FreelancerMarketplace {
     function hireFreelancerHourly(uint _index, uint _hours, uint _amount) public {
         require(_hours > 0, "Hours must be greater than 0");
         require(
-            IERC20Token(cUsdTokenAddress).transferFrom(
+            IERC20(cUsdTokenAddress).transferFrom(
                 msg.sender,
                 freelancers[_index].freelancerAddress,
                 _amount
@@ -310,7 +310,7 @@ The `toggleAvailable` function lets a freelancer toggle their availability statu
 function hireFreelancerHourly(uint _index, uint _hours, uint _amount) public {
     require(_hours > 0, "Hours must be greater than 0");
     require(
-        IERC20Token(cUsdTokenAddress).transferFrom(
+        IERC20(cUsdTokenAddress).transferFrom(
             msg.sender,
             freelancers[_index].freelancerAddress,
             _amount
