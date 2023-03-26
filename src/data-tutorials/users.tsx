@@ -2558,6 +2558,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
+  {
+    title: 'Building Decentralized Applications on the Celo Platform using the Celo SDK and Celo Smart Contracts',
+    description: 'Learn how to build and deploy decentralized applications on the Celo platform using the Celo SDK and Celo smart contracts',
+    preview: require('./showcase/beginner/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract.png'),
+    website: 'blog/tutorials/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract',
+    tags: ["celo", "celosage", "truffle", "smartcontract", "solidity", "beginner"], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
