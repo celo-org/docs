@@ -956,6 +956,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
   },
   {
+    title: 'Build A Decentralized Freelancer Marketplace On The Celo Blockchain Part 1',
+    description: 'In this tutorial, we will build a freelancer marketplace where people can find freelancers for their projects',
+    preview: require('./showcase/intermediate/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1.png'),
+    website: '/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
     description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
     preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
