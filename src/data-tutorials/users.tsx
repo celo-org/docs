@@ -935,6 +935,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
   {
+    title: 'Build A Decentralized Freelancer Marketplace On The Celo Blockchain Part 2',
+    description: 'In this tutorial, we will build the front end for the part 1 where we built the smart contract for a freelancer marketplace where people can find freelancers for their projects',
+    preview: require('./showcase/intermediate/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2.png'),
+    website: '/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
     description: 'This tutorial will guide you through the step-by-step process of setting up Hardhat, creating a smart contract and automating the verification process on Celoscan on every deployment.',
     preview: require('./showcase/intermediate/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment.png'),
