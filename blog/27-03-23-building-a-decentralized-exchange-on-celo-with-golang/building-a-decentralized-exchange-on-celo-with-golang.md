@@ -429,7 +429,7 @@ go run deploy.go
 
 You should see something like this on your terminal:
 
-<img width="1049" alt="Screenshot_2023-03-20_at_4 46 26_PM" src="https://user-images.githubusercontent.com/69091491/228066683-f6666317-6bf5-4e98-83f6-a4b15e2d57b5.png">
+![image](https://user-images.githubusercontent.com/69091491/228066683-f6666317-6bf5-4e98-83f6-a4b15e2d57b5.png)
 
 ## Conclusion
 
