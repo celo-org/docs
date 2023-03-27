@@ -2595,7 +2595,7 @@ const Users: User[] = [
   },
     {
     title: 'Building a Decentralized Exchange on Celo with Golang',
-    description: 'This article could focus on building a decentralized exchange (DEX) on the Celo blockchain using the go-ethereum, a Golang blockchain framework,
+    description: 'This article could focus on building a decentralized exchange (DEX) on the Celo blockchain using the go-ethereum, a Golang blockchain framework',
     preview: require('./showcase/intermediate/building-a-decentralized-exchange-on-celo-with-golang.png'),
     website: 'blog/tutorials/building-a-decentralized-exchange-on-celo-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
