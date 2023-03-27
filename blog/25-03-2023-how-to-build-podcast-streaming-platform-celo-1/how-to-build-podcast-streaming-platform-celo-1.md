@@ -350,23 +350,6 @@ contract CelCast{
         podcasts[_index].fans++;
     }
 
-    function downVotePodcast(uint _index) notOwner(_index) public payable{
-        
-            require(
-          IERC20Token(cUsdTokenAddress).transferFrom(
-                msg.sender,
-                podcasts[_index].owner,
-                1000000000000000000
-            ),
-            "Transaction could not be performed"  
-        );
-        podcasts[_index].downvotes++;
-    }
-
-    function reportPodcast(uint _index, string memory _report) notOwner(_index) public {
-        podcasts[_index].reports.push(_report);
-    }
-
     function getPodcastLength() public view returns (uint) {
         return (podcastLength);
     }
