@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract.png)
+![header](../../src/data-tutorials/showcase/beginner/building-decentralized-applications-on-celo.png)
 
 ## Introduction
 
