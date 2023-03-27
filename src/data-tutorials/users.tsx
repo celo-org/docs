@@ -2561,7 +2561,7 @@ const Users: User[] = [
   {
     title: 'Building Decentralized Applications on the Celo Platform using the Celo SDK and Celo Smart Contracts',
     description: 'Learn how to build and deploy decentralized applications on the Celo platform using the Celo SDK and Celo smart contracts',
-    preview: require('./showcase/beginner/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract.png'),
+    preview: require('./showcase/beginner/building-decentralized-applications-on-celo.png'),
     website: 'blog/tutorials/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract',
     tags: ["celo", "celosage", "truffle", "smartcontract", "solidity", "beginner"], 
   },
