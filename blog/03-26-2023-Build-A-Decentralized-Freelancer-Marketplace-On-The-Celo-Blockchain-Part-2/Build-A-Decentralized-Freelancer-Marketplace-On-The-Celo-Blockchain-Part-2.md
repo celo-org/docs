@@ -7,7 +7,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, solidity, celo, intermediate]
 hide_table_of_contents: true
-slug: "/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2"
+slug: /tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2.png)
