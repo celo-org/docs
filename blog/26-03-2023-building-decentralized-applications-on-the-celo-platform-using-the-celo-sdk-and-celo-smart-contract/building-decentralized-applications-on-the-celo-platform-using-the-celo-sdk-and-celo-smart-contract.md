@@ -223,6 +223,7 @@ To continue your learning and exploration of the Celo platform, you can:
 Qudus Olanrewaju is a developer and technical writer who has a strong interest in blockchain technology and web3. He enjoys building web3 projects and leveraging his distinctive viewpoint to create engaging and insightful content.
 
 ## References​
+- [Source Code](https://github.com/Qtech11/building-decentralized-applications-on-the-celo-platform)
 - [Deploy on Celo using Truffle](https://docs.celo.org/developer/deploy/truffle)
 - [Truffle | Overview - Truffle Suite](https://trufflesuite.com/docs/truffle/)
 - [Celo Docs](https://docs.celo.org/)
