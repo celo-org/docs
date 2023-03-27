@@ -104,7 +104,9 @@ function App() {
   }, [address, kit]);
 
   const getFreelancers = useCallback(async () => {
-    const freelancerLength = await contract.methods.getFreelancersLength().call();
+    const freelancerLength = await contract.methods
+      .getFreelancersLength()
+      .call();
     const freelancers = [];
     for (let index = 0; index < freelancerLength; index++) {
       let _freelancers = new Promise(async (resolve, reject) => {
@@ -164,9 +166,7 @@ function App() {
 
   const toggleAvailable = async (_index) => {
     try {
-      await contract.methods
-        .toggleAvailable(_index)
-        .send({ from: address });
+      await contract.methods.toggleAvailable(_index).send({ from: address });
       getFreelancers();
     } catch (error) {
       alert(error);
@@ -178,8 +178,8 @@ function App() {
       const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
       const totalPayment = _hours * freelancers[_index].price;
       const cost = new BigNumber(totalPayment)
-              .shiftedBy(ERC20_DECIMALS)
-              .toString();
+        .shiftedBy(ERC20_DECIMALS)
+        .toString();
       console.log(totalPayment);
       await cUSDContract.methods
         .approve(contractAddress, cost)
@@ -243,10 +243,9 @@ import { newKitFromWeb3 } from "@celo/contractkit";
 import freelancer from "./contracts/freelancer.abi.json";
 import IERC from "./contracts/IERC.abi.json";
 import BigNumber from "bignumber.js";
-
 ```
 
-#### Declaring constants and initializing state:
+**Declaring constants and initializing state:**
 
 We declare some constants for our contracts' addresses and decimals. We also initialize our state using useState hooks.
 
@@ -265,93 +264,93 @@ function App() {
 }
 ```
 
-#### Connecting to the user's wallet and get user's balance:
+**Connecting to the user's wallet and get user's balance:**
 
 ```javascript
 const connectToWallet = async () => {
-    if (window.celo) {
-      try {
-        await window.celo.enable();
-        const web3 = new Web3(window.celo);
-        let kit = newKitFromWeb3(web3);
-
-        const accounts = await kit.web3.eth.getAccounts();
-        const user_address = accounts[0];
-        kit.defaultAccount = user_address;
-
-        await setAddress(user_address);
-        await setKit(kit);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert("Error Occurred");
-    }
-  };
-
-  const getBalance = useCallback(async () => {
+  if (window.celo) {
     try {
-      const balance = await kit.getTotalBalance(address);
-      const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+      await window.celo.enable();
+      const web3 = new Web3(window.celo);
+      let kit = newKitFromWeb3(web3);
 
-      const contract = new kit.web3.eth.Contract(freelancer, contractAddress);
-      setcontract(contract);
-      setcUSDBalance(USDBalance);
+      const accounts = await kit.web3.eth.getAccounts();
+      const user_address = accounts[0];
+      kit.defaultAccount = user_address;
+
+      await setAddress(user_address);
+      await setKit(kit);
     } catch (error) {
       console.log(error);
     }
-  }, [address, kit]);
+  } else {
+    alert("Error Occurred");
+  }
+};
+
+const getBalance = useCallback(async () => {
+  try {
+    const balance = await kit.getTotalBalance(address);
+    const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+
+    const contract = new kit.web3.eth.Contract(freelancer, contractAddress);
+    setcontract(contract);
+    setcUSDBalance(USDBalance);
+  } catch (error) {
+    console.log(error);
+  }
+}, [address, kit]);
 ```
 
 We create a `connectToWallet` function that checks if the Celo extension is available, then connects to the user's wallet, and sets the user's default account.
 
 We also create a `getBalance` function using useCallback to fetch the user's cUSD balance and initialize the freelancer contract.
 
-#### Funtions to interact with the smart contract:
+**Funtions to interact with the smart contract:**
 
 We create a `getFreelancers` function using `useCallback` to fetch the list of freelancers from the smart contract and update the state.
 
 ```javascript
 const getFreelancers = useCallback(async () => {
-    const freelancerLength = await contract.methods.getFreelancersLength().call();
-    const freelancers = [];
-    for (let index = 0; index < freelancerLength; index++) {
-      let _freelancers = new Promise(async (resolve, reject) => {
-        let freelancer = await contract.methods.getFreelancers(index).call();
+  const freelancerLength = await contract.methods.getFreelancersLength().call();
+  const freelancers = [];
+  for (let index = 0; index < freelancerLength; index++) {
+    let _freelancers = new Promise(async (resolve, reject) => {
+      let freelancer = await contract.methods.getFreelancers(index).call();
 
-        resolve({
-          index: index,
-          freelancerAddress: freelancer[0],
-          image: freelancer[1],
-          name: freelancer[2],
-          title: freelancer[3],
-          description: freelancer[4],
-          price: freelancer[5],
-          noOfJobs: freelancer[6],
-          available: freelancer[7],
-        });
+      resolve({
+        index: index,
+        freelancerAddress: freelancer[0],
+        image: freelancer[1],
+        name: freelancer[2],
+        title: freelancer[3],
+        description: freelancer[4],
+        price: freelancer[5],
+        noOfJobs: freelancer[6],
+        available: freelancer[7],
       });
-      freelancers.push(_freelancers);
-    }
+    });
+    freelancers.push(_freelancers);
+  }
 
-    const _freelancers = await Promise.all(freelancers);
-    setFreelancers(_freelancers);
-  }, [contract]);
+  const _freelancers = await Promise.all(freelancers);
+  setFreelancers(_freelancers);
+}, [contract]);
 ```
 
 `addFreelancer` Function:
 
 ```javascript
 const addFreelancer = async (_image, _name, _title, _description, _price) => {
-    try {
-      await contract.methods
-        .newFreelancer(_image, _name, _title, _description, _price)
-        .send({ from: address });
-      getFreelancers();
-    } catch (error) {
-      alert(error);
-    }
-  };
+  try {
+    await contract.methods
+      .newFreelancer(_image, _name, _title, _description, _price)
+      .send({ from: address });
+    getFreelancers();
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
 
 We define an async function called `addFreelancer` that takes the freelancer's details as arguments and calls the `newFreelancer` function from the smart contract.
@@ -373,15 +372,15 @@ onst changeDescription = async (_index, _description) => {
 
 ```javascript
 const changePrice = async (_index, _newprice) => {
-    try {
-      await contract.methods
-        .changePrice(_index, _newprice)
-        .send({ from: address });
-      getFreelancers();
-    } catch (error) {
-      alert(error);
-    }
-  };
+  try {
+    await contract.methods
+      .changePrice(_index, _newprice)
+      .send({ from: address });
+    getFreelancers();
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
 
 We define async functions `changeDescription` and `changePrice` that allow freelancers to update their description and hourly price.
@@ -390,15 +389,13 @@ Toggling a freelancer's availability:
 
 ```javascript
 const toggleAvailable = async (_index) => {
-    try {
-      await contract.methods
-        .toggleAvailable(_index)
-        .send({ from: address });
-      getFreelancers();
-    } catch (error) {
-      alert(error);
-    }
-  };
+  try {
+    await contract.methods.toggleAvailable(_index).send({ from: address });
+    getFreelancers();
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
 
 We define an async function called `toggleAvailable` that allows a freelancer to toggle their availability status.
@@ -407,53 +404,53 @@ Hiring a freelancer:
 
 ```javascript
 const hireFreelancer = async (_index, _hours) => {
-    try {
-      const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
-      const totalPayment = _hours * freelancers[_index].price;
-      const cost = new BigNumber(totalPayment)
-              .shiftedBy(ERC20_DECIMALS)
-              .toString();
-      console.log(totalPayment);
-      await cUSDContract.methods
-        .approve(contractAddress, cost)
-        .send({ from: address });
-      await contract.methods
-        .hireFreelancerHourly(_index, _hours, cost)
-        .send({ from: address });
-      getFreelancers();
-      getBalance();
-      alert("you have successfully sent cusd to this user");
-    } catch (error) {
-      alert(error);
-    }
-  };
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
+    const totalPayment = _hours * freelancers[_index].price;
+    const cost = new BigNumber(totalPayment)
+      .shiftedBy(ERC20_DECIMALS)
+      .toString();
+    console.log(totalPayment);
+    await cUSDContract.methods
+      .approve(contractAddress, cost)
+      .send({ from: address });
+    await contract.methods
+      .hireFreelancerHourly(_index, _hours, cost)
+      .send({ from: address });
+    getFreelancers();
+    getBalance();
+    alert("you have successfully sent cusd to this user");
+  } catch (error) {
+    alert(error);
+  }
+};
 ```
 
 We define an async function called `hireFreelancer` that calculates the total payment based on the freelancer's hourly rate and the number of hours worked, approves the payment in cUSD, and calls the `hireFreelancerHourly` function from the smart contract.
 
-#### useEffect hooks:
+**useEffect hooks**:
 
 ```javascript
- useEffect(() => {
-    connectToWallet();
-  }, []);
+useEffect(() => {
+  connectToWallet();
+}, []);
 
-  useEffect(() => {
-    if (kit && address) {
-      getBalance();
-    }
-  }, [kit, address, getBalance]);
+useEffect(() => {
+  if (kit && address) {
+    getBalance();
+  }
+}, [kit, address, getBalance]);
 
-  useEffect(() => {
-    if (contract) {
-      getFreelancers();
-    }
-  }, [contract, getFreelancers]);
+useEffect(() => {
+  if (contract) {
+    getFreelancers();
+  }
+}, [contract, getFreelancers]);
 ```
 
 We use three `useEffect` hooks to automatically connect to the wallet, fetch the user's cUSD balance, and fetch the list of freelancers when the component is mounted or when any of the relevant state variables change.
 
-#### Rendering the components:
+**Rendering the components:**
 
 ```javascript
 return (
@@ -480,7 +477,6 @@ We then render the Home and Freelancers components, passing the required state v
 
 Navigate into the components folder to access the `Home` component.
 
-
 ```javascript
 import React, { useState } from "react";
 
@@ -501,7 +497,6 @@ const Home = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-
 
   const isFormFilled = () => image && name && title && description && price;
 
@@ -549,11 +544,7 @@ const Home = (props) => {
               />
             </FloatingLabel>
 
-            <FloatingLabel
-              controlId="inputName"
-              label="name"
-              className="mb-3"
-            >
+            <FloatingLabel controlId="inputName" label="name" className="mb-3">
               <Form.Control
                 type="text"
                 onChange={(e) => {
@@ -576,7 +567,6 @@ const Home = (props) => {
                 placeholder="Enter Career title"
               />
             </FloatingLabel>
-            
 
             <FloatingLabel
               controlId="inputDescription"
@@ -593,8 +583,11 @@ const Home = (props) => {
               />
             </FloatingLabel>
 
-
-            <FloatingLabel controlId="inputPrice" label="price" className="mb-3">
+            <FloatingLabel
+              controlId="inputPrice"
+              label="price"
+              className="mb-3"
+            >
               <Form.Control
                 type="number"
                 onChange={(e) => {
@@ -674,100 +667,105 @@ export const Freelancers = (props) => {
             </div>
 
             <Card.Body className="d-flex  flex-column text-center">
-
-            <Card.Title className="flex-grow-1">
-              {freelancer.name}
-              </Card.Title>
+              <Card.Title className="flex-grow-1">{freelancer.name}</Card.Title>
               <Card.Title className="flex-grow-1">
-              {freelancer.title}
+                {freelancer.title}
               </Card.Title>
 
               <Card.Text className="flex-grow-1">
                 {freelancer.description}
               </Card.Text>
               <Badge bg="secondary" className="ms-auto">
-                  {freelancer.available ? "Available for Hire" : "Not Available"} {freelancer.available}
-                </Badge>
+                {freelancer.available ? "Available for Hire" : "Not Available"}{" "}
+                {freelancer.available}
+              </Badge>
 
-
-
-              { freelancer.freelancerAddress === props.walletAddress && (
-              <button
-                    type="button"
-                    onClick={() => props.toggleAvailable(freelancer.index)}
-                    class="btn btn-dark btn-sm mt-1"
-                  >
-                    {freelancer.available ? "Set to Not Available" : "Set to Available"}
-                  </button>
+              {freelancer.freelancerAddress === props.walletAddress && (
+                <button
+                  type="button"
+                  onClick={() => props.toggleAvailable(freelancer.index)}
+                  class="btn btn-dark btn-sm mt-1"
+                >
+                  {freelancer.available
+                    ? "Set to Not Available"
+                    : "Set to Available"}
+                </button>
               )}
-           
 
-         { freelancer.freelancerAddress !== props.walletAddress && freelancer.available === true && (
-              <form>
-                <div class="form-r">
-                  <input
-                    type="number"
-                    class="form-control mt-3"
-                    value={hours}
-                    onChange={(e) => setHours(e.target.value)}
-                    placeholder="enter duration in hours"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => props.hireFreelancer(freelancer.index, hours)}
-                    class="btn btn-dark mt-1"
-                  >
-                    Hire this freelancer
-                  </button>
-                </div>
-              </form>
-             )}
+              {freelancer.freelancerAddress !== props.walletAddress &&
+                freelancer.available === true && (
+                  <form>
+                    <div class="form-r">
+                      <input
+                        type="number"
+                        class="form-control mt-3"
+                        value={hours}
+                        onChange={(e) => setHours(e.target.value)}
+                        placeholder="enter duration in hours"
+                      />
+                      <button
+                        type="button"
+                        onClick={() =>
+                          props.hireFreelancer(freelancer.index, hours)
+                        }
+                        class="btn btn-dark mt-1"
+                      >
+                        Hire this freelancer
+                      </button>
+                    </div>
+                  </form>
+                )}
 
-        { freelancer.freelancerAddress === props.walletAddress && (
-              <form>
-                <div class="form-r">
-                  <input
-                    type="number"
-                    class="form-control mt-3"
-                    value={newPrice}
-                    onChange={(e) => setNewPrice(e.target.value)}
-                    placeholder="enter new price"
-                  />
+              {freelancer.freelancerAddress === props.walletAddress && (
+                <form>
+                  <div class="form-r">
+                    <input
+                      type="number"
+                      class="form-control mt-3"
+                      value={newPrice}
+                      onChange={(e) => setNewPrice(e.target.value)}
+                      placeholder="enter new price"
+                    />
 
-                  <button
-                    type="button"
-                    onClick={() => props.changePrice(freelancer.index, newPrice)}
-                    class="btn btn-dark mt-1"
-                  >
-                    Update Hourly Rate
-                  </button>
-                </div>
-              </form>
-             )}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        props.changePrice(freelancer.index, newPrice)
+                      }
+                      class="btn btn-dark mt-1"
+                    >
+                      Update Hourly Rate
+                    </button>
+                  </div>
+                </form>
+              )}
 
-            { freelancer.freelancerAddress === props.walletAddress && (
-              <form>
-                <div class="form-r">
-                  <input
-                    type="text"
-                    class="form-control mt-3"
-                    value={newDescription}
-                    onChange={(e) => setNewDescription(e.target.value)}
-                    placeholder="enter new description"
-                  />
+              {freelancer.freelancerAddress === props.walletAddress && (
+                <form>
+                  <div class="form-r">
+                    <input
+                      type="text"
+                      class="form-control mt-3"
+                      value={newDescription}
+                      onChange={(e) => setNewDescription(e.target.value)}
+                      placeholder="enter new description"
+                    />
 
-                  <button
-                    type="button"
-                    onClick={() => props.changeDescription(freelancer.index, newDescription)}
-                    class="btn btn-dark mt-1"
-                  >
-                    Change Description
-                  </button>
-                </div>
-              </form>
-             )}
-
-             
+                    <button
+                      type="button"
+                      onClick={() =>
+                        props.changeDescription(
+                          freelancer.index,
+                          newDescription
+                        )
+                      }
+                      class="btn btn-dark mt-1"
+                    >
+                      Change Description
+                    </button>
+                  </div>
+                </form>
+              )}
             </Card.Body>
           </Card>
         </Col>
