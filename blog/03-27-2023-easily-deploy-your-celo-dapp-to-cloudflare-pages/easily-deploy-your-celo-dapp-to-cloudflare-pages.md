@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/easily-deploy-your-celo-dapp-to-cloudflare-pages
 ---
 
-![header]()
+![header](../../src/data-tutorials/showcase/beginner/easily-deploy-your-celo-dapp-to-cloudflare-pages.png)
 
 ## Introduction
 
@@ -39,13 +39,16 @@ After the successful creation of GitHub, you can create a repository using this 
 Because this is a beginner focus tutorial, I will be taking us through a step-by-step of creating a Cloudflare account. The goal after creating a Cloudflare account is to get the Cloudflare dashboard up and running to have access to everything Cloudflare cooked up for us.
 
 - Step 1: Navigate the Cloudflare page, you can use [this direct link](https://www.cloudflare.com/)
+
 ![step1](images/img1.png)
 
 - Step 2: Click on the `Sign Up` button in the right-hand corner
 - Step 3: Fill out your email and password to create an account and you will be presented with a dashboard like below
+
 ![step3](images/img2.png)
 
 - Step 4: Despite having a dashboard already, it is important to verify your account by looking out for an email from Cloudflare in the email address you provided and after that, you’ve completely registered on Cloudflare.
+
 ![step4](images/img3.png)
 
 ## Let’s set up the pages for deployment
@@ -55,25 +58,32 @@ Because this is a beginner focus tutorial, I will be taking us through a step-by
 - Step 1: After successfully logging in to your Cloudflare account 
 - Step 2: Navigate to the `pages` tab
 - Step 3: Click on the `Create a project` button.
+
 ![step3-1](images/img4.png)
 
 - Step 4: A pop-up to choose the right version control will pop up, in this case, we are using Git and Github. So select `Connect to Git`
+
 ![step4-1](images/img5.png)
 
 - Step 5: You will be presented with a connection and authorization page, give the authorised access to your Cloudflare to access your personal GitHub account where your repository lives. It is advisable to select all repositories for access then you can choose a repo to deploy on the Cloudflare page after successful authorization and the final stage will look like this with all your repository listed here.
+
 ![step5-1](images/img6.png)
 
 - Step 6: Select the repository to deploy and click `Begin Setup`.
 - Step 7: You will be presented with a page to set up your build process, if you are using a framework, ensure to choose the right framework in the list presented and if it is a custom DApp, you can leave it as `None`. In this case, choose `Create React App` and other things will be populated. You will have the option of adding the environment variables. Add any if necessary, in this case of this we don’t have any then choose `save and deploy` and watch magic starting in actions.
+
 ![step6-1](images/img7.png)
 
 - Step 8: Watch the build going
+
 ![step8-1](images/img8.png)
 
 - Step 9: After successful deployment, you have something like the below where you can check the DApp you just deployed and be able to share the link with the world to test out.
+
 ![step9-1](images/img9.png)
 
 Suppose you follow along with the same repository I used. On clicking that link you will be presented with a screen like below, make sure you have browser support and the necessary extension to run a DApp and after necessary extension acceptance and confirmation you will have your DApp up and running like we have this one running here.
+
 ![deploy](images/img10.png)
 
 Viola! You’ve successfully built and deployed your DApp and it is accessible and available for your users wherever they are in the whole world. [Here](https://2b350917.dapp-deployment-pl.pages.dev) is the one we did together.
