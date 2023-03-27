@@ -190,7 +190,7 @@ You should see something like this:
 
 
 The warning we received is regarding the SPDX license identifier not being provided in the source file. SPDX is a standard format for communicating licenses and copyrights associated with an open-source software package.
-To address this warning, you should add a comment to the top of the `DIDRegistry.sol` file that includes an SPDX license identifier. The comment should contain the following line: // SPDX-License-Identifier: <SPDX-License-Identifier>
+To address this warning, you should add a comment to the top of the `DIDRegistry.sol` file that includes an SPDX license identifier. The comment should contain the following line: `// SPDX-License-Identifier: <SPDX-License-Identifier>`
 In my case, I am using the MIT license, my updated contract reflects that.
 
 Take note of the deployed contract address for later use.
