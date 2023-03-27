@@ -2593,6 +2593,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
+    {
+    title: 'Easily Deploy your Celo DApp to Cloudflare Pages',
+    description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with Ease',
+    preview: require('./showcase/beginner/easily-deploy-your-celo-dapp-to-cloudflare-pages.png'),
+    website: 'blog/tutorials/easily-deploy-your-celo-dapp-to-cloudflare-pages',
+    tags: ['celosage', 'dapp', 'beginner', 'celo'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
