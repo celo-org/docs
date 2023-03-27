@@ -352,6 +352,7 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 
 - [Celo Docs](https://docs.celo.org/)
 - [Solidity Docs](https://docs.soliditylang.org/en/v0.8.17/)
+- [Source Code](https://github.com/4undRaiser/celo-freelancer-marketplace)
 
 ## About the author
 
