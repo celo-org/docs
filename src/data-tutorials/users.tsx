@@ -928,6 +928,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'Exploring the intersection of Artificial Intelligence and Web3',
+    description: 'In this article we will explore the ways in which the AI can help to develop dApps and to improve the productivity of all in Web3',
+    preview: require('./showcase/beginner/exploring-intersection-of-ai-and-web3.png'),
+    website: '/blog/tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Build a Decentralized Lottery Game on Celo',
     description: 'Learn to build a Decentralized Lottery Game on Celo along with a frontend.',
     preview: require('./showcase/intermediate/build-a-decentralized-lottery-game-on-celo.png'),
