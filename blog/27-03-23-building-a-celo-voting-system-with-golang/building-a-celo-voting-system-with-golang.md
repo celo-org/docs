@@ -1,6 +1,6 @@
 ---
 title: Building a Celo Voting System with Golang
-description: This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain.
+description: This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain
 authors:
   - name: Divine-Favour
 url: https://github.com/Divine572
