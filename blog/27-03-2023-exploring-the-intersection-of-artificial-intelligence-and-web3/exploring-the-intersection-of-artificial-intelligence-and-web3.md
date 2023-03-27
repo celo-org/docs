@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/ishanpathak1.png
 tags: [celosage, beginner]
 hide_table_of_contents: true
-slug: "/tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3"
+slug: /tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/exploring-intersection-of-ai-and-web3.png)
