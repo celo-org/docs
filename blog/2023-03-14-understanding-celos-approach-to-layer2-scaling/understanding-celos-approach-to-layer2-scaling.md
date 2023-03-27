@@ -264,7 +264,8 @@ This article introduces Celo's approach to layer-2 scaling solutions, which can 
 
 ## Next Steps​
 
-I hope you learned a lot from this tutorial. Please check out the [Celo Documentation](https://docs.celo.org/) to aid your learning further.
+
+I hope you learned a lot from this tutorial. Please check out the [Github Repository](https://github.com/Kyrian212/Layer-2-scaling) or the [Celo Documentation](https://docs.celo.org/) to learn more.
 
 ## About the Author​
 
