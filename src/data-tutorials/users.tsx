@@ -2595,8 +2595,8 @@ const Users: User[] = [
   },
   {
     title: 'Building a Celo Voting System with Golang',
-    description: 'This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain.',
-    preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang'),
+    description: 'This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain',
+    preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
