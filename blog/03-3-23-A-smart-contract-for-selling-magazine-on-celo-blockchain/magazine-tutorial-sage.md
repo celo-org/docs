@@ -13,7 +13,7 @@ slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-f
 
 ![header](../../src/data-tutorials/showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-celo-blockchain.png)
 
-## INTRODUCTION
+## Introduction
 
 Celo is a decentralized platform that enables developers to build and deploy smart contracts on it's blockchain. Smart contracts are self-executing contracts that strikes an agreement between buyer and seller to execute and event, which is directly written into lines of code. They can be used to automate a wide range of financial and non-financial transactions, such as the transfer of assets, the management of supply chains, and the execution of legal agreements.
 
