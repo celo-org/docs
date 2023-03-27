@@ -481,6 +481,7 @@ Follow Oluwalana on [Twitter](https://twitter.com/lanacreates) for more insights
 ## References
 Here are some helpful resources and references used in creating this tutorial:
 
+- [Source Code](https://github.com/lanacreates/Developing-a-Decentralized-Identity-Solution-on-Celo)
 - [Celo Developer Documentation](https://docs.celo.org/)
 - [Decentralized Identifiers (DIDs) Specification](https://www.w3.org/TR/did-core/)
 - [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/)
