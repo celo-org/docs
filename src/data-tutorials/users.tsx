@@ -731,6 +731,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo'],
   },
   {
+    title: 'A detailed guide on how to create a decentralized marketplace for magazines on the Celo blockchain',
+    description: 'Learn how to build a marketplace for seliing magazine on the celo blockchain',
+    preview: require('./showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain',
+    tags: ['celosage', 'solidity', 'intermediate','celo'],
+  },
+  {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
     preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
@@ -907,10 +914,24 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'On-Chain Randomness with Celo using Subgraphs',
+    description: 'This tutorial covers using Celo Randomness and Subgraph to make a simple lottery game. Users create lottery clubs with Native Coin prizes, stable tokens, or NFT Tokens.',
+    preview: require('./showcase/intermediate/on-chain-randomness-with-celo-using-subgraphs.png'),
+    website: '/blog/tutorials/on-chain-randomness-with-celo-using-subgraphs',
+    tags: ['celosage','intermediate', 'subgraphs', 'randomness'],
+  },
+  {
     title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
+    tags: ['celosage','beginner'],
+  },
+  {
+    title: 'Exploring the intersection of Artificial Intelligence and Web3',
+    description: 'In this article we will explore the ways in which the AI can help to develop dApps and to improve the productivity of all in Web3',
+    preview: require('./showcase/beginner/exploring-intersection-of-ai-and-web3.png'),
+    website: '/blog/tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3',
     tags: ['celosage','beginner'],
   },
   {
@@ -935,6 +956,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
   {
+    title: 'Build A Decentralized Freelancer Marketplace On The Celo Blockchain Part 2',
+    description: 'In this tutorial, we will build the front end for the part 1 where we built the smart contract for a freelancer marketplace where people can find freelancers for their projects',
+    preview: require('./showcase/intermediate/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2.png'),
+    website: '/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
     description: 'This tutorial will guide you through the step-by-step process of setting up Hardhat, creating a smart contract and automating the verification process on Celoscan on every deployment.',
     preview: require('./showcase/intermediate/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment.png'),
@@ -954,6 +982,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain.png'),
     website: '/blog/tutorials/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain',
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
+  },
+  {
+    title: 'Build A Decentralized Freelancer Marketplace On The Celo Blockchain Part 1',
+    description: 'In this tutorial, we will build a freelancer marketplace where people can find freelancers for their projects',
+    preview: require('./showcase/intermediate/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1.png'),
+    website: '/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
     title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
