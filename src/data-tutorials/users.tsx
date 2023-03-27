@@ -731,6 +731,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo'],
   },
   {
+    title: 'A detailed guide on how to create a decentralized marketplace for magazines on the Celo blockchain',
+    description: 'Learn how to build a marketplace for seliing magazine on the celo blockchain',
+    preview: require('./showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-celo-blockchain.png'),
+    website: 'blog/tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain',
+    tags: ['celosage', 'solidity', 'intermediate','celo'],
+  },
+  {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
     preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
