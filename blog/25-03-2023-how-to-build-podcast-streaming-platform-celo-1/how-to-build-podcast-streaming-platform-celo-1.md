@@ -1,11 +1,12 @@
 ---
 title: How to Build a Podcast Streaming Platform on Celo
 description: This tutorial guides you to building a podcast streaming platform on the celo blockchain where anyone can upload their audio experience.
-- name: Daniel Ogbuti
-  title: Web3 Developer, 
-  url: https://github.com/dahnny
-  image_url: https://github.com/dahnny.png
-tags: [solidity, react, celo]
+authors:
+  - name: Daniel Ogbuti
+    title: Web3 Developer, 
+    url: https://github.com/dahnny
+    image_url: https://github.com/dahnny.png
+tags: ['celo', 'intermediate', 'celosage', 'solidity']
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-podcast-streaming-platform-celo-1
 ---
@@ -14,6 +15,7 @@ slug: /tutorials/how-to-build-podcast-streaming-platform-celo-1
 
 
 ## Introduction
+
 Bonjour readers! I really would like to speak french even though I know its a little bit late. Lol😅. Anyways. Welcome to another exciting tutorial! In this tutorial, we would be going through how to build a podcast streaming platform on the celo blockchain. 
 This would be the first section out of two and in this section, we would look at how to develop the smart contract and the second would be implementing the contract with the frontend.
 
@@ -21,6 +23,7 @@ Just like I start most of these tutorials, For newbies, I would like to define w
 
 
 ## What is Celo
+
 Celo is a blockchain platform that focuses on enabling mobile-first financial services. It is built using the Ethereum codebase and employs a proof-of-stake consensus mechanism for transaction validation. One unique aspect of Celo is its focus on usability and accessibility, aiming to create a more inclusive and decentralized financial system.
 
 ## Prerequisites
@@ -32,6 +35,7 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 - Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
 
 ## Requirements
+
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
 - A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
 - A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
@@ -43,6 +47,7 @@ Screenshot: ![image](images/1.png)
 
 
 ## Smart Contract Development
+
 If you have seen any of my previous tutorials, you would realize I am fan of remix for writing smart contracts. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
 
 Here is a preview of the Remix IDE:
@@ -248,6 +253,127 @@ The purpose of this function is to return the total number of podcast episodes t
 
 The function simply returns the current value of `podcastLength`. Since the function is marked as `view`, it does not modify the contract state in any way and does not require any gas fees to be paid. Therefore, callers can retrieve the total number of podcast episodes without any cost, simply by calling this function.
 
+This is the complete code:
+
+```solidity
+// SPDX-License-Identifier: MIT  
+
+pragma solidity >=0.7.0 <0.9.0;
+
+interface IERC20Token {
+  function transfer(address, uint256) external returns (bool);
+  function approve(address, uint256) external returns (bool);
+  function transferFrom(address, address, uint256) external returns (bool);
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address) external view returns (uint256);
+  function allowance(address, address) external view returns (uint256);
+
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+contract CelCast{
+    address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+    uint podcastLength = 0;
+
+    struct Podcast{
+        address payable owner;
+        string title;
+        string excerpt;
+        string excerptImage;
+        string audioLink;
+        string [] reports;
+        uint fans;
+        uint downvotes;
+    }
+
+    mapping (uint => Podcast) internal podcasts;
+
+    modifier notOwner(uint _index) {
+        require(msg.sender != podcasts[_index].owner, "You cant transact");
+        _;
+    } 
+
+    // function to add podcasts
+    function addPodcast(
+        string memory _title,
+        string memory _excerpt,
+        string memory _excerptImage,
+        string memory _audioLink
+    )public{
+        Podcast storage podcast = podcasts[podcastLength];
+        podcast.owner = payable(msg.sender);
+        podcast.title = _title;
+        podcast.excerpt = _excerpt;
+        podcast.excerptImage = _excerptImage;
+        podcast.audioLink = _audioLink;
+        podcast.fans = 0;
+        podcast.downvotes = 0;
+        podcastLength++;
+    }
+
+    // function to get podcasts
+    function getPodcast(uint _index)public view returns(
+        address payable,
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        string [] memory,
+        uint,
+        uint
+    ){
+         Podcast storage podcast = podcasts[_index];
+        return(           
+            podcast.owner,
+            podcast.title,
+            podcast.excerpt,
+            podcast.excerptImage,
+            podcast.audioLink,
+            podcast.reports,
+            podcast.fans,
+            podcast.downvotes
+        );
+    }
+
+    // function initiates payment transaction
+    function supportPodcast(uint _index,  uint _amount) notOwner(_index) public payable{
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                podcasts[_index].owner,
+                _amount
+            ),
+            "Transaction could not be performed"  
+        );
+        podcasts[_index].fans++;
+    }
+
+    function downVotePodcast(uint _index) notOwner(_index) public payable{
+        
+            require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                podcasts[_index].owner,
+                1000000000000000000
+            ),
+            "Transaction could not be performed"  
+        );
+        podcasts[_index].downvotes++;
+    }
+
+    function reportPodcast(uint _index, string memory _report) notOwner(_index) public {
+        podcasts[_index].reports.push(_report);
+    }
+
+    function getPodcastLength() public view returns (uint) {
+        return (podcastLength);
+    }
+
+}
+```
+
 
 ## Contract Deployment
 
@@ -263,13 +389,16 @@ After downloading and creating your wallet, you will need to fund it using the C
 Next up, on remix, download and activate the celo plugin from the plugin manager. Connect your wallet and deploy your contract.
 
 ## Conclusion
+
 Congratulations 🎉, you are done with the first section of these two-part series, writing and deploying the smart contracts. 
 
 ## Next steps
+
 You can challenge yourself by implementing a frontend, I would be making a whole tutorial on that but if you are confident in your react skills then I implore you to go ahead 😉
 You can use this [link](https://github.com/dahnny/celcast-1) for reference 
 
 ## About the Author
-Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti
+
+Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin @ Daniel Ogbuti
 
 See you soon!
