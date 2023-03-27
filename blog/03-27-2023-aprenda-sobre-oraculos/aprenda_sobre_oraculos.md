@@ -1,5 +1,5 @@
 ---
-title: Aprenda sobre Oraculos
+title: Aprenda sobre Oraculos em Celo
 description: Aprenda e entenda mais sobre oraculos em Celo. 
 authors:
 - name: Ewerton Lopes
