@@ -32,7 +32,7 @@ Let's begin writing our smart contract in Remix IDE
 
 The completed code Should look like this.
 
-```solidity   
+```solidity
    // SPDX-License-Identifier: MIT
    pragma solidity >=0.7.0 <0.9.0;
 
