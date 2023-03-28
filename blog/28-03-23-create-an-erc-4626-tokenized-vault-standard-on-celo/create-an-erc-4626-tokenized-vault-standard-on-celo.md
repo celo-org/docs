@@ -1,14 +1,14 @@
 ---
-title: Creating an ERC4626 token Contract on Celo 
+title: Creating an ERC4626 token Contract on Celo
 description: This tutorial introduces its readers to the concept of the token vault standard and how to write the contract
 authors:
   - name: Mayowa Julius Ogungbola
     title: Software Engineer, Technical writer @Celo Foundation
     url: https://github.com/Julius170
     image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
-tags: [celo, intermediate, celosage, solidity, 'smartcontract']
+tags: [celo, intermediate, celosage, solidity, "smartcontract"]
 hide_table_of_contents: true
-slug: /tutorials/creating-an-erc4626-token-contract-on-celo 
+slug: /tutorials/creating-an-erc4626-token-contract-on-celo
 ---
 
 ![header](https://user-images.githubusercontent.com/69092079/228097576-fc3f7389-2649-4ece-9ea0-c336dbdf9bee.png)
@@ -20,13 +20,12 @@ The ERC-4626 is a standard protocol for tokenized vaults that represents shares 
 In this article, you will write the smart contract code for the ERC-4626 tokenized vault standard and deploy it on the Celo network. Finally, you will also test the functionality of our ERC-4626 tokenized vault1.
 
 ## Prerequisites​
+
 To write an ERC-4626 Tokenized Vault Standard on Celo, you need to have the following requirements:
 
 Remix: Remix is a web-based integrated development environment (IDE) for writing, testing, and deploying smart contracts. You can use it to write the ERC-4626 Tokenized Vault Standard code. You can access Remix by visiting the [Remix](https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js) website.
 
 Solidity: Solidity is a contract-oriented programming language for writing smart contracts. It is used to write the code for the ERC-4626 Tokenized Vault Standard. You can learn more about Solidity on the Solidity documentation website.
-
-
 
 ## The ERC-4626 Token Standard
 
@@ -56,8 +55,7 @@ The main benefit of ERC-4626 is that it standardizes tokenized vaults to make pr
 
 - Lowering the integration effort: ERC-4626 in yield-bearing vaults will lower the integration effort and unlock access to yield in various applications with little specialized effort from developers by creating more consistent and robust implementation patterns.
 
-- Unlocking access to yield in various applications with little specialized effort from developers by creating more consistent and robust implementation patterns: ERC-4626 provides a way to unlock access to yield in various applications with little specialized effort from developers by creating more consistent and robust implementation patterns. 
-
+- Unlocking access to yield in various applications with little specialized effort from developers by creating more consistent and robust implementation patterns: ERC-4626 provides a way to unlock access to yield in various applications with little specialized effort from developers by creating more consistent and robust implementation patterns.
 
 ## Writing the ERC-4626 Token Contract
 
@@ -66,8 +64,6 @@ The main benefit of ERC-4626 is that it standardizes tokenized vaults to make pr
 3. Copy and paste the smart contract code below inside the `MyToken.sol` file.
 
 ```solidity
-
-
 //SPDX-License-Identifier: MIT
 
 
@@ -164,12 +160,6 @@ contract MyToken is IERC4626, ERC20 {
     }
 }
 
-
-
-
-
-
-
 ```
 
 ## Conclusion​
@@ -177,7 +167,6 @@ contract MyToken is IERC4626, ERC20 {
 ERC4626 token contracts allow developers to create asset-backed tokens that provide holders with transparency and security. By implementing the IERC4626 interface and adding necessary functions and events, developers can tokenize assets and create new investment opportunities that were previously only available to institutional investors.
 
 Asset-backed tokens have various use cases, including fractional ownership of assets, providing liquidity for illiquid assets, and facilitating cross-border payments. As blockchain technology continues to gain mainstream adoption, ERC4626 token contracts become increasingly popular, and the decentralized nature of the Ethereum blockchain provides developers with an efficient and secure way to tokenize assets. Overall, ERC4626 token contracts provide an innovative solution that benefits investors and asset owners, opening up access to assets that were previously only available to a select few.
-
 
 ## Next Steps​
 
@@ -194,11 +183,10 @@ Mayowa Julius Ogungbola
 
 Software Engineer and Technical writer always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/), and you can also find out what I tweet about and connect with me on [LinkedIn](https://www.linkedin.com/in/julius-ogungbola-a71810229/).
 
-
 ## References​
+
 Here Is a link to sample projects for the ERC4626 token contract. You can decide to look into or make contributions to:
 
-- [ERC4626 token contract](https://github.com/Julius170/ERC4626_token_contract)
+- [ERC4626 token contract (Source Code)](https://github.com/Julius170/ERC4626_token_contract)
 - [ERC4626 token](https://github.com/Julius170/ERC4626_Token)
 - [Openzeppelin’s ERC4626 token contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC4626.sol)
-
