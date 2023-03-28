@@ -1648,6 +1648,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'tokens', 'erc721', 'mint', 'nft', 'ipfs', 'pinata', 'solidity', 'remix'],
   },
   {
+    title: 'Creating an ERC4626 token Contract on Celo',
+    description: 'This tutorial introduces its readers to the concept of the token vault standard and how to write the contract',
+    preview: require('./showcase/intermediate/creating-an-erc4626-token-contract-on-celo.png'),
+    website: '/blog/tutorials/creating-an-erc4626-token-contract-on-celo',
+    tags: ['intermediate', 'tokens', 'mint', 'nft', 'solidity', 'smartcontract', 'celosage', 'celo'],
+  },
+  {
     title: 'Deploy & Mint a Token',
     description: 'How to deploy a token contract that use the ERC20 token standard to Celo without writing code.',
     preview: require('./showcase/beginner/deploy-and-mint-a-token-on-celo.png'),
