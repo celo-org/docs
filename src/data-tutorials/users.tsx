@@ -2593,10 +2593,10 @@ const Users: User[] = [
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
   {
-    title: 'Billeteras cómo crearlas y cómo fondearlas',
+    title: 'Billeteras como crearlas y como fondearlas',
     description: '¡Bienvenido a nuestro tutorial sobre cómo comenzar con su billetera digital en Celo! En este tutorial, le mostraremos cómo crear una billetera, almacenar su frase de recuperación, financiar la billetera y enviar y recibir dinero en la plataforma Celo.',
     preview: require('./showcase/beginner/Billeteras-como-crearlas-y-como-fondearlas.png'),
-    website: 'blog/tutorials/Billeteras-cómo-crearlas-y-cómo-fondearlas',
+    website: 'blog/tutorials/billeteras-como-crearlas-y-como-fondearlas',
     tags: [celosage, begginer], 
   },
   /*
