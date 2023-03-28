@@ -194,8 +194,6 @@ In addition, we add the `getAnimal` function.
     
 ```
 
-Sure, I can rephrase the explanation using "we"!
-
 The `getAnimal` function is a public function that we've created to allow users to retrieve information about a specific animal in the animals array. It takes in one parameter, `_index`, which represents the index of the animal the user wants to retrieve information about. The function is marked as view, which means it doesn't modify the state of the contract.
 
 When the getAnimal function is called with a specific index value, it returns a tuple containing several pieces of information about the animal. Specifically, we return the following information about the animal at the specified index:
