@@ -121,6 +121,26 @@ Lastly, we can write a function to set the greeting called **`setGreeting`**. Th
 def setGreeting(_greeting: String[64]):
     self.greeting = _greeting
 ```
+Here, you can see the our completed Vyper contract.
+
+```python
+# @version ^0.3.7
+
+greeting: String[64]
+
+@external
+def __init__(_greeting: String[64]):
+    self.greeting = _greeting
+
+@view
+@external
+def getGreeting() -> String[64]:
+    return self.greeting
+
+@external
+def setGreeting(_greeting: String[64]):
+    self.greeting = _greeting
+```
 
 We have completed our first Vyper contract, so let's compile it and deploy it on the Alfajores testnet.
 
