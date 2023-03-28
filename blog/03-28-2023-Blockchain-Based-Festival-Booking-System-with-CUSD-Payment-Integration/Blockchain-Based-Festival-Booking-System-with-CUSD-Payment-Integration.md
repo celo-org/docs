@@ -39,4 +39,158 @@ To take this tutorial, you will need:
 
 - Have a basic knowledge of solidity.
 
-To begin writing our smart contract, we will need to use Remix, an online IDE for writing and testing Solidity code. To get started, open Remix in your web browser and create a new file by clicking on the plus sign located on the left-hand side of the screen. Name the festival.sol. [(you can click this link to access the remix plugin)](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
+To begin writing our smart contract, we will need to use Remix, an online IDE for writing and testing Solidity code. To get started, open Remix in your web browser and create a new file by clicking on the plus sign located on the left-hand side of the screen. Name the festival.sol. [you can click this link to access the remix plugin](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
+
+After creating a new file in Remix, we can start writing our smart contract by declaring some statements. These statements will define the functionality and behavior of our contract. We will start by defining the version of Solidity we will be using, followed by the contract name and any necessary imports or interfaces. We will then define any necessary state variables, structs, or mappings, and then proceed to write the functions that define the behavior of our contract.
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+```
+
+Next, we will add an ERC20 token interface to our smart contract.
+
+```solidity
+interface IERC20Token {
+  function transfer(address, uint256) external returns (bool);
+  function approve(address, uint256) external returns (bool);
+  function transferFrom(address, address, uint256) external returns (bool);
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address) external view returns (uint256);
+  function allowance(address, address) external view returns (uint256);
+
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+```
+
+In this code above, we are defining an interface for an ERC20 token. An interface is a way to define a set of functions that a contract must implement in order to be considered compatible with the interface. This interface defines six functions: transfer, approve, transferFrom, totalSupply, balanceOf, and allowance.
+
+- `transfer` allows a user to send tokens to another address. It takes two arguments: the address of the recipient and the amount of tokens to send. It returns a boolean value indicating whether the transfer was successful.
+
+- `approve` allows a user to give permission for another address to spend tokens on their behalf. It takes two arguments: the address of the spender and the maximum amount of tokens they are allowed to spend. It returns a boolean value indicating whether the approval was successful.
+
+- `transferFrom` allows a user to send tokens on behalf of another user. It takes three arguments: the address of the owner, the address of the recipient, and the amount of tokens to send. It returns a boolean value indicating whether the transfer was successful.
+
+- `totalSupply` returns the total number of tokens in existence.
+
+- `balanceOf` returns the balance of tokens held by a particular address.
+
+-  `allowance` returns the maximum amount of tokens that a spender is allowed to spend on behalf of a particular owner.
+
+In addition to these functions, this interface also defines two events: Transfer and Approval. These events are emitted whenever a transfer or approval occurs and allow external parties to track the movement of tokens within the contract.
+
+By implementing this interface in our smart contract, we can interact with any ERC20 token that also implements these functions. This allows us to create more flexible and interoperable contracts that can interact with a wide range of other applications and systems.
+
+Moving on, we will name our contract and define a struct in our smart contract.
+
+```solidity
+contract Festival {
+
+    uint internal programmesLength = 0;
+    address internal cUsdTokenAddress = 0x686c626E48bfC5DC98a30a9992897766fed4Abd3;
+
+    struct Programme {
+        address payable owner;
+        string url;
+        string theme;
+        string description;
+        string location;
+        uint price;
+        uint sold;
+    }
+```
+
+In the code snippet above, we can see that we have created a smart contract called `Festival`. Within this contract, we have defined a struct called Programme, which has several properties such as `owner`, `url`, `theme`, `description`, `location`, `price`, and `sold`. These properties will be used to define the attributes of each programme that will be added to the festival.
+
+Additionally, we have defined two internal variables `programmesLength` and `cUsdTokenAddress`. programmesLength will be used to keep track of the number of programmes added to the festival, while cUsdTokenAddress is the address of the ERC20 token that will be used for payment.
+
+The Programme `struct` is used to store the details of each programme, and programmesLength is used to keep track of the number of programmes that have been added to the festival. The cUsdTokenAddress variable is used to store the address of the ERC20 token that will be used for payment, specifically the cUSD token.
+
+After defining our struct, we add a `mapping` that allows us to store and retrieve program information. The mapping data structure in Solidity is similar to an associative array or a hash table in other programming languages. In this case, we map a uint (which will serve as an ID for each program) to its corresponding Programme struct.
+
+```solidity
+ mapping (uint => Programme) internal programmes;
+```
+
+To add more functionality to our smart contract, we'll define some functions. The first function we'll create is called `writeProgramme`. This function is responsible for adding a new festivals to the list of existing programmes in our programmes mapping.
+
+```solidity
+ function writeProgramme(
+        string memory _url,
+        string memory _theme,
+        string memory _description, 
+        string memory _location, 
+        uint _price
+    ) public {
+        uint _sold = 0;
+        programmes[programmesLength] = Programme(
+            payable(msg.sender),
+            _url,
+            _theme,
+            _description,
+            _location,
+            _price,
+            _sold
+        );
+        programmesLength++;
+    }
+```
+
+The `writeProgramme` function is used to create a new programme on our smart contract. It takes in five parameters: `_url`, `_theme`, `_description`, `_location`, and `_price`.
+
+Inside the function, we first set the number of bookings sold to zero, which will be incremented later when users book slots for the programme.
+
+Then, we create a new programme by assigning it to the programmes mapping using the programmesLength variable as the key. We do this by passing in the function parameters and the _sold variable into the Programme struct.
+
+Finally, we increment the programmesLength variable so that the next programme created will have a unique key.
+
+Let's proceed to create the `readProgramme` function.
+
+```solidity
+function readProgramme(uint _index) public view returns (
+        address payable,
+        string memory, 
+        string memory, 
+        string memory, 
+        string memory, 
+        uint, 
+        uint
+    ) {
+        return (
+            programmes[_index].owner,
+            programmes[_index].url, 
+            programmes[_index].theme, 
+            programmes[_index].description, 
+            programmes[_index].location, 
+            programmes[_index].price,
+            programmes[_index].sold
+        );
+    }
+```
+
+This function can be called by anyone and doesn't modify any data on the blockchain, so it doesn't require any gas fees. Its purpose is to allow us to retrieve information about a programme that has been added to the smart contract.
+
+To use this function, we need to pass in one parameter called _index, which is the index of the programme in the programmes array that we want to retrieve information about. The function returns several pieces of information about the programme, including:
+
+- The address of the owner of the programme, which is of type address payable
+
+- The URL of the programme, which is of type string memory
+
+- The theme of the programme, which is of type string memory
+
+- The description of the programme, which is of type string memory
+
+- The location of the programme, which is of type string memory
+
+- The price of the programme, which is of type uint
+
+- The number of tickets sold for the programme, which is of type uint.
+
+To retrieve this information, we simply need to call the function and provide the _index parameter. The function will then access the relevant properties of the programme at the specified index in the programmes array and return them as a tuple.
+
+Overall, this function is a useful tool for anyone who wants to get information about a specific programme that has been added to the smart contract. By making this information available through a view function, the smart contract provides transparency and accessibility for all parties involved in the programme.
+
+
+
