@@ -1,8 +1,23 @@
+---
+title: Build a FullStack User Authentication Dapp With React and Celo
+description: In this tutorial, we'll guide you through the process of building a React Dapp that restricts access to a catalogue of pages based on Celo authentication.
+authors:
+  - name: Jovan Mwesigwa
+    title: Software Engineer
+    url: https://github.com/JovanMwesigwa
+tags: [celo, "celosage", "intermediate", "react", "solidity", "hardhat"]
+hide_table_of_contents: true
+slug: /tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo
+---
+
+![header](../../src/data-tutorials/showcase/intermediate/build-a-fullstack-user-authentication-dapp-with-react-and-celo.png)
+
+
 ## Introduction
 
 In today's digital age, user authentication is an essential component of any web application. The Celo blockchain network provides a secure and decentralized way to authenticate users, and with React, building a full-stack authentication Dapp has never been easier. In this tutorial, we'll walk you through the process of building a React Dapp that leverages the power of the Celo network to authenticate users and restrict access to pages. With the help of react-celo and ethersJS, you'll learn how to create a secure and seamless user experience that is built on top of the decentralized infrastructure of the Celo network.
 
-## Prerequisites​
+## Prerequisites
 
 Before diving into building the React Dapp with Celo authentication, there are a few prerequisites that you should know of:
 
@@ -53,11 +68,11 @@ In your terminal, enter `yarn run dev` to run your project.
 
 This is what your project looks like:
 
-![starter template](tutorial-assets/starter.png)
+![starter](https://user-images.githubusercontent.com/62109301/228253624-3d0528a8-322f-4cd1-b3ce-7dd299614a7f.png)
 
 The `Connect to login` links to the main store inventory page below:
 
-![inventory page](tutorial-assets/inventory.png)
+![inventory](https://user-images.githubusercontent.com/62109301/228253802-353c2e02-8b7f-4c33-8ea5-637edca6f5f0.png)
 
 Currently, the inventory page is open and freely accessible by any user.
 
@@ -406,11 +421,11 @@ npm run dev
 
 When you press on the `Login button`, a new Meta Mask window will pop up asking you to connect the application as shown below.
 
-![login popup](tutorial-assets/login.png)
+![login popup](https://user-images.githubusercontent.com/62109301/228257274-5b4eb7cc-2346-4cbd-a874-a76cc860fe02.png)
 
 On confirmation, the dapp will be connected and automatically will redirect the user to an inventory page as shown below.
 
-![inventory](tutorial-assets/investory.png)
+![inventory](https://user-images.githubusercontent.com/62109301/228256998-b8fca98a-7a02-43f2-977d-cd0d0d5e9fce.png)
 
 The current user account address is displayed in the top right corner of the application too.
 
@@ -418,7 +433,7 @@ Trying to disconnect the Dapp will simulate a logout functionality
 
 To do this, open the Meta Mask wallet and click on the green `connected` button to disconnect the dApp as shown below.
 
-![disconnect](tutorial-assets/dissconnect.png)
+![disconnect](https://user-images.githubusercontent.com/62109301/228256191-735bab48-8d51-4c95-be2f-cf410cf384be.png)
 
 This automatically redirects the user back to the login page.
 
@@ -438,7 +453,7 @@ Here are some suggested next steps continue your learning and exploration of Web
 4. Join the Celo community on Discord to connect with other developers and enthusiasts, ask questions, and share your projects.
 5. Remember, Web3 development is a rapidly evolving field, so it's important to stay up-to-date with the latest trends, tools, and best practices. Keep learning, experimenting, and building, and you'll be on your way to becoming a proficient Web3 developer in no time!
 
-## About the Author​
+## About the Author
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 Reach out:
@@ -446,7 +461,7 @@ Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
 Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-## References​
+## References
 
 [Developers Celo](https://celo.org/developers) For Celo dev setup
 [Web3 React Docs](https://github.com/Uniswap/web3-react/tree/v6/docs#overview) | Installion and configuration of Web3 React library
