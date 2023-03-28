@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/creating-an-erc4626-token-contract-on-celo
 ---
 
-![header](https://user-images.githubusercontent.com/69092079/228097576-fc3f7389-2649-4ece-9ea0-c336dbdf9bee.png)
+![header](../../src/data-tutorials/showcase/intermediate/creating-an-erc4626-token-contract-on-celo.png)
 
 ## Introduction​
 
