@@ -949,6 +949,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'solidity', 'hardhat', 'smartcontract'],
   },
   {
+    title: 'Build a FullStack User Authentication Dapp With React and Celo',
+    description: 'This tutorial will guide you through the process of building a React Dapp that restricts access to a catalogue of pages based on Celo authentication.',
+    preview: require('./showcase/intermediate/build-a-fullstack-user-authentication-dapp-with-react-and-celo.png'),
+    website: '/blog/tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
+  },
+  {
     title: 'Build a FullStack Token Swap Application on Celo using React and 0x API',
     description: 'This tutorial will guide you through the process of building a full-stack token swap application on the Celo blockchain using React and the 0x API.',
     preview: require('./showcase/intermediate/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api.png'),
