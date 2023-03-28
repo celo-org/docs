@@ -12,7 +12,6 @@ slug: /tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-fullstack-user-authentication-dapp-with-react-and-celo.png)
 
-
 ## Introduction
 
 In today's digital age, user authentication is an essential component of any web application. The Celo blockchain network provides a secure and decentralized way to authenticate users, and with React, building a full-stack authentication Dapp has never been easier. In this tutorial, we'll walk you through the process of building a React Dapp that leverages the power of the Celo network to authenticate users and restrict access to pages. With the help of react-celo and ethersJS, you'll learn how to create a secure and seamless user experience that is built on top of the decentralized infrastructure of the Celo network.
@@ -33,7 +32,7 @@ By having these prerequisites in place, you'll be able to follow along with the 
 
 ## Requirements
 
-1. Node.js and npm installed on your machine: [node]( https://nodejs.org/en/download/)
+1. Node.js and npm installed on your machine: [node](https://nodejs.org/en/download/)
 2. Code editor (e.g., Visual Studio Code, Sublime Text, Atom)
 3. Meta Mask Wallet: [here](https://metamask.io/)
 4. Next JS and ethers
@@ -45,7 +44,7 @@ To begin this tutorial, you can clone the styled starter template project from G
 In your terminal:
 
 ```bash
-git clone https://github.com/JovanMwesigwa/web3-authentication-dapp/tree/starter-template 
+git clone https://github.com/JovanMwesigwa/web3-authentication-dapp/tree/starter-template
 ```
 
 Once cloning is done, install all the project's dependencies from your terminal:
@@ -85,12 +84,12 @@ To do this, we need to add a context provider to the root of the app so that we 
 And we'll do this in the `_app.jsx` file of the projects.
 
 ```js
-import '@/styles/globals.css'
-import { Web3Provider } from '@ethersproject/providers'
-import { Web3ReactProvider } from '@web3-react/core'
+import "@/styles/globals.css";
+import { Web3Provider } from "@ethersproject/providers";
+import { Web3ReactProvider } from "@web3-react/core";
 
 function getLibrary(provider) {
-  return new Web3Provider(provider)  
+  return new Web3Provider(provider);
 }
 
 export default function App({ Component, pageProps }) {
@@ -98,7 +97,7 @@ export default function App({ Component, pageProps }) {
     <Web3ReactProvider getLibrary={getLibrary}>
       <Component {...pageProps} />
     </Web3ReactProvider>
-  )
+  );
 }
 ```
 
@@ -110,33 +109,32 @@ Finally, in the `App` component, we wrap it with the `Web3ReactProvider`, passin
 
 This sets up the necessary context provider at the root of the application, which provides access to various hooks like the `useWeb3React` hook that we'll use to create the connect button.
 
- The `index.jsx` is the main page where a user will be required to authenticate by pressing the `Connect` button
+The `index.jsx` is the main page where a user will be required to authenticate by pressing the `Connect` button
 
 Inside `components/ConnectWallet.jsx` we have a basic connect button defined. Let's modify it and have the connect access logic in it.
 
 ```js
-import { useWeb3React } from '@web3-react/core'
-import styles from '@/styles/Home.module.css'
-import { InjectedConnector } from '@web3-react/injected-connector'
-import { useEffect } from 'react'
+import { useWeb3React } from "@web3-react/core";
+import styles from "@/styles/Home.module.css";
+import { InjectedConnector } from "@web3-react/injected-connector";
+import { useEffect } from "react";
 
 const ConnectWallet = ({ isConnected, setIsConnected }) => {
-
-    // White list the Injected connecter to only connect to the Celo Alfajores network with a chain id of 44787
+  // White list the Injected connecter to only connect to the Celo Alfajores network with a chain id of 44787
   const injectedConnector = new InjectedConnector({
     supportedChainIds: [44787],
-  })
+  });
 
   // Extract the current chains info from the useWeb3React hook
-  const { activate, active } = useWeb3React()
+  const { activate, active } = useWeb3React();
 
   const onClick = () => {
-    activate(injectedConnector)
-  }
+    activate(injectedConnector);
+  };
 
   useEffect(() => {
-    setIsConnected(active)
-  }, [active])
+    setIsConnected(active);
+  }, [active]);
 
   return (
     <>
@@ -154,10 +152,10 @@ const ConnectWallet = ({ isConnected, setIsConnected }) => {
         </button>
       )}
     </>
-  )
-}
+  );
+};
 
-export default ConnectWallet
+export default ConnectWallet;
 ```
 
 In the `ConnectWallet.jsx` file, we first import the necessary modules including the `useWeb3React` hook, which provides access to the current connection status, and the `InjectedConnector` which we'll use to connect to the Meta Mask wallet.
@@ -181,7 +179,7 @@ The `ConnectWallet` button is then imported into the `index.jsx` page.
 At the top of `index.jsx`, we import the `ConnectWallet` component from the components directory.
 
 ```js
-import ConnectWallet from './components/ConnectWallet'
+import ConnectWallet from "./components/ConnectWallet";
 ```
 
 This has all the necessary logic to connect the user to Meta Mask as we've seen before.
@@ -189,7 +187,7 @@ This has all the necessary logic to connect the user to Meta Mask as we've seen 
 We then set up the connection state using the useState hook:
 
 ```js
-const [isConnected, setIsConnected] = useState(false)
+const [isConnected, setIsConnected] = useState(false);
 ```
 
 This state keeps track of whether the user is connected to a wallet or not.
@@ -197,7 +195,7 @@ This state keeps track of whether the user is connected to a wallet or not.
 We then use the `useWeb3React` hook to get the chainId of the current network the user is connected to:
 
 ```js
-const { chainId } = useWeb3React()
+const { chainId } = useWeb3React();
 ```
 
 We also import the `useRouter` hook from `next/navigation`:
@@ -205,10 +203,10 @@ We also import the `useRouter` hook from `next/navigation`:
 We use the `useRouter` hook to programmatically navigate the user to another page once they are connected:
 
 ```js
-const { push } = useRouter()
+const { push } = useRouter();
 
 if (isConnected) {
-  push('/store')
+  push("/store");
 }
 ```
 
@@ -217,10 +215,7 @@ If `isConnected` is true, meaning the user has successfully connected their wall
 Finally, we render the `ConnectWallet` component:
 
 ```js
-<ConnectWallet
-  isConnected={isConnected}
-  setIsConnected={setIsConnected}
-/>
+<ConnectWallet isConnected={isConnected} setIsConnected={setIsConnected} />
 ```
 
 We pass in the `isConnected` state and the `setIsConnected` function to update the state as props to the `ConnectWallet` component.
@@ -228,25 +223,25 @@ We pass in the `isConnected` state and the `setIsConnected` function to update t
 Here's the full `index.jsx` code:
 
 ```js
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import ConnectWallet from './components/ConnectWallet'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { useWeb3React } from '@web3-react/core'
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import ConnectWallet from "./components/ConnectWallet";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useWeb3React } from "@web3-react/core";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [isConnected, setIsConnected] = useState(false)
+  const [isConnected, setIsConnected] = useState(false);
 
-  const { chainId } = useWeb3React()
+  const { chainId } = useWeb3React();
 
-  const { push } = useRouter()
+  const { push } = useRouter();
 
   if (isConnected) {
-    push('/store')
+    push("/store");
   }
 
   return (
@@ -342,7 +337,7 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
 ```
 
@@ -355,21 +350,21 @@ The Store page renders an inventory of items, represented by the `Card` componen
 The `useEffect` hook is used to check if the user is currently connected to a web3 provider. If they are not, the hook will redirect them back to the home page using the push method from `useRouter`.
 
 ```js
-import { useWeb3React } from '@web3-react/core'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import Card from './components/Card'
+import { useWeb3React } from "@web3-react/core";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Card from "./components/Card";
 
 const Store = () => {
-  const { account, active } = useWeb3React()
+  const { account, active } = useWeb3React();
 
-  const { push } = useRouter()
+  const { push } = useRouter();
 
   useEffect(() => {
     if (!active) {
-      push('/')
+      push("/");
     }
-  }, [active])
+  }, [active]);
 
   return (
     <div className="flex flex-col flex-1 px-16">
@@ -397,10 +392,10 @@ const Store = () => {
         <Card />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Store
+export default Store;
 ```
 
 ### Testing out the application
