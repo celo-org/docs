@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
 
+![Blockchain-Based Festival Booking System with CUSD Payment Integration](https://user-images.githubusercontent.com/115812158/228259160-bca6cc82-4d0e-4de8-9ea0-569dc9f9e2ec.png)
+
 ## INTRODUCTION
 
 Welcome to this tutorial on a smart contract written in Solidity. This contract is called "Festival" and it allows users to create and read festival programmes, as well as book and cancel slots for those programmes using a specific ERC20 token (cUSD).
