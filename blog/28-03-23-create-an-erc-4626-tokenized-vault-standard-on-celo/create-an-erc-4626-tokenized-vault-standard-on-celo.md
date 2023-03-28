@@ -67,7 +67,7 @@ The main benefit of ERC-4626 is that it standardizes tokenized vaults to make pr
 //SPDX-License-Identifier: MIT
 
 
-pragma solidity 0.8.7;
+pragma solidity ^0.8.7;
 
 
 interface IERC4626 {
