@@ -10,8 +10,9 @@ tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
+ 
+ ![blockchain-based-festival-booking-system-with-cusd-payment-Integration png](https://user-images.githubusercontent.com/115812158/228366689-0fe99898-cc6a-4e01-9cef-c6b4840e4a95.png)
 
- ![blockchain-based-festival-booking-system-with-cusd-payment-Integration png](https://user-images.githubusercontent.com/115812158/228364275-3b77e973-5c9a-49d0-99bb-505c59dd0e61.png)
 
 ## INTRODUCTION
 
