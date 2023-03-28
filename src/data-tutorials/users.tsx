@@ -2636,6 +2636,13 @@ const Users: User[] = [
     tags: ['celosage', 'dapp', 'beginner', 'celo'], 
   },
   {
+    title: 'Building Decentralized Applications on the Celo Platform using the Celo SDK and Celo Smart Contracts',
+    description: 'Learn how to build and deploy decentralized applications on the Celo platform using the Celo SDK and Celo smart contracts',
+    preview: require('./showcase/beginner/building-decentralized-applications-on-celo.png'),
+    website: 'blog/tutorials/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract',
+    tags: ["celo", "celosage", "truffle", "smartcontract", "solidity", "beginner"], 
+  },
+  {
     title: 'Building a Celo Voting System with Golang',
     description: 'This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain',
     preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
