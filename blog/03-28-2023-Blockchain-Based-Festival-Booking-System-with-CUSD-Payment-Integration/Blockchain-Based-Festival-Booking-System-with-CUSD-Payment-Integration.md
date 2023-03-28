@@ -1,6 +1,6 @@
 ---
 title: Blockchain-Based Festival Booking System with CUSD Payment Integration
-description: A decentralized platform for event organizers to showcase their programs and allow users to book their slots using cUSD. With Festival, event organizers can write descriptions of their programs including URLs, themes, descriptions, locations, and prices. Users can then browse and book their slots using cUSD tokens.
+description: Decentralized festival booking platform for organizers to showcase programs and users to book slots with cUSD.
 authors:
   - name: David Ikanji
     title: Technical Writer 
@@ -11,7 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
 
-![Blockchain-Based Festival Booking System with CUSD Payment Integration](https://user-images.githubusercontent.com/115812158/228259160-bca6cc82-4d0e-4de8-9ea0-569dc9f9e2ec.png)
+ ![Blockchain-Based Festival Booking System with CUSD Payment Integration](https://user-images.githubusercontent.com/115812158/228294508-659977f5-13e0-4a91-9739-64480c55aa94.png)
+
 
 ## INTRODUCTION
 
