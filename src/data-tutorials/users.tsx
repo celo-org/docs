@@ -2593,6 +2593,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
+  {
+    title: 'Building a Celo Blockchain Explorer with Python',
+    description: 'In this tutorial, we'll use Python and the web3.py module to create a blockchain explorer for the Celo network.',
+    preview: require('./showcase/intermediate/building-a-celo-blockchain-explorer-with-python.png'),
+    website: '/blog/tutorials/building-a-celo-blockchain-explorer-with-python',
+    tags: ['celosage','celo', 'intermediate', 'smart contract', 'solidity'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
