@@ -445,7 +445,9 @@ To launch the app created from this tutorial, follow these steps:
 
 - The app should open automatically in your default browser. If not, you can access it at http://localhost:3000.
 
-- Ensure that MetaMask is installed and connected to the Celo test network.
+- Ensure that MetaMask / Celo Extension Wallet is installed and connected to the Celo test network.
+
+![image](https://user-images.githubusercontent.com/125604535/228326203-be422ee5-5c6a-43e7-acae-c8cc48c4d1e2.png)
 
 - In the app, fill in the form fields to set and get attributes associated with your decentralized identity.
 
