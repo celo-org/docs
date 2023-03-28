@@ -734,6 +734,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Blockchain-Based Festival Booking System with CUSD Payment Integration',
+    description: 'A decentralized platform for event organizers to showcase their programs and allow users to book their slots using cUSD. With Festival, event organizers can write descriptions of their programs including URLs, themes, descriptions, locations, and prices. Users can then browse and book their slots using cUSD tokens.',
+    preview: require('./showcase/beginner/Blockchain-Based-Festival-Booking-System-with-CUSD-Payment-Integration.png'),
+    website: '/blog/tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration',
+    tags: ['celosage','intermediate', 'solidity', 'celo'],
+  },
+  {
     title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
     description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
     preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
