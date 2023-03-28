@@ -192,5 +192,213 @@ To retrieve this information, we simply need to call the function and provide th
 
 Overall, this function is a useful tool for anyone who wants to get information about a specific programme that has been added to the smart contract. By making this information available through a view function, the smart contract provides transparency and accessibility for all parties involved in the programme.
 
+Up next is the `bookSlot` function.
 
+```solidity
+ function bookSlot(uint _index) public payable  {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            programmes[_index].owner,
+            programmes[_index].price
+          ),
+          "Transfer failed."
+        );
+        programmes[_index].sold++;
+    }
+```
 
+This function is called bookSlot and it takes in a single parameter called _index, which represents the index of the program slot that someone wants to book. The function also requires that the caller sends a certain amount of a specific type of cryptocurrency called cUSD to the owner of the program slot in order to book it.
+
+The function first checks that the transfer of cUSD tokens from the caller to the program slot owner is successful. If the transfer is successful, the function increments the sold variable of the program slot, indicating that someone has booked that slot. If the transfer fails, the function will throw an error message saying "Transfer failed."
+
+In simpler terms, this function allows someone to book a program slot by sending cUSD tokens to the owner of that slot. If the transfer is successful, the slot will be marked as sold.
+
+Finally, we add the `cancelBooking` function and the `getProgrammesLength()`.
+
+```solidity
+   function cancelBooking(uint _index) public {
+    require(
+        programmes[_index].sold > 0,
+        "No bookings have been made for this programme."
+    );
+    require(
+        IERC20Token(cUsdTokenAddress).transfer(
+            msg.sender,
+            programmes[_index].price
+        ),
+        "Refund failed."
+    );
+    programmes[_index].sold--;
+}
+ function getProgrammesLength() public view returns (uint) {
+        return (programmesLength);
+    }
+
+}
+```
+
+The `cancelBooking` function takes in one input parameter _index, which is an unsigned integer representing the index of a program in an array of programs. The function is public, which means that anyone can call it from outside the contract.
+
+Here's what the function does:
+
+- It uses the `require` function to check that at least one booking has been made for the program with the given _index. If no bookings have been made, the function will return an error message.
+
+- It uses the `require` function again to transfer the price of the program back to the user who made the booking using an ERC20 token contract. If the transfer fails, the function will return an error message.
+
+- It decrements the sold variable for the program at the given _index by 1, to reflect the cancellation of the booking.
+
+The next function is the `getProgrammesLength` function. It is also a public function, which means that anyone can call it from outside the contract. This function doesn't take any input parameters.
+
+Here's what the function does:
+
+It returns the value of the programmesLength variable. This variable represents the number of programs available in the array of programs.
+So, in summary, the cancelBooking function cancels a booking for a program and refunds the user, while the getProgrammesLength function returns the number of programs available in the contract.
+
+The complete code for this session is provided below:
+
+```solidity
+  // SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+
+interface IERC20Token {
+  function transfer(address, uint256) external returns (bool);
+  function approve(address, uint256) external returns (bool);
+  function transferFrom(address, address, uint256) external returns (bool);
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address) external view returns (uint256);
+  function allowance(address, address) external view returns (uint256);
+
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+contract Festival {
+
+    uint internal programmesLength = 0;
+    address internal cUsdTokenAddress = 0x686c626E48bfC5DC98a30a9992897766fed4Abd3;
+
+    struct Programme {
+        address payable owner;
+        string url;
+        string theme;
+        string description;
+        string location;
+        uint price;
+        uint sold;
+    }
+
+    mapping (uint => Programme) internal programmes;
+
+    function writeProgramme(
+        string memory _url,
+        string memory _theme,
+        string memory _description, 
+        string memory _location, 
+        uint _price
+    ) public {
+        uint _sold = 0;
+        programmes[programmesLength] = Programme(
+            payable(msg.sender),
+            _url,
+            _theme,
+            _description,
+            _location,
+            _price,
+            _sold
+        );
+        programmesLength++;
+    }
+
+    function readProgramme(uint _index) public view returns (
+        address payable,
+        string memory, 
+        string memory, 
+        string memory, 
+        string memory, 
+        uint, 
+        uint
+    ) {
+        return (
+            programmes[_index].owner,
+            programmes[_index].url, 
+            programmes[_index].theme, 
+            programmes[_index].description, 
+            programmes[_index].location, 
+            programmes[_index].price,
+            programmes[_index].sold
+        );
+    }
+
+    function bookSlot(uint _index) public payable  {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            programmes[_index].owner,
+            programmes[_index].price
+          ),
+          "Transfer failed."
+        );
+        programmes[_index].sold++;
+    }
+    
+    function cancelBooking(uint _index) public {
+    require(
+        programmes[_index].sold > 0,
+        "No bookings have been made for this programme."
+    );
+    require(
+        IERC20Token(cUsdTokenAddress).transfer(
+            msg.sender,
+            programmes[_index].price
+        ),
+        "Refund failed."
+    );
+    programmes[_index].sold--;
+}
+ function getProgrammesLength() public view returns (uint) {
+        return (programmesLength);
+    }
+
+}
+```
+## CONTRACT DEPLOYMENT
+
+To deploy the flower smart contract on the Celo blockchain, you would need the following:
+
+CeloExtensionWallet: Download and install the Celo Extension Wallet from the Google Chrome store, create a wallet, and securely store your key phrase. [Click here to intall the celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
+
+Celo Faucet: Fund your wallet by copying your wallet address and pasting it into the Celo Faucet, then confirm. [Click here to access celo faucet](https://faucet.celo.org/)
+
+Celo Remix Plugin: Open Remix and create a new Solidity file, paste the Festival contract code into the file, and ensure the Solidity compiler is set to version 0.8.7 or later. [Click here to access to access the remix ide](https://remix.ethereum.org/)
+
+Compile the contract by clicking the "Compile Festival.sol" button in the Solidity Compiler tab in Remix.
+
+In the "Deploy & Run Transactions" tab, select the Celo network from the dropdown menu, connect your wallet to Remix by clicking "Connect to wallet", and select "FloralNft" from the "Contract" dropdown menu.
+
+Click the "Deploy" button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+
+Once the transaction is confirmed, the Festival contract will be deployed on the Celo blockchain and you can interact with it using Remix.
+
+## CONCLUSION
+
+Well done on creating a functional smart contract for Festivals on the Celo blockchain! This is a significant achievement, and you should feel proud of the effort you put in to make it happen. Keep up the great work, and take the time to appreciate the rewards of your dedication and hard work. Celebrate and enjoy your success! 🎉
+
+## NEXT STEPS
+
+I hope you found this tutorial informative and gained valuable insights from it. If you're interested in furthering your education, I've listed some helpful links below that you might find beneficial to explore:
+
+The official Celo documentation: https://docs.celo.org/
+
+Solidity By Example, a website with code examples for learning Solidity: https://solidity-by-example.org/
+
+OpenZeppelin Contracts, a library of secure, tested smart contract code: https://www.openzeppelin.com/contracts/
+
+Solidity documentation for version 0.8.17: https://docs.soliditylang.org/en/v0.8.17/
+
+I hope these resources prove to be useful to you!
+
+## About the author
+
+I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
