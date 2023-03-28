@@ -1,6 +1,6 @@
 ---
 title: Building Decentralized Applications on the Celo Platform using the Celo SDK and Celo Smart Contracts
-description: 'Learn how to build and deploy decentralized applications on the Celo platform using the Celo SDK and Celo smart contracts'
+description: "Learn how to build and deploy decentralized applications on the Celo platform using the Celo SDK and Celo smart contracts"
 authors:
   - name: Qudus Olanrewaju
     title: Software Engineer
@@ -24,6 +24,7 @@ Before proceeding with this tutorial, you should have a basic understanding of b
 ## Requirements​
 
 For this tutorial, you would need to have the following tools installed on your computer:
+
 - Node.js and NPM: To install, follow the instructions at [Node.js](https://nodejs.org/en/).
 - Truffle: This is a popular development framework for building Ethereum-based applications. It allows you to deploy, test, and deploy on celo. You can install it using npm by running `npm install -g truffle`.
 - Celo SDK: This is a set of tools for building and deploying smart contracts on the Celo network. You can install it using npm by running `npm install -g @celo/celocli`.
@@ -37,18 +38,18 @@ mkdir my-dapp && cd my-dapp
 truffle init
 ```
 
- The command above would create a new truffle project. The output should be something of this form:
+The command above would create a new truffle project. The output should be something of this form:
 
- ![Terminal Output](./images/truffle-init-output.png)
+![Terminal Output](./images/truffle-init-output.png)
 
-Next, let's install [truffle/hdwallet-provider](https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md#:~:text=HD%20Wallet%2Denabled%20Web3%20provider,12%20or%2024%20word%20mnemonic.). This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file. 
+Next, let's install [truffle/hdwallet-provider](https://github.com/trufflesuite/truffle/blob/develop/packages/hdwallet-provider/README.md#:~:text=HD%20Wallet%2Denabled%20Web3%20provider,12%20or%2024%20word%20mnemonic.). This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file.
 Run the command below in your terminal.
 
 ```bash
 npm install @truffle/hdwallet-provider --save
 ```
 
-Ensure you run the command above in the root directory of your project. 
+Ensure you run the command above in the root directory of your project.
 
 Open your project in [Visual Studio code](https://code.visualstudio.com/) or your preferred IDE. It should have the following directories/files in it:
 
@@ -57,15 +58,16 @@ Open your project in [Visual Studio code](https://code.visualstudio.com/) or you
 ## Setting Up a Celo Wallet
 
 To interact with a Celo network, we’ll need to create and configure a Celo wallet using Metamask. Follow these steps to create a new Celo wallet:
+
 1. Install the Metamask browser extension and create a new wallet.
 2. Click on the network dropdown in the Metamask window and select “Add network”.
 3. Click on “Add network manually” at the bottom of your screen
 4. Enter the following details for the Celo testnet:
-    - Network Name: Celo Alfajores Testnet
-    - New RPC URL: [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
-    - Chain ID: 44787
-    - Symbol: cUSD
-    - Block Explorer URL: [https://alfajores-blockscout.celo-testnet.org/](https://alfajores-blockscout.celo-testnet.org/)
+   - Network Name: Celo Alfajores Testnet
+   - New RPC URL: [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
+   - Chain ID: 44787
+   - Symbol: cUSD
+   - Block Explorer URL: [https://alfajores-blockscout.celo-testnet.org/](https://alfajores-blockscout.celo-testnet.org/)
 5. Click “Save” to add the Celo testnet to your Metamask network list.
 
 Make sure to fund your account with some testnet CELO and cUSD tokens from the [Celo Testnet Faucet](https://celo.org/developers/faucet).
@@ -75,44 +77,44 @@ Make sure to fund your account with some testnet CELO and cUSD tokens from the [
 Now, let's write our smart contract using Solidity. In this tutorial, we will create a simple voting contract. The contract will have a list of candidates, and each candidate will have a name and a vote count. The voters can cast their votes for the candidates, and the contract will keep track of the vote counts.
 First, let's create a new file named `Voting.sol` in the contracts directory.
 
- ```solidity
+```solidity
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Voting {
-    struct Candidate {
-        string name;
-        uint256 voteCount;
-    }
+   struct Candidate {
+       string name;
+       uint256 voteCount;
+   }
 
-    Candidate[] public candidates;
+   Candidate[] public candidates;
 
-    mapping(address => bool) public voters;
+   mapping(address => bool) public voters;
 
-    function addCandidate(string memory name) public {
-        candidates.push(Candidate(name, 0));
-    }
+   function addCandidate(string memory name) public {
+       candidates.push(Candidate(name, 0));
+   }
 
-    function vote(uint256 candidateIndex) public {
-        require(candidateIndex >= 0 && candidateIndex < candidates.length, "Invalid candidate index");
-        require(!voters[msg.sender], "The sender has already voted");
+   function vote(uint256 candidateIndex) public {
+       require(candidateIndex >= 0 && candidateIndex < candidates.length, "Invalid candidate index");
+       require(!voters[msg.sender], "The sender has already voted");
 
-        candidates[candidateIndex].voteCount += 1;
-        voters[msg.sender] = true;
-    }
+       candidates[candidateIndex].voteCount += 1;
+       voters[msg.sender] = true;
+   }
 
-    function getCandidateCount() public view returns (uint256) {
-        return candidates.length;
-    }
+   function getCandidateCount() public view returns (uint256) {
+       return candidates.length;
+   }
 
-    function getCandidate(uint256 candidateIndex) public view returns (string memory name, uint256 voteCount) {
-        require(candidateIndex >= 0 && candidateIndex < candidates.length, "Invalid candidate index");
+   function getCandidate(uint256 candidateIndex) public view returns (string memory name, uint256 voteCount) {
+       require(candidateIndex >= 0 && candidateIndex < candidates.length, "Invalid candidate index");
 
-        Candidate storage candidate = candidates[candidateIndex];
-        return (candidate.name, candidate.voteCount);
-    }
+       Candidate storage candidate = candidates[candidateIndex];
+       return (candidate.name, candidate.voteCount);
+   }
 }
- ```
+```
 
 Here, we define a `Candidate` struct with a name and a vote count. We store the candidates in an array, and we keep track of who has voted using a mapping. The `addCandidate` function is used to add a new candidate to the list. The `vote` function is used to cast a vote for a candidate, and we increment the vote count of the candidate. The `getCandidateCount` and `getCandidate` functions are used to retrieve the list of candidates and their vote counts.
 
@@ -144,44 +146,43 @@ Next, let's configure Truffle to deploy the smart contract to the Celo network. 
 
 ```javascript
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic =
- "client great south good cement bucket rank free legend green"; // replace with your MNEMONIC
+const mnemonic = "client great south good cement bucket rank free legend green"; // replace with your MNEMONIC
 
 module.exports = {
- networks: {
-   local: {
-     host: "127.0.0.1",
-     port: 7545,
-     network_id: "*",
-   },
-   alfajores: {
-     provider: function () {
-       return new HDWalletProvider(
-         mnemonic,
-         "https://alfajores-forno.celo-testnet.org"
-       );
-     },
-     network_id: 44787,
-     gas: 20000000,
-     deployTimeout: 300000,
-     networkCheckTimeout: 300000,
-   },
-   mainnet: {
-     provider: function () {
-       return new HDWalletProvider(mnemonic, "https://forno.celo.org");
-     },
-     network_id: 42220,
-     gas: 4000000,
-     deployTimeout: 300000,
-     networkCheckTimeout: 300000,
-   },
- },
- // Configure your compilers
- compilers: {
-   solc: {
-     version: "0.8.19", // Fetch exact version from solc-bin (default: truffle's version)
-   },
- },
+  networks: {
+    local: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*",
+    },
+    alfajores: {
+      provider: function () {
+        return new HDWalletProvider(
+          mnemonic,
+          "https://alfajores-forno.celo-testnet.org"
+        );
+      },
+      network_id: 44787,
+      gas: 20000000,
+      deployTimeout: 300000,
+      networkCheckTimeout: 300000,
+    },
+    mainnet: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, "https://forno.celo.org");
+      },
+      network_id: 42220,
+      gas: 4000000,
+      deployTimeout: 300000,
+      networkCheckTimeout: 300000,
+    },
+  },
+  // Configure your compilers
+  compilers: {
+    solc: {
+      version: "0.8.19", // Fetch exact version from solc-bin (default: truffle's version)
+    },
+  },
 };
 ```
 
@@ -214,6 +215,7 @@ By following this tutorial, you now have a basic understanding of how to build a
 ## Next Steps​
 
 To continue your learning and exploration of the Celo platform, you can:
+
 - Explore the Celo documentation and learn more about the Celo SDK, smart contracts, and other tools available for developers.
 - Join the Celo Discord community to connect with other developers and ask questions.
 - Experiment with building your own dApps on the Celo platform using the skills you learned in this tutorial.
@@ -223,6 +225,7 @@ To continue your learning and exploration of the Celo platform, you can:
 Qudus Olanrewaju is a developer and technical writer who has a strong interest in blockchain technology and web3. He enjoys building web3 projects and leveraging his distinctive viewpoint to create engaging and insightful content.
 
 ## References​
+
 - [Source Code](https://github.com/Qtech11/building-decentralized-applications-on-the-celo-platform)
 - [Deploy on Celo using Truffle](https://docs.celo.org/developer/deploy/truffle)
 - [Truffle | Overview - Truffle Suite](https://trufflesuite.com/docs/truffle/)
