@@ -13,7 +13,7 @@ slug: /tutorials/building-a-decentralized-exchange-on-celo-with-golang
 
 ## Introduction
 
-Decentralized exchanges (DEXs) are a crucial component of the decentralized finance (DeFi) ecosystem. They allow for peer-to-peer trading of cryptocurrencies and other digital assets without the need for a centralized authority. 
+Decentralized exchanges (DEXs) are a crucial component of the decentralized finance (DeFi) ecosystem. They allow for peer-to-peer trading of cryptocurrencies and other digital assets without the need for a centralized authority.
 
 Celo is a blockchain platform that is designed to send, receive, and store digital assets securely on a mobile phone. The Celo blockchain is built using the Solidity programming language and is fully compatible with Ethereum. The Celo Golang package provides developers with a set of tools and libraries to interact with the Celo blockchain using the Go programming language.
 
@@ -58,7 +58,7 @@ Install the Celo blockchain package:
 go get -u github.com/ethereum/go-ethereum
 ```
 
-Note: This Go Ethereum package created by Celo is a fork of the main Go Ethereum package.  If you are having any import errors, just go to your terminal and run:
+Note: This Go Ethereum package created by Celo is a fork of the main Go Ethereum package. If you are having any import errors, just go to your terminal and run:
 
 ```bash
 go mod tidy
@@ -74,13 +74,13 @@ Next, we have to build a smart contract for the decentralized exchange. Go into 
 pragma solidity ^0.8.0;
 
 contract Exchange {
-    
+
     // Define variables
     address payable public owner;
     uint public orderCount = 0;
     mapping(uint => Order) public orders;
     mapping(address => uint) public balances;
-    
+
     // Define struct for order
     struct Order {
         uint id;
@@ -89,67 +89,67 @@ contract Exchange {
         uint price;
         bool completed;
     }
-    
+
     // Define events for when an order is created and when an order is completed
     event OrderCreated(uint id, address payable seller, address payable buyer, uint price, bool completed);
     event OrderCompleted(uint id, address payable seller, address payable buyer, uint price, bool completed);
-    
+
     // Constructor function
     constructor() {
         owner = payable(msg.sender);
     }
-    
+
     // Sell function - create a new order
     function sell(uint _price) public {
         // Increment order count
         orderCount++;
-        
+
         // Create new order
         orders[orderCount] = Order(orderCount, payable(msg.sender), payable(address(0)), _price, false);
-        
+
         // Emit event
         emit OrderCreated(orderCount, payable(msg.sender), payable(address(0)), _price, false);
     }
-    
+
     // Buy function - complete an existing order
     function buy(uint _id) public payable {
         // Get order from mapping
         Order memory _order = orders[_id];
-        
+
         // Make sure order exists and is not completed
         require(_order.id > 0 && _order.completed == false, "Order does not exist or is already completed.");
-        
+
         // Make sure buyer has enough ether to purchase order
         require(msg.value >= _order.price, "Not enough ether sent to purchase order.");
-        
+
         // Transfer ether to seller
         _order.seller.transfer(msg.value);
-        
+
         // Update order to completed
         _order.buyer = payable(msg.sender);
         _order.completed = true;
         orders[_id] = _order;
-        
+
         // Emit event
         emit OrderCompleted(_id, _order.seller, payable(msg.sender), _order.price, true);
     }
-    
+
     // Deposit function - add ether to user's balance
     function deposit() public payable {
         // Add ether to user's balance
         balances[msg.sender] += msg.value;
     }
-    
+
     // Withdraw function - withdraw ether from user's balance
     function withdraw(uint _amount) public {
         // Make sure user has enough ether in their balance
         require(balances[msg.sender] >= _amount, "Not enough ether in balance to withdraw.");
-        
+
         // Subtract ether from user's balance and transfer to user
         balances[msg.sender] -= _amount;
         payable(msg.sender).transfer(_amount);
     }
-    
+
     // Order function - get order details
     function getOrder(uint _id) public view returns (uint, address, address, uint, bool) {
         // Get order from mapping and return details
@@ -263,7 +263,7 @@ func main() {
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -333,7 +333,7 @@ import (
 )
 ```
 
-The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies. 
+The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies.
 
 ```go
 const privateKey = "your-private-key"
@@ -362,7 +362,7 @@ client, err := ethclient.Dial(nodeURL)
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -370,7 +370,7 @@ client, err := ethclient.Dial(nodeURL)
 	}
 ```
 
-The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled. 
+The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled.
 
 ```go
 // Get the public address associated with the private key
@@ -390,7 +390,7 @@ The code above allows us to connect to the Celo blockchain, load our private key
 	}
 ```
 
-From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain. 
+From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain.
 
 ```go
 // Create a new transaction
@@ -419,7 +419,7 @@ From the code above, our contract address and public key are gotten from the cry
 }
 ```
 
-A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it. 
+A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it.
 
 On your terminal, run the following command:
 
