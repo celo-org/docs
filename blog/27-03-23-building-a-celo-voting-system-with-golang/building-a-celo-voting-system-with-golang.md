@@ -9,8 +9,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-voting-system-with-golang
 ---
 
-![header](https://user-images.githubusercontent.com/69091491/228082328-564e1dc1-4273-42c7-b02f-0e7780ca0fe1.png)
-
+![header](../../src/data-tutorials/showcase/intermediate/building-a-celo-voting-system-with-golang.png)
 
 ## Introduction
 
@@ -73,30 +72,30 @@ Next, we have to build a smart contract for the decentralized voting system. Go 
 pragma solidity ^0.8.0;
 
 contract Voting {
-    
+
     struct Candidate {
         uint256 id;
         string name;
         uint256 voteCount;
     }
-    
+
     mapping(address => bool) public hasVoted;
     mapping(uint256 => Candidate) public candidates;
     uint256 public candidatesCount;
-    
+
     event Voted(uint256 indexed candidateId, address indexed voter);
-    
+
     constructor(string[] memory _candidateNames) {
         for (uint256 i = 0; i < _candidateNames.length; i++) {
             addCandidate(_candidateNames[i]);
         }
     }
-    
+
     function addCandidate(string memory _name) private {
         candidatesCount++;
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
-    
+
     function vote(uint256 _candidateId) public {
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID.");
         require(!hasVoted[msg.sender], "You have already voted.");
@@ -104,13 +103,13 @@ contract Voting {
         hasVoted[msg.sender] = true;
         emit Voted(_candidateId, msg.sender);
     }
-    
+
     function getCandidate(uint256 _candidateId) public view returns (uint256, string memory, uint256) {
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID.");
         Candidate memory candidate = candidates[_candidateId];
         return (candidate.id, candidate.name, candidate.voteCount);
     }
-    
+
     function getCandidatesCount() public view returns (uint256) {
         return candidatesCount;
     }
@@ -121,17 +120,17 @@ Now let’s go through the code above to understand what’s going on.
 
 ```solidity
 contract Voting {
-    
+
     struct Candidate {
         uint256 id;
         string name;
         uint256 voteCount;
     }
-    
+
     mapping(address => bool) public hasVoted;
     mapping(uint256 => Candidate) public candidates;
     uint256 public candidatesCount;
-    
+
     event Voted(uint256 indexed candidateId, address indexed voter);
 ```
 
@@ -143,12 +142,12 @@ constructor(string[] memory _candidateNames) {
             addCandidate(_candidateNames[i]);
         }
     }
-    
+
     function addCandidate(string memory _name) private {
         candidatesCount++;
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
-    
+
     function vote(uint256 _candidateId) public {
         require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID.");
         require(!hasVoted[msg.sender], "You have already voted.");
@@ -159,7 +158,7 @@ constructor(string[] memory _candidateNames) {
 ```
 
 - The “constructor” function is called when the contract is deployed and it takes an array of candidate's names and loops through them and calls the “addCandidate” function to them to the “candidates” mapping.
-- The “addCandidate” function is private and takes the name of a candidate and adds it to the  “candidates” mapping, increases the “candidatesCount” variable, and initializes the candidate's vote count to zero.
+- The “addCandidate” function is private and takes the name of a candidate and adds it to the “candidates” mapping, increases the “candidatesCount” variable, and initializes the candidate's vote count to zero.
 - The 'vote' function allows a user to vote for a candidate by entering their candidate ID. The function first validates the candidate ID and ensures that the user has not already voted. If both checks are successful, the candidate's vote count is increased, the user's address is added to the 'hasVoted' mapping, and the 'Voted' event is fired.
 
 ```solidity
@@ -168,7 +167,7 @@ function getCandidate(uint256 _candidateId) public view returns (uint256, string
         Candidate memory candidate = candidates[_candidateId];
         return (candidate.id, candidate.name, candidate.voteCount);
     }
-    
+
     function getCandidatesCount() public view returns (uint256) {
         return candidatesCount;
     }
@@ -272,7 +271,7 @@ func main() {
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Voting.bin")
 	if err != nil {
@@ -342,7 +341,7 @@ import (
 )
 ```
 
-The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies. 
+The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies.
 
 ```go
 const privateKey = "your-private-key"
@@ -371,7 +370,7 @@ client, err := ethclient.Dial(nodeURL)
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -379,7 +378,7 @@ client, err := ethclient.Dial(nodeURL)
 	}
 ```
 
-The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled. 
+The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled.
 
 ```go
 // Get the public address associated with the private key
@@ -399,7 +398,7 @@ The code above allows us to connect to the Celo blockchain, load our private key
 	}
 ```
 
-From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain. 
+From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain.
 
 ```go
 // Create a new transaction
@@ -428,7 +427,7 @@ From the code above, our contract address and public key are gotten from the cry
 }
 ```
 
-A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it. 
+A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it.
 
 On your terminal, run the following command:
 
@@ -446,7 +445,7 @@ In this tutorial, we have seen how developing a decentralized voting system usin
 
 ## Next Steps
 
-There are numerous ways to improve the voting system described in this article. One approach is to investigate various methods of identity verification to ensure that only eligible voters can vote in the election. Another approach is to use more advanced security features to prevent tampering and fraud, such as encryption and multi-factor authentication. 
+There are numerous ways to improve the voting system described in this article. One approach is to investigate various methods of identity verification to ensure that only eligible voters can vote in the election. Another approach is to use more advanced security features to prevent tampering and fraud, such as encryption and multi-factor authentication.
 
 ## About the Author
 
