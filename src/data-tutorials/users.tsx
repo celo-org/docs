@@ -736,7 +736,7 @@ const Users: User[] = [
   {
     title: 'Blockchain-Based Festival Booking System with CUSD Payment Integration',
     description: 'Decentralized event booking platform for organizers to showcase programs and users to book slots with cUSD.',
-    preview: require('./showcase/beginner/Blockchain-Based-Festival-Booking-System-with-CUSD-Payment-Integration.png'),
+    preview: require('./showcase/intermediate/blockchain-based-festival-booking-system-with-cusd-payment-Integration.png'),
     website: '/blog/tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration',
     tags: ['celosage','intermediate', 'solidity', 'celo'],
   },
