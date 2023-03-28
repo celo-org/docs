@@ -949,6 +949,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'solidity', 'hardhat', 'smartcontract'],
   },
   {
+    title: 'Build a FullStack User Authentication Dapp With React and Celo',
+    description: 'This tutorial will guide you through the process of building a React Dapp that restricts access to a catalogue of pages based on Celo authentication.',
+    preview: require('./showcase/intermediate/build-a-fullstack-user-authentication-dapp-with-react-and-celo.png'),
+    website: '/blog/tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask'],
+  },
+  {
     title: 'Build a FullStack Token Swap Application on Celo using React and 0x API',
     description: 'This tutorial will guide you through the process of building a full-stack token swap application on the Celo blockchain using React and the 0x API.',
     preview: require('./showcase/intermediate/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api.png'),
@@ -1316,6 +1323,13 @@ const Users: User[] = [
     preview: require('./showcase/advanced/building-a-restaurant-coupon-nft-system.png'),
     website: '/blog/tutorials/building-a-restaurant-coupon-nft-system',
     tags: ['celo', 'advanced', 'celosage', 'nft', 'hardhat'],
+  },
+  {
+    title: 'How to Build a Podcast Streaming Platform on Celo',
+    description: 'This tutorial guides you to building a podcast streaming platform on the celo blockchain where anyone can upload their audio experience.',
+    preview: require('./showcase/intermediate/how-to-build-podcast-streaming-platform-celo-1.png'),
+    website: '/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1',
+    tags: ['celo', 'intermediate', 'celosage', 'solidity'],
   },
   {
     title: 'Celo Integration with Web3',
@@ -1905,6 +1919,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/build-a-dutch-auction-dapp-on-celo.png'),
     website: '/blog/tutorials/building-a-dutch-auction-dapp-on-celo',
     tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity', 'celosage'],
+  },
+  {
+    title: 'Smart Contract Development on Celo for Python Developers',
+    description: 'Write your first Vyper contract with Brownie and deploy it on Alfajores testnet.',
+    preview: require('./showcase/beginner/smart-contract-development-on-celo-for-python-developers.png'),
+    website: '/blog/tutorials/smart-contract-development-on-celo-for-python-developers',
+    tags: ['celosage', 'beginner'],
   },
 
   // Videos
@@ -2600,7 +2621,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-decentralized-exchange-on-celo-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
-  
+  {
+    title: 'Building a Celo Voting System with Golang',
+    description: 'This article could provide a tutorial on how to use the Celo Golang go ethereum framework to build a secure and transparent voting system on the blockchain',
+    preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
+    website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
