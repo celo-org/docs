@@ -2596,7 +2596,7 @@ const Users: User[] = [
   {
     title: 'Using Python to Interact with Celo's Governance System',
     description: 'In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes)',
-    preview: require('./showcase/advanced/using-python-to-interact-with-celo's-governance-system.png'),
+    preview: require('./showcase/intermediate/using-python-to-interact-with-celo's-governance-system.png'),
     website: '/blog/tutorials/using-python-to-interact-with-celo's-governance-system',
     tags: ['celosage','celo', 'intermediate', 'smart contract', 'solidity'],
 },
