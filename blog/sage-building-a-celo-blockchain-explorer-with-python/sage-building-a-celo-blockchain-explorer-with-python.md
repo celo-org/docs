@@ -1,10 +1,9 @@
 ---
 title: Building a Celo Blockchain Explorer with Python
-description: In this tutorial, we'll use Python and the web3.py module to create a blockchain explorer for the Celo network.
-
+description: In this tutorial, well use Python and the web3.py module to create a blockchain explorer for the Celo network.
 authors:
   - name: Israel Okunaya
-    title: Product Manager, Technical Writer @Celo Foundation
+    title: Technical Writer
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/228222421-6d34591d-e874-479b-88e0-7b88baaf785e.png
 tags: [celosage, celo, smartcontract, solidity, intermediate]
@@ -12,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-blockchain-explorer-with-python
 ---
 
-![header](https://user-images.githubusercontent.com/104994589/228222421-6d34591d-e874-479b-88e0-7b88baaf785e.png)
+![header](../../src/data-tutorials/showcase/intermediate/sage-building-a-celo-blockchain-explorer-with-python.png)
 
 ## Introduction
 
@@ -74,7 +73,7 @@ contract SimpleStorage {
 }
 ```
 
-### Step 3: Compile and Deploy the Smart  Contract
+### Step 3: Compile and Deploy the Smart Contract
 
 Next, let’s compile and deploy our contract. Create a file called “deploy.py” in your root directory.
 

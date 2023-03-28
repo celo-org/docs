@@ -2595,10 +2595,10 @@ const Users: User[] = [
   },
   {
     title: 'Building a Celo Blockchain Explorer with Python',
-    description: 'In this tutorial, we'll use Python and the web3.py module to create a blockchain explorer for the Celo network.',
-    preview: require('./showcase/intermediate/building-a-celo-blockchain-explorer-with-python.png'),
+    description: 'In this tutorial, well use Python and the web3.py module to create a blockchain explorer for the Celo network.',
+    preview: require('./showcase/intermediate/sage-building-a-celo-blockchain-explorer-with-python.png'),
     website: '/blog/tutorials/building-a-celo-blockchain-explorer-with-python',
-    tags: ['celosage','celo', 'intermediate', 'smart contract', 'solidity'],
+    tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
