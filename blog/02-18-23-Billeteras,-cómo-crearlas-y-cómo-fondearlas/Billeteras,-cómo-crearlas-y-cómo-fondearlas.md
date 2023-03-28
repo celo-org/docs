@@ -1,6 +1,6 @@
 ---
 title: Billeteras cómo crearlas y cómo fondearlas
-description: xxxxxxxxxxxx
+description: ¡Bienvenido a nuestro tutorial sobre cómo comenzar con su billetera digital en Celo! En este tutorial, le mostraremos cómo crear una billetera, almacenar su frase de recuperación, financiar la billetera y enviar y recibir dinero en la plataforma Celo. 
 authors:
   - name: ✍️ Juan José Giraldo
 url: https://github.com/Juancamp1987
