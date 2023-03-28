@@ -478,6 +478,9 @@ Clicking on the Connect Wallet button opens up a modal that asks you to choose a
 
 In this tutorial, we learnt how to create a smart contract dapp using celo-composer. We created a basic smart contract as well as a basic Dapp to interact with our smart contract. We were able to connect a wallet to our dapp and instantiate a contract using the react-celo library.
 
+## Next Step
+This is the link to the [github repo](https://github.com/J0shcodes/celo-composer-dapp) that contains the link to this tutorial if you are interested in cloning and running the code
+
 ## About the Author
 
 I am a React frontend developer with over 3 years of experience building for the web, a web3 developer, and a technical writer. Visit my [GitHub profile](https://github.com/J0shcodes) to see some of the projects I have worked on and currently working on.
