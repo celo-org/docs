@@ -9,7 +9,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-exchange-on-celo-with-golang
 ---
 
-![header](https://user-images.githubusercontent.com/69091491/228067304-cef6558f-de7b-41f0-bd24-869822400b6f.png)
+![header](../../src/data-tutorials/showcase/intermediate/building-a-decentralized-exchange-on-celo-with-golang.png)
 
 ## Introduction
 
