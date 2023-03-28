@@ -363,6 +363,8 @@ contract Festival {
 
 }
 ```
+[Click this link to access the full code for this session](https://github.com/Ikanji201/festivalllls)
+
 ## CONTRACT DEPLOYMENT
 
 To deploy the flower smart contract on the Celo blockchain, you would need the following:
