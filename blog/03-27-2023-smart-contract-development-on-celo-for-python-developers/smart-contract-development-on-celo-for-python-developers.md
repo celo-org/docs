@@ -121,6 +121,7 @@ Lastly, we can write a function to set the greeting called **`setGreeting`**. Th
 def setGreeting(_greeting: String[64]):
     self.greeting = _greeting
 ```
+
 Here, you can see the our completed Vyper contract.
 
 ```python
@@ -265,5 +266,3 @@ When he's not crafting compelling product stories and technical documents, you c
 - Vyper Documentation: [https://docs.vyperlang.org/en/stable/](https://docs.vyperlang.org/en/stable/)
 - Brownie Documentation: [https://eth-brownie.readthedocs.io/en/stable/](https://eth-brownie.readthedocs.io/en/stable/)
 - Python Download Page: [https://www.python.org/downloads/](https://www.python.org/downloads/)
-
-
