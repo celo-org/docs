@@ -2596,7 +2596,7 @@ const Users: User[] = [
   {
     title: 'Using Python to Build a Celo Blockchain Identity System',
     description: 'This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.',
-    preview: require('./showcase/advanced/using-python-to-build-a-celo-blockchain-identity-system.png'),
+    preview: require('./showcase/intermediate/using-python-to-build-a-celo-blockchain-identity-system.png'),
     website: '/blog/tutorials/using-python-to-build-a-celo-blockchain-identity-system',
     tags: ['celosage','celo', 'intermediate', 'smart contract', 'solidity'], 
   },
