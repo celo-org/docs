@@ -26,7 +26,7 @@ Before starting this tutorial, you should have a basic understanding of blockcha
 - [Truffle Suite Documentation](https://trufflesuite.com/docs/)
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.3.4/)
 
-Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one here.
+Additionally, you will need a Celo account and some testnet CELO tokens to interact with the Celo network. Create one [here](https://docs.celo.org/developer/setup/wallet).
 
 ## Requirements
 
