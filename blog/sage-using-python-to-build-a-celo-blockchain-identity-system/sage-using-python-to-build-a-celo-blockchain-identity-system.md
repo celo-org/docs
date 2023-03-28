@@ -1,18 +1,17 @@
 ---
 title: Using Python to Build a Celo Blockchain Identity System
 description: This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.
-
 authors:
   - name: Israel Okunaya
-    title: Product Manager, Technical Writer @Celo Foundation
+    title: Technical Writer 
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/228117172-c739dd37-9bdd-487b-8364-5b9620cd2373.png
-    tags: [celosage, celo, smartcontract, solidity, intermediate]
+tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/using-python-to-build-a-celo-blockchain-identity-system
 ---
 
-![header](https://user-images.githubusercontent.com/104994589/228117172-c739dd37-9bdd-487b-8364-5b9620cd2373.png)
+![header](../../src/data-tutorials/showcase/intermediate/sage-using-python-to-build-a-celo-blockchain-identity-system.png)
 
 ## Introduction
 
@@ -27,7 +26,7 @@ To follow along with this tutorial, you need to be familiar with:
 
 ## Requirements
 
- You should have the following installed on your computer to follow along:
+You should have the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -55,7 +54,7 @@ source env/bin/activate
 To install the web3.py, and python-dotenv:
 
 ```bash
-pip install web3 
+pip install web3
 pip install python-dotenv
 ```
 
@@ -96,7 +95,7 @@ contract Identity {
 
 The two primary operations of this smart contract are createIdentity and getIdentity.
 
-CreateIdentity stores the two string parameters it receives from the user, _name and _email, in a struct named UserInfo. It then uses the identities mapping to translate the sender's address to the newly formed UserInfo struct. If a user with that name and email address is associated with that address, getIdentity, which accepts the address parameter _address, will return that information.
+CreateIdentity stores the two string parameters it receives from the user, \_name and \_email, in a struct named UserInfo. It then uses the identities mapping to translate the sender's address to the newly formed UserInfo struct. If a user with that name and email address is associated with that address, getIdentity, which accepts the address parameter \_address, will return that information.
 
 Let’s compile and deploy the contract. In your root directory, create a file called “deploy.py” and paste the following code:
 
@@ -226,7 +225,7 @@ print(f"Name: {name}, Email: {email}")
 
 From the code above, the create identity function sends a transaction to the smart contract's “createIdentity” function and accepts a name and an email as arguments. The get identity function accepts an address as an input and returns the associated name and email, in order to invoke the getIdentity function of the smart contract.
 
-Run the  code with this command on your terminal:
+Run the code with this command on your terminal:
 
 ```bash
 python main.py
