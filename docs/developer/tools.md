@@ -93,7 +93,7 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 ### The Graph
 
-[The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph. You can read more about how to use the Graph with Celo [here](/blog/using-the-graph).
+[The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph. You can read more about how to use the Graph with Celo [here](https://docs.celo.org/blog/using-the-graph).
 
 <PageRef url="/https://thegraph.com/" pageName="The Graph" />
 
