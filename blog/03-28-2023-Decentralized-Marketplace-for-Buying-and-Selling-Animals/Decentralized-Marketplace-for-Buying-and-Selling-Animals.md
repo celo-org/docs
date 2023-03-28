@@ -5,10 +5,10 @@ authors:
   - name: Ogoyi Thompson
     title: Technical Writer 
     url:  https://github.com/Ogoyi
-    image_url:  
+    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
-slug: /tutorials/
+slug: /tutorials/decentralized-marketplace-for-buying-and-selling-animals
 ---
 
 ## INTRODUCTION
