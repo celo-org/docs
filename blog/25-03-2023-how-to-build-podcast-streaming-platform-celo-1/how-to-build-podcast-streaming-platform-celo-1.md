@@ -3,24 +3,22 @@ title: How to Build a Podcast Streaming Platform on Celo
 description: This tutorial guides you to building a podcast streaming platform on the celo blockchain where anyone can upload their audio experience.
 authors:
   - name: Daniel Ogbuti
-    title: Web3 Developer, 
+    title: Web3 Developer,
     url: https://github.com/dahnny
     image_url: https://github.com/dahnny.png
-tags: ['celo', 'intermediate', 'celosage', 'solidity']
+tags: ["celo", "intermediate", "celosage", "solidity"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-podcast-streaming-platform-celo-1
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-build-podcast-streaming-platform-celo-1.png)
 
-
 ## Introduction
 
-Bonjour readers! I really would like to speak french even though I know its a little bit late. Lol😅. Anyways. Welcome to another exciting tutorial! In this tutorial, we would be going through how to build a podcast streaming platform on the celo blockchain. 
+Bonjour readers! I really would like to speak french even though I know its a little bit late. Lol😅. Anyways. Welcome to another exciting tutorial! In this tutorial, we would be going through how to build a podcast streaming platform on the celo blockchain.
 This would be the first section out of two and in this section, we would look at how to develop the smart contract and the second would be implementing the contract with the frontend.
 
 Just like I start most of these tutorials, For newbies, I would like to define what celo is and why it is important.
-
 
 ## What is Celo
 
@@ -45,10 +43,9 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 
 Screenshot: ![image](images/1.png)
 
-
 ## Smart Contract Development
 
-If you have seen any of my previous tutorials, you would realize I am fan of remix for writing smart contracts. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
+If you have seen any of my previous tutorials, you would realize I am fan of remix for writing smart contracts. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain.
 
 Here is a preview of the Remix IDE:
 ![image](images/2.png)
@@ -67,8 +64,7 @@ The first line is a SPDX license identifier and a Solidity version pragma.
 SPDX (Software Package Data Exchange) is a specification that provides a standard way to declare the license of open source software packages. The SPDX-License-Identifier is a header that specifies the license of a given source code file.
 The Solidity version pragma specifies the version of the Solidity programming language used to write the smart contract code. The version range specified is greater than or equal to 0.7.0 and less than 0.9.0, meaning that the code should be compiled with a Solidity compiler version between 0.7.0 and 0.8.x.
 
-
-Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD). 
+Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD).
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -120,6 +116,7 @@ struct Podcast{
 mapping (uint => Podcast) internal podcasts;
 
 ```
+
 The above block of code defines a struct named `Podcast`, which represents a single podcast episode. It has the following properties:
 
 - `owner`: the address of the owner of the podcast
@@ -129,7 +126,6 @@ The above block of code defines a struct named `Podcast`, which represents a sin
 - `audioLink`: the URL of the audio file for the podcast episode
 - `fans`: the number of fans who have subscribed to the podcast
 
-
 The last line of code declares a mapping named `podcasts` that maps `uint` keys to Podcast values. This mapping will be used to store information about all of the podcasts that have been added to the contract. The `internal` keyword makes this mapping only accessible within the contract and any contracts that inherit from it.
 
 After defining all these, you would define a modifier that helps to ensure that only non-owners can perform certain actions on the podcast, such as subscribing to the podcast or leaving a review. This adds an additional layer of security to the contract and helps to prevent malicious behavior.
@@ -138,15 +134,16 @@ After defining all these, you would define a modifier that helps to ensure that 
     modifier notOwner(uint _index) {
         require(msg.sender != podcasts[_index].owner, "You cant transact");
         _;
-    } 
+    }
 ```
+
 This is a Solidity modifier named `notOwner` that takes in a single parameter, `_index`, of type `uint`. Modifiers are used in Solidity to modify the behavior of functions or to add additional requirements that need to be satisfied before a function can be executed.
 
 The `notOwner` modifier is designed to be used in conjunction with functions that modify the state of the contract. It checks to make sure that the caller of the function (msg.sender) is not the owner of the podcast at the specified index `_index`. If the caller is the owner, the function call will fail and an error message will be returned to the caller.
 
 The `require` statement is used to enforce this condition. If the condition evaluates to true, then the code inside the curly braces ({}) will be executed. Otherwise, the function call will fail and an error message will be returned to the caller.
 
-The underscore (_) is a placeholder that represents the body of the function that the modifier is being applied to. In this case, the function body will only be executed if the `require` statement is satisfied.
+The underscore (\_) is a placeholder that represents the body of the function that the modifier is being applied to. In this case, the function body will only be executed if the `require` statement is satisfied.
 
 Moving forward, we create a function that allows callers to add a new podcast episode to the contract, by providing its metadata.
 
@@ -168,6 +165,7 @@ Moving forward, we create a function that allows callers to add a new podcast ep
         podcastLength++;
     }
 ```
+
 The function takes in four parameters of type string memory: `_title`, `_excerpt`, `_excerptImage`, and `_audioLink`. These parameters represent the metadata for the podcast episode that the caller wants to add to the contract.
 
 The function is marked as `public`, which means that it can be called by anyone, both internally and externally.
@@ -197,6 +195,7 @@ Following this, we would define the `getPodcasts` function, this function allows
         );
     }
 ```
+
 The function takes in a single parameter, `_index`, of type `uint`, which represents the index of the podcast episode that the caller wants to retrieve.
 
 The function is marked as `public`, which means that it can be called by anyone, both internally and externally.
@@ -224,11 +223,12 @@ Up next, we would create a function that allows callers to support a specific po
                 podcasts[_index].owner,
                 _amount
             ),
-            "Transaction could not be performed"  
+            "Transaction could not be performed"
         );
         podcasts[_index].fans++;
     }
 ```
+
 The function takes in two parameters of type uint: `_index` and `_amount`. These parameters represent the index of the podcast episode that the caller wants to support and the amount of cUSD tokens that the caller wants to send to the podcast owner, respectively.
 
 The function is marked as `public`, which means that it can be called by anyone, both internally and externally.
@@ -256,7 +256,7 @@ The function simply returns the current value of `podcastLength`. Since the func
 This is the complete code:
 
 ```solidity
-// SPDX-License-Identifier: MIT  
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -293,7 +293,7 @@ contract CelCast{
     modifier notOwner(uint _index) {
         require(msg.sender != podcasts[_index].owner, "You cant transact");
         _;
-    } 
+    }
 
     // function to add podcasts
     function addPodcast(
@@ -325,7 +325,7 @@ contract CelCast{
         uint
     ){
          Podcast storage podcast = podcasts[_index];
-        return(           
+        return(
             podcast.owner,
             podcast.title,
             podcast.excerpt,
@@ -345,7 +345,7 @@ contract CelCast{
                 podcasts[_index].owner,
                 _amount
             ),
-            "Transaction could not be performed"  
+            "Transaction could not be performed"
         );
         podcasts[_index].fans++;
     }
@@ -357,12 +357,12 @@ contract CelCast{
 }
 ```
 
-
 ## Contract Deployment
 
 To deploy the contract, we would need:
-1. [CeloExtensionWallet]((https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en))
-2. [ Celo Faucet](https://celo.org/developers/faucet) 
+
+1. [CeloExtensionWallet](<(https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)>)
+2. [ Celo Faucet](https://celo.org/developers/faucet)
 3. Celo Remix Plugin
 
 Download the Celo Extension Wallet from the Google chrome store using the link above. After doing that, create a wallet, and store your key phrase in a very safe place to avoid permanently losing your funds.
@@ -373,12 +373,12 @@ Next up, on remix, download and activate the celo plugin from the plugin manager
 
 ## Conclusion
 
-Congratulations 🎉, you are done with the first section of these two-part series, writing and deploying the smart contracts. 
+Congratulations 🎉, you are done with the first section of these two-part series, writing and deploying the smart contracts.
 
 ## Next steps
 
 You can challenge yourself by implementing a frontend, I would be making a whole tutorial on that but if you are confident in your react skills then I implore you to go ahead 😉
-You can use this [link](https://github.com/dahnny/celcast-1) for reference 
+You can use this [link](https://github.com/dahnny/celcast-1) for reference
 
 ## About the Author
 
