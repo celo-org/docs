@@ -1325,6 +1325,13 @@ const Users: User[] = [
     tags: ['celo', 'advanced', 'celosage', 'nft', 'hardhat'],
   },
   {
+    title: 'How to Build a Podcast Streaming Platform on Celo',
+    description: 'This tutorial guides you to building a podcast streaming platform on the celo blockchain where anyone can upload their audio experience.',
+    preview: require('./showcase/intermediate/how-to-build-podcast-streaming-platform-celo-1.png'),
+    website: '/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1',
+    tags: ['celo', 'intermediate', 'celosage', 'solidity'],
+  },
+  {
     title: 'Celo Integration with Web3',
     description: ' A Look at How the Platform is Bridging the Gap Between Centralized and Decentralized Systems',
     preview: require('./showcase/advanced/web3.png'),
