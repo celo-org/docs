@@ -1906,6 +1906,13 @@ const Users: User[] = [
     website: '/blog/tutorials/building-a-dutch-auction-dapp-on-celo',
     tags: ['intermediate', 'erc721', 'hardhat', 'react', 'solidity', 'celosage'],
   },
+  {
+    title: 'Smart Contract Development on Celo for Python Developers',
+    description: 'Write your first Vyper contract with Brownie and deploy it on Alfajores testnet.',
+    preview: require('./showcase/beginner/smart-contract-development-on-celo-for-python-developers.png'),
+    website: '/blog/tutorials/smart-contract-development-on-celo-for-python-developers',
+    tags: ['celosage', 'beginner'],
+  },
 
   // Videos
 
