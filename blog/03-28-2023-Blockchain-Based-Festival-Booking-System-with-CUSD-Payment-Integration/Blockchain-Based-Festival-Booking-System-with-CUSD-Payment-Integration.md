@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
 
-![blockchain-based-festival-booking-system-with-cusd-payment-Integration](https://user-images.githubusercontent.com/115812158/228330277-7adf43fc-2281-4164-83ef-9a3cf4e9f8ab.png)
+ ![blockchain-based-festival-booking-system-with-cusd-payment-Integration png](https://user-images.githubusercontent.com/115812158/228364275-3b77e973-5c9a-49d0-99bb-505c59dd0e61.png)
 
 ## INTRODUCTION
 
