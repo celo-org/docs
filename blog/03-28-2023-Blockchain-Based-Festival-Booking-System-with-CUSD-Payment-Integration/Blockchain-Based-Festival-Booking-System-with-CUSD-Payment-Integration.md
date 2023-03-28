@@ -1,6 +1,6 @@
 ---
-title: A Solidity Smart Contract for Auctioning Flowers on the celo Blockchain
-description: This project is a Solidity smart contract for a floral auction. It allows users to create flowers with a name, description, image, and initial price, and then sell them through an auction.
+title: Blockchain-Based Festival Booking System with CUSD Payment Integration
+description: A decentralized platform for event organizers to showcase their programs and allow users to book their slots using cUSD. With Festival, event organizers can write descriptions of their programs including URLs, themes, descriptions, locations, and prices. Users can then browse and book their slots using cUSD tokens.
 authors:
   - name: David Ikanji
     title: Technical Writer 
@@ -8,7 +8,7 @@ authors:
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
-slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-blockchain
+slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
 
 ## INTRODUCTION
