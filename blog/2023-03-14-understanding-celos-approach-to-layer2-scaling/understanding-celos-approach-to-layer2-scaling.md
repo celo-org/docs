@@ -13,6 +13,8 @@ slug: /tutorials/understanding-celos-approach-to-layer2-scaling
 
 ![header](../../src/data-tutorials/showcase/intermediate/understanding-celos-approach-to-layer2.png)
 
+## Introduction
+
 As the demand for blockchain technology continues to grow, the issue of scalability has become increasingly important. Celo, a mobile-first blockchain platform, has implemented a variety of layer-2 scaling solutions to address this challenge, including rollups, sidechains, and state channels.
 
 This article provides a comprehensive evaluation of each of these approaches, explaining how they work. The article also explores the implications of Celo's layer-2 scaling solutions for the wider blockchain ecosystem, including how they may impact the user experience and the development of decentralized applications. The article is intended for developers, blockchain enthusiasts, and anyone interested in understanding how Celo's layer-2 scaling solutions are driving innovation in the blockchain industry.
@@ -263,7 +265,6 @@ One common use case for state channels is microtransactions. Microtransactions r
 This article introduces Celo's approach to layer-2 scaling solutions, which can help improve transaction speed and reduce gas prices for users of blockchain-based applications. Layer 2 solutions like rollups, sidechains, and state channels allow for more efficient and cost-effective transactions, enabling developers to scale their applications. Rollups, in particular, bundle transactions off-chain and then process them as a single transaction on-chain, increasing the number of transactions that can be processed. Optimistic rollups and zk-rollups are two types of rollups that differ in their security models. Celo's solutions can help developers build fast, efficient, and sustainable blockchain applications.
 
 ## Next Steps​
-
 
 I hope you learned a lot from this tutorial. Please check out the [Github Repository](https://github.com/Kyrian212/Layer-2-scaling) or the [Celo Documentation](https://docs.celo.org/) to learn more.
 
