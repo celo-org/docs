@@ -1,5 +1,5 @@
 ---
-title: Blockchain-Based Festival Booking System with CUSD Payment Integration
+title: Blockchain Based Festival Booking System with CUSD Payment Integration
 description: Decentralized festival booking platform for organizers to showcase programs and users to book slots with cUSD.
 authors:
   - name: David Ikanji
