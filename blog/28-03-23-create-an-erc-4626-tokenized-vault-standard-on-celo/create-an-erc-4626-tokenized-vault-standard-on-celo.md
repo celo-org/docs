@@ -65,8 +65,6 @@ The main benefit of ERC-4626 is that it standardizes tokenized vaults to make pr
 
 ```solidity
 //SPDX-License-Identifier: MIT
-
-
 pragma solidity ^0.8.7;
 
 
@@ -159,7 +157,6 @@ contract MyToken is IERC4626, ERC20 {
         asset.transfer(receiver, payout);
     }
 }
-
 ```
 
 ## Conclusion​
