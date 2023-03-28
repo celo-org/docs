@@ -2622,6 +2622,13 @@ const Users: User[] = [
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
     {
+    title: 'Building a Decentralized Exchange on Celo with Golang',
+    description: 'This article could focus on building a decentralized exchange (DEX) on the Celo blockchain using the go-ethereum, a Golang blockchain framework',
+    preview: require('./showcase/intermediate/building-a-decentralized-exchange-on-celo-with-golang.png'),
+    website: 'blog/tutorials/building-a-decentralized-exchange-on-celo-with-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Easily Deploy your Celo DApp to Cloudflare Pages',
     description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with Ease',
     preview: require('./showcase/beginner/easily-deploy-your-celo-dapp-to-cloudflare-pages.png'),
