@@ -1,22 +1,21 @@
 ---
-title: Using Python to Interact with Celo's Governance System
-description: In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes)
-
+title: Using Python to Interact with Celos Governance System
+description: In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py
 authors:
   - name: Israel Okunaya
-    title: Product Manager, Technical Writer @Celo Foundation
+    title: Technical Writer
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/228124211-5fe2da77-ee4c-410c-9be5-dacabe619b2c.png
-    tags: [celosage, celo, smartcontract, solidity, intermediate]
+tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
-slug: /tutorials/using-python-to-interact-with-celo's-governance-system
+slug: /tutorials/using-python-to-interact-with-celos-governance-system
 ---
 
-![header](https://user-images.githubusercontent.com/104994589/228124211-5fe2da77-ee4c-410c-9be5-dacabe619b2c.png)
+![header](../../src/data-tutorials/showcase/intermediate/sage-using-python-to-interact-with-celos-governance-system.png)
 
 ## Introduction
 
-In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes). Celo is a fully mobile-first and open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). Holders of the native Celo token can vote on proposals that affect the platform's development, parameters, and future features through its governance system. 
+In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes). Celo is a fully mobile-first and open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). Holders of the native Celo token can vote on proposals that affect the platform's development, parameters, and future features through its governance system.
 
 ## Prerequisites
 
@@ -28,7 +27,7 @@ To follow along with this tutorial, you need to be familiar with:
 
 ## Requirements
 
- You should have the following installed on your computer to follow along:
+You should have the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -56,7 +55,7 @@ source env/bin/activate
 To install the web3.py, and python-dotenv:
 
 ```bash
-pip install web3 
+pip install web3
 pip install python-dotenv
 ```
 
@@ -143,93 +142,93 @@ You can create a JSON file called “governance_abi.json” in the root director
             "name": "timestamp",
             "type": "uint256"
           },
+          {
+            "name": "transactionCount",
+            "type": "uint256"
+          },
+          {
+            "name": "descriptionUrl",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
       {
-        "name": "transactionCount",
+        "name": "proposalId",
         "type": "uint256"
+      }
+    ],
+    "name": "getProposalStage",
+    "outputs": [
+      {
+        "name": "stage",
+        "type": "uint32"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "targets",
+        "type": "address[]"
+      },
+      {
+        "name": "values",
+        "type": "uint256[]"
+      },
+      {
+        "name": "signatures",
+        "type": "bytes[]"
+      },
+      {
+        "name": "calldatas",
+        "type": "bytes[]"
       },
       {
         "name": "descriptionUrl",
         "type": "string"
       }
-    ]
+    ],
+    "name": "propose",
+    "outputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "vote",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
-},
-{
-"constant": true,
-"inputs": [
-{
-"name": "proposalId",
-"type": "uint256"
-}
-],
-"name": "getProposalStage",
-"outputs": [
-{
-"name": "stage",
-"type": "uint32"
-}
-],
-"payable": false,
-"stateMutability": "view",
-"type": "function"
-},
-{
-"constant": false,
-"inputs": [
-{
-"name": "targets",
-"type": "address[]"
-},
-{
-"name": "values",
-"type": "uint256[]"
-},
-{
-"name": "signatures",
-"type": "bytes[]"
-},
-{
-"name": "calldatas",
-"type": "bytes[]"
-},
-{
-"name": "descriptionUrl",
-"type": "string"
-}
-],
-"name": "propose",
-"outputs": [
-{
-"name": "proposalId",
-"type": "uint256"
-}
-],
-"payable": true,
-"stateMutability": "payable",
-"type": "function"
-},
-{
-"constant": false,
-"inputs": [
-{
-"name": "proposalId",
-"type": "uint256"
-},
-{
-"name": "value",
-"type": "uint256"
-}
-],
-"name": "vote",
-"outputs": [],
-"payable": false,
-"stateMutability": "nonpayable",
-"type": "function"
-}
 ]
 ```
 
