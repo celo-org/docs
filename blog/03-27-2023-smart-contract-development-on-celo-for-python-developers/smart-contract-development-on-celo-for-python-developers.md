@@ -3,7 +3,7 @@ title: Smart Contract Development on Celo for Python Developers
 description: Write your first Vyper contract with Brownie and deploy it on Alfajores testnet.
 authors:
   - name: Nikhil Bhintade
-url: https://github.com/nikbhintade
+    url: https://github.com/nikbhintade
 tags: [celosage, beginner]
 hide_table_of_contents: true
 slug: /tutorials/smart-contract-development-on-celo-for-python-developers
