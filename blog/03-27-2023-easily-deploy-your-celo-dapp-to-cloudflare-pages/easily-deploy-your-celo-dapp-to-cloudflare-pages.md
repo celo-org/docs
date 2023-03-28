@@ -55,7 +55,7 @@ Because this is a beginner focus tutorial, I will be taking us through a step-by
 
 ## Setting up `pages`
 
-- Step 1: After successfully logging in to your Cloudflare account 
+- Step 1: After successfully logging in to your Cloudflare account
 - Step 2: Navigate to the `pages` tab
 - Step 3: Click on the `Create a project` button.
 
@@ -90,7 +90,7 @@ Viola! You’ve successfully built and deployed your DApp and it is accessible a
 
 ## Conclusion
 
-Making your application accessible to more users is made easy and simple by deploying your Celo DApp to Cloudflare Pages. You can easily deploy your DApp to Cloudflare Pages by following the instructions in this guide, assuring a seamless user experience for your users and offering an easy way to make your items available for your consumers. The GitHub repository for the tutorial is [here](https://github.com/Taiwrash/dapp-deployment-pl) 
+Making your application accessible to more users is made easy and simple by deploying your Celo DApp to Cloudflare Pages. You can easily deploy your DApp to Cloudflare Pages by following the instructions in this guide, assuring a seamless user experience for your users and offering an easy way to make your items available for your consumers. The GitHub repository for the tutorial is [here](https://github.com/Taiwrash/dapp-deployment-pl)
 
 ## About the Author
 
