@@ -818,7 +818,14 @@ const Users: User[] = [
     website: 'blog/tutorials/exploring-the-robust-structure-of-celo-protocol-design',
     tags: ['intermediate','celosage'],
   },
-   {
+  {
+    title: 'Understanding Celos Approach to Layer-2 Scaling',
+    description: "An evaluation of rolllups,sidechains and state channels",
+    preview: require('./showcase/intermediate/understanding-celos-approach-to-layer2.png'),
+    website: 'blog/tutorials/understanding-celos-approach-to-layer2-scaling',
+    tags: ['intermediate','solidity','smartcontract', 'celosage'],
+  },
+  {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
@@ -2620,6 +2627,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-decentralized-exchange-on-celo-with-golang.png'),
     website: 'blog/tutorials/building-a-decentralized-exchange-on-celo-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
+    title: 'Easily Deploy your Celo DApp to Cloudflare Pages',
+    description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with Ease',
+    preview: require('./showcase/beginner/easily-deploy-your-celo-dapp-to-cloudflare-pages.png'),
+    website: 'blog/tutorials/easily-deploy-your-celo-dapp-to-cloudflare-pages',
+    tags: ['celosage', 'dapp', 'beginner', 'celo'], 
   },
   {
     title: 'Building a Celo Voting System with Golang',
