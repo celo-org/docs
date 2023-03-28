@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celosage, dapp, beginner, celo, cloudflare, github actions]
+tags: [celosage, dapp, beginner, celo]
 hide_table_of_contents: true
 slug: /tutorials/easily-deploy-your-celo-dapp-to-cloudflare-pages
 ---
