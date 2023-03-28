@@ -1,6 +1,6 @@
- ---
+---
 title: Decentralized Marketplace for Buying and Selling Animals
-description: AnimalHouse is a decentralized platform that aims to create a supportive community for animal lovers. The contract provides a space for individuals to come together to adopt, rescue, and care for animals in need. By leveraging the security and transparency of blockchain technology, AnimalHouse offers a safe and efficient platform for connecting individuals who share a passion for animal welfare.
+description: AnimalHouse is a blockchain-based platform connecting animal lovers to adopt, rescue, and care for animals securely and transparently
 authors:
   - name: Ogoyi Thompson
     title: Technical Writer 
