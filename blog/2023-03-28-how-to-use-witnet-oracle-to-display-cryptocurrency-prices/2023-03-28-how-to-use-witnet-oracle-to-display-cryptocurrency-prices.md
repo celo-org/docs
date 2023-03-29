@@ -55,7 +55,7 @@ import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceRouter.sol";
 import "witnet-solidity-bridge/contracts/interfaces/IWitnetPriceFeed.sol";
 
 contract PriceFeeds {
-   IWitnetPriceRouter public immutable witnetPriceRouter;
+   IWitnetPriceRouter public witnetPriceRouter;
    mapping(bytes4 => IWitnetPriceFeed) public priceFeeds;
    bytes4[] ID4;
    uint256 public lastUpdateTime;
