@@ -37,102 +37,55 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 
 1. Descarga la App de su [sitio web](https://metamask.io/) o de las tiendas AppStore o PlayStore.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK1.png">
-    <img width="200" height="200" src="Images/Metamask/METAMASK2.png">
-    </p>
-    <!-- 
     ![image](Images/Metamask/METAMASK1.png)
     ![image](Images/Metamask/METAMASK2.png)
-    -->
+ 
 2. Una vez que hayas descargado Metamask, puedes abrirlo e iniciar el proceso de creación de tu cuenta:
 
     a. Seleccionas la opción “Crear una nueva Billetera”
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK3.png">
-    </p>
-    <!-- 
     ![image](Images/Metamask/METAMASK3.png)
-    -->
 
     b. La siguiente página le preguntará si desea aceptar el acuerdo de usuario de MetaMask. Puede seleccionar cualquiera de las dos opciones para continuar.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK4.png">
-    </p>
-    <!-- 
     ![image](Images/Metamask/METAMASK4.png) 
-    -->
 
     c. El siguiente paso es crear una contraseña local para su billetera.
     - Asegúrate de aceptar las Condiciones de uso. Al hacer clic en el checkbox estas aceptando que “Entiendes que Metamask NO puede recuperar tu contraseña”
     - La opción de FaceID viene activada por defecto, si no deseas usarla debes desactivarla.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK5.png">
-    </p>
-    <!--
     ![image](Images/Metamask/METAMASK5.png)
-    -->
 
     d. Antes de continuar, revisa el vídeo para saber entender la importancia de la Frase Secreta de Recuperación.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK6.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK6.png) 
-    -->
+    ![image](Images/Metamask/METAMASK6.png)
 
     e. hora tendrás acceso a la frase secreta de recuperación. La frase secreta de recuperación es la información más importante. 
     - Escribe tu Frase Secreta de Recuperación en un papel. No las guardes en el ordenador. 
     - Asegúrate de saber siempre dónde está guardada tu frase secreta de recuperación.
     - Haz clic en la casilla que dice "Ver" y escribe tu frase secreta de recuperación.
     - Después de escribir tu frase secreta de recuperación, toca las palabras en el orden en que aparecieron y pulsa "Continuar".
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK7.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK7.png) 
-    -->
+
+    ![image](Images/Metamask/METAMASK7.png) 
+
     - Ya está. Ahora has creado una billetera con MetaMask.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK8.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK8.png) 
-    -->
+    ![image](Images/Metamask/METAMASK8.png)
 
 3. Un último paso, debes agregar la red de Celo.
 
     a. En el menú de tu Metamask busca la Opción “Navegador”.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK9.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK9.png) 
-    -->
+    ![image](Images/Metamask/METAMASK9.png)
 
     b. Una vez estes en el navegador copias la dirección chainlist.org y navegas a esta. Una vez cargue haces click en “Conectar Billetera”
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK10.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK10.png) 
-    -->
+
+    ![image](Images/Metamask/METAMASK10.png)
 
     c. Una vez conectes tu billetera busca la red de Celo y le das click en añadir red, luego en “Aprobar” y “Cambiar Red”
-    <p align="center">
-    <img width="200" height="200" src="Images/Metamask/METAMASK11.png">
-    <img width="200" height="200" src="Images/Metamask/METAMASK12.png">
-    </p>
-    <!--
-        ![image](Images/Metamask/METAMASK11.png)
-        ![image](Images/Metamask/METAMASK12.png) 
-    -->
+
+    ![image](Images/Metamask/METAMASK11.png)
+    ![image](Images/Metamask/METAMASK12.png)
 
     d. Listo ya tienes la red de Celo en tu Metamask.
 4. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
@@ -140,60 +93,37 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 ### Valora
 1. Descarga la App de su [sitio web](https://valoraapp.com/) o de las tiendas AppStore o PlayStore.
 
-<p align="center">
-<img width="200" height="200" src="Images/Valora/Valora1.jpeg">
-</p>
-<!--
-    ![image](Images/Valora/Valora1.jpeg) 
--->
+![image](Images/Valora/Valora1.jpeg)
 
 2. Una vez que hayas descargado Valora, puedes abrirlo e iniciar el proceso de creación de tu cuenta Valora:
 
     a. Debes introducir un nombre y número de teléfono.
 
-    <p align="center">
-    <img width="200" height="200" src="Images/Valora/Valora2.jpeg">
-    </p>
-    <!--
-        ![image](Images/Valora/Valora2.jpeg) 
-    -->
+    ![image](Images/Valora/Valora2.jpeg) 
 
     b. Crea un PIN (Este solo es usado de manera local en su dispositivo para evitar accesos no autorizados).
-    
+
     - Necesitará su PIN siempre que realice una transacción. 
-    
+
     c. Conecta tu número de teléfono
-    <p align="center">
-    <img width="200" height="200" src="Images/Valora/Valora3.jpeg">
-    </p>
-    <!--
-        ![image](Images/Valora/Valora3.jpeg) 
-    -->
+
+    ![image](Images/Valora/Valora3.jpeg)
+
     - Deberás conectar tu propio número de teléfono si deseas enviar fondos directamente al número de teléfono de tus amigos y familiares. (Conectar tu número de teléfono en Valora verifica el vínculo entre tu número de teléfono y tu billetera Valora. Esto te permite enviar fondos a (y recibir fondos de) cualquier persona simplemente utilizando su número de teléfono.)
 
     - Una vez conectado tu número, puedes sincronizar la información de tus contactos.
-    
 
     d. Establece tu frase de recuperación (Este es vital)
 
     - Configuralo antes de ingresar fondos en su cuenta. Consulte las instrucciones a continuación.
-    <p align="center">
-    <img width="200" height="200" src="Images/Valora/Valora5.jpeg">
-    </p>
-    <!--
-        ![image](Images/Valora/Valora5.jpeg) 
-    -->
+
+    ![image](Images/Valora/Valora5.jpeg)
 
     - Tu frase de recuperación es una frase semilla que permite a tu monedero billetera tu clave privada. Es la única forma de acceder a tu cuenta de Valora. Sin la frase de recuperación, nadie (ni siquiera el equipo de Valora) puede acceder al saldo de tu cuenta.
     
 3. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
 
-<p align="center">
-<img width="200" height="200" src="Images/Valora/Valora6.jpeg">
-</p>
-<!--
-    ![image](Images/Valora/Valora6.jpeg) 
--->
+![image](Images/Valora/Valora6.jpeg)
 
 ## Celo Wallet
 Celo Wallet es una billetera móvil segura y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios administrar, almacenar y realizar transacciones con tokens nativos de Celo, como CELO y Celo Dollars (cUSD), directamente desde sus dispositivos móviles o navegadores.
@@ -201,12 +131,7 @@ Celo Wallet es una billetera móvil segura y fácil de usar diseñada para inter
 1. Ingresa a [https://celowallet.app/setup](https://celowallet.app/setup) 
 2. Una vez que hayas ingresado al sitio web tendras las opciones de Create a New Account o Use Existing Account
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloWallet/CELOWALLET1.png">
-</p>
-<!--
-    ![image](Images/CeloWallet/CELOWALLET1.png) 
--->
+![image](Images/CeloWallet/CELOWALLET1.png)
 
 3. A continuación le damos click en Crear una nueva cuenta, nos va a mostrar información y recomendaciones para un correcto uso de nuestra wallet. Le damos continuar para seguir con el proceso de la creación.
 4. Ahora tendrás acceso a tu dirección publica y la frase secreta de recuperación. La frase secreta de recuperación que es la información más importante. 
@@ -214,23 +139,14 @@ Celo Wallet es una billetera móvil segura y fácil de usar diseñada para inter
     - Asegúrate de saber siempre dónde está guardada tu frase secreta de recuperación.
     - Haz clic en la casilla que dice "Ver" y escribe tu frase secreta de recuperación.
     - Después de escribir tu frase secreta de recuperación, toca las palabras en el orden en que aparecieron y pulsa "Continuar".
-    
-<p align="center">
-<img width="200" height="200" src="Images/CeloWallet/CELOWALLET2.png">
-</p>
-<!--
-    ![image](Images/CeloWallet/CELOWALLET2.png) 
--->
+
+![image](Images/CeloWallet/CELOWALLET2.png)
 
 5. El siguiente paso es crear una contraseña local para su billetera. 
 6. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloWallet/CELOWALLET3.png">
-</p>
-<!--
-    ![image](Images/CeloWallet/CELOWALLET3.png) 
--->
+![image](Images/CeloWallet/CELOWALLET3.png)
+
 
 ## Celo Extension Wallet
 Celo Extension Wallet es una extensión de navegador segura y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios administrar y proteger sus cuentas de Celo directamente desde sus navegadores web, como Chrome o Brave.
@@ -238,12 +154,7 @@ Celo Extension Wallet es una extensión de navegador segura y fácil de usar dis
 1. Ingresa a [https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
 2. Cuando ingresemos a esta direccion nos dara la oportunidad de añadir la extension de nuestra wallet a nuestro navegador chrome.
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloExtensionWallet/CELOEXTENSIONWALLET1.png">
-</p>
-<!--
-    ![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET1.png) 
--->
+![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET1.png)
 
 3. Cuando le damos en añadir a Chrome, nos mostrara lo que esta extensión nos permite hacer  una vez terminemos el proceso, confirmamos en el botón de añadir extensión.
 4. Nos guiara en una nueva  pestaña donde tendremos un proceso para terminar la instalación de la extensión.
@@ -252,12 +163,7 @@ Celo Extension Wallet es una extensión de navegador segura y fácil de usar dis
 
 7. El siguiente paso es crear una contraseña local para su billetera y aceptar los términos de uso de esta extension que pueden encontrar en el siguiente link:  [https://consensys.net/terms-of-use/](https://consensys.net/terms-of-use/) le damos crear y continuamos.
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloExtensionWallet/CELOEXTENSIONWALLET2.png">
-</p>
-<!--
-    ![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET2.png) 
--->
+![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET2.png)
 
 8. Ahora tendrás acceso a tu frase secreta de recuperación. La frase secreta de recuperación que es la información más importante. 
     - Escribe tu Frase Secreta de Recuperación en un papel. No las guardes en el ordenador. 
@@ -265,12 +171,7 @@ Celo Extension Wallet es una extensión de navegador segura y fácil de usar dis
     - Haz clic en la casilla que dice "Ver" y escribe tu frase secreta de recuperación.
     - Después de escribir tu frase secreta de recuperación, toca las palabras en el orden en que aparecieron y pulsa "Continuar".
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloExtensionWallet/CELOEXTENSIONWALLET3.png">
-</p>
-<!--
-    ![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET3.png) 
--->
+![image](Images/CeloExtensionWallet/CELOEXTENSIONWALLET3.png)
 
 9. Tendremos que confirmar nuestra frase de recuperacion en el orden que se nos asigno, luego le damos confirmar para revisar que nos haya quedado bien y tengamos anotada nuestra frase de recuperacion en un lugar seguro.
 10. Estaremos listos para usar nuestra billetera y nuestra extension en Chrome.
@@ -281,32 +182,18 @@ Celo Terminal es una interfaz de usuario amigable y fácil de usar diseñada par
 
 1. Ingresa a [https://celoterminal.com/](https://celoterminal.com/)
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloTerminal/CELOTERMINAL1.png">
-</p>
-<!--
-    ![image](Images/CeloTerminal/CELOTERMINAL1.png) 
--->
+![image](Images/CeloTerminal/CELOTERMINAL1.png) 
+
 
 2. Debemos descargar Celo terminal para nuestro sistema operativo.
 3. Una vez descargado Seguimos las instrucciones de nuestro computador y abrimos la aplicación.
 4. Comenzaremos a crear nuestra cuenta, agregando una billetera nueva.
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloTerminal/CELOTERMINAL2.png">
-</p>
-<!--
-    ![image](Images/CeloTerminal/CELOTERMINAL2.png) 
--->
+![image](Images/CeloTerminal/CELOTERMINAL2.png)
 
 5. El siguiente paso es crear una contraseña local para su billetera. Una vez asignada la contraseña le damos un nombre a nuestra billetera.
 
-<p align="center">
-<img width="200" height="200" src="Images/CeloTerminal/CELOTERMINAL3.png">
-</p>
-<!--
-    ![image](Images/CeloTerminal/CELOTERMINAL3.png) 
--->
+![image](Images/CeloTerminal/CELOTERMINAL3.png)
 
 6. Ya tenemos nuestra billetera creada y lista para enviar o recibir transacciones.
 7. Puedes ingresar en tu cuenta para mirar tu frase de seguridad y anotarla en un lugar seguro.
