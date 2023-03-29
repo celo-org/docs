@@ -278,5 +278,5 @@ A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to
 
 ## References​
 
-[https://docs.witnet.io/smart-contracts/witnet-data-feeds](https://docs.witnet.io/smart-contracts/witnet-data-feeds)
+[Witnet data feeds documentation](https://docs.witnet.io/smart-contracts/witnet-data-feeds)
 
