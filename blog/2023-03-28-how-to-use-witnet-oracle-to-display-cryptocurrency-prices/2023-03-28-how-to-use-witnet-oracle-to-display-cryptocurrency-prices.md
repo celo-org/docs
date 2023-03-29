@@ -1,6 +1,6 @@
 ---
 title: How to use Witnet oracle network to display cryptocurrency prices
-description: There are a couple of oracle platforms one could use to get off-chain data to one's Dapp. I want to show how to use Witnet to display price feeds of the popular blockchain networks.
+description: This tutorial will demonstrate the process of utilizing the Witnet oracle network to obtain cryptocurrency prices by linking off-chain data with the blockchain.
 authors:
   - name: Justin Obi
     title: Software Engineer / Technical Writer
@@ -14,6 +14,11 @@ slug: /tutorials/how-to-use-witnet-oracle-to-display-cryptocurrency-prices
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-use-witnet-oracle-to-display-cryptocurrency-prices.png)
 
 ## Introduction​
+
+When developing Dapp, we often need to bring in information that is stored and processed outside of a 
+blockchain network. This data can be retrieved and used by smart contracts through the use of oracles, 
+which act as intermediaries between the off-chain world and the blockchain network. By using off-chain data, 
+smart contracts can execute more complex logic and interact with external systems and services.
 
 There are a couple of oracle platforms one could use to get off-chain data to one's Dapp. 
 I want to show how to use Witnet to display price feeds of the popular blockchain networks.
