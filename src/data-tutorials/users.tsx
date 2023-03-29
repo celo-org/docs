@@ -1109,6 +1109,14 @@ const Users: User[] = [
     website: 'blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo',
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
+
+  {
+    title: 'Build Your Own A.I Art NFT Marketplace On The Celo Blockchain',
+    description: 'In this tutorial we will build a marketplace for our nft ai generated art works',
+    preview: require('./showcase/intermediate/build_your_own_a.i_art_nft_marketplace_on_the_celo_blockchain.png'),
+    website: 'blog/tutorials/build-Your-own-a.i-art-nft-marketplace-on-the-celo-blockchain',
+    tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
+  },
   {
     title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
     description: 'Build a full stack NFT on chain game on the celo blockchain.',
