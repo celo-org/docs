@@ -6,7 +6,7 @@ authors:
     title: contributor, Celo sages
 url: https://github.com/SasaniEldis
 image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["intermediate", "asymmetric cryptography", "celosage", "Documentation"]
+tags: ["intermediate", "celo", "celosage", "Documentation"]
 hide_table_of_contents: true
 slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume
 ---
@@ -25,7 +25,7 @@ Applications for encryption are essential for safeguarding private messages, onl
 
 It's crucial to have a fundamental knowledge of cryptography and the tenets of secure communication before starting this tutorial. Also, you must have an appreciable knowledge of creating and deploying apps in cloud settings.
 
-[Here](https://github.com/SasaniEldis/corda.git) is a link to a sample project (Corda) that we'll be creating in this tutorial. Corda is an open-source blockchain platform that enables blockchain scalability & interoperability.
+[Here](https://github.com/SasaniEldis/crptography-app-scalability) is a link to a sample project that we'll be creating in this tutorial. 
 
 ## Requirements
 
