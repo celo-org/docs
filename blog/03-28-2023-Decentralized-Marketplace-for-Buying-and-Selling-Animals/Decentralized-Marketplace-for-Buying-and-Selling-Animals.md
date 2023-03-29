@@ -10,6 +10,9 @@ tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/decentralized-marketplace-for-buying-and-selling-animals
 ---
+ 
+![decentralized-marketplacef-buying-and-selling-animals](https://user-images.githubusercontent.com/94527318/228489092-41d0c5eb-d34d-4130-a043-175acfce7e2e.png)
+
 
 ## INTRODUCTION
 
