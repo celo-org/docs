@@ -3,16 +3,16 @@ title: Decentralized Marketplace for Buying and Selling Animals
 description: AnimalHouse is a blockchain-based platform connecting animal lovers to adopt, rescue, and care for animals securely and transparently
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:  https://github.com/Ogoyi
+    title: Technical Writer
+    url: https://github.com/Ogoyi
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/decentralized-marketplace-for-buying-and-selling-animals
 ---
- 
+
 ![decentralized-marketplace-for-buying-and-selling-animals](https://user-images.githubusercontent.com/94527318/228545043-6e3ce08f-2e3a-45be-82c2-b4307c588b13.png)
- 
+
 ## INTRODUCTION
 
 Welcome to this tutorial on how to create an Animal Marketplace using Solidity! In this tutorial, we will walk through a simple Solidity code that allows users to add and buy animals, update animal information, and change animal prices.
@@ -24,14 +24,14 @@ This code is a great example of how to create a decentralized marketplace using 
 - A code editor or text editor, for this tutorial we will be using remix.
 
 - An Internet Browser and good internet connection.
-  
- ## PREREQUISITE 
 
- - Basic knowledge of Javascript.
- 
- - Understand how Blockchain works.
- 
- - Have a basic knowledge of solidity.
+## PREREQUISITE
+
+- Basic knowledge of Javascript.
+
+- Understand how Blockchain works.
+
+- Have a basic knowledge of solidity.
 
 To get started with this tutorial, we will begin by creating our smart contract that will define the functionality of our animal marketplace. We will use Solidity programming language to write our smart contract, which will allow us to interact with the Celo blockchain and create a decentralized marketplace.
 
@@ -82,8 +82,8 @@ Next, We will give our animal marketplace contract a name, `AnimalHouse` and als
 
 ```solidity
 contract  AnimalHouse {
-    
-    
+
+
     uint internal animalsLength = 0;
     address internal cUsdTokenAddress =   0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
@@ -94,7 +94,7 @@ contract  AnimalHouse {
         string breed;
         string age;
          uint price;
-         
+
     }
 ```
 
@@ -102,7 +102,7 @@ Now, we can name our smart contract and define our struct. In this tutorial, we 
 
 The `animalsLength` variable will keep track of the number of animals that have been added to our marketplace, while the `cUsdTokenAddress` variable will store the address of the token we will use for payment. We will be using the ERC20 token, cUSD.
 
-After defining our struct, we proceed to add our mapping. 
+After defining our struct, we proceed to add our mapping.
 
 ```solidity
   mapping (uint =>  Animal) internal animals;
@@ -113,7 +113,7 @@ We use a mapping to store and retrieve our Animal struct using an index. In this
 To add more functionality to our smart contract, we will be implementing various functions. The first function we will add is called `addAnimal`.
 
 ```solidity
-    
+
      function addAnimal (
         string memory _image,
         string memory _name,
@@ -131,7 +131,7 @@ To add more functionality to our smart contract, we will be implementing various
            animalhub.age = _age;
            animalhub.price = _price;
 
-          
+
         animalsLength++;
           }
 ```
@@ -156,7 +156,7 @@ Next, we add the `buyAnimal` function.
         );
 
          animals[_index].owner = payable(msg.sender);
-         
+
     }
 ```
 
@@ -173,16 +173,16 @@ In addition, we add the `getAnimal` function.
 ```solidity
  function getAnimal(uint _index) public view returns (
         address payable,
-        string memory,  
-        string memory,  
+        string memory,
+        string memory,
         string memory,
         string memory,
         uint
-        
-      
+
+
     ) {
 
-      return (  
+      return (
             animals[_index].owner,
             animals[_index].image,
              animals[_index].name,
@@ -190,10 +190,10 @@ In addition, we add the `getAnimal` function.
             animals[_index].age,
             animals[_index].price
 
-                          
+
         );
     }
-    
+
 ```
 
 The `getAnimal` function is a public function that we've created to allow users to retrieve information about a specific animal in the animals array. It takes in one parameter, `_index`, which represents the index of the animal the user wants to retrieve information about. The function is marked as view, which means it doesn't modify the state of the contract.
@@ -230,9 +230,9 @@ Next, we add the `UpdateAge` and the `addNewprice` functions.
 
 The `UpdateAge` function and the `AddNewPrice` function are two public functions we have created to allow the owner of an animal to update its age and price, respectively. Both functions require that the sender of the transaction be the current owner of the animal, as determined by the owner property of the animal at the specified index in the animals array. If the sender is not the current owner, the function will revert and return an error message indicating that only the creator (i.e., current owner) can perform the operation.
 
-- The UpdateAge function takes in two parameters: _index, which represents the index of the animal in the animals array whose age is to be updated, and _age, which represents the new age of the animal in the form of a string. If the sender of the transaction is the current owner of the animal, as determined by the require statement, the function updates the age property of the animal at the specified index in the animals array to the new age specified by the _age parameter.
+- The UpdateAge function takes in two parameters: \_index, which represents the index of the animal in the animals array whose age is to be updated, and \_age, which represents the new age of the animal in the form of a string. If the sender of the transaction is the current owner of the animal, as determined by the require statement, the function updates the age property of the animal at the specified index in the animals array to the new age specified by the \_age parameter.
 
-- The AddNewPrice function takes in two parameters as well: _index, which represents the index of the animal in the animals array whose price is to be updated, and _price, which represents the new price of the animal in the form of an unsigned integer (uint). If the sender of the transaction is the current owner of the animal, as determined by the require statement, the function updates the price property of the animal at the specified index in the animals array to the new price specified by the _price parameter.
+- The AddNewPrice function takes in two parameters as well: \_index, which represents the index of the animal in the animals array whose price is to be updated, and \_price, which represents the new price of the animal in the form of an unsigned integer (uint). If the sender of the transaction is the current owner of the animal, as determined by the require statement, the function updates the price property of the animal at the specified index in the animals array to the new price specified by the \_price parameter.
 
 Finally, we add the `getanimalsLength()` function.
 
@@ -251,7 +251,7 @@ The complete code for this session:
 // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
- 
+
 
 
 interface IERC20Token {
@@ -279,10 +279,10 @@ interface IERC20Token {
     );
 }
 
- 
+
  contract  AnimalHouse {
-    
-    
+
+
     uint internal animalsLength = 0;
     address internal cUsdTokenAddress =   0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
@@ -293,12 +293,12 @@ interface IERC20Token {
         string breed;
         string age;
          uint price;
-         
-      
+
+
     }
        mapping (uint =>  Animal) internal animals;
 
-       
+
      function addAnimal (
         string memory _image,
         string memory _name,
@@ -316,11 +316,11 @@ interface IERC20Token {
            animalhub.age = _age;
            animalhub.price = _price;
 
-          
+
         animalsLength++;
           }
-         
-         
+
+
       function buyAnimal(uint _index) public payable  {
         require(
           IERC20Token(cUsdTokenAddress).transferFrom(
@@ -332,22 +332,22 @@ interface IERC20Token {
         );
 
          animals[_index].owner = payable(msg.sender);
-         
+
     }
 
-    
+
      function getAnimal(uint _index) public view returns (
         address payable,
-        string memory,  
-        string memory,  
+        string memory,
+        string memory,
         string memory,
         string memory,
         uint
-        
-      
+
+
     ) {
 
-      return (  
+      return (
             animals[_index].owner,
             animals[_index].image,
              animals[_index].name,
@@ -355,10 +355,10 @@ interface IERC20Token {
             animals[_index].age,
             animals[_index].price
 
-                          
+
         );
     }
-    
+
 
     function UpdateAge(uint _index, string memory _age) public {
         require(msg.sender == animals[_index].owner, "Only creator can perform this operation");
