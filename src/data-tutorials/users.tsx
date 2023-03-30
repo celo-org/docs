@@ -101,8 +101,6 @@ export type TagType =
   | "pinata"
   | "progressive"
   | "randomness"
-  | "
-"
   | "reactnative"
   | "remix"
   | "remote"
