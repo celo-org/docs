@@ -942,6 +942,13 @@ const Users: User[] = [
     tags: ['celosage','intermediate', 'subgraphs', 'randomness'],
   },
   {
+    title: 'Navigating through Celo docs in a helpful manner for a newbie developer',
+    description: 'In this article I will be trying to share a pathway to ake your developing journey with ease.',
+    preview: require('./showcase/beginner/Navigating-the-celo-documentation.png'),
+    website: '/blog/tutorials/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer',
+    tags: ['celosage','beginner'],
+  },
+  {
     title: 'Build In Public - Tips for making an impact',
     description: 'In this article we will discuss the benifits of having an online presence and the ways it can make your developer experience easy and enjoyable.',
     preview: require('./showcase/beginner/build-in-public.png'),
