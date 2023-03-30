@@ -59,7 +59,7 @@ The main benefit of ERC-4626 is that it standardizes tokenized vaults to make pr
 
 ## Writing the ERC-4626 Token Contract
 
-1. Head over to the Remix solidity compiler using the link/
+1. Head over to the Remix solidity compiler using this link-[Remix IDE](https://remix.ethereum.org/)
 2. Go to the contract folder, a new folder, `MyToken.sol`
 3. Copy and paste the smart contract code below inside the `MyToken.sol` file.
 
