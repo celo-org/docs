@@ -28,8 +28,8 @@ The change procedure happens in the following phases:
 
 Each proposal starts on the **Proposal Queue** where it may receive upvotes to move forward in the queue relative to other queued proposals. Proposal authors should work to find community members to upvote their proposal (proposers may also upvote their proposals). Up to three proposals from the top of the queue are dequeued and promoted to the approval stage automatically per day. Any proposal that remains in the queue for 4 weeks will expire.
 
-- **Approval** lasts 1 days (24 hours), during which the proposal must be approved by the Approver(s). Approved proposals are promoted to the Referendum stage.
-- **Referendum** lasts five days, during which owners of Locked Celo vote yes or no on the proposal. Proposals that satisfy the necessary quorum are promoted to the execution phase.
+- **Approval** lasts 1 day (24 hours), during which the proposal must be approved by the Approver(s). Approved proposals are promoted to the Referendum stage.
+- **Referendum** lasts seven days, during which owners of Locked Celo vote yes or no on the proposal. Proposals that satisfy the necessary quorum are promoted to the execution phase.
 - **Execution** lasts up to three days, during which anybody may trigger the execution of the proposal.
 
 ### Proposal
@@ -40,11 +40,11 @@ Submitted proposals are added to the queue of proposals. While a proposal is on 
 
 ### Approval
 
-Every day the top three proposals at the head of the queue are pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked Celo deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Celo Foundation, and will move to a DAO in the future. The Approval phase lasts 1 day and if the proposal is not approved in this window, it is considered expired and does not move on to the “Referendum” phase.
+Every day the top three proposals at the head of the queue are pop off and move to the Approval phase. At this time, the original proposers are eligible to reclaim their Locked Celo deposit. In this phase, the proposal needs to be approved by the Approver. The Approver is initially a 3 of 9 multi-signature address held by individuals selected by the Celo Foundation, and will move to a DAO in the future. The Approval phase lasts one day (24 hours) and if the proposal is not approved in this window, it is considered expired and does not move on to the “Referendum” phase.
 
 ### Referendum
 
-Once the Approval phase is over, approved proposals graduate to the referendum phase. Any user may vote yes, no, or abstain on these proposals. Their vote's weight is determined by the weight of their Locked Celo. After the Referendum phase is over, which lasts five days, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
+Once the Approval phase is over, approved proposals graduate to the referendum phase. Any user may vote yes, no, or abstain on these proposals. Their vote's weight is determined by the weight of their Locked Celo. After the Referendum phase is over, which lasts seven days, each proposal is marked as passed or failed as a function of the votes and the corresponding passing function parameters.
 
 In order for a proposal to pass, it must meet a minimum threshold for **participation**, and **agreement**:
 
