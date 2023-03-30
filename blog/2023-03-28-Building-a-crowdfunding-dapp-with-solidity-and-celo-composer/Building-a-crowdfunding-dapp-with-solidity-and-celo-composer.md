@@ -16,7 +16,7 @@ slug: /tutorials/building-a-crowdfunding-dapp-with-solidity-and-celo-composer
 
 
 
-Introduction
+## Introduction
 
 Hey there! In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer. We'll take you through the process step by step, starting with creating a smart contract for the crowdfunding process and ending with deploying the Dapp on the Celo network. 
 
@@ -84,9 +84,11 @@ Navigate to your terminal and install the dependencies using the following comma
 yarn 
 ```
 
-:::Tips
+:::tip
+
 - I’d recommend [Visual Studio Code](https://code.visualstudio.com/) as a code editor but there are others like Sublime or atom.
 - Please check out the README.md file in the [Celo Composer Repository](https://github.com/celo-org/celo-composer) to learn more about setting up your environment.  
+
 :::
 
 
@@ -246,7 +248,9 @@ CELOSCAN_API_KEY=""
 Add your private key of your metamask wallet to the `PRIVATE_KEY`. Please ensure you are using a test account. 
 
 :::tip
+
 Learn more: Check out [3 Simple Steps to Connect your MetaMask Wallet To Celo](https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) for more details.
+
 :::
  
 
