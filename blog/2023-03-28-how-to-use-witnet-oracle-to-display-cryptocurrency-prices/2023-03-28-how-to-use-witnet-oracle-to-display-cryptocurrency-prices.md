@@ -15,12 +15,12 @@ slug: /tutorials/how-to-use-witnet-oracle-to-display-cryptocurrency-prices
 
 ## Introduction​
 
-When developing Dapp, we often need to bring in information that is stored and processed outside of a 
-blockchain network. This data can be retrieved and used by smart contracts through the use of oracles, 
-which act as intermediaries between the off-chain world and the blockchain network. By using off-chain data, 
+When developing Dapp, we often need to bring in information that is stored and processed outside of a
+blockchain network. This data can be retrieved and used by smart contracts through the use of oracles,
+which act as intermediaries between the off-chain world and the blockchain network. By using off-chain data,
 smart contracts can execute more complex logic and interact with external systems and services.
 
-There are a couple of oracle platforms one could use to get off-chain data to one's Dapp. 
+There are a couple of oracle platforms one could use to get off-chain data to one's Dapp.
 I want to show how to use Witnet to display price feeds of the popular blockchain networks.
 
 ## Prerequisites​
@@ -98,7 +98,6 @@ contract PriceFeeds {
 
 The contract imports the interfaces for the WitnetPriceRouter and WitnetPriceFeed contracts from the Witnet Solidity Bridge library.
 
-
 The contract has a constructor that takes an `IWitnetPriceRouter` instance and an array of `bytes4` IDs as parameters. It initializes a mapping called `priceFeeds` that maps each `bytes4` ID to an `IWitnetPriceFeed` instance. The `updatePriceFeeds` function is called in the constructor to retrieve the current price feeds for each ID.
 
 The contract also has a `checkAndUpdatePriceFeeds` function that checks if a minute has passed since the last update and updates the price feeds if necessary. This function is called in the `getPriceFeedLastValues` function.
@@ -114,12 +113,11 @@ Also, we are going to use `react-celo`to easily incorporate Celo blockchain feat
 ## App.js
 
 ```js
-import { Routes, Route } from 'react-router-dom'
-import AppHeader from './components/layout/Header'
-import Home from './pages/Home'
-import { CeloProvider, Alfajores, NetworkNames } from '@celo/react-celo'
-import '@celo/react-celo/lib/styles.css'
-
+import { Routes, Route } from "react-router-dom";
+import AppHeader from "./components/layout/Header";
+import Home from "./pages/Home";
+import { CeloProvider, Alfajores, NetworkNames } from "@celo/react-celo";
+import "@celo/react-celo/lib/styles.css";
 
 const WrappedApp = () => {
   return (
@@ -127,36 +125,36 @@ const WrappedApp = () => {
       networks={[Alfajores]}
       network={{
         name: NetworkNames.Alfajores,
-        rpcUrl: 'https://alfajores-forno.celo-testnet.org',
-        graphQl: 'https://alfajores-blockscout.celo-testnet.org/graphiql',
-        explorer: 'https://alfajores-blockscout.celo-testnet.org',
+        rpcUrl: "https://alfajores-forno.celo-testnet.org",
+        graphQl: "https://alfajores-blockscout.celo-testnet.org/graphiql",
+        explorer: "https://alfajores-blockscout.celo-testnet.org",
         chainId: 44787,
       }}
       dapp={{
-        name: 'How to use Witnet oracle network to display cryptocurrency prices',
-        description: '',
-        url: 'https://witnet-oracle.vercel.app/',
+        name: "How to use Witnet oracle network to display cryptocurrency prices",
+        description: "",
+        url: "https://witnet-oracle.vercel.app/",
       }}
     >
       <App />
     </CeloProvider>
-  )
-}
+  );
+};
 
 const App = () => {
-
   return (
     <div>
-        <AppHeader/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-        </Routes>
+      <AppHeader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default WrappedApp
+export default WrappedApp;
 ```
+
 This file is the ideal place to configure `react-celo`. We imported the `Routes` and `Route` components from the `react-router-dom` package, as well as the `CeloProvider`, `Alfajores`, and `NetworkNames` components from the `@celo/react-celo` package.
 
 The `WrappedApp` component uses the `CeloProvider` to configure the Celo network to be used in the application, setting the networks array to `Alfajores`, which is a test network. It also sets the `network` object with various network details such as `rpcUrl`, `graphQl`, `explorer`, and `chainId`. Additionally, the `dapp` object provides details about the decentralized application itself. The `App` component is then wrapped in the `CeloProvider` component.
@@ -168,29 +166,25 @@ The `App` component renders an `AppHeader` component and defines a single route 
 ### useContract.js
 
 ```js
-
-
-import { useState, useEffect, useCallback } from 'react'
-import { useCelo } from '@celo/react-celo'
-
+import { useState, useEffect, useCallback } from "react";
+import { useCelo } from "@celo/react-celo";
 
 export const useContract = (abi, contractAddress) => {
-
-  const { kit, address } = useCelo()
-  const [contract, setContract] = useState(null)
+  const { kit, address } = useCelo();
+  const [contract, setContract] = useState(null);
 
   const getContract = useCallback(async () => {
-
-    setContract(new kit.connection.web3.eth.Contract(abi, contractAddress))
-  }, [kit, abi, contractAddress])
+    setContract(new kit.connection.web3.eth.Contract(abi, contractAddress));
+  }, [kit, abi, contractAddress]);
 
   useEffect(() => {
-    if (address) getContract()
-  }, [address, getContract])
+    if (address) getContract();
+  }, [address, getContract]);
 
-  return contract
-}
+  return contract;
+};
 ```
+
 This is the only custom hook in the application. It accepts two parameters: `abi` and `contractAddress`.
 
 The hook uses the `useCelo` hook from the `@celo/react-celo` package to get the Celo kit object and the current user address. It also defines a state variable called `contract` using the `useState` hook, which is initially set to null.
@@ -207,14 +201,15 @@ The hook returns the `contract` state variable, which can be used by the calling
 
 ```js
 export const ID4s = [
-  {caption: 'btc/usd', value: 0x24beead4},
-  {caption: 'celo/eur', value: 0x21a79821},
-  {caption: 'celo/usd', value: 0x9ed884be},
-  {caption: 'eth/usd', value: 0x3d15f701},
-  {caption: 'nct/celo', value: 0x4d50c3a6},
-  {caption: 'nct/usd', value: 0x31077f15}
-]
+  { caption: "btc/usd", value: 0x24beead4 },
+  { caption: "celo/eur", value: 0x21a79821 },
+  { caption: "celo/usd", value: 0x9ed884be },
+  { caption: "eth/usd", value: 0x3d15f701 },
+  { caption: "nct/celo", value: 0x4d50c3a6 },
+  { caption: "nct/usd", value: 0x31077f15 },
+];
 ```
+
 This file exports `ID4s` array, which consists of price feeds currently supported by the Witnet Foundation for Celo testnet (Alfajores). Each object has two key-value pairs: caption, a string representing the caption of the currency pair and value, a hexadecimal value representing the ID of the currency pair.
 
 The `value` key represents a unique identifier for simplifying the identification of currency pairs served by Witnet's Price Router. One could use only the first 4 bytes of the full bytes32 identifier (ID32), which are referred to as ID4.
@@ -222,7 +217,8 @@ The `value` key represents a unique identifier for simplifying the identificatio
 ### helpers.js
 
 ```js
-export const truncate = input => `${input.substring(0, 5)}...${input.slice(-4)}`
+export const truncate = (input) =>
+  `${input.substring(0, 5)}...${input.slice(-4)}`;
 ```
 
 `truncate` receives a string as input, shortens it to a length of 9 characters by taking the first five characters, adding an ellipsis ("..."), and then appending the last four characters of the string. Finally, it returns the shortened string.
@@ -230,38 +226,38 @@ export const truncate = input => `${input.substring(0, 5)}...${input.slice(-4)}`
 ### interact.js
 
 ```js
+import { ID4s } from "./constants";
 
-import { ID4s } from './constants'
-
-export const priceFeedAddress = '0xB40bf553be448345C09891682636cf632a77c419'
+export const priceFeedAddress = "0xB40bf553be448345C09891682636cf632a77c419";
 
 export const getPriceFeed = async (contract) => {
-
   if (contract) {
     try {
-      let values = ID4s.map(item => item.value)
-      values = values.map(item => '0x' + item.toString(16));
+      let values = ID4s.map((item) => item.value);
+      values = values.map((item) => "0x" + item.toString(16));
 
-      let priceFeeds = []
+      let priceFeeds = [];
 
       for (let i = 0; i < ID4s.length; i++) {
         const priceFeed = new Promise(async (resolve) => {
-
-          const priceFeed = await contract.methods.getPriceFeedLastValues(values[i]).call()
+          const priceFeed = await contract.methods
+            .getPriceFeedLastValues(values[i])
+            .call();
           resolve({
             price: (priceFeed._lastPrices / 1000000).toFixed(2),
-            caption: ID4s[i].caption
-          })
-        })
-        priceFeeds.push(priceFeed)
+            caption: ID4s[i].caption,
+          });
+        });
+        priceFeeds.push(priceFeed);
       }
-      return Promise.all(priceFeeds)
+      return Promise.all(priceFeeds);
     } catch (e) {
-      console.log({e})
+      console.log({ e });
     }
   }
-}
+};
 ```
+
 The `getPriceFeed` function takes a single argument, `contract`. It's an asynchronous function that performs a series of steps when the contract argument is truthy. First, it creates an array of the value properties from the ID4s constant, converts each value to a hexadecimal string, and pushes each string to the `values` array.
 
 Next, it creates an empty array called `priceFeeds` and loops through the ID4s array. For each item in ID4s, it creates a new Promise that awaits the result of calling the `getPriceFeedLastValues` method on the contract object with the corresponding value as an argument.
@@ -279,4 +275,3 @@ A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to
 ## References​
 
 [Witnet data feeds documentation](https://docs.witnet.io/smart-contracts/witnet-data-feeds)
-
