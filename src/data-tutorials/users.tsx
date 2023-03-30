@@ -2621,7 +2621,15 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
-    {
+
+  {
+    title: 'Introducing Prosperity Passport - The First Soulbound Token-Powered Web3 Identity Solution for Celo Blockchain',
+    description: 'Introducing Prosperity Passport - a groundbreaking Web3 identity solution for Celo blockchain.',
+    preview: require('./showcase/beginner/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain.png'),
+    website: 'blog/tutorials/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain',
+    tags: ['celosage', 'beginner', 'celo'], 
+  },
+  {
     title: 'Building a Decentralized Exchange on Celo with Golang',
     description: 'This article could focus on building a decentralized exchange (DEX) on the Celo blockchain using the go-ethereum, a Golang blockchain framework',
     preview: require('./showcase/intermediate/building-a-decentralized-exchange-on-celo-with-golang.png'),
@@ -2648,6 +2656,7 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
   },
   /*
   Pro Tip: add your site in alphabetical order.
