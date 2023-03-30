@@ -2320,6 +2320,13 @@ const Users: User[] = [
     tags: ['celosage', 'hardhat', 'smartcontract', 'solidity', 'intermediate'],
   },
   {
+    title: 'How to Add Crypto Payment to an E-Commerce Website with Celo and Valora',
+    description: 'This article will provide a step-by-step guide on how to add Crypto payment to an E-commerce website with Celo Valora.',
+    preview: require('./showcase/advanced/how-to-add-crypto-pay-using-valora.png'),
+    website: 'blog/tutorials/how-to-add-crypto-pay-using-valora',
+    tags: ['celosage', 'advanced', 'celo', 'react', 'valora'],
+  },
+  {
     title: 'Regenerative Finance - What it is and Why it Matters',
     description: 'In this article, we will look into the financial protocol behind the Celo blockchain, the "how" and the "helps"',
     preview: require('./showcase/beginner/regenerative-finance-and-celo-the-process-and-partnership.png'),
