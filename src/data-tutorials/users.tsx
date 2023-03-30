@@ -2597,7 +2597,7 @@ const Users: User[] = [
     description: '¡Bienvenido a nuestro tutorial sobre cómo comenzar con su billetera digital en Celo! En este tutorial, le mostraremos cómo crear una billetera, almacenar su frase de recuperación, financiar la billetera y enviar y recibir dinero en la plataforma Celo.',
     preview: require('./showcase/beginner/Billeteras-como-crearlas-y-como-fondearlas.png'),
     website: 'blog/tutorials/billeteras-como-crearlas-y-como-fondearlas',
-    tags: [celosage, begginer], 
+    tags: ['celosage', 'beginner'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
