@@ -6,7 +6,17 @@ authors:
     title: Frontend Web Developer | Technical Writer
     url: https://github.com/J0shcodes
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [solidity,react,celo,smartcontract,nextjs,intermediate,composer,celosage,]
+tags:
+  [
+    solidity,
+    react,
+    celo,
+    smartcontract,
+    nextjs,
+    intermediate,
+    composer,
+    celosage,
+  ]
 hide_table_of_contents: true
 slug: /tutorials/building-your-first-smart-contract-web-dapp-with-celo-composer
 ---

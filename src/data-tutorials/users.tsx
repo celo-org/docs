@@ -2001,7 +2001,7 @@ const Users: User[] = [
     description: 'Learn how to initialize a Hardhat and React project using Celo-composer.',
     preview: require('./showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png'),
     website: 'blog/tutorials//building-your-first-smart-contract-web-dapp-with-celo-composer',
-    tags: ['celo', 'intermediate', 'celosage', 'conposer', 'nextjs', 'smartcontract', 'react', 'solidity'],
+    tags: ['celo', 'intermediate', 'celosage', 'composer', 'nextjs', 'smartcontract', 'react', 'solidity'],
   },
   {
     title: 'Workshop: Build a DeFi staking dApp on Celo using Solidity',
