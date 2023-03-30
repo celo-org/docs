@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-your-first-smart-contract-web-dapp-with-celo-composer
 ---
 
-![header](https://user-images.githubusercontent.com/71826391/226214632-9251559e-33c1-42be-89b9-58b2fee5cbf6.png)
+![header](../../src/data-tutorials/showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png)
 
 ## Introduction
 
