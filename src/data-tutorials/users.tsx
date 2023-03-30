@@ -2313,6 +2313,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'react', 'ipfs', 'nft'],
   },
   {
+    title: 'How to use Witnet oracle network to display cryptocurrency prices',
+    description: 'This tutorial will demonstrate the process of utilizing the Witnet oracle network to obtain cryptocurrency prices by linking off-chain data with the blockchain',
+    preview: require('./showcase/intermediate/how-to-use-witnet-oracle-to-display-cryptocurrency-prices.png'),
+    website: 'blog/tutorials/how-to-use-witnet-oracle-to-display-cryptocurrency-prices',
+    tags: ['celosage', 'intermediate', 'react', 'hardhat', 'oracle'],
+  },
+  {
     title: 'Getting Started On Celo With Hardhat',
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage',
     preview: require('./showcase/beginner/getting-started-on-celo-with-hardhat.png'),
