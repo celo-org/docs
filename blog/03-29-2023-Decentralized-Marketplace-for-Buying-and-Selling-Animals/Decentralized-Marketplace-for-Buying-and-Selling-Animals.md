@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/decentralized-marketplace-for-buying-and-selling-animals
 ---
 
-![decentralized-marketplace-for-buying-and-selling-animals](https://user-images.githubusercontent.com/94527318/228545043-6e3ce08f-2e3a-45be-82c2-b4307c588b13.png)
+![header](../../src/data-tutorials/showcase/intermediate/decentralized-marketplace-for-buying-and-selling-animals.png)
 
 ## INTRODUCTION
 
