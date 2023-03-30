@@ -35,7 +35,7 @@ Now after that, you will be able to see this section
 
 In hackathons sections, you will be able to see the events of CELO,
 
-In the Second section, Ready to start building you will able to access the celo.[docs.org](docs.org)
+In the Second section, Ready to start building you will able to access the [docs.org](docs.org)
 
 And in the third section, you will be able to see the CELO camps, where you can apply for the camp, and can get funding for your blockchain project
 
@@ -50,8 +50,8 @@ This will be the main website that you want to add to your bookmark section, as 
 You must start with the CELO composer CLI, as it allows you to quickly build, deploy and iterate on dApps using CELO
 
 And you can learn more about it here with this link
-[celo-composer](https://github.com/celo-org/celo-composer)
-[celo-composer-gitbook](https://celo-composer.gitbook.io/docs/)
+- [celo-composer](https://github.com/celo-org/celo-composer)
+- [celo-composer-gitbook](https://celo-composer.gitbook.io/docs/)
 
 Or if you are familiar with EVM tools, you can start building with them too.
 
@@ -109,7 +109,7 @@ You can see that there is one toggle switch on the right side in the filters sec
 
 Now after completing the beginner tutorials section let's jump into the Intermediate tutorials section -[intermediate](https://docs.celo.org/tutorials?tags=intermediate)
 
-[image7](images/image7.png)
+![image7](images/image7.png)
 
 Now here also I will try to give some order of the tutorials because here the articles are set in alphabetical order
 
