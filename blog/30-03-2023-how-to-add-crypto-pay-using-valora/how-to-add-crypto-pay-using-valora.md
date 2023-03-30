@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-add-crypto-pay-using-valora
 ---
 
-![header](https://user-images.githubusercontent.com/69092079/228703745-1ea6425d-e31f-4e2b-bedc-722e4e3a01b8.png)
+![header](../../src/data-tutorials/showcase/advanced/how-to-add-crypto-pay-using-valora.png)
 
 ## Introduction​
 
