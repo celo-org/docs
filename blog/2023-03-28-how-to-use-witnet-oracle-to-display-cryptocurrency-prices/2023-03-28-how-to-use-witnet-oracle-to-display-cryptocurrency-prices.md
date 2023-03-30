@@ -7,7 +7,7 @@ authors:
     url: https://github.com/cjustinobi
     image_url: https://github.com/cjustinobi.png
 tags: [celosage, intermediate, react, hardhat, oracle]
-hide_table_of_contents: false
+hide_table_of_contents: true
 slug: /tutorials/how-to-use-witnet-oracle-to-display-cryptocurrency-prices
 ---
 
