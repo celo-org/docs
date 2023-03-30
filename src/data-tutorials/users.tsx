@@ -811,6 +811,13 @@ const Users: User[] = [
     tags: ['beginner','celosage'],
   },
   {
+    title: 'Blockchain Based Festival Booking System with CUSD Payment Integration',
+    description: 'Decentralized event booking platform for organizers to showcase programs and users to book slots with cUSD.',
+    preview: require('./showcase/intermediate/blockchain-based-festival-booking-system-with-cusd-payment-Integration.png'),
+    website: '/blog/tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration',
+    tags: ['celosage','intermediate', 'solidity', 'celo'],
+  },
+  {
     title: 'Integrating Rainbow-Kit Celo into Your DApps',
     description: 'This sequel walks blockchain developers through the process of integrating the Rainbow-Kit Celo tool into their DApps for seamless financial operation and compatible wallet integration',
     preview: require('./showcase/intermediate/integrating-rainbow-kit-celo-into-your-smart-contract-dapp.png'),
