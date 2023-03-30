@@ -1556,6 +1556,13 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
+    title: 'Developing a Decentralized Identity Solution on Celo',
+    description: 'Learn the technical aspects of developing a Decentralized Identity Solution on Celo Network',
+    preview: require('./showcase/intermediate/developing-a-decentralized-identity-solution-on-celo.png'),
+    website: 'blog/tutorials/developing-a-decentralized-identity-solution-on-celo',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
+  },
+  {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
