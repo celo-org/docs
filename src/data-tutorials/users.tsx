@@ -1114,7 +1114,7 @@ const Users: User[] = [
     title: 'Build Your Own A.I Art NFT Marketplace On The Celo Blockchain',
     description: 'In this tutorial we will build a marketplace for our nft ai generated art works',
     preview: require('./showcase/advanced/build_your_own_ai_art_nft_marketplace_on_the_celo_blockchain.png'),
-    website: 'blog/tutorials/build-Your-own-a.i-art-nft-marketplace-on-the-celo-blockchain',
+    website: 'blog/tutorials/build-Your-own-ai-art-nft-marketplace-on-the-celo-blockchain',
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
   },
   {
