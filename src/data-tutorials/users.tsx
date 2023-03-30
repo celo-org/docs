@@ -751,6 +751,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-tokenize-a-physical-asset-on-celo',
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
+   {
+    title: 'Decentralized Marketplace for Buying and Selling Animals',
+    description: 'AnimalHouse is a blockchain-based platform connecting animal lovers to adopt, rescue, and care for animals securely and transparently',
+    preview: require('./showcase/intermediate/decentralized-marketplace-for-buying-and-selling-animals.png'),
+    website: 'blog/tutorials/decentralized-marketplace-for-buying-and-selling-animals',
+    tags: ['celosage', 'intermediate','celo', 'solidity'],
+  },
   {
     title: 'Prepare for Auditing Your Smart Contract',
     description: 'Auditing is the process of reviewing your smart contracts code for errors, vulnerabilities, and potential weaknesses',
