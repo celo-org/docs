@@ -1,16 +1,17 @@
 ---
 title: Aprenda sobre Oraculos em Celo
-description: Aprenda e entenda mais sobre oraculos em Celo. 
+description: Aprenda e entenda mais sobre oraculos em Celo.
 authors:
-- name: Ewerton Lopes
-  title: Founder of Guizo Studios
-  url: https://github.com/guizostudios
-  image_url: https://avatars.githubusercontent.com/u/97633823
+  - name: Ewerton Lopes
+    title: Founder of Guizo Studios
+    url: https://github.com/guizostudios
+    image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, solidity, developers, remix, celosage]
 hide_table_of_contents: true
 slug: /tutorials/aprenda-sobre-oraculos
 ---
 
+import YouTube from '@components/YouTube';
 
 ![header](../../src/data-tutorials/showcase/intermediate/aprenda_sobre_oraculos.png)
 
@@ -34,11 +35,11 @@ Para este tutorial não é necessário conhecimento prévio. As ferramentas util
 
 Confira no video como construir um smart contract utilizando oraculos em Celo.
 
-[![Aprenda sobre oraculos](../../src/data-tutorials/showcase/intermediate/aprenda_sobre_oraculos.png)](https://youtu.be/1YQqLxm1SqE)
+<YouTube videoId="1YQqLxm1SqE"/>
 
-Confira o código completo no [github](https://github.com/guizostudios/oracle) 
+Confira o código completo no [github](https://github.com/guizostudios/oracle)
 
-Leia mais sobre o [Witnet](https://docs.witnet.io/smart-contracts/witnet-data-feeds/addresses/celo) 
+Leia mais sobre o [Witnet](https://docs.witnet.io/smart-contracts/witnet-data-feeds/addresses/celo)
 
 ## Conclusão
 
