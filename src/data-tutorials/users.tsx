@@ -2067,6 +2067,13 @@ const Users: User[] = [
     tags: ['beginner', 'video'],
   },
   {
+    title: 'Building Your Smart Contract Web Dapp with Celo-Composer',
+    description: 'Learn how to initialize a Hardhat and React project using Celo-composer.',
+    preview: require('./showcase/intermediate/building-your-smart-contract-web-dapp-with-celo-composer.png'),
+    website: 'blog/tutorials//building-your-first-smart-contract-web-dapp-with-celo-composer',
+    tags: ['celo', 'intermediate', 'celosage', 'composer', 'nextjs', 'smartcontract', 'react', 'solidity'],
+  },
+  {
     title: 'Workshop: Build a DeFi staking dApp on Celo using Solidity',
     description: 'Join Ernest Nnmadi (Twitter: @ErnestElijah) for this workshop! You will learn how to build a DeFi stacking dApp on Celo.',
     preview: require('./showcase/advanced/workshop-build-a-defi-staking-dapp-on-celo-using-solidity.png'),
