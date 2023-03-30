@@ -3,15 +3,15 @@ title: Blockchain Based Festival Booking System with CUSD Payment Integration
 description: Decentralized festival booking platform for organizers to showcase programs and users to book slots with cUSD.
 authors:
   - name: David Ikanji
-    title: Technical Writer 
-    url:  https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ikanji201
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration
 ---
- 
- ![blockchain-based-festival-booking-system-with-cusd-payment-Integration png](https://user-images.githubusercontent.com/115812158/228366689-0fe99898-cc6a-4e01-9cef-c6b4840e4a95.png)
+
+![blockchain-based-festival-booking-system-with-cusd-payment-Integration png](https://user-images.githubusercontent.com/115812158/228366689-0fe99898-cc6a-4e01-9cef-c6b4840e4a95.png)
 
 ## INTRODUCTION
 
@@ -33,7 +33,7 @@ To take this tutorial, you will need:
 
 - A reliable internet browser and internet connection
 
-## PREREQUISITE 
+## PREREQUISITE
 
 - Basic knowledge of Javascript.
 
@@ -79,7 +79,7 @@ In this code above, we are defining an interface for an ERC20 token. An interfac
 
 - `balanceOf` returns the balance of tokens held by a particular address.
 
--  `allowance` returns the maximum amount of tokens that a spender is allowed to spend on behalf of a particular owner.
+- `allowance` returns the maximum amount of tokens that a spender is allowed to spend on behalf of a particular owner.
 
 In addition to these functions, this interface also defines two events: Transfer and Approval. These events are emitted whenever a transfer or approval occurs and allow external parties to track the movement of tokens within the contract.
 
@@ -122,8 +122,8 @@ To add more functionality to our smart contract, we'll define some functions. Th
  function writeProgramme(
         string memory _url,
         string memory _theme,
-        string memory _description, 
-        string memory _location, 
+        string memory _description,
+        string memory _location,
         uint _price
     ) public {
         uint _sold = 0;
@@ -144,7 +144,7 @@ The `writeProgramme` function is used to create a new programme on our smart con
 
 Inside the function, we first set the number of bookings sold to zero, which will be incremented later when users book slots for the programme.
 
-Then, we create a new programme by assigning it to the programmes mapping using the programmesLength variable as the key. We do this by passing in the function parameters and the _sold variable into the Programme struct.
+Then, we create a new programme by assigning it to the programmes mapping using the programmesLength variable as the key. We do this by passing in the function parameters and the \_sold variable into the Programme struct.
 
 Finally, we increment the programmesLength variable so that the next programme created will have a unique key.
 
@@ -153,19 +153,19 @@ Let's proceed to create the `readProgramme` function.
 ```solidity
 function readProgramme(uint _index) public view returns (
         address payable,
-        string memory, 
-        string memory, 
-        string memory, 
-        string memory, 
-        uint, 
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        uint,
         uint
     ) {
         return (
             programmes[_index].owner,
-            programmes[_index].url, 
-            programmes[_index].theme, 
-            programmes[_index].description, 
-            programmes[_index].location, 
+            programmes[_index].url,
+            programmes[_index].theme,
+            programmes[_index].description,
+            programmes[_index].location,
             programmes[_index].price,
             programmes[_index].sold
         );
@@ -174,7 +174,7 @@ function readProgramme(uint _index) public view returns (
 
 This function can be called by anyone and doesn't modify any data on the blockchain, so it doesn't require any gas fees. Its purpose is to allow us to retrieve information about a programme that has been added to the smart contract.
 
-To use this function, we need to pass in one parameter called _index, which is the index of the programme in the programmes array that we want to retrieve information about. The function returns several pieces of information about the programme, including:
+To use this function, we need to pass in one parameter called \_index, which is the index of the programme in the programmes array that we want to retrieve information about. The function returns several pieces of information about the programme, including:
 
 - The address of the owner of the programme, which is of type address payable
 
@@ -190,7 +190,7 @@ To use this function, we need to pass in one parameter called _index, which is t
 
 - The number of tickets sold for the programme, which is of type uint.
 
-To retrieve this information, we simply need to call the function and provide the _index parameter. The function will then access the relevant properties of the programme at the specified index in the programmes array and return them as a tuple.
+To retrieve this information, we simply need to call the function and provide the \_index parameter. The function will then access the relevant properties of the programme at the specified index in the programmes array and return them as a tuple.
 
 Overall, this function is a useful tool for anyone who wants to get information about a specific programme that has been added to the smart contract. By making this information available through a view function, the smart contract provides transparency and accessibility for all parties involved in the programme.
 
@@ -210,7 +210,7 @@ Up next is the `bookSlot` function.
     }
 ```
 
-This function is called bookSlot and it takes in a single parameter called _index, which represents the index of the program slot that someone wants to book. The function also requires that the caller sends a certain amount of a specific type of cryptocurrency called cUSD to the owner of the program slot in order to book it.
+This function is called bookSlot and it takes in a single parameter called \_index, which represents the index of the program slot that someone wants to book. The function also requires that the caller sends a certain amount of a specific type of cryptocurrency called cUSD to the owner of the program slot in order to book it.
 
 The function first checks that the transfer of cUSD tokens from the caller to the program slot owner is successful. If the transfer is successful, the function increments the sold variable of the program slot, indicating that someone has booked that slot. If the transfer fails, the function will throw an error message saying "Transfer failed."
 
@@ -240,15 +240,15 @@ Finally, we add the `cancelBooking` function and the `getProgrammesLength()`.
 }
 ```
 
-The `cancelBooking` function takes in one input parameter _index, which is an unsigned integer representing the index of a program in an array of programs. The function is public, which means that anyone can call it from outside the contract.
+The `cancelBooking` function takes in one input parameter \_index, which is an unsigned integer representing the index of a program in an array of programs. The function is public, which means that anyone can call it from outside the contract.
 
 Here's what the function does:
 
-- It uses the `require` function to check that at least one booking has been made for the program with the given _index. If no bookings have been made, the function will return an error message.
+- It uses the `require` function to check that at least one booking has been made for the program with the given \_index. If no bookings have been made, the function will return an error message.
 
 - It uses the `require` function again to transfer the price of the program back to the user who made the booking using an ERC20 token contract. If the transfer fails, the function will return an error message.
 
-- It decrements the sold variable for the program at the given _index by 1, to reflect the cancellation of the booking.
+- It decrements the sold variable for the program at the given \_index by 1, to reflect the cancellation of the booking.
 
 The next function is the `getProgrammesLength` function. It is also a public function, which means that anyone can call it from outside the contract. This function doesn't take any input parameters.
 
@@ -296,8 +296,8 @@ contract Festival {
     function writeProgramme(
         string memory _url,
         string memory _theme,
-        string memory _description, 
-        string memory _location, 
+        string memory _description,
+        string memory _location,
         uint _price
     ) public {
         uint _sold = 0;
@@ -315,19 +315,19 @@ contract Festival {
 
     function readProgramme(uint _index) public view returns (
         address payable,
-        string memory, 
-        string memory, 
-        string memory, 
-        string memory, 
-        uint, 
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        uint,
         uint
     ) {
         return (
             programmes[_index].owner,
-            programmes[_index].url, 
-            programmes[_index].theme, 
-            programmes[_index].description, 
-            programmes[_index].location, 
+            programmes[_index].url,
+            programmes[_index].theme,
+            programmes[_index].description,
+            programmes[_index].location,
             programmes[_index].price,
             programmes[_index].sold
         );
@@ -344,7 +344,7 @@ contract Festival {
         );
         programmes[_index].sold++;
     }
-    
+
     function cancelBooking(uint _index) public {
     require(
         programmes[_index].sold > 0,
@@ -365,6 +365,7 @@ contract Festival {
 
 }
 ```
+
 [Click this link to access the full code for this session](https://github.com/Ikanji201/festivalllls)
 
 ## CONTRACT DEPLOYMENT
