@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/ishanpathak1.png
 tags: [celosage, beginner]
 hide_table_of_contents: false
-slug: "/tutorials/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer"
+slug: /tutorials/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/Navigating-the-celo-documentation.png)
