@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/billeteras-como-crearlas-y-como-fondearlas
 ---
 
-![header](Images/Billeteras-como-crearlas-y-como-fondearlas.png)
+![header](../../src/data-tutorials/showcase/beginner/Billeteras-como-crearlas-y-como-fondearlas.png)
 
 ## Introducción
 Las billeteras son herramientas que crean cuentas, gestionan claves privadas y ayudan a los usuarios a transaccionar en la Blockchain (Nos enfocaremos en la red de Celo)
