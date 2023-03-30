@@ -101,7 +101,8 @@ export type TagType =
   | "pinata"
   | "progressive"
   | "randomness"
-  | "react"
+  | "
+"
   | "reactnative"
   | "remix"
   | "remote"
@@ -2592,6 +2593,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/automate-react-native-celo-dapp-deployment-with-github-actions.png'),
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
+  },
+  {
+    title: 'Automate Celo DApp Deployment to Cloudflare Pages with GitHub Actions',
+    description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with GitHub Actions',
+    preview: require('./showcase/intermediate/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions.png'),
+    website: 'blog/tutorials/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions',
+    tags: ['celosage', 'react', 'intermediate', 'celo'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
