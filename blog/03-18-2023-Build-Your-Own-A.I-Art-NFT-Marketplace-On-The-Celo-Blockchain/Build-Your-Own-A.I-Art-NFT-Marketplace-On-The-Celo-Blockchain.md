@@ -16,7 +16,7 @@ slug: /tutorials/build-Your-own-a.i-art-nft-marketplace-on-the-celo-blockchain
 
 In This tutorial we will build a marketplace where Unique Art works will be generated from a word prompt and converted into an NFT on the celo blockchain. Users can also trade their A.i generated art NFT on the marketplace by setting the price.
 
-By the end of this tutorial, you would have a basic understanding on how to create an A.I NFT marketplace. 
+By the end of this tutorial, you would have a basic understanding on how to create an A.I NFT marketplace.
 
 Here is a demo app [link](https://dreamy-capybara-5170e0.netlify.app) of what you’ll be creating.
 
@@ -73,7 +73,7 @@ contract MyNFT is ERC721URIStorage {
         owner = msg.sender;
     }
 
-struct Art {  
+struct Art {
   uint tokenId;
   uint price;
   address seller;
@@ -101,7 +101,7 @@ modifier onlyArtOwner(uint _Id) {
     arts[allArts.current()] = Art(
        _tokenId,
        0,
-       payable(msg.sender), 
+       payable(msg.sender),
        false
        );
   }
@@ -173,7 +173,7 @@ contract MyNFT is ERC721URIStorage {
 }
 ```
 
-__Using Counters__
+**Using Counters**
 
 We use the `Counters` library to manage token IDs and the total number of arts. This library provides a simple counter implementation that can be incremented and decremented.
 
@@ -183,7 +183,7 @@ Counters.Counter private _tokenIds;
 Counters.Counter private allArts;
 ```
 
-__Contract Constructor__
+**Contract Constructor**
 
 We then define the contract constructor that sets the token name and symbol, and initializes the contract owner
 
@@ -193,7 +193,7 @@ constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
 }
 ```
 
-__Defining the Art struct and mappings__
+**Defining the Art struct and mappings**
 
 We create a struct named `Art` to store information about each NFT. Then, create a mapping named `arts` to associate token IDs with `Art` structs.
 
@@ -208,7 +208,7 @@ struct Art {
 mapping(uint256 => Art) public arts;
 ```
 
-__Defining modifiers__
+**Defining modifiers**
 
 We define a modifier `onlyArtOwner` to ensure that only the owner of an NFT can call certain functions.
 
@@ -219,7 +219,7 @@ modifier onlyArtOwner(uint _Id) {
 }
 ```
 
-__Minting NFTs__
+**Minting NFTs**
 
 Next we create a function `mintArt` that allows users to mint a new NFT. Increment the token ID counter, mint the token, and call the `listArt` function.
 
@@ -233,7 +233,7 @@ Next we create a function `mintArt` that allows users to mint a new NFT. Increme
 }
 ```
 
-__Listing NFTs for sale__
+**Listing NFTs for sale**
 
 We then create a private function `listArt` that initializes an Art struct and stores it in the `arts` mapping. Increment the `allArts` counter.
 
@@ -243,13 +243,13 @@ We then create a private function `listArt` that initializes an Art struct and s
     arts[allArts.current()] = Art(
        _tokenId,
        0,
-       payable(msg.sender), 
+       payable(msg.sender),
        false
        );
   }
 ```
 
-__Selling NFTs__
+**Selling NFTs**
 
 We also create a function `sellArt` that allows NFT owners to list their NFT for sale at a specified price. This function uses the `onlyArtOwner` modifier and transfers the NFT to the contract.
 
@@ -265,7 +265,7 @@ function sellArt(uint256 _Id, uint _price) external onlyArtOwner(_Id) {
 }
 ```
 
-__Canceling NFT sales__
+**Canceling NFT sales**
 
 Next we create a function `cancelArtSale` that allows NFT owners to cancel the sale of their NFT. This function also uses the `onlyArtOwner` modifier and transfers the NFT back to the owner.
 
@@ -279,7 +279,7 @@ Next we create a function `cancelArtSale` that allows NFT owners to cancel the s
 }
 ```
 
-__Buying NFTs__
+**Buying NFTs**
 
 Then we create a function `buyArt` that allows users to purchase NFTs. This function checks that the NFT exists, the buyer has enough funds, the NFT is for sale, and the buyer is not the seller. The function then transfers the funds and updates the NFT's ownership and sale status.
 
@@ -297,7 +297,7 @@ function buyArt(uint _Id) external payable {
 }
 ```
 
-__Utility functions__
+**Utility functions**
 
 Finally, we create utility functions `totalSupply`, `getArt`, and `getAllArts` to retrieve information about the total supply of NFTs, details of a specific NFT, and the total number of arts, respectively.
 
@@ -352,7 +352,7 @@ Configure your `hardhat.config` file to look like this to enable hardhat to depl
 
 ```javascript
 require("@nomicfoundation/hardhat-toolbox");
-require('dotenv').config({path: '.env'});
+require("dotenv").config({ path: ".env" });
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -371,13 +371,12 @@ module.exports = {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
       chainId: 44787,
     },
   },
 };
-
 ```
 
 Next let's create a script to deploy the smart contract.
@@ -388,9 +387,8 @@ Navigate to the script folder to find the `deploy.js` file
 const hre = require("hardhat");
 
 async function main() {
-  const NAME = "AI Generated NFT"
-  const SYMBOL = "AINFT"
- 
+  const NAME = "AI Generated NFT";
+  const SYMBOL = "AINFT";
 
   const MyNFT = await hre.ethers.getContractFactory("MyNFT");
   const myNFT = await MyNFT.deploy(NAME, SYMBOL);
@@ -428,8 +426,6 @@ main()
     console.error(error);
     process.exit(1);
   });
-
-
 ```
 
 The script above will deploy the smart contract and create a contract folder for the ABI and contract address of the smart contract.
@@ -442,7 +438,7 @@ You should see something like this in the terminal
 
 `MyNFT deployed to: 0x49F39D9531B826826EDc7066161F20570105AFb1`
 
-__App.js File__
+**App.js File**
 
 the completed code will look like this
 
@@ -450,32 +446,29 @@ the completed code will look like this
 import Web3 from "web3";
 import { newKitFromWeb3 } from "@celo/contractkit";
 import { useState, useEffect, useCallback } from "react";
-import axios from 'axios';
-import { NFTStorage, File } from 'nft.storage'
+import axios from "axios";
+import { NFTStorage, File } from "nft.storage";
 
-import Spinner from 'react-bootstrap/Spinner';
-
+import Spinner from "react-bootstrap/Spinner";
 
 //abis
-import MyNFTAbi from './contracts/MyNFT.json'
-import MyNFTAddress from './contracts/MyNFT-address.json'
+import MyNFTAbi from "./contracts/MyNFT.json";
+import MyNFTAddress from "./contracts/MyNFT-address.json";
 
 // Components
-import Marketplace from './components/marketplace.js';
-import Home from './components/Home.js';
+import Marketplace from "./components/marketplace.js";
+import Home from "./components/Home.js";
 
 const ERC20_DECIMALS = 18;
 var loadingText;
 
 function App() {
-
   const [contract, setContract] = useState(null);
   const [address, setAddress] = useState(null);
   const [kit, setKit] = useState(null);
   const [cUSDBalance, setcUSDBalance] = useState(0);
-  const [arts, setArts] = useState([])
+  const [arts, setArts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
- 
 
   const connectToWallet = async () => {
     if (window.celo) {
@@ -503,199 +496,179 @@ function App() {
       const balance = await kit.getTotalBalance(address);
       const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
 
-      const contract = new kit.web3.eth.Contract(MyNFTAbi.abi, MyNFTAddress.MyNFT);
+      const contract = new kit.web3.eth.Contract(
+        MyNFTAbi.abi,
+        MyNFTAddress.MyNFT
+      );
       setContract(contract);
       setcUSDBalance(USDBalance);
-      
     } catch (error) {
       console.log(error);
     }
   }, [address, kit]);
 
-
-
   const createAndMint = async (_name, _description) => {
-
     if (_name === "" || _description === "") {
-      window.alert("Please provide a name and description")
-      return
+      window.alert("Please provide a name and description");
+      return;
     }
 
-      try{
-        setIsLoading(true);
-        loadingText = "Creating and Minting Art......" 
-    // Call AI API to generate a image based on description
-    const imageData = await createImage(_name, _description);
-  
-    if(imageData){
-    const url = await uploadToIpfs(imageData, _name, _description)
-    console.log(url);
+    try {
+      setIsLoading(true);
+      loadingText = "Creating and Minting Art......";
+      // Call AI API to generate a image based on description
+      const imageData = await createImage(_name, _description);
 
-    //Mint NFT
-    await mintImage(url);
+      if (imageData) {
+        const url = await uploadToIpfs(imageData, _name, _description);
+        console.log(url);
+
+        //Mint NFT
+        await mintImage(url);
+      }
+
+      getArts();
+    } catch (error) {
+      console.error("Error creating and minting NFT:", error);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    getArts()
-  }catch (error) {
-    console.error("Error creating and minting NFT:", error);
-  } finally {
-    setIsLoading(false);
-  }
-};
-
-
-
-const createImage = async (_name, _description) => {
-  //  setMessage("Generating Image...")
+  const createImage = async (_name, _description) => {
+    //  setMessage("Generating Image...")
 
     // You can replace this with different model API's
-    const URL = `https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2`
+    const URL = `https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2`;
 
     // Send the request
     const response = await axios({
       url: URL,
-      method: 'POST',
+      method: "POST",
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_HUGGING_FACE_API_KEY}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       data: JSON.stringify({
-        inputs: _description, options: { wait_for_model: true },
+        inputs: _description,
+        options: { wait_for_model: true },
       }),
-      responseType: 'arraybuffer',
-    })
+      responseType: "arraybuffer",
+    });
 
-    const data = response.data
-   // step 2
-    return data
-  }
+    const data = response.data;
+    // step 2
+    return data;
+  };
 
   const mintImage = async (tokenURI) => {
     //setMessage("Waiting for Mint...")
-     await contract.methods.mintArt(tokenURI)
-    .send({ from: address });
-  }
+    await contract.methods.mintArt(tokenURI).send({ from: address });
+  };
 
-  
-
-const getArts = async () => {
-  try {
-    const nfts = [];
-    const nftsLength = await contract.methods
-      .getAllArts()
-      .call();
-    // contract starts minting from index 1
-    for (let i = 1; i <= Number(nftsLength); i++) {
-      const nft = new Promise(async (resolve) => {
-        const art = await contract.methods
-          .getArt(i)
-          .call();
-        const res = await contract.methods.tokenURI(i).call();
-        const meta = await fetchNftMeta(res);
-        resolve({
-          index: i,
-          tokenId: art.tokenId,
-          price: art.price,
-          seller: art.seller,
-          forSale: art.forSale,
-          name: meta.data.name,
-          image: meta.data.image,
-          description: meta.data.description,
+  const getArts = async () => {
+    try {
+      const nfts = [];
+      const nftsLength = await contract.methods.getAllArts().call();
+      // contract starts minting from index 1
+      for (let i = 1; i <= Number(nftsLength); i++) {
+        const nft = new Promise(async (resolve) => {
+          const art = await contract.methods.getArt(i).call();
+          const res = await contract.methods.tokenURI(i).call();
+          const meta = await fetchNftMeta(res);
+          resolve({
+            index: i,
+            tokenId: art.tokenId,
+            price: art.price,
+            seller: art.seller,
+            forSale: art.forSale,
+            name: meta.data.name,
+            image: meta.data.image,
+            description: meta.data.description,
+          });
         });
-      });
-      nfts.push(nft);
-    }
-    const _nfts = await Promise.all(nfts);
-    setArts(_nfts);
-  } catch (e) {
-    console.log({ e });
-  }
-};
-
-const fetchNftMeta = async (ipfsUrl) => {
-  try {
-    if(!ipfsUrl) return null;
-    const meta = await axios.get(ipfsUrl);
-return meta;
-  } catch (e) {
-    console.log({ e });
-  }
-};
-
-const uploadToIpfs = async (imageData, _name, _description) => {
-
-  // Create instance to NFT.Storage
-  const nftstorage = new NFTStorage({ token: process.env.REACT_APP_NFT_STORAGE_API_KEY })
-
-  // Send request to store image
-  const { ipnft } = await nftstorage.store({
-    image: new File([imageData], "image.jpeg", { type: "image/jpeg" }),
-    name: _name,
-    description: _description,
-  })
-
-  // Save the URL
-  const url = `https://ipfs.io/ipfs/${ipnft}/metadata.json`
-  return url;
-};
-
-const sellArt = async (_tokenId, _price) => {
-
-  try {
-    setIsLoading(true);
-    loadingText = "Setting price to sell Art......";
-    await contract.methods
-      .sellArt(_tokenId, _price)
-      .send({ from: address });
-    getArts();
-  } catch (error) {
-    alert(error);
-  }finally {
-    setIsLoading(false);
-  }
-};
-
-const cancel = async (_tokenId) => {
-  try {
-    setIsLoading(true)
-    loadingText="Canceling Art Sale........";
-    await contract.methods
-      .cancelArtSale(_tokenId)
-      .send({ from: address });
-    getArts();
-  } catch (error) {
-    alert(error);
-  }finally {
-    setIsLoading(false);
-  }
-};
-
-const buyArt = async (tokenId) => {
-  
-      try {
-       setIsLoading(true);
-       loadingText = "Buying and transfering NFT Art.....";
-        const listing = await contract.methods
-          .getArt(tokenId)
-          .call();
-        await contract.methods
-          .buyArt(tokenId)
-          .send({ from: address, value: listing.price });
-      } catch (error) {
-        console.log({ error });
-      }finally {
-        setIsLoading(false);
+        nfts.push(nft);
       }
-  
-};
+      const _nfts = await Promise.all(nfts);
+      setArts(_nfts);
+    } catch (e) {
+      console.log({ e });
+    }
+  };
 
+  const fetchNftMeta = async (ipfsUrl) => {
+    try {
+      if (!ipfsUrl) return null;
+      const meta = await axios.get(ipfsUrl);
+      return meta;
+    } catch (e) {
+      console.log({ e });
+    }
+  };
 
+  const uploadToIpfs = async (imageData, _name, _description) => {
+    // Create instance to NFT.Storage
+    const nftstorage = new NFTStorage({
+      token: process.env.REACT_APP_NFT_STORAGE_API_KEY,
+    });
+
+    // Send request to store image
+    const { ipnft } = await nftstorage.store({
+      image: new File([imageData], "image.jpeg", { type: "image/jpeg" }),
+      name: _name,
+      description: _description,
+    });
+
+    // Save the URL
+    const url = `https://ipfs.io/ipfs/${ipnft}/metadata.json`;
+    return url;
+  };
+
+  const sellArt = async (_tokenId, _price) => {
+    try {
+      setIsLoading(true);
+      loadingText = "Setting price to sell Art......";
+      await contract.methods.sellArt(_tokenId, _price).send({ from: address });
+      getArts();
+    } catch (error) {
+      alert(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const cancel = async (_tokenId) => {
+    try {
+      setIsLoading(true);
+      loadingText = "Canceling Art Sale........";
+      await contract.methods.cancelArtSale(_tokenId).send({ from: address });
+      getArts();
+    } catch (error) {
+      alert(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const buyArt = async (tokenId) => {
+    try {
+      setIsLoading(true);
+      loadingText = "Buying and transfering NFT Art.....";
+      const listing = await contract.methods.getArt(tokenId).call();
+      await contract.methods
+        .buyArt(tokenId)
+        .send({ from: address, value: listing.price });
+    } catch (error) {
+      console.log({ error });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-   connectToWallet();
-
-  }, [])
+    connectToWallet();
+  }, []);
 
   useEffect(() => {
     if (kit && address) {
@@ -710,18 +683,16 @@ const buyArt = async (tokenId) => {
   }, [contract]);
 
   return (
-    <div className='App'>
-       {isLoading && (
-      <div className='spinner-container'>
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'>Loading...</span>
-        </Spinner>
-        <p className='spinner-text'>{loadingText}</p>
-      </div>
-    )}
+    <div className="App">
+      {isLoading && (
+        <div className="spinner-container">
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+          <p className="spinner-text">{loadingText}</p>
+        </div>
+      )}
 
-    
-      
       <Home cUSDBalance={cUSDBalance} createAndMint={createAndMint} />
       <Marketplace
         arts={arts}
@@ -735,7 +706,6 @@ const buyArt = async (tokenId) => {
 }
 
 export default App;
-
 ```
 
 Now lets break down the components
@@ -746,332 +716,319 @@ First we import all the neccesary libraries and components that we will be needi
 import Web3 from "web3";
 import { newKitFromWeb3 } from "@celo/contractkit";
 import { useState, useEffect, useCallback } from "react";
-import axios from 'axios';
-import { NFTStorage, File } from 'nft.storage'
-import Spinner from 'react-bootstrap/Spinner';
+import axios from "axios";
+import { NFTStorage, File } from "nft.storage";
+import Spinner from "react-bootstrap/Spinner";
 
 //abis
-import MyNFTAbi from './contracts/MyNFT.json'
-import MyNFTAddress from './contracts/MyNFT-address.json'
+import MyNFTAbi from "./contracts/MyNFT.json";
+import MyNFTAddress from "./contracts/MyNFT-address.json";
 
 // Components
-import Marketplace from './components/marketplace.js';
-import Home from './components/Home.js';
+import Marketplace from "./components/marketplace.js";
+import Home from "./components/Home.js";
 ```
 
 Then we use the useState hook to define some state variables — `contract`, `address`, `kit`, `cUSDBalance`, `arts`, and `isLoading` — that will be used throughout the code.
 
 ```javascript
 const [contract, setContract] = useState(null);
-  const [address, setAddress] = useState(null);
-  const [kit, setKit] = useState(null);
-  const [cUSDBalance, setcUSDBalance] = useState(0);
-  const [arts, setArts] = useState([])
-  const [isLoading, setIsLoading] = useState(false);
+const [address, setAddress] = useState(null);
+const [kit, setKit] = useState(null);
+const [cUSDBalance, setcUSDBalance] = useState(0);
+const [arts, setArts] = useState([]);
+const [isLoading, setIsLoading] = useState(false);
 ```
 
 Next, we create the `connectToWallet` function, which enables the user to connect to their wallet. This function uses the window.celo object, provided by the Celo wallet, to access the user’s address and create a Web3 instance using their address. This Web3 instance is then used to create a `ContractKit` instance and set the user’s address as the default account.
 
 ```javascript
 const connectToWallet = async () => {
-    if (window.celo) {
-      try {
-        await window.celo.enable();
-        const web3 = new Web3(window.celo);
-        let kit = newKitFromWeb3(web3);
-
-        const accounts = await kit.web3.eth.getAccounts();
-        const user_address = accounts[0];
-        kit.defaultAccount = user_address;
-
-        await setAddress(user_address);
-        await setKit(kit);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      alert("Error Occurred");
-    }
-  };
-
-```
-
- We then call the `getBalance` function, which uses the `ContractKit` instance to get the user’s cUSD balance and create a Contract instance for the MyNFT contract.
-
- ```javascript
- const getBalance = useCallback(async () => {
+  if (window.celo) {
     try {
-      const balance = await kit.getTotalBalance(address);
-      const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+      await window.celo.enable();
+      const web3 = new Web3(window.celo);
+      let kit = newKitFromWeb3(web3);
 
-      const contract = new kit.web3.eth.Contract(MyNFTAbi.abi, MyNFTAddress.MyNFT);
-      setContract(contract);
-      setcUSDBalance(USDBalance);
-      
+      const accounts = await kit.web3.eth.getAccounts();
+      const user_address = accounts[0];
+      kit.defaultAccount = user_address;
+
+      await setAddress(user_address);
+      await setKit(kit);
     } catch (error) {
       console.log(error);
     }
-  }, [address, kit]);
- ```
+  } else {
+    alert("Error Occurred");
+  }
+};
+```
+
+We then call the `getBalance` function, which uses the `ContractKit` instance to get the user’s cUSD balance and create a Contract instance for the MyNFT contract.
+
+```javascript
+const getBalance = useCallback(async () => {
+  try {
+    const balance = await kit.getTotalBalance(address);
+    const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+
+    const contract = new kit.web3.eth.Contract(
+      MyNFTAbi.abi,
+      MyNFTAddress.MyNFT
+    );
+    setContract(contract);
+    setcUSDBalance(USDBalance);
+  } catch (error) {
+    console.log(error);
+  }
+}, [address, kit]);
+```
 
 The `createAndMint` function is used to create and mint an NFT. It calls the `createImage`, `uploadToIpfs`, and `mintImage` functions to generate an image based on the name and description provided, upload the image to IPFS (NFT.Storage), and mint an NFT with the uploaded image.
 
- ```javascript
+```javascript
 onst createAndMint = async (_name, _description) => {
 
-    if (_name === "" || _description === "") {
-      window.alert("Please provide a name and description")
-      return
-    }
+   if (_name === "" || _description === "") {
+     window.alert("Please provide a name and description")
+     return
+   }
 
-      try{
-        setIsLoading(true);
-        loadingText = "Creating and Minting Art......" 
-    // Call AI API to generate a image based on description
-    const imageData = await createImage(_name, _description);
-  
-    if(imageData){
-    const url = await uploadToIpfs(imageData, _name, _description)
-    console.log(url);
+     try{
+       setIsLoading(true);
+       loadingText = "Creating and Minting Art......"
+   // Call AI API to generate a image based on description
+   const imageData = await createImage(_name, _description);
 
-    //Mint NFT
-    await mintImage(url);
-    }
+   if(imageData){
+   const url = await uploadToIpfs(imageData, _name, _description)
+   console.log(url);
 
-    getArts()
-  }catch (error) {
-    console.error("Error creating and minting NFT:", error);
-  } finally {
-    setIsLoading(false);
-  }
+   //Mint NFT
+   await mintImage(url);
+   }
+
+   getArts()
+ }catch (error) {
+   console.error("Error creating and minting NFT:", error);
+ } finally {
+   setIsLoading(false);
+ }
 };
- ```
+```
 
- The `createImage` function is used to generate an image based on the `name` and `description` provided, using the `HuggingFace` AI API.
+The `createImage` function is used to generate an image based on the `name` and `description` provided, using the `HuggingFace` AI API.
 
- ```javascript
+```javascript
 const createImage = async (_name, _description) => {
+  // You can replace this with different model API's
+  const URL = `https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2`;
 
+  const response = await axios({
+    url: URL,
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.REACT_APP_HUGGING_FACE_API_KEY}`,
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    data: JSON.stringify({
+      inputs: _description,
+      options: { wait_for_model: true },
+    }),
+    responseType: "arraybuffer",
+  });
 
-    // You can replace this with different model API's
-    const URL = `https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2`
+  const data = response.data;
 
-   
-    const response = await axios({
-      url: URL,
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_HUGGING_FACE_API_KEY}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      data: JSON.stringify({
-        inputs: _description, options: { wait_for_model: true },
-      }),
-      responseType: 'arraybuffer',
-    })
-
-    const data = response.data
-
-    return data
-  }
- ```
+  return data;
+};
+```
 
 The `mintImage` function is used to mint an NFT with the url of the uploaded image.
 
-  ```javascript
+```javascript
 onst mintImage = async (tokenURI) => {
- 
-     await contract.methods.mintArt(tokenURI)
-    .send({ from: address });
-  }
-  
- ```
 
- The `getArts` function is used to retrieve all the NFTs that have been minted.
+   await contract.methods.mintArt(tokenURI)
+  .send({ from: address });
+}
 
-  ```javascript
+```
+
+The `getArts` function is used to retrieve all the NFTs that have been minted.
+
+```javascript
 onst getArts = async () => {
-  try {
-    const nfts = [];
-    const nftsLength = await contract.methods
-      .getAllArts()
-      .call();
-    // contract starts minting from index 1
-    for (let i = 1; i <= Number(nftsLength); i++) {
-      const nft = new Promise(async (resolve) => {
-        const art = await contract.methods
-          .getArt(i)
-          .call();
-        const res = await contract.methods.tokenURI(i).call();
-        const meta = await fetchNftMeta(res);
-        resolve({
-          index: i,
-          tokenId: art.tokenId,
-          price: art.price,
-          seller: art.seller,
-          forSale: art.forSale,
-          name: meta.data.name,
-          image: meta.data.image,
-          description: meta.data.description,
-        });
+try {
+  const nfts = [];
+  const nftsLength = await contract.methods
+    .getAllArts()
+    .call();
+  // contract starts minting from index 1
+  for (let i = 1; i <= Number(nftsLength); i++) {
+    const nft = new Promise(async (resolve) => {
+      const art = await contract.methods
+        .getArt(i)
+        .call();
+      const res = await contract.methods.tokenURI(i).call();
+      const meta = await fetchNftMeta(res);
+      resolve({
+        index: i,
+        tokenId: art.tokenId,
+        price: art.price,
+        seller: art.seller,
+        forSale: art.forSale,
+        name: meta.data.name,
+        image: meta.data.image,
+        description: meta.data.description,
       });
-      nfts.push(nft);
-    }
-    const _nfts = await Promise.all(nfts);
-    setArts(_nfts);
-  } catch (e) {
-    console.log({ e });
+    });
+    nfts.push(nft);
   }
+  const _nfts = await Promise.all(nfts);
+  setArts(_nfts);
+} catch (e) {
+  console.log({ e });
+}
 };
- ```
+```
 
- The `fetchNftMeta` function is used to fetch the `metadata` of an NFT.
+The `fetchNftMeta` function is used to fetch the `metadata` of an NFT.
 
-  ```javascript
+```javascript
 const fetchNftMeta = async (ipfsUrl) => {
   try {
-    if(!ipfsUrl) return null;
+    if (!ipfsUrl) return null;
     const meta = await axios.get(ipfsUrl);
-return meta;
+    return meta;
   } catch (e) {
     console.log({ e });
   }
 };
- ```
+```
 
 The `uploadToIpfs` function is used to upload the generated image to IPFS (NFT.Storage).
 
-  ```javascript
+```javascript
 const uploadToIpfs = async (imageData, _name, _description) => {
-
   // Create instance to NFT.Storage
-  const nftstorage = new NFTStorage({ token: process.env.REACT_APP_NFT_STORAGE_API_KEY })
+  const nftstorage = new NFTStorage({
+    token: process.env.REACT_APP_NFT_STORAGE_API_KEY,
+  });
 
   // Send request to store image
   const { ipnft } = await nftstorage.store({
     image: new File([imageData], "image.jpeg", { type: "image/jpeg" }),
     name: _name,
     description: _description,
-  })
+  });
 
-  const url = `https://ipfs.io/ipfs/${ipnft}/metadata.json`
+  const url = `https://ipfs.io/ipfs/${ipnft}/metadata.json`;
   return url;
 };
-
- ```
+```
 
 The `sellArt` function is used to set the price for a specific NFT Art and also to toggle the forsale property of an NFT Art.
 
-  ```javascript
+```javascript
 const sellArt = async (_tokenId, _price) => {
-
   try {
     setIsLoading(true);
     loadingText = "Setting price to sell Art......";
-    await contract.methods
-      .sellArt(_tokenId, _price)
-      .send({ from: address });
+    await contract.methods.sellArt(_tokenId, _price).send({ from: address });
     getArts();
   } catch (error) {
     alert(error);
-  }finally {
+  } finally {
     setIsLoading(false);
   }
 };
- ```
+```
 
 The `cancel` function is used to cancel the sale of an NFT.
 
-  ```javascript
+```javascript
 const cancel = async (_tokenId) => {
   try {
-    setIsLoading(true)
-    loadingText="Canceling Art Sale........";
-    await contract.methods
-      .cancelArtSale(_tokenId)
-      .send({ from: address });
+    setIsLoading(true);
+    loadingText = "Canceling Art Sale........";
+    await contract.methods.cancelArtSale(_tokenId).send({ from: address });
     getArts();
   } catch (error) {
     alert(error);
-  }finally {
+  } finally {
     setIsLoading(false);
   }
 };
- ```
+```
 
- The `buyArt` function is used to buy an NFT and transfer ownership of the NFT to the buyer once the transaction is successfull.
+The `buyArt` function is used to buy an NFT and transfer ownership of the NFT to the buyer once the transaction is successfull.
 
 ```javascript
 const buyArt = async (tokenId) => {
-  
-      try {
-       setIsLoading(true);
-       loadingText = "Buying and transfering NFT Art.....";
-        const listing = await contract.methods
-          .getArt(tokenId)
-          .call();
-        await contract.methods
-          .buyArt(tokenId)
-          .send({ from: address, value: listing.price });
-      } catch (error) {
-        console.log({ error });
-      }finally {
-        setIsLoading(false);
-      }
-  
+  try {
+    setIsLoading(true);
+    loadingText = "Buying and transfering NFT Art.....";
+    const listing = await contract.methods.getArt(tokenId).call();
+    await contract.methods
+      .buyArt(tokenId)
+      .send({ from: address, value: listing.price });
+  } catch (error) {
+    console.log({ error });
+  } finally {
+    setIsLoading(false);
+  }
 };
- ```
+```
 
- The `useEffect` hook is used to connect to the wallet and retrieve the user's balance when the component is mounted, and fetch all the `NFTs` when the contract is set.
+The `useEffect` hook is used to connect to the wallet and retrieve the user's balance when the component is mounted, and fetch all the `NFTs` when the contract is set.
 
-  ```javascript
+```javascript
 useEffect(() => {
-   connectToWallet();
+  connectToWallet();
+}, []);
 
-  }, [])
+useEffect(() => {
+  if (kit && address) {
+    getBalance();
+  }
+}, [kit, address, getBalance]);
 
-  useEffect(() => {
-    if (kit && address) {
-      getBalance();
-    }
-  }, [kit, address, getBalance]);
-
-  useEffect(() => {
-    if (contract) {
-      getArts(contract);
-    }
-  }, [contract]);
-
- ```
+useEffect(() => {
+  if (contract) {
+    getArts(contract);
+  }
+}, [contract]);
+```
 
 And then finally, we render all our components and also added some logic for our loader spinner.
 
-  ```javascript
+```javascript
 return (
-    <div className='App'>
-       {isLoading && (
-      <div className='spinner-container'>
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'>Loading...</span>
+  <div className="App">
+    {isLoading && (
+      <div className="spinner-container">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </Spinner>
-        <p className='spinner-text'>{loadingText}</p>
+        <p className="spinner-text">{loadingText}</p>
       </div>
     )}
-      <Home cUSDBalance={cUSDBalance} createAndMint={createAndMint} />
-      <Marketplace
-        arts={arts}
-        sellArt={sellArt}
-        cancel={cancel}
-        buyArt={buyArt}
-        walletAddress={address}
-      />
-    </div>
-  );
-
+    <Home cUSDBalance={cUSDBalance} createAndMint={createAndMint} />
+    <Marketplace
+      arts={arts}
+      sellArt={sellArt}
+      cancel={cancel}
+      buyArt={buyArt}
+      walletAddress={address}
+    />
+  </div>
+);
 
 export default App;
- ```
+```
 
 There you have it. We have successfully interacted with our smart contract.
 
