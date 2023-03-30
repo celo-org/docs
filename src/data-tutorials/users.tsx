@@ -907,7 +907,6 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
-
     title: 'On-Chain Randomness with Celo using Subgraphs',
     description: 'This tutorial covers using Celo Randomness and Subgraph to make a simple lottery game. Users create lottery clubs with Native Coin prizes, stable tokens, or NFT Tokens.',
     preview: require('./showcase/intermediate/on-chain-randomness-with-celo-using-subgraphs.png'),
