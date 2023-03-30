@@ -2649,7 +2649,6 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
-
     title: 'Get started with CELO using Rust',
     description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
     preview: require('./showcase/beginner/get-started-with-celo-using-rust.png'),
@@ -2685,6 +2684,13 @@ const Users: User[] = [
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
 
+  {
+    title: 'Billeteras como crearlas y como fondearlas',
+    description: '¡Bienvenido a nuestro tutorial sobre cómo comenzar con su billetera digital en Celo! En este tutorial, le mostraremos cómo crear una billetera, almacenar su frase de recuperación, financiar la billetera y enviar y recibir dinero en la plataforma Celo.',
+    preview: require('./showcase/beginner/Billeteras-como-crearlas-y-como-fondearlas.png'),
+    website: 'blog/tutorials/billeteras-como-crearlas-y-como-fondearlas',
+    tags: ['celosage', 'beginner'], 
+  },
   {
     title: 'Introducing Prosperity Passport - The First Soulbound Token-Powered Web3 Identity Solution for Celo Blockchain',
     description: 'Introducing Prosperity Passport - a groundbreaking Web3 identity solution for Celo blockchain.',
