@@ -93,13 +93,13 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 ### Valora
 1. Descarga la App de su [sitio web](https://valoraapp.com/) o de las tiendas AppStore o PlayStore.
 
-![image](Images/Valora/Valora1.jpeg)
+![image](Images/Valora/VALORA1.jpeg)
 
 2. Una vez que hayas descargado Valora, puedes abrirlo e iniciar el proceso de creación de tu cuenta Valora:
 
     a. Debes introducir un nombre y número de teléfono.
 
-    ![image](Images/Valora/Valora2.jpeg) 
+    ![image](Images/Valora/VALORA2.jpeg) 
 
     b. Crea un PIN (Este solo es usado de manera local en su dispositivo para evitar accesos no autorizados).
 
@@ -107,7 +107,7 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 
     c. Conecta tu número de teléfono
 
-    ![image](Images/Valora/Valora3.jpeg)
+    ![image](Images/Valora/VALORA3.jpeg)
 
     - Deberás conectar tu propio número de teléfono si deseas enviar fondos directamente al número de teléfono de tus amigos y familiares. (Conectar tu número de teléfono en Valora verifica el vínculo entre tu número de teléfono y tu billetera Valora. Esto te permite enviar fondos a (y recibir fondos de) cualquier persona simplemente utilizando su número de teléfono.)
 
@@ -117,13 +117,13 @@ Existen algunas billeteras que fueron construidas específicamente para la red d
 
     - Configuralo antes de ingresar fondos en su cuenta. Consulte las instrucciones a continuación.
 
-    ![image](Images/Valora/Valora5.jpeg)
+    ![image](Images/Valora/VALORA5.jpeg)
 
     - Tu frase de recuperación es una frase semilla que permite a tu monedero billetera tu clave privada. Es la única forma de acceder a tu cuenta de Valora. Sin la frase de recuperación, nadie (ni siquiera el equipo de Valora) puede acceder al saldo de tu cuenta.
     
 3. Ahora que tienes tu cuenta puedes recibir fondos o recargar tu cuenta con alguna de las opciones que tienes disponibles en la App.
 
-![image](Images/Valora/Valora6.jpeg)
+![image](Images/Valora/VALORA6.jpeg)
 
 ## Celo Wallet
 Celo Wallet es una billetera móvil segura y fácil de usar diseñada para interactuar con la red Celo Blockchain. Permite a los usuarios administrar, almacenar y realizar transacciones con tokens nativos de Celo, como CELO y Celo Dollars (cUSD), directamente desde sus dispositivos móviles o navegadores.
