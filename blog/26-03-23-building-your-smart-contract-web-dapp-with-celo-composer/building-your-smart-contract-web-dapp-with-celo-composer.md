@@ -2,11 +2,11 @@
 title: Building Your Smart Contract Web Dapp with Celo-Composer
 description: Learn how to initialize a Hardhat and React project using Celo-composer.
 authors:
-- name: Joshua Moses
-  title: Frontend Web Developer | Technical Writer
-  url: https://github.com/J0shcodes
-  image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [solidity, react, celo, smartcontract, nextjs, intermediate, composer, celosage]
+  - name: Joshua Moses
+    title: Frontend Web Developer | Technical Writer
+    url: https://github.com/J0shcodes
+    image_url: https://avatars.githubusercontent.com/u/7295729?v=4
+tags: [solidity,react,celo,smartcontract,nextjs,intermediate,composer,celosage,]
 hide_table_of_contents: true
 slug: /tutorials/building-your-first-smart-contract-web-dapp-with-celo-composer
 ---
@@ -48,7 +48,6 @@ npx @celo/celo-composer create
 This will prompt you to select the framework and template you want to use. For the purpose of this tutorial, select React as the framework you will be using.
 
 ![image](https://user-images.githubusercontent.com/71826391/226510672-8845faf7-8252-4e98-a748-53a96c6ce9fc.png)
-
 
 Once you have selected the framework, it will ask you to select the web3 library you will be using for the react-app. For the purpose of this tutorial, we will be using react-celo as our preferred web3 library.
 
@@ -100,7 +99,7 @@ pragma solidity >=0.8.2 <0.9.0;
 contract ImageStorage {
 
     mapping(string => string) imageUrls;
-    
+
     function addImageUrl(string memory imageTitle, string memory _imageUrl) public {
         imageUrls[imageTitle] = _imageUrl;
     }
@@ -112,7 +111,6 @@ contract ImageStorage {
 ```
 
 In the code above. we have a simple smart contract that stores an image url and returns it when a user wants. In the code, we map are mapping a string (name of the image) to a string (url of the image) and storing it in the `imageUrls` variable.
-
 
 The `addImageUrl` function takes the title of the image and its url and sets the url as a value to the image title.
 
@@ -134,7 +132,10 @@ async function main() {
 
   await deployedStorageContract.deployed();
 
-  console.log("Image Storage Contract Address:", deployedStorageContract.address);
+  console.log(
+    "Image Storage Contract Address:",
+    deployedStorageContract.address
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -145,7 +146,6 @@ main()
     console.log(error);
     process.exit(1);
   });
-
 ```
 
 Now create a `.env` in the `hardhat` folder and add your `MNEMONIC` key in the .`env` file like this.
@@ -153,6 +153,7 @@ Now create a `.env` in the `hardhat` folder and add your `MNEMONIC` key in the .
 ```jsx
 MNEMONIC=//add your wallet seed phrase here
 ```
+
 Now we will install `dotenv` package to be able to import the env file and use it in our `config`.
 
 In your terminal pointing to the will-contract folder, enter this command
@@ -164,9 +165,9 @@ yarn add dotenv
 Next, open the `hardhat.config.js` file and replace the content of the file with this code.
 
 ```js
-require("@nomicfoundation/hardhat-chai-matchers")
-require('dotenv').config({path: '.env'});
-require('hardhat-deploy');
+require("@nomicfoundation/hardhat-chai-matchers");
+require("dotenv").config({ path: ".env" });
+require("hardhat-deploy");
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
@@ -187,7 +188,7 @@ module.exports = {
   defaultNetwork: "alfajores",
   networks: {
     localhost: {
-        url: "http://127.0.0.1:7545"
+      url: "http://127.0.0.1:7545",
     },
     alfajores: {
       gasPrice: 200000000000,
@@ -195,7 +196,7 @@ module.exports = {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
       //chainId: 44787
     },
@@ -203,10 +204,10 @@ module.exports = {
       url: "https://forno.celo.org",
       accounts: {
         mnemonic: process.env.MNEMONIC,
-        path: "m/44'/52752'/0'/0"
+        path: "m/44'/52752'/0'/0",
       },
-      chainId: 42220
-    },     
+      chainId: 42220,
+    },
   },
   solidity: "0.8.4",
 };
@@ -260,13 +261,11 @@ export default App;
 
 The `_app.tsx` is responsible for rendering our UI. In the file, we import `CeloProvider` and `Alfajores` from react-celo. Then wrap the entire application with the `CeloProvider` component.
 
-
 The `defaultNetwork` props passed to the `CeloProvider` component specifies the Celo blockchain network we want to make a connection to and for this tutorial, we will be using the Alfajores network because that was where we deployed our smart contract to.
 
 The connectModal props, open a modal that prompts users to select from a variety of crypto wallet support by Celo when the connect wallet button is clicked.
 
 Still, in the react-app folder, create a new JavaScript file and name it `imageStorage.abi.js`. Then, go into your hardhat folder. Under the hardhat folder, there is an artifact folder, and in that artifact folder, there is also a contracts folder, which has an `ImageStorage.json` file. In that file, copy the `“abi”` value and paste it into the `imageStorage.abi.js` file you created like this.
-
 
 ```js
 const imageStorageAbi = [
@@ -360,8 +359,10 @@ export default function Home() {
       imageStorageContractAddress
     );
 
-    const result = await contract.methods.getImageUL(getImageTitle).call({from: address});
-    setReturnedUrl(result);   
+    const result = await contract.methods
+      .getImageUL(getImageTitle)
+      .call({ from: address });
+    setReturnedUrl(result);
   };
 
   return (
@@ -378,7 +379,9 @@ export default function Home() {
           </div>
         ) : (
           <div>
-            {message !== "" ? <div className="text-sm mb-2 text-center">{message}</div> : null}
+            {message !== "" ? (
+              <div className="text-sm mb-2 text-center">{message}</div>
+            ) : null}
             <div className="mb-5">
               <div>
                 <div className="flex justify-between">
@@ -479,14 +482,16 @@ Clicking on the Connect Wallet button opens up a modal that asks you to choose a
 In this tutorial, we learnt how to create a smart contract dapp using celo-composer. We created a basic smart contract as well as a basic Dapp to interact with our smart contract. We were able to connect a wallet to our dapp and instantiate a contract using the react-celo library.
 
 ## Next Step
+
 This is the link to the [github repo](https://github.com/J0shcodes/celo-composer-dapp) that contains the link to this tutorial if you are interested in cloning and running the code
 
 ## About the Author
 
 I am a React frontend developer with over 3 years of experience building for the web, a web3 developer, and a technical writer. Visit my [GitHub profile](https://github.com/J0shcodes) to see some of the projects I have worked on and currently working on.
 
-## Reference 
+## Reference
 
-If you wish to read more on celo-composer and react-celo check out these docs: 
+If you wish to read more on celo-composer and react-celo check out these docs:
+
 - official github page of [celo-composer](https://github.com/celo-org/celo-composer)
 - [react-celo docs](https://docs.celo.org/developer/react-celo)
