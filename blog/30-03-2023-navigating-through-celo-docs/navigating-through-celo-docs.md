@@ -131,7 +131,7 @@ Now just to give a rest to your developer side for a bit, and want to improve th
 
 1. [Basics of blockchain](https://docs.celo.org/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo) _(For clearing your fundamentals related to Blockchain and web3 stuff)_
 
-2. [Build in Public](https://docs.celo.org/blog/tutorials/build-in-public-tips-for-making-an-impact) _(This is for the tips to grow your portfolio as a developer on Twitter(Here is Celo-sage’s Twitter- Give a follow for an amazing time- twitter.com/celosages))_
+2. [Build in Public](https://docs.celo.org/blog/tutorials/build-in-public-tips-for-making-an-impact) _(This is for the tips to grow your portfolio as a developer on Twitter(Here is Celo-sage’s Twitter- Give a follow for an amazing time- [Celo-Sage Twitter](twitter.com/celosages)))_
 
 3. [Intersection of Web3 and AI](https://docs.celo.org/blog/tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3) _(The article on a hot topic that How AI can be utilized to improve the development in web3 domain)_
 
