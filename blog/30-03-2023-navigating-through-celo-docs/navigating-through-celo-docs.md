@@ -22,6 +22,7 @@ In this article, I will be helping you to navigate your way, so that you can uti
 ### Let’s get started
 
 So as you search on the internet for the word CELO, The first link you will see will be celo.org after opening that you can see what CELO is doing
+
 ![image](images/image1.png)
 
 As you scroll down you will be able to see the beautiful animations which will help you to understand the three main achievements of the CELO
@@ -31,6 +32,7 @@ After that, you will be able to see what can be done with CELO
 After that, there are many beautiful sections that you can browse through to see their vision, explore more about the ecosystem, and more
 
 Now after that, you will be able to see this section
+
 ![image2](images/image2.png)
 
 In hackathons sections, you will be able to see the events of CELO,
@@ -50,6 +52,7 @@ This will be the main website that you want to add to your bookmark section, as 
 You must start with the CELO composer CLI, as it allows you to quickly build, deploy and iterate on dApps using CELO
 
 And you can learn more about it here with this link
+
 - [celo-composer](https://github.com/celo-org/celo-composer)
 - [celo-composer-gitbook](https://celo-composer.gitbook.io/docs/)
 
@@ -107,7 +110,7 @@ Filters-Filters are nothing but something exactly like tags, we authors add the 
 
 You can see that there is one toggle switch on the right side in the filters section, it is for the filters you can get a combination of filters by selecting AND, like for example someone can select smart contract and solidity.
 
-Now after completing the beginner tutorials section let's jump into the Intermediate tutorials section -[intermediate](https://docs.celo.org/tutorials?tags=intermediate)
+Now after completing the beginner tutorials section let's jump into the Intermediate tutorials section - [intermediate](https://docs.celo.org/tutorials?tags=intermediate)
 
 ![image7](images/image7.png)
 
@@ -143,6 +146,7 @@ Now here are the amazing dApps
 [dApps](https://docs.celo.org/showcase)
 
 On the home page, there is one more section, which can help you, to explore the docs with the category
+
 ![image8](images/image8.png)
 
 But here also the order which can be beneficial to you is
@@ -155,6 +159,7 @@ But here also the order which can be beneficial to you is
 Note-Keep in mind to follow this after following the above articles which are mentioned in this article
 
 After this, you can explore the providers and frameworks which support CELO, and if you think you can integrate with it, give it a go
+
 ![image9](images/image9.png)
 
 After going through this, if you feel that you can improve the docs be a contributor by joining the CELO sage program - [celo-sage](https://docs.celo.org/community/celo-sage)
@@ -162,6 +167,7 @@ After going through this, if you feel that you can improve the docs be a contrib
 Or you can submit an issue too- [Submit your issues here](https://github.com/celo-org/docs/issues/new)
 
 And after all, this, don’t forget to see the footer section of the site
+
 ![image10](images/image10.png)
 
 You can join us in discord- [discord invite](https://discord.com/invite/atBpDfqQqX)
