@@ -797,6 +797,13 @@ const Users: User[] = [
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
+    title: 'Celo blockchain protocol upgrade',
+    description: ' A step by step guide to upgrading the Celo blockchain protocol.',
+    preview: require('./showcase/intermediate/celo-blockchain-protocol-upgrade.png'),
+    website: 'blog/tutorials/celo-blockchain-protocol-upgrade',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
