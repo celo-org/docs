@@ -1038,7 +1038,7 @@ We also need to add a custom configuration file for Next.js that is not included
 To learn more about this custom added file check out this **[guide that explains more about this file](https://nextjs.org/docs/api-reference/next.config.js/introduction)** and how its used.
 :::
 
-To learn more about this file click here(https://nextjs.org/docs/api-reference/next.config.js/introduction)
+To learn more about this file [click here](https://nextjs.org/docs/api-reference/next.config.js/introduction)
 
 ```javascript
 /** @type {import('next').NextConfig} */
@@ -1818,7 +1818,7 @@ Finally, the basicAuth function is used to wrap the component, which ensures tha
 
 - **Redux**
 
-Redux is a predictable state container for JavaScript apps.To learn more about it before we proceed click here (https://redux.js.org/introduction/getting-started).This will help you to be able to install it and know its role in major applications.
+Redux is a predictable state container for JavaScript apps.To learn more about it before we proceed [click here](https://redux.js.org/introduction/getting-started).This will help you to be able to install it and know its role in major applications.
 Our redux fder has 5 files namely `actions.js`,`interactions.js`,`reducers.js`,`store.js` and `types.js`.
 Our actions.js file looks like this:
 
@@ -2530,15 +2530,17 @@ Alternatively, you can also try using a CORS proxy service such as CORS Anywhere
 I'm Tevin Isaac a blockchain developer based in Nairobi Kenya and a dacade evengelist.
 You can always Reach me here.
 
-Github:https://github.com/Tevin-Isaac
-Twitter:@isaactevin
+Github: [Link](https://github.com/Tevin-Isaac)
+Twitter: @isaactevin
 
 ## References
 
-https://docs.celo.org/developer/contractkit/
+- [Contract Kit](https://docs.celo.org/developer/contractkit/)
 
-https://docs.celo.org/
+- [Celo Docs](https://docs.celo.org/)
 
-https://dacade.org/communities/celo/courses/celo-201/learning-modules/30a4b854-6722-488f-937f-c26591b89f2e
+- [Decade Course](https://dacade.org/communities/celo/courses/celo-201/learning-modules/30a4b854-6722-488f-937f-c26591b89f2e)
+
+- [Source Code](https://github.com/Tevin-Isaac/Celo-minter-201)
 
 Thank You!! for staying onboard.
