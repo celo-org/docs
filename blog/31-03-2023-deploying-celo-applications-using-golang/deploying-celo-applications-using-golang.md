@@ -27,8 +27,7 @@ In this tutorial, we’ll be implementing a custom token on Celo with Golang, so
 
 Before we get started, make sure you have the following installed:
 
-- [Go programming language](https://go.dev/doc/) (version 1.13 or higher)<img width="1170" alt="Screenshot_2023-03-24_at_6 32 05_AM" src="https://user-images.githubusercontent.com/69091491/229016600-2d5d640b-0955-4fb0-a733-63d08414a17d.png">
-
+- [Go programming language](https://go.dev/doc/) (version 1.13 or higher)
 - [Node.js](https://nodejs.org/en/docs) (version 10 or higher)
 - [Git](https://git-scm.com/downloads)
 - Text editor (e.g. Visual Studio Code)
