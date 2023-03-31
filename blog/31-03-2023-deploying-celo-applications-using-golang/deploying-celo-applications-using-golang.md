@@ -1,3 +1,15 @@
+---
+title: Deploying Celo Applications using Golang
+description: This article could provide a tutorial on deploying Celo applications built using the Golang . It could cover topics such as setting up a Celo node, setting up the development environment, creating and deploying smart contracts, and monitoring the deployed contract activities using Celo explorer.
+authors:
+  - name: Divine-Favour
+url: https://github.com/Divine572
+tags: [celosage, intermediate, smartcontract, solidity]
+hide_table_of_contents: true
+slug: /tutorials/deploying-celo-applications-using-golang
+---
+
+![header](../../src/data-tutorials/showcase/intermediate/deploying-celo-applications-using-golang.png)
 
 ## Introduction
 
