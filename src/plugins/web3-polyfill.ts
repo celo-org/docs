@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 
-module.exports = function(context, options) {
+module.exports = function (context, options) {
   return {
     name: "web3-polyfill",
     configureWebpack(config, isServer, utils) {

@@ -1,17 +1,17 @@
 ---
 title: Using a Cloud HSM with Celo
-description: How to create a cloud HSM in Azure and connect it to celocli. 
+description: How to create a cloud HSM in Azure and connect it to celocli.
 ---
 
 # Using a Cloud HSM
 
-How to create a cloud HSM in Azure and connect it to `celocli`. 
+How to create a cloud HSM in Azure and connect it to `celocli`.
 
-___
+---
 
 ## Introduction to HSM
 
-A cloud Hardware Security Module (HSM) provides a good balance between security and accessibility. A cloud HSM can manage a Celo private key and can be used seamlessly with `celocli` and `contractkit`. Similar to a ledger device, a key in an HSM avoids the key from ever being sent over the network or stored on disk since the key can never leave the hardware boundary and all signing is performed within the HSM. To authenticate to the HSM, it's recommended to create a service principal account that has been granted access to sign with the managed keys. A cloud HSM can be a great option for managing vote signer keys, since you may want these keys to be portable but also maintain good security practices. 
+A cloud Hardware Security Module (HSM) provides a good balance between security and accessibility. A cloud HSM can manage a Celo private key and can be used seamlessly with `celocli` and `contractkit`. Similar to a ledger device, a key in an HSM avoids the key from ever being sent over the network or stored on disk since the key can never leave the hardware boundary and all signing is performed within the HSM. To authenticate to the HSM, it's recommended to create a service principal account that has been granted access to sign with the managed keys. A cloud HSM can be a great option for managing vote signer keys, since you may want these keys to be portable but also maintain good security practices.
 
 ## Create an Azure subscription
 
@@ -20,6 +20,7 @@ If you don't have an Azure subscription already, you can [create a free trial he
 ## Deploy your Azure Key Vault
 
 The Key Vault can store keys, secrets, and certificates. Permission can be specified to perform certain actions across the entire Key Vault (ex. key signing).
+
 - Search the marketplace for "Key Vault"
 - Click Create and fill out the deployment information
 - Ensure you select the Premium pricing tier for HSM support
@@ -27,8 +28,9 @@ The Key Vault can store keys, secrets, and certificates. Permission can be speci
 
 ## Create your key
 
-Next, we'll create the ECDSA key. 
-- Navigate to your newly created Key Vault and click on the `Keys` section. 
+Next, we'll create the ECDSA key.
+
+- Navigate to your newly created Key Vault and click on the `Keys` section.
 - Click on "Generate/Import"
 - Select "EC-HSM"
 - Select "SECP256K1"
@@ -100,14 +102,14 @@ Your Key Vault address will show up under "Local Addresses". If you'd like to us
 To leverage your HSM keys in `contractkit`, first create an `AzureHSMWallet` object and use it to create a `ContractKit` object with `newKitFromWeb3`. Note that `AzureHSMWallet` expects AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID environment variables to be specified.
 
 ```js
-import { ContractKit, newKitFromWeb3 } from '@celo/contractkit'
-import { AzureHSMWallet } from '@celo/wallet-hsm-azure'
+import { ContractKit, newKitFromWeb3 } from "@celo/contractkit";
+import { AzureHSMWallet } from "@celo/wallet-hsm-azure";
 
-const azureVaultName = "AZURE-VAULT-NAME"
-const akvWallet = await new AzureHSMWallet(azureVaultName)
-await akvWallet.init()
-console.log(`Found addresses: ${await akvWallet.getAccounts()}`)
-const contractKit = newKitFromWeb3(this.web3, akvWallet)
+const azureVaultName = "AZURE-VAULT-NAME";
+const akvWallet = await new AzureHSMWallet(azureVaultName);
+await akvWallet.init();
+console.log(`Found addresses: ${await akvWallet.getAccounts()}`);
+const contractKit = newKitFromWeb3(this.web3, akvWallet);
 ```
 
 ## Summary

@@ -7,7 +7,7 @@ description: Overview of MetaMask and how you can get started with MetaMask on C
 
 Overview of MetaMask and how you can get started with MetaMask on Celo.
 
-___
+---
 
 :::danger
 
@@ -23,12 +23,12 @@ Since Celo network's [Donut Hardfork](https://github.com/celo-org/celo-proposals
 
 ### **For end users:**
 
-* [Configure a MetaMask Desktop or Web Wallet to Work with Celo](/wallet/metamask/setup)
-* [Setup a Ledger to Work with MetaMask to Work With Celo](/wallet/ledger/setup)
+- [Configure a MetaMask Desktop or Web Wallet to Work with Celo](/wallet/metamask/setup)
+- [Setup a Ledger to Work with MetaMask to Work With Celo](/wallet/ledger/setup)
 
 ### **For developers:**
 
-* [Setup MetaMask to Work with Your dApp](/wallet/metamask/setup)
+- [Setup MetaMask to Work with Your dApp](/wallet/metamask/setup)
 
 ## **Things to Keep in Mind**
 
@@ -38,10 +38,10 @@ MetaMask does not natively support Celo compatibility and some features won’t 
 
 Celo and Ethereum use different derivation paths for generating seed phrases. Because MetaMask does not let you specify a derivation path to use:
 
-  * You can't import an existing Celo account into the MetaMask wallet using its seed phrase, as you'd get the Ethereum version of it. Instead, you have to import it using the associated private key.
-  * If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/)) you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
-  * See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](/wallet/metamask/import)
-  * See these guides if you accidentally sent [ETH to CELO addresses](/holder/recover/from-celo-address) or [CELO to ETH addresses.](/holder/recover/from-eth-address)
+- You can't import an existing Celo account into the MetaMask wallet using its seed phrase, as you'd get the Ethereum version of it. Instead, you have to import it using the associated private key.
+- If you want to import the Celo account you made on MetaMask to a different Celo wallet (e.g. [Valora](https://valoraapp.com/)) you'd have to import it using the private key itself, NOT the seed phrase that MetaMask gives you.
+- See this guide if you would like to [Import a Valora Account to MetaMask with a Private Key](/wallet/metamask/import)
+- See these guides if you accidentally sent [ETH to CELO addresses](/holder/recover/from-celo-address) or [CELO to ETH addresses.](/holder/recover/from-eth-address)
 
 ## **Gas Fees Require CELO**
 

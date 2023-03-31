@@ -1,5 +1,5 @@
 ---
-title: 'Deploy a Contract on Celo (local node)'
+title: "Deploy a Contract on Celo (local node)"
 description: How to deploy your own smart contracts onto Celo from a local node.
 ---
 
@@ -7,13 +7,14 @@ description: How to deploy your own smart contracts onto Celo from a local node.
 
 How to deploy your own smart contracts onto a Celo local node.
 
-___
+---
 
 :::tip
 
 As Celo is fully EVM compliant, we inherit the rich developer ecosystem and tooling of the Ethereum community. We will be deploying a typical hello world smart contract onto the Alfajores testnet with typical Ethereum tools like Truffle and Ganache.
 
 :::
+
 ## Setup
 
 This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-npm) setup (Node.js v12.x). If so, you can install truffle with:
@@ -178,7 +179,7 @@ After a few seconds of syncing (with [Celo's ultralight sync](/protocol/consensu
 docker exec celo-ultralight-node geth attach --exec 'eth.getBalance("<YOUR-ACCOUNT-ADDRESS>")'
 ```
 
-If you go to our [Alfajores Faucet Page](https://celo.org/build/faucet), you should be able to faucet your account some CELO and see your balance increase with the above command.
+If you go to our [Alfajores Faucet Page](https://faucet.celo.org), you should be able to faucet your account some CELO and see your balance increase with the above command.
 
 ### Deploy the contract
 
@@ -206,4 +207,4 @@ truffle migrate --network alfajores
 
 You can verify your contract deployment on [Blockscout](https://alfajores-blockscout.celo-testnet.org/), as well as interact with your new contract with the `truffle console --network alfajores`. Congratulations!
 
-As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo. Check out [https://celo.org/build](https://celo.org/build) for more resources!
+As you can see, all the goodies from Ethereum apply to Celo, so virtually all tutorials and other content should be easily translatable to Celo. Check out [https://celo.org/developers](https://celo.org/developers) for more resources!
