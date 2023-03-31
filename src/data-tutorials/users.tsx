@@ -2735,6 +2735,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+   {
+    title: 'Implementing a Token on Celo using Golang',
+    description: "This article could provide a step-by-step tutorial on how to implement a custom token on the Celo blockchain using the Golang SDK. It could cover topics such as defining the token's smart contract and deploying it to the Celo network. This article is for developers that want to get started with building blockchain applications using Golang on Celo.",
+    preview: require('./showcase/intermediate/implementing-a-token-on-celo-using-golang.png'),
+    website: 'blog/tutorials/implementing-a-token-on-celo-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
