@@ -1119,10 +1119,10 @@ const Users: User[] = [
     tags: ['beginner', 'mobile', 'figment'],
   },
     {
-    title: 'How to build an NFT marketplace with Next.js,ipfs,ether.js and Redux',
-    description: ' Learn how to build an nft marketplace with next.js as the framework,Ipfs for storage and Redux for state management and Hardhat for compiling',
-    preview: require('./showcase/intermediate/nft minter.png'),
-    website:'/blog/2023/03/22/How to build an NFT marketplace with Next.js,ipfs,ether.js and Redux',
+    title: 'How to build an NFT marketplace with Nextjs ipfs etherjs and Redux',
+    description: 'Learn how to build an nft marketplace with nextjs as the framework and Ipfs for storage and Redux for state management and Hardhat for compiling.',
+    preview: require('./showcase/intermediate/how-to-build-nftmarkertplace.png'),
+    website:'/blog/tutorials/how-to-build-an-nft-marketplace-with-nextjsipfsetherjs-and-redux',
     tags: ["celosage","metamask","dacade", "mint","nextjs","nft","intermediate","ipfs"],
   },
   {
