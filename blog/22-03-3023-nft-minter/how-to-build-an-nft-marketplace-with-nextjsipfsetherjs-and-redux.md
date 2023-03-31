@@ -857,9 +857,9 @@ Finally, let’s look at three last functions.
 - The "hasOwnerItems" modifier requires that the calling wallet address currently owns at least one item. If this requirement is not met, the function that uses this modifier will not be executed and will throw an exception with the message "You currently own no items".
 - The "isValidTokenId" modifier checks that the passed-in "tokenId" parameter is greater than or equal to 0. If this requirement is not met, the function that uses this modifier will not be executed and will throw an exception with the message "Enter a valid tokenId".
 - The "notPaused" modifier checks that the contract is not currently paused. If this requirement is not met, the function that uses this modifier will not be executed and will throw an exception with the message "Contract is paused". This is likely used in conjunction with the "pause" and "unPause" functions to prevent certain actions from being executed while the contract is paused.
-- The "onlyOwner" modifier requires that the calling wallet address is the owner of the contract. If this requirement is not met, the function that uses this modifier will not be executed and will throw an exception with the message "Only owner can call this function". 
+- The "onlyOwner" modifier requires that the calling wallet address is the owner of the contract. If this requirement is not met, the function that uses this modifier will not be executed and will throw an exception with the message "Only owner can call this function".
 - This is a common pattern for functions that modify the state of the contract, to ensure that only the contract owner can execute them.
-Overall, these modifiers add additional requirements to the functions that use them, to ensure that only authorized parties can execute them and that the inputs passed to them are valid.
+  Overall, these modifiers add additional requirements to the functions that use them, to ensure that only authorized parties can execute them and that the inputs passed to them are valid.
 
 We have wrapped up doing our basic smart contracts.Take note we have used basic security features.So you can always add more to secure your smart contracts.
 
@@ -1044,17 +1044,17 @@ To learn more about this file [click here](https://nextjs.org/docs/api-reference
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    NFT_MARKET_CONTRACT_ADDRESS:"0x6a84e7cd87d6A65303EdAA2DEcf51d8362B49636",
-    NFT_CONTRACT_ADDRESS:" 0x0ccEae723EdCe35a5e3570923cCE7D0E2424434e",
-    CHAIN_ID:44787
+    NFT_MARKET_CONTRACT_ADDRESS: "0x6a84e7cd87d6A65303EdAA2DEcf51d8362B49636",
+    NFT_CONTRACT_ADDRESS: " 0x0ccEae723EdCe35a5e3570923cCE7D0E2424434e",
+    CHAIN_ID: 44787,
   },
   reactStrictMode: true,
   images: {
-    domains: ['ipfs.infura.io'],
+    domains: ["ipfs.infura.io"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
 ```
 
 The 'env' property specifies environment variables that will be available at runtime. In this case, the three variables that shows our deployed contract adresses is NFT_MARKET_CONTRACT_ADDRESS and NFT_CONTRACT_ADDRESS. The CHAIN_ID is the celo Alfajores testnet chain id that connects us to the celo network.
