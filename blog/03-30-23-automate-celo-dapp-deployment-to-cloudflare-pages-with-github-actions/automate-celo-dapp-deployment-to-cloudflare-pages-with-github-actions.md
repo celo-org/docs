@@ -47,9 +47,7 @@ Open the file and paste in the below yaml script to handle the magic for us as s
 
 ```yaml
 name: Deploy DApp to Cloudflare with GH Actions
-
 on: [push]
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -60,19 +58,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       # Run a build step here if your project requires
       - name: Install dependencies
         run: npm install
-
       - name: updating
         run: npm update --latest react-scripts
-
       - name: Build DApp
         run: |
           npm run build
         #  echo "Build successful"
-
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -80,7 +74,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID}}
           projectName: /
           directory: ./build
-        gitHubToken: ${{ secrets.GITUB_TOKEN }}
+          gitHubToken: ${{ secrets.GITUB_TOKEN }}
         id: publish
       - name: Outputs
         run: |
@@ -122,20 +116,16 @@ This part explains the job that the workflow will perform. The job is named "bui
    steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
     - name: Install dependencies
       run: npm install
-
     - name: Build DApp
       run: npm run build
-
  - name: Outputs
         run: |
           echo "ID: ${{ steps.publish.outputs.id }}"
           echo "URL: ${{ steps.publish.outputs.url }}"
           echo "Environment: ${{ steps.publish.outputs.environment }}"
           echo "Alias: ${{ steps.publish.outputs.alias }}"
-
 ```
 
 The following are the steps that the job will take: The steps include:
@@ -147,9 +137,8 @@ Deploying the DApp to Cloudflare task was created
 The API token is passed as a secret, and the environment is set to `production`.
 This step deploys the built DApp to Cloudflare Pages using the `cloudflare/pages-action@v1` GitHub Action.
 
-> The `GITUB_TOKEN` is `Personal Access Token` created under setting on your GitHub profile. 
-
-Overall, this is the explanation of the YAML file, which points to the GitHub Actions workflow that builds and deploys a Celo DApp to Cloudflare whenever changes are pushed to the `main` branch of the associated GitHub repository.
+> The `GITUB_TOKEN` is `Personal Access Token` created under setting on your GitHub profile.
+> Overall, this is the explanation of the YAML file, which points to the GitHub Actions workflow that builds and deploys a Celo DApp to Cloudflare whenever changes are pushed to the `main` branch of the associated GitHub repository.
 
 Let’s talk about how to get the token API and other Credentials and Add them to GitHub Secrets
 
