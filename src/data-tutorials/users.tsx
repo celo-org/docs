@@ -2727,6 +2727,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+   {
+    title: 'Deploying Celo Applications using Golang',
+    description: 'This article could provide a tutorial on deploying Celo applications built using the Golang . It could cover topics such as setting up a Celo node, setting up the development environment, creating and deploying smart contracts, and monitoring the deployed contract activities using Celo explorer.',
+    preview: require('./showcase/intermediate/deploying-celo-applications-using-golang.png'),
+    website: 'blog/tutorials/deploying-celo-applications-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
