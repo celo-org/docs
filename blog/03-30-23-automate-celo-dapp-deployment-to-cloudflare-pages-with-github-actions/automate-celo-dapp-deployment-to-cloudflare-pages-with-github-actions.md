@@ -79,7 +79,8 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID}}
           projectName: /
-          directory: build
+          directory: ./build
+        gitHubToken: ${{ secrets.GITUB_TOKEN }}
         id: publish
       - name: Outputs
         run: |
@@ -145,6 +146,9 @@ Building the DApp. To run build for our Reaact DApp. We will create a new step u
 Deploying the DApp to Cloudflare task was created
 The API token is passed as a secret, and the environment is set to `production`.
 This step deploys the built DApp to Cloudflare Pages using the `cloudflare/pages-action@v1` GitHub Action.
+
+> The `GITUB_TOKEN` is `Personal Access Token` created under setting on your GitHub profile. 
+
 Overall, this is the explanation of the YAML file, which points to the GitHub Actions workflow that builds and deploys a Celo DApp to Cloudflare whenever changes are pushed to the `main` branch of the associated GitHub repository.
 
 Let’s talk about how to get the token API and other Credentials and Add them to GitHub Secrets
