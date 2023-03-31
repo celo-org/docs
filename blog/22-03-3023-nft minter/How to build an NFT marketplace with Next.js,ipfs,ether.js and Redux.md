@@ -8,30 +8,32 @@ tags: [Next.js,solidity,metamask,Intermediate,hardhat,ipfs,Redux]
 hide_table_of_contents: true
 ---
 
-![Screenshot from 2023-03-21 23-56-42](https://user-images.githubusercontent.com/81568615/226739425-315304e7-385e-4c20-880a-db2387071ec9.png)
+![header](../../src/data-tutorials/showcase/intermediate/how-to-build-nftmarkertplace.png)
 
 
-### Introduction
+## 🌱 Introduction
 There are several NFT marketplaces that operate on the Celo blockchain, including Celo NFT Marketplace, Moola Market, and FAMEO. These marketplaces allow artists and creators to mint and sell their unique digital assets, including art, music, videos, and more.
 In this tutorial, you’ll learn how to mint NFTs and purchase them after minting them on the celo blockchain.
 
- ## Demo
- https://user-images.githubusercontent.com/81568615/176022936-90c189a5-1750-447a-89e2-ab5136496acd.mp4
 
-https://user-images.githubusercontent.com/81568615/176025390-e2a59d71-8772-4b14-8f73-e74e56071352.mp4
 
-## Screenshot
-![Screenshot from 2022-06-23 15-36-20](https://user-images.githubusercontent.com/81568615/175301654-712d098e-c277-4732-a8c5-93d989324816.png)
+## 🗈 Prerequisites
 
-### Prerequisites
+To fully follow up with these tutorial, you should atleast have a basic understanding of the following.
 
-To fully follow up with these tutorials, you should have a basic understanding of the following.
+- Solidity smart contracts
+- React frameworks.
+- Basic web Development.
+- Node.js and npm installed. You will need to have Node.js and npm (the package manager for Node.js) installed on your computer. You can check if you have them installed by running the following commands in your terminal:
+```bash
+node -v
+npm -v
+```
+- A code editor. You will need a code editor to write and edit your code. Some popular options include Visual Studio Code and Atom.
+- A Metamask account. You will need a Metamask account to interact with the Celo blockchain from your web browser. If you don't already have one, you can create one by installing the Metamask extension for Chrome or Firefox.
 
-Solidity smart contracts
-React frameworks.
-Basic web Development.
 
-### Requirements
+## ⚠️ Requirements
 
 - Solidity -language used to write smart contracts.
 - OpenZeppelin-A library for secure smart contract development.
@@ -46,9 +48,9 @@ Basic web Development.
 - Node JS 12 or higher.
 - MetaMask-web3 wallet.
 
-### Installation
+## Installation
 
-Click on [this](https://github.com/Tevin-Isaac/Celo-minter-201.git) repo from your github.
+Click on **[this](https://github.com/Tevin-Isaac/Celo-minter-201.git)** repo from github and:
 
 1. Clone the repo to your computer.
 2. Open the project from vscode.
@@ -137,15 +139,18 @@ Celo-minter-201/
 ┗ tailwind.config.js
 ```
 
-### SmartContract
+## SmartContract
 We will first create our minting smart contract and with these we will use Open Zeppelin library to generate our smart contract.
-To generate yours click this link https://docs.openzeppelin.com/contracts/4.x/wizard and generate added features that you might need.
-After that you can copy your code in your preferred IDE.
+:::tip
+To learn more about  Openzeppellin smart contracts , check out the **[step-by-step guide to automatically generate OpenZeppellin smart contracts](https://docs.openzeppelin.com/contracts/4.x/wizard)**, which provides detailed instructions on getting started.
+:::
+After that you can copy and paste  the generated  code in your preferred IDE.
 
 
-### Minter contract
-On your IDE Create a new file named "NFT.sol" 
-The NFT Minter Contract will look like this.
+- **`NFT.sol`**
+
+On your IDE Create a new file named "NFT.sol".This is the code:
+
 
 ```solidity
 //SPDX-License-Identifier: Unlicense
@@ -176,7 +181,7 @@ contract NFT is  ERC721URIStorage {
 }
 ```
 
-#### Breakdown
+- Breakdown
 ```solidity
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
@@ -210,7 +215,7 @@ These @openzeppelin contracts provide functionality for creating ERC721 tokens, 
 
 
 
-Next, we create our constructor and functions and define the imports we made. Our code will look like these.
+Next, we create our constructor and functions and define the imports we made. Our code will look like these:
 
 ```solidity
 contract NFT is  ERC721URIStorage {
@@ -245,7 +250,8 @@ Overall, this contract can be used to create and manage ERC721 NFTs with a URI s
 Wasn't that simple now your minter contract is ready for compiling and deployment.
 
 
-#### Marketplace Contract
+
+- **`NFTmarket.sol`**
 
 Now create a new file and  let us name our marketplace contract as NFTmarket.sol.Our marketplace contract will look like this:
 
@@ -484,10 +490,9 @@ contract NFTMarket is ReentrancyGuard {
 
 
 }
-
 ```
 
-#### Breakdown
+- Breakdown
 
 First we import all the necessary contracts from openzeppelin and hardhat environment.
 
@@ -538,7 +543,8 @@ The mintingCost variable specifies the cost required to mint an NFT, which is se
 The ListingStatus enum is used to define the different states an NFT can be in on the marketplace: Active, Sold, or Cancelled.
 
 Overall, the contract sets up some basic functionality and variables needed for an NFT marketplace, but it does not yet implement any actual buying or selling functionality.
-To learn more about variables in solidity click here https://www.tutorialspoint.com/solidity/solidity_variables.htm
+If you need to  **[learn about variables in solidity](https://www.tutorialspoint.com/solidity/solidity_variables.htm)**. This guide includes details about solidity variables
+
 
 Our next line of code is this:
 ```
@@ -699,7 +705,7 @@ This function handles the purchase of an NFT listed on the marketplace. The buye
 
 Here's what each line of the code does:
 
-function buyItem(uint256 _tokenId) public payable isValidTokenId(_tokenId) notPaused nonReentrant { declares the function and sets the required parameters and modifiers.
+{function buyItem(uint256 _tokenId) public payable isValidTokenId(_tokenId) notPaused nonReentrant}; declares the function and sets the required parameters and modifiers.
 _Item storage listedItem = Items[_tokenId]; retrieves the information for the NFT with the given token ID from the marketplace.
 require(listedItem.price == msg.value, 'Price must be equal to NFT price'); checks if the amount of Ether sent by the buyer matches the price of the NFT. If it doesn't match, the transaction is reverted.
 listedItem.owner = payable(msg.sender); sets the owner of the NFT to the buyer.
@@ -713,7 +719,7 @@ IERC721(listedItem.nftContract).transferFrom(address(this), msg.sender, listedIt
 emit Sold(listedItem.nftContract, msg.sender, listedItem.creator, listedItem.token, listedItem.price); emits an event to notify listeners that the NFT has been sold.
 
 
-Next we have the 'fetchMarketItems' function
+Next we have the 'fetchMarketItems' function:
 
 ```solidity
   function fetchMarketItems() public view returns (_Item[] memory) {
@@ -734,7 +740,7 @@ Next we have the 'fetchMarketItems' function
 ```
 This function fetches all the market items that are currently active and have not been sold. It first gets the total number of items created so far and subtracts the number of items that have been sold to get the number of unsold items. It then initializes an array of unsold items of size equal to the number of unsold items.
 
-Next, it loops through all the items and checks if an item is unsold and active. If it is, then it stores that item in the items array at the current index and increments the index.
+It then loops through all the items and checks if an item is unsold and active. If it is, then it stores that item in the items array at the current index and increments the index.
 
  It also returns the items array containing all the unsold and active items in the market.
 
@@ -757,7 +763,6 @@ Finally, let’s look at three last functions.
 
         return items;
     }
-
 ```
 The function is defined as "public view", which means it can be called externally but does not modify the state of the contract.
 The function has a modifier "hasCreatedItems", which is not shown in the code provided. Presumably, this modifier checks whether the creator has any items listed, and the function can only be executed if this condition is met.
@@ -806,7 +811,7 @@ Once all items have been looped through, the function returns the "items" array.
 Overall, this function returns a list of all items owned by the calling wallet address, by looping through all items in the contract and checking their owner address. The items are returned as an array of "_Item" struct instances, and the function does not modify the state of the contract.
 
 
-On our final functions 
+On our final functions are:
 
 ```solidity
     function pause() public onlyOwner {
@@ -825,7 +830,7 @@ The "unPause" function is also defined with the "onlyOwner" modifier.
 The "unPause" function sets the state variable "isPaused" to "false", which presumably allows the execution of previously paused functions to resume.
 Overall, these two functions provide a way for the contract owner to pause and unpause the execution of certain functions in the contract. The "onlyOwner" modifier ensures that only the contract owner can modify the state of the contract in this way.
 
-Finally we will set modifiers in our smart contract.This code explains why we use the modifiers:
+We will also set modifiers in our smart contract.This code explains why we use the modifiers:
 
 ```solidity
   modifier hasCreatedItems {
@@ -862,11 +867,10 @@ The "onlyOwner" modifier requires that the calling wallet address is the owner o
 Overall, these modifiers add additional requirements to the functions that use them, to ensure that only authorized parties can execute them and that the inputs passed to them are valid.
 
 
-We have wrapped up doing our basic smart contracts.Take note we have not used all security features but you can always include them.To learn more about writing solidity smart contracts with OpenZeppelin library click here (https://docs.openzeppelin.com/contracts/4.x/)
-Lets now dive into the front end.
-### Front end
+We have wrapped up doing our basic smart contracts.Take note we have used basic security features.So you can always add more to secure your smart contracts.
 
-#### Stack
+## Front end
+
 
 We’ll use the following stack for this section.
 - Next.js
@@ -874,10 +878,11 @@ We’ll use the following stack for this section.
 - Redux
 - IPFS
 
-#### Setup
+## Setup
 
-Clone the full project from [this Repository](https://github.com/Tevin-Isaac/Celo-minter-201.git) to follow up with this section.
+Clone the full project from **[this Repository](https://github.com/Tevin-Isaac/Celo-minter-201.git)**. to follow up with this section.
 Alternatively you can create a new Next.js app using create-next-app, which sets up everything automatically for you.Simply run this on your terminal:
+
 ```
 npx create-next-app@latest
 # or
@@ -886,7 +891,12 @@ yarn create next-app
 pnpm create next-app
 
 ```
-To learn more about nex.js click here (https://nextjs.org/docs/getting-started)
+:::tip
+You can follow this step to step guide on how to  **[build a next.js app](https://nextjs.org/docs/getting-started)**. This guide will help you learn how to create a new next.js app.
+:::
+
+- **.env**
+
 
 We will also need to include our .env file which is where you will copy your metamask wallet seed phrase that will give you access to the metamask wallet for you to be able to mint your NFT.
 Create a new file in your main directory called .env. Inside the .env file, store your mnemonic. It should look like this:
@@ -896,10 +906,9 @@ MNEMONIC="(your metamask seed phrase)"
 
 ```
 
-#### Smart Contract Deployment
+- Smart Contract Deployment
 
-We want to enable Hardhat to deploy to the Celo network, in this case to the Alfajores testnet. To do that, we need to add a network entry to our hardhat.config.js file located at the project's root directory.
-
+We want to enable Hardhat to deploy to the Celo network, in this case to the Alfajores testnet. To do that, we need to add a network entry to our hardhat.config.js file located at the project's root directory.Configure your hardhat.config file to look like this:
 
 
 ```javascript
@@ -952,7 +961,7 @@ const getEnv = (variable, optional = false) => {
 };
 ```
 
-Configure your hardhat.config file to look like the above. 
+. 
 This is a JavaScript file that configures the Hardhat development environment for Ethereum smart contract development.
 
 The first two lines import necessary packages, "@nomiclabs/hardhat-waffle" for running tests and "dotenv" for loading environment variables from a .env file.
@@ -967,17 +976,19 @@ Finally, the module.exports object is defined to set up the Hardhat configuratio
 Now, let's create a script to deploy the smart contracts.
 
 The Script Above will deploy both of the smart contracts. The script will also create a contract folder for the abi and contract address for both the marketplace contract and the NFT minter contract.
-To learn more about deployment with hardhat click here(https://hardhat.org/hardhat-runner/docs/guides/deploying)
-Deploy the smart contracts to the celo block-chain by running this command
 
+
+To Deploy the smart contracts to the celo block-chain simply  run this command
+```
 `npx hardhat run scripts/deploy.js --network alfajores`
-
+```
 You should see something like this in the terminal
 
-`NFTMarketplace deployed to: 0x6a84e7cd87d6A65303EdAA2DEcf51d8362B49636`
-`MyNFT deployed to: 0x0ccEae723EdCe35a5e3570923cCE7D0E2424434e`
-
-It will also create a new folder named 'scripts' and inside it a file named 'deploy.js' with the following code below:
+```
+NFTMarketplace deployed to: 0x6a84e7cd87d6A65303EdAA2DEcf51d8362B49636
+MyNFT deployed to: 0x0ccEae723EdCe35a5e3570923cCE7D0E2424434e
+```
+It will also create a new folder named `scripts` and inside it a file named `deploy.js` with the following code below:
 ```javascript
 
 const hre = require("hardhat");
@@ -1025,8 +1036,14 @@ The script uses the recommended pattern of using async/await and proper error ha
 To run the script, you can use the command npx hardhat run scripts/deploy.js --network NETWORK_NAME, where NETWORK_NAME is the name of the network you want to deploy the contracts to, such as rinkeby or localhost.
 
 
-## next.config.js
+- **`next.config.js`**
+
+
 We also need to add a custom configuration file for Next.js  that is not included in the browser build.With this we can be able to configure our next.js application for it to interact with the server.
+:::tip
+To learn more about this custom added file check out this  **[guide that  explains more about this file](https://nextjs.org/docs/api-reference/next.config.js/introduction)** and how its used.
+:::
+
 To learn more about this file click here(https://nextjs.org/docs/api-reference/next.config.js/introduction)
 
 ```
@@ -1061,8 +1078,10 @@ Finally, module.exports exports the nextConfig object so it can be used as a con
 
 
 
-## components
-Our componentes folder is where we have 3 files that will facilitate how our NFTs will look like once minted.The files are `Card.js`,`Navbar.js`and `Spinner.js`.
+- **components**
+
+
+Our components folder is where we have 3 files that will facilitate how our NFTs will look like once minted.The files are `Card.js`,`Navbar.js`and `Spinner.js`.
 
 Card.js
 ```javascript
@@ -1271,7 +1290,9 @@ export default Spinner;
 This component returns a spinner icon that indicates the loading status of the page or an element. The spinner icon is displayed in the center of the page with the help of bootstrap classes d-flex and justify-content-center. The spinner-border class adds a spinning animation effect to the icon, and the sr-only class hides the spinner label from the screen readers. This component can be used in any React application that requires loading spinners.
   
 
-#### helpers
+- **helpers**
+
+
 We will create our new file in this folder and name it  `AuthHelper.js`.
 This code exports a higher-order function called basicAuth that takes a component as an argument and returns a new component. The returned component includes a NavBar component and the original component (passed as WrappedComponent) as children.
 
@@ -1281,7 +1302,7 @@ The typeof window !== "undefined" check is included to ensure that the NavBar co
 
 
 
-#### pages
+- **pages**
 
 In our pages folder, we will add 3 more files for navigation`creator-profile.js`, `mint.js` and  `my-orders.js`.Our `index.js`,`hello.js,_document.js` and `app.js`files get generated automatically by Next.js.
 
@@ -1645,7 +1666,9 @@ The component uses an API key from Infura to connect to IPFS and uploads the ima
 
 The component also includes various error messages, such as if a required field is missing or if the image upload or metadata upload fails. There is also a check to ensure that the user is on the alfajores test network.
 
-Something very important you have to remember about IPFS is for you to upload images on IPFS see this article (https://dev.to/adhamniazy/how-to-upload-images-to-ipfs-using-infuraio-dedicated-gateways-11c6) that shows how you can creat an account with Infura and create an account that way your minted NFTs will be able to show.
+
+Something very important you have to remember about IPFS is for you to upload images on IPFS see this article  **[how to upload images to ipfs using infura](https://dev.to/adhamniazy/how-to-upload-images-to-ipfs-using-infuraio-dedicated-gateways-11c6)**. This guide will help you learn how to create your account and setup a new project.
+
 This is how my account that i created looks like:
 ![Screenshot from 2023-03-08 17-12-42](https://user-images.githubusercontent.com/81568615/226414377-0a4081aa-fcc4-49f3-80c9-247718a6b608.png)
 ![Screenshot from 2023-03-08 17-13-38](https://user-images.githubusercontent.com/81568615/226414399-4800e8f5-73f3-4617-abe8-98eae2a2afce.png)
@@ -1779,7 +1802,9 @@ Finally, the basicAuth function is used to wrap the component, which ensures tha
 
 
  
- #### Redux
+ - **Redux**
+
+
 Redux is a predictable state container for JavaScript apps.To learn more about it before we proceed click here (https://redux.js.org/introduction/getting-started).This will help you to be able to install it and know its role in major applications.
 Our redux fder has  5 files namely `actions.js`,`interactions.js`,`reducers.js`,`store.js` and `types.js`.
 Our actions.js file looks like this:
@@ -2049,8 +2074,10 @@ loadOwnedNFT: This function takes in a Web3 provider, the NFT marketplace contra
 buyNFT: This function takes in the NFT marketplace contract instance, the connected wallet address, the token ID of the NFT to buy, the price of the NFT in ether, a Redux dispatch function, a success callback function, and an error callback function. It attempts to buy the NFT by calling the buyItem function on the marketplace contract with the correct arguments, and if successful, dispatches an action to indicate that the NFT has been purchased and calls the success callback. If an error occurs, it calls the error callback with the error message.
 
 
-On our next file  in the folder its reducers.js file which is very important.To learn more about reducers on redux then click this(https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)
+On our next file  in the folder its reducers.js file which is very important.
 
+
+To learn more about reducers on redux then click **[this Reducers article](https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers)** for further knowledge about Reducers.
 our file will look like this:
 ```javascript
 import { combineReducers } from "redux";
@@ -2315,7 +2342,9 @@ In Redux, an action type is a string that describes the type of action being per
 
 In this specific code snippet, we can see several action types being defined for different functionalities related to loading web3, wallet address, NFT contract, minted NFT, owned NFT, unsold NFT, successfully purchased NFT, successfully minted NFT, and NFT marketplace contract.
 
-### styles
+- **styles**
+
+
 Our application needs some styling and under the styles folder we will create a file named 'global.css' file
 Our styling feature code looks like this:
 ```javascript
@@ -2431,7 +2460,7 @@ width: 30% !important;
 ```
 This is a CSS stylesheet that defines some custom properties and styles for various elements on a webpage.   
 
-### Conclusion
+## Conclusion
 Feel free to style the application however you feel.This is just a basic concept for our app.
 Now you can run your application and try to mint your specific nfts locally.It would be better if you do the few changes and run the application on your end and see how it looks like.
 *Please note once you mint your NFTs for them to be listed in the marketplace it may take a while and you may also encounter a purchase  error that looks like this:
@@ -2444,7 +2473,7 @@ If you don't have access to modify the server-side code, you can try using a pro
 
 Alternatively, you can also try using a CORS proxy service such as CORS Anywhere or CORS-Proxy to make the request. These services act as a middleman between your web application and the target server, adding the necessary CORS headers to allow the request to go through. However, please note that using a third-party service may not be ideal for sensitive or private data as it can introduce additional security risks.
 *This error is not on every machine depending on which browser your using but i recently encountered when running my chrome browser.
-### About the author
+## About the author
 
 I'm Tevin Isaac a blockchain developer based in Nairobi Kenya and a dacade evengelist.
 You can always Reach me here.
@@ -2453,8 +2482,7 @@ Github:https://github.com/Tevin-Isaac
 Twitter:@isaactevin  
    
 
-### References
-
+## References
 
 
 https://docs.celo.org/developer/contractkit/
