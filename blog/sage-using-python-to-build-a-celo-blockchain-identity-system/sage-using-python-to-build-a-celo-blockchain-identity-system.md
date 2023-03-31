@@ -3,7 +3,7 @@ title: Using Python to Build a Celo Blockchain Identity System
 description: This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.
 authors:
   - name: Israel Okunaya
-    title: Technical Writer 
+    title: Technical Writer
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/228117172-c739dd37-9bdd-487b-8364-5b9620cd2373.png
 tags: [celosage, celo, smartcontract, solidity, intermediate]
@@ -26,7 +26,7 @@ To follow along with this tutorial, you need to be familiar with:
 
 ## Requirements
 
- You should have the following installed on your computer to follow along:
+You should have the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -54,13 +54,13 @@ source env/bin/activate
 To install the web3.py, and python-dotenv:
 
 ```bash
-pip install web3 
+pip install web3
 pip install python-dotenv
 ```
 
 ## Step 2: Create the Identity Smart Contract and Deploy the Smart Contract
 
-First, we need to create a smart contract. Create a file called “Identity.sol” in your project root directory to take care of the identity-related tasks. 
+First, we need to create a smart contract. Create a file called “Identity.sol” in your project root directory to take care of the identity-related tasks.
 
 Identity.sol
 
@@ -188,7 +188,7 @@ import "node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 to make these imports work, run the following command on your terminal:
 
-```solidity
+```bash
 npm i @openzeppelin/contracts
 ```
 
@@ -227,7 +227,7 @@ uint256 private constant OTP_RANGE = 1000000;
 
 **Constructor**
 
-The base URI for the ERC-1155 tokens is provided via the only argument _uri that the contract's constructor accepts.
+The base URI for the ERC-1155 tokens is provided via the only argument \_uri that the contract's constructor accepts.
 
 ```solidity
 constructor(string memory _uri) ERC1155(_uri) {}
@@ -297,7 +297,7 @@ function getIdentity(address _address) public view identityExists(_address) retu
 
 **deleteIdentity**
 
-The user can remove their identity by using the deleteIdentity function. It is limited to existing identities and doesn't take any parameters. The addressToTokenId mapping is used to obtain the token ID for the caller's address initially. The caller's token is subsequently burned by calling the internal _burn method from the ERC1155 contract. This lowers the supply of tokens and removes the token from the caller's address. Lastly, it removes the identity from the mapping of identities.
+The user can remove their identity by using the deleteIdentity function. It is limited to existing identities and doesn't take any parameters. The addressToTokenId mapping is used to obtain the token ID for the caller's address initially. The caller's token is subsequently burned by calling the internal \_burn method from the ERC1155 contract. This lowers the supply of tokens and removes the token from the caller's address. Lastly, it removes the identity from the mapping of identities.
 
 ```solidity
 function deleteIdentity() public identityExists(msg.sender) {
@@ -309,7 +309,7 @@ function deleteIdentity() public identityExists(msg.sender) {
 
 **URI function**
 
-To return the URI of the token, the URI function replaces the URI method from the ERC1155 contract. It accepts a _tokenId parameter and returns a string with the token's URI. To obtain the base URI, the _tokenId parameter is passed to the ERC1155 contract's URI function. The function then creates a new URI by concatenating the base URI and the string value of the _tokenId parameter.
+To return the URI of the token, the URI function replaces the URI method from the ERC1155 contract. It accepts a \_tokenId parameter and returns a string with the token's URI. To obtain the base URI, the \_tokenId parameter is passed to the ERC1155 contract's URI function. The function then creates a new URI by concatenating the base URI and the string value of the \_tokenId parameter.
 
 ```solidity
 function uri(uint256 _tokenId) public view override returns (string memory) {
@@ -322,7 +322,7 @@ function uri(uint256 _tokenId) public view override returns (string memory) {
 
 **requestOtp**
 
-A one-time password (OTP) is generated for the user using the “requestOtp” function. It is limited to existing identities and doesn't take any parameters. The addressToTokenId mapping is used to obtain the token ID for the caller's address initially. The internal _generateOtp method is then used to create a random OTP using the token ID. With the caller's address serving as the key, it stores the OTP in the “otps” mapping and the expiration time in the “otpExpirations” mapping.
+A one-time password (OTP) is generated for the user using the “requestOtp” function. It is limited to existing identities and doesn't take any parameters. The addressToTokenId mapping is used to obtain the token ID for the caller's address initially. The internal \_generateOtp method is then used to create a random OTP using the token ID. With the caller's address serving as the key, it stores the OTP in the “otps” mapping and the expiration time in the “otpExpirations” mapping.
 
 ```solidity
 function requestOtp() public identityExists(msg.sender) {
@@ -335,7 +335,7 @@ function requestOtp() public identityExists(msg.sender) {
 
 **verifyOtp**
 
-A user-entered OTP is verified by the “verifyOtp” function. It only accepts IDs that already exist and requires a “_otp” parameter. By contrasting the expiration time recorded in the otpExpirations mapping with the current block timestamp, it first verifies that the OTP has not yet expired. The OTP is compared to the OTP stored in the “otps” mapping for the caller's address to see if it has not yet expired. It returns true, indicating that the verification was successful, if the OTPs match.
+A user-entered OTP is verified by the “verifyOtp” function. It only accepts IDs that already exist and requires a “\_otp” parameter. By contrasting the expiration time recorded in the otpExpirations mapping with the current block timestamp, it first verifies that the OTP has not yet expired. The OTP is compared to the OTP stored in the “otps” mapping for the caller's address to see if it has not yet expired. It returns true, indicating that the verification was successful, if the OTPs match.
 
 ```solidity
 function verifyOtp(uint256 _otp) public identityExists(msg.sender) returns (bool) {
@@ -346,7 +346,7 @@ function verifyOtp(uint256 _otp) public identityExists(msg.sender) returns (bool
 
 **generateOtp**
 
-Using a seed value that is supplied as an input, the _generateOtp method generates a random OTP. The keccak256 hash function, block timestamp, and seed value are used by the function to first produce a random number. In order to guarantee that the OTP is a 6-digit number, the function then takes the modulo of the random number with the OTP RANGE. The produced OTP is returned by the function as an uint256 integer.
+Using a seed value that is supplied as an input, the \_generateOtp method generates a random OTP. The keccak256 hash function, block timestamp, and seed value are used by the function to first produce a random number. In order to guarantee that the OTP is a 6-digit number, the function then takes the modulo of the random number with the OTP RANGE. The produced OTP is returned by the function as an uint256 integer.
 
 ```solidity
 function _generateOtp(uint256 _seed) private view returns (uint256) {
