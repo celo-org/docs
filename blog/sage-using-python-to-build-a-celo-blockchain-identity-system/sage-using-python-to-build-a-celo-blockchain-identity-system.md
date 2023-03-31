@@ -5,7 +5,7 @@ authors:
   - name: Israel Okunaya
     title: Technical Writer
     url: https://github.com/Southpaw0
-    image_url: https://user-images.githubusercontent.com/104994589/228117172-c739dd37-9bdd-487b-8364-5b9620cd2373.png
+    image_url: https://avatars.githubusercontent.com/u/104994589?v=4
 tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/using-python-to-build-a-celo-blockchain-identity-system
