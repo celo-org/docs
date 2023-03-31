@@ -2727,6 +2727,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+  {
+    title: 'Building a Simple DeFi Application on the Celo Blockchain Using Python',
+    description: 'In this tutorial, we will build a simple decentralized finance (DeFi) application on the Celo blockchain using Python',
+    preview: require('./showcase/intermediate/building-a-simple-defi-application-on-the-celo-blockchain-using-python.png'),
+    website: 'blog/tutorials/building-a-simple-defi-application-on-the-celo-blockchain-using-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
