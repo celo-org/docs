@@ -15,7 +15,7 @@ slug: /tutorials/using-python-to-interact-with-celos-governance-system
 
 ## Introduction
 
-In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes). Celo is a fully mobile-first and open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). Holders of the native Celo token can vote on proposals that affect the platform's development, parameters, and future features through its governance system. 
+In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py (Python library used for interacting with Ethereum nodes). Celo is a fully mobile-first and open-source blockchain that allows developers to build smart contracts and DAPPS (decentralized applications). Holders of the native Celo token can vote on proposals that affect the platform's development, parameters, and future features through its governance system.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To follow along with this tutorial, you need to be familiar with:
 
 ## Requirements
 
- You should have the following installed on your computer to follow along:
+You should have the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -55,7 +55,7 @@ source env/bin/activate
 To install the web3.py, and python-dotenv:
 
 ```bash
-pip install web3 
+pip install web3
 pip install python-dotenv
 ```
 
@@ -112,7 +112,7 @@ You can find all the contract addresses (both proxies and implementation) of all
 
 You can create a JSON file called “governance_abi.json” in the root directory of your project and check this [repo](https://github.com/Divine572/celo-governance-system-) to copy the Celo Governance ABI.
 
-The JSON file contains the ABI of the Celo governance contract but in this article, we’ll be interacting with these functions: 
+The JSON file contains the ABI of the Celo governance contract but in this article, we’ll be interacting with these functions:
 
 - “proposalCount”: Used to get the total number of proposals
 - "getProposal": Retrieves information about a particular proposal using its ID.
