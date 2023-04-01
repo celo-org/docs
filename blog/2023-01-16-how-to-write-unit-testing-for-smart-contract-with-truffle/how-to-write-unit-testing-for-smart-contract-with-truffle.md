@@ -3,7 +3,7 @@ title: Unit Testing with Truffle and Celo
 description: How to Write Unit Testing for Smart Contracts with Truffle
 authors:
   - name: Mayowa Julius Ogungbola
-    title: Software Engineer, Technical writer @Celo Foundation
+    title: Software Engineer, Technical Writer
     url: https://github.com/Julius170
     image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
 tags: [celo, intermediate, celosage, truffle, smartcontract, solidity]
