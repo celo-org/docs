@@ -3,7 +3,7 @@ title: Creating Smart Contracts for Liquidity Farming
 description: Describing Smart Contract For Liquidity Farming and the technical side of creating them
 authors:
   - name: Adewale Emmanuel
-    title: Software Developer, Technical writer @Celo Foundation
+    title: Software Developer, Technical Writer
     url: https://github.com/Manuel-dre
     image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
 tags: [celo, intermediate, celosage, solidity, 'smartcontract']
