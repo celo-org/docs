@@ -1,12 +1,12 @@
 ---
-title: Interacting with the Celo Blockchain Using Web3.js A Beginner's Guide - A Voting App.
+title: Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.
 description: This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit.
 authors:
   - name: Emiri Udogwu
     title: Tech Ethusiast, Smart Contract Developer
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celosage, celo, beginner, solidity]
+tags: [celosage, celo, beginner, solidity, contractkit, remix]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginner's-Guide-A-Voting-App
 ---
