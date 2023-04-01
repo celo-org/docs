@@ -1,3 +1,17 @@
+---
+title: How to swap Celo tokens on Uniswap programmatically with code
+description: In this tutorial, we'll show how to build an automated Celo token swapper using ethersJS and Uniswap SDK.
+authors:
+  - name: Jovan Mwesigwa
+    title: Software Engineer
+    url: https://github.com/JovanMwesigwa
+tags: [celo, "celosage", "intermediate", "metamask", "nodejs", "javascript"]
+hide_table_of_contents: true
+slug: /tutorials/how-to-swap-celo-tokens-on-uniswap-programmatically
+---
+
+![header](../../src/data-tutorials/showcase/intermediate/how-to-swap-celo-tokens-on-uniswap-programmatically.png)
+
 ## Introduction
 
 In this tutorial, we'll show you how to build an automated token swapper using ethersJS and the Uniswap V3, which enables us to execute trades programmatically with JavaScript. By following our step-by-step guide, you'll be able to create a seamless and secure user experience that leverages the power of the Celo network and Uniswap. Let's get started!
