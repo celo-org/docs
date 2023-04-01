@@ -2713,6 +2713,13 @@ const Users: User[] = [
     tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'],
   },
   {
+    title: 'Using Python to Build a Celo Blockchain Identity System',
+    description: 'This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.',
+    preview: require('./showcase/intermediate/sage-using-python-to-build-a-celo-blockchain-identity-system.png'),
+    website: '/blog/tutorials/using-python-to-build-a-celo-blockchain-identity-system',
+    tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Automate Celo DApp Deployment to Cloudflare Pages with GitHub Actions',
     description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with GitHub Actions',
     preview: require('./showcase/intermediate/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions.png'),
