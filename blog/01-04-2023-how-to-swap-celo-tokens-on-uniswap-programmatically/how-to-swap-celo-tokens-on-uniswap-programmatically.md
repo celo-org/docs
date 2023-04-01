@@ -5,7 +5,7 @@ authors:
   - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-tags: [celo, "celosage", "intermediate", "metamask", "nodejs", "javascript"]
+tags: [celo, celosage, intermediate, metamask, nodejs, javascript]
 hide_table_of_contents: true
 slug: /tutorials/how-to-swap-celo-tokens-on-uniswap-programmatically
 ---
