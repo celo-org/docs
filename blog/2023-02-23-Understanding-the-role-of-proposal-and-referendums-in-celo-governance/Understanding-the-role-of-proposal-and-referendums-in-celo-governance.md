@@ -3,7 +3,7 @@ title: Understanding the Role of Proposals and Referendums in Celo Governance
 description: A Comprehensive Breakdown of the Role of Proposals and Referendums in Celo Governance
 authors:
   - name: Kyrian Chigozie
-    title: Technical writer @Celo Foundation
+    title: Technical Writer
     url: https://github.com/Kyrian212
     image_url: https://avatars.githubusercontent.com/u/33249458?v=4
 tags: [celo, intermediate, celosage]

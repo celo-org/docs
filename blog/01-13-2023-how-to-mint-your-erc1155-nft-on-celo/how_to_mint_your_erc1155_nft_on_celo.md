@@ -3,7 +3,7 @@ title: Minting your ERC1155 Token on Celo
 description: How to Minting your ERC1155 Token on Celo using Remix
 authors:
   - name: Mayowa Julius Ogungbola
-    title: Software Engineer, Technical writer @Celo Foundation
+    title: Software Engineer, Technical Writer
     url: https://github.com/Julius170
     image_url: https://avatars.githubusercontent.com/u/69092079?s=400&u=f34c84ee03afb9a51b163652b750419e98ed7456&v=4
 tags: [celo, intermediate, celosage, solidity, 'erc1155']
