@@ -1026,6 +1026,14 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'Build A Full Stack Ecommerce Dapp On The Celo Blockchain',
+    description: 'In this tutorial, we will build a full stack ecommerce dapp where users can buy and sell products in a decentralized way',
+    preview: require('./showcase/intermediate/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
+  },
+  
+  {
     title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
     description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
     preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
