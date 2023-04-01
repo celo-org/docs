@@ -7,7 +7,7 @@ authors:
     url: https://github.com/TheKhafre
     image_url: https://user-images.githubusercontent.com/105213608/229316667-a5053711-fe24-4baf-b9f8-e3da6c008b96.png
 tags:
-  [celo, celosage, smartcontract, javascript, nodejs, contractkit, intermediate]
+  [celo, celosage, javascript, nodejs, contractkit, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/integrating-celo-into-the-process-of-fintech-web-app-development
 ---
