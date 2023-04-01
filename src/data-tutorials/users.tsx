@@ -2536,6 +2536,13 @@ const Users: User[] = [
     tags: ['celosage','celo', 'advanced'], 
   },
   {
+    title: 'A guide to building and deploying upgradeable contracts on CELO with Diamond standard',
+    description: 'This tutorial introduces the diamond standard for writing modular and upgradeable smart contracts, and give a brief walkthrough of how to build an upgrade-able ERC20 token compatible contract, deploy to CELO, and perform an upgrade to this contract',
+    preview: require('./showcase/advanced/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard.png'),
+    website: '/blog/tutorials/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard',
+    tags: ['celosage','celo', 'ERC20', 'solidity', 'advanced'],
+  },
+  {
     title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
