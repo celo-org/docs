@@ -466,11 +466,11 @@ Now that you're done with the tutorial, here are some next steps you could take:
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
 Reach out:
-Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
-Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
-Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
+- Twitter: [@unreal_joova](http://twitter.com/unreal_joova)
+- Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
+- Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
 ## References​
 
-[Uniswap Docs](https://docs.uniswap.org/sdk/v3/overview) | Uniswap VS SDK Docs
-[Project code](https://github.com/JovanMwesigwa/uniswap-tokens-programmatically) | Github
+- [Uniswap Docs](https://docs.uniswap.org/sdk/v3/overview) | Uniswap VS SDK Docs
+- [Project code](https://github.com/JovanMwesigwa/uniswap-tokens-programmatically) | Github
