@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginner's-Guide-A-Voting-App
 ---
 
+![Interacting with the Celo Blockchain ](https://user-images.githubusercontent.com/6362475/229304012-6d090f44-09f9-475b-b67f-8da7c0b12017.png)
+
 ## Introduction​
  
 The web3.js library is a collection of modules that contain functionality for the ethereum ecosystem. Web3.js is primarily designed to work with the Ethereum blockchain and its associated network of nodes. However, Web3.js can also be used to interact with other blockchain networks that are compatible with the Ethereum Virtual Machine (EVM), such as:
@@ -295,7 +297,7 @@ async function giveRightToVote(voterAddress) {
 
 After running this in our terminal, transaction hash is logged to the console. Also note that this transactions can be monitored on https://explorer.celo.org/alfajores/  by searching for your contract address on the search box. You will find this along with other events associated with the contract.
 
-
+![Give Right to Vote](https://user-images.githubusercontent.com/6362475/229304073-57b30b68-12e7-4281-973b-c10d457014a7.png)
 
 - ### Call the function for voting for a Candidate
 
@@ -313,6 +315,8 @@ async function vote(proposalIndex) {
 
 I decided to call this function twice to see what it would look like. As expected, it was successful at first but the second call was returned by the EVM since only one vote is permitted per account. On Celo explorer, this is what i found;
 
+![vote](https://user-images.githubusercontent.com/6362475/229304099-be14a746-4d2c-483e-8d57-92d759dbd0f9.png)
+
 - ### Call Function to Delegate Voting Rights to Another
 
 ```js
@@ -326,6 +330,8 @@ async function delegate() {
 ```
 
 This call was deployed successfully with an error message, why? Because I already voted.
+
+![Delegate](https://user-images.githubusercontent.com/6362475/229304130-0931bad8-9b5c-414c-baa5-a31e1fb2743b.png)
 
 - ### Calling Functions that Retrieved/Read Data from the EVM
 
@@ -351,7 +357,11 @@ async function getWinningProposal() {
 }
 ```
 
-Notice how .send() was replaced with .call()?
+Notice how .send() was replaced with .call()? This  function calls will make no changes to the blockchain but will print out to the console.
+
+![winning Proposal](https://user-images.githubusercontent.com/6362475/229304163-86a3d0eb-99f1-4655-bce6-d5adb278b91e.png)
+
+
 
 ## Conclusion​
 
@@ -373,4 +383,5 @@ Emiri Udogwu, a licensed medical doctor with a burning passion for technology an
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
 - [Contract Kit](https://docs.celo.org/developer/contractkit)
+
 
