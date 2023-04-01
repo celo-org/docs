@@ -75,7 +75,7 @@ Once you have completed these steps, you should be ready to start building the p
 
 Once the installation is done, you should have a project scaffold that looks similar to the one below.
 
-![folder](tutorial-assets/folders.png)
+![folder](https://user-images.githubusercontent.com/62109301/229273818-a7794077-fc04-47cc-814c-6d1822ae5717.png)
 
 Inside the `/lib` folder, we have a file named `constants.js`.
 
@@ -411,7 +411,7 @@ Am using Meta Mask, but you can use any wallet of your choice.
 
 Note that I've added some test CELO tokens to the user, and added cUSD into the assets column of the wallet.
 
-![user wallet before](tutorial-assets/before.png)
+![user wallet before](https://user-images.githubusercontent.com/62109301/229273868-c992f791-78ce-49d6-b79a-f733bf20e409.png)
 
 We're going the try and swap 0.001 CELO for cUSD as we specified in the script.
 
@@ -423,13 +423,13 @@ node uniswapTrade.js
 
 Output:
 
-![out put](tutorial-assets/outout.png)
+![out put](https://user-images.githubusercontent.com/62109301/229273897-8e647619-afe7-4dce-9e71-40dcfff3cbf4.png)
 
 As you can see the transaction was successfully approved and the swap went through.
 
 Let's take a look at the Meta Mask wallet balance
 
-![meta mask balance](tutorial-assets/newbalance.png)
+![meta mask balance](https://user-images.githubusercontent.com/62109301/229273919-50f2dfa3-9936-44f2-8f34-3d5fbd4b6bbc.png)
 
 The user now has some Celo Dollar tokens swapped to their wallet.
 
@@ -447,7 +447,7 @@ Now that you're done with the tutorial, here are some next steps you could take:
 
 3. Experiment with Celo more by building on the network
 
-## About the Author​
+## About the Author
 
 Created by Jovan Mwesigwa B, Blockchain, Solidity developer
 
