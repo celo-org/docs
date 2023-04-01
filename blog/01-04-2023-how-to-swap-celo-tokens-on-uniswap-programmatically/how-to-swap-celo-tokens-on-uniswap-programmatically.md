@@ -114,18 +114,18 @@ const uniswapV3FactoryAddress = '0xAfE208a311B21f13EF87E33A90049fC17A7acDEc'
 
 ```js
 const TokenFrom = {
-  name: 'Celo',
-  symbol: 'CELO',
+  name: "Celo",
+  symbol: "CELO",
   decimals: 18,
-  address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
-}
+  address: "0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9",
+};
 
 const TokenTo = {
-  name: 'Celo Dollar',
-  symbol: 'cUSD',
+  name: "Celo Dollar",
+  symbol: "cUSD",
   decimals: 18,
-  address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
-}
+  address: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1",
+};
 ```
 
 You can find the Token addresses on their specific networks defined above from the Celo documentation [here](https://docs.celo.org/token-addresses)
@@ -139,7 +139,7 @@ const CELO_TOKEN = new Token(
   TokenFrom.decimals,
   TokenFrom.symbol,
   TokenFrom.name
-)
+);
 
 const CELO_DOLLAR = new Token(
   SupportedChainId.CELO_ALFAJORES,
@@ -147,7 +147,7 @@ const CELO_DOLLAR = new Token(
   TokenTo.decimals,
   TokenTo.symbol,
   TokenTo.name
-)
+);
 ```
 
 The `Token` class is part of the `@uniswap/sdk-core` package from the Uniswap core package. It represents ERC20 tokens and allows us to fetch information about the tokens, such as their name, symbol, and decimals, as well as their current price and liquidity.
@@ -167,24 +167,24 @@ In the `CELO_TOKEN` and `CELO_DOLLAR` objects, we create a new instance of the T
 Full `constants.js` code:
 
 ```js
-const { Token, SupportedChainId } = require('@uniswap/sdk-core')
+const { Token, SupportedChainId } = require("@uniswap/sdk-core");
 
-const swapRouterAddress = '0x5615CDAb10dc425a742d643d949a7F474C01abc4'
-const uniswapV3FactoryAddress = '0xAfE208a311B21f13EF87E33A90049fC17A7acDEc'
+const swapRouterAddress = "0x5615CDAb10dc425a742d643d949a7F474C01abc4";
+const uniswapV3FactoryAddress = "0xAfE208a311B21f13EF87E33A90049fC17A7acDEc";
 
 const TokenFrom = {
-  name: 'Celo',
-  symbol: 'CELO',
+  name: "Celo",
+  symbol: "CELO",
   decimals: 18,
-  address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
-}
+  address: "0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9",
+};
 
 const TokenTo = {
-  name: 'Celo Dollar',
-  symbol: 'cUSD',
+  name: "Celo Dollar",
+  symbol: "cUSD",
   decimals: 18,
-  address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
-}
+  address: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1",
+};
 
 const CELO_TOKEN = new Token(
   SupportedChainId.CELO_ALFAJORES,
@@ -192,7 +192,7 @@ const CELO_TOKEN = new Token(
   TokenFrom.decimals,
   TokenFrom.symbol,
   TokenFrom.name
-)
+);
 
 const CELO_DOLLAR = new Token(
   SupportedChainId.CELO_ALFAJORES,
@@ -200,7 +200,7 @@ const CELO_DOLLAR = new Token(
   TokenTo.decimals,
   TokenTo.symbol,
   TokenTo.name
-)
+);
 
 module.exports = {
   swapRouterAddress,
@@ -209,7 +209,7 @@ module.exports = {
   CELO_DOLLAR,
   TokenFrom,
   TokenTo,
-}
+};
 ```
 
 ### Setting up configurations
@@ -227,7 +227,7 @@ const Config = {
     out: CELO_TOKEN,
     poolFee: FeeAmount.MEDIUM,
   },
-}
+};
 ```
 
 ### Defining helper configs
@@ -242,15 +242,15 @@ exports.getPoolImmutables = async (poolContract) => {
     poolContract.token0(),
     poolContract.token1(),
     poolContract.fee(),
-  ])
+  ]);
 
   const immutables = {
     token0: token0,
     token1: token1,
     fee: fee,
-  }
-  return immutables
-}
+  };
+  return immutables;
+};
 ```
 
 The `getPoolAddress` function calculates the address of the Uniswap V3 liquidity pool that will be used to swap the two tokens. It takes the factory address of the Uniswap V3 protocol, the input token (`CELO_DOLLAR` in our case), the output token (`CELO_TOKEN` in our case), and the pool fee (`MEDIUM` in our case) as input parameters. It then uses these parameters to calculate the pool address and returns it.
@@ -262,9 +262,9 @@ exports.getPoolAddress = async () => {
     tokenA: Config.tokens.in,
     tokenB: Config.tokens.out,
     fee: Config.tokens.poolFee,
-  })
-  return poolAddress
-}
+  });
+  return poolAddress;
+};
 ```
 
 `getWalletBalances` takes a provider and an address as input parameters. The provider represents the blockchain network we are connected to, and the address is the address of the user whose wallet balances we want to retrieve. The function then retrieves the wallet balances of the user for both tokens (`CELO` and `cUSD`) and logs them to the console.
@@ -276,23 +276,23 @@ exports.getWalletBalances = async (provider, address) => {
     TokenFrom.address,
     ERC20ABI,
     provider
-  )
+  );
 
   // Find the balance of cUSD token
   const CeloDolarContract = new ethers.Contract(
     TokenTo.address,
     ERC20ABI,
     provider
-  )
+  );
 
-  const celoBalance = await CeloContract.balanceOf(address)
+  const celoBalance = await CeloContract.balanceOf(address);
 
-  const cUsdBalance = await CeloDolarContract.balanceOf(address)
+  const cUsdBalance = await CeloDolarContract.balanceOf(address);
 
-  console.log('Balances: ')
-  console.log('CELO: ', celoBalance.toString())
-  console.log('cUSD: ', cUsdBalance.toString())
-}
+  console.log("Balances: ");
+  console.log("CELO: ", celoBalance.toString());
+  console.log("cUSD: ", cUsdBalance.toString());
+};
 ```
 
 ### Main trade functionality
@@ -300,65 +300,65 @@ exports.getWalletBalances = async (provider, address) => {
 Inside the `uniswapTrade.js` file, we import ethers for interacting with the network. We also import the ABIs for the Uniswap v3 pool and swap router contracts.
 
 ```js
-const { ethers } = require('ethers')
+const { ethers } = require("ethers");
 
 const {
   abi: IUniswapV3PoolABI,
-} = require('@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json')
+} = require("@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json");
 
 const {
   abi: SwapRouterABI,
-} = require('@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.json')
+} = require("@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.json");
 
 const {
   getPoolImmutables,
   getPoolAddress,
   getWalletBalances,
-} = require('./helpers')
+} = require("./helpers");
 
-const { swapRouterAddress, TokenFrom } = require('./lib/constants')
+const { swapRouterAddress, TokenFrom } = require("./lib/constants");
 
-const ERC20ABI = require('./abi.json')
+const ERC20ABI = require("./abi.json");
 ```
 
 We then define three environment variables, `INFURA_URL_TESTNET`, `WALLET_ADDRESS`, and `WALLET_SECRET`, that is used to connect to the Celo Alfajores network and authenticate with the wallet.
 
 ```js
-const INFURA_URL_TESTNET = process.env.INFURA_URL_TESTNET
-const WALLET_ADDRESS = process.env.WALLET_ADDRESS
-const WALLET_SECRET = process.env.WALLET_SECRET
+const INFURA_URL_TESTNET = process.env.INFURA_URL_TESTNET;
+const WALLET_ADDRESS = process.env.WALLET_ADDRESS;
+const WALLET_SECRET = process.env.WALLET_SECRET;
 ```
 
 Next, we define the provider variable, which is used to connect to the Celo Alfajores network.
 
 ```js
-const provider = new ethers.providers.JsonRpcProvider(INFURA_URL_TESTNET) // Celo Alfajores
+const provider = new ethers.providers.JsonRpcProvider(INFURA_URL_TESTNET); // Celo Alfajores
 ```
 
 The main function is the entry point of the script that handles the actual swapping of tokens on Uniswap. It takes an input amount and swaps it for another token using Uniswap's router contract.
 
 ```js
 async function main(inputAmount) {
-  const amountIn = ethers.utils.parseUnits(inputAmount.toString(), 18)
+  const amountIn = ethers.utils.parseUnits(inputAmount.toString(), 18);
 
   const poolContract = new ethers.Contract(
     getPoolAddress(),
     IUniswapV3PoolABI,
     provider
-  )
+  );
 
-  const immutables = await getPoolImmutables(poolContract)
+  const immutables = await getPoolImmutables(poolContract);
 
-  const wallet = new ethers.Wallet(WALLET_SECRET)
-  const connectedWallet = wallet.connect(provider)
+  const wallet = new ethers.Wallet(WALLET_SECRET);
+  const connectedWallet = wallet.connect(provider);
 
   const swapRouterContract = new ethers.Contract(
     swapRouterAddress,
     SwapRouterABI,
     provider
-  )
+  );
 
-  await approveTransfer(amountIn, connectedWallet)
+  await approveTransfer(amountIn, connectedWallet);
 
   const params = {
     tokenIn: immutables.token1,
@@ -369,12 +369,12 @@ async function main(inputAmount) {
     amountIn: amountIn,
     amountOutMinimum: 0,
     sqrtPriceLimitX96: 0,
-  }
+  };
 
-  console.log('Wallet balances before:')
-  await getWalletBalances(provider, WALLET_ADDRESS)
+  console.log("Wallet balances before:");
+  await getWalletBalances(provider, WALLET_ADDRESS);
 
-  console.log('====================================')
+  console.log("====================================");
 
   const transaction = swapRouterContract
     .connect(connectedWallet)
@@ -382,16 +382,16 @@ async function main(inputAmount) {
       gasLimit: ethers.utils.hexlify(1000000),
     })
     .then(async (transaction) => {
-      console.log('Wallet balances After:')
-      await getWalletBalances(provider, WALLET_ADDRESS)
+      console.log("Wallet balances After:");
+      await getWalletBalances(provider, WALLET_ADDRESS);
 
-      console.log('====================================')
+      console.log("====================================");
 
-      console.log(transaction)
+      console.log(transaction);
     })
     .catch((err) => {
-      console.log('Failed send transaction', err)
-    })
+      console.log("Failed send transaction", err);
+    });
 }
 ```
 
