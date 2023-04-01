@@ -11,38 +11,38 @@ hide_table_of_contents: true
 slug: /tutorials/interacting-with-the-celo-blockchain-using-web3js-a-beginners-guide-a-voting-app
 ---
 
-![Interacting with the Celo Blockchain ](https://user-images.githubusercontent.com/6362475/229304012-6d090f44-09f9-475b-b67f-8da7c0b12017.png)
+![header](../../src/data-tutorials/showcase/beginner/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginners-Guide-A-Voting-App.png)
 
 ## Introduction​
- 
+
 The web3.js library is a collection of modules that contain functionality for the ethereum ecosystem. Web3.js is primarily designed to work with the Ethereum blockchain and its associated network of nodes. However, Web3.js can also be used to interact with other blockchain networks that are compatible with the Ethereum Virtual Machine (EVM), such as:
- - Celo
- - Binance Smart Chain
- - Polygon Network
- - xDai
- - Fantom
- - Avalanche
- - Huobi Eco Chain
-These blockchains are often referred to as "Ethereum-compatible" or "EVM-compatible" blockchains.
-Web3.js may not work with blockchains that do not use the Ethereum Virtual Machine, or that have different APIs or communication protocols. For example, blockchains such as Bitcoin and Litecoin use different protocols and APIs, and would require different libraries to interact with them.
-Web3.js provides a wide range of functionality, including the ability to:
- - Send and receive transactions
- - Deploy and interact with smart contracts
- - Read and write data from the blockchain
- - Manage user accounts and private keys
-In this tutorial, we shall be going through how to interact with smart contracts using a voting app as a case study. We shall also be looking at other basic web3.js code syntax for function that may not be in our code.
+
+- Celo
+- Binance Smart Chain
+- Polygon Network
+- xDai
+- Fantom
+- Avalanche
+- Huobi Eco Chain
+  These blockchains are often referred to as "Ethereum-compatible" or "EVM-compatible" blockchains.
+  Web3.js may not work with blockchains that do not use the Ethereum Virtual Machine, or that have different APIs or communication protocols. For example, blockchains such as Bitcoin and Litecoin use different protocols and APIs, and would require different libraries to interact with them.
+  Web3.js provides a wide range of functionality, including the ability to:
+- Send and receive transactions
+- Deploy and interact with smart contracts
+- Read and write data from the blockchain
+- Manage user accounts and private keys
+  In this tutorial, we shall be going through how to interact with smart contracts using a voting app as a case study. We shall also be looking at other basic web3.js code syntax for function that may not be in our code.
 
 ## Prerequisites
 
 - Node.js should be installed along with a node package manager(npm)
 - A basic understanding of Celo and smart contracts
-- A Celo Wallet address: 
+- A Celo Wallet address:
 - To create Alfajores wallet, go to [Alfajores wallet](https://celo.org/developers/faucet)
 - To get testnest funds, go to Celo faucet [Celo Faucet](https://faucet.celo.org/)
 - A text editor such as Visual Studio Code installed on your computer
 - A terminal to test our code syntax
 - Remix IDE
-
 
 You can clone the codes used in this tutorial by running:
 
@@ -50,12 +50,11 @@ You can clone the codes used in this tutorial by running:
 $ git clone https://github.com/emiridbest/Voting-Smart-Contract-On-Celo-Using-Web3.js-and-ContractKit.git
 ```
 
-
 Now, lets get started;
 
 - **Step 1:** Write your Voting Smart Contract and Deploy on Remix IDE
 
-```sol
+```solidity
 //SPDX-License-Identifier: MIT
 pragma solidity  ^0.8.0;
 contract Voting {
@@ -140,7 +139,7 @@ contract Voting {
                winingProposal_ = p;
            }
        }
-      
+
    }
 
    function winnerName() public view returns(string memory winnerName_){
@@ -150,6 +149,7 @@ contract Voting {
 ```
 
 Explanation:
+
 - The `Candidate` struct represents a candidate with a name and a vote count.
 - The `candidates` array stores the list of candidates.
 - The `voters` mapping keeps track of who has voted.
@@ -170,37 +170,35 @@ Also, go back to remix and copy out you contract ABI save it somewhere.
 We shall be using the codes to be written in this file to interact with our already deployed smart contract.
 Make use of you favorite text editor
 
-
 - **Step3:** Install dependencies
-Go to a command line terminal and make sure you are in your projects root directory and run the following lines of code.
+  Go to a command line terminal and make sure you are in your projects root directory and run the following lines of code.
 
 ```bash
 $ npm install @celo/contractkit web3
 ```
 
-The `CeloContractKit`  library is designed to make it easy for developers to build decentralized applications (DApps) on the Celo blockchain. It abstracts away many of the low-level details of interacting with smart contracts on the blockchain, allowing developers to focus on building their DApps. It is a prerequisite for web3.js interaction with Celo Blockchain in specific transaction types especially when it involves writing data to the blockchain.
+The `CeloContractKit` library is designed to make it easy for developers to build decentralized applications (DApps) on the Celo blockchain. It abstracts away many of the low-level details of interacting with smart contracts on the blockchain, allowing developers to focus on building their DApps. It is a prerequisite for web3.js interaction with Celo Blockchain in specific transaction types especially when it involves writing data to the blockchain.
 
 - **Step 4:** Start Interacting with our contract
 
 - Import all dependencies into our `Voting.js` file
-The dependencies we’re working with are `web3` and `contract kit`;
+  The dependencies we’re working with are `web3` and `contract kit`;
 
 ```js
- const Web3 = require('web3');
- const ContractKit = require('@celo/contractkit');
-
+const Web3 = require("web3");
+const ContractKit = require("@celo/contractkit");
 ```
- 
- - ### Define Web3 and ContractKit
+
+- ### Define Web3 and ContractKit
 
 Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network (Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
 
 ```js
- const web3 = new Web3('https://alfajores-forno.celo-testnet.org');
- const kit = ContractKit.newKitFromWeb3(web3);
+const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
+const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
-- ###  Create a contract Instance
+- ### Create a contract Instance
 
 This is the step that links us to the contract we already deployed on Remix. Here, we will be needed to variables - `ABI` and `Contract address`. I hope you copied them out earlier.
 
@@ -210,7 +208,7 @@ const ContractAddress = '0x6C432a07d2C7C5ABbbBB47E408C5eCc40Eea0C4b';
 const Contract = kit.contracts.getContract('Contract', { abi: ContractAbi, address: ContractAddress });
 ```
 
-Make sure you parse in the appropriate values for the `ContractAddress` and `ContractAbi`. 
+Make sure you parse in the appropriate values for the `ContractAddress` and `ContractAbi`.
 
 - ### Add your Private Key
 
@@ -218,84 +216,89 @@ For every transaction requiring gas fees, you need a private which serves as a s
 But for the purpose of this tutorial, we will be using a test account containing faucet claimed funds, so we can easily get it displayed without the fear of lossing our funds.
 
 ```js
-const PRIVATE_KEY = '0xa27790f81bc74d9159bb5f8c71261b8aaec6f6b0c26bed5b4fabe281cea38964';
+const PRIVATE_KEY =
+  "0xa27790f81bc74d9159bb5f8c71261b8aaec6f6b0c26bed5b4fabe281cea38964";
 ```
 
-- ###  Add Your Account Address
+- ### Add Your Account Address
 
-Your identity in the blockchain space is held by your address. In this scenario, your voter ID is your account address. We shall  be doing this using the function `web3.eth.accounts.privateKeyToAccount`  which allows you to create an account object from a private key. This line passes your `PRIVATE_KEY` to that function to set it as your account.
+Your identity in the blockchain space is held by your address. In this scenario, your voter ID is your account address. We shall be doing this using the function `web3.eth.accounts.privateKeyToAccount` which allows you to create an account object from a private key. This line passes your `PRIVATE_KEY` to that function to set it as your account.
 
 ```js
 const account = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
 ```
+
 - ### Enable ContractKit Sign Your Transactions Using your Private Key
 
-Every transactions to the  blockchain needs a signatory. This ought to be on every function called. Celo Contract Kit affords us an faster and cleaner way to write our codes and call functions.
+Every transactions to the blockchain needs a signatory. This ought to be on every function called. Celo Contract Kit affords us an faster and cleaner way to write our codes and call functions.
 
 ```js
 kit.connection.addAccount(account.privateKey);
-kit.defaultAccount = account.address;  //establish your default account to be used for transactions
+kit.defaultAccount = account.address; //establish your default account to be used for transactions
 ```
 
 - ### Add a second account just for testing our code
 
 ```js
-const account2 = '0x89563f2535ad834833c0D84CF81Ee335867b8e34';
+const account2 = "0x89563f2535ad834833c0D84CF81Ee335867b8e34";
 ```
 
 Now we are reading to start interacting with our contract using web3.js powered by Celo contract Kit for additional simplicity.
 
-- ### Call the function for adding a new candidate 
+- ### Call the function for adding a new candidate
 
 The syntax for this is;
 
 ```js
 async function addCandidate() {
-	console.log('Adding candidate...');
-	const gasPrice = await kit.web3.eth.getGasPrice();
-	const tx = await contracts.methods.addCandidate("Candidate A").send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
-	console.log('Transaction hash:', tx.transactionHash);
-	console.log('Candidate added!');
+  console.log("Adding candidate...");
+  const gasPrice = await kit.web3.eth.getGasPrice();
+  const tx = await contracts.methods
+    .addCandidate("Candidate A")
+    .send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
+  console.log("Transaction hash:", tx.transactionHash);
+  console.log("Candidate added!");
 }
 ```
- 
-- All `console.log()` lines seen above are just for testing/feedback/debugging purposes. 
+
+- All `console.log()` lines seen above are just for testing/feedback/debugging purposes.
 - When you call `kit.web3.eth.getGasPrice()`, it returns a promise that resolves to the current gas price, which is the median gas price of the latest blocks. This gas price is then used when sending the transaction to the network, as shown in the `send()` function. By using the current gas price, your transaction is more likely to be mined and confirmed within a reasonable time frame. IGas price estimation is a very critical step in the use of contract kit as not specifying coils lead to reversal of transactions by the EVM.
 - `contracts.methods.addCandidate("Candidate A")`: This part is calling the addCandidate function defined in the smart contract, and passing the argument "Candidate A" as the proposal name.
 - `.send({ from: account.address, gas: 2000000, gasPrice: gasPrice })`: This part sends the transaction to the network. It includes the following properties in the transaction object:
-- `from: account.address`: The address of the account that initiates the transaction. In this case, it is the account associated with the provided private key.
--`gas: 2000000`: The maximum amount of gas units that the transaction is allowed to consume. If the transaction consumes more gas than specified, it will fail. It's essential to set an appropriate gas limit, so you don't run out of gas during the execution.
+- `from: account.address`: The address of the account that initiates the transaction. In this case, it is the account associated with the provided private key. -`gas: 2000000`: The maximum amount of gas units that the transaction is allowed to consume. If the transaction consumes more gas than specified, it will fail. It's essential to set an appropriate gas limit, so you don't run out of gas during the execution.
 - `gasPrice: gasPrice`: The price per unit of gas, specified in the variable gasPrice. This value is obtained using kit.web3.eth.getGasPrice(), which estimates the optimal gas price based on the current network conditions.
 - The `await` keyword is used because sending a transaction is an asynchronous operation, and we want to wait for the transaction to be completed before moving on to the next step. The result of this operation is the transaction receipt, which includes the transaction hash, among other details. The receipt can be used to track the transaction status and confirm its successful execution.
 
- The above line of code can be tested in your terminal by running; 
+The above line of code can be tested in your terminal by running;
 
 ```bash
 node {file name}
 ```
 
-- ### Note: 
-Every transaction has 3 parts
+- ### Note:
+  Every transaction has 3 parts
 - Creating the transaction object
 - Signing the transaction object
 - Broadcasting the transaction to the network
 
 This procedure can be burdensome and confusing but contractKit abstracts away all of these complexities by using a simplified syntax.
-The line `const tx = await contracts.methods.addCandidate("Candidate A").send({ from: account.address, gas: 2000000, gasPrice: gasPrice });`  abstracts these steps, making it easier to interact with the smart contract. The process is similar for other methods of the smart contract – you just need to replace `addCandidate` with the desired function and also replace `Candidate A` with the actual argument parsed in your deployed smart contract..
+The line `const tx = await contracts.methods.addCandidate("Candidate A").send({ from: account.address, gas: 2000000, gasPrice: gasPrice });` abstracts these steps, making it easier to interact with the smart contract. The process is similar for other methods of the smart contract – you just need to replace `addCandidate` with the desired function and also replace `Candidate A` with the actual argument parsed in your deployed smart contract..
 
 - ### Call function for Giving Right to Voters
 
 ```js
 async function giveRightToVote(voterAddress) {
-	console.log('Giving right to vote to:', account2);
-	const gasPrice = await kit.web3.eth.getGasPrice();
-	const tx = await contracts.methods.giveRightToVote(account2).send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
-	console.log('Transaction hash:', tx.transactionHash);
-	console.log('Right to vote given!');
+  console.log("Giving right to vote to:", account2);
+  const gasPrice = await kit.web3.eth.getGasPrice();
+  const tx = await contracts.methods
+    .giveRightToVote(account2)
+    .send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
+  console.log("Transaction hash:", tx.transactionHash);
+  console.log("Right to vote given!");
 }
 ```
 
-After running this in our terminal, transaction hash is logged to the console. Also note that this transactions can be monitored on https://explorer.celo.org/alfajores/  by searching for your contract address on the search box. You will find this along with other events associated with the contract.
+After running this in our terminal, transaction hash is logged to the console. Also note that this transactions can be monitored on https://explorer.celo.org/alfajores/ by searching for your contract address on the search box. You will find this along with other events associated with the contract.
 
 ![Give Right to Vote](https://user-images.githubusercontent.com/6362475/229304073-57b30b68-12e7-4281-973b-c10d457014a7.png)
 
@@ -305,11 +308,13 @@ We specified in our smart contract that voting is to be done using proposal Inde
 
 ```js
 async function vote(proposalIndex) {
-	console.log('Voting for proposal:', 0);
-	const gasPrice = await kit.web3.eth.getGasPrice();
-	const tx = await contracts.methods.vote(proposalIndex).send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
-	console.log('Transaction hash:', tx.transactionHash);
-	console.log('Vote submitted!');
+  console.log("Voting for proposal:", 0);
+  const gasPrice = await kit.web3.eth.getGasPrice();
+  const tx = await contracts.methods
+    .vote(proposalIndex)
+    .send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
+  console.log("Transaction hash:", tx.transactionHash);
+  console.log("Vote submitted!");
 }
 ```
 
@@ -321,11 +326,13 @@ I decided to call this function twice to see what it would look like. As expecte
 
 ```js
 async function delegate() {
-	console.log('Delegating vote to:',account2 );
-	const gasPrice = await kit.web3.eth.getGasPrice();
-	const tx = await contracts.methods.delegate(account2).send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
-	console.log('Transaction hash:', tx.transactionHash);
-	console.log('Vote delegated!');
+  console.log("Delegating vote to:", account2);
+  const gasPrice = await kit.web3.eth.getGasPrice();
+  const tx = await contracts.methods
+    .delegate(account2)
+    .send({ from: account.address, gas: 2000000, gasPrice: gasPrice });
+  console.log("Transaction hash:", tx.transactionHash);
+  console.log("Vote delegated!");
 }
 ```
 
@@ -335,38 +342,34 @@ This call was deployed successfully with an error message, why? Because I alread
 
 - ### Calling Functions that Retrieved/Read Data from the EVM
 
-You noticed all the functions we’ve been calling were writing data to the blockchain. This is why we had to pay gas fees. But there are times we just want to monitor the state of the chain, this do not cost us any gas. 
-The remaining two functions in  our contract are both read functions and we shall be calling them together here.
+You noticed all the functions we’ve been calling were writing data to the blockchain. This is why we had to pay gas fees. But there are times we just want to monitor the state of the chain, this do not cost us any gas.
+The remaining two functions in our contract are both read functions and we shall be calling them together here.
 
-```js 
+```js
 //retrieve the winning candidate
 async function getWinnerName() {
-	console.log('Fetching winner name...');
-	const winnerName = await contracts.methods.winnerName().call();
-	console.log('Winner name:', winnerName);
-	return winnerName;
+  console.log("Fetching winner name...");
+  const winnerName = await contracts.methods.winnerName().call();
+  console.log("Winner name:", winnerName);
+  return winnerName;
 }
-
 
 //retrieve the winning Candidate Index
 async function getWinningProposal() {
-	console.log('Fetching winning proposal index...');
-	const winningProposalIndex = await contracts.methods.winningProposal().call();
-	console.log('Winning proposal index:', winningProposalIndex);
-	return winningProposalIndex;
+  console.log("Fetching winning proposal index...");
+  const winningProposalIndex = await contracts.methods.winningProposal().call();
+  console.log("Winning proposal index:", winningProposalIndex);
+  return winningProposalIndex;
 }
 ```
 
-Notice how .send() was replaced with .call()? This  function calls will make no changes to the blockchain but will print out to the console.
+Notice how .send() was replaced with .call()? This function calls will make no changes to the blockchain but will print out to the console.
 
 ![winning Proposal](https://user-images.githubusercontent.com/6362475/229304163-86a3d0eb-99f1-4655-bce6-d5adb278b91e.png)
-
-
 
 ## Conclusion​
 
 That's it! I Hope you followed through. We have come tho the end of this tutorial. With this i believe we all can easily use web3.js to interact with smart contracts using Celo Contract Kit to simplify the walkthroughs.
-
 
 ## Next Steps​
 
@@ -376,12 +379,10 @@ That's it! I Hope you followed through. We have come tho the end of this tutoria
 
 ## About the Author​
 
-Emiri Udogwu, a licensed medical doctor with a burning passion for technology and gifted  with skills for spreading knowledge and propagating ideas. A web3 and frontend developer.
+Emiri Udogwu, a licensed medical doctor with a burning passion for technology and gifted with skills for spreading knowledge and propagating ideas. A web3 and frontend developer.
 
 ## References​
 
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
 - [Contract Kit](https://docs.celo.org/developer/contractkit)
-
-
