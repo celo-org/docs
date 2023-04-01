@@ -2705,6 +2705,13 @@ const Users: User[] = [
     website: 'blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions',
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
+  {
+    title: 'Automate Celo DApp Deployment to Cloudflare Pages with GitHub Actions',
+    description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with GitHub Actions',
+    preview: require('./showcase/intermediate/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions.png'),
+    website: 'blog/tutorials/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions',
+    tags: ['celosage', 'react', 'intermediate', 'celo'], 
+  },
 
   {
     title: 'Billeteras como crearlas y como fondearlas',
@@ -2747,7 +2754,6 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
-
   },
   /*
   Pro Tip: add your site in alphabetical order.
