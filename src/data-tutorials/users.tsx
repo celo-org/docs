@@ -1026,6 +1026,14 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'Build A Full Stack Ecommerce Dapp On The Celo Blockchain',
+    description: 'In this tutorial, we will build a full stack ecommerce dapp where users can buy and sell products in a decentralized way',
+    preview: require('./showcase/intermediate/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
+  },
+  
+  {
     title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
     description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
     preview: require('./showcase/intermediate/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain.png'),
@@ -1365,6 +1373,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/how-to-build-podcast-streaming-platform-celo-1.png'),
     website: '/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1',
     tags: ['celo', 'intermediate', 'celosage', 'solidity'],
+  },
+  {
+    title: 'How to Build a Simple Anonymous dapp on Celo',
+    description: 'This tutorial guides you through the steps required to building an anonymous decentralized application.',
+    preview: require('./showcase/beginner/how-to-build-simple-anonymous-dapp-on-celo.png'),
+    website: '/blog/tutorials/how-to-build-simple-anonymous-dapp-on-celo',
+    tags: ['celo', 'beginner', 'celosage', 'solidity'],
   },
   {
     title: 'Celo Integration with Web3',
@@ -2696,6 +2711,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/sage-using-python-to-build-a-celo-blockchain-identity-system.png'),
     website: '/blog/tutorials/using-python-to-build-a-celo-blockchain-identity-system',
     tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
+    title: 'Automate Celo DApp Deployment to Cloudflare Pages with GitHub Actions',
+    description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with GitHub Actions',
+    preview: require('./showcase/intermediate/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions.png'),
+    website: 'blog/tutorials/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions',
+    tags: ['celosage', 'react', 'intermediate', 'celo'], 
   },
   {
     title: 'Billeteras como crearlas y como fondearlas',
