@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
 tags: [celosage, celo, beginner, solidity, contractkit, remix]
 hide_table_of_contents: true
-slug: /tutorials/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginner's-Guide-A-Voting-App
+slug: /tutorials/interacting-with-the-celo-blockchain-using-web3js-a-beginners-guide-a-voting-app
 ---
 
 ![Interacting with the Celo Blockchain ](https://user-images.githubusercontent.com/6362475/229304012-6d090f44-09f9-475b-b67f-8da7c0b12017.png)
