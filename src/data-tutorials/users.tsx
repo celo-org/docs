@@ -1979,6 +1979,13 @@ const Users: User[] = [
 
   // Videos
 
+    {
+    title: 'How to build an NFT marketplace with Nextjs ipfs etherjs and Redux',
+    description: 'Learn how to build an nft marketplace with nextjs as the framework and Ipfs for storage and Redux for state management and Hardhat for compiling.',
+    preview: require('./showcase/intermediate/how-to-build-nftmarkertplace.png'),
+    website:'/blog/tutorials/how-to-build-an-nft-marketplace-with-nextjsipfsetherjs-and-redux',
+    tags: ["celosage","metamask","dacade", "mint","nextjs","nft","intermediate","ipfs"],
+  },
   {
     title: 'Deploy Celo Smart contracts with Remix IDE',
     description: 'Learn how to use Remix IDE for deploying Celo smart contracts',
