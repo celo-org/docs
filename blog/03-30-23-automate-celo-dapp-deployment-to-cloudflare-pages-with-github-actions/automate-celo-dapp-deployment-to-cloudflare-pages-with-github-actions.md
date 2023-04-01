@@ -13,6 +13,8 @@ slug: /tutorials/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-a
 
 ![header](../../src/data-tutorials/showcase/intermediate/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions.png)
 
+## Introduction
+
 Any software development life cycle is not complete until the product or solution the development teams are building reaches the customers. For this to be possible, there is a need for a series of setup and configuration steps to create an environment to run the solution and make it accessible to all the customers as needed. Solution Reaching the customer is not enough, as it is important to consider the rate at which it reaches them in due time. This is why automation is necessary to speed up the rate of product release to market through a simple and stress-free method. This could be made possible with the help of a version control system. Every code push to this system can be tracked and automatically delivered to our customers with the help of a powerful automation tool called GitHub Actions, which can help us deliver our product to the various platforms where we are hosting it. In this tutorial, we will be focusing on Cloudflare, but the steps can be adopted for other similar platforms like Heroku, Digital Ocean, and so on. As usual, we will be using one of the articles written by one of the members of the Celo Sage community, as this article will be focusing on deploying Celo DApps on Cloudflare.
 
 ## Prerequisite
