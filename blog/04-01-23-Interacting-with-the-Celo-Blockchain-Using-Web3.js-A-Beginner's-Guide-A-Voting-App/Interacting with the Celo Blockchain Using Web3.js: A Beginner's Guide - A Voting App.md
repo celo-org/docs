@@ -1,14 +1,14 @@
 ---
-title: Interacting with the Celo Blockchain Using Web3.js: A Beginner's Guide - A Voting App
-description: This tutorial teaches how to interact with our smart contracts using web3.js simplified with celo Contract kit
+title: Interacting with the Celo Blockchain Using Web3.js A Beginner's Guide - A Voting App.
+description: This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit.
 authors:
   - name: Emiri Udogwu
-    title: Tech Ethusiast, Smart Contract Developer 
+    title: Tech Ethusiast, Smart Contract Developer
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celo sage, celo, beginner, solidity]
+tags: [celosage, celo, beginner, solidity]
 hide_table_of_contents: true
-slug: /tutorials/interacting-with-the-celo-blockchain-using-web3.js-a-beginner's-guide-a-voting-app
+slug: /tutorials/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginner's-Guide-A-Voting-App
 ---
 
 ## Introduction​
@@ -53,8 +53,7 @@ Now, lets get started;
 
 - **Step 1:** Write your Voting Smart Contract and Deploy on Remix IDE
 
-```solidity
-
+```sol
 //SPDX-License-Identifier: MIT
 pragma solidity  ^0.8.0;
 contract Voting {
