@@ -1367,9 +1367,9 @@ const Users: User[] = [
     tags: ['celo', 'intermediate', 'celosage', 'solidity'],
   },
   {
-    title: 'How to Build a Simple Anonymous Dapp on Celo',
+    title: 'How to Build a Simple Anonymous dapp on Celo',
     description: 'This tutorial guides you through the steps required to building an anonymous decentralized application.',
-    preview: require('./showcase/intermediate/how-to-build-simple-anonymous-dapp-on-celo.png'),
+    preview: require('./showcase/beginner/how-to-build-simple-anonymous-dapp-on-celo.png'),
     website: '/blog/tutorials/how-to-build-simple-anonymous-dapp-on-celo',
     tags: ['celo', 'beginner', 'celosage', 'solidity'],
   },
