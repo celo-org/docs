@@ -7,7 +7,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, solidity, celo, react, intermediate]
 hide_table_of_contents: true
-slug: "/tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain"
+slug: /tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain.png)
