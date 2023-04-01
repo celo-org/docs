@@ -1,12 +1,12 @@
 ---
 title: Interacting with the Celo Blockchain Using Web3.js: A Beginner's Guide - A Voting App
-description: This tutorial teaches how to connect to a node on the celo blockchain using docker
+description: This tutorial teaches how to interact with our smart contracts using web3.js simplified with celo Contract kit
 authors:
   - name: Emiri Udogwu
     title: Tech Ethusiast, Smart Contract Developer 
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celo sage, celo, beginner, cli]
+tags: [celo sage, celo, beginner, solidity]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-the-celo-blockchain-using-web3.js-a-beginner's-guide-a-voting-app
 ---
@@ -32,11 +32,11 @@ In this tutorial, we shall be going through how to interact with smart contracts
 
 ## Prerequisites
 
-Node.js should be installed along with a node package manager(npm)
+- Node.js should be installed along with a node package manager(npm)
 - A basic understanding of Celo and smart contracts
 - A Celo Wallet address: 
-- To create Alfajores wallet, go to [https://celo.org/developers/faucet](Alfajores wallet)
-- To get testnest funds, go to Celo faucet [https://faucet.celo.org/](Celo Faucet)
+- To create Alfajores wallet, go to [Alfajores wallet](https://celo.org/developers/faucet)
+- To get testnest funds, go to Celo faucet [Celo Faucet](https://faucet.celo.org/)
 - A text editor such as Visual Studio Code installed on your computer
 - A terminal to test our code syntax
 - Remix IDE
@@ -52,6 +52,7 @@ $ git clone https://github.com/emiridbest/Voting-Smart-Contract-On-Celo-Using-We
 Now, lets get started;
 
 - **Step 1:** Write your Voting Smart Contract and Deploy on Remix IDE
+
 ```solidity
 
 //SPDX-License-Identifier: MIT
@@ -159,7 +160,7 @@ Explanation:
 
 Now, we compile this contract then deploy on Injected web3 provider. This pops up our already install metamask wallet, make sure to choose Alfajores containing wallet.
 
-On deploying, a link to [https://explorer.celo.org/alfajores](Alfajores Explorer) pops up at the top of your browser.YOu can now copy out your contract address and save it somewhere as web3.js needs this address to interact with this particular contract.
+On deploying, a link to [Alfajores Explorer](https://explorer.celo.org/alfajores) pops up at the top of your browser.YOu can now copy out your contract address and save it somewhere as web3.js needs this address to interact with this particular contract.
 
 Also, go back to remix and copy out you contract ABI save it somewhere.
 
@@ -189,7 +190,7 @@ The dependencies we’re working with are `web3` and `contract kit`;
 
 ```
  
- - Define Web3 and ContractKit
+ - ### Define Web3 and ContractKit
 
 Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network (Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
 
@@ -198,7 +199,7 @@ Using Web3 allows you to connect to a Celo node by providing the node’s endpoi
  const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
-- Create a contract Instance
+- ###  Create a contract Instance
 
 This is the step that links us to the contract we already deployed on Remix. Here, we will be needed to variables - `ABI` and `Contract address`. I hope you copied them out earlier.
 
@@ -210,7 +211,7 @@ const Contract = kit.contracts.getContract('Contract', { abi: ContractAbi, addre
 
 Make sure you parse in the appropriate values for the `ContractAddress` and `ContractAbi`. 
 
-- Add your Private Key
+- ### Add your Private Key
 
 For every transaction requiring gas fees, you need a private which serves as a signatory to your account funds. Always avoid sharing your private keys to a publicly deployed contract as it could put your funds at risk of theft. The most preferred way of storing your private key is in a `.env` file in which case you have to install and also import the `.dotenv` dependency.
 But for the purpose of this tutorial, we will be using a test account containing faucet claimed funds, so we can easily get it displayed without the fear of lossing our funds.
@@ -219,14 +220,14 @@ But for the purpose of this tutorial, we will be using a test account containing
 const PRIVATE_KEY = '0xa27790f81bc74d9159bb5f8c71261b8aaec6f6b0c26bed5b4fabe281cea38964';
 ```
 
-- Add Your Account Address
+- ###  Add Your Account Address
 
 Your identity in the blockchain space is held by your address. In this scenario, your voter ID is your account address. We shall  be doing this using the function `web3.eth.accounts.privateKeyToAccount`  which allows you to create an account object from a private key. This line passes your `PRIVATE_KEY` to that function to set it as your account.
 
 ```js
 const account = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
 ```
-- Enable ContractKit Sign Your Transactions Using your Private Key
+- ### Enable ContractKit Sign Your Transactions Using your Private Key
 
 Every transactions to the  blockchain needs a signatory. This ought to be on every function called. Celo Contract Kit affords us an faster and cleaner way to write our codes and call functions.
 
@@ -235,7 +236,7 @@ kit.connection.addAccount(account.privateKey);
 kit.defaultAccount = account.address;  //establish your default account to be used for transactions
 ```
 
-- Add a second account just for testing our code
+- ### Add a second account just for testing our code
 
 ```js
 const account2 = '0x89563f2535ad834833c0D84CF81Ee335867b8e34';
@@ -243,7 +244,7 @@ const account2 = '0x89563f2535ad834833c0D84CF81Ee335867b8e34';
 
 Now we are reading to start interacting with our contract using web3.js powered by Celo contract Kit for additional simplicity.
 
-- Call the function for adding a new candidate 
+- ### Call the function for adding a new candidate 
 
 The syntax for this is;
 
@@ -272,7 +273,7 @@ async function addCandidate() {
 node {file name}
 ```
 
-# Note: 
+- ### Note: 
 Every transaction has 3 parts
 - Creating the transaction object
 - Signing the transaction object
@@ -281,7 +282,7 @@ Every transaction has 3 parts
 This procedure can be burdensome and confusing but contractKit abstracts away all of these complexities by using a simplified syntax.
 The line `const tx = await contracts.methods.addCandidate("Candidate A").send({ from: account.address, gas: 2000000, gasPrice: gasPrice });`  abstracts these steps, making it easier to interact with the smart contract. The process is similar for other methods of the smart contract – you just need to replace `addCandidate` with the desired function and also replace `Candidate A` with the actual argument parsed in your deployed smart contract..
 
-- Call function for Giving Right to Voters
+- ### Call function for Giving Right to Voters
 
 ```js
 async function giveRightToVote(voterAddress) {
@@ -297,7 +298,7 @@ After running this in our terminal, transaction hash is logged to the console. A
 
 
 
-- Call the function for voting for a Candidate
+- ### Call the function for voting for a Candidate
 
 We specified in our smart contract that voting is to be done using proposal Index, this is what our code will look like:
 
@@ -313,7 +314,7 @@ async function vote(proposalIndex) {
 
 I decided to call this function twice to see what it would look like. As expected, it was successful at first but the second call was returned by the EVM since only one vote is permitted per account. On Celo explorer, this is what i found;
 
-- Call Function to Delegate Voting Rights to Another
+- ### Call Function to Delegate Voting Rights to Another
 
 ```js
 async function delegate() {
@@ -327,7 +328,7 @@ async function delegate() {
 
 This call was deployed successfully with an error message, why? Because I already voted.
 
-- Calling Functions that Retrieved/Read Data from the EVM
+- ### Calling Functions that Retrieved/Read Data from the EVM
 
 You noticed all the functions we’ve been calling were writing data to the blockchain. This is why we had to pay gas fees. But there are times we just want to monitor the state of the chain, this do not cost us any gas. 
 The remaining two functions in  our contract are both read functions and we shall be calling them together here.
@@ -360,9 +361,9 @@ That's it! I Hope you followed through. We have come tho the end of this tutoria
 
 ## Next Steps​
 
-- [https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html](Web3.js Documentation)
-- [https://docs.soliditylang.org/_/downloads/en/latest/pdf/](Solidity Documentation)
-- [https://docs.celo.org/developer/contractkit](Contract Kit)
+- [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
+- [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
+- [Contract Kit](https://docs.celo.org/developer/contractkit)
 
 ## About the Author​
 
@@ -370,6 +371,7 @@ Emiri Udogwu, a licensed medical doctor with a burning passion for technology an
 
 ## References​
 
-- [https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html](Web3.js Documentation)
-- [https://docs.soliditylang.org/_/downloads/en/latest/pdf/](Solidity Documentation)
-- [https://docs.celo.org/developer/contractkit](Contract Kit)
+- [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
+- [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
+- [Contract Kit](https://docs.celo.org/developer/contractkit)
+
