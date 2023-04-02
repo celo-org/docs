@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-your-own-ai-art-nft-marketplace-on-the-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/advanced/build_your_own_a.i_art_nft_marketplace_on_the_celo_blockchain.png)
+![header](../../src/data-tutorials/showcase/advanced/build_your_own_ai_art_nft_marketplace_on_the_celo_blockchain.png)
 
 ## Introduction
 
