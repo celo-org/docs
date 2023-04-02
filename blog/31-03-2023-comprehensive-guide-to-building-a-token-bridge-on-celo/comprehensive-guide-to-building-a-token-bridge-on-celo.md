@@ -138,7 +138,7 @@ From here, we see that this contract is written to receive(hence payable) and lo
 
 Create a new TokenBridgeCelo solidity file.
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
