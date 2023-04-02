@@ -1326,6 +1326,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'How To Build A Multi Signature Wallet Contract That Requires Multiple Approvals For Transactions On Celo',
+    description: 'In this tutorial, we will walk through the process of building a multi-signature wallet contract using Solidity and remix ide.',
+    preview: require('./showcase/intermediate/how-to-build-a-multi-signature-wallet-contract-that-requires-multiple-approvals-for-transactions-on-celo.png'),
+    website: 'blog/tutorials/how-to-build-a-multi-signature-wallet-contract-that-requires-multiple-approvals-for-transactions-on-celo',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'How To Create And Deploy A Peer To Peer Lending And Borrowing Smart Contract On The Celo Blockchain',
     description: 'In this tutorial, we will learn how to create a fully functional p2p lending and borrowing smart contract on the celo blockchain',
     preview: require('./showcase/intermediate/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain.png'),
