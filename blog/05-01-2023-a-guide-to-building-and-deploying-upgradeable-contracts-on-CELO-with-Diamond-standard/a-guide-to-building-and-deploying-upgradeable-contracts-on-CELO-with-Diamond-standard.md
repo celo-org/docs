@@ -11,6 +11,9 @@ hide_table_of_contents: true
 slug: /tutorials/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard
 ---
 
+![header](../../src/data-tutorials/showcase/advanced/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard.png)
+
+
 ## A guide to building and deploying upgradeable contracts on CELO with Diamond standard
 
 The Diamond Standard was articulated in [EIP2535](https://eips.ethereum.org/EIPS/eip-2535) and clearly defines a pathway for deploying multi facet smart-contracts that are modular, extensible and upgrade-able.
