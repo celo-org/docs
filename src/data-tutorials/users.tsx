@@ -956,6 +956,13 @@ const Users: User[] = [
     tags: ['celosage','beginner'],
   },
   {
+    title: 'How to swap Celo tokens on Uniswap programmatically with code',
+    description: 'In this tutorial, we show you how to build an automated Celo token swapper using ethersJS and Uniswap SDK.',
+    preview: require('./showcase/intermediate/how-to-swap-celo-tokens-on-uniswap-programmatically.png'),
+    website: '/blog/tutorials/how-to-swap-celo-tokens-on-uniswap-programmatically',
+    tags: ['celosage', 'celo', 'intermediate', 'metamask', 'nodejs', 'javascript'],
+  },
+  {
     title: 'Exploring the intersection of Artificial Intelligence and Web3',
     description: 'In this article we will explore the ways in which the AI can help to develop dApps and to improve the productivity of all in Web3',
     preview: require('./showcase/beginner/exploring-intersection-of-ai-and-web3.png'),
