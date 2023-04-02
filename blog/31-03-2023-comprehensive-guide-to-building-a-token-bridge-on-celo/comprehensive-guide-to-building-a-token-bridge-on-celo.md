@@ -21,6 +21,16 @@ Have you ever wondered how to build a bridge that allows seamless transfer of as
 
 Token Bridges are  interoperability protocol which allows users to move their owned Token on a certain chain or e.g cUSD on Celo between networks in a quick and cost-efficient manner. Such as switch the cUSD on Celo to MATIC on Polygon.
 
+
+## Project Flow
+
+![](https://i.imgur.com/MLcrYq6.png)
+
+## Project Demo
+
+https://user-images.githubusercontent.com/7295729/229337139-b6dea0ac-9fe8-4126-a9a8-19ba66722cfb.mp4
+
+
 ## Requirements
 
 Prior to beginning this tutorial, it is important to ensure that your computer has the necessary tools installed. Please check that you have the following installed
@@ -32,9 +42,6 @@ Prior to beginning this tutorial, it is important to ensure that your computer h
 
 For a more comprehensive understanding and implementation of this tutorial, check out the codebase [here](https://github.com/alofeoluwafemi/celotokenbridge)
 
-## Working Demo
-
-https://token-bridge-react-app.vercel.app/
 
 ## Celo Composer
 
@@ -89,22 +96,36 @@ Within your integrated development environment (IDE), navigate to the package di
 
 `npm install @openzeppelin/contracts`
 
-Still in the hardhat folder, you should find a contracts directory that contains built-in contracts. First things first, we create the contract that holds the asset we want to send. 
+Still in the hardhat folder, you should find a contracts directory that contains built-in contracts. First things first, we create the contracts that holds the asset we want to send. 
 
 Create a new TokenBridgeMumbai solidity file.
 
 ```solidity
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract TokenBridgeMumbai {
-    address public tokenAddress;
+    address public owner;
     mapping(address => uint256) public balances;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only signer can call this function");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     event Deposit(address indexed depositor, uint256 amount);
 
-    constructor(address _tokenAddress) {
-        tokenAddress = _tokenAddress;
+    function sendMatic(
+        uint256 amount,
+        address payable recipient
+    ) external onlyOwner {
+        require(address(this).balance >= amount, "Not enough balance");
+        bool success = recipient.send(amount);
+        require(success, "Failed to send Matic!");
     }
 
     function depositMatic() external payable {
@@ -112,24 +133,69 @@ contract TokenBridgeMumbai {
         balances[msg.sender] += msg.value;
         emit Deposit(msg.sender, msg.value);
     }
+
+    receive() external payable {}
 }
 ```
 
-From here, we see that this contract is written to receive(hence payable) and lock up Matic. In that case, if another person interacts with the contract, the user will receive Matic for Celo assuming bridging from Celo to Matic. An event is in the contract called Deposit which is emitted in the function. This event will be called by a node js server that we will set up shortly.
+From here, we see that this contract is written to receive(hence payable) and lock up Matic. There is also another function to send matic from the contract. In that case, if another person interacts with the contract, the user will receive Matic for CELO. 
+
+Create a new TokenBridgeCelo solidity file.
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TokenBridgeCelo {
+    address public owner;
+    mapping(address => uint256) public balances;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only signer can call this function");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    event Deposit(address indexed depositor, uint256 amount);
+
+    function sendCelo(
+        uint256 amount,
+        address payable recipient
+    ) external onlyOwner {
+        require(address(this).balance >= amount, "Not enough balance");
+        bool success = recipient.send(amount);
+        require(success, "Failed to send Celo!");
+    }
+
+    function depositCelo() external payable {
+        require(msg.value > 0, "Amount must be greater than zero");
+        balances[msg.sender] += msg.value;
+        emit Deposit(msg.sender, msg.value);
+    }
+
+    receive() external payable {}
+}
+```
+
+From here, we see that this contract is written to receive(hence payable) and lock up CELO. There is also another function to send CELO from the contract. In that case, if another person interacts with the contract, the user will receive CELO for Matic.
+
+An event is in both contracts called Deposit which is emitted in the function. This event will be called by a listener node js server that we will set up shortly.
 
 After this, we will create a deployment file for the contract.  
 
-Create a `deploymumbai.js` file with code looking like this
+Create a `deploymumbai.js` to deploy the first contract TokenBridgeMumbai file. You can have this in the scripts folder. packages>> hardhat >> script. The code will look like this
 
 ```solidity
 const hre = require("hardhat");
 
 async function main() {
-  const maticAddress = "0x0000000000000000000000000000000000001010"; // matic contract address
   const TokenBridgeMumbai = await hre.ethers.getContractFactory(
     "TokenBridgeMumbai"
   );
-  const tokenBridgeMumbai = await TokenBridgeMumbai.deploy(maticAddress);
+  const tokenBridgeMumbai = await TokenBridgeMumbai.deploy();
   await tokenBridgeMumbai.deployed();
   console.log(
     "TokenBridgeMumbai address deployed to:",
@@ -140,14 +206,31 @@ async function main() {
 main();
 ```
 
-> Make sure to create a `.env` file and keep all your environment variables in it, your account's private key and api keys that will be needed for deployment. 
-> CELO_NETWORK=https://alfajores-forno.celo-testnet.org
+Create another file `deploycelo.js` to deploy the second contract TokenBridgeCelo file. The code will look like this
 
+```javascript
+const hre = require("hardhat");
+
+async function main() {
+  const TokenBridgeCelo = await hre.ethers.getContractFactory(
+    "TokenBridgeCelo"
+  );
+  const tokenBridgeCelo = await TokenBridgeCelo.deploy();
+  await tokenBridgeCelo.deployed();
+  console.log("TokenBridgeCelo address deployed to:", tokenBridgeCelo.address);
+}
+
+main();
+```
+
+
+> Make sure to create a `.env` file and keep all your environment variables in it, your account's private key and api keys that will be needed for deployment. 
 ```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
 CELOSCAN_API_KEY=YOUR_CELOSCAN_KEY
 MUMBAI_RPC=https://rpc-mumbai.maticvigil.com
 POLYSCAN_API_KEY=YOUR_POLYSCAN_KEY
+CELO_NETWORK=https://alfajores-forno.celo-testnet.org
 ```
 
 In your `hardhat.config.js` file which is still in the hardhat folder, edit your module exports to look similar to this
@@ -190,10 +273,17 @@ module.exports = {
 };
 ```
 
+Run the following to deploy and verify your contracts
+
+npx hardhat --network alfajores run scripts/deploycelo.js
+npx hardhat --network mumbai run scripts/deploymumbai.js
+
+npx hardhat verify --network alfajores YOUR_DEPLOYED_CONTRACT_ADDRESS
+npx hardhat verify --network mumbai YOUR_DEPLOYED_CONTRACT_ADDRESS
 
 ## Set up your node.js server
 
-In your hardhat folder still, you will find the scripts folder. We will first create an wrapper.js file in the scripts folder. Here we call the contract with the deposit function
+In your hardhat folder still and still in the scripts folder. We will create a wrapper.js file. Here we call the contract with the deposit function
 
 
 ```javascript
@@ -244,7 +334,7 @@ module.exports = { getMumbaiBridgeContract, start };
 
 It's now time to create a node server that will listen for the Deposit event in our contract.
 
-Create an index.js file in the same folder as wrapper.js, you can decide to keep it anywhere too. Inside here, we can use the Celo ContractKit. The ContractKit is a library used for interacting with the Celo blockchain. Import the kit like below
+Create a watchMumbai.js file in the same folder as wrapper.js, you can decide to keep it anywhere too. Inside here, we can use the Celo ContractKit. The ContractKit is a library used for interacting with the Celo blockchain. Import the kit like below
 
 ```javascript
 const {
@@ -256,47 +346,65 @@ const {
 
 To create an instance of the contract, all you need to do is
 
-`const contract = new kit.web3.eth.Contract(YOUR_ABI, contractAddress);`
+`const contract = new kit.web3.eth.Contract(YOUR_ABI, mumbaiContractAddress);`
+const mumbaiContractAddress = YOUR_CONTRACT_ADDRESS;
 
-Write a function to trigger the Deposit function 
+Initialize providers for each of the networks as we need to refer to them as we proceed. These values can also be your environment variables.
 
 ```javascript
-contract.events.Deposit(
-  {
-    fromBlock: "latest",
-  },
-  async (error, event) => {
-    if (!error) {
-      console.log("Deposit event:", event);
-      const amount = event.returnValues.amount;
-      const tx = kit.sendTransaction(
-        {
-          from: fromAddress,
-          to: toAddress,
-          value: amount,
-        },
-        (error, transactionHash) => {
-          if (!error) {
-            console.log("Transaction hash:", transactionHash);
-          } else {
-            console.error("Error:", error);
-          }
-        }
-      );
-    } else {
-      console.error("Error:", error);
-    }
-    console.log(await tx);
-  }
+const providerCelo = new ethers.providers.JsonRpcProvider(
+  "https://alfajores-forno.celo-testnet.org"
 );
+const providerMumbai = new ethers.providers.JsonRpcProvider(
+  "https://rpc-mumbai.maticvigil.com"
+);
+```
+
+Using ethers.js, create an interface that would be able to get filters 
+
+```javascript
+const iface = new ethers.utils.Interface([
+  "event Deposit(address indexed depositor, uint256 amount)",
+]);
+
+filter = {
+  address: mumbaiContractAddress,
+  topics: [
+    // the name of the event, parnetheses containing the data type of each event, no spaces
+    ethers.utils.id("Deposit(address,uint256)"),
+  ],
+};
+```
+
+
+Use ethers.js to listen for the Deposit function and invoke the function to send the equivalent CELO token.
+
+```javascript
+//Listen event
+providerMumbai.on(filter, (event) => {
+  console.log("Received event");
+  console.log("event", event);
+  const eventData = iface.decodeEventLog("Deposit", event.data, event.topics);
+  console.log(iface.decodeEventLog("Deposit", event.data, event.topics));
+  const amount = eventData.amount;
+  const tx = fromContract
+    .sendCelo(amount, toAddress)
+    .then((d) => console.log(d))
+    .catch((error) => console.log(error));
+  console.log("Transaction", tx);
+});
+
 ```
 
 Your full code will eventually look like this
 
 ```javascript
+// Import dependencies
 require("dotenv").config();
-const abi = require("../../../TokenBridgeMumbai.json");
+const mumbai = require("../../../TokenBridgeMumbai.json");
+const alfajores = require("../../../TokenBridgeCelo.json");
 const Web3 = require("web3");
+const ethers = require("ethers");
 const {
   CeloContract,
   newKitFromWeb3,
@@ -304,65 +412,64 @@ const {
 } = require("@celo/contractkit");
 
 // Initialize the kit with a URL to a Celo node
-const web3 = new Web3("wss://alfajores-forno.celo-testnet.org/ws"); //Websocket support:
+const web3 = new Web3("wss://alfajores-forno.celo-testnet.org/ws");
 const kit = newKitFromWeb3(web3);
 
-const contractAddress = "0x27923264F18D9d6C9F7007B36FF5D50d56E12C97";
-const contract = new kit.web3.eth.Contract(abi.abi, contractAddress);
+const mumbaiContractAddress = "0xbDeEc110E30d65Ba25B84C58aE050bf797f52438";
+const contract = new kit.web3.eth.Contract(mumbai.abi, mumbaiContractAddress);
 
-const fromAddress = "0x1B46F75aC63bc57DFE82A374bDCdbfB08d125792";
-const toAddress = contract.options.address;
+console.log("events", contract.events);
 
-contract.events.Deposit(
-  {
-    fromBlock: "latest",
-  },
-  async (error, event) => {
-    if (!error) {
-      console.log("Deposit event:", event);
-      const amount = event.returnValues.amount;
-      const tx = kit.sendTransaction(
-        {
-          from: fromAddress,
-          to: toAddress,
-          value: amount,
-        },
-        (error, transactionHash) => {
-          if (!error) {
-            console.log("Transaction hash:", transactionHash);
-          } else {
-            console.error("Error:", error);
-          }
-        }
-      );
-    } else {
-      console.error("Error:", error);
-    }
-    console.log(await tx);
-  }
+const providerCelo = new ethers.providers.JsonRpcProvider(
+ process.env.CELO_NETWORK
 );
+const providerMumbai = new ethers.providers.JsonRpcProvider(
+ process.env.MUMBAI_RPC
+);
+const privateKey =
+  YOUR_PRIVATE_KEY;
+const signer = new ethers.Wallet(privateKey, providerCelo);
+const fromAddress = "0x892D2863A03bAC1fEE174b2DAbE0921c402622ED"; // Alfajores contract
+const abi = ["function sendCelo(uint256 amount,address payable recipient)"];
+const fromContract = new ethers.Contract(fromAddress, abi, signer);
 
-contract.events
-  .Deposit({})
-  .on("connected", (subscriptionId) => {
-    console.log(`Connected to subscription ${subscriptionId}`);
-  })
-  .on("data", (event) => {
-    console.log("Received deposit event:", event);
-  })
-  .on("error", (error) => {
-    console.error("Error:", error);
-  });
+
+const iface = new ethers.utils.Interface([
+  "event Deposit(address indexed depositor, uint256 amount)",
+]);
+
+filter = {
+  address: mumbaiContractAddress,
+  topics: [
+    // the name of the event, parnetheses containing the data type of each event, no spaces
+    ethers.utils.id("Deposit(address,uint256)"),
+  ],
+};
+
+//Watch event
+providerMumbai.on(filter, (event) => {
+  console.log("Received event");
+  console.log("event", event);
+  const eventData = iface.decodeEventLog("Deposit", event.data, event.topics);
+  const amount = eventData.amount;
+  const tx = fromContract
+    .sendCelo(amount, eventData.depositor)
+    .then((d) => console.log(d))
+    .catch((error) => console.log(error));
+  console.log("Transaction", tx);
+});
 ```
 
-The code listens for the Deposit event during the bridging activity and sends funds from the bridge contract holding CELO or wherever is decided to be the source of funds and sends it to the wallet connected. You can run this command to check if your code works properly. 
+> Repeat this same process and create a watchCelo.js file with the variables inverted. 
+
+The code listens for the Deposit event during the bridging activity and sends funds from the bridge contract holding CELO and sends it to the wallet connected. You can run this command to check if your code works properly. 
 
 `node index.js`
 
 
 In your console, you should see something similar to this
 
-![](https://i.imgur.com/E4i05Ys.png)
+![](https://i.imgur.com/hMdAtRK.png)
 
 Next up is for us to build our frontend
 
@@ -407,6 +514,7 @@ const currencies = [
 
 const BridgeForm = () => {
   const [amount, setAmount] = useState("");
+  const [bridgeLoading, setBridgeLoading] = useState(false);
   const [bridgeSuccess, setBridgeSuccess] = useState(false);
   const [bridgeError, setBridgeError] = useState("");
 
@@ -416,12 +524,16 @@ const BridgeForm = () => {
   const handleBridge = async () => {
     try {
       try {
-        await start(amount);
+        let txn = await start(amount);
+        setBridgeLoading(true);
+        console.log("Loading...", txn.hash);
+        await txn.wait();
+        console.log("Finalized -- ", txn.hash);
+        setBridgeSuccess(true);
+        setBridgeLoading(false);
       } catch (error) {
         console.error(error);
       }
-      // Update the UI to show the donation was successful
-      setBridgeSuccess(true);
     } catch (error) {
       console.log(error);
       setBridgeError("Something went wrong. Please try again.");
@@ -442,11 +554,6 @@ const BridgeForm = () => {
               name="fromCurrency"
               className="block w-full mt-1 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm text-gray-700 text-sm"
               value={fromCurrency.symbol}
-                 onChange={(e) =>
-                   setFromCurrency(
-                     currencies.find((c) => c.symbol === e.target.value)
-                   )
-                 }
             >
               {currencies.map((currency) => (
                 <option key={currency.symbol} value={currency.symbol}>
@@ -479,11 +586,6 @@ const BridgeForm = () => {
               name="toCurrency"
               className="block w-full mt-1 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm text-gray-700 text-sm"
               value={toCurrency.symbol}
-                 onChange={(e) =>
-                   setToCurrency(
-                     currencies.find((c) => c.symbol === e.target.value)
-                   )
-                 }
             >
               {currencies.map((currency) => (
                 <option key={currency.symbol} value={currency.symbol}>
@@ -567,16 +669,20 @@ const BridgeForm = () => {
       >
         Proceed
       </button>
+      {bridgeLoading && <p className="text-red-500 mt-4 text-sm">Loading...</p>}
       {bridgeSuccess && (
-        <p className="text-green-500 mt-4 text-sm">Bridging successful!</p>
+        <p className="text-green-500 mt-4 text-sm">
+          Bridging successful! Check your Alfajores wallet
+        </p>
       )}
-      {bridgeError && <p className="text-red-500 mt-4 text-sm">{bridgeError}</p>}
+      {bridgeError && (
+        <p className="text-red-500 mt-4 text-sm">{bridgeError}</p>
+      )}
     </div>
   );
 };
 
 export default BridgeForm;
-
 ```
 
 It will call the start function in the wrapper file. The start functions makes a call to the contract and once the event on the contract is deposited, the node js server is listening and transfers the equivalent CELO. 
@@ -615,6 +721,12 @@ After a successful transaction, the bridging will be successful so you can updat
 ![](https://i.imgur.com/JmoaeeA.png)
 
 Confirm the transaction in your CELO wallet
+
+Once a confirmation is done, go back to your node terminal to check that your listener has received the deposit event. In your terminal, you should see a log to confirm that the event has been received. 
+
+![](https://i.imgur.com/kUrIS3n.png)
+
+Wait for the transaction to be completed on the chain and you can copy your transaction hash to confirm the transaction on the alfajores explorer.
 
 There you have it, you just successfully developed a bridge that allowed seamless transfer between two of your assets. 
 
