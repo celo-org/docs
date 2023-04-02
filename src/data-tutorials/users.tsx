@@ -1153,6 +1153,13 @@ const Users: User[] = [
     website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
+   {
+    title: 'Comprehensive Guide to building a token bridge on Celo',
+    description: 'Have you ever wondered how to build a bridge that allows seamless transfer of assets between the Celo network and other Ethereum-based networks, such as the Ethereum mainnet or a testnet like Mumbai? This tutorial is for you.',
+    preview: require('./showcase/advanced/comprehensive-guide-to-building-a-token-bridge-on-celo.png'),
+    website: 'blog/tutorials/comprehensive-guide-to-building-a-token-bridge-on-celo',
+    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'tokens', 'celosage'],
+  },
   {
     title: 'cUsd-based Event Ticketing and Management System',
     description: 'This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.',
