@@ -2720,6 +2720,13 @@ const Users: User[] = [
     tags: ['celosage', 'reactnative', 'intermediate', 'celo'], 
   },
   {
+    title: 'Using Python to Interact with Celos Governance System',
+    description: 'In this article, we will know what the Celo Governance system is and how we can interact with it using Python and web3.py',
+    preview: require('./showcase/intermediate/sage-using-python-to-interact-with-celos-governance-system.png'),
+    website: '/blog/tutorials/using-python-to-interact-with-celos-governance-system',
+    tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'],
+  },
+  {
     title: 'Using Python to Build a Celo Blockchain Identity System',
     description: 'This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.',
     preview: require('./showcase/intermediate/sage-using-python-to-build-a-celo-blockchain-identity-system.png'),
