@@ -6,7 +6,7 @@ authors:
     title: Blockchain Developer | Technical Writer
     url: https://github.com/alofeoluwafemi
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [solidity, react, celo, smartcontract, nextjs, advanced, tokens, bridge]
+tags: [solidity, react, celo, smartcontract, nextjs, advanced, tokens, bridge, celosage]
 hide_table_of_contents: true
 slug: /tutorials/comprehensive-guide-to-building-a-token-bridge-on-celo
 ---
@@ -19,8 +19,7 @@ Have you ever wondered how to build a bridge that allows seamless transfer of as
 
 ## Background Knowledge
 
-Token Bridges are  interoperability protocol which allows users to move their owned Token on a certain chain or e.g cUSD on Celo between networks in a quick and cost-efficient manner. Such as switch the cUSD on Celo to MATIC on Polygon.
-
+Token Bridges are interoperability protocol which allows users to move their owned Token on a certain chain or e.g cUSD on Celo between networks in a quick and cost-efficient manner. Such as switch the cUSD on Celo to MATIC on Polygon.
 
 ## Project Flow
 
@@ -28,22 +27,23 @@ Token Bridges are  interoperability protocol which allows users to move their ow
 
 ## Project Demo
 
+[![Watch the video](video.png)](https://user-images.githubusercontent.com/7295729/229337139-b6dea0ac-9fe8-4126-a9a8-19ba66722cfb.mp4)
+
 
 ## Requirements
 
 Prior to beginning this tutorial, it is important to ensure that your computer has the necessary tools installed. Please check that you have the following installed
 
-* Node.js
-* NPM (Node Package Manager)
+- Node.js
+- NPM (Node Package Manager)
 
 ## Github Code
 
 For a more comprehensive understanding and implementation of this tutorial, check out the codebase [here](https://github.com/alofeoluwafemi/celotokenbridge)
 
-
 ## Celo Composer
 
-If you are not aware of what Celo Composer is, it is a tool built by the Celo Devrel team which you can use to quickly build, deploy, and iterate on decentralized applications. Read more [here](https://github.com/celo-org/celo-composer) 
+If you are not aware of what Celo Composer is, it is a tool built by the Celo Devrel team which you can use to quickly build, deploy, and iterate on decentralized applications. Read more [here](https://github.com/celo-org/celo-composer)
 
 Let's spin up something with Celo Composer starter app in few minutes.
 
@@ -65,16 +65,15 @@ Additionally, you will be asked if you want to create a subgraph, we don't need 
 
 ![](https://i.imgur.com/PZpdeEM.png)
 
-Lastly, choose a name for your project 
+Lastly, choose a name for your project
 
 ![](https://i.imgur.com/HqBAp5R.png)
 
-You did it! :confetti_ball::confetti_ball: 
+You did it! :confetti_ball::confetti_ball:
 
 With this in place, we are ready to begin our token bridge.
 
-> Note that you will need to import the network you want to bridge as Celo Composer gives priority to Celo networks so in packages >> react-app >> pages >> _app.tsx add polygonMumbai to the list like this 
-
+> Note that you will need to import the network you want to bridge as Celo Composer gives priority to Celo networks so in packages >> react-app >> pages >> \_app.tsx add polygonMumbai to the list like this
 
 ```javascript
 const { chains, provider } = configureChains(
@@ -87,14 +86,13 @@ const { chains, provider } = configureChains(
 );
 ```
 
-
 ## Writing your Smart Contract
 
-Within your integrated development environment (IDE), navigate to the package directory and locate the hardhat folder. 
+Within your integrated development environment (IDE), navigate to the package directory and locate the hardhat folder.
 
 `npm install @openzeppelin/contracts`
 
-Still in the hardhat folder, you should find a contracts directory that contains built-in contracts. First things first, we create the contracts that holds the asset we want to send. 
+Still in the hardhat folder, you should find a contracts directory that contains built-in contracts. First things first, we create the contracts that holds the asset we want to send.
 
 Create a new TokenBridgeMumbai solidity file.
 
@@ -136,7 +134,7 @@ contract TokenBridgeMumbai {
 }
 ```
 
-From here, we see that this contract is written to receive(hence payable) and lock up Matic. There is also another function to send matic from the contract. In that case, if another person interacts with the contract, the user will receive Matic for CELO. 
+From here, we see that this contract is written to receive(hence payable) and lock up Matic. There is also another function to send matic from the contract. In that case, if another person interacts with the contract, the user will receive Matic for CELO.
 
 Create a new TokenBridgeCelo solidity file.
 
@@ -182,7 +180,7 @@ From here, we see that this contract is written to receive(hence payable) and lo
 
 An event is in both contracts called Deposit which is emitted in the function. This event will be called by a listener node js server that we will set up shortly.
 
-After this, we will create a deployment file for the contract.  
+After this, we will create a deployment file for the contract.
 
 Create a `deploymumbai.js` to deploy the first contract TokenBridgeMumbai file. You can have this in the scripts folder. packages>> hardhat >> script. The code will look like this
 
@@ -221,8 +219,8 @@ async function main() {
 main();
 ```
 
+> Make sure to create a `.env` file and keep all your environment variables in it, your account's private key and api keys that will be needed for deployment.
 
-> Make sure to create a `.env` file and keep all your environment variables in it, your account's private key and api keys that will be needed for deployment. 
 ```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
 CELOSCAN_API_KEY=YOUR_CELOSCAN_KEY
@@ -248,14 +246,14 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
       chainId: 44787,
     },
-      celo: {
+    celo: {
       url: "https://forno.celo.org",
       accounts: [process.env.PRIVATE_KEY],
       chainId: 42220,
-     },
+    },
     mumbai: {
       url: "https://rpc-mumbai.maticvigil.com",
-       accounts: [process.env.PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY],
     },
   },
   etherscan: {
@@ -282,6 +280,7 @@ npx hardhat --network mumbai run scripts/deploymumbai.js
 npx hardhat verify --network alfajores REPLACE_YOUR_DEPLOYED_CONTRACT_ADDRESS_O
 N_ALFAJORES
 ```
+
 ```shell
 npx hardhat verify --network mumbai REPLACE_YOUR_DEPLOYED_CONTRACT_ADDRESS_ON_MUMBAI
 ```
@@ -290,52 +289,53 @@ npx hardhat verify --network mumbai REPLACE_YOUR_DEPLOYED_CONTRACT_ADDRESS_ON_MU
 
 In your hardhat folder still and still in the scripts folder. We will create a wrapper.js file. Here we call the contract with the deposit function
 
-
 ```javascript
 // Import dependencies
-require("dotenv").config(); 
-const { providers, Contract, ethers } = require("ethers"); 
-const { abi } = require("../../../TokenBridgeMumbai.json"); 
+require("dotenv").config();
+const { providers, Contract, ethers } = require("ethers");
+const { abi } = require("../../../TokenBridgeMumbai.json");
 const bridgeMumbaiAddress = "0x27923264F18D9d6C9F7007B36FF5D50d56E12C97"; // address of the TokenBridgeMumbai contract
 
 async function getMumbaiBridgeContract() {
   const bridgeMumbaiABI = abi; // ABI of the TokenBridgeMumbai contract
-  let bridgeMumbaiContract; 
+  let bridgeMumbaiContract;
   try {
     const { ethereum } = window; //  ethereum object from the window object
     console.log(ethereum.chainId);
-    if (ethereum.chainId === "0x13881") { 
-      const provider = new providers.Web3Provider(ethereum); 
-      console.log("provider", provider); 
-      const signer = provider.getSigner(); 
-      bridgeMumbaiContract = new Contract(bridgeMumbaiAddress, bridgeMumbaiABI, signer); 
+    if (ethereum.chainId === "0x13881") {
+      const provider = new providers.Web3Provider(ethereum);
+      console.log("provider", provider);
+      const signer = provider.getSigner();
+      bridgeMumbaiContract = new Contract(
+        bridgeMumbaiAddress,
+        bridgeMumbaiABI,
+        signer
+      );
     } else {
       throw new Error("Please connect to the Mumbai network"); // Throw an error if not connected to the Mumbai network
     }
   } catch (error) {
-    console.log("ERROR:", error); 
+    console.log("ERROR:", error);
   }
-  console.log(bridgeMumbaiContract); 
+  console.log(bridgeMumbaiContract);
   return bridgeMumbaiContract; // Return the contract instance
 }
 
-
 async function start(amount) {
-  const contract = await getMumbaiBridgeContract(); 
-  console.log("bridge", await contract); 
-  const tx = contract.depositMatic({ 
-    gasLimit: 300000, 
-    value: ethers.utils.parseUnits(amount, 18), 
+  const contract = await getMumbaiBridgeContract();
+  console.log("bridge", await contract);
+  const tx = contract.depositMatic({
+    gasLimit: 300000,
+    value: ethers.utils.parseUnits(amount, 18),
   });
-  console.log(await tx); 
-  tx.then((receipt) => { 
+  console.log(await tx);
+  tx.then((receipt) => {
     console.log("Transaction receipt:", receipt);
   });
 }
 
 module.exports = { getMumbaiBridgeContract, start };
 ```
-
 
 It's now time to create a node server that will listen for the Deposit event in our contract.
 
@@ -365,7 +365,7 @@ const providerMumbai = new ethers.providers.JsonRpcProvider(
 );
 ```
 
-Using ethers.js, create an interface that would be able to get filters 
+Using ethers.js, create an interface that would be able to get filters
 
 ```javascript
 const iface = new ethers.utils.Interface([
@@ -381,7 +381,6 @@ filter = {
 };
 ```
 
-
 Use ethers.js to listen for the Deposit function and invoke the function to send the equivalent CELO token.
 
 ```javascript
@@ -396,7 +395,6 @@ providerMumbai.on(filter, (event) => {
     .catch((error) => console.log(error));
   console.log("Transaction", tx);
 });
-
 ```
 
 Your full code will eventually look like this
@@ -424,18 +422,16 @@ const contract = new kit.web3.eth.Contract(mumbai.abi, mumbaiContractAddress);
 console.log("events", contract.events);
 
 const providerCelo = new ethers.providers.JsonRpcProvider(
- process.env.CELO_NETWORK
+  process.env.CELO_NETWORK
 );
 const providerMumbai = new ethers.providers.JsonRpcProvider(
- process.env.MUMBAI_RPC
+  process.env.MUMBAI_RPC
 );
-const privateKey =
-  YOUR_PRIVATE_KEY;
+const privateKey = YOUR_PRIVATE_KEY;
 const signer = new ethers.Wallet(privateKey, providerCelo);
 const fromAddress = "0x892D2863A03bAC1fEE174b2DAbE0921c402622ED"; // Alfajores contract
 const abi = ["function sendCelo(uint256 amount,address payable recipient)"];
 const fromContract = new ethers.Contract(fromAddress, abi, signer);
-
 
 const iface = new ethers.utils.Interface([
   "event Deposit(address indexed depositor, uint256 amount)",
@@ -463,12 +459,11 @@ providerMumbai.on(filter, (event) => {
 });
 ```
 
-> Repeat this same process and create a watchCelo.js file with the variables inverted. 
+> Repeat this same process and create a watchCelo.js file with the variables inverted.
 
-The code listens for the Deposit event during the bridging activity and sends funds from the bridge contract holding CELO and sends it to the wallet connected. You can run this command to check if your code works properly. 
+The code listens for the Deposit event during the bridging activity and sends funds from the bridge contract holding CELO and sends it to the wallet connected. You can run this command to check if your code works properly.
 
 `node index.js`
-
 
 In your console, you should see something similar to this
 
@@ -478,7 +473,7 @@ Next up is for us to build our frontend
 
 ## Build your Frontend
 
-To move ahead, let us navigate to our react-app folder and create a component. Let's name it BridgeForm.tsx.  
+To move ahead, let us navigate to our react-app folder and create a component. Let's name it BridgeForm.tsx.
 
 Import the wrapper file and define a handleBridge function
 
@@ -486,21 +481,21 @@ Import the wrapper file and define a handleBridge function
 import { start } from "../../hardhat/scripts/wrapper";
 ```
 
- ```javascript
- const handleBridge = async () => {
+```javascript
+const handleBridge = async () => {
+  try {
     try {
-      try {
-        await start(amount);
-      } catch (error) {
-        console.error(error);
-      }
-      // Update the UI to show the bridging was successful
-      setBridgeSuccess(true);
+      await start(amount);
     } catch (error) {
-      console.log(error);
-      setBridgeError("Something went wrong. Please try again.");
+      console.error(error);
     }
-  };
+    // Update the UI to show the bridging was successful
+    setBridgeSuccess(true);
+  } catch (error) {
+    console.log(error);
+    setBridgeError("Something went wrong. Please try again.");
+  }
+};
 ```
 
 The full code can look like what we have below
@@ -685,7 +680,7 @@ const BridgeForm = () => {
 export default BridgeForm;
 ```
 
-It will call the start function in the wrapper file. The start functions makes a call to the contract and once the event on the contract is deposited, the node js server is listening and transfers the equivalent CELO. 
+It will call the start function in the wrapper file. The start functions makes a call to the contract and once the event on the contract is deposited, the node js server is listening and transfers the equivalent CELO.
 
 The next thing we do is import the component into index.tsx
 
@@ -703,12 +698,11 @@ export default function Home(): JSX.Element {
 }
 ```
 
-
-Let's test our dApp by running this command 
+Let's test our dApp by running this command
 
 `npm run dev`
 
-Your interface looks like what is shown below :-1: 
+Your interface looks like what is shown below :-1:
 
 ![](https://i.imgur.com/fCOT4ej.png)
 
@@ -716,19 +710,19 @@ Click on proceed and confirm your transaction in your wallet
 
 ![](https://i.imgur.com/kj01MyH.png)
 
-After a successful transaction, the bridging will be successful so you can update your frontend. It will now look like this 
+After a successful transaction, the bridging will be successful so you can update your frontend. It will now look like this
 
 ![](https://i.imgur.com/JmoaeeA.png)
 
 Confirm the transaction in your CELO wallet
 
-Once a confirmation is done, go back to your node terminal to check that your listener has received the deposit event. In your terminal, you should see a log to confirm that the event has been received. 
+Once a confirmation is done, go back to your node terminal to check that your listener has received the deposit event. In your terminal, you should see a log to confirm that the event has been received.
 
 ![](https://i.imgur.com/kUrIS3n.png)
 
 Wait for the transaction to be completed on the chain and you can copy your transaction hash to confirm the transaction on the alfajores explorer.
 
-There you have it, you just successfully developed a bridge that allowed seamless transfer between two of your assets. 
+There you have it, you just successfully developed a bridge that allowed seamless transfer between two of your assets.
 
 ## Conclusion
 

@@ -1135,7 +1135,7 @@ const Users: User[] = [
     description: 'Have you ever wondered how to build a bridge that allows seamless transfer of assets between the Celo network and other Ethereum-based networks, such as the Ethereum mainnet or a testnet like Mumbai? This tutorial is for you.',
     preview: require('./showcase/advanced/comprehensive-guide-to-building-a-token-bridge-on-celo.png'),
     website: 'blog/tutorials/comprehensive-guide-to-building-a-token-bridge-on-celo',
-    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'tokens'],
+    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'tokens', 'celosage'],
   },
   {
     title: 'cUsd-based Event Ticketing and Management System',
