@@ -47,7 +47,7 @@ The web3.js library is a collection of modules that contain functionality for th
 You can clone the codes used in this tutorial by running:
 
 ```bash
-$ git clone https://github.com/emiridbest/Voting-Smart-Contract-On-Celo-Using-Web3.js-and-ContractKit.git
+git clone https://github.com/emiridbest/Voting-Smart-Contract-On-Celo-Using-Web3.js-and-ContractKit.git
 ```
 
 Now, lets get started;
