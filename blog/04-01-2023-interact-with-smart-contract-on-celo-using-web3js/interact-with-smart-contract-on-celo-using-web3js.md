@@ -1,12 +1,12 @@
 ---
-title: Interact with           smart contract on celo using web3js
+title: Interact with smart contract on celo using web3js
 description: Learn how to navigate through the web3js framework
 authors:
   - name: Isaac Jesse
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, solidity, react, nextjs, materialui, typescript]
+tags: [hardhat, celo, solidity, javascript, typescript]
 hide_table_of_contents: true
 slug: /tutorials/interact-with-smart-contract-on-celo-using-web3js
 ---
