@@ -170,5 +170,5 @@ You can read more application method for Celo FinTech projects by getting famili
 - [Understanding Node.js](https://www.w3schools.com/nodejs/nodejs_intro.asp)
 - [how to use DappKit to send transactions on Celo](https://docs.celo.org/developer/dappkit/usage)
 - [Celo's GitHub repository](https://github.com/celo-org)
-
+- [Source code repo](https://github.com/TheKhafre/celo_fintech)
 
