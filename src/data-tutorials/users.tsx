@@ -2763,7 +2763,7 @@ const Users: User[] = [
   },
   {
     title: 'Integrating Celo into the Process of FinTech Web/App Development',
-    description: 'The article will focus on the Celo framework that provides users with a seamless online payment method.'
+    description: 'The article will focus on the Celo framework that provides users with a seamless online payment method.',
     preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
     website: 'blog/tutorials/sage-integrating-celo-into-the-process-of-fintech-web-app-development',
     tags: ['celo', 'celosage', 'intermediate', 'contractkit', 'javascript', 'nodejs'], 
