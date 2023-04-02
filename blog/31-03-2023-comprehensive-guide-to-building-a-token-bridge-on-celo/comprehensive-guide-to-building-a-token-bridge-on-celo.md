@@ -28,8 +28,6 @@ Token Bridges are  interoperability protocol which allows users to move their ow
 
 ## Project Demo
 
-https://user-images.githubusercontent.com/7295729/229337139-b6dea0ac-9fe8-4126-a9a8-19ba66722cfb.mp4
-
 
 ## Requirements
 
@@ -275,11 +273,18 @@ module.exports = {
 
 Run the following to deploy and verify your contracts
 
+```shell
 npx hardhat --network alfajores run scripts/deploycelo.js
 npx hardhat --network mumbai run scripts/deploymumbai.js
+```
 
-npx hardhat verify --network alfajores YOUR_DEPLOYED_CONTRACT_ADDRESS
-npx hardhat verify --network mumbai YOUR_DEPLOYED_CONTRACT_ADDRESS
+```shell
+npx hardhat verify --network alfajores REPLACE_YOUR_DEPLOYED_CONTRACT_ADDRESS_O
+N_ALFAJORES
+```
+```shell
+npx hardhat verify --network mumbai REPLACE_YOUR_DEPLOYED_CONTRACT_ADDRESS_ON_MUMBAI
+```
 
 ## Set up your node.js server
 
@@ -347,7 +352,7 @@ const {
 To create an instance of the contract, all you need to do is
 
 `const contract = new kit.web3.eth.Contract(YOUR_ABI, mumbaiContractAddress);`
-const mumbaiContractAddress = YOUR_CONTRACT_ADDRESS;
+`const mumbaiContractAddress = YOUR_CONTRACT_ADDRESS;`
 
 Initialize providers for each of the networks as we need to refer to them as we proceed. These values can also be your environment variables.
 
@@ -382,8 +387,6 @@ Use ethers.js to listen for the Deposit function and invoke the function to send
 ```javascript
 //Listen event
 providerMumbai.on(filter, (event) => {
-  console.log("Received event");
-  console.log("event", event);
   const eventData = iface.decodeEventLog("Deposit", event.data, event.topics);
   console.log(iface.decodeEventLog("Deposit", event.data, event.topics));
   const amount = eventData.amount;
@@ -585,8 +588,7 @@ const BridgeForm = () => {
               id="toCurrency"
               name="toCurrency"
               className="block w-full mt-1 border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm text-gray-700 text-sm"
-              value={toCurrency.symbol}
-            >
+              value={toCurrency.symbol}>
               {currencies.map((currency) => (
                 <option key={currency.symbol} value={currency.symbol}>
                   {currency.name} ({currency.symbol})
@@ -653,9 +655,7 @@ const BridgeForm = () => {
             <select
               id="currency"
               name="currency"
-              className="focus:ring-blue-500 focus:border-blue-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md"
-              defaultValue="CELO"
-            >
+              className="focus:ring-blue-500 focus:border-blue-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md" defaultValue="CELO">
               <option>CELO</option>
             </select>
           </div>
