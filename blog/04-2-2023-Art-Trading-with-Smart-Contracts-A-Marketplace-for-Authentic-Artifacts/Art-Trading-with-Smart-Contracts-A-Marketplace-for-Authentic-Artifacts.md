@@ -543,3 +543,36 @@ function getArtifact(uint256 _index)
 These are two getter functions that we added to our smart contract. The `getArtifact` function takes an index as input, checks if the artifact with that index exists, and then returns the artifact at that index. The `getartifactsLength` function returns the total number of artifacts stored in our artifacts mapping.
 
 By adding these functions, we can now easily retrieve information about the artifacts stored in our smart contract from outside the blockchain. This allows us to build applications and user interfaces on top of our smart contract, without having to interact with it directly.
+
+## CONTRACT DEPLOYMENT
+
+To deploy the artifact smart contract on the Celo blockchain, a few things are required:
+
+To deploy the Artifact smart contract on the Celo blockchain, you will need to first download and install the Celo Extension Wallet from the Google Chrome store. After installation, create a wallet and make sure to securely store your key phrase. [Click here to intall the celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
+
+To fund your wallet, you can use the Celo Faucet. Simply copy the address of your wallet and paste it into the faucet. Then confirm your request, and your wallet will be funded. [Click here to access celo faucet](https://faucet.celo.org/)
+
+Celo Remix Plugin: Open Remix and create a new Solidity file, paste the FloraNft contract code into the file, and ensure the Solidity compiler is set to version 0.8.7 or later. [Click here to access to access the remix ide](https://remix.ethereum.org/)
+
+Compile the contract by clicking the "Compile artifact.sol" button in the Solidity Compiler tab in Remix.
+
+In the "Deploy & Run Transactions" tab, select the Celo network from the dropdown menu, connect your wallet to Remix by clicking "Connect to wallet", and select "Artifact" from the "Contract" dropdown menu.
+
+Click the "Deploy" button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+
+Once the transaction is confirmed, the FloralNft contract will be deployed on the Celo blockchain and you can interact with it using Remix.
+
+## CONCLUSION
+
+In conclusion, we have learned how to create a smart contract for buying and selling `artifacts` on the Celo blockchain. We started by defining the data structures we will be using for our smart contract, including the Artifact struct, and then implemented various functions for adding artifacts, buying artifacts, booking visits, and more. We also discussed the importance of using modifiers for security purposes, and how to deploy our smart contract on the Celo blockchain using the Celo Extension Wallet and Celo Faucet. By following this tutorial, you can now create your own smart contracts for buying and selling different types of assets on the Celo blockchain.
+
+## NEXT STEPS 
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
+
+## About the author
+
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
+
+
+
