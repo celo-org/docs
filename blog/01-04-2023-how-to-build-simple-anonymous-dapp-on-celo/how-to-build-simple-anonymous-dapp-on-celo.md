@@ -3,10 +3,10 @@ title: How to Build a Simple Anonymous dapp on Celo
 description: This tutorial guides you through the steps required to building an anonymous decentralized application.
 authors:
   - name: Daniel Ogbuti
-    title: Web3 Developer, 
+    title: Web3 Developer,
     url: https://github.com/dahnny
     image_url: https://github.com/dahnny.png
-tags: ['celo', 'beginner', 'celosage', 'solidity']
+tags: ["celo", "beginner", "celosage", "solidity"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-simple-anonymous-dapp-on-celo
 ---
@@ -18,14 +18,15 @@ Celo is a blockchain platform that focuses on enabling financial access for ever
 
 This guide aims to make the process of building a dapp more accessible and less intimidating for those who are new to blockchain development or are looking to explore new technologies by providing developers with a clear and concise overview of the steps required to create an anonymous decentralized application (dapp) on the celo blockchain
 
-
 ## Prerequisites
+
 Building this dapp, you would need:
-- Solid  understanding of Javascript
+
+- Solid understanding of Javascript
 - Basic grasp of solidity
 
-
 ## Requirements
+
 - VSCode or any other editor
 - A terminal
 - Remix
@@ -33,10 +34,11 @@ Building this dapp, you would need:
 - Celo Extension Wallet
 
 ## Getting Started 😉
+
 Clone the github repository [here](https://github.com/dahnny/tell-secrets) to follow along.
 This is the structure you should see in your code editor.
 
-```text
+```bash
 ├── node_modules
 ├── public
 ├── src
@@ -67,18 +69,19 @@ To start this segment, we will use Remix, a web-based Integrated Development Env
 
 The first step is to create a new workspace and then a new file, which we will name `secrets.sol`. As we begin coding the smart contract, we will include a statement on the first line that specifies the license under which the code is being released.
 
-```js
-// SPDX-License-Identifier: MIT  
+```solidity
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 ```
+
 The comment specifies the license under which the code is being released. In this case, the license is the MIT License, which is a popular open-source license that allows anyone to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the code with very few restrictions.
 
 The second line is a "pragma" statement, which is an instruction to the Solidity compiler about how to handle the code. In this case, it tells the compiler to use a version of Solidity that is greater than or equal to 0.7.0, but less than 0.9.0. This ensures that the code will only compile with a compatible version of Solidity, which helps to prevent any potential compatibility issues.
 
 Next up, provide an interface for a contract that conforms to the ERC20 token standard, which is a widely used standard for implementing tokens on the Ethereum blockchain.
 
-```js
+```solidity
 interface IERC20Token {
   function transfer(address, uint256) external returns (bool);
   function approve(address, uint256) external returns (bool);
@@ -104,7 +107,7 @@ The interface also includes two events, `Transfer` and `Approval`, which are emi
 
 Next, we create a contract named `Secrets` that includes a struct named `Secret`.
 
-```js
+```solidity
 contract Secrets{
     address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
@@ -132,7 +135,7 @@ It is worth noting that this code snippet only defines the structure of the Secr
 
 Next up, we declare two variables, `secrets` and `secretLength`, and defines the former as an internal mapping from unsigned integers to a custom data type called `Secret`.
 
-```js
+```solidity
 mapping(uint => Secret) internal secrets;
 uint secretLength = 0;
 ```
@@ -143,7 +146,7 @@ The second line initializes the `secretLength` variable to zero. This variable c
 
 Next, you create a function to add your secrets.
 
-```js
+```solidity
     function addSecret(
         string memory _text
     )public{
@@ -164,28 +167,29 @@ The secretLength variable is then incremented, which means the next call to addS
 
 Up next, you would create a function that would gift that secret to another address. Which basically means it would transfer the ownership of that secret to another address.
 
-```js
+```solidity
    function giftOwner(
         uint amount,
         uint _index
     )public{
-    require(                 
+    require(
         IERC20Token(cUsdTokenAddress).transferFrom(
                 msg.sender,
                 secrets[_index].owner,
                 amount
             ),
-            "Transaction could not be performed"  
-        ); 
+            "Transaction could not be performed"
+        );
     }
 ```
+
 The function takes two input parameters: `amount` and `_index`, both of which are uint (unsigned integer) data types.
 
 The purpose of the function is to transfer a specified amount of cUSD from the person who called the function (represented by `msg.sender`) to the owner of a secret stored in the `secrets` array at the specified index (represented by `secrets[_index].owner`).
 
 Following this, you would then create the like and dislike function. This would allow people to express their approval or disapproval of secrets by sending a small amount of cUSD to the owner of the secret.
 
-```js
+```solidity
  function likeSecret(uint _index) public {
         require(
         IERC20Token(cUsdTokenAddress).transferFrom(
@@ -193,7 +197,7 @@ Following this, you would then create the like and dislike function. This would 
                 secrets[_index].owner,
                 100000000000000000
             ),
-            "Transaction could not be performed"  
+            "Transaction could not be performed"
         );
         secrets[_index].likes++;
     }
@@ -204,7 +208,7 @@ Following this, you would then create the like and dislike function. This would 
                 secrets[_index].owner,
                 100000000000000000
             ),
-            "Transaction could not be performed"  
+            "Transaction could not be performed"
         );
         secrets[_index].dislikes++;
     }
@@ -215,7 +219,7 @@ The `dislikeSecret` function is similar to `likeSecret`, but instead of increasi
 
 Finally, you would create the `getSecrets` function and the `getSecretsLength` to view the details of a specific secret stored and also get the total number of secrets currently stored in the contract.
 
-```js
+```solidity
     function getSecret(uint _index) public view returns(
         address payable,
         string memory,
@@ -236,14 +240,117 @@ function getSecretLength() public view returns (uint) {
     }
 ```
 
-The `getSecret` function  takes an input parameter called `_index` which is an integer value. It returns four values as output - an address, a string, and two integers.
+The `getSecret` function takes an input parameter called `_index` which is an integer value. It returns four values as output - an address, a string, and two integers.
 
 The function finds the secret stored in the `secrets` variable at the index specified by the `_index` parameter. It then returns the values of four properties of the secret, which are the owner's address, the text of the secret, and the number of likes and dislikes the secret has received.
 
 The second function is called `getSecretLength` and it takes no input parameters. It returns a single integer value which is the length of the `secrets` state variable, indicating how many secrets are currently stored in the contract.
 
+- **Here is How Complete `secrets.sol` Looks like:-**
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+
+interface IERC20Token {
+  function transfer(address, uint256) external returns (bool);
+  function approve(address, uint256) external returns (bool);
+  function transferFrom(address, address, uint256) external returns (bool);
+  function totalSupply() external view returns (uint256);
+  function balanceOf(address) external view returns (uint256);
+  function allowance(address, address) external view returns (uint256);
+
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+contract Secrets{
+    address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+    struct Secret{
+        address payable owner;
+        string secretText;
+        uint likes;
+        uint dislikes;
+    }
+
+    mapping(uint => Secret) internal secrets;
+    uint secretLength = 0;
+
+    function addSecret(
+        string memory _text
+    )public{
+        Secret storage secret = secrets[secretLength];
+        secret.owner = payable(msg.sender);
+        secret.secretText = _text;
+        secret.likes = 0;
+        secret.dislikes = 0;
+        secretLength++;
+    }
+
+    function giftOwner(
+        uint amount,
+        uint _index
+    )public{
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                secrets[_index].owner,
+                amount
+            ),
+            "Transaction could not be performed"
+        );
+    }
+
+    function getSecret(uint _index) public view returns(
+        address payable,
+        string memory,
+        uint,
+        uint256
+    ){
+        Secret storage secret  = secrets[_index];
+        return (
+            secret.owner,
+            secret.secretText,
+            secret.likes,
+            secret.dislikes
+        );
+    }
+
+    function likeSecret(uint _index) public {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                secrets[_index].owner,
+                100000000000000000
+            ),
+            "Transaction could not be performed"
+        );
+        secrets[_index].likes++;
+    }
+    function dislikeSecret(uint _index) public {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                secrets[_index].owner,
+                100000000000000000
+            ),
+            "Transaction could not be performed"
+        );
+        secrets[_index].dislikes++;
+    }
+
+    function getSecretLength() public view returns (uint) {
+        return (secretLength);
+    }
+
+}
+```
+
 ## Deploying your smart contract
-Firstly, you need to obtain the [CeloExtensionWallet]((https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)). Once you have installed it, you must create a new wallet and be sure to securely store the corresponding key phrase to avoid any irretrievable loss of your assets.
+
+Firstly, you need to obtain the [CeloExtensionWallet](<(https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)>). Once you have installed it, you must create a new wallet and be sure to securely store the corresponding key phrase to avoid any irretrievable loss of your assets.
 
 After installing and configuring your wallet, you must proceed to fund it using the [ Celo Faucet](https://celo.org/developers/faucet). This requires copying the address of your wallet, following the link to the Celo Faucet, pasting the copied address into the appropriate text field, and then confirming the transaction.
 
@@ -260,8 +367,8 @@ For this project, you would write all react code in one file, the App.js file to
 For the first section, you would need to import some important files to enable adequate functionality.
 
 ```js
-import './App.css';
-import { useState, useCallback, useEffect } from 'react';
+import "./App.css";
+import { useState, useCallback, useEffect } from "react";
 
 import secret from "./contracts/secrets.abi.json";
 import ierc from "./contracts/ierc.abi.json";
@@ -275,10 +382,10 @@ const contractAddress = "0xC92Fe8ED9eE9e9f2b789911428fe0B088602b165";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 ```
 
-The first line imports the CSS styles from a file named `App.css`. This file  contains custom styles for the application.
+The first line imports the CSS styles from a file named `App.css`. This file contains custom styles for the application.
 Next, you would import `useState`, `useEffect` and `useCallback` functions from the react library.
 We would then import `web3` a JavaScript library that provides a way to interact with Ethereum and Celo blockchains.
-Next up on our import  list is `newKitFromWeb3`  a function from the `@celo/contractkit` library that creates a ContractKit instance used to interact with smart contracts on the Celo blockchain.
+Next up on our import list is `newKitFromWeb3` a function from the `@celo/contractkit` library that creates a ContractKit instance used to interact with smart contracts on the Celo blockchain.
 The following line sets a constant `ERC20_DECIMALS` to a value of 18. This value represents the number of decimal places used by most ERC20 tokens, which is the standard for tokens on Ethereum and Celo blockchains.
 
 Moving forward, you would define the `App` component. It defines several state variables using the `useState` hook, including `contract`, `address`, `kit`, `cUSDBalance`, `secrets`, `text`, and `amount`.
@@ -367,85 +474,62 @@ The `useCallback` hook is used to memorize these functions so that they don't ge
 Up next, you would create functions for adding, gifting, liking and disliking a secret.
 
 ```js
-  const submitForm = async (e) => {
-    e.preventDefault();
-    if (!text) return;
-    try {
-      await contract.methods
-        .addSecret(text)
-        .send({ from: address });
-      getSecrets();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const giftAmount = async (index, _amount) => {
-    if (!_amount) return;
-    try {
-      const cUSDContract = new kit.web3.eth.Contract(
-        ierc,
-        cUSDContractAddress
-      );
-      const amount = new BigNumber(_amount)
-        .shiftedBy(ERC20_DECIMALS)
-        .toString();
-      await cUSDContract.methods
-        .approve(contractAddress, amount)
-        .send({ from: address });
-      await contract.methods
-        .giftOwner(amount, index)
-        .send({ from: address });
-      getSecrets();
-      getBalance();
-    } catch (error) {
-      console.log(error);
-    }
+const submitForm = async (e) => {
+  e.preventDefault();
+  if (!text) return;
+  try {
+    await contract.methods.addSecret(text).send({ from: address });
+    getSecrets();
+  } catch (error) {
+    console.log(error);
   }
+};
 
-  const likeSecret = async (index) => {
-    try {
-      const cUSDContract = new kit.web3.eth.Contract(
-        ierc,
-        cUSDContractAddress
-      );
-      const amount = new BigNumber(1)
-        .shiftedBy(ERC20_DECIMALS)
-        .toString();
-      await cUSDContract.methods
-        .approve(contractAddress, amount)
-        .send({ from: address });
-      await contract.methods
-        .likeSecret( index)
-        .send({ from: address });
-      getSecrets();
-      getBalance();
-    } catch (error) {
-      console.log(error);
-    }
+const giftAmount = async (index, _amount) => {
+  if (!_amount) return;
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(ierc, cUSDContractAddress);
+    const amount = new BigNumber(_amount).shiftedBy(ERC20_DECIMALS).toString();
+    await cUSDContract.methods
+      .approve(contractAddress, amount)
+      .send({ from: address });
+    await contract.methods.giftOwner(amount, index).send({ from: address });
+    getSecrets();
+    getBalance();
+  } catch (error) {
+    console.log(error);
   }
+};
 
-  const dislikeSecret = async (index) => {
-    try {
-      const cUSDContract = new kit.web3.eth.Contract(
-        ierc,
-        cUSDContractAddress
-      );
-      const amount = new BigNumber(1)
-        .shiftedBy(ERC20_DECIMALS)
-        .toString();
-      await cUSDContract.methods
-        .approve(contractAddress, amount)
-        .send({ from: address });
-      await contract.methods
-        .dislikeSecret( index)
-        .send({ from: address });
-      getSecrets();
-      getBalance();
-    } catch (error) {
-      console.log(error);
-    }
+const likeSecret = async (index) => {
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(ierc, cUSDContractAddress);
+    const amount = new BigNumber(1).shiftedBy(ERC20_DECIMALS).toString();
+    await cUSDContract.methods
+      .approve(contractAddress, amount)
+      .send({ from: address });
+    await contract.methods.likeSecret(index).send({ from: address });
+    getSecrets();
+    getBalance();
+  } catch (error) {
+    console.log(error);
   }
+};
+
+const dislikeSecret = async (index) => {
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(ierc, cUSDContractAddress);
+    const amount = new BigNumber(1).shiftedBy(ERC20_DECIMALS).toString();
+    await cUSDContract.methods
+      .approve(contractAddress, amount)
+      .send({ from: address });
+    await contract.methods.dislikeSecret(index).send({ from: address });
+    getSecrets();
+    getBalance();
+  } catch (error) {
+    console.log(error);
+  }
+};
 ```
 
 The first function, `submitForm`, is triggered when a form is submitted. It adds a new secret to the smart contract using the `text` state variable and updates the list of secrets by calling the `getSecrets` function.
@@ -459,27 +543,26 @@ The fourth function, `dislikeSecret`, is triggered when a user dislikes a secret
 After this, you would use the `useEffect` hook to some specific functions as the application starts.
 
 ```js
-  useEffect(() => {
-    connectToWallet();
-  }, []);
+useEffect(() => {
+  connectToWallet();
+}, []);
 
-  useEffect(() => {
-    if (kit && address) {
-      getBalance();
-    }
-  }, [kit, address, getBalance]);
+useEffect(() => {
+  if (kit && address) {
+    getBalance();
+  }
+}, [kit, address, getBalance]);
 
-  useEffect(() => {
-    if (contract) {
-      getSecrets();
-    }
-  }, [contract, getSecrets]);
+useEffect(() => {
+  if (contract) {
+    getSecrets();
+  }
+}, [contract, getSecrets]);
 ```
 
 The first `useEffect` hook is used to connect to the wallet.
-The second `useEffect` hook is used to get the account balance if the wallet is connected and the user's address is available. 
+The second `useEffect` hook is used to get the account balance if the wallet is connected and the user's address is available.
 The third `useEffect` hook is used to get some secrets from a contract if the contract is available.
-
 
 The next phase of the code is basically the html section and is fairly understandable. So just copy the code as is.
 
@@ -525,7 +608,6 @@ The next phase of the code is basically the html section and is fairly understan
                 <i onClick={()=>likeSecret(secret.index)} class="bi bi-hand-thumbs-up"></i>{secret.likes}
                 </div>
                   <div><i onClick={()=>dislikeSecret(secret.index)} class="bi bi-hand-thumbs-down"></i>{secret.dislikes}</div>
-                  
                 </div>
                 <div className="form-group mt-3">
                   <input type="text" className="form-control" name="amount" id="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} required />
@@ -571,7 +653,11 @@ Well done on successfully creating a full-stack dapp using Solidity and React on
 
 ## Next steps
 
+<<<<<<< HEAD
 You could take it a step further and follow my published tutorials on more intermediate topics. You could also add more functions to your smart contract and implement them in the frontend 
+=======
+You could take it a step further and follow my published tutorials on more intermediate topics. You could also add more functions to your smart contract and implement them in the frontend
+>>>>>>> d5971b477df6c4e4deeeb1f6a7342c3e139cd773
 
 ## About the Author
 
