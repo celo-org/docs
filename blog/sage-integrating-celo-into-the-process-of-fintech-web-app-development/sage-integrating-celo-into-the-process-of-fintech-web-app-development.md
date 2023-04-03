@@ -98,7 +98,9 @@ Next, we'll need to deploy a smart contract that allows users to send and receiv
 
 This code deploys the reserve contract and logs its address to the console. The `setReserveFraction` method sets the reserve ratio to 1%, which means that for every 100 cUSD in circulation, 1 cUSD is held in reserve. 
 
-Now that we have our contract deployed, let's build a simple frontend that allows users to send and receive cUSD. For this, we'll use the `@celo/dappkit` and the `@celo/contractkit` library.
+Now that we have our contract deployed, let's build a simple frontend that allows users to send and receive cUSD. For this, we'll use the `@celo/dappkit` and the `@celo/contractkit` library. The `@celo/contractkit` is a library that provides a simple way to interact with smart contracts on the Celo blockchain. It allows developers to interact with contracts using a more user-friendly API. In the code, we will use `newKitFromWeb3` to create an instance of `ContractKit` which is then used to send the transaction.
+
+The other library (`@celo/dappkit`) is a library that helps to simplify the process of signing and sending transactions on the Celo blockchain. In the code below, newDappKit will be used to create a new instance of the DappKit object which is then used to send the transaction object to be signed and sent to the Celo network.
 
 ```js
     const { ContractKit } = require('@celo/contractkit')
