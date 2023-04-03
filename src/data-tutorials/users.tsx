@@ -2727,15 +2727,7 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
-   {
-    title: 'Deploying Celo Applications using Golang',
-    description: 'This article could provide a tutorial on deploying Celo applications built using the Golang . It could cover topics such as setting up a Celo node, setting up the development environment, creating and deploying smart contracts, and monitoring the deployed contract activities using Celo explorer.',
-    preview: require('./showcase/intermediate/deploying-celo-applications-using-golang.png'),
-    website: 'blog/tutorials/deploying-celo-applications-using-golang',
-    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
-
-  },
-   {
+  {
     title: 'Implementing a Token on Celo using Golang',
     description: "This article could provide a step-by-step tutorial on how to implement a custom token on the Celo blockchain using the Golang SDK. It could cover topics such as defining the token's smart contract and deploying it to the Celo network. This article is for developers that want to get started with building blockchain applications using Golang on Celo.",
     preview: require('./showcase/intermediate/implementing-a-token-on-celo-using-golang.png'),
