@@ -239,6 +239,8 @@ modifier notOnDisplayOrOnSale(uint256 _index) {
 }
 ```
 
+Click this link to access the full code [Github repo](https://github.com/Ogoyi/artifacts)
+
 To commence, we'll generate a new file on Remix named `Artifact.sol`. Here's a link that will show you how to create a new file on Remix. [here](https://remix-ide.readthedocs.io/en/latest/file_explorer.html#:~:text=Creating%20new%20files,-There%20are%202&text=The%20first%20is%20to%20click,will%20open%20in%20the%20Editor.).
 
 Once you have created a new file on Remix, we will start by declaring some statements in our smart contract.
