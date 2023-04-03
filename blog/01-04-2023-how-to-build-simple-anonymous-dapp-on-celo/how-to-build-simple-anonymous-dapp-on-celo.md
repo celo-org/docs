@@ -653,11 +653,7 @@ Well done on successfully creating a full-stack dapp using Solidity and React on
 
 ## Next steps
 
-<<<<<<< HEAD
-You could take it a step further and follow my published tutorials on more intermediate topics. You could also add more functions to your smart contract and implement them in the frontend 
-=======
 You could take it a step further and follow my published tutorials on more intermediate topics. You could also add more functions to your smart contract and implement them in the frontend
->>>>>>> d5971b477df6c4e4deeeb1f6a7342c3e139cd773
 
 ## About the Author
 
