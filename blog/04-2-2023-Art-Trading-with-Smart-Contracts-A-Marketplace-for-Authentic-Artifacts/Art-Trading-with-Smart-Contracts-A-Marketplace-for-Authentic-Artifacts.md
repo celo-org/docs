@@ -236,33 +236,6 @@ modifier notOnDisplayOrOnSale(uint256 _index) {
         return (artifactsLength);
     }
 
-    /// @dev changes the image url of an artifact
-    function ReformArtifactImage(uint256 _index, string calldata _image)
-        public
-        exist(_index)
-        onlyArtifactOwner(_index)
-        checkImageUrl(_image)
-    {
-        artifacts[_index].image = _image;
-    }
-
-    /// @dev puts an artifact back on sale
-    function reListArtifact(uint256 _index, uint256 _price)
-        external
-        exist(_index)
-        onlyArtifactOwner(_index)
-        checkPrice(_price)
-    {
-        artifacts[_index].isOnSale = true;
-        artifacts[_index].price = _price;
-        artifacts[_index].isOnDisplay = false;
-    }
-
-   function deleteArtifact(uint256 _index) external exist(_index) onlyArtifactOwner(_index) notOnDisplayOrOnSale(_index) {
-    delete artifacts[_index];
-    exists[_index] = false;
-}
-
 }
 ```
 
