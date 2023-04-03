@@ -705,6 +705,13 @@ const Users: User[] = [
     website: '/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo',
     tags: ['beginner','celosage','celo'],
   },
+   {
+    title: 'Art Trading with Smart Contracts on the Celo blockchain',
+    description: 'ArtifactHouse is a smart contract for buying and selling digital artifacts using cUSD tokens, with the ability to display and visit artifacts..',
+    preview: require('./showcase/intermediate/art-trading-with-smart-contracts-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/art-trading-with-smart-contracts-on-the-celo-blockchain',
+    tags: ['intermediate','celosage', 'solidity', 'celo'],
+  },
   {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
