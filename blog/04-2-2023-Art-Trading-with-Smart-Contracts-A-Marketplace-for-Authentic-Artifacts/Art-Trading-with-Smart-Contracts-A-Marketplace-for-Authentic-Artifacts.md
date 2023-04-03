@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
-slug: /tutorials/decentralized-marketplace-for-buying-and-selling-animals
+slug: /tutorials/art-trading-with-smart-contracts-on-the-celo-blockchain
 ---
 
 ## INTRODUCTION
