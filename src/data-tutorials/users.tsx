@@ -1423,6 +1423,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate'],
   },
   {
+    title: 'Building a Farmers Market on The Celo Blockchain',
+    description: 'This tutorial guides you to building a decentralized marketplace on the celo blockchain.',
+    preview: require('./showcase/intermediate/building-a-farmers-market-on-celo.png'),
+    website: 'blog/tutorials/building-a-farmers-market-on-celo',
+    tags: ["celo", "intermediate", "celosage", "solidity"],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
