@@ -1174,13 +1174,6 @@ const Users: User[] = [
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
   {
-    title: 'cUsd-based Event Ticketing and Management System',
-    description: 'This project is a smart contract written in the Solidity programming language on the celo blockchain. The contract is called "Evently" and it allows users to create and buy tickets for events.',
-    preview: require('./showcase/intermediate/cUsd-based-event-ticketing-and-management-system.png'),
-    website: 'blog/tutorials/cUsd-based-event-ticketing-and-management-system',
-    tags: ['intermediate','celosage','solidity','smartcontract'],
-  },
-  {
     title: 'Como criar uma carteira para a blockchain Celo',
     description: 'Aprenda como criar uma carteira para a blockchain Celo no seu navegador',
     preview: require('./showcase/beginner/como-criar-uma-carteira-para-a-blockchain-celo.png'),
@@ -1451,13 +1444,6 @@ const Users: User[] = [
     preview: require('./showcase/advanced/build_your_own_ai_art_nft_marketplace_on_the_celo_blockchain.png'),
     website: 'blog/tutorials/build-Your-own-ai-art-nft-marketplace-on-the-celo-blockchain',
     tags: ['celosage', 'nft', 'solidity', 'celo', 'advanced'],
-  },
-  {
-    title: 'Build A Full Stack Decentralized Fund Raising Dapp On The Celo Blockchain',
-    description: 'Build a full stack decentralized fundraising platform on the celo blockchain using solidity for the smart contract and reactJS for the front end',
-    preview: require('./showcase/intermediate/build-a-full-stack-decentralized-fundraising-dapp-on-the-celo-blockchain.png'),
-    website: 'blog/tutorials/build-a-full-stack-decentralized-fund-raising-dapp-on-the-celo-blockchain',
-    tags: ['celosage', 'solidity', 'react', 'celo', 'intermediate'],
   },
   {
     title: 'Build A Full Stack Decentralized Fund Raising Dapp On The Celo Blockchain',
