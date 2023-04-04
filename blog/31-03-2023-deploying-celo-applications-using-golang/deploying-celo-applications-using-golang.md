@@ -174,7 +174,7 @@ func main() {
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("SimpleStorage.bin")
 	if err != nil {
@@ -244,7 +244,7 @@ import (
 )
 ```
 
-The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies. 
+The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies.
 
 ```go
 const privateKey = "your-private-key"
@@ -273,7 +273,7 @@ client, err := ethclient.Dial(nodeURL)
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -281,7 +281,7 @@ client, err := ethclient.Dial(nodeURL)
 	}
 ```
 
-The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled. 
+The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled.
 
 ```go
 // Get the public address associated with the private key
@@ -301,7 +301,7 @@ The code above allows us to connect to the Celo blockchain, load our private key
 	}
 ```
 
-From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain. 
+From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain.
 
 ```go
 // Create a new transaction
@@ -330,7 +330,7 @@ From the code above, our contract address and public key are gotten from the cry
 }
 ```
 
-A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it. 
+A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it.
 
 To run the application, on your terminal, run the following command:
 
@@ -338,24 +338,17 @@ To run the application, on your terminal, run the following command:
 go run deploy.go
 ```
 
-
 ![images](https://user-images.githubusercontent.com/69091491/229017495-1be0c490-ab66-417e-ac9e-cbaea9d3fb3d.png)
-
 
 ### Step 4: Monitor the Deployed Application
 
 Finally, we can view the deployed smart contract on the Celo [Testnet](https://alfajores.celoscan.io/). Copy the address of the deployed contract and paste it in the search bar of the Celo testnet explorer.
 
-
-
 ![images](https://user-images.githubusercontent.com/69091491/229017589-7383d260-bd49-4f21-8395-f3f2c85e84f8.png)
-
 
 You will see details about your deployed contract and every activity or transaction that happens in your contract will be displayed on the explorer.
 
-
 ![images](https://user-images.githubusercontent.com/69091491/229016742-bfdf4803-7e40-4a55-beb8-210841033f10.png)
-
 
 ## Conclusion
 
