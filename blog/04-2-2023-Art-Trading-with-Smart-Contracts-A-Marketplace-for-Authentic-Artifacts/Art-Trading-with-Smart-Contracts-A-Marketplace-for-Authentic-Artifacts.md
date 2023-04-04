@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/art-trading-with-smart-contracts-on-the-celo-blockchain
 ---
 
+![art-trading-with-smart-contracts-on-the-celo-blockchain](https://user-images.githubusercontent.com/94527318/229685575-8947a085-04ae-4aa9-9269-cdca3edb973e.png)
+
 ## INTRODUCTION
 
 The contract `ArtifactHouse` manages a marketplace for artifacts. It has a struct Artifact which contains information about each artifact, such as owner address, image URL, name, description, price, etc. The contract has mappings to keep track of the artifacts and the visits booked for each artifact. It also defines several modifiers, which are used to check conditions before executing specific functions.
