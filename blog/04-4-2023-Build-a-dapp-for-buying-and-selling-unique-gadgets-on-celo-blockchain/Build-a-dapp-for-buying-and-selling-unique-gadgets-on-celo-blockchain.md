@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain
 ---
 
-![build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain](https://user-images.githubusercontent.com/115812158/229753542-ef563aa6-d625-4327-8137-512020e43f97.png)
+ ![header](../../src/data-tutorials/showcase/intermediate/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain.png)
 
 ## INTRODUCTION
 
