@@ -259,11 +259,110 @@ interface IERC20Token {
 
 This code defines the necessary functions and events for a Celo ERC20 token contract. ERC20 is a standard protocol used for creating tokens on the Celo blockchain, and this code specifies how users can interact with the smart contract. The functions allow for the transfer of tokens, authorization for other addresses to spend tokens, and the retrieval of information about the token contract, such as the total supply and token balances. The events trigger notifications when a token transfer or approval occurs on the Celo blockchain, providing external applications with real-time updates.
 
+Next, we begin by naming our contract and also creating our struct.
 
+```solidity
+contract Gadgets {
+    uint private glassLength = 0;
+    address private cUsdTokenAddress =
+      0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
+    event likeGadgetEvent(address indexed userAddress, uint256 index);
+    event dislikeGadgetEvent(address indexed userAddress, uint256 index);
+    event deleteGadgetEvent(uint256 glassId);
+    event buyGadgetEvent(
+        address indexed seller,
+        address indexed buyer,
+        uint256 index
+    );
+    event addGadgetEvent(address indexed owner, uint256 gadgetId);
 
+    struct Glass {
+        address payable owner;
+        string image;
+        string name;
+        string description;
+        uint price;
+        uint likesCount;
+    }
+```
 
+This is a smart contract called "Gadgets" that manages a collection of Glass objects. We can add new gadgets to the collection, delete a gadget, buy a gadget, and like or dislike a gadget. Each gadget has properties such as an owner address, an image, a name, a description, a price, and a count of likes. When certain actions are taken, events are triggered, such as the "likeGadgetEvent" and "dislikeGadgetEvent" events. The contract also stores the address of a contract that implements the cUSD token. Overall, this contract shows how to manage a collection of objects and perform various actions on them using a smart contract.
 
+Next, we add out mapping.
+
+```solidity
+ mapping(uint => Glass) internal glasses;
+ mapping(uint256 => mapping(address => bool)) likes; // glasses liked by all users
+```
+
+In our contract, we have defined two mappings. The first one, called glasses, maps an unsigned integer to a data structure called Glass. This allows us to retrieve the corresponding Glass data structure for any given unsigned integer.
+
+The second mapping, called likes, is a bit more complex. We use a nested mapping structure to keep track of which users have liked which glasses. The outer mapping maps a glass ID to an inner mapping, which maps user addresses to a boolean value indicating whether or not they have liked the corresponding glass.
+
+By using these mappings, we can efficiently keep track of which glasses have been liked by which users in our contract.
+
+To enhance the functionality of our smart contract, we have decided to introduce new functions. The first function that we plan to incorporate is called addGadget.
+
+```solidity
+function addGadget(
+        string calldata _image,
+        string calldata _name,
+        string calldata _description,
+        uint _price
+    ) external {
+        require(bytes(_image).length > 0, "Empty image");
+        require(bytes(_name).length > 0, "Empty name");
+        require(bytes(_description).length > 0, "Empty description");
+        require(_price > 0, "Price needs to be at least one wei");
+        uint _likesCount = 0;
+        glasses[glassLength] = Glass(
+            payable(msg.sender),
+            _image,
+            _name,
+            _description,
+            _price,
+            _likesCount
+        );
+
+        emit addGadgetEvent(msg.sender, glassLength);
+        glassLength++;
+    }
+```
+
+In this function, we are creating a new `gadget` object and adding it to our collection of gadgets. To create this new gadget object, we require four pieces of information: the image, name, description, and price. We also set the initial number of likes for this glass to zero.
+
+Before adding the new glass to our collection, we perform several checks to make sure that all the required information has been provided. Specifically, we check that the image, name, and description are not empty, and that the price is greater than zero.
+
+Once we have performed these checks, we create a new glass object with the provided information and add it to our collection of glasses. We also emit an event to notify any interested parties that a new glass has been added.
+
+Overall, this function allows us to add new gadgets to our collection, ensuring that all required information has been provided and notifying interested parties of any new additions.
+
+Next, we create the `getGadget` function.
+```solidity
+function getGadget(uint _index)
+        public
+        view
+        returns (
+            address payable,
+            string memory,
+            string memory,
+            string memory,
+            uint,
+            uint
+        )
+    {
+        return (
+            glasses[_index].owner,
+            glasses[_index].image,
+            glasses[_index].name,
+            glasses[_index].description,
+            glasses[_index].price,
+            glasses[_index].likesCount
+        );
+    }
+
+```
 
 
 
