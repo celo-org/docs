@@ -246,8 +246,8 @@ CELOSCAN_API_KEY=""
 Add your private key of your metamask wallet to the `PRIVATE_KEY`. Please ensure you are using a test account. 
 
  
-
-- Learn more: Check out [3 Simple Steps to Connect your MetaMask Wallet To Celo](https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) for more details.
+**Learn more:**
+- Check out [3 Simple Steps to Connect your MetaMask Wallet To Celo](https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) for more details.
 
  
  
