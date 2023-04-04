@@ -232,8 +232,6 @@ func importWallet(privateKeyHex string) (*ecdsa.PrivateKey, []byte, common.Addre
 
 Next, we need to implement functionalities to encrypt and decrypt the wallet to make it more secure.
 
- 
-
 ```go
 func encryptWallet(privateKey *ecdsa.PrivateKey, password string) (string, error) {
 	keyJSON, err := keystore.EncryptKey(&keystore.Key{
@@ -701,7 +699,6 @@ go run main.go
 You should see the results on your terminal:
 
 ![images](https://user-images.githubusercontent.com/69091491/229105179-f21ce11e-cbdc-4eb7-acbc-e19afd47e13f.png)
-
 
 ## Conclusion
 
