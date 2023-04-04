@@ -13,11 +13,9 @@ slug: /tutorials/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO
 
 ![header](../../src/data-tutorials/showcase/advanced/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard.png)
 
-
 ## A guide to building and deploying upgradeable contracts on CELO with Diamond standard
 
 The Diamond Standard was articulated in [EIP2535](https://eips.ethereum.org/EIPS/eip-2535) and clearly defines a pathway for deploying multi facet smart-contracts that are modular, extensible and upgrade-able.
-
 
 ## Introduction
 
@@ -40,8 +38,8 @@ The following toolings should be pre-installed for the code walkthrough:
 I would like to introduce some key terminologies we might encounter often in this tutorial.
 
 1. Upgrade-able smart contracts: These are contracts generally split into proxy contracts(which house the state of the contract) and implementation contracts(which defines the logic of the contract). These contracts are often upgraded by adding new state to the system or deploying new implementation contracts.
-2. Diamond Standard: This is a standard for writing upgrade-able and modular contracts, as defined by the [EIP2535](https://eips.ethereum.org/EIPS/eip-2535). Upgrade-able contracts conforming to this specification, comprises a Diamond(which is a proxy contract holding the data of the system), and facets(which are contracts that define the implementation logic). 
-It is worth knowing that the Diamond performs calls to these facets using the low-level EVM delegatecall.
+2. Diamond Standard: This is a standard for writing upgrade-able and modular contracts, as defined by the [EIP2535](https://eips.ethereum.org/EIPS/eip-2535). Upgrade-able contracts conforming to this specification, comprises a Diamond(which is a proxy contract holding the data of the system), and facets(which are contracts that define the implementation logic).
+   It is worth knowing that the Diamond performs calls to these facets using the low-level EVM delegatecall.
 
 ## Setup
 
@@ -69,7 +67,6 @@ Now you should have a `ERC20-Diamond` directory created in your CD into this dir
 ![Diamond setup](images/diamond-imp.png "Diamond setup")
 
 As you already know by now, this template ships with a pre-built implementation of the Diamond standard, from which we can build on. I would list some of the files that are important for this walkthrough.
-
 
 - DiamondCutFacet: This contracts houses the logic to perform upgrades on the Diamond.
 - DiamondTokenFacet: As you might have guessed from the name, this is the contract where we would define our ERC20 token implementation logic.
@@ -198,7 +195,7 @@ contract DiamondTokenFacet is IERC20 {
 
        uint256 _allowance = s.allowances[_from][msg.sender];
        if(_allowance < _value) revert InsufficientAllowance();
-      
+
        LibERC20.transfer(s, _from, _to, _value);
        unchecked {
            s.allowances[_from][msg.sender] -= _value;
@@ -220,8 +217,7 @@ contract DiamondTokenFacet is IERC20 {
 }
 ```
 
-Most of the functions defined here should be familiar to you, if you’ve encountered an ERC20 token implementation before in the wild, or build one yourself. However, we can see how this facet utilizes the functions in the library `LibERC20` and the `TokenStorage` struct. It's important to note that the `TokenStorage` struct must be  the first storage slot, for facets using this storage pattern, this was agreed from the `LibAppStorage` implementation, and failure to do so might lead to storage clashes. Other than that, we are good to go.
-
+Most of the functions defined here should be familiar to you, if you’ve encountered an ERC20 token implementation before in the wild, or build one yourself. However, we can see how this facet utilizes the functions in the library `LibERC20` and the `TokenStorage` struct. It's important to note that the `TokenStorage` struct must be the first storage slot, for facets using this storage pattern, this was agreed from the `LibAppStorage` implementation, and failure to do so might lead to storage clashes. Other than that, we are good to go.
 
 All that is left for this initial version which we would call v1 moving forward, is the initialization logic for the token. We would like to do some initialization when deploying the token, like setting the total supply, so the question is how do we achieve that? Thankfully the `DimondInit.sol` contract was built into the standard specifically for this, so we proceed to this file which lives inside the `upgradeInitializers` folder and add some customizations to the `init` function, shown as:
 First we import the `tokenStorage` struct, which would be stored in the first slot, since we are using the AppStorage pattern.
@@ -241,7 +237,7 @@ Next, we define a custom error on L22 that is to guard multiple initialization c
 error AlreadyInitialized();
 
 
-contract DiamondInit {   
+contract DiamondInit {
    TokenStorage s;
 
    // You can add parameters to this function in order to pass in
@@ -278,7 +274,7 @@ import "../contracts/Diamond.sol";
 import "forge-std/Test.sol";
 ```
 
-Next we add the definition for both `DiamondTokenFacet` and `DiamondInit` contracts. 
+Next we add the definition for both `DiamondTokenFacet` and `DiamondInit` contracts.
 
 ```solidity
 contract DiamondDeployer is Test, IDiamondCut {
@@ -343,7 +339,7 @@ function setUp() public {
 
        //upgrade diamond
        IDiamondCut(address(diamond)).diamondCut(cut, address(0x0), "");
-      
+
        //Initialization
        DiamondInit(address(diamond)).init();
    }
@@ -371,7 +367,7 @@ function testDiamondToken() public {
    }
 ```
 
-So here, we simply initialize the `DiamondTokenFacet`, with the address of our Diamond, then we call the functions `name`,  `symbol` and `totalSupply` on it, then asserting that we get the expected result.
+So here, we simply initialize the `DiamondTokenFacet`, with the address of our Diamond, then we call the functions `name`, `symbol` and `totalSupply` on it, then asserting that we get the expected result.
 We run the test from our terminal with the command.
 
 ```bash
@@ -391,7 +387,7 @@ First we must define the upgrade we intend to accomplish, which for this guide, 
 
 So our goal here would be to upgrade the name and symbol for our contract to become “Diamond Token V2” and “DTKN V2” respectively.
 
-We will take the following steps:   
+We will take the following steps:  
 First, we define the `NameFacet` in the facet directory, which would contain the logic for this upgrade, as so.
 
 ```solidity
@@ -434,7 +430,6 @@ contract DiamondDeployer is Test, IDiamondCut {
    // NameFacet used for upgrade.
    NameFacet nameF;
 ```
-
 
 ```solidity
 function testNameFacetUpgrade() public {
@@ -621,9 +616,10 @@ module.exports = {
 
 This file has the configuration for both Alfajore and CELO mainnet deployment.  
 But before we proceed to deploy we need to create a `.env` file in the root directory of our project and add the MNEMONIC key value pair to it, the value should be the mnemonic phrase of our wallet.  
-PLEASE NOTE: Make sure to add this `.env` file to the `.gitignore` file, which is also in the root directory, this would prevent our seed phrase from being exposed when pushing to github.     
-I have also created the file `deploymentAddresses.json` in the *scripts* directory, to keep track of our current deployment addresses on different networks. This is not the most efficient way to keep track of deployment address and you might want to refer to the [hardhat-deploy](https://github.com/wighawag/hardhat-deploy/) library for a production tailored project, which also has support for Diamond deployment, but we'd make do for this demo.    
-You might also need to install the `dotenv` package from npm with this command:     
+PLEASE NOTE: Make sure to add this `.env` file to the `.gitignore` file, which is also in the root directory, this would prevent our seed phrase from being exposed when pushing to github.  
+I have also created the file `deploymentAddresses.json` in the _scripts_ directory, to keep track of our current deployment addresses on different networks. This is not the most efficient way to keep track of deployment address and you might want to refer to the [hardhat-deploy](https://github.com/wighawag/hardhat-deploy/) library for a production tailored project, which also has support for Diamond deployment, but we'd make do for this demo.  
+You might also need to install the `dotenv` package from npm with this command:
+
 ```bash
 yarn add dotenv
 ```
@@ -637,8 +633,8 @@ Now we can proceed to deploy to Alfajores testnet, using the following command i
 ![deploy](images/image-3.png "Sample deploy output")
 ![deploy](images/image-4.png "Sample deploy output")
 
-We can see that the deployment transaction was successful, and the Diamond was deployed at the address - **0xa34118b22b675e8Ceb00eb2c96a0AE02DD6719bE**. This address would be updated in the `deploymentAddresses.json` file, so we can easily reference it later.   
-So now, we can call our deployed Diamond Token contract on chain, with the help of the `callTokenFunctions.js` file shown here:     
+We can see that the deployment transaction was successful, and the Diamond was deployed at the address - **0xa34118b22b675e8Ceb00eb2c96a0AE02DD6719bE**. This address would be updated in the `deploymentAddresses.json` file, so we can easily reference it later.  
+So now, we can call our deployed Diamond Token contract on chain, with the help of the `callTokenFunctions.js` file shown here:
 
 ```solidity
 const fs = require('fs')
@@ -651,7 +647,7 @@ async function main() {
    const diamondAddress = JSON.parse(fs.readFileSync(file))[network]
 
    const token = await hre.ethers.getContractAt("DiamondTokenFacet", diamondAddress);
-  
+
    const name = await token.name();
    const symbol = await token.symbol();
    const totalSupply = await token.totalSupply();
@@ -674,6 +670,7 @@ Once again we head to our terminal and run the command shown:
 ```bash
 > npx hardhat run scripts/callTokenFunctions.js --network alfajores
 ```
+
 ![Diamond call](images/image-5.png "Sample output of call to Diamond")
 
 Yay, we see that our contract is now truly on-chain with the correct name and symbol.
@@ -731,7 +728,7 @@ if (require.main === module) {
   exports.upgradeToken = upgradeToken
 ```
 
-This script initializes and deploys the `NameFacet` facet and  cuts(a.ka upgrades) the diamond with the functions in this facet.    
+This script initializes and deploys the `NameFacet` facet and cuts(a.ka upgrades) the diamond with the functions in this facet.  
 We run this upgrade script in our terminal with the command:
 
 ```bash
@@ -740,8 +737,8 @@ We run this upgrade script in our terminal with the command:
 
 ![Upgrad diamond](images/image-6.png "Diamond upgrade output")
 
-We see the facet deploy was completed and the upgrade was successful, yayy!!!   
-Now we can confirm this, by calling functions on the Diamond Token contract re-rusing  our `callTokenFunctions.js` script. Once again we run this from our terminal as shown:   
+We see the facet deploy was completed and the upgrade was successful, yayy!!!  
+Now we can confirm this, by calling functions on the Diamond Token contract re-rusing our `callTokenFunctions.js` script. Once again we run this from our terminal as shown:
 
 ![Call to uppgraded Diamond](images/image-7.png "Call to upgraded Diamond")
 
@@ -751,9 +748,8 @@ Congratulations on making it to the end of this article, you are now a Diamond E
 
 ## Next Steps​
 
-You can make improvements to this project by adding more facets for example, a facet for mint and burn logic, a facet for batch transfers and approval, or any other facets you can think of. It's really fun to extend Diamonds contracts.     
-Also, find the code repository [HERE](https://github.com/nuel-ikwuoma/ERC20-Diamond).   
-
+You can make improvements to this project by adding more facets for example, a facet for mint and burn logic, a facet for batch transfers and approval, or any other facets you can think of. It's really fun to extend Diamonds contracts.  
+Also, find the code repository [HERE](https://github.com/nuel-ikwuoma/ERC20-Diamond).
 
 ## About the Author​
 
