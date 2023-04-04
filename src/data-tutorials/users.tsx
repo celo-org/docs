@@ -840,7 +840,7 @@ const Users: User[] = [
     tags: ['intermediate','solidity','smartcontract', 'celosage'],
   },
   {
-    title: 'Building-a-crowdfunding-dapp-with-solidity-and-celo-composer',
+    title: 'Building a crowdfunding dapp with solidity and celo composer',
     description: "In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer.",
     preview: require('./showcase/intermediate/building-a-crowdfinding-dapp.png'),
     website: 'blog/tutorials/Building-a-crowdfunding-dapp-with-solidity-and-celo-composer',
