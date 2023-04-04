@@ -883,7 +883,6 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker',
     tags: ['celosage', 'celo', 'beginner', 'cli'], 
   },
-  
 {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
     description: 'This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit',
@@ -2035,7 +2034,6 @@ const Users: User[] = [
     website: '/blog/tutorials/smart-contract-development-on-celo-for-python-developers',
     tags: ['celosage', 'beginner'],
   },
-
   // Videos
 
     {
@@ -2699,6 +2697,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1.png'),
     website: 'blog/tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1',
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
+  },
+  {
+    title: 'Interact with smart contract on Celo using Web3js',
+    description: 'Learn how to navigate through web3js framework',
+    preview: require('./showcase/intermediate/interact-with-smart-contract-on-celo-using-web3js.png'),
+    website: 'blog/tutorials/interact-with-smart-contract-on-celo-using-web3js',
+    tags: ['celosage', 'solidity', 'intermediate', 'celo', 'hardhat'], 
   },
   {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
