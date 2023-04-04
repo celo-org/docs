@@ -1,6 +1,6 @@
 ---
 title: Building a Crowdfunding Dapp with Solidity and Celo Composer 
-description: In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer. We'll take you through the process step by step, starting with creating a smart contract for the crowdfunding process and ending with deploying the Dapp on the Celo network.
+description: In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer. 
 authors:
   - name: Kyrian Chigozie
     title: Technical writer 
