@@ -891,8 +891,11 @@ Lastly, we render the App component and return the Gadget components with the re
 I hope you found this tutorial informative and learned a lot from it. If you would like to further your education on this topic, here are some useful links that you can explore:
 
 [The official Celo documentation](https://docs.celo.org/)
-[Solidity By Example, a website with code examples for learning Solidity]( https://solidity-by-example.org/)
+
+[Solidity By Example, a website with code examples for learning Solidity](https://solidity-by-example.org/)
+
 [OpenZeppelin Contracts, a library of secure, tested smart contract code](https://www.openzeppelin.com/contracts/)
+
 [Solidity documentation for version 0.8.17](https://docs.soliditylang.org/en/v0.8.17/)
 
 I hope these resources prove to be useful to you!
