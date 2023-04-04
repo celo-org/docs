@@ -14,6 +14,7 @@ slug: /tutorials/how-to-build-simple-anonymous-dapp-on-celo
 ![header](../../src/data-tutorials/showcase/beginner/how-to-build-simple-anonymous-dapp-on-celo.png)
 
 ## Introduction
+
 Celo is a blockchain platform that focuses on enabling financial access for everyone, regardless of their location or socio-economic background. Its technology is built with mobile-first in mind and provides a fast, secure, and low-cost blockchain infrastructure for developers to build their dApps.
 
 This guide aims to make the process of building a dapp more accessible and less intimidating for those who are new to blockchain development or are looking to explore new technologies by providing developers with a clear and concise overview of the steps required to create an anonymous decentralized application (dapp) on the celo blockchain
@@ -65,6 +66,7 @@ This is the structure you should see in your code editor.
 Run `npm install` in your terminal to install all dependencies needed to make the dapp work properly.
 
 ## Smart Contract Development
+
 To start this segment, we will use Remix, a web-based Integrated Development Environment (IDE) that enables developers to write, test, and deploy smart contracts on the Celo blockchain.
 
 The first step is to create a new workspace and then a new file, which we will name `secrets.sol`. As we begin coding the smart contract, we will include a statement on the first line that specifies the license under which the code is being released.
@@ -213,6 +215,7 @@ Following this, you would then create the like and dislike function. This would 
         secrets[_index].dislikes++;
     }
 ```
+
 The `likeSecret` function takes an input parameter called `_index`, which is used to identify a secret stored in an array called secrets. The function first checks that the person calling the function has approved the transfer of a certain amount of 1cUSD to be sent from their wallet to the owner of the secret. If the transfer is approved, the function will increase the number of likes associated with the secret.
 
 The `dislikeSecret` function is similar to `likeSecret`, but instead of increasing the number of likes, it increases the number of dislikes for a particular secret. It also checks that the person calling the function has approved the transfer of the same amount of cUSD to the owner of the secret.
@@ -357,11 +360,13 @@ After installing and configuring your wallet, you must proceed to fund it using 
 Next, you will need to access Remix, a smart contract development environment, and download and activate the Celo plugin from the plugin manager. Once activated, you must connect your Celo wallet to Remix and deploy your contract to the Celo blockchain.
 
 ## Developing the Frontend
+
 Well done so far. For the final section, we would be integrating our contract into a full stack dapp using react.
 
 From the cloned repository, download all necessary files and folders from the public folder
 
 ### App.js
+
 For this project, you would write all react code in one file, the App.js file to avoid complexity and to keep things simple.
 
 For the first section, you would need to import some important files to enable adequate functionality.
