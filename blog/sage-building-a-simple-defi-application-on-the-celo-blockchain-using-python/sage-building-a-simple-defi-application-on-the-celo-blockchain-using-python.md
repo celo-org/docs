@@ -113,7 +113,7 @@ abstract contract DeFi is IERC20 {
     event Staked(address indexed user, uint256 amount, uint256 unlockTime);
     event Withdrawn(address indexed user, uint256 amount, uint256 rewardAmount);
 
-    uint256 public totalSupply;
+    uint256 public override totalSupply;
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -140,7 +140,7 @@ abstract contract DeFi is IERC20 {
     function transfer(
         address _to,
         uint256 _value
-    ) public returns (bool success) {
+    ) public override returns (bool success) {
         require(_to != address(0), "Invalid address");
         require(balances[msg.sender] >= _value, "Insufficient balance");
         balances[msg.sender] -= _value;
@@ -152,7 +152,7 @@ abstract contract DeFi is IERC20 {
     function approve(
         address _spender,
         uint256 _value
-    ) public returns (bool success) {
+    ) public override returns (bool success) {
         require(_spender != address(0), "Invalid address");
         allowances[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
@@ -163,7 +163,7 @@ abstract contract DeFi is IERC20 {
         address _from,
         address _to,
         uint256 _value
-    ) public returns (bool success) {
+    ) public override returns (bool success) {
         require(_from != address(0), "Invalid address");
         require(_to != address(0), "Invalid address");
         require(balances[_from] >= _value, "Insufficient balance");
@@ -226,7 +226,7 @@ abstract contract DeFi is IERC20 {
         emit Withdrawn(msg.sender, amount, rewardAmount);
     }
 
-    function balanceOf(address _account) public view returns (uint256) {
+    function balanceOf(address _account) public override view returns (uint256) {
         return balances[_account];
     }
 }
