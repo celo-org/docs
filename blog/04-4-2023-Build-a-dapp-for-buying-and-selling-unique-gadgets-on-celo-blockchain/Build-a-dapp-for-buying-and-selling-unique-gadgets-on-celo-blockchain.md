@@ -339,6 +339,7 @@ Once we have performed these checks, we create a new glass object with the provi
 Overall, this function allows us to add new gadgets to our collection, ensuring that all required information has been provided and notifying interested parties of any new additions.
 
 Next, we create the `getGadget` function.
+
 ```solidity
 function getGadget(uint _index)
         public
@@ -364,5 +365,94 @@ function getGadget(uint _index)
 
 ```
 
+In this session, we have a function called getGadget. This function allows anyone to retrieve information about a gadget by passing in an index number. We define the function as public and view, which means that anyone can call it and it doesn't modify any data.
 
+When we call the getGadget function and provide an index number, it will return several pieces of information about the gadget located at that index. This information includes the address of the gadget owner, an associated image, the gadget's name, a description, the price, and the number of likes that the gadget has received.
 
+The function returns all of this information in a specific order, separated by commas. So, when we call this function and provide an index number, we will receive all of this information about the gadget located at that index.
+
+```solidity
+function removeGadget(uint _index) external {
+        require(msg.sender == glasses[_index].owner, "Only owner can delete ");
+        glasses[_index] = glasses[glassLength - 1];
+        delete glasses[glassLength - 1];
+        glassLength--;
+
+        emit deleteGadgetEvent(_index);
+    }
+```
+
+In this session, we have a function called `removeGadget` which allows the owner of a gadget to delete it from the system by passing in an index number.
+
+When someone calls the removeGlass function, we first check to make sure that the person calling the function is the owner of the gadget they want to delete. If the condition is not met, the function stops executing and returns an error message saying `Only owner can delete`.
+
+Assuming the person calling the function is the owner of the gadget, we proceed to remove the gadget from the system. We do this by copying the last gadget in the system to the location of the gadget being deleted, and then deleting the last gadget. After that, we decrement the length of the gadget array by 1 to reflect the removal of the gadget.
+
+Once we have successfully removed the gadget from the system, we emit a `deleteGadgetEvent` event to let other parts of the system know that a gadget has been deleted.
+
+Next we add the `buyGadget` function
+
+```solidity
+ function buyGlass(uint _index) public payable {
+        Glass storage currentGlass = glasses[_index];
+        require(
+            currentGlass.owner != msg.sender,
+            "You can't buy your own glass"
+        );
+        require(
+            IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                glasses[_index].owner,
+                glasses[_index].price
+            ),
+            "Transfer failed."
+        );
+
+        address seller = glasses[_index].owner;
+
+        glasses[_index].owner = payable(msg.sender);
+
+        emit buyGadgetEvent(seller, msg.sender, _index);
+    }
+```
+
+This code snippets defines a function called buyGadget, which allows a user to purchase a gadget from the system by passing in an index number and paying the price of the gadget in cUSD (a type of cryptocurrency).
+
+When someone calls the `buyGadget` function, it first creates a reference to the gadget being purchased using the Glass storage currentGlass = glasses[_index] statement.
+
+Next, the function checks to make sure that the person calling the function is not the owner of the gadget. If the condition is not met, the function stops executing and returns an error message saying "You can't buy your own gadget".
+
+Assuming the person calling the function is not the owner of the gadget, the function then attempts to transfer the price of the gadget in cUSD from the buyer to the owner of the gadget using the `IERC20Token(cUsdTokenAddress)`.transferFrom statement. If the transfer is successful, the function updates the owner of the gadget to be the buyer, and emits a buyGadgetEvent event to let other parts of the system know that a gadget has been purchased.
+
+Finally, for the smart contract we add the `Like` and the getGadgetLength` function.
+
+```solidity
+ function Like(uint _index) public {
+        bool hasLiked = likes[_index][msg.sender];
+
+        if (hasLiked) {
+            likes[_index][msg.sender] = false;
+            glasses[_index].likesCount--;
+            emit dislikeGadgetEvent(msg.sender, _index);
+        } else {
+            likes[_index][msg.sender] = true;
+            glasses[_index].likesCount++;
+            emit likeGadgetEvent(msg.sender, _index);
+        }
+    }
+
+    function getGadgetsLength() public view returns (uint) {
+        return (glassLength);
+    }
+}
+```
+
+The first function, called `Like`, allows a user to like or dislike a gadget by passing in an `index` number. When someone calls the Like function, we first check to see if the user has already liked the gadget by checking the likes mapping for the user and gadget index combination. If the user has already liked the gadget, we remove the like by setting the mapping to `false`, decrement the gadget's like count, and emit a `dislikeGadgetEvent` to let other parts of the system know that a like has been removed.
+
+If the user has not already liked the gadget, we add the like by setting the mapping to true, increment the gadget's like count, and emit a likeGadgetEvent to let other parts of the system know that a like has been added.
+
+The second function, called `getGadgetsLength`, simply returns the length of the glasses array. We use this function to allow other parts of the system to know how many gadgets are currently in the system.
+
+## CONTRACT DEPLOYMENT
+
+In order to ensure a successful deployment of our smart contract, it is crucial that we download the Celo extension wallet from the provided link. [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). Accessing the Celo Alfojares faucet via the given link is a way to achieve this.
