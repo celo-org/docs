@@ -456,3 +456,448 @@ The second function, called `getGadgetsLength`, simply returns the length of the
 ## CONTRACT DEPLOYMENT
 
 In order to ensure a successful deployment of our smart contract, it is crucial that we download the Celo extension wallet from the provided link. [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). Accessing the Celo Alfojares faucet via the given link is a way to achieve this.
+
+Now that we have our wallet funded, we can move forward with deploying the smart contract using the Celo plugin that is available in Remix.
+
+## FRONT END
+
+- To obtain a copy of the repository on your computer, you can clone it using Git. To do so, open up a terminal and use the `git clone command`, followed by the repository URL. [Click here to clone this project repository](https://github.com/Ikanji201/GadgetHub). 
+
+- To open the project in Visual Studio Code, go to the project directory and open it using Visual Studio Code. You can achieve this by entering the command `code .` in the terminal.
+
+- To install the required dependencies, navigate to the project directory in the terminal and run the command `npm install`. This will download and install all the dependencies listed in the `package.json` file.
+
+Once the dependencies have been installed, you can run the application by executing the command npm start in the terminal. This will start the development server and automatically open the application in your default web browser.
+
+After following these steps, you should be able to modify the code and observe the changes in your web browser.
+
+## App.js
+
+The code in its entirety should appear similar to this.
+
+```solidity
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import { useState, useEffect } from "react";
+
+import Web3 from "web3";
+import { newKitFromWeb3 } from "@celo/contractkit";
+import BigNumber from "bignumber.js";
+import IERC from "./contract/IERC.abi.json";
+import Gadget from "./contract/Gadget.abi.json";
+import CreateGadget from "./components/CreateGadget";
+import Gadgets from "./components/Gadgets";
+
+const ERC20_DECIMALS = 18;
+
+const contractAddress = "0xCF39553D91107745328F47e51d926392dB2D2f7d";
+const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
+
+function App() {
+	const [contract, setcontract] = useState(null);
+	const [address, setAddress] = useState(null);
+	const [kit, setKit] = useState(null);
+	const [cUSDBalance, setcUSDBalance] = useState(0);
+	const [gadgets, setGadgets] = useState([]);
+
+	const connectToWallet = async () => {
+		if (window.celo) {
+			try {
+				await window.celo.enable();
+				const web3 = new Web3(window.celo);
+				let kit = newKitFromWeb3(web3);
+
+				const accounts = await kit.web3.eth.getAccounts();
+				const user_address = accounts[0];
+
+				kit.defaultAccount = user_address;
+
+				await setAddress(user_address);
+				await setKit(kit);
+			} catch (error) {
+				console.log(error);
+			}
+		} else {
+			console.log("Error Occurred");
+		}
+	};
+
+	useEffect(() => {
+		connectToWallet();
+	}, []);
+
+	useEffect(() => {
+		if (kit && address) {
+			getBalance();
+		}
+	}, [kit, address]);
+
+	useEffect(() => {
+		if (contract) {
+			getGadget();
+		}
+	}, [contract]);
+
+	const getBalance = async () => {
+		try {
+			const balance = await kit.getTotalBalance(address);
+			const USDBalance = balance.cUSD
+				.shiftedBy(-ERC20_DECIMALS)
+				.toFixed(2);
+			const contract = new kit.web3.eth.Contract(Gadget, contractAddress);
+			setcontract(contract);
+			setcUSDBalance(USDBalance);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const getGadget = async () => {
+		const glassLength = await contract.methods.getGlassesLength().call();
+		const _gadgett = [];
+		for (let index = 0; index < glassLength; index++) {
+			let _gadgets = new Promise(async (resolve, reject) => {
+				let gadget = await contract.methods.getGlass(index).call();
+				resolve({
+					index: index,
+					owner: gadget[0],
+					image: gadget[1],
+					name: gadget[2],
+					description: gadget[3],
+					price: gadget[4],
+					like: gadget[5],
+				});
+			});
+			_gadgett.push(_gadgets);
+		}
+		const _gadgets = await Promise.all(_gadgett);
+		setGadgets(_gadgets);
+	};
+
+	const AddGadget = async (_image, _name, _description, price) => {
+		const _price = new BigNumber(price)
+			.shiftedBy(ERC20_DECIMALS)
+			.toString();
+		try {
+			await contract.methods
+				.addGlass(_image, _name, _description, _price)
+				.send({ from: address });
+			getGadget();
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const buyGadget = async (_index) => {
+		try {
+			const cUSDContract = new kit.web3.eth.Contract(
+				IERC,
+				cUSDContractAddress
+			);
+
+			await cUSDContract.methods
+				.approve(contractAddress, gadgets[_index].price)
+				.send({ from: address });
+			await contract.methods.buyGlass(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const RemoveGadget = async (_index) => {
+		try {
+			await contract.methods.removeGlass(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			alert(error);
+		}
+	};
+
+	const Like = async (_index) => {
+		try {
+			await contract.methods.Like(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			alert.log(error);
+		}
+	};
+	return (
+		<>
+			{address && kit ? (
+				<div>
+					<Navbar balance={cUSDBalance} />
+
+					<Gadgets
+						gadgets={gadgets}
+						buyGadget={buyGadget}
+						RemoveGadget={RemoveGadget}
+						Like={Like}
+						address={address}
+					/>
+					<CreateGadget AddGadget={AddGadget} />
+				</div>
+			) : (
+				""
+			)}
+		</>
+	);
+}
+
+export default App;
+```
+
+To begin, we must analyze the App.js file by scrutinizing the components and libraries that must be imported.
+
+```js
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import { useState, useEffect } from "react";
+
+import Web3 from "web3";
+import { newKitFromWeb3 } from "@celo/contractkit";
+import BigNumber from "bignumber.js";
+import IERC from "./contract/IERC.abi.json";
+import Gadget from "./contract/Gadget.abi.json";
+import CreateGadget from "./components/CreateGadget";
+import Gadgets from "./components/Gadgets";
+
+const ERC20_DECIMALS = 18;
+
+const contractAddress = "0xCF39553D91107745328F47e51d926392dB2D2f7d";
+const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
+```
+
+In this code, we are importing various libraries and components that we will be using in our React application.
+
+We are importing the `App.css` file, which contains some CSS styles that we will use to style our application.
+
+We are also importing the `Bootstrap CSS` file for some additional styling.
+
+Next, we are importing the `useState` and `useEffect` hooks from the react library. These hooks will allow us to manage state and perform side effects in our React components.
+
+We are also importing the `Web3 library`, which is a library for interacting with Ethereum and Celo blockchains. We will use this library to connect to the Celo blockchain.
+
+We are importing the `newKitFromWeb3` function from the `@celo/contractkit` library, which we will use to create a new contract kit for interacting with smart contracts on the Celo blockchain.
+
+We are importing the `BigNumber` library, which is a library for working with large numbers in JavaScript.
+
+We are importing the `ABI files` for our smart contracts, which we will use to interact with them.
+
+Finally, we are defining two constants: `contractAddress`, which is the address of our `Gadget smart contract`, and `cUSDContractAddress`, which is the address of the Celo Dollars (cUSD) token contract on the Celo blockchain.
+
+```js
+function App() {
+	const [contract, setcontract] = useState(null);
+	const [address, setAddress] = useState(null);
+	const [kit, setKit] = useState(null);
+	const [cUSDBalance, setcUSDBalance] = useState(0);
+	const [gadgets, setGadgets] = useState([]);
+
+	const connectToWallet = async () => {
+		if (window.celo) {
+			try {
+				await window.celo.enable();
+				const web3 = new Web3(window.celo);
+				let kit = newKitFromWeb3(web3);
+
+				const accounts = await kit.web3.eth.getAccounts();
+				const user_address = accounts[0];
+
+				kit.defaultAccount = user_address;
+
+				await setAddress(user_address);
+				await setKit(kit);
+			} catch (error) {
+				console.log(error);
+			}
+		} else {
+			console.log("Error Occurred");
+		}
+	};
+
+```
+
+In this session, we define a React function component named App. The component contains several states, including contract, address, kit, cUSDBalance, and gadgets. We also define an asynchronous function named `connectToWallet`.
+
+The connectToWallet function is used to connect to the user's wallet using the Celo extension. It checks if the Celo extension is installed, and if it is, it enables it and initializes a web3 object. This object is then used to create a new kit object using the newKitFromWeb3 method.
+
+Next, the function gets the user's account address and sets it as the default account for the `kit` object. The address and kit states are then updated with the user's address and kit object, respectively. If there is an error connecting to the wallet, it is logged to the console.
+
+```js
+useEffect(() => {
+		connectToWallet();
+	}, []);
+
+	useEffect(() => {
+		if (kit && address) {
+			getBalance();
+		}
+	}, [kit, address]);
+
+	useEffect(() => {
+		if (contract) {
+			getGadget();
+		}
+	}, [contract]);
+```
+
+In this session, we are using React's `useEffect` hook to perform certain actions after a component has been rendered.
+
+The first useEffect hook is used to connect to the wallet by calling the `connectToWallet()` function. It is only called once when the component mounts, as indicated by the empty array [] passed as the second argument.
+
+The second useEffect hook is used to get the cUSD balance of the connected wallet by calling the getBalance() function. It is called whenever the kit and address state variables change.
+
+The third useEffect hook is used to get the list of gadgets by calling the `getGadget()` function. It is called whenever the contract state variable changes.
+
+```js
+const getBalance = async () => {
+		try {
+			const balance = await kit.getTotalBalance(address);
+			const USDBalance = balance.cUSD
+				.shiftedBy(-ERC20_DECIMALS)
+				.toFixed(2);
+			const contract = new kit.web3.eth.Contract(Gadget, contractAddress);
+			setcontract(contract);
+			setcUSDBalance(USDBalance);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+```
+
+The `getBalance` function is used to retrieve the cUSD balance of the connected wallet address. It uses the kit object and the address state variable to get the balance of the connected wallet. The balance is then converted to a human-readable format by shifting the decimal places and fixing the number of decimal places. Finally, a new contract object is created using the `kit.web3.eth.Contract` function and the Gadget `contract ABI`, and the contract and cUSDBalance state variables are updated with their respective values.
+
+```js
+const getGadget = async () => {
+		const glassLength = await contract.methods.getGlassesLength().call();
+		const _gadgett = [];
+		for (let index = 0; index < glassLength; index++) {
+			let _gadgets = new Promise(async (resolve, reject) => {
+				let gadget = await contract.methods.getGlass(index).call();
+				resolve({
+					index: index,
+					owner: gadget[0],
+					image: gadget[1],
+					name: gadget[2],
+					description: gadget[3],
+					price: gadget[4],
+					like: gadget[5],
+				});
+			});
+			_gadgett.push(_gadgets);
+		}
+		const _gadgets = await Promise.all(_gadgett);
+		setGadgets(_gadgets);
+	};
+```
+
+The `getGadget()` function facilitates the retrieval of all stored gadgets within the contract and then updates the application state with the gadgets retrieved.
+
+```js
+ const AddGadget = async (_image, _name, _description, price) => {
+		const _price = new BigNumber(price)
+			.shiftedBy(ERC20_DECIMALS)
+			.toString();
+		try {
+			await contract.methods
+				.addGlass(_image, _name, _description, _price)
+				.send({ from: address });
+			getGadget();
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const buyGadget = async (_index) => {
+		try {
+			const cUSDContract = new kit.web3.eth.Contract(
+				IERC,
+				cUSDContractAddress
+			);
+
+			await cUSDContract.methods
+				.approve(contractAddress, gadgets[_index].price)
+				.send({ from: address });
+			await contract.methods.buyGlass(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const RemoveGadget = async (_index) => {
+		try {
+			await contract.methods.removeGlass(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			alert(error);
+		}
+	};
+
+	const Like = async (_index) => {
+		try {
+			await contract.methods.Like(_index).send({ from: address });
+			getGadget();
+			getBalance();
+		} catch (error) {
+			alert.log(error);
+		}
+	};
+```
+
+Next, we'll move on to implementing the `addGadget()`, `buyGadget()`, `removeGadget()`, and `likeGadeget()` functions, which allow users to interact with the smart contract.
+
+```js
+return (
+		<>
+			{address && kit ? (
+				<div>
+					<Navbar balance={cUSDBalance} />
+
+					<Gadgets
+						gadgets={gadgets}
+						buyGadget={buyGadget}
+						RemoveGadget={RemoveGadget}
+						Like={Like}
+						address={address}
+					/>
+					<CreateGadget AddGadget={AddGadget} />
+				</div>
+			) : (
+				""
+			)}
+		</>
+	);
+}
+
+export default App;
+```
+
+Lastly, we render the App component and return the Gadget components with the required props.
+
+## NEXT STEP
+
+I hope you found this tutorial informative and learned a lot from it. If you would like to further your education on this topic, here are some useful links that you can explore:
+
+[The official Celo documentation](https://docs.celo.org/)
+
+[Solidity By Example, a website with code examples for learning Solidity]( https://solidity-by-example.org/)
+
+[OpenZeppelin Contracts, a library of secure, tested smart contract code](https://www.openzeppelin.com/contracts/)
+
+[Solidity documentation for version 0.8.17](https://docs.soliditylang.org/en/v0.8.17/)
+
+I hope these resources prove to be useful to you!
+
+# About the author
+
+I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
