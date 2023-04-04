@@ -133,7 +133,7 @@ Note: The contract above, only shows the logic of a custom token without some se
 
 ## Step 3: Compiling and Deploying the Smart Contract
 
-Next, we need to compile our custom token smart contract to generate the ABI and Byte codes. Two files called “CustomToken.abi” and “CustomToken.bin” would be created. 
+Next, we need to compile our custom token smart contract to generate the ABI and Byte codes. Two files called “CustomToken.abi” and “CustomToken.bin” would be created.
 
 We need to install the solidity compiler:
 
@@ -227,7 +227,7 @@ func main() {
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -297,7 +297,7 @@ import (
 )
 ```
 
-The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies. 
+The “package main” initializes this file as our main Go package and the “import” command is used to import all the package dependencies.
 
 ```go
 const privateKey = "your-private-key"
@@ -326,7 +326,7 @@ client, err := ethclient.Dial(nodeURL)
 		log.Fatalf("Failed to read the contract ABI: %v", err)
 	}
 	fmt.Println(abiBytes)
-	
+
 	// Load the contract bytecode
 	bytecode, err := ioutil.ReadFile("Exchange.bin")
 	if err != nil {
@@ -334,7 +334,7 @@ client, err := ethclient.Dial(nodeURL)
 	}
 ```
 
-The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled. 
+The code above allows us to connect to the Celo blockchain, load our private key, and load our contract ABI and byte codes which were generated when our contract was compiled.
 
 ```go
 // Get the public address associated with the private key
@@ -354,7 +354,7 @@ The code above allows us to connect to the Celo blockchain, load our private key
 	}
 ```
 
-From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain. 
+From the code above, our contract address and public key are gotten from the crypto package. The nonce and “gasPrice” are needed for a transaction to occur on the blockchain.
 
 ```go
 // Create a new transaction
@@ -383,7 +383,7 @@ From the code above, our contract address and public key are gotten from the cry
 }
 ```
 
-A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it. 
+A new transaction is created and signed and a receipt is generated to validate that the smart contract is actually deployed and has a particular contract address attached to it.
 
 To deploy the contract, go to your terminal and run:
 
@@ -393,9 +393,7 @@ go run deploy.go
 
 Your token should deploy and print out a wallet address:
 
-
 ![images](https://user-images.githubusercontent.com/69091491/229108120-c7c05bd0-c508-4985-9b25-953999539e56.png)
-
 
 ## Conclusion
 
