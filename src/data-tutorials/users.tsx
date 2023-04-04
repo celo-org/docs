@@ -2730,7 +2730,7 @@ const Users: User[] = [
   {
     title: 'Building a Simple DeFi Application on the Celo Blockchain Using Python',
     description: 'In this tutorial, we will build a simple decentralized finance (DeFi) application on the Celo blockchain using Python',
-    preview: require('./showcase/intermediate/building-a-simple-defi-application-on-the-celo-blockchain-using-python.png'),
+    preview: require('./showcase/intermediate/sage-building-a-simple-defi-application-on-the-celo-blockchain-using-python.png'),
     website: 'blog/tutorials/building-a-simple-defi-application-on-the-celo-blockchain-using-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
