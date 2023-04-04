@@ -3,7 +3,7 @@ title: Building a Crowdfunding Dapp with Solidity and Celo Composer
 description: In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer. We'll take you through the process step by step, starting with creating a smart contract for the crowdfunding process and ending with deploying the Dapp on the Celo network.
 authors:
   - name: Kyrian Chigozie
-    title: Technical writer, Celo Foundation
+    title: Technical writer 
     url: https://github.com/Kyrian212
     image_url: https://avatars.githubusercontent.com/u/33249458?v=4
 tags: [celo, celosage, crowdfunding, intermediate, solidity, smartcontract]
@@ -63,7 +63,7 @@ The terminal would display prompts so you can choose your framework.
 For this tutorial, we would be using react-celo and hardhat. 
 After setting up your environment, your terminal would look like this 
 
-
+![cmd](blog/images/cmd l.png)
 
 You can choose whatever you’d like to call your project in the `project name`.
 
@@ -74,9 +74,7 @@ cd crowdfund-dapp
 code .
 ```
 
-Your terminal should be looking like this 
-
-![cmd](images/cmd I.png)
+ 
 
 Navigate to your terminal and install the dependencies using the following command
 
@@ -84,12 +82,12 @@ Navigate to your terminal and install the dependencies using the following comma
 yarn 
 ```
 
-:::tip
-
+ 
+**Note**
 - I’d recommend [Visual Studio Code](https://code.visualstudio.com/) as a code editor but there are others like Sublime or atom.
 - Please check out the README.md file in the [Celo Composer Repository](https://github.com/celo-org/celo-composer) to learn more about setting up your environment.  
 
-:::
+ 
 
 
 
@@ -247,11 +245,11 @@ CELOSCAN_API_KEY=""
 
 Add your private key of your metamask wallet to the `PRIVATE_KEY`. Please ensure you are using a test account. 
 
-:::tip
+ 
 
-Learn more: Check out [3 Simple Steps to Connect your MetaMask Wallet To Celo](https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) for more details.
+- Learn more: Check out [3 Simple Steps to Connect your MetaMask Wallet To Celo](https://developers.celo.org/3-simple-steps-to-connect-your-metamask-wallet-to-celo-732d4a139587) for more details.
 
-:::
+ 
  
 
 
