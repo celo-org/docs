@@ -426,7 +426,7 @@ Next, the function checks to make sure that the person calling the function is n
 
 Assuming the person calling the function is not the owner of the gadget, the function then attempts to transfer the price of the gadget in cUSD from the buyer to the owner of the gadget using the `IERC20Token(cUsdTokenAddress)`.transferFrom statement. If the transfer is successful, the function updates the owner of the gadget to be the buyer, and emits a buyGadgetEvent event to let other parts of the system know that a gadget has been purchased.
 
-Finally, for the smart contract we add the `Like` and the getGadgetLength` function.
+Finally, for the smart contract we add the `Like` and the `getGadgetLength` function.
 
 ```solidity
  function Like(uint _index) public {
@@ -891,11 +891,8 @@ Lastly, we render the App component and return the Gadget components with the re
 I hope you found this tutorial informative and learned a lot from it. If you would like to further your education on this topic, here are some useful links that you can explore:
 
 [The official Celo documentation](https://docs.celo.org/)
-
 [Solidity By Example, a website with code examples for learning Solidity]( https://solidity-by-example.org/)
-
 [OpenZeppelin Contracts, a library of secure, tested smart contract code](https://www.openzeppelin.com/contracts/)
-
 [Solidity documentation for version 0.8.17](https://docs.soliditylang.org/en/v0.8.17/)
 
 I hope these resources prove to be useful to you!
