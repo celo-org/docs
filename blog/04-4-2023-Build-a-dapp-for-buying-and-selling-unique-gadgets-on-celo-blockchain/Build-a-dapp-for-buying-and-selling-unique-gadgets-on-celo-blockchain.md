@@ -57,7 +57,7 @@ Shall we begin creating a smart contract using Remix IDE?
 The full code:
 
 ```solidity
-  // SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -218,6 +218,50 @@ contract Gadgets {
     }
 }
 ```
+## Code Analysis
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+```
+
+This code contains two directives that are important for us. The first one specifies the open-source license that the code is released under, which ensures that anyone can use and modify the code as long as they include the original license. The second directive defines the range of Solidity versions that the code is compatible with. By using these directives, we can make sure that the code is licensed correctly and can be compiled using the intended version of Solidity.
+
+Next, we add our ERC20 token interface.
+
+```solidity
+interface IERC20Token {
+    function transfer(address, uint256) external returns (bool);
+
+    function approve(address, uint256) external returns (bool);
+
+    function transferFrom(
+        address,
+        address,
+        uint256
+    ) external returns (bool);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address) external view returns (uint256);
+
+    function allowance(address, address) external view returns (uint256);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+```
+
+This code defines the necessary functions and events for a Celo ERC20 token contract. ERC20 is a standard protocol used for creating tokens on the Celo blockchain, and this code specifies how users can interact with the smart contract. The functions allow for the transfer of tokens, authorization for other addresses to spend tokens, and the retrieval of information about the token contract, such as the total supply and token balances. The events trigger notifications when a token transfer or approval occurs on the Celo blockchain, providing external applications with real-time updates.
+
+
+
+
 
 
 
