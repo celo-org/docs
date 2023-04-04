@@ -613,6 +613,7 @@ The next phase of the code is basically the html section and is fairly understan
                 <i onClick={()=>likeSecret(secret.index)} class="bi bi-hand-thumbs-up"></i>{secret.likes}
                 </div>
                   <div><i onClick={()=>dislikeSecret(secret.index)} class="bi bi-hand-thumbs-down"></i>{secret.dislikes}</div>
+
                 </div>
                 <div className="form-group mt-3">
                   <input type="text" className="form-control" name="amount" id="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} required />
