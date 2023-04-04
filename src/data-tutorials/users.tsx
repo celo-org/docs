@@ -2583,7 +2583,7 @@ const Users: User[] = [
   {
     title: 'Solidity Event Logging And Monitoring On Celo Best Practices',
     description: 'In this tutorial we will teach you about solidity events. How to use them and the best practices.',
-    preview: require('./showcase/beginner/solidity-event-logging-and-monitoring-on-celo-best-Practices.png'),
+    preview: require('./showcase/intermediate/solidity-event-logging-and-monitoring-on-celo-best-Practices.png'),
     website: '/blog/tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices',
     tags: ['celosage', 'solidity', 'celo'], 
   },
