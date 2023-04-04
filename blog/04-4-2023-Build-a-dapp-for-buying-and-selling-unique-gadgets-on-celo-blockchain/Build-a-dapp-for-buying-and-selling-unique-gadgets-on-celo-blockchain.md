@@ -5,11 +5,13 @@ authors:
   - name: Ikanji David
     title: Technical Writer 
     url:   https://github.com/Ikanji201
-    image_url:   
+    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celo sage, dapp, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain
 ---
+
+![build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain](https://user-images.githubusercontent.com/115812158/229753542-ef563aa6-d625-4327-8137-512020e43f97.png)
 
 ## INTRODUCTION
 
