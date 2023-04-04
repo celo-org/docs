@@ -1,12 +1,12 @@
 ---
 title: Interact with smart contract on celo using ethersjs
-description: Learning to navigate through the ethersjs library
+description: Understand how to use the ethersjs library
 authors:
   - name: Isaac Jesse
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [hardhat, celo, solidity, javascript, typescript]
+tags: [celosage, intermediate, smartcontract, typescript, solidity]
 hide_table_of_contents: true
 slug: /tutorials/interact-with-smart-contract-on-celo-using-ethersjs
 ---
@@ -233,36 +233,13 @@ If you follow the steps accordingly, your contract should compile successfully.
 
 **Deploy, Interact with the contract**
 
-To interact with the contract, firstly, we will need to deploy it either locally or to the Celo test network. However, we will try to use both methods and deploy it programmatically using the ethers.js library.
+To interact with the contract, firstly, we will need to deploy it to Celo test network.
 
 **Installation**
 
 No need to install `ethers` library again. It was already included in the dependencies during hardhat set up.
 
-To deploy locally, we need to run a copy of the blockchain node locally. Besides the inbuilt node, hardhat allows us to run a copy of an external blockchain instance against it. For this tutorial, we need to install `Ganache` either globally or locally and set its running port and URI to connect to the hardhat environment.
-
->Note: For security reasons, it is advisable to install Ganache using the Node Package Manager - **NPM**.
-
-```bash npm
-npm install --global ganache
-```
-
-Let's confirm if Ganache was successfully installed. Open the terminal, and run the following command.
-
-```bash
-ganache
-```
-or
-
-```bash
-npx ganache
-```
-
-An instance of Ganache will pop up locally on port 8545. We are not ready to use ganache for now. You can keep it running or kill the process by typing `ctrl c` in the terminal. 
-
-![image](images/2.png)
-
-Now that we have all the dependencies installed, we'll write a script for the purpose of deploying and interacting with the contract. Firstly, create a `.ts` file that exports an object containing the utilities we need for the program. This is to reduce the amount of code we'll keep in the main script.
+Now that we have all the dependencies installed, we'll write a script for the purpose of deploying and interacting with the contract. Firstly, create a `accountUtils.ts` file that exports an object containing the utilities we need for the program. This is to reduce the amount of code we'll keep in the main script.
 
 Inside the `script` folder, make a new file.
 
@@ -274,13 +251,19 @@ touch accountsUtils.ts
 ```ts accountsUtils.ts
 import { ethers } from "ethers";
 ```
-Let's declare a few constant variables.
+Declare a few constant variables with value assigned to them.
 
-- export types and interfaces for Typescript compatibility
+- export types and interfaces. We'll need it later in our program to avoid Typescript error.
 
 ```ts accountsUtils.ts
-  export type CNumber = string | number | import("bn.js");
-  export type SignedTransaction = import("web3-eth-accounts").SignedTransaction;
+export type CNumber = BigNumberish;
+export interface TrxProps {
+  data?: string;
+  to?: string;
+  value?: string;
+  functionName: string;
+  signer: Wallet
+}
 
   export interface TrxProps {
     data?: string;
@@ -293,181 +276,141 @@ Let's declare a few constant variables.
   }
 ```
 
-- Declare and set the validity window variable to 1. You can use any number not greater than 255. For testing purposes, it makes sense to set it to a lower boundary. This is the period during which cheques are valid.
+- Declare and set the validity window variable to 1. You can use any number not greater than 255.  For testing purposes, it makes sense to set it to a lower boundary. This is the period during which cheques are valid. We'll need it as an argument to the `DrawCheque` function.
 
 ```ts accountsUtils.ts
 const VALIDITY_WINDOW_IN_HRS = 1;
 ```
+- Set the gas limit and gasPrice. The utility function that require these variables as arguments expect them to be parsed as `string`. It should be hexadecimal. Use the `hexlify` function from the `ethers.utils` module to convert them to `hex`.
 
-- Set the gas and gas price
+  - First, let's create a reusable function for this purpose.
 
-```ts accountsUtils.ts
-  const GAS = 1500000;
-  const GASPRICE = 3000000000;  
-```
-
-- With toggling a variable, we want to be able to switch between a local node and Celo's Alfajores.
-
-```ts accountsUtils.ts
-  export const mode : boolean = true;
-```
-
-- Let's create a web3 instance using the `Web3` class wrapper. It expects a provider object. Since we are not using external or given providers such as Metamask or Valora, we need a way to pay for transactions for making changes to the blockchain. An answer to it is creating a wallet or provider. 
-
-To create a provider, we'll use the `Web3` class to invoke either the `HttpProvider` or `WebsocketProvider` to construct a provider object. Either of the constructors expect a URI. For the `HttpsProvider`, we'll supply the URI on which ganache runs, while we give Celo's testnet websocket URI to the `WebsocketProvider` constructor. The previous boolean variable - `mode` let us switch between the nodes.
-
-```ts accountsUtils.ts
-  const LOCAL_HTTPPROVIDER_URL = new Web3.providers.HttpProvider("http://127.0.0.1:8545");
-
-  const SOCKET_URL = "wss://alfajores-forno.celo-testnet.org/ws";
-
-  const WEB_SOCKETPROVIDER = new Web3.providers.WebsocketProvider(SOCKET_URL);
-
-  const web3 = new Web3(mode? LOCAL_HTTPPROVIDER_URL : WEB_SOCKETPROVIDER);
-```
-
-- Declare an `accounts` variable using the `let` keyword with the initial value set to the value generated from `web3.eth.accounts.privateKeyToAccount`. It generates an account from a private key. We'll use this type of account to interact with the smart contract while connected to the live network i.e Alfajores. You should have an account already created for this purpose funded with testnet Celo. Give the private key to the `privateKeyToAccount` function to generate an account.
-
->Warning: It is unsafe to store private keys the way we did. This is for tutorial purposes only. You'd want to use a more secure and subtle way of handling private keys.
-
-```ts accountsUtils.ts
-  let accounts = [
-    web3.eth.accounts.privateKeyToAccount("ba28d5cea192f121................................................"), //payee
-    web3.eth.accounts.privateKeyToAccount("8c0dc6d793391e9c................................................") // owner
-  ];
-```
-
-- If the mode is local, we use `web3.eth.accounts`. This will auto-connect to the local node i.e ganache, and the ganache's accounts are available for us to use otherwise, we'll use the HDWallet or account generated from the explicitly supplied private keys.
-
-```ts accountsUtils.ts
-  if(mode) {
-    const newAccounts = web3.eth.accounts;
-    for (let i = 0; i < 2; i++) {
-      const alc = newAccounts.create("null");
-      accounts[i] = alc;
-      console.log(`New Account ${alc.address} with index ${i} created `);
+  ```ts accountsUtils.ts
+    const hexlify = (x:number) => {
+      return ethers.utils.hexlify(x);
     }
-  }
+
+    const GAS = hexlify(1500000);
+
+    const GASPRICE = hexlify(3000000000); 
+  ```
+
+  - Set the socket url. We are going to send transactions to the Celo's test network using the websocket provider.
+
+  ```ts accountsUtils.ts
+  const SOCKET_URL = "wss://alfajores-forno.celo-testnet.org/ws";
+  ```
+
+- Create the RPC configuration to set up the websocket provider.
+
+```ts accountUtils.ts
+  const rpcInfo = Object.assign({}, {
+  CELOALFAJORES: {
+    name: 'Alfajores',
+    rpc: SOCKET_URL,
+    chainId: 44787,
+  },
+  });
+
+  const webSocketProvider = new ethers.providers.WebSocketProvider(
+  rpcInfo.CELOALFAJORES.rpc, 
+    {
+      chainId: rpcInfo.CELOALFAJORES.chainId,
+      name: rpcInfo.CELOALFAJORES.name,
+    }
+  );
 ```
 
-- We can now assign accounts based on the connected mode.
+- To send transactions, we need a wallet. The `ethers` library provide a module for generating a wallet instance.
+
+Using `ethers.Wallet`, we can construct a new wallet instance from private key.
+
+>Warning: It is unsafe to store private keys in javascript files. This is only for tutorial purposes. You should use a more secure way of handling private keys.
+
+`ethers.Wallet` expects two arguments. The first being the private key of an externally owned account while the other is a provider instance if you have created one, so it is optional. You should already created an account as a pre-requisite for this course.
 
 ```ts accountsUtils.ts
-  const PAYEE = accounts[0];
-  const OWNER = accounts[1];
+  // Replace the first argument with your private keys
+  const owner = new ethers.Wallet(<Paste your private key here>, webSocketProvider);
+  const payee = new ethers.Wallet(<Paste your private key here>, webSocketProvider);
 ```
 
-- Let's create a function that scrutinizes the balances to ensure the accounts are working as expected. If `mode` is local, we generate new accounts using web3 account utils. These accounts have no coin in them. We may need to test Celo to pay for the gas fee, it's smart if we could use ganache as a faucet, transferring Celo from ganache to locally generated accounts.
-
-> Note: Ganache is pre-loaded with 1000 Celo when launched. This is correct at the time of writing this tutorial in April 2023. It may change in the future.
+- Create an asynchronous function that scrutinizes the balances to ensure the accounts are properly set up. Inside the function, log the balances to the console.
 
 ```ts accountsUtils.ts
   async function getBalances() {
-    if(mode) {
-      const receivers = [PAYEE.address, OWNER.address];
-      const newAccounts = await web3.eth.getAccounts();
-      let index = 0;
-      for (const receiver of receivers) {
-        const sender = newAccounts[index];
-        await web3.eth.sendTransaction({
-          from: sender,
-          to: receiver,
-          gas: 21000,
-          value: Web3.utils.toWei("100", "ether")
-        }, (error, transactionHash) => {
-          if(!error) console.log(`Trxn hash: ${transactionHash}`);
-          else console.log(`Trxn Errored: ${error}`);
-        })
-        index ++;
-      }
-    }
-    const payee_bal = web3.utils.fromWei(await web3.eth.getBalance(String(PAYEE.address)));
-    const owner_bal = web3.utils.fromWei(await web3.eth.getBalance(String(OWNER.address)));
-    console.log(
-      `Payee Balance: ${payee_bal}
-      \nOwner Balance: ${owner_bal}
-      `
-    )
-    return { payee_bal, owner_bal}
+  // Fetching balances using the provider
+  const payee_balance_using_provider = ethers.utils.parseUnits((await webSocketProvider.getBalance(payee.address)).toString(), 'wei');
+  const owner_balance_using_provider = ethers.utils.parseUnits((await webSocketProvider.getBalance(owner.address)).toString(), 'wei');
+  
+  // Fetching balances from the signer object
+  const payee_wallet_balance = ethers.utils.parseUnits((await payee.getBalance()).toString(), 'wei');
+  const owner_wallet_balance = ethers.utils.parseUnits((await owner.getBalance()).toString(), 'wei');
+
+  console.log(`
+    payee_balance_using_provider: ${payee_balance_using_provider}\n
+    owner_balance_using_provider: ${owner_balance_using_provider}\n
+    payee_wallet_balance: ${payee_wallet_balance}\n
+    owner_wallet_balance: ${owner_wallet_balance}\n
+    
+  `);
+
+  return {
+    payee_balance_using_provider,
+    owner_balance_using_provider,
+    payee_wallet_balance,
+    owner_wallet_balance
   }
+}
 ```
 
-- Let's create a functioning utility that broadcasts signed raw transactions to the network
-
-```ts accountsUtils.ts
-  const sendSignedTransaction = async(signedRawTrx: string | undefined | SignedTransaction, functionName: string) => {
-    return await web3.eth.sendSignedTransaction(String(signedRawTrx), (error, hash) => {
-      if(!error) console.log(`Hash:, ${hash} \n${functionName} was run.`);
-    });
-  }
-```
-
-- We can now export a function that returns the utilities to use anywhere in our program. In addition, it returns a utility function `signAndSendTrx` which accepts an object of type `TrxnProps`. It signs already prepared transaction encoded as data using the private key, parsed into the `props` object, and broadcast it to the network. The return value is of type `TransactionReceipt` after the transaction is approved and added to the blockchain.
+- Export the utilities to use anywhere in your program.
 
 ```ts accountsUtils.ts
   export const utils = () => {
-    return {
-      web3,
-      GAS,
-      GASPRICE,
-      PAYEE: PAYEE,
-      OWNER: OWNER,
-      VALIDITY_WINDOW_IN_HRS,
-      getBalances: getBalances,
-      sendSignedTransaction,
-      signAndSendTrx: async function (props: TrxProps) {
-        const address = PAYEE.address;
-        console.log(`\nPreparing to send transaction from ${address}`);
-        const { data, to, gas, value, privateKey, functionName } = props;
-      
-        const signedRawTrx = await web3.eth.accounts.signTransaction(
-          {
-            data: data,
-            to: to,
-            gas: gas,
-            value: value,
-          },
-          String(privateKey)
-        );
-        return await sendSignedTransaction(signedRawTrx.rawTransaction, functionName);
-      },
-      
-    }
+  return {
+    ethers,
+    GAS,
+    GASPRICE,
+    PAYEE: payee,
+    OWNER: owner,
+    VALIDITY_WINDOW_IN_HRS,
+    webSocketProvider,
+    getBalances: getBalances,
+    waitForTrannsaction: async function (trx: any) {
+      console.log("Waiting for confirmation ...");
+      return await trx.wait(2);
+    },
   }
+}
 ```
 
 `/scripts/deploy.ts`
 
-In this file, we will write the script that deploys the contract at the same time interacts with it.
-
-- Import the `Web3` class. We will need to access the `utils` module later in this section.
-
-- Import the `AbiItem` type from the `web3-utils` module. We'll need it to stop typescript errors when dealing with the ABI.
+In this file, we will write script to deploy the contract, and at the same time interact with it.
 
 - Import the `abi` and `bytecode` from the artifacts generated when the contract was compiled.
 
-- Import the utilities we created in the previous file. All of the imports are outside the `main` function.
+- Import the utilities from the `accountUtils` file. All imports should be outside the `main` function.
 
 ```ts
-  import Web3 from "web3";
-  import { AbiItem } from "web3-utils";
   import { abi, bytecode } from "../artifacts/contracts/ChequePayment.sol/ChequePayment.json";
-  import { utils, CNumber, SignedTransaction, mode } from "./accountsUtils";
+
+  import { utils } from "./accountsUtils";
 ```
 
 - Every code we'll write in this section should be inside the main function.
-- Destructure the utilities we exported in the `utils` function.
+
+- Through destructuring, we'll access the utilities we exported from the `utils()`.
 
 ```ts
   const {
-    web3,
-    GAS,
+    ethers,
     PAYEE, 
     OWNER, 
-    GASPRICE,
     getBalances,
-    signAndSendTrx,
-    sendSignedTransaction,
+    webSocketProvider,
+    waitForTrannsaction,
     VALIDITY_WINDOW_IN_HRS } = utils();
 ```
 
@@ -483,127 +426,86 @@ await getBalances();
   let logData = false;
 ```
 
-- Create an instance of the Cheque payment contract. Give the `abi` we imported as the first argument. Typescript may throw an error inferring the ABI we have supplied is not compatible with the expected type. Using the `abi` as `AbiItem[]` will solve the problem. 
+- Create an instance of the Chequepayment contract. Give the `abi` as the first argument, bytecode as second, and a signer or wallet as the last argument.
 
 ```ts 
-  var chequePayment = new web3.eth.Contract(abi as AbiItem[]);
+  var chequePayment = new ethers.ContractFactory(abi, bytecode, OWNER);
 ```
 
-- Run the constructor. Give the `bytecode` as an argument to the `deploy` function. 
+- Run the deployment and wait for the transaction to be confirmed.
 
 ```ts
-  const chequePaymentTrx = chequePayment.deploy({data: bytecode});
+  const chequePaymentTrx = await chequePayment.deploy();
+
+  await chequePaymentTrx.deployed();
 ```
 
-- Create the transaction to sign using `web3.eth.accounts.signTransaction`. Remember we are still trying to complete the contract deployment, and we have options to either deploy locally or to the Celo testnet based on the current mode. The `signTransaction` function accepts three arguments thus:
-  - Transaction object to sign. We parse three properties:
-    - `data`: An encoded transaction of type string.
-    - `gas`: The intrinsic gas cost we're willing to pay for this transaction.
-    - `gasPrice`: The amount of Celo in wei.
-  
-  - The second argument is the private key of the account sending the transaction.
-  - The last argument is a callback function that will be invoked whether the transaction is successful or not.
+- After the contract is deployed, we will instantiate deployed contract using `ethers.Contract`. This must be used with the `new` keyword since we are constructing a new contract object. It expects the `abi` as first argument, and a signer or provider is optional as second argument.
 
 ```ts
-  const signedRawTrx = mode? await web3.eth.accounts.signTransaction(
-    {
-      data: chequePaymentTrx.encodeABI(),
-      gas: GAS,
-      gasPrice: GASPRICE,
-    },
-    OWNER.privateKey,
-    function (error: Error, signedTransaction: SignedTransaction) {
-      if(!error) console.log("Signed Transaction: ", signedTransaction);
-    }
-  ) : await OWNER.signTransaction(
-    {
-      data: chequePaymentTrx.encodeABI(),
-      gas: GAS,
-    },
-    (signedTransaction: SignedTransaction) => {
-      console.log("Signed Trx: ", signedTransaction);
-    }
-  )
+  const contractInstance = new ethers.Contract(chequePaymentTrx.address, abi, webSocketProvider);
 ```
 
-- Now that the transaction is signed, let's send it to the network for approval to be included in the blocks. An amount charged in Celo is expected to be incurred as a transaction fee. A receipt is then returned to us.
-
-```ts
-  const receipt = await sendSignedTransaction(signedRawTrx.rawTransaction, "Constructor")
-```
-
-- After our contract is deployed, we can then create an instance of the deployed contract using the `abi` and contract address from the `receipt` object that was returned to us.
-
-```ts
-  // Create contract instance
-  const contractInstance = new web3.eth.Contract(abi as AbiItem[], receipt.contractAddress);
-  
-```
-
-- First, let's create a function that fetches all open cheques in the storage for us.
+- First, we will create a function that fetches all opened cheques from the contract state. It returns a promise hence it should be asynchronous.
 
 ```ts
   async function getOpenCheques(funcName: string) {
-    await contractInstance.methods.openCheques().call({from: PAYEE.address})
+    await contractInstance.openCheques()
     .then((openCheques: { toString: () => any; }) => {
       console.log(`\nOpenCheques balance after ${funcName} was called : ${openCheques.toString()}`);
     });
   }
 ```
 
-We will as well create a javascript function for every public function declared in the contract.
+For every public function declared in the contract, we will a create a corresponding Javascript function.
 
-- Function that allows the owner to write a new cheque. We will access all contract functions from the `methods` object in the `contractInstance` object. The steps and processes we use are similar to that of deployment transactions.
+- The asynchronous function - `drawCheque()` enables only the owner account to write cheques in favor of any valid addresses regarded as the `payee`.
 
-```ts
-  async function drawCheque(amount: CNumber, value: CNumber) {
-    const drawCheque = contractInstance.methods.drawCheque(PAYEE.address, amount, VALIDITY_WINDOW_IN_HRS);
-    await signAndSendTrx({
-      value: value,
-      data: drawCheque?.encodeABI(),
-      gas: GAS,
-      to: receipt.contractAddress,
-      privateKey: OWNER.privateKey,
-      functionName: "DrawCheque"
-    })
-    .then(function (receipt: any) { logData && console.log("\nDrawCheque Trx hash", receipt.transactionHash); });
-  }
-```
+The method is available to us from the `contractInstance`. In ethers.js, an instance of a contract is an object with several utility members. The `connect` method is used for connecting specific account to sign the current transaction. We must parse a signer or wallet object so it can read the encoded keys to generate a signature.
 
-- With `increaseCheque()`, the owner can increase the previously drawn cheque with the `amount` argument.
+>Note: There are multiple signing methods in ethers. I mentions Signer and Wallet classes. VoidSigner is also a stype of signer not eligible to sign a transaction.
 
 ```ts
-  async function increaseCheque(amount: CNumber, msgValue: CNumber) {
-    const increaseChequeValue = contractInstance.methods.increaseChequeValue(PAYEE.address, amount);
-    await signAndSendTrx({
-      gasPrice: GASPRICE,
-      value: msgValue,
-      data: increaseChequeValue?.encodeABI(),
-      gas: GAS,
-      to: receipt.contractAddress,
-      privateKey: OWNER.privateKey,
-      functionName: 'IncreaseCheque'
-    })
+  async function drawCheque(amount: string, value: string) {
+    const trx = await contractInstance.connect(OWNER).drawCheque(
+      PAYEE.address, 
+      amount, 
+      VALIDITY_WINDOW_IN_HRS,
+      {
+        value: value
+      }
+    );
+    await waitForTrannsaction(trx)
     .then(async function(receipt: any){
-      logData && console.log("\nTrx receipt: ", receipt);
-      await getOpenCheques("IncreaseCheque");
+      logData && console.log("\nDrawCheque Trx hash", receipt.transactionHash);
+      await getOpenCheques("DrawCheque");
     });
   }
 ```
 
-- The owner can also reduce previously drawn cheques by `amount`.
+- With `increaseCheque()`, the owner can increase the value of the of an already drawn cheque with `amount` parsed as an argument.
 
 ```ts
-  async function reduceCheque(amount: CNumber) {
-    const reduceChequeValue = contractInstance.methods.reduceChequeValue(PAYEE.address, amount);
-    await signAndSendTrx({
-      gasPrice: GASPRICE,
-      data: reduceChequeValue?.encodeABI(),
-      gas: GAS,
-      to: receipt.contractAddress,
-      privateKey: OWNER.privateKey,
-      functionName: 'ReduceCheque'
-    })
+   async function increaseCheque(amount: string, msgValue: string) {
+    const trx = await contractInstance.connect(OWNER).increaseChequeValue(
+      PAYEE.address, 
+      amount,
+      {value: msgValue}
+    );
+    await waitForTrannsaction(trx)
+    .then(async function(receipt: any){
+      logData && console.log("\nTrx receipt: ", receipt.transactionHash);
+    await getOpenCheques("IncreaseCheque");
+    });
+  }
+```
+
+- The value on an already drawn cheque will reduce when the `reduceCheque()` is invoked. This method changes the state of the blockchain so it requires transaction signing.
+
+```ts
+  async function reduceCheque(amount: string) {
+    const trx = await contractInstance.connect(OWNER).reduceChequeValue(PAYEE.address, amount)
+    await waitForTrannsaction(trx)
       .then(async function(receipt: any){
         logData && console.log("\nTrx receipt: ", receipt);
         await getOpenCheques("ReduceCheque");
@@ -611,39 +513,25 @@ We will as well create a javascript function for every public function declared 
   }
 ```
 
-- The owner can cancel cheques provided they're within the cancellation window.
+- The owner may wish to can cancel a cheque provided they're within the cancellation window. The owner must sign this transaction.
 
 ```ts
-  async function cancelCheque() {
-    const cancelDrawnCheque = contractInstance.methods.cancelDrawnCheque(PAYEE.address);
-    await signAndSendTrx({
-      gasPrice: GASPRICE,
-      data: cancelDrawnCheque?.encodeABI(),
-      gas: GAS,
-      to: receipt.contractAddress,
-      privateKey: OWNER.privateKey,
-      functionName: 'CancelCheque'
-    })
+    async function cancelCheque() {
+    const trx = await contractInstance.connect(OWNER).cancelDrawnCheque(PAYEE.address);
+    await waitForTrannsaction(trx)
       .then(async function(receipt: any){
-        logData && console.log("\nTrx receipt: ", receipt);
+        logData && console.log("\nTrx receipt: ", receipt.transactionHash);
         await getOpenCheques("CancelCheque");
     });
   }
 ```
 
-- Payee will cash out the cheque if they have one drawn in their favor.
+- Lastly, An account - `payee` will cashout if they have cheques drawn in their favor. The transaction shoud be signed from the `PAYEE`'s wallet.
 
 ```ts
-  async function cashout() {
-    const cashout = contractInstance.methods.cashout();
-    await signAndSendTrx({
-      gasPrice: GASPRICE,
-      data: cashout?.encodeABI(),
-      gas: GAS,
-      to: receipt.contractAddress,
-      privateKey: PAYEE.privateKey,
-      functionName: 'Cashout'
-    })
+    async function cashout() {
+    const trx = await contractInstance.connect(PAYEE).cashout();
+    await waitForTrannsaction(trx)
       .then(async function(receipt: any){
         logData && console.log("\nTrx receipt: ", receipt);
         await getOpenCheques("Cashout");
@@ -651,24 +539,30 @@ We will as well create a javascript function for every public function declared 
   }
 ```
 
-- It's time to run the script. We will invoke the functions one after the other as they ought to have been called from the contract. Any invocation not aligned with the expressed or implied rules will not be honored.
+- At this point, we can run the script. The functions will be invoked one after the other as they ought to have been called from the contract.
 
-  - First, the owner writes a cheque in favor of the account - `PAYEE`. The `INIT_CHEQUE_AMOUNT` value was sent in the call. The `web3.utils` module provides us with handy functions for working with big numbers in Javascript. So, we can access the `toBN` function to convert the literal value - `10000000000000000` to a big number value.
+  - First, the owner writes a cheque in favor of the account - `PAYEE`. The `INIT_CHEQUE_AMOUNT` value was sent in the call. 
 
   - `OWNER` then canceled the cheque previously drawn.
+
   - Again, a new cheque was drawn in favor of the same beneficiary.
-  - This time, the `OWNER` increment the cheque by an `increment` value.
-  - The remainder cheque balance was then reduced by a `decrement` value from the `OWNER`.
-  - Lastly, the `PAYEE` can cash out the cheque.
+
+  - This time, the `OWNER` increment the cheque by the `increment` value.
+
+  - The remainder cheque balance was then reduced by `decrement` value.
+
+  - Lastly, the `PAYEE` cashed out the cheque.
 
 ```ts
-  // Initial cheque amount
-  const INIT_CHEQUE_AMOUNT = Web3.utils.toBN('10000000000000000');
-  const SUB_CHEQUE_AMOUNT = Web3.utils.toBN('20000000000000000');
-  let increment = Web3.utils.toBN('50000000000000000');
-  let decrement = Web3.utils.toBN('40000000000000000');
-  const MSG_VALUE = Web3.utils.toWei("100000000000000000", "wei");
-  // logData = true;
+  const INIT_CHEQUE_AMOUNT = '10000000000000000';
+
+  const SUB_CHEQUE_AMOUNT = '20000000000000000';
+
+  let increment = '50000000000000000';
+
+  let decrement = '40000000000000000';
+
+  const MSG_VALUE = '100000000000000000';
 
   await drawCheque(INIT_CHEQUE_AMOUNT, MSG_VALUE);
   await cancelCheque();
@@ -676,39 +570,26 @@ We will as well create a javascript function for every public function declared 
   await increaseCheque(increment, MSG_VALUE);
   await reduceCheque(decrement);
   await cashout();
-}  
-  // We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
 ```
 
-Spring up the local node first.
-
-```bash
-ganache
-```
-
-Open a new terminal or split the current one into two if you're using a VSCode terminal. Navigate into the project, and run the script:
+From the project directory, run the command below:
 
 ```bash
 npx hardhat run scripts/deploy.ts
 ```
 
-Let's deploy the same code to Celo's testnet. Go to the `scripts/accountsUtils.ts` file, and toggle the `mode` variable to be **true**. Then run the script again. 
+Th code will be deployed to t he Celo Alfajores.
 
-Inspect the logs in the terminal. The balance on the `opencheques` should read `0`.
+Inspect the logs in the terminal. The balance on the `opened cheques` should read `0`.
 
-The complete code for this tutorial can be found **[on the github](https://github.com/bobeu/interact-with-smart-contract-on-celo-using-web3js)**.
+The complete code for this guide can be found **[on the github](https://github.com/bobeu/interact-with-smart-contract-on-celo-using-ethersjs)**.
 
 
 ## Conclusion​
 
-From the log, we can see everything runs smoothly. We can deploy and interact with smart contracts programmatically using web3.js.
+From the log, we can see everything runs smoothly. We deployed and interacted with the contracts using ethers.js.
 
-You're exposed to `web3.eth` and `web3.utils` usage which are fundamental for this course.
+You're exposed to `ethers` library usage which is fundamental for this course.
 
 Other things you learn are:
 
@@ -716,9 +597,9 @@ Other things you learn are:
 - How to quickly set up a hardhat development environment.
 
 ## What next?
-​Although, you have learned how to use the web3.js framework. You should practice knowing more of the functionalities. Create a project from the scratch without using this example, and see how well you have improved.
+​Although, you have learned how to use the ethersjs library. You should endeavor to practice to get acquinted to it. Create a project from the scratch without using this example, and see how well you have improved.
 
-For more about Celo blockchain, visit the **[Celo documentation](https://docs.celo.org/tutorials)**
+**[Read more aout Celo](https://docs.celo.org/tutorials)**
 
 ## About the Author​
 
@@ -728,4 +609,4 @@ For more about Celo blockchain, visit the **[Celo documentation](https://docs.ce
 
 - [Celo developers resources](https://docs.celo.org/developer/)
 - [Source code](https://github.com/bobeu/interact-with-smart-contract-on-celo-using-web3js)
-- [Web3js doc](https://web3js.readthedocs.io/)
+- [Ethersjs doc](https://docs.ethers.org/v5/getting-started/)

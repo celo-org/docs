@@ -2812,6 +2812,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Interact with smart contract on celo using ethersjs',
+    description: 'Understand how to use the ethersjs library',
+    preview: require('./showcase/intermediate/interact-with-smart-contract-on-celo-using-ethersjs.png'),
+    website: 'blog/tutorials/interact-with-smart-contract-on-celo-using-ethersjs',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'typescript', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
