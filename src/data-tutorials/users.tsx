@@ -2820,7 +2820,7 @@ const Users: User[] = [
     title: 'A Guide to Exploring Celo-Specific Python Library called web3.py',
     description: 'This article could provide a tutorial on how to use the web3.py library to interact with the celo blockcchain',
     preview: require('./showcase/beginner/a-guide-to-exploring-celo-specific-python-library-called-web3py.png'),
-    website: 'blog/tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3.py',
+    website: 'blog/tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py',
     tags: ['celosage', 'beginner', 'python', 'dapp', 'celo'], 
   },
   /*
