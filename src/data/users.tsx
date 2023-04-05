@@ -1095,7 +1095,7 @@ const Users: User[] = [
     title: 'Closer',
     description: 'Suite of web3 tools to bootstrap regenerative action and meaningful governance in local communities',
     preview: require('./showcase/closer.png'),
-    website: 'https://www.wildchain.io/',
+    website: 'https://closer.earth/',
     source: 'https://github.com/closerearth',
     tags: ['refi'],
   },
