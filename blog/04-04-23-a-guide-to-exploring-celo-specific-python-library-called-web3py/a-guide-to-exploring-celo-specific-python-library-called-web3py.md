@@ -6,7 +6,7 @@ authors:
     title: Web3 Developer,
     url: https://github.com/yusuf1990
     image_url: https://avatars.githubusercontent.com/u/56927079?s=400&v=4
-tags: ["celo", "beginner", "celosage", "python"]
+tags: [celo, beginner, celosage, python]
 hide_table_of_contents: true
 slug: /tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py
 ---
