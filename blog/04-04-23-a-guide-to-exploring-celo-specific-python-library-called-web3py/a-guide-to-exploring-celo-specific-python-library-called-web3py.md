@@ -64,7 +64,7 @@ balance = w3.eth.get_balance(account_address)
 ```
 The following pictures show what the output looks like with a Jupyter notebook
 
-![output](image/celo11.png)
+![output](images/celo11.png)
 
 ### Sending transactions
 
@@ -83,8 +83,6 @@ from web3.exceptions import TransactionNotFound
 from eth_account import Account
 ```
 
-
- 
 Connect to the Celo network using an HTTPProvider.
 
 ```python
