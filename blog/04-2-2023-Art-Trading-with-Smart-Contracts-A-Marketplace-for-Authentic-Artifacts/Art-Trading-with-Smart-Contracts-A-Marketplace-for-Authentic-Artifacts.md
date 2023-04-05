@@ -1,10 +1,10 @@
 ---
-title:  Art Trading with Smart Contracts on the Celo blockchain
-description:  ArtifactHouse is a smart contract for buying and selling digital artifacts using cUSD tokens, with the ability to display and visit artifacts.
+title: Art Trading with Smart Contracts on the Celo blockchain
+description: ArtifactHouse is a smart contract for buying and selling digital artifacts using cUSD tokens, with the ability to display and visit artifacts.
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:  https://github.com/Ogoyi
+    title: Technical Writer
+    url: https://github.com/Ogoyi
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
@@ -27,7 +27,7 @@ In order to complete this tutorial, you will require:
 
 - A dependable internet connection and web browser.
 
-## PREREQUISITE 
+## PREREQUISITE
 
 - A fundamental understanding of Javascript.
 
@@ -296,7 +296,7 @@ By declaring this interface, we can interact with any ERC20 token that implement
 
 Moving on, we will give a name to our smart contract and create a struct.
 
-```solidity
+````solidity
 contract ArtifactHouse {
     uint256 private artifactsLength = 0;
     address private cUsdTokenAddress =
@@ -373,7 +373,7 @@ modifier notOnDisplayOrOnSale(uint256 _index) {
         require(bytes(_image).length > 0, "Empty image url");
         _;
     }
-```
+````
 
 In the code, we define three mapping variables to store the artifacts and their information. The first mapping variable named `artifacts` is used to keep track of artifacts using their `ID`. The second mapping variable named `bookedVisit` is used to store the addresses that have booked a visit for a particular artifact. The third mapping variable named exists is used to track the existence of artifacts based on their ID.
 
@@ -506,6 +506,7 @@ The `toggleOnSale` function allows the owner of an artifact to toggle its "on sa
 On the other hand, the `bookVisit` function allows a user to book a visit to an artifact that is currently on display. The function checks if the user has already booked a visit and increases the visitor count of the artifact. Additionally, the function transfers a visit fee from the user to the owner of the artifact using the cUSD token.
 
 Finally, we add the `getArtifact` function and the `getArtifactslength` function
+
 ```solidity
 function getArtifact(uint256 _index)
         public
@@ -543,13 +544,10 @@ Once the transaction is confirmed, the FloralNft contract will be deployed on th
 
 In conclusion, we have learned how to create a smart contract for buying and selling `artifacts` on the Celo blockchain. We started by defining the data structures we will be using for our smart contract, including the Artifact struct, and then implemented various functions for adding artifacts, buying artifacts, booking visits, and more. We also discussed the importance of using modifiers for security purposes, and how to deploy our smart contract on the Celo blockchain using the Celo Extension Wallet and Celo Faucet. By following this tutorial, you can now create your own smart contracts for buying and selling different types of assets on the Celo blockchain.
 
-## NEXT STEPS 
+## NEXT STEPS
 
 Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
 
 ## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
-
-
-
