@@ -2840,6 +2840,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+  {
+    title: 'Building a Celo Wallet using Golang',
+    description: 'This article could focus on building a Celo wallet application using the Golang programming language. It could cover topics such as generating and storing private keys, interacting with the Celo blockchain and implementing features such as sending and receiving Celo transactions.',
+    preview: require('./showcase/intermediate/building-a-celo-wallet-using-golang.png'),
+    website: 'blog/tutorials/building-a-celo-wallet-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
