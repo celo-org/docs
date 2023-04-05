@@ -15,7 +15,7 @@ slug: /tutorials/interact-with-smart-contract-on-celo-using-ethersjs
 
 
 ## Introduction
-Ethers.js is a library for interacting Ethereum-compatible blockchain protocols. Often, it is preferred due to its lightweight capability as it is only a library unlike web3js which is a framework. Celo operate Ethereum-like APIs fully compatible with Ethereum-style JSON RPC invocations. Developers can leverage this compatibility and use the Ethers.js library to interact with a Celo mainnet or Alfajores as if it was on Ethereum.
+Ethers.js is a library for interacting with Ethereum-compatible blockchain protocols. Often, it is preferred due to its lightweight capability as it is only a library, unlike web3js which is a framework. Celo operates Ethereum-like APIs fully compatible with Ethereum-style JSON RPC invocations. Developers can leverage this compatibility and use the Ethers.js library to interact with a Celo mainnet or Alfajores as if it was on Ethereum.
 
 ## Prerequisites​
 
@@ -23,9 +23,9 @@ Ethers.js is a library for interacting Ethereum-compatible blockchain protocols.
 
 - We will make use of Typescript, so it is expected that you have experience working with Typescript and Javascript.
 
-- You should be familiar with using hardhat for developing smart contract. Refer to **[example tutorial](https://docs.celo.org/blog/tutorials/getting-started-on-celo-with-hardhat)** to get started.
+- You should be familiar with using hardhat for developing smart contracts. Refer to **[example tutorial](https://docs.celo.org/blog/tutorials/getting-started-on-celo-with-hardhat)** to get started.
 
-- An account created on Celo's Alfajores. You don't have to run a node for yourself as Alfajores helps a lot in this regard. 
+- An account was created on Celo's Alfajores. You don't have to run a node for yourself as Alfajores provides us with a public node. 
 
 ## Requirements​
 
@@ -210,13 +210,13 @@ In the contract, only account with `onlyOwner` access can perform the following 
 2. _amount_: Cheque value.
 3. _validityWindowInHrs_: Period through which the cheque is valid.
 
-In the `drawCheque()`, we called the `_safeGuardCheques`, an internal function that ensures the Celo balance in the contract always correspond to the opened cheques. That way the drawer cannot issue a bounced cheque. In this context, a bounced cheque is a situation where the payee wants to cash out but the balance in the contract cannot cover the cheque value. If we do not provide a guard, the owner could trick the payee to have written a valid cheque if the payee do not hava a way to confirm the contract balances. Even though the owner wedge more power to do an undo, the concept ofo decentralization demands that the payees need not trust the owner to cashout cheques that was written for them.
+In the `drawCheque()`, we called the `_safeGuardCheques`, an internal function that ensures the Celo balance in the contract always corresponds to the opened cheques. That way the drawer cannot issue a bounced cheque. In this context, a bounced cheque is a situation where the payee wants to cash out but the balance in the contract cannot cover the cheque value. If we do not provide a guard, the owner could trick the payee to have written a valid cheque if the payee does not have a way to confirm the contract balances. Even though the owner wedge more power to do an undo, the concept of decentralization demands that the payees need not trust the owner to cash out cheques that were written for them.
 
 - `cancelDrawnCheque`
 It accepts the address of the payee as an argument. The successful invocation cancels all cheques drawn in favor of the `payee`.
 
 - `increaseChequeValue`
-The account owner may wish to increase the cheque value for any valid addresses. The 'increaseChequeValue()' adds up to the value on the cheque for the target address. This is different from the `drawCheque()` that overrides the value in storage rather than increment it. 
+The account owner may wish to increase the cheque value for any valid addresses. The 'increaseChequeValue()' adds up to the value on the cheque for the target address. This is different from the `drawCheque()` that overrides the value in storage rather than increments it. 
 
 - `reduceChequeValue` performs similar functionality as `increaseChequeValue` except the value reduces instead of increasing.
 
@@ -233,11 +233,11 @@ If you follow the steps accordingly, your contract should compile successfully.
 
 **Deploy, Interact with the contract**
 
-To interact with the contract, firstly, we will need to deploy it to Celo test network.
+To interact with the contract, firstly, we will need to deploy it to the Celo test network.
 
 **Installation**
 
-No need to install `ethers` library again. It was already included in the dependencies during hardhat set up.
+No need to install the `ethers` library again. It was already included in the dependencies during the hardhat setup.
 
 Now that we have all the dependencies installed, we'll write a script for the purpose of deploying and interacting with the contract. Firstly, create a `accountUtils.ts` file that exports an object containing the utilities we need for the program. This is to reduce the amount of code we'll keep in the main script.
 
@@ -251,9 +251,9 @@ touch accountsUtils.ts
 ```ts accountsUtils.ts
 import { ethers } from "ethers";
 ```
-Declare a few constant variables with value assigned to them.
+Declare a few constant variables with values assigned to them.
 
-- export types and interfaces. We'll need it later in our program to avoid Typescript error.
+- export types and interfaces. We'll need it later in our program to avoid Typescript errors.
 
 ```ts accountsUtils.ts
 export type CNumber = BigNumberish;
@@ -276,12 +276,12 @@ export interface TrxProps {
   }
 ```
 
-- Declare and set the validity window variable to 1. You can use any number not greater than 255.  For testing purposes, it makes sense to set it to a lower boundary. This is the period during which cheques are valid. We'll need it as an argument to the `DrawCheque` function.
+- Declare and set the validity window variable to 1. You can use any number not greater than 255.  For testing purposes, it makes sense to set it to a lower boundary. This is the period during which cheques are valid. We'll need it as an argument for the `DrawCheque` function.
 
 ```ts accountsUtils.ts
 const VALIDITY_WINDOW_IN_HRS = 1;
 ```
-- Set the gas limit and gasPrice. The utility function that require these variables as arguments expect them to be parsed as `string`. It should be hexadecimal. Use the `hexlify` function from the `ethers.utils` module to convert them to `hex`.
+- Set the gas limit and gasPrice. The utility function that requires these variables as arguments expect them to be parsed as `string`. It should be hexadecimal. Use the `hexlify` function from the `ethers.utils` module to convert them to `hex`.
 
   - First, let's create a reusable function for this purpose.
 
@@ -295,13 +295,13 @@ const VALIDITY_WINDOW_IN_HRS = 1;
     const GASPRICE = hexlify(3000000000); 
   ```
 
-  - Set the socket url. We are going to send transactions to the Celo's test network using the websocket provider.
+  - Set the socket url. We are going to send transactions to Celo's test network using the WebSocket provider.
 
   ```ts accountsUtils.ts
   const SOCKET_URL = "wss://alfajores-forno.celo-testnet.org/ws";
   ```
 
-- Create the RPC configuration to set up the websocket provider.
+- Create the RPC configuration to set up the WebSocket provider.
 
 ```ts accountUtils.ts
   const rpcInfo = Object.assign({}, {
@@ -321,13 +321,13 @@ const VALIDITY_WINDOW_IN_HRS = 1;
   );
 ```
 
-- To send transactions, we need a wallet. The `ethers` library provide a module for generating a wallet instance.
+- To send transactions, we need a wallet. The `ethers` library provides a module for generating a wallet instance.
 
-Using `ethers.Wallet`, we can construct a new wallet instance from private key.
+Using `ethers.Wallet`, we can construct a new wallet instance from the private key.
 
 >Warning: It is unsafe to store private keys in javascript files. This is only for tutorial purposes. You should use a more secure way of handling private keys.
 
-`ethers.Wallet` expects two arguments. The first being the private key of an externally owned account while the other is a provider instance if you have created one, so it is optional. You should already created an account as a pre-requisite for this course.
+`ethers.Wallet` expects two arguments. The first is the private key of an externally owned account while the other is a provider instance if you have created one, so it is optional. You should have already created an account as a prerequisite for this course.
 
 ```ts accountsUtils.ts
   // Replace the first argument with your private keys
@@ -387,7 +387,7 @@ Using `ethers.Wallet`, we can construct a new wallet instance from private key.
 
 `/scripts/deploy.ts`
 
-In this file, we will write script to deploy the contract, and at the same time interact with it.
+In this file, we will write a script to deploy the contract, and at the same time interact with it.
 
 - Import the `abi` and `bytecode` from the artifacts generated when the contract was compiled.
 
@@ -426,7 +426,7 @@ await getBalances();
   let logData = false;
 ```
 
-- Create an instance of the Chequepayment contract. Give the `abi` as the first argument, bytecode as second, and a signer or wallet as the last argument.
+- Create an instance of the Chequepayment contract. Give the `abi` as the first argument, bytecode as the second, and a signer or wallet as the last argument.
 
 ```ts 
   var chequePayment = new ethers.ContractFactory(abi, bytecode, OWNER);
@@ -440,7 +440,7 @@ await getBalances();
   await chequePaymentTrx.deployed();
 ```
 
-- After the contract is deployed, we will instantiate deployed contract using `ethers.Contract`. This must be used with the `new` keyword since we are constructing a new contract object. It expects the `abi` as first argument, and a signer or provider is optional as second argument.
+- After the contract is deployed, we will instantiate deployed contract using `ethers.Contract`. This must be used with the `new` keyword since we are constructing a new contract object. It expects the `abi` as the first argument and a signer or provider are optional as the second argument.
 
 ```ts
   const contractInstance = new ethers.Contract(chequePaymentTrx.address, abi, webSocketProvider);
@@ -457,13 +457,13 @@ await getBalances();
   }
 ```
 
-For every public function declared in the contract, we will a create a corresponding Javascript function.
+For every public function declared in the contract, we will create a corresponding Javascript function.
 
 - The asynchronous function - `drawCheque()` enables only the owner account to write cheques in favor of any valid addresses regarded as the `payee`.
 
-The method is available to us from the `contractInstance`. In ethers.js, an instance of a contract is an object with several utility members. The `connect` method is used for connecting specific account to sign the current transaction. We must parse a signer or wallet object so it can read the encoded keys to generate a signature.
+The method is available to us from the `contractInstance`. In ethers.js, an instance of a contract is an object with several utility members. The `connect` method is used for connecting the specific account to sign the current transaction. We must parse a signer or wallet object so it can read the encoded keys to generate a signature.
 
->Note: There are multiple signing methods in ethers. I mentions Signer and Wallet classes. VoidSigner is also a stype of signer not eligible to sign a transaction.
+>Note: There are multiple signing methods in ethers. I mentioned Signer and Wallet, classes. VoidSigner is also a type of signer not eligible to sign a transaction.
 
 ```ts
   async function drawCheque(amount: string, value: string) {
@@ -483,7 +483,7 @@ The method is available to us from the `contractInstance`. In ethers.js, an inst
   }
 ```
 
-- With `increaseCheque()`, the owner can increase the value of the of an already drawn cheque with `amount` parsed as an argument.
+- With `increaseCheque()`, the owner can increase the value of a drawn cheque with `amount` parsed as an argument.
 
 ```ts
    async function increaseCheque(amount: string, msgValue: string) {
@@ -526,7 +526,7 @@ The method is available to us from the `contractInstance`. In ethers.js, an inst
   }
 ```
 
-- Lastly, An account - `payee` will cashout if they have cheques drawn in their favor. The transaction shoud be signed from the `PAYEE`'s wallet.
+- Lastly, An account - `payee` will cash out if they have cheques drawn in their favor. The transaction should be signed from the `PAYEE`'s wallet.
 
 ```ts
     async function cashout() {
@@ -597,7 +597,7 @@ Other things you learn are:
 - How to quickly set up a hardhat development environment.
 
 ## What next?
-​Although, you have learned how to use the ethersjs library. You should endeavor to practice to get acquinted to it. Create a project from the scratch without using this example, and see how well you have improved.
+​Although, you have learned how to use the ethersjs library. You should endeavor to practice to get acquainted with it. Create a project from the scratch without using this example, and see how well you have improved.
 
 **[Read more aout Celo](https://docs.celo.org/tutorials)**
 
