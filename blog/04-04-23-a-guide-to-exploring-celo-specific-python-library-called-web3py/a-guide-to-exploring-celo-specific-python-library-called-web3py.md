@@ -18,9 +18,10 @@ slug: /tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py
 Are you interested in learning how to delve into the features of the celo-sdk, a Python library which provides a wrapper around the web3py library and enables you to interact with the celo network and smart contracts? The tutorial below is a quick and easy guide that will help you get started right away!
 Here are the steps we’ll follow
  
-✅ Step 1: Installation
-✅ Step 2: Connecting to the Celo network
-✅ Step 3: Interacting with the celo blockchain
+1. Step 1: Installation
+1. Step 2: Connecting to the Celo network
+1. Step 3: Interacting with the celo blockchain
+
 By the end of this post, you’ll be able to use celo-sdk to build decentralised applications on the Celo blockchain.
 
 ## Prerequisites
@@ -63,7 +64,7 @@ balance = w3.eth.get_balance(account_address)
 ```
 The following pictures show what the output looks like with a Jupyter notebook
 
-![output](/image/celo11.png)
+![output](image/celo11.png)
 
 ### Sending transactions
 
