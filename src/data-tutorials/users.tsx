@@ -1467,6 +1467,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'nft', 'react', 'intermediate'],
   },
   {
+    title: 'Building a Farmers Market on The Celo Blockchain',
+    description: 'This tutorial guides you to building a decentralized marketplace on the celo blockchain.',
+    preview: require('./showcase/intermediate/building-a-farmers-market-on-celo.png'),
+    website: 'blog/tutorials/building-a-farmers-market-on-celo',
+    tags: ["celo", "intermediate", "celosage", "solidity"],
+  },
+  {
     title: 'Celo Composer - Extend and Customize your Full-Stack Mobile dApps',
     description: 'Step-by-step guide to create a new custom dApp using the Celo Composer.',
     preview: require('./showcase/intermediate/celo-composer-extend-and-customize-your-full-stack-mobile-dapps.png'),
@@ -2600,6 +2607,13 @@ const Users: User[] = [
     tags: ['celosage','celo', 'advanced'], 
   },
   {
+    title: 'A guide to building and deploying upgradeable contracts on CELO with Diamond standard',
+    description: 'This tutorial introduces the diamond standard for writing modular and upgradeable smart contracts, and give a brief walkthrough of how to build an upgrade-able ERC20 token compatible contract, deploy to CELO, and perform an upgrade to this contract',
+    preview: require('./showcase/advanced/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard.png'),
+    website: '/blog/tutorials/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard',
+    tags: ['celosage','celo', 'ERC20', 'solidity', 'advanced'],
+  },
+  {
     title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
@@ -2823,6 +2837,30 @@ const Users: User[] = [
     preview: require('./showcase/beginner/a-guide-to-exploring-celo-specific-python-library-called-web3py.png'),
     website: 'blog/tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py',
     tags: ['celosage', 'beginner', 'dapp', 'celo'], 
+  },
+  {
+    title: 'Deploying Celo Applications using Golang',
+    description: 'This article could provide a tutorial on deploying Celo applications built using the Golang . It could cover topics such as setting up a Celo node, setting up the development environment, creating and deploying smart contracts, and monitoring the deployed contract activities using Celo explorer.',
+    preview: require('./showcase/intermediate/deploying-celo-applications-using-golang.png'),
+    website: 'blog/tutorials/deploying-celo-applications-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
+  },
+  {
+    title: 'Implementing a Token on Celo using Golang',
+    description: "This article could provide a step-by-step tutorial on how to implement a custom token on the Celo blockchain using the Golang SDK. It could cover topics such as defining the token's smart contract and deploying it to the Celo network. This article is for developers that want to get started with building blockchain applications using Golang on Celo.",
+    preview: require('./showcase/intermediate/implementing-a-token-on-celo-using-golang.png'),
+    website: 'blog/tutorials/implementing-a-token-on-celo-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
+  },
+  {
+    title: 'Building a Celo Wallet using Golang',
+    description: 'This article could focus on building a Celo wallet application using the Golang programming language. It could cover topics such as generating and storing private keys, interacting with the Celo blockchain and implementing features such as sending and receiving Celo transactions.',
+    preview: require('./showcase/intermediate/building-a-celo-wallet-using-golang.png'),
+    website: 'blog/tutorials/building-a-celo-wallet-using-golang',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+
   },
   /*
   Pro Tip: add your site in alphabetical order.
