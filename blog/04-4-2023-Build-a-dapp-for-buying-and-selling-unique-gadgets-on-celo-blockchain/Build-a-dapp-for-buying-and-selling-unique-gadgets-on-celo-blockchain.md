@@ -1,17 +1,20 @@
 ---
+
 title: Build a dapp for buying and selling unique gadgets on celo blockchain
 description: Gadget project is a dApp for buying/selling unique gadgets represented by NFTs on Celo blockchain, with ERC-20 interface for DeFi. Provides secure/transparent platform for gadget enthusiasts/creators to connect.
 authors:
-  - name: Ikanji David
-    title: Technical Writer 
-    url:   https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
-tags: [celo sage, dapp, intermediate, celo]
-hide_table_of_contents: true
-slug: /tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain
+
+- name: Ikanji David
+  title: Technical Writer
+  url: https://github.com/Ikanji201
+  image_url: https://avatars.githubusercontent.com/u/115812158?v=4
+  tags: [celo sage, dapp, intermediate, celo]
+  hide_table_of_contents: true
+  slug: /tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain
+
 ---
 
- ![header](../../src/data-tutorials/showcase/intermediate/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain.png)
+![header](../../src/data-tutorials/showcase/intermediate/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain.png)
 
 ## INTRODUCTION
 
@@ -42,16 +45,17 @@ In order to make the most of these tutorials, it is suggested that you have a ba
 - React JavaScript library.
 
 ## REQUIREMENTS
+
 - Solidity programming language
 
 - React JavaScript library
- 
+
 - Bootstrap framework
 
 - NodeJS version 12.0.1 or higher installed
- 
+
 - Celo Extension Wallet
- 
+
 - Remix IDE for writing and testing smart contracts.
 
 Shall we begin creating a smart contract using Remix IDE?
@@ -220,6 +224,7 @@ contract Gadgets {
     }
 }
 ```
+
 ## Code Analysis
 
 ```solidity
@@ -463,7 +468,7 @@ Now that we have our wallet funded, we can move forward with deploying the smart
 
 ## FRONT END
 
-- To obtain a copy of the repository on your computer, you can clone it using Git. To do so, open up a terminal and use the `git clone command`, followed by the repository URL. [Click here to clone this project repository](https://github.com/Ikanji201/GadgetHub). 
+- To obtain a copy of the repository on your computer, you can clone it using Git. To do so, open up a terminal and use the `git clone command`, followed by the repository URL. [Click here to clone this project repository](https://github.com/Ikanji201/GadgetHub).
 
 - To open the project in Visual Studio Code, go to the project directory and open it using Visual Studio Code. You can achieve this by entering the command `code .` in the terminal.
 
@@ -733,20 +738,20 @@ Next, the function gets the user's account address and sets it as the default ac
 
 ```js
 useEffect(() => {
-		connectToWallet();
-	}, []);
+  connectToWallet();
+}, []);
 
-	useEffect(() => {
-		if (kit && address) {
-			getBalance();
-		}
-	}, [kit, address]);
+useEffect(() => {
+  if (kit && address) {
+    getBalance();
+  }
+}, [kit, address]);
 
-	useEffect(() => {
-		if (contract) {
-			getGadget();
-		}
-	}, [contract]);
+useEffect(() => {
+  if (contract) {
+    getGadget();
+  }
+}, [contract]);
 ```
 
 In this session, we are using React's `useEffect` hook to perform certain actions after a component has been rendered.
@@ -759,101 +764,93 @@ The third useEffect hook is used to get the list of gadgets by calling the `getG
 
 ```js
 const getBalance = async () => {
-		try {
-			const balance = await kit.getTotalBalance(address);
-			const USDBalance = balance.cUSD
-				.shiftedBy(-ERC20_DECIMALS)
-				.toFixed(2);
-			const contract = new kit.web3.eth.Contract(Gadget, contractAddress);
-			setcontract(contract);
-			setcUSDBalance(USDBalance);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
+  try {
+    const balance = await kit.getTotalBalance(address);
+    const USDBalance = balance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2);
+    const contract = new kit.web3.eth.Contract(Gadget, contractAddress);
+    setcontract(contract);
+    setcUSDBalance(USDBalance);
+  } catch (error) {
+    console.log(error);
+  }
+};
 ```
 
 The `getBalance` function is used to retrieve the cUSD balance of the connected wallet address. It uses the kit object and the address state variable to get the balance of the connected wallet. The balance is then converted to a human-readable format by shifting the decimal places and fixing the number of decimal places. Finally, a new contract object is created using the `kit.web3.eth.Contract` function and the Gadget `contract ABI`, and the contract and cUSDBalance state variables are updated with their respective values.
 
 ```js
 const getGadget = async () => {
-		const glassLength = await contract.methods.getGlassesLength().call();
-		const _gadgett = [];
-		for (let index = 0; index < glassLength; index++) {
-			let _gadgets = new Promise(async (resolve, reject) => {
-				let gadget = await contract.methods.getGlass(index).call();
-				resolve({
-					index: index,
-					owner: gadget[0],
-					image: gadget[1],
-					name: gadget[2],
-					description: gadget[3],
-					price: gadget[4],
-					like: gadget[5],
-				});
-			});
-			_gadgett.push(_gadgets);
-		}
-		const _gadgets = await Promise.all(_gadgett);
-		setGadgets(_gadgets);
-	};
+  const glassLength = await contract.methods.getGlassesLength().call();
+  const _gadgett = [];
+  for (let index = 0; index < glassLength; index++) {
+    let _gadgets = new Promise(async (resolve, reject) => {
+      let gadget = await contract.methods.getGlass(index).call();
+      resolve({
+        index: index,
+        owner: gadget[0],
+        image: gadget[1],
+        name: gadget[2],
+        description: gadget[3],
+        price: gadget[4],
+        like: gadget[5],
+      });
+    });
+    _gadgett.push(_gadgets);
+  }
+  const _gadgets = await Promise.all(_gadgett);
+  setGadgets(_gadgets);
+};
 ```
 
 The `getGadget()` function facilitates the retrieval of all stored gadgets within the contract and then updates the application state with the gadgets retrieved.
 
 ```js
- const AddGadget = async (_image, _name, _description, price) => {
-		const _price = new BigNumber(price)
-			.shiftedBy(ERC20_DECIMALS)
-			.toString();
-		try {
-			await contract.methods
-				.addGlass(_image, _name, _description, _price)
-				.send({ from: address });
-			getGadget();
-		} catch (error) {
-			console.log(error);
-		}
-	};
+const AddGadget = async (_image, _name, _description, price) => {
+  const _price = new BigNumber(price).shiftedBy(ERC20_DECIMALS).toString();
+  try {
+    await contract.methods
+      .addGlass(_image, _name, _description, _price)
+      .send({ from: address });
+    getGadget();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-	const buyGadget = async (_index) => {
-		try {
-			const cUSDContract = new kit.web3.eth.Contract(
-				IERC,
-				cUSDContractAddress
-			);
+const buyGadget = async (_index) => {
+  try {
+    const cUSDContract = new kit.web3.eth.Contract(IERC, cUSDContractAddress);
 
-			await cUSDContract.methods
-				.approve(contractAddress, gadgets[_index].price)
-				.send({ from: address });
-			await contract.methods.buyGlass(_index).send({ from: address });
-			getGadget();
-			getBalance();
-		} catch (error) {
-			console.log(error);
-		}
-	};
+    await cUSDContract.methods
+      .approve(contractAddress, gadgets[_index].price)
+      .send({ from: address });
+    await contract.methods.buyGlass(_index).send({ from: address });
+    getGadget();
+    getBalance();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-	const RemoveGadget = async (_index) => {
-		try {
-			await contract.methods.removeGlass(_index).send({ from: address });
-			getGadget();
-			getBalance();
-		} catch (error) {
-			alert(error);
-		}
-	};
+const RemoveGadget = async (_index) => {
+  try {
+    await contract.methods.removeGlass(_index).send({ from: address });
+    getGadget();
+    getBalance();
+  } catch (error) {
+    alert(error);
+  }
+};
 
-	const Like = async (_index) => {
-		try {
-			await contract.methods.Like(_index).send({ from: address });
-			getGadget();
-			getBalance();
-		} catch (error) {
-			alert.log(error);
-		}
-	};
+const Like = async (_index) => {
+  try {
+    await contract.methods.Like(_index).send({ from: address });
+    getGadget();
+    getBalance();
+  } catch (error) {
+    alert.log(error);
+  }
+};
 ```
 
 Next, we'll move on to implementing the `addGadget()`, `buyGadget()`, `removeGadget()`, and `likeGadeget()` functions, which allow users to interact with the smart contract.
