@@ -17,7 +17,7 @@ slug: /tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py
 
 Are you interested in learning how to delve into the features of the celo-sdk, a Python library which provides a wrapper around the web3py library and enables you to interact with the celo network and smart contracts? The tutorial below is a quick and easy guide that will help you get started right away!
 Here are the steps we’ll follow
- 
+
 1. Step 1: Installation
 1. Step 2: Connecting to the Celo network
 1. Step 3: Interacting with the celo blockchain
@@ -26,14 +26,14 @@ By the end of this post, you’ll be able to use celo-sdk to build decentralised
 
 ## Prerequisites
 
-1. 	Basic programming knowledge
-2. 	Familiarity with blockchain technology
-3. 	Access to a development environment
+1.      Basic programming knowledge
+2.      Familiarity with blockchain technology
+3.      Access to a development environment
 
 ## Step 1: Installation
 
 To interact with Celo blockchain using Python, you can use the web3.py library. To install web3, you can use pip, the
-Python package manager. Open your terminal or command prompt and type:   pip install web3
+Python package manager. Open your terminal or command prompt and type: pip install web3
 This will install the library and its dependencies.
 
 ### Step 2: Connecting to the Celo network
@@ -46,13 +46,14 @@ from web3 import web3
 ```
 
 Create a Web3 instance connected to the Celo network
-``` python
+
+```python
 w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 ```
-  
+
 ## Step 3: Interacting with celo blockchain
 
-Once we have connected to the Celo network, we can start interacting with the Celo blockchain using the web3 object. 	
+Once we have connected to the Celo network, we can start interacting with the Celo blockchain using the web3 object.
 
 ### Getting account balance
 
@@ -62,6 +63,7 @@ To get the balance of a Celo account, we can use the .get_balance method of the 
 account_address = '0x123...'
 balance = w3.eth.get_balance(account_address)
 ```
+
 The following pictures show what the output looks like with a Jupyter notebook
 
 ![output](images/celo11.png)
@@ -70,7 +72,7 @@ The following pictures show what the output looks like with a Jupyter notebook
 
 Import the required libraries: Web3.py, Account and HTTPProvider.
 
-``` python
+```python
 from web3 import Web3, HTTPProvider
 from web3.auto import w3
 from web3.middleware import geth_poa_middleware
@@ -88,15 +90,17 @@ Connect to the Celo network using an HTTPProvider.
 ```python
 celo = Web3(HTTPProvider('https://forno.celo.org')) # Or use a local node
 ```
+
 Load your account using your private key.
 
-``` python
+```python
 private_key = "YOUR_PRIVATE_KEY"
 account = Account.from_key(private_key)
 ```
+
 Set the gas price and gas limit for your transaction.
 
-``` python
+```python
 gas_price = celo.eth.gas_price
 gas_limit = 500000
 ```
@@ -121,7 +125,7 @@ tx_hash = celo.eth.sendRawTransaction(signed_txn.rawTransaction)
 
 Wait for the transaction to be mined and confirmed on the network. You can check the status of your transaction using the tx_hash
 
-``` python
+```python
 receipt = celo.eth.waitForTransactionReceipt(tx_hash)
 ```
 
@@ -138,6 +142,7 @@ connect to an Ethereum node
 ```python
 w3 = Web3(Web3.HTTPProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID'))
 ```
+
 Replace YOUR-PROJECT-ID with your Infura project ID. Define the contract ABI (Application Binary Interface) and address:
 
 ```python
@@ -145,7 +150,7 @@ contract_address = '0x1234567890123456789012345678901234567890'
 contract_abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"getSomeData","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
 ```
 
-Replace contract_address with the address of your contract, and contract_abi with the ABI of your contract. 
+Replace contract_address with the address of your contract, and contract_abi with the ABI of your contract.
 Create a Contract instance by passing in the ABI and address:
 
 ```python
@@ -164,10 +169,10 @@ The call() method returns the result of the function call. In this example, we'r
 You can then use the result value as needed in your Python code.
 
 Here is the [link](https://github.com/yusuf1990/CeloDapp/tree/main) to the repository
- 
+
 Conclusion
 In this guide, we have explored the web3.py library and demonstrated how to use it to interact with the Celo blockchain. By following the examples provided, you should now have a good understanding of how to connect to the Celo network, send transactions, read data from contracts, and use the data in your Python application.
 
 ## About the Author
-Jimoh Yusuf is a web3 developer and a data scientist with a passion of learning. I will be glad to connect with people who share have same ambition as me on Twitter handle @YusufJi30148537
 
+Jimoh Yusuf is a web3 developer and a data scientist with a passion of learning. I will be glad to connect with people who share have same ambition as me on Twitter handle @YusufJi30148537
