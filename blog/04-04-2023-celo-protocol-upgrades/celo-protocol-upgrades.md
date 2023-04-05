@@ -30,8 +30,11 @@ The consensus mechanism ensures that all network participants agree on the block
 Some of the key features is discussed as follows;
 
 1 Decentralization: Decentralization is the sole purpose of blockchain technology and one of the most critical features of blockchain protocols is that they are decentralized, they operate without a central authority or intermediary. Instead, participants in the network collectively validate and confirm transactions and maintain the integrity of the blockchain.
+
 2 Immutability: The blockchain is an immutable ledger such that once a transaction is recorded on the blockchain, it cannot be altered or deleted. This makes the blockchain a tamper-proof record of all transactions and data stored on the network.
+
 3 Consensus Mechanism: Blockchain protocols use a consensus mechanism to ensure that all participants in the network agree on the state of the blockchain. This is typically achieved through a proof-of-work, proof-of-stake, or other consensus mechanism, which rewards participants who contribute to the network's security. For instance, if the need for an upgrade is identified on the CELO network, it can be initiated by the CELO protocol development team, community members, or other stakeholder and this mechanism represents the method used to achieve agreement, trust, and security across the network. 
+
 4 Smart Contracts: Smart contracts are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code programmed to trigger when the stated conditions of the agreement are met.
 
 ### TYPES OF BLOCKCHAIN PROTOCOLS.
@@ -105,15 +108,15 @@ Hybrid blockchain protocols have the following features:
 The CELO protocol is a blockchain protocol built on the Ethereum network that aims to create a more inclusive financial system by enabling fast, low-cost, and secure transactions. The CELO protocol is open-source, which means that anyone can contribute to its development and improvement. Therefore, in this regard, the process of upgrading the CELO protocol by adding new blocks of code is a critical aspect of the development process.
 The following are the summary of the steps to be followed in order to implement an upgrade on the CELO blockchain.
 
-1 Identify the need for an upgrade
-2 Create a proposal for the upgrade 
-3 Outline the changes to be made 
-4 Highlight the benefits of the upgrade 
-5 Outline and study the Potential risk involved 
-6 Submit the proposal to the CELO governance for review and approval 
-7 Developing and testing the code 
-8 Deployment 
-9 Data analysis and network monitoring for thorough testing and performance check 
+1 Identify the need for an upgrade.
+2 Create a proposal for the upgrade. 
+3 Outline the changes to be made. 
+4 Highlight the benefits of the upgrade. 
+5 Outline and study the Potential risk involved. 
+6 Submit the proposal to the CELO governance for review and approval. 
+7 Developing and testing the code. 
+8 Deployment.
+9 Data analysis and network monitoring for thorough testing and performance check. 
 
 The first step in the process is to identify the need for an upgrade. This can be initiated by the CELO protocol development team, community members, interested parties, crypto enthusiasts or other stakeholders. Once the need for an upgrade has been identified, the protocol development team creates a proposal for the upgrade, outlining the changes to be made, the benefits of the upgrade, and the potential risks involved. The next step is to submit the proposal to the CELO governance system for review and approval. CELO governance is a decentralized system that allows CELO holders to vote on proposals related to the protocol's development and improvement. The proposal must have a majority of votes from the community to be approved. After the proposal is approved, the development team creates the blocks of code that will implement the upgrade and ensure its compatibility with the chain. The code is thoroughly tested to ensure that it functions as intended and does not introduce any new vulnerabilities to the network. Once the code has been tested, it is deployed on the CELO network by creating a new block on the blockchain that includes the upgrade code. The updated code is then distributed to all network participants, and the new block is added to the blockchain. After the upgrade has been deployed, the CELO protocol undergoes a period of monitoring to ensure that the upgrade is working as intended and that there are new issues or vulnerabilities in the network. Every important key metrics is measured through data analysis to monitor network performance, transaction speeds, gas fee deduction etc. 
 Upgrading the CELO protocol with blocks of code is a complex process that involves multiple steps which requires collaboration between the CELO development team and the CELO community to ensure that upgrades are beneficial, secure, and the overall functionality of the protocol is greatly improved.
