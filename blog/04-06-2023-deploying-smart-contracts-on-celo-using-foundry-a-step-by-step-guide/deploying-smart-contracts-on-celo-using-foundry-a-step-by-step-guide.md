@@ -177,3 +177,7 @@ Hi! My name is Kunal Dawar and I am a Full Stack web2/web3 Developer. I have par
 One thing that I am truly passionate about is creating things that are reliable and don't break easily. I believe that creating high-quality products is important not only for the users but also for the overall growth and success of a business.
 
 In my free time, I enjoy learning about new technologies and staying up-to-date with the latest trends in the field. I also love to share my knowledge with others and mentor those who are interested in pursuing a career in web development.
+
+## References
+
+- [Source Code](https://github.com/developerkunal/foundry-smart-contract-deployment/)
