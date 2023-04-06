@@ -1,6 +1,6 @@
 ---
 
-title: Creating Stablecoin Contracts on Celo- An Overview of the Celo Stablecoin System
+title: Creating Stablecoin Contracts on Celo - An Overview of the Celo Stablecoin System
 description: In this tutorial, we will show you what celo stable coin is, and how to create a stable coin contcat on celo.
 authors:
 
@@ -119,8 +119,6 @@ To create a stablecoin contract on the Celo network, you will need to have the f
 Open your terminal and run the following command to create a new Celo project:
 
 ````
-
-Copy code
 
 celo init stablecoin
 
