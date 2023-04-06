@@ -76,8 +76,6 @@ The `os` module, which offers a communication mechanism with the operating syste
 
 Next, a blockchain explorer should have functionality that allows users to get transaction details, block information, and wallet balance.
 
- 
-
 ```python
 # Retrieving Transaction and Block Data
 latest_block_number = w3.eth.block_number
@@ -111,7 +109,7 @@ We utilize the `w3.eth.get_balance` method, supplying the address as a parameter
 
 Next, let us build a command line interface for working with the features of our blockchain Explorer.
 
-```
+```python
 def main():
     print('Welcome to the Celo Blockchain Explorer!')
     while True:
@@ -189,7 +187,7 @@ def show_transaction_details(args):
     if transaction is None:
         print('Transaction not found.')
         return
-    
+
     ERC20_ABI = [
         {
             "constant": true,
