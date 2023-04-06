@@ -299,7 +299,6 @@ function toggleEmergencyStop(uint256 eventId) external onlyOwner {
 
 `withdraw`: a function that allows the contract owner to withdraw the contract's balance.
 
-
 ## Deployment
 
 To deploy our smart contract successfully, we need the celo extention wallet which can be downloaded from [here](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
@@ -316,5 +315,3 @@ To further expand your knowledge, consider exploring the following resources:
 
 [Solidity documentation](https://solidity.readthedocs.io/)
 [Celo documentation](https://docs.celo.org/)
-
-
