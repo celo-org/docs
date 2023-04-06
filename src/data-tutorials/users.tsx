@@ -751,6 +751,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-tokenize-a-physical-asset-on-celo',
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
+  { 
+    title: 'Build an NFT Marketplace on Celo using Hardhat',
+    description: 'Creating a simple NFT marketplace on the Celo Blockchain using Hardhat to create smart contracts',
+    preview: require('\showcase\intermediate\build-your-own-full-stack-nft-marketplace-on-celo.png'),
+    website: '/blog/tutorials/build-an-nft-marketplace-on-celo-using-hardhat',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate', 'hardhat', 'javascript'],
+  },
    {
     title: 'Decentralized Marketplace for Buying and Selling Animals',
     description: 'AnimalHouse is a blockchain-based platform connecting animal lovers to adopt, rescue, and care for animals securely and transparently',
