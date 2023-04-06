@@ -68,21 +68,21 @@ Creating a stablecoin contract on Celo requires using Solidity programming langu
 
 While the solidity programming language is primarily required for creating the stablecoin contracts on Celo, Remix IDE is necessary for [deploying the contract on Celo](https://docs.celo.org/developer/deploy/remix).
 
-# Step 1: Import required Celo Contracts
+## Step 1: Import required Celo Contracts
 
 Import the necessary Celo contracts into your contract. You will need to import the StableToken contract, which is the contract that implements the stablecoin contract functionality, the Reserve contract, which is the contract that holds the reserves, and the ReserveSpender contract, which is the contract that is used to spend reserves.
 
-# Step 2: Specify the Parameter
+## Step 2: Specify the Parameter
 
 Defining your stablecoin parameter is of the essence because it helps you attribute quality, symbol, name, and decimal places to your stablecoin. Part of specifying the parameter also means you'd have to define the reserve currency that your stablecoin is pegged to.
 
-# Step 3: Create a Stable Coin Contract
+## Step 3: Create a Stable Coin Contract
 
 After specifying the parameters for your stable coin, then you can create a stablecoin contract.
 
 After successfully creating the stablecoin contract, you can create the reserve contract. In the constructor function of your reserve contract, you will need to pass in the stablecoin contract address and the address of the reserve manager contract.
 
-# Step 4: Create a Reserve Manager Contract
+## Step 4: Create a Reserve Manager Contract
 
 Finally, you will need to create the reserve manager contract. The reserve manager contract is responsible for managing the reserve and ensuring that reserves fully back it. The reserve manager contract will monitor the demand for your stablecoin and adjust the reserve accordingly.
 
@@ -104,7 +104,7 @@ Now that we have covered the best practices for creating stablecoin contracts on
 
 In this code demonstration, we will create a simple stablecoin contract on Celo. We will call our stablecoin "MyStableCoin," and it will be pegged to the Celo dollar (cUSD).
 
-# Step 1: Set up the development environment\*\*
+## Step 1: Set up the development environment\*\*
 
 To create a stablecoin contract on the Celo network, you will need to have the following tools and software installed:
 
@@ -114,7 +114,7 @@ To create a stablecoin contract on the Celo network, you will need to have the f
 
 3. Celo CLI
 
-# Step 2: Create a new Celo project\*\*
+## Step 2: Create a new Celo project\*\*
 
 Open your terminal and run the following command to create a new Celo project:
 
@@ -124,14 +124,14 @@ celo init stablecoin
 
 This will create a new directory called "stablecoin" with the necessary files to start developing your stablecoin contract.
 
-# Step 3: Install the required packages\*\*
+## Step 3: Install the required packages\*\*
 
 Navigate to the "stablecoin" directory and run the following command to install the required packages:
 
 ```npm install @celo/contractkit dotenv ```
 
 
-# Step 4: **Create a .env file**
+## Step 4: **Create a .env file**
 
 Create a new file called ".env" in the root of the "stablecoin" directory and add the following code:
 
@@ -141,7 +141,7 @@ PRIVATE_KEY =  <your_private_key> ```
 
 Replace "your_private_key" with your private key.
 
-# Step 5: **Create the stablecoin contract**
+## Step 5: **Create the stablecoin contract**
 
 Create a new file called "StableCoin.sol" in the "contracts" directory of your project and add the following code:
 
@@ -164,7 +164,7 @@ contract StableCoin is ERC20 {
 
 This is a basic implementation of a stablecoin contract that extends the ERC20 standard.
 
-# Step 6: Compile and deploy the contract
+## Step 6: Compile and deploy the contract
 
 Run the following command to compile the contract:
 
@@ -182,7 +182,7 @@ npx hardhat run scripts/deploy.js
 
 This will deploy the contract to the Celo network and output the contract address.
 
-# Step 7: Interact with the contract
+## Step 7: Interact with the contract
 
 To interact with the contract, open the Celo console by running the following command:
 
@@ -200,10 +200,11 @@ const amount = kit.web3.utils.toWei("100", "ether")
 
 await contract.methods.mint(accounts[0], amount).send({ from: accounts[0] })
 await contract.methods.burn(accounts[0], amount).send({ from: accounts[0] })
-
+///```
 
 
 This will mint 100 CUSD stablecoins to the first account and then burn them.
 
 Congratulations, you have successfully created a stablecoin contract on the Celo network!
+
 ````
