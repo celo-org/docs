@@ -235,4 +235,4 @@ In my free time, I enjoy learning about new technologies and staying up-to-date 
 
 ## References
 
-- [Sourcecode](https://github.com/developerkunal/nft-royalty-smart-contract)
+- [Source code](https://github.com/developerkunal/nft-royalty-smart-contract)
