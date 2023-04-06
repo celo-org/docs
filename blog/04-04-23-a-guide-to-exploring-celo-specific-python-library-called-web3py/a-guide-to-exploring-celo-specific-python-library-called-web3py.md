@@ -1,5 +1,5 @@
 ---
-title: A Guide to Exploring Celo-Specific python  library called web3.py
+title: A Guide to Exploring Celo-Specific python library called web3.py
 description: This tutorial guides you on how to interact with celo blockchain with web3py
 authors:
   - name: Jimoh Yusuf
