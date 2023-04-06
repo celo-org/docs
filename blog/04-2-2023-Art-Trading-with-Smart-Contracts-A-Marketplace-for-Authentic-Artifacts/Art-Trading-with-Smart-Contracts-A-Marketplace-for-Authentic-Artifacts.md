@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/art-trading-with-smart-contracts-on-the-celo-blockchain
 ---
 
-![art-trading-with-smart-contracts-on-the-celo-blockchain](https://user-images.githubusercontent.com/94527318/229685575-8947a085-04ae-4aa9-9269-cdca3edb973e.png)
+![header](../../src/data-tutorials/showcase/intermediate/art-trading-with-smart-contracts-on-the-celo-blockchain.png)
 
 ## INTRODUCTION
 
