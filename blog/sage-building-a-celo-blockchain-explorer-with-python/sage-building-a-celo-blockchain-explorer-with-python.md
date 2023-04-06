@@ -15,11 +15,11 @@ slug: /tutorials/building-a-celo-blockchain-explorer-with-python
 
 ## Introduction
 
-Blockchain explorers are crucial resources for comprehending the information kept on a blockchain. They enable users, developers, and other blockchain-related data to examine transactions, accounts, smart contracts, and other information. In this tutorial, we'll use Solidity to create a blockchain explorer for the Celo network and Python using the web3.py module to test the functionalities.
+Blockchain explorers are crucial resources for comprehending the information kept on a blockchain. They enable users, developers, and other blockchain-related data to examine transactions, accounts, smart contracts, and other information. In this tutorial, we'll create a blockchain explorer for the Celo network using Python and the web3.py library.
 
 ## Prerequisites
 
-You should have a fundamental understanding of blockchain technology, the Celo network, Python, and the web3.py module before beginning this lesson. A Celo node or endpoint that implements the Celo JSON-RPC API should also be available to you.
+Before beginning this lesson, you should have a fundamental understanding of blockchain technology, the Celo network, Python, and the web3.py module. A Celo node or endpoint that implements the Celo JSON-RPC API should also be available.
 
 ## Requirements
 
@@ -37,351 +37,278 @@ mkdir celo-blockchain-explorer
 cd celo-blockchain-explorer
 ```
 
-In your new directory, create a python virtual environment and activate it with the following commands:
+In your new directory, create a Python virtual environment and activate it with the following commands:
 
 ```bash
 python3 -m venv env
 source env/bin/activate
 ```
 
-Next, Install the following libraries using pip, the python package manager:
+Next, Install the following libraries using pip, the Python package manager:
 
 ```bash
 pip install web3 py-solc-x python-dotenv
 ```
 
-## Step 2: Write the Smart Contract
+## Step 2: Importing Required Libraries and Setting Up Web3 Connection
 
-First, we need to create the smart contract for the blockchain explorer. Create a new file called “BlockchainExplorer.sol” in the root directory of your project.
-
-BlockchainExplorer.sol
-
-```solidity
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.0;
-
-contract BlockchainExplorer {
-
-    struct Transaction {
-        address sender;
-        address recipient;
-        uint amount;
-        uint timestamp;
-    }
-    
-    struct Contract {
-        address contractAddress;
-        uint balance;
-        uint creationTime;
-    }
-    
-    mapping (address => Transaction[]) private transactions;
-    mapping (address => Contract) private contracts;
-    
-    function getTransactions(address _address) public view returns (Transaction[] memory) {
-        return transactions[_address];
-    }
-    
-    function getContract(address _address) public view returns (Contract memory) {
-        return contracts[_address];
-    }
-    
-    function searchAddress(address _address) public view returns (Transaction[] memory, Contract memory) {
-        return (getTransactions(_address), getContract(_address));
-    }
-    
-    function addTransaction(address _sender, address _recipient, uint _amount) public {
-        Transaction memory tx = Transaction(_sender, _recipient, _amount, block.timestamp);
-        transactions[_sender].push(tx);
-    }
-    
-    function addContract(address _contractAddress, uint _balance) public {
-        Contract memory contractInfo = Contract(_contractAddress, _balance, block.timestamp);
-        contracts[_contractAddress] = contractInfo;
-    }
-    
-    function updateContractBalance(address _contractAddress, uint _balance) public {
-        contracts[_contractAddress].balance = _balance;
-    }
-    
-}
-```
-
-A blockchain explorer with features like historical data, analytics, and a search tool for addresses and contract addresses is possible using the BlockchainExplorer smart contract.
-
-Two structs called Transaction and Contract are included in the contract and are used to store transaction and contract data, respectively. Moreover, it has two data structures that map addresses to the appropriate transactions and contracts: transactions and contracts.
-
-The contract has a number of features that let users interact with it and access transaction and contract data. The tasks comprise:
-
-- getTransactions: This function accepts an address as input and outputs an array of transactions related to that address.
-- getContract: This command accepts an address as input and outputs details of the contract related to that address.
-- searchAddress: When an address is entered, the searchAddress function retrieves the transactions and contracts related to that address.
-- addTransaction: This function adds a transaction to the mapping of transactions by taking as inputs the sender, receiver, and transaction amount.
-- addContract: Adds a contract to the contracts mapping by taking as inputs the address and remaining balance of the contract.
-- updateContractBalance: This function updates the balance associated with a contract in the contracts mapping by taking the address of the contract and the new balance of that contract as inputs.
-
-## Step 3: Compile and Deploy the Smart Contract
-
-Next, let’s compile and deploy our contract. Create a file called “deploy.py” in your root directory.
-
-deploy.py
+First, create a file called [app.py](http://app.py) in the root directory of your project and paste the following code:
 
 ```python
-import json
 import os
 from web3 import Web3
+from web3.middleware import geth_poa_middleware
 from dotenv import load_dotenv
-from solcx import compile_standard, install_solc
 
 load_dotenv()
-
-# Install specific Solidity compiler version
-install_solc("0.8.0")
 
 # Set up web3 connection
 provider_url = os.environ.get("CELO_PROVIDER_URL")
 w3 = Web3(Web3.HTTPProvider(provider_url))
 assert w3.is_connected(), "Not connected to a Celo node"
 
-# Set deployer account and private key
-deployer = os.environ.get("CELO_DEPLOYER_ADDRESS")
-private_key = os.environ.get("CELO_DEPLOYER_PRIVATE_KEY")
-
-with open("BlockchainExplorer.sol", "r") as file:
-    contract_source_code = file.read()
-
-# Compile the contract
-compiled_sol = compile_standard({
-    "language": "Solidity",
-    "sources": {
-        "BlockchainExplorer.sol": {
-            "content": contract_source_code
-        }
-    },
-    "settings": {
-        "outputSelection": {
-            "*": {
-                "*": ["metadata", "evm.bytecode", "evm.sourceMap"]
-            }
-        }
-    }
-})
-
-# Extract the contract data
-contract_data = compiled_sol['contracts']['BlockchainExplorer.sol']['BlockchainExplorer']
-bytecode = contract_data['evm']['bytecode']['object']
-abi = json.loads(contract_data['metadata'])['output']['abi']
-
-# Deploy the contract
-nonce = w3.eth.get_transaction_count(deployer)
-transaction = {
-    'nonce': nonce,
-    'gas': 2000000,
-    'gasPrice': w3.eth.gas_price,
-    'data': bytecode,
-}
-signed_txn = w3.eth.account.sign_transaction(transaction, private_key)
-transaction_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
-transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
-
-# Get the contract address
-contract_address = transaction_receipt['contractAddress']
-print(f"Contract deployed at address: {contract_address}")
-```
-
-This script installs the required Solidity compiler version, creates a connection to a Celo node, and compiles and deploys the Simple Storage contract to the Celo blockchain. Make sure to set the environment variables CELO PROVIDER URL, CELO DEPLOYER ADDRESS, and CELO DEPLOYER PRIVATE KEY before running the script.
-
-Run the deployment script with this command on your terminal:
-
-```bash
-python deploy.py
-```
-
-![Screenshot](https://user-images.githubusercontent.com/104994589/228788486-2d6621af-0254-42ce-bf3b-d466abf1eba8.png)
-
-## Step 3: Interact with Deployed Smart Contract
-
-Create a file called “app.py” and add the following code:
-
-app.py
-
-```python
-from web3 import Web3
-from web3.middleware import geth_poa_middleware
-import deploy
-
-w3 = deploy.w3
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+```
 
-contract_address = deploy.contract_address
-abi = deploy.abi
+The `os` module, which offers a communication mechanism with the operating system, is first imported. The Web3 class, which we will use to communicate with the Celo blockchain, is also imported and the web3.middleware module's `geth_poa_middleware function` is required to establish a connection to a Proof of Authority (PoA) chain like Celo. The `load_dotenv function`, which loads environment variables from a `.env` file, is imported in the fourth line of the `dotenv` library.
 
-# Instantiate the contract object
-contract = w3.eth.contract(address=contract_address, abi=abi)
+## Step 3: Retrieving Transaction and Block Data
 
-# Check account balance
-balance = w3.eth.get_balance('your-wallet-account-address')
-print(f'Account balance: {balance}')
+Next, a blockchain explorer should have functionality that allows users to get transaction details, block information, and wallet balance.
 
-# Add a new transaction
-tx_hash = contract.functions.addTransaction(
-    'your-wallet-account-address1', 'your-wallet-account-address2', 100).transact()
+ 
 
-# Wait for the transaction to be mined
-w3.eth.wait_for_transaction_receipt(tx_hash)
+```python
+# Retrieving Transaction and Block Data
+latest_block_number = w3.eth.block_number
+print(f'Latest Block Number: {latest_block_number}')
 
-# Add a new contract
-tx_hash = contract.functions.addContract(
-    'your-wallet-account-address', 1000).transact()
+# To get the details of a specific block:
+block_number = 1000
+block = w3.eth.get_block(block_number)
+print(f'Block {block_number} details: {block}')
 
-# Wait for the transaction to be mined
-w3.eth.wait_for_transaction_receipt(tx_hash)
+# To obtain transaction details by transaction hash:
+transaction_hash = '0x8c183dc066cc5ece0e4f6cf9a0dcfb4965c6af496d2985df8356d24275717759'
+transaction = w3.eth.get_transaction(transaction_hash)
+print(f'Transaction details: {transaction}')
 
-# Update contract balance
-tx_hash = contract.functions.updateContractBalance(
-    'your-wallet-account-address', 2000).transact()
+# To check the balance of a specific wallet address:
+address = '0x8BdDeC1b7841bF9eb680bE911bd22051f6a00815'
+balance = w3.eth.get_balance(address)
+print(f'Address balance: {balance} Celo')
+```
 
-# Wait for the transaction to be mined
-w3.eth.wait_for_transaction_receipt(tx_hash)
+The most recent block number is first obtained using the `w3.eth.block_number` attribute, which is then printed to the terminal.
 
-# Call the getTransactions function
-transactions = contract.functions.getTransactions(
-    'your-wallet-account-address').call()
+Using the `w3.eth.get_block` method and the block number as a parameter, we may get information about a particular block. After that, the console is printed with the block specifics.
 
-# Print the transaction data
-for tx in transactions:
+By supplying the transaction hash as a parameter to the `w3.eth.get_transaction` method, we may access transaction details by the transaction hash. The transactional information is thereafter printed to the console.
+
+We utilize the `w3.eth.get_balance` method, supplying the address as a parameter, to verify the balance of a certain wallet address. Following that, the address balance is reported to the console.
+
+## Step 3: Building the Command-Line Interface
+
+Next, let us build a command line interface for working with the features of our blockchain Explorer.
+
+```
+def main():
+    print('Welcome to the Celo Blockchain Explorer!')
+    while True:
+        user_input = input('Enter a command (h for help): ').lower()
+        if user_input == 'h':
+            print_help()
+        elif user_input == 'q':
+            break
+        else:
+            handle_command(user_input)
+
+def print_help():
+    print('Commands:')
+    print('  h - Display help')
+    print('  q - Quit the explorer')
+    print('  block <block_number> - Show block details')
+    print('  tx <transaction_hash> - Show transaction details')
+    print('  balance <wallet_address> - Show wallet balance')
+
+def handle_command(command):
+    cmd_parts = command.split()
+    if len(cmd_parts) == 0:
+        return
+    cmd = cmd_parts[0]
+    if cmd == 'block':
+        show_block_details(cmd_parts[1:])
+    elif cmd == 'tx':
+        show_transaction_details(cmd_parts[1:])
+    elif cmd == 'balance':
+        show_wallet_balance(cmd_parts[1:])
+    elif cmd == 'search':
+        search_data(cmd_parts[1:])
+    elif cmd == 'stats':
+        show_network_stats()
+    elif cmd == 'contract':
+        show_contract_details(cmd_parts[1:])
+    else:
+        print('Invalid command. Type "h" for help.')
+
+def search_data(args):
+    if len(args) != 1:
+        print('Invalid search query. Please provide a valid transaction hash, block hash, or wallet address.')
+        return
+
+    query = args[0]
+    if query.startswith('0x'):
+        if len(query) == 66:
+            show_transaction_details([query])
+        elif len(query) == 42:
+            show_wallet_balance([query])
+        else:
+            show_block_details([query])
+    else:
+        show_block_details([query])
+
+def show_network_stats():
+    latest_block = w3.eth.get_block('latest')
+    block_number = latest_block['number']
+    gas_used = latest_block['gasUsed']
+    avg_block_time = (
+        latest_block['timestamp'] - w3.eth.get_block(block_number - 100)['timestamp']) / 100
+
+    print(f'Total blocks: {block_number}')
+    print(f'Latest block gas used: {gas_used}')
     print(
-        f'Sender: {tx[0]}, Recipient: {tx[1]}, Amount: {tx[2]}, Timestamp: {tx[3]}')
+        f'Average block time (last 100 blocks): {avg_block_time:.2f} seconds')
 
-# Call the getContract function
-contract_info = contract.functions.getContract(
-    'your-wallet-account-address').call()
+def show_transaction_details(args):
+    if len(args) != 1:
+        print('Invalid transaction hash. Please provide a valid transaction hash.')
+        return
 
-# Print the contract information
-print(
-    f'Address: {contract_info[0]}, Balance: {contract_info[1]}, Creation Time: {contract_info[2]}')
+    transaction_hash = args[0]
+    transaction = w3.eth.get_transaction(transaction_hash)
+    if transaction is None:
+        print('Transaction not found.')
+        return
+    
+    ERC20_ABI = [
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "totalSupply",
+            "outputs": [{"name": "", "type": "uint256"}],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [{"name": "owner", "type": "address"}],
+            "name": "balanceOf",
+            "outputs": [{"name": "", "type": "uint256"}],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {"name": "to", "type": "address"},
+                {"name": "value", "type": "uint256"}
+            ],
+            "name": "transfer",
+            "outputs": [{"name": "", "type": "bool"}],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {"name": "owner", "type": "address"},
+                {"name": "spender", "type": "address"}
+            ],
+            "name": "allowance",
+            "outputs": [{"name": "", "type": "uint256"}],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {"name": "spender", "type": "address"},
+                {"name": "value", "type": "uint256"}
+            ],
+            "name": "approve",
+            "outputs": [{"name": "", "type": "bool"}],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {"name": "from", "type": "address"},
+                {"name": "to", "type": "address"},
+                {"name": "value", "type": "uint256"}
+            ],
+            "name": "transferFrom",
+            "outputs": [{"name": "", "type": "bool"}],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ]
 
-# Call the searchAddress function
-transactions, contract_info = contract.functions.searchAddress(
-    'your-wallet-account-address').call()
+    # Check if the transaction involves a token transfer
+    if transaction['input'].startswith('0xa9059cbb'):
+        token_contract = w3.eth.contract(
+            address=transaction['to'], abi=ERC20_ABI)
+        recipient = '0x' + transaction['input'][34:74]
 
-# Print the transaction data
-for tx in transactions:
-    print(
-        f'Sender: {tx[0]}, Recipient: {tx[1]}, Amount: {tx[2]}, Timestamp: {tx[3]}')
+        token_amount = int(transaction['input'][74:], 16) / \
+            (10 ** token_contract.functions.decimals().call())
+
+        token_symbol = token_contract.functions.symbol().call()
+        print(f'Token transfer: {token_amount} {token_symbol} -> {recipient}')
+    else:
+        print(f'Transaction details: {transaction}')
+
+if __name__ == '__main__':
+    main()
 ```
 
-Let’s go through the code step by step.
+The command-line interface's principal purpose is to serve as an entry point. It presents a welcome message and requests input from the user. The user input is handled by using the handle command function. To display the available commands, the user must type "h," which calls the print help function.
 
-```python
-from web3 import Web3
-from web3.middleware import geth_poa_middleware
-import deploy
+The handle command function analyzes user input to identify the entered command before calling the proper function to process it. An error notice appears if an invalid command is entered.
 
-w3 = deploy.w3
-w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+Using a user-entered query, the search data function looks for data. A query that begins with "0x" is presumed to represent a block or transaction hash. It is considered that a wallet address is being used if the query exceeds 42 characters. The relevant function is then invoked to display the data.
 
-contract_address = deploy.contract_address
-abi = deploy.abi
+The show network stats function estimates the total number of blocks, the latest block gas used, and the average block time over the previous 100 blocks by retrieving the most recent block using the `w3.eth.get_block` method. The console is then printed with these facts.
 
-# Instantiate the contract object
-contract = w3.eth.contract(address=contract_address, abi=abi)
-```
+The `w3.eth.get_transaction` method is used by the show transaction details function to receive the transaction details and determine whether a token transfer is involved. If so, the receiver, symbol, and token value are shown. If not, the transactional information is shown.
 
-The code first imports the required modules before loading the w3 object, contract ABI, and address. Then, to enable communication with the Ethereum network, it adds the
-
-“geth_poa_middleware” to the “middleware_onion”. The contract object is then created using the loaded ABI and contract address.
-
-```python
-# Check account balance
-balance = w3.eth.get_balance('your-wallet-account-address')
-print(f'Account balance: {balance}')
-```
-
-Using the “get_balance()” method of the w3.eth object, the following code obtains the balance of a particular wallet account and prints it to the console.
-
-```python
-# Add a new transaction
-tx_hash = contract.functions.addTransaction(
-    'your-wallet-account-address1', 'your-wallet-account-address2', 100).transact()
-
-# Wait for the transaction to be mined
-w3.eth.wait_for_transaction_receipt(tx_hash)
-```
-
-The “addTransaction()” method of the contract object is used in this code to add a new transaction, and the “wait_for_transaction_receipt()” method of the “w3.eth” object is used to wait for the transaction to be mined.
-
-```python
-# Update contract balance
-tx_hash = contract.functions.updateContractBalance(
-    'your-wallet-account-address', 2000).transact()
-
-# Wait for the transaction to be mined
-w3.eth.wait_for_transaction_receipt(tx_hash)
-```
-
-The “updateContractBalance()” method of the contract object is used to update a specific contract's balance, and the “wait_for_transaction_receipt()”  method of the “w3.eth” object is used to wait for a transaction to be mined.
-
-```python
-# Call the getTransactions function
-transactions = contract.functions.getTransactions(
-    'your-wallet-account-address').call()
-
-# Print the transaction data
-for tx in transactions:
-    print(
-        f'Sender: {tx[0]}, Recipient: {tx[1]}, Amount: {tx[2]}, Timestamp: {tx[3]}')
-```
-
-With a given wallet address, this code invokes the contract object's “getTransactions()” method to access the associated transaction data. The transaction data is then printed to the terminal.
-
-```python
-# Call the getContract function
-contract_info = contract.functions.getContract(
-    'your-wallet-account-address').call()
-
-# Print the contract information
-print(
-    f'Address: {contract_info[0]}, Balance: {contract_info[1]}, Creation Time: {contract_info[2]}')
-```
-
-With a given wallet address, this code invokes the “getContract()” method of the contract object to access the related contract data. The contract information is then printed on the console.
-
-```python
-# Call the searchAddress function
-transactions, contract_info = contract.functions.searchAddress(
-    'your-wallet-account-address').call()
-
-# Print the transaction data
-for tx in transactions:
-    print(
-        f'Sender: {tx[0]}, Recipient: {tx[1]}, Amount: {tx[2]}, Timestamp: {tx[3]}')
-```
-
-With a given wallet address, this code invokes the contract object's “searchAddress()” method to get the associated transaction and contract data. The transaction data is then printed to the terminal.
-
-Note: Replace the address strings with your wallet account balance. Make sure you have more than a single account to test this contract. Also ensure that your accounts are funded with Celo Alfajores [faucets](https://faucet.celo.org/).
-
-Run the code by pasting the following command on your terminal:
+Go to your terminal and run the code with this command:
 
 ```bash
 python app.py
 ```
 
-![Screenshot](https://user-images.githubusercontent.com/104994589/228788108-e611916c-59f0-4240-8a00-4655814e465e.png)
+![Screenshot](https://user-images.githubusercontent.com/104994589/230445616-cba52bd1-3e4e-4598-b43c-d6ab6bff2328.png)
 
 ## Conclusion
 
-We have looked at how to build a strong smart contract for a blockchain explorer that has features like historical data, analytics, and a search feature for addresses and contract addresses in this lesson. Using web3.py and Python code, we have also shown how to communicate with the functions in this smart contract.
-
-You may construct and deploy a smart contract on the Ethereum network and learn how to communicate with it using web3.py by following the instructions in this tutorial. You can create your own blockchain explorers, decentralized applications, and smart contracts using this information.
+In this tutorial, we learned how to create a blockchain explorer for the Celo blockchain using Python and Web3.py. In addition to implementing functions to get transaction and block data, show address balances, and accept user input, we also covered the fundamental aspects of a blockchain explorer. We also looked at how to display network data and manage token transfers. Readers can explore the wide ecosystem of Celo-native coins and applications by building a fully functional blockchain explorer for the Celo blockchain by following this tutorial.
 
 ## Next Steps
 
-Investigating additional blockchain platforms and programming languages, such as Solidity for Ethereum or Rust for Polkadot, may be the next step in this tutorial. Consider looking into more complex smart contract features like inheritance, modifiers, and events. You might also find out more about web3.py and how to use it to communicate with other decentralized programs and smart contracts on the Ethereum network.
+Here are some potential next actions to improve this Python tutorial on creating a Celo blockchain explorer:
 
-Ultimately, blockchain technology has limitless potential, and understanding how to build and work with smart contracts is a crucial skill in the more decentralized world of today.
+- Provide a function that shows the history of transactions for a particular wallet address.
+- Improve the ability to track and investigate transactions involving native Celo tokens such as the cUSD and cEUR.
+- Provide a web-based user interface for the Celo blockchain explorer by integrating it with a web framework such as Flask or Django.
+- Investigate more complex blockchain ideas, such as smart contracts, and create tools for the Celo blockchain to provide details of implemented contracts by making the data retrieved from the Celo blockchain accessible to developers via a RESTful API or GraphQL endpoint. You may grant them API access.
+- To make the Celo blockchain explorer available to more people, deploy it on a cloud hosting platform like AWS or Heroku.
 
 ## About the Author
 
