@@ -176,12 +176,11 @@ contract NFT is ERC721Enumerable, Ownable {
 }
 ```
 
-This is a Solidity smart contract for an NFT with royalty fees. It extends the ERC721 and ERC721Enumerable contracts, allowing for unique tokens and enumeration. It also includes an Ownable contract for ownership control. 
+This is a Solidity smart contract for an NFT with royalty fees. It extends the ERC721 and ERC721Enumerable contracts, allowing for unique tokens and enumeration. It also includes an Ownable contract for ownership control.
 
 The contract has a cost of 0.5 ether and a maximum supply of 100 tokens.
 
 The artist address is stored and given a royalty fee, and the contract owner also receives a percentage of the sale. The contract includes a mint function for creating new tokens and a tokenURI function for metadata.
-
 
 - using Strings for uint256;: This line imports the Strings library and applies it to the uint256 type. This allows the contract to use string conversion functions on uint256 values.
 
@@ -199,19 +198,19 @@ The artist address is stored and given a royalty fee, and the contract owner als
 
 - event Sale(address from, address to, uint256 value);: This line declares an event named Sale that will be emitted whenever an NFT is minted.
 
-- constructor(...): This is the constructor function that is called when the contract is deployed. It takes five parameters: _name, _symbol, _initBaseURI, _royalityFee, and _artist. It calls the constructor of the ERC721 contract with _name and _symbol as arguments, and sets the initial base URI to _initBaseURI. It also sets the royalityFee and artist variables.
+- constructor(...): This is the constructor function that is called when the contract is deployed. It takes five parameters: \_name, \_symbol, \_initBaseURI, \_royalityFee, and \_artist. It calls the constructor of the ERC721 contract with \_name and \_symbol as arguments, and sets the initial base URI to \_initBaseURI. It also sets the royalityFee and artist variables.
 
-- function mint() public payable {...}: This is the function that is called when a user wants to mint an NFT. It is a public function that is payable, which means that the user must send enough Ether to cover the cost of the NFT. If the user is not the owner of the contract, a royalty fee is deducted from the cost and sent to the artist. The remaining amount is sent to the contract owner. The _safeMint function is then called to mint a new NFT and assign it to the sender.
+- function mint() public payable {...}: This is the function that is called when a user wants to mint an NFT. It is a public function that is payable, which means that the user must send enough Ether to cover the cost of the NFT. If the user is not the owner of the contract, a royalty fee is deducted from the cost and sent to the artist. The remaining amount is sent to the contract owner. The \_safeMint function is then called to mint a new NFT and assign it to the sender.
 
 - function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {...}: This function is used to get the URI for a specific NFT. It takes the tokenId as an argument and returns a string that represents the metadata URI for the NFT.
 
-- function _baseURI() internal view virtual override returns (string memory) {...}: This is an internal function that returns the current baseURI of the contract. It is used by the tokenURI function to construct the complete URI for the NFT.
+- function \_baseURI() internal view virtual override returns (string memory) {...}: This is an internal function that returns the current baseURI of the contract. It is used by the tokenURI function to construct the complete URI for the NFT.
 
-- function _payRoyality(uint256 _royalityFee) internal {...}: This is an internal function that is used to pay the royalty fee to the artist. It takes the royalty fee amount as an argument and sends it to the artist address.
+- function \_payRoyality(uint256 \_royalityFee) internal {...}: This is an internal function that is used to pay the royalty fee to the artist. It takes the royalty fee amount as an argument and sends it to the artist address.
 
-- function setBaseURI(string memory _newBaseURI) public onlyOwner {...}: This function can be called by the owner of the contract to set a new baseURI.
+- function setBaseURI(string memory \_newBaseURI) public onlyOwner {...}: This function can be called by the owner of the contract to set a new baseURI.
 
-- function setRoyalityFee(uint256 _royalityFee) public onlyOwner {...}: This function can only be called by owner to set update royalityfee.
+- function setRoyalityFee(uint256 \_royalityFee) public onlyOwner {...}: This function can only be called by owner to set update royalityfee.
 
 - Step 2: Deploy the Smart Contract
   Once the smart contract is created, it needs to be deployed on a blockchain network. There are several blockchain networks that support NFT creation, including Ethereum, Binance Smart Chain, and Solana.
