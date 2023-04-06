@@ -19,7 +19,7 @@ Page title
 
 Meta description:
 
-The Celo stablecoin system is based on a basket of cryptocurrencies that are designed to maintain a stable value over time, making it an attractive option for those looking for a reliable store of value. Additionally, the Celo stablecoin system is designed to be accessible to everyone, regardless of their financial background, which makes it an ideal system for reaching underserved communities. By exploring the Celo stablecoin system and how it works, developers can gain a better understanding of how to build stablecoin systems on other blockchain platforms, and how to create financial applications that are accessible and inclusive to all.
+The Celo stablecoin system is based on a basket of cryptocurrencies that are designed to maintain a stable value over time, making it an attractive option for those looking for a reliable store of value.
 
 # Introduction
 
@@ -31,16 +31,17 @@ The Celo platform leads with a user-friendly and mobile-first approach, a soluti
 
 Here's a detailed guide;
 
-## Prerequisites
+# Prerequisites
 
 Before creating a stablecoin contract on Celo, you'd need the following;
 
 - Ground-up understanding of the programming language such as javascript, Solidity and hardhat
 
-## Requirements​
+# Requirements
 
-We'll need Metamask in this tutorial, install it from HERE.
-Make sure to have NodeJS 12.0.1+ version installed.
+We'll need Metamask in this tutorial, install it.
+Make sure to have the latest NodeJS version and Solidity extension installed.
+
 
 # The Celo Stablecoin System
 
@@ -118,9 +119,9 @@ To create a stablecoin contract on the Celo network, you will need to have the f
 
 Open your terminal and run the following command to create a new Celo project:
 
-````
-
-celo init stablecoin
+```` terminal
+celo init stablecoin 
+///```
 
 This will create a new directory called "stablecoin" with the necessary files to start developing your stablecoin contract.
 
@@ -128,15 +129,19 @@ This will create a new directory called "stablecoin" with the necessary files to
 
 Navigate to the "stablecoin" directory and run the following command to install the required packages:
 
-```npm install @celo/contractkit dotenv ```
+```terminal
+npm install @celo/contractkit dotenv 
+///```
 
 
 ## Step 4: **Create a .env file**
 
 Create a new file called ".env" in the root of the "stablecoin" directory and add the following code:
 
-```CELO_NETWORK = https://forno.celo.org
-PRIVATE_KEY =  <your_private_key> ```
+```
+CELO_NETWORK = https://forno.celo.org
+PRIVATE_KEY =  <your_private_key> 
+///```
 
 
 Replace "your_private_key" with your private key.
@@ -168,16 +173,16 @@ This is a basic implementation of a stablecoin contract that extends the ERC20 s
 
 Run the following command to compile the contract:
 
-```bash
+```terminal
 npx hardhat compile
-
+///```
 
 
 Then, run the following command to deploy the contract:
 
-```bash
+```terminal
 npx hardhat run scripts/deploy.js
-
+///```
 
 
 This will deploy the contract to the Celo network and output the contract address.
@@ -186,9 +191,9 @@ This will deploy the contract to the Celo network and output the contract addres
 
 To interact with the contract, open the Celo console by running the following command:
 
-```bash
+```terminal
 npx celocli console
-
+///```
 
 
 You can progress by running the following commands to mint and burn stablecoins:
