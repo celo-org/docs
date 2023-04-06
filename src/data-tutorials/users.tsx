@@ -2855,6 +2855,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+  {
+    title: 'Deploying Smart Contracts on Celo Using Foundry - A Step-by-Step Guide',
+    description: 'This comprehensive guide provides a detailed, sequential walkthrough for deploying smart contracts on the Celo blockchain using Foundry.',
+    preview: require('./showcase/beginner/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide.png'),
+    website: 'blog/tutorials/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide',
+    tags: ['celosage', 'beginner', 'smartcontract', 'solidity'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
