@@ -26,9 +26,9 @@ By the end of this post, you’ll be able to use celo-sdk to build decentralised
 
 ## Prerequisites
 
-1.      Basic programming knowledge
-2.      Familiarity with blockchain technology
-3.      Access to a development environment
+1.       Basic programming knowledge
+2.       Familiarity with blockchain technology
+3.       Access to a development environment
 
 ## Step 1: Installation
 
@@ -171,6 +171,7 @@ You can then use the result value as needed in your Python code.
 Here is the [link](https://github.com/yusuf1990/CeloDapp/tree/main) to the repository
 
 ## Here is the full code and yours should look like this
+
 ```python
 #checking account balance
 from web3 import Web3
@@ -179,7 +180,7 @@ w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 account_address = '0xD86518b29BB52a5DAC5991eACf09481CE4B0710d'
 # Get the balance of the account in Wei
 balance_wei = w3.eth.get_balance(account_address)
-# Print the balance 
+# Print the balance
 print(f"Account balance: {balance_wei} wei")
 #Sending Transactions
 from web3 import Web3, HTTPProvider
@@ -238,6 +239,7 @@ result = my_contract.functions.getSomeData().call()
 ```
 
 ## Check Balance Output Sample
+
 Note that if you run the code, you will be able to check balance as shown below.
 
 ![Output](images/celo11.png)
