@@ -5,13 +5,14 @@ authors:
 
 - name: Elijah Sorinola
   title: Content Writer, Celo Sage
-  image_url: blog/03-22-23-Creating-Erc20/Images/Template_06_(2).png
+  image_url: blog/03-22-23-Creating-Erc20/Images/pp.jpeg
   tags: ["intermediate", "solidity", "celosage", "erc20"]
-  hide_table_of_contents: true
-  slug: /tutorials/Creating-erc20-token-on-Celo
+  hide_table_of_contents: false
+  slug: /tutorials/creating-erc20-token-on-Celo
 ---
+![header](../../src/data-tutorials/showcase/celo-sage.png)
 
-## Introduction
+## 🌱 Introduction
 
 [Celo](https://blog.celo.org/an-introductory-guide-to-celo-b185c62d3067) is an open-source blockchain platform focused on enabling mobile-first financial applications. It aims to make decentralized finance (DeFi) more accessible to everyone, especially those in emerging markets. In this tutorial, we will provide an overview of the Celo ecosystem and demonstrate how to create and deploy an ERC20 token on Celo using Remix IDE.
 
