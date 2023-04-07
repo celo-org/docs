@@ -26,9 +26,9 @@ By the end of this post, you’ll be able to use celo-sdk to build decentralised
 
 ## Prerequisites
 
-1.       Basic programming knowledge
-2.       Familiarity with blockchain technology
-3.       Access to a development environment
+1. Basic programming knowledge
+2. Familiarity with blockchain technology
+3. Access to a development environment
 
 ## Step 1: Installation
 
