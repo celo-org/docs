@@ -2867,6 +2867,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner', 'dapp', 'celo'], 
   },
   {
+    title: 'Interact with smart contract on celo using ethersjs',
+    description: 'Understand how to use the ethersjs library',
+    preview: require('./showcase/intermediate/interact-with-smart-contract-on-celo-using-ethersjs.png'),
+    website: 'blog/tutorials/interact-with-smart-contract-on-celo-using-ethersjs',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'typescript', 'solidity'], 
+  },
+  {
     title: 'Deploying Celo Applications using Golang',
     description: 'This article could provide a tutorial on deploying Celo applications built using the Golang . It could cover topics such as setting up a Celo node, setting up the development environment, creating and deploying smart contracts, and monitoring the deployed contract activities using Celo explorer.',
     preview: require('./showcase/intermediate/deploying-celo-applications-using-golang.png'),
@@ -2888,7 +2895,6 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-celo-wallet-using-golang.png'),
     website: 'blog/tutorials/building-a-celo-wallet-using-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
-
   },
   {
     title: 'Deploying Smart Contracts on Celo Using Foundry - A Step-by-Step Guide',
