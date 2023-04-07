@@ -4,7 +4,7 @@ description: In this tutorial, we will dive deep into three widely-used design p
 authors:
   - name: ✍️ Richard Michael
     url: https://github.com/richiemikke
-tags: ['celosage', 'solidity', 'celo']
+tags: ["celosage", "solidity", "celo"]
 hide_table_of_contents: true
 slug: /tutorials/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns
 ---
@@ -26,7 +26,7 @@ To fully follow up with these tutorials, you should have a good understanding of
 
 The Factory pattern is used to create new instances of contracts. It is especially useful when there is a need to manage multiple instances of a contract, as it simplifies the process of creating and tracking these instances.
 
-__Contract Instance__
+**Contract Instance**
 
 Create a simple Car contract that we will instantiate using the Factory pattern:
 
@@ -46,7 +46,7 @@ contract Car {
 }
 ```
 
-__Factory Contract__
+**Factory Contract**
 
 Create the `CarFactory` contract that will be responsible for creating new instances of the `Car` contract:
 
@@ -59,13 +59,13 @@ import "./Car.sol";
 contract CarFactory {
     // This mapping associates an owner's address with an array of Car contracts.
     mapping(address => Car[]) public ownerCars;
-    
+
     // The createCar function accepts the model of the car and creates a new instance of the Car contract.
     function createCar(string memory _model) public {
         Car newCar = new Car(msg.sender, _model);
         ownerCars[msg.sender].push(newCar);
     }
-    
+
     // The getOwnerCars function retrieves the Car contracts associated with an owner's address.
     function getOwnerCars(address _owner) public view returns (Car[] memory) {
         return ownerCars[_owner];
@@ -80,7 +80,7 @@ The `CarFactory` contract manages a mapping called `ownerCars`, which associates
 
 The Singleton pattern ensures that a contract has only one instance and provides a global point of access to it. This pattern is useful when a single contract must manage shared resources or coordinate actions across the system.
 
-__Singleton Contract__
+**Singleton Contract**
 
 Create a simple `Settings` contract that stores system-wide settings:
 
@@ -97,7 +97,7 @@ contract Settings {
         admin = _admin;
         gasPrice = _gasPrice;
     }
-    
+
     // The setGasPrice function allows the admin to update the gas price.
     function setGasPrice(uint256 _gasPrice) public {
         require(msg.sender == admin, "Only admin can set gas price");
@@ -108,7 +108,7 @@ contract Settings {
 
 The `Settings` contract has an `admin` of type `address` and a `gasPrice` of type `uint256`. The constructor takes both values as parameters and sets the contract's state variables accordingly. The `setGasPrice` function allows the admin to update the gas price, and it requires the sender's address to be equal to the admin address.
 
-__Deploying and Using the Singleton__
+**Deploying and Using the Singleton**
 
 Deploy the `Settings` contract and make sure it is used as a Singleton by other contracts:
 
@@ -118,7 +118,7 @@ Next, we need to fund our newly created wallet which can done using the celo alf
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
-```solidity
+````solidity
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -132,13 +132,13 @@ contract MyContract {
     constructor(Settings _settings) {
         settings = _settings;
     }
-    
+
     function performAction() public {
         uint256 requiredGas = settings.gasPrice();
         // Perform an action that requires the gas price from the settings contract
     }
 }
-```
+````
 
 The `MyContract` contract takes the `Settings` contract as a parameter in its constructor, ensuring that only one instance of the `Settings` contract is used throughout the system. The `performAction` function retrieves the gas price from the `Settings` contract, demonstrating how the Singleton pattern enables shared access to system-wide resources.
 
@@ -146,7 +146,7 @@ The `MyContract` contract takes the `Settings` contract as a parameter in its co
 
 The Proxy pattern is used to create a contract that acts as an intermediary between users and another contract. This pattern is useful for upgrading contracts, access control, or adding additional functionality to the existing contract.
 
-__Target Contract__
+**Target Contract**
 
 Create a simple `Bank` contract that will be the target for the Proxy:
 
@@ -173,7 +173,7 @@ contract Bank {
 
 The `Bank` contract manages a mapping called `balances`, which associates an address with its Ether balance. The `deposit` function allows users to deposit Ether and updates their balance in the mapping. The `withdraw` function allows users to withdraw Ether, updates their balance, and transfers the withdrawn amount to their address.
 
-__Proxy Contract__
+**Proxy Contract**
 
 Create the `BankProxy` contract that will act as a proxy for the `Bank` contract:
 
@@ -211,7 +211,7 @@ The `BankProxy` contract has a `target` address, which is the address of the tar
 
 The fallback function is triggered when a function that does not exist in the proxy contract is called. It forwards any calls to the target contract using the `delegatecall` function. The `delegatecall` function executes the target contract's code in the context of the proxy contract, meaning that the target contract can access the proxy contract's state variables and storage.
 
-__Deploying and Using the Proxy__
+**Deploying and Using the Proxy**
 
 Deploy the `Bank` and `BankProxy` contracts and use the proxy to interact with the `Bank` contract:
 
