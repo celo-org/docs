@@ -4,7 +4,7 @@ description: In this comprehensive tutorial, we will walk you through the proces
 authors:
   - name: ✍️ Richard Michael
     url: https://github.com/richiemikke
-tags: ['celosage', 'solidity', 'celo', 'intermediate']
+tags: ["celosage", "solidity", "celo", "intermediate"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-betting-platform-with-solidity-on-celo
 ---
@@ -130,7 +130,7 @@ contract DecentralizedBetting {
 }
 ```
 
-__Smart Contract Structure__
+**Smart Contract Structure**
 
 The `DecentralizedBetting` contract has the following main components:
 
@@ -141,8 +141,7 @@ The `DecentralizedBetting` contract has the following main components:
 
 Let's go through each component in detail.
 
-
-__1. State Variables__
+**1. State Variables**
 
 ```solidity
 address public owner;
@@ -159,7 +158,7 @@ The contract is called DecentralizedBetting and it contains the following state 
 - events: a mapping of uint256 to Event struct, where each event is identified by its ID.
 - bets: a mapping of uint256 to another mapping of address to Bet struct, where each bet is identified by the ID of the event and the address of the user who placed the bet.
 
-__2. Struct Types__
+**2. Struct Types**
 
 There are two struct types defined in the contract:
 
@@ -184,7 +183,7 @@ There are two struct types defined in the contract:
 - `Bet`: a struct that contains the amount of the bet and the user's prediction (true or false) for a given event.
 - `Event`: a struct that contains the ID of the event, the timestamp of the event, the outcome (true or false), whether the event has been resolved, the total amount of the pot, the amount of the winning pot, and a flag to indicate whether betting is temporarily suspended.
 
-__3. Modifiers__
+**3. Modifiers**
 
 There are two modifiers defined in the contract:
 
@@ -204,7 +203,7 @@ modifier onlyOwner() {
 - `onlyOwner`: a modifier that restricts access to a function to the contract owner.
 - `eventNotResolved`: a modifier that restricts access to a function to events that have not yet been resolved.
 
-__4. Functions__
+**4. Functions**
 
 The contract contains the following functions:
 
