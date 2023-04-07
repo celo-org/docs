@@ -5,7 +5,7 @@ authors:
 
 - name: Elijah Sorinola
   title: Content Writer, Celo Sage
-  image_url: blog/03-22-23-Creating-Erc20/Images/pp.jpeg
+  image_url: https://avatars.githubusercontent.com/u/86154565?v=4
   tags: ["intermediate", "solidity", "celosage", "erc20"]
   hide_table_of_contents: false
   slug: /tutorials/creating-erc20-token-on-Celo
