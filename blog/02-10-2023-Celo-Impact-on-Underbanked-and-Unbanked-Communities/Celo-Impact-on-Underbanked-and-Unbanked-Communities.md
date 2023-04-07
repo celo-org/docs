@@ -3,7 +3,7 @@ title: Celo Impact on Underbanked and Unbanked Communities
 description: Celo a blockchain platform aimed at providing financial inclusion and access to financial services for underbanked and unbanked communities.
 authors:
   - name: Maxwell Onyeka
-    title: Technical writer @Celo Foundation
+    title: Technical Writer
     url: https://github.com/maxzysparks
     image_url: https://avatars.githubusercontent.com/u/80678178?v=4
 tags: [celo, intermediate, celosage]
