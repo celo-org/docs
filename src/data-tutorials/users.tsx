@@ -1132,6 +1132,12 @@ const Users: User[] = [
     tags: ['celosage', 'solidity','smartcontract','intermediate', 'celo'],
   },
   {
+    title: 'A deep dive into Celo Consensus Mechanism',
+    description: 'Creating a simple NFT marketplace on the Celo Blockchain using Hardhat to create smart contracts',
+    preview: require('./showcase/beginner/a-deep-dive-into-celo-consensus-mechanism".png'),
+    website: 'blog/tutorials/a-deep-dive-into-celo-consensus-mechanism"',
+    tags: ['intermediate','celo', 'celosage'],
+  {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
     description: 'Aprenda como realizar um deploy ERC721 em Celo usando Tatum.',
     preview: require('./showcase/intermediate/Como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum.png'),
