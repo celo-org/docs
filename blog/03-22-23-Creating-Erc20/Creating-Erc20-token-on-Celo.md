@@ -1,210 +1,139 @@
 ---
-
-title: Creating Stablecoin Contracts on Celo - An Overview of the Celo Stablecoin System
-description: In this tutorial, we will show you what celo stable coin is, and how to create a stable coin contcat on celo.
+title: Creating ERC20 token on Celo - An Overview of the Celo Ecosystem
+description: Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.
 authors:
 
 - name: Elijah Sorinola
   title: Content Writer, Celo Sage
-  image_url: blog/12-09-22-how-to-become-a-web3-developer-sage/images/web3 32.png
-  tags: [beginner, Celo Sage]
+  image_url: blog/03-22-23-Creating-Erc20/Images/Template_06_(2).png
+  tags: ["intermediate", "solidity", "celosage", "erc20"]
   hide_table_of_contents: true
-  slug: /tutorials/Creating-Stablecoin-Contracts-on-Celo
+  slug: /tutorials/Creating-erc20-token-on-Celo
+---
 
-# Creating Stablecoin Contracts on Celo: An Overview of the Celo Stablecoin System
+## Introduction
 
-Page title
-
-** Creating Stablecoin Contracts on Celo- An Overview of the Celo Stablecoin System**
-
-Meta description:
-
-The Celo stablecoin system is based on a basket of cryptocurrencies that are designed to maintain a stable value over time, making it an attractive option for those looking for a reliable store of value. Additionally, the Celo stablecoin system is designed to be accessible to everyone, regardless of their financial background, which makes it an ideal system for reaching underserved communities. By exploring the Celo stablecoin system and how it works, developers can gain a better understanding of how to build stablecoin systems on other blockchain platforms, and how to create financial applications that are accessible and inclusive to all.
-
-# Introduction
-
-Compared to cryptocurrencies like bitcoin (BTC) and Ethereum (ETH), stablecoin offers less volatility and a more consistent value, which is no doubt why these coins are sought after and preferred for multi-chain and large-scale transactions.
-
-However, stablecoins across different blockchain networks offer prototypical and saturated solutions. Only gems like [Celo](https://blog.celo.org/an-introductory-guide-to-celo-b185c62d3067), an EVM-compatible blockchain platform, are concerned with the mainstream adoption of stablecoins.
-
-The Celo platform leads with a user-friendly and mobile-first approach, a solution that provides accessibility to all. With Celo, anyone can create transactional and usable stablecoin contracts quickly.
-
-Here's a detailed guide;
+[Celo](https://blog.celo.org/an-introductory-guide-to-celo-b185c62d3067) is an open-source blockchain platform focused on enabling mobile-first financial applications. It aims to make decentralized finance (DeFi) more accessible to everyone, especially those in emerging markets. In this tutorial, we will provide an overview of the Celo ecosystem and demonstrate how to create and deploy an ERC20 token on Celo using Remix IDE.
 
 ## Prerequisites
 
-Before creating a stablecoin contract on Celo, you'd need the following;
+Before we start, you will need the following:
 
-- Ground-up understanding of the programming language such as javascript, Solidity and hardhat
+- Basic knowledge of Solidity programming language.
+- Remix IDE installed on your computer.
+- Celo wallet connected to the Alfajores testnet.
 
-## Requirements​
+## Requirement 
 
-We'll need Metamask in this tutorial, install it from HERE.
-Make sure to have NodeJS 12.0.1+ version installed.
+- A computer with internet access
+- A Celo wallet (such as the Celo Wallet app or Valora)
+- Basic knowledge of Solidity and Ethereum smart contracts
+- Remix IDE
+- A browser with MetaMask installed (for testing on a testnet)
+- NodeJS version 12.0.1 or higher installed (for deployment to a testnet or mainnet)
 
-# The Celo Stablecoin System
+## Overview of Celo Ecosystem
 
-Celo has its stablecoin called the Celo Dollar (cUSD), which is pegged to the US dollar assets at a 1:1 ratio, and the Celo Euro (cEUR) stablecoin, which is pegged to the euro also at a 1:1 ratio.
+Celo is built on the Ethereum codebase and is fully compatible with the Ethereum Virtual Machine (EVM). It uses a proof-of-stake consensus mechanism and has a stable value asset called Celo Gold (cGLD) that is used for transaction fees and governance.
 
-The Celo stablecoin system has three central contracts- the stablecoin contract, the reserve contract, and the reserve manager contract.
+Celo also has a mobile-first approach, making it easy to build mobile applications that can interact with the blockchain. It has its own built-in wallet, called Valora, which can be used to send and receive payments, as well as to access decentralized applications (dapps) on the Celo platform.
 
-1. The stablecoin contract is the contract that is responsible for issuing and redeeming stablecoins.
+## Creating an ERC20 Token on Celo
 
-2. The reserve contract is the contract that holds the reserves that back the stablecoins.
+Now that we have a basic understanding of the Celo ecosystem, let's create an ERC20 token on Celo.
 
-3. The reserve manager contract is the contract that is responsible for managing the reserve.
+### Step 1: Create a New Contract in Remix IDE
 
-Let's take a closer look at how these contracts work together to maintain the stability of the Celo stablecoin
+1. Open Remix IDE and create a new file called "MyToken.sol".
+2. Paste the following code into the file-
 
-The Celo stablecoin system maintains price stability through the stability protocol. The stability protocol works by adjusting the supply of the stablecoin based on demand. If the demand for stablecoins exceeds the supply, the protocol mints more stablecoins. If the demand is lower than the supply, the protocol burns stablecoins to reduce the supply. Here's a detailed example;
+```
+SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-When a user wants to purchase cUSD, they send a request to the stablecoin contract with the amount of cUSD they want to purchase.
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 
-Create the [stablecoin contract](https://www.leewayhertz.com/how-to-create-a-stablecoin/#:~:text=To%20create%20a%20stablecoin%2C%20the,can%20keep%20with%20the%20custodian.) then mints the appropriate amount of cUSD and sends it to the user. When a user wants to redeem cUSD, they send a request to the stablecoin contract with the amount of cUSD they want to redeem. The stablecoin contract then burns the appropriate amount of cUSD and sends the corresponding amount of reserve currency to the user.
+contract MyToken is ERC20 {
+constructor(uint256 initialSupply) ERC20("My Token", "MTK") {
+_mint(msg.sender, initialSupply);
+}
+}
+```
 
-# Creating Stablecoin Contracts on Celo
+This code imports the ERC20 contract from OpenZeppelin and creates a new contract called "MyToken". The constructor function initializes the token with a name of "My Token" and a symbol of "MTK", and mints the initial supply of tokens to the contract deployer.
 
-Creating a stablecoin contract on Celo requires using Solidity programming language and the Remix IDE.
 
-While the solidity programming language is primarily required for creating the stablecoin contracts on Celo, Remix IDE is necessary for [deploying the contract on Celo](https://docs.celo.org/developer/deploy/remix).
+### Step 2: Compile and Deploy the Contract
 
-## Step 1: Import required Celo Contracts
+1. In Remix IDE, select "Solidity" as the compiler and choose version 0.8.0.
+2. Click on the "Compile" button to compile the contract.
+3. Navigate to the "Run" tab and select "Injected Web3" as the environment.
+4. Connect your Celo wallet to Remix IDE by clicking on the "Connect to Web3" button.
+5. In the "Deploy & Run Transactions" section, select the "MyToken" contract.
+6. Specify the initial supply of tokens in the "initialSupply" field.
+7. Click on the "Transact" button to deploy the contract.
 
-Import the necessary Celo contracts into your contract. You will need to import the StableToken contract, which is the contract that implements the stablecoin contract functionality, the Reserve contract, which is the contract that holds the reserves, and the ReserveSpender contract, which is the contract that is used to spend reserves.
+### Step 3: Interact with the Contract on Celo
 
-## Step 2: Specify the Parameter
+1. Copy the contract address from Remix IDE.
+2. Open the Celo wallet and navigate to the "Contracts" tab.
+3. Click on "Add Contract" and paste the contract address in the "Contract Address" field.
+4. Click on "Access".
+5. Now, you can interact with your contract using the Celo wallet.
 
-Defining your stablecoin parameter is of the essence because it helps you attribute quality, symbol, name, and decimal places to your stablecoin. Part of specifying the parameter also means you'd have to define the reserve currency that your stablecoin is pegged to.
+### Testing the Token Contract
 
-## Step 3: Create a Stable Coin Contract
+Now that we have deployed our ERC20 token contract on Celo, let's test it out.
 
-After specifying the parameters for your stable coin, then you can create a stablecoin contract.
+1. Open the Celo wallet and navigate to the "Contracts" tab.
+2. Select the deployed contract and click on "Interact".
+3. In the "Transfer" section, enter the recipient address and the amount of tokens you want to send.
+4. Click on "Write".
+5. Confirm the transaction on your Celo wallet.
+6. The recipient should now have received the specified amount of tokens.
 
-After successfully creating the stablecoin contract, you can create the reserve contract. In the constructor function of your reserve contract, you will need to pass in the stablecoin contract address and the address of the reserve manager contract.
+Congratulations! You have successfully created and deployed an ERC20 token on Celo.
 
-## Step 4: Create a Reserve Manager Contract
+## Conclusion
 
-Finally, you will need to create the reserve manager contract. The reserve manager contract is responsible for managing the reserve and ensuring that reserves fully back it. The reserve manager contract will monitor the demand for your stablecoin and adjust the reserve accordingly.
+In this tutorial, we have provided an overview of the Celo ecosystem and demonstrated how to create and deploy an ERC20 token on Celo using Remix IDE. We hope this tutorial has been useful for new and intermediate Web3 developers looking to explore the Celo platform.
 
-Overall, it's a similar process to [creating your first smart contract on the Celo blockchain](https://docs.celo.org/blog/tutorials/create-your-first-smart-contract-on-celo) because it uses writing codes and deploying the smart contract on the testnet and mainnet Celo blockchain network.
+For more information on Celo, check out the following resources-
 
-# Best Practices for Creating Stablecoin Contracts on Celo
+- Celo official website
+- Celo developer documentation
+- Celo Discord community
+- OpenZeppelin ERC20 documentation for more information on the ERC20 token standard.
 
-Make sure that the reserves fully back your stablecoin. This means that for every USD in circulation, there should be an equivalent amount of reserve currency held in the reserve contract. The reserve manager contract ensures that the reserve is fully backed. Still, it is essential to monitor the reserve to ensure that it remains fully backed at all times.
+Happy coding!
 
-Also, it is essential to properly [test your stablecoin contract](https://docs.celo.org/blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat) before deploying it to the Celo blockchain. You should test all of the functions in your contract to ensure that they work as expected and that your stablecoin is functioning correctly.
+## What's Next?
 
-Third, it is crucial to document your stablecoin contract properly. This includes documenting the parameters for your stablecoin, as well as the functions and events in your contract. Proper documentation makes it easier for other developers to understand your contract and how to use it.
+Here are some resources and links to help you create an ERC20 token on the Celo ecosystem:
 
-Fourth, it is crucial to secure your stablecoin contract properly. This includes implementing access controls to ensure that only authorized users can mint or burn stablecoins, as well as implementing security measures to prevent attacks on your contract.
+1. [Celo Documentation - Token Contract](https://docs.celo.org/celo-codebase/protocol/smart-contracts/token-contracts): This is the official documentation for creating a token contract on Celo. It covers everything you need to know about creating a token, including creating the contract, defining token parameters, and deploying the contract.
 
-# Code Demonstration
+2. [Celo Studio](https://celo.org/developers/studio/): Celo Studio is an integrated development environment (IDE) that makes it easy to create, test, and deploy smart contracts on the Celo platform. It has a user-friendly interface and provides a lot of useful tools and features for developers.
 
-Now that we have covered the best practices for creating stablecoin contracts on Celo let's take a look at a code demonstration.
+3. [Solidity Language Documentation](https://solidity.readthedocs.io/): Solidity is the programming language used to write smart contracts on the Ethereum and Celo platforms. This documentation provides a detailed explanation of the language, its syntax, and its features.
 
-In this code demonstration, we will create a simple stablecoin contract on Celo. We will call our stablecoin "MyStableCoin," and it will be pegged to the Celo dollar (cUSD).
+4. [Remix](https://remix.ethereum.org/): Remix is a web-based IDE for writing and testing smart contracts. It has a lot of features that make it easy to write, debug, and deploy smart contracts on the Celo platform.
 
-## Step 1: Set up the development environment\*\*
+5. [OpenZeppelin](https://openzeppelin.com/contracts/): OpenZeppelin is a library of reusable smart contracts that make it easy to create secure and reliable smart contracts. It includes a set of ERC20 token contracts that you can use as a starting point for your own token.
 
-To create a stablecoin contract on the Celo network, you will need to have the following tools and software installed:
+I hope you find these resources helpful in creating your ERC20 token on the Celo ecosystem.
 
-1. Node.js
+## About the Author
 
-2. Git
+Elijah Sorinola
 
-3. Celo CLI
+Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands. [Let's connect.](https://www.linkedin.com/in/sorinola/)
 
-## Step 2: Create a new Celo project\*\*
+## Reference
 
-Open your terminal and run the following command to create a new Celo project:
-
-````
-
-celo init stablecoin
-
-This will create a new directory called "stablecoin" with the necessary files to start developing your stablecoin contract.
-
-## Step 3: Install the required packages\*\*
-
-Navigate to the "stablecoin" directory and run the following command to install the required packages:
-
-```npm install @celo/contractkit dotenv ```
-
-
-## Step 4: **Create a .env file**
-
-Create a new file called ".env" in the root of the "stablecoin" directory and add the following code:
-
-```CELO_NETWORK = https://forno.celo.org
-PRIVATE_KEY =  <your_private_key> ```
-
-
-Replace "your_private_key" with your private key.
-
-## Step 5: **Create the stablecoin contract**
-
-Create a new file called "StableCoin.sol" in the "contracts" directory of your project and add the following code:
-
-``` pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
-contract StableCoin is ERC20 {
-    constructor() ERC20("Celo Stablecoin", "CUSD") {}
-
-    function mint(address to, uint256 amount) public {
-        _mint(to, amount);
-    }
-
-    function burn(address from, uint256 amount) public {
-        _burn(from, amount);
-    }
-} ```
-
-
-This is a basic implementation of a stablecoin contract that extends the ERC20 standard.
-
-## Step 6: Compile and deploy the contract
-
-Run the following command to compile the contract:
-
-```bash
-npx hardhat compile
-
-
-
-Then, run the following command to deploy the contract:
-
-```bash
-npx hardhat run scripts/deploy.js
-
-
-
-This will deploy the contract to the Celo network and output the contract address.
-
-## Step 7: Interact with the contract
-
-To interact with the contract, open the Celo console by running the following command:
-
-```bash
-npx celocli console
-
-
-
-You can progress by running the following commands to mint and burn stablecoins:
-
-```Javascript
-const contract = new kit.web3.eth.Contract(abi, contractAddress)
-const accounts = await kit.web3.eth.getAccounts()
-const amount = kit.web3.utils.toWei("100", "ether")
-
-await contract.methods.mint(accounts[0], amount).send({ from: accounts[0] })
-await contract.methods.burn(accounts[0], amount).send({ from: accounts[0] })
-///```
-
-
-This will mint 100 CUSD stablecoins to the first account and then burn them.
-
-Congratulations, you have successfully created a stablecoin contract on the Celo network!
-
-````
+- [Celo official website](https://celo.org/)
+- [Celo developer documentation](https://docs.celo.org/)
+- [Remix IDE](https://remix.ethereum.org/)
+- [Solidity documentation](https://docs.soliditylang.org/en/v0.8.19/)
+- [OpenZeppelin ERC20 documentation](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20)
+- [Truffle Suite](https://trufflesuite.com/docs/truffle/overview)
