@@ -30,7 +30,7 @@ To follow along with this tutorial, you need to be familiar with:
 
 ## Requirements
 
- It would help if you had the following installed on your computer to follow along:
+It would help if you had the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -58,7 +58,7 @@ source env/bin/activate
 To install the web3.py, and python-dotenv:
 
 ```bash
-pip install web3 
+pip install web3
 pip install python-dotenv
 ```
 
