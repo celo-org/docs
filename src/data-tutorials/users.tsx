@@ -1621,6 +1621,13 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
+    title: 'Building a Decentralized Betting Platform with Solidity On Celo',
+    description: 'In this comprehensive tutorial, we will walk you through the process of creating a decentralized betting platform using Solidity',
+    preview: require('./showcase/intermediate/building-a-decentralized-betting-platform-with-solidity-on-celo.png'),
+    website: 'blog/tutorials/building-a-decentralized-betting-platform-with-solidity-on-celo',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading',
     description: 'Learn how Celo is utilized in the Gaming Industry for In-Game Assets and P2P Trading',
     preview: require('./showcase/beginner/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading.png'),
