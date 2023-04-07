@@ -2897,6 +2897,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {
+
+    title: 'Building a Simple DeFi Application on the Celo Blockchain Using Python',
+    description: 'In this tutorial, we will build a simple decentralized finance (DeFi) application on the Celo blockchain using Python',
+    preview: require('./showcase/intermediate/sage-building-a-simple-defi-application-on-the-celo-blockchain-using-python.png'),
+    website: 'blog/tutorials/building-a-simple-defi-application-on-the-celo-blockchain-using-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Deploying Smart Contracts on Celo Using Foundry - A Step-by-Step Guide',
     description: 'This comprehensive guide provides a detailed, sequential walkthrough for deploying smart contracts on the Celo blockchain using Foundry.',
     preview: require('./showcase/beginner/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide.png'),
@@ -2909,6 +2917,7 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide.png'),
     website: 'blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
+
   },
   /*
   Pro Tip: add your site in alphabetical order.
