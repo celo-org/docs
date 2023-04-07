@@ -3,128 +3,103 @@ title: Build an NFT Marketplace on Celo using Hardhat
 description: Creating a simple NFT marketplace on the Celo Blockchain using Hardhat to create smart contracts.
 authors:
   - name: ✍️ Joshua Obafemi
-  - title: Technical Writer
-  - url: https://github.com/jorshimayor
-  - image_url: https://github.com/jorshimayor.png
+    title: Technical Writer
+    url: https://github.com/jorshimayor
+    image_url: https://github.com/jorshimayor.png
 tags: [celosage, solidity, celo, intermediate, hardhat]
 hide_table_of_contents: true
 slug: "/tutorials/build-an-nft-marketplace-on-celo-using-hardhat"
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/build-an-nft-marketplace-on-celo-using-hardhat.png)
 
-
-# Introduction
+## Introduction
 
 Non-Fungible Tokens (NFTs) have revolutionized the way we view and own digital assets. They have become an increasingly popular means of buying and selling digital art, collectibles, and other unique items. In this article, we will explore how to build an NFT marketplace on the Celo blockchain using Hardhat, a popular Ethereum development environment. By the end of this article, you should have a good understanding of how to set up an NFT marketplace on Celo and how to deploy it to the blockchain.
 
-
-
-# Prerequisites 
+## Prerequisites
 
 In this tutorial, we're going to build an NFT Marketplace from scratch on the Celo blockchain so no prior knowledge is needed.
 
+## Requirements
 
+We'll need Metamask in this tutorial, install it from [HERE](https://metamask.io/).
 
-# Requirements
+As at the time you're reading this tutorial, you should have the latest NodeJS 12.0.1+ version installed. Install it from [HERE](https://nodejs.org/en)
 
-We'll need Metamask in this tutorial, install it from[ HERE](https://metamask.io/).
+You'll also need an Integrated Development Environment(IDE) like VScode installed on your machine.
 
-As at the time you're reading this tutorial, you should have the latest NodeJS 12.0.1+ version installed. Install it from[ HERE](https://nodejs.org/en)
+On your VScode IDE, install Solidity extension from [HERE](https://marketplace.visualstudio.com/items?itemName=NomicFoundation.hardhat-solidity)
 
-You'll also need an Integrated Development Environment(IDE) like VScode installed on your machine. 
-
-On your VScode IDE, install Solidity extension from[ HERE](https://marketplace.visualstudio.com/items?itemName=NomicFoundation.hardhat-solidity) 
-
-
-
-# Getting Started
+## Getting Started
 
 Building an NFT marketplace on Celo blockchain using Hardhat involves several steps. Here's a step-by-step guide on how to do it:
 
-
-## Step 1: Set up your development environment
+### Step 1: Set up your development environment
 
 To get started, you need to set up your VScode IDE. You'll need Node.js and npm installed on your machine. Once you have those installed, you can install Hardhat on your VScode IDE terminal using npm:
 
-```terminal
+```bash
 npm install --save-dev hardhat
 ```
 
 You also need to install the Celo plugin for Hardhat:
 
-```terminal
+```bash
 npm install @celo/hardhat-plugin
 ```
 
-
-## Step 2: Create a new Hardhat project
+### Step 2: Create a new Hardhat project
 
 Once you have Hardhat installed, you can create a new project by running:
 
-```terminal
+```bash
 npx hardhat
 ```
 
 This will create a new project with some sample contracts and tests.
 
-
-## Step 3: Configure the Celo network
+### Step 3: Configure the Celo network
 
 You need to configure Hardhat to connect to the Celo network. To do this, add the following code to your hardhat.config.js file:
 
 ```javascript
-
 require("@celo/hardhat-plugin");
 
 const { privateKey } = require("./secrets.json");
 
 module.exports = {
-
   networks: {
-
     alfajores: {
-
       url: "https://alfajores-forno.celo-testnet.org",
 
       accounts: [privateKey],
-
     },
 
     mainnet: {
-
       url: "https://forno.celo.org",
 
       accounts: [privateKey],
-
     },
-
   },
 
   solidity: {
-
     version: "0.8.0",
 
     settings: {
-
       optimizer: {
-
         enabled: true,
 
         runs: 200,
-
       },
-
     },
-
   },
-
 };
 ```
 
 This code sets up the two Celo networks that you'll be using (Alfajores and Mainnet) and configures Hardhat to connect to them. You'll also need to create a secrets.json file that contains your private key for signing transactions on the network.
 
-
-## Step 4: Write your NFT contract
+### Step 4: Write your NFT contract
 
 Now you can write your NFT contract. Here's an example:
 
@@ -171,8 +146,7 @@ contract MyNFT is ERC721 {
 
 This contract inherits from the ERC721 contract from OpenZeppelin and adds a mintNFT function that allows you to mint a new NFT with a given token URI.
 
-
-## Step 5: Write your marketplace contract
+### Step 5: Write your marketplace contract
 
 Next, you'll need to write your marketplace contract in a Marketplace.sol file. Here's an example:
 
@@ -255,24 +229,19 @@ contract MyMarketplace is ERC721Holder {
 }
 ```
 
+## Conclusion
 
+In conclusion, building an NFT Marketplace on Celo using Hardhat is an exciting opportunity for developers and entrepreneurs to tap into the growing NFT market. With Celo's fast and low-cost blockchain infrastructure, developers can easily create NFT marketplaces that offer seamless trading experiences to users.
 
-# Conclusion
-
-In conclusion, building an NFT Marketplace on Celo using Hardhat is an exciting opportunity for developers and entrepreneurs to tap into the growing NFT market. With Celo's fast and low-cost blockchain infrastructure, developers can easily create NFT marketplaces that offer seamless trading experiences to users. 
-
-The integration of Hardhat makes the development process more streamlined and efficient, enabling developers to focus on building innovative features for their marketplaces. 
+The integration of Hardhat makes the development process more streamlined and efficient, enabling developers to focus on building innovative features for their marketplaces.
 
 Congratulations on building a marketplace on the Celo blockchain using Hardhat!!!
 
-
-
-# Next Steps
+## Next Steps
 
 Now that you've successfully built your NFT marketplace, you can build more exciting project! Follow our tutorial page for more intriguing projects that can be built on the Celo blockchain using hardhat [CeloSage Tutorials](https://docs.celo.org/tutorials?tags=hardhat).
 
-
-# About the Author
+## About the Author
 
 Joshua Obafemi
 

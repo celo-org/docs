@@ -754,7 +754,7 @@ const Users: User[] = [
   { 
     title: 'Build an NFT Marketplace on Celo using Hardhat',
     description: 'Creating a simple NFT marketplace on the Celo Blockchain using Hardhat to create smart contracts',
-    preview: require('\showcase\intermediate\build-your-own-full-stack-nft-marketplace-on-celo.png'),
+    preview: require('./showcase/intermediate/build-an-nft-marketplace-on-celo-using-hardhat.png'),
     website: '/blog/tutorials/build-an-nft-marketplace-on-celo-using-hardhat',
     tags: ['celosage', 'solidity', 'celo', 'intermediate', 'hardhat', 'javascript'],
   },
