@@ -95,6 +95,7 @@ Now that we have deployed our ERC20 token contract on Celo, let's test it out.
 
 Congratulations! You have successfully created and deployed an ERC20 token on Celo.
 
+
 ## Conclusion
 
 In this tutorial, we have provided an overview of the Celo ecosystem and demonstrated how to create and deploy an ERC20 token on Celo using Remix IDE. We hope this tutorial has been useful for new and intermediate Web3 developers looking to explore the Celo platform.
