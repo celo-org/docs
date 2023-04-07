@@ -12,7 +12,7 @@ slug: "/tutorials/a-deep-dive-into-celo-consensus-mechanism"
 ---
 
 
-
+![header](../../src/data-tutorials/showcase/intermediate/deep-dive-into-celo-mechanism.png)
 # Introduction
 
 Celo blockchain uses a consensus mechanism called Proof of Stake (pos) with a novel BFT-based consensus protocol known as "Proof of Stake with identity" (PoS+). The implementation of this consensus mechanism is open-source and available on GitHub. Here is the link to the [repository](https://github.com/celo-org/celo-monorepo)
