@@ -2837,6 +2837,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-celo-voting-system-with-golang.png'),
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },  
+  {
+    title: 'A Guide to Exploring Celo-Specific Python Library called web3.py',
+    description: 'This article could provide a tutorial on how to use the web3.py library to interact with the celo blockcchain',
+    preview: require('./showcase/beginner/a-guide-to-exploring-celo-specific-python-library-called-web3py.png'),
+    website: 'blog/tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py',
+    tags: ['celosage', 'beginner', 'dapp', 'celo'], 
   },
   {
     title: 'Deploying Celo Applications using Golang',
