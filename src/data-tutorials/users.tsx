@@ -2856,12 +2856,18 @@ const Users: User[] = [
 
   },
   {
+    title: 'Deploying Smart Contracts on Celo Using Foundry - A Step-by-Step Guide',
+    description: 'This comprehensive guide provides a detailed, sequential walkthrough for deploying smart contracts on the Celo blockchain using Foundry.',
+    preview: require('./showcase/beginner/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide.png'),
+    website: 'blog/tutorials/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide',
+    tags: ['celosage', 'beginner', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Building a Solidity Smart Contract for NFT Royalty Fees - A Step-by-Step Guide',
     description: 'Learn to code a self-executing contract on Ethereum blockchain with Solidity language for NFT royalty payments, following our step-by-step guide.',
     preview: require('./showcase/intermediate/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide.png'),
     website: 'blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
-
   },
   /*
   Pro Tip: add your site in alphabetical order.
