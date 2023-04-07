@@ -11,23 +11,19 @@ hide_table_of_contents: true
 slug: "/tutorials/a-deep-dive-into-celo-consensus-mechanism"
 ---
 
-
 ![header](../../src/data-tutorials/showcase/intermediate/deep-dive-into-celo-mechanism.png)
+
 # Introduction
 
 Celo blockchain uses a consensus mechanism called Proof of Stake (pos) with a novel BFT-based consensus protocol known as "Proof of Stake with identity" (PoS+). The implementation of this consensus mechanism is open-source and available on GitHub. Here is the link to the [repository](https://github.com/celo-org/celo-monorepo)
 
 It's important to note that the Celo blockchain is built using the Solidity programming language and runs on the Ethereum Virtual Machine (EVM). Therefore, the consensus mechanism is implemented using Solidity smart contracts.
 
-
-
 # Prerequisites
 
 In this article, we will take a deep dive into Celo's PoS-Id consensus mechanism and explore how it works.
 
 Before you continue, read these articles for bacis understanding on [consensus mechanisms](https://docs.celo.org/blog/tutorials/proof-of-work-vs-proof-of-stake-a-comprehensive-comparison) and [blockchain protocols](https://docs.celo.org/blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols)
-
-
 
 # Getting started
 
@@ -61,20 +57,17 @@ Validators are incentivized to participate in the consensus process and act hone
 
 The PoS-Id consensus algorithm is designed to be fast and scalable, with the ability to handle thousands of transactions per second. The algorithm achieves this by utilizing a mechanism called a "commit/reveal" scheme, where validators reveal their block proposals only after a commit phase, reducing the potential for malicious behavior.
 
-
 ## Celo Consensus Mechanism
 
 In Celo's PoS-based consensus mechanism, validators stake Celo's native token, CELO, in order to participate in the consensus process. Validators are chosen based on their stake size and their reputation within the network. This reputation is based on a combination of factors, including their uptime, their history of successful validation, and their adherence to the network's rules and protocols.
 
 Validators take turns proposing blocks of transactions to add to the blockchain. Once a block is proposed, other validators in the network have a certain amount of time to verify the transactions and validate the block. If the block is validated, it is added to the blockchain, and the validator who proposed the block is rewarded with CELO tokens.
 
-
 ## Celo Unique Features
 
 One of the unique features of Celo's consensus mechanism is the concept of "locked gold". Locked gold is a separate token that is used to provide additional security to the network. Validators can lock their CELO tokens in order to generate locked gold, which they can then use as collateral to guarantee their behavior within the network. If a validator behaves maliciously or violates the network's rules, their locked gold can be confiscated and distributed to other validators as a penalty.
 
 Another key feature of Celo's consensus mechanism is the ability to participate in governance decisions. CELO token holders can vote on proposals for changes to the network's protocols and rules. This allows the network to evolve over time in response to the needs and desires of its users.
-
 
 ## Explaining Celo's relationship with Ethereum and other Blockchains.
 
@@ -95,7 +88,6 @@ Here's a visual representation of the relationship between Ethereum and Celo:
            |         |
            |  Celo   |
            |_________|
-
 
 Celo's compatibility with other EVM chains is also illustrated by this analogy. Each of these chains can be seen as their own branches, connected to the same trunk as Ethereum and Celo but also able to grow in their own unique directions.
 
@@ -123,19 +115,13 @@ Celo's compatibility with other EVM chains is also illustrated by this analogy. 
            |  Celo   |
            |_________|
 
-
-
 # Conclusion
 
 Celo's PoS-Id consensus algorithm is a unique approach to consensus in blockchain technology. By incorporating identity verification as a crucial component of the consensus process, Celo's PoS-Id consensus algorithm provides a high level of security while maintaining decentralization. Validators are incentivized to act honestly, and malicious behavior is penalized.
 
-
-
 # Next Steps
 
 Now that you know how the concensus mechanism of the Celo protocol, you should start building on this blockchain or even be a validator. You can get started on being a Celo developer by taking the [tutorials.](https://docs.celo.org/tutorials?tags=celosage)
-
-
 
 # About the Author
 
