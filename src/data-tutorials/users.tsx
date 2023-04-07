@@ -701,8 +701,8 @@ const Users: User[] = [
     title: 'Creating ERC20 token on celo',
     description: 'Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.',
     preview: require('./showcase/beginner/workshop-introduction-to-solidity-and-remix.png'),
-    website: '/tutorials?tags=beginner',
-    tags: ['beginner', 'video'],
+    website: '/tutorials/Creating-erc20-token-on-Celo',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc20'],
   },
   {
     title: '1. Beginner Tutorials',
