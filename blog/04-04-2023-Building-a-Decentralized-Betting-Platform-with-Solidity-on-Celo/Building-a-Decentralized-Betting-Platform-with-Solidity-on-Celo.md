@@ -15,8 +15,6 @@ slug: /tutorials/building-a-decentralized-betting-platform-with-solidity-on-celo
 
 In this tutorial, we'll create a decentralized betting platform using Solidity. Users can place bets on the outcome of future events, and the contract owner can resolve the bets after the event has occurred. The platform ensures fair distribution of winnings and handles cases where the contract has insufficient balance to pay out all winnings.
 
-[Source code](https://github.com/richiemikke/celo-decentralized-betting-contract)
-
 ## Prerequisites
 
 To follow this tutorial, you will need the following:
@@ -314,3 +312,5 @@ To further expand your knowledge, consider exploring the following resources:
 
 [Solidity documentation](https://solidity.readthedocs.io/)
 [Celo documentation](https://docs.celo.org/)
+
+Source code of the article-> [Source code](https://github.com/richiemikke/celo-decentralized-betting-contract)
