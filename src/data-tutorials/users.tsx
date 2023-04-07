@@ -696,12 +696,20 @@ const Users: User[] = [
     website: '/tutorials?tags=composer',
     tags: ['favorite'],
   },
+
+  {
+    title: 'Creating ERC20 token on celo',
+    description: 'Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.',
+    preview: require('./showcase/beginner/workshop-introduction-to-solidity-and-remix.png'),
+    website: '/tutorials?tags=beginner',
+    tags: ['beginner', 'video'],
+  },
   {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
-    preview: require('./showcase/beginner/beginner-tutorials.png'),
+    preview: require('src/data-tutorials/showcase/celo-sage.png'),
     website: '/tutorials?tags=beginner',
-    tags: ['favorite'],
+    tags: ['celosage'],
   },
   {
     title: '2. Intermediate Tutorials',
