@@ -45,7 +45,7 @@ Validators are required to provide a phone number, and this number is used to ve
 
 The PoS-Id consensus algorithm is designed to provide a high level of security while maintaining decentralization. The identity verification requirement ensures that only trusted validators are chosen to participate in the consensus process. This helps to prevent attacks such as Sybil attacks, where a single user can create multiple identities to gain control of the network.
 
-###How does PoS-Id Consensus Algorithm work?
+### How does PoS-Id Consensus Algorithm work?
 
 The PoS-Id consensus algorithm works by selecting validators to participate in the consensus process based on their stake in the network and their verified identity. Validators are responsible for validating transactions and creating new blocks.
 
