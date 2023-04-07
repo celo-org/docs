@@ -15,6 +15,8 @@ slug: /tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices
 
 Events in Solidity are essential for providing insight into the inner workings of a smart contract. They serve as a communication channel between the smart contract and the outside world. Events are particularly useful for debugging and contract interaction, as they log and emit information about contract state changes and function calls.
 
+Get full source code [here](https://github.com/richiemikke/solidity-event-logging)
+
 ## Prerequisites
 
 To fully follow up with these tutorials, you should have a good understanding of the following technologies.
