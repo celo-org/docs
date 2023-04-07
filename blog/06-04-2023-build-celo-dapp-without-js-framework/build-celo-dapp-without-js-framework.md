@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/build-celo-dapp-without-js-framework
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/no-js-framework.png)
+
 ## Introduction
 
 A quick way to get into Web3 is to learn the JavaScript framework and start interacting with smart contracts to build DApps, DAOs, and other use cases. But getting started in Web2 requires the knowledge of HTML, CSS, and JavaScript. What if we can empower every student who has these three skills to build needed blockchain tools and be able to solve problems in Web3? This will fast-track their interest in the web and motivate them to learn, which is why I am writing this to teach the reader how to use the three basics of web development to build a Celo DApp, Celo is a popular blockchain network that helps developers get started quickly in blockchain and web3 development. In this article, we will explore different ways of making this possible without a JavaScript framework.
