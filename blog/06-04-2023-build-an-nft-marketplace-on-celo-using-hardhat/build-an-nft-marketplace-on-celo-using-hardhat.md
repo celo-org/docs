@@ -43,11 +43,6 @@ To get started, you need to set up your VScode IDE. You'll need Node.js and npm 
 npm install --save-dev hardhat
 ```
 
-You also need to install the Celo plugin for Hardhat:
-
-```bash
-npm install @celo/hardhat-plugin
-```
 
 ### Step 2: Create a new Hardhat project
 
