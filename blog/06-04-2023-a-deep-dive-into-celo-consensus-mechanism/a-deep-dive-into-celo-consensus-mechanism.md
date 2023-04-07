@@ -2,7 +2,7 @@
 title: A Deep Dive into Celo Consensus Mechanism
 description: Creating a simple NFT marketplace on the Celo Blockchain using Hardhat to create smart contracts.
 authors:
-    name: ✍️ Joshua Obafemi
+  - name: ✍️ Joshua Obafemi
     title: Technical Writer
     url: https://github.com/jorshimayor
     image_url: https://github.com/jorshimayor.png
