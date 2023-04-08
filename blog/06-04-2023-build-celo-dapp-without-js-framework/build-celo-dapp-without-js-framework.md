@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celosage, dapp, beginner, celo, cloudflare, github actions]
+tags: [celosage, dapp, celo, javascript]
 hide_table_of_contents: true
 slug: /tutorials/build-celo-dapp-without-js-framework
 ---
@@ -77,7 +77,7 @@ I want to call the above setup stages to get us running. It's time to make the r
 
 - Step 2: We need a contract to interact with, for that we will be creating a solidity contract using the Remix Project IDE. I have a step-by-step guide on how to achieve this in my previous work for celo sage content. Check it out to follow along here.
 
-> Smart contracts are self-executing programs that run on the Celo blockchain. They're written in Solidity programming language. Below is an example of a solidity code.
+Smart contracts are self-executing programs that run on the Celo blockchain. They're written in Solidity programming language. Below is an example of a solidity code.
 
 ```solidity
 // SPDX-License-Identifier: GPL-3.0
@@ -110,7 +110,7 @@ In the above, we are defining a smart contract with the name `HelloWorld`. The c
 ![img2](images/remix-deploy.png)
 
 - Step 4: Deploy the contracts
-  The smart contract has successfully compiled, it is time to deploy it to the Celo network. To do this, you'll need to use the `ContractKit` class from the Celo SDK. Replace everything in the `index.js` with the following.
+  The smart contract has successfully compiled, it is time to deploy it to the Celo network. To do this, you will need to use the `ContractKit` class from the Celo SDK. Replace everything in the `index.js` with the following.
 
 ```js
 const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
@@ -190,7 +190,7 @@ The program adds an event listener to the greeting form that listens for a submi
 
 If the transaction is successful, the program updates the result element with a success message. If there is an error, the program updates the result element with an error message.
 
-> In summary, this program is a simple front-end application that allows users to update the greeting value of a smart contract on the Celo blockchain.
+ In summary, this program is a simple front-end application that allows users to update the greeting value of a smart contract on the Celo blockchain.
 
 - Step 6: Let's create an interface for our DApp
   We will need to include an internal CSS and a script file `index.js` that we can use to style and add functionality to our DApp.
