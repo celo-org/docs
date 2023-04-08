@@ -55,7 +55,7 @@ The above step is the high levels tasks to keep us running on the JavaScript env
 - Step 5: Create a directory with the name of your project
 
 ```bash
-mkdir <project-name>
+mkdir project-name
 ```
 
 For this work, we will name it <no-framework-dapp> to make it more fun
