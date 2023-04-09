@@ -58,7 +58,7 @@ The above step is the high levels tasks to keep us running on the JavaScript env
 mkdir project-name
 ```
 
-For this work, we will name it <no-framework-dapp> to make it more fun
+For this work, we will name it `<no-framework-dapp>` to make it more fun
 
 - Step 6: Navigate into the new folder created and initialise the node project.
 
@@ -161,7 +161,9 @@ greetingForm.addEventListener("submit", async (event) => {
   console.log(newGreeting);
   try {
     const accounts = await web3.eth.getAccounts();
-    const result = await contract.methods.setGreeting(newGreeting).send({ from: accounts[0] });
+    const result = await contract.methods
+      .setGreeting(newGreeting)
+      .send({ from: accounts[0] });
     result.innerText = `Greeting set to ${result}!`;
   } catch (error) {
     console.error(error);
@@ -190,7 +192,7 @@ The program adds an event listener to the greeting form that listens for a submi
 
 If the transaction is successful, the program updates the result element with a success message. If there is an error, the program updates the result element with an error message.
 
- In summary, this program is a simple front-end application that allows users to update the greeting value of a smart contract on the Celo blockchain.
+In summary, this program is a simple front-end application that allows users to update the greeting value of a smart contract on the Celo blockchain.
 
 - Step 6: Let's create an interface for our DApp
   We will need to include an internal CSS and a script file `index.js` that we can use to style and add functionality to our DApp.
