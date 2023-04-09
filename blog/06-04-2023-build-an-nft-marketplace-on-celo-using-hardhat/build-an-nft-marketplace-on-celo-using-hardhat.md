@@ -43,7 +43,6 @@ To get started, you need to set up your VScode IDE. You'll need Node.js and npm 
 npm install --save-dev hardhat
 ```
 
-
 ### Step 2: Create a new Hardhat project
 
 Once you have Hardhat installed, you can create a new project by running:
