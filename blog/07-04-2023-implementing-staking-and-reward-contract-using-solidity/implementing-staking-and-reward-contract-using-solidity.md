@@ -13,12 +13,11 @@ slug: /tutorials/implementing-staking-and-reward-contract-using-solidity
 
 ![header](../../src/data-tutorials/showcase/intermediate/implementing-staking-and-reward-contract-using-solidity.png)
 
-
-## Introduction 
+## Introduction
 
 Staking and reward contracts are popular mechanisms for incentivizing participation in the activities of a blockchain network. Users can use these contracts to lock up their tokens as collateral to earn rewards. This article will look at using the Solidity programming language to create a staking and reward contract.
 
-## Prerequisites 
+## Prerequisites
 
 Before we begin, understanding what staking and reward contract entails, in general, is required to grasp this article fully. Below is a page you can visit before digesting this article:
 
@@ -26,45 +25,45 @@ Before we begin, understanding what staking and reward contract entails, in gene
 
 # Implementing Steps
 
-* **Define Data Structures**
+- **Define Data Structures**
 
 Begin by defining the data structures and variables required for staking, such as the staker's address, staked amount, and staked time.
- 
-* **Staking Function**
 
-Write a token staking function. Users should be able to stake a certain number of tokens using this function. 
+- **Staking Function**
 
-* **Unstaking Function**
+Write a token staking function. Users should be able to stake a certain number of tokens using this function.
+
+- **Unstaking Function**
 
 Write a function that will unstake tokens. After a specified lock-up period, the function should allow users to withdraw their staked tokens.
 
-* **Reward Calculation**
+- **Reward Calculation**
 
-Calculate rewards based on the amount staked, the duration of staking, and the reward rate. 
+Calculate rewards based on the amount staked, the duration of staking, and the reward rate.
 
-* **Claiming Reward**
+- **Claiming Reward**
 
 Create a function that allocates, distributes, and allows stakeholders to claim their rewards..
 
-* **Security Precautions**
+- **Security Precautions**
 
-To ensure the stability and security of the contract, implement security measures such as access control and error handling. 
+To ensure the stability and security of the contract, implement security measures such as access control and error handling.
 
-__Additional notes in the Possible Improvements section.__
- 
-* **Case Studies**
+**Additional notes in the Possible Improvements section.**
+
+- **Case Studies**
 
 Create test cases to validate the contract's implementation and to look for bugs and vulnerabilities.
 
 Depending on your specific requirements and use case, you may need to add or modify some of these steps.
 
-# Data Structures and Variables 
+# Data Structures and Variables
 
 To keep track of total stake, timestamp, and reward earned, we must define the following data structures and variables:
 
-* **Staker Information:** This struct data type is used to store information about each staker, such as their total stake, timestamp, and reward earned.
+- **Staker Information:** This struct data type is used to store information about each staker, such as their total stake, timestamp, and reward earned.
 
-```solidity   
+```solidity
    struct StakerData {
     uint256 totalStaked;
     uint256 lastStakedTimestamp;
@@ -72,21 +71,21 @@ To keep track of total stake, timestamp, and reward earned, we must define the f
 }
 ```
 
-* **Stakers Mapping:** Thi mapping data type is used to store information about all stakers, with the address of the staker serving as the key.
+- **Stakers Mapping:** Thi mapping data type is used to store information about all stakers, with the address of the staker serving as the key.
 
 ```solidity
 mapping(address => StakerData) public stakers;
 ```
 
-* **Reward Rate:** This variable stores the rate stakers will receive rewards.
+- **Reward Rate:** This variable stores the rate stakers will receive rewards.
 
 ```solidity
     uint256 public rewardRate;
 ```
 
-## Functions for Staking and Unstaking Tokens 
+## Functions for Staking and Unstaking Tokens
 
-* **Staking Function:** A function that allows users to stake a certain number of tokens and update the stakers mapping with the new information.
+- **Staking Function:** A function that allows users to stake a certain number of tokens and update the stakers mapping with the new information.
 
 ```solidity
 function stake(uint256 amount) public {
@@ -101,7 +100,7 @@ function stake(uint256 amount) public {
 }
 ```
 
-* **Unstaking Function:** This function allows stakers to unstake their token and update the staking information in the stakers mapping, and transfer any unstaked tokens to the staker's account..
+- **Unstaking Function:** This function allows stakers to unstake their token and update the staking information in the stakers mapping, and transfer any unstaked tokens to the staker's account..
 
 ```solidity
 function unstake(uint256 amount) public {
@@ -118,8 +117,8 @@ function unstake(uint256 amount) public {
 ```
 
 ## Functions for Calculating and Distributing Rewards
- 
-* **Reward Calculation Function:** A function for calculating rewards based on the staked amount, staking duration, and reward rate.
+
+- **Reward Calculation Function:** A function for calculating rewards based on the staked amount, staking duration, and reward rate.
 
 ```solidity
 function claimReward() public {
@@ -134,11 +133,11 @@ function claimReward() public {
 }
 ```
 
-* **Reward Distribution Function:** A function that distributes rewards to stakeholders. This function should be called regularly (e.g., daily/weekly/monthly), and use the reward calculation function to calculate the rewards for each stakeholder.
+- **Reward Distribution Function:** A function that distributes rewards to stakeholders. This function should be called regularly (e.g., daily/weekly/monthly), and use the reward calculation function to calculate the rewards for each stakeholder.
 
 ## Calculating and Distributing Reward
 
-* **Calculating Rewards:** We can use a reward calculation function that takes a staker's address as an argument and returns the rewards earned to calculate each staker. The following formula is used in the calculation:
+- **Calculating Rewards:** We can use a reward calculation function that takes a staker's address as an argument and returns the rewards earned to calculate each staker. The following formula is used in the calculation:
 
 ```
 rewards = stakedAmount * rewardRate * elapsedTime;
@@ -249,7 +248,7 @@ Github Repo: [https://github.com/iamoracle/celo-staking-contract](https://github
 
 ## How to deploy and test
 
-You can find the complete repository on [https://github.com/iamoracle/staking-contract](Github). 
+You can find the complete repository on [https://github.com/iamoracle/staking-contract](Github).
 
 ## Possible Improvements
 
@@ -258,24 +257,23 @@ You need to transfer the reward to the deployed contract. Else, users will not b
 You might be unable to unstake if other users have unstaked, e.g., they have used your funds as a reward while the reward pool is empty.
 No start and stop mechanism.
 
-
 ## Conclusion
 
 Staking and reward contracts can incentivize users to hold and lock up tokens on the blockchain. To ensure the success of your project, it is crucial to thoroughly test and deploy your contract while also considering potential improvements for production use.
 
-## Next Step 
+## Next Step
 
-The next step is to test, deploy, and document your contract. 
+The next step is to test, deploy, and document your contract.
 
 ## References
 
-* [Implementing Staking in Solidity](https://medium.com/hackernoon/implementing-staking-in-solidity-1687302a82cf)
+- [Implementing Staking in Solidity](https://medium.com/hackernoon/implementing-staking-in-solidity-1687302a82cf)
 
-* [How to Implement Staking in Solidity](https://hackernoon.com/implementing-staking-in-solidity-1687302a82cf)
+- [How to Implement Staking in Solidity](https://hackernoon.com/implementing-staking-in-solidity-1687302a82cf)
 
-* [How to Write a Smart Contract for Staking Token](https://betterprogramming.pub/how-to-write-a-smart-contract-for-stake-the-token-a46fdb9221b6)
+- [How to Write a Smart Contract for Staking Token](https://betterprogramming.pub/how-to-write-a-smart-contract-for-stake-the-token-a46fdb9221b6)
 
-* [https://m.youtube.com/watch?v=OJ-IRzCYSXI](Staking Rewards | Solidity 0.8)
+- [https://m.youtube.com/watch?v=OJ-IRzCYSXI](Staking Rewards | Solidity 0.8)
 
 ## Author
 
