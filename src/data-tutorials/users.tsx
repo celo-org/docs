@@ -2940,6 +2940,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
 
   },
+    {
+    title: 'Build Celo DApp without JavaScript Framework',
+    description: 'Learn How to Build Celo DApp without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease.',
+    preview: require('./showcase/intermediate/no-js-framework.png'),
+    website: 'blog/tutorials/build-celo-dapp-without-js-framework',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
