@@ -854,6 +854,13 @@ const Users: User[] = [
     tags: ['intermediate','solidity','smartcontract', 'celosage'],
   },
   {
+    title: 'Building a crowdfunding dapp with solidity and celo composer',
+    description: "In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer.",
+    preview: require('./showcase/intermediate/building-a-crowdfinding-dapp.png'),
+    website: 'blog/tutorials/Building-a-crowdfunding-dapp-with-solidity-and-celo-composer',
+    tags: ['celo', 'celosage', 'crowdfunding', 'intermediate', 'solidity', 'smartcontract'],
+  },
+  {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
@@ -2629,6 +2636,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'Solidity Event Logging And Monitoring On Celo Best Practices',
+    description: 'In this tutorial we will teach you about solidity events. How to use them and the best practices.',
+    preview: require('./showcase/intermediate/solidity-event-logging-and-monitoring-on-celo-best-Practices.png'),
+    website: '/blog/tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices',
+    tags: ['celosage', 'solidity', 'celo'], 
+  },
+  {
     title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
@@ -2946,6 +2960,14 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide.png'),
     website: 'blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
+
+  },
+    {
+    title: 'Build Celo DApp without JavaScript Framework',
+    description: 'Learn How to Build Celo DApp without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease.',
+    preview: require('./showcase/intermediate/no-js-framework.png'),
+    website: 'blog/tutorials/build-celo-dapp-without-js-framework',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
 
   },
   /*
