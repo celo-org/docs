@@ -55,7 +55,7 @@ The terminal would display prompts so you can choose your framework.
 For this tutorial, we would be using react-celo and hardhat.
 After setting up your environment, your terminal would look like this
 
-![cmd](blog/images/cmd l.png)
+![cmd](images/cmdl.png)
 
 You can choose whatever you’d like to call your project in the `project name`.
 
