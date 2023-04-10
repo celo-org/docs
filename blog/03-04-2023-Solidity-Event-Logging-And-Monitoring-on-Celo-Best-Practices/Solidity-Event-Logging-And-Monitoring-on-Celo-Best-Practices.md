@@ -232,8 +232,8 @@ In this tutorial, you learned about Solidity event logging and monitoring on the
 
 To further expand your knowledge, consider exploring the following resources:
 
-[Solidity documentation](https://solidity.readthedocs.io/)
-[Celo documentation](https://docs.celo.org/)
-[Truffle Suite](https://www.trufflesuite.com/)
-[Web3.js](https://web3js.readthedocs.io/)
-[Ethers.js](https://docs.ethers.io/v5/)
+- [Solidity documentation](https://solidity.readthedocs.io/)
+- [Celo documentation](https://docs.celo.org/)
+- [Truffle Suite](https://www.trufflesuite.com/)
+- [Web3.js](https://web3js.readthedocs.io/)
+- [Ethers.js](https://docs.ethers.io/v5/)
