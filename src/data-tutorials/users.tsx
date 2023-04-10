@@ -817,6 +817,13 @@ const Users: User[] = [
     website: 'blog/tutorials/introduction-to-erc-20r-and-reversible-transactions',
     tags: ['beginner','celosage'],
   },
+   {
+    title: 'Build a dapp for buying and selling unique gadgets on celo blockchain',
+    description: 'Gadget project is a dApp for buying/selling unique gadgets represented by NFTs on Celo blockchain, with ERC-20 interface for DeFi. Provides secure/transparent platform for gadget enthusiasts/creators to connect..',
+    preview: require('./showcase/intermediate/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain.png'),
+    website: 'blog/tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain',
+    tags: ['intermediate','celosage', 'celo'],
+  },
   {
     title: 'Blockchain Based Festival Booking System with CUSD Payment Integration',
     description: 'Decentralized event booking platform for organizers to showcase programs and users to book slots with cUSD.',
@@ -845,6 +852,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/understanding-celos-approach-to-layer2.png'),
     website: 'blog/tutorials/understanding-celos-approach-to-layer2-scaling',
     tags: ['intermediate','solidity','smartcontract', 'celosage'],
+  },
+  {
+    title: 'Building a crowdfunding dapp with solidity and celo composer',
+    description: "In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer.",
+    preview: require('./showcase/intermediate/building-a-crowdfinding-dapp.png'),
+    website: 'blog/tutorials/Building-a-crowdfunding-dapp-with-solidity-and-celo-composer',
+    tags: ['celo', 'celosage', 'crowdfunding', 'intermediate', 'solidity', 'smartcontract'],
   },
   {
     title: 'Introducing Celo Sage',
@@ -1755,6 +1769,13 @@ const Users: User[] = [
     tags: ['celo', 'solidity', 'celosage', 'intermediate'],
   },
   {
+    title: 'Design Patterns in Solidity on Celo. Factory, Singleton and Proxy Patterns',
+    description: 'In this tutorial, we will dive deep into three widely-used design patterns in Solidity: Factory, Singleton, and Proxy patterns',
+    preview: require('./showcase/intermediate/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns.png'),
+    website: 'blog/tutorials/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns',
+    tags: ['celo', 'solidity', 'celosage', 'intermediate'],
+  },
+  {
     title: 'Use onchain randomness',
     description: 'Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.',
     preview: require('./showcase/intermediate/use-on-chain-randomness.png'),
@@ -2614,6 +2635,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'Solidity Event Logging And Monitoring On Celo Best Practices',
+    description: 'In this tutorial we will teach you about solidity events. How to use them and the best practices.',
+    preview: require('./showcase/intermediate/solidity-event-logging-and-monitoring-on-celo-best-Practices.png'),
+    website: '/blog/tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices',
+    tags: ['celosage', 'solidity', 'celo'], 
+  },
+  {
     title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
@@ -2810,6 +2838,13 @@ const Users: User[] = [
     website: '/blog/tutorials/using-python-to-interact-with-celos-governance-system',
     tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'],
   },
+   {
+    title: 'Implementing Staking & Reward Contract Using Solidity',
+    description: 'Staking and reward contracts are popular mechanisms for incentivizing participation in the activities of a blockchain network.',
+    preview: require('./showcase/intermediate/implementing-staking-and-reward-contract-using-solidity.png'),
+    website: 'blog/tutorials/implementing-staking-and-reward-contract-using-solidity',
+    tags: ['celosage', 'intermediate', 'smartcontract'],
+  },
   {
     title: 'Using Python to Build a Celo Blockchain Identity System',
     description: 'This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.',
@@ -2924,6 +2959,14 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide.png'),
     website: 'blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
+
+  },
+    {
+    title: 'Build Celo DApp without JavaScript Framework',
+    description: 'Learn How to Build Celo DApp without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease.',
+    preview: require('./showcase/intermediate/no-js-framework.png'),
+    website: 'blog/tutorials/build-celo-dapp-without-js-framework',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
 
   },
   /*
