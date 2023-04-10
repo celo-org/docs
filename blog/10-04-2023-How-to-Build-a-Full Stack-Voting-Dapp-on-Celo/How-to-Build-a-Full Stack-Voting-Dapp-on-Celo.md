@@ -6,11 +6,24 @@ authors:
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
-tags: ['celosage','composer','celo','celowallet','reactcelo','contractkit','dapp','typescript', 'smartcontract', 'solidity', 'nextjs', 'intermediate']
+tags:
+  [
+    "celosage",
+    "composer",
+    "celo",
+    "celowallet",
+    "contractkit",
+    "dapp",
+    "typescript",
+    "smartcontract",
+    "solidity",
+    "nextjs",
+    "intermediate",
+  ]
 hide_table_of_contents: true
 slug: /tutorials/How-to-Build-a-Full-Stack-Voting-Dapp-on-Celo
-
 ---
+
 ![header](../../src/data-tutorials/showcase/intermediate/How-to-Build-a-Full-Stack-Voting-Dapp-on-Celo.png)
 
 ## Introduction​
@@ -28,7 +41,7 @@ To successfully follow along in this tutorial you need basic knowledge of:
 - HTML, CSS, React and Next.js
 - Blockchain, solidity and hardhat
 - Celo Alfajores account
-  
+
 ## Requirements​
 
 To build this DApp we will need the following tools:
@@ -38,13 +51,14 @@ To build this DApp we will need the following tools:
 - [Alfajores Testnet Account](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores&hl=en&gl=US&pli=1) - required to connect to the dApp and make test transactions
 - [Node](https://nodejs.org/en/)- an open-source, cross-platform JavaScript runtime environment
 - [Celo Composer](https://github.com/celo-org/celo-composer)- starter project with all code needed to build, deploy, and upgrade a dapps on Celo.
-- [Celo Wallet Extension](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) / [Metamask](https://metamask.io/) -  For interacting with the Celo blockchain
-  
+- [Celo Wallet Extension](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) / [Metamask](https://metamask.io/) - For interacting with the Celo blockchain
+
 ## Let’s Get Started
 
 In this tutorial, we will create a smart contract that can be used to conduct an election. The contract will keep track of the candidates, voters, their votes, and their respective weights. This smart contract can be useful for small-scale elections or in situations where transparency and security are of utmost importance. The code is written in Solidity language and uses the OpenZeppelin Counter library.
 
 The following features will be implemented:
+
 - The Chairperson can register candidates and add eligible voters.
 - Each registered voter has a weight of one.
 - The Chairperson can start and stop the election.
@@ -52,7 +66,7 @@ The following features will be implemented:
 - The votes are stored securely and cannot be modified.
 - The Chairperson can view the results of the election.
 
-We will also be building the frontend for the Dapp. To do this we will be using [Celo Composer](https://github.com/celo-org/celo-composer). 
+We will also be building the frontend for the Dapp. To do this we will be using [Celo Composer](https://github.com/celo-org/celo-composer).
 
 celo-composer is a starter project with all code needed to build, deploy, and upgrade a dapps on Celo. We will be building both the smart contract and frontend using Celo Composer.
 
@@ -60,7 +74,7 @@ celo-composer is a starter project with all code needed to build, deploy, and up
 
 First, let's set up our project. Create a new directory and run the following commands and follow the steps
 
- `npx @celo/celo-composer@latest create`
+`npx @celo/celo-composer@latest create`
 
 Select React, Tailwind css and React-Celo option and then enter your project name. For detail on the steps checkout the Celo Composer github readme page.
 
@@ -71,14 +85,16 @@ Now open your newly created project. You will see a packages folder inside the p
 For security reasons in order not to expose your private keys to the public create a new file named `.env` in the root of the hardhat folder add this line of code:
 
 `PRIVATE KEY = <YOUR PRIVATE KEY>`
-###  Set up a Celo wallet
+
+### Set up a Celo wallet
+
 To get started with building our full-stack voting dapp on Celo, we need to set up a Celo wallet. You can use the Celo Wallet app, which is available on both iOS and Android devices, or you can use a browser extension such as Metamask or Celo Wallet Extension. Once you have set up your account visit Celo testnet [faucet](https://faucet.celo.org/) for test tokens. You will need to fund your account to deploy the contract and other smart contract interactions.
 
 ### Step 2: Write the Smart Contract
 
 Now, let's write the smart contract. The smart contract is written using solidity. Create a new file named Election.sol in the contracts directory of the hardhat folder and add the following code:
 
-```js
+```solidity
 // SPDX-License-Identifier:GPL-3.0
 
 pragma solidity >=0.7.0 < 0.9.0;
@@ -275,8 +291,9 @@ contract Election {
        return (winnerAddress, voteCount);
    }
 
-} 
+}
 ```
+
 Here is a detailed breakdown of what the above smart contract code does;
 
 The first line indicates the license under which the code is distributed.
@@ -296,7 +313,7 @@ The `Counters` library is used to create a counter to generate unique patient ID
 
 We have defined the Election contract and set the using Counters for Counters.Counter to keep track of the candidate and voter IDs.
 
-```js
+```solidity
 using Counters for Counters.Counter;
 Counters.Counter public candidateId;
 Counters.Counter public votersId;
@@ -304,7 +321,7 @@ Counters.Counter public votersId;
 
 The candidate and voter data will be stored in a struct. We have defined the Candidate and Voter
 
-```js
+```solidity
 // Candidate Data
     struct Candidate {
        uint256 canditateId;
@@ -314,7 +331,7 @@ The candidate and voter data will be stored in a struct. We have defined the Can
     }
 ```
 
-```js 
+```solidity
 // Voters Data
     struct Voter {
         uint256 voterId;
@@ -325,11 +342,13 @@ The candidate and voter data will be stored in a struct. We have defined the Can
         string voterName;
     }
 ```
+
 The Election contract contains the following functions:
 
 **onlyOwner**
 This modifier function requires the function caller to be the chairperson of the contract, otherwise the function will revert with an error message.
-```js
+
+```solidity
  modifier onlyOwner {
        require(msg.sender == chairperson, "You are not the chairperson");
        _;
@@ -337,8 +356,9 @@ This modifier function requires the function caller to be the chairperson of the
 ```
 
 **votingStatus**
- This modifier function checks whether the current time is within the voting period, between votingStartTime and votingEndTime. If the current time is not within this period, the function will revert with an error message.
-```js
+This modifier function checks whether the current time is within the voting period, between votingStartTime and votingEndTime. If the current time is not within this period, the function will revert with an error message.
+
+```solidity
 modifier votingStatus{
        require(block.timestamp >= votingStartTime, "Voting Ongoing");
        require(block.timestamp <= votingEndTime, "Voting has ended");
@@ -348,20 +368,18 @@ modifier votingStatus{
 
 **constructor()**
 The constructor function initializes the chairperson variable to the address of the account that deployed the contract and sets the votingEndTime variable to two hours after the votingStartTime variable, which is set to the current block timestamp.
-```js
+
+```solidity
  constructor() {
        chairperson =  msg.sender;
        votingEndTime = votingStartTime + 2 hours;
    }
 ```
 
-
-
-
-
 **LogCandidate**
 This event is emitted whenever a new candidate is added to the candidates mapping. It includes the candidate's ID, name, address, and vote count.
-```js
+
+```solidity
  event LogCandidate(
        uint256 canditateId,
        string name,
@@ -371,8 +389,9 @@ This event is emitted whenever a new candidate is added to the candidates mappin
 ```
 
 **LogVoter**
- This event is emitted whenever a voter casts their vote. It includes the boolean value voted indicating whether the voter has already voted, the voter's weight, their vote choice, and their address.
-```js
+This event is emitted whenever a voter casts their vote. It includes the boolean value voted indicating whether the voter has already voted, the voter's weight, their vote choice, and their address.
+
+```solidity
    event LogVoter (
        bool voted,
        uint256 weight,
@@ -382,9 +401,9 @@ This event is emitted whenever a new candidate is added to the candidates mappin
 ```
 
 **addCandidate**
- This function adds a new candidate to the candidates mapping. It takes a name parameter as input, and creates a new Candidate struct with the candidate's ID, name, address, and initial vote count set to zero. The function emits a LogCandidate event with the new candidate's information.
+This function adds a new candidate to the candidates mapping. It takes a name parameter as input, and creates a new Candidate struct with the candidate's ID, name, address, and initial vote count set to zero. The function emits a LogCandidate event with the new candidate's information.
 
-```js
+```solidity
 function addCandidate(string memory _name, address _candidateAddress) public  onlyOwner votingStatus {
        require(candidates[_candidateAddress].candidateAddress == address(0), "candidate already registered");
        require(_candidateAddress != chairperson, "Chairperson cannot be a candidate");
@@ -403,8 +422,9 @@ function addCandidate(string memory _name, address _candidateAddress) public  on
 ```
 
 **vote**
- This function allows a voter to cast their vote for a candidate. It takes a candidateAddress parameter as input, which is the address of the candidate the voter is voting for. The function checks that the voter has not already voted, that the current time is within the voting period, and that the specified candidate exists. If these conditions are met, the function increases the candidate's vote count by the voter's weight (which is 1 by default), sets the voter's voted flag to true, and emits a LogVoter event with the voter's information.
-```js
+This function allows a voter to cast their vote for a candidate. It takes a candidateAddress parameter as input, which is the address of the candidate the voter is voting for. The function checks that the voter has not already voted, that the current time is within the voting period, and that the specified candidate exists. If these conditions are met, the function increases the candidate's vote count by the voter's weight (which is 1 by default), sets the voter's voted flag to true, and emits a LogVoter event with the voter's information.
+
+```solidity
    function vote(address _candidateAddress, uint256 _candidate_id) public votingStatus {
        Voter storage voter = voters[msg.sender];
        require(!voter.voted, "You have already voted");
@@ -421,9 +441,11 @@ function addCandidate(string memory _name, address _candidateAddress) public  on
    }
 
 ```
+
 **getWinner**
 This function returns the address and vote count of the candidate with the most votes.
-```js
+
+```solidity
    // Get winner address and voterCount
    function getWinner() public onlyOwner view returns (address _winningCandidate, uint256 _voteCount ) {
        require(votingEndTime < block.timestamp, "Please wait for voting to end to see the result");
@@ -442,26 +464,28 @@ This function returns the address and vote count of the candidate with the most 
 ```
 
 **getVoterList**
- This function returns an array of registered voters.
+This function returns an array of registered voters.
 
-```js
+```solidity
 function getVoterList() public view returns (address [] memory) {
        return votersAddresses;
    }
 
 **getVoterLength**
 This function returns the number of registered voters
+```
 
-```js
+```solidity
  function getVoterLength() public view returns (uint256) {
        return votersAddresses.length;
    }
 
 ```
-**getCandidateLength**
- This function returns the number of candidates who have registered.
 
-```js
+**getCandidateLength**
+This function returns the number of candidates who have registered.
+
+```solidity
 function getCandidateLength() public view returns (uint256){
        return candidateAddresses.length;
    }
@@ -469,7 +493,8 @@ function getCandidateLength() public view returns (uint256){
 
 **getVoterData**
 A function that returns the details of a specific voter, given their address.
-```js
+
+```solidity
    function getVoterData(address _voterAddress) public view returns (uint256,bool,uint256,uint256,address,string memory) {
        return(
            voters[_voterAddress].voterId,
@@ -483,9 +508,9 @@ A function that returns the details of a specific voter, given their address.
 ```
 
 **getCandidateData**
- A function that returns the details of a specific candidate, given their address.
+A function that returns the details of a specific candidate, given their address.
 
-```js
+```solidity
    function getCandidateData(address _candidateAddress) public view returns(uint256, string memory, address, uint256){
        return(
            candidates[_candidateAddress].canditateId,
@@ -496,20 +521,20 @@ A function that returns the details of a specific voter, given their address.
    }
 
 ```
+
 **getCandidates**
 This function returns an array of addresses of all registered candidates.
 
-```js
+```solidity
 function getCandidates() public view returns (address[] memory){
        return candidateAddresses;
    }
 ```
 
-
-**giveVoterRight** 
+**giveVoterRight**
 This function registers a voter which gives them the right to a single vote weight.
 
-```js
+```solidity
 function giveVoterRight(address _voterAddress) public onlyOwner votingStatus{
        votersId.increment();
        uint256 id = votersId.current();
@@ -522,10 +547,11 @@ function giveVoterRight(address _voterAddress) public onlyOwner votingStatus{
        votersAddresses.push(_voterAddress);
    }
 ```
+
 **getVotedVoters**
 This function returns the list of registered voters that have cast their vote.
 
-```js
+```solidity
 function getVotedVoters() public view returns (address [] memory) {
        return votedVoters;
    }
@@ -534,7 +560,7 @@ function getVotedVoters() public view returns (address [] memory) {
 **getVotingEndTime**
 This function function returns the voting end time.
 
-```js
+```solidity
 function getVotingEndTime() public view returns (uint256 _endTime) {
        return votingEndTime;
    }
@@ -543,7 +569,7 @@ function getVotingEndTime() public view returns (uint256 _endTime) {
 **updateVotingStartTime**
 This function takes in an argument that allows the owner to update the voting start time.
 
-```js
+```solidity
 function updateVotingStartTime(uint256 _startime)
        public
        onlyOwner
@@ -554,9 +580,9 @@ function updateVotingStartTime(uint256 _startime)
 ```
 
 **extendVotingEndTime**
-This function enables the chairperson  to extend the voting period. By setting the votingEndTime to a new value.
+This function enables the chairperson to extend the voting period. By setting the votingEndTime to a new value.
 
-```js
+```solidity
    function extendVotingEndTime(uint256 _endTime)
        public
        onlyOwner
@@ -567,6 +593,7 @@ This function enables the chairperson  to extend the voting period. By setting t
 ```
 
 ### Step 3: Deploy the Contract
+
 Inside the hardhat directory navigate to the `scripts/deploy.tsx` and replace the code with this 👇
 
 ```js
@@ -578,34 +605,33 @@ Inside the hardhat directory navigate to the `scripts/deploy.tsx` and replace th
 const hre = require("hardhat");
 
 async function main() {
- // Hardhat always runs the compile task when running scripts with its command
- // line interface.
- //
- // If this script is run directly using `node` you may want to call compile
- // manually to make sure everything is compiled
- // await hre.run('compile');
+  // Hardhat always runs the compile task when running scripts with its command
+  // line interface.
+  //
+  // If this script is run directly using `node` you may want to call compile
+  // manually to make sure everything is compiled
+  // await hre.run('compile');
 
- // We get the contract to deploy
- const Election = await hre.ethers.getContractFactory("Election");
- const election = await Election.deploy();
+  // We get the contract to deploy
+  const Election = await hre.ethers.getContractFactory("Election");
+  const election = await Election.deploy();
 
- // await coffee.deployed();
+  // await coffee.deployed();
 
- // console.log("Coffee deployed to:", coffee.address);
+  // console.log("Coffee deployed to:", coffee.address);
 
- const contractAddress = await (await election.deployed()).address;
- console.log(`Contract was deployed to ${contractAddress}`)
+  const contractAddress = await (await election.deployed()).address;
+  console.log(`Contract was deployed to ${contractAddress}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
- .then(() => process.exit(0))
- .catch((error) => {
-   console.error(error);
-   process.exit(1);
- });
-
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 To deploy the contract still on the hardhat directory enter the below command;
@@ -615,15 +641,12 @@ Once successfully deployed it will return the contract address and a generated A
 
 You will see the generated json ABI code in the `artifacts/contracts/` directory.
 
-
 ## Step 4: Frontend interaction
+
 To interact with the frontend navigate to the `react-app` directory and run this command to start the development server
-`npm run dev` will start the localhost server at port 3000. 
+`npm run dev` will start the localhost server at port 3000.
 
-Celo composer has done the work of setting up a next.js app for us. Currently the next.js app comes with three components: the header, footer and layout and also connection to Celo wallet has also been done. All you need to do is to go to the _app.tsx file and make modifications to the CeloProvider based on what you need. In this tutorial we will be using it as it is. We are going to make a little modification to the header.tsx file so that we can display the wallet address of the connected user. Your header.tsx file should look like this. 👇
-
-
-
+Celo composer has done the work of setting up a next.js app for us. Currently the next.js app comes with three components: the header, footer and layout and also connection to Celo wallet has also been done. All you need to do is to go to the \_app.tsx file and make modifications to the CeloProvider based on what you need. In this tutorial we will be using it as it is. We are going to make a little modification to the header.tsx file so that we can display the wallet address of the connected user. Your header.tsx file should look like this. 👇
 
 ```js
 import { Disclosure } from "@headlessui/react";
@@ -679,14 +702,14 @@ export default function Header() {
                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
                    >
                      Home
-                   </Link>                   
+                   </Link>
                  </div>
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                    <Link href="/voters"
                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
                    >
                      Voters
-                   </Link>                   
+                   </Link>
                  </div>
                </div>
                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -731,187 +754,220 @@ export default function Header() {
 
 ```
 
-
-Inside the react-app directory, create an  `interact.tsx`  file and copy the below code. This code handles all calls to the contract. Each of these contract calls will be used in our component where appropriate. Your `interact.tsx` file should look like this. 👇
+Inside the react-app directory, create an `interact.tsx` file and copy the below code. This code handles all calls to the contract. Each of these contract calls will be used in our component where appropriate. Your `interact.tsx` file should look like this. 👇
 
 **interact.tsx**
 
 ```js
-import contractABI from "./Election.json"
+import contractABI from "./Election.json";
 
 const contractAddress = "Your contract address here";
 
 export function initContract(kit: any) {
- return new kit.connection.web3.eth.Contract(contractABI.abi, contractAddress)
+  return new kit.connection.web3.eth.Contract(contractABI.abi, contractAddress);
 }
 
-
-export const addCandidate = async (address: string | null | undefined,
- kit: any, name: string, candidateAddress: string) => {
- try {
-   const txHash = await initContract(kit).methods.addCandidate(name, candidateAddress).send({
-   from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
+export const addCandidate = async (
+  address: string | null | undefined,
+  kit: any,
+  name: string,
+  candidateAddress: string
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.addCandidate(name, candidateAddress)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getCandidates = async (kit: any) => {
- try {
-   const candidates = await initContract(kit).methods.getCandidates().call()
-   console.log(candidates)
-   return candidates;
- } catch (e) {
-   console.log(e)
- }
-}
+  try {
+    const candidates = await initContract(kit).methods.getCandidates().call();
+    console.log(candidates);
+    return candidates;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getCandidateLength = async (kit: any) => {
- try {
-   const candidates = await initContract(kit).methods.getCandidateLength().call()
-   console.log(candidates)
-   return candidates;
- } catch (e) {
-   console.log(e)
- }
-}
+  try {
+    const candidates = await initContract(kit)
+      .methods.getCandidateLength()
+      .call();
+    console.log(candidates);
+    return candidates;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const getCandidateData = async (kit: any, candidateAddress : string) => {
- try {
-   const candidate = await initContract(kit).methods.getCandidateLength(candidateAddress).call()
-   console.log(candidate)
-   return candidate;
- } catch (e) {
-   console.log(e)
- }
-}
+export const getCandidateData = async (kit: any, candidateAddress: string) => {
+  try {
+    const candidate = await initContract(kit)
+      .methods.getCandidateLength(candidateAddress)
+      .call();
+    console.log(candidate);
+    return candidate;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const giveVoterRight = async (address: string | null | undefined, votersAddress: string | null | undefined,
- kit: any) => {
- try {
-   const txHash = await initContract(kit).methods.giveVoterRight(votersAddress).send({
-   from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
+export const giveVoterRight = async (
+  address: string | null | undefined,
+  votersAddress: string | null | undefined,
+  kit: any
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.giveVoterRight(votersAddress)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const vote = async (address: string | null | undefined,
- candidateAddress: string | null | undefined, candidateId: number,
- kit: any) => {
- try {
-   const txHash = await initContract(kit).methods.vote(candidateAddress, candidateId).send({
-   from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
+export const vote = async (
+  address: string | null | undefined,
+  candidateAddress: string | null | undefined,
+  candidateId: number,
+  kit: any
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.vote(candidateAddress, candidateId)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const getVotersLength = async (kit: any, candidateAddress : string) => {
- try {
-   const voters = await initContract(kit).methods.getVoterLength(candidateAddress).call()
-   console.log(voters)
-   return voters;
- } catch (e) {
-   console.log(e)
- }
-}
+export const getVotersLength = async (kit: any, candidateAddress: string) => {
+  try {
+    const voters = await initContract(kit)
+      .methods.getVoterLength(candidateAddress)
+      .call();
+    console.log(voters);
+    return voters;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const getVoterData = async (kit: any, voterAddress : string) => {
- try {
-   const voter = await initContract(kit).methods.getVoterData(voterAddress).call()
-   console.log(voter)
-   return voter;
- } catch (e) {
-   console.log(e)
- }
-}
+export const getVoterData = async (kit: any, voterAddress: string) => {
+  try {
+    const voter = await initContract(kit)
+      .methods.getVoterData(voterAddress)
+      .call();
+    console.log(voter);
+    return voter;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getVotedVoters = async (kit: any) => {
- try {
-   const votedVoters = await initContract(kit).methods.getVotedVoters().call()
-   console.log(votedVoters)
-   return votedVoters;
- } catch (e) {
-   console.log(e)
- }
-}
+  try {
+    const votedVoters = await initContract(kit).methods.getVotedVoters().call();
+    console.log(votedVoters);
+    return votedVoters;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getVoterList = async (kit: any) => {
- try {
-   const voterList = await initContract(kit).methods.getVoterList().call()
-   console.log(voterList)
-   return voterList;
- } catch (e) {
-   console.log(e)
- }
-}
+  try {
+    const voterList = await initContract(kit).methods.getVoterList().call();
+    console.log(voterList);
+    return voterList;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getVotingEndTime = async (kit: any) => {
- try {
-   const endtime = await initContract(kit).methods.getVotingEndTime().call()
-   console.log(endtime)
-   return endtime;
- } catch (e) {
-   console.log(e)
- }
-}
+  try {
+    const endtime = await initContract(kit).methods.getVotingEndTime().call();
+    console.log(endtime);
+    return endtime;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const updateStartTime = async (address: string | null | undefined, startTime: number, kit: any) => {
- try {
-   const txHash = await donationContract(kit).methods.updateVotingStartTime(startTime).send({
-   from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
+export const updateStartTime = async (
+  address: string | null | undefined,
+  startTime: number,
+  kit: any
+) => {
+  try {
+    const txHash = await donationContract(kit)
+      .methods.updateVotingStartTime(startTime)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-export const updateEndTime = async (address: string | null | undefined, endTime: string, kit: any) => {
- try {
-   const txHash = await initContract(kit).methods.extendVotingEndTime(endTime).send({
-   from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
+export const updateEndTime = async (
+  address: string | null | undefined,
+  endTime: string,
+  kit: any
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.extendVotingEndTime(endTime)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const getWinner = async (kit: any) => {
- try {
-   const winner = await initContract(kit).methods.getWinner().call()
-   console.log(winner)
-   return winner;
- } catch (e) {
-   console.log(e)
- }
-}
-
+  try {
+    const winner = await initContract(kit).methods.getWinner().call();
+    console.log(winner);
+    return winner;
+  } catch (e) {
+    console.log(e);
+  }
+};
 ```
-The `import contractABI from "./Election.json”` This imports the ABI generated when we deployed the contract. Copy the generated JSON and create a Election.json file in the root of your react-ap directory.
 
+The `import contractABI from "./Election.json”` This imports the ABI generated when we deployed the contract. Copy the generated JSON and create a Election.json file in the root of your react-ap directory.
 
 ```js
 export function initContract(kit: any) {
- return new kit.connection.web3.eth.Contract(contractABI.abi, contractAddress)
+  return new kit.connection.web3.eth.Contract(contractABI.abi, contractAddress);
 }
 ```
-This creates an instance of the contract. Which we will use to make calls to the functions in the contract.
 
+This creates an instance of the contract. Which we will use to make calls to the functions in the contract.
 
 **TableList.tsx**
 This displays the list of registered voters and those that have voted.
 
 The UI should look like this 👇
-**Fig 4-1** List Component 
+**Fig 4-1** List Component
 
 ![voters page](./images/landing-page.png)
 
@@ -955,6 +1011,7 @@ export default function TableList(param: Iparam) : JSX.Element {
 ```
 
 **index.tsx**
+
 ```js
 import React, { useState, useEffect, useRef  } from 'react'
 import {
@@ -996,7 +1053,7 @@ export default function Home() {
    setUpdate(e.currentTarget.value)
    console.log(e.currentTarget.value)
  }
- 
+
  const handleEndtimeUpdate = async () => {
    await updateEndTime(address, update, kit)
    setUpdate("")
@@ -1078,19 +1135,19 @@ export default function Home() {
 
            <div className='mt-4'>
              <h1 className='text-2xl mt-4 text-blue-500'>Presidential Candidates</h1>
-               {!candidates ? <div></div> : candidates.map((item, index) =>  <CandidateList action={() => handleCandidate(index + 1, item)} key={index} candidateAddress={item} id={index + 1} /> )}         
+               {!candidates ? <div></div> : candidates.map((item, index) =>  <CandidateList action={() => handleCandidate(index + 1, item)} key={index} candidateAddress={item} id={index + 1} /> )}
                <button className="bg-yellow-300 rounded-md p-4 mt-4 w-2/4" onClick={() => vote(address, candidateAd, candidateId, kit)}>Vote</button>
            </div>
-        
+
            <div className=" text-xl mt-4">
              <h1 className='text-2xl text-blue-500 mt-4'>Voting has Ended</h1>
              <h1>{`Winner: ${!winner ? '' :winner[0]}`}</h1>
              <h1>{`Number of winning vote: ${!winner ? '' : winner[1] }`}</h1>
          </div>
-       </div>}     
+       </div>}
    </div>
    }
-   </div>  
+   </div>
  )
 }
 
@@ -1099,9 +1156,9 @@ export default function Home() {
 The above code gives us this UI. This displays input field to register voters, update input to extend the voting time,
 Input field to give voters right to vote, it also displays the list of registered candidates and the winner when the vote has ended.
 
-
 **CandidateList.tsx**
 This component is used for displaying the candidate on the index or home page.
+
 ```js
 import React from 'react'
 
@@ -1140,6 +1197,7 @@ This Page displays the list of voters both registered and those that have voted.
 ![voters page](./images/voters-page.png)
 
 Here is the code 👇
+
 ```js
 import React, {useState, useEffect} from 'react'
 import { useCelo } from '@celo/react-celo';
@@ -1184,7 +1242,7 @@ export default function Voters(): JSX.Element {
                        <td className="whitespace-nowrap px-6 py-4 font-medium">{index + 1}</td>
                      <td className="whitespace-nowrap px-6 py-4">{item}</td>
                    </tr>
-                   )}           
+                   )}
                  </tbody>
                </table>
              </div>
@@ -1210,7 +1268,7 @@ export default function Voters(): JSX.Element {
                        <td className="whitespace-nowrap px-6 py-4 font-medium">{index + 1}</td>
                      <td className="whitespace-nowrap px-6 py-4">{item}</td>
                    </tr>
-                   )}           
+                   )}
                  </tbody>
                </table>
              </div>
@@ -1236,6 +1294,3 @@ Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Af
 ## References​
 
 - https://github.com/celo-org/celo-composer
-
-
-

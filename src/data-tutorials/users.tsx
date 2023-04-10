@@ -1051,7 +1051,7 @@ const Users: User[] = [
     description: 'In this tutorial, we will explore how to build a full-stack voting dapp on Celo using Celo Composer and Hardhat.',
     preview: require('./showcase/intermediate/How-to-Build-a-Full-Stack-Voting-Dapp-on-Celo.png'),
     website: '/blog/tutorials/How-to-Build-a-Full-Stack-Voting-Dapp-on-Celo',
-    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask', 'celowallet','reactcelo','contractkit','dapp','typescript', 'smartcontract', 'solidity', 'nextjs'],
+    tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask', 'celowallet','contractkit','dapp','typescript', 'smartcontract', 'solidity', 'nextjs'],
   },
   {
     title: 'Build Your Own Full stack Token Airdrop dApp on Celo Blockchain',
