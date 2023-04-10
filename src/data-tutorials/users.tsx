@@ -854,6 +854,13 @@ const Users: User[] = [
     tags: ['intermediate','solidity','smartcontract', 'celosage'],
   },
   {
+    title: 'Building a crowdfunding dapp with solidity and celo composer',
+    description: "In this article, we'll be talking about how to create a crowdfunding Dapp on the Celo blockchain using Solidity and Celo-composer.",
+    preview: require('./showcase/intermediate/building-a-crowdfinding-dapp.png'),
+    website: 'blog/tutorials/Building-a-crowdfunding-dapp-with-solidity-and-celo-composer',
+    tags: ['celo', 'celosage', 'crowdfunding', 'intermediate', 'solidity', 'smartcontract'],
+  },
+  {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
