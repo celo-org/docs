@@ -1,11 +1,11 @@
 ---
-title: Creating ERC20 token on Celo - An Overview of the Celo Ecosystem
-description: Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.
+title: Creating ERC20 token on Celo An Overview of the Celo Ecosystem
+description: Learn how to create an ERC20 token on the Celo blockchain using Remix IDE.
 authors:
   - name: Elijah Sorinola
     title: Content Writer, Celo Sage
     image_url: https://avatars.githubusercontent.com/u/86154565?v=4
-tags: ["intermediate", "solidity", "celosage", "erc20"]
+tags: ["intermediate", "solidity", "celosage"]
 hide_table_of_contents: false
 slug: /tutorials/creating-erc20-token-on-Celo
 ---
