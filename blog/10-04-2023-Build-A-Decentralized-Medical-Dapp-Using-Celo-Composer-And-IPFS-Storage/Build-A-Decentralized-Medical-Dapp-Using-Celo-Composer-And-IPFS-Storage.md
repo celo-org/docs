@@ -1373,8 +1373,3 @@ Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Af
 ## References​
 - https://github.com/celo-org/celo-composer
 - https://docs.celo.org/pt/blog/tutorials/build-a-full-stack-coffee-dapp-with-celo-composer-and-solidity
-
-
-
-
-
