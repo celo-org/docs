@@ -1019,6 +1019,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'Build A Decentralized Medical Dapp Using Celo Composer And IPFS Storage',
+    description: 'In this tutorial, we will build a Dapp that allows clinical admin to create and manage the medical records of patients. ',
+    preview: require('./showcase/intermediate/Build-A-Decentralized-Medical-Dapp-Using-Celo-Composer-And-IPFS-Storage.png'),
+    website: '/blog/tutorials/Build-A-Decentralized-Medical-Dapp-Using-Celo-Composer-And-IPFS-Storage',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate', 'composer', 'reactcelo','contractkit', 'dapp', 'typescript'],
+  },
+  {
     title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
     description: 'This tutorial will guide you through the step-by-step process of setting up Hardhat, creating a smart contract and automating the verification process on Celoscan on every deployment.',
     preview: require('./showcase/intermediate/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment.png'),
