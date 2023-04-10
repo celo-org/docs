@@ -120,7 +120,6 @@ Next, we need to fund our newly created wallet which can done using the celo alf
 
 You can now fund your wallet and deploy your contract using the celo plugin in remix.
 
-````solidity
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -140,7 +139,7 @@ contract MyContract {
         // Perform an action that requires the gas price from the settings contract
     }
 }
-````
+```
 
 The `MyContract` contract takes the `Settings` contract as a parameter in its constructor, ensuring that only one instance of the `Settings` contract is used throughout the system. The `performAction` function retrieves the gas price from the `Settings` contract, demonstrating how the Singleton pattern enables shared access to system-wide resources.
 
