@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smart contract']
+tags: ['solidity', 'celosage', 'celo', 'smartcontract']
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
 ---
@@ -220,7 +220,7 @@ In our case, it will be `0x5E52dEc931FFb32f609681B8438A51c675cc232d`. Then click
 
 ![execute1](https://user-images.githubusercontent.com/105144630/222906120-672e9534-e75e-4b17-8890-3343102e5349.jpg)
 
-Under the new `Deployed Contracts tab, you can copy the deployed contract's address. Hold on while we address this later.
+Under the new Deployed Contracts tab, you can copy the deployed contract's address. Hold on while we address this later.
 
 In the meantime, we need to add USDC to our Flash Loan contract. This is because Flash Loans need funds in the contract to execute successfully. 
 
