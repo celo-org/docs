@@ -2,14 +2,14 @@
 title: Creating ERC20 token on Celo - An Overview of the Celo Ecosystem
 description: Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.
 authors:
-
-- name: Elijah Sorinola
-  title: Content Writer, Celo Sage
-  image_url: https://avatars.githubusercontent.com/u/86154565?v=4
-  tags: ["intermediate", "solidity", "celosage", "erc20"]
-  hide_table_of_contents: false
-  slug: /tutorials/creating-erc20-token-on-Celo
+  - name: Elijah Sorinola
+    title: Content Writer, Celo Sage
+    image_url: https://avatars.githubusercontent.com/u/86154565?v=4
+tags: ["intermediate", "solidity", "celosage", "erc20"]
+hide_table_of_contents: false
+slug: /tutorials/creating-erc20-token-on-Celo
 ---
+
 ![header](../../src/data-tutorials/showcase/intermediate/erc20.png)
 
 ## 🌱 Introduction
@@ -24,7 +24,7 @@ Before we start, you will need the following:
 - Remix IDE installed on your computer.
 - Celo wallet connected to the Alfajores testnet.
 
-## Requirement 
+## Requirement
 
 - A computer with internet access
 - A Celo wallet (such as the Celo Wallet app or Valora)
@@ -48,7 +48,7 @@ Now that we have a basic understanding of the Celo ecosystem, let's create an ER
 1. Open Remix IDE and create a new file called "MyToken.sol".
 2. Paste the following code into the file-
 
-```
+```solidity
 SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -62,7 +62,6 @@ _mint(msg.sender, initialSupply);
 ```
 
 This code imports the ERC20 contract from OpenZeppelin and creates a new contract called "MyToken". The constructor function initializes the token with a name of "My Token" and a symbol of "MTK", and mints the initial supply of tokens to the contract deployer.
-
 
 ### Step 2: Compile and Deploy the Contract
 
@@ -94,7 +93,6 @@ Now that we have deployed our ERC20 token contract on Celo, let's test it out.
 6. The recipient should now have received the specified amount of tokens.
 
 Congratulations! You have successfully created and deployed an ERC20 token on Celo.
-
 
 ## Conclusion
 
