@@ -1755,6 +1755,13 @@ const Users: User[] = [
     tags: ['celo', 'solidity', 'celosage', 'intermediate'],
   },
   {
+    title: 'Design Patterns in Solidity on Celo. Factory, Singleton and Proxy Patterns',
+    description: 'In this tutorial, we will dive deep into three widely-used design patterns in Solidity: Factory, Singleton, and Proxy patterns',
+    preview: require('./showcase/intermediate/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns.png'),
+    website: 'blog/tutorials/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns',
+    tags: ['celo', 'solidity', 'celosage', 'intermediate'],
+  },
+  {
     title: 'Use onchain randomness',
     description: 'Onchain randomness is used for selecting validators to perform phone number verification. Read more about how onchain randomness is produced at the provided page.',
     preview: require('./showcase/intermediate/use-on-chain-randomness.png'),
