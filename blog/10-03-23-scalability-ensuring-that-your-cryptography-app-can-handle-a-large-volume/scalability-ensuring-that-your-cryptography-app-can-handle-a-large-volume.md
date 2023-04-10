@@ -13,10 +13,6 @@ slug: /tutorials/scalability-ensuring-that-your-cryptography-app-can-handle-a-la
 
 ![header](../../src/data-tutorials/showcase/intermediate/Scalability-ensuring-that-your-cryptography-app-can-handle-a-large-volume-of-transactions-and-users-as-it-grows.png)
 
-In this tutorial, you’ll learn how to improve key management and security in your messaging platform by implementing asymmetric cryptography. Discover how to generate key pairs, encrypt and decrypt messages, and ensure secure communication between users.
-
----
-
 ## Introduction
 
 Applications for encryption are essential for safeguarding private messages, online banking transactions, and other sensitive data and communications. It is crucial to make sure that these applications can manage large numbers of transactions and users without sacrificing security or performance as their popularity grows. This tutorial examines the fundamentals of scaling cryptographic programs and offers helpful advice to make sure your program can withstand expansion and rising usage.
