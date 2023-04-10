@@ -948,6 +948,14 @@ const Users: User[] = [
     website: '/blog/tutorials/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo',
     tags: ['celosage', 'intermediate', 'composer', 'react', 'typescript', 'metamask', 'javascript'],
   },
+
+  {
+    title: 'Creating ERC20 token on celo',
+    description: 'Learn how to create an ERC20 token on the Celo blockchain using Remix IDE. Perfect for new and intermediate Web3 developers.',
+    preview: require('./showcase/beginner/workshop-introduction-to-solidity-and-remix.png'),
+    website: '/tutorials/Creating-erc20-token-on-Celo',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc20'],
+  },
   {
     title: 'How to build a Basic CRUD App in Solidity',
     description: 'This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.',
