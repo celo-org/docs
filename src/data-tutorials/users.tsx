@@ -817,6 +817,13 @@ const Users: User[] = [
     website: 'blog/tutorials/introduction-to-erc-20r-and-reversible-transactions',
     tags: ['beginner','celosage'],
   },
+   {
+    title: 'Build a dapp for buying and selling unique gadgets on celo blockchain',
+    description: 'Gadget project is a dApp for buying/selling unique gadgets represented by NFTs on Celo blockchain, with ERC-20 interface for DeFi. Provides secure/transparent platform for gadget enthusiasts/creators to connect..',
+    preview: require('./showcase/intermediate/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain.png'),
+    website: 'blog/tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain',
+    tags: ['intermediate','celosage', 'celo'],
+  },
   {
     title: 'Blockchain Based Festival Booking System with CUSD Payment Integration',
     description: 'Decentralized event booking platform for organizers to showcase programs and users to book slots with cUSD.',
