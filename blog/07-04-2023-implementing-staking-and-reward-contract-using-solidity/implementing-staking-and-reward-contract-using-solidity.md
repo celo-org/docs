@@ -265,6 +265,10 @@ Staking and reward contracts can incentivize users to hold and lock up tokens on
 
 The next step is to test, deploy, and document your contract.
 
+## Author
+
+[https://twitter.com/_iamoracle](Oyeniyi Abiola Peace) is a seasoned software and blockchain developer with a strong background in the technology industry, having graduated from the University of Ilorin with a degree in Telecommunication Science. He has over five years of programming experience in JavaScript, Python, PHP, and Solidity. Peace works as the CTO at DFMLab and a Community Moderator at Celo Blockchain. Peace enjoys reading and spending quality time with his family and friends when he is not immersed in coding or sharing his expertise with others, demonstrating his well-roundedness and passion for continuous learning and growth.
+
 ## References
 
 - [Implementing Staking in Solidity](https://medium.com/hackernoon/implementing-staking-in-solidity-1687302a82cf)
@@ -274,7 +278,3 @@ The next step is to test, deploy, and document your contract.
 - [How to Write a Smart Contract for Staking Token](https://betterprogramming.pub/how-to-write-a-smart-contract-for-stake-the-token-a46fdb9221b6)
 
 - [https://m.youtube.com/watch?v=OJ-IRzCYSXI](Staking Rewards | Solidity 0.8)
-
-## Author
-
-[https://twitter.com/_iamoracle](Oyeniyi Abiola Peace) is a seasoned software and blockchain developer with a strong background in the technology industry, having graduated from the University of Ilorin with a degree in Telecommunication Science. He has over five years of programming experience in JavaScript, Python, PHP, and Solidity. Peace works as the CTO at DFMLab and a Community Moderator at Celo Blockchain. Peace enjoys reading and spending quality time with his family and friends when he is not immersed in coding or sharing his expertise with others, demonstrating his well-roundedness and passion for continuous learning and growth.
