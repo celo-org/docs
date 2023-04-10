@@ -1037,7 +1037,7 @@ const Users: User[] = [
     description: 'In this tutorial, we will build a Dapp that allows clinical admin to create and manage the medical records of patients. ',
     preview: require('./showcase/intermediate/Build-A-Decentralized-Medical-Dapp-Using-Celo-Composer-And-IPFS-Storage.png'),
     website: '/blog/tutorials/Build-A-Decentralized-Medical-Dapp-Using-Celo-Composer-And-IPFS-Storage',
-    tags: ['celosage', 'solidity', 'celo', 'intermediate', 'composer', 'reactcelo','contractkit', 'dapp', 'typescript'],
+    tags: ['celosage', 'solidity', 'celo', 'intermediate', 'composer','contractkit', 'dapp', 'typescript'],
   },
   {
     title: 'How To Automate Your Smart Contract Verification Programmatically on Celoscan using Hardhat On Every Deployment',
