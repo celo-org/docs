@@ -2817,6 +2817,13 @@ const Users: User[] = [
     website: '/blog/tutorials/using-python-to-interact-with-celos-governance-system',
     tags: ['celosage','celo', 'intermediate', 'smartcontract', 'solidity'],
   },
+   {
+    title: 'Implementing Staking & Reward Contract Using Solidity',
+    description: 'Staking and reward contracts are popular mechanisms for incentivizing participation in the activities of a blockchain network.',
+    preview: require('./showcase/intermediate/implementing-staking-and-reward-contract-using-solidity.png'),
+    website: 'blog/tutorials/implementing-staking-and-reward-contract-using-solidity',
+    tags: ['celosage', 'intermediate', 'smartcontract'],
+  },
   {
     title: 'Using Python to Build a Celo Blockchain Identity System',
     description: 'This article explains how to use Python and the Web3.py library to build a decentralized identity system on the Celo blockchain.',
