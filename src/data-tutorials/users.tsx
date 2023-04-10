@@ -2628,6 +2628,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'Solidity Event Logging And Monitoring On Celo Best Practices',
+    description: 'In this tutorial we will teach you about solidity events. How to use them and the best practices.',
+    preview: require('./showcase/intermediate/solidity-event-logging-and-monitoring-on-celo-best-Practices.png'),
+    website: '/blog/tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices',
+    tags: ['celosage', 'solidity', 'celo'], 
+  },
+  {
     title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
