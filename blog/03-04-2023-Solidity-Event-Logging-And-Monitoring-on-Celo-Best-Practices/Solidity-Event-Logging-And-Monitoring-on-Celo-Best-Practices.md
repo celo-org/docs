@@ -4,7 +4,7 @@ description: In this tutorial we will teach you about solidity events. How to us
 authors:
   - name: ✍️ Richard Michael
     url: https://github.com/richiemikke
-tags: ['celosage', 'solidity', 'celo']
+tags: ["celosage", "solidity", "celo"]
 hide_table_of_contents: true
 slug: /tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices
 ---
@@ -35,9 +35,9 @@ Events serve several purposes in a smart contract:
 - Assist in debugging by logging meaningful information about contract execution
 - Provide an audit trail for contract interactions
 
-###  Defining and Emitting Events
+### Defining and Emitting Events
 
-__Syntax for Defining Events__
+**Syntax for Defining Events**
 
 To define an event in Solidity, use the event keyword followed by the event name and a list of indexed and non-indexed parameters within parentheses. For example:
 
@@ -49,7 +49,7 @@ contract MyContract {
 }
 ```
 
-__How to Emit Events in Your Solidity Functions__
+**How to Emit Events in Your Solidity Functions**
 
 To emit an event, simply call it like a function with the appropriate arguments:
 
@@ -87,14 +87,14 @@ To set up your Celo development environment, follow these steps:
 4. Set up a new Truffle project with Celo support: truffle unbox celo-org/truffle-dappkit-box
 5. [Install](https://metamask.io/) MetaMask browser extension
 
-__Installing Necessary Tools and Dependencies__
+**Installing Necessary Tools and Dependencies**
 
 In addition to the installations mentioned above, you should also install the following dependencies for your project:
 
 - @celo/contractkit: A Celo-specific library for interacting with smart contracts on the Celo network. Install it using `npm install @celo/contractkit`.
 - @celo/utils: A library containing utility functions for Celo. Install it using `npm install @celo/utils`.
 
-__Connecting to the Celo Network with MetaMask__
+**Connecting to the Celo Network with MetaMask**
 
 To connect MetaMask to the Celo network, follow these steps:
 
@@ -139,17 +139,18 @@ module.exports = function (deployer) {
 Using ContractKit, you can monitor events like this:
 
 ```javascript
-const ContractKit = require('@celo/contractkit');
-const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org');
+const ContractKit = require("@celo/contractkit");
+const kit = ContractKit.newKit("https://alfajores-forno.celo-testnet.org");
 const myContractInstance = new kit.web3.eth.Contract(abi, contractAddress);
 
-myContractInstance.events.MyEvent({filter: {sender: someAddress}})
-.on('data', (event) => {
+myContractInstance.events
+  .MyEvent({ filter: { sender: someAddress } })
+  .on("data", (event) => {
     console.log(event.returnValues);
-})
-.on('error', (error) => {
+  })
+  .on("error", (error) => {
     console.error(error);
-});
+  });
 ```
 
 ### How to Filter and Query Event Logs
@@ -159,17 +160,21 @@ To filter and query event logs, use the appropriate functions and filters provid
 ```javascript
 const myContractInstance = new web3.eth.Contract(abi, contractAddress);
 
-myContractInstance.getPastEvents('MyEvent', {
-  filter: {sender: someAddress},
-  fromBlock: 0,
-  toBlock: 'latest'
-}, (error, events) => {
-  if (error) {
-    console.error(error);
-  } else {
-    events.forEach(event => console.log(event.returnValues));
+myContractInstance.getPastEvents(
+  "MyEvent",
+  {
+    filter: { sender: someAddress },
+    fromBlock: 0,
+    toBlock: "latest",
+  },
+  (error, events) => {
+    if (error) {
+      console.error(error);
+    } else {
+      events.forEach((event) => console.log(event.returnValues));
+    }
   }
-});
+);
 ```
 
 ### Interpreting Event Logs for Debugging and Contract Interaction
