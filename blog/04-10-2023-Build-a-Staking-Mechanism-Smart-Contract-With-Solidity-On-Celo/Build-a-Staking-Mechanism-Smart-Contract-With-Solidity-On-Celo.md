@@ -1,5 +1,5 @@
 ---
-title: Build-a-Staking-Mechanism-Smart-Contract-With-Solidity-On-Celo
+title: Build a Staking Mechanism Smart Contract With Solidity On Celo
 description: This tutorial will show you how to build a staking mechanism using solidity and deploy to the blockchain
 authors:
   - name: ✍️ Richard Michael
