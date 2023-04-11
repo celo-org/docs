@@ -50,7 +50,7 @@ Celo is a proof-of-stake network, which has different hardware requirements than
 
 - Memory: 8 GB RAM
 - CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
+- Disk: 4 TB of SSD storage, plus a secondary HDD desirable
 - Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
 
 In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
