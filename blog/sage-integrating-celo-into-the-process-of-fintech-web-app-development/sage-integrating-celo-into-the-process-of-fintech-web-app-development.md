@@ -55,13 +55,13 @@ You'll need to install [Node.js](https://nodejs.org), [NPM](https://www.npmjs.co
 
     celocli init my-project
 
-This will create a new Celo project in the `my-project` directory, as stipulated in the command.
+This will create a new Celo project in the `my-project` directory, as stipulated in the command. Feel free to call it whatever name you desire for the project.
 
 ## Building a Simple Payment App
 
 Now that we have our development environment set up, let's build a simple payment app that allows users to send and receive cUSD. We'll use the Celo SDK's ContractKit and WalletUtils modules to do this.
 
-First, we'll need to create a new Celo wallet for our app:
+First, we'll need to create a new Celo wallet for our app. After initialization, we need to create a new file called celoWallet.js which will contain the code for creating our wallet. copy the code below into the new file you just created.
 
 ```js
 const { ContractKit } = require("@celo/contractkit");
@@ -77,7 +77,7 @@ createWallet().then(({ kit, account }) => {
 });
 ```
 
-Next, we'll need to deploy a smart contract that allows users to send and receive cUSD. We'll use the Celo Contract library and the Celo Reserve contract kits for this.
+Next, we'll need to deploy a smart contract that allows users to send and receive cUSD. We'll use the Celo Contract library and the Celo Reserve contract kits for this, let's create another new file which we will call celoPayment.js. The code below will help you deploy your smart contract, so go ahead and copy the code into the celoPayment.js file.
 
 ```js
 const { ContractKit } = require("@celo/contractkit");
@@ -100,7 +100,9 @@ const contractAddress = await deployContract(kit, account);
 
 This code deploys the reserve contract and logs its address to the console. The `setReserveFraction` method sets the reserve ratio to 1%, which means that for every 100 cUSD in circulation, 1 cUSD is held in reserve.
 
-Now that we have our contract deployed, let's build a simple frontend that allows users to send and receive cUSD. For this, we'll use the `@celo/dappkit` and the `@celo/contractkit` library.
+Now that we have our contract deployed, let's build a simple frontend that allows users to send and receive cUSD. For this, we'll use the `@celo/dappkit` and the `@celo/contractkit` library. The `@celo/contractkit` is a library that provides a simple way to interact with smart contracts on the Celo blockchain. It allows developers to interact with contracts using a more user-friendly API. In the code, we will use `newKitFromWeb3` to create an instance of `ContractKit` which is then used to send the transaction.
+
+The other library (`@celo/dappkit`) is a library that helps to simplify the process of signing and sending transactions on the Celo blockchain. In the code below, we will be using the `newDappKit` to create a new instance of the DappKit object which is then used to send the transaction object to be signed and sent to the Celo network. So, go ahead and create another file which we will call celoSimplePaymentdApp.js to put our code.
 
 ```js
 const { ContractKit } = require("@celo/contractkit");
@@ -140,8 +142,11 @@ The code is designed to send a payment transaction on the Celo blockchain using 
 
 The `sendPayment()` function creates a transaction object using the user's account, recipient address, and payment amount (in wei), and sends it to the blockchain using DappKit. DappKit is a tool for building mobile dapps that provides an easy way to sign transactions without requiring users to input private keys manually.
 
-Once the transaction has been sent, DappKit waits for a response indicating its success. If the response indicates success, then a message is logged to the console with the transaction hash.
-Overall, this code demonstrates [how to use DappKit to send transactions on Celo](https://docs.celo.org/developer/dappkit/usage), which can be useful for building decentralized applications that require secure and easy-to-use payment functionality.
+Once the transaction has been sent, DappKit waits for a response indicating its success. If the response indicates success, then a message is logged to the console with the transaction hash. If you have followed the steps, then by now you should have these three files already.
+
+![the dapp modules](https://user-images.githubusercontent.com/105213608/231084534-9489d306-b81b-4ff8-bb2e-e18964aba43a.png)
+
+Please note that you can decide to put all the codes in one file and place each code block in a separate function or define them as separate modules which you can export as needed. However, I would suggest you keep in separate for ease of reusability when next you need any of the modules.
 
 ## Step 4: Testing and Deployment
 
