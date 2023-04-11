@@ -2968,13 +2968,19 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','erc721', 'truffle'], 
 
   },
-    {
+  {
     title: 'Build Celo DApp without JavaScript Framework',
     description: 'Learn How to Build Celo DApp without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease.',
     preview: require('./showcase/intermediate/no-js-framework.png'),
     website: 'blog/tutorials/build-celo-dapp-without-js-framework',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
-
+  },
+  {
+    title: 'Build a complete off chain fullstack web3 app using Laravel',
+    description: 'Learn How to Build an off-chain fullstack web3 app using Laravel.',
+    preview: require('./showcase/intermediate/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1.png'),
+    website: 'blog/tutorials/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
