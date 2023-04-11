@@ -723,9 +723,9 @@ Create a new file under the `scripts` folder named `network.ts`.
 
   - The standard ERC20 procedure emits a `Transfer` event when a transfer method of the token contract is successfully invoked. This is the event we will listen for so we can trigger the cross-chain transfer. This part acts as the relayer between the two contracts on two different blockchains.
 
-        - Using the web3 framework, we will subscribe to the `Transfer` event, and execute the bridging if certain conditions are met.
+  - Using the web3 framework, we will subscribe to the `Transfer` event, and execute the bridging if certain conditions are met.
 
-        - You can either listen to a specific topic or all of the events emitted by the contract. But for clarity, we only listen for the `Transfer` event. The topic is the hash of the event's name followed by parentheses that enclose the parameters emitted by the event. In this case, our transfer event signature will be the `keccak256` of the `Transfer(address,address,uint256)` handle. Paste this code anywhere in the current program but within the `main`.
+  - You can either listen to a specific topic or all of the events emitted by the contract. But for clarity, we only listen for the `Transfer` event. The topic is the hash of the event's name followed by parentheses that enclose the parameters emitted by the event. In this case, our transfer event signature will be the `keccak256` of the `Transfer(address,address,uint256)` handle. Paste this code anywhere in the current program but within the `main`.
 
 - `build-a-cross-chain-token-bridge-between-celo-and-bsc/scripts/deploy.ts`
 
