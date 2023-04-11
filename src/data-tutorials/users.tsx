@@ -1055,6 +1055,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'solidity'],
   },
   {
+    title: 'Build an Educational Credential Verification System On the Celo Blockchain',
+    description: 'In this tutorial, you will learn how to build a system to verify educational credentials on the blockchain',
+    preview: require('./showcase/intermediate/build-an-educational-credential-verification-system-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-an-educational-credential-verification-system-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo',
     description: 'Basics of blockchain and NFTs,DEFI,and Web3 terms with Celo',
     preview: require('./showcase/beginner/blockchain-basics.png'),
