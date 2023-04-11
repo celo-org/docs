@@ -2983,6 +2983,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
 
   },
+  {
+    title: 'Build a cross-chain token bridge between Celo and BSC from scratch',
+    description: 'Bridging tokens between two EVM-compatible blockchains from scratch',
+    preview: require('./showcase/intermediate/build-a-cross-chain-token-bridge-between-Celo-and-BSC-from-the-scratch.png'),
+    website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-Celo-and-BSC-from-the-scratch',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
