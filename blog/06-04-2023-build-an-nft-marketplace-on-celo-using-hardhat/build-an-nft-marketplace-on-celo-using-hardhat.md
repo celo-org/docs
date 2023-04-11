@@ -240,3 +240,7 @@ Now that you've successfully built your NFT marketplace, you can build more exci
 Joshua Obafemi
 
 I'm a Web3 fullstack developer and technical writer. You can connect with me on [GitHub](https://github.com/jorshimayor), [Twitter](https://twitter.com/jorshimayor), [Linkedin](https://www.linkedin.com/in/joshua-obafemi-ba2014199/).
+
+## References
+
+- [Source Code](https://github.com/jorshimayor/Build-an-NFT-Marketplace-on-Celo-using-Hardhat)
