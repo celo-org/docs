@@ -2997,6 +2997,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-Celo-and-BSC-from-the-scratch',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens'], 
   },
+  {
+    title: 'Integrating Celo into the Process of Web/App Development',
+    description: 'The article will focus on the Celo framework that provides users with a seamless online payment method.',
+    preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
+    website: 'blog/tutorials/integrating-celo-into-the-process-of-fintech-web-app-development',
+    tags: ['celo', 'celosage', 'intermediate', 'contractkit', 'javascript', 'nodejs'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
