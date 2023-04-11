@@ -2607,6 +2607,13 @@ const Users: User[] = [
     tags: ['celosage','celo'], 
   },
   {
+    title: 'How to create Celo Testnet and Mainnet RPC using Lava',
+    description: 'This article briefly examines RPCs while guiding readers on the steps required to create Celo Testnet and Mainnet RPCs using Lava.',
+    preview: require('./showcase/beginner/how-to-create-celo-testnet-and-mainnet-rpc-using-lava.png'),
+    website: '/blog/tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava',
+    tags: ['celosage','celo'], 
+  },
+  {
     title: 'How to Add Support for Stablecoin Gas Fees using Celo Composer',
     description: 'Learn how to implement stablecoin gas fee support in your application, using the Solidity programming language and React for the front-end',
     preview: require('./showcase/intermediate/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer.png'),
