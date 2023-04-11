@@ -6,8 +6,7 @@ authors:
     title: Technical Writer @Celo Foundation
     url: https://github.com/TheKhafre
     image_url: https://user-images.githubusercontent.com/105213608/229316667-a5053711-fe24-4baf-b9f8-e3da6c008b96.png
-tags:
-  [celo, celosage, javascript, nodejs, contractkit, intermediate]
+tags: [celo, celosage, javascript, nodejs, contractkit, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/integrating-celo-into-the-process-of-fintech-web-app-development
 ---
@@ -31,6 +30,7 @@ This tutorial aims to take FinTech web/app developers a step into the process of
 In this article, we will be using a chrome browser and a code editor. The most popular code editor is VS code - if you were using another code editor but would like to download VS code, you can do so [here](https://code.visualstudio.com/). Also, you will need to install the Celo wallet as an extension on the chrome browser you will be using. You can check this video on [how to set up the Celo wallet on chrome](https://www.youtube.com/watch?v=KD_0kKxtl8c).
 
 ## Getting Started
+
 ## Understanding Celo's Architecture
 
 Celo uses a hybrid consensus algorithm that combines [proof-of-stake](https://www.investopedia.com/terms/p/proof-stake-pos.asp) (PoS) with a novel mechanism called the "identity protocol." The identity protocol ensures that each user on the network has a unique identity, which is tied to a mobile phone number or other unique identifier. This unique identity is used to prevent double-spending and other attacks.
@@ -53,7 +53,6 @@ To start building on Celo, you'll need to set up a development environment. Celo
 
 You'll need to install [Node.js](https://nodejs.org), [NPM](https://www.npmjs.com/), and the [Celo CLI](https://docs.celo.org/cli) To set up your development environment. Once you've installed these dependencies, you can create a new Celo project by running the following command on the command line:
 
-
     celocli init my-project
 
 This will create a new Celo project in the `my-project` directory, as stipulated in the command.
@@ -65,73 +64,76 @@ Now that we have our development environment set up, let's build a simple paymen
 First, we'll need to create a new Celo wallet for our app:
 
 ```js
-    const { ContractKit } = require('@celo/contractkit');
-    const { newAccount } = require('@celo/account');
-    async function createWallet() {
-      const kit = ContractKit.newKit('https://alfajores-forno.celo-testnet.org');
-      const account = await newAccount();
-      return { kit, account };
-    }
-    createWallet().then(({ kit, account }) => {
-      console.log(`Public Address: ${account.address}`);
-      console.log(`Private Key: ${account.privateKey}`);
-    });
+const { ContractKit } = require("@celo/contractkit");
+const { newAccount } = require("@celo/account");
+async function createWallet() {
+  const kit = ContractKit.newKit("https://alfajores-forno.celo-testnet.org");
+  const account = await newAccount();
+  return { kit, account };
+}
+createWallet().then(({ kit, account }) => {
+  console.log(`Public Address: ${account.address}`);
+  console.log(`Private Key: ${account.privateKey}`);
+});
 ```
 
 Next, we'll need to deploy a smart contract that allows users to send and receive cUSD. We'll use the Celo Contract library and the Celo Reserve contract kits for this.
 
 ```js
-    const { ContractKit } = require('@celo/contractkit');
-    async function deployContract(kit, account) {
-      const reserve = await kit.contracts.getReserve();
-      const tx = reserve.methods.setReserveFraction(10, 1000);
-      const gas = await tx.estimateGas({ from: account.address });
-      const txo = await kit.sendTransactionObject(tx, { from: account.address, gasPrice: await kit.getGasPrice() });
-      const receipt = await txo.waitReceipt();
-      console.log(`Contract deployed at: ${receipt.contractAddress}`);
-      return receipt.contractAddress;
-    }
-    const kit = ContractKit.newKit('https://forno.celo.org');
-    const account = kit.web3.eth.accounts.create();
-    const contractAddress = await deployContract(kit, account);
+const { ContractKit } = require("@celo/contractkit");
+async function deployContract(kit, account) {
+  const reserve = await kit.contracts.getReserve();
+  const tx = reserve.methods.setReserveFraction(10, 1000);
+  const gas = await tx.estimateGas({ from: account.address });
+  const txo = await kit.sendTransactionObject(tx, {
+    from: account.address,
+    gasPrice: await kit.getGasPrice(),
+  });
+  const receipt = await txo.waitReceipt();
+  console.log(`Contract deployed at: ${receipt.contractAddress}`);
+  return receipt.contractAddress;
+}
+const kit = ContractKit.newKit("https://forno.celo.org");
+const account = kit.web3.eth.accounts.create();
+const contractAddress = await deployContract(kit, account);
 ```
 
-This code deploys the reserve contract and logs its address to the console. The `setReserveFraction` method sets the reserve ratio to 1%, which means that for every 100 cUSD in circulation, 1 cUSD is held in reserve. 
+This code deploys the reserve contract and logs its address to the console. The `setReserveFraction` method sets the reserve ratio to 1%, which means that for every 100 cUSD in circulation, 1 cUSD is held in reserve.
 
 Now that we have our contract deployed, let's build a simple frontend that allows users to send and receive cUSD. For this, we'll use the `@celo/dappkit` and the `@celo/contractkit` library.
 
 ```js
-    const { ContractKit } = require('@celo/contractkit')
-    const { newKitFromWeb3 } = require('@celo/contractkit')
-    const { newDappKit, DappKitResponseStatus } = require('@celo/dappkit')
-    const Web3 = require('web3')
-    async function sendPayment() {
-      const kit = newKitFromWeb3(new Web3(window.celo))
-      const from = kit.defaultAccount
-      const to = '0x...'
-      const value = '10'
-      
-      // Create a transaction object
-      const txObject = await kit.web3.eth.sendTransaction({
-        from,
-        to,
-        value: kit.web3.utils.toWei(value, 'ether'),
-      })
-      // Send the transaction using DappKit
-      const requestId = await newDappKit(window.celo).sendTransactionAsync({
-        txObject,
-        origin: window.location.origin,
-      })
-      // Wait for a response from DappKit indicating that the transaction was successful
-      const dappkitResponse = await new Promise(resolve =>
-        window.parent.addEventListener('message', e => {
-          if (e.data && e.data.type === DappKitResponseStatus.Success) {
-            resolve(e.data.response)
-          }
-        })
-      )
-      console.log(`Transaction sent: ${dappkitResponse.transactionHash}`)
-    }
+const { ContractKit } = require("@celo/contractkit");
+const { newKitFromWeb3 } = require("@celo/contractkit");
+const { newDappKit, DappKitResponseStatus } = require("@celo/dappkit");
+const Web3 = require("web3");
+async function sendPayment() {
+  const kit = newKitFromWeb3(new Web3(window.celo));
+  const from = kit.defaultAccount;
+  const to = "0x...";
+  const value = "10";
+
+  // Create a transaction object
+  const txObject = await kit.web3.eth.sendTransaction({
+    from,
+    to,
+    value: kit.web3.utils.toWei(value, "ether"),
+  });
+  // Send the transaction using DappKit
+  const requestId = await newDappKit(window.celo).sendTransactionAsync({
+    txObject,
+    origin: window.location.origin,
+  });
+  // Wait for a response from DappKit indicating that the transaction was successful
+  const dappkitResponse = await new Promise((resolve) =>
+    window.parent.addEventListener("message", (e) => {
+      if (e.data && e.data.type === DappKitResponseStatus.Success) {
+        resolve(e.data.response);
+      }
+    })
+  );
+  console.log(`Transaction sent: ${dappkitResponse.transactionHash}`);
+}
 ```
 
 The code is designed to send a payment transaction on the Celo blockchain using the `@celo/contractkit` and `@celo/dappkit` packages. The user's Celo wallet is connected to the browser window using the `window.celo` object, and the default account is obtained from the ContractKit instance.
@@ -141,10 +143,9 @@ The `sendPayment()` function creates a transaction object using the user's accou
 Once the transaction has been sent, DappKit waits for a response indicating its success. If the response indicates success, then a message is logged to the console with the transaction hash.
 Overall, this code demonstrates [how to use DappKit to send transactions on Celo](https://docs.celo.org/developer/dappkit/usage), which can be useful for building decentralized applications that require secure and easy-to-use payment functionality.
 
-
 ## Step 4: Testing and Deployment
 
-Now that we have our payment app built, it's time to test it and deploy it to production. However, here are some points you need to check to avoid deployment errors: 
+Now that we have our payment app built, it's time to test it and deploy it to production. However, here are some points you need to check to avoid deployment errors:
 
 1. Ensure you have installed the latest versions of the `@celo/contractkit` and `@celo/dappkit` packages. You can check for updates by running `npm outdated` in your project directory.
 2. Ensure you have a valid Celo wallet connected to your browser window. The `window.celo` object is used to connect to the wallet, so the code will fail if it's not defined or doesn't contain a valid provider URL.
@@ -171,4 +172,3 @@ You can read more application method for Celo FinTech projects by getting famili
 - [how to use DappKit to send transactions on Celo](https://docs.celo.org/developer/dappkit/usage)
 - [Celo's GitHub repository](https://github.com/celo-org)
 - [Source code repo](https://github.com/TheKhafre/celo_fintech)
-
