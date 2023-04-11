@@ -132,6 +132,7 @@ Content Marketing Strategist for Blockchain, Cryptocurrency, and Web3 brands. [L
 ## Reference
 
 - [Celo official website](https://celo.org/)
+- [Source Code](https://github.com/izzecode/Creating-ERC20-token-on-Celo)
 - [Celo developer documentation](https://docs.celo.org/)
 - [Remix IDE](https://remix.ethereum.org/)
 - [Solidity documentation](https://docs.soliditylang.org/en/v0.8.19/)
