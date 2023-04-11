@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
 tags: ["celosage","composer","celo", "celowallet","reactcelo","contractkit","dapp","typescript","smartcontract","solidity","nextjs","intermediate",]
 hide_table_of_contents: true
-slug: /tutorials/Build-a-Full-Stack-Decentralized-Payroll-Dapp-on-Celo-Using-Celo-Composer
+slug: /tutorials/build-a-full-stack-decentralized-payroll-dapp-on-celo-using-celo-composer
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/Build-a-Full-Stack-Decentralized-Payroll-Dapp-on-Celo-Using-Celo-Composer.png)
