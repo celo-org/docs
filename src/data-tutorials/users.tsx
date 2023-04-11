@@ -1043,7 +1043,7 @@ const Users: User[] = [
     title: 'Build a Full Stack Decentralized Payroll Dapp on Celo Using Celo Composer',
     description: 'In this tutorial, we will walk you through the steps to build a full-stack decentralized payroll dApp using Celo composer, a toolkit for building smart contracts on the Celo blockchain.',
     preview: require('./showcase/intermediate/Build-a-Full-Stack-Decentralized-Payroll-Dapp-on-Celo-Using-Celo-Composer.png'),
-    website: '/blog/tutorials/build-a-full-stack-decentralized-payroll-dapp-on-celo-using-celo-composer',
+    website: '/blog/tutorials/Build-a-Full-Stack-Decentralized-Payroll-Dapp-on-Celo-Using-Celo-Composer',
     tags: ['celosage', 'celo', 'intermediate', 'react', 'metamask', 'celowallet','contractkit','dapp','typescript', 'smartcontract', 'solidity', 'nextjs'],
   },
   {
