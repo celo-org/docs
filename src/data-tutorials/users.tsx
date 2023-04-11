@@ -1209,6 +1209,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
   },
   {
+    title: 'Create a Decentralized Advertising Platform Using Solidity on Celo',
+    description: 'In this tutorial, we will be building a advertising smart contract using solidity and deploy to the celo blockchain',
+    preview: require('./showcase/intermediate/create-a-decentralized-advertising-platform-using-solidity-on-celo.png'),
+    website: 'blog/tutorials/create-a-decentralized-advertising-platform-using-solidity-on-celo',
+    tags: ['celosage', 'solidity', 'intermediate'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
