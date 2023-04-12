@@ -22,7 +22,6 @@ In this article, we will be discussing how to build an off-chain full-stack web3
 
 Basic knowledge of php, laravel, javascript and ReactJs
 
-
 ![let's go](./images/lets-go.gif)
 
 ## Getting Started
@@ -32,7 +31,6 @@ To bootstrap our DAPP, we will be using Laravel & Laravel UI (React).
 I assume that anyone going through this tutorial already understands and uses **Composer**, so I will skip the setup involved in getting **Composer** to work on your development computer. That means I assume you already have VS Code setup on your PC. If you are developing on macOS, PHP and Composer can be installed via [Homebrew](https://brew.sh/). In addition, we recommend [installing Node and NPM](https://nodejs.org/).
 
 If you are entirely new to php development and never use **Composer** before, here ( [https://getcomposer.org/](https://getcomposer.org/) ) is a good place you can learn from.
-
 
 To get started, you can clone this repository flutter-web3-celo. 
 
@@ -203,7 +201,6 @@ export default defineConfig({
         react(),
     ],
 });
-
 ```
 
 Identicon Component
@@ -423,18 +420,10 @@ Boom!!!
 Congratulations, you have now learned how to build a real-world dApp using Laravel. You have seen how to transfer token using @celo/react-celo. 
 About the Author
 
-
 I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blockchain) also and Ex-GDSC Leads.
-
 
 ## References
 
 - [Github Repo](https://github.com/Mujhtech/laravel-celo)
 - [Larave Vite](https://laravel.com/docs/10.x/vite)
 - [Celo Docs](https://docs.celo.org)
-
-
-
-
-
-
