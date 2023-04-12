@@ -1,6 +1,6 @@
 ---
 title: Build a complete off chain fullstack web3 app using Laravel
-description: In this article, we will be discussing how to build an off-chain full-stack web3 app using SPA Laravel Monorepo together with Laravel UI ReactJs/VueJs together with Solidity. 
+description: In this article, we will be discussing how to build an off-chain full-stack web3 app using SPA Laravel Monorepo together with Laravel UI ReactJs/VueJs together with Solidity.
 
 authors:
   - name: Muhideen Mujeeb
