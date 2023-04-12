@@ -25,6 +25,8 @@ The contract will then need to execute some custom logic, e.g. arbitrage and pay
 
 Aave has catapulted to the forefront of the Defi space with over 3.93 billion dollars worth of value in it ($3.93b TVL). Aave was the first to come up with the idea of a Flash Loan. 
 
+**Note: [Here](https://github.com/johnfawole/flashloan_contract_on_celo/tree/main) is a link to the complete flashloan contract folder you'll be writing in this tutorial.**
+
 Before flash loans, you would need to stake an over-collateralized asset to loan another asset. For example, if we wanted to borrow 10 USDC, we would have to deposit another cryptocurrency that exceeded that value, e.g. one ETH. 
 
 In other words, you had to have money to borrow money. Flash Loans demolished this idea. And they opened up doors for a new loaning system. They allowed users to borrow without putting up anything as collateral. 
