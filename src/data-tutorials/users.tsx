@@ -913,6 +913,14 @@ const Users: User[] = [
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
     tags: ['celosage','beginner'],
   },
+
+  {
+    title: 'How to render Celo NFT in your React Native mobile Dapp',
+    description: 'This will help mobile developers on how to integrate render Celo  NFT metadata on mobile Dapps uisng  center multichain NFT API and Wallet Connect SDK.',
+    preview: require('./showcase/intermediate/How-to-render-Celo-NFT-in-your-React-Native-mobile-Dapp.png'),
+    website: '/blog/tutorials/How-to-render-Celo-NFT-in-your-React-Native-mobile-Dapp',
+    tags:['celosage', 'mobile','dapp', 'reactnative','intermediate' ],
+  },
   {
     title: 'Build a Decentralized Lottery Game on Celo',
     description: 'Learn to build a Decentralized Lottery Game on Celo along with a frontend.',
