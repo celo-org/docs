@@ -1,5 +1,5 @@
 ---
-title: Build a complete off chain fullstack web3 app using Laravel 
+title: Build a complete off chain fullstack web3 app using Laravel
 description: In this article, we will be discussing how to build an off-chain full-stack web3 app using SPA Laravel Monorepo together with Laravel UI ReactJs/VueJs together with Solidity. This tutorial is basically for PHP/Laravel developer that are trying to do something new in web3 space on Celo Network.
 
 authors:
@@ -32,7 +32,7 @@ I assume that anyone going through this tutorial already understands and uses **
 
 If you are entirely new to php development and never use **Composer** before, here ( [https://getcomposer.org/](https://getcomposer.org/) ) is a good place you can learn from.
 
-To get started, you can clone this repository flutter-web3-celo. 
+To get started, you can clone this repository flutter-web3-celo.
 
 **Composer** is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
 
@@ -69,7 +69,7 @@ php artisan ui react
 Before compiling your frontend, install dependencies using the NPM:
 
 ```bash
-npm install && npm run dev 
+npm install && npm run dev
 ```
 
 Open another terminal and serve your laravel application using the artisan command below
@@ -144,18 +144,19 @@ Replace the code snippets in tailwind.config.js file with the snippet below
 ```javascript
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.jsx",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.jsx",
+    "./resources/**/*.vue",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 };
 ```
+
 ### Install some dependencies
 
 Install dependencies below for easy integration celo in our laravel application
@@ -173,33 +174,33 @@ import react from "@vitejs/plugin-react";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 
 export default defineConfig({
-    optimizeDeps: {
-        esbuildOptions: {
-            define: {
-                global: "globalThis",
-            },
-            plugins: [
-                NodeGlobalsPolyfillPlugin({
-                    process: true,
-                    buffer: true,
-                }),
-            ],
-        },
-    },
-    resolve: {
-        alias: {
-            assert: "assert",
-            stream: "stream-browserify",
-            https: "agent-base",
-        },
-    },
-    plugins: [
-        laravel({
-            input: ["resources/sass/app.scss", "resources/js/app.js"],
-            refresh: true,
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: "globalThis",
+      },
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          process: true,
+          buffer: true,
         }),
-        react(),
-    ],
+      ],
+    },
+  },
+  resolve: {
+    alias: {
+      assert: "assert",
+      stream: "stream-browserify",
+      https: "agent-base",
+    },
+  },
+  plugins: [
+    laravel({
+      input: ["resources/sass/app.scss", "resources/js/app.js"],
+      refresh: true,
+    }),
+    react(),
+  ],
 });
 ```
 
@@ -212,22 +213,19 @@ import { isValidAddress, normalizeAddress } from "../utils/address";
 
 // This should match metamask: https://github.com/MetaMask/metamask-extension/blob/master/ui/helpers/utils/icon-factory.js#L84
 function addressToSeed(address) {
-    const addrStub = normalizeAddress(address).slice(2, 10);
-    return parseInt(addrStub, 16);
+  const addrStub = normalizeAddress(address).slice(2, 10);
+  return parseInt(addrStub, 16);
 }
 
 export class Identicon extends PureComponent {
-    render() {
-        const { address, size: _size, styles } = this.props;
-        const size = _size ?? 34;
+  render() {
+    const { address, size: _size, styles } = this.props;
+    const size = _size ?? 34;
 
-        if (!isValidAddress(address)) return null;
+    if (!isValidAddress(address)) return null;
 
-        return (
-            <Jazzicon diameter={size} seed={addressToSeed(address)} />
-            
-        );
-    }
+    return <Jazzicon diameter={size} seed={addressToSeed(address)} />;
+  }
 }
 ```
 
@@ -237,54 +235,54 @@ utils/address.js
 import { getAddress, isAddress } from "@ethersproject/address";
 
 export function isValidAddress(address) {
-    // Need to catch because ethers' isAddress throws in some cases (bad checksum)
-    try {
-        const isValid = address && isAddress(address);
-        return !!isValid;
-    } catch (error) {
-        return false;
-    }
+  // Need to catch because ethers' isAddress throws in some cases (bad checksum)
+  try {
+    const isValid = address && isAddress(address);
+    return !!isValid;
+  } catch (error) {
+    return false;
+  }
 }
 
 export function validateAddress(address, context) {
-    if (!address || !isAddress(address)) {
-        const errorMsg = `Invalid addresses for ${context}: ${address}`;
+  if (!address || !isAddress(address)) {
+    const errorMsg = `Invalid addresses for ${context}: ${address}`;
 
-        throw new Error(errorMsg);
-    }
+    throw new Error(errorMsg);
+  }
 }
 
 export function normalizeAddress(address) {
-    validateAddress(address, "normalize");
-    return getAddress(address);
+  validateAddress(address, "normalize");
+  return getAddress(address);
 }
 
 export function shortenAddress(address, elipsis, capitalize) {
-    if (address == undefined) {
-        return null;
-    }
-    validateAddress(address, "shorten");
-    const shortened =
-        normalizeAddress(address).substr(0, 8) + (elipsis ? "..." : "");
-    return capitalize ? capitalizeAddress(shortened) : shortened;
+  if (address == undefined) {
+    return null;
+  }
+  validateAddress(address, "shorten");
+  const shortened =
+    normalizeAddress(address).substr(0, 8) + (elipsis ? "..." : "");
+  return capitalize ? capitalizeAddress(shortened) : shortened;
 }
 
 export function capitalizeAddress(address) {
-    return "0x" + address.substring(2).toUpperCase();
+  return "0x" + address.substring(2).toUpperCase();
 }
 
 export function areAddressesEqual(a1, a2) {
-    validateAddress(a1, "compare");
-    validateAddress(a2, "compare");
-    return getAddress(a1) === getAddress(a2);
+  validateAddress(a1, "compare");
+  validateAddress(a2, "compare");
+  return getAddress(a1) === getAddress(a2);
 }
 
 export function trimLeading0x(input) {
-    return input.startsWith("0x") ? input.substring(2) : input;
+  return input.startsWith("0x") ? input.substring(2) : input;
 }
 
 export function ensureLeading0x(input) {
-    return input.startsWith("0x") ? input : `0x${input}`;
+  return input.startsWith("0x") ? input : `0x${input}`;
 }
 ```
 
@@ -299,125 +297,100 @@ import { CeloProvider, useCelo } from "@celo/react-celo";
 import "@celo/react-celo/lib/styles.css";
 
 function Example() {
-    const { address, initialised, connect, disconnect, performActions } =
-        useCelo();
-    const [transferTo, setTransferTo] = React.useState("");
-    const [transferAmount, setTransferAmount] = React.useState(0);
+  const { address, initialised, connect, disconnect, performActions } =
+    useCelo();
+  const [transferTo, setTransferTo] = React.useState("");
+  const [transferAmount, setTransferAmount] = React.useState(0);
 
-    async function transfer() {
-        e.preventDefault();
-        await performActions(async (kit) => {
-            const cUSD = await kit.contracts.getStableToken();
-            await cUSD
-                .transfer(transferTo, transferAmount)
-                .sendAndWaitForReceipt();
-        });
-    }
+  async function transfer() {
+    e.preventDefault();
+    await performActions(async (kit) => {
+      const cUSD = await kit.contracts.getStableToken();
+      await cUSD.transfer(transferTo, transferAmount).sendAndWaitForReceipt();
+    });
+  }
 
-    return (
-        <CeloProvider
-            dapp={{
-                name: "Laravel Celo",
-                description: "Laravel Celo Dapp",
-                url: "https://example.com",
-                // if you plan on supporting WalletConnect compatible wallets, you need to provide a project ID, you can find it here: https://docs.walletconnect.com/2.0/cloud/relay
-                // walletConnectProjectId: "123",
-            }}
-        >
-            <div className="bg-gray-300 min-h-screen w-full flex flex-col justify-center items-center">
-                <div className="w-full max-w-[400px] m-auto">
-                    <div className="bg-white w-full px-2 py-4">
-                        <div className="flex flex-col">
-                            <h4 className="font-bold text-center">
-                                Laravel Celo
-                            </h4>
-                            {address != null && address != undefined ? (
-                                <>
-                                    <div className="flex items-center justify-center space-x-2 mt-6">
-                                        <Identicon
-                                            size={24}
-                                            address={address}
-                                        />{" "}
-                                        <p>
-                                            {shortenAddress(
-                                                address,
-                                                true,
-                                                false
-                                            )}
-                                        </p>
-                                    </div>
+  return (
+    <CeloProvider
+      dapp={{
+        name: "Laravel Celo",
+        description: "Laravel Celo Dapp",
+        url: "https://example.com",
+        // if you plan on supporting WalletConnect compatible wallets, you need to provide a project ID, you can find it here: https://docs.walletconnect.com/2.0/cloud/relay
+        // walletConnectProjectId: "123",
+      }}
+    >
+      <div className="bg-gray-300 min-h-screen w-full flex flex-col justify-center items-center">
+        <div className="w-full max-w-[400px] m-auto">
+          <div className="bg-white w-full px-2 py-4">
+            <div className="flex flex-col">
+              <h4 className="font-bold text-center">Laravel Celo</h4>
+              {address != null && address != undefined ? (
+                <>
+                  <div className="flex items-center justify-center space-x-2 mt-6">
+                    <Identicon size={24} address={address} />{" "}
+                    <p>{shortenAddress(address, true, false)}</p>
+                  </div>
 
-                                    <form
-                                        className="flex flex-col"
-                                        onSubmit={(e) => transfer(e)}
-                                    >
-                                        <label className="mt-6 text-sm">
-                                            Address
-                                        </label>
-                                        <input
-                                            onChange={(e) =>
-                                                setTransferTo(e.target.value)
-                                            }
-                                            type="text"
-                                            required
-                                            className="h-8 rounded-md bg-gray-300 focus:ring-0 ring-0 border-0 focus:border-0 focus:outline-none text-black px-2 py-1"
-                                        />
-                                        <label className="mt-2 text-sm">
-                                            Amount
-                                        </label>
-                                        <input
-                                            onChange={(e) =>
-                                                setTransferAmount(
-                                                    e.target.value
-                                                )
-                                            }
-                                            type="number"
-                                            required
-                                            className="h-8 rounded-md bg-gray-300 focus:ring-0 ring-0 border-0 focus:border-0 focus:outline-none text-black px-2 py-1"
-                                        />
-                                        <button className="mt-4 bg-[#FCFF51] text-black rounded-2xl py-3">
-                                            Send
-                                        </button>
-                                    </form>
-                                </>
-                            ) : (
-                                <>
-                                    <button
-                                        type="button"
-                                        onClick={() => connect()}
-                                        className="mt-4 bg-[#FCFF51] text-black rounded-2xl py-3"
-                                    >
-                                        Connect wallet
-                                    </button>
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
+                  <form className="flex flex-col" onSubmit={(e) => transfer(e)}>
+                    <label className="mt-6 text-sm">Address</label>
+                    <input
+                      onChange={(e) => setTransferTo(e.target.value)}
+                      type="text"
+                      required
+                      className="h-8 rounded-md bg-gray-300 focus:ring-0 ring-0 border-0 focus:border-0 focus:outline-none text-black px-2 py-1"
+                    />
+                    <label className="mt-2 text-sm">Amount</label>
+                    <input
+                      onChange={(e) => setTransferAmount(e.target.value)}
+                      type="number"
+                      required
+                      className="h-8 rounded-md bg-gray-300 focus:ring-0 ring-0 border-0 focus:border-0 focus:outline-none text-black px-2 py-1"
+                    />
+                    <button className="mt-4 bg-[#FCFF51] text-black rounded-2xl py-3">
+                      Send
+                    </button>
+                  </form>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => connect()}
+                    className="mt-4 bg-[#FCFF51] text-black rounded-2xl py-3"
+                  >
+                    Connect wallet
+                  </button>
+                </>
+              )}
             </div>
-        </CeloProvider>
-    );
+          </div>
+        </div>
+      </div>
+    </CeloProvider>
+  );
 }
 
 export default Example;
 
 if (document.getElementById("example")) {
-    const Index = ReactDOM.createRoot(document.getElementById("example"));
+  const Index = ReactDOM.createRoot(document.getElementById("example"));
 
-    Index.render(
-        <React.StrictMode>
-            <Example />
-        </React.StrictMode>
-    );
+  Index.render(
+    <React.StrictMode>
+      <Example />
+    </React.StrictMode>
+  );
 }
 ```
+
 Boom!!!
 
 ![let's go](./images/screenshot-2.png)
 
 ## Conclusion
 
-Congratulations, you have now learned how to build a real-world dApp using Laravel. You have seen how to transfer token using @celo/react-celo. 
+Congratulations, you have now learned how to build a real-world dApp using Laravel. You have seen how to transfer token using @celo/react-celo.
 About the Author
 
 I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blockchain) also and Ex-GDSC Leads.
