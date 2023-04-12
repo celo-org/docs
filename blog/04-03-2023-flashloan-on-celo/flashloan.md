@@ -25,7 +25,6 @@ The contract will then need to execute some custom logic, e.g. arbitrage and pay
 
 Aave has catapulted to the forefront of the Defi space with over 3.93 billion dollars worth of value in it ($3.93b TVL). Aave was the first to come up with the idea of a Flash Loan. 
 
-**Note: [Here](https://github.com/johnfawole/flashloan_contract_on_celo/tree/main) is a link to the complete flashloan contract folder you'll be writing in this tutorial.**
 
 Before flash loans, you would need to stake an over-collateralized asset to loan another asset. For example, if we wanted to borrow 10 USDC, we would have to deposit another cryptocurrency that exceeded that value, e.g. one ETH. 
 
@@ -36,6 +35,9 @@ Aave could be a decentralized pseudo-bank. Instead of a central bank or authorit
 
 **Note: Aave Does Not Support Celo 
 Before we proceed in this tutorial, it is important to underscore that Aave does not yet support Celo. We cannot deploy a flash loan contract on Celo with the Aave implementations.**
+
+**[Here](https://github.com/johnfawole/flashloan_contract_on_celo/tree/main) is a link to the complete flashloan contract folder you'll be writing in this tutorial.**
+
 
 The reason is that Aave only provides addresses for the Ethereum mainnet and Goerli testnet.
 But is there any way forward?
