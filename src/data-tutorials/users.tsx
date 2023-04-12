@@ -2468,6 +2468,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate'],
   },
   {
+    title: ' How to a Create Celo Testnet RPC Using Lava Protocol',
+    description: 'This article briefly examines RPCs while guiding readers on the steps required to create Celo Testnet and Mainnet RPCs using Lava.',
+    preview: require('./showcase/beginner/how-to-create-celo-testnet-and-mainnet-rpc-using-lava.png'),
+    website: 'blog/tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava',
+    tags: ['celosage', 'beginner'],
+  },
+  {
     title: 'Build an NFT Marketplace for Tech Artisans on Celo',
     description: 'This tutorial will show you how to use React, Solidity, react-celo, and IPFS to create a platform that connects creators and collectors in the NFT market space',
     preview: require('./showcase/intermediate/build-an-nft-marketplace-for-tech-artisans-on-celo.png'),
