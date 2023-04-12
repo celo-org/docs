@@ -752,6 +752,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
   {
+    title: 'ERC-4337 Overview Protocol',
+    description: 'Understand the ERC 4337 protocol',
+    preview: require('./showcase/beginner/ERC-4337-Overview-Protocol.png'),
+    website: 'blog/tutorials/ERC-4337-Overview-Protocol',
+    tags: ['celosage', 'beginner','celo', 'smartcontract'],
+  },
+  {
     title: 'Prepare for Auditing Your Smart Contract',
     description: 'Auditing is the process of reviewing your smart contracts code for errors, vulnerabilities, and potential weaknesses',
     preview: require('./showcase/intermediate/prepare-for-auditing-your-smart-contract.png'),
