@@ -2976,7 +2976,7 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript'], 
   },
   {
-    title: 'Build a complete off chain fullstack web3 app using Laravel',
+    title: 'Build a complete off chain fullstack web3 app using Laravel Part-1',
     description: 'Learn How to Build an off-chain fullstack web3 app using Laravel.',
     preview: require('./showcase/intermediate/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1.png'),
     website: 'blog/tutorials/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1',
