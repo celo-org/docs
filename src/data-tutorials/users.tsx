@@ -997,6 +997,14 @@ const Users: User[] = [
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
     tags: ['celosage','beginner'],
   },
+
+  {
+    title: 'How to render Celo NFT in your React Native mobile Dapp',
+    description: 'This will help mobile developers on how to integrate render Celo  NFT metadata on mobile Dapps uisng  center multichain NFT API and Wallet Connect SDK.',
+    preview: require('./showcase/intermediate/How-to-render-Celo-NFT-in-your-React-Native-mobile-Dapp.png'),
+    website: '/blog/tutorials/How-to-render-Celo-NFT-in-your-React-Native-mobile-Dapp',
+    tags:['celosage', 'mobile','dapp', 'reactnative','intermediate' ],
+  },
   {
     title: 'How to swap Celo tokens on Uniswap programmatically with code',
     description: 'In this tutorial, we show you how to build an automated Celo token swapper using ethersJS and Uniswap SDK.',
