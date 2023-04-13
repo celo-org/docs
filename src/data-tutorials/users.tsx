@@ -2817,6 +2817,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-celo-voting-system-with-golang',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Smart contract security on celo with mythril',
+    description: 'Analyze smart contracts using free security tools - Mythril',
+    preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-mythril.png'),
+    website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
