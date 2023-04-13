@@ -2,18 +2,16 @@
 title: ERC-4337 Overview Protocol
 description: Understand the ERC 4337 protocol
 authors:
-- name: Ewerton Lopes
-  title: Founder of Guizo Studios
-  url: https://github.com/guizostudios
-  image_url: https://avatars.githubusercontent.com/u/97633823
+  - name: Ewerton Lopes
+    title: Founder of Guizo Studios
+    url: https://github.com/guizostudios
+    image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, solidity, developers, celosage]
 hide_table_of_contents: false
 slug: /tutorials/ERC-4337-Overview-Protocol
 ---
 
-
 ![header](../../src/data-tutorials/showcase/beginner/ERC-4337-Overview-Protocol.png)
-
 
 ### Introduction
 
