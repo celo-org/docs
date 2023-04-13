@@ -6,7 +6,7 @@ authors:
     title: Community Moderator, Celo
     url: https://github.com/iamoracle
     image_url: https://github.com/iamoracle.png
-tags: [intermediate, celosage]
+tags: [beginner, celosage]
 hide_table_of_contents: true
 slug: /tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava
 ---
