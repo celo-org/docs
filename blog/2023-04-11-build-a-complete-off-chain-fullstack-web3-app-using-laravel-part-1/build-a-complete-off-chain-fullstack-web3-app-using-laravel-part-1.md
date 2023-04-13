@@ -7,7 +7,7 @@ authors:
     title: Software Engineer
     url: https://github.com/mujhtech
     image_url: https://avatars.githubusercontent.com/u/41507005?v=4
-tags: ['celosage', 'intermediate', 'smartcontract', 'solidity','javascript']
+tags: ["celosage", "intermediate", "smartcontract", "solidity", "javascript"]
 hide_table_of_contents: true
 slug: /tutorials/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1
 ---
