@@ -492,6 +492,7 @@ function downloadResource(uint256 _index) external payable exist(_index) {
 }
 ```
 
+[Github repo](https://github.com/Ikanji201/school-resource-marketplace)
 ## CONTRACT DEPLOYMENT
 
 To deploy the School Resources Marketplace smart contract on the Celo blockchain, there are a few things you'll need to have in place beforehand.
