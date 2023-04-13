@@ -1523,6 +1523,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
   },
   {
+    title: 'Build a Staking Mechanism Smart Contract With Solidity On Celo',
+    description: 'This tutorial will show you how to build a staking mechanism using solidity and deploy to the blockchain',
+    preview: require('./showcase/intermediate/build-a-staking-mechanism-smart-contract-with-solidity-on-celo.png'),
+    website: 'blog/tutorials/build-a-staking-mechanism-smart-contract-with-solidity-on-celo',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Build Your Own Full Stack NFT AI Art Minter On The Celo Blockchain',
     description: 'In this tutorial, we will build a full stack nft digital art minter that will generate our art with artificial intelligence.',
     preview: require('./showcase/intermediate/build-your-own-fullstack-nft-ai-art-minter-on-the-celo-blockchain.png'),
