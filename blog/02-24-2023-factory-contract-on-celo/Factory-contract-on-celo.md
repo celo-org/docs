@@ -18,6 +18,7 @@ slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo
 Smart contracts are programs running on blockchains. As a result, some design patterns and programming principles that apply to traditional software development also apply to smart contracts. A factory contract is similar to a class in object-oriented programming. In Solidity, a factory contract is a parent contract that will deploy other child contracts.
 
 This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications. Let's dive right in.
+**Note: [Here](https://github.com/johnfawole/Factory_Contract_on_Celo) is a link to the complete contract folder you'll be learning about in this tutorial
 
 ## The Factory Contract
 
