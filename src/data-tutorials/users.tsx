@@ -1089,13 +1089,6 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
   {
-    title: 'Aprenda sobre Oraculos em Celo',
-    description: 'Aprenda e entenda mais sobre oraculos em Celo.',
-    preview: require('./showcase/intermediate/aprenda_sobre_oraculos.png'),
-    website: 'blog/tutorials/aprenda-sobre-oraculos',
-    tags: ['intermediate','celosage','smartcontract','video'],
-  },
-  {
     title: 'Creating Smart Contracts for liquidity farming',
     description: ' Describing Smart Contracts For Liquidity Farming And The Technical Side Of Creating Them.',
     preview: require('./showcase/intermediate/creating-smart-contracts-for-liquidity-farming.png'),
