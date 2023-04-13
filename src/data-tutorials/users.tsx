@@ -1444,7 +1444,7 @@ const Users: User[] = [
     description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
     preview: require('./showcase/advanced/aave-on-celo.png'),
     website: '/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave',
-    tags: ['celosage', 'advanced', 'solidity', 'celo', 'smartcontract],
+    tags: ['celosage', 'advanced', 'solidity', 'celo', 'smartcontract'],
   },
   {
     title: 'Create Vault Smart Contract',
