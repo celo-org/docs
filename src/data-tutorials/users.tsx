@@ -2985,7 +2985,7 @@ const Users: User[] = [
     title: 'Using Web3.py to Interact with a Deployed Smart Contract in Python',
     description: 'This tutorial provides a step-by-step guide on how to use Web3.py, a Python library to interact with the Ethereum blockchain, to interact with a deployed Smart Contract',
     preview: require('./showcase/intermediate/sage-using-web3.py-to-interact-with-a-deployed-smart-contract-in-python.png'),
-    website: 'blog/tutorials/using-web3.py-to-interact-with-a-deployed-smart-contract-in-python',
+    website: 'blog/tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {

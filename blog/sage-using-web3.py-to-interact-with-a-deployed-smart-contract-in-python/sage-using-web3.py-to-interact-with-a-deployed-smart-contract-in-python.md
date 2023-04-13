@@ -8,7 +8,7 @@ authors:
     image_url: https://user-images.githubusercontent.com/104994589/228998540-4b028526-6b5a-474c-9aa3-39914da248ef.png
 tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
-slug: /tutorials/using-web3.py-to-interact-with-a-deployed-smart-contract-in-python
+slug: /tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/sage-using-web3.py-to-interact-with-a-deployed-smart-contract-in-python.png)
