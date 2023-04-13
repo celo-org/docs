@@ -1,20 +1,21 @@
 ---
 title: School Resources Marketplace Smart Contract on Celo
-description:  The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.
+description: The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.
 authors:
   - name: David Ikanji
-    title: Technical Writer 
-    url:  https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ikanji201
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/school-resources-marketplace-smart-contract-on-celo
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png)
+
 ## INTRODUCTION
 
 In this tutorial, you will learn how to create a decentralized marketplace on the Celo blockchain using Solidity programming language. Specifically, we will create a School Resources Marketplace where students can buy and sell educational resources such as books, lecture notes, and other educational materials. We will use the ERC-20 token standard to facilitate the exchange of value and the IPFS protocol to store the resources. This tutorial assumes basic knowledge of Solidity and blockchain technology. By the end of this tutorial, you will have a fully functional decentralized marketplace that can be used by students to exchange educational resources in a secure and decentralized manner.
-
 
 ## REQUIREMENT
 
@@ -24,7 +25,7 @@ To take this tutorial, you will need:
 
 - A reliable internet browser and internet connection.
 
-## PREREQUISITE 
+## PREREQUISITE
 
 - Basic knowledge of Javascript.
 
@@ -220,7 +221,7 @@ Next, we add the `buyResource` function.
             "Transfer failed."
         );
 }
-````
+```
 
 The `buyResource` function allows a user to purchase a resource from the marketplace by providing the index of the desired resource. The function first checks that the resource exists using the exist modifier and that the caller is a valid customer using the `onlyValidCustomer` modifier.
 
@@ -298,6 +299,7 @@ function downloadResource(uint256 _index) external payable exist(_index) {
 
 }
 ```
+
 The last function we added is the `downloadResource` function. This function allows a user to download a resource by paying the set downloadFee. When the function is called, it first checks if the resource is available for download by checking the `isOnSale` variable. If it's not available, it reverts with an error message.
 
 Next, the function checks if the user has sent enough funds to cover the `downloadFee`. If the funds are not enough, the function reverts with an error message.

@@ -1733,6 +1733,13 @@ const Users: User[] = [
     website: 'blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo',
     tags: ['advanced', 'hardhat', 'celosage', 'solidity'],
   },
+  {
+    title: 'School Resources Marketplace Smart Contract on Celo',
+    description: ' The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.',
+    preview: require('./showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/school-resources-marketplace-smart-contract-on-celo',
+    tags: ['solidity', 'intermediate', 'celo', 'celosage'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
