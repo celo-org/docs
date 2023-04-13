@@ -1,5 +1,5 @@
 ---
-title: School Resources Marketplace Smart Contract on celo
+title: School Resources Marketplace Smart Contract on Celo
 description:  The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.
 authors:
   - name: David Ikanji
@@ -8,7 +8,7 @@ authors:
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
-slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-blockchain
+slug: /tutorials/school-resources-marketplace-smart-contract-on-celo
 ---
 
 ## INTRODUCTION
