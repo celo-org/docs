@@ -211,7 +211,7 @@ Follow the instructions to complete the project setup.
 
 - Navigate to the contracts folder. Create a new `.sol` file. I named mine `VulnerableToken.sol`. Then paste the code below.
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
   pragma solidity 0.8.18;
 
@@ -389,7 +389,7 @@ A good solution is to disallow an explicit supply of token addresses as input. W
 
 - The second issue was tagged `State access after the external call` for the same function - `WithdrawToken`. The severity is 'medium'.
 
-```js
+```solidity
   function withdrawToken(address _token) public {
     require(_token != address(0), "Token is zero address");
     uint tBalance = tokenBalances[msg.sender];
@@ -404,7 +404,7 @@ In the above code, we modify the state after making an external call. This is no
 
 Let's fix the issues and rerun the command. Create a new file `WidthrawalFixed.sol`, and paste the following code:
 
-```js WithdrawalFixed.sol
+```solidity WithdrawalFixed.sol
  // SPDX-License-Identifier: MIT
 
   pragma solidity 0.8.18;
