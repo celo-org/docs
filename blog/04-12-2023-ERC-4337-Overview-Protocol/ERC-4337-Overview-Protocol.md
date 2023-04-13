@@ -200,7 +200,7 @@ You can see the full code [here](https://github.com/guizostudios/ERC-4337)
 
 [Eip-4337](https://eips.ethereum.org/EIPS/eip-4337)
 
-## Sobre o Autor
+## About Author
 
 I am a serial entrepreneur, founder of Guizo Studios and always available to help the Celo ecosystem.
 
