@@ -489,3 +489,43 @@ function downloadResource(uint256 _index) external payable exist(_index) {
 
 }
 ```
+
+## CONTRACT DEPLOYMENT
+
+To deploy the School Resources Marketplace smart contract on the Celo blockchain, there are a few things you'll need to have in place beforehand.
+
+CeloExtensionWallet: Download and install the Celo Extension Wallet from the Google Chrome store, create a wallet, and securely store your key phrase. [Click here to intall the celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
+
+Celo Faucet: Fund your wallet by copying your wallet address and pasting it into the Celo Faucet, then confirm. [Click here to access celo faucet](https://faucet.celo.org/)
+
+Celo Remix Plugin: Open Remix and create a new Solidity file, paste the schoolResource contract code into the file, and ensure the Solidity compiler is set to version 0.8.7 or later. [Click here to access to access the remix ide](https://remix.ethereum.org/)
+
+Compile the contract by clicking the `Compile schoolResource.sol` button in the Solidity Compiler tab in Remix.
+
+In the `Deploy & Run Transactions` tab, select the Celo network from the dropdown menu, connect your wallet to Remix by clicking `Connect to wallet`, and select `schoolResources` from the `Contract` dropdown menu.
+
+Click the `Deploy` button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+
+Once the transaction is confirmed, the `schoolResource` contract will be deployed on the Celo blockchain and you can interact with it using Remix.
+
+## CONCLUSION
+
+Congratulations on your achievement! You have successfully created a smart contract for school resources on the Celo blockchain. Well done and great job! 🎉
+
+## NEXT STEP
+
+I hope that you found this tutorial informative and that you were able to learn a lot from it. If you're interested in continuing your education, I've provided some helpful links below that you may find useful to explore further:
+
+[The official Celo documentation:](https://docs.celo.org/)
+
+[Solidity By Example, a website with code examples for learning Solidity:](https://solidity-by-example.org/)
+
+[OpenZeppelin Contracts, a library of secure, tested smart contract code:](https://www.openzeppelin.com/contracts/)
+
+[Solidity documentation for version 0.8.17:](https://docs.soliditylang.org/en/v0.8.17/)
+
+I hope these resources prove to be useful to you!
+
+## About the author
+
+I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
