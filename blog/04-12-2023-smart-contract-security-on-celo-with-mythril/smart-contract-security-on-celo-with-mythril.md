@@ -48,35 +48,36 @@ To use this tool, you will need to perform the following setups. These steps are
 ```bash
   sudo apt install python3-pip
 ```
+
 or
 
 ```bash
   sudo apt install pip
 ```
 
-  - Run this command.
+- Run this command.
 
-  ```bash
-    sudo apt-get update
-  ```
+```bash
+  sudo apt-get update
+```
 
-  - Check the version of pip3 installed
+- Check the version of pip3 installed
 
-  ```bash
-    pip3 --version
-  ```
+```bash
+  pip3 --version
+```
 
-  - Install Mythril
+- Install Mythril
 
-  ```bash
-    pip install mythril
-  ```
+```bash
+  pip install mythril
+```
 
-  - Check if Mythril is installed
+- Check if Mythril is installed
 
-  ```bash
-    myth version
-  ```
+```bash
+  myth version
+```
 
 If you have trouble viewing the version of Mythril, take the following steps.
 
@@ -105,11 +106,13 @@ If you have trouble viewing the version of Mythril, take the following steps.
 ```bash
   pip install mythril
 ```
+
 - Then, check the mythril version
 
 ```bash
   myth version
 ```
+
 This should work fine. If you're still having trouble setting up, please go over the steps again.
 
 - Next step, since you newly installed Ubuntu, you're probably not going to have VSCode installed. In the Ubuntu terminal, run `code .`. This command triggers VSCode if already installed, otherwise, it will attempt to download the extension, so you should be connected to the internet.
@@ -126,7 +129,7 @@ This should work fine. If you're still having trouble setting up, please go over
   mkdir smart-contract-security-on-celo-with-mythril && cd smart-contract-security-on-celo-with-mythril
 ```
 
-- Create a hardhat project using yarn. 
+- Create a hardhat project using yarn.
 
 ```bash
   yarn hardhat
@@ -134,23 +137,23 @@ This should work fine. If you're still having trouble setting up, please go over
 
 If the command failed, you obviously do not have `yarn` installed. Follow the steps below to install yarn or skip if you already installed it.
 
-  - Add yarn key
+- Add yarn key
 
-  ```bash
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  ```
+```bash
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+```
 
-  ```bash
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  ```
-  
-  ```bash
-    sudo apt update && sudo apt install yarn
-  ```
+```bash
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+
+```bash
+  sudo apt update && sudo apt install yarn
+```
 
 Then, check the version of the yarn.
 
-```bash 
+```bash
   yarn --version
 ```
 
@@ -254,7 +257,7 @@ Follow the instructions to complete the project setup.
 
 The above code is a simple contract that allows any account to deposit and withdraw $Celo and ERC20 tokens. I have written the contract for the purpose of this tutorial.
 
->Warning: Do not use the above code in production. It contains intended bugs meant for this guide.
+> Warning: Do not use the above code in production. It contains intended bugs meant for this guide.
 
 **Using Mythril**
 
@@ -379,8 +382,8 @@ From the output, Mythril has found vulnerabilities and analyzed each of them as 
 - PC address
 - Estimated Gas Usage: 8256.
 - Description.
- 
-- The first issue is an `External Call To User-Supplied Address` vulnerability. It warns us specifically about the `withdrawToken(address)` that allows users to explicitly supply an address to which the contract makes a call. Such type of invocation is external in context and can leave room for exploitation since we are making a call to an untrusted contract. 
+
+- The first issue is an `External Call To User-Supplied Address` vulnerability. It warns us specifically about the `withdrawToken(address)` that allows users to explicitly supply an address to which the contract makes a call. Such type of invocation is external in context and can leave room for exploitation since we are making a call to an untrusted contract.
 
 A good solution is to disallow an explicit supply of token addresses as input. We can set the token either from the constructor or through a custom function meant for the purpose. If we allow the user to input a token address to withdraw from, users with bad motives may supply an address containing code that may create an unpleasant story. This can cause unexpected behavior.
 
@@ -472,47 +475,46 @@ Let's fix the issues and rerun the command. Create a new file `WidthrawalFixed.s
 
 We only got a warning for making a low-level call to the unknown account which might contain arbitrary code. Every other issue is resolved.
 
->Note: Mythil does not guarantee that your contracts are completely free of issues. It may not detect issues relating to business and other logic. If you take a close look at the `WithdrawalFixed.sol`, you may find out there are logical or known issues not detected. But to a good amount, we are able to avoid common errors that might have gone oversight.
+> Note: Mythil does not guarantee that your contracts are completely free of issues. It may not detect issues relating to business and other logic. If you take a close look at the `WithdrawalFixed.sol`, you may find out there are logical or known issues not detected. But to a good amount, we are able to avoid common errors that might have gone oversight.
 
 **Deployment**
 
 If you wish to refresh your memory about deploying to testnet, then this part is for you, else, congratulations on completing the tutorial.
 
-If everything is resolved, we can deploy the contract on the testnet. 
+If everything is resolved, we can deploy the contract on the testnet.
 
 - Override the handhat config file with the code below
 
 ```js
-  import { config as CONFIG } from "dotenv";
-  import { HardhatUserConfig } from "hardhat/config";
-  import "@nomicfoundation/hardhat-toolbox";
-  import "hardhat-deploy";
+import { config as CONFIG } from "dotenv";
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+import "hardhat-deploy";
 
-  CONFIG();
+CONFIG();
 
-  const config: HardhatUserConfig = {
-    networks: {
-      alfajores: {
-        url: process.env.DESTINATION_CHAIN_URI,
-        accounts: [`${process.env.PRIVATE_KEY}`],
-        chainId: 44787,
-      },
+const config: HardhatUserConfig = {
+  networks: {
+    alfajores: {
+      url: process.env.DESTINATION_CHAIN_URI,
+      accounts: [`${process.env.PRIVATE_KEY}`],
+      chainId: 44787,
     },
+  },
 
-    solidity: {
-      version: "0.8.18",
-      settings: {
-        optimizer: {
-          enabled: true,
-          runs: 200
-        },
-        evmVersion: "byzantium"
-        }
+  solidity: {
+    version: "0.8.18",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
       },
-  };
+      evmVersion: "byzantium",
+    },
+  },
+};
 
-  export default config;
-
+export default config;
 ```
 
 - Install `dotenv` and `hardhat-deploy`.
