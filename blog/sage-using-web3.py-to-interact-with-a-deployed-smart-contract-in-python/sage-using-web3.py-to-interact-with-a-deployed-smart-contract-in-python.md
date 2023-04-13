@@ -13,7 +13,6 @@ slug: /tutorials/using-web3.py-to-interact-with-a-deployed-smart-contract-in-pyt
 
 ![header](../../src/data-tutorials/showcase/intermediate/sage-using-web3.py-to-interact-with-a-deployed-smart-contract-in-python.png)
 
-
 ## Introduction
 
 The manner that transactions are carried out has been transformed by blockchain technology. The most well-known blockchain for creating decentralized applications, Ethereum, provides a robust smart contract ecosystem. In the Ethereum blockchain, smart contracts are self-executing contracts that allow for programmatic interaction from developers. A Pythonic interface for communicating with the Ethereum blockchain is provided via the Web3.py module. This article will teach you how to communicate with a deployed Python smart contract using Web3.py.
@@ -27,7 +26,7 @@ Before we begin, it is essential to be familiar with:
 
 ## Requirements
 
- It would help if you had the following installed on your computer to follow along:
+It would help if you had the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -38,7 +37,7 @@ Before we begin, it is essential to be familiar with:
 
 ## Step 1: Set up the Project
 
-I will use the smart contract created in my previous article on [Creating a staking contract on Celo](https://www.notion.so/Creating-a-Staking-Contract-on-Celo-397d62e031dc42b6a5e1177b3e9cc843), So, make sure you go through it before continuing with this tutorial. 
+I will use the smart contract created in my previous article on [Creating a staking contract on Celo](https://www.notion.so/Creating-a-Staking-Contract-on-Celo-397d62e031dc42b6a5e1177b3e9cc843), So, make sure you go through it before continuing with this tutorial.
 
 Your smart contract should be as updated as this:
 
@@ -247,7 +246,7 @@ contract = w3.eth.contract(address=contract_address, abi=abi)
 
 ## Step 3: Interact with the Stake Function
 
-Create a “stake” function that takes in an amount in Celo USD and builds the transaction, signs it, and generates a receipt that shows that the stake was executed successfully. 
+Create a “stake” function that takes in an amount in Celo USD and builds the transaction, signs it, and generates a receipt that shows that the stake was executed successfully.
 
 ```python
 # Stake tokens
@@ -268,7 +267,7 @@ def stake(amount):
 
 ## Step 4: Interact with the Unstake Function
 
- An “unstake” function builds the transaction, signs it, and generates a receipt that shows that the function was executed successfully. 
+An “unstake” function builds the transaction, signs it, and generates a receipt that shows that the function was executed successfully.
 
 ```python
 # Unstake tokens
@@ -402,11 +401,11 @@ elif action == 'get_staking_info':
 
 ## Conclusion
 
-In this article, we learnt how smart contract contracts can be interacted with, using Web3.py  through the smart contract’s ABI. In this case, we interacted with a “staking” contract as if we were using a web client interface. 
+In this article, we learnt how smart contract contracts can be interacted with, using Web3.py through the smart contract’s ABI. In this case, we interacted with a “staking” contract as if we were using a web client interface.
 
 ## Next Steps
 
-You can learn more about [Staking](https://chain.link/education-hub/what-is-staking-crypto) and how it can help the development lifecycle of blockchain and Defi applications. You can also implement a web interface using web frameworks like React or Vue. 
+You can learn more about [Staking](https://chain.link/education-hub/what-is-staking-crypto) and how it can help the development lifecycle of blockchain and Defi applications. You can also implement a web interface using web frameworks like React or Vue.
 
 ## About the Author
 
