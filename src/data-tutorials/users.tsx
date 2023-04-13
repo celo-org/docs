@@ -832,6 +832,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'hardhat'],
   },
   {
+    title: 'Implementing Security Measures For dApps on Celo',
+    description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage.',
+    preview: require('./showcase/intermediate/src/intermediate-tutorials.png'),
+    website: 'blog/tutorials/implementing-security-measures-for-dApps-on-celo',
+    tags: ['intermediate', 'celo', 'celosage', 'solidity', 'javascript'],
+  },
+  {
     title: 'How Uniswap Works',
     description: 'In this tutorial, we will provide an introduction to the decentralized finance (DeFi) ecosystem on the Celo blockchain.',
     preview: require('./showcase/beginner/celo-blockchain-101.png'),

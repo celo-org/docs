@@ -1,5 +1,5 @@
 ---
-title: Implementing Security Measures For dApps
+title: Implementing Security Measures For dApps on Celo
 description: Providing Celo developers with comprehensive information on Web3 tools and their usage.
 authors:
   - name: Joel Obafemi
