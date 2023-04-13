@@ -1,5 +1,5 @@
 ---
-title: How to a Create Celo Testnet RPC Using Lava Protocol
+title: How to Create a Celo Testnet RPC Using Lava Protocol
 description: This article briefly examines RPCs while guiding readers on the steps required to create Celo Testnet and Mainnet RPCs using Lava.
 authors:
   - name: Oyeniyi Abiola Peace
