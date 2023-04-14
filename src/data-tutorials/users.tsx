@@ -882,13 +882,6 @@ const Users: User[] = [
     tags: ['intermediate','celosage'],
   },
   {
-    title: 'Como usar a metodologia de gestão de produtos para criar soluções com NFT',
-    description: 'Aprenda como usar a metodologia de gestão de produtos para criar soluções com NFT',
-    preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
-    website: 'blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT',
-    tags: ['beginner', 'erc721', 'celosage'],
-  },
-  {
     title: 'Understanding Utility and Security Tokens',
     description: 'Utility tokens are digital assets that lives on the blockchain and can be used to gain access to certain things, such as a game or a website.',
     preview: require('./showcase/beginner/understanding-utility-and-security-tokens.png'),
