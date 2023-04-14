@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave
 ---
 
-![aave-on-celo](https://user-images.githubusercontent.com/105144630/222908114-44fa313f-1b22-4709-8261-afcfa648cd7d.png)
+![aave-on-celo](../../src/data-tutorials/showcase/advanced/aave-on-celo.png)
 
 ## Introduction
 
