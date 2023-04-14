@@ -2989,6 +2989,13 @@ const Users: User[] = [
 
   },
   {
+    title: 'Using Web3.py to Interact with a Deployed Smart Contract in Python',
+    description: 'This tutorial provides a step-by-step guide on how to use Web3.py, a Python library to interact with the Ethereum blockchain, to interact with a deployed Smart Contract',
+    preview: require('./showcase/intermediate/sage-using-web3-py-to-interact-with-a-deployed-smart-contract-in-python.png'),
+    website: 'blog/tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Building a Celo Wallet using Golang',
     description: 'This article could focus on building a Celo wallet application using the Golang programming language. It could cover topics such as generating and storing private keys, interacting with the Celo blockchain and implementing features such as sending and receiving Celo transactions.',
     preview: require('./showcase/intermediate/building-a-celo-wallet-using-golang.png'),
