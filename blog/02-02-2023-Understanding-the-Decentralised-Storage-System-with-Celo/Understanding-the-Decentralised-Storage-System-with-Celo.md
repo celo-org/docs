@@ -4,7 +4,7 @@ description: This tutorial is a comprehensive and explanatory guide to understan
 
 authors:
   - name: Mayowa Julius Ogungbola
-    title: Software Engineer, Technical writer @Celo Foundation
+    title: Software Engineer, Technical Writer
     url: https://github.com/Julius170
     image_url: /showcase/intermediate/understanding-the-decentralized-storage-system.png
 tags: [celo,intermediate,celosage,]

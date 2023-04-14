@@ -13,6 +13,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Web2 to Web3",
+          id: "general/web2-to-web3",
+        },
+        {
+          type: "doc",
           label: "Whitepapers",
           id: "general/whitepapers",
         },
@@ -144,6 +149,11 @@ const sidebars = {
               id: "wallet/ledger/to-celo-cli",
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "Coinbase Wallet",
+          id: "wallet/coinbase-wallet",
         },
         {
           type: "link",
