@@ -532,3 +532,7 @@ I hope these resources prove to be useful to you!
 ## About the author
 
 I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
+
+## References
+
+- [Source Code](https://github.com/Ikanji201/school-resource-marketplace)
