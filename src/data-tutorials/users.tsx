@@ -818,8 +818,8 @@ const Users: User[] = [
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
  {
-  title: 'How to Build and Deploy Factory Contracts on Celo',
-  description: 'This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications.',
+  title: 'How to Build and Deploy Factory Contracts on Celo Blockchain',
+  description: 'This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract',
   preview: require('./showcase/intermediate/factorycover.png'),
   website: 'blog/tutorials/how-to-build-and-deploy-factory-contracts-on-celo',
   tags: ['solidity', 'intermediate', 'celosage', 'smartcontract', 'celo'],
