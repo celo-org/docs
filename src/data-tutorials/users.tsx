@@ -3046,6 +3046,13 @@ const Users: User[] = [
     website: 'blog/tutorials/school-resources-marketplace-smart-contract-on-celo',
     tags: ['solidity', 'intermediate', 'celo', 'celosage'],
   },
+  {
+    title: 'Como usar a metodologia de gestao de produtos para criar solucoes com NFT',
+    description: 'Aprenda como usar a metodologia de gestao de produtos para criar solucoes com NFT',
+    preview: require('./showcase/beginner/metodologia-de-gestao-de-produtos.png'),
+    website: 'blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-nft',
+    tags: ['beginner', 'celosage', 'erc721', 'smartcontract'],
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
