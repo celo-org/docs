@@ -8,7 +8,7 @@ authors:
   image_url: https://avatars.githubusercontent.com/u/108406605
 tags: [beginner, celosage, erc721, smartcontract]
 hide_table_of_contents: true
-slug: /tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT
+slug: /tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-nft
 ---
 
 
