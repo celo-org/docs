@@ -6,19 +6,19 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smartcontract']
+tags: ["solidity", "smartcontract"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo
 ---
 
-![factorycover](https://user-images.githubusercontent.com/105144630/224481123-4d2c8504-7199-459c-8728-46cf518001b6.png)
+![header](../../src/data-tutorials/showcase/intermediate/factorycover.png)
 
 ## Introduction
 
 Smart contracts are programs running on blockchains. As a result, some design patterns and programming principles that apply to traditional software development also apply to smart contracts. A factory contract is similar to a class in object-oriented programming. In Solidity, a factory contract is a parent contract that will deploy other child contracts.
 
 This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract. We will also discuss the factory pattern, its advantages, and its real-world applications. Let's dive right in.
-**Note: [Here](https://github.com/johnfawole/Factory_Contract_on_Celo) is a link to the complete contract folder you'll be learning about in this tutorial
+\*\*Note: [Here](https://github.com/johnfawole/Factory_Contract_on_Celo) is a link to the complete contract folder you'll be learning about in this tutorial
 
 ## The Factory Contract
 
@@ -44,15 +44,15 @@ On decentralized exchanges (DEXs) where new trading pairs can be easily listed, 
 
 ### 2. Making Interfaces to Help Users Create Their Tokens
 
-Numerous token issuance platforms are available today, where new tokens can be developed and deployed with minimal manual intervention. 
+Numerous token issuance platforms are available today, where new tokens can be developed and deployed with minimal manual intervention.
 
 Factory contracts enable non-technical blockchain users to create and manage their tokens more intelligently, increasing the general public's adoption and use of web3 technology (e.g., ThirdWeb).
 
 ### 3. Keeping Track of Deployed Contracts while Saving Gas
 
-Factory contracts can be easily optimized for deployments using a clone factory contract, eliminating the need to store all bytecodes for each deployment. 
+Factory contracts can be easily optimized for deployments using a clone factory contract, eliminating the need to store all bytecodes for each deployment.
 
-This is one method for significantly reducing the cost of each deployment, resulting in a very small payload to deploy each time. 
+This is one method for significantly reducing the cost of each deployment, resulting in a very small payload to deploy each time.
 
 It entails radical restructuring, heavy use of libraries, and proxy contracts, resulting in a minimal payload to deploy each time.
 
@@ -66,7 +66,7 @@ When you load up Remix in your browser, you will be greeted by this menu. For th
 
 Create a fairly standard ERC20 contract. This is the template contract or instance that the Factory contract will reproduce. Create a new solidity file called Token.sol inside the contracts folder and add the following code.
 
-``` solidity
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -75,7 +75,7 @@ contract FoundationToken is ERC20 {
 uint256 public initialAmount;
 address public owner;
 
-constructor(string memory _tokenName, string memory _symbol, uint256 _amount, address _owner) 
+constructor(string memory _tokenName, string memory _symbol, uint256 _amount, address _owner)
 ERC20(_tokenName, _symbol) {
 owner =_owner;
 initialAmount = _amount;
@@ -89,7 +89,7 @@ _mint(_toAddress, _amount);
 }
 ```
 
-Being a powerful IDE, Remix can import solidity source files directly from GitHub. In line 3, we are importing the standard openzeppelin ERC20 implementation from GitHub, which our FoundationToken contract inherits (line 5). On line 9, the constructor takes four arguments and passes two of the arguments(_tokenName and _symbol) to the ERC20 constructor we inherited.
+Being a powerful IDE, Remix can import solidity source files directly from GitHub. In line 3, we are importing the standard openzeppelin ERC20 implementation from GitHub, which our FoundationToken contract inherits (line 5). On line 9, the constructor takes four arguments and passes two of the arguments(\_tokenName and \_symbol) to the ERC20 constructor we inherited.
 
 ### Step 2: Writing the TokenFactory Contract
 
@@ -97,7 +97,7 @@ The FoundationToken contract cannot currently be created. So, we'll create a fac
 
 To begin our TokenFactory contract, create a new file called TokenFactory.sol in the contracts folder. You can include the following code in that file:
 
-``` solidity
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "./Token.sol";
@@ -126,21 +126,22 @@ return (token.owner(), token.name(), token.symbol(), token.totalSupply());
 }
 ```
 
-On line 3, we are locally importing the [Token file](https://gist.github.com/johnfawole/6e9f185e05235d2adfaea715d0645c04). Here we instantiate the Token contract FoundationToken token, create an array of type FoundationTokens FoundationToken[] public tokens to keep track of the newly created token contracts, and finally, the magic function createToken(), which takes the FoundationTokens's constructor parameters as arguments. 
+On line 3, we are locally importing the [Token file](https://gist.github.com/johnfawole/6e9f185e05235d2adfaea715d0645c04). Here we instantiate the Token contract FoundationToken token, create an array of type FoundationTokens FoundationToken[] public tokens to keep track of the newly created token contracts, and finally, the magic function createToken(), which takes the FoundationTokens's constructor parameters as arguments.
 
 The count is an internal variable we use to track the deployed token indexes. After a token is successfully created, the TokenCreated event is fired. The value at index 0 in the tokens array becomes the address of the first created contract!
 
 This line creates a new contract:
 
-``` solidity
+```solidity
 FoundationToken token = new FoundationToken(_tokenName, _symbol, _initialSupply, msg.sender);
 ```
 
 Lastly, we have our getToken function. This function takes an uint256 number representing the token contract index we want to look up. It is a view function, as it doesn't modify the chain's state. It also returns four parameters:
-* Owner address
-* Token Name
-* Token symbol
-* Total Supply of the tokens
+
+- Owner address
+- Token Name
+- Token symbol
+- Total Supply of the tokens
 
 ### Step 3: Testing with Remix
 
