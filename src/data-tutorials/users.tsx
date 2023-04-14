@@ -2085,6 +2085,13 @@ const Users: User[] = [
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
   {
+    title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
+    description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
+    preview: require('./showcase/advanced/aave-on-celo.png'),
+    website: '/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave',
+    tags: ['celosage', 'advanced', 'solidity', 'celo', 'smartcontract'],
+  },
+  {
     title: 'Create Deploy and Mint your ERC223 contract on Celo with Hardhat',
     description: 'This tutorial is an expository piece on the ERC223 token standard, also explaining how to create and deploy a sample ERC223 contract',
     preview: require('./showcase/intermediate/ERC223-token-contract.png'),
