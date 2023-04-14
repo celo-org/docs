@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ["solidity", "smartcontract"]
+tags: ["solidity", "smartcontract","celo","celosage"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-and-deploy-factory-contracts-on-celo
 ---
