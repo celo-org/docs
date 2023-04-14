@@ -1273,6 +1273,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
   },
   {
+    title: 'Create a Decentralized Advertising Platform Using Solidity on Celo',
+    description: 'In this tutorial, we will be building a advertising smart contract using solidity and deploy to the celo blockchain',
+    preview: require('./showcase/intermediate/create-a-decentralized-advertising-platform-using-solidity-on-celo.png'),
+    website: 'blog/tutorials/create-a-decentralized-advertising-platform-using-solidity-on-celo',
+    tags: ['celosage', 'solidity', 'intermediate'],
+  },
+  {
     title: 'C# mobile App to display Celo NFTs',
     description: 'Learn how build an Android app with C# and connect to Celo network to retriever NFT metadata and display NFT in the app.',
     preview: require('./showcase/advanced/c-sharp-mobile-dapp-to-display-celo-nfts.png'),
@@ -3038,6 +3045,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
     website: 'blog/tutorials/integrating-celo-into-the-process-of-fintech-web-app-development',
     tags: ['celo', 'celosage', 'intermediate', 'contractkit', 'javascript', 'nodejs'], 
+  },
+  {
+    title: 'School Resources Marketplace Smart Contract on Celo',
+    description: ' The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.',
+    preview: require('./showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/school-resources-marketplace-smart-contract-on-celo',
+    tags: ['solidity', 'intermediate', 'celo', 'celosage'],
   },
   /*
   Pro Tip: add your site in alphabetical order.
