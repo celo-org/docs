@@ -2472,7 +2472,7 @@ const Users: User[] = [
     description: 'This article briefly examines RPCs while guiding readers on the steps required to create Celo Testnet and Mainnet RPCs using Lava.',
     preview: require('./showcase/beginner/how-to-create-celo-testnet-and-mainnet-rpc-using-lava.png'),
     website: 'blog/tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava',
-    tags: ['celosage', 'beginner'],
+    tags: ['celosage', 'beginner','celo'],
   },
   {
     title: 'Build an NFT Marketplace for Tech Artisans on Celo',
