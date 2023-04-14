@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/sage-using-web3.py-to-interact-with-a-deployed-smart-contract-in-python.png)
+![header](../../src/data-tutorials/showcase/intermediate/sage-using-web3-py-to-interact-with-a-deployed-smart-contract-in-python.png)
 
 ## Introduction
 
