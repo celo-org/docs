@@ -1216,6 +1216,13 @@ const Users: User[] = [
     website: 'blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum',
     tags: ['intermediate','celosage','erc721','smartcontract','video'],
   },
+ {
+  title: 'How to Build and Deploy Factory Contracts on Celo Blockchain',
+  description: 'This article will demonstrate how to use the factory pattern to correctly deploy multiple instances of your smart contract',
+  preview: require('./showcase/intermediate/factorycover.png'),
+  website: 'blog/tutorials/how-to-build-and-deploy-factory-contracts-on-celo',
+  tags: ['solidity', 'intermediate', 'celosage', 'smartcontract', 'celo'],
+  },
   {
     title: 'Aprenda sobre Oraculos em Celo',
     description: 'Aprenda e entenda mais sobre oraculos em Celo.',
@@ -1271,6 +1278,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
     website: 'blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo',
     tags: ['celosage', 'solidity', 'video', 'hardhat', 'intermediate'],
+  },
+  {
+    title: 'Create a Decentralized Advertising Platform Using Solidity on Celo',
+    description: 'In this tutorial, we will be building a advertising smart contract using solidity and deploy to the celo blockchain',
+    preview: require('./showcase/intermediate/create-a-decentralized-advertising-platform-using-solidity-on-celo.png'),
+    website: 'blog/tutorials/create-a-decentralized-advertising-platform-using-solidity-on-celo',
+    tags: ['celosage', 'solidity', 'intermediate'],
   },
   {
     title: 'C# mobile App to display Celo NFTs',
@@ -2071,6 +2085,13 @@ const Users: User[] = [
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
   {
+    title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
+    description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
+    preview: require('./showcase/advanced/aave-on-celo.png'),
+    website: '/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave',
+    tags: ['celosage', 'advanced', 'solidity', 'celo', 'smartcontract'],
+  },
+  {
     title: 'Create Deploy and Mint your ERC223 contract on Celo with Hardhat',
     description: 'This tutorial is an expository piece on the ERC223 token standard, also explaining how to create and deploy a sample ERC223 contract',
     preview: require('./showcase/intermediate/ERC223-token-contract.png'),
@@ -2523,6 +2544,13 @@ const Users: User[] = [
     preview: require('./showcase/beginner/solidity-from-zero-to-hero.png'),
     website: 'blog/tutorials/solidity-from-zero-to-hero',
     tags: ['celosage', 'intermediate'],
+  },
+  {
+    title: ' How to Create a Celo Testnet RPC Using Lava Protocol',
+    description: 'This article briefly examines RPCs while guiding readers on the steps required to create Celo Testnet and Mainnet RPCs using Lava.',
+    preview: require('./showcase/beginner/how-to-create-celo-testnet-and-mainnet-rpc-using-lava.png'),
+    website: 'blog/tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava',
+    tags: ['celosage', 'beginner','celo'],
   },
   {
     title: 'Build an NFT Marketplace for Tech Artisans on Celo',
@@ -2982,6 +3010,13 @@ const Users: User[] = [
 
   },
   {
+    title: 'Using Web3.py to Interact with a Deployed Smart Contract in Python',
+    description: 'This tutorial provides a step-by-step guide on how to use Web3.py, a Python library to interact with the Ethereum blockchain, to interact with a deployed Smart Contract',
+    preview: require('./showcase/intermediate/sage-using-web3-py-to-interact-with-a-deployed-smart-contract-in-python.png'),
+    website: 'blog/tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Building a Celo Wallet using Golang',
     description: 'This article could focus on building a Celo wallet application using the Golang programming language. It could cover topics such as generating and storing private keys, interacting with the Celo blockchain and implementing features such as sending and receiving Celo transactions.',
     preview: require('./showcase/intermediate/building-a-celo-wallet-using-golang.png'),
@@ -3038,6 +3073,20 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
     website: 'blog/tutorials/integrating-celo-into-the-process-of-fintech-web-app-development',
     tags: ['celo', 'celosage', 'intermediate', 'contractkit', 'javascript', 'nodejs'], 
+  },
+  {
+    title: 'School Resources Marketplace Smart Contract on Celo',
+    description: ' The School Resources Marketplace smart contract is a decentralized application built on the Celo blockchain using Solidity programming language.',
+    preview: require('./showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/school-resources-marketplace-smart-contract-on-celo',
+    tags: ['solidity', 'intermediate', 'celo', 'celosage'],
+  },
+  {
+    title: 'Smart contract security on celo with mythril',
+    description: 'Analyze smart contracts using free security tools - Mythril',
+    preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-mythril.png'),
+    website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   /*
   Pro Tip: add your site in alphabetical order.
