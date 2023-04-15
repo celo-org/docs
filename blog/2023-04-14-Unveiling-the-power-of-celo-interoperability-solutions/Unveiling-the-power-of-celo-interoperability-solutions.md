@@ -36,7 +36,6 @@ Celo uses a few different types of bridges to connect with other blockchains, ea
 
 
 **Moola Market Bridge**:
-
 The [Moola Market](https://moola.market/) bridge is another decentralized bridge that connects Celo to Ethereum. It is a non-custodial liquidity protocol that is democratizing access to yield and credit. Depositors earn compound interest which is paid for by borrowers who take over-collateralized loans, delegated loans, or flash loans.  It enables the transfer of assets between the two blockchains and provides users with access to liquidity pools on both networks. The Moola Market Bridge is optimized for DeFi use cases and offers low fees and fast transaction times.
 
 
@@ -58,7 +57,6 @@ Atomic swaps are a trustless mechanism for enabling cross-chain transactions. Ce
 
 
 **Optics**
-
 [Optics](https://optics.app/) is a decentralized interoperability protocol designed to enable cross-chain communication between different blockchain networks. It allows for the seamless transfer of assets between different networks while retaining their underlying characteristics, such as security and functionality. It sees an attestation of some data and accepts it as valid after a timer elapses. While the timer is running, honest participants have a chance to respond to the attestation and/or submit fraud proofs.  
 
 
