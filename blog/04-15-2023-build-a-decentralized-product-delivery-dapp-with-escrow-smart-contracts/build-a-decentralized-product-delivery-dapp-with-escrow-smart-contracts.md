@@ -10,6 +10,8 @@ authors:
   tags: [celo, celosage, intermediate, 'solidity, metamask, nodejs, javascript]
   hide_table_of_contents: true
   slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
+  
+  ![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-product-delivery-dapp-with-escrow-smart-contracts.png)
 
 ## Introduction
 
