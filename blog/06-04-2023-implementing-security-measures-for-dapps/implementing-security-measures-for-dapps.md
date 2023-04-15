@@ -13,55 +13,55 @@ slug: /tutorials/implementing-security-measures-for-dapps
 
 ![header](../../src/data-tutorials/showcase/intermediate/implementing-securities.png)
 
-# Introduction
+## Introduction
 
 Decentralized applications (DApps) are becoming increasingly popular as they provide a transparent and decentralized way to interact with the blockchain. Celo, a mobile-first blockchain platform, allows developers to build and deploy DApps on its network. However, as with any technology, security is a major concern for DApps on Celo. In this article, we will discuss the best practices for implementing security measures for DApps on Celo.
 
-# Prerequisites
+## Prerequisites
 
 In this article, a solid understanding of solidity and javascript is required.
 
-# Requirements
+## Requirements
 
 Make sure to have Solidity extension and an Integrated Development Environment(IDE) like VScode installed.
 
-# Ways of Implementing Security Measures on Celo
+## Ways of Implementing Security Measures on Celo
 
 We'll briefly talk about several security measures then show a pratical example in the section.
 
-## Use the latest version of Celo
+### Use the latest version of Celo
 
 Using the latest version of Celo is important as it includes the latest security features and bug fixes. Celo has a strong focus on security and the team is constantly updating the platform to ensure its security.
 
-## Use Celo's native token for gas fees
+### Use Celo's native token for gas fees
 
 Celo's native token, CELO, can be used to pay for gas fees on the Celo network. Using CELO instead of other tokens can help minimize the risk of attacks that target other tokens.
 
-## Use secure smart contract development practices
+### Use secure smart contract development practices
 
 The first step in implementing security measures for DApps on Celo is to use secure smart contract development practices. This includes practices such as writing clean and simple code, using the latest version of Solidity, testing the code thoroughly, and conducting third-party audits.
 
-## Implement access control
+### Implement access control
 
 Access control is an important security measure that should be implemented for DApps on Celo. This includes ensuring that only authorized users have access to the DApp and its functions. One way to implement access control is to use a permissioned blockchain, where only authorized nodes can access the network.
 
-## Use secure authentication methods
+### Use secure authentication methods
 
 Authentication is an important aspect of DApp security, as it ensures that only authorized users can access the DApp. Celo provides various authentication methods, including phone number authentication, which allows users to sign transactions and interact with DApps using their phone numbers. However, it is important to ensure that these authentication methods are secure and cannot be easily bypassed.
 
-## Implement role-based access control
+### Implement role-based access control
 
 Role-based access control (RBAC) is another security measure that should be implemented for DApps on Celo. RBAC allows the DApp to grant access to different users based on their roles. For example, an admin role can have access to all the functions of the DApp, while a regular user role can only have access to specific functions.
 
-## Use encryption
+### Use encryption
 
 Encryption is an important security measure that should be implemented for DApps on Celo. Encryption ensures that sensitive data, such as private keys and user data, is protected and cannot be accessed by unauthorized users. Encryption should be used for all data that is transmitted over the network, as well as for data that is stored on the blockchain.
 
-## Implement error handling
+### Implement error handling
 
 Error handling is an important security measure that should be implemented for DApps on Celo. Error handling ensures that the DApp is resilient to errors and can recover from them quickly. This includes handling invalid inputs, unexpected behavior, and other errors that may occur during the execution of the DApp.
 
-## Implement monitoring and logging
+### Implement monitoring and logging
 
 Monitoring and logging are important security measures that should be implemented for DApps on Celo. Monitoring ensures that the DApp is functioning as expected and can alert the development team if any issues arise. Logging ensures that all actions taken by the DApp are recorded and can be used to identify any issues or malicious activity.
 
@@ -69,11 +69,11 @@ Monitoring and logging are important security measures that should be implemente
 
 Multi-factor authentication (MFA) is an important security measure that should be implemented for DApps on Celo. MFA requires users to provide two or more forms of authentication before accessing the DApp. This includes something the user knows, such as a password, and something the user has, such as a phone or hardware wallet.
 
-## Implement a bug bounty program
+### Implement a bug bounty program
 
 A bug bounty program is an important security measure that should be implemented for DApps on Celo. A bug bounty program incentivizes security researchers to find and report any security vulnerabilities in the DApp. This allows the development team to identify and fix any vulnerabilities before they can be exploited.
 
-## Use audited and secure smart contract libraries
+### Use audited and secure smart contract libraries
 
 Avoid reinventing the wheel and instead use widely adopted, audited and secure smart contract libraries when building your DApp. This can help minimize the risk of security vulnerabilities in your code.
 
@@ -81,11 +81,11 @@ Avoid reinventing the wheel and instead use widely adopted, audited and secure s
 
 Proper access control and permission management is crucial for securing your DApp. Ensure that only authorized parties can execute certain functions or access certain data.
 
-## Implement input validation
+### Implement input validation
 
 Input validation is a critical component of DApp security. Always validate input data to prevent common attacks like SQL injection and cross-site scripting (XSS).
 
-## Use safe math functions
+### Use safe math functions
 
 Smart contracts are susceptible to integer overflow and underflow attacks. Use safe math functions to avoid these types of attacks.
 
@@ -204,15 +204,15 @@ Once we have the private key, we can create a new wallet instance using the Wall
 
 Note that this code is just an example, and there are many different ways to implement secure key management on the Celo blockchain. It's important to carefully consider the security implications of any key management system you implement, and to use best practices to keep your private keys safe.
 
-# Conclusion
+## Conclusion
 
 In conclusion, implementing robust security measures for dapps on the Celo blockchain is crucial to ensure the safety and trust of the platform's users. By adopting best practices such as smart contract auditing, access control, encryption, and multi-factor authentication, developers can reduce the risk of cyber attacks and protect sensitive user data.
 
-# Next Steps
+## Next Steps
 
 Now that you've learnt how implement strong security measures on decentralized applications on the Celo blockchain, you can go on and learn more on our [site](https://docs.celo.org/tutorials)
 
-# About the Author
+## About the Author
 
 Joel Obafemi
 
