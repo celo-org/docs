@@ -834,7 +834,7 @@ const Users: User[] = [
   {
     title: 'Implementing Security Measures For dApps on Celo',
     description: 'Providing Celo developers with comprehensive information on Web3 tools and their usage.',
-    preview: require('./showcase/intermediate/src/intermediate-tutorials.png'),
+    preview: require('./showcase/intermediate/implementing-securities.png'),
     website: 'blog/tutorials/implementing-security-measures-for-dApps-on-celo',
     tags: ['intermediate', 'celo', 'celosage', 'solidity', 'javascript'],
   },
