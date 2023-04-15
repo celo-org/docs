@@ -1,5 +1,5 @@
 ---
-title: Unveiling the power of celo interoperability solution
+title: Unveiling the Power of Celos Interoperability Solutions
 description: In this article, we will provide a comprehensive breakdown of Celo's interoperability solutions.
 authors:
   - name: Kyrian Chigozie
