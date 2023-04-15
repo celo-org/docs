@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/implementing-security-measures-for-dapps
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/implementing-securities.png)
+
 # Introduction
 
 Decentralized applications (DApps) are becoming increasingly popular as they provide a transparent and decentralized way to interact with the blockchain. Celo, a mobile-first blockchain platform, allows developers to build and deploy DApps on its network. However, as with any technology, security is a major concern for DApps on Celo. In this article, we will discuss the best practices for implementing security measures for DApps on Celo.
