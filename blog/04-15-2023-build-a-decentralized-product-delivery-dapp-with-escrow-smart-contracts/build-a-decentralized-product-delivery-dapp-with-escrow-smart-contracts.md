@@ -1,17 +1,16 @@
 ---
-
 title: Build a Secure and Decentralized Product Delivery Dapp on the Celo Blockchain with Escrow Smart Contracts
 description: In this tutorial, we build a full-stack decentralized application for secure product delivery on the Celo blockchain using escrow smart contracts.
 authors:
-
-- name: Jovan Mwesigwa
-  title: Software Engineer
-  url: https://github.com/JovanMwesigwa
-  tags: [celo, celosage, intermediate, 'solidity, metamask, nodejs, javascript]
-  hide_table_of_contents: true
-  slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
+  - name: Jovan Mwesigwa
+    title: Software Engineer
+    url: https://github.com/JovanMwesigwa
+    tags: [celo, celosage, intermediate, 'solidity', 'metamask', 'nodejs', 'javascript']
+    hide_table_of_contents: true
+    slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
+---
   
-  ![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-product-delivery-dapp-with-escrow-smart-contracts.png)
+![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-product-delivery-dapp-with-escrow-smart-contracts.png)
 
 ## Introduction
 
