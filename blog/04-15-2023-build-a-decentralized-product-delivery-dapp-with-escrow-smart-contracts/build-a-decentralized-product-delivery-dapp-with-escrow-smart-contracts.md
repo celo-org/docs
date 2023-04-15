@@ -6,7 +6,7 @@ authors:
 
 - name: Jovan Mwesigwa
   title: Software Engineer
-  url: <https://github.com/JovanMwesigwa>
+  url: https://github.com/JovanMwesigwa
   tags: [celo, celosage, intermediate, 'solidity, metamask, nodejs, javascript]
   hide_table_of_contents: true
   slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
@@ -25,7 +25,7 @@ Our focus will be on creating an escrow smart contract, which acts as a trusted 
 
 3. Hardhat: You should have a basic understanding of Hardhat, a development environment for building, testing, and deploying smart contracts on the Celo blockchain. You should be familiar with Hardhat's project structure, configuration, and testing features.
 
-## Requirements​
+## Requirements
 
 1. Node.js: You will need Node.js to install on your machine to run the necessary tools and libraries for our application. You can download the latest version of Node.js from the official website [here](https://nodejs.org/en/download/)
 2. Hardhat: We will be using Hardhat as our development environment for building, testing, and deploying smart contracts on the Celo blockchain.
@@ -398,7 +398,7 @@ This will automatically push the contract to Celo Alfajore's network using all t
 
 Output:
 
-![tutorial deployed](tutorial_assets/deployed.png)
+![tutorial deployed](https://user-images.githubusercontent.com/62109301/232235714-40dc3de9-8b66-41b4-ae2f-268083693270.png)
 
 The contract was successfully deployed and verified on the alfajores network.
 
@@ -441,7 +441,7 @@ yarn run dev
 
 Output:
 
-![starter ui](tutorial_assets/starterui.png)
+![starterui](https://user-images.githubusercontent.com/62109301/232235746-6f4e2734-3ca4-4f69-a889-6b797fbbef8f.png)
 
 The UI consists of the following:
 
@@ -962,7 +962,7 @@ Switch the MetaMask account to the buyer's account and press the connect button.
 
 Output:
 
-![buyer connected](tutorial_assets/buyerconnected.png)
+![buyerconnected](https://user-images.githubusercontent.com/62109301/232235771-5982c7ad-4e57-4e67-8c10-42e436d1c41d.png)
 
 As soon as you connect, we can see that the contract info is directly prefilled using the `populatedData()` function that is called from the `useEffect()` function that we defined earlier on.
 
@@ -970,7 +970,7 @@ Let's try to deposit some CELO into the contract, by pressing the `Deposit Payme
 
 Output:
 
-![buyer deposited](tutorial_assets/buyerdeposit.png)
+![buyerdeposit](https://user-images.githubusercontent.com/62109301/232235792-adfa9d14-0186-4a37-b0b8-bd396d3ea913.png)
 
 This initiates a transaction that deposits some money into the contract.
 
@@ -980,11 +980,11 @@ When the `Confirm Delivery` button is pressed, this initiates a new transaction 
 
 Output:
 
-![confirm tx](tutorial_assets/confirmtx.png)
+![confirm tx](https://user-images.githubusercontent.com/62109301/232235797-335304bb-146f-4f6a-bb95-5d77385130a9.png)
 
 After the buyer confirms package delivery, the progress is shown on the dApp with the green bar as shown below:
 
-![buyer confirmed](tutorial_assets/buyerconfirmed.png)
+![buyerconfirmed](https://user-images.githubusercontent.com/62109301/232235816-0ae9a93b-3903-493a-928a-5b760aa2c231.png)
 
 Now that the buyer has confirmed the package, all that is left, is for the seller to confirm on their side too.
 
@@ -992,7 +992,7 @@ To do this, switch your MetaMask current account to the seller's account.
 
 Output:
 
-![seller ui](tutorial_assets/sellerui.png)
+![sellerui](https://user-images.githubusercontent.com/62109301/232235826-2b1591c8-c52c-4640-a86c-f69a4bb91e80.png)
 
 On the seller's side, the dApp displays the `Confirm Receipt` button instead of the `Confirm Delivery` for the buyer.
 
@@ -1002,13 +1002,13 @@ This initiates a new seller transaction to confirm the receipt payment.
 
 As shown below:
 
-![seller tx](tutorial_assets/sellertx.png)
+![seller tx](https://user-images.githubusercontent.com/62109301/232235838-071dcead-c2f5-42bb-a7c4-607b311df5ac.png)
 
 Once the transaction is confirmed, the progress is complete as shown in the UI with all the money transferred to the seller's wallet.
 
 Output:
 
-![done](tutorial_assets/done.png)
+![done](https://user-images.githubusercontent.com/62109301/232235930-e862cdb0-df27-4fd7-8eef-246ef00752af.png)
 
 ## Conclusion
 
@@ -1034,7 +1034,7 @@ Reach out:
 - Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 - Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-## References​
+## References
 
 - [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started) | Hardhat Docs
 - [Project code](https://github.com/JovanMwesigwa/escrow-dapp) | Github
