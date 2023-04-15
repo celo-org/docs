@@ -35,11 +35,13 @@ Bridges are protocols that enable the transfer of assets between two different b
 Celo uses a few different types of bridges to connect with other blockchains, each with its unique features and benefits. Here are some prominent bridges in Celo:
 
 
-**Moola Market Bridge**:
+- **Moola Market Bridge**:
+
 The [Moola Market](https://moola.market/) bridge is another decentralized bridge that connects Celo to Ethereum. It is a non-custodial liquidity protocol that is democratizing access to yield and credit. Depositors earn compound interest which is paid for by borrowers who take over-collateralized loans, delegated loans, or flash loans.  It enables the transfer of assets between the two blockchains and provides users with access to liquidity pools on both networks. The Moola Market Bridge is optimized for DeFi use cases and offers low fees and fast transaction times.
 
 
-**Celo-Ethereum Bridge**:
+- **Celo-Ethereum Bridge**:
+
 The Celo-Ethereum Bridge is a centralized bridge that connects Celo to Ethereum. It enables the transfer of assets between the two blockchains and is currently used for the transfer of CELO, Celo Dollars (cUSD), and Celo Euro (cEUR) tokens. The Celo-Ethereum Bridge is operated by the Celo Foundation, providing users with a reliable and secure way to move assets between the two networks.
 
 
@@ -52,11 +54,13 @@ Cross-chain transactions are transactions that involve the direct transfer of as
 
 Cross-chain transactions enable the transfer of assets between Celo and other blockchains such as Ethereum, Bitcoin, and other major networks. Celo provides several different ways to enable cross-chain transactions, each with its unique features and benefits. Here are some methods for cross-chain transactions in Celo:
 
-**Atomic Swaps**:
+- **Atomic Swaps**:
+
 Atomic swaps are a trustless mechanism for enabling cross-chain transactions. Celo supports atomic swaps through its integration with the THORChain network, which enables the exchange of assets between Celo and other networks such as Bitcoin and Ethereum without needing to rely on a centralized intermediary. Atomic swaps are a powerful tool for enabling secure and trustless cross-chain transactions.
 
 
-**Optics**
+- **Optics**:
+
 [Optics](https://optics.app/) is a decentralized interoperability protocol designed to enable cross-chain communication between different blockchain networks. It allows for the seamless transfer of assets between different networks while retaining their underlying characteristics, such as security and functionality. It sees an attestation of some data and accepts it as valid after a timer elapses. While the timer is running, honest participants have a chance to respond to the attestation and/or submit fraud proofs.  
 
 
