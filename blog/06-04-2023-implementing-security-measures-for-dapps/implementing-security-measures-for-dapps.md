@@ -90,6 +90,7 @@ Input validation is a critical component of DApp security. Always validate input
 Smart contracts are susceptible to integer overflow and underflow attacks. Use safe math functions to avoid these types of attacks.
 
 Secure smart contract development is crucial to ensure the safety and reliability of decentralized applications running on blockchain platforms. Here's an example code that demonstrates some best practices for secure smart contract development in Solidity:
+and also you can refer to [source-code](https://github.com/Joel-web3/Implementing-security-measures-on-celo)
 
 ```solidity
 
