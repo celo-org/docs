@@ -1055,6 +1055,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'Building a Decentralized Identity System with Solidity and ERC-735 On Celo',
+    description: 'In This tutorial we will learn how to build a decentralized identity system with solidity and ERC-735 on celo',
+    preview: require('./showcase/intermediate/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo.png'),
+    website: '/blog/tutorials/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Build A Decentralized Medical Dapp Using Celo Composer And IPFS Storage',
     description: 'In this tutorial, we will build a Dapp that allows clinical admin to create and manage the medical records of patients. ',
     preview: require('./showcase/intermediate/Build-A-Decentralized-Medical-Dapp-Using-Celo-Composer-And-IPFS-Storage.png'),
