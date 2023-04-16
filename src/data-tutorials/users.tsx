@@ -1266,19 +1266,18 @@ const Users: User[] = [
     tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
   },
   {
-<<<<<<< HEAD
     title: 'Como otimizar os custos de gas em seu smart contract',
     description: 'Aprenda como otimizar seu smart contract para economizar gas',
     preview: require('./showcase/advanced/como-otimizar-os-custos-de-gas-em-seu-smart-contract.png'),
     website: 'blog/tutorials/como-otimizar-os-custos-de-gas-em-seu-smart-contract',
     tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
-=======
+  },
+  { 
     title: 'Como conectar o seu dApp a Celo Blockchain com a Lava',
     description: 'Aprenda como conectar seu dApp a rede de full nodes da Lava',
     preview: require('./showcase/beginner/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava.png'),
     website: 'blog/tutorials/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava',
     tags: ['celosage', 'video', 'beginner', "celo", "react"],
->>>>>>> e0250f4f05dbacf83769a04a703e28c3a922485b
   },
   {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
