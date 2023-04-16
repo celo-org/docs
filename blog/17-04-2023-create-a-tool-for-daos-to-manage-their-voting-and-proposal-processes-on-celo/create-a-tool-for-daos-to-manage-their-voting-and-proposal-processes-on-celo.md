@@ -50,7 +50,7 @@ Now that we have a good overview of DAO processes. Let's build a tool to simulat
 
 ## Project Demo
 
-
+https://user-images.githubusercontent.com/7295729/232341000-e1d120d7-4de7-4ff0-b4a4-a0c7c4fdc9bd.MP4
 
 ## Set-up
 
