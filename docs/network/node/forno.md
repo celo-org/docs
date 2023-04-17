@@ -67,6 +67,12 @@ wss://alfajores-forno.celo-testnet.org/ws
 https://baklava-forno.celo-testnet.org
 ```
 
+### Cannoli Testnet
+
+```
+https://forno.cannoli.celo-testnet.org
+```
+
 ### Websocket connections & Event listeners
 
 Websocket connections are useful for listening to logs (aka events) emitted by a smart contract, but Forno only allows a websocket connection for 20 minutes before disconnecting. On disconnect, you can reconnect to the websocket endpoint to keep listening. [Here](https://gist.github.com/critesjosh/a230e7b2eb54c8d330ca57db1f6239db) is an example script of how to set up an event listener that reconnects when the connection is broken.
