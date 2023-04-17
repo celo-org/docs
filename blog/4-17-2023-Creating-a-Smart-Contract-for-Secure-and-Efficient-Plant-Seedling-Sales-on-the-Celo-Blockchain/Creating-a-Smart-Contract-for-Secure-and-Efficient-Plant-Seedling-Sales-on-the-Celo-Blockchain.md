@@ -152,3 +152,48 @@ contract SeedlingsMarketplace {
 }
 
  ```
+ 
+ 
+## Analyzing the code
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+```
+
+The contract is licensed under the `MIT License`, which is a permissive open-source software license.
+
+The pragma statement specifies the version of the Solidity compiler that should be used to compile the contract. In this case, the contract uses a version of Solidity that is greater than or equal to version `0.7.0`, but less than version `0.9.0`.
+
+The contract imports the `SafeMath` library from the `OpenZeppelin` library of smart contracts. SafeMath is a library that provides arithmetic functions with overflow and underflow protection, which helps ensure that the calculations in the smart contract are executed safely without unexpected results.
+
+In the following discussion, we will cover the IERC20 token, which provides the functionality for conducting transactions using the Celo Usd stablecoin.
+
+```solidity
+interface IERC20Token {
+   function transfer(address, uint256) external returns (bool);
+
+    function approve(address, uint256) external returns (bool);
+
+    function transferFrom(
+        address,
+        address,
+        uint256
+    ) external returns (bool);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address) external view returns (uint256);
+
+    function allowance(address, address) external view returns (uint256);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+```
