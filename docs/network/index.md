@@ -5,7 +5,7 @@ description: How to choose a Celo network based on your interested and objective
 
 # Networks
 
-Overview of Celo Mainnet, Alfajores Testnet, and Baklava Testnet.
+Overview of Celo Mainnet, Alfajores Testnet, Baklava Testnet, and Cannoli Testnet.
 
 ---
 
