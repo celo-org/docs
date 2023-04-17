@@ -3088,6 +3088,13 @@ const Users: User[] = [
     website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: "Implementing Multi-factor Authentication on Celo's Blockchain Using Smart Contracts",
+    description: 'Learn how to build and deploy a multi factor authentication system on the Celo platform',
+    preview: require('./showcase/beginner/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts.png'),
+    website: 'blog/tutorials/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts',
+    tags: ['celo', 'celosage', 'truffle', 'smartcontract', 'solidity', 'javascript', 'beginner'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
