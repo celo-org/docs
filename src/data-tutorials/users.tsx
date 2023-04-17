@@ -2523,6 +2523,13 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
+    title: 'Integrating Web3Auth With Celo Blockchain In Your Dapp',
+    description: 'Web3Auth is a decentralized authentication protocol that allows users to authenticate with DApps using their Web3 wallet, such as MetaMask. In this tutorial, I will be exploring how to integrate Web3Auth with the Celo blockchain in a DApp. Celo is a fast and secure blockchain platform that supports smart contracts and enables mobile-first DApps. By combining Web3Auth and Celo, developers can create a seamless and secure authentication process for their users. We will start by discussing the basics of Web3Auth and Celo, followed by a step-by-step guide on how to integrate them in a DApp. By the end of this tutorial, developers will have a solid understanding of how to leverage Web3Auth and Celo to build secure and user-friendly DApps.',
+    preview: require('./showcase/intermediate/integrating-web3Auth-with-celo-blockchain-in-your-dapp.png'),
+    website: 'blog/tutorials/integrating-web3Auth-with-celo-blockchain-in-your-dapp',
+    tags:["Nextjs", "intermediate", "smartcontract", "solidity", "web3auth"], 
+  },
+  {
 
     title: 'Get started with CELO using Rust',
     description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
