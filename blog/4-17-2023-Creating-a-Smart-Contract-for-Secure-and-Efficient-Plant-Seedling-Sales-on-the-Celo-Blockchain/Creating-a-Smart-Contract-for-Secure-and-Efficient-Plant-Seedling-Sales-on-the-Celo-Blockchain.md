@@ -230,18 +230,147 @@ In this session, we define a smart contract named `SeedlingsMarketplace`. Within
 
 The Seedling struct contains the following properties:
 
-- owner: the address of the account that owns the seedling
+- `owner`: the address of the account that owns the seedling
 
-- name: the name of the seedling
+- `name`: the name of the seedling
 
-- species: the species of the seedling
+- `species`: the species of the seedling
 
-- description: a brief description of the seedling
+- `description`: a brief description of the seedling
 
-- price: the price of the seedling in cUSD, the stablecoin used on the Celo blockchain
+- `price`: the price of the seedling in cUSD, the stablecoin used on the Celo blockchain
 
 In addition to the Seedling struct, we also define two internal variables:
 
-- seedlingsLength: a counter variable that keeps track of the number of seedlings added to the marketplace
+- `seedlingsLength`: a counter variable that keeps track of the number of seedlings added to the marketplace
 cUsdTokenAddress: the address of the cUSD token contract on the Celo blockchain, which will be used to facilitate payments for seedlings on the marketplace.
 These variables are marked as internal, which means they can only be accessed within the smart contract and its inherited contracts.
+
+Next, we add our mapping.
+
+```solidity
+     mapping (uint =>  Seedling) internal seedlings;
+```
+
+With the `mapping (uint => Seedling) internal seedlings`, we are creating a data structure that will allow us to store and retrieve Seedling objects based on their unique identifier. In other words, we are creating a mapping from uint values to Seedling objects.
+
+The internal keyword indicates that this mapping is only accessible from within the contract and any derived contracts. This means that we can't access it directly from outside the contract, but we can create functions within the contract that use the mapping to interact with the Seedling objects.
+
+By using this mapping, we can efficiently store and retrieve Seedling objects without having to iterate over an array of objects. Instead, we can simply access the object directly using its unique identifier.
+
+To make our smart contract more engaging, we will start incorporating functions. The initial function we will implement is the `addSeedling` function.
+
+```solidity
+  function  addSeedling(
+        string memory _name, 
+        string memory _species,
+        string memory _description,
+        uint _price
+
+          ) public {
+       Seedling storage seedling = seedlings[seedlingsLength];
+
+
+         seedling.owner = payable(msg.sender);
+           seedling.name = _name;
+           seedling.species = _species;
+           seedling.description = _description;
+              seedling.price = _price;
+
+  
+        seedlingsLength++;
+          }
+```
+
+In this sessiom, we have created a function named `addSeedling` that takes in four parameters: ` _name`, `_species`, `_description`, and `_price`. The function is set to `public`, which means anyone can call it.
+
+Inside the function, we first create a new Seedling `struct` instance by declaring a Seedling variable named seedling and assigning it to the seedlings mapping at the current length of seedlings.
+
+Next, we set the `owner`, `name`, `species`, `description`, and `price` properties of the seedling struct to the values passed in as parameters.
+
+After that, we increment the `seedlingsLength` variable to indicate that a new seedling has been added to the seedlings mapping.
+
+Furthermore, we add the `getSeedlingfunction`.
+
+```solidity
+function getSeedling(uint _index) public view returns (
+        address payable,
+        string memory,  
+        string memory,
+        string memory,
+        uint
+        
+    ) {
+        return (  
+            seedlings[_index].owner,
+             seedlings[_index].name,
+              seedlings[_index].species,
+              seedlings[_index].description,
+                 seedlings[_index].price
+               
+        );
+    }
+
+```
+
+We can use the `getSeedling` function to retrieve information about a specific seedling in the marketplace. This function takes an index as its input and returns a tuple with the owner's `address`, the `name` of the seedling, the `species`, the `description`, and the `price`. The view keyword indicates that this function only reads data from the blockchain and does not modify it. We can use this function to display seedling information to users of the marketplace or to build functionality that depends on specific seedlings in the marketplace.
+
+Next we add `the replaceSeedlingDescription` function.
+
+```solidity
+  function replaceSeedlingDescription(uint _index, string memory _description) public {
+        require(msg.sender == seedlings[_index].owner, "Only the owner can change the description");
+        seedlings[_index].description = _description;
+     }
+
+```
+
+In this session,  we have a function named `replaceSeedlingDescription` which enables the owner of a seedling to `update` the description of the seedling. The function takes two parameters, the index of the seedling to be updated and the new description.
+
+The require statement ensures that only the owner of the seedling can update the description. If someone other than the owner tries to update the description, the transaction will `fail`.
+
+Once the ownership check is passed, the function updates the description of the specified seedling by accessing it through the seedlings mapping and setting the description property to the new value provided.
+
+By providing this function, we are giving the owners of seedlings the ability to modify the description of their seedlings, adding more flexibility and control to our smart contract.
+
+Additionally, we add a function that will be used to buy seedling from the blockchain.
+
+```solidity
+function buySeedling(uint _index) public payable  {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            seedlings[_index].owner,
+            seedlings[_index].price
+          ),
+          "Transfer failed."
+        );
+
+         seedlings[_index].owner = payable(msg.sender);
+         
+    }
+
+```
+
+In this session, we have a function called buySeedling which enables users to buy a seedling from the marketplace.
+
+Firstly, the function requires that the user sends the exact amount of `cUSD` required to purchase the seedling. This is done by passing the amount of cUSD tokens in the transaction as msg.value.
+
+Next, the function uses the transferFrom function of the `IERC20Token` interface to transfer the required amount of cUSD tokens from the buyer's address to the seller's address.
+
+If the transfer is successful, the ownership of the seedling is `transferred` to the buyer by changing the owner property of the corresponding Seedling struct.
+
+The function also includes a require statement to ensure that the transfer was successful. If the transfer fails, the transaction is reverted and an error message is returned.
+
+Finally we add the `function getSeedlingsLength()`
+
+```solidity
+
+     function getSeedlingsLength() public view returns (uint) {
+        return (seedlingsLength);
+    }
+}
+```
+
+
+
