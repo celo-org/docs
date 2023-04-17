@@ -372,5 +372,29 @@ Finally we add the `function getSeedlingsLength()`
 }
 ```
 
+In this part of the smart contract, we have the `getSeedlingsLength` function. This function simply returns the total number of seedlings currently available for sale on the marketplace.
 
+The function is a `view function`, meaning that it only reads data from the blockchain and does not modify any state. This makes it a `read-only` function that can be called by anyone at any time without incurring any gas costs.
+
+By calling this function, users of the marketplace can know the current size of the inventory and make informed decisions about buying and selling seedlings.
+
+## CONTRACT DEPLOYMENT
+
+In order to deploy the Event smart contract on the Celo blockchain, several things are required such as:
+
+To ensure a smooth deployment of our smart contract, it is essential to download the Celo extension wallet from the given link, [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). This can be accomplished by accessing the Celo Alfojares faucet using the provided link.
+
+With our wallet funded, we can now proceed to deploy the smart contract using the Celo plugin available in Remix.
+
+## CONCLUSION
+
+Great work on completing the smart contract for the sale of event tickets on the Celo blockchain! Your achievement is impressive, and I want to congratulate you on your success. You can now feel proud of yourself and enjoy the results of your hard work. Keep up the good work! 🎉
+
+## Next step
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
+
+## About the author
+
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
 
