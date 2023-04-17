@@ -197,3 +197,51 @@ interface IERC20Token {
     );
 }
 ```
+
+We can see from the code that an interface definition has been provided for an ERC20 token on the Celo blockchain. This interface specifies how we can interact with a smart contract on the blockchain by outlining six essential functions such as transfer, approve, and transferFrom.
+
+These functions enable us as users to perform various actions on the Celo blockchain, such as transferring tokens to other addresses, authorizing other addresses to spend tokens on our behalf, and moving tokens from one address to another.
+
+In addition, the code also includes three functions that allow us to retrieve information about a Celo ERC20 token contract, such as the total supply of tokens, the balance of tokens held by an address, and the amount of tokens authorized for spending by a specific address.
+
+Finally, we can see that the code has two events that are triggered when a token transfer or approval occurs, which allows external applications to receive notifications when a token transfer or approval happens on the Celo blockchain.
+
+To start, we give a name to our smart contract and define a struct.
+
+```solidity
+contract SeedlingsMarketplace {
+    
+    
+    uint internal seedlingsLength = 0;
+    address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+    struct  Seedling {
+        address payable owner;
+        string name;
+        string species;
+        string description;
+        uint price;
+         
+        
+    }
+```
+
+In this session, we define a smart contract named `SeedlingsMarketplace`. Within this contract, we create a `struct` called `Seedling`, which represents the properties of a seedling that will be sold on the marketplace.
+
+The Seedling struct contains the following properties:
+
+- owner: the address of the account that owns the seedling
+
+- name: the name of the seedling
+
+- species: the species of the seedling
+
+- description: a brief description of the seedling
+
+- price: the price of the seedling in cUSD, the stablecoin used on the Celo blockchain
+
+In addition to the Seedling struct, we also define two internal variables:
+
+- seedlingsLength: a counter variable that keeps track of the number of seedlings added to the marketplace
+cUsdTokenAddress: the address of the cUSD token contract on the Celo blockchain, which will be used to facilitate payments for seedlings on the marketplace.
+These variables are marked as internal, which means they can only be accessed within the smart contract and its inherited contracts.
