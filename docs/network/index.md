@@ -72,7 +72,7 @@ For Earth Day 2023, the Celo Community has proposed a new [Ultragreen CIP](https
 
 - [Cannoli Testnet Block Explorer](https://explorer.celo.org/cannoli)
 - [Cannoli Testnet Faucet](https://faucet.celo.org/cannoli)
-- Cannoli [Forno URL](https://docs.celo.org/network/node/forno#forno-networks): `https://forno.cannoli.celo-testnet.org`
+- Cannoli [Forno RPC provider](https://docs.celo.org/network/node/forno#what-is-forno): `https://forno.cannoli.celo-testnet.org`
 
 **Chain ID:** `17323`
 
