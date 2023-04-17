@@ -36,7 +36,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
-## Testnet Name: Cannoli
+## Cannoli, the Ultragreen Testnet
 
 For Earth Day 2023, the Celo Community has proposed a new Ultragreen CIP, which strives to position Celo to become deflationary as well as further Celo's sustainability commitment . With each transaction, CIP-52 proposes that 80% of the base fee would be burned and 20% would be sent to a Carbon Offset address to purchase high-quality carbon offsets. This testnet is intended to support this new ‘Ultragreen’ mechanism before this change is later proposed for a future hardfork.
 
