@@ -2545,6 +2545,13 @@ const Users: User[] = [
     tags: ["advanced", "celosage", "celo", "tokens"],
   },
   {
+    title: "Creating a Celo Token and Launching an Initial Coin Offering (ICO) with Python",
+    description: "Delve into the world of blockchain and explore how to create your own Celo token using Python. This comprehensive guide walks you through the entire process, from designing the token's smart contract to launching a successful Initial Coin Offering (ICO) using Python, and Solidity.",
+    preview: require("./showcase/intermediate/creating-a-celo-token-and-launching-an-initial-coin-offering-(ico)-with-python.png"),
+    website: "/blog/tutorials/creating-a-celo-token-and-launching-an-initial-coin-offering-(ico)-with-python",
+    tags: ["celosage", "intermediate", "smartcontract", "solidity", "python"],
+  },
+  {
     title: "Lazy Minting NFTs A Cost-Effective and Flexible Approach to NFT Creation",
     description: "Lazy Minting NFTs offer a budget-friendly and adaptable way of creating NFTs without sacrificing quality or control. Simplify the process with ease.",
     preview: require("./showcase/intermediate/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation.png"),
