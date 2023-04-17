@@ -48,6 +48,12 @@ For Earth Day 2023, the Celo Community has proposed a new Ultragreen CIP, which 
 
 **Chain ID:** `17323`
 
+:::info
+
+Your use of the Cannoli Testnet is subject to the [Cannoli Testnet Disclaimer](/network/cannoli/disclaimer).
+
+:::
+
 ## Baklava, the Node Operator Testnet
 
 If you're interested in operating one or more nodes that make up Celo's infrastructure, start with [Baklava](/network/baklava/). Baklava's validators and full nodes are operated by the community. It is intended to provide a venue to test new builds of the Celo Blockchain software, trial on-chain governance proposals, and for node operators to build operational best practices. Support for developers and users of the Wallet is not the primary focus.
