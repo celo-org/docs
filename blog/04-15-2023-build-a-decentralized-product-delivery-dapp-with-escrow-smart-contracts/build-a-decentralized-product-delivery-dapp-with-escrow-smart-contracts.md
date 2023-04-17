@@ -1,15 +1,24 @@
 ---
-title: Build a Secure and Decentralized Product Delivery Dapp on the Celo Blockchain with Escrow Smart Contracts
+title: Build a Secure and Decentralized Product Delivery Dapp on the Celo Blockchain with Escrow Smart Contract
 description: In this tutorial, we build a full-stack decentralized application for secure product delivery on the Celo blockchain using escrow smart contracts.
 authors:
   - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-    tags: [celo, celosage, intermediate, 'solidity', 'metamask', 'nodejs', 'javascript']
-    hide_table_of_contents: true
-    slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
+    tags:
+      [
+        celo,
+        celosage,
+        intermediate,
+        "solidity",
+        "metamask",
+        "nodejs",
+        "javascript",
+      ]
+hide_table_of_contents: true
+slug: /tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts
 ---
-  
+
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-decentralized-product-delivery-dapp-with-escrow-smart-contracts.png)
 
 ## Introduction
@@ -342,35 +351,35 @@ Now that our hardhat configuration is complete, we can now write a deploy script
 Inside `/deploy` create a file called `01-deploy-escrow.js`. This will define the main deploy script for the contract with the code below:
 
 ```js
-const { network } = require('hardhat')
-const { verifyContract } = require('../utils/verifyContract')
+const { network } = require("hardhat");
+const { verifyContract } = require("../utils/verifyContract");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
-  const { deployer } = await getNamedAccounts()
+  const { deployer } = await getNamedAccounts();
 
-  const chainId = network.config.chainId
+  const chainId = network.config.chainId;
 
-  const { deploy, log } = deployments
+  const { deploy, log } = deployments;
 
-  const args = []
-  const waitConfirmations = 1
+  const args = [];
+  const waitConfirmations = 1;
 
   // Only verify the contract when we are deploying on the celo test net
-  const tx = await deploy('Escrow', {
+  const tx = await deploy("Escrow", {
     from: deployer,
     args: args,
     waitConfirmations: waitConfirmations,
     log: true,
-  })
-  log('Product Escrow contract deployed --------------')
+  });
+  log("Product Escrow contract deployed --------------");
 
   if (chainId != 31337) {
-    log('Verifying the contract on celoscan...')
-    await verifyContract(tx.address)
+    log("Verifying the contract on celoscan...");
+    await verifyContract(tx.address);
   }
-}
+};
 
-module.exports.tags = ['all', 'deploy']
+module.exports.tags = ["all", "deploy"];
 ```
 
 The asynchronous function takes in two parameters: `getNamedAccounts` and `deployments`. `getNamedAccounts` is a function that retrieves the addresses of pre-configured accounts in the Hardhat config file.
@@ -423,11 +432,11 @@ We need to notify the front where to find the contract's address and the admin's
 This can be found in the `/constants` folder.
 
 ```js
-import abi from '../backend/contracts/Escrow.sol/Escrow.json'
+import abi from "../backend/contracts/Escrow.sol/Escrow.json";
 
-export const CONTRACT_ADDRESS = ''
-export const ADMIN_ADDRESS = ''
-export const ABI = abi.abi
+export const CONTRACT_ADDRESS = "";
+export const ADMIN_ADDRESS = "";
+export const ABI = abi.abi;
 ```
 
 Replace `CONTRACT_ADDRESS` with your deployed contract address and `ADMIN_ADDRESS` with your deployer's address.
@@ -457,26 +466,26 @@ The UI consists of the following:
 The main logic of the front end happens in the `Home.jsx` file. Inside, we declared various state variables to keep track of what's happening in the UI. As shown below:
 
 ```js
-const { isWeb3Enabled, account } = useMoralis()
+const { isWeb3Enabled, account } = useMoralis();
 
 //   Buyer state
-const [buyer, setBuyer] = useState('')
+const [buyer, setBuyer] = useState("");
 
 //   Contract balance
-const [balance, setBalance] = useState(null)
+const [balance, setBalance] = useState(null);
 
 //   Seller State
-const [seller, setSeller] = useState('')
+const [seller, setSeller] = useState("");
 
 //   buyer confirmation status
-const [buyerConfirmed, setBuyerConfirmed] = useState(false)
+const [buyerConfirmed, setBuyerConfirmed] = useState(false);
 
 //Seller confirmed the status
-const [sellerConfirmed, setSellerConfirmed] = useState(false)
+const [sellerConfirmed, setSellerConfirmed] = useState(false);
 
 const [adminAddress, setAdminAddress] = useState(
-  '0x5cbdf5f9e468df3888e04155668ccafc6f6c4dcf'
-)
+  "0x5cbdf5f9e468df3888e04155668ccafc6f6c4dcf"
+);
 ```
 
 Using the `useMoralis()` hook to retrieve two variables, `isWeb3Enabled` and `account`, from the Moralis Web3 API. `isWeb3Enabled` is a boolean variable that indicates whether the user's browser has Web3 enabled or not. `account` is a string variable that contains the user's Celo account address.
@@ -494,9 +503,9 @@ For example, to fetch the contract's balance, we define it as below:
 const { runContractFunction: getBalance } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getBalance',
+  functionName: "getBalance",
   params: {},
-})
+});
 ```
 
 This directly calls the contract function name `getBalance` by passing in the contract address and AB directly.
@@ -516,10 +525,10 @@ const {
 } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'deposit',
+  functionName: "deposit",
   params: {},
   msgValue: 1,
-})
+});
 ```
 
 The `deposit()` function calls the contract's `deposit` function which allows the buyer to deposit funds into the smart contract. It also uses the `useWeb3Contract` hook to specify the ABI, contract address, function name, and a `msgValue` of 1, which specifies the amount of Celo being sent with the transaction.
@@ -532,40 +541,40 @@ All the contract interaction functions are defined as shown below:
 const { runContractFunction: getBuyer } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getBuyer',
+  functionName: "getBuyer",
   params: {},
-})
+});
 
 //   Get balance
 const { runContractFunction: getBalance } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getBalance',
+  functionName: "getBalance",
   params: {},
-})
+});
 
 const { runContractFunction: getSeller } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getSeller',
+  functionName: "getSeller",
   params: {},
-})
+});
 
 //   Get buyer Confirmation status
 const { runContractFunction: getBuyerConfirmation } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getBuyerConfirmation',
+  functionName: "getBuyerConfirmation",
   params: {},
-})
+});
 
 //   Get seller Confirmation status
 const { runContractFunction: getSellerConfirmation } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'getSellerConfirmation',
+  functionName: "getSellerConfirmation",
   params: {},
-})
+});
 
 //   CONTRACT MUTATION FUNCTIONS
 //   Deposit money
@@ -577,10 +586,10 @@ const {
 } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'deposit',
+  functionName: "deposit",
   params: {},
   msgValue: 1,
-})
+});
 
 //   Buyer Confirms delivery
 const {
@@ -591,9 +600,9 @@ const {
 } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'confirmSellerDelivery',
+  functionName: "confirmSellerDelivery",
   params: {},
-})
+});
 
 //   Seller Confirms receipt
 const {
@@ -604,9 +613,9 @@ const {
 } = useWeb3Contract({
   abi: ABI,
   contractAddress: CONTRACT_ADDRESS,
-  functionName: 'confirmBuyerReceipt',
+  functionName: "confirmBuyerReceipt",
   params: {},
-})
+});
 ```
 
 We may want to render all the fetched data on the initial page load of the UI.
@@ -618,24 +627,24 @@ As shown below:
 ```js
 const populateData = async () => {
   try {
-    const returnedBuyer = await getBuyer()
-    setBuyer(returnedBuyer)
+    const returnedBuyer = await getBuyer();
+    setBuyer(returnedBuyer);
 
-    const returnedSeller = await getSeller()
-    setSeller(returnedSeller)
+    const returnedSeller = await getSeller();
+    setSeller(returnedSeller);
 
-    const buyerStatus = await getBuyerConfirmation()
-    setBuyerConfirmed(buyerStatus)
+    const buyerStatus = await getBuyerConfirmation();
+    setBuyerConfirmed(buyerStatus);
 
-    const sellerStatus = await getSellerConfirmation()
-    setSellerConfirmed(sellerStatus)
+    const sellerStatus = await getSellerConfirmation();
+    setSellerConfirmed(sellerStatus);
 
-    const balanceResult = await getBalance()
-    setBalance(balanceResult.toString())
+    const balanceResult = await getBalance();
+    setBalance(balanceResult.toString());
   } catch (error) {
-    console.log(error.response)
+    console.log(error.response);
   }
-}
+};
 ```
 
 The `useEffect` hook is being used to make sure that the `populateData` function is called whenever any of the dependencies listed in the second argument of the `useEffect` hook changes. The dependencies include `isWeb3Enabled`, `account`, `buyerConfirmed`, `balance`, `buyerConfirmed`, and `sellerConfirmed`.
@@ -643,7 +652,7 @@ The `useEffect` hook is being used to make sure that the `populateData` function
 ```js
 useEffect(() => {
   if (isWeb3Enabled) {
-    populateData()
+    populateData();
   }
 }, [
   isWeb3Enabled,
@@ -652,7 +661,7 @@ useEffect(() => {
   balance,
   buyerConfirmed,
   sellerConfirmed,
-])
+]);
 ```
 
 If any of these values change, the `populateData` function will be called, which will update the state with the latest buyer, seller, balance, and confirmation statuses.
@@ -672,7 +681,7 @@ We are also displaying the contract balance using the balance state variable.
 
 ```js
 {
-  balance && <h1 className="text-xl font-bold">Escrow bal: {balance}</h1>
+  balance && <h1 className="text-xl font-bold">Escrow bal: {balance}</h1>;
 }
 ```
 
@@ -708,37 +717,37 @@ When either button is clicked, it will trigger the corresponding function, confi
 Full UI code:
 
 ```js
-import { useEffect, useState } from 'react'
-import Layout from '../components/Layout'
-import TimeLine from '../components/TimeLine'
-import { useMoralis, useWeb3Contract } from 'react-moralis'
-import { ABI, ADMIN_ADDRESS, CONTRACT_ADDRESS } from '../../constants'
+import { useEffect, useState } from "react";
+import Layout from "../components/Layout";
+import TimeLine from "../components/TimeLine";
+import { useMoralis, useWeb3Contract } from "react-moralis";
+import { ABI, ADMIN_ADDRESS, CONTRACT_ADDRESS } from "../../constants";
 
 function Home() {
-  const { isWeb3Enabled, account } = useMoralis()
+  const { isWeb3Enabled, account } = useMoralis();
 
   //   Buyer state
-  const [buyer, setBuyer] = useState('')
+  const [buyer, setBuyer] = useState("");
 
   //   Contract balance
-  const [balance, setBalance] = useState(null)
+  const [balance, setBalance] = useState(null);
 
   //   Seller State
-  const [seller, setSeller] = useState('')
+  const [seller, setSeller] = useState("");
 
   //   buyer confirmation status
-  const [buyerConfirmed, setBuyerConfirmed] = useState(false)
+  const [buyerConfirmed, setBuyerConfirmed] = useState(false);
 
   //Seller confirmed the status
-  const [sellerConfirmed, setSellerConfirmed] = useState(false)
+  const [sellerConfirmed, setSellerConfirmed] = useState(false);
 
   const [adminAddress, setAdminAddress] = useState(
-    '0x5cbdf5f9e468df3888e04155668ccafc6f6c4dcf'
-  )
+    "0x5cbdf5f9e468df3888e04155668ccafc6f6c4dcf"
+  );
 
   useEffect(() => {
     if (isWeb3Enabled) {
-      populateData()
+      populateData();
     }
   }, [
     isWeb3Enabled,
@@ -747,67 +756,67 @@ function Home() {
     balance,
     buyerConfirmed,
     sellerConfirmed,
-  ])
+  ]);
 
   // Fetch the buyer and seller address
   const populateData = async () => {
     try {
-      const returnedBuyer = await getBuyer()
-      setBuyer(returnedBuyer)
+      const returnedBuyer = await getBuyer();
+      setBuyer(returnedBuyer);
 
-      const returnedSeller = await getSeller()
-      setSeller(returnedSeller)
+      const returnedSeller = await getSeller();
+      setSeller(returnedSeller);
 
-      const buyerStatus = await getBuyerConfirmation()
-      setBuyerConfirmed(buyerStatus)
+      const buyerStatus = await getBuyerConfirmation();
+      setBuyerConfirmed(buyerStatus);
 
-      const sellerStatus = await getSellerConfirmation()
-      setSellerConfirmed(sellerStatus)
+      const sellerStatus = await getSellerConfirmation();
+      setSellerConfirmed(sellerStatus);
 
-      const balanceResult = await getBalance()
-      setBalance(balanceResult.toString())
+      const balanceResult = await getBalance();
+      setBalance(balanceResult.toString());
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
     }
-  }
+  };
 
   const { runContractFunction: getBuyer } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'getBuyer',
+    functionName: "getBuyer",
     params: {},
-  })
+  });
 
   //   Get balance
   const { runContractFunction: getBalance } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'getBalance',
+    functionName: "getBalance",
     params: {},
-  })
+  });
 
   const { runContractFunction: getSeller } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'getSeller',
+    functionName: "getSeller",
     params: {},
-  })
+  });
 
   //   Get buyer Confirmation status
   const { runContractFunction: getBuyerConfirmation } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'getBuyerConfirmation',
+    functionName: "getBuyerConfirmation",
     params: {},
-  })
+  });
 
   //   Get seller Confirmation status
   const { runContractFunction: getSellerConfirmation } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'getSellerConfirmation',
+    functionName: "getSellerConfirmation",
     params: {},
-  })
+  });
 
   //   CONTRACT MUTATION FUNCTIONS
   //   Deposit money
@@ -819,10 +828,10 @@ function Home() {
   } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'deposit',
+    functionName: "deposit",
     params: {},
     msgValue: 1,
-  })
+  });
 
   //   Buyer Confirms delivery
   const {
@@ -833,9 +842,9 @@ function Home() {
   } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'confirmSellerDelivery',
+    functionName: "confirmSellerDelivery",
     params: {},
-  })
+  });
 
   //   Seller Confirms receipt
   const {
@@ -846,33 +855,33 @@ function Home() {
   } = useWeb3Contract({
     abi: ABI,
     contractAddress: CONTRACT_ADDRESS,
-    functionName: 'confirmBuyerReceipt',
+    functionName: "confirmBuyerReceipt",
     params: {},
-  })
+  });
 
   const depositFunds = async () => {
     try {
-      await deposit()
+      await deposit();
     } catch (err) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const confirmDelivery = async () => {
     try {
-      await confirmSellerDelivery()
+      await confirmSellerDelivery();
     } catch (err) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const confirmReceipt = async () => {
     try {
-      await confirmBuyerReceipt()
+      await confirmBuyerReceipt();
     } catch (err) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <Layout>
@@ -886,7 +895,7 @@ function Home() {
       {balance && <h1 className="text-xl font-bold">Escrow bal: {balance}</h1>}
 
       <h2>
-        Admin:{' '}
+        Admin:{" "}
         <span className="ml-2 text-blue-600 cursor-pointer">
           {`${adminAddress.substring(0, 4)}....${adminAddress.substring(
             adminAddress.length - 4
@@ -943,10 +952,10 @@ function Home() {
         sellerConfirmed={sellerConfirmed}
       />
     </Layout>
-  )
+  );
 }
 
-export default Home
+export default Home;
 ```
 
 ### Testing the UI
