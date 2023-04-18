@@ -1684,6 +1684,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-2',
     tags: ['celosage', 'solidity', 'react', 'celo'],
   },
+   {
+    title: 'Go Celo Series - Setting up a Blockcahin Client on Celo (Episode 1)',
+    description: 'In this first episode, we will set up the Go Celo client by cloning it, exploring the packages that are present in it, and using the ethclient package to create a client connection.',
+    preview: require('./showcase/intermediate/go-celo-series-setting-up-a-blockchain-client-on-celo.png'),
+    website: 'blog/tutorials/go-celo-series-setting-up-a-blockchain-client-on-celo',
+    tags: ['video', 'celo', 'intermediate'],
+  },
   {
     title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
     description: 'This blog discusses top crypto projects on Celo blockchain as well as future potential',
