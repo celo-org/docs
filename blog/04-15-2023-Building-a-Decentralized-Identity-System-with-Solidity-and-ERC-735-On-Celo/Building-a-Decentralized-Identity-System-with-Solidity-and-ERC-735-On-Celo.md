@@ -4,7 +4,7 @@ description: In This tutorial we will learn how to build a decentralized identit
 authors:
   - name: ✍️ Richard Michael
     url: https://github.com/richiemikke
-tags: [celosage', 'solidity', 'celo', 'intermediate']
+tags: [celosage', "solidity", "celo", "intermediate"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo
 ---
@@ -125,7 +125,7 @@ contract Identity is AccessControl {
 
 The contract is named Identity and it inherits from the `AccessControl` contract. The AccessControl contract is imported from OpenZeppelin's GitHub repository.
 
-__Roles and Variables__
+**Roles and Variables**
 
 Two roles are defined in the contract.
 
@@ -171,8 +171,6 @@ contract Identity is AccessControl {
 ```
 
 - `Claim`: A struct that defines a claim and its properties.
-Events:
-
 - `ClaimAdded` Event: Triggered when a new claim is added to the contract.
 - `ClaimRemoved` Event: Triggered when a claim is removed from the contract.
 - `ClaimRequested` Event: Triggered when a claim is requested by a delegate.
@@ -282,10 +280,6 @@ The `removeClaimDelegate()` function allows `DEFAULT_ADMIN_ROLE` users to revoke
 
 This function can only be called by users with the `DEFAULT_ADMIN_ROLE`.
 
-## Conclusion
-
-In conclusion, the Identity contract provides a way for users to manage their identity by adding and removing claims. The contract uses roles to manage permissions and OpenZeppelin's `AccessControl` library for added security. The functions in the contract allow users to add and remove claims, request claims, and manage role assignments. The contract can be extended to include more functionality as needed.
-
 ## Deployment
 
 **Install the Celo Plugin**
@@ -316,7 +310,7 @@ That's it! With these steps, you should be able to deploy the `Identity` smart c
 
 ## Conclusion
 
-In this tutorial, we built a Staking Mechanism smart contract that allows users to stake Celo and earn rewards. We reviewed each function and feature of the contract and provided a detailed explanation of how they work. This smart contract can be used to create a staking platform for various cryptocurrencies or assets.
+In conclusion, the Identity contract provides a way for users to manage their identity by adding and removing claims. The contract uses roles to manage permissions and OpenZeppelin's `AccessControl` library for added security. The functions in the contract allow users to add and remove claims, request claims, and manage role assignments. The contract can be extended to include more functionality as needed.
 
 ## Learn More
 
