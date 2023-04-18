@@ -1,5 +1,5 @@
 ---
-title: Understanding Reentrancy Attacks And How To Protect Your Smart Contract Using Open Zeppelin
+title: Understanding Reentrancy Attacks And How To Protect Your Smart Contract Using OpenZeppelin
 description: In this tutorial we will explain how re-entrancy attacks work. And how to protect your smartcontract from such attacks
 authors:
   - name: Jonathan Iheme
