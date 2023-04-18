@@ -18,7 +18,7 @@ Reentrancy attacks are a common security vulnerability in smart contracts, parti
 
 In this tutorial, we will explain reentrancy attacks, and provide a step-by-step guide for implementing OpenZeppelin safeguards.
 
-[Full source code](https://github.com/4undRaiser/https://github.com/4undRaiser/reentrancy-repo)
+[Full source code](https://github.com/4undRaiser/reentrancy-repo)
 
 ## Prerequisites
 
