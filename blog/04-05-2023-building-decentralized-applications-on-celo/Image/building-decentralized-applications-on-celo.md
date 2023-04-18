@@ -141,7 +141,9 @@ Testing and deployment are critical to the success of your DApp on Celo. You can
 
 ## Conclusion
 
-Building decentralized applications on Celo requires careful consideration of various factors, including security, scalability, and user-friendliness. By following the best practices outlined in this article, you can create robust and reliable DApps on the Celo platform. Remember to keep security at the forefront of your development process and to perform regular audits of your smart contracts to identify and address potential vulnerabilities.
+Building decentralized applications on Celo requires careful consideration of various factors, including security, scalability, and user-friendliness. 
+
+By following the best practices outlined in this article, you can create robust and reliable DApps on the Celo platform. Remember to keep security at the forefront of your development process and to perform regular audits of your smart contracts to identify and address potential vulnerabilities.
 
 
 ## What's Next
