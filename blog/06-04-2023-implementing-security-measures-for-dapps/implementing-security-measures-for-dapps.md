@@ -4,8 +4,8 @@ description: Providing Celo developers with comprehensive information on Web3 to
 authors:
   - name: Joel Obafemi
     title: Content Writer
-    url: https://github.com/bobeu
-    image_url: https://github.com/bobeu.png
+    url: https://github.com/Joel-web3
+    image_url: https://avatars.githubusercontent.com/u/115151912?v=4
 tags: [solidity, javascript, celo, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/implementing-security-measures-for-dapps
