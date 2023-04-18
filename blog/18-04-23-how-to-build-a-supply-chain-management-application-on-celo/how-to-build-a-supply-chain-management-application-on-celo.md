@@ -6,7 +6,7 @@ authors:
     title: Tech Ethusiast, Smart Contract Developer 
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
-tags: [celosage, celo, intermediate ]
+tags: [celosage, celo, intermediate, contractkit ]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-supply-chain-management-application-on-celo
 ---
