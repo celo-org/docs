@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain
 ---
 
-![creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain](https://user-images.githubusercontent.com/94527318/232750990-108d3f51-fe8a-44b8-9363-f6ceeca427d4.png)
+![header](../../src/data-tutorials/showcase/intermediate/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain.png)
 
 ## INTRODUCTION
 
