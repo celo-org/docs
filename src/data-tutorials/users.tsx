@@ -923,7 +923,7 @@ const Users: User[] = [
     description: 'This tutorial teaches how to build a supply chain management application on Celo',
     preview: require('./showcase/intermediate/how-to-build-a-supply-chain-management-application-on-celo.png'),
     website: 'blog/tutorials/how-to-build-a-supply-chain-management-application-on-celo',
-    tags: ['celosage', 'celo', 'intermediate', 'react'], 
+    tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
   },
 {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
