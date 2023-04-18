@@ -705,6 +705,13 @@ const Users: User[] = [
     website: '/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo',
     tags: ['beginner','celosage','celo'],
   },
+   {
+    title: 'Creating a Smart Contract for Secure and Efficient Plant Seedling Sales on the Celo Blockchain',
+    description: 'This is a marketplace for seedlings on Celo using Solidity and OpenZeppelin. Users can add, view, and buy using cUSD.',
+    preview: require('./showcase/intermediate/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain',
+    tags: ['intermediate','celosage','celo'],
+  },
   {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
