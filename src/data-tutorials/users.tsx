@@ -997,7 +997,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
     tags: ['celosage','beginner'],
   },
-
+  {
+    title: 'Building Decentralized Applications on Celo, Best Practices for DApp Development',
+    description: 'Learn the best pratices to build better and more effective decentralized app on Celo',
+    preview: require('./showcase/intermediate/building-dApp-best-pratices.png'),
+    website: 'blog/tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices',
+    tags: ['solidity', 'intermediate','celosage'],
+  },
   {
     title: 'How to render Celo NFT in your React Native mobile Dapp',
     description: 'This will help mobile developers on how to integrate render Celo  NFT metadata on mobile Dapps uisng  center multichain NFT API and Wallet Connect SDK.',
