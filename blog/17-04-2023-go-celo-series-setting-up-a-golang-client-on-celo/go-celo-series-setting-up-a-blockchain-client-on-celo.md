@@ -11,18 +11,21 @@ hide_table_of_contents: true
 slug: /tutorials/go-celo-series-setting-up-a-blockchain-client-on-celo
 ---
 
+## Introduction
 
-## Introduction 
 The Go Celo blockchain package officially implements the Celo blockchain in Go to interact with the blockchain. It provides packages to interact and read the Celo blockchain using Golang. By the end of this tutorial, you will have to understand the Go Celo blockchain implementation overview and its packages. You will have learned how to connect to the Celo blockchain in using the package.
 
 ## Requirements
-* Have [go](https://go.dev/doc/install) binary installed.
-* Have solidity compiler [solc](https://docs.soliditylang.org/en/v0.8.17/installing-solidity.html) installed.
+
+- Have [go](https://go.dev/doc/install) binary installed.
+- Have solidity compiler [solc](https://docs.soliditylang.org/en/v0.8.17/installing-solidity.html) installed.
 
 ## Video Link
+
 [Go Celo Series - Setting up a GoLang Client on Celo (Episode 1)](https://youtu.be/ZpWLdkSTyyc)
 
 ## About Author
+
 Oluwafemi Alofe is a Blockchain developer with 3 years of applicable knowledge and 8 years of total experience as a Software engineer. He has written and deployed vulnerability-free smart contracts as a blockchain developer on a variety of blockchains, including but not limited to Ethereum, BCS, and Celo. Oluwafemi has a strong interest in developing distributed systems, and continues to learn new things every day to stay current with technological advancements.
 
 He is has two [Udemy courses](https://www.udemy.com/user/alofeoluwafemi) on solidity development with over 6,300 student enrolled and also a book on [Amazon KDP](https://www.amazon.com/Beginning-PHP-Laravel-approach-Inventory-ebook/dp/B086434XWV) for PHP and Laravel Developers.
