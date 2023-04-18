@@ -918,6 +918,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker',
     tags: ['celosage', 'celo', 'beginner', 'cli'], 
   },
+  {
+    title: 'How to Build a Supply Chain Management Application on Celo',
+    description: 'This tutorial teaches how to build a supply chain management application on Celo',
+    preview: require('./showcase/intermediate/how-to-build-a-supply-chain-management-application-on-celo.png'),
+    website: 'blog/tutorials/how-to-build-a-supply-chain-management-application-on-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'react'], 
+  },
 {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
     description: 'This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit',
