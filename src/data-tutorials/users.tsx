@@ -1280,6 +1280,13 @@ const Users: User[] = [
     tags: ['celosage', 'video', 'beginner', "celo", "react"],
   },
   {
+    title: 'Como otimizar os custos de gas em seu smart contract',
+    description: 'Aprenda como otimizar seu smart contract para economizar gas',
+    preview: require('./showcase/advanced/como-otimizar-os-custos-de-gas-em-seu-smart-contract.png'),
+    website: 'blog/tutorials/como-otimizar-os-custos-de-gas-em-seu-smart-contract',
+    tags: ['celosage', 'video', 'advanced', "celo", "solidity", "hardhat"],
+  },
+  {
     title: 'Como enviar e verificar um contrato na blockchain Celo com o hardhat-celo',
     description: 'Aprenda como enviar e verificar um contrato inteligente na blockchain Celo',
     preview: require('./showcase/intermediate/como-enviar-e-verificar-um-contrato-com-hardhat-celo.png'),
