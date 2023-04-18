@@ -1383,6 +1383,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'solidity', 'smartcontract', 'hardhat', 'advanced'],
   },
   {
+    title: 'Building A Decentralized Tipping System on Celo',
+    description: 'This tutorial guides you through the steps required to building a decentralized tipping system.',
+    preview: require('./showcase/intermediate/building-decentralized-tipping-system-on-celo.png'),
+    website: 'blog/tutorialsbuilding-decentralized-tipping-system-on-celo.png',
+    tags:  ['celo', 'intermediate', 'celosage', 'solidity'],
+  },
+  {
     title: 'Celo Impact on Underbanked and Unbanked Communities',
     description: 'Celo a blockchain platform aimed at providing financial inclusion and access to financial services for underbanked and unbanked communities',
     preview: require('./showcase/intermediate/unbanked.png'),
