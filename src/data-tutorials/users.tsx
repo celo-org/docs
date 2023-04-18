@@ -1584,7 +1584,7 @@ const Users: User[] = [
     description: 'In this tutorial, we will be building a tool that enables DAO platforms on the Celo blockchain to manage their proposal and voting process. We will use IPFS as our storage layer and all transactions will be gasless.',
     preview: require('./showcase/advanced/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo.png'),
     website: 'blog/tutorials/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo',
-    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'dao', 'ipfs'],
+    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'dao', 'ipfs','celosage'],
   },
   {
     title: 'A guide to building decentralized loan dapp on the celo blockchain',
