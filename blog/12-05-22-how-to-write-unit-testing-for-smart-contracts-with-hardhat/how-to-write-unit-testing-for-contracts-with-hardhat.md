@@ -1,22 +1,22 @@
 ---
-title: Unit Testing with Hardhat and Celo
+title: How to Write Unit Testing for Smart Contract with Hardhat
 description: How to Write Unit Testing for Smart Contracts with Hardhat
 authors:
   - name: ✍️ Mayowa Julius
 tags: [hardhat]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/how-to-write-unit-testing-for-contracts-with-hardhat
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/how-to-write-unit-testing-for-smart-contracts-with-hardhat.png)
 
-# Introduction
+## Introduction
 
 Unit testing is considered one of the most effective ways to ensure validating all functionalities and features of an application are working as expected. They are carried out in the development stage of an application and this case smart contracts. Unit testing with hardhat contracts gives you the tools to ensure your contract is working fine and efficiently test your contract.
 
 On completing this tutorial, you will learn everything you need to know about writing effective unit tests for your smart contracts.
 
-# Prerequisites
+## Prerequisites
 
 Throughout this tutorial you’ll need to have worked with or have a basic knowledge of the following;
 
@@ -24,13 +24,13 @@ Throughout this tutorial you’ll need to have worked with or have a basic knowl
 - Solidity: [Solidity](https://docs.soliditylang.org/) is simply a high-level programming language that is used for creating smart contracts.
 - Javascript: This tutorial will make use of Javascript, therefore you should be familiar with basic Javascript coding and algorithms.
 
-# Requirements
+## Requirements
 
 This tutorial also aspects that you have the following already installed or available:
 
 - [Node & node package management](https://nodejs.org/en/download/) `npm` or `yarn`: This tutorial will require you to use a preinstalled node package manager. You should also know about working with any package manager: `npm` or `yarn`.
 
-# Installing and setting up Hardhat
+## Installing and setting up Hardhat
 
 To get started with the coding part of this tutorial, you will need to install Hardhat.
 In the next couple of steps, you will learn how to install Hardhat into your local work environment using npm or you're preferred, Package Manager.
@@ -47,7 +47,7 @@ In the next couple of steps, you will learn how to install Hardhat into your loc
 
 Now that you have successfully installed and Setup up your hardhat development environment. next you will create the exemplary contracts you’ll need to write unit tests for.
 
-# Running a Contract Test Simulation
+## Running a Contract Test Simulation
 
 After starting up the hardhat development environment you’ll notice a new folder structure appears in your workspace explorer like in the image below.
 
@@ -57,13 +57,15 @@ Running tests on contracts usually requires you to run your trial a couple of ti
 
 Throughout this tutorial, you will be deploying and running your contract’s tests on the hardhat’s local network to save time consumption and real cost.
 To understand how unit testing works on smart contracts, run the command `npx hardhat test`. This will run a simulation test on the existing `Lock.sol` contract which will return a result like in the image below.
+
 ![Initial contract unit_test](https://user-images.githubusercontent.com/69092079/203416864-075075c9-d399-4da5-a348-94f3413790da.jpg)
 
 Hardhat compiles the contract first, runs all the tests in the test script, and returns the result of all the tests. The image above shows what the result looks like when it passes all the unit tests.
 
-# What is Hardhat Coverage
+## What is Hardhat Coverage
 
 Hardhat also comes with an inbuilt [coverage](https://medium.com/coinmonks/smart-contract-code-coverage-in-hardhat-d4a5ff6c9ba6) functionality that runs a tabular representation of your contract test and other features of the contract’s current state test. Run the command `npx hardhat coverage`. A successful result will look exactly like the image below.
+
 ![Hardhat_Coverage](https://user-images.githubusercontent.com/69092079/203417939-99bf1ea9-4a12-4f13-8a95-48f9e1c2dfcc.jpg)
 
 But in this tutorial, you’ll learn how to create your unit tests to suit your smart contract. Next, you need to create your contract.
@@ -72,7 +74,7 @@ But in this tutorial, you’ll learn how to create your unit tests to suit your 
 
 ![environment_directory](https://user-images.githubusercontent.com/69092079/203418211-a0753139-c8c3-4621-b3b4-2e5bf982250b.jpg)
 
-# Creating the Smart Contract
+## Creating the Smart Contract
 
 Every contract test created is always written specifically to test a single contract meaning, if you have four different contract files in an application, your application should also have four test scripts for testing each contract.
 In the next few steps, you’ll be creating an exemplary smart contract which you’ll, later on, be writing a test script for.
@@ -211,7 +213,7 @@ contract Sample {
 
 Now that you know the different functions in the sample.sol contract and you’re familiar with what they do. Next, you’ll learn how to create a unit test script to test subsections of the contract you just made.
 
-# Writing the Unit Test Script
+## Writing the Unit Test Script
 
 Now that you’ve created a simple contract with solidity you can now get started with writing your unit tests to suit the contract. After completing these tests you’ll have a basic idea of how to create unit tests for smart contracts.
 
@@ -341,6 +343,7 @@ b. The next unit test will test the `store` function. This test calls the `store
 ```
 
 Now run the command `npx hardhat test` to run the test, which should look like the image below.
+
 ![second_test](https://user-images.githubusercontent.com/69092079/203419518-035e4e2a-003f-469e-ba3d-a187d2c4b9ce.jpg)
 
 c. The next unit test `changeOwner` describes the test for the `changeOwner` function. To create a test for this function, after deploying, you need to call the function using another address that is not the owner's address, expecting the function to be reverted. And you’ll also need to test using the right address `deployer` passing in another address to switch ownership of the contract. Thus the code below:
@@ -363,6 +366,7 @@ c. The next unit test `changeOwner` describes the test for the `changeOwner` fun
 ```
 
 Now run the command `npx hardhat test` to run the test, which should look like the image below.
+
 ![changeOwnertest](https://user-images.githubusercontent.com/69092079/203420116-b2073a9e-b2d0-47ae-b4e2-2d34ccc54aa3.jpg)
 
 d. Next, to test the function fundIn, copy and add the code below. The first test reverts an error if the funder sends less than 0.01ETH, and the second test case successfully sends the right amount of eth after the funder sends an amount of ETH.
@@ -388,6 +392,7 @@ d. Next, to test the function fundIn, copy and add the code below. The first tes
 ```
 
 Now run the command `npx hardhat test` to run the test, which should look like the image below.
+
 ![fundIn](https://user-images.githubusercontent.com/69092079/203420231-f7b1eb09-922b-4faa-8d87-aa62fcda6af8.jpg)
 
 e. The next unit test describes the `withdraw` function, the first test case reverts an address that is not the owner calls the function, and the other test case tests the function to make sure the right amount of ETH is withdrawn from the contract. Thus the code below.
@@ -407,27 +412,29 @@ e. The next unit test describes the `withdraw` function, the first test case rev
 ```
 
 Finally completing your `Sample.test.js` script, your code should look exactly like the one below, you can copy and update your testing code with the code below for uniformity's sake. When you run the command `npx hardhat test` this should be the result of the test.
+
 ![withdraw_test](https://user-images.githubusercontent.com/69092079/203422678-19083096-a40a-4e73-91b4-a8c5d60b1380.jpg)
 
 Run the command `npx hardhat coverage` and note the difference between the previous result from running the command and its recent run.
+
 ![final test](https://user-images.githubusercontent.com/69092079/203420599-10f1dd3d-1837-4162-bbcd-3e9ab1fe8edc.jpg)
 
-# Conclusion
+## Conclusion
 
 Writing unit tests for smart contracts can help a great deal in ensuring a secure and proficient contract, by suggesting fixes and improvements after discovering errors, issues, and security vulnerabilities in your contract.
 You have successfully created your unit test script for a simple sample contract. Now that you understand how unit tests are written you can move on to writing more complex test scripts for other smart contracts.
 
-# Next Steps
+## Next Steps
 
 You can also read about how to run the unit test for smart contracts using Truffle.
 Here are some other tutorial articles you might be interested in.
 
-# About the Author
+## About the Author
 
 Mayowa Julius Ogungbola
 
 A software Engineer and technical writer always open to working on new ideas. I enjoy working on [GitHub](https://github.com/Julius170/) and you could also find out what I tweet about and connect with me on [Twitter](https://twitter.com/JuliusAyoola1)
 
-# References
+## References
 
 Here is a [link](https://github.com/Julius170/smart_contract_unit_tests_with_hardhat) to the complete tutorial sample code on my GitHub, Leave a ⭐on the repository if you find it helpful.

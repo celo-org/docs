@@ -1,6 +1,5 @@
 const sidebars = {
   docs: [
-    { type: "doc", label: "Welcome", id: "welcome" },
     // General
     {
       type: "category",
@@ -11,6 +10,11 @@ const sidebars = {
           type: "doc",
           label: "Architecture",
           id: "general/architecture",
+        },
+        {
+          type: "doc",
+          label: "Web2 to Web3",
+          id: "general/web2-to-web3",
         },
         {
           type: "doc",
@@ -462,7 +466,7 @@ const sidebars = {
         {
           type: "link",
           label: "Faucet",
-          href: "https://celo.org/developers/faucet",
+          href: "https://faucet.celo.org",
         },
       ],
     },
@@ -801,6 +805,11 @@ const sidebars = {
               label: "Overview",
               id: "protocol/identity/index",
             },
+            {
+              type: "link",
+              label: "Social Connect",
+              href: "https://github.com/celo-org/identity",
+            },
             "protocol/identity/metadata",
             "protocol/identity/smart-contract-accounts",
             "protocol/identity/encrypted-cloud-backup",
@@ -1035,6 +1044,11 @@ const sidebars = {
               id: "community/celo-sage/faq",
             },
           ],
+        },
+        {
+          type: "doc",
+          label: "StackShift",
+          id: "community/StackShift/StackShift",
         },
         {
           type: "doc",

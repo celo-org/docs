@@ -4,9 +4,11 @@ description: In this tutorial, we will explore the current and potential future 
 authors:
   - name: Fadipe Temitope
 tags: [celosage, celo, beginner]
-hide_table_of_contents: true
+hide_table_of_contents: false
 slug: /tutorials/potential-growth-of-blockchain-and-its-use-cases
 ---
+
+![header](../src/data-tutorials/showcase/beginner/potential-growth-of-blockchain-and-its-use-cases.png)
 
 ## How Much More Can Blockchain Grow As Regards Use Cases?
 

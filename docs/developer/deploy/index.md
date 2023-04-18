@@ -16,7 +16,7 @@ How to build and deploy a dApp with Celo.
 [Celo Composer](https://github.com/celo-org/celo-composer) allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
 
 ```jsx
-npx @celo/celo-composer create
+npx @celo/celo-composer@latest create
 ```
 
 :::tip

@@ -4,7 +4,7 @@ description: Learn how to create a simple mobile DApp using dAppKit and the Reac
 authors:
   - name: 🔗 External
 tags: [figment, mobile]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # Hello Mobile DApp

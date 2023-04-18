@@ -4,7 +4,7 @@ description: Learn how to re-deploy Ethereum Dapps on the Celo network.
 authors:
   - name: ✍️ Alex Reyes & Neo Cho  ·  🔗 External
 tags: [figment, beginner, truffle, javascript, cli]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 # How to re-deploy your Ethereum DApp to Celo
