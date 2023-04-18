@@ -1969,7 +1969,7 @@ const Users: User[] = [
     title: 'Understanding Reentrancy Attacks And How To Protect Your Smart Contract Using Open Zeppelin',
     description: 'In this tutorial we will explain how re-entrancy attacks work. And how to protect your smartcontract from such attacks',
     preview: require('./showcase/intermediate/understanding-reentrancy-attacks-and-how-to-protect-your-smart-contract-using-open-zeppelin.png'),
-    website: '/blog/understanding-reentrancy-attacks-and-how-to-protect-your-smart-contract-using-open-zeppelin',
+    website: '/blog/tutorials/understanding-reentrancy-attacks-and-how-to-protect-your-smart-contract-using-open-zeppelin',
     tags: ['celosage','solidity', 'intermediate'],
   },
   {

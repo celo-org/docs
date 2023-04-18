@@ -1,7 +1,8 @@
 ---
 title: Understanding Reentrancy Attacks And How To Protect Your Smart Contract Using Open Zeppelin
 description: In this tutorial we will explain how re-entrancy attacks work. And how to protect your smartcontract from such attacks
-  - name: ✍️ Jonathan Iheme
+authors:
+  - name: Jonathan Iheme
     url: https://github.com/4undRaiser
     image_url: https://avatars.githubusercontent.com/u/87926451?s=96&v=4
 tags: [celosage, solidity, intermediate]
