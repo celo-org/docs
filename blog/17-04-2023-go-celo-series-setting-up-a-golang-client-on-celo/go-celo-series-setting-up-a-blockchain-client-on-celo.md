@@ -1,6 +1,6 @@
 ---
 title: Go Celo Series - Setting up a Blockcahin Client on Celo (Episode 1)
-description: In this first episode, we will set up the Go Celo client by cloning it, exploring the packages that are present in it, and using the ethclient package to create a client connection. By the end of this tutorial, you will have to understand the Go Celo blockchain implementation overview and its packages. You will have learned how to connect to the Celo blockchain in using the package.
+description: In this first episode, we will set up the Go Celo client by cloning it, exploring the packages that are present in it, and using the ethclient package to create a client connection.
 authors:
   - name: Oluwafemi Alofe
     title: Blockchain Developer | Technical Writer
@@ -13,7 +13,7 @@ slug: /tutorials/go-celo-series-setting-up-a-blockchain-client-on-celo
 
 
 ## Introduction 
-The Go Celo blockchain package officially implements the Celo blockchain in Go to interact with the blockchain. It provides packages to interact and read the Celo blockchain using Golang.
+The Go Celo blockchain package officially implements the Celo blockchain in Go to interact with the blockchain. It provides packages to interact and read the Celo blockchain using Golang. By the end of this tutorial, you will have to understand the Go Celo blockchain implementation overview and its packages. You will have learned how to connect to the Celo blockchain in using the package.
 
 ## Requirements
 * Have [go](https://go.dev/doc/install) binary installed.
