@@ -2509,6 +2509,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
   },
   {
+    title: 'Interacting with Celo\'s Stablecoin, Celo Dollars, using Python',
+    description: ' Uncover the secrets of working with Celo\'s stablecoin, Celo Dollars, in this informative guide. Learn how to interact, manage, and utilize Celo Dollars in your applications using Python. This article covers essential concepts, practical examples, and step-by-step instructions to harness the power of Celo\'s blockchain technology, opening up new possibilities in the world of digital currencies and decentralized finance.',
+    preview: require('./showcase/intermediate/interacting-with-celo-stablecoin-celo-dollars-using-python.png'),
+    website: 'blog/tutorials/interacting-with-celo-stablecoin-celo-dollars-using-python',
+    tags: ["celosage", "intermediate", "smartcontract", "solidity", "python"], 
+  },
+  {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
     description: 'Batch minting with ERC721psi is an efficient way of creating multiple tokens at once, saving time and money. This feature is important for scalability and is implemented using smart contracts.',
     preview: require('./showcase/intermediate/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi.png'),
