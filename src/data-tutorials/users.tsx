@@ -3123,6 +3123,13 @@ const Users: User[] = [
     website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+   {
+    title: 'Building Celo DApp with Celocli without JavaScript Framework',
+    description: 'Learn How to Build Celo DApp with Celocli without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease',
+    preview: require('./showcase/intermediate/building-celo-dapp-with-celocli-without-javascript-framework.png'),
+    website: 'blog/tutorials/building-celo-dapp-with-celocli-without-javascript-framework',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'javascript', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
