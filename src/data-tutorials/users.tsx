@@ -3107,7 +3107,7 @@ const Users: User[] = [
     description: 'Building an NFT game using TDD with Hardhat',
     preview: require('./showcase/intermediate/building-an-NFT-game-using-TDD-with-hardhat-part-1.png'),
     website: 'blog/tutorials/building-an-nft-game-using-TDD-with-hardhat-part-1',
-    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens', "testing", "hardhat", "openzeppelin", "randomness", "erc721", "dacade", "nft"], 
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens', "hardhat", "openzeppelin", "randomness", "erc721", "dacade", "nft"], 
   },
   {
     title: 'Integrating Celo into the Process of Web/App Development',

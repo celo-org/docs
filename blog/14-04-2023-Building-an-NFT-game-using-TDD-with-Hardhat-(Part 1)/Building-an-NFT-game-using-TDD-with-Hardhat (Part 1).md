@@ -11,7 +11,6 @@ tags:
     "smartcontract",
     "solidity",
     "tokens",
-    "testing",
     "hardhat",
     "openzeppelin",
     "randomness",
@@ -53,7 +52,7 @@ Make sure to have the following installed:
 
 Let's create a folder for the project, we'll call it `avatar-arena`.
 
-```
+```bash
 mkdir avatar-arena
 cd avatar-arena
 yarn init -y
@@ -63,7 +62,7 @@ yarn add dotenv
 
 Next, we set up the hardhat project by running `npx hardhat`. This brings up a menu that configures the hardhat boilerplate, we'll choose the default option for all the questions ie
 
-```
+```bash
 ✔ What do you want to do? · Create a JavaScript project
 ✔ Hardhat project root: · [your current directory by default]
 ✔ Do you want to add a .gitignore? (Y/n) · y
@@ -75,7 +74,7 @@ Great!
 
 The last configuration we need is in `package.json`. We need to add a handy script:
 
-```
+```json
 // package.json
 
 "scripts": {
@@ -87,7 +86,7 @@ The last configuration we need is in `package.json`. We need to add a handy scri
 
 Remove the boilerplate contract files and add the new contract files
 
-```
+```bash
 rm contracts/* test/*
 touch contracts/AvatarArena.sol test/AvatarArena.js
 ```
@@ -118,7 +117,7 @@ This config gives us the basic template for the smart contract we'll be building
 
 When you're done, you'll have this block of code on the editor to your right, we'll copy and paste it into `contracts/AvatarArena.sol`:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 // SPDX-License-Identifier: MIT
@@ -179,7 +178,7 @@ contract AvatarArena is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
 We'll update the code to remove the `onlyOwner` modifier. It prevents anybody who's not the owner of the contract mint tokens but we don't want that restriction in our game. In our game, any user can mint a token. The updated snippet becomes:
 
-```
+```solidity
 ...
 	constructor() ERC721("AvatarArena", "AVR") {}
 
@@ -190,13 +189,13 @@ We'll update the code to remove the `onlyOwner` modifier. It prevents anybody wh
 
 Next, we install the OpenZeppelin packages which our contract code depends on:
 
-```
+```bash
 yarn add @openzeppelin/contracts
 ```
 
 You'll notice that our `AvatarArena` contract code inherits from several other contracts: `ERC721, ERC721Enumerable, ERC721URIStorage, Ownable`. These contracts have methods and attributes which provide some functionality we need. We'll follow that same pattern to add our set of functionality. We'll create an `Arena` contract which the `AvatarArena` contract will inherit.
 
-```
+```solidity
 // AvatarArena.sol
 ...
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -223,7 +222,7 @@ The TDD approach simplified = _Write failing test for expected behaviour -> Run 
 
 Let's setup the test file `test/AvatarArena.js`:
 
-```
+```js
 // test/AvatarArena.js
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
@@ -237,10 +236,10 @@ describe("AvatarArena", function () {
   let acc2;
 
   this.beforeEach(async function () {
-	const AvatarArena = await ethers.getContractFactory("AvatarArena");
-	[owner, acc1, acc2] = await ethers.getSigners();
+    const AvatarArena = await ethers.getContractFactory("AvatarArena");
+    [owner, acc1, acc2] = await ethers.getSigners();
 
-	avatarArena = await AvatarArena.deploy();
+    avatarArena = await AvatarArena.deploy();
   });
 });
 ```
@@ -263,7 +262,7 @@ Starting with the tests:
 
 ### 4.3.1 - Test 1: should start a pending battle if no pending battle is available
 
-```
+```js
 // test/AvatarArena.js
 ...
 const { ethers } = require("hardhat");
@@ -302,7 +301,7 @@ We mint a token as the `owner` signer and try starting a battle with it.
 
 Let's run this test:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -329,16 +328,16 @@ $ hardhat test
 
 Of course, it fails, the line most important to us here is:
 
-```
+```bash
 TypeError: avatarArena.connect(...).startBattle is not a function
 ```
 
 Let's fix the problem by defining the missing function:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
-...
+...solidity
 abstract contract Arena is ERC721 {
 
     /**
@@ -356,7 +355,7 @@ Re-run the tests, they should pass now.
 
 We need to make sure a battle is in fact created so we test the data stored on a battle. This is a good time to think about what our data structure would look like. we'll start with this and explain as we make the test more useful.
 
-```
+```js
 // test/AvatarArena.js
 
 const { expect } = require("chai");
@@ -388,7 +387,7 @@ From the updated test above, you can tell that:
 
 Re-run test
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -415,16 +414,16 @@ $ hardhat test
 
 Yep! it failed as expected. Our point of focus here is:
 
-```
+```bash
 TypeError: avatarArena.connect(...).getLatestBattle is not a function
 ```
 
 That function does not exist in our `Arena` contract. Let's fix this error:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
-...
+...solidity
 	function startBattle(uint256 tokenId) external {}
 
 	/**
@@ -439,7 +438,7 @@ contract AvatarArena is ERC721Enumerable, ERC721URIStorage, Ownable, Arena {
 
 Re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -467,14 +466,14 @@ Compiled 1 Solidity file successfully
 
 New error, progress?
 
-```
+```bash
 TypeError: Cannot read properties of undefined (reading '0')
     at Context.<anonymous> (test/AvatarArena.js:36:24)
 ```
 
 If we trace the test code, we see this error is due to trying to access players in a battle and of course, it errors out since `getLatestBattle` doesn't return anything yet. Let's fix it:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 ...
@@ -501,7 +500,7 @@ abstract contract Arena is ERC721 {
 
 Note the subtle difference in data types between nft index - `uint256` in `Player` and `winner` index - `int256` in `Battle`. Winner has to be int256 since it needs to contain negative values on initialization which is only possible with signed integers. We also need to return something from `getLatestBattle`:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 ...
@@ -518,7 +517,7 @@ Note the subtle difference in data types between nft index - `uint256` in `Playe
 
 Re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -551,14 +550,14 @@ Compiled 1 Solidity file successfully
 
 This is a tricky one, the most we have to go on is this line here:
 
-```
+```bash
 Error: call revert exception; VM Exception while processing transaction: reverted with panic code 50 [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method="getLatestBattle()", data="0x4e487b710000000000000000000000000000000000000000000000000000000000000032", errorArgs=[{"type":"BigNumber","hex":"0x32"}], errorName="Panic", errorSignature="Panic(uint256)", reason=null, code=CALL_EXCEPTION, version=abi/5.7.0)
 ```
 
 There's this snippet `(method="getLatestBattle()"`. On closer analysis of the `getLatestBattle` method, we notice there is infact something there that could lead to a panic:
 
-```
-return (_battles[battleIndex]);
+```js
+return _battles[battleIndex];
 ```
 
 The `_battles` array is initially empty, also the `_userBattles` mapping does not return `null` when it can't find an entry for a key ie `msg.sender`, instead of returns the default value for the data type of the value in the mapping which is `uint256` here which is `0` by default.
@@ -567,7 +566,7 @@ This means by default our function will try to return the battle at position 0 i
 
 What we'll do instead is push a placeholder battle in the `_battles` array that way we always return a battle from that function call and by examining the players in the battle we can determine if it's _the_ placeholder battle or an actual battle.
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 ...
@@ -589,7 +588,7 @@ What we'll do instead is push a placeholder battle in the `_battles` array that 
 
 Re-run the test
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -619,7 +618,7 @@ Alright!
 
 We're not out of the woods yet, we have a placeholder battle the method keeps erroring out because there're no players in the placeholder battle. Let's address that:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 ...
@@ -641,7 +640,7 @@ Re-run the test, it should pass now.
 
 ### 4.3.2 - Test 2: should put user in pending battle if available
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -682,7 +681,7 @@ Re-run the test, it should pass now.
 
 Run the tests
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -720,7 +719,7 @@ You already know how this goes, we follow the error message and the line error t
 
 In the test, we expect the first player in the battle that `acc1` is involved in to be the signer - `owner` that first started a battle but that isn't the case, we haven't added any logic to put players together in battles so the first player when `acc1` fetches its latest battle is `acc1` because it was added to a new battle. To to fix:
 
-```
+```solidity
 // contract/AvatarArena.sol
 
 ...
@@ -751,7 +750,7 @@ A significant part of the TDD process is refactoring, your code isn't all that u
 
 The most obvious thing here is minting and starting battles, we're repeating the same logic over and over, and we should probably move that into a reusable component:
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -780,7 +779,7 @@ The goal here is to reduce the overhead when calling these methods so we can foc
 
 Now to use the reusable component, update the test setup:
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -799,7 +798,7 @@ Now to use the reusable component, update the test setup:
 
 Update the test cases:
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -838,7 +837,7 @@ Simulating the result of a battle involves:
 
 Let's write a test which expresses the behaviour we wish to see.
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -880,7 +879,7 @@ const newAvatarArenaUtils = (contractInstance) => {
 
 Run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -910,7 +909,7 @@ Compiled 1 Solidity file successfully
 
 You know the drill, let's add the missing `getAvatarWins` function and get our test to pass as fast as possible:
 
-```
+```solidity
 // contract/AvatarArena.sol
 
 ...
@@ -929,7 +928,7 @@ contract AvatarArena is ERC721Enumerable, ERC721URIStorage, Ownable, Arena {
 
 Re-run the tests
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -959,7 +958,7 @@ $ hardhat test
 
 Add the missing event and fix the test:
 
-```
+```solidity
 ...
 	mapping(address => uint256) private _userBattles;
 
@@ -969,7 +968,7 @@ Add the missing event and fix the test:
 
 Re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -999,7 +998,7 @@ Compiled 1 Solidity file successfully
 
 Make sure the event is emitted:
 
-```
+```solidity
 //contracts/AvatarArena.sol
 ...
         	// try to join an existing battle
@@ -1015,7 +1014,7 @@ Make sure the event is emitted:
 
 Re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1045,7 +1044,7 @@ Compiled 1 Solidity file successfully
 
 Following the error back to our test code, `nft` is undefined, and that makes sense because we're indexing the players array with the winner index but our contract code doesn't do anything to determine the winner at the moment so the winner index is still the default `-1`. Let's fix it:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
         	// try to join an existing battle
@@ -1082,7 +1081,7 @@ We've moved the event emission to a dedicated `_simulateBattle` method and set t
 
 Re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1117,7 +1116,7 @@ $ hardhat test
 
 Following the error, we see that the `getAvatarWins` function has nothing in the function body so the test code gets the default reurn value for the `uint256` data type. Let's fix that:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
    function getAvatarWins(uint256 tokenId) external view returns (uint256) {
@@ -1128,7 +1127,7 @@ Following the error, we see that the `getAvatarWins` function has nothing in the
 
 Let's re-run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1180,7 +1179,7 @@ Okay, we're seeing a similar error but on a different line in the test condition
 
 Let's address the problem:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
 	mapping(address => uint256) private _userBattles;
@@ -1219,7 +1218,7 @@ The test passes now and we get a winner but it's the same every time, that's not
 
 ### 4.3.4 - Test 4: should simulate battle results randomly
 
-```
+```js
 // test/AvatarArena.js
 
 ...
@@ -1277,7 +1276,7 @@ The way around it now is to keep simulating battles till we get a different winn
 
 I wouldn't be very comfortable putting this in production, but for the purpose of this tutorial, it'll do. Run the test
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1312,7 +1311,7 @@ Compiled 1 Solidity file successfully
 
 Let's add the logic for randomness in battle simulation:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
 	function _simulateBattle(uint256 _battleIndex) internal {
@@ -1344,7 +1343,7 @@ Now that the happy scenarios have been tested, let's look at some undesirable sc
 
 We want to make sure that whoever starts a battle with an avatar owns that avatar.
 
-```
+```js
 // test/AvatarArena.js
 ...
       	`Contract failed to generate different results within ${maxRuns} calls`
@@ -1370,7 +1369,7 @@ const newAvatarArenaUtils = (contractInstance) => {
 
 Run the test
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1401,7 +1400,7 @@ $ hardhat test
 
 Let's make sure the contract reverts as expected:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
 	function startBattle(uint256 tokenId) external {
@@ -1422,7 +1421,7 @@ Re-run the tests, they should pass now.
 
 Only one battle can happen at a time so if a user can start another battle while in the middle of a pending battle, we run the risk of a user battling themselves.
 
-```
+```js
 // test/AvatarArena.js
 ...
     	"Arena: Cannot start battle with non-owned token"
@@ -1448,7 +1447,7 @@ const newAvatarArenaUtils = (contractInstance) => {
 
 Run the tests:
 
-```
+```bash
 $ yarn test
 yarn run v1.22.19
 $ hardhat test
@@ -1480,7 +1479,7 @@ $ hardhat test
 
 Failing test... let's make sure the contract reverts correctly:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 ...
     	// skip placeholder battle
@@ -1506,7 +1505,7 @@ And with that our `Arena` contract is complete!
 
 One final thing before we close the curtains here, the `startBattle` function is looking bulky, we can break up the logic into smaller function, effectively reducing the cognitive load when us/someone else has to read the contract code:
 
-```
+```solidity
 // contracts/AvatarArena.sol
 
 ...
@@ -1580,7 +1579,7 @@ Now that we've added the Alfajores test network and gotten some testnet tokens, 
 
 Next, we create a `.env` file in the root of the repo and put the phrase in it just like this:
 
-```
+```bash
 MNEMONIC="YOUR_SECRET_RECOVERY_PHRASE"
 ```
 
@@ -1588,23 +1587,22 @@ By default, the .env file is added to the `.gitignore` file so worry not.
 
 We need to configure a few more files and we're done. First, `hardhat.config.js`.
 
-```
+```js
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: ".env" });
-
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
   networks: {
-	alfajores: {
-  	url: "https://alfajores-forno.celo-testnet.org",
-  	accounts: {
-    	mnemonic: process.env.MNEMONIC,
-    	path: "m/44'/60'/0'/0",
-  	},
-  	chainId: 44787,
-	},
+    alfajores: {
+      url: "https://alfajores-forno.celo-testnet.org",
+      accounts: {
+        mnemonic: process.env.MNEMONIC,
+        path: "m/44'/60'/0'/0",
+      },
+      chainId: 44787,
+    },
   },
 };
 ```
@@ -1616,7 +1614,7 @@ Two main things are happening here:
 
 Next, overwrite `scripts/deploy.js`
 
-```
+```js
 // scripts/deploy.js
 
 // We require the Hardhat Runtime Environment explicitly here. This is optional
@@ -1647,27 +1645,27 @@ function storeContractData(contract) {
   const contractsDir = __dirname + "/../frontend/src/contracts";
 
   if (!fs.existsSync(contractsDir)) {
-	fs.mkdirSync(contractsDir, { recursive: true });
+    fs.mkdirSync(contractsDir, { recursive: true });
   }
 
   fs.writeFileSync(
-	contractsDir + "/AvatarArena-address.json",
-	JSON.stringify({ AvatarArena: contract.address }, undefined, 2)
+    contractsDir + "/AvatarArena-address.json",
+    JSON.stringify({ AvatarArena: contract.address }, undefined, 2)
   );
 
   const AvatarArenaArtifact = artifacts.readArtifactSync("AvatarArena");
 
   fs.writeFileSync(
-	contractsDir + "/AvatarArena.json",
-	JSON.stringify(AvatarArenaArtifact, null, 2)
+    contractsDir + "/AvatarArena.json",
+    JSON.stringify(AvatarArenaArtifact, null, 2)
   );
 }
 
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-	console.error(error);
-	process.exit(1);
+    console.error(error);
+    process.exit(1);
   });
 ```
 
@@ -1678,7 +1676,7 @@ What sorcery is this? Not a lot it turns out, the main function does two things:
 
 Finally, in `package.json`. We need to add some scripts:
 
-```
+```json
 // package.json
 
 "scripts": {
@@ -1690,7 +1688,7 @@ Finally, in `package.json`. We need to add some scripts:
 
 Run `yarn deploy`
 
-```
+```bash
 $ yarn deploy
 yarn run v1.22.19
 $ hardhat run --network alfajores scripts/deploy.js
