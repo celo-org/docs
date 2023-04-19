@@ -662,7 +662,7 @@ yarn react-app:dev
 
 Your development server is launched on `http://localhost:3000/`.
 
-### Build the Layout Component
+## Build the Layout Component
 
 Navigate into react-app and create a components directory then create a **Layout** component and paste the following code:
 
@@ -700,7 +700,7 @@ The layout component creates a layout with a header and a modal component, and a
 
 A [layout](https://beta.nextjs.org/docs/routing/pages-and-layouts) is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render.
 
-### Build the Header Component
+## Build the Header Component
 
 In the **Header** component, we will display the logo, navigation links,  connect wallet button and wallet balance. 
 
@@ -933,7 +933,7 @@ When used in a function component, the `useCelo` hook returns an object with the
 
 The `fetchSummary` function uses a `useCallback` hook that retrieves the user's account summary, including their CELO balance and stable token balances. The `useEffect` hook is used to trigger the `fetchSummary` function when the component mounts or when its dependencies change.
 
-### App Page
+## App Page
 
 The `_app.tsx` is the Next.js application's entry point, which is the file that is responsible for rendering the app on the client side. It imports several modules and components and exports a single functional component called App.
 
@@ -984,7 +984,7 @@ The `CeloProvider` provides the necessary context for interacting with the Celo 
 `ShoppingCartProvider` and `MarketPlaceProvider` are two context providers that are used to provide data to child components. They provide a way to share data about the user's shopping cart and the state of the marketplace, respectively. 
 
 
-### MarketPlace Context
+## MarketPlace Context
 
 In the react-app directory, Create an new directory and name it `context` then create a new file `MarketPlaceContext.tsx`.
 
@@ -1300,7 +1300,7 @@ export default function MarketPlaceProvider({
 
 - **deleteProduct** function is called to delete a product from the marketplace. It receives the product index as an argument, and updates the state variables accordingly to remove the product from the marketplace.
 
-### Shoppingcart Context
+## Shoppingcart Context
 
 
 ```typescript
@@ -1451,7 +1451,7 @@ export default function Home() {
 ```
 The page that renders a product listing for the computers marketplace. It imports the `ComputerCard` component and the `useMarketPlace` hook, and then retrieves the `computers` data using the hook. Each product is displayed using the `ComputerCard` component, which receives the computer object as a prop.
 
-### Computer card component
+## Computer card component
 
 In the components folder, create `ComputerCard.tsx` file.
 
@@ -1681,7 +1681,7 @@ The `useShoppingCart hook` is used to get the items and quantity in the shopping
 
 The total price of the items in the cart is calculated using the `reduce` method on the `cartItems` array. For each item in the cart, the corresponding price from the computers array (using the index property) is retrieved using the `find` method. The price is converted from `wei` to a whole number using the `ethers.utils.formatEther` function, and then multiplied by the quantity of the item in the cart. The total price for all items in the cart is then displayed at the bottom of the modal window.
 
-### Cart Items Components
+## Cart Items Components
 
 ```tsx
 
@@ -1797,7 +1797,7 @@ export default Mycomputers
 
 The component calls the `useMarketPlace hook` to get the `myProducts` state from the `MarketPlaceContext`. It then renders the `MyComputersCard` component for each computer in `myProducts` array using `.map()` function and passes the computer object and an index as props to the `MyComputersCard` component.
 
-### My Computers Card Component
+## My Computers Card Component
 
 ```tsx
 
@@ -2254,18 +2254,10 @@ Once the deployment is complete, you can access your project by clicking on the 
 Here's our deployed site: [dapp-compstore](https://dapp-compstore-react-app.vercel.app/)
 
 
-
 ## Conclusion​
 
 Congrats 🎉, you were able to build and deploy a computer store built using celo-composer.
 
-## About the Author
-
-I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enthusiast. I have a strong passion for creating user-centered designs that are not only aesthetically pleasing but also efficient and intuitive to use. Over the years, I have honed my skills in developing web applications that are robust, scalable, and secure, thanks to my experience in full-stack development.
-
-As a blockchain enthusiast, I am constantly exploring and learning about the potential of this technology and how it can be applied in various industries. I believe that blockchain has the potential to revolutionize the way we do things, from finance to healthcare and beyond. Its ability to provide decentralized, secure, and transparent systems has the potential to bring about significant changes that will benefit society.
-
-Fun fact about me, i am into archeoastronomy.
 
 ## Next Steps
 
@@ -2275,3 +2267,12 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 - [Solidity Docs](https://docs.soliditylang.org/en/v0.8.17/)
 - [EthersJS](https://docs.ethers.org/v5/)
 - [NextJS](https://nextjs.org/)
+
+
+## About the Author
+
+I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enthusiast. I have a strong passion for creating user-centered designs that are not only aesthetically pleasing but also efficient and intuitive to use. Over the years, I have honed my skills in developing web applications that are robust, scalable, and secure, thanks to my experience in full-stack development.
+
+As a blockchain enthusiast, I am constantly exploring and learning about the potential of this technology and how it can be applied in various industries. I believe that blockchain has the potential to revolutionize the way we do things, from finance to healthcare and beyond. Its ability to provide decentralized, secure, and transparent systems has the potential to bring about significant changes that will benefit society.
+
+Fun fact about me, i am into archeoastronomy.
