@@ -208,17 +208,17 @@ I have selected to integrate the **[satelite bridge](https://satellite.money/)**
 
   ![images](images/2.png)
 
-    - A token ID will be generated for you. Copy it to the clipboard. Click the `Register token` button at the top right side. The image below shows the token is validated.
+  - A token ID will be generated for you. Copy it to the clipboard. Click the `Register token` button at the top right side. The image below shows the token is validated.
 
-    ![images](images/3.png)
+  ![images](images/3.png)
 
-    - Select the destination chain you want to simultaneously deploy to. In this case, BNB Chain. You need to have at least 10 test $Celo for this transaction. Visit the [faucet](https://faucet.celo.org), and log in using your GitHub account to get more tokens.
+  - Select the destination chain you want to simultaneously deploy to. In this case, BNB Chain. You need to have at least 10 test $Celo for this transaction. Visit the [faucet](https://faucet.celo.org), and log in using your GitHub account to get more tokens.
 
-    ![images](images/4.png)
+  ![images](images/4.png)
 
-    - The confirmation page will pop up. Wait for the process to complete.
+  - The confirmation page will pop up. Wait for the process to complete.
 
-    ![images](images/5.png)
+  ![images](images/5.png)
 
 4. Update the token Id on the origin chain. Copy the token Id if you forget. 
 
