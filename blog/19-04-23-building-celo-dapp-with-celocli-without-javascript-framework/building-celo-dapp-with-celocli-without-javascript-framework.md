@@ -240,7 +240,7 @@ Click the "Increment Counter" button. You will be prompted to sign the transacti
 
 ## Conclusion
 
-Congratulations! You have successfully built a Celo DApp without using a JavaScript framework. With this foundation, you can continue to build more complex DApps and explore the full potential of the Celo blockchain. See the GitHub repository here.
+Congratulations! You have successfully built a Celo DApp without using a JavaScript framework. With this foundation, you can continue to build more complex DApps and explore the full potential of the Celo blockchain. See the GitHub repository [here](https://github.com/Taiwrash/no-js-framework).
 
 ## About the Author
 
