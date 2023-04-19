@@ -1713,7 +1713,7 @@ This was nice, in another article we'll build a user interface for the contract 
 
 ## 7. About the author
 
-Bolarinwa Owuogba is a software engineer and a student of the University of Lagos, Nigeria. You'll find him [here on twitter](www.twitter.com/__rinwa), feel free to say hi.
+Bolarinwa Owuogba is a software engineer and a student of the University of Lagos, Nigeria. You'll find him [here on twitter](https://www.twitter.com/__rinwa), feel free to say hi.
 
 ## 8. References
 
