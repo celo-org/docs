@@ -24,8 +24,8 @@ In this tutorial, we will be creating a Celo-powered vending machine using smart
 - Node.js should be installed along with a node package manager(npm)
 - A basic understanding of Celo and smart contracts
 - A Celo Wallet address:
-- To create Alfajores wallet, go to Alfajores wallet
-- To get testnest funds, go to Celo faucet Celo Faucet
+- To create Alfajores wallet, go to [Alfajores wallet](https://celo.org/developers/faucet)
+- To get testnest funds, go to [Celo faucet ](https://faucet.celo.org/)
 - A text editor such as Visual Studio Code installed on your computer
 - A terminal to test our code syntax
 - Remix IDE
@@ -40,7 +40,7 @@ git clone https://github.com/emiridbest/vending_machine.git
 # Now, let's get started;
 
 - Step 1: Write your Voting Smart Contract and Deploy on Remix IDE
-Now, go to https://remix.ethereum.org/ and write the smart contract logic for our vending machine.
+Now, go to [Remix IDE](https://remix.ethereum.org/) and write the smart contract logic for our vending machine.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -214,7 +214,7 @@ The expected output is;
 
 ![buyCoffee](https://user-images.githubusercontent.com/6362475/233278354-0514c95f-9ca6-4648-9adb-c65ae3a16696.png)
 
-This function call can also be confirmed on https://explorer.celo.org/alfajores;
+This function call can also be confirmed on [Alfajorex Explore](https://explorer.celo.org/alfajores);
 
 ![coffeeBuySuccess](https://user-images.githubusercontent.com/6362475/233278643-cc451c04-c00e-4601-b079-aeb0a3b66c32.png)
 
