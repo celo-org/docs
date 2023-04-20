@@ -238,6 +238,8 @@ Open your browser and navigate to `http://localhost:5000`. You should see your C
 
 Click the "Increment Counter" button. You will be prompted to sign the transaction using your Celo wallet. After signing, the counter value will be incremented and the page will be reloaded with the updated value.
 
+![Result after 3 pressed of the button](images/result.png)
+
 ## Conclusion
 
 Congratulations! You have successfully built a Celo DApp without using a JavaScript framework. With this foundation, you can continue to build more complex DApps and explore the full potential of the Celo blockchain. See the GitHub repository [here](https://github.com/Taiwrash/no-js-framework).
