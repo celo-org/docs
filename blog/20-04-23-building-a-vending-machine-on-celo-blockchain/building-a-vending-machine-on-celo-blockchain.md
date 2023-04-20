@@ -88,16 +88,18 @@ contract VendingMachine {
 }
 ```
 
-`address public owner` declares a state variable owner of type address that can be accessed publicly.
-`mapping (address => uint) public coffeeBalances` declares a mapping of `address` to `uint`, representing the amount of coffee owned by each address that can be accessed publicly.
-`constructor` initializes the contract by setting the owner and initial `coffeeBalances`.
-The `refill` function allows the `owner` to add more `amount` of coffee to the machine.
-The `purchase()` function allows anyone to buy `amount` of coffee using the `msg.value` sent along with the function call. It also checks if there is enough coffee in stock and if the payment sent is sufficient.
-The `getMachineBalance` function returns the balance of the vending machine (i.e., the amount of coffee it has) when called.
+- `address public owner` declares a state variable owner of type address that can be accessed publicly.
+- `mapping (address => uint) public coffeeBalances` declares a mapping of `address` to `uint`, representing the amount of coffee owned by each address that can be accessed publicly.
+- `constructor` initializes the contract by setting the owner and initial `coffeeBalances`.
+- The `refill` function allows the `owner` to add more `amount` of coffee to the machine.
+- The `purchase()` function allows anyone to buy `amount` of coffee using the `msg.value` sent along with the function call. It also checks if there is enough coffee in stock and if the payment sent is sufficient.
+- The `getMachineBalance` function returns the balance of the vending machine (i.e., the amount of coffee it has) when called.
+
 Afterwards, compile the contract and then deploy using injected web3 as service provider. Make sure your test wallet has funds to enable us deploy the contract and to also test out our contract much later.
 Two very vital parameters to take note of on compiling and deploying our contract are;
-The contract ABI
-The Contract Address
+- The contract ABI
+- The Contract Address
+ 
 Copy out these variables and save them somewhere as it would be used to interact with the already deployed contract.
 
 - Step 2: Navigate to our project directory and create a new App.js file
