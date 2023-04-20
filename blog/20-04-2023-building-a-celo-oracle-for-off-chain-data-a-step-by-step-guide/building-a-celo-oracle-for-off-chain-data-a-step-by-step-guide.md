@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png)
+![header](../../src/data-tutorials/intermediate/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png)
 
 ## Introduction
 
