@@ -181,10 +181,10 @@ This will deploy your contract to the Celo network and log the contract address 
   <body>
     <Repace me later>
 </body>
-
+```
 - Step 2: Create a new CSS file called style.css and add your styles. Here's an example style for the header:
 
-``css
+```css
 header {
   background-color: #2c3e50;
   color: white;
