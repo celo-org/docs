@@ -314,8 +314,8 @@ Qudus Olanrewaju is a developer and technical writer who has a strong interest i
 
 ## References​
 
-- Source Code
-- Deploy on Celo using Truffle
-- Truffle | Overview - Truffle Suite
-- Celo Docs
-- Web3.js Documentation
+- [Source Code](https://github.com/Qtech11/Implementing-Multi-factor-Authentication-on-Celo-s-Blockchain-using-Smart-Contracts)
+- [Deploy on Celo using Truffle](https://docs.celo.org/developer/deploy/truffle)
+- [Truffle | Overview - Truffle Suite](https://trufflesuite.com/docs/truffle/)
+- [Celo Docs](https://docs.celo.org/)
+- [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.5.2/)
