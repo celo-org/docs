@@ -3110,6 +3110,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens'], 
   },
   {
+    title: 'Building an NFT game using TDD with Hardhat (Part 1)',
+    description: 'Building an NFT game using TDD with Hardhat',
+    preview: require('./showcase/intermediate/building-an-NFT-game-using-TDD-with-hardhat-part-1.png'),
+    website: 'blog/tutorials/building-an-nft-game-using-TDD-with-hardhat-part-1',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens', "hardhat", "openzeppelin", "randomness", "erc721", "dacade", "nft"], 
+  },
+  {
     title: 'Integrating Celo into the Process of Web/App Development',
     description: 'The article will focus on the Celo framework that provides users with a seamless online payment method.',
     preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
