@@ -150,6 +150,7 @@ const account = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
 
 We just parsed two important variables.
 For every transaction requiring gas fees, you need a `private key` which serves as a signatory to your account funds. The account variable is your account address which serves as your identity and also your wallet.
+
 NOTE: Never publicly share the private keys to your wallets containing your funds as this could lead to loss of funds.
 
 - Step 7: Enable contractKit to sign your transactions using your private keys 
@@ -199,9 +200,10 @@ async function purchase(amount) {
 
 This code defines an asynchronous function `purchase` that takes an argument `amount` representing the number of coffees to be purchased. 
 
-The function then logs "Preparing your coffee..." to the console and proceeds to retrieve the current gas price from the Celo blockchain network using the `kit.web3.eth.getGasPrice()` method.
+Firstly, our function retrieves the current gas price from the Celo blockchain network using the `kit.web3.eth.getGasPrice()` method.
 
-The function then converts the amount value to Celo-wei units by calling `kit.web3.utils.toWei(amount.toString(), "ether")` and assigns the resulting value to the variable `celoInWei`. This conversion is necessary because Celo, like many other blockchain networks, stores values in the smallest unit of the currency, which is wei for Ethereum and Celo-wei for Celo.
+We then convert the amount value to Celo-wei units by calling `kit.web3.utils.toWei(amount.toString(), "ether")` and assigns the resulting value to the variable `celoInWei`. 
+This conversion is necessary because Celo, like many other blockchain networks, stores values in the smallest unit of the currency, which is wei for Ethereum and Celo-wei for Celo.
 
 The function checks if both the `amount` and `celoInWei` variables are truthy. If either of them is falsy, the function logs an error message to the console and returns early.
 
@@ -209,7 +211,7 @@ If both variables are truthy, the function tries to execute a transaction by cal
 
 The code then calls the `purchase` function with an argument of `1` which is the actual value of the `amount`.
 
-If the transaction is successful, the function logs the transaction hash to the console, along with "Here is your cup of Coffee." and "Thanks for patronising us." messages. If the transaction fails, the function logs an error message to the console, indicating the value of amount that was used in the attempted transaction.
+If the transaction is successful, the function logs the transaction hash to the console, along with success messages. But if it fails, an error message is returned.
 
 To test out our code function, we run this in the terminal;
 
@@ -221,7 +223,7 @@ The expected output is;
 
 ![buyCoffee](https://user-images.githubusercontent.com/6362475/233278354-0514c95f-9ca6-4648-9adb-c65ae3a16696.png)
 
-This function call can also be confirmed on [Alfajorex Explore](https://explorer.celo.org/alfajores);
+This function call can also be confirmed on [Alfajore Explore](https://explorer.celo.org/alfajores);
 
 ![coffeeBuySuccess](https://user-images.githubusercontent.com/6362475/233278643-cc451c04-c00e-4601-b079-aeb0a3b66c32.png)
 
@@ -249,13 +251,13 @@ async function refill(amount) {
 });
 ```
 
-This code defines an `async` function, which takes an `amount` parameter specifying how many cups of coffee to add to the vending machine's balance.
+This `async` function takes `amount` as parameter which is how many cups of coffee to be added to the machine's balance.
 
-Inside the function, it first gets the current gas price using `kit.web3.eth.getGasPrice()` and stores it in the `gasPrice` variable.
+Inside the function, we are to retrieve current gas price using `kit.web3.eth.getGasPrice()` and stores it in the `gasPrice` variable.
 
-Then it calls the `refill` function of the `contracts` object, passing in the `amount` parameter as an argument. It sets the `from` field to `account.address`, indicating the account that is sending the transaction, and sets the `gas` field to 2`000000`, which is the maximum gas limit for this transaction. It also sets the `gasPrice` field to `gasPrice`.
+Then we call the `refill` function of the `contracts` object. 
 
-Finally, an immediately invoked function expression (IIFE) is defined that calls the `refill` function with an amount of 100. It catches any errors and logs them to the console.
+Finally, an immediately invoked function expression (IIFE) is defined that calls the `refill` function with an amount of 100. 
 
 After the transaction is sent, the function logs the transaction hash and a message indicating how many cups of coffee were added to the vending machine's balance.
 
@@ -263,7 +265,7 @@ The expected output on running `node {fileName}` is;
 
 ![restockMachine](https://user-images.githubusercontent.com/6362475/233279707-2032db12-5da6-4f36-a929-e9c8f6049bb0.png)
 
-Just as the first function, this can also be monitored on  [Alfajorex Explore](https://explorer.celo.org/alfajores).
+Just as the first function, this can also be monitored on  [Alfajore Explore](https://explorer.celo.org/alfajores).
 
 
 - Step 8: Call Function for getting our coffee machine balance
@@ -285,8 +287,15 @@ async function getMachineBalance() {
 });
 ```
 
-The function first logs a message to the console indicating that it is getting the coffee balance. It then calls the `getMachineBalance` function of the `contracts` object, which is an instance of the smart contract deployed on the Celo network. This function is a `view` function, meaning that it does not modify the state of the contract and does not require any transaction fees to be paid.
-The `call()` method is used to execute the function and retrieve its return value. The return value is stored in the `coffeeBalances` variable. Finally, the function logs the transaction hash and the current coffee machine balance to the console, and returns the coffee balance.
+The function first logs a message to the console indicating that it is getting the coffee balance.
+
+It then calls the `getMachineBalance` function of the `contracts` object, which is an instance of the smart contract deployed on the Celo network.
+
+This function is a `view` function, meaning that it does not modify the state of the contract and does not require any transaction fees to be paid.
+
+The `call()` method is used to execute the function and retrieve its return value. The return value is stored in the `coffeeBalances` variable.
+
+Finally, the function logs the transaction hash and the current coffee machine balance to the console, and returns the coffee balance.
 
 ## Conclusion​
 
