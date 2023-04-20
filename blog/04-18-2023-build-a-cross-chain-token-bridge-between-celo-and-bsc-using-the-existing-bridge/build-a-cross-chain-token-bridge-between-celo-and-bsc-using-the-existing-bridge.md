@@ -13,7 +13,6 @@ slug: /tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge.png)
 
-
 ## Introduction
 
 Like separate containers, blockchains are isolated from one another even though some are forks of another. The seclusion greatly hinders communication among them. For example, the $Celo coin in your wallet is not compatible with the $BNB coin on the Binance Smart Chain and vice versa. A well-experimented solution to achieving interoperability today is bridging assets from one network to another by creating a copy of an asset of a blockchain on other networks.
@@ -52,7 +51,7 @@ To better explain the concept, in the next section, we will programmatically exp
 
 **Steps to building a cross-chain bridge**
 
-In this section, we will explore the smart contract and the backend part excluding the front-end. We will create a CLI DApp. Everything will run in the terminal. I previously made a tutorial that will help you create a cross-chain dApp from the scratch **[here](https://docs.celo.org/blog/tutorials/build-a-crosschain-token-bridge-between-Celo-and-BSC-from-the-scratch)**. In this guide, we will leverage existing bridge protocol - **[axelar](https://docs.axelar.dev/)** to integrate compatibility feature with BNB Chain 
+In this section, we will explore the smart contract and the backend part excluding the front-end. We will create a CLI DApp. Everything will run in the terminal. I previously made a tutorial that will help you create a cross-chain dApp from the scratch **[here](https://docs.celo.org/blog/tutorials/build-a-crosschain-token-bridge-between-Celo-and-BSC-from-the-scratch)**. In this guide, we will leverage existing bridge protocol - **[axelar](https://docs.axelar.dev/)** to integrate compatibility feature with BNB Chain
 
 Before we proceed to the coding aspect, let's set up a hardhat environment. Please refer to **[this article](https://docs.celo.org/blog/tutorials/getting-started-on-celo-with-hardhat)** and **[this](https://docs.celo.org/blog/tutorials/advance-hardhat-configuration-on-celo-using-plugins)** for comprehensive tutorials on how to use hardhat.
 
@@ -95,18 +94,17 @@ I have selected to integrate the **[satelite bridge](https://satellite.money/)**
 
 - Run the `sendToken` function to complete the bridge process.
 
-
 1. Deploy the token contract
 
-  - The Axelar bridge contract implements `IInterchainTokenLinker.sendToken` which we will call in our contracts.
+- The Axelar bridge contract implements `IInterchainTokenLinker.sendToken` which we will call in our contracts.
 
-  - In the constructor, we set the admin and the linker contract. 
+- In the constructor, we set the admin and the linker contract.
 
-  >Note: Axelar linker contract on all VMs is set to "0x7cD2E96f5258BB825ad6FC0D200EDf8C99590d30" 
+> Note: Axelar linker contract on all VMs is set to "0x7cD2E96f5258BB825ad6FC0D200EDf8C99590d30"
 
-  - The `executeBridge` function does two things when invoked:
-    - Approves the amount to spend in the callers' s balances.
-    - Invokes the `sendToken` function on the linker contract.  
+- The `executeBridge` function does two things when invoked:
+  - Approves the amount to spend in the callers' s balances.
+  - Invokes the `sendToken` function on the linker contract.
 
 ```ts
   // SPDX-License-Identifier: MIT
@@ -167,110 +165,117 @@ I have selected to integrate the **[satelite bridge](https://satellite.money/)**
 ```
 
 2. Get the contract address.
-  - Compile the contract.
 
-  ```bash
-    npx hardhat compile
-  ```
+- Compile the contract.
 
-  - Deploy to the origin chain i.e Alfajores.
+```bash
+  npx hardhat compile
+```
 
-  Create the file - `scripts/deployToken.ts` and populate the code that deploys the contract. 
+- Deploy to the origin chain i.e Alfajores.
 
-  ```ts scripts/deployToken.ts
-    import { ethers } from "hardhat";
+Create the file - `scripts/deployToken.ts` and populate the code that deploys the contract.
 
-    async function main() {
-    const CTokenDApp = await ethers.getContractFactory("CTokenDApp");
-    const cToken = await CTokenDApp.deploy();
-    await cToken.deployed();
+```ts scripts/deployToken.ts
+import { ethers } from "hardhat";
 
-    console.log(`CTokenDApp deployed to ${cToken.address}`);
+async function main() {
+  const CTokenDApp = await ethers.getContractFactory("CTokenDApp");
+  const cToken = await CTokenDApp.deploy();
+  await cToken.deployed();
 
-    };
-    main().catch((error) => {
-      console.error(error);
-      process.exitCode = 1;
-    });
+  console.log(`CTokenDApp deployed to ${cToken.address}`);
+}
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
 
-  ```
+Deploy and copy the contract address.
 
-  Deploy and copy the contract address.
-
-  ```bash
-    npx hardhat run scripts/deployToken.ts --network Alfajores
-  ```
+```bash
+  npx hardhat run scripts/deployToken.ts --network Alfajores
+```
 
 3. Register the token on [Axelar](https://testnet.services.axelar.dev/).
 
-  - Visit the [Axelar interface](https://testnet.services.axelar.dev/).
-  - Connect your wallet. A section will pop up asking to verify the already deployed token or create a new one. Paste the contract address in the first column, and the page will transit to a new one. Be sure to switch to Alfajores if you're on a different network.
+- Visit the [Axelar interface](https://testnet.services.axelar.dev/).
+- Connect your wallet. A section will pop up asking to verify the already deployed token or create a new one. Paste the contract address in the first column, and the page will transit to a new one. Be sure to switch to Alfajores if you're on a different network.
 
-  ![images](images/2.png)
+![images](images/2.png)
 
-  - A token ID will be generated for you. Copy it to the clipboard. Click the `Register token` button at the top right side. The image below shows the token is validated.
+- A token ID will be generated for you. Copy it to the clipboard. Click the `Register token` button at the top right side. The image below shows the token is validated.
 
-  ![images](images/3.png)
+![images](images/3.png)
 
-  - Select the destination chain you want to simultaneously deploy to. In this case, BNB Chain. You need to have at least 10 test $Celo for this transaction. Visit the [faucet](https://faucet.celo.org), and log in using your GitHub account to get more tokens.
+- Select the destination chain you want to simultaneously deploy to. In this case, BNB Chain. You need to have at least 10 test \$Celo for this transaction. Visit the [faucet](https://faucet.celo.org), and log in using your GitHub account to get more tokens.
 
-  ![images](images/4.png)
+![images](images/4.png)
 
-  - The confirmation page will pop up. Wait for the process to complete.
+- The confirmation page will pop up. Wait for the process to complete.
 
-  ![images](images/5.png)
+![images](images/5.png)
 
-4. Update the token Id on the origin chain. Copy the token Id if you forget. 
+4. Update the token Id on the origin chain. Copy the token Id if you forget.
 
-  - Create a new script `scripts/setTokenId.ts`. Paste the following code.
+- Create a new script `scripts/setTokenId.ts`. Paste the following code.
 
-  ```ts scripts/setTokenId.ts
-    import { ethers } from "hardhat";
-    import { providers} from "./network";
-    import { assert } from "chai";
+```ts scripts/setTokenId.ts
+import { ethers } from "hardhat";
+import { providers } from "./network";
+import { assert } from "chai";
 
-    async function main() {
-      const { celoProvider, bscProvider, mumbaiProvider } = providers();
+async function main() {
+  const { celoProvider, bscProvider, mumbaiProvider } = providers();
 
-      // Set the token Id here
-      const tokenId = '0xe4e3dcf5cf24b55fb6ed24d67d7e21a7d520de10199e324c3a9dccce600817e8';
-      
-      const signer = new ethers.Wallet(String(process.env.PRIVATE_KEY), celoProvider);
-      
-      const contractAddress = '0xD79903f0b5A351F31adFc2B3FFF41CeAdA3fa0a0';
+  // Set the token Id here
+  const tokenId =
+    "0xe4e3dcf5cf24b55fb6ed24d67d7e21a7d520de10199e324c3a9dccce600817e8";
 
-      console.log(`Retreiving CTokenDApp deployed to ${contractAddress} on Alfajores`);
-      
-      const CTokenDApp = await ethers.getContractAt("CTokenDApp", contractAddress, signer);
-      const cToken = await CTokenDApp.deployed();
+  const signer = new ethers.Wallet(
+    String(process.env.PRIVATE_KEY),
+    celoProvider
+  );
 
-      try {
-        const tx = await cToken.setTokenId(tokenId);
-        await tx.wait(2)
-          .then(async(receipt: { transactionHash: any; }) => {
-            console.log(`Hash: ${receipt.transactionHash}`);
-            const newTokenId = await cToken.tokenId();
-            console.log(`New Token Id  ${newTokenId}`);
-            assert.equal(newTokenId, tokenId, "Token Id not set");
-          });
+  const contractAddress = "0xD79903f0b5A351F31adFc2B3FFF41CeAdA3fa0a0";
 
-      } catch (error) {
-        console.log("SetTpkenID error: ", error);
-      }
-    };
-    main().catch((error) => {
-      console.error(error);
-      process.exitCode = 1;
+  console.log(
+    `Retreiving CTokenDApp deployed to ${contractAddress} on Alfajores`
+  );
+
+  const CTokenDApp = await ethers.getContractAt(
+    "CTokenDApp",
+    contractAddress,
+    signer
+  );
+  const cToken = await CTokenDApp.deployed();
+
+  try {
+    const tx = await cToken.setTokenId(tokenId);
+    await tx.wait(2).then(async (receipt: { transactionHash: any }) => {
+      console.log(`Hash: ${receipt.transactionHash}`);
+      const newTokenId = await cToken.tokenId();
+      console.log(`New Token Id  ${newTokenId}`);
+      assert.equal(newTokenId, tokenId, "Token Id not set");
     });
-  ```
+  } catch (error) {
+    console.log("SetTpkenID error: ", error);
+  }
+}
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
 
-  - Run the script. This will update the token Id on the origin chain.
+- Run the script. This will update the token Id on the origin chain.
 
-  >Note: The destination chain will have a different token Id generated on the origin chain.
+> Note: The destination chain will have a different token Id generated on the origin chain.
 
-  ```bash
-    npx hardhat run scripts/setTokenId.ts
-  ```
+```bash
+  npx hardhat run scripts/setTokenId.ts
+```
 
 5. Approve the linker contract, and invoke the `sendToken()`.
 
@@ -278,92 +283,121 @@ The last two steps will be performed in one call. Create a new script `scripts/r
 
 > Note: You need to have enough test BNB to be able to run this successfully. Depending on the contract size, 1 test $Celo can run as many transactions but you are likely to run out of gas running 1-tenth of the same transactions using test $BNB. It is advisable to get as much BNB as you can. Alternatively, I exported the Polygon Mumbai chain provider in the `network.ts` file. You can switch to using Mumbai if you have trouble with BNB Chain. Although Polygon is cheaper than Binance Chain but more expensive when compared to Celo.
 
-  ```ts scripts/runBridge.ts
-    import { ethers } from "hardhat";
-    import { providers} from "./network";
-    import { Transaction } from "ethers";
-    import Web3 from "web3";
+```ts scripts/runBridge.ts
+import { ethers } from "hardhat";
+import { providers } from "./network";
+import { Transaction } from "ethers";
+import Web3 from "web3";
 
-    async function main() {
-      const mode = false;
-      const { celoProvider, bscProvider } = providers();
+async function main() {
+  const mode = false;
+  const { celoProvider, bscProvider } = providers();
 
-      const signer_celo = new ethers.Wallet(String(process.env.PRIVATE_KEY), celoProvider);
-      const signer_bsc = new ethers.Wallet(String(process.env.PRIVATE_KEY), bscProvider);
+  const signer_celo = new ethers.Wallet(
+    String(process.env.PRIVATE_KEY),
+    celoProvider
+  );
+  const signer_bsc = new ethers.Wallet(
+    String(process.env.PRIVATE_KEY),
+    bscProvider
+  );
 
-      // Replace the contract address with yours
-      const contractAddress = '0xD79903f0b5A351F31adFc2B3FFF41CeAdA3fa0a0';
+  // Replace the contract address with yours
+  const contractAddress = "0xD79903f0b5A351F31adFc2B3FFF41CeAdA3fa0a0";
 
-      // Replace the contract address with yours
-      const bscToken_address = '0x020d860D9028a6024e143ab920b3b0642E079F04';
+  // Replace the contract address with yours
+  const bscToken_address = "0x020d860D9028a6024e143ab920b3b0642E079F04";
 
-      console.log(`Retreiving CTokenDApp deployed to ${contractAddress} on Alfajores`);
-      
-      const CTokenDApp = await ethers.getContractAt("CTokenDApp", contractAddress, signer_celo);
-      const cToken = await CTokenDApp.deployed();
-      
-      console.log(`Retreiving CTokenDApp deployed to ${bscToken_address} on Mumbai`);
-      const CTokenDApp_bsc = await ethers.getContractAt("CTokenDApp", bscToken_address, signer_bsc);
-      const cToken_bsc = await CTokenDApp_bsc.deployed();
+  console.log(
+    `Retreiving CTokenDApp deployed to ${contractAddress} on Alfajores`
+  );
 
-      if(mode) {
-        const tx = await cToken.requestFreeToken();
-        await tx.wait(2)
-          .then(async(receipt: { transactionHash: any; }) => {
-            console.log(`Hash: ${receipt.transactionHash}`);
-            const balance = cToken.balanceOf(signer_celo.address);
-            console.log(`Balance of  ${signer_celo.address} : ${Web3.utils.fromWei((await balance).toString())}`)
-          });
-        } else {
-          const code1 = await celoProvider.getCode(contractAddress);
-          const code = await mumbaiProvider.getCode(bscToken_address);
-          const isCodeThesame = code === code1;
-          console.log(`isCodeThesame: ${isCodeThesame}`);
-          // console.log(`code1: ${code1}`);
-          // console.log(`code: ${code}`);
+  const CTokenDApp = await ethers.getContractAt(
+    "CTokenDApp",
+    contractAddress,
+    signer_celo
+  );
+  const cToken = await CTokenDApp.deployed();
 
-          
-          const bal = await signer_bsc.getBalance();
-          const bal_celo = await signer_celo.getBalance();
+  console.log(
+    `Retreiving CTokenDApp deployed to ${bscToken_address} on Mumbai`
+  );
+  const CTokenDApp_bsc = await ethers.getContractAt(
+    "CTokenDApp",
+    bscToken_address,
+    signer_bsc
+  );
+  const cToken_bsc = await CTokenDApp_bsc.deployed();
 
-          console.log(`Balance of ${signer_bsc.address} on BSC : ${Web3.utils.fromWei(bal.toString())}`)
-          console.log(`Balance of ${signer_celo.address} on Celo : ${Web3.utils.fromWei(bal_celo.toString())}`)
-          
-          const amount = '1000000000000000000000';
-          const value = '300000000000000000'
-          try {
-            const tx= await cToken.executeBridge("MUMBAI", amount, {value: value});
-            console.log("TX: ",tx);
-            
-            await tx.wait(1)
-              .then(async(rec: any) => {
-                console.log("Hash:", rec.transactionHash);
-                const balance = await cToken_bsc.balanceOf(signer_bsc.address);
-                console.log(`Balance of  ${signer_bsc.address} : ${Web3.utils.fromWei((await balance).toString())}`);
-              });
-          } catch (error) {
-            console.log("Trx Errored: ", error);
-          }
-      }
-      
-    };
-    main().catch((error) => {
-      console.error(error);
-      process.exitCode = 1;
+  if (mode) {
+    const tx = await cToken.requestFreeToken();
+    await tx.wait(2).then(async (receipt: { transactionHash: any }) => {
+      console.log(`Hash: ${receipt.transactionHash}`);
+      const balance = cToken.balanceOf(signer_celo.address);
+      console.log(
+        `Balance of  ${signer_celo.address} : ${Web3.utils.fromWei(
+          (await balance).toString()
+        )}`
+      );
     });
-  ```
+  } else {
+    const code1 = await celoProvider.getCode(contractAddress);
+    const code = await mumbaiProvider.getCode(bscToken_address);
+    const isCodeThesame = code === code1;
+    console.log(`isCodeThesame: ${isCodeThesame}`);
+    // console.log(`code1: ${code1}`);
+    // console.log(`code: ${code}`);
 
-  - First, toggle the `mode` variable to `true` to request for test token.
+    const bal = await signer_bsc.getBalance();
+    const bal_celo = await signer_celo.getBalance();
 
-  - Toggle back to `false`, then run the `executeBridge` function. You should now see the `CTK` amount you bridged reflected on the destination chain.
-  - Run the script
+    console.log(
+      `Balance of ${signer_bsc.address} on BSC : ${Web3.utils.fromWei(
+        bal.toString()
+      )}`
+    );
+    console.log(
+      `Balance of ${signer_celo.address} on Celo : ${Web3.utils.fromWei(
+        bal_celo.toString()
+      )}`
+    );
 
-  ```bash
-    npx hardhat run scripts/runBridge.ts
-  ```
+    const amount = "1000000000000000000000";
+    const value = "300000000000000000";
+    try {
+      const tx = await cToken.executeBridge("MUMBAI", amount, { value: value });
+      console.log("TX: ", tx);
 
-  - Inspect the log in the terminal
+      await tx.wait(1).then(async (rec: any) => {
+        console.log("Hash:", rec.transactionHash);
+        const balance = await cToken_bsc.balanceOf(signer_bsc.address);
+        console.log(
+          `Balance of  ${signer_bsc.address} : ${Web3.utils.fromWei(
+            (await balance).toString()
+          )}`
+        );
+      });
+    } catch (error) {
+      console.log("Trx Errored: ", error);
+    }
+  }
+}
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
 
+- First, toggle the `mode` variable to `true` to request for test token.
+
+- Toggle back to `false`, then run the `executeBridge` function. You should now see the `CTK` amount you bridged reflected on the destination chain.
+- Run the script
+
+```bash
+  npx hardhat run scripts/runBridge.ts
+```
+
+- Inspect the log in the terminal
 
 The complete code for this tutorial can be found **[on the github](https://github.com/bobeu/build-a-cross-chain-token-bridge-between-Celo-and-BSC-using-the-existing-bridge)**.
 
