@@ -294,9 +294,7 @@ That's it! I Hope you followed through. We have come to the end of this tutorial
 
 ## Next Steps​
 
-- [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
-- [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
-- [Contract Kit](https://docs.celo.org/developer/contractkit)
+- You may go ahead to develop a frontend for our vending machine.
 
 ## About the Author​
 
