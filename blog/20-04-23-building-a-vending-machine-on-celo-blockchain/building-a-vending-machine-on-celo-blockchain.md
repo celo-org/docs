@@ -197,11 +197,18 @@ async function purchase(amount) {
 });
 ```
 
-This code defines an asynchronous function `purchase` that takes an argument `amount` representing the number of coffees to be purchased. The function then logs "Preparing your coffee..." to the console and proceeds to retrieve the current gas price from the Celo blockchain network using the `kit.web3.eth.getGasPrice()` method.
+This code defines an asynchronous function `purchase` that takes an argument `amount` representing the number of coffees to be purchased. 
+
+The function then logs "Preparing your coffee..." to the console and proceeds to retrieve the current gas price from the Celo blockchain network using the `kit.web3.eth.getGasPrice()` method.
+
 The function then converts the amount value to Celo-wei units by calling `kit.web3.utils.toWei(amount.toString(), "ether")` and assigns the resulting value to the variable `celoInWei`. This conversion is necessary because Celo, like many other blockchain networks, stores values in the smallest unit of the currency, which is wei for Ethereum and Celo-wei for Celo.
+
 The function checks if both the `amount` and `celoInWei` variables are truthy. If either of them is falsy, the function logs an error message to the console and returns early.
+
 If both variables are truthy, the function tries to execute a transaction by calling the `purchase` method of the `contracts` object, passing in the `amount` value as a string and the `celoInWei` value as the transaction value. 
+
 The code then calls the `purchase` function with an argument of `1` which is the actual value of the `amount`.
+
 If the transaction is successful, the function logs the transaction hash to the console, along with "Here is your cup of Coffee." and "Thanks for patronising us." messages. If the transaction fails, the function logs an error message to the console, indicating the value of amount that was used in the attempted transaction.
 
 To test out our code function, we run this in the terminal;
@@ -243,10 +250,15 @@ async function refill(amount) {
 ```
 
 This code defines an `async` function, which takes an `amount` parameter specifying how many cups of coffee to add to the vending machine's balance.
+
 Inside the function, it first gets the current gas price using `kit.web3.eth.getGasPrice()` and stores it in the `gasPrice` variable.
+
 Then it calls the `refill` function of the `contracts` object, passing in the `amount` parameter as an argument. It sets the `from` field to `account.address`, indicating the account that is sending the transaction, and sets the `gas` field to 2`000000`, which is the maximum gas limit for this transaction. It also sets the `gasPrice` field to `gasPrice`.
+
 Finally, an immediately invoked function expression (IIFE) is defined that calls the `refill` function with an amount of 100. It catches any errors and logs them to the console.
+
 After the transaction is sent, the function logs the transaction hash and a message indicating how many cups of coffee were added to the vending machine's balance.
+
 The expected output on running `node {fileName}` is;
 
 ![restockMachine](https://user-images.githubusercontent.com/6362475/233279707-2032db12-5da6-4f36-a929-e9c8f6049bb0.png)
