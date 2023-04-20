@@ -251,7 +251,7 @@ The expected output on running `node {fileName}` is;
 
 ![restockMachine](https://user-images.githubusercontent.com/6362475/233279707-2032db12-5da6-4f36-a929-e9c8f6049bb0.png)
 
-Just as the first function, this can also be monitored on  https://explorer.celo.org/alfajores.
+Just as the first function, this can also be monitored on  [Alfajorex Explore](https://explorer.celo.org/alfajores).
 
 
 - Step 8: Call Function for getting our coffee machine balance
