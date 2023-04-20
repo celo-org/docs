@@ -1,6 +1,6 @@
 ---
-title: Building a Celo Oracle for Off-Chain Data: A Step-by-Step Guide
-description: Learn how to build a  Celo Oracle for Off-Chain Data using a step-by-step guide
+title: "Building a Celo Oracle for Off-Chain Data: A Step-by-Step Guide"
+description: Learn how to build a Celo Oracle for Off-Chain Data using a step-by-step guide
 authors:
   - name: Oluwalana Ajayi
     title: Web3 Content Writer
@@ -11,7 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide
 ---
 
-![header](../../src/data-tutorials/intermediate/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png)
+![header](../../src/data-tutorials/showcase/intermediate/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png)
+
 
 ## Introduction
 
