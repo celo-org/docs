@@ -14,12 +14,12 @@ slug: /tutorials/building-a-vending-machine-on-celo-blockchain
 ![building-a-vending-machine-on-celo-blockchain](https://user-images.githubusercontent.com/6362475/233287177-ffc6d531-cc2e-46bc-8f5d-703fca8e55df.png)
 
 
-# Introduction​
+## Introduction​
 
 A vending machine is a type of automated machine that dispenses various products to customers after they insert money or a payment card into the machine. In recent times, blockchain technology has been applied to vending machines to offer even more convenient and secure payment options.
 In this tutorial, we will be creating a Celo-powered vending machine using smart contracts. We will walk through the process of setting up a Celo account, deploying a smart contract, and creating functions for purchasing and restocking the vending machine. By the end of this tutorial, you will have a working Celo-powered vending machine that can accept payments and dispense products.
 
-# Prerequisites
+## Prerequisites
 
 - Node.js should be installed along with a node package manager(npm)
 - A basic understanding of Celo and smart contracts
@@ -37,7 +37,7 @@ You can clone the codes used in this tutorial by running
 git clone https://github.com/emiridbest/vending_machine.git
 ```
  
-# Now, let's get started;
+## Now, let's get started;
 
 - Step 1: Write your Voting Smart Contract and Deploy on Remix IDE
 Now, go to [Remix IDE](https://remix.ethereum.org/) and write the smart contract logic for our vending machine.
@@ -276,21 +276,21 @@ async function getMachineBalance() {
 The function first logs a message to the console indicating that it is getting the coffee balance. It then calls the `getMachineBalance` function of the `contracts` object, which is an instance of the smart contract deployed on the Celo network. This function is a `view` function, meaning that it does not modify the state of the contract and does not require any transaction fees to be paid.
 The `call()` method is used to execute the function and retrieve its return value. The return value is stored in the `coffeeBalances` variable. Finally, the function logs the transaction hash and the current coffee machine balance to the console, and returns the coffee balance.
 
-# Conclusion​
+## Conclusion​
 
 That's it! I Hope you followed through. We have come to the end of this tutorial. We have learned how to create a basic vending machine smart contract on the Celo blockchain. We explored the key concepts involved in building a smart contract such as state variables, restocking purchasing and getting balances. We also covered how to connect to the Celo blockchain and interact with the smart contract using web3js and contract kit.
 
-# Next Steps​
+## Next Steps​
 
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
 - [Contract Kit](https://docs.celo.org/developer/contractkit)
 
-# About the Author​
+## About the Author​
 
 Emiri Udogwu, a licensed medical doctor with a burning passion for technology and gifted with the ability for spreading knowledge and propagating ideas. A web3 and frontend developer.
 
-# References​
+## References​
 
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
