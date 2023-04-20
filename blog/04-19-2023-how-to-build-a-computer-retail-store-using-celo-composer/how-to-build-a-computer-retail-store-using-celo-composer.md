@@ -5,7 +5,7 @@ authors:
   - name: ✍️ Dennis Kimathi
     url: https://github.com/DennohKim
     image_url: https://avatars.githubusercontent.com/u/63696529?v=4
-tags: ["intermediate", "composer", "dapp", "celosage"]
+tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "NextJS"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-build-a-computer-retail-store-using-celo-composer
 ---

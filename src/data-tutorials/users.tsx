@@ -688,6 +688,14 @@ const Users: User[] = [
   //   tags: ['favorite'],
   // },
 
+   {
+    title: "How to build a computer retail store using celo composer.",
+    description: "In this tutorial, you will learn how to how to build a computer retail store using celo composer.",
+    preview: require('./showcase/intermediate/how-to-build-a-computer-retail-store-using-celo-composer.png'),
+    website: '/blog/tutorials/how-to-build-a-computer-retail-store-using-celo-composer',
+    tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "NextJS"],
+  },
+
   {
     title: "Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds",
     description: "A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe",
