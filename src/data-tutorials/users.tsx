@@ -1244,6 +1244,13 @@ const Users: User[] = [
     website: 'blog/tutorials/creating-smart-contracts-for-liquidity-farming',
     tags: ['intermediate','celosage','solidity','smartcontract'],
   },
+  {
+    title: 'Celo Blockchain Protocol Upgrades',
+    description: 'A step by step guide on upgrading the celo blockchain protocol.',
+    preview: require('./showcase/intermediate/celo-blockchain-protocol-upgrades.png'),
+    website: 'blog/tutorials/celo-blockchain-protocol-upgrades',
+    tags: ['intermediate','celosage','solidity','smartcontract'],
+  },
    {
     title: 'Comprehensive Guide to building a token bridge on Celo',
     description: 'Have you ever wondered how to build a bridge that allows seamless transfer of assets between the Celo network and other Ethereum-based networks, such as the Ethereum mainnet or a testnet like Mumbai? This tutorial is for you.',
