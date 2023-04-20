@@ -11,6 +11,9 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-vending-machine-on-celo-blockchain
 ---
 
+![building-a-vending-machine-on-celo-blockchain](https://user-images.githubusercontent.com/6362475/233287177-ffc6d531-cc2e-46bc-8f5d-703fca8e55df.png)
+
+
 # Introduction​
 
 A vending machine is a type of automated machine that dispenses various products to customers after they insert money or a payment card into the machine. In recent times, blockchain technology has been applied to vending machines to offer even more convenient and secure payment options.
