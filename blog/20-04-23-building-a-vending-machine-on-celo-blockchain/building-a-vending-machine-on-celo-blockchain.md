@@ -122,7 +122,7 @@ const ContractKit = require("@celo/contractkit");
 ```
 
 - Step 5: Define Web3 and ContractKit
-  Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network (Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
+  Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
 
 ```js
 const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
