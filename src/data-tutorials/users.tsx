@@ -919,13 +919,21 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner', 'cli'], 
   },
   {
+    title: 'Building a Vending Machine on Celo Blockchain',
+    description: 'This tutorial teaches how to build a vending machine on Celo blockchain',
+    preview: require('./showcase/beginner/building-a-vending-machine-on-celo-blockchain.png'),
+    website: 'blog/tutorials/building-a-vending-machine-on-celo-blockchain',
+    tags: ['celosage', 'celo', 'beginner'], 
+  },
+  
+  {
     title: 'How to Build a Supply Chain Management Application on Celo',
     description: 'This tutorial teaches how to build a supply chain management application on Celo',
     preview: require('./showcase/intermediate/how-to-build-a-supply-chain-management-application-on-celo.png'),
     website: 'blog/tutorials/how-to-build-a-supply-chain-management-application-on-celo',
     tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
   },
-{
+  {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
     description: 'This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit',
     preview: require('./showcase/beginner/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginners-Guide-A-Voting-App.png'),
