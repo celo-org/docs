@@ -114,7 +114,6 @@ Go to buckets on the left side of the screen. There are 0 buckets since it is a 
 
 A modal should pop up asking for the bucket name and the storage network. Since the Smart contract is named POAP, I have decided to use poap-guide as the bucket name and IPFS as the storage network. We should now have a new bucket in the dashboard. 
 
-![Uploading filebase3.png…]()
 
 Click on the bucket name, and begin uploading the files using the upload button provided on the interface. Once uploaded, click on one of the objects/images, and you should be taken to the object overview, where you will see a couple of links, including the IPFS gateway URL, which can be used to access the NFT image. 
 
