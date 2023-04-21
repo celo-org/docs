@@ -921,7 +921,7 @@ const Users: User[] = [
   {
     title: 'Building a Vending Machine on Celo Blockchain',
     description: 'This tutorial teaches how to build a vending machine on Celo blockchain',
-    preview: require('./showcase/intermediate/building-a-vending-machine-on-celo-blockchain.png'),
+    preview: require('./showcase/beginner/building-a-vending-machine-on-celo-blockchain.png'),
     website: 'blog/tutorials/building-a-vending-machine-on-celo-blockchain',
     tags: ['celosage', 'celo', 'beginner'], 
   },
