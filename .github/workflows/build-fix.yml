@@ -18,8 +18,20 @@ jobs: # Test commit
       with:
         node-version: 18
 
-    - name: Install dependencies and build
+    - name: Install dependencies
       run: |
         npm install
-        npm run crowdin:sync
+
+    - name: crowdin action
+      uses: crowdin/github-action@v1
+      with:
+        upload_sources: true
+        upload_translations: true
+        download_translations: true
+      env:
+        CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+    - name: Build
+      run: |
         npm run build
+
