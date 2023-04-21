@@ -2637,6 +2637,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'solidity', 'hardhat'],
   },
   {
+    title: 'Create Dynamic NFT, Redstone Custom API and Celo Composer, Hardhat & React (Nextjs)',
+    description: 'Welcome to this tutorial, in this tutorial we will be building a Dynamic NFT using Celo composer together with Redstone Oracle Custom API Data.',
+    preview: require('./showcase/intermediate/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs.png'),
+    website: 'blog/tutorials/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs',
+    tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'intermediate', 'nft', 'celosage'],
+  },
+  {
     title: 'An Introduction to Layer 1 and Layer 2 Blockchain Protocols',
     description: 'In this tutorial, we will provide an introduction to the different types of blockchain protocols and explain the key differences between layer 1 and layer 2 protocols.',
     preview: require('./showcase/beginner/an-introduction-to-layer-1-and-layer-2-blockchain-protocols.png'),
