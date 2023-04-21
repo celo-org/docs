@@ -1,19 +1,18 @@
 ---
 title: How to Store NFT Smart Contract Assets Using The FileBase Decentralized Storage System
 description: This article gives a comprehensive overview of decentralized storage solutions. It contains a clear walk-through of how to store digital assets on the filebase storage solution.
-author:
+authors:
   - name: John Fawole
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smart contract', 'celosage', 'celo', 'filebase', 'decentralized storage']
+tags: ['solidity', 'smartcontract', 'celosage', 'celo', 'filebase', 'decentralized storage']
 hide_table_of_contents: true
 slug: /tutorials/how-to-store-NFT-smart-contract-assets-using-the-fileBase-decentralized-storage-system
 ---
 
-![filebase-cover](https://user-images.githubusercontent.com/105144630/232922465-f519c6cd-9e66-41aa-879e-e81b6c342f3c.png)
+![filebase-cover](../../src/data-tutorials/showcase/intermediate/filebase-cover.png)
 
-# How to Store NFT Smart Contract Assets Using The FileBase Decentralized Storage System
 
 ## Introduction
 
@@ -134,10 +133,13 @@ To mint the NFTs, you need to deploy the NFT contract. Once deployed, the contra
 The recipient can verify that he owns an NFT on the blockchain and check for the image.
 
 ## Conclusion
+
 FileBase is a web3 Storage-As-A-Service provider which provides a safer and more secure way to store information. It is an aggregation service that gives users access to multiple IPFS services, a feature that makes it the favorite. FiileBase is one of the best options to safeguard your NFT asset for the contract you deployed or from different NFT marketplaces.
 
 ## NEXT STEP
-Filebase is not the only decentralized storage solution in Web3. Having gone through this tutorial, you can also check out Arweave and Filecooin. Have fun building.
+
+Filebase is not the only decentralized storage solution in Web3. Having gone through this tutorial, you can also check out [Arweave](https://docs.celo.org/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave) and Filecooin. Have fun building.
 
 ## About the Autor
+
 John Fawole is a blockchain technical writer and Solidity developer; connect with him on [LinkedIn](https://www.linkedin.com/in/johnfawole/).
