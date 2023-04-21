@@ -4,7 +4,7 @@ description: In This tutorial we will learn how to build a decentralized identit
 authors:
   - name: ✍️ Richard Michael
     url: https://github.com/richiemikke
-tags: [celosage', "solidity", "celo", "intermediate"]
+tags: ["celosage", "solidity", "celo", "intermediate"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo
 ---
