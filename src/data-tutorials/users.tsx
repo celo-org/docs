@@ -702,7 +702,7 @@ const Users: User[] = [
     description: "This article gives a comprehensive overview of decentralized storage solutions. It contains a clear walk-through of how to store digital assets on the filebase storage solution.",
     preview: require('./showcase/intermediate/filebase-cover.png'),
     website: '/tutorials/how-to-store-NFT-smart-contract-assets-using-the-fileBase-decentralized-storage-system',
-    tags: ['intermediate', 'solidity', 'smart contract', 'celosage', 'celo', 'filebase', 'decentralized storage'],
+    tags: ['intermediate', 'solidity', 'smartcontract', 'celosage', 'celo'],
   },
    {
     title: "Leveraging Blockchain and IoT for ReFi and Climate Actions through Celo",
