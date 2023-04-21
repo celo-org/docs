@@ -1,10 +1,10 @@
 ---
 title: Creating a Smart Contract for Secure and Efficient Plant Seedling Sales on the Celo Blockchain
-description:  This is a marketplace for seedlings on Celo using Solidity and OpenZeppelin. Users can add, view, and buy using cUSD
+description: This is a marketplace for seedlings on Celo using Solidity and OpenZeppelin. Users can add, view, and buy using cUSD
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:  https://github.com/Ogoyi
+    title: Technical Writer
+    url: https://github.com/Ogoyi
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
@@ -24,138 +24,137 @@ To follow this tutorial, you will require:
 - A code editor or text editor such as Remix.
 
 - An internet browser and a stable internet connection.
-  
+
 ## PREREQUISITE
 
 To successfully complete this tutorial, it is recommended that you have:
 
 - Familiarity with Javascript programming language.
-  
+
 - A basic understanding of Blockchain technology and its functioning.
-  
+
 - Basic knowledge of the Solidity programming language used for smart contract development on the blockchain.
-  
- We will begin by using the Remix IDE to write our smart contract. Let's get started!
- 
- The complete code for this session.
- 
- ```solidity
- // SPDX-License-Identifier: MIT
+
+We will begin by using the Remix IDE to write our smart contract. Let's get started!
+
+The complete code for this session.
+
+```solidity
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 
 interface IERC20Token {
-   function transfer(address, uint256) external returns (bool);
+  function transfer(address, uint256) external returns (bool);
 
-    function approve(address, uint256) external returns (bool);
+   function approve(address, uint256) external returns (bool);
 
-    function transferFrom(
-        address,
-        address,
-        uint256
-    ) external returns (bool);
+   function transferFrom(
+       address,
+       address,
+       uint256
+   ) external returns (bool);
 
-    function totalSupply() external view returns (uint256);
+   function totalSupply() external view returns (uint256);
 
-    function balanceOf(address) external view returns (uint256);
+   function balanceOf(address) external view returns (uint256);
 
-    function allowance(address, address) external view returns (uint256);
+   function allowance(address, address) external view returns (uint256);
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(
-        address indexed owner,
-        address indexed spender,
-        uint256 value
-    );
+   event Transfer(address indexed from, address indexed to, uint256 value);
+   event Approval(
+       address indexed owner,
+       address indexed spender,
+       uint256 value
+   );
 }
 
 contract SeedlingsMarketplace {
-    
-    
-    uint internal seedlingsLength = 0;
-    address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
-
-    struct  Seedling {
-        address payable owner;
-        string name;
-        string species;
-        string description;
-        uint price;
-         
-        
-    }
-     mapping (uint =>  Seedling) internal seedlings;
-
-      function  addSeedling(
-        string memory _name, 
-        string memory _species,
-        string memory _description,
-        uint _price
-
-          ) public {
-       Seedling storage seedling = seedlings[seedlingsLength];
 
 
-         seedling.owner = payable(msg.sender);
-           seedling.name = _name;
-           seedling.species = _species;
-           seedling.description = _description;
-              seedling.price = _price;
+   uint internal seedlingsLength = 0;
+   address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
-  
-        seedlingsLength++;
-          }
-
-          
-     function getSeedling(uint _index) public view returns (
-        address payable,
-        string memory,  
-        string memory,
-        string memory,
-        uint
-        
-    ) {
-        return (  
-            seedlings[_index].owner,
-             seedlings[_index].name,
-              seedlings[_index].species,
-              seedlings[_index].description,
-                 seedlings[_index].price
-               
-        );
-    }
+   struct  Seedling {
+       address payable owner;
+       string name;
+       string species;
+       string description;
+       uint price;
 
 
-     function replaceSeedlingDescription(uint _index, string memory _description) public {
-        require(msg.sender == seedlings[_index].owner, "Only the owner can change the description");
-        seedlings[_index].description = _description;
-     }
+   }
+    mapping (uint =>  Seedling) internal seedlings;
 
-    
-      function buySeedling(uint _index) public payable  {
-        require(
-          IERC20Token(cUsdTokenAddress).transferFrom(
-            msg.sender,
-            seedlings[_index].owner,
-            seedlings[_index].price
-          ),
-          "Transfer failed."
-        );
+     function  addSeedling(
+       string memory _name,
+       string memory _species,
+       string memory _description,
+       uint _price
 
-         seedlings[_index].owner = payable(msg.sender);
-         
+         ) public {
+      Seedling storage seedling = seedlings[seedlingsLength];
+
+
+        seedling.owner = payable(msg.sender);
+          seedling.name = _name;
+          seedling.species = _species;
+          seedling.description = _description;
+             seedling.price = _price;
+
+
+       seedlingsLength++;
+         }
+
+
+    function getSeedling(uint _index) public view returns (
+       address payable,
+       string memory,
+       string memory,
+       string memory,
+       uint
+
+   ) {
+       return (
+           seedlings[_index].owner,
+            seedlings[_index].name,
+             seedlings[_index].species,
+             seedlings[_index].description,
+                seedlings[_index].price
+
+       );
+   }
+
+
+    function replaceSeedlingDescription(uint _index, string memory _description) public {
+       require(msg.sender == seedlings[_index].owner, "Only the owner can change the description");
+       seedlings[_index].description = _description;
     }
 
-     function getSeedlingsLength() public view returns (uint) {
-        return (seedlingsLength);
-    }
+
+     function buySeedling(uint _index) public payable  {
+       require(
+         IERC20Token(cUsdTokenAddress).transferFrom(
+           msg.sender,
+           seedlings[_index].owner,
+           seedlings[_index].price
+         ),
+         "Transfer failed."
+       );
+
+        seedlings[_index].owner = payable(msg.sender);
+
+   }
+
+    function getSeedlingsLength() public view returns (uint) {
+       return (seedlingsLength);
+   }
 }
 
- ```
- 
- 
+```
+
 ## Analyzing the code
 
 ```solidity
@@ -212,8 +211,8 @@ To start, we give a name to our smart contract and define a struct.
 
 ```solidity
 contract SeedlingsMarketplace {
-    
-    
+
+
     uint internal seedlingsLength = 0;
     address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
@@ -223,8 +222,8 @@ contract SeedlingsMarketplace {
         string species;
         string description;
         uint price;
-         
-        
+
+
     }
 ```
 
@@ -245,8 +244,8 @@ The Seedling struct contains the following properties:
 In addition to the Seedling struct, we also define two internal variables:
 
 - `seedlingsLength`: a counter variable that keeps track of the number of seedlings added to the marketplace
-cUsdTokenAddress: the address of the cUSD token contract on the Celo blockchain, which will be used to facilitate payments for seedlings on the marketplace.
-These variables are marked as internal, which means they can only be accessed within the smart contract and its inherited contracts.
+  cUsdTokenAddress: the address of the cUSD token contract on the Celo blockchain, which will be used to facilitate payments for seedlings on the marketplace.
+  These variables are marked as internal, which means they can only be accessed within the smart contract and its inherited contracts.
 
 Next, we add our mapping.
 
@@ -264,7 +263,7 @@ To make our smart contract more engaging, we will start incorporating functions.
 
 ```solidity
   function  addSeedling(
-        string memory _name, 
+        string memory _name,
         string memory _species,
         string memory _description,
         uint _price
@@ -279,12 +278,12 @@ To make our smart contract more engaging, we will start incorporating functions.
            seedling.description = _description;
               seedling.price = _price;
 
-  
+
         seedlingsLength++;
           }
 ```
 
-In this sessiom, we have created a function named `addSeedling` that takes in four parameters: ` _name`, `_species`, `_description`, and `_price`. The function is set to `public`, which means anyone can call it.
+In this sessiom, we have created a function named `addSeedling` that takes in four parameters: `_name`, `_species`, `_description`, and `_price`. The function is set to `public`, which means anyone can call it.
 
 Inside the function, we first create a new Seedling `struct` instance by declaring a Seedling variable named seedling and assigning it to the seedlings mapping at the current length of seedlings.
 
@@ -297,19 +296,19 @@ Furthermore, we add the `getSeedlingfunction`.
 ```solidity
 function getSeedling(uint _index) public view returns (
         address payable,
-        string memory,  
+        string memory,
         string memory,
         string memory,
         uint
-        
+
     ) {
-        return (  
+        return (
             seedlings[_index].owner,
              seedlings[_index].name,
               seedlings[_index].species,
               seedlings[_index].description,
                  seedlings[_index].price
-               
+
         );
     }
 
@@ -327,7 +326,7 @@ Next we add `the replaceSeedlingDescription` function.
 
 ```
 
-In this session,  we have a function named `replaceSeedlingDescription` which enables the owner of a seedling to `update` the description of the seedling. The function takes two parameters, the index of the seedling to be updated and the new description.
+In this session, we have a function named `replaceSeedlingDescription` which enables the owner of a seedling to `update` the description of the seedling. The function takes two parameters, the index of the seedling to be updated and the new description.
 
 The require statement ensures that only the owner of the seedling can update the description. If someone other than the owner tries to update the description, the transaction will `fail`.
 
@@ -349,7 +348,7 @@ function buySeedling(uint _index) public payable  {
         );
 
          seedlings[_index].owner = payable(msg.sender);
-         
+
     }
 
 ```
@@ -399,4 +398,3 @@ Great job! It's always helpful to provide additional resources for further learn
 ## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
-
