@@ -20,7 +20,7 @@ The business upgrade their status to Gold which is the Second tier ot Platinum w
 
 Using Redstone Oracle our smart contract will be able to check and know that a user level has changed and then trigger a change such that the holder of the NFT will see a different image and met descriptions on their NFT.
 
-### Background Knowledge
+## Background Knowledge
 
 Dynamic NTFs are NFT with encoded logic that allows them to change their metadata based on external conditions. A very popular example is the
 LaMelo Ball Collectible that changes its metadata based on the player stats during the basketball season.
