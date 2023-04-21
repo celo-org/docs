@@ -3,7 +3,7 @@ name: Build and Deploy to Netlify
 on:
   push:
     branches:
-      - 'fix/build' # change this to the branch you want to build and deploy from
+      - build-fix # change this to the branch you want to build and deploy from
 
 jobs: # Test commit
   build-and-deploy:
