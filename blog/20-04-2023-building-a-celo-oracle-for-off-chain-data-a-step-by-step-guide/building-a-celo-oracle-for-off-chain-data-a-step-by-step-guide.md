@@ -405,13 +405,11 @@ app.post("/submit-data", async (req, res) => {
     const tx = await submitDataToOracle(requestId, temperatureInt);
     res.send({ status: "success", message: "Data submitted successfully", tx });
   } catch (error) {
-    res
-      .status(500)
-      .send({
-        status: "error",
-        message: "Error submitting data",
-        error: error.message ? error.message : error,
-      });
+    res.status(500).send({
+      status: "error",
+      message: "Error submitting data",
+      error: error.message ? error.message : error,
+    });
   }
 });
 app.use(express.static(path.join(__dirname, "../client/build")));
