@@ -389,7 +389,7 @@ kit.addAccount(privateKey);
 const Oracle = require("../build/contracts/Oracle.json");
 const oracleContract = new kit.web3.eth.Contract(Oracle.abi, oracleAddress);
 
-const OPEN_WEATHER_API_KEY = "93e80a4189040bc3003fd3ace7c827b4";
+const OPEN_WEATHER_API_KEY = "your_openweathermap_api_key";
 
 async function fetchWeatherData(city) {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`;
