@@ -1689,7 +1689,7 @@ const Users: User[] = [
     description: 'In this first episode, we will set up the Go Celo client by cloning it, exploring the packages that are present in it, and using the ethclient package to create a client connection.',
     preview: require('./showcase/intermediate/go-celo-series-setting-up-a-blockchain-client-on-celo.png'),
     website: 'blog/tutorials/go-celo-series-setting-up-a-blockchain-client-on-celo',
-    tags: ['video', 'celo', 'intermediate'],
+    tags: ['video', 'celo', 'intermediate','celosage'],
   },
   {
     title: 'Exploring Top Projects On Celo Blockchain, Use Cases, Features And Future Potential',
