@@ -5,7 +5,7 @@ on:
     branches:
       - fix/build # change this to the branch you want to build and deploy from
 
-jobs:
+jobs: # Test commit
   build-and-deploy:
     runs-on: ubuntu-latest
 
