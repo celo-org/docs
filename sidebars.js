@@ -383,6 +383,11 @@ const sidebars = {
               label: "rainbowkit-celo",
               id: "developer/rainbowkit-celo/index",
             },
+            {
+              type: "doc",
+              label: "dynamic",
+              id: "developer/dynamic/index",
+            },
           ],
         },
         {
