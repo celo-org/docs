@@ -40,7 +40,7 @@ Celo has its own set of libraries and tools that make it easier to build DApps o
 
 Here's an example of how to use the Celo SDK to send a transaction on the Celo blockchain:
 
-Javascript ```
+```js
 import { newKit } from '@celo/contractkit'
 
 async function sendTransaction() {
@@ -53,7 +53,8 @@ value: '1000000000000000000'
 })
 console.log(`Transaction hash: ${tx}`)
 }
-///```
+///
+```
 
 ### Optimize gas usage
 
@@ -64,7 +65,8 @@ Gas usage is a critical factor in building DApps on Celo, as it determines the c
 
 Here's an example of how to emit an event in a Celo smart contract:
 
-Solidity ```pragma solidity >=0.6.0 <0.8.0;
+ ```solidity
+ pragma solidity >=0.6.0 <0.8.0;
 
 contract MyContract {
 event MyEvent(string indexed message, uint256 value);
@@ -73,7 +75,8 @@ function doSomething() public {
 emit MyEvent("Hello, World!", 42);
 }
 }
-///```
+///
+```
 
 ### Secure your smart contracts
 
