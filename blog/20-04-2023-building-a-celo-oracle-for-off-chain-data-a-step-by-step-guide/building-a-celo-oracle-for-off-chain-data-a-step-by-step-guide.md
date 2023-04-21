@@ -371,7 +371,6 @@ With these changes, the off-chain server fetches the off-chain data, processes i
 Here's the updated `index.js` file with the new function `submitDataToOracle`:
 
 ```javascript
-
 const express = require("express");
 const axios = require("axios");
 const Web3 = require("web3");
