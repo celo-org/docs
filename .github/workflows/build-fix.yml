@@ -1,8 +1,8 @@
-name: Upload and Download Crowdin translation
+name: Download and Upload Crowdin
 
 on:
   schedule:
-    - cron: '57 12 * * *'
+    - cron: '16 13 * * *'
 
 jobs: # Test commit
   build-and-deploy:
