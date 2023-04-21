@@ -3144,6 +3144,13 @@ const Users: User[] = [
     website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+   {
+    title: 'Building Celo DApp with Celocli without JavaScript Framework',
+    description: 'Learn How to Build Celo DApp with Celocli without JavaScript Framework. With your HTML, CSS and JavaScript skills, you can build Celo DApp with Ease',
+    preview: require('./showcase/intermediate/building-celo-dapp-with-celocli-without-javascript-framework.png'),
+    website: 'blog/tutorials/building-celo-dapp-with-celocli-without-javascript-framework',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'javascript', 'solidity'], 
+  },
   {
     title: "Implementing Multi-factor Authentication on Celo's Blockchain Using Smart Contracts",
     description: 'Learn how to build and deploy a multi factor authentication system on the Celo platform',
