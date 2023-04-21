@@ -3,7 +3,7 @@ title: Building a Vending Machine on Celo Blockchain
 description: This tutorial teaches how to build a Vending machine on celo blockchain
 authors:
   - name: Emiri Udogwu
-    title: Tech Ethusiast, Smart Contract Developer 
+    title: Tech Ethusiast, Smart Contract Developer
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
 tags: [celosage, celo, beginner]
@@ -12,7 +12,6 @@ slug: /tutorials/building-a-vending-machine-on-celo-blockchain
 ---
 
 ![building-a-vending-machine-on-celo-blockchain](https://user-images.githubusercontent.com/6362475/233287177-ffc6d531-cc2e-46bc-8f5d-703fca8e55df.png)
-
 
 ## Introduction​
 
@@ -30,17 +29,16 @@ In this tutorial, we will be creating a Celo-powered vending machine using smart
 - A terminal to test our code syntax
 - Remix IDE
 
-
 You can clone the codes used in this tutorial by running
 
 ```bash
 git clone https://github.com/emiridbest/vending_machine.git
 ```
- 
+
 ## Now, let's get started;
 
 - Step 1: Write your Voting Smart Contract and Deploy on Remix IDE
-Now, go to [Remix IDE](https://remix.ethereum.org/) and write the smart contract logic for our vending machine.
+  Now, go to [Remix IDE](https://remix.ethereum.org/) and write the smart contract logic for our vending machine.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -97,16 +95,17 @@ contract VendingMachine {
 
 Afterwards, compile the contract and then deploy using injected web3 as service provider. Make sure your test wallet has funds to enable us deploy the contract and to also test out our contract much later.
 Two very vital parameters to take note of on compiling and deploying our contract are;
+
 - The contract ABI
 - The Contract Address
- 
+
 Copy out these variables and save them somewhere as it would be used to interact with the already deployed contract.
 
 - Step 2: Navigate to our project directory and create a new App.js file
-We shall be using the codes to be written in this file to interact with our already deployed smart contract. Make use of your favourite text editor.
+  We shall be using the codes to be written in this file to interact with our already deployed smart contract. Make use of your favourite text editor.
 
-- Step3: Install dependencies 
-Go to a command line terminal and make sure you are in your projects root directory and run the following lines of code.
+- Step3: Install dependencies
+  Go to a command line terminal and make sure you are in your projects root directory and run the following lines of code.
 
 ```bash
 $ npm install @celo/contractkit web3
@@ -115,7 +114,7 @@ $ npm install @celo/contractkit web3
 The `CeloContractKit` library is designed to make it easy for developers to build decentralized applications (DApps) on the Celo blockchain. It abstracts away many of the low-level details of interacting with smart contracts on the blockchain. It is a prerequisite for web3.js interaction with Celo Blockchain in specific transaction types.
 
 - Step 4: Start Interacting with our contract
-Import all dependencies into our Voting.js file The dependencies we’re working with are web3 and contract kit;
+  Import all dependencies into our Voting.js file The dependencies we’re working with are web3 and contract kit;
 
 ```js
 const Web3 = require("web3");
@@ -123,7 +122,7 @@ const ContractKit = require("@celo/contractkit");
 ```
 
 - Step 5: Define Web3 and ContractKit
-Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network (Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
+  Using Web3 allows you to connect to a Celo node by providing the node’s endpoint. In this case, you’re connected to a remote Celo Test Network (Alfajores using a hosted node service named Forno. This step will also help us instantiate the network using contractKit.
 
 ```js
 const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
@@ -131,7 +130,7 @@ const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
 - Step 6: Create a contract Instance
-This is the step that links us to the contract we have already deployed on Remix. Here, we will be needing two variables - ABI and Contract address. I hope you copied them out earlier.
+  This is the step that links us to the contract we have already deployed on Remix. Here, we will be needing two variables - ABI and Contract address. I hope you copied them out earlier.
 
 ```js
 const ContractAbi = [{...}];
@@ -140,7 +139,6 @@ const contracts = new kit.web3.eth.Contract(ContractAbi, ContractAddress);
 ```
 
 Make sure you parse in the appropriate values for the `ContractAddress` and `ContractAbi`.
-
 
 - Step 6: Set up your account variables
 
@@ -155,7 +153,7 @@ For every transaction requiring gas fees, you need a `private key` which serves 
 
 NOTE: Never publicly share the private keys to your wallets containing your funds as this could lead to loss of funds.
 
-- Step 7: Enable contractKit to sign your transactions using your private keys 
+- Step 7: Enable contractKit to sign your transactions using your private keys
 
 ```js
 kit.connection.addAccount(account.privateKey);
@@ -163,6 +161,7 @@ kit.defaultAccount = account.address;
 ```
 
 Now we begging to call our functions;
+
 - Step 8: Call Function for purchasing a cup of coffee
 
 ```js
@@ -172,24 +171,22 @@ async function purchase(amount) {
   const celoInWei = amount && kit.web3.utils.toWei(amount.toString(), "ether");
 
   if (!amount || !celoInWei) {
-	console.error("Invalid amount:", amount);
-	return;
+    console.error("Invalid amount:", amount);
+    return;
   }
 
   try {
-	const tx = await contracts.methods
-  	.purchase(amount.toString())
-  	.send({
-    	from: account.address,
-    	value: celoInWei,
-    	gas: 200000,
-    	gasPrice: gasPrice,
-  	});
-	console.log("Transaction hash:", tx.transactionHash);
-	console.log("Here is your cup of Coffee.");
-	console.log("Thanks for patronising us.");
+    const tx = await contracts.methods.purchase(amount.toString()).send({
+      from: account.address,
+      value: celoInWei,
+      gas: 200000,
+      gasPrice: gasPrice,
+    });
+    console.log("Transaction hash:", tx.transactionHash);
+    console.log("Here is your cup of Coffee.");
+    console.log("Thanks for patronising us.");
   } catch (error) {
-	console.error(`Error purchasing coffee with celo value ${amount}:`, error);
+    console.error(`Error purchasing coffee with celo value ${amount}:`, error);
   }
 }
 (async function () {
@@ -200,16 +197,16 @@ async function purchase(amount) {
 });
 ```
 
-This code defines an asynchronous function `purchase` that takes an argument `amount` representing the number of coffees to be purchased. 
+This code defines an asynchronous function `purchase` that takes an argument `amount` representing the number of coffees to be purchased.
 
 Firstly, our function retrieves the current gas price from the Celo blockchain network using the `kit.web3.eth.getGasPrice()` method.
 
-We then convert the amount value to Celo-wei units by calling `kit.web3.utils.toWei(amount.toString(), "ether")` and assigns the resulting value to the variable `celoInWei`. 
+We then convert the amount value to Celo-wei units by calling `kit.web3.utils.toWei(amount.toString(), "ether")` and assigns the resulting value to the variable `celoInWei`.
 This conversion is necessary because Celo, like many other blockchain networks, stores values in the smallest unit of the currency, which is wei for Ethereum and Celo-wei for Celo.
 
 The function checks if both the `amount` and `celoInWei` variables are truthy. If either of them is falsy, the function logs an error message to the console and returns early.
 
-If both variables are truthy, the function tries to execute a transaction by calling the `purchase` method of the `contracts` object, passing in the `amount` value as a string and the `celoInWei` value as the transaction value. 
+If both variables are truthy, the function tries to execute a transaction by calling the `purchase` method of the `contracts` object, passing in the `amount` value as a string and the `celoInWei` value as the transaction value.
 
 The code then calls the `purchase` function with an argument of `1` which is the actual value of the `amount`.
 
@@ -229,7 +226,6 @@ This function call can also be confirmed on [Alfajore Explore](https://explorer.
 
 ![coffeeBuySuccess](https://user-images.githubusercontent.com/6362475/233278643-cc451c04-c00e-4601-b079-aeb0a3b66c32.png)
 
-
 Here, we see the transaction hash, contract address, our customers’ address, the amount we received as payment for our coffee which is 1 Celo and also the gas fee charged for the transaction.
 
 - Step 8: Call Function for restocking our coffee machine
@@ -239,8 +235,8 @@ async function refill(amount) {
   console.log("Restocking machine...");
   const gasPrice = await kit.web3.eth.getGasPrice();
   const tx = await contracts.methods
-	.refill(amount)
-	.send({ from: account.address, gas: 3000000, gasPrice: gasPrice });
+    .refill(amount)
+    .send({ from: account.address, gas: 3000000, gasPrice: gasPrice });
   console.log("Transaction hash:", tx.transactionHash);
   console.log(`Coffee machine restocked with ${amount} cups of coffee`);
 }
@@ -257,9 +253,9 @@ This `async` function takes `amount` as parameter which is how many cups of coff
 
 Inside the function, we are to retrieve current gas price using `kit.web3.eth.getGasPrice()` and stores it in the `gasPrice` variable.
 
-Then we call the `refill` function of the `contracts` object. 
+Then we call the `refill` function of the `contracts` object.
 
-Finally, an immediately invoked function expression (IIFE) is defined that calls the `refill` function with an amount of 100. 
+Finally, an immediately invoked function expression (IIFE) is defined that calls the `refill` function with an amount of 100.
 
 After the transaction is sent, the function logs the transaction hash and a message indicating how many cups of coffee were added to the vending machine's balance.
 
@@ -267,8 +263,7 @@ The expected output on running `node {fileName}` is;
 
 ![restockMachine](https://user-images.githubusercontent.com/6362475/233279707-2032db12-5da6-4f36-a929-e9c8f6049bb0.png)
 
-Just as the first function, this can also be monitored on  [Alfajore Explore](https://explorer.celo.org/alfajores).
-
+Just as the first function, this can also be monitored on [Alfajore Explore](https://explorer.celo.org/alfajores).
 
 - Step 8: Call Function for getting our coffee machine balance
 
@@ -316,4 +311,3 @@ Emiri Udogwu, a licensed medical doctor with a burning passion for technology an
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
 - [Contract Kit](https://docs.celo.org/developer/contractkit)
-
