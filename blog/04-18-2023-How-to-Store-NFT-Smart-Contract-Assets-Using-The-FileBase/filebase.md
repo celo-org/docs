@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smartcontract', 'celosage', 'celo', 'filebase', 'decentralized storage']
+tags: ['solidity', 'smartcontract', 'celosage', 'celo']
 hide_table_of_contents: true
 slug: /tutorials/how-to-store-NFT-smart-contract-assets-using-the-fileBase-decentralized-storage-system
 ---
