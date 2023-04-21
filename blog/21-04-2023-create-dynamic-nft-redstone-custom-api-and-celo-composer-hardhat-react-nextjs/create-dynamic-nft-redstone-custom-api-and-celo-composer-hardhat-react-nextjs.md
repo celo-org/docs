@@ -6,10 +6,23 @@ authors:
     title: Blockchain Developer | Technical Writer
     url: https://github.com/alofeoluwafemi
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [solidity, react, celo, smartcontract, nextjs, intermediate, tokens, nft]
+tags:
+  [
+    solidity,
+    react,
+    celo,
+    smartcontract,
+    nextjs,
+    intermediate,
+    tokens,
+    nft,
+    celosage,
+  ]
 hide_table_of_contents: true
 slug: /tutorials/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs.png)
 
 ## Introdcution
 
@@ -41,7 +54,7 @@ For your reference, you can use the completed tutorial [github code](https://git
 
 From your terminal in your project directory, set up your project using Celo composer. Call your project name Dynamic NFT.
 
-```shell
+```bash
 npx celo-composer create
 ```
 
@@ -49,7 +62,7 @@ npx celo-composer create
 
 Open the project in your preferred editor and install dependencies.
 
-```shell
+```bash
 yarn
 ```
 
@@ -57,106 +70,105 @@ yarn
 
 After successful dependencies installation using yarn. Launch the React app in celo composer to view our default canvas by running:
 
-```shell
+```bash
 yarn react-app:dev
 ```
 
 ![Dynamic NFT](https://i.imgur.com/JelGumi.png)
 
-
-Open `react-app/pages/index.tsx` then replace it with this 
+Open `react-app/pages/index.tsx` then replace it with this
 
 ```js
 export default function Home() {
-    return (
-        <div>
-            <div className="w-[450px] pb-4  bg-[#040404] mx-auto mt-20 rounded-xl">
-                <img
-                    src="./images/memberships/gold.gif"
-                    alt="Silver Plan"
-                    className="w-[270px] h-[200] mx-auto"
-                />
-                <div className="px-6">
-                    <p className="text-white font-bold mb-2">Silver Membership</p>
-                    <p className="text-white">
-                        Initial purchase includes a lifetime membership for the
-                        Stackshift Boat club.
-                    </p>
-                    <div className="mt-10 flex items-center gap-x-4">
-                        <h4 className="text-white flex-none text-sm font-semibold leading-6">
-                            What’s included
-                        </h4>
-                        <div className="text-white h-px flex-auto bg-gray-100"></div>
-                    </div>
-                    <ul
-                        role="list"
-                        className=" mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
-                    >
-                        <li className="text-white flex gap-x-3">
-                            <svg
-                                className="h-6 w-5 flex-none text-indigo-600"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                                    clipRule="evenodd"
-                                ></path>
-                            </svg>
-                            Private forum access
-                        </li>
+  return (
+    <div>
+      <div className="w-[450px] pb-4  bg-[#040404] mx-auto mt-20 rounded-xl">
+        <img
+          src="./images/memberships/gold.gif"
+          alt="Silver Plan"
+          className="w-[270px] h-[200] mx-auto"
+        />
+        <div className="px-6">
+          <p className="text-white font-bold mb-2">Silver Membership</p>
+          <p className="text-white">
+            Initial purchase includes a lifetime membership for the Stackshift
+            Boat club.
+          </p>
+          <div className="mt-10 flex items-center gap-x-4">
+            <h4 className="text-white flex-none text-sm font-semibold leading-6">
+              What’s included
+            </h4>
+            <div className="text-white h-px flex-auto bg-gray-100"></div>
+          </div>
+          <ul
+            role="list"
+            className=" mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+          >
+            <li className="text-white flex gap-x-3">
+              <svg
+                className="h-6 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="#fff"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              Private forum access
+            </li>
 
-                        <li className="text-white flex gap-x-3">
-                            <svg
-                                className="text-white h-6 w-5 flex-none text-indigo-600"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                                    clipRule="evenodd"
-                                ></path>
-                            </svg>
-                            Member resources
-                        </li>
+            <li className="text-white flex gap-x-3">
+              <svg
+                className="text-white h-6 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="#fff"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              Member resources
+            </li>
 
-                        <li className="text-white flex gap-x-3">
-                            <svg
-                                className="h-6 w-5 flex-none text-indigo-600"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                                    clipRule="evenodd"
-                                ></path>
-                            </svg>
-                            Annual conference
-                        </li>
+            <li className="text-white flex gap-x-3">
+              <svg
+                className="h-6 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="#fff"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              Annual conference
+            </li>
 
-                        <li className="text-white flex gap-x-3">
-                            <svg
-                                className="h-6 w-5 flex-none text-indigo-600"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                                    clipRule="evenodd"
-                                ></path>
-                            </svg>
-                            Official member t-shirt
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <li className="text-white flex gap-x-3">
+              <svg
+                className="h-6 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="#fff"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              Official member t-shirt
+            </li>
+          </ul>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -170,7 +182,6 @@ If you open up your `http://localhost:3000` again, it will be refreshed with the
 
 Make sure the images name are `silver.gif`, `gold.gif` and `platinum.gif` respectively.
 
-
 Now let us upload our images to IPFS using Pinnata, a pinning service for IPFS. Signup to [Pinnata](https://app.pinata.cloud/) and upload the whole plan folder there such that the result looks like this, allowing them to all share the same base image URL.
 
 ![Pinnata](https://i.imgur.com/Hxqi8Z7.png)
@@ -182,104 +193,106 @@ We will be following Opensea metadata specification.
 
 ```json
 {
-    "description": "Silver Membership",
-    "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/silver.gif",
-    "name": "Silver Membership",
-    "attributes": [
-        {
-            "trait_type": "private_forum_access",
-            "value": true
-        },
-        {
-            "trait_type": "discount_on_all_products",
-            "value": true
-        },
-        {
-            "trait_type": "annual_conference_pass",
-            "value": false
-        },
-        {
-            "trait_type": "club_swags",
-            "value": false
-        },
-        {
-            "trait_type": "personal_chaufer",
-            "value": false
-        },
-        {
-            "trait_type": "free_boat_rides",
-            "value": false
-        }
-    ]
+  "description": "Silver Membership",
+  "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/silver.gif",
+  "name": "Silver Membership",
+  "attributes": [
+    {
+      "trait_type": "private_forum_access",
+      "value": true
+    },
+    {
+      "trait_type": "discount_on_all_products",
+      "value": true
+    },
+    {
+      "trait_type": "annual_conference_pass",
+      "value": false
+    },
+    {
+      "trait_type": "club_swags",
+      "value": false
+    },
+    {
+      "trait_type": "personal_chaufer",
+      "value": false
+    },
+    {
+      "trait_type": "free_boat_rides",
+      "value": false
+    }
+  ]
 }
 ```
+
 **gold.json**
 
 ```json
 {
-    "description": "Gold Memebership",
-    "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/gold.gif",
-    "name": "Silver Memebership",
-    "attributes": [
-        {
-            "trait_type": "private_forum_access",
-            "value": true
-        },
-        {
-            "trait_type": "discount_on_all_products",
-            "value": true
-        },
-        {
-            "trait_type": "annual_conference_pass",
-            "value": true
-        },
-        {
-            "trait_type": "club_swags",
-            "value": true
-        },
-        {
-            "trait_type": "personal_chaufer",
-            "value": false
-        },
-        {
-            "trait_type": "free_boat_rides",
-            "value": false
-        }
-    ]
+  "description": "Gold Memebership",
+  "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/gold.gif",
+  "name": "Silver Memebership",
+  "attributes": [
+    {
+      "trait_type": "private_forum_access",
+      "value": true
+    },
+    {
+      "trait_type": "discount_on_all_products",
+      "value": true
+    },
+    {
+      "trait_type": "annual_conference_pass",
+      "value": true
+    },
+    {
+      "trait_type": "club_swags",
+      "value": true
+    },
+    {
+      "trait_type": "personal_chaufer",
+      "value": false
+    },
+    {
+      "trait_type": "free_boat_rides",
+      "value": false
+    }
+  ]
 }
 ```
+
 **platinum.json**
 
 ```json
 {
-    "description": "Platinum Memebership",
-    "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/platinum.gif",
-    "attributes": [
-        {
-            "trait_type": "private_forum_access",
-            "value": true
-        },
-        {
-            "trait_type": "discount_on_all_products",
-            "value": true
-        },
-        {
-            "trait_type": "annual_conference_pass",
-            "value": true
-        },
-        {
-            "trait_type": "club_swags",
-            "value": true
-        },
-        {
-            "trait_type": "personal_chaufer",
-            "value": true
-        },
-        {
-            "trait_type": "free_boat_rides",
-            "value": true
-        }
-    ]
+  "description": "Platinum Memebership",
+  "image": "https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/platinum.gif",
+  "attributes": [
+    {
+      "trait_type": "private_forum_access",
+      "value": true
+    },
+    {
+      "trait_type": "discount_on_all_products",
+      "value": true
+    },
+    {
+      "trait_type": "annual_conference_pass",
+      "value": true
+    },
+    {
+      "trait_type": "club_swags",
+      "value": true
+    },
+    {
+      "trait_type": "personal_chaufer",
+      "value": true
+    },
+    {
+      "trait_type": "free_boat_rides",
+      "value": true
+    }
+  ]
 }
 ```
 
@@ -287,16 +300,15 @@ Again upload this folder as a whole, on using Pinnata. This ensures the all have
 
 ![Pinnata](https://i.imgur.com/YAsPm2W.png)
 
-
 ## Step 2: Dynamic NFT API (The Backend)
 
-Remember we said based on some logic defined by the Boat Club, the level of access changes for a member. So how does how smart contract knows about this? 
+Remember we said based on some logic defined by the Boat Club, the level of access changes for a member. So how does how smart contract knows about this?
 
 From the Boat Club Database or API, it checks what level a user is and then upadates the membership on the smart contract accordingly. What we want to do next is to create a simple express js API in Node.
 
 From your terminal and in your workspace directory create a new project and do npm init.
 
-```shell
+```bash
 mkdir dynamic-nft-api
 cd dynamic-nft
 npm init
@@ -308,7 +320,7 @@ Open the project in your code editor and update the rest of the files as seen be
 
 **.gitignore**
 
-```shell
+```bash
 node_modules
 ```
 
@@ -322,20 +334,20 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+  res.send("Hello World!");
 });
 
 app.get(
-    "/membership/0x2A6B7BA38BD8BED065C68361c383A77C160C5Fd7",
-    (req, res) => {
-        res.json({
-            level: 1, // 0 = silver, 1 = gold, 2 = platinum
-        });
-    }
+  "/membership/0x2A6B7BA38BD8BED065C68361c383A77C160C5Fd7",
+  (req, res) => {
+    res.json({
+      level: 1, // 0 = silver, 1 = gold, 2 = platinum
+    });
+  }
 );
 
 app.listen(8090, () => {
-    console.log("Server running on port 8090");
+  console.log("Server running on port 8090");
 });
 ```
 
@@ -359,9 +371,9 @@ app.listen(8090, () => {
 }
 ```
 
-Now push this to your Github, then link the repository to Vercel so that it can be deployed live for free. 
+Now push this to your Github, then link the repository to Vercel so that it can be deployed live for free.
 
-Ours was deployed on thsi domain by vercel https://dynamic-nft-api.vercel.app. 
+Ours was deployed on thsi domain by vercel https://dynamic-nft-api.vercel.app.
 
 ![Dynamic NFT](https://i.imgur.com/W3VpKyD.png)
 ![Dynamic NFT](https://i.imgur.com/K1CrD6M.png)
@@ -372,7 +384,7 @@ If you visit https://dynamic-nft-api.vercel.app/membership/0x2A6B7BA38BD8BED065C
 
 ```json
 {
-  "level":1
+  "level": 1
 }
 ```
 
@@ -395,10 +407,10 @@ For now that okay.
 
 ## Step 5: Deploy Smart Contract
 
-The first thing we have to do before proceeding to start coding our Smart contract is to generate a wallet and fund it with some test Celo. 
-Luckily for us the Celo composer package comes with a command to do just that. 
+The first thing we have to do before proceeding to start coding our Smart contract is to generate a wallet and fund it with some test Celo.
+Luckily for us the Celo composer package comes with a command to do just that.
 
-```shell
+```bash
 cd packages/hardhat
 npx hardhat create-account
 ```
@@ -406,7 +418,7 @@ npx hardhat create-account
 If you encounter this problem when you run this command. Simply open your `hardhatconfig.js` and remove the waffle import. It will fix it
 ![Dynamic NFT](https://i.imgur.com/Xxcrovr.png)
 
-When the command runs successfully, you should see a private key generate for you and the public address too. 
+When the command runs successfully, you should see a private key generate for you and the public address too.
 
 Copy your public address and visit https://faucet.celo.org and request some test faucet.
 
@@ -492,7 +504,7 @@ contract Membership is
 
 In the hardhat folder in your terminal, install the Redstone connector using yarn
 
-```shell
+```bash
 yarn add @redstone-finance/evm-connector
 ```
 
@@ -501,7 +513,6 @@ Three things to note hear:
 1. The `updateMembership` function will be triggered when the API make changes to the user membership. It updates the user NFT metadata between the 3 membership levels
 2. The `bytes32("0x1774675b9bc5ae5c")`, replace it with the ID earlier from Redstone.
 3. The `_setTokenURI(tokenId, uri)` is wher ethe magic of updating the metadata URL happens.
-
 
 In the `hardhat/test` folder create `membership_test.js` file and paste the below code.
 
@@ -512,76 +523,76 @@ const { before } = require("mocha");
 const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
 before(async function () {
-    const [deployer] = await ethers.getSigners();
-    const Membership = await ethers.getContractFactory("Membership");
-    const membership = await Membership.deploy();
-    await membership.deployed();
+  const [deployer] = await ethers.getSigners();
+  const Membership = await ethers.getContractFactory("Membership");
+  const membership = await Membership.deploy();
+  await membership.deployed();
 
-    this.membership = membership;
-    this.deployer = deployer;
+  this.membership = membership;
+  this.deployer = deployer;
 });
 
 describe("Membership", function () {
-    it("Should mint a new nft for user", async function () {
-        const res = await this.membership.safeMint(
-            this.deployer.address,
-            "silver.json"
-        );
+  it("Should mint a new nft for user", async function () {
+    const res = await this.membership.safeMint(
+      this.deployer.address,
+      "silver.json"
+    );
 
-        await res.wait();
+    await res.wait();
 
-        const balance = await this.membership.balanceOf(this.deployer.address);
+    const balance = await this.membership.balanceOf(this.deployer.address);
 
-        assert.equal(balance, 1);
-    });
+    assert.equal(balance, 1);
+  });
 
-    it("Should confirm owner of token", async function () {
-        const owner = await this.membership.ownerOf(0);
-        assert.equal(owner, this.deployer.address);
-    });
+  it("Should confirm owner of token", async function () {
+    const owner = await this.membership.ownerOf(0);
+    assert.equal(owner, this.deployer.address);
+  });
 
-    it("Should confirm token URI", async function () {
-        const tokenUri = await this.membership.tokenURI(0);
+  it("Should confirm token URI", async function () {
+    const tokenUri = await this.membership.tokenURI(0);
 
-        assert.equal(
-            tokenUri,
-            "https://gateway.pinata.cloud/ipfs/Qme74zLzhAU7umzG2GG96wTPtogV5xh7pKGvBRUEFGxZHX/silver.json"
-        );
-    });
+    assert.equal(
+      tokenUri,
+      "https://gateway.pinata.cloud/ipfs/Qme74zLzhAU7umzG2GG96wTPtogV5xh7pKGvBRUEFGxZHX/silver.json"
+    );
+  });
 
-    it("Should update membership from Silver to Gold", async function () {
-        const membershipRes = await fetch(
-            "https://dynamic-nft-for-membership-card.vercel.app/membership/0x3472059945ee170660a9A97892a3cf77857Eba3A"
-        );
+  it("Should update membership from Silver to Gold", async function () {
+    const membershipRes = await fetch(
+      "https://dynamic-nft-for-membership-card.vercel.app/membership/0x3472059945ee170660a9A97892a3cf77857Eba3A"
+    );
 
-        const body = await membershipRes.json();
+    const body = await membershipRes.json();
 
-        //When membership is upgraded Gold
-        if (body.level === 1) {
-            const wrappedContract = WrapperBuilder.wrap(
-                this.membership
-            ).usingDataService(
-                {
-                    dataServiceId: "redstone-custom-urls-demo",
-                    uniqueSignersCount: 2,
-                    dataFeeds: ["0x1774675b9bc5ae5c"],
-                },
-                ["https://d1zm8lxy9v2ddd.cloudfront.net"]
-            );
+    //When membership is upgraded Gold
+    if (body.level === 1) {
+      const wrappedContract = WrapperBuilder.wrap(
+        this.membership
+      ).usingDataService(
+        {
+          dataServiceId: "redstone-custom-urls-demo",
+          uniqueSignersCount: 2,
+          dataFeeds: ["0x1774675b9bc5ae5c"],
+        },
+        ["https://d1zm8lxy9v2ddd.cloudfront.net"]
+      );
 
-            // Interact with the contract (getting oracle value securely)
-            const res = await wrappedContract.updateMembership(0);
+      // Interact with the contract (getting oracle value securely)
+      const res = await wrappedContract.updateMembership(0);
 
-            await res.wait();
+      await res.wait();
 
-            const tokenUri = await this.membership.tokenURI(0);
+      const tokenUri = await this.membership.tokenURI(0);
 
-            assert.equal(
-                tokenUri,
-                "https://gateway.pinata.cloud/ipfs/Qme74zLzhAU7umzG2GG96wTPtogV5xh7pKGvBRUEFGxZHX/gold.json"
-            );
-        }
-    });
+      assert.equal(
+        tokenUri,
+        "https://gateway.pinata.cloud/ipfs/Qme74zLzhAU7umzG2GG96wTPtogV5xh7pKGvBRUEFGxZHX/gold.json"
+      );
+    }
+  });
 });
 ```
 
@@ -589,7 +600,7 @@ Change the value of `dataFeeds` in the last test to your own Redstone ID, same a
 
 From the `hardhat` folder.
 
-```shell
+```bash
 npx hardhart test
 ```
 
@@ -601,14 +612,14 @@ In thw deploy folder replace the `00-deploy.js`
 
 ```js
 module.exports = async ({ getNamedAccounts, deployments }) => {
-    const { deploy } = deployments;
-    const { deployer } = await getNamedAccounts();
+  const { deploy } = deployments;
+  const { deployer } = await getNamedAccounts();
 
-    await deploy("Membership", {
-        from: deployer,
-        args: [],
-        log: true,
-    });
+  await deploy("Membership", {
+    from: deployer,
+    args: [],
+    log: true,
+  });
 };
 
 module.exports.tags = ["Membership"];
@@ -616,7 +627,7 @@ module.exports.tags = ["Membership"];
 
 Run from the terminal
 
-```shell
+```bash
 npx hardhat deploy
 ```
 
@@ -628,143 +639,145 @@ Note the Deployed contract address. We will be needing it moving forward.
 
 Let us write some scripts to carry out some operations for our NFT contracts. Go the `hardhat/scripts` folder and create the following scripts, see the explanation of each scripts below.
 
-NB:  **In all the scripts remember to change the address in attach to your deployed Membership contract address**
+NB: **In all the scripts remember to change the address in attach to your deployed Membership contract address**
 
 1. **mint-safe-001.js**: The mint script as the name implies will mint a membership nft to our address.
 2. **confirm-token-uri-002.js**: This script will print out the token URL of our newly minted NFT, and we can confirm it's the silver NFT minted
 3. **confirm-token-owner-003.js**: This script prints out your deployer address as the NFT owner.
 4. **update-membership-004.js**: This is the most important script of all. In production, this is the script that will be running periodically to trigger the smart contract to check and upgrade the metadata of user NFT based on response from server. As you will see shortly, once we update our API level from `0` to `1` and run this script our NFT as displayed will change image and metatags 😍.
 
-
 **mint-safe-001.js**
+
 ```js
 async function main() {
-    const [deployer] = await ethers.getSigners();
+  const [deployer] = await ethers.getSigners();
 
-    // We get the contract to deploy
-    const Membership = await hre.ethers.getContractFactory("Membership");
-    const membership = await Membership.attach(
-        "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
-    );
+  // We get the contract to deploy
+  const Membership = await hre.ethers.getContractFactory("Membership");
+  const membership = await Membership.attach(
+    "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
+  );
 
-    const res = await membership.safeMint(deployer.address, "silver.json");
+  const res = await membership.safeMint(deployer.address, "silver.json");
 
-    const ok = await res.wait();
+  const ok = await res.wait();
 
-    console.log(ok);
+  console.log(ok);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 Run using `npx hardhat run --network alfajores scripts/mint-safe-001.js`.
 
 **confirm-token-uri-002.js**
+
 ```js
 async function main() {
-    const [deployer] = await ethers.getSigners();
+  const [deployer] = await ethers.getSigners();
 
-    // We get the contract to deploy
-    const Membership = await hre.ethers.getContractFactory("Membership");
-    const membership = await Membership.attach(
-        "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
-    );
+  // We get the contract to deploy
+  const Membership = await hre.ethers.getContractFactory("Membership");
+  const membership = await Membership.attach(
+    "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
+  );
 
-    const tokenUri = await membership.tokenURI(0);
+  const tokenUri = await membership.tokenURI(0);
 
-    console.table({ tokenUri });
+  console.table({ tokenUri });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 Run using `npx hardhat run --network alfajores scripts/confirm-token-uri-002.js`
 
 **confirm-token-owner-003.js**
+
 ```js
 async function main() {
-    const [deployer] = await ethers.getSigners();
+  const [deployer] = await ethers.getSigners();
 
-    // We get the contract to deploy
-    const Membership = await hre.ethers.getContractFactory("Membership");
-    const membership = await Membership.attach(
-        "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
-    );
+  // We get the contract to deploy
+  const Membership = await hre.ethers.getContractFactory("Membership");
+  const membership = await Membership.attach(
+    "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
+  );
 
-    const owner = await membership.ownerOf(0);
+  const owner = await membership.ownerOf(0);
 
-    console.table({ owner });
+  console.table({ owner });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 Run using `npx hardhat run --network alfajores scripts/confirm-token-owner-003.js`
 
 **update-membership-004.js**
+
 ```js
 async function main() {
-    const [deployer] = await ethers.getSigners();
-    const { WrapperBuilder } = require("@redstone-finance/evm-connector");
+  const [deployer] = await ethers.getSigners();
+  const { WrapperBuilder } = require("@redstone-finance/evm-connector");
 
-    // We get the contract to deploy
-    const Membership = await hre.ethers.getContractFactory("Membership");
-    const membership = await Membership.attach(
-        "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
-    );
+  // We get the contract to deploy
+  const Membership = await hre.ethers.getContractFactory("Membership");
+  const membership = await Membership.attach(
+    "0xA39EaF77c0524417F5D6261A3267c40d8036c9AF"
+  );
 
-    const wrappedContract = WrapperBuilder.wrap(membership).usingDataService(
-        {
-            dataServiceId: "redstone-custom-urls-demo",
-            uniqueSignersCount: 2,
-            dataFeeds: ["0x1774675b9bc5ae5c"],
-        },
-        ["https://d1zm8lxy9v2ddd.cloudfront.net"]
-    );
+  const wrappedContract = WrapperBuilder.wrap(membership).usingDataService(
+    {
+      dataServiceId: "redstone-custom-urls-demo",
+      uniqueSignersCount: 2,
+      dataFeeds: ["0x1774675b9bc5ae5c"],
+    },
+    ["https://d1zm8lxy9v2ddd.cloudfront.net"]
+  );
 
-    // Interact with the contract (getting oracle value securely)
-    const res = await wrappedContract.updateMembership(0);
+  // Interact with the contract (getting oracle value securely)
+  const res = await wrappedContract.updateMembership(0);
 
-    await res.wait();
+  await res.wait();
 
-    const tokenUri = await membership.tokenURI(0);
+  const tokenUri = await membership.tokenURI(0);
 
-    console.table({ tokenUri });
+  console.table({ tokenUri });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-        console.error(error);
-        process.exit(1);
-    });
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 Don't run this script yet. Let us display our NFT on the UI and then change the value of level from our NFT API from `0` to `1` i.e. Change the membership level from Silver to Gold.
-
 
 ## Step 8: Display NFT
 
@@ -773,105 +786,101 @@ To display our NFT, update the `react-app/pages/index.tsx` file.
 ```js
 import React, { useEffect, useState } from "react";
 import {
-    abi as mAbi,
-    address as mAddress,
+  abi as mAbi,
+  address as mAddress,
 } from "@dynamic-nft/hardhat/deployments/alfajores/Membership.json";
 import { useCelo } from "@celo/react-celo";
 import { parseEther } from "ethers/lib/utils.js";
 
 const capitalized = (word: string) =>
-    word.charAt(0).toUpperCase() + word.slice(1);
+  word.charAt(0).toUpperCase() + word.slice(1);
 
 export default function Home() {
-    const [membership, setMembership] = useState(null);
-    const { kit, address } = useCelo();
-    const membershipContract = new kit.connection.web3.eth.Contract(
-        mAbi,
-        mAddress
-    );
+  const [membership, setMembership] = useState(null);
+  const { kit, address } = useCelo();
+  const membershipContract = new kit.connection.web3.eth.Contract(
+    mAbi,
+    mAddress
+  );
 
-    useEffect(() => {
-        const getMembership = async () => {
-            const uri = await membershipContract.methods.tokenURI(0).call();
+  useEffect(() => {
+    const getMembership = async () => {
+      const uri = await membershipContract.methods.tokenURI(0).call();
 
-            if (uri) {
-                const pinnataRes = await fetch(uri);
-                const data = await pinnataRes.json();
+      if (uri) {
+        const pinnataRes = await fetch(uri);
+        const data = await pinnataRes.json();
 
-                console.log(data);
+        console.log(data);
 
-                setMembership(data);
-            }
-        };
-
-        getMembership();
-    }, [address]);
-
-    const perkComponent = (perk: string) => {
-        let trait = perk.split("_");
-        trait[0] = capitalized(trait[0]);
-
-        return (
-            <li key={perk} className="text-white flex gap-x-3">
-                <svg
-                    className="h-6 w-5 flex-none text-indigo-600"
-                    viewBox="0 0 20 20"
-                    fill="#fff"
-                    aria-hidden="true"
-                >
-                    <path
-                        fillRule="evenodd"
-                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                        clipRule="evenodd"
-                    ></path>
-                </svg>
-                {trait.join(" ")}
-            </li>
-        );
+        setMembership(data);
+      }
     };
 
-    return membership == null ? (
-        ""
-    ) : (
-        <div className="w-[450px] pb-10  bg-[#040404] mx-auto rounded-xl">
-            <img
-                src={membership.image}
-                // src="https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/silver.gif"
-                alt="Silver Plan"
-                className="w-[270px] h-[200] mx-auto"
-            />
-            <div className="px-6">
-                <p className="text-white font-bold mb-2">
-                    {membership.name} #ID 0
-                </p>
-                <p className="text-white">
-                    Initial purchase includes a lifetime membership for the
-                    Stackshift Boat club.
-                </p>
-                <div className="mt-10 flex items-center gap-x-4">
-                    <h4 className="text-white flex-none text-sm font-semibold leading-6">
-                        What’s included
-                    </h4>
-                    <div className="text-white h-px flex-auto bg-gray-100"></div>
-                </div>
-                <ul
-                    role="list"
-                    className=" mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
-                >
+    getMembership();
+  }, [address]);
 
-                    {membership.attributes.map(
-                        (attribute) =>
-                            attribute.value == true &&
-                            perkComponent(attribute.trait_type)
-                    )}
-                </ul>
+  const perkComponent = (perk: string) => {
+    let trait = perk.split("_");
+    trait[0] = capitalized(trait[0]);
 
-                <p className="mt-6 text-xs leading-5 text-white text-center">
-                    Add more to your club balance to earn more perks
-                </p>
-            </div>
-        </div>
+    return (
+      <li key={perk} className="text-white flex gap-x-3">
+        <svg
+          className="h-6 w-5 flex-none text-indigo-600"
+          viewBox="0 0 20 20"
+          fill="#fff"
+          aria-hidden="true"
+        >
+          <path
+            fillRule="evenodd"
+            d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+        {trait.join(" ")}
+      </li>
     );
+  };
+
+  return membership == null ? (
+    ""
+  ) : (
+    <div className="w-[450px] pb-10  bg-[#040404] mx-auto rounded-xl">
+      <img
+        src={membership.image}
+        // src="https://gateway.pinata.cloud/ipfs/QmNwMoD7euKmDE2dugXNWuiPgy7RNB4WkEkU3VuFcFVcj3/silver.gif"
+        alt="Silver Plan"
+        className="w-[270px] h-[200] mx-auto"
+      />
+      <div className="px-6">
+        <p className="text-white font-bold mb-2">{membership.name} #ID 0</p>
+        <p className="text-white">
+          Initial purchase includes a lifetime membership for the Stackshift
+          Boat club.
+        </p>
+        <div className="mt-10 flex items-center gap-x-4">
+          <h4 className="text-white flex-none text-sm font-semibold leading-6">
+            What’s included
+          </h4>
+          <div className="text-white h-px flex-auto bg-gray-100"></div>
+        </div>
+        <ul
+          role="list"
+          className=" mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+        >
+          {membership.attributes.map(
+            (attribute) =>
+              attribute.value == true && perkComponent(attribute.trait_type)
+          )}
+        </ul>
+
+        <p className="mt-6 text-xs leading-5 text-white text-center">
+          Add more to your club balance to earn more perks
+        </p>
+      </div>
+    </div>
+  );
 }
 ```
 
@@ -883,7 +892,7 @@ Go back to the `index.js` of the NFT API and change the value of level from 0 to
 
 ```js
 {
-    level: 1
+  level: 1;
 }
 ```
 
@@ -893,13 +902,13 @@ We use 0 - 2 to represent membership levels.
 2. 1 => Gold
 3. 2 => Platinum
 
-You can also change it to 2 if you want to see your NFT change to Platinum membership. 
+You can also change it to 2 if you want to see your NFT change to Platinum membership.
 
 Push the updated NFT API to Github so Vercel can redeploy the update. Confirm by trying it out on the Custom API page or visiting the URL.
 
 Now run the fourth script from before
 
-```shell
+```bash
 npx hardhat run --network alfajores scripts/update-membership-004.js
 ```
 
