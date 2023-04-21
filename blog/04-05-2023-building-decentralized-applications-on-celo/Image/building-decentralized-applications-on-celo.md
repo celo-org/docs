@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/building-dapp-on-celo.png)
+![header](../../../src/data-tutorials/showcase/intermediate/building-dapp-on-celo.png)
 
 ## 🌱 Introduction
 
