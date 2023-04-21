@@ -3145,6 +3145,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {
+    title: "Implementing Multi-factor Authentication on Celo's Blockchain Using Smart Contracts",
+    description: 'Learn how to build and deploy a multi factor authentication system on the Celo platform',
+    preview: require('./showcase/beginner/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts.png'),
+    website: 'blog/tutorials/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts',
+    tags: ['celo', 'celosage', 'truffle', 'smartcontract', 'solidity', 'javascript', 'beginner'], 
+  },
+  {
     title: 'Build a cross-chain token bridge between celo and bsc using the existing bridge',
     description: 'Learn how to build cross-chain dapps using the existing bridge on Celo',
     preview: require('./showcase/intermediate/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge.png'),
