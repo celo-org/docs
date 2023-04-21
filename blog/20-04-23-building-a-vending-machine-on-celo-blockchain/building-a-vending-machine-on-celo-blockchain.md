@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-vending-machine-on-celo-blockchain
 ---
 
-![building-a-vending-machine-on-celo-blockchain](https://user-images.githubusercontent.com/6362475/233287177-ffc6d531-cc2e-46bc-8f5d-703fca8e55df.png)
+![building-a-vending-machine-on-celo-blockchain](../../src/data-tutorials/showcase/beginner/building-a-vending-machine-on-celo-blockchain.png)
 
 ## Introduction​
 
