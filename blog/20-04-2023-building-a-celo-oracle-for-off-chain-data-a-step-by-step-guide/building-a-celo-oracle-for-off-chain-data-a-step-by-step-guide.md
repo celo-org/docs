@@ -214,7 +214,7 @@ The contract includes the `createRequest` function for users to submit requests,
 
 You should see something like this:
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681867891551_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681867891551_image.png)
 
 
 Take note of the deployed Oracle contract address for later use.
@@ -445,7 +445,7 @@ Now that you've implemented the Oracle smart contract, and off-chain server, and
 
   You should see this: 
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681939368789_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681939368789_image.png)
 
 
 
@@ -492,7 +492,7 @@ This means that the off-chain server has fetched the weather data for San Franci
 Clicking send, we encountered this error:
 
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681915459034_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681915459034_image.png)
 
 
 
@@ -584,7 +584,7 @@ If the request is successful, you should receive a response similar to this:
 
 
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681916756173_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681916756173_image.png)
 
 
 The response contains the transaction details, including the `transactionHash`, `blockNumber`, and other relevant information.
@@ -649,7 +649,7 @@ Make sure to replace the `oracleAddress` with the address of your deployed Oracl
 The script will call the `getRequest` function on your Oracle smart contract with the provided `requestId` and print the result to the console.
 You should see the submitted data and other request details, such as `requester`, `url`, `path`, `timestamp`, `isCompleted`, and `result`. If `isCompleted` is `true`, the data has been successfully submitted to the Oracle.
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681931656497_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681931656497_image.png)
 
 
 As you can see, the output includes the details of the request, such as requester, url, path, timestamp, isCompleted, and result. In this case, the `result` value is '822'. You might be wondering why the temperature in San Francisco is 822, well this has to do with the change we made to our code to avoid the underscore error.
@@ -669,7 +669,7 @@ This line divides the result by 100 to get the actual temperature value and appe
     
 
 
-![](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681932685609_image.png)
+![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681932685609_image.png)
 
 ## Conclusion
 
