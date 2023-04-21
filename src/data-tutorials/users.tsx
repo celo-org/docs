@@ -927,6 +927,13 @@ const Users: User[] = [
   },
   
   {
+    title: 'How to Build a Supply Chain Management Application on Celo',
+    description: 'This tutorial teaches how to build a supply chain management application on Celo',
+    preview: require('./showcase/intermediate/how-to-build-a-supply-chain-management-application-on-celo.png'),
+    website: 'blog/tutorials/how-to-build-a-supply-chain-management-application-on-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
+  },
+  {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
     description: 'This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit',
     preview: require('./showcase/beginner/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginners-Guide-A-Voting-App.png'),
@@ -3111,6 +3118,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens'], 
   },
   {
+    title: 'Building an NFT game using TDD with Hardhat (Part 1)',
+    description: 'Building an NFT game using TDD with Hardhat',
+    preview: require('./showcase/intermediate/building-an-NFT-game-using-TDD-with-hardhat-part-1.png'),
+    website: 'blog/tutorials/building-an-nft-game-using-TDD-with-hardhat-part-1',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'tokens', "hardhat", "openzeppelin", "randomness", "erc721", "dacade", "nft"], 
+  },
+  {
     title: 'Integrating Celo into the Process of Web/App Development',
     description: 'The article will focus on the Celo framework that provides users with a seamless online payment method.',
     preview: require('./showcase/intermediate/sage-integrating-celo-into-the-process-of-fintech-web-app-development.png'),
@@ -3129,6 +3143,13 @@ const Users: User[] = [
     description: 'Analyze smart contracts using free security tools - Mythril',
     preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-mythril.png'),
     website: 'blog/tutorials/smart-contract-security-on-celo-with-mythril',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
+    title: 'Build a cross-chain token bridge between celo and bsc using the existing bridge',
+    description: 'Learn how to build cross-chain dapps using the existing bridge on Celo',
+    preview: require('./showcase/intermediate/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge.png'),
+    website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   /*
