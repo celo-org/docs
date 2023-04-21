@@ -6,7 +6,7 @@ authors:
     title: Web3 Content Writer
     url: https://github.com/lanacreates
     image_url: https://github.com/lanacreates.png
-tags: [celosage, celowallet, celo, cusd, ledger]
+tags: [celosage, celowallet, celo, contractkit, intermediate, metamask]
 hide_table_of_contents: true
 slug: /tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide
 ---
@@ -369,7 +369,7 @@ With these changes, the off-chain server fetches the off-chain data, processes i
 
 Here's the updated `index.js` file with the new function `submitDataToOracle`:
 
-    javascript
+    ``` javascript
     const express = require("express");
     const axios = require("axios");
     const Web3 = require("web3");
@@ -427,6 +427,7 @@ Here's the updated `index.js` file with the new function `submitDataToOracle`:
     app.listen(PORT, () => {
       console.log(`Server is listening on port ${PORT}`);
     });
+    ```
     
 
 In this updated `index.js` file, we've added the `submitDataToOracle` function and replaced the previous contract method call with the new function. The `submitDataToOracle` function takes the request ID and the result (the fetched weather data), and it submits the data to the Oracle smart contract on the Celo blockchain.
