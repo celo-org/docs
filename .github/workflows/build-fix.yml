@@ -1,9 +1,8 @@
-name: Build and Deploy to Netlify
+name: Upload and Download Crowdin translation
 
 on:
-  push:
-    branches:
-      - build-fix # change this to the branch you want to build and deploy from
+  schedule:
+    - cron: '57 12 * * *'
 
 jobs: # Test commit
   build-and-deploy:
@@ -12,6 +11,8 @@ jobs: # Test commit
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: build-fix
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -26,11 +27,18 @@ jobs: # Test commit
       uses: crowdin/github-action@v1
       with:
         upload_sources: false
+        upload_translations: false
         download_translations: true
+        create_pull_request: false
+        push_translations: false
       env:
         CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-    - name: Build
-      run: |
-        npm run build
+    - name: Cache i18n
+      uses: actions/cache@v2
+      with:
+        path: i18n
+        key: ${{ runner.os }}-i18n-${{ hashFiles('i18n/**') }}
+        restore-keys: |
+          ${{ runner.os }}-i18n-
 
