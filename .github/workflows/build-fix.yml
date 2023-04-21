@@ -22,10 +22,9 @@ jobs: # Test commit
       run: |
         npm install
 
-    - name: crowdin action
+    - name: Crowdin action
       uses: crowdin/github-action@v1
       with:
-        upload_sources: true
         download_translations: true
       env:
         CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
