@@ -153,12 +153,16 @@ async function deployContract() {
   const accounts = await kit.web3.eth.getAccounts();
   const from = accounts[0];
 
-  const contract = new kit.web3.eth.Contract(MyContract.abi, { data: MyContract.bytecode });
+  const contract = new kit.web3.eth.Contract(MyContract.abi, {
+    data: MyContract.bytecode,
+  });
 
   const deployTx = contract.deploy().send({ from });
   const contractInstance = await deployTx;
 
-  console.log(`Contract deployed at address: ${contractInstance.options.address}`);
+  console.log(
+    `Contract deployed at address: ${contractInstance.options.address}`
+  );
 }
 
 deployContract();
@@ -182,6 +186,7 @@ This will deploy your contract to the Celo network and log the contract address 
     <Repace me later>
 </body>
 ```
+
 - Step 2: Create a new CSS file called style.css and add your styles. Here's an example style for the header:
 
 ```css
@@ -201,7 +206,10 @@ async function incrementCounter() {
   const accounts = await kit.web3.eth.getAccounts();
   const from = accounts[0];
 
-  const contract = new kit.web3.eth.Contract(MyContract.abi, "<YOUR_CONTRACT_ADDRESS>");
+  const contract = new kit.web3.eth.Contract(
+    MyContract.abi,
+    "<YOUR_CONTRACT_ADDRESS>"
+  );
 
   await contract.methods.incrementCounter().send({ from });
 }
