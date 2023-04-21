@@ -53,6 +53,7 @@ First, let's ensure that you have all the required tools and libraries installed
 
 ### Creating a New Project Folder and Initializing It
 
+
 1. Create a new directory for your project and navigate to it in your terminal:
     ```bash
     mkdir celo-oracle
