@@ -44,7 +44,7 @@ First, let's ensure that you have all the required tools and libraries installed
 
 3) Install the Celo SDK by running the following command:
    ```bash
-    npm install -g @celo/celocli
+   npm install -g @celo/celocli
    ```
 
 ### Creating a New Project Folder and Initializing It
@@ -55,9 +55,9 @@ First, let's ensure that you have all the required tools and libraries installed
    cd celo-oracle
    ```
 
-2) Initialize a new Truffle project by running the following command:
+2. Initialize a new Truffle project by running the following command:
    ```bash
-    truffle init
+   truffle init
    ```
 
 This will create a new Truffle project with the following directory structure:
@@ -192,8 +192,8 @@ The contract includes the `createRequest` function for users to submit requests,
    };
    ```
 
-3) Replace `your_private_key` and `your_account_address` with your private key and account address, respectively.
-4) Now, compile the smart contract and deploy it to the Celo Alfajores test network:
+3. Replace `your_private_key` and `your_account_address` with your private key and account address, respectively.
+4. Now, compile the smart contract and deploy it to the Celo Alfajores test network:
 
 
     ```bash
@@ -327,7 +327,7 @@ In the previous section, we already connected to the Celo test network using the
    }
    ```
 
-2) Update the `/submit-data` endpoint to call the `submitDataToOracle` function:
+2. Update the `/submit-data` endpoint to call the `submitDataToOracle` function:
 
    ```javascript
    app.post("/submit-data", async (req, res) => {
@@ -488,7 +488,7 @@ Here's how to do it:
 
 - In your server code (index.js), update the `submitDataToOracle` function call:
 
-````javascript
+```javascript
  // Convert the floating-point temperature to an integer
  const temperatureInt = Math.round(celsiusTemperature * 100);
 
@@ -559,7 +559,7 @@ If the request is successful, you should receive a response similar to this:
      }
  }
 }
-````
+```
 
 ![image](https://paper-attachments.dropboxusercontent.com/s_3059FDC11BF0693B1947B45E0375C321A6E8F57A8DD92A7242633E000C1C6545_1681916756173_image.png)
 
@@ -575,7 +575,7 @@ To interact with the Oracle smart contract and call the `getRequest` function us
 
 1. First, make sure you have `@celo/contractkit` installed:
 
-````bash
+ ```bash
  npm install @celo/contractkit
  ```
 
@@ -616,7 +616,7 @@ Make sure to replace the `oracleAddress` with the address of your deployed Oracl
 
 ```bash
 node interact.js
-````
+```
 
 The script will call the `getRequest` function on your Oracle smart contract with the provided `requestId` and print the result to the console.
 You should see the submitted data and other request details, such as `requester`, `url`, `path`, `timestamp`, `isCompleted`, and `result`. If `isCompleted` is `true`, the data has been successfully submitted to the Oracle.
