@@ -133,7 +133,7 @@ The recipient can verify that he owns an NFT on the blockchain and check for the
 
 ## Conclusion
 
-FileBase is a web3 Storage-As-A-Service provider which provides a safer and more secure way to store information. It is an aggregation service that gives users access to multiple IPFS services, a feature that makes it the favorite. FiileBase is one of the best options to safeguard your NFT asset for the contract you deployed or from different NFT marketplaces.
+FileBase is a web3 Storage-As-A-Service provider which provides a safer and more secure way to store information. It is an aggregation service that gives users access to multiple IPFS services, a feature that makes it the favorite. FileBase is one of the best options to safeguard your NFT asset for the contract you deployed or from different NFT marketplaces. You can find the codebase for this article (here)[https://github.com/johnfawole/Proof-of-Attendance-NFT-Smart-Contract].
 
 ## NEXT STEP
 
