@@ -6,7 +6,7 @@ authors:
     title: Blockchain Developer | Technical Writer
     url: https://github.com/alofeoluwafemi
     image_url: https://avatars.githubusercontent.com/u/7295729?v=4
-tags: [video, celo, intermediate]
+tags: [video, celo, intermediate,celosage]
 hide_table_of_contents: true
 slug: /tutorials/go-celo-series-setting-up-a-blockchain-client-on-celo
 ---
