@@ -15,8 +15,6 @@ import YouTube from '@components/YouTube';
 
 [header](../../src/data-tutorials/showcase/intermediate/go-celo-series-setting-up-a-blockchain-client-on-celo.png)
 
-
-
 ## Introduction
 
 The Go Celo blockchain package officially implements the Celo blockchain in Go to interact with the blockchain. It provides packages to interact and read the Celo blockchain using Golang. By the end of this tutorial, you will have to understand the Go Celo blockchain implementation overview and its packages. You will have learned how to connect to the Celo blockchain in using the package.
@@ -26,7 +24,7 @@ The Go Celo blockchain package officially implements the Celo blockchain in Go t
 - Have [go](https://go.dev/doc/install) binary installed.
 - Have solidity compiler [solc](https://docs.soliditylang.org/en/v0.8.17/installing-solidity.html) installed.
 
-## Video 
+## Video
 
 <YouTube videoId="ZpWLdkSTyyc"/>
 
