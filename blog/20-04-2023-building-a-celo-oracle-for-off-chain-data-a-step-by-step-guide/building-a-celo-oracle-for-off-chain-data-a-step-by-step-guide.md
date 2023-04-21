@@ -31,8 +31,8 @@ Before we dive into building our Celo Oracle, make sure you're familiar with bas
 Before starting, ensure you have the necessary tools and libraries installed:
 
    - Node.js: Download and install the latest LTS version from [here](https://nodejs.org/en/download).
-   - Celo SDK: Install the Celo SDK by running ```npm install -g @celo/celocli.```
-   - Truffle: Install Truffle by running ```npm install -g truffle.```
+   - Celo SDK: Install the Celo SDK by running `npm install -g @celo/celocli.`
+   - Truffle: Install Truffle by running `npm install -g truffle.`
 
 ## Setting Up the Development Environment
 
