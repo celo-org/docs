@@ -76,6 +76,7 @@ This will create a new Truffle project with the following directory structure:
 
 
 ## Writing the Smart Contract
+
 1. In your project directory, create a new file in the `contracts` folder called `Oracle.sol`.
 2. Open the `Oracle.sol` file in your code editor and write the following Solidity code:
 
@@ -155,7 +156,6 @@ The contract includes the `createRequest` function for users to submit requests,
 
 ## Compiling and Deploying the Smart Contract to the Celo Test Network
 
-
 1. In the `migrations` directory, create a new file named `2_deploy_oracle.js` and add the following code to deploy the Oracle contract:
 
 
@@ -168,7 +168,6 @@ The contract includes the `createRequest` function for users to submit requests,
     ```
 
 2. Update the `truffle-config.js` file to include the Celo network configuration:
-
 
     ```javascript
     const ContractKit = require("@celo/contractkit");
@@ -220,6 +219,7 @@ You should see something like this:
 Take note of the deployed Oracle contract address for later use.
 
 ## Setting Up the Off-Chain Server
+
 1. Create a new file called `index.js` in the `server` folder and write the following JavaScript code to set up the off-chain server:
 
 
@@ -468,7 +468,6 @@ Now that you've implemented the Oracle smart contract, and off-chain server, and
 2. In a separate terminal window, use `curl` or a tool like Postman to test the `/submit-data` endpoint. Send a POST request with the request ID, city name, and path to the desired data in the request body:
 
 For this tutorial, we will be using Postman, here are the steps;
-
 
 1. Download and install Postman from here.
 2. Open Postman.
