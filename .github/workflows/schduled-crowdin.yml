@@ -2,7 +2,7 @@ name: Download and Upload Crowdin
 
 on:
   schedule:
-    - cron: '03 14 * * *'
+    - cron: '29 14 * * *'
 
 jobs: # Test commit
   schduled-crowdin:
@@ -23,6 +23,9 @@ jobs: # Test commit
       run: |
         npm install
 
+    - name: Get today's date
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
     - name: Crowdin action
       uses: crowdin/github-action@v1
       with:
@@ -38,7 +41,7 @@ jobs: # Test commit
       uses: actions/cache@v2
       with:
         path: i18n
-        key: ${{ runner.os }}-i18n-${{ hashFiles('i18n/**') }}
+        key: ${{ runner.os }}-i18n-${{ env.TODAY }}
         restore-keys: |
           ${{ runner.os }}-i18n-
 
