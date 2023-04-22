@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/building-a-full-stack-celo-dapp-with-nextjs-and-web3js.png)
+
 ## Introduction
 
 Celo is a blockchain platform focused on creating inclusive financial systems. To build decentralized applications on Celo, developers can use a variety of tools and programming languages, including NextJS and `web3.js`. NextJS is a popular framework for building server-side rendered React applications, while web3.js is a JavaScript library that provides a programming interface for interacting with Ethereum-based blockchains, including Celo.
@@ -264,10 +266,11 @@ npm run dev
 ```
 
 This will start the development server and you can view the app by navigating to `http://localhost:3000` in your web browser.
+![result](images/result.png)
 
 ## Conclusion
 
-In this tutorial, you learned how to create a Celo Dapp using Next.js, Web3.js, and Tailwind CSS. You learned how to set up a Web3 provider, a ContractKit instance, and how to use the `@celo/contractkit` library to access the user's Celo wallet address and to connect their wallet. You also learned how to fetch the user's CELO balance and display it on the page. With this knowledge, you can start building more advanced Celo Dapps that interact with the Celo smart contracts. Here is the GitHub repository for the article
+In this tutorial, you learned how to create a Celo Dapp using Next.js, Web3.js, and Tailwind CSS. You learned how to set up a Web3 provider, a ContractKit instance, and how to use the `@celo/contractkit` library to access the user's Celo wallet address and to connect their wallet. You also learned how to fetch the user's CELO balance and display it on the page. With this knowledge, you can start building more advanced Celo Dapps that interact with the Celo smart contracts. Here is the [GitHub repository](https://github.com/Taiwrash/celoxnextjs] for the article
 
 ## About the Author
 
