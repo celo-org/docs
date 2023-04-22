@@ -1093,5 +1093,11 @@
   },
   "home.section6.connect.description": {
     "message": "Join and connect with our team and community of doers on discord. its a space where you can share and immerse yourself in a wealth of knowledge and information."
+  },
+  "Typescript": {
+    "message": "Typescript"
+  },
+  "showcase.tag.typescript.description": {
+    "message": ""
   }
 }
