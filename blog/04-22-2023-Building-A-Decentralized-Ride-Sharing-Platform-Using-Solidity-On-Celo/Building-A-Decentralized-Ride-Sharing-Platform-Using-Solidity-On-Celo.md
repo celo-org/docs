@@ -3,7 +3,7 @@ title: Building A Decentralized Ride Sharing Platform Using Solidity On Celo
 description: This tutorial, we will learn how to write smart contract for a decentralized ride sharing platform
 authors:
   - name: ✍️ Richard Michael
-     url: https://github.com/richiemikke
+    url: https://github.com/richiemikke
 tags: ["celosage", "smartcontract", "solidity", "intermediate", "celo"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-ride-sharing-platform-using-solidity-on-celo
