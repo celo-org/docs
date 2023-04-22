@@ -48,9 +48,72 @@ To build this DApp we will need the following tools:
 - [Celo Wallet Extension](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) / [Metamask](https://metamask.io/) -  For interacting with the Celo blockchain
 
 ## Let’s Get Started
-In this tutorial we will build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions. The tutorial will focus more on batch transactions and its importance. First before we talk about Batch transactions, let’s talk about Multi-party Escrow Dapp.
+In this tutorial we will build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions. The tutorial will focus more on atomic and batch transactions and its importance. Before we start building our Multi-party Escrow Dapp let's look at batch and atomic transactions.
 
-What does that even mean? A multi-party escrow dApp simply means a decentralized escrow platform. What does escrow mean? Escrow is a third-party arrangement where a buyer deposits some asset with the escrow and payment is made to the seller through the escrow after a particular period of time or after a certain condition has been met.
+## Batch and Atomic Transactions
+
+### What are Batch Transactions
+
+Batch transactions refer to a technique where multiple transactions are grouped together into a single transaction and processed as a single unit on the Ethereum blockchain. This is done to optimize gas fees, which are the fees required to perform transactions on the Ethereum network, and reduce the overall cost of executing transactions.
+
+**Fig 5-1** Batch Transfer
+![Batch Transaction](./images/group%20transfer.png)
+
+### Atomic Transactions
+
+Atomic transactions on Celo are implemented using the concept of "revert on error," which means that if any of the operations within a transaction fail, the entire transaction is reverted, and the state changes are rolled back. This ensures that either all the operations within a transaction are successfully completed, or none of them are, avoiding partial or inconsistent updates to the blockchain state.
+
+Atomic transactions on Celo can provide benefits such as transaction integrity, consistency, and composability.
+
+**Fig 5-2** Atomic Transfer
+![Atomic Transaction](./images/Atomic-transfer.png)
+
+### When and Why you should Perform Batch Transactions
+
+Batch transactions are typically used in scenarios where multiple transactions need to be executed together and have similar characteristics, such as transactions involving multiple transfers or interactions with multiple smart contracts. Some common use cases for batch transactions include token transfers, decentralized finance (DeFi) transactions, and batched interactions with decentralized applications (dApps).
+
+### Benefits of Batch Transactions
+
+Performing batch transactions can be beneficial in several ways. 
+- Firstly, it can help reduce gas fees, as the combined gas cost of a batched transaction is often lower compared to individual transactions. 
+- Secondly, batch transactions can help improve the efficiency and speed of transactions, as they allow multiple transactions to be processed in a single transaction, reducing the overall time taken to execute them.
+- Lastly, batch transactions can help reduce congestion on the Ethereum network, as they occupy less block space compared to multiple individual transactions, which can lead to faster transaction confirmation times.
+
+### Ethereum Standards that Allow Batch Transactions
+
+Not all Ethereum standards support batch transactions. However, standards such as ERC-1155 are commonly used with batch transactions. These standards allow multiple token transfers to be bundled together into a single transaction, reducing gas fees and improving transaction efficiency.
+
+[ERC1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/#batch_transfers) supports a couple of batch transactions. More detailed explanations on each of these batch transactions [here](https://eips.ethereum.org/EIPS/eip-1155).
+
+- **Batch Transfer:** Transfer multiple assets in a single call.
+- **Batch Balance:** Get the balances of multiple assets in a single call.
+- **Batch Approval:** Approve all tokens to an address.
+- **Mint Batch:** This function is used to mint multiple tokens
+
+### Limitations of Batch Transactions
+
+It's important to note that batch transactions may not always be suitable for all scenarios, as they have limitations, such as the need for similar characteristics among transactions, and potential limitations in the number of transactions that can be included in a single batch. It's essential to carefully consider the requirements of the specific use case and evaluate the gas fees, efficiency, and other factors before deciding to perform batch transactions on the Ethereum blockchain.
+
+
+
+### Difference Between Batch And Atomic Transactions
+
+Batch transactions and atomic transactions are two different concepts in the context of Ethereum transactions.
+
+- Batch Transactions: As mentioned before, batch transactions refer to a technique where multiple transactions are grouped together into a single transaction and processed as a single unit on the Ethereum blockchain. Batch transactions can be achieved using smart contracts or specialized tools that support batching. The key idea is to combine multiple transactions into one transaction, which is then submitted to the Ethereum network for processing. Batch transactions can help reduce gas fees, improve transaction efficiency, and reduce congestion on the Ethereum network.
+
+- Atomic Transactions: Atomic transactions, on the other hand, refer to a type of transaction that is designed to be executed as a single, indivisible unit. In the context of Ethereum, atomic transactions are often used in the context of smart contracts to ensure that multiple state changes within the contract occur together or not at all. In other words, either all the operations within an atomic transaction are successfully completed, or none of them are. If any of the operations fail, the entire transaction is reverted, and the state changes are rolled back.
+
+The key difference between batch transactions and atomic transactions is the nature of their execution. Batch transactions are a way to group multiple transactions together for more efficient processing, where each transaction can be executed independently and may succeed or fail individually. On the other hand, atomic transactions are designed to ensure that multiple operations within a transaction are executed together or not at all, with an all-or-nothing approach.
+
+Both batch transactions and atomic transactions can be useful in different scenarios depending on the requirements of the use case. Batch transactions can help optimize gas fees and improve transaction efficiency when multiple transactions with similar characteristics need to be processed together. Atomic transactions, on the other hand, can ensure that multiple operations within a transaction are executed atomically, providing guarantees of transaction integrity and consistency. It's important to carefully consider the specific requirements of the use case and choose the appropriate approach accordingly.
+
+Now that you have a fair knowlege of batch and atomic transactions. Let's move to the next step of the tutorial.
+
+## Multi-Escrow Dapp
+Now, let's start building our Escrow Dapp.
+
+What does A multi-party escrow dApp mean? A multi-party escrow dApp simply means a decentralized escrow platform. What does escrow mean? Escrow is a third-party arrangement where a buyer deposits some asset with the escrow and payment is made to the seller through the escrow after a particular period of time or after a certain condition has been met.
 
 For the purpose of this tutorial, we will be building an Escrow smart contract that accepts funds from the buyer in this case called the sender.  And a React/Nex.js frontend to interact with the contract. 
 
@@ -674,64 +737,7 @@ export default function Home() {
  )
 }
 ```
-## Batch and Atomic Transactions
 
-
-### What are Batch Transactions
-
-Batch transactions refer to a technique where multiple transactions are grouped together into a single transaction and processed as a single unit on the Ethereum blockchain. This is done to optimize gas fees, which are the fees required to perform transactions on the Ethereum network, and reduce the overall cost of executing transactions.
-
-**Fig 5-1** Batch Transfer
-![Batch Transaction](./images/group%20transfer.png)
-
-### Atomic Transactions
-
-Atomic transactions on Celo are implemented using the concept of "revert on error," which means that if any of the operations within a transaction fail, the entire transaction is reverted, and the state changes are rolled back. This ensures that either all the operations within a transaction are successfully completed, or none of them are, avoiding partial or inconsistent updates to the blockchain state.
-
-Atomic transactions on Celo can provide benefits such as transaction integrity, consistency, and composability.
-
-**Fig 5-2** Atomic Transfer
-![Atomic Transaction](./images/Atomic-transfer.png)
-
-### When and Why you should Perform Batch Transactions
-
-Batch transactions are typically used in scenarios where multiple transactions need to be executed together and have similar characteristics, such as transactions involving multiple transfers or interactions with multiple smart contracts. Some common use cases for batch transactions include token transfers, decentralized finance (DeFi) transactions, and batched interactions with decentralized applications (dApps).
-
-### Benefits of Batch Transactions
-
-Performing batch transactions can be beneficial in several ways. 
-- Firstly, it can help reduce gas fees, as the combined gas cost of a batched transaction is often lower compared to individual transactions. 
-- Secondly, batch transactions can help improve the efficiency and speed of transactions, as they allow multiple transactions to be processed in a single transaction, reducing the overall time taken to execute them.
-- Lastly, batch transactions can help reduce congestion on the Ethereum network, as they occupy less block space compared to multiple individual transactions, which can lead to faster transaction confirmation times.
-
-### Ethereum Standards that Allow Batch Transactions
-
-Not all Ethereum standards support batch transactions. However, standards such as ERC-1155 are commonly used with batch transactions. These standards allow multiple token transfers to be bundled together into a single transaction, reducing gas fees and improving transaction efficiency.
-
-[ERC1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/#batch_transfers) supports a couple of batch transactions. More detailed explanations on each of these batch transactions [here](https://eips.ethereum.org/EIPS/eip-1155).
-
-- **Batch Transfer:** Transfer multiple assets in a single call.
-- **Batch Balance:** Get the balances of multiple assets in a single call.
-- **Batch Approval:** Approve all tokens to an address.
-- **Mint Batch:** This function is used to mint multiple tokens
-
-### Limitations of Batch Transactions
-
-It's important to note that batch transactions may not always be suitable for all scenarios, as they have limitations, such as the need for similar characteristics among transactions, and potential limitations in the number of transactions that can be included in a single batch. It's essential to carefully consider the requirements of the specific use case and evaluate the gas fees, efficiency, and other factors before deciding to perform batch transactions on the Ethereum blockchain.
-
-
-
-### Difference Between Batch And Atomic Transactions
-
-Batch transactions and atomic transactions are two different concepts in the context of Ethereum transactions.
-
-- Batch Transactions: As mentioned before, batch transactions refer to a technique where multiple transactions are grouped together into a single transaction and processed as a single unit on the Ethereum blockchain. Batch transactions can be achieved using smart contracts or specialized tools that support batching. The key idea is to combine multiple transactions into one transaction, which is then submitted to the Ethereum network for processing. Batch transactions can help reduce gas fees, improve transaction efficiency, and reduce congestion on the Ethereum network.
-
-- Atomic Transactions: Atomic transactions, on the other hand, refer to a type of transaction that is designed to be executed as a single, indivisible unit. In the context of Ethereum, atomic transactions are often used in the context of smart contracts to ensure that multiple state changes within the contract occur together or not at all. In other words, either all the operations within an atomic transaction are successfully completed, or none of them are. If any of the operations fail, the entire transaction is reverted, and the state changes are rolled back.
-
-The key difference between batch transactions and atomic transactions is the nature of their execution. Batch transactions are a way to group multiple transactions together for more efficient processing, where each transaction can be executed independently and may succeed or fail individually. On the other hand, atomic transactions are designed to ensure that multiple operations within a transaction are executed together or not at all, with an all-or-nothing approach.
-
-Both batch transactions and atomic transactions can be useful in different scenarios depending on the requirements of the use case. Batch transactions can help optimize gas fees and improve transaction efficiency when multiple transactions with similar characteristics need to be processed together. Atomic transactions, on the other hand, can ensure that multiple operations within a transaction are executed atomically, providing guarantees of transaction integrity and consistency. It's important to carefully consider the specific requirements of the use case and choose the appropriate approach accordingly.
 ## Conclusion​
 Congratulations 🎉 on finishing this tutorial! Thank you for taking the time to complete it. In this tutorial, you have learnt how to Build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions.
 
