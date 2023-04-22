@@ -161,9 +161,6 @@ contract Escrow {
        emit FundsReturned(escrowData.sender, escrowData.amount);
    }
 
-
-
-
    function releaseFunds(address _receiver) external onlyOwner {
        EscrowData storage escrowData = escrows[_receiver];
        require(!escrowData.returned, "Funds have already been returned");
@@ -553,20 +550,13 @@ Once the `BatchTransaction` is called you will see something like this screen if
 
 **Fig 4-1** Batch Transfer
 This screen shows two pending transactions.
-
-
-
-
-
-
-
-
-
+![Batch Transfer](./images/batch-transfer.png)
 
 **index.js**
 The landing page of the UI should look like this 👇
 
 **Fig 4-2** Landing Page
+![Landing Page](./images/landing-page.png)
 
 The Above screen contain input fields and buttons to interact with the contract.
 
@@ -683,9 +673,6 @@ export default function Home() {
    </div>  
  )
 }
-
-
-
 ```
 ## Batch and Atomic Transactions
 
@@ -695,7 +682,7 @@ export default function Home() {
 Batch transactions refer to a technique where multiple transactions are grouped together into a single transaction and processed as a single unit on the Ethereum blockchain. This is done to optimize gas fees, which are the fees required to perform transactions on the Ethereum network, and reduce the overall cost of executing transactions.
 
 **Fig 5-1** Batch Transfer
-
+![Batch Transaction](./images/group%20transfer.png)
 
 ### Atomic Transactions
 
@@ -704,7 +691,7 @@ Atomic transactions on Celo are implemented using the concept of "revert on erro
 Atomic transactions on Celo can provide benefits such as transaction integrity, consistency, and composability.
 
 **Fig 5-2** Atomic Transfer
-
+![Atomic Transaction](./images/Atomic-transfer.png)
 
 ### When and Why you should Perform Batch Transactions
 
