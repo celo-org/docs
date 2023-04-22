@@ -270,7 +270,7 @@ This will start the development server and you can view the app by navigating to
 
 ## Conclusion
 
-In this tutorial, you learned how to create a Celo Dapp using Next.js, Web3.js, and Tailwind CSS. You learned how to set up a Web3 provider, a ContractKit instance, and how to use the `@celo/contractkit` library to access the user's Celo wallet address and to connect their wallet. You also learned how to fetch the user's CELO balance and display it on the page. With this knowledge, you can start building more advanced Celo Dapps that interact with the Celo smart contracts. Here is the [GitHub repository](https://github.com/Taiwrash/celoxnextjs] for the article
+In this tutorial, you learned how to create a Celo Dapp using Next.js, Web3.js, and Tailwind CSS. You learned how to set up a Web3 provider, a ContractKit instance, and how to use the `@celo/contractkit` library to access the user's Celo wallet address and to connect their wallet. You also learned how to fetch the user's CELO balance and display it on the page. With this knowledge, you can start building more advanced Celo Dapps that interact with the Celo smart contracts. Here is the [GitHub repository](https://github.com/Taiwrash/celoxnextjs) for the article
 
 ## About the Author
 
