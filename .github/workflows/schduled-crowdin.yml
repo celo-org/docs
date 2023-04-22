@@ -2,7 +2,7 @@ name: Download and Upload Crowdin
 
 on:
   schedule:
-    - cron: '42 23 * * *'
+    - cron: '12 0 * * *'
 
 jobs: # Test commit
   schduled-crowdin:
