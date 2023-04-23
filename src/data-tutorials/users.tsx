@@ -698,6 +698,13 @@ const Users: User[] = [
     website: "/tutorials?tags=composer",
     tags: ["favorite"],
   },
+   {
+    title: 'Creating a Smart Contract for Secure and Efficient Plant Seedling Sales on the Celo Blockchain',
+    description: 'This is a marketplace for seedlings on Celo using Solidity and OpenZeppelin. Users can add, view, and buy using cUSD.',
+    preview: require('./showcase/intermediate/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain',
+    tags: ['intermediate','celosage','celo'],
+  },
   {
     title: ' A Comprehensive Guide to Comparing Hardware and Software Wallets on Celo',
     description: 'This tutorial will explain the differences between software and hardware wallets, and how to choose the right one for you.',
