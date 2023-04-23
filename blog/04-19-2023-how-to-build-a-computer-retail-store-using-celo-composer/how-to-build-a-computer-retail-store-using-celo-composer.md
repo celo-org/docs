@@ -2276,3 +2276,6 @@ I am Dennis Kimathi, a UI/UX designer, full-stack developer, and blockchain enth
 As a blockchain enthusiast, I am constantly exploring and learning about the potential of this technology and how it can be applied in various industries. I believe that blockchain has the potential to revolutionize the way we do things, from finance to healthcare and beyond. Its ability to provide decentralized, secure, and transparent systems has the potential to bring about significant changes that will benefit society.
 
 Fun fact about me, i am into archeoastronomy.
+
+Catch me on twitter [@mbiebuz](https://twitter.com/mbiebuz).
+Checkout my [Github profile](https://github.com/dennohkim).
