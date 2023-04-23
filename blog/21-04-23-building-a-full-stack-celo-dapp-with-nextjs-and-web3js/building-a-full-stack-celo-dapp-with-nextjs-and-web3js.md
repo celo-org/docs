@@ -124,7 +124,9 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
   web3 = new Web3(window.ethereum);
 } else {
   // We are on the server *OR* the user is not running metamask.
-  const provider = new Web3.providers.HttpProvider(process.env.NEXT_PUBLIC_RPC_URL);
+  const provider = new Web3.providers.HttpProvider(
+    process.env.NEXT_PUBLIC_RPC_URL
+  );
   web3 = new Web3(provider);
 }
 export default web3;
@@ -142,7 +144,7 @@ This code sets up a Web3 instance that can be used to interact with the Celo blo
   For this tutorial, we will stick with the `@celo/contractkit` package.
 
 - Step 2: Install the package
-  Next, install` @celo/contractkit` by running the below command in your terminal:
+  Next, install`@celo/contractkit` by running the below command in your terminal:
 
 ```bash
 npm install @celo/contractkit
