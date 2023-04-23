@@ -13,7 +13,6 @@ slug: /tutorials/building-a-farmers-market-on-celo
 
 ![header](../../src/data-tutorials/showcase/intermediate/building-a-farmers-market-on-celo.png)
 
-
 ## Introduction
 
 Aloha Readers! Welcome to another by yours truly. In this tutorial, you will be guided on how to build a farmers marketplace where farmers can sell their produce.
@@ -42,13 +41,13 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 
 ## Smart Contract Development
 
-Those who have viewed my past instructional materials would recognize that I am an advocate of using Remix to compose intelligent contracts. Remix is an online Integrated Development Environment (IDE) that empowers programmers to create, evaluate, and release intelligent contracts on the Celo blockchain.   
+Those who have viewed my past instructional materials would recognize that I am an advocate of using Remix to compose intelligent contracts. Remix is an online Integrated Development Environment (IDE) that empowers programmers to create, evaluate, and release intelligent contracts on the Celo blockchain.
 
 On Remix, We would create a new workspace and then a new file which we would name `Farmscribe.sol`
 
 Starting in the first line, you include a statement that specifies the license under which the code is being released.
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.0 <0.9.0;
 ```
@@ -95,6 +94,7 @@ struct Product{
     }
     address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 ```
+
 You define a struct called `Product` which has several properties that describe a product. These properties include:
 
 - `owner` which is an address variable that is payable, meaning it can receive payments in cryptocurrency.
@@ -112,6 +112,7 @@ Up next, you would design a way for users to create and manage a list of product
     mapping(uint => Product) products;
     uint productLength = 0;
 ```
+
 You would define a mapping called `products` which maps unsigned integer keys to values of type `Product`. This means that you can use a unique unsigned integer value to retrieve a corresponding `Product` struct.
 
 Additionally, the code initializes a variable called `productLength` with a value of 0. This variable is used to keep track of the number of products that have been added to the `products` mapping. As new products are added to the mapping, the `productLength` variable is incremented to reflect the new number of products.
@@ -179,7 +180,7 @@ The function first retrieves the `Product` struct stored at the specified index 
 - `quantity` - the quantity of the product available for sale, stored as an unsigned integer.
 - `price` - the price of the product, stored as an unsigned integer.
 
-Up next, we would need a mechanism for the owner of a product to update the quantity of that product. This is a useful feature in a decentralized marketplace, where product quantities may change over time due to various factors such as demand and supply. 
+Up next, we would need a mechanism for the owner of a product to update the quantity of that product. This is a useful feature in a decentralized marketplace, where product quantities may change over time due to various factors such as demand and supply.
 
 ```solidity
     function editQuantity(uint _index, uint _quantity)public{
@@ -187,7 +188,8 @@ Up next, we would need a mechanism for the owner of a product to update the quan
         products[_index].quantity = _quantity;
     }
 ```
-The function takes in two parameters: an unsigned integer called `_index` that represents the index of the product in the `products` mapping, and an unsigned integer called "_quantity" that represents the new quantity to set for the product.
+
+The function takes in two parameters: an unsigned integer called `_index` that represents the index of the product in the `products` mapping, and an unsigned integer called "\_quantity" that represents the new quantity to set for the product.
 
 The function first checks whether the caller of the function (i.e. the user who is attempting to edit the quantity of the product) is the owner of the product stored at the specified index in the `products` mapping. This is done using the `require` statement, which throws an exception with the given error message if the condition is not met. In this case, if the caller is not the owner of the product, the function will throw an exception and stop executing.
 
@@ -224,7 +226,7 @@ This function is useful because it provides transparency and visibility into the
 Because the function is marked as `public` and does not modify the state of the contract, it can be called by anyone on the blockchain network without incurring any gas fees. Additionally, because the function returns a value, it can be used in other functions or contracts to retrieve the current length of the `products` mapping.
 
 ```solidity
-// SPDX-License-Identifier: MIT  
+// SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 
@@ -333,7 +335,7 @@ Next up, on remix, download and activate the celo plugin from the plugin manager
 
 ## Conclusion
 
-Congratulations on the completion of this tutorial, In summary, we learnt how to write a smart contract for a Farmer marketplace where products can be added, listed, and sold using a stablecoin called cUSD. The contract has several functions, including adding products to the marketplace, retrieving product details, editing product quantity, confirming product purchases, and getting the total number of products in the marketplace. 
+Congratulations on the completion of this tutorial, In summary, we learnt how to write a smart contract for a Farmer marketplace where products can be added, listed, and sold using a stablecoin called cUSD. The contract has several functions, including adding products to the marketplace, retrieving product details, editing product quantity, confirming product purchases, and getting the total number of products in the marketplace.
 
 ## Next steps
 
@@ -345,4 +347,3 @@ You can use this [link](https://github.com/dahnny/farmer) for reference
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin @ Daniel Ogbuti
 
 See you soon!
-

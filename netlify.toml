@@ -4,7 +4,7 @@
 # All deploys from the main repository branch
 # will inherit these settings.
 [context.production]
-  command = "yarn crowdin:sync; yarn build;"
+  command = "yarn build;"
 
 # Deploy Preview context:
 # All deploys generated from a pull/merge request
