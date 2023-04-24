@@ -3173,6 +3173,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Using Clones to build and cheaply deploy contracts on CELO at scale',
+    description: 'This tutorial introduces the clones (minmal proxy) approach to cheaply deploy contracts on CELO.',
+    preview: require('./showcase/advanced/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale.png'),
+    website: 'blog/tutorials/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
