@@ -3016,6 +3016,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {
+    title: 'Effective Smart Contract Testing using Chai',
+    description: 'This tutorial guides you to ensure that your code is robust and secure. One way to achieve this is by writing comprehensive tests for your contracts functionality',
+    preview: require('./showcase/intermediate/effective-smart-contract-testing-using-chai.png'),
+    website: 'blog/tutorials/effective-smart-contract-testing-using-chai',
+    tags: ['celosage', 'intermediate', 'chai', 'smartcontract'], 
+  },
+  {
     title: 'Easily Deploy your Celo DApp to Cloudflare Pages',
     description: 'Learn How to Deploy and Publish your Celo DApp Cloudflare Pages with Ease',
     preview: require('./showcase/beginner/easily-deploy-your-celo-dapp-to-cloudflare-pages.png'),

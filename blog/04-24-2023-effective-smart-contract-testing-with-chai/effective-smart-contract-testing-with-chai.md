@@ -1,5 +1,5 @@
 ---
-title: Effective Smart Contract Testing with Chai
+title: Effective Smart Contract Testing using Chai
 description: This tutorial guides you to ensure that your code is robust and secure. One way to achieve this is by writing comprehensive tests for your contract's functionality
 authors:
   - name: Daniel Ogbuti
@@ -10,6 +10,9 @@ tags: ["celo", "intermediate", "celosage", "chai"]
 hide_table_of_contents: true
 slug: /tutorials/effective-smart-contract-testing-with-chai
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/effective-smart-contract-testing-using-chai.png)
+
 
 ## Introduction
 
