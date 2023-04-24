@@ -934,6 +934,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
   },
   {
+    title: 'How to build a decentralized event invitation system on the Celo blockchain using Solidity and Javascript',
+    description: 'Learn how to build a decentralized event invitation system on the Celo blockchain using Solidity and Javascript',
+    preview: require('./showcase/intermediate/Build_an_Events_Management_Application_on_Celo.png'),
+    website: 'blog/tutorials/how-to-build-a-decentralized-event-invitation-system-on-the-Celo-blockchain-using-solidity-and-javascript',
+    tags: ['celosage', 'celo', 'solidity', 'html', 'remix', 'smartcontract', 'intermediate', 'javascript'],
+  },
+  {
     title: 'Interacting with the Celo Blockchain Using Web3.js A Beginners Guide - A Voting App.',
     description: 'This tutorial teaches how to interact with smart contracts using web3.js simplified by Celo Contract Kit',
     preview: require('./showcase/beginner/interacting-with-the-Celo-Blockchain-Using-Web3js-A-Beginners-Guide-A-Voting-App.png'),
