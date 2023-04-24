@@ -2141,6 +2141,13 @@ const Users: User[] = [
     website: 'https://learn.figment.io/tutorials/redeploy-ethereum-dapps-on-celo',
     tags: ['beginner', 'figment', 'truffle', 'javascript', 'cli'],
   },
+   {
+    title: 'How to Create a Blockchain Simulation using Python and FastAPI',
+    description: 'This is an algorithm based tutorial that will teach you how to build a celo blockchain stimulation.',
+    preview: require('./showcase/intermediate/blockchain-simulation-with-python.png'),
+    website: 'https://learn.figment.io/tutorials/how-to-create-a-blockchain-simulation-using-python-and-fastapi',
+    tags: ['intermediate', 'celesage', 'celo'],
+  },
   {
     title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
     description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
