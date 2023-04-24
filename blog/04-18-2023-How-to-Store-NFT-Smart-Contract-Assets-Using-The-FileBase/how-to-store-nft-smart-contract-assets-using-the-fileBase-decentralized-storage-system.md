@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/johnfawole.png
 tags: ["solidity", "smartcontract", "celosage", "celo"]
 hide_table_of_contents: true
-slug: /tutorials/how-to-store-NFT-smart-contract-assets-using-the-fileBase-decentralized-storage-system
+slug: /tutorials/how-to-store-nft-smart-contract-assets-using-the-fileBase-decentralized-storage-system
 ---
 
 ![filebase-cover](../../src/data-tutorials/showcase/intermediate/filebase-cover.png)
