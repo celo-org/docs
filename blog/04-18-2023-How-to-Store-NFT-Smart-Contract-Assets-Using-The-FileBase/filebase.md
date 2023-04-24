@@ -6,13 +6,12 @@ authors:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smartcontract', 'celosage', 'celo']
+tags: ["solidity", "smartcontract", "celosage", "celo"]
 hide_table_of_contents: true
 slug: /tutorials/how-to-store-NFT-smart-contract-assets-using-the-fileBase-decentralized-storage-system
 ---
 
 ![filebase-cover](../../src/data-tutorials/showcase/intermediate/filebase-cover.png)
-
 
 ## Introduction
 
@@ -20,7 +19,7 @@ One of the objectives of web3 is complete decentralization. Users of different w
 
 The centralization of information is generally associated with the loss or compromise of information. If Google data stations were to be experiencing downtime, causing Google Drive and other products to be unavailable, users would be unable to access their data temporarily or permanently.
 
-Decentralized storage is no longer a concept but a reality. It guarantees the safety and security of the information stored. The possibilities of this kind of technological advancement are endless. Decentralized storage is especially useful for Non-Fungible Tokens (NFTs), which is the focus of this guide. 
+Decentralized storage is no longer a concept but a reality. It guarantees the safety and security of the information stored. The possibilities of this kind of technological advancement are endless. Decentralized storage is especially useful for Non-Fungible Tokens (NFTs), which is the focus of this guide.
 
 We will build and deploy an NFT smart contract and safeguard its assets with FileBase, a decentralized storage provider.
 
@@ -38,24 +37,24 @@ IPFS is a better option than traditional file storage systems because the files 
 
 ## FileBase, A Reliable Web3 Storage System
 
-FileBase is an IPFS pinning service. It allows you to pin files to IPFS in a secure, redundant, and performant manner across diverse geographic locations. IPFS works by breaking down information into small pieces spread across different geographical locations such that if a piece of the information is lost, it can be reconstructed. This process is called data sharding. 
+FileBase is an IPFS pinning service. It allows you to pin files to IPFS in a secure, redundant, and performant manner across diverse geographic locations. IPFS works by breaking down information into small pieces spread across different geographical locations such that if a piece of the information is lost, it can be reconstructed. This process is called data sharding.
 
 One of the benefits of FileBase is that it provides you with 3x redundancy, which isn’t provided by many decentralized storage systems. Your information is safe, secure, and globally available.
 
 ## Storing the NFTs on FileBase
 
-[FileBase](http://filebase.com) has different use cases for NFTs. You can use FileBase to store the NFTs bought on a marketplace to prevent any mishaps arising from a hack or downtime, causing users to lose their NFT. 
+[FileBase](http://filebase.com) has different use cases for NFTs. You can use FileBase to store the NFTs bought on a marketplace to prevent any mishaps arising from a hack or downtime, causing users to lose their NFT.
 This guide explains how to build and deploy your NFTs and safeguard them with FileBase.
 
 ## Building the NFT Smart Contract
 
-We will be building a simple NFT contract using the ERC-721 standard. This contract enables the owner to mint a proof of participation NFT to participants of a web3 hackathon. After completing the competition, an expensive NFT is sent to the participants’ addresses. 
+We will be building a simple NFT contract using the ERC-721 standard. This contract enables the owner to mint a proof of participation NFT to participants of a web3 hackathon. After completing the competition, an expensive NFT is sent to the participants’ addresses.
 
-This contract also allows the contract owner to pass in the URI of the special NFT, which would be the URL to the NFT image saved on FileBase. 
+This contract also allows the contract owner to pass in the URI of the special NFT, which would be the URL to the NFT image saved on FileBase.
 
 This section explains the workings of the contract, while the next section explains how to store the image of the NFT and how to mint the NFTs using the URL generated on FileBase.
 
-``` solidity
+```solidity
 //SPDX-License-Identifier:UNLICENSED
 pragma solidity ^0.8.0;
 
@@ -83,11 +82,11 @@ contract POAPContract is ERC721URIStorage{
         _setTokenURI(newItemId, tokenURI);
         _tokenIds.increment();
     }
-    
+
 }
 ```
 
-It is assumed that the developer is an intermediate-level developer and is familiar with fundamental concepts of smart contract development. 
+It is assumed that the developer is an intermediate-level developer and is familiar with fundamental concepts of smart contract development.
 
 ## Steps for Building the NFT Smart Contract
 
@@ -102,6 +101,7 @@ Finally, create the awardAttendee function, which takes in the address of the at
 We will hold off on deploying this contract till we completely figure out how to work with FileBase.
 
 ## Storing the NFT on FileBase
+
 To store any NFT on FileBase, you must register either a free or a paid account on the platform. A free FileBase account will do just fine for this tutorial. Visit their [sign-up page](http://filebase.com/signup) to register. Fill in the information required, including your first and last name, email address, and password.
 
 ![filebase1](https://user-images.githubusercontent.com/105144630/232922583-4f3ebe6e-5ec2-4bc0-a27b-80bb71b28e6f.png)
@@ -110,12 +110,11 @@ If your verification was successful, you will be prompted to login and your dash
 
 ![filebase2](https://user-images.githubusercontent.com/105144630/232922652-19d92393-534a-4da1-8ea9-a6c4d68a82d2.png)
 
-Go to buckets on the left side of the screen. There are 0 buckets since it is a new account. Click on Create Bucket. 
+Go to buckets on the left side of the screen. There are 0 buckets since it is a new account. Click on Create Bucket.
 
-A modal should pop up asking for the bucket name and the storage network. Since the Smart contract is named POAP, I have decided to use poap-guide as the bucket name and IPFS as the storage network. We should now have a new bucket in the dashboard. 
+A modal should pop up asking for the bucket name and the storage network. Since the Smart contract is named POAP, I have decided to use poap-guide as the bucket name and IPFS as the storage network. We should now have a new bucket in the dashboard.
 
-
-Click on the bucket name, and begin uploading the files using the upload button provided on the interface. Once uploaded, click on one of the objects/images, and you should be taken to the object overview, where you will see a couple of links, including the IPFS gateway URL, which can be used to access the NFT image. 
+Click on the bucket name, and begin uploading the files using the upload button provided on the interface. Once uploaded, click on one of the objects/images, and you should be taken to the object overview, where you will see a couple of links, including the IPFS gateway URL, which can be used to access the NFT image.
 
 ![filebase4](https://user-images.githubusercontent.com/105144630/232922848-dc5f7b8b-307a-4af1-8a79-eb14c60c49b0.png)
 
