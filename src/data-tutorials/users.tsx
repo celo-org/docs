@@ -699,7 +699,7 @@ const Users: User[] = [
     title: "How to Store NFT Smart Contract Assets Using The FileBase Decentralized Storage System",
     description: "This article gives a comprehensive overview of decentralized storage solutions. It contains a clear walk-through of how to store digital assets on the filebase storage solution.",
     preview: require('./showcase/intermediate/filebase-cover.png'),
-    website: '/tutorials/how-to-store-nft-smart-contract-assets-using-the-fileBase-decentralized-storage-system',
+    website: '/blog/tutorials/how-to-store-nft-smart-contract-assets-using-the-fileBase-decentralized-storage-system',
     tags: ['intermediate', 'solidity', 'smartcontract', 'celosage', 'celo'],
   },
   {
