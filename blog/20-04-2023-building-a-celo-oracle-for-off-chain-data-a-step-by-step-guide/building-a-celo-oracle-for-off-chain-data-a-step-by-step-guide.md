@@ -42,7 +42,7 @@ First, let's ensure that you have all the required tools and libraries installed
    npm install -g truffle
    ```
 
-3) Install the Celo SDK by running the following command:
+3. Install the Celo SDK by running the following command:
    ```bash
    npm install -g @celo/celocli
    ```
@@ -50,6 +50,7 @@ First, let's ensure that you have all the required tools and libraries installed
 ### Creating a New Project Folder and Initializing It
 
 1. Create a new directory for your project and navigate to it in your terminal:
+
    ```bash
    mkdir celo-oracle
    cd celo-oracle
@@ -74,7 +75,7 @@ This will create a new Truffle project with the following directory structure:
 2. Open the `Oracle.sol` file in your code editor and write the following Solidity code:
 
 
-    ```solidity
+  ```solidity
     //SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -134,7 +135,7 @@ This will create a new Truffle project with the following directory structure:
             return request.result;
         }
     }
-    ```
+  ```
 
 This Oracle smart contract uses OpenZeppelin's `Ownable` contract to restrict certain functions to the contract owner (i.e., the Oracle provider) and the `Counters` library to manage request IDs. The contract has the following features:
 
@@ -150,56 +151,57 @@ The contract includes the `createRequest` function for users to submit requests,
 1. In the `migrations` directory, create a new file named `2_deploy_oracle.js` and add the following code to deploy the Oracle contract:
 
 
-    ```javascript
-    const Oracle = artifacts.require("Oracle");
+      ```javascript
+      const Oracle = artifacts.require("Oracle");
 
-    module.exports = function (deployer) {
-      deployer.deploy(Oracle);
-    };
-    ```
+      module.exports = function (deployer) {
+        deployer.deploy(Oracle);
+      };
+      ```
 
 2. Update the `truffle-config.js` file to include the Celo network configuration:
 
-   ```javascript
-   const ContractKit = require("@celo/contractkit");
-   const Web3 = require("web3");
+    ```javascript
+    const ContractKit = require("@celo/contractkit");
+    const Web3 = require("web3");
 
-   const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
-   const kit = ContractKit.newKitFromWeb3(web3);
+    const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
+    const kit = ContractKit.newKitFromWeb3(web3);
 
-   // Add your private key and account address
-   const privateKey = "your_private_key";
-   const accountAddress = "your_account_address";
+    // Add your private key and account address
+    const privateKey = "your_private_key";
+    const accountAddress = "your_account_address";
 
-   kit.addAccount(privateKey);
+    kit.addAccount(privateKey);
 
-   module.exports = {
-     networks: {
-       development: { host: "127.0.0.1", port: 7545, network_id: "*" },
-       alfajores: {
-         provider: kit.connection.web3.currentProvider,
-         network_id: 44787,
-         from: accountAddress,
-         gas: 6721975,
-         gasPrice: 20000000000,
-       },
-     },
-     compilers: {
-       solc: {
-         version: "0.8.0",
-       },
-     },
-   };
+    module.exports = {
+      networks: {
+        development: { host: "127.0.0.1", port: 7545, network_id: "*" },
+        alfajores: {
+          provider: kit.connection.web3.currentProvider,
+          network_id: 44787,
+          from: accountAddress,
+          gas: 6721975,
+          gasPrice: 20000000000,
+        },
+      },
+      compilers: {
+        solc: {
+          version: "0.8.0",
+        },
+      },
+    };
+
    ```
 
 3. Replace `your_private_key` and `your_account_address` with your private key and account address, respectively.
 4. Now, compile the smart contract and deploy it to the Celo Alfajores test network:
 
 
-    ```bash
-    truffle compile
-    truffle migrate --network alfajores
-    ```
+      ```bash
+      truffle compile
+      truffle migrate --network alfajores
+      ```
 
 You should see something like this:
 
@@ -212,49 +214,49 @@ Take note of the deployed Oracle contract address for later use.
 1. Create a new file called `index.js` in the `server` folder and write the following JavaScript code to set up the off-chain server:
 
 
-    ```javascript
-    const express = require("express");
-    const axios = require("axios");
-    const Web3 = require("web3");
-    const ContractKit = require("@celo/contractkit");
-    const { response } = require("express");
+      ```javascript
+      const express = require("express");
+      const axios = require("axios");
+      const Web3 = require("web3");
+      const ContractKit = require("@celo/contractkit");
+      const { response } = require("express");
 
-    const privateKey = "your_private_key";
-    const accountAddress = "your_account_address";
-    const oracleAddress = "deployed_oracle_contract_address";
-    const alfajoresRPC = "https://alfajores-forno.celo-testnet.org";
-    const web3 = new Web3(alfajoresRPC);
-    const kit = ContractKit.newKitFromWeb3(web3);
-    kit.addAccount(privateKey);
+      const privateKey = "your_private_key";
+      const accountAddress = "your_account_address";
+      const oracleAddress = "deployed_oracle_contract_address";
+      const alfajoresRPC = "https://alfajores-forno.celo-testnet.org";
+      const web3 = new Web3(alfajoresRPC);
+      const kit = ContractKit.newKitFromWeb3(web3);
+      kit.addAccount(privateKey);
 
-    const Oracle = require("../build/contracts/Oracle.json");
-    const oracleContract = new kit.web3.eth.Contract(Oracle.abi, oracleAddress);
+      const Oracle = require("../build/contracts/Oracle.json");
+      const oracleContract = new kit.web3.eth.Contract(Oracle.abi, oracleAddress);
 
-    const app = express();
-    app.use(express.json());
+      const app = express();
+      app.use(express.json());
 
-    app.post("/submit-data", async (req, res) => {
-      const { requestId, url, path } = req.body;
+      app.post("/submit-data", async (req, res) => {
+        const { requestId, url, path } = req.body;
 
-      try {
-        const response = await axios.get(url);
-        const result = response.data[path];
+        try {
+          const response = await axios.get(url);
+          const result = response.data[path];
 
-        const tx = await oracleContract.methods
-          .fulfillRequest(requestId, result)
-          .send({ from: accountAddress });
+          const tx = await oracleContract.methods
+            .fulfillRequest(requestId, result)
+            .send({ from: accountAddress });
 
-        res.send({ status: "success", message: "Data submitted successfully", tx });
-      } catch (error) {
-        res.status(500).send({ status: "error", message: "Error submitting data", error });
-      }
-    });
+          res.send({ status: "success", message: "Data submitted successfully", tx });
+        } catch (error) {
+          res.status(500).send({ status: "error", message: "Error submitting data", error });
+        }
+      });
 
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-      console.log(`Server is listening on port ${PORT}`);
-    });
-    ```
+      const PORT = process.env.PORT || 3000;
+      app.listen(PORT, () => {
+        console.log(`Server is listening on port ${PORT}`);
+      });
+      ```
 
 3. Make sure to replace `your_private_key`, `your_account_address`, and `deployed_oracle_contract_address` with your own private key, account address, and the deployed Oracle contract address, respectively.
 
@@ -267,47 +269,47 @@ In your `index.js` file, add a new function to fetch data from a RESTful API, su
 - Add the OpenWeatherMap API key to your `index.js` file:
 
 
-    ```javascript
-    const OPEN_WEATHER_API_KEY = "your_openweathermap_api_key";
-    ```
+      ```javascript
+      const OPEN_WEATHER_API_KEY = "your_openweathermap_api_key";
+      ```
 
 - Replace `your_openweathermap_api_key` with your own API key.
 - Create a new function called `fetchWeatherData` to fetch weather data for a given city:
 
 
-    ```javascript
-    async function fetchWeatherData(city) {
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`;
-      const response = await axios.get(url);
-      const weatherData = response.data;
+      ```javascript
+      async function fetchWeatherData(city) {
+        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}`;
+        const response = await axios.get(url);
+        const weatherData = response.data;
 
-      return weatherData;
-    }
-    ```
+        return weatherData;
+      }
+      ```
 
 - In the `/submit-data` endpoint, call the `fetchWeatherData` function and process the fetched data before submitting it to the Oracle contract. For example, you can submit the temperature in Celsius:
 
 
-    ```javascript
-    app.post("/submit-data", async (req, res) => {
-      const { requestId, city, path } = req.body;
+      ```javascript
+      app.post("/submit-data", async (req, res) => {
+        const { requestId, city, path } = req.body;
 
-      try {
-        const weatherData = await fetchWeatherData(city);
-        const kelvinTemperature = weatherData.main.temp;
-        const celsiusTemperature = kelvinTemperature - 273.15;
-        const result = Math.round(celsiusTemperature * 100) / 100; // Round to 2 decimal places
+        try {
+          const weatherData = await fetchWeatherData(city);
+          const kelvinTemperature = weatherData.main.temp;
+          const celsiusTemperature = kelvinTemperature - 273.15;
+          const result = Math.round(celsiusTemperature * 100) / 100; // Round to 2 decimal places
 
-        const tx = await oracleContract.methods
-          .fulfillRequest(requestId, result)
-          .send({ from: accountAddress });
+          const tx = await oracleContract.methods
+            .fulfillRequest(requestId, result)
+            .send({ from: accountAddress });
 
-        res.send({ status: "success", message: "Data submitted successfully", tx });
-      } catch (error) {
-        res.status(500).send({ status: "error", message: "Error submitting data", error });
-      }
-    });
-    ```
+          res.send({ status: "success", message: "Data submitted successfully", tx });
+        } catch (error) {
+          res.status(500).send({ status: "error", message: "Error submitting data", error });
+        }
+      });
+      ```
 
 With these changes, the off-chain server now fetches weather data for a given city using the OpenWeatherMap API, processes the data to extract the temperature in Celsius, and submits the temperature to the Oracle smart contract. The `/submit-data` endpoint expects a request with the request ID, the city name, and the path to the desired data.
 
@@ -450,25 +452,25 @@ For this tutorial, we will be using Postman, here are the steps;
 7. Copy and paste the following JSON content into the text area:
 
 
-    ```json
-    {
-      "requestId": 1,
-      "city": "San Francisco",
-      "path": "main.temp"
-    }
-    ```
+      ```json
+      {
+        "requestId": 1,
+        "city": "San Francisco",
+        "path": "main.temp"
+      }
+      ```
 
 8. Click the "Send" button to send the POST request to the `/submit-data` endpoint.
 
 If the request is successful, you should receive a response similar to this:
 
-```json
-{
-  "requestId": 1,
-  "city": "San Francisco",
-  "path": "main.temp"
-}
-```
+  ```json
+  {
+    "requestId": 1,
+    "city": "San Francisco",
+    "path": "main.temp"
+  }
+  ```
 
 This means that the off-chain server has fetched the weather data for San Francisco and submitted it to the Oracle smart contract on the Celo blockchain.
 
@@ -489,23 +491,20 @@ Here's how to do it:
 - In your server code (index.js), update the `submitDataToOracle` function call:
 
 ```javascript
- // Convert the floating-point temperature to an integer
- const temperatureInt = Math.round(celsiusTemperature * 100);
+// Convert the floating-point temperature to an integer
+const temperatureInt = Math.round(celsiusTemperature * 100);
 
- // Submit the integer temperature value to the Oracle smart contract
- const tx = await submitDataToOracle(requestId, temperatureInt);
- ```
-
+// Submit the integer temperature value to the Oracle smart contract
+const tx = await submitDataToOracle(requestId, temperatureInt);
+```
 
 - In your Oracle smart contract (Oracle.sol), update the `fulfillRequest` function's `result` parameter type to `uint256`:
 
-
- ```solidity
- function fulfillRequest(uint256 requestId, uint256 result) external onlyOwner {
-     // ...
- }
- ```
-
+```solidity
+function fulfillRequest(uint256 requestId, uint256 result) external onlyOwner {
+    // ...
+}
+```
 
 Now, the submitted temperature values will be stored as integers in the smart contract. When you need to retrieve the original floating-point value, divide the integer by the same factor you used when submitting the data (e.g., 100). You can do this in your frontend code or create a new function in your Oracle smart contract to return the floating-point value.
 
@@ -514,50 +513,50 @@ If the request is successful, you should receive a response similar to this:
 
 ```json
 {
- "status": "success",
- "message": "Data submitted successfully",
- "tx": {
-     "blockHash": "0x199b76ca7dd692fb4c8b8f1e475f5d1d8875c13613bb7c749f1948e077ff346d",
-     "blockNumber": 17309238,
-     "contractAddress": null,
-     "cumulativeGasUsed": 66645,
-     "effectiveGasPrice": 25000000000,
-     "from": "0x76ff85179a333d057d855ce6a3b6690cf28effc2",
-     "gasUsed": 66645,
-     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000001000000000000004000000000000000000000000000000040000000008000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000010000000000000000000040000000000000000000000000000000000000000000000000000000000000000000",
-     "status": true,
-     "to": "0x25f726f284de4fe1a134a7d012dc72de8e301b05",
-     "transactionHash": "0x318ee919b64b66bb20ca2fe783dc56985c560ac40afc85934280d94a38558992",
-     "transactionIndex": 0,
-     "type": "0x0",
-     "events": {
-         "RequestFulfilled": {
-             "address": "0x25F726F284de4FE1a134a7d012dC72dE8E301B05",
-             "blockNumber": 17309238,
-             "transactionHash": "0x318ee919b64b66bb20ca2fe783dc56985c560ac40afc85934280d94a38558992",
-             "transactionIndex": 0,
-             "blockHash": "0x199b76ca7dd692fb4c8b8f1e475f5d1d8875c13613bb7c749f1948e077ff346d",
-             "logIndex": 0,
-             "removed": false,
-             "id": "log_ae314c99",
-             "returnValues": {
-                 "0": "1",
-                 "1": "822",
-                 "requestId": "1",
-                 "result": "822"
-             },
-             "event": "RequestFulfilled",
-             "signature": "0x5c69e7026b653d8606b5613bb00fd8c4b0504b1cbe8db600c406faac180924d5",
-             "raw": {
-                 "data": "0x0000000000000000000000000000000000000000000000000000000000000336",
-                 "topics": [
-                     "0x5c69e7026b653d8606b5613bb00fd8c4b0504b1cbe8db600c406faac180924d5",
-                     "0x0000000000000000000000000000000000000000000000000000000000000001"
-                 ]
-             }
-         }
-     }
- }
+  "status": "success",
+  "message": "Data submitted successfully",
+  "tx": {
+    "blockHash": "0x199b76ca7dd692fb4c8b8f1e475f5d1d8875c13613bb7c749f1948e077ff346d",
+    "blockNumber": 17309238,
+    "contractAddress": null,
+    "cumulativeGasUsed": 66645,
+    "effectiveGasPrice": 25000000000,
+    "from": "0x76ff85179a333d057d855ce6a3b6690cf28effc2",
+    "gasUsed": 66645,
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000001000000000000004000000000000000000000000000000040000000008000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000010000000000000000000040000000000000000000000000000000000000000000000000000000000000000000",
+    "status": true,
+    "to": "0x25f726f284de4fe1a134a7d012dc72de8e301b05",
+    "transactionHash": "0x318ee919b64b66bb20ca2fe783dc56985c560ac40afc85934280d94a38558992",
+    "transactionIndex": 0,
+    "type": "0x0",
+    "events": {
+      "RequestFulfilled": {
+        "address": "0x25F726F284de4FE1a134a7d012dC72dE8E301B05",
+        "blockNumber": 17309238,
+        "transactionHash": "0x318ee919b64b66bb20ca2fe783dc56985c560ac40afc85934280d94a38558992",
+        "transactionIndex": 0,
+        "blockHash": "0x199b76ca7dd692fb4c8b8f1e475f5d1d8875c13613bb7c749f1948e077ff346d",
+        "logIndex": 0,
+        "removed": false,
+        "id": "log_ae314c99",
+        "returnValues": {
+          "0": "1",
+          "1": "822",
+          "requestId": "1",
+          "result": "822"
+        },
+        "event": "RequestFulfilled",
+        "signature": "0x5c69e7026b653d8606b5613bb00fd8c4b0504b1cbe8db600c406faac180924d5",
+        "raw": {
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000336",
+          "topics": [
+            "0x5c69e7026b653d8606b5613bb00fd8c4b0504b1cbe8db600c406faac180924d5",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ]
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -575,40 +574,38 @@ To interact with the Oracle smart contract and call the `getRequest` function us
 
 1. First, make sure you have `@celo/contractkit` installed:
 
- ```bash
- npm install @celo/contractkit
- ```
-
+```bash
+npm install @celo/contractkit
+```
 
 2. Create a new JavaScript file called `interact.js`:
- ```bash
- touch interact.js
- ```
+
+```bash
+touch interact.js
+```
 
 3. Open `interact.js` and paste the following code:
 
+```javascript
+const Web3 = require("web3");
+const ContractKit = require("@celo/contractkit");
+const Oracle = require("./build/contracts/Oracle.json");
 
- ```javascript
- const Web3 = require("web3");
- const ContractKit = require("@celo/contractkit");
- const Oracle = require("./build/contracts/Oracle.json");
+const alfajoresRPC = "https://alfajores-forno.celo-testnet.org";
+const web3 = new Web3(alfajoresRPC);
+const kit = ContractKit.newKitFromWeb3(web3);
 
- const alfajoresRPC = "https://alfajores-forno.celo-testnet.org";
- const web3 = new Web3(alfajoresRPC);
- const kit = ContractKit.newKitFromWeb3(web3);
+const oracleAddress = "0x25F726F284de4FE1a134a7d012dC72dE8E301B05";
+const oracleContract = new kit.web3.eth.Contract(Oracle.abi, oracleAddress);
 
- const oracleAddress = "0x25F726F284de4FE1a134a7d012dC72dE8E301B05";
- const oracleContract = new kit.web3.eth.Contract(Oracle.abi, oracleAddress);
+async function getRequest(requestId) {
+  const request = await oracleContract.methods.getRequest(requestId).call();
+  console.log(request);
+}
 
- async function getRequest(requestId) {
-   const request = await oracleContract.methods.getRequest(requestId).call();
-   console.log(request);
- }
-
- const requestId = 1; // Replace this with the requestId you want to query
- getRequest(requestId);
- ```
-
+const requestId = 1; // Replace this with the requestId you want to query
+getRequest(requestId);
+```
 
 Make sure to replace the `oracleAddress` with the address of your deployed Oracle contract.
 
