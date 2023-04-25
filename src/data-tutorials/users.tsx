@@ -3144,6 +3144,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Create an NFT with a delayed reveal on Celo',
+    description: 'In This tutorial we will look at how to implement a simple NFT Contract that implements an NFT reveal in solidity. We will deploy the contract to the Celo blockchain on remix and show how to perform the reveal on remix',
+    preview: require('./showcase/intermediate/create-an-nft-with-a-delayed-reveal-on-celo.png'),
+    website: 'blog/tutorials/create-an-nft-with-a-delayed-reveal-on-celo',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'nft', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
