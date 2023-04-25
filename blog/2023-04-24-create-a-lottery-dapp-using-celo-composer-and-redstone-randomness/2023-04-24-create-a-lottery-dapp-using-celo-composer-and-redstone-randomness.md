@@ -685,7 +685,7 @@ Congratulations! You should be able to create a dApp that involves use of random
 A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to call myself VueDetective. Connect with me on LinkedIn and Github
 
 ## References​
-[Redstone Randomness](https://docs.redstone.finance/docs/smart-contract-devs/randomness)
+[How to use Redstone Randomness](https://docs.redstone.finance/docs/smart-contract-devs/randomness)
  
 
 
