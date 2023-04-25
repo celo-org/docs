@@ -875,6 +875,13 @@ const Users: User[] = [
     tags: ['celo', 'celosage', 'crowdfunding', 'intermediate', 'solidity', 'smartcontract'],
   },
   {
+    title: 'Unveilng the Power of Celo Interoperability Solutions',
+    description: "In this article, we'll discuss a comprehensive breakdown of bridges and cross-chain transactions.",
+    preview: require('./showcase/intermediate/celo-interoperability-solutions.png'),
+    website: 'blog/tutorials/Unveilng-the-Power-of-Celo-Interoperability-Solutions',
+    tags: ['celo','celosage','intermediate','solidity'],
+  },
+  {
     title: 'Introducing Celo Sage',
     description: 'In Solidity, reentrancy describes a scenario in which a contract calls a second contract. The second contract then calls the first contract while the first contract is still running.',
     preview: require('./showcase/intermediate/preventing-vulnerabilities-in-solidity-reentrancy-attack.png'),
