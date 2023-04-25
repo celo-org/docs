@@ -24,15 +24,17 @@ In this video, we will walk through the process of deploying a smart contract on
 
 ## Video
 
-[![How to deploy a smart contract to the Celo Testnet using Hardhat](../../src/data-tutorials/showcase/beginner/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat.jpg)](https://www.youtube.com/watch?v=PDjg3lFEPxs)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=PDjg3lFEPxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Video URL](https://www.youtube.com/watch?v=PDjg3lFEPxs)
 
 ## Resources
 
-[Github Code Repository](https://github.com/iamoracle/celo-alfajores-hardhat)
-[Celo Alfajores](https://faucet.celo.org)
-[Valora](https://valoraapp.com)
-[CeloScan Alfajores Explorer](https://alfajores.celoscan.io)
-[Hardhat tutorial](https://docs.celo.org/developer/deploy/hardhat)
+1. [Github Code Repository](https://github.com/iamoracle/celo-alfajores-hardhat)
+2. [Celo Alfajores](https://faucet.celo.org)
+3. [Valora](https://valoraapp.com)
+4. [CeloScan Alfajores Explorer](https://alfajores.celoscan.io)
+5. [Hardhat tutorial](https://docs.celo.org/developer/deploy/hardhat)
 
 ## Conclusion
 
