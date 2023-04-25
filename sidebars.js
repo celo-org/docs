@@ -251,6 +251,11 @@ const sidebars = {
               label: "Baklava Testnet",
               id: "network/baklava/disclaimer",
             },
+            {
+              type: "doc",
+              label: "Cannoli Testnet",
+              id: "network/cannoli/disclaimer",
+            },
           ],
         },
       ],
