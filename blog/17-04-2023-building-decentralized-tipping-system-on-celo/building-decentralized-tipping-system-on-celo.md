@@ -13,12 +13,12 @@ slug: /tutorials/building-decentralized-tipping-system-on-celo
 
 ![header](../../src/data-tutorials/showcase/intermediate/building-decentralized-tipping-system-on-celo.png)
 
-
 ## Introduction
 
 Welcome my people! (Insert some phrase meant to be funny but really isn't😅). In this tutorial, we would be going through how to build a decentralized tipping system on the celo blockchain. First, lets get acquainted with celo
 
-### What is  Celo 
+### What is Celo
+
 Celo is a blockchain platform that focuses on enabling mobile-first financial services. It is built using the Ethereum codebase and employs a proof-of-stake consensus mechanism for transaction validation. One unique aspect of Celo is its focus on usability and accessibility, aiming to create a more inclusive and decentralized financial system.
 
 ## Prerequisites
@@ -30,6 +30,7 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 - Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
 
 ## Requirements
+
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
 - A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
 - A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
@@ -37,10 +38,9 @@ Celo is a blockchain platform that focuses on enabling mobile-first financial se
 - **[Remix](https://remix.ethereum.org)**
 - **[Celo Extension Wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)**.
 
-
-
 ## Smart Contract Development
-If you have seen any of my previous tutorials, you would realize I am fan of remix for writing smart contracts. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain. 
+
+If you have seen any of my previous tutorials, you would realize I am fan of remix for writing smart contracts. Remix is a web-based IDE that allows developers to write, test and deploy smart contracts on the Celo blockchain.
 
 Here is a preview of the Remix IDE:
 ![image](images/2.png)
@@ -59,8 +59,7 @@ The first line is a SPDX license identifier and a Solidity version pragma.
 SPDX (Software Package Data Exchange) is a specification that provides a standard way to declare the license of open source software packages. The SPDX-License-Identifier is a header that specifies the license of a given source code file.
 The Solidity version pragma specifies the version of the Solidity programming language used to write the smart contract code. The version range specified is greater than or equal to 0.7.0 and less than 0.9.0, meaning that the code should be compiled with a Solidity compiler version between 0.7.0 and 0.8.x.
 
-
-Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD). 
+Following that, we define an `IERC20Token` interface which enables us to interact with the celo stablecoin (cUSD).
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -142,7 +141,7 @@ A modifier is a way to change the behavior of a function by adding some conditio
 
 The `require` statement is used to specify the condition that must be met in order for the function to be executed. If the condition is not met, the error message specified in the second argument of the `require` statement will be returned and the function will not execute.
 
-The "_" symbol in the modifier indicates where the code of the function that uses the modifier will be inserted. When a function is marked with this modifier, the code inside the function is only executed if the condition in the modifier is true.
+The "\_" symbol in the modifier indicates where the code of the function that uses the modifier will be inserted. When a function is marked with this modifier, the code inside the function is only executed if the condition in the modifier is true.
 
 Moving on, you would define a function called `addStaff` that allows the admin to add new staff members to the smart contract by initializing a new instance of the `Staff` struct and storing it in the `staffs` mapping. This function can only be called by the admin due to the `isAdmin` modifier, which ensures that only the admin has the authority to add new staff members.
 
@@ -199,6 +198,7 @@ After this, create a function named `getStaff` which allows anyone to retrieve t
        );
     }
 ```
+
 The function takes one input parameter, which is an unsigned integer `_index` representing the index of the staff member in the `staffs` mapping.
 
 The function is marked as `public`, meaning it can be called from outside the smart contract. It is also marked as `view`, which means it does not modify the state of the smart contract and only returns information.
@@ -235,7 +235,7 @@ The function takes two input parameters:
 
 - an unsigned integer `_index` representing the index of the staff member in the `staffs` mapping
 - a uint256 `amount` representing the amount of the tip in the smallest unit of the token being used (for example, if the token has 18 decimal places, the amount would represent the value in wei)
-The function is marked as public, meaning it can be called from outside the smart contract.
+  The function is marked as public, meaning it can be called from outside the smart contract.
 
 Inside the function, the `require` statement checks whether the caller has approved the smart contract to transfer the amount of tokens on their behalf. This is done using the transferFrom function of the `IERC20Token` interface, which represents a standard ERC20 token contract. The `cUsdTokenAddress` is the address of the `ERC20` token contract being used for tipping.
 
@@ -404,7 +404,6 @@ contract Tipper{
 }
 ```
 
-
 ## Contract Deployment
 
 To deploy the contract, we would need:
@@ -423,7 +422,6 @@ Next up, on remix, download and activate the celo plugin from the plugin manager
 
 Congratulations 🎉, you now know what you need to build a decentralized tipping system for staffs on the celo blockchain. Great JOB!!
 
-
 ## Next steps
 
 You can challenge yourself by implementing a frontend, I would be making a whole tutorial on that but if you are confident in your react skills then I implore you to go ahead 😉
@@ -434,11 +432,3 @@ You can use this [link](https://github.com/dahnny/Tipper) for reference
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin @ Daniel Ogbuti
 
 See you soon!
-
-
-
-
-
-
-
-
