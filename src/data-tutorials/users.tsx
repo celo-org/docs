@@ -2145,8 +2145,8 @@ const Users: User[] = [
     title: 'How to Create a Blockchain Simulation using Python and FastAPI',
     description: 'This is an algorithm based tutorial that will teach you how to build a celo blockchain stimulation.',
     preview: require('./showcase/intermediate/blockchain-simulation-with-python.png'),
-    website: 'https://learn.figment.io/tutorials/how-to-create-a-blockchain-simulation-using-python-and-fastapi',
-    tags: ['intermediate', 'celesage', 'celo'],
+    website: '/blog/tutorials/how-to-create-a-blockchain-simulation-using-python-and-fastapi',
+    tags: ['intermediate', 'celosage', 'celo'],
   },
   {
     title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
