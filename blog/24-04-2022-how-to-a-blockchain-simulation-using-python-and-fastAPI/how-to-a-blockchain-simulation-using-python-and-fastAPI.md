@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/how-to-create-a-blockchain-simulation-using-python-and-fastapi
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/blockchain-simulation-with-python.png)
+
 ## Introduction​
 
 Have you ever wondered how the blockchain works? It is a simple yet complex chain-like structure that appends millions it hash data and transactions with the passing seconds. Over the last decade, technologies have grown and contributed innovative solutions to major economic and financial sectors worldwide.
