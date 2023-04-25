@@ -3177,7 +3177,7 @@ const Users: User[] = [
     title: 'Using Clones to build and cheaply deploy contracts on CELO at scale',
     description: 'This tutorial introduces the clones (minmal proxy) approach to cheaply deploy contracts on CELO.',
     preview: require('./showcase/advanced/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale.png'),
-    website: 'blog/tutorials/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale',
+    website: 'blog/tutorials/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale',
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity'], 
   },
   /*

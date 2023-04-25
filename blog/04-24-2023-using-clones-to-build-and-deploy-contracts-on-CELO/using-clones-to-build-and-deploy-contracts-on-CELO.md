@@ -8,7 +8,7 @@ authors:
     image_url: https://github.com/nuel-ikwuoma.png
 tags: [solidity, celo, ERC20, advanced, celosage]
 hide_table_of_contents: true
-slug: /tutorials/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale
+slug: /tutorials/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale
 ---
 
 ![header](../../src/data-tutorials/showcase/advanced/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale.png)
