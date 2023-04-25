@@ -67,7 +67,7 @@ First, for those who didn't follow previous tutorials, here is the full contract
 
 ## MyNft.sol
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -149,7 +149,7 @@ contract MyNFT is ERC721, Ownable, ERC721Enumerable, ERC721URIStorage {
 
 ## MyNftMarket.sol
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -297,7 +297,7 @@ You then wait for the deployment of the MyNFT contract to complete by calling th
 Following this, you would write a test that will create and mint a new NFT to the account that called the `mint` function, with a metadata URL of "https://example.com/1" and an auction price of 1 Ether.
 
 ```js
- const auctionPrice = ethers.utils.parseUnits("1", "ether");
+    const auctionPrice = ethers.utils.parseUnits("1", "ether");
 
     const nftContractAddress = myNFT.address;
     const transaction = await myNFT.mint("https://example.com/1");
@@ -312,9 +312,9 @@ The `mint` function is then called on the `myNFT` contract instance with the arg
 After creating a new NFT using the `mint` function in the previous code block, this code is used to list the newly created NFT for sale on the `MyNftMarket` contract instance.
 
 ```js
- await market.listToken(nftContractAddress, 1, auctionPrice);
+    await market.listToken(nftContractAddress, 1, auctionPrice);
     const tx = await transaction.wait();
-  const tokenId =  tx.events[0].args[2].toNumber();
+    const tokenId =  tx.events[0].args[2].toNumber();
 ```
 
 The `await` keyword is used to wait for the `listToken` function on the `market` contract instance to be executed. This function takes three arguments - the address of the NFT contract (`nftContractAddress`), the ID of the NFT (`1`), and the auction price (`auctionPrice`). This function call will list the NFT with the given ID for sale on the `market` contract instance at the specified auction price.
@@ -326,7 +326,7 @@ The `tokenId` variable is then assigned the ID of the newly listed NFT by access
 Following this, this code is used to simulate two different buyers purchasing the NFT that was listed for sale in the previous code block.
 
 ```js
- await market.connect(acc1).buyToken(0, { value: auctionPrice });
+    await market.connect(acc1).buyToken(0, { value: auctionPrice });
     const t = await myNFT.connect(acc1).resaleApproval(tokenId);
     await market.connect(acc2).buyToken(0, { value: auctionPrice });
 ```
@@ -340,7 +340,7 @@ The third line of code executes the purchase of the same NFT by a different acco
 After this, you would want to print the URIs of all active listings on our NFT marketplace to the console, allowing users to browse and purchase NFTs.
 
 ```js
- const listingLength = await market.getListingLength();
+    const listingLength = await market.getListingLength();
 
     for (let index = 0; index < listingLength; index++) {
       const listing = await market.getListing(index);
@@ -348,9 +348,9 @@ After this, you would want to print the URIs of all active listings on our NFT m
       // console.log(seller, owner, token, tokenId);
       const tokenUri = await myNFT.tokenURI(tokenId);
       console.log(tokenUri);
-    }
-  });
-});
+        }
+    });
+
 ```
 
 First, you would call the `getListingLength()` function to get the number of active listings on the market. We store the length in the `listingLength` variable. 
@@ -401,7 +401,7 @@ describe("MyNFT", function () {
     await market.listToken(nftContractAddress, 1, auctionPrice);
 
     const tx = await transaction.wait();
-  const tokenId =  tx.events[0].args[2].toNumber();
+    const tokenId =  tx.events[0].args[2].toNumber();
 
     await market.connect(acc1).buyToken(0, { value: auctionPrice });
     const t = await myNFT.connect(acc1).resaleApproval(tokenId);
@@ -437,7 +437,7 @@ By mastering the concepts covered in this tutorial, you should be well-equipped 
 
 ## Next steps
 
-You could take it a step further and follow my published tutorials on more intermediate topics. 
+You could take it a step further and follow my published tutorials on more intermediate topics. You can have a look at the full file [here](https://github.com/dahnny/dripto-ponks/blob/master/test/nft-test.js)
 
 ## About the Author
 
