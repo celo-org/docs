@@ -742,6 +742,10 @@ export default function Home() {
 Congratulations 🎉 on finishing this tutorial! Thank you for taking the time to complete it. In this tutorial, you have learnt how to Build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions.
 
 To have access to the full codebase, here is the link to the project repo on [github](https://github.com/gconnect/sage-multi-escrow-dapp).
+
+## Net Steps
+As a next step, apply what you have learnt in this tutorial and write a test coverage for the smart contract. Also create a more fancy UI and make all the necessary smart contract calls.
+
 ## About the Author​
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
