@@ -6,7 +6,7 @@ authors:
     title: Software Engineer / Technical Writer
     url: https://github.com/cjustinobi
     image_url: https://github.com/cjustinobi.png
-tags: [celosage, intermediate, react, hardhat, oracle]
+tags: [celosage, intermediate, react, hardhat, oracle, randomness]
 hide_table_of_contents: true
 slug: /tutorials/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness
 ---
@@ -682,10 +682,10 @@ Congratulations! You should be able to create a dApp that involves use of random
 
 ## About the Author​
 
-A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to call myself VueDetective. Connect with me on LinkedIn and Github
+A software engineer, co-founder, Africinnovate, and a Web3 enthusiast. I used to call myself VueDetective. Connect with me on [LinkedIn](https://linkedin.com/in/cjustinobi) and [Github](https://github.com/cjustinobi)
 
 ## References​
-[How to use Redstone Randomness](https://docs.redstone.finance/docs/smart-contract-devs/randomness)
+* [How to use Redstone Randomness](https://docs.redstone.finance/docs/smart-contract-devs/randomness)
  
 
 
