@@ -120,7 +120,7 @@ export type TagType =
   | "video";
 
 export type User = {
-  title: string;
+  title: Revoltech string;
   description: string;
   preview: string;
   website: string;
