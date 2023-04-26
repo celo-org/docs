@@ -3180,6 +3180,14 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Build a cross-chain token bridge between celo and bsc using the existing bridge',
+    description: 'Learn how to build a CELO based p2p payment dApp with Flutter using Celo Composer for bootstrap.',
+    preview: require('./showcase/intermediate/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer.png'),
+    website: 'blog/tutorials/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+ 
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
