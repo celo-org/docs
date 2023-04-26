@@ -300,3 +300,46 @@ In this Solidity smart contract function, we have a `getHair` function that retu
 The function uses the `public view` keyword to indicate that the function will not modify the state of the contract. Instead, it only reads data from the contract.
 
 Inside the function, we access the hair product details stored at the given index in the `hairs` mapping and return them as a tuple with the correct data types.
+
+Additionally, we add the `replaceHair` function.
+
+```solidity
+function replaceHairImage(uint _index, string memory _image) public {
+        require(msg.sender == hairs[_index].owner, "Only the owner can change the image");
+        hairs[_index].image = _image;
+     }
+```
+
+In this function, we are allowing the owner of a hair to change its image by providing the index of the hair they want to update and the new image. We first check that the caller of the function is the owner of the hair by comparing their address to the owner's address of the hair at the specified index. If they are the owner, we update the image for that hair by assigning the new image to the image property of the hair at the specified index. If the caller is not the owner, we revert the transaction with an error message indicating that only the owner can change the image.
+
+Now, we add the `buyHair` function.
+
+```solidity
+function buyHair(uint _index) public payable  {
+        require(
+          IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            hairs[_index].owner,
+            hairs[_index].price
+          ),
+          "Transfer failed."
+        );
+
+         hairs[_index].owner = payable(msg.sender);
+         
+    }
+```
+
+In this function, we are allowing users to buy a hair by transferring the required amount of cUSD tokens to the owner of the hair. We first check if the transfer of tokens from the buyer to the owner is successful using the `transferFrom` function of the `ERC20` token. If the transfer is successful, we `update` the owner of the hair to be the buyer by setting `hairs[_index].owner` to `msg.sender`.
+
+Finally, we add the `gethairsLength` function.
+
+```solidity
+ function gethairsLength() public view returns (uint) {
+        return (hairsLength);
+    }
+}
+```
+
+In this final session, we have defined a function named `gethairsLength` which is a public` view function that returns the length of the `hairs` array, which holds all the hair products added to the contract using the addHair function. We can call this function from outside the contract to get the current number of hair products available for sale. This function helps us keep track of the number of hair products available in the marketplace.
+
