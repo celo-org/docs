@@ -266,3 +266,37 @@ Furthermore, to make our smart contract more interesting we begin to add functio
           }
 ```
 
+In this function, we are creating a new Hair object and storing it in the hairs mapping. First, we create a reference to the new Hair object with Hair storage `Haircentials = hairs[hairsLength];`. Then, we set the values of the Hair object using the input parameters provided in the function call. We set the owner of the Hair object to the address of the person calling the function, and set the rest of the properties using the inputs provided.
+
+Once all the values have been set, we increment the `hairsLength` counter to ensure that the next Hair object created will have a unique index in the mapping.
+
+Next we add the `getHair` function.
+
+```solidity
+ function getHair(uint _index) public view returns (
+        address payable,
+        string memory,  
+        string memory,
+        string memory,
+        string memory,
+        uint
+        
+    ) {
+        return (  
+            hairs[_index].owner,
+             hairs[_index].image,
+              hairs[_index].brand,
+              hairs[_index].color,
+               hairs[_index].durability,
+                 hairs[_index].price
+               
+        );
+    }
+
+```
+
+In this Solidity smart contract function, we have a `getHair` function that returns the details of a hair product stored in the `hairs` mapping. The function takes an index as an input and returns the hair owner's address, image, brand, color, durability, and price.
+
+The function uses the `public view` keyword to indicate that the function will not modify the state of the contract. Instead, it only reads data from the contract.
+
+Inside the function, we access the hair product details stored at the given index in the `hairs` mapping and return them as a tuple with the correct data types.
