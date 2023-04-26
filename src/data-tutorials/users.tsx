@@ -780,6 +780,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
   {
+    title: 'Introduction to Soulbound Tokens on Celo',
+    description: 'Understand What is Soulbound token and How it works',
+    preview: require('./showcase/beginner/Introduction-to-Soulbound-Tokens-on-Celo.png'),
+    website: 'blog/tutorials/Introduction-to-Soulbound-Tokens-on-Celo',
+    tags: ['celosage', 'beginner','celo', 'smartcontract'],
+  },
+  {
     title: 'Prepare for Auditing Your Smart Contract',
     description: 'Auditing is the process of reviewing your smart contracts code for errors, vulnerabilities, and potential weaknesses',
     preview: require('./showcase/intermediate/prepare-for-auditing-your-smart-contract.png'),
