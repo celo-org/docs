@@ -776,6 +776,13 @@ const Users: User[] = [
     tags: ['intermediate', 'solidity','celosage','erc721','truffle'],
   },
   {
+    title: 'Learn to Navigate Advanced Celo Wallet Features',
+    description: 'learn how to navigate the Celo wallet platform with ease and take advantage of its full range of capabilities',
+    preview: require('./showcase/intermediate/Learn-to-Navigate-Advanced-Celo-Wallet-Features.png'),
+    website: '/blog/tutorials/navigate-advanced-celo-wallet-features',
+    tags: ['celosage', 'celowallet', 'intermediate'],
+  },
+  {
     title: 'Composer Series - Build a Crowdfunding ReFi dApp with Celo Composer',
     description: 'How to quickly create and deploy a full-stack crowdfunding dApp on Celo.',
     preview: require('./showcase/advanced/celo-composer-build-a-crowdfunding-refi-dapp-with-celo-composer.png'),
