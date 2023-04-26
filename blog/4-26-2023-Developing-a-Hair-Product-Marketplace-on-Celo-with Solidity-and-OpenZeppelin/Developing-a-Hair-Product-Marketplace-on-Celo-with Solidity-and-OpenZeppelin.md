@@ -208,3 +208,27 @@ We use the `interface` keyword followed by the name of the interface, `IERC20Tok
 The `event` keyword is used to define the events that the ERC20 token contract will emit, such as `Transfer` and `Approval`. These events can be subscribed to by external systems to get notified when certain actions occur on the token contract.
 
 By defining an interface for the ERC20 token, we can interact with any ERC20-compliant token, as long as it implements the functions specified in the interface.
+
+Next, we give our contract a name and also a struct.
+
+```solidity
+contract  Hairs {
+    uint internal hairsLength = 0;
+    address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+    struct  Hair {
+        address payable owner;
+        string image;
+        string brand;
+        string color;
+        string durability;
+         uint price;
+         
+    }
+```
+
+In this smart contract, we have defined a struct called `Hair`, which includes several properties such as the owner's address, image, brand, color, durability, and price. These properties represent the essential information for a hair product.
+
+We have also declared two internal variables: `hairsLength` to keep track of the number of hair products in the contract, and "cUsdTokenAddress" to store the address of the Celo Dollar (cUSD) token, which will be used for transactions in the contract.
+
+
