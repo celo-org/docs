@@ -275,6 +275,200 @@ python deploy.py
 
 ![Screenshot](https://user-images.githubusercontent.com/104994589/228979192-87ab6f49-5d81-42ea-8b4f-c4df4a927db3.png)
 
+### Step 4: Interact with the Deployed Contract
+
+Finally, create a new file in the root directory of your project called [client.py](http://client.py) and paste the following code:
+
+client.py
+
+```python
+import os
+from web3 import Web3
+from web3.middleware import geth_poa_middleware
+
+import deploy
+
+# Set up web3 connection
+provider_url = os.environ.get("CELO_PROVIDER_URL")
+w3 = Web3(Web3.HTTPProvider(provider_url))
+assert w3.is_connected(), "Not connected to a Celo node"
+
+# Add PoA middleware to web3.py instance
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+abi = deploy.abi
+contract_address = deploy.contract_address
+account_address = deploy.deployer
+private_key = deploy.private_key
+
+contract = w3.eth.contract(address=contract_address, abi=abi)
+
+# Stake tokens
+def stake(amount):
+    nonce = w3.eth.get_transaction_count(account_address)
+    txn = contract.functions.stake(amount).build_transaction({
+        'from': account_address,
+        'gas': 200000,
+        'gasPrice': w3.eth.gas_price,
+        'nonce': nonce
+    })
+
+    signed_txn = w3.eth.account.sign_transaction(txn, private_key)
+    txn_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    txn_receipt = w3.eth.wait_for_transaction_receipt(txn_hash)
+    print("Staked:", amount, "cUSD")
+
+# Unstake tokens
+def unstake():
+    nonce = w3.eth.get_transaction_count(account_address)
+    txn = contract.functions.unstake().build_transaction({
+        'from': account_address,
+        'gas': 200000,
+        'gasPrice': w3.eth.gas_price,
+        'nonce': nonce
+    })
+
+    signed_txn = w3.eth.account.sign_transaction(txn, private_key)
+    txn_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    txn_receipt = w3.eth.wait_for_transaction_receipt(txn_hash)
+    print("Unstaked and claimed rewards")
+
+# Check staking information for a user
+def get_staking_info(user_address):
+    info = contract.functions.stakingInfo(user_address).call()
+    print("Staking Info for", user_address)
+    print("Amount:", info[0])
+    print("Start Time:", info[1])
+    print("Claimed:", info[2])
+
+# Replace this with the desired action
+action = 'stake'  # 'unstake' or 'get_staking_info'
+
+if action == 'stake':
+    stake_amount = 100  # Replace with the desired staking amount
+    stake(stake_amount)
+elif action == 'unstake':
+    unstake()
+elif action == 'get_staking_info':
+    user_address = account_address  # Replace with the desired user's address
+    get_staking_info(user_address)
+```
+
+The Python Web3 package is used by the script to communicate with the Celo blockchain. We will outline the essential parts of the code and how they interact to make it possible for various staking-related operations.
+
+Getting Started
+
+Let's import the required modules first, then configure our Web3 connection.
+
+```python
+import os
+from web3 import Web3
+from web3.middleware import geth_poa_middleware
+
+import deploy
+```
+
+We import Web3 to communicate with the blockchain, the os module to access environment variables, and geth_poa_middleware to support Proof of Authority (PoA). The deployed contract's ABI and other details are disclosed in the deploy module.
+
+Establishing a Web3 Connection
+
+```python
+provider_url = os.environ.get("CELO_PROVIDER_URL")
+w3 = Web3(Web3.HTTPProvider(provider_url))
+assert w3.is_connected(), "Not connected to a Celo node"
+
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+```
+
+In this instance, we establish the Web3 connection by locating the Celo provider URL in the environment variable "CELO_PROVIDER_URL." After that, we establish a connection to a Celo node and build an instance of the Web3 object using the HTTPProvider. To manage PoA chains, we also inject the `geth_poa_middleware`.
+
+Setting Up the Contract and Account Information
+
+```python
+abi = deploy.abi
+contract_address = deploy.contract_address
+account_address = deploy.deployer
+private_key = deploy.private_key
+
+contract = w3.eth.contract(address=contract_address, abi=abi)
+```
+
+We obtain the ABI and address of the contract from the deploy module. Additionally, the deployer's account address and private key are provided. Finally, we use the `Web3.eth.contract` method to construct a contract instance.
+
+Staking Tokens
+
+You can stake tokens on the contract using the stake function. It sends a transaction to the contract's stake function and accepts the number of staked tokens as a parameter.
+
+```python
+# Stake tokens
+def stake(amount):
+    nonce = w3.eth.get_transaction_count(account_address)
+    txn = contract.functions.stake(amount).build_transaction({
+        'from': account_address,
+        'gas': 200000,
+        'gasPrice': w3.eth.gas_price,
+        'nonce': nonce
+    })
+
+    signed_txn = w3.eth.account.sign_transaction(txn, private_key)
+    txn_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    txn_receipt = w3.eth.wait_for_transaction_receipt(txn_hash)
+    print("Staked:", amount, "cUSD")
+```
+
+UnStaking Tokens
+
+You can `unstake` tokens and collect incentives using the `unstake` feature. It transmits a transaction to the `unstake` function of the contract.
+
+```python
+# Unstake tokens
+def unstake():
+    nonce = w3.eth.get_transaction_count(account_address)
+    txn = contract.functions.unstake().build_transaction({
+        'from': account_address,
+        'gas': 200000,
+        'gasPrice': w3.eth.gas_price,
+        'nonce': nonce
+    })
+
+    signed_txn = w3.eth.account.sign_transaction(txn, private_key)
+    txn_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    txn_receipt = w3.eth.wait_for_transaction_receipt(txn_hash)
+    print("Unstaked and claimed rewards")
+```
+
+Checking Stake Information
+
+The `get_staking_info` function calls the contract's `stakingInfo` function using the user's address to receive stake information for the user.
+
+```python
+# Check staking information for a user
+def get_staking_info(user_address):
+    info = contract.functions.stakingInfo(user_address).call()
+    print("Staking Info for", user_address)
+    print("Amount:", info[0])
+    print("Start Time:", info[1])
+    print("Claimed:", info[2])
+```
+
+Final Step:
+
+We specify the action variable with the appropriate action ('stake', 'unstake', or 'get_staking_info') and run the relevant function.
+
+```python
+# Replace this with the desired action
+action = 'stake'  # 'unstake' or 'get_staking_info'
+
+if action == 'stake':
+    stake_amount = 100  # Replace with the desired staking amount
+    stake(stake_amount)
+elif action == 'unstake':
+    unstake()
+elif action == 'get_staking_info':
+    user_address = account_address  # Replace with the desired user's address
+    get_staking_info(user_address)
+```
+
 ## Conclusion
 
 On the Celo platform, you have now formed a staking contract. Those that wager their cUSD tokens can win CELO tokens as prizes. This contract can be further developed to provide more intricate reward systems, greater token support, or extra staking possibilities. The Celo ecosystem offers a wide range of chances for developers to produce cutting-edge and approachable decentralized financial solutions.
