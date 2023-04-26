@@ -214,3 +214,35 @@ In this particular interface, we have defined six key functions that any Celo ER
 In addition to these six functions, we have also defined three functions that provide information about a Celo ERC20 token contract. These functions include "totalSupply", "balanceOf", and "allowance", which allow users to retrieve data on the total supply of tokens, the balance of tokens held by a specific address, and the amount of tokens authorized for spending by a particular address.
 
 Finally, we have also included two events in this code, which are triggered when a token transfer or approval occurs. These events enable external applications to receive notifications when a token transfer or approval happens on the Celo blockchain, which can be useful for building more complex applications that depend on real-time information about token transactions.
+
+```solidity
+contract PredictionMarket {
+    
+    using SafeMath for uint;
+
+    uint internal numContracts = 0;
+    address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+    struct Contract {
+        address payable creator;
+        string description;
+        uint endTimestamp;
+        uint yesShares;
+        uint noShares;
+        uint price;
+        bool resolved;
+        bool outcome;
+    }
+```
+
+This code defines a smart contract called `PredictionMarket`. In this contract, we are using the SafeMath library, which provides secure mathematical operations to prevent overflow and underflow errors.
+
+We have also defined two global variables. The first is "numContracts", which keeps track of the number of prediction contracts created by the contract. The second is "cUsdTokenAddress", which is the address of the cUSD token contract on the Celo blockchain.
+
+Next, we have defined a struct called "Contract", which represents a prediction contract. This struct contains information about the creator of the contract, a description of the prediction, the end time for the prediction, the number of shares that were bought for the `yes` outcome, the number of shares bought for the `no` outcome, the price of each share, whether the contract has been resolved, and the outcome of the contract.
+
+Using this struct, we can create new prediction contracts by calling the `createContract` function. This function takes in a description of the prediction, the end time for the prediction, and the price of each share.
+
+When a user buys shares for a prediction contract, they call either the "buyYesShares" or "buyNoShares" function, depending on the outcome they are betting on. These functions update the `yesShares` or `noShares` variables in the Contract struct, as well as transfer cUSD tokens from the buyer's account to the contract creator's account.
+
+Once the end time for a prediction contract has passed, the creator of the contract can call the `resolveContract` function. This function calculates the outcome of the prediction based on the number of shares bought for each outcome, and updates the `resolved` and `outcome` variables in the Contract struct accordingly.
