@@ -8,8 +8,11 @@ authors:
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, dapp, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/cUsd-based-event-ticketing-and-management-system
+slug: /tutorials/a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo
 ---
+
+
+![header](../../src/data-tutorials/showcase/intermediate/a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo.png)
 
 ## Introduction
 
