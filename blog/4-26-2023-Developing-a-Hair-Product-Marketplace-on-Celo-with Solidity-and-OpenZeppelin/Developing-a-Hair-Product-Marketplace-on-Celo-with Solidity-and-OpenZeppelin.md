@@ -229,6 +229,14 @@ contract  Hairs {
 
 In this smart contract, we have defined a struct called `Hair`, which includes several properties such as the owner's address, image, brand, color, durability, and price. These properties represent the essential information for a hair product.
 
-We have also declared two internal variables: `hairsLength` to keep track of the number of hair products in the contract, and "cUsdTokenAddress" to store the address of the Celo Dollar (cUSD) token, which will be used for transactions in the contract.
+We have also declared two internal variables: `hairsLength` to keep track of the number of hair products in the contract, and `cUsdTokenAddress` to store the address of the Celo Dollar (cUSD) token, which will be used for transactions in the contract.
 
+Furthermore, we add a mapping.
+
+```solidity
+ mapping (uint =>  Hair) internal hairs;
+```
+In this smart contract, we are using a mapping data structure to store the details of each hair token. The mapping keyword is used to create a key-value mapping between a uint key and a Hair struct value. The internal `visibility modifier` is used to restrict access to the mapping only to the contract and its derived contracts.
+
+We can access the mapping using the key `uint` to retrieve the corresponding Hair struct. By using this mapping, we can efficiently store and access information about each hair token in the contract.
 
