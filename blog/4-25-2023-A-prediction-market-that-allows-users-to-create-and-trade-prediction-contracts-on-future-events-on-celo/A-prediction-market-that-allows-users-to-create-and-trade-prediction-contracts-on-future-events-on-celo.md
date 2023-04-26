@@ -246,3 +246,42 @@ Using this struct, we can create new prediction contracts by calling the `create
 When a user buys shares for a prediction contract, they call either the "buyYesShares" or "buyNoShares" function, depending on the outcome they are betting on. These functions update the `yesShares` or `noShares` variables in the Contract struct, as well as transfer cUSD tokens from the buyer's account to the contract creator's account.
 
 Once the end time for a prediction contract has passed, the creator of the contract can call the `resolveContract` function. This function calculates the outcome of the prediction based on the number of shares bought for each outcome, and updates the `resolved` and `outcome` variables in the Contract struct accordingly.
+
+Next, we add a `Mapping`
+
+```solidity
+   mapping(uint => Contract) internal contracts;
+```
+
+In the `PredictionMarket` contract, we have defined a mapping called `contracts`. A mapping is a data structure in Solidity that allows us to associate a key-value pair. In this case, the key is a unique unsigned integer, and the value is a "Contract" struct that we defined earlier.
+
+Using this mapping, we can store information about each prediction contract created in the contract. The key for each mapping entry is the index of the prediction contract, and the value is the corresponding `Contract` struct.
+
+For example, if we create a new prediction contract with index `0`, we can access its information by calling the `contracts[0]` mapping entry.
+
+This allows us to keep track of multiple prediction contracts and access their information in a structured and efficient way. We can also update the information for a specific prediction contract by updating the corresponding mapping entry.
+
+To add more functionality to our smart contract, we will be implementing various functions. The first function we will add is called `createContract`.
+
+```solidity
+  function createContract(
+        string memory _description,
+        uint _endTimestamp,
+        uint _price
+    ) public {
+        Contract storage newContract = contracts[numContracts];
+        newContract.creator = payable(msg.sender);
+        newContract.description = _description;
+        newContract.endTimestamp = _endTimestamp;
+        newContract.price = _price;
+        newContract.resolved = false;
+        newContract.outcome = false;
+        numContracts++;
+    }
+```
+
+The `createContract` function is a public function that anyone can call to create a new prediction contract in our `PredictionMarket` contract. The function takes three parameters: the `description` of the `prediction`, the `timestamp` for when the prediction will end, and the `price` of the prediction.
+
+In the function, we first create a new `Contract` struct and store it in the `contracts` mapping with a unique index number equal to the current value of `numContracts`. We then increment `numContracts` to ensure that each new prediction contract gets a unique index number.
+
+We then set the properties of the new `Contract` struct using the function parameters and some default values. Specifically, we set the creator of the prediction contract to be the address of the person who called the function using `msg.sender`, the description of the prediction to be the string provided as a parameter, the end timestamp for the prediction, the price of the prediction, and some default values for the `resolved` and `outcome` properties.
