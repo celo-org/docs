@@ -252,7 +252,7 @@ Here's a breakdown of each line of code:
 Next, we are going to initialize our variables and retrieve contract factories and account references that will be used in the actual test case.
 
 ```js
- let myNFT;
+  let myNFT;
   let owner;
   let acc1;
   let acc2;
