@@ -240,3 +240,29 @@ In this smart contract, we are using a mapping data structure to store the detai
 
 We can access the mapping using the key `uint` to retrieve the corresponding Hair struct. By using this mapping, we can efficiently store and access information about each hair token in the contract.
 
+Furthermore, to make our smart contract more interesting we begin to add functions. The first function we will be adding is the `addHair` function.
+
+```solidity
+ function  addHair(
+        string memory _image, 
+        string memory _brand,
+        string memory _color,
+        string memory _durability,
+        uint _price
+
+          ) public {
+       Hair storage Haircentials = hairs[hairsLength];
+
+
+         Haircentials.owner = payable(msg.sender);
+           Haircentials.image = _image;
+           Haircentials.brand = _brand;
+           Haircentials.color = _color;
+          Haircentials.durability = _durability;
+              Haircentials.price = _price;
+
+  
+        hairsLength++;
+          }
+```
+
