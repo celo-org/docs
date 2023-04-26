@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-book-library
 ---
 
-
+![building-a-decentralized-book-library](https://user-images.githubusercontent.com/6362475/234573453-ec2a9b71-048f-49af-97ea-ba897b5114eb.png)
 
 Introduction​
 
