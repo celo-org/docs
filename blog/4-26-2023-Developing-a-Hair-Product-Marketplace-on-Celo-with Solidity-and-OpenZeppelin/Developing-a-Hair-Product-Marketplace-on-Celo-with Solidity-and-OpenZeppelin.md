@@ -411,3 +411,40 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 The initial line of the code specifies the license of the contract, which is the MIT license. The second line declares the Solidity version that the contract is compatible with using the "pragma" statement. To avoid arithmetic errors in the contract, the "import" statement is used to import the SafeMath library from the OpenZeppelin contract library, which provides safe arithmetic operations.
 
 Furthermore, an interface is defined for the ERC20 token, outlining the functions that the token must implement.
+
+```solidity
+
+
+interface IERC20Token {
+   function transfer(address, uint256) external returns (bool);
+
+    function approve(address, uint256) external returns (bool);
+
+    function transferFrom(
+        address,
+        address,
+        uint256
+    ) external returns (bool);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address) external view returns (uint256);
+
+    function allowance(address, address) external view returns (uint256);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+```
+
+In this Session, we define an interface for the ERC20 token. The interface specifies the functions that the ERC20 token contract must implement in order to be compatible with our contract.
+
+We use the `interface` keyword followed by the name of the interface, `IERC20Token`. Inside the interface, we define the necessary functions that will be used in our contract, such as `transfer`, `approve`, `transferFrom`, `totalSupply`, `balanceOf`, and `allowance`.
+
+The `event` keyword is used to define the events that the ERC20 token contract will emit, such as `Transfer` and `Approval`. These events can be subscribed to by external systems to get notified when certain actions occur on the token contract.
+
+By defining an interface for the ERC20 token, we can interact with any ERC20-compliant token, as long as it implements the functions specified in the interface.
