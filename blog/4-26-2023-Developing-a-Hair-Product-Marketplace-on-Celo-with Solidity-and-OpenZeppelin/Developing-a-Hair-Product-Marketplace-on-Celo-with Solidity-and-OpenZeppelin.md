@@ -8,8 +8,10 @@ authors:
     image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
-slug: /tutorials/A-solidity-Smart-contract-for-auctioning-flowers-on-the-celo-blockchain
+slug: /tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin.png)
 
 ## INTRODUCTION
 
