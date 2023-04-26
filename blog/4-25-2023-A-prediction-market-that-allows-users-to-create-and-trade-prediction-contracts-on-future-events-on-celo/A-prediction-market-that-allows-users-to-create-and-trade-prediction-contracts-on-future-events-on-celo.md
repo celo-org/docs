@@ -378,3 +378,24 @@ function resolveContract(uint _index, bool _outcome) public {
 The `resolveContract` function is used to determine the outcome of a prediction market contract and distribute the winnings to the participants accordingly. We first check that the contract has expired and not already been resolved. If these conditions are met, we mark the contract as resolved and set the outcome to the provided boolean value. We then calculate the total number of shares and the payout per share. If the outcome is true, we transfer the winnings to the creator based on the number of `yes` shares they hold. Otherwise, we transfer the winnings based on the number of `no` shares they hold. Overall, this function enables us to accurately determine the outcome of the contract and distribute winnings accordingly.
 
 You can access the complete code for this tutorial by clicking this link [Github repo](https://github.com/Ogoyi/Prediction-marketPlace-on-celo)
+
+## CONTRACT DEPLOYMENT
+
+In order to deploy the Event smart contract on the Celo blockchain, several things are required such as:
+
+To ensure a smooth deployment of our smart contract, it is essential to download the Celo extension wallet from the given link, [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). This can be accomplished by accessing the Celo Alfojares faucet using the provided link.
+
+With our wallet funded, we can now proceed to deploy the smart contract using the Celo plugin available in Remix.
+
+## CONCLUSION
+
+Great job on learning about the Prediction Market smart contract on the Celo blockchain! By following this tutorial, we have gained a deeper understanding of how to create and interact with smart contracts, and how they can be used to create decentralized prediction markets. We hope that you found this tutorial informative and useful, and that you can apply this knowledge to build even more sophisticated smart contracts in the future. Keep up the great work! 🚀
+ 
+## Next step
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
+
+## About the author
+
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
+
