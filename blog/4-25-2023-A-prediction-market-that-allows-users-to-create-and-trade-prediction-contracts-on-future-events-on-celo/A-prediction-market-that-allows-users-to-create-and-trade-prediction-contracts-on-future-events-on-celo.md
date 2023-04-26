@@ -318,3 +318,59 @@ The `getContract` function is a public view function that anyone can call to ret
 In the function, we first retrieve the `Contract` struct from our `contracts` mapping using the provided index number. We then return a tuple containing all the relevant properties of the `Contract` struct.
 
 Specifically, we return the address of the person who created the prediction contract, the description of the prediction, the end timestamp for the prediction, the number of `yes` shares, the number of `no` shares, the price of the prediction, and the status of the prediction contract (resolved or not) and its outcome.
+
+Additionally, we add the `buyShares` function.
+
+```solidity
+    function buyShares(uint _index, bool _outcome) public payable {
+        require(
+            !contracts[_index].resolved,
+            "Contract has already been resolved."
+        );
+        require(
+            msg.value == contracts[_index].price,
+            "Incorrect amount of cUSD sent."
+        );
+        if (_outcome) {
+            contracts[_index].yesShares = contracts[_index].yesShares.add(msg.value);
+        } else {
+            contracts[_index].noShares = contracts[_index].noShares.add(msg.value);
+        }
+    }
+```
+
+In this session, we have the buyShares function which allows a user to buy shares in a contract by sending cUSD to the contract. The function takes two parameters: the _index parameter specifies which contract to buy shares in, and the _outcome parameter specifies whether the user is buying shares in the `yes` outcome (if _outcome is true) or the `no` outcome (if _outcome is false).
+
+The function first checks whether the contract has already been resolved by verifying that the resolved boolean flag is set to false. If the contract has already been resolved, the function will throw an error and stop executing.
+
+Next, the function checks whether the correct amount of cUSD has been sent by the user. If the sent amount is incorrect, the function will throw an error and stop executing.
+
+Finally, if the checks are successful, the function updates the share count for the corresponding outcome by adding the sent amount of cUSD to the yesShares or noShares field of the Contract struct, depending on the value of _outcome. This is done using the add function provided by the SafeMath library to prevent arithmetic overflow errors.
+
+Finally, we add the `resolveContract` function
+
+```solidity
+function resolveContract(uint _index, bool _outcome) public {
+    require(
+        block.timestamp > contracts[_index].endTimestamp,
+        "Contract has not yet expired."
+    );
+    require(
+        !contracts[_index].resolved,
+        "Contract has already been resolved."
+    );
+    contracts[_index].resolved = true;
+    contracts[_index].outcome = _outcome;
+    uint totalShares = contracts[_index].yesShares.add(contracts[_index].noShares);
+    if (totalShares > 0) {
+        uint payoutPerShare = address(this).balance.div(totalShares);
+        if (_outcome) {
+            contracts[_index].creator.transfer(contracts[_index].yesShares.mul(payoutPerShare));
+        } else {
+            contracts[_index].creator.transfer(contracts[_index].noShares.mul(payoutPerShare));
+        }
+    }
+}
+
+     } 
+```
