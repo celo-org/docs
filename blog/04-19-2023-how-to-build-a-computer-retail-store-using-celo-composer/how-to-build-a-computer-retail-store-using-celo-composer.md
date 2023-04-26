@@ -1115,6 +1115,7 @@ export const erc20Abi = erc20Token.abi;
 
 import { Computer } from "@/typings";
 import { useCelo } from "@celo/react-celo";
+import { ethers } from "ethers";
 import { useRouter } from "next/navigation";
 import {
   createContext,
@@ -1159,7 +1160,7 @@ export default function MarketPlaceProvider({
   const { kit, address } = useCelo();
   const [computers, setComputers] = useState<Computer[]>([]);
   const [myProducts, setMyProducts] = useState<Computer[]>([]);
-  const { cartQuantity, removeFromCart } = useShoppingCart();
+  const { cartQuantity, cartItems, removeFromCart } = useShoppingCart();
 
   const router = useRouter();
 
@@ -1255,20 +1256,27 @@ export default function MarketPlaceProvider({
     const index: number = parseInt(target.getAttribute("data-index")!);
     const product: Computer = computers[index];
 
+    
+    const cartItemsPrice = cartItems.reduce((total, cartItem) => {
+         const item = computers.find((i: any) => i.index === cartItem.id);
+         const itemPrice = item ? ethers.utils.formatEther(item.price) : "0";
+         return total + parseFloat(itemPrice) * cartItem.quantity;
+    }, 0);
 
-    const number = parseInt(product.price);
-    const convertedPrice = number * cartQuantity;
-    const price = String(convertedPrice);
+    //console.log("cartItemsPrice", cartItemsPrice);
+  
+    const price = ethers.utils.parseEther(cartItemsPrice.toString());
+    const itemPrice = String(price);
 
     try {
-      await approvePrice(price);
+      await approvePrice(itemPrice);
     } catch (error: any) {
       alert(`⚠️ ${error.message}`);
       return;
     }
 
     // prompt user to confirm purchase
-    const confirmMsg: string = `Are you sure you want to buy "${product.computer_title}" for ${price} CELO?`;
+    const confirmMsg: string = `Are you sure you want to buy "${product.computer_title}" for ${itemPrice} CELO?`;
     if (!confirm(confirmMsg)) return;
 
     // process purchase
@@ -1281,7 +1289,7 @@ export default function MarketPlaceProvider({
 
        const tx = await contract.methods
          .buyProduct(product.index)
-         .send({ from: address, value: price});
+         .send({ from: address, value: itemPrice });
      
       alert(`🎉 You successfully bought "${product.computer_title}".`);
 
@@ -1731,7 +1739,6 @@ The total price of the items in the cart is calculated using the `reduce` method
 
 ```tsx
 
-import { Computer } from "@/typings";
 import Image from "next/image";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { ethers } from "ethers";
@@ -1745,6 +1752,8 @@ type CartItemProps = {
 export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart, cartQuantity } = useShoppingCart();
   const { computers, handleClick } = useMarketPlace();
+
+  console.log(cartQuantity)
 
   const item = computers.find((i) => {
     //console.log("computers", i.index);
@@ -1767,7 +1776,9 @@ export function CartItem({ id, quantity }: CartItemProps) {
             <p className="pr-2">Price: </p>
             <div className="text-md">
               {" "}
-              {Number(ethers.utils.formatEther(item.price)) * quantity} CELO
+              {Number(ethers.utils.formatEther(item.price.toString())) *
+                quantity}{" "}
+              CELO
             </div>
           </div>
         </div>
@@ -1781,14 +1792,18 @@ export function CartItem({ id, quantity }: CartItemProps) {
         </div>
       </div>
 
-      {cartQuantity > 0 && (
+      {cartQuantity > 0 ? (
         <button
           className="inline-flex content-center place-items-center rounded-full border border-[#250438] bg-[#250438] py-2 px-5 text-md font-medium text-snow hover:bg-[#8e24cc] buyBtn"
           onClick={handleClick}
           data-index={item.index}
         >
-          Buy Computer
+          Buy {cartQuantity} Computer{cartQuantity> 1 && "s"}
         </button>
+      ) : (
+        <p>
+          Your cart is empty. <br /> Add some computers to your cart.
+        </p>
       )}
     </div>
   );
