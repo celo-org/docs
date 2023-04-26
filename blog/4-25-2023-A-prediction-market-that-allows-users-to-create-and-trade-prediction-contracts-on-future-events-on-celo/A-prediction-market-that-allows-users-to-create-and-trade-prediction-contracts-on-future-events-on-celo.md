@@ -166,4 +166,16 @@ function resolveContract(uint _index, bool _outcome) public {
 
      } 
  ```
-  
+ 
+```solidity
+ // SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+```
+
+In this Solidity code, we first specify the license of the code using the MIT license, which allows anyone to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the software.
+
+Next, we specify the Solidity version that the code is compatible with using the "pragma" statement. This ensures that the code is compiled using the correct version of Solidity.
+
+We then import the SafeMath library from the OpenZeppelin contract library using the "import" statement. The SafeMath library provides safe arithmetic operations to prevent overflow and underflow errors in the contract, which can cause security vulnerabilities in smart contracts.
