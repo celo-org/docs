@@ -285,3 +285,36 @@ The `createContract` function is a public function that anyone can call to creat
 In the function, we first create a new `Contract` struct and store it in the `contracts` mapping with a unique index number equal to the current value of `numContracts`. We then increment `numContracts` to ensure that each new prediction contract gets a unique index number.
 
 We then set the properties of the new `Contract` struct using the function parameters and some default values. Specifically, we set the creator of the prediction contract to be the address of the person who called the function using `msg.sender`, the description of the prediction to be the string provided as a parameter, the end timestamp for the prediction, the price of the prediction, and some default values for the `resolved` and `outcome` properties.
+
+Furthermore, we add the `getContract` function.
+
+```solidity
+  function getContract(uint _index) public view returns (
+    address,
+    string memory,
+    uint,
+    uint,
+    uint,
+    uint,
+    bool,
+    bool
+) {
+    Contract storage c = contracts[_index];
+    return (
+        c.creator,
+        c.description,
+        c.endTimestamp,
+        c.yesShares,
+        c.noShares,
+        c.price,
+        c.resolved,
+        c.outcome
+    );
+}
+```
+
+The `getContract` function is a public view function that anyone can call to retrieve the details of a specific prediction contract in our `PredictionMarket` contract. The function takes an index number as a parameter, which is used to look up the corresponding contract in our "contracts" mapping.
+
+In the function, we first retrieve the `Contract` struct from our `contracts` mapping using the provided index number. We then return a tuple containing all the relevant properties of the `Contract` struct.
+
+Specifically, we return the address of the person who created the prediction contract, the description of the prediction, the end timestamp for the prediction, the number of `yes` shares, the number of `no` shares, the price of the prediction, and the status of the prediction contract (resolved or not) and its outcome.
