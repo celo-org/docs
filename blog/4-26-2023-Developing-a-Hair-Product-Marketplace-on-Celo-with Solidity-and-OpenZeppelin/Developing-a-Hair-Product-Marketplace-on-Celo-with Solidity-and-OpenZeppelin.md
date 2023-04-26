@@ -343,3 +343,45 @@ Finally, we add the `gethairsLength` function.
 
 In this final session, we have defined a function named `gethairsLength` which is a public` view function that returns the length of the `hairs` array, which holds all the hair products added to the contract using the addHair function. We can call this function from outside the contract to get the current number of hair products available for sale. This function helps us keep track of the number of hair products available in the marketplace.
 
+
+## CONTRACT DEPLOYMENT
+
+To deploy the `HairMarketplace` smart contract on the Celo blockchain, you would need the following:
+
+CeloExtensionWallet: Download and install the Celo Extension Wallet from the Google Chrome store, create a wallet, and securely store your key phrase. [Click here to intall the celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en)
+
+Celo Faucet: Fund your wallet by copying your wallet address and pasting it into the Celo Faucet, then confirm. [Click here to access celo faucet](https://faucet.celo.org/)
+
+Celo Remix Plugin: Open Remix and create a new Solidity file, paste the `Hairmarketplace` contract code into the file, and ensure the Solidity compiler is set to version 0.8.7 or later. [Click here to access to access the remix ide](https://remix.ethereum.org/)
+
+Compile the contract by clicking the `Compile hairMarketplace.sol` button in the Solidity Compiler tab in Remix.
+
+In the `Deploy & Run Transactions` tab, select the Celo network from the dropdown menu, connect your wallet to Remix by clicking `Connect to wallet`, and select `hairMarketplace` from the `Contract` dropdown menu.
+
+Click the `Deploy` button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+
+Once the transaction is confirmed, the `hairMarketplace` contract will be deployed on the Celo blockchain and you can interact with it using Remix.
+
+## Conclusion
+
+In this tutorial, we have learned how to create a smart contract for an online hair store using Solidity on the Celo blockchain. We have defined the Hair struct that contains the details of each hair product and created functions to add, get, and replace the image of the hair product. We have also implemented a buy function that uses the ERC20 token to facilitate the transaction between the buyer and the seller. Finally, we have created a function to retrieve the number of hair products in the store. By following this tutorial, we can develop a basic understanding of Solidity and smart contract development on the Celo blockchain.
+
+## NEXT STEPS 
+
+I trust that you found this tutorial informative and learned a lot from it. If you would like to continue your education, I have provided some helpful links below that you may find useful to explore:
+
+The official Celo documentation: https://docs.celo.org/
+
+Solidity By Example, a website with code examples for learning Solidity: https://solidity-by-example.org/
+
+OpenZeppelin Contracts, a library of secure, tested smart contract code: https://www.openzeppelin.com/contracts/
+
+Solidity documentation for version 0.8.17: https://docs.soliditylang.org/en/v0.8.17/
+
+I hope these resources prove to be useful to you!
+
+## About the author
+
+I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
+
+
