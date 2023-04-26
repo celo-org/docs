@@ -376,3 +376,5 @@ function resolveContract(uint _index, bool _outcome) public {
 ```
 
 The `resolveContract` function is used to determine the outcome of a prediction market contract and distribute the winnings to the participants accordingly. We first check that the contract has expired and not already been resolved. If these conditions are met, we mark the contract as resolved and set the outcome to the provided boolean value. We then calculate the total number of shares and the payout per share. If the outcome is true, we transfer the winnings to the creator based on the number of `yes` shares they hold. Otherwise, we transfer the winnings based on the number of `no` shares they hold. Overall, this function enables us to accurately determine the outcome of the contract and distribute winnings accordingly.
+
+You can access the complete code for this tutorial by clicking this link [Github repo](https://github.com/Ogoyi/Prediction-marketPlace-on-celo)
