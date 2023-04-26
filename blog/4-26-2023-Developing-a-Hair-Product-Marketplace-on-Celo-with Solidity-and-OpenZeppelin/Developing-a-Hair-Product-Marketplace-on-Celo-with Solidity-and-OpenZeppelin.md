@@ -370,13 +370,13 @@ In this tutorial, we have learned how to create a smart contract for an online h
 
 I trust that you found this tutorial informative and learned a lot from it. If you would like to continue your education, I have provided some helpful links below that you may find useful to explore:
 
-The official Celo documentation: https://docs.celo.org/
+The official Celo documentation: [Celo docs](https://docs.celo.org/)
 
-Solidity By Example, a website with code examples for learning Solidity: https://solidity-by-example.org/
+Solidity By Example, a website with code examples for learning Solidity: [Solidity by Example](https://solidity-by-example.org/)
 
-OpenZeppelin Contracts, a library of secure, tested smart contract code: https://www.openzeppelin.com/contracts/
+OpenZeppelin Contracts, a library of secure, tested smart contract code: [OpenZeppelin library](https://www.openzeppelin.com/contracts/)
 
-Solidity documentation for version 0.8.17: https://docs.soliditylang.org/en/v0.8.17/
+Solidity documentation for version 0.8.17: [Solidity docs](https://docs.soliditylang.org/en/v0.8.17/)
 
 I hope these resources prove to be useful to you!
 
