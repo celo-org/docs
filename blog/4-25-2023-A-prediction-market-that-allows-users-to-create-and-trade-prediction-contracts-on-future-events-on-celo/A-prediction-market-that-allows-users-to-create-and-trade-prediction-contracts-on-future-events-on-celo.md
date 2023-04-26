@@ -179,3 +179,38 @@ In this Solidity code, we first specify the license of the code using the MIT li
 Next, we specify the Solidity version that the code is compatible with using the "pragma" statement. This ensures that the code is compiled using the correct version of Solidity.
 
 We then import the SafeMath library from the OpenZeppelin contract library using the "import" statement. The SafeMath library provides safe arithmetic operations to prevent overflow and underflow errors in the contract, which can cause security vulnerabilities in smart contracts.
+
+```solidity
+interface IERC20Token {
+   function transfer(address, uint256) external returns (bool);
+
+    function approve(address, uint256) external returns (bool);
+
+    function transferFrom(
+        address,
+        address,
+        uint256
+    ) external returns (bool);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address) external view returns (uint256);
+
+    function allowance(address, address) external view returns (uint256);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+```
+
+In this Solidity code, we have defined an interface for an ERC20 token on the Celo blockchain. When we create an interface in Solidity, we are essentially creating a blueprint that specifies how external contracts should interact with our contract.
+
+In this particular interface, we have defined six key functions that any Celo ERC20 token contract should implement. These functions include "transfer", "approve", and "transferFrom", which enable users to transfer tokens to other addresses, authorize other addresses to spend tokens on their behalf, and move tokens from one address to another.
+
+In addition to these six functions, we have also defined three functions that provide information about a Celo ERC20 token contract. These functions include "totalSupply", "balanceOf", and "allowance", which allow users to retrieve data on the total supply of tokens, the balance of tokens held by a specific address, and the amount of tokens authorized for spending by a particular address.
+
+Finally, we have also included two events in this code, which are triggered when a token transfer or approval occurs. These events enable external applications to receive notifications when a token transfer or approval happens on the Celo blockchain, which can be useful for building more complex applications that depend on real-time information about token transactions.
