@@ -3203,6 +3203,16 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
 
+   {
+    title: 'Building a full stack Celo DApp with NextJS and Web3js',
+    description: 'Learn How to Build Celo DApp with NextJS, a JavaScript Framework. You can build Celo DApp with Ease using NextJS',
+    preview: require('./showcase/intermediate/building-a-full-stack-celo-dapp-with-nextjs-and-web3js.png'),
+    website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
+  },
+
+
+
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
