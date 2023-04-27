@@ -6,7 +6,7 @@ authors:
     title: Web3 Software Engineer
     url: https://github.com/lanacreates
     image_url: https://github.com/lanacreates.png
-tags: [celosage, celowallet, celo, cusd, ledger]
+tags: [celosage, celowallet, celo, contractkit, intermediate, react, metamask]
 hide_table_of_contents: true
 slug: /tutorials/building-a-celo-based-decentralized-medical-record-system
 ---
