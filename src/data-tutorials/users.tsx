@@ -3217,6 +3217,15 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
 
+  {
+    title: 'Using Clones to build and cheaply deploy contracts on CELO at scale',
+    description: 'This tutorial introduces the clones (minmal proxy) approach to cheaply deploy contracts on CELO.',
+    preview: require('./showcase/advanced/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale.png'),
+    website: 'blog/tutorials/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale',
+    tags: ['celosage', 'advanced', 'smartcontract', 'solidity'], 
+  },
+
+
    {
     title: 'Building a full stack Celo DApp with NextJS and Web3js',
     description: 'Learn How to Build Celo DApp with NextJS, a JavaScript Framework. You can build Celo DApp with Ease using NextJS',
@@ -3224,6 +3233,7 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
+
 
 
 
