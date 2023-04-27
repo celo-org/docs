@@ -239,13 +239,13 @@ contract PredictionMarket {
 
 This code defines a smart contract called `PredictionMarket`. In this contract, we are using the SafeMath library, which provides secure mathematical operations to prevent overflow and underflow errors.
 
-We have also defined two global variables. The first is "numContracts", which keeps track of the number of prediction contracts created by the contract. The second is "cUsdTokenAddress", which is the address of the cUSD token contract on the Celo blockchain.
+We have also defined two global variables. The first is `numContracts`, which keeps track of the number of prediction contracts created by the contract. The second is `cUsdTokenAddress`, which is the address of the cUSD token contract on the Celo blockchain.
 
 Next, we have defined a struct called "Contract", which represents a prediction contract. This struct contains information about the creator of the contract, a description of the prediction, the end time for the prediction, the number of shares that were bought for the `yes` outcome, the number of shares bought for the `no` outcome, the price of each share, whether the contract has been resolved, and the outcome of the contract.
 
 Using this struct, we can create new prediction contracts by calling the `createContract` function. This function takes in a description of the prediction, the end time for the prediction, and the price of each share.
 
-When a user buys shares for a prediction contract, they call either the "buyYesShares" or "buyNoShares" function, depending on the outcome they are betting on. These functions update the `yesShares` or `noShares` variables in the Contract struct, as well as transfer cUSD tokens from the buyer's account to the contract creator's account.
+When a user buys shares for a prediction contract, they call either the `buyYesShares` or "buyNoShares" function, depending on the outcome they are betting on. These functions update the `yesShares` or `noShares` variables in the Contract struct, as well as transfer cUSD tokens from the buyer's account to the contract creator's account.
 
 Once the end time for a prediction contract has passed, the creator of the contract can call the `resolveContract` function. This function calculates the outcome of the prediction based on the number of shares bought for each outcome, and updates the `resolved` and `outcome` variables in the Contract struct accordingly.
 
