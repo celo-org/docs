@@ -1784,6 +1784,13 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
+    title: 'Building a Celo-Based Decentralized Medical Record System',
+    description: 'Learn how to building a Celo-Based Decentralized Medical Record System',
+    preview: require('./showcase/intermediate/building-a-celo-based-decentralized-medical-record-system.png'),
+    website: 'blog/tutorials/building-a-celo-based-decentralized-medical-record-system',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'react', 'metamask'],
+  },
+  {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
