@@ -1790,6 +1790,13 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
+    title: 'Building a Celo Oracle for Off-Chain Data: A Step-by-Step Guide',
+    description: 'Learn how to build a  Celo Oracle for Off-Chain Data using a step-by-step guide',
+    preview: require('./showcase/intermediate/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png'),
+    website: 'blog/tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
+  },
+  {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
     preview: require('./showcase/beginner/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix.png'),
