@@ -2730,7 +2730,7 @@ const Users: User[] = [
  {
     title: 'Creating a Staking Contract on Celo with Python',
     description: 'In this tutorial, you will learn how to build a staking contract on Celo using web3.py.',
-    preview: require('./showcase/intermediate/creating-a-staking-contract-on-celo-with-python.png'),
+    preview: require('./showcase/intermediate/sage-creating-a-staking-contract-on-celo-with-python.png'),
     website: 'blog/tutorials/creating-a-staking-contract-on-celo-with-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   }, 
