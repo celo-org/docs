@@ -315,11 +315,11 @@ Furthermore, we add the `getContract` function.
 }
 ```
 
-The `getContract` function is a public view function that anyone can call to retrieve the details of a specific prediction contract in our `PredictionMarket` contract. The function takes an index number as a parameter, which is used to look up the corresponding contract in our "contracts" mapping.
+The `getContract` function is a public view function that anyone can call to retrieve the details of a specific prediction contract in our `PredictionMarket` contract. The function takes an `index` number as a parameter, which is used to look up the corresponding contract in our `contracts` mapping.
 
-In the function, we first retrieve the `Contract` struct from our `contracts` mapping using the provided index number. We then return a tuple containing all the relevant properties of the `Contract` struct.
+In the function, we first retrieve the `Contract` struct from our `contracts` mapping using the provided `index` number. We then return a tuple containing all the relevant properties of the `Contract` struct.
 
-Specifically, we return the address of the person who created the prediction contract, the description of the prediction, the end timestamp for the prediction, the number of `yes` shares, the number of `no` shares, the price of the prediction, and the status of the prediction contract (resolved or not) and its outcome.
+Specifically, we return the address of the person who created the prediction contract, the description of the prediction, the end timestamp for the prediction, the number of `yes` shares, the number of `no` shares, the price of the prediction, and the status of the prediction contract `(resolved or not)` and its outcome.
 
 Additionally, we add the `buyShares` function.
 
@@ -341,9 +341,9 @@ Additionally, we add the `buyShares` function.
     }
 ```
 
-In this session, we have the buyShares function which allows a user to buy shares in a contract by sending cUSD to the contract. The function takes two parameters: the \_index parameter specifies which contract to buy shares in, and the \_outcome parameter specifies whether the user is buying shares in the `yes` outcome (if \_outcome is true) or the `no` outcome (if \_outcome is false).
+In this session, we have the `buyShares` function which allows a user to buy shares in a contract by sending cUSD to the contract. The function takes two parameters: the `\_index` parameter specifies which contract to buy shares in, and the `\_outcome` parameter specifies whether the user is buying shares in the `yes` outcome `(if \_outcome is true)` or the `no` outcome `(if \_outcome is false)`.
 
-The function first checks whether the contract has already been resolved by verifying that the resolved boolean flag is set to false. If the contract has already been resolved, the function will throw an error and stop executing.
+The function first checks whether the contract has already been resolved by verifying that the resolved boolean flag is set to `false`. If the contract has already been resolved, the function will throw an error and stop executing.
 
 Next, the function checks whether the correct amount of cUSD has been sent by the user. If the sent amount is incorrect, the function will throw an error and stop executing.
 
