@@ -26,7 +26,7 @@ Before we begin, it is essential to be familiar with:
 
 ## Requirements
 
- It would help if you had the following installed on your computer to follow along:
+It would help if you had the following installed on your computer to follow along:
 
 - Python 3.7 or later
 - [Node.js](https://nodejs.org/en/download/)
@@ -160,12 +160,12 @@ To manage ERC20 tokens and ownership, this contract makes use of the OpenZeppeli
 Each function does the following:
 
 - constructor: Sets the staking duration and initializes the staking contract with the addresses for the cUSD and CELO tokens.
-- stake: With the help of this feature, users can stake their cUSD tokens. It needs the user to have a sufficient balance of cUSD tokens and the _amount of cUSD tokens to stake. After that, the function moves the tokens from the user's address to the contract address and modifies the user's stakingInfo mapping with the staked sum, start time, and claimed status set to false. The user's address and the amount staked are included in an event called Staked.
+- stake: With the help of this feature, users can stake their cUSD tokens. It needs the user to have a sufficient balance of cUSD tokens and the \_amount of cUSD tokens to stake. After that, the function moves the tokens from the user's address to the contract address and modifies the user's stakingInfo mapping with the staked sum, start time, and claimed status set to false. The user's address and the amount staked are included in an event called Staked.
 - Unstake: After the staking time is over, users can use this function to remove their tokens from staking and get their winnings. It verifies whether the staking period has expired and whether the user has any staked tokens. The function uses the calculateReward function to determine the user's reward if the conditions are satisfied. The user's claimed status is then declared accurate, the staked cUSD tokens and CELO incentives are returned to the user, and an Unstaked event is generated with the user's address and the staked sum. The user's stake information is then removed from the stakingInfo mapping.
 - calculateReward: With the bet amount, this function determines the rewards. In this instance, it merely gives a 5% incentive. But, you are able to use a more intricate logic for award calculation here.
-- setStakingPeriod**:** The contract owner can modify the staking period using the setStakingPeriod function. It modifies the stakingPeriod variable by accepting a new _stakingPeriod as input.
-- setCUSDToken: The contract owner can modify the cUSD token address using the method setCUSDToken. It refreshes the cUSDToken variable by accepting a fresh _cUSDToken address as input.
-- setCELOToken**:** The contract owner may modify the CELO token address using the setCELOToken method. It refreshes the CELOToken variable by accepting a fresh _CELOToken address as input.
+- setStakingPeriod**:** The contract owner can modify the staking period using the setStakingPeriod function. It modifies the stakingPeriod variable by accepting a new \_stakingPeriod as input.
+- setCUSDToken: The contract owner can modify the cUSD token address using the method setCUSDToken. It refreshes the cUSDToken variable by accepting a fresh \_cUSDToken address as input.
+- setCELOToken**:** The contract owner may modify the CELO token address using the setCELOToken method. It refreshes the CELOToken variable by accepting a fresh \_CELOToken address as input.
 
 Note: To install the “Ownable” and “IERC20” solidity files, you need to install them via npm
 
@@ -265,7 +265,7 @@ contract_address = transaction_receipt['contractAddress']
 print(f"Contract deployed at address: {contract_address}")
 ```
 
-The Identity contract is built and deployed to the Celo blockchain using this script, which also installs the necessary Solidity compiler version and establishes a connection to a Celo node. When executing the script, make careful to set the environment variables CELO PROVIDER URL, CELO DEPLOYER ADDRESS, and CELO DEPLOYER PRIVATE KEY. 
+The Identity contract is built and deployed to the Celo blockchain using this script, which also installs the necessary Solidity compiler version and establishes a connection to a Celo node. When executing the script, make careful to set the environment variables CELO PROVIDER URL, CELO DEPLOYER ADDRESS, and CELO DEPLOYER PRIVATE KEY.
 
 Run the code in your terminal with the follwing command:
 
