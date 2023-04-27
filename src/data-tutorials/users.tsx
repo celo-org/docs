@@ -706,7 +706,7 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo'],
   },
   {
-    title: ' A prediction market that allows users to create and trade prediction contracts on future events on celo',
+    title: 'A prediction market that allows users to create and trade prediction contracts on future events on celo',
     description: 'This project is a smart contract for a prediction market. Users can create and trade contracts on future events, and the contract settles automatically based on the outcome.',
     preview: require('./showcase/intermediate//a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo.png'),
     website: '/blog/tutorials/a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo',
