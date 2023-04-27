@@ -209,7 +209,7 @@
   },
   "sidebar.docs.link.Faucet": {
     "message": "Faucet",
-    "description": "The label for link Faucet in sidebar docs, linking to https://celo.org/developers/faucet"
+    "description": "The label for link Faucet in sidebar docs, linking to https://faucet.celo.org"
   },
   "sidebar.docs.link.Exchanges": {
     "message": "Exchanges",
@@ -818,5 +818,21 @@
   "sidebar.docs.link.Social Connect": {
     "message": "Social Connect",
     "description": "The label for link Social Connect in sidebar docs, linking to https://github.com/celo-org/identity"
+  },
+  "sidebar.docs.doc.Web2 to Web3": {
+    "message": "Web2 to Web3",
+    "description": "The label for the doc item Web2 to Web3 in sidebar docs, linking to the doc general/web2-to-web3"
+  },
+  "sidebar.docs.doc.Coinbase Wallet": {
+    "message": "Coinbase Wallet",
+    "description": "The label for the doc item Coinbase Wallet in sidebar docs, linking to the doc wallet/coinbase-wallet"
+  },
+  "sidebar.docs.doc.Cannoli Testnet": {
+    "message": "Cannoli Testnet",
+    "description": "The label for the doc item Cannoli Testnet in sidebar docs, linking to the doc network/cannoli/disclaimer"
+  },
+  "sidebar.docs.doc.StackShift": {
+    "message": "StackShift",
+    "description": "The label for the doc item StackShift in sidebar docs, linking to the doc community/StackShift/StackShift"
   }
 }
