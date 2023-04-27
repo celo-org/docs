@@ -3,14 +3,13 @@ title: A prediction market that allows users to create and trade prediction cont
 description: This project is a smart contract for a prediction market. Users can create and trade contracts on future events, and the contract settles automatically based on the outcome.
 authors:
   - name: Ogoyi Thompson
-    title: Technical Writer 
-    url:   https://github.com/Ogoyi
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ogoyi
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, dapp, intermediate, celo]
 hide_table_of_contents: true
 slug: /tutorials/a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo
 ---
-
 
 ![header](../../src/data-tutorials/showcase/intermediate/a-prediction-market-that-allows-users-to-create-and-trade-prediction-contracts-on-future-events-on-celo.png)
 
@@ -25,151 +24,151 @@ To follow this tutorial, you will require:
 - A code editor or text editor such as Remix.
 
 - An internet browser and a stable internet connection.
-  
+
 ## PREREQUISITE
 
 To successfully complete this tutorial, it is recommended that you have:
 
 - Familiarity with Javascript programming language.
-  
+
 - A basic understanding of Blockchain technology and its functioning.
-  
+
 - Basic knowledge of the Solidity programming language used for smart contract development on the blockchain.
-  
+
   We will begin by using the Remix IDE to write our smart contract. Let's get started!
 
- The complete code:
-   
- ```solidity
-  // SPDX-License-Identifier: MIT
+The complete code:
+
+```solidity
+ // SPDX-License-Identifier: MIT
 
 pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
 
 interface IERC20Token {
-   function transfer(address, uint256) external returns (bool);
+  function transfer(address, uint256) external returns (bool);
 
-    function approve(address, uint256) external returns (bool);
+   function approve(address, uint256) external returns (bool);
 
-    function transferFrom(
-        address,
-        address,
-        uint256
-    ) external returns (bool);
+   function transferFrom(
+       address,
+       address,
+       uint256
+   ) external returns (bool);
 
-    function totalSupply() external view returns (uint256);
+   function totalSupply() external view returns (uint256);
 
-    function balanceOf(address) external view returns (uint256);
+   function balanceOf(address) external view returns (uint256);
 
-    function allowance(address, address) external view returns (uint256);
+   function allowance(address, address) external view returns (uint256);
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(
-        address indexed owner,
-        address indexed spender,
-        uint256 value
-    );
+   event Transfer(address indexed from, address indexed to, uint256 value);
+   event Approval(
+       address indexed owner,
+       address indexed spender,
+       uint256 value
+   );
 }
 
 contract PredictionMarket {
-    
-    using SafeMath for uint;
 
-    uint internal numContracts = 0;
-    address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+   using SafeMath for uint;
 
-    struct Contract {
-        address payable creator;
-        string description;
-        uint endTimestamp;
-        uint yesShares;
-        uint noShares;
-        uint price;
-        bool resolved;
-        bool outcome;
-    }
+   uint internal numContracts = 0;
+   address internal cUsdTokenAddress = 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
-    mapping(uint => Contract) internal contracts;
+   struct Contract {
+       address payable creator;
+       string description;
+       uint endTimestamp;
+       uint yesShares;
+       uint noShares;
+       uint price;
+       bool resolved;
+       bool outcome;
+   }
 
-    function createContract(
-        string memory _description,
-        uint _endTimestamp,
-        uint _price
-    ) public {
-        Contract storage newContract = contracts[numContracts];
-        newContract.creator = payable(msg.sender);
-        newContract.description = _description;
-        newContract.endTimestamp = _endTimestamp;
-        newContract.price = _price;
-        newContract.resolved = false;
-        newContract.outcome = false;
-        numContracts++;
-    }
+   mapping(uint => Contract) internal contracts;
 
-    function getContract(uint _index) public view returns (
-    address,
-    string memory,
-    uint,
-    uint,
-    uint,
-    uint,
-    bool,
-    bool
+   function createContract(
+       string memory _description,
+       uint _endTimestamp,
+       uint _price
+   ) public {
+       Contract storage newContract = contracts[numContracts];
+       newContract.creator = payable(msg.sender);
+       newContract.description = _description;
+       newContract.endTimestamp = _endTimestamp;
+       newContract.price = _price;
+       newContract.resolved = false;
+       newContract.outcome = false;
+       numContracts++;
+   }
+
+   function getContract(uint _index) public view returns (
+   address,
+   string memory,
+   uint,
+   uint,
+   uint,
+   uint,
+   bool,
+   bool
 ) {
-    Contract storage c = contracts[_index];
-    return (
-        c.creator,
-        c.description,
-        c.endTimestamp,
-        c.yesShares,
-        c.noShares,
-        c.price,
-        c.resolved,
-        c.outcome
-    );
+   Contract storage c = contracts[_index];
+   return (
+       c.creator,
+       c.description,
+       c.endTimestamp,
+       c.yesShares,
+       c.noShares,
+       c.price,
+       c.resolved,
+       c.outcome
+   );
 }
 
-    function buyShares(uint _index, bool _outcome) public payable {
-        require(
-            !contracts[_index].resolved,
-            "Contract has already been resolved."
-        );
-        require(
-            msg.value == contracts[_index].price,
-            "Incorrect amount of cUSD sent."
-        );
-        if (_outcome) {
-            contracts[_index].yesShares = contracts[_index].yesShares.add(msg.value);
-        } else {
-            contracts[_index].noShares = contracts[_index].noShares.add(msg.value);
-        }
-    }
+   function buyShares(uint _index, bool _outcome) public payable {
+       require(
+           !contracts[_index].resolved,
+           "Contract has already been resolved."
+       );
+       require(
+           msg.value == contracts[_index].price,
+           "Incorrect amount of cUSD sent."
+       );
+       if (_outcome) {
+           contracts[_index].yesShares = contracts[_index].yesShares.add(msg.value);
+       } else {
+           contracts[_index].noShares = contracts[_index].noShares.add(msg.value);
+       }
+   }
 function resolveContract(uint _index, bool _outcome) public {
-    require(
-        block.timestamp > contracts[_index].endTimestamp,
-        "Contract has not yet expired."
-    );
-    require(
-        !contracts[_index].resolved,
-        "Contract has already been resolved."
-    );
-    contracts[_index].resolved = true;
-    contracts[_index].outcome = _outcome;
-    uint totalShares = contracts[_index].yesShares.add(contracts[_index].noShares);
-    if (totalShares > 0) {
-        uint payoutPerShare = address(this).balance.div(totalShares);
-        if (_outcome) {
-            contracts[_index].creator.transfer(contracts[_index].yesShares.mul(payoutPerShare));
-        } else {
-            contracts[_index].creator.transfer(contracts[_index].noShares.mul(payoutPerShare));
-        }
-    }
+   require(
+       block.timestamp > contracts[_index].endTimestamp,
+       "Contract has not yet expired."
+   );
+   require(
+       !contracts[_index].resolved,
+       "Contract has already been resolved."
+   );
+   contracts[_index].resolved = true;
+   contracts[_index].outcome = _outcome;
+   uint totalShares = contracts[_index].yesShares.add(contracts[_index].noShares);
+   if (totalShares > 0) {
+       uint payoutPerShare = address(this).balance.div(totalShares);
+       if (_outcome) {
+           contracts[_index].creator.transfer(contracts[_index].yesShares.mul(payoutPerShare));
+       } else {
+           contracts[_index].creator.transfer(contracts[_index].noShares.mul(payoutPerShare));
+       }
+   }
 }
 
-     } 
- ```
- 
+    }
+```
+
 ```solidity
  // SPDX-License-Identifier: MIT
 
@@ -220,7 +219,7 @@ Finally, we have also included two events in this code, which are triggered when
 
 ```solidity
 contract PredictionMarket {
-    
+
     using SafeMath for uint;
 
     uint internal numContracts = 0;
@@ -342,13 +341,13 @@ Additionally, we add the `buyShares` function.
     }
 ```
 
-In this session, we have the buyShares function which allows a user to buy shares in a contract by sending cUSD to the contract. The function takes two parameters: the _index parameter specifies which contract to buy shares in, and the _outcome parameter specifies whether the user is buying shares in the `yes` outcome (if _outcome is true) or the `no` outcome (if _outcome is false).
+In this session, we have the buyShares function which allows a user to buy shares in a contract by sending cUSD to the contract. The function takes two parameters: the \_index parameter specifies which contract to buy shares in, and the \_outcome parameter specifies whether the user is buying shares in the `yes` outcome (if \_outcome is true) or the `no` outcome (if \_outcome is false).
 
 The function first checks whether the contract has already been resolved by verifying that the resolved boolean flag is set to false. If the contract has already been resolved, the function will throw an error and stop executing.
 
 Next, the function checks whether the correct amount of cUSD has been sent by the user. If the sent amount is incorrect, the function will throw an error and stop executing.
 
-Finally, if the checks are successful, the function updates the share count for the corresponding outcome by adding the sent amount of cUSD to the yesShares or noShares field of the Contract struct, depending on the value of _outcome. This is done using the add function provided by the SafeMath library to prevent arithmetic overflow errors.
+Finally, if the checks are successful, the function updates the share count for the corresponding outcome by adding the sent amount of cUSD to the yesShares or noShares field of the Contract struct, depending on the value of \_outcome. This is done using the add function provided by the SafeMath library to prevent arithmetic overflow errors.
 
 Finally, we add the `resolveContract` function
 
@@ -375,7 +374,7 @@ function resolveContract(uint _index, bool _outcome) public {
     }
 }
 
-     } 
+     }
 ```
 
 The `resolveContract` function is used to determine the outcome of a prediction market contract and distribute the winnings to the participants accordingly. We first check that the contract has expired and not already been resolved. If these conditions are met, we mark the contract as resolved and set the outcome to the provided boolean value. We then calculate the total number of shares and the payout per share. If the outcome is true, we transfer the winnings to the creator based on the number of `yes` shares they hold. Otherwise, we transfer the winnings based on the number of `no` shares they hold. Overall, this function enables us to accurately determine the outcome of the contract and distribute winnings accordingly.
@@ -393,7 +392,7 @@ With our wallet funded, we can now proceed to deploy the smart contract using th
 ## CONCLUSION
 
 Great job on learning about the Prediction Market smart contract on the Celo blockchain! By following this tutorial, we have gained a deeper understanding of how to create and interact with smart contracts, and how they can be used to create decentralized prediction markets. We hope that you found this tutorial informative and useful, and that you can apply this knowledge to build even more sophisticated smart contracts in the future. Keep up the great work! 🚀
- 
+
 ## Next step
 
 Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
@@ -401,4 +400,3 @@ Great job! It's always helpful to provide additional resources for further learn
 ## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
-
