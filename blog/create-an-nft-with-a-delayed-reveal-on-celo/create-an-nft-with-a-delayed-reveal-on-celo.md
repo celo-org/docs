@@ -285,8 +285,6 @@ Now scroll down the list of functions and Call the same tokenURI function you ca
 
 ![img6](images/Revealed%20TokenURI.png)
 
-Here is the [source code]() of the files we created 
-
 ## Conclusion
 
 NFT Reveals can change the dynamics of your NFT collections. Switching the Base URI is such an easy implementation but can introduce some excitement to your NFT mints.
