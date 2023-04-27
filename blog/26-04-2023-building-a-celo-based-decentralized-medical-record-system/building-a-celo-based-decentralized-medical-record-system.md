@@ -451,6 +451,7 @@ const updateExistingRecord = async (e) => {
 With these changes, users can create and update medical records using the front end. Doctors can grant and revoke the `DOCTOR_ROLE` to other users through the smart contract methods `grantDoctorRole` and `revokeDoctorRole`. This can be done using tools like Remix or by creating additional front-end components which we will do in the next section.
 
 ## Displaying Medical Records
+
 Now that we can create and update medical records, let's create a component that will display these records in a list. 
 - Add the following code to the `src/MedicalRecord.js` component:
 
@@ -542,6 +543,7 @@ const updateExistingRecord = async (e) => {
 ```
 
 ## Testing the Application
+
 To test the application, run the following command in your terminal:
 
 ```bash
@@ -775,6 +777,7 @@ export default MedicalRecord;
 ```
 
 On running the command again:
+
 ```bash
 npm start
 ```
@@ -805,21 +808,24 @@ You should see this browser window with the application.
 - You can view the details of the transaction on the Celo Explorer. Your Medical Records details will now be saved to the blockchain and can only be updated by an address with the  `DOCTOR_ROLE`.
 
 ## Conclusion
+
 Congratulations! You have built a decentralized medical record system on the Celo network using smart contracts, React, and the Celo Extension Wallet. This system allows doctors to create, view, and update patients' medical records securely, while patients can view their records. The application provides a user-friendly interface for interacting with the smart contract and is a good starting point for building more complex decentralized applications on the Celo platform.
 
 ## What's Next?
-You have now built a basic decentralized medical record system on the Celo network. Here are some ideas to further improve and expand the application:
 
-Implement a more advanced user interface, including search and filtering options for the medical records list.
-Integrate with a decentralized storage solution like IPFS to store medical data more securely and efficiently.
-Add support for more data types, such as images, videos, and other files, to store more comprehensive medical information.
-Develop a mobile application using React Native or another mobile development framework to make the system more accessible for users on the go.
+You have now built a basic decentralized medical record system on the Celo network. Here are some ideas to further improve and expand the application:
+- Implement a more advanced user interface, including search and filtering options for the medical records list.
+- Integrate with a decentralized storage solution like IPFS to store medical data more securely and efficiently.
+- Add support for more data types, such as images, videos, and other files, to store more comprehensive medical information.-
+- Develop a mobile application using React Native or another mobile development framework to make the system more accessible for users on the go.
 
 ## About the Author
+
 Oluwalana is a blockchain developer and technical writer, experienced in creating decentralized applications on Ethereum and Celo platforms. With a passion for knowledge-sharing, Oluwalana has authored various tutorials and articles on blockchain and other emerging technologies.
 Follow me on [Twitter](https://twitter.com/lanacreates) for insights on blockchain and emerging tech. For professional inquiries, kindly connect witth me on [LinkedIn](https://www.linkedin.com/in/oluwalana-ajayi/) and explore my work on [GitHub](https://github.com/lanacreates).
 
 ## References
+
 - [Tutorial Github Repo](https://github.com/lanacreates/Building-a-Celo-Based-Decentralized-Medical-Record-System)
 - [Celo platform documentation](https://docs.celo.org/)
 - [OpenZeppelin contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
