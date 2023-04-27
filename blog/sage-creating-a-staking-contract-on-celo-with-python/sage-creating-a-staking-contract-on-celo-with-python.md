@@ -5,7 +5,7 @@ authors:
   - name: Israel Okunaya
     title: Technical Writer
     url: https://github.com/Southpaw0
-    image_url: https://user-images.githubusercontent.com/104994589/228981025-4e3ab2bf-7586-42f4-90f5-3e3baeef4521.png
+    image_url: https://avatars.githubusercontent.com/u/104994589?v=4
 tags: [celosage, celo, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/creating-a-staking-contract-on-celo-with-python
