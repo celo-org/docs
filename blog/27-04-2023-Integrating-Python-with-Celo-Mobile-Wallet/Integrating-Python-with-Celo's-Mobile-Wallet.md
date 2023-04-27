@@ -6,10 +6,11 @@ authors:
 url: https://github.com/J0shcodes
 tags: [celosage, intermediate, smartcontract, solidity, python]
 hide_table_of_contents: true
-slug: /tutorials/integrating-python-with-celo's-mobile-wallet
+slug: /tutorials/integrating-python-with-celo-mobile-wallet
 ---
 
-# Integrating Python with Celo's Mobile Wallet
+![header](../../src/data-tutorials/showcase/intermediate/integrating-python-with-celo-mobile-wallet.png)
+
 
 ## Introduction
 
