@@ -2537,6 +2537,13 @@ const Users: User[] = [
     website: "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
     tags: ["advanced", "celosage", "celo", "openzeppelin"],
   },
+   {
+    title: "Integrating Python with Celo's Mobile Wallet",
+    description: "Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.",
+    preview: require("./showcase/advanced/integrating-python-with-celo-mobile-wallet.png"),
+    website: "/blog/tutorials/integrating-python-with-celo-mobile-wallet",
+    tags: ["celosage", "intermediate", "smartcontract", "solidity", "python"],
+  },
   {
     title: "Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs",
     description: "Curious about how Uniswap and other projects are able to airdrop tokens to thousands of users? In this tutorial, we will show you how they use Merkle proof in Solidity and Javascript to accomplish this feat.",
