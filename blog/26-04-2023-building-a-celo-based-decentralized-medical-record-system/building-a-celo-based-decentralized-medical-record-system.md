@@ -363,7 +363,6 @@ This will open a browser window with the application. Make sure you have the Cel
 ![image](https://user-images.githubusercontent.com/125604535/234738822-ef4f126c-81b7-4367-aa73-4fbf8430a806.png)
 
 
-
 ## Interacting with the smart contract
 
 To interact with the smart contract, we will need to create a form to add new medical records and update existing ones. Let's add this functionality to our `src/MedicalRecord.js` component:
