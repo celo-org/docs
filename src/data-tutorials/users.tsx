@@ -2735,6 +2735,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+   {
+    title: 'Creating a Decentralized Insurance Service on Celo with Python',
+    description: "In this tutorial, we will explore the development of a decentralized insurance smart contract on the Celo blockchain and interact with it using Python. Decentralized insurance can provide accessible and transparent coverage, empowering individuals and communities to manage their risks more efficiently. By leveraging Celo's unique, such as stablecoins and programmable smart contracts, we can create a robust decentralized insurance service. By the end of this tutorial, you will have a comprehensive understanding of decentralized insurance and practical experience in building a Celo-based insurance service using Python.",
+    preview: require('./showcase/intermediate/creating-a-decentralized-insurance-service-on-celo-with-python.png'),
+    website: 'blog/tutorials/creating-a-decentralized-insurance-service-on-celo-with-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'python'], 
+
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
