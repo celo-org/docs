@@ -828,7 +828,6 @@ Follow me on [Twitter](https://twitter.com/lanacreates) for insights on blockcha
 - [React](https://reactjs.org/)
 - [IPFS](https://ipfs.io/)
 
-Can you also add the link to the complete tutorial’s  github repo as a reference here
 
 
 
