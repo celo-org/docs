@@ -14,6 +14,7 @@ slug: /tutorials/building-a-celo-based-decentralized-medical-record-system
 ![header](../../src/data-tutorials/showcase/intermediate/building-a-celo-based-decentralized-medical-record-system.png)
 
 ## Introduction
+
 Medical records are essential for providing patients with accurate and timely healthcare. However, traditional systems can be inefficient and insecure. In this tutorial, you will learn how to create a decentralized medical record system on the Celo platform. We will cover the process of securely storing patient data, managing access control, and issuing verifiable credentials using smart contracts. Additionally, you will learn how to create a user interface for patients, doctors, and other medical professionals to interact with the medical record system. We will use Solidity, JavaScript, React, the Celo SDK, and medical record concepts to build our system.
 
 Building a decentralized medical record system on the blockchain has several advantages compared to traditional centralized systems:
@@ -26,12 +27,14 @@ Building a decentralized medical record system on the blockchain has several adv
 While there are clear benefits to using blockchain technology for a decentralized medical record system, it's essential to carefully consider the specific use case, the regulatory environment, and the potential challenges (such as scalability and data storage) before deciding to build on the blockchain.
 
 ## Prerequisites
+
 Before diving into this tutorial, you should have:
 - Basic understanding of blockchain and Celo.
 - Familiarity with Solidity, JavaScript, and React.
 - Experience with Celo SDK.
 
 ## Requirements
+
 1. Install Node.js (version 12.0.1 or higher) from here.
 2. Install the Celo Extension Wallet for your browser.
 3. A Celo Faucet Account for accessing the Celo network.
@@ -45,6 +48,7 @@ To get a Celo test account, you can follow these steps:
 - Now you can use this test account in the tutorial. Ensure that you're interacting with the Alfajores Testnet when working on your project.
 
 ## Getting Started
+
 We will start by creating the smart contract for our medical record system. The contract will store patient data, manage access control, and issue verifiable credentials.
 
 1. Setting up the project
@@ -67,6 +71,7 @@ Install the OpenZeppelin Contracts library:
 ```bash
 npm install @openzeppelin/contracts
 ```
+
 ## Writing the Smart Contract
 
 1. In your project directory, create a new file in the contracts folder called `MedicalRecord.sol`
@@ -191,6 +196,7 @@ module.exports = {
   },
 };
 ```
+
 3. Compile the smart contract
 Run the following command to compile the smart contract:
 
@@ -213,21 +219,26 @@ After the deployment is successful, you will see the smart contract address in t
 Take note of the deployed contract address for future use.
 
 ## Building the Front-end
+
 1. Create a new directory for the frontend and navigate to it:
 
 ```bash
 mkdir frontend
 cd frontend
 ```
+
 2. Initialize a new React project:
+
 ```bash
 npx create-react-app .
 ```
+
 3. Install the required dependencies:
 
 ```bash
 npm install @celo/contractkit @celo-tools/use-contractkit web3 @openzeppelin/contracts
 ```
+
 You might run into this error:
 
 ![image](https://user-images.githubusercontent.com/125604535/234716744-1cff90c2-8110-4ebf-b406-11645bf29e9f.png)
@@ -245,7 +256,7 @@ You can downgrade your React and React DOM versions in your `package.json` file 
 
 Now you should be able to install the dependencies successfully.
 
-4. Next, let's create the frontend components and connect them to interact with our smart contract. In the src directory, create a new file ```src/MedicalRecord.js``` and add the following code:
+4. Next, let's create the frontend components and connect them to interact with our smart contract. In the src directory, create a new file `src/MedicalRecord.js` and add the following code:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -340,8 +351,8 @@ function App() {
   );
 }
 export default App;
-
 ```
+
 With the frontend components in place, you can now run the React development server to test the application:
 
 ```bash
@@ -354,6 +365,7 @@ This will open a browser window with the application. Make sure you have the Cel
 
 
 ## Interacting with the smart contract
+
 To interact with the smart contract, we will need to create a form to add new medical records and update existing ones. Let's add this functionality to our `src/MedicalRecord.js` component:
 
 1. First, add the required state variables for the form fields:
@@ -401,6 +413,7 @@ const updateExistingRecord = async (e) => {
 ```
 
 4. Finally, add the form components to the JSX:
+
 ```jsx
 <form onSubmit={selectedRecordId ? updateExistingRecord : createNewRecord}>
   <div>
