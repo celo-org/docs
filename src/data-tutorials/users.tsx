@@ -1198,6 +1198,13 @@ const Users: User[] = [
 
   },
   {
+    title: 'Building a Decentralized Identity System with Solidity and ERC-735 On Celo',
+    description: 'In This tutorial we will learn how to build a decentralized identity system with solidity and ERC-735 on celo',
+    preview: require('./showcase/intermediate/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo.png'),
+    website: '/blog/tutorials/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Como construir e realizar deploy de contratos Factory no blockchain Celo',
     description: 'Explicar e construir um contract Factory na prática usando Remix',
     preview: require('./showcase/intermediate/How-to-Build-and-Deploy-Factory-Contracts-on-Celo-Blockchain.png'),
