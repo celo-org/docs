@@ -2973,6 +2973,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner', 'celo', 'deploy'], 
   },
   {
+    title: 'Building A Decentralized Tipping System on Celo',
+    description: 'This tutorial guides you through the steps required to building a decentralized tipping system.',
+    preview: require('./showcase/intermediate/building-decentralized-tipping-system-on-celo.png'),
+    website: 'blog/tutorials/building-decentralized-tipping-system-on-celo',
+    tags: ['celosage', 'intermediate', 'solidity', 'smartcontract'], 
+  },
+  {
     title: "Build a monthly susbscription platform using Celo composer & Openzeppelin Defender",
     description: "This comprehensive tutorial will guide you through setting up a crypto payment subscription platform on Celo.",
     preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
