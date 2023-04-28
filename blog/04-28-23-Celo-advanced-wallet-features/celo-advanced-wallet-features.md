@@ -10,8 +10,7 @@ tags: ["intermediate", "celo", "celosage", "celowallet"]
 hide_table_of_contents: true
 slug: /tutorials/Learn-to-navigate-advanced-celo-wallet-features
 ---
-
-![header](../../src/data-tutorials/showcase/intermediate/Learn_to_Navigate_Advanced_Celo_Wallet_Features.png)
+![header](../../src/data-tutorials/showcase/intermediate/Advanced-Celo-Wallet-Features.png)
 
 ## Introduction
 
@@ -53,7 +52,7 @@ In this tutorial, we will cover the following advanced Celo wallet features:
 
 ### Getting Started with Advanced Celo Wallet Features
 
-[CeloWalletInterface](./images/Celo_Wallet_App.png)
+[CeloWalletInterface](./images/1.png)
 
 (image source: [Techcrunch](https://techcrunch.com/2020/03/11/celo-alliance-for-prosperity/amp/))
 
@@ -101,7 +100,7 @@ You can switch between accounts at any time by selecting the desired account fro
 
 ### 4. Using Multi-Signature Wallets
 
-[Multisigfeature](./images/multi_sig_wallet.jpg)
+[Multisigfeature](./images/3.jpg)
 
 (image credit: [Medium](https://medium.com/the-capital/how-can-a-multisig-wallet-secure-your-transactions-482d3ac22ffe))
 
