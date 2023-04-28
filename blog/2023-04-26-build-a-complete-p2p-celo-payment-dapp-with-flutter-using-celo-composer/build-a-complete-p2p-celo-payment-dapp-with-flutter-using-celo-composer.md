@@ -22,7 +22,7 @@ In this tutorial, I will be explaining on how to build a CELO based p2p payment 
 
 ## Prerequisites
 
-First, This tutorial assumes that you are already familiar with solidity and understand how smart contracts work and also assumes that you already know the basics of using Flutter or you can  please clone the [flutter p2p celo](https://github.com/Mujhtech/flutter_p2p_celo). You'll also want to make sure you've installed the MetaMask Mobile App and have a MetaMask account. If you'd like, see our prior tutorial Setting Up Your Wallet for more details on this.
+First, This tutorial assumes that you are already familiar with solidity and understand how smart contracts work and also assumes that you already know the basics of using Flutter or you can please clone the [flutter p2p celo](https://github.com/Mujhtech/flutter_p2p_celo). You'll also want to make sure you've installed the MetaMask Mobile App and have a MetaMask account. If you'd like, see our prior tutorial Setting Up Your Wallet for more details on this.
 
 For this project we'll be using a few interesting dependencies & dev dependencies:
 
@@ -161,6 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 ### Update home_screen.dart file
+
 Update the home screen file to carry the new changes.
 
 ```dart
@@ -670,4 +671,3 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 - Celo Composer [https://github.com/celo-org/celo-composer](https://github.com/celo-org/celo-composer)
 - Flutter [https://flutter.dev](https://flutter.dev)
 - Solidity by example [https://solidity-by-example.org/](https://solidity-by-example.org/)
-
