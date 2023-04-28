@@ -36,7 +36,6 @@ The easiest way to get started with Celo Composer is using `@celo/celo-composer`
 - [Hardhat](https://hardhat.org/) Smart contract development environment
 - [Solidity](https://docs.soliditylang.org/en/v0.8.17/structure-of-a-contract.html#enum-types) Smart Contract Language
 
-
 ## Getting Started
 
 1. Bootstrap the application using this Celo Composer command.
@@ -65,7 +64,6 @@ npx @celo/celo-composer create
 
 ![image](images/image-5.png)
 
-
 cd into your app then install the dependencies required in the project. In the root directory, run
 
 ```bash
@@ -78,11 +76,9 @@ npm install
 
 ---
 
-
 ## Creating our Smart Contract
 
 First, we are going to build our smart contract and with this, you will be required to have a bit of knowledge of Solidity. To learn more about solidity contracts and the structures of a contract you can check out [this link](https://docs.soliditylang.org/en/v0.8.17/structure-of-a-contract.html).
-
 
 In the hardhat directory, navigate to contracts and create a new file then name it `computerMarketplace.sol`. Delete the other boilerplate files.
 
@@ -148,7 +144,7 @@ contract ComputerMarketplace {
 
     bool private locked = false;
 
-    /* 
+    /*
        Modifier making functions non reentrant by changing locked boolean for duration of transaction so that on reentry it does not pass the "not locked requirement"
     */
     modifier nonReentrant() {
@@ -196,7 +192,7 @@ contract ComputerMarketplace {
 
     /*
     Function to change max products per user
-     
+
     ->Requirement: Only the owner can set this limit
     */
     function setMaxProductsPerUser(uint _maxProductsPerUser) public Onlyowner {
@@ -216,7 +212,7 @@ contract ComputerMarketplace {
 
     ->Requirements
     *Non of the fields of data entered should be a zero
-    *Price field data should also be below max price 
+    *Price field data should also be below max price
     *Seller should no have exceeded platform limit
     */
 
@@ -272,7 +268,7 @@ contract ComputerMarketplace {
     }
 
     /*
-     Function allowing buyers to access data on a given product 
+     Function allowing buyers to access data on a given product
      */
     function readProduct(
         uint _index
@@ -327,7 +323,7 @@ contract ComputerMarketplace {
             "Celo token transfer failed"
         );
 
-        
+
         products[_index].sold++;
 
         emit ProductSold(
@@ -449,7 +445,6 @@ The interface also defines two events:
 
 - **Approval:** emitted when an address is approved to spend a certain amount of tokens on behalf of another address.
 
-
 And then we define our smart contract `ComputerMarketplace`.
 
 ```solidity
@@ -458,14 +453,15 @@ contract ComputerMarketplace {
 }
 ```
 
-Contracts in Solidity are similar to classes in object-oriented languages. 
+Contracts in Solidity are similar to classes in object-oriented languages.
 
 ## Variables, Structs, Mappings, Modifiers and Events
+
 We will now define some variables, structs and mappings that will be used by our contract.
 
 ```solidity
     uint internal productsLength = 0;
-   
+
     address internal celoTokenAddress =
         0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9;
 
@@ -506,14 +502,15 @@ We will now define some variables, structs and mappings that will be used by our
 
 - **address internal celoTokenAddress**: declares a variable for the celo network native currency which is used to pay for products in our marketplace.
 
-- **Product**: a struct that defines properties of the marketplace. The fields are: 
-   - `owner`:  address of the user who owns the product. It is declared as address payable to allow it to receive payments from the buyer.
-   - `computer_title`: name of the product.
-   - `image_url`: URL of the product's image.
-   - `computer_specs`: specifications of the product.
-   - `store_location`: physical location of the store selling the product.
-   - `price`: price of the product in CELO tokens.
-   - `sold`: number of units of the product that have been sold so far.
+- **Product**: a struct that defines properties of the marketplace. The fields are:
+
+  - `owner`: address of the user who owns the product. It is declared as address payable to allow it to receive payments from the buyer.
+  - `computer_title`: name of the product.
+  - `image_url`: URL of the product's image.
+  - `computer_specs`: specifications of the product.
+  - `store_location`: physical location of the store selling the product.
+  - `price`: price of the product in CELO tokens.
+  - `sold`: number of units of the product that have been sold so far.
 
 - **MAX_PRICE**: defines the maximum allowed values for prices. The requirement statement checks whether the product price is within the valid range.
 
@@ -523,11 +520,10 @@ We will now define some variables, structs and mappings that will be used by our
 
 - **nonReentrant**: modifier to the buyProduct function to lock the function while it is being executed to prevent a user to call it at the same time and revert it if so.
 
-- **ProductCreated**: event is emitted when a new product is created in the smart contract. The event has five parameters: the `address of the product owner`, `computer title`, `image URL`,  `computer specifications`, `store location`, and `price` of the product. The `indexed` keyword is used to allow for efficient filtering and searching of the event based on its parameters.
+- **ProductCreated**: event is emitted when a new product is created in the smart contract. The event has five parameters: the `address of the product owner`, `computer title`, `image URL`, `computer specifications`, `store location`, and `price` of the product. The `indexed` keyword is used to allow for efficient filtering and searching of the event based on its parameters.
 
-- **ProductDeleted**: event is emitted when an existing product is deleted from the smart contract. The event has three parameters: the `address of the product owner`,  `computer title`, and the `image URL`.
-Both events allow external parties, such as a user interface or another smart contract, to receive notifications when certain actions occur in the smart contract.
-
+- **ProductDeleted**: event is emitted when an existing product is deleted from the smart contract. The event has three parameters: the `address of the product owner`, `computer title`, and the `image URL`.
+  Both events allow external parties, such as a user interface or another smart contract, to receive notifications when certain actions occur in the smart contract.
 
 ## Functions
 
@@ -543,7 +539,7 @@ Both events allow external parties, such as a user interface or another smart co
 
 ```
 
-`setMaxProductsPerUser` function allows the contract owner to change the maximum number of products a user can create. It takes an unsigned integer _maxProductsPerUser as an argument and sets the maxProductsPerUser variable to the value of the argument. However, the _maxProductsPerUser argument must be greater than 0, and if it is not, the function will fail and return an error message.
+`setMaxProductsPerUser` function allows the contract owner to change the maximum number of products a user can create. It takes an unsigned integer \_maxProductsPerUser as an argument and sets the maxProductsPerUser variable to the value of the argument. However, the \_maxProductsPerUser argument must be greater than 0, and if it is not, the function will fail and return an error message.
 
 ```solidity
 
@@ -625,9 +621,10 @@ The new product is then added to the products mapping at the `productsLength ind
     }
 
 ```
+
 `buyProduct` function is used to buy a product from the marketplace. It takes an argument `_index` which is the `index` of the product in the products array that the buyer wants to purchase. The function requires that the buyer sends an amount of CELO tokens that is equal to the price of the product.
 
-The function then uses the `transferFrom` function of the `IERC20Token` interface to transfer the specified amount of CELO tokens from the `buyer's address` to the `owner's address`. If the transfer is successful, the function updates the `sold` variable of the product by incrementing it by 1. 
+The function then uses the `transferFrom` function of the `IERC20Token` interface to transfer the specified amount of CELO tokens from the `buyer's address` to the `owner's address`. If the transfer is successful, the function updates the `sold` variable of the product by incrementing it by 1.
 
 ```solidity
 
@@ -662,7 +659,6 @@ The function first checks that the input `index` is within the range of valid in
 If both conditions are satisfied, the function proceeds to delete the product at the specified index. To do this, it shifts all products after the specified index one position to the left, effectively overwriting the product at the index being deleted. Finally, it deletes the last element of the array (which is now a duplicate of the product at the second-to-last index) and decrements the `productsLength` variable to reflect the new length of the products array.
 
 The function also decrements the `productsByUser` mapping for the product `owner` to ensure that their product count is up to date.
-
 
 ```solidity
   function getProductsByUser(
@@ -706,7 +702,6 @@ PRIVATE_KEY=""
 To deploy our smart contract successfully, navigate to the scripts directory, delete the boilerplate files and create a new file named deploy.js.
 
 ```javascript
-
 const { ethers } = require("hardhat");
 
 async function main() {
@@ -722,7 +717,10 @@ async function main() {
   await computerMarketplaceContract.deployed();
 
   // Log the address of the new contract
-  console.log("Computer Marketplace deployed to:", computerMarketplaceContract.address);
+  console.log(
+    "Computer Marketplace deployed to:",
+    computerMarketplaceContract.address
+  );
 }
 
 main()
@@ -731,11 +729,10 @@ main()
     console.error(error);
     process.exit(1);
   });
-
 ```
 
-The code deploys the smart contract called `ComputerMarketplace` using the Hardhat framework. 
-First, import the ethers object from the Hardhat library. Define `main()` function that  loads the contract factory using the `getContractFactory()` method provided by the ethers object. 
+The code deploys the smart contract called `ComputerMarketplace` using the Hardhat framework.
+First, import the ethers object from the Hardhat library. Define `main()` function that loads the contract factory using the `getContractFactory()` method provided by the ethers object.
 After that, it deploys the contract using the `deploy()` method of the contract factory. It assigns the deployed contract instance to the `computerMarketplaceContract` constant.
 
 Finally, the `main()` function is executed and if it runs successfully, the script exits with a code of 0. If an error is encountered, it logs the error to the console and exits with a code of 1
@@ -751,7 +748,6 @@ Here's our deployed contract `0x3cA9A6BdF4754146347f2726042e5341327b6542`.
 Your solidity code will successfully be compiled and the contract address is generated after deployment. Save the address in a different file since we will be using the same address to interact with the contract in our frontend.
 
 An artifacts folder is created which contains important files related to the contract, including the ABI files. ABI stands for Application Binary Interface, and it specifies the methods and properties that can be accessed externally by other contracts or applications. The ABI file is essentially a JSON representation of the contract's interface, including the function signatures and input/output parameters. Other applications or contracts can use the ABI file to interact with the deployed contract and execute its functions. Therefore, the ABI file serves as a crucial component in enabling interoperability between different smart contracts and decentralized applications with EVM compatible blockchains.
-
 
 ## Building the UI and React Logic
 
@@ -775,35 +771,35 @@ import ComputerModal from "./ComputerModal";
 import Header from "./Header";
 
 interface Props {
-    children: ReactNode
+  children: ReactNode;
 }
-const Layout: FC<Props> = ({children}) => {
-    return (
-      <>
-        <div
-          data-theme="cupcake"
-          className="bg-gypsum overflow-hidden flex flex-col min-h-screen"
-        >
-          <Header />
-          <div className="py-16 max-w-7xl mx-auto space-y-8 sm:px-6 lg:px-8">
-            <ComputerModal />
-            {children}
-          </div>
+const Layout: FC<Props> = ({ children }) => {
+  return (
+    <>
+      <div
+        data-theme="cupcake"
+        className="bg-gypsum overflow-hidden flex flex-col min-h-screen"
+      >
+        <Header />
+        <div className="py-16 max-w-7xl mx-auto space-y-8 sm:px-6 lg:px-8">
+          <ComputerModal />
+          {children}
         </div>
-      </>
-    );
-}
+      </div>
+    </>
+  );
+};
 
 export default Layout;
 ```
 
-The layout component creates a layout with a header and a modal component, and allows other components to be added as children to the layout. 
+The layout component creates a layout with a header and a modal component, and allows other components to be added as children to the layout.
 
 A [layout](https://beta.nextjs.org/docs/routing/pages-and-layouts) is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render.
 
 ## Build the Header Component
 
-In the **Header** component, we will display the logo, navigation links,  connect wallet button and wallet balance. 
+In the **Header** component, we will display the logo, navigation links, connect wallet button and wallet balance.
 
 ```jsx
 //components/Header.tsx
@@ -816,7 +812,7 @@ In the **Header** component, we will display the logo, navigation links,  connec
    address,
    disconnect,
    connect
-  
+
  } = useCelo();
 
 
@@ -1043,8 +1039,8 @@ The `_app.tsx` is the Next.js application's entry point, which is the file that 
 
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { CeloProvider, Alfajores } from '@celo/react-celo';
-import '@celo/react-celo/lib/styles.css';
+import { CeloProvider, Alfajores } from "@celo/react-celo";
+import "@celo/react-celo/lib/styles.css";
 
 import Layout from "../components/Layout";
 import { ShoppingCartProvider } from "@/context/ShoppingCartContext";
@@ -1082,20 +1078,17 @@ The application uses `react context` to provide global state or configuration op
 
 The `CeloProvider` provides the necessary context for interacting with the Celo blockchain, along with some configuration options such as the name of the DApp, default network, and connect modal options.
 
-`ShoppingCartProvider` and `MarketPlaceProvider` are two context providers that are used to provide data to child components. They provide a way to share data about the user's shopping cart and the state of the marketplace, respectively. 
-
+`ShoppingCartProvider` and `MarketPlaceProvider` are two context providers that are used to provide data to child components. They provide a way to share data about the user's shopping cart and the state of the marketplace, respectively.
 
 ## MarketPlace Context
 
 In the react-app directory, Create an new directory and name it `context` then create a new file `MarketPlaceContext.tsx`.
 
-Create another file and name it `constants.ts`. This file will be used to import and export our marketplace and erc20 token ABI JSON. 
+Create another file and name it `constants.ts`. This file will be used to import and export our marketplace and erc20 token ABI JSON.
 
 In the react-app directory, create a new folder and name it `abi`. From our artifacts folder in hardhat directory, copy the `ComputerMarketplace.json` and `IERC20Token.json` files and paste them in our abi folder.
 
-
 ```typescript
-
 //context/constants.ts
 
 import computerAbi from "../abi/ComputerMarketplace.json";
@@ -1105,14 +1098,11 @@ export const ComputerMarketplaceContract =
   "0x3cA9A6BdF4754146347f2726042e5341327b6542";
 export const ComputerMarketplaceAbi = computerAbi.abi;
 export const erc20Abi = erc20Token.abi;
-
 ```
 
 - **ComputerMarketplaceContract**: This constant is assigned the value `0x3cA9A6BdF4754146347f2726042e5341327b6542`. This represents the celo address of the Computer Marketplace contract.
 
-
 ```typescript
-
 import { Computer } from "@/typings";
 import { useCelo } from "@celo/react-celo";
 import { ethers } from "ethers";
@@ -1163,7 +1153,6 @@ export default function MarketPlaceProvider({
   const { cartQuantity, cartItems, removeFromCart } = useShoppingCart();
 
   const router = useRouter();
-
 
   const getProducts = useCallback(
     async function (): Promise<Computer[]> {
@@ -1246,8 +1235,6 @@ export default function MarketPlaceProvider({
     return txObject;
   }
 
-
-
   // define event handler
   async function handleClick(e: MouseEvent<HTMLButtonElement>) {
     const target = e.target as HTMLDivElement;
@@ -1256,21 +1243,20 @@ export default function MarketPlaceProvider({
     const index: number = parseInt(target.getAttribute("data-index")!);
     const product: Computer = computers[index];
 
-    
     const cartItemsPrice = cartItems.reduce((total, cartItem) => {
-         const item = computers.find((i: any) => i.index === cartItem.id);
-         const itemPrice = item ? ethers.utils.formatEther(item.price) : "0";
-         return total + parseFloat(itemPrice) * cartItem.quantity;
+      const item = computers.find((i: any) => i.index === cartItem.id);
+      const itemPrice = item ? ethers.utils.formatEther(item.price) : "0";
+      return total + parseFloat(itemPrice) * cartItem.quantity;
     }, 0);
 
     //console.log("cartItemsPrice", cartItemsPrice);
-  
+
     const price = ethers.utils.parseEther(cartItemsPrice.toString());
     const itemPrice = String(price);
 
     try {
       await approvePrice(itemPrice);
-    } catch (error: any) {
+    } catch (error) {
       alert(`⚠️ ${error.message}`);
       return;
     }
@@ -1287,20 +1273,18 @@ export default function MarketPlaceProvider({
         ComputerMarketplaceContract
       );
 
-       const tx = await contract.methods
-         .buyProduct(product.index)
-         .send({ from: address, value: itemPrice });
-     
+      const tx = await contract.methods
+        .buyProduct(product.index)
+        .send({ from: address, value: itemPrice });
+
       alert(`🎉 You successfully bought "${product.computer_title}".`);
 
       removeFromCart(product.index);
       getProducts();
-    } catch (error: any) {
+    } catch (error) {
       alert(`⚠️ ${error.message}`);
     }
   }
-
-
 
   async function deleteProduct(index: number) {
     try {
@@ -1337,8 +1321,6 @@ export default function MarketPlaceProvider({
     </MarketPlaceContext.Provider>
   );
 }
-
-
 ```
 
 - **useMarketPlace** hook is used to enable access to the context within the application.
@@ -1351,15 +1333,11 @@ export default function MarketPlaceProvider({
 
 - **handleClick** function is an event handler that is triggered when a user clicks the "buy" button on a product card. It gets the product index from the clicked button, calls the `buyProduct` function, and triggers a state update to reflect the new product status. `buyProduct` function is called to execute the transaction on the blockchain to buy a product. It receives the product index and the price as arguments, and executes the transaction `kit` which is used to send transactions to the Celo network, by calling the appropriate methods on the smart contract instances. It then returns a boolean value indicating the success of the transaction.
 
-
-- **deleteProduct** function is called to delete a product from the marketplace. It receives the product index as an argument, and updates the state variables accordingly to remove the product from the marketplace.
+* **deleteProduct** function is called to delete a product from the marketplace. It receives the product index as an argument, and updates the state variables accordingly to remove the product from the marketplace.
 
 ## Shoppingcart Context
 
-
 ```typescript
-
-
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { createContext, useContext, useState } from "react";
 
@@ -1368,7 +1346,6 @@ type ShoppingCartProviderProps = {
 };
 
 type ShoppingCartContextType = {
- 
   getItemQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
@@ -1389,15 +1366,15 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [cartItems, setCartItems] = useLocalStorage<cartItem[]>("shopping-cart",[]);
- 
+  const [cartItems, setCartItems] = useLocalStorage<cartItem[]>(
+    "shopping-cart",
+    []
+  );
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => quantity + item.quantity,
     0
   );
-
-
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -1449,16 +1426,13 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         decreaseCartQuantity,
         removeFromCart,
         cartItems,
-        cartQuantity
+        cartQuantity,
       }}
     >
       {children}
-      
     </ShoppingCartContext.Provider>
   );
 }
-
-
 ```
 
 - **useShoppingCart** hook is used to enable access to the context within the application.
@@ -1477,8 +1451,6 @@ Finally, the `ShoppingCartContext.Provider` wraps the children prop and provides
 The `index.tsx` file is our root page.
 
 ```typescript
-
-
 import ComputerCard from "@/components/ComputerCard";
 import { useMarketPlace } from "@/context/MarketPlaceContext";
 import { Computer } from "@/typings";
@@ -1500,9 +1472,8 @@ export default function Home() {
     </div>
   );
 }
-
-
 ```
+
 The page that renders a product listing for the computers marketplace. It imports the `ComputerCard` component and the `useMarketPlace` hook, and then retrieves the `computers` data using the hook. Each product is displayed using the `ComputerCard` component, which receives the computer object as a prop.
 
 ## Computer card component
@@ -1510,14 +1481,13 @@ The page that renders a product listing for the computers marketplace. It import
 In the components folder, create `ComputerCard.tsx` file.
 
 ```tsx
-import { useShoppingCart } from '@/context/ShoppingCartContext';
-import { Computer } from '@/typings';
-import { ethers } from 'ethers';
-import Image from 'next/image';
-import { IoIosPin } from 'react-icons/io';
+import { useShoppingCart } from "@/context/ShoppingCartContext";
+import { Computer } from "@/typings";
+import { ethers } from "ethers";
+import Image from "next/image";
+import { IoIosPin } from "react-icons/io";
 
-
-const ComputerCard = ({computer}: {computer: Computer}) => {
+const ComputerCard = ({ computer }: { computer: Computer }) => {
   const {
     getItemQuantity,
     increaseCartQuantity,
@@ -1526,7 +1496,6 @@ const ComputerCard = ({computer}: {computer: Computer}) => {
   } = useShoppingCart();
   const quantity = getItemQuantity(computer.index);
 
- 
   return (
     <div className="group flex flex-col space-y-6">
       <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
@@ -1598,15 +1567,14 @@ const ComputerCard = ({computer}: {computer: Computer}) => {
       </div>
     </div>
   );
-}
+};
 
-export default ComputerCard
-
+export default ComputerCard;
 ```
 
-The functional component s responsible for rendering a single computer product card on a product listing page. It renders an `image` of the computer, its `name`, `store location`, `price`, and a button to `add the product to the shopping cart`. 
+The functional component s responsible for rendering a single computer product card on a product listing page. It renders an `image` of the computer, its `name`, `store location`, `price`, and a button to `add the product to the shopping cart`.
 
-If the product is already in the cart, the component renders the quantity of the product in the cart, a button to increase or decrease the quantity, and a button to remove the product from the cart. The `quantity` and `cart functions` are obtained from the `useShoppingCart` hook. The component also includes a tooltip that displays the full name of the computer when hovered over. 
+If the product is already in the cart, the component renders the quantity of the product in the cart, a button to increase or decrease the quantity, and a button to remove the product from the cart. The `quantity` and `cart functions` are obtained from the `useShoppingCart` hook. The component also includes a tooltip that displays the full name of the computer when hovered over.
 
 ![image](images/image-8.png)
 
@@ -1615,7 +1583,6 @@ If the product is already in the cart, the component renders the quantity of the
 When an item is added to cart, click on the cart icon on the header section. A modal pops up with the cart item.
 
 ```tsx
-
 import { useMarketPlace } from "@/context/MarketPlaceContext";
 import { useShoppingCart } from "@/context/ShoppingCartContext";
 import { Dialog, Transition } from "@headlessui/react";
@@ -1626,7 +1593,7 @@ import { CartItem } from "./CartItem";
 
 export default function CheckoutModal() {
   const { cartItems, cartQuantity } = useShoppingCart();
-  
+
   const { computers } = useMarketPlace();
 
   let [isOpen, setIsOpen] = useState(false);
@@ -1724,7 +1691,6 @@ export default function CheckoutModal() {
     </>
   );
 }
-
 ```
 
 The React component that displays a shopping cart icon with a badge showing the number of items in the cart. When the user clicks on the icon, a `modal` window appears showing the items in the cart and their prices.
@@ -1738,7 +1704,6 @@ The total price of the items in the cart is calculated using the `reduce` method
 ## Cart Items Components
 
 ```tsx
-
 import Image from "next/image";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { ethers } from "ethers";
@@ -1753,13 +1718,13 @@ export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart, cartQuantity } = useShoppingCart();
   const { computers, handleClick } = useMarketPlace();
 
-  console.log(cartQuantity)
+  console.log(cartQuantity);
 
   const item = computers.find((i) => {
     //console.log("computers", i.index);
     return i.index === id;
   });
-  
+
   // check if item is undefined or falsy
   if (!item) return null;
 
@@ -1798,7 +1763,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
           onClick={handleClick}
           data-index={item.index}
         >
-          Buy {cartQuantity} Computer{cartQuantity> 1 && "s"}
+          Buy {cartQuantity} Computer{cartQuantity > 1 && "s"}
         </button>
       ) : (
         <p>
@@ -1808,7 +1773,6 @@ export function CartItem({ id, quantity }: CartItemProps) {
     </div>
   );
 }
-
 ```
 
 The `CartItem` component displays information about a computer item in a shopping cart.
@@ -1830,13 +1794,12 @@ Finally, when the Buy Computer button is clicked, it triggers the `handleClick` 
 Inside the pages directory, create `mycomputers.tsx` page.
 
 ```tsx
-
-import MyComputersCard from '@/components/MyComputersCard';
-import { useMarketPlace } from '@/context/MarketPlaceContext';
-import { Computer } from '@/typings';
+import MyComputersCard from "@/components/MyComputersCard";
+import { useMarketPlace } from "@/context/MarketPlaceContext";
+import { Computer } from "@/typings";
 
 const Mycomputers = () => {
-    const { myProducts } = useMarketPlace();
+  const { myProducts } = useMarketPlace();
 
   return (
     <div className="bg-white rounded-lg">
@@ -1851,9 +1814,9 @@ const Mycomputers = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Mycomputers
+export default Mycomputers;
 ```
 
 The component calls the `useMarketPlace hook` to get the `myProducts` state from the `MarketPlaceContext`. It then renders the `MyComputersCard` component for each computer in `myProducts` array using `.map()` function and passes the computer object and an index as props to the `MyComputersCard` component.
@@ -1861,17 +1824,20 @@ The component calls the `useMarketPlace hook` to get the `myProducts` state from
 ## My Computers Card Component
 
 ```tsx
-
-import { Computer } from '@/typings';
-import Image from 'next/image';
+import { Computer } from "@/typings";
+import Image from "next/image";
 import { ethers } from "ethers";
-import { IoIosPin } from 'react-icons/io';
-import { useContext } from 'react';
-import { useMarketPlace } from '@/context/MarketPlaceContext';
+import { IoIosPin } from "react-icons/io";
+import { useContext } from "react";
+import { useMarketPlace } from "@/context/MarketPlaceContext";
 
-const MyComputersCard = (
-    { computer, index }: { computer: Computer; index: number }
-) => {
+const MyComputersCard = ({
+  computer,
+  index,
+}: {
+  computer: Computer;
+  index: number;
+}) => {
   const { deleteProduct } = useMarketPlace();
 
   return (
@@ -1914,8 +1880,7 @@ const MyComputersCard = (
   );
 };
 
-export default MyComputersCard
-
+export default MyComputersCard;
 ```
 
 The component also imports the `useMarketPlace` hook from the MarketPlaceContext, which is used to call the `deleteProduct()` function to remove a product from the marketplace. The `deleteProduct()` function is called when the "Remove" button is clicked, and it passes the index of the product to be removed.
@@ -1926,17 +1891,18 @@ The component also imports the `useMarketPlace` hook from the MarketPlaceContext
 
 Inside the components directory, create `ComputerModal.tsx` file.
 
-
 ```tsx
 import { Dialog, Transition } from "@headlessui/react";
 import { useCelo } from "@celo/react-celo";
 import { useState, FormEvent, Fragment } from "react";
 import { ethers } from "ethers";
 import { useRouter } from "next/navigation";
-import { ComputerMarketplaceAbi, ComputerMarketplaceContract } from "@/context/constants";
+import {
+  ComputerMarketplaceAbi,
+  ComputerMarketplaceContract,
+} from "@/context/constants";
 
 export default function ComputerModal() {
- 
   const { kit, address } = useCelo();
 
   let [isOpen, setIsOpen] = useState(false);
@@ -1959,11 +1925,11 @@ export default function ComputerModal() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-      
+
     const contract = new kit.connection.web3.eth.Contract(
-          ComputerMarketplaceAbi as any,
-          ComputerMarketplaceContract
-     );
+      ComputerMarketplaceAbi as any,
+      ComputerMarketplaceContract
+    );
 
     //Define the transaction parameters
     const params = [
@@ -1972,13 +1938,12 @@ export default function ComputerModal() {
       specs,
       location,
       ethers.utils.parseEther(price),
-     
     ];
 
     try {
-        const tx = await contract.methods
-          .writeProduct(...params)
-          .send({ from: address });
+      const tx = await contract.methods
+        .writeProduct(...params)
+        .send({ from: address });
       setTitle("");
       setImageUrl("");
       setLocation("");
@@ -2144,23 +2109,19 @@ export default function ComputerModal() {
     </>
   );
 }
-
-
-
 ```
 
 The component allows users to add a computer product to a marketplace using the Celo blockchain network. The component contains a form that captures the details of the product, such as `title`, `image URL`, `computer specs`, `location`, and `price`, and sends them to a smart contract on the Celo network.
 
-The component defines a state using the `useState hook` to manage the form input fields values and `isOpen` to handle the modal window's visibility. The component also uses the `useRouter `hook from Next.js to refresh the page when the user successfully adds a new product to the marketplace.
+The component defines a state using the `useState hook` to manage the form input fields values and `isOpen` to handle the modal window's visibility. The component also uses the `useRouter`hook from Next.js to refresh the page when the user successfully adds a new product to the marketplace.
 
 The `handleSubmit` function is called when the user submits the form. It constructs a new instance of the `ComputerMarketplace` contract using the `kit.connection.web3.eth.Contract` method, and then calls the `writeProduct` method of the contract, passing in the values of the form fields as parameters. If the transaction is successful, the form fields are cleared and the user is alerted to the success of the transaction. If the transaction fails, an error message is displayed.
-
 
 ![image](images/image-9.png)
 
 ## Types
 
-Its important to setup some types used in the app. Create a `typing.d.ts` file in react-app directory. 
+Its important to setup some types used in the app. Create a `typing.d.ts` file in react-app directory.
 
 ```ts
 import { BigNumber } from "ethers";
@@ -2182,8 +2143,6 @@ export interface computerAbi {
   [];
 }
 
-
-
 export interface Computer {
   owner: string;
   index: number;
@@ -2198,7 +2157,6 @@ export interface Computer {
 export interface CustomWindow extends Window {
   ethereum?: any;
 }
-
 ```
 
 ## Helper functions
@@ -2206,13 +2164,9 @@ export interface CustomWindow extends Window {
 In the reat-app directory, create a `utils` folder then create `shortenAddress.ts` file.
 
 ```ts
-
 //utils
-export const shortenAddress = (address: string) => (
-    `${address.slice(0, 5)}...${address.slice(address.length - 4)}`
-  
-  );
-
+export const shortenAddress = (address: string) =>
+  `${address.slice(0, 5)}...${address.slice(address.length - 4)}`;
 ```
 
 The function takes a string address as input and returns a modified string that represents a shortened version of the input address.
@@ -2221,9 +2175,7 @@ The function takes a string address as input and returns a modified string that 
 
 In the reat-app directory, create a `hooks` folder then create `useLocalStorage.ts` file.
 
-
 ```ts
-
 import { useEffect, useState } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
@@ -2248,12 +2200,9 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
 
   return [value, setValue] as [typeof value, typeof setValue];
 }
-
-
 ```
 
-The custom React hook `useLocalStorage` is used to store data in local storage and retrieve it later. 
-
+The custom React hook `useLocalStorage` is used to store data in local storage and retrieve it later.
 
 ## Push your project on Github
 
@@ -2273,15 +2222,13 @@ Here are the steps:
 
 7. Verify that your changes have been pushed to GitHub. Visit your repository page on GitHub to confirm that your files have been uploaded successfully.
 
-
 - Find the [project Code](https://github.com/DennohKim/dapp-compstore) here.
-
 
 ## Deploy your application
 
 We will be deploying our application on vercel.com.
 
-Here are the steps: 
+Here are the steps:
 
 1. Create an account on vercel.com if you haven't already.
 
@@ -2289,7 +2236,7 @@ Here are the steps:
 
 3. Choose Github and select the repository that contains the project you want to deploy.
 
-4. Navigate to `packages/react-app` folder  
+4. Navigate to `packages/react-app` folder
 
 5. Click on the "Deploy" button to initiate the deployment process.
 
@@ -2299,11 +2246,9 @@ Once the deployment is complete, you can access your project by clicking on the 
 
 Here's our deployed site: [dapp-compstore](https://dapp-compstore-react-app.vercel.app/)
 
-
 ## Conclusion​
 
 Congrats 🎉, you were able to build and deploy a computer store built using celo-composer.
-
 
 ## Next Steps
 
@@ -2313,7 +2258,6 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 - [Solidity Docs](https://docs.soliditylang.org/en/v0.8.17/)
 - [React Celo](https://github.com/celo-org/react-celo)
 - [NextJS](https://nextjs.org/)
-
 
 ## About the Author
 
