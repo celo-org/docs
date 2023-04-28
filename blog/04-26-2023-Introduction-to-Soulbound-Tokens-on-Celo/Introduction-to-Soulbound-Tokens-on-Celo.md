@@ -53,7 +53,6 @@ To create a Soulbound Token using the ERC-721 contract shown above, you can foll
 Overall, creating a Soulbound Token is relatively straightforward and can be achieved using the ERC-721 contract with a transfer override to ensure that the token is non-transferable. With this contract, you can establish a unique digital identity and reputation that cannot be bought, sold, or traded, providing a level of trust and authenticity in a web3 economy.
 
 ```solidity
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
@@ -89,8 +88,6 @@ contract Soulbound is ERC721, Ownable {
         super._burn(tokenId);
     }
 }
-
-
 ```
 
 The code provided above is a Solidity smart contract that creates a Soulbound Token using the ERC-721 standard. The Soulbound Token is non-transferable, meaning it cannot be sold, traded, or transferred to other users once it has been minted. This ensures that the token retains its unique identity and reputation, which is important for use cases where trust and authenticity are critical.
