@@ -667,7 +667,7 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 
 ## References
 
-- Celo P2P [https://github.com/Mujhtech/flutter_p2p_celo](https://github.com/Mujhtech/flutter_p2p_celo)
+- Source Code [https://github.com/Mujhtech/flutter_p2p_celo](https://github.com/Mujhtech/flutter_p2p_celo)
 - Celo Composer [https://github.com/celo-org/celo-composer](https://github.com/celo-org/celo-composer)
 - Flutter [https://flutter.dev](https://flutter.dev)
 - Solidity by example [https://solidity-by-example.org/](https://solidity-by-example.org/)
