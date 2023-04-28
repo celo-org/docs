@@ -297,6 +297,8 @@ I will leave implementing the safeguards to you to do.
 
 Let me know in the comments if you have any questions.
 
+Source code for this article is [here](https://gist.github.com/layinka/edf4bd680f6da1c8e06c160243cfb4e9)
+
 ## About the Author
 
 **[Yinka Tan](https://twitter.com/layinka)** is a full-stack blockchain developer who is fascinated with DeFi, NFTs, and FinTech.
