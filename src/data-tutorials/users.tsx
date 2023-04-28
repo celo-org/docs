@@ -3225,6 +3225,15 @@ const Users: User[] = [
   },
 
   {
+    title: 'Create an NFT with a delayed reveal on Celo',
+    description: 'In This tutorial we will look at how to implement a simple NFT Contract that implements an NFT reveal in solidity. We will deploy the contract to the Celo blockchain on remix and show how to perform the reveal on remix',
+    preview: require('./showcase/intermediate/create-an-nft-with-a-delayed-reveal-on-celo.png'),
+    website: 'blog/tutorials/create-an-nft-with-a-delayed-reveal-on-celo',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'nft', 'solidity'], 
+  },
+
+
+  {
     title: 'Build a complete P2P Celo payment dapp with Flutter using Celo Composer',
     description: 'Learn how to build a CELO based p2p payment dApp with Flutter using Celo Composer for bootstrap.',
     preview: require('./showcase/intermediate/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer.png'),
@@ -3250,6 +3259,7 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
+
 
 
 
