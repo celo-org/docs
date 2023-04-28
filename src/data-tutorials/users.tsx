@@ -3181,7 +3181,7 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {
-    title: 'Build a cross-chain token bridge between celo and bsc using the existing bridge',
+    title: 'Build a complete P2P Celo payment dapp with Flutter using Celo Composer',
     description: 'Learn how to build a CELO based p2p payment dApp with Flutter using Celo Composer for bootstrap.',
     preview: require('./showcase/intermediate/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer.png'),
     website: 'blog/tutorials/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer',
