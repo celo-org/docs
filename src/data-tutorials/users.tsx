@@ -783,7 +783,7 @@ const Users: User[] = [
     title: 'Introduction to Soulbound Tokens on Celo',
     description: 'Understand What is Soulbound token and How it works',
     preview: require('./showcase/beginner/Introduction-to-Soulbound-Tokens-on-Celo.png'),
-    website: 'blog/tutorials/Introduction-to-Soulbound-Tokens-on-Celo',
+    website: 'blog/tutorials/introduction-to-soulbound-tokens-on-celo',
     tags: ['celosage', 'beginner','celo', 'smartcontract'],
   },
   {
