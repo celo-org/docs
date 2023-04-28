@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/97633823
 tags: [celo, solidity, developers, celosage]
 hide_table_of_contents: false
-slug: /tutorials/Introduction-to-Soulbound-Tokens-on-Celo
+slug: /tutorials/introduction-to-soulbound-tokens-on-celo
 ---
 
 ![header](../../src/data-tutorials/showcase/beginner/Introduction-to-Soulbound-Tokens-on-Celo.png)
