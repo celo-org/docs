@@ -1070,6 +1070,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-decentralized-lottery-game-on-celo',
     tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'randomness', 'javascript'],
   },
+   {
+    title: 'Building a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions',
+    description: 'In this tutorial we will build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions. The tutorial will focus more on batch transactions and its importance.',
+    preview: require('./showcase/intermediate/building-a-multi-party-escrow-dApp-using-celo-atomic-and-batch-transactions.png'),
+    website: '/blog/tutorials/building-a-multi-party-escrow-dApp-using-celo-atomic-and-batch-transactions',
+     tags: ['celosage', 'intermediate', 'hardhat', 'solidity', 'nextjs', 'javascript', 'celo', 'composer', 'celowallet', 'contractkit', 'dapp', 'typescript', 'smartcontract'],
+  },
   {
     title: 'Build a Decentralized Parking Ticket Payments DApp on Celo',
     description: 'Build and deploy a decentralized Parking Tickets issuing and payments dapp on Celo alfajores network.',
