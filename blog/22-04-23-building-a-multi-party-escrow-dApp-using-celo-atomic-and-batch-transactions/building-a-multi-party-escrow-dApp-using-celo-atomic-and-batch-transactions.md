@@ -6,20 +6,7 @@ authors:
     title: Blockchain Engineer | Technical Writer
     url: https://www.linkedin.com/in/glory-agatevure-47a222ab/
     image_url: https://avatars.githubusercontent.com/u/23031920?s=400&u=99aba40f495b86f3936a53e06dc7fbbc278b98ad&v=4
-tags:
-  [
-    "celosage",
-    "composer",
-    "celo",
-    "celowallet",
-    "contractkit",
-    "dapp",
-    "typescript",
-    "smartcontract",
-    "solidity",
-    "nextjs",
-    "intermediate",
-  ]
+tags: ["celosage","composer","celo","celowallet","contractkit","dapp","typescript","smartcontract","solidity","nextjs","intermediate"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-multi-party-escrow-dApp-using-celo-atomic-and-batch-transactions
 ---
@@ -27,17 +14,22 @@ slug: /tutorials/building-a-multi-party-escrow-dApp-using-celo-atomic-and-batch-
 ![header](../../src/data-tutorials/showcase/intermediate/building-a-multi-party-escrow-dApp-using-celo-atomic-and-batch-transactions.png)
 
 ## Introduction​
+
 In this tutorial, we'll walk through the process of building a decentralized application (DApp) on the Celo blockchain that facilitates multi-party escrow transactions using atomic and batch transactions. We'll create a simple DApp that allows users to escrow funds for a specified period of time, with the ability to release the funds or return them to the original sender depending on predefined conditions.
 We'll walk you through each step of the process, providing explanations and code examples along the way. By the end of this tutorial, you'll have a working DApp that you can use to facilitate multi-party escrow transactions on the Celo blockchain using atomic and batch transactions.
 The central focus of this tutorial is to show you how to handle batch transactions, both from the smart contract and normal transfer without a smart contract. I will be showing you code samples of how to do that including batch token transfers using ERC1155.
 We will make use of Solidity, harhat, react and Celo composer.
+
 ## Prerequisites​
+
 To successfully follow along in this tutorial you need basic knowledge of:
 
 - HTML, CSS, React and Next.js
 - Blockchain, solidity and hardhat
 - Celo Alfajores account
+
 ## Requirements​
+
 To build this DApp we will need the following tools:
 
 - [Vscode](https://code.visualstudio.com/) - But you can use any code editor of your choice
@@ -45,9 +37,10 @@ To build this DApp we will need the following tools:
 - [Alfajores Testnet Account](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores&hl=en&gl=US&pli=1) - required to connect to the dApp and make test transactions
 - [Node](https://nodejs.org/en/)- an open-source, cross-platform JavaScript runtime environment
 - [Celo Composer](https://github.com/celo-org/celo-composer)- starter project with all code needed to build, deploy, and upgrade a dapps on Celo.
-- [Celo Wallet Extension](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) / [Metamask](https://metamask.io/) -  For interacting with the Celo blockchain
+- [Celo Wallet Extension](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) / [Metamask](https://metamask.io/) - For interacting with the Celo blockchain
 
 ## Let’s Get Started
+
 In this tutorial we will build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions. The tutorial will focus more on atomic and batch transactions and its importance. Before we start building our Multi-party Escrow Dapp let's look at batch and atomic transactions.
 
 ## Batch and Atomic Transactions
@@ -74,8 +67,9 @@ Batch transactions are typically used in scenarios where multiple transactions n
 
 ### Benefits of Batch Transactions
 
-Performing batch transactions can be beneficial in several ways. 
-- Firstly, it can help reduce gas fees, as the combined gas cost of a batched transaction is often lower compared to individual transactions. 
+Performing batch transactions can be beneficial in several ways.
+
+- Firstly, it can help reduce gas fees, as the combined gas cost of a batched transaction is often lower compared to individual transactions.
 - Secondly, batch transactions can help improve the efficiency and speed of transactions, as they allow multiple transactions to be processed in a single transaction, reducing the overall time taken to execute them.
 - Lastly, batch transactions can help reduce congestion on the Ethereum network, as they occupy less block space compared to multiple individual transactions, which can lead to faster transaction confirmation times.
 
@@ -94,8 +88,6 @@ Not all Ethereum standards support batch transactions. However, standards such a
 
 It's important to note that batch transactions may not always be suitable for all scenarios, as they have limitations, such as the need for similar characteristics among transactions, and potential limitations in the number of transactions that can be included in a single batch. It's essential to carefully consider the requirements of the specific use case and evaluate the gas fees, efficiency, and other factors before deciding to perform batch transactions on the Ethereum blockchain.
 
-
-
 ### Difference Between Batch And Atomic Transactions
 
 Batch transactions and atomic transactions are two different concepts in the context of Ethereum transactions.
@@ -111,11 +103,12 @@ Both batch transactions and atomic transactions can be useful in different scena
 Now that you have a fair knowlege of batch and atomic transactions. Let's move to the next step of the tutorial.
 
 ## Multi-Escrow Dapp
+
 Now, let's start building our Escrow Dapp.
 
 What does A multi-party escrow dApp mean? A multi-party escrow dApp simply means a decentralized escrow platform. What does escrow mean? Escrow is a third-party arrangement where a buyer deposits some asset with the escrow and payment is made to the seller through the escrow after a particular period of time or after a certain condition has been met.
 
-For the purpose of this tutorial, we will be building an Escrow smart contract that accepts funds from the buyer in this case called the sender.  And a React/Nex.js frontend to interact with the contract. 
+For the purpose of this tutorial, we will be building an Escrow smart contract that accepts funds from the buyer in this case called the sender. And a React/Nex.js frontend to interact with the contract.
 
 The Escrow Smart Contract comprises of the following features;
 
@@ -126,12 +119,13 @@ The Escrow Smart Contract comprises of the following features;
 - Get the list of all the senders
 - Get contract balance
 
-To follow along with this tutorial here is the github repo for the complete [code](https://github.com/gconnect/sage-multi-escrow-dapp).  
+To follow along with this tutorial here is the github repo for the complete [code](https://github.com/gconnect/sage-multi-escrow-dapp).
 
 ### Step 1: Setup the Project
+
 First, let's set up our project. Create a new directory and run the following commands and follow the steps
 
- `npx @celo/celo-composer@latest create
+`npx @celo/celo-composer@latest create
 
 Select React, Tailwind css and React-Celo option and then enter your project name. For detail on the steps checkout the [Celo Composer](https://github.com/celo-org/celo-composer) github readme page.
 
@@ -142,8 +136,10 @@ Now open your newly created project. You will see a packages folder inside the p
 For security reasons in order not to expose your private keys to the public create a new file named `.env` in the root of the hardhat folder add this line of code:
 
 `PRIVATE KEY = <YOUR PRIVATE KEY>`
-###  Set up a Celo Account
-To get started with Building a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions, we need to set up a Celo Account. You can use the Celo Wallet app, which is available on both iOS and Android devices, or you can use a browser extension such as Metamask or Celo Wallet Extension. Once you have set up your account visit Celo testnet [faucet](https://faucet.celo.org/) for test tokens. You will need to fund your account to deploy the contract and perform  other smart contract interactions.
+
+### Set up a Celo Account
+
+To get started with Building a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions, we need to set up a Celo Account. You can use the Celo Wallet app, which is available on both iOS and Android devices, or you can use a browser extension such as Metamask or Celo Wallet Extension. Once you have set up your account visit Celo testnet [faucet](https://faucet.celo.org/) for test tokens. You will need to fund your account to deploy the contract and perform other smart contract interactions.
 
 ### Step 2: Write the Smart Contract
 
@@ -285,6 +281,7 @@ contract Escrow {
 }
 
 ```
+
 Here is a detailed breakdown of what the above smart contract code does;
 
 ```solidity
@@ -293,6 +290,7 @@ Here is a detailed breakdown of what the above smart contract code does;
 
 pragma solidity ^0.8.0;
 ```
+
 The first line indicates the license under which the code is distributed. The next line specifies the version of Solidity being used.
 
 ```solidity
@@ -312,7 +310,8 @@ struct EscrowData {
    address payable owner;
    mapping(address => EscrowData) public escrows;
 ```
-The `EscrowData` struct manages the Escrow data.  And a global state list of the EscrowData, owner is set to payable so that the owner can send and receive payment.  And a mapping to map the EscrowData to the user address.
+
+The `EscrowData` struct manages the Escrow data. And a global state list of the EscrowData, owner is set to payable so that the owner can send and receive payment. And a mapping to map the EscrowData to the user address.
 
 ```solidity
    event FundsEscrowed(address indexed sender, uint256 amount);
@@ -330,7 +329,8 @@ The `EscrowData` struct manages the Escrow data.  And a global state list of the
        _;
    }
 ```
-There are three events the `FundsEscrowed`,`FundsReturned` and `FundsReleased` are emitted when a new transaction occurs. The constructor function initializes the owner variable to the address of the account that deployed the contract. The 	`onlyOwner` modifier checks if the person making the contract function call is the owner.
+
+There are three events the `FundsEscrowed`,`FundsReturned` and `FundsReleased` are emitted when a new transaction occurs. The constructor function initializes the owner variable to the address of the account that deployed the contract. The `onlyOwner` modifier checks if the person making the contract function call is the owner.
 
 ```solidity
   function escrowFunds(address payable _receiver, uint256 _releaseTime) external payable {
@@ -352,20 +352,21 @@ There are three events the `FundsEscrowed`,`FundsReturned` and `FundsReleased` a
        emit FundsEscrowed(msg.sender, msg.value);
    }
 ```
-The ' EscrowFunds' function takes in two parameters. The receiver and release time. This allows the sender to enter the escrowed amount with the `msg.value`.  The function also checks that the current block number is not greater than the release time. It also checks if the escrow is still active. And also checks that the escrow amount is not zero. The last line emits the event.
 
- ```solidity
-   function returnFunds(address _sender) external onlyOwner {
-       EscrowData storage escrowData = escrows[_sender];
-       require(!escrowData.returned, "Funds have already been returned");
-       require(block.number >= escrowData.releaseTime, "Release time has not arrived yet");
-       require(escrowData.sender == _sender, "You don't have money on the escrow");
-       escrowData.returned = true;
-       escrowData.sender.transfer(escrowData.amount);
+The ' EscrowFunds' function takes in two parameters. The receiver and release time. This allows the sender to enter the escrowed amount with the `msg.value`. The function also checks that the current block number is not greater than the release time. It also checks if the escrow is still active. And also checks that the escrow amount is not zero. The last line emits the event.
+
+```solidity
+  function returnFunds(address _sender) external onlyOwner {
+      EscrowData storage escrowData = escrows[_sender];
+      require(!escrowData.returned, "Funds have already been returned");
+      require(block.number >= escrowData.releaseTime, "Release time has not arrived yet");
+      require(escrowData.sender == _sender, "You don't have money on the escrow");
+      escrowData.returned = true;
+      escrowData.sender.transfer(escrowData.amount);
 
 
-       emit FundsReturned(escrowData.sender, escrowData.amount);
-   }
+      emit FundsReturned(escrowData.sender, escrowData.amount);
+  }
 
 ```
 
@@ -386,6 +387,7 @@ function releaseFunds(address _receiver) external onlyOwner {
    }
 
 ```
+
 The `releaseFund` function is called to release the fund to the receiver. It takes in one parameter, the receiver address.
 
 ```solidity
@@ -423,7 +425,8 @@ function batchTransfer(address payable[] calldata _receivers, uint256[] calldata
    }
 
 ```
-The `groupTransfer` and `batchTransfer` function handles sending of funds to all the receivers in a single transaction. The two functions handle batch transfers differently.  The groupTransfer function doesn’t take in any parameter, it just loop through the escrowlist. It also checks to ensure the receiver exists. The `batchTransfer` function takes in an array of receiver’s address and array of amounts. These functions are called only by the owner.
+
+The `groupTransfer` and `batchTransfer` function handles sending of funds to all the receivers in a single transaction. The two functions handle batch transfers differently. The groupTransfer function doesn’t take in any parameter, it just loop through the escrowlist. It also checks to ensure the receiver exists. The `batchTransfer` function takes in an array of receiver’s address and array of amounts. These functions are called only by the owner.
 
 ```solidity
    function getEscrowList() public view returns(EscrowData [] memory){
@@ -435,11 +438,13 @@ The `groupTransfer` and `batchTransfer` function handles sending of funds to all
        return address(this).balance;
    }
 ```
+
 The `getEscrowList` shows the list of the EscrowData. And the `getContractBalance` gets the contract balance.
 
-
 ### Step 3: Deploy the Contract
+
 Inside the hardhat directory navigate to the `scripts/deploy.tsx` and replace the code with this 👇
+
 ```solidity
 // We require the Hardhat Runtime Environment explicitly here. This is optional
 // but useful for running the script in a standalone fashion through `node <script>`.
@@ -478,6 +483,7 @@ main()
  });
 
 ```
+
 To deploy the contract still on the hardhat directory enter the below command;
 `npx hardhat run scripts/deploy.ts –network alfajores`
 
@@ -488,127 +494,135 @@ You will see the generated json ABI code in the `artifacts/contracts/` directory
 ### Step 4: Frontend interaction
 
 For this tutorial we will be creating a simple UI. To interact with the frontend navigate to the `react-app` directory and run this command to start the development server
-`npm run dev` will start the localhost server at port 3000. 
+`npm run dev` will start the localhost server at port 3000.
 
-Inside the react-app directory, create an  `interact.tsx`  file and copy the below code. This code handles all calls to the contract. Each of these contract calls will be used in our component where appropriate. Your `interact.tsx` file should look like this. 👇
+Inside the react-app directory, create an `interact.tsx` file and copy the below code. This code handles all calls to the contract. Each of these contract calls will be used in our component where appropriate. Your `interact.tsx` file should look like this. 👇
 
 **Note**
 Copy the generated escrow.json abi code from the artifact folder and create a new file call it Escrow.json and paste the code there.
 
 **interact.tsx**
-```js
-import escrowABI from "./Escrow.json"
-import { BigNumber, ethers } from "ethers";
-import Web3 from 'web3';
-const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 
+```js
+import escrowABI from "./Escrow.json";
+import { BigNumber, ethers } from "ethers";
+import Web3 from "web3";
+const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 
 const escrowAddress = "0xF894B143FcF4f12Aa7135bc1Bd6e87c1357c4EA6";
 
-
 export function initContract(kit: any) {
- return new kit.connection.web3.eth.Contract(escrowABI.abi, escrowAddress)
+  return new kit.connection.web3.eth.Contract(escrowABI.abi, escrowAddress);
 }
-
 
 //  Contract Calls
-export const escrowFunds = async (address: string | null | undefined,
- kit: any, amount: string, receiver: string, releaseTime: string) => {
- try {
-   const txHash = await initContract(kit).methods
-     .escrowFunds().send({
-       from: address,
-       value: ethers.utils.parseUnits(amount).toString()
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
-
-
-export const groupTransfer = async (address: string | null | undefined,
- kit: any) => {
- try {
-   const txHash = await initContract(kit).methods
-     .groupTransfer().send({
-       from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
-
-
-export const batchTransfer = async (address: string | null | undefined,
- kit: any, escrowClientAddresses : string[], amount: string[]) => {
- try {
-   const txHash = await initContract(kit).methods
-     .batchTransfer(escrowClientAddresses, amount).send({
-       from: address,
-   })
-   console.log(txHash)
- } catch (e) {
-   console.log(e)
- }
-}
-
-
-export const getEscrowList = async (kit: any) => {
- try {
-   const response = await initContract(kit).methods.getEscrowList().call()
-   console.log(response)
-   return response;
- } catch (e) {
-   console.log(e)
- }
-}
-
-
-export const getContractBalance = async (kit: any) => {
- try {
-   const response = await initContract(kit).methods.getContractBalance().call()
-   console.log(response)
-   return response;
- } catch (e) {
-   console.log(e)
- }
-}
-
-
-export const BatchTransaction = async (kit: any, account: string |null|undefined, transaction: any[]) => {
- try {
-   // Check if Web3 instance is available
-   if (web3) {
-     // Create a batch object
-     // const batch = new web3.BatchRequest();
-     const batch = new kit.connection.web3.BatchRequest()
-
-
-     for (let i = 0; i < transaction.length; i++){
-          // Add transactions to the batch
-       batch.add(web3.eth.sendTransaction.request(
-         {
-           from: account,
-           to: transaction[i].address,
-           value: ethers.utils.parseUnits(transaction[i].amount).toString()
-         }
-       ));
-     }
-      // Execute the batch
-     batch.execute()
-   }
- } catch (error) {
-     console.error('Batch Transaction Error:', error);
-   }
+export const escrowFunds = async (
+  address: string | null | undefined,
+  kit: any,
+  amount: string,
+  receiver: string,
+  releaseTime: string
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.escrowFunds()
+      .send({
+        from: address,
+        value: ethers.utils.parseUnits(amount).toString(),
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
 };
 
+export const groupTransfer = async (
+  address: string | null | undefined,
+  kit: any
+) => {
+  try {
+    const txHash = await initContract(kit).methods.groupTransfer().send({
+      from: address,
+    });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
+export const batchTransfer = async (
+  address: string | null | undefined,
+  kit: any,
+  escrowClientAddresses: string[],
+  amount: string[]
+) => {
+  try {
+    const txHash = await initContract(kit)
+      .methods.batchTransfer(escrowClientAddresses, amount)
+      .send({
+        from: address,
+      });
+    console.log(txHash);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
+export const getEscrowList = async (kit: any) => {
+  try {
+    const response = await initContract(kit).methods.getEscrowList().call();
+    console.log(response);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getContractBalance = async (kit: any) => {
+  try {
+    const response = await initContract(kit)
+      .methods.getContractBalance()
+      .call();
+    console.log(response);
+    return response;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const BatchTransaction = async (
+  kit: any,
+  account: string | null | undefined,
+  transaction: any[]
+) => {
+  try {
+    // Check if Web3 instance is available
+    if (web3) {
+      // Create a batch object
+      // const batch = new web3.BatchRequest();
+      const batch = new kit.connection.web3.BatchRequest();
+
+      for (let i = 0; i < transaction.length; i++) {
+        // Add transactions to the batch
+        batch.add(
+          web3.eth.sendTransaction.request({
+            from: account,
+            to: transaction[i].address,
+            value: ethers.utils.parseUnits(transaction[i].amount).toString(),
+          })
+        );
+      }
+      // Execute the batch
+      batch.execute();
+    }
+  } catch (error) {
+    console.error("Batch Transaction Error:", error);
+  }
+};
 ```
+
 The above code handles all interactions with the smart contract except for the `BatchTransaction` function which handles a list of transfers using the web3.js BatchRequest. The function loops through a list of transactions with addresses and amount and adds them to a batch to be sent as a single transaction.
- 
+
 Once the `BatchTransaction` is called you will see something like this screen if you interact with Metamask.
 
 **Fig 4-1** Batch Transfer
@@ -687,7 +701,7 @@ export default function Home() {
  }, [handleContractBalance, handleUsers])
  return (
    <div>
-   {!address ? <div>Please connect your wallet</div> : 
+   {!address ? <div>Please connect your wallet</div> :
        <div>
          <h1 className='text-4xl text-center m-4'>Multi-Party Escrow Dapp</h1>
          <h1 className='my-4'>{`Escrow Account Bal: ${contractBal/1e18} CELO`}</h1>
@@ -729,27 +743,31 @@ export default function Home() {
                  <td className='border-2'>{item.sender}</td>
                  <td className='border-2'>{` ${item.amount/1e18} CELO`}</td>
            </tr>)}
-           </table>     
+           </table>
          </div>}
-       </div>     
+       </div>
    }
-   </div>  
+   </div>
  )
 }
 ```
 
 ## Conclusion​
+
 Congratulations 🎉 on finishing this tutorial! Thank you for taking the time to complete it. In this tutorial, you have learnt how to Build a Multi-Party Escrow DApp using Celo Atomic And Batch Transactions.
 
 To have access to the full codebase, here is the link to the project repo on [github](https://github.com/gconnect/sage-multi-escrow-dapp).
 
 ## Net Steps
+
 As a next step, apply what you have learnt in this tutorial and write a test coverage for the smart contract. Also create a more fancy UI and make all the necessary smart contract calls.
 
 ## About the Author​
+
 Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Africinnovate. You can connect with me on [Linkedin](https://www.linkedin.com/in/glory-agatevure-47a222ab/), [Twitter](https://twitter.com/agatevureglory) and [Github](https://github.com/gconnect/).
 
 ## References​
+
 - [Celo Composer](https://github.com/celo-org/celo-composer)
 - [Multisender App](https://classic.multisender.app/)
 - [Web3 Batch Request](https://web3js.readthedocs.io/en/v1.2.9/web3.html#batchrequest)
@@ -757,5 +775,3 @@ Glory Agatevure is a blockchain engineer, technical writer, and co-founder of Af
 - [How to Make Batch Transfer Request](https://www.quicknode.com/guides/ethereum-development/transactions/how-to-make-batch-requests-on-ethereum/)
 - [EIP 1155](https://eips.ethereum.org/EIPS/eip-1155)
 - [EIP 1155 Batch Transactions](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/#batch_transfers)
-
-
