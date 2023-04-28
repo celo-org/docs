@@ -6,7 +6,7 @@ authors:
     title: Web3 Developer,
     url: https://github.com/dahnny
     image_url: https://github.com/dahnny.png
-tags: ["celo", "intermediate", "celosage", "chai"]
+tags: ["celo", "intermediate", "celosage"]
 hide_table_of_contents: true
 slug: /tutorials/effective-smart-contract-testing-with-chai
 ---
