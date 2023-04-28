@@ -11,9 +11,9 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-decentralized-book-library
 ---
 
-![building-a-decentralized-book-library](https://user-images.githubusercontent.com/6362475/234573453-ec2a9b71-048f-49af-97ea-ba897b5114eb.png)
+![header](https://user-images.githubusercontent.com/6362475/234573453-ec2a9b71-048f-49af-97ea-ba897b5114eb.png)
 
-Introduction​
+## Introduction​
 
 In the age of digital transformation, the way we access and consume information is rapidly evolving. Traditional libraries, with their centralized control and restricted access, face numerous challenges in adapting to the digital landscape. As a result, the emergence of decentralized libraries would be a viable solution to promote improved access to information, preserve cultural heritage, and ensure data privacy. This article will provide an in-depth guide on building a decentralized library by exploring key concepts such as blockchain technology and distributed storage. By understanding the importance and potential of decentralized libraries, we can work together to create a more open and inclusive future for knowledge sharing.
 In this article, we will explore how `Celo`, a blockchain platform focused on financial inclusion and decentralized governance, and `Pinata`, a popular decentralized storage solution based on the InterPlanetary File System (IPFS), can be combined to create a robust, accessible, and secure decentralized library. By understanding the potential of these technologies and their synergistic applications, we can work together to build a more open and inclusive future for knowledge sharing. 
@@ -24,7 +24,7 @@ You can clone this project on github by running:
 git clone https://github.com/emiridbest/Library_Management_System.git
 ```
 
-Prerequisites​
+## Prerequisites​
 
 - Node.js should be installed along with a node package manager(npm)
 - A basic understanding of Celo and smart contracts
@@ -514,7 +514,7 @@ function App() {
 export default App;
 ```
 
-Now let’s break this down;
+#### Now let’s break this down;
 
 - Step 6:  Import all dependencies
 
@@ -842,7 +842,7 @@ export default App;
 
 - Step 11: Create the Component and the import them into App.js To do this we have to create a new folder called `components` in the `src` folder.
 
-AddBook.js
+### AddBook.js
 
 ```js
 import React, { useState } from "react";
@@ -970,7 +970,7 @@ The `handleFileChange` function handles the file input change event, uploads the
 
 We also need to generate and parse our `pinataApiKey`, `pinataSecretApiKey` correctly to authenticate the API call.
 
-BookList.js 
+### BookList.js 
 
 ```js
 import React from "react";
@@ -1025,7 +1025,7 @@ const BookList = ({ books, borrowBook, readingList }) => {
 export default BookList;
 ```
 
-ReadingList.js
+### ReadingList.js
 
 ```js
 import React from "react";
@@ -1067,7 +1067,7 @@ const ReadingList = ({
 export default ReadingList;
 ```
 
-Navbar.js
+### Navbar.js
 
 ```js
 import React from "react";
@@ -1102,7 +1102,7 @@ const Navbar = () => {
 export default Navbar;
 ```
 
-Welcome.js
+### Welcome.js
 
 ```js
 import React from "react";
@@ -1134,7 +1134,7 @@ export default Welcome;
 
 Now, let’s bundle all the components into one file in the component folder so we can batch export them as one;
 
-Index.js
+### Index.js
 
 ```js
 export { default as Welcome } from "./Welcome";
@@ -1146,20 +1146,20 @@ export { default as ReadingList } from "./ReadingList";
 
 There you go, our Dapp is ready.
 
-Conclusion​
+## Conclusion​
 
 In conclusion, this tutorial has provided a solid foundation for creating a library management system on the Celo blockchain. By following the steps outlined in this tutorial, you can design and implement a secure and decentralized library system that can offer various benefits such as transparency, immutability, and easy tracking of books and patrons.
 
-Next Steps​
+## Next Steps​
 
 - One possible next step for the platform could be to introduce a subscription model or payable functions that would allow authors to earn revenue from renting out their books. 
 - Additionally, incorporating timing functions could encourage timely returns of books, ensuring that other users have access to them as well.
 
-About the Author​
+## About the Author​
 
 Emiri Udogwu, a licensed medical doctor with a burning passion for technology and gifted with skills for spreading knowledge and propagating ideas. A web3 and frontend developer.
 
-References​
+## References​
 
 - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
 - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
