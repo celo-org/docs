@@ -779,7 +779,7 @@ const Users: User[] = [
     title: 'Learn to Navigate Advanced Celo Wallet Features',
     description: 'learn how to navigate the Celo wallet platform with ease and take advantage of its full range of capabilities',
     preview: require('./showcase/intermediate/Learn-to-Navigate-Advanced-Celo-Wallet-Features.png'),
-    website: '/blog/tutorials/navigate-advanced-celo-wallet-features',
+    website: '/blog/tutorials/learn-to-navigate-advanced-celo-wallet-features',
     tags: ['celosage', 'celowallet', 'intermediate'],
   },
   {
