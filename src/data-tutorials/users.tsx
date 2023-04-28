@@ -3180,6 +3180,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Interacting with smart contract on celo using web3py',
+    description: 'This tutorial teaches you how to setup and use Web3py - A python-based web3 library',
+    preview: require('./showcase/intermediate/interacting-with-smart-contract-on-celo-using-web3py.png'),
+    website: 'blog/tutorials/interacting-with-smart-contract-on-celo-using-web3py',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
