@@ -8,7 +8,11 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/107583957?v=4
 tags: ["intermediate", "celo", "celosage", "celowallet"]
 hide_table_of_contents: true
+<<<<<<< HEAD
 slug: /tutorials/learn-to-navigate-advanced-celo-wallet-features
+=======
+slug: /tutorials/Learn-to-navigate-advanced-celo-wallet-features
+>>>>>>> a7f250c3c2bf980679c9379c5133950077c21a47
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/Learn-to-Navigate-Advanced-Celo-Wallet-Features.png)
