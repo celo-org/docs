@@ -3218,6 +3218,16 @@ const Users: User[] = [
   },
 
   {
+    title: 'Build a complete P2P Celo payment dapp with Flutter using Celo Composer',
+    description: 'Learn how to build a CELO based p2p payment dApp with Flutter using Celo Composer for bootstrap.',
+    preview: require('./showcase/intermediate/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer.png'),
+    website: 'blog/tutorials/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+ 
+
+
+  {
     title: 'Using Clones to build and cheaply deploy contracts on CELO at scale',
     description: 'This tutorial introduces the clones (minmal proxy) approach to cheaply deploy contracts on CELO.',
     preview: require('./showcase/advanced/Using-Clones-to-build-and-cheaply-deploy-contracts-on-CELO-at-scale.png'),
@@ -3233,6 +3243,7 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
+
 
 
 
