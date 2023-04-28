@@ -1,5 +1,5 @@
 ---
-title: How to build a computer retail store using celo composer.
+title: How to build a computer retail store using celo composer
 description: In this tutorial, you will learn how to how to build a computer retail store using celo composer.
 authors:
   - name: ✍️ Dennis Kimathi
