@@ -3019,7 +3019,7 @@ const Users: User[] = [
     title: 'Effective Smart Contract Testing using Chai',
     description: 'This tutorial guides you to ensure that your code is robust and secure. One way to achieve this is by writing comprehensive tests for your contracts functionality',
     preview: require('./showcase/intermediate/effective-smart-contract-testing-using-chai.png'),
-    website: 'blog/tutorials/effective-smart-contract-testing-using-chai',
+    website: 'blog/tutorials/effective-smart-contract-testing-with-chai',
     tags: ['celosage', 'intermediate', 'smartcontract'], 
   },
   {
