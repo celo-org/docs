@@ -30,7 +30,7 @@ git clone https://github.com/emiridbest/Library_Management_System.git
 - A basic understanding of Celo and smart contracts
 - A Celo Wallet address:
 - To create Alfajores wallet, go to [Alfajores wallet](https://celo.org/developers/faucet)
-- To get testnest funds, go to [Celo faucet]()https://faucet.celo.org/
+- To get testnest funds, go to [Celo faucet](https://faucet.celo.org/)
 - A text editor such as Visual Studio Code installed on your computer
 - [Remix IDE](https://remix.ethereum.org/)
 - Metamask
