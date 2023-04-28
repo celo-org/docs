@@ -29,8 +29,9 @@ We are going to use the following tools. Please install them before proceeding.
 
 - Code editor or an IDE preferably. I recommend [VSCode]().
 - [Python](https://python.org/downloads)
-- [Pip]() (No need to install separately if you installed Python3 or later)
-- [Git bash]()
+- [Pip](https://pypi.org/project/pip/) (No need to install separately if you installed Python3 or later)
+- [Git bash](https://git-scm.com/downloads)
+- [Ganache](https://trufflesuite.com/ganache/)
 
 **What is Web3Py?**
 
