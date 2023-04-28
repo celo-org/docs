@@ -1166,15 +1166,15 @@ We have followed these steps in calling each of the functions in the contract ex
 Open a new terminal or split the current one into two if you're using a VSCode terminal. On one side, start the local blockchain by typing `ganache` in the terminal. This will start ganache.
 In the second terminal, navigate to the project directory. On the VSCode GUI, be sure to be in `app.py` file, and click the triangular icon at the top right-hand corner to run the script.
 
-[!image](images/3.png)
+![image](images/3.png)
 
 Watch out for a popup in the terminal asking you to select 0 or 1. Selecting `0` will run the script on Ganache while `1` on Alfajores testnet. To run on testnet, be sure to connect to the internet.
 
-[!image](images/2.png)
+![image](images/2.png)
 
 Inspect the logs in the terminal. The balance on the opened cheques should read `0`.
 
-[!image](images/4.png)
+![image](images/4.png)
 
 The complete code for this tutorial can be found **[on the github](https://github.com/bobeu/interacting-with-smart-contracts-on-celo-using-web3py)**.
 
