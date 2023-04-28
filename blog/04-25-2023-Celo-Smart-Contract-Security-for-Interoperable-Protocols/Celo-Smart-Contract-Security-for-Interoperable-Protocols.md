@@ -190,7 +190,11 @@ To deploy our smart contract successfully, we need the celo extention wallet whi
 
 Next, we need to fund our newly created wallet which can done using the celo alfojares faucet [Here](https://celo.org/developers/faucet)
 
-You can now fund your wallet and deploy your contract using the celo plugin in remix.
+Now, click on the plugin logo at the bottom left corner and search for celo plugin.
+
+Install the plugin and click on the celo logo which will show in the side tab after the plugin is installed.
+
+Next connect your celo wallet, select the contract you want to deploy and finally click on deploy to deploy your contract.
 
 ## Conclusion
 
@@ -207,4 +211,5 @@ I hope you learned a lot from this tutorial. Here are some relevant links that w
 
 I'm Jonathan Iheme, A full stack block-chain Developer from Nigeria.
 
-Thank You!!
+[linkedIn](https://www.linkedin.com/in/jonathan-iheme-31a63718b/)
+[Twitter](https://twitter.com/iheme_jonathan)
