@@ -13,7 +13,6 @@ slug: /tutorials/effective-smart-contract-testing-with-chai
 
 ![header](../../src/data-tutorials/showcase/intermediate/effective-smart-contract-testing-using-chai.png)
 
-
 ## Introduction
 
 Welcome! Welcome!! Welcome!!! to another tutorial, This tutorial is part of a bigger NFT series and the aim of this is to help one become an expert in building NFT marketplaces as we know, NFTs are the future.
@@ -40,14 +39,18 @@ Chai is a popular assertion library used for testing JavaScript code, including 
 
 1. Open your terminal and navigate to your project directory.
 2. Install Chai using npm, the Node.js package manager, by running the following command:
+
 ```bash
 npm install chai
 ```
+
 3. This will download and install Chai and its dependencies into your project's `node_modules` folder.
 4. Once Chai is installed, you can import it into your JavaScript code using the `require` function:
+
 ```js
-const chai = require('chai');
+const chai = require("chai");
 ```
+
 This will make the Chai library available for use in your code.
 
 We can test this out by writing basic tests to see if it works:
@@ -59,6 +62,7 @@ const assert = chai.assert;
 let x = 42;
 assert.equal(x, 42);
 ```
+
 This will throw an error if `x` does not have the expected value of 42.
 
 And now you know chai works. Now lets move to building our tests for our smart contract.
@@ -230,7 +234,7 @@ Together, these two lines of code import the necessary libraries for writing and
 
 It's worth noting that the use of `const` indicates that these variables are declared as constants and cannot be reassigned once they are initialized. This helps ensure the stability and consistency of the testing environment.
 
-Next, you are going to define two test suites and set a longer timeout for the test cases in the `MyNFT` suite. This allows the test cases in the `MyNFT` suite to take longer to execute, which may be necessary for more complex test cases or for cases where the blockchain network is slow to respond. 
+Next, you are going to define two test suites and set a longer timeout for the test cases in the `MyNFT` suite. This allows the test cases in the `MyNFT` suite to take longer to execute, which may be necessary for more complex test cases or for cases where the blockchain network is slow to respond.
 
 ```js
 describe("MyNftMarket", function () {});
@@ -278,12 +282,12 @@ Here's a breakdown of each line:
 Next, we are going to create new instances of two smart contracts, `MyNFT` and `MyNftMarket`, and ensure that they are deployed to the blockchain before any tests are run.
 
 ```js
-    const MyNftMarket = await ethers.getContractFactory("MyNftMarket");
-    market = await MyNftMarket.deploy();
-    await market.deployed();
+const MyNftMarket = await ethers.getContractFactory("MyNftMarket");
+market = await MyNftMarket.deploy();
+await market.deployed();
 
-    myNFT = await MyNFT.deploy(market.address);
-    await myNFT.deployed();
+myNFT = await MyNFT.deploy(market.address);
+await myNFT.deployed();
 ```
 
 The code uses the `getContractFactory` function from the `ethers` library to obtain a reference to the `MyNftMarket` contract factory.
@@ -297,10 +301,10 @@ You then wait for the deployment of the MyNFT contract to complete by calling th
 Following this, you would write a test that will create and mint a new NFT to the account that called the `mint` function, with a metadata URL of "https://example.com/1" and an auction price of 1 Ether.
 
 ```js
-    const auctionPrice = ethers.utils.parseUnits("1", "ether");
+const auctionPrice = ethers.utils.parseUnits("1", "ether");
 
-    const nftContractAddress = myNFT.address;
-    const transaction = await myNFT.mint("https://example.com/1");
+const nftContractAddress = myNFT.address;
+const transaction = await myNFT.mint("https://example.com/1");
 ```
 
 In this code, a variable named `auctionPrice` is defined using the `parseUnits` function from the `ethers.utils` library. The `parseUnits` function is used to convert a decimal value to the base unit of the currency, which in this case is Ether. The value "1" is passed as the first argument to `parseUnits` to specify the value to be converted, and "ether" is passed as the second argument to specify the base unit of the currency.
@@ -312,9 +316,9 @@ The `mint` function is then called on the `myNFT` contract instance with the arg
 After creating a new NFT using the `mint` function in the previous code block, this code is used to list the newly created NFT for sale on the `MyNftMarket` contract instance.
 
 ```js
-    await market.listToken(nftContractAddress, 1, auctionPrice);
-    const tx = await transaction.wait();
-    const tokenId =  tx.events[0].args[2].toNumber();
+await market.listToken(nftContractAddress, 1, auctionPrice);
+const tx = await transaction.wait();
+const tokenId = tx.events[0].args[2].toNumber();
 ```
 
 The `await` keyword is used to wait for the `listToken` function on the `market` contract instance to be executed. This function takes three arguments - the address of the NFT contract (`nftContractAddress`), the ID of the NFT (`1`), and the auction price (`auctionPrice`). This function call will list the NFT with the given ID for sale on the `market` contract instance at the specified auction price.
@@ -326,9 +330,9 @@ The `tokenId` variable is then assigned the ID of the newly listed NFT by access
 Following this, this code is used to simulate two different buyers purchasing the NFT that was listed for sale in the previous code block.
 
 ```js
-    await market.connect(acc1).buyToken(0, { value: auctionPrice });
-    const t = await myNFT.connect(acc1).resaleApproval(tokenId);
-    await market.connect(acc2).buyToken(0, { value: auctionPrice });
+await market.connect(acc1).buyToken(0, { value: auctionPrice });
+const t = await myNFT.connect(acc1).resaleApproval(tokenId);
+await market.connect(acc2).buyToken(0, { value: auctionPrice });
 ```
 
 The first line uses the `await` keyword to wait for the `buyToken` function on the `market` contract instance to be executed. This function call is executed by `acc1`, one of the accounts created earlier. The `buyToken` function takes two arguments - the ID of the NFT being purchased (0) and an object with the value key set to the `auctionPrice` that was previously set for the NFT. This transaction will transfer the NFT ownership from the original owner to acc1.
@@ -353,13 +357,13 @@ After this, you would want to print the URIs of all active listings on our NFT m
 
 ```
 
-First, you would call the `getListingLength()` function to get the number of active listings on the market. We store the length in the `listingLength` variable. 
+First, you would call the `getListingLength()` function to get the number of active listings on the market. We store the length in the `listingLength` variable.
 
 You then create a loop that will iterate through each active listing on the marketplace. Inside the loop, you call the `getListing()` function, passing in the current index of the loop as the argument, to retrieve the details of the listing.
 
 The returned listing is an array of values, which you then destructure and store in variables for readability. The `seller` variable represents the address of the seller, `owner` represents the address of the current owner of the NFT, `token` represents the address of the NFT contract, `tokenId` represents the ID of the NFT, `price` represents the current price of the NFT, and `sold` is a boolean value indicating whether the NFT has been sold or not.
 
-Inside the loop, you also call the `tokenURI()` function of our `MyNFT` contract, passing in the `tokenId` of the NFT. This function returns the URI associated with the NFT, which you then print to the console using `console.log()`. 
+Inside the loop, you also call the `tokenURI()` function of our `MyNFT` contract, passing in the `tokenId` of the NFT. This function returns the URI associated with the NFT, which you then print to the console using `console.log()`.
 
 By the end of the loop, you have printed the URIs of all active listings on our NFT marketplace to the console, allowing users to browse and purchase NFTs.
 
@@ -401,7 +405,7 @@ describe("MyNFT", function () {
     await market.listToken(nftContractAddress, 1, auctionPrice);
 
     const tx = await transaction.wait();
-    const tokenId =  tx.events[0].args[2].toNumber();
+    const tokenId = tx.events[0].args[2].toNumber();
 
     await market.connect(acc1).buyToken(0, { value: auctionPrice });
     const t = await myNFT.connect(acc1).resaleApproval(tokenId);
@@ -421,13 +425,13 @@ describe("MyNFT", function () {
 
 ## Running Tests
 
-Once the test file is in place, you can run the tests using the `npx hardhat test` command in your terminal. This will compile your smart contract code, deploy the contracts to your local blockchain network, and run the tests defined in your test file. 
+Once the test file is in place, you can run the tests using the `npx hardhat test` command in your terminal. This will compile your smart contract code, deploy the contracts to your local blockchain network, and run the tests defined in your test file.
 
 If everything is set up correctly and your smart contract code is functioning as expected, you should see the output of the `console.log()` statements in your terminal, which in this case would be the URI of the NFTs being sold.
 
 ## Conclusion
 
-Well done on completing this tutorial 🚀. In this tutorial, you should have gained a better understanding of how to write suitable tests for your smart contracts using this powerful testing framework. 
+Well done on completing this tutorial 🚀. In this tutorial, you should have gained a better understanding of how to write suitable tests for your smart contracts using this powerful testing framework.
 
 You should have learned how to install and configure Chai in your JavaScript project, and how to write different types of tests such as assertions and expectations.
 
