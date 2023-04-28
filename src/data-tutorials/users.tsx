@@ -693,7 +693,7 @@ const Users: User[] = [
     description: "In this tutorial, you will learn how to how to build a computer retail store using celo composer.",
     preview: require('./showcase/intermediate/how-to-build-a-computer-retail-store-using-celo-composer.png'),
     website: '/blog/tutorials/how-to-build-a-computer-retail-store-using-celo-composer',
-    tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "NextJS"],
+    tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "nextjs"],
   },
 
   {
