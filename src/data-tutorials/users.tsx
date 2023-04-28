@@ -3182,7 +3182,7 @@ const Users: User[] = [
   },
   {
     title: 'Interacting with smart contract on celo using web3py',
-    description: 'This tutorial teaches you how to setup and use Web3py - A python-based web3 library',
+    description: 'This tutorial teaches you how to set up and use Web3py - A python-based web3 library',
     preview: require('./showcase/intermediate/interacting-with-smart-contract-on-celo-using-web3py.png'),
     website: 'blog/tutorials/interacting-with-smart-contract-on-celo-using-web3py',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
