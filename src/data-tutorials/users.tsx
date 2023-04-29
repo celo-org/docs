@@ -1658,6 +1658,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'composer'],
   },
   {
+    title: 'Celo Smart Contract Security for Interoperable Protocols',
+    description: 'This tutorial is part of the Advance Celo Smart contract security pathway. In this tutorial we will cover smart contract security for Interoperable protocols',
+    preview: require('./showcase/advanced/celo-smart-contract-security-for-interoperable-protocols.png'),
+    website: 'blog/tutorials/celo-smart-contract-security-for-interoperable-protocols',
+    tags: ['celo', 'celosage', 'solidity', 'advanced'],
+  },
+  {
     title: 'Create a Tool for DAOs to Manage their Voting and Proposal Processes On Celo',
     description: 'In this tutorial, we will be building a tool that enables DAO platforms on the Celo blockchain to manage their proposal and voting process. We will use IPFS as our storage layer and all transactions will be gasless.',
     preview: require('./showcase/advanced/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo.png'),
