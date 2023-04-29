@@ -6,7 +6,7 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [celo, solidity, smartcontract]
+tags: [celosage, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-smart-contract-on-celo-using-web3py
 ---
