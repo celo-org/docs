@@ -167,8 +167,8 @@ contract CELO_POLYGON_Bridge is Ownable {
         } else {
             return ecrecover
 (hash, v, r, s);
-}
-}
+        }
+    }
 }
 ```
 
