@@ -6,7 +6,7 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [celosage, intermediate, solidity, smartcontract]
+tags: [celo, solidity, smartcontract]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-smart-contract-on-celo-using-web3py
 ---
@@ -1176,7 +1176,7 @@ Inspect the logs in the terminal. The balance on the opened cheques should read 
 
 ![image](images/4.png)
 
-The complete code for this tutorial can be found **[on the github](https://github.com/bobeu/interacting-with-smart-contracts-on-celo-using-web3py)**.
+The complete code for this tutorial is **[here](https://github.com/bobeu/interacting-with-smart-contracts-on-celo-using-web3py)**.
 
 ## Conclusion​
 
