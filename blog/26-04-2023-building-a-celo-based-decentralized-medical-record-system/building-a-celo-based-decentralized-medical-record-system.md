@@ -18,6 +18,7 @@ slug: /tutorials/building-a-celo-based-decentralized-medical-record-system
 Medical records are essential for providing patients with accurate and timely healthcare. However, traditional systems can be inefficient and insecure. In this tutorial, you will learn how to create a decentralized medical record system on the Celo platform. We will cover the process of securely storing patient data, managing access control, and issuing verifiable credentials using smart contracts. Additionally, you will learn how to create a user interface for patients, doctors, and other medical professionals to interact with the medical record system. We will use Solidity, JavaScript, React, the Celo SDK, and medical record concepts to build our system.
 
 Building a decentralized medical record system on the blockchain has several advantages compared to traditional centralized systems:
+
 1. Security and Immutability: Blockchain technology ensures the data stored is secure and tamper-proof. Once a record is added to the blockchain, it cannot be altered, ensuring the integrity of the medical records. In traditional systems, a centralized database could be more susceptible to data breaches or unauthorized access.
 2. Privacy and Control: A decentralized medical record system built on a blockchain can give patients more control over their medical data. They can decide who has access to their records and revoke access at anytime. In traditional systems, the control of data typically lies with the service provider or a central authority.
 3. Transparency and Trust: Blockchain-based systems are transparent by design. All transactions and data changes are recorded on the blockchain and can be audited, increasing trust among patients, doctors, and other stakeholders in the medical ecosystem.
@@ -29,6 +30,7 @@ While there are clear benefits to using blockchain technology for a decentralize
 ## Prerequisites
 
 Before diving into this tutorial, you should have:
+
 - Basic understanding of blockchain and Celo.
 - Familiarity with Solidity, JavaScript, and React.
 - Experience with Celo SDK.
@@ -40,6 +42,7 @@ Before diving into this tutorial, you should have:
 3. A Celo Faucet Account for accessing the Celo network.
 
 To get a Celo test account, you can follow these steps:
+
 - Visit the Celo [Faucet](https://celo.org/developers/faucet).
 - Click on "Connect Celo Extension Wallet" and follow the prompts to connect your Celo Extension Wallet.
 - After connecting your wallet, you will see your account address.
@@ -52,7 +55,7 @@ To get a Celo test account, you can follow these steps:
 We will start by creating the smart contract for our medical record system. The contract will store patient data, manage access control, and issue verifiable credentials.
 
 1. Setting up the project
-Create a new directory for the project and navigate to it:
+   Create a new directory for the project and navigate to it:
 
 ```bash
 mkdir celo-medical-record
@@ -66,7 +69,7 @@ truffle init
 ```
 
 3. Install dependencies
-Install the OpenZeppelin Contracts library:
+   Install the OpenZeppelin Contracts library:
 
 ```bash
 npm install @openzeppelin/contracts
@@ -144,6 +147,7 @@ contract MedicalRecord is ERC721Enumerable, AccessControl {
 The `MedicalRecord` smart contract inherits from `ERC721` and `AccessControl`. It defines a struct `Record` that contains the patient's name, birth date, and medical data. The contract uses a mapping to store records, and it emits an event `RecordCreated` when a new record is created.
 
 The contract has the following functions:
+
 - `createRecord`: Creates a new medical record, assigns it a unique token ID, and mints an ERC721 token representing the record. This function can only be called by users with the `DOCTOR_ROLE`.
 - `viewRecord`: Retrieves the medical record associated with a given token ID.
 - `updateRecord`: Updates the medical data of an existing record. This function can only be called by users with the `DOCTOR_ROLE`.
@@ -161,7 +165,6 @@ module.exports = function (deployer) {
   deployer.deploy(MedicalRecord);
 };
 ```
-
 
 2. Update the `truffle-config.js file` to include the Celo-Alfajores network configuration:
 
@@ -198,14 +201,14 @@ module.exports = {
 ```
 
 3. Compile the smart contract
-Run the following command to compile the smart contract:
+   Run the following command to compile the smart contract:
 
 ```bash
 truffle compile
 ```
 
 4. Deploy the smart contract to the Celo network
-Run the following command to deploy the MedicalRecord smart contract to the Celo network:
+   Run the following command to deploy the MedicalRecord smart contract to the Celo network:
 
 ```bash
 truffle migrate --network alfajores
@@ -214,7 +217,6 @@ truffle migrate --network alfajores
 After the deployment is successful, you will see the smart contract address in the console output.
 
 ![image](https://user-images.githubusercontent.com/125604535/234716556-ab771cc3-5628-4c08-b8b9-7506802de167.png)
-
 
 Take note of the deployed contract address for future use.
 
@@ -242,7 +244,6 @@ npm install @celo/contractkit @celo-tools/use-contractkit web3 @openzeppelin/con
 You might run into this error:
 
 ![image](https://user-images.githubusercontent.com/125604535/234716744-1cff90c2-8110-4ebf-b406-11645bf29e9f.png)
-
 
 The error you might encounter is due to a conflict between the version of React you have installed (18.2.0) and the version of React that @celo-tools/use-contractkit is expecting (React 17.0.2). To fix this issue, you have to downgrade React to version 17.0.2.
 You can downgrade your React and React DOM versions in your `package.json` file to match the peer dependency required by @celo-tools/use-contractkit. Modify your package.json to have the following dependencies:
@@ -288,7 +289,7 @@ const MedicalRecord = () => {
         const totalSupply = await contract.methods.totalSupply().call();
         const recordPromises = [];
         for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
-          if (await contract.methods.ownerOf(tokenId).call() === address) {
+          if ((await contract.methods.ownerOf(tokenId).call()) === address) {
             recordPromises.push(contract.methods.viewRecord(tokenId).call());
           }
         }
@@ -327,14 +328,14 @@ Finally, we render the fetched records in a list.
 ```javascript
 import React from "react";
 import { ContractKitProvider } from "@celo-tools/use-contractkit";
-import { Buffer } from 'buffer';
+import { Buffer } from "buffer";
 import MedicalRecord from "./MedicalRecord";
 import "./App.css";
 window.Buffer = Buffer; // This line should be placed after importing Buffer
 function App() {
   return (
     <ContractKitProvider
-    dapp={{
+      dapp={{
         name: "Celo Medical Record",
         icon: "/MEDICAL.png",
       }}
@@ -361,7 +362,6 @@ npm start
 
 This will open a browser window with the application. Make sure you have the Celo Extension Wallet installed and configured with a Celo account that has some funds.
 ![image](https://user-images.githubusercontent.com/125604535/234738822-ef4f126c-81b7-4367-aa73-4fbf8430a806.png)
-
 
 ## Interacting with the smart contract
 
@@ -401,7 +401,9 @@ const createNewRecord = async (e) => {
 const updateExistingRecord = async (e) => {
   e.preventDefault();
   const tokenId = parseInt(selectedRecordId);
-  await contract.methods.updateRecord(tokenId, medicalData).send({ from: address });
+  await contract.methods
+    .updateRecord(tokenId, medicalData)
+    .send({ from: address });
   const updatedRecords = records.map((record, index) =>
     index + 1 === tokenId ? { ...record, medicalData } : record
   );
@@ -459,12 +461,12 @@ const updateExistingRecord = async (e) => {
 </form>
 ```
 
-
 With these changes, users can create and update medical records using the front end. Doctors can grant and revoke the `DOCTOR_ROLE` to other users through the smart contract methods `grantDoctorRole` and `revokeDoctorRole`. This can be done using tools like Remix or by creating additional front-end components which we will do in the next section.
 
 ## Displaying Medical Records
 
-Now that we can create and update medical records, let's create a component that will display these records in a list. 
+Now that we can create and update medical records, let's create a component that will display these records in a list.
+
 - Add the following code to the `src/MedicalRecord.js` component:
 
 ```javascript
@@ -494,7 +496,8 @@ Now, when a user clicks on a medical record in the list, the form will be popula
 
 ## Error Handling and Loading Indicators
 
-To improve the user experience, we should add error handling and loading indicators to our application. 
+To improve the user experience, we should add error handling and loading indicators to our application.
+
 - First, let's add the necessary state variables to the `src/MedicalRecord.js` component:
 
 ```javascript
@@ -550,8 +553,12 @@ const updateExistingRecord = async (e) => {
 - Finally, update the component's JSX to display the error message and loading indicator:
 
 ```jsx
-{error && <p>Error: {error}</p>}
-{isLoading && <p>Loading...</p>}
+{
+  error && <p>Error: {error}</p>;
+}
+{
+  isLoading && <p>Loading...</p>;
+}
 ```
 
 ## Testing the Application
@@ -568,7 +575,6 @@ Now, you should be able to create, view, and update medical records using the fr
 However, on running the command `npm start` and filling out the form, you might see this error:
 
 ![image](https://user-images.githubusercontent.com/125604535/234740053-3ea69897-bd9f-4239-a373-7e988cd58016.png)
-
 
 It appears there is a problem with the address value being passed to the smart contract function. The error indicates that the address is `null`. Ensure that a valid address is provided before invoking the `createRecord` function. The address should be automatically retrieved from the Celo Extension Wallet when the user is connected.
 
@@ -603,7 +609,7 @@ return (
 
 Now, when the user loads the page, they will see a "Connect Wallet" button. They should click this button to connect their wallet before interacting with the form. Once connected, the form will be displayed, and the address should no longer be `null`.
 
-This is what your final `MedicalRecord.js` should look like: 
+This is what your final `MedicalRecord.js` should look like:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -641,7 +647,7 @@ const MedicalRecord = () => {
         const totalSupply = await contract.methods.totalSupply().call();
         const recordPromises = [];
         for (let tokenId = 1; tokenId <= totalSupply; tokenId++) {
-          if (await contract.methods.ownerOf(tokenId).call() === address) {
+          if ((await contract.methods.ownerOf(tokenId).call()) === address) {
             recordPromises.push(contract.methods.viewRecord(tokenId).call());
           }
         }
@@ -664,17 +670,17 @@ const MedicalRecord = () => {
       // Grant DOCTOR_ROLE to the connected address
       await contract.methods.grantDoctorRole(address).send({ from: address });
     } catch (error) {
-      console.error('Error connecting to wallet:', error.message);
+      console.error("Error connecting to wallet:", error.message);
     }
   };
   const createNewRecord = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
-    console.log('Address:', address);
-    console.log('Name:', name);
-    console.log('Birthdate:', birthdate);
-    console.log('Medical Data:', medicalData);
+    console.log("Address:", address);
+    console.log("Name:", name);
+    console.log("Birthdate:", birthdate);
+    console.log("Medical Data:", medicalData);
     try {
       const receipt = await contract.methods
         .createRecord(address, name, birthdate, medicalData)
@@ -699,7 +705,9 @@ const MedicalRecord = () => {
     setIsLoading(true);
     setError(null);
     try {
-      await contract.methods.updateRecord(tokenId, medicalData).send({ from: address });
+      await contract.methods
+        .updateRecord(tokenId, medicalData)
+        .send({ from: address });
       const updatedRecords = records.map((record, index) =>
         index + 1 === tokenId ? { ...record, medicalData } : record
       );
@@ -725,13 +733,13 @@ const MedicalRecord = () => {
   };
   return (
     <div>
-      {!isConnected && (
-        <button onClick={handleConnect}>Connect Wallet</button>
-      )}
+      {!isConnected && <button onClick={handleConnect}>Connect Wallet</button>}
       {isConnected && (
         <>
           <h1>My Medical Records</h1>
-          <form onSubmit={selectedRecordId ? updateExistingRecord : createNewRecord}>
+          <form
+            onSubmit={selectedRecordId ? updateExistingRecord : createNewRecord}
+          >
             <div>
               <label>
                 Name:
@@ -776,7 +784,10 @@ const MedicalRecord = () => {
           </form>
           <div>
             <h2>Your Medical Records</h2>
-            <MedicalRecordList records={records} onSelect={setSelectedRecordId} />
+            <MedicalRecordList
+              records={records}
+              onSelect={setSelectedRecordId}
+            />
           </div>
           {error && <p>Error: {error}</p>}
           {isLoading && <p>Loading...</p>}
@@ -795,29 +806,26 @@ npm start
 ```
 
 You should see this browser window with the application.
+
 - Click on connect wallet.
-![image](https://user-images.githubusercontent.com/125604535/234740297-a9ff63e7-41c4-4215-8575-f0fd8e8f2a14.png)
+  ![image](https://user-images.githubusercontent.com/125604535/234740297-a9ff63e7-41c4-4215-8575-f0fd8e8f2a14.png)
 
-
-- Select the Metamask Wallet to connect to your Alfajores Account.
-![image](https://user-images.githubusercontent.com/125604535/234740845-40dd4588-96d9-4a96-b19b-fc6d55da1479.png)
-
+* Select the Metamask Wallet to connect to your Alfajores Account.
+  ![image](https://user-images.githubusercontent.com/125604535/234740845-40dd4588-96d9-4a96-b19b-fc6d55da1479.png)
 
 - Click on Confirm when your wallet loads up.
-![image](https://user-images.githubusercontent.com/125604535/234740917-72e15dcc-f733-44a2-8fe2-205049a62be6.png)
+  ![image](https://user-images.githubusercontent.com/125604535/234740917-72e15dcc-f733-44a2-8fe2-205049a62be6.png)
 
 - Fill in the form and click on Create Record.
-![image](https://user-images.githubusercontent.com/125604535/234740959-19a1e6aa-4203-4079-a508-cb985c7b0095.png)
+  ![image](https://user-images.githubusercontent.com/125604535/234740959-19a1e6aa-4203-4079-a508-cb985c7b0095.png)
 
+* Confirm this action in the metamask window pop-out.
+  ![image](https://user-images.githubusercontent.com/125604535/234741028-243237fa-149c-4843-8fae-77bbe155f47e.png)
 
-- Confirm this action in the metamask window pop-out.
-![image](https://user-images.githubusercontent.com/125604535/234741028-243237fa-149c-4843-8fae-77bbe155f47e.png)
+* Your record is now created and saved to the blockchain.
+  ![image](https://user-images.githubusercontent.com/125604535/234741082-93a71ac0-021a-42a9-8c2c-760ebd337da8.png)
 
-- Your record is now created and saved to the blockchain.
-![image](https://user-images.githubusercontent.com/125604535/234741082-93a71ac0-021a-42a9-8c2c-760ebd337da8.png)
-
-
-- You can view the details of the transaction on the Celo Explorer. Your Medical Records details will now be saved to the blockchain and can only be updated by an address with the  `DOCTOR_ROLE`.
+- You can view the details of the transaction on the Celo Explorer. Your Medical Records details will now be saved to the blockchain and can only be updated by an address with the `DOCTOR_ROLE`.
 
 ## Conclusion
 
@@ -826,6 +834,7 @@ Congratulations! You have built a decentralized medical record system on the Cel
 ## What's Next?
 
 You have now built a basic decentralized medical record system on the Celo network. Here are some ideas to further improve and expand the application:
+
 - Implement a more advanced user interface, including search and filtering options for the medical records list.
 - Integrate with a decentralized storage solution like IPFS to store medical data more securely and efficiently.
 - Add support for more data types, such as images, videos, and other files, to store more comprehensive medical information.-
@@ -845,7 +854,3 @@ Follow me on [Twitter](https://twitter.com/lanacreates) for insights on blockcha
 - [Truffle Suite](https://www.trufflesuite.com/)
 - [React](https://reactjs.org/)
 - [IPFS](https://ipfs.io/)
-
-
-
-
