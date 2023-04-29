@@ -2617,7 +2617,7 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'react', 'ipfs', 'nft'],
   },
   {
-    title: 'Create a Lottery dApp using Celo Composer and Redstone\'s Randomness',
+    title: 'Create a Lottery dApp using Celo Composer and Redstones Randomness',
     description: 'Solidity smart contracts can use randomness to ensure that lottery outcomes are fair and unbiased, hence the use of Redstone randomness, which allows for transparency in the implementation',
     preview: require('./showcase/intermediate/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness.png'),
     website: 'blog/tutorials/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness',
