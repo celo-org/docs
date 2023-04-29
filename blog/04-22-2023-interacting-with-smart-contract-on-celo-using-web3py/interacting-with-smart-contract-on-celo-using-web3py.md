@@ -6,7 +6,7 @@ authors:
     title: Web3, Smart Contract Developer
     url: https://github.com/bobeu
     image_url: https://github.com/bobeu.png
-tags: [celo, solidity, python]
+tags: [celosage, intermediate, solidity, smartcontract]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-smart-contract-on-celo-using-web3py
 ---
@@ -19,17 +19,17 @@ Interacting with the Ethereum protocol has been made easy with the advent of fra
 
 ## Prerequisites​
 
-I have designed this tutorial to help you Celo-target developer to have good insights using the web3py library to interact with smart contracts. Meanwhile, it is a necessity to have experience working with the following programming languages.
+I have designed this tutorial to help Celo-target developer understand how to use the web3py library to interact with smart contracts. Meanwhile, it is necessary to have experience working with the following areas.
 
 - At least intermediate in Solidity.
-- You must have been exposed to the Python environment, and should understand its syntax and concepts such as `class` `functions`, `variables`, and `Object Oriented Programming`. 
+- You must have been exposed to the Python environment, and should understand its syntax and concepts such as `classes` `functions`, `variables`, and `Object Oriented Programming` - `OOP`. 
 
 ## Requirements​
 We are going to use the following tools. Please install them before proceeding.
 
 - Code editor or an IDE preferably. I recommend [VSCode]().
 - [Python](https://python.org/downloads)
-- [Pip](https://pypi.org/project/pip/) (No need to install separately if you installed Python3 or later)
+- [Pip](https://pypi.org/project/pip/) (No need to install separately if you installed Python3 or later version)
 - [Git bash](https://git-scm.com/downloads)
 - [Ganache](https://trufflesuite.com/ganache/)
 
@@ -65,14 +65,14 @@ pip install web3
 ```
 
 - Create a project folder.
-  - Launch Git bash.
-
-  Be sure to replace `projectName` with the name you choose.
+  - Launch Git bash. 
 
   ```bash
   mkdir <projectName> && cd <projectName>
   ```
-- Create a virtual environment.
+  Replace `<projectName>` with the name you choose.
+
+- In thesame path, create a virtual environment.
 
 ```bash
 python3 -m venv <virtualEnvironmentName>
