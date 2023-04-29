@@ -1,5 +1,5 @@
 ---
-title: Create a Lottery dApp using Celo Composer and Redstone's Randomness
+title: Create a Lottery dApp using Celo Composer and Redstones Randomness
 description: Solidity smart contracts can use randomness to ensure that lottery outcomes are fair and unbiased, hence the use of Redstone randomness, which allows for transparency in the implementation.
 authors:
   - name: Justin Obi
