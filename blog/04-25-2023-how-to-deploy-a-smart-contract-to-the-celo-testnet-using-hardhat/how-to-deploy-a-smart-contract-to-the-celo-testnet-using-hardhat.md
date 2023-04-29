@@ -6,10 +6,12 @@ authors:
     title: Community Moderator, Celo
     url: https://github.com/iamoracle
     image_url: https://github.com/iamoracle.png
-tags: [beginner, celosage,celo]
+tags: [beginner, celosage, celo]
 hide_table_of_contents: true
 slug: /tutorials/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat
 ---
+
+import YouTube from '@components/YouTube';
 
 ![header](../../src/data-tutorials/showcase/beginner/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat.jpg)
 
@@ -24,7 +26,7 @@ In this video, we will walk through the process of deploying a smart contract on
 
 ## Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=PDjg3lFEPxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<YouTube videoId="PDjg3lFEPxs"/>
 
 [Video URL](https://www.youtube.com/watch?v=PDjg3lFEPxs)
 
