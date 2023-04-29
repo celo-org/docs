@@ -2680,6 +2680,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'react', 'ipfs', 'nft'],
   },
   {
+    title: 'Create a Lottery dApp using Celo Composer and Redstones Randomness',
+    description: 'Solidity smart contracts can use randomness to ensure that lottery outcomes are fair and unbiased, hence the use of Redstone randomness, which allows for transparency in the implementation',
+    preview: require('./showcase/intermediate/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness.png'),
+    website: 'blog/tutorials/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness',
+    tags: ['celosage', 'intermediate', 'react', 'hardhat', 'oracle', 'randomness'],
+  },
+  {
     title: 'How to use Witnet oracle network to display cryptocurrency prices',
     description: 'This tutorial will demonstrate the process of utilizing the Witnet oracle network to obtain cryptocurrency prices by linking off-chain data with the blockchain',
     preview: require('./showcase/intermediate/how-to-use-witnet-oracle-to-display-cryptocurrency-prices.png'),
