@@ -487,7 +487,7 @@ This is a demo of [how your dapp should look and work](https://drive.google.com/
 
 ## Conclusion
 
-So far, we’ve been able to create a simple voting smart contract, followed by a simple UI for the smart contract and lastly, we integrated Web3auth into the dapp inorder to authenticate users using their wallet or social accounts.
+So far, we’ve been able to create a simple voting smart contract, followed by a simple UI for the smart contract and lastly, we integrated Web3auth into the dapp inorder to authenticate users using their wallet or social accounts. You can access the code for this tutorial [here](https://github.com/J0shcodes/web3-auth-integration)  
 
 ## Next Steps
 
