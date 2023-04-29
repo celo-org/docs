@@ -1833,6 +1833,14 @@ const Users: User[] = [
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
   {
+
+    title: 'Building a Celo-Based Decentralized Medical Record System',
+    description: 'Learn how to building a Celo-Based Decentralized Medical Record System',
+    preview: require('./showcase/intermediate/building-a-celo-based-decentralized-medical-record-system.png'),
+    website: 'blog/tutorials/building-a-celo-based-decentralized-medical-record-system',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'react', 'metamask'],
+  },
+  {
     title: 'Building a Celo Oracle for Off-Chain Data: A Step-by-Step Guide',
     description: 'Learn how to build a  Celo Oracle for Off-Chain Data using a step-by-step guide',
     preview: require('./showcase/intermediate/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide.png'),
