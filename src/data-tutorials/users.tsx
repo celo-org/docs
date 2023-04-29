@@ -2539,6 +2539,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'hardhat'],
   },
   {
+    title: 'How to Deploy a Smart Contract to the Celo Testnet using Hardhat',
+    description: 'This video tutorial will expose developers to deploying a smart contract to the Celo Testnet using hardhat.',
+    preview: require('./showcase/beginner/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat.jpg'),
+    website: 'blog/tutorials/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat',
+    tags: ['celosage', 'beginner', 'hardhat'],
+  },
+  {
     title: 'Redeploying Dapp to Celo.',
     description: 'How to Re Deploy your Ethereum DApp to Celo with Hardhat.',
     preview: require('./showcase/intermediate/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat.png'),
