@@ -1114,6 +1114,14 @@ const Users: User[] = [
     website: 'https://www.gainforest.earth/',
     source: 'https://github.com/GainForest',
     tags: ['refi'],
+  },
+  {
+    title: 'RedStone Oracles',
+    description: 'Modular Oracle with custom feeds',
+    preview: require('./showcase/redstone.png'),
+    website: 'https://redstone.finance/',
+    source: 'https://redstone.finance/',
+    tags: ['apps', 'defi', 'popular'],
   }
   /*
   Pro Tip: add your site in alphabetical order.
