@@ -75,6 +75,8 @@ contract MyERC1155Token is ERC1155, Ownable {
 }
 ```
 
+You can check Contract Code [Here](https://gist.github.com/developerkunal/a7cadab95e588e1c1ed20a82d2494c03#file-multitoken-sol)
+
 **_This contract inherits from the OpenZeppelin ERC1155 and Ownable contracts. It has a constructor that sets the metadata URL for the token. Here's an explanation of the three functions in the contract:_**
 
 - mint: This function allows the owner of the contract to mint new tokens and assign them to a specific account. The account parameter is the address that will receive the newly minted tokens, id is the ID of the token to be minted, amount is the number of tokens to mint, and data is any additional data to include with the minting transaction.
