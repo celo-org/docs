@@ -293,7 +293,7 @@ If the user is a subscriber, the function will delete their subscriber informati
 
 - ### Function isSubscribed
 
-```
+```solidity
  function isSubscribed(address _subscriber) public view returns (bool) {
         return subscribers[_subscriber].subscribed;
     }
