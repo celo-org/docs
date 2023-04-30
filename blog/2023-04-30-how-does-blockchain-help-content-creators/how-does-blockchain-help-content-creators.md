@@ -25,9 +25,10 @@ We examine the new potential that the Celo blockchain is presenting to content c
 - The Impact of Blockchain on Content Creation
 - The Best Blockchain Projects for Content Creators
 - How Content Creators Utilize The Blockchain
-- Why is celo blockchain beneficial to content creators 
+- Why is celo blockchain beneficial to content creators
 
 ## Prerequisites
+
 It is crucial to have prior knowledge of the following for a full understanding of this series:
 
 - Who the content creators are and what they do?
@@ -35,10 +36,12 @@ It is crucial to have prior knowledge of the following for a full understanding 
 - Web3 applications
 
 The links below can be of assistance:
+
 - [Content Creators: Who They Are & What They Do](https://sproutsocial.com/insights/content-creator/)
 - [Blockchain Basics - An Introduction to Web3 Terms and concepts with Celo](https://docs.celo.org/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo)
 
 ## Requirements
+
 You ought to be familiar with the process of creating content. Additionally, you should click the following link to read an introduction to the Celo blockchain and learn about its potential applications worldwide:
 
 - [An Introductory Guide to Celo](https://medium.com/celoorg/an-introductory-guide-to-celo-b185c62d3067)
@@ -59,7 +62,7 @@ Blockchain is more secure thanks to its decentralized nature, which lowers the p
 
 ### Blockchain’s function in content creation
 
-The modern world depends heavily on content producers. The internet has been successfully used by them to spread their content. As a result of this practice, many people now take their trade seriously and spend countless hours producing excellent material to share with their audiences online. The content creation sector does face some issues, nevertheless, that only blockchain can address. 
+The modern world depends heavily on content producers. The internet has been successfully used by them to spread their content. As a result of this practice, many people now take their trade seriously and spend countless hours producing excellent material to share with their audiences online. The content creation sector does face some issues, nevertheless, that only blockchain can address.
 
 Making sure that content providers are adequately compensated for their labor is one of the main difficulties in the industry. A decentralized, transparent system for monitoring ownership and usage rights for digital information can be made using blockchain technology. Creators may guarantee that they are properly acknowledged and paid for their work as well as prevent unauthorized use and distribution of their content by storing ownership and license information on a blockchain.
 
@@ -100,13 +103,14 @@ The distribution, monetization, and protection of content creators' work can all
 - Content Monetization: Blockchain-based platforms can enable content creators to monetize their work directly without intermediaries such as publishers, distributors, or advertisers. By using smart contracts and cryptocurrency, content creators can receive payment instantly and directly from their audience. This can also help to reduce the transaction fees and payment processing time.
 
 - Digital Rights Management: Blockchain technology can provide a secure and immutable record of ownership and distribution rights for digital content. This can help to prevent piracy and ensure that content creators receive appropriate compensation for their work.
-Decentralized Storage: Content creators can store their work on a decentralized storage network, where it is distributed across a network of nodes instead of being stored on a central server. This can help to ensure that the content is available and accessible even if one or more nodes fail.
+  Decentralized Storage: Content creators can store their work on a decentralized storage network, where it is distributed across a network of nodes instead of being stored on a central server. This can help to ensure that the content is available and accessible even if one or more nodes fail.
 
 - Rewarding Engagement: Blockchain-based platforms can also incentivize user engagement by rewarding users for actions such as liking, sharing, and commenting on content. This can help to increase the reach and visibility of the content and encourage community engagement.
 
 - Crowdfunding: Content creators can also use blockchain technology to crowdfund their projects directly from their audience. By using cryptocurrency and smart contracts, they can set fundraising goals and receive contributions from their supporters without intermediaries.
 
-### Why is celo blockchain beneficial to content creators 
+### Why is celo blockchain beneficial to content creators
+
 Especially for individuals who are looking for a more open and accessible approach to monetise their work, Celo is a blockchain platform that provides a number of advantages to content producers. The following are some explanations for why content producers may benefit from the Celo blockchain:
 
 - Minimal Transaction Fees: Celo has a minimal transaction fee structure, making it perfect for content creators who wish to monetize their work without having to pay excessive fees that would reduce their earnings. Additionally, because of the low transaction costs, it is feasible to make micropayments and small payments.
@@ -122,14 +126,16 @@ Especially for individuals who are looking for a more open and accessible approa
 In summary, the Celo blockchain provides content producers with a number of advantages, including minimal transaction fees, decentralized identification, usability, a focus on mobility, and stablecoins. These tools can assist content producers in more easily, securely, and consistently remunerating their work.
 
 ## Conclusion
+
 For the adoption of both current and future blockchain applications for content providers, the Celo blockchain satisfies all requirements. While more of them occasionally get integrated, some of these applications already exist. The future is even more promising and the potential of blockchain for content producers in the Celo ecosystem is limitless.
 
 ## Next Steps​
+
 I trust this tutorial was very informative for you. You may read more about the Celo blockchain and the different activities and projects that are being created on it to have a greater understanding of the platform. You can find all the details you need to get started in the official Celo developer guide if you're interested in developing your projects on the Celo blockchain. Moreover, you can participate in the community by advancing the Celo blockchain by turning into a Celo validator. Check [Celo documentation](https://docs.celo.org/) to get started!
 
 ## About the Author
 
-Shukurah Ganiyu is a UIUX designer and a content writer passionate about blockchain, DeFi, NFTs, and cryptocurrencies for the emerging Web3 sector. You can connect with me on GitHub using the Link 
+Shukurah Ganiyu is a UIUX designer and a content writer passionate about blockchain, DeFi, NFTs, and cryptocurrencies for the emerging Web3 sector. You can connect with me on GitHub using the Link
 
 ## References
 
@@ -140,4 +146,3 @@ Shukurah Ganiyu is a UIUX designer and a content writer passionate about blockch
 [https://mailchimp.com/courier/article/blockchain/](https://mailchimp.com/courier/article/blockchain/)
 
 [https://coinmarketcap.com/alexandria/article/top-blockchain-based-platform-for-content-creators](https://coinmarketcap.com/alexandria/article/top-blockchain-based-platform-for-content-creators)
-
