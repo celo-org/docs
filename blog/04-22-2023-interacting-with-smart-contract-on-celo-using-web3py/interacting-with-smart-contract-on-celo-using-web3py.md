@@ -22,9 +22,10 @@ Interacting with the Ethereum protocol has been made easy with the advent of fra
 I have designed this tutorial to help Celo-target developer understand how to use the web3py library to interact with smart contracts. Meanwhile, it is necessary to have experience working with the following areas.
 
 - At least intermediate in Solidity.
-- You must have been exposed to the Python environment, and should understand its syntax and concepts such as `classes` `functions`, `variables`, and `Object Oriented Programming` - `OOP`. 
+- You must have been exposed to the Python environment, and should understand its syntax and concepts such as `classes` `functions`, `variables`, and `Object Oriented Programming` - `OOP`.
 
 ## Requirements​
+
 We are going to use the following tools. Please install them before proceeding.
 
 - Code editor or an IDE preferably. I recommend [VSCode]().
@@ -50,6 +51,7 @@ Web3Py is a collection of APIs and utilities for interacting with the Ethereum-b
 ```bash
 pip --version
 ```
+
 or
 
 ```bash
@@ -65,11 +67,13 @@ pip install web3
 ```
 
 - Create a project folder.
-  - Launch Git bash. 
+
+  - Launch Git bash.
 
   ```bash
   mkdir <projectName> && cd <projectName>
   ```
+
   Replace `<projectName>` with the name you choose.
 
 - In thesame path, create a virtual environment.
@@ -702,10 +706,10 @@ cd <root folder> && touch ChequePayment.sol
     }
 
     receive() payable external {}
-    
+
     /**@dev Draws a new cheque in favor of beneficiary - payee
     * @param validityWindowInHrs - Period within which cheque is valid
-    * 
+    *
     */
     function drawCheque(address payee, uint amount, uint8 validityWindowInHrs) public payable onlyOwner {
       _safeGuardCheques(amount, msg.value);
@@ -717,7 +721,7 @@ cd <root folder> && touch ChequePayment.sol
         vwIh,
         amount
       );
-      
+
       emit ChequeDrawn(payee, amount);
     }
 
@@ -808,6 +812,7 @@ I have written a short script for this task. Make a new file in the project dire
 ```bash
 pip install py-solc-x
 ```
+
 - import `compile_standard` and `install_solc` from the `solcx` library.
 
 - We use the `install_solc` function to install a specific version of the compiler ahead of compilation, read the solidity file, and compile using `compile_standard` based on the parameters we set. It then outputs a dictionary containing the compiled information. Thereafter, we create a file named `compiled_contract.json` where the result will be stored. We can then read the `abi` and `bytecode` from `compiled_contract.json`
@@ -900,11 +905,11 @@ Before deploying the contract, it is vital that we setup the network and provide
 pip install python-dotenv
 ```
 
-- Invoking `load_dotenv()` exposes the environment variables, and we can access them through `os.getenv`. Create a `.env` file in the root of the project, and paste your private keys. 
+- Invoking `load_dotenv()` exposes the environment variables, and we can access them through `os.getenv`. Create a `.env` file in the root of the project, and paste your private keys.
 
->Warning! You're responsible for securing your private keys. Ensure that you include a `gitignore` file in the same path, and add the `.env` file to the `gitignore` to avoid accidentally committing sensitive information to Github. 
+> Warning! You're responsible for securing your private keys. Ensure that you include a `gitignore` file in the same path, and add the `.env` file to the `gitignore` to avoid accidentally committing sensitive information to Github.
 
-- The `provider`, `web3`, and `chainId` default to local instance. `isTestnetProvider` allows us to select between interacting locally or on testnet.  
+- The `provider`, `web3`, and `chainId` default to local instance. `isTestnetProvider` allows us to select between interacting locally or on testnet.
 
 - Sometimes, an address could be in mixed case and you may experience an `invalid address` error, `checksum` converts such to a valid checksum address.
 
@@ -912,9 +917,9 @@ pip install python-dotenv
 
 - `convertToWei` accepts an integer and returns the formatted version in the smallest unit of Celo's currency.
 
-- To broadcast transactions to the network, we need to pay some gas, and this requires the transaction sender to append their signature.  In this case, we need a wallet instance with private keys. `Account.create("ENTROPY")` returns a randomly generated account instance. It accepts a random string called `entropy`. By default, the wallet instances are set to a locally generated wallet.
+- To broadcast transactions to the network, we need to pay some gas, and this requires the transaction sender to append their signature. In this case, we need a wallet instance with private keys. `Account.create("ENTROPY")` returns a randomly generated account instance. It accepts a random string called `entropy`. By default, the wallet instances are set to a locally generated wallet.
 
->Note: The wallet instance by default contains the associated private key in raw bytes format. This is also the case with transaction hash returned in a transaction. You can convert to readable format using the `web3.to_hex` utils.
+> Note: The wallet instance by default contains the associated private key in raw bytes format. This is also the case with transaction hash returned in a transaction. You can convert to readable format using the `web3.to_hex` utils.
 
 - The next code says if we are connected locally, we transfer funds from `ganache` to the locally generated accounts. Alternatively, you could simply import accounts from Ganache GUI.
 
@@ -928,7 +933,7 @@ pip install python-dotenv
 
 We have followed these steps in calling each of the functions in the contract except for `getOpenedCheques` which is readOnly and does not require a signature.
 
-- The `build_transaction` function accepts a dictionary with transaction parameters. In our case, three of them are important to us. You could choose to manually set the `gas`, `gasPrice` etc. 
+- The `build_transaction` function accepts a dictionary with transaction parameters. In our case, three of them are important to us. You could choose to manually set the `gas`, `gasPrice` etc.
 
   - `chainId`
   - `from`
@@ -1038,17 +1043,17 @@ We have followed these steps in calling each of the functions in the contract ex
           print("Transaction hash: {}\n".format(web3.to_hex(receipt.transactionHash)))
 
           self.instance = web3.eth.contract(address=checksum(self.contract_address), abi=abi)
-      
+
       def getOpenCheques(self, funcName:str):
           print("Fetching current opened cheques ...")
           openCheques = self.instance.functions.openCheques().call({'from': wallet_payee.address})
           print("Opened Cheque balance after {0} was called : {1}\n".format(funcName, openCheques));
-      
+
       def drawCheque(self, amount: int, value: int):
           printLog("DrawCheque")
           trxn = self.instance.functions.drawCheque(
-              checksum(wallet_payee.address), 
-              amount, 
+              checksum(wallet_payee.address),
+              amount,
               VALIDITY_WINDOW_IN_HRS
           ).build_transaction(
               {
@@ -1069,8 +1074,8 @@ We have followed these steps in calling each of the functions in the contract ex
       def increaseCheque(self, amount: int, msgValue: int):
           printLog("Increase")
           trxn = self.instance.functions.increaseChequeValue(
-              wallet_payee.address, 
-              amount, 
+              wallet_payee.address,
+              amount,
           ).build_transaction(
               {
                   'chainId': chainId,
@@ -1090,7 +1095,7 @@ We have followed these steps in calling each of the functions in the contract ex
       def reduceCheque(self, amount: int):
           printLog("ReduceCheque")
           trxn = self.instance.functions.reduceChequeValue(
-              wallet_payee.address, 
+              wallet_payee.address,
               amount
           ).build_transaction(
               {
@@ -1106,7 +1111,7 @@ We have followed these steps in calling each of the functions in the contract ex
           )
           print("Transaction hash: {}\n".format(web3.to_hex(recpt.transactionHash)))
           self.getOpenCheques("ReduceCheque")
-      
+
       def cancelCheque(self):
           printLog("CancelCheque")
           trxn = self.instance.functions.cancelDrawnCheque(
@@ -1188,6 +1193,7 @@ You have learned:
 - How to use web3 for deploying and interacting with smart contracts locally and on Celo.
 
 ## What next?
+
 If you are a Python developer, you can build your dream project using web3py. To get started, visit the **[Celo documentation](https://docs.celo.org/tutorials)**
 
 Should you have questions, join us on **[discord](https://chat.celo.org/)**.
