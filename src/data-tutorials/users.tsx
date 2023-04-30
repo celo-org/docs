@@ -2066,11 +2066,11 @@ const Users: User[] = [
     tags: ['intermediate', 'figment', 'nodejs'],
   },
   {
-    title: 'Verifying Contracts with Hardhat',
-    description: 'Hardhat is one of the most popular developer tools for writing contracts for EVM compatible blockchains.',
-    preview: require('./showcase/intermediate/verifying-contracts-with-hardhat.png'),
-    website: '/blog/hardhat-deploy-verify',
-    tags: ['intermediate','foundation', 'hardhat', 'sourcify', 'verification'],
+    title: 'Building a blog subscription dapp on Celo part 1',
+    description: 'Learn how to build a Celo-based blog subscription dapp in this comprehensive guide.',
+    preview: require('./showcase/advanced/blog.png'),
+    website: '/blog/building-a-blog-subscription-dapp-on-celo-part-1',
+    tags: ['celo','advanced', 'solidity', 'celosage'],
   },
   {
     title: 'Demos with ObservableHQ',
