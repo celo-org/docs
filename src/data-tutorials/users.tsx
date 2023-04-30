@@ -3331,6 +3331,14 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
+  
+  {
+    title: 'How Does Blockchain Help Content Creators?',
+    description: 'Learn how blockchain technoloty help content creators.',
+    preview: require('./showcase/beginner/how-does-blockchain-help-content-creators.png'),
+    website: 'blog/tutorials/how-does-blockchain-help-content-creators',
+    tags: ['celosage', 'beginner', 'solidity'], 
+  },
 
 
 
