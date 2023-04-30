@@ -133,8 +133,8 @@ Shukurah Ganiyu is a UIUX designer and a content writer passionate about blockch
 
 ## References
 
-https://docs.celo.org/blog/tutorials/why-should-you-use-celo
-https://docs.celo.org/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more
-https://mailchimp.com/courier/article/blockchain/
-https://coinmarketcap.com/alexandria/article/top-blockchain-based-platform-for-content-creators 
+[https://docs.celo.org/blog/tutorials/why-should-you-use-celo](https://docs.celo.org/blog/tutorials/why-should-you-use-celo)
+[https://docs.celo.org/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more](https://docs.celo.org/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more)
+[https://mailchimp.com/courier/article/blockchain/](https://mailchimp.com/courier/article/blockchain/)
+[https://coinmarketcap.com/alexandria/article/top-blockchain-based-platform-for-content-creators](https://coinmarketcap.com/alexandria/article/top-blockchain-based-platform-for-content-creators)
 
