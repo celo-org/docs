@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/top-33-must-know-tools-for-web3-developers
 ---
 
+![header](../../src/data-tutorials/showcase/beginner/top-33-must-know-tools-for-web3-developers.png)
+
 ## Introduction
 
 
