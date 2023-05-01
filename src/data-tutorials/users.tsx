@@ -2540,7 +2540,7 @@ const Users: User[] = [
    {
     title: "Integrating Python with Celo Mobile Wallet",
     description: "Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.",
-    preview: require("./showcase/advanced/integrating-python-with-celo-mobile-wallet.png"),
+    preview: require("./showcase/intermediate/integrating-python-with-celo-mobile-wallet.png"),
     website: "/blog/tutorials/integrating-python-with-celo-mobile-wallet",
     tags: ["celosage", "intermediate", "smartcontract", "solidity"],
   },
