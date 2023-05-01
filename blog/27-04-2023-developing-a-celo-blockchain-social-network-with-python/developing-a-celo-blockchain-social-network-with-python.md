@@ -341,9 +341,9 @@ In this lesson, we used the Python programming language and the Celo blockchain 
 This guide is merely the first step toward creating a decentralized social network. Here are some ideas for subsequent actions:
 
 - Provide new features, such as the ability to follow other users, comment on posts, and favorite postings.
-- To make the software more interesting, build a user interface.
-- Further security elements should be included, such as user data encryption and two-factor authentication.
-- Install the application on the Celo Mainnet to make it widely available.
+- To make the software more interesting, build a [user interface](https://docs.celo.org/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux).
+- Further security elements should be included, such as [user data encryption and two-factor authentication](https://docs.celo.org/blog/tutorials/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts).
+- Install the application on the [Celo Mainnet](https://docs.celo.org/developer/deploy) to make it widely available.
 
 ## About the Author
 I am a React frontend developer with over 3 years of experience building for the web, a web3 developer, and a technical writer. Visit my [GitHub profile](https://github.com/J0shcodes) to see some of the projects I have worked on and currently working on.
