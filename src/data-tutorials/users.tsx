@@ -2538,7 +2538,7 @@ const Users: User[] = [
     tags: ["advanced", "celosage", "celo", "openzeppelin"],
   },
    {
-    title: "Integrating Python with Celo's Mobile Wallet",
+    title: "Integrating Python with Celo Mobile Wallet",
     description: "Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.",
     preview: require("./showcase/advanced/integrating-python-with-celo-mobile-wallet.png"),
     website: "/blog/tutorials/integrating-python-with-celo-mobile-wallet",
