@@ -695,7 +695,13 @@ const Users: User[] = [
     website: '/blog/tutorials/how-to-build-a-computer-retail-store-using-celo-composer',
     tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "nextjs"],
   },
-
+  {
+    title: 'Creating a Smart Contract for Secure and Efficient Plant Seedling Sales on the Celo Blockchain',
+    description: 'This is a marketplace for seedlings on Celo using Solidity and OpenZeppelin. Users can add, view, and buy using cUSD.',
+    preview: require('./showcase/intermediate/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/creating-a-smart-contract-for-secure-and-efficient-plant-seedling-sales-on-the-celo-blockchain',
+    tags: ['intermediate','celosage','celo'],
+  },
   {
     title: "Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds",
     description: "A step-by-step instructions on setting up and using a hardware wallet with a multi-sig wallet like Celo-safe",
