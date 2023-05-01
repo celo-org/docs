@@ -2542,7 +2542,7 @@ const Users: User[] = [
     description: "Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.",
     preview: require("./showcase/advanced/integrating-python-with-celo-mobile-wallet.png"),
     website: "/blog/tutorials/integrating-python-with-celo-mobile-wallet",
-    tags: ["celosage", "intermediate", "smartcontract", "solidity", "python"],
+    tags: ["celosage", "intermediate", "smartcontract", "solidity"],
   },
   {
     title: "Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs",
