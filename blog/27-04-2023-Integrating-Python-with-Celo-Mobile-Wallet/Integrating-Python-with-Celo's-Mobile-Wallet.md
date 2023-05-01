@@ -11,7 +11,6 @@ slug: /tutorials/integrating-python-with-celo-mobile-wallet
 
 ![header](../../src/data-tutorials/showcase/intermediate/integrating-python-with-celo-mobile-wallet.png)
 
-
 ## Introduction
 
 With the help of the open-source blockchain platform Celo, everyone with a smartphone will be able to use financial tools. Its mobile wallet provides an easy-to-use platform for managing, sending, and receiving virtual currency. In this article, we'll look at how to integrate Python with Celo's mobile wallet, talk about the difficulties and benefits of doing so, and build a straightforward Python script that communicates with the wallet using web3.py.
@@ -186,7 +185,7 @@ def get_balance(account_address, contract_address, token="CELO"):
     elif token == "cUSD":
         amount = cusd_contract.functions.balanceOf(account_address).call()
         balance = w3.from_wei(amount, 'ether')
-        return balance    
+        return balance
     else:
         raise ValueError("Invalid token type")
 
@@ -312,83 +311,80 @@ print(f"Connected to Celo network. Address: {deployer.address}")
 ```
 
 - cUSD_ABI: The functions and events of a smart contract are represented in JSON by an ABI (Application Binary Interface). The ABI for the cUSD stablecoin contract is currently stored in the cUSD_ABI variable.
-    
-    
-    ```python
-    # Celo USD ABI
-    cUSD_ABI = [
-        {
-            "constant": True,
-            "inputs": [],
-            "name": "totalSupply",
-            "outputs": [{"name": "", "type": "uint256"}],
-            "payable": False,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": True,
-            "inputs": [{"name": "owner", "type": "address"}],
-            "name": "balanceOf",
-            "outputs": [{"name": "", "type": "uint256"}],
-            "payable": False,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": False,
-            "inputs": [
-                {"name": "to", "type": "address"},
-                {"name": "value", "type": "uint256"}
-            ],
-            "name": "transfer",
-            "outputs": [{"name": "", "type": "bool"}],
-            "payable": False,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": True,
-            "inputs": [
-                {"name": "owner", "type": "address"},
-                {"name": "spender", "type": "address"}
-            ],
-            "name": "allowance",
-            "outputs": [{"name": "", "type": "uint256"}],
-            "payable": False,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": False,
-            "inputs": [
-                {"name": "spender", "type": "address"},
-                {"name": "value", "type": "uint256"}
-            ],
-            "name": "approve",
-            "outputs": [{"name": "", "type": "bool"}],
-            "payable": False,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": False,
-            "inputs": [
-                {"name": "from", "type": "address"},
-                {"name": "to", "type": "address"},
-                {"name": "value", "type": "uint256"}
-            ],
-            "name": "transferFrom",
-            "outputs": [{"name": "", "type": "bool"}],
-            "payable": False,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        }
-    ]
-    ```
-    
+  ```python
+  # Celo USD ABI
+  cUSD_ABI = [
+      {
+          "constant": True,
+          "inputs": [],
+          "name": "totalSupply",
+          "outputs": [{"name": "", "type": "uint256"}],
+          "payable": False,
+          "stateMutability": "view",
+          "type": "function"
+      },
+      {
+          "constant": True,
+          "inputs": [{"name": "owner", "type": "address"}],
+          "name": "balanceOf",
+          "outputs": [{"name": "", "type": "uint256"}],
+          "payable": False,
+          "stateMutability": "view",
+          "type": "function"
+      },
+      {
+          "constant": False,
+          "inputs": [
+              {"name": "to", "type": "address"},
+              {"name": "value", "type": "uint256"}
+          ],
+          "name": "transfer",
+          "outputs": [{"name": "", "type": "bool"}],
+          "payable": False,
+          "stateMutability": "nonpayable",
+          "type": "function"
+      },
+      {
+          "constant": True,
+          "inputs": [
+              {"name": "owner", "type": "address"},
+              {"name": "spender", "type": "address"}
+          ],
+          "name": "allowance",
+          "outputs": [{"name": "", "type": "uint256"}],
+          "payable": False,
+          "stateMutability": "view",
+          "type": "function"
+      },
+      {
+          "constant": False,
+          "inputs": [
+              {"name": "spender", "type": "address"},
+              {"name": "value", "type": "uint256"}
+          ],
+          "name": "approve",
+          "outputs": [{"name": "", "type": "bool"}],
+          "payable": False,
+          "stateMutability": "nonpayable",
+          "type": "function"
+      },
+      {
+          "constant": False,
+          "inputs": [
+              {"name": "from", "type": "address"},
+              {"name": "to", "type": "address"},
+              {"name": "value", "type": "uint256"}
+          ],
+          "name": "transferFrom",
+          "outputs": [{"name": "", "type": "bool"}],
+          "payable": False,
+          "stateMutability": "nonpayable",
+          "type": "function"
+      }
+  ]
+  ```
 
-- get_balance is a function that returns an account's balance in either CELO or cUSD. Account address, contract address, and token type (the default is CELO) are all necessary.
+* get_balance is a function that returns an account's balance in either CELO or cUSD. Account address, contract address, and token type (the default is CELO) are all necessary.
 
 ```python
 def get_balance(account_address, contract_address, token="CELO"):
@@ -400,7 +396,7 @@ def get_balance(account_address, contract_address, token="CELO"):
     elif token == "cUSD":
         amount = cusd_contract.functions.balanceOf(account_address).call()
         balance = w3.from_wei(amount, 'ether')
-        return balance    
+        return balance
     else:
         raise ValueError("Invalid token type")
 ```
@@ -452,23 +448,20 @@ def send_funds(account, to, amount, contract_address, token="CELO"):
 ```
 
 - Get the transaction history of an address using the get_transaction_history function. It cycles through the previous 50 blocks, retrieves each block's transactions, and determines whether the transaction is coming from or going to the supplied address. The transaction is added to the list of transactions if this is the case.
-    
-    
-    ```python
-    def get_transaction_history(address):
-        transactions = []
-        for i in tqdm(range(w3.eth.block_number, max(-1, w3.eth.block_number - 50), -1)):
-            try:
-                block = w3.eth.get_block(i, full_transactions=True)
-            except ExtraDataLengthError:
-                continue
-    
-            for tx in block.transactions:
-                if tx['from'] == address or tx['to'] == address:
-                    transactions.append(tx)
-        return transactions
-    ```
-    
+  ```python
+  def get_transaction_history(address):
+      transactions = []
+      for i in tqdm(range(w3.eth.block_number, max(-1, w3.eth.block_number - 50), -1)):
+          try:
+              block = w3.eth.get_block(i, full_transactions=True)
+          except ExtraDataLengthError:
+              continue
+
+          for tx in block.transactions:
+              if tx['from'] == address or tx['to'] == address:
+                  transactions.append(tx)
+      return transactions
+  ```
 - Example usage: Shows how to send transactions, retrieve transaction history, and check balances using the aforementioned functions. It waits for the transactions to be mined before sending CELO and cUSD from a deployer account to a receiver address. The revised balances are printed out at the end.
 
 ```python
@@ -522,7 +515,6 @@ python main.py
 
 ![images](https://user-images.githubusercontent.com/71826391/234896322-f9be92de-c942-459c-975d-bd0009c9e0a1.png)
 
-
 ## Conclusion
 
 In this lesson, we looked at how to use web3.py to integrate Python with Celo's mobile wallet. We spoke about the difficulties and possibilities brought on by this integration and developed a straightforward Python script that communicates with the wallet.
@@ -537,6 +529,7 @@ Consider the following suggestions to improve your proficiency with Python and C
 - Developing more sophisticated applications that use stablecoins from Celo, such as cUSD or cEUR.
 
 ## About the Author
+
 I am a React frontend developer with over 3 years of experience building for the web, a web3 developer, and a technical writer. Visit my [GitHub profile](https://github.com/J0shcodes) to see some of the projects I have worked on and currently working on.
 
 ## References
