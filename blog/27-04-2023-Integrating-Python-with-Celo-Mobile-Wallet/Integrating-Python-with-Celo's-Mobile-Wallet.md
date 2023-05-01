@@ -1,5 +1,5 @@
 ---
-title: Integrating Python with Celo's Mobile Wallet
+title: Integrating Python with Celo Mobile Wallet
 description: Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.
 authors:
   - name: Joshua Moses
