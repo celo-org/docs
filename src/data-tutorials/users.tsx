@@ -1616,6 +1616,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'react', 'celo', 'intermediate'],
   },
   {
+    title: 'Build A Decentralized Real Estate Marketplace On The Celo Blockchain Part 1',
+    description: 'This is a two part tutorial. In this tutorial you will learn how to Build a real estate smart contract using solidity for the smart contract and in the part two, we will build the front end for the smart contract using react js.',
+    preview: require('./showcase/intermediate/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1.png'),
+    website: 'blog/tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1',
+    tags: ['celosage', 'solidity', 'celo', 'intermediate'],
+  },
+  {
     title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
     description: 'Build a full stack NFT on chain game on the celo blockchain.',
     preview: require('./showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png'),
