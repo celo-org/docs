@@ -16,7 +16,7 @@ slug: /tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-block
 
 In this tutorial, we will go through a Solidity smart contract that represents a Real Estate Marketplace where properties can be registered, put up for sale, and purchased using Celo cUSD cryptocurrency. This contract is built using the OpenZeppelin library which provides pre-built Solidity contracts for secure smart contract development. The contract implements the ERC-721 standard for non-fungible tokens (NFTs) and uses the Ownable and Pausable contracts for additional security and control.
 
-You can find the repository for this tutorial [Here]()
+You can find the repository for this tutorial [Here](https://github.com/4undRaiser/Celo-Tutorials/tree/main/Real-Estate-Marketplace)
 
 ## Prerequisites
 
