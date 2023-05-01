@@ -2862,6 +2862,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+  {
+    title: 'Deploying celo dApp to celo Network with web3.py',
+    description: 'This article could provide a tutorial on how to use the web3.py to deploy celo dApp to celo Network',
+    preview: require('./showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png'),
+    website: 'blog/tutorials/deploying-celo-dapp-to-celo-network-with-web3py',
+    tags: ['celosage', 'beginner', 'dapp', 'celo'], 
+  }
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
