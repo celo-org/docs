@@ -160,8 +160,6 @@ contract  Hairs {
 }
 ```
 
-  
-
 ## Analysing the code
 
 ```solidity
@@ -343,8 +341,7 @@ Finally, we add the `gethairsLength` function.
 }
 ```
 
-In this final session, we have defined a function named `gethairsLength` which is a public` view function that returns the length of the `hairs` array, which holds all the hair products added to the contract using the addHair function. We can call this function from outside the contract to get the current number of hair products available for sale. This function helps us keep track of the number of hair products available in the marketplace.
-
+In this final session, we have defined a function named `gethairsLength` which is a public view function that returns the length of the `hairs` array, which holds all the hair products added to the contract using the addHair function. We can call this function from outside the contract to get the current number of hair products available for sale. This function helps us keep track of the number of hair products available in the marketplace.
 
 ## CONTRACT DEPLOYMENT
 
