@@ -123,7 +123,7 @@ To get the deployed contract address after the transaction has been mined, you c
 contract_address = tx_receipt.contract_address
 ```
 
-Step8: Create a concise contract instance
+## Step8: Create a concise contract instance
 Here's an example line for creating a concise contract instance in web3.py:
 
 ```py
