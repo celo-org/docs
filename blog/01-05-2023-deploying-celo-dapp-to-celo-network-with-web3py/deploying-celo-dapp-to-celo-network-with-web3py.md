@@ -32,7 +32,7 @@ Fundamental understanding of programming principles
 Knowledge of deploying and hosting applications
 Familiarity with blockchain technology
 
-##Step1: Installing web3.py library
+## Step1: Installing web3.py library
 To install web3.py, you can use the command "pip install web3" in your terminal or command prompt or any Python IDE. I am using google colab here
 
 ##  Step2: Set up web3 connection to Celo network
@@ -139,7 +139,7 @@ In this line, MyContract is the concise contract instance we created earlier, my
 
 Here is the [link](https://github.com/yusuf1990/DeployCelo) to the repository
 
-Conclusion
+## Conclusion
  In this tutorial, we have explained the process of deploying a Celo dApp to the Celo network using web3py. By following the examples provided, you should be able to deploy Celo dapp to Celo network with web3py
 
 
