@@ -80,6 +80,7 @@ print(result)
 
 ```
 
+
 Now, let's explain the code step by step
 
 ## **Step1:** Installing web3.py library
