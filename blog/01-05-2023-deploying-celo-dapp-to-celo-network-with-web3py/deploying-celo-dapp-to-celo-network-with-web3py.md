@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 ---
 
-![header](img.png)
+![header](../../src/data-tutorials/showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png)
 
 ##  Introduction
 Web3.py is a powerful Python library that enables developers to interact with the Celo blockchain network and deploy decentralized applications (dApps) on the platform. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using web3.py. Here are the steps we’ll follow
