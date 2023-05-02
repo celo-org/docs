@@ -32,6 +32,11 @@ Web3.py is a powerful Python library that enables developers to interact with th
 2. Knowledge of deploying and hosting applications
 3. Familiarity with blockchain technology
 
+##  Requirements
+1. Web3.py (Python library that allow you to interact with the blockchain)
+2. Python IDE (To run the code)
+3. Celo Network (To interact with the celo blockchain using web3.py, you need to connect to a celo network)
+
 ## Step1: Installing web3.py library
 To install web3.py, you can use the command "pip install web3" in your terminal or command prompt or any Python IDE. I am using google colab here
 
@@ -42,7 +47,7 @@ Here's an example code for setting up a web3 connection to the Celo network usin
 ```py
 	 #First import the necessary library
 	 from web3 import Web3, HTTPProvider   
-     w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
+         w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 ```
 
 This code creates a Web3 object using the HTTP provider for the Celo network's forno service at https://forno.celo.org.
