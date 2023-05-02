@@ -69,6 +69,9 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+     address internal cUsdTokenAddress =
+        0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
     struct Property {
         uint256 id;
         string location;
@@ -118,7 +121,7 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
         require(property.forSale, "Property is not for sale.");
         require(msg.value >= property.price, "Insufficient funds.");
 
-          require(
+         require(
             IERC20Token(cUsdTokenAddress).transferFrom(
                 msg.sender,
                 property.owner,
@@ -168,6 +171,7 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
         return properties[tokenId];
     }
 }
+
 ```
 
 ### Code Breakdown
@@ -222,6 +226,9 @@ This is an interface for a standard `ERC-20` token which allows the contract to 
 contract RealEstateMarketplace is ERC721, Ownable, Pausable {
     using Counters for Counters.Counter;
 Counters.Counter private _tokenIds;
+
+ address internal cUsdTokenAddress =
+        0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
 struct Property {
     uint256 id;
