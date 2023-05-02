@@ -83,7 +83,7 @@ print(result)
 
 ```
 
-## Now, let's explain the code 
+## Now, let's explain the
 
 ## **Step1:** Installing web3.py library
 To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
