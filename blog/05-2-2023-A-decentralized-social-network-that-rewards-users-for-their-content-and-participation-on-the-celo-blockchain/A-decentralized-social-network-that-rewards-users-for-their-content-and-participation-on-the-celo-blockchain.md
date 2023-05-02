@@ -252,3 +252,83 @@ By implementing this function, users can create posts in our decentralized socia
         );
     }
 ```
+
+To enable users to retrieve information about a specific post, we implement the `getPost` function.
+
+The `getPost` function takes a parameter `_postId`, which represents the `ID` of the post we want to retrieve.
+
+Inside the function, we first validate that the provided `_postId` is valid by checking if it is less than the `postCount` variable. If the validation fails, it throws an error message.
+
+If the `_postId` is valid, we retrieve the corresponding post from the posts mapping using the `_postId` as the key. We store the post in memory using the Post struct type.
+
+Finally, we return the properties of the post, including the owner address (as a payable address), the content of the post, the number of likes, and the accumulated rewards.
+
+By implementing this function, users can view the details of a specific post by providing its ID.
+
+```solidity
+   function likePost(uint256 _postId) public {
+        require(_postId < postCount, "Invalid post ID");
+
+        Post storage post = posts[_postId];
+        require(post.owner != msg.sender, "You cannot like your own post");
+
+        post.likes = post.likes.add(1);
+        post.rewards = post.rewards.add(rewardPerLike);
+
+        IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            post.owner,
+            rewardPerLike
+        );
+    }
+
+```
+
+To allow users to like posts and earn rewards, we implement the `likePost` function.
+
+The `likePost` function takes a parameter `_postId`, representing the `ID` of the post that the user wants to like.
+
+Inside the function, we first validate that the provided `_postId` is valid by checking if it is less than the `postCount` variable. If the validation fails, it throws an error message.
+
+Next, we retrieve the post from the posts mapping using the `_postId` as the key. We use the storage keyword to ensure that we are modifying the actual post in storage.
+
+We also check that the `sender` of the `like` is not the `owner` of the post. If the validation fails, it throws an error message.
+
+If the validations pass, we `increment` the likes count of the post by `1` and increase the rewards of the post by the `rewardPerLike` value.
+
+Finally, we use the `transferFrom` function of the IERC20Token interface to transfer the reward tokens `(rewardPerLike)` from the sender `(msg.sender)` to the owner of the post `(post.owner)`.
+
+By implementing this function, users can like posts, which increases the likes count and rewards the post owner with the specified reward amount.
+
+```solidity
+function getPostCount() public view returns (uint256) {
+        return postCount;
+    }
+}
+```
+
+To provide users with information about the total number of posts in our decentralized social network, we implement the `getPostCount` function.
+
+The `getPostCount` function does not require any parameters. It simply returns the value of the `postCount` variable, which keeps track of the number of posts created.
+
+By implementing this function, users can easily retrieve the total count of posts in our social network. This information can be useful for displaying statistics or providing an overview of the network's activity.
+
+## CONTRACT DEPLOYMENT
+
+In order to deploy the Event smart contract on the Celo blockchain, several things are required such as:
+
+To ensure a smooth deployment of our smart contract, it is essential to download the Celo extension wallet from the given link, [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). This can be accomplished by accessing the Celo Alfojares faucet using the provided link.
+
+With our wallet funded, we can now proceed to deploy the smart contract using the Celo plugin available in Remix.
+
+## CONCLUSION
+
+In this tutorial, we have built a decentralized social network on the Celo blockchain using Solidity. We covered the creation of posts, retrieving post information, liking posts, distributing rewards, and getting the total post count. By leveraging smart contracts and the transparency of blockchain technology, we created a secure environment for users to interact and share content. This tutorial provides a foundation for building decentralized applications and empowers you to explore the possibilities of blockchain technology.
+
+## Next step
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance, you can reach out to me on twitter by clicking [this link](https://twitter.com/thompsonogoyi). Happy learning!
+
+## About the author
+
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
