@@ -699,7 +699,7 @@ const Users: User[] = [
     title: "A decentralized social network that rewards users for their content and participation on the Celo blockchain",
     description: "Introducing a game-changing social network on the Celo blockchain. Users create and share quality content in a secure, transparent environment.",
     preview: require('./showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png'),
-    website: '/blog/tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain',
+    website: '/blog/tutorials/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain',
     tags: ["intermediate", "solidity", "celosage", "celo"],
   },
 

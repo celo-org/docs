@@ -1,4 +1,4 @@
----A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain
+---
 title: A decentralized social network that rewards users for their content and participation on the Celo blockchain
 description: Introducing a game-changing social network on the Celo blockchain. Users create and share quality content in a secure, transparent environment.
 authors:
@@ -8,10 +8,10 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
+slug: /tutorials/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain.png)
+![header](../../src/data-tutorials/showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png)
 
 ## INTRODUCTION
 
