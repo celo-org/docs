@@ -14,17 +14,7 @@ slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 ![header](../../src/data-tutorials/showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png)
 
 ##  Introduction
-`Web3.py` is a powerful Python library that enables developers to interact with the Celo blockchain network and deploy decentralized applications (dApps) on the platform. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using web3.py. Here are the steps we’ll follow
-
-1. Installing the web3.py library
-2. up web3 connection to Celo network
-3. Create a contract instance
-4. Estimate the gas cost for deploying the contract
-5. Build, Sign and Send the transaction
-6. Wait for the transaction
-7. Get the deployed contract address
-8. Create a concise contract instance
-9. Example function call on the deployed contract
+`Web3.py` is a Python library used to interact with the Ethereum blockchain and other compatible blockchains, including the Celo network. It provides a convenient and easy-to-use interface for developers to interact with smart contracts on the blockchain, send transactions, retrieve data from the blockchain and deploy smart contracts to the blockchain. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using web3.py.
 
 
 ##  Prerequisites
@@ -36,6 +26,61 @@ slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 1. Web3.py (Python library that allow you to interact with the blockchain)
 2. Python IDE (To run the code)
 3. Celo Network (To interact with the celo blockchain using web3.py, you need to connect to a celo network)
+
+##  Here is the overview of our code
+```py
+	from web3 import Web3, HTTPProvider
+
+# Set up web3 connection to Celo network
+w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))#Web3(HTTPProvider('https://forno.celo.org'))
+
+# Replace with your contract bytecode and ABI
+bytecode ='0x60806040526000805534801561001457600080fd5b50610159806100246000396000f3fe608060405234801561001057600080fd5b50600436106100465760003560e01c806360fe47b11461004b5780636d4ce63c1461009a5780638da5cb5b146100d4575b600080fd5b6100536100e2565b6040518082815260200191505060405180910390f35b61006f6100e8565b6040518082815260200191505060405180910390f35b61008d6100f0565b6040518082815260200191505060405180910390f35b6000809054906101000a900460ff1681565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb6040518163ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15056fea2646970667358221220b3aa7e3faa5eb5ec5b5aeb81cf7ea317e752f969ce92769d9f9dc3f3a1422f2564736f6c634300060b0033' #'0xc2EdaD668740f1aA35E4D8f227fB8E17dcA888Cd'
+
+abi = [{'constant': True, 'inputs': [], 'name': 'myFunction', 'outputs': [{'name': '', 'type': 'uint256'}], 'payable': False, 'stateMutability': 'view', 'type': 'function'}]
+
+# Replace with your Celo account private key and address
+private_key = private_key
+address ='0x471ED56d43579A39b91085921C832eE67ab9e2A8'
+
+# Create a contract instance
+MyContract = w3.eth.contract(abi=abi, bytecode=bytecode)
+
+# Estimate the gas cost for deploying the contract
+gas_estimate = w3.eth.estimate_gas({'from': address, 'data': bytecode})
+
+# Build the transaction
+tx = {
+    'from': address,
+    'gas': gas_estimate,
+    'gasPrice': Web3.to_wei('10', 'gwei'),
+    'nonce': w3.eth.get_transaction_count(address),
+    'data': bytecode
+}
+
+# Sign the transaction
+signed_tx = w3.eth.account.sign_transaction(tx, private_key)
+
+# Send the transaction
+tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+
+# Wait for the transaction to be mined
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+
+# Get the deployed contract address
+contract_address = tx_receipt.contract_address
+
+# Create a concise contract instance
+from web3.contract import ConciseContract
+MyContract = concise_contract(w3.eth.contract(address=contract_address, abi=abi))
+
+# Example function call on the deployed contract
+result = MyContract.my_function()
+print(result)
+
+```
+
+## Now, let's explain the code step by step
 
 ## **Step1:** Installing web3.py library
 To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
