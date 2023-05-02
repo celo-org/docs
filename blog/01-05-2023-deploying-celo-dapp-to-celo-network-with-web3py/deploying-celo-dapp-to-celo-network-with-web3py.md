@@ -28,9 +28,9 @@ Web3.py is a powerful Python library that enables developers to interact with th
 
 
 ##  Prerequisites
-1.  Fundamental understanding of programming principles
-2.  Knowledge of deploying and hosting applications
-3.  Familiarity with blockchain technology
+1. Fundamental understanding of programming principles
+2. Knowledge of deploying and hosting applications
+3. Familiarity with blockchain technology
 
 ## Step1: Installing web3.py library
 To install web3.py, you can use the command "pip install web3" in your terminal or command prompt or any Python IDE. I am using google colab here
