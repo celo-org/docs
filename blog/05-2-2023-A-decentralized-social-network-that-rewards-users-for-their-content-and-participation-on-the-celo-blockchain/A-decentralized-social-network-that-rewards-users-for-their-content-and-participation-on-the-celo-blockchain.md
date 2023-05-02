@@ -254,3 +254,49 @@ By implementing this function, users can create posts in our decentralized socia
         );
     }
 ```
+
+To enable users to retrieve information about a specific post, we implement the `getPost` function.
+
+The `getPost` function takes a parameter `_postId`, which represents the `ID` of the post we want to retrieve.
+
+Inside the function, we first validate that the provided `_postId` is valid by checking if it is less than the postCount variable. If the validation fails, it throws an error message.
+
+If the `_postId` is valid, we retrieve the corresponding post from the posts mapping using the `_postId` as the key. We store the post in memory using the Post struct type.
+
+Finally, we return the properties of the post, including the owner address `(as a payable address)`, the content of the post, the number of likes, and the accumulated rewards.
+
+By implementing this function, users can view the details of a specific post by providing its ID.
+
+```solidity
+ function likePost(uint256 _postId) public {
+        require(_postId < postCount, "Invalid post ID");
+
+        Post storage post = posts[_postId];
+        require(post.owner != msg.sender, "You cannot like your own post");
+
+        post.likes = post.likes.add(1);
+        post.rewards = post.rewards.add(rewardPerLike);
+
+        IERC20Token(cUsdTokenAddress).transferFrom(
+            msg.sender,
+            post.owner,
+            rewardPerLike
+        );
+    }
+```
+
+To allow users to like posts and earn rewards, we implement the `likePost` function.
+
+The `likePost` function takes a parameter `_postId`, representing the `ID` of the post that the user wants to like.
+
+Inside the function, we first validate that the provided `_postId` is valid by checking if it is less than the postCount variable. If the validation fails, it throws an error message.
+
+Next, we retrieve the post from the posts mapping using the `_postId` as the key. We use the storage keyword to ensure that we are modifying the actual post in storage.
+
+We also check that the `sender` of the like is not the `owner` of the post. If the validation fails, it throws an error message.
+
+If the validations pass, we `increment` the likes count of the post by `1` and increase the rewards of the post by the `rewardPerLike` value.
+
+Finally, we use the `transferFrom` function of the `IERC20Token` interface to transfer the reward tokens `(rewardPerLike)` from the sender `(msg.sender)` to the owner of the post (post.owner).
+
+By implementing this function, users can like posts, which increases the likes count and rewards the post owner with the specified reward amount.
