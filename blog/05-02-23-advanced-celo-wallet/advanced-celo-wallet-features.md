@@ -162,4 +162,4 @@ A web3 enthusiast, content writer for web3 brands, visual artist, and seasoned a
 2. Celo Documentation. (n.d.). Getting Started with Celo Wallet. Retrieved from [https://docs.celo.org/celo-wallet/getting-started](https://docs.celo.org/celo-wallet/getting-started)
 3. Celo Documentation. (n.d.). Celo Wallet FAQ. Retrieved from [https://docs.celo.org/celo-wallet/faq](https://docs.celo.org/celo-wallet/faq)
 4. Celo Discord channel. (n.d.). Retrieved from [https://discord.gg/6yWMkgM](https://discord.gg/6yWMkgM)
-5. Kaur, H. (2021, March 30). How to use Celo Wallet: A Beginner's Guide. CryptoTicker. Retrieved from [https://cryptoticker.io/en/celo-wallet-guide/](https://cryptoticker.io/en/celo-wallet-guide/) 
+5. Kaur, H. (2021, March 30). How to use Celo Wallet: A Beginner's Guide. CryptoTicker. Retrieved from [https://cryptoticker.io/en/celo-wallet-guide/](https://cryptoticker.io/en/celo-wallet-guide/)
