@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.md.png)
+![header](../../src/data-tutorials/showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png)
 
 ## INTRODUCTION
 
