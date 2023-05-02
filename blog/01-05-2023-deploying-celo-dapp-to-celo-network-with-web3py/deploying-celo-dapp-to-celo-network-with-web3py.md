@@ -14,7 +14,7 @@ slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 ![header](../../src/data-tutorials/showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png)
 
 ##  Introduction
-`Web3.py` is a Python library used to interact with the Celo network and other compatible blockchains, including the Ethereum blockchain. It provides a convenient and easy-to-use interface for developers to interact with smart contracts on the blockchain, send transactions, retrieve data and deploy smart contracts to the blockchain. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using web3.py.
+`Web3.py` is a Python library used to interact with the Celo network and other compatible blockchains, including the Ethereum blockchain. It provides a convenient and easy-to-use interface for developers to interact with smart contracts on the blockchain, send transactions, retrieve data and deploy smart contracts to the blockchain. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using `web3.py`.
 
 
 ##  Prerequisites
@@ -80,7 +80,7 @@ print(result)
 
 ```
 
-## Now, let's explain the code step by step
+Now, let's explain the code step by step
 
 ## **Step1:** Installing web3.py library
 To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
@@ -118,7 +118,7 @@ Replace the ABI and bytecode fields with your contract bytecode and ABI. You can
 3. Once the contract is displayed, click on the "ABI" tab to see the contract's ABI
 4. You can then copy the ABI and use it in your code
 
-Also,you can use the following step to get your bytecode.
+Also, you can use the following step to get your bytecode.
 
 1. Go to [the celo explorer page](https://explorer.celo.org)
 2. Search for your contract on celo explorer and copy the bytecode from the "Bytecode" section of the contract details.
