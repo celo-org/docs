@@ -695,6 +695,14 @@ const Users: User[] = [
     website: '/blog/tutorials/how-to-build-a-computer-retail-store-using-celo-composer',
     tags: ["intermediate", "composer", "dapp", "celosage", "typescript", "nextjs"],
   },
+  {
+    title: "A decentralized social network that rewards users for their content and participation on the Celo blockchain",
+    description: "Introducing a game-changing social network on the Celo blockchain. Users create and share quality content in a secure, transparent environment.",
+    preview: require('./showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain',
+    tags: ["intermediate", "solidity", "celosage", "celo"],
+  },
+
 
   {
     title: "Securing Multi-Sig Wallet Using Hardware Wallet. The Benefits for Securing Community Funds",

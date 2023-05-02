@@ -1,6 +1,6 @@
----
+---A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain
 title: A decentralized social network that rewards users for their content and participation on the Celo blockchain
-description:  Introducing a game-changing social network on the Celo blockchain. Users create and share quality content in a secure, transparent environment.
+description: Introducing a game-changing social network on the Celo blockchain. Users create and share quality content in a secure, transparent environment.
 authors:
   - name: Ogoyi Thompson
     title: Technical Writer
@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png)
+![header](../../src/data-tutorials/showcase/intermediate/A-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain.png)
 
 ## INTRODUCTION
 
@@ -307,6 +307,8 @@ function getPostCount() public view returns (uint256) {
     }
 }
 ```
+
+You can access the full code by clicking this [Link](https://github.com/Ogoyi/SocialNetwork)
 
 To provide users with information about the total number of posts in our decentralized social network, we implement the `getPostCount` function.
 
