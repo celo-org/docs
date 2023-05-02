@@ -2974,6 +2974,13 @@ const Users: User[] = [
     tags: ['celosage', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
   },
   {
+    title: 'Developing a Celo Blockchain Social Network with Python',
+    description: 'This article will empower you to create a secure, scalable, and engaging social network that harnesses the full potential of Celo cutting-edge blockchain technology',
+    preview: require('./showcase/intermediate/developing-a-celo-blockchain-social-network-with-python.png'),
+    website: 'blog/tutorials/developing-a-celo-blockchain-social-network-with-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Deploying a proposal for DAOs on Celo',
     description: 'This article explains how to deploy a governance proposal on Celo',
     preview: require('./showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png'),
