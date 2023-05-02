@@ -2967,6 +2967,13 @@ const Users: User[] = [
     tags: ['celosage', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
   },
   {
+    title: 'Decentralized Storage and Seamless User Experience: Integrating IPFS with React for Your ERC721 Smart Contract',
+    description: 'This tutorial would guide you through the basics of IPFS and how you can integrate it in your React project',
+    preview: require('./showcase/intermediate/integrating-ipfs-with-react.png'),
+    website: 'blog/tutorials/integrating-ipfs-with-react',
+    tags: ["celo", "intermediate", "celosage","ipfs"], 
+  },
+  {
     title: 'Building a Smart Contract Lottery Application on Celo with Python',
     description: 'This tutorial provides a guide on how to use Python to build a smart contract lottery application on the Celo blockchain',
     preview: require('./showcase/intermediate/building-a-smart-contract-lottery-application-on-celo-with-python.png'),
