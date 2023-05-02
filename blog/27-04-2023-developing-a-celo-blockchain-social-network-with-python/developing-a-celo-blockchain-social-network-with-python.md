@@ -4,7 +4,7 @@ description: This article will empower you to create a secure, scalable, and eng
 authors:
   - name: Joshua Moses
 url: https://github.com/J0shcodes
-tags: [celosage, intermediate, smartcontract, solidity, python]
+tags: [celosage, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/developing-a-celo-blockchain-social-network-with-python
 ---
