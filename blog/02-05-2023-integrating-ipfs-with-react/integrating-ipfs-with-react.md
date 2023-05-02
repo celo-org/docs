@@ -13,7 +13,6 @@ slug: /tutorials/integrating-ipfs-with-react
 
 ![header](../../src/data-tutorials/showcase/intermediate/integrating-ipfs-with-react.png)
 
-
 ## Introduction
 
 Welcome! Welcome!! Welcome!!! to another tutorial, This tutorial is part of a bigger NFT series and the aim of this is to help one become an expert in building NFT marketplaces as we know, NFTs are the future.
@@ -24,7 +23,7 @@ Following the project, we would need to store our images on IPFS so we could use
 
 ### MyNFT.sol
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -165,8 +164,6 @@ contract MyNftMarket {
 	}
 }
 ```
-
-
 ## Prerequisites
 
 Building this dapp, you would need:
@@ -181,7 +178,6 @@ Building this dapp, you would need:
 - A terminal
 - React
 - Infura
-
 
 ## What Is IPFS?
 
@@ -270,7 +266,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
 Step 4: Use the Infura API key in your code
 
 You can access the Infura API key in your React code using `process.env.REACT_APP_INFURA_API_KEY`. 
@@ -284,7 +279,6 @@ import { create } from "ipfs-http-client";
 import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 ```
-
 The three imports in the given code snippet are used to provide functionalities for a web application that interacts with IPFS and Ethereum networks. 
 
 `ipfs-http-client` provides an HTTP client instance that allows you to interact with the IPFS network via HTTP API. You can create an instance of the client using the `create` method, which takes an options object as an argument, that can be used to specify the host, port, and protocol of the IPFS node to connect to.
@@ -294,7 +288,6 @@ The three imports in the given code snippet are used to provide functionalities 
 `ethers` is a library for interacting with the Ethereum network and smart contracts. It provides a provider interface for interacting with the Ethereum network, a contract abstraction layer for working with smart contracts, and a wallet interface for managing Ethereum accounts.
 
 Next up, you would create an HTTP client instance that is authorized to access the Infura IPFS node and can be used to interact with the IPFS network. 
-
 
 ```js
 const authorization =
@@ -307,7 +300,6 @@ const authorization =
 
 const client = create({ url: "https://ipfs.infura.io:5001/api/v0", headers: { authorization } });
 ```
-
 The `authorization` constant is used to authenticate the client instance to access IPFS services provided by Infura.
 
 The `Buffer.from()` method is used to create a buffer from the concatenated string of project ID and project secret that are stored as environment variables (`REACT_APP_PROJECT_ID` and `REACT_APP_PROJECT_SECRET`). The buffer is then encoded using the `toString("base64")` method to create a base64-encoded string. This string is then concatenated with the string "Basic " to create the `authorization` string that is used as a header in the HTTP client instance.
@@ -324,7 +316,6 @@ export const createNft = async (
   { name, price, description, ipfsImage, attributes }
 ) => {
 ``` 
-
 The first two arguments, `minterContract` and `marketContract`, represent smart contract instances that are used to mint the NFT token and create a market for it, respectively. 
 
 The third argument, `performActions`, represents a function that is used to perform a series of actions within a single transaction. This function is typically provided by a higher-level component that wraps the `createNft` function.
@@ -560,13 +551,11 @@ export const buyNft = async (
     console.log(error);
   }
 };
-
 ```
 
 ## Conclusion
 
 Congratulations! You have completed the tutorial that guides you through the process of creating and storing NFT metadata on the IPFS network. By following this tutorial, you have learned how to use the Infura REST API to upload files to IPFS, how to use Infura to access the IPFS network, and how to use the IPFS client library to store NFT metadata on the network.
-
 
 ##  Next Steps
 
@@ -577,5 +566,3 @@ We only covered a specific aspect of this pathway tutorial, We would cover the r
 Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin @ Daniel Ogbuti
 
 See you soon!
-
-
