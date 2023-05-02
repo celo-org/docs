@@ -80,7 +80,7 @@ print(result)
 
 ```
 
-## Now, let's explain the
+## Now, let's explain the code step by step
 
 ## **Step1:** Installing web3.py library
 To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
@@ -112,10 +112,17 @@ MyContract = w3.eth.contract(abi=ABI, bytecode=bytecode)
 ```
 
 Replace the ABI and bytecode fields with your contract bytecode and ABI. You can follow these steps to get your ABI.
-Go to [the celo explorer page](https://explorer.celo.org)
-Type the name or the address of the contract in the search bar and click on the search icon.
-Once the contract is displayed, click on the "ABI" tab to see the contract's ABI
-You can then copy the ABI and use it in your code
+
+1. Go to [the celo explorer page](https://explorer.celo.org)
+2. Type the name or the address of the contract in the search bar and click on the search icon.
+3. Once the contract is displayed, click on the "ABI" tab to see the contract's ABI
+4. You can then copy the ABI and use it in your code
+
+Also,you can use the following step to get your bytecode.
+
+1. Go to [the celo explorer page](https://explorer.celo.org)
+2. Search for your contract on celo explorer and copy the bytecode from the "Bytecode" section of the contract details.
+
 
 Note that not all contracts have their ABI available on the Explorer website, in which case you may need to obtain the ABI from another source, such as the contract developer or community.
 
