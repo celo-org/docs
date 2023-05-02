@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-preview:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,24 +28,31 @@ jobs:
         npm run build
 
     - name: Deploy preview to Netlify
-      uses: netlify/actions/cli@master
+      id: deploy
+      run: |
+        OUTPUT=$(netlify deploy --dir=build --json)
+        TRIMMED_OUTPUT=$(echo "$OUTPUT" | tr -d '%')
+        echo "Deploy Output: $TRIMMED_OUTPUT"
+        echo "::set-output name=stdout::$TRIMMED_OUTPUT"
       env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      with:
-        args: deploy --dir build --json
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
     - name: Comment PR with preview URL
       uses: actions/github-script@v5
       with:
         script: |
-          const deployData = JSON.parse('${{ steps.deploy.outputs.stdout }}');
-          const previewUrl = deployData.deploy_url;
-          const commentBody = `:rocket: Preview deployment: [${previewUrl}](${previewUrl})`;
-          await github.rest.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: context.issue.number,
-            body: commentBody,
-          });
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+          const deployOutput = '${{ steps.deploy.outputs.stdout }}';
+          console.log('Deploy Output:', deployOutput);
+
+          if (deployOutput) {
+            try {
+              const deployData = JSON.parse(deployOutput);
+              const previewUrl = deployData.deploy_url;
+              const commentBody = `:rocket: Preview deployment: [${previewUrl}](${previewUrl})`;
+              console.log("commentBody = ", commentBody")
+            } catch (error) {
+              console.error('Error parsing JSON:', error);
+            }
+          } else {
+            console.error('No deploy output found');
