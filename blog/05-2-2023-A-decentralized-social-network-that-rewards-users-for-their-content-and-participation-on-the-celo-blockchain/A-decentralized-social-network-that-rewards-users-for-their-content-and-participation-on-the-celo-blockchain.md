@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/A-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain.png)
+
 ## INTRODUCTION
 
 This project is a decentralized social network built on the Celo blockchain. It allows users to create and share posts with a reward system based on the number of likes received. The platform uses smart contracts to ensure transparency and security. Users can like posts created by others, earning them rewards in the form of CELO tokens. The tutorial will guide users on how to interact with the contract, create posts, like posts, and retrieve information about posts.
@@ -281,7 +283,6 @@ By implementing this function, users can view the details of a specific post by 
             rewardPerLike
         );
     }
-
 ```
 
 To allow users to like posts and earn rewards, we implement the `likePost` function.
