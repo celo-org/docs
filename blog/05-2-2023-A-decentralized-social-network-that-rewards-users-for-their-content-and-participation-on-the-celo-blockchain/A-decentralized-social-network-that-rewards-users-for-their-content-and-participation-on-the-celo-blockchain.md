@@ -300,3 +300,61 @@ If the validations pass, we `increment` the likes count of the post by `1` and i
 Finally, we use the `transferFrom` function of the `IERC20Token` interface to transfer the reward tokens `(rewardPerLike)` from the sender `(msg.sender)` to the owner of the post (post.owner).
 
 By implementing this function, users can like posts, which increases the likes count and rewards the post owner with the specified reward amount.
+
+```solidity
+function getPostCount() public view returns (uint256) {
+        return postCount;
+    }
+}
+```
+
+To provide users with information about the total number of posts in our decentralized social network, we implement the `getPostCount` function.
+
+The `getPostCount` function does not require any parameters. It simply returns the value of the `postCount` variable, which keeps track of the number of posts created.
+
+By implementing this function, users can easily retrieve the total count of posts in our social network. This information can be useful for displaying statistics or providing an overview of the network's activity.
+
+## CONTRACT DEPLOYMENT
+
+To deploy the contract, we would need:
+
+- [CeloExtensionWallet]((https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en))
+
+- [ Celo Faucet](https://celo.org/developers/faucet) 
+
+- Celo Remix Plugin
+
+Download the Celo Extension Wallet from the Google chrome store using the link above. After doing that, create a wallet, store your key phrase in a very safe place to avoid permanently losing your funds.
+
+After downloading and creating your wallet, you will need to fund it using the Celo Faucet. Copy the address to your wallet, click the link to the faucet above and the paste the address into the text field and confirm.
+
+Next up, To deploy this contract on the Celo blockchain using Remix, you can follow these steps:
+
+- Open Remix and create a new Solidity file.
+  
+- Copy and paste the code for the ShoeAuction contract into the new file.
+  
+- Make sure the Solidity compiler is set to version 0.8.7 or later.
+  
+- Select the "Solidity Compiler" tab in Remix and compile the contract by clicking the "Compile ShoeAuction.sol" button.
+  
+- Select the "Deploy & Run Transactions" tab in Remix.
+  
+- Select the Celo network from the dropdown menu at the top right corner of the screen.
+  
+- Connect your wallet to Remix by clicking on the "Connect to wallet" button and following the prompts.
+  
+- In the "Deploy & Run Transactions" section, select `SocialNetwork` from the `Contract` dropdown menu.
+  
+- Click the `Deploy` button.
+  
+- Confirm the transaction in your wallet.
+  
+- Wait for the transaction to be confirmed on the Celo blockchain.
+  
+- Once the transaction is confirmed, the ShoeAuction contract will be deployed on the Celo blockchain and you can interact with it using Remix.
+
+## CONCLUSION
+
+In this tutorial, we have built a decentralized social network on the Celo blockchain using Solidity. We covered the creation of posts, retrieving post information, liking posts, distributing rewards, and getting the total post count. By leveraging smart contracts and the transparency of blockchain technology, we created a secure environment for users to interact and share content. This tutorial provides a foundation for building decentralized applications and empowers you to explore the possibilities of blockchain technology.
+
