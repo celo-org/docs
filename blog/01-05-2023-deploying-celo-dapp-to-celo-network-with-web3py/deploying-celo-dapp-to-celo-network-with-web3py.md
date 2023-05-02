@@ -147,6 +147,9 @@ Here is the [link](https://github.com/yusuf1990/DeployCelo) to the repository
 ## Conclusion
  In this tutorial, we have explained the process of deploying a Celo dApp to the Celo network using web3py. By following the examples provided, you should be able to deploy Celo dapp to Celo network with web3py
 
+## About the Author
+
+Jimoh Yusuf is a web3 developer and a data scientist with a passion of learning. I will be glad to connect with people who share have same ambition as me on Twitter handle @YusufJi30148537
 
 
 
