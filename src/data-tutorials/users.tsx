@@ -2527,7 +2527,7 @@ const Users: User[] = [
     description: 'Web3Auth is a decentralized authentication protocol that allows users to authenticate with DApps using their Web3 wallet, such as MetaMask. In this tutorial, I will be exploring how to integrate Web3Auth with the Celo blockchain in a DApp.',
     preview: require('./showcase/intermediate/integrating-web3Auth-with-celo-blockchain-in-your-dapp.png'),
     website: 'blog/tutorials/integrating-web3Auth-with-celo-blockchain-in-your-dapp',
-    tags:["Nextjs", "intermediate", "smartcontract", "solidity", "web3auth"], 
+    tags:["nextjs", "intermediate", "smartcontract", "solidity"], 
   },
   {
 
