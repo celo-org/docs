@@ -1248,6 +1248,13 @@ const Users: User[] = [
     tags: ['advanced','celosage','smartcontract','video', 'hardhat'],
   },
   {
+    title: 'Learn to Navigate Advanced Celo Wallet Features',
+    description: 'learn how to navigate the Celo wallet platform with ease and take advantage of its full range of capabilities',
+    preview: require('./showcase/intermediate/advanced-celo-wallet-features.png'),
+    website: '/blog/tutorials/learn-to-navigate-advanced-celo-wallet-features',
+    tags: ['celosage', 'celowallet', 'intermediate'],
+  },
+  {
     title: 'Aprenda solidity e como criar os primeiros smart contract usando a IDE Remix',
     description: 'Explicarei sobre conceitos de solidity e como criar seu primeiro smart contract.',
     preview: require('./showcase/intermediate/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix.png'),
