@@ -2477,7 +2477,7 @@ const Users: User[] = [
     description: 'This article will empower you to create a secure, scalable, and engaging social network that harnesses the full potential of Celo cutting-edge blockchain technology',
     preview: require('./showcase/intermediate/developing-a-celo-blockchain-social-network-with-python.png'),
     website: 'blog/tutorials/developing-a-celo-blockchain-social-network-with-python',
-    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'python'], 
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
   {
     title: 'Deploying a proposal for DAOs on Celo',
