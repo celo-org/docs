@@ -105,7 +105,7 @@ contract MyNFT is ERC721, Ownable, ERC721Enumerable, ERC721URIStorage {
 
 ### MyNFTMarket.sol
 
-```js
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
