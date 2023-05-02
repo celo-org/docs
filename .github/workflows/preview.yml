@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: |
         export NODE_OPTIONS="--max_old_space_size=4096"
-        npm run build --locale en
+        npm run build
 
     - name: Deploy preview to Netlify
       uses: netlify/actions/cli@master
