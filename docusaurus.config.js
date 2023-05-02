@@ -6,8 +6,8 @@ const { docs, developers } = require("./sidebars");
 const DefaultLocale = "en";
 
 module.exports = {
-  title: "Celo Documentation",
-  tagline: "Documentation for the Celo platform.",
+  title: "Celo Blog",
+  tagline: "Blog for the Celo platform.",
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
@@ -16,10 +16,6 @@ module.exports = {
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es", "pt"],
-  },
   themes: [
     "@docusaurus/theme-live-codeblock",
     "@saucelabs/theme-github-codeblock",
@@ -98,35 +94,29 @@ module.exports = {
       },
       items: [
         {
-          to: "developer/",
+          to: "https://docs.celo.org/developer/",
           label: "Developers",
           position: "left",
         },
         {
-          to: "validator/",
+          to: "https://docs.celo.org/validator/",
           label: "Validators",
           position: "left",
         },
         {
-          to: "integration/",
+          to: "https://docs.celo.org/integration/",
           label: "Integrations",
           position: "left",
         },
-        { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "/tutorials",
-          label: "Tutorials",
+          to: "https://docs.celo.org/showcase/",
+          label: "DApps",
           position: "left",
         },
         {
-          type: "localeDropdown",
-          position: "right",
-          dropdownItemsAfter: [
-            {
-              to: "https://celo.crowdin.com/",
-              label: "Help us translate",
-            },
-          ],
+          to: "https://docs.celo.org/tutorials/",
+          label: "Tutorials",
+          position: "left",
         },
         {
           type: "dropdown",
@@ -148,21 +138,21 @@ module.exports = {
           position: "right",
           label: "Libraries & SDKs",
           items: [
-            { to: "cli/", label: "CLI" },
+            { to: "https://docs.celo.org/cli/", label: "CLI" },
             {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "Celo SDK",
             },
             {
-              to: "/developer/react-celo",
+              to: "https://docs.celo.org/developer/react-celo",
               label: "React-Celo",
             },
             {
-              to: "/developer/contractkit",
+              to: "https://docs.celo.org/developer/contractkit",
               label: "ContractKit",
             },
             {
-              to: "/developer/rainbowkit-celo",
+              to: "https://docs.celo.org/developer/rainbowkit-celo",
               label: "Rainbowkit-Celo",
             },
             {
@@ -218,7 +208,7 @@ module.exports = {
           title: "Community",
           items: [
             {
-              href: "/community/guidelines",
+              href: "https://docs.celo.org/community/guidelines",
               label: "Contributors",
             },
             {
@@ -290,26 +280,7 @@ module.exports = {
     [
       "@docusaurus/preset-classic",
       {
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl: "https://github.com/celo-org/docs/edit/main/",
-          editUrl: ({ locale, versionDocsDirPath, docPath }) => {
-            // Link to Crowdin for French docs
-            if (locale !== DefaultLocale) {
-              return `https://celo.crowdin.com/celo-docs/${locale}`;
-            }
-            // Link to Github for English docs
-            return `https://github.com/celo-org/docs/edit/main/docs/${docPath}`;
-          },
-          routeBasePath: "/",
-          remarkPlugins: [
-            math,
-            [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
-            require("mdx-mermaid"),
-          ],
-          rehypePlugins: [katex],
-        },
+        docs: false,
         gtag: {
           // You can also use your "G-" Measurement ID here.
           trackingID: "G-0CXEKQ81V2",
