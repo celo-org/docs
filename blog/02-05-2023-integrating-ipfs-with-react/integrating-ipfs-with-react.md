@@ -167,13 +167,11 @@ contract MyNftMarket {
 ## Prerequisites
 
 Building this dapp, you would need:
-
 - Solid understanding of Javascript
 - Basic grasp of solidity
 - Basic Understanding of REST APIs
 
 ## Requirements
-
 - VSCode or any other editor
 - A terminal
 - React
@@ -229,7 +227,7 @@ Once you have installed the IPFS HTTP client, you can connect to the Infura IPFS
 
 If you're working on a React project, you will use the `dotenv` package to load your Infura API key from a `.env` file. Here's an example of how to use it:
 
-Step 1: Install the `dotenv` package
+### Step 1: Install the `dotenv` package
 
 In your React project directory, run the following command to install the `dotenv` package:
 
@@ -237,7 +235,7 @@ In your React project directory, run the following command to install the `doten
 npm install dotenv
 ```
 
-Step 2: Create a `.env` file
+### Step 2: Create a `.env` file
 
 Create a `.env` file in your project directory and add your Infura API key to it:
 
@@ -248,7 +246,7 @@ REACT_APP_PROJECT_SECRET=your_infura_api_key
 
 Note that the variable name starts with `REACT_APP_` prefix, as this is required to make the environment variable available to your React application.
 
-Step 3: Load the environment variables in your React app
+### Step 3: Load the environment variables in your React app
 
 At the top of your React app's entry point file (usually `index.js`), require the `dotenv` package and call the `config` method:
 
@@ -266,7 +264,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-Step 4: Use the Infura API key in your code
+### Step 4: Use the Infura API key in your code
 
 You can access the Infura API key in your React code using `process.env.REACT_APP_INFURA_API_KEY`. 
 
@@ -563,6 +561,6 @@ We only covered a specific aspect of this pathway tutorial, We would cover the r
 
 ## About the Author
 
-Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin @ Daniel Ogbuti
+Daniel Ogbuti is a web3 developer with a passion for teaching as well as learning. I would love to connect on Twitter @daniel_ogbuti and linkedin: Daniel Ogbuti
 
 See you soon!
