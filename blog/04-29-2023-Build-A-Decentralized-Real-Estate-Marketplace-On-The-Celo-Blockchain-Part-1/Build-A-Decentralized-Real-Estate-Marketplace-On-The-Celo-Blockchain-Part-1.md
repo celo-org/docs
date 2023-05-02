@@ -114,12 +114,10 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
 
         emit PropertyRegistered(tokenId);
     }
-
-    function buyProperty(uint256 tokenId) public payable whenNotPaused {
+function buyProperty(uint256 tokenId) public payable whenNotPaused {
         Property storage property = properties[tokenId];
 
         require(property.forSale, "Property is not for sale.");
-        require(msg.value >= property.price, "Insufficient funds.");
 
          require(
             IERC20Token(cUsdTokenAddress).transferFrom(
@@ -129,6 +127,7 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
             ),
             "Transfer failed."
         );
+         _transfer(property.owner, msg.sender, tokenId);
         property.owner = payable(msg.sender);
         property.forSale = false;
 
@@ -171,7 +170,6 @@ contract RealEstateMarketplace is ERC721, Ownable, Pausable {
         return properties[tokenId];
     }
 }
-
 ```
 
 ### Code Breakdown
@@ -293,21 +291,27 @@ The `registerProperty` function allows a property to be registered on the market
 
 ```solidity
 function buyProperty(uint256 tokenId) public payable whenNotPaused {
-    Property storage property = properties[tokenId];
+        Property storage property = properties[tokenId];
 
-    require(property.forSale, "Property is not for sale.");
-    require(msg.value >= property.price, "Insufficient funds.");
+        require(property.forSale, "Property is not for sale.");
 
-    _transfer(property.owner, msg.sender, tokenId);
-    property.owner.transfer(msg.value);
-    property.owner = payable(msg.sender);
-    property.forSale = false;
+         require(
+            IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                property.owner,
+                property.price
+            ),
+            "Transfer failed."
+        );
+         _transfer(property.owner, msg.sender, tokenId);
+        property.owner = payable(msg.sender);
+        property.forSale = false;
 
-    emit PropertyPurchased(tokenId, msg.sender);
-}
+        emit PropertyPurchased(tokenId, msg.sender);
+    }
 ```
 
-The `buyProperty` function allows a buyer to purchase a property by sending enough `Ether` to cover the property price. The function checks if the property is for sale and if the buyer has sent enough Ether. If both conditions are met, the `ERC721` token is transferred to the buyer, and the property owner receives the `Ether`. The function updates the property owner and forSale status and emits the `PropertyPurchased` event with the token ID and buyer address.
+The `buyProperty` function allows a buyer to purchase a property by sending enough `cUSD` to cover the property price. The function checks if the property is for sale. If the condition is met, the `ERC721` token is transferred to the buyer, and the property owner receives the `cUSD`. The function updates the property owner and `forSale` status and emits the `PropertyPurchased` event with the token ID and buyer address.
 
 ```solidity
 function updatePropertyPrice(uint256 tokenId, uint256 newPrice) public whenNotPaused {
