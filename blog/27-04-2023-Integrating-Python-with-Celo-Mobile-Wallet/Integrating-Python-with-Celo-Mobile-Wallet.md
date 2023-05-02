@@ -4,7 +4,7 @@ description: Explore the fascinating world of integrating Python with Celo's mob
 authors:
   - name: Joshua Moses
 url: https://github.com/J0shcodes
-tags: [celosage, intermediate, smartcontract, solidity, python]
+tags: [celosage, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/integrating-python-with-celo-mobile-wallet
 ---
