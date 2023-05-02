@@ -144,7 +144,7 @@ result = MyContract.my_function()
 print(result)
 ```
 
-In this line, MyContract is the concise contract instance we created earlier, **my_function** is the name of the function we want to call. You can then use the result variable to get the output of the function.
+In this line, **MyContract** is the concise contract instance we created earlier, **my_function** is the name of the function we want to call. You can then use the result variable to get the output of the function.
 
 Here is the [link](https://github.com/yusuf1990/DeployCelo) to the repository
 
