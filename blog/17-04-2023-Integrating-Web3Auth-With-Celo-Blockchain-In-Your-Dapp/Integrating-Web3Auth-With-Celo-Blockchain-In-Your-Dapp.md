@@ -4,7 +4,7 @@ description: Web3Auth is a decentralized authentication protocol that allows use
 authors:
   - name: Joshua Moses
 url: https://github.com/J0shcodes
-tags: [Nextjs, intermediate, smartcontract, solidity, web3auth]
+tags: [Nextjs, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/integrating-web3Auth-with-celo-blockchain-in-your-dapp
 ---
