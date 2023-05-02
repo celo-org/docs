@@ -131,7 +131,8 @@ contract_address = tx_receipt.contract_address
 Here's an example line for creating a concise contract instance in `web3.py`:
 
 ```py
-MyContract = concise_contract(w3.eth.contract(address=contract_address, abi=abi))
+from web3.contract import ConciseContract
+MyContract = ConciseContract(w3.eth.contract(address=contract_address, abi=abi))
 ```
 
 Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract. Do not forget you can always get your ABI with the step described in step 3 above
