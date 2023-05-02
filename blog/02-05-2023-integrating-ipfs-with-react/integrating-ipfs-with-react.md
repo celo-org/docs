@@ -266,7 +266,7 @@ ReactDOM.render(
 ```
 ### Step 4: Use the Infura API key in your code
 
-You can access the Infura API key in your React code using `process.env.REACT_APP_INFURA_API_KEY`. 
+You can access the Infura API key in your React code using `process.env.REACT_APP_PROJECT_SECRET`. 
 
 ## Minter.js
 
@@ -277,6 +277,7 @@ import { create } from "ipfs-http-client";
 import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 ```
+
 The three imports in the given code snippet are used to provide functionalities for a web application that interacts with IPFS and Ethereum networks. 
 
 `ipfs-http-client` provides an HTTP client instance that allows you to interact with the IPFS network via HTTP API. You can create an instance of the client using the `create` method, which takes an options object as an argument, that can be used to specify the host, port, and protocol of the IPFS node to connect to.
