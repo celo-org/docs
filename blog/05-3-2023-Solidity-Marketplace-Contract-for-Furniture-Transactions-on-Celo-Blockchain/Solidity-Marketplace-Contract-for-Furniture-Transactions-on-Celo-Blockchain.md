@@ -8,8 +8,10 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain
+slug: /tutorials/solidity-marketplace-contract-for-furniture-transactions-on-celo-blockchain
 ---
+
+![header](../../src/data-tutorials/showcase/intermediate/Solidity-Marketplace-Contract-for-Furniture-Transactions-on-Celo-Blockchain.png)
 
 ## INTRODUCTION
 
