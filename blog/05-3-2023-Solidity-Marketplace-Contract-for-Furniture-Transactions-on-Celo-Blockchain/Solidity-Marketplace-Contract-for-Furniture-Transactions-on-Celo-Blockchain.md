@@ -360,7 +360,60 @@ The function is marked as `public` and `view`, indicating that it can be called 
 It simply returns the value of the `furnituresLength` variable, which represents the total number of furniture items in the marketplace.
 By implementing the `getfurnitureslength()` function, users can easily retrieve the total count of furniture items in the marketplace, providing transparency and information about the size of the marketplace.
 
+## Step 12: Implement the `deleteFurniture` Function
 
+In this step, we implement a function called `deleteFurniture()` inside the MarketPlace contract. This function allows the `owner` of a furniture item or the contract owner to delete a specific furniture item from the marketplace.
+
+**Function**:
+
+```solidity
+function deleteFurniture(uint _index) public {
+    require(_index < furnituresLength, "Invalid furniture index.");
+
+    // Only the owner of the furniture or the contract owner can delete a furniture item
+    require(
+        msg.sender == furnitures[_index].owner || msg.sender == owner(),
+        "Unauthorized deletion."
+    );
+
+    //this will Move the last element in the mapping to the deleted index, and delete the last element
+    uint lastIndex = furnituresLength - 1;
+    furnitures[_index] = furnitures[lastIndex];
+    delete furnitures[lastIndex];
+    furnituresLength--;
+}
+
+}
+```
+
+**Implementation**:
+
+The function takes an `_index` parameter representing the `index` of the furniture item to be deleted.
+It first checks if the provided index is valid, ensuring that it is within the range of the furnituresLength variable.
+Next, it checks if the caller of the function is either the `owner` of the furniture item or the contract `owner`. If not, an `Unauthorized deletion` error message is thrown.
+If the caller is authorized, the function proceeds to move the last element in the furnitures mapping to the `deleted` index and delete the `last element`.
+Finally, the furnituresLength variable is decremented by one.
+By implementing the `deleteFurniture()` function, we provide the functionality to remove specific furniture items from the marketplace. This helps maintain the integrity and manageability of the marketplace by allowing authorized users to delete unwanted or invalid items.
+
+## CONTRACT DEPLOYMENT
+
+To deploy the Event smart contract on the Celo blockchain, you will need to have the following prerequisites:
+
+To ensure a smooth deployment of our smart contract, it is essential to download the Celo extension wallet from the given link, [Celo Extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en). Once done, the next step is to fund the wallet that we have created, [Celo faucet](https://faucet.celo.org/). This can be accomplished by accessing the Celo Alfojares faucet using the provided link.
+
+With a funded wallet, we can now deploy the smart contract using the Celo plugin in Remix. The Celo plugin provides a convenient way to interact with the Celo blockchain directly from Remix's interface.
+
+## CONCLUSION
+
+In this tutorial, we learned how to create a decentralized marketplace for buying and selling furniture items on the blockchain using the Celo platform. We started by defining the necessary interfaces and data structures. Then, we implemented functions for adding, purchasing, and managing furniture items in the marketplace. We also incorporated the use of an ERC-20 token for transactions.
+
+Throughout the tutorial, we covered key concepts such as smart contracts, data structures, mappings, modifiers, and transaction handling. By following this tutorial, you now have a solid understanding of how to develop a decentralized marketplace on the Celo blockchain.
+
+Building decentralized marketplaces opens up new opportunities for secure and transparent transactions without relying on intermediaries. It empowers users to directly engage in peer-to-peer exchanges while maintaining control over their assets. With the knowledge gained from this tutorial, you can further explore and enhance the functionality of your marketplace or embark on other blockchain development projects.
+
+## NEXT STEP
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance. You can also connect with me on Discord @adammm#0518 if you have any follow-up questions or want to continue the conversation. Happy learning and best of luck with your decentralized marketplace project!
 
 
 
