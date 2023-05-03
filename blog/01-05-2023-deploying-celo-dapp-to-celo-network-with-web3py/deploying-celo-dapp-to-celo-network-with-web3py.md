@@ -81,18 +81,15 @@ print(result)
 ```
 
 
-Now, let's explain the code step by step
+**Now, let's explain the code one by one**
 
-## **Step1:** Installing web3.py library
-To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
+First, we will install the `web3.py` library. To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
 
 ```py
 	pip install web3
 ```
 
-##  **Step2:** Set up web3 connection to Celo network
-
-Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
+Next, we'll now set up the web3 connection to the celo network. Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
 
 ```py
 	 #First import the necessary library
@@ -102,8 +99,7 @@ Here's an example code for setting up a web3 connection to the Celo network usin
 
 This code creates a Web3 object using the HTTP provider for the Celo network's forno service at https://forno.celo.org.
 
-##  **Step3:** Create a contract instance
-To interact with a smart contract on the Celo blockchain using `web3.py`, you need to create a contract instance from the contract ABI and bytecode.
+Now that we have setup connection to the celo network, next step is to create a contract instance which will enable us to interact with a smart contract on the Celo blockchain using `web3.py`.We'll be creating the contract instance from the contract `ABI` and `bytecode` as shown below
 
 ```py
 bytecode ='0x60806040526000805534801561001457600080fd5b50610159806100246000396000f3fe608060405234801561001057600080fd5b50600436106100465760003560e01c806360fe47b11461004b5780636d4ce63c1461009a5780638da5cb5b146100d4575b600080fd5b6100536100e2565b6040518082815260200191505060405180910390f35b61006f6100e8565b6040518082815260200191505060405180910390f35b61008d6100f0565b6040518082815260200191505060405180910390f35b6000809054906101000a900460ff1681565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663a9059cbb6040518163ffffffff1660e01b8152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a15056fea2646970667358221220b3aa7e3faa5eb5ec5b5aeb81cf7ea317e752f969ce92769d9f9dc3f3a1422f2564736f6c634300060b0033' #'0xc2EdaD668740f1aA35E4D8f227fB8E17dcA888Cd'
@@ -125,10 +121,7 @@ Also, you can use the following step to get your bytecode.
 2. Search for your contract on celo explorer and copy the bytecode from the "Bytecode" section of the contract details.
 
 
-Note that not all contracts have their ABI available on the Explorer website, in which case you may need to obtain the ABI from another source, such as the contract developer or community.
-
-## **Step4:** Estimate the gas cost for deploying the contract
-Here's an example code for estimating the gas cost for deploying a contract in Celo using `web3.py`:
+Let's estimate the gas cost for deploying the contract with following code
 
 ``` py
 gas_estimate = w3.eth.estimate_gas({'from': address, 'data': bytecode})
@@ -137,9 +130,7 @@ gas_estimate = w3.eth.estimate_gas({'from': address, 'data': bytecode})
 We use the `estimate_gas` function of the `web3.py` eth module to estimate the amount of gas required to deploy the contract. The function takes a dictionary with the from address and the contract data (bytecode) as arguments. The gas estimate is then stored in the gas_estimate variable for use in the contract deployment transaction.
 Replace the address and bytecode with your contract address and bytecode respectively
 
-##  **Step5:** Build, Sign and Send the transaction
-### Build Transaction
-Here's a code for building the transaction to deploy the contract:
+Now we can make the transaction, first step is building the transaction. Here's the code for building the transaction to deploy the contract:
 
 ```py
 tx = {
@@ -151,57 +142,49 @@ tx = {
 }
 ```
 
-###  Sign Transaction
+then sign the transaction with the following code line
 
 ```py
-#Next is to sign the transaction, here’s the code:
 signed_tx = w3.eth.account.sign_transaction(tx, private_key)
 ```
 
-### Send Transaction
-Here's an example line for sending the signed transaction:
+And finally we can send the transaction
+
 ```py
 tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
 ```
-This line sends the raw transaction to the network and returns the transaction hash.
 
-## **Step6:** Wait for the transaction
-The next step is to wait for the transaction to be mined, we’ll do that with the following code:
+Next step is to wait for the transaction to be mined, we’ll do that with the following code. Note that the `tx_hash` is the hash of the transaction we just sent.
 
 ```py
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 ```
 
-where `tx_hash` is the hash of the transaction you just sent.
+The code will return a TransactionReceipt object that contains information about the transaction, such as the block number and gas used.
 
-This code will wait for the transaction with the given `tx_hash` to be mined and return a TransactionReceipt object that contains information about the transaction, such as the block number and gas used.
-
-## **Step7:** Get the deployed contract address
-To get the deployed contract address after the transaction has been mined, you can use the following line:
+Now that the transaction has been mined we can get the deployed contract address with following code
 
 ```py
 contract_address = tx_receipt.contract_address
 ```
 
-## **Step8:** Create a concise contract instance
-Here's an example line for creating a concise contract instance in `web3.py`:
+We can then generate a contract instance using `web3.py`.
 
 ```py
 from web3.contract import ConciseContract
 MyContract = ConciseContract(w3.eth.contract(address=contract_address, abi=abi))
 ```
 
-Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract. Do not forget you can always get your ABI with the step described in step 3 above
+Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract
 
-## **Step9:** Example function call on the deployed contract
-Here's the code for calling a function on the deployed contract:
+Finally, we can call a function on the deployed contract. Wecan use the followng code to call a function on the deployed contract:
 
 ```py
 result = MyContract.my_function() 
 print(result)
 ```
 
-In this line, `MyContract` is the concise contract instance we created earlier, `my_function` is the name of the function we want to call. You can then use the result variable to get the output of the function.
+In this line, `MyContract` is the concise contract instance we generated fro the previous code line, `my_function` is the name of the function we want to call. You can then use the result variable to get the output of the function.
 
 Here is the [link](https://github.com/yusuf1990/DeployCelo) to the repository
 
