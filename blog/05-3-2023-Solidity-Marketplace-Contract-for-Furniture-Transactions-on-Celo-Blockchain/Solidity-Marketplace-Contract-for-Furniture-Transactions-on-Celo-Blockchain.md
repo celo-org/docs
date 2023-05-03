@@ -79,7 +79,7 @@ contract MarketPlace {
     uint internal furnituresLength = 0;
     address internal cUsdTokenAddress =   0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
-    
+
 
     struct FurnitureData {
         address payable owner;
@@ -223,7 +223,7 @@ In this step, we define a contract called `MarketPlace`. The MarketPlace contrac
 - `cUsdTokenAddress`: Represents the address of the cUSD token used for transactions.
 
 - `FurnitureData`: Defines a structure that represents a furniture item in the marketplace. It includes properties such as the owner's address, image, description, edition, size, and price.
-By defining the MarketPlace contract and its associated state variables and struct, we establish the foundation for managing furniture items and facilitating transactions within the decentralized marketplace.
+  By defining the MarketPlace contract and its associated state variables and struct, we establish the foundation for managing furniture items and facilitating transactions within the decentralized marketplace.
 
 ### Step 4: Implement the Furniture Mapping
 
@@ -252,7 +252,7 @@ In this step, we implement a function called `owner()` inside the `MarketPlace` 
 **Function**:
 
 - `owner()`: This is a public view function that returns the address of the contract owner, which is the address of the smart contract itself `(address(this))`.
-By implementing the `owner()` function, we provide a convenient way to retrieve the contract owner's address. This information can be useful for authorization and ownership-related operations within the contract.
+  By implementing the `owner()` function, we provide a convenient way to retrieve the contract owner's address. This information can be useful for authorization and ownership-related operations within the contract.
 
 ### Step 6: Implement the `getFurniture` Function.
 
@@ -302,6 +302,7 @@ By implementing the `addFurniture()` function, users can add furniture items to 
 In this step, we implement the `PurchaseFurniture()` function inside the MarketPlace contract. This function allows users to purchase a furniture item from the marketplace by providing the index of the item.
 
 **Function**:
+
 ```solidity
    }
 
