@@ -341,6 +341,28 @@ The function is declared as a `public` view function, meaning it can be called b
 Inside the function body, we simply return the value of the `furnituresLength` variable, which represents the length of the furnitures mapping.
 By implementing the `getfurnitureslength()` function, we provide a convenient way for users to retrieve the total number of furniture items available in the marketplace. This information can be useful for various purposes, such as displaying the number of items or iterating over the collection.
 
+## Step 10: Implement the `getfurnitureslength` Function
+
+In this step, we implement a function called getfurnitureslength() inside the MarketPlace contract. This function allows users to retrieve the total number of furniture items currently present in the marketplace.
+
+**Function**:
+
+```solidity
+ function getfurnitureslength() public view returns (uint) {
+        return (furnituresLength);
+    }
+
+```
+
+**Implementation**:
+
+The function is marked as `public` and `view`, indicating that it can be called by any `external` party and does not modify the contract's state.
+It simply returns the value of the `furnituresLength` variable, which represents the total number of furniture items in the marketplace.
+By implementing the `getfurnitureslength()` function, users can easily retrieve the total count of furniture items in the marketplace, providing transparency and information about the size of the marketplace.
+
+
+
+
 
 
 
