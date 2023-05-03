@@ -6,7 +6,7 @@ authors:
     title: Web3 Developer,
     url: https://github.com/yusuf1990
     image_url: https://avatars.githubusercontent.com/u/56927079?s=400&v=4
-tags: ['celosage', beginner, dapp, celo]
+tags: [celosage, beginner, dapp, celo]
 hide_table_of_contents: true
 slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 ---
