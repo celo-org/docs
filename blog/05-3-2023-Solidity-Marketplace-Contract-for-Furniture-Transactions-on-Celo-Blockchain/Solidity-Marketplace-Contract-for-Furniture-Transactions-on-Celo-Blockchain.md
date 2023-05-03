@@ -221,6 +221,22 @@ In this step, we define a contract called `MarketPlace`. The MarketPlace contrac
 - `FurnitureData`: Defines a structure that represents a furniture item in the marketplace. It includes properties such as the owner's address, image, description, edition, size, and price.
 By defining the MarketPlace contract and its associated state variables and struct, we establish the foundation for managing furniture items and facilitating transactions within the decentralized marketplace.
 
+## Step 4: Implement the Furniture Mapping
+
+```solidity
+  }
+
+    mapping (uint => FurnitureData) internal furnitures;
+```
+
+In this step, we implement a `mapping` called `furnitures` inside the `MarketPlace` contract. This mapping associates each furniture item with a unique identifier `(uint)` and its corresponding `FurnitureData` struct.
+
+**Mapping**:
+
+- `furnitures`: Associates each furniture item with a unique identifier. The key of the mapping is a uint representing the identifier, and the value is a `FurnitureData` struct containing the details of the furniture item.
+
+By implementing this mapping, we enable efficient storage and retrieval of furniture items within the MarketPlace contract. Each furniture item can be accessed using its unique identifier, allowing for easy management and interaction with the decentralized marketplace.
+
 
 
 
