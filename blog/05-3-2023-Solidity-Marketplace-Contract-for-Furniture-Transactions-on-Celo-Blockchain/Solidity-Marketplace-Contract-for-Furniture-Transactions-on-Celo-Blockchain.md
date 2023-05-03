@@ -362,7 +362,7 @@ The function is marked as `public` and `view`, indicating that it can be called 
 It simply returns the value of the `furnituresLength` variable, which represents the total number of furniture items in the marketplace.
 By implementing the `getfurnitureslength()` function, users can easily retrieve the total count of furniture items in the marketplace, providing transparency and information about the size of the marketplace.
 
-## Step 12: Implement the `deleteFurniture` Function
+## Step 11: Implement the `deleteFurniture` Function
 
 In this step, we implement a function called `deleteFurniture()` inside the MarketPlace contract. This function allows the `owner` of a furniture item or the contract owner to delete a specific furniture item from the marketplace.
 
@@ -396,6 +396,8 @@ Next, it checks if the caller of the function is either the `owner` of the furni
 If the caller is authorized, the function proceeds to move the last element in the furnitures mapping to the `deleted` index and delete the `last element`.
 Finally, the furnituresLength variable is decremented by one.
 By implementing the `deleteFurniture()` function, we provide the functionality to remove specific furniture items from the marketplace. This helps maintain the integrity and manageability of the marketplace by allowing authorized users to delete unwanted or invalid items.
+
+Click this [link](https://github.com/Adam-eben/furniturer) to access the github repo
 
 ## CONTRACT DEPLOYMENT
 
