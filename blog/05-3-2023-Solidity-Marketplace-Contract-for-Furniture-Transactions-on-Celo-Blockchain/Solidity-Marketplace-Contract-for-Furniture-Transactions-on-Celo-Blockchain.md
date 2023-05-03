@@ -41,6 +41,8 @@ Having these prerequisites will enable you to grasp the concepts and follow the 
 
 To start this tutorial, we will utilize the Remix IDE as our development environment to write the smart contract. Let's begin the process by setting up Remix and creating our contract.
 
+## SMART CONTRACT
+
 The complete code for this tutorial:
 
 ```solidity
@@ -154,7 +156,7 @@ contract MarketPlace {
 }
 ```
 
-## Step 1: Specify the License
+### Step 1: Specify the License
 
 ```solidity
  // SPDX-License-Identifier: MIT
@@ -164,7 +166,7 @@ pragma solidity >=0.7.0 <0.9.0;
 
 To begin, let's specify the license for the code. We will use the MIT license, which grants permissions for various use cases. By specifying the license, we establish the terms under which the code can be used, modified, and distributed. This step ensures clarity and transparency regarding the usage of the codebase.
 
-## Step 2: Define the ERC-20 Token Interface
+### Step 2: Define the ERC-20 Token Interface
 
 ```solidity
 interface IERC20Token {
@@ -195,7 +197,7 @@ interface IERC20Token {
 
 In this step, we define an interface called IERC20Token. The interface serves as a blueprint for interacting with ERC-20 tokens. It includes functions such as `transfer`, `approve`, and `transferFrom`, which enable token transfers between addresses and manage allowances for delegated transfers. Additionally, the interface provides functions like `totalSupply` and `balanceOf` to retrieve information about the token supply and individual token balances. Events like `Transfer` and `Approval` are also defined to emit notifications for token transfers and approvals. By defining this interface, we establish a common set of methods and events for interacting with ERC-20 tokens, promoting compatibility and interoperability among different token contracts.
 
-## Step 3: Define the Marketplace Contract.
+### Step 3: Define the Marketplace Contract.
 
 ```solidity
 contract MarketPlace {
@@ -223,11 +225,9 @@ In this step, we define a contract called `MarketPlace`. The MarketPlace contrac
 - `FurnitureData`: Defines a structure that represents a furniture item in the marketplace. It includes properties such as the owner's address, image, description, edition, size, and price.
 By defining the MarketPlace contract and its associated state variables and struct, we establish the foundation for managing furniture items and facilitating transactions within the decentralized marketplace.
 
-## Step 4: Implement the Furniture Mapping
+### Step 4: Implement the Furniture Mapping
 
 ```solidity
-  }
-
     mapping (uint => FurnitureData) internal furnitures;
 ```
 
@@ -239,7 +239,7 @@ In this step, we implement a `mapping` called `furnitures` inside the `MarketPla
 
 By implementing this mapping, we enable efficient storage and retrieval of furniture items within the MarketPlace contract. Each furniture item can be accessed using its unique identifier, allowing for easy management and interaction with the decentralized marketplace.
 
-## Step 5: Implement the `Owner` Function.
+### Step 5: Implement the `Owner` Function.
 
 ```solidity
   function owner() public view returns (address) {
@@ -253,7 +253,7 @@ In this step, we implement a function called `owner()` inside the `MarketPlace` 
 - `owner()`: This is a public view function that returns the address of the contract owner, which is the address of the smart contract itself `(address(this))`.
 By implementing the `owner()` function, we provide a convenient way to retrieve the contract owner's address. This information can be useful for authorization and ownership-related operations within the contract.
 
-## Step 6: Implement the `getFurniture` Function.
+### Step 6: Implement the `getFurniture` Function.
 
 ```solidity
 function getFurniture(uint _index) public view returns (FurnitureData memory) {
@@ -271,11 +271,11 @@ Implementation:
 Inside the function body, we access the furnitures mapping using the provided index and return the corresponding `FurnitureData` struct.
 By implementing the `getFurniture()` function, we enable users to retrieve the details of a furniture item by its index. This allows for easy querying and access to specific furniture items within the decentralized marketplace.
 
-## Step 7: Implement the `addFurniture` Function
+### Step 7: Implement the `addFurniture` Function
 
 In this step, we implement the `addFurniture()` function inside the MarketPlace contract. This function allows users to add a new furniture item to the marketplace by providing the necessary details such as image, description, edition, size, and price.
 
-## Function:
+**Function**:
 
 ```solidity
 function addFurniture(
@@ -288,7 +288,7 @@ function addFurniture(
 
 ```
 
-## Implementation:
+**Implementation**:
 
 The function takes several input parameters including `_image`, `_description`, `_edition`, `_size`, and `_price` representing the details of the new furniture item.
 Inside the function, a new FurnitureData struct is created with the provided details and the address of the caller `(msg.sender)` as the owner.
@@ -296,7 +296,7 @@ The new furniture item is added to the furnitures mapping at the current furnitu
 The `furnituresLength` is incremented to reflect the addition of a new item.
 By implementing the `addFurniture()` function, users can add furniture items to the marketplace, making them available for purchase by other users.
 
-## Step 8: Implement the `PurchaseFurniture` Function
+### Step 8: Implement the `PurchaseFurniture` Function
 
 In this step, we implement the `PurchaseFurniture()` function inside the MarketPlace contract. This function allows users to purchase a furniture item from the marketplace by providing the index of the item.
 
@@ -323,7 +323,7 @@ Inside the function, a `transfer` is initiated using the `transferFrom()` functi
 The transfer is conditioned on the successful execution of the `transferFrom()` function. If the transfer fails, an error message is thrown.
 By implementing the `PurchaseFurniture()` function, users can purchase furniture items from the marketplace using cUSD tokens. The function ensures the secure transfer of tokens from the buyer to the seller.
 
-## Step 9: Implement the `getfurnitureslength` Function
+### Step 9: Implement the `getfurnitureslength` Function
 
 In this step, we implement a function called getfurnitureslength() inside the MarketPlace contract. This function allows us to retrieve the length of the furnitures mapping, indicating the total number of furniture items in the marketplace.
 
@@ -343,7 +343,7 @@ The function is declared as a `public` view function, meaning it can be called b
 Inside the function body, we simply return the value of the `furnituresLength` variable, which represents the length of the furnitures mapping.
 By implementing the `getfurnitureslength()` function, we provide a convenient way for users to retrieve the total number of furniture items available in the marketplace. This information can be useful for various purposes, such as displaying the number of items or iterating over the collection.
 
-## Step 10: Implement the `getfurnitureslength` Function
+### Step 10: Implement the `getfurnitureslength` Function
 
 In this step, we implement a function called getfurnitureslength() inside the MarketPlace contract. This function allows users to retrieve the total number of furniture items currently present in the marketplace.
 
@@ -362,7 +362,7 @@ The function is marked as `public` and `view`, indicating that it can be called 
 It simply returns the value of the `furnituresLength` variable, which represents the total number of furniture items in the marketplace.
 By implementing the `getfurnitureslength()` function, users can easily retrieve the total count of furniture items in the marketplace, providing transparency and information about the size of the marketplace.
 
-## Step 11: Implement the `deleteFurniture` Function
+### Step 11: Implement the `deleteFurniture` Function
 
 In this step, we implement a function called `deleteFurniture()` inside the MarketPlace contract. This function allows the `owner` of a furniture item or the contract owner to delete a specific furniture item from the marketplace.
 
@@ -422,20 +422,3 @@ Great job! It's always helpful to provide additional resources for further learn
 ## ABOUT THE AUTHOR
 
 I'm Adama Ebenezer, a web3 developer from Nigeria with a strong passion for blockchain technology. I'm excited to leverage my skills and knowledge to contribute to the blockchain space.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
