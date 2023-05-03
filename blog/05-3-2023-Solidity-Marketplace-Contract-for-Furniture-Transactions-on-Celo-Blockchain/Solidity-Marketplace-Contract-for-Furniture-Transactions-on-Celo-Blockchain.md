@@ -294,6 +294,32 @@ The new furniture item is added to the furnitures mapping at the current furnitu
 The `furnituresLength` is incremented to reflect the addition of a new item.
 By implementing the `addFurniture()` function, users can add furniture items to the marketplace, making them available for purchase by other users.
 
+Step 8: Implement the `PurchaseFurniture` Function
+
+In this step, we implement the `PurchaseFurniture()` function inside the MarketPlace contract. This function allows users to purchase a furniture item from the marketplace by providing the index of the item.
+
+**Function**:
+```solidity
+   }
+
+    function PurchaseFurniture(uint _index) public payable  {
+        require(
+            IERC20Token(cUsdTokenAddress).transferFrom(
+                msg.sender,
+                furnitures[_index].owner,
+                furnitures[_index].price
+            ),
+            "Transfer failed."
+        );
+    }
+```
+
+**Implementation**:
+
+The function takes an input parameter `_index`, representing the index of the furniture item to be purchased.
+Inside the function, a `transfer` is initiated using the `transferFrom()` function of the `IERC20Token` interface. This transfers the specified amount of cUSD tokens from the caller `(msg.sender)` to the owner of the furniture item.
+The transfer is conditioned on the successful execution of the `transferFrom()` function. If the transfer fails, an error message is thrown.
+By implementing the `PurchaseFurniture()` function, users can purchase furniture items from the marketplace using cUSD tokens. The function ensures the secure transfer of tokens from the buyer to the seller.
 
 
 
