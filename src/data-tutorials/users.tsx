@@ -2109,6 +2109,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'observable'],
   },
   {
+    title: 'Building a blog subscription dapp on Celo part 2',
+    description: 'Learn how to build a Celo-based blog subscription dapp in this comprehensive guide.',
+    preview: require('./showcase/advanced/building-a-blog-subscription-dapp-on-celo-part-2.png'),
+    website: '/blog/tutorials/building-a-blog-subscription-dapp-on-celo-part-2',
+    tags: ['celo','advanced', 'solidity', 'celosage'],
+  },
+  {
     title: 'Using the Graph with Celo',
     description: 'The Graph protocol makes it easy to get historical blockchain data.',
     preview: require('./showcase/intermediate/using-the-graph-with-celo.png'),
