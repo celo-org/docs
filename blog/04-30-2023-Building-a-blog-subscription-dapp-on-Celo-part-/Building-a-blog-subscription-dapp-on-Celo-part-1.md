@@ -11,7 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/building-a-blog-subscription-dapp-on-celo-part-1
 ---
 
-![header](../../src/data-tutorials/showcase/advanced/blog.png)
+![header](../../src/data-tutorials/showcase/advanced/building-a-blog-subscription-dapp-on-celo-part-1
+.png)
 
 ## Introduction
 

@@ -2068,7 +2068,7 @@ const Users: User[] = [
   {
     title: 'Building a blog subscription dapp on Celo part 1',
     description: 'Learn how to build a Celo-based blog subscription dapp in this comprehensive guide.',
-    preview: require('./showcase/advanced/blog.png'),
+    preview: require('./showcase/advanced/building-a-blog-subscription-dapp-on-celo-part-1.png'),
     website: '/blog/building-a-blog-subscription-dapp-on-celo-part-1',
     tags: ['celo','advanced', 'solidity', 'celosage'],
   },
