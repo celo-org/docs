@@ -1,9 +1,22 @@
+---
+title: Build and Deploy a Secure Multi-Signature Wallet on the Celo Blockchain
+description: In this tutorial, we will walk through the process of creating a secure multi-signature wallet on the Celo blockchain.
+authors:
+  - name: Jovan Mwesigwa
+    title: Software Engineer
+    url: https://github.com/JovanMwesigwa
+tags: [celo, celosage, intermediate, solidity, nodejs, javascript]
+hide_table_of_contents: true
+slug: /tutorials/build-and-deploy-a-multi-signature-wallet-on-celo
+---
+
+![header](../../src/data-tutorials/showcase/intermediate/build-and-deploy-a-secure-multi-signature-wallet-on-the-celo-blockchain.png)
 
 ## Introduction
 
 In this tutorial, we will walk through the process of building and deploying a secure multi-signature wallet on the Celo blockchain. We will be using Solidity, Hardhat, a development environment to write and deploy our smart contract. By the end of this tutorial, you will have a better understanding of how multi-signature wallets work and be able to create your own on the Celo blockchain.
 
-## Prerequisites​
+## Prerequisites
 
 Before we dive into building our multi-signature wallet, there are a few prerequisites that you should have:
 
@@ -393,7 +406,7 @@ npx hardhat compile
 ```
 
 Output:
-![compiled](tutorial-assets/compile.png)
+![compiled](https://user-images.githubusercontent.com/62109301/235921837-759479db-d371-489f-930a-d0987d0127cb.png)
 
 Here's the full contract code below;
 
@@ -690,15 +703,14 @@ npx hardhat test --grep "Constructor"
 ```
 
 Output:
-![constructor](tutorial-assets/constructor.png)
+![constructor](https://user-images.githubusercontent.com/62109301/235922090-5a2c8b4d-9d43-4555-acf8-d89c027e256c.png)
 
 By using the `--grep "Constructor"` we can tell Hardhat to jump through specific sections of the tests and only test the logic inside the `Constructor` block. We can also jump through specific `it()` function tests too, by using the block description in the function, like
 
 ### A Failed test
 
 An example of a failed test will look like this;
-
-![failedtest](tutorial-assets/failedtest.png)
+![failedtest](https://user-images.githubusercontent.com/62109301/235922174-c5568e00-763d-4ff7-9172-dbcbe3d3f1ec.png)
 
 Chai is a very powerful library for testing software because it raises very clear error messages of why and where the test failed as shown above.
 
@@ -743,7 +755,7 @@ npx hardhat test --grep "Should successfully submit a transaction"
 ```
 
 Output:
-![submitTx](tutorial-assets/submit.png)
+![submitTx](https://user-images.githubusercontent.com/62109301/235922344-c0bcf53c-16fa-4545-b0d5-eefd10060af8.png)
 
 This test is important because it ensures that the contract can properly receive and store new transactions, which is a fundamental feature of a multi-sig wallet.
 
@@ -861,7 +873,7 @@ npx hardhat test
 ```
 
 Output:
-![output](tutorial-assets/fulltest.png)
+![output](https://user-images.githubusercontent.com/62109301/235922470-5c4ccb7b-2270-452e-9113-43e84cdd1585.png)
 
 Running the full test without a flag will run the test from top to bottom as shown below.
 
@@ -1247,8 +1259,7 @@ npx hardhat deploy --network alfajores
 This will automatically push the contract to Celo Alfajore's network using all the predefined environment variables in the `hardhat.config.js` file.
 
 Output:
-
-![deployed](tutorial-assets/deployed.png)
+![deployed](https://user-images.githubusercontent.com/62109301/235922593-6111d7f7-f7a1-4177-bd71-c49770518707.png)
 
 The contract was successfully deployed and verified on the alfajores network, [here](https://alfajores.celoscan.io/address/0x3cc6B4D4ef124B3C767aEE625Dc7F94f7BE669f9#code)
 
@@ -1277,7 +1288,7 @@ Reach out:
 - Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 - Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-## References​
+## References
 
 - [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started) | Hardhat Docs
 - [Project code](https://github.com/JovanMwesigwa/multisig-smartcontract) | Github
