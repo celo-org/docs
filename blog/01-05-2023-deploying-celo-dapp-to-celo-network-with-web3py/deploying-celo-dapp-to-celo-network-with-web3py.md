@@ -175,6 +175,7 @@ pip install web3-contract
 Now, we can generate the contract instance
 
 ```py
+#First import the ConciseContract
 from web3.contract import ConciseContract
 MyContract = ConciseContract(w3.eth.contract(address=contract_address, abi=abi))
 ```
