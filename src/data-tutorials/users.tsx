@@ -1679,6 +1679,13 @@ const Users: User[] = [
     tags: ['solidity', 'react', 'celo', 'smartcontract', 'nextjs', 'advanced', 'dao', 'ipfs','celosage'],
   },
   {
+    title: 'Create a Secure Multi-Factor Authentication on the Celo Blockchain',
+    description: 'In this tutorial, we will demonstrate how to use Solidity and JavaScript to establish a Multi-Factor Authentication on the Celo Blockchain.',
+    preview: require('./showcase/advanced/create-a-secure-multi-factor-authentication-on-the-celo-blockchain.png'),
+    website: '/tutorials/Create-a-Secure-Multi-Factor-Authentication-on-the-Celo-Blockchain',
+    tags: ['celosage', 'solidity', 'javascript', 'celo', 'smartcontract', 'truffle', 'advanced', 'nodejs', 'remix'],
+  },
+  {
     title: 'A guide to building decentralized loan dapp on the celo blockchain',
     description: 'This tutorial would put you through building a loan app where there would be little need for middlemen like banks',
     preview: require('./showcase/intermediate/a-guide-to-building-decentralized-loan-dapp.png'),
