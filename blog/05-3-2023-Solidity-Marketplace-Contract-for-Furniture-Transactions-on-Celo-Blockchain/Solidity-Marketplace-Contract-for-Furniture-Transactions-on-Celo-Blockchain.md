@@ -237,7 +237,7 @@ In this step, we implement a `mapping` called `furnitures` inside the `MarketPla
 
 By implementing this mapping, we enable efficient storage and retrieval of furniture items within the MarketPlace contract. Each furniture item can be accessed using its unique identifier, allowing for easy management and interaction with the decentralized marketplace.
 
-## Step 5: Implement the Owner Function.
+## Step 5: Implement the `Owner` Function.
 
 ```solidity
   function owner() public view returns (address) {
@@ -251,7 +251,7 @@ In this step, we implement a function called `owner()` inside the `MarketPlace` 
 - `owner()`: This is a public view function that returns the address of the contract owner, which is the address of the smart contract itself `(address(this))`.
 By implementing the `owner()` function, we provide a convenient way to retrieve the contract owner's address. This information can be useful for authorization and ownership-related operations within the contract.
 
-## Step 6: Implement the getFurniture Function.
+## Step 6: Implement the `getFurniture` Function.
 
 ```solidity
 function getFurniture(uint _index) public view returns (FurnitureData memory) {
@@ -269,9 +269,30 @@ Implementation:
 Inside the function body, we access the furnitures mapping using the provided index and return the corresponding `FurnitureData` struct.
 By implementing the `getFurniture()` function, we enable users to retrieve the details of a furniture item by its index. This allows for easy querying and access to specific furniture items within the decentralized marketplace.
 
+## Step 7: Implement the `addFurniture` Function
 
+In this step, we implement the `addFurniture()` function inside the MarketPlace contract. This function allows users to add a new furniture item to the marketplace by providing the necessary details such as image, description, edition, size, and price.
 
+## Function:
 
+```solidity
+function addFurniture(
+    string memory _image,
+    string memory _description,
+    string memory _edition,
+    uint _size,
+    uint _price
+) public
+
+```
+
+## Implementation:
+
+The function takes several input parameters including `_image`, `_description`, `_edition`, `_size`, and `_price` representing the details of the new furniture item.
+Inside the function, a new FurnitureData struct is created with the provided details and the address of the caller `(msg.sender)` as the owner.
+The new furniture item is added to the furnitures mapping at the current furnituresLength `index`.
+The `furnituresLength` is incremented to reflect the addition of a new item.
+By implementing the `addFurniture()` function, users can add furniture items to the marketplace, making them available for purchase by other users.
 
 
 
