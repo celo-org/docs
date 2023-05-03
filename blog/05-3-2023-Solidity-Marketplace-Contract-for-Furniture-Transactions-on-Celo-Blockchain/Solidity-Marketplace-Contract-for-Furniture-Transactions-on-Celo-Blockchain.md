@@ -294,7 +294,7 @@ The new furniture item is added to the furnitures mapping at the current furnitu
 The `furnituresLength` is incremented to reflect the addition of a new item.
 By implementing the `addFurniture()` function, users can add furniture items to the marketplace, making them available for purchase by other users.
 
-Step 8: Implement the `PurchaseFurniture` Function
+## Step 8: Implement the `PurchaseFurniture` Function
 
 In this step, we implement the `PurchaseFurniture()` function inside the MarketPlace contract. This function allows users to purchase a furniture item from the marketplace by providing the index of the item.
 
@@ -320,6 +320,30 @@ The function takes an input parameter `_index`, representing the index of the fu
 Inside the function, a `transfer` is initiated using the `transferFrom()` function of the `IERC20Token` interface. This transfers the specified amount of cUSD tokens from the caller `(msg.sender)` to the owner of the furniture item.
 The transfer is conditioned on the successful execution of the `transferFrom()` function. If the transfer fails, an error message is thrown.
 By implementing the `PurchaseFurniture()` function, users can purchase furniture items from the marketplace using cUSD tokens. The function ensures the secure transfer of tokens from the buyer to the seller.
+
+## Step 9: Implement the `getfurnitureslength` Function
+
+In this step, we implement a function called getfurnitureslength() inside the MarketPlace contract. This function allows us to retrieve the length of the furnitures mapping, indicating the total number of furniture items in the marketplace.
+
+**Function**:
+
+```solidity
+ }
+
+    function getfurnitureslength() public view returns (uint) {
+        return (furnituresLength);
+    }
+```
+
+**Implementation**:
+
+The function is declared as a `public` view function, meaning it can be called by anyone and does not modify the contract's state.
+Inside the function body, we simply return the value of the `furnituresLength` variable, which represents the length of the furnitures mapping.
+By implementing the `getfurnitureslength()` function, we provide a convenient way for users to retrieve the total number of furniture items available in the marketplace. This information can be useful for various purposes, such as displaying the number of items or iterating over the collection.
+
+
+
+
 
 
 
