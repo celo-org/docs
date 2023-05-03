@@ -760,6 +760,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'intermediate','celo'],
   },
   {
+    title: "Solidity Marketplace Contract for Furniture Transactions on Celo Blockchain",
+    description: "This MarketPlace contract is a decentralized marketplace for buying and selling furniture items.",
+    preview: require('./showcase/intermediate/Solidity-Marketplace-Contract-for-Furniture-Transactions-on-Celo-Blockchain.png'),
+    website: '/blog/tutorials/solidity-marketplace-contract-for-furniture-transactions-on-celo-blockchain',
+    tags: ['intermediate', 'solidity', 'smartcontract', 'celosage', 'celo'],
+  },
+  {
     title: 'How to Transition from Web2 to Web3',
     description: 'Learn the basics of blockchain technology and web3 development',
     preview: require('./showcase/beginner/how-to-transition-from-web2-to-web3.png'),
