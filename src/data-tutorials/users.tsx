@@ -3002,6 +3002,13 @@ const Users: User[] = [
     website: 'blog/tutorials/interact-with-celo-blockchain-using-web3dart',
     tags: ['celosage', 'flutter', 'beginner', 'celo'], 
   },
+  {
+    title: 'Supporting Multiple Tokens - EIP 155 and the Multi-Token Standard',
+    description: 'These guidelines provide a framework for smart contracts to support multiple tokens within a single contract.',
+    preview: require('./showcase/beginner/supporting-multiple-tokens-eip-155-and-the-multi-token-standard.png'),
+    website: 'blog/tutorials/supporting-multiple-tokens-eip-155-and-the-multi-token-standard',
+    tags: ['beginner', 'celosage', 'celo'], 
+  },
    {
     title: 'Upgrading a Smart Contract on Celo',
     description: 'This tutorial provides a guide to upgrading a smart contract on the Celo blockchain and its importance',
