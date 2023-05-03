@@ -15,7 +15,7 @@ slug: /tutorials/building-a-blog-subscription-dapp-on-celo-part-2
 
 ## Introduction
 
-In the first section of the tutorial, we learned how to use the Ethereum blockchain to build a decentralized blogging platform where users can create, read, like, and subscribe to blog posts in a secure and transparent manner. We've seen how to use Solidity to define and implement the data structures and functions required for the smart contract to function. 
+In the first section of the tutorial, we learned how to use the Ethereum blockchain to build a decentralized blogging platform where users can create, read, like, and subscribe to blog posts in a secure and transparent manner. We've seen how to use Solidity to define and implement the data structures and functions required for the smart contract to function.
 
 So in this second section, we are going to learn how to build the front-end for our blog.
 This is what the endpoint should look like.
@@ -25,7 +25,6 @@ This is what the endpoint should look like.
 ![img2](images/blog2.png)
 
 ![img3](images/blog3.png)
-
 
 ## Prerequisite
 
@@ -78,6 +77,7 @@ function App({ Component, pageProps }: AppProps) {
 }
 export default App;
 ```
+
 The goal of this code is to provide a foundation for a decentralized application (dapp) to interact with the Celo blockchain network by utilizing the CeloProvider and Alfajores objects from the "@celo/react-celo" library.
 
 The code is organized as a functional component that receives two props of type AppProps: Component and pageProps. The Component prop specifies the specific page that will be rendered, while the pageProps prop specifies any additional props that may be passed to that page.
@@ -136,7 +136,8 @@ export const PostCard = ({
         </div>
         <button
           onClick={handleClick}
-          className="my-6 bg-blue-400 py-3 px-6 rounded-xl ml-4 hover:bg-rose-600 ">
+          className="my-6 bg-blue-400 py-3 px-6 rounded-xl ml-4 hover:bg-rose-600 "
+        >
           Like
         </button>
       </div>
@@ -220,7 +221,8 @@ export default function Home() {
           <div>You must first be a subscriber</div>
           <button
             onClick={postSubscribe}
-            className="mt-4 bg-blue-400 py-2 px-6 text-white text-xl font-semibold rounded-xl">
+            className="mt-4 bg-blue-400 py-2 px-6 text-white text-xl font-semibold rounded-xl"
+          >
             Subscribe
           </button>
         </div>
@@ -231,7 +233,8 @@ export default function Home() {
               <div className="mt-0 mb-6">
                 <label
                   className="block text-gray-500 font-semibold mb-6 text-2xl"
-                  htmlFor="name">
+                  htmlFor="name"
+                >
                   Title
                 </label>
                 <input
@@ -246,7 +249,8 @@ export default function Home() {
               <div className="mb-4">
                 <label
                   className="block text-gray-500 font-semibold mb-2 text-2xl"
-                  htmlFor="description">
+                  htmlFor="description"
+                >
                   Description
                 </label>
                 <textarea
@@ -260,7 +264,8 @@ export default function Home() {
               <button
                 onClick={handleSubmit}
                 className="mt-4 bg-blue-400 py-2 px-6 text-white text-xl font-semibold rounded-xl"
-                type="submit">
+                type="submit"
+              >
                 Submit
               </button>
             </form>
@@ -317,7 +322,6 @@ By following this tutorial, readers should be able to create their own decentral
 - [Celo docs](https://docs.celo.org/)
 - [Solidity](https://docs.soliditylang.org/en/v0.8.17/)
 - [Code Repo](https://github.com/maxzysparks/blog-max)
-
 
 ### About the author
 
