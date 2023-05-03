@@ -417,6 +417,12 @@ Building decentralized marketplaces opens up new opportunities for secure and tr
 
 Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance. You can also connect with me on Discord @adammm#0518 if you have any follow-up questions or want to continue the conversation. Happy learning and best of luck with your decentralized marketplace project!
 
+## ABOUT THE AUTHOR
+
+I'm Adama Ebenezer, a web3 developer from Nigeria with a strong passion for blockchain technology. I'm excited to leverage my skills and knowledge to contribute to the blockchain space.
+
+
+
 
 
 
