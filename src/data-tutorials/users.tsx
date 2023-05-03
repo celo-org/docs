@@ -969,6 +969,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-vending-machine-on-celo-blockchain',
     tags: ['celosage', 'celo', 'beginner'], 
   },
+  {
+    title: 'Top 33 Must Know Tools For Web3 Developers',
+    description: 'This article is a compilation of top 33 must know tools for web3 developers',
+    preview: require('./showcase/beginner/top-33-must-know-tools-for-web3-developers.png'),
+    website: 'blog/tutorials/top-33-must-know-tools-for-web3-developers',
+    tags: ['celosage', 'celo', 'beginner'], 
+  },
   
   {
     title: 'How to Build a Supply Chain Management Application on Celo',
