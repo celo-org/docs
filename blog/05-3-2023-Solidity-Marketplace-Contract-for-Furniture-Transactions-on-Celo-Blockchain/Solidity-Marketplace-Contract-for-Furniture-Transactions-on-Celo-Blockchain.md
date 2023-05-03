@@ -152,7 +152,7 @@ contract MarketPlace {
 }
 ```
 
-Step 1: Specify the License
+## Step 1: Specify the License
 
 ```solidity
  // SPDX-License-Identifier: MIT
@@ -162,7 +162,7 @@ pragma solidity >=0.7.0 <0.9.0;
 
 To begin, let's specify the license for the code. We will use the MIT license, which grants permissions for various use cases. By specifying the license, we establish the terms under which the code can be used, modified, and distributed. This step ensures clarity and transparency regarding the usage of the codebase.
 
-Step 2: Define the ERC-20 Token Interface
+## Step 2: Define the ERC-20 Token Interface
 
 ```solidity
 interface IERC20Token {
@@ -192,5 +192,40 @@ interface IERC20Token {
 ```
 
 In this step, we define an interface called IERC20Token. The interface serves as a blueprint for interacting with ERC-20 tokens. It includes functions such as `transfer`, `approve`, and `transferFrom`, which enable token transfers between addresses and manage allowances for delegated transfers. Additionally, the interface provides functions like `totalSupply` and `balanceOf` to retrieve information about the token supply and individual token balances. Events like `Transfer` and `Approval` are also defined to emit notifications for token transfers and approvals. By defining this interface, we establish a common set of methods and events for interacting with ERC-20 tokens, promoting compatibility and interoperability among different token contracts.
+
+## Step 3: Define the Marketplace Contract.
+
+```solidity
+contract MarketPlace {
+    uint internal furnituresLength = 0;
+    address internal cUsdTokenAddress =   0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
+
+        struct FurnitureData {
+        address payable owner;
+        string image;
+        string description;
+        string edition;
+        uint size;
+        uint price;
+    }
+```
+
+In this step, we define a contract called `MarketPlace`. The MarketPlace contract serves as a decentralized marketplace for buying and selling furniture items. It includes the following components:
+
+**State Variables**:
+- `furnituresLength`: Keeps track of the number of furniture items listed in the marketplace.
+- `cUsdTokenAddress`: Represents the address of the cUSD token used for transactions.
+
+**Struct**:
+
+- `FurnitureData`: Defines a structure that represents a furniture item in the marketplace. It includes properties such as the owner's address, image, description, edition, size, and price.
+By defining the MarketPlace contract and its associated state variables and struct, we establish the foundation for managing furniture items and facilitating transactions within the decentralized marketplace.
+
+
+
+
+
+
+
 
 
