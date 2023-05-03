@@ -10,7 +10,7 @@ hide_table_of_contents: true
 slug: /tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1
 ---
 
-![header](../../src/data-tutorials/showcase/advanced/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1.png)
+![header](../../src/data-tutorials/showcase/intermediate/build_a_decentralized_real_estate_marketplace_on_the_celo_blockchain_part_1.png)
 
 ## Introduction
 
