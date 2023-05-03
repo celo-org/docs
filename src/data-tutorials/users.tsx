@@ -941,6 +941,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'beginner', 'cli'], 
   },
   {
+    title: 'Building a Decentralized Book Library',
+    description: 'This tutorial teaches how to build a decentralised book library',
+    preview: require('./showcase/intermediate/building-a-decentralized-book-library.png'),
+    website: 'blog/tutorials/building-a-decentralized-book-library',
+    tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
+  },
+  {
     title: 'Building a Vending Machine on Celo Blockchain',
     description: 'This tutorial teaches how to build a vending machine on Celo blockchain',
     preview: require('./showcase/beginner/building-a-vending-machine-on-celo-blockchain.png'),
@@ -2974,6 +2981,13 @@ const Users: User[] = [
     tags: ['celosage', 'smartcontract', 'solidity', 'intermediate', 'celo'], 
   },
   {
+    title: 'Developing a Celo Blockchain Social Network with Python',
+    description: 'This article will empower you to create a secure, scalable, and engaging social network that harnesses the full potential of Celo cutting-edge blockchain technology',
+    preview: require('./showcase/intermediate/developing-a-celo-blockchain-social-network-with-python.png'),
+    website: 'blog/tutorials/developing-a-celo-blockchain-social-network-with-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
+  {
     title: 'Deploying a proposal for DAOs on Celo',
     description: 'This article explains how to deploy a governance proposal on Celo',
     preview: require('./showcase/intermediate/deploying-a-proposal-for-daos-on-celo.png'),
@@ -3031,6 +3045,13 @@ const Users: User[] = [
     tags: ['celosage', 'flutter', 'intermediate', 'celo', 'deploy'], 
   },
   {
+    title: 'Integrating Web3Auth With Celo Blockchain In Your Dapp',
+    description: 'Web3Auth is a decentralized authentication protocol that allows users to authenticate with DApps using their Web3 wallet, such as MetaMask. In this tutorial, I will be exploring how to integrate Web3Auth with the Celo blockchain in a DApp.',
+    preview: require('./showcase/intermediate/integrating-web3Auth-with-celo-blockchain-in-your-dapp.png'),
+    website: 'blog/tutorials/integrating-web3Auth-with-celo-blockchain-in-your-dapp',
+    tags:["nextjs", "intermediate", "smartcontract", "solidity"], 
+  },
+  {
     title: 'Get started with CELO using Rust',
     description: 'This article is intended for developers that have some familiarity with Rust and want to construct a Rust program to communicate with the Celo blockchain.',
     preview: require('./showcase/beginner/get-started-with-celo-using-rust.png'),
@@ -3050,6 +3071,13 @@ const Users: User[] = [
     preview: require("./showcase/advanced/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender.png"),
     website: "/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender",
     tags: ["advanced", "celosage", "celo", "openzeppelin"],
+  },
+   {
+    title: "Integrating Python with Celo Mobile Wallet",
+    description: "Explore the fascinating world of integrating Python with Celo's mobile wallet in this insightful article.",
+    preview: require("./showcase/intermediate/integrating-python-with-celo-mobile-wallet.png"),
+    website: "/blog/tutorials/integrating-python-with-celo-mobile-wallet",
+    tags: ["celosage", "intermediate", "smartcontract", "solidity"],
   },
   {
     title: "Build an Airdrop Distribution System for Millions of Users with Verification of Merkle Tree Proofs",
@@ -3337,6 +3365,14 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-full-stack-celo-dapp-with-nextjs-and-web3js.png'),
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
+  },
+  
+  {
+    title: 'How Does Blockchain Help Content Creators?',
+    description: 'Learn how blockchain technoloty help content creators.',
+    preview: require('./showcase/beginner/how-does-blockchain-help-content-creators.png'),
+    website: 'blog/tutorials/how-does-blockchain-help-content-creators',
+    tags: ['celosage', 'beginner', 'solidity'], 
   },
 
 
