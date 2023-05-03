@@ -1,12 +1,12 @@
 ---
-title: 'Decentralized Storage and Seamless User Experience: Integrating IPFS with React for Your ERC721 Smart Contract'
+title: "Decentralized Storage and Seamless User Experience: Integrating IPFS with React for Your ERC721 Smart Contract"
 description: This tutorial would guide you through the basics of IPFS and how you can integrate it in your React project
 authors:
   - name: Daniel Ogbuti
     title: Web3 Developer,
     url: https://github.com/dahnny
     image_url: https://github.com/dahnny.png
-tags: ["celo", "intermediate", "celosage","ipfs"]
+tags: ["celo", "intermediate", "celosage", "ipfs"]
 hide_table_of_contents: true
 slug: /tutorials/integrating-ipfs-with-react
 ---
@@ -164,14 +164,17 @@ contract MyNftMarket {
 	}
 }
 ```
+
 ## Prerequisites
 
 Building this dapp, you would need:
+
 - Solid understanding of Javascript
 - Basic grasp of solidity
 - Basic Understanding of REST APIs
 
 ## Requirements
+
 - VSCode or any other editor
 - A terminal
 - React
@@ -251,9 +254,9 @@ Note that the variable name starts with `REACT_APP_` prefix, as this is required
 At the top of your React app's entry point file (usually `index.js`), require the `dotenv` package and call the `config` method:
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import dotenv from 'dotenv';
+import React from "react";
+import ReactDOM from "react-dom";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -261,16 +264,17 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
+
 ### Step 4: Use the Infura API key in your code
 
-You can access the Infura API key in your React code using `process.env.REACT_APP_PROJECT_SECRET`. 
+You can access the Infura API key in your React code using `process.env.REACT_APP_PROJECT_SECRET`.
 
 ## Minter.js
 
-In the minter.js file, which would be where we implement the IPFS feature,  we would start by importing a few things.
+In the minter.js file, which would be where we implement the IPFS feature, we would start by importing a few things.
 
 ```js
 import { create } from "ipfs-http-client";
@@ -278,7 +282,7 @@ import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 ```
 
-The three imports in the given code snippet are used to provide functionalities for a web application that interacts with IPFS and Ethereum networks. 
+The three imports in the given code snippet are used to provide functionalities for a web application that interacts with IPFS and Ethereum networks.
 
 `ipfs-http-client` provides an HTTP client instance that allows you to interact with the IPFS network via HTTP API. You can create an instance of the client using the `create` method, which takes an options object as an argument, that can be used to specify the host, port, and protocol of the IPFS node to connect to.
 
@@ -286,19 +290,23 @@ The three imports in the given code snippet are used to provide functionalities 
 
 `ethers` is a library for interacting with the Ethereum network and smart contracts. It provides a provider interface for interacting with the Ethereum network, a contract abstraction layer for working with smart contracts, and a wallet interface for managing Ethereum accounts.
 
-Next up, you would create an HTTP client instance that is authorized to access the Infura IPFS node and can be used to interact with the IPFS network. 
+Next up, you would create an HTTP client instance that is authorized to access the Infura IPFS node and can be used to interact with the IPFS network.
 
 ```js
 const authorization =
-    "Basic " +
-    Buffer.from(
-        process.env.REACT_APP_PROJECT_ID +
-        ":" +
-        process.env.REACT_APP_PROJECT_SECRET
-    ).toString("base64");
+  "Basic " +
+  Buffer.from(
+    process.env.REACT_APP_PROJECT_ID +
+      ":" +
+      process.env.REACT_APP_PROJECT_SECRET
+  ).toString("base64");
 
-const client = create({ url: "https://ipfs.infura.io:5001/api/v0", headers: { authorization } });
+const client = create({
+  url: "https://ipfs.infura.io:5001/api/v0",
+  headers: { authorization },
+});
 ```
+
 The `authorization` constant is used to authenticate the client instance to access IPFS services provided by Infura.
 
 The `Buffer.from()` method is used to create a buffer from the concatenated string of project ID and project secret that are stored as environment variables (`REACT_APP_PROJECT_ID` and `REACT_APP_PROJECT_SECRET`). The buffer is then encoded using the `toString("base64")` method to create a base64-encoded string. This string is then concatenated with the string "Basic " to create the `authorization` string that is used as a header in the HTTP client instance.
@@ -314,8 +322,9 @@ export const createNft = async (
   performActions,
   { name, price, description, ipfsImage, attributes }
 ) => {
-``` 
-The first two arguments, `minterContract` and `marketContract`, represent smart contract instances that are used to mint the NFT token and create a market for it, respectively. 
+```
+
+The first two arguments, `minterContract` and `marketContract`, represent smart contract instances that are used to mint the NFT token and create a market for it, respectively.
 
 The third argument, `performActions`, represents a function that is used to perform a series of actions within a single transaction. This function is typically provided by a higher-level component that wraps the `createNft` function.
 
@@ -323,15 +332,15 @@ The remaining three arguments, `name`, `price`, and `description`, represent the
 
 Inside the `createNft` function, there is an asynchronous block of code that performs the following actions:
 
-The given code snippet is a part of an asynchronous function called `createNft`. Inside the function, there is a block of code that is wrapped in the `performActions` function. 
+The given code snippet is a part of an asynchronous function called `createNft`. Inside the function, there is a block of code that is wrapped in the `performActions` function.
 
-The `performActions` function takes in an async callback function that receives a `kit` object as an argument. The `kit` object represents the set of web3 tools that are required to interact with the Ethereum blockchain. 
+The `performActions` function takes in an async callback function that receives a `kit` object as an argument. The `kit` object represents the set of web3 tools that are required to interact with the Ethereum blockchain.
 
 Inside the async callback function, there is a conditional statement that checks whether `name`, `description`, and `ipfsImage` are not empty. If any of these values is empty, the function returns.
 
 If all the required parameters are available, the function retrieves the default account from the `kit` object, which is used as the owner of the NFT token.
 
-After that, the code creates a JSON object that represents the metadata of the NFT token. The object includes the `name`, `description`, `image`, `owner`, and `attributes` of the token. 
+After that, the code creates a JSON object that represents the metadata of the NFT token. The object includes the `name`, `description`, `image`, `owner`, and `attributes` of the token.
 
 The `image` field of the metadata object is set to the `ipfsImage` argument, which is the IPFS hash of the image file that is stored on the IPFS network.
 
@@ -340,27 +349,27 @@ The metadata object is then converted to a JSON string and stored in the `data` 
 Next up, The second block of code in the `createNft` function starts with a `try` block. Inside the `try` block, there are several steps that are executed.
 
 ```js
-    try {
-      // save NFT metadata to IPFS
-      const added = await client.add(data);
+try {
+  // save NFT metadata to IPFS
+  const added = await client.add(data);
 
-      // IPFS url for uploaded metadata
-      const url = `https://diac.ipfs.infura.io/ipfs/${added.path}`;
+  // IPFS url for uploaded metadata
+  const url = `https://diac.ipfs.infura.io/ipfs/${added.path}`;
 
-      // mint the NFT and save the IPFS url to the blockchain
-      let tx = await minterContract.methods
-        .mint(url)
-        .send({ from: defaultAccount });
-      let tokenId = BigNumber.from(tx.events.Transfer.returnValues.tokenId);
+  // mint the NFT and save the IPFS url to the blockchain
+  let tx = await minterContract.methods
+    .mint(url)
+    .send({ from: defaultAccount });
+  let tokenId = BigNumber.from(tx.events.Transfer.returnValues.tokenId);
 
-      const auctionPrice = ethers.utils.parseUnits(String(price), "ether");
+  const auctionPrice = ethers.utils.parseUnits(String(price), "ether");
 
-      await marketContract.methods
-        .listToken(MyNFTContractAddress.MyNFT, tokenId, auctionPrice)
-        .send({ from: defaultAccount });
-    } catch (error) {
-      console.log("Error uploading file: ", error);
-    }
+  await marketContract.methods
+    .listToken(MyNFTContractAddress.MyNFT, tokenId, auctionPrice)
+    .send({ from: defaultAccount });
+} catch (error) {
+  console.log("Error uploading file: ", error);
+}
 ```
 
 First, the metadata of the NFT token that was created in the previous block of code is uploaded to the IPFS network using the `client.add` method. The `add` method takes the `data` variable as an argument and returns an object that contains the IPFS hash of the uploaded file. The `added.path` property of the returned object is used to construct the IPFS URL for the uploaded metadata.
@@ -404,20 +413,23 @@ The `fetchNftMeta` function is a simple utility function that uses the `axios` l
 ### Full Code
 
 ```js
-import {create} from "ipfs-http-client";
+import { create } from "ipfs-http-client";
 import axios from "axios";
 import MyNFTContractAddress from "../contracts/MyNFT-address.json";
 import { BigNumber, ethers } from "ethers";
 
 const authorization =
-    "Basic " +
-    Buffer.from(
-        process.env.REACT_APP_PROJECT_ID +
-        ":" +
-        process.env.REACT_APP_PROJECT_SECRET
-    ).toString("base64");
+  "Basic " +
+  Buffer.from(
+    process.env.REACT_APP_PROJECT_ID +
+      ":" +
+      process.env.REACT_APP_PROJECT_SECRET
+  ).toString("base64");
 
-const client = create({ url: "https://ipfs.infura.io:5001/api/v0", headers: { authorization } });
+const client = create({
+  url: "https://ipfs.infura.io:5001/api/v0",
+  headers: { authorization },
+});
 
 export const createNft = async (
   minterContract,
@@ -461,7 +473,6 @@ export const createNft = async (
     }
   });
 };
-
 
 export const getNfts = async (minterContract, marketContract) => {
   try {
@@ -541,7 +552,9 @@ export const buyNft = async (
         await marketContract.methods
           .buyToken(index)
           .send({ from: defaultAccount, value: listing.price });
-        await minterContract.methods.resaleApproval(tokenId).send({from: defaultAccount})
+        await minterContract.methods
+          .resaleApproval(tokenId)
+          .send({ from: defaultAccount });
       } catch (error) {
         console.log({ error });
       }
@@ -556,7 +569,7 @@ export const buyNft = async (
 
 Congratulations! You have completed the tutorial that guides you through the process of creating and storing NFT metadata on the IPFS network. By following this tutorial, you have learned how to use the Infura REST API to upload files to IPFS, how to use Infura to access the IPFS network, and how to use the IPFS client library to store NFT metadata on the network.
 
-##  Next Steps
+## Next Steps
 
 We only covered a specific aspect of this pathway tutorial, We would cover the remainder of the minter.js file in another tutorial as they do not implement IPFS. But you can try it out yourself by using the full project [here](https://github.com/dahnny/dripto-ponks)
 
