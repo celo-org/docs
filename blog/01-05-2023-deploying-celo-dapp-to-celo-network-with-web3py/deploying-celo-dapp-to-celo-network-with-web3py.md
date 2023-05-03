@@ -168,14 +168,18 @@ Now that the transaction has been mined we can get the deployed contract address
 contract_address = tx_receipt.contract_address
 ```
 
-We can then generate a contract instance using `web3.py`.
+We can then generate a contract instance using `web3.py` and `ConciseContract`. The `ConciseContract` is not a part of the official Web3.py documentation, but rather a third-party library that builds on top of Web3.py to provide a simpler, more user-friendly interface for interacting with smart contracts. To use ConciseContract, you would need to install the web3-contract package, which provides the `ConciseContract`. You can install the it with the following command:
+```py
+pip install web3-contract
+```
+Now, we can generate the contract instance
 
 ```py
 from web3.contract import ConciseContract
 MyContract = ConciseContract(w3.eth.contract(address=contract_address, abi=abi))
 ```
 
-Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract
+Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract. 
 
 Finally, we can call a function on the deployed contract. Wecan use the followng code to call a function on the deployed contract:
 
