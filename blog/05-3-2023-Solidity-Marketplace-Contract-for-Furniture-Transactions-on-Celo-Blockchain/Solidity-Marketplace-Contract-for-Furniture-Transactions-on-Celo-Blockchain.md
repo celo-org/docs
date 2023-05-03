@@ -151,3 +151,46 @@ contract MarketPlace {
 
 }
 ```
+
+Step 1: Specify the License
+
+```solidity
+ // SPDX-License-Identifier: MIT
+
+pragma solidity >=0.7.0 <0.9.0;
+```
+
+To begin, let's specify the license for the code. We will use the MIT license, which grants permissions for various use cases. By specifying the license, we establish the terms under which the code can be used, modified, and distributed. This step ensures clarity and transparency regarding the usage of the codebase.
+
+Step 2: Define the ERC-20 Token Interface
+
+```solidity
+interface IERC20Token {
+    function transfer(address, uint256) external returns (bool);
+
+    function approve(address, uint256) external returns (bool);
+
+    function transferFrom(
+        address,
+        address,
+        uint256
+    ) external returns (bool);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address) external view returns (uint256);
+
+    function allowance(address, address) external view returns (uint256);
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+}
+```
+
+In this step, we define an interface called IERC20Token. The interface serves as a blueprint for interacting with ERC-20 tokens. It includes functions such as `transfer`, `approve`, and `transferFrom`, which enable token transfers between addresses and manage allowances for delegated transfers. Additionally, the interface provides functions like `totalSupply` and `balanceOf` to retrieve information about the token supply and individual token balances. Events like `Transfer` and `Approval` are also defined to emit notifications for token transfers and approvals. By defining this interface, we establish a common set of methods and events for interacting with ERC-20 tokens, promoting compatibility and interoperability among different token contracts.
+
+
