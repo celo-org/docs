@@ -1,12 +1,12 @@
 ---
-title: Getting Started with Celo: A Beginner's Guide
-description: 
+title: Getting Started with Celo; A Beginner Guide
+description: I walk readers through the process of setting up a Celo wallet and making their first transaction on the blockchain using Solidity and Javascript
 authors:
   - name: ✍️ Joshua Obafemi
   - title: Technical Writer
   - url: https://github.com/jorshimayor
   - image_url: https://github.com/jorshimayor.png
-tags: [celosage, celo, advanced, solidity, javascript]
+tags: [celosage, celo, beginner, solidity, javascript]
 hide_table_of_contents: true
 slug: "/tutorials/getting-started-with-celo"
 ---
@@ -19,35 +19,31 @@ Celo is a blockchain platform that aims to provide a decentralized financial inf
 
 In this beginner's guide, we'll cover the basics of Celo and walk you through the process of setting up your development environment and building your first Celo smart contract.
 
+
+
+
 # Prerequistes
+Before proceeding, you should read this articles:
+
+- [Celo Concensus Mechanism](https://docs.celo.org/blog/tutorials/a-deep-dive-into-celo-consensus-mechanism)
+
+- [Layer 1 and Layer 2 blockchains](https://docs.celo.org/blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols)
+
+- [Blockchain Basics](https://docs.celo.org/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo)
+
+
 
 # Requirements
+Before we dive into the tutorial, you will need the following tools and accounts:
+
+- Visual Studio Code (VSCode) or any other code editor
+- Node.js and npm (Node Package Manager) installed on your machine
+- A Celo account with testnet funds (You can obtain testnet funds from the Celo Faucet)
+
 
 # Getting Started:
 
-Before we dive into the technical aspects of Celo, let's take a look at some of the key concepts you need to understand:
-
-1. Celo Blockchain: The underlying blockchain technology that powers the Celo platform.
-2. Celo Network: A network of nodes that work together to maintain the Celo blockchain.
-3. Smart Contracts: Self-executing contracts that are stored on the blockchain and can automate the exchange of assets, data, and other valuable resources.
-4. Celo Wallet: A digital wallet that enables users to send and receive Celo, Celo Dollars, and other digital assets.
-5. Gas Fees: Fees paid to miners to process transactions on the Celo blockchain.
-
 Now, let's get started with building your first Celo smart contract.
-
-Setting Up Your Development Environment:
-
-To get started with Celo development, you'll need to set up your development environment. Here's what you'll need:
-
-
-
-1. Node.js: A JavaScript runtime environment that allows you to run JavaScript on the server-side.
-2. CeloCLI: A command-line interface tool that allows you to interact with the Celo blockchain.
-3. Visual Studio Code: A lightweight code editor that provides an intuitive and powerful interface for writing code.
-
-Once you have these tools installed, you're ready to start building your first Celo smart contract.
-
-Building Your First Celo Smart Contract:
 
 In this section, we'll walk you through the process of building a simple smart contract that enables users to send and receive Celo.
 
@@ -136,12 +132,12 @@ Congratulations! You've just deployed your first Celo smart contract.
 
 # Conclusion
 
-In this beginner's guide, we covered the basics of Celo and walked you through the process of setting up your development environment and building your first Celo smart contract
+In this beginner's guide, we covered the basics of Celo and walked you through the process of setting up your development environment, building and deploying your first Celo smart contract.
 
 
 
 # Next Steps
-
+Now that you have deployed your first Celo smart contract, you can go ahead and build more advanced applications on the Celo blockchain. Click [here](https://docs.celo.org/tutorials) to learn more.
 
 
 # About the Author
@@ -149,3 +145,9 @@ In this beginner's guide, we covered the basics of Celo and walked you through t
 Joshua Obafemi
 
 I'm a Web3 fullstack developer and technical writer. You can connect with me on [GitHub](https://github.com/jorshimayor), [Twitter](https://twitter.com/jorshimayor), [Linkedin](https://www.linkedin.com/in/joshua-obafemi-ba2014199/).
+
+
+
+# References
+
+[Source Code](https://github.com/jorshimayor/First-Celo-Smart-Contract)
