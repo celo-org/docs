@@ -6,7 +6,7 @@ authors:
     title: Technical Writer
     url: https://github.com/Southpaw0
     image_url: https://user-images.githubusercontent.com/104994589/236332602-f89f9e01-de4c-40c7-9c18-50da2ed62caf.png
-tags: [celosage, celo, smartcontract, solidity, intermediate]
+tags: [celosage, smartcontract, solidity, intermediate]
 hide_table_of_contents: true
 slug: /tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python
 ---
