@@ -3,9 +3,9 @@ title: Developing a Hair Product Marketplace on Celo with Solidity and OpenZeppe
 description: This tutorial is for a decentralized hair marketplace on the Celo blockchain, where users can buy and sell hair products using the cUSD stablecoin
 authors:
   - name: David Ikanji
-    title: Technical Writer 
-    url:  https://github.com/Ikanji201
-    image_url:  https://avatars.githubusercontent.com/u/115812158?v=4
+    title: Technical Writer
+    url: https://github.com/Ikanji201
+    image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [solidity, intermediate, celo, celosage]
 hide_table_of_contents: true
 slug: /tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin
@@ -25,14 +25,13 @@ To take this tutorial, you will need:
 
 - A reliable internet browser and internet connection
 
-## PREREQUISITE 
+## PREREQUISITE
 
 - Basic knowledge of Javascript.
 
 - Understand how Blockchain works.
-  
-- Have a basic knowledge of solidity.
 
+- Have a basic knowledge of solidity.
 
 Now let's begin writing our smart contract.
 
@@ -71,8 +70,8 @@ interface IERC20Token {
 }
 
 contract  Hairs {
-    
-    
+
+
     uint internal hairsLength = 0;
     address internal cUsdTokenAddress =  0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1;
 
@@ -83,13 +82,13 @@ contract  Hairs {
         string color;
         string durability;
          uint price;
-         
-        
+
+
     }
      mapping (uint =>  Hair) internal hairs;
 
       function  addHair(
-        string memory _image, 
+        string memory _image,
         string memory _brand,
         string memory _color,
         string memory _durability,
@@ -106,30 +105,30 @@ contract  Hairs {
           Haircentials.durability = _durability;
               Haircentials.price = _price;
 
-  
+
         hairsLength++;
           }
 
-          
+
      function getHair(uint _index) public view returns (
         address payable,
-        string memory,  
+        string memory,
         string memory,
         string memory,
         string memory,
         uint
-        
-        
-      
+
+
+
     ) {
-        return (  
+        return (
             hairs[_index].owner,
              hairs[_index].image,
               hairs[_index].brand,
               hairs[_index].color,
                hairs[_index].durability,
                  hairs[_index].price
-               
+
         );
     }
 
@@ -139,7 +138,7 @@ contract  Hairs {
         hairs[_index].image = _image;
      }
 
-    
+
       function buyHair(uint _index) public payable  {
         require(
           IERC20Token(cUsdTokenAddress).transferFrom(
@@ -151,7 +150,7 @@ contract  Hairs {
         );
 
          hairs[_index].owner = payable(msg.sender);
-         
+
     }
 
      function gethairsLength() public view returns (uint) {
@@ -223,7 +222,7 @@ contract  Hairs {
         string color;
         string durability;
          uint price;
-         
+
     }
 ```
 
@@ -236,6 +235,7 @@ Furthermore, we add a mapping.
 ```solidity
  mapping (uint =>  Hair) internal hairs;
 ```
+
 In this smart contract, we are using a mapping data structure to store the details of each hair token. The mapping keyword is used to create a key-value mapping between a uint key and a Hair struct value. The internal `visibility modifier` is used to restrict access to the mapping only to the contract and its derived contracts.
 
 We can access the mapping using the key `uint` to retrieve the corresponding Hair struct. By using this mapping, we can efficiently store and access information about each hair token in the contract.
@@ -244,7 +244,7 @@ Furthermore, to make our smart contract more interesting we begin to add functio
 
 ```solidity
  function  addHair(
-        string memory _image, 
+        string memory _image,
         string memory _brand,
         string memory _color,
         string memory _durability,
@@ -261,7 +261,7 @@ Furthermore, to make our smart contract more interesting we begin to add functio
           Haircentials.durability = _durability;
               Haircentials.price = _price;
 
-  
+
         hairsLength++;
           }
 ```
@@ -275,21 +275,21 @@ Next we add the `getHair` function.
 ```solidity
  function getHair(uint _index) public view returns (
         address payable,
-        string memory,  
+        string memory,
         string memory,
         string memory,
         string memory,
         uint
-        
+
     ) {
-        return (  
+        return (
             hairs[_index].owner,
              hairs[_index].image,
               hairs[_index].brand,
               hairs[_index].color,
                hairs[_index].durability,
                  hairs[_index].price
-               
+
         );
     }
 
@@ -326,7 +326,7 @@ function buyHair(uint _index) public payable  {
         );
 
          hairs[_index].owner = payable(msg.sender);
-         
+
     }
 ```
 
@@ -365,7 +365,7 @@ Once the transaction is confirmed, the `hairMarketplace` contract will be deploy
 
 In this tutorial, we have learned how to create a smart contract for an online hair store using Solidity on the Celo blockchain. We have defined the Hair struct that contains the details of each hair product and created functions to add, get, and replace the image of the hair product. We have also implemented a buy function that uses the ERC20 token to facilitate the transaction between the buyer and the seller. Finally, we have created a function to retrieve the number of hair products in the store. By following this tutorial, we can develop a basic understanding of Solidity and smart contract development on the Celo blockchain.
 
-## NEXT STEPS 
+## NEXT STEPS
 
 I trust that you found this tutorial informative and learned a lot from it. If you would like to continue your education, I have provided some helpful links below that you may find useful to explore:
 
@@ -382,5 +382,3 @@ I hope these resources prove to be useful to you!
 ## About the author
 
 I'm David Ikanji, a web3 developer residing in Nigeria, and I have a strong passion for working with blockchain technology.
-
-
