@@ -33,3 +33,4 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [Layer Zero](https://layerzero.network/)
 - [Axelar Network](https://axelar.network/)
 - [Optics](https://optics.app)
+- [Squid Router](https://app.squidrouter.com/)
