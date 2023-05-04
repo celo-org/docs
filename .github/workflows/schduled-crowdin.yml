@@ -1,0 +1,47 @@
+name: Download and Upload Crowdin
+
+on:
+  schedule:
+    - cron: '12 0 * * *'
+
+jobs: # Test commit
+  schduled-crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: main
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Get today's date
+      run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Crowdin action
+      uses: crowdin/github-action@v1
+      with:
+        upload_sources: false
+        upload_translations: false
+        download_translations: true
+        create_pull_request: false
+        push_translations: false
+      env:
+        CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+    - name: Cache i18n
+      uses: actions/cache@v2
+      with:
+        path: i18n
+        key: ${{ runner.os }}-i18n-${{ env.TODAY }}
+        restore-keys: |
+          ${{ runner.os }}-i18n-
+
