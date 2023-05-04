@@ -32,7 +32,7 @@ The following tools are recommended and should be installed before proceeding.
 **What is Slither?**
 Slither is a static analysis framework for smart contracts development. With Slithet, developers are able to find vulnerabilities in smart contracts code written in solidity within seconds and optimize their code.
 
-Slither is a security tool for analyzing smart contracts. There are other smart contracts platforms such as TRON and so on. But this guide focuses on the Celo blockchain - `a platform acting as a global payment infrastructure for cryptocurrencies that aims to target mobile users, highly compatible with the Ethereum Virtual Machine. So if you write contracts that target the Celo platform, it is very important to prioritize security. This helps to detect and avoid a range of smart contract issues such as integer overflow/underflow, owner-overwrite-to-Ether-withdrawal, and many others.
+Slither is a security tool for analyzing smart contracts. There are other smart contracts platforms such as TRON and so on. But this guide focuses on the Celo blockchain - a platform acting as a global payment infrastructure for cryptocurrencies that aims to target mobile users, highly compatible with the Ethereum Virtual Machine. So if you write contracts that target the Celo platform, it is very important to prioritize security. This helps to detect and avoid a range of smart contract issues such as integer overflow/underflow, owner-overwrite-to-Ether-withdrawal, and many others.
 
 **Installing Slither**
 
