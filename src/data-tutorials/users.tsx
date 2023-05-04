@@ -2735,6 +2735,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
+   {
+    title: 'Building a Celo-Based Remittance Smart contract and interacting with it using Python',
+    description: "Explore building a remittance smart contract with Celo's blockchain and Python, leveraging cUSD for fast, secure cross-border transactions.",
+    preview: require('./showcase/intermediate/building-a-celo-based-remittance-smart-contract-and-interacting-with-it-using-python.png'),
+    website: 'blog/tutorials/building-a-celo-based-remittance-smart-contract-and-interacting-with-it-using-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
