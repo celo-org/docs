@@ -1,6 +1,6 @@
 ---
 title: Creating a Decentralized Insurance Service on Celo with Python
-description: Learn to build a decentralized insurance smart contract on Celo blockchain using Python, providing accessible, transparent coverage with stablecoins and smart contracts..
+description: Learn to build a decentralized insurance smart contract on Celo blockchain using Python, providing accessible, transparent coverage with stablecoins and smart contracts.
 authors:
   - name: Divine Favour
 url: https://github.com/Divine572
