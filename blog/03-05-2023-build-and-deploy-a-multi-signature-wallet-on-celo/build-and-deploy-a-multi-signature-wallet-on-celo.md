@@ -619,8 +619,8 @@ Before we can deploy the contract to the blockchain, we need to first make sure 
 Create a file called `Multisig.test.js` under the `/test` folder and inside the files import;
 
 ```js
-const { expect } = require('chai')
-const { ethers } = require('hardhat')
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
 ```
 
 We will be writing unit tests for our smart contract using the Chai assertion library and the Hardhat development environment. The `expect` function is a method provided by the Chai assertion library that allows us to make assertions about the values returned by our smart contract functions. The `ethers` object is a library provided by Hardhat that allows us to interact with our smart contract during testing. We will use this object to deploy the contract and interact with it in our tests.
@@ -672,24 +672,32 @@ This function will be called at the start of each test to provide a fresh instan
 The `describe` function is used to group related tests together, and in this case, we are grouping tests related to the constructor function.
 
 ```js
-  describe('Constructor', function () {
-    it('Should add the owners to the contract', async function () {
-      const { contract, contractAddress, account1, account2 } =
-        await deployMultisigWallet()
+describe("Constructor", function () {
+  it("Should add the owners to the contract", async function () {
+    const {
+      contract,
+      contractAddress,
+      account1,
+      account2,
+    } = await deployMultisigWallet();
 
-      const owners = await contract.getOwners()
+    const owners = await contract.getOwners();
 
-      expect(account1, account2).to.equal(owners[0], owners[1])
-    })
+    expect(account1, account2).to.equal(owners[0], owners[1]);
+  });
 
-    it('Should add the number of confimations successfully', async function () {
-      const { contract, contractAddress, account1, account2 } =
-        await deployMultisigWallet()
+  it("Should add the number of confimations successfully", async function () {
+    const {
+      contract,
+      contractAddress,
+      account1,
+      account2,
+    } = await deployMultisigWallet();
 
-      const confirmations = await contract.getNumberOfConfimationsRequired()
-      expect(Number(confirmations.toString())).to.equal(2)
-    })
-  })
+    const confirmations = await contract.getNumberOfConfimationsRequired();
+    expect(Number(confirmations.toString())).to.equal(2);
+  });
+});
 ```
 
 The first test case uses the `it` function to verify that the owners are added to the contract successfully. The `deployMultisigWallet` function is called to deploy the contract, and then the `getOwners` function is called to retrieve the list of owners. Finally, the `expect` function is used to compare the retrieved owners with the expected owners, which are `account1` and `account2`.
@@ -699,7 +707,7 @@ The second test case verifies that the number of confirmations required is added
 To run tests, specific to the constructor, in the terminal type;
 
 ```bash
-npx hardhat test --grep "Constructor" 
+npx hardhat test --grep "Constructor"
 ```
 
 Output:
@@ -806,52 +814,52 @@ The third test case checks if a transaction is successfully confirmed. We add a 
 The `executeTransaction` is used to execute a transaction that has received the required number of confirmations and in it, we have two test cases as shown below;
 
 ```js
-  describe('ExecuteTx', function () {
-    it('Should fail when the transaction has less confirmations', async function () {
-      const { contract, account1, account2 } = await deployMultisigWallet()
+describe("ExecuteTx", function () {
+  it("Should fail when the transaction has less confirmations", async function () {
+    const { contract, account1, account2 } = await deployMultisigWallet();
 
-      const amount = ethers.utils.parseEther('1')
-      const reason = 'Payments for stuff'
+    const amount = ethers.utils.parseEther("1");
+    const reason = "Payments for stuff";
 
-      // Add a new transaction
-      await contract.submitTransaction(account2, amount, reason, {
-        from: account1,
-      })
+    // Add a new transaction
+    await contract.submitTransaction(account2, amount, reason, {
+      from: account1,
+    });
 
-      // Confirm the Tx
-      await contract.confirmTransaction(0)
+    // Confirm the Tx
+    await contract.confirmTransaction(0);
 
-      await expect(contract.executeTransaction(0)).to.be.revertedWithCustomError
-    })
+    await expect(contract.executeTransaction(0)).to.be.revertedWithCustomError;
+  });
 
-    it('Should successfully execute the transaction and transfer the balance', async function () {
-      const { contract, account1, account2 } = await deployMultisigWallet()
+  it("Should successfully execute the transaction and transfer the balance", async function () {
+    const { contract, account1, account2 } = await deployMultisigWallet();
 
-      const [deployer, otherAccount, thirdAccount] = await ethers.getSigners()
+    const [deployer, otherAccount, thirdAccount] = await ethers.getSigners();
 
-      const localContract = await contract.connect(otherAccount)
+    const localContract = await contract.connect(otherAccount);
 
-      const amount = ethers.utils.parseEther('1')
-      const reason = 'Payments for stuff'
+    const amount = ethers.utils.parseEther("1");
+    const reason = "Payments for stuff";
 
-      // Add a new transaction
-      await contract.submitTransaction(account2, amount, reason, {
-        from: account1,
-      })
+    // Add a new transaction
+    await contract.submitTransaction(account2, amount, reason, {
+      from: account1,
+    });
 
-      // Confirm the Tx
-      await contract.confirmTransaction(0)
+    // Confirm the Tx
+    await contract.confirmTransaction(0);
 
-      await localContract.confirmTransaction(0)
+    await localContract.confirmTransaction(0);
 
-      // Execute the tx
-      await contract.executeTransaction(0)
+    // Execute the tx
+    await contract.executeTransaction(0);
 
-      const tx = await contract.getTransactions()
+    const tx = await contract.getTransactions();
 
-      expect(tx[0].executed).to.be.true
-    })
-  })
+    expect(tx[0].executed).to.be.true;
+  });
+});
 ```
 
 1. The first test case tests if the function fails when the transaction has fewer confirmations than required.
@@ -880,167 +888,180 @@ Running the full test without a flag will run the test from top to bottom as sho
 Here's the full test file code:
 
 ```js
-const { expect } = require('chai')
-const { ethers } = require('hardhat')
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
 
-describe('MultisigWallet', function () {
+describe("MultisigWallet", function () {
   async function deployMultisigWallet() {
-    const signers = await ethers.getSigners()
+    const signers = await ethers.getSigners();
 
-    const account1 = await signers[0].getAddress()
-    const account2 = await signers[1].getAddress()
+    const account1 = await signers[0].getAddress();
+    const account2 = await signers[1].getAddress();
 
-    const amount = ethers.utils.parseEther('10')
+    const amount = ethers.utils.parseEther("10");
 
     const Contract = await ethers.getContractFactory(
-      'MultisigWallet',
+      "MultisigWallet",
       signers[0]
-    )
+    );
     const multisigContract = await Contract.deploy([account1, account2], {
       value: amount,
-    })
+    });
 
-    await multisigContract.deployed()
+    await multisigContract.deployed();
 
-    contract = multisigContract
-    contractAddress = multisigContract.address
+    contract = multisigContract;
+    contractAddress = multisigContract.address;
 
-    return { contract, contractAddress, account1, account2 }
+    return { contract, contractAddress, account1, account2 };
   }
 
-  describe('Constructor', function () {
-    it('Should add the owners to the contract', async function () {
-      const { contract, contractAddress, account1, account2 } =
-        await deployMultisigWallet()
+  describe("Constructor", function () {
+    it("Should add the owners to the contract", async function () {
+      const {
+        contract,
+        contractAddress,
+        account1,
+        account2,
+      } = await deployMultisigWallet();
 
-      const owners = await contract.getOwners()
+      const owners = await contract.getOwners();
 
-      expect(account1, account2).to.equal(owners[0], owners[1])
-    })
+      expect(account1, account2).to.equal(owners[0], owners[1]);
+    });
 
-    it('Should add the number of confimations successfully', async function () {
-      const { contract, contractAddress, account1, account2 } =
-        await deployMultisigWallet()
+    it("Should add the number of confimations successfully", async function () {
+      const {
+        contract,
+        contractAddress,
+        account1,
+        account2,
+      } = await deployMultisigWallet();
 
-      const confirmations = await contract.getNumberOfConfimationsRequired()
-      expect(Number(confirmations.toString())).to.equal(2)
-    })
-  })
+      const confirmations = await contract.getNumberOfConfimationsRequired();
+      expect(Number(confirmations.toString())).to.equal(2);
+    });
+  });
 
-  describe('SubmitTx', function () {
-    it('Should successfully submit a transaction', async function () {
-      const { contract, contractAddress, account1, account2 } =
-        await deployMultisigWallet()
+  describe("SubmitTx", function () {
+    it("Should successfully submit a transaction", async function () {
+      const {
+        contract,
+        contractAddress,
+        account1,
+        account2,
+      } = await deployMultisigWallet();
 
-      const amount = ethers.utils.parseEther('1')
+      const amount = ethers.utils.parseEther("1");
 
-      const reason = 'Payment for stuff'
+      const reason = "Payment for stuff";
       await contract.submitTransaction(account2, amount, reason, {
         from: account1,
-      })
+      });
 
-      const txs = await contract.getTransactions()
+      const txs = await contract.getTransactions();
 
-      expect(txs.length).to.be.greaterThan(0)
-    })
-  })
+      expect(txs.length).to.be.greaterThan(0);
+    });
+  });
 
-  describe('ConfirmTx', function () {
-    it('Should fail when a non owner tries to confirm the transaction', async function () {
-      const { contract } = await deployMultisigWallet()
+  describe("ConfirmTx", function () {
+    it("Should fail when a non owner tries to confirm the transaction", async function () {
+      const { contract } = await deployMultisigWallet();
 
       // const signers = await ethers.getSigners()
-      const [deployer, otherAccount, thirdAccount] = await ethers.getSigners()
+      const [deployer, otherAccount, thirdAccount] = await ethers.getSigners();
 
-      const localContract = await contract.connect(thirdAccount)
+      const localContract = await contract.connect(thirdAccount);
 
       await expect(localContract.confirmTransaction(0)).to.be
-        .revertedWithCustomError
-    })
+        .revertedWithCustomError;
+    });
 
-    it('Should fail when a transaction entered does not exist', async function () {
-      const { contract, account1, account2 } = await deployMultisigWallet()
+    it("Should fail when a transaction entered does not exist", async function () {
+      const { contract, account1, account2 } = await deployMultisigWallet();
 
-      const amount = ethers.utils.parseEther('1')
-      const reason = 'Payments for stuff'
+      const amount = ethers.utils.parseEther("1");
+      const reason = "Payments for stuff";
 
       // Add a new transaction
       await contract.submitTransaction(account2, amount, reason, {
         from: account1,
-      })
+      });
 
       await expect(contract.confirmTransaction(100)).to.be
-        .revertedWithCustomError
-    })
-  })
+        .revertedWithCustomError;
+    });
+  });
 
-  it('Should successfully confirm the transaction', async function () {
-    const { contract, account1, account2 } = await deployMultisigWallet()
+  it("Should successfully confirm the transaction", async function () {
+    const { contract, account1, account2 } = await deployMultisigWallet();
 
-    const amount = ethers.utils.parseEther('1')
-    const reason = 'Payments for stuff'
+    const amount = ethers.utils.parseEther("1");
+    const reason = "Payments for stuff";
 
     // Add a new transaction
     await contract.submitTransaction(account2, amount, reason, {
       from: account1,
-    })
+    });
 
     // Confirm the Tx
-    await contract.confirmTransaction(0)
+    await contract.confirmTransaction(0);
 
     // Check to see if it was confirmed
-    const txStatus = await contract.getTransactions()
+    const txStatus = await contract.getTransactions();
 
-    expect(Number(txStatus[0].confirmations.toString())).to.equal(1)
-  })
+    expect(Number(txStatus[0].confirmations.toString())).to.equal(1);
+  });
 
-  describe('ExecuteTx', function () {
-    it('Should fail when the transaction has less confirmations', async function () {
-      const { contract, account1, account2 } = await deployMultisigWallet()
+  describe("ExecuteTx", function () {
+    it("Should fail when the transaction has less confirmations", async function () {
+      const { contract, account1, account2 } = await deployMultisigWallet();
 
-      const amount = ethers.utils.parseEther('1')
-      const reason = 'Payments for stuff'
-
-      // Add a new transaction
-      await contract.submitTransaction(account2, amount, reason, {
-        from: account1,
-      })
-
-      // Confirm the Tx
-      await contract.confirmTransaction(0)
-
-      await expect(contract.executeTransaction(0)).to.be.revertedWithCustomError
-    })
-
-    it('Should successfully execute the transaction and transfer the balance', async function () {
-      const { contract, account1, account2 } = await deployMultisigWallet()
-
-      const [deployer, otherAccount, thirdAccount] = await ethers.getSigners()
-
-      const localContract = await contract.connect(otherAccount)
-
-      const amount = ethers.utils.parseEther('1')
-      const reason = 'Payments for stuff'
+      const amount = ethers.utils.parseEther("1");
+      const reason = "Payments for stuff";
 
       // Add a new transaction
       await contract.submitTransaction(account2, amount, reason, {
         from: account1,
-      })
+      });
 
       // Confirm the Tx
-      await contract.confirmTransaction(0)
+      await contract.confirmTransaction(0);
 
-      await localContract.confirmTransaction(0)
+      await expect(contract.executeTransaction(0)).to.be
+        .revertedWithCustomError;
+    });
+
+    it("Should successfully execute the transaction and transfer the balance", async function () {
+      const { contract, account1, account2 } = await deployMultisigWallet();
+
+      const [deployer, otherAccount, thirdAccount] = await ethers.getSigners();
+
+      const localContract = await contract.connect(otherAccount);
+
+      const amount = ethers.utils.parseEther("1");
+      const reason = "Payments for stuff";
+
+      // Add a new transaction
+      await contract.submitTransaction(account2, amount, reason, {
+        from: account1,
+      });
+
+      // Confirm the Tx
+      await contract.confirmTransaction(0);
+
+      await localContract.confirmTransaction(0);
 
       // Execute the tx
-      await contract.executeTransaction(0)
+      await contract.executeTransaction(0);
 
-      const tx = await contract.getTransactions()
+      const tx = await contract.getTransactions();
 
-      expect(tx[0].executed).to.be.true
-    })
-  })
-})
+      expect(tx[0].executed).to.be.true;
+    });
+  });
+});
 ```
 
 ### Deploying the contract
@@ -1084,20 +1105,20 @@ Overall, this script file is used to configure the various settings of the Hardh
 Full `hardhat.config.js` file;
 
 ```js
-require('@nomicfoundation/hardhat-toolbox')
-require('dotenv').config()
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
-const { ALFAJORES_API_KEY, ALFAJORES_URL, PRIVATE_KEY } = process.env
+const { ALFAJORES_API_KEY, ALFAJORES_URL, PRIVATE_KEY } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  defaultNetwork: 'hardhat',
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 31337,
     },
     localhost: {
-      url: 'http://127.0.0.1:8545',
+      url: "http://127.0.0.1:8545",
       chainId: 31337,
     },
     alfajores: {
@@ -1109,16 +1130,16 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: '0.8.9',
+        version: "0.8.9",
       },
       {
-        version: '0.8.18',
+        version: "0.8.18",
       },
       {
-        version: '0.8.7',
+        version: "0.8.7",
       },
       {
-        version: '0.6.6',
+        version: "0.6.6",
       },
     ],
   },
@@ -1133,16 +1154,16 @@ module.exports = {
     },
     customChains: [
       {
-        network: 'alfajores',
+        network: "alfajores",
         chainId: 44787,
         urls: {
-          apiURL: 'https://api-alfajores.celoscan.io/api',
-          browserURL: 'https://alfajores.celoscan.io/',
+          apiURL: "https://api-alfajores.celoscan.io/api",
+          browserURL: "https://alfajores.celoscan.io/",
         },
       },
     ],
   },
-}
+};
 ```
 
 ### Deploy script
@@ -1172,39 +1193,39 @@ Now that our hardhat configuration is complete, we can now write a deploy script
 Inside `/scripts` create a file called `01-multisig-deploy.js`. This will define the main deploy script for the contract with the code below:
 
 ```js
-const { ethers, network } = require('hardhat')
-const verifyContract = require('../utils/verifyContract')
+const { ethers, network } = require("hardhat");
+const verifyContract = require("../utils/verifyContract");
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
-  const { deployer } = await getNamedAccounts()
+  const { deployer } = await getNamedAccounts();
 
-  const account1 = '0x5CBDf5f9E468dF3888e04155668CcAfC6F6C4dcf'
-  const account2 = '0xD2c2591162162Fc57a40bc8a3C9cff0E6dFc9824'
-  const chainId = network.config.chainId
-  const amount = ethers.utils.parseEther('0.5')
+  const account1 = "0x5CBDf5f9E468dF3888e04155668CcAfC6F6C4dcf";
+  const account2 = "0xD2c2591162162Fc57a40bc8a3C9cff0E6dFc9824";
+  const chainId = network.config.chainId;
+  const amount = ethers.utils.parseEther("0.5");
 
-  const { deploy, log } = deployments
+  const { deploy, log } = deployments;
 
-  const args = [[account1, account2]]
-  const waitConfirmations = 1
+  const args = [[account1, account2]];
+  const waitConfirmations = 1;
 
   // Only verify the contract when we are deploying on the celo test net
-  const tx = await deploy('MultisigWallet', {
+  const tx = await deploy("MultisigWallet", {
     from: deployer,
     args: args,
     waitConfirmations: waitConfirmations,
     log: true,
     value: amount,
-  })
-  log('MultisigWallet contract deployed --------------')
+  });
+  log("MultisigWallet contract deployed --------------");
 
   if (chainId != 31337) {
-    log('Verifying the contract on celoscan...')
-    await verifyContract(tx.address)
+    log("Verifying the contract on celoscan...");
+    await verifyContract(tx.address);
   }
-}
+};
 
-module.exports.tags = ['all', 'deploy']
+module.exports.tags = ["all", "deploy"];
 ```
 
 The script exports an async function that takes an object with two properties, `getNamedAccounts` and `deployments`, as its argument. The `getNamedAccounts` function is used to retrieve the addresses of named accounts that are defined in the `hardhat.config.js` file. The `deployments` object is used to deploy the MultisigWallet contract.
@@ -1222,22 +1243,22 @@ The script is tagged with the `all` and `deploy` tags, which means it will be ex
 The `verifyContract()` is used to verify the contract programmatically on the chain. The script is defined inside the `/utils` folder.
 
 ```js
-const { run } = require('hardhat')
+const { run } = require("hardhat");
 
 const verifyContract = async (contractAddress) => {
-  console.log('Verifying contract...')
+  console.log("Verifying contract...");
   try {
-    await run('verify:verify', {
+    await run("verify:verify", {
       address: contractAddress,
-    })
+    });
 
-    console.log('Contract verified!')
+    console.log("Contract verified!");
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-}
+};
 
-module.exports = { verifyContract }
+module.exports = { verifyContract };
 ```
 
 The `verifyContract` file is a utility function that exports a single function called `verifyContract`. This function takes in a `contractAddress` parameter and it verifies the contract on the blockchain.
@@ -1269,7 +1290,7 @@ We have learned how to deploy a multi-signature wallet smart contract on the Cel
 
 ## NextSteps
 
- Now that you have learned the basics of creating a multi-sig wallet, you can extend this tutorial to add more functionality to your contract, such as:
+Now that you have learned the basics of creating a multi-sig wallet, you can extend this tutorial to add more functionality to your contract, such as:
 
 1. Adding support for more signers to the contract
 2. Adding the ability to cancel transactions
