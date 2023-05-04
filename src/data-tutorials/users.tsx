@@ -703,12 +703,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-to-transition-from-web2-to-web3',
     tags: ['celosage', 'beginner','celo'],
   },
-    {
+  {
     title: 'Developing a Hair Product Marketplace on Celo with Solidity and OpenZeppelin',
     description: 'This tutorial is for a decentralized hair marketplace on the Celo blockchain, where users can buy and sell hair products using the cUSD stablecoin',
     preview: require('./showcase/intermediate/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin.png'),
     website: 'blog/tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin',
     tags: ['celosage', 'solidity', 'intermediate','celo'],
+  },
   {
     title: '1. Beginner Tutorials',
     description: 'Curated list of beginner Celo developer tutorials.',
