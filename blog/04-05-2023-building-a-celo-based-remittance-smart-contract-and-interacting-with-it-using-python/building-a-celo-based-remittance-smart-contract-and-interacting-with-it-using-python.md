@@ -326,9 +326,11 @@ On your terminal, run the following command to deploy your smart contract:
 python deploy.py
 ```
 
-![Screenshot 2023-05-04 at 2.18.10.png](Building%20a%20Celo-Based%20Remittance%20Smart%20contract%20an%20e1f3febde8374733a9ad8e339b6aba7f/Screenshot_2023-05-04_at_2.18.10.png)
+![images](https://user-images.githubusercontent.com/69091491/236292089-5e6dbce9-381b-4beb-871d-39ab2ad47563.png)
 
-### Step 4: Interacting with the deployed smart contract
+
+### Step 4: In
+teracting with the deployed smart contract
 
 Finally, let’s write a script that interacts with the remittance smart contract. Create a new file called `client.py` and paste the following code:
 
@@ -428,7 +430,8 @@ Now, let’s run the code to see how well we interacted with the smart contract 
 python client.py
 ```
 
-![Screenshot 2023-05-04 at 16.29.58.png](Building%20a%20Celo-Based%20Remittance%20Smart%20contract%20an%20e1f3febde8374733a9ad8e339b6aba7f/Screenshot_2023-05-04_at_16.29.58.png)
+![images](https://user-images.githubusercontent.com/69091491/236291761-d13fa813-7525-40dd-9d52-7f3f1882daf4.png)
+
 
 ## Conclusion
 
