@@ -782,6 +782,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner','celo'],
   },
   {
+    title: 'Developing a Hair Product Marketplace on Celo with Solidity and OpenZeppelin',
+    description: 'This tutorial is for a decentralized hair marketplace on the Celo blockchain, where users can buy and sell hair products using the cUSD stablecoin',
+    preview: require('./showcase/intermediate/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin.png'),
+    website: 'blog/tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin',
+    tags: ['celosage', 'solidity', 'intermediate','celo'],
+  },
+  {
     title: 'How to Tokenize Physical Assets on Celo',
     description: 'Understand how to start the tokenization on Celo',
     preview: require('./showcase/beginner/how-to-tokenize.png'),
