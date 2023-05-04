@@ -3395,8 +3395,6 @@ const Users: User[] = [
     website: 'blog/tutorials/create-an-nft-with-a-delayed-reveal-on-celo',
     tags: ['celosage', 'intermediate', 'smartcontract', 'nft', 'solidity'], 
   },
-
-
   {
     title: 'Build a complete P2P Celo payment dapp with Flutter using Celo Composer',
     description: 'Learn how to build a CELO based p2p payment dApp with Flutter using Celo Composer for bootstrap.',
@@ -3404,9 +3402,6 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
- 
-
-
   {
     title: 'Using Clones to build and cheaply deploy contracts on CELO at scale',
     description: 'This tutorial introduces the clones (minmal proxy) approach to cheaply deploy contracts on CELO.',
@@ -3414,16 +3409,13 @@ const Users: User[] = [
     website: 'blog/tutorials/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale',
     tags: ['celosage', 'advanced', 'smartcontract', 'solidity'], 
   },
-
-
-   {
+  {
     title: 'Building a full stack Celo DApp with NextJS and Web3js',
     description: 'Learn How to Build Celo DApp with NextJS, a JavaScript Framework. You can build Celo DApp with Ease using NextJS',
     preview: require('./showcase/intermediate/building-a-full-stack-celo-dapp-with-nextjs-and-web3js.png'),
     website: 'blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
-  
   {
     title: 'How Does Blockchain Help Content Creators?',
     description: 'Learn how blockchain technoloty help content creators.',
@@ -3431,7 +3423,13 @@ const Users: User[] = [
     website: 'blog/tutorials/how-does-blockchain-help-content-creators',
     tags: ['celosage', 'beginner', 'solidity'], 
   },
-
+  {
+    title: 'Analyzing smart contracts security on Celo using Slither',
+    description: 'Analyze smart contracts using free security tools - Slither',
+    preview: require('./showcase/intermediate/analyzing-smart-contracts-security-on-celo-using-slither.png'),
+    website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
 
 
