@@ -1135,6 +1135,13 @@ const Users: User[] = [
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
   {
+    title: 'Build and Deploy a Secure Multi-Signature Wallet on the Celo Blockchain',
+    description: 'In this tutorial, we will walk through the process of creating a secure multi-signature wallet on the Celo blockchain.',
+    preview: require('./showcase/intermediate/build-and-deploy-a-secure-multi-signature-wallet-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/build-and-deploy-a-multi-signature-wallet-on-celo',
+    tags: ['celosage', 'celo', 'intermediate', 'solidity', 'javascript'],
+  },
+  {
     title: 'Build a Secure and Decentralized Product Delivery Dapp on the Celo Blockchain with Escrow Smart Contract',
     description: 'In this tutorial, we build a full-stack decentralized application for secure product delivery on the Celo blockchain using escrow smart contracts.',
     preview: require('./showcase/intermediate/build-a-decentralized-product-delivery-dapp-with-escrow-smart-contracts.png'),
