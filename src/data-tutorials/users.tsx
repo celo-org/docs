@@ -3270,7 +3270,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
 
   },
-
+   {
+    title: 'Creating a Decentralized Insurance Service on Celo with Python',
+    description: "Learn to build a decentralized insurance smart contract on Celo blockchain using Python, providing accessible, transparent coverage with stablecoins and smart contracts.",
+    preview: require('./showcase/intermediate/creating-a-decentralized-insurance-service-on-celo-with-python.png'),
+    website: 'blog/tutorials/creating-a-decentralized-insurance-service-on-celo-with-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  }, 
  {
     title: 'Creating a Staking Contract on Celo with Python',
     description: 'In this tutorial, you will learn how to build a staking contract on Celo using web3.py.',
@@ -3278,7 +3284,6 @@ const Users: User[] = [
     website: 'blog/tutorials/creating-a-staking-contract-on-celo-with-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   }, 
-
   {
     title: 'Implementing a Token on Celo using Golang',
     description: "This article could provide a step-by-step tutorial on how to implement a custom token on the Celo blockchain using the Golang SDK. It could cover topics such as defining the token's smart contract and deploying it to the Celo network. This article is for developers that want to get started with building blockchain applications using Golang on Celo.",
