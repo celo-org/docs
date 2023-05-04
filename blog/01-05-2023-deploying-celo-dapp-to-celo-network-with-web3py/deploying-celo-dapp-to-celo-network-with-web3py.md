@@ -24,9 +24,10 @@ slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 4. Have a registered Celo account on the Alfajores network with a balance to pay transaction fees
 
 ##  Requirements
-[Python3.6](https://www.python.org/downloads/release/python-368/)) or greater
+[Python3.6](https://www.python.org/downloads/release/python-368/) or greater
 
-##  Here is the overview of our code
+##  Write project code
+In this stage, we will create an application that can be deployed and used to interact with smart contracts using Web3Py. To begin, create a new file called app.py and copy the code below.
 
 ```python
 from web3 import Web3, HTTPProvider
@@ -66,7 +67,7 @@ result = MyContract.my_function()
 print(result)
 ```
 
-**Now, let's explain the code one by one**
+Next, we will discuss each line of code above one by one to ensure a thorough understanding of the code's functionality
 
 First, we will install the `web3.py` library. To install `web3.py`, you can run the following code in your terminal or command prompt or any Python IDE. I am using google colab here
 
@@ -74,12 +75,13 @@ First, we will install the `web3.py` library. To install `web3.py`, you can run 
 pip install web3
 ```
 
-Then we'll install the web3.contract library where we can import `ConciseContract`. The `ConciseContract` is not a part of the official Web3.py documentation, but rather a third-party library that builds on top of `Web3.py` to provide a simpler, more user-friendly interface for interacting with smart contracts. To use `ConciseContract`, you would need to install the `web3-contract package`, which provides the `ConciseContract`. We can install `ConciseContract` library with the following code.
+Then we'll install the web3.contract library where we can import the `ConciseContract` library.
 
 
 ```python
 pip install web3-contract
 ```
+Note that the `ConciseContract` is not a part of the official Web3.py documentation, but rather a third-party library that builds on top of `Web3.py` to provide a simpler, more user-friendly interface for interacting with smart contracts.
 
 Next, we'll now set up the web3 connection to the celo network. Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
 
