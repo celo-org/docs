@@ -18,6 +18,7 @@ slug: /tutorials/analyzing-smart-contracts-security-on-celo-using-slither
 Smart contracts are self-executing pieces of code deployed on a blockchain. EVM-compatible blockchains such as Celo are free from censorship, downtime, and third-party interference, and have since invented changed how software is perceived. However, as exciting as smart contracts are, they introduce known and probably undetected risks ranging from low to critical in severity. It is crucial for developers to thoroughly scrutinize contract code before deployment.
 
 ## Prerequisites​
+
 This guide introduces you to working with a security tool called Slither. You must at least be an intermediate working with smart contracts using solidity. If you're new in this space, I recommend starting from **[here](https://docs.celo.org/blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide)** and **[here](https://docs.celo.org/blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples)**.
 
 ## Requirements​
@@ -39,13 +40,16 @@ To use Slither, be sure Python is installed on your machine since we will need t
 
 **Steps**
 
-1. 
+1.
+
 ```bash
   pip3 install slither-analyzer
 ```
+
 This will install Slither globally, and you can use it anywhere. We need a tool called `solc-select` to manage the solidity compiler. If you just installed `slither-analyzer`, you do not need to install `solc-select` separately. It is already installed in the previous process. To confirm if `solc-select` is installed, run:
 
-2. 
+2.
+
 ```bash
     solc --version
 ```
@@ -56,11 +60,13 @@ You should see a version printed in the terminal.
 
 This is the current version of solc installed on my system. If otherwise, install `solc-select` following these steps.
 
-3. 
+3.
+
 ```bash
 pip3 install solc-select
 
 ```
+
 Check again if correctly installed. Perform step 2. This time, it should return success.
 
 To use Slither, we have to install the require compiler version in the contract files and tell `solc-select` which version to use during compilation. First, let's check if we have versions of the compiler previously installed.
@@ -68,29 +74,30 @@ To use Slither, we have to install the require compiler version in the contract 
 ```bash
 solc-select install
 ```
+
 In my terminal, I got several previously installed versions.
 
 ![image](images/1.png)
 
-But if nothing was returned in your terminal, you will have to install the versions you want. You can install a specific version or simply get the latest version. 
+But if nothing was returned in your terminal, you will have to install the versions you want. You can install a specific version or simply get the latest version.
 
 ```bash
     solc-select install <version>
 ```
 
-or 
+or
 
 ```bash
     solc-select latest
 ```
 
-After installation, we have to explicitly tell `solc` which version we are using. 
+After installation, we have to explicitly tell `solc` which version we are using.
 
 ```bash
     solc-select use <version>
 ```
 
-Example: 
+Example:
 
 ```bash
     solc-select use 0.8.18
@@ -117,6 +124,7 @@ Now that we have instructed `solc-select` which version to use, let's make Slith
 ```bash Yarn
     yarn add hardhat
 ```
+
 ```bash NPM
     npm install hardhat
 ```
@@ -167,7 +175,7 @@ We will use the boilerplate code provided to us by Hardhat. Create a new file, n
 
 ```
 
->Note: I only modified the existing content for tutorial purposes. Do not use it in production.
+> Note: I only modified the existing content for tutorial purposes. Do not use it in production.
 
 Let's ask Slither to review the current status of the code. Run the following command by invoking Slither followed by the path to the contract.
 
@@ -241,7 +249,7 @@ Replace the `withdraw` function with the code below.
 
         (bool sent,) = address(msg.sender).call{value: amount}("");
         require(sent);
-        
+
         emit Withdrawal(address(this).balance, block.timestamp);
 
     }
