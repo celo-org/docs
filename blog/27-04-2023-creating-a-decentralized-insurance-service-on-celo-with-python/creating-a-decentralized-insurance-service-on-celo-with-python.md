@@ -109,7 +109,7 @@ This smart contract illustrates a fundamental insurance plan that a policyholder
 
 ### Step 3: Compile and deploy the Smart Contract
 
-Next, let’s create a script that we can use to compile and deploy the Insurance smart contract. Create a new file called `[deploy.py](http://deploy.py)`   and paste the following code:
+Next, let’s create a script that we can use to compile and deploy the Insurance smart contract. Create a new file called `[deploy.py](http://deploy.py)` and paste the following code:
 
 deploy.py
 
@@ -198,7 +198,6 @@ python deploy.py
 ```
 
 ![screenshot](https://user-images.githubusercontent.com/69091491/234934902-69a2b03f-9bfc-4004-8f69-848feafbe702.png)
-
 
 ### Step 3: Interact with the Insurance smart contract
 
@@ -401,7 +400,6 @@ python clienty.py
 ```
 
 ![Screenshot](https://user-images.githubusercontent.com/69091491/234935264-0535491a-8f16-4b42-b293-a26a09670439.png)
-
 
 ## Conclusion
 
