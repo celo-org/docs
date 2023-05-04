@@ -83,7 +83,7 @@ pip install web3-contract
 ```
 Note that the `ConciseContract` is not a part of the official Web3.py documentation, but rather a third-party library that builds on top of `Web3.py` to provide a simpler, more user-friendly interface for interacting with smart contracts.
 
-Next, we'll now set up the web3 connection to the celo network. Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
+Next, we'll set up the web3 connection to the celo network. Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
 
 ```python
 # First import the necessary library
