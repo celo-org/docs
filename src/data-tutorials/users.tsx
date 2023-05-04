@@ -3442,7 +3442,14 @@ const Users: User[] = [
     website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+{
 
+    title: 'Developing a Smart Contract-based Supply Chain Management System on Celo Blockchain using Python',
+    description: 'This tutorial explores the use of Python to develop a supply chain management system using smart contracts on the Celo blockchain.',
+    preview: require('./showcase/intermediate/sage-developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python.png'),
+    website: 'blog/tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
 
 
