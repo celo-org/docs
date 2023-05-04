@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Celo: A Beginner's Guide
+title: Getting Started with Celo; A Beginner's Guide
 description: 
 authors:
   - name: ✍️ Joshua Obafemi

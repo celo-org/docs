@@ -1147,9 +1147,16 @@ const Users: User[] = [
   {
     title: 'Creating A Custom Token On Celo',
     description: 'This article will walk readers through the process of creating a custom token on Celo blockchain, using tools such as VSCode and the Celo ContractKit.',
-    preview: require('./showcase/beginner/creating-a-custom-token-on-celo".png'),
-    website: 'blog/tutorials/creating-a-custom-token-on-celo"',
+    preview: require('./showcase/beginner/creating-a-custom-token-on-celo.png'),
+    website: 'blog/tutorials/creating-a-custom-token-on-celo',
     tags: ['intermediate','celo', 'celosage', 'javascript', 'solidity'],
+  },
+  {
+    title: 'Getting Started with Celo; A Beginner Guide',
+    description: 'I walk readers through the process of setting up a Celo wallet and making their first transaction on the blockchain using Solidity and Javascript.',
+    preview: require('./showcase/beginner/getting-started-with-celo.png'),
+    website: 'blog/tutorials/getting-started-with-celo',
+    tags: ['beginner','celo', 'celosage', 'javascript', 'solidity'],
   },
   {
     title: 'Como implantar um contrato inteligente ERC721 usando a API Tatum',
