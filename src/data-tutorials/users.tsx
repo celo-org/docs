@@ -1541,6 +1541,13 @@ const Users: User[] = [
     tags: ["celosage","metamask","dacade", "mint","nextjs","nft","intermediate","ipfs"],
   },
   {
+    title: 'How to create a Token Staking Dapp',
+    description: 'Learn how to create a simple token staking Dapp with react,solidity and truffle for compiling and deploying.',
+    preview: require('./showcase/beginner/create-a-tokenstake.png'),
+    website:'/blog/tutorials/how-to-create-a-token-staking-dapp',
+    tags: ["react","metamask", "truffle","solidity","beginner"],
+  },
+  {
     title: 'Deploy Celo Smart contracts with Remix IDE',
     description: 'Learn how to use Remix IDE for deploying Celo smart contracts',
     preview: require('./showcase/beginner/deploy-celo-smart-contracts-with-remix-ide.png'),
