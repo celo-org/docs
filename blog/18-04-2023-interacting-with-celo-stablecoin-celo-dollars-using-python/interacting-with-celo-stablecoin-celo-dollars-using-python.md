@@ -4,7 +4,7 @@ description: Uncover the secrets of working with Celo's stablecoin, Celo Dollars
 authors:
   - name: Joshua Moses
 url: https://github.com/Divine572
-tags: [celosage, intermediate, smartcontract, solidity, python]
+tags: [celosage, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/interacting-with-celo-stablecoin-celo-dollars-using-python
 ---
