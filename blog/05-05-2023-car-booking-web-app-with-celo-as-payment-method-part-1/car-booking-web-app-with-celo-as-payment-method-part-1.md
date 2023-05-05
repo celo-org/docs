@@ -43,36 +43,39 @@ In your terminal:
 
 Once cloning is done, install all the project dependencies
 
- ``
+```
 npm install
 ```
 
 
 Here is a screenshot of what our application will look like once we are done:
 
+![image](https://user-images.githubusercontent.com/81447346/236364501-092a0b0b-b63a-481a-8cdd-b5a832eeaae9.png)
 
 
-Creating a Firebase Account
+## Creating a Firebase Account
+
 Here is a quick walkthrough to help you create your Firebase account.
 
-Firebase is a powerful platform that provides a range of tools for developing robust web and mobile applications. One of the essential features of Firebase is the authentication system that allows users to sign in using various methods such as email and password as well as Google, Facebook, and phone number. 
+[Firebase](https://firebase.google.com/) is a powerful platform that provides a range of tools for developing robust web and mobile applications. One of the essential features of Firebase is the authentication system that allows users to sign in using various methods such as email and password as well as Google, Facebook, and phone number. 
 
 We will leverage Firebase authentication and storage to sign in, store details of drivers, and firestore to store order data. Using Firebase for the backend of our web app, we will need to create an account. 
 
 
-If perhaps you don’t have a Firebase account mentioned as part of the requirements, Here is a quick walkthrough to help you create your Firebase account.
+If perhaps you don’t have a Firebase account mentioned as part of the requirements, Here is a quick walkthrough to help you [create your Firebase account](https://www.bing.com/videos/search?q=how+to+create+an+account+on+firebase&qpvt=how+to+create+an+account+on+firebase&view=detail&mid=3EC6E595C075511838C33EC6E595C075511838C3&&FORM=VRDGAR).
+
+![image](https://user-images.githubusercontent.com/81447346/236364615-02dd3c19-0435-4aca-874d-53ccc794f4ce.png)
 
 
+Log in to your newly created account and click on Add Project and give a name for your project (Defi Ride). 
 
-Log in to your newly created account and click on Add Project and give a name for your project (Defi Ride ). 
-
-Firebase Authentication and Data Storage
+### Firebase Authentication and Data Storage
 
 You will have to set up Firebase Authentication in your project. Once you have created a Firebase project and enabled authentication, you can select "Phone" as a sign-in method in the Firebase console. 
 
 Firebase Storage and Database can be enabled by navigating to the console and selecting the appropriate services from the menu. 
 
-Firebase Config
+### Firebase Config
 To get your Firebase config, you will need to follow these steps: 
 Go to the Firebase Console and select your project. Click on the gear icon located next to the "Project Overview" in the left navigation bar.
 Click on the "Project Settings" option. Scroll down to the "Your apps" section and find the web app you want to get the config for
@@ -81,7 +84,7 @@ Copy the code under the "firebaseConfig" variable.
 
 
 
- ``
+```
 const firebaseConfig = {
   apiKey: "AIzaSyDfKIaFmKtT1fG5odMLOcCuwCHLFVB6jJY",
   authDomain: "defi-ride.firebaseapp.com",
@@ -95,11 +98,11 @@ const firebaseConfig = {
  ```
 
 
-Creating An .env File
+### Creating An .env File
 
 In your root directory, create a .env file, this is where we will be storing our API keys.
 
- ``
+```
 REACT_APP_API_KEY= AIzaSyDfKIaFmKtT1fG5odMLOcCuwCHLFVB6jJY 
 REACT_APP_AUTH_DOMAIN= defi-ride.firebaseapp.com 
 REACT_APP_PROJECT_ID= defi-ride 
@@ -112,43 +115,53 @@ REACT_APP_GOOGLEMAPS_API_KEY=
  ```
 
 
-Google Map API Key
+### Google Map API Key
 To get a Google Maps API key with all APIs enabled, you can follow these steps:
-Go to the Google Cloud Console.
-Select an existing project or create a new one to add an API key to.
-Navigate to the APIs & Services > Credentials page.
-On the Credentials page, click Create credentials > API key and follow the prompts.
-Click close and confirm your key has been created.
+1. Go to the Google Cloud Console.
+2. Select an existing project or create a new one to add an API key to.
+3. Navigate to the APIs & Services > Credentials page.
+4. On the Credentials page, click Create credentials > API key and follow the prompts.
+5. Click close and confirm your key has been created.
 
+![image](https://user-images.githubusercontent.com/81447346/236364784-1ce6bc26-b8c7-42a0-a1eb-1ffe6a89faa9.png)
 
 After creating it include the API key in your .env file.
 
-Testing Our Application 
+### Testing Our Application 
 
-Run 
+Run the code:
 
- ``
+```
 npm start
- ```
+```
 
 
 In your terminal to start the application. Click on the input tag on the home page and select your location. It will show you the distance, duration, and a view of the map in the background.
 
 Now click on the `book now` button, and you will be routed to the sign-in/sign-up page. After signing up, you will see your sign-up data in Firebase. You need to use a valid number while signing in because you will need a cloud OTP, which you will receive on your phone when you are signed in.
 
+![image](https://user-images.githubusercontent.com/81447346/236365460-4fe38bee-0397-4b2b-bc3b-21ed23e1d918.png)
+
+
 After signing in, you will be routed to the home screen to book orders. Clicking on the book now will route you to the book rides page since you are signed in.
 
+![image](https://user-images.githubusercontent.com/81447346/236365565-78f1a59a-4c06-4530-be51-c901eea14f5d.png)
 
 
-Booking Process
+### Booking Process
 
 Enter your pick-up and drop-off location on the book rides page. Then, you can proceed to the next page and choose a driver. Once you confirm your order, you and the driver will receive a notification.
 
 
-Conclusion​
+## Conclusion​
+
 Congratulations, you have completed your car booking web app. Using React for the front end, Firebase for the back end, and Google Map API. We have also implemented booking rides, choosing drivers, phone number verification, and paying with Celo tokens. In the next article, we will add more functionalities to the app, such as adding Celo as a payment method and Celo SDK for blockchain integration.
-Next Steps​
+
+## Next Steps​
+
 To test your skills, you can create more features and use React to build them on the front end, like a chat app feature, A profile picture, etc. Stay tuned for the second part of the tutorial.
-About the Author​
-Oselukwue Kinyichukwu is a Fullstack developer with a passion for learning, building, and teaching. You can follow me on  Twitter.
+
+## About the Author​
+
+Oselukwue Kinyichukwu is a Fullstack developer with a passion for learning, building, and teaching. You can follow me on [Twitter](https://twitter.com/KOselukwue).
 
