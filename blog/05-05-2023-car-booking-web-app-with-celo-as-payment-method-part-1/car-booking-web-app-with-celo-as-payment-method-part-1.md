@@ -9,6 +9,7 @@ hide_table_of_contents: true
 slug: /tutorials/car-booking-web-app-with-celo-as-payment-method-part-1
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/car-booking-web-app-with-celo-as-payment-method-part-1.png)
 
 ## Introduction​
 
