@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: '/tutorials/integrating-celo-identity-verification-system-into-a-web-application'
 ---
 
-![header](blog\2023-04-29-integrating-celo-identity-verification-system-into-a-web-application\integrating-celo-identity-verification-system-into-a-web-application.png.png)
+![header](../../src/data-tutorials/showcase/advanced/integrating-celo-identity-verification-system-into-a-web-application.png)
 
 ## Introduction
 
