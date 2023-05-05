@@ -2822,6 +2822,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner'],
   },
   {
+    title: 'The Importance of UX in Celo DApps. A Growth Marketing Perspective',
+    description: 'The Importance of Celo DApps and how Growth Marketing drivesa Adoption on Celo',
+    preview: require('./showcase/beginner/an-introduction-The-Importance-of-UX-in-Celo-DApps-A-Growth-Marketing-Perspective.png'),
+    website: 'blog/tutorials/The-Importance-of-UX-in-Celo-DApps-A-Growth-Marketing-Perspective',
+    tags: [celo, beginner, celosage],
+  }
+  {
     title: 'Crypto Wallets - The Celo Way',
     description: 'This tutorials teaches you all you need to know about Crypto Wallets',
     preview: require('./showcase/beginner/crypto-wallets.png'),
