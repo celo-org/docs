@@ -3,9 +3,9 @@ title: Integrating Celo Identity Verification System into a Web Application
 description: It involves building a system that leverages Celo's identity verification system for secure authentication using Solidity & JavaScript.
 authors:
   - name: ✍️ Joshua Obafemi
-  - title: Technical Writer
-  - url: https://github.com/jorshimayor
-  - image_url: https://github.com/jorshimayor.png
+    title: Technical Writer
+    url: https://github.com/jorshimayor
+    image_url: https://github.com/jorshimayor.png
 tags: [celosage, celo, advanced, solidity, javascript]
 hide_table_of_contents: true
 slug: '/tutorials/integrating-celo-identity-verification-system-into-a-web-application'
