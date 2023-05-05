@@ -14,9 +14,9 @@ slug: /tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices
 
 ## 🌱 Introduction
 
-Decentralized applications (DApps) are an essential part of the Web3 ecosystem, providing users with greater control over their data and digital assets. The Celo platform, which combines the benefits of decentralization with mobile accessibility, is an ideal platform for building DApps.
+Celo is an open-source blockchain platform focused on making decentralized financial tools accessible to anyone with a mobile phone. It offers a unique opportunity for developers to build and deploy decentralized applications (DApps) that have the potential to reach a wide audience. 
 
-However, building DApps on a decentralized platform like Celo can present some unique challenges. In this article, we'll explore some best practices for building secure, scalable, and user-friendly DApps on the Celo platform. We'll also provide guidance on navigating the challenges and limitations of building on a decentralized platform and how to make the most of Celo's unique features and capabilities.
+This tutorial will focus on writing, deploying, testing, and debugging smart contracts using Remix IDE and unit testing to provide an in-depth, hands-on learning experience.
 
 ## Prerequisites
 
@@ -31,110 +31,211 @@ To build DApps on Celo, you'll need a few tools:
 - Remix IDE: This is a web-based Integrated Development Environment (IDE) for writing, testing, and debugging smart contracts.
 
 - Truffle Suite: This is a popular development framework for Ethereum and Celo that provides a suite of tools for building and deploying smart contracts.
+## Setting up the Development Environment
 
-## Best Practices for Building DApps on Celo
+### Introduction to Remix IDE
 
-### Use Celo-specific Libraries and Tools
+Remix IDE is a powerful, open-source development environment for Solidity, the programming language used to write smart contracts for Ethereum and Celo. It offers various features such as a built-in compiler, debugger, and testing suite to streamline the development process.
 
-Celo has its own set of libraries and tools that make it easier to build DApps on the platform. These include the Celo SDK, which provides a set of APIs for interacting with the Celo blockchain, and the Celo WalletConnect library, which allows users to connect their Celo Wallet to your DApp.
+To get started with Remix IDE, visit the official website at https://remix.ethereum.org.
+In the upper right corner, click on the "Connect to a Local Host" button and choose "Celo" from the list of networks.
 
-Here's an example of how to use the Celo SDK to send a transaction on the Celo blockchain:
+### Connecting Remix IDE to the Celo Network
 
-```js
-import { newKit } from '@celo/contractkit'
+### Configuring network settings
+To connect Remix IDE to the Celo network, you'll need to configure the network settings. Click on the "Settings" tab in Remix IDE and scroll down to the "Network" section. Enter the following information:
 
-async function sendTransaction() {
-const kit = newKit('https://forno.celo.org')
-const account = await kit.web3.eth.getAccounts()[0]
-const tx = await kit.sendTransaction({
-from: account,
-to: '0x123...',
-value: '1000000000000000000'
-})
-console.log(`Transaction hash: ${tx}`)
+Network Name: Celo Testnet (Alfajores)
+New RPC URL: https://alfajores-forno.celo-testnet.org
+Chain ID: 44787
+
+### Setting up Celo wallet and obtaining testnet funds
+
+To interact with the Celo network, you'll need a Celo wallet. For this tutorial, we'll use the MetaMask browser extension. Install MetaMask and set up your Celo wallet by following the instructions here: https://docs.celo.org/getting-started/wallets/using-metamask-with-celo/manual-setup.
+
+Once your wallet is set up, you can obtain testnet funds by visiting the Celo Alfajores Faucet: https://celo.org/developers/faucet.
+
+## Writing a Smart Contract for Celo DApp
+
+### Introduction to Solidity
+
+Solidity is a high-level, statically-typed programming language designed for writing smart contracts on blockchain platforms like Ethereum and Celo. It is influenced by C++, Python, and JavaScript and designed to target the Ethereum Virtual Machine (EVM).
+
+### Developing a Sample Celo DApp Smart Contract
+
+We will create a simple voting smart contract to demonstrate the process of writing, deploying, and testing a Celo DApp.
+
+Defining the contract structure and functions
+
+Create a new file in Remix IDE called "Voting.sol" and add the following code:
+
+```solidity
+pragma solidity ^0.8.0;
+
+contract Voting {
+    // Declare state variables
+    mapping(address => uint) public votes;
+    address[] public voters;
+
+    // Declare events
+    event VoteCast(address voter, uint votes);
+
+    // Voting function
+    function castVote(uint _votes) public {
+        require(_votes > 0, "Votes must be greater than 0");
+        votes[msg.sender] += _votes;
+        voters.push(msg.sender);
+
+        emit VoteCast(msg.sender, _votes);
+    }
+
+    // Get total votes function
+    function getTotalVotes() public view returns (uint) {
+        uint totalVotes = 0;
+        for (uint i = 0; i < voters.length; i++) {
+            totalVotes += votes[voters[i]];
+        }
+        return totalVotes;
+    }
 }
-///
 ```
 
-### Optimize gas usage
 
-Gas usage is a critical factor in building DApps on Celo, as it determines the cost of running transactions on the blockchain. To optimize gas usage, you can use the following techniques:
+This contract allows users to cast votes and keeps track of the total votes cast. It has two public functions: castVote() for casting votes and getTotalVotes() for retrieving the total number of votes cast.
 
-- Use the minimum amount of data required in your transactions.
-  Avoid using loops in your smart contracts, as they can consume a lot of gas. Use events to emit data from your smart contracts, as they are cheaper than storing data on the blockchain.
+Implementing Celo-specific features
 
-Here's an example of how to emit an event in a Celo smart contract:
+To demonstrate the use of Celo's native token, CELO, as a voting currency, we'll modify the contract to accept CELO for voting.
 
- ```solidity
- pragma solidity >=0.6.0 <0.8.0;
+First, import the IERC20 interface and UsingPrecompiles contract from the Celo smart contract library by adding these lines at the beginning of the Voting.sol file:
 
-contract MyContract {
-event MyEvent(string indexed message, uint256 value);
-
-function doSomething() public {
-emit MyEvent("Hello, World!", 42);
-}
-}
-///
+```solidity
+import "@celo/contractkit/contracts/libraries/UsingPrecompiles.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 ```
 
-### Secure your smart contracts
+Next, modify the Voting contract to inherit from UsingPrecompiles and add a constructor to set the CELO token address:
+```solidity
+contract Voting is UsingPrecompiles {
+    // Declare state variables
+    ...
+    IERC20 public celoToken;
 
-Smart contract security is crucial in building DApps on Celo, as vulnerabilities in your code can lead to security breaches and loss of funds. To ensure the security of your smart contracts
+    constructor(address _celoToken) {
+        celoToken = IERC20(_celoToken);
+    }
 
-### Use a secure coding standard
+    // Voting function
+    ...
+}
+```
 
-Using a secure coding standard, such as the [Solidity Security Best Practices](https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security), can help you identify and prevent potential vulnerabilities in your smart contracts. This standard provides a comprehensive list of potential security issues and solutions to address them.
+Finally, update the castVote() function to require users to send CELO tokens when casting votes:
 
-### Perform regular audits
+```solidity
+function castVote(uint _votes) public {
+    require(_votes > 0, "Votes must be greater than 0");
+    uint256 amount = _votes * 1 ether; // Convert to wei
+    celoToken.transferFrom(msg.sender, address(this), amount);
 
-Regular audits of your smart contracts can help you identify vulnerabilities and address them before they can be exploited by attackers. You can use automated tools or hire third-party auditors to perform manual audits.
+    votes[msg.sender] += _votes;
+    voters.push(msg.sender);
 
-### Limit access to sensitive functions
+    emit VoteCast(msg.sender, _votes);
+}
+```
 
-You can limit access to sensitive functions in your smart contracts by using access control mechanisms such as the [OpenZeppelin Access Control library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol). This library provides a flexible and customizable way to manage access control in your contracts.
+Now, the contract accepts CELO tokens for voting and keeps track of the total votes cast.
 
-### Be mindful of gas costs
+### Compiling and Deploying the Smart Contract
 
-Gas costs can be a significant concern when developing smart contracts. You can optimize gas costs by using data structures such as mapping and arrays efficiently. You can also use modifiers to reduce code duplication and make your contracts more gas-efficient.
+### Compiling the smart contract
 
-Here is an example of using a modifier to limit access to a sensitive function in a smart contract:
+In Remix IDE, click on the "Solidity Compiler" tab.
+Select the appropriate compiler version (e.g., 0.8.0 or later) and click the "Compile Voting.sol" button.
+Fix any compilation errors that appear by modifying the code as needed.
 
-Typescript `contract MyContract { address public owner; uint256 public sensitiveData; modifier onlyOwner() { require(msg.sender == owner, "Only the owner can call this function"); _; } constructor() { owner = msg.sender; } function updateSensitiveData(uint256 newData) public onlyOwner { sensitiveData = newData; } } ///`
+### Deploying the smart contract to Celo network
 
-In this example, the onlyOwner modifier is used to limit access to the updateSensitiveData function to the contract owner only. The modifier checks that the sender of the transaction is the contract owner before allowing the function to be executed.
+In Remix IDE, click on the "Deploy & Run Transactions" tab.
+Make sure the "Injected Web3" environment is selected and the correct Celo network is displayed (e.g., Celo Testnet (Alfajores)).
 
-## Key Considerations for DApp Development on Celo (continued)
+Enter the CELO token address for the _celoToken parameter in the constructor (e.g., 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 for Alfajores testnet).
+Click the "Deploy" button to deploy the smart contract.
 
-### Scalability Considerations
+### Testing and Debugging the Smart Contract
 
-- Network Capacity and Latency
-  To ensure scalability in your DApps, it is essential to consider the network capacity and latency of the Celo blockchain. You can use the [Celo network's testnet](https://docs.celo.org/developer/setup/wallet) to simulate network traffic and optimize your DApp's performance. Additionally, you can implement techniques like sharding, which breaks down the data and transactions into smaller parts to reduce the load on the network.
+## Writing unit tests for the smart contract
 
-- Data Storage and Retrieval
-  Efficient data storage and retrieval are crucial for scalable DApps. You can leverage Celo's IPFS (InterPlanetary File System) integration for decentralized file storage and retrieval. IPFS allows for distributed storage of files, making them accessible to anyone on the network, and provides a reliable and efficient way to store and retrieve data.
+Create a new file in Remix IDE called "Voting_test.sol" and add the following code:
 
-## User Experience Considerations
+```solidity
 
-- Design and Navigation
-  Design and navigation are essential considerations for building [user-friendly DApps](https://docs.celo.org/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux) on Celo. You can leverage tools like React and React Native to create responsive and intuitive user interfaces. It is essential to ensure that your DApp's design and navigation are consistent across all devices and platforms.
+pragma solidity ^0.8.0;
 
-- Transaction Speed and Confirmation
-  Transaction speed and confirmation are critical to the user experience when using DApps on Celo. You can optimize your DApp's transaction speed by implementing efficient gas management, which involves setting the appropriate gas price and limit for each transaction. You can also provide real-time transaction confirmation using the Celo blockchain's fast block times.
+import "remix_tests.sol"; // This import is required for testing
+import "./Voting.sol";
 
-### Smart Contract Design and Development
+contract VotingTest {
+    Voting voting;
 
-- Solidity Programming
-  Solidity is a popular programming language used for developing smart contracts on the Celo platform. You can use Solidity to write secure and auditable smart contracts that can be deployed on the Celo blockchain. It is essential to ensure that your smart contracts are well-designed and thoroughly tested to prevent vulnerabilities and errors.
+    // Set up the testing environment
+    function beforeEach() public {
+        voting = new Voting(0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9);
+    }
 
-- Testing and Deployment
-  Testing and deployment are critical to the success of your DApp on Celo. You can use tools like Truffle and Remix to test and deploy your smart contracts on the Celo network. It is essential to ensure that your smart contracts are thoroughly tested before deployment to prevent any bugs or security vulnerabilities.
+    // Test castVote() function
+    function testCastVote() public {
+        uint initialVotes = voting.getTotalVotes();
+        voting.castVote(10);
+        uint finalVotes = voting.getTotalVotes();
+        Assert.equal(finalVotes, initialVotes + 10, "Vote casting failed");
+    }
 
+    // Test getTotalVotes() function
+    function testGetTotalVotes() public {
+        voting.castVote(5);
+        voting.castVote(10);
+        uint totalVotes = voting.getTotalVotes();
+        Assert.equal(totalVotes, 15, "Incorrect total votes");
+    }
+}
+```
+
+This test file sets up a new instance of the Voting contract for each test and checks whether the castVote() and getTotalVotes() functions work correctly.
+
+## Executing tests in Remix IDE
+
+In Remix IDE, click on the "Solidity Unit Testing" tab.
+Click the "Run" button to execute the tests.
+Examine the test results and fix any issues that arise.
+
+## Debugging the smart contract
+
+If any tests fail or throw errors, use Remix IDE's debugger to identify the source of the problem.
+To open the debugger, click on the "Debugger" tab in Remix IDE.
+Set breakpoints in the smart contract code where you suspect issues may be occurring.
+Step through the code execution and monitor the values of variables and state changes.
+Make any necessary changes to the smart contract code to fix the issues, then re-run the tests to confirm that the issues are resolved.
+
+## Interacting with the Deployed Smart Contract
+
+### Using Remix IDE to interact with the smart contract
+
+Click the "Deploy & Run Transactions" tab in Remix IDE.
+Under "Deployed Contracts," locate your deployed Voting contract.
+Click on the buttons corresponding to the contract's functions (e.g., castVote() and getTotalVotes()) to interact with the deployed contract.
+
+### Integrating the smart contract into a DApp frontend
+
+To create a simple DApp frontend that interacts with the deployed Voting smart contract, use web3.js and Celo SDK to create a web-based user interface.
+Follow the instructions in the Celo SDK documentation to set up a web3.js project and connect it to the Celo network: https://docs.celo.org/developer-guide/start.
+Design and implement a user interface that allows users to cast votes and view the total number of votes cast using your deployed Voting smart contract.
 ## Conclusion
 
-Building decentralized applications on Celo requires careful consideration of various factors, including security, scalability, and user-friendliness.
+In this tutorial, we demonstrated how to write, deploy, test, and debug a smart contract for a Celo DApp using Remix IDE and unit testing. By following these best practices, you can build more complex and robust decentralized applications on the Celo platform. There are many resources available to support your continued learning and exploration of Celo, including the official documentation and developer community.
 
-By following the best practices outlined in this article, you can create robust and reliable DApps on the Celo platform. Remember to keep security at the forefront of your development process and to perform regular audits of your smart contracts to identify and address potential vulnerabilities.
+Happy coding!
 
 ## What's Next
 
