@@ -13,6 +13,9 @@ slug: "/tutorials/creating-a-custom-token-on-celo"
 
 
 
+![header](blog\05-05-2023-creating-a-custom-token-on-celo\creating-a-custom-token-on-celo.png.png)
+
+
 
 # Introduction
 
