@@ -783,6 +783,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'composer'],
   },
   {
+    title: 'Getting Started with Celo; A Beginner Guide',
+    description: 'I walk readers through the process of setting up a Celo wallet and making their first transaction on the blockchain using Solidity and Javascript.',
+    preview: require('./showcase/beginner/getting-started-with-celo.png'),
+    website: 'blog/tutorials/getting-started-with-celo',
+    tags: ['beginner','celo', 'celosage', 'javascript', 'solidity'],
+  },
+  {
     title: 'ContractKit - A Practical Guide to Interacting with the Celo Core Contracts',
     description: 'How to access the Celo Blockchain with JavaScript using ContractKit.',
     preview: require('./showcase/intermediate/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts.png'),
