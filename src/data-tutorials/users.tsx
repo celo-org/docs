@@ -768,6 +768,12 @@ const Users: User[] = [
     website: 'https://medium.com/celodevelopers/introduction-to-creating-nfts-on-celo-eb7240a71cc0',
     tags: ['beginner','foundation', 'nft', 'erc721'],
   },
+  {title: 'Integrating Celo Identity Verification System into a Web Application',
+  description: 'It involves building a system that leverages Celo identity verification system for secure authentication using Solidity & JavaScript.',
+  preview: require('./showcase/advanced/integrating-celo-identity-verification-system-into-a-web-application.png'),
+  website: 'blog/tutorials/integrating-celo-identity-verification-system-into-a-web-application',
+  tags: ['advanced','celosage', 'solidity','smartcontract','javascript'],
+  },
   {
     title: 'Building for the Celo Connect Mobile Hackathon',
     description: 'Resources to help you build your mobile-first Celo dApp.',
