@@ -1,3 +1,14 @@
+---
+title: Create a Car booking web app with the celo payment method part 1
+description: This article is the first part of the tutorial series that teahes how to add celo payment method to a full stack car booking web app.
+authors:
+  - name: Kinyichukwu Oselukuwe
+url: https://github.com/kinyichukwu
+tags: [celosage, celo, react]
+hide_table_of_contents: true
+slug: /tutorials/car-booking-web-app-with-celo-as-payment-method-part-1
+---
+
 
 ## Introduction​
 
