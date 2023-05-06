@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celosage, dapp, intermediate, celo]
+tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript']
 hide_table_of_contents: true
 slug: /tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery
 ---
