@@ -68,6 +68,8 @@ contract Chat {
 }
 ```
 
+![Contract Page With Remix](images/contracts.png)
+
 After successful deployment to Celo network, copy the ABI into a file called chatContractAbi.json. If the file does not exist before. Create it and continue.
 
 
