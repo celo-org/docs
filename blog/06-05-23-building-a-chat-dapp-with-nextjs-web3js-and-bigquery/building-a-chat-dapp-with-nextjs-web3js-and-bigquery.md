@@ -13,6 +13,8 @@ slug: /tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery
 
 ![header](../../src/data-tutorials/showcase/intermediate/building-a-chat-dapp-with-nextjs-web3js-and-bigquery.png)
 
+## Introduction
+
 In this tutorial, we explored how to build a decentralized chat DApp using Next.js, web3.js, and BigQuery. We started by setting up a Celo network and deploying a smart contract for the chat functionality. Then, we used web3.js to connect to the Celo network and interact with the smart contract. Next, we integrated Pub/Sub to push chat events to BigQuery for analysis. Finally, we demonstrated how to query the chat data in BigQuery to find the most active users and the most messages sent. Here is a step-by-step guide on how to build a chat DApp using Next.js and Web3.js on the Celo network, and set up a BigQuery system to analyze the chat data:
 
 This tutorial serves as a guide for developers interested in building decentralized chat applications using the Celo network and leveraging the power of Google Cloud's BigQuery for data analysis. The provided sample codes can be adjusted and customized to meet specific use cases and requirements.
