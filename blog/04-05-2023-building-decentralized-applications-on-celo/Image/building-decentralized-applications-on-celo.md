@@ -61,93 +61,76 @@ Once your wallet is set up, you can obtain testnet funds by visiting the Celo Al
 
 Solidity is a high-level, statically-typed programming language designed for writing smart contracts on blockchain platforms like Ethereum and Celo. It is influenced by C++, Python, and JavaScript and designed to target the Ethereum Virtual Machine (EVM).
 
-### Developing a Sample Celo DApp Smart Contract
+### Developing a Simple Celo DApp Smart Contract
 
 We will create a simple voting smart contract to demonstrate the process of writing, deploying, and testing a Celo DApp.
 
 Defining the contract structure and functions
 
 Create a new file in Remix IDE called "Voting.sol" and add the following code:
+Here's a simple voting smart contract that allows users to propose candidates, vote for candidates, and retrieve the winner. The contract makes use of mappings to store candidate data and vote counts.
 
 ```solidity
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
-contract Voting {
-    // Declare state variables
-    mapping(address => uint) public votes;
-    address[] public voters;
-
-    // Declare events
-    event VoteCast(address voter, uint votes);
-
-    // Voting function
-    function castVote(uint _votes) public {
-        require(_votes > 0, "Votes must be greater than 0");
-        votes[msg.sender] += _votes;
-        voters.push(msg.sender);
-
-        emit VoteCast(msg.sender, _votes);
+contract SimpleVoting {
+    struct Candidate {
+        uint256 id;
+        string name;
+        uint256 voteCount;
     }
 
-    // Get total votes function
-    function getTotalVotes() public view returns (uint) {
-        uint totalVotes = 0;
-        for (uint i = 0; i < voters.length; i++) {
-            totalVotes += votes[voters[i]];
+    mapping(uint256 => Candidate) public candidates;
+    mapping(address => bool) public voters;
+    uint256 public candidatesCount;
+
+    event CandidateAdded(uint256 indexed candidateId, string name);
+    event Voted(address indexed voter, uint256 indexed candidateId);
+
+    function addCandidate(string memory name) public {
+        candidatesCount++;
+        candidates[candidatesCount] = Candidate(candidatesCount, name, 0);
+        emit CandidateAdded(candidatesCount, name);
+    }
+
+    function vote(uint256 candidateId) public {
+        require(!voters[msg.sender], "You have already voted.");
+        require(candidateId > 0 && candidateId <= candidatesCount, "Invalid candidate ID.");
+
+        voters[msg.sender] = true;
+        candidates[candidateId].voteCount++;
+        emit Voted(msg.sender, candidateId);
+    }
+
+    function getWinner() public view returns (uint256 winnerId, string memory winnerName) {
+        uint256 highestVoteCount = 0;
+
+        for (uint256 i = 1; i <= candidatesCount; i++) {
+            if (candidates[i].voteCount > highestVoteCount) {
+                highestVoteCount = candidates[i].voteCount;
+                winnerId = candidates[i].id;
+                winnerName = candidates[i].name;
+            }
         }
-        return totalVotes;
     }
 }
 ```
 
+In this contract, we define a struct called `Candidate` to store candidate information. We use two mappings, `candidates` and `voters`, to store candidate data and track whether an address has already voted, respectively. We also define an event for candidate addition and voting.
 
-This contract allows users to cast votes and keeps track of the total votes cast. It has two public functions: castVote() for casting votes and getTotalVotes() for retrieving the total number of votes cast.
+The contract contains three functions:
 
-Implementing Celo-specific features
+1. `addCandidate`: Adds a new candidate with a given name.
+2. `vote`: Allows an address to vote for a candidate with a given ID, provided they haven't already voted.
+3. `getWinner`: Returns the winner based on the highest vote count.
 
-To demonstrate the use of Celo's native token, CELO, as a voting currency, we'll modify the contract to accept CELO for voting.
+Remember that this is a simple implementation and does not include advanced features like access control, deadlines, or vote delegation. For a real-world voting system, additional considerations and security measures must be implemented.
 
-First, import the IERC20 interface and UsingPrecompiles contract from the Celo smart contract library by adding these lines at the beginning of the Voting.sol file:
 
-```solidity
-import "@celo/contractkit/contracts/libraries/UsingPrecompiles.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-```
 
-Next, modify the Voting contract to inherit from UsingPrecompiles and add a constructor to set the CELO token address:
-```solidity
-contract Voting is UsingPrecompiles {
-    // Declare state variables
-    ...
-    IERC20 public celoToken;
-
-    constructor(address _celoToken) {
-        celoToken = IERC20(_celoToken);
-    }
-
-    // Voting function
-    ...
-}
-```
-
-Finally, update the castVote() function to require users to send CELO tokens when casting votes:
-
-```solidity
-function castVote(uint _votes) public {
-    require(_votes > 0, "Votes must be greater than 0");
-    uint256 amount = _votes * 1 ether; // Convert to wei
-    celoToken.transferFrom(msg.sender, address(this), amount);
-
-    votes[msg.sender] += _votes;
-    voters.push(msg.sender);
-
-    emit VoteCast(msg.sender, _votes);
-}
-```
-
-Now, the contract accepts CELO tokens for voting and keeps track of the total votes cast.
-
-### Compiling and Deploying the Smart Contract
+## Compiling and Deploying the Smart Contract
 
 ### Compiling the smart contract
 
@@ -163,46 +146,6 @@ Make sure the "Injected Web3" environment is selected and the correct Celo netwo
 Enter the CELO token address for the _celoToken parameter in the constructor (e.g., 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 for Alfajores testnet).
 Click the "Deploy" button to deploy the smart contract.
 
-### Testing and Debugging the Smart Contract
-
-## Writing unit tests for the smart contract
-
-Create a new file in Remix IDE called "Voting_test.sol" and add the following code:
-
-```solidity
-
-pragma solidity ^0.8.0;
-
-import "remix_tests.sol"; // This import is required for testing
-import "./Voting.sol";
-
-contract VotingTest {
-    Voting voting;
-
-    // Set up the testing environment
-    function beforeEach() public {
-        voting = new Voting(0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9);
-    }
-
-    // Test castVote() function
-    function testCastVote() public {
-        uint initialVotes = voting.getTotalVotes();
-        voting.castVote(10);
-        uint finalVotes = voting.getTotalVotes();
-        Assert.equal(finalVotes, initialVotes + 10, "Vote casting failed");
-    }
-
-    // Test getTotalVotes() function
-    function testGetTotalVotes() public {
-        voting.castVote(5);
-        voting.castVote(10);
-        uint totalVotes = voting.getTotalVotes();
-        Assert.equal(totalVotes, 15, "Incorrect total votes");
-    }
-}
-```
-
-This test file sets up a new instance of the Voting contract for each test and checks whether the castVote() and getTotalVotes() functions work correctly.
 
 ## Executing tests in Remix IDE
 
@@ -233,7 +176,7 @@ Follow the instructions in the Celo SDK documentation to set up a web3.js projec
 Design and implement a user interface that allows users to cast votes and view the total number of votes cast using your deployed Voting smart contract.
 ## Conclusion
 
-In this tutorial, we demonstrated how to write, deploy, test, and debug a smart contract for a Celo DApp using Remix IDE and unit testing. By following these best practices, you can build more complex and robust decentralized applications on the Celo platform. There are many resources available to support your continued learning and exploration of Celo, including the official documentation and developer community.
+To conclude, this tutorial demonstrated the process of setting up the development environment, writing smart contracts, compiling and deploying them, and testing and debugging using Remix IDE for Celo. We also provided an example of a simple voting smart contract, which can be extended and improved upon for real-world use cases.
 
 Happy coding!
 
