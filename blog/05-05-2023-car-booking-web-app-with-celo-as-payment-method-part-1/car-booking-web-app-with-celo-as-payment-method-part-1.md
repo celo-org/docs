@@ -175,5 +175,4 @@ To test your skills, you can create more features and use React to build them on
 
 ## About the Author​
 
-Oselukwue Kinyichukwu is a Fullstack developer with a passion for learning, building, and teaching. You can follow me on [Twitter](https://twitter.com/KOselukwue).
-
+Oselukwue Kinyichukwu is a Fullstack developer with a passion for learning, building, and teaching. You can follow me on  [Twitter](https://twitter.com/KOselukwue), You can check out  my profile on [LinkedIn](https://www.linkedin.com/in/kinyichukwu-oselukwue-69a49622b/), and see what I’m building on [Github](https://github.com/kinyichukwu). 
