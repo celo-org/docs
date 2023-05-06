@@ -2340,6 +2340,13 @@ const Users: User[] = [
     tags: ['intermediate', 'subgraphs', 'figment'],
   },
   {
+    title: 'Create a Secure Multi-Factor Authentication on the Celo Blockchain',
+    description: 'Learn how to create a secure multi factor aurthentication on the Celo blockchain',
+    preview: require('./showcase/advanced/create-a-secure-multi-factor-authentication-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/create-a-secure-multi-factor-muthentication-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'javascript', 'celo', 'advanced'],
+  },
+  {
     title: 'Hello Mobile DApp',
     description: 'Learn how to create a simple mobile DApp using dAppKit and the React Native Expo framework',
     preview: require('./showcase/beginner/hello-celo-mobile-dapp.png'),
