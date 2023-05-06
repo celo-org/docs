@@ -1,11 +1,7 @@
 ---
 title: Create a Secure Multi-Factor Authentication on the Celo Blockchain
-description: In this tutorial, we will demonstrate how to use Solidity and JavaScript to establish a Multi-Factor Authentication on the Celo Blockchain.
-All blockchain platforms, place a primary premium on security as we currently understand.
+description: 'Learn how to create a secure multi factor authentication on the Celo blockchain',
 
-We'll focus on explaining the procedures and steps involved, from the creation of the smart contract, testing, debugging, deployment to Integration of the Multi-Factor Authentication with the smart contract we built as well as the efficiency considerations.
-
-By the end of this tutorial, you will have a solid grasp of how to build and deploy a Multi-factor authentication on the Celo blockchain using Solidity and JavaScript..
 authors:
   - name: Michael Diagbare
     title: Blockchain Software Engineer,
