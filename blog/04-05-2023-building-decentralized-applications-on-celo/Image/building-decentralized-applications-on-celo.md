@@ -40,7 +40,7 @@ Remix IDE is a powerful, open-source development environment for Solidity, the p
 To get started with Remix IDE, visit the official website at https://remix.ethereum.org.
 In the upper right corner, click on the "Connect to a Local Host" button and choose "Celo" from the list of networks.
 
-### Connecting Remix IDE to the Celo Network
+## Connecting Remix IDE to the Celo Network
 
 ### Configuring network settings
 To connect Remix IDE to the Celo network, you'll need to configure the network settings. Click on the "Settings" tab in Remix IDE and scroll down to the "Network" section. Enter the following information:
@@ -61,14 +61,14 @@ Once your wallet is set up, you can obtain testnet funds by visiting the Celo Al
 
 Solidity is a high-level, statically-typed programming language designed for writing smart contracts on blockchain platforms like Ethereum and Celo. It is influenced by C++, Python, and JavaScript and designed to target the Ethereum Virtual Machine (EVM).
 
-### Developing a Simple Celo DApp Smart Contract
+### Developing a Sample Celo DApp Smart Contract
 
 We will create a simple voting smart contract to demonstrate the process of writing, deploying, and testing a Celo DApp.
 
-Defining the contract structure and functions
+ Defining the contract structure and functions
 
 Create a new file in Remix IDE called "Voting.sol" and add the following code:
-Here's a simple voting smart contract that allows users to propose candidates, vote for candidates, and retrieve the winner. The contract makes use of mappings to store candidate data and vote counts.
+Here's a sample voting smart contract that allows users to propose candidates, vote for candidates, and retrieve the winner. The contract makes use of mappings to store candidate data and vote counts.
 
 ```solidity
 // SPDX-License-Identifier: MIT
