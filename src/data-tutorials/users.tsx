@@ -3452,6 +3452,13 @@ const Users: User[] = [
     website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+   {
+    title: 'Building a Chat DApp with Next.js, Web3.js, and BigQuery',
+    description: 'Learn How to Leverage Google BigQuery to Analyze Data of your dApp and How to Build One',
+    preview: require('./showcase/intermediate/building-a-chat-dapp-with-nextjs-web3js-and-bigquery.png'),
+    website: 'blog/tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
+  },
 
 
 
