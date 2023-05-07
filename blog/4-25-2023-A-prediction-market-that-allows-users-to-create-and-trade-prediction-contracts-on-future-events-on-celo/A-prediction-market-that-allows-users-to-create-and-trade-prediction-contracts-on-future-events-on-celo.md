@@ -37,7 +37,7 @@ To successfully complete this tutorial, it is recommended that you have:
 
   We will begin by using the Remix IDE to write our smart contract. Let's get started!
 
-The complete code:
+**The complete code:**
 
 ```solidity
  // SPDX-License-Identifier: MIT
