@@ -1,6 +1,6 @@
 ---
 title: Create a Secure Multi-Factor Authentication on the Celo Blockchain
-description: 'Learn how to create a secure multi factor authentication on the Celo blockchain',
+description: 'Learn how to create a secure multi factor authentication on the Celo blockchain'
 
 authors:
   - name: Michael Diagbare
@@ -15,9 +15,9 @@ slug: /tutorials/create-a-secure-multi-factor-muthentication-on-the-celo-blockch
 
 ## Introduction
 
-In this tutorial, we will demonstrate how to use Solidity to and JavaScript to establish a Multi-Factor authentication on the Celo Blockchain. Celo is a Blockchain platform designed to build a more open, transparent and inclusive financial system with no need for conventional intermediaries like banks or payment processors. 
+In this tutorial, we will demonstrate how to use Solidity to and JavaScript to establish a Multi-Factor authentication on the Celo Blockchain. Celo is a Blockchain platform designed to build a more open, transparent and inclusive financial system with no need for conventional intermediaries like banks or payment processors.
 
-We will walk you through every step of its creation, testing, debugging, and deployment so as to reduce the risk of theft or fraud. 
+We will walk you through every step of its creation, testing, debugging, and deployment so as to reduce the risk of theft or fraud.
 
 ## Prerequisites​
 
@@ -37,45 +37,48 @@ To begin, you should have a fundamental understanding of the following before yo
 
 ## Requirements​
 
-The following technologies and frameworks are going to be needed to create a secure Multi-signature wallet Contract on the Celo Blockchain. 
+The following technologies and frameworks are going to be needed to create a secure Multi-signature wallet Contract on the Celo Blockchain.
 
 - Visual Studio Code: Visual Studio Code is a popular code editor that supports a variety of programming languages and frameworks. It has many extensions available for Solidity and blockchain development, making it a popular choice for developing smart contracts on the Celo Blockchain.
 
-- Node.js: Node.js is a JavaScript runtime that used to execute Javascript code outside of a web browser.  Make sure to have NodeJS 12.0.1+ installed.
+- Node.js: Node.js is a JavaScript runtime that used to execute Javascript code outside of a web browser. Make sure to have NodeJS 12.0.1+ installed.
 
 - Remix: Remix is a web-based Integrated Development Environment (IDE) for Solidity smart contracts. It allows you to write, compile, and deploy Solidity smart contracts directly from your web browser.
- 
+
 - Truffle: Truffle is a development framework for Ethereum and Celo smart contracts. It provides a suite of tools for developing, testing, and deploying smart contracts, as well as a built-in testing framework.
 
 ## Steps to Creating a Multi-Factor Authentication on the Celo​ Blockchain
 
 ### 1. Setting up a Development Environment Locally
-A development environment is a repository that houses software, resources and web materials that are used to develop and build a computer program or software. Our first step is going to be setting up a local development environment. 
 
-You can set up your local development environment with the steps below: 
-- Step 1: Install Node.js on your machine locally 
-- Step 2: Open Visual studio code, create a folder which will be housing our repository, in this case we’ll call it multiFactorAuthentication after which we would create another folder inside of it and name it contracts, then create another folder called migrations. 
-- Step 3: Create a file and name it MultiFactorAuth.sol in the contracts folder, then create a file in the migrations folder called 2_deploy_contract.js 
+A development environment is a repository that houses software, resources and web materials that are used to develop and build a computer program or software. Our first step is going to be setting up a local development environment.
 
- The development environment is now set, we can now go forward to Define our user data.
- 
+You can set up your local development environment with the steps below:
+
+- Step 1: Install Node.js on your machine locally
+- Step 2: Open Visual studio code, create a folder which will be housing our repository, in this case we’ll call it multiFactorAuthentication after which we would create another folder inside of it and name it contracts, then create another folder called migrations.
+- Step 3: Create a file and name it MultiFactorAuth.sol in the contracts folder, then create a file in the migrations folder called 2_deploy_contract.js
+
+The development environment is now set, we can now go forward to Define our user data.
+
 ### 2. Define the User Data and Authentication Mechanisms
-You can define the user Data and authentication mechanisms by including the data fields for each user account that store the following information: 
+
+You can define the user Data and authentication mechanisms by including the data fields for each user account that store the following information:
 
 - Username
 - Password hash
 - Salt (for password hashing)
-- Public key (for hardware token authentication) 
+- Public key (for hardware token authentication)
 - Email address (for email-based OTP authentication)
 - Phone number (for SMS-based OTP authentication)
 - Biometric data (if using biometric authentication)
-- one-time passwords (OTP), 
-- hardware tokens, 
-- biometric authentication, and 
+- one-time passwords (OTP),
+- hardware tokens,
+- biometric authentication, and
 - email or SMS-based authentication.
 
 ### 3. Write the Smart Contract
-  
+
 In our MultiFactorAuth.sol we’re going to be writing the Solidity smart contract that will implement the Multi-Factor authentication system comes next after the user data and authentication processes have been defined. An illustration of a smart contract is shown below:
 
 ```MultiFactorAuth.sol
@@ -206,7 +209,7 @@ function updateUser(
     function generateHardwareToken(bytes32 _publicKey) private view returns (bytes32) {
         // Generate a hash of the public key and current block timestamp
         bytes32 hash = keccak256(abi.encodePacked(_publicKey, block.timestamp));
-    
+
         // Take the first 32 bytes of the hash as the hardware token
 return bytes32(bytes20(hash));
 }
@@ -215,11 +218,11 @@ return bytes32(bytes20(hash));
 
 ### 4. Test and Debug the Smart Contract
 
-In order to make sure the smart contract works as planned, you should test and debug it after writing it. Using Truffle and Remix, follow these steps to test and debug the smart contract: 
+In order to make sure the smart contract works as planned, you should test and debug it after writing it. Using Truffle and Remix, follow these steps to test and debug the smart contract:
 
 - Step 1: Install Truffle
 
-To install Truffle, open a terminal window  and move into the folder by running the following command: 
+To install Truffle, open a terminal window and move into the folder by running the following command:
 
 ```
 cd multiFactorAuthentication
@@ -227,7 +230,7 @@ npm install -g truffle
 ```
 
 - Step 2: Create a New Truffle Project
-Next, create a new Truffle project by running the following commands:
+  Next, create a new Truffle project by running the following commands:
 
 ```
 mkdir my-project
@@ -238,10 +241,10 @@ truffle init
 This will create a new Truffle project with a basic directory structure.
 
 - Step 3: Copy the Smart Contract
-Copy the smart contract that you wrote earlier into the contracts directory of your Truffle project.
+  Copy the smart contract that you wrote earlier into the contracts directory of your Truffle project.
 
 - Step 4: Compile the Smart Contract
-To compile the smart contract, run the following command:
+  To compile the smart contract, run the following command:
 
 ```
 truffle compile
@@ -254,10 +257,9 @@ This will compile the smart contract and generate the ABI and bytecode.
 Next, write tests for the smart contract. Create a new file called multi_factor_auth.js in the test directory of your Truffle project, and add the following code:
 
 ```js
-
 const MultiFactorAuth = artifacts.require("MultiFactorAuth");
 
-contract("MultiFactorAuth", accounts => {
+contract("MultiFactorAuth", (accounts) => {
   it("should create a new user", async () => {
     const mfa = await MultiFactorAuth.deployed();
     const username = "testuser";
@@ -293,7 +295,10 @@ contract("MultiFactorAuth", accounts => {
     );
 
     const user = await mfa.users(accounts[0]);
-    assert.equal(web3.utils.toAscii(user.username).replace(/\u0000/g, ""), username);
+    assert.equal(
+      web3.utils.toAscii(user.username).replace(/\u0000/g, ""),
+      username
+    );
   });
 });
 ```
@@ -312,8 +317,9 @@ This will run the tests and output the results to the console.
 
 If you encounter any errors while testing, you can use Remix to debug the smart contract. To do this, open Remix in your web browser and navigate to the "Solidity" tab. Then, select smart contract and click the "Compile" button.
 
-## 5. Deploy the Smart Contract 
-Here is an example of how you could deploy the smart contract 
+## 5. Deploy the Smart Contract
+
+Here is an example of how you could deploy the smart contract
 
 - Step 1: Open Visual Studio Code and create a new folder for your project.
 
@@ -329,7 +335,6 @@ Here is an example of how you could deploy the smart contract
  npm install --save-dev @celo/contractkit
  npm install --save-dev @truffle/hdwallet-provider
 ```
-
 
 - Step 4: Compile the Solidity smart contract by running the following command in the terminal:
 
@@ -396,10 +401,11 @@ npm install -g remix-ide
 npm install -g truffle
 ```
 
+Here is the [Source-code](https://github.com/Micholn/multi-factor-authentication) for this 
 
 ## Conclusion​
 
-This tutorial has taught us how to create a Multi-Factor Authentication on the Celo Blockchain using Javascript and Solidity. Setting up a local development environment was the first step in establishing the user authentication process. Next, the smart contract was written, tested, and debugged before being deployed using remix and truffle.  possible errors that were made and fixed during creation. 
+This tutorial has taught us how to create a Multi-Factor Authentication on the Celo Blockchain using Javascript and Solidity. Setting up a local development environment was the first step in establishing the user authentication process. Next, the smart contract was written, tested, and debugged before being deployed using remix and truffle. possible errors that were made and fixed during creation.
 
 ## Next Steps​
 
@@ -416,4 +422,3 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/diagbare-michael/)
 - [How to install remix os on pc](https://appuals.com/how-to-install-remix-os-on-pc/)
 - [Truffle guides](https://trufflesuite.com/guides/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development/)
 - [smart contracts compiling](https://ethereum.org/en/developers/docs/smart-contracts/compiling/)
-
