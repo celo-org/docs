@@ -165,7 +165,7 @@ This contract includes two actions: `setmessage`, which allows the contract owne
 
 ### Brief Description of the complete code
 
-The my_contract class is declared, which inherits from eosio::contract provided by the EOSIO C++ library.
+The `my_contract` class is declared, which inherits from eosio::contract provided by the EOSIO C++ library.
 
 The using eosio::contract::contract; line brings the base class constructor into the current class.
 
