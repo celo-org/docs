@@ -13,20 +13,23 @@ slug: /tutorials/deploying-celo-dapp-to-celo-network-with-web3py
 
 ![header](../../src/data-tutorials/showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png)
 
-##  Introduction
+## Introduction
+
 `Web3.py` is a Python library used to interact with the Celo network and other compatible blockchains, including the Ethereum blockchain. It provides a convenient and easy-to-use interface for developers to interact with smart contracts on the blockchain, send transactions, retrieve data and deploy smart contracts to the blockchain. In this tutorial, we will walk through the process of deploying a Celo dApp to the Celo network using `web3.py`.
 
+## Prerequisites
 
-##  Prerequisites
 1. Have basic knowledge of blockchain and smart contracts.
 2. Have experience using the terminal (command-line interface) on the operating system you are using.
 3. Have knowledge of the Python programming language and a basic understanding of its syntax and code structure.
 4. Have a registered Celo account on the Alfajores network with a balance to pay transaction fees
 
-##  Requirements
+## Requirements
+
 [Python3.6](https://www.python.org/downloads/release/python-368/) or greater
 
-##  Write project code
+## Write project code
+
 In this stage, we will create an application that can be deployed and used to interact with smart contracts using Web3Py. To begin, create a new file called app.py and copy the code below.
 
 ```python
@@ -77,10 +80,10 @@ pip install web3
 
 Then we'll install the web3.contract library where we can import the `ConciseContract` library.
 
-
 ```python
 pip install web3-contract
 ```
+
 Note that the `ConciseContract` is not a part of the official Web3.py documentation, but rather a third-party library that builds on top of `Web3.py` to provide a simpler, more user-friendly interface for interacting with smart contracts.
 
 Next, we'll set up the web3 connection to the celo network. Here's an example code for setting up a web3 connection to the Celo network using `web3.py`:
@@ -88,7 +91,7 @@ Next, we'll set up the web3 connection to the celo network. Here's an example co
 ```python
 # First import the necessary library
 from web3 import Web3, HTTPProvider
-from web3.contract import ConciseContract 
+from web3.contract import ConciseContract
 w3 = Web3(Web3.HTTPProvider('https://forno.celo.org'))
 ```
 
@@ -114,10 +117,9 @@ Also, you can use the following step to get your bytecode.
 1. Go to [the celo explorer page](https://explorer.celo.org)
 2. Search for your contract on celo explorer and copy the bytecode from the "Bytecode" section of the contract details.
 
-
 Let's estimate the gas cost for deploying the contract with following code
 
-``` python
+```python
 gas_estimate = w3.eth.estimate_gas({'from': address, 'data': bytecode})
 ```
 
@@ -130,9 +132,9 @@ Now we can make the transaction, first step is building the transaction. Here's 
 tx = {
     'from': address,
     'gas': gas_estimate,
-    'gasPrice': Web3.to_wei('10', 'gwei'), 
+    'gasPrice': Web3.to_wei('10', 'gwei'),
     'nonce': w3.eth.get_transaction_count(address),
-    'data': bytecode 
+    'data': bytecode
 }
 ```
 
@@ -168,12 +170,12 @@ We can then generate a contract instance using `web3.py` and `ConciseContract`.
 MyContract = ConciseContract(w3.eth.contract(address=contract_address, abi=abi))
 ```
 
-Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract. 
+Here, `w3` is the instance of the `web3.py` library, contract_address is the address of the deployed contract on the Celo network, and abi is the ABI (Application Binary Interface) of the contract.
 
 Finally, we can call a function on the deployed contract. Wecan use the followng code to call a function on the deployed contract:
 
 ```python
-result = MyContract.my_function() 
+result = MyContract.my_function()
 print(result)
 ```
 
@@ -182,7 +184,8 @@ In this line, `MyContract` is the concise contract instance we generated fro the
 Here is the [link](https://github.com/yusuf1990/DeployCelo) to the repository
 
 ## Conclusion
- In this tutorial, we have explained the process of deploying a Celo dApp to the Celo network using web3py. By following the examples provided, you should be able to deploy Celo dapp to Celo network with web3py
+
+In this tutorial, we have explained the process of deploying a Celo dApp to the Celo network using web3py. By following the examples provided, you should be able to deploy Celo dapp to Celo network with web3py
 
 ## About the Author
 
