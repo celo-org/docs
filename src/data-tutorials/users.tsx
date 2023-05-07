@@ -3435,6 +3435,16 @@ const Users: User[] = [
     website: 'blog/tutorials/how-does-blockchain-help-content-creators',
     tags: ['celosage', 'beginner', 'solidity'], 
   },
+
+   {
+    title: 'Deploying celo dapp to celo network with web3.py',
+    description: 'This article could provide a tutorial on how to use the web3.py deploy celo dapp to celo network with a python library known as web3.py',
+    preview: require('./showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png'),
+    website: 'blog/tutorials/deploying-celo-dapp-to-celo-network-with-web3py',
+    tags: ['celosage', 'beginner', 'dapp', 'celo'], 
+  },
+
+
   {
     title: 'Analyzing smart contracts security on Celo using Slither',
     description: 'Analyze smart contracts using free security tools - Slither',
@@ -3442,6 +3452,7 @@ const Users: User[] = [
     website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+
 
 
 
