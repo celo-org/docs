@@ -1001,7 +1001,7 @@ const Users: User[] = [
     title: 'Building Decentralized Applications on Celo, Best Practices for DApp Development',
     description: 'Learn the best pratices to build better and more effective decentralized app on Celo',
     preview: require('./showcase/intermediate/building-dapp-on-celo.png'),
-    website: 'blog/tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices',
+    website: 'blog/tutorials/building-decentralized-applications-on-celo-best-practices',
     tags: ['solidity', 'intermediate','celosage'],
   },
   {
