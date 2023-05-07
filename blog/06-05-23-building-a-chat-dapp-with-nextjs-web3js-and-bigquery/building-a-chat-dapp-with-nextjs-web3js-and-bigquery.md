@@ -6,7 +6,7 @@ authors:
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript']
+tags: ["celosage", "intermediate", "smartcontract", "solidity", "javascript"]
 hide_table_of_contents: true
 slug: /tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery
 ---
@@ -74,7 +74,6 @@ contract Chat {
 
 After successful deployment to Celo network, copy the ABI into a file called chatContractAbi.json. If the file does not exist before. Create it and continue.
 
-
 ## Setting up the NextJS project
 
 To set up a new project, it is important to think about accessibility and file structures. One key note is to ensure all our files and folders are in the same location. To ensure this, let’s create a central folder to control it.
@@ -100,23 +99,31 @@ npm install @google-cloud/bigquery
 The next step is to create a Chat component that allows users to send and receive messages. Here is an example of what the Chat component might look like. Create a file with the name Chat.js in the components folder
 
 ```javascript
-import { useState } from 'react';
-import Web3 from 'web3';
-import { PubSub } from '@google-cloud/pubsub';
+import { useState } from "react";
+import Web3 from "web3";
+import { PubSub } from "@google-cloud/pubsub";
 
-const web3 = new Web3('https://your-celo-network-url');
-const contractAbi = require('./contractAbi.json');
-const contractAddress = '0x123456789abcdef...';
+const web3 = new Web3("https://your-celo-network-url");
+const contractAbi = require("./contractAbi.json");
+const contractAddress = "0x123456789abcdef...";
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
 const pubsub = new PubSub();
-const topicName = 'chat-messages';
+const topicName = "chat-messages";
 
 function Chat() {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const handleSend = async () => {
-    await contract.methods.sendMessage(content).send({ from: 'your-celo-wallet-address' });
-    await pubsub.topic(topicName).publish(Buffer.from(JSON.stringify({ sender: 'your-celo-wallet-address', content })));
-    setContent('');
+    await contract.methods
+      .sendMessage(content)
+      .send({ from: "your-celo-wallet-address" });
+    await pubsub
+      .topic(topicName)
+      .publish(
+        Buffer.from(
+          JSON.stringify({ sender: "your-celo-wallet-address", content })
+        )
+      );
+    setContent("");
   };
 
   return (
@@ -128,19 +135,24 @@ function Chat() {
           </li>
         ))}
       </ul>
-      <input type="text" value={content} onChange={(e) => setContent(e.target.value)} />
+      <input
+        type="text"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
       <button onClick={handleSend}>Send</button>
     </div>
   );
 }
 export default Chat;
 ```
+
 In this example, the Chat component uses the useState hook to manage the content state. When the user clicks the "Send" button, the handleSend function is called, which executes the sendMessage function on the smart contract and publishes a message to the Pub/Sub topic.
 
 ### Creating an index JS
 
 ```javascript
-import Chat from '../components/Chat';
+import Chat from "../components/Chat";
 export default function Home() {
   return (
     <div>
@@ -156,24 +168,23 @@ export default function Home() {
 As mentioned earlier now, we will be using cloud dataflow and it is time to set the dataflow up here.
 
 ```javascript
-import { PubSub } from '@google-cloud/pubsub';
+import { PubSub } from "@google-cloud/pubsub";
 // Imports the Google Cloud client library
-const {PubSub} = require('@google-cloud/pubsub');
+const { PubSub } = require("@google-cloud/pubsub");
 
 async function quickstart(
-  projectId = 'your-project-id', // Your Google Cloud Platform project ID
-  topicNameOrId = 'my-topic', // Name for the new topic to create
-  subscriptionName = 'my-sub' // Name for the new subscription to create
+  projectId = "your-project-id", // Your Google Cloud Platform project ID
+  topicNameOrId = "my-topic", // Name for the new topic to create
+  subscriptionName = "my-sub" // Name for the new subscription to create
 ) {
-
-const pubsub = new PubSub();
-const topicName = 'chat-messages';
-const data = {
-  sender: 'your-celo-wallet-address',
-  content: 'Hello, world!'
-};
-const dataBuffer = Buffer.from(JSON.stringify(data));
-pubsub.topic(topicName).publish(dataBuffer);
+  const pubsub = new PubSub();
+  const topicName = "chat-messages";
+  const data = {
+    sender: "your-celo-wallet-address",
+    content: "Hello, world!",
+  };
+  const dataBuffer = Buffer.from(JSON.stringify(data));
+  pubsub.topic(topicName).publish(dataBuffer);
 }
 ```
 
