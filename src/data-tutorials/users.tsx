@@ -3412,7 +3412,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
-
+  {
+    title: 'Interacting with smart contract on celo using web3py',
+    description: 'This tutorial teaches you how to set up and use Web3py - A python-based web3 library',
+    preview: require('./showcase/intermediate/interacting-with-smart-contract-on-celo-using-web3py.png'),
+    website: 'blog/tutorials/interacting-with-smart-contract-on-celo-using-web3py',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   {
     title: 'Create an NFT with a delayed reveal on Celo',
     description: 'In This tutorial we will look at how to implement a simple NFT Contract that implements an NFT reveal in solidity. We will deploy the contract to the Celo blockchain on remix and show how to perform the reveal on remix',
@@ -3465,9 +3471,6 @@ const Users: User[] = [
     website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
-
-
-
    {
     title: 'Building a Chat DApp with Next.js, Web3.js, and BigQuery',
     description: 'Learn How to Leverage Google BigQuery to Analyze Data of your dApp and How to Build One',
