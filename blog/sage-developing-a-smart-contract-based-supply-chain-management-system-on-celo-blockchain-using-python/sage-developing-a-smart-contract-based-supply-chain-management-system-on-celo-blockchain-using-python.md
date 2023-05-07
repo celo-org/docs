@@ -60,7 +60,7 @@ pip install python-dotenv web3 py-solc-x
 
 ### Step 2: Write the Smart Contract
 
-Next, create a new file called `SupplyChainManagement.sol` which would contain functionalities such that, as products move through the supply chain, this smart contract aims to manage them, track their history, and confirm their authenticity. 
+Next, create a new file called `SupplyChainManagement.sol` which would contain functionalities such that, as products move through the supply chain, this smart contract aims to manage them, track their history, and confirm their authenticity.
 
 SupplyChainManagement.sol
 
@@ -89,7 +89,7 @@ contract SupplyChainManagement {
 
     function registerProduct(uint256 _id, string memory _name, string memory _location) public {
         require(!products[_id].isRegistered, "Product is already registered.");
-        
+
         Product memory newProduct = Product({
             id: _id,
             name: _name,
@@ -98,20 +98,20 @@ contract SupplyChainManagement {
             owner: msg.sender,
             isRegistered: true
         });
-        
+
         products[_id] = newProduct;
         productHistory[_id].push(_location);
-        
+
         emit ProductRegistered(_id, _name, _location, block.timestamp);
     }
 
     function transferProductOwnership(uint256 _id, address _newOwner) public {
         require(products[_id].isRegistered, "Product is not registered.");
         require(products[_id].owner == msg.sender, "Only the current owner can transfer ownership.");
-        
+
         address previousOwner = products[_id].owner;
         products[_id].owner = _newOwner;
-        
+
         emit ProductOwnershipTransferred(_id, previousOwner, _newOwner, block.timestamp);
     }
 
@@ -225,7 +225,7 @@ print(f"Contract deployed at address: {contract_address}")
 
 Implementing a Solidity smart contract on the Celo blockchain is demonstrated via this Python script. It starts by loading environment variables, importing the required libraries, and connecting via Web3 to a Celo node. The script uses the `solcx` library to build the Solidity code after reading it from a file. It then produces a deployment transaction and signs it using the deployer's private key after extracting the bytecode and ABI from the compiled contract. The contract address is then taken from the transaction receipt before the signed transaction is finally transmitted to the Celo network. The code offers programmers an effective way to use Python to deploy smart contracts on the Celo blockchain.
 
-**Note**: Ensure to create a `.env` file containing the CELO_DEPLOYER_ADDRESS, CELO_DEPLOYER_PRIVATE_KEY, and CELO_PROVIDER_URL. 
+**Note**: Ensure to create a `.env` file containing the CELO_DEPLOYER_ADDRESS, CELO_DEPLOYER_PRIVATE_KEY, and CELO_PROVIDER_URL.
 
 .env
 
