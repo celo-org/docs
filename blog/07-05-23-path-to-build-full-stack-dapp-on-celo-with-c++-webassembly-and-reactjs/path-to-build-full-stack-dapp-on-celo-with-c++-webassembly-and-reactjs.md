@@ -169,7 +169,7 @@ The `my_contract` class is declared, which inherits from eosio::contract provide
 
 The `using eosio::contract::contract;` line brings the base class constructor into the current class.
 
-The setmessage action is defined using the `[[eosio::action]]` attribute. This action allows the contract owner to set the message. The require_auth(get_self()) line ensures that only the contract itself can call this action.
+The setmessage action is defined using the `[[eosio::action]]` attribute. This action allows the contract owner to set the message. The `require_auth(get_self())` line ensures that only the contract itself can call this action.
 
 The message_table is a multi-index table that stores messages. The messages table is scoped to the contract itself `(get_self())` and the receiver of the action `(get_first_receiver().value)`.
 
