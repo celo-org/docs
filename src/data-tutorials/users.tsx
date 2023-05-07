@@ -1077,7 +1077,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-in-public-tips-for-making-an-impact',
     tags: ['celosage','beginner'],
   },
-
+  {
+    title: 'Building Decentralized Applications on Celo, Best Practices for DApp Development',
+    description: 'Learn the best pratices to build better and more effective decentralized app on Celo',
+    preview: require('./showcase/intermediate/building-dapp-on-celo.png'),
+    website: 'blog/tutorials/building-decentralized-applications-on-celo-best-practices',
+    tags: ['solidity', 'intermediate','celosage'],
+  },
   {
     title: 'How to render Celo NFT in your React Native mobile Dapp',
     description: 'This will help mobile developers on how to integrate render Celo  NFT metadata on mobile Dapps uisng  center multichain NFT API and Wallet Connect SDK.',
@@ -2340,6 +2346,13 @@ const Users: User[] = [
     tags: ['intermediate', 'subgraphs', 'figment'],
   },
   {
+    title: 'Create a Secure Multi-Factor Authentication on the Celo Blockchain',
+    description: 'Learn how to create a secure multi factor authentication on the Celo blockchain',
+    preview: require('./showcase/advanced/create-a-secure-multi-factor-authentication-on-the-celo-blockchain.png'),
+    website: '/blog/tutorials/create-a-secure-multi-factor-muthentication-on-the-celo-blockchain',
+    tags: ['celosage', 'solidity', 'javascript', 'celo', 'advanced'],
+  },
+  {
     title: 'Hello Mobile DApp',
     description: 'Learn how to create a simple mobile DApp using dAppKit and the React Native Expo framework',
     preview: require('./showcase/beginner/hello-celo-mobile-dapp.png'),
@@ -3399,7 +3412,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
-
+  {
+    title: 'Interacting with smart contract on celo using web3py',
+    description: 'This tutorial teaches you how to set up and use Web3py - A python-based web3 library',
+    preview: require('./showcase/intermediate/interacting-with-smart-contract-on-celo-using-web3py.png'),
+    website: 'blog/tutorials/interacting-with-smart-contract-on-celo-using-web3py',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
   {
     title: 'Create an NFT with a delayed reveal on Celo',
     description: 'In This tutorial we will look at how to implement a simple NFT Contract that implements an NFT reveal in solidity. We will deploy the contract to the Celo blockchain on remix and show how to perform the reveal on remix',
@@ -3435,6 +3454,16 @@ const Users: User[] = [
     website: 'blog/tutorials/how-does-blockchain-help-content-creators',
     tags: ['celosage', 'beginner', 'solidity'], 
   },
+
+   {
+    title: 'Deploying celo dapp to celo network with web3.py',
+    description: 'This article could provide a tutorial on how to use the web3.py deploy celo dapp to celo network with a python library known as web3.py',
+    preview: require('./showcase/beginner/deploying-celo-dapp-to-celo-network-with-web3py.png'),
+    website: 'blog/tutorials/deploying-celo-dapp-to-celo-network-with-web3py',
+    tags: ['celosage', 'beginner', 'dapp', 'celo'], 
+  },
+
+
   {
     title: 'Analyzing smart contracts security on Celo using Slither',
     description: 'Analyze smart contracts using free security tools - Slither',
@@ -3442,7 +3471,23 @@ const Users: User[] = [
     website: 'blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+   {
+    title: 'Building a Chat DApp with Next.js, Web3.js, and BigQuery',
+    description: 'Learn How to Leverage Google BigQuery to Analyze Data of your dApp and How to Build One',
+    preview: require('./showcase/intermediate/building-a-chat-dapp-with-nextjs-web3js-and-bigquery.png'),
+    website: 'blog/tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
+  },
 
+
+{
+
+    title: 'Developing a Smart Contract-based Supply Chain Management System on Celo Blockchain using Python',
+    description: 'This tutorial explores the use of Python to develop a supply chain management system using smart contracts on the Celo blockchain.',
+    preview: require('./showcase/intermediate/sage-developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python.png'),
+    website: 'blog/tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
 
 
