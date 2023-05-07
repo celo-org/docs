@@ -163,7 +163,7 @@ EOSIO_DISPATCH(my_contract, (setmessage)(getmessage));
 
 This contract includes two actions: `setmessage`, which allows the contract owner to set the message, and `getmessage`, which allows anyone to retrieve the message.
 
-### Brief Description of teh complete code
+### Brief Description of the complete code
 
 The my_contract class is declared, which inherits from eosio::contract provided by the EOSIO C++ library.
 
