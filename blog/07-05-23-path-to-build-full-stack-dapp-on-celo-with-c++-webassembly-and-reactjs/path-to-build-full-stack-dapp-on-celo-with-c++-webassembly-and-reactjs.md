@@ -167,7 +167,7 @@ This contract includes two actions: `setmessage`, which allows the contract owne
 
 The `my_contract` class is declared, which inherits from eosio::contract provided by the EOSIO C++ library.
 
-The using eosio::contract::contract; line brings the base class constructor into the current class.
+The `using eosio::contract::contract;` line brings the base class constructor into the current class.
 
 The setmessage action is defined using the `[[eosio::action]]` attribute. This action allows the contract owner to set the message. The require_auth(get_self()) line ensures that only the contract itself can call this action.
 
