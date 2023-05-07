@@ -177,7 +177,7 @@ In the `setmessage` action, the code checks if a message with the contract's key
 
 The `getmessage` action retrieves the message from the messages table. It checks if a message with the contract's key exists and returns the message if one is found. Otherwise, it returns the string "No message found."
 
-The message_row struct represents a row in the messages table. It has a key of type uint64_t and a message of type std::string. The primary_key function returns the primary key for the table.
+The `message_row` struct represents a row in the messages table. It has a key of type `uint64_t` and a message of type `std::string`. The `primary_key` function returns the primary key for the table.
 
 The EOSIO_DISPATCH macro generates the dispatch logic required for the contract. It exposes the setmessage and getmessage actions to be called from outside the contract.
 
