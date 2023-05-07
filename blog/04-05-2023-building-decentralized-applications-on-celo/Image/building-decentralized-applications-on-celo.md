@@ -14,7 +14,7 @@ slug: /tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices
 
 ## 🌱 Introduction
 
-Celo is an open-source blockchain platform focused on making decentralized financial tools accessible to anyone with a mobile phone. It offers a unique opportunity for developers to build and deploy decentralized applications (DApps) that have the potential to reach a wide audience. 
+Celo is an open-source blockchain platform focused on making decentralized financial tools accessible to anyone with a mobile phone. It offers a unique opportunity for developers to build and deploy decentralized applications (DApps) that have the potential to reach a wide audience.
 
 This tutorial will focus on writing, deploying, testing, and debugging smart contracts using Remix IDE and unit testing to provide an in-depth, hands-on learning experience.
 
@@ -31,6 +31,7 @@ To build DApps on Celo, you'll need a few tools:
 - Remix IDE: This is a web-based Integrated Development Environment (IDE) for writing, testing, and debugging smart contracts.
 
 - Truffle Suite: This is a popular development framework for Ethereum and Celo that provides a suite of tools for building and deploying smart contracts.
+
 ## Setting up the Development Environment
 
 ### Introduction to Remix IDE
@@ -43,6 +44,7 @@ In the upper right corner, click on the "Connect to a Local Host" button and cho
 ## Connecting Remix IDE to the Celo Network
 
 ### Configuring network settings
+
 To connect Remix IDE to the Celo network, you'll need to configure the network settings. Click on the "Settings" tab in Remix IDE and scroll down to the "Network" section. Enter the following information:
 
 Network Name: Celo Testnet (Alfajores)
@@ -65,7 +67,7 @@ Solidity is a high-level, statically-typed programming language designed for wri
 
 We will create a simple voting smart contract to demonstrate the process of writing, deploying, and testing a Celo DApp.
 
- Defining the contract structure and functions
+Defining the contract structure and functions
 
 Create a new file in Remix IDE called "Voting.sol" and add the following code:
 Here's a sample voting smart contract that allows users to propose candidates, vote for candidates, and retrieve the winner. The contract makes use of mappings to store candidate data and vote counts.
@@ -128,8 +130,6 @@ The contract contains three functions:
 
 Remember that this is a simple implementation and does not include advanced features like access control, deadlines, or vote delegation. For a real-world voting system, additional considerations and security measures must be implemented.
 
-
-
 ## Compiling and Deploying the Smart Contract
 
 ### Compiling the smart contract
@@ -143,9 +143,8 @@ Fix any compilation errors that appear by modifying the code as needed.
 In Remix IDE, click on the "Deploy & Run Transactions" tab.
 Make sure the "Injected Web3" environment is selected and the correct Celo network is displayed (e.g., Celo Testnet (Alfajores)).
 
-Enter the CELO token address for the _celoToken parameter in the constructor (e.g., 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 for Alfajores testnet).
+Enter the CELO token address for the \_celoToken parameter in the constructor (e.g., 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 for Alfajores testnet).
 Click the "Deploy" button to deploy the smart contract.
-
 
 ## Executing tests in Remix IDE
 
@@ -174,6 +173,7 @@ Click on the buttons corresponding to the contract's functions (e.g., castVote()
 To create a simple DApp frontend that interacts with the deployed Voting smart contract, use web3.js and Celo SDK to create a web-based user interface.
 Follow the instructions in the Celo SDK documentation to set up a web3.js project and connect it to the Celo network: https://docs.celo.org/developer-guide/start.
 Design and implement a user interface that allows users to cast votes and view the total number of votes cast using your deployed Voting smart contract.
+
 ## Conclusion
 
 To conclude, this tutorial demonstrated the process of setting up the development environment, writing smart contracts, compiling and deploying them, and testing and debugging using Remix IDE for Celo. We also provided an example of a simple voting smart contract, which can be extended and improved upon for real-world use cases.
