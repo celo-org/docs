@@ -839,6 +839,13 @@ const Users: User[] = [
     tags: ['beginner','foundation', 'remix'],
   },
   {
+    title: 'Creating A Custom Token On Celo',
+    description: 'This article will walk readers through the process of creating a custom token on Celo blockchain, using tools such as VSCode and the Celo ContractKit.',
+    preview: require('./showcase/beginner/creating-a-custom-token-on-celo.png'),
+    website: 'blog/tutorials/creating-a-custom-token-on-celo',
+    tags: ['intermediate','celo', 'celosage', 'javascript', 'solidity'],
+  },
+  {
     title: '3 Simple Steps to Connect your MetaMask Wallet To Celo',
     description: 'A step-by-step tutorial to add the Celo network to your MetaMask wallet.',
     preview: require('./showcase/beginner/3-simple-steps-to-connect-your-metamask-wallet-to-celo.png'),
