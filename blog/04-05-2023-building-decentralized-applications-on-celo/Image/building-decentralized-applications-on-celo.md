@@ -7,7 +7,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/86154565?v=4
 tags: ["intermediate", "solidity", "celosage"]
 hide_table_of_contents: true
-slug: /tutorials/Building-Decentralized-Applications-on-Celo-Best-Practices
+slug: /tutorials/building-decentralized-applications-on-celo-best-practices
 ---
 
 ![header](../../../src/data-tutorials/showcase/intermediate/building-dapp-on-celo.png)
