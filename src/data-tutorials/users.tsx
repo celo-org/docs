@@ -3478,6 +3478,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
   },
+    {
+    title: 'Path to Build Full stack DApp on Celo with C++, WebAssembly and ReactJS',
+    description: 'Learn How to Full Stack dApp with C++ for the Smart Contract and ReactJS for the Frontend',
+    preview: require('./showcase/intermediate/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs.png'),
+    website: 'blog/tutorials/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs',
+    tags: ['celosage', 'intermediate', 'dapp', 'smartcontract', 'react'], 
+  },
 
 
 {
