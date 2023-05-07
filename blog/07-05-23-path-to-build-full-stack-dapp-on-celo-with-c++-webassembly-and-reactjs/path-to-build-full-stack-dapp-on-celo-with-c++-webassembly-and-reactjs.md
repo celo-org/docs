@@ -179,7 +179,7 @@ The `getmessage` action retrieves the message from the messages table. It checks
 
 The `message_row` struct represents a row in the messages table. It has a key of type `uint64_t` and a message of type `std::string`. The `primary_key` function returns the primary key for the table.
 
-The EOSIO_DISPATCH macro generates the dispatch logic required for the contract. It exposes the setmessage and getmessage actions to be called from outside the contract.
+The `EOSIO_DISPATCH` macro generates the dispatch logic required for the contract. It exposes the `setmessage` and `getmessage` actions to be called from outside the contract.
 
 By fixing the bug, we replaced `row.key = get_self(); with row.key = get_self().value;` to assign the key correctly. This ensures that the contract's account name is used as the key in the messages table.
 
