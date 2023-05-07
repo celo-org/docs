@@ -1,12 +1,12 @@
 ---
 title: Path to Build Full stack DApp on Celo with C++, WebAssembly and ReactJS
-description: Learn How to Full Stack dApp with C++ for the Smart Contract and ReactJS fofr the Frontend.
+description: Learn How to Full Stack dApp with C++ for the Smart Contract and ReactJS for the Frontend.
 authors:
   - name: Rasheed Mudasiru
     title: Software/DevOps Engineer
     url: https://github.com/Taiwrash
     image_url: https://avatars.githubusercontent.com/u/49725691?v=4
-tags: [celosage, dapp, intermediate, celo, reactjs]
+tags: [celosage, dapp, intermediate, celo, react]
 hide_table_of_contents: true
 slug: /tutorials/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs
 ---
