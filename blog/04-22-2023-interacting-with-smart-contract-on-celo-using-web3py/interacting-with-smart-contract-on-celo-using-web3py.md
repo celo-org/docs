@@ -28,7 +28,7 @@ I have designed this tutorial to help Celo-target developer understand how to us
 
 We are going to use the following tools. Please install them before proceeding.
 
-- Code editor or an IDE preferably. I recommend [VSCode]().
+- Code editor or an IDE preferably. I recommend [VSCode](https://code.visualstudio.com/).
 - [Python](https://python.org/downloads)
 - [Pip](https://pypi.org/project/pip/) (No need to install separately if you installed Python3 or later version)
 - [Git bash](https://git-scm.com/downloads)
