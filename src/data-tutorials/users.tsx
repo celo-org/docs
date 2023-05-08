@@ -1681,7 +1681,7 @@ const Users: User[] = [
   {
     title: 'Build A Decentralized Real Estate Marketplace On The Celo Blockchain Part 2',
     description: 'This is a two part tutorial. In this second part of the tutorial, you will learn how to Build the front end for the smart contract using react js.',
-    preview: require('./showcase/intermediate/build_a_decentralized_real_estate_marketplace_on_the_celo_blockchain_part_2.png'),
+    preview: require('./showcase/intermediate/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2.png'),
     website: 'blog/tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2',
     tags: ['celosage', 'react', 'celo', 'intermediate'],
   },
