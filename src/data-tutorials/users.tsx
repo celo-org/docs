@@ -3488,6 +3488,14 @@ const Users: User[] = [
     website: 'blog/tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  
+   {
+    title: 'Deploying a Celo Node Using Typescript',
+    description: 'This article shows developers how to do deploy a celo node using TypeScript programming language',
+    preview: require('./showcase/intermediate/sage-deploying-a-celo-node-using-typescript.png'),
+    website: '/blog/tutorials/deploying-a-celo-node-using-typescript',
+    tags: ['celo','celosage', 'typescript', 'nodejs', 'intermediate'],
+  },
 
 
 
