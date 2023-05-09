@@ -2339,6 +2339,13 @@ const Users: User[] = [
     tags: ['intermediate', 'cusd', 'celo', 'figment'],
   },
   {
+    title: 'Writing a Smart Contract to Handle Decentralized Waste Management on Celo',
+    description: 'In this tutorial, we will build a write a smart contract for a waste management system on the celo blockchain',
+    preview: require('./showcase/intermediate/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo.png'),
+    website: 'blog/tutorials/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
+  },
+  {
     title: 'Create subgraphs for Celo smart contracts',
     description: 'Learn how to integrate The Graph with CELO',
     preview: require('./showcase/intermediate/create-subgraphs-for-celo-smart-contracts.png'),
