@@ -717,6 +717,13 @@ const Users: User[] = [
     tags: ['celosage', 'beginner','celo'],
   },
   {
+    title: 'How to create a Token Staking Dapp',
+    description: 'Learn how to create a simple token staking Dapp with react,solidity and truffle for compiling and deploying.',
+    preview: require('./showcase/beginner/create-a-tokenstake.png'),
+    website:'/blog/tutorials/how-to-create-a-token-staking-dapp',
+    tags: ["react","metamask", "truffle","solidity","beginner"],
+  },
+  {
     title: 'How to Tokenize Physical Assets on Celo',
     description: 'Understand how to start the tokenization on Celo',
     preview: require('./showcase/beginner/how-to-tokenize.png'),
@@ -1540,13 +1547,7 @@ const Users: User[] = [
     website:'/blog/tutorials/how-to-build-an-nft-marketplace-with-nextjsipfsetherjs-and-redux',
     tags: ["celosage","metamask","dacade", "mint","nextjs","nft","intermediate","ipfs"],
   },
-  {
-    title: 'How to create a Token Staking Dapp',
-    description: 'Learn how to create a simple token staking Dapp with react,solidity and truffle for compiling and deploying.',
-    preview: require('./showcase/beginner/create-a-tokenstake.png'),
-    website:'/blog/tutorials/how-to-create-a-token-staking-dapp',
-    tags: ["react","metamask", "truffle","solidity","beginner"],
-  },
+
   {
     title: 'Deploy Celo Smart contracts with Remix IDE',
     description: 'Learn how to use Remix IDE for deploying Celo smart contracts',
