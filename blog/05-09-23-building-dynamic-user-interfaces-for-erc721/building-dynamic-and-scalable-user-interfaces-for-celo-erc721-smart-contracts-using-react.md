@@ -8,10 +8,10 @@ authors:
     image_url: https://github.com/dahnny.png
 tags: ["celo", "intermediate", "celosage", "react"]
 hide_table_of_contents: true
-slug: /tutorials/building-dynamic-user-interfaces-for-erc721
+slug: /tutorials/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/building-dynamic-user-interfaces-for-erc721.png)
+![header](../../src/data-tutorials/showcase/intermediate/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react.png)
 
 ## Introduction
 
@@ -21,6 +21,35 @@ This is in conjunction with a bigger project and I have explained some other par
 
 This tutorial would provide you with the tools you need to setup your react project and also walk you through writing some react implementation code.
 
+## Prerequisites
+
+- Prior knowledge of javascript
+- Familiarity with the command line
+- Basic understanding of blockchain concepts
+- Have some knowledge of solidity and its concepts
+- Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
+
+## Requirements
+- **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
+- A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
+- A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
+- An Internet Browser and a good internet connection
+
+## Why Use React?
+
+When it comes to implementing smart contracts on the Celo blockchain, React can be used to build a user interface that interacts with the smart contracts. Here are some reasons why you might choose to use React for this task:
+
+1. React makes it easy to build complex user interfaces: React's component-based architecture makes it easy to create reusable UI elements that can be combined to build complex user interfaces. This can be particularly useful when building a user interface for interacting with smart contracts, as there may be many different actions and data inputs required.
+
+2. React is fast and efficient: React is designed to be fast and efficient, which can be important when building a user interface that interacts with smart contracts on the blockchain. By using React, you can ensure that your UI remains responsive and performs well, even when dealing with large amounts of data.
+
+3. React has a large and active community: React has a large and active community of developers who contribute to the library and share their knowledge and experience. This can be particularly useful when building a user interface for interacting with smart contracts, as there may be complex issues or challenges that arise during development.
+
+4. React integrates well with other libraries and tools: React can be used alongside other libraries and tools, such as Redux for state management, React Router for routing, and Web3.js for interacting with the blockchain. This can make it easier to build a comprehensive solution for interacting with smart contracts on the Celo blockchain.
+
+## Getting Started
+
+React is a popular JavaScript library used for building user interfaces. It is widely used in web development due to its ability to create reusable UI components and its fast rendering capabilities. In this article, we will provide a detailed guide on how to install React using relevant terminal code.
 As I have always done in these series, I would point out the smart contract we are implementing for those new to this tutorial!
 
 ### MyNFT.sol
@@ -166,35 +195,6 @@ contract MyNftMarket {
 	}
 }
 ```
-## Prerequisites
-
-- Prior knowledge of javascript
-- Familiarity with the command line
-- Basic understanding of blockchain concepts
-- Have some knowledge of solidity and its concepts
-- Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
-
-## Requirements
-- **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
-- A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
-- A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
-- An Internet Browser and a good internet connection
-
-## Why Use React?
-
-When it comes to implementing smart contracts on the Celo blockchain, React can be used to build a user interface that interacts with the smart contracts. Here are some reasons why you might choose to use React for this task:
-
-1. React makes it easy to build complex user interfaces: React's component-based architecture makes it easy to create reusable UI elements that can be combined to build complex user interfaces. This can be particularly useful when building a user interface for interacting with smart contracts, as there may be many different actions and data inputs required.
-
-2. React is fast and efficient: React is designed to be fast and efficient, which can be important when building a user interface that interacts with smart contracts on the blockchain. By using React, you can ensure that your UI remains responsive and performs well, even when dealing with large amounts of data.
-
-3. React has a large and active community: React has a large and active community of developers who contribute to the library and share their knowledge and experience. This can be particularly useful when building a user interface for interacting with smart contracts, as there may be complex issues or challenges that arise during development.
-
-4. React integrates well with other libraries and tools: React can be used alongside other libraries and tools, such as Redux for state management, React Router for routing, and Web3.js for interacting with the blockchain. This can make it easier to build a comprehensive solution for interacting with smart contracts on the Celo blockchain.
-
-## Getting Started
-
-React is a popular JavaScript library used for building user interfaces. It is widely used in web development due to its ability to create reusable UI components and its fast rendering capabilities. In this article, we will provide a detailed guide on how to install React using relevant terminal code.
 
 ### Step 1: Install Node.js and npm
 
@@ -357,7 +357,7 @@ export default App;
 ```
 This file defines the main component of a web app that displays a user's wallet balance and crypto collectibles if the user is connected to the Celo blockchain network. If the user is not connected, it displays a cover image and a button to connect to the network.
 
-It imports several useful libraries like React Bootstrap, `useContractKit`, and several components like `Notification`, `Wallet`, `Cover`, and `Nfts`. It also imports several hooks like `useBalance`, `useMinterContract`, and `useMarketContract`.
+It imports several useful libraries like `React Bootstrap`, `useContractKit`, and several components like `Notification`, `Wallet`, `Cover`, and `Nfts`. It also imports several hooks like `useBalance`, `useMinterContract`, and `useMarketContract`.
 
 The `App` component has several variables declared using these imported hooks and libraries. It checks whether there is an `address` in the `useContractKit()` function. If the address exists, it displays the user's wallet balance, as well as the `Nfts` component that allows users to create and trade crypto collectibles. 
 
@@ -408,7 +408,7 @@ This  function fetches all the NFTs (non-fungible tokens) available on a marketp
 It does this by first getting the length of the listings array, then looping through each listing and creating a Promise for each one. 
 Inside the Promise, it retrieves the URI of the token and uses it to fetch metadata for the token. It also gets the owner of the token and other relevant data from the listing. 
 
-It then returns an array of all the Promises, which are resolved using Promise.all() to return an array of all the NFTs with their associated metadata. If there are any errors during this process, they are logged to the console.
+It then returns an array of all the Promises, which are resolved using `Promise.all()` to return an array of all the NFTs with their associated metadata. If there are any errors during this process, they are logged to the console.
 
 Next, we would need to get some information about the NFTs
 
@@ -473,7 +473,7 @@ After the purchase is made, it approves the resale of the NFT using `minterContr
 
 ### nfts/index.js
 
-We start of with the `getAssets` function. which is a React hook that retrieves NFTs from a smart contract. The hook is using the useCallback method to avoid unnecessary re-renders.
+We start of with the `getAssets` function. which is a React hook that retrieves NFTs from a smart contract. The hook is using the `useCallback` method to avoid unnecessary re-renders.
 
 ```js
   const getAssets = useCallback(async () => {
@@ -536,7 +536,7 @@ Up next, we would define a function that buys an NFT (non-fungible token) and up
     }
   };
 ```
-It takes in several parameters such as the minterContract and marketContract, performActions, index, and tokenId. When executed, the function sets the loading state to true, buys the NFT using the buyNft function, and then displays a success notification. 
+It takes in several parameters such as the `minterContract` and `marketContract`, `performActions`, `index`, and `tokenId`. When executed, the function sets the loading state to true, buys the NFT using the `buyNft` function, and then displays a success notification. 
 
 After that, it updates the list of NFTs using the getAssets function. If there is an error, it logs the error and displays an error notification. 
 

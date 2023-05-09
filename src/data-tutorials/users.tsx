@@ -2984,8 +2984,8 @@ const Users: User[] = [
   {
     title: 'Building Dynamic and Scalable User Interfaces for Celo ERC721 Smart Contracts using React- A Comprehensive Introduction',
     description: 'Integrating your smart contract with a frontend framework like React can provide a seamless and user-friendly experience for interacting with your contract',
-    preview: require('./showcase/intermediate/building-dynamic-user-interfaces-for-erc721.png'),
-    website: 'blog/tutorials/building-dynamic-user-interfaces-for-erc721',
+    preview: require('./showcase/intermediate/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react.png'),
+    website: 'blog/tutorials/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react',
     tags: ["celo", "intermediate", "celosage", "react"],
   },
   {
