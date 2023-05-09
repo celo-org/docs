@@ -39,6 +39,7 @@ To fully follow up with these tutorial, you should atleast have a basic understa
 node -v
 npm -v
 ```
+
 - A code editor. You will need a code editor to write and edit your code. Some popular options include Visual Studio Code and Atom.
 - A Metamask account. You will need a Metamask account to interact with the Celo blockchain from your web browser. If you don't already have one, you can create one by installing the Metamask extension for Chrome or Firefox or brave.
 
@@ -52,7 +53,7 @@ Click on **[this](https://github.com/Tevin-Isaac/celo-token-staking-dapp)** repo
 
 ### Folder structure
 
-```bash
+```
 celo-token-staking-dapp/
 migrations/
 ┣ .gitkeep
@@ -92,11 +93,12 @@ src/
 test/
 ┣ .gitkeep
 ┗ TokenStaking.js
+
 ```
 ## Setup
 Incase you want to do the project from scratch and not clone the repository above  then the  first step is to generate a default react application that we are going to use for the front end.To do so you should run:
 
-```
+```bash
 npx create-react-app my-app
  Or  
 yarn create react-app my-app
@@ -134,16 +136,16 @@ To learn more about react here is a  **[guide that explains how to generate a re
 ## Install Truffle
 After that install truffle in your project using this command:
 
-```
+```bash
 npm install -g truffle
 ```
 After running this on to our react up we will now initialize it with the following command:
 
-```
+```bash
 truffle init
 
 ```
-When you run truffle init, it creates a basic directory structure and files for your new project, including:
+When you run truffle init, it creates a basic directory structure and files for your new project including:
 - A 'contracts' directory for your Solidity smart contracts
 - A 'migrations' directory for managing the deployment of your contracts
 - A 'test' directory for writing automated tests for your contracts
@@ -159,7 +161,7 @@ On the Contracts folder that truffle generated we will  create 3 smart contracts
 To learn more about Solidity smart contracts, check out this **[step-by-step guide to learn solidity smart contract basics](https://docs.soliditylang.org/en/v0.8.19/introduction-to-smart-contracts.html)**  which provides detailed instructions on getting started.
 :::
 
-- **`Migrations.sol`**
+ **Migrations.sol**
 
 First on your contracts folder create a new file named "Migrations.sol".This is the code:
 
@@ -202,7 +204,9 @@ This line specifies the license under which the code is released. In this case, 
 pragma solidity >=0.4.21 <0.9.0;
 
 ```
+
 This line specifies the version of Solidity that the code is compatible with. In this case, it's any version between 0.4.21 and 0.9.0.
+
 ```solidity
 contract Migrations {
   address public owner;
@@ -222,6 +226,7 @@ This is the start of the Migrations contract. It declares two state variables: o
   }
 
 ```
+
 This is a modifier function that restricts access to certain functions of the contract to the owner only.
 
 ```solidity
@@ -230,6 +235,7 @@ This is a modifier function that restricts access to certain functions of the co
   }
 
 ```
+
 This function sets the value of last_completed_migration to the provided completed parameter. It can only be called by the owner of the contract.
 
 ```solidity
@@ -239,12 +245,13 @@ This function sets the value of last_completed_migration to the provided complet
   }
 
 ```
+
 This function upgrades the 'Migrations' contract to a new address. It creates a new instance of the 'Migrations' contract at the new_address provided, and sets its last_completed_migration variable to the same value as the current contract.
 
 Overall, the Migrations contract is a simple contract used by Truffle to manage the deployment and upgrade of smart contracts in your project. 
 
 
-- **`TestToken.sol`**
+ **TestToken.sol**
 
 Now create another  new file on the contracts folder and let us name this contract TestToken.sol.The contract will look like this:
 
@@ -343,7 +350,6 @@ These lines define two events that will be emitted when a transfer or approval o
 ```
 These lines define two mappings that keep track of the token balances and allowances of each address.
 
-
 ```solidity
     constructor(){
         balanceOf[msg.sender] = totalSupply;
@@ -351,6 +357,7 @@ These lines define two mappings that keep track of the token balances and allowa
 
 
 ```
+
 This is the constructor function of the contract. It sets the balance of the contract deployer to the total supply of the token.
 
 ```solidity
@@ -362,6 +369,7 @@ This is the constructor function of the contract. It sets the balance of the con
         return true;
     }
 ```
+
 This function transfers _value amount of tokens from the caller's address to the _to address. It checks if the caller has enough tokens to transfer and emits a Transfer event upon success.
 
 ```solidity
@@ -371,6 +379,7 @@ This function transfers _value amount of tokens from the caller's address to the
         return true;
     }
 ```
+
 This function allows _spender to spend _value amount of tokens on behalf of the caller. It emits an Approval event upon success.
 
 ```solidity
@@ -384,11 +393,12 @@ This function allows _spender to spend _value amount of tokens on behalf of the 
         return true;
     }
 ```
+
 This function allows _spender to transfer _value amount of tokens from _from address to _to address, provided that _spender has been granted sufficient allowance by _from. It checks if _from has enough tokens to transfer and emits a Transfer event upon success.
 Overall, this contract defines a basic ERC-20 token with transfer and approval functionalities.
 
 
-- **`TokenStaking.sol`**
+ **TokenStaking.sol**
 For our final contract in the contract folder create a file named 'TokenStaking.sol'.This will be our Token Staking contract that will allow us to stake our tokens.it will look like this:
 
 ```solidity
@@ -565,12 +575,14 @@ contract TokenStaking {
 ```
 import "./TestToken.sol";
 ```
+
 This is an import statement that imports the TestToken.sol contract into the current contract.
 
 ```solidity
 contract TokenStaking {
 
 ```
+
 This is the start of the TokenStaking contract definition
 
 ```solidity
@@ -583,6 +595,7 @@ This line declares a public string variable called name and initializes it to th
 TestToken public testToken;
 
 ```
+
 This line declares a public variable called testToken of type TestToken. This variable will be used to hold an instance of the TestToken contract.
 
 
@@ -590,34 +603,41 @@ This line declares a public variable called testToken of type TestToken. This va
 address public owner;
 
 ```
+
 This line declares a public variable called owner of type address. This variable will be used to store the address of the owner of the contract.
 
 ```solidity
 uint256 public defaultAPY = 100;
 
 ```
+
 This line declares a public variable called defaultAPY of type uint256 and initializes it to the value 100.
 ```solidity
 uint256 public customAPY = 137;
 
 ```
+
 This line declares a public variable called customAPY of type uint256 and initializes it to the value 137.
 
 ```solidity
 uint256 public totalStaked;
 uint256 public customTotalStaked;
 ```
+
 These lines declare public variables totalStaked and customTotalStaked, both of type uint256. These variables will be used to store the total amount of tokens staked in the contract and the custom staking pool.
 
 ```solidity
 mapping(address => uint256) public stakingBalance;
 mapping(address => uint256) public customStakingBalance;
 ```
+
 These lines declare public mapping variables stakingBalance and customStakingBalance, both of type mapping(address => uint256). These mappings will be used to keep track of the staking balances of each user.
+
 ```solidity
 mapping(address => bool) public hasStaked;
 mapping(address => bool) public customHasStaked;
 ```
+
 These lines declare public mapping variables hasStaked and customHasStaked, both of type mapping(address => bool). These mappings will be used to keep track of whether each user has staked tokens or not.
 
 ```solidity
@@ -630,8 +650,8 @@ These lines declare public mapping variables isStakingAtm and customIsStakingAtm
 address[] public stakers;
 address[] public customStakers;
 ```
-These lines declare public arrays to keep track of the addresses of all users who have staked in each pool.
 
+These lines declare public arrays to keep track of the addresses of all users who have staked in each pool.
 
 ```solidity
 constructor(TestToken _testToken)  payable {
@@ -639,6 +659,7 @@ constructor(TestToken _testToken)  payable {
         owner = msg.sender;
     }
 ```
+
 This is the constructor for the TokenStaking contract. It takes a parameter of type TestToken and initializes the testToken variable with it. It also sets the owner variable to the address of the person deploying the contract.
 
 ```solidity
@@ -663,6 +684,7 @@ This is the constructor for the TokenStaking contract. It takes a parameter of t
         isStakingAtm[msg.sender] = true;
     }      
 ```
+
 This is the constructor for the TokenStaking contract. It takes a parameter of type TestToken and initializes the testToken variable with it. It also sets the owner variable to the address of the person deploying the contract.
 
 ```solidity
@@ -684,8 +706,8 @@ This is the constructor for the TokenStaking contract. It takes a parameter of t
         //updating staking status
         isStakingAtm[msg.sender] = false;
     }
-
 ```
+
 This function allows users to withdraw their staked tokens from the staking contract. It checks the user's staking balance, transfers the tokens back to the user's wallet, updates the total staked amount, resets the user's staking balance, and sets the user's staking status to false
 
 ```solidity
@@ -704,6 +726,7 @@ This function allows users to withdraw their staked tokens from the staking cont
         customIsStakingAtm[msg.sender] = true;
     }
 ```
+
 This function allows users to stake their tokens into a custom APY pool. It transfers the specified amount of tokens from the user's wallet to the staking contract, updates the user's custom staking balance and custom total staked amount, adds the user to the custom stakers array if they haven't staked before, and sets the user's custom staking status to true.
 
 ```solidity
@@ -717,6 +740,7 @@ This function allows users to stake their tokens into a custom APY pool. It tran
     }
 
 ```
+
  This function allows users to withdraw their staked tokens from the custom APY pool. It checks the user's custom staking balance, transfers the tokens back to the user's wallet, updates the custom total staked amount, resets the user's custom staking balance, and sets the user's custom staking status to false.
 
 ```solidity
@@ -739,6 +763,7 @@ This function allows users to stake their tokens into a custom APY pool. It tran
     }
 
 ```
+
 This function allows the contract owner to distribute rewards to all stakers in the default APY pool. It loops through all stakers, calculates their daily rewards based on their staking balance and the default APY, and transfers the calculated amount of tokens to each staker.
 
 ```solidity
@@ -755,6 +780,7 @@ This function allows the contract owner to distribute rewards to all stakers in 
         }
     }
 ```
+
 This function allows the contract owner to distribute rewards to all stakers in the custom APY pool. It loops through all custom stakers, calculates their daily rewards based on their custom staking balance and the custom APY, and transfers the calculated amount of tokens to each staker.
 
 ```solidity
@@ -768,6 +794,7 @@ This function allows the contract owner to distribute rewards to all stakers in 
         customAPY = _value;
     }
 ```
+
 This function allows the contract owner to change the custom APY value.
 
 ```solidity
@@ -779,6 +806,7 @@ This function allows the contract owner to change the custom APY value.
     }
 }
 ```
+
 This function is for testing purposes only. It transfers 1000 TST tokens to the caller's wallet.
 
 Overall this  smart contract  implements a token staking mechanism. Users can stake ERC20 tokens, and receive rewards in the same token based on an Annual Percentage Yield (APY) that can be customized by the contract owner.
@@ -791,8 +819,9 @@ Finally the contract has a changeAPY function, which can only be called by the c
 ## Truffle configuration
 An important file that we will have to customize its code is the truffle-config.js file.The truffle-config.js file is the configuration file for the Truffle development framework. It specifies the settings for how Truffle should interact with the Ethereum network and deploy contracts
 
-- **`truffle-config.js`**
+ **truffle-config.js**
 Inside our file we will update our code to this:
+
 ```javascript
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const mnemonic = 'awesome pear drive venture sign toast tide much hundred floor adapt attend';
@@ -834,6 +863,7 @@ module.exports = {
   }
 };
 ```
+
 This is a Truffle configuration file (truffle-config.js) for a project using the Celo Alfajores testnet. It includes the following configurations:
 * mnemonic: A 12-word mnemonic phrase used for generating the HDWalletProvider instance, which is used to sign transactions.(use your own seedphrase generated from your metamask wallet)
 * networks: Defines the network configurations for the project, including the development network and the Alfajores testnet. The Alfajores network is configured to use the HDWalletProvider with the specified mnemonic and to skip the dry run before migrations. The gas and gasPrice are also specified for the network.
@@ -850,13 +880,16 @@ To learn more about this celo network here is a   **[guide that explains about t
 Now that our truffle file  is set to deploy to the alfajores testnet lets take a look at our 'Migrations' Folder that was generated earlier.
 
 On your terminal run this:
-```
+
+```bash
 truffle migrate 
 ```
 That command will create two files named '1_initial_migration.js' and  '2_deploy_contracts.js`.Now we will update the code in those two files.
 
-- **`1_initial_migration.js`**
+ **1_initial_migration.js**
+
 In this file we will update to this  this code:
+
 ```javascript
 const Migrations = artifacts.require("Migrations");
 
@@ -864,11 +897,13 @@ module.exports = function(deployer) {
   deployer.deploy(Migrations);
 };
 ```
+
 The script exports a function that takes a deployer argument. The deployer is a helper object provided by Truffle that enables deploying smart contracts to the blockchain.
 In this case, the script deploys the Migrations contract by calling deployer.deploy(Migrations).This creates a new instance of the Migrations contract and deploys it to the blockchain.
 
-- **`2_deploy_contracts.js`**
+ **2_deploy_contracts.js**
 In our second file we will update our code to this:
+
 ```javascript
 const TestToken = artifacts.require('TestToken');
 const TokenStaking = artifacts.require('TokenStaking');
@@ -890,6 +925,7 @@ module.exports = async function(deployer, network, accounts) {
   await testToken.transfer(accounts[1], '1000000000000000000000');
 };
 ```
+
 This is a migration script written in JavaScript for the Truffle framework. It deploys two smart contracts, TestToken and TokenStaking.
 The script first imports the two contract artifacts using artifacts.require() function from Truffle then it exports an asynchronous function that receives three arguments: deployer, network, and accounts.
 Inside the function, the script deploys the TestToken contract using deployer.deploy(TestToken) and then fetches the deployed contract instance using await TestToken.deployed().
@@ -897,12 +933,13 @@ Next, it deploys the TokenStaking contract, passing the TestToken address as a p
 After that, it transfers 500,000 TestTokens to the TokenStaking contract address for rewards using await testToken.transfer(tokenStaking.address, '500000000000000000000000').
 Finally, the script transfers 1,000 TestTokens to the second address in the accounts array for testing purposes using await testToken.transfer(accounts[1], '1000000000000000000000').
 
-- - **`Scripts`**
+ **Scripts**
 
 We also added a truffle scripts folder that allows us to change the percentage yield(APY) of ur token staking smart contract.
 On our scripts folder i will create two files namely 'changeAPY.js file and redistribute.js file"
 
-- **`changeAPY.js`**
+- **changeAPY.js**
+
  ```javascript
  const TokenStaking = artifacts.require('TokenStaking');
 
@@ -922,17 +959,19 @@ module.exports = async function(callback) {
 // for 0.1% Daily APY pass 0.1 as an argument
 // to run script  -  truffle exec scripts/changeAPY.js 0.1
 ```
+
 This is a Truffle script for changing the annual percentage yield (APY) of a token staking smart contract.
 First, it requires the TokenStaking contract using artifacts.require.
 Then, the script retrieves the value of the desired daily APY from the command-line arguments passed to the script, and converts it to a yearly APY.
 Next, it deploys the TokenStaking contract and uses the changeAPY function of the contract to change the APY. The new APY value is passed as an argument to the changeAPY function.
 Finally, the script logs a message to the console indicating that the APY has been changed.To run this script, you need to execute the following command in the terminal:
 
-```
+```bash
 truffle exec scripts/changeAPY.js 0.1
 ```
 
-- **`redistribute.js`**
+- **redistribute.js**
+
 ```javascript
 const TokenStaking = artifacts.require('TokenStaking');
 
@@ -956,6 +995,7 @@ module.exports = async function(callback) {
 //to run script  -  truffle exec scripts/redistribute.js
 //to run custom redistribution   -  truffle exec scripts/redistribute.js custom
 ```
+
 This script is used to redistribute daily rewards for a staking contract. If the script is run without any arguments, it will call the redistributeRewards() function on the deployed TokenStaking contract to distribute rewards to all stakers. If the argument 'custom' is provided, it will call the customRewards() function on the deployed contract to redistribute rewards according to a custom algorithm.
 
 Here is an overview of what the script does if the argument 'custom' is provided:
@@ -969,14 +1009,17 @@ If no argument is provided:
 - Call the redistributeRewards()
 
 To run this script use the following commands:
-```
+
+```bash
  truffle exec scripts/redistribute.js
  truffle exec scripts/redistribute.js custom
 ```
-- **Test**
+
+ **Test**
 Our final truffle configuration folder is the 'Test' folder.The test folder in Truffle is used to write and run automated tests for your smart contracts. Tests are an important part of smart contract development as they allow you to verify the correctness and security of your code, as well as ensure that it behaves as expected under different conditions.Inside it lets name our test file 'TokenStaking.js'.
 
-- **`TokenStaking.js`**
+- **TokenStaking.js**
+
 ```javascript
 const { assert, use } = require('chai');
 const { default: Web3 } = require('web3');
@@ -1336,6 +1379,7 @@ contract('TokenStaking', ([creator, user]) => {
 });
 //to run test - truffle test
 ```
+
 This is a unit test file for a smart contract written in Solidity, and the testing is done using the Truffle testing framework. The contract being tested is called TokenStaking, and it allows users to stake TestTokens and receive rewards based on the Annual Percentage Yield (APY) set by the contract.
 The test file is checking various functionalities of the TokenStaking contract, including:
 - The name of the TestToken contract deployed matches the expected name
@@ -1352,7 +1396,8 @@ Each test is defined within a describe() function and contains multiple it() fun
 Now that our backend is set we will now update the react code in our 'src' folder.
 Inside it we have a 'components' folder with the following javascript files:
 
-- **`AdminTesting.js`**
+ **AdminTesting.js**
+
 ```javascript
 import React from 'react';
 import classes from './AdminTesting.module.css';
@@ -1382,10 +1427,12 @@ const AdminTesting = (props) => {
 
 export default AdminTesting;
 ```
+
 This is a React functional component named AdminTesting that returns a JSX element. The component takes in props as an argument and renders a div with class for_testing. Inside the div, there is a paragraph with the text "FOR TESTING PURPOSE", followed by two buttons. The first button has an onClick event listener that executes the function props.claimTst when clicked. The second button also has an onClick event listener that executes either the function props.redistributeRewards or a custom redistribution function based on the value of the props.page variable.
 Below the buttons, there is another div with class network. Inside this div, there are three paragraphs that display information about the selected network, contract balance, and staking contract address. The information is obtained from the props object passed to the component. The props.network object contains information about the selected network, including the name and ID. The props.contractBalance variable contains the balance of the contract in TestToken (Tst), and props.tokenStakingContract._address contains the address of the staking contract. The className attribute of the divs is set using the classes object imported from the AdminTesting.module.css file. This allows for modular CSS styling of the component. Finally, the component is exported as the default export using export default AdminTesting;.
 
-- **`Navigation.js`**
+ **Navigation.js**
+
 ```javascript
 
 
@@ -1434,13 +1481,16 @@ const Navigation = (props) => {
 };
 export default Navigation;
 ```
+
 This is a React functional component named Navigation that returns a JSX element. The component takes in props as an argument and renders a div with class navigation. Inside the div, there are two buttons that display information about the APY (annual percentage yield) for two different pool statuses.
 The component also declares a state variable called poolStatus and sets its initial value to 'default' using the useState hook. This state variable is used to keep track of which button is currently active.
 The changePool function is also declared within the component. This function takes in a val argument and updates the poolStatus state variable and calls the changePage function that is passed in as a prop, but only if the val argument is different from the current poolStatus value.
 Each button has an onClick event listener that calls the changePool function with a different val argument based on the button clicked. The text displayed on the buttons includes the APY values obtained from the props.apy array, which is also passed in as a prop. The className attribute of the buttons is set using the classes object imported from the Navigation.module.css file, allowing for modular CSS styling of the component.
 
 Finally, the component is exported as the default export using export default Navigation;.
-- **`Staking.js`**
+
+ **Staking.js**
+
 ```javascript
 import React, { useState } from 'react';
 import classes from './Staking.module.css';
@@ -1519,6 +1569,7 @@ const Staking = (props) => {
 
 export default Staking;
 ```
+
  This is a React functional component called Staking.
 It takes in several props such as account, apy, totalStaked, myStake, userBalance, stakeHandler, unStakeHandler, inputHandler which are used to render the UI and handle various events.
 The component renders a stake/unstake interface that includes an input field for the user to enter the amount they want to stake or unstake. The goMax function sets the input value to the user's balance when called.
@@ -1530,9 +1581,10 @@ Finally, the component has a logo image and a header that reads 'Token Staker'.
 The javascript  component files above have some styling in them and the files that show that are 'AdminTesting.module.css','Navigation.module.css' and 'Staking.module.css'.I wont focus on them because you can customize based on your choosing.
 CSS in React is used to style and visually design web pages. It allows developers to create beautiful and responsive user interfaces by defining styles and rules that apply to specific HTML elements. In React, styles are defined using CSS modules which help to keep styles scoped to individual components and prevent clashes with other styles in the application. CSS modules also allow for better maintainability and organization of styles, making it easier to update and modify styles in the future.
 
-- **`App.js`**
+ **App.js**
 Our final file to customize is the 'App.js' file.'The App.js' file is the main entry point of a React application. It defines the root component of the application and is responsible for rendering the initial view of the app.It is the main file that sets up the structure of the application and serves as a starting point for building a React application.
 Here is our code below:
+
 ```javascript
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
@@ -1935,7 +1987,9 @@ const App = () => {
 };
 
 export default App;
+
 ```
+
 This is a JavaScript file for our  React application. It imports several modules, including React, Web3, and some JSON files.
 The file defines a functional component called App that uses the React useState and useEffect hooks to manage state and lifecycle methods, respectively.
 The component initializes several state variables using the useState hook, including account, network, testTokenContract, tokenStakingContract, inputValue, contractBalance, totalStaked, myStake, appStatus, loader, userBalance, apy, and page.
@@ -1946,10 +2000,14 @@ There is also the 'App.module.css' and 'index.css' file that are responsible for
 ## Compile and Deploy
 Now that we are set with our project files we will now use Truffle to compile and deploy our smart contract for it to be able to work in the front end when we run our project locally.
 To do so lets first run this command:
-```
+
+```bash
 truffle compile
 ```
+
 When i run that command this is my output:
+
+
 ```
 Compiling your contracts...
 ===========================
@@ -1964,7 +2022,7 @@ Compiling your contracts...
 This shows that it has compiled successfully.Incase there was an error compiling then it would indicate the error.This means that if your smart contract has an error it will show you the output and not compile successfully.
 Now  that we want to deploy our contract on the alfajores test net this is  what our command will be:
 
-```
+```bash
  truffle migrate --network alfajores  OR truffle deploy --network alfajores
 ```
 When you run this command this will be the output:
@@ -2049,16 +2107,19 @@ Summary
 > Final cost:          0.02956799 ETH
 
 ```
+
 Now our migration files and our contracts have been deployed successfully and the transaction has been excecuted  you can even view it on the Celo Testnet block explorer.
 
 :::tip
-Incase you need to confirm the transaction hash   **[Celo Testnet Block Explorer](https://alfajores.celoscan.io)** you can view it here.
+Incase you need to confirm the transaction hash **[Celo Testnet Block Explorer](https://alfajores.celoscan.io)** you can view it here.
 :::
 
 For testing purposes of our smart contracts run this command below:
-```
+
+```bash
 truffle test --network alfajores
 ```
+
 It should output something like this:
 
 ```
@@ -2085,17 +2146,18 @@ Compiling your contracts...
   7 passing (1m)
 
 ```
+
 This is the output when you test it and incase you get an error then it will also show you on the terminal.Most times the  error can come due to   insufficient funds for gas * price + value + gatewayFee but this may also be as a result  on the argument you set on the TokenStaking smart contract.Sometimes when you run 'truffle test' the test  might pass successfully but when you test on a different network it might not test successfully.Usually this is because of gas fees but it will show you the argument error to fix.
 
 ## Conclusion
-Feel free to style the application however you feel.This is just a basic react  web app with no major features.With the knowledge you gained you can also now create your own staking Dapp.
+Feel free to style the application however you feel.This is just a basic react  web app with no major features.With the knowledge you gained you can also now create your own Token staking Dapp with even different frameworks.
 
 ## About the author
-I am Tevin Isaac a blockchain developer based in Nairobi,Kenya and a dacade evangelist.
+I am a blockchain developer and a dacade evangelist currently based in Nairobi,Kenya.
 You can always Reach me here:
 
-Linked In:https://www.linkedin.com/in/tevin-isaac-67894520a/
-Twitter:https://twitter.com/isaactevin
+Linked In:[Link](https://www.linkedin.com/in/tevin-isaac-67894520a/)
+Twitter: [Link](https://twitter.com/isaactevin)
 Github: [Link](https://github.com/Tevin-Isaac)
 
 
@@ -2107,4 +2169,4 @@ Github: [Link](https://github.com/Tevin-Isaac)
 
 - [Source Code](https://github.com/Tevin-Isaac/celo-token-staking-dapp)
 
-Thank You!! for staying onboard.
+Thank You!! for staying onboard.:blush:
