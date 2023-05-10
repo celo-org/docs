@@ -969,6 +969,14 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-decentralized-book-library',
     tags: ['celosage', 'celo', 'intermediate', 'contractkit'], 
   },
+   {
+    title: 'Building A Decentralised Judicial Archiving System',
+    description: 'This tutorial teaches how you can create a decentralised application for  managing judicial archives',
+    preview: require('./showcase/intermediate/building-a-decentralised-judicial-archiving-system.png'),
+    website: 'blog/tutorials/building-a-decentralised-judicial-archiving-system',
+    tags: ['celosage', 'celo', 'intermediate'], 
+  },
+  
   {
     title: 'Building a Vending Machine on Celo Blockchain',
     description: 'This tutorial teaches how to build a vending machine on Celo blockchain',
