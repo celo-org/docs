@@ -3010,6 +3010,13 @@ const Users: User[] = [
     tags: ['celosage', 'smartcontract', 'solidity', 'react', 'hardhat', 'crowdfunding', 'intermediate'],
   },
   {
+    title: 'Building Dynamic and Scalable User Interfaces for Celo ERC721 Smart Contracts using React- A Comprehensive Introduction',
+    description: 'Integrating your smart contract with a frontend framework like React can provide a seamless and user-friendly experience for interacting with your contract',
+    preview: require('./showcase/intermediate/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react.png'),
+    website: 'blog/tutorials/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react',
+    tags: ["celo", "intermediate", "celosage", "react"],
+  },
+  {
     title: 'Example architectures for a simple payment dapp',
     description: 'This post will focus on the front-end part of how to create a simple payment dapp',
     preview: require('./showcase/beginner/example-architectures-for-a-simple-payment-dapp.png'),
