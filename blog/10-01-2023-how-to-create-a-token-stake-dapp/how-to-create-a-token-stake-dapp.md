@@ -1,5 +1,5 @@
 ---
-title: How to  create a Token Staking Dapp
+title: How to create a Token Staking Dapp
 description: Learn how to create a simple token staking Dapp with react,solidity and truffle for compiling and deploying.
 authors:
   - name: Tevin Isaac
