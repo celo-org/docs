@@ -3,7 +3,7 @@ title: Building A Decentralised Judicial Archiving System
 description: This tutorial teaches how you can create a decentralised application for  managing judicial archives
 authors:
   - name: Emiri Udogwu
-    title: Tech Ethusiast, Smart Contract Developer 
+    title: Tech Ethusiast, Smart Contract Developer
     url: https://github.com/emiridbest
     image_url: https://avatars.githubusercontent.com/u/6362475?v=4
 tags: [celosage, celo, intermediate]
@@ -15,7 +15,7 @@ slug: /tutorials/building-a-decentralised-judicial-archiving-system
 
 ## Introduction​
 
-A decentralized judicial archiving system is a type of blockchain-based system that enables the secure and transparent storage of legal documents and records. By utilizing blockchain technology, the system provides a tamper-proof and decentralized database that can be accessed by authorized parties from anywhere in the world. The decentralized nature of the system ensures that all records are stored in a distributed network of nodes, preventing data loss or manipulation. With a decentralized judicial archiving system, legal professionals, judges, and other authorized parties can access legal documents quickly and easily, increasing efficiency and transparency in the judicial process. Additionally, the system provides a secure and transparent method of storing and sharing sensitive legal information, reducing the risk of fraud and corruption. 
+A decentralized judicial archiving system is a type of blockchain-based system that enables the secure and transparent storage of legal documents and records. By utilizing blockchain technology, the system provides a tamper-proof and decentralized database that can be accessed by authorized parties from anywhere in the world. The decentralized nature of the system ensures that all records are stored in a distributed network of nodes, preventing data loss or manipulation. With a decentralized judicial archiving system, legal professionals, judges, and other authorized parties can access legal documents quickly and easily, increasing efficiency and transparency in the judicial process. Additionally, the system provides a secure and transparent method of storing and sharing sensitive legal information, reducing the risk of fraud and corruption.
 In this tutorial we shall be looking at code examples and a step by step guide to setting up a simple archiving system.
 
 ## Prerequisite
@@ -31,11 +31,13 @@ In this tutorial we shall be looking at code examples and a step by step guide t
 - A Pinata account
 
 You can clone this project on github by running:
+
 ```
 git clone https://github.com/emiridbest/Judicial_Archiving_System.git
 ```
 
 ## Let’s Begin…
+
 This is what our Dapp will look like:
 
 ![Judiciary](https://github.com/emiridbest/docs/assets/6362475/5c678065-2fbf-41de-ba31-1546ded0e5b9)
@@ -116,8 +118,6 @@ contract Library {
 }
 ```
 
-
-
 Now, we compile this contract then deploy on Injected web3 provider. This pops up our already install metamask wallet, make sure to choose Alfajores containing wallet. On deploying, a link to Alfajores Explorer pops up at the top of your browser. You can now copy out your contract address and save it somewhere as web3.js needs this address to interact with this particular contract. Also, go back to remix and copy out you contract ABI save it somewhere.
 
 ## Now Let’s code the frontend:
@@ -148,48 +148,41 @@ Now, update the content of the `package.json` by copying and pasting this;
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-	"@celo-tools/use-contractkit": "^3.1.0",
-	"@celo/contractkit": "^1.5.1",
-	"@testing-library/jest-dom": "^5.16.1",
-	"@testing-library/react": "^12.1.2",
-	"@testing-library/user-event": "^13.5.0",
-	"@web3uikit/core": "^0.2.45",
-	"@web3uikit/web3": "^0.2.2",
-	"react": "^18.2.0",
-	"react-bootstrap": "^2.5.0",
-	"react-dom": "^18.2.0",
-	"react-error-overlay": "6.0.9",
-	"react-scripts": "4.0.3",
-	"web-vitals": "^2.1.4",
-	"web3": "^1.7.0",
-	"web3uikit": "0.1.159"
+    "@celo-tools/use-contractkit": "^3.1.0",
+    "@celo/contractkit": "^1.5.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@web3uikit/core": "^0.2.45",
+    "@web3uikit/web3": "^0.2.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-dom": "^18.2.0",
+    "react-error-overlay": "6.0.9",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^2.1.4",
+    "web3": "^1.7.0",
+    "web3uikit": "0.1.159"
   },
   "scripts": {
-	"start": "react-scripts start",
-	"build": "react-scripts build",
-	"test": "react-scripts test",
-	"eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-	"extends": [
-  	"react-app",
-  	"react-app/jest"
-	]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-	"production": [
-  	">0.2%",
-  	"not dead",
-  	"not op_mini all"
-	],
-	"development": [
-  	"last 1 chrome version",
-  	"last 1 firefox version",
-  	"last 1 safari version"
-	]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "resolutions": {
-	"react-error-overlay": "6.0.9"
+    "react-error-overlay": "6.0.9"
   }
 }
 ```
@@ -378,7 +371,7 @@ export default App;
 
 Now let’s break this down;
 
-   - Step 6: Import all dependencies
+- Step 6: Import all dependencies
 
 ```js
 import React, { useState, useEffect, useCallback } from "react";
@@ -412,7 +405,8 @@ We also imported the react components which we will be seeing more of in this tu
   const [role, setRole] = useState("");
   const [documents, setDocuments] = useState([]);
   ...
-  ```
+```
+
 - Step 8: Create functions for connecting to the network
 
 ```js
@@ -483,12 +477,12 @@ The `assignRole` function
     }
   }
   ...
-  ```
-  
-  It takes two inputs: `address`  and `role`.
+```
 
-  The function asks the blockchain to update the user's role, using the `assignRole` command.
-  
+It takes two inputs: `address` and `role`.
+
+The function asks the blockchain to update the user's role, using the `assignRole` command.
+
 The `addDocument` function
 
 ```js
@@ -550,8 +544,8 @@ Then, it sends a transaction to the blockchain using a contract method named `ad
     }
   }
   ...
-  ```
-  
+```
+
 - Step 10: Renders a user interface with various sub-components
 
 ```js
@@ -722,7 +716,7 @@ const AddDocument = ({ addDocument }) => {
 
   return (
     <div className="add">
-            <label className="">Add Document</label>
+      <label className="">Add Document</label>
 
       <div className="">
         <Input
@@ -872,9 +866,7 @@ export { default as AddDocument } from "./AddDocument";
 export { default as Archive } from "./Archive";
 ```
 
-
-
-  There you go, our Dapp is ready.
+There you go, our Dapp is ready.
 
 Here is [Source Code](https://github.com/emiridbest/Judicial_Archiving_System.git)
 
@@ -896,4 +888,3 @@ Emiri Udogwu, a licensed medical doctor with a burning passion for technology an
     - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
     - [Contract Kit](https://docs.celo.org/developer/contractkit)
     - [Pinata](https://docs.celo.org/developer/contractkit)
-
