@@ -47,26 +47,30 @@ Now you can use this test account in the tutorial. Ensure that you're interactin
 
 ### Setting up the Project
 1. Create a new directory for the project and navigate to it in your terminal:
-    bash
+   
+   ```bash
     mkdir celo-decentralized-storage
     cd celo-decentralized-storage
-
-
-
+    ```
+    
 2. Initialize a new Node.js project:
-    bash
-    npm init -y
+
+```bash
+npm init-y
+```
 
 
 3.  Install dependencies
-    bash
-    npm install --save @truffle/hdwallet-provider @celo/contractkit dotenv
-
+   
+   ```bash
+   npm install --save @truffle/hdwallet-provider @celo/contractkit dotenv
+   ```
 
 4. Initialize a new Truffle project:
-    bash
-    truffle init
-
+   
+   ```bash
+   truffle init
+   ```
 
 ### Creating the Smart Contract
 1. Create a new directory called `contracts` in the project root and create a new file called `FileStorage.sol` inside it:
@@ -348,6 +352,7 @@ This frontend application allows users to select a file, specify whether it shou
 
 ## Testing the Application
 1. Start the React development server:
+
    ``` bash
     cd frontend
     npm start
@@ -361,6 +366,7 @@ This frontend application allows users to select a file, specify whether it shou
 
 3. Connect MetaMask to the Alfajores testnet by following these instructions.
 4.  Select a file, specify whether it's public or private, and click the `Upload` button. The file will be uploaded to IPFS, and the application will add it to the smart contract on the Celo network.
+
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580448146_image.png)
 
 5. Click on upload.
@@ -368,6 +374,7 @@ This frontend application allows users to select a file, specify whether it shou
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580475337_image.png)
 
 6. Confirm the transaction on the Metamask pop-up window.
+
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580543346_image.png)
 
 7.Your file has now been uploaded and the IPFS hash is generated.
