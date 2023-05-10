@@ -20,15 +20,15 @@ In this tutorial we shall be looking at code examples and a step by step guide t
 
 ## Prerequisite
 
-   - Node.js should be installed along with a node package manager(npm)
-   - A basic understanding of Celo and smart contracts
-   - A Celo Wallet address:
-   - To create Alfajores wallet, go to Alfajores wallet
-   - To get testnest funds, go to Celo faucet
-   - A text editor such as Visual Studio Code installed on your computer
-   - Remix IDE
-   - Metamask
-   - A Pinata account
+- Node.js should be installed along with a node package manager(npm)
+- A basic understanding of Celo and smart contracts
+- A Celo Wallet address:
+- To create Alfajores wallet, go to Alfajores wallet
+- To get testnest funds, go to Celo faucet
+- A text editor such as Visual Studio Code installed on your computer
+- Remix IDE
+- Metamask
+- A Pinata account
 
 You can clone this project on github by running:
 ```
