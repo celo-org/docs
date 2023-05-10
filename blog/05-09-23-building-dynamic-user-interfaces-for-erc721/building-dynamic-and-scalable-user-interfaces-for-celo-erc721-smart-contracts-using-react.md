@@ -30,6 +30,7 @@ This tutorial would provide you with the tools you need to setup your react proj
 - Have a basic understanding of **[React](https://react.org)**. Knowledge of JSX, props, state, and hooks.
 
 ## Requirements
+
 - **[NodeJS](https://nodejs.org/en/download)** from V12.or higher
 - A code editor or text editor. **[VSCode](https://code.visualstudio.com/download)** is recommended
 - A terminal. **[Git Bash](https://git-scm.com/downloads)** is recommended
@@ -237,15 +238,16 @@ Ensure you clone the repo, run
 ```bash
 npm install
 ```
-This would install all the packages available in the `package.json` file, after all the packages are installed 
+
+This would install all the packages available in the `package.json` file, after all the packages are installed
 
 Then run:
 
 ```bash
 npm start
 ```
-From my past tutorials, I have explained some portion of these files, I would be going through the following files in this tutorial.
 
+From my past tutorials, I have explained some portion of these files, I would be going through the following files in this tutorial.
 
 ### Index.js
 
@@ -291,6 +293,7 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
+
 This file's "job" is to connect our react app to the celo blockchain
 
 You would import a bunch of useful libraries like React itself, ReactDOM, and others. It also imports some styling libraries to make the website look nice.
@@ -315,12 +318,11 @@ import { useEffect } from "react";
 import { useBalance, useMinterContract, useMarketContract } from "./hooks";
 import "./App.css";
 
-
 const App = function AppWrapper() {
   const { address, destroy, connect } = useContractKit();
   const { balance, getBalance } = useBalance();
   const minterContract = useMinterContract();
-  const marketContract = useMarketContract()
+  const marketContract = useMarketContract();
 
   return (
     <>
@@ -342,12 +344,18 @@ const App = function AppWrapper() {
               name="Dripto Ponks"
               updateBalance={getBalance}
               minterContract={minterContract}
-              marketContract = {marketContract}
+              marketContract={marketContract}
             />
           </main>
         </Container>
       ) : (
-        <Cover name="Dripto Ponks" coverImg={"https://cdn.vox-cdn.com/thumbor/NdyRZRTw9ml6vb_JgxQlhbjNqFE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22506332/cryptopunks_9_punks_larva_labs_nfts_at_christies_new_rvs_0409.jpg"} connect={connect} />
+        <Cover
+          name="Dripto Ponks"
+          coverImg={
+            "https://cdn.vox-cdn.com/thumbor/NdyRZRTw9ml6vb_JgxQlhbjNqFE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22506332/cryptopunks_9_punks_larva_labs_nfts_at_christies_new_rvs_0409.jpg"
+          }
+          connect={connect}
+        />
       )}
     </>
   );
@@ -355,15 +363,17 @@ const App = function AppWrapper() {
 
 export default App;
 ```
+
 This file defines the main component of a web app that displays a user's wallet balance and crypto collectibles if the user is connected to the Celo blockchain network. If the user is not connected, it displays a cover image and a button to connect to the network.
 
 It imports several useful libraries like `React Bootstrap`, `useContractKit`, and several components like `Notification`, `Wallet`, `Cover`, and `Nfts`. It also imports several hooks like `useBalance`, `useMinterContract`, and `useMarketContract`.
 
-The `App` component has several variables declared using these imported hooks and libraries. It checks whether there is an `address` in the `useContractKit()` function. If the address exists, it displays the user's wallet balance, as well as the `Nfts` component that allows users to create and trade crypto collectibles. 
+The `App` component has several variables declared using these imported hooks and libraries. It checks whether there is an `address` in the `useContractKit()` function. If the address exists, it displays the user's wallet balance, as well as the `Nfts` component that allows users to create and trade crypto collectibles.
 
 If there's no address, then it displays the `Cover` component which shows a cover image and a button to connect the user's wallet using the `connect` function.
 
 ### utils/minter.js
+
 We have covered some functions in our past tutorial, we would cover the rest in this one.
 
 ```js
@@ -401,12 +411,12 @@ export const getNfts = async (minterContract, marketContract) => {
     console.log({ e });
   }
 };
-
 ```
-This  function fetches all the NFTs (non-fungible tokens) available on a marketplace by calling methods on the minter and market contracts. 
 
-It does this by first getting the length of the listings array, then looping through each listing and creating a Promise for each one. 
-Inside the Promise, it retrieves the URI of the token and uses it to fetch metadata for the token. It also gets the owner of the token and other relevant data from the listing. 
+This function fetches all the NFTs (non-fungible tokens) available on a marketplace by calling methods on the minter and market contracts.
+
+It does this by first getting the length of the listings array, then looping through each listing and creating a Promise for each one.
+Inside the Promise, it retrieves the URI of the token and uses it to fetch metadata for the token. It also gets the owner of the token and other relevant data from the listing.
 
 It then returns an array of all the Promises, which are resolved using `Promise.all()` to return an array of all the NFTs with their associated metadata. If there are any errors during this process, they are logged to the console.
 
@@ -430,9 +440,10 @@ export const fetchNftContractOwner = async (minterContract) => {
   }
 };
 ```
+
 The first function is called `fetchNftOwner` and it takes in two parameters - `minterContract` and `index`. It tries to fetch the owner of a specific NFT using the `ownerOf` method provided by the `minterContract`. If successful, it returns the owner's address.
 
-The second function is called `fetchNftContractOwner` and it takes in only one parameter - `minterContract`. It tries to fetch the owner of the contract that created the NFT using the `owner` method provided by the `minterContract`. If successful, it returns the contract owner's address. 
+The second function is called `fetchNftContractOwner` and it takes in only one parameter - `minterContract`. It tries to fetch the owner of the contract that created the NFT using the `owner` method provided by the `minterContract`. If successful, it returns the contract owner's address.
 
 Both of these functions use the `try-catch` block to handle any errors that might occur during the process of fetching NFT ownership information. If an error occurs, it is logged to the console using the `console.log` method.
 
@@ -455,7 +466,9 @@ export const buyNft = async (
         await marketContract.methods
           .buyToken(index)
           .send({ from: defaultAccount, value: listing.price });
-        await minterContract.methods.resaleApproval(tokenId).send({from: defaultAccount})
+        await minterContract.methods
+          .resaleApproval(tokenId)
+          .send({ from: defaultAccount });
       } catch (error) {
         console.log({ error });
       }
@@ -465,9 +478,10 @@ export const buyNft = async (
   }
 };
 ```
+
 The function takes in several parameters: `minterContract` and `marketContract` are both smart contracts that are used to mint and sell the NFTs respectively, `performActions` is a function that is used to execute a set of actions, `index` is the index of the listing in the marketplace, and `tokenId` is the unique identifier of the NFT being bought.
 
-Inside the function, it uses the `performActions` function to perform a set of actions. If the actions are successful, it gets the user's default account using `kit.defaultAccount`, gets the listing at the given index using `marketContract.methods.getListing(index).call()`, and then sends a transaction to buy the NFT using `marketContract.methods.buyToken(index).send({ from: defaultAccount, value: listing.price })`. 
+Inside the function, it uses the `performActions` function to perform a set of actions. If the actions are successful, it gets the user's default account using `kit.defaultAccount`, gets the listing at the given index using `marketContract.methods.getListing(index).call()`, and then sends a transaction to buy the NFT using `marketContract.methods.buyToken(index).send({ from: defaultAccount, value: listing.price })`.
 
 After the purchase is made, it approves the resale of the NFT using `minterContract.methods.resaleApproval(tokenId).send({from: defaultAccount})`. If there are any errors during the process, they are logged to the console using `console.log()`.
 
@@ -476,132 +490,137 @@ After the purchase is made, it approves the resale of the NFT using `minterContr
 We start of with the `getAssets` function. which is a React hook that retrieves NFTs from a smart contract. The hook is using the `useCallback` method to avoid unnecessary re-renders.
 
 ```js
-  const getAssets = useCallback(async () => {
-    try {
-      setLoading(true);
-      const allNfts = await getNfts(minterContract, marketContract);
-      if (!allNfts) return;
-      setNfts(allNfts);
-    } catch (error) {
-      console.log({ error });
-    } finally {
-      setLoading(false);
-    }
-  }, [marketContract, minterContract]);
+const getAssets = useCallback(async () => {
+  try {
+    setLoading(true);
+    const allNfts = await getNfts(minterContract, marketContract);
+    if (!allNfts) return;
+    setNfts(allNfts);
+  } catch (error) {
+    console.log({ error });
+  } finally {
+    setLoading(false);
+  }
+}, [marketContract, minterContract]);
 ```
-Inside the function, it sets the loading state to `true`, calls the `getNfts` function with the `minterContract` and `marketContract` parameters, and assigns the result to the `allNfts` variable. If there are no NFTs, it returns early. Otherwise, it sets the `nfts` state to the `allNfts` value. 
+
+Inside the function, it sets the loading state to `true`, calls the `getNfts` function with the `minterContract` and `marketContract` parameters, and assigns the result to the `allNfts` variable. If there are no NFTs, it returns early. Otherwise, it sets the `nfts` state to the `allNfts` value.
 
 If there are any errors, it logs the error to the console. Finally, it sets the `loading` state to `false`. The `marketContract` and `minterContract` variables are dependencies of this hook, which means that the function will re-run whenever any of these variables change.
 
-Next, we create a function `addNft` that adds a new NFT to the marketplace. 
+Next, we create a function `addNft` that adds a new NFT to the marketplace.
 
 ```js
-
-  const addNft = async (data) => {
-    try {
-      setLoading(true);
-      await createNft(minterContract, marketContract, performActions, data);
-      toast(<NotificationSuccess text="Updating NFT list...." />);
-      getAssets();
-    } catch (error) {
-      console.log({ error });
-      toast(<NotificationError text="Failed to create an NFT." />);
-    } finally {
-      setLoading(false);
-    }
-  };
+const addNft = async (data) => {
+  try {
+    setLoading(true);
+    await createNft(minterContract, marketContract, performActions, data);
+    toast(<NotificationSuccess text="Updating NFT list...." />);
+    getAssets();
+  } catch (error) {
+    console.log({ error });
+    toast(<NotificationError text="Failed to create an NFT." />);
+  } finally {
+    setLoading(false);
+  }
+};
 ```
+
 It first sets the loading state to true, then calls another function called `createNft` with several arguments including the `minterContract`, `marketContract`, `performActions`, and `data`. After creating the new NFT, it displays a success notification and calls `getAssets` to update the list of NFTs. If there is an error, it displays an error notification. Finally, it sets the loading state to false.
 
-Up next, we would define a function that buys an NFT (non-fungible token) and updates the list of NFTs. 
+Up next, we would define a function that buys an NFT (non-fungible token) and updates the list of NFTs.
 
 ```js
-  const buyToken = async (index, tokenId) => {
-    try {
-      setLoading(true);
-      await buyNft(
-        minterContract,
-        marketContract,
-        performActions,
-        index,
-        tokenId
-      );
-      toast(<NotificationSuccess text="Updating NFT list...." />);
-      getAssets();
-    } catch (error) {
-      console.log({ error });
-      toast(<NotificationError text="Failed to create an NFT." />);
-    } finally {
-      setLoading(false);
-    }
-  };
+const buyToken = async (index, tokenId) => {
+  try {
+    setLoading(true);
+    await buyNft(
+      minterContract,
+      marketContract,
+      performActions,
+      index,
+      tokenId
+    );
+    toast(<NotificationSuccess text="Updating NFT list...." />);
+    getAssets();
+  } catch (error) {
+    console.log({ error });
+    toast(<NotificationError text="Failed to create an NFT." />);
+  } finally {
+    setLoading(false);
+  }
+};
 ```
-It takes in several parameters such as the `minterContract` and `marketContract`, `performActions`, `index`, and `tokenId`. When executed, the function sets the loading state to true, buys the NFT using the `buyNft` function, and then displays a success notification. 
 
-After that, it updates the list of NFTs using the getAssets function. If there is an error, it logs the error and displays an error notification. 
+It takes in several parameters such as the `minterContract` and `marketContract`, `performActions`, `index`, and `tokenId`. When executed, the function sets the loading state to true, buys the NFT using the `buyNft` function, and then displays a success notification.
+
+After that, it updates the list of NFTs using the getAssets function. If there is an error, it logs the error and displays an error notification.
 
 It then sets the loading state back to false.
 
-You then define  a function called `fetchContractOwner` that uses the `useCallback` hook. 
+You then define a function called `fetchContractOwner` that uses the `useCallback` hook.
 
 ```js
-  const fetchContractOwner = useCallback(async (minterContract) => {
-    // get the address that deployed the NFT contract
-    const _address = await fetchNftContractOwner(minterContract);
-    setNftOwner(_address);
-  }, []);
+const fetchContractOwner = useCallback(async (minterContract) => {
+  // get the address that deployed the NFT contract
+  const _address = await fetchNftContractOwner(minterContract);
+  setNftOwner(_address);
+}, []);
 ```
+
 When called, it fetches the address of the owner of the NFT contract by calling the `fetchNftContractOwner` function and then sets the NFT owner state using the `setNftOwner` function. The `useCallback` hook is used to memoize the function and optimize performance.
 
-You would then use the `useEffect` hook to run some code when the component is mounted or updated with changes to the `minterContract`, `address`, `getAssets`, and `fetchContractOwner` variables. 
+You would then use the `useEffect` hook to run some code when the component is mounted or updated with changes to the `minterContract`, `address`, `getAssets`, and `fetchContractOwner` variables.
 
 ```js
-  useEffect(() => {
-    try {
-      if (address && minterContract) {
-        getAssets();
-        fetchContractOwner(minterContract);
-      }
-    } catch (error) {
-      console.log({ error });
+useEffect(() => {
+  try {
+    if (address && minterContract) {
+      getAssets();
+      fetchContractOwner(minterContract);
     }
-  }, [minterContract, address, getAssets, fetchContractOwner]);
+  } catch (error) {
+    console.log({ error });
+  }
+}, [minterContract, address, getAssets, fetchContractOwner]);
 ```
+
 It checks if `address` and `minterContract` exist, and if so, it calls the `getAssets` and `fetchContractOwner` functions to retrieve information about the NFTs and the owner of the NFT contract. Any errors are logged to the console.
 
 If the address is valid, display the components.
 
 ```js
-  if (address) {
-    return (
-      <>
-        {!loading ? (
-          <>
-            <div className="d-flex justify-content-between align-items-center mb-4">
-              <h1 className="fs-4 fw-bold mb-0">{name}</h1>
-              {nftOwner === address ? (
-                <AddNfts save={addNft} address={address} />
-              ) : null}
-            </div>
-            <Row xs={1} sm={2} lg={3} className="g-3  mb-5 g-xl-4 g-xxl-5">
-              {nfts.map((_nft) => (
-                <Nft
-                  key={_nft.index}
-                  buyNft={() => buyToken(_nft.index, _nft.tokenId)}
-                  nft={{
-                    ..._nft,
-                  }}
-                />
-              ))}
-            </Row>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </>
-    );
-  }
+if (address) {
+  return (
+    <>
+      {!loading ? (
+        <>
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h1 className="fs-4 fw-bold mb-0">{name}</h1>
+            {nftOwner === address ? (
+              <AddNfts save={addNft} address={address} />
+            ) : null}
+          </div>
+          <Row xs={1} sm={2} lg={3} className="g-3  mb-5 g-xl-4 g-xxl-5">
+            {nfts.map((_nft) => (
+              <Nft
+                key={_nft.index}
+                buyNft={() => buyToken(_nft.index, _nft.tokenId)}
+                nft={{
+                  ..._nft,
+                }}
+              />
+            ))}
+          </Row>
+        </>
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
+}
 ```
+
 ## Conclusion
 
 Congratulations! With the knowledge you have gained from the above explanations, you are now equipped to implement your smart contract with React. By using the provided code snippets and understanding their functionality, you can create a user interface to interact with your smart contract and perform various actions such as buying and adding NFTs.
