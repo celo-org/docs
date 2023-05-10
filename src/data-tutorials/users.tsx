@@ -1687,6 +1687,13 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'celo', 'intermediate'],
   },
   {
+    title: 'Build A Decentralized Real Estate Marketplace On The Celo Blockchain Part 2',
+    description: 'This is a two part tutorial. In this second part of the tutorial, you will learn how to Build the front end for the smart contract using react js.',
+    preview: require('./showcase/intermediate/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2.png'),
+    website: 'blog/tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2',
+    tags: ['celosage', 'react', 'celo', 'intermediate'],
+  },
+  {
     title: 'Build an NFT Full Stack Monster War Game on The Celo Blockchain',
     description: 'Build a full stack NFT on chain game on the celo blockchain.',
     preview: require('./showcase/advanced/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain.png'),
@@ -3485,6 +3492,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/building-a-chat-dapp-with-nextjs-web3js-and-bigquery.png'),
     website: 'blog/tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity', 'javascript'], 
+  },
+    {
+    title: 'Path to Build Full stack DApp on Celo with C++, WebAssembly and ReactJS',
+    description: 'Learn How to Full Stack dApp with C++ for the Smart Contract and ReactJS for the Frontend',
+    preview: require('./showcase/intermediate/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs.png'),
+    website: 'blog/tutorials/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs',
+    tags: ['celosage', 'intermediate', 'dapp', 'smartcontract', 'react'], 
   },
 
 
