@@ -355,8 +355,6 @@ These lines define two mappings that keep track of the token balances and allowa
     constructor(){
         balanceOf[msg.sender] = totalSupply;
     }
-
-
 ```
 
 This is the constructor function of the contract. It sets the balance of the contract deployer to the total supply of the token.
@@ -595,7 +593,6 @@ This line declares a public string variable called name and initializes it to th
 
 ```solidity
 TestToken public testToken;
-
 ```
 
 This line declares a public variable called testToken of type TestToken. This variable will be used to hold an instance of the TestToken contract.
@@ -603,7 +600,6 @@ This line declares a public variable called testToken of type TestToken. This va
 
 ```solidity
 address public owner;
-
 ```
 
 This line declares a public variable called owner of type address. This variable will be used to store the address of the owner of the contract.
@@ -616,7 +612,6 @@ uint256 public defaultAPY = 100;
 This line declares a public variable called defaultAPY of type uint256 and initializes it to the value 100.
 ```solidity
 uint256 public customAPY = 137;
-
 ```
 
 This line declares a public variable called customAPY of type uint256 and initializes it to the value 137.
