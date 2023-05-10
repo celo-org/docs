@@ -6,7 +6,7 @@ authors:
     title: Web3 Software Developer
     url: https://github.com/lanacreates
     image_url: https://github.com/lanacreates.png
-tags: [celosage, celowallet, celo, cusd, ledger]
+tags: [celosage, celowallet, celo, contractkit, intermediate, metamask]
 hide_table_of_contents: true
 slug: /tutorials/implementing-celo-based-decentralized-storage
 ---
