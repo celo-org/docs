@@ -4,7 +4,7 @@ description: Learn how to create a simple token staking Dapp with react,solidity
 authors:
   - name: Tevin Isaac
     image_url: https://github.com/Tevin-Isaac.png
-tags: [react, solidity, metamask, beginner,truffle]
+tags: [react, solidity, metamask, intermediate,truffle]
 hide_table_of_contents: true
 slug: /tutorials/how-to-create-a-token-staking-dapp
 ---
