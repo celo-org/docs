@@ -213,7 +213,7 @@ contract Evently {
 
 ```
 
-## Analyzing the code
+c
 
 ```solidity
 // SPDX-License-Identifier: MIT

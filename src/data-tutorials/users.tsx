@@ -732,6 +732,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo','ledger','ERC20'],
   },
   {
+    title: 'An automated insurance platform that uses smart contracts to pay out claims automatically on celo',
+    description: 'The project is an automated insurance platform on Celo using smart contracts. It streamlines policy creation and claim payouts, simplifying insurance processes for users.',
+    preview: require('./showcase/intermediate/exclusive-list-of-hardware-wallets-that-support-the-celo-network.png'),
+    website: '/blog/tutorials/an-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo',
+    tags: ['intermediate','celosage','celo'],
+  },
+  {
     title: " Celo Composer",
     description: "Build on Celo in 5 minutes of less with Celo Composer.",
     preview: require("./showcase/celo-composer.png"),

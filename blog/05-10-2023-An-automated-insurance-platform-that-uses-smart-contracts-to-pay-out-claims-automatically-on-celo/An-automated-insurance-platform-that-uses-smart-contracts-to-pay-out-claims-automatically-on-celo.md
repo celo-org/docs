@@ -8,7 +8,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/115812158?v=4
 tags: [celosage, solidity, intermediate, celo]
 hide_table_of_contents: true
-slug: /tutorials/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain
+slug: /tutorials/an-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo
 ---
 
 ## INTRODUCTION
@@ -265,3 +265,197 @@ Here, we define state variables for the contract. `policyCount` keeps track of t
 
 We use a mapping called `policies` to store and retrieve policies using their `IDs`. Additionally, we define two events: `PolicyCreated` and `PolicyClaimed`. These events are emitted to provide information about policy creation and claim actions.
 
+## Step 7: Creating a New Insurance Policy
+
+``` function createPolicy(
+        address payable _insurer,
+        uint256 _premium,
+        uint256 _coverage,
+        uint256 _expirationDate
+    ) external {
+        require(_insurer != address(0), "Invalid insurer address");
+        require(_premium > 0, "Premium must be greater than zero");
+        require(_coverage > 0, "Coverage amount must be greater than zero");
+        require(_expirationDate > block.timestamp, "Expiration date must be in the future");
+
+        Policy storage newPolicy = policies[policyCount];
+        newPolicy.insured = payable(msg.sender);
+        newPolicy.insurer = _insurer;
+        newPolicy.premium = _premium;
+        newPolicy.coverage = _coverage;
+        newPolicy.expirationDate = _expirationDate;
+        newPolicy.isActive = true;
+        newPolicy.isClaimed = false;
+
+        emit PolicyCreated(
+            policyCount,
+            newPolicy.insured,
+            newPolicy.insurer,
+            newPolicy.premium,
+            newPolicy.coverage,
+            newPolicy.expirationDate
+        );
+
+        policyCount++;
+    }
+```
+
+We collaboratively create a new insurance policy using the createPolicy function.
+
+- Inputs: We provide the insurer's address, `premium amount`, `coverage amount`, and `expiration date`.
+
+- Validation: We check the inputs for validity, ensuring the insurer's address is not invalid, the premium amount is greater than zero, the coverage amount is greater than zero, and the expiration date is in the future.
+
+- Policy Creation: If the inputs pass validation, we create a new policy:
+
+We assign the insured address as the caller of the function.
+We set the insurer address, `premium amount`, `coverage amount`, `expiration date`, `isActive` flag as `true`, and `isClaimed` flag as `false`.
+
+- Event Emission: We emit the `PolicyCreated` event, providing the policy details as event arguments.
+
+- Policy Count: We increment the `policyCount` to keep track of the total number of policies created.
+
+## Step 8: Claiming an Insurance Policy.
+
+```solidity
+function claimPolicy(uint _policyId) external {
+        require(_policyId < policyCount, "Invalid policy ID");
+
+        Policy storage policy = policies[_policyId];
+        require(msg.sender == policy.insured, "Only the insured can claim the policy");
+        require(policy.isActive, "Policy is not active");
+        require(!policy.isClaimed, "Policy has already been claimed");
+        require(block.timestamp > policy.expirationDate, "Policy has not expired yet");
+
+        uint256 claimAmount = policy.coverage;
+        policy.isClaimed = true;
+
+        require(
+            IERC20Token(celoTokenAddress).transfer(policy.insured, claimAmount),
+            "Failed to transfer claim amount"
+        );
+
+        emit PolicyClaimed(_policyId, policy.insured, claimAmount);
+    }
+```
+
+In this step, we focus on claiming an insurance policy using the `claimPolicy` function.
+
+- Input Validation: We ensure that the provided policy `ID` is valid by checking if it is less than the total `policyCount`.
+
+- Policy Retrieval: We retrieve the policy details from the policies mapping based on the given policy ID.
+
+- Permission and Policy Checks:
+
+Only the insured party can claim the policy, so we verify that the caller of the function is the insured address stored in the policy.
+We check that the policy is active by examining the `isActive` flag.
+
+The policy must not have been previously claimed, confirmed by the isClaimed flag.
+Additionally, we check if the policy has expired by comparing the current timestamp to the expiration date.
+Claim Process:
+
+If all the checks pass, we proceed to mark the policy as claimed by setting the `isClaimed` flag to `true`.
+Transfer of Claim Amount:
+
+We transfer the claim amount, which is equal to the coverage amount specified in the policy, to the insured party using the CELO token contract's transfer function.
+
+**Event Emission**:
+
+We emit the `PolicyClaimed` event, providing the policy ID, insured address, and the claimed amount as event arguments.
+Following these steps, the insured party can successfully claim their insurance policy if it meets the necessary conditions. The claimed amount will be transferred to the insured, and the policy will be marked as claimed for future reference.
+
+## Step 9: Retrieving Policy Details
+
+```solidity
+ function getPolicy(uint _policyId) public view returns (
+        address payable insured,
+        address
+                payable insurer,
+        uint256 premium,
+        uint256 coverage,
+        uint256 expirationDate,
+        bool isActive,
+        bool isClaimed
+    ) {
+        require(_policyId < policyCount, "Invalid policy ID");
+
+        Policy storage policy = policies[_policyId];
+
+        return (
+            policy.insured,
+            policy.insurer,
+            policy.premium,
+            policy.coverage,
+            policy.expirationDate,
+            policy.isActive,
+            policy.isClaimed
+        );
+    }
+```
+
+In this step, we will explain the `getPolicy` function, which allows us to retrieve the details of an insurance policy based on its policy ID. This function is designed to provide transparency and enable users to access important policy information.
+
+**Input Validation**:
+
+We ensure that the provided policy ID is valid by checking if it is less than the total `policyCount`.
+
+**Policy Retrieval**:
+
+We access the desired policy by using the policy ID as the index in the policies mapping.
+We store the policy details in the local policy variable using the storage keyword, allowing direct access to the storage location.
+
+**Returning Policy Details**:
+
+We return the policy details as a tuple, including the insured address, `insurer address`, `premium amount`, `coverage amount`, `expiration date`, `isActive` flag indicating if the policy is active, and `isClaimed` flag indicating if the policy has been claimed.
+By utilizing the `getPolicy` function, users can easily retrieve the details of an insurance policy by providing the policy ID. This enables efficient policy verification, auditing, or displaying the policy information to users.
+
+## Step 9: Getting the Total Policy Count
+
+```solidity
+ function getPolicyCount() public view returns (uint) {
+        return policyCount;
+    }
+}
+```
+
+In this final step, we will explain the `getPolicyCount` function, which allows us to retrieve the total number of insurance policies created on the platform. This function provides a simple way to obtain an overview of the policy count.
+
+**Policy Count Retrieval**:
+
+The `getPolicyCount` function is a public view function, meaning it can be called by anyone and does not modify the contract's state.
+The function directly returns the value of the policyCount variable, which represents the total number of insurance policies created.
+
+**Returning the Policy Count**:
+
+Upon calling the `getPolicyCount` function, it returns the total policy count as an unsigned integer.
+By utilizing the `getPolicyCount` function, we can easily retrieve the total number of insurance policies created on the platform. This information can be used for statistical analysis, displaying the count to users, or for any other purpose that requires knowledge of the total policy count.
+
+## Contract deployment
+
+To deploy the Magazine smart contract on the Celo blockchain, follow the steps below:
+
+- **Install Celo Extension Wallet**: Download and install the Celo Extension Wallet from the Google Chrome store. Create a wallet and securely store your key phrase.
+
+- **Fund your wallet**: Copy your wallet address and paste it into the Celo Faucet. Confirm the transaction to receive Celo tokens in your wallet.
+
+- **Open Remix and create a new Solidity file**: Paste the insurance contract code into the file. Ensure that the Solidity compiler is set to version 0.8.7 or later.
+
+- **Compile the contract**: Click the `Compile issurance.sol` button in the Solidity Compiler tab in Remix.
+
+- **Deploy the contract**: In the `Deploy & Run Transactions` tab, select the Celo network from the dropdown menu. Connect your wallet to Remix by clicking `Connect to wallet`. Select `insurance` from the `Contract` dropdown menu. Click the `Deploy` button, confirm the transaction in your wallet, and wait for the transaction to be confirmed on the Celo blockchain.
+
+- **Interact with the contract**: Once the transaction is confirmed, the `insurance` contract will be deployed on the Celo blockchain. You can interact with it using Remix.
+
+## Conclusion
+
+In conclusion, we have explored the key functions and steps involved in creating and managing insurance policies within the insurance platform. We started by setting up the platform, defining dependencies, and initializing the necessary components. Then, we covered the steps for creating a new policy, verifying inputs, and emitting events for transparency. We also discussed the process of claiming a policy and transferring the claim amount to the insured. Additionally, we included functions for retrieving policy details and obtaining the total policy count.
+
+By following these steps and utilizing the provided functions, users can interact with the insurance platform to create policies, manage claims, and access policy information. The platform offers transparency, security, and automation through smart contracts, streamlining the insurance process.
+
+## Next step
+
+Great job! It's always helpful to provide additional resources for further learning. Don't hesitate to reach out if you have any more questions or if you need further assistance. Happy learning!
+
+## About the author
+
+My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria, you can connect with me on [twitter](https://twitter.com/thompsonogoyi). I am enthusiastic about working with blockchain technology.
