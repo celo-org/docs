@@ -574,7 +574,7 @@ contract TokenStaking {
 ```
 
 - Breakdown
-- 
+
 ```
 import "./TestToken.sol";
 ```
