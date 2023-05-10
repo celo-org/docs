@@ -733,6 +733,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo','oracle'],
   },
   {
+    title: 'How to create a Token Staking Dapp',
+    description: 'Learn how to create a simple token staking Dapp with react,solidity and truffle for compiling and deploying.',
+    preview: require('./showcase/intermediate/create-a-tokenstake.png'),
+    website:'/blog/tutorials/how-to-create-a-token-staking-dapp',
+    tags: ["react","metamask", "truffle","solidity","intermediate"],
+  },
+  {
     title: 'Exclusive List of Hardware Wallets that Support the Celo Network',
     description: 'This tutorial aims to provide an exclusive list of hardware wallets that support the Celo network',
     preview: require('./showcase/beginner/exclusive-list-of-hardware-wallets-that-support-the-celo-network.png'),
