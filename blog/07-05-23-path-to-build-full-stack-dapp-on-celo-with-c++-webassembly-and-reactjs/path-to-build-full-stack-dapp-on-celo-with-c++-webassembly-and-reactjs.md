@@ -22,6 +22,7 @@ In this first part of the series, we will learn how to write, build, compile, an
 ## Prerequisites
 
 Basic knowledge of JavaScript, React, C++, and smart contract development.
+
 1. a local development environment with Node.js and C++ installed.
 1. a Celo account with testnet or mainnet funds.
 1. eosio.cdt compiler
@@ -35,7 +36,7 @@ mkdir contracts
 cd contracts
 ```
 
-The above script creates a folder to organise all the requirements for the project. including codes and other assets. In the future, we will create a `react app`  and the `celo/contractkit` will be installed in this same folder. For now, let’s create a folder for the contract inside this folder to create our C++ smart contract.
+The above script creates a folder to organise all the requirements for the project. including codes and other assets. In the future, we will create a `react app` and the `celo/contractkit` will be installed in this same folder. For now, let’s create a folder for the contract inside this folder to create our C++ smart contract.
 
 ## Write a smart contract in C++
 
@@ -52,6 +53,7 @@ class [[eosio::contract]] my_contract : public eosio::contract {
 public:
    using eosio::contract::contract;
 ```
+
 In the above code, we are creating a special thing called a `contract.`A contract is like a set of rules and actions that we write for the blockchain. We give our contract a name, "my_contract." Our contract is based on another contract called `eosio::contract`, which already has some useful things we can use.
 
 ```cpp
@@ -104,10 +106,10 @@ private:
 
 EOSIO_DISPATCH(my_contract, (setmessage)(getmessage));
 ```
- In this final part, we define a structure called `message_row` that represents each entry in the "messages" table. It has two pieces of information: a key and a message. The key helps identify each entry, and the message holds the actual message content. We also create a table type called "message_table" using EOSIO's multi_index, which allows us to store and manage multiple entries. Finally, we use the `EOSIO_DISPATCH` macro to link our contract and its actions to the EOSIO system. It tells the system that our contract has the `setmessage` and `getmessage` actions that can be called.
+
+In this final part, we define a structure called `message_row` that represents each entry in the "messages" table. It has two pieces of information: a key and a message. The key helps identify each entry, and the message holds the actual message content. We also create a table type called "message_table" using EOSIO's multi_index, which allows us to store and manage multiple entries. Finally, we use the `EOSIO_DISPATCH` macro to link our contract and its actions to the EOSIO system. It tells the system that our contract has the `setmessage` and `getmessage` actions that can be called.
 
 In totality, this code represents a contract called "my_contract" that can be deployed on the EOSIO blockchain. It has actions to set and retrieve messages stored in a table called "messages." The `setmessage` action allows adding or updating a message, while the `getmessage` action retrieves the stored message. It's like having a special program on the blockchain that can store and fetch messages.
-
 
 ## Summary
 
@@ -191,7 +193,7 @@ EOSIO is a blockchain protocol and development platform designed for creating de
 
 1. Install the eosio.cdt compiler by following the instructions in the official [documentation](https://github.com/EOSIO/eosio.cdt#binary-releases).
 
-4. Compile the smart contract to WebAssembly by running the following command in your terminal:
+2. Compile the smart contract to WebAssembly by running the following command in your terminal:
 
 ```bash
 eosio-cpp my-contract.cpp -o my-contract.wasm
@@ -214,5 +216,3 @@ Overall, C++ with WebAssembly provides a compelling pathway for developing full-
 ## About the Author
 
 Hey, I am Rasheed Mudasiru. A software developer who is passionate about community, open source and developer relations: I write about DevOps, automation, deployments and cloud computing.
-
-
