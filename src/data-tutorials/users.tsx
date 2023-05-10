@@ -1939,6 +1939,13 @@ const Users: User[] = [
     website: 'blog/tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide',
     tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
   },
+   {
+    title: 'Implementing Celo-based Decentralized Storage',
+    description: 'Learn how to Implement Celo-based Decentralized Storage',
+    preview: require('./showcase/intermediate/implementing-celo-based-decentralized-storage.png'),
+    website: 'blog/tutorials/implementing-celo-based-decentralized-storage',
+    tags: ['celosage', 'celowallet', 'celo', 'contractkit', 'intermediate', 'metamask'],
+  },
   {
     title: '6 Steps to Quickly Build Smart Contracts on Celo with Remix',
     description: 'How to create, deploy and interact with smart contracts on Celo testnet or mainnet using Remix.',
