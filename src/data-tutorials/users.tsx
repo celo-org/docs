@@ -3390,7 +3390,14 @@ const Users: User[] = [
     description: 'Learn how to build and deploy a multi factor authentication system on the Celo platform',
     preview: require('./showcase/beginner/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts.png'),
     website: 'blog/tutorials/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts',
-    tags: ['celo', 'celosage', 'truffle', 'smartcontract', 'solidity', 'javascript', 'beginner'], 
+    tags: ['celosage', 'solidity', 'javascript', 'celo', 'intermediate'], 
+  },
+  {
+    title: "Guide to Building a Cross-Chain Interoperability between Celo and other Blockchain Networks",
+    description: 'Learn how to create smart contracts that allow Celo and other blockchains to communicate with one another',
+    preview: require('./showcase/intermediate/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks.png'),
+    website: 'blog/tutorials/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks',
+    tags: ['celo', 'celosage', 'smartcontract', 'solidity', 'javascript', 'intermediate'], 
   },
   {
     title: 'Build a cross-chain token bridge between celo and bsc using the existing bridge',
