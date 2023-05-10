@@ -1,5 +1,5 @@
 ---
-title: "Building Dynamic and Scalable User Interfaces for Celo ERC721 Smart Contracts using React: A Comprehensive Introduction"
+title: Building Dynamic and Scalable User Interfaces for Celo ERC721 Smart Contracts using React- A Comprehensive Introduction
 description: Integrating your smart contract with a frontend framework like React can provide a seamless and user-friendly experience for interacting with your contract
 authors:
   - name: Daniel Ogbuti
