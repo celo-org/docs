@@ -280,7 +280,7 @@ This tutorial has taught us how to Build a Cross-chain Interoperability between 
 
 # Next Steps​
 
-We now have a solid understanding of the cross-chain interoperability and it's importance and usage, we can now explore and delve into it's efficiency and reliability by the blockchain
+We now have a solid understanding of the cross-chain interoperability and it's importance and usage, we can now explore and delve into it's efficiency and reliability by the blockchain, thank you.
 
 # About the Author​
 Michael Diagbare is a Software Engineer with expertise in Web, Blockchain development and content creation, certified by Cisco and MongoDB university. He is passionate about building software, problem solving and helping programmers deal with complicated tasks and challenges.
