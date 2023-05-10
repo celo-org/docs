@@ -884,7 +884,7 @@ Emiri Udogwu, a licensed medical doctor with a burning passion for technology an
 
 ## References​
 
-    - [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
-    - [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
-    - [Contract Kit](https://docs.celo.org/developer/contractkit)
-    - [Pinata](https://docs.celo.org/developer/contractkit)
+- [Web3.js Documentation](https://web3js.readthedocs.io/en/v1.8.2/web3-eth.html)
+- [Solidity Documentation](https://docs.soliditylang.org/_/downloads/en/latest/pdf/)
+- [Contract Kit](https://docs.celo.org/developer/contractkit)
+- [Pinata](https://docs.celo.org/developer/contractkit)
