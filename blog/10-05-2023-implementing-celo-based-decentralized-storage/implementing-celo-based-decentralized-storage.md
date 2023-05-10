@@ -363,14 +363,14 @@ This frontend application allows users to select a file, specify whether it shou
 4.  Select a file, specify whether it's public or private, and click the `Upload` button. The file will be uploaded to IPFS, and the application will add it to the smart contract on the Celo network.
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580448146_image.png)
 
-5. Click on upload file.
+5. Click on upload.
 
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580475337_image.png)
 
-6. Confirm the transaction on the Metamask pop-up that comes up.
+6. Confirm the transaction on the Metamask pop-up window.
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580543346_image.png)
 
-7.Your file has now been uploaded and the IPFS hash is uploaded.
+7.Your file has now been uploaded and the IPFS hash is generated.
 
 ![image](https://paper-attachments.dropboxusercontent.com/s_56C9B8CE568E8CFAE738055E6E004CE5695C6659C9B23D05A09309E2B23163F7_1683580588825_image.png)
 
@@ -493,9 +493,9 @@ This is what your App.js file should look like after making the updates:
     import FileViewer from 'react-file-viewer';
     import './App.css';
     
-    const CONTRACT_ADDRESS = '0x..';
-    const API_KEY = '2PUREMfceCVABHpMNAZepmsE2gG';
-    const API_KEY_SECRET = '26130137c138e7c7403fc16f7ff53921';
+    const CONTRACT_ADDRESS = '0x...';
+    const API_KEY = 'YOUR_API_KEY';
+    const API_KEY_SECRET = 'YOUR_API_KEY_SECRET';
     
     const useStyles = makeStyles((theme) => ({
       root: {
@@ -679,7 +679,7 @@ Oluwalana is a blockchain developer and technical writer, experienced in creatin
 
 This tutorial was created using various resources and documents to provide an in-depth understanding of Celo-based decentralized storage. The following sources were referenced and are worth exploring for further knowledge:
 
--
+- [Tutorial Code Repo](https://github.com/lanacreates/Implementing-Celo-based-Decentralized-Storage)
 - [Celo Official Documentation](https://docs.celo.org/) 
 - [IPFS Official Documentation](https://docs.ipfs.io/) 
 - [Solidity Official Documentation](https://soliditylang.org/) 
