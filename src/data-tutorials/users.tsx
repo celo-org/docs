@@ -1640,9 +1640,20 @@ const Users: User[] = [
     title: 'How to Build a Podcast Streaming Platform on Celo',
     description: 'This tutorial guides you to building a podcast streaming platform on the celo blockchain where anyone can upload their audio experience.',
     preview: require('./showcase/intermediate/how-to-build-podcast-streaming-platform-celo-1.png'),
-    website: '/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1',
+    website: '/blog/tutorials/how-to-develop-your-game-items-with-thirdweb-erc1155-base-contract-on-celo',
     tags: ['celo', 'intermediate', 'celosage', 'solidity'],
   },
+   
+     {
+    title: 'How to Develop Your Game Items with ThirdWeb’s ERC1155 Base Contract on Celo',
+    description: 'This article will demonstrate how to use develop game items with Thirdweb's ERC1155 Base Contract',
+    preview: require('./showcase/intermediate/thirdweb-cover.png'),
+    website: '/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1',
+    tags: tags: ['solidity', 'smart contract', 'celosage', 'thirdweb', 'erc1155', 'gameitem'],
+  },
+   
+   
+   
   {
     title: 'How to Build a Simple Anonymous dapp on Celo',
     description: 'This tutorial guides you through the steps required to building an anonymous decentralized application.',
