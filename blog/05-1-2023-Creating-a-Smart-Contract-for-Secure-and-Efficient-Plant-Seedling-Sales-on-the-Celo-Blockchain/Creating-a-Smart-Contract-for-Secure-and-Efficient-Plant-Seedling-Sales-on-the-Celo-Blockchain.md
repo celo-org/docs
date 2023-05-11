@@ -373,6 +373,8 @@ Finally we add the `function getSeedlingsLength()`
 }
 ```
 
+[Click here to get the complete code for this session](https://github.com/Ogoyi/plant-seedling-sale-on-celo)
+
 In this part of the smart contract, we have the `getSeedlingsLength` function. This function simply returns the total number of seedlings currently available for sale on the marketplace.
 
 The function is a `view function`, meaning that it only reads data from the blockchain and does not modify any state. This makes it a `read-only` function that can be called by anyone at any time without incurring any gas costs.
