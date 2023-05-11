@@ -4,7 +4,7 @@ description: Delve into the world of blockchain and explore how to create your o
 authors:
   - name: Joshua Moses
 url: https://github.com/J0shcodes
-tags: [celosage, intermediate, smartcontract, solidity, python]
+tags: [celosage, intermediate, smartcontract, solidity]
 hide_table_of_contents: true
 slug: /tutorials/creating-a-celo-token-and-launching-an-initial-coin-offering-(ico)-with-python
 ---
