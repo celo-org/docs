@@ -734,9 +734,9 @@ const Users: User[] = [
   {
     title: 'An automated insurance platform that uses smart contracts to pay out claims automatically on celo',
     description: 'The project is an automated insurance platform on Celo using smart contracts. It streamlines policy creation and claim payouts, simplifying insurance processes for users.',
-    preview: require('./showcase/intermediate/An-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo.png'),
+    preview: require('./showcase/intermediate/an-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo.png'),
     website: '/blog/tutorials/an-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo',
-    tags: ['intermediate','celosage','celo'],
+    tags: ['intermediate','celosage', 'solidity', 'celo'],
   },
   {
     title: " Celo Composer",
