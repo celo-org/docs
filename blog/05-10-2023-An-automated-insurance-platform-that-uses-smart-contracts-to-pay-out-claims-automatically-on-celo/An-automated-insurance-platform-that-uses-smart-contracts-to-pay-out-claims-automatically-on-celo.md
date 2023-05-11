@@ -432,6 +432,8 @@ The function directly returns the value of the policyCount variable, which repre
 Upon calling the `getPolicyCount` function, it returns the total policy count as an unsigned integer.
 By utilizing the `getPolicyCount` function, we can easily retrieve the total number of insurance policies created on the platform. This information can be used for statistical analysis, displaying the count to users, or for any other purpose that requires knowledge of the total policy count.
 
+[Click here to get the complete code for this session](https://github.com/Ogoyi/an-automated-insurance-platform-that-uses-smart-contracts-to-pay-out-claims-automatically-on-celo)
+
 ## Contract deployment
 
 To deploy the Magazine smart contract on the Celo blockchain, follow the steps below:
