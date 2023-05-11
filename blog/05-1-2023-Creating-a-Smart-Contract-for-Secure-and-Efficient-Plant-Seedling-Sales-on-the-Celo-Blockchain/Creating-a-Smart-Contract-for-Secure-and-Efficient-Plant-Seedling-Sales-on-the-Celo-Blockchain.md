@@ -35,6 +35,8 @@ To successfully complete this tutorial, it is recommended that you have:
 
 - Basic knowledge of the Solidity programming language used for smart contract development on the blockchain.
 
+[Click here to get the complete code for this session](https://github.com/Ogoyi/plant-seedling-sale-on-celo)
+
 We will begin by using the Remix IDE to write our smart contract. Let's get started!
 
 The complete code for this session.
@@ -372,8 +374,6 @@ Finally we add the `function getSeedlingsLength()`
     }
 }
 ```
-
-[Click here to get the complete code for this session](https://github.com/Ogoyi/plant-seedling-sale-on-celo)
 
 In this part of the smart contract, we have the `getSeedlingsLength` function. This function simply returns the total number of seedlings currently available for sale on the marketplace.
 
