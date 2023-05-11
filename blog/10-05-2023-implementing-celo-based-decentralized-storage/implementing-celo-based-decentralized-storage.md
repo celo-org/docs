@@ -1,6 +1,6 @@
 ---
-title: Exploring Celo in the Gaming Industry for In-Game Assets and P2P Trading
-description: Learn how Celo is utilized in the Gaming Industry for In-Game Assets and P2P Trading
+title: Implementing Celo Based Decentralized Storage
+description: Learn how to Implement a Celo Based Decentralized Storage
 authors:
   - name: Oluwalana Ajayi
     title: Web3 Software Developer
