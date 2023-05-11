@@ -1,6 +1,6 @@
 ---
-title: Implementing Celo Based Decentralized Storage
-description: Learn how to Implement a Celo Based Decentralized Storage
+title: Implementing Celo-based Decentralized Storage
+description: Learn how to Implement Celo-based Decentralized Storage
 authors:
   - name: Oluwalana Ajayi
     title: Web3 Software Developer
