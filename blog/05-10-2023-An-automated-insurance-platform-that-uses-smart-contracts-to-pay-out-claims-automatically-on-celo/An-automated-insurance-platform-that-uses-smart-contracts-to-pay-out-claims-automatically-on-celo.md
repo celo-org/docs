@@ -15,6 +15,7 @@ slug: /tutorials/an-automated-insurance-platform-that-uses-smart-contracts-to-pa
 
 ## INTRODUCTION
 
+
 Welcome to this tutorial on building an automated insurance platform on Celo! In this project, we will leverage the power of smart contracts to create a decentralized insurance platform. Users will be able to create insurance policies, specify policy details such as premium and coverage, and even automate claim payouts.
 
 By following this tutorial, you will learn how to utilize smart contracts to handle policy creation, manage policy expiration dates, and automate claim payouts on the Celo network. We will cover concepts such as contract structure, policy creation, policy management, and claim processing.
