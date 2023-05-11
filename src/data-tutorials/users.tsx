@@ -794,6 +794,13 @@ const Users: User[] = [
     preview: require('./showcase/intermediate/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin.png'),
     website: 'blog/tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin',
     tags: ['celosage', 'solidity', 'intermediate','celo'],
+  }, 
+     {
+    title: 'How to Develop Your Game Items with ThirdWeb’s ERC1155 Base Contract on Celo',
+    description: 'This article will demonstrate how to use develop game items with Thirdweb's ERC1155 Base Contract',
+    preview: require('./showcase/intermediate/thirdweb-cover.png'),
+    website: '/blog//tutorials/how-to-develop-your-game-items-with-thirdweb-erc1155-base-contract-on-celo',
+    tags: tags: ['solidity', 'smart contract', 'celosage', 'thirdweb', 'erc1155', 'gameitem'],
   },
   {
     title: 'How to Tokenize Physical Assets on Celo',
