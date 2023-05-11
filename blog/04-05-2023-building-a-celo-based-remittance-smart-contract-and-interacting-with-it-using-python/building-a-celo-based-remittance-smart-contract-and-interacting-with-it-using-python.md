@@ -130,7 +130,7 @@ npm i @openzeppelin/contracts
 
 ### Step 3: Build and Deploy the smart contract on the Celo testnet
 
-Next, in the root directory of your project, create a new file called `[deploy.py](http://deploy.py)` which would contain the code that would deploy our smart contract:
+Next, in the root directory of your project, create a new file called `deploy.py` which would contain the code that would deploy our smart contract:
 
 deploy.py
 
@@ -209,115 +209,115 @@ print(f"Contract deployed at address: {contract_address}")
 
 1. Install `truffle` and `truffle-flattener` globally:
     
-    ```bash
-    npm install -g truffle
-    npm install -g truffle-flattener
-    ```
+```bash
+npm install -g truffle
+npm install -g truffle-flattener
+```
     
 
 1. Create a `truffle-config.js` file in the root of your project directory with the following content:
     
-    ```jsx
-    module.exports = {
-      networks: {
-        development: {
-          host: "127.0.0.1",
-          port: 7545,
-          network_id: "*",
-        },
-      },
-      compilers: {
-        solc: {
-          version: "0.8.0",
-        },
-      },
-    };
-    ```
+```jsx
+module.exports = {
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*",
+    },
+  },
+  compilers: {
+    solc: {
+      version: "0.8.0",
+    },
+  },
+};
+```
     
-    This is a basic Truffle configuration file that lists the version of the Solidity compiler and the development network.
+This is a basic Truffle configuration file that lists the version of the Solidity compiler and the development network.
     
 2. Run the following command to create a flattened version of your `Remittance.sol` file in your project directory:
     
-    ```bash
-    truffle-flattener Remittance.sol > FlattenedRemittance.sol
-    ```
+```bash
+   truffle-flattener Remittance.sol > FlattenedRemittance.sol
+```
     
-    Your `Remittance.sol` file should be flattened and located in `FlattenedRemittance.sol`.
+Your `Remittance.sol` file should be flattened and located in `FlattenedRemittance.sol`.
     
-    Your deployment script should also be updated to this:
+Your deployment script should also be updated to this:
     
-    deploy.py
+deploy.py
     
-    ```jsx
-    import json
-    import os
-    from solcx import compile_standard, install_solc
-    from dotenv import load_dotenv
-    from web3.middleware import geth_poa_middleware
-    from web3 import Web3
-    
-    load_dotenv()
-    
-    # Install specific Solidity compiler version
-    install_solc("0.8.0")
-    
-    # Set up web3 connection
-    provider_url = os.environ.get("CELO_PROVIDER_URL")
-    w3 = Web3(Web3.HTTPProvider(provider_url))
-    assert w3.is_connected(), "Not connected to a Celo node"
-    
-    # Set deployer account and private key
-    deployer = os.environ.get("CELO_DEPLOYER_ADDRESS")
-    private_key = os.environ.get("CELO_DEPLOYER_PRIVATE_KEY")
-    
-    with open("FlattenedRemittance.sol", "r") as file:
-        solidity_code = file.read()
-    
-    # Add Geth POA middleware to handle extraData field in Celo transactions
-    w3.middleware_onion.inject(geth_poa_middleware, layer=0)
-    
-    # Compile the Solidity smart contract
-    compiled_sol = compile_standard({
-        "language": "Solidity",
-        "sources": {
-            "FlattenedRemittance.sol": {
-                "content": solidity_code
+```jsx
+import json
+import os
+from solcx import compile_standard, install_solc
+from dotenv import load_dotenv
+from web3.middleware import geth_poa_middleware
+from web3 import Web3
+
+load_dotenv()
+
+# Install specific Solidity compiler version
+install_solc("0.8.0")
+
+# Set up web3 connection
+provider_url = os.environ.get("CELO_PROVIDER_URL")
+w3 = Web3(Web3.HTTPProvider(provider_url))
+assert w3.is_connected(), "Not connected to a Celo node"
+
+# Set deployer account and private key
+deployer = os.environ.get("CELO_DEPLOYER_ADDRESS")
+private_key = os.environ.get("CELO_DEPLOYER_PRIVATE_KEY")
+
+with open("FlattenedRemittance.sol", "r") as file:
+    solidity_code = file.read()
+
+# Add Geth POA middleware to handle extraData field in Celo transactions
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+# Compile the Solidity smart contract
+compiled_sol = compile_standard({
+    "language": "Solidity",
+    "sources": {
+        "FlattenedRemittance.sol": {
+            "content": solidity_code
+        }
+    },
+    "settings": {
+        "outputSelection": {
+            "*": {
+                "*": ["metadata", "evm.bytecode", "evm.deployedBytecode", "abi"]
             }
         },
-        "settings": {
-            "outputSelection": {
-                "*": {
-                    "*": ["metadata", "evm.bytecode", "evm.deployedBytecode", "abi"]
-                }
-            },
-            "optimizer": {
-                "enabled": True,
-                "runs": 200
-            }
+        "optimizer": {
+            "enabled": True,
+            "runs": 200
         }
-    })
-    
-    # Get the bytecode, contract data, and ABI
-    contract_data = compiled_sol['contracts']['FlattenedRemittance.sol']['Remittance']
-    bytecode = contract_data['evm']['bytecode']['object']
-    abi = json.loads(contract_data['metadata'])['output']['abi']
-    
-    # Deploy the contract
-    nonce = w3.eth.get_transaction_count(deployer)
-    transaction = {
-        'nonce': nonce,
-        'gas': 2000000,
-        'gasPrice': w3.eth.gas_price,
-        'data': bytecode,
     }
-    signed_txn = w3.eth.account.sign_transaction(transaction, private_key)
-    transaction_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
-    transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
-    
-    # Get the contract address
-    contract_address = transaction_receipt['contractAddress']
-    print(f"Contract deployed at address: {contract_address}")
-    ```
+})
+
+# Get the bytecode, contract data, and ABI
+contract_data = compiled_sol['contracts']['FlattenedRemittance.sol']['Remittance']
+bytecode = contract_data['evm']['bytecode']['object']
+abi = json.loads(contract_data['metadata'])['output']['abi']
+
+# Deploy the contract
+nonce = w3.eth.get_transaction_count(deployer)
+transaction = {
+    'nonce': nonce,
+    'gas': 2000000,
+    'gasPrice': w3.eth.gas_price,
+    'data': bytecode,
+}
+signed_txn = w3.eth.account.sign_transaction(transaction, private_key)
+transaction_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+transaction_receipt = w3.eth.wait_for_transaction_receipt(transaction_hash)
+
+# Get the contract address
+contract_address = transaction_receipt['contractAddress']
+print(f"Contract deployed at address: {contract_address}")
+```
     
 
 On your terminal, run the following command to deploy your smart contract:
