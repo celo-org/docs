@@ -1065,6 +1065,13 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'composer', 'react', 'typescript', 'metamask', 'javascript'],
   },
   {
+    title: 'Build, deploy and host your Celo Smart Contract on QuickNode Using Celo Composer',
+    description: 'In this tutorial, we will walk you through the process of building, deploying, hosting, and interacting with a Celo contract using QuickNode.',
+    preview: require('./showcase/intermediate/build-deploy-and-host-your-celo-smart-contract-on-quicknode-using-celo-composer.png'),
+    website: '/blog/tutorials/build-deploy-and-host-your-celo-smart-contract-on-quicknode-using-celo-composer',
+    tags: ['celosage', 'intermediate', 'composer', 'react', 'typescript', 'metamask', 'javascript'],
+  },
+  {
     title: 'How to build a Basic CRUD App in Solidity',
     description: 'This post will teach you how to create a basic Create, Read, Update and Delete (CRUD) smart contract and test it with the Truffle framework.',
     preview: require('./showcase/beginner/how-to-build-a-basic-crud-app-in-solidity.png'),
