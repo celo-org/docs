@@ -13,12 +13,12 @@ slug: /tutorials/guide-to-building-a-cross-chain-interoperability-between-celo-a
 
 ![header](../../src/data-tutorials/showcase/intermediate/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks.png)
 
-# Introduction​
+## Introduction​
 
 In this Tutorial you will learn how to create smart contracts that allow Celo and other blockchains to communicate with one another. Cross-chain interoperability is the capacity of several blockchain networks to converse and share data with one another.
 We will take it step by step, from laying out the interactions of the different blockchains, to developing the smart contract, deploying and connecting it to other blockchains.
 
-# Prerequisites​
+## Prerequisites​
 
 To begin, you should have a fundamental understanding of the following before you can build a cross-chain interoperability between Celo and other Blockchain Networks
 
@@ -27,7 +27,7 @@ To begin, you should have a fundamental understanding of the following before yo
 - understanding and workings of smart contract development
 - knowledge of web 3
 
-# Requirements​
+## Requirements​
 
 The following tool and technologies will be required to build a Cross-chain Interoperability between Celo and other Blockchain Networks.
 
@@ -37,13 +37,13 @@ The following tool and technologies will be required to build a Cross-chain Inte
 - Cross-chain communication protocols
 - Ethereum Virtual Machine (EVM) compatibility.
 
-# Steps and processes for Building a Cross-chain Interoperability between Celo and other Blockchain Networks
+## Steps and processes for Building a Cross-chain Interoperability between Celo and other Blockchain Networks
 
-## Step 1: Set up a Development Environment
+### Step 1: Set up a Development Environment
 
 We must set up a development environment before we can start constructing cross-chain interoperability between Celo and other blockchains. Installing Node.js, Solidity, and Web3.js is required. Visual Studio Code will be employed in this.
 
-## Step 2: Understand cross-chain interoperability
+### Step 2: Understand cross-chain interoperability
 
 To build cross-chain interoperability, you need to understand how different blockchains interact with each other. There are several ways to achieve this, including through atomic swaps, cross-chain bridges, and relays. In this tutorial, we will focus on using cross-chain bridges.
 
@@ -92,7 +92,7 @@ Regular security audits help identify vulnerabilities and ensure the robustness 
 
 By leveraging cross-chain bridges, blockchains can overcome their individual silos and establish interoperability, enabling the seamless transfer of assets, data, and functionalities across different blockchain networks.
 
-## Step 3: Develop the smart contract
+### Step 3: Develop the smart contract
 
 The first step in developing cross-chain interoperability is to create a smart contract.
 This smart contract will act as the bridge between Celo and other blockchains. The smart contract should be written in Solidity, which is the programming language used to develop smart contracts on the Ethereum network.
@@ -126,7 +126,7 @@ contract TokenBridge {
 
 In this contract, we define an interface for the ERC20 token standard and declare two variables celoToken and ethereumRecipient that will hold the addresses of the token on the Celo network and the recipient on the Ethereum network, respectively. The constructor takes in these two addresses and stores them in the variables. The transfer function is the main function of the contract, which will be called by a user to transfer tokens from Celo to Ethereum.
 
-## Step 4: Deploy the smart contract on Celo
+### Step 4: Deploy the smart contract on Celo
 
 Once you have developed the smart contract, the next step is to deploy it on the Celo network. You can do this using Remix, which is a web-based IDE for Solidity. You will need to connect Remix to your Celo wallet using the Celo Extension Wallet.
 
@@ -192,7 +192,7 @@ Interact with the contract by calling its functions or accessing its variables. 
 You can provide function parameters and click on the respective function to execute it on the Celo network.
 That's it! You have successfully deployed your smart contract on the Celo network using Remix and the Celo Extension Wallet. You can now interact with the deployed contract through the Remix IDE.
 
-## Step 5: Connect to other blockchains
+### Step 5: Connect to other blockchains
 
 The final step in building cross-chain interoperability is to connect to other blockchains. In this tutorial, we will connect to the Ethereum network. You will need to create a new instance of Web3.js and connect it to the Ethereum network using Infura or any other Ethereum node. (how to create a new instance of Web3.js and connect it to the Ethereum network using Infura)
 
@@ -212,7 +212,7 @@ Efficiency:
 Cross-chain interoperability is an essential feature for decentralized applications, as it enables users to transact across multiple blockchains.
 The efficiency of the smart contract will depend on the complexity of the contract and the number of transactions being processed.
 
-## Common Errors Encountered and How to Fix them
+### Common Errors Encountered and How to Fix them
 
 Error 1: Compilation Errors
 
@@ -275,21 +275,21 @@ Thoroughly research the chosen cross-chain bridge or interoperability solution. 
 Engage with the community by participating in developer forums, chat groups, or online communities specific to the chosen solution. Ask questions and seek assistance from experienced developers who have worked on similar projects.
 Consider reaching out to the developers or maintainers of the cross-chain bridge or interoperability solution directly for additional support or clarification on specific issues you encounter.
 
-# Conclusion​
+## Conclusion​
 
 This tutorial has taught us how to Build a Cross-chain Interoperability between Celo and other Blockchain Networks. First step was setting up a development environment, next was explaining cross-chain bridges, then developing the smart contract, deploying the smart contract and connecting to other blockchains. possible errors that were made and fixed during creation.
 
-# Next Steps​
+## Next Steps​
 
 We now have a solid understanding of the cross-chain interoperability and it's importance and usage, we can now explore and delve into it's efficiency and reliability by the blockchain, thank you.
 
-# About the Author​
+## About the Author​
 
 Michael Diagbare is a Software Engineer with expertise in Web, Blockchain development and content creation, certified by Cisco and MongoDB university. He is passionate about building software, problem solving and helping programmers deal with complicated tasks and challenges.
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/diagbare-michael/)
 
-# References​
+## References​
 
 - [Explaining cross chain bridges](https://consensys.net/blog/blockchain-explained/cross-chain-bridges/)
 - [Blockchain interoperability](https://medium.com/wanchain-foundation/blockchain-interoperability-relays-75111bcafa2c)
