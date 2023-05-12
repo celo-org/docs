@@ -146,6 +146,17 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'EthicHub',
+    description: translate({
+      message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
+      id: 'showcase.user.ethichub.description',
+    }),
+    preview: require('./showcase/ethichub.png'),
+    website: 'https://ethix.ethichub.com/',
+    source: 'https://docs-ethix.ethichub.com',
+    tags: ['apps', 'refi', 'popular', 'earn', 'impact'],
+  },
+  {
     title: 'Valora',
     description: 'The crypto wallet with 12% rewards to buy, send, spend, earn, and collect NFTs on the Celo blockchain.',
     preview: require('./showcase/valora.png'),
