@@ -1789,7 +1789,7 @@ const Users: User[] = [
     description: 'This article is the first part of the tutorial series that teahes how to add celo payment method to a full stack car booking web app.',
     preview: require('./showcase/intermediate/car-booking-web-app-with-celo-as-payment-method-part-1.png'),
     website: 'blog/tutorials/car-booking-web-app-with-celo-as-payment-method-part-1',
-    tags: [,'celosage', 'celo', 'react'],
+    tags: ['celosage', 'celo', 'react'],
   },
   {
     title: 'Implementing Security Measures For dApps on Celo',
