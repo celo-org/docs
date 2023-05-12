@@ -3151,11 +3151,20 @@ const Users: User[] = [
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'truffle'], 
   },
   {
+
+    title: 'Interacting with Celo\'s Stablecoin, Celo Dollars, using Python',
+    description: ' Uncover the secrets of working with Celo\'s stablecoin, Celo Dollars, in this informative guide. Learn how to interact, manage, and utilize Celo Dollars in your applications using Python. This article covers essential concepts, practical examples, and step-by-step instructions to harness the power of Celo\'s blockchain technology, opening up new possibilities in the world of digital currencies and decentralized finance.',
+    preview: require('./showcase/intermediate/interacting-with-celo-stablecoin-celo-dollars-using-python.png'),
+    website: 'blog/tutorials/interacting-with-celo-stablecoin-celo-dollars-using-python',
+    tags: ["celosage", "intermediate", "smartcontract", "solidity"], 
+  },
+  {
     title: 'Interact with smart contract on Celo using Web3js',
     description: 'Learn how to navigate through web3js framework',
     preview: require('./showcase/intermediate/interact-with-smart-contract-on-celo-using-web3js.png'),
     website: 'blog/tutorials/interact-with-smart-contract-on-celo-using-web3js',
     tags: ['celosage', 'solidity', 'intermediate', 'celo', 'hardhat'], 
+
   },
   {
     title: 'The Future of NFT Creation - Unleashing the Power of Batch Minting with ERC721psi',
