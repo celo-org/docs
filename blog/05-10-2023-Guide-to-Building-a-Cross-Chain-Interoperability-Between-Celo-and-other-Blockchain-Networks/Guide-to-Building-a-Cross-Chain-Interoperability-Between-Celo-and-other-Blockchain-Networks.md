@@ -1,6 +1,6 @@
 ---
 title: Guide to Building a Cross-Chain Interoperability between Celo and other Blockchain Networks
-description: 'Learn how to create smart contracts that allow Celo and other blockchains to communicate with one another',
+description: 'Learn how to create smart contracts that allow Celo and other blockchains to communicate with one another'
 
 authors:
   - name: Michael Diagbare
