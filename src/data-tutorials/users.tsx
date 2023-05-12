@@ -2968,7 +2968,7 @@ const Users: User[] = [
     tags: ['celosage','celo', 'ERC20', 'solidity', 'advanced'],
   },
   {
-    title: "Guide to Building a Cross-Chain Interoperability between Celo and other Blockchain Networks",
+    title: 'Guide to Building a Cross-Chain Interoperability between Celo and other Blockchain Networks',
     description: 'Learn how to create smart contracts that allow Celo and other blockchains to communicate with one another',
     preview: require('./showcase/intermediate/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks.png'),
     website: 'blog/tutorials/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks',
