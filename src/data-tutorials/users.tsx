@@ -1162,6 +1162,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api',
     tags: ['celosage', 'celo', 'intermediate', 'react'],
   },
+   {
+    title: 'Build a document tamper proof verification smart contract dApp on Celo blockchain.',
+    description: 'This tutorial will guide you through building a decentralized application on the Celo blockchain that verifies the integrity of documents.',
+    preview: require('./showcase/intermediate/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain.png'),
+    website: '/blog/tutorials/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain',
+    tags: ['celosage', 'celo', 'intermediate', 'react'],
+  },
   {
     title: 'Build and Deploy a Secure Multi-Signature Wallet on the Celo Blockchain',
     description: 'In this tutorial, we will walk through the process of creating a secure multi-signature wallet on the Celo blockchain.',
