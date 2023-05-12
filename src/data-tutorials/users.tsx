@@ -3017,6 +3017,13 @@ const Users: User[] = [
     tags: ['celosage','celo', 'ERC20', 'solidity', 'advanced'],
   },
   {
+    title: 'Guide to Building a Cross-Chain Interoperability between Celo and other Blockchain Networks',
+    description: 'Learn how to create smart contracts that allow Celo and other blockchains to communicate with one another',
+    preview: require('./showcase/intermediate/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks.png'),
+    website: 'blog/tutorials/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks',
+    tags: ['celo', 'celosage', 'smartcontract', 'solidity', 'javascript', 'intermediate'], 
+  },
+  {
     title: 'Build an nft-gated dapp and deploy on a decentralized hosting service',
     description: 'An interesting use case for NFTs on Celo network',
     preview: require('./showcase/advanced/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service.png'),
