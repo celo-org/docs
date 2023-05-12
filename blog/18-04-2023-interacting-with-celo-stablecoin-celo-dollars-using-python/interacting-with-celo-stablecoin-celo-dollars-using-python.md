@@ -207,7 +207,7 @@ def send_cusd(account, to, amount, contract_address):
 
 To send cUSD tokens from one account to another, use this function. It requires four arguments: the cUSD contract address, the amount to transfer, the account sending the tokens, and the account receiving the tokens.
 
-By providing the contract address and its ABI to the `w3.eth.contract()` function, it first obtains the cUSD contract. It then uses the `estimate_gas()` function on the `transfer()` method of the contract to calculate the amount of gas needed for the transaction while passing the to address and the amount of cUSD to send in wei. 
+By providing the contract address and its ABI to the `w3.eth.contract()` function, it first obtains the cUSD contract. It then uses the `estimate_gas()` function on the `transfer()` method of the contract to calculate the amount of gas needed for the transaction while passing the to address and the amount of cUSD to send in wei.
 
 The `build_transaction()` function on the contract's `transfer()` method is then used to generate a transaction object, passing the address, the amount of cUSD to send in wei, and other transaction parameters like the gas limit, gas price, and nonce.
 
@@ -218,8 +218,6 @@ Essentially, this feature makes it possible to move cUSD tokens easily across ac
 ### Step 4**: Test the Functions**
 
 Next, let’s write a script that would call the functions that get a user cUSD balance and send cUSD from one account to another.
-
- 
 
 ```python
 # Get CUSD balance
@@ -239,7 +237,7 @@ This code serves as an illustration of how to communicate with the Celo network 
 
 The `get_cusd_balance()` function is used to print the deployer account's cUSD balance before defining the cUSD contract address. The deployer account address and the cUSD contract address are passed to the function, which prints the outcome.
 
-The `send_cusd()`  method is then used to transfer the requested amount of cUSD from the deployer account to the recipient account. Next, the code specifies the recipient address and the amount of cUSD to send. It provides the `send_cusd()` method with the deployer account, receiver address, amount to send, and cUSD contract address.
+The `send_cusd()` method is then used to transfer the requested amount of cUSD from the deployer account to the recipient account. Next, the code specifies the recipient address and the amount of cUSD to send. It provides the `send_cusd()` method with the deployer account, receiver address, amount to send, and cUSD contract address.
 
 The code ends by printing a message along with the transaction hash confirming the successful transfer of cUSD.
 
@@ -250,9 +248,8 @@ Finally, run the following code on your terminal to see how well the functions i
 ```bash
 python main.py
 ```
+
 ![image](https://user-images.githubusercontent.com/71826391/232785649-7304b6a8-9686-487a-8fc3-3649332a0778.png)
-
-
 
 ## Conclusion
 
@@ -267,6 +264,7 @@ You can research the following subjects as a foundation for this tutorial:
 - Examine and interact with the other stablecoins of Celo.
 
 ## About the Author
+
 I am a React frontend developer with over 3 years of experience building for the web, a web3 developer, and a technical writer. Visit my [GitHub profile](https://github.com/J0shcodes) to see some of the projects I have worked on and currently working on.
 
 ## References
