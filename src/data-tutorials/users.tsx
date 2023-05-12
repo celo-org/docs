@@ -1239,7 +1239,13 @@ const Users: User[] = [
     website: '/blog/tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain',
     tags: ['celosage', 'solidity', 'celo', 'react', 'intermediate'],
   },
-  
+  {
+    title: 'Unveiling the Power of Celo Interoperability Solutions',
+    description: 'A Comprehensive Breakdown of Bridges and Cross-Chain Transactions',
+    preview: require('./showcase/intermediate/Unveiling-the-Power-of-Celo-Interoperability-Solutions.png'),
+    website: '/blog/tutorials/unveiling-the-power-of-celo-interoperability-solutions',
+    tags: ['celo', 'intermediate', 'celosage'],
+  },
   {
     title: 'Build And Deploy A Multi Token wallet On The Celo Blockchain.',
     description: 'In this tutorial, you will learn how to build a multi token wallet that allows you to manage your crypto assets in a decentralized way.',
