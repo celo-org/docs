@@ -61,7 +61,7 @@ Now you can use this test account in the tutorial. Ensure that you're interactin
 npm init-y
 ```
 
-3.  Install dependencies
+3. Install dependencies
 
 ```bash
 npm install --save @truffle/hdwallet-provider @celo/contractkit dotenv
