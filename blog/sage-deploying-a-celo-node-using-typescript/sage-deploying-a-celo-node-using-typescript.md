@@ -43,7 +43,7 @@ The first thing on the agenda is installing appropriate dependencies. In order t
 You can find Node.js on its [official website](https://nodejs.org), but if you have one already installed on your machine, you can check the version by typing in the command:
 
 ```
-	node --version
+node --version
 ```
 
 After Nodejs has been successfully installed, now we can move to [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Yarn](https://yarnpkg.com/getting-started/install) using the default package manager available on your system.
@@ -53,7 +53,7 @@ After Nodejs has been successfully installed, now we can move to [Git](https://g
 The Celo blockchain is managed through a monorepo containing all the necessary packages to run a Celo node. To access the repository on your local machine, use the following command:
 
 ```
-	git clone https://github.com/celo-org/celo-monorepo.git
+git clone https://github.com/celo-org/celo-monorepo.git
 ```
 
 This will create a new directory/folder called `celo-monorepo` in your specified directory. The directory should look like this after cloning:
@@ -65,13 +65,13 @@ This will create a new directory/folder called `celo-monorepo` in your specified
 To initialize the project, run the npm initialization command below
 
 ```
-	npm init -y
+npm init -y
 ```
 
 The command will initializes a new npm project and set it up using default settings. The final initialization process will be to install the TypeScript packages as a development dependency. To do this, use the command:
 
 ```
-	npm install typescript --save-dev
+npm install typescript --save-dev
 ```
 
 ### Install Dependencies
@@ -79,13 +79,13 @@ The command will initializes a new npm project and set it up using default setti
 Once the monorepo shows up in the specified directory, the next step is to install its dependencies. To do so, navigate to the celo-monorepo directory and run the following command:
 
 ```
-	yarn install
+yarn install
 ```
 
 This may take several minutes to install the needed packages for our project. Once the packages are installed successfully, you can proceed to build the new packages by running
 
 ```
-	yarn build –ignore docs
+yarn build –ignore docs
 ```
 
 The ignore option will help you skip most of the possible errors that might arise while building. This will look something like this:
@@ -96,7 +96,7 @@ The ignore option will help you skip most of the possible errors that might aris
 To run a Celo node, you will also need a validator key. This is a special key used to sign blocks and validate transactions. You can generate a validator key using the command:
 
 ```
-	yarn run generate:validator
+yarn run generate:validator
 ```
 
 This can be used to access your node, so ensure you keep the keys generated safe and secure at all times.
@@ -106,15 +106,15 @@ This can be used to access your node, so ensure you keep the keys generated safe
 Afterwards, create a configuration file for your node. It should include network settings, validator key, and other relevant parameters. The template.env file is a great point of reference, to do this, you need to run:
 
 ```
-	cp .env.template .env
+cp .env.template .env
 ```
 
 this will copy the files in the template to the .env file. if for any reason the template file does not exist in the monorepo file, you don't need to panic about the error it throws, all you need to do is to create a new .env file and copy the lines of command below into it:
 
 ```
-	CELO_VALIDATOR_ADDRESS=<your-validator-address>
-	CELO_VALIDATOR_PRIVATE_KEY=<your-validator-private-key>
-	CELO_BOOTNODES=<comma-separated-list-of-bootnodes>
+CELO_VALIDATOR_ADDRESS=<your-validator-address>
+CELO_VALIDATOR_PRIVATE_KEY=<your-validator-private-key>
+CELO_BOOTNODES=<comma-separated-list-of-bootnodes>
 ```
 
 However, you need to update the three values – `address`, `private key`, and a `list of bootnodes` (which can be found on the [Celo Website](https://celo.org/) or [Celo monorepo](https://github.com/celo-org/celo-monorepo.git)). You can find a list of bootnodes in the .env file located in the packages/protocol directory of the Celo monorepo.
@@ -124,7 +124,7 @@ However, you need to update the three values – `address`, `private key`, and a
 Your Celo node is ready to go! Run this command from the celo-monorepo directory to initiate the process:
 
 ```
-	yarn run start:fullnode
+yarn run start:fullnode
 ```
 
 It will take a few minutes for the node to sync with the network and begin processing transactions.
@@ -134,13 +134,13 @@ It will take a few minutes for the node to sync with the network and begin proce
 To ensure the health and performance of your node, use the celo command line tool. You can check status with:
 
 ```
-	yarn run celo status
+yarn run celo status
 ```
 
 And view logs with:
 
 ```
-	yarn run celo logs
+yarn run celo logs
 ```
 
 ### Dealing with errors
