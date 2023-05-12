@@ -3535,8 +3535,13 @@ const Users: User[] = [
     website: 'blog/tutorials/deploying-celo-dapp-to-celo-network-with-web3py',
     tags: ['celosage', 'beginner', 'dapp', 'celo'], 
   },
-
-
+  {
+    title: 'Automating Smart Contracts with OpenZeppelin Defender on Celo',
+    description: 'This tutorial introduces developers to automating smart contracts using OpenZeppelin Defender -  a powerful, secure smart contract management platform.',
+    preview: require('./showcase/beginner/automating-smart-contracts-with-openzeppelin-defender-on-celo.png'),
+    website: 'blog/tutorials/automating-smart-contracts-with-openzeppelin-defender-on-celo',
+    tags: ['celosage', 'beginner', 'celo'], 
+  },
   {
     title: 'Analyzing smart contracts security on Celo using Slither',
     description: 'Analyze smart contracts using free security tools - Slither',
