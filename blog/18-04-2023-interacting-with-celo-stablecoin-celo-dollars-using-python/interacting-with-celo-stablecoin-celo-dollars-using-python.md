@@ -1,6 +1,6 @@
 ---
 title: Interacting with Celo's Stablecoin, Celo Dollars, using Python
-description: Uncover the secrets of working with Celo's stablecoin, Celo Dollars, in this informative guide. Learn how to interact, manage, and utilize Celo Dollars in your applications using Python. This article covers essential concepts, practical examples, and step-by-step instructions to harness the power of Celo's blockchain technology, opening up new possibilities in the world of digital currencies and decentralized finance.
+description: This article covers essential concepts, practical examples, and step-by-step instructions to harness the power of Celo's blockchain technology, opening up new possibilities in the world of digital currencies and decentralized finance.
 authors:
   - name: Joshua Moses
 url: https://github.com/Divine572
