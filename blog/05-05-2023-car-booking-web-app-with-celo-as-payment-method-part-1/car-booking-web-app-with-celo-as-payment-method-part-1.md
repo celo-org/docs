@@ -52,13 +52,13 @@ To get started, you will need to clone the starter file from Github.
 
 In your terminal:
 
-```
+```bash
  git clone https://github.com/kinyichukwu/Decentralized--Rides-booking-application.git
 ```
 
 Once cloning is done, install all the project dependencies
 
-```
+```bash
 npm install
 ```
 
@@ -89,12 +89,12 @@ Firebase Storage and Database can be enabled by navigating to the console and se
 ### Firebase Config
 
 To get your Firebase config, you will need to follow these steps:
-Go to the Firebase Console and select your project. Click on the gear icon located next to the "Project Overview" in the left navigation bar.
-Click on the "Project Settings" option. Scroll down to the "Your apps" section and find the web app you want to get the config for
-Click on the "</>" icon to add Firebase to your web app.
+Go to the Firebase Console and select your project. Click on the gear icon located next to the `Project Overview` in the left navigation bar.
+Click on the `Project Settings` option. Scroll down to the `Your apps` section and find the web app you want to get the config for
+Click on the `</>` icon to add Firebase to your web app.
 Copy the code under the "firebaseConfig" variable.
 
-```
+```js
 const firebaseConfig = {
   apiKey: "AIzaSyDfKIaFmKtT1fG5odMLOcCuwCHLFVB6jJY",
   authDomain: "defi-ride.firebaseapp.com",
@@ -111,7 +111,7 @@ const firebaseConfig = {
 
 In your root directory, create a .env file, this is where we will be storing our API keys.
 
-```
+```js
 REACT_APP_API_KEY= AIzaSyDfKIaFmKtT1fG5odMLOcCuwCHLFVB6jJY
 REACT_APP_AUTH_DOMAIN= defi-ride.firebaseapp.com
 REACT_APP_PROJECT_ID= defi-ride
@@ -141,7 +141,7 @@ After creating it include the API key in your .env file.
 
 Run the code:
 
-```
+```bash
 npm start
 ```
 
