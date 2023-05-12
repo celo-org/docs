@@ -101,7 +101,7 @@ Write a Solidity smart contract that can interact with the chosen cross-chain co
 
 Here is an example of a simple smart contract that allows Celo and Ethereum to communicate with each other:
 
-```.sol
+```Solidity
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
@@ -148,7 +148,7 @@ Step 3: Write and compile your smart contract
 
 Write or import your smart contract code into the Remix IDE. For example, you can use the smart contract code provided earlier:
 
-```TokenBridge.sol
+```Solidity
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
