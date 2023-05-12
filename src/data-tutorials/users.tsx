@@ -3492,6 +3492,13 @@ const Users: User[] = [
     website: 'blog/tutorials/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs',
     tags: ['celosage', 'intermediate', 'dapp', 'smartcontract', 'react'], 
   },
+  {
+    title: 'Smart contract security on Celo with Securify',
+    description: 'Analyze smart contracts using free securify2',
+    preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-securify.png'),
+    website: 'blog/tutorials/smart-contract-security-on-celo-with-securify',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
 
 {
