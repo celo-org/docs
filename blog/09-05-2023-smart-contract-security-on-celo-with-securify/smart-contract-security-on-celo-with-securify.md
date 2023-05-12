@@ -58,21 +58,15 @@ sudo docker run -it -v <contract-dir-full-path>:/share securify /share/<contract
 
 Securify requires a few dependencies to be installed on the system:
 
-- 
 ```bash
 sudo add-apt-repository ppa:ethereum/ethereum
 ```
-
 ```bash
 sudo apt-get update
 ```
-
 ```bash
 sudo apt-get install solc
 ```
-
-- Install Graphviz.
-
 ```bash
 sudo apt install graphviz
 ```
@@ -84,47 +78,37 @@ Now, let's set up the virtual environment. Create one and name it as you wish. I
 ```bash
 python3 --version
 ```
-
 ```bash
 virtualenv --python=/usr/bin/python3.8 venv
-
 ```
-
 - Activate the virtual environment.
 ```bash
 source venv/bin/activate
 ```
-
 - Set the library path
 
 ```bash
 cd <securify_root>/securify/staticanalysis/libfunctors
 ```
-
 - Export the path
 
 ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`
 ```
-
 - Let's complete the project setup by installing a few dependencies for this project. Run the following commands from the `<securify_root>` folder:
 
 ```bash
 pip install --upgrade pip
 ```
-
 ```bash
 pip install -r requirements.txt
 ```
-
 ```bash
 pip install -e .
 ```
-
 At this stage, we are ready to start using Securify.
 
 **Example**
-
 Before we proceed, be aware that online scanners function by experimental and especially trial and error methods perhaps heuristics hence it cannot detect vulnerabilities and bugs beyond its predefined list which an experienced audit team could offer. It is advisable to not consider them as a replacement for a thorough or extensive audit task where necessary. Always Be very mindful that the more money your smart contract features or handles, the higher the risk when something goes wrong.
 
 > Note: For analyzers that work based on heuristic play, the expectation is to report beyond the threshold rather than to underreport potential security violations. So be mindful that some false positives will be expected which then the smart contract developer should work towards identifying if an attack vector has found its way.
