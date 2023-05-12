@@ -49,45 +49,46 @@ To build cross-chain interoperability, you need to understand how different bloc
 
 When it comes to blockchain interoperability, cross-chain bridges play a crucial role in enabling communication and interaction between different blockchains. Cross-chain bridges act as connecting links that facilitate the transfer of assets and data across blockchains. In this section, we will explore how blockchains interact with each other, with a specific focus on cross-chain bridges.
 
-Cross-chain Communication:
+**Cross-chain Communication:**
 Blockchains are designed as independent networks with their own consensus mechanisms, protocols, and data structures. However, for seamless interoperability, it is necessary to establish communication channels between these blockchains. Cross-chain bridges provide the means to achieve this communication.
 
-Asset Transfers:
+**Asset Transfers:**
 One key aspect of blockchain interaction is the transfer of assets from one blockchain to another. Cross-chain bridges facilitate the movement of assets between blockchains by employing various mechanisms such as asset locking and unlocking.
 
-Asset Locking: When an asset from Blockchain A needs to be transferred to Blockchain B, it is locked on Blockchain A. This ensures that the asset is securely held and cannot be spent while the transfer is in progress.
+**Asset Locking:**
+When an asset from Blockchain A needs to be transferred to Blockchain B, it is locked on Blockchain A. This ensures that the asset is securely held and cannot be spent while the transfer is in progress.
 
-Asset Unlocking:
+**Asset Unlocking:**
 Once the asset is locked on Blockchain A, a corresponding representation or token is minted on Blockchain B. This allows the asset to be utilized within Blockchain B while ensuring the original asset's integrity on Blockchain A.
 
-Bridge Contracts:
+**Bridge Contracts:**
 Cross-chain bridges typically involve the deployment of bridge contracts on both the source and target blockchains. These bridge contracts handle the validation, verification, and execution of cross-chain transactions.
 
-Source Bridge Contract:
+**Source Bridge Contract:**
 The source bridge contract resides on the blockchain where the original asset is locked. It verifies the locking of assets and triggers the cross-chain transfer process.
 
-Target Bridge Contract:
+**Target Bridge Contract:**
 The target bridge contract exists on the destination blockchain. It verifies the minting of tokens representing the locked assets and handles the unlocking process.
 
-Oracles:
+**Oracles:**
 Oracles act as intermediaries between blockchains and provide external data and information to facilitate cross-chain communication. Oracles are responsible for gathering and validating data from external sources and feeding it into the bridge contracts for cross-chain transactions.
 
-Data Validation:
+**Data Validation:**
 Oracles ensure the accuracy and reliability of external data used in cross-chain transactions. This helps prevent fraudulent or incorrect data from impacting the transaction process.
 
-Consensus Mechanisms:
+**Consensus Mechanisms:**
 Oracles may utilize consensus mechanisms to validate data consistency and ensure agreement among multiple independent sources.
 
-Trust and Security Considerations:
+**Trust and Security Considerations:**
 Interacting with different blockchains introduces trust and security challenges. To address these concerns, cross-chain bridges often employ mechanisms such as multi-signature approvals, decentralized governance models, and audits to ensure the integrity and security of cross-chain transactions.
 
-Multi-signature Approvals:
+**Multi-signature Approvals:**
 Cross-chain transactions may require multiple signatures from trusted parties to enhance security and mitigate the risk of unauthorized transfers.
 
-Decentralized Governance:
+**Decentralized Governance:**
 Many cross-chain bridge projects incorporate decentralized governance models where stakeholders collectively make decisions regarding bridge operations and upgrades.
 
-Audits:
+**Audits:**
 Regular security audits help identify vulnerabilities and ensure the robustness of the cross-chain bridge infrastructure.
 
 By leveraging cross-chain bridges, blockchains can overcome their individual silos and establish interoperability, enabling the seamless transfer of assets, data, and functionalities across different blockchain networks.
@@ -102,7 +103,6 @@ Write a Solidity smart contract that can interact with the chosen cross-chain co
 Here is an example of a simple smart contract that allows Celo and Ethereum to communicate with each other:
 
 ```Solidity
-
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
     function transfer(address recipient, uint256 amount) external returns (bool);
@@ -132,24 +132,24 @@ Once you have developed the smart contract, the next step is to deploy it on the
 
 Here's a more practical step-by-step guide on deploying a smart contract on the Celo network using Remix and the Celo Extension Wallet:
 
-Step 1: Install the Celo Extension Wallet
+**Step 1: Install the Celo Extension Walle**t
 
 Install the Celo Extension Wallet browser extension on your preferred web browser (Chrome or Firefox).
 Visit the respective browser's extension store (Chrome Web Store or Firefox Add-ons) and search for "Celo Extension Wallet."
 Click on "Add to Chrome" or "Add to Firefox" to install the extension.
 
-Step 2: Open Remix IDE and connect to Celo Extension Wallet
+**Step 2: Open Remix IDE and connect to Celo Extension Wallet**
 
 Open the Remix IDE in your browser by visiting the Remix website (https://remix.ethereum.org).
 On the Remix IDE, click on the "Deploy & Run Transactions" tab located on the left sidebar.
 Under the "Environment" dropdown, select "Injected Web3" as the environment.
 Remix will automatically detect the Celo Extension Wallet and connect to it.
-Step 3: Write and compile your smart contract
+
+**Step 3: Write and compile your smart contract**
 
 Write or import your smart contract code into the Remix IDE. For example, you can use the smart contract code provided earlier:
 
 ```Solidity
-
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
     function transfer(address recipient, uint256 amount) external returns (bool);
@@ -175,7 +175,7 @@ Click on the "Solidity Compiler" tab in Remix.
 Make sure the correct compiler version is selected.
 Click on the "Compile" button to compile your contract. Ensure there are no compilation errors.
 
-Step 4: Deploy the smart contract
+**Step 4: Deploy the smart contract**
 
 On the "Deploy & Run Transactions" tab, select your contract from the dropdown menu under "Contract" if multiple contracts are compiled.
 Set any required constructor parameters in the provided fields, if your contract has any. For example, you can set the celoToken and ethereumRecipient values.
@@ -184,7 +184,8 @@ Remix will display a transaction confirmation dialog.
 Confirm the transaction details, including gas fees, in the Celo Extension Wallet pop-up.
 After confirming the transaction, wait for the deployment process to complete.
 Once the contract is deployed, Remix will display the deployed contract's address.
-Step 5: Interact with the deployed smart contract
+
+**Step 5: Interact with the deployed smart contract**
 
 In the Remix IDE, you can now access the deployed contract's functions and variables.
 Expand the deployed contract in the "Deployed Contracts" section on the "Deploy & Run Transactions" tab.
@@ -198,8 +199,7 @@ The final step in building cross-chain interoperability is to connect to other b
 
 Here is an example of how to connect to the Ethereum network using Web3.js:
 
-```ethereum.js
-
+```js
 const Web3 = require('web3');
 
 const web3 = new Web3('https://mainnet.infura.io/v3/YOUR-PROJECT-ID');
@@ -207,7 +207,7 @@ const web3 = new Web3('https://mainnet.infura.io/v3/YOUR-PROJECT-ID');
 
 Once you have connected to the Ethereum network, you can call the transfer function on the smart contract from the Ethereum network to transfer tokens from Celo to Ethereum.
 
-Efficiency:
+**Efficiency:**
 
 Cross-chain interoperability is an essential feature for decentralized applications, as it enables users to transact across multiple blockchains.
 The efficiency of the smart contract will depend on the complexity of the contract and the number of transactions being processed.
@@ -216,14 +216,14 @@ Here is the [source-code](https://github.com/Micholn/Cross-chain-Interoperabilit
 
 ### Common Errors Encountered and How to Fix them
 
-Error 1: Compilation Errors
+**Error 1: Compilation Errors**
 
 When writing and compiling the smart contract, you may encounter syntax errors, undeclared variables, or issues with the selected compiler version. It's important to review the error messages provided by the Solidity compiler in Remix and fix any compilation errors.
 
 Solution:
 To resolve compilation errors, carefully review the error messages provided by the Solidity compiler in Remix. Check for syntax errors, undeclared variables, or issues with the selected compiler version. Make the necessary corrections based on the error messages and ensure that the contract code is written correctly.
 
-Error 2: Contract Deployment Failure
+**Error 2: Contract Deployment Failure**
 
 Deploying the smart contract on the Celo network can fail due to various reasons, such as insufficient gas, incorrect contract parameters, or issues with the network connection. It's important to double-check the contract parameters, ensure sufficient gas is provided, and verify the network connection settings.
 
@@ -233,14 +233,14 @@ Verify that you have provided sufficient gas for the deployment. Adjust the gas 
 Check your network connection settings and ensure you are connected to the correct network.
 If you encounter issues with the Celo network specifically, consult the Celo documentation or community forums for troubleshooting steps.
 
-Error 3: Runtime Errors:
+**Error 3: Runtime Errors:**
 
 Runtime errors can occur when executing functions in the smart contract. For example, if a function requires a certain condition to be met (e.g., a sufficient balance), failing to meet that condition will result in a runtime error. It's important to handle such errors with appropriate error messages and revert the transaction if necessary.
 
 Solution:
 When encountering runtime errors, it's important to handle them gracefully and revert the transaction if necessary. You can use require statements to validate input parameters and conditions before executing the contract's logic. Provide informative error messages to users to indicate the reason for the failure. Thoroughly test your smart contract functions to ensure they handle different scenarios and edge cases without encountering runtime errors.
 
-Error 4: Token Compatibility Issues:
+**Error 4: Token Compatibility Issues:**
 
 When transferring tokens between different blockchains, compatibility issues can arise. Not all tokens are designed to work seamlessly across multiple blockchains, and they may require additional considerations or adaptations. It's important to ensure that the token you're working with is compatible with both the source and target blockchains.
 
@@ -251,7 +251,7 @@ Verify that the token you're working with is designed to be compatible with both
 Check if the token has existing cross-chain bridge solutions or tools available. These solutions can provide compatibility features or conversion mechanisms to facilitate token transfers.
 If the token lacks built-in compatibility, you may need to explore other options or consider implementing custom mechanisms to enable cross-chain transfers.
 
-Error 5: Network Connectivity Issues:
+**Error 5: Network Connectivity Issues:**
 
 Connectivity issues can occur when interacting with external networks, such as the Ethereum network through Infura. These issues can include network congestion, timeouts, or unresponsive nodes. It's important to have proper error handling and retry mechanisms in place to handle such connectivity issues.
 
@@ -261,7 +261,7 @@ If using Infura or any other third-party node provider, verify the correct API e
 Consider using alternative node providers or running your own Ethereum node to have more control over the network connectivity.
 Implement error handling and retry mechanisms in your code to handle temporary network disruptions gracefully.
 
-Error 6: Security Vulnerabilities:
+**Error 6: Security Vulnerabilities:**
 
 Building cross-chain interoperability introduces security challenges. Smart contracts are susceptible to various vulnerabilities, such as reentrancy attacks, front-running, or unauthorized access. It's crucial to follow security best practices, conduct thorough testing, and potentially seek external audits to identify and mitigate security vulnerabilities.
 
