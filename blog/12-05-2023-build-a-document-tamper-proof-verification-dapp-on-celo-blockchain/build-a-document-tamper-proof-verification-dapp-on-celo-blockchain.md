@@ -10,6 +10,8 @@ authors:
     slug: /tutorials/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain.png)
+
 ## Introduction
 
 In this tutorial, we'll guide you through the process of building a document tamper-proof verification smart contract on the Celo blockchain.
@@ -24,7 +26,7 @@ We'll be using Solidity to develop the smart contract, React to create the front
 
 3. Hardhat: You should have a basic understanding of Hardhat, a development environment for building, testing, and deploying smart contracts on the Celo blockchain. You should be familiar with Hardhat's project structure, configuration, and testing features.
 
-# Requirements​
+# Requirements
 
 1. Node.js: You will need Node.js to install on your machine to run the necessary tools and libraries for our application. You can download the latest version of Node.js from the official website [here](https://nodejs.org/en/download/)
 2. Hardhat: We will be using Hardhat as our development environment for building, testing, and deploying smart contracts on the Celo blockchain.
@@ -416,13 +418,14 @@ npx hardhat test --grep "Should add the admin to the contract"
 We use the `--grep "<ENTER IN THE TEST TOPIC>"`
 
 Output:
-![test](tutorial-assets/firsttest.png)
+
+![test](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/c7e0a498-6152-44e0-b5f2-0481e65ae59f)
 
 As you can see our first test passes properly. This means that after deployment, we're very certain that the admin and count are initiallized accordingly.
 
 A failed test will be properly described by chai as shown below:
 
-![failed test](tutorial-assets/failedtest.png)
+![failed test](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/908bd744-ff4a-45ca-af97-0ea69edd3efc)
 
 By writing these unit tests, we can ensure that the basic functionality of our TamperProof contract is working as intended.
 
@@ -559,7 +562,7 @@ npx hardhat test
 
 Output:
 
-![output](tutorial-assets/fulltest.png)
+![output](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/6990da75-b762-4e1c-bebf-d6de7b1e3a2a)
 
 ### Deploying the contract
 
@@ -574,7 +577,8 @@ npx hardhat deploy --network alfajores
 This will automatically push the contract to Celo Alfajore's network using all the predefined environment variables in the `hardhat.config.js` file.
 
 Output:
-![deployed](tutorial-assets/deployed.png)
+
+![deployed](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/62241717-8427-4b84-b4fa-8a9ff503046d)
 
 The contract was successfully deployed and verified on the alfajores network, at this address [0x1e5bA742b78b0E888BdF9f30E76F0623bA9C2137](https://alfajores.celoscan.io/address/0x1e5bA742b78b0E888BdF9f30E76F0623bA9C2137) with the code full verified.
 
@@ -617,7 +621,7 @@ yarn run dev
 
 Output:
 
-![initialui](tutorial-assets/initialui.png)
+![initialui](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/6c8b5620-8ea4-4ff2-8ff6-871d424557dc)
 
 The UI consists of the following of web3 connect button, upload file, encode file and verify button.
 
@@ -741,7 +745,7 @@ Switch the MetaMask account to the admin's account and press the connect button.
 
 Output:
 
-![connectedasadmin](tutorial-assets/connectedasadmin.png)
+![connectedasadmin](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/50412f91-e960-4450-8bcd-472115fe8fc9)
 
 When you connect as an admin, the UI conditionally renders that `Upload` button to only show when you're an admin.
 
@@ -753,11 +757,11 @@ I have prepared two pdf files that we'll use in this expirement. One has slight 
 
 Original document:
 
-![original](tutorial-assets/original.png)
+![original](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/39608a9d-9e34-4cc8-9f1e-662c06df3ca5)
 
 Altered document:
 
-![altered](tutorial-assets/duplicate.png)
+![altered](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/948c9d51-2b56-4576-8f19-8012a43c1e4d)
 
 The last document has had some modifications made to it as shown in the highlight.
 
@@ -765,13 +769,13 @@ Now that we have all the documents ready, we can now upload the original documen
 
 Output:
 
-![pickoriginal](tutorial-assets/pickoriginal.png)
+![pickoriginal](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/c1cef973-d756-458d-b80a-528157256d75)
 
 This will require you to approve the transaction, since we're writing to the blockchain.
 
 Approve the transaction your wallet as shown below:
 
-![approve](tutorial-assets/approve.png)
+![approve](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/ccd9cc83-0d05-41f0-adfc-cd9aee18e2ec)
 
 Once the transaction is verified onchain, we can approve that the document data was successfully added to the contract.
 
@@ -783,7 +787,7 @@ To do this, we can switch to any account in your wallet, and upload the invalid 
 
 Output:
 
-![pickduplicate](tutorial-assets/pickduplicate.png)
+![pickduplicate](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/20dcd776-cc6e-4c7d-992a-7cef2aac64bb)
 
 Once the document has been picked, we can press the "Encode File" button to extract it's data and press the "Verify document".
 
@@ -791,7 +795,7 @@ This will call the "Approve document" function on the smart contract, while pass
 
 Output:
 
-![invaliddoc](tutorial-assets/invaliddoc.png)
+![invaliddoc](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/b56181e9-b295-452f-9f4f-a79352d7e3a3)
 
 The approve function will return a "False" value because the length of the document was modified with the on chain document, and will show a "Document is invalid" ui to the user.
 
@@ -799,7 +803,7 @@ Finally, we can follow the same logic to test for the original document by selec
 
 Output:
 
-![docverified](tutorial-assets/docverified.png)
+![docverified](https://github.com/JovanMwesigwa/celo-docs/assets/62109301/d0dd7e86-28ac-4586-9a46-7990adb46289)
 
 Once the dcoument metadata matches with the onchain document, the "Approve" function in the contract responds with a "True" value.
 
@@ -831,7 +835,7 @@ Reach out:
 - Github: [JovanMwesigwa](https://github.com/JovanMwesigwa)
 - Linkedin: [JovanMwesigwa](https://www.linkedin.com/in/jovan-mwesigwa/)
 
-## References​
+## References
 
 - [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started) | Hardhat Docs
 - [Project code](https://github.com/JovanMwesigwa/tamper-proof-dapp-starter-template-solidity) | Github
