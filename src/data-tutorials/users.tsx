@@ -790,6 +790,13 @@ const Users: User[] = [
     tags: ['intermediate','foundation', 'reactnative', 'composer'],
   },
   {
+    title: 'Creating a Smart Contract for Decentralized Voting',
+    description: 'learn how to build a decentralised voting application using smart contracts on the Celo blockchain',
+    preview: require('./showcase/intermediate/Creating-a-Smart-Contract-for-Decentralized-Voting.png'),
+    website: '/blog/tutorials/creating-a-Smart-Contract-for-Decentralized-Voting',
+    tags: ['celosage', 'smartcontract', 'intermediate'],
+  },
+  {
     title: 'How to quickly build an NFT collection on Celo',
     description: 'Create a low-code NFT collection with Celo, IPFS, Pinata, and Remix.',
     preview: require('./showcase/beginner/how-to-quickly-build-an-nft-collection-on-celo.png'),
