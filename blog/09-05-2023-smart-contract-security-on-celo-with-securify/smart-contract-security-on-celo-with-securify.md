@@ -31,7 +31,7 @@ The following tools are recommended and should be installed prior to this stage.
 
 **What is Securify?**
 
-Securify is a security scanner for the Ethereum smart contracts and is supported by the Ethereum foundation. This indicates that we can employ the tool to improve smart contract development on most platforms that are compatible with the EVM.  With Securify, developers can detect vulnerabilities in smart contracts code written in solidity within seconds for better optimization.
+Securify is a security scanner for the Ethereum smart contracts and is supported by the Ethereum foundation. This indicates that we can employ the tool to improve smart contract development on most platforms that are compatible with the EVM. With Securify, developers can detect vulnerabilities in smart contracts code written in solidity within seconds for better optimization.
 
 Securify is a security tool for analyzing smart contracts. There are other smart contracts platforms such as TRON and so on. But this guide focuses on the Celo blockchain - `a platform acting as a global payment infrastructure for cryptocurrencies that aims to target mobile users, highly compatible with the Ethereum Virtual Machine. So if you write contracts that target the Celo platform, it is very important to prioritize security. This helps to detect and avoid a range of smart contract issues such as integer overflow/underflow, owner-overwrite-to-Ether-withdrawal, and many others.
 
@@ -41,13 +41,16 @@ To use Securify is Python based hence Python must be installed on your machine. 
 
 **Steps**
 
-1. 
+1.
+
 ```bash
 sudo docker build -t securify .
 ```
+
 This will build the image in the root project. Thereafter, you can run the container.
 
-2. 
+2.
+
 ```bash
 sudo docker run -it -v <contract-dir-full-path>:/share securify /share/<contract>.sol
 ```
@@ -61,51 +64,63 @@ Securify requires a few dependencies to be installed on the system:
 ```bash
 sudo add-apt-repository ppa:ethereum/ethereum
 ```
+
 ```bash
 sudo apt-get update
 ```
+
 ```bash
 sudo apt-get install solc
 ```
+
 ```bash
 sudo apt install graphviz
 ```
 
-Now, let's set up the virtual environment. Create one and name it as you wish. I called mine `env`. I have Python 3.8 installed, so you should the version of Python you have. 
+Now, let's set up the virtual environment. Create one and name it as you wish. I called mine `env`. I have Python 3.8 installed, so you should the version of Python you have.
 
 - First, check that Python is installed:
 
 ```bash
 python3 --version
 ```
+
 ```bash
 virtualenv --python=/usr/bin/python3.8 venv
 ```
+
 - Activate the virtual environment.
+
 ```bash
 source venv/bin/activate
 ```
+
 - Set the library path
 
 ```bash
 cd <securify_root>/securify/staticanalysis/libfunctors
 ```
+
 - Export the path
 
 ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`
 ```
+
 - Let's complete the project setup by installing a few dependencies for this project. Run the following commands from the `<securify_root>` folder:
 
 ```bash
 pip install --upgrade pip
 ```
+
 ```bash
 pip install -r requirements.txt
 ```
+
 ```bash
 pip install -e .
 ```
+
 At this stage, we are ready to start using Securify.
 
 **Example**
@@ -120,19 +135,19 @@ Create a `.sol` file and paste the following code.
 ```js
 pragma solidity ^0.6.0;
 contract ExampleWallet {
-    
+
     bytes32 hash;
-    
+
     function makeCommit(bytes32 _hash) public payable {
         require(msg.value > 0 && hash == 0x0);
         hash = _hash;
     }
-    
+
     function retrieveFund(bytes32 _text) public {
         require(keccak256(abi.encodePacked(_text)) == hash);
         msg.sender.transfer(address(this).balance);
     }
-    
+
     function getHash(bytes32 _text) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(_text));
     }
@@ -156,25 +171,27 @@ After invoking Securify on the contract, you would notice a total of 5 issues ar
 **High severity issues**
 
 1. Transaction order affects Ether amount.
-> The amount of Ether transferred must not be influenced by other transactions
+   > The amount of Ether transferred must not be influenced by other transactions
 
 This probably could be an over-approximation or an oversight. Here, we are sending out the full balance in the contract without recourse to first calculating the amount that should be sent. The contract, therefore, will either send the `full amount` in weight or absolutely `nothing`. What though could happen is in the same block, given that two valid transactions, the first transaction will get the full weight amount whereas the second transaction may get nothing.
 
 I expect a `Transaction Ordering Dependency` flag to be raised where the receiver will appear, such that the contract is handling a substantial amount of value, it could become worthwhile to listen for a transaction relating to this address with plain data, then front-running with a transaction of my own with a higher gas value.
 
 2. Insecure coding pattern.
-> Contract fields that can be modified by only the User must be inspected
+
+   > Contract fields that can be modified by only the User must be inspected
 
 3. Missing input validation.
-> Method arguments must be sanitized before they are used in computations
+   > Method arguments must be sanitized before they are used in computations
 
 **Warnings**
 
 4. Unrestricted Ether flow
-> The execution of Ether flow should be restricted to an authorized set of users
+
+   > The execution of Ether flow should be restricted to an authorized set of users
 
 5. Dependence on unsafe inputs
-> Unsafe call to Untrusted Contract
+   > Unsafe call to Untrusted Contract
 
 ## Conclusion​
 
