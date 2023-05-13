@@ -400,4 +400,3 @@ Great job! It's always helpful to provide additional resources for further learn
 ## About the author
 
 My name is Ogoyi Thompson, and I'm a web3 developer based in Nigeria. I am enthusiastic about working with blockchain technology.
-
