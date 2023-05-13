@@ -11,7 +11,7 @@ hide_table_of_contents: true
 slug: /tutorials/creating-a-Smart-Contract-for-Decentralized-Voting
 ---
 
-![header](../../src/data-tutorials/showcase/intermediate/Creating-a-Smart-Contract-for-Decentralized-Voting.png)
+![header](../../src/data-tutorials/showcase/intermediate/creating-smart-contract.png)
 
 ## Introduction
 
