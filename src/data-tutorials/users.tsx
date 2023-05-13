@@ -725,6 +725,13 @@ const Users: User[] = [
     tags: ['beginner','celosage','celo','oracle'],
   },
   {
+    title: 'Creating a Smart Contract for Decentralized Voting',
+    description: 'learn how to build a decentralised voting application using smart contracts on the Celo blockchain',
+    preview: require('./showcase/intermediate/Creating-a-Smart-Contract-for-Decentralized-Voting.png'),
+    website: '/blog/tutorials/creating-a-Smart-Contract-for-Decentralized-Voting',
+    tags: ['celosage', 'smartcontract', 'intermediate'],
+  },
+  {
     title: 'Exclusive List of Hardware Wallets that Support the Celo Network',
     description: 'This tutorial aims to provide an exclusive list of hardware wallets that support the Celo network',
     preview: require('./showcase/beginner/exclusive-list-of-hardware-wallets-that-support-the-celo-network.png'),
