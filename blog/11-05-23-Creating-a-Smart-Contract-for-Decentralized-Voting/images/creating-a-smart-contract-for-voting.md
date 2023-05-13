@@ -89,7 +89,6 @@ contract Voting {
     }
 
     
-
     function getVotes(string memory _candidate) view public returns (uint256) {
 
         return votes[_candidate];
