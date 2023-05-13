@@ -148,7 +148,6 @@ Imole Peter L.
 
 A web3 enthusiast, content writer for web3 brands, visual artist, and seasoned author (Pen name:[Sasani Eldis](https://www.amazon.com/Imole-Latona/e/B088F4KF7H)). Connect with me on[LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
-
 ## References
 
 Ethereum documentation:<https://ethereum.org/developers/>
