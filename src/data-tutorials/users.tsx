@@ -2316,7 +2316,7 @@ const Users: User[] = [
     description: "In this article, we'll be talking about the future of online transactions with zk-rollups and zk-SNARKs.",
     preview: require('./showcase/intermediate/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks.png'),
     website: 'blog/tutorials/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks',
-    tags: ['celo', 'intermediate', 'solidity'],
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
   },
   {
     title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',

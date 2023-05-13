@@ -6,7 +6,7 @@ authors:
     title: Technical Writer,
     url: https://github.com/kyrian212
     image_url: https://avatars.githubusercontent.com/u/33249458?v=4
-tags: [celo, intermediate, solidity]
+tags: [celo, intermediate, solidity, celosage]
 hide_table_of_contents: true
 slug: /tutorials/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks
 ---
