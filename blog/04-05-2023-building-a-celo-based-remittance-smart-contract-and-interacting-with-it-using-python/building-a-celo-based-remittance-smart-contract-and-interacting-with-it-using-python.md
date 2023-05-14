@@ -329,8 +329,7 @@ python deploy.py
 ![images](https://user-images.githubusercontent.com/69091491/236292089-5e6dbce9-381b-4beb-871d-39ab2ad47563.png)
 
 
-### Step 4: In
-teracting with the deployed smart contract
+### Step 4: Interacting with the deployed smart contract
 
 Finally, let’s write a script that interacts with the remittance smart contract. Create a new file called `client.py` and paste the following code:
 
