@@ -3576,6 +3576,13 @@ const Users: User[] = [
     website: '/blog/tutorials/deploying-a-celo-node-using-typescript',
     tags: ['celo','celosage', 'typescript', 'nodejs', 'intermediate'],
   },
+  {
+    title: 'Integrating Celo Payments into Your Web or Mobile Application',
+    description: 'Learn how to integrate celo payments into your mobile or web app',
+    preview: require('./showcase/intermediate/integrating-celo-payments-into-your-web-or-mobile-application.png'),
+    website: '/blog/tutorials/integrating-celo-payments-into-your-web-or-mobile-application',
+    tags: ['celo', 'celosage', 'flutter', 'javascript', 'intermediate'],
+  },
 
 
 
