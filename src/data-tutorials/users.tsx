@@ -3151,6 +3151,13 @@ const Users: User[] = [
     website: 'blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Integrating Celo Payments into Your Web or Mobile Application',
+    description: "Learn how to integrate celo payments into your mobile or web app",
+    preview: require('./showcase/intermediate/integrating-celo-payments-into-your-web-or-mobile-application.png'),
+    website: 'blog/tutorials/integrating-celo-payments-into-your-web-or-mobile-application',
+    tags: ['celo', 'celosage', 'flutter', 'javascript', 'intermediate'], 
+  },
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
