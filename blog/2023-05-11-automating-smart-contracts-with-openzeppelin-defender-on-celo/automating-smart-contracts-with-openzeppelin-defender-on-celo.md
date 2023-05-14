@@ -17,7 +17,7 @@ import YouTube from '@components/YouTube';
 
 ## Introduction
 
-This tutorial introduces developers to automating smart contracts using OpenZeppelin Defender -  a powerful, secure smart contract management platform. As smart contracts cannot self-trigger, automation becomes essential for efficient operation. By leveraging OpenZeppelin Defender's capabilities, you'll learn how to schedule and automate tasks securely and reliably, streamlining your smart contract's performance and enhancing the overall user experience within the decentralized ecosystem on Celo Blockchain.
+This tutorial introduces developers to automating smart contracts using OpenZeppelin Defender - a powerful, secure smart contract management platform. As smart contracts cannot self-trigger, automation becomes essential for efficient operation. By leveraging OpenZeppelin Defender's capabilities, you'll learn how to schedule and automate tasks securely and reliably, streamlining your smart contract's performance and enhancing the overall user experience within the decentralized ecosystem on Celo Blockchain.
 
 ## Prerequisites
 
