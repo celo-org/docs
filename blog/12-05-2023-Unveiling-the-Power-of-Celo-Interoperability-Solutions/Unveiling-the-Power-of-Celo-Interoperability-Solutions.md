@@ -27,7 +27,7 @@ Blockchain technology has been widely embraced in recent years as new applicatio
 
 Bridges are protocols that enable the transfer of assets between two different blockchains. It acts as an intermediary facilitating the transfer of assets between Celo and other blockchains such as Ethereum, Bitcoin, and other major networks. Bridges are essential for interoperability, which is crucial for the growth of decentralized finance (DeFi) and the overall blockchain ecosystem.
 
-![bridge](images/bridge.png)
+![bridge](images/bridge.jpg)
 
 Celo uses a few different types of bridges to connect with other blockchains, each with its unique features and benefits. Here are some prominent bridges in Celo:
 
@@ -43,7 +43,7 @@ The Celo-Ethereum Bridge is a centralized bridge that connects Celo to Ethereum.
 
 Cross-chain transactions are transactions that involve the direct transfer of assets between two different blockchains. This frequently occurs by utilizing interoperability protocols, such as atomic swaps or sidechains, which allow assets to be exchanged between other networks while keeping their fundamental properties.
 
-![cross-chain](./images/cross.jpg)
+![cross-chain](images/cross.jpg)
 
 Cross-chain transactions enable the transfer of assets between Celo and other blockchains such as Ethereum, Bitcoin, and other major networks. Celo provides several different ways to enable cross-chain transactions, each with its unique features and benefits. Here are some methods for cross-chain transactions in Celo:
 
