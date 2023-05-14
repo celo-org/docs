@@ -463,17 +463,19 @@ By integrating Celo payments into your applications, you're not only providing a
 
 To continue learning and building on this foundation, consider exploring the following topics:
 
-- Implementing user authentication and securely storing user wallet addresses in a database.
+- [Build a FullStack User Authentication Dapp With React and Celo](https://docs.celo.org/blog/tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo) to add authentication to your dapp.
+- You can also check out this similar tutorial on [How to Add Crypto Payment to an E-Commerce Website with Celo and Valora](https://docs.celo.org/pt/blog/tutorials/how-to-add-crypto-pay-using-valora)
 - Adding more features to your applications, such as payment history, transaction details, and account balance display.
 - Deepening your understanding of the Celo ecosystem and exploring its various tools, libraries, and resources.
 - Experimenting with other Celo use cases, such as lending platforms, remittance services, or decentralized finance (DeFi) applications.
 
 ## About the Author​
 
-Qudus Olanrewaju is a developer and technical writer who has a strong interest in blockchain technology and web3. He enjoys building web3 projects and leveraging his distinctive viewpoint to create engaging and insightful content.
+Qudus Olanrewaju is a developer and technical writer who has a strong interest in blockchain technology and web3. He enjoys building web3 projects and leveraging his distinctive viewpoint to create engaging and insightful content. You can connect with me on [Linkedin](https://www.linkedin.com/in/qudus-olanrewaju-57b20a1b6/) and check out my latest projects on [github](https://github.com/Qtech11)
 
 ## References​
 
+- [Source Code](https://github.com/Qtech11/Integrating-Celo-payments-into-your-web-or-mobile-application)
 - [Celo Platform](https://celo.org/)
 - [Celo SDK](https://docs.celo.org/developer-guide/overview/introduction)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
