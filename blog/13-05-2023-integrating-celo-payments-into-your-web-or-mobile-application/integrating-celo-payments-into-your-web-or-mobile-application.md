@@ -422,11 +422,11 @@ When the user clicks on the elevated button, the `_lauchUrl` function is called,
 
 When you debug the app to your emulator or your Android device you should have this:
 
-![Mobile Screen](./images/mobile-screen.png)
+![Mobile Screen](./images/mobile-screen.jpg)
 
 When you click on any of the pay buttons you would be prompted to select a celo wallet and then redirected to the celo wallet installed on your device. You should have the interface shown below
 
-![Mobile Pay](./images/mobile-pay.png)
+![Mobile Pay](./images/mobile-pay.jpg)
 
 By following these steps above, you should have a basic Flutter application that can create celo payment requests.
 While this application is very basic, it serves as a starting point for integrating Celo payments into your own applications. From here, you could add more features, such as support for different tokens on the Celo network, improved error handling, and a more user-friendly interface.
