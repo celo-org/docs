@@ -2333,6 +2333,13 @@ const Users: User[] = [
     tags: ['intermediate', 'celosage', 'celo'],
   },
   {
+    title: 'Privacy Enhancing Technologies: The Future of Online Transactions with zk-rollups and zk-SNARKs',
+    description: "In this article, we'll be talking about the future of online transactions with zk-rollups and zk-SNARKs.",
+    preview: require('./showcase/intermediate/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks.png'),
+    website: 'blog/tutorials/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks',
+    tags: ['celo', 'intermediate', 'solidity', 'celosage'],
+  },
+  {
     title: 'How to Build and Deploy Flashloan Contracts on Celo with Aave',
     description: 'In this tutorial, you will learn how flash loans work, and how Aave, one of the leading flash loan protocols, allows users to take out these loans.',
     preview: require('./showcase/advanced/aave-on-celo.png'),
