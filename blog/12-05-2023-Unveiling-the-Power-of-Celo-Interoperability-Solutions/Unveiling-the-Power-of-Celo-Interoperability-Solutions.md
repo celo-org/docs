@@ -27,7 +27,7 @@ Blockchain technology has been widely embraced in recent years as new applicatio
 
 Bridges are protocols that enable the transfer of assets between two different blockchains. It acts as an intermediary facilitating the transfer of assets between Celo and other blockchains such as Ethereum, Bitcoin, and other major networks. Bridges are essential for interoperability, which is crucial for the growth of decentralized finance (DeFi) and the overall blockchain ecosystem.
 
-![bridge](./images/bridge.jpg)
+![bridge](images/bridge.png)
 
 Celo uses a few different types of bridges to connect with other blockchains, each with its unique features and benefits. Here are some prominent bridges in Celo:
 
