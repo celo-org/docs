@@ -797,7 +797,7 @@ const Users: User[] = [
   }, 
      {
     title: 'How to Develop Your Game Items with ThirdWeb’s ERC1155 Base Contract on Celo',
-    description: 'This article will demonstrate how to use develop game items with Thirdweb's ERC1155 Base Contract',
+    description: "This article will demonstrate how to use develop game items with Thirdweb's ERC1155 Base Contract",
     preview: require('./showcase/intermediate/thirdweb-cover.png'),
     website: '/blog//tutorials/how-to-develop-your-game-items-with-thirdweb-erc1155-base-contract-on-celo',
     tags: ['solidity', 'smartcontract', 'celosage', 'erc1155'],
