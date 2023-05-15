@@ -53,12 +53,9 @@ Finally, we will deploy our contract on the Celo network and verify it so that i
 
 ### Building the contract preliminaries
 
-The contract is developed with Remix IDE. The scope of this article transcends how to use Remix IDE; hence, developers should be familiar with Remix IDE before going through this guide. The following steps are required to build out the contract preliminaries:
+The contract is developed with Remix IDE. The scope of this article transcends how to use Remix IDE; hence, developers should be familiar with Remix IDE before going through this guide. Create a new solidity file with your preferred name. For this tutorial, the contract is named **_“thirdweb.sol”_**.
 
-
-
-1. Create a new solidity file with your preferred name. For this tutorial, the contract is named **_“thirdweb.sol”_**.
-2. Declare your license type and add your pragma line. Use any solidity version above 0.8.0, import thirdweb’s ERC1155Base contract, and create your game contract in the solidity file you created in Remix.
+The following steps are required to build out the contract preliminaries:
 
     ``` solidity
 //SPDX-License-Identifier: MIT
@@ -70,29 +67,20 @@ contract gameItems{
 
 }
 ```
+Declare your license type and add your pragma line. Use any solidity version above 0.8.0, import thirdweb’s ERC1155Base contract, and create your game contract in the solidity file you created in Remix.
 
-3. Create an ERC1155Base contract variable. This variable will interact with the new ERC1155Base contract created in the constructor. You also need to declare two address variables, custodian and newCustoodian, which will be used to handle governance and custody issues.
-
-    ``` solidity 
+``` solidity 
 ERC1155Base baseContract;
 address public custodian;
 address public newCustodian;
 ```
+Create an `ERC1155Base` contract variable. This variable will interact with the new `ERC1155Base` contract created in the constructor. You also need to declare two address variables, custodian and newCustoodian, which will be used to handle governance and custody issues.
 
-
-4. Include events that will be emitted when a custody transfer has been initiated, and the custody transfer process is completed.
-
-    ``` solidity 
+``` solidity 
 event custodyTransferInitiated (address currentCustodian, address newCustodian);
 event custodyTransferCompleted (address custodian);
 ```
-
-
-5. Declare a constructor which takes 4 parameters. These parameters include:
-1. the name of the entire game items collection,
-2. the symbol of the game collection, 
-3. the address that receives the royalty on the game items, and 
-4. The royalty fee (bps).
+Include events that will be emitted when a custody transfer has been initiated, and the custody transfer process is completed.
 
         ``` solidity 
 constructor (
@@ -111,12 +99,17 @@ constructor (
     }
 ```
 
-Using the ERC1155Base variable, baseContract, declared earlier, create a new ERC1155Base contract with the variables listed in the constructor and pass the new contract into the variable. 
+Declare a constructor which takes 4 parameters. These parameters include:
 
-Also, in the constructor, set OperationRestriction to false. This is set to true by default but will not be required for the contract. 
-Set the owner of the baseContract created to the contract's address for the game items. Set the custodian as the msg.sender, and mint the first NFT to the contract deployer. If not, the mintTo function in the ERC1155Base contract will be inaccessible.
+1. the `_name` of the entire game items collection,
+2. the `_symbol` of the game collection,
+3. the `_royaltyRecipient` that receives the royalty on the game items, and
+4. The `_royaltyBps` fee (bps).
 
-6. Finally, create an onlyCustodian modifier to regulate which function anyone can call.
+Using the `ERC1155Base` variable, `baseContract`, declared earlier, create a new `ERC1155Base` contract with the variables listed in the constructor and pass the new contract into the variable. 
+
+Also, in the constructor, set `OperationRestriction` to false. This is set to true by default but will not be required for the contract. 
+Set the owner of the `baseContract` created to the contract's address for the game items. Set the custodian as the `msg.sender`, and mint the first NFT to the contract deployer. If not, the `mintTo function` in the `ERC1155Base` contract will be inaccessible.
 
     ``` solidity 
 modifier onlyCustodian() {
@@ -125,11 +118,7 @@ _;
 }
 ```
 
-Due to security concerns, we would rather declare an ERC1155Base contract using a variable that can interact with the deployed contract than inherit it, as most developers do.
-
-### Adding Ownership and Custody Functions
-
-Due to how the contract is structured, we would implement an additional custody function to support the native governance/ownership system implemented in the contract. Hence, we made our game contract the owner of the baseContract we created. The custodian of the contract can call special functions in the game contract, and the game contract can forward the call by calling the function in the baseContract. 
+Finally, create an onlyCustodian modifier to regulate which function anyone can call. Due to security concerns, we would rather declare an ERC1155Base contract using a variable that can interact with the deployed contract than inherit it, as most developers do.
 
 ``` solidity 
  //Custodian change
@@ -152,8 +141,15 @@ Due to how the contract is structured, we would implement an additional custody 
     }
 ```
 
+We will implement two functions here:
 
-We will implement two functions here: intiateCustodyTransfer, which begins the custody change/transfer process and sets the newCustodian address to the address passed in in the function, and acceptCustody, which the new custodian can call to accept the responsibilities of a custodian. 
+* `intiateCustodyTransfer`
+
+which begins the custody change/transfer process and sets the newCustodian address to the address passed in in the function
+
+* `acceptCustody`
+
+which the new custodian can call to accept the responsibilities of a custodian.
 
 These functions are fairly simple. initiateCustodyTransfer takes an address parameter. The function performs the zero address check, sets newCustodian to _newCustodian, and emits the custodyTransferInitiated event. acceptCustody can only be called by the newCustodian address, after which, once called, immediately makes the newCustodian the custodian. Until the newCustodian accepts custody, the custodian address will not be changed.
 
@@ -174,7 +170,6 @@ function reward(address to, bool newCollection, uint tokenId, string memory uri,
     }
 ```
 
-
 Only the custodian can call the reward function. It takes five parameters: 
 
 1. the receiver of the NFT, 
@@ -184,10 +179,10 @@ Only the custodian can call the reward function. It takes five parameters:
 5. the amount the receiver is to be rewarded with.
 
 The function checks that an empty string isn't passed; if it is, it will revert. This is because a token with an empty string will cause the getURI function to revert. If newCollection is set to true, a new collection is started and minted; if not, an NFT belonging to an existing collection is minted.
+
 ### Adding minimal support for royalties
 
 In accordance with ERC2981, which provides for royalties on NFT, thirdweb provides for that in their base contract, and we would be implementing it in the game contract too.
-
 
 ``` solidity 
 //Royalty details
