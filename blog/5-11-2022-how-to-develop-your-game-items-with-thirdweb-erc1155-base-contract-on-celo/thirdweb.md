@@ -6,7 +6,7 @@ author:
     title: Technical Writer
     url: https://www.linkedin.com/in/johnfawole/
     image_url: https://github.com/johnfawole.png
-tags: ['solidity', 'smart contract', 'celosage', 'thirdweb', 'erc1155', 'gameitem']
+tags: ['solidity', 'smartcontract', 'celosage', 'erc1155']
 hide_table_of_contents: true
 slug: /tutorials/how-to-develop-your-game-items-with-thirdweb-erc1155-base-contract-on-celo
 ---
