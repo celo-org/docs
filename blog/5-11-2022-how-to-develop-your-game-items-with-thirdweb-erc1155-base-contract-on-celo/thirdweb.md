@@ -261,7 +261,7 @@ Go to the extension section, search for sourcify, and activate it. Once activate
 
 You can now visit the block explorer to inspect and interact with your contract.
 
-## Concluding Remarks
+## Conclusion
 
 Thirdweb has a wealth of smart contract development templates and guides on how to use them. Although the scope here is to use their ERC1155Base template to build NFT game items, you can go the extra mile by using the same template to build both NFT game items and game currencies. This is how game economies are built. Happy buidling.
 
