@@ -5,9 +5,9 @@ authors:
   - name: Jovan Mwesigwa
     title: Software Engineer
     url: https://github.com/JovanMwesigwa
-    tags: [celo, celosage, intermediate, 'solidity', 'metamask', 'nodejs', 'javascript']
-    hide_table_of_contents: true
-    slug: /tutorials/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain
+tags: [celo, celosage, intermediate, solidity, metamask, react]
+hide_table_of_contents: true
+slug: /tutorials/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/build-a-document-tamper-proof-verification-smart-contract-dapp-on-celo-blockchain.png)
