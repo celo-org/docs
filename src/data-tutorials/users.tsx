@@ -792,7 +792,7 @@ const Users: User[] = [
   {
     title: 'Creating a Smart Contract for Decentralized Voting',
     description: 'learn how to build a decentralised voting application using smart contracts on the Celo blockchain',
-    preview: require('./showcase/intermediate/Creating-a-Smart-Contract-for-Decentralized-Voting.png'),
+    preview: require('./showcase/intermediate/creating-smart-contract.png'),
     website: '/blog/tutorials/creating-a-Smart-Contract-for-Decentralized-Voting',
     tags: ['celosage', 'smartcontract', 'intermediate'],
   },
