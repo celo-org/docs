@@ -6,12 +6,10 @@ authors:
     title: contributor, Celo sages
     url: https://github.com/SasaniEldis
     image_url: https://avatars.githubusercontent.com/u/107583957?v=4
-tags: ["intermediate", "celo", "celosage", "smartcontract"]
+tags: ["celosage", "smartcontract", "intermediate"]
 hide_table_of_contents: true
 slug: /tutorials/creating-a-Smart-Contract-for-Decentralized-Voting
 ---
-
-![header](../../src/data-tutorials/showcase/intermediate/creating-smart-contract.png)
 
 ## Introduction
 
