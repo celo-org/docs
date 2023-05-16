@@ -3489,8 +3489,14 @@ const Users: User[] = [
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
 
+  {
 
-
+    title: 'Build a CELO NFT Explorer with Flutter (Celo Composer)',
+    description: 'Learn how to build a CELO NFT Explorer with Flutter using Celo Composer for bootstrap.',
+    preview: require('./showcase/beginner/build-a-celo-nft-explorer-with-flutter-celo-composer.png'),
+    website: 'blog/tutorials/build-a-celo-nft-explorer-with-flutter-celo-composer',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
   /*
   Pro Tip: add your site in alphabetical order.
