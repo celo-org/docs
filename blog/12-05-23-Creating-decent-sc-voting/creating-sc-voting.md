@@ -11,6 +11,8 @@ hide_table_of_contents: true
 slug: /tutorials/creating-a-Smart-Contract-for-Decentralized-Voting
 ---
 
+![header](../../src/data-tutorials/showcase/intermediate/creating-smart-contract.png)
+
 ## Introduction
 
 In this tutorial, we will learn how to create a smart contract for decentralised voting. This means that anyone with an internet connection can vote without the need for a central authority. We will use Solidity, the programming language for Ethereum, to write the smart contract, and we will deploy it on a test network.
