@@ -21,6 +21,8 @@ In this tutorial, we will learn how to create a smart contract for decentralised
 
 Before starting this tutorial, you should have a basic understanding of Ethereum, blockchain, and smart contracts. You should also have a development environment set up with a code editor and the necessary tools, such as Solidity and a test network. If you need help with these prerequisites, you can refer to the[Ethereum documentation](https://ethereum.org/en/developers/docs/) or other tutorials.
 
+Tutorial Github repo link: https://github.com/SasaniEldis/decentralized-voting-celo-demo
+
 ## Requirements
 
 We will use Remix, an online IDE, for Solidity development, and the Rinkeby test network for this tutorial. We will also need a MetaMask wallet to interact with the test network. You can install MetaMask as a browser extension.
@@ -138,7 +140,6 @@ Imole Peter L.
 
 A web3 enthusiast, content writer for web3 brands, visual artist, and seasoned author (Pen name:[Sasani Eldis](https://www.amazon.com/Imole-Latona/e/B088F4KF7H)). Connect with me on[LinkedIn](https://www.linkedin.com/in/imole-peter-latona)
 
-Tutorial Github repo link: https://github.com/SasaniEldis/decentralized-voting-celo-demo
 
 ## References
 
