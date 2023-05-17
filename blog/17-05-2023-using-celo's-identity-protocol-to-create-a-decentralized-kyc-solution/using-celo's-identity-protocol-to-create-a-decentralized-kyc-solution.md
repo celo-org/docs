@@ -175,7 +175,7 @@ Note down the contract address as it would be needed when we want to interact wi
 
 ### Integrating Celo’s Identity Protocol
 
-1. In the project directory, create a new file named identity.js, and install the dependencies below to interact with your smart contract.
+1. In the project directory, create a new file named `identity.js`, and install the dependencies below to interact with your smart contract.
 
 ```bash
 npm install web3 @celo/contractkit
