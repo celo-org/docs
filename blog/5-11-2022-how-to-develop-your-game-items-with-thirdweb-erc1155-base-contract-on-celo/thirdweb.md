@@ -154,7 +154,7 @@ which begins the custody change/transfer process and sets the newCustodian addre
 
 which the new custodian can call to accept the responsibilities of a custodian.
 
-These functions are fairly simple. initiateCustodyTransfer takes an address parameter. The function performs the zero address check, sets newCustodian to _newCustodian, and emits the custodyTransferInitiated event. acceptCustody can only be called by the newCustodian address, after which, once called, immediately makes the newCustodian the custodian. Until the newCustodian accepts custody, the custodian address will not be changed.
+These functions are fairly simple. initiateCustodyTransfer takes an address parameter. The function performs the zero address check, sets `newCustodian` to `_newCustodian`, and emits the `custodyTransferInitiated` event. `acceptCustody` can only be called by the `newCustodian` address, after which, once called, immediately makes the `newCustodian` the custodian. Until the `newCustodian` accepts custody, the custodian address will not be changed.
 
 ### Building the Reward Functionality
 
