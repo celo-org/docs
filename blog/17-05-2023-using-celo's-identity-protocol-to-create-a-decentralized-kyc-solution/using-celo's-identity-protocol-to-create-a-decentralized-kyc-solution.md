@@ -9,7 +9,7 @@ authors:
     image_url: https://avatars.githubusercontent.com/u/133848264?s=400&v=4
 tags: [celo, celosage, intermediate, javascript, solidity, truffle]
 hide_table_of_contents: true
-slug: /tutorials/using-celo's-identity-protocol-to-create-a-decentralized-kyc-solution
+slug: /tutorials/using-celo-identity-protocol-to-create-a-decentralized-kyc-solution
 ---
 
 ![header](../../src/data-tutorials/showcase/intermediate/using-celo's-identity-protocol-to-create-a-decentralized-kyc-solution.png)
