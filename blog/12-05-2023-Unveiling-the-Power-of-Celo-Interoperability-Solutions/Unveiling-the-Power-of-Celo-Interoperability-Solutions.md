@@ -63,78 +63,73 @@ A user would normally utilize a bridge contract to lock up their assets on one n
 
 Here is a code example for a bridge contract that enables users to transfer tokens between Ethereum and Celo
 
-```
- // SPDX-License-Identifier: MIT
-
+```solidity
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-
+// Import the necessary ERC20 interfaces for token interaction
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract TokenBridge {
-    address public ethToken;
-    address public celoToken;
-    address public ethBridge;
-    address public celoBridge;
-
-    event Deposit(address indexed user, uint256 amount, address indexed recipient, address indexed toChain);
-    event Withdrawal(address indexed user, uint256 amount, address indexed recipient, address indexed toChain);
-
-    constructor(
-        address _ethToken,
-        address _celoToken,
-        address _ethBridge,
-        address _celoBridge
-    ) {
-        ethToken = _ethToken;
-        celoToken = _celoToken;
-        ethBridge = _ethBridge;
-        celoBridge = _celoBridge;
-    }
-
-    function deposit(
-        uint256 _amount,
-        address _recipient,
-        address _toChain
-    ) external {
-        IERC20(ethToken).transferFrom(msg.sender, address(this), _amount);
-        IERC20(ethToken).approve(ethBridge, _amount);
-        IEthBridge(ethBridge).deposit(ethToken, _amount, _recipient, _toChain);
-        emit Deposit(msg.sender, _amount, _recipient, _toChain);
-    }
-
-    function withdraw(
-        uint256 _amount,
-        address _recipient,
-        address _fromChain
-    ) external {
-        ICeloBridge(celoBridge).burn(celoToken, _amount, _recipient, _fromChain);
-        emit Withdrawal(msg.sender, _amount, _recipient, _fromChain);
-    }
-}
-
-interface IEthBridge {
-    function deposit(
-        address token,
-        uint256 amount,
-        address recipient,
-        bytes32 toChain
-    ) external;
-}
-
-interface ICeloBridge {
-    function burn(
-        address token,
-        uint256 amount,
-        address recipient,
-        bytes32 fromChain
-    ) external;
+contract TokenBridgingContract {
+    // Address of the Ethereum token contract
+    address public ethereumToken;
+   
+// Address of the Celo token contract
+    address public celoToken;
+    
+    // Mapping to track token balances on Ethereum
+    mapping(address => uint256) public ethereumBalances;
+    
+    // Event emitted when tokens are bridged from Ethereum to Celo
+    event TokensBridged(address indexed user, uint256 amount);
+    
+    constructor(address _ethereumToken, address _celoToken) {
+        ethereumToken = _ethereumToken;
+        celoToken = _celoToken;
+    }
+    
+    // Deposit tokens on Ethereum and initiate the bridging process
+    function depositTokens(uint256 amount) external {
+        // Transfer the tokens from the user to the contract
+        IERC20(ethereumToken).transferFrom(msg.sender, address(this), amount);
+        
+        // Lock the deposited tokens
+        ethereumBalances[msg.sender] += amount;
+        
+        // Emit an event to notify the bridging process
+        emit TokensBridged(msg.sender, amount);
+    }
+    
+    // Bridge tokens from Ethereum to Celo
+    function bridgeTokens() external {
+        // Retrieve the token balance of the user on Ethereum
+        uint256 amount = ethereumBalances[msg.sender];
+        
+        // Ensure the user has deposited some tokens
+        require(amount > 0, "No tokens to bridge");
+        
+        // Transfer the tokens to the Celo token contract
+        IERC20(celoToken).transfer(msg.sender, amount);
+        
+        // Update the token balance on Ethereum
+        ethereumBalances[msg.sender] = 0;
+    }
 }
 ```
 
-The `TokenBridge` contract requires the addresses of the Ethereum token, Celo token, Ethereum bridge, and Celo bridge to be set in the constructor.
-The `deposit` function transfers tokens from the user's Ethereum address to the bridge contract, approves the tokens to be deposited in the Ethereum bridge, and triggers the `deposit` function of the Ethereum bridge to initiate the transfer of the same amount of tokens to the specified recipient on the target chain. The `Deposit` event is emitted to indicate the successful deposit.
-The `withdraw` function burns tokens from the Celo bridge, which indicates the tokens have been withdrawn from the source chain. The same amount of tokens is then transferred to the specified recipient on the Ethereum chain. The `Withdrawal` event is emitted to indicate the successful withdrawal.
-The `IEthBridge` and `ICeloBridge` interfaces define the functions required by the Ethereum and Celo bridges respectively.
+The `TokenBridgingContract` imports the ERC20 interface from the OpenZeppelin library to facilitate token interaction. 
+
+The addresses of the Ethereum and Celo token contracts are represented by `ethereumToken` and `celoToken` variables.
+
+The mapping called `ethereumBalances` associates addresses with token balances on the Ethereum network.
+
+When tokens are successfully bridged from Ethereum to Celo, an event called `TokensBridged` is declared and emitted. This event includes the user's address and the amount of tokens that were bridged.
+
+The constructor function accepts two addresses, `_ethereumToken` and `_celoToken`, and assigns them to the variables ethereumToken and celoToken respectively.
+
+The `depositTokens` function enables users to deposit tokens on the Ethereum network. It transfers tokens from the user's address to the contract, locks the deposited tokens within the contract by adding them to the user's balance in the ethereumBalances mapping, and emits the TokensBridged event to notify the bridging process.
+
+The `bridgeTokens` function facilitates the bridging of tokens from Ethereum to Celo for the user making the call. It retrieves the token balance of the user on Ethereum, ensures that the user has deposited some tokens, transfers those tokens to the user's address on the Celo network using the Celo token contract, and updates the token balance on Ethereum to zero.
+
 
 ## Conclusion
 
