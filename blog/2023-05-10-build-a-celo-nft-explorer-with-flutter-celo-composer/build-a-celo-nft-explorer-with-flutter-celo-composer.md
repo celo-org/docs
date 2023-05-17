@@ -34,17 +34,17 @@ We'll walk you through each one as we go and show you how to use them in combina
 
 I assume that anyone going through this tutorial already understands and uses Flutter, so I will skip the setup involved in getting Flutter to work on your development computer. That means I assume you already have VS Code/Android Studio together with Android SDK and Flutter setup on your PC.
 
-- If you are entirely new to Flutter, here [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) is a good tutorial you can learn from.
+- If you are entirely new to Flutter, [Flutter get started](https://docs.flutter.dev/get-started/install) is a good tutorial you can learn from.
 
 To get started, you can clone this repository [flutter-celo-nft](https://github.com/Mujhtech/flutter-celo-nft/)  or make use of Celo Composer.
 
 Celo Composer is a set of tools and starter templates that makes it easy for you to start your Celo-based web3 projects.
 
-You can check out Celo Composer here [https://github.com/celo-org/celo-composer/tree/main/packages/flutter-app](https://github.com/celo-org/celo-composer/tree/main/packages/flutter-app).
+You can check out [Celo Composer](https://github.com/celo-org/celo-composer/tree/main/packages/flutter-app).
 
 ### Using Celo Composer
 
-To start our Flutter App Project, we will use the Celo Composer CLI; the CLI makes it easy for us to select the options that we want when bootstrapping our dApp. In other to do that you need to have Node set up on your PC and you can visit Node to get started. Run this on your terminal after setup Node.
+To start our Flutter App Project, we will use the Celo Composer CLI. The CLI makes it easy for us to select the options that we want when bootstrapping our dApp. In other to do that you need to have Node set up on your PC and you can visit Node to get started. Run this on your terminal after setup Node.
 
 ```bash
 
@@ -54,21 +54,20 @@ npx @celo/celo-composer create
 
 Choose Flutter when asked for the framework
 
-Your Project will now be created; you can check to make sure it has the following folders
+Your Project will now be created, you can check to make sure it has the following folders
 
-packages/flutter-app - Your Flutter project
+`packages/flutter-app` - Your Flutter project
 
 ### Manage Environmental variable
 
-Create a .env file at the root of your project inside flutter-app folder in packages and add the follow variable
+Create a `.env` file at the root of your project inside flutter-app folder in packages and add the follow variable
 
 ```env
-
 ETHEREUM_RPC=https://alfajores-forno.celo-testnet.org
-
 ```
 
-In other to get nfts data, we will be using moralis to get nft data from Celo blockchain to do so you need to obtain your moralis api key by login to moralis dashboard.  Update your .env file with moralis web3 api key and your .env file should now look like below
+In other to get nfts data, we will be using moralis to get nft data from Celo blockchain to do so you need to obtain your moralis api key by login to moralis dashboard.  Update your `.env` file with moralis web3 api key and your `.env` file should now look like below
+
 
 ```env
 ETHEREUM_RPC=https://alfajores-forno.celo-testnet.org
@@ -77,7 +76,7 @@ MORALIS_WEB3_API_KEY=********
 
 ### UI
 
-To manage user nft on wallet authenticated, we need to create a cubit file to manage nft state. In lib folder, open module/home folder then create new folder name model and create the nft model file in it you can name it anything then update the file with the code snippet below
+To manage user nft on wallet authenticated, we need to create a cubit file to manage nft state. In lib folder, open `module/home` folder then create new folder name model and create the nft model file in it you can name it anything then update the file with the code snippet below
 
 ```dart
 // ignore_for_file: public_member_api_docs, sort_constructors_first
@@ -626,10 +625,10 @@ I am a Software Engineer, Tech Evangelist (Preaching the gospel of flutter & blo
 
 ## References
 
-- Source Code [https://github.com/Mujhtech/flutter-celo-nft/](https://github.com/Mujhtech/flutter-celo-nft/)
+- [Source Code](https://github.com/Mujhtech/flutter-celo-nft/)
 
-- Celo Composer [https://github.com/celo-org/celo-composer](https://github.com/celo-org/celo-composer)
+- [Celo Composer](https://github.com/celo-org/celo-composer)
 
-- Flutter [https://flutter.dev](https://flutter.dev)
+- [Flutter](https://flutter.dev)
 
-- Solidity by example [https://solidity-by-example.org/](https://solidity-by-example.org/)
+- [Solidity by example](https://solidity-by-example.org/)
