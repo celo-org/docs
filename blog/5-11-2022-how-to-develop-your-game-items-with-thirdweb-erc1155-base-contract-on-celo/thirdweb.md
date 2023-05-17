@@ -121,7 +121,7 @@ _;
 }
 ```
 
-Finally, create an onlyCustodian modifier to regulate which function anyone can call. Due to security concerns, we would rather declare an ERC1155Base contract using a variable that can interact with the deployed contract than inherit it, as most developers do.
+Finally, create an onlyCustodian modifier to regulate which function anyone can call. Due to security concerns, we would rather declare an `ERC1155Base` contract using a variable that can interact with the deployed contract than inherit it, as most developers do.
 
 ``` solidity 
  //Custodian change
