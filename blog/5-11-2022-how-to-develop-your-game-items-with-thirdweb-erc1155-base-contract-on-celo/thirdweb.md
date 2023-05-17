@@ -209,7 +209,7 @@ We have 3 functions for royalties. `setRoyaltyInfo` sets the royalty receiver an
 
 ### Balances and MetaData
 
-We also need to add some functions so the user can check how many units of a single collection he owns or how many units of several collections he owns. He can do that through the balanceOf and batchBalanceOf functions. 
+We also need to add some functions so the user can check how many units of a single collection he owns or how many units of several collections he owns. He can do that through the `balanceOf` and `batchBalanceOf` functions. 
 
 ``` solidity 
 //MetaData
