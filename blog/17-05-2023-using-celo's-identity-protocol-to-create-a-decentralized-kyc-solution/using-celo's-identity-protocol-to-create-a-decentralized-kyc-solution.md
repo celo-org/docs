@@ -38,7 +38,7 @@ mkdir celo-kyc && cd celo-kyc
 truffle init
 ```
 
-2. Next, let's install truffle/hdwallet-provider. This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file. Run the command below in your terminal.
+2. Next, let's install `truffle/hdwallet-provider`. This allows you to sign transactions for addresses derived from a mnemonic. You’ll use this to connect to Celo in your truffle configuration file. Run the command below in your terminal.
 
 ```bash
 npm install @truffle/hdwallet-provider --save
