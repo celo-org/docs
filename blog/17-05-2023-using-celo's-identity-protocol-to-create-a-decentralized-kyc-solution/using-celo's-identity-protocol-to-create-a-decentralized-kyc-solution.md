@@ -120,7 +120,7 @@ To deploy the smart contract, we need to compile it first. In your terminal, run
 truffle compile
 ```
 
-This will compile the smart contract and generate the artifacts in the /build/contracts directory. You should get an output similar to this:
+This will compile the smart contract and generate the artifacts in the `/build/contracts` directory. You should get an output similar to this:
 
 ![Compile Output](./images/compile_output.png)
 
