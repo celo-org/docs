@@ -45,7 +45,7 @@ Thirdweb has provided several smart contract templates for developers to build o
 
 This contract is used to build the game items for our Ecstasy game. We would only focus on NFTs; hence, the game items we are building are NFTs. Of course, we wouldn't be building any game; we would only be building the smart contracts powering the game items supposing we have a game called Ecstasy.
 
-This contract will be built using a different technique from the one provided in thirdweb’s docs for security reasons. The only step required of the developer in thirdweb’s docs is to inherit the ERC1155Base contract. Doing so bares out all the needed and unnecessary functions leaving us open to known and unknown security issues. 
+This contract will be built using a different technique from the one provided in thirdweb’s docs for security reasons. The only step required of the developer in thirdweb’s docs is to inherit the `ERC1155Base` contract. Doing so bares out all the needed and unnecessary functions leaving us open to known and unknown security issues. 
 
 Furthermore, the first mint of the entire collection has to go to the custodian for reasons explained later. Also, because we’ve taken a different approach in this tutorial, we will be building an additional governance system to support the one provided by the Base contract. 
 
