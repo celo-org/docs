@@ -57,7 +57,7 @@ The contract is developed with Remix IDE. The scope of this article transcends h
 
 The following steps are required to build out the contract preliminaries:
 
-    ``` solidity
+``` solidity
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -67,6 +67,7 @@ contract gameItems{
 
 }
 ```
+
 Declare your license type and add your pragma line. Use any solidity version above 0.8.0, import thirdweb’s ERC1155Base contract, and create your game contract in the solidity file you created in Remix.
 
 ``` solidity 
@@ -74,12 +75,14 @@ ERC1155Base baseContract;
 address public custodian;
 address public newCustodian;
 ```
+
 Create an `ERC1155Base` contract variable. This variable will interact with the new `ERC1155Base` contract created in the constructor. You also need to declare two address variables, custodian and newCustoodian, which will be used to handle governance and custody issues.
 
 ``` solidity 
 event custodyTransferInitiated (address currentCustodian, address newCustodian);
 event custodyTransferCompleted (address custodian);
 ```
+
 Include events that will be emitted when a custody transfer has been initiated, and the custody transfer process is completed.
 
         ``` solidity 
@@ -111,7 +114,7 @@ Using the `ERC1155Base` variable, `baseContract`, declared earlier, create a new
 Also, in the constructor, set `OperationRestriction` to false. This is set to true by default but will not be required for the contract. 
 Set the owner of the `baseContract` created to the contract's address for the game items. Set the custodian as the `msg.sender`, and mint the first NFT to the contract deployer. If not, the `mintTo function` in the `ERC1155Base` contract will be inaccessible.
 
-    ``` solidity 
+``` solidity 
 modifier onlyCustodian() {
 require(msg.sender == custodian, "ERR: NOT CUSTODIAN");
 _;
@@ -201,6 +204,7 @@ In accordance with ERC2981, which provides for royalties on NFT, thirdweb provid
         return royaltyValue;
     }
 ```
+
 We have 3 functions for royalties. setRoyaltyInfo sets the royalty receiver and the royalty rate for a specific collection. getRoyaltyInfo gets the receiver address and royalty rate for a particular collection. Finally, calculateRoyalty get the royalty due on an NFT in a collection given a particular sale price.
 
 ### Balances and MetaData
