@@ -68,7 +68,7 @@ contract gameItems{
 }
 ```
 
-Declare your license type and add your pragma line. Use any solidity version above 0.8.0, import thirdweb’s ERC1155Base contract, and create your game contract in the solidity file you created in Remix.
+Declare your license type and add your pragma line. Use any solidity version above 0.8.0, import thirdweb’s `ERC1155Base` contract, and create your game contract in the solidity file you created in Remix.
 
 ``` solidity 
 ERC1155Base baseContract;
