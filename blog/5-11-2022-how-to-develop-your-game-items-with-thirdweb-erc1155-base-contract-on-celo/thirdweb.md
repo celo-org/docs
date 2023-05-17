@@ -205,7 +205,7 @@ In accordance with ERC2981, which provides for royalties on NFT, thirdweb provid
     }
 ```
 
-We have 3 functions for royalties. setRoyaltyInfo sets the royalty receiver and the royalty rate for a specific collection. getRoyaltyInfo gets the receiver address and royalty rate for a particular collection. Finally, calculateRoyalty get the royalty due on an NFT in a collection given a particular sale price.
+We have 3 functions for royalties. `setRoyaltyInfo` sets the royalty receiver and the royalty rate for a specific collection. `getRoyaltyInfo` gets the receiver address and royalty rate for a particular collection. Finally, `calculateRoyalty` get the royalty due on an NFT in a collection given a particular sale price.
 
 ### Balances and MetaData
 
