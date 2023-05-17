@@ -3594,7 +3594,7 @@ const Users: User[] = [
     title: "Using Celo's Identity Protocol to create a Decentralized KYC Solution",
     description: "In this tutorial, we'll explore how to build a decentralized kyc solution using celo identity protocol.",
     preview: require("./showcase/intermediate/using-celo's-identity-protocol-to-create-a-decentralized-kyc-solution.png"),
-    website: "/blog/tutorials/using-celo's-identity-protocol-to-create-a-decentralized-kyc-solution",
+    website: "/blog/tutorials/using-celo-identity-protocol-to-create-a-decentralized-kyc-solution",
     tags: ['celo', 'celosage', 'intermediate', 'javascript', 'solidity', 'truffle'],
   },
 
