@@ -124,7 +124,7 @@ This will compile the smart contract and generate the artifacts in the /build/co
 
 ![Compile Output](./images/compile_output.png)
 
-Next, let's configure Truffle to deploy the smart contract to the Celo network. In the truffle-config.js file, add the following code:
+Next, let's configure Truffle to deploy the smart contract to the Celo network. In the `truffle-config.js` file, add the following code:
 
 ```javascript
 const HDWalletProvider = require("@truffle/hdwallet-provider");
