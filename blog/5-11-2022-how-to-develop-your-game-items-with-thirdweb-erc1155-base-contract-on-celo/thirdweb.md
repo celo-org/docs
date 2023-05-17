@@ -85,7 +85,7 @@ event custodyTransferCompleted (address custodian);
 
 Include events that will be emitted when a custody transfer has been initiated, and the custody transfer process is completed.
 
-        ``` solidity 
+``` solidity 
 constructor (
         string memory _name,
         string memory _symbol,
