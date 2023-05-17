@@ -51,7 +51,7 @@ Open your project in Visual Studio code or your preferred IDE. It should have th
 ![Directory Output](./images//directory_output.png)
 
 ### Creating the Smart Contract
-1. First, let's create a new file named KYC.sol in the contracts directory and write the smart contract code to store and verify user data:
+1. First, let's create a new file named `KYC.sol` in the contracts directory and write the smart contract code to store and verify user data:
 
 ```solidity
 //SPDX-License-Identifier: MIT
