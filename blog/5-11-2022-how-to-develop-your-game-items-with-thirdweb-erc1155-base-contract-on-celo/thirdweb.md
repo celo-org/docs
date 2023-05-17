@@ -112,7 +112,7 @@ Declare a constructor which takes 4 parameters. These parameters include:
 Using the `ERC1155Base` variable, `baseContract`, declared earlier, create a new `ERC1155Base` contract with the variables listed in the constructor and pass the new contract into the variable. 
 
 Also, in the constructor, set `OperationRestriction` to false. This is set to true by default but will not be required for the contract. 
-Set the owner of the `baseContract` created to the contract's address for the game items. Set the custodian as the `msg.sender`, and mint the first NFT to the contract deployer. If not, the `mintTo function` in the `ERC1155Base` contract will be inaccessible.
+Set the owner of the `baseContract` created to the contract's address for the game items. Set the custodian as the `msg.sender`, and mint the first NFT to the contract deployer. If not, the `mintTo` function in the `ERC1155Base` contract will be inaccessible.
 
 ``` solidity 
 modifier onlyCustodian() {
