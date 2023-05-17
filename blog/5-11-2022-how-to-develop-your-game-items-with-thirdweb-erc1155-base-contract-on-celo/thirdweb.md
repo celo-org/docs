@@ -53,7 +53,7 @@ Finally, we will deploy our contract on the Celo network and verify it so that i
 
 ### Building the contract preliminaries
 
-The contract is developed with Remix IDE. The scope of this article transcends how to use Remix IDE; hence, developers should be familiar with Remix IDE before going through this guide. Create a new solidity file with your preferred name. For this tutorial, the contract is named **_“thirdweb.sol”_**.
+The contract is developed with Remix IDE. The scope of this article transcends how to use Remix IDE; hence, developers should be familiar with Remix IDE before going through this guide. Create a new solidity file with your preferred name. For this tutorial, the contract is named `thirdweb.sol`.
 
 The following steps are required to build out the contract preliminaries:
 
