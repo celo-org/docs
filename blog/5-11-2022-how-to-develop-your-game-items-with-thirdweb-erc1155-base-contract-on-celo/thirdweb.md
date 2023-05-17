@@ -41,7 +41,7 @@ Many other use cases are still being explored, and we should see more ERC1155 st
 
 ## Using ThirdWeb’s ERC1155Base Contract to Build Game Items
 
-Thirdweb has provided several smart contract templates for developers to build out their ideas quickly. Templates for common ERCs have been built, but the one of interest here is the ERC1155Base contract. 
+Thirdweb has provided several smart contract templates for developers to build out their ideas quickly. Templates for common ERCs have been built, but the one of interest here is the `ERC1155Base` contract. 
 
 This contract is used to build the game items for our Ecstasy game. We would only focus on NFTs; hence, the game items we are building are NFTs. Of course, we wouldn't be building any game; we would only be building the smart contracts powering the game items supposing we have a game called Ecstasy.
 
