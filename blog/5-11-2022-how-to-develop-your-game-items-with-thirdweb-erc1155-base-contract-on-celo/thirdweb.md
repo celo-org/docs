@@ -238,7 +238,7 @@ We also need to add some functions so the user can check how many units of a sin
     }
 ```
 
-Besides the balance functions, we also have the getURI, totalSupply, getName, and getSymbol functions that are rather intuitive. These functions return relevant information regarding the contract or a particular collection.
+Besides the balance functions, we also have the `getURI`, `totalSupply`, `getName`, and `getSymbol` functions that are rather intuitive. These functions return relevant information regarding the contract or a particular collection.
 
 ## Deploying and verifying the contract on Celo
 
