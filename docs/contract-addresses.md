@@ -26,6 +26,7 @@ celocli network:contracts --node https://forno.celo.org
 | -------------------- | ------------------------------------------ | ------------------------------------------ |
 | Accounts             | 0x7d21685C17607338b313a7174bAb6620baD0aaB7 | 0xd0C0183682102C2a84f37e8C90063A25cCe044fF |
 | Attestations         | 0xdC553892cdeeeD9f575aa0FBA099e5847fd88D20 | 0x1EC3366D384ee7996F2F70B67A65C5d54Ce96040 |
+| FederatedAttestations | 0x0aD5b1d0C25ecF6266Dd951403723B2687d6aff2 | 0x76A4daaC43912A443f098D413DED2Cb7A153EA85 |
 | BlockchainParameters | 0x6E10a8864C65434A721d82e424d727326F9d5Bfa | 0xDEfbc89482cd36B98d1b506Cc56Dd2AF74217955 |
 | DoubleSigningSlasher | 0x50C100baCDe7E2b546371EB0Be1eACcf0A6772ec | 0x4Bb82B5862Beb483Fdb762EC4A6cB60953568A12 |
 | DowntimeSlasher      | 0x71CAc3B31c138F3327C6cA14f9a1c8d752463fDd | 0x9ebB6A46149a43C9D1B12EfdC068b969eCA7246F |
@@ -60,6 +61,7 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | -------------------- | ------------------------------------------ | ------------------------------------------ |
 | Accounts             | 0xed7f51A34B4e71fbE69B3091FcF879cD14bD73A9 | 0x7CC2e978a3FF0ebeb3725360d607269c6311cab4 |
 | Attestations         | 0xAD5E5722427d79DFf28a4Ab30249729d1F8B4cc0 | 0xcc6fd87e98b5d6e8D44F0154d3cF7b4b9FB8A013 |
+| FederatedAttestations | 0x70F9314aF173c246669cFb0EEe79F9Cfd9C34ee3 | 0x926E88a280902Bfff5047693B9CeAfdb9F4d5095 |
 | BlockchainParameters | 0xE5aCbb07b4Eed078e39D50F66bF0c80cF1b93abe | 0xbc4c0e92ac0a588DF2712E3425723fe22361966f |
 | DoubleSigningSlasher | 0x88A4c203C488E8277f583942672E1aF77e2B5040 | 0xF06EF728067dd7b5CC752DC0C787dABECcBfC82e |
 | DowntimeSlasher      | 0xf2224c1d7b447D9A43a98CBD82FCCC0eF1c11CC5 | 0xdF3d2CD57090B3B6C15c18Ec7C1E33DCF565B449 |
