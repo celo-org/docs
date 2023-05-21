@@ -3509,6 +3509,13 @@ const Users: User[] = [
     website: 'blog/tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python',
     tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
   },
+  {
+    title: 'Smart contract security on Celo with Smartcheck',
+    description: 'Analyze smart contracts using free security tool - Smartcheck',
+    preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-smartcheck.png'),
+    website: 'blog/tutorials/smart-contract-security-on-celo-with-smartcheck',
+    tags: ['celosage', 'intermediate', 'smartcontract', 'solidity'], 
+  },
 
 
 
