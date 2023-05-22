@@ -10,3 +10,15 @@ tags: [celosage, celo, intermediate]
 hide_table_of_contents: true
 slug: "/tutorials/security-considerations-with-celo"
 ---
+
+<!-- ![header](../../src/data-tutorials/showcase/intermediate/no-js-framework.png) -->
+
+## Introduction
+
+## Prerequisites
+
+## Conclusion
+
+## About the Author
+
+## References​
