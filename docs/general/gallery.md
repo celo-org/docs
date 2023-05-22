@@ -29,6 +29,14 @@ Celo Camp is a virtual accelerator and competition focused on helping startups a
 
 [View Celo Camp](https://www.celocamp.com/)
 
+### Denota
+
+Denota is a payment protocol and platform that leverages NFTs to represent payment agreements. Payment agreements today are inefficient, vague, costly and have significant trust deficits. Denota's simple and powerful escrow agreements solve them.
+
+- [Website](https://www.denota.xyz)
+- [GitHub](https://github.com/denotalabs/denota-sdk)
+
+
 ### GoodGhosting
 
 GoodGosting is a no-loss DeFi saving game. Users can compete with others to get higher interest rates than when they would save by themselves. We created a shared saving pool smart contract, which plugs into existing Celo DeFi projects (e.g. Moola) to generate interest for all winning players.
