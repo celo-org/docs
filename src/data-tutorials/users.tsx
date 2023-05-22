@@ -3458,6 +3458,13 @@ const Users: User[] = [
     tags: ['solidity', 'intermediate', 'celo', 'celosage'],
   },
   {
+    title: 'Security considerations with Celo',
+    description: ' Guidance on the main security points to consider when developing with Celo. It covers the bases for both the beginner and intermediate users. ',
+    preview: require('./showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png'),
+    website: 'blog/tutorials/security-considerations-with-celo',
+    tags: ['solidity', 'intermediate', 'celo', 'celosage'],
+  },
+  {
     title: 'Smart contract security on celo with mythril',
     description: 'Analyze smart contracts using free security tools - Mythril',
     preview: require('./showcase/intermediate/smart-contract-security-on-celo-with-mythril.png'),
