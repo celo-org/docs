@@ -28,15 +28,6 @@ Valora is a mobile wallet focused on making global peer-to-peer payments simple 
 - Maintainers: [Valora](https://valoraapp.com)
 - Ledger support: No
 
-### CeloWallet.app
-
-CeloWallet is a lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
-
-- [celowallet.app](https://celowallet.app)
-- Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
-- Ledger support: Yes
-
 ### Celo Terminal
 
 Celo Terminal is a wallet and DApp platform. It aims to be a hub for installing and running Celo DApps locally on your desktop.
@@ -55,13 +46,13 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 - Maintainers: [DSRV Labs](https://www.dsrvlabs.com/en/)
 - Ledger support: Yes
 
-### Steakwallet
+### Omni
 
-Steakwallet is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
+OMNI is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
 
-- [steakwallet.fi](https://steakwallet.fi)
+- [omni.app](https://omni.app/)
 - Platforms: Android, iOS
-- Maintainers: [Steakwallet LLC](https://steakwallet.fi)
+- Maintainers: [Omni Ltd](https://omni.app/)
 
 ## Celo Compatible Wallets
 
@@ -80,6 +71,13 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [walletconnect.org/](https://walletconnect.org/)
 - Platforms: Browser, iOS, Android
+
+### Rabby
+
+Rabby is an open source browser plugin for the DeFi ecosystem, providing users with a better-to-use and more secure multi-chain experience. 
+
+- [rabby.io](https://rabby.io/)
+- Platforms: Browser, MacOS, Windows
 
 ### Dove Wallet
 
