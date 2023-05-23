@@ -139,7 +139,7 @@ const Users: User[] = [
     title: 'Explore Tutorials',
     description: 'Learn more about Celo from our curated list of community tutorials.',
     preview: require('./showcase/favorites/tutorials.webp'),
-    website: '/tutorials',
+    website: 'https://celo.academy/c/tutorials/4',
     tags: ['favorite'],
   },
   {

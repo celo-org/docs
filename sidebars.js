@@ -39,7 +39,7 @@ const sidebars = {
         {
           type: "link",
           label: "Valora",
-          href: "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
+          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
         },
         {
           type: "category",
@@ -48,7 +48,7 @@ const sidebars = {
             {
               type: "link",
               label: "MetaMask Setup",
-              href: "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
+              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
             },
             {
               type: "doc",

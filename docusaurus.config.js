@@ -114,7 +114,7 @@ module.exports = {
         },
         { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "/tutorials",
+          to: "https://celo.academy/c/tutorials/4",
           label: "Tutorials",
           position: "left",
         },
@@ -319,16 +319,7 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        blog: {
-          blogTitle: "Celo Tutorials",
-          blogDescription: "Celo blog!",
-          blogSidebarCount: 0,
-          showReadingTime: true,
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            frontMatter.hide_reading_time
-              ? undefined
-              : defaultReadingTime({ content }),
-        },
+        blog: false,
       },
     ],
   ],
