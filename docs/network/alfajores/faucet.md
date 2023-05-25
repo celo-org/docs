@@ -65,8 +65,8 @@ export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
 
 The Alfajores Testnet Faucet is an easy way to get more funds deposited to an account, however it was created.
 
-Visit [faucet.celo.org](https://faucet.celo.org), and enter your account address. If you are using the Celo Wallet, you can find your account address in the Settings page. Complete the Captcha, and click 'Add Funds'.
+Visit [faucet.celo.org](https://faucet.celo.org), and enter your account address and click 'Faucet'. If you are using Valora, you can find your account address in the Settings page. 
 
-Each time you complete a faucet request, your account is funded with an additional 10 Celo Dollars and 5 CELO.
+Each time you complete a faucet request, your account is funded with additional CELO Tokens.
 
 You may do this multiple times if you require more funds.
