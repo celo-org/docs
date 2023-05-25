@@ -114,7 +114,7 @@ module.exports = {
         },
         { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "https://celo.academy/c/tutorials/4",
+          to: "https://celo.academy/",
           label: "Tutorials",
           position: "left",
         },
