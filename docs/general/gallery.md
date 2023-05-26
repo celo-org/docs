@@ -329,3 +329,10 @@ inTheory is a DeSci funding platform that allows crypto users to fund, support, 
 
 - [Website](https://intheory.impact-finance.io/)
 - [GitHub](https://github.com/Impact-Finance/intheory-mobile-nft-mint-celo)
+
+### WalliD
+
+WalliD aims to provide the ultimate onboarding and digital trust solution by aggregating authenticators and digital ID providers. Our aggregator architecture brings together centralized Certificate authorities and their Public Key Infrastructures (PKIs), DID and Zero-Knowledge protocols, as well as authentication providers. This allows us to offer a comprehensive toolkit with different suites of products that cater to the needs of WebApp or dApp developers and users across the globe.
+
+- [Website](https://wallid.io)
+- [GitHub](https://github.com/walliDprotocol)
