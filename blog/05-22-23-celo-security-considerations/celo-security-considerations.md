@@ -44,7 +44,7 @@ Smart contract design and development is the first step in building secure Celo 
 - Use established design patterns to minimize potential vulnerabilities
 
 Here's an example of a Solidity contract that demonstrates code reusability:
-```
+```Solidity
 pragma solidity ^0.8.0;
 
 library SafeMath {
@@ -92,7 +92,7 @@ Remember, using delegatecall can introduce complex security risks, so exercise c
 
 In the example below, when contract B executes the delegatecall function to contract A, the code of contract A is executed but with contract B’s storage.
 
-```
+```Solidity
 contract A{
   uint8 public num;
   address public owner;
@@ -146,7 +146,7 @@ A reentrancy guard is a mechanism used to prevent reentrancy attacks in Solidity
 
 Example:
 
-```
+```Solidity
 
 contract MyContract {
     bool private locked;
@@ -173,7 +173,7 @@ Remember, a reentrancy guard is just one aspect of securing your contract agains
 
 Here is a simple example of a contract that is susceptible to re-entrancy:
 
-```
+```Solidity
 //Victim
 
 contract Victim {
@@ -235,7 +235,7 @@ While `tx.origin` may have certain use cases, such as for informational purposes
 The difference between tx.origin and msg.sender is msg.sender, the owner, can be a contract while tx.origin the owner can never be a contract.
 
 Example:
-```
+```Solidity
 contract Wallet {
 
    address owner;
@@ -307,7 +307,7 @@ Instead of using the block timestamp, consider using other mechanisms for time-d
 
 Example:
 
-```
+```Solidity
 contract MyContract {
     uint public pastBlockTime; 
     
@@ -335,7 +335,8 @@ Smart contracts are the building blocks of any dApp, and they are responsible fo
 - Test extensively: Writing tests for your smart contracts can help you identify potential vulnerabilities early in the development process. You can use testing frameworks like Truffle or Hardhat to write automated tests and ensure that your code behaves as expected.
 - Use the latest version of Solidity: The Solidity language is constantly evolving, and new versions often include security improvements. Make sure to use the latest version of Solidity when writing your smart contracts.
 Here is an example of a secure smart contract that uses the OpenZeppelin library:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -351,7 +352,8 @@ contract MyContract is Ownable {
 This contract uses the Ownable library from OpenZeppelin to ensure that only the contract owner can modify the myValue variable. By using established libraries like this, you can reduce the risk of introducing vulnerabilities into your smart contracts.
 
 - Ensure that the smart contract code is secure and free from vulnerabilities such as re-entrancy attacks and integer overflows. Conduct code audits and use security tools like Mythril and Slither to identify and fix security issues in the smart contract code. For example, you can use the following command to analyze your smart contract code with Mythril:
-```
+
+```Solidity
 myth analyze path/to/smart/contract.sol
 ```
 
@@ -362,7 +364,8 @@ Access controls are a critical component of any dApp. They help ensure that only
 - Use the `msg.sender` variable: The `msg.sender` variable in Solidity refers to the address of the user who is calling the function. You can use this variable to restrict access to certain functions or data. For example, you can use the `onlyOwner` modifier from the `Ownable library` to restrict access to a function to the contract owner.
 - Use role-based access controls: Role-based access controls allow you to define different levels of access for different users. For example, you may have an "admin" role that can access all functionality in your dApp, while regular users can only access certain functions.
 Here is an example of a contract that uses role-based access controls:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 contract MyContract {
@@ -386,7 +389,8 @@ In this contract, the `isAdmin` mapping is used to store whether an address is a
 as an admin.
 
 - Use a role-based access control library like casbin to implement RBAC in your dApp. For example, you can use the following code snippet to define roles and permissions:
-```
+
+```Solidity
 const { newEnforcer } = require('casbin');
 
 const model = `
@@ -421,7 +425,8 @@ enforcer.addPermissionForUser('user', '/user', '*');
 User input is another potential source of vulnerabilities in your dApp. Users may try to input malicious data to exploit vulnerabilities in your code. Here are some best practices to follow when handling user input in your Celo dApp:
 - Use SafeMath: Solidity's built-in math operations can be vulnerable to overflows and underflows. The SafeMath library provides safe versions of these operations that ensure that the result is within the acceptable range.
 Here is an example of a contract that uses SafeMath to handle user input:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -442,7 +447,8 @@ In this contract, the `addValue` function uses `SafeMath's` add function to add 
 
 
 Here's an example of input validation using require statements:
-```
+
+```Solidity
 contract MyContract {
     function doSomething(uint256 value) public {
         require(value > 0, "Value must be greater than zero.");
@@ -454,7 +460,8 @@ contract MyContract {
 In this example, the doSomething function requires that the value parameter is greater than zero before using it in a calculation.
 
 - Implement input validation to prevent malicious input from users. For example, if you are taking input from a user via a form, you can use this example to sanitize the input:
-```
+
+```Solidity
 const sanitizeHtml = require('sanitize-html');
 
 const sanitizedInput = sanitizeHtml(userInput, {
@@ -464,13 +471,15 @@ const sanitizedInput = sanitizeHtml(userInput, {
 ```
 
 - Use output encoding to prevent  Cross-Site Scripting (XSS) and Cross-Site Request Forgery (CSRF) attacks. For example, if you are displaying user-generated content, this example can be used to encode the content before displaying it:
-```
+
+```Solidity
 const xss = require('xss');
 
 const encodedContent = xss(userGeneratedContent);
 ```
 - Implement session management to prevent session hijacking attacks. For example,you can set a secure cookie with this:
-```
+
+```Solidity
 res.cookie('sessionId', sessionToken, {
   httpOnly: true,
   secure: true,
@@ -486,7 +495,8 @@ Proper key management is critical to securing your Celo dApp. Keys are used to s
 - Store keys securely: If you are not using a hardware wallet, make sure to store your keys in a secure location, such as an encrypted file or a password-protected key vault.
 
 Here is an example of a contract that uses a multi-signature wallet:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 contract MyContract {
@@ -559,7 +569,8 @@ Implement multi-factor authentication (MFA) to secure user accounts and ensure t
 12. Use HTTPS
 
   Ensure that your dApp uses HTTPS to encrypt all data in transit between the client and server. HTTPS prevents Man-in-the-Middle (MitM) attacks and ensures that data exchanged between the client and server is secure. Use the https module to create a secure HTTPS server. For example:
-```
+
+```Solidity
 const https = require('https');
 const fs = require('fs');
 
@@ -574,7 +585,8 @@ https.createServer(options, app).listen(443);
 13. Monitor for suspicious activities
 
   - Use a logging and monitoring library like `Sentry` `winston` or `LogRocket` to monitor your dApp for suspicious activities. For example, you can use tis code to log a message whenever a user logs in:
-```
+
+```Solidity
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -590,7 +602,8 @@ const logger = winston.createLogger({
 logger.info('User logged in', { userId: '123' });
 ```
 - Using events to notify users of important events.
-```
+
+```Solidity
 
 pragma solidity ^0.8.0;
 contract MyContract { uint256 public myValue;
@@ -610,7 +623,8 @@ In Solidity, data encryption can be implemented using encryption libraries such 
 it in a contract variable.
 
 Here's an example of data encryption using the crypto library:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/cryptography/Crypto.sol";
@@ -638,7 +652,8 @@ Secure communication is the practice of ensuring that communication between your
 In Solidity, secure communication can be implemented using encryption and digital signatures. For example, you can use the ECDSA library to create and verify digital signatures.
 
 Here's an example of secure communication using digital signatures:
-```
+
+```Solidity
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
@@ -667,7 +682,8 @@ In this example, the verifySignature function verifies that a message was signed
 16. Regularly update dependencies
 
   Use a dependency management tool like npm to keep your dependencies up to date to ensure that your dApp is not vulnerable to known security issues in third-party libraries and frameworks. For example, you can use the following command to update all your dependencies to their latest versions:
-```
+
+```bash
 npm update
 ```
 17. Use Audits and Code Reviews
