@@ -3462,7 +3462,7 @@ const Users: User[] = [
     description: ' Guidance on the main security points to consider when developing with Celo. It covers the bases for both the beginner and intermediate users. ',
     preview: require('./showcase/beginner/school-resources-marketplace-smart-contract-on-celo.png'),
     website: 'blog/tutorials/security-considerations-with-celo',
-    tags: ['solidity', 'intermediate', 'celo', 'celosage'],
+    tags: ['solidity', 'intermediate', 'celo', 'smartcontract','celosage'],
   },
   {
     title: 'Smart contract security on celo with mythril',
