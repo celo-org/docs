@@ -584,7 +584,7 @@ https.createServer(options, app).listen(443);
 
 13. Monitor for suspicious activities
 
-  - Use a logging and monitoring library like `Sentry` `winston` or `LogRocket` to monitor your dApp for suspicious activities. For example, you can use tis code to log a message whenever a user logs in:
+  - Use a logging and monitoring library like `Sentry` `Winston` or `LogRocket` to monitor your dApp for suspicious activities. For example, you can use tis code to log a message whenever a user logs in:
 
 ```Solidity
 const winston = require('winston');
@@ -711,6 +711,6 @@ Remember, security is an ongoing process. You should regularly review and update
 [Harold Oliver](https://www.linkedin.com/in/colonelxy/) is a technical writer and a Web3 developer with a keen interest in smart contract security.
 
 ## References​
-- [Consensys](https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security/)
-- [Celo](https://docs.celo.org/blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples)
-- [Alchemy](https://www.alchemy.com/overviews/smart-contract-security-best-practices)
+- [Consensys- Solidity best practices for smart contract security](https://consensys.net/blog/developers/solidity-best-practices-for-smart-contract-security/)
+- [Celo- Best practices for writing smart contracts](https://docs.celo.org/blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples)
+- [Alchemy- Smart contract security best practices](https://www.alchemy.com/overviews/smart-contract-security-best-practices)
