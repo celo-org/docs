@@ -15,18 +15,18 @@ slug: "/tutorials/security-considerations-with-celo"
 
 ## Introduction
 
-Celo is a blockchain-based platform that allows developers to create decentralized applications (dApps). It's designed to enable secure and fast transactions, smart contract execution, ease of use, and it uses a proof-of-stake consensus mechanism. Celo dApps can be built using various programming languages, including Solidity, which is a language used for Ethereum dApps. As with any dApp, security is a major concern, as the application may hold sensitive information or control valuable assets. In this guide, we will explore the security considerations that developers must take into account when building and deploying Celo dApps. We will also provide Solidity code examples to demonstrate these security concepts and illustrate our recommendations.
+Celo is a blockchain-based platform that allows developers to create decentralized applications (dApps). It's designed to enable secure and fast transactions, smart contract execution, and ease of use, and it uses a proof-of-stake consensus mechanism. Celo dApps can be built using various programming languages, including Solidity, which is a language used for Ethereum dApps. As with any dApp, security is a major concern, as the application may hold sensitive information or control valuable assets. In this guide, we will explore the security considerations that developers must take into account when building and deploying Celo dApps. We will also provide Solidity code examples to demonstrate these security concepts and illustrate our recommendations.
 
 
 ## Prerequisites
-This article assumes that you have basic knowledge of JavaScript (TypeScript) and a problem-solving attitude. You'll require an intermediate Smart Contract developer experiencend a good understanding of the Solidity language is recommended.
+This article assumes that you have basic knowledge of JavaScript (TypeScript) and a problem-solving attitude. You'll require intermediate Smart Contract developer experience and a good understanding of the Solidity language is recommended.
 
 
 ## Requirements​
 
 The following tools are recommended and should be installed in your system.
 - A code editor/IDE, preferably VSCode.
-- Slither or your prefered security auditing tools.
+- Slither or your preferred security auditing tools.
 
 
 
@@ -278,7 +278,7 @@ Solidity provides visibility modifiers that allow you to control the accessibili
 
 - Public: Public functions and state variables can be accessed by any external contract or account. Use the public modifier when you want to expose functionality or data to the outside world. However, be cautious with public state variables as they can be directly modified by anyone, potentially leading to security vulnerabilities.
 
-- Private: Private functions and state variables are only accessible within the contract they are defined in. Use the private modifier to encapsulate internal implementation details or helper functions that should not be accessible externally.
+- Private: Private functions and state variables are only accessible within the contract they are defined in. Use the private modifier to encapsulate internal implementation details or helper functions that should not be accessed externally.
 
 - Internal: Internal functions and state variables can be accessed within the contract they are defined in and any derived contracts. Use the internal modifier when you want to provide accessibility to the contract and its derived contracts but not to external contracts.
 
@@ -301,7 +301,7 @@ It is crucial to avoid manipulating the block timestamp in your Celo contracts a
 
 - Auditability and Verification: Timestamp manipulation makes it difficult to verify and audit the contract's logic and intentions. It introduces uncertainty and erodes the transparency that blockchain technology provides.
 
-Block timestamps have been used historically for a number of purposes, including entropy for random numbers locking funds for a set amount of time, and different state-changing, time-dependent conditional statements. Because validators have the capacity to slightly alter timestamps, using block timestamps wrong in smart contracts can be quite risky.
+Block timestamps have been used historically for many purposes, including entropy for random numbers locking funds for a set amount of time, and different state-changing, time-dependent conditional statements. Because validators can slightly alter timestamps, using block timestamps wrong in smart contracts can be quite risky.
 
 Instead of using the block timestamp, consider using other mechanisms for time-dependent operations, such as using block numbers or external time oracles. These alternatives provide a more secure and reliable way to incorporate time-dependent behavior into your Solidity contracts while preserving the integrity and security of the blockchain.
 
@@ -477,7 +477,7 @@ const xss = require('xss');
 
 const encodedContent = xss(userGeneratedContent);
 ```
-- Implement session management to prevent session hijacking attacks. For example,you can set a secure cookie with this:
+- Implement session management to prevent session hijacking attacks. For example, you can set a secure cookie with this:
 
 ```Solidity
 res.cookie('sessionId', sessionToken, {
