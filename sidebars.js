@@ -13,6 +13,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Web2 to Web3",
+          id: "general/web2-to-web3",
+        },
+        {
+          type: "doc",
           label: "Whitepapers",
           id: "general/whitepapers",
         },
@@ -34,7 +39,7 @@ const sidebars = {
         {
           type: "link",
           label: "Valora",
-          href: "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
+          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
         },
         {
           type: "category",
@@ -43,7 +48,7 @@ const sidebars = {
             {
               type: "link",
               label: "MetaMask Setup",
-              href: "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
+              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
             },
             {
               type: "doc",
@@ -146,6 +151,11 @@ const sidebars = {
           ],
         },
         {
+          type: "doc",
+          label: "Coinbase Wallet",
+          id: "wallet/coinbase-wallet",
+        },
+        {
           type: "link",
           label: "Staking",
           href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
@@ -240,6 +250,11 @@ const sidebars = {
               type: "doc",
               label: "Baklava Testnet",
               id: "network/baklava/disclaimer",
+            },
+            {
+              type: "doc",
+              label: "Cannoli Testnet",
+              id: "network/cannoli/disclaimer",
             },
           ],
         },

@@ -24,7 +24,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [Celer](https://cbridge.celer.network/1/10/USDC)
 - [O3](https://o3swap.com/)
 - [Orbit Bridge](https://bridge.orbitchain.io/)
-- [Optics](optics.app)
+- [Optics](https://optics.app)
 
 ## Cross-Chain Messaging
 
@@ -32,4 +32,5 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [Wormhole](https://wormhole.com/)
 - [Layer Zero](https://layerzero.network/)
 - [Axelar Network](https://axelar.network/)
-- [Optics](optics.app)
+- [Optics](https://optics.app)
+- [Squid Router](https://app.squidrouter.com/)
