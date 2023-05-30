@@ -37,7 +37,7 @@ The Celo protocol tracks an ‘uptime score’ for each validator. When a valida
 
 For a validator to be ‘up’ at a given block, it must have its signature included in at least one in the previous twelve blocks. This cannot be done during the first 11 blocks of the epoch. At each epoch, this counter is reset to 0. Because the proposer order is shuffled at each election, it is very hard for a malicious actor withholding an honest validator’s signatures to affect this measure.
 
-Then, a validator’s uptime for the epoch is the proportion of blocks in the epoch for which it is ‘up’: `U = counter/ (epoch_size - 11)`. Its epoch uptime score `S_ve = u ^ k`, where `k` is a governable constant. This means that downtime of less than around a minute does not count against the validator, but that longer periods begin to reduce the score rapidly.
+Then, a validator’s uptime for the epoch is the proportion of blocks in the epoch for which it is ‘up’: `u = (counter + downtime_grace_period) / (epoch_size - 11)`. Its epoch uptime score `S_ve = u ^ k`, where `downtime_grace_period` and `k` are a governable constants. This means that even repeated downtimes of less than around a minute are ignored and longer downtimes also won't count against the validator as long as their total duration stays below `downtime_grace_period`. After that the score will reduce rapidly due to the exponent `k`.
 
 The validator’s overall uptime score is an exponential moving average of the uptime score from this and previous epochs. `S_{v} = min(S_ve, S_ve * x + S_{v-1} * (1 -x))` where `0 < x < 1` and is governable. Since `S_v` starts out at zero, validators have a disincentive to change identities and an incentive to prioritize activities that improve long-term availability.
 
