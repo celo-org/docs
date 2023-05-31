@@ -768,20 +768,9 @@ const sidebars = {
           ],
         },
         {
-          type: "category",
+          type: "doc",
           label: "Governance",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "protocol/governance/index",
-            },
-            {
-              type: "doc",
-              label: "Create Proposal",
-              id: "protocol/governance/create-proposal",
-            },
-          ],
+          id: "protocol/governance",
         },
         {
           type: "category",
