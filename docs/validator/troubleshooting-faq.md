@@ -1,6 +1,6 @@
 ---
 title: Celo Validator Troubleshooting FAQ
-description: Answers to frequently asked questions while troubleshooting isses as a Validator.
+description: Answers to frequently asked questions while troubleshooting issues as a Validator.
 ---
 
 # Validator FAQ
