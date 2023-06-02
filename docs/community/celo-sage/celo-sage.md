@@ -37,7 +37,7 @@ Need to request technical content from a Celo Sage? Fill out the [content reques
 
 :::tip
 
-View the [Celo Development Tutorials](/tutorials) for examples of our work.
+View the [Celo Development Tutorials](https://celo.academy/t/4) for examples of our work.
 
 :::
 
@@ -61,7 +61,7 @@ Payments are awarded in cUSD to your Wallet Address based on the projects you co
 
 Explore these resources to learn more about the Celo Sage program.
 
-- [Introducing Celo Sage](/blog/tutorials/introducing-celo-sage)
+- [Introducing Celo Sage](https://celo.academy/t/celo-sage-program/533)
 - [Roadmap](https://trello.com/invite/b/IVRaj2QO/ATTI2d1247ea85d4c68a97451aefbcdd0e4f61AE76DC/celo-sage)
 - [GitHub](https://github.com/celo-org/docs)
 
