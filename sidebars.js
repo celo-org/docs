@@ -313,6 +313,11 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Using thirdweb",
+              id: "developer/deploy/thirdweb",
+            },
+            {
+              type: "doc",
               label: "Using Remix",
               id: "developer/deploy/remix",
             },
@@ -336,6 +341,11 @@ const sidebars = {
               type: "doc",
               label: "Overview",
               id: "developer/sdks/celo-sdks",
+            },
+            {
+              type: "doc",
+              label: "thirdweb SDK",
+              id: "developer/thirdweb-sdk/index",
             },
             {
               type: "category",

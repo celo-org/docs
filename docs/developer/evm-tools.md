@@ -13,6 +13,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 - [Solidity](https://soliditylang.org/) - The most popular smart contract language.
 - [Metamask](https://metamask.io/) - Browser extension wallet to interact with Dapps.
+- [thirdweb](https://thirdweb.com) - SDKs in every language, smart contracts, tools, and infrastructure for web3 development.
 - [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. Install the cli via npm and start here to write your first smart contracts.
 - [Truffle boxes](https://trufflesuite.com/boxes) - Packaged components for the Ethereum ecosystem.
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
@@ -36,6 +37,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ### Frameworks
 
+- [thirdweb](https://portal.thirdweb.com/solidity) - Provides the tools needed to build custom smart contracts efficiently by offering a set of prebuilt base contracts and a set of reusable components, or extensions, that can be integrated into your own smart contracts.
 - [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. The Truffle suite includes Truffle, [Ganache](https://github.com/trufflesuite/ganache), and [Drizzle](https://github.com/truffle-box/drizzle-box). [Deep dive on Truffle here](https://media.consensys.net/truffle-deep-dive-what-you-need-to-know-when-developing-on-ethereum-e548d4df6e9)
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
 - [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
@@ -102,6 +104,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ### Frontend Ethereum APIs
 
+- [thirdweb](https://thirdweb.com) - Build web3 applications that can interact with your smart contracts using our powerful SDKs.
 - [Web3.js](https://github.com/ethereum/web3.js/) - Javascript Web3
 - [Eth.js](https://github.com/ethjs) - Javascript Web3 alternative
 - [Ethers.js](https://github.com/ethers-io/ethers.js/) - Javascript Web3 alternative, useful utilities and wallet features
@@ -135,6 +138,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ### Backend Ethereum APIs
 
+- [thirdweb](https://thirdweb.com) - Build web3 applications that can interact with your smart contracts using our powerful SDKs.
 - [Web3.py](https://github.com/ethereum/web3.py) - Python Web3
 - [Web3.php](https://github.com/sc0Vu/web3.php) - PHP Web3
 - [Ethereum-php](https://github.com/digitaldonkey/ethereum-php) - PHP Web3
