@@ -1,11 +1,11 @@
 ---
-title: Run Baklava Testnet Validator on Celo
-description: How to get a Validator node running on the Celo Mainnet (Celo's Node Operator Testnet).
+title: Run Baklava Testnet Validator on Celo using a Ledger
+description: How to get a Validator node running on the Celo Mainnet (Celo's Node Operator Testnet) using a ledger hardware wallet.
 ---
 
-# Run Baklava Testnet Validator
+# Run Baklava Testnet Validator with Ledger
 
-How to get a Validator node running on the Celo Baklava Testnet (Celo's Node Operator Testnet).
+How to get a Validator node running on the Celo Baklava Testnet (Celo's Node Operator Testnet) using a ledger hardware wallet.
 
 ---
 
@@ -112,14 +112,14 @@ Private keys are the central primitive of any cryptographic system and need to b
 
 This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
 
-#### Unlocking
+<strike>#### Unlocking
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
 1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
 2.  By setting the `--unlock` flag when starting the node.
 
-It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
+It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.</strike>
 
 ### Environment variables
 
@@ -190,9 +190,9 @@ Running a Celo Validator node requires the management of several different keys,
 
 Note that Account and all the signer keys must be unique and may not be reused.
 
-##### Generating Validator and Validator Group Keys
+##### Accessing Validator and Validator Group Keys on Ledger
 
-First, you'll need to generate account keys for your Validator and Validator Group.
+This tutorial assumes you have a Ledger S or X, have unlocked the device, have the Celo app installed and currently selected:
 
 :::danger
 
@@ -201,15 +201,13 @@ Store and back these keys up in a secure manner, as there will be no way to reco
 
 :::
 
+In this example we'll use the first and second address supplied by the ledger.
+
 ```bash
-# On your local machine
-mkdir celo-accounts-node
-cd celo-accounts-node
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
+celocli account:list --useLedger --ledgerCustomAddresses "[0]" # validator group address
+celocli account:list --useLedger --ledgerCustomAddresses "[1]" # validator address
 ```
 
-This will create a new keystore in the current directory with two new accounts.
 Copy the addresses from the terminal and set the following environment variables:
 
 ```bash
@@ -242,13 +240,8 @@ docker run --name celo-accounts -it --restart always --stop-timeout 300 -p 127.0
 To actually register as a validator, we'll need to generate a validating signer key. On your Validator machine (which should not be accessible from the public internet), follow very similar steps:
 
 ```bash
-# On the validator machine
-# Note that you have to export $CELO_IMAGE on this machine
-export CELO_IMAGE=us.gcr.io/celo-org/geth:baklava
-mkdir celo-validator-node
-cd celo-validator-node
-docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
-export CELO_VALIDATOR_SIGNER_ADDRESS=<YOUR-VALIDATOR-SIGNER-ADDRESS>
+# from machine with ledger
+celocli account:list --useLedger --ledgerCustomAddresses "[2]" # vote signer address
 ```
 
 #### Proof-of-Possession
