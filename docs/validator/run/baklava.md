@@ -112,15 +112,6 @@ Private keys are the central primitive of any cryptographic system and need to b
 
 This guide contains a large number of keys, so it is important to understand the purpose of each key. [Read more about key management.](/validator/key-management/summary)
 
-<strike>#### Unlocking
-
-Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
-
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
-
-It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.</strike>
-
 ### Environment variables
 
 There are a number of environment variables in this guide, and you may use this table as a reference.
