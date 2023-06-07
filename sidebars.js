@@ -204,11 +204,6 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Baklava Full Node",
-                  id: "network/node/run-baklava-ledger",
-                },
-                {
-                  type: "doc",
                   label: "Hosted Nodes",
                   id: "network/node/run-hosted",
                 },
@@ -526,6 +521,11 @@ const sidebars = {
               type: "doc",
               label: "Baklava Validator",
               id: "validator/run/baklava",
+            },
+            {
+              type: "doc",
+              label: "Baklava Validator",
+              id: "validator/run/baklava-ledger",
             },
           ],
         },
