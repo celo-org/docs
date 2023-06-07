@@ -204,6 +204,11 @@ const sidebars = {
                 },
                 {
                   type: "doc",
+                  label: "Baklava Full Node",
+                  id: "network/node/run-baklava-ledger",
+                },
+                {
+                  type: "doc",
                   label: "Hosted Nodes",
                   id: "network/node/run-hosted",
                 },
