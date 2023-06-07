@@ -814,7 +814,6 @@ const sidebars = {
             "protocol/stability/oracles",
             "protocol/stability/stability-fees",
             "protocol/stability/adding-stable-assets",
-            "protocol/stability/tobin-tax",
           ],
         },
         {

@@ -23,4 +23,3 @@ The Celo protocol's stability mechanism comprises the following:
 - [Stability Fees](/protocol/stability/stability-fees)
 - [Granda Mento](/protocol/stability/granda-mento)
 - [Adding Stable Tokens](/protocol/stability/adding-stable-assets)
-- [Tobin Tax](/protocol/stability/tobin-tax)

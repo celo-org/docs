@@ -83,7 +83,6 @@ Notice that all these functions have corresponding functions that are called on 
 In addition to transfers (both native and ERC-20) and locking / voting flows affecting user balances, there are also several additional Celo network features that may cause user balances to change:
 
 - Gas fee payments: the fee paid by transaction senders to use the network
-- Tobin tax: a tax on CELO transfers when the reserve balance is low and needs to be repleted
 - Epoch rewards distribution: reward payments to voters, validators, and validator groups
 
 Some of these may occur as events rather than transactions on the network, and therefore when updating balances, special attention should be paid to them.

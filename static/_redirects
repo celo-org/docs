@@ -419,7 +419,6 @@
 /celo-codebase/protocol/stability/index /protocol/stability
 /celo-codebase/protocol/stability/oracles /protocol/stability/oracles
 /celo-codebase/protocol/stability/stability-fees /protocol/stability/stability-fees
-/celo-codebase/protocol/stability/tobin-tax /protocol/stability/tobin-tax
 /celo-codebase/protocol/proof-of-stake/becoming-a-validator /protocol/pos/becoming-a-validator
 /celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund
