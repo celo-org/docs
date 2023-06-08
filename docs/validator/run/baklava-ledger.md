@@ -128,7 +128,7 @@ There are a number of environment variables in this guide, and you may use this 
 | Variable                                    | Explanation                                                                                                                          |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | CELO_IMAGE                                  | The Docker image used for the Validator and proxy containers                                                                         |
-| CELO_VALIDATOR_GROUP_ADDRESS                | The account address for the Validator Group                                                                                          |
+| CELO_VALIDATOR_GROUP_ADDRESS                | The account address for the Validator Group. This will be stored on a Ledger.                                                                                          |
 | CELO_VALIDATOR_ADDRESS                      | The account address for the Validator. This will be stored on a Ledger.                                                                                                |
 | CELO_VALIDATOR_GROUP_SIGNER_ADDRESS         | The validator (group) signer address authorized by the Validator Group account.                                                      |
 | CELO_VALIDATOR_GROUP_SIGNER_SIGNATURE       | The proof-of-possession of the Validator Group signer key                                                                            |
