@@ -240,8 +240,13 @@ docker run --name celo-accounts -it --restart always --stop-timeout 300 -p 127.0
 To actually register as a validator, we'll need to generate a validating signer key. On your Validator machine (which should not be accessible from the public internet), follow very similar steps:
 
 ```bash
-# from machine with ledger
-celocli account:list --useLedger --ledgerCustomAddresses "[2]" # vote signer address
+# On the validator machine
+# Note that you have to export $CELO_IMAGE on this machine
+export CELO_IMAGE=us.gcr.io/celo-org/geth:baklava
+mkdir celo-validator-node
+cd celo-validator-node
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
+export CELO_VALIDATOR_SIGNER_ADDRESS=<YOUR-VALIDATOR-SIGNER-ADDRESS>
 ```
 
 #### Proof-of-Possession
