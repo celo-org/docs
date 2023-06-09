@@ -118,6 +118,18 @@ export default function HomePage(): JSX.Element {
           </div>
           <div className="px-2 grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-4 mt-8">
             <a
+              href="https://thirdweb.com"
+              target="_blank"
+              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
+            >
+              <img
+                src="img/thirdweb.svg"
+                alt="thirdweb Logo"
+                className="w-10 h-10 rounded-full"
+              />
+              <span className="text-black dark:text-white">thirdweb</span>
+            </a>
+            <a
               href="https://docs.infura.io/infura/"
               target="_blank"
               className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
