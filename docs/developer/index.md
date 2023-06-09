@@ -30,6 +30,7 @@ Easily build Celo dApps with Celo Composer.
 
 ## Build on Celo
 
+- [Using thirdweb](/developer/deploy/thirdweb)
 - [Using Remix](/developer/deploy/remix)
 - [Using Truffle](/developer/deploy/truffle)
 - [Using Hardhat](/developer/deploy/hardhat)
