@@ -75,7 +75,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Ganache](https://github.com/trufflesuite/ganache) - App for test Ethereum blockchain with visual UI and logs
 - [Kaleido](https://kaleido.io/) - Use Kaleido for spinning up a consortium blockchain network. Great for PoCs and testing
 - [Besu Private Network](https://besu.hyperledger.org/en/stable/Tutorials/Quickstarts/Azure-Private-Network-Quickstart/) - Run a private network of Besu nodes in a Docker container
-  ** [Orion](https://github.com/PegaSysEng/orion) - Component for performing private transactions by PegaSys
+  **[Orion](https://github.com/PegaSysEng/orion) - Component for performing private transactions by PegaSys
   ** [Artemis](https://github.com/PegaSysEng/artemis) - Java implementation of the Ethereum 2.0 Beacon Chain by PegaSys
 - [Cliquebait](https://github.com/f-o-a-m/cliquebait) - Simplifies integration and accepting testing of smart contract applications with docker instances that closely resembles a real blockchain network
 - [Local Raiden](https://github.com/ConsenSys/Local-Raiden) - Run a local Raiden network in docker containers for demo and testing purposes
@@ -228,8 +228,8 @@ A guide to available tools, components, patterns, and platforms for developing a
 #### Upgradeability
 
 - [Blog von Elena Dimitrova, Dev at colony.io](https://blog.colony.io/author/elena/)
-  - https://blog.colony.io/writing-more-robust-smart-contracts-99ad0a11e948
-  - https://blog.colony.io/writing-upgradeable-contracts-in-solidity-6743f0eecc88
+  - <https://blog.colony.io/writing-more-robust-smart-contracts-99ad0a11e948>
+  - <https://blog.colony.io/writing-upgradeable-contracts-in-solidity-6743f0eecc88>
 - [Aragon research blog](https://blog.aragon.org/tag/research/)
   - [Library driven development](https://blog.aragon.org/library-driven-development-in-solidity-2bebcaf88736)
   - [Advanced Solidity code deployment techniques](https://blog.aragon.org/advanced-solidity-code-deployment-techniques-dc032665f434/)
@@ -296,8 +296,8 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [truffle-assertions](https://github.com/rkalis/truffle-assertions) - An npm package with additional assertions and utilities used in testing Solidity smart contracts with truffle. Most importantly, it adds the ability to assert whether specific events have (not) been emitted.
 - [Psol](https://github.com/Lamarkaz/psol) - Solidity lexical preprocessor with mustache.js-style syntax, macros, conditional compilation and automatic remote dependency inclusion.
 - [solpp](https://github.com/merklejerk/solpp) - Solidity preprocessor and flattener with a comprehensive directive and expression language, high precision math, and many useful helper functions.
-- [Decode and Publish](https://flightwallet.github.io/decode-eth-tx/) – Decode and publish raw ethereum tx. Similar to https://live.blockcypher.com/btc-testnet/decodetx/
-- [Doppelgänger](https://getdoppelganger.io/) - a library for mocking smart contract dependencies during unit testing.
+- [Decode and Publish](https://flightwallet.github.io/decode-eth-tx/) – Decode and publish raw ethereum tx. Similar to <https://live.blockcypher.com/btc-testnet/decodetx/>
+- [Doppelgänger](https://github.com/EthWorks/Doppelganger) - a library for mocking smart contract dependencies during unit testing.
 - [rocketh](https://github.com/wighawag/rocketh) - A simple lib to test ethereum smart contract that allow to use whatever web3 lib and test runner you choose.
 - [pytest-cobra](https://github.com/cobraframework/pytest-cobra) - PyTest plugin for testing smart contracts for Ethereum blockchain.
 
@@ -432,7 +432,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [The AZTEC Protocol](https://github.com/AztecProtocol/AZTEC) - Confidential transactions on the Ethereum network, implementation is live on the Ethereum main-net
 - [Nightfall](https://github.com/EYBlockchain/nightfall) - Make any ERC-20 / ERC-721 token private - open source tools & microservices
 - Proxy Re-encryption (PRE)
-  ** [NuCypher Network](https://github.com/nucypher/nucypher) - A proxy re-encryption network to empower data privacy in decentralized systems
+  **[NuCypher Network](https://github.com/nucypher/nucypher) - A proxy re-encryption network to empower data privacy in decentralized systems
   ** [pyUmbral](https://github.com/nucypher/pyumbral) - Threshold proxy re-encryption cryptographic library
 - Fully Homomorphic Encryption (FHE)
   \*\* [NuFHE](https://github.com/nucypher/nufhe) - GPU accelerated FHE library
@@ -458,6 +458,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 :::info
 
-Inspired by: https://github.com/ConsenSys/ethereum-developer-tools-list
+Inspired by: <https://github.com/ConsenSys/ethereum-developer-tools-list>
 
 :::

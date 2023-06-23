@@ -272,7 +272,7 @@ module.exports = {
             },
             {
               label: "Careers",
-              href: "https://celo.org/jobs",
+              href: "https://celo.org/careers",
             },
           ],
         },
