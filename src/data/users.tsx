@@ -233,7 +233,7 @@ const Users: User[] = [
     description: 'Banknless infrastructure for building circular trade and mutual credit networks.',
     preview: require('./showcase/resource.png'),
     website: 'https://resource.finance/',
-    source: 'https://github.com/ReSource-Network/',
+    source: 'https://github.com/resourcefinance',
     tags: ['apps', 'defi'],
   },
   {
