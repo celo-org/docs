@@ -245,14 +245,6 @@ const Users: User[] = [
     tags: ['apps', 'defi'],
   },
   {
-    title: 'Pinnata',
-    description: 'Cross-chain leveraged yield farming protocol on Celo.',
-    preview: require('./showcase/pinnata.png'),
-    website: 'https://www.pinnata.xyz/earn',
-    source: 'https://github.com/Pinnata',
-    tags: ['apps', 'defi', 'popular'],
-  },
-  {
     title: 'Nomspace',
     description: 'Protocol for reserving Celo/Ethereum addresses on Celo.',
     preview: require('./showcase/nom-space.png'),
@@ -269,27 +261,11 @@ const Users: User[] = [
     tags: ['apps', 'wallets'],
   },
   {
-    title: 'Celo Wallet',
-    description: 'A simple wallet for the Celo network. Manage your funds in a browser or on your desktop.',
-    preview: require('./showcase/celo-wallet.png'),
-    website: 'https://celowallet.app/setup',
-    source: 'https://github.com/celo-tools/celo-web-wallet',
-    tags: ['apps', 'wallets', 'popular'],
-  },
-  {
     title: 'Masa',
     description: 'Personal Finance Management. DeFi Credit Protocol. Uncollateralized Loans.',
     preview: require('./showcase/masa.png'),
     website: 'https://masa.finance/',
     source: 'https://github.com/masa-finance',
-    tags: ['apps', 'defi', 'popular'],
-  },
-  {
-    title: 'Poof',
-    description: 'Poof is a decentralized, private DeFi protocol. Users can privately lend, borrow, send, and request crypto.',
-    preview: require('./showcase/poof.png'),
-    website: 'https://poof.cash/',
-    source: 'https://github.com/poofcash/poof-core',
     tags: ['apps', 'defi', 'popular'],
   },
   {
@@ -314,14 +290,6 @@ const Users: User[] = [
     preview: require('./showcase/ari-swap.png'),
     website: 'https://ariswap.co/',
     source: 'https://github.com/airswap',
-    tags: ['apps', 'defi'],
-  },
-  {
-    title: 'Porio',
-    description: 'The sustainnable marketplace for digital art and game assets.',
-    preview: require('./showcase/porio.png'),
-    website: 'https://epor.io/',
-    source: 'https://epor.io/',
     tags: ['apps', 'defi'],
   },
   {
