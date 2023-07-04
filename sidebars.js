@@ -807,7 +807,6 @@ const sidebars = {
             "protocol/transaction/gas-pricing",
             "protocol/transaction/escrow",
             "protocol/transaction/tx-comment-encryption",
-            "protocol/transaction/full-node-incentives",
           ],
         },
         {
