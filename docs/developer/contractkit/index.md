@@ -23,7 +23,7 @@ Contractkit includes common functionality to make it easier to get started build
 
 - Connect to a node
 - Access Web3 object to interact with node's JSON RPC API
-- Send Transaction with Celo's extra fields: (feeCurrency, gatewayFeeRecipient, and gatewayFee)
+- Send Transaction with Celo's feeCurrency field
 - Simple interface to interact with CELO and cUSD
 - Simple interface to interact with Celo Core contracts
 - Local sign transactions
