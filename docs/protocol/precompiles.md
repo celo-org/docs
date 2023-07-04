@@ -28,7 +28,7 @@ These wrappers can be obtained from [celo-monorepo's common contracts](https://g
 
 ## Usage Example
 
-If you would like to use the `sha3_256` hash function, just include the `CIP20Lib` and attach its functions to the `bytes` with `using CIP20Lib for bytes`. Then you can call the hash functions like methods on you `bytes` typed variables.
+If you would like to use the `sha3_256` hash function, just include the `CIP20Lib` and attach its functions to the `bytes` with `using CIP20Lib for bytes`. Then you can call the hash functions like methods on your `bytes` typed variables.
 
 ```solidity
 import "CIP20Lib.sol";
