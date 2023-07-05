@@ -170,14 +170,6 @@ module.exports = {
               label: "iOS SDK",
             },
             {
-              to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python SDK",
-            },
-            {
               label: "Celo Composer",
               to: "https://github.com/celo-org/celo-composer#celo-composer",
             },

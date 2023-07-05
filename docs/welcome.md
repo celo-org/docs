@@ -65,10 +65,8 @@ Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
 
 - [CLI](cli)
 - [IOS](https://github.com/heymateag/celoiossdk)
-- [Java](https://github.com/blaize-tech/celo-sdk-java)
 - [React](https://github.com/celo-org/react-celo)
 - [Flutter](https://github.com/viral-sangani/walletconnect_flutter)
-- [Python](https://github.com/blaize-tech/celo-sdk-py/)
 - [Javascript](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit)
 
 ### Join the Community
