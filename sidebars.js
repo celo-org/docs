@@ -1092,7 +1092,7 @@ const sidebars = {
         {
           type: "link",
           label: "Bounties",
-          href: "https://gitcoin.co/celo-org/projects",
+          href: "https://bounties.gitcoin.co/celo-org/bounties",
         },
         {
           type: "doc",
