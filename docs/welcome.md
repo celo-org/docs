@@ -2,7 +2,7 @@
 title: Welcome to Celo
 description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 id: welcome
-slug: /
+# slug: /
 ---
 
 import YouTube from '@components/YouTube';
@@ -12,28 +12,73 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 ---
 
-## Crypto made for Mobile
+## Getting Started
 
-Celo is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today.
+[Celo](https://celo.org/) is a mobile-first blockchain that makes decentralized financial (DeFi) tools and services accessible to anyone with a mobile phone. It aims to break down barriers by bringing the powerful benefits of DeFi to the users of the 6 billion smartphones in circulation today. Use this documentation as your guide into the Celo ecosystem!
 
-:::tip
+:::tip Celo ❤️ Feedback
 
-First time visiting Celo? [View the Website](https://www.celo.org)
+If you have any ideas to improve the docs please make an [issue](https://github.com/celo-org/docs/issues/new), discuss in the [forum](https://forum.celo.org/), or [become a contributor](/community/guidelines).
 
 :::
 
-## Celo's Mission
+### Celo Basics
 
-The company’s mission is to build a financial system that creates the conditions of prosperity for everyone. Celo enables native and non-native digital assets–both cryptographic and Central Bank Digital Currencies (CBDCs)–to circulate freely across devices, carriers, and countries. This makes money mobile, global and accessible like never before. Celo is supported by a community of organizations and individuals, including Jack Dorsey, a16z, and Deutsche Telekom.
+Learn the Celo Basics to get an overview of our mission, vision, whitepapers, and resources.
 
-<YouTube videoId="kKggE5OvyhE"/>
+<!-- <LinkCardsWrapper>
+  <LinkCard title="Database" description="A dedicated, scalable Postgres database" />
+  <LinkCard title="Auth" description="User management with Row Level Security" />
+  <LinkCard title="File Storage" description="Store, organize, and serve large files" />
+  <LinkCard title="Auto-generated APIs" description="Instantly generate APIs for your database" />
+</LinkCardsWrapper> -->
 
-## Celo Ecosystem
+- [What is Celo?](/general)
+- [Showcase](/showcase)
+- [Explorer](https://explorer.celo.org/)
+- [Website](https://celo.org/)
+- [GitHub](https://github.com/celo-org)
 
-An Ethereum-compatible technology capable of reaching global users at scale, Celo turns crypto into usable money with a multi-asset system: a governance and staking asset (CELO) and a family of stablecoins. Since the launch of Mainnet in 2020, Celo’s network now supports 1000+ projects from builders, developers, and artists, who everyday create new applications and issue digital currencies from over 100 countries around the world.
+### Use Celo
 
-<YouTube videoId="vwfHiaVzc2E"/>
+Get up and running as a Celo holder, validator, developer, using tools in the Celo ecosystem.
 
-## Get started with Celo
+- [Developers](/developer)
+- [Validators](/validator)
+- [Integrations](/integration/)
+- [Bridges](/protocol/bridge)
+- [Oracles](/protocol/oracle)
 
-To build technology and products that are used and loved by people and solve real-world problems, Celo is building a community with many different perspectives and experiences. Let’s build a monetary system that creates the conditions for prosperity for all.
+### Explore Celo Data
+
+Explore Celo data to view the reserve, network, dapps, and additional analytics.
+
+- [Celo Analytics](https://explorer.celo.org/stats)
+- [Celo Reserve](https://celoreserve.org/)
+- [DappLooker](https://dapplooker.com/browse/dashboards?sort=popular&tags=celo&pg=1)
+- [Celo Stats](https://stats.celo.org/)
+- [The Celo](https://thecelo.com/)
+
+### APIs & SDKs
+
+Connect to Celo using a variety of APIs and SDKs for iOS, Java, React, and more.
+
+- [CLI](cli)
+- [IOS](https://github.com/heymateag/celoiossdk)
+- [React](https://github.com/celo-org/react-celo)
+- [Flutter](https://github.com/viral-sangani/walletconnect_flutter)
+- [Javascript](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit)
+
+### Join the Community
+
+Connect with the community to stay up to date on the latest news, events, and updates.
+
+- [@CeloDevs](https://twitter.com/CeloDevs)
+- [@CeloOrg](https://twitter.com/CeloOrg)
+- [GitHub](https://github.com/celo-org/celo-monorepo)
+
+:::tip Get Support 💬
+
+Need help with anything related to Celo? Find Celo on [Discord](https://chat.celo.org/), [Forum](https://forum.celo.org/), or [Telegram](https://t.me/celoplatform).
+
+:::

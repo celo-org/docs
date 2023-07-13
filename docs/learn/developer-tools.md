@@ -27,17 +27,17 @@ ContractKit is a library to help developers and validators to interact with the 
 
 <PageRef url="/developer-guide/contractkit" pageName="ContractKit" />
 
-### use-contractkit
+### react-celo
 
-[use-contractkit](https://github.com/celo-tools/use-contractkit) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
+[react-celo](/developer/react-celo) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
 
-<PageRef url="/developer-resources/use-contractkit" pageName="use-contractkit" />
+<PageRef url="/developer/react-celo" pageName="react-celo" />
 
 ### Ethers.JS Wrapper
 
 A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
-<PageRef url="/developer-resources/ethers-js-wrapper" pageName="Ethers.JS Wrapper" />
+<PageRef url="https://github.com/celo-tools/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
 
 ### WalletConnect
 
@@ -45,17 +45,37 @@ WalletConnect is a standard across EVM compatible blockchains to connect wallets
 
 <PageRef url="walletconnect" pageName="WalletConnect" />
 
-### DAppKit
-
-DAppKit is a lightweight set of functions that allow mobile DApps to work with the Celo Wallet to sign transactions and access the user's account.
-
-<PageRef url="/developer-guide/dappkit" pageName="DAppKit" />
-
 ### Celo CLI
 
 The Command Line Interface allows users to interact with the Celo Protocol smart contracts.
 
-<PageRef url="/command-line-interface/introduction" pageName="Celo CLI" />
+<PageRef url="/cli" pageName="Celo CLI" />
+
+### Celo SDK Reference Docs
+
+You can find the reference documentation for all of the [Celo SDK packages](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk) found in the celo monorepo here. The SDK packages consist of:
+
+- Base
+- Connect
+- ContractKit
+- Explorer
+- Governance
+- Identity
+- Keystores
+- Network Utils
+- Transactions Uri
+- Utils
+- Wallet-base
+- Wallet-HSM
+- Wallet-HSM-AWS
+- Wallet-HSM-Azure
+- Wallet-ledger
+- Wallet-local
+- Wallet-remote
+- Wallet-rpc
+- Wallet-walletconnect
+
+<PageRef url="https://celo-sdk-docs.readthedocs.io/" pageName="Celo SDK Reference Docs" />
 
 ## Infrastructure
 
@@ -67,9 +87,9 @@ The Command Line Interface allows users to interact with the Celo Protocol smart
 
 ### ODIS
 
-[ODIS](/developer-resources/contractkit/odis.md) (Oblivious decentralized identity service) is a lightweight identity layer that makes it easy to send cryptocurrency to a phone number
+[ODIS](/protocol/identity/odis) (Oblivious decentralized identity service) is a lightweight identity layer that makes it easy to send cryptocurrency to a phone number
 
-<PageRef url="/getting-started/wallets" pageName="ODIS" />
+<PageRef url="/protocol/identity/odis" pageName="ODIS" />
 
 ### The Graph
 
@@ -91,15 +111,23 @@ The Command Line Interface allows users to interact with the Celo Protocol smart
 
 ## Hosted Nodes
 
+RPC Endpoint Services
+
 ### Forno
 
-[Forno](../developer-guide/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
+[Forno](/network/node/forno) is a cLabs hosted node service for interacting with the Celo network. This allows you to connect to the Celo Blockchain without having to run your own node.
 
 Forno has HTTP and WebSocket endpoints that you can use to query current Celo data or post transactions that you would like to broadcast to the network. The service runs full nodes in non-archive mode, so you can query the current state of the blockchain, but cannot access the historic state.
 
 Forno can be used as an HTTP Provider with ContractKit.
 
-<PageRef url="../developer-guide/forno" pageName="Forno" />
+<PageRef url="/network/node/forno" pageName="Forno" />
+
+### Ankr
+
+Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
+
+<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
 
 ### Figment Datahub
 
@@ -113,8 +141,14 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 <PageRef url="https://www.quicknode.com/chains/celo" pageName="Quicknode" />
 
+### All That Node
+
+All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
+
+<PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
+
 ## Celo Wallets
 
-[Celo Wallets](../getting-started/wallets) are tools that create accounts, manage keys, and help users transact on the Celo network.
+[Celo Wallets](/wallet/) are tools that create accounts, manage keys, and help users transact on the Celo network.
 
-<PageRef url="../getting-started/wallets" pageName="Celo Wallets" />
+<PageRef url="../wallet/" pageName="Celo Wallets" />
