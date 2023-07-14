@@ -13,7 +13,7 @@ The [Viem docs](https://viem.sh/) have excellent examples of how to use it in yo
 
 ### With Celo
 
-THE TLDR is that passing a celo chain from `viem/chains` into the config of `createWalletClient` will enable any function that signs a transaction including `sendTransaction` and `writeContract` to accept `feeCurrency` in its parameters object.
+THE TLDR is that passing a celo chain from `viem/chains` into the config of `createWalletClient` will enable any function that signs a transaction including `sendTransaction` and `writeContract` to accept `feeCurrency` in its parameters object. Don't care about feeCurrency? Leave it out to pay with CELO.
 
 ```ts
 // see viem docs for more info on setup
