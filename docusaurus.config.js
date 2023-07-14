@@ -150,6 +150,10 @@ module.exports = {
           items: [
             { to: "cli/", label: "CLI" },
             {
+              to: "/developer/viem",
+              label: "Viem",
+            },
+            {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "Celo SDK",
             },
