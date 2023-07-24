@@ -37,4 +37,21 @@ The TLDR is that passing a celo chain from `viem/chains` into the config of `cre
 
 ```
 
+## Gas Price
+
+When paying for transaction with an alternate feeCurrency token it is important to know the price of gas denominated in that token. As such Celo nodes accept an optional param of the address of the token for the `eth_gasPrice` call. Therefore rather than use viem's `publicClient.getGasPrice()` function you should fetch it like the example.
+
+```ts
+async function getGasPrice(client, feeCurrencyAddress?: Address) {
+  const priceHex = await client.request({
+    method: "eth_gasPrice",
+    params: [feeCurrencyAddress],
+  })
+  return hexToBigInt(priceHex)
+}
+
+tx.maxFeePerGas = await getGasPrice(client, tx.feeCurrency)
+
+```
+
 For an interactive example of using viem with Celo's fee currency feature [see our demo](https://rainbowkit-with-celo.vercel.app/fee-currency)
