@@ -1101,11 +1101,6 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Ambassadors",
-          href: "https://celocommunity.xyz/join-the-ambassador-program",
-        },
-        {
-          type: "link",
           label: "Code of Conduct",
           href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
         },
