@@ -151,7 +151,7 @@ const Users: User[] = [
     preview: require('./showcase/add3.png'),
     website: 'https://www.add3.io/',
     source: 'https://github.com/Add3official',
-    tags: ['apps', 'defi', 'popular'],
+    tags: ['apps', 'defi'],
   }, 
   {
     title: 'EthicHub',
