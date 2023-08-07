@@ -146,6 +146,14 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'Add3',
+    description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
+    preview: require('./showcase/add3.png'),
+    website: 'https://www.add3.io/',
+    source: 'https://github.com/Add3official',
+    tags: ['apps', 'defi'],
+  }, 
+  {
     title: 'EthicHub',
     description: translate({
       message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
@@ -233,7 +241,7 @@ const Users: User[] = [
     description: 'Banknless infrastructure for building circular trade and mutual credit networks.',
     preview: require('./showcase/resource.png'),
     website: 'https://resource.finance/',
-    source: 'https://github.com/ReSource-Network/',
+    source: 'https://github.com/resourcefinance',
     tags: ['apps', 'defi'],
   },
   {

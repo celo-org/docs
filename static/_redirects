@@ -408,7 +408,6 @@
 /celo-codebase/protocol/governance /protocol/governance
 /celo-codebase/protocol/transactions/erc20-transaction-fees /protocol/transaction/erc20-transaction-fees
 /celo-codebase/protocol/transactions/escrow /protocol/transaction/escrow
-/celo-codebase/protocol/transactions/full-node-incentives /protocol/transaction/full-node-incentives
 /celo-codebase/protocol/transactions/gas-pricing /protocol/transaction/gas-pricing
 /celo-codebase/protocol/transactions/index /protocol/transaction/
 /celo-codebase/protocol/transactions/native-currency /protocol/transaction/native-currency
@@ -419,7 +418,6 @@
 /celo-codebase/protocol/stability/index /protocol/stability
 /celo-codebase/protocol/stability/oracles /protocol/stability/oracles
 /celo-codebase/protocol/stability/stability-fees /protocol/stability/stability-fees
-/celo-codebase/protocol/stability/tobin-tax /protocol/stability/tobin-tax
 /celo-codebase/protocol/proof-of-stake/becoming-a-validator /protocol/pos/becoming-a-validator
 /celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund

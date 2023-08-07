@@ -132,11 +132,7 @@ Distribution of an image should occur along the following schedule:
     <td>
       <ol>
         <li>Confirm Baklava users have upgraded without issues</li>
-        <li>If release introduces a hard fork</li>
-        <ol>
-          <li>Ensure at least a quorum of the validator set has upgraded</li>
-          <li>Submit governance proposal to increment minimum client version</li>
-        </ol>
+        <li>If release introduces a hard fork, ensure at least a quorum of the validator set has upgraded</li>
         <li>Communicate T+2w Alfajores upgrade date</li>
         <li>Tag released Docker image with <code>alfajores</code></li>
       </ol>
@@ -147,11 +143,7 @@ Distribution of an image should occur along the following schedule:
     <td>
       <ol>
         <li>Confirm Alfajores users have upgraded without issues</li>
-        <li>If release introduces a hard fork</li>
-        <ol>
-          <li>Ensure at least a quorum of the validator set has upgraded</li>
-          <li>Submit governance proposal to increment minimum client version </li>
-        </ol>
+        <li>If release introduces a hard fork, ensure at least a quorum of the validator set has upgraded</li>
         <li>Communicate T+3w Mainnet upgrade date</li>
         <li>Tag released Docker image with <code>mainnet</code> and <code>latest</code></li>
       </ol>
@@ -162,11 +154,7 @@ Distribution of an image should occur along the following schedule:
     <td>
       <ol>
         <li>Confirm Mainnet users have upgraded without issues</li>
-        <li>If release introduces a hard fork</li>
-        <ol>
-          <li>Ensure at least a quorum of the validator set has upgraded</li>
-          <li>Submit governance proposal to increment minimum client version</li>
-        </ol>
+        <li>If release introduces a hard fork, ensure at least a quorum of the validator set has upgraded</li>
       </ol>
     </td>
   </tr>
@@ -176,9 +164,9 @@ Distribution of an image should occur along the following schedule:
 
 Bugs which affect the security, stability, or core functionality of the network may need to be released outside the standard release cycle. In this case, an emergency patch release should be created on top of all supported minor releases which contains the minimal change and corresponding test for the fix.
 
-If the issue is not exploitable, release notes should describe the issue in detail and the image should be distributed publicly. If network stability is at risk, a Governance proposal may be submitted to increment the minimum client version.
+If the issue is not exploitable, release notes should describe the issue in detail and the image should be distributed publicly.
 
-If the issue is exploitable and mitigations are not readily available, a patch should be prepared privately and signed binaries should be distributed from private commits. Establishing trust is key to pushing out the fix. An audit from a reputable third party may be contracted to verify the release to help earn that trust. A hotfix should be proposed to raise the minimum client version number to the patched release and then patch details made public.
+If the issue is exploitable and mitigations are not readily available, a patch should be prepared privately and signed binaries should be distributed from private commits. Establishing trust is key to pushing out the fix. An audit from a reputable third party may be contracted to verify the release to help earn that trust. Once a majority of validators updated, patch details can be made public.
 
 > Pushing an upgrade with this process will be disruptive to any nodes that do not upgrade quickly. It should _only_ be used when the circumstances require it.
 

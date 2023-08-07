@@ -313,6 +313,11 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Using thirdweb",
+              id: "developer/deploy/thirdweb",
+            },
+            {
+              type: "doc",
               label: "Using Remix",
               id: "developer/deploy/remix",
             },
@@ -336,6 +341,11 @@ const sidebars = {
               type: "doc",
               label: "Overview",
               id: "developer/sdks/celo-sdks",
+            },
+            {
+              type: "doc",
+              label: "thirdweb SDK",
+              id: "developer/thirdweb-sdk/index",
             },
             {
               type: "category",
@@ -797,7 +807,6 @@ const sidebars = {
             "protocol/transaction/gas-pricing",
             "protocol/transaction/escrow",
             "protocol/transaction/tx-comment-encryption",
-            "protocol/transaction/full-node-incentives",
           ],
         },
         {
@@ -814,7 +823,6 @@ const sidebars = {
             "protocol/stability/oracles",
             "protocol/stability/stability-fees",
             "protocol/stability/adding-stable-assets",
-            "protocol/stability/tobin-tax",
           ],
         },
         {
@@ -880,6 +888,11 @@ const sidebars = {
           type: "doc",
           label: "Celo Randomness",
           id: "protocol/randomness",
+        },
+        {
+          type: "doc",
+          label: "Crypto Precompiles",
+          id: "protocol/precompiles",
         },
         {
           type: "doc",
@@ -1085,11 +1098,6 @@ const sidebars = {
           type: "doc",
           label: "Grant Playbook",
           id: "community/grant-playbook",
-        },
-        {
-          type: "link",
-          label: "Ambassadors",
-          href: "https://celocommunity.xyz/join-the-ambassador-program",
         },
         {
           type: "link",

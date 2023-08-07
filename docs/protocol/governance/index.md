@@ -83,4 +83,4 @@ Note that this means the validators may not always know the contents of the prop
 
 ## Celo Blockchain Software Upgrades
 
-Some changes cannot be made through the on-chain governance process (via proposal or hotfix) alone. Examples include changes to the underlying consensus protocol and changes which would result in a hard-fork. When Celo Blockchain software upgrades are required to continue operating correctly on the network, a "Minimum Client Version" parameter is set to indicate the minimum version that it required.
+Some changes cannot be made through the on-chain governance process (via proposal or hotfix) alone. Examples include changes to the underlying consensus protocol and changes which would result in a hard-fork.

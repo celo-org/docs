@@ -15,9 +15,7 @@ How to upgrade to the newest available version of a Celo node.
 
 ## When an upgrade is required
 
-Upgrades to the Celo node software will often be optional improvements, such as improvements to performance, new useful features, and non-critical bug fixes.
-
-Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes. Required upgrades are enforced by setting the via a minimum client version number stored on-chain, which may be updated via [Governance](/protocol/governance) after the client is made available.
+Upgrades to the Celo node software will often be optional improvements, such as improvements to performance, new useful features, and non-critical bug fixes. Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes.
 
 ## Upgrading a non-validating node
 
