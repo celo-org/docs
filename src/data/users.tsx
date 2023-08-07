@@ -325,14 +325,6 @@ const Users: User[] = [
     tags: ['apps', 'defi'],
   },
   {
-    title: 'Porio',
-    description: 'The sustainnable marketplace for digital art and game assets.',
-    preview: require('./showcase/porio.png'),
-    website: 'https://epor.io/',
-    source: 'https://epor.io/',
-    tags: ['apps', 'defi'],
-  },
-  {
     title: 'Aijia',
     description: 'A modern ticketing and marketplace platform focused on FANS and the fan experience.',
     preview: require('./showcase/aijia.png'),
