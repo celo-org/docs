@@ -1047,6 +1047,14 @@ const Users: User[] = [
     tags: ['apps','wallets','defi'],
   },
   {
+    title: 'Quarashi Network',
+    description: 'Non-custodial MultiChain Crypto Assets Manager, Peer-to-Peer Audio/Video Conferencing & Chat, Markets Overview, News & Airdrops',
+    preview: require('./showcase/quarashi.png'),
+    website: 'https://quarashi.network/',
+    source: 'https://github.com/quarashi-network',
+    tags: ['apps','defi','wallets'],
+  },
+  {
     title: 'Kolektivo',
     description: 'A collection of institutional technologies that allow local communities to launch, finance, and govern their own regenerative economies',
     preview: require('./showcase/kolektivo.png'),
