@@ -123,7 +123,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [useMetamask](https://github.com/mdtanrikulu/use-metamask) - a custom React Hook to manage Metamask in Ethereum ĐApp projects
 - [WalletConnect](https://walletconnect.org/) - Open protocol for connecting Wallets to Dapps
 - [Subproviders](https://0x.org/docs/tools/subproviders) - Several useful subproviders to use in conjunction with [Web3-provider-engine](https://github.com/MetaMask/web3-provider-engine) (including a LedgerSubprovider for adding Ledger hardware wallet support to your dApp)
-- [ethvtx](https://github.com/ticket721/ethvtx) - ethereum-ready & framework-agnostic redux store configuration. [docs](https://ticket721.github.io/ethvtx/)
 - Strictly Typed - Javascript alternatives
   - [elm-ethereum](https://github.com/cmditch/elm-ethereum)
   - [purescript-web3](https://github.com/f-o-a-m/purescript-web3)
