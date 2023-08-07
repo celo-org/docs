@@ -295,13 +295,6 @@ EcoBytes is a Regenerative Crypto platform that rewards consumers with crypto fo
 - [GitHub](https://github.com/shoelacewireless/ecobytes-celo-integration)
 - [Website](http://www.3cobytes.com)
 
-## Birden
-
-Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces.
-
-- [Website](https://birden.io/)
-- [GitHub](https://github.com/fffilimonov/birden)
-
 ## Celo Tracker
 
 The Front Page of Celo. Track and manage all your assets from one place. We support all major projects on Celo, allow swapping using the best exchange rate on Celo and also track and show NFTs.

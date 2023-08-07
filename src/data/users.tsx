@@ -413,14 +413,6 @@ const Users: User[] = [
     tags: ['apps', 'wallets', 'popular'],
   },
   {
-    title: 'CeloDance',
-    description: 'Send, Vote And Earn Celo Assets , Make It Mobile.',
-    preview: require('./showcase/celo-dance.png'),
-    website: 'https://celo.dance/',
-    source: 'https://celo.dance/',
-    tags: ['apps', 'wallets'],
-  },
-  {
     title: 'SushiSwap',
     description: 'Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform. Welcome home to DeFi.',
     preview: require('./showcase/sushi-swap.png'),
@@ -435,14 +427,6 @@ const Users: User[] = [
     website: 'https://www.socialstack.co/',
     source: 'https://www.socialstack.co/',
     tags: ['apps', 'defi'],
-  },
-  {
-    title: 'Qavah',
-    description: 'Decentralized and free-of-charge crowdfunding platform.',
-    preview: require('./showcase/qavah.png'),
-    website: 'https://qavah.me',
-    source: 'https://qavah.me',
-    tags: ['apps', 'impact'],
   },
   {
     title: 'Niftydrop',
