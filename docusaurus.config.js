@@ -150,6 +150,10 @@ module.exports = {
           items: [
             { to: "cli/", label: "CLI" },
             {
+              to: "/developer/viem",
+              label: "Viem",
+            },
+            {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "Celo SDK",
             },
@@ -168,14 +172,6 @@ module.exports = {
             {
               to: "https://github.com/heymateag/celoiossdk",
               label: "iOS SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python SDK",
             },
             {
               label: "Celo Composer",

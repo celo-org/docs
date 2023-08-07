@@ -807,7 +807,6 @@ const sidebars = {
             "protocol/transaction/gas-pricing",
             "protocol/transaction/escrow",
             "protocol/transaction/tx-comment-encryption",
-            "protocol/transaction/full-node-incentives",
           ],
         },
         {
@@ -889,6 +888,11 @@ const sidebars = {
           type: "doc",
           label: "Celo Randomness",
           id: "protocol/randomness",
+        },
+        {
+          type: "doc",
+          label: "Crypto Precompiles",
+          id: "protocol/precompiles",
         },
         {
           type: "doc",
@@ -1094,11 +1098,6 @@ const sidebars = {
           type: "doc",
           label: "Grant Playbook",
           id: "community/grant-playbook",
-        },
-        {
-          type: "link",
-          label: "Ambassadors",
-          href: "https://celocommunity.xyz/join-the-ambassador-program",
         },
         {
           type: "link",

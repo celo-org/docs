@@ -146,6 +146,14 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'Add3',
+    description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
+    preview: require('./showcase/add3.png'),
+    website: 'https://www.add3.io/',
+    source: 'https://github.com/Add3official',
+    tags: ['apps', 'defi'],
+  }, 
+  {
     title: 'EthicHub',
     description: translate({
       message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
@@ -1037,6 +1045,14 @@ const Users: User[] = [
     website: 'https://defiantapp.tech/',
     source: 'https://github.com/AndinaDeFi/',
     tags: ['apps','wallets','defi'],
+  },
+  {
+    title: 'Quarashi Network',
+    description: 'Non-custodial MultiChain Crypto Assets Manager, Peer-to-Peer Audio/Video Conferencing & Chat, Markets Overview, News & Airdrops',
+    preview: require('./showcase/quarashi.png'),
+    website: 'https://quarashi.network/',
+    source: 'https://github.com/quarashi-network',
+    tags: ['apps','defi','wallets'],
   },
   {
     title: 'Kolektivo',

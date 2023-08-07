@@ -408,7 +408,6 @@
 /celo-codebase/protocol/governance /protocol/governance
 /celo-codebase/protocol/transactions/erc20-transaction-fees /protocol/transaction/erc20-transaction-fees
 /celo-codebase/protocol/transactions/escrow /protocol/transaction/escrow
-/celo-codebase/protocol/transactions/full-node-incentives /protocol/transaction/full-node-incentives
 /celo-codebase/protocol/transactions/gas-pricing /protocol/transaction/gas-pricing
 /celo-codebase/protocol/transactions/index /protocol/transaction/
 /celo-codebase/protocol/transactions/native-currency /protocol/transaction/native-currency

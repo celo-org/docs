@@ -75,15 +75,9 @@ Mainnet = 'https://explorer.celo.org/'
 
 ## Signing Transactions
 
-Compared to Ethereum transaction, Celo transactions have 3 additional, optional fields:
+Compared to Ethereum transactions, Celo transactions have an additional optional field:
 
 - `feeCurrency` - Specifies the address of the currency in which fees should be paid. If `null`, the native token `CELO` is assumed.
-
-<!-- TODO: Fix this link when this part of the docs is done
-- `gatewayFeeRecipient` - As part of [Full Node Incentives](/protocol/transaction/full-node-incentives.md), light clients will need to specify the address of their gateway for it to forward the transactions onto the network.
--->
-
-- `gatewayFee` - The value of the gateway fee.
 
 <!-- TODO: Fix this link when this part of the docs is done
 [Read more about Celo Transactions](/celo-codebase/protocol/transactions)
