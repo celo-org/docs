@@ -71,7 +71,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>, or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,

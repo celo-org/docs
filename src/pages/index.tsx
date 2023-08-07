@@ -461,23 +461,6 @@ export default function HomePage(): JSX.Element {
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold pb-7">
-                  <Translate id="home.section5.box1">
-                    Create, Earn, and Grow as a Celo Sage Content Creator
-                  </Translate>
-                </span>
-                {buildKnowMoreButton("/community/celo-sage")}
-              </div>
-              {/* <div className="w-8/12">
-                <img
-                  className="rounded-md"
-                  src="/img/homepage/celo-sage.webp"
-                />
-              </div> */}
-            </div>
-
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
-              <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold pb-7">
                   <Translate id="home.section5.box2">
                     Receive Funding to Build Your Blockchain Projects
                   </Translate>

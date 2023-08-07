@@ -1044,42 +1044,6 @@ const sidebars = {
           id: "community/guidelines",
         },
         {
-          type: "category",
-          label: "Celo Sage",
-          items: [
-            {
-              type: "doc",
-              label: "Celo Sage Program",
-              id: "community/celo-sage/celo-sage",
-            },
-            {
-              type: "doc",
-              label: "Submit an Application",
-              id: "community/celo-sage/submit-application",
-            },
-            {
-              type: "doc",
-              label: "Complete your Tutorial",
-              id: "community/celo-sage/complete-your-tutorial",
-            },
-            {
-              type: "doc",
-              label: "Contribution Guidelines",
-              id: "community/celo-sage/contribution-guidelines",
-            },
-            {
-              type: "doc",
-              label: "Tutorial Structure",
-              id: "community/celo-sage/tutorial-structure",
-            },
-            {
-              type: "doc",
-              label: "FAQs",
-              id: "community/celo-sage/faq",
-            },
-          ],
-        },
-        {
           type: "doc",
           label: "StackShift",
           id: "community/StackShift/StackShift",
