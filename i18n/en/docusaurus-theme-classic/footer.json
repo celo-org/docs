@@ -57,7 +57,7 @@
   },
   "link.item.label.Careers": {
     "message": "Careers",
-    "description": "The label of footer link with label=Careers linking to https://celo.org/jobs"
+    "description": "The label of footer link with label=Careers linking to https://celo.org/careers"
   },
   "copyright": {
     "message": "Copyright © 2022 Celo Foundation, Inc. Built with Docusaurus.",
