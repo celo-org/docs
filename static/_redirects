@@ -1,3 +1,351 @@
+/blog/tutorials/solidity-event-logging-and-monitoring-on-celo-best-Practices https://celo.academy/t/solidity-event-logging-and-monitoring-on-celo-best-practices/269 301
+/blog/tutorials/Understanding-the-Role-of-Proposals-and-Referendums-in-Celo-Governance https://celo.academy/t/understanding-the-role-of-proposals-and-referendums-in-celo-governance/167 301
+/blog/tutorials/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave https://celo.academy/t/how-to-build-and-deploy-flashloan-contracts-on-celo-with-aave/25 301
+/blog/tutorials/how-to-create-interactive-nfts-on-celo https://celo.academy/t/how-to-create-interactive-nfts-on-celo/57 301
+/blog/tutorials/solidity-vulnerabilities-signature-replay-attack https://celo.academy/t/solidity-vulnerabilities-signature-replay-attack/181 301
+/blog/tutorials/how-to-build-a-multi-signature-wallet-contract-that-requires-multiple-approvals-for-transactions-on-celo https://celo.academy/t/how-to-build-a-multi-signature-wallet-contract-that-requires-multiple-approvals-for-transactions-on-celo/226 301
+/blog/tutorials/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment https://celo.academy/t/how-to-automate-your-smart-contract-verification-programmatically-on-celoscan-using-hardhat-on-every-deployment/229 301
+/blog/tutorials/introduction-to-erc-20r-and-reversible-transactions https://celo.academy/t/introduction-to-erc-20r-and-reversible-transactions/178 301
+/blog/tutorials/building-a-decentralized-investment-platform https://celo.academy/t/building-a-decentralized-investment-platform-on-the-celo-blockchain/173 301
+/blog/tutorials/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale https://celo.academy/t/using-clones-to-build-and-cheaply-deploy-contracts-on-celo-at-scale/153 301
+/blog/tutorials/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript https://celo.academy/t/how-to-build-a-seed-marketplace-dapp-using-celo-solidity-and-javascript/166 301
+/blog/tutorials/proof-of-work-vs-proof-of-stake-a-comprehensive-comparison https://celo.academy/t/proof-of-work-vs-proof-of-stake-a-comprehensive-comparison/108 301
+/blog/tutorials/integrating-rainbow-kit-celo-into-your-dapps https://celo.academy/t/integrating-rainbow-kit-celo-into-your-dapps/204 301
+/blog/tutorials/how-to-build-car-marketplace-dapp-with-react https://celo.academy/t/how-to-build-car-marketplace-dapp-using-react/93 301
+/blog/tutorials/build-a-decentralized-parking-ticket-payments-dapp-on-celo https://celo.academy/t/build-a-decentralized-parking-ticket-payments-dapp-on-celo/117 301
+/blog/tutorials/build-a-secure-and-decentralized-product-delivery-dapp-with-escrow-smart-contracts https://celo.academy/t/build-a-secure-and-decentralized-product-delivery-dapp-on-the-celo-blockchain-with-escrow-smart-contract/24 301
+/blog/tutorials/solidity-marketplace-contract-for-furniture-transactions-on-celo-blockchain https://celo.academy/t/solidity-marketplace-contract-for-furniture-transactions-on-celo-blockchain/317 301
+/blog/tutorials/exploring-the-robust-structure-of-celo-protocol-design https://celo.academy/t/exploring-the-robust-structure-of-celos-protocol-design/165 301
+/blog/tutorials/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide https://celo.academy/t/building-a-solidity-smart-contract-for-nft-royalty-fees-a-step-by-step-guide/262 301
+/blog/tutorials/regenerative-finance-and-celo-the-process-and-partnership https://celo.academy/t/regenerative-finance-what-it-is-and-why-it-matters/39 301
+/blog/tutorials/understanding-utility-and-security-tokens https://celo.academy/t/understanding-utility-and-security-tokens/126 301
+/blog/tutorials/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain https://celo.academy/t/build-a-dapp-for-buying-and-selling-unique-gadgets-on-celo-blockchain/215 301
+/blog/tutorials/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react https://celo.academy/t/building-dynamic-and-scalable-user-interfaces-for-celo-erc721-smart-contracts-using-react-a-comprehensive-introduction/453 301
+/blog/tutorials/how-to-connect-to-a-node-on-celo-using-docker https://celo.academy/t/how-to-connect-to-a-node-on-celo-using-docker/146 301
+/blog/tutorials/buy-me-a-coffee-android-app-using-the-celo-java-sdk https://celo.academy/t/buy-me-a-coffee-android-app-using-the-celo-java-sdk/69 301
+/blog/tutorials/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer https://celo.academy/t/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer/136 301
+/blog/tutorials/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain https://celo.academy/t/build-an-nft-full-stack-monster-war-game-on-the-celo-blockchain/148 301
+/blog/tutorials/celo-smart-contract-security-for-interoperable-protocols https://celo.academy/t/celo-smart-contract-security-for-interoperable-protocols/303 301
+/blog/tutorials/how-uniswap-works https://celo.academy/t/how-uniswap-works/37 301
+/blog/tutorials/creating-an-erc4626-token-contract-on-celo https://celo.academy/t/creating-an-erc4626-token-contract-on-celo/158 301
+/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80 301
+/blog/tutorials/build-an-nft-gated-dapp-and-deploy-on-decentralized-hosting-service https://celo.academy/t/build-an-nft-gated-dapp-and-deploy-on-a-decentralized-hosting-service/128 301
+/blog/tutorials/building-a-restaurant-coupon-nft-system https://celo.academy/t/building-a-restaurant-coupon-nft-system-on-celo/224 301
+/blog/tutorials/how-to-store-nft-smart-contract-assets-using-the-fileBase-decentralized-storage-system https://celo.academy/t/how-to-store-nft-smart-contract-assets-using-the-filebase-decentralized-storage-system/292 301
+/blog/tutorials/build-a-cross-chain-token-bridge-between-Celo-and-BSC-from-the-scratch https://celo.academy/t/build-a-cross-chain-token-bridge-between-celo-and-bsc-from-scratch/264 301
+/blog/tutorials/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit https://celo.academy/t/how-to-build-a-celo-price-tracker-browser-extension-using-vite-and-celo-contractkit/228 301
+/blog/tutorials/Build-a-Full-Stack-Decentralized-Payroll-Dapp-on-Celo-Using-Celo-Composer https://celo.academy/t/build-a-full-stack-decentralized-payroll-dapp-on-celo-using-celo-composer/32 301
+/blog/tutorials/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-Celo-blockchain https://celo.academy/t/a-detailed-guide-on-how-to-create-a-decentralized-marketplace-for-magazines-on-the-celo-blockchain/172 301
+/blog/tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat https://celo.academy/t/navigating-through-celo-docs-in-a-helpful-manner-for-a-newbie-developer/136 301
+/blog/tutorials/comprehensive-guide-to-building-a-token-bridge-on-celo https://celo.academy/t/comprehensive-guide-to-building-a-token-bridge-on-celo/66 301
+/blog/tutorials/Aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-IDE-Remix https://celo.academy/t/aprenda-solidity-e-como-criar-os-primeiros-smart-contract-usando-a-ide-remix/102 301
+/blog/tutorials/deploying-a-proposal-for-daos-on-celo https://celo.academy/t/deploying-a-proposal-for-daos-on-celo/189 301
+/blog/tutorials/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading https://celo.academy/t/exploring-celo-in-the-gaming-industry-for-in-game-assets-and-p2p-trading/163 301
+/blog/tutorials/how-to-deploy-a-celo-composer-application-on-spheron-protocol https://celo.academy/t/how-to-deploy-a-celo-composer-application-on-spheron-protocol-decentralized-cloud-storage/223 301
+/blog/tutorials/advance-hardhat-configuration-on-celo-using-plugins https://celo.academy/t/advance-hardhat-configration-on-celo-using-plugins/59 301
+/blog/tutorials/interacting-with-smart-contract-on-celo-using-web3py https://celo.academy/t/interacting-with-smart-contract-on-celo-using-web3py/956 301
+/blog/tutorials/understanding-role-based-access-control-in-smart-contracts https://celo.academy/t/understanding-role-based-access-control-in-smart-contracts/147 301
+/blog/tutorials/song-marketplace-contract-with-ERC-20-token-integration https://celo.academy/t/song-marketplace-contract-with-erc-20-token-integration/227 301
+/blog/tutorials/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain https://celo.academy/t/deploy-and-interact-with-smart-contracts-on-the-celo-blockchain/145 301
+/blog/tutorials/building-a-decentralized-exchange-on-celo-with-golang https://celo.academy/t/building-a-decentralized-exchange-on-celo-with-golang/201 301
+/blog/tutorials/product-discovery-a-chave-para-criar-produtos-de-NFT-de-sucesso-no-blockchain-Celo https://celo.academy/t/product-discovery-e-a-chave-para-criar-produtos-de-nft-de-sucesso-no-blockchain-celo/118 301
+/blog/tutorials/build-celo-dapp-without-js-framework https://celo.academy/t/build-celo-dapp-without-javascript-framework/273 301
+/blog/tutorials/interact-with-celo-blockchain-using-web3dart https://celo.academy/t/interact-with-celo-blockchain-using-web3dart/183 301
+/blog/tutorials/create-a-crowdfunding-smart-contract-on-celo-using-hardhat https://celo.academy/t/create-a-crowdfunding-smart-contract-on-celo-using-hardhat/87 301
+/blog/tutorials/what-are-pfp-nfts-and-how-to-create-them https://celo.academy/t/what-are-pfp-nfts-how-to-create-them/171 301
+/blog/tutorials/how-to-create-an-upgradeable-smart-contract-in-celo https://celo.academy/t/celo-contract-governance-and-secure-upgradeability/380 301
+/blog/tutorials/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs https://celo.academy/t/build-an-airdrop-distribution-system-for-millions-of-users-with-verification-of-merkle-tree-proofs/73 301
+/blog/tutorials/pros-and-cons-of-using-celo-to-create-decentralized-applications https://celo.academy/t/pros-and-cons-of-using-celo-to-create-decentralized-applications/68 301
+/blog/tutorials/integrating-python-with-celo-mobile-wallet https://celo.academy/t/integrating-python-with-celo-mobile-wallet/941 301
+/blog/tutorials/build-an-on-chain-puzzle-game-on-celo https://celo.academy/t/build-an-on-chain-puzzle-game-on-celo/61 301
+/blog/tutorials/unlocking-the-power-of-blockchain-nfts-and-cryptography https://celo.academy/t/unlocking-the-power-of-blockchain-nfts-and-cryptography/54 301
+/blog/tutorials/celo-composer-customize-your-full-stack-mobile-dapps-on-celo https://celo.academy/t/celo-composer-extend-and-customize-your-full-stack-mobile-dapps/79 301
+/blog/tutorials/analyzing-smart-contracts-security-on-celo-using-slither https://celo.academy/t/analyzing-smart-contracts-security-on-celo-using-slither/948 301
+/blog/tutorials/como-melhorar-a-seguranca-de-seu-smart-contract https://celo.academy/t/como-melhorar-a-seguranca-de-seu-smart-contract/116 301
+/blog/tutorials/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures https://celo.academy/t/cryptography-in-blockchain-an-overview-of-hash-functions-and-digital-signatures/107 301
+/blog/tutorials/cUsd-based-event-ticketing-and-management-system https://celo.academy/t/cusd-based-event-ticketing-and-management-system/217 301
+/blog/tutorials/how-to-use-witnet-oracle-to-display-cryptocurrency-prices https://celo.academy/t/how-to-use-witnet-oracle-network-to-display-cryptocurrency-prices/244 301
+/blog/tutorials/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contract https://celo.academy/t/building-decentralized-applications-on-the-celo-platform-using-the-celo-sdk-and-celo-smart-contracts/231 301
+/blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle https://celo.academy/t/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle/81 301
+/blog/tutorials/how-to-tokenize-a-physical-asset-on-celo https://celo.academy/t/how-to-tokenize-physical-assets-on-celo/90 301
+/blog/tutorials/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo https://celo.academy/t/blockchain-basics-an-introduction-to-web3-terms-and-concepts-with-celo/110 301
+/blog/tutorials/floralNft-smart-contract-for-buying-and-gifting-flowers-as-nfts https://celo.academy/t/floralnft-smart-contract-for-buying-and-gifting-flowers-as-nfts/184 301
+/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2 https://celo.academy/t/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-1-2/182 301
+/blog/tutorials/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-NFT https://celo.academy/t/como-usar-a-metodologia-de-gestao-de-produtos-para-criar-solucoes-com-nft/105 301
+/blog/tutorials/using-python-to-interact-with-celos-governance-system https://celo.academy/t/using-python-to-interact-with-celos-governance-system/254 301
+/blog/tutorials/celo-valora-and-walletconnect-v1 https://celo.academy/t/overview-of-developer-tools-in-the-celo-ecosystem/58 301
+/blog/tutorials/How-to-Build-a-Full-Stack-Voting-Dapp-on-Celo https://celo.academy/t/how-to-build-a-full-stack-voting-dapp-on-celo/194 301
+/blog/tutorials/deploying-celo-applications-using-golang https://celo.academy/t/deploying-celo-applications-using-golang/200 301
+/blog/tutorials/prepare-for-auditing-your-smart-contract https://celo.academy/t/prepare-for-auditing-your-smart-contract/191 301
+/blog/tutorials/developing-a-decentralized-identity-solution-on-celo https://celo.academy/t/developing-a-decentralized-identity-solution-on-celo/248 301
+/blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit https://celo.academy/t/celo-cli-a-practical-guide-to-energize-your-celo-toolkit/83 301
+/blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1 https://celo.academy/t/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-1/232 301
+/blog/tutorials/how-to-build-a-basic-crud-app-in-solidity https://celo.academy/t/how-to-build-a-basic-crud-app-in-solidity/70 301
+/blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix https://celo.academy/t/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix/82 301
+/blog/tutorials/build-a-tic-tac-toe-game-with-flutter-using-celo-composer https://celo.academy/t/build-a-tic-tac-toe-game-with-flutter-using-celo-composer/115 301
+/blog/tutorials/introducing-celo-sage https://celo.academy/t/celo-sage-program/533 301
+/blog/tutorials/como-otimizar-os-custos-de-gas-em-seu-smart-contract https://celo.academy/t/como-otimizar-os-custos-de-gas-em-seu-smart-contract/22 301
+/blog/tutorials/understanding-reentrancy-attacks-and-how-to-protect-your-smart-contract-using-open-zeppelin https://celo.academy/t/understanding-reentrancy-attacks-and-how-to-protect-your-smart-contract-using-openzeppelin/23 301
+/blog/tutorials/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo https://celo.academy/t/como-criar-um-jogo-de-roleta-russa-na-blockchain-celo/91 301
+/blog/tutorials/create-an-escrow-nft-platform-on-celo-with-python https://celo.academy/t/create-an-escrow-nft-platform-on-celo-with-python/94 301
+/blog/tutorials/upgrading-a-smart-contract-on-celo https://celo.academy/t/upgrading-a-smart-contract-on-celo/245 301
+/blog/tutorials/preventing-vulnerabilities-in-solidity-ownership-attack https://celo.academy/t/preventing-vulnerabilities-in-solidity-ownership-attack/125 301
+/blog/tutorials/building-a-simple-defi-application-on-the-celo-blockchain-using-python https://celo.academy/t/building-a-simple-defi-application-on-the-celo-blockchain-using-python/252 301
+/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1 https://celo.academy/t/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-1/260 301
+/blog/tutorials/why-should-you-use-celo https://celo.academy/t/how-to-build-a-decentralized-event-invitation-system-on-the-celo-blockchain-using-solidity-and-javascript/296 301
+/blog/tutorials/how-to-build-a-computer-retail-store-using-celo-composer https://celo.academy/t/how-to-build-a-computer-retail-store-using-celo-composer/299 301
+/blog/tutorials/connect-and-interact-with-celo-using-web3modal https://celo.academy/t/connect-and-interact-with-celo-using-web3modal/123 301
+/blog/tutorials/All-you-need-to-know-about-Celo-to-Ease-your-Web3-Development-Journey https://celo.academy/t/all-you-need-to-know-about-celo-to-ease-your-web3-development-journey/45 301
+/blog/tutorials/building-celo-dapp-with-celocli-without-javascript-framework https://celo.academy/t/building-celo-dapp-with-celocli-without-javascript-framework/14 301
+/blog/tutorials/car-booking-web-app-with-celo-as-payment-method-part-1 https://celo.academy/t/the-future-of-regenerative-finance-and-its-potential-impact/111 301
+/blog/tutorials/leveraging-the-power-of-smart-contracts-to-enhance-voting-security https://celo.academy/t/leveraging-the-power-of-smart-contracts-to-enhance-voting-security/162 301
+/blog/tutorials/how-to-mint-your-erc1155-nft-on-celo-with-remix https://celo.academy/t/creating-deploying-minting-your-erc1155-token-on-celo/75 301
+/blog/tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1 https://celo.academy/t/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-1/935 301
+/blog/tutorials/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo https://celo.academy/t/dynamic-nft-creation-using-svg-to-build-in-smart-contract-on-celo/101 301
+/blog/tutorials/Decentralized-land-auction-smart-contract https://celo.academy/t/decentralized-land-auction-smart-contract/221 301
+/blog/tutorials/a-guide-to-building-decentralized-loan-dapp https://celo.academy/t/a-guide-to-building-decentralized-loan-dapp-on-the-celo-blockchain/175 301
+/blog/tutorials/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi https://celo.academy/t/the-future-of-nft-creation-unleashing-the-power-of-batch-minting-with-erc721psi/235 301
+/blog/tutorials/deploying-celo-dapp-to-celo-network-with-web3py https://celo.academy/t/deploying-celo-dapp-to-celo-network-with-web3-py/951 301
+/blog/tutorials/automate-react-native-celo-dapp-deployment-with-github-actions https://celo.academy/t/automate-react-native-celo-dapp-deployment-with-github-actions/241 301
+/blog/tutorials/getting-started-on-celo-with-hardhat https://celo.academy/t/getting-started-on-celo-with-hardhat/46 301
+/blog/tutorials/integrating-celo-into-the-process-of-fintech-web-app-development https://celo.academy/t/integrating-celo-into-the-process-of-web-app-development/33 301
+/blog/tutorials/art-trading-with-smart-contracts-on-the-celo-blockchain https://celo.academy/t/art-trading-with-smart-contracts-on-the-celo-blockchain/259 301
+/blog/tutorials/building-a-celo-wallet-using-golang https://celo.academy/t/building-a-celo-wallet-using-golang/199 301
+/blog/tutorials/building-a-crowdfunding-platform-on-celo-with-python https://celo.academy/t/building-a-crowdfunding-platform-on-celo-with-python/203 301
+/blog/tutorials/interact-with-smart-contract-on-celo-using-web3js https://celo.academy/t/interact-with-smart-contract-on-celo-using-web3js/256 301
+/blog/tutorials/using-witnetio-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo https://celo.academy/t/using-witnet-io-oracle-to-connect-smart-contracts-to-off-chain-data-with-celo/130 301
+/blog/tutorials/a-technical-overview-of-celo-light-client-protocol https://celo.academy/t/a-technical-overview-of-celo-light-client-protocol/185 301
+/blog/tutorials/A-Solidity-Smart-Contract-For-Auctioning-Flowers-On-The-Celo-Blockchain https://celo.academy/t/a-solidity-smart-contract-for-auctioning-flowers-on-the-celo-blockchain/236 301
+/blog/tutorials/design-patterns-in-solidity-on-celo.-factory,-singleton-and-proxy-patterns https://celo.academy/t/design-patterns-in-solidity-on-celo-factory-singleton-and-proxy-patterns/268 301
+/blog/tutorials/billeteras-como-crearlas-y-como-fondearlas https://celo.academy/t/billeteras-como-crearlas-y-como-fondearlas/96 301
+/blog/tutorials/effective-smart-contract-testing-with-chai https://celo.academy/t/effective-smart-contract-testing-using-chai/298 301
+/blog/tutorials/build-an-educational-credential-verification-system-on-the-celo-blockchain https://celo.academy/t/build-an-educational-credential-verification-system-on-the-celo-blockchain/272 301
+/blog/tutorials/how-to-create-a-token-staking-dapp https://celo.academy/t/how-to-create-a-token-staking-dapp/887 301
+/blog/tutorials/get-started-with-celo-using-rust https://celo.academy/t/get-started-with-celo-using-rust/219 301
+/blog/tutorials/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp https://celo.academy/t/how-to-assemble-a-web3-dream-team-and-build-a-high-value-dapp/141 301
+/blog/tutorials/building-decentralized-tipping-system-on-celo https://celo.academy/t/building-a-decentralized-tipping-system-on-celo/294 301
+/blog/tutorials/why-you-should-build-your-next-project-on-the-celo-blockchain https://celo.academy/t/why-you-should-build-your-next-project-on-the-celo-blockchain/139 301
+/blog/tutorials/how-to-swap-celo-tokens-on-uniswap-programmatically https://celo.academy/t/how-to-swap-celo-tokens-on-uniswap-programmatically-with-code/230 301
+/blog/tutorials/how-to-fractionalize-nft-on-celo-platform https://celo.academy/t/how-to-fractionalize-an-nft-on-the-celo-platform/48 301
+/blog/tutorials/easily-deploy-your-celo-dapp-to-cloudflare-pages https://celo.academy/t/easily-deploy-your-celo-dapp-to-cloudflare-pages/250 301
+/blog/tutorials/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo https://celo.academy/t/writing-a-smart-contract-to-handle-decentralized-waste-management-on-celo/957 301
+/blog/tutorials/interact-with-smart-contract-on-celo-using-ethersjs https://celo.academy/t/interact-with-smart-contract-on-celo-using-ethersjs/257 301
+/blog/tutorials/how-to-redeploy-your-ethereum-dApp-to-celo-with-hardhat https://celo.academy/t/redeploying-dapp-to-celo/283 301
+/blog/tutorials/how-to-create-a-dao-on-celo https://celo.academy/t/how-to-create-your-own-dao-on-celo-video/348 301
+/blog/tutorials/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2 https://celo.academy/t/build-a-decentralized-real-estate-marketplace-on-the-celo-blockchain-part-2/374 301
+/blog/tutorials/creating-a-staking-contract-on-celo-with-python https://celo.academy/t/creating-a-staking-contract-on-celo-with-python/287 301
+/blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo https://celo.academy/t/celo-composer-extend-and-customize-your-full-stack-mobile-dapps/79 301
+/blog/tutorials/building-a-decentralized-book-library https://celo.academy/t/building-a-decentralized-book-library/938 301
+/blog/tutorials/how-to-create-and-test-contract-calls-on-hardhat https://celo.academy/t/how-to-create-and-test-contract-calls-with-celo-and-hardhat/42 301
+/blog/tutorials/create-a-lottery-dapp-using-celo-composer-and-redstone-randomness https://celo.academy/t/create-a-lottery-dapp-using-celo-composer-and-redstones-randomness/300 301
+/blog/tutorials/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide https://celo.academy/t/optimizing-gas-consumption-in-celo-smart-contracts-a-step-by-step-guide/151 301
+/blog/tutorials/smart-contract-development-on-celo-for-python-developers https://celo.academy/t/smart-contract-development-on-celo-for-python-developers/170 301
+/blog/tutorials/understanding-the-decentralized-storage-system https://celo.academy/t/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo/21/2 301
+/blog/tutorials/create-an-nft-with-a-delayed-reveal-on-celo https://celo.academy/t/create-an-nft-with-a-delayed-reveal-on-celo/293 301
+/blog/tutorials/17-smart-contracts-powering-the-celo-protocol https://celo.academy/t/17-smart-contracts-powering-the-celo-protocol/85 301
+/blog/tutorials/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat https://celo.academy/t/how-to-deploy-a-smart-contract-to-the-celo-testnet-using-hardhat/301 301
+/blog/tutorials/build-a-generic-staking-dapp-using-foundry-and-nextjs https://celo.academy/t/build-a-generic-staking-dapp-using-foundry-and-nextjs/88 301
+/blog/tutorials/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-uiux https://celo.academy/t/designing-a-user-friendly-celo-dapp-a-beginners-guide-to-ui-ux/278 301
+/blog/tutorials/build-an-nft-marketplace-for-tech-artisans-on-celo https://celo.academy/t/build-an-nft-marketplace-for-tech-artisans-on-celo/95 301
+/blog/tutorials/how-to-listen-to-smart-contract-on-chain-event-with-celo https://celo.academy/t/how-to-listen-to-smart-contract-on-chain-events-with-celo/74 301
+/blog/tutorials/building-a-celo-voting-system-with-golang https://celo.academy/t/building-a-celo-voting-system-with-golang/202 301
+/blog/tutorials/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain https://celo.academy/t/build-and-deploy-a-multi-token-wallet-on-the-celo-blockchain/187 301
+/blog/tutorials/crypto-wallets-the-celo-way https://celo.academy/t/crypto-wallets-the-celo-way/112 301
+/blog/tutorials/build-a-feature-rich-persistent-dapp-on-celo-using-wagmi https://celo.academy/t/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo/21/2 301
+/blog/tutorials/build-a-fullstack-user-authentication-dapp-with-react-and-celo https://celo.academy/t/build-a-fullstack-user-authentication-dapp-with-react-and-celo/258 301
+/blog/tutorials/a-practical-comparison-between-erc-1155-and-erc-721 https://celo.academy/t/a-practical-comparison-between-erc-1155-and-erc-721/62 301
+/blog/tutorials/how-to-build-a-fullstack-dapp-for-selling-football-tickets-on-celo https://celo.academy/t/how-to-build-a-full-stack-dapp-for-selling-football-tickets-on-celo/196 301
+/blog/tutorials/creating-a-decentralized-insurance-service-on-celo-with-python https://celo.academy/t/creating-a-decentralized-insurance-service-on-celo-with-python/950 301
+/blog/tutorials/implementing-an-english-auction-contract-in-solidity https://celo.academy/t/implementing-an-english-auction-contract-in-solidity/179 301
+/blog/tutorials/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide https://celo.academy/t/deploying-smart-contracts-on-celo-using-foundry-a-step-by-step-guide/266 301
+/blog/tutorials/how-to-write-unit-testing-for-smart-contract-with-truffle https://celo.academy/t/unit-testing-with-truffle-and-celo/40 301
+/blog/tutorials/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo https://celo.academy/t/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo/21 301
+/blog/tutorials/a-guide-to-exploring-celo-specific-python-library-called-web3py https://celo.academy/t/a-guide-to-exploring-celo-specific-python-library-called-web3-py/271 301
+/blog/tutorials/solidity-vulnerabilities-delegated-call https://celo.academy/t/preventing-vulnerabilities-in-solidity-delegate-call/38 301
+/blog/tutorials/an-introduction-to-layer-1-and-layer-2-blockchain-protocols https://celo.academy/t/an-introduction-to-layer-1-and-layer-2-blockchain-protocols/43 301
+/blog/tutorials/building-a-full-stack-celo-dapp-with-nextjs-and-web3js https://celo.academy/t/building-a-full-stack-celo-dapp-with-nextjs-and-web3js/290 301
+/blog/tutorials/plumo-an-ultralight-blockchain-client-on-celo https://celo.academy/t/plumo-an-ultralight-blockchain-client-on-celo/78 301
+/blog/tutorials/how-to-create-deploy-and-mint-your-erc1155-token-on-celo-with-hardhat https://celo.academy/t/creating-deploying-minting-your-erc1155-token-on-celo/75 301
+/blog/tutorials/how-to-download-and-test-the-Celo-extension-wallet-on-your-browser https://celo.academy/t/how-to-download-and-test-the-celo-extension-wallet-on-your-browser/50 301
+/blog/tutorials/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain https://celo.academy/t/how-to-build-a-full-stack-social-media-dapp-on-the-celo-blockchain/132 301
+/blog/tutorials/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts https://celo.academy/t/implementing-multi-factor-authentication-on-celos-blockchain-using-smart-contracts/15 301
+/blog/tutorials/build-an-nft-marketplace-on-celo-using-hardhat https://celo.academy/t/build-an-nft-marketplace-on-celo-using-hardhat/265 301
+/blog/tutorials/creating-a-charity-donation-dApp-using-celo-composer-and-react-and-rainbowKit-celo https://celo.academy/t/creating-a-charity-donation-dapp-using-celo-composer-react-and-rainbowkit-celo/237 301
+/blog/tutorials/how-to-create-a-decentralized-application-using-react-celo https://celo.academy/t/how-to-create-a-decentralized-application-using-react-celo/155 301
+/blog/tutorials/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo-blockchain https://celo.academy/t/how-to-create-and-deploy-a-peer-to-peer-lending-and-borrowing-smart-contract-on-the-celo/209 301
+/blog/tutorials/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer https://celo.academy/t/how-to-add-support-for-stablecoin-gas-fees-using-celo-composer/113 301
+/blog/tutorials/celo-integration-with-web3 https://celo.academy/t/celo-integration-with-web3/177 301
+/blog/tutorials/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo https://celo.academy/t/leveraging-blockchain-and-iot-for-refi-and-climate-actions-through-celo/134 301
+/blog/tutorials/build-a-frontend-dapp-for-celo-network-in-angular https://celo.academy/t/build-a-frontend-dapp-for-celo-network-in-angular/36 301
+/blog/tutorials/como-criar-uma-carteira-para-a-blockchain-celo https://celo.academy/t/como-criar-uma-carteira-para-a-blockchain-celo/67 301
+/blog/tutorials/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python https://celo.academy/t/using-web3-py-to-interact-with-a-deployed-smart-contract-in-python/276 301
+/blog/tutorials/a-deep-dive-into-celo-consensus-mechanism https://celo.academy/t/a-deep-dive-into-celo-consensus-mechanism/169 301
+/blog/tutorials/build-and-deploy-a-multi-signature-wallet-on-celo https://celo.academy/t/build-and-deploy-a-secure-multi-signature-wallet-on-the-celo-blockchain/949 301
+/blog/tutorials/celo-impact-on-underbanked-and-unbanked-communities https://celo.academy/t/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential/238 301
+/blog/tutorials/overview-of-nfts-on-the-celo-platform https://celo.academy/t/overview-of-nfts-on-the-celo-platform/131 301
+/blog/tutorials/create-your-first-smart-contract-on-celo https://celo.academy/t/how-to-create-your-first-smart-contract-on-the-celo-blockchain/49 301
+/blog/tutorials/path-to-build-full-stack-dapp-on-celo-with-c++-webassembly-and-reactjs https://celo.academy/t/path-to-build-full-stack-dapp-on-celo-with-c-webassembly-and-reactjs-part-2/981 301
+/blog/tutorials/getting-started-with-daos-on-celo https://celo.academy/t/build-celo-dapp-without-javascript-framework/273 301
+/blog/tutorials/building-a-decentralized-betting-platform-with-solidity-on-celo https://celo.academy/t/building-a-decentralized-betting-platform-with-solidity-on-celo/270 301
+/blog/tutorials/build-your-own-full-stack-nft-ai-art-minter-on-the-celo-blockchain https://celo.academy/t/build-your-own-full-stack-nft-ai-art-minter-on-the-celo-blockchain/144 301
+/blog/tutorials/flutter-celo-easily-build-flutter-mobile-dApps https://celo.academy/t/automate-flutter-celo-dapp-deployment-with-github-actions/243 301
+/blog/tutorials/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met https://celo.academy/t/escrow-service-on-celo-that-holds-funds-until-certain-conditions-are-met/190 301
+/blog/tutorials/introduction-to-token-economics-on-celo https://celo.academy/t/introduction-to-token-economics-on-celo/133 301
+/blog/tutorials/how-to-create-celo-testnet-and-mainnet-rpc-using-lava https://celo.academy/t/how-to-create-a-celo-testnet-rpc-using-lava-protocol/28 301
+/blog/tutorials/a-guide-to-building-and-deploying-upgradeable-contracts-on-CELO-with-Diamond-standard https://celo.academy/t/a-guide-to-building-and-deploying-upgradeable-contracts-on-celo-with-diamond-standard/152 301
+/blog/tutorials/build-a-full-stack-mobile-dapp-with-react-native-and-webjs-on-celo https://celo.academy/t/build-a-full-stack-mobile-dapp-with-react-native-and-web-js-on-celo/98 301
+/blog/tutorials/gas-optimization-techniques-in-solidity https://celo.academy/t/gas-optimization-techniques-in-solidity-on-celo/76 301
+/blog/tutorials/building-a-vending-machine-on-celo-blockchain https://celo.academy/t/building-a-vending-machine-on-celo-blockchain/13 301
+/blog/tutorials/building-decentralized-applications-on-celo-best-practices https://celo.academy/t/building-decentralized-applications-on-celo-best-practices-for-dapp-development/953 301
+/blog/tutorials/how-to-build-a-decentralized-event-invitation-system-on-the-Celo-blockchain-using-solidity-and-javascript https://celo.academy/t/how-to-build-a-decentralized-event-invitation-system-on-the-celo-blockchain-using-solidity-and-javascript/296 301
+/blog/tutorials/build-a-scan-to-pay-shareable-link-dapp-on-celo https://celo.academy/t/build-a-scan-to-pay-shareable-link-dapp-on-celo/205 301
+/blog/tutorials/ERC-4337-Overview-Protocol https://celo.academy/t/erc-4337-overview-protocol/208 301
+/blog/tutorials/connect-and-interact-with-celo-using-web3onboard-library https://celo.academy/t/connect-and-interact-with-celo-using-web3onboard-library/122 301
+/blog/tutorials/how-to-use-hardware-tools-with-the-celo-blockchain https://celo.academy/t/how-to-use-hardware-tools-with-the-celo-blockchain/104 301
+/blog/tutorials//preventing-vulnerabilities-in-solidity-reentrancy-attack https://celo.academy/t/preventing-vulnerabilities-in-solidity-reentrancy-attack/120 301
+/blog/tutorials/building-a-blog-subscription-dapp-on-celo-part-2 https://celo.academy/t/building-a-blog-subscription-dapp-on-celo-part-2/937 301
+/blog/tutorials/how-to-build-a-supply-chain-management-application-on-celo https://celo.academy/t/how-to-build-a-supply-chain-management-application-on-celo/20 301
+/blog/tutorials/exploring-the-decentralized-identity-features-of-celo https://celo.academy/t/exploring-the-decentralized-identity-features-of-celo/192 301
+/blog/tutorials/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks https://celo.academy/t/privacy-enhancing-technologies-the-future-of-online-transactions-with-zk-rollups-and-zk-snarks/959 301
+/blog/tutorials/introduction-to-soulbound-tokens-on-celo https://celo.academy/t/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain/251 301
+/blog/tutorials/como-implantar-um-contrato-inteligente-ERC721-usando-a-API-Tatum https://celo.academy/t/como-implantar-um-contrato-inteligente-erc721-usando-a-api-tatum/89 301
+/blog/tutorials/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain https://celo.academy/t/build-a-full-stack-ecommerce-dapp-on-the-celo-blockchain/218 301
+/blog/tutorials/building-a-celo-based-decentralized-medical-record-system https://celo.academy/t/building-a-celo-based-decentralized-medical-record-system/302 301
+/blog/tutorials/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1 https://celo.academy/t/developing-a-crowdfunding-platform-for-social-causes-on-celo-blockchain-part-1/210 301
+/blog/tutorials/blockchain-based-festival-booking-system-with-cusd-payment-integration https://celo.academy/t/blockchain-based-festival-booking-system-with-cusd-payment-integration/267 301
+/blog/tutorials/creating-a-celo-based-non-fungible-token-marketplace https://celo.academy/t/creating-a-celo-based-non-fungible-token-nft-marketplace/212 301
+/blog/tutorials/a-comparison-of-hardware-software-and-human-oracles https://celo.academy/t/a-comparison-of-hardware-software-and-human-oracles/157 301
+/blog/tutorials/building-a-farmers-market-on-celo https://celo.academy/t/building-a-farmers-market-on-the-celo-blockchain/225 301
+/blog/tutorials/how-to-build-simple-anonymous-dapp-on-celo https://celo.academy/t/how-to-build-a-simple-anonymous-dapp-on-celo/213 301
+/blog/tutorials/build-a-decentralized-lottery-game-on-celo https://celo.academy/t/build-a-decentralized-lottery-game-on-celo/64 301
+/blog/tutorials/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1 https://celo.academy/t/build-a-complete-off-chain-fullstack-web3-app-using-laravel-part-1/30 301
+/blog/tutorials/building-an-nft-marketplace-on-celo-with-python https://celo.academy/t/building-an-nft-marketplace-on-celo-with-python/247 301
+/blog/tutorials/9-sustainable-defi-projects-built-on-celo https://celo.academy/t/9-sustainable-defi-projects-built-on-celo/86 301
+/blog/tutorials/how-to-build-an-nft-marketplace-with-nextjsipfsetherjs-and-redux https://celo.academy/t/how-to-build-an-nft-marketplace-with-nextjs-ipfs-etherjs-and-redux/222 301
+/blog/tutorials/exploring-the-intersection-of-artificial-intelligence-and-web3 https://celo.academy/t/exploring-the-intersection-of-artificial-intelligence-and-web3/135 301
+/blog/tutorials/solidity-from-zero-to-hero https://celo.academy/t/solidity-from-zero-to-hero/41 301
+/blog/tutorials/integrating-web3Auth-with-celo-blockchain-in-your-dapp https://celo.academy/t/integrating-web3auth-with-celo-blockchain-in-your-dapp/943 301
+/blog/tutorials/how-to-write-unit-testing-for-contracts-with-hardhat https://celo.academy/t/build-and-deploy-a-secure-multi-signature-wallet-on-the-celo-blockchain/949/2 301
+/blog/tutorials/exclusive-list-of-hardware-wallets-that-support-the-celo-network https://celo.academy/t/create-a-tool-for-daos-to-manage-their-voting-and-proposal-processes-on-celo/21/2 301
+/blog/tutorials/create-full-stack-whitelist-dapp-with-merkle-trees-celo https://celo.academy/t/create-a-full-stack-whitelist-dapp-with-merkle-trees-on-celo/99 301
+/blog/tutorials/creating-smart-contracts-for-liquidity-farming https://celo.academy/t/creating-smart-contracts-for-liquidity-farming/60 301
+/blog/tutorials/aprenda-sobre-oraculos https://celo.academy/t/aprenda-sobre-oraculos-em-celo/103 301
+/blog/tutorials/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge https://celo.academy/t/build-a-cross-chain-token-bridge-between-celo-and-bsc-using-the-existing-bridge/17 301
+/blog/tutorials/build-your-own-full-stack-dao-on-the-celo-blockchain https://celo.academy/t/build-your-own-full-stack-dao-on-the-celo-blockchain/164 301
+/blog/tutorials/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation https://celo.academy/t/lazy-minting-nfts-a-cost-effective-and-flexible-approach-to-nft-creation/234 301
+/blog/tutorials/integrating-ipfs-with-react https://celo.academy/t/decentralized-storage-and-seamless-user-experience-integrating-ipfs-with-react-for-your-erc721-smart-contract/326 301
+/blog/tutorials/implementing-celo-based-decentralized-storage https://celo.academy/t/implementing-celo-based-decentralized-storage/320 301
+/blog/tutorials/how-to-transition-from-web2-to-web3 https://celo.academy/t/how-to-transition-from-web2-to-web3/56 301
+/blog/tutorials/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-2 https://celo.academy/t/how-to-build-a-decentralized-job-board-dapp-on-the-celo-blockchain-part-2/233 301
+/blog/tutorials/building-a-chat-dapp-with-nextjs-web3js-and-bigquery https://celo.academy/t/building-a-chat-dapp-with-next-js-web3-js-and-bigquery/952 301
+/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84 301
+/blog/tutorials/developing-a-celo-blockchain-social-network-with-python https://celo.academy/t/developing-a-celo-blockchain-social-network-with-python/940 301
+/blog/tutorials/building-an-nft-game-using-TDD-with-hardhat-part-1 https://celo.academy/t/building-an-nft-game-using-tdd-with-hardhat-part-1/19 301
+/blog/tutorials/how-to-create-a-blockchain-simulation-using-python-and-fastapi https://celo.academy/t/how-to-create-a-blockchain-simulation-using-python-and-fastapi/289 301
+/blog/tutorials/using-python-to-build-a-celo-blockchain-identity-system https://celo.academy/t/using-python-to-build-a-celo-blockchain-identity-system/255 301
+/blog/tutorials/building-a-smart-contract-lottery-application-on-celo-with-python https://celo.academy/t/building-a-smart-contract-lottery-application-on-celo-with-python/246 301
+/blog/tutorials/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain https://celo.academy/t/build-your-own-full-stack-token-airdrop-dapp-on-celo-blockchain/207 301
+/blog/tutorials/smart-contract-security-on-celo-with-securify https://celo.academy/t/smart-contract-security-on-celo-with-securify/366 301
+/blog/tutorials/How-to-render-Celo-NFT-in-your-React-Native-mobile-Dapp https://celo.academy/t/how-to-render-celo-nft-in-your-react-native-mobile-dapp/274 301
+/blog/tutorials/introduction-to-zero-knowledge-technology-and-its-blockchain-applications https://celo.academy/t/introduction-to-zero-knowledge-technology-and-its-blockchain-applications/124 301
+/blog/tutorials/supporting-multiple-tokens-eip-155-and-the-multi-token-standard https://celo.academy/t/supporting-multiple-tokens-eip-155-and-the-multi-token-standard/945 301
+/blog/tutorials/Build-Your-Own-Full-Stack-NFT-Marketplace-on-Celo https://celo.academy/t/build-your-own-full-stack-nft-marketplace-on-celo/100 301
+/blog/tutorials/build-Your-own-ai-art-nft-marketplace-on-the-celo-blockchain https://celo.academy/t/build-your-own-a-i-art-nft-marketplace-on-the-celo-blockchain/240 301
+/blog/tutorials/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain https://celo.academy/t/a-decentralized-social-network-that-rewards-users-for-their-content-and-participation-on-the-celo-blockchain/324 301
+/blog/tutorials/Build-a-Full-Stack-Coffee-Dapp-With-Celo-Composer-and-Solidity https://celo.academy/t/build-a-full-stack-coffee-dapp-with-celo-composer-and-solidity/119 301
+/blog/tutorials/build-a-simple-forum-dapp-with-flutter-on-celo https://celo.academy/t/build-a-simple-forum-dapp-with-flutter-on-celo/97 301
+/blog/tutorials/school-resources-marketplace-smart-contract-on-celo https://celo.academy/t/school-resources-marketplace-smart-contract-on-celo/275 301
+/blog/tutorials/building-a-celo-blockchain-explorer-with-python https://celo.academy/t/building-a-celo-blockchain-explorer-with-python/253 301
+/blog/tutorials/interacting-with-celo-stablecoin-celo-dollars-using-python https://celo.academy/t/interacting-with-celos-stablecoin-celo-dollars-using-python/364 301
+/blog/tutorials/simplifying-the-celo-2.0-roadmap-for-celo-builders https://celo.academy/t/simplifying-the-celo-2-0-roadmap-for-celo-builders/154 301
+/blog/tutorials/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain https://celo.academy/t/how-to-write-upgradable-smart-contracts-and-deploy-to-the-celo-blockchain/161 301
+/blog/tutorials/top-33-must-know-tools-for-web3-developers https://celo.academy/t/top-33-must-know-tools-for-web3-developers/946 301
+/blog/tutorials/create-a-decentralized-advertising-platform-using-solidity-on-celo https://celo.academy/t/create-a-decentralized-advertising-platform-using-solidity-on-celo/29 301
+/blog/tutorials/building-a-celo-remittance-system-a-technical-tutorial-for-developers https://celo.academy/t/building-a-celo-remittance-system-a-technical-tutorial-for-developers/211 301
+/blog/tutorials/a-beginners-guide-to-layer-1-blockchains-socialimpact-refi-defi-and-more https://celo.academy/t/a-beginners-guide-to-layer-1-blockchains-social-impact-refi-defi-and-more/34 301
+/blog/tutorials/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo https://celo.academy/t/step-by-step-guide-to-deploying-your-first-full-stack-dapp-on-celo/65 301
+/blog/tutorials//building-your-first-smart-contract-web-dapp-with-celo-composer https://celo.academy/t/building-your-smart-contract-web-dapp-with-celo-composer/242 301
+/blog/tutorials/best-practices-for-writing-smart-contracts-with-real-world-examples https://celo.academy/t/best-practices-for-writing-smart-contracts-with-real-world-examples/63 301
+/blog/tutorials/building-a-decentralized-ride-sharing-platform-using-solidity-on-celo https://celo.academy/t/building-a-decentralized-ride-sharing-platform-using-solidity-on-celo/295 301
+/blog/tutorials/create-a-secure-multi-factor-muthentication-on-the-celo-blockchain https://celo.academy/t/create-a-secure-multi-factor-authentication-on-the-celo-blockchain/954 301
+/blog/tutorials/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo https://celo.academy/t/a-comprehensive-guide-to-comparing-hardware-and-software-wallets-on-celo/140 301
+/blog/tutorials/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo https://celo.academy/t/building-a-decentralized-identity-system-with-solidity-and-erc-735-on-celo/297 301
+/blog/tutorials/building-a-decentralized-twitter-on-the-celo-blockchain https://celo.academy/t/creating-a-twitter-like-decentralized-application-on-celo-using-solidity/195 301
+/blog/tutorials/build-a-donation-dapp-on-celo-to-award-your-favourite-content-creator https://celo.academy/t/build-a-donation-dapp-on-celo-to-award-your-favorite-content-creator/284 301
+/blog/tutorials/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential https://celo.academy/t/exploring-top-projects-on-celo-blockchain-use-cases-features-and-future-potential/238 301
+/blog/tutorials/build-a-full-stack-decentralized-fund-raising-dapp-on-the-celo-blockchain https://celo.academy/t/build-a-full-stack-decentralized-fund-raising-dapp-on-the-celo-blockchain/188 301
+/blog/tutorials/implementing-a-token-on-celo-using-golang https://celo.academy/t/implementing-a-token-on-celo-using-golang/198 301
+/blog/tutorials/Understanding-the-Fundamentals-of-Auction-Programming-in-Solidity https://celo.academy/t/understanding-the-fundamentals-of-auction-programming-in-solidity/137 301
+/blog/tutorials/potential-growth-of-blockchain-and-its-use-cases https://celo.academy/t/potential-growth-of-blockchain-and-its-use-cases/53 301
+/blog/tutorials/a-deep-dive-into-celo-proof-of-stake-consensus https://celo.academy/t/celo-developer-orientation-pathway/597 301
+/blog/tutorials/exploring-solidity-low-level-features-abi-encoding-and-opcodes https://celo.academy/t/exploring-solidity-low-level-features-abi-encoding-and-opcodes/109 301
+/blog/tutorials/the-future-of-regenerative-finance-and-its-potential-impact https://celo.academy/t/the-future-of-regenerative-finance-and-its-potential-impact/111 301
+/blog/tutorials/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-2-2 https://celo.academy/t/how-to-write-a-multi-signatures-contract-on-celo-using-hardhat-part-2-2/216 301
+/blog/tutorials/build-a-staking-mechanism-smart-contract-with-solidity-on-celo https://celo.academy/t/build-a-staking-mechanism-smart-contract-with-solidity-on-celo/31 301
+/blog/tutorials/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance https://celo.academy/t/como-integrar-seu-smart-contract-ao-oraculo-da-redstone-finance/129 301
+/blog/tutorials/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python https://celo.academy/t/developing-a-smart-contract-based-supply-chain-management-system-on-celo-blockchain-using-python/494 301
+/blog/tutorials/implementing-security-measures-for-dapps https://celo.academy/t/implementing-security-measures-for-dapps-on-celo/277 301
+/blog/tutorials/how-does-blockchain-help-content-creators https://celo.academy/t/how-does-blockchain-help-content-creators/304 301
+/blog/tutorials/automate-flutter-celo-dapp-deployment-with-github-actions https://celo.academy/t/automate-flutter-celo-dapp-deployment-with-github-actions/243 301
+/blog/tutorials/build-in-public-tips-for-making-an-impact https://celo.academy/t/build-in-public-tips-for-making-an-impact/92 301
+/blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo https://celo.academy/t/how-to-quickly-build-an-nft-collection-on-celo/77 301
+/blog/tutorials/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs https://celo.academy/t/create-dynamic-nft-redstone-custom-api-and-celo-composer-hardhat-react-nextjs/12 301
+/blog/tutorials/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions https://celo.academy/t/automate-celo-dapp-deployment-to-cloudflare-pages-with-github-actions/249 301
+/blog/tutorials/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2 https://celo.academy/t/build-a-decentralized-freelancer-marketplace-on-the-celo-blockchain-part-2/261 301
+/blog/tutorials/connect-and-interact-with-celo-using-web3react https://celo.academy/t/connect-and-interact-with-celo-using-web3react/121 301
+/blog/tutorials/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender https://celo.academy/t/build-a-monthly-susbscription-platform-using-celo-composer-openzeppelin-defender/52 301
+/blog/tutorials/React-Native-&-Celo-Easily-build-React-Native-dApps-on-Celo https://celo.academy/t/getting-started-with-celo-sdks-and-libraries/790 301
+/blog/tutorials/decentralized-marketplace-for-buying-and-selling-animals https://celo.academy/t/decentralized-marketplace-for-buying-and-selling-animals/220 301
+/blog/tutorials/how-to-build-a-crowdfunding-platform-on-celo https://celo.academy/t/how-to-build-a-crowdfunding-platform-on-celo/288 301
+/blog/tutorials/overview-of-developer-tools-in-the-celo-ecosystem https://celo.academy/t/overview-of-developer-tools-in-the-celo-ecosystem/58 301
+/blog/tutorials/how-to-add-crypto-pay-using-valora https://celo.academy/t/how-to-add-crypto-payment-to-an-e-commerce-website-with-celo-and-valora/138 301
+/blog/tutorials/on-chain-randomness-with-celo-using-subgraphs https://celo.academy/t/on-chain-randomness-with-celo-using-subgraphs/127 301
+/blog/tutorials/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds https://celo.academy/t/securing-multi-sig-wallet-using-hardware-wallet-the-benefits-for-securing-community-funds/149 301
+/blog/tutorials/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks https://celo.academy/t/guide-to-building-a-cross-chain-interoperability-between-celo-and-other-blockchain-networks/504 301
+/blog/tutorials/build-a-library-based-dapp-on-celo https://celo.academy/t/build-a-library-based-dapp-on-celo/197 301
+/blog/tutorials/blockchain-integration-updating-legacy-systems-with-the-celo-platform https://celo.academy/t/integrating-blockchain-technology-into-legacy-systems/106 301
+/blog/tutorials/como-enviar-e-verificar-um-contrato-com-hardhat-celo https://celo.academy/t/como-enviar-e-verificar-um-contrato-na-blockchain-celo-com-o-hardhat-celo/47 301
+/blog/tutorials/smart-contract-security-on-celo-with-mythril https://celo.academy/t/smart-contract-security-on-celo-with-mythril/27 301
+/blog/tutorials/building-a-blog-subscription-dapp-on-celo-part-1 https://celo.academy/t/building-a-blog-subscription-dapp-on-celo-part-1/936 301
+/blog/tutorials/how-to-build-podcast-streaming-platform-celo-1 https://celo.academy/t/how-to-build-a-podcast-streaming-platform-on-celo/214 301
+/blog/tutorials/getting-started-with-celo-python-SDK https://celo.academy/t/getting-started-with-celo-python-sdk/160 301
+/blog/tutorials/hackathons-101-everything-you-need-to-know-about-hackathons https://celo.academy/t/hackathons-101-everything-you-need-to-know-about-hackathons/72 301
+/blog/tutorials/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava https://celo.academy/t/como-conectar-o-seu-dapp-a-celo-blockchain-com-a-lava/206 301
+/blog/tutorials/how-to-build-a-bookshop-marketplace-dapp https://celo.academy/t/how-to-build-a-bookshop-marketplace-dapp-on-celo-blockchain/279 301
+/blog/tutorials/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openZeppelin https://celo.academy/t/developing-a-hair-product-marketplace-on-celo-with-solidity-and-openzeppelin/947 301
+/blog/tutorials/unlocking-cross-chain-liquidity https://celo.academy/t/unlocking-cross-chain-liquidity/176 301
+/blog/tutorials/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide https://celo.academy/t/building-a-celo-oracle-for-off-chain-data-a-step-by-step-guide/291 301
+/blog/tutorials/how-to-create-an-nft-with-royalties-on-celo https://celo.academy/t/how-to-create-an-nft-with-royalties-on-celo/282 301
+/blog/tutorials/implementing-staking-and-reward-contract-using-solidity https://celo.academy/t/implementing-staking-reward-contract-using-solidity/180 301
+/blog/tutorials/build-a-fullStack-token-swap-application-on-celo-using-react-and-0x-api https://celo.academy/t/build-a-fullstack-token-swap-application-on-celo-using-react-and-0x-api/150 301
+/blog/tutorials/building-a-dutch-auction-dapp-on-celo https://celo.academy/t/building-a-dutch-auction-dapp-on-celo/168 301
+/blog/tutorials/interacting-with-the-celo-blockchain-using-web3js-a-beginners-guide-a-voting-app https://celo.academy/t/interacting-with-the-celo-blockchain-using-web3-js-a-beginners-guide-a-voting-app/239 301
+/blog/tutorials/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer https://celo.academy/t/build-a-complete-p2p-celo-payment-dapp-with-flutter-using-celo-composer/11 301
+/blog/tutorials/example-architectures-for-a-simple-payment-dapp https://celo.academy/t/why-you-should-build-your-next-project-on-the-celo-blockchain/139 301
+/blog/tutorials/How-to-become-a-Web3-Developer https://celo.academy/t/how-to-become-a-web3-developer/44 301
+/blog/tutorials/Building-a-crowdfunding-dapp-with-solidity-and-celo-composer https://celo.academy/t/building-a-crowdfunding-dapp-with-solidity-and-celo-composer/263 301
+/blog/tutorials/how-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain https://celo.academy/t/how-to-build-a-marketplace-for-selling-shoes-on-the-celo-blockchain/142 301
+/blog/tutorials/preventing-vulnerabilities-in-solidity-denial-of-service-attack https://celo.academy/t/preventing-vulnerabilities-in-solidity-denial-of-service-attack/71 301
+/blog/tutorials/learn-to-navigate-advanced-celo-wallet-features https://celo.academy/t/learn-to-navigate-advanced-celo-wallet-features/944 301
+/blog/tutorials/como-construir-em-celo-usando-tatum https://celo.academy/t/como-construir-em-celo-usando-tatum/51 301
+/blog/tutorials/how-to-build-and-deploy-factory-contracts-on-celo https://celo.academy/t/how-to-build-and-deploy-factory-contracts-on-celo-blockchain/26 301
+/blog/tutorials/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain https://celo.academy/t/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain/251 301
+/blog/tutorials/understanding-celos-approach-to-layer2-scaling https://celo.academy/t/understanding-celos-approach-to-layer-2-scaling/186 301
+/blog/tutorials/deploying-a-celo-node-using-typescript https://celo.academy/t/deploying-a-celo-node-using-typescript/958 301
+
+/blog/2022/03/06/6%20Steps%20to%20Quickly%20Build%20Smart%20Contracts%20on%20Celo%20with%20Remix /blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix
+/blog/2022/05/10/A%20Boilerplate%20guide%20to%20Airdropping%20on%20Celo /blog/tutorials/a-boilerplate-guide-to-airdropping-on-celo
+/blog/2022/06/14/How%20to%20quickly%20build%20an%20NFT%20collection%20on%20Celo /blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo
+/blog/2022/05/24/Celo%20Dappstarter:%20Extend%20and%20Customize%20your%20Full-Stack%20Mobile%20dApps /blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo
+/blog/2022/05/10/Getting%20started%20with%20DAOs%20on%20Celo /blog/tutorials/getting-started-with-daos-on-celo
+/blog/2022/05/20/ContractKit%20-%20A%20Practical%20Guide%20to%20Interacting%20with%20the%20Celo%20Core%20Contracts /blog/tutorials/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts
+/blog/2022/05/11/Plumo%20-%20An%20Ultralight%20Blockchain%20Client%20on%20Celo /blog/tutorials/plumo-an-ultralight-blockchain-client-on-celo
+/blog/2022/03/04/Celo%20Composer%20-%20Easily%20Build%20Full-Stack%20Mobile%20dApps%20on%20Celo /blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo
+/blog/2022/05/19/3%20Simple%20Steps%20to%20Get%20Started%20with%20Valora%20on%20Celo /blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo
+/blog/2022/03/04/3%20Simple%20Steps%20to%20Connect%20your%20MetaMask%20Wallet%20To%20Celo /blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo
+/blog/2022/03/04/Celo%20CLI:%20A%20Practical%20Guide%20to%20Energize%20your%20Celo%20Toolkit /blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit
+/blog/2022/03/18/Hardhat%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20using%20Hardhat /blog/tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat
+/blog/2022/03/07/Truffle%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20with%20Truffle /blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle
 /getting-started/running-a-full-node /network/baklava/run-full-node
 /getting-started/running-a-validator /network/baklava/run-full-node
 /getting-started/running-a-full-node-in-baklava /network/baklava/run-full-node
@@ -60,7 +408,6 @@
 /celo-codebase/protocol/governance /protocol/governance
 /celo-codebase/protocol/transactions/erc20-transaction-fees /protocol/transaction/erc20-transaction-fees
 /celo-codebase/protocol/transactions/escrow /protocol/transaction/escrow
-/celo-codebase/protocol/transactions/full-node-incentives /protocol/transaction/full-node-incentives
 /celo-codebase/protocol/transactions/gas-pricing /protocol/transaction/gas-pricing
 /celo-codebase/protocol/transactions/index /protocol/transaction/
 /celo-codebase/protocol/transactions/native-currency /protocol/transaction/native-currency
@@ -71,7 +418,6 @@
 /celo-codebase/protocol/stability/index /protocol/stability
 /celo-codebase/protocol/stability/oracles /protocol/stability/oracles
 /celo-codebase/protocol/stability/stability-fees /protocol/stability/stability-fees
-/celo-codebase/protocol/stability/tobin-tax /protocol/stability/tobin-tax
 /celo-codebase/protocol/proof-of-stake/becoming-a-validator /protocol/pos/becoming-a-validator
 /celo-codebase/protocol/proof-of-stake/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/carbon-offsetting-fund /protocol/pos/epoch-rewards-carbon-offsetting-fund
@@ -261,19 +607,6 @@
 /getting-started/baklava-testnet /network
 /celo-codebase/protocol/proof-of-stake /protocol/pos
 /getting-started/wallets/using-metamask-with-celo /wallet/metamask/setup
-/blog/2022/03/06/6%20Steps%20to%20Quickly%20Build%20Smart%20Contracts%20on%20Celo%20with%20Remix /blog/tutorials/6-steps-to-quickly-build-smart-contracts-on-celo-with-remix
-/blog/2022/05/10/A%20Boilerplate%20guide%20to%20Airdropping%20on%20Celo /blog/tutorials/a-boilerplate-guide-to-airdropping-on-celo
-/blog/2022/06/14/How%20to%20quickly%20build%20an%20NFT%20collection%20on%20Celo /blog/tutorials/how-to-quickly-build-an-nft-collection-on-celo
-/blog/2022/05/24/Celo%20Dappstarter:%20Extend%20and%20Customize%20your%20Full-Stack%20Mobile%20dApps /blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo
-/blog/2022/05/10/Getting%20started%20with%20DAOs%20on%20Celo /blog/tutorials/getting-started-with-daos-on-celo
-/blog/2022/05/20/ContractKit%20-%20A%20Practical%20Guide%20to%20Interacting%20with%20the%20Celo%20Core%20Contracts /blog/tutorials/contractkit-a-practical-guide-to-interacting-with-the-celo-core-contracts
-/blog/2022/05/11/Plumo%20-%20An%20Ultralight%20Blockchain%20Client%20on%20Celo /blog/tutorials/plumo-an-ultralight-blockchain-client-on-celo
-/blog/2022/03/04/Celo%20Composer%20-%20Easily%20Build%20Full-Stack%20Mobile%20dApps%20on%20Celo /blog/tutorials/easily-build-full-stack-mobile-dapps-on-celo
-/blog/2022/05/19/3%20Simple%20Steps%20to%20Get%20Started%20with%20Valora%20on%20Celo /blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo
-/blog/2022/03/04/3%20Simple%20Steps%20to%20Connect%20your%20MetaMask%20Wallet%20To%20Celo /blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo
-/blog/2022/03/04/Celo%20CLI:%20A%20Practical%20Guide%20to%20Energize%20your%20Celo%20Toolkit /blog/tutorials/celo-cli-a-practical-guide-to-energize-your-celo-toolkit
-/blog/2022/03/18/Hardhat%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20using%20Hardhat /blog/tutorials/hardhat-and-celo-the-ultimate-guide-to-deploy-celo-dapps-using-hardhat
-/blog/2022/03/07/Truffle%20and%20Celo%20%7C%20The%20Ultimate%20Guide%20to%20Deploy%20Celo%20dApps%20with%20Truffle /blog/tutorials/truffle-and-celo-the-ultimate-guide-to-deploy-celo-dapps-with-truffle
 /celo-sdk/contractkit /developer/contractkit
 /getting-started/using-the-mobile-wallet /wallet/mobile-wallet/setup
 /celo-sdk/dappkit /developer/dappkit/usage

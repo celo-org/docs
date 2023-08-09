@@ -27,12 +27,6 @@ You can add the [Celo Signal public calendar](https://calendar.google.com/calend
 
 :::
 
-:::warning
-
-Full node incentives have not been enabled yet because the mechanism for negotiating a gateway fee is still under development. Currently, light clients are configured to send a gateway fee of 0 and full nodes are set to accept a minimum gateway fee of 0.
-
-:::
-
 ## Prerequisites
 
 - **You have Docker installed.** If you don’t have it already, follow the instructions here: [Get Started with Docker](https://www.docker.com/get-started). It will involve creating or signing in with a Docker account, downloading a desktop app, and then launching the app to be able to use the Docker CLI. If you are running on a Linux server, follow the instructions for your distro [here](https://docs.docker.com/install/#server). You may be required to run Docker with `sudo` depending on your installation environment.
@@ -137,4 +131,4 @@ $ celocli account:new
 
 ## Light Client Serving
 
-Light clients may connect to you as people run the [Celo Mobile Wallet](/wallet/mobile-wallet/setup) and you will start earning gateway fees for any transactions that these users initiate, which you can read more about in the [Full Node Incentives](/protocol/transaction/full-node-incentives) document. The account that this node advertises for light clients to use for these fees is given by the `etherbase` parameter. The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.
+Light clients may connect to you as people run the [Celo Mobile Wallet](/wallet/mobile-wallet/setup). The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

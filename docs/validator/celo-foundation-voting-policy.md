@@ -137,12 +137,18 @@ Past Foundation votes recipients:
 - **Cohort 5:** [24 validator groups](https://docs.google.com/spreadsheets/d/1n2lwFsAsFaohng4Bo_FEWcoXzZl5CrLFxA6EK0nuFSA/edit#gid=0) -- votes expired on November 1, 2021
 - **Cohort 6:** [7 validator groups](https://docs.google.com/spreadsheets/d/1HT_fN-mSAL2etF0Po_h122jeU1zpEtdpb_khogOfBCg/edit?usp=sharing) -- votes will expire on March 1, 2022
 - **Cohort 7:** [23 validator groups](https://docs.google.com/spreadsheets/d/1eYBzQMObTAy-WKs5CHHFnGGl_k1rQo0MBHinV3OgSik/edit#gid=1466530578) -- votes will expire on July 1, 2022
+- **Cohort 8:** [24 validator groups](https://docs.google.com/spreadsheets/d/11fTPMa_2FXAye_mgidE_3Ub-xY_aJLo0WXee_Qn5mC8/edit#gid=0) -- votes will expire on November 1, 2022
+- **Cohort 9:** [7 validator groups](https://docs.google.com/spreadsheets/d/1NcIMKvZnxyqzgbnaICisMR1y0eyxpr0HvCHFCHH-EDA/edit?pli=1#gid=0) -- votes will expire on March 1, 2023
 
 Currently receiving Foundation votes:
 
-- **Cohort 8:** [24 validator groups](https://docs.google.com/spreadsheets/d/11fTPMa_2FXAye_mgidE_3Ub-xY_aJLo0WXee_Qn5mC8/edit#gid=0) -- votes will expire on November 1, 2022
-- **Cohort 9:** [7 validator groups](https://docs.google.com/spreadsheets/d/1NcIMKvZnxyqzgbnaICisMR1y0eyxpr0HvCHFCHH-EDA/edit?pli=1#gid=0) -- votes will expire on March 1, 2023
 - **Cohort 10:** [24 validator groups](https://docs.google.com/spreadsheets/d/1q0FhZJ2wYxg0JaZ-hbdIodRGwZPPNgf3aqD3ubArtj0/edit#gid=0) -- votes will expire on July 1, 2023
+- **Cohort 11:** [24 validator groups](https://docs.google.com/spreadsheets/d/1CPbZmaS_e-dvPu1fujMYhaiUY_1sNqi3nYaYTIIBK6E/edit#gid=0) -- votes will expire on November 1, 2023
+- **Cohort 12:** 5 validator groups -- votes will expire on March 1, 2024
+
+Coming soon:
+- **Cohort 13:** 24 validator groups -- votes will expire on July 1, 2024
+
 
 :::info
 

@@ -187,13 +187,6 @@ The Decentralized Impact Incubator is a 6-week program to ideate and prototype b
 
 - [Website](https://blockchainforsocialimpact.com/incubator-winners-2020/)
 
-### Multiply.Charity by Abundance
-
-Multiply the impact of charitable donations by providing liquidity in credit tokens where the legacy financial system fails. Compared to cash donations, like GiveDirectly, this process has two major advantages: The credit tokens 1) fill a demand for liquidity (which banks fail to deliver), thus increasing the incentive to produce goods and services, and 2) stay in the local economy longer, resulting in a larger impact (or lower cost overhead) per donation. Early field tests demonstrate up to 20x impact over traditional donations and double the velocity (the rate at which the money is traded) to the US Dollar.
-
-- [Website](https://multiply.charity/)
-- [GitHub](https://github.com/abundance-stack)
-
 ### Bienvenir
 
 Decentralized application to help coordinate and improve the impact metric of non-profit organizations that work with migrants in Latin America.
@@ -279,7 +272,7 @@ Santym is a platform that allows Africans to have access to U.S Banking with cry
 
 Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have a Play2Earn NFT Dungeon Loot Game, game storefront, and Token Swaps on Celo. Open Sourced on GitHub, we aim to bridge Defi and Gaming through token-gated Pixel Metaverses.
 
-- [GitHub](https://github.com/Into-The-Verse/)
+- [GitHub](https://github.com/IntoTheVerse)
 
 ## RARE 💎 GEMS
 
@@ -301,13 +294,6 @@ EcoBytes is a Regenerative Crypto platform that rewards consumers with crypto fo
 
 - [GitHub](https://github.com/shoelacewireless/ecobytes-celo-integration)
 - [Website](http://www.3cobytes.com)
-
-## Birden
-
-Birden is a one-stop platform to create, distribute and monetize all types of digital content. With a wide range of blockchain tools plugged in, it takes minutes to deploy a contract, create a store and publish your product across multiple marketplaces.
-
-- [Website](https://birden.io/)
-- [GitHub](https://github.com/fffilimonov/birden)
 
 ## Celo Tracker
 

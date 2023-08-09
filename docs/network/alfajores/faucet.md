@@ -1,5 +1,5 @@
 ---
-title: Celo Wallet Testnet Funds
+title: Celo Testnet Funds
 description: How to fund your Celo wallet account with testnet funds.
 ---
 
@@ -21,15 +21,9 @@ Alfajores Testnet accounts hold no real world economic value. The testnet's data
 
 Getting an account is really being given or generating a public-private keypair. This gives you control of balances accessible with the address corresponding to that key. For CELO, this is a native balance stored at the account whose address matches your key. For Celo Dollars, an ERC-20 token, the Mento Stablecoin smart contract maintains in its storage a mapping of the balance of each address.
 
-### Get an Invitation Code
+## Using an existing EVM Address
 
-If you have access to an Android device and would like to try the Celo Wallet, the fastest way to get started is to get an invitation code, pre-funded with 10 Celo Dollars.
-
-Visit the [Celo Wallet Page](https://celo.org/build/wallet) and enter your phone number to be messaged an invitation. Following this personalized URL will download the [Celo Wallet App](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores) from the Play Store, generate an account only you have access to, and transfer escrowed funds into it.
-
-### Restore from backup
-
-If you already have an account and the corresponding seed phrase, you can follow the instructions in the [Celo Wallet App](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores) to regain access to your account. You can also receive a seed phrase for a new, funded account by visiting the [Celo Wallet Page](https://celo.org/build/wallet).
+You can reuse the same address and private key you use on other EVM networks as long a you are using a wallet that has support for Celo Networks like Alfajores. [Open Config for Alfajores](https://chainlist.org/chain/44787)
 
 ## Creating an empty account with the Celo Client
 
@@ -65,8 +59,6 @@ export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
 
 The Alfajores Testnet Faucet is an easy way to get more funds deposited to an account, however it was created.
 
-Visit [celo.org/build/faucet](https://celo.org/build/faucet), and enter your account address. If you are using the Celo Wallet, you can find your account address in the Settings page. Complete the Captcha, and click 'Add Funds'.
+Visit [faucet.celo.org](https://faucet.celo.org), and enter your account address. If you are using the Celo Wallet, you can find your account address in the Settings page. Complete the Captcha, and click 'Add Funds'.
 
-Each time you complete a faucet request, your account is funded with an additional 10 Celo Dollars and 5 CELO.
-
-You may do this multiple times if you require more funds.
+Each time you complete a faucet request, your account is funded with an additional CELO Tokens

@@ -71,7 +71,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>, or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -114,7 +114,7 @@ module.exports = {
         },
         { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "/tutorials",
+          to: "https://celo.academy/c/tutorials/4",
           label: "Tutorials",
           position: "left",
         },
@@ -150,6 +150,10 @@ module.exports = {
           items: [
             { to: "cli/", label: "CLI" },
             {
+              to: "/developer/viem",
+              label: "Viem",
+            },
+            {
               to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
               label: "Celo SDK",
             },
@@ -168,14 +172,6 @@ module.exports = {
             {
               to: "https://github.com/heymateag/celoiossdk",
               label: "iOS SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python SDK",
             },
             {
               label: "Celo Composer",
@@ -272,7 +268,7 @@ module.exports = {
             },
             {
               label: "Careers",
-              href: "https://celo.org/jobs",
+              href: "https://celo.org/careers",
             },
           ],
         },
@@ -319,16 +315,7 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        blog: {
-          blogTitle: "Celo Tutorials",
-          blogDescription: "Celo blog!",
-          blogSidebarCount: 0,
-          showReadingTime: true,
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            frontMatter.hide_reading_time
-              ? undefined
-              : defaultReadingTime({ content }),
-        },
+        blog: false,
       },
     ],
   ],

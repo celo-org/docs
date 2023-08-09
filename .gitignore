@@ -22,3 +22,4 @@ yarn-error.log*
 
 # Translations
 i18n/
+.netlify

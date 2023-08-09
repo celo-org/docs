@@ -100,7 +100,7 @@ export default function HomePage(): JSX.Element {
                     Learn smart contract development with us
                   </Translate>
                 </span>
-                {buildKnowMoreButton("/tutorials")}
+                {buildKnowMoreButton("https://celo.academy/c/tutorials/4")}
               </div>
               <div className="w-1/3">
                 <img src="/img/homepage/illustration-2.png" />
@@ -117,6 +117,18 @@ export default function HomePage(): JSX.Element {
             </Translate>
           </div>
           <div className="px-2 grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-4 mt-8">
+            <a
+              href="https://thirdweb.com"
+              target="_blank"
+              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
+            >
+              <img
+                src="img/thirdweb.svg"
+                alt="thirdweb Logo"
+                className="w-10 h-10 rounded-full"
+              />
+              <span className="text-black dark:text-white">thirdweb</span>
+            </a>
             <a
               href="https://docs.infura.io/infura/"
               target="_blank"
@@ -169,20 +181,16 @@ export default function HomePage(): JSX.Element {
         {/* Section 4 */}
         <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
           <span className="text-3xl font-bold">
-            <Translate id="home.section3.title">
-              Start Your Journey
-            </Translate>
+            <Translate id="home.section3.title">Start Your Journey</Translate>
           </span>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
             <a
-              href="https://celo.org/developers/faucet"
+              href="https://faucet.celo.org"
               target={"_blank"}
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home.section3.faucet.title">
-                  Faucet
-                </Translate>
+                <Translate id="home.section3.faucet.title">Faucet</Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home.section3.faucet.description">
@@ -228,9 +236,7 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home.section3.wallets.title">
-                  Wallets
-                </Translate>
+                <Translate id="home.section3.wallets.title">Wallets</Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home.section3.wallets.description">
@@ -260,9 +266,7 @@ export default function HomePage(): JSX.Element {
               className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer "
             >
               <span className="font-semibold text-2xl text-black dark:text-white">
-                <Translate id="home.section3.deploy.title">
-                  Deploy
-                </Translate>
+                <Translate id="home.section3.deploy.title">Deploy</Translate>
               </span>
               <span className="text-base text-black dark:text-prosperity mt-1">
                 <Translate id="home.section3.deploy.description">
@@ -291,29 +295,41 @@ export default function HomePage(): JSX.Element {
               </div>
               {/* item 1 */}
               {sectionFourCard(
-                translate({ id:"home.section4.understanding.whatIs.title" }),
-                translate({ id:"home.section4.understanding.whatIs.description" }),
+                translate({ id: "home.section4.understanding.whatIs.title" }),
+                translate({
+                  id: "home.section4.understanding.whatIs.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/general"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.understanding.architecture.title" }),
-                translate({ id:"home.section4.understanding.architecture.description" }),
+                translate({
+                  id: "home.section4.understanding.architecture.title",
+                }),
+                translate({
+                  id: "home.section4.understanding.architecture.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/general/architecture"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.understanding.whitepapers.title" }),
-                translate({ id:"home.section4.understanding.whitepapers.description" }),
+                translate({
+                  id: "home.section4.understanding.whitepapers.title",
+                }),
+                translate({
+                  id: "home.section4.understanding.whitepapers.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/general/whitepapers"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.understanding.protocol.title" }),
-                translate({ id:"home.section4.understanding.protocol.description" }),
+                translate({ id: "home.section4.understanding.protocol.title" }),
+                translate({
+                  id: "home.section4.understanding.protocol.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/protocol"
               )}
@@ -328,29 +344,39 @@ export default function HomePage(): JSX.Element {
                 </Translate>
               </div>
               {sectionFourCard(
-                translate({ id:"home.section4.developer.contractKit.title" }),
-                translate({ id:"home.section4.developer.contractKit.description" }),
+                translate({ id: "home.section4.developer.contractKit.title" }),
+                translate({
+                  id: "home.section4.developer.contractKit.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/developer/contractkit"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.developer.reactCelo.title" }),
-                translate({ id:"home.section4.developer.reactCelo.description" }),
+                translate({ id: "home.section4.developer.reactCelo.title" }),
+                translate({
+                  id: "home.section4.developer.reactCelo.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/developer/react-celo"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.developer.rainbowKitCelo.title" }),
-                translate({ id:"home.section4.developer.rainbowKitCelo.description" }),
+                translate({
+                  id: "home.section4.developer.rainbowKitCelo.title",
+                }),
+                translate({
+                  id: "home.section4.developer.rainbowKitCelo.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/developer/rainbowkit-celo"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.developer.celoCli.title" }),
-                translate({ id:"home.section4.developer.celoCli.description" }),
+                translate({ id: "home.section4.developer.celoCli.title" }),
+                translate({
+                  id: "home.section4.developer.celoCli.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/cli"
               )}
@@ -358,55 +384,64 @@ export default function HomePage(): JSX.Element {
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                <Translate id="home.section4.build">
-                  Build with Celo
-                </Translate>
+                <Translate id="home.section4.build">Build with Celo</Translate>
               </div>
               {sectionFourCard(
-                translate({ id:"home.section4.build.celoComposer.title" }),
-                translate({ id:"home.section4.build.celoComposer.description" }),
+                translate({ id: "home.section4.build.celoComposer.title" }),
+                translate({
+                  id: "home.section4.build.celoComposer.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "developer/deploy"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.build.migrate.title" }),
-                translate({ id:"home.section4.build.migrate.description" }),
+                translate({ id: "home.section4.build.migrate.title" }),
+                translate({ id: "home.section4.build.migrate.description" }),
                 "img/doc-images/logos/bullet.svg",
                 "/developer/migrate/from-ethereum"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.build.oracles.title" }),
-                translate({ id:"home.section4.build.oracles.description" }),
+                translate({ id: "home.section4.build.oracles.title" }),
+                translate({ id: "home.section4.build.oracles.description" }),
                 "img/doc-images/logos/bullet.svg",
                 "/protocol/oracle"
+              )}
+
+              {sectionFourCard(
+                translate({ id: "home.section4.build.architecture.title" }),
+                translate({
+                  id: "home.section4.build.architecture.description",
+                }),
+                "img/doc-images/logos/bullet.svg",
+                "/general/web2-to-web3"
               )}
             </div>
 
             <div className="items-center">
               <div className="text-2xl font-bold text-center">
-                <Translate id="home.section4.validators">
-                  Validators
-                </Translate>
+                <Translate id="home.section4.validators">Validators</Translate>
               </div>
               {sectionFourCard(
-                translate({ id:"home.section4.validators.run.title" }),
-                translate({ id:"home.section4.validators.run.description" }),
+                translate({ id: "home.section4.validators.run.title" }),
+                translate({ id: "home.section4.validators.run.description" }),
                 "img/doc-images/logos/bullet.svg",
                 "/validator"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.validators.node.title" }),
-                translate({ id:"home.section4.validators.node.description" }),
+                translate({ id: "home.section4.validators.node.title" }),
+                translate({ id: "home.section4.validators.node.description" }),
                 "img/doc-images/logos/bullet.svg",
                 "/validator/security"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section4.validators.attestation.title" }),
-                translate({ id:"home.section4.validators.attestation.description" }),
+                translate({ id: "home.section4.validators.attestation.title" }),
+                translate({
+                  id: "home.section4.validators.attestation.description",
+                }),
                 "img/doc-images/logos/bullet.svg",
                 "/validator/attestation"
               )}
@@ -420,28 +455,9 @@ export default function HomePage(): JSX.Element {
 
         <section className="mt-12">
           <div className="text-4xl font-semibold px-2 w-full">
-            <Translate id="home.section5.title">
-              Join Our Ecosystem
-            </Translate>
+            <Translate id="home.section5.title">Join Our Ecosystem</Translate>
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
-            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
-              <div className="w-2/3 flex flex-col justify-between h-full">
-                <span className="text-3xl font-semibold pb-7">
-                  <Translate id="home.section5.box1">
-                    Create, Earn, and Grow as a Celo Sage Content Creator
-                  </Translate>
-                </span>
-                {buildKnowMoreButton("/community/celo-sage")}
-              </div>
-              {/* <div className="w-8/12">
-                <img
-                  className="rounded-md"
-                  src="/img/homepage/celo-sage.webp"
-                />
-              </div> */}
-            </div>
-
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold pb-7">
@@ -460,22 +476,22 @@ export default function HomePage(): JSX.Element {
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
               {sectionFourCard(
-                translate({ id:"home.section6.contribute.title" }),
-                translate({ id:"home.section6.contribute.description" }),
+                translate({ id: "home.section6.contribute.title" }),
+                translate({ id: "home.section6.contribute.description" }),
                 "img/doc-images/logos/contribute.svg",
                 "/community/guidelines"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section6.ambassadors.title" }),
-                translate({ id:"home.section6.ambassadors.description" }),
+                translate({ id: "home.section6.ambassadors.title" }),
+                translate({ id: "home.section6.ambassadors.description" }),
                 "img/doc-images/logos/ambassador.svg",
                 "https://celocommunity.xyz/join-the-ambassador-program"
               )}
 
               {sectionFourCard(
-                translate({ id:"home.section6.connect.title" }),
-                translate({ id:"home.section6.connect.description" }),
+                translate({ id: "home.section6.connect.title" }),
+                translate({ id: "home.section6.connect.description" }),
                 "img/doc-images/logos/connect.svg",
                 "https://celo.org/community"
               )}
@@ -492,9 +508,7 @@ export default function HomePage(): JSX.Element {
     return (
       <Link href={url} target="_blank" className="flex space-x-2 items-center">
         <span className="text-lg font-semibold">
-          <Translate id="home.general.knowMore">
-            Know more
-          </Translate>
+          <Translate id="home.general.knowMore">Know more</Translate>
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

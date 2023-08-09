@@ -146,6 +146,25 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'Add3',
+    description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
+    preview: require('./showcase/add3.png'),
+    website: 'https://www.add3.io/',
+    source: 'https://github.com/Add3official',
+    tags: ['apps', 'defi'],
+  }, 
+  {
+    title: 'EthicHub',
+    description: translate({
+      message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
+      id: 'showcase.user.ethichub.description',
+    }),
+    preview: require('./showcase/ethichub.png'),
+    website: 'https://ethix.ethichub.com/',
+    source: 'https://docs-ethix.ethichub.com',
+    tags: ['apps', 'refi', 'popular', 'earn', 'impact'],
+  },
+  {
     title: 'Valora',
     description: 'The crypto wallet with 12% rewards to buy, send, spend, earn, and collect NFTs on the Celo blockchain.',
     preview: require('./showcase/valora.png'),
@@ -222,7 +241,7 @@ const Users: User[] = [
     description: 'Banknless infrastructure for building circular trade and mutual credit networks.',
     preview: require('./showcase/resource.png'),
     website: 'https://resource.finance/',
-    source: 'https://github.com/ReSource-Network/',
+    source: 'https://github.com/resourcefinance',
     tags: ['apps', 'defi'],
   },
   {
@@ -306,14 +325,6 @@ const Users: User[] = [
     tags: ['apps', 'defi'],
   },
   {
-    title: 'Porio',
-    description: 'The sustainnable marketplace for digital art and game assets.',
-    preview: require('./showcase/porio.png'),
-    website: 'https://epor.io/',
-    source: 'https://epor.io/',
-    tags: ['apps', 'defi'],
-  },
-  {
     title: 'Aijia',
     description: 'A modern ticketing and marketplace platform focused on FANS and the fan experience.',
     preview: require('./showcase/aijia.png'),
@@ -394,14 +405,6 @@ const Users: User[] = [
     tags: ['apps', 'wallets', 'popular'],
   },
   {
-    title: 'CeloDance',
-    description: 'Send, Vote And Earn Celo Assets , Make It Mobile.',
-    preview: require('./showcase/celo-dance.png'),
-    website: 'https://celo.dance/',
-    source: 'https://celo.dance/',
-    tags: ['apps', 'wallets'],
-  },
-  {
     title: 'SushiSwap',
     description: 'Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform. Welcome home to DeFi.',
     preview: require('./showcase/sushi-swap.png'),
@@ -416,14 +419,6 @@ const Users: User[] = [
     website: 'https://www.socialstack.co/',
     source: 'https://www.socialstack.co/',
     tags: ['apps', 'defi'],
-  },
-  {
-    title: 'Qavah',
-    description: 'Decentralized and free-of-charge crowdfunding platform.',
-    preview: require('./showcase/qavah.png'),
-    website: 'https://qavah.me',
-    source: 'https://qavah.me',
-    tags: ['apps', 'impact'],
   },
   {
     title: 'Niftydrop',
@@ -1026,6 +1021,14 @@ const Users: User[] = [
     website: 'https://defiantapp.tech/',
     source: 'https://github.com/AndinaDeFi/',
     tags: ['apps','wallets','defi'],
+  },
+  {
+    title: 'Quarashi Network',
+    description: 'Non-custodial MultiChain Crypto Assets Manager, Peer-to-Peer Audio/Video Conferencing & Chat, Markets Overview, News & Airdrops',
+    preview: require('./showcase/quarashi.png'),
+    website: 'https://quarashi.network/',
+    source: 'https://github.com/quarashi-network',
+    tags: ['apps','defi','wallets'],
   },
   {
     title: 'Kolektivo',

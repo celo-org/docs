@@ -13,6 +13,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Web2 to Web3",
+          id: "general/web2-to-web3",
+        },
+        {
+          type: "doc",
           label: "Whitepapers",
           id: "general/whitepapers",
         },
@@ -34,7 +39,7 @@ const sidebars = {
         {
           type: "link",
           label: "Valora",
-          href: "/blog/tutorials/3-simple-steps-to-get-started-with-valora-on-celo",
+          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
         },
         {
           type: "category",
@@ -43,7 +48,7 @@ const sidebars = {
             {
               type: "link",
               label: "MetaMask Setup",
-              href: "/blog/tutorials/3-simple-steps-to-connect-your-metamask-wallet-to-celo",
+              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
             },
             {
               type: "doc",
@@ -146,6 +151,11 @@ const sidebars = {
           ],
         },
         {
+          type: "doc",
+          label: "Coinbase Wallet",
+          id: "wallet/coinbase-wallet",
+        },
+        {
           type: "link",
           label: "Staking",
           href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
@@ -241,6 +251,11 @@ const sidebars = {
               label: "Baklava Testnet",
               id: "network/baklava/disclaimer",
             },
+            {
+              type: "doc",
+              label: "Cannoli Testnet",
+              id: "network/cannoli/disclaimer",
+            },
           ],
         },
       ],
@@ -298,6 +313,11 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Using thirdweb",
+              id: "developer/deploy/thirdweb",
+            },
+            {
+              type: "doc",
               label: "Using Remix",
               id: "developer/deploy/remix",
             },
@@ -321,6 +341,11 @@ const sidebars = {
               type: "doc",
               label: "Overview",
               id: "developer/sdks/celo-sdks",
+            },
+            {
+              type: "doc",
+              label: "thirdweb SDK",
+              id: "developer/thirdweb-sdk/index",
             },
             {
               type: "category",
@@ -461,7 +486,7 @@ const sidebars = {
         {
           type: "link",
           label: "Faucet",
-          href: "https://celo.org/developers/faucet",
+          href: "https://faucet.celo.org",
         },
       ],
     },
@@ -753,9 +778,20 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
+          type: "category",
           label: "Governance",
-          id: "protocol/governance",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "protocol/governance/index",
+            },
+            {
+              type: "doc",
+              label: "Create Proposal",
+              id: "protocol/governance/create-proposal",
+            },
+          ],
         },
         {
           type: "category",
@@ -771,7 +807,6 @@ const sidebars = {
             "protocol/transaction/gas-pricing",
             "protocol/transaction/escrow",
             "protocol/transaction/tx-comment-encryption",
-            "protocol/transaction/full-node-incentives",
           ],
         },
         {
@@ -788,7 +823,6 @@ const sidebars = {
             "protocol/stability/oracles",
             "protocol/stability/stability-fees",
             "protocol/stability/adding-stable-assets",
-            "protocol/stability/tobin-tax",
           ],
         },
         {
@@ -854,6 +888,11 @@ const sidebars = {
           type: "doc",
           label: "Celo Randomness",
           id: "protocol/randomness",
+        },
+        {
+          type: "doc",
+          label: "Crypto Precompiles",
+          id: "protocol/precompiles",
         },
         {
           type: "doc",
@@ -1005,40 +1044,9 @@ const sidebars = {
           id: "community/guidelines",
         },
         {
-          type: "category",
-          label: "Celo Sage",
-          items: [
-            {
-              type: "doc",
-              label: "Celo Sage Program",
-              id: "community/celo-sage/celo-sage",
-            },
-            {
-              type: "doc",
-              label: "Submit an Application",
-              id: "community/celo-sage/submit-application",
-            },
-            {
-              type: "doc",
-              label: "Complete your Tutorial",
-              id: "community/celo-sage/complete-your-tutorial",
-            },
-            {
-              type: "doc",
-              label: "Contribution Guidelines",
-              id: "community/celo-sage/contribution-guidelines",
-            },
-            {
-              type: "doc",
-              label: "Tutorial Structure",
-              id: "community/celo-sage/tutorial-structure",
-            },
-            {
-              type: "doc",
-              label: "FAQs",
-              id: "community/celo-sage/faq",
-            },
-          ],
+          type: "doc",
+          label: "StackShift",
+          id: "community/StackShift/StackShift",
         },
         {
           type: "doc",
@@ -1054,11 +1062,6 @@ const sidebars = {
           type: "doc",
           label: "Grant Playbook",
           id: "community/grant-playbook",
-        },
-        {
-          type: "link",
-          label: "Ambassadors",
-          href: "https://celocommunity.xyz/join-the-ambassador-program",
         },
         {
           type: "link",

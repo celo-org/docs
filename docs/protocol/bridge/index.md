@@ -19,7 +19,6 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 - [Portal (Wormhole)](https://www.portalbridge.com/#/transfer)
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
-- [Multichain (Previously Anyswap)](https://multichain.org)
 - [Satellite (Axelar)](https://satellite.money/)
 - [Celer](https://cbridge.celer.network/1/10/USDC)
 - [O3](https://o3swap.com/)
@@ -33,3 +32,4 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [Layer Zero](https://layerzero.network/)
 - [Axelar Network](https://axelar.network/)
 - [Optics](https://optics.app)
+- [Squid Router](https://app.squidrouter.com/)
