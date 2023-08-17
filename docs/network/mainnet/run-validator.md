@@ -53,21 +53,42 @@ Celo is a proof-of-stake network, which has different hardware requirements than
 
 #### Validator node
 
-- Memory: 16 GB RAM
-- CPU: 4 core / 8 thread 64-bit CPU with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
-- Disk: 512 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 32GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
+- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
+- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
 
 #### Proxy or Full node
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB i,s a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
 
-Attestation Service nodes consume less resources and can run on machines with less memory and compute.
+Some cloud instances that meet the above requirements are:
 
-In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
+
+#### Archive Nodes
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 3TB SSD or NVMe (resizable). Current chain size at August 16th is ~2.1TB, so 3TB is a safe bet for the next 6 months. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
 
 ### Networking requirements
 
@@ -104,7 +125,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
@@ -129,8 +150,8 @@ This guide contains a large number of keys, so it is important to understand the
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
+1. By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
+2. By setting the `--unlock` flag when starting the node.
 
 It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
 
