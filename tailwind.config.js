@@ -8,26 +8,30 @@ module.exports = {
   darkMode: ["class", '[data-theme="dark"]'], // hooks into docusaurus' dark mode settigns
   theme: {
     extend: {
+      boxShadow: {
+        glow: "0 0 10px 5px rgba(255, 255, 255, 0.75)",
+      },
       colors: {
         /** primary */
-        "prosperity": "#FCFF52",
-        "forest": "#476520",
+        prosperity: "#FCFF52",
+        forest: "#476520",
         /** base */
-        "gypsum": "#FCF6F1",
-        "sand": "#E7E3D4",
-        "wood": "#655947",
-        "fig": "#1E002B",
+        gypsum: "#FCF6F1",
+        sand: "#E7E3D4",
+        wood: "#655947",
+        fig: "#1E002B",
+        figSecondary: "#49185e",
         /** functional */
-        "snow": "#FFFFFF",
-        "onyx": "#CCCCCC",
-        "success": "#329F3B",
-        "error": "#E70532",
-        "disabled": "#9B9B9B",
+        snow: "#FFFFFF",
+        onyx: "#CCCCCC",
+        success: "#329F3B",
+        error: "#E70532",
+        disabled: "#9B9B9B",
         /** accent */
-        "sky": "#7CC0FF",
-        "citrus": "#FF9A51",
-        "lotus": "#FFA3EB",
-        "lavender": "#B490FF"
+        sky: "#7CC0FF",
+        citrus: "#FF9A51",
+        lotus: "#FFA3EB",
+        lavender: "#B490FF",
       },
     },
   },
@@ -43,5 +47,5 @@ module.exports = {
         },
       };
     },
-  ]
+  ],
 };

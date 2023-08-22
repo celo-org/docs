@@ -12,6 +12,7 @@ import "./index.module.css";
 
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import AISearch from "../components/AISearch";
 
 const TITLE = translate({ message: "Celo Documentation" });
 const DESCRIPTION = translate({
@@ -71,6 +72,8 @@ export default function HomePage(): JSX.Element {
             src="img/logo-cube-animation.gif"
           />
         </section>
+
+        <AISearch />
 
         <section className="mt-12">
           <div className="text-3xl font-bold px-2 w-full">

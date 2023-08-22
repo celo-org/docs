@@ -1,4 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+require("dotenv").config();
 const path = require("path");
 const math = require("remark-math");
 const katex = require("rehype-katex");
@@ -24,6 +25,9 @@ module.exports = {
     "@docusaurus/theme-live-codeblock",
     "@saucelabs/theme-github-codeblock",
   ],
+  customFields: {
+    Docusaurus_SPANNING_API: process.env.Docusaurus_SPANNING_API,
+  },
   scripts: [
     // {
     //   src: "https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.0/web3.min.js",
