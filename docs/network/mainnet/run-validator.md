@@ -27,8 +27,6 @@ While other Validator Groups will exist on the Celo Network, the fastest way to 
 
 Because of the importance of Validator security and availability, Validators are expected to run a "proxy" node in front of each Validator node. In this setup, the Proxy node connects with the rest of the network, and the Validator node communicates only with the Proxy, ideally via a private network.
 
-Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](/protocol/identity/), to provide attestations that allow users to map their phone number to a Celo address.
-
 [Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa)
 
 ## Prerequisites
@@ -47,7 +45,7 @@ The recommended Celo Validator setup involves continually running three instance
 
 - 1 **Validator node**: should be deployed to single-tenant hardware in a secure, high availability data center
 - 1 **Validator Proxy node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), but requires high availability
-- 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements
+<!-- - 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements -->
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
@@ -92,17 +90,15 @@ Some cloud instances that meet the above requirements are:
 
 ### Networking requirements
 
-In order for your Validator to participate in consensus and complete attestations, it is **critically** important to configure your network correctly.
+In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
 
-Your Proxy and Attestations nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
+Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
 
 On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
 
 On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
 
-On the Proxy and Attestations machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-On the Attestations machine, port 80 should accept TCP connections from all IP addresses. This port is used by users to request attestations from you.
+On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
 
 To illustrate this, you may refer to the following table:
 
@@ -110,7 +106,6 @@ To illustrate this, you may refer to the following table:
 | ---------------------- | -------------------- | ------------------- | --------------- |
 | Validator              |                      |                     | tcp:30503       |
 | Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-| Attestation            | tcp:80               |                     |                 |
 
 ### Software requirements
 
@@ -640,10 +635,6 @@ You can see additional information about your validator, including uptime score,
 # On your local machine
 celocli validator:show $CELO_VALIDATOR_ADDRESS
 ```
-
-## Running the Attestation Service
-
-Validators are expected to run an [Attestation Service](/validator/attestation) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator/attestation).
 
 ## Deployment Tips
 

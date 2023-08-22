@@ -534,11 +534,11 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: "doc",
-          label: "Attestation Service",
-          id: "validator/attestation",
-        },
+        // {
+        //   type: "doc",
+        //   label: "Attestation Service",
+        //   id: "validator/attestation",
+        // },
         {
           type: "category",
           label: "Key Management",
