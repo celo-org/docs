@@ -476,6 +476,12 @@ export default function HomePage(): JSX.Element {
           <div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
               {sectionFourCard(
+                "Celo dApp Launch Checklist",
+                "A comprehensive guide to assist you in launching dapps on Celo.",
+                "img/doc-images/logos/connect.svg",
+                "/developer/launch-checklist"
+              )}
+              {sectionFourCard(
                 translate({ id: "home.section6.contribute.title" }),
                 translate({ id: "home.section6.contribute.description" }),
                 "img/doc-images/logos/contribute.svg",

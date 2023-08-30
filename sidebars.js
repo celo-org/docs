@@ -475,6 +475,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Launch Checklist",
+          id: "developer/launch-checklist",
+        },
+        {
+          type: "doc",
           label: "EVM Tools",
           id: "developer/evm-tools",
         },
