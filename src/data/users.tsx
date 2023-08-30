@@ -146,6 +146,14 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'Enkrypt',
+    description: 'Hold, buy, send, receive, and swap CELO tokens. Manage your NFTs. Access web3 apps across multiple blockchains.',
+    preview: require('https://i.postimg.cc/vBc4H0Gb/enkrypt.png'),
+    website: 'https://www.enkrypt.com',
+    source: 'https://github.com/enkryptcom',
+    tags: ['wallets', 'apps', 'defi'],
+  }, 
+  {
     title: 'Add3',
     description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
     preview: require('./showcase/add3.png'),
