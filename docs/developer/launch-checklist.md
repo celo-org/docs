@@ -37,6 +37,8 @@ Make your dapp stand out by reporting it on these platforms:
 ### If your dapp has smart contracts
 
 - [ ] Add a tutorial about how to use the contract/token, etc.
+- [ ] Best practices include: using Open Zeppelin contracts and not writing everything from scratch as this could open your contracts to vulnerabilities.
+- [ ] Consider your options for a contract audit.
 
 ### If your dapp doesn't have smart contracts
 
