@@ -71,7 +71,7 @@ module.exports = {
     announcementBar: {
       id: "support_us",
       content:
-        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>.',
+        'Build For MiniPay – Sign Up For <a target="_blank" rel="noopener noreferrer" href="http://celo-8568019.hs-sites.com/operaminipay-celodevs">Developer Updates</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
