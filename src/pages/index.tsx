@@ -60,15 +60,33 @@ export default function HomePage(): JSX.Element {
         <section className="w-full flex md:flex-row flex-col items-center px-2 md:px-10">
           <div className="md:w-1/2 w-full">
             <span className="text-4xl font-bold text-center space-x-5">
-              <Translate id="home.header.title">
-                Build decentralized applications that create the conditions for
-                prosperity — for everyone.
-              </Translate>
+              Build For MiniPay – Sign Up For Developer Updates
             </span>
+            <Link
+              href={"http://celo-8568019.hs-sites.com/operaminipay-celodevs"}
+              target="_blank"
+              className="flex space-x-2 items-center"
+            >
+              <span className="text-lg font-semibold">Sign Up</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
           </div>
           <img
             className="md:w-1/2 w-full mt-5 md:mt-0"
-            src="img/logo-cube-animation.gif"
+            src="img/Celo_MiniPay_02_Horizontal.jpg"
           />
         </section>
 
@@ -507,9 +525,7 @@ export default function HomePage(): JSX.Element {
   function buildKnowMoreButton(url: string) {
     return (
       <Link href={url} target="_blank" className="flex space-x-2 items-center">
-        <span className="text-lg font-semibold">
-          <Translate id="home.general.knowMore">Know more</Translate>
-        </span>
+        <span className="text-lg font-semibold">Learn more</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

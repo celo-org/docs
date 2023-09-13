@@ -24,8 +24,8 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: #1E002B;
-  --ifm-background-surface-color: #1E002B;
+  --ifm-background-color: #07955F;
+  --ifm-background-surface-color: #07955F;
   --ifm-color-primary: #FCFF52;
   --docsearch-searchbox-background: #000!important;
   /* .DocSearch-Hit[aria-selected=true].a: */
@@ -40,7 +40,7 @@ html[data-theme='light'] {
   --ifm-background-color: #FCF6F1;
   --ifm-background-surface-color: #FCF6F1;
   --ifm-color-primary: #476520;
-  --ifm-footer-background-color: #1E002B;
+  --ifm-footer-background-color: #07955F;
   --docsearch-searchbox-background: #E7E3D4;
 }
 
