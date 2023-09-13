@@ -85,7 +85,7 @@ module.exports = {
     },
     colorMode: {
       defaultMode: "dark",
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "Celo Docs",
