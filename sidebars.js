@@ -267,6 +267,11 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "developer/index" },
         {
+          type: "doc",
+          label: "Build on MiniPay",
+          id: "developer/build-on-minipay",
+        },
+        {
           type: "category",
           label: "Setup",
           items: [

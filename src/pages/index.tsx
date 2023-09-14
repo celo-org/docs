@@ -63,11 +63,10 @@ export default function HomePage(): JSX.Element {
               Build For MiniPay – Sign Up For Developer Updates
             </span>
             <Link
-              href={"http://celo-8568019.hs-sites.com/operaminipay-celodevs"}
-              target="_blank"
-              className="flex space-x-2 items-center"
+              href={"/developer/build-on-minipay"}
+              className="flex space-x-2 items-center mt-2"
             >
-              <span className="text-lg font-semibold">Sign Up</span>
+              <span className="text-lg font-semibold">Build on MiniPay</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
