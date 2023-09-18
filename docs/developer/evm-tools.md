@@ -13,6 +13,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 - [Solidity](https://soliditylang.org/) - The most popular smart contract language.
 - [Metamask](https://metamask.io/) - Browser extension wallet to interact with Dapps.
+- [Flair](https://flair.dev/) - Real-time and historical custom data indexing for any evm chain
 - [thirdweb](https://thirdweb.com) - SDKs in every language, smart contracts, tools, and infrastructure for web3 development.
 - [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. Install the cli via npm and start here to write your first smart contracts.
 - [Truffle boxes](https://trufflesuite.com/boxes) - Packaged components for the Ethereum ecosystem.
@@ -101,6 +102,9 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Nethereum.Faucet](https://github.com/Nethereum/Nethereum.Faucet) - A C#/.NET faucet
 
 ## Communicating with Ethereum
+
+### Data Indexers
+- [Flair](https://flair.dev/) - Real-time and historical custom web3 data indexing for any evm chain
 
 ### Frontend Ethereum APIs
 
