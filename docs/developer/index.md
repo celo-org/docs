@@ -37,7 +37,7 @@ Easily build Celo dApps with Celo Composer.
 
 ## Get On-Chain data from Celo
 
-- [Using Flair](/developer/index/flair)
+- [Using Flair](/developer/flair)
 
 ## Code Examples
 

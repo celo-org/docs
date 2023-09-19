@@ -1,110 +1,186 @@
 ---
-title: Flair
+title: thirdweb SDK
 description: Build web3 applications that can interact with your smart contracts using our powerful SDKs.
 ---
 
-# 🔮 Flair
-Real-time and historical custom data indexing for any evm chain.
+# thirdweb SDK
 
-[Flair](https://flair.dev) offers reusable **indexing primitives** (such as fault-tolerant RPC ingestors, custom processors, re-org aware database integrations) to make it easy to receive, transform, store and access your on-chain data.
+## Create Application
 
-[![flair architecture](https://imgur.com/0q5bHZK.png)](https://docs.flair.dev/)
+thirdweb offers SDKs for a range of programming languages, such as React, React Native, TypeScript, Python, Go, and Unity.
 
+1. In your CLI run the following command:
 
-## Why Flair?
+   ```bash
+   npx thirdweb create --app
+   ```
 
-Compared to other alternatives the main reasons are:
+2. Input your preferences for the command line prompts:
+   1. Give your project a name
+   2. Choose your network: We will choose EVM for Moonbeam
+   3. Choose your preferred framework: Next.js, CRA, Vite, React Native, Node.js, or Express
+   4. Choose your preferred language: JavaScript or TypeScript
+3. Use the React or TypeScript SDK to interact with your application’s functions. See section on “interact with your contract”
 
-* 🚀  Adopting **parallel and distributed processing** paradigm means high scalability and resiliency for your indexing stack. Instead of constrained sequential processing (e.g Subgraph).
-* 🧩  Focused on **primitives**, which means on the left you plug-in an RPC and on the right you output the data to any destination database.
-* 🚄  Native **real-time stream processing** for certain data workload (such as aggregations, rollups) for things like total volume per pool, or total portfolio per user wallet.
-* ☁️  **Managed** cloud services avoid DevOps and irrelevant engineering costs for dApp developers.
-* 🧑‍💻  Avoid decentralization **overhead** (consensus, network hops, etc) since we believe to enable best UX for dApps reading data must be as close to the developers as possible.
-### Features
+## Interact With a Contract
 
-* ✅ Listen to **any EVM chain** with just an RPC URL.
-  * Free managed RPC URLs for +8 popular chains already included.
-  * Works with both websocket and https-only RPCs.
-* ✅ Track and ingest **any contract** for **any event topic.**
-  * Auto-track new contracts deployed from factory contracts.
-* ✅ **Custom processor scripts** with Javascript runtime (with **Typescript** support)
-  * Make external API or Webhook calls to third-party or your backend.
-  * Get current or historical USD value of any ERC20 token amount of any contract address on any chain.
-  * Use any external NPM library.
-* ✅ **Stream** any stored data to your destination database (Postgres, MongoDB, MySQL, Kafka, Elasticsearch, Timescale, etc).
+### Initialize SDK On Celo
 
-## Getting Started
+Wrap your application in the `ThirdwebProvider` component and change the `activeChain` to Celo
 
-1️⃣ Clone the [starter boilerplate](https://github.com/flair-sdk/starter-boilerplate) template and follow the instructions
+```jsx
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { Celo } from "@thirdweb-dev/chains";
 
-```bash
-git clone https://github.com/flair-sdk/starter-boilerplate.git
-# ... follow instructions in README.md
+const App = () => {
+  return (
+    <ThirdwebProvider activeChain={Celo}>
+      <YourApp />
+    </ThirdwebProvider>
+  );
+};
 ```
-:::info
 
-Boilerplate instructions will create a **new cluster**, generate **an API Key**, and set up a manifest.yml to index your **first contract** with **sample custom processor** scripts.
+### Get Contract
 
-Learn more about the [structure of manifest.yml](https://docs.flair.dev/reference/manifest.yml).
+To connect to your contract, use the SDK’s `[getContract](https://portal.thirdweb.com/typescript/sdk.thirdwebsdk.getcontract)`method.
 
-:::
+```jsx
+import { useContract } from "@thirdweb-dev/react";
 
-2️⃣ Configure Celo RPC nodes
-
-Set a unique namespace, Celo chainId and RPC endpoint in your config. Remember that you can add up to 10 RPC endpoints for resiliency.
-
-```yaml
-{
-  "cluster": "dev",
-  "namespace": "my-awesome-celo-indexing-dev",
-  "indexers": [
-    {
-      "chainId": 42220,
-      "enabled": true,
-      "ingestionFilterGroup": "default",
-      "processingFilterGroup": "default",
-      "sources": [
-        # Highly-recommended to have at least 1 websocket endpoint
-        "wss://forno.celo.org/ws",
-        # You can put multiple endpoints for failover
-        "https://forno.celo.org"
-      ]
-    }
-  ]
+function App() {
+  const { contract, isLoading, error } = useContract("{{contract_address}}");
 }
 ```
 
-3️⃣  Sync some historical data using [backfill command](https://docs.flair.dev/reference/backfilling). Remember that `enabled: true` flag in your `config` enabled your indexer to capture data in real-time already.
+### Calling Contract Functions
 
-```bash
-# backfill certain contracts or block ranges
-pnpm flair backfill --chain 42220 --address 
-0x81BbB3b5C5FD1a4807677D0D559E45565CED5B3B -d backward --max-blocks 10000
-# backfill for a specific block number, if you have certain events you wanna test with
-pnpm flair backfill --chain 42220 -b 21442072
-# backfill for the recent data in the last X minute
-pnpm flair backfill --chain 42220 --min-timestamp="30 mins ago" -d backward
+- For extension based functions, use the built-in supported hooks. The following is an example using the NFTs extension to access a list of NFTs owned by an address- `useOwnedNFTs`
+
+  ```jsx
+  import { useOwnedNFTs, useContract, useAddress } from "@thirdweb-dev/react";
+
+  // Your smart contract address
+  const contractAddress = "{{contract_address}}";
+
+  function App() {
+    const address = useAddress();
+    const { contract } = useContract(contractAddress);
+    const { data, isLoading, error } = useOwnedNFTs(contract, address);
+  }
+  ```
+
+  Full reference: https://portal.thirdweb.com/react/react.usenft
+
+- Use the `useContractRead` hook to call any read functions on your contract by passing in the name of the function you want to use.
+
+  ```jsx
+  import { useContractRead, useContract } from "@thirdweb-dev/react";
+
+  // Your smart contract address
+  const contractAddress = "{{contract_address}}";
+
+  function App() {
+    const { contract } = useContract(contractAddress);
+    const { data, isLoading, error } = useContractRead(contract, "getName");
+  }
+  ```
+
+  Full reference: https://portal.thirdweb.com/react/react.usecontractread
+
+- Use the `useContractWrite` hook to call any writefunctions on your contract by passing in the name of the function you want to use.
+
+  ```jsx
+  import {
+    useContractWrite,
+    useContract,
+    Web3Button,
+  } from "@thirdweb-dev/react";
+
+  // Your smart contract address
+  const contractAddress = "{{contract_address}}";
+
+  function App() {
+    const { contract } = useContract(contractAddress);
+    const { mutateAsync, isLoading, error } = useContractWrite(
+      contract,
+      "setName"
+    );
+
+    return (
+      <Web3Button
+        contractAddress={contractAddress}
+        // Calls the "setName" function on your smart contract with "My Name" as the first argument
+        action={() => mutateAsync({ args: ["My Name"] })}
+      >
+        Send Transaction
+      </Web3Button>
+    );
+  }
+  ```
+
+  Full reference: [https://portal.thirdweb.com/react/react.usecontractwrite](https://portal.thirdweb.com/react/react.usecontractwrite)
+
+### Connect Wallet
+
+Create a custom connect wallet experience by declaring supported wallets passed to your provider.
+
+```jsx
+import {
+  ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnectV1,
+  walletConnect,
+  safeWallet,
+  paperWallet,
+} from "@thirdweb-dev/react";
+
+function MyApp() {
+  return (
+    <ThirdwebProvider
+      supportedWallets={[
+        metamaskWallet(),
+        coinbaseWallet(),
+        walletConnect({
+          projectId: "YOUR_PROJECT_ID", // optional
+        }),
+        walletConnectV1(),
+        safeWallet(),
+        paperWallet({
+          clientId: "YOUR_CLIENT_ID", // required
+        }),
+      ]}
+      activeChain={Celo}
+    >
+      <App />
+    </ThirdwebProvider>
+  );
+}
 ```
 
+Add in a connect wallet button to prompt end-users to login with any of the above supported wallets.
 
-4️⃣ [Query](https://docs.flair.dev/#getting-started) your custom indexed data.
+```jsx
+import { ConnectWallet } from "@thirdweb-dev/react";
 
-5️⃣ Stream the data to your [own database](https://docs.flair.dev/reference/database#your-own-database).
+function App() {
+  return <ConnectWallet />;
+}
+```
 
-## Examples
+Full reference: https://portal.thirdweb.com/react/connecting-wallets
 
-Explore real-world usage of Flair indexing primitives for various use-cases.
+## Deploy Application
 
-### DeFi
+To host your static web application on decentralized storage, run:
 
-* [Aggregate protocol fees in USD across multiple chains](https://github.com/flair-sdk/examples/tree/main/aggregate-protocol-fees-in-usd)
-* [Calculate "Health Factor" of positions with contract factory tracking](https://github.com/flair-sdk/examples/tree/main/health-factor-with-factory-tracking)
-* [Index Uniswap v2 swaps with USD price for all addresses](https://github.com/flair-sdk/examples/tree/main/uniswap-v2-events-from-all-contracts-with-usd-price)
+```jsx
+npx thirdweb deploy --app
+```
 
-### NFT
+By running this command, your application is built for production and stored using Storage. The built application is uploaded to IPFS, a decentralized storage network, and a unique URL is generated for your application.
 
-* [Index ERC721 and ERC1155 NFTs on any EVM chain with an RPC URL](https://github.com/flair-sdk/examples/tree/main/erc721-and-erc1155-nft-indexing)
+This URL serves as a permanent hosting location for your application on the web.
 
-## Need help?
-
-[Our engineers](https://docs.flair.dev/talk-to-an-engineer) are available to help you at any stage.
+If you have any further questions or encounter any issues during the process, please reach out to thirdweb support at [support.thirdweb.com](https://support.thirdweb.com).
