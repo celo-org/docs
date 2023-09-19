@@ -1,6 +1,6 @@
 ---
 title: Flair
-description: Build web3 applications that can interact with your smart contracts using our powerful SDKs.
+description: Real-time and historical custom data indexing for any evm chain.
 ---
 
 # 🔮 Flair
