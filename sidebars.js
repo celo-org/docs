@@ -340,6 +340,17 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Index",
+          items: [
+            {
+              type: "doc",
+              label: "Using Flair",
+              id: "developer/flair/index",
+            },
+          ],
+        },
+        {
+          type: "category",
           label: "Libraries & SDKs",
           items: [
             {

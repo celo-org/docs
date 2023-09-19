@@ -35,6 +35,10 @@ Easily build Celo dApps with Celo Composer.
 - [Using Truffle](/developer/deploy/truffle)
 - [Using Hardhat](/developer/deploy/hardhat)
 
+## Get On-Chain data from Celo
+
+- [Using Flair](/developer/index/flair)
+
 ## Code Examples
 
 - [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
