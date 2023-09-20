@@ -55,6 +55,14 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 - Maintainers: [DSRV Labs](https://www.dsrvlabs.com/en/)
 - Ledger support: Yes
 
+### Enkrypt
+
+Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
+
+- [Enkrypt.com](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
+- Platforms: Chrome, Brave, Firefox, Safari, Opera
+- Maintainers: [MyEtherWallet](https://www.myetherwallet.com/)
+
 ### Steakwallet
 
 Steakwallet is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
