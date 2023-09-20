@@ -1,0 +1,134 @@
+---
+title: Build on MiniPay
+description: A guide to building on MiniPay and Celo.
+---
+
+import MinipayImage1 from "../../static/img/doc-images/minipay/minipay-1.png";
+import MinipayImage2 from "../../static/img/doc-images/minipay/minipay-2.png";
+import MinipayImage3 from "../../static/img/doc-images/minipay/minipay-3.png";
+
+## Building DApps for miniPay Wallet
+
+---
+
+Welcome to the miniPay wallet integration guide. If you're aiming to deploy your decentralized apps within the miniPay app, this guide is tailored for you. We'll walk you through the process of integrating the windows.provider object provided by the miniPay wallet's webview with popular web3 JavaScript libraries.
+
+### Overview
+
+When your website is loaded inside the miniPay app's webview, the miniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with a majority of web3 libraries that accept a provider object.
+
+### Integration with Popular Web3 Libraries
+
+#### 1. Web3.js
+
+Web3.js is a widely-used Ethereum JavaScript API. To utilize the `windows.provider` with `Web3.js`:
+
+```js
+const Web3 = require('web3');
+
+// Ensure miniPay provider is available
+if (window.provider) {
+    const web3 = new Web3(window.provider);
+} else {
+    console.error("miniPay provider not detected");
+}
+```
+
+#### 2. Ethers.js
+
+Ethers.js offers a comprehensive Ethereum wallet implementation and utilities in both JavaScript and TypeScript. Here's how to integrate it with miniPay:
+
+```js
+const { ethers } = require('ethers');
+
+// Ensure miniPay provider is available
+if (window.provider) {
+    const provider = new ethers.providers.Web3Provider(window.provider);
+} else {
+    console.error("miniPay provider not detected");
+}
+```
+
+#### 3. Wagmi
+
+Wagmi.js is an emerging library in the Ethereum ecosystem. To integrate it with miniPay's provider, you can use the `useConnect` hook:
+
+```js
+import { useConnect } from 'wagmi'
+import { InjectedConnector } from 'wagmi/connectors/injected'
+
+const { connect } = useConnect({
+    connector: new InjectedConnector(),
+});
+
+useEffect(() => {
+    connect();
+}, []);
+```
+
+This code sets up an `InjectedConnector` and then utilizes the `connect` method from the `useConnect` hook. The `useEffect` ensures that the connection is established when the page loads.
+
+#### 4. Viem
+
+Viem is another library gaining traction. Here's how you can integrate it:
+
+```js
+import { createWalletClient, custom } from 'viem'
+import { mainnet } from 'viem/chains'
+
+const client = createWalletClient({
+  chain: mainnet,
+  transport: custom(window.ethereum)
+});
+
+const [address] = await client.getAddresses();
+```
+
+In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
+
+### Testing Your DApp Inside miniPay
+
+To ensure that your DApp functions as expected within the miniPay environment, it's crucial to test it inside the miniPay app. Here's how you can set up and test your DApp:
+
+#### Setting Up miniPay for Testing
+
+- **Download Opera Mini Beta:** Start by downloading the Opera Mini Beta application from the PlayStore.[Download Opera Mini Beta](https://play.google.com/store/apps/details?id=com.opera.mini.native.beta)
+- **Access miniPay through Opera Mini Beta:** Once you've downloaded the Opera Mini Beta application, click on the following link to access miniPay: [Access miniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
+- **Create an Account:** Before you can test your DApp, you need to create an account on the miniPay app. Follow the on-screen instructions to set up your account.
+
+### Testing Local Development with miniPay
+
+If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside miniPay.
+
+- **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
+- **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
+- **Tunnel Traffic with ngrok:** In your terminal, run the following command to start an ngrok tunnel:
+
+```bash
+ngrok http 3000
+```
+
+This will provide you with a public URL that tunnels to your localhost.
+
+- **Test in miniPay:** Copy the provided ngrok URL and use it inside the miniPay app to test your DApp.
+
+### How to test your DApp in miniPay
+
+1. Open the miniPay app on your phone and click on compass icon.
+
+<img src={MinipayImage1} style={{width: 250}} alt="Open minipay dApp store" />
+
+2. Click on "Test Page" to open the miniPay test page.
+
+<img src={MinipayImage2} style={{width: 250}} alt="Open minipay dApp test page" />
+
+3. Enter the URL of your DApp and click on "Go".
+
+<img src={MinipayImage3} style={{width: 250}} alt="Minipay dApp testing" />
+
+### Important Notes
+
+- Ensure the "Connect Wallet" button is hidden when your DApp is loaded inside the miniPay app, as the wallet connection is implicit.
+- Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the miniPay wallet.
+- When using `ngrok`, remember that the tunneling URL is temporary. You'll get a new URL every time you restart ngrok.
+- Be cautious about exposing sensitive information or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
