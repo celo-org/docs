@@ -239,10 +239,6 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
 
-### Performance
-
-A ceiling on the gas consumption for all common operations should be defined and enforced by automated checks run on every commit.
-
 1. Update CeloScanApi in env.json file
 2. Run verification command
 
@@ -254,6 +250,10 @@ example:
 ```bash
 yarn truffle-verify MentoFeeHandlerSeller@0x4efa274b7e33476c961065000d58ee09f7921a74 --network mainnet --forno https://forno.celo.org
 ```
+
+### Performance
+
+A ceiling on the gas consumption for all common operations should be defined and enforced by automated checks run on every commit.
 
 For troubleshooting please see Readme.md of protocol package.
 
