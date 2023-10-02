@@ -235,9 +235,27 @@ After a successful release execution on a testnet, the resulting network state s
 
 Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automated test suite against the network
 
+### Verify smart contracts 
+
+Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
+
 ### Performance
 
 A ceiling on the gas consumption for all common operations should be defined and enforced by automated checks run on every commit.
+
+1. Update CeloScanApi in env.json file
+2. Run verification command
+
+```bash
+yarn truffle-verify [ContractName]@[Contract address]  --network [network] --forno [network rpc url]
+```
+
+example:
+```bash
+yarn truffle-verify MentoFeeHandlerSeller@0x4efa274b7e33476c961065000d58ee09f7921a74 --network mainnet --forno https://forno.celo.org
+```
+
+For troubleshooting please see Readme.md of protocol package.
 
 ### Backwards compatibility
 
