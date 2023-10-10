@@ -1,53 +1,55 @@
 ---
 title: Build on MiniPay
-description: A guide to building on MiniPay and Celo.
+description: A guide  for building on MiniPay and Celo.
 ---
 
-## Building DApps for miniPay Wallet
+## Building DApps for MiniPay Wallet
 
 ---
 
-Welcome to the miniPay wallet integration guide. If you're aiming to deploy your decentralized apps within the miniPay app, this guide is tailored for you. We'll walk you through the process of integrating the windows.provider object provided by the miniPay wallet's webview with popular web3 JavaScript libraries.
+Welcome to the MiniPay wallet integration guide. If you're aiming to deploy your decentralized apps within the MiniPay app, this guide is tailored for you. We'll walk you through the process of integrating the windows.provider object provided by the MiniPay wallet's webview with popular web3 JavaScript libraries.
 
 ### Overview
 
-When your website is loaded inside the miniPay app's webview, the miniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with a majority of web3 libraries that accept a provider object.
+When your website is loaded inside the MiniPay app's webview, the MiniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with a majority of web3 libraries that accept a provider object.
+
+To check if your app is in the context of MiniPay, you can verify it using `window.ethereum.isMiniPay`.
 
 ### Integration with Popular Web3 Libraries
 
 #### 1. Web3.js
 
-Web3.js is a widely-used Ethereum JavaScript API. To utilize the `windows.provider` with `Web3.js`:
+Web3.js is a widely-used Ethereum JavaScript API. To utilize the `windows.ethereum` with `Web3.js`:
 
 ```js
 const Web3 = require('web3');
 
-// Ensure miniPay provider is available
-if (window.provider) {
-    const web3 = new Web3(window.provider);
+// Ensure MiniPay provider is available
+if (window.ethereum && window.ethereum.isMiniPay) {
+    const web3 = new Web3(window.ethereum);
 } else {
-    console.error("miniPay provider not detected");
+    console.error("MiniPay provider not detected");
 }
 ```
 
 #### 2. Ethers.js
 
-Ethers.js offers a comprehensive Ethereum wallet implementation and utilities in both JavaScript and TypeScript. Here's how to integrate it with miniPay:
+Ethers.js offers a comprehensive Ethereum wallet implementation and utilities in both JavaScript and TypeScript. Here's how to integrate it with MiniPay:
 
 ```js
 const { ethers } = require('ethers');
 
-// Ensure miniPay provider is available
-if (window.provider) {
-    const provider = new ethers.providers.Web3Provider(window.provider);
+// Ensure MiniPay provider is available
+if (window.ethereum && window.ethereum.isMiniPay) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
 } else {
-    console.error("miniPay provider not detected");
+    console.error("MiniPay provider not detected");
 }
 ```
 
 #### 3. Wagmi
 
-Wagmi.js is an emerging library in the Ethereum ecosystem. To integrate it with miniPay's provider, you can use the `useConnect` hook:
+Wagmi.js is an emerging library in the Ethereum ecosystem. To integrate it with MiniPay's provider, you can use the `useConnect` hook:
 
 ```js
 import { useConnect } from 'wagmi'
@@ -82,19 +84,19 @@ const [address] = await client.getAddresses();
 
 In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
 
-### Testing Your DApp Inside miniPay
+### Testing Your DApp Inside MiniPay
 
-To ensure that your DApp functions as expected within the miniPay environment, it's crucial to test it inside the miniPay app. Here's how you can set up and test your DApp:
+To ensure that your DApp functions as expected within the MiniPay environment, it's crucial to test it inside the MiniPay app. Here's how you can set up and test your DApp:
 
-#### Setting Up miniPay for Testing
+#### Setting Up MiniPay for Testing
 
 - **Download Opera Mini Beta:** Start by downloading the Opera Mini Beta application from the PlayStore.[Download Opera Mini Beta](https://play.google.com/store/apps/details?id=com.opera.mini.native.beta)
-- **Access miniPay through Opera Mini Beta:** Once you've downloaded the Opera Mini Beta application, click on the following link to access miniPay: [Access miniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
-- **Create an Account:** Before you can test your DApp, you need to create an account on the miniPay app. Follow the on-screen instructions to set up your account.
+- **Access MiniPay through Opera Mini Beta:** Once you've downloaded the Opera Mini Beta application, click on the following link to access MiniPay: [Access MiniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
+- **Create an Account:** Before you can test your DApp, you need to create an account on the MiniPay app. Follow the on-screen instructions to set up your account.
 
-### Testing Local Development with miniPay
+### Testing Local Development with MiniPay
 
-If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside miniPay.
+If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside MiniPay.
 
 - **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
 - **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
@@ -106,25 +108,29 @@ ngrok http 3000
 
 This will provide you with a public URL that tunnels to your localhost.
 
-- **Test in miniPay:** Copy the provided ngrok URL and use it inside the miniPay app to test your DApp.
+- **Test in MiniPay:** Copy the provided ngrok URL and use it inside the MiniPay app to test your DApp.
 
-### How to test your DApp in miniPay
+### How to test your DApp in MiniPay
 
-1. Open the miniPay app on your phone and click on compass icon.
+1. Open the MiniPay app on your phone and click on compass icon.
 
-<img src={"/img/doc-images/minipay/minipay-1.png"} style={{width: 250}} alt="Open minipay dApp store" />
+<img src={"/img/doc-images/minipay/minipay-1.png"} style={{width: 250}} alt="Open MiniPay dApp store" />
 
-2. Click on "Test Page" to open the miniPay test page.
+2. Click on "Test Page" to open the MiniPay test page.
 
-<img src={"/img/doc-images/minipay/minipay-2.png"} style={{width: 250}} alt="Open minipay dApp test page" />
+<img src={"/img/doc-images/minipay/minipay-2.png"} style={{width: 250}} alt="Open MiniPay dApp test page" />
 
 3. Enter the URL of your DApp and click on "Go".
 
-<img src={"/img/doc-images/minipay/minipay-3.png"} style={{width: 250}} alt="Minipay dApp testing" />
+<img src={"/img/doc-images/minipay/minipay-3.png"} style={{width: 250}} alt="MiniPay dApp testing" />
 
 ### Important Notes
 
-- Ensure the "Connect Wallet" button is hidden when your DApp is loaded inside the miniPay app, as the wallet connection is implicit.
-- Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the miniPay wallet.
+- Ensure the "Connect Wallet" button is hidden when your DApp is loaded inside the MiniPay app, as the wallet connection is implicit.
+- Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the MiniPay wallet.
 - When using `ngrok`, remember that the tunneling URL is temporary. You'll get a new URL every time you restart ngrok.
 - Be cautious about exposing sensitive information or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
+- MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `cUSD`. More currencies might be supported in future.
+- MiniPay only accepts legacy transactions at the moment. EIP-1559 properties won't be considered when handling requests.
+- Message signing is not currently supported.
+- A developer mode will be available soon, allowing the use of testnet.
