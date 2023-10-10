@@ -14,10 +14,10 @@ ContractKit requirements, installation, and initialization.
 To install, run the following:
 
 ```bash npm2yarn
-npm install web3 @celo/contractkit
+npm install web3@1.10 @celo/contractkit
 ```
 
-You will need Node.js v12.x.
+You will need Node.js v18.x.
 
 ## Initializing the Kit
 
