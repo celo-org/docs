@@ -67,4 +67,4 @@ The governance participants who cannot actively participate to vote on governanc
 
 Currently, participants can only delegate to 10 other delegatees.
 
-CeloCLI commands for vote delegation are under development, meanwhile the participants can follow the steps [here](/holder/vote/governance#vote-delegation) to perform delegation directly using smart contracts.
+Participants can follow the steps [here](/holder/vote/governance#vote-delegation) to perform delegation using CeloCLI.
