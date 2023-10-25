@@ -5,7 +5,7 @@ description: How to choose a Celo network based on your interested and objective
 
 # Networks
 
-Overview of Celo Mainnet, Alfajores Testnet, Baklava Testnet, and Cannoli Testnet.
+Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 
 ---
 
@@ -61,7 +61,5 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 :::info
 
 Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
-
-Your use of the Cannoli Testnet is subject to the [Cannoli Testnet Disclaimer](/network/cannoli/disclaimer).
 
 :::
