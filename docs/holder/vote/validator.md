@@ -111,6 +111,6 @@ Celo Whale shows detailed metadata and statistics around Validators but does not
 
 Celovote shows ranking of validator groups based on their estimated annual rate of return (ARR). Estimate is calculated based on past performance.
 
-### [Cauldron](https://cauldron.pretoriaresearchlab.io/block-map) ( [Pretoria Research Lab GmbH](https://pretoriaresearchlab.io))
+### [Vido](https://vido.vladiatorlabs.io/block-map) ( [Vladiator Labs](https://vladiatorlabs.io) )
 
-Cauldron is a tooling site containing a signed blocks explorer for Mainnet and Baklava testnet, visualizing missed blocks and patterns for the validator group set, and developer faucets for the Alfajores and Baklava test networks.
+Vido is a block visualization and monitoring suite for Mainnet and Baklava testnet, showing missed blocks and downtime for the validator group set and subscribable metrics to get alerted if your validator is no longer signing.
