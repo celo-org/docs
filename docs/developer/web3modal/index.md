@@ -3,69 +3,18 @@ title: Web3Modal SDK
 description: Overview of Web3Modal SDK
 ---
 
-# Rainbowkit-celo
+# Web3Modal SDK
 
-Overview of Rainbowkit-celo
+The [Web3Modal SDK](https://web3modal.com/) is a framework agnostic library that allows you to easily connect your Web3 app with wallets. It provides a simple and intuitive interface for apps to request actions such as signing transactions and interacting with smart
+contracts on the blockchain.
 
 ---
 
-## Rainbowkit-celo
+# Guides
 
-RainbowKit is a React library that makes it easy to add wallet connection to your dapp. It's intuitive, responsive and customizable.
+Web3Modal SDK supports [ethers v5](https://docs.ethers.org/v5/) and [Wagmi](https://wagmi.sh/react/getting-started); two ethereum libraries that offer different DX for you to interact with the Celo blockchain.
 
-On top of that, we at Celo developed a plugin to help rainbowkit developers support the CELO protocol faster. It includes the chain information as well as the main CELO wallets (currently Valora, Celo Wallet, and Celo Terminal).
+Start with:
 
-- [Github repo](https://github.com/celo-org/rainbowkit-celo)
-- [Demo page](https://rainbowkit-with-celo.vercel.app/)
-
-## Installation
-
-```sh
-npm install @celo/rainbowkit-celo
-```
-
-This package has `@rainbow-me/rainbowkit` as a peer dependency and expect it to be installed too. Follow [their instructions](https://www.rainbowkit.com/docs/installation) if that's not done yet.
-
-## Usage
-
-```ts
-import {
-  connectorsForWallets,
-  RainbowKitProvider,
-  wallet,
-} from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-
-// Import known recommended wallets
-import { Valora, CeloWallet, CeloDance } from "@celo/rainbowkit-celo/wallets";
-
-// Import CELO chain information
-import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
-
-const { chains, provider } = configureChains(
-  [Alfajores, Celo],
-  [jsonRpcProvider({ rpc: (chain) => ({ http: chain.rpcUrls.default }) })]
-);
-
-const connectors = connectorsForWallets([
-  {
-    groupName: "Recommended with CELO",
-    wallets: [
-      Valora({ chains }),
-      CeloWallet({ chains }),
-      CeloDance({ chains }),
-      wallet.steak({ chains }),
-      wallet.walletConnect({ chains }),
-    ],
-  },
-]);
-
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
-
-// ... Your exisiting app.
-```
+- [Web3Modal & Wagmi](./web3modal/wagmi)
+- [Web3Modal & Ethers v5](./web3modal/ethers)

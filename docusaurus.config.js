@@ -170,6 +170,10 @@ module.exports = {
               label: "Rainbowkit-Celo",
             },
             {
+              to: "/developer/web3modal",
+              label: "Web3Modal SDK",
+            },
+            {
               to: "https://github.com/heymateag/celoiossdk",
               label: "iOS SDK",
             },
