@@ -389,6 +389,27 @@ const sidebars = {
               id: "developer/react-celo/index",
             },
             {
+              type: "category",
+              label: "Web3Modal SDK",
+              items: [                
+                {
+                  type: "doc",
+                  label: "Overview",
+                  id: "developer/web3modal/index",
+                },                
+                {
+                  type: "doc",
+                  label: "Wagmi",
+                  id: "developer/web3modal/wagmi",
+                },
+                {
+                  type: "doc",
+                  label: "Ethers",
+                  id: "developer/web3modal/ethers",
+                },
+              ]
+            },
+            {
               type: "doc",
               label: "rainbowkit-celo",
               id: "developer/rainbowkit-celo/index",
