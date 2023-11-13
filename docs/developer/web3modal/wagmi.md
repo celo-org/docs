@@ -77,7 +77,7 @@ function App() {
   const { data, isError, isLoading } = useContractRead({
     address: '0x617f3112bf5397D0467D315cC709EF968D9ba546',
     abi: USDTAbi,
-    functionName: 'getHunger',
+    functionName: 'getBalance',
   })
 }
 ```
