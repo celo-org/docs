@@ -20,7 +20,7 @@ Introduction to Celo epoch rewards and the target reward release schedule.
 - Make payments into a [Community Fund](/protocol/pos/epoch-rewards-community-fund) for protocol infrastructure grants
 - Make payments into a [Carbon Offsetting Fund](/protocol/pos/epoch-rewards-carbon-offsetting-fund).
 
-A total of 400 million CELO will be released for epoch rewards over time. CELO is a utility and governance asset on Celo, and also the reserve collateral for Celo Dollar (and possibly in the future other whitelisted tokens). It has a fixed total supply and in the long term will exhibit deflationary characteristics like Bitcoin.
+A total of 400 million CELO will be released for epoch rewards over time. CELO is a utility and governance asset on Celo, and also the reserve collateral for Celo Dollar (and possibly in the future other whitelisted tokens). It has a fixed total supply and in the long term will exhibit deflationary characteristics similarly to Ethereum.
 
 ### Reward Disbursement
 
