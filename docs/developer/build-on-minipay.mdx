@@ -7,13 +7,37 @@ description: A guide  for building on MiniPay and Celo.
 
 ---
 
-Welcome to the MiniPay wallet integration guide. If you're aiming to deploy your decentralized apps within the MiniPay app, this guide is tailored for you. We'll walk you through the process of integrating the windows.provider object provided by the MiniPay wallet's webview with popular web3 JavaScript libraries.
+Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com/products/minipay) is one of the fastest growing wallets that was built out by Opera on Celo that seeks to create a simple user experience to use DApps. MiniPay is available inside Opera Mini browser on Android phones thereby allowing DApp developers to tap into a distribution of 100M users on integration. This guide will help you build DApps for MiniPay. 
 
 ### Overview
+
+We'll walk you through the process of integrating the windows.provider object provided by the MiniPay wallet's webview with popular web3 JavaScript libraries.
 
 When your website is loaded inside the MiniPay app's webview, the MiniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with a majority of web3 libraries that accept a provider object.
 
 To check if your app is in the context of MiniPay, you can verify it using `window.ethereum.isMiniPay`.
+
+### Installing MiniPay
+
+MiniPay is available inside Opera Mini on Android phones only. To ensure that your DApp functions as expected within the MiniPay environment, it's crucial to test it inside the MiniPay app. Here's how you can set up and test your DApp:
+
+- **Download Opera Mini Beta:** Start by downloading the Opera Mini Beta application from the PlayStore on your Android phone.[Download Opera Mini Beta](https://play.google.com/store/apps/details?id=com.opera.mini.native.beta)
+- **Access MiniPay through Opera Mini Beta:** Once you've downloaded the latest version of Opera Mini Beta application, click on the following link on your phone to access MiniPay: [Access MiniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
+- **Create an Account:** Before you can test your DApp, you need to create an account on the MiniPay app. Follow the on-screen instructions to set up your account.
+
+### Test your DApp inside MiniPay
+
+1. Open the MiniPay app on your phone and click on compass icon.
+
+<img src={"/img/doc-images/minipay/minipay-1.png"} style={{width: 250}} alt="Open MiniPay dApp store" />
+
+2. Click on "Test Page" to open the MiniPay test page.
+
+<img src={"/img/doc-images/minipay/minipay-2.png"} style={{width: 250}} alt="Open MiniPay dApp test page" />
+
+3. Enter the URL of your DApp and click on "Go".
+
+<img src={"/img/doc-images/minipay/minipay-3.png"} style={{width: 250}} alt="MiniPay dApp testing" />
 
 ### Integration with Popular Web3 Libraries
 
@@ -84,16 +108,6 @@ const [address] = await client.getAddresses();
 
 In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
 
-### Testing Your DApp Inside MiniPay
-
-To ensure that your DApp functions as expected within the MiniPay environment, it's crucial to test it inside the MiniPay app. Here's how you can set up and test your DApp:
-
-#### Setting Up MiniPay for Testing
-
-- **Download Opera Mini Beta:** Start by downloading the Opera Mini Beta application from the PlayStore.[Download Opera Mini Beta](https://play.google.com/store/apps/details?id=com.opera.mini.native.beta)
-- **Access MiniPay through Opera Mini Beta:** Once you've downloaded the Opera Mini Beta application, click on the following link to access MiniPay: [Access MiniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
-- **Create an Account:** Before you can test your DApp, you need to create an account on the MiniPay app. Follow the on-screen instructions to set up your account.
-
 ### Testing Local Development with MiniPay
 
 If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside MiniPay.
@@ -109,20 +123,6 @@ ngrok http 3000
 This will provide you with a public URL that tunnels to your localhost.
 
 - **Test in MiniPay:** Copy the provided ngrok URL and use it inside the MiniPay app to test your DApp.
-
-### How to test your DApp in MiniPay
-
-1. Open the MiniPay app on your phone and click on compass icon.
-
-<img src={"/img/doc-images/minipay/minipay-1.png"} style={{width: 250}} alt="Open MiniPay dApp store" />
-
-2. Click on "Test Page" to open the MiniPay test page.
-
-<img src={"/img/doc-images/minipay/minipay-2.png"} style={{width: 250}} alt="Open MiniPay dApp test page" />
-
-3. Enter the URL of your DApp and click on "Go".
-
-<img src={"/img/doc-images/minipay/minipay-3.png"} style={{width: 250}} alt="MiniPay dApp testing" />
 
 ### Important Notes
 
