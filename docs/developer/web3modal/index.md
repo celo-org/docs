@@ -12,9 +12,9 @@ contracts on the blockchain.
 
 # Guides
 
-Web3Modal SDK supports [ethers v5](https://docs.ethers.org/v5/) and [Wagmi](https://wagmi.sh/react/getting-started); two ethereum libraries that offer different DX for you to interact with the Celo blockchain.
+Web3Modal SDK supports [ethers](https://docs.ethers.org/) and [Wagmi](https://wagmi.sh/react/getting-started); two ethereum libraries that offer different DX for you to interact with the Celo blockchain.
 
 Start with:
 
 - [Web3Modal & Wagmi](./web3modal/wagmi)
-- [Web3Modal & Ethers v5](./web3modal/ethers)
+- [Web3Modal & Ethers](./web3modal/ethers)
