@@ -57,7 +57,7 @@ Votes persist between epochs, and the same vote is applied to each election unle
 
 ## Vote Delegation
 
-[Contract Release 10](https://github.com/celo-org/celo-monorepo/issues/10375) introduced vote delegation, which allows the governance participant to delgate their voting power.
+[Contract Release 10](https://github.com/celo-org/celo-monorepo/issues/10375) introduced vote delegation, which allows the governance participant to delegate their voting power.
 
 :::note
 Validators and Validator groups cannot delegate.
