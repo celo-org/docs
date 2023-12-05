@@ -7,7 +7,7 @@ description: A guide  for building on MiniPay and Celo.
 
 ---
 
-Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com/products/minipay) is one of the fastest growing wallets that was built out by Opera on Celo that seeks to create a simple user experience to use DApps. MiniPay is available inside Opera Mini browser on Android phones thereby allowing DApp developers to tap into a distribution of 100M users on integration. This guide will help you build DApps for MiniPay. 
+Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com/products/minipay) is one of the fastest growing wallets that was built out by Opera on Celo that seeks to create a simple user experience to use DApps. MiniPay is available inside Opera Mini browser on Android phones thereby allowing DApp developers to tap into a distribution of 100M users on integration. This guide will help you build DApps for MiniPay.
 
 ### Overview
 
@@ -29,15 +29,27 @@ MiniPay is available inside Opera Mini on Android phones only. To ensure that yo
 
 1. Open the MiniPay app on your phone and click on compass icon.
 
-<img src={"/img/doc-images/minipay/minipay-1.png"} style={{width: 250}} alt="Open MiniPay dApp store" />
+<img
+  src={"/img/doc-images/minipay/build-on-minipay/minipay-1.png"}
+  style={{ width: 250 }}
+  alt="Open MiniPay dApp store"
+/>
 
 2. Click on "Test Page" to open the MiniPay test page.
 
-<img src={"/img/doc-images/minipay/minipay-2.png"} style={{width: 250}} alt="Open MiniPay dApp test page" />
+<img
+  src={"/img/doc-images/minipay/build-on-minipay/minipay-2.png"}
+  style={{ width: 250 }}
+  alt="Open MiniPay dApp test page"
+/>
 
 3. Enter the URL of your DApp and click on "Go".
 
-<img src={"/img/doc-images/minipay/minipay-3.png"} style={{width: 250}} alt="MiniPay dApp testing" />
+<img
+  src={"/img/doc-images/minipay/build-on-minipay/minipay-3.png"}
+  style={{ width: 250 }}
+  alt="MiniPay dApp testing"
+/>
 
 ### Integration with Popular Web3 Libraries
 
@@ -46,13 +58,13 @@ MiniPay is available inside Opera Mini on Android phones only. To ensure that yo
 Web3.js is a widely-used Ethereum JavaScript API. To utilize the `windows.ethereum` with `Web3.js`:
 
 ```js
-const Web3 = require('web3');
+const Web3 = require("web3");
 
 // Ensure MiniPay provider is available
 if (window.ethereum && window.ethereum.isMiniPay) {
-    const web3 = new Web3(window.ethereum);
+  const web3 = new Web3(window.ethereum);
 } else {
-    console.error("MiniPay provider not detected");
+  console.error("MiniPay provider not detected");
 }
 ```
 
@@ -61,13 +73,13 @@ if (window.ethereum && window.ethereum.isMiniPay) {
 Ethers.js offers a comprehensive Ethereum wallet implementation and utilities in both JavaScript and TypeScript. Here's how to integrate it with MiniPay:
 
 ```js
-const { ethers } = require('ethers');
+const { ethers } = require("ethers");
 
 // Ensure MiniPay provider is available
 if (window.ethereum && window.ethereum.isMiniPay) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
 } else {
-    console.error("MiniPay provider not detected");
+  console.error("MiniPay provider not detected");
 }
 ```
 
@@ -76,15 +88,15 @@ if (window.ethereum && window.ethereum.isMiniPay) {
 Wagmi.js is an emerging library in the Ethereum ecosystem. To integrate it with MiniPay's provider, you can use the `useConnect` hook:
 
 ```js
-import { useConnect } from 'wagmi'
-import { InjectedConnector } from 'wagmi/connectors/injected'
+import { useConnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 
 const { connect } = useConnect({
-    connector: new InjectedConnector(),
+  connector: new InjectedConnector(),
 });
 
 useEffect(() => {
-    connect();
+  connect();
 }, []);
 ```
 
@@ -95,12 +107,12 @@ This code sets up an `InjectedConnector` and then utilizes the `connect` method 
 Viem is another library gaining traction. Here's how you can integrate it:
 
 ```js
-import { createWalletClient, custom } from 'viem'
-import { mainnet } from 'viem/chains'
+import { createWalletClient, custom } from "viem";
+import { mainnet } from "viem/chains";
 
 const client = createWalletClient({
   chain: mainnet,
-  transport: custom(window.ethereum)
+  transport: custom(window.ethereum),
 });
 
 const [address] = await client.getAddresses();
