@@ -262,9 +262,21 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "developer/index" },
         {
-          type: "doc",
+          type: "category",
           label: "Build on MiniPay",
-          id: "developer/build-on-minipay",
+          // id: "developer/build-on-minipay",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "developer/build-on-minipay/overview",
+            },
+            {
+              type: "doc",
+              label: "Enabling Testnet",
+              id: "developer/build-on-minipay/enabling-testnet",
+            },
+          ],
         },
         {
           type: "category",
@@ -391,12 +403,12 @@ const sidebars = {
             {
               type: "category",
               label: "Web3Modal SDK",
-              items: [                
+              items: [
                 {
                   type: "doc",
                   label: "Overview",
                   id: "developer/web3modal/index",
-                },                
+                },
                 {
                   type: "doc",
                   label: "Wagmi",
@@ -407,7 +419,7 @@ const sidebars = {
                   label: "Ethers",
                   id: "developer/web3modal/ethers",
                 },
-              ]
+              ],
             },
             {
               type: "doc",
