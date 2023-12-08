@@ -63,7 +63,7 @@ export default function HomePage(): JSX.Element {
               Build For MiniPay – Sign Up For Developer Updates
             </span>
             <Link
-              href={"/developer/build-on-minipay"}
+              href={"/developer/build-on-minipay/overview"}
               className="flex space-x-2 items-center mt-2"
             >
               <span className="text-lg font-semibold">Build on MiniPay</span>
