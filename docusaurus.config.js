@@ -98,6 +98,11 @@ module.exports = {
       },
       items: [
         {
+          to: "/general",
+          label: "What is Celo",
+          position: "left",
+        },
+        {
           to: "developer/",
           label: "Developers",
           position: "left",
@@ -108,14 +113,24 @@ module.exports = {
           position: "left",
         },
         {
+          to: "protocol/",
+          label: "Protocol",
+          position: "left",
+        },
+        {
+          to: "cli/",
+          label: "CLI",
+          position: "left",
+        },
+        {
           to: "integration/",
           label: "Integrations",
           position: "left",
         },
         { to: "showcase", label: "DApps", position: "left" },
         {
-          to: "https://celo.academy/c/tutorials/4",
-          label: "Tutorials",
+          to: "community/guidelines",
+          label: "Community",
           position: "left",
         },
         {
@@ -143,46 +158,46 @@ module.exports = {
             },
           ],
         },
-        {
-          type: "dropdown",
-          position: "right",
-          label: "Libraries & SDKs",
-          items: [
-            { to: "cli/", label: "CLI" },
-            {
-              to: "/developer/viem",
-              label: "Viem",
-            },
-            {
-              to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-              label: "Celo SDK",
-            },
-            {
-              to: "/developer/react-celo",
-              label: "React-Celo",
-            },
-            {
-              to: "/developer/contractkit",
-              label: "ContractKit",
-            },
-            {
-              to: "/developer/rainbowkit-celo",
-              label: "Rainbowkit-Celo",
-            },
-            {
-              to: "/developer/web3modal",
-              label: "Web3Modal SDK",
-            },
-            {
-              to: "https://github.com/heymateag/celoiossdk",
-              label: "iOS SDK",
-            },
-            {
-              label: "Celo Composer",
-              to: "https://github.com/celo-org/celo-composer#celo-composer",
-            },
-          ],
-        },
+        // {
+        //   type: "dropdown",
+        //   position: "right",
+        //   label: "Libraries & SDKs",
+        //   items: [
+        //     { to: "cli/", label: "CLI" },
+        //     {
+        //       to: "/developer/viem",
+        //       label: "Viem",
+        //     },
+        //     {
+        //       to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
+        //       label: "Celo SDK",
+        //     },
+        //     {
+        //       to: "/developer/react-celo",
+        //       label: "React-Celo",
+        //     },
+        //     {
+        //       to: "/developer/contractkit",
+        //       label: "ContractKit",
+        //     },
+        //     {
+        //       to: "/developer/rainbowkit-celo",
+        //       label: "Rainbowkit-Celo",
+        //     },
+        //     {
+        //       to: "/developer/web3modal",
+        //       label: "Web3Modal SDK",
+        //     },
+        //     {
+        //       to: "https://github.com/heymateag/celoiossdk",
+        //       label: "iOS SDK",
+        //     },
+        //     {
+        //       label: "Celo Composer",
+        //       to: "https://github.com/celo-org/celo-composer#celo-composer",
+        //     },
+        //   ],
+        // },
         {
           href: "https://github.com/celo-org",
           position: "right",
