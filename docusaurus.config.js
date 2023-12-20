@@ -113,25 +113,37 @@ module.exports = {
           position: "left",
         },
         {
-          to: "protocol/",
-          label: "Protocol",
+          type: "dropdown",
+          label: "More",
           position: "left",
-        },
-        {
-          to: "cli/",
-          label: "CLI",
-          position: "left",
-        },
-        {
-          to: "integration/",
-          label: "Integrations",
-          position: "left",
-        },
-        { to: "showcase", label: "DApps", position: "left" },
-        {
-          to: "community/guidelines",
-          label: "Community",
-          position: "left",
+          items: [
+            {
+              to: "protocol/",
+              label: "Protocol",
+              // position: "left",
+            },
+            {
+              to: "cli/",
+              label: "CLI",
+              // position: "left",
+            },
+            {
+              to: "integration/",
+              label: "Integrations",
+              // position: "left",
+            },
+            {
+              to: "https://celo.academy/c/tutorials/4",
+              label: "Tutorials",
+              target: "_blank",
+            },
+            { to: "showcase", label: "DApps" },
+            {
+              to: "community/guidelines",
+              label: "Community",
+              // position: "left",
+            },
+          ],
         },
         {
           type: "localeDropdown",
