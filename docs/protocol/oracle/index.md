@@ -15,3 +15,4 @@ Here lists all on-chain Oracles:
 - [Pyth Network](https://pyth.network/)
 - [RedStone Oracles](/protocol/oracle/redstone)
 - [Witnet](https://witnet.io/)
+- [Supra](https://supraoracles.com/)
