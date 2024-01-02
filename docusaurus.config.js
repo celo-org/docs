@@ -118,13 +118,13 @@ module.exports = {
           position: "left",
           items: [
             {
-              to: "protocol/",
-              label: "Protocol",
+              to: "cli/",
+              label: "CLI",
               // position: "left",
             },
             {
-              to: "cli/",
-              label: "CLI",
+              to: "protocol/",
+              label: "Protocol",
               // position: "left",
             },
             {
