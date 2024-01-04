@@ -75,7 +75,7 @@ You can find the [full set of Validator Groups currently receiving votes, and th
 
 The Celo ecosystem includes a number of great services for browsing registered Validator Groups and Validators.
 
-:::caution
+:::warning
 
 **Warning**: Exercise caution in relying on Validator-supplied names to determine their real-world identity. Malicious participants may attempt to impersonate other Validators in order to attract votes.
 

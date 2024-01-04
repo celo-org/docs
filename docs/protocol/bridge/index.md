@@ -9,7 +9,7 @@ How to bridge assets from Ethereum, Polygon, Solana, and others to Celo.
 
 ---
 
-:::caution
+:::warning
 
 Be sure you understand and review the risks pages when bridging assets between chains.
 

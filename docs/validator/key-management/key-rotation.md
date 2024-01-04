@@ -19,7 +19,7 @@ Because the Validator signer key is constantly in use to sign consensus messages
 
 1. Create a new Validator instance as detailed in the [Deploy a Validator](/validator/run/mainnet#deploy-a-validator-machine) section of the getting started documentation. When using a proxy, additionally create a new proxy and peer it with the new validator instance, as described in the same document. Wait for the new instances to sync before proceeding. Please note that when running the proxy, the `--proxy.proxiedvalidatoraddress` flag should reflect the new validator signer address. Otherwise, the proxy will not be able to peer with the validator.
 
-:::caution
+:::warning
 
 Before proceeding to step 2 ensure there is sufficient time until the end of the epoch to complete key rotation.
 
@@ -49,7 +49,7 @@ celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --s
 celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
 ```
 
-:::caution
+:::warning
 
 Please note that the BLS key will change along with the validator signer ECDSA key on the node. If the new BLS key is not authorized, then the validator will be unable to process aggregated signatures during consensus, **resulting in downtime**. For more details, please read [the BLS key section of the Celo account role descriptions](/validator/key-management/detailed#authorized-validator-bls-signers).
 
@@ -64,7 +64,7 @@ Please note that the BLS key will change along with the validator signer ECDSA k
 - Open `baklava-celostats.celo-testnet.org` to confirm that your node is signing blocks.
 - Run `celocli validator:signed-blocks --signer $SIGNER_TO_AUTHORIZE` with the new validator signer address to further confirm that your node is signing blocks.
 
-:::caution
+:::warning
 
 The newly authorized keys will only take effect in the next epoch, so the instance operating with the old key must remain running until the end of the current epoch to avoid downtime.
 
