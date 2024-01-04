@@ -80,7 +80,7 @@ module.exports = {
     },
     prism: {
       additionalLanguages: ["solidity"],
-      theme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer").themes.dracula,
     },
     colorMode: {
       defaultMode: "dark",
