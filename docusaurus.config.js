@@ -79,9 +79,10 @@ module.exports = {
       sidebar: { hideable: true },
     },
     prism: {
-      additionalLanguages: ["solidity"],
+      additionalLanguages: ["solidity", "bash"],
       theme: require("prism-react-renderer").themes.dracula,
     },
+    mermaid: { theme: "dark" },
     colorMode: {
       defaultMode: "dark",
       respectPrefersColorScheme: false,
@@ -305,7 +306,6 @@ module.exports = {
           remarkPlugins: [
             math,
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
-            require("mdx-mermaid"),
           ],
           rehypePlugins: [katex],
         },
