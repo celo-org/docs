@@ -13,9 +13,9 @@ How to configure, run, and manage an attestation service as a Celo Validator.
 
 Validators participating in the attestation protocol:
 
-* **may turn off their Attestation Service instances immediately** including any full nodes and SMS API subscriptions (i.e. Twilio, Nexmo, and MessageBird) supporting them
-* **should [remain attestation signers on-chain](https://docs.celo.org/validator/key-management/detailed#authorizing-an-attestation-signer) until Q1 2023** when a governance proposal will be voted on to make the Attestations contract read-only
-* more information on [forum post](https://forum.celo.org/t/validator-guidance-attestation-protocol-asv1-next-steps/4957)
+- **may turn off their Attestation Service instances immediately** including any full nodes and SMS API subscriptions (i.e. Twilio, Nexmo, and MessageBird) supporting them
+- **should [remain attestation signers on-chain](https://docs.celo.org/validator/key-management/detailed#authorizing-an-attestation-signer) until Q1 2023** when a governance proposal will be voted on to make the Attestations contract read-only
+- more information on [forum post](https://forum.celo.org/t/validator-guidance-attestation-protocol-asv1-next-steps/4957)
 
 :::
 
@@ -106,7 +106,7 @@ After you create the Verify Service, you **[must create a support ticket](https:
 
 Support ticket request template
 
-> Hello, I'd like to enable custom codes for our Verify API with SID {YOUR_VERIFY_SID}. I understand that we will be charged on each attempted user verification.
+> Hello, I'd like to enable custom codes for our Verify API with SID `YOUR_VERIFY_SID`. I understand that we will be charged on each attempted user verification.
 
 After Twilio enables custom codes, you'll see the following property in the Twilio dashboard when viewing your Verify Service:
 
