@@ -340,6 +340,11 @@ const sidebars = {
             },
             {
               type: "doc",
+              label: "Using Foundry",
+              id: "developer/deploy/foundry",
+            },
+            {
+              type: "doc",
               label: "Using Hardhat",
               id: "developer/deploy/hardhat",
             },
@@ -456,6 +461,11 @@ const sidebars = {
               type: "doc",
               label: "Using Remix",
               id: "developer/verify/remix",
+            },
+            {
+              type: "doc",
+              label: "Using Foundry",
+              id: "developer/verify/foundry",
             },
             {
               type: "doc",
