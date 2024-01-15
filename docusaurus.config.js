@@ -199,7 +199,6 @@ module.exports = {
       debug: false,
     },
     footer: {
-      style: "dark",
       links: [
         {
           title: "Docs",

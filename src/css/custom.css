@@ -10,38 +10,38 @@
  */
 
 /* You can override the default Infima variables here. */
+/* Variables that don't change even when mode changes can be defined here */
 :root {
-  /* Alternate Color (Green is hard to read) */
-  /* --ifm-color-primary: #3476F2; */
-  --ifm-color-primary-dark: rgb(33, 175, 144);
   --site-color-svg-icon-favorite: #e9669e;
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
 }
 
-html[data-theme='dark'] {
-  --ifm-background-color: #07955F;
-  --ifm-background-surface-color: #07955F;
-  --ifm-color-primary: #FCFF52;
-  --docsearch-searchbox-background: #000!important;
+.navbar--dark {
+  background-color: #111214;
+  box-shadow: var(--ifm-navbar-shadow);
+  display: flex;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+}
+
+/* If you want some style to change for dark mode override here */
+html[data-theme="dark"] {
+  --ifm-background-color: #1e002b;
+  --ifm-background-surface-color: #1e002b;
+  --ifm-color-primary: #fcff52;
+  --ifm-footer-background-color: #18191a;
+  --docsearch-searchbox-background: #000 !important;
+
   /* .DocSearch-Hit[aria-selected=true].a: */
 }
 
-html[data-theme='dark'] .DocSearch-Hit[aria-selected=true] a {
-  --docsearch-hit-active-color: #476520;
-  /* background-color:rgb(26, 136, 112) */
-}
-
-html[data-theme='light'] {
-  --ifm-background-color: #FCF6F1;
-  --ifm-background-surface-color: #FCF6F1;
+/* If you want some style to change for light mode override here */
+html[data-theme="light"] {
+  --ifm-background-color: #fcf6f1;
+  --ifm-background-surface-color: #fcf6f1;
   --ifm-color-primary: #476520;
-  --ifm-footer-background-color: #07955F;
-  --docsearch-searchbox-background: #E7E3D4;
+  --ifm-footer-background-color: #e6e3d5;
+  --docsearch-searchbox-background: #e7e3d4;
 }
 
 [data-theme="dark"] .dark\:bg-fig {
@@ -258,22 +258,6 @@ html[data-theme="dark"] .header-github-link:before {
     background-position: -385px 14em;
     background-repeat: repeat-x;
   }
-}
-
-.footer--dark {
-  --ifm-footer-background-color: #18191a;
-  --ifm-footer-color: var(--ifm-footer-link-color);
-  --ifm-footer-link-color: var(--ifm-color-secondary);
-  --ifm-footer-title-color: var(--ifm-color-white);
-}
-
-.navbar--dark {
-  background-color: #111214;
-  box-shadow: var(--ifm-navbar-shadow);
-  display: flex;
-  height: var(--ifm-navbar-height);
-  padding: var(--ifm-navbar-padding-vertical)
-    var(--ifm-navbar-padding-horizontal);
 }
 
 div[class^="announcementBar_"] {
