@@ -39,7 +39,7 @@ Key differences are:
 
 Celo uses a [proof-of-stake](/protocol/pos/) consensus mechanism, which requires Validators to have locked CELO to participate in block production. The current requirement is 10,000 CELO to register a Validator, and 10,000 CELO _per member validator_ to register a Validator Group.
 
-Participating in the Baklava testnet requires testnet units of CELO, which can only be used in the Baklava testnet. You can request a distribution of testnet CELO by filling out [the faucet request form](https://forms.gle/JTYkMAJWTAUQp1sv9). If you need any help getting started, please join the discussion on [Discord](https://chat.celo.org) or email <community@celo.org>.
+Participating in the Baklava testnet requires testnet units of CELO, which can only be used in the Baklava testnet. You can request a distribution of testnet CELO by filling out [the faucet request form](https://forms.gle/JTYkMAJWTAUQp1sv9). If you need any help getting started, please join the discussion on [Discord](https://chat.celo.org) or email community@celo.org.
 
 Faucetted funds will come as 2 transactions, one for your validator address and another for your validator group address.
 
@@ -77,7 +77,7 @@ Some cloud instances that meet the above requirements are:
 - GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
 - AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
 - Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
-In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
+  In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
 
 ### Networking requirements
 
@@ -202,11 +202,11 @@ Please complete this section if you are new to validating on Celo.
 
 Running a Celo Validator node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for signing blocks) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
 
-| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
-| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
+| Name of the key      | Purpose                                                                                                                                                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account key          | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
+| Validator signer key | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                       |
+| Vote signer key      | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                       |
 
 Note that Account and all the signer keys must be unique and may not be reused.
 

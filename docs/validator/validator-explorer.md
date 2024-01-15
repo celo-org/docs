@@ -37,21 +37,21 @@ Assuming you have already deployed your Validator Group via a `ReleaseGold` cont
 
 First let's create the metadata file:
 
-```
+```bash
 # On your local machine
 celocli account:create-metadata ./group_metadata.json --from $CELO_VALIDATOR_GROUP_RG_ADDRESS
 ```
 
 Now we can set the group's name:
 
-```
+```bash
 # On your local machine
 celocli releasegold:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property name --value Example.com
 ```
 
 Now we can generate a claim for the domain associated with this name `example.com`:
 
-```
+```bash
 # On your local machine
 celocli account:claim-domain ./group_metadata.json --domain example.com --from $CELO_VALIDATOR_GROUP_SIGNER_ADDRESS
 ```
@@ -60,7 +60,7 @@ This will output your claim signed under the provided signer address. This outpu
 
 You can now view and simultaneously verify the claims on your metadata:
 
-```
+```bash
 # On your local machine
 celocli account:show-metadata ./group_metadata.json
 ```
@@ -75,14 +75,14 @@ In order to do so, you will need to claim each validator address on your group's
 
 First lets claim the `validator` address from the `group` account:
 
-```
+```bash
 # On your local machine
 celocli account:claim-account ./group_metadata.json --address $CELO_VALIDATOR_RG_ADDRESS --from $CELO_VALIDATOR_GROUP_SIGNER_ADDRESS
 ```
 
 Now let's submit the corresponding claim from the `validator` account on the `group` account (note: if you followed the directions to set up the attestation service, you may have already registered metadata for your validator. If that is the case, skip the steps to create the `validator`'s metadata and just add the account claim.)
 
-```
+```bash
 # On your local machine
 celocli account:create-metadata ./validator_metadata.json --from $CELO_VALIDATOR_RG_ADDRESS
 celocli account:claim-account ./validator_metadata.json --address $CELO_VALIDATOR_GROUP_RG_ADDRESS --from $CELO_VALIDATOR_SIGNER_ADDRESS
@@ -92,7 +92,7 @@ And then host both metadata files somewhere reachable via HTTP. You can use a se
 
 Now we can register these URLs on each account:
 
-```
+```bash
 # On your local machine
 celocli releasegold:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property metaURL --value <VALIDATOR_GROUP_METADATA_URL>
 celocli releasegold:set-account --contract $CELO_VALIDATOR_RG_ADDRESS --property metaURL --value <VALIDATOR_METADATA_URL>
@@ -100,7 +100,7 @@ celocli releasegold:set-account --contract $CELO_VALIDATOR_RG_ADDRESS --property
 
 If everything goes well users should be able to see your claims by running:
 
-```
+```bash
 # On your local machine
 celocli account:get-metadata $CELO_VALIDATOR_GROUP_RG_ADDRESS
 ```

@@ -223,8 +223,8 @@ A guide to available tools, components, patterns, and platforms for developing a
 #### Upgradeability
 
 - [Blog von Elena Dimitrova, Dev at colony.io](https://blog.colony.io/author/elena/)
-  - <https://blog.colony.io/writing-more-robust-smart-contracts-99ad0a11e948>
-  - <https://blog.colony.io/writing-upgradeable-contracts-in-solidity-6743f0eecc88>
+  - https://blog.colony.io/writing-more-robust-smart-contracts-99ad0a11e948
+  - https://blog.colony.io/writing-upgradeable-contracts-in-solidity-6743f0eecc88
 - [Aragon research blog](https://blog.aragon.org/tag/research/)
   - [Library driven development](https://blog.aragon.org/library-driven-development-in-solidity-2bebcaf88736)
   - [Advanced Solidity code deployment techniques](https://blog.aragon.org/advanced-solidity-code-deployment-techniques-dc032665f434/)
@@ -291,7 +291,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [truffle-assertions](https://github.com/rkalis/truffle-assertions) - An npm package with additional assertions and utilities used in testing Solidity smart contracts with truffle. Most importantly, it adds the ability to assert whether specific events have (not) been emitted.
 - [Psol](https://github.com/Lamarkaz/psol) - Solidity lexical preprocessor with mustache.js-style syntax, macros, conditional compilation and automatic remote dependency inclusion.
 - [solpp](https://github.com/merklejerk/solpp) - Solidity preprocessor and flattener with a comprehensive directive and expression language, high precision math, and many useful helper functions.
-- [Decode and Publish](https://flightwallet.github.io/decode-eth-tx/) – Decode and publish raw ethereum tx. Similar to <https://live.blockcypher.com/btc-testnet/decodetx/>
+- [Decode and Publish](https://flightwallet.github.io/decode-eth-tx/) – Decode and publish raw ethereum tx. Similar to https://live.blockcypher.com/btc-testnet/decodetx/
 - [Doppelgänger](https://github.com/EthWorks/Doppelganger) - a library for mocking smart contract dependencies during unit testing.
 - [rocketh](https://github.com/wighawag/rocketh) - A simple lib to test ethereum smart contract that allow to use whatever web3 lib and test runner you choose.
 - [pytest-cobra](https://github.com/cobraframework/pytest-cobra) - PyTest plugin for testing smart contracts for Ethereum blockchain.
@@ -453,6 +453,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 :::info
 
-Inspired by: <https://github.com/ConsenSys/ethereum-developer-tools-list>
+Inspired by: https://github.com/ConsenSys/ethereum-developer-tools-list
 
 :::

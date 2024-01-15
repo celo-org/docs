@@ -122,7 +122,7 @@ Celo's average blocktime is 5 seconds. For real-time updates and information, pl
 
 Transactions are interactions that occur between user addresses and Celo (e.g., transferring funds).
 
-**<$.01 Average Network Transaction Fee**
+**< $0.01 Average Network Transaction Fee**
 
 :::tip
 

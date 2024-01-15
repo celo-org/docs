@@ -58,13 +58,13 @@ Deploying locally requires that you have a local blockchain setup. Install and s
 
 #### Install Ganache
 
-```
+```bash
 npm install -g @celo/ganache-cli
 ```
 
 #### Start Ganache
 
-```
+```bash
 ganache-cli --port 7545
 ```
 
@@ -84,13 +84,13 @@ Skip to [this step](#import-account-to-wallet-for-options-2--3) to connect your 
 
 Install `celocli` by running
 
-```
+```bash
 npm install -g @celo/celocli
 ```
 
 #### Create an Account
 
-```
+```bash
 celocli account:new
 ```
 

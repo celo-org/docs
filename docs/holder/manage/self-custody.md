@@ -21,7 +21,7 @@ This guide assumes:
 
 - You have your private key held on a [Ledger Nano S or Ledger Nano X](/wallet/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#Using-a-single-Ledger).
 
-:::caution
+:::warning
 
 **Warning**: Self-custodying keys has associated security and financial risks. Loss or theft of keys can result in irrecovable loss of funds. This guide also requires technical knowledge. You should be comfortable with using a Command Line Interface (CLI) and understand the basics of how cryptographic network accounts work.
 
@@ -237,7 +237,7 @@ The `ReleaseGold` contract was funded with an additional 1 CELO that it sends to
 celocli account:balance $CELO_VOTE_SIGNER_ADDRESS
 ```
 
-:::caution
+:::warning
 
 **Warning**: If you authorize a second vote signer, it will not be automatically funded by the `ReleaseGold` contract. You will need to transfer a fraction of 1 CELO from your beneficiary address to it in order to cover transaction fees when using it.
 
@@ -249,7 +249,7 @@ To vote for Validator Groups and on governance proposals you will need to lock C
 
 Specify the amount of CELO you wish to lock (don’t include the `< >` braces). All amounts are given as wei, i.e units of 10^-18 CELO. For example, 1 CELO = 1000000000000000000.
 
-:::caution
+:::warning
 
 Make sure to leave at least 1 CELO unlocked to pay for transaction fees.
 
