@@ -31,6 +31,7 @@ html[data-theme="dark"] {
   --ifm-color-primary: #fcff52;
   --ifm-footer-background-color: #18191a;
   --docsearch-searchbox-background: #000 !important;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(251, 246, 241, 0.2);
 
   /* .DocSearch-Hit[aria-selected=true].a: */
 }
@@ -42,6 +43,7 @@ html[data-theme="light"] {
   --ifm-color-primary: #476520;
   --ifm-footer-background-color: #e6e3d5;
   --docsearch-searchbox-background: #e7e3d4;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .dark\:bg-fig {
