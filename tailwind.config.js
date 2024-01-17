@@ -16,7 +16,7 @@ module.exports = {
         gypsum: "#FCF6F1",
         sand: "#E7E3D4",
         wood: "#655947",
-        fig: "#07955F", // original
+        fig: "#1E002B", // original
         /** functional */
         snow: "#FFFFFF",
         onyx: "#CCCCCC",
