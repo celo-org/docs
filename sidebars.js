@@ -431,6 +431,11 @@ const sidebars = {
               label: "dynamic",
               id: "developer/dynamic/index",
             },
+            {
+              type: "doc",
+              label: "Particle Network",
+              id: "developer/particle-network/index",
+            },
           ],
         },
         {
