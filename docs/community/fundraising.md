@@ -222,7 +222,7 @@ Unicorn Growth Capital is a Seed & Series A venture fund focused on partnering e
 **Stage Focus:** Seed & Series A
 **Geography Focus:** Africa
 **Sector Focus:** FinTech & DeFi Infrastructure, Embedded Finance, Financial Services
-**Average Check Size:** $500K for Seed and <$1.5M for Series A
+**Average Check Size:** $500K for Seed and < 1.5M for Series A
 
 ### Lightshift Capital
 

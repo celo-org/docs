@@ -33,15 +33,15 @@ $$
 
 where $$G_t$$ and $$D_t$$denote the quantities in the CELO and Celo Dollar buckets respectively and $$k$$ is some constant. Given the above rule, it can be shown that the price of CELO, to be paid in Celo Dollar units, is
 
-$$
+$
 P_t = \frac{D_t}{G_t}
-$$
+$
 
 for traded amounts that are small relative to the bucket quantities.
 
 ## Oracle Rates
 
-Whenever the CELO to US Dollar oracle rate is updated, the protocol adjusts the bucket quantities such that they equalize the on-chain CELO to Celo Dollar exchange rate $$P_t$$ to the current oracle rate. During such a reset, the CELO bucket must remain smaller than the total reserve gold balance. To achieve this, the CELO bucket size is defined as the total reserve balance times $$gold\_bucket\_size$$, with $$0<gold\_bucket\_size<1$$ and the Celo Dollar bucket size is then chosen such that $$P_t$$ mirrors the oracle price. To discourage excessive on-chain trading, a transaction fee is imposed by adding small spread around the above exchange rate.
+Whenever the CELO to US Dollar oracle rate is updated, the protocol adjusts the bucket quantities such that they equalize the on-chain CELO to Celo Dollar exchange rate $$P_t$$ to the current oracle rate. During such a reset, the CELO bucket must remain smaller than the total reserve gold balance. To achieve this, the CELO bucket size is defined as the total reserve balance times $$gold\_bucket\_size$$, with $$0 < gold\_bucket\_size < 1$$ and the Celo Dollar bucket size is then chosen such that $$P_t$$ mirrors the oracle price. To discourage excessive on-chain trading, a transaction fee is imposed by adding small spread around the above exchange rate.
 
 If the oracle precisely mirrors the market rate, the on-chain CELO to Celo Dollar rate will equal the CELO to US Dollar market rate and no profit opportunity will exist as long as Celo Dollar precisely tracks the US Dollar. If the oracle price is imprecise, the two rates will differ, and a profit opportunity will be present even if Celo Dollar accurately tracks the US Dollar. However, as traders exploit this opportunity, the on-chain price $$P_t$$ will dynamically adjust in response to changes in the tank quantities until the opportunity ceases to exist. This limits the depletion potential in Mento in the case of imprecise or manipulated oracle rates.
 

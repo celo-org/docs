@@ -42,16 +42,15 @@ module.exports = {
     //   },
     // ],
     [
-      "ideal-image",
-      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
-      ({
+      "@docusaurus/plugin-ideal-image",
+      {
         quality: 70,
         max: 1030,
         min: 640,
         steps: 2,
         // Use false to debug, but it incurs huge perf costs
         disableInDev: true,
-      }),
+      },
     ],
     async function myPlugin(context, options) {
       return {
@@ -69,9 +68,9 @@ module.exports = {
     twitterImage: "img/preview.png",
     image: "img/preview.png",
     announcementBar: {
-      id: "support_us",
+      id: "request_tokens",
       content:
-        'Build For MiniPay – Sign Up For <a target="_blank" rel="noopener noreferrer" href="http://celo-8568019.hs-sites.com/operaminipay-celodevs">Developer Updates</a>.',
+        'Need Testnet tokens? – Request from <a target="_blank" rel="noopener noreferrer" href="https://faucet.celo.org/alfajores">Faucet</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -80,9 +79,10 @@ module.exports = {
       sidebar: { hideable: true },
     },
     prism: {
-      additionalLanguages: ["solidity"],
-      theme: require("prism-react-renderer/themes/dracula"),
+      additionalLanguages: ["solidity", "bash"],
+      theme: require("prism-react-renderer").themes.dracula,
     },
+    mermaid: { theme: "dark" },
     colorMode: {
       defaultMode: "dark",
       respectPrefersColorScheme: false,
@@ -226,7 +226,6 @@ module.exports = {
       debug: false,
     },
     footer: {
-      style: "dark",
       links: [
         {
           title: "Docs",
@@ -333,7 +332,6 @@ module.exports = {
           remarkPlugins: [
             math,
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
-            require("mdx-mermaid"),
           ],
           rehypePlugins: [katex],
         },

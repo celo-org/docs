@@ -41,7 +41,7 @@ Now that you have Linux installed, let’s install [nvm](https://github.com/nvm-
 
 Run the following commands in the Linux terminal.
 
-```text
+```bash
 # Installing Nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.bashrc
@@ -55,7 +55,7 @@ Running `$ node -v` in the terminal should print a node version if it is install
 
 Yarn is a package manager similar to npm. The [celo-monorepo](https://github.com/celo-org/celo-monorepo/) uses yarn to build and manage packages. Install yarn with the following command.
 
-```text
+```bash
 # Installing Yarn - https://yarnpkg.com/en/docs/install#debian-stable
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
