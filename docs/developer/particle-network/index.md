@@ -5,15 +5,15 @@ description: Walkthrough on leveraging Particle Network's Wallet-as-a-Service on
 
 # Particle Network's Wallet-as-a-Service
 
-[**Particle Network**](https://particle.network) is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate an Web2-like user experience through modular and customizable embedded wallet components. Using MPC-TSS for key management, Particle can streamline user onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
+[**Particle Network**](https://particle.network) is the Intent-Centric, Modular Access Layer of Web3. With Particle's Wallet-as-a-Service, developers can curate a Web2-like user experience through modular and customizable embedded wallet components. Using [MPC-TSS for key management](https://blog.particle.network/particle-network-101-developer-experience-edition), Particle can streamline user onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
 
-Particle Network's Wallet-as-a-Service supports Celo Mainnet and Alfajores Testnet through standard EOA-based social logins. Therefore, developers building on Celo can natively leverage Particle Network for onboarding users into application-embedded wallets using social logins through various SDKs that are directly compatible with Celo.
+Particle Network's Wallet-as-a-Service supports the Celo Mainnet and Alfajores Testnet through standard EOA-based social logins. Therefore, developers building on Celo can natively leverage Particle Network to onboard users into application-embedded wallets using social logins through various SDKs with direct Celo compatibility.
 
 On this page, you can find a high-level overview and tutorial on implementing Particle Network's Wallet-as-a-Service within an application built on Celo (specifically Celo Mainnet in this example), highlighting the basics of getting an integration up and running.
 
 ## Tutorial: Implementing Particle Network's Wallet-as-a-Service on Celo
 
-Particle Network has various avenues for integration, largely depending on your platform. If you're building a mobile application, Particle offers various SDKs for iOS, Android, Flutter, React Native, and so on. Although in this example we'll be focusing on using Particle's flagship web SDK, `@particle-network/auth-core-modal`. This SDK will facilitate end-to-end implementation of social logins within web apps (using React). To install this library, alongside some supporting libraries, run one of the two following commands at the root of your project:
+Particle Network has various avenues for integration, with the best one for you being largely dependent on your platform of choice. If you're building a mobile application, Particle offers various SDKs for iOS, Android, Flutter, React Native, and so on. In this example, we'll focus on using Particle's flagship web SDK, `@particle-network/auth-core-modal`. This SDK facilitates end-to-end implementation of social logins within web apps (using React). To install this library, alongside some supporting ones, run one of the two following commands at the root of your project:
 
 ```shell
 yarn add @particle-network/auth-core-modal @particle-network/chains
@@ -23,16 +23,21 @@ yarn add @particle-network/auth-core-modal @particle-network/chains
 npm install @particle-network/auth-core-modal @particle-network/chains
 ```
 
-These two libraries are all you'll need (from Particle) to begin using social logins within a new or existing application built on Celo. For this tutorial, we'll put together a basic React application showcasing the utilization of social logins to facilitate wallet generation on Celo. Thus, we can start with the following:
+These two libraries are all you'll need to begin using social logins within a new or existing application built on Celo. For this tutorial, we'll put together a basic React application showcasing the utilization of social logins to facilitate wallet generation on Celo. 
+
+To get started:
 
 1. Configure Particle Auth Core (`@particle-network/auth-core-modal`) within `index.ts/tsx` (or an adjacent file).
-To start using Particle Auth Core (Particle's flagip authentication SDK), you'll first need to configure and initialize it within your `index.ts/tsx` file through `AuthCoreContextProvider` (imported from `@particle-network/auth-core-modal`). This object, `AuthCoreContextProvider`, acts as the primary interface for configuration; through `options`, you'll need to pass the following parameters:
-- `projectId`, your project ID retrieved from the [Particle dashboard](https://dashboard.particle.network).
-- `clientKey`, your client Key retrieved from the [Particle dashboard](https://dashboard.particle.network).
-- `appId`, your app ID retrieved from the [Particle dashboard](https://dashboard.particle.network).
-Each of these values are required as they directly link your instance of Particle Auth Core with the Particle dashboard, therefore enabling no-code customization, tracking user activity, authenticating API requests, etc.
 
-Beyond these core parameters (`projectId`, `clientKey`, and `appId`), you have a few other optional configurations you can set (largely visual). An example of an `index.ts/tsx` file with `AuthCoreContextProvider` successfully initialized has been included below.
+To start using Particle Auth Core (Particle's flagip authentication SDK), you'll first need to configure and initialize it within your `index.ts/tsx` file through `AuthCoreContextProvider` (imported from `@particle-network/auth-core-modal`). `AuthCoreContextProvider` acts as the primary interface for configuration; through `options`, you'll need to pass the following parameters, all derived from the [Particle dashboard](https://dashboard.particle.network):
+
+- `projectId`, your project ID.
+- `clientKey`, your client Key.
+- `appId`, your app ID.
+
+Each of these values are required as they directly link your instance of Particle Auth Core with the Particle dashboard, therefore enabling no-code customization, user activity tracking, API requests authentication, etc.
+
+Beyond these core parameters (`projectId`, `clientKey`, and `appId`), you have a few other optional configurations you can set (largely visual). An example of an `index.ts/tsx` file, with `AuthCoreContextProvider` successfully initialized, is included below.
 
 ```js
 import React from 'react'
@@ -69,16 +74,19 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 )
 ```
 
-2. Setup various hooks within your primary `App` component (or it's equivalent).
-Now that you've configured Particle Auth Core (through `AuthCoreContextProvider`, as is shown above), you're ready to begin using the full extent of the SDK (to facilitate social logins) within your application, in this case through your main `App` component, or whichever file you intend on using Particle Auth Core within; this file should be specified within your `index.ts/tsx` file, wrapped by `AuthCoreContextProvider`. For this example, we'll be using three hooks exported by `@particle-network/auth-core-modal` to connect a user through social login, setup a custom EIP-1193 provider (with Ethers), and retrieve information about the user once they've logged in. These hooks are as follows:
+2. Set up various hooks within your primary `App` component (or its equivalent).
 
-- `useConnect`, for connecting and disconnecting a user through a specified social login mechanism (or through Particle Network's generalized authentication modal).
-- `useEthereum`, to retrieve the users address, retrieve the associated 1193 `provider` object, etc.
-- `useAuthCore`, to pull data about the user once they've connected (such as their public email used for signing up).
+Now that you've configured Particle Auth Core (through `AuthCoreContextProvider`, as shown above), you're ready to use the full extent of the SDK (to facilitate social logins) within your application, in this case through your main `App` component or whichever file you intend on using Particle Auth Core within. This file should be specified within your `index.ts/tsx` file, wrapped by `AuthCoreContextProvider`. 
+
+For this example, we'll be using three hooks exported by `@particle-network/auth-core-modal` to connect a user through social login, set up a custom EIP-1193 provider (with Ethers), and retrieve information about the user once they've logged in. These hooks are as follows:
+
+- `useConnect` connects and disconnects a user through a specified social login mechanism (or through Particle Network's generalized authentication modal).
+- `useEthereum` retrieves the user's address, the associated 1193 `provider` object, etc.
+- `useAuthCore`, pulls data about the user once they've connected (such as their public email used for signing up).
 
 For a complete list of hooks, including those covered above, take a look at the [Particle Auth Core documentation](https://docs.particle.network/developers/auth-service/core/web#auth-core-hooks).
 
-An example of using each of the three aforementioned hooks in tandem with one another to build a sample application that onboards a user through social logins, retrieves and displays relevant data, and executes a sample transaction has been included below.
+An example of using each of the three aforementioned hooks to build a sample application that onboards a user through social logins, retrieves and displays relevant data, and executes a sample transaction has been included below:
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -165,10 +173,11 @@ const App = () => {
 export default App;
 ```
 
-As shown above, Particle Network's Wallet-as-a-Service can be plugged in and used as you would any other standard wallet that exposes an EIP-1193 provider on Celo, enabling social logins in just a few lines of code.
+As shown above, Particle Network's Wallet-as-a-Service can be plugged in and used in a way similar to any other standard wallet that exposes an EIP-1193 provider on Celo, enabling social logins in just a few lines of code.
 
 ## Learn More
 
 - [Particle Dashboard](https://dashboard.particle.network)
 - [Particle Documentation](https://docs.particle.network)
 - [Celo Example Repository](https://github.com/TABASCOatw/particle-celo-demo)
+
