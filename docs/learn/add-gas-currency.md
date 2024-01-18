@@ -13,13 +13,31 @@ The Celo protocol [supports paying](/protocol/transaction/erc20-transaction-fees
 
 ### Token implementation
 
-A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with signature  `debitGasFees(address from, uint256 value)` and `creditGasFees(address from, address feeRecipient, address gatewayFeeRecipient, address feeRecipient, uint256 refund, uint256 tipTxFee, uint256 gatewayFee, uint256 baseTxFee)`. Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/protocol/contracts/common/CalledByVm.sol#L3).
+A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with the following signatures
+
+
+```
+function debitGasFees(address from, uint256 value) external;
+
+function creditGasFees(
+        address refundRecipient,
+        address tipRecipient,
+        address _gatewayFeeRecipient,
+        address baseFeeRecipient,
+        uint256 refundAmount,
+        uint256 tipAmount,
+        uint256 _gatewayFeeAmount,
+        uint256 baseFeeAmount
+    ) external;
+```
+
+Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/protocol/contracts/common/CalledByVm.sol#L3).
 
 `debitGasFees` is called by the VM before a transaction is added to a block. It removes from the caller's balance the maximum amount of tokens the transaction will take. This is done to make sure the user has enough to pay for gas.
 
-`creditGasFees` is called by the VM after a transaction is added to a block. It distributes the fees to the validator signers and the contract that the protocol designated to accumulate bas fees, as well as refunding the user for unused gas. The addresses of the fee recipients as well as the amounts are passed by the VM as parameters.
+`creditGasFees` is called by the VM after a transaction is added to a block. It distributes the fees to the validator signers and the contract that the protocol designated to accumulate base fees, as well as refunding the user for unused gas. The addresses of the fee recipients as well as the amounts are passed by the VM as parameters.
 
-If any of these two functions reverts, the transaction will revert.
+If any of these two functions reverts, the transaction will not be included in a block.
 
 Example implementations of `debitGasFees` and `creditGasFees` can be found in [Mento's StableCoins contracts codebase](https://github.com/mento-protocol/mento-core/blob/develop/contracts/tokens/StableTokenV2.sol#L264).
 
