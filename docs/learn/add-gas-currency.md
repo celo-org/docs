@@ -13,7 +13,7 @@ The Celo protocol [supports paying](/protocol/transaction/erc20-transaction-fees
 
 ### Token implementation
 
-A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with the following signatures
+A gas token is a [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) token that has to implement two functions with the following signatures:
 
 
 ```
