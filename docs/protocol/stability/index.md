@@ -3,8 +3,8 @@ title: Celo Stability Mechanism Overview
 description: Overview of the Celo protocol's Stability Mechanisms.
 ---
 
-import YouTube from '@components/YouTube';
-import PageRef from '@components/PageRef';
+import YouTube from '@site/src/components/YouTube';
+import PageRef from '@site/src/components/PageRef';
 
 # Stability Mechanism
 

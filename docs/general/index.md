@@ -3,8 +3,8 @@ title: What is Celo?
 description: Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 ---
 
-import YouTube from '@components/YouTube';
-import PageRef from '@components/PageRef';
+import YouTube from '@site/src/components/YouTube';
+import PageRef from '@site/src/components/PageRef';
 
 Celo's mission is to build a financial system that creates the conditions for prosperity—for everyone.
 
