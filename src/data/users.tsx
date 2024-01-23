@@ -189,6 +189,14 @@ const Users: User[] = [
     tags: ['apps', 'impact'],
   },
   {
+    title: 'Envio',
+    description: 'Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data.',
+    preview: require('./showcase/envio.png'),
+    website: 'https://www.envio.dev/',
+    source: 'https://github.com/enviodev',
+    tags: ['apps', 'defi'],
+  }, 
+  {
     title: 'Mobius',
     description: 'Cross-chain stableswap exchange.',
     preview: require('./showcase/mobius.png'),
