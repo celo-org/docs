@@ -14,7 +14,7 @@ To use the code snippets below, install the following packages:
 
 <Tabs>
   <TabItem value="yarn" label="yarn" default>
-    <Tabs>
+    <Tabs groupId="web3-library">
       <TabItem value="viem" label="viem" default>
 
         ```bash
@@ -33,7 +33,7 @@ To use the code snippets below, install the following packages:
 
   </TabItem>
   <TabItem value="npm" label="npm">
-    <Tabs>
+    <Tabs groupId="web3-library">
       <TabItem value="viem" label="viem" default>
 
         ```bash
@@ -55,7 +55,7 @@ To use the code snippets below, install the following packages:
 
 ### Check cUSD Balance of an address
 
-<Tabs>
+<Tabs groupId="web3-library">
   <TabItem value="viem" label="viem" default>
 
     ```js
@@ -128,7 +128,7 @@ let balance = await checkCUSDBalance(provider, address); // In Ether unit
 
 ### Check If a transaction succeeded
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -179,7 +179,7 @@ let transactionStatus = await checkIfTransactionSucceeded(
 
 ### Estimate Gas for a transaction (in Celo)
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -232,7 +232,7 @@ let gasLimit = await estimateGas(provider, {
 
 ### Estimate Gas for a transaction (in cUSD)
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -297,7 +297,7 @@ let gasLimit = await estimateGas(
 
 ### Estimate Gas Price for a transaction (in Celo)
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -342,7 +342,7 @@ let gasPrice = await estimateGasPrice(provider);
 
 ### Estimate Gas Price for a transaction (in cUSD)
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -392,7 +392,7 @@ let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
 
 ### Calculate cUSD to be spent for transaction fees
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
@@ -458,7 +458,7 @@ let transactionFeesInCUSD = formatEther(
 
 ### Lookup phone number registered under MiniPay issuer
 
-<Tabs>
+<Tabs groupId="web3-library">
 
   <TabItem value="viem" label="viem">
 
