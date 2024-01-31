@@ -9,16 +9,18 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 
 ## Celo Mainnet
 
-| Name               | Value                                                                                                       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------- |
-| Network Name       | Celo Mainnet                                                                                                |
-| Description        | The production Celo network                                                                                 |
-| RPC Endpoint       | [https://forno.celo.org](https://forno.celo.org) <br/> Rate Limited and not suitable for production systems |
-| Chain ID           | 42220                                                                                                       |
-| Currency Symbol    | CELO                                                                                                        |
-| Block Explorer     | [http://explorer.celo.org](http://explorer.celo.org)                                                        |
-| Network Status     | [https://stats.celo.org](https://stats.celo.org)                                                            |
-| Validator Explorer | [https://validators.celo.org](https://validators.celo.org)                                                  |
+| Name         | Value                                                                                                       |
+| ------------ | ----------------------------------------------------------------------------------------------------------- |
+| Network Name | Celo Mainnet                                                                                                |
+| Description  | The production Celo network                                                                                 |
+| RPC Endpoint | [https://forno.celo.org](https://forno.celo.org) <br/> Rate Limited and not suitable for production systems |
+
+| Chain ID | 42220 |
+| RPC Nodes | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
+| Currency Symbol | CELO |
+| Block Explorer | [http://explorer.celo.org](http://explorer.celo.org) |
+| Network Status | [https://stats.celo.org](https://stats.celo.org) |
+| Validator Explorer | [https://validators.celo.org](https://validators.celo.org) |
 
 ## Celo Alfajores
 
@@ -28,6 +30,7 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | Description     | The Developer Testnet network                                                                                                                   |
 | RPC Endpoint    | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) <br/> Rate Limited and not suitable for production systems |
 | Chain ID        | 44787                                                                                                                                           |
+| RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
 | Currency Symbol | CELO                                                                                                                                            |
 | Block Explorer  | [https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)                                                  |
 | Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
@@ -48,6 +51,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 | Network Name        | Baklava                                                                                                                                     |
 | Description         | The Node Operator Testnet network                                                                                                           |
 | RPC Endpoint        | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org) <br/> Rate Limited and not suitable for production systems |
+| RPC Nodes           | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet)                        |
 | Currency Symbol     | CELO                                                                                                                                        |
 | Block Explorer      | [https://baklava-blockscout.celo-testnet.org](https://baklava-blockscout.celo-testnet.org)                                                  |
 | Network Status      | [https://baklava-celostats.celo-testnet.org](https://baklava-celostats.celo-testnet.org)                                                    |
