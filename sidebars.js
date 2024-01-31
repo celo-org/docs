@@ -1369,7 +1369,7 @@ const sidebars = {
     {
       type: "doc",
       label: "Introduction",
-      id: "cli/index",
+      id: "cli-index",
     },
     { type: "doc", label: "Account", id: "cli/account" },
     { type: "doc", label: "Commands", id: "cli/commands" },
@@ -1381,11 +1381,6 @@ const sidebars = {
       type: "doc",
       label: "Governance",
       id: "cli/governance",
-    },
-    {
-      type: "doc",
-      label: "Grandamento",
-      id: "cli/grandamento",
     },
     { type: "doc", label: "Help", id: "cli/help" },
     { type: "doc", label: "Identity", id: "cli/identity" },
@@ -1399,11 +1394,6 @@ const sidebars = {
     { type: "doc", label: "Node", id: "cli/node" },
     { type: "doc", label: "Oracle", id: "cli/oracle" },
     { type: "doc", label: "Plugins", id: "cli/plugins" },
-    {
-      type: "doc",
-      label: "ReleaseGold",
-      id: "cli/releasegold",
-    },
     { type: "doc", label: "Reserve", id: "cli/reserve" },
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
