@@ -59,14 +59,15 @@ To use the code snippets below, install the following packages:
   <TabItem value="viem" label="viem" default>
 
     ```js
-    const { getContract, formatEther } = require("viem");
-    const StableToken = require("@celo/abis/StableToken.json");
+    const { getContract, formatEther, createPublicClient, http } = require("viem");
+    const { celo } = require("viem/chains");
+    const { stableTokenABI } = require("@celo/abis");
 
     const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
     async function checkCUSDBalance(publicClient, address) {
       let StableTokenContract = getContract({
-          abi: StableToken.abi,
+          abi: stableTokenABI,
           address: STABLE_TOKEN_ADDRESS,
           publicClient,
       });
@@ -95,11 +96,11 @@ To use the code snippets below, install the following packages:
 
 ```js
 const ethers = require("ethers");
-const StableToken = require("@celo/abis/StableToken.json");
+const { stableTokenABI } = require("@celo/abis");
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-const { Contract, utils } = ethers;
+const { Contract, utils, providers } = ethers;
 const { formatEther } = utils;
 
 async function checkCUSDBalance(provider, address) {
@@ -133,6 +134,9 @@ let balance = await checkCUSDBalance(provider, address); // In Ether unit
   <TabItem value="viem" label="viem">
 
 ```js
+const { createPublicClient, http } = require("viem");
+const { celo } = require("viem/chains");
+
 async function checkIfTransactionSucceeded(publicClient, transactionHash) {
   let receipt = await publicClient.getTransactionReceipt({
     hash: transactionHash,
@@ -184,6 +188,9 @@ let transactionStatus = await checkIfTransactionSucceeded(
   <TabItem value="viem" label="viem">
 
 ```js
+const { createPublicClient, http } = require("viem");
+const { celo } = require("viem/chains");
+
 async function estimateGas(publicClient, transaction, feeCurrency = "") {
   return await publicClient.estimateGas({
     ...transaction,
@@ -209,6 +216,9 @@ let gasLimit = await estimateGas(publicClient, {
   <TabItem value="ethers" label="ethers">
 
 ```js
+const ethers = require("ethers");
+const { providers } = ethers;
+
 async function estimateGas(provider, transaction, feeCurrency = "") {
   return await provider.send("eth_estimateGas", [
     feeCurrency ? { ...transaction, feeCurrency } : transaction,
@@ -237,6 +247,9 @@ let gasLimit = await estimateGas(provider, {
   <TabItem value="viem" label="viem">
 
 ```js
+const { createPublicClient, http } = require("viem");
+const { celo } = require("viem/chains");
+
 async function estimateGas(publicClient, transaction, feeCurrency = "") {
   return await publicClient.estimateGas({
     ...transaction,
@@ -268,6 +281,9 @@ let gasLimit = await estimateGas(
   <TabItem value="ethers" label="ethers">
 
 ```js
+const ethers = require("ethers");
+const { providers } = ethers;
+
 async function estimateGas(provider, transaction, feeCurrency = "") {
   return await provider.send("eth_estimateGas", [
     feeCurrency ? { ...transaction, feeCurrency } : transaction,
@@ -302,6 +318,9 @@ let gasLimit = await estimateGas(
   <TabItem value="viem" label="viem">
 
 ```js
+const { createPublicClient, http } = require("viem");
+const { celo } = require("viem/chains");
+
 async function estimateGasPrice(publicClient, feeCurrency = "") {
   return await publicClient.request({
     method: "eth_gasPrice",
@@ -322,6 +341,9 @@ let gasPrice = await estimateGasPrice(publicClient);
   <TabItem value="ethers" label="ethers">
 
 ```js
+const ethers = require("ethers");
+const { providers } = ethers;
+
 async function estimateGasPrice(provider, feeCurrency = "") {
   let gasPriceinHex = await provider.send(
     "eth_gasPrice",
@@ -347,6 +369,9 @@ let gasPrice = await estimateGasPrice(provider);
   <TabItem value="viem" label="viem">
 
 ```js
+const { createPublicClient, http } = require("viem");
+const { celo } = require("viem/chains");
+
 async function estimateGasPrice(publicClient, feeCurrency = "") {
   return await publicClient.request({
     method: "eth_gasPrice",
@@ -361,7 +386,7 @@ const publicClient = createPublicClient({
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
-let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
+let gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 ```
 
   </TabItem>
@@ -369,6 +394,9 @@ let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
   <TabItem value="ethers" label="ethers">
 
 ```js
+const ethers = require("ethers");
+const { providers } = ethers;
+
 async function estimateGasPrice(provider, feeCurrency = "") {
   let gasPriceinHex = await provider.send(
     "eth_gasPrice",
@@ -397,6 +425,9 @@ let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
   <TabItem value="viem" label="viem">
 
   ```js
+const { createPublicClient, http, formatEther } = require("viem");
+const { celo } = require("viem/chains");
+
 const publicClient = createPublicClient({
     chain: celo,
     transport: http(),
@@ -428,6 +459,10 @@ let transactionFeesInCUSD = formatEther(gasLimit * hexToBigInt(gasPrice));
   <TabItem value="ethers" label="ethers">
 
   ```js
+const ethers = require("ethers");
+const { providers, utils } = ethers;
+const { formatEther } = utils;
+
 const provider = new providers.JsonRpcProvider("https://forno.celo.org");
 
 const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
@@ -467,6 +502,11 @@ let transactionFeesInCUSD = formatEther(
       <TabItem value="index.js" label="index.js">
 
       ```js
+      const { createPublicClient, http } = require("viem");
+      const { celo } = require("viem/chains");
+      const { privateKeyToAccount } = require("viem/accounts");
+      const { SocialConnectIssuer } = require("./SocialConnect.js");
+
     let account = privateKeyToAccount(process.env.ISSUER_PRIVATE_KEY);
 
     let walletClient = createWalletClient({
@@ -511,6 +551,24 @@ let transactionFeesInCUSD = formatEther(
       <TabItem value="SocialConnect.js" label="SocialConnect.js">
 
       ```js
+      const {
+        federatedAttestationsABI,
+        odisPaymentsABI,
+        stableTokenABI,
+      } = require("@celo/abis");
+
+      const { getContract } = require("viem");
+      const { OdisUtils } = require("@celo/identity");
+      const { OdisContextName } = require("@celo/identity/lib/odis/query");
+
+      const ONE_CENT_CUSD = parseEther("0.01");
+
+      const SERVICE_CONTEXT =
+      process.env.ENVIRONMENT === "TESTNET"
+        ? OdisContextName.ALFAJORES
+        : OdisContextName.MAINNET;
+
+
       class SocialConnectIssuer {
         walletClient;
         authSigner;
@@ -719,6 +777,10 @@ let transactionFeesInCUSD = formatEther(
       <TabItem value="index.js" label="index.js">
 
       ```js
+      const ethers = require("ethers");
+      const { providers, utils, Wallet } = ethers;
+      const { formatEther } = utils;
+
       let wallet = new Wallet(process.env.ISSUER_PRIVATE_KEY, provider);
 
       const issuer = new SocialConnectIssuer(wallet, {
@@ -757,6 +819,27 @@ let transactionFeesInCUSD = formatEther(
       <TabItem value="SocialConnect.js" label="SocialConnect.js">
 
       ```js
+
+      const {
+        federatedAttestationsABI,
+        odisPaymentsABI,
+        stableTokenABI,
+      } = require("@celo/abis");
+
+      const ethers = require("ethers");
+      const { OdisUtils } = require("@celo/identity");
+      const { OdisContextName } = require("@celo/identity/lib/odis/query");
+
+      const { Contract, utils } = ethers;
+      const { parseEther } = utils;
+
+      const ONE_CENT_CUSD = parseEther("0.01");
+
+      const SERVICE_CONTEXT =
+      process.env.ENVIRONMENT === "TESTNET"
+        ? OdisContextName.ALFAJORES
+        : OdisContextName.MAINNET;
+
       class SocialConnectIssuer {
         wallet;
         authSigner;
