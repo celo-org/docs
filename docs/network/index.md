@@ -9,18 +9,17 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 
 ## Celo Mainnet
 
-| Name         | Value                                                                                                       |
-| ------------ | ----------------------------------------------------------------------------------------------------------- |
-| Network Name | Celo Mainnet                                                                                                |
-| Description  | The production Celo network                                                                                 |
-| RPC Endpoint | [https://forno.celo.org](https://forno.celo.org) <br/> Rate Limited and not suitable for production systems |
-
-| Chain ID | 42220 |
-| RPC Nodes | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
-| Currency Symbol | CELO |
-| Block Explorer | [http://explorer.celo.org](http://explorer.celo.org) |
-| Network Status | [https://stats.celo.org](https://stats.celo.org) |
-| Validator Explorer | [https://validators.celo.org](https://validators.celo.org) |
+| Name               | Value                                                                                                                |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| Network Name       | Celo Mainnet                                                                                                         |
+| Description        | The production Celo network                                                                                          |
+| RPC Endpoint       | [https://forno.celo.org](https://forno.celo.org) <br/> Rate Limited and not suitable for production systems          |
+| Chain ID           | 42220                                                                                                                |
+| RPC Nodes          | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
+| Currency Symbol    | CELO                                                                                                                 |
+| Block Explorer     | [http://explorer.celo.org](http://explorer.celo.org)                                                                 |
+| Network Status     | [https://stats.celo.org](https://stats.celo.org)                                                                     |
+| Validator Explorer | [https://validators.celo.org](https://validators.celo.org)                                                           |
 
 ## Celo Alfajores
 
