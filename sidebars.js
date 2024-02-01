@@ -1369,7 +1369,7 @@ const sidebars = {
     {
       type: "doc",
       label: "Introduction",
-      id: "cli-index",
+      id: "cli/index",
     },
     { type: "doc", label: "Account", id: "cli/account" },
     { type: "doc", label: "Commands", id: "cli/commands" },
