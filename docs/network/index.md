@@ -13,10 +13,10 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | ------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | Network Name       | Celo Mainnet                                                                                                         |
 | Description        | The production Celo network                                                                                          |
-| RPC Endpoint       | [https://forno.celo.org](https://forno.celo.org) <br/> Rate Limited and not suitable for production systems          |
 | Chain ID           | 42220                                                                                                                |
-| RPC Nodes          | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
 | Currency Symbol    | CELO                                                                                                                 |
+| RPC Nodes          | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
+| RPC Endpoint (best effort)      | [https://forno.celo.org](https://forno.celo.org) <br/> Note to developers: Forno is rate limited, as your usage increases consider options that can provide the desired level of support (SLA).          |
 | Block Explorer     | [http://explorer.celo.org](http://explorer.celo.org)                                                                 |
 | Network Status     | [https://stats.celo.org](https://stats.celo.org)                                                                     |
 | Validator Explorer | [https://validators.celo.org](https://validators.celo.org)                                                           |
@@ -27,10 +27,10 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | Network Name    | Celo Alfajores                                                                                                                                  |
 | Description     | The Developer Testnet network                                                                                                                   |
-| RPC Endpoint    | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) <br/> Rate Limited and not suitable for production systems |
-| Chain ID        | 44787                                                                                                                                           |
-| RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
 | Currency Symbol | CELO                                                                                                                                            |
+| Chain ID        | 44787                                                                                                                                           |
+| RPC Endpoint (best effort)   | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) |
+| RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
 | Block Explorer  | [https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)                                                  |
 | Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
 | Faucet Link     | [https://faucet.celo.org](https://faucet.celo.org)                                                                                              |
@@ -49,9 +49,9 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Network Name        | Baklava                                                                                                                                     |
 | Description         | The Node Operator Testnet network                                                                                                           |
-| RPC Endpoint        | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org) <br/> Rate Limited and not suitable for production systems |
-| RPC Nodes           | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet)                        |
 | Currency Symbol     | CELO                                                                                                                                        |
+| RPC Endpoint (best effort       | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org)                                                |
+| RPC Nodes           | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet)                        |
 | Block Explorer      | [https://baklava-blockscout.celo-testnet.org](https://baklava-blockscout.celo-testnet.org)                                                  |
 | Network Status      | [https://baklava-celostats.celo-testnet.org](https://baklava-celostats.celo-testnet.org)                                                    |
 | Faucet Request Form | [https://forms.gle/JTYkMAJWTAUQp1sv9](https://forms.gle/JTYkMAJWTAUQp1sv9)                                                                  |
