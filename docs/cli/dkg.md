@@ -1,131 +1,142 @@
-# `celocli dkg`
+`celocli dkg`
+=============
 
 Publish your locally computed DKG results to the blockchain
+
+* [`celocli dkg:allowlist`](#celocli-dkgallowlist)
+* [`celocli dkg:deploy`](#celocli-dkgdeploy)
+* [`celocli dkg:get`](#celocli-dkgget)
+* [`celocli dkg:publish`](#celocli-dkgpublish)
+* [`celocli dkg:register`](#celocli-dkgregister)
+* [`celocli dkg:start`](#celocli-dkgstart)
 
 ## `celocli dkg:allowlist`
 
 Allowlist an address in the DKG
 
 ```
-Allowlist an address in the DKG
-
 USAGE
-  $ celocli dkg:allowlist
+  $ celocli dkg:allowlist --participantAddress <value> --address <value> --from
+    <value> [--globalHelp]
 
-OPTIONS
+FLAGS
   --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) DKG Contract Address
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the sender
   --globalHelp                                          View all available global flags
-
-  --participantAddress=participantAddress               (required) Address of the
+  --participantAddress=<value>                          (required) Address of the
                                                         participant to allowlist
+
+DESCRIPTION
+  Allowlist an address in the DKG
 ```
 
-_See code: [src/commands/dkg/allowlist.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/allowlist.ts)_
+_See code: [src/commands/dkg/allowlist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/allowlist.ts)_
 
 ## `celocli dkg:deploy`
 
 Deploys the DKG smart contract
 
 ```
-Deploys the DKG smart contract
-
 USAGE
-  $ celocli dkg:deploy
+  $ celocli dkg:deploy --phaseDuration <value> --threshold <value> --from
+    <value> [--globalHelp]
 
-OPTIONS
+FLAGS
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
   --globalHelp                                       View all available global flags
-
-  --phaseDuration=phaseDuration                      (required) Duration of each DKG
+  --phaseDuration=<value>                            (required) Duration of each DKG
                                                      phase in blocks
-
-  --threshold=threshold                              (required) The threshold to use for
+  --threshold=<value>                                (required) The threshold to use for
                                                      the DKG
+
+DESCRIPTION
+  Deploys the DKG smart contract
 ```
 
-_See code: [src/commands/dkg/deploy.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/deploy.ts)_
+_See code: [src/commands/dkg/deploy.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/deploy.ts)_
 
 ## `celocli dkg:get`
 
 Gets data from the contract to run the next phase
 
 ```
-Gets data from the contract to run the next phase
-
 USAGE
-  $ celocli dkg:get
+  $ celocli dkg:get --method
+    shares|responses|justifications|participants|phase|group --address <value>
+    [--globalHelp]
 
-OPTIONS
-  --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d                 (required) DKG
-                                                                       Contract Address
+FLAGS
+  --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) DKG Contract Address
+  --globalHelp                                          View all available global flags
+  --method=<option>                                     (required) Getter method to call
+                                                        <options:
+                                                        shares|responses|justifications|
+                                                        participants|phase|group>
 
-  --globalHelp                                                         View all
-                                                                       available global
-                                                                       flags
-
-  --method=(shares|responses|justifications|participants|phase|group)  (required) Getter
-                                                                       method to call
+DESCRIPTION
+  Gets data from the contract to run the next phase
 ```
 
-_See code: [src/commands/dkg/get.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/get.ts)_
+_See code: [src/commands/dkg/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/get.ts)_
 
 ## `celocli dkg:publish`
 
 Publishes data for each phase of the DKG
 
 ```
-Publishes data for each phase of the DKG
-
 USAGE
-  $ celocli dkg:publish
+  $ celocli dkg:publish --data <value> --address <value> --from <value>
+    [--globalHelp]
 
-OPTIONS
+FLAGS
   --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) DKG Contract Address
-
-  --data=data                                           (required) Path to the data
+  --data=<value>                                        (required) Path to the data
                                                         being published
-
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the sender
-
   --globalHelp                                          View all available global flags
+
+DESCRIPTION
+  Publishes data for each phase of the DKG
 ```
 
-_See code: [src/commands/dkg/publish.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/publish.ts)_
+_See code: [src/commands/dkg/publish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/publish.ts)_
 
 ## `celocli dkg:register`
 
 Register a public key in the DKG
 
 ```
-Register a public key in the DKG
-
 USAGE
-  $ celocli dkg:register
+  $ celocli dkg:register --blsKey <value> --address <value> --from <value>
+    [--globalHelp]
 
-OPTIONS
+FLAGS
   --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) DKG Contract Address
-  --blsKey=blsKey                                       (required)
+  --blsKey=<value>                                      (required)
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the sender
   --globalHelp                                          View all available global flags
+
+DESCRIPTION
+  Register a public key in the DKG
 ```
 
-_See code: [src/commands/dkg/register.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/register.ts)_
+_See code: [src/commands/dkg/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/register.ts)_
 
 ## `celocli dkg:start`
 
 Starts the DKG
 
 ```
-Starts the DKG
-
 USAGE
-  $ celocli dkg:start
+  $ celocli dkg:start --address <value> --from <value> [--globalHelp]
 
-OPTIONS
+FLAGS
   --address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) DKG Contract Address
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the sender
   --globalHelp                                          View all available global flags
+
+DESCRIPTION
+  Starts the DKG
 ```
 
-_See code: [src/commands/dkg/start.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/dkg/start.ts)_
+_See code: [src/commands/dkg/start.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/start.ts)_
