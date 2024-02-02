@@ -17,7 +17,7 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | Currency Symbol    | CELO                                                                                                                 |
 | RPC Nodes          | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
 | RPC Endpoint (best effort)      | [https://forno.celo.org](https://forno.celo.org) <br/> Note to developers: Forno is rate limited, as your usage increases consider options that can provide the desired level of support (SLA).          |
-| Block Explorer     | [http://explorer.celo.org](http://explorer.celo.org)                                                                 |
+| Block Explorers     | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>  |
 | Network Status     | [https://stats.celo.org](https://stats.celo.org)                                                                     |
 | Validator Explorer | [https://validators.celo.org](https://validators.celo.org)                                                           |
 
@@ -31,7 +31,7 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | Chain ID        | 44787                                                                                                                                           |
 | RPC Endpoint (best effort)   | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) |
 | RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
-| Block Explorer  | [https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)                                                  |
+| Block Explorer  | <ul><li>[https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)</li><li>[https://alfajores.celoscan.io](https://alfajores.celoscan.io)</li></ul>  |
 | Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
 | Faucet Link     | [https://faucet.celo.org](https://faucet.celo.org)                                                                                              |
 
