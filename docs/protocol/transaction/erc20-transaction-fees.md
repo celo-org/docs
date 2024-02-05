@@ -33,19 +33,19 @@ Adapters can also be used to query `balanceOf(address)` of an account, but it wi
 
 #### Adapters by network
 
-#### Mainnet
+##### Mainnet
 
 N/A
 
 USDC to be deployed. [Source](https://www.circle.com/blog/what-you-need-to-know-native-usdc-is-launching-on-celo).
 
 
-#### Alfajores (tesnet)
+##### Alfajores (tesnet)
 
 | Token    | Adapter |
 | -------- | ------- |
 | `0xc9cce1e51F1393CE39EB722E3e59eDE6faBf89fD`  | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`    |
 
-#### Baklava (tesnet)
+##### Baklava (tesnet)
 
 N/A
