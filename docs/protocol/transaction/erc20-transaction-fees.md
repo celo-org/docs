@@ -16,3 +16,7 @@ As in Ethereum, transaction fees play a critical role in the Celo protocol as a 
 ## Fee Currency Field
 
 The protocol maintains a governable whitelist of smart contract addresses which can be used to pay for transaction fees. These smart contracts implement an extension of the ERC20 interface, with additional functions that allow the protocol to debit and credit transaction fees. When creating a transaction, users can specify the address of the currency they would like to use to pay for gas via the `feeCurrency` field. Leaving this field empty will result in the native currency, CELO, being used. Note that transactions that specify non-CELO gas currencies will cost approximately 50k additional gas.
+
+## Whitelisted Gas Fee Currencies
+
+To obtain a list of the gas fee currencies that have been whitelisted using the [Celo's governance process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All the notable mainnet smart contracts are [here](https://docs.celo.org/contract-addresses#celo-mainnet).
