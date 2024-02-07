@@ -19,7 +19,7 @@ The protocol maintains a governable whitelist of smart contract addresses which 
 
 ## Whitelisted Gas Fee Addresses
 
-To obtain a list of the gas fee addresses that have been whitelisted using the [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+To obtain a list of the gas fee addresses that have been whitelisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
 
 ### Tokens with Adapters
 
@@ -27,7 +27,7 @@ After Contract Release 11, addresses in the whitelist are no longer guaranteed t
 
 The Celo Blockchain natively works with 18 decimals when calculating gas pricing, so adapters are needed to normalize the decimals for tokens that use a different one. Some stablecoins use 6 decimals as a standard.
 
-Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/protocol/transaction/gas-pricing).
+Transactions with those ERC20 tokens are performed as usual (using the token address), but when paying gas currency with those ERC20 tokens, the adapter address should be used. This adapter address is also the one that should be used when querying [Gas Price Minimum](/protocol/transaction/gas-pricing).
 
 Adapters can also be used to query `balanceOf(address)` of an account, but it will return the balance as if the token had 18 decimals and not the native ones. This is useful to calculate if an account has enough balance to cover gas after multiplying `gasPrice * estimatedGas` without having to convert back to the token's native decimals.
 
@@ -40,12 +40,12 @@ N/A
 USDC to be deployed. [Source](https://www.circle.com/blog/what-you-need-to-know-native-usdc-is-launching-on-celo).
 
 
-##### Alfajores (tesnet)
+##### Alfajores (testnet)
 
 | Token    | Adapter |
 | -------- | ------- |
 | `0xc9cce1e51F1393CE39EB722E3e59eDE6faBf89fD`  | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`    |
 
-##### Baklava (tesnet)
+##### Baklava (testnet)
 
 N/A
