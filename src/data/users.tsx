@@ -759,6 +759,15 @@ const Users: User[] = [
     source: 'https://www.coinbase.com/price/celo',
     tags: ['apps','earn'],
   },
+  {
+    title: 'Cred Protocol',
+    description: 'Quantifying digital asset lending risk, to democratise access to credit.',
+    preview: require('./showcase/cred-protocol.png'),
+    website: 'https://app.credprotocol.com/',
+    source: 'https://app.credprotocol.com/,
+    tags: ['apps','impact','defi'],
+  },
+  
   /*
   Pro Tip: add your site in alphabetical order.
   Appending your site here (at the end) is more likely to produce Git conflicts.
