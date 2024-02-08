@@ -766,6 +766,14 @@ const Users: User[] = [
     website: 'https://www.footprint.network/',
     source: 'https://www.footprint.network/',
     tags: ['apps','analytics']
+  },
+  {
+    title: 'Cred Protocol',
+    description: 'Quantifying digital asset lending risk, to democratise access to credit.',
+    preview: require('./showcase/cred-protocol.png'),
+    website: 'https://app.credprotocol.com/',
+    source: 'https://app.credprotocol.com/,
+    tags: ['apps','impact','defi'],
   }
   /*
   Pro Tip: add your site in alphabetical order.
