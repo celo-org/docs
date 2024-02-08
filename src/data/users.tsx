@@ -144,15 +144,7 @@ export const Tags: { [type in TagType]: Tag } = {
 
 // Add your site to this list
 // prettier-ignore
-const Users: User[] = [
-  {
-    title: 'Enkrypt',
-    description: 'Hold, buy, send, receive, and swap CELO tokens. Manage your NFTs. Access web3 apps across multiple blockchains.',
-    preview: require('https://i.postimg.cc/vBc4H0Gb/enkrypt.png'),
-    website: 'https://www.enkrypt.com',
-    source: 'https://github.com/enkryptcom',
-    tags: ['wallets', 'apps', 'defi'],
-  }, 
+const Users: User[] = [ 
   {
     title: 'Add3',
     description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
@@ -171,6 +163,14 @@ const Users: User[] = [
     website: 'https://ethix.ethichub.com/',
     source: 'https://docs-ethix.ethichub.com',
     tags: ['apps', 'refi', 'popular', 'earn', 'impact'],
+  },
+  {
+    title: 'Enkrypt',
+    description: 'Hold, buy, send, receive, and swap CELO tokens. Manage your NFTs. Access web3 apps across multiple blockchains.',
+    preview: require('https://i.postimg.cc/vBc4H0Gb/enkrypt.png'),
+    website: 'https://www.enkrypt.com',
+    source: 'https://github.com/enkryptcom',
+    tags: ['wallets', 'apps', 'defi'],
   },
   {
     title: 'Valora',
