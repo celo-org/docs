@@ -315,11 +315,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Using Truffle",
-          id: "developer/deploy/truffle",
-        },
-        {
-          type: "doc",
           label: "Using Hardhat",
           id: "developer/deploy/hardhat",
         },
