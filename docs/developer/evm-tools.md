@@ -90,6 +90,10 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [ZMOK](https://zmok.io/) - JSON-RPC Ethereum API (Mainnet, Rinkeby, Front-running Mainnet)
 - [Watchdata](https://watchdata.io) - Provide simple and reliable API access to Ethereum blockchain
 
+### Alternative Celo Faucet
+
+- [LearnWeb3 Faucet](https://learnweb3.io/faucets)
+
 ### Test Ether Faucets
 
 - [Rinkeby faucet](https://faucet.rinkeby.io/)
