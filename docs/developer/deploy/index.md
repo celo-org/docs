@@ -35,5 +35,4 @@ Developers can build with Celo using many [Ethereum](https://ethereum.org/en/) c
 
 - [Using thirdweb](/developer/deploy/thirdweb)
 - [Using Remix](/developer/deploy/remix)
-- [Using Truffle](/developer/deploy/truffle)
 - [Using Hardhat](/developer/deploy/hardhat)
