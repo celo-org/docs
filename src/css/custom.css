@@ -58,6 +58,10 @@ html[data-theme="light"] {
   border-color: #cccccc;
 }
 
+[data-theme="dark"] .DocSearch {
+  --docsearch-hit-active-color: #331e3f;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(17, 18, 20);
   display: block;
