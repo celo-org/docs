@@ -30,7 +30,7 @@ In this example, we will be using IPFS for off-chain storage, but you can use wh
 
 ## Design and Deploy the Smart Contracts
 
-8. Go to [https://docs.openzeppelin.com/contracts/4.x/wizard](https://docs.openzeppelin.com/contracts/4.x/wizard)
+8. Go to [https://docs.openzeppelin.com/contracts/5.x/wizard](https://docs.openzeppelin.com/contracts/5.x/wizard)
 9. Select ERC721 as your token choice.
 10. Enter your token information.
     1. We are calling our token the ProsperityFactory, symbol PF.
