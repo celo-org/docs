@@ -27,6 +27,7 @@ celocli network:contracts --node https://forno.celo.org
 | Accounts              | 0x7d21685C17607338b313a7174bAb6620baD0aaB7 |
 | Attestations          | 0xdC553892cdeeeD9f575aa0FBA099e5847fd88D20 |
 | FederatedAttestations | 0x0aD5b1d0C25ecF6266Dd951403723B2687d6aff2 |
+| OdisPayments          | 0xae6b29f31b96e61dddc792f45fda4e4f0356d0cb |
 | BlockchainParameters  | 0x6E10a8864C65434A721d82e424d727326F9d5Bfa |
 | DoubleSigningSlasher  | 0x50C100baCDe7E2b546371EB0Be1eACcf0A6772ec |
 | DowntimeSlasher       | 0x71CAc3B31c138F3327C6cA14f9a1c8d752463fDd |
