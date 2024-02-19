@@ -186,7 +186,7 @@ FLAGS
   --comment=<value>                                  Transfer comment
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
   --globalHelp                                       View all available global flags
-  --stableToken=<option>                             Name of the stable to be transfered
+  --stableToken=<option>                             Name of the stable to be transferred
                                                      <options:
                                                      cUSD|cusd|cEUR|ceur|cREAL|creal>
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver

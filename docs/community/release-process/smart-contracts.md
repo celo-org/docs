@@ -216,7 +216,7 @@ After a successful release execution on a testnet, the resulting network state s
   ```
 - Complete a round of attestation
 - Redeem from Escrow
-- Register a Vaildator
+- Register a Validator
   ```bash
   celocli validator:register --blsKey <hexString> --blsSignature <hexString> --ecdsaKey <hexString> --from <addr>
   ```
@@ -455,7 +455,7 @@ Deploying a new contract release should occur with the following process. On-cha
               <code>Passed</code> or <code>Rejected</code>) and notify the
               community in the Discord <code>#governance</code> channel.
             </li>
-            <li>Change corresponding CGP status to EXCECUTED.</li>
+            <li>Change corresponding CGP status to EXECUTED.</li>
             <li>
               Merge the release branch into <code>master</code> with a merge
               commit

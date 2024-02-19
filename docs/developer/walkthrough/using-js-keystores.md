@@ -21,7 +21,7 @@ The components of the library are roughly as follows:
   - import PKs (into encrypted keystores)
   - decrypt and get a PK from an encrypted keystore
   - change the passphrase on a keystore
-- `FileKeystore`, `InMemoryKeystore` which specifiy the IO in addition to the above base class
+- `FileKeystore`, `InMemoryKeystore` which specify the IO in addition to the above base class
 - `KeystoreWalletWrapper`: (not stable; likely to structurally change) a very simple wrapper for a `Keystore` and `LocalWallet`, which allows a user to decrypt a keystore and pass the key to the `LocalWallet` in order to sign transactions.
 
 ## Usage
@@ -34,7 +34,7 @@ For more stringent security requirements, check out the guide to [Choosing a Wal
 
 :::
 
-Depending on your use case, you can either interact directly with the `FileKeystore` (purely for creating and interacting with keystore files, importing or accessing private keys) or else use the `KeystoreWalletWrapper` (combines the keystore functionality with convenient access to the `LocalWallet` for signing tranactions).
+Depending on your use case, you can either interact directly with the `FileKeystore` (purely for creating and interacting with keystore files, importing or accessing private keys) or else use the `KeystoreWalletWrapper` (combines the keystore functionality with convenient access to the `LocalWallet` for signing transactions).
 
 ### Using the FileKeystore
 

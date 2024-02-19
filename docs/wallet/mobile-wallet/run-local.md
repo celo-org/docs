@@ -103,7 +103,7 @@ Next, the VM snapshot settings should be modified:
 
 1.  Make sure to have watchman installed: `brew install watchman`
 2.  It's a known [detox issue](https://github.com/wix/Detox/issues/1255) that test will fail if a emulator is renamed.
-3.  Make sure the emulator is not running before runing the tests.
+3.  Make sure the emulator is not running before running the tests.
 
 For information on how to run and extend the e2e tests, refer to the [e2e readme](https://github.com/valora-inc/wallet/tree/main/e2e#end-to-end-tests).
 

@@ -293,7 +293,7 @@ async function getName(instance) {
 }
 ```
 
-The `setName()` function is a bit more involved. First, it gets the account key from the provided `./secret` file, just like in `celo_deploy.js`. Then it creates a `txObject` that encodes a smart contract transaction call to `setName()` with the provided `newName` to the provided instance of the HelloWorld contract. Then the function sends the encoded transaction object to the network, waits for a reciept and prints it to the console.
+The `setName()` function is a bit more involved. First, it gets the account key from the provided `./secret` file, just like in `celo_deploy.js`. Then it creates a `txObject` that encodes a smart contract transaction call to `setName()` with the provided `newName` to the provided instance of the HelloWorld contract. Then the function sends the encoded transaction object to the network, waits for a receipt and prints it to the console.
 
 ```javascript title="helloWorld.js"
 async function setName(instance, newName) {

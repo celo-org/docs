@@ -1,11 +1,11 @@
 ---
 title: Celo Wallet Verification
-description: How the Celo wallet uses phone number verification to map phone number hashses to addresses.
+description: How the Celo wallet uses phone number verification to map phone number hashes to addresses.
 ---
 
 # Wallet Verification
 
-How the Celo wallet uses phone number verification to map phone number hashses to addresses.
+How the Celo wallet uses phone number verification to map phone number hashes to addresses.
 
 ---
 
@@ -25,4 +25,4 @@ The following diagrams depict the user flows for the celo wallet:
 
 - [General Verification Flow](https://storage.googleapis.com/celo-website/Verification%20Flow.jpg)
 - [Detailed Phone Number Hash Flow](https://storage.googleapis.com/celo-website/Get%20Phone%20Number%20Hash%20Details%20Flow.jpg)
-- [Detailed Flow for Receiving SMS Input and Compeleting Verification](<https://storage.googleapis.com/celo-website/Wait%20SMS%20and%20Complete%20Attestation%20Flow%20(1).jpg>)
+- [Detailed Flow for Receiving SMS Input and Completing Verification](<https://storage.googleapis.com/celo-website/Wait%20SMS%20and%20Complete%20Attestation%20Flow%20(1).jpg>)

@@ -29,7 +29,7 @@ This allows you to interact with contracts and accounts that were deployed at th
 
 You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment.
 
-Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum enviroment. It behaves similarly to the Celo EVM but not exactly.
+Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum environment. It behaves similarly to the Celo EVM but not exactly.
 
 ### Use the celo-devchain NPM package
 

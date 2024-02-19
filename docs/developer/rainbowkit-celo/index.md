@@ -67,5 +67,5 @@ const wagmiClient = createClient({
   provider,
 });
 
-// ... Your exisiting app.
+// ... Your existing app.
 ```

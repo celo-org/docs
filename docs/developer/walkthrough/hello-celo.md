@@ -4,7 +4,7 @@ title: Sending CELO & Mento Stable Assets
 
 # Sending CELO & Mento Stable Assets
 
-How to connect to the Celo test network and tranfer tokens using ContractKit.
+How to connect to the Celo test network and transfer tokens using ContractKit.
 
 ---
 

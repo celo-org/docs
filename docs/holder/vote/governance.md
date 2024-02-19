@@ -1,11 +1,11 @@
 ---
 title: Celo Voting on Governance Proposals
-description: How to use the Celo CLI to participate in Goverance and create a Governance proposal.
+description: How to use the Celo CLI to participate in Governance and create a Governance proposal.
 ---
 
 # Voting on Governance Proposals
 
-How to use the [Celo CLI](/cli/) to participate in Goverance and create a Governance proposal.
+How to use the [Celo CLI](/cli/) to participate in Governance and create a Governance proposal.
 
 ---
 

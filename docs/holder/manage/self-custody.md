@@ -65,7 +65,7 @@ The remainder of this guide assumes you are using the first address available on
 
 If you only have a single Ledger, and are comfortable losing the security advantage of keeping the beneficiary key offline when voting, you can configure a second address on the same Ledger as your voting key.
 
-First, read [these instructions](/wallet/ledger/setup) carefully. Then, whereever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#Support).
+First, read [these instructions](/wallet/ledger/setup) carefully. Then, wherever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#Support).
 
 ## Deployment
 
@@ -453,4 +453,4 @@ Finally, request that the `ReleaseGold` contract transfer an amount to your bene
 celocli releasegold:withdraw --contract $CELO_RG_ADDRESS --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
-To vote with any CELO in your beneficiary account, you'll want to register it as a Locked Gold Acccount, authorize a new vote signing key for it, then lock CELO.
+To vote with any CELO in your beneficiary account, you'll want to register it as a Locked Gold Account, authorize a new vote signing key for it, then lock CELO.

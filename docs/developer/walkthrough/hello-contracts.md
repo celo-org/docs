@@ -23,7 +23,7 @@ This guide assumes that you have a basic Node/[NPM](https://www.npmjs.com/get-np
 npm install -g truffle
 ```
 
-In your desired project folder, intiialize a new truffle project:
+In your desired project folder, initialize a new truffle project:
 
 ```
 truffle init

@@ -9,7 +9,7 @@ View details about the network, like contracts and parameters
 
 ## `celocli network:contracts`
 
-Lists Celo core contracts and their addesses.
+Lists Celo core contracts and their Addesses.
 
 ```
 USAGE
@@ -30,7 +30,7 @@ FLAGS
       --sort=<value>     property to sort by (prepend '-' for descending)
 
 DESCRIPTION
-  Lists Celo core contracts and their addesses.
+  Lists Celo core contracts and their Addesses.
 ```
 
 _See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/contracts.ts)_

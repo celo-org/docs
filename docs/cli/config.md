@@ -25,7 +25,7 @@ _See code: [src/commands/config/get.ts](https://github.com/celo-org/developer-to
 
 ## `celocli config:set`
 
-Configure running node information for propogating transactions to network
+Configure running node information for propagating transactions to network
 
 ```
 USAGE
@@ -42,7 +42,7 @@ FLAGS
       --globalHelp            View all available global flags
 
 DESCRIPTION
-  Configure running node information for propogating transactions to network
+  Configure running node information for propagating transactions to network
 
 EXAMPLES
   set --node ws://localhost:2500
