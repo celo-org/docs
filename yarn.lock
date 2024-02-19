@@ -1201,9 +1201,9 @@
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
 "@crowdin/cli@^3.7.0":
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.15.0.tgz#85934161a36a6570634bc781de6a3441ab7d76ba"
-  integrity sha512-oQMfC5S5OkVee+ryB56E1g0cr2iL9HFaYMWSwNRODp1KICWo0B/oRQo3MvStiZ3VW9ZkeydEoOgRnXXxw2amOA==
+  version "3.18.0"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.18.0.tgz#17ff3fe7a43f7a31c3cde24ecbafacf4a5c3aad1"
+  integrity sha512-W4lvXhnAfGWxFW4L6n6tNIaXxuHO8vzRBQmbOz6OqLA7EgGLvYih0L9zeQpt9KNda66lC/iKqnA52ezTqPAEgg==
   dependencies:
     command-exists-promise "^2.0.2"
     node-fetch "2.6.7"
@@ -5329,9 +5329,9 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     minimalistic-assert "^1.0.1"
 
 hasown@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/hasown/-/hasown-2.0.0.tgz#f4c513d454a57b7c7e1650778de226b11700546c"
-  integrity sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/hasown/-/hasown-2.0.1.tgz#26f48f039de2c0f8d3356c223fb8d50253519faa"
+  integrity sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==
   dependencies:
     function-bind "^1.1.2"
 
