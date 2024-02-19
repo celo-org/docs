@@ -921,7 +921,7 @@ const sidebars = {
         {
           type: "link",
           label: "Social Connect",
-          href: "https://github.com/celo-org/identity",
+          href: "https://github.com/celo-org/Social-Connect",
         },
         "protocol/identity/metadata",
         "protocol/identity/smart-contract-accounts",
