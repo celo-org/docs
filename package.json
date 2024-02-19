@@ -39,7 +39,7 @@
     "docusaurus-plugin-fathom": "^1.1.0",
     "docusaurus-plugin-hubspot": "^1.0.1",
     "fs": "^0.0.1-security",
-    "hast-util-is-element": "1.1.0",
+    "hast-util-is-element": "3.0.0",
     "https-browserify": "^1.0.0",
     "mermaid": "^10.0.0",
     "net": "^1.0.2",
