@@ -39,12 +39,11 @@ N/A
 
 USDC to be deployed. [Source](https://www.circle.com/blog/what-you-need-to-know-native-usdc-is-launching-on-celo).
 
-
 ##### Alfajores (testnet)
 
-| Token    | Adapter |
-| -------- | ------- |
-| `0xc9cce1e51F1393CE39EB722E3e59eDE6faBf89fD`  | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`    |
+|  Name  | Token    | Adapter |
+| ------ | -------- | ------- |
+| `STBLTEST` | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`  | `0xDB93874fE111F5a87Acc11Ff09Ee9450Ac6509AE`  |
 
 ##### Baklava (testnet)
 
