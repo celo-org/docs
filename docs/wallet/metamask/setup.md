@@ -1,4 +1,4 @@
----
+init---
 title: MetaMask Programmatic Setup on Celo
 description: How dApp developers can use MetaMask to interact with the Celo network.
 ---
