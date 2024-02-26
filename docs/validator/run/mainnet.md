@@ -455,11 +455,14 @@ There are two new flags that control this behavior:
 
 For example, `0x765DE816845861e75A25fCA122bb6898B8B1282a 0.1;0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73 0.05;0xEd6961928066D3238134933ee9cDD510Ff157a6e 0`.
 
-1. `celo.feecurrency.default` - an overridable default value (initially set to `0.5`) for currencies not listed in the limits map, meaning that if not specified otherwise, a transaction with a given fee currency can take up to `50%` of the block space. CELO token doesn’t have a limit.
+2. `celo.feecurrency.default` - an overridable default value (initially set to `0.5`) for currencies not listed in the limits map, meaning that if not specified otherwise, a transaction with a given fee currency can take up to `50%` of the block space. CELO token doesn’t have a limit.
 
 Based on historical data, the following default configuration is proposed:
 
-`--celo.feecurrency.limits.default=0.5 --celo.feecurrency.limits="0x765DE816845861e75A25fCA122bb6898B8B1282a=0.9,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.5,0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787=0.5"`
+```bash
+--celo.feecurrency.limits.default=0.5
+--celo.feecurrency.limits="0x765DE816845861e75A25fCA122bb6898B8B1282a=0.9,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.5,0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787=0.5"
+```
 
 It imposes the following limits:
 
