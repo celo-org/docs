@@ -445,6 +445,30 @@ You can run multiple proxies by deploying additional proxies per the instruction
 
 :::
 
+### Limiting block space for transactions paid in alternative ERC-20 gas currencies
+
+As described in the protocol documentation, Celo allows users to [pay for gas using tokens](/protocol/transaction/erc20-transaction-fees). There is a governable list of accepted tokens. However, the Celo blockchain client starting with version 1.8.1 implements a protective mechanism that allows validators to control the percentage of available block space used by transactions paid with an alternative fee currency (other than CELO) more precisely.
+
+There are two new flags that control this behavior:
+
+1. `celo.feecurrency.limits` with a comma-separated `currency address hash=limit` mappings for currencies listed in the `FeeCurrencyWhitelist` contract, where `limit` represents the maximal fraction of the block gas limit as a float point number available for the given fee currency.
+
+For example, `0x765DE816845861e75A25fCA122bb6898B8B1282a 0.1;0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73 0.05;0xEd6961928066D3238134933ee9cDD510Ff157a6e 0`.
+
+1. `celo.feecurrency.default` - an overridable default value (initially set to `0.5`) for currencies not listed in the limits map, meaning that if not specified otherwise, a transaction with a given fee currency can take up to `50%` of the block space. CELO token doesn’t have a limit.
+
+Based on historical data, the following default configuration is proposed:
+
+`--celo.feecurrency.limits.default=0.5 --celo.feecurrency.limits="0x765DE816845861e75A25fCA122bb6898B8B1282a=0.9,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.5,0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787=0.5"`
+
+It imposes the following limits:
+
+- cUSD up to 90%
+- cEUR up to 50%
+- cREAL up to 50%
+- any other token except CELO - 50%
+- CELO doesn't have a limit
+
 ## Registering as a Validator
 
 ### Register the Accounts
