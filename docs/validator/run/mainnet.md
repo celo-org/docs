@@ -451,9 +451,9 @@ As described in the protocol documentation, Celo allows users to [pay for gas us
 
 There are two new flags that control this behavior:
 
-1. `celo.feecurrency.limits` with a comma-separated `currency address hash=limit` mappings for currencies listed in the `FeeCurrencyWhitelist` contract, where `limit` represents the maximal fraction of the block gas limit as a float point number available for the given fee currency.
+1. `celo.feecurrency.limits` with a comma-separated `currency_address_hash=limit` mappings for currencies listed in the `FeeCurrencyWhitelist` contract, where `limit` represents the maximal fraction of the block gas limit as a float point number available for the given fee currency. The addresses are not expected to be checksummed.
 
-For example, `0x765DE816845861e75A25fCA122bb6898B8B1282a 0.1;0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73 0.05;0xEd6961928066D3238134933ee9cDD510Ff157a6e 0`.
+For example, `0x765DE816845861e75A25fCA122bb6898B8B1282a=0.1,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.05,0xEd6961928066D3238134933ee9cDD510Ff157a6e=0`.
 
 2. `celo.feecurrency.default` - an overridable default value (initially set to `0.5`) for currencies not listed in the limits map, meaning that if not specified otherwise, a transaction with a given fee currency can take up to `50%` of the block space. CELO token doesn’t have a limit.
 
