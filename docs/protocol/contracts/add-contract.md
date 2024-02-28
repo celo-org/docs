@@ -19,4 +19,6 @@ Test directory is organized the same way as the contracts directory so feel free
 
 Some build issues can be resolved by simply deleting build and the typechain folder. Don’t forget to run yarn build once again.
 
-:::
+:::0x62B8B11039FcfE5aB0C56E502b1C372A3d2a9c7A
+0x43d72ff17701b2da814620735c39c620ce0ea4a1
+0x82afbc77209eb3a963f579f83f9625da70eafa3a
