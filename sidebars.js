@@ -445,6 +445,17 @@ const sidebars = {
           id: "developer/build-on-minipay/overview",
         },
         {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Ngrok Setup",
+              id: "developer/build-on-minipay/prerequisites/ngrok-setup",
+            },
+          ],
+        },
+        {
           type: "doc",
           label: "Enabling Testnet",
           id: "developer/build-on-minipay/enabling-testnet",
