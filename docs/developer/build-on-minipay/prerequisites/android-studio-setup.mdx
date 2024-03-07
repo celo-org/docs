@@ -1,0 +1,89 @@
+---
+title: Android Studio Setup
+description: Android Studio Setup for MiniPay devs
+---
+
+MiniPay is an Android app.
+
+In order to test and view dApps when building on MiniPay you might not have an Android device, this is when you can use an Android Emulator!
+
+In this guide, you will learn how you can setup an Android Simulator to test MiniPay dApps!
+
+## Installing Android Studio
+
+1. Visit [https://developer.android.com/studio](https://developer.android.com/studio) and download Android Studio.
+
+![download android studio](/img/developer/build-on-minipay/android-studio-setup/1.png)
+
+2. Select according to your OS and Mac version.
+
+![mac version](/img/developer/build-on-minipay/android-studio-setup/2.png)
+
+3. Add it to your Applications (if you are on Mac) and perform the setup.
+
+If asked for Android Simulator, tick it!
+
+![add to applications](/img/developer/build-on-minipay/android-studio-setup/3.png)
+
+4. On succesful setup this is how your UI for Android Studio will look like.
+
+![android studio first screen](/img/developer/build-on-minipay/android-studio-setup/4.png)
+
+5. Click the three dots on right top corner and open "Virtual Device Manager".
+
+![open virtual device manager](/img/developer/build-on-minipay/android-studio-setup/5.png)
+
+6. The Device Manager will show all the existing available devices and you can add a new one by clicking the + button
+
+![add virtual device](/img/developer/build-on-minipay/android-studio-setup/6.png)
+
+7. Add any device that has the Play Store icon and click "Next", I use Pixel 4.
+
+![add device with play store icon](/img/developer/build-on-minipay/android-studio-setup/7.png)
+
+8. Select a "System Image" that will run inside the device you selected, download any with Android version above 11.0 and click "Next".
+
+I already have Tiramisu downloaded.
+
+![select system image](/img/developer/build-on-minipay/android-studio-setup/8.png)
+
+9. You can edit the AVD name in this step, the AVD name is used to launch the device from the terminal.
+
+Keep the orientation as Potrait for development purposes.
+
+You can now click "Finish"!
+
+![avd config](/img/developer/build-on-minipay/android-studio-setup/9.png)
+
+10. You should now be able to see the device in the "Device Manager"!
+
+You can use the Play button to start the device!
+
+![start the device](/img/developer/build-on-minipay/android-studio-setup/10.png)
+
+:::info
+Alternatively you can also launch the device using the following terminal commands
+
+To view the list of devices available
+
+```bash
+emulator -list-avds
+```
+
+To launch an AVD
+
+```bash
+emulator -avd [AVD_NAME]
+```
+
+:::
+
+11. On successful launch you should see the device!
+
+<img
+  src={"/img/developer/build-on-minipay/android-studio-setup/11.png"}
+  style={{ width: 250 }}
+  alt="Open MiniPay dApp test page"
+/>
+
+#### Now you can follow the steps to [install MiniPay](http://docs.celo.org/developer/build-on-minipay/overview#installing-minipay) on the device!

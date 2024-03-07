@@ -445,6 +445,17 @@ const sidebars = {
           id: "developer/build-on-minipay/overview",
         },
         {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Android Studio Setup",
+              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
+            },
+          ],
+        },
+        {
           type: "doc",
           label: "Enabling Testnet",
           id: "developer/build-on-minipay/enabling-testnet",
