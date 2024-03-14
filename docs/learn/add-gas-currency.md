@@ -33,9 +33,11 @@ function creditGasFees(
 
 Both these functions should have a modifier to make sure they can only be called by the zero address, which is they address the Celo VM interpersonates when calling smart contracts. An example of the implementation of this modifier can be found in [Celo's monorepo](https://github.com/celo-org/celo-monorepo/blob/fff103a6b5bbdcfe1e8231c2eef20524a748ed07/packages/protocol/contracts/common/CalledByVm.sol#L3).
 
-`debitGasFees` is called by the VM before a transaction is added to a block. It removes from the caller's balance the maximum amount of tokens the transaction will take. This is done to make sure the user has enough to pay for gas.
+`debitGasFees` is called by the VM before the body of the tx is executed while assembling a block. It removes from the caller's balance the maximum amount of tokens the transaction will take. This is done to make sure the user has enough to pay for gas.
 
-`creditGasFees` is called by the VM after a transaction is added to a block. It distributes the fees to the validator signers and the contract that the protocol designated to accumulate base fees, as well as refunding the user for unused gas. The addresses of the fee recipients as well as the amounts are passed by the VM as parameters.
+`creditGasFees` is called by the VM after the body of the tx is executed while assembling a block. It distributes the fees to the validator signers and the contract that the protocol designated to accumulate base fees, as well as refunding the user for unused gas. The addresses of the fee recipients as well as the amounts are passed by the VM as parameters.
+
+As a consecuente, `debitGasFees` and `creditGasFees` are executed atomically in the same tx.
 
 If any of these two functions reverts, the transaction will not be included in a block.
 
