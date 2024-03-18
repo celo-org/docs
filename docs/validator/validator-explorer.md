@@ -88,7 +88,7 @@ celocli account:create-metadata ./validator_metadata.json --from $CELO_VALIDATOR
 celocli account:claim-account ./validator_metadata.json --address $CELO_VALIDATOR_GROUP_RG_ADDRESS --from $CELO_VALIDATOR_SIGNER_ADDRESS
 ```
 
-And then host both metadata files somewhere reachable via HTTP. You can use a service like gist.github.com. Create two gists, each with the contents of the respective files and then click on the Raw buttton to receive the permalinks to the machine-readable file. If you had already registered a metadata URL for your `validator` you just need to update that registerd gist, so you can skip the `validator` metadata registration below.
+And then host both metadata files somewhere reachable via HTTP. You can use a service like gist.github.com. Create two gists, each with the contents of the respective files and then click on the Raw buttton to receive the permalinks to the machine-readable file. If you had already registered a metadata URL for your `validator` you just need to update that registered gist, so you can skip the `validator` metadata registration below.
 
 Now we can register these URLs on each account:
 

@@ -101,7 +101,7 @@ If reconfiguring a node to be a replica or reusing a data directory, make sure t
 
 1. Pull the latest docker image.
 2. Start a new validator node on a second host in replica mode (`--istanbul.replica` flag). It should be otherwise configured exactly the same as the existing validator.
-   - It needs to connect to the exisiting proxies and the validator signing key to connect to other validators in listen mode.
+   - It needs to connect to the existing proxies and the validator signing key to connect to other validators in listen mode.
    - If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed.
 3. Once the replica is synced and has validator enode urls for all validators, it is ready to swapped in.
    - Check validator enode urls with `istanbul.valEnodeTableInfo` in the geth console. The field `enode` should be filled in for each validator peer.

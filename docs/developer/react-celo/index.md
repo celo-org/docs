@@ -381,7 +381,7 @@ interface Theme {
 
 ### Logging and debugging
 
-We log by default `debug` or above in development mode. It is determined your environement variables: by either setting `DEBUG` to `true` or setting `NODE_ENV` to something else than `production`). In production mode, we log only `error`.
+We log by default `debug` or above in development mode. It is determined your environment variables: by either setting `DEBUG` to `true` or setting `NODE_ENV` to something else than `production`). In production mode, we log only `error`.
 
 But you are welcome to provide your own logger at the provider level. It should implement our `ILogger` interface which looks like that:
 

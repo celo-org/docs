@@ -474,7 +474,7 @@ The following metrics track each delivery attempt. Each client request for an at
 
   - `Upstream`: The SMS was passed to an upstream carrier.
 
-  - `Delivered`: A final delivery receipt was received indicating the SMS was succesfully delivered.
+  - `Delivered`: A final delivery receipt was received indicating the SMS was successfully delivered.
 
 - `attestation_attempts_delivery_error_codes`: Counter for delivery attempts made. Label `country` breaks down the count by country code. Label `provider` identifies the provider. Label `code` identifies the provider-specific error codes: see [Twilio error codes](https://www.twilio.com/docs/api/errors#3-anchor) and [Nexmo error codes](https://developer.nexmo.com/messaging/sms/guides/delivery-receipts#dlr-error-codes) for more details.
 

@@ -5,7 +5,7 @@ description: Answers to frequently asked questions while troubleshooting issues 
 
 # Validator FAQ
 
-Answers to frequently asked questions while troubleshooting isses as a Validator.
+Answers to frequently asked questions while troubleshooting issues as a Validator.
 
 ---
 

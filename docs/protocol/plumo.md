@@ -129,7 +129,7 @@ cLabs is running the coordinator server, which has a list of approved participan
 
 - You will be asked for your passphrase - enter the same one from earlier.
   - Follow the same process from earlier when prompted for additional entropy.
-- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are succesfully running the contributor binary.
+- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are successfully running the contributor binary.
 
 Once this is running, you can leave the machine running -- no direct action is needed. This will run for about ~36 hours, after which the software will terminate running and you will have finished contributing to the Plumo setup!
 
@@ -184,7 +184,7 @@ cLabs is running the coordinator server, which has a list of approved participan
 
 - You will be asked for your passphrase - enter the same one from earlier.
   - Follow the same process from earlier when prompted for additional entropy.
-- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are succesfully running the contributor binary.
+- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are successfully running the contributor binary.
 
 Once this is running, you can leave the machine running -- no direct action is needed. This will run for about ~36 hours, after which the software will terminate running and you will have finished contributing to the Plumo setup!
 

@@ -206,7 +206,7 @@ FLAGS
                                                      Stable Token to exchange
   --globalHelp                                       View all available global flags
   --stableToken=<option>                             Name of the stable token to be
-                                                     transfered
+                                                     transferred
                                                      <options:
                                                      cUSD|cusd|cEUR|ceur|cREAL|creal>
   --value=10000000000000000000000                    (required) The value of Stable
