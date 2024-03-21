@@ -43,7 +43,7 @@ USDC to be deployed. [Source](https://www.circle.com/blog/what-you-need-to-know-
 
 |  Name  | Token    | Adapter |
 | ------ | -------- | ------- |
-| `STBLTEST` | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`  | `0xDB93874fE111F5a87Acc11Ff09Ee9450Ac6509AE`  |
+| `USDC` | `0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`  | `0x4822e58de6f5e485eF90df51C41CE01721331dC0`  |
 
 ##### Baklava (testnet)
 
