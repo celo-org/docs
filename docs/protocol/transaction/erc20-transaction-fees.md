@@ -35,15 +35,15 @@ Adapters can also be used to query `balanceOf(address)` of an account, but it wi
 
 ##### Mainnet
 
-N/A
-
-USDC to be deployed. [Source](https://www.circle.com/blog/what-you-need-to-know-native-usdc-is-launching-on-celo).
+|  Name  | Token    | Adapter |
+| ------ | -------- | ------- |
+| `USDC` | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C#code)  | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B#code)  |
 
 ##### Alfajores (testnet)
 
 |  Name  | Token    | Adapter |
 | ------ | -------- | ------- |
-| `STBLTEST` | `0x780c1551C2Be3ea3B1f8b1E4CeDc9C3CE40da24E`  | `0xDB93874fE111F5a87Acc11Ff09Ee9450Ac6509AE`  |
+| `USDC` | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://alfajores.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b#code)  | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://alfajores.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0#code)  |
 
 ##### Baklava (testnet)
 
