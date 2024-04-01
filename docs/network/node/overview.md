@@ -32,3 +32,4 @@ Paid RPC endpoint hosting.
 - [Infura](https://www.infura.io/)
 - [Quicknode](https://www.quicknode.com/chains/celo)
 - [All that node](https://www.allthatnode.com/celo.dsrv)
+- [dRPC](https://drpc.org/chainlist/celo)
