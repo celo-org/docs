@@ -63,6 +63,7 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | Accounts              | 0xed7f51A34B4e71fbE69B3091FcF879cD14bD73A9 |
 | Attestations          | 0xAD5E5722427d79DFf28a4Ab30249729d1F8B4cc0 |
 | FederatedAttestations | 0x70F9314aF173c246669cFb0EEe79F9Cfd9C34ee3 |
+| OdisPayments          | 0x645170cdB6B5c1bc80847bb728dBa56C50a20a49 |
 | BlockchainParameters  | 0xE5aCbb07b4Eed078e39D50F66bF0c80cF1b93abe |
 | DoubleSigningSlasher  | 0x88A4c203C488E8277f583942672E1aF77e2B5040 |
 | DowntimeSlasher       | 0xf2224c1d7b447D9A43a98CBD82FCCC0eF1c11CC5 |
