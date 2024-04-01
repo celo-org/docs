@@ -328,7 +328,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.whatIs.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/general"
+                "/general",
               )}
 
               {sectionFourCard(
@@ -338,8 +338,8 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.architecture.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
-                "/general/architecture"
+                "img/homepage/icons/Archi_White.png",
+                "/general/architecture",
               )}
 
               {sectionFourCard(
@@ -350,7 +350,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.understanding.whitepapers.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/general/whitepapers"
+                "/general/whitepapers",
               )}
 
               {sectionFourCard(
@@ -358,8 +358,8 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.protocol.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
-                "/protocol"
+                "img/homepage/icons/Protocol_White.png",
+                "/protocol",
               )}
             </div>
 
@@ -377,7 +377,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.contractKit.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/developer/contractkit"
+                "/developer/contractkit",
               )}
 
               {sectionFourCard(
@@ -385,8 +385,8 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.reactCelo.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
-                "/developer/react-celo"
+                "img/homepage/icons/React-celo_White.png",
+                "/developer/react-celo",
               )}
 
               {sectionFourCard(
@@ -397,7 +397,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.developer.rainbowKitCelo.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/developer/rainbowkit-celo"
+                "/developer/rainbowkit-celo",
               )}
 
               {sectionFourCard(
@@ -405,8 +405,8 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.celoCli.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
-                "/cli"
+                "img/homepage/icons/CeloCLI_White.png",
+                "/cli",
               )}
             </div>
 
@@ -420,21 +420,21 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.build.celoComposer.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "developer/deploy"
+                "developer/deploy",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section4.build.migrate.title" }),
                 translate({ id: "home.section4.build.migrate.description" }),
                 "img/doc-images/logos/bullet.svg",
-                "/developer/migrate/from-ethereum"
+                "/developer/migrate/from-ethereum",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section4.build.oracles.title" }),
                 translate({ id: "home.section4.build.oracles.description" }),
-                "img/doc-images/logos/bullet.svg",
-                "/protocol/oracle"
+                "img/homepage/icons/Oracle_White.png",
+                "/protocol/oracle",
               )}
 
               {sectionFourCard(
@@ -443,7 +443,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.build.architecture.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/general/web2-to-web3"
+                "/general/web2-to-web3",
               )}
             </div>
 
@@ -455,14 +455,14 @@ export default function HomePage(): JSX.Element {
                 translate({ id: "home.section4.validators.run.title" }),
                 translate({ id: "home.section4.validators.run.description" }),
                 "img/doc-images/logos/bullet.svg",
-                "/validator"
+                "/validator",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section4.validators.node.title" }),
                 translate({ id: "home.section4.validators.node.description" }),
-                "img/doc-images/logos/bullet.svg",
-                "/validator/security"
+                "img/homepage/icons/Node_White.png",
+                "/validator/security",
               )}
 
               {sectionFourCard(
@@ -471,7 +471,7 @@ export default function HomePage(): JSX.Element {
                   id: "home.section4.validators.attestation.description",
                 }),
                 "img/doc-images/logos/bullet.svg",
-                "/validator/attestation"
+                "/validator/attestation",
               )}
             </div>
           </div>
@@ -507,27 +507,27 @@ export default function HomePage(): JSX.Element {
                 "Celo dApp Launch Checklist",
                 "A comprehensive guide to assist you in launching dapps on Celo.",
                 "img/doc-images/logos/connect.svg",
-                "/developer/launch-checklist"
+                "/developer/launch-checklist",
               )}
               {sectionFourCard(
                 translate({ id: "home.section6.contribute.title" }),
                 translate({ id: "home.section6.contribute.description" }),
                 "img/doc-images/logos/contribute.svg",
-                "/community/guidelines"
+                "/community/guidelines",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section6.ambassadors.title" }),
                 translate({ id: "home.section6.ambassadors.description" }),
                 "img/doc-images/logos/ambassador.svg",
-                "https://celocommunity.xyz/join-the-ambassador-program"
+                "https://celocommunity.xyz/join-the-ambassador-program",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section6.connect.title" }),
                 translate({ id: "home.section6.connect.description" }),
                 "img/doc-images/logos/connect.svg",
-                "https://celo.org/community"
+                "https://celo.org/community",
               )}
             </div>
           </div>
@@ -565,13 +565,13 @@ export const sectionFourCard = (
   title: string,
   description: string,
   url: string,
-  redirectUrl: string
+  redirectUrl: string,
 ) => (
   <Link
     href={redirectUrl}
     className="text-black bg-gypsum dark:bg-fig dark:text-white flex items-start gap-x-4 mt-8 hover:bg-forest hover:text-snow dark:hover:bg-forest transition hover:ease-in-out duration-150 pt-5 px-4 cursor-pointer hover:no-underline"
   >
-    <img src={url} alt={title} className="w-10 h-10 rounded-full" />
+    <img src={url} alt={title} className="w-10 h-10" />
     <div>
       <h4 className="font-bold">{title}</h4>
       <p className="text-sm">{description}</p>
