@@ -17,10 +17,14 @@ Activate pending votes in validator elections to begin earning rewards. To earn 
 
 ```
 USAGE
-  $ celocli election:activate --from <value> [--globalHelp] [--wait]
+  $ celocli election:activate --from <value> [--globalHelp] [--for <value>] [--wait]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Voter's address
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   Optional: use this to activate
+                                                     votes for another address
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address sending
+                                                     transaction (and voter's address if
+                                                     --for not specified)
   --globalHelp                                       View all available global flags
   --wait                                             Wait until all pending votes can be
                                                      activated
@@ -32,6 +36,8 @@ DESCRIPTION
 
 EXAMPLES
   activate --from 0x4443d0349e8b3075cba511a0a87796597602a0f1
+
+  activate --from 0x4443d0349e8b3075cba511a0a87796597602a0f1 --for 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
   activate --from 0x4443d0349e8b3075cba511a0a87796597602a0f1 --wait
 ```
