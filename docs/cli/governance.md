@@ -238,8 +238,8 @@ Submit a governance proposal
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
-    <value> --descriptionURL <value> [--globalHelp] [--force] [--afterExecutingProposal
-    <value> | --afterExecutingID <value>]
+    <value> --descriptionURL <value> [--globalHelp] [--force] [--noInfo]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
   --afterExecutingID=<value>                         Governance proposal identifier
@@ -247,7 +247,7 @@ FLAGS
                                                      proposal
   --afterExecutingProposal=<value>                   Path to proposal which will be
                                                      executed prior to proposal
-  --deposit=<value>                                  (required) Amount of Gold to attach
+  --deposit=<value>                                  (required) Amount of Celo to attach
                                                      to proposal
   --descriptionURL=<value>                           (required) A URL where further
                                                      information about the proposal can
@@ -257,6 +257,7 @@ FLAGS
   --globalHelp                                       View all available global flags
   --jsonTransactions=<value>                         (required) Path to json
                                                      transactions
+  --noInfo                                           Skip printing the proposal info
 
 DESCRIPTION
   Submit a governance proposal
