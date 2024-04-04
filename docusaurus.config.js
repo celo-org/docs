@@ -120,17 +120,18 @@ module.exports = {
             {
               to: "cli/",
               label: "CLI",
-              // position: "left",
             },
             {
               to: "protocol/",
               label: "Protocol",
-              // position: "left",
+            },
+            {
+              to: "holder/",
+              label: "Holder",
             },
             {
               to: "integration/",
               label: "Integrations",
-              // position: "left",
             },
             {
               to: "https://celo.academy/c/tutorials/4",
@@ -141,7 +142,6 @@ module.exports = {
             {
               to: "community/guidelines",
               label: "Community",
-              // position: "left",
             },
           ],
         },
