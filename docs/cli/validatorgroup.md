@@ -17,20 +17,27 @@ Manage the commission for a registered Validator Group. This represents the shar
 
 ```
 USAGE
-  $ celocli validatorgroup:commission --from <value> [--globalHelp] [--apply | --queue-update
-    <value>]
+  $ celocli validatorgroup:commission --from <value> [--gasCurrency <value>] [--globalHelp]
+    [--apply | --queue-update <value>]
 
 FLAGS
-  --apply                                            Applies a previously queued update.
-                                                     Should be called after the update
-                                                     delay.
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address for the
-                                                     Validator Group or Validator Group
-                                                     validator signer
-  --globalHelp                                       View all available global flags
-  --queue-update=<value>                             Queues an update to the commission,
-                                                     which can be applied after the
-                                                     update delay.
+  --apply                                                   Applies a previously queued
+                                                            update. Should be called
+                                                            after the update delay.
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address for the
+                                                            Validator Group or Validator
+                                                            Group validator signer
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --queue-update=<value>                                    Queues an update to the
+                                                            commission, which can be
+                                                            applied after the update
+                                                            delay.
 
 DESCRIPTION
   Manage the commission for a registered Validator Group. This represents the share of
@@ -54,12 +61,19 @@ Deregister a Validator Group. Approximately 180 days after the validator group i
 
 ```
 USAGE
-  $ celocli validatorgroup:deregister --from <value> [--globalHelp]
+  $ celocli validatorgroup:deregister --from <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Signer or
-                                                     ValidatorGroup's address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Signer or
+                                                            ValidatorGroup's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Deregister a Validator Group. Approximately 180 days after the validator group is
@@ -79,21 +93,42 @@ List registered Validator Groups, their names (if provided), commission, and mem
 
 ```
 USAGE
-  $ celocli validatorgroup:list [--globalHelp] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli validatorgroup:list [--gasCurrency <value>] [--globalHelp] [--columns <value>
+    | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended         show extra columns
-      --columns=<value>  only show provided columns (comma-separated)
-      --csv              output is csv format [alias: --output=csv]
-      --filter=<value>   filter property by partial string matching, ex: name=foo
-      --globalHelp       View all available global flags
-      --no-header        hide table header from output
-      --no-truncate      do not truncate output to fit screen
-      --output=<option>  output in a more machine friendly format
-                         <options: csv|json|yaml>
-      --sort=<value>     property to sort by (prepend '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   List registered Validator Groups, their names (if provided), commission, and members.
@@ -110,23 +145,31 @@ Add or remove members from a Validator Group
 
 ```
 USAGE
-  $ celocli validatorgroup:member ARG1 --from <value> [--globalHelp] [--yes] [--accept |
-    --remove | --reorder <value>]
+  $ celocli validatorgroup:member ARG1 --from <value> [--gasCurrency <value>]
+    [--globalHelp] [--yes] [--accept | --remove | --reorder <value>]
 
 ARGUMENTS
   ARG1  Validator's address
 
 FLAGS
-  --accept                                           Accept a validator whose
-                                                     affiliation is already set to the
-                                                     group
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) ValidatorGroup's address
-  --globalHelp                                       View all available global flags
-  --remove                                           Remove a validator from the members
-                                                     list
-  --reorder=<value>                                  Reorder a validator within the
-                                                     members list. Indices are 0 based
-  --yes                                              Answer yes to prompt
+  --accept                                                  Accept a validator whose
+                                                            affiliation is already set
+                                                            to the group
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) ValidatorGroup's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --remove                                                  Remove a validator from the
+                                                            members list
+  --reorder=<value>                                         Reorder a validator within
+                                                            the members list. Indices
+                                                            are 0 based
+  --yes                                                     Answer yes to prompt
 
 DESCRIPTION
   Add or remove members from a Validator Group
@@ -147,17 +190,24 @@ Register a new Validator Group
 
 ```
 USAGE
-  $ celocli validatorgroup:register --from <value> --commission <value> [--globalHelp]
-  [--yes]
+  $ celocli validatorgroup:register --from <value> --commission <value> [--gasCurrency
+    <value>] [--globalHelp] [--yes]
 
 FLAGS
-  --commission=<value>                               (required) The share of the epoch
-                                                     rewards given to elected Validators
-                                                     that goes to the group.
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address for the
-                                                     Validator Group
-  --globalHelp                                       View all available global flags
-  --yes                                              Answer yes to prompt
+  --commission=<value>                                      (required) The share of the
+                                                            epoch rewards given to
+                                                            elected Validators that goes
+                                                            to the group.
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address for the
+                                                            Validator Group
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yes                                                     Answer yes to prompt
 
 DESCRIPTION
   Register a new Validator Group
@@ -174,13 +224,20 @@ Reset validator group slashing multiplier.
 
 ```
 USAGE
-  $ celocli validatorgroup:reset-slashing-multiplier ARG1 [--globalHelp]
+  $ celocli validatorgroup:reset-slashing-multiplier ARG1 [--gasCurrency <value>]
+  [--globalHelp]
 
 ARGUMENTS
   ARG1  ValidatorGroup's address
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Reset validator group slashing multiplier.
@@ -197,13 +254,19 @@ Show information about an existing Validator Group
 
 ```
 USAGE
-  $ celocli validatorgroup:show ARG1 [--globalHelp]
+  $ celocli validatorgroup:show ARG1 [--gasCurrency <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  ValidatorGroup's address
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show information about an existing Validator Group

@@ -20,13 +20,20 @@ Delegate locked celo.
 ```
 USAGE
   $ celocli lockedgold:delegate --from <value> --to <value> --percent <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=<value>     (required)
-  --globalHelp       View all available global flags
-  --percent=<value>  (required) 1-100% of locked celo to be delegated
-  --to=<value>       (required)
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --percent=<value>                                         (required) 1-100% of locked
+                                                            celo to be delegated
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Account Address
 
 DESCRIPTION
   Delegate locked celo.
@@ -43,11 +50,18 @@ Delegate info about account.
 
 ```
 USAGE
-  $ celocli lockedgold:delegate-info --account <value> [--globalHelp]
+  $ celocli lockedgold:delegate-info --account <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                          View all available global flags
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Delegate info about account.
@@ -64,12 +78,20 @@ Locks CELO to be used in governance and validator elections.
 
 ```
 USAGE
-  $ celocli lockedgold:lock --from <value> --value <value> [--globalHelp]
+  $ celocli lockedgold:lock --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --from=<value>   (required)
-  --globalHelp     View all available global flags
-  --value=<value>  (required) The unit amount of CELO
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=<value>                                           (required) The unit amount
+                                                            of CELO
 
 DESCRIPTION
   Locks CELO to be used in governance and validator elections.
@@ -86,10 +108,16 @@ Returns the maximum number of delegates allowed per account.
 
 ```
 USAGE
-  $ celocli lockedgold:max-delegatees-count [--globalHelp]
+  $ celocli lockedgold:max-delegatees-count [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Returns the maximum number of delegates allowed per account.
@@ -107,14 +135,21 @@ Revoke delegated locked celo.
 ```
 USAGE
   $ celocli lockedgold:revoke-delegate --from <value> --to <value> --percent <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=<value>     (required)
-  --globalHelp       View all available global flags
-  --percent=<value>  (required) 1-100% of locked celo to be revoked from currently
-                     delegated amount
-  --to=<value>       (required)
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --percent=<value>                                         (required) 1-100% of locked
+                                                            celo to be revoked from
+                                                            currently delegated amount
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Account Address
 
 DESCRIPTION
   Revoke delegated locked celo.
@@ -131,10 +166,16 @@ Show Locked Gold information for a given account. This includes the total amount
 
 ```
 USAGE
-  $ celocli lockedgold:show ARG1 [--globalHelp]
+  $ celocli lockedgold:show ARG1 [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show Locked Gold information for a given account. This includes the total amount of
@@ -155,12 +196,20 @@ Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo w
 
 ```
 USAGE
-  $ celocli lockedgold:unlock --from <value> --value <value> [--globalHelp]
+  $ celocli lockedgold:unlock --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                       View all available global flags
-  --value=<value>                                    (required) The unit amount of CELO
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=<value>                                           (required) The unit amount
+                                                            of CELO
 
 DESCRIPTION
   Unlocks CELO, which can be withdrawn after the unlocking period. Unlocked celo will
@@ -179,13 +228,19 @@ Updates the amount of delegated locked celo. There might be discrepancy between 
 
 ```
 USAGE
-  $ celocli lockedgold:update-delegated-amount --from <value> --to <value>
-  [--globalHelp]
+  $ celocli lockedgold:update-delegated-amount --from <value> --to <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --from=<value>  (required)
-  --globalHelp    View all available global flags
-  --to=<value>    (required)
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Account Address
 
 DESCRIPTION
   Updates the amount of delegated locked celo. There might be discrepancy between the
@@ -204,11 +259,17 @@ Withdraw any pending withdrawals created via "lockedgold:unlock" that have becom
 
 ```
 USAGE
-  $ celocli lockedgold:withdraw --from <value> [--globalHelp]
+  $ celocli lockedgold:withdraw --from <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Withdraw any pending withdrawals created via "lockedgold:unlock" that have become

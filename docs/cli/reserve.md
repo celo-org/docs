@@ -12,10 +12,16 @@ Shows information about reserve
 
 ```
 USAGE
-  $ celocli reserve:status [--globalHelp]
+  $ celocli reserve:status [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Shows information about reserve
@@ -33,15 +39,22 @@ Transfers reserve celo to other reserve address
 ```
 USAGE
   $ celocli reserve:transfergold --value <value> --to <value> --from <value>
-    [--globalHelp] [--useMultiSig]
+    [--gasCurrency <value>] [--globalHelp] [--useMultiSig]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Spender's address
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Receiving address
-  --useMultiSig                                      True means the request will be sent
-                                                     through multisig.
-  --value=<value>                                    (required) The unit amount of CELO
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Spender's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Receiving address
+  --useMultiSig                                             True means the request will
+                                                            be sent through multisig.
+  --value=<value>                                           (required) The unit amount
+                                                            of CELO
 
 DESCRIPTION
   Transfers reserve celo to other reserve address

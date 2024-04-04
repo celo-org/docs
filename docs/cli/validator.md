@@ -23,16 +23,23 @@ Affiliate a Validator with a Validator Group. This allows the Validator Group to
 
 ```
 USAGE
-  $ celocli validator:affiliate ARG1 --from <value> [--globalHelp] [--yes]
+  $ celocli validator:affiliate ARG1 --from <value> [--gasCurrency <value>]
+    [--globalHelp] [--yes]
 
 ARGUMENTS
   ARG1  ValidatorGroup's address
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Signer or Validator's
-                                                     address
-  --globalHelp                                       View all available global flags
-  --yes                                              Answer yes to prompt
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Signer or
+                                                            Validator's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yes                                                     Answer yes to prompt
 
 DESCRIPTION
   Affiliate a Validator with a Validator Group. This allows the Validator Group to add
@@ -52,12 +59,18 @@ Deaffiliate a Validator from a Validator Group, and remove it from the Group if 
 
 ```
 USAGE
-  $ celocli validator:deaffiliate --from <value> [--globalHelp]
+  $ celocli validator:deaffiliate --from <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Signer or Validator's
-                                                     address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Signer or
+                                                            Validator's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Deaffiliate a Validator from a Validator Group, and remove it from the Group if it is
@@ -75,12 +88,18 @@ Deregister a Validator. Approximately 60 days after the validator is no longer p
 
 ```
 USAGE
-  $ celocli validator:deregister --from <value> [--globalHelp]
+  $ celocli validator:deregister --from <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Signer or Validator's
-                                                     address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Signer or
+                                                            Validator's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Deregister a Validator. Approximately 60 days after the validator is no longer part of
@@ -101,8 +120,9 @@ Downtime slash a validator
 
 ```
 USAGE
-  $ celocli validator:downtime-slash --from <value> [--globalHelp] [--validator <value> |
-    --validators <value>] [--intervals <value> | --beforeBlock <value>]
+  $ celocli validator:downtime-slash --from <value> [--gasCurrency <value>] [--globalHelp]
+    [--validator <value> | --validators <value>] [--intervals <value> | --beforeBlock
+    <value>]
 
 FLAGS
   --beforeBlock=<value>
@@ -110,6 +130,10 @@ FLAGS
 
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) From address to perform the slash (reward recipient)
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
   --globalHelp
       View all available global flags
@@ -141,14 +165,20 @@ Force deaffiliate a Validator from a Validator Group, and remove it from the Gro
 
 ```
 USAGE
-  $ celocli validator:force-deaffiliate --from <value> --validator <value>
-  [--globalHelp]
+  $ celocli validator:force-deaffiliate --from <value> --validator <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Initiator
-  --globalHelp                                            View all available global
-                                                          flags
-  --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Validator's address
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Initiator
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Validator's
+                                                            address
 
 DESCRIPTION
   Force deaffiliate a Validator from a Validator Group, and remove it from the Group if
@@ -169,21 +199,42 @@ List registered Validators, their name (if provided), affiliation, uptime score,
 
 ```
 USAGE
-  $ celocli validator:list [--globalHelp] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli validator:list [--gasCurrency <value>] [--globalHelp] [--columns <value>
+    | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended         show extra columns
-      --columns=<value>  only show provided columns (comma-separated)
-      --csv              output is csv format [alias: --output=csv]
-      --filter=<value>   filter property by partial string matching, ex: name=foo
-      --globalHelp       View all available global flags
-      --no-header        hide table header from output
-      --no-truncate      do not truncate output to fit screen
-      --output=<option>  output in a more machine friendly format
-                         <options: csv|json|yaml>
-      --sort=<value>     property to sort by (prepend '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   List registered Validators, their name (if provided), affiliation, uptime score, and
@@ -202,16 +253,23 @@ Register a new Validator
 ```
 USAGE
   $ celocli validator:register --from <value> --ecdsaKey <value> --blsKey <value>
-    --blsSignature <value> [--globalHelp] [--yes]
+    --blsSignature <value> [--gasCurrency <value>] [--globalHelp] [--yes]
 
 FLAGS
-  --blsKey=0x                                        (required) BLS Public Key
-  --blsSignature=0x                                  (required) BLS Proof-of-Possession
-  --ecdsaKey=0x                                      (required) ECDSA Public Key
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address for the
-                                                     Validator
-  --globalHelp                                       View all available global flags
-  --yes                                              Answer yes to prompt
+  --blsKey=0x                                               (required) BLS Public Key
+  --blsSignature=0x                                         (required) BLS
+                                                            Proof-of-Possession
+  --ecdsaKey=0x                                             (required) ECDSA Public Key
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address for the
+                                                            Validator
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yes                                                     Answer yes to prompt
 
 DESCRIPTION
   Register a new Validator
@@ -228,10 +286,16 @@ List the Locked Gold requirements for registering a Validator. This consists of 
 
 ```
 USAGE
-  $ celocli validator:requirements [--globalHelp]
+  $ celocli validator:requirements [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   List the Locked Gold requirements for registering a Validator. This consists of a
@@ -251,21 +315,28 @@ Set validator signature bitmaps for provided intervals
 
 ```
 USAGE
-  $ celocli validator:set-bitmaps --from <value> [--globalHelp]
+  $ celocli validator:set-bitmaps --from <value> [--gasCurrency <value>] [--globalHelp]
     [--slashableDowntimeBeforeBlock <value> | --intervals <value> |
     --slashableDowntimeBeforeLatest]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) From address to sign set
-                                                     bitmap transactions
-  --globalHelp                                       View all available global flags
-  --intervals='[0:1], [1:2]'                         Array of intervals, ordered by min
-                                                     start to max end
-  --slashableDowntimeBeforeBlock=<value>             Set all bitmaps for slashable
-                                                     downtime window before provided
-                                                     block
-  --slashableDowntimeBeforeLatest                    Set all bitmaps for slashable
-                                                     downtime window before latest block
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) From address to
+                                                            sign set bitmap transactions
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --intervals='[0:1], [1:2]'                                Array of intervals, ordered
+                                                            by min start to max end
+  --slashableDowntimeBeforeBlock=<value>                    Set all bitmaps for
+                                                            slashable downtime window
+                                                            before provided block
+  --slashableDowntimeBeforeLatest                           Set all bitmaps for
+                                                            slashable downtime window
+                                                            before latest block
 
 DESCRIPTION
   Set validator signature bitmaps for provided intervals
@@ -284,13 +355,19 @@ Show information about a registered Validator.
 
 ```
 USAGE
-  $ celocli validator:show ARG1 [--globalHelp]
+  $ celocli validator:show ARG1 [--gasCurrency <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  Validator's address
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show information about a registered Validator.
@@ -307,13 +384,17 @@ Display a graph of blocks and whether the given signer's signature is included i
 
 ```
 USAGE
-  $ celocli validator:signed-blocks [--globalHelp] [--signer <value> | --signers <value>]
-    [--wasDownWhileElected] [--at-block <value> | ] [--slashableDowntimeLookback |
-    [--lookback <value> | ]] [--width <value>]
+  $ celocli validator:signed-blocks [--gasCurrency <value>] [--globalHelp] [--signer <value>
+    | --signers <value>] [--wasDownWhileElected] [--at-block <value> | ]
+    [--slashableDowntimeLookback | [--lookback <value> | ]] [--width <value>]
 
 FLAGS
   --at-block=<value>
       latest block to examine for signer activity
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
   --globalHelp
       View all available global flags
@@ -363,49 +444,60 @@ Shows the consensus status of a validator. This command will show whether a vali
 
 ```
 USAGE
-  $ celocli validator:status [--globalHelp] [--validator <value> | --all | --signer
-    <value>] [--start <value>] [--end <value>] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli validator:status [--gasCurrency <value>] [--globalHelp] [--validator
+    <value> | --all | --signer <value>] [--start <value>] [--end <value>] [--columns
+    <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended                                              show extra columns
-      --all                                                   get the status of all
-                                                              registered validators
-      --columns=<value>                                       only show provided columns
-                                                              (comma-separated)
-      --csv                                                   output is csv format
-                                                              [alias: --output=csv]
-      --end=<value>                                           [default: -1] what block
-                                                              to end at when looking at
-                                                              signer activity. defaults
-                                                              to the latest block
-      --filter=<value>                                        filter property by partial
-                                                              string matching, ex:
-                                                              name=foo
-      --globalHelp                                            View all available global
-                                                              flags
-      --no-header                                             hide table header from
-                                                              output
-      --no-truncate                                           do not truncate output to
-                                                              fit screen
-      --output=<option>                                       output in a more machine
-                                                              friendly format
-                                                              <options: csv|json|yaml>
-      --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     address of the signer to
-                                                              check if elected and
-                                                              validating
-      --sort=<value>                                          property to sort by
-                                                              (prepend '-' for
-                                                              descending)
-      --start=<value>                                         [default: -1] what block
-                                                              to start at when looking
-                                                              at signer activity.
-                                                              defaults to the last 100
-                                                              blocks
-      --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  address of the validator
-                                                              to check if elected and
-                                                              validating
+  -x, --extended
+      show extra columns
+
+  --all
+      get the status of all registered validators
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --end=<value>
+      [default: -1] what block to end at when looking at signer activity. defaults to the
+      latest block
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      address of the signer to check if elected and validating
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
+
+  --start=<value>
+      [default: -1] what block to start at when looking at signer activity. defaults to
+      the last 100 blocks
+
+  --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      address of the validator to check if elected and validating
 
 DESCRIPTION
   Shows the consensus status of a validator. This command will show whether a validator
@@ -430,13 +522,21 @@ Update the BLS public key for a Validator to be used in consensus.
 ```
 USAGE
   $ celocli validator:update-bls-public-key --from <value> --blsKey <value> --blsPop <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --blsKey=0x                                        (required) BLS Public Key
-  --blsPop=0x                                        (required) BLS Proof-of-Possession
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Validator's address
-  --globalHelp                                       View all available global flags
+  --blsKey=0x                                               (required) BLS Public Key
+  --blsPop=0x                                               (required) BLS
+                                                            Proof-of-Possession
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Validator's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Update the BLS public key for a Validator to be used in consensus.

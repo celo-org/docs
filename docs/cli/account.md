@@ -41,28 +41,37 @@ Keep your locked Gold more secure by authorizing alternative keys to be used for
 ```
 USAGE
   $ celocli account:authorize --from <value> -r vote|validator|attestation --signature
-    <value> --signer <value> [--globalHelp] [--blsKey <value> --blsPop <value>]
+    <value> --signer <value> [--gasCurrency <value>] [--globalHelp] [--blsKey <value>
+    --blsPop <value>]
 
 FLAGS
-  -r, --role=<option>                                      (required) Role to delegate
-                                                           <options:
-                                                           vote|validator|attestation>
-      --blsKey=0x                                          The BLS public key that the
-                                                           validator is using for
-                                                           consensus, should pass proof
-                                                           of possession. 96 bytes.
-      --blsPop=0x                                          The BLS public key
-                                                           proof-of-possession, which
-                                                           consists of a signature on
-                                                           the account address. 48
-                                                           bytes.
-      --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Account Address
-      --globalHelp                                         View all available global
-                                                           flags
-      --signature=0x                                       (required) Signature (a.k.a
-                                                           proof-of-possession) of the
-                                                           signer key
-      --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
+  -r, --role=<option>
+      (required) Role to delegate
+      <options: vote|validator|attestation>
+
+  --blsKey=0x
+      The BLS public key that the validator is using for consensus, should pass proof of
+      possession. 96 bytes.
+
+  --blsPop=0x
+      The BLS public key proof-of-possession, which consists of a signature on the account
+      address. 48 bytes.
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --signature=0x
+      (required) Signature (a.k.a proof-of-possession) of the signer key
+
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
 
 DESCRIPTION
   Keep your locked Gold more secure by authorizing alternative keys to be used for
@@ -85,14 +94,19 @@ View Celo Stables and CELO balances for an address
 
 ```
 USAGE
-  $ celocli account:balance ARG1 [--globalHelp] [--erc20Address <value>]
+  $ celocli account:balance ARG1 [--gasCurrency <value>] [--globalHelp]
+    [--erc20Address <value>]
 
 FLAGS
-  --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  Address of generic ERC-20
-                                                             token to also check balance
-                                                             for
-  --globalHelp                                               View all available global
-                                                             flags
+  --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of generic ERC-20 token to also check balance for
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
 
 DESCRIPTION
   View Celo Stables and CELO balances for an address
@@ -111,23 +125,31 @@ Claim another account, and optionally its public key, and add the claim to a loc
 
 ```
 USAGE
-  $ celocli account:claim-account ARG1 --from <value> --address <value> [--globalHelp]
-    [--publicKey <value>]
+  $ celocli account:claim-account ARG1 --from <value> --address <value> [--gasCurrency
+    <value>] [--globalHelp] [--publicKey <value>]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --address=<value>                                  (required) The address of the
-                                                     account you want to claim
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
-  --publicKey=<value>                                The public key of the account that
-                                                     others may use to send you
-                                                     encrypted messages
+  --address=<value>                                         (required) The address of
+                                                            the account you want to
+                                                            claim
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --publicKey=<value>                                       The public key of the
+                                                            account that others may use
+                                                            to send you encrypted
+                                                            messages
 
 DESCRIPTION
   Claim another account, and optionally its public key, and add the claim to a local
@@ -145,25 +167,32 @@ Claim a domain and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-domain ARG1 --from <value> --domain <value> [--globalHelp]
+  $ celocli account:claim-domain ARG1 --from <value> --domain <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --domain=<value>                                   (required) The domain you want to
-                                                     claim
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
+  --domain=<value>                                          (required) The domain you
+                                                            want to claim
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Claim a domain and add the claim to a local metadata file
 
 EXAMPLES
-  claim-domain ~/metadata.json --domain test.com --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+  claim-domain ~/metadata.json --domain example.com --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
 ```
 
 _See code: [src/commands/account/claim-domain.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-domain.ts)_
@@ -174,19 +203,26 @@ Claim a keybase username and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-keybase ARG1 --from <value> --username <value> [--globalHelp]
+  $ celocli account:claim-keybase ARG1 --from <value> --username <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
-  --username=<value>                                 (required) The keybase username you
-                                                     want to claim
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --username=<value>                                        (required) The keybase
+                                                            username you want to claim
 
 DESCRIPTION
   Claim a keybase username and add the claim to a local metadata file
@@ -203,19 +239,26 @@ Claim a name and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-name ARG1 --from <value> --name <value> [--globalHelp]
+  $ celocli account:claim-name ARG1 --from <value> --name <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
-  --name=<value>                                     (required) The name you want to
-                                                     claim
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --name=<value>                                            (required) The name you want
+                                                            to claim
 
 DESCRIPTION
   Claim a name and add the claim to a local metadata file
@@ -232,25 +275,33 @@ Claim a storage root and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-storage ARG1 --from <value> --url <value> [--globalHelp]
+  $ celocli account:claim-storage ARG1 --from <value> --url <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
-  --url=https://www.celo.org                         (required) The URL of the storage
-                                                     root you want to claim
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --url=https://www.celo.org                                (required) The URL of the
+                                                            storage root you want to
+                                                            claim
 
 DESCRIPTION
   Claim a storage root and add the claim to a local metadata file
 
 EXAMPLES
-  claim-storage ~/metadata.json --url http://test.com/myurl --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+  claim-storage ~/metadata.json --url http://example.com/myurl --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
 ```
 
 _See code: [src/commands/account/claim-storage.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-storage.ts)_
@@ -261,17 +312,24 @@ Create an empty identity metadata file. Use this metadata file to store claims a
 
 ```
 USAGE
-  $ celocli account:create-metadata ARG1 --from <value> [--globalHelp]
+  $ celocli account:create-metadata ARG1 --from <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 ARGUMENTS
   ARG1  Path where the metadata should be saved
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the account
-                                                     to set metadata for or an
-                                                     authorized signer for the address
-                                                     in the metadata
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            account to set metadata for
+                                                            or an authorized signer for
+                                                            the address in the metadata
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Create an empty identity metadata file. Use this metadata file to store claims
@@ -291,15 +349,25 @@ Remove an account's authorized attestation signer role.
 ```
 USAGE
   $ celocli account:deauthorize --from <value> -r attestation --signer <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  -r, --role=<option>                                      (required) Role to remove
-                                                           <options: attestation>
-      --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Account Address
-      --globalHelp                                         View all available global
-                                                           flags
-      --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
+  -r, --role=<option>
+      (required) Role to remove
+      <options: attestation>
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
 
 DESCRIPTION
   Remove an account's authorized attestation signer role.
@@ -316,11 +384,18 @@ Removes a validator's payment delegation by setting benficiary and fraction to 0
 
 ```
 USAGE
-  $ celocli account:delete-payment-delegation --account <value> [--globalHelp]
+  $ celocli account:delete-payment-delegation --account <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                          View all available global flags
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Removes a validator's payment delegation by setting benficiary and fraction to 0.
@@ -337,24 +412,45 @@ Show information about an address. Retreives the metadata URL for an account fro
 
 ```
 USAGE
-  $ celocli account:get-metadata ARG1 [--globalHelp] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli account:get-metadata ARG1 [--gasCurrency <value>] [--globalHelp] [--columns
+    <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 ARGUMENTS
   ARG1  Address to get metadata for
 
 FLAGS
-  -x, --extended         show extra columns
-      --columns=<value>  only show provided columns (comma-separated)
-      --csv              output is csv format [alias: --output=csv]
-      --filter=<value>   filter property by partial string matching, ex: name=foo
-      --globalHelp       View all available global flags
-      --no-header        hide table header from output
-      --no-truncate      do not truncate output to fit screen
-      --output=<option>  output in a more machine friendly format
-                         <options: csv|json|yaml>
-      --sort=<value>     property to sort by (prepend '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   Show information about an address. Retreives the metadata URL for an account from the
@@ -372,31 +468,45 @@ Get the payment delegation account beneficiary and fraction allocated from a val
 
 ```
 USAGE
-  $ celocli account:get-payment-delegation --account <value> [--globalHelp] [--columns <value> | -x]
-    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
-    | ] [--sort <value>]
+  $ celocli account:get-payment-delegation --account <value> [--gasCurrency <value>] [--globalHelp]
+    [--columns <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]]
+    [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended                                            show extra columns
-      --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-      --columns=<value>                                     only show provided columns
-                                                            (comma-separated)
-      --csv                                                 output is csv format [alias:
-                                                            --output=csv]
-      --filter=<value>                                      filter property by partial
-                                                            string matching, ex:
-                                                            name=foo
-      --globalHelp                                          View all available global
-                                                            flags
-      --no-header                                           hide table header from
-                                                            output
-      --no-truncate                                         do not truncate output to
-                                                            fit screen
-      --output=<option>                                     output in a more machine
-                                                            friendly format
-                                                            <options: csv|json|yaml>
-      --sort=<value>                                        property to sort by (prepend
-                                                            '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   Get the payment delegation account beneficiary and fraction allocated from a
@@ -414,12 +524,20 @@ List the addresses from the node and the local instance
 
 ```
 USAGE
-  $ celocli account:list [--globalHelp] [--local]
+  $ celocli account:list [--gasCurrency <value>] [--globalHelp] [--local]
 
 FLAGS
-  --globalHelp  View all available global flags
-  --[no-]local  If set, only show local and hardware wallet accounts. Use no-local to
-                only show keystore addresses.
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --[no-]local                                              If set, only show local and
+                                                            hardware wallet accounts.
+                                                            Use no-local to only show
+                                                            keystore addresses.
 
 DESCRIPTION
   List the addresses from the node and the local instance
@@ -433,13 +551,19 @@ Lock an account which was previously unlocked
 
 ```
 USAGE
-  $ celocli account:lock ARG1 [--globalHelp]
+  $ celocli account:lock ARG1 [--gasCurrency <value>] [--globalHelp]
 
 ARGUMENTS
   ARG1  Account address
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Lock an account which was previously unlocked
@@ -456,10 +580,10 @@ Creates a new account locally using the Celo Derivation Path (m/44'/52752'/0/cha
 
 ```
 USAGE
-  $ celocli account:new [--globalHelp] [--passphrasePath <value>] [--changeIndex
-    <value>] [--addressIndex <value>] [--language chinese_simplified|chinese_traditional
-    |english|french|italian|japanese|korean|spanish] [--mnemonicPath <value>]
-    [--derivationPath <value>]
+  $ celocli account:new [--gasCurrency <value>] [--globalHelp] [--passphrasePath
+    <value>] [--changeIndex <value>] [--addressIndex <value>] [--language chinese_simpli
+    fied|chinese_traditional|english|french|italian|japanese|korean|spanish]
+    [--mnemonicPath <value>] [--derivationPath <value>]
 
 FLAGS
   --addressIndex=<value>
@@ -473,6 +597,10 @@ FLAGS
       as an alias of the Ethereum derivation path ("m/44'/60'/0'"). Recreating the same
       account requires knowledge of the mnemonic, passphrase (if any), and the derivation
       path
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
   --globalHelp
       View all available global flags
@@ -521,20 +649,29 @@ DEV: Reads the name from offchain storage
 
 ```
 USAGE
-  $ celocli account:offchain-read ARG1 [--globalHelp] [--directory <value>] [--bucket
-    <value> --provider git|aws|gcp] [--from <value>] [--privateDEK <value>]
+  $ celocli account:offchain-read ARG1 [--gasCurrency <value>] [--globalHelp] [--directory
+    <value>] [--bucket <value> --provider git|aws|gcp] [--from <value>] [--privateDEK
+    <value>]
 
 FLAGS
-  --bucket=<value>                                   If using a GCP or AWS storage
-                                                     bucket this parameter is required
-  --directory=<value>                                [default: .] To which directory
-                                                     data should be written
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  Account Address
-  --globalHelp                                       View all available global flags
+  --bucket=<value>                                          If using a GCP or AWS
+                                                            storage bucket this
+                                                            parameter is required
+  --directory=<value>                                       [default: .] To which
+                                                            directory data should be
+                                                            written
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
   --privateDEK=<value>
-  --provider=<option>                                If the CLI should attempt to push
-                                                     to the cloud
-                                                     <options: git|aws|gcp>
+  --provider=<option>                                       If the CLI should attempt to
+                                                            push to the cloud
+                                                            <options: git|aws|gcp>
 
 DESCRIPTION
   DEV: Reads the name from offchain storage
@@ -553,20 +690,31 @@ DEV: Writes a name to offchain storage
 
 ```
 USAGE
-  $ celocli account:offchain-write --name <value> [--globalHelp] [--directory <value>]
-    [--bucket <value> --provider git|aws|gcp] (--privateDEK <value> --privateKey <value>
-    --encryptTo <value>)
+  $ celocli account:offchain-write --name <value> [--gasCurrency <value>] [--globalHelp]
+    [--directory <value>] [--bucket <value> --provider git|aws|gcp] (--privateDEK
+    <value> --privateKey <value> --encryptTo <value>)
 
 FLAGS
-  --bucket=<value>      If using a GCP or AWS storage bucket this parameter is required
-  --directory=<value>   [default: .] To which directory data should be written
+  --bucket=<value>                                          If using a GCP or AWS
+                                                            storage bucket this
+                                                            parameter is required
+  --directory=<value>                                       [default: .] To which
+                                                            directory data should be
+                                                            written
   --encryptTo=<value>
-  --globalHelp          View all available global flags
-  --name=<value>        (required)
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --name=<value>                                            (required)
   --privateDEK=<value>
-  --privateKey=<value>  (required)
-  --provider=<option>   If the CLI should attempt to push to the cloud
-                        <options: git|aws|gcp>
+  --privateKey=<value>                                      (required)
+  --provider=<option>                                       If the CLI should attempt to
+                                                            push to the cloud
+                                                            <options: git|aws|gcp>
 
 DESCRIPTION
   DEV: Writes a name to offchain storage
@@ -585,16 +733,24 @@ Generate proof-of-possession to be used to authorize a signer. See the "account:
 
 ```
 USAGE
-  $ celocli account:proof-of-possession --signer <value> --account <value>
-  [--globalHelp]
+  $ celocli account:proof-of-possession --signer <value> --account <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                        account that needs to prove
-                                                        possession of the signer key.
-  --globalHelp                                          View all available global flags
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   (required) Address of the signer
-                                                        key to prove possession of.
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Address of the
+                                                            account that needs to prove
+                                                            possession of the signer
+                                                            key.
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Address of the
+                                                            signer key to prove
+                                                            possession of.
 
 DESCRIPTION
   Generate proof-of-possession to be used to authorize a signer. See the
@@ -612,35 +768,46 @@ Recovers the Valora old account and print out the key information. The old Valor
 
 ```
 USAGE
-  $ celocli account:recover-old --mnemonicPath <value> [--globalHelp] [--passphrasePath
-    <value>] [--changeIndex <value>] [--addressIndex <value>] [--language chinese_simpli
-    fied|chinese_traditional|english|french|italian|japanese|korean|spanish]
-    [--derivationPath <value>]
+  $ celocli account:recover-old --mnemonicPath <value> [--gasCurrency <value>]
+    [--globalHelp] [--passphrasePath <value>] [--changeIndex <value>] [--addressIndex
+    <value>] [--language chinese_simplified|chinese_traditional|english|french|italian|j
+    apanese|korean|spanish] [--derivationPath <value>]
 
 FLAGS
-  --addressIndex=<value>    Choose the address index for the derivation path
-  --changeIndex=<value>     Choose the change index for the derivation path
-  --derivationPath=<value>  Choose a different derivation Path (Celo's default is
-                            "m/44'/52752'/0'"). Use "eth" as an alias of the Ethereum
-                            derivation path ("m/44'/60'/0'"). Recreating the same
-                            account requires knowledge of the mnemonic, passphrase (if
-                            any), and the derivation path
-  --globalHelp              View all available global flags
-  --language=<option>       [default: english] Language for the mnemonic words.
-                            **WARNING**, some hardware wallets don't support other
-                            languages
-                            <options: chinese_simplified|chinese_traditional|english|fre
-                            nch|italian|japanese|korean|spanish>
-  --mnemonicPath=<value>    (required) Path to a file that contains all the mnemonic
-                            words separated by a space (example: "word1 word2 word3 ...
-                            word24"). If the words are a language other than English,
-                            the --language flag must be used. Only BIP39 mnemonics are
-                            supported
-  --passphrasePath=<value>  Path to a file that contains the BIP39 passphrase to combine
-                            with the mnemonic specified using the mnemonicPath flag and
-                            the index specified using the addressIndex flag. Every
-                            passphrase generates a different private key and wallet
-                            address.
+  --addressIndex=<value>
+      Choose the address index for the derivation path
+
+  --changeIndex=<value>
+      Choose the change index for the derivation path
+
+  --derivationPath=<value>
+      Choose a different derivation Path (Celo's default is "m/44'/52752'/0'"). Use "eth"
+      as an alias of the Ethereum derivation path ("m/44'/60'/0'"). Recreating the same
+      account requires knowledge of the mnemonic, passphrase (if any), and the derivation
+      path
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --language=<option>
+      [default: english] Language for the mnemonic words. **WARNING**, some hardware
+      wallets don't support other languages
+      <options: chinese_simplified|chinese_traditional|english|french|italian|japanese|kor
+      ean|spanish>
+
+  --mnemonicPath=<value>
+      (required) Path to a file that contains all the mnemonic words separated by a space
+      (example: "word1 word2 word3 ... word24"). If the words are a language other than
+      English, the --language flag must be used. Only BIP39 mnemonics are supported
+
+  --passphrasePath=<value>
+      Path to a file that contains the BIP39 passphrase to combine with the mnemonic
+      specified using the mnemonicPath flag and the index specified using the addressIndex
+      flag. Every passphrase generates a different private key and wallet address.
 
 DESCRIPTION
   Recovers the Valora old account and print out the key information. The old Valora app
@@ -668,11 +835,18 @@ Register an account on-chain. This allows you to lock Gold, which is a pre-requi
 
 ```
 USAGE
-  $ celocli account:register --from <value> [--globalHelp] [--name <value>]
+  $ celocli account:register --from <value> [--gasCurrency <value>] [--globalHelp]
+    [--name <value>]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
   --name=<value>
 
 DESCRIPTION
@@ -694,15 +868,22 @@ Register a data encryption key for an account on chain. This key can be used to 
 
 ```
 USAGE
-  $ celocli account:register-data-encryption-key --from <value> --publicKey <value>
-  [--globalHelp]
+  $ celocli account:register-data-encryption-key --from <value> --publicKey <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Addess of the account to
-                                                     set the data encryption key for
-  --globalHelp                                       View all available global flags
-  --publicKey=<value>                                (required) The public key you want
-                                                     to register
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Addess of the
+                                                            account to set the data
+                                                            encryption key for
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --publicKey=<value>                                       (required) The public key
+                                                            you want to register
 
 DESCRIPTION
   Register a data encryption key for an account on chain. This key can be used to
@@ -720,32 +901,51 @@ Register metadata URL for an account where users will be able to retieve the met
 
 ```
 USAGE
-  $ celocli account:register-metadata --from <value> --url <value> [--globalHelp] [--force]
-    [--columns <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]]
-    [--output csv|json|yaml |  | ] [--sort <value>]
+  $ celocli account:register-metadata --from <value> --url <value> [--gasCurrency <value>]
+    [--globalHelp] [--force] [--columns <value> | -x] [--filter <value>] [--no-header |
+    [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended                                         show extra columns
-      --columns=<value>                                  only show provided columns
-                                                         (comma-separated)
-      --csv                                              output is csv format [alias:
-                                                         --output=csv]
-      --filter=<value>                                   filter property by partial
-                                                         string matching, ex: name=foo
-      --force                                            Ignore metadata validity checks
-      --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Addess of the
-                                                         account to set metadata for
-      --globalHelp                                       View all available global flags
-      --no-header                                        hide table header from output
-      --no-truncate                                      do not truncate output to fit
-                                                         screen
-      --output=<option>                                  output in a more machine
-                                                         friendly format
-                                                         <options: csv|json|yaml>
-      --sort=<value>                                     property to sort by (prepend
-                                                         '-' for descending)
-      --url=<value>                                      (required) The url to the
-                                                         metadata you want to register
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --force
+      Ignore metadata validity checks
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Addess of the account to set metadata for
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
+
+  --url=<value>
+      (required) The url to the metadata you want to register
 
 DESCRIPTION
   Register metadata URL for an account where users will be able to retieve the metadata
@@ -763,12 +963,19 @@ Sets the name of a registered account on-chain. An account's name is an optional
 
 ```
 USAGE
-  $ celocli account:set-name --account <value> --name <value> [--globalHelp]
+  $ celocli account:set-name --account <value> --name <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                          View all available global flags
-  --name=<value>                                        (required)
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --name=<value>                                            (required)
 
 DESCRIPTION
   Sets the name of a registered account on-chain. An account's name is an optional human
@@ -787,12 +994,17 @@ Sets a payment delegation beneficiary, an account address to receive a fraction 
 ```
 USAGE
   $ celocli account:set-payment-delegation --account <value> --beneficiary <value> --fraction
-    <value> [--globalHelp]
+    <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
   --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
   --beneficiary=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
   --fraction=<value>                                        (required)
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
   --globalHelp                                              View all available global
                                                             flags
 
@@ -812,18 +1024,24 @@ Sets the wallet of a registered account on-chain. An account's wallet is an opti
 
 ```
 USAGE
-  $ celocli account:set-wallet --account <value> --wallet <value> [--globalHelp]
-    [--signature <value>] [--signer <value>]
+  $ celocli account:set-wallet --account <value> --wallet <value> [--gasCurrency
+    <value>] [--globalHelp] [--signature <value>] [--signer <value>]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --globalHelp                                          View all available global flags
-  --signature=0x                                        Signature (a.k.a.
-                                                        proof-of-possession) of the
-                                                        signer key
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   Address of the signer key to
-                                                        verify proof of possession.
-  --wallet=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   (required) Account Address
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --signature=0x                                            Signature (a.k.a.
+                                                            proof-of-possession) of the
+                                                            signer key
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       Address of the signer key to
+                                                            verify proof of possession.
+  --wallet=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Account Address
 
 DESCRIPTION
   Sets the wallet of a registered account on-chain. An account's wallet is an optional
@@ -843,10 +1061,16 @@ Show information for an account, including name, authorized vote, validator, and
 
 ```
 USAGE
-  $ celocli account:show ARG1 [--globalHelp]
+  $ celocli account:show ARG1 [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show information for an account, including name, authorized vote, validator, and
@@ -866,10 +1090,16 @@ Show information about claimed accounts
 
 ```
 USAGE
-  $ celocli account:show-claimed-accounts ARG1 [--globalHelp]
+  $ celocli account:show-claimed-accounts ARG1 [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show information about claimed accounts
@@ -886,24 +1116,45 @@ Show the data in a local metadata file
 
 ```
 USAGE
-  $ celocli account:show-metadata ARG1 [--globalHelp] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli account:show-metadata ARG1 [--gasCurrency <value>] [--globalHelp] [--columns
+    <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  -x, --extended         show extra columns
-      --columns=<value>  only show provided columns (comma-separated)
-      --csv              output is csv format [alias: --output=csv]
-      --filter=<value>   filter property by partial string matching, ex: name=foo
-      --globalHelp       View all available global flags
-      --no-header        hide table header from output
-      --no-truncate      do not truncate output to fit screen
-      --output=<option>  output in a more machine friendly format
-                         <options: csv|json|yaml>
-      --sort=<value>     property to sort by (prepend '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   Show the data in a local metadata file
@@ -920,18 +1171,28 @@ Unlock an account address to send transactions or validate blocks
 
 ```
 USAGE
-  $ celocli account:unlock ARG1 [--globalHelp] [--password <value>] [--duration
-    <value>]
+  $ celocli account:unlock ARG1 [--gasCurrency <value>] [--globalHelp] [--password
+    <value>] [--duration <value>]
 
 ARGUMENTS
   ARG1  Account address
 
 FLAGS
-  --duration=<value>  Duration in seconds to leave the account unlocked. Unlocks until
-                      the node exits by default.
-  --globalHelp        View all available global flags
-  --password=<value>  Password used to unlock the account. If not specified, you will be
-                      prompted for a password.
+  --duration=<value>                                        Duration in seconds to leave
+                                                            the account unlocked.
+                                                            Unlocks until the node exits
+                                                            by default.
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --password=<value>                                        Password used to unlock the
+                                                            account. If not specified,
+                                                            you will be prompted for a
+                                                            password.
 
 DESCRIPTION
   Unlock an account address to send transactions or validate blocks
@@ -951,19 +1212,26 @@ Verify a proof-of-possession. See the "account:proof-of-possession" command for 
 ```
 USAGE
   $ celocli account:verify-proof-of-possession --signer <value> --account <value> --signature <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                        account that needs to prove
-                                                        possession of the signer key.
-  --globalHelp                                          View all available global flags
-  --signature=0x                                        (required) Signature (a.k.a.
-                                                        proof-of-possession) of the
-                                                        signer key
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   (required) Address of the signer
-                                                        key to verify proof of
-                                                        possession.
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Address of the
+                                                            account that needs to prove
+                                                            possession of the signer
+                                                            key.
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --signature=0x                                            (required) Signature (a.k.a.
+                                                            proof-of-possession) of the
+                                                            signer key
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Address of the
+                                                            signer key to verify proof
+                                                            of possession.
 
 DESCRIPTION
   Verify a proof-of-possession. See the "account:proof-of-possession" command for more

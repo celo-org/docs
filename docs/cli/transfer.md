@@ -18,15 +18,23 @@ Transfer CELO to a specified address. (Note: this is the equivalent of the old t
 ```
 USAGE
   $ celocli transfer:celo --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer CELO to a specified address. (Note: this is the equivalent of the old
@@ -45,15 +53,23 @@ Transfer Celo Dollars (cUSD) to a specified address.
 ```
 USAGE
   $ celocli transfer:dollars --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer Celo Dollars (cUSD) to a specified address.
@@ -71,19 +87,27 @@ Transfer ERC20 to a specified address
 ```
 USAGE
   $ celocli transfer:erc20 --erc20Address <value> --from <value> --to <value>
-    --value <value> [--globalHelp]
+    --value <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Custom erc20 to
-                                                             check it's balance too
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d          (required) Address of the
-                                                             sender
-  --globalHelp                                               View all available global
-                                                             flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d            (required) Address of the
-                                                             receiver
-  --value=<value>                                            (required) Amount to
-                                                             transfer (in wei)
+  --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Custom erc20 to check it's balance too
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the receiver
+
+  --value=<value>
+      (required) Amount to transfer (in wei)
 
 DESCRIPTION
   Transfer ERC20 to a specified address
@@ -101,15 +125,23 @@ Transfer Celo Euros (cEUR) to a specified address.
 ```
 USAGE
   $ celocli transfer:euros --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer Celo Euros (cEUR) to a specified address.
@@ -127,15 +159,23 @@ Transfer CELO to a specified address. *DEPRECATION WARNING* Use the "transfer:ce
 ```
 USAGE
   $ celocli transfer:gold --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer CELO to a specified address. *DEPRECATION WARNING* Use the "transfer:celo"
@@ -154,15 +194,23 @@ Transfer Celo Brazilian Real (cREAL) to a specified address.
 ```
 USAGE
   $ celocli transfer:reals --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer Celo Brazilian Real (cREAL) to a specified address.
@@ -180,18 +228,28 @@ Transfer a stable token to a specified address.
 ```
 USAGE
   $ celocli transfer:stable --from <value> --to <value> --value <value>
-    [--globalHelp] [--comment <value>] [--stableToken cUSD|cusd|cEUR|ceur|cREAL|creal]
+    [--gasCurrency <value>] [--globalHelp] [--comment <value>] [--stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal]
 
 FLAGS
-  --comment=<value>                                  Transfer comment
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the sender
-  --globalHelp                                       View all available global flags
-  --stableToken=<option>                             Name of the stable to be transfered
-                                                     <options:
-                                                     cUSD|cusd|cEUR|ceur|cREAL|creal>
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Address of the receiver
-  --value=<value>                                    (required) Amount to transfer (in
-                                                     wei)
+  --comment=<value>                                         Transfer comment
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
+                                                            sender
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --stableToken=<option>                                    Name of the stable to be
+                                                            transfered
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            receiver
+  --value=<value>                                           (required) Amount to
+                                                            transfer (in wei)
 
 DESCRIPTION
   Transfer a stable token to a specified address.

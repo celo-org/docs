@@ -12,10 +12,16 @@ List the addresses that this node has the private keys for.
 
 ```
 USAGE
-  $ celocli node:accounts [--globalHelp]
+  $ celocli node:accounts [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --globalHelp  View all available global flags
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   List the addresses that this node has the private keys for.
@@ -29,11 +35,18 @@ Check if the node is synced
 
 ```
 USAGE
-  $ celocli node:synced [--globalHelp] [--verbose]
+  $ celocli node:synced [--gasCurrency <value>] [--globalHelp] [--verbose]
 
 FLAGS
-  --globalHelp  View all available global flags
-  --verbose     output the full status if syncing
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --verbose                                                 output the full status if
+                                                            syncing
 
 DESCRIPTION
   Check if the node is synced

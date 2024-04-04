@@ -13,15 +13,23 @@ Approves an existing transaction on a multi-sig contract
 
 ```
 USAGE
-  $ celocli multisig:approve --from <value> --for <value> --tx <value> [--globalHelp]
+  $ celocli multisig:approve --from <value> --for <value> --tx <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d   (required) Address of the multi-sig
-                                                     contract
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account approving the
-                                                     multi-sig transaction
-  --globalHelp                                       View all available global flags
-  --tx=<value>                                       (required) Transaction to approve
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d          (required) Address of the
+                                                            multi-sig contract
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account approving
+                                                            the multi-sig transaction
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --tx=<value>                                              (required) Transaction to
+                                                            approve
 
 DESCRIPTION
   Approves an existing transaction on a multi-sig contract
@@ -38,13 +46,22 @@ Shows information about multi-sig contract
 
 ```
 USAGE
-  $ celocli multisig:show ARG1 [--globalHelp] [--tx <value>] [--all] [--raw]
+  $ celocli multisig:show ARG1 [--gasCurrency <value>] [--globalHelp] [--tx
+    <value>] [--all] [--raw]
 
 FLAGS
-  --all         Show info about all transactions
-  --globalHelp  View all available global flags
-  --raw         Do not attempt to parse transactions
-  --tx=<value>  Show info for a transaction
+  --all                                                     Show info about all
+                                                            transactions
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --raw                                                     Do not attempt to parse
+                                                            transactions
+  --tx=<value>                                              Show info for a transaction
 
 DESCRIPTION
   Shows information about multi-sig contract
@@ -66,19 +83,28 @@ Ability to approve CELO transfers to and from multisig. Submit transaction or ap
 ```
 USAGE
   $ celocli multisig:transfer ARG1 --to <value> --amount <value> --from <value>
-    [--globalHelp] [--transferFrom] [--sender <value>]
+    [--gasCurrency <value>] [--globalHelp] [--transferFrom] [--sender <value>]
 
 FLAGS
-  --amount=<value>                                     (required) Amount to transfer,
-                                                       e.g. 10e18
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) Account transferring
-                                                       value to the recipient
-  --globalHelp                                         View all available global flags
-  --sender=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  Identify sender if performing
-                                                       transferFrom
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Recipient of transfer
-  --transferFrom                                       Perform transferFrom instead of
-                                                       transfer in the ERC-20 interface
+  --amount=<value>                                          (required) Amount to
+                                                            transfer, e.g. 10e18
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account
+                                                            transferring value to the
+                                                            recipient
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --sender=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       Identify sender if
+                                                            performing transferFrom
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Recipient of
+                                                            transfer
+  --transferFrom                                            Perform transferFrom instead
+                                                            of transfer in the ERC-20
+                                                            interface
 
 DESCRIPTION
   Ability to approve CELO transfers to and from multisig. Submit transaction or approve
