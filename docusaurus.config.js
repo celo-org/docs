@@ -118,16 +118,16 @@ module.exports = {
           position: "left",
           items: [
             {
+              to: "holder/",
+              label: "Holder",
+            },
+            {
               to: "cli/",
               label: "CLI",
             },
             {
               to: "protocol/",
               label: "Protocol",
-            },
-            {
-              to: "holder/",
-              label: "Holder",
             },
             {
               to: "integration/",
