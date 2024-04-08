@@ -13,6 +13,7 @@ module.exports = {
   trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
+  onBrokenAnchors: "throw",
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
