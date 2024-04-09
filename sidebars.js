@@ -1156,6 +1156,7 @@ const sidebars = {
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
     { type: "doc", label: "Validator", id: "cli/validator" },
+    { type: "doc", label: "Utilities", id: "cli/utils" },
     {
       type: "doc",
       label: "ValidatorGroup",
