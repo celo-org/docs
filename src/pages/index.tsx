@@ -338,7 +338,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.architecture.description",
                 }),
-                "img/homepage/icons/Archi_White.png",
+                "img/homepage/icons/Archi_White.svg",
                 "/general/architecture",
               )}
 
@@ -358,7 +358,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.protocol.description",
                 }),
-                "img/homepage/icons/Protocol_White.png",
+                "img/homepage/icons/Protocol_White.svg",
                 "/protocol",
               )}
             </div>
@@ -385,7 +385,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.reactCelo.description",
                 }),
-                "img/homepage/icons/React-celo_White.png",
+                "img/homepage/icons/React-celo_White.svg",
                 "/developer/react-celo",
               )}
 
@@ -405,7 +405,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.celoCli.description",
                 }),
-                "img/homepage/icons/CeloCLI_White.png",
+                "img/homepage/icons/CeloCLI_White.svg",
                 "/cli",
               )}
             </div>
@@ -433,7 +433,7 @@ export default function HomePage(): JSX.Element {
               {sectionFourCard(
                 translate({ id: "home.section4.build.oracles.title" }),
                 translate({ id: "home.section4.build.oracles.description" }),
-                "img/homepage/icons/Oracle_White.png",
+                "img/homepage/icons/Oracle_White.svg",
                 "/protocol/oracle",
               )}
 
@@ -461,7 +461,7 @@ export default function HomePage(): JSX.Element {
               {sectionFourCard(
                 translate({ id: "home.section4.validators.node.title" }),
                 translate({ id: "home.section4.validators.node.description" }),
-                "img/homepage/icons/Node_White.png",
+                "img/homepage/icons/Node_White.svg",
                 "/validator/security",
               )}
 
