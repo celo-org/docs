@@ -25,22 +25,29 @@ Interact with on-chain governance proposals and hotfixes
 * [`celocli governance:whitelisthotfix`](#celocli-governancewhitelisthotfix)
 * [`celocli governance:withdraw`](#celocli-governancewithdraw)
 
-## `celocli governance:approvehotfix`
+## `celocli governance:approvehotfix` {#celocli-governanceapprovehotfix}
 
 Approve a dequeued governance proposal (or hotfix)
 
 ```
 USAGE
-  $ celocli governance:approvehotfix --from <value> [--globalHelp] [--proposalID <value> |
-    --hotfix <value>] [--useMultiSig]
+  $ celocli governance:approvehotfix --from <value> [--gasCurrency <value>] [--globalHelp]
+    [--proposalID <value> | --hotfix <value>] [--useMultiSig]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Approver's address
-  --globalHelp                                       View all available global flags
-  --hotfix=<value>                                   Hash of hotfix proposal
-  --proposalID=<value>                               UUID of proposal to approve
-  --useMultiSig                                      True means the request will be sent
-                                                     through multisig.
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Approver's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --proposalID=<value>                                      UUID of proposal to approve
+  --useMultiSig                                             True means the request will
+                                                            be sent through multisig.
 
 DESCRIPTION
   Approve a dequeued governance proposal (or hotfix)
@@ -57,22 +64,33 @@ EXAMPLES
   approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig
 ```
 
-## `celocli governance:build-proposal`
+## `celocli governance:build-proposal` {#celocli-governancebuild-proposal}
 
 Interactively build a governance proposal
 
 ```
 USAGE
-  $ celocli governance:build-proposal [--globalHelp] [--output <value>]
+  $ celocli governance:build-proposal [--gasCurrency <value>] [--globalHelp] [--output <value>]
     [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal being built
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal being built
-  --globalHelp                      View all available global flags
-  --output=<value>                  [default: proposalTransactions.json] Path to output
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+                                                            being built
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal being built
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --output=<value>                                          [default:
+                                                            proposalTransactions.json]
+                                                            Path to output
 
 DESCRIPTION
   Interactively build a governance proposal
@@ -83,17 +101,23 @@ EXAMPLES
 
 _See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/build-proposal.ts)_
 
-## `celocli governance:dequeue`
+## `celocli governance:dequeue` {#celocli-governancedequeue}
 
 Try to dequeue governance proposal
 
 ```
 USAGE
-  $ celocli governance:dequeue --from <value> [--globalHelp]
+  $ celocli governance:dequeue --from <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) From address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) From address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Try to dequeue governance proposal
@@ -104,19 +128,27 @@ EXAMPLES
 
 _See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/dequeue.ts)_
 
-## `celocli governance:execute`
+## `celocli governance:execute` {#celocli-governanceexecute}
 
 Execute a passing governance proposal
 
 ```
 USAGE
-  $ celocli governance:execute --proposalID <value> --from <value> [--globalHelp]
+  $ celocli governance:execute --proposalID <value> --from <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Executor's address
-  --globalHelp                                       View all available global flags
-  --proposalID=<value>                               (required) UUID of proposal to
-                                                     execute
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Executor's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to execute
 
 DESCRIPTION
   Execute a passing governance proposal
@@ -127,22 +159,29 @@ EXAMPLES
 
 _See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/execute.ts)_
 
-## `celocli governance:executehotfix`
+## `celocli governance:executehotfix` {#celocli-governanceexecutehotfix}
 
 Execute a governance hotfix prepared for the current epoch
 
 ```
 USAGE
   $ celocli governance:executehotfix --from <value> --jsonTransactions <value> --salt <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Executors's address
-  --globalHelp                                       View all available global flags
-  --jsonTransactions=<value>                         (required) Path to json
-                                                     transactions
-  --salt=<value>                                     (required) Secret salt associated
-                                                     with hotfix
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Executors's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --jsonTransactions=<value>                                (required) Path to json
+                                                            transactions
+  --salt=<value>                                            (required) Secret salt
+                                                            associated with hotfix
 
 DESCRIPTION
   Execute a governance hotfix prepared for the current epoch
@@ -153,20 +192,28 @@ EXAMPLES
 
 _See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/executehotfix.ts)_
 
-## `celocli governance:hashhotfix`
+## `celocli governance:hashhotfix` {#celocli-governancehashhotfix}
 
 Hash a governance hotfix specified by JSON and a salt
 
 ```
 USAGE
-  $ celocli governance:hashhotfix --jsonTransactions <value> --salt <value> [--globalHelp]
-    [--force]
+  $ celocli governance:hashhotfix --jsonTransactions <value> --salt <value> [--gasCurrency
+    <value>] [--globalHelp] [--force]
 
 FLAGS
-  --force                     Skip execution check
-  --globalHelp                View all available global flags
-  --jsonTransactions=<value>  (required) Path to json transactions of the hotfix
-  --salt=<value>              (required) Secret salt associated with hotfix
+  --force                                                   Skip execution check
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --jsonTransactions=<value>                                (required) Path to json
+                                                            transactions of the hotfix
+  --salt=<value>                                            (required) Secret salt
+                                                            associated with hotfix
 
 DESCRIPTION
   Hash a governance hotfix specified by JSON and a salt
@@ -177,27 +224,48 @@ EXAMPLES
 
 _See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/hashhotfix.ts)_
 
-## `celocli governance:list`
+## `celocli governance:list` {#celocli-governancelist}
 
 List live governance proposals (queued and ongoing)
 
 ```
 USAGE
-  $ celocli governance:list [--globalHelp] [--columns <value> | -x] [--filter
-    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
-    [--sort <value>]
+  $ celocli governance:list [--gasCurrency <value>] [--globalHelp] [--columns <value>
+    | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
+    csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -x, --extended         show extra columns
-      --columns=<value>  only show provided columns (comma-separated)
-      --csv              output is csv format [alias: --output=csv]
-      --filter=<value>   filter property by partial string matching, ex: name=foo
-      --globalHelp       View all available global flags
-      --no-header        hide table header from output
-      --no-truncate      do not truncate output to fit screen
-      --output=<option>  output in a more machine friendly format
-                         <options: csv|json|yaml>
-      --sort=<value>     property to sort by (prepend '-' for descending)
+  -x, --extended
+      show extra columns
+
+  --columns=<value>
+      only show provided columns (comma-separated)
+
+  --csv
+      output is csv format [alias: --output=csv]
+
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --no-header
+      hide table header from output
+
+  --no-truncate
+      do not truncate output to fit screen
+
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
+
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   List live governance proposals (queued and ongoing)
@@ -208,19 +276,27 @@ EXAMPLES
 
 _See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/list.ts)_
 
-## `celocli governance:preparehotfix`
+## `celocli governance:preparehotfix` {#celocli-governancepreparehotfix}
 
 Prepare a governance hotfix for execution in the current epoch
 
 ```
 USAGE
-  $ celocli governance:preparehotfix --from <value> --hash <value> [--globalHelp]
+  $ celocli governance:preparehotfix --from <value> --hash <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Preparer's address
-  --globalHelp                                       View all available global flags
-  --hash=<value>                                     (required) Hash of hotfix
-                                                     transactions
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Preparer's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hash=<value>                                            (required) Hash of hotfix
+                                                            transactions
 
 DESCRIPTION
   Prepare a governance hotfix for execution in the current epoch
@@ -231,32 +307,42 @@ EXAMPLES
 
 _See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/preparehotfix.ts)_
 
-## `celocli governance:propose`
+## `celocli governance:propose` {#celocli-governancepropose}
 
 Submit a governance proposal
 
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
-    <value> --descriptionURL <value> [--globalHelp] [--force] [--afterExecutingProposal
-    <value> | --afterExecutingID <value>]
+    <value> --descriptionURL <value> [--gasCurrency <value>] [--globalHelp] [--force]
+    [--noInfo] [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --afterExecutingID=<value>                         Governance proposal identifier
-                                                     which will be executed prior to
-                                                     proposal
-  --afterExecutingProposal=<value>                   Path to proposal which will be
-                                                     executed prior to proposal
-  --deposit=<value>                                  (required) Amount of Gold to attach
-                                                     to proposal
-  --descriptionURL=<value>                           (required) A URL where further
-                                                     information about the proposal can
-                                                     be viewed
-  --force                                            Skip execution check
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Proposer's address
-  --globalHelp                                       View all available global flags
-  --jsonTransactions=<value>                         (required) Path to json
-                                                     transactions
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --deposit=<value>                                         (required) Amount of Celo to
+                                                            attach to proposal
+  --descriptionURL=<value>                                  (required) A URL where
+                                                            further information about
+                                                            the proposal can be viewed
+  --force                                                   Skip execution check
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Proposer's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --jsonTransactions=<value>                                (required) Path to json
+                                                            transactions
+  --noInfo                                                  Skip printing the proposal
+                                                            info
 
 DESCRIPTION
   Submit a governance proposal
@@ -267,17 +353,24 @@ EXAMPLES
 
 _See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
 
-## `celocli governance:revokeupvote`
+## `celocli governance:revokeupvote` {#celocli-governancerevokeupvote}
 
 Revoke upvotes for queued governance proposals
 
 ```
 USAGE
-  $ celocli governance:revokeupvote --from <value> [--globalHelp]
+  $ celocli governance:revokeupvote --from <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Upvoter's address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Upvoter's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Revoke upvotes for queued governance proposals
@@ -288,34 +381,47 @@ EXAMPLES
 
 _See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/revokeupvote.ts)_
 
-## `celocli governance:show`
+## `celocli governance:show` {#celocli-governanceshow}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:show [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:show [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -344,34 +450,47 @@ EXAMPLES
 
 _See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/show.ts)_
 
-## `celocli governance:showaccount`
+## `celocli governance:showaccount` {#celocli-governanceshowaccount}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:showaccount [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:showaccount [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -398,34 +517,47 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:showhotfix`
+## `celocli governance:showhotfix` {#celocli-governanceshowhotfix}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:showhotfix [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:showhotfix [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -452,19 +584,26 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:upvote`
+## `celocli governance:upvote` {#celocli-governanceupvote}
 
 Upvote a queued governance proposal
 
 ```
 USAGE
-  $ celocli governance:upvote --proposalID <value> --from <value> [--globalHelp]
+  $ celocli governance:upvote --proposalID <value> --from <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Upvoter's address
-  --globalHelp                                       View all available global flags
-  --proposalID=<value>                               (required) UUID of proposal to
-                                                     upvote
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Upvoter's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to upvote
 
 DESCRIPTION
   Upvote a queued governance proposal
@@ -475,34 +614,47 @@ EXAMPLES
 
 _See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/upvote.ts)_
 
-## `celocli governance:view`
+## `celocli governance:view` {#celocli-governanceview}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:view [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:view [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -529,34 +681,47 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:viewaccount`
+## `celocli governance:viewaccount` {#celocli-governanceviewaccount}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:viewaccount [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:viewaccount [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -583,34 +748,47 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:viewhotfix`
+## `celocli governance:viewhotfix` {#celocli-governanceviewhotfix}
 
 Show information about a governance proposal, hotfix, or account.
 
 ```
 USAGE
-  $ celocli governance:viewhotfix [--globalHelp] [--raw] [--jsonTransactions <value>]
-    [--notwhitelisted] [--whitelisters | --nonwhitelisters |  | [--proposalID <value> |
-    --account <value> | --hotfix <value>]] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+  $ celocli governance:viewhotfix [--gasCurrency <value>] [--globalHelp] [--raw]
+    [--jsonTransactions <value>] [--notwhitelisted] [--whitelisters | --nonwhitelisters
+    |  | [--proposalID <value> | --account <value> | --hotfix <value>]]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
-  --account=<value>                 Address of account or voter
-  --afterExecutingID=<value>        Governance proposal identifier which will be
-                                    executed prior to proposal
-  --afterExecutingProposal=<value>  Path to proposal which will be executed prior to
-                                    proposal
-  --globalHelp                      View all available global flags
-  --hotfix=<value>                  Hash of hotfix proposal
-  --jsonTransactions=<value>        Output proposal JSON to provided file
-  --nonwhitelisters                 If set, displays validators that have not
-                                    whitelisted the hotfix.
-  --notwhitelisted                  List validators who have not whitelisted the
-                                    specified hotfix
-  --proposalID=<value>              UUID of proposal to view
-  --raw                             Display proposal in raw bytes format
-  --whitelisters                    If set, displays validators that have whitelisted
-                                    the hotfix.
+  --account=<value>                                         Address of account or voter
+  --afterExecutingID=<value>                                Governance proposal
+                                                            identifier which will be
+                                                            executed prior to proposal
+  --afterExecutingProposal=<value>                          Path to proposal which will
+                                                            be executed prior to
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hotfix=<value>                                          Hash of hotfix proposal
+  --jsonTransactions=<value>                                Output proposal JSON to
+                                                            provided file
+  --nonwhitelisters                                         If set, displays validators
+                                                            that have not whitelisted
+                                                            the hotfix.
+  --notwhitelisted                                          List validators who have not
+                                                            whitelisted the specified
+                                                            hotfix
+  --proposalID=<value>                                      UUID of proposal to view
+  --raw                                                     Display proposal in raw
+                                                            bytes format
+  --whitelisters                                            If set, displays validators
+                                                            that have whitelisted the
+                                                            hotfix.
 
 DESCRIPTION
   Show information about a governance proposal, hotfix, or account.
@@ -637,22 +815,28 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:vote`
+## `celocli governance:vote` {#celocli-governancevote}
 
 Vote on an approved governance proposal
 
 ```
 USAGE
   $ celocli governance:vote --proposalID <value> --value Abstain|No|Yes --from
-    <value> [--globalHelp]
+    <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Voter's address
-  --globalHelp                                       View all available global flags
-  --proposalID=<value>                               (required) UUID of proposal to vote
-                                                     on
-  --value=<option>                                   (required) Vote
-                                                     <options: Abstain|No|Yes>
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Voter's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to vote on
+  --value=<option>                                          (required) Vote
+                                                            <options: Abstain|No|Yes>
 
 DESCRIPTION
   Vote on an approved governance proposal
@@ -663,23 +847,29 @@ EXAMPLES
 
 _See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/vote.ts)_
 
-## `celocli governance:votePartially`
+## `celocli governance:votePartially` {#celocli-governancevotepartially}
 
 Vote partially on an approved governance proposal
 
 ```
 USAGE
-  $ celocli governance:votePartially --proposalID <value> --from <value> [--globalHelp] [--yes
-    <value>] [--no <value>] [--abstain <value>]
+  $ celocli governance:votePartially --proposalID <value> --from <value> [--gasCurrency
+    <value>] [--globalHelp] [--yes <value>] [--no <value>] [--abstain <value>]
 
 FLAGS
-  --abstain=<value>                                  Abstain votes
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Voter's address
-  --globalHelp                                       View all available global flags
-  --no=<value>                                       No votes
-  --proposalID=<value>                               (required) UUID of proposal to vote
-                                                     on
-  --yes=<value>                                      Yes votes
+  --abstain=<value>                                         Abstain votes
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Voter's address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --no=<value>                                              No votes
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to vote on
+  --yes=<value>                                             Yes votes
 
 DESCRIPTION
   Vote partially on an approved governance proposal
@@ -690,19 +880,27 @@ EXAMPLES
 
 _See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/votePartially.ts)_
 
-## `celocli governance:whitelisthotfix`
+## `celocli governance:whitelisthotfix` {#celocli-governancewhitelisthotfix}
 
 Whitelist a governance hotfix
 
 ```
 USAGE
-  $ celocli governance:whitelisthotfix --from <value> --hash <value> [--globalHelp]
+  $ celocli governance:whitelisthotfix --from <value> --hash <value> [--gasCurrency <value>]
+    [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Whitelister's address
-  --globalHelp                                       View all available global flags
-  --hash=<value>                                     (required) Hash of hotfix
-                                                     transactions
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Whitelister's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --hash=<value>                                            (required) Hash of hotfix
+                                                            transactions
 
 DESCRIPTION
   Whitelist a governance hotfix
@@ -713,17 +911,24 @@ EXAMPLES
 
 _See code: [src/commands/governance/whitelisthotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/whitelisthotfix.ts)_
 
-## `celocli governance:withdraw`
+## `celocli governance:withdraw` {#celocli-governancewithdraw}
 
 Withdraw refunded governance proposal deposits.
 
 ```
 USAGE
-  $ celocli governance:withdraw --from <value> [--globalHelp]
+  $ celocli governance:withdraw --from <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Proposer's address
-  --globalHelp                                       View all available global flags
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Proposer's
+                                                            address
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Withdraw refunded governance proposal deposits.
