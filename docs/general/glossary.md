@@ -93,10 +93,6 @@ A library to help developers and operators of Validator nodes interact with the 
 
 Short for Decentralized Application. An application, usually a mobile application, which to deliver its functionality connects to a decentralized network like Celo, rather than to centralized services in a single organization's data centers.
 
-## DAppKit
-
-A lightweight set of functions in the Celo Wallet that allow other mobile DApps to use the Celo Blockchain node bundled with the Celo Wallet to sign transactions and access the user's address.
-
 ## DeFi
 
 Decentralized Finance; open source software and networks without intermediaries in the financial space.

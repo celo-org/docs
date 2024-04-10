@@ -26,7 +26,6 @@ Their [Celo Pathway](https://learn.figment.io/protocols/celo) teaches you the ba
 - [How to re-deploy your Ethereum DApp to Celo](https://learn.figment.io/tutorials/redploy-dapps-on-celo)
 - [Create Vault Smart Contract](https://learn.figment.io/tutorials/create-vault-smart-contract)
 - [Build a Decentralized Autonomous Organization (DAO) on Celo](https://learn.figment.io/tutorials/build-a-dao-on-celo)
-- [Introduction to dApp kit](https://learn.figment.io/tutorials/introduction-to-dappkit)
 - [Distributed File Manager (DFM) using Celo, IPFS and ReactJS](https://learn.figment.io/tutorials/distributed-file-manager-using-ipfs-celo-reactjs)
 - [Testing Celo Smart Contracts with Truffle](https://learn.figment.io/tutorials/celo-testing-truffle)
 - [How to use Moola’s money market](https://learn.figment.io/tutorials/moola-market)

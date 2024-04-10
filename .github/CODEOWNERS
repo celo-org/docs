@@ -5,7 +5,6 @@
 * @celo-org/devrel 
 /docs/cli/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/contractkit/ @celo-org/devrel @celo-org/devtooling
-/docs/developer/dappkit/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/deploy/ @celo-org/devrel @celo-org/primitives
 /docs/developer/rainbowkit-celo/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/react-celo/ @celo-org/devrel @celo-org/devtooling
