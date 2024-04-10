@@ -7,7 +7,7 @@ Interact with ODIS and the attestations service
 * [`celocli identity:identifier`](#celocli-identityidentifier)
 * [`celocli identity:withdraw-attestation-rewards`](#celocli-identitywithdraw-attestation-rewards)
 
-## `celocli identity:get-attestations`
+## `celocli identity:get-attestations` {#celocli-identityget-attestations}
 
 Looks up attestations associated with the provided phone number. If a pepper is not provided, it uses the --from account's balance to query the pepper.
 
@@ -50,7 +50,7 @@ EXAMPLES
 
 _See code: [src/commands/identity/get-attestations.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/identity/get-attestations.ts)_
 
-## `celocli identity:identifier`
+## `celocli identity:identifier` {#celocli-identityidentifier}
 
 Queries ODIS for the on-chain identifier and pepper corresponding to a given phone number.
 
@@ -88,7 +88,7 @@ EXAMPLES
 
 _See code: [src/commands/identity/identifier.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/identity/identifier.ts)_
 
-## `celocli identity:withdraw-attestation-rewards`
+## `celocli identity:withdraw-attestation-rewards` {#celocli-identitywithdraw-attestation-rewards}
 
 Withdraw accumulated attestation rewards for a given currency
 

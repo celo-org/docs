@@ -8,7 +8,7 @@ List oracle addresses for a given token
 * [`celocli oracle:report ARG1`](#celocli-oraclereport-arg1)
 * [`celocli oracle:reports ARG1`](#celocli-oraclereports-arg1)
 
-## `celocli oracle:list ARG1`
+## `celocli oracle:list ARG1` {#celocli-oraclelist-arg1}
 
 List oracle addresses for a given token
 
@@ -41,7 +41,7 @@ EXAMPLES
 
 _See code: [src/commands/oracle/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/list.ts)_
 
-## `celocli oracle:remove-expired-reports ARG1`
+## `celocli oracle:remove-expired-reports ARG1` {#celocli-oracleremove-expired-reports-arg1}
 
 Remove expired oracle reports for a specified token
 
@@ -78,7 +78,7 @@ EXAMPLES
 
 _See code: [src/commands/oracle/remove-expired-reports.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/remove-expired-reports.ts)_
 
-## `celocli oracle:report ARG1`
+## `celocli oracle:report ARG1` {#celocli-oraclereport-arg1}
 
 Report the price of CELO in a specified token
 
@@ -117,7 +117,7 @@ EXAMPLES
 
 _See code: [src/commands/oracle/report.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/oracle/report.ts)_
 
-## `celocli oracle:reports ARG1`
+## `celocli oracle:reports ARG1` {#celocli-oraclereports-arg1}
 
 List oracle reports for a given token
 

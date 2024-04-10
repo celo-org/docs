@@ -10,7 +10,7 @@ Cancels a Granda Mento exchange proposal
 * [`celocli grandamento:propose`](#celocli-grandamentopropose)
 * [`celocli grandamento:show`](#celocli-grandamentoshow)
 
-## `celocli grandamento:cancel`
+## `celocli grandamento:cancel` {#celocli-grandamentocancel}
 
 Cancels a Granda Mento exchange proposal
 
@@ -37,7 +37,7 @@ DESCRIPTION
   Cancels a Granda Mento exchange proposal
 ```
 
-## `celocli grandamento:execute`
+## `celocli grandamento:execute` {#celocli-grandamentoexecute}
 
 Executes a Granda Mento exchange proposal
 
@@ -64,7 +64,7 @@ DESCRIPTION
   Executes a Granda Mento exchange proposal
 ```
 
-## `celocli grandamento:get-buy-amount`
+## `celocli grandamento:get-buy-amount` {#celocli-grandamentoget-buy-amount}
 
 Gets the buy amount for a prospective Granda Mento exchange
 
@@ -94,7 +94,7 @@ DESCRIPTION
   Gets the buy amount for a prospective Granda Mento exchange
 ```
 
-## `celocli grandamento:list`
+## `celocli grandamento:list` {#celocli-grandamentolist}
 
 List current active Granda Mento exchange proposals
 
@@ -115,7 +115,7 @@ DESCRIPTION
   List current active Granda Mento exchange proposals
 ```
 
-## `celocli grandamento:propose`
+## `celocli grandamento:propose` {#celocli-grandamentopropose}
 
 Proposes a Granda Mento exchange
 
@@ -147,7 +147,7 @@ DESCRIPTION
   Proposes a Granda Mento exchange
 ```
 
-## `celocli grandamento:show`
+## `celocli grandamento:show` {#celocli-grandamentoshow}
 
 Shows details of a Granda Mento exchange proposal
 

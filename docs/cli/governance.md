@@ -25,7 +25,7 @@ Interact with on-chain governance proposals and hotfixes
 * [`celocli governance:whitelisthotfix`](#celocli-governancewhitelisthotfix)
 * [`celocli governance:withdraw`](#celocli-governancewithdraw)
 
-## `celocli governance:approvehotfix`
+## `celocli governance:approvehotfix` {#celocli-governanceapprovehotfix}
 
 Approve a dequeued governance proposal (or hotfix)
 
@@ -64,7 +64,7 @@ EXAMPLES
   approve --hotfix 0xfcfc98ec3db7c56f0866a7149e811bf7f9e30c9d40008b0def497fcc6fe90649 --from 0xCc50EaC48bA71343dC76852FAE1892c6Bd2971DA --useMultiSig
 ```
 
-## `celocli governance:build-proposal`
+## `celocli governance:build-proposal` {#celocli-governancebuild-proposal}
 
 Interactively build a governance proposal
 
@@ -101,7 +101,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/build-proposal.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/build-proposal.ts)_
 
-## `celocli governance:dequeue`
+## `celocli governance:dequeue` {#celocli-governancedequeue}
 
 Try to dequeue governance proposal
 
@@ -128,7 +128,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/dequeue.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/dequeue.ts)_
 
-## `celocli governance:execute`
+## `celocli governance:execute` {#celocli-governanceexecute}
 
 Execute a passing governance proposal
 
@@ -159,7 +159,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/execute.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/execute.ts)_
 
-## `celocli governance:executehotfix`
+## `celocli governance:executehotfix` {#celocli-governanceexecutehotfix}
 
 Execute a governance hotfix prepared for the current epoch
 
@@ -192,7 +192,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/executehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/executehotfix.ts)_
 
-## `celocli governance:hashhotfix`
+## `celocli governance:hashhotfix` {#celocli-governancehashhotfix}
 
 Hash a governance hotfix specified by JSON and a salt
 
@@ -224,7 +224,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/hashhotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/hashhotfix.ts)_
 
-## `celocli governance:list`
+## `celocli governance:list` {#celocli-governancelist}
 
 List live governance proposals (queued and ongoing)
 
@@ -276,7 +276,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/list.ts)_
 
-## `celocli governance:preparehotfix`
+## `celocli governance:preparehotfix` {#celocli-governancepreparehotfix}
 
 Prepare a governance hotfix for execution in the current epoch
 
@@ -307,7 +307,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/preparehotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/preparehotfix.ts)_
 
-## `celocli governance:propose`
+## `celocli governance:propose` {#celocli-governancepropose}
 
 Submit a governance proposal
 
@@ -353,7 +353,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
 
-## `celocli governance:revokeupvote`
+## `celocli governance:revokeupvote` {#celocli-governancerevokeupvote}
 
 Revoke upvotes for queued governance proposals
 
@@ -381,7 +381,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/revokeupvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/revokeupvote.ts)_
 
-## `celocli governance:show`
+## `celocli governance:show` {#celocli-governanceshow}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -450,7 +450,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/show.ts)_
 
-## `celocli governance:showaccount`
+## `celocli governance:showaccount` {#celocli-governanceshowaccount}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -517,7 +517,7 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:showhotfix`
+## `celocli governance:showhotfix` {#celocli-governanceshowhotfix}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -584,7 +584,7 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:upvote`
+## `celocli governance:upvote` {#celocli-governanceupvote}
 
 Upvote a queued governance proposal
 
@@ -614,7 +614,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/upvote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/upvote.ts)_
 
-## `celocli governance:view`
+## `celocli governance:view` {#celocli-governanceview}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -681,7 +681,7 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:viewaccount`
+## `celocli governance:viewaccount` {#celocli-governanceviewaccount}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -748,7 +748,7 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:viewhotfix`
+## `celocli governance:viewhotfix` {#celocli-governanceviewhotfix}
 
 Show information about a governance proposal, hotfix, or account.
 
@@ -815,7 +815,7 @@ EXAMPLES
   show --account 0x47e172f6cfb6c7d01c1574fa3e2be7cc73269d95
 ```
 
-## `celocli governance:vote`
+## `celocli governance:vote` {#celocli-governancevote}
 
 Vote on an approved governance proposal
 
@@ -847,7 +847,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/vote.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/vote.ts)_
 
-## `celocli governance:votePartially`
+## `celocli governance:votePartially` {#celocli-governancevotepartially}
 
 Vote partially on an approved governance proposal
 
@@ -880,7 +880,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/votePartially.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/votePartially.ts)_
 
-## `celocli governance:whitelisthotfix`
+## `celocli governance:whitelisthotfix` {#celocli-governancewhitelisthotfix}
 
 Whitelist a governance hotfix
 
@@ -911,7 +911,7 @@ EXAMPLES
 
 _See code: [src/commands/governance/whitelisthotfix.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/whitelisthotfix.ts)_
 
-## `celocli governance:withdraw`
+## `celocli governance:withdraw` {#celocli-governancewithdraw}
 
 Withdraw refunded governance proposal deposits.
 

@@ -17,7 +17,7 @@ View and manage Validators
 * [`celocli validator:status`](#celocli-validatorstatus)
 * [`celocli validator:update-bls-public-key`](#celocli-validatorupdate-bls-public-key)
 
-## `celocli validator:affiliate ARG1`
+## `celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}
 
 Affiliate a Validator with a Validator Group. This allows the Validator Group to add that Validator as a member. If the Validator is already a member of a Validator Group, affiliating with a different Group will remove the Validator from the first group's members.
 
@@ -53,7 +53,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/affiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/affiliate.ts)_
 
-## `celocli validator:deaffiliate`
+## `celocli validator:deaffiliate` {#celocli-validatordeaffiliate}
 
 Deaffiliate a Validator from a Validator Group, and remove it from the Group if it is also a member.
 
@@ -82,7 +82,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/deaffiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deaffiliate.ts)_
 
-## `celocli validator:deregister`
+## `celocli validator:deregister` {#celocli-validatorderegister}
 
 Deregister a Validator. Approximately 60 days after the validator is no longer part of any group, it will be possible to deregister the validator and start unlocking the CELO. If you wish to deregister your validator, you must first remove it from it's group, such as by deaffiliating it, then wait the required 60 days before running this command.
 
@@ -114,7 +114,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/deregister.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deregister.ts)_
 
-## `celocli validator:downtime-slash`
+## `celocli validator:downtime-slash` {#celocli-validatordowntime-slash}
 
 Downtime slash a validator
 
@@ -159,7 +159,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/downtime-slash.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/downtime-slash.ts)_
 
-## `celocli validator:force-deaffiliate`
+## `celocli validator:force-deaffiliate` {#celocli-validatorforce-deaffiliate}
 
 Force deaffiliate a Validator from a Validator Group, and remove it from the Group if it is also a member.  Used by stake-off admins in order to remove validators from the next epoch's validator set if they are down and consistently unresponsive, in order to preserve the health of the network. This feature will be removed once slashing for downtime is implemented.
 
@@ -193,7 +193,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/force-deaffiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/force-deaffiliate.ts)_
 
-## `celocli validator:list`
+## `celocli validator:list` {#celocli-validatorlist}
 
 List registered Validators, their name (if provided), affiliation, uptime score, and public keys used for validating.
 
@@ -246,7 +246,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/list.ts)_
 
-## `celocli validator:register`
+## `celocli validator:register` {#celocli-validatorregister}
 
 Register a new Validator
 
@@ -280,7 +280,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/register.ts)_
 
-## `celocli validator:requirements`
+## `celocli validator:requirements` {#celocli-validatorrequirements}
 
 List the Locked Gold requirements for registering a Validator. This consists of a value, which is the amount of CELO that needs to be locked in order to register, and a duration, which is the amount of time that CELO must stay locked following the deregistration of the Validator.
 
@@ -309,7 +309,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/requirements.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/requirements.ts)_
 
-## `celocli validator:set-bitmaps`
+## `celocli validator:set-bitmaps` {#celocli-validatorset-bitmaps}
 
 Set validator signature bitmaps for provided intervals
 
@@ -349,7 +349,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/set-bitmaps.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/set-bitmaps.ts)_
 
-## `celocli validator:show ARG1`
+## `celocli validator:show ARG1` {#celocli-validatorshow-arg1}
 
 Show information about a registered Validator.
 
@@ -378,7 +378,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/show.ts)_
 
-## `celocli validator:signed-blocks`
+## `celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}
 
 Display a graph of blocks and whether the given signer's signature is included in each. A green '.' indicates the signature is present in that block, a red '✘' indicates the signature is not present. A yellow '~' indicates the signer is not elected for that block.
 
@@ -438,7 +438,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/signed-blocks.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/signed-blocks.ts)_
 
-## `celocli validator:status`
+## `celocli validator:status` {#celocli-validatorstatus}
 
 Shows the consensus status of a validator. This command will show whether a validator is currently elected, would be elected if an election were to be run right now, and the percentage of blocks signed and number of blocks successfully proposed within a given window.
 
@@ -515,7 +515,7 @@ EXAMPLES
 
 _See code: [src/commands/validator/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/status.ts)_
 
-## `celocli validator:update-bls-public-key`
+## `celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}
 
 Update the BLS public key for a Validator to be used in consensus.
 

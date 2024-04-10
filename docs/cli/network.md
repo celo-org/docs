@@ -8,7 +8,7 @@ View details about the network, like contracts and parameters
 * [`celocli network:parameters`](#celocli-networkparameters)
 * [`celocli network:whitelist`](#celocli-networkwhitelist)
 
-## `celocli network:contracts`
+## `celocli network:contracts` {#celocli-networkcontracts}
 
 Lists Celo core contracts and their addesses.
 
@@ -57,7 +57,7 @@ DESCRIPTION
 
 _See code: [src/commands/network/contracts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/contracts.ts)_
 
-## `celocli network:info`
+## `celocli network:info` {#celocli-networkinfo}
 
 View general network information such as the current block number
 
@@ -82,7 +82,7 @@ DESCRIPTION
 
 _See code: [src/commands/network/info.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/info.ts)_
 
-## `celocli network:parameters`
+## `celocli network:parameters` {#celocli-networkparameters}
 
 View parameters of the network, including but not limited to configuration for the various Celo core smart contracts.
 
@@ -108,7 +108,7 @@ DESCRIPTION
 
 _See code: [src/commands/network/parameters.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/network/parameters.ts)_
 
-## `celocli network:whitelist`
+## `celocli network:whitelist` {#celocli-networkwhitelist}
 
 List the whitelisted fee currencies
 

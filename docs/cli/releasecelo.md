@@ -19,7 +19,7 @@ View and manage ReleaseGold contracts
 * [`celocli releasecelo:transfer-dollars`](#celocli-releasecelotransfer-dollars)
 * [`celocli releasecelo:withdraw`](#celocli-releasecelowithdraw)
 
-## `celocli releasecelo:authorize`
+## `celocli releasecelo:authorize` {#celocli-releaseceloauthorize}
 
 Authorize an alternative key to be used for a given action (Vote, Validate, Attest) on behalf of the ReleaseGold instance contract.
 
@@ -73,7 +73,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/authorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/authorize.ts)_
 
-## `celocli releasecelo:create-account`
+## `celocli releasecelo:create-account` {#celocli-releasecelocreate-account}
 
 Creates a new account for the ReleaseGold instance
 
@@ -102,7 +102,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/create-account.ts)_
 
-## `celocli releasecelo:locked-gold`
+## `celocli releasecelo:locked-gold` {#celocli-releasecelolocked-gold}
 
 Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
 
@@ -146,7 +146,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/locked-gold.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/locked-gold.ts)_
 
-## `celocli releasecelo:refund-and-finalize`
+## `celocli releasecelo:refund-and-finalize` {#celocli-releasecelorefund-and-finalize}
 
 Refund the given contract's balance to the appopriate parties and destroy the contact. Can only be called by the release owner of revocable ReleaseGold instances.
 
@@ -176,7 +176,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/refund-and-finalize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/refund-and-finalize.ts)_
 
-## `celocli releasecelo:revoke`
+## `celocli releasecelo:revoke` {#celocli-releasecelorevoke}
 
 Revoke the given contract instance. Once revoked, any Locked Gold can be unlocked by the release owner. The beneficiary will then be able to withdraw any released Gold that had yet to be withdrawn, and the remainder can be transferred by the release owner to the refund address. Note that not all ReleaseGold instances are revokable.
 
@@ -210,7 +210,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke.ts)_
 
-## `celocli releasecelo:revoke-votes`
+## `celocli releasecelo:revoke-votes` {#celocli-releasecelorevoke-votes}
 
 Revokes `votes` for the given contract's account from the given group's account
 
@@ -248,7 +248,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/revoke-votes.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke-votes.ts)_
 
-## `celocli releasecelo:set-account`
+## `celocli releasecelo:set-account` {#celocli-releaseceloset-account}
 
 Set account properties of the ReleaseGold instance account such as name, data encryption key, and the metadata URL
 
@@ -289,7 +289,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account.ts)_
 
-## `celocli releasecelo:set-account-wallet-address`
+## `celocli releasecelo:set-account-wallet-address` {#celocli-releaseceloset-account-wallet-address}
 
 Set the ReleaseGold contract account's wallet address
 
@@ -325,7 +325,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-account-wallet-address.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account-wallet-address.ts)_
 
-## `celocli releasecelo:set-beneficiary`
+## `celocli releasecelo:set-beneficiary` {#celocli-releaseceloset-beneficiary}
 
 Set the beneficiary of the ReleaseGold contract. This command is gated via a multi-sig, so this is expected to be called twice: once by the contract's beneficiary and once by the contract's releaseOwner. Once both addresses call this command with the same parameters, the tx will execute.
 
@@ -364,7 +364,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-beneficiary.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-beneficiary.ts)_
 
-## `celocli releasecelo:set-can-expire`
+## `celocli releasecelo:set-can-expire` {#celocli-releaseceloset-can-expire}
 
 Set the canExpire flag for the given ReleaseGold contract
 
@@ -399,7 +399,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-can-expire.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-can-expire.ts)_
 
-## `celocli releasecelo:set-liquidity-provision`
+## `celocli releasecelo:set-liquidity-provision` {#celocli-releaseceloset-liquidity-provision}
 
 Set the liquidity provision to true, allowing the beneficiary to withdraw released gold.
 
@@ -431,7 +431,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-liquidity-provision.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-liquidity-provision.ts)_
 
-## `celocli releasecelo:set-max-distribution`
+## `celocli releasecelo:set-max-distribution` {#celocli-releaseceloset-max-distribution}
 
 Set the maximum distribution of celo for the given contract
 
@@ -468,7 +468,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-max-distribution.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-max-distribution.ts)_
 
-## `celocli releasecelo:show`
+## `celocli releasecelo:show` {#celocli-releaseceloshow}
 
 Show info on a ReleaseGold instance contract.
 
@@ -496,7 +496,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/show.ts)_
 
-## `celocli releasecelo:transfer-dollars`
+## `celocli releasecelo:transfer-dollars` {#celocli-releasecelotransfer-dollars}
 
 Transfer Celo Dollars from the given contract address. Dollars may be accrued to the ReleaseGold contract via validator epoch rewards.
 
@@ -531,7 +531,7 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/transfer-dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/transfer-dollars.ts)_
 
-## `celocli releasecelo:withdraw`
+## `celocli releasecelo:withdraw` {#celocli-releasecelowithdraw}
 
 Withdraws `value` released celo to the beneficiary address. Fails if `value` worth of celo has not been released yet.
 
