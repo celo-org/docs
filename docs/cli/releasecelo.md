@@ -19,38 +19,45 @@ View and manage ReleaseGold contracts
 * [`celocli releasecelo:transfer-dollars`](#celocli-releasecelotransfer-dollars)
 * [`celocli releasecelo:withdraw`](#celocli-releasecelowithdraw)
 
-## `celocli releasecelo:authorize`
+## `celocli releasecelo:authorize` {#celocli-releaseceloauthorize}
 
 Authorize an alternative key to be used for a given action (Vote, Validate, Attest) on behalf of the ReleaseGold instance contract.
 
 ```
 USAGE
   $ celocli releasecelo:authorize --contract <value> --role vote|validator|attestation
-    --signer <value> --signature <value> [--globalHelp] [--blsKey <value> --blsPop
-    <value>]
+    --signer <value> --signature <value> [--gasCurrency <value>] [--globalHelp]
+    [--blsKey <value> --blsPop <value>]
 
 FLAGS
-  --blsKey=0x                                            The BLS public key that the
-                                                         validator is using for
-                                                         consensus, should pass proof of
-                                                         possession. 96 bytes.
-  --blsPop=0x                                            The BLS public key
-                                                         proof-of-possession, which
-                                                         consists of a signature on the
-                                                         account address. 48 bytes.
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --role=<option>                                        (required)
-                                                         <options:
-                                                         vote|validator|attestation>
-  --signature=0x                                         (required) Signature (a.k.a.
-                                                         proof-of-possession) of the
-                                                         signer key
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d    (required) The signer key that
-                                                         is to be used for voting
-                                                         through the ReleaseGold
-                                                         instance
+  --blsKey=0x                                               The BLS public key that the
+                                                            validator is using for
+                                                            consensus, should pass proof
+                                                            of possession. 96 bytes.
+  --blsPop=0x                                               The BLS public key
+                                                            proof-of-possession, which
+                                                            consists of a signature on
+                                                            the account address. 48
+                                                            bytes.
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --role=<option>                                           (required)
+                                                            <options:
+                                                            vote|validator|attestation>
+  --signature=0x                                            (required) Signature (a.k.a.
+                                                            proof-of-possession) of the
+                                                            signer key
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) The signer key
+                                                            that is to be used for
+                                                            voting through the
+                                                            ReleaseGold instance
 
 DESCRIPTION
   Authorize an alternative key to be used for a given action (Vote, Validate, Attest) on
@@ -66,18 +73,25 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/authorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/authorize.ts)_
 
-## `celocli releasecelo:create-account`
+## `celocli releasecelo:create-account` {#celocli-releasecelocreate-account}
 
 Creates a new account for the ReleaseGold instance
 
 ```
 USAGE
-  $ celocli releasecelo:create-account --contract <value> [--globalHelp]
+  $ celocli releasecelo:create-account --contract <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Creates a new account for the ReleaseGold instance
@@ -88,27 +102,35 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/create-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/create-account.ts)_
 
-## `celocli releasecelo:locked-gold`
+## `celocli releasecelo:locked-gold` {#celocli-releasecelolocked-gold}
 
 Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided ReleaseGold contract.
 
 ```
 USAGE
   $ celocli releasecelo:locked-gold --contract <value> -a lock|unlock|withdraw --value
-    <value> [--globalHelp] [--yes]
+    <value> [--gasCurrency <value>] [--globalHelp] [--yes]
 
 FLAGS
-  -a, --action=<option>                                      (required) Action to
-                                                             perform on contract's celo
-                                                             <options:
-                                                             lock|unlock|withdraw>
-      --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                             ReleaseGold Contract
-      --globalHelp                                           View all available global
-                                                             flags
-      --value=10000000000000000000000                        (required) Amount of celo
-                                                             to perform `action` with
-      --yes                                                  Answer yes to prompt
+  -a, --action=<option>
+      (required) Action to perform on contract's celo
+      <options: lock|unlock|withdraw>
+
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the ReleaseGold Contract
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --value=10000000000000000000000
+      (required) Amount of celo to perform `action` with
+
+  --yes
+      Answer yes to prompt
 
 DESCRIPTION
   Perform actions [lock, unlock, withdraw] on CELO that has been locked via the provided
@@ -124,18 +146,25 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/locked-gold.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/locked-gold.ts)_
 
-## `celocli releasecelo:refund-and-finalize`
+## `celocli releasecelo:refund-and-finalize` {#celocli-releasecelorefund-and-finalize}
 
 Refund the given contract's balance to the appopriate parties and destroy the contact. Can only be called by the release owner of revocable ReleaseGold instances.
 
 ```
 USAGE
-  $ celocli releasecelo:refund-and-finalize --contract <value> [--globalHelp]
+  $ celocli releasecelo:refund-and-finalize --contract <value> [--gasCurrency <value>]
+  [--globalHelp]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Refund the given contract's balance to the appopriate parties and destroy the contact.
@@ -147,20 +176,27 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/refund-and-finalize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/refund-and-finalize.ts)_
 
-## `celocli releasecelo:revoke`
+## `celocli releasecelo:revoke` {#celocli-releasecelorevoke}
 
 Revoke the given contract instance. Once revoked, any Locked Gold can be unlocked by the release owner. The beneficiary will then be able to withdraw any released Gold that had yet to be withdrawn, and the remainder can be transferred by the release owner to the refund address. Note that not all ReleaseGold instances are revokable.
 
 ```
 USAGE
-  $ celocli releasecelo:revoke --contract <value> [--globalHelp] [--yesreally]
+  $ celocli releasecelo:revoke --contract <value> [--gasCurrency <value>] [--globalHelp]
+    [--yesreally]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --yesreally                                            Override prompt to set
-                                                         liquidity (be careful!)
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yesreally                                               Override prompt to set
+                                                            liquidity (be careful!)
 
 DESCRIPTION
   Revoke the given contract instance. Once revoked, any Locked Gold can be unlocked by
@@ -174,25 +210,32 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke.ts)_
 
-## `celocli releasecelo:revoke-votes`
+## `celocli releasecelo:revoke-votes` {#celocli-releasecelorevoke-votes}
 
 Revokes `votes` for the given contract's account from the given group's account
 
 ```
 USAGE
-  $ celocli releasecelo:revoke-votes --contract <value> [--globalHelp] [--group <value> |
-    --allGroups] [--votes <value> | --allVotes | ]
+  $ celocli releasecelo:revoke-votes --contract <value> [--gasCurrency <value>] [--globalHelp]
+    [--group <value> | --allGroups] [--votes <value> | --allVotes | ]
 
 FLAGS
-  --allGroups                                            Revoke all votes from all
-                                                         groups
-  --allVotes                                             Revoke all votes
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --group=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     Address of the group to revoke
-                                                         votes from
-  --votes=<value>                                        The number of votes to revoke
+  --allGroups                                               Revoke all votes from all
+                                                            groups
+  --allVotes                                                Revoke all votes
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --group=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d        Address of the group to
+                                                            revoke votes from
+  --votes=<value>                                           The number of votes to
+                                                            revoke
 
 DESCRIPTION
   Revokes `votes` for the given contract's account from the given group's account
@@ -205,26 +248,32 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/revoke-votes.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/revoke-votes.ts)_
 
-## `celocli releasecelo:set-account`
+## `celocli releasecelo:set-account` {#celocli-releaseceloset-account}
 
 Set account properties of the ReleaseGold instance account such as name, data encryption key, and the metadata URL
 
 ```
 USAGE
   $ celocli releasecelo:set-account --contract <value> -p name|dataEncryptionKey|metaURL -v
-    <value> [--globalHelp]
+    <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  -p, --property=<option>                                    (required) Property type to
-                                                             set
-                                                             <options: name|dataEncrypti
-                                                             onKey|metaURL>
-  -v, --value=<value>                                        (required) Property value
-                                                             to set
-      --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                             ReleaseGold Contract
-      --globalHelp                                           View all available global
-                                                             flags
+  -p, --property=<option>
+      (required) Property type to set
+      <options: name|dataEncryptionKey|metaURL>
+
+  -v, --value=<value>
+      (required) Property value to set
+
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the ReleaseGold Contract
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
 
 DESCRIPTION
   Set account properties of the ReleaseGold instance account such as name, data
@@ -235,23 +284,27 @@ EXAMPLES
 
   set-account --contract 0x5719118266779B58D0f9519383A4A27aA7b829E5 --property dataEncryptionKey --value 0x041bb96e35f9f4b71ca8de561fff55a249ddf9d13ab582bdd09a09e75da68ae4cd0ab7038030f41b237498b4d76387ae878dc8d98fd6f6db2c15362d1a3bf11216
 
-  set-account --contract 0x5719118266779B58D0f9519383A4A27aA7b829E5 --property metaURL --value www.test.com
+  set-account --contract 0x5719118266779B58D0f9519383A4A27aA7b829E5 --property metaURL --value www.example.com
 ```
 
 _See code: [src/commands/releasecelo/set-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account.ts)_
 
-## `celocli releasecelo:set-account-wallet-address`
+## `celocli releasecelo:set-account-wallet-address` {#celocli-releaseceloset-account-wallet-address}
 
 Set the ReleaseGold contract account's wallet address
 
 ```
 USAGE
-  $ celocli releasecelo:set-account-wallet-address --contract <value> --walletAddress <value> [--globalHelp]
-    [--pop <value>]
+  $ celocli releasecelo:set-account-wallet-address --contract <value> --walletAddress <value> [--gasCurrency
+    <value>] [--globalHelp] [--pop <value>]
 
 FLAGS
   --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the ReleaseGold Contract
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
   --globalHelp
       View all available global flags
@@ -272,14 +325,14 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-account-wallet-address.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-account-wallet-address.ts)_
 
-## `celocli releasecelo:set-beneficiary`
+## `celocli releasecelo:set-beneficiary` {#celocli-releaseceloset-beneficiary}
 
 Set the beneficiary of the ReleaseGold contract. This command is gated via a multi-sig, so this is expected to be called twice: once by the contract's beneficiary and once by the contract's releaseOwner. Once both addresses call this command with the same parameters, the tx will execute.
 
 ```
 USAGE
   $ celocli releasecelo:set-beneficiary --contract <value> --from <value> --beneficiary <value>
-    [--globalHelp] [--yesreally]
+    [--gasCurrency <value>] [--globalHelp] [--yesreally]
 
 FLAGS
   --beneficiary=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
@@ -289,6 +342,11 @@ FLAGS
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address to submit
                                                             multisig transaction from
                                                             (one of the owners)
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
   --globalHelp                                              View all available global
                                                             flags
   --yesreally                                               Override prompt to set new
@@ -306,24 +364,31 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-beneficiary.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-beneficiary.ts)_
 
-## `celocli releasecelo:set-can-expire`
+## `celocli releasecelo:set-can-expire` {#celocli-releaseceloset-can-expire}
 
 Set the canExpire flag for the given ReleaseGold contract
 
 ```
 USAGE
   $ celocli releasecelo:set-can-expire --contract <value> --value true|false|True|False
-    [--globalHelp] [--yesreally]
+    [--gasCurrency <value>] [--globalHelp] [--yesreally]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --value=<option>                                       (required) canExpire value
-                                                         <options:
-                                                         true|false|True|False>
-  --yesreally                                            Override prompt to set
-                                                         expiration flag (be careful!)
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=<option>                                          (required) canExpire value
+                                                            <options:
+                                                            true|false|True|False>
+  --yesreally                                               Override prompt to set
+                                                            expiration flag (be
+                                                            careful!)
 
 DESCRIPTION
   Set the canExpire flag for the given ReleaseGold contract
@@ -334,21 +399,27 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-can-expire.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-can-expire.ts)_
 
-## `celocli releasecelo:set-liquidity-provision`
+## `celocli releasecelo:set-liquidity-provision` {#celocli-releaseceloset-liquidity-provision}
 
 Set the liquidity provision to true, allowing the beneficiary to withdraw released gold.
 
 ```
 USAGE
-  $ celocli releasecelo:set-liquidity-provision --contract <value> [--globalHelp]
-  [--yesreally]
+  $ celocli releasecelo:set-liquidity-provision --contract <value> [--gasCurrency <value>] [--globalHelp]
+    [--yesreally]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --yesreally                                            Override prompt to set
-                                                         liquidity (be careful!)
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yesreally                                               Override prompt to set
+                                                            liquidity (be careful!)
 
 DESCRIPTION
   Set the liquidity provision to true, allowing the beneficiary to withdraw released
@@ -360,26 +431,33 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-liquidity-provision.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-liquidity-provision.ts)_
 
-## `celocli releasecelo:set-max-distribution`
+## `celocli releasecelo:set-max-distribution` {#celocli-releaseceloset-max-distribution}
 
 Set the maximum distribution of celo for the given contract
 
 ```
 USAGE
   $ celocli releasecelo:set-max-distribution --contract <value> --distributionRatio <value>
-    [--globalHelp] [--yesreally]
+    [--gasCurrency <value>] [--globalHelp] [--yesreally]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --distributionRatio=<value>                            (required) Amount in range [0,
-                                                         1000] (3 significant figures)
-                                                         indicating % of total balance
-                                                         available for distribution.
-  --globalHelp                                           View all available global flags
-  --yesreally                                            Override prompt to set new
-                                                         maximum distribution (be
-                                                         careful!)
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --distributionRatio=<value>                               (required) Amount in range
+                                                            [0, 1000] (3 significant
+                                                            figures) indicating % of
+                                                            total balance available for
+                                                            distribution.
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --yesreally                                               Override prompt to set new
+                                                            maximum distribution (be
+                                                            careful!)
 
 DESCRIPTION
   Set the maximum distribution of celo for the given contract
@@ -390,18 +468,24 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/set-max-distribution.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/set-max-distribution.ts)_
 
-## `celocli releasecelo:show`
+## `celocli releasecelo:show` {#celocli-releaseceloshow}
 
 Show info on a ReleaseGold instance contract.
 
 ```
 USAGE
-  $ celocli releasecelo:show --contract <value> [--globalHelp]
+  $ celocli releasecelo:show --contract <value> [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
 DESCRIPTION
   Show info on a ReleaseGold instance contract.
@@ -412,24 +496,30 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/show.ts)_
 
-## `celocli releasecelo:transfer-dollars`
+## `celocli releasecelo:transfer-dollars` {#celocli-releasecelotransfer-dollars}
 
 Transfer Celo Dollars from the given contract address. Dollars may be accrued to the ReleaseGold contract via validator epoch rewards.
 
 ```
 USAGE
   $ celocli releasecelo:transfer-dollars --contract <value> --to <value> --value <value>
-    [--globalHelp]
+    [--gasCurrency <value>] [--globalHelp]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d        (required) Address of the
-                                                         recipient of Celo Dollars
-                                                         transfer
-  --value=10000000000000000000000                        (required) Value (in Wei) of
-                                                         Celo Dollars to transfer
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d           (required) Address of the
+                                                            recipient of Celo Dollars
+                                                            transfer
+  --value=10000000000000000000000                           (required) Value (in Wei) of
+                                                            Celo Dollars to transfer
 
 DESCRIPTION
   Transfer Celo Dollars from the given contract address. Dollars may be accrued to the
@@ -441,20 +531,28 @@ EXAMPLES
 
 _See code: [src/commands/releasecelo/transfer-dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/releasecelo/transfer-dollars.ts)_
 
-## `celocli releasecelo:withdraw`
+## `celocli releasecelo:withdraw` {#celocli-releasecelowithdraw}
 
 Withdraws `value` released celo to the beneficiary address. Fails if `value` worth of celo has not been released yet.
 
 ```
 USAGE
-  $ celocli releasecelo:withdraw --contract <value> --value <value> [--globalHelp]
+  $ celocli releasecelo:withdraw --contract <value> --value <value> [--gasCurrency
+    <value>] [--globalHelp]
 
 FLAGS
-  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Address of the
-                                                         ReleaseGold Contract
-  --globalHelp                                           View all available global flags
-  --value=10000000000000000000000                        (required) Amount of released
-                                                         celo (in wei) to withdraw
+  --contract=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d     (required) Address of the
+                                                            ReleaseGold Contract
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=10000000000000000000000                           (required) Amount of
+                                                            released celo (in wei) to
+                                                            withdraw
 
 DESCRIPTION
   Withdraws `value` released celo to the beneficiary address. Fails if `value` worth of
