@@ -27,6 +27,7 @@ celocli network:contracts --node https://forno.celo.org
 | Accounts              | 0x7d21685C17607338b313a7174bAb6620baD0aaB7 |
 | Attestations          | 0xdC553892cdeeeD9f575aa0FBA099e5847fd88D20 |
 | FederatedAttestations | 0x0aD5b1d0C25ecF6266Dd951403723B2687d6aff2 |
+| OdisPayments          | 0xae6b29f31b96e61dddc792f45fda4e4f0356d0cb |
 | BlockchainParameters  | 0x6E10a8864C65434A721d82e424d727326F9d5Bfa |
 | DoubleSigningSlasher  | 0x50C100baCDe7E2b546371EB0Be1eACcf0A6772ec |
 | DowntimeSlasher       | 0x71CAc3B31c138F3327C6cA14f9a1c8d752463fDd |
@@ -62,6 +63,7 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | Accounts              | 0xed7f51A34B4e71fbE69B3091FcF879cD14bD73A9 |
 | Attestations          | 0xAD5E5722427d79DFf28a4Ab30249729d1F8B4cc0 |
 | FederatedAttestations | 0x70F9314aF173c246669cFb0EEe79F9Cfd9C34ee3 |
+| OdisPayments          | 0x645170cdB6B5c1bc80847bb728dBa56C50a20a49 |
 | BlockchainParameters  | 0xE5aCbb07b4Eed078e39D50F66bF0c80cF1b93abe |
 | DoubleSigningSlasher  | 0x88A4c203C488E8277f583942672E1aF77e2B5040 |
 | DowntimeSlasher       | 0xf2224c1d7b447D9A43a98CBD82FCCC0eF1c11CC5 |

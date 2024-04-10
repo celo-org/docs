@@ -937,7 +937,7 @@ const sidebars = {
         {
           type: "link",
           label: "Social Connect",
-          href: "https://github.com/celo-org/identity",
+          href: "https://github.com/celo-org/Social-Connect",
         },
         "protocol/identity/metadata",
         "protocol/identity/smart-contract-accounts",
@@ -981,81 +981,6 @@ const sidebars = {
               ],
             },
           ],
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Holders",
-      items: [
-        { type: "doc", label: "Overview", id: "holder/index" },
-        {
-          type: "category",
-          label: "Manage",
-          items: [
-            {
-              type: "doc",
-              label: "Self-Custody",
-              id: "holder/manage/self-custody",
-            },
-            {
-              type: "doc",
-              label: "Release Gold",
-              id: "holder/manage/release-gold",
-            },
-            {
-              type: "doc",
-              label: "Exchange Assets",
-              id: "holder/manage/exchange",
-            },
-            {
-              type: "doc",
-              label: "Asset Management",
-              id: "holder/manage/asset",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Voting",
-          items: [
-            {
-              type: "doc",
-              label: "Validator Elections",
-              id: "holder/vote/validator",
-            },
-            {
-              type: "doc",
-              label: "Voting on Governance",
-              id: "holder/vote/governance",
-            },
-            {
-              type: "doc",
-              label: "Governable Parameters",
-              id: "holder/vote/governance-parameters",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Recovery",
-          items: [
-            {
-              type: "doc",
-              label: "Recover from ETH Address",
-              id: "holder/recover/from-eth-address",
-            },
-            {
-              type: "doc",
-              label: "Recover from Celo Address",
-              id: "holder/recover/from-celo-address",
-            },
-          ],
-        },
-        {
-          type: "link",
-          label: "Exchanges",
-          href: "https://coinmarketcap.com/currencies/celo/markets/",
         },
       ],
     },
@@ -1119,6 +1044,81 @@ const sidebars = {
   ],
 
   // ######################################
+  // Holder
+  // ######################################
+  holderSiderbar: [
+    { type: "doc", label: "Overview", id: "holder/index" },
+    {
+      type: "category",
+      label: "Manage",
+      items: [
+        {
+          type: "doc",
+          label: "Self-Custody",
+          id: "holder/manage/self-custody",
+        },
+        {
+          type: "doc",
+          label: "Release Gold",
+          id: "holder/manage/release-gold",
+        },
+        {
+          type: "doc",
+          label: "Exchange Assets",
+          id: "holder/manage/exchange",
+        },
+        {
+          type: "doc",
+          label: "Asset Management",
+          id: "holder/manage/asset",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Voting",
+      items: [
+        {
+          type: "doc",
+          label: "Validator Elections",
+          id: "holder/vote/validator",
+        },
+        {
+          type: "doc",
+          label: "Voting on Governance",
+          id: "holder/vote/governance",
+        },
+        {
+          type: "doc",
+          label: "Governable Parameters",
+          id: "holder/vote/governance-parameters",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Recovery",
+      items: [
+        {
+          type: "doc",
+          label: "Recover from ETH Address",
+          id: "holder/recover/from-eth-address",
+        },
+        {
+          type: "doc",
+          label: "Recover from Celo Address",
+          id: "holder/recover/from-celo-address",
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Exchanges",
+      href: "https://coinmarketcap.com/currencies/celo/markets/",
+    },
+  ],
+
+  // ######################################
   // CLI
   // ######################################
 
@@ -1146,6 +1146,7 @@ const sidebars = {
       label: "LockedGold",
       id: "cli/lockedgold",
     },
+    { type: "doc", label: "Release CELO", id: "cli/releasecelo" },
     { type: "doc", label: "Multisig", id: "cli/multisig" },
     { type: "doc", label: "Network", id: "cli/network" },
     { type: "doc", label: "Node", id: "cli/node" },
@@ -1155,6 +1156,7 @@ const sidebars = {
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
     { type: "doc", label: "Validator", id: "cli/validator" },
+    { type: "doc", label: "Utilities", id: "cli/utils" },
     {
       type: "doc",
       label: "ValidatorGroup",
