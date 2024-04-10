@@ -31,8 +31,7 @@ Make your dapp stand out by reporting it on these platforms:
 
 ## Website & Documentation
 
-- [ ] Get your app featured on [Docs.Celo.Org](link)
-- [ ] Request your app to be featured on [celoecossystem.com](link) [compass]
+- [ ] Get your app featured on [docs.celo.org](https://github.com/celo-org/docs/blob/main/src/data/users.tsx)
 
 ### If your dapp has smart contracts
 

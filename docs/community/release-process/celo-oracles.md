@@ -15,7 +15,7 @@ Development builds should be identified with a `-dev` suffix, and only one commi
 
 ## Documentation
 
-Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/docs) repo and is hosted on [docs.celo.org](/validator/attestation).
+Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/docs) repo and is hosted on [docs.celo.org](/).
 
 ## Identifying releases
 

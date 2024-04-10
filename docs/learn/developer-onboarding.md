@@ -43,7 +43,6 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 ## Deploy a dApp with Celo
 
 - [Deploy with Remix](/developer/deploy/remix)
-- [Deploy with Truffle](/developer/deploy/truffle)
 - [Deploy with Hardhat](/developer/deploy/hardhat)
 
 ## Celo Developer Pathway
@@ -62,11 +61,6 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 - [Sending Celo](/developer/walkthrough/hello-celo)
 - [Deploy a Contract (local node)](/developer/walkthrough/hello-contracts)
 - [Deploy and Interact with Contracts (Remotely)](/developer/walkthrough/hello-contract-remote-node)
-- [Use onchain randomness in your contract](/blog/2022/01/07/on-chain-randomness)
-
-## Create a Mobile friendly dApp with Celo
-
-- [Valora + Wallet Connect](/blog/2022/01/08/valora-wc-v1)
 
 ## Create a Web dApp with Celo
 

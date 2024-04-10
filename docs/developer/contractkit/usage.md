@@ -2,10 +2,6 @@
 title: Using the Kit
 ---
 
-The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](/blog/developer-guide/start/hellocontracts)
-
----
-
 ## Setting Default Tx Options
 
 `kit` allows you to set default transaction options:

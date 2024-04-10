@@ -19,7 +19,7 @@ This guide assumes:
 
 - You have been informed by cLabs that the `ReleaseGold` instance corresponding to your address has been deployed.
 
-- You have your private key held on a [Ledger Nano S or Ledger Nano X](/wallet/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#Using-a-single-Ledger).
+- You have your private key held on a [Ledger Nano S or Ledger Nano X](/wallet/ledger/setup) device, and you have a second such device available for managing a voting key. If you only have a single Ledger available, see [below](#using-a-single-ledger).
 
 :::warning
 
@@ -65,7 +65,7 @@ The remainder of this guide assumes you are using the first address available on
 
 If you only have a single Ledger, and are comfortable losing the security advantage of keeping the beneficiary key offline when voting, you can configure a second address on the same Ledger as your voting key.
 
-First, read [these instructions](/wallet/ledger/setup) carefully. Then, whereever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#Support).
+First, read [these instructions](/wallet/ledger/setup) carefully. Then, whereever you see instructions to connect your Vote Signer Ledger, for each command line containing `--useLedger` also add `--ledgerCustomAddresses "[1]"`. If in doubt, [ask for help](#support).
 
 ## Deployment
 

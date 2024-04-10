@@ -70,7 +70,7 @@ ganache-cli --port 7545
 
 Ganache will return a list of available accounts, private keys, and additional wallet details that you can access on port 7545.
 
-Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer/setup/development-chain#1-use-the-celo-devchain-npm-package).
+Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer/setup/development-chain#use-the-celo-devchain-npm-package).
 
 ![ganache terminal output](/img/doc-images/testnet-wallet/image4.png)
 
