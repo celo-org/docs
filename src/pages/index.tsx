@@ -327,7 +327,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.whatIs.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/WhatIsCelo_White.svg",
                 "/general",
               )}
 
@@ -338,7 +338,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.architecture.description",
                 }),
-                "img/homepage/icons/Archi_White.svg",
+                "img/homepage/icons/Architechture_White.svg",
                 "/general/architecture",
               )}
 
@@ -349,7 +349,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.understanding.whitepapers.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/WhitePapers_white.svg",
                 "/general/whitepapers",
               )}
 
@@ -376,7 +376,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.contractKit.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/ContractKit_White.svg",
                 "/developer/contractkit",
               )}
 
@@ -396,7 +396,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.rainbowKitCelo.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/Rainbow_White.svg",
                 "/developer/rainbowkit-celo",
               )}
 
@@ -405,7 +405,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.developer.celoCli.description",
                 }),
-                "img/homepage/icons/CeloCLI_White.svg",
+                "img/homepage/icons/CLI_White.svg",
                 "/cli",
               )}
             </div>
@@ -419,14 +419,14 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.build.celoComposer.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/CeloComposer_White.svg",
                 "developer/deploy",
               )}
 
               {sectionFourCard(
                 translate({ id: "home.section4.build.migrate.title" }),
                 translate({ id: "home.section4.build.migrate.description" }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/Migration_White.svg",
                 "/developer/migrate/from-ethereum",
               )}
 
@@ -442,7 +442,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.build.architecture.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/NewToWeb3_White.svg",
                 "/general/web2-to-web3",
               )}
             </div>
@@ -454,7 +454,7 @@ export default function HomePage(): JSX.Element {
               {sectionFourCard(
                 translate({ id: "home.section4.validators.run.title" }),
                 translate({ id: "home.section4.validators.run.description" }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/Validator_White.svg",
                 "/validator",
               )}
 
@@ -470,7 +470,7 @@ export default function HomePage(): JSX.Element {
                 translate({
                   id: "home.section4.validators.attestation.description",
                 }),
-                "img/doc-images/logos/bullet.svg",
+                "img/homepage/icons/Attestation_White.svg",
                 "/validator/attestation",
               )}
             </div>
