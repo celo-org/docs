@@ -142,10 +142,6 @@ Celo adds specific functions around consensus:
 ```
 -->
 
-## Monitoring Attestation Service
-
-It is also important to [monitor Attestation Service](/validator/attestation#monitoring) and the full node that it depends on.
-
 ## Community Moniting Tools
 
 ### [Vladiator Labs Signature & Attestation Viewer (Celo Vido)](https://vido.vladiatorlabs.io/block-map)

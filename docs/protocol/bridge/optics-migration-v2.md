@@ -133,7 +133,7 @@ To find a list of tokens supported by Optics v2, you may visit Optics v2, [https
 
 ---
 
-# Option 3
+## Option 3
 
 ### 3a - Bridge Affected Tokens Out and Back
 

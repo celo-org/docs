@@ -464,15 +464,6 @@ export default function HomePage(): JSX.Element {
                 "img/homepage/icons/Node_White.svg",
                 "/validator/security",
               )}
-
-              {sectionFourCard(
-                translate({ id: "home.section4.validators.attestation.title" }),
-                translate({
-                  id: "home.section4.validators.attestation.description",
-                }),
-                "img/homepage/icons/Attestation_White.svg",
-                "/validator/attestation",
-              )}
             </div>
           </div>
         </section>

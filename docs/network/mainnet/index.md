@@ -17,7 +17,7 @@ Celo Mainnet was previously known as the Release Candidate 1 network.
 
 :::tip
 
-Please refer to [Key Concepts](/overview#background-and-key-concepts) for background on blockchains and an explanation of terms used in the section.
+Please refer to [Key Concepts](/overview#blockchain) for background on blockchains and an explanation of terms used in the section.
 
 :::
 

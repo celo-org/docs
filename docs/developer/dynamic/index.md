@@ -5,9 +5,9 @@ description: Overview of Dynamic
 
 # Using Dynamic
 
-[Dynamic](www.dynamic.xyz) is a powerful web3 auth developer platform with built-in support for Celo. It lets you integrate multiple wallets such as **Valora, Celo Wallet**, Coinbase Wallet, Metamask, and more into your app or website, handles network switching, multi-wallet linking and more.
+[Dynamic](https://www.dynamic.xyz/) is a powerful web3 auth developer platform with built-in support for Celo. It lets you integrate multiple wallets such as **Valora, Celo Wallet**, Coinbase Wallet, Metamask, and more into your app or website, handles network switching, multi-wallet linking and more.
 
-Dynamic comes with Celo built-in. You can play around with a live demo of Dynamic [here](demo.dynamic.xyz) and see a full video walkthrough [here](https://www.dynamic.xyz/product-walkthrough). In this tutorial, we'll go through how to set up Dynamic with Celo.
+Dynamic comes with Celo built-in. You can play around with a live demo of Dynamic [here](https://demo.dynamic.xyz/) and see a full video walkthrough [here](https://www.dynamic.xyz/product-walkthrough). In this tutorial, we'll go through how to set up Dynamic with Celo.
 
 You can see a CodeSandbox of the example below [here](https://shv1y7.csb.app/) (configured to Celo).
 
@@ -70,6 +70,6 @@ Now that you set up Dynamic with **Celo**, there are many additional things you 
 
 - **Log in with your wallet, and see data in Dynamic's developer dashboard** - Now that your widget is set up locally, try to log in with a wallet. As soon as you do, head over to the Dynamic developer dashboard and click on user management and analytics. You'll be able to see your user show up!
 - **Customize your SDK design** - There are many ways to customize the Dynamic modal to fit your needs (you can explore them in the SDK configuration section), but to start, we suggest setting a light/dark mode and a primary color for the modal, which you can do in the design section of your developer dashboard.
-- **Explore how to use the Dynamic SDK** - After your users connect their wallets, you'll want to interact with them for various reasons. You can read more about the SDK in [Dynamic's docs](docs.dynamic.xyz).
+- **Explore how to use the Dynamic SDK** - After your users connect their wallets, you'll want to interact with them for various reasons. You can read more about the SDK in [Dynamic's docs](https://docs.dynamic.xyz/introduction/welcome).
 
-For support, you can also join [Dynamic's Slack Community](www.dynamic.xyz/slack)
+For support, you can also join [Dynamic's Slack Community](https://dynamic.xyz/slack)

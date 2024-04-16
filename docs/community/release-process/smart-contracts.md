@@ -106,7 +106,7 @@ Specifically, it compiles the latest and candidate releases and compares smart c
 2. ABI, to detect major and minor version changes
 3. Bytecode, to detect patch version changes
 
-Finally, it checks release candidate smart contract version numbers and requires that they have been updated appropriately since the latest release by following semantic versioning as defined in the [Versioning section](#Versioning) above.
+Finally, it checks release candidate smart contract version numbers and requires that they have been updated appropriately since the latest release by following semantic versioning as defined in the [Versioning section](#versioning) above.
 
 The following exceptions apply:
 

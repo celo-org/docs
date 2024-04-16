@@ -111,7 +111,7 @@ forge create --rpc-url celo-alfajores --private-key <your_private_key> src/Count
 :::info
 Notice the contract name after `:`, this is because a single solidity file can have multiple contracts.
 
-It is recommended to use `--verify` flag so that the contract gets verified right after deployment, this requires [etherscan configuration](/docs/developer/verify/foundry.md) in the `foundry.toml` file.
+It is recommended to use `--verify` flag so that the contract gets verified right after deployment, this requires [etherscan configuration](../verify/foundry.md) in the `foundry.toml` file.
 :::
 
 On successful deployment, you should a following output!

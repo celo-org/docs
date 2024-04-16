@@ -21,7 +21,7 @@ The [Baklava Testnet](/network/baklava/) is focused on building operational expe
 
 :::tip
 
-Please refer to [Key Concepts](/overview#background-and-key-concepts) for background on blockchains and an explanation of terms used in the section.
+Please refer to [Key Concepts](/overview#blockchain) for background on blockchains and an explanation of terms used in the section.
 
 :::
 
@@ -32,9 +32,3 @@ The Alfajores Testnet is designed for testing and experimentation by developers.
 :::
 
 Please help the community to improve Celo by asking questions on the [Forum](https://forum.celo.org/c/alfajores-testnet)!
-
-:::info
-
-Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaimer](/important-information/alfajores-testnet-disclaimer).
-
-:::
