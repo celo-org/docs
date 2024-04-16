@@ -63,10 +63,6 @@ When transferring assets to an account, wallets should check the receiving accou
 
 cUSD (aka StableToken) adds an additional method to the ERC20 interface called `transferWithComment` which allows senders to specify an additional comment that Celo wallets should support. Additionally, comments should be encrypted to the `dataEncryptionKey` when applicable.
 
-### Dappkit
-
-The Celo ecosystem relies on a diverse set of applications to be built so that users can interact with them. To ensure interoperability and avoid fragmentation due to proprietary interfaces, wallets should be implementing the deeplink-based dappkit to have a consistent interface for dapp developers to implement.
-
 ## Validator Group Explorers
 
 [Validator Group Explorers](/holder/vote/validator#validator-explorers) are critical to Celo's Proof of Stake system. Explorers will consider using the following standards to provide a minimum experience across all explorers.

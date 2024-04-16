@@ -518,12 +518,6 @@
 /developer-guide/integrations/listings /integration/listings
 /developer-resources/forno/inde /network/node/forno
 /developer-guide/forno /network/node/forno
-/developer-resources/dappkit/index /developer/dappkit/
-/developer-guide/dappkit /developer/dappkit/
-/developer-resources/dappkit/setup /developer/dappkit/setup
-/developer-guide/dappkit/setup /developer/dappkit/setup
-/developer-resources/dappkit/usage /developer/dappkit/usage
-/developer-guide/dappkit/usage /developer/dappkit/usage
 /developer-resources/contractkit/contracts-wrappers-registry /developer/contractkit/contracts-wrappers-registry",
 /developer-guide/contractkit/contracts-wrappers-registry /developer/contractkit/contracts-wrappers-registry
 /developer-resources/contractkit/data-encryption-key /developer/contractkit/data-encryption-key",
@@ -609,7 +603,6 @@
 /getting-started/wallets/using-metamask-with-celo /wallet/metamask/setup
 /celo-sdk/contractkit /developer/contractkit
 /getting-started/using-the-mobile-wallet /wallet/mobile-wallet/setup
-/celo-sdk/dappkit /developer/dappkit/usage
 /developer-resources/walkthroughs/valora-wc-v1 /blog/tutorials/celo-valora-and-walletconnect-v1
 /celo-codebase/protocol/stability#stability-of-celos-stablecoin-protocol /protocol/stability
 /getting-started /developer
@@ -648,7 +641,6 @@
 /celo-codebase/protocol/consensus /protocol/consensus
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/locked-gold-rewards#introduction-to-locked-celo-rewards /protocol/pos/epoch-rewards-locked-gold
 /es/learn/evm-compatible-tooling /developer/evm-tools
-/v/master/developer-guide/overview/introduction/dappkit /developer
 /v/master/getting-started/baklava-testnet /network
 /celo-codebase/protocol/proof-of-stake/epoch-rewards/validator-rewards /protocol/pos/epoch-rewards-validator
 /developer-resources/use-contractkit /developer/react-celo
@@ -671,7 +663,6 @@
 /why-celo#mobile /general
 /celo-sdk/celo-dapp-gallery /showcase
 /celo-codebase/protocol/odis/domains /protocol/identity/odis
-/developer-guide/overview/introduction/dappkit /developer
 /why-celo#open /general
 /celo-owner-guide/quick-start#vote-for-a-validator-group /holder/manage/self-custody#vote-for-a-validator-group
 /celo-holder-guide/owners /holder
