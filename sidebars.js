@@ -470,6 +470,11 @@ const sidebars = {
           label: "Code Library",
           id: "developer/build-on-minipay/code-library",
         },
+        {
+          type: "doc",
+          label: "MiniPay Deeplinks",
+          id: "developer/build-on-minipay/deeplinks",
+        },
       ],
     },
     {
