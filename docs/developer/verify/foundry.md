@@ -9,7 +9,7 @@ Verifying a smart contract allows developers to review your code from within the
 
 ## Prerequisites
 
-[Project must be setup using Foundry](/docs/developer/deploy/foundry.md)
+[Project must be setup using Foundry](../deploy/foundry.md)
 
 ## Add Celo configuration in `foundry.toml`
 

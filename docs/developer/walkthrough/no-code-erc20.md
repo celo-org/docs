@@ -62,13 +62,11 @@ When you're ready to deploy your token to the Celo Mainnet make sure to change t
 
 Note: When deploying to the Mainnet you will need to use real Celo to pay the gas fee (as opposed to using the faucet on the testnet). As of December 2021 this cost is less than $0.01 US. You can learn how to [get Celo here](https://celo.org/buy).
 
-You can read about how to add your new token to the Celo Wallet [here](/blog/add-token-celo-wallet).
-
 ## Verify
 
 If you are unable to view your token on the block explorer, you may need to Verify it first. If you are able to see your token, you may skip this section.
 
-Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer/deploy/remix#verify-the-smart-contract).
+Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer/verify/remix).
 
 You can find my example contract [here](https://alfajores-blockscout.celo-testnet.org/address/0x97d550A2540F902F4501e21A6c09f12B69173261/transactions).
 

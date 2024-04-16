@@ -31,7 +31,7 @@ const web3 = new Web3("https://forno.celo.org");
 const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
-Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno. The [Hello Celo](/blog/developer-guide/start/hellocelo) guide shows you how to connect to the Alfajores testnet with Forno and use it to sign and send transactions on the network.
+Forno is a public node, so to send transactions from a Forno connection you will have to sign transactions with a private key before sending them to Forno.
 
 ## Forno networks
 

@@ -24,8 +24,7 @@ By default react-celo is styled so that you can drop it into your application an
 
 - [Installation](#install)
 - [Supported Wallets](#supported-wallets)
-- [Usage](#usage)
-- [Notes](#notes)
+- [Usage](#basic-usage)
 - [Support](#support)
 - [Guides](#guides)
 

@@ -17,7 +17,7 @@ Celo is a decentralized community of creators -- developers, designers, dreamers
 
 :::tip
 
-Not ready to become a Celo Contributor? [Learn more about Celo](../../docs/welcome.md).
+Not ready to become a Celo Contributor? [Learn more about Celo](../welcome.md).
 
 :::
 
