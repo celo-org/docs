@@ -181,17 +181,7 @@ export default function HomePage(): JSX.Element {
               />
               <span className="text-black dark:text-white">Hardhat</span>
             </Link>
-            <a
-              href="/developer/deploy/truffle"
-              className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
-            >
-              <img
-                src="img/doc-images/logos/truffle-logo.webp"
-                alt="Infura Logo"
-                className="w-10 h-10 rounded-full"
-              />
-              <span className="text-black dark:text-white">Truffle</span>
-            </a>
+
             <a
               href="https://www.lavanet.xyz/"
               className="hover:no-underline flex-1 p-4 items-center space-x-4 flex flex-row flex-no-wrap dark:bg-fig bg-gypsum font-semibold"
