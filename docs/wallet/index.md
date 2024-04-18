@@ -93,6 +93,11 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [dovewallet.com](https://dovewallet.com)
 - Platforms: Web
+  
+### Wigwam Wallet
+
+- [wigwam.app](https://wigwam.app)
+- Platforms: Browser, Web
 
 ### Pesabase
 
