@@ -46,7 +46,7 @@ Now we can set the group's name:
 
 ```bash
 # On your local machine
-celocli releasegold:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property name --value Example.com
+celocli releasecelo:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property name --value Example.com
 ```
 
 Now we can generate a claim for the domain associated with this name `example.com`:
@@ -94,8 +94,8 @@ Now we can register these URLs on each account:
 
 ```bash
 # On your local machine
-celocli releasegold:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property metaURL --value <VALIDATOR_GROUP_METADATA_URL>
-celocli releasegold:set-account --contract $CELO_VALIDATOR_RG_ADDRESS --property metaURL --value <VALIDATOR_METADATA_URL>
+celocli releasecelo:set-account --contract $CELO_VALIDATOR_GROUP_RG_ADDRESS --property metaURL --value <VALIDATOR_GROUP_METADATA_URL>
+celocli releasecelo:set-account --contract $CELO_VALIDATOR_RG_ADDRESS --property metaURL --value <VALIDATOR_METADATA_URL>
 ```
 
 If everything goes well users should be able to see your claims by running:

@@ -46,7 +46,7 @@ celocli account:authorize --from $VALIDATOR_ACCOUNT_ADDRESS --role validator --s
 
 ```bash
 # From a node with access to the beneficiary key of VALIDATOR_ACCOUNT_ADDRESS
-celocli releasegold:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
+celocli releasecelo:authorize --contract $VALIDATOR_ACCOUNT_ADDRESS --role validator --signer $SIGNER_TO_AUTHORIZE --signature 0x$SIGNER_PROOF_OF_POSSESSION --blsKey $BLS_PUBLIC_KEY --blsPop $BLS_PROOF_OF_POSSESSION
 ```
 
 :::warning
