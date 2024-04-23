@@ -136,7 +136,7 @@ celocli account:balance $CELO_BENEFICIARY_ADDRESS
 Next, check the details of your `ReleaseGold` contract:
 
 ```bash
-celocli releasegold:show --contract $CELO_RG_ADDRESS
+celocli releasecelo:show --contract $CELO_RG_ADDRESS
 ```
 
 Verify the configuration, balance, and beneficiary details. You can find an explanation of these parameters on the [ReleaseGold](/holder/manage/release-gold) page.
@@ -205,7 +205,7 @@ Next, register the `ReleaseGold` contract as a “Locked Gold” account:
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:create-account --contract $CELO_RG_ADDRESS --useLedger
+celocli releasecelo:create-account --contract $CELO_RG_ADDRESS --useLedger
 ```
 
 You'll need to press right on the Ledger several times to review details of the transactions, then when the device says "Accept and send" press both buttons together.
@@ -220,7 +220,7 @@ Now, using the proof-of-possession you generated above, as the Locked Gold Accou
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:authorize --contract $CELO_RG_ADDRESS --role=vote --signer $CELO_VOTE_SIGNER_ADDRESS --signature $CELO_VOTE_SIGNER_SIGNATURE --useLedger
+celocli releasecelo:authorize --contract $CELO_RG_ADDRESS --role=vote --signer $CELO_VOTE_SIGNER_ADDRESS --signature $CELO_VOTE_SIGNER_SIGNATURE --useLedger
 ```
 
 Finally, verify that your signer was correctly authorized:
@@ -257,7 +257,7 @@ Make sure to leave at least 1 CELO unlocked to pay for transaction fees.
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:locked-gold --contract $CELO_RG_ADDRESS --action lock  --useLedger --value <CELO-GOLD-AMOUNT>
+celocli releasecelo:locked-gold --contract $CELO_RG_ADDRESS --action lock  --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
 Check that your CELO was successfully locked.
@@ -436,21 +436,21 @@ Assuming you have non-voting Locked Gold, you can initiate the process to unlock
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:locked-gold --contract $CELO_RG_ADDRESS --action unlock  --useLedger --value <CELO-GOLD-AMOUNT>
+celocli releasecelo:locked-gold --contract $CELO_RG_ADDRESS --action unlock  --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
 After the 72 hour unlocking period has passed, withdraw the CELO back to the `ReleaseGold` contract:
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:locked-gold --contract $CELO_RG_ADDRESS --action withdraw  --useLedger --value <CELO-GOLD-AMOUNT>
+celocli releasecelo:locked-gold --contract $CELO_RG_ADDRESS --action withdraw  --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
 Finally, request that the `ReleaseGold` contract transfer an amount to your beneficiary address:
 
 ```bash
 # Using the Beneficiary Ledger
-celocli releasegold:withdraw --contract $CELO_RG_ADDRESS --useLedger --value <CELO-GOLD-AMOUNT>
+celocli releasecelo:withdraw --contract $CELO_RG_ADDRESS --useLedger --value <CELO-GOLD-AMOUNT>
 ```
 
 To vote with any CELO in your beneficiary account, you'll want to register it as a Locked Gold Acccount, authorize a new vote signing key for it, then lock CELO.
