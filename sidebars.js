@@ -544,6 +544,7 @@ const sidebars = {
         { type: "doc", id: "protocol/oracle/band-protocol" },
         { type: "doc", id: "protocol/oracle/redstone" },
         { type: "doc", id: "protocol/oracle/run" },
+        { type: "doc", id: "protocol/oracle/supra" },
       ],
     },
     {
