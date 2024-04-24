@@ -74,8 +74,6 @@ Here is how a transaction would look like when using USDC as a medium to pay for
 let tx = {
   // ... other transaction fields
   feeCurrency: "0x2f25deb3848c207fc8e0c34035b3ba7fc157602b", // USDC Adapter address
-  gatewayFeeRecipient: null,
-  gatewayFee: "0x0",
   type: "0x7b",
 };
 ```
