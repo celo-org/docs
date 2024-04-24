@@ -35,17 +35,51 @@ Adapters can also be used to query `balanceOf(address)` of an account, but it wi
 
 ##### Mainnet
 
-|  Name  | Token    | Adapter |
-| ------ | -------- | ------- |
-| `USDC` | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C#code)  | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B#code)  |
-| `USDT` | [`0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e`](https://celoscan.io/address/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e#code)  | [`0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72`](https://celoscan.io/address/0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72#code)  |
+| Name   | Token                                                                                                                       | Adapter                                                                                                                     |
+| ------ | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `USDC` | [`0xcebA9300f2b948710d2653dD7B07f33A8B32118C`](https://celoscan.io/address/0xcebA9300f2b948710d2653dD7B07f33A8B32118C#code) | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://celoscan.io/address/0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B#code) |
+| `USDT` | [`0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e`](https://celoscan.io/address/0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e#code) | [`0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72`](https://celoscan.io/address/0x0e2a3e05bc9a16f5292a6170456a710cb89c6f72#code) |
 
 ##### Alfajores (testnet)
 
-|  Name  | Token    | Adapter |
-| ------ | -------- | ------- |
-| `USDC` | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://alfajores.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b#code)  | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://alfajores.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0#code)  |
+| Name   | Token                                                                                                                                 | Adapter                                                                                                                               |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `USDC` | [`0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B`](https://alfajores.celoscan.io/address/0x2f25deb3848c207fc8e0c34035b3ba7fc157602b#code) | [`0x4822e58de6f5e485eF90df51C41CE01721331dC0`](https://alfajores.celoscan.io/address/0x4822e58de6f5e485eF90df51C41CE01721331dC0#code) |
 
 ##### Baklava (testnet)
 
 N/A
+
+### Enabling Transactions with ERC20 Token as Fee Currency in a wallet
+
+We recommend using the [viem](https://viem.sh/) library as it has support for the `feeCurrency` field in the transaction required for sending transaction where the gas fees will be paid in ERC20 tokens.
+
+#### Estimating gas price
+
+To estimate gas price use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+
+:::info
+The Gas Price Minimum value returned from the RPC has to be interpreted in 18 decimals.
+:::
+
+#### Preparing a transaction
+
+When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+
+The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/protocol/transaction/transaction-types).
+
+Here is how a transaction would look like when using USDC as a medium to pay for gas fees.
+
+```js
+let tx = {
+  // ... other transaction fields
+  feeCurrency: "0x2f25deb3848c207fc8e0c34035b3ba7fc157602b", // USDC Adapter address
+  gatewayFeeRecipient: null,
+  gatewayFee: "0x0",
+  type: "0x7b",
+};
+```
+
+:::info
+To get details about the underlying token of the adapter you can call `adpatedToken` function on the adapter address, which will return the underlying token address.
+:::
