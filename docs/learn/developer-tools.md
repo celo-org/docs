@@ -41,7 +41,7 @@ A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
 WalletConnect is a standard across EVM compatible blockchains to connect wallets to dapps. It allows developers to build connections between wallets and dapps on the same desktop or mobile device, or between desktop dapps and mobile wallets.
 
-<PageRef url="walletconnect" pageName="WalletConnect" />
+<PageRef url="wallet-connect" pageName="WalletConnect" />
 
 ### ContractKit
 
@@ -98,8 +98,6 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 ### The Graph
 
 [The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph.
-
-<PageRef url="/https://thegraph.com/" pageName="The Graph" />
 
 ### DappLooker
 
