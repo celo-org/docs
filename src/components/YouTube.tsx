@@ -6,7 +6,7 @@ export default function YouTube({ videoId }: { videoId: string }) {
   return (
     <div className={styles.container}>
       <ReactYouTube
-        containerClassName={styles.sizer}
+        iframeClassName={styles.sizer}
         videoId={videoId}
         opts={{
           height: "100%",
