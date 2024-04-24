@@ -56,7 +56,7 @@ We recommend using the [viem](https://viem.sh/) library as it has support for th
 
 #### Estimating gas price
 
-To estimate gas price use the token address or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+To estimate gas price use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
 
 :::info
 The Gas Price Minimum value returned from the RPC has to be interpreted in 18 decimals.
@@ -64,7 +64,7 @@ The Gas Price Minimum value returned from the RPC has to be interpreted in 18 de
 
 #### Preparing a transaction
 
-When preparing a transaction that uses ERC20 token for gas fees, use the token address or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
+When preparing a transaction that uses ERC20 token for gas fees, use the token address (in case of cUSD, cEUR and cREAL) or the adapter address (in case of USDC and USDT) as the value for `feeCurrency` field in the transaction.
 
 The recommended transaction `type` is `123`, which is a CIP-64 compliant transaction read more about it [here](/protocol/transaction/transaction-types).
 
