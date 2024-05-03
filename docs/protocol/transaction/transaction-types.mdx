@@ -1,0 +1,465 @@
+---
+title: Transaction types on Celo
+description: This page contains an explainer on transaction types supported on Celo and a demo to make specific transactions.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+This page contains an explainer on transaction types supported on Celo and a demo to make specific transactions.
+
+> **IMPORTANT**
+> This repo is for educational purposes only. The information provided here may be inaccurate.
+> Please don’t rely on it exclusively to implement low-level client libraries.
+
+## Summary
+
+Celo has support for all Ethereum transaction types (i.e. "100% Ethereum compatibility")
+and a single Celo transaction type.
+
+### Actively supported on Celo
+
+| Chain                                                                   | Transaction type           | #     | Specification                                                                                                                                                 | Recommended | Support   | Comment                                                  |
+| ----------------------------------------------------------------------- | -------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------- | -------------------------------------------------------- |
+| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" />     | Dynamic fee transaction v2 | `123` | [CIP-64](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md)                                                                             | ✅          | Active 🟢 | Supports paying gas in custom fee currencies             |
+| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Dynamic fee transaction    | `2`   | [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) ([CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md))                       | ✅          | Active 🟢 | Typical Ethereum transaction                             |
+| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Access list transaction    | `1`   | [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) ([CIP-35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md))                       | ❌          | Active 🟢 | Does not support dynamically changing _base fee_ per gas |
+| <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | Legacy transaction         | `0`   | [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf) ([CIP-35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md)) | ❌          | Active 🟢 | Does not support dynamically changing _base fee_ per gas |
+
+### Scheduled for deprecation on Celo
+
+| Chain                                                               | Transaction type        | #     | Specification                                                                                                  | Recommended | Support     | Comment                                                                                                                                                                                 |
+| ------------------------------------------------------------------- | ----------------------- | ----- | -------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Dynamic fee transaction | `124` | [CIP-42](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md)                              | ❌          | Security 🟠 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) |
+| <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | Legacy transaction      | `0`   | Celo Mainnet launch ([Blockchain client v1.0.0](https://github.com/celo-org/celo-blockchain/tree/celo-v1.0.0)) | ❌          | Security 🟠 | Deprecation warning published in [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning) |
+
+The stages of support are:
+
+- **Active support** 🟢: the transaction type is supported and recommended for use.
+- **Security support** 🟠: the transaction type is supported but not recommended for use
+  because it might be deprecated in the future.
+- **Deprecated** 🔴: the transaction type is not supported and not recommended for use.
+
+### Client library support
+
+Legend:
+
+- <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> = support
+  for the recommended Ethereum transaction type (`2`)
+- <img width="12" src="/img/doc-images/transaction-types/Celo.jpg" /> = support for
+  the recommended Celo transaction type (`123`)
+- ✅ = available
+- ❌ = not available
+
+| Client library        | Language | <img width="20" src="/img/doc-images/transaction-types/Ethereum.png" /> | since | <img width="20" src="/img/doc-images/transaction-types/Celo.jpg" /> | since                                                                          | Comment                                          |
+| --------------------- | :------: | :---------------------------------------------------------------------: | :---: | :------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------ |
+| `viem`                |  TS/JS   |                                   ✅                                    |       | ✅                                                                  | >[1.19.5][1]                                                                   | ---                                              |
+| `ethers`              |  TS/JS   |                                   ✅                                    |       | ❌                                                                  |                                                                                | Support via fork in <br /> `celo-ethers-wrapper` |
+| `celo-ethers-wrapper` |  TS/JS   |                                   ✅                                    |       | ✅                                                                  | >[2.0.0](https://github.com/celo-tools/celo-ethers-wrapper/releases/tag/2.0.0) | ---                                              |
+| `web3js`              |  TS/JS   |                                   ✅                                    |       | ❌                                                                  |                                                                                | Support via fork in <br /> `contractkit`         |
+| `contractkit`         |  TS/JS   |                                   ✅                                    |       | ✅                                                                  | >[5.0.0](https://github.com/celo-org/celo-monorepo/releases/tag/v5.0)          | ---                                              |
+| `Web3j`               |   Java   |                                   ✅                                    |       | ❌                                                                  |                                                                                | ---                                              |
+| `rust-ethers`         |   Rust   |                                   ✅                                    |       | ❌                                                                  |                                                                                | ---                                              |
+| `brownie`             |  Python  |                                   ✅                                    |       | ❌                                                                  |                                                                                | ---                                              |
+
+[1]: https://github.com/wevm/viem/blob/main/src/CHANGELOG.md#1195
+
+## Background
+
+### Legacy transactions
+
+Ethereum originally had one format for transactions (now called "legacy transactions").
+A legacy transaction contains the following transaction parameters:
+`nonce`, `gasPrice`, `gasLimit`, `recipient`, `amount`, `data`, and `chaindId`.
+
+To produce a valid "legacy transaction":
+
+1.  the **transaction parameters** are [RLP-encoded](https://eth.wiki/fundamentals/rlp):
+
+    ```
+    RLP([nonce, gasprice, gaslimit, recipient, amount, data, chaindId, 0, 0])
+    ```
+
+1.  the RLP-encoded transaction is hashed (using Keccak256).
+
+1.  the hash is signed with a private key using the ECDSA algorithm, which generates the `v`, `r`,
+    and `s` **signature parameters**.
+
+1.  the transaction _and_ signature parameters above are RLP-encoded to produce a valid **signed
+    transaction**:
+
+    ```
+    RLP([nonce, gasprice, gaslimit, recipient, amount, data, v, r, s])
+    ```
+
+A valid signed transaction can then be submitted on-chain, and its raw parameters can be
+parsed by RLP-decoding the transaction.
+
+### Typed transactions
+
+Over time, the Ethereum community has sought to add new types of transactions
+such as dynamic fee transactions
+([EIP-1559: Fee market change for ETH 1.0 chain](https://eips.ethereum.org/EIPS/eip-1559))
+or optional access list transactions
+([EIP-2930: Optional access lists](https://eips.ethereum.org/EIPS/eip-2930))
+to supported new desired behaviors on the network.
+
+To allow new transactions to be supported without breaking support with the
+legacy transaction format, the concept of **typed transactions** was proposed in
+[EIP-2718: Typed Transaction Envelope](https://eips.ethereum.org/EIPS/eip-2718), which introduces
+a new high-level transaction format that is used to implement all future transaction types.
+
+### Distinguishing between legacy and typed transactions
+
+Whereas a valid "legacy transaction" is simply an RLP-encoded list of
+**transaction parameters**, a valid "typed transactions" is an arbitrary byte array
+prepended with a **transaction type**, where:
+
+- a **transaction type**, is a number between 0 (`0x00`) and 127 (`0x7f`) representing
+  the type of the transaction, and
+
+- a **transaction payload**, is arbitrary byte data that encodes raw transaction parameters
+  in compliance with the specified transaction type.
+
+To distinguish between legacy transactions and typed transactions at the client level,
+the EIP designers observed that the **first byte** of a legacy transaction would never be in the range
+`[0, 0x7f]` (or `[0, 127]`), and instead always be in the range `[0xc0, 0xfe]` (or `[192, 254]`).
+
+With that observation, transactions can be decoded with the following heuristic:
+
+- read the first byte of a transaction
+- if it's bigger than `0x7f` (`127`), then it's a **legacy transaction**. To decode it, you
+  must read _all_ bytes (including the first byte just read) and interpret them as a
+  legacy transaction.
+- else, if it's smaller or equal to `0x7f` (`127`), then it's a **typed transaction**. To decode
+  it you must read the _remaining_ bytes (excluding the first byte just read) and interpret them
+  according to the specified transaction type.
+
+Every transaction type is defined in an EIP, which specifies how to _encode_ as well as _decode_
+transaction payloads. This means that a typed transaction can only be interpreted with knowledge of
+its transaction type and a relevant decoder.
+
+## List of transaction types on Celo
+
+### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Legacy transaction (`0`)
+
+> **NOTE**
+> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+
+Although legacy transactions are never formally prepended with the `0x00` transaction type,
+they are commonly referred to as "type 0" transactions.
+
+- This transaction is defined as follows:
+
+  ```
+  RLP([nonce, gasprice, gaslimit, recipient, amount, data, v, r, s])
+  ```
+
+- It was introduced on Ethereum during Mainnet launch on [Jul 30, 2015](https://en.wikipedia.org/wiki/Ethereum)
+  as specified in the [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf).
+
+- It was introduced on Celo during the
+  [Celo Donut hard fork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0027.md)
+  on [May 19, 2021](https://blog.celo.org/donut-hardfork-is-live-on-celo-585e2e294dcb)
+  as specified in [CIP-35: Support for Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
+
+### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Access list transaction (`1`)
+
+> **NOTE**
+> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+
+- This transaction is defined as follows:
+
+  ```
+  0x01 || RLP([chainId, nonce, gasPrice, gasLimit, to, value, data, accessList, signatureYParity, signatureR, signatureS])
+  ```
+
+- It was introduced on Ethereum during the Ethereum Berlin hard fork on
+  [Apr, 15 2021](https://ethereum.org/en/history/#berlin) as specified in
+  [EIP-2930: Optional access lists](https://eips.ethereum.org/EIPS/eip-2930).
+
+- It was introduced on Celo during the
+  [Celo Donut hard fork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0027.md)
+  on [May 19, 2021](https://blog.celo.org/donut-hardfork-is-live-on-celo-585e2e294dcb)
+  as specified in [CIP-35: Support for Ethereum-compatible transactions](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
+
+### <img width="12" src="/img/doc-images/transaction-types/Ethereum.png" /> Dynamic fee transaction (`2`)
+
+> **NOTE**
+> This transaction type is 100% compatible with Ethereum and has no Celo-specific parameters.
+
+- This transaction is defined as follows:
+
+  ```
+  0x02 || RLP([chainId, nonce, maxPriorityFeePerGas, maxFeePerGas, gasLimit, to, value, data, accessList, signatureYParity, signatureR, signatureS])
+  ```
+
+- It was introduced on Ethereum during the Ethereum London hard fork on
+  [Aug, 5 2021](https://ethereum.org/en/history/#london) as specified in
+  [EIP-1559: Fee market change for ETH 1.0 chain](https://eips.ethereum.org/EIPS/eip-1559).
+
+- It was introduced on Celo during the
+  [Celo Espresso hard fork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0041.md)
+  on [Mar 8, 2022](https://blog.celo.org/brewing-the-espresso-hardfork-92a696af1a17) as specified
+  in [CIP-42: Modification to EIP-1559](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md)
+
+### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Legacy transaction (`0`)
+
+> **NOTE**
+> This transaction is not compatible with Ethereum and has three Celo-specific
+> parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+
+> **Warning**
+> This transaction type is scheduled for deprecation. A deprecation warning was published in the
+> [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning)
+> on [Sep 26, 2023](https://forum.celo.org/t/mainnet-alfajores-gingerbread-hard-fork-release-sep-26-17-00-utc/6499).
+
+- This transaction is defined as follows:
+
+  ```
+  RLP([nonce, gasprice, gaslimit, feecurrency, gatewayfeerecipient, gatewayfee, recipient, amount, data, v, r, s])
+  ```
+
+- It was introduced on Celo during Mainnet launch on
+  [Apr 22, 2020](https://dune.com/queries/3106924/5185945) as specified in
+  [Blockchain client v1.0.0](https://github.com/celo-org/celo-blockchain/tree/celo-v1.0.0).
+
+### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction (`124`)
+
+> **NOTE**
+> This transaction is not compatible with Ethereum and has three Celo-specific
+> parameters: `feecurrency`, `gatewayfeerecipient`, and `gatewayfee`.
+
+> **Warning**
+> This transaction type is scheduled for deprecation. A deprecation warning was published in the
+> [Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md#deprecation-warning)
+> on [Sep 26, 2023](https://forum.celo.org/t/mainnet-alfajores-gingerbread-hard-fork-release-sep-26-17-00-utc/6499).
+
+- This transaction is defined as follows:
+
+  ```
+  0x7c || RLP([chain_id, nonce, max_priority_fee_per_gas, max_fee_per_gas, gas_limit, feecurrency, gatewayfeerecipient, gatewayfee, destination, amount, data, access_list, v, r, s])
+  ```
+
+- It was introduced on Celo during the
+  [Celo Espresso hard fork](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0041.md)
+  on [Mar 8, 2022](https://blog.celo.org/brewing-the-espresso-hardfork-92a696af1a17) as specified
+  in [CIP-42: Modification to EIP-1559](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0042.md).
+
+### <img width="14" src="/img/doc-images/transaction-types/Celo.jpg" /> Dynamic fee transaction v2 (`123`)
+
+> **NOTE**
+> This transaction is not compatible with Ethereum and has one Celo-specific
+> parameter: `feecurrency`.
+
+- This transaction is defined as follows:
+
+  ```
+  0x7b || RLP([chainId, nonce, maxPriorityFeePerGas, maxFeePerGas, gasLimit, to, value, data, accessList, feeCurrency, v, r, s])
+  ```
+
+- It was introduced on Celo during the
+  [Celo Gingerbread hard fork](https://github.com/celo-org/celo-proposals/blob/8260b49b2ec9a87ded6727fec7d9104586eb0752/CIPs/cip-0062.md)
+  on [Sep 26, 2023](https://forum.celo.org/t/mainnet-alfajores-gingerbread-hard-fork-release-sep-26-17-00-utc/6499)
+  as specified in
+  [CIP-64: New Transaction Type: Celo Dynamic Fee v2](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0064.md)
+
+## How to Send Transactions
+
+### Import Dependencies
+
+<Tabs>
+
+  <TabItem value="viem" label="viem" default>
+
+```ts
+import {
+  createPublicClient,
+  createWalletClient,
+  hexToBigInt,
+  http,
+  parseEther,
+  parseGwei,
+} from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { celoAlfajores } from "viem/chains";
+import "dotenv/config"; // use to read private key from environment variable
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Create Public and Wallet Client
+
+<Tabs>
+
+  <TabItem value="viem" label="viem" default>
+
+```ts
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+/**
+ * Boilerplate to create a viem client
+ */
+const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
+const publicClient = createPublicClient({
+  chain: celoAlfajores,
+  transport: http(),
+});
+const walletClient = createWalletClient({
+  chain: celoAlfajores, // Celo testnet
+  transport: http(),
+});
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Function to print Transaction receipt
+
+<Tabs>
+
+  <TabItem value="viem" label="viem" default>
+
+    ```ts
+    function printFormattedTransactionReceipt(transactionReceipt: any) {
+
+      const {
+            blockHash,
+            blockNumber,
+            contractAddress,
+            cumulativeGasUsed,
+            effectiveGasPrice,
+            from,
+            gasUsed,
+            logs,
+            logsBloom,
+            status,
+            to,
+            transactionHash,
+            transactionIndex,
+            type,
+            feeCurrency,
+            gatewayFee,
+            gatewayFeeRecipient
+        } = transactionReceipt;
+
+      const filteredTransactionReceipt = {
+            type,
+            status,
+            transactionHash,
+            from,
+            to
+        };
+
+      console.log(`Transaction details:`, filteredTransactionReceipt, `\n`);
+    }
+    ```
+
+  </TabItem>
+
+</Tabs>
+
+### Code to send Transaction Type (0)
+
+<Tabs>
+  
+  <TabItem value="viem" label="viem" default>
+
+    ```ts
+    /**
+      - Transation type: 0 (0x00)
+      - Name: "Legacy"
+      - Description: Ethereum legacy transaction
+    */
+    async function demoLegacyTransactionType() {
+        console.log(`Initiating legacy transaction...`);
+        const transactionHash = await walletClient.sendTransaction({
+        account, // Sender
+        to: "0x70997970c51812dc3a010c7d01b50e0d17dc79c8", // Recipient (illustrative address)
+        value: parseEther("0.01"), // 0.01 CELO
+        gasPrice: parseGwei("20"), // Special field for legacy transaction type
+        });
+
+        const transactionReceipt = await publicClient.waitForTransactionReceipt({
+            hash: await transactionHash,
+        });
+
+        printFormattedTransactionReceipt(transactionReceipt);
+    }
+    ```
+
+    </TabItem>
+
+</Tabs>
+
+### Code to send Transaction Type (2)
+
+<Tabs>
+  
+  <TabItem value="viem" label="viem" default>
+
+    ```ts
+    /**
+     * Transaction type: 2 (0x02)
+     * Name: "Dynamic fee"
+     * Description: Ethereum EIP-1559 transaction
+     */
+    async function demoDynamicFeeTransactionType() {
+        console.log(`Initiating dynamic fee (EIP-1559) transaction...`);
+        const transactionHash = await walletClient.sendTransaction({
+            account, // Sender
+            to: "0x70997970c51812dc3a010c7d01b50e0d17dc79c8", // Recipient (illustrative address)
+            value: parseEther("0.01"), // 0.01 CELO
+            maxFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
+            maxPriorityFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
+        });
+
+        const transactionReceipt = await publicClient.waitForTransactionReceipt({
+            hash: await transactionHash,
+        });
+
+        printFormattedTransactionReceipt(transactionReceipt);
+    }
+    ```
+
+    </TabItem>
+
+</Tabs>
+
+### Code to send Transaction Type (123)
+
+<Tabs>
+  
+  <TabItem value="viem" label="viem" default>
+
+    ```ts
+    /**
+    * Transaction type: 123 (0x7b)
+    * Name: "Dynamic fee"
+    * Description: Celo dynamic fee transaction (with custom fee currency)
+    */
+    async function demoFeeCurrencyTransactionType() {
+      console.log(`Initiating custom fee currency transaction...`);
+      const transactionHash = await walletClient.sendTransaction({
+          account, // Sender
+          to: "0x70997970c51812dc3a010c7d01b50e0d17dc79c8", // Recipient (illustrative address)
+          value: parseEther("0.01"), // 0.01 CELO
+          feeCurrency: "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1", // cUSD fee currency
+          maxFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
+          maxPriorityFeePerGas: parseGwei("10"), // Special field for dynamic fee transaction type (EIP-1559)
+      });
+
+      const transactionReceipt = await publicClient.waitForTransactionReceipt({
+          hash: await transactionHash,
+      });
+
+      printFormattedTransactionReceipt(transactionReceipt);
+    }
+    ```
+
+    </TabItem>
+
+</Tabs>

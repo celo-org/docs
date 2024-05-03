@@ -1,14 +1,4 @@
-.container {
-  margin: 24px 0px;
-  width: 100%;
-  /* Small trick to get the height a ratio of the width */
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
-}
-
 .sizer {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  /* height: 584.4px; */
+  height: 65vh;
 }

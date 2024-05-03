@@ -55,6 +55,14 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 - Maintainers: [DSRV Labs](https://www.dsrvlabs.com/en/)
 - Ledger support: Yes
 
+### Enkrypt
+
+Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
+
+- [Enkrypt.com](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
+- Platforms: Chrome, Brave, Firefox, Safari, Opera
+- Maintainers: [MyEtherWallet](https://www.myetherwallet.com/)
+
 ### Steakwallet
 
 Steakwallet is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
@@ -76,7 +84,7 @@ You can learn more about connecting Metamask to the Celo network [here](/wallet/
 
 ### Wallet Connect
 
-Strictly speaking, wallet connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 1, so dapp developers should use V1 as well. You can learn more about getting started with wallet connect on Celo with [this tutorial](/blog/tutorials/celo-valora-and-walletconnect-v1).
+Strictly speaking, wallet connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 1, so dapp developers should use V1 as well.
 
 - [walletconnect.org/](https://walletconnect.org/)
 - Platforms: Browser, iOS, Android
@@ -85,6 +93,11 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [dovewallet.com](https://dovewallet.com)
 - Platforms: Web
+  
+### Wigwam Wallet
+
+- [wigwam.app](https://wigwam.app)
+- Platforms: Browser, Web
 
 ### Pesabase
 

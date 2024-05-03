@@ -1,34 +1,41 @@
 ---
-title: Celo Networks
+title: Networks
 description: How to choose a Celo network based on your interested and objectives.
 ---
 
-# Networks
-
-Overview of Celo Mainnet, Alfajores Testnet, Baklava Testnet, and Cannoli Testnet.
+Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 
 ---
 
 ## Celo Mainnet
 
-The production Celo network, Mainnet was previously known as the Release Candidate 1 network. Deployed by the Celo community starting 4/22/20, the network is currently working towards enabling the Celo stability mechansim. Much of the activity is being driven by the validator organisations that featured on the leaderboard of [The Great Celo Stake Off](https://forum.celo.org/t/the-great-celo-stake-off-the-details/136).
+| Name               | Value                                                                                                                |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| Network Name       | Celo Mainnet                                                                                                         |
+| Description        | The production Celo network                                                                                          |
+| Chain ID           | 42220                                                                                                                |
+| Currency Symbol    | CELO                                                                                                                 |
+| RPC Nodes          | [https://docs.celo.org/learn/developer-tools#hosted-nodes](https://docs.celo.org/learn/developer-tools#hosted-nodes) |
+| RPC Endpoint (best effort)      | [https://forno.celo.org](https://forno.celo.org) <br/> Note to developers: Forno is rate limited, as your usage increases consider options that can provide the desired level of support (SLA).          |
+| Block Explorers     | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>  |
+| Network Status     | [https://stats.celo.org](https://stats.celo.org)                                                                     |
+| Validator Explorer | [https://validators.celo.org](https://validators.celo.org)                                                           |
 
-- [Mainnet Network Block Explorer](http://explorer.celo.org/)
-- [Mainnet Network Status](https://stats.celo.org/)
-- [Mainnet Validator Explorer](https://validators.celo.org/)
+## Celo Alfajores
 
-**Chain ID:** `42220`
+| Name            | Value                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name    | Celo Alfajores                                                                                                                                  |
+| Description     | The Developer Testnet network                                                                                                                   |
+| Currency Symbol | CELO                                                                                                                                            |
+| Chain ID        | 44787                                                                                                                                           |
+| RPC Endpoint (best effort)   | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) |
+| RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
+| Block Explorer  | <ul><li>[https://alfajores-blockscout.celo-testnet.org](https://alfajores-blockscout.celo-testnet.org)</li><li>[https://alfajores.celoscan.io](https://alfajores.celoscan.io)</li></ul>  |
+| Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
+| Faucet Link     | [https://faucet.celo.org](https://faucet.celo.org)                                                                                              |
 
-## Alfajores, the Developer Testnet
-
-If you're a developer considering building on the Celo platform, or want to try out the [Celo Wallet](https://celo.org/build/wallet), start with **Alfajores**. You can [obtain a balance](https://celo.org/build/faucet) immediately and use it for experimenting with. The [Developer tutorials](/developer/) assume you are using Alfajores. The network is managed by cLabs, who operate all of its validators, and its software and deployed contracts will track mainnet.
-
-- [Alfajores Testnet Block Explorer](https://alfajores-blockscout.celo-testnet.org)
-- [Alfajores Network Status](https://alfajores-celostats.celo-testnet.org)
-- [Alfajores Testnet Faucet](https://faucet.celo.org)
-- [Celo Wallet for Alfajores](https://celo.org/build/wallet)
-
-**Chain ID:** `44787`
+For large Faucet requests you can apply [here](https://docs.google.com/forms/d/e/1FAIpQLSfpt3WikYt5-TsDHmUgfFCbZjmZMcWr9bO5H0csHcmMrl9sFw/viewform).
 
 :::info
 
@@ -36,13 +43,18 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
-## Baklava, the Node Operator Testnet
+## Baklava
 
-If you're interested in operating one or more nodes that make up Celo's infrastructure, start with [Baklava](/network/baklava/). Baklava's validators and full nodes are operated by the community. It is intended to provide a venue to test new builds of the Celo Blockchain software, trial on-chain governance proposals, and for node operators to build operational best practices. Support for developers and users of the Wallet is not the primary focus.
-
-- [Baklava Network Block Explorer](https://baklava-blockscout.celo-testnet.org)
-- [Baklava Network Status](https://baklava-celostats.celo-testnet.org)
-- [Baklava Faucet Request Form](https://forms.gle/JTYkMAJWTAUQp1sv9)
+| Name                | Value                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name        | Baklava                                                                                                                                     |
+| Description         | The Node Operator Testnet network                                                                                                           |
+| Currency Symbol     | CELO                                                                                                                                        |
+| RPC Endpoint (best effort       | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org)                                                |
+| RPC Nodes           | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet)                        |
+| Block Explorer      | [https://baklava-blockscout.celo-testnet.org](https://baklava-blockscout.celo-testnet.org)                                                  |
+| Network Status      | [https://baklava-celostats.celo-testnet.org](https://baklava-celostats.celo-testnet.org)                                                    |
+| Faucet Request Form | [https://forms.gle/JTYkMAJWTAUQp1sv9](https://forms.gle/JTYkMAJWTAUQp1sv9)                                                                  |
 
 The Baklava Testnet is a non-production Testnet for the Validator community.
 
@@ -61,23 +73,5 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 :::info
 
 Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
-
-:::
-
-## Cannoli, the Ultragreen Testnet
-
-For Earth Day 2023, the Celo Community has proposed a new [Ultragreen CIP](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0052.md), which strives to position Celo to become deflationary as well as further Celo's sustainability commitment . With each transaction, [CIP-52](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0052.md) proposes that 80% of the base fee would be burned and 20% would be sent to a Carbon Offset address to purchase high-quality carbon offsets. This testnet is intended to support this new ‘Ultragreen’ mechanism before this change is later proposed for a future hardfork.
-
-**Links:**
-
-- [Cannoli Testnet Block Explorer](https://explorer.celo.org/cannoli)
-- [Cannoli Testnet Faucet](https://faucet.celo.org/cannoli)
-- [Cannoli Forno RPC provider](https://docs.celo.org/network/node/forno#what-is-forno): `https://forno.cannoli.celo-testnet.org`
-
-**Chain ID:** `17323`
-
-:::info
-
-Your use of the Cannoli Testnet is subject to the [Cannoli Testnet Disclaimer](/network/cannoli/disclaimer).
 
 :::

@@ -38,7 +38,7 @@ Metrics reporting is enabled with the `--metrics` flag.
 
 Pull-based metrics are available using the `--pprof` flag. This enables the `pprof` debugging HTTP server, by default on `http://localhost:6060`. The `--pprof.addr` and `--pprof.port` options can be used to configure the interface and port respectively. If the node is running inside a Docker container, you will need to set `--pprof.addr 0.0.0.0`, then on your Docker command line add `-p 127.0.0.1:6060:6060`.
 
-:::caution
+:::warning
 
 Be sure never to expose the `pprof` service to the public internet.
 
@@ -141,10 +141,6 @@ Celo adds specific functions around consensus:
 
 ```
 -->
-
-## Monitoring Attestation Service
-
-It is also important to [monitor Attestation Service](/validator/attestation#monitoring) and the full node that it depends on.
 
 ## Community Moniting Tools
 

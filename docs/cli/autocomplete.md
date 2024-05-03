@@ -1,22 +1,26 @@
-# `celocli autocomplete`
+`celocli autocomplete`
+======================
 
-display autocomplete installation instructions
+Display autocomplete installation instructions.
 
-## `celocli autocomplete [SHELL]`
+* [`celocli autocomplete [SHELL]`](#celocli-autocomplete-shell)
 
-display autocomplete installation instructions
+## `celocli autocomplete [SHELL]` {#celocli-autocomplete-shell}
+
+Display autocomplete installation instructions.
 
 ```
-display autocomplete installation instructions
-
 USAGE
-  $ celocli autocomplete [SHELL]
+  $ celocli autocomplete [SHELL] [-r]
 
 ARGUMENTS
-  SHELL  shell type
+  SHELL  (zsh|bash|powershell) Shell type
 
-OPTIONS
+FLAGS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  Display autocomplete installation instructions.
 
 EXAMPLES
   $ celocli autocomplete
@@ -25,7 +29,9 @@ EXAMPLES
 
   $ celocli autocomplete zsh
 
+  $ celocli autocomplete powershell
+
   $ celocli autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.5/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v3.0.5/src/commands/autocomplete/index.ts)_

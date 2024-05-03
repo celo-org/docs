@@ -27,8 +27,12 @@ Learn more about Celo Composer in the [README](https://github.com/celo-org/celo-
 
 ## Using EVM Tools
 
-Developers can build with Celo using many [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
+<!-- make the below text code block because crowdin is messing it up -->
 
+```mdx-code-block
+Developers can build with Celo using many [Ethereum](https://ethereum.org/en/) compatible tools including Remix, Truffle, Hardhat, and others. By making a few adjustments to your project’s network configuration settings, you can deploy your new or existing dApp on Celo.
+```
+
+- [Using thirdweb](/developer/deploy/thirdweb)
 - [Using Remix](/developer/deploy/remix)
-- [Using Truffle](/developer/deploy/truffle)
 - [Using Hardhat](/developer/deploy/hardhat)

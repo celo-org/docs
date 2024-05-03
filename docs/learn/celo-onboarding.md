@@ -32,7 +32,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 ## Celo Tour
 
 - [About Celo](https://celo.org/about)
-- [Join](https://celo.org/jobs)
+- [Join](https://celo.org/careers)
 - [Validators](https://celo.org/validators)
 - [Developers](https://celo.org/developers)
 - [Alliance](https://celo.org/alliance)

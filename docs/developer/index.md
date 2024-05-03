@@ -20,7 +20,7 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 Easily build Celo dApps with Celo Composer.
 
 - [Celo Composer](https://github.com/celo-org/celo-composer)
-- [Celo Composer Resources](/tutorials?tags=composer)
+- [Celo Composer Resources](https://celo.academy/tags/c/tutorials/4/composer)
 
 ## Local Environmennt
 
@@ -30,14 +30,14 @@ Easily build Celo dApps with Celo Composer.
 
 ## Build on Celo
 
+- [Using thirdweb](/developer/deploy/thirdweb)
 - [Using Remix](/developer/deploy/remix)
-- [Using Truffle](/developer/deploy/truffle)
 - [Using Hardhat](/developer/deploy/hardhat)
 
 ## Code Examples
 
 - [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
-- [Developer Tutorials](/tutorials)
+- [Developer Tutorials](https://celo.academy/tags/c/tutorials/4)
 - [Figment](https://learn.figment.io/protocols/celo)
 - [Dacade](https://dacade.org/communities/celo)
 

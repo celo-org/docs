@@ -57,7 +57,7 @@ open valora-recovery-phrase.txt
 
 - Open the Valora App, navigate to **Menu > Recovery Phrase**, and Enter PIN to reveal your Recovery Phrase.
 
-:::caution
+:::warning
 
 The Recovery Phrase is a series of 24 unique words specific to your Valora wallet. Do not lose these words or share them with anyone at any time.
 
@@ -97,7 +97,7 @@ This celocli command also shows your <strong>accountAddress</strong>. You won’
 
 :::
 
-:::caution
+:::warning
 
 Anyone that has access to your private key will be able to access and control the funds in your wallet. Only store your private key in a safe location and do not share it with anyone.
 

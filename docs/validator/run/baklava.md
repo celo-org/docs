@@ -52,12 +52,32 @@ The recommended Celo Validator setup involves continually running two instances:
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+#### Validator node
 
-In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 32GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
+- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
+- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
+
+#### Proxy or Full node
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB i,s a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
+  In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
 
 ### Networking requirements
 
@@ -91,7 +111,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/)for instructions on how to get set up.
 
 - **You are using the latest Node.js 12.x**
 
@@ -116,8 +136,8 @@ This guide contains a large number of keys, so it is important to understand the
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
+1. By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
+2. By setting the `--unlock` flag when starting the node.
 
 It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
 
@@ -182,11 +202,11 @@ Please complete this section if you are new to validating on Celo.
 
 Running a Celo Validator node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for signing blocks) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
 
-| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
-| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
+| Name of the key      | Purpose                                                                                                                                                                                                                                            |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account key          | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote and validator keys. Note that the account key also has all of the permissions of the other keys. |
+| Validator signer key | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                       |
+| Vote signer key      | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                       |
 
 Note that Account and all the signer keys must be unique and may not be reused.
 

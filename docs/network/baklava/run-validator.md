@@ -23,7 +23,7 @@ You can add the [Celo Signal public calendar](https://calendar.google.com/calend
 
 :::info
 
-If you are transitioning from the Baklava network prior to the June 24 reset, you will need to start with a fresh chain database. You can create new nodes from fresh machines, as described in this guide, or you may delete your chaindata folder, which is named `celo` in the node data directory, and start over by running the provided `init` commands for each node described below. All on-chain registration steps, the commands completed with `celocli`, will need to be run on the new network.
+If you are transitioning from the Baklava network prior to the June 24, 2021 reset, you will need to start with a fresh chain database. You can create new nodes from fresh machines, as described in this guide, or you may delete your chaindata folder, which is named `celo` in the node data directory, and start over by running the provided `init` commands for each node described below. All on-chain registration steps, the commands completed with `celocli`, will need to be run on the new network.
 
 Key differences are:
 
@@ -49,16 +49,34 @@ The recommended Celo Validator setup involves continually running three instance
 
 - 1 **Validator node**: should be deployed to single-tenant hardware in a secure, high availability data center
 - 1 **Validator Proxy node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), but requires high availability
-- 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+#### Validator node
 
-Attestation Service nodes consume less resources and can run on machines with less memory and compute.
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 32GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
+- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
+- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
+
+#### Proxy or Full node
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB i,s a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
 
 In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
 
@@ -66,15 +84,13 @@ In addition, to get things started, it will be useful to run a node on your loca
 
 In order for your Validator to participate in consensus and complete attestations, it is **critically** important to configure your network correctly.
 
-Your Proxy and Attestations nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
+Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
 
 On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
 
 On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
 
-On the Proxy and Attestations machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-On the Attestations machine, port 80 should accept TCP connections from all IP addresses. This port is used by users to request attestations from you.
+On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
 
 To illustrate this, you may refer to the following table:
 
@@ -82,7 +98,6 @@ To illustrate this, you may refer to the following table:
 | ---------------------- | -------------------- | ------------------- | --------------- |
 | Validator              |                      |                     | tcp:30503       |
 | Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-| Attestation            | tcp:80               |                     |                 |
 
 ### Software requirements
 
@@ -97,7 +112,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/index.md)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/index.md)for instructions on how to get set up.
 
 - **You are using the latest Node.js 12.x**
 
@@ -122,8 +137,8 @@ This guide contains a large number of keys, so it is important to understand the
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
+1. By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
+2. By setting the `--unlock` flag when starting the node.
 
 It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
 
@@ -152,10 +167,7 @@ There are a number of environment variables in this guide, and you may use this 
 | PROXY_ENODE                                 | The enode address for the Validator proxy                                                                                            |
 | PROXY_INTERNAL_IP                           | (Optional) The internal IP address over which your Validator can communicate with your proxy                                         |
 | PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
-| CELO_ATTESTATION_SIGNER_ADDRESS             | The address of the attestation signer authorized by the Validator Account                                                            |
-| CELO_ATTESTATION_SIGNER_SIGNATURE           | The proof-of-possession of the attestation signer key                                                                                |
-| CELO_ATTESTATION_SERVICE_URL                | The URL to access the deployed Attestation Service                                                                                   |
-| METADATA_URL                                | The URL to access the metadata file for your Attestation Service                                                                     |
+|  |
 | DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
 | APP_SIGNATURE                               | The hash with which clients can auto-read SMS messages on android                                                                    |
 | SMS_PROVIDERS                               | A comma-separated list of providers you want to configure, Celo currently supports `nexmo` & `twilio`                                |
@@ -194,12 +206,11 @@ Please complete this section if you are new to validating on Celo.
 
 Running a Celo Validator node requires the management of several different keys, each with different privileges. Keys that need to be accessed frequently (e.g. for signing blocks) are at greater risk of being compromised, and thus have more limited permissions, while keys that need to be accessed infrequently (e.g. for locking CELO) are less onerous to store securely, and thus have more expansive permissions. Below is a summary of the various keys that are used in the Celo network, and a description of their permissions.
 
-| Name of the key        | Purpose                                                                                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Account key            | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator, and attestation keys. Note that the account key also has all of the permissions of the other keys. |
-| Validator signer key   | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                                     |
-| Vote signer key        | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                                     |
-| Attestation signer key | This key is used to sign attestations in Celo's lightweight identity protocol.                                                                                                                                                                                   |
+| Name of the key      | Purpose                                                                                                                                                                                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Account key          | This is the key with the highest level of permissions, and is thus the most sensitive. It can be used to lock and unlock CELO, and authorize vote, validator keys. Note that the account key also has all of the permissions of the other keys. |
+| Validator signer key | This is the key that has permission to register and manage a Validator or Validator Group, and participate in BFT consensus.                                                                                                                    |
+| Vote signer key      | This key can be used to vote in Validator elections and on-chain governance.                                                                                                                                                                    |
 
 Note that Account and all the signer keys must be unique and may not be reused.
 
@@ -604,10 +615,6 @@ You can see additional information about your validator, including uptime score,
 # On your local machine
 celocli validator:show $CELO_VALIDATOR_ADDRESS
 ```
-
-## Running the Attestation Service
-
-Validators are expected to run an [Attestation Service](/validator-guide/attestation-service) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator-guide/attestation-service).
 
 ## Deployment Tips
 

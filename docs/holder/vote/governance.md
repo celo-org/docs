@@ -76,9 +76,9 @@ votes:
   No: 0
   Abstain: 0
 passing: true
-requirements: 
-  constitutionThreshold: 0.7 
-  support: 0.99883105743491071638 
+requirements:
+  constitutionThreshold: 0.7
+  support: 0.99883105743491071638
   required: 29107673282861669327494319.531832308424 (~2.910e+25)
   total: 30992399904903465125627698 (~3.099e+25)
 isApproved: true
@@ -127,10 +127,62 @@ If a Governance Proposal receives enough votes and passes in the Referendum phas
 celocli governance:execute --proposalID=<PROPOSAL_ID> --from=<YOUR_VOTER_ADDRESS>
 ```
 
-<!--
-## Creating a Proposal
+## Vote Delegation
 
-{% hint style="warning" %}
-**Under construction** guide to creating a proposal is coming soon
-{% endhint %}
--->
+[Contract Release 10](https://github.com/celo-org/celo-monorepo/issues/10375) introduced vote delegation, which allows the governance participant to delgate their voting power.
+
+:::note
+Validators and Validator groups cannot delegate.
+:::
+
+### Delegating Votes
+
+You can delegate votes using the following command:
+
+```bash
+celocli lockedgold:delegate --from <DELEGATOR_ADDRESS> --to <DELEGATEE_ADDRESS> --percent <PERCENTAGE_BETWEEN_1_AND_100>
+```
+
+:::note
+Currently, participants can only delegate to 10 delegatees.
+:::
+
+You can view the max number of delegatees one can have using the following command:
+
+```bash
+celocli lockedgold:max-delegatees-count
+```
+
+### Revoking Delegated Votes
+
+You can use the following command to revoke delegated votes:
+
+```bash
+celocli lockedgold:revoke-delegate --from <DELEGATOR_ADDRESS> --to <DELEGATEE_ADDRESS> --percent <PERCENTAGE_TO_BE_REVOKED>
+```
+
+For example, If you have delegated 15% to the delegatee and pass 5% as `percent` then 5% will be subtracted from the 15% resulting in 10% delegation.
+
+### Total percent of Locked Celo delegated by an account
+
+You can use the following command to get the total percent of locked celo delegated by an account:
+
+```bash
+celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
+```
+
+### List of Delegatees of a Delegator
+
+You can use the following command to get the list of delegatees of an account:
+
+```bash
+celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
+```
+
+### Total Delegated Votes to an address
+
+You can use the following command to get the total delegated votes to an address:
+
+```bash
+celocli lockedgold:delegate-info --account <ACCOUNT_ADDRESS>
+```

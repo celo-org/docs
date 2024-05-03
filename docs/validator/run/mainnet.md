@@ -48,10 +48,31 @@ The recommended Celo Validator setup involves continually running two instances:
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+#### Validator node
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 32GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
+- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
+- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
+
+#### Proxy node
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB i,s a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
 
 In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
 
@@ -87,7 +108,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
@@ -112,8 +133,8 @@ This guide contains a large number of keys, so it is important to understand the
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
+1. By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
+2. By setting the `--unlock` flag when starting the node.
 
 It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
 
@@ -423,6 +444,33 @@ At this point your Validator and Proxy machines should be configured, and both s
 You can run multiple proxies by deploying additional proxies per the instructions in the [Deploy a proxy](/network/mainnet/run-validator#deploy-a-proxy) section. Then add all of the proxies' enodes as a comma seperated list using the `--proxy.proxyenodeurlpairs` option. E.g. if there are two proxies, that option's usage would look like `--proxy.proxyenodeurlpairs=enode://$PROXY_ENODE_1@$PROXY_INTERNAL_IP_1:30503\;enode://$PROXY_ENODE_1@$PROXY_EXTERNAL_IP_1:30303,enode://$PROXY_ENODE_2@$PROXY_INTERNAL_IP_2:30503\;enode://$PROXY_ENODE_2@$PROXY_EXTERNAL_IP_2:30303`
 
 :::
+
+### Limiting block space for transactions paid in alternative ERC-20 gas currencies
+
+As described in the protocol documentation, Celo allows users to [pay for gas using tokens](/protocol/transaction/erc20-transaction-fees). There is a governable list of accepted tokens. However, the Celo blockchain client starting with version 1.8.1 implements a protective mechanism that allows validators to control the percentage of available block space used by transactions paid with an alternative fee currency (other than CELO) more precisely.
+
+There are two new flags that control this behavior:
+
+1. `celo.feecurrency.limits` with a comma-separated `currency_address_hash=limit` mappings for currencies listed in the `FeeCurrencyWhitelist` contract, where `limit` represents the maximal fraction of the block gas limit as a float point number available for the given fee currency. The addresses are not expected to be checksummed.
+
+For example, `0x765DE816845861e75A25fCA122bb6898B8B1282a=0.1,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.05,0xEd6961928066D3238134933ee9cDD510Ff157a6e=0`.
+
+2. `celo.feecurrency.default` - an overridable default value (initially set to `0.5`) for currencies not listed in the limits map, meaning that if not specified otherwise, a transaction with a given fee currency can take up to `50%` of the block space. CELO token doesn’t have a limit.
+
+Based on historical data, the following default configuration is proposed:
+
+```bash
+--celo.feecurrency.limits.default=0.5
+--celo.feecurrency.limits="0x765DE816845861e75A25fCA122bb6898B8B1282a=0.9,0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73=0.5,0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787=0.5"
+```
+
+It imposes the following limits:
+
+- cUSD up to 90%
+- cEUR up to 50%
+- cREAL up to 50%
+- any other token except CELO - 50%
+- CELO doesn't have a limit
 
 ## Registering as a Validator
 

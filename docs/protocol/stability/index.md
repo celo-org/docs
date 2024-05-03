@@ -3,8 +3,8 @@ title: Celo Stability Mechanism Overview
 description: Overview of the Celo protocol's Stability Mechanisms.
 ---
 
-import YouTube from '@components/YouTube';
-import PageRef from '@components/PageRef';
+import YouTube from '@site/src/components/YouTube';
+import PageRef from '@site/src/components/PageRef';
 
 # Stability Mechanism
 
@@ -23,4 +23,3 @@ The Celo protocol's stability mechanism comprises the following:
 - [Stability Fees](/protocol/stability/stability-fees)
 - [Granda Mento](/protocol/stability/granda-mento)
 - [Adding Stable Tokens](/protocol/stability/adding-stable-assets)
-- [Tobin Tax](/protocol/stability/tobin-tax)

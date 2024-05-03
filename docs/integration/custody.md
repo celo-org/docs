@@ -17,7 +17,7 @@ Generally speaking, custodying CELO, the native token on the Celo network, requi
 
 As a fork of Ethereum, Celo retains the account model to keep track of users' balances. Celo Dollar and CELO implement the [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) interface. As mentioned previously, it is common for smart contracts to hold balances on behalf of other addresses. One example is the [`LockedGold`](/protocol/pos/locked-gold) smart contract that holds the "locked portion of a user's `CELO` balance". Another one is the [`ReleaseGold`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) smart contract that holds `CELO` that is being released to a beneficiary address over time according to some schedule.
 
-:::caution
+:::warning
 
 Celo assets assets exist on an independent blockchain, and although they implement the ERC20 interface, they cannot be accessed through wallets that connect to the Ethereum network. Wallets and other integrations must connect to the Celo network to transfer tokens on Celo.
 
@@ -83,7 +83,6 @@ Notice that all these functions have corresponding functions that are called on 
 In addition to transfers (both native and ERC-20) and locking / voting flows affecting user balances, there are also several additional Celo network features that may cause user balances to change:
 
 - Gas fee payments: the fee paid by transaction senders to use the network
-- Tobin tax: a tax on CELO transfers when the reserve balance is low and needs to be repleted
 - Epoch rewards distribution: reward payments to voters, validators, and validator groups
 
 Some of these may occur as events rather than transactions on the network, and therefore when updating balances, special attention should be paid to them.

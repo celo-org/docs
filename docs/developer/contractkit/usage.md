@@ -2,10 +2,6 @@
 title: Using the Kit
 ---
 
-The following are some examples of the capabilities of the `ContractKit`, assuming it is already connected to a node. If you aren't connected, [here is a refresher.](/blog/developer-guide/start/hellocontracts)
-
----
-
 ## Setting Default Tx Options
 
 `kit` allows you to set default transaction options:
@@ -57,15 +53,11 @@ console.log(receipt);
 
 ## Sending Custom Transactions
 
-The Celo transaction object is not the same as Ethereum's. There are three new optional fields present:
+The Celo transaction object is not the same as Ethereum's. There is a new optional field present:
 
-- `feeCurrency` (address of the ERC20 contract to use to pay for gas and the gateway fee)
-- `gatewayFeeRecipient` (coinbase address of the full serving the light client's trasactions)
-- `gatewayFee` (value paid to the gateway fee recipient, denominated in the fee currency)
+- `feeCurrency` (address of the ERC20 contract to use to pay for gas)
 
 `feeCurrency` enables transaction fees to be paid in currencies other than CELO. The currently supported fee currencies are CELO, cUSD and cEUR. You can specify the currency by passing the contract address of the currency you would like the transaction fees to be paid in.
-
-`gatewayFeeRecipient` and `gatewayFee` are options to support full node incentives, which are not currently implemented by the protocol.
 
 Celo accepts original Ethereum type transactions as well, so you can use Ethereum signing tools (like Metamask) as well as Celo specific wallets and tools. You can read more about these transaction formats in [CIP 35](https://github.com/celo-org/celo-proposals/blob/master/CIPs/cip-0035.md).
 

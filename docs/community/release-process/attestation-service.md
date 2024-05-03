@@ -23,7 +23,7 @@ Development builds should be identified with `-dev`, and only one commit should 
 
 ## Documentation
 
-Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/docs) repo and is hosted on [docs.celo.org](/validator/attestation).
+Documentation is maintained in the [celo-org/docs](https://github.com/celo-org/docs) repo and is hosted on [docs.celo.org](/).
 
 ## Identifying releases
 

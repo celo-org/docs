@@ -1,128 +1,172 @@
-# `celocli grandamento`
+`celocli grandamento`
+=====================
 
 Cancels a Granda Mento exchange proposal
 
-## `celocli grandamento:cancel`
+* [`celocli grandamento:cancel`](#celocli-grandamentocancel)
+* [`celocli grandamento:execute`](#celocli-grandamentoexecute)
+* [`celocli grandamento:get-buy-amount`](#celocli-grandamentoget-buy-amount)
+* [`celocli grandamento:list`](#celocli-grandamentolist)
+* [`celocli grandamento:propose`](#celocli-grandamentopropose)
+* [`celocli grandamento:show`](#celocli-grandamentoshow)
+
+## `celocli grandamento:cancel` {#celocli-grandamentocancel}
 
 Cancels a Granda Mento exchange proposal
 
 ```
-Cancels a Granda Mento exchange proposal
-
 USAGE
-  $ celocli grandamento:cancel
+  $ celocli grandamento:cancel --from <value> (--proposalID <value> |  | )
+    [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address allowed to
-                                                     cancel the proposal
+FLAGS
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address
+                                                            allowed to cancel the
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to view
 
-  --globalHelp                                       View all available global flags
-
-  --proposalID=proposalID                            (required) UUID of proposal to view
+DESCRIPTION
+  Cancels a Granda Mento exchange proposal
 ```
 
-_See code: [src/commands/grandamento/cancel.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/cancel.ts)_
-
-## `celocli grandamento:execute`
+## `celocli grandamento:execute` {#celocli-grandamentoexecute}
 
 Executes a Granda Mento exchange proposal
 
 ```
-Executes a Granda Mento exchange proposal
-
 USAGE
-  $ celocli grandamento:execute
+  $ celocli grandamento:execute --from <value> --proposalID <value> [--gasCurrency
+    <value>] [--globalHelp]
 
-OPTIONS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address to execute
-                                                     the exchange proposal
+FLAGS
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address to
+                                                            execute the exchange
+                                                            proposal
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to view
 
-  --globalHelp                                       View all available global flags
-
-  --proposalID=proposalID                            (required) UUID of proposal to view
+DESCRIPTION
+  Executes a Granda Mento exchange proposal
 ```
 
-_See code: [src/commands/grandamento/execute.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/execute.ts)_
-
-## `celocli grandamento:get-buy-amount`
+## `celocli grandamento:get-buy-amount` {#celocli-grandamentoget-buy-amount}
 
 Gets the buy amount for a prospective Granda Mento exchange
 
 ```
-Gets the buy amount for a prospective Granda Mento exchange
-
 USAGE
-  $ celocli grandamento:get-buy-amount
+  $ celocli grandamento:get-buy-amount --value <value> --stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal --sellCelo [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  --globalHelp                                     View all available global flags
-  --sellCelo=(true|false)                          (required) Sell or buy CELO
+FLAGS
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --sellCelo                                                (required) Sell or buy CELO
+  --stableToken=<option>                                    (required) [default: cusd]
+                                                            Name of the stable to
+                                                            receive or send
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --value=10000000000000000000000                           (required) The value of the
+                                                            tokens to exchange
 
-  --stableToken=(cUSD|cusd|cEUR|ceur|cREAL|creal)  (required) [default: cUSD] Name of
-                                                   the stable to receive or send
-
-  --value=10000000000000000000000                  (required) The value of the tokens to
-                                                   exchange
+DESCRIPTION
+  Gets the buy amount for a prospective Granda Mento exchange
 ```
 
-_See code: [src/commands/grandamento/get-buy-amount.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/get-buy-amount.ts)_
-
-## `celocli grandamento:list`
+## `celocli grandamento:list` {#celocli-grandamentolist}
 
 List current active Granda Mento exchange proposals
 
 ```
-List current active Granda Mento exchange proposals
-
 USAGE
-  $ celocli grandamento:list
+  $ celocli grandamento:list [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  --globalHelp  View all available global flags
+FLAGS
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+
+DESCRIPTION
+  List current active Granda Mento exchange proposals
 ```
 
-_See code: [src/commands/grandamento/list.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/list.ts)_
-
-## `celocli grandamento:propose`
+## `celocli grandamento:propose` {#celocli-grandamentopropose}
 
 Proposes a Granda Mento exchange
 
 ```
-Proposes a Granda Mento exchange
-
 USAGE
-  $ celocli grandamento:propose
+  $ celocli grandamento:propose --from <value> --value <value> --stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal --sellCelo [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with tokens
-                                                     to exchange
+FLAGS
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            tokens to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --sellCelo                                                (required) Sell or buy CELO
+  --stableToken=<option>                                    (required) [default: cusd]
+                                                            Name of the stable to
+                                                            receive or send
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --value=10000000000000000000000                           (required) The value of the
+                                                            tokens to exchange
 
-  --globalHelp                                       View all available global flags
-
-  --sellCelo=(true|false)                            (required) Sell or buy CELO
-
-  --stableToken=(cUSD|cusd|cEUR|ceur|cREAL|creal)    (required) [default: cUSD] Name of
-                                                     the stable to receive or send
-
-  --value=10000000000000000000000                    (required) The value of the tokens
-                                                     to exchange
+DESCRIPTION
+  Proposes a Granda Mento exchange
 ```
 
-_See code: [src/commands/grandamento/propose.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/propose.ts)_
-
-## `celocli grandamento:show`
+## `celocli grandamento:show` {#celocli-grandamentoshow}
 
 Shows details of a Granda Mento exchange proposal
 
 ```
-Shows details of a Granda Mento exchange proposal
-
 USAGE
-  $ celocli grandamento:show
+  $ celocli grandamento:show --proposalID <value> [--gasCurrency <value>]
+    [--globalHelp]
 
-OPTIONS
-  --globalHelp             View all available global flags
-  --proposalID=proposalID  (required) UUID of proposal to view
+FLAGS
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --proposalID=<value>                                      (required) UUID of proposal
+                                                            to view
+
+DESCRIPTION
+  Shows details of a Granda Mento exchange proposal
 ```
-
-_See code: [src/commands/grandamento/show.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/grandamento/show.ts)_

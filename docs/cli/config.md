@@ -1,52 +1,72 @@
-# `celocli config`
+`celocli config`
+================
 
 Configure CLI options which persist across commands
 
-## `celocli config:get`
+* [`celocli config:get`](#celocli-configget)
+* [`celocli config:set`](#celocli-configset)
+
+## `celocli config:get` {#celocli-configget}
 
 Output network node configuration
 
 ```
-Output network node configuration
-
 USAGE
-  $ celocli config:get
+  $ celocli config:get [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  --globalHelp  View all available global flags
+FLAGS
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+
+DESCRIPTION
+  Output network node configuration
 ```
 
-_See code: [src/commands/config/get.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/config/get.ts)_
+_See code: [src/commands/config/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/get.ts)_
 
-## `celocli config:set`
+## `celocli config:set` {#celocli-configset}
 
-Configure running node information for propogating transactions to network
+Configure running node information for propagating transactions to network
 
 ```
-Configure running node information for propogating transactions to network
-
 USAGE
-  $ celocli config:set
+  $ celocli config:set [-n <value>] [--gasCurrency <value>] [--globalHelp]
 
-OPTIONS
-  -n, --node=node
+FLAGS
+  -n, --node=<value>
       URL of the node to run commands against (defaults to 'http://localhost:8545')
 
-  --gasCurrency=(auto|Auto|CELO|celo|cUSD|cusd|cEUR|ceur|cREAL|creal)
-      Use a specific gas currency for transaction fees (defaults to 'auto' which uses
-      whatever feeCurrency is available)
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
   --globalHelp
       View all available global flags
 
+DESCRIPTION
+  Configure running node information for propagating transactions to network
+
 EXAMPLES
+  set --node mainnet # alias for `forno`
+
+  set --node forno # alias for https://forno.celo.org
+
+  set --node baklava # alias for https://baklava-forno.celo-testnet.org
+
+  set --node alfajores # alias for https://alfajores-forno.celo-testnet.org
+
+  set --node localhost # alias for `local`
+
+  set --node local # alias for http://localhost:8545
+
   set --node ws://localhost:2500
 
   set --node <geth-location>/geth.ipc
-
-  set --gasCurrency cUSD
-
-  set --gasCurrency CELO
 ```
 
-_See code: [src/commands/config/set.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/config/set.ts)_
+_See code: [src/commands/config/set.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/set.ts)_

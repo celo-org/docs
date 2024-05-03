@@ -21,11 +21,9 @@ Consider using [Dependabot](https://docs.github.com/en/code-security/supply-chai
 
 ## SDKs
 
-### ContractKit
+### viem
 
-ContractKit is a library to help developers and validators to interact with the Celo blockchain and is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
-
-<PageRef url="/developer-guide/contractkit" pageName="ContractKit" />
+[viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
 
 ### react-celo
 
@@ -43,7 +41,13 @@ A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
 WalletConnect is a standard across EVM compatible blockchains to connect wallets to dapps. It allows developers to build connections between wallets and dapps on the same desktop or mobile device, or between desktop dapps and mobile wallets.
 
-<PageRef url="walletconnect" pageName="WalletConnect" />
+<PageRef url="wallet-connect" pageName="WalletConnect" />
+
+### ContractKit
+
+ContractKit is a library to help developers and validators to interact with the Celo blockchain and is well suited to developers looking for an easy way to integrate Celo Smart Contracts within their applications.
+
+<PageRef url="/developer-guide/contractkit" pageName="ContractKit" />
 
 ### Celo CLI
 
@@ -93,9 +97,7 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 ### The Graph
 
-[The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph. You can read more about how to use the Graph with Celo [here](/blog/using-the-graph).
-
-<PageRef url="/https://thegraph.com/" pageName="The Graph" />
+[The Graph](https://thegraph.com/) is an indexing protocol for querying networks like Celo, Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. Many blockchain data querying tools like Dapplooker leverage the Graph.
 
 ### DappLooker
 
@@ -123,17 +125,17 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 <PageRef url="/network/node/forno" pageName="Forno" />
 
+### Infura
+
+RPC end point provider that supports Celo and several other EVM L1s. Infura's node infrastructure powers some of the biggest projects today.
+
+<PageRef url="https://docs.infura.io/networks/celo" pageName="Infura" />
+
 ### Ankr
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
 <PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
-
-### Figment Datahub
-
-[Figment datahub](https://figment.io/datahub/celo/) is a service similar to Forno. They have some additional features that allow you to track how people are using your application in terms of the type and number of requests coming through the endpoints. They have a free tier with the option to pay for the service to increase limits to support more popular projects.
-
-<PageRef url="https://figment.io/datahub/celo/" pageName="Figment Datahub" />
 
 ### Quicknode
 
@@ -146,6 +148,12 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
+
+### Lava
+
+Lava is a multi-chain RPC provider. They also provide managed and decentralized options for your applications.
+
+<PageRef url="https://lavanet.xyz" pageName="Lava" />
 
 ## Celo Wallets
 

@@ -1,223 +1,280 @@
-# `celocli exchange`
+`celocli exchange`
+==================
 
-Exchange Celo Dollars and CELO via the stability mechanism
+Exchange Celo Dollars and CELO via Mento
 
-## `celocli exchange:celo`
+* [`celocli exchange:celo`](#celocli-exchangecelo)
+* [`celocli exchange:dollars`](#celocli-exchangedollars)
+* [`celocli exchange:euros`](#celocli-exchangeeuros)
+* [`celocli exchange:gold`](#celocli-exchangegold)
+* [`celocli exchange:reals`](#celocli-exchangereals)
+* [`celocli exchange:show`](#celocli-exchangeshow)
+* [`celocli exchange:stable`](#celocli-exchangestable)
 
-Exchange CELO for StableTokens via the stability mechanism. (Note: this is the equivalent of the old exchange:gold)
+## `celocli exchange:celo` {#celocli-exchangecelo}
+
+Exchange CELO for StableTokens via Mento. (Note: this is the equivalent of the old exchange:gold)
 
 ```
-Exchange CELO for StableTokens via the stability mechanism. (Note: this is the equivalent of the old exchange:gold)
-
 USAGE
-  $ celocli exchange:celo
+  $ celocli exchange:celo --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>] [--stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of StableTokens to receive in
-                                                     return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of
+                                                            StableTokens to receive in
+                                                            return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            CELO to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --stableToken=<option>                                    [default: cusd] Name of the
+                                                            stable to receive
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --value=10000000000000000000000                           (required) The value of CELO
+                                                            to exchange for a
+                                                            StableToken
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with CELO to
-                                                     exchange
-
-  --globalHelp                                       View all available global flags
-
-  --stableToken=(cUSD|cusd|cEUR|ceur|cREAL|creal)    [default: cUSD] Name of the stable
-                                                     to receive
-
-  --value=10000000000000000000000                    (required) The value of CELO to
-                                                     exchange for a StableToken
+DESCRIPTION
+  Exchange CELO for StableTokens via Mento. (Note: this is the equivalent of the old
+  exchange:gold)
 
 EXAMPLES
   celo --value 5000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 
-  celo --value 5000000000000 --forAtLeast 100000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cStableTokenSymbol
+  celo --value 5000000000000 --forAtLeast 100000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cStableTokenSymbol
 ```
 
-_See code: [src/commands/exchange/celo.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/celo.ts)_
+_See code: [src/commands/exchange/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/celo.ts)_
 
-## `celocli exchange:dollars`
+## `celocli exchange:dollars` {#celocli-exchangedollars}
 
-Exchange Celo Dollars for CELO via the stability mechanism
+Exchange Celo Dollars for CELO via Mento
 
 ```
-Exchange Celo Dollars for CELO via the stability mechanism
-
 USAGE
-  $ celocli exchange:dollars
+  $ celocli exchange:dollars --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of CELO to receive in return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of CELO to
+                                                            receive in return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            Celo Dollars to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=10000000000000000000000                           (required) The value of Celo
+                                                            Dollars to exchange for CELO
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with Celo
-                                                     Dollars to exchange
-
-  --globalHelp                                       View all available global flags
-
-  --value=10000000000000000000000                    (required) The value of Celo
-                                                     Dollars to exchange for CELO
+DESCRIPTION
+  Exchange Celo Dollars for CELO via Mento
 
 EXAMPLES
   dollars --value 10000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 
-  dollars --value 10000000000000 --forAtLeast 50000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+  dollars --value 10000000000000 --forAtLeast 50000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 ```
 
-_See code: [src/commands/exchange/dollars.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/dollars.ts)_
+_See code: [src/commands/exchange/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/dollars.ts)_
 
-## `celocli exchange:euros`
+## `celocli exchange:euros` {#celocli-exchangeeuros}
 
-Exchange Celo Euros for CELO via the stability mechanism
+Exchange Celo Euros for CELO via Mento
 
 ```
-Exchange Celo Euros for CELO via the stability mechanism
-
 USAGE
-  $ celocli exchange:euros
+  $ celocli exchange:euros --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of CELO to receive in return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of CELO to
+                                                            receive in return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            Celo Euros to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=10000000000000000000000                           (required) The value of Celo
+                                                            Euros to exchange for CELO
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with Celo
-                                                     Euros to exchange
-
-  --globalHelp                                       View all available global flags
-
-  --value=10000000000000000000000                    (required) The value of Celo Euros
-                                                     to exchange for CELO
+DESCRIPTION
+  Exchange Celo Euros for CELO via Mento
 
 EXAMPLES
   euros --value 10000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 
-  euros --value 10000000000000 --forAtLeast 50000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+  euros --value 10000000000000 --forAtLeast 50000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 ```
 
-_See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/euros.ts)_
+_See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/euros.ts)_
 
-## `celocli exchange:gold`
+## `celocli exchange:gold` {#celocli-exchangegold}
 
-Exchange CELO for StableTokens via the stability mechanism. _DEPRECATION WARNING_ Use the "exchange:celo" command instead
-
-```
 Exchange CELO for StableTokens via the stability mechanism. *DEPRECATION WARNING* Use the "exchange:celo" command instead
 
+```
 USAGE
-  $ celocli exchange:gold
+  $ celocli exchange:gold --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>] [--stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of StableTokens to receive in
-                                                     return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of
+                                                            StableTokens to receive in
+                                                            return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            CELO to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --stableToken=<option>                                    [default: cusd] Name of the
+                                                            stable to receive
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --value=10000000000000000000000                           (required) The value of CELO
+                                                            to exchange for a
+                                                            StableToken
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with CELO to
-                                                     exchange
-
-  --globalHelp                                       View all available global flags
-
-  --stableToken=(cUSD|cusd|cEUR|ceur|cREAL|creal)    [default: cUSD] Name of the stable
-                                                     to receive
-
-  --value=10000000000000000000000                    (required) The value of CELO to
-                                                     exchange for a StableToken
+DESCRIPTION
+  Exchange CELO for StableTokens via the stability mechanism. *DEPRECATION WARNING* Use
+  the "exchange:celo" command instead
 
 EXAMPLES
   gold --value 5000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 
-  gold --value 5000000000000 --forAtLeast 100000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cUSD
+  gold --value 5000000000000 --forAtLeast 100000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cUSD
 ```
 
-_See code: [src/commands/exchange/gold.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/gold.ts)_
+## `celocli exchange:reals` {#celocli-exchangereals}
 
-## `celocli exchange:reals`
-
-Exchange Celo Brazilian Real (cBRL) for CELO via the stability mechanism
+Exchange Celo Brazilian Real (cREAL) for CELO via Mento
 
 ```
-Exchange Celo Brazilian Real (cBRL) for CELO via the stability mechanism
-
 USAGE
-  $ celocli exchange:reals
+  $ celocli exchange:reals --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of CELO to receive in return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of CELO to
+                                                            receive in return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            Celo Brazilian Real to
+                                                            exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --value=10000000000000000000000                           (required) The value of Celo
+                                                            Brazilian Real to exchange
+                                                            for CELO
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with Celo
-                                                     Brazilian Real to exchange
-
-  --globalHelp                                       View all available global flags
-
-  --value=10000000000000000000000                    (required) The value of Celo
-                                                     Brazilian Real to exchange for CELO
+DESCRIPTION
+  Exchange Celo Brazilian Real (cREAL) for CELO via Mento
 
 EXAMPLES
   reals --value 10000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 
-  reals --value 10000000000000 --forAtLeast 50000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+  reals --value 10000000000000 --forAtLeast 50000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
 ```
 
-_See code: [src/commands/exchange/reals.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/reals.ts)_
+_See code: [src/commands/exchange/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/reals.ts)_
 
-## `celocli exchange:show`
+## `celocli exchange:show` {#celocli-exchangeshow}
 
-Show the current exchange rates offered by the Exchange
+Show the current exchange rates offered by the Broker
 
 ```
-Show the current exchange rates offered by the Exchange
-
 USAGE
-  $ celocli exchange:show
+  $ celocli exchange:show [--gasCurrency <value>] [--globalHelp] [--amount <value>]
 
-OPTIONS
-  --amount=amount  [default: 1000000000000000000] Amount of the token being exchanged to
-                   report rates for
+FLAGS
+  --amount=<value>                                          [default:
+                                                            1000000000000000000] Amount
+                                                            of the token being exchanged
+                                                            to report rates for
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
 
-  --globalHelp     View all available global flags
+DESCRIPTION
+  Show the current exchange rates offered by the Broker
 
-EXAMPLE
+EXAMPLES
   list
 ```
 
-_See code: [src/commands/exchange/show.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/show.ts)_
+_See code: [src/commands/exchange/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/show.ts)_
 
-## `celocli exchange:stable`
+## `celocli exchange:stable` {#celocli-exchangestable}
 
-Exchange Stable Token for CELO via the stability mechanism
+Exchange Stable Token for CELO via Mento
 
 ```
-Exchange Stable Token for CELO via the stability mechanism
-
 USAGE
-  $ celocli exchange:stable
+  $ celocli exchange:stable --from <value> --value <value> [--gasCurrency <value>]
+    [--globalHelp] [--forAtLeast <value>] [--stableToken
+    cUSD|cusd|cEUR|ceur|cREAL|creal]
 
-OPTIONS
-  --forAtLeast=10000000000000000000000               [default: 0] Optional, the minimum
-                                                     value of CELO to receive in return
+FLAGS
+  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
+                                                            minimum value of CELO to
+                                                            receive in return
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
+                                                            the Stable Token to exchange
+  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
+                                                            for transaction fees
+                                                            (defaults to CELO if no gas
+                                                            currency is supplied). It
+                                                            must be a whitelisted token.
+  --globalHelp                                              View all available global
+                                                            flags
+  --stableToken=<option>                                    Name of the stable token to
+                                                            be transfered
+                                                            <options: cUSD|cusd|cEUR|ceu
+                                                            r|cREAL|creal>
+  --value=10000000000000000000000                           (required) The value of
+                                                            Stable Tokens to exchange
+                                                            for CELO
 
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) The address with the
-                                                     Stable Token to exchange
-
-  --globalHelp                                       View all available global flags
-
-  --stableToken=(cUSD|cusd|cEUR|ceur|cREAL|creal)    Name of the stable token to be
-                                                     transfered
-
-  --value=10000000000000000000000                    (required) The value of Stable
-                                                     Tokens to exchange for CELO
+DESCRIPTION
+  Exchange Stable Token for CELO via Mento
 
 EXAMPLES
-  stable --value 10000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-  --stableToken cStableTokenSymbol
+  stable --value 10000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cStableTokenSymbol
 
-  stable --value 10000000000000 --forAtLeast 50000000000000 --from
-  0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cStableTokenSymbol
+  stable --value 10000000000000 --forAtLeast 50000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cStableTokenSymbol
 ```
 
-_See code: [src/commands/exchange/stable.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/exchange/stable.ts)_
+_See code: [src/commands/exchange/stable.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/stable.ts)_

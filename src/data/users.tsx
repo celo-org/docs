@@ -146,6 +146,14 @@ export const Tags: { [type in TagType]: Tag } = {
 // prettier-ignore
 const Users: User[] = [
   {
+    title: 'Add3',
+    description: 'Add3 helps organizations unlock their Web3 potential with a powerful no-code Web3 platform for creating and managing token products.',
+    preview: require('./showcase/add3.png'),
+    website: 'https://www.add3.io/',
+    source: 'https://github.com/Add3official',
+    tags: ['apps', 'defi'],
+  }, 
+  {
     title: 'EthicHub',
     description: translate({
       message: 'EthicHub connects DeFi to the real world: crowdlending backed by crowd-collateral for the unbanked farmers excluded from TradFi.',
@@ -180,6 +188,14 @@ const Users: User[] = [
     source: 'https://github.com/Emerging-Impact',
     tags: ['apps', 'impact'],
   },
+  {
+    title: 'Envio',
+    description: 'Envio is a modern, multi-chain EVM blockchain indexing framework speed-optimized for querying real-time and historical data.',
+    preview: require('./showcase/envio.png'),
+    website: 'https://www.envio.dev/',
+    source: 'https://github.com/enviodev',
+    tags: ['apps', 'defi'],
+  }, 
   {
     title: 'Mobius',
     description: 'Cross-chain stableswap exchange.',
@@ -233,7 +249,7 @@ const Users: User[] = [
     description: 'Banknless infrastructure for building circular trade and mutual credit networks.',
     preview: require('./showcase/resource.png'),
     website: 'https://resource.finance/',
-    source: 'https://github.com/ReSource-Network/',
+    source: 'https://github.com/resourcefinance',
     tags: ['apps', 'defi'],
   },
   {
@@ -317,14 +333,6 @@ const Users: User[] = [
     tags: ['apps', 'defi'],
   },
   {
-    title: 'Porio',
-    description: 'The sustainnable marketplace for digital art and game assets.',
-    preview: require('./showcase/porio.png'),
-    website: 'https://epor.io/',
-    source: 'https://epor.io/',
-    tags: ['apps', 'defi'],
-  },
-  {
     title: 'Aijia',
     description: 'A modern ticketing and marketplace platform focused on FANS and the fan experience.',
     preview: require('./showcase/aijia.png'),
@@ -405,14 +413,6 @@ const Users: User[] = [
     tags: ['apps', 'wallets', 'popular'],
   },
   {
-    title: 'CeloDance',
-    description: 'Send, Vote And Earn Celo Assets , Make It Mobile.',
-    preview: require('./showcase/celo-dance.png'),
-    website: 'https://celo.dance/',
-    source: 'https://celo.dance/',
-    tags: ['apps', 'wallets'],
-  },
-  {
     title: 'SushiSwap',
     description: 'Swap, earn, stack yields, lend, borrow, leverage all on one decentralized, community driven platform. Welcome home to DeFi.',
     preview: require('./showcase/sushi-swap.png'),
@@ -427,14 +427,6 @@ const Users: User[] = [
     website: 'https://www.socialstack.co/',
     source: 'https://www.socialstack.co/',
     tags: ['apps', 'defi'],
-  },
-  {
-    title: 'Qavah',
-    description: 'Decentralized and free-of-charge crowdfunding platform.',
-    preview: require('./showcase/qavah.png'),
-    website: 'https://qavah.me',
-    source: 'https://qavah.me',
-    tags: ['apps', 'impact'],
   },
   {
     title: 'Niftydrop',
@@ -854,6 +846,14 @@ const Users: User[] = [
     tags: ['apps','earn'],
   },
   {
+    title: 'OGP Bulk Sender',
+    description: 'Send your native coins, tokens, and NFTs in batches using Bulk Sender by Off Grid Platform.',
+    preview: require('./showcase/ogpbulksender.png'),
+    website: 'https://www.offgridplatform.com/apps/bulk-sender',
+    source: 'https://www.offgridplatform.com/apps/bulk-sender',
+    tags: ['apps','wallets','defi'],
+  },
+  {
     title: 'Paysail',
     description: 'Paysail leverages asset-backed stablecoins to offer an innovative global B2B invoicing solution with immediate access to incoming funds.',
     preview: require('./showcase/pay-sail.png'),
@@ -1039,6 +1039,14 @@ const Users: User[] = [
     tags: ['apps','wallets','defi'],
   },
   {
+    title: 'Quarashi Network',
+    description: 'Non-custodial MultiChain Crypto Assets Manager, Peer-to-Peer Audio/Video Conferencing & Chat, Markets Overview, News & Airdrops',
+    preview: require('./showcase/quarashi.png'),
+    website: 'https://quarashi.network/',
+    source: 'https://github.com/quarashi-network',
+    tags: ['apps','defi','wallets'],
+  },
+  {
     title: 'Kolektivo',
     description: 'A collection of institutional technologies that allow local communities to launch, finance, and govern their own regenerative economies',
     preview: require('./showcase/kolektivo.png'),
@@ -1106,7 +1114,7 @@ const Users: User[] = [
     title: 'Closer',
     description: 'Suite of web3 tools to bootstrap regenerative action and meaningful governance in local communities',
     preview: require('./showcase/closer.png'),
-    website: 'https://www.wildchain.io/',
+    website: 'https://closer.earth/',
     source: 'https://github.com/closerearth',
     tags: ['refi'],
   },

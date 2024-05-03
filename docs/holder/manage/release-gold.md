@@ -17,12 +17,6 @@ The intent of the `ReleaseGold` contract is to allow beneficiaries to participat
 
 Increasing the volume of CELO that can be used in Celo’s Proof of Stake consensus promotes network security and even greater decentralization. See below for details on specific features of the `ReleaseGold` contract, as well as how they are implemented. The [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol) includes documentation, and technical readers are encouraged to find further details there.
 
-:::warning
-
-Please do not send any ERC20 token other han CELO or cUSD to a Release Gold contract, as it will not be able to be transfered out of the contract per [source code](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/governance/ReleaseGold.sol#L164).
-
-:::
-
 ### Example
 
 To illustrate with an example, let’s consider a `ReleaseGold` contract deployed with a total balance of 100 CELO. For example purposes, we’ll assume this contract enables both voting and validating.
@@ -61,11 +55,15 @@ In `ReleaseGold` smart contracts, a fixed amount of CELO becomes accessible to t
 
 The following arguments specify a ReleaseGold smart contract schedule:
 
+<!-- make the below text code block because crowdin is messing it up -->
+
+```mdx-code-block
 - `releasePeriod` - the frequency, in seconds, at which CELO is released
   - Some common values: monthly (2628000), every 3 months (7884000)
 - `amountReleasedPerPeriod` - the amount of CELO to be released each `releasePeriod`
 - `numReleasePeriods` - the number of `releasePeriods` in which CELO will be released
 - `releaseCliff` - the time at which the release cliff expires.
+```
 
 The total balance for the ReleaseGold account can be determined by multiplying the `numReleasePeriods` by `amountReleasedPerPeriod`.
 

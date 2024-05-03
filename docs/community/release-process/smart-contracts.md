@@ -106,7 +106,7 @@ Specifically, it compiles the latest and candidate releases and compares smart c
 2. ABI, to detect major and minor version changes
 3. Bytecode, to detect patch version changes
 
-Finally, it checks release candidate smart contract version numbers and requires that they have been updated appropriately since the latest release by following semantic versioning as defined in the [Versioning section](#Versioning) above.
+Finally, it checks release candidate smart contract version numbers and requires that they have been updated appropriately since the latest release by following semantic versioning as defined in the [Versioning section](#versioning) above.
 
 The following exceptions apply:
 
@@ -235,9 +235,28 @@ After a successful release execution on a testnet, the resulting network state s
 
 Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automated test suite against the network
 
+### Verify smart contracts
+
+Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/.
+
+1. Update CeloScanApi in env.json file
+2. Run verification command
+
+```bash
+yarn truffle-verify [ContractName]@[Contract address]  --network [network] --forno [network rpc url]
+```
+
+example:
+
+```bash
+yarn truffle-verify MentoFeeHandlerSeller@0x4efa274b7e33476c961065000d58ee09f7921a74 --network mainnet --forno https://forno.celo.org
+```
+
 ### Performance
 
 A ceiling on the gas consumption for all common operations should be defined and enforced by automated checks run on every commit.
+
+For troubleshooting please see Readme.md of protocol package.
 
 ### Backwards compatibility
 
@@ -321,9 +340,7 @@ Deploying a new contract release should occur with the following process. On-cha
           Let the community know about the upcoming release proposal by posting
           details to the Governance category on https://forum.celo.org and cross
           post in the{" "}
-          <a href="https://discord.com/channels/600834479145353243/704805825373274134">
-            Discord <code>#governance</code> channel.
-          </a>
+          <a href="https://discord.com/channels/600834479145353243/704805825373274134">Discord <code>#governance</code> channel.</a>
           See the 'Communication guidelines' section below for information on what
           your post should contain.
         </li>
@@ -407,9 +424,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Monitor the progress of the proposal through the{" "}
-          <a href="/protocol/governance">
-            governance process.
-          </a>
+          <a href="/protocol/governance">governance process.</a>
           <ul>
             <li>
               Currently the governance process should take approximately 1 week:

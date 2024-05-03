@@ -27,8 +27,6 @@ While other Validator Groups will exist on the Celo Network, the fastest way to 
 
 Because of the importance of Validator security and availability, Validators are expected to run a "proxy" node in front of each Validator node. In this setup, the Proxy node connects with the rest of the network, and the Validator node communicates only with the Proxy, ideally via a private network.
 
-Additionally, Validators are expected to run an [Attestation Service](https://github.com/celo-org/celo-monorepo/tree/master/packages/attestation-service) as part of the [lightweight identity protocol](/protocol/identity/), to provide attestations that allow users to map their phone number to a Celo address.
-
 [Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa)
 
 ## Prerequisites
@@ -47,41 +45,60 @@ The recommended Celo Validator setup involves continually running three instance
 
 - 1 **Validator node**: should be deployed to single-tenant hardware in a secure, high availability data center
 - 1 **Validator Proxy node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), but requires high availability
-- 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements
+<!-- - 1 **Attestation node**: can be a VM or container in a multi-tenant environment (e.g. a public cloud), and has moderate availability requirements -->
 
 Celo is a proof-of-stake network, which has different hardware requirements than a Proof of Work network. proof-of-stake consensus is less CPU intensive, but is more sensitive to network connectivity and latency. Below is a list of standard requirements for running Validator and Proxy nodes on the Celo Network:
 
 #### Validator node
 
-- Memory: 16 GB RAM
-- CPU: 4 core / 8 thread 64-bit CPU with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
-- Disk: 512 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 32GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB is a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-highmem-4, n2d-highmem-4 or c3-highmem-4
+- AWS: r6i.xlarge, r6in.xlarge, or r6a.xlarge
+- Azure: Standard_E4_v5, or Standard_E4d_v5 or Standard_E4as_v5
 
 #### Proxy or Full node
 
-- Memory: 8 GB RAM
-- CPU: Quad core 3GHz (64-bit)
-- Disk: 256 GB of SSD storage, plus a secondary HDD desirable
-- Network: At least 1 GB input/output Ethernet with a fiber Internet connection, ideally redundant connections and HA switches
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 512GB SSD or NVMe (resizable). Current chain size at August 16th is ~190GB, so 512GB i,s a safe bet for the next 1 year. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
 
-Attestation Service nodes consume less resources and can run on machines with less memory and compute.
+Some cloud instances that meet the above requirements are:
 
-In addition, to get things started, it will be useful to run a node on your local machine that you can issue CLI commands against.
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
+
+#### Archive Nodes
+
+- CPU: At least 4 cores / 8 threads x86_64 with 3ghz on modern CPU architecture newer than 2018 Intel Cascade Lake or Ryzen 3000 series or newer with a Geekbench 5 Single Threaded score of >1000 and Multi Threaded score of > 4000
+- Memory: 16GB
+- Disk: 3TB SSD or NVMe (resizable). Current chain size at August 16th is ~2.1TB, so 3TB is a safe bet for the next 6 months. We recommend using a cloud provider or storage solution that allows you to resize your disk without downtime.
+- Network: At least 1 GB input/output Ethernet with a fiber (low latency) Internet connection, ideally redundant connections and HA switches.
+
+Some cloud instances that meet the above requirements are:
+
+- GCP: n2-standard-4, n2d-standard-4 or c3-standard-4
+- AWS: M6i.xlarge, M6in.xlarge, or M6a.xlarge
+- Azure: Standard_D4_v5, or Standard_D4_v4 or Standard_D4as_v5
 
 ### Networking requirements
 
-In order for your Validator to participate in consensus and complete attestations, it is **critically** important to configure your network correctly.
+In order for your Validator to participate in consensus, it is **critically** important to configure your network correctly.
 
-Your Proxy and Attestations nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
+Your Proxy nodes must have static, external IP addresses, and your Validator node must be able to communicate with the Proxy, either via an internal network or via the Proxy's external IP address.
 
 On the Validator machine, port 30503 should accept TCP connections from the IP address of your Proxy machine. This port is used by the Validator to communicate with the Proxy.
 
 On the Proxy machine, port 30503 should accept TCP connections from the IP address of your Validator machine. This port is used by the Proxy to communicate with the Validator.
 
-On the Proxy and Attestations machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
-
-On the Attestations machine, port 80 should accept TCP connections from all IP addresses. This port is used by users to request attestations from you.
+On the Proxy machines, port 30303 should accept TCP and UDP connections from all IP addresses. This port is used to communicate with other nodes in the network.
 
 To illustrate this, you may refer to the following table:
 
@@ -89,7 +106,6 @@ To illustrate this, you may refer to the following table:
 | ---------------------- | -------------------- | ------------------- | --------------- |
 | Validator              |                      |                     | tcp:30503       |
 | Proxy                  | tcp:30303, udp:30303 | tcp:30503           |                 |
-| Attestation            | tcp:80               |                     |                 |
 
 ### Software requirements
 
@@ -104,7 +120,7 @@ To illustrate this, you may refer to the following table:
 
 - **You have celocli installed.**
 
-  See [Command Line Interface \(CLI\) ](/cli/)for instructions on how to get set up.
+  See [Command Line Interface (CLI)](/cli/)for instructions on how to get set up.
 
 - **You are using the latest Node 10.x LTS**
 
@@ -129,8 +145,8 @@ This guide contains a large number of keys, so it is important to understand the
 
 Celo nodes store private keys encrypted on disk with a password, and need to be "unlocked" before use. Private keys can be unlocked in two ways:
 
-1.  By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
-2.  By setting the `--unlock` flag when starting the node.
+1. By running the `celocli account:unlock` command. Note that the node must have the "personal" RPC API enabled in order for this command to work.
+2. By setting the `--unlock` flag when starting the node.
 
 It is important to note that when a key is unlocked you need to be particularly careful about enabling access to the node's RPC APIs.
 
@@ -619,10 +635,6 @@ You can see additional information about your validator, including uptime score,
 # On your local machine
 celocli validator:show $CELO_VALIDATOR_ADDRESS
 ```
-
-## Running the Attestation Service
-
-Validators are expected to run an [Attestation Service](/validator/attestation) to provide attestations that allow users to map their phone number to an account on Celo. Follow the instructions now to [set up the service](/validator/attestation).
 
 ## Deployment Tips
 

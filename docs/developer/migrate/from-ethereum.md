@@ -88,9 +88,8 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 
 2.  Celo transaction objects are slightly different from transaction objects on Ethereum.
     Ethereum transaction objects include fields to, value, gas, gasPrice, data, nonce, signature (v,r,s).
-    Celo transaction objects include the same fields as Ethereum transaction objects, plus feeCurrency, gatewayFee and gatewayFeeRecipient.
-    These additional fields are included to provide [full node incentives](/protocol/transaction/full-node-incentives#incentives-for-operating-full-nodes)
-    and to allow users to [pay transaction fees in different currencies.](/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
+    Celo transaction objects include the same fields as Ethereum transaction objects, plus the feeCurrency field.
+    This additional field is included to allow users to [pay transaction fees in different currencies.](/protocol/transaction/erc20-transaction-fees) As of May 19th, 2021, with the [Donut hardfork](https://medium.com/celoorg/dissecting-the-donut-hardfork-23cad6015fa2), the Celo network accepts both Celo transaction objects and Ethereum transaction objects as valid Celo transactions. This means that you can use most Ethereum tools with Celo, right out of the box (just point them at the Celo network). When sending Ethereum formatted transactions on Celo, you will not be able to use Celo features of specifying transaction fee currencies or full node incentives.
 
 1)  When using mnemonic seed phrases (or secret phrases), Celo accounts (a private key and corresponding address) are derived differently from Ethereum accounts. The Celo key derivation path is `m/44'/52752'/0'/0` whereas Ethereum’s is `m/44'/60'/0'/0`. This means that going from a seed phrase to accounts will be different when using Ethereum vs Celo wallets.
 
@@ -99,10 +98,6 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 ## Deploying Ethereum Contracts to Celo
 
 Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Figment Datahub](https://figment.io/datahub/celo/).
-
-[This tutorial](/blog/developer-guide/start/hellocontracts) goes over how to start an ultralight node that runs locally and use it to deploy a contract to the Alfajores testnet using Truffle.
-
-[This tutorial](/blog/developer-guide/start/hello-contract-remote-node) goes over how to connect to a remote node and use ContractKit to deploy a contract to Alfajores using Truffle.
 
 ## Protocol Differences
 

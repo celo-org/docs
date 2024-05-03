@@ -7,6 +7,10 @@ description: How to verify a Smart Contract on Celo using Hardhat
 
 Verifying a smart contract allows developers to review your code from within the CeloScan Block Explorer
 
+:::tip
+If you use [Celo Composer](https://github.com/celo-org/celo-composer) all the configuration is done for you out of the box, all you need is the CeloScan API keys!
+:::
+
 ## Prerequisites
 
 Before the installation steps you need to have your hardhat project initialized using the command
@@ -15,40 +19,14 @@ Before the installation steps you need to have your hardhat project initialized 
 npx hardhat init
 ```
 
-Make sure to have dependencies installed!
-
-## Configuration
-
-Some initial installation and configuration is required.
-
-### Installation
-
-Use the following command to install
-
-```bash
-npm i hardhat-celo --save-dev
-```
+Make sure to have dependencies installed and the hardhat config file is importing `@nomicfoundation/hardhat-toolbox`
 
 ### Hardhat Configuration
-
-Import the plugin in your `hardhat.config.js`:
-
-```js
-require("hardhat-celo");
-```
-
-Or if you are using TypeScript, in your `hardhat.config.ts`:
-
-```ts
-import "hardhat-celo";
-```
-
-Remove / Comment the import for `@nomicfoundation/hardhat-toolbox`
 
 Add the following configuration to the `config` object in `hardhat.config.js`.
 
 ```js
-networks: {
+    networks: {
         alfajores: {
             // can be replaced with the RPC url of your choice.
             url: "https://alfajores-forno.celo-testnet.org",
@@ -68,6 +46,24 @@ networks: {
             alfajores: "<CELOSCAN_API_KEY>",
             celo: "<CELOSCAN_API_KEY>"
         },
+        customChains: [
+            {
+                network: "alfajores",
+                chainId: 44787,
+                urls: {
+                    apiURL: "https://api-alfajores.celoscan.io/api",
+                    browserURL: "https://alfajores.celoscan.io",
+                },
+            },
+            {
+                network: "celo",
+                chainId: 42220,
+                urls: {
+                    apiURL: "https://api.celoscan.io/api",
+                    browserURL: "https://celoscan.io/",
+                },
+            },
+        ]
     },
 ```
 
@@ -78,13 +74,11 @@ Use the following command (Make sure your contracts are compiled before verifica
 Alfajores Testnet
 
 ```bash
-npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network alfajores
+npx hardhat verify [CONTRACT_ADDRESS] [...CONSTRUCTOR_ARGS] --network alfajores
 ```
 
 Celo Mainnet
 
 ```bash
-npx hardhat verify <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS> --network celo
+npx hardhat verify [CONTRACT_ADDRESS] [CONSTRUCTOR_ARGS] --network celo
 ```
-
-Alternatively, You can read an in depth guide about how to deploy and verify contracts on Celo Block Explorer (sourcify) programmatically using the hardhat-deploy plugin [here](/blog/hardhat-deploy-verify).

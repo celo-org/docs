@@ -15,9 +15,7 @@ How to upgrade to the newest available version of a Celo node.
 
 ## When an upgrade is required
 
-Upgrades to the Celo node software will often be optional improvements, such as improvements to performance, new useful features, and non-critical bug fixes.
-
-Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes. Required upgrades are enforced by setting the via a minimum client version number stored on-chain, which may be updated via [Governance](/protocol/governance) after the client is made available.
+Upgrades to the Celo node software will often be optional improvements, such as improvements to performance, new useful features, and non-critical bug fixes. Occasionally, they may be required when the upgrade is necessary to continue operating on the network, such as hard forks, or critical bug fixes.
 
 ## Upgrading a non-validating node
 
@@ -45,9 +43,8 @@ docker rm celo-fullnode
 
 Start the new node using `docker run` as detailed in the appropriate section of the getting started guide. Remember to recover any environment variables, if using a new terminal, before running the documented commands.
 
-- [Full node](/validator/run/mainnet#start-the-node)
+- [Full node](/validator/run/mainnet#validator-node-setup)
 - [Accounts node](/validator/run/mainnet#start-your-accounts-node)
-- [Attestion node](/validator/run/mainnet#running-the-attestation-service)
 - [Proxy node](/validator/run/mainnet#deploy-a-proxy)
 
 ## Upgrading a Validating Node
@@ -93,7 +90,7 @@ Note that the replica node **must** use the same set of proxies as the primary n
 
 On startup, nodes will look to see if there is a `replicastate` folder inside it's data directory. If that folder exists the node will configure itself as a validator or replica depending on the previous stored state. The stored state will take precedence over the command line flags. If the folder does not exists the node will stored it's state as configured by the command line. When RPC calls are made to start or stop validating, those changes will be persisted to the `replicastate` folder.
 
-:::caution
+:::warning
 
 If reconfiguring a node to be a replica or reusing a data directory, make sure that the node was previously configured as replica or that the `replicastate` folder is removed. If there is an existing `replicastate` folder from a node that was not configured as a replica the node will attempt to start validating.
 

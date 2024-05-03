@@ -1,60 +1,77 @@
-# `celocli rewards`
+`celocli rewards`
+=================
 
 Show rewards information about a voter, registered Validator, or Validator Group
 
-## `celocli rewards:show`
+* [`celocli rewards:show`](#celocli-rewardsshow)
+
+## `celocli rewards:show` {#celocli-rewardsshow}
 
 Show rewards information about a voter, registered Validator, or Validator Group
 
 ```
-Show rewards information about a voter, registered Validator, or Validator Group
-
 USAGE
-  $ celocli rewards:show
+  $ celocli rewards:show [--gasCurrency <value>] [--globalHelp] [--estimate]
+    [--voter <value>] [--validator <value>] [--group <value>] [--slashing] [--epochs
+    <value>] [--columns <value> | -x] [--filter <value>] [--no-header | [--csv |
+    --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
-OPTIONS
-  -x, --extended                                          show extra columns
+FLAGS
+  -x, --extended
+      show extra columns
 
-  --columns=columns                                       only show provided columns
-                                                          (comma-separated)
+  --columns=<value>
+      only show provided columns (comma-separated)
 
-  --csv                                                   output is csv format [alias:
-                                                          --output=csv]
+  --csv
+      output is csv format [alias: --output=csv]
 
-  --epochs=epochs                                         [default: 1] Show results for
-                                                          the last N epochs
+  --epochs=<value>
+      [default: 1] Show results for the last N epochs
 
-  --estimate                                              Estimate voter rewards from
-                                                          current votes
+  --estimate
+      Estimate voter rewards from current votes
 
-  --filter=filter                                         filter property by partial
-                                                          string matching, ex: name=foo
+  --filter=<value>
+      filter property by partial string matching, ex: name=foo
 
-  --globalHelp                                            View all available global
-                                                          flags
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
 
-  --group=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      Validator Group to show
-                                                          rewards for
+  --globalHelp
+      View all available global flags
 
-  --no-header                                             hide table header from output
+  --group=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Validator Group to show rewards for
 
-  --no-truncate                                           do not truncate output to fit
-                                                          screen
+  --no-header
+      hide table header from output
 
-  --output=csv|json|yaml                                  output in a more machine
-                                                          friendly format
+  --no-truncate
+      do not truncate output to fit screen
 
-  --slashing                                              Show rewards for slashing
+  --output=<option>
+      output in a more machine friendly format
+      <options: csv|json|yaml>
 
-  --sort=sort                                             property to sort by (prepend
-                                                          '-' for descending)
+  --slashing
+      Show rewards for slashing
 
-  --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  Validator to show rewards for
+  --sort=<value>
+      property to sort by (prepend '-' for descending)
 
-  --voter=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      Voter to show rewards for
+  --validator=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Validator to show rewards for
 
-EXAMPLE
-  show --address 0x5409ed021d9299bf6814279a6a1411a7e866a631
+  --voter=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Voter to show rewards for
+
+DESCRIPTION
+  Show rewards information about a voter, registered Validator, or Validator Group
+
+EXAMPLES
+  show --voter 0x5409ed021d9299bf6814279a6a1411a7e866a631
 ```
 
-_See code: [src/commands/rewards/show.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/rewards/show.ts)_
+_See code: [src/commands/rewards/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/rewards/show.ts)_

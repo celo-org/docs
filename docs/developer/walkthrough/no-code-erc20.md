@@ -16,7 +16,7 @@ In this tutorial, we will go over how to deploy an ERC20 token contract. The pro
 1. Install [Metamask](https://metamask.io/).
 2. [Add the Celo network](/wallet/metamask/setup#adding-a-celo-network-to-metamask) to Metamask. We suggest adding the Alfajores testnet to Metamask as well, so you can test contract deployments before deploying to mainnet.
 3. Add a small amount of CELO to your Metamask account. In this example, we will deploy to the Alfajores testnet, so we need Alfajores CELO, which you can get from the faucet [here](https://faucet.celo.org).
-4. Go to the [Open Zeppelin Contracts Wizard](https://docs.openzeppelin.com/contracts/4.x/wizard).
+4. Go to the [Open Zeppelin Contracts Wizard](https://docs.openzeppelin.com/contracts/5.x/wizard).
 5. Select `ERC20` as the type of contract that you would like to deploy.
 
 ![erc20 empty settings.png](https://github.com/critesjosh/images/blob/main/token_deploy_tutorials/erc20%20empty%20settings.png?raw=true)
@@ -62,13 +62,11 @@ When you're ready to deploy your token to the Celo Mainnet make sure to change t
 
 Note: When deploying to the Mainnet you will need to use real Celo to pay the gas fee (as opposed to using the faucet on the testnet). As of December 2021 this cost is less than $0.01 US. You can learn how to [get Celo here](https://celo.org/buy).
 
-You can read about how to add your new token to the Celo Wallet [here](/blog/add-token-celo-wallet).
-
 ## Verify
 
 If you are unable to view your token on the block explorer, you may need to Verify it first. If you are able to see your token, you may skip this section.
 
-Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer/deploy/remix#verify-the-smart-contract).
+Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer/verify/remix).
 
 You can find my example contract [here](https://alfajores-blockscout.celo-testnet.org/address/0x97d550A2540F902F4501e21A6c09f12B69173261/transactions).
 

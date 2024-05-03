@@ -11,14 +11,15 @@ module.exports = {
   url: "https://docs.celo.org",
   baseUrl: "/",
   trailingSlash: false,
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+  onBrokenAnchors: "throw",
   favicon: "img/color-favicon.png",
   organizationName: "celo-org", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es", "pt"],
+    locales: ["en"],
   },
   themes: [
     "@docusaurus/theme-live-codeblock",
@@ -42,16 +43,15 @@ module.exports = {
     //   },
     // ],
     [
-      "ideal-image",
-      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
-      ({
+      "@docusaurus/plugin-ideal-image",
+      {
         quality: 70,
         max: 1030,
         min: 640,
         steps: 2,
         // Use false to debug, but it incurs huge perf costs
         disableInDev: true,
-      }),
+      },
     ],
     async function myPlugin(context, options) {
       return {
@@ -69,9 +69,9 @@ module.exports = {
     twitterImage: "img/preview.png",
     image: "img/preview.png",
     announcementBar: {
-      id: "support_us",
+      id: "request_tokens",
       content:
-        '🌱 Want to improve the docs? Give it a star on Github, <a target="_blank" rel="noopener noreferrer" href="https://github.com/celo-org/docs/issues/new">suggest an improvement</a>, or contribute as a <a target="_blank" rel="noopener noreferrer" href="/community/celo-sage">Celo Sage</a> 🌱',
+        'Need Testnet tokens? – Request from <a target="_blank" rel="noopener noreferrer" href="https://faucet.celo.org/alfajores">Faucet</a>.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,
@@ -80,12 +80,13 @@ module.exports = {
       sidebar: { hideable: true },
     },
     prism: {
-      additionalLanguages: ["solidity"],
-      theme: require("prism-react-renderer/themes/dracula"),
+      additionalLanguages: ["solidity", "bash"],
+      theme: require("prism-react-renderer").themes.dracula,
     },
+    mermaid: { theme: "dark" },
     colorMode: {
       defaultMode: "dark",
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "Celo Docs",
@@ -98,6 +99,11 @@ module.exports = {
       },
       items: [
         {
+          to: "/general",
+          label: "What is Celo",
+          position: "left",
+        },
+        {
           to: "developer/",
           label: "Developers",
           position: "left",
@@ -108,15 +114,37 @@ module.exports = {
           position: "left",
         },
         {
-          to: "integration/",
-          label: "Integrations",
+          type: "dropdown",
+          label: "More",
           position: "left",
-        },
-        { to: "showcase", label: "DApps", position: "left" },
-        {
-          to: "/tutorials",
-          label: "Tutorials",
-          position: "left",
+          items: [
+            {
+              to: "holder/",
+              label: "Holder",
+            },
+            {
+              to: "cli/",
+              label: "CLI",
+            },
+            {
+              to: "protocol/",
+              label: "Protocol",
+            },
+            {
+              to: "integration/",
+              label: "Integrations",
+            },
+            {
+              to: "https://celo.academy/c/tutorials/4",
+              label: "Tutorials",
+              target: "_blank",
+            },
+            { to: "showcase", label: "DApps" },
+            {
+              to: "community/guidelines",
+              label: "Community",
+            },
+          ],
         },
         {
           type: "localeDropdown",
@@ -143,46 +171,46 @@ module.exports = {
             },
           ],
         },
-        {
-          type: "dropdown",
-          position: "right",
-          label: "Libraries & SDKs",
-          items: [
-            { to: "cli/", label: "CLI" },
-            {
-              to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-              label: "Celo SDK",
-            },
-            {
-              to: "/developer/react-celo",
-              label: "React-Celo",
-            },
-            {
-              to: "/developer/contractkit",
-              label: "ContractKit",
-            },
-            {
-              to: "/developer/rainbowkit-celo",
-              label: "Rainbowkit-Celo",
-            },
-            {
-              to: "https://github.com/heymateag/celoiossdk",
-              label: "iOS SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-java",
-              label: "Java SDK",
-            },
-            {
-              to: "https://github.com/blaize-tech/celo-sdk-py/",
-              label: "Python SDK",
-            },
-            {
-              label: "Celo Composer",
-              to: "https://github.com/celo-org/celo-composer#celo-composer",
-            },
-          ],
-        },
+        // {
+        //   type: "dropdown",
+        //   position: "right",
+        //   label: "Libraries & SDKs",
+        //   items: [
+        //     { to: "cli/", label: "CLI" },
+        //     {
+        //       to: "/developer/viem",
+        //       label: "Viem",
+        //     },
+        //     {
+        //       to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
+        //       label: "Celo SDK",
+        //     },
+        //     {
+        //       to: "/developer/react-celo",
+        //       label: "React-Celo",
+        //     },
+        //     {
+        //       to: "/developer/contractkit",
+        //       label: "ContractKit",
+        //     },
+        //     {
+        //       to: "/developer/rainbowkit-celo",
+        //       label: "Rainbowkit-Celo",
+        //     },
+        //     {
+        //       to: "/developer/web3modal",
+        //       label: "Web3Modal SDK",
+        //     },
+        //     {
+        //       to: "https://github.com/heymateag/celoiossdk",
+        //       label: "iOS SDK",
+        //     },
+        //     {
+        //       label: "Celo Composer",
+        //       to: "https://github.com/celo-org/celo-composer#celo-composer",
+        //     },
+        //   ],
+        // },
         {
           href: "https://github.com/celo-org",
           position: "right",
@@ -199,7 +227,6 @@ module.exports = {
       debug: false,
     },
     footer: {
-      style: "dark",
       links: [
         {
           title: "Docs",
@@ -272,7 +299,7 @@ module.exports = {
             },
             {
               label: "Careers",
-              href: "https://celo.org/jobs",
+              href: "https://celo.org/careers",
             },
           ],
         },
@@ -306,7 +333,6 @@ module.exports = {
           remarkPlugins: [
             math,
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
-            require("mdx-mermaid"),
           ],
           rehypePlugins: [katex],
         },
@@ -319,16 +345,7 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        blog: {
-          blogTitle: "Celo Tutorials",
-          blogDescription: "Celo blog!",
-          blogSidebarCount: 0,
-          showReadingTime: true,
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            frontMatter.hide_reading_time
-              ? undefined
-              : defaultReadingTime({ content }),
-        },
+        blog: false,
       },
     ],
   ],
