@@ -14,49 +14,22 @@ To use the code snippets below, install the following packages:
 
 <Tabs>
   <TabItem value="yarn" label="yarn" attributes={{ className: "yarn_tab" }} default>
-    <Tabs groupId="web3-library">
-      <TabItem value="viem" label="viem" default>
 
         ```bash
         yarn add @celo/abis @celo/identity viem@1
         ```
 
-      </TabItem>
-      <TabItem value="ethers" label="ethers">
-
-        ```bash
-        yarn add @celo/abis @celo/identity ethers@5
-        ```
-
-      </TabItem>
-    </Tabs>
-
   </TabItem>
   <TabItem value="npm" label="npm" attributes={{ className: "npm_tab" }}>
-    <Tabs groupId="web3-library">
-      <TabItem value="viem" label="viem" default>
 
         ```bash
         npm install @celo/abis @celo/identity viem@1
         ```
 
-      </TabItem>
-      <TabItem value="ethers" label="ethers">
-
-        ```bash
-        npm install @celo/abis @celo/identity ethers@5
-        ```
-
-      </TabItem>
-    </Tabs>
-
   </TabItem>
 </Tabs>
 
 ### Check cUSD Balance of an address
-
-<Tabs groupId="web3-library">
-  <TabItem value="viem" label="viem" default>
 
     ```js
     const { getContract, formatEther, createPublicClient, http } = require("viem");
@@ -91,47 +64,9 @@ To use the code snippets below, install the following packages:
     let balance = await checkCUSDBalance(publicClient, address); // In Ether unit
     ```
 
-  </TabItem>
-  <TabItem value="ethers" label="ethers">
 
-```js
-const ethers = require("ethers");
-const { stableTokenABI } = require("@celo/abis");
-
-const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
-
-const { Contract, utils, providers } = ethers;
-const { formatEther } = utils;
-
-async function checkCUSDBalance(provider, address) {
-  const StableTokenContract = new Contract(
-    STABLE_TOKEN_ADDRESS,
-    StableToken.abi,
-    provider
-  );
-
-  let balanceInBigNumber = await StableTokenContract.balanceOf(address);
-
-  let balanceInWei = balanceInBigNumber.toString();
-
-  let balanceInEthers = formatEther(balanceInWei); // Ether is a unit = 10 ** 18 wei
-
-  return balanceInEthers;
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-let balance = await checkCUSDBalance(provider, address); // In Ether unit
-```
-
-</TabItem>
-</Tabs>
 
 ### Check If a transaction succeeded
-
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
 ```js
 const { createPublicClient, http } = require("viem");
@@ -156,36 +91,8 @@ let transactionStatus = await checkIfTransactionSucceeded(
 );
 ```
 
-  </TabItem>
-
-  <TabItem value="ethers" label="ethers">
-
-```js
-async function checkIfTransactionSucceeded(provider, transactionHash) {
-  let receipt = await provider.send("eth_getTransactionReceipt", [
-    transactionHash,
-  ]);
-
-  return receipt.status === "0x1";
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-let transactionStatus = await checkIfTransactionSucceeded(
-  provider,
-  transactionHash
-);
-```
-
-  </TabItem>
-
-</Tabs>
 
 ### Estimate Gas for a transaction (in Celo)
-
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
 ```js
 const { createPublicClient, http } = require("viem");
@@ -211,40 +118,12 @@ let gasLimit = await estimateGas(publicClient, {
 });
 ```
 
-  </TabItem>
 
-  <TabItem value="ethers" label="ethers">
+  
 
-```js
-const ethers = require("ethers");
-const { providers } = ethers;
-
-async function estimateGas(provider, transaction, feeCurrency = "") {
-  return await provider.send("eth_estimateGas", [
-    feeCurrency ? { ...transaction, feeCurrency } : transaction,
-  ]);
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-// Estimate gas for an example transaction
-let gasLimit = await estimateGas(provider, {
-  from: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
-  to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
-  value: "0x1",
-  data: "0x",
-});
-```
-
-  </TabItem>
-
-</Tabs>
 
 ### Estimate Gas for a transaction (in cUSD)
 
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
 ```js
 const { createPublicClient, http } = require("viem");
@@ -276,46 +155,9 @@ let gasLimit = await estimateGas(
 );
 ```
 
-  </TabItem>
 
-  <TabItem value="ethers" label="ethers">
-
-```js
-const ethers = require("ethers");
-const { providers } = ethers;
-
-async function estimateGas(provider, transaction, feeCurrency = "") {
-  return await provider.send("eth_estimateGas", [
-    feeCurrency ? { ...transaction, feeCurrency } : transaction,
-  ]);
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
-
-// Estimate gas for an example transaction
-let gasLimit = await estimateGas(
-  provider,
-  {
-    from: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
-    to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
-    value: "0x1",
-    data: "0x",
-  },
-  STABLE_TOKEN_ADDRESS
-);
-```
-
-  </TabItem>
-
-</Tabs>
 
 ### Estimate Gas Price for a transaction (in Celo)
-
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
 ```js
 const { createPublicClient, http } = require("viem");
@@ -336,37 +178,8 @@ const publicClient = createPublicClient({
 let gasPrice = await estimateGasPrice(publicClient);
 ```
 
-  </TabItem>
-
-  <TabItem value="ethers" label="ethers">
-
-```js
-const ethers = require("ethers");
-const { providers } = ethers;
-
-async function estimateGasPrice(provider, feeCurrency = "") {
-  let gasPriceinHex = await provider.send(
-    "eth_gasPrice",
-    feeCurrency ? [feeCurrency] : []
-  );
-
-  return gasPriceinHex;
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-let gasPrice = await estimateGasPrice(provider);
-```
-
-  </TabItem>
-
-</Tabs>
-
 ### Estimate Gas Price for a transaction (in cUSD)
 
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
 ```js
 const { createPublicClient, http } = require("viem");
@@ -389,40 +202,10 @@ const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 let gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 ```
 
-  </TabItem>
-
-  <TabItem value="ethers" label="ethers">
-
-```js
-const ethers = require("ethers");
-const { providers } = ethers;
-
-async function estimateGasPrice(provider, feeCurrency = "") {
-  let gasPriceinHex = await provider.send(
-    "eth_gasPrice",
-    feeCurrency ? [feeCurrency] : []
-  );
-
-  return gasPriceinHex;
-}
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org"); // Mainnet
-
-const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
-
-let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
-```
-
-  </TabItem>
-
-</Tabs>
-
 
 ### Calculate cUSD to be spent for transaction fees
 
-<Tabs groupId="web3-library">
 
-  <TabItem value="viem" label="viem">
 
   ```js
 const { createPublicClient, http, formatEther } = require("viem");
@@ -453,49 +236,9 @@ let gasPrice = await estimateGasPrice(publicClient, STABLE_TOKEN_ADDRESS);
 let transactionFeesInCUSD = formatEther(gasLimit * hexToBigInt(gasPrice));
   ```
 
-  </TabItem>
 
-
-  <TabItem value="ethers" label="ethers">
-
-  ```js
-const ethers = require("ethers");
-const { providers, utils } = ethers;
-const { formatEther } = utils;
-
-const provider = new providers.JsonRpcProvider("https://forno.celo.org");
-
-const STABLE_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
-
-// `estimateGas` implemented above
-let gasLimit = await estimateGas(
-    provider,
-    {
-        from: "0x8eb02597d85abc268bc4769e06a0d4cc603ab05f",
-        to: "0x4f93fa058b03953c851efaa2e4fc5c34afdfab84",
-        value: "0x1",
-        data: "0x",
-    },
-    STABLE_TOKEN_ADDRESS
-);
-
-// `estimateGasPrice` implemented above
-let gasPrice = await estimateGasPrice(provider, STABLE_TOKEN_ADDRESS);
-
-let transactionFeesInCUSD = formatEther(
-    BigNumber.from(gasLimit).mul(BigNumber.from(gasPrice)).toString()
-);
-  ```
-
-  </TabItem>
-
-</Tabs>
 
 ### Resolve Minipay phone numbers to Addresses
-
-<Tabs groupId="web3-library">
-
-  <TabItem value="viem" label="viem">
 
   <Tabs>
   
@@ -768,245 +511,5 @@ let transactionFeesInCUSD = formatEther(
   
   </Tabs>
 
-  </TabItem>
-
-  <TabItem value="ethers" label="ethers">
-
-    <Tabs>
-  
-      <TabItem value="index.js" label="index.js">
-
-      ```js
-      const ethers = require("ethers");
-      const { providers, utils, Wallet } = ethers;
-      const { formatEther } = utils;
-
-      let wallet = new Wallet(process.env.ISSUER_PRIVATE_KEY, provider);
-
-      const issuer = new SocialConnectIssuer(wallet, {
-          authenticationMethod: AuthenticationMethod.ENCRYPTION_KEY,
-          rawKey: process.env.DEK_PRIVATE_KEY,
-      });
-
-      await issuer.initialize();
-
-      const identifierType = IdentifierPrefix.PHONE_NUMBER;
-
-      /**
-       * Any phone number you want to lookup
-       *
-       * The below phone number is registered on the testnet issuer mentioned below.
-       */
-      const identifier = "+911234567890";
-
-      /**
-       * You can lookup under multiple issuers in one request.
-       *
-       * Below is the MiniPay issuer address on Mainnet.
-       *
-       * Note: Remember to make your environment variable ENVIRONMENT=MAINNET
-       */
-      let issuerAddresses = ["0x7888612486844Bb9BE598668081c59A9f7367FBc"];
-
-      // A testnet issuer we setup for you to lookup on testnet.
-      // let issuerAddresses = ["0xDF7d8B197EB130cF68809730b0D41999A830c4d7"];
-
-      let results = await issuer.lookup(identifier, identifierType, issuerAddresses);
-      ```
-
-      </TabItem>
-  
-      <TabItem value="SocialConnect.js" label="SocialConnect.js">
-
-      ```js
-
-      const {
-        federatedAttestationsABI,
-        odisPaymentsABI,
-        stableTokenABI,
-      } = require("@celo/abis");
-
-      const ethers = require("ethers");
-      const { OdisUtils } = require("@celo/identity");
-      const { OdisContextName } = require("@celo/identity/lib/odis/query");
-
-      const { Contract, utils } = ethers;
-      const { parseEther } = utils;
-
-      const ONE_CENT_CUSD = parseEther("0.01");
-
-      const SERVICE_CONTEXT =
-      process.env.ENVIRONMENT === "TESTNET"
-        ? OdisContextName.ALFAJORES
-        : OdisContextName.MAINNET;
-
-      class SocialConnectIssuer {
-        wallet;
-        authSigner;
-
-        federatedAttestationsContract;
-        odisPaymentsContract;
-        stableTokenContract;
-        serviceContext;
-
-        initialized = false;
-
-        constructor(wallet, authSigner) {
-            this.wallet = wallet;
-            this.authSigner = authSigner;
-            this.serviceContext =
-                OdisUtils.Query.getServiceContext(SERVICE_CONTEXT);
-        }
-
-        async initialize() {
-            this.federatedAttestationsContract = new Contract(
-                await getCoreContractAddress("FederatedAttestations"),
-                federatedAttestationsABI,
-                this.wallet
-            );
-
-            this.odisPaymentsContract = new Contract(
-                await getCoreContractAddress("OdisPayments"),
-                odisPaymentsABI,
-                this.wallet
-            );
-
-            this.stableTokenContract = new Contract(
-                await getCoreContractAddress("StableToken"),
-                stableTokenABI,
-                this.wallet
-            );
-
-            this.initialize = true;
-        }
-
-        async #getObfuscatedId(plaintextId, identifierType) {
-            // TODO look into client side blinding
-            const { obfuscatedIdentifier } =
-                await OdisUtils.Identifier.getObfuscatedIdentifier(
-                    plaintextId,
-                    identifierType,
-                    this.wallet.address,
-                    this.authSigner,
-                    this.serviceContext
-                );
-            return obfuscatedIdentifier;
-        }
-
-        async #checkAndTopUpODISQuota() {
-            const remainingQuota = await this.checkODISQuota();
-
-            if (remainingQuota < 1) {
-                // TODO make threshold a constant
-                const approvalTxReceipt = (
-                    await this.stableTokenContract.increaseAllowance(
-                        this.odisPaymentsContract.address,
-                        ONE_CENT_CUSD // TODO we should increase by more
-                    )
-                ).wait();
-
-                const odisPaymentTxReceipt = (
-                    await this.odisPaymentsContract.payInCUSD(
-                        this.wallet.address,
-                        ONE_CENT_CUSD // TODO we should increase by more
-                    )
-                ).wait();
-            }
-        }
-
-        async getObfuscatedIdWithQuotaRetry(plaintextId, identifierType) {
-            if (this.initialized) {
-                try {
-                    return await this.#getObfuscatedId(plaintextId, identifierType);
-                } catch {
-                    await this.#checkAndTopUpODISQuota();
-                    return this.#getObfuscatedId(plaintextId, identifierType);
-                }
-            }
-            throw new Error("SocialConnect instance not initialized");
-        }
-
-        async registerOnChainIdentifier(plaintextId, identifierType, address) {
-            if (this.initialized) {
-                const obfuscatedId = await this.getObfuscatedIdWithQuotaRetry(
-                    plaintextId,
-                    identifierType
-                );
-
-                const tx =
-                    await this.federatedAttestationsContract.registerAttestationAsIssuer(
-                        // TODO check if there are better code patterns for sending txs
-                        obfuscatedId,
-                        address,
-                        NOW_TIMESTAMP
-                    );
-
-                const receipt = await tx.wait();
-                return receipt;
-            }
-            throw new Error("SocialConnect instance not initialized");
-        }
-
-        async deregisterOnChainIdentifier(plaintextId, identifierType, address) {
-            if (this.initialized) {
-                const obfuscatedId = await this.getObfuscatedIdWithQuotaRetry(
-                    plaintextId,
-                    identifierType
-                );
-                const tx =
-                    await this.federatedAttestationsContract.revokeAttestation(
-                        obfuscatedId,
-                        this.wallet.address,
-                        address
-                    );
-                const receipt = await tx.wait();
-                return receipt;
-            }
-            throw new Error("SocialConnect instance not initialized");
-        }
-
-        async checkODISQuota() {
-            if (this.initialized) {
-                const { remainingQuota } = await OdisUtils.Quota.getPnpQuotaStatus(
-                    this.wallet.address,
-                    this.authSigner,
-                    this.serviceContext
-                );
-                console.log("Remaining Quota", remainingQuota);
-                return remainingQuota;
-            }
-            throw new Error("SocialConnect instance not initialized");
-        }
-
-        async lookup(plaintextId, identifierType, issuerAddresses) {
-            if (this.initialized) {
-                const obfuscatedId = await this.getObfuscatedIdWithQuotaRetry(
-                    plaintextId,
-                    identifierType
-                );
-                const attestations =
-                    await this.federatedAttestationsContract.lookupAttestations(
-                        obfuscatedId,
-                        issuerAddresses
-                    );
-
-                return {
-                    accounts: attestations.accounts, // TODO typesafety
-                    obfuscatedId,
-                };
-            }
-            throw new Error("SocialConnect instance not initialized");
-        }
-    }
-      ```
-
-      </TabItem>
-  
-    </Tabs>
-
-  </TabItem>
-
-
-</Tabs>
 
 {/* prettier-ignore-end */}

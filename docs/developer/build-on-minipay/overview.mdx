@@ -53,37 +53,23 @@ MiniPay is available inside Opera Mini on Android phones only. To ensure that yo
 
 ### Integration with Popular Web3 Libraries
 
-#### 1. Web3.js
+#### 1. Viem
 
-Web3.js is a widely-used Ethereum JavaScript API. To utilize the `windows.ethereum` with `Web3.js`:
-
-```js
-const Web3 = require("web3");
-
-// Ensure MiniPay provider is available
-if (window.ethereum && window.ethereum.isMiniPay) {
-  const web3 = new Web3(window.ethereum);
-} else {
-  console.error("MiniPay provider not detected");
-}
-```
-
-#### 2. Ethers.js
-
-Ethers.js offers a comprehensive Ethereum wallet implementation and utilities in both JavaScript and TypeScript. Here's how to integrate it with MiniPay:
+Viem is another library gaining traction. Here's how you can integrate it:
 
 ```js
-const { ethers } = require("ethers");
+import { createWalletClient, custom } from "viem";
+import { mainnet } from "viem/chains";
 
-// Ensure MiniPay provider is available
-if (window.ethereum && window.ethereum.isMiniPay) {
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-} else {
-  console.error("MiniPay provider not detected");
-}
+const client = createWalletClient({
+  chain: mainnet,
+  transport: custom(window.ethereum),
+});
+
+const [address] = await client.getAddresses();
 ```
 
-#### 3. Wagmi
+#### 2. Wagmi
 
 Wagmi.js is an emerging library in the Ethereum ecosystem. To integrate it with MiniPay's provider, you can use the `useConnect` hook:
 
@@ -101,22 +87,6 @@ useEffect(() => {
 ```
 
 This code sets up an `InjectedConnector` and then utilizes the `connect` method from the `useConnect` hook. The `useEffect` ensures that the connection is established when the page loads.
-
-#### 4. Viem
-
-Viem is another library gaining traction. Here's how you can integrate it:
-
-```js
-import { createWalletClient, custom } from "viem";
-import { mainnet } from "viem/chains";
-
-const client = createWalletClient({
-  chain: mainnet,
-  transport: custom(window.ethereum),
-});
-
-const [address] = await client.getAddresses();
-```
 
 In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
 
