@@ -8,6 +8,33 @@ import TabItem from "@theme/TabItem";
 
 ### Snippets of code that can be used to implement flows inside MiniPay
 
+### Get the connected user's address without any Library
+
+```js
+// The code must run in a browser environment and not in node environment
+if (window && window.ethereum) {
+  // User has a injected wallet
+
+  if (window.ethereum.isMinipay) {
+    // User is using Minipay
+
+    // Requesting account addresses
+    let accounts = await window.ethereum.request({
+      method: "eth_requestAccounts",
+      params: [],
+    });
+
+    // Injected wallets inject all available addresses,
+    // to comply with API Minipay injects one address but in the form of array
+    console.log(accounts[0]);
+  }
+
+  // User is not using MiniPay
+}
+
+// User does not have a injected wallet
+```
+
 To use the code snippets below, install the following packages:
 
 {/* prettier-ignore-start */}
