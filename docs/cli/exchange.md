@@ -6,7 +6,6 @@ Exchange Celo Dollars and CELO via Mento
 * [`celocli exchange:celo`](#celocli-exchangecelo)
 * [`celocli exchange:dollars`](#celocli-exchangedollars)
 * [`celocli exchange:euros`](#celocli-exchangeeuros)
-* [`celocli exchange:gold`](#celocli-exchangegold)
 * [`celocli exchange:reals`](#celocli-exchangereals)
 * [`celocli exchange:show`](#celocli-exchangeshow)
 * [`celocli exchange:stable`](#celocli-exchangestable)
@@ -126,48 +125,6 @@ EXAMPLES
 ```
 
 _See code: [src/commands/exchange/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/exchange/euros.ts)_
-
-## `celocli exchange:gold` {#celocli-exchangegold}
-
-Exchange CELO for StableTokens via the stability mechanism. *DEPRECATION WARNING* Use the "exchange:celo" command instead
-
-```
-USAGE
-  $ celocli exchange:gold --from <value> --value <value> [--gasCurrency <value>]
-    [--globalHelp] [--forAtLeast <value>] [--stableToken
-    cUSD|cusd|cEUR|ceur|cREAL|creal]
-
-FLAGS
-  --forAtLeast=10000000000000000000000                      [default: 0] Optional, the
-                                                            minimum value of
-                                                            StableTokens to receive in
-                                                            return
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) The address with
-                                                            CELO to exchange
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --stableToken=<option>                                    [default: cusd] Name of the
-                                                            stable to receive
-                                                            <options: cUSD|cusd|cEUR|ceu
-                                                            r|cREAL|creal>
-  --value=10000000000000000000000                           (required) The value of CELO
-                                                            to exchange for a
-                                                            StableToken
-
-DESCRIPTION
-  Exchange CELO for StableTokens via the stability mechanism. *DEPRECATION WARNING* Use
-  the "exchange:celo" command instead
-
-EXAMPLES
-  gold --value 5000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-
-  gold --value 5000000000000 --forAtLeast 100000000000000 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --stableToken cUSD
-```
 
 ## `celocli exchange:reals` {#celocli-exchangereals}
 

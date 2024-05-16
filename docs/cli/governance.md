@@ -314,8 +314,9 @@ Submit a governance proposal
 ```
 USAGE
   $ celocli governance:propose --jsonTransactions <value> --deposit <value> --from
-    <value> --descriptionURL <value> [--gasCurrency <value>] [--globalHelp] [--force]
-    [--noInfo] [--afterExecutingProposal <value> | --afterExecutingID <value>]
+    <value> --descriptionURL <value> [--gasCurrency <value>] [--globalHelp] [--for
+    <value> --useMultiSig] [--force] [--noInfo] [--afterExecutingProposal <value> |
+    --afterExecutingID <value>]
 
 FLAGS
   --afterExecutingID=<value>                                Governance proposal
@@ -329,6 +330,8 @@ FLAGS
   --descriptionURL=<value>                                  (required) A URL where
                                                             further information about
                                                             the proposal can be viewed
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d          Address of the multi-sig
+                                                            contract
   --force                                                   Skip execution check
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Proposer's
                                                             address
@@ -343,12 +346,16 @@ FLAGS
                                                             transactions
   --noInfo                                                  Skip printing the proposal
                                                             info
+  --useMultiSig                                             True means the request will
+                                                            be sent through multisig.
 
 DESCRIPTION
   Submit a governance proposal
 
 EXAMPLES
-  propose --jsonTransactions ./transactions.json --deposit 10000 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
+
+  propose --jsonTransactions ./transactions.json --deposit 10000e18 --from 0x5409ed021d9299bf6814279a6a1411a7e866a631  --useMultiSig --for 0x6c3dDFB1A9e73B5F49eDD46624F4954Bf66CAe93 --descriptionURL https://gist.github.com/yorhodes/46430eacb8ed2f73f7bf79bef9d58a33
 ```
 
 _See code: [src/commands/governance/propose.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/governance/propose.ts)_
