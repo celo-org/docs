@@ -79,7 +79,7 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 - Wallet-rpc
 - Wallet-walletconnect
 
-<PageRef url="https://celo-sdk-docs.readthedocs.io/" pageName="Celo SDK Reference Docs" />
+<PageRef url="https://docs.celo.org/learn/developer-tools#celo-sdk-reference-docs" pageName="Celo SDK Reference Docs" />
 
 ## Infrastructure
 
