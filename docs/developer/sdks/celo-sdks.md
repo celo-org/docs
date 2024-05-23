@@ -13,7 +13,7 @@ List of Celo libraries & SDKs
 
 ---
 
-- [Celo SDK](https://celo-sdk-docs.readthedocs.io/en/latest/)
+- [Celo SDK](https://docs.celo.org/learn/developer-tools#celo-sdk-reference-docs)
 - [thirdweb SDK](../thirdweb-sdk/index.md)
 - [React-Celo](../react-celo/index.md)
 - [ContractKit](../contractkit/index.md)
