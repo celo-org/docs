@@ -182,10 +182,6 @@ module.exports = {
         //       label: "Viem",
         //     },
         //     {
-        //       to: "https://celo-sdk-docs.readthedocs.io/en/latest/",
-        //       label: "Celo SDK",
-        //     },
-        //     {
         //       to: "/developer/react-celo",
         //       label: "React-Celo",
         //     },
