@@ -11,7 +11,7 @@ This works by specifying a token/adapter address as a value for the `feeCurrency
 
 The below steps describe how wallets can implement the alternate fee currency feature in order to allow users to use alternate assets in the user's wallet to pay for gas fees.
 
-## Enabling Transactions with ERC20 Token as Fee Currency in a wallet
+## Enabling Transactions with ERC20 Token as Fee Currency
 
 We recommend using the [viem](https://viem.sh) library as it has support for the `feeCurrency` field in the transaction required for sending transaction where the gas fees will be paid in ERC20 tokens.
 
@@ -23,7 +23,7 @@ Estimating gas price is important because if the user is trying to transfer the 
 
 Example: If the user has 10 USDC and is trying to transfer the entire 10 USDC and chooses to use USDC as the currency to pay for gas, the user shouldn't be allowed to transfer the entire 10 USDC as a small portion has to be used for gas fees.
 
-The following code snippet calculates the transaction fee (in USDC) for a send type transaction.
+The following code snippet calculates the transaction fee (in USDC) for a USDC transfer transaction.
 
 Feel free to modify to support the currency of your choice.
 
