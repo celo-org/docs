@@ -478,6 +478,11 @@ const sidebars = {
       ],
     },
     {
+      type: "doc",
+      label: "Fee Currency",
+      id: "developer/fee-currency",
+    },
+    {
       type: "category",
       label: "Bridges",
       items: [
