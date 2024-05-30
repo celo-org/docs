@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Celo Libraries & SDKs
 
-Because Celo is compitable with Ethereum any ethereum package can be used with Celo. Packages with with specific support for Celo include:
+Because Celo is compitable with Ethereum any ethereum package can be used with Celo. Packages with specific support for Celo include:
 
 ---
 

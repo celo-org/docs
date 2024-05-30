@@ -28,7 +28,7 @@ Consider using [Dependabot](https://docs.github.com/en/code-security/supply-chai
 
 ### Ethers.JS Wrapper
 
-A minimal wrapper for ethers to create Create celo Easy Fee Transactions. If paying for gas without tokens is not important for your use case standard ethers works perfectly fine
+A minimal wrapper for ethers to create Create celo Easy Fee Transactions. If paying for gas with tokens is not important for your usecase, then the standard ethers.js works perfectly well.
 
 <PageRef url="https://github.com/celo-tools/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
 
