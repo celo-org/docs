@@ -46,7 +46,7 @@ These sit between **EVM** **Blockchain  Toolkit**  and **Wallet Connection Manag
 
 ### Wallet Connection Manager
 
-Examples – Rainbowkit, web3modal, react-celo.
+Examples – Rainbowkit, web3modal
 
 These are the interface between the user and the dApp via the user’s wallet. They will manage which chain the dapp is on and establish connection to the wallet where the user will sign the transaction data with their private key thus authenticating that opperation. Most wallets do this thru either the WalletConnect standard or, for browser extensions, by injecting code into `window` (such as metamask)
 

@@ -23,17 +23,12 @@ Consider using [Dependabot](https://docs.github.com/en/code-security/supply-chai
 
 ### viem
 
-[viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
+[viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. It supports celo specific features. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
 
-### react-celo
-
-[react-celo](/developer/react-celo) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-
-<PageRef url="/developer/react-celo" pageName="react-celo" />
 
 ### Ethers.JS Wrapper
 
-A minimal wrapper to make Ethers.JS compatible with the Celo network.
+A minimal wrapper for ethers to create Create celo Easy Fee Transactions. If paying for gas without tokens is not important for your use case standard ethers works perfectly fine
 
 <PageRef url="https://github.com/celo-tools/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
 

@@ -186,10 +186,6 @@ module.exports = {
         //       label: "Celo SDK",
         //     },
         //     {
-        //       to: "/developer/react-celo",
-        //       label: "React-Celo",
-        //     },
-        //     {
         //       to: "/developer/contractkit",
         //       label: "ContractKit",
         //     },

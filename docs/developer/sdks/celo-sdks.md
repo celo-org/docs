@@ -9,13 +9,12 @@ import TabItem from '@theme/TabItem';
 
 # Celo Libraries & SDKs
 
-List of Celo libraries & SDKs
+Because Celo is compitable with Ethereum any ethereum package can be used with Celo. Packages with with specific support for Celo include:
 
 ---
 
-- [Celo SDK](https://docs.celo.org/learn/developer-tools#celo-sdk-reference-docs)
-- [thirdweb SDK](../thirdweb-sdk/index.md)
-- [React-Celo](../react-celo/index.md)
+- [viem](../viem/index.md)
 - [ContractKit](../contractkit/index.md)
+- [thirdweb SDK](../thirdweb-sdk/index.md)
 - [Rainbowkit-Celo](../rainbowkit-celo/index.md)
 - [iOS SDK](https://github.com/heymateag/celoiossdk)
