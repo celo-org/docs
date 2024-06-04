@@ -371,15 +371,6 @@ export default function HomePage(): JSX.Element {
               )}
 
               {sectionFourCard(
-                translate({ id: "home.section4.developer.reactCelo.title" }),
-                translate({
-                  id: "home.section4.developer.reactCelo.description",
-                }),
-                "img/homepage/icons/React-celo_White.svg",
-                "/developer/react-celo",
-              )}
-
-              {sectionFourCard(
                 translate({
                   id: "home.section4.developer.rainbowKitCelo.title",
                 }),

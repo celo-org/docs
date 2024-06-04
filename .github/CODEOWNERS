@@ -7,7 +7,6 @@
 /docs/developer/contractkit/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/deploy/ @celo-org/devrel @celo-org/primitives
 /docs/developer/rainbowkit-celo/ @celo-org/devrel @celo-org/devtooling
-/docs/developer/react-celo/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/sdks/ @celo-org/devrel @celo-org/devtooling
 /docs/developer/viem/ @celo-org/devrel @celo-org/devtooling
 /docs/network/node/ @celo-org/devrel @celo-org/devopsre
