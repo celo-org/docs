@@ -27,12 +27,6 @@ ContractKit is a library to help developers and validators to interact with the 
 
 <PageRef url="/developer-guide/contractkit" pageName="ContractKit" />
 
-### use-contractkit
-
-[use-contractkit](https://github.com/celo-tools/use-contractkit) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-
-<PageRef url="/developer/react-celo" pageName="react-celo" />
-
 ### Ethers.JS Wrapper
 
 A minimal wrapper to make Ethers.JS compatible with the Celo network.

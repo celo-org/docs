@@ -371,11 +371,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "react-celo",
-          id: "developer/react-celo/index",
-        },
-        {
           type: "category",
           label: "Web3Modal SDK",
           items: [
