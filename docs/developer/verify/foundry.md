@@ -18,7 +18,7 @@ Add the below given configuration to the `foundry.toml` file at the root level o
 ```toml
 [etherscan]
 celo-alfajores = { key = "${CELOSCAN_API_KEY}", url = "https://api-alfajores.celoscan.io/api"}
-celo = { key = "${CELOSCAN_API_KEY}", url = "https://api-alfajores.celoscan.io/api"}
+celo = { key = "${CELOSCAN_API_KEY}", url = "https://api.celoscan.io/api"}
 ```
 
 Make sure to also have Celo RPC configuration in `foundry.toml` file, here it is:
