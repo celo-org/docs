@@ -30,9 +30,9 @@ Changes to core smart contracts are made via on-chain Governance, approximately 
 
 ### Core Contracts
 
-Every deployed Celo core contract has its current version number as a constant which is publicly accessible via the `getVersion()` function, which returns the storage, major, minor, and patch version. Version number is encoded in the Solidity source and updated as part of code changes.
+Every deployed Celo core contract has its current version number as a constant which is publicly accessible via the `getVersionNumber()` function, which returns the storage, major, minor, and patch version. Version number is encoded in the Solidity source and updated as part of code changes.
 
-Celo Core Contracts deployed to a live network without the `getVersion()` function, such as the original set of core contracts, are to be considered version `1.1.0.0`.
+Celo Core Contracts deployed to a live network without the `getVersionNumber()` function, such as the original set of core contracts, are to be considered version `1.1.0.0`.
 
 ### Mixins and libraries
 
