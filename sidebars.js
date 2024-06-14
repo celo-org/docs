@@ -480,66 +480,7 @@ const sidebars = {
     {
       type: "category",
       label: "Bridges",
-      items: [
-        { type: "doc", label: "Overview", id: "protocol/bridge/index" },
-        {
-          type: "category",
-          label: "Etherscan",
-          items: [
-            {
-              type: "doc",
-              label: "Native Assets with Etherscan",
-              id: "protocol/bridge/etherscan-native-asset",
-            },
-            {
-              type: "doc",
-              label: "Tokens with Etherscan",
-              id: "protocol/bridge/etherscan-token",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Optics",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "protocol/bridge/optics",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge GUI",
-              id: "protocol/bridge/optics-gui",
-            },
-            {
-              type: "doc",
-              label: "Add New Token",
-              id: "protocol/bridge/optics-add-new-token",
-            },
-            {
-              type: "doc",
-              label: "Migrating to Optics v2",
-              id: "protocol/bridge/optics-migration-v2",
-            },
-            {
-              type: "doc",
-              label: "Optics Bridge FAQ",
-              id: "protocol/bridge/optics-faq",
-            },
-          ],
-        },
-        {
-          type: "link",
-          label: "AllBridge",
-          href: "https://app.allbridge.io/bridge?from=ETH&to=POL&asset=USDC",
-        },
-        {
-          type: "link",
-          label: "Moss",
-          href: "https://bridge.moss.earth/",
-        },
-      ],
+      items: [{ type: "doc", label: "Overview", id: "protocol/bridge/index" }],
     },
     {
       type: "category",
