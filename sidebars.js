@@ -576,6 +576,11 @@ const sidebars = {
       label: "Code Examples",
       items: [
         {
+          type: "doc",
+          label: "Chainlink CCIP",
+          id: "developer/examples/chainlink-ccip",
+        },
+        {
           type: "link",
           label: "Celo Composer",
           href: "https://github.com/celo-org/celo-composer#celo-composer",
