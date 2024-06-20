@@ -73,5 +73,5 @@ let tx = {
 ```
 
 :::info
-To get details about the underlying token of the adapter you can call `adpatedToken` function on the adapter address, which will return the underlying token address.
+To get details about the underlying token of the adapter you can call `adaptedToken` function on the adapter address, which will return the underlying token address.
 :::
