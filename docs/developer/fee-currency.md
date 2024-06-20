@@ -123,20 +123,19 @@ async function calculateTransactionFeesInUSDC(transaction) {
   return gasPriceInUSDC * estimatedGasPrice;
 }
 
-async function send(amountInBigInt) {
+async function send(amountInWei) {
   const to = USDC_MAINNET;
 
   // Data to perform an ERC20 transfer
-  const data = encodeAbiParameters(
-    [
-      { name: "to", type: "address" },
-      { name: "amount", type: "uint256" },
+  const data = encodeFunctionData({
+    abi: stableTokenAbi,
+    functionName: "transfer",
+    args: [
+      "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D",
+      // Different tokens can have different decimals, cUSD (18), USDC (6)
+      amountInWei,
     ],
-    [
-      "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D", // USDC receiver address
-      amount,
-    ],
-  );
+  });
 
   const transactionFee = await calculateTransactionFeesInUSDC({ to, data });
 
@@ -145,16 +144,15 @@ async function send(amountInBigInt) {
   /* 
     Now the data has to be encode again but with different transfer value because the receiver receives the amount minus the transaction fee.
   */
-  const dataAfterFeeCalculation = encodeAbiParameters(
-    [
-      { name: "to", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    [
-      "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D", // USDC receiver address
+  const dataAfterFeeCalculation = encodeFunctionData({
+    abi: stableTokenAbi,
+    functionName: "transfer",
+    args: [
+      "0xccc9576F841de93Cd32bEe7B98fE8B9BD3070e3D",
+      // Different tokens can have different decimals, cUSD (18), USDC (6)
       tokenReceivedbyReceiver,
     ],
-  );
+  });
 
   // Transaction hash
   const hash = await client.sendTransaction({
