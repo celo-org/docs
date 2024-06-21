@@ -103,6 +103,13 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 <PageRef url="http://stats.celo.org" pageName="stats.celo.org" />
 
+### SubQuery
+
+[SubQuery](https://subquery.network/) is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for CELO. One of SubQuery's competitive advantages is the ability to aggregate data not only within a chain but across multiple blockchains all within a single project.
+
+<PageRef url="https://subquery.network/" pageName="SubQuery" />
+
+
 ## Hosted Nodes
 
 RPC Endpoint Services
