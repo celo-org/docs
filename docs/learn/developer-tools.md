@@ -136,7 +136,7 @@ RPC end point provider that supports Celo and several other EVM L1s. Infura's no
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
-<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
+<PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
 ### Quicknode
 
