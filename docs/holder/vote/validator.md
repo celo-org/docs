@@ -111,6 +111,6 @@ Celo Whale shows detailed metadata and statistics around Validators but does not
 
 Celovote shows ranking of validator groups based on their estimated annual rate of return (ARR). Estimate is calculated based on past performance.
 
-### [Vido](https://vido.vladiatorlabs.io/block-map) ( [Vladiator Labs](https://vladiatorlabs.io) )
+### [Vido](https://vido.atalma.io/block-map) ( [Atalma](https://www.atalma.io/) )
 
 Vido is a block visualization and monitoring suite for Mainnet and Baklava testnet, showing missed blocks and downtime for the validator group set and subscribable metrics to get alerted if your validator is no longer signing.
