@@ -103,10 +103,6 @@ The Votes Available column shows:
 
 TheCelo contains a range of valuable information on the Celo project and active Celo networks. The "Groups" tab shows a detailed view of Validator Groups. Click on a group to drilldown to see group metadata and affiliated Validators.
 
-### [Celo Whale](https://celowhale.com) (DSRV)
-
-Celo Whale shows detailed metadata and statistics around Validators but does not presently offer a view centered on Validator Groups.
-
 ### [Celovote Scores](https://celovote.com/scores) (WOTrust | celovote.com)
 
 Celovote shows ranking of validator groups based on their estimated annual rate of return (ARR). Estimate is calculated based on past performance.
