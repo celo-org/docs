@@ -83,7 +83,7 @@ This will display the list of tokens:
 
 [https://optics.app/](https://optics.app/)
 
-[https://bridge.mobius.money/#/](https://bridge.mobius.money/#/)
+[https://mobius.money/#/](https://mobius.money/#/)
 
 ### Token Addresses
 
