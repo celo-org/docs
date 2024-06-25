@@ -82,6 +82,6 @@
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
     "prettier": "3.2.5",
-    "typescript": "~5.4.0"
+    "typescript": "~5.5.0"
   }
 }
