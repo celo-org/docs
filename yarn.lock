@@ -1242,9 +1242,9 @@
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
 "@crowdin/cli@^3.7.0":
-  version "3.19.2"
-  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.19.2.tgz#d81d85c78d7235c6c273bae72c93631dc0aedab6"
-  integrity sha512-eO/BFcLl2m96dRlEth3hsbbPJNsiTZaLqsAkot27eE4DS5+IpkV0NbcBgMsja+t0ugPAPYQ7Crc+AruO5ywvmg==
+  version "3.19.4"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.19.4.tgz#42c52c7a589c9aaf5c92503b4ba37e3f6a55612c"
+  integrity sha512-j0SiRGKOH/Pa/TdBeIxBBRrByHPqmVqWVo/LSjnri1lLPGywjcu9kB+pib7P4wmI00jgcVu+80yGdun5zRcDNQ==
   dependencies:
     command-exists-promise "^2.0.2"
     node-fetch "2.7.0"
@@ -5383,7 +5383,7 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-hasown@^2.0.0:
+hasown@^2.0.0, hasown@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/hasown/-/hasown-2.0.2.tgz#003eaf91be7adc372e84ec59dc37252cedb80003"
   integrity sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==
@@ -5941,11 +5941,11 @@ is-ci@^3.0.1:
     ci-info "^3.2.0"
 
 is-core-module@^2.13.0:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.13.1.tgz#ad0d7532c6fea9da1ebdc82742d74525c6273384"
-  integrity sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.14.0.tgz#43b8ef9f46a6a08888db67b1ffd4ec9e3dfd59d1"
+  integrity sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==
   dependencies:
-    hasown "^2.0.0"
+    hasown "^2.0.2"
 
 is-decimal@^2.0.0:
   version "2.0.1"
