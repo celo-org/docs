@@ -39,7 +39,7 @@ The Alliance for Prosperity is a group of mission-aligned Celo Foundation member
 
 By joining the Alliance for Prosperity, Alliance members are furthering the Celo mission in one (or more) of five ways: (1) Backing project development efforts, (2) Building infrastructure, (3) Implementing desired use cases on the Celo Platform, (4) Integrating Celo assets in their projects, (5) Collaborating on education campaigns in their communities to advance the use of blockchain technology.
 
-- Alliance members are welcomed along all of the use cases outlined on [celo.org/alliance](https://celo.org/alliance). Feel free to reach out via the application if your organization is interested in membership.
+- Alliance members are welcomed along all of the use cases outlined on [celo.org/alliance](https://celo.org/ecosystem). Feel free to reach out via the application if your organization is interested in membership.
 
 ## Celo Camp
 

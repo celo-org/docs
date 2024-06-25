@@ -35,7 +35,7 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 - [Join](https://celo.org/careers)
 - [Validators](https://celo.org/validators)
 - [Developers](https://celo.org/developers)
-- [Alliance](https://celo.org/alliance)
+- [Alliance](https://celo.org/ecosystem)
 - [Community](https://celo.org/community)
 - [Blog](https://medium.com/celoorg)
 - [GitHub](https://github.com/celo-org)
