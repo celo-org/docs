@@ -36,6 +36,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+      - name: Check Output Size and Exit If Too Large
+        id: wc
+        shell: bash
+        run: |
+          # See https://github.com/peter-evans/create-issue-from-file/issues/1049
+          if [ "$(wc -m < ./lychee/out.md)" -gt 65536 ]; then
+            echo "Link Checker output is too big (> 65536 characters) for a GitHub Issue descriptions."
+            exit 1
+          fi
+          
+  createIssue:
+    runs-on: ubuntu-latest
+    needs: linkChecker
+
+    steps:  
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
         uses: peter-evans/create-issue-from-file@v5
