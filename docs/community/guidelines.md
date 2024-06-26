@@ -18,12 +18,6 @@ Celo is open source and we welcome open participation. We strive to fulfill our 
 - [Raise an issue](https://github.com/celo-org/docs/issues/new) - fill in the requested information and paste your contribution.
 - [Create a pull request](https://github.com/celo-org/docs) - Clone the repo and follow the guidelines below to submit your contribution.
 
-:::tip
-
-A list of active contributors can be found at [celo.org/about](https://celo.org/about#contributors)
-
-:::
-
 ## How to Contribute
 
 Our community includes a group of contributors that help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.

@@ -31,4 +31,4 @@ The Alfajores Testnet is designed for testing and experimentation by developers.
 
 :::
 
-Please help the community to improve Celo by asking questions on the [Forum](https://forum.celo.org/c/alfajores-testnet)!
+Please help the community to improve Celo by asking questions on the [Forum](https://forum.celo.org/c/testnets/alfajores-testnet/6)!

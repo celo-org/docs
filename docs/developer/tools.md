@@ -128,7 +128,7 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
-<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
+<PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
 ### Figment Datahub
 
