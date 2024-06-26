@@ -22,7 +22,7 @@ To learn more about the features available to you as a smart contract developer 
 :::
 
 :::warning
-Remix does not support Solidity compiler version `0.8.20` and above specifically for the Celo network. You can alternative use [Atlas IDE](https://app.atlaszk.com/ide)
+Remix does not support Solidity compiler version `0.8.20` and above specifically for the Celo network. You can alternatively use [Atlas IDE](https://app.atlaszk.com/ide)
 :::
 
 ## Create a Smart Contract
