@@ -25,7 +25,6 @@ jobs:
         uses: lycheeverse/lychee-action@v1
         with:
           args: >-
-            --base .
             --verbose
             --no-progress
             --cache --max-cache-age 1d
