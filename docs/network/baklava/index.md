@@ -25,7 +25,7 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 
 :::
 
-Please help the community to improve Celo by asking questions on [Discord](https://chat.celo.org) the [Forum](https://forum.celo.org/c/baklava-testnet)!
+Please help the community to improve Celo by asking questions on [Discord](https://chat.celo.org) the [Forum](https://forum.celo.org/c/testnets/baklava-testnet/16)!
 
 :::info
 

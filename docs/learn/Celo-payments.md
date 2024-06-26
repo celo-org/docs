@@ -22,10 +22,6 @@ Powered by a platform algorithmic native stable coins, Celo Dollars (cUSD), Celo
 
 - Valora [iOS](https://vlra.app/webappstore) [Android](https://vlra.app/webplaystore))
 
-### Coming Soon
-
-- Node Wallet [BETA iOS](https://testflight.apple.com/join/BHXMFq0x) [Android Wailist](https://www.nodewallet.xyz/android)
-
 ## Requirements
 
 This is the exhaustive list of requirements to run this repository

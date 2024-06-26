@@ -17,9 +17,9 @@ This guide will also help you find all the necessary information about brand ass
 
 ## Celo Brand Assets for Listing
 
-If you are listing Celo on your exchange, you will probably need access to the Celo Platform brand assets. They can be found [here](https://celo.org/experience/brand#overview).
+If you are listing Celo on your exchange, you will probably need access to the Celo Platform brand assets. They can be found [here](https://celo.org/brand-kit).
 
-Please ensure your use of the Celo Platform assets provided follows the brand policy found [here](https://celo.org/brand-policy).
+Please ensure your use of the Celo Platform assets provided follows the brand policy found [here](https://celo.org/brand-kit-policy).
 
 ## How To's
 
