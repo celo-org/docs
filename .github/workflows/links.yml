@@ -29,9 +29,11 @@ jobs:
             --verbose
             --no-progress
             --cache --max-cache-age 1d
-            './**/*.md'
             './**/*.html'
+            './**/*.js'
+            './**/*.md'
             './**/*.rst'
+            './**/*.tsx'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
