@@ -13,9 +13,24 @@ Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com
 
 We'll walk you through the process of integrating the windows.provider object provided by the MiniPay wallet's webview with popular web3 JavaScript libraries.
 
-When your website is loaded inside the MiniPay app's webview, the MiniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with a majority of web3 libraries that accept a provider object.
+When your website is loaded inside the MiniPay app's webview, the MiniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with **[viem](https://viem.sh/docs/introduction)** and **[wagmi](https://wagmi.sh/)** libraries that accept a [Wallet Client](https://viem.sh/docs/clients/wallet#json-rpc-accounts) object.
 
 To check if your app is in the context of MiniPay, you can verify it using `window.ethereum.isMiniPay`.
+
+```js
+// If you are using React.js you can check for it on mount
+useEffect(() => {
+  if (window.ethereum && window.ethereum.isMiniPay) {
+    // User is using MiniPay wallet
+
+    connect({ connector: injected({ target: "metaMask" }) });
+  }
+}, []);
+```
+
+:::info
+MiniPay is only available on Celo and Celo Testnet. MiniPay is not available to be used on other chains.
+:::
 
 ### Installing MiniPay
 
@@ -51,7 +66,23 @@ MiniPay is available inside Opera Mini on Android phones only. To ensure that yo
   alt="MiniPay dApp testing"
 />
 
-### Integration with Popular Web3 Libraries
+### Testing Local Development with MiniPay
+
+If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside MiniPay.
+
+- **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
+- **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
+- **Tunnel Traffic with ngrok:** In your terminal, run the following command to start an ngrok tunnel:
+
+```bash
+ngrok http 3000
+```
+
+This will provide you with a public URL that tunnels to your localhost.
+
+- **Test in MiniPay:** Copy the provided ngrok URL and use it inside the MiniPay app to test your DApp.
+
+### Get your dApp ready for MiniPay
 
 #### 1. Viem
 
@@ -90,29 +121,45 @@ This code sets up an `InjectedConnector` and then utilizes the `connect` method 
 
 In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
 
-### Testing Local Development with MiniPay
-
-If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside MiniPay.
-
-- **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
-- **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
-- **Tunnel Traffic with ngrok:** In your terminal, run the following command to start an ngrok tunnel:
-
-```bash
-ngrok http 3000
-```
-
-This will provide you with a public URL that tunnels to your localhost.
-
-- **Test in MiniPay:** Copy the provided ngrok URL and use it inside the MiniPay app to test your DApp.
-
 ### Important Notes
 
 - Ensure the "Connect Wallet" button is hidden when your DApp is loaded inside the MiniPay app, as the wallet connection is implicit.
+
+_Code Example to hide Connect Wallet button if the user is using MiniPay wallet_
+
+```jsx
+export default function Header() {
+  // State variable that determines whether to hide the button or not.
+  const [hideConnectBtn, setHideConnectBtn] = useState(false);
+  const { connect } = useConnect();
+
+  useEffect(() => {
+    if (window.ethereum && window.ethereum.isMiniPay) {
+      // User is using MiniPay so hide connect wallet button.
+      setHideConnectBtn(true);
+
+      connect({ connector: injected({ target: "metaMask" }) });
+    }
+  }, []);
+
+  return (
+    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      {/* Conditional rendering of Connect Wallet button */}
+      {!hideConnectBtn && (
+        <ConnectButton
+          showBalance={{
+            smallScreen: true,
+            largeScreen: false,
+          }}
+        />
+      )}
+    </div>
+  );
+}
+```
+
 - Always verify the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the MiniPay wallet.
 - When using `ngrok`, remember that the tunneling URL is temporary. You'll get a new URL every time you restart ngrok.
 - Be cautious about exposing sensitive information or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
 - MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `cUSD`. More currencies might be supported in future.
 - MiniPay only accepts legacy transactions at the moment. EIP-1559 properties won't be considered when handling requests.
-- Message signing is not currently supported.
-- A developer mode will be available soon, allowing the use of testnet.
