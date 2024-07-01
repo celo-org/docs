@@ -94,5 +94,5 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | StableTokenBRL          | 0xE4D517785D091D3c54818832dB6094bcc2744545 |
 | StableTokenEUR          | 0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F |
 | TransferWhitelist       | 0x52449A99e3455acB831C0D580dCDAc8B290d5182 |
-| UniswapFeeHandlerSeller | 0x52449A99e3455acB831C0D580dCDAc8B290d5182 |
+| UniswapFeeHandlerSeller | 0xc7b6E77C3702666DDa8EB5b7F30234B020788b21 |
 | Validators              | 0x9acF2A99914E083aD0d610672E93d14b0736BBCc |
