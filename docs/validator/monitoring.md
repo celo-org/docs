@@ -144,7 +144,7 @@ Celo adds specific functions around consensus:
 
 ## Community Moniting Tools
 
-### [Vladiator Labs Signature & Attestation Viewer (Celo Vido)](https://vido.vladiatorlabs.io/block-map)
+### [Atalma Signature & Attestation Viewer (Celo Vido)](https://vido.atalma.io/block-map)
 
 - Visualizer of current and historic data on validator signatures collected in each block on Mainnet and Baklava.
 - Visualizer of current and historic attestation requests and completions, and attestation endpoint versions and status on Mainnet and Baklava.

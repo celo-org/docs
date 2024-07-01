@@ -31,11 +31,11 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 ## Celo Tour
 
-- [About Celo](https://celo.org/about)
+- [About Celo](https://celo.org/)
 - [Join](https://celo.org/careers)
 - [Validators](https://celo.org/validators)
 - [Developers](https://celo.org/developers)
-- [Alliance](https://celo.org/alliance)
+- [Alliance](https://celo.org/ecosystem)
 - [Community](https://celo.org/community)
 - [Blog](https://medium.com/celoorg)
 - [GitHub](https://github.com/celo-org)
@@ -44,7 +44,6 @@ With its interoperability, cross-chain compatibility and vision for inclusivity,
 
 - [Valora](https://valoraapp.com/)
 - [Get CELO](https://celohub.org/purchase)
-- [Get a Test Wallet](https://celo.org/developers/wallet)
 - [Get Test Funds](https://faucet.celo.org)
 - [Block Explorer](https://explorer.celo.org/)
 

@@ -70,7 +70,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Optics and the Journey of the Cross-Chain Message Workshop](https://youtu.be/BUzbfebb1xU)
 - [Moonbeam: Building the Multi-Chain Universe Workshop](https://youtu.be/FoH7eVtABgE)
 - [Skale Workshop](https://youtu.be/kiZwO_dvotg)
-- [Near Workshop](https://youtu.be/ysmAaNi5JOY)
 
 ## Discussion Panels
 
@@ -89,7 +88,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Celo - NOAH19 Berlin](https://www.youtube.com/watch?v=w3Ebhr5-nw4&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=3)
 - [SFBW19 - Stability of Celo's Stablecoin Protocol - Asa Oines](https://www.youtube.com/watch?v=kYhDUmKuGCY&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=4)
 - [Celo Alfajores Testnet Launch Livestream [High Quality]](https://www.youtube.com/watch?v=m4RJGLofox8&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=5)
-- [Five Features of Money](https://www.youtube.com/watch?v=rAL3L4-7r0M&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=6)
 - [17 Celo: Financial Inclusion and Mobile First Light Clients with Marek Olszewski](https://www.youtube.com/watch?v=g64Bv0Y6kVw&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=7)
 - [BFTree — Scaling HotStuff to Millions of Validators](https://www.youtube.com/watch?v=Wf5x8eCndVk&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=8)
 - [Celo - Banking the unbanked: lessons from the field](https://www.youtube.com/watch?v=a1iEF8GWU4I&list=PLsQbsop73cfHFh_dXrfCfg7Z7k6EJSDQG&index=9)
@@ -153,8 +151,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 
 ## Eth Denver 2020
 
-- [C-LABS Sponsor Feature, ETHDenver & ColoradoJam 2021 Feb 5th-12th](https://www.youtube.com/watch?v=hC82Tj1KF8E&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9)
-- [ETHDenver 2021 Opening Ceremonies: Celo](https://www.youtube.com/watch?v=cfP_Y3YwpJw&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=2)
 - [Evolution of Community](https://www.youtube.com/watch?v=qQ0SCRiagM0&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=3)
 - [Celo at #EthDenver](https://www.youtube.com/watch?v=wxxc1xH1jCc&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=4)
 - [You Had Me At Celo - Marek Olszewski / Toss a CELO To Your Prestwicher: - James Prestwich](https://www.youtube.com/watch?v=HYPyF8bcoMw&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=5)

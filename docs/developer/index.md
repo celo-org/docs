@@ -37,7 +37,7 @@ Easily build Celo dApps with Celo Composer.
 ## Code Examples
 
 - [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
-- [Developer Tutorials](https://celo.academy/tags/c/tutorials/4)
+- [Developer Tutorials](https://celo.academy/c/tutorials/4)
 - [Figment](https://learn.figment.io/protocols/celo)
 - [Dacade](https://dacade.org/communities/celo)
 
