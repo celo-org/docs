@@ -131,11 +131,6 @@ Integrate with the Celo ecosystem to extend the functionality of your dApps.
 
 ## **🌉 Bridges**
 
-**[Optics](https://optics.app/)** - a 1-to-n optimistic bridge that is fully trustless. Cross-chain applications can be deployed to the bridge and tap into smart contracts across Celo, Ethereum, Polygon, and Avalanche.
-
-- [GitHub](https://github.com/celo-org/optics-monorepo)
-- [How does it work](/protocol/bridge/optics)
-
 **[Wormhole](https://portalbridge.com)** - a generic message passing protocol that connects to multiple chains including Ethereum, Solana, Terra, Binance Smart Chain, Polygon, Avalanche, Oasis, Fantom, Karura, Celo and Aurora.
 
 - [GitHub](https://github.com/certusone/wormhole)
