@@ -27,12 +27,6 @@ ContractKit is a library to help developers and validators to interact with the 
 
 <PageRef url="/developer-guide/contractkit" pageName="ContractKit" />
 
-### use-contractkit
-
-[use-contractkit](https://github.com/celo-tools/use-contractkit) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-
-<PageRef url="/developer/react-celo" pageName="react-celo" />
-
 ### Ethers.JS Wrapper
 
 A minimal wrapper to make Ethers.JS compatible with the Celo network.
@@ -109,6 +103,13 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 <PageRef url="http://stats.celo.org" pageName="stats.celo.org" />
 
+### SubQuery
+
+[SubQuery](https://subquery.network/) is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for CELO. One of SubQuery's competitive advantages is the ability to aggregate data not only within a chain but across multiple blockchains all within a single project.
+
+<PageRef url="https://subquery.network/" pageName="SubQuery" />
+
+
 ## Hosted Nodes
 
 RPC Endpoint Services
@@ -127,7 +128,7 @@ Forno can be used as an HTTP Provider with ContractKit.
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
-<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
+<PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
 ### Figment Datahub
 

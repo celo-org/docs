@@ -371,11 +371,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "react-celo",
-          id: "developer/react-celo/index",
-        },
-        {
           type: "category",
           label: "Web3Modal SDK",
           items: [
@@ -476,6 +471,11 @@ const sidebars = {
           id: "developer/build-on-minipay/deeplinks",
         },
       ],
+    },
+    {
+      type: "doc",
+      label: "Fee Currency",
+      id: "developer/fee-currency",
     },
     {
       type: "category",

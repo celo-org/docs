@@ -23,17 +23,12 @@ Consider using [Dependabot](https://docs.github.com/en/code-security/supply-chai
 
 ### viem
 
-[viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
+[viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. It supports celo specific features. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
 
-### react-celo
-
-[react-celo](/developer/react-celo) is [Web3Modal](https://web3modal.com/)-like experience that injects ContractKit into your web-based application. Supports a variety of different wallets, including but not limited to Valora, Ledger, Metamask (Celo compatible fork) and any WalletConnect compatible wallets
-
-<PageRef url="/developer/react-celo" pageName="react-celo" />
 
 ### Ethers.JS Wrapper
 
-A minimal wrapper to make Ethers.JS compatible with the Celo network.
+A minimal wrapper for ethers to create Celo Easy Fee transactions. If paying for gas with tokens is not important for your use case, then the standard ethers.js works perfectly well.
 
 <PageRef url="https://github.com/celo-tools/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
 
@@ -111,6 +106,12 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 <PageRef url="http://stats.celo.org" pageName="stats.celo.org" />
 
+### SubQuery
+
+[SubQuery](https://subquery.network/) is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for CELO. One of SubQuery's competitive advantages is the ability to aggregate data not only within a chain but across multiple blockchains all within a single project.
+
+<PageRef url="https://subquery.network/" pageName="SubQuery" />
+
 ## Hosted Nodes
 
 RPC Endpoint Services
@@ -135,7 +136,7 @@ RPC end point provider that supports Celo and several other EVM L1s. Infura's no
 
 Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable, load balanced access to node clusters from anywhere in the world.
 
-<PageRef url="https://www.ankr.com/protocol/public/celo/" pageName="Ankr" />
+<PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
 ### Quicknode
 

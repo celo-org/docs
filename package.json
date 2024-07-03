@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.22.0",
-    "@crowdin/cli": "^3.7.0",
+    "@crowdin/cli": "^4.0.0",
     "@docusaurus/core": "^3.0.0",
     "@docusaurus/plugin-client-redirects": "^3.0.0",
     "@docusaurus/plugin-ideal-image": "^3.0.0",
@@ -76,12 +76,12 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.1.1",
-    "@docusaurus/tsconfig": "3.1.1",
+    "@docusaurus/module-type-aliases": "3.4.0",
+    "@docusaurus/tsconfig": "3.4.0",
     "@types/react": "^18.2.29",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",
-    "prettier": "3.2.5",
-    "typescript": "~5.4.0"
+    "prettier": "3.3.2",
+    "typescript": "~5.5.0"
   }
 }

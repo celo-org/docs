@@ -1,0 +1,60 @@
+name: Check Broken Links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * SUN" # at 5am on Sundays
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Restore lychee cache
+        id: restore-cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --cache --max-cache-age 1d
+            './**/*.html'
+            './**/*.js'
+            './**/*.md'
+            './**/*.rst'
+            './**/*.tsx'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Check Output Size and Exit If Too Large
+        id: wc
+        shell: bash
+        run: |
+          # See https://github.com/peter-evans/create-issue-from-file/issues/1049
+          if [ "$(wc -m < ./lychee/out.md)" -gt 65536 ]; then
+            echo "Link Checker output is too big (> 65536 characters) for a GitHub Issue descriptions."
+            exit 1
+          fi
+          
+  createIssue:
+    runs-on: ubuntu-latest
+    needs: linkChecker
+
+    steps:  
+      - name: Create Issue From File
+        if: env.lychee_exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: bug, automated issue
