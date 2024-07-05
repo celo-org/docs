@@ -1132,6 +1132,11 @@ const sidebars = {
       label: "Fee Currencies",
       id: "cel2/fee-currencies",
     },
+    {
+      type: "doc",
+      label: "Deploy Contract",
+      id: "cel2/deploy-contract",
+    },
   ],
 };
 module.exports = sidebars;
