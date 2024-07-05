@@ -1122,6 +1122,11 @@ const sidebars = {
       label: "Add Cel2 Testnet to Wallet",
       id: "cel2/add-cel2-testnet-to-metamask",
     },
+    {
+      type: "doc",
+      label: "Network Information",
+      id: "cel2/network-information",
+    },
   ],
 };
 module.exports = sidebars;
