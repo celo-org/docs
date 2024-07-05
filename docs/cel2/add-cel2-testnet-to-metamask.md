@@ -1,6 +1,6 @@
 ---
-title: Add Cel2 Testnet to Metamask
-description: Adding Cel2 testnet network to your wallet
+title: Add Cel2 Dango Testnet to Metamask
+description: Adding Cel2 Dango Testnet network to your wallet
 ---
 
 1. Open Metamask
@@ -24,7 +24,7 @@ If you never added Celo Testnet before then you need click on "Add a Network"
 Insert the following details:
 
 - Network Name: Celo L2 Dango Testnet
-- New RPC URL: `https://forno.cel2-snapsync.alfajores.celo-testnet.org`
+- New RPC URL: `https://forno.dango.celo-testnet.org`
 - Chain ID: 44787
 - Currency Symbol: CELO
 
