@@ -49,9 +49,21 @@ After refining your proposal through community feedback, the next step is to for
 - **Acceptance of PR**: Once the CGP editors approve the PR, it signals that your proposal is ready to be submitted on-chain.
 - **On-chain Submission**: Accepted proposals can then be submitted on-chain through the Celo CLI for formal voting by the community.
 
+:::danger
+
+Wait for PRs to be merged on proposals prior to submitting on chain
+
+:::
+
 ### Step 5: Formal Proposal Submission On-Chain
 
 The formal submission of your proposal to the blockchain will be covered in a separate section but involves using **`celocli`** to submit your proposal on-chain for approval and voting.
+
+:::info
+
+Additionally, when submitting on-chain: the CGP markdown title will not update on celo.stake.id. While the body of the document can be edited if necessary, it is best to ensure all details are correct before submission.
+
+:::
 
 ### Step 6: Voting
 
