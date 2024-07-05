@@ -1122,6 +1122,11 @@ const sidebars = {
       label: "Add Cel2 Testnet to Wallet",
       id: "cel2/add-cel2-testnet-to-metamask",
     },
+    {
+      type: "doc",
+      label: "Fee Currencies",
+      id: "cel2/fee-currencies",
+    },
   ],
 };
 module.exports = sidebars;
