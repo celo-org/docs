@@ -1126,7 +1126,7 @@ const sidebars = {
       type: "doc",
       label: "Network Information",
       id: "cel2/network-information",
-    },
+    }
   ],
 };
 module.exports = sidebars;
