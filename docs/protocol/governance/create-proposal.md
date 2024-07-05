@@ -216,7 +216,9 @@ Each of these elements is important for navigating the governance calls effectiv
 
 Log in and click `New Transaction` on the left hand side of the page. This wil bring up a modal, click `Contract Interation`.
 
-![Governance Safe Creation process step 1](/img/doc-images/governance/governance-safe-multisig-1.png)
+> Note: Don't use [https://safe.celo.org/](https://safe.celo.org/) as it is not officilly supported. Use official Safe at - [https://safe.global/](https://safe.global/)
+
+![Governance Safe Creation process step 1](/img/doc-images/governance/governance-safe-multisig-01.png)
 
 ### Step 2: **Enter ABI**
 
@@ -231,7 +233,7 @@ Step 2 will auto populate the ABI with the proxy ABI. We will want to change tha
 > For the image below
 >
 > 1. This is the Celo Token Proxy Address(0x471ece3750da237f93b8e339c536989b8978a438)
-> 2. The ABI of the CELO Token Contract(See appendix above)
+> 2. The ABI of the CELO Token Contract
 > 3. This is where our contract interaction is being sent to and this will be the CELO Token proxy.
 > 4. The method we want to interact with(We specify the transferFrom)
 
@@ -247,7 +249,7 @@ You will now need to add the addresses you are wishing to interact with
 > 5. from(address): This is the Celo Governance Contract(0xD533Ca259b330c7A88f74E000a3FaEa2d63B7972)
 > 6. to(address): This is the address you are wishing to transfer funds from the Governance contract to. It could be the multisig you are using to do this interaction from or any other address.
 > value(uint256)*: The wei amount of funds you are wishing to transfer. eg 1 CELO = 10 ** 18
-> you can use this webpage to easily convert CELO to the wei value
+> you can use [this](https://eth-converter.com/) webpage to easily convert CELO to the wei value
 
 ![Governance Safe Creation process step 4](/img/doc-images/governance/governance-safe-multisig-4.png)
 
