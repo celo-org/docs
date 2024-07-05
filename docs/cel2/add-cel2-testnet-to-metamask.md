@@ -23,10 +23,11 @@ If you never added Celo Testnet before then you need click on "Add a Network"
 
 Insert the following details:
 
-- Network Name: Celo L2 Dango Testnet
-- New RPC URL: `https://forno.cel2-snapsync.alfajores.celo-testnet.org`
+- Network Name: Celo Dango Testnet
+- New RPC URL: `https://forno.dango.celo-testnet.org`
 - Chain ID: 44787
 - Currency Symbol: CELO
+- Block explorer URL: `https://celo-dango.blockscout.com/`
 
 ![](/img/doc-images/add-cel2-testnet-network-to-metamask/4.png)
 
