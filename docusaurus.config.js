@@ -2,7 +2,6 @@
 const path = require("path");
 const math = require("remark-math");
 const katex = require("rehype-katex");
-const { docs, developers } = require("./sidebars");
 const DefaultLocale = "en";
 
 module.exports = {
@@ -109,8 +108,8 @@ module.exports = {
           position: "left",
         },
         {
-          to: "validator/",
-          label: "Validators",
+          to: "cel2/",
+          label: "Cel2",
           position: "left",
         },
         {
@@ -118,6 +117,10 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
+            {
+              to: "validator/",
+              label: "Validators",
+            },
             {
               to: "holder/",
               label: "Holder",
