@@ -1,6 +1,6 @@
 ---
-title: Cel2 Testnet Dango Network Information
-description: Cel2 Testnet Dango Network Information
+title: Cel2 Dango Testnet Network Information
+description: Cel2 Dango Testnet Network Information
 ---
 
 | Name                       | Value                                                                                                                                                                                                                         |
