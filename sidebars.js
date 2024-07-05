@@ -1110,5 +1110,18 @@ const sidebars = {
       id: "cli/validatorgroup",
     },
   ],
+
+  cel2: [
+    {
+      type: "doc",
+      label: "Introduction to Cel2",
+      id: "cel2/index",
+    },
+    {
+      type: "doc",
+      label: "Add Cel2 Testnet to Wallet",
+      id: "cel2/add-cel2-testnet-to-metamask",
+    },
+  ],
 };
 module.exports = sidebars;
