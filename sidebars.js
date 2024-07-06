@@ -1137,6 +1137,7 @@ const sidebars = {
       label: "Deploy Contract",
       id: "cel2/deploy-contract",
     },
+    { type: "doc", label: "FAQ", id: "cel2/faq" },
   ],
 };
 module.exports = sidebars;
