@@ -52,22 +52,6 @@ Blockscout Explorer: [https://celo-dango.blockscout.com/](https://celo-dango.blo
 
 Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://superbridge.app/celo-testnet) or [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet).
 
-<!---
-
-### Which wallets are supported?
-
-### Which CLI tooling can I use?
-
-#### What can I do through the CLI?
-
-### What SDK should I use?
-
-### How can I check that my accounts’ state was correctly migrated?
-
-### What is the migration, how does it work, how can I be sure it’s correct?
-
---->
-
 ## Dango and Alfajores Testnets
 
 ### What’s the difference between Dango and Alfajores?
@@ -87,8 +71,6 @@ Good catch! Yes, we're using the same chain ID for both Alfajors and Dango. This
 ### Are there any address changes between Alfajores and Dango?
 
 No, all contracts stay at their place. For more information about the migration see the [migration docs](https://specs.celo.org/l2_migration.html).
-
-<!--- ### How does native bridging compare with old bridging? --->
 
 ### Is there anything that used to work on Alfajores that doesn’t anymore?
 
@@ -116,24 +98,8 @@ The block period is two seconds.
 
 The gas limit per block is 30 million. The Dango testnet has a throughput of 15M gas/s.
 
-<!--- ### How do Celo tokenomics work with the change? --->
-
 ## What happened to these features?
 
 - CELO token duality? supported, see [Token Duality](https://specs.celo.org/token_duality.html)
 - fee currencies? supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
 - epoch rewards? no longer supported, see [L2 CELO Distribution Schedule](https://specs.celo.org/l2_migration.html#l2-celo-distribution-schedule)
-<!---
-- staking?
-- validators?
-- governance?
---->
-
-<!---
-## What happened to these services?
-
-- stCelo?
-- Optics?
-- SocialConnect?
-
---->
