@@ -1122,6 +1122,7 @@ const sidebars = {
       label: "Add Cel2 Testnet to Wallet",
       id: "cel2/add-cel2-testnet-to-metamask",
     },
+    {type: "doc", label: "FAQ", id: "cel2/faq"},
   ],
 };
 module.exports = sidebars;
