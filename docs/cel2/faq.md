@@ -122,13 +122,18 @@ The gas limit per block is 30 million. The Dango testnet has a throughput of 15M
 
 - CELO token duality? supported, see [Token Duality](https://specs.celo.org/token_duality.html)
 - fee currencies? supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
+- epoch rewards? no longer supported, see [L2 CELO Distribution Schedule](https://specs.celo.org/l2_migration.html#l2-celo-distribution-schedule)
+<!---
 - staking?
 - validators?
-- epoch rewards? no longer supported, see [L2 CELO Distribution Schedule](https://specs.celo.org/l2_migration.html#l2-celo-distribution-schedule)
 - governance?
+--->
 
+<!---
 ## What happened to these services?
 
 - stCelo?
 - Optics?
 - SocialConnect?
+
+--->
