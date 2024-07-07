@@ -1124,6 +1124,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "Network Information",
+      id: "cel2/network-information",
+    },
+    {
+      type: "doc",
       label: "Fee Currencies",
       id: "cel2/fee-currencies",
     },
