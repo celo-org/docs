@@ -27,13 +27,17 @@ the Celo mainnet through a hardfork and governance proposal.
 
 Dango preserves the majority of Celo's feature set, and introduces some new features, including:
 
-- Full Alfajores history and state migration
+- Full Alfajores history and state
 - CELO token duality (ability to use CELO natively and as an ERC20 token)
 - Fee abstraction (ability to pay for gas with tokens)
 - Native Bridging to and from the L1
 - Data Availability via EigenDA
 - Staking
 - Ultragreen Money
+
+:::warning
+The Dango Testnet is designed preliminary for testing and experimentation by developers. Its tokens hold no real world economic value. You may encounter bugs and limitations with the software and documentation.
+:::
 
 ## Getting Started with Dango
 
@@ -42,10 +46,6 @@ Information and resources to get you started:
 - RPC URL: https://forno.dango.celo-testnet.org/
 - Explorer: https://celo-dango.blockscout.com/
 - ChainID: 44787
-
-:::warning
-The Dango Testnet is designed preliminary for testing and experimentation by developers. Its tokens hold no real world economic value. You may encounter bugs and limitations with the software and documentation.
-:::
 
 :::warning
 Please note that the Dango chain ID remains the same as Alfajores, ensuring seamless functionality but introducing the possibility of replay attacks where transactions could be replayed between Dango and Alfajores.
