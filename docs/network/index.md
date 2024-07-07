@@ -75,3 +75,16 @@ The Baklava Testnet is designed for testing and experimentation by developers. I
 Your use of the Baklava Testnet is subject to the [Baklava Testnet Disclaimer](/network/baklava/disclaimer).
 
 :::
+
+## Dango
+
+| Name                | Value                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name        | Dango                                                                                                                                       |
+| Description         | First Celo Layer2 testnet. Forked from Alfajores at block 24940101                                                                          |
+| Currency Symbol     | CELO                                                                                                                                        |
+| RPC Endpoint        | [https://forno.dango.celo-testnet.org/](https://forno.dango.celo-testnet.org/)                                                              |
+| Block Explorer      | [https://celo-dango.blockscout.com/](https://celo-dango.blockscout.com/)                                                                    |
+| Superbridge         | [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet)                                              |
+
+Dango is the first testnet with Celo as a Layer 2. It forked Alfajores (at block 24940101), preserving the state while transitioning to a new Layer 2 approach. Technically, it is based on OP stack and used EigenDA as data availability layer. Find for information in the [official announcement](https://blog.celo.org/celo-core-contributor-clabs-launch-layer-2-testnet-dango-c2ba72a66dbf) or [forum post](https://forum.celo.org/t/introducing-dango-l2-celo-testnet/8313).
