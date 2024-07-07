@@ -43,6 +43,19 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
+## Celo Dango (L2)
+
+| Name            | Value                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name    | Celo Dango                                                                                                                                  |
+| Description     | The L2 Developer Testnet network                                                                                                                   |
+| Currency Symbol | CELO                                                                                                                                            |
+| Chain ID        | 44787                                                                                                                                           |
+| RPC Endpoint    | [https://forno.dango.celo-testnet.org/](https://forno.dango.celo-testnet.org/) |
+| Block Explorer  | [https://celo-dango.blockscout.com/](https://celo-dango.blockscout.com/) |
+| Faucet Link     | [https://faucet.celo.org/dango](https://faucet.celo.org/dango)                                                                                              |
+| Bridge Link     | [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet)                                                                                              |
+
 ## Baklava
 
 | Name                | Value                                                                                                                                       |
