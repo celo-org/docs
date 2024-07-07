@@ -1127,6 +1127,8 @@ const sidebars = {
       label: "Fee Currencies",
       id: "cel2/fee-currencies",
     },
+    {type: "doc", label: "FAQ", id: "cel2/faq"},
+    {type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/"},
   ],
 };
 module.exports = sidebars;
