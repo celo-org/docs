@@ -4,8 +4,18 @@ title: Fee Currencies on Cel2
 
 ## Fee Currency Addresses
 
+### Get list of whitelisted Fee Currencies
+
 ```bash
 celocli network:whitelist --node https://forno.dango.celo-testnet.org
+```
+
+### Using Fee Currency
+
+Transfer 1 USDC using USDC as Fee Currency
+
+```bash
+celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B --from 0x22ae7Cf4cD59773f058B685a7e6B7E0984C54966 --to 0xDF7d8B197EB130cF68809730b0D41999A830c4d7 --value 1000000 --gasCurrency 0x4822e58de6f5e485eF90df51C41CE01721331dC0 --privateKey [PRIVATE_KEY]
 ```
 
 | Symbol |                   Token                    |                  Adapter                   |
