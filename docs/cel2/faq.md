@@ -17,7 +17,7 @@ description: Frequently Asked Questions about Cel2
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:badaf7f297762fbda117bc654b744e74a0ad6fe1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:42f2a5bbb7218c0828a996c48ad6bceb1e5f561a)
 - p2p peers:
-  - op-geth bootnode/peers, to be used with op-geth `--botnodes` flag:
+  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
 
     ```text
     enode://db225c1c772cda4c313579727e40ef45e271a576398924da999cc0554caee9da70d866a7dfe8ec3da4dcb01980a8190f119d2bde36793dd5f2a761ab4841b31a@34.168.4.176:30303
@@ -56,7 +56,7 @@ Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://super
 
 ### What’s the difference between Dango and Alfajores?
 
-Alfajores is the first testnet of the Celo L1 blockchain, [launched in July 2019](https://blog.celo.org/introducing-alfajores-1b162ebcb44d). Fore more details, refer to the [Alfajores Testnet documentation](https://docs.celo.org/network/alfajores).
+Alfajores is the first testnet of the Celo L1 blockchain, [launched in July 2019](https://blog.celo.org/introducing-alfajores-1b162ebcb44d). For more details, refer to the [Alfajores Testnet documentation](https://docs.celo.org/network/alfajores).
 
 Dango is the first testnet of the Celo L2 blockchain, launched in July 2024.
 It implements the specifications detailed in [Cel2 Specification](https://specs.celo.org/root.html) while preserving the original Alfajores history and state.
@@ -66,11 +66,11 @@ Dango diverged from Alfajores L1 at block [24940100](https://celo-alfajores.bloc
 
 ### I noticed you used the same chainID for Alfajores and Dango. Isn't that dangerous?
 
-Good catch! Yes, we're using the same chain ID for both Alfajors and Dango. This means that transactions from one testnet can be executed on the other testnet as well. But as both networks are testnets, this is not a problem.
+Good catch! Yes, we're using the same chain ID for both Alfajores and Dango. This means that transactions from one testnet can be executed on the other testnet as well. But as both networks are testnets, this is not a problem.
 
 ### Are there any address changes between Alfajores and Dango?
 
-No, all contracts stay at their place. For more information about the migration see the [migration docs](https://specs.celo.org/l2_migration.html).
+No, all contracts stay at their place. For more information about the migration, see the [migration docs](https://specs.celo.org/l2_migration.html).
 
 ### Is there anything that used to work on Alfajores that doesn’t anymore?
 
@@ -82,7 +82,7 @@ See [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html).
 
 See [Celo L2 Specification](https://specs.celo.org/root.html).
 
-### What are the costs for L1 data and how are they payed?
+### What are the costs for L1 data and how are they paid?
 
 For the testnet L1 data fees are covered by us.
 
