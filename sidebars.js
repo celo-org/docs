@@ -1137,6 +1137,16 @@ const sidebars = {
       label: "Deploy Contract",
       id: "cel2/deploy-contract",
     },
+    {
+      type: "link",
+      label: "Cel2 Dango Bridge",
+      href: "https://testnets.superbridge.app/celo-testnet",
+    },
+    {
+      type: "link",
+      label: "Cel2 Dango Faucet",
+      href: "https://faucet.celo.org/dango",
+    },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
   ],
