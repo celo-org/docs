@@ -1,5 +1,5 @@
 ---
-title: Implementing Fee Currency in Wallets
+title: Implementing Fee Abstraction in Wallets
 description: How to allow your wallet users to pay for gas fee using alternate fee currencies
 ---
 
@@ -11,7 +11,7 @@ This works by specifying a token/adapter address as a value for the `feeCurrency
 
 The below steps describe how wallets can implement the alternate fee currency feature in order to allow users to use alternate assets in the user's wallet to pay for gas fees.
 
-## Enabling Transactions with ERC20 Token as Fee Currency
+## Enabling Transactions with ERC20 Token as fee currency
 
 We recommend using the [viem](https://viem.sh) library as it has support for the `feeCurrency` field in the transaction required for sending transaction where the gas fees will be paid in ERC20 tokens.
 
@@ -83,7 +83,7 @@ async function main() {
 }
 ```
 
-### Sending transaction using alternate fee currency
+### Sending transaction using Fee Abstraction
 
 Sending transaction with fee currency other than the native currency of the network is pretty straightforward all you need to do is set the `feeCurrency` property in the transaction object with the address of the token/adapter you want to use to pay for gas fees.
 

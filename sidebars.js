@@ -474,7 +474,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Fee Currency",
+      label: "Fee Abstraction",
       id: "developer/fee-currency",
     },
     {
@@ -1136,6 +1136,11 @@ const sidebars = {
       type: "doc",
       label: "Deploy Contract",
       id: "cel2/deploy-contract",
+    },
+    {
+      type: "doc",
+      label: "Contract Addresses",
+      id: "cel2/contract-addresses",
     },
     {
       type: "link",
