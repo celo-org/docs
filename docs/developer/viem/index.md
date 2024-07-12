@@ -5,7 +5,7 @@ description: Using Viem with Celo
 
 ## Viem
 
-Viem is full featured lightweight javascript library for interacting with EVM chains with *first class support for Celo*.
+Viem is full featured lightweight javascript library for interacting with EVM chains with _first class support for Celo_.
 
 Viem is used by [Wagmi](https://wagmi.sh/) and [Rainbowkit](https://www.rainbowkit.com/).
 
@@ -19,22 +19,21 @@ The TLDR is that passing a celo chain from `viem/chains` into the config of `cre
 // see viem docs for more info on setup
 
 // Create a wallet client that will sign the transaction
-  const client = createWalletClient({
-    account,
-    // Passing chain is how viem knows to try serializing tx as cip42.
-    chain: celoAlfajores,
-    transport: http(),
-  })
+const client = createWalletClient({
+  account,
+  // Passing chain is how viem knows to try serializing tx as cip42.
+  chain: celoAlfajores,
+  transport: http(),
+});
 
-  client.writeContract({
-      abi: ANY_CONTRACT_ABI,
-      address: ANY_CONTRACT_ABI_ADDRESS,
-      functionName: "contractMethod",
-      args: [to, parseEther(value)],
-      // set the fee currency on the contract write call
-      feeCurrency: FEE_CURRENCIES_ALFAJORES["cusd"]
-  })
-
+client.writeContract({
+  abi: ANY_CONTRACT_ABI,
+  address: ANY_CONTRACT_ABI_ADDRESS,
+  functionName: "contractMethod",
+  args: [to, parseEther(value)],
+  // set the fee currency on the contract write call
+  feeCurrency: FEE_CURRENCIES_ALFAJORES["cusd"],
+});
 ```
 
 ## Gas Price
@@ -46,12 +45,11 @@ async function getGasPrice(client, feeCurrencyAddress?: Address) {
   const priceHex = await client.request({
     method: "eth_gasPrice",
     params: [feeCurrencyAddress],
-  })
-  return hexToBigInt(priceHex)
+  });
+  return hexToBigInt(priceHex);
 }
 
-tx.maxFeePerGas = await getGasPrice(client, tx.feeCurrency)
-
+tx.maxFeePerGas = await getGasPrice(client, tx.feeCurrency);
 ```
 
-For an interactive example of using viem with Celo's fee currency feature [see our demo](https://rainbowkit-with-celo.vercel.app/fee-currency)
+For an interactive example of using viem with Celo's Fee Abstraction feature [see our demo](https://rainbowkit-with-celo.vercel.app/fee-currency)
