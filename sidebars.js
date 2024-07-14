@@ -495,6 +495,13 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Indexers",
+      items: [
+        { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+      ],
+    },
+    {
+      type: "category",
       label: "Addresses",
       items: [
         { type: "doc", label: "Contracts", id: "contract-addresses" },
