@@ -61,3 +61,41 @@ All the L1 Alfajores contracts exist at the same address on the L2 as they did o
 |          ProxyAdmin           | 0x4200000000000000000000000000000000000018 |
 |         BaseFeeVault          | 0x4200000000000000000000000000000000000019 |
 |          L1FeeVault           | 0x420000000000000000000000000000000000001A |
+
+### Celo Core Contracts
+
+|         Contract         |                  Address                   |
+| :----------------------: | :----------------------------------------: |
+|         Accounts         | 0xed7f51A34B4e71fbE69B3091FcF879cD14bD73A9 |
+|       Attestations       | 0xAD5E5722427d79DFf28a4Ab30249729d1F8B4cc0 |
+|   BlockchainParameters   | 0xE5aCbb07b4Eed078e39D50F66bF0c80cF1b93abe |
+|  Celo Token (GoldToken)  | 0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9 |
+| CeloDistributionSchedule | 0x78Af211Ad79bCE6BF636640CE8c2C2b29e02365A |
+|   DoubleSigningSlasher   | 0x88A4c203C488E8277f583942672E1aF77e2B5040 |
+|     DowntimeSlasher      | 0xf2224c1d7b447D9A43a98CBD82FCCC0eF1c11CC5 |
+|         Election         | 0x1c3eDf937CFc2F6F51784D20DEB1af1F9a8655fA |
+|       EpochRewards       | 0xB10Ee11244526b94879e1956745bA2E35AE2bA20 |
+|          Escrow          | 0xb07E10c5837c282209c6B9B3DE0eDBeF16319a37 |
+|         Exchange         | 0x17bc3304F94c85618c46d0888aA937148007bD3C |
+|       ExchangeBRL        | 0xf391DcaF77360d39e566b93c8c0ceb7128fa1A08 |
+|       ExchangeEUR        | 0x997B494F17D3c49E66Fafb50F37A972d8Db9325B |
+|   FeeCurrencyDirectory   | 0x71FFbD48E34bdD5a87c3c683E866dc63b8B2a685 |
+|  FederatedAttestations   | 0x70F9314aF173c246669cFb0EEe79F9Cfd9C34ee3 |
+|        FeeHandler        | 0xEAaFf71AB67B5d0eF34ba62Ea06Ac3d3E2dAAA38 |
+|         Freezer          | 0xfe0Ada6E9a7b782f55750428CC1d8428Cd83C3F1 |
+|     GasPriceMinimum      | 0xd0Bf87a5936ee17014a057143a494Dc5C5d51E5e |
+|        Governance        | 0xAA963FC97281d9632d96700aB62A4D1340F9a28a |
+|       GrandaMento        | 0xEcf09FCD57b0C8b1FD3DE92D59E234b88938485B |
+|        LockedGold        | 0x6a4CC5693DC5BFA3799C699F3B941bA2Cb00c341 |
+|  MentoFeeHandlerSeller   | 0xae83C63B5FB50C353c8d23397bcC9dBf3a9837Ac |
+|       OdisPayments       | 0x645170cdB6B5c1bc80847bb728dBa56C50a20a49 |
+|          Random          | 0xdd318EEF001BB0867Cd5c134496D6cF5Aa32311F |
+|         Registry         | 0x000000000000000000000000000000000000ce10 |
+|         Reserve          | 0xa7ed835288Aa4524bB6C73DD23c0bF4315D9Fe3e |
+|      SortedOracles       | 0xFdd8bD58115FfBf04e47411c1d228eCC45E93075 |
+|       StableToken        | 0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1 |
+|      StableTokenBRL      | 0xE4D517785D091D3c54818832dB6094bcc2744545 |
+|      StableTokenEUR      | 0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F |
+|    TransferWhitelist     | 0x52449A99e3455acB831C0D580dCDAc8B290d5182 |
+| UniswapFeeHandlerSeller  | 0xc7b6E77C3702666DDa8EB5b7F30234B020788b21 |
+|        Validators        | 0x9acF2A99914E083aD0d610672E93d14b0736BBCc |
