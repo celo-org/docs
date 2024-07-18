@@ -42,3 +42,22 @@ title: Contract Addresses
 |          SystemOwnerSafe          | 0x11f6358a0C3Af1808C9b76E9d9C97a850EEFb6d4 |
 
 ## Cel2 Dango Testnet(L2)
+
+:::info
+All the L1 Alfajores contracts exist at the same address on the L2 as they did on L1. Addresses are available [here](/contract-addresses#alfajores-testnet).
+:::
+
+|         Contract Name         |                  Address                   |
+| :---------------------------: | :----------------------------------------: |
+|      L2ToL1MessagePasser      | 0x4200000000000000000000000000000000000016 |
+|    L2CrossDomainMessenger     | 0x4200000000000000000000000000000000000007 |
+|       L2StandardBridge        | 0x4200000000000000000000000000000000000010 |
+|        L2ERC721Bridge         | 0x4200000000000000000000000000000000000014 |
+|       SequencerFeeVault       | 0x4200000000000000000000000000000000000011 |
+| OptimismMintableERC20Factory  | 0x4200000000000000000000000000000000000012 |
+| OptimismMintableERC721Factory | 0x4200000000000000000000000000000000000017 |
+|            L1Block            | 0x4200000000000000000000000000000000000015 |
+|        GasPriceOracle         | 0x420000000000000000000000000000000000000F |
+|          ProxyAdmin           | 0x4200000000000000000000000000000000000018 |
+|         BaseFeeVault          | 0x4200000000000000000000000000000000000019 |
+|          L1FeeVault           | 0x420000000000000000000000000000000000001A |
