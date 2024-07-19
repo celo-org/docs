@@ -1140,6 +1140,17 @@ const sidebars = {
       id: "cel2/fee-currencies",
     },
     {
+      type: "category",
+      label: "Bridging",
+      items: [
+        {
+          type: "doc",
+          label: "Bridge Celo using Viem",
+          id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
+        },
+      ],
+    },
+    {
       type: "doc",
       label: "Deploy Contract",
       id: "cel2/deploy-contract",
