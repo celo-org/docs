@@ -1,0 +1,107 @@
+---
+title: Bridging Celo from Holesky to Dango using Viem
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Bridging Celo from Holesky to Dango is simple, all you need to do is call `depositERC20Transaction` on `OptimismPortalProxy` on Holesky.
+
+`depositERC20Transaction` pulls Celo tokens from the account which is why you need to approve `OptimismPortalProxy` to spend Celo token first.
+
+<Tabs>
+  <TabItem value="index.js" label="index.js" default>
+
+    ```js
+    import { createWalletClient, http, parseEther } from "viem";
+    import { privateKeyToAccount } from "viem/accounts";
+    import { holesky } from "viem/chains";
+
+    const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
+
+    const OptimismPortalProxy = "0xB29597c6866c6C2870348f1035335B75eEf79d07";
+
+    const account = privateKeyToAccount(
+      "...",
+    );
+
+    export const walletClientL1 = createWalletClient({
+      account,
+      chain: holesky,
+      transport: http(),
+    });
+
+    async function main() {
+      // Approve OptimismPortal to pull Celo on Holesky
+      const approve = await walletClientL1.writeContract({
+        address: CELOL1,
+        abi: [
+          {
+            inputs: [
+              { name: "spender", type: "address" },
+              { name: "amount", type: "uint256" },
+            ],
+            name: "approve",
+            type: "function",
+          },
+        ],
+        functionName: "approve",
+        args: [OptimismPortalProxy, parseEther("0.0001")],
+      });
+
+      console.log(`Approval TX Hash: ${approve}`);
+
+      // Call depositERC20Transaction on OptimismPortal
+      const deposit = await walletClientL1.writeContract({
+        address: OptimismPortalProxy,
+        abi: [
+            {
+              inputs: [
+                {
+                  name: "_to",
+                  type: "address",
+                },
+                {
+                  name: "mint",
+                  type: "uint256",
+                },
+                {
+                  name: "_value",
+                  type: "uint256",
+                },
+                {
+                  name: "_gasLimit",
+                  type: "uint64",
+                },
+                {
+                  name: "_isCreation",
+                  type: "bool",
+                },
+                {
+                  name: "_data",
+                  type: "bytes",
+                },
+              ],
+              name: "depositERC20Transaction",
+              type: "function",
+            },
+          ],
+          functionName: "depositERC20Transaction",
+          args: [
+            account.address, // Account where you want to receive Celo on L2
+            parseEther("0.0001"), // Amount you are transferring to the Portal
+            parseEther("0.0001"), // Amount you want on L2
+            100_000, // Amount of L2 gas to purchase by burning gas on L1.
+            false, // Whether the transaction is a contract creation
+            "", // Data to trigger the recipient with
+          ],
+      });
+
+      console.log(`Deposit Transaction: ${deposit}`);
+    }
+
+    main();
+    ```
+
+  </TabItem>
+</Tabs>
