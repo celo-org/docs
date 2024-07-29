@@ -1275,9 +1275,9 @@
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
 "@crowdin/cli@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-4.0.0.tgz#ee3d37ff2f4f95ae15096f84926036c355223bf3"
-  integrity sha512-omafqSPYc4Tkkm2U85V9vjJZJ8MoxCF74tpZc/KvByfxtzI+i6fnNmWy3iYJUTaqg3GDN4L+Ob1tA6qB88LpFw==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-4.1.1.tgz#1a2067e79a53639920121870ae488a38dd2513ff"
+  integrity sha512-OC5xJgaXM9eC9UgiAV17HZrCDP1gM1gs2yMdSRFjM6ydu9LddybntMKgWU3ffRHjCjK6wDTrC31jo932Czrs+A==
   dependencies:
     command-exists-promise "^2.0.2"
     node-fetch "2.7.0"
@@ -5956,9 +5956,9 @@ is-ci@^3.0.1:
     ci-info "^3.2.0"
 
 is-core-module@^2.13.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.14.0.tgz#43b8ef9f46a6a08888db67b1ffd4ec9e3dfd59d1"
-  integrity sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.15.0.tgz#71c72ec5442ace7e76b306e9d48db361f22699ea"
+  integrity sha512-Dd+Lb2/zvk9SKy1TGCt1wFJFo/MWBPMX5x7KcvLajWTGuomczdQX61PvY5yK6SVACwpoexWo81IfFyoKY2QnTA==
   dependencies:
     hasown "^2.0.2"
 
