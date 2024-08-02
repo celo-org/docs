@@ -13,7 +13,7 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
   <TabItem value="index.js" label="index.js" default>
 
     ```js
-    import { createWalletClient, http, parseEther } from "viem";
+    import { createWalletClient, createPublicClient, http, parseEther } from "viem";
     import { privateKeyToAccount } from "viem/accounts";
     import { holesky } from "viem/chains";
 
@@ -26,6 +26,12 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
     );
 
     export const walletClientL1 = createWalletClient({
+      account,
+      chain: holesky,
+      transport: http(),
+    });
+
+    export const publicClientL1 = createPublicClient({
       account,
       chain: holesky,
       transport: http(),
@@ -50,6 +56,11 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
       });
 
       console.log(`Approval TX Hash: ${approve}`);
+
+      let approveReceipt = await publicClientL1.waitForTransactionReceipt({
+        hash: approve,
+      });
+      console.log(`Approve Transaction Receipt: ${approveReceipt}`);
 
       // Call depositERC20Transaction on OptimismPortal
       const deposit = await walletClientL1.writeContract({
@@ -98,6 +109,12 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
       });
 
       console.log(`Deposit Transaction: ${deposit}`);
+
+
+      let depositReceipt = await publicClientL1.waitForTransactionReceipt({
+        hash: deposit,
+      });
+      console.log(`Deposit Transaction Receipt: ${depositReceipt}`);
     }
 
     main();
