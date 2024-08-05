@@ -718,6 +718,14 @@ const Users: User[] = [
     tags: ['apps', 'defi', 'popular'],
   },
   {
+    title: 'CarbonDeFi',
+    description: 'An orderbook-like DEX with full automation and built-in 24/7 trading bot.',
+    preview: require('./showcase/carbondefi.jpeg'),
+    website: 'https://celo.carbondefi.xyz/',
+    source: 'https://github.com/bancorprotocol/carbon-app',
+    tags: ['apps', 'defi'],
+  },
+  {
     title: 'W.WAM',
     description: 'Money made easy, money made powerful.',
     preview: require('./showcase/w-wam.png'),
