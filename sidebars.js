@@ -1145,8 +1145,13 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          label: "Bridge Celo using Viem",
+          label: "Deposit Celo using Viem",
           id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
+        },
+        {
+          type: "doc",
+          label: "Withdraw Celo using Viem",
+          id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
         },
       ],
     },
