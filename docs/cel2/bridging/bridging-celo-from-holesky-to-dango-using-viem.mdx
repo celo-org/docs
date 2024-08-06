@@ -13,9 +13,11 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
   <TabItem value="index.js" label="index.js" default>
 
     ```js
-    import { createWalletClient, http, parseEther } from "viem";
+    import { createWalletClient, createPublicClient, http, parseEther } from "viem";
     import { privateKeyToAccount } from "viem/accounts";
     import { holesky } from "viem/chains";
+    import { getL2TransactionHashes, publicActionsL2 } from "viem/op-stack";
+    import { dango } from "./dango.js";
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
@@ -30,6 +32,17 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
       chain: holesky,
       transport: http(),
     });
+
+    export const publicClientL1 = createPublicClient({
+      account,
+      chain: holesky,
+      transport: http(),
+    });
+
+    export const publicClientL2 = createPublicClient({
+      chain: dango,
+      transport: http(),
+    }).extend(publicActionsL2());
 
     async function main() {
       // Approve OptimismPortal to pull Celo on Holesky
@@ -50,6 +63,11 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
       });
 
       console.log(`Approval TX Hash: ${approve}`);
+
+      let approveReceipt = await publicClientL1.waitForTransactionReceipt({
+        hash: approve,
+      });
+      console.log(`Approve Transaction Receipt: ${approveReceipt}`);
 
       // Call depositERC20Transaction on OptimismPortal
       const deposit = await walletClientL1.writeContract({
@@ -98,9 +116,91 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
       });
 
       console.log(`Deposit Transaction: ${deposit}`);
+
+
+      let depositReceipt = await publicClientL1.waitForTransactionReceipt({
+        hash: deposit,
+      });
+      console.log(`Deposit Transaction Receipt: ${depositReceipt}`);
+
+      // Get the L2 transaction hash from the L1 transaction receipt.
+      const [l2Hash] = getL2TransactionHashes(depositReceipt);
+
+      // Wait for the L2 transaction to be processed.
+      const l2Receipt = await publicClientL2.waitForTransactionReceipt({
+        hash: l2Hash,
+      });
+
+      console.log(`L2Receipt: ${l2Receipt}`);
     }
 
     main();
+    ```
+
+  </TabItem>
+
+  <TabItem value="dango.js" label="dango.js">
+
+    ```js
+    import { defineChain } from "viem";
+
+    const sourceId = 17000;
+
+    export const dango = defineChain({
+      name: "Dango Testnet",
+      id: 44_787,
+      nativeCurrency: {
+        decimals: 18,
+        name: "CELO",
+        symbol: "CELO",
+      },
+      rpcUrls: {
+        default: {
+          http: ["https://forno.dango.celo-testnet.org"],
+        },
+      },
+      contracts: {
+        gasPriceOracle: { address: "0x420000000000000000000000000000000000000F" },
+        l1Block: { address: "0x4200000000000000000000000000000000000015" },
+        l2CrossDomainMessenger: {
+          address: "0x4200000000000000000000000000000000000007",
+        },
+        l2Erc721Bridge: { address: "0x4200000000000000000000000000000000000014" },
+        l2StandardBridge: { address: "0x4200000000000000000000000000000000000010" },
+        l2ToL1MessagePasser: {
+          address: "0x4200000000000000000000000000000000000016",
+        },
+        disputeGameFactory: {
+          [sourceId]: {
+            address: "0x831f39053688f05698ad0fB5f4DE7e56B2949c55",
+          },
+        },
+        l2OutputOracle: {
+          [sourceId]: {
+            address: "0x419577592C884868C3ed85B97169b93362581855",
+          },
+        },
+        portal: {
+          [sourceId]: {
+            address: "0xB29597c6866c6C2870348f1035335B75eEf79d07",
+          },
+        },
+        l1StandardBridge: {
+          [sourceId]: {
+            address: "0x9FEBd0F16b97e0AEF9151AF07106d733E87B1be4",
+          },
+        },
+      },
+      blockExplorers: {
+        default: {
+          name: "Celo Explorer",
+          url: "https://explorer.celo.org/alfajores",
+          apiUrl: "https://explorer.celo.org/api",
+        },
+      },
+      testnet: true,
+    });
+
     ```
 
   </TabItem>
