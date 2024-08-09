@@ -3,29 +3,25 @@ title: Introduction to Celo Layer 2
 description: Introducion to Cel2
 ---
 
-Celo is evolving from a standalone EVM-compatible Layer 1 blockchain to an Ethereum Layer 2.
-Initially proposed by cLabs in July 2023, the Celo L2 aims to deliver a seamless user experience
-comparable to Celo L1, characterized by its ease, speed, and low transaction costs. For detailed
-information on the CEL2 announcement, refer to the cLabs
-[proposal](https://forum.celo.org/t/clabs-proposes-migrating-celo-to-an-ethereum-l2-leveraging-the-op-stack/7902).
+Celo is transitioning from a standalone EVM-compatible Layer 1 blockchain to an Ethereum Layer 2. 
+This shift, proposed by cLabs in July 2023, aims to maintain the seamless user experience that
+Celo is known for—characterized by speed, low costs, and ease of use—while leveraging Ethereum’s 
+security and ecosystem. As part of this transition, Celo is currently operating two Layer 2 testnets:
+Dango, which is live, and Alfajores, which will be upgraded to Layer 2 in late September 2024.
+
+
+## Alfajores L2 Upgrade
+
+The Alfajores testnet is set to upgrade to Layer 2 in late September 2024. This upgrade will transition 
+Alfajores into the Celo Layer 2 environment, allowing developers and integrators to start building and 
+testing with the new infrastructure. This is a key step in Celo’s broader evolution, paving the way for 
+future upgrades to the Baklava testnet and the mainnet.
 
 ## Dango Testnet
 
-The Dango Testnet is the inaugural Celo Layer 2 public test network, designed for developers
-building on Cel2. Its primary objectives include:
-
-- Demonstrating a successful state migration with operational continuity.
-- Establishing a robust foundation for future developments.
-
-Based on the current state of Alfajores, Dango will run concurrently with it, allowing
-infrastructure providers (e.g., RPC providers, indexers, and oracles) to familiarize themselves with
-the L2 codebase. Once these providers are prepared, the process of upgrading each existing Celo
-testnet will commence, starting with Alfajores followed by Baklava. The final step will be upgrading
-the Celo mainnet through a hardfork and governance proposal.
-
-## Dango Features
-
-Dango preserves the majority of Celo's feature set, and introduces some new features, including:
+The Dango Testnet, Celo’s first Layer 2 public test network, is currently live. Dango allows developers
+and infrastructure providers to familiarize themselves with the Layer 2 environment. 
+Key features of Dango include:
 
 - Full Alfajores history and state
 - CELO token duality (ability to use CELO natively and as an ERC20 token)
