@@ -1,13 +1,13 @@
 ---
-title: Bridging Celo from Holesky to Dango using Viem
+title: Bridging CELO from Holesky to Dango using Viem
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Bridging Celo from Holesky to Dango is simple, all you need to do is call `depositERC20Transaction` on `OptimismPortalProxy` on Holesky.
+Bridging CELO from Holesky to Dango is simple, all you need to do is call `depositERC20Transaction` on `OptimismPortalProxy` on Holesky.
 
-`depositERC20Transaction` pulls Celo tokens from the account which is why you need to approve `OptimismPortalProxy` to spend Celo token first.
+`depositERC20Transaction` pulls CELO tokens from the account which is why you need to approve `OptimismPortalProxy` to spend CELO token first.
 
 <Tabs>
   <TabItem value="index.js" label="index.js" default>
@@ -21,6 +21,7 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
+    // https://docs.celo.org/cel2/contract-addresses
     const OptimismPortalProxy = "0xB29597c6866c6C2870348f1035335B75eEf79d07";
 
     const account = privateKeyToAccount(
@@ -45,7 +46,7 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
     }).extend(publicActionsL2());
 
     async function main() {
-      // Approve OptimismPortal to pull Celo on Holesky
+      // Approve OptimismPortal to pull CELO on Holesky
       const approve = await walletClientL1.writeContract({
         address: CELOL1,
         abi: [
@@ -106,7 +107,7 @@ Bridging Celo from Holesky to Dango is simple, all you need to do is call `depos
           ],
           functionName: "depositERC20Transaction",
           args: [
-            account.address, // Account where you want to receive Celo on L2
+            account.address, // Account where you want to receive CELO on L2
             parseEther("0.0001"), // Amount you are transferring to the Portal
             parseEther("0.0001"), // Amount you want on L2
             100_000, // Amount of L2 gas to purchase by burning gas on L1.
