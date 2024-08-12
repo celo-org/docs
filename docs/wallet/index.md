@@ -168,3 +168,10 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [https://eldorado.io/](https://eldorado.io/)
 - Countries: Colombia, Venezuela, Argentina
+
+### Mybucks.online
+
+Mybucks.online is a password-only, self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
+
+- [mybucks.online](https://mybucks.online)
+- Platforms: Browser
