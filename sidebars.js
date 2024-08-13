@@ -1167,8 +1167,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "L1 → L2 Operator Guide",
-      id: "cel2/l2_operator_guide.md",
+      label: "L1 to L2 Operator Guide",
+      id: "cel2/l2-operator-guide",
     },
     {
       type: "link",
