@@ -79,7 +79,7 @@ module.exports = {
       sidebar: { hideable: true },
     },
     prism: {
-      additionalLanguages: ["solidity", "bash"],
+      additionalLanguages: ["solidity", "bash", "diff"],
       theme: require("prism-react-renderer").themes.dracula,
     },
     mermaid: { theme: "dark" },
