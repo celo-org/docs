@@ -24,13 +24,7 @@ npm install -g @celo/celocli
 
 :::info
 
-We are currently deploying the CLI with only Node.js v18.14.2 support. If you are running a different version of Node.js, consider using [NVM](https://github.com/nvm-sh/nvm#installation-and-update) to manage your node versions. e.g. with: `nvm install 18.14.2 && nvm use 18.14.2`
-
-:::
-
-:::info
-
-If you have trouble installing globally \(i.e. with the `-g` flag\), try installing to a local directory instead with `npm install @celo/celocli` and run with `npx celocli`.
+If you have trouble installing globally \(i.e. with the `-g` flag\), try installing to a local directory instead with `yarn add @celo/celocli` and run with `yarn celocli`.
 
 :::
 
