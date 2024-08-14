@@ -1166,6 +1166,11 @@ const sidebars = {
       id: "cel2/contract-addresses",
     },
     {
+      type: "doc",
+      label: "L1 to L2 Operator Guide",
+      id: "cel2/l2-operator-guide",
+    },
+    {
       type: "link",
       label: "Cel2 Dango Bridge",
       href: "https://testnets.superbridge.app/celo-testnet",
@@ -1175,8 +1180,8 @@ const sidebars = {
       label: "Cel2 Dango Faucet",
       href: "https://faucet.celo.org/dango",
     },
-    { type: "doc", label: "FAQ", id: "cel2/faq" },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
+    { type: "doc", label: "FAQ", id: "cel2/faq" },
   ],
 };
 module.exports = sidebars;
