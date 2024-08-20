@@ -7,7 +7,7 @@ import PageRef from '@components/PageRef'
 
 # Build with Celo
 
-How to build and deploy a dApp with Celo.
+How to build and deploy a dApp with Celo
 
 ---
 
