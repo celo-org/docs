@@ -26,7 +26,7 @@ Setting up a secure multisig wallet is recommended for proposals requesting fund
 
 ### Step 2: Posting the Proposal on Celo Forum
 
-Once your proposal is drafted, post it on forum.celo.org to initiate community discussion. This post should:
+Once your proposal is drafted, post it on the [forum](https://forum.celo.org/) to initiate community discussion. This post should:
 
 - **Detail the Proposal**: Share every aspect of the proposal, leaving no ambiguity.
 - **Include Multisig Information**: If requesting funds, provide the multisig wallet details.
@@ -44,7 +44,7 @@ To further socialize your proposal, apply to present it during the Celo Governan
 
 After refining your proposal through community feedback, the next step is to formalize it by publishing on GitHub. This involves:
 
-- **Create a Pull Request (PR)**: Submit your proposal as a PR to the **`celo-org/governance`** repository. This should include the proposal in markdown format and any associated code in a JSON file. Review previous proposal that are similar to your proposal for hints on how the code should be structured.
+- **Create a Pull Request (PR)**: Submit your proposal as a PR to the [**`celo-org/governance`** repository](https://github.com/celo-org/governance/). This should include the proposal in markdown format and any associated code in a JSON file. Review previous proposal that are similar to your proposal for hints on how the code should be structured.
 - **Celo Governance Proposal (CGP) Editors' Review**: CGP editors will review your submission to ensure it meets the required standards and provide feedback or request changes if necessary. The CGP Editors will assign an id.
 - **Acceptance of PR**: Once the CGP editors approve the PR, it signals that your proposal is ready to be submitted on-chain.
 - **On-chain Submission**: Accepted proposals can then be submitted on-chain through the Celo CLI for formal voting by the community.
