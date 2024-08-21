@@ -588,7 +588,6 @@ const sidebars = {
 
   integrationsSidebar: [
     { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "Dapps", id: "integration/dapps" },
     { type: "doc", label: "General", id: "integration/general" },
     {
       type: "doc",
