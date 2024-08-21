@@ -710,18 +710,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "StackShift",
-      id: "community/StackShift/StackShift",
-    },
-    {
-      type: "doc",
       label: "Fundraising",
       id: "community/fundraising",
-    },
-    {
-      type: "link",
-      label: "Bounties",
-      href: "https://gitcoin.co/celo-org/projects",
     },
     {
       type: "doc",
