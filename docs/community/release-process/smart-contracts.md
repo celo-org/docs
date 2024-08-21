@@ -239,8 +239,8 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
 
-1. [Update your Smart Contract on celoscan](developer/verify/celoscan)
-2. [Update your Smart Contract on the Celo Exploere](developer/verify/celo-explorer)
+1. [Update your Smart Contract on celoscan](/developer/verify/celoscan)
+2. [Update your Smart Contract on the Celo Exploere](/developer/verify/celo-explorer)
 
 
 ### Performance
@@ -321,7 +321,7 @@ Deploying a new contract release should occur with the following process. On-cha
         <li>Submit audit fixes to auditors for review.</li>
         <li>
           Tag the first release candidate commit according to the{" "}
-          <a href="#During-the-release-proposal-stage">
+          <a href="/community/release-process/smart-contracts#During-the-release-proposal-stage">
             git release management instructions
           </a>
           .
@@ -343,7 +343,7 @@ Deploying a new contract release should occur with the following process. On-cha
       <ol>
         <li>
           On Tuesday: Run the{" "}
-          <a href="#release-process">smart contract release script</a>{" "}
+          <a href="/community/release-process/smart-contracts#release-process">smart contract release script</a>{" "}
           in order to to deploy the contracts to Baklava as well as submit a
           governance proposal.
           <ul>
@@ -367,7 +367,7 @@ Deploying a new contract release should occur with the following process. On-cha
         <li>Confirm all contracts working as intended on Baklava.</li>
         <li>
           Run the{" "}
-          <a href="#release-process">
+          <a href="/community/release-process/smart-contracts#release-process">
             smart contract release script
           </a>{" "}
           in order to to deploy the contracts to Alfajores as well as submit a
@@ -409,7 +409,7 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           At this point all stakeholders are encouraged to{" "}
-          <a href="#verify-release-process">verify</a> the proposed contracts
+          <a href="/community/release-process/smart-contracts#verify-release-process">verify</a> the proposed contracts
           deployed match the contracts from the release branch.
         </li>
         <li>
