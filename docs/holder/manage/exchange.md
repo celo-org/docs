@@ -9,6 +9,10 @@ How to use the Celo exchange bot to exchange CELO and Celo stable tokens.
 
 ---
 
+:::warning
+The celo-exchange-bot is currently not being maintained. If you want to use please check and update dependencies to solve potential security vulnerabilities of old dependencies
+:::
+
 ## Celo Exchange Bot
 
 CELO (previously Celo Gold) can be exchanged for Celo stable tokens (e.g. Celo Dollar or Celo Euro) using Mento, an automated market maker that powers the [stability protocol](/protocol/stability/doto). Mento is a Constant Product Market Maker (CPMM) that allows you to exchange CELO for Celo stable tokens and vice versa. Sales of Celo stable tokens to Mento in exchange for CELO burn the Celo stable tokens from supply, and sales of CELO to Mento in exchange for Celo stable tokens mint Celo stable tokens into supply. Trades with Mento incur slippage, meaning that Mento exchanges move the price out of favor of the trader. Generally, larger trade amounts incur more significant amounts of slippage. Mento also resets the price of CELO quoted in the Celo stable token every few minutes according to a [price oracle](/protocol/stability/oracles).
