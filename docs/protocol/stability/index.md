@@ -21,7 +21,7 @@ Overview of the Celo protocol's Stability Mechanisms.
 The Celo protocol's stability mechanism comprises the following:
 
 - [Stability Algorithm (Mento)](/protocol/stability/doto)
+- [Granda Mento](/protocol/stability/granda-mento)
 - [Oracles](/protocol/stability/oracles)
 - [Stability Fees](/protocol/stability/stability-fees)
-- [Granda Mento](/protocol/stability/granda-mento)
 - [Adding Stable Tokens](/protocol/stability/adding-stable-assets)
