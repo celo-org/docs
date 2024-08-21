@@ -30,7 +30,7 @@ Changes to core smart contracts are made via on-chain Governance, approximately 
 
 ### Core Contracts
 
-Every deployed Celo core contract has its current version number as a constant which is publicly accessible via the `getVersionNumber()` function, which returns the storage, major, minor, and patch version. Version number is encoded in the Solidity source and updated as part of code changes.
+Every deployed Celo core contract has its current version number as a constant which is publicly accessible via the `getVersionNumber()` function, which returns the storage, major, minor, and patch versions. The version number is encoded in the Solidity source and updated as part of code changes.
 
 Celo Core Contracts deployed to a live network without the `getVersionNumber()` function, such as the original set of core contracts, are to be considered version `1.1.0.0`.
 
@@ -98,7 +98,7 @@ A `libraries.json` file is written to disk only necessary for `make-release` tha
 
 ### Check Backward Compatibility
 
-This script performs some automatic checks to ensure that the smart contract versions in source code have been set correctly with respect to the latest release. It is run as part of CI and helps ensure that backwards incompatibilities are not accidentally introduced by requiring that devs manually update version numbers whenever smart contract changes are made.
+This script performs some automatic checks to ensure that the smart contract versions in the source code have been set correctly with respect to the latest release. It is run as part of CI and helps ensure that backwards incompatibilities are not accidentally introduced by requiring that devs manually update version numbers whenever smart contract changes are made.
 
 Specifically, it compiles the latest and candidate releases and compares smart contracts:
 
@@ -110,8 +110,8 @@ Finally, it checks release candidate smart contract version numbers and requires
 
 The following exceptions apply:
 
-- If the STORAGE version has changed, does not perform backwards compatibility checks
-- If the MAJOR version has changed, checks storage layout compatibility but not ABI compatibility
+- If the STORAGE version has changed, it does not perform backward compatibility checks
+- If the MAJOR version has changed, it checks storage layout compatibility but not ABI compatibility
 
 Critically, this ensures that proxied contracts do not experience storage
 collisions between implementation versions. See [this
@@ -131,7 +131,7 @@ This should be used in tandem with `verify-deployed -b $PREVIOUS_RELEASE -n $NET
 
 ### Deploy the release candidate
 
-Use the following script to build and deploy a candidate release. This takes as input the corresponding backwards compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
+Use the following script to build and deploy a candidate release. This takes as input the corresponding backward compatibility report and canonical library address mapping to deploy **changed** contracts to the specified network. (Use `-d` to dry-run the deploy).
 STORAGE updates are adopted by deploying a new proxy/implementation pair. This script outputs a JSON contract upgrade governance proposal.
 
 ```bash
@@ -237,20 +237,11 @@ Stakeholders can use the `env-tests` package in `celo-monorepo` to run an automa
 
 ### Verify smart contracts
 
-Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/.
+Verification of smart contracts should be done both on https://celoscan.io/ and https://explorer.celo.org/. 
 
-1. Update CeloScanApi in env.json file
-2. Run verification command
+1. [Update your Smart Contract on celoscan](developer/verify/celoscan)
+2. [Update your Smart Contract on the Celo Exploere](developer/verify/celo-explorer)
 
-```bash
-yarn truffle-verify [ContractName]@[Contract address]  --network [network] --forno [network rpc url]
-```
-
-example:
-
-```bash
-yarn truffle-verify MentoFeeHandlerSeller@0x4efa274b7e33476c961065000d58ee09f7921a74 --network mainnet --forno https://forno.celo.org
-```
 
 ### Performance
 
@@ -260,7 +251,7 @@ For troubleshooting please see Readme.md of protocol package.
 
 ### Backwards compatibility
 
-Automated checks should ensure that any new commit to `master` does not introduce a breaking change to storage layout, ABI, or other common backwards compatibility issues unless the STORAGE or MAJOR version numbers are incremented.
+Automated checks should ensure that any new commit to `master` does not introduce a breaking change to storage layout, ABI, or other common backward compatibility issues unless the STORAGE or MAJOR version numbers are incremented.
 
 Backwards compatibility tests will also be run before every release to confirm that no breaking changes exist between the pending release and deployed smart contracts.
 
@@ -270,7 +261,7 @@ All changes since the last release should be audited by a reputable third party 
 
 ### Emergency patches
 
-If patches need to be applied before the next scheduled smart contract release, they should be cherry picked to a new release branch, branched from the latest deployed release branch.
+If patches need to be applied before the next scheduled smart contract release, they should be cherry-picked to a new release branch, branched from the latest deployed release branch.
 
 ## Promotion process
 
@@ -291,11 +282,11 @@ Deploying a new contract release should occur with the following process. On-cha
         </li>
         <li>
           Implement the{" "}
-          <a href="#When-a-new-release-branch-is-cut">git management steps</a>{" "}
+          <a href="/community/release-process/smart-contracts#When-a-new-release-branch-is-cut">git management steps</a>{" "}
           for when a new release branch is cut.
         </li>
         <li>
-          Submit release branch to a reputable third party auditor for review.
+          Submit the release branch to a reputable third party auditor for review.
         </li>
         <li>Begin drafting release notes.</li>
       </ol>
@@ -306,14 +297,13 @@ Deploying a new contract release should occur with the following process. On-cha
     <td>
       <ol>
         <li>Receive report from auditors.</li>
-        <li>Add audit summary to final draft of the release notes.</li>
+        <li>Add audit summary to the final draft of the release notes.</li>
         <li>
           If all issues in the audit report have straightforward fixes:
           <ol>
             <li>
               {" "}
-              Submit a governance proposal draft using this format:
-              https://github.com/celo-org/celo-proposals/blob/master/CGPs/template.md
+              Submit a governance proposal draft using this [format: ](https://github.com/celo-org/celo-proposals/blob/master/CGPs/template.md)
             </li>
             <li>
               {" "}
@@ -501,7 +491,7 @@ Work in progress
 
 ## Vulnerability Disclosure
 
-Vulnerabilities in smart contract releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-monorepo/blob/master/SECURITY.md).
+Vulnerabilities in smart contract releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-blockchain/blob/master/SECURITY.md).
 
 ## Dependencies
 
