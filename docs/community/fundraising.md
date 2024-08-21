@@ -11,9 +11,9 @@ Hitchhiker's Guide to Fundraising in the Celo Ecosystem.
 
 ## Overview
 
-The process of raising capital for your company is often opaque and intimidating especially for first time founders. It’s a skill that is acquired through practice and repetition. If you’re new to fundraising, you’ll find that you’re crafting a product to sell. You’re the seller. The product is your narrative around yourself, your team, company vision and upside potential. The investors are the buyer.
+The process of raising capital for your company is often opaque and intimidating, especially for first-time founders. It’s a skill that is acquired through practice and repetition. If you’re new to fundraising, you’ll find that you’re crafting a product to sell. You’re the seller. The product is your narrative around yourself, your team, your company vision and your upside potential. The investors are the buyers.
 
-We created this guide to provide Celo Ecosystem builders an end-to-end resource on fundraising best practices as well as a map of Celo’s Investor Ecosystem. While our goal isn’t to reinvent the wheel and rather it’s to distill a few key takeaways from industry experts, we hope you can leverage this guide and included resources to help you navigate your journey. Web3 is an emerging category, but we trust that many of the battle tested methods that have shown success can be applicable in this category.
+We created this guide to provide Celo Ecosystem builders an end-to-end resource on fundraising best practices as well as a map of Celo’s Investor Ecosystem. While our goal isn’t to reinvent the wheel and rather it’s to distill a few key takeaways from industry experts, we hope you can leverage this guide and included resources to help you navigate your journey. Web3 is an emerging category, but we trust that many of the battle-tested methods that have shown success can be applicable in this category.
 
 ## Expert Resources
 
@@ -37,33 +37,32 @@ In some cases, founders may have no trouble raising capital with just an idea. P
 
 **No Warm Relationships**
 
-In most situations where you’re a first time founder and may not have pre-existing relationships with investors, they’ll generally prefer that you have a vision, some form of a tangible product, attractive market size and early signs of product demand before engaging. Once you’ve achieved most of the latter, it may be a good time to start thinking about raising capital to accelerate your growth and capture more of your target market.
+In most situations where you’re a first time founder and may not have pre-existing relationships with investors, they’ll generally prefer that you have a vision, some form of a tangible product, attractive market size, and early signs of product demand before engaging. Once you’ve achieved most of the latter, it may be a good time to start thinking about raising capital to accelerate your growth and capture more of your target market.
 
-**Market Timing **
+**Market Timing**
 
-It’s also important to zoom out and consider the macroeconomic cycle and market timing of your potential fundraise. VC is an asset class that has been flooded with capital as investors continue to search for yield. [https://pitchbook.com/news/articles/2021-us-vc-fundraising-exits-deal-flow-charts](https://pitchbook.com/news/articles/2021-us-vc-fundraising-exits-deal-flow-charts). Fundraising activity in Web3 is no exception and continues to hit all time highs [https://www.cnbc.com/2022/02/02/crypto-start-ups-raised-huge-venture-funding-rounds-in-january.html](https://www.cnbc.com/2022/02/02/crypto-start-ups-raised-huge-venture-funding-rounds-in-january.html). At certain points in the market cycle compared to others, it will be easier to raise capital given investors’ need to deploy the large funds they’ve raised from their limited partners and the chase for “hot sectors”. You may have an advantage and more options for capital if you fundraise during these “hot” market cycles. Additionally, it’s worth keeping track of investors on social media to understand what they’re interested in funding at the moment.
+It’s also important to zoom out and consider the macroeconomic cycle and market timing of your potential fundraising. VC is an asset class that has been flooded with capital as investors continue to search for yield. Fundraising activity in Web3 is no exception. At certain points in the market cycle compared to others, it will be easier to raise capital given investors’ need to deploy the large funds they’ve raised from their limited partners and the chase for “hot sectors”. You may have an advantage and more options for capital if you fundraise during these “hot” market cycles. Additionally, it’s worth keeping track of investors on social media to understand what they’re interested in funding at the moment.
 
 **Seasonality**
 
 Ensure to time your fundraising process that aligns well when investors are actively investing and have the capacity to run full due diligence processes. As a rule of thumb, try your best not to start a fundraising process around major holiday seasons to reduce the risk of extending your timeline longer than you had originally planned.
 
-### What do I need to research before starting my fundraise?
+### What do I need to research before starting my fundraising?
 
-While fundraising can take an unexpected amount of time, it’s important to optimize for efficiency to the best of your ability. The last thing you want to do is spend hours with potential investors who aren’t investing in your stage/sector of business. We’re aware of emerging fundraising models in Web3 (i.e. DAO-based funds), however our aim is to keep this guide confined to more traditional methods for simplicity.
+While fundraising can take an unexpected amount of time, it’s important to optimize for efficiency to the best of your ability. The last thing you want to do is spend hours with potential investors who aren’t investing in your stage/sector of business. We’re aware of emerging fundraising models in Web3 (i.e. DAO-based funds), however, our aim is to keep this guide confined to more traditional methods for simplicity.
 
 1. Find investors who fit your target investor profile! Using the following databases/resources listed below, you can easily identify the investors who are actively investing in your stage/sector/geography.
 
 - **Web3 Focused**
 
-  - Celo’s Ecosystem Investors Map
-  - Dove Metrics ([https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
+  - Dove Metrics [https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
 
 - **Investor Databases**
 
-  - AngelList [https://www.angellist.com/](https://www.angellist.com/)
-  - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
-  - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
-  - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
+  - [AngelList](https://www.angellist.com/)
+  - [Crunchbase](https://www.crunchbase.com/)
+  - [First Round Capital’s Angel Directory](https://angels.firstround.com/directory)
+  - [NFX Signal](https://signal.nfx.com/)
 
 2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases below.
 
@@ -92,7 +91,7 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
 ### How much capital do I need to raise?
 
-The rule of thumb here is to raise enough capital to give you 1 year of runway at minimum and best case 2 years of runway with the primary goal of reaching your next milestone. In other words, think through how much monthly operating capital you’ll need (across hires and other administrative budget items) and multiply that by the number of months you believe it’ll take to reach that milestone. This resulting figure can serve as a reference point but it’s often helpful to size up and down your potential round size to give yourself and investors a magnitude of what you could realistically achieve with different levels of capital. Finmark ([https://finmark.com/](https://finmark.com/)) is an example of a helpful resource that can help build out your financial plan.
+The rule of thumb here is to raise enough capital to give you 1 year of runway at minimum and best case 2 years of runway with the primary goal of reaching your next milestone. In other words, think through how much monthly operating capital you’ll need (across hires and other administrative budget items) and multiply that by the number of months you believe it’ll take to reach that milestone. This resulting figure can serve as a reference point but it’s often helpful to size up and down your potential round size to give yourself and investors a magnitude of what you could realistically achieve with different levels of capital. [Finmark](https://finmark.com/) is an example of a helpful resource that can help build out your financial plan.
 
 ### What are the different forms of capital I can raise?
 
@@ -100,25 +99,25 @@ While new forms of funding models emerge in Web3 and a comprehensive list will g
 
 1. **Grants -** Many layer 1 protocols have recently set up ecosystem funds in order to incentivize and fund entrepreneurs who build on their technology stack. These grants generally come in the form of non-dilutive capital (meaning that the capital you take does not reduce your ownership of your company) that can help you build a minimum viable product and/or test your market hypothesis.
 
-2. **SAFE** (Simple Agreement for Future Equity) - YCombinator’s SAFE document has become an industry standard used for early stage fundraising and for good reasons - they provide speed and flexibility for both investors and entrepreneurs. They’re a form of a convertible note however, unlike convertible debt, SAFEs remove the need for interest payments and repayment of the debt. The capital invested on a SAFE is generally expected to convert into shares of preferred equity in a priced equity round. YCombinator’s website [https://www.ycombinator.com/documents/#about](https://www.ycombinator.com/documents/#about) provides excellent best practices on SAFEs and templates as well.
+2. **SAFE** (Simple Agreement for Future Equity) - YCombinator’s SAFE document has become an industry standard used for early stage fundraising and for good reasons - they provide speed and flexibility for both investors and entrepreneurs. They’re a form of a convertible note however, unlike convertible debt, SAFEs remove the need for interest payments and repayment of the debt. The capital invested on a SAFE is generally expected to convert into shares of preferred equity in a priced equity round. [YCombinator’s website](https://www.ycombinator.com/documents/#about) provides excellent best practices on SAFEs and templates as well.
 
-3 **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens which are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer the investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
+3 **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens that are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
 
 4. **SAFE + Token Warrants** - A combination of a SAFE and a token warrant has become increasingly popular for fundraising in Web3. Unlike SAFTs, these token warrants typically come in the form of an optional side letter and don’t guarantee the deployment of tokens - therefore avoiding the legal complications faced by its predecessor. As a result, companies are more commonly raising capital on SAFEs along with a token warrant that offers investors the right to tokens in the amount that can be proportional to their equity ownership of the company. In this manner, investors have exposure to both equity and potential tokens if the companies decide to launch one.
 
-   - The team at LiquiFi has written an excellent piece on the topic and provides a practical guidance for token allocation. [https://medium.com/@liquifi_finance/crypto-web3-fundraising-with-token-side-letters-or-token-warrants-33dce66f375e](https://medium.com/@liquifi_finance/crypto-web3-fundraising-with-token-side-letters-or-token-warrants-33dce66f375e).
-   - This resource from Cooopahtroopa and Lauren Stephanian is also a must read for entrepreneurs who need to understand historical and current benchmarks on tokenomics. [https://lstephanian.mirror.xyz/kB9Jz_5joqbY0ePO8rU1NNDKhiqvzU6OWyYsbSA-Kcc](https://lstephanian.mirror.xyz/kB9Jz_5joqbY0ePO8rU1NNDKhiqvzU6OWyYsbSA-Kcc).
+   - The team at LiquiFi has written an excellent [piece](https://medium.com/@liquifi_finance/crypto-web3-fundraising-with-token-side-letters-or-token-warrants-33dce66f375e) on the topic and provides practical guidance for token allocation. 
+   - This [resource](https://lstephanian.mirror.xyz/kB9Jz_5joqbY0ePO8rU1NNDKhiqvzU6OWyYsbSA-Kcc) from Cooopahtroopa and Lauren Stephanian is also a must-read for entrepreneurs who need to understand historical and current benchmarks on tokenomics. 
 
-5. **Equity** - Equity rounds allow companies to set an official valuation for the company and to issue shares to investors at a specific price. Over time, these rounds are generally reserved for Series A and later stage companies. Companies at the seed stage have raised priced rounds historically, although more of them are raising on SAFEs at the earlier stages for the speed of putting operating capital to work.
+5. **Equity** - Equity rounds allow companies to set an official valuation for the company and to issue shares to investors at a specific price. Over time, these rounds are generally reserved for Series A and later-stage companies. Companies at the seed stage have raised priced rounds historically, although more of them are raising on SAFEs at the earlier stages for the speed of putting operating capital to work.
 
 ### What should I have prepared for investor conversations?
 
-In general, we recommend that you prepare as much digestible information ahead of time to make your investor meetings productive. Having the baseline items listed below will serve you well in requesting warm introductions to investors, cold email outreaches and investor preparation prior to an initial conversation.
+In general, we recommend that you prepare as much digestible information ahead of time to make your investor meetings productive. Having the baseline items listed below will serve you well in requesting warm introductions to investors, cold email outreaches, and investor preparation prior to an initial conversation.
 
-- Brieflink Page (Using [https://brieflink.com/](https://brieflink.com/))
+- [Brieflink Page ](https://brieflink.com/)
 - 1-2 Paragraph Teaser Summary
 - Investor Presentation
-- Product Demo (You can pre-record these on [https://www.loom.com/](https://www.loom.com/). In Web3, it may even make sense to have an interactive demo.)
+- Product Demo (You can pre-record these on [Loom](https://www.loom.com/). In Web3, it may even make sense to have an interactive demo.)
 
 The other items listed below are useful to share with investors if they’ve expressed interest in pursuing additional due diligence.
 
@@ -133,7 +132,7 @@ While this guide isn’t meant to be 100% prescriptive, below are the core compo
 - Problem (Is this a real problem and is it critical to solve?)
 - Market Size (What is your Total Addressable Market? It’s okay to think big here but be realistic with data)
 - Traction (Are there currently any users? TVL? Growth rates for any relevant metrics?)
-- Business Model (In traditional companies, investors want to understand how your unit economics and monetization plans? In Web3, the upside is likely more attributable the future value of a utility token or adoption of a platform)
+- Business Model (In traditional companies, investors want to understand how your unit economics and monetization plans. In Web3, the upside is likely more attributable to the future value of a utility token or adoption of a platform)
 - Solution (What are the features of your product? How does it ultimately solve the problem? What blockchain is it built on? While Web3 is nascent and can be complicated, you want a simple enough explanation so that investors can communicate to their internal stakeholders as well.)
 - Product Roadmap (What other segments can your product expand into?)
 - Competitive Landscape (Competitive market map and positioning on why your product is different)
@@ -143,11 +142,11 @@ While this guide isn’t meant to be 100% prescriptive, below are the core compo
 
 The team at NFX has put together a [comprehensive sample pitch deck](https://docs.google.com/presentation/d/1k7Ci129LjMdrV9OPkHUpWHqn_CsVdaEkd1RhU9G_Cx4/edit#slide=id.gabb84e51a1_0_1278) with relevant examples of slides of pitch decks from other companies.
 
-We can’t forget to mention beyond having these components to a pitch deck, it’s important to think through the visual representation of your pitch deck as well. Most of you will have an investor presentation on screen while meeting investors and it’s important to remember that the engagement is both audio and visual. We’ve found that [https://www.beautiful.ai/](https://www.beautiful.ai/) is a great place to start if you’re looking to create a visually compelling pitch deck as well.
+We can’t forget to mention beyond having these components to a pitch deck, it’s important to think through the visual representation of your pitch deck as well. Most of you will have an investor presentation on screen while meeting investors and it’s important to remember that the engagement is both audio and visual. We’ve found that [Beautiful AI](https://www.beautiful.ai/) is a great place to start if you’re looking to create a visually compelling pitch deck as well.
 
 ### Pitching Process
 
-Below are a few best practices and things to consider when preparing for your investor pitches. This isn’t all inclusive and your mileage will likely vary depending on your circumstances.
+Below are a few best practices and things to consider when preparing for your investor pitches. This isn’t all-inclusive and your mileage will likely vary depending on your circumstances.
 
 - Do your diligence on the investors prior to pitching in order to:
   - Understand focus areas so that you can curate your pitch accordingly
@@ -161,12 +160,12 @@ Below are a few best practices and things to consider when preparing for your in
 - Be a human! Much of the remote nature of what we do today can feel transactional. It’s important to build a genuine relationship with investors as they can be your biggest champion.
 - Fundraising is a numbers game. You’ll receive many more rejections than you will genuine interest. It’s just a part of the process. Cast a wide net (as efficiently as possible), collect and then select.
 - Know that investors will ghost you even if they’ve appeared to express interest during your meeting. They’re paid to meet founders, so don’t take it personally. Just move on to others!
-- Follow up promptly with any requested materials. This indicates your level of responsiveness with future investors
+- Follow up promptly with any requested materials. This indicates your level of responsiveness to future investors
 - Be transparent about your process. Investors respect that and will align their process accordingly if they’re genuinely interested in working with you
 
 ### Post Investment
 
-After raising capital from investors, it’s important to keep a periodic cadence with your investors for a few reasons. Firstly, it helps keep you accountable to the milestones that you’ve set for your team and mitigates the need for investors to ask you ad-hoc questions - which can generally distract you as you’re busy building your company. Secondly, it’s a great open forum to request assistance from your investors. You can also gamify your updates by making special mentions of investors who have been the most helpful to you so far. Founder Collective has put together a detailed template for thorough and actionable investor updates. [https://visible.vc/templates/founder-collective-fill-in-the-blank-investor-update/](https://visible.vc/templates/founder-collective-fill-in-the-blank-investor-update/)
+After raising capital from investors, it’s important to keep a periodic cadence with your investors for a few reasons. Firstly, it helps keep you accountable to the milestones that you’ve set for your team and mitigates the need for investors to ask you ad-hoc questions - which can generally distract you as you’re busy building your company. Secondly, it’s a great open forum to request assistance from your investors. You can also gamify your updates by making special mentions of investors who have been the most helpful to you so far. Founder Collective has put together a detailed [template](https://visible.vc/templates/founder-collective-fill-in-the-blank-investor-update/) for thorough and actionable investor updates. 
 
 ## Celo Ecosystem Investors
 
@@ -178,23 +177,23 @@ If you’re building on Celo and looking for fundraising, start with our Celo Ec
 
 ## Celo Camp
 
-Celo Camp is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this link - [https://www.celocamp.com/](https://www.celocamp.com/)
+[Celo Camp](https://www.celocamp.com/) is an independent initiative managed by our partners at [Upright](https://www.upright.gg/). For founders who have an idea and would like to surround themselves with a community to build with, Celo Camp is a great program to help you get your idea off the ground. Towards the end of the program, investors in Celo’s Ecosystem will attend and you’ll have the opportunity to pitch them for a potential investment. To learn more about the program and the application process, please visit this [link](https://www.celocamp.com/).
 
 ## Celo Web3 Studio (via Bld.ai)
 
-Bld.ai is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. To learn more about Bld.ai - please visit this link - ​​[https://www.bld.ai/](https://www.bld.ai/)
+[Bld.ai](https://www.bld.ai/) is a Web3 studio that is committed to helping the best entrepreneurs bring to fruition some of their largest ideas on Celo. They work closely with you and your team to assess a market opportunity and provide resources and funding to help you build a product. 
 
 ## Celo Community Fund[Closed]
 
-Celo Community Fund I (CCF I) was the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding could apply to CCF I, which was managed by three community stewards. As of April 2022, the fund is closed due to achieving its objective and disbursing the amount of Celo recieved.
+Celo Community Fund I (CCF I) was the first community approved spend proposal from the on-chain Community Fund (explorer). Community members seeking funding could apply to CCF I, which was managed by three community stewards. As of April 2022, the fund is closed due to achieving its objective and disbursing the amount of Celo received.
 
 ## Prezenti
 
-Prezenti is the next iteration of the CCF1 and was developed with the support of CCF1. A new onchain [spend approval](https://celo.stake.id/#/proposal/61) was proposed and accepted resulting in 800,000 Celo able to be deployed to people wanting to build their dreams upon the Celo protocol. It is managed by three new stewards and has four focus areas - Education, Research, Community Tooling and Other. Anyone is welcome to apply for a grant from the [Prezenti Website](https://prezenti.xyz) and we use [Questbook](https://questbook.app) to distribute the funds and manage the grants.
+[Prezenti](https://prezenti.xyz) is the next iteration of the CCF1 and was developed with the support of CCF1. A new onchain [spend approval](https://celo.stake.id/#/proposal/61) was proposed and accepted resulting in 800,000 Celo able to be deployed to people wanting to build their dreams upon the Celo protocol. It is managed by three new stewards and has four focus areas - Education, Research, Community Tooling and Other. Anyone is welcome to apply for a grant from the [Prezenti Website](https://prezenti.xyz) and we use [Questbook](https://questbook.app) to distribute the funds and manage the grants.
 
-## Celo Foundation Grant Program
+## Celo Foundation Grant Program - [CURRENTLY PAUSED]
 
-The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. 
 
 ## Celo Scout Investors
 
@@ -244,7 +243,7 @@ TKX is an Asia focused crypto investment bank that utilizes both active and pass
 
 ### Polychain Fund
 
-Polychain Capital is a global early stage venture fund focused on investing in protocol layers and cryptocurrency companies. They separately manage the Celo Ecosystem Venture Fund that aims to foster Celo’s mission of creating a more accessible financial system by making strategic, seed-stage deployments into tools and services which will leverage Celo’s protocol to build new financial infrastructure.
+Polychain Capital is a global early stage venture fund focused on investing in protocol layers and cryptocurrency companies. They separately manage the Celo Ecosystem Venture Fund which aims to foster Celo’s mission of creating a more accessible financial system by making strategic, seed-stage deployments into tools and services that will leverage Celo’s protocol to build new financial infrastructure.
 
 - **Stage Focus:** Seed & Series A+
 - **Geography Focus:** Global
@@ -253,10 +252,8 @@ Polychain Capital is a global early stage venture fund focused on investing in p
 
 ## Other Prominent Celo Ecosystem Investors:
 
-The groups below have also invested in companies in the Celo Ecosystem and may be worth considering if you’re looking to raise a larger round of institutional capital. If you’re an investor that has invested in Celo’s Ecosystem and would like to be included in the list, please reach out to [celoinvestorecosystem@celo.org](mailto:celoinvestorecosystem@celo.org).
+The groups below have also invested in companies in the Celo Ecosystem and may be worth considering if you’re looking to raise a larger round of institutional capital. 
 
 ![fundraising](/img/doc-images/fundraising/3.png)
 
-## How do I get in touch with these investors?
 
-Please reach out to [celoinvestorecosystem@celo.org](mailto:celoinvestorecosystem@celo.org) with your investor presentation and a short description of the company, and your round details and we can help get you connected with interested investors in Celo’s Investor Ecosystem.
