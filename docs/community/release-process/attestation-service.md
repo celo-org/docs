@@ -145,4 +145,4 @@ If the issue is exploitable and mitigations are not readily available, a patch s
 
 ## Vulnerability Disclosure
 
-Vulnerabilities in Attestation Service releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-monorepo/blob/master/SECURITY.md).
+Vulnerabilities in Attestation Service releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-blockchain/blob/master/SECURITY.md).
