@@ -17,8 +17,9 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 ## Token bridges
 
+- [SmolRefuel (Gassless Bridging)](https://smolrefuel.com/?outboundChain=42220)
+- [Squid Router V2](https://v2.app.squidrouter.com/)
 - [Portal (Wormhole)](https://www.portalbridge.com/#/transfer)
-- [Squid Router](https://app.squidrouter.com/)
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
 - [Satellite (Axelar)](https://satellite.money/)
 - [Celer](https://cbridge.celer.network/1/10/USDC)
