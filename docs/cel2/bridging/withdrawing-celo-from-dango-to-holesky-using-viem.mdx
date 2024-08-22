@@ -5,11 +5,15 @@ title: Withdrawing Celo from Dango to Holesky using Viem
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+In this tutorial, you will learn how to programmatically withdraw CELO from Dango to Holskey using the [viem OP Stack](https://viem.sh/op-stack).  
+
 Withdrawals require the user to submit three transactions:
 
-1. Withdrawal initiating transaction, which the user submits on L2.
-2. Withdrawal proving transaction, which the user submits on L1 to prove that the withdrawal is legitimate.
-3. Withdrawal finalizing transaction, which the user submits on L1 after the fault challenge period has passed, to actually run the transaction on L1.
+1. [Withdrawal initiating a transaction](https://viem.sh/op-stack/actions/initiateWithdrawal), which the user submits on L2.
+2. [Withdrawal proving transaction](https://viem.sh/op-stack/actions/proveWithdrawal), which the user submits on L1 to prove that the withdrawal is legitimate.
+3. [Withdrawal finalizing transaction](https://viem.sh/op-stack/actions/finalizeWithdrawal), which the user submits on L1 after the fault challenge period has passed, to actually run the transaction on L1.
+
+As you can see, we’ve created a `dango.js` file that contains all the necessary data for interacting with the test network. Since Dango will be a short-lived testnet, chain data won’t be available through viem or wagmi, so this file ensures you have everything you need directly at hand.
 
 <Tabs>
   <TabItem value="index.js" label="index.js" default>
