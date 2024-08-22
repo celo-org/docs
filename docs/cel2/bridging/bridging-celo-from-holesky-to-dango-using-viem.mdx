@@ -5,9 +5,13 @@ title: Bridging Celo from Holesky to Dango using Viem
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Bridging Celo from Holesky to Dango is simple, all you need to do is call `depositERC20Transaction` on `OptimismPortalProxy` on Holesky.
+In this tutorial, you will learn how to programmatically bridge CELO from Holskey to Dango using the [Optimism SDK](https://docs.optimism.io/builders/chain-operators/tutorials/sdk).  
 
-`depositERC20Transaction` pulls Celo tokens from the account which is why you need to approve `OptimismPortalProxy` to spend Celo token first.
+Bridging CELO from Holesky to Dango is simple, all you need to do is call `depositERC20Transaction` on the `OptimismPortalProxy` contract on Holesky.
+
+The `depositERC20Transaction` pulls CELO tokens from the account which is why you need to approve `OptimismPortalProxy` to spend CELO tokens first.
+
+As you can see, we have created a `dango.js` file, in which we have all the data defined that we need to interact with the test network. As Dango will be a shortlived testnet, you won't be able to get the chain data through viem or wagmi. 
 
 <Tabs>
   <TabItem value="index.js" label="index.js" default>
