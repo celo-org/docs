@@ -38,7 +38,6 @@ Easily build Celo dApps with Celo Composer.
 
 - [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
 - [Developer Tutorials](https://celo.academy/c/tutorials/4)
-- [Figment](https://learn.figment.io/protocols/celo)
 - [Dacade](https://dacade.org/communities/celo)
 
 ## Migrate to Celo

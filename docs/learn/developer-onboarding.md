@@ -45,10 +45,6 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 - [Deploy with Remix](/developer/deploy/remix)
 - [Deploy with Hardhat](/developer/deploy/hardhat)
 
-## Celo Developer Pathway
-
-- [Figment Learn](figment-learn)
-
 ## Build Celo Applications
 
 - [Build Mobile-First DeFi Apps with the Celo SDK](https://medium.com/celoorg/build-mobile-first-defi-apps-with-the-celo-sdk-e6f85f2fe18c)

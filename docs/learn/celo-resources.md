@@ -52,7 +52,7 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 
 ## Pirate Radio Interview Series
 
-- [Interview with The Graph ](https://youtu.be/FsLe1msmgYE)
+- [Interview with The Graph](https://youtu.be/FsLe1msmgYE)
 - [Interview with Polkadot](https://youtu.be/oMSWODQQuxU)
 - [Interview with Skale](https://youtu.be/HWYRWuO48bA)
 - [Interview with Aurora](https://youtu.be/jFudk4Hr5IQ)
@@ -157,14 +157,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Make it Mobile or Else](https://www.youtube.com/watch?v=rRwQYY0da-U&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=6)
 - [Plumo Ceremony](https://www.youtube.com/watch?v=VsAH4N92Au0&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=7)
 - [Celo Bounties at #ETHDenver](https://www.youtube.com/watch?v=WhY0fKXgKsg&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=8)
-
-## Celo Tutorials (Figment Pathway)
-
-- [Learn how connect to Celo node with DataHub](https://www.youtube.com/watch?v=bz76yk-Bww4&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X)
-- [Create your First Celo Account](https://www.youtube.com/watch?v=3VJyk669O-k&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=2)
-- [Query the Celo Network](https://www.youtube.com/watch?v=u0lC1g966oo&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=3)
-- [Submit your first transactions](https://www.youtube.com/watch?v=ljt-_dxpqLU&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=4)
-- [Write and deploy your first Celo smart contract](https://www.youtube.com/watch?v=pQvrl4yOi10&list=PLsQbsop73cfGd9sYPqvX3mkTHbfLXpS1X&index=5)
 
 ## #MakeitMobile Hackathon
 

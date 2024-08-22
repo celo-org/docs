@@ -28,7 +28,6 @@ Paid RPC endpoint hosting.
 
 - [Ankr](https://www.ankr.com/rpc/celo/)
 - [Tatum](https://pages.tatum.io/celo)
-- [Figment](https://www.figment.io/datahub/celo)
 - [Infura](https://www.infura.io/)
 - [Quicknode](https://www.quicknode.com/chains/celo)
 - [All that node](https://www.allthatnode.com/celo.dsrv)
