@@ -588,7 +588,6 @@ const sidebars = {
 
   integrationsSidebar: [
     { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "Dapps", id: "integration/dapps" },
     { type: "doc", label: "General", id: "integration/general" },
     {
       type: "doc",
@@ -711,18 +710,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "StackShift",
-      id: "community/StackShift/StackShift",
-    },
-    {
-      type: "doc",
       label: "Fundraising",
       id: "community/fundraising",
-    },
-    {
-      type: "link",
-      label: "Bounties",
-      href: "https://gitcoin.co/celo-org/projects",
     },
     {
       type: "doc",
