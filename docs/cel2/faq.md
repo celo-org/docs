@@ -4,6 +4,7 @@ description: Frequently Asked Questions about Cel2
 ---
 
 ## Dango Testnet
+<!-- Add a blank line here -->
 
 ### How do I run a node or upgrade an existing node?
 
@@ -35,24 +36,36 @@ description: Frequently Asked Questions about Cel2
     /ip4/34.82.212.175/tcp/9222/p2p/16Uiu2HAm2xo9mPhbMW9eAzjLMjp6JFEa1gijWu2CsBpWEqVWh7Kg
     ```
 
+<!-- Add a blank line here -->
+
 ### Can I use an RPC endpoint?
 
 - Ethereum JSON-RPC endpoint: [https://forno.dango.celo-testnet.org/](https://forno.dango.celo-testnet.org/) (op-geth kind)
 - OP RPC endpoint: [https://op.dango.celo-testnet.org/](https://op.dango.celo-testnet.org/) (op-node kind)
 
+<!-- Add a blank line here -->
+
 ### Is there a faucet? Where? How do I get funds?
 
 Faucet: [https://faucet.celo.org/dango](https://faucet.celo.org/dango)
+
+<!-- Add a blank line here -->
 
 ### Is there an explorer?
 
 Blockscout Explorer: [https://celo-dango.blockscout.com/](https://celo-dango.blockscout.com/)
 
+<!-- Add a blank line here -->
+
 ### How can I use the native bridge?
 
 Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://superbridge.app/celo-testnet) or [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet).
 
+<!-- Add a blank line here -->
+<!-- Add a blank line here -->
+
 ## Dango and Alfajores Testnets
+<!-- Add a blank line here -->
 
 ### What’s the difference between Dango and Alfajores?
 
@@ -63,40 +76,52 @@ It implements the specifications detailed in [Cel2 Specification](https://specs.
 For more details, refer to [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html).
 
 Dango diverged from Alfajores L1 at block [24940100](https://celo-alfajores.blockscout.com/block/0xc0e521a7b7326064ec12f51449de16d3218de161335daaa4ae8bbed1790b4a6c).
+<!-- Add a blank line here -->
 
 ### I noticed you used the same chainID for Alfajores and Dango. Isn't that dangerous?
 
 Good catch! Yes, we're using the same chain ID for both Alfajores and Dango. This means that transactions from one testnet can be executed on the other testnet as well. But as both networks are testnets, this is not a problem.
+<!-- Add a blank line here -->
 
 ### Are there any address changes between Alfajores and Dango?
 
 No, all contracts stay at their place. For more information about the migration, see the [migration docs](https://specs.celo.org/l2_migration.html).
+<!-- Add a blank line here -->
 
 ### Is there anything that used to work on Alfajores that doesn’t anymore?
 
-See [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html).
+Check the [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html) to understand all changes.
+<!-- Add a blank line here -->
+<!-- Add a blank line here -->
 
 ## Celo L2 setup
+<!-- Add a blank line here -->
 
 ### How is the Celo L2 different to Optimism?
 
 See [Celo L2 Specification](https://specs.celo.org/root.html).
+<!-- Add a blank line here -->
 
 ### What are the costs for L1 data and how are they paid?
 
 For the testnet L1 data fees are covered by us.
+<!-- Add a blank line here -->
 
 ### I saw EigenDA mentioned, is it used?
 
-Yes! See [EigenDA](https://specs.celo.org/eigenda.html).
+Celo Layer 2 uses [EigenDA](https://specs.celo.org/eigenda.html), an availability layer created by [EigenLabs](https://www.eigenlayer.xyz/), to keep transaction fees low. Unlike other systems that store transaction data directly on Ethereum (which can be expensive), EigenDA stores this data off-chain. Only the essential data commitments are stored on Ethereum, reducing costs and making transactions on Celo L2 more affordable. For the current list of deployed contract addresses, visit [EigenLayer's testnet deployment page](https://specs.celo.org/eigenda.html).
+<!-- Add a blank line here -->
 
 ### What's the block time?
 
 The block period is two seconds.
+<!-- Add a blank line here -->
 
 ### What's the throughput?
 
 The gas limit per block is 30 million. The Dango testnet has a throughput of 15M gas/s.
+<!-- Add a blank line here -->
+<!-- Add a blank line here -->
 
 ## What happened to these features?
 
