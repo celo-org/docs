@@ -13,11 +13,11 @@ Start sending, spending, and earning crypto from your mobile phone.
 
 ---
 
-[Celo Owners](https://celo.org/buy) can start transacting with 6 billion other smartphone users around the world from your phone and on the go. Transact in seconds — at a fraction of the cost of other crypto platforms. Anyone who holds any amount of CELO is empowered to vote on governance proposals that direct how the core technology operates today and in the future.
+Celo Owners can start transacting with 6 billion other smartphone users around the world from your phone and on the go. Transact in seconds — at a fraction of the cost of other crypto platforms. Anyone who holds any amount of CELO is empowered to vote on governance proposals that direct how the core technology operates today and in the future.
 
 ## Discover CELO
 
-CELO is listed on 20+ exchanges worldwide.
+CELO is listed on 20+ exchanges worldwide. You should always do your own research on which exchange is available in your legal jurisdiction and which has the token available that you are looking for. As always the rule is DYOR (do your own research). Below you can find links to a page where you can see the current token price as well as options to buy those. 
 
 - [Get CELO](https://coinmarketcap.com/currencies/celo/markets/)
 - [Get cUSD](https://coinmarketcap.com/currencies/celo-dollar/markets/)
@@ -26,9 +26,9 @@ CELO is listed on 20+ exchanges worldwide.
 ## Manage Celo Assets
 
 - [Self-Custody CELO](/holder/manage/self-custody)
-- [Asset Management](/holder/manage/asset)
 - [Understand ReleaseGold](/holder/manage/release-gold)
 - [Exchange Celo Assets](/holder/manage/exchange)
+- [Asset Management](/holder/manage/asset)
 
 ## Voting as a Celo Owner
 
