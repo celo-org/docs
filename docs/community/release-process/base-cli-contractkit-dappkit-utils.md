@@ -32,7 +32,7 @@ You can find the npm packages in the following places:
 
 ### Github tags
 
-To identify the commits included in a specific release and see which new features were added or bugs fixed, please refer to the [release notes](https://github.com/celo-org/celo-monorepo/releases) in the monorepo. Also to keep track of continual updates to the stable and dev versions of the packages, each package has a `CHANGELOG.md` file: [Celocli](https://github.com/celo-org/celo-monorepo/blob/master/packages/cli/CHANGELOG.md) and [Contractkit](https://github.com/celo-org/celo-monorepo/blob/master/packages/sdk/CHANGELOG.md).
+To identify the commits included in a specific release and see which new features were added or bugs fixed, please refer to the [release notes](https://github.com/celo-org/celo-monorepo/releases) in the monorepo. Also to keep track of continual updates to the stable and dev versions of the packages, each package has a `CHANGELOG.md` file: [Celocli](https://github.com/celo-org/developer-tooling/blob/master/packages/cli/CHANGELOG.md) and [Contractkit](https://github.com/celo-org/developer-tooling/blob/master/packages/sdk/contractkit/CHANGELOG.md).
 All releases should be tagged with the version number, e.g. `contractkit-vX.Y.Z`. Each release should include a summary of the release contents, including links to pull requests and issues with detailed description of any notable changes.
 
 ### Communication
@@ -51,9 +51,6 @@ For major releases:
 - Mailing list: cLabs’ Tech Sync
 - [Celo Forum](https://forum.celo.org/)
 
-## Build process
-
-The packages are published by following the instructions [here](https://github.com/celo-org/celo-monorepo/blob/master/README-dev.md).
 
 ## Testing
 
@@ -86,9 +83,9 @@ Vulnerabilities in any of these releases should be disclosed according to the [s
 
 - @celo/mobile - Dappkit relies on this
 - Celocli
-- All the packages under the ["SDK" folder](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk) -- These all rely on each other quite bit, so triple check that these packages weren’t affected by a change in another.
+- All the packages under the ["SDK" folder](https://github.com/celo-org/developer-tooling/tree/master/packages/sdk) -- These all rely on each other quite a bit, so triple-check that these packages weren’t affected by a change in another.
 
 ## Dependents
 
 - Celocli
-- All the packages under the ["SDK" folder](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk)
+- All the packages under the ["SDK" folder](https://github.com/celo-org/developer-tooling/tree/master/packages/sdk)
