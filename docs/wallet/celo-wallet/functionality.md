@@ -1,13 +1,13 @@
 ---
 title: Celo Wallet Functionality
-desciption: This section describes the technology powering key functionality of the Celo Wallet.
+description: This section describes the technology powering the key functionality of the Celo Wallet.
 ---
 
 import PageRef from '@components/PageRef'
 
 # Wallet Functionality
 
-This section describes the technology powering key functionality of the Celo Wallet.
+This section describes the technology powering the key functionality of the [Othello Wallet](https://celowallet.app/setup) (formerly Celo Wallet).
 
 - [Verification](/wallet/celo-wallet/verification)
 - [Invitations](/wallet/celo-wallet/invitation)
