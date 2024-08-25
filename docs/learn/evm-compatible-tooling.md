@@ -13,14 +13,11 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 - [Solidity](https://soliditylang.org/) - The most popular smart contract language.
 - [Metamask](https://metamask.io/) - Browser extension wallet to interact with Dapps.
-- [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. Install the cli via npm and start here to write your first smart contracts.
-- [Truffle boxes](https://trufflesuite.com/boxes) - Packaged components for the Ethereum ecosystem.
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
 - [Cryptotux](https://cryptotux.org/) - A Linux image ready to be imported in VirtualBox that includes the development tools mentionned above
 - [OpenZeppelin Starter Kits](https://openzeppelin.com/starter-kits/) - An all-in-one starter box for developers to jumpstart their smart contract backed applications. Includes Truffle, OpenZeppelin SDK, the OpenZeppelin/contracts-ethereum-package EVM package of audited smart contract, a react-app and rimble for easy styling.
 - [EthHub.io](https://docs.ethhub.io/) - Comprehensive crowdsourced overview of Ethereum- its history, governance, future plans and development resources.
 - [EthereumDev.io](https://ethereumdev.io) - The definitive guide for getting started with Ethereum smart contract programming.
-- [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
 - [Ethereum Stack Exchange](https://ethereum.stackexchange.com/) - Post and search questions to help your development life cycle.
 - [dfuse](https://dfuse.io) - Slick blockchain APIs to build world-class applications.
 - [Biconomy](https://biconomy.io) - Do gasless transactions in your dapp by enabling meta-transactions using simple to use SDK.
@@ -36,11 +33,9 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ### Frameworks
 
-- [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. The Truffle suite includes Truffle, [Ganache](https://github.com/trufflesuite/ganache), and [Drizzle](https://github.com/truffle-box/drizzle-box). [Deep dive on Truffle here](https://media.consensys.net/truffle-deep-dive-what-you-need-to-know-when-developing-on-ethereum-e548d4df6e9)
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
 - [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
 - [Embark](https://github.com/embark-framework/embark) - Framework for DApp development
-- [Waffle](https://getwaffle.io/) - Framework for advanced smart contract development and testing, small, flexible, fast (based on ethers.js)
 - [Dapp](https://dapp.tools/dapp/) - Framework for DApp development, successor to DApple
 - [Etherlime](https://github.com/LimeChain/etherlime) - ethers.js based framework for Dapp deployment
 - [Parasol](https://github.com/Lamarkaz/parasol) - Agile smart contract development environment with testing, INFURA deployment, automatic contract documentation and more. It features a flexible and unopinionated design with unlimited customizability
@@ -70,7 +65,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 ## Test Blockchain Networks
 
 - [ethnode](https://github.com/vrde/ethnode) - Run an Ethereum node (Geth or Parity) for development, as easy as `npm i -g ethnode && ethnode`.
-- [Ganache](https://github.com/trufflesuite/ganache) - App for test Ethereum blockchain with visual UI and logs
 - [Kaleido](https://kaleido.io/) - Use Kaleido for spinning up a consortium blockchain network. Great for PoCs and testing
 - [Besu Private Network](https://besu.hyperledger.org/en/stable/Tutorials/Quickstarts/Azure-Private-Network-Quickstart/) - Run a private network of Besu nodes in a Docker container
   **[Orion](https://github.com/PegaSysEng/orion) - Component for performing private transactions by PegaSys
@@ -112,7 +106,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Alchemy-web3.js](https://github.com/alchemyplatform/alchemy-web3) - Javascript Web3 wrapper with automatic retries, access to [Alchemy's enhanced APIs](https://docs.alchemyapi.io/documentation/alchemy-web3/enhanced-web3-api), and robust websocket connections.
 - [flex-contract](https://github.com/merklejerk/flex-contract) and [flex-ether](https://github.com/merklejerk/flex-ether) - Modern, zero-configuration, high-level libraries for interacting with smart contracts and making transactions.
 - [ez-ens](https://github.com/merklejerk/ez-ens) - Simple, zero-configuration Ethereum Name Service address resolver.
-- [web3x](https://github.com/xf00f/web3x) - A TypeScript port of web3.js. Benefits includes tiny builds and full type safety, including when interacting with contracts.
+- [web3x](https://github.com/xf00f/web3x) - A TypeScript port of web3.js. Benefits include tiny builds and full type safety, including when interacting with contracts.
 - [Nethereum](https://github.com/Nethereum/) - Cross-platform Ethereum development framework
 - [dfuse](https://github.com/dfuse-io/client-js) - A TypeScript library to use [dfuse Ethereum API](https://dfuse.io)
 - [Drizzle](https://github.com/truffle-box/drizzle-box) - Redux library to connect a frontend to a blockchain
@@ -124,12 +118,12 @@ A guide to available tools, components, patterns, and platforms for developing a
   - [elm-ethereum](https://github.com/cmditch/elm-ethereum)
   - [purescript-web3](https://github.com/f-o-a-m/purescript-web3)
 - [ChainAbstractionLayer](https://github.com/liquality/chainabstractionlayer) - Communicate with different blockchains (including Ethereum) using a single interface.
-- [Delphereum](https://github.com/svanas/delphereum) - a Delphi interface to the Ethereum blockchain that allows for development of native dApps for Windows, macOS, iOS, and Android.
+- [Delphereum](https://github.com/svanas/delphereum) - a Delphi interface to the Ethereum blockchain that allows for the development of native dApps for Windows, macOS, iOS, and Android.
 - [Torus](https://tor.us/) - Open-sourced SDK to build dapps with a seamless onboarding UX
 - [Fortmatic](https://fortmatic.com/) - A simple to use SDK to build web3 dApps without extensions or downloads.
 - [Portis](https://portis.io/) - A non-custodial wallet with an SDK that enables easy interaction with DApps without installing anything.
 - [create-eth-app](https://github.com/paulrberg/create-eth-app) - Create Ethereum-powered front-end apps with one command.
-- [Scaffold-ETH](https://github.com/austintgriffith/scaffold-eth) - Beginner friendly forkable github for getting started building smart contracts.
+- [Scaffold-ETH](https://github.com/austintgriffith/scaffold-eth) - Beginner friendly forkable GitHub for getting started building smart contracts.
 - [Notify.js](https://blocknative.com/notify) - Deliver real-time notifications to your users. With built-in support for Speed-Ups and Cancels, Blocknative Notify.js helps users transact with confidence. Notify.js is easy to integrate and quick to customize.
 
 ### Backend Ethereum APIs
