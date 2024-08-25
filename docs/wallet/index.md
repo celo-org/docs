@@ -5,7 +5,7 @@ description: Overview of digital wallets available to send, spend, and earn Celo
 
 # Celo Wallets
 
-Overview of digital wallets available to send, spend, and earn Celo assets.
+On this page you will find an overview of digital wallets available to send, spend, and earn Celo assets.
 
 ---
 
@@ -101,12 +101,12 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 - [Source Code](https://github.com/WalletConnect)
 
   
-### [Wigwam Wallet]((https://wigwam.app))
+### [Wigwam Wallet](https://wigwam.app)
 
 - Platforms: Browser, Web
 - [Source Code](https://github.com/wigwamapp/wigwam)
 
-### [Pesabase]((https://pesabase.com/))
+### [Pesabase](https://pesabase.com/)
 
 - Platforms: iOS, Android
 
