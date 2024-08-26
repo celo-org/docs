@@ -37,13 +37,13 @@ You can view the source documentation for setting up the Linux distro [here](htt
 
 ### Set up the Linux Environment
 
-Now that you have Linux installed, let’s install [nvm](https://github.com/nvm-sh/nvm) and [yarn](https://yarnpkg.com/). Nvm \(node version manager\) makes it easy to install and manage different versions of Node.js. The following instructions are from the [celo-monoreop setup documentation for Linux](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#linux).
+Now that you have Linux installed, let’s install [nvm](https://github.com/nvm-sh/nvm) and [yarn](https://yarnpkg.com/). Nvm \(node version manager\) makes it easy to install and manage different versions of Node.js. The following instructions are from the [celo-monorepo setup documentation for Linux](https://github.com/celo-org/celo-monorepo/blob/master/SETUP.md#linux).
 
 Run the following commands in the Linux terminal.
 
 ```bash
 # Installing Nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 source ~/.bashrc
 
 # Setting up the desired Nvm version
