@@ -303,11 +303,6 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "Interact with Contracts",
-              id: "developer/walkthrough/hello-contract-remote-node",
-            },
-            {
-              type: "doc",
               label: "Query On-Chain Identifiers with ODIS",
               id: "developer/contractkit/odis",
             },
