@@ -27,7 +27,7 @@ While other Validator Groups will exist on the Celo Network, the fastest way to 
 
 Because of the importance of Validator security and availability, Validators are expected to run a "proxy" node in front of each Validator node. In this setup, the Proxy node connects with the rest of the network, and the Validator node communicates only with the Proxy, ideally via a private network.
 
-[Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa)
+[Read more about Celo's mission and why you may want to become a Validator.](https://medium.com/celoorg/calling-all-chefs-become-a-celo-validator-c75d1c2909aa) - This article still uses the term Celo Gold which is the deprecated name for the Celo native asset, which now is referred to simply as "Celo" or preferably "CELO".
 
 ## Prerequisites
 
@@ -165,32 +165,6 @@ There are a number of environment variables in this guide, and you may use this 
 | PROXY_EXTERNAL_IP                           | The external IP address of the proxy. May be used by the Validator to communicate with the proxy if PROXY_INTERNAL_IP is unspecified |
 | DATABASE_URL                                | The URL under which your database is accessible, currently supported are `postgres://`, `mysql://` and `sqlite://`                   |
 
-## Network Deployment Timeline
-
-The setup of mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
-
-Done:
-
-- 4/19 00:00 UTC: Docker image with genesis block distributed
-- 4/19 - 4/22: Infrastructure setup
-- 4/22 16:00 UTC: Block production begins
-- 4/22: Celo Core Contracts and `ReleaseGold` contracts are deployed
-- 4/27: Governance proposals submitted to unfreeze validator elections and validator epoch rewards
-- 5/1: Elections and validator rewards enabled if governance proposals pass; validators have been registered and affiliated with a Validator Group for first election
-- 5/14: Governance proposals submitted to enable voter rewards and enable CELO transfers
-- 5/18: RC1 is declared Mainnet and CELO transfers are enabled, if governance proposals pass
-
-Upcoming:
-
-- ~5/25: Deployment of CELO/USD Oracles
-- ~5/31: Governance proposal submitted to unfreeze stability protocol
-- ~6/3: Stability protocol goes live if governance proposal passes
-
-:::info
-
-A [timeline](https://forum.celo.org/t/release-candidate-1-rc1-timeline-and-details/428) of the Release Candidate 1 and Mainnet networks is available to provide further context.
-
-:::
 
 ## Validator Node Setup
 
@@ -506,7 +480,7 @@ celocli account:show $CELO_VALIDATOR_ADDRESS`
 
 ### Lock up CELO
 
-Lock up CELO for both accounts in order to secure the right to register a Validator and Validator Group. The current requirement is 10,000 CELO to register a validator, and 10,000 CELO _per member validator_ to register a Validator Group. For Validators, this gold remains locked for approximately 60 days following deregistration. For groups, this gold remains locked for approximately 60 days following the removal of the Nth validator from the group.
+Lock up CELO for both accounts in order to secure the right to register a Validator and Validator Group. The current requirement is 10,000 CELO to register a validator, and 10,000 CELO _per member validator_ to register a Validator Group. For Validators, these locked-up CELO remain locked for approximately 60 days following deregistration. For groups, these locked-up CELO remains locked for approximately 60 days following the removal of the Nth validator from the group.
 
 ```bash
 # On your local machine

@@ -73,42 +73,6 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Celo Wallet",
-          items: [
-            {
-              type: "link",
-              label: "Celo Wallet Setup",
-              href: "https://celowallet.app/",
-            },
-            {
-              type: "doc",
-              label: "Functionality",
-              id: "wallet/celo-wallet/functionality",
-            },
-            {
-              type: "doc",
-              label: "Verification",
-              id: "wallet/celo-wallet/verification",
-            },
-            {
-              type: "doc",
-              label: "Invitation",
-              id: "wallet/celo-wallet/invitation",
-            },
-            {
-              type: "doc",
-              label: "Payment",
-              id: "wallet/celo-wallet/payment",
-            },
-            {
-              type: "doc",
-              label: "Node Sync",
-              id: "wallet/celo-wallet/node-sync",
-            },
-          ],
-        },
-        {
-          type: "category",
           label: "Ledger Wallet",
           items: [
             {
@@ -200,7 +164,7 @@ const sidebars = {
             {
               type: "link",
               label: "Network Stats",
-              href: "https://explorer.celo.org/stats",
+              href: "https://dune.com/celo/celo-blockchain-overview",
             },
             {
               type: "link",
@@ -567,7 +531,6 @@ const sidebars = {
 
   integrationsSidebar: [
     { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "Dapps", id: "integration/dapps" },
     { type: "doc", label: "General", id: "integration/general" },
     {
       type: "doc",
@@ -690,18 +653,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "StackShift",
-      id: "community/StackShift/StackShift",
-    },
-    {
-      type: "doc",
       label: "Fundraising",
       id: "community/fundraising",
-    },
-    {
-      type: "link",
-      label: "Bounties",
-      href: "https://gitcoin.co/celo-org/projects",
     },
     {
       type: "doc",

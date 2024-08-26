@@ -5,7 +5,7 @@ description: How to get a full node running on the Baklava Network using a prebu
 
 # Run a Baklava Full Node
 
-How to get a full node running on the [Baklava Network](/network/baklava/) using a prebuilt Docker image.
+How to get a full node running on the [Baklava Network](/network/baklava) using a prebuilt Docker image.
 
 ---
 

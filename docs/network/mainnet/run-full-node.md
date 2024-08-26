@@ -1,17 +1,19 @@
 ---
-title: Run a Baklava Full Node
-description: How to get a full node running on the Baklava Network using a prebuilt Docker image.
+title: Run a Celo Full Node
+description: How to run a full node on the Celo Mainnet Network using a prebuilt Docker image.
 ---
 
-# Run a Baklava Full Node
+# Run a Full Node
 
-How to get a full node running on the [Baklava Network](/network/baklava/) using a prebuilt Docker image.
+How to run on the Mainnet Network using a prebuilt Docker image.
 
 ---
 
-## What is a Baklava Full Node?
+:::tip Hosted Nodes
 
-Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
+If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.
+
+:::
 
 :::info
 
@@ -21,18 +23,7 @@ You can add the [Celo Signal public calendar](https://calendar.google.com/calend
 
 :::
 
-:::info
-
-If you are transitioning from the Baklava network prior to the June 24 reset, you will need to start with a fresh chain database. You can either shut down your existing node, delete the `celo` folder, and continue by following the guide below or create a new node following these directions.
-
-Key differences are:
-
-- New network ID is `62320`
-- A new image has been pushed to `us.gcr.io/celo-org/geth:baklava`
-- A new genesis block and bootnode enode are included in the Docker image
-- `ReleaseGold` contracts are available for all previously faucetted addresses [here](https://gist.github.com/nategraf/245232883a34cbb162eb599e34afd7c0)
-
-:::
+Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
 
 ## Prerequisites
 
@@ -48,10 +39,10 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 ## Celo Networks
 
-First we are going to setup the environment variables required for `Baklava` network. Run:
+First we are going to setup the environment variables required for the `mainnet` network. Run:
 
 ```bash
-export CELO_IMAGE=us.gcr.io/celo-org/geth:baklava
+export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet
 ```
 
 ## Pull the Celo Docker image
@@ -102,7 +93,7 @@ This environment variable will only persist while you have this terminal window 
 This command specifies the settings needed to run the node, and gets it started.
 
 ```bash
-docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --baklava --datadir /root/.celo
+docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo
 ```
 
 You'll start seeing some output. After a few minutes, you should see lines that look like this. This means your node has started syncing with the network and is receiving blocks.
@@ -115,7 +106,7 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Baklava Network Stats](https://baklava-celostats.celo-testnet.org/) or [Baklava Block Explorer]](https://baklava-blockscout.celo-testnet.org/) pages.
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Network Stats](https://stats.celo.org) or [Block Explorer](https://explorer.celo.org/) pages.
 
 :::danger
 
@@ -123,9 +114,21 @@ You will have fully synced with the network once you have pulled the latest bloc
 
 :::
 
+## Running an Archive Node
+
+If you would like to run an archive node for `celo-blockchain`, you can run the following command:
+
+```bash
+docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --gcmode archive --txlookuplimit=0 --cache.preimages --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo
+```
+
+We add the following flags: `--gcmode archive --txlookuplimit=0 --cache.preimages`
+
+In `celo-blockchain`, this is called gcmode which refers to the concept of garbage collection. Setting it to archive basically turns it off.
+
 ## Command Line Interface
 
-Once the full node is running, it can serve the [Command Line Interface](/cli/) tool `celocli`. For example:
+Once the full node is running, it can serve the [Command Line Interface](/cli) tool `celocli`. For example:
 
 ```bash
 $ npm install -g @celo/celocli

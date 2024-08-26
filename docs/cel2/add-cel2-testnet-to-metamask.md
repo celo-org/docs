@@ -1,7 +1,10 @@
 ---
 title: Add Cel2 Testnet to Metamask
-description: Adding Cel2 testnet network to your wallet
+description: Adding Cel2 testnet to your wallet
 ---
+
+
+Follow this quick guide to add Dango to your MetaMask wallet and start playing around with it. You can get funds from the [Dango Faucet](https://faucet.celo.org/dango).
 
 1. Open Metamask
 
@@ -18,7 +21,7 @@ description: Adding Cel2 testnet network to your wallet
 4. Add info about Celo L2 Dango Testnet
 
 :::info
-If you never added Celo Testnet before then you need click on "Add a Network"
+If you never added a new Network before then you need click on "Add a Network"
 :::
 
 Insert the following details:
