@@ -19,8 +19,6 @@ If you need more funds, you can always visit [faucet.celo.org](https://faucet.ce
 
 ![Verifying your phone number with an invitation code](https://storage.googleapis.com/celo-website/docs/celo-onboarding.gif)
 
-For more information on how to run a build of the Celo Wallet and develop on it, please refer to the [Running the Wallet Locally](/wallet/celo-wallet/functionality) section.
-
 For more detailed information on how to get an account please refer to the [Getting an Account and Funds](/wallet/faucet-testnet) section.
 
 ### Report a Bug

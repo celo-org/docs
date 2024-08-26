@@ -21,12 +21,6 @@ Alfajores Testnet accounts hold no real world economic value. The testnet's data
 
 Getting an account is really being given or generating a public-private keypair. This gives you control of balances accessible with the address corresponding to that key. For CELO, this is a native balance stored at the account whose address matches your key. For Celo Dollars, an ERC-20 token, the Mento Stablecoin smart contract maintains in its storage a mapping of the balance of each address.
 
-### Get an Invitation Code
-
-If you have access to an Android device and would like to try the Celo Wallet, the fastest way to get started is to get an invitation code, pre-funded with 10 Celo Dollars.
-
-Visit the [Celo Wallet Page](https://celo.org/build/wallet) and enter your phone number to be messaged an invitation. Following this personalized URL will download the [Celo Wallet App](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores) from the Play Store, generate an account only you have access to, and transfer escrowed funds into it.
-
 ### Restore from backup
 
 If you already have an account and the corresponding seed phrase, you can follow the instructions in the [Celo Wallet App](https://play.google.com/store/apps/details?id=org.celo.mobile.alfajores) to regain access to your account. You can also receive a seed phrase for a new, funded account by visiting the [Celo Wallet Page](https://celo.org/build/wallet).

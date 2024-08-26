@@ -71,42 +71,7 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: "category",
-          label: "Celo Wallet",
-          items: [
-            {
-              type: "link",
-              label: "Celo Wallet Setup",
-              href: "https://celowallet.app/",
-            },
-            {
-              type: "doc",
-              label: "Functionality",
-              id: "wallet/celo-wallet/functionality",
-            },
-            {
-              type: "doc",
-              label: "Verification",
-              id: "wallet/celo-wallet/verification",
-            },
-            {
-              type: "doc",
-              label: "Invitation",
-              id: "wallet/celo-wallet/invitation",
-            },
-            {
-              type: "doc",
-              label: "Payment",
-              id: "wallet/celo-wallet/payment",
-            },
-            {
-              type: "doc",
-              label: "Node Sync",
-              id: "wallet/celo-wallet/node-sync",
-            },
-          ],
-        },
+
         {
           type: "category",
           label: "Mobile Wallet",
@@ -221,7 +186,7 @@ const sidebars = {
             {
               type: "link",
               label: "Network Stats",
-              href: "https://explorer.celo.org/stats",
+              href: "https://dune.com/celo/celo-blockchain-overview",
             },
             {
               type: "link",
