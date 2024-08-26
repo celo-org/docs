@@ -135,4 +135,3 @@ true
 $ celocli account:new
 ...
 ```
-

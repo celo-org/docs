@@ -45,21 +45,11 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 - [Deploy with Remix](/developer/deploy/remix)
 - [Deploy with Hardhat](/developer/deploy/hardhat)
 
-## Celo Developer Pathway
-
-- [Figment Learn](figment-learn)
-
 ## Build Celo Applications
 
 - [Build Mobile-First DeFi Apps with the Celo SDK](https://medium.com/celoorg/build-mobile-first-defi-apps-with-the-celo-sdk-e6f85f2fe18c)
 - [Developing & deploying your first DApp on Celo](https://www.youtube.com/watch?v=kO6Wm8pgKXU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=12)
 - [Building your first DApps on Celo, Part 2](https://www.youtube.com/watch?v=KjaH8H9ssvk&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=13)
-
-## Code Examples with Celo
-
-- [Sending Celo](/developer/walkthrough/hello-celo)
-- [Deploy a Contract (local node)](/developer/walkthrough/hello-contracts)
-- [Deploy and Interact with Contracts (Remotely)](/developer/walkthrough/hello-contract-remote-node)
 
 ## Create a Web dApp with Celo
 

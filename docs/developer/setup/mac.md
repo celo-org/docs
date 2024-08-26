@@ -42,7 +42,7 @@ While Xcode falls under the Celo Prerequisites, Xcode takes a long time to downl
 #### Install Node and npm via nvm
 
 ```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
 
 Verify the installation by running:
@@ -139,42 +139,6 @@ docker --version
 
 ## Celo Prerequisites
 
-### Truffle
-
-Since the Celo Blockchain has [shared ancestry with Ethereum](/developer/migrate/from-ethereum) and maintains full EVM compatibility, you can use Ethereum tools to develop Celo applications. [Truffle](https://www.trufflesuite.com/truffle) is a development framework for Ethereum and assists with writing your contracts, testing, and deploying.
-
-Similar to how you might use a framework like React instead of vanilla JavaScript, you can use Truffle to abstract away a lot of the imperative details from Solidity (the language used to write smart contracts).
-
-**Install Truffle**
-
-```shell
-npm install -g truffle
-```
-
-**Configuring Truffle**
-
-You will need to configure Truffle to work with Celo. Connecting to Celo and managing transactions is easiest with [ContractKit](/developer/contractkit/). You can import contractkit directly into your `truffle.config.js` file in your Truffle project, add a private key and network details. You can see [this example config file](https://github.com/critesjosh/hello_contract-truffle/blob/master/truffle-config.js) for reference.
-
-The Truffle deployer may have trouble estimating the deployment transaction gas limit, for which you will receive an error like:
-
-```shell
-Error:  *** Deployment Failed ***
-
-"Migrations" -- invalid argument 0: json: cannot unmarshal invalid hex string into Go value of type hexutil.Bytes.
-```
-
-You can resolve this by specifying the `gas` field in the network details in `truffle.config.js`.
-
-For example:
-
-```js
-alfajores: {
-  provider: kit.connection.web3.currentProvider,
-  network_id: 44787,
-  gas: 4000000,
-}
-```
-
 ### Local Development Blockchain
 
 See [Local Development Chain w/ Protocol Contracts](/developer/setup/development-chain) for how to get started with developing on a local test environment.
@@ -199,36 +163,6 @@ added x packages from x contributors in x.xs
 Installation can take over a minute, so be patient depending on your internet connection.
 
 :::
-
-### Celo Wallet
-
-Celo Wallet is the development wallet to onboard onto the Celo network, manage funds, and send payments. Since Celo does not have a web wallet, you will need to use the mobile wallet.
-
-There is a [detailed write-up](https://github.com/celo-org/celo-monorepo) on the celo-monorepo for the Celo Wallet. This guide only includes the summarized installation instructions for macOS. If you're on another OS, please refer to that guide instead of this document.
-
-:::info
-
-Celo's focus on mobile-first means that the priority has been on mobile applications and tooling. We know there is a growing demand for web applications and have several projects underway to build the tools needed to support web-based applications. In the meantime, you can still use your web-savvy skills to develop mobile apps without too much of a learning curve because of frameworks like React Native and Expo.
-
-:::
-
-### Celo Wallet Prerequisites
-
-#### Watchman
-
-[Watchman](https://facebook.github.io/watchman/) exists to watch files and record when they change. You can use it with the Celo Wallet.
-
-**Install Watchman**
-
-You can install [Watchman](https://facebook.github.io/watchman/docs/install.html) with brew
-
-```shell
-# Update brew if you haven't recently
-$ brew update
-
-# Install watchman
-$ brew install watchman
-```
 
 ### iOS
 

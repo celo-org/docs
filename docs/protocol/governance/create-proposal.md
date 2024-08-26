@@ -162,14 +162,14 @@ cat mainnet.json
 Once you see the content of your `mainnet.json`  file in the terminal output, you can submit the proposal using:
 
 ```bash
-celocli governance:propose --jsonTransactions=mainnet.json  --deposit=100e18 --descriptionURL=https://github.com/celo-org/governance/blob/main/CGPs/cgp-<YOUR_PROPOSAL_ID_IN_GITHUB>.md --from=<YOUR_ADDRESS> --privateKey=<PRIVATE_KEY>
+celocli governance:propose --jsonTransactions=mainnet.json  --deposit=10000e18 --descriptionURL=https://github.com/celo-org/governance/blob/main/CGPs/cgp-<YOUR_PROPOSAL_ID_IN_GITHUB>.md --from=<YOUR_ADDRESS> --privateKey=<PRIVATE_KEY>
 ```
 
 Replace the --descriptionURL, --from fields with your proposal Github file URL.
 
 :::info
 
-💡 Note that 100 CELO tokens are required inthe account to submit a proposal. This amount will be refunded to the proposer if the proposal reaches the Approval stage. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
+💡 Note that 10,000 CELO tokens are required inthe account to submit a proposal. This amount will be refunded to the proposer if the proposal reaches the Approval stage. If a proposal has been on the queue for for more than 4 weeks, it expires and the deposit is forfeited.
 
 :::
 
