@@ -97,7 +97,7 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 
 ## Deploying Ethereum Contracts to Celo
 
-Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Figment Datahub](https://figment.io/datahub/celo/).
+Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Quicknode](https://www.quicknode.com/chains/celo).
 
 ## Protocol Differences
 

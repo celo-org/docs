@@ -483,11 +483,6 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Figment",
-          href: "https://learn.figment.io/protocols/celo",
-        },
-        {
-          type: "link",
           label: "Dacade",
           href: "https://dacade.org/communities/celo",
         },
