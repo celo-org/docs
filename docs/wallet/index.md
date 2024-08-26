@@ -23,19 +23,10 @@ The [Celo Native Wallets](#celo-native-wallets) section shows some popular walle
 
 Valora is a mobile wallet focused on making global peer-to-peer payments simple and accessible to anyone. It supports the Celo Identity Protocol which allows users to verify their phone number and send payments to their contacts.
 
-- [valoraapp.com](https://valoraapp.com)
+- [valoraapp.com](https://valora.xyz/)
 - Platforms: iOS, Android
-- Maintainers: [Valora](https://valoraapp.com)
+- Maintainers: [Valora](https://valora.xyz/)
 - Ledger support: No
-
-### CeloWallet.app
-
-CeloWallet is a lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
-
-- [celowallet.app](https://celowallet.app)
-- Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
-- Ledger support: Yes
 
 ### Celo Terminal
 
@@ -44,15 +35,6 @@ Celo Terminal is a wallet and DApp platform. It aims to be a hub for installing 
 - [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://twitter.com/wotrust1)
-- Ledger support: Yes
-
-### CeloExtensionWallet
-
-Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser extension for Chrome.
-
-- [chrome.google.com/webstore](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
-- Platforms: Chrome Browser
-- Maintainers: [DSRV Labs](https://www.dsrvlabs.com/en/)
 - Ledger support: Yes
 
 ### Enkrypt
@@ -93,7 +75,7 @@ Strictly speaking, wallet connect is not a wallet; it is an open protocol for co
 
 - [dovewallet.com](https://dovewallet.com)
 - Platforms: Web
-  
+
 ### Wigwam Wallet
 
 - [wigwam.app](https://wigwam.app)

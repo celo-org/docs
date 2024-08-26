@@ -135,7 +135,3 @@ true
 $ celocli account:new
 ...
 ```
-
-## Light Client Serving
-
-Light clients may connect to you as people run the [Celo Mobile Wallet](/wallet/mobile-wallet/setup). The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

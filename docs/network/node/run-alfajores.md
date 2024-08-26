@@ -128,4 +128,3 @@ true
 $ celocli account:new
 ...
 ```
-
