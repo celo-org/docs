@@ -57,7 +57,6 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 
 ## Code Examples with Celo
 
-- [Sending Celo](/developer/walkthrough/hello-celo)
 - [Deploy a Contract (local node)](/developer/walkthrough/hello-contracts)
 - [Deploy and Interact with Contracts (Remotely)](/developer/walkthrough/hello-contract-remote-node)
 

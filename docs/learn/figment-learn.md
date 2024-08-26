@@ -22,7 +22,6 @@ Their [Celo Pathway](https://learn.figment.io/protocols/celo) teaches you the ba
 - [Deploy Celo Smart contracts with Remix IDE](https://learn.figment.io/tutorials/celo-for-remix)
 - [Hello Mobile DApp](https://learn.figment.io/tutorials/hello-mobile-dapp)
 - [Create subgraphs for Celo smart contracts](https://learn.figment.io/tutorials/celo-subgraphs)
-- [Send CELO & cUSD](https://learn.figment.io/tutorials/hello-celo)
 - [How to re-deploy your Ethereum DApp to Celo](https://learn.figment.io/tutorials/redploy-dapps-on-celo)
 - [Create Vault Smart Contract](https://learn.figment.io/tutorials/create-vault-smart-contract)
 - [Build a Decentralized Autonomous Organization (DAO) on Celo](https://learn.figment.io/tutorials/build-a-dao-on-celo)

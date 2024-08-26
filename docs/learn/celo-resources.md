@@ -11,7 +11,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 
 ## Code Examples
 
-- [Sending Celo and cUSD](/developer/walkthrough/hello-celo)
 - [Deploy a Contract using a Local Node](/developer/walkthrough/hello-contracts)
 - [Deploy and Interact with Remote Contracts](/developer/walkthrough/hello-contract-remote-node)
 - [Deply an ERC20 Token to Celo](/developer/walkthrough/no-code-erc20)
