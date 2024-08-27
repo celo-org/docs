@@ -22,7 +22,7 @@ While the Celo client originated as a fork of Ethereum Go language client, [go-e
 
 In terms of programmability, Celo is similar to Ethereum. Both networks run the Ethereum Virtual Machine (EVM) to support smart contract functionality.
 This means that all programming languages, developer tooling and standards that target the EVM are relevant for both Celo and Ethereum.
-Developers building on Celo can write smart contracts in [Solidity](https://solidity.readthedocs.io/en/latest/), use [Truffle](https://www.trufflesuite.com/) for smart contract management and
+Developers building on Celo can write smart contracts in [Solidity](https://solidity.readthedocs.io/en/latest/), and
 take advantage of smart contract standards that have already been developed for Ethereum.
 
 ## The ERC-20 Token Standard
@@ -97,7 +97,7 @@ You can [view the implementation here.](https://explorer.celo.org/address/0xaa93
 
 ## Deploying Ethereum Contracts to Celo
 
-Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Figment Datahub](https://figment.io/datahub/celo/).
+Celo runs the EVM which means that smart contracts written for Ethereum can easily be deployed to Celo, the main difference being that you just need to connect to a Celo node instead of an Ethereum node. You can connect to your own Celo node or to a Celo node service provider like [Quicknode](https://www.quicknode.com/chains/celo).
 
 ## Protocol Differences
 

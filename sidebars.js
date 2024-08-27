@@ -71,7 +71,6 @@ const sidebars = {
             },
           ],
         },
-
         {
           type: "category",
           label: "Ledger Wallet",
@@ -304,11 +303,6 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "Interact with Contracts",
-              id: "developer/walkthrough/hello-contract-remote-node",
-            },
-            {
-              type: "doc",
               label: "Query On-Chain Identifiers with ODIS",
               id: "developer/contractkit/odis",
             },
@@ -486,11 +480,6 @@ const sidebars = {
           type: "link",
           label: "Celo Blog",
           href: "https://medium.com/celoorg",
-        },
-        {
-          type: "link",
-          label: "Figment",
-          href: "https://learn.figment.io/protocols/celo",
         },
         {
           type: "link",

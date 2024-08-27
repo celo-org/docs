@@ -491,10 +491,6 @@
 /developer-guide/celo-dapp-gallery /general/gallery
 /developer-resources/walkthroughs/development-chain /developer/setup/development-chain
 /developer-guide/development-chain /developer/setup/development-chain
-/developer-resources/walkthroughs/hello-contract-remote-node /developer/walkthrough/hello-contract-remote-node
-/developer-guide/start/hello-contract-remote-node /developer/walkthrough/hello-contract-remote-node
-/developer-resources/walkthroughs/hellocontracts /developer/walkthrough/hello-contracts
-/developer-guide/start/hellocontracts /developer/walkthrough/hello-contracts
 /developer-resources/walkthroughs/no-code-erc20 /developer/walkthrough/no-code-erc20
 /developer-resources/walkthroughs/no-code-erc721 /developer/walkthrough/no-code-erc721
 /developer-resources/networks/alfajores-testnet /network/alfajores/
