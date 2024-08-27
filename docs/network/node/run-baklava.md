@@ -5,7 +5,7 @@ description: How to get a full node running on the Baklava Network using a prebu
 
 # Run a Baklava Full Node
 
-How to get a full node running on the [Baklava Network](/network/baklava/) using a prebuilt Docker image.
+How to get a full node running on the Baklava Network using a prebuilt Docker image.
 
 ---
 
@@ -48,7 +48,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 ## Celo Networks
 
-First we are going to setup the environment variables required for `Baklava` network. Run:
+First, we are going to setup the environment variables required for `Baklava` network. Run:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:baklava
@@ -83,9 +83,9 @@ Run the command to create a new account:
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
 ```
 
-It will prompt you for a passphrase, ask you to confirm it, and then will output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
+It will prompt you for a passphrase, ask you to confirm it, and then output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
 
-Save this address to an environment variables, so that you can reference it below (don't include the braces):
+Save this address to an environment variable, so that you can reference it below (don't include the braces):
 
 ```bash
 export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
@@ -99,7 +99,7 @@ This environment variable will only persist while you have this terminal window 
 
 ## Start the node
 
-This command specifies the settings needed to run the node, and gets it started.
+This command specifies the settings needed to run the node and gets it started.
 
 ```bash
 docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --baklava --datadir /root/.celo
@@ -115,11 +115,11 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Baklava Network Stats](https://baklava-celostats.celo-testnet.org/) or [Baklava Block Explorer]](https://baklava-blockscout.celo-testnet.org/) pages.
+You will have fully synced with the network once you have pulled the latest block number, which you can look up by visiting at the [Baklava Network Stats](https://baklava-celostats.celo-testnet.org/) or [Baklava Block Explorer](https://baklava-blockscout.celo-testnet.org/) pages.
 
 :::danger
 
-**Security**: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p` flags allows you to make RPC calls from outside the container, i.e from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
+**Security**: The command line above includes the parameter `--http.addr 0.0.0.0` which makes the Celo Blockchain software listen for incoming RPC requests on all network adaptors. Exercise extreme caution in doing this when running outside Docker, as it means that any unlocked accounts and their funds may be accessed from other machines on the Internet. In the context of running a Docker container on your local machine, this together with the `docker -p` flags allows you to make RPC calls from outside the container, i.e., from your local host, but not from outside your machine. Read more about [Docker Networking](https://docs.docker.com/network/network-tutorial-standalone/#use-user-defined-bridge-networks) here.
 
 :::
 
