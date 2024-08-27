@@ -25,10 +25,13 @@ The [Celo Native Wallets](#celo-native-wallets) section shows some popular walle
 
 Valora is a mobile wallet focused on making global peer-to-peer payments simple and accessible to anyone. It supports the Celo Identity Protocol which allows users to verify their phone number and send payments to their contacts.
 
+- [valoraapp.com](https://valora.xyz/)
+
 - Platforms: iOS, Android
 - Maintainers: [Valora](https://valora.xyz/)
 - Ledger support: No
 - [Source Code](https://github.com/valora-inc/wallet)
+
 
 ### [MiniPay](https://www.opera.com/products/minipay)
 
@@ -50,12 +53,16 @@ Othello Wallet (formally know as CeloWallet) is a lightweight, mobile-friendly w
 
 ### [Celo Terminal](https://celoterminal.com/)
 
+### Celo Terminal
+
+
 Celo Terminal is a wallet and DApp platform. It aims to be a hub for installing and running Celo DApps locally on your desktop.
 
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://twitter.com/wotrust1)
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
+
 
 ### [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
 
@@ -68,6 +75,8 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 
 
 ### [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
+
+### Enkrypt
 
 Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
 
@@ -102,6 +111,13 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 
   
 ### [Wigwam Wallet](https://wigwam.app)
+
+### Dove Wallet
+
+- [dovewallet.com](https://dovewallet.com)
+- Platforms: Web
+
+### Wigwam Wallet
 
 - Platforms: Browser, Web
 - [Source Code](https://github.com/wigwamapp/wigwam)
