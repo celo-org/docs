@@ -130,11 +130,6 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 <PageRef url="https://www.ankr.com/rpc/celo/" pageName="Ankr" />
 
-### Figment Datahub
-
-[Figment datahub](https://figment.io/datahub/celo/) is a service similar to Forno. They have some additional features that allow you to track how people are using your application in terms of the type and number of requests coming through the endpoints. They have a free tier with the option to pay for the service to increase limits to support more popular projects.
-
-<PageRef url="https://figment.io/datahub/celo/" pageName="Figment Datahub" />
 
 ### Quicknode
 
