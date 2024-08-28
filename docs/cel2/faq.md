@@ -7,7 +7,7 @@ description: Frequently Asked Questions about Cel2
 
 ### How do I run a node or upgrade an existing node?
 
-- [Celo L1 → Celo L2 Operator Guide](https://specs.celo.org/l2_operator_guide.html) and related assets:
+- [Celo L1 → Celo L2 Operator Guide](/docs/cel2/l2-operator-guide.md) and related assets:
   - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/dango/dango-migrated-datadir.tar.zst)
   - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/dango/config.json)
   - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/dango/deployment-l1.json)
