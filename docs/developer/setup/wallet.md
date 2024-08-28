@@ -5,13 +5,13 @@ description: How to create and fund testnet wallets to use for developing Celo d
 
 # Testnet Wallets
 
-How to create and fund a testnet wallets to use for developing Celo dApps.
+How to create and fund testnet wallets to use for developing Celo dApps. Make sure to never use the same wallet for development, where you hold your real-life funds. 
 
 ---
 
 ## Getting Started
 
-While developing and deploying dApps on Celo, it’s helpful to have a wallet prepared with funds to pay for any transactions you make on the blockchain. These can be set up using either real or test funds, and this allows application developers and users to interact Celo applications more easily.
+While developing and deploying dApps on Celo, it’s helpful to have a wallet prepared with funds to pay for any transactions you make on the blockchain. These can be set up using either real or test funds, and this allows application developers and users to interact with Celo applications more easily.
 
 :::tip
 
@@ -28,7 +28,7 @@ When deploying a dApp, you will need to pay for transactions that write data to 
 
 ## Create your Account
 
-You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet, ganache or from the [Celo CLI](/cli/).
+You are now able to fund an account that you can access using your browser extension wallet. You can do this using accounts you create with the wallet or from the [Celo CLI](/cli/).
 
 ### Using a wallet
 
@@ -52,33 +52,6 @@ Skip to [this step](#fund-your-account) to fund your account.
 
 :::
 
-### Using Ganache
-
-Deploying locally requires that you have a local blockchain setup. Install and start a local blockchain using the Celo ganache-cli.
-
-#### Install Ganache
-
-```bash
-npm install -g @celo/ganache-cli
-```
-
-#### Start Ganache
-
-```bash
-ganache-cli --port 7545
-```
-
-Ganache will return a list of available accounts, private keys, and additional wallet details that you can access on port 7545.
-
-Note that `@celo/ganache-cli` does not currently allow you to send transactions and pay fees in stable currencies, nor does it include the core protocol contracts. To run a development chain with the protocol contracts consider using the [celo-devchain package](/developer/setup/development-chain#use-the-celo-devchain-npm-package).
-
-![ganache terminal output](/img/doc-images/testnet-wallet/image4.png)
-
-:::tip
-
-Skip to [this step](#import-account-to-wallet-for-options-2--3) to connect your accounts to your wallet.
-
-:::
 
 ### Using Celo CLI
 
@@ -130,4 +103,4 @@ No matter where you created your accounts, you can send them testnet funds using
 
 ![alfajores faucet](/img/doc-images/testnet-wallet/image6.png)
 
-Wait for the transaction to process to view your funds in your account.
+Wait for the transaction to process to view the funds in your account.
