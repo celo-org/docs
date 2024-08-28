@@ -87,7 +87,7 @@ const receipt = await tx.waitReceipt();
 
 ## Interacting with Custom contracts
 
-You can use ContractKit to interact with any deployed smart contract, provided you have the contract address and the [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html). To do so, you will initialize a new `web3` Contract instance. Then you can call functions on the contract instance to read state or send transactions to update the contract. You can see some code snippets below. For a more comprehensive example, see the [Interacting with Custom Contracts](/developer/walkthrough/hello-contract-remote-node#interacting-with-custom-contracts) section of the Deploy a Contract code example.
+You can use ContractKit to interact with any deployed smart contract, provided you have the contract address and the [ABI](https://docs.soliditylang.org/en/latest/abi-spec.html). To do so, you will initialize a new `web3` Contract instance. Then you can call functions on the contract instance to read state or send transactions to update the contract. You can see some code snippets below.
 
 ```ts
 let cUSDcontract = await kit.contracts.getStableToken();

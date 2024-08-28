@@ -44,19 +44,6 @@ const ALFAJORES_PARAMS = {
 };
 ```
 
-### Baklava
-
-```jsx
-const BAKLAVA_PARAMS = {
-  chainId: "0xf370",
-  chainName: "Baklava Testnet",
-  nativeCurrency: { name: "Baklava Celo", symbol: "B-CELO", decimals: 18 },
-  rpcUrls: ["https://baklava-forno.celo-testnet.org"],
-  blockExplorerUrls: ["https://baklava-blockscout.celo-testnet.org/"],
-  iconUrls: ["future"],
-};
-```
-
 ## Adding Tokens \(e.g. cUSD, cEUR\)
 
 To watch an asset on a Celo netowork \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.cloud.coinbase.com/wallet-sdk/docs/tracking-assets#calling-wallet_watchasset)\).

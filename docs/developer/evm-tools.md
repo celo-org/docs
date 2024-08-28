@@ -1,6 +1,6 @@
 ---
 title: Celo EVM Compatible Tooling
-description: Overview of Celo EVM compatible tools and the value they provide to developers.
+description: Overview of Celo EVM-compatible tools and the value they provide to developers.
 ---
 
 # Developer Tools
@@ -14,11 +14,9 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Solidity](https://soliditylang.org/) - The most popular smart contract language.
 - [Metamask](https://metamask.io/) - Browser extension wallet to interact with Dapps.
 - [thirdweb](https://thirdweb.com) - SDKs in every language, smart contracts, tools, and infrastructure for web3 development.
-- [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. Install the cli via npm and start here to write your first smart contracts.
-- [Truffle boxes](https://trufflesuite.com/boxes) - Packaged components for the Ethereum ecosystem.
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
 - [Cryptotux](https://cryptotux.org/) - A Linux image ready to be imported in VirtualBox that includes the development tools mentionned above
-- [OpenZeppelin Starter Kits](https://openzeppelin.com/starter-kits/) - An all-in-one starter box for developers to jumpstart their smart contract backed applications. Includes Truffle, OpenZeppelin SDK, the OpenZeppelin/contracts-ethereum-package EVM package of audited smart contract, a react-app and rimble for easy styling.
+- [OpenZeppelin Starter Kits](https://openzeppelin.com/starter-kits/) - An all-in-one starter box for developers to jumpstart their smart contract backed applications. Includes OpenZeppelin SDK, the OpenZeppelin/contracts-ethereum-package EVM package of audited smart contract, a react-app and rimble for easy styling.
 - [EthHub.io](https://docs.ethhub.io/) - Comprehensive crowdsourced overview of Ethereum- its history, governance, future plans and development resources.
 - [EthereumDev.io](https://ethereumdev.io) - The definitive guide for getting started with Ethereum smart contract programming.
 - [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
@@ -38,11 +36,8 @@ A guide to available tools, components, patterns, and platforms for developing a
 ### Frameworks
 
 - [thirdweb](https://portal.thirdweb.com/solidity) - Provides the tools needed to build custom smart contracts efficiently by offering a set of prebuilt base contracts and a set of reusable components, or extensions, that can be integrated into your own smart contracts.
-- [Truffle](https://trufflesuite.com/) - Most popular smart contract development, testing, and deployment framework. The Truffle suite includes Truffle, [Ganache](https://github.com/trufflesuite/ganache), and [Drizzle](https://github.com/truffle-box/drizzle-box). [Deep dive on Truffle here](https://media.consensys.net/truffle-deep-dive-what-you-need-to-know-when-developing-on-ethereum-e548d4df6e9)
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
-- [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
 - [Embark](https://github.com/embark-framework/embark) - Framework for DApp development
-- [Waffle](https://getwaffle.io/) - Framework for advanced smart contract development and testing, small, flexible, fast (based on ethers.js)
 - [Dapp](https://dapp.tools/dapp/) - Framework for DApp development, successor to DApple
 - [Etherlime](https://github.com/LimeChain/etherlime) - ethers.js based framework for Dapp deployment
 - [Parasol](https://github.com/Lamarkaz/parasol) - Agile smart contract development environment with testing, INFURA deployment, automatic contract documentation and more. It features a flexible and unopinionated design with unlimited customizability
@@ -72,7 +67,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 ## Test Blockchain Networks
 
 - [ethnode](https://github.com/vrde/ethnode) - Run an Ethereum node (Geth or Parity) for development, as easy as `npm i -g ethnode && ethnode`.
-- [Ganache](https://github.com/trufflesuite/ganache) - App for test Ethereum blockchain with visual UI and logs
 - [Kaleido](https://kaleido.io/) - Use Kaleido for spinning up a consortium blockchain network. Great for PoCs and testing
 - [Besu Private Network](https://besu.hyperledger.org/en/stable/Tutorials/Quickstarts/Azure-Private-Network-Quickstart/) - Run a private network of Besu nodes in a Docker container
   **[Orion](https://github.com/PegaSysEng/orion) - Component for performing private transactions by PegaSys
@@ -122,7 +116,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [web3x](https://github.com/xf00f/web3x) - A TypeScript port of web3.js. Benefits includes tiny builds and full type safety, including when interacting with contracts.
 - [Nethereum](https://github.com/Nethereum/) - Cross-platform Ethereum development framework
 - [dfuse](https://github.com/dfuse-io/client-js) - A TypeScript library to use [dfuse Ethereum API](https://dfuse.io)
-- [Drizzle](https://github.com/truffle-box/drizzle-box) - Redux library to connect a frontend to a blockchain
 - [Tasit SDK](https://github.com/tasitlabs/tasitsdk) - A JavaScript SDK for making native mobile Ethereum dapps using React Native
 - [useMetamask](https://github.com/mdtanrikulu/use-metamask) - a custom React Hook to manage Metamask in Ethereum ĐApp projects
 - [WalletConnect](https://walletconnect.org/) - Open protocol for connecting Wallets to Dapps
@@ -153,7 +146,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [KEthereum](https://github.com/komputing/KEthereum) - Kotlin Web3
 - [Eventeum](https://github.com/ConsenSys/eventeum) - A bridge between Ethereum smart contract events and backend microservices, written in Java by Kauri
 - [Ethereumex](https://github.com/mana-ethereum/ethereumex) - Elixir JSON-RPC client for the Ethereum blockchain
-- [Ethereum-jsonrpc-gateway](https://github.com/HydroProtocol/ethereum-jsonrpc-gateway) - A gateway that allows you to run multiple Ethereum nodes for redundancy and load-balancing purposes. Can be ran as an alternative to (or on top of) Infura. Written in Golang.
+- [Ethereum-jsonrpc-gateway](https://github.com/HydroProtocol/ethereum-jsonrpc-gateway) - A gateway that allows you to run multiple Ethereum nodes for redundancy and load-balancing purposes. Can be run as an alternative to (or on top of) Infura. Written in Golang.
 - [EthContract](https://github.com/AgileAlpha/eth_contract) - A set of helper methods to help query ETH smart contracts in Elixir
 - [Ethereum Contract Service](https://github.com/mesg-foundation/service-ethereum-contract) - A MESG Service to interact with any Ethereum contract based on its address and ABI.
 - [Ethereum Service](https://github.com/mesg-foundation/service-ethereum) - A MESG Service to interact with events from Ethereum and interact with it.
@@ -163,7 +156,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ### Bootstrap/Out-of-Box tools
 
-- [Truffle boxes](https://trufflesuite.com/boxes) - Packaged components for the Ethereum ecosystem
 - [Create Eth App](https://github.com/paulrberg/create-eth-app) - Create Ethereum-powered frontend apps with one command
 - [Besu Private Network](https://besu.hyperledger.org/en/stable/Tutorials/Quickstarts/Azure-Private-Network-Quickstart/) - Run a private network of Besu nodes in a Docker container
 - [Testchains](https://github.com/Nethereum/TestChains) - Pre-configured .NET devchains for fast response (PoA)
@@ -173,7 +165,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Parity Demo-PoA Tutorial](https://wiki.parity.io/Demo-PoA-tutorial.html) - Step-by-Step tutorial for building a PoA test chain with 2 nodes with Parity authority round consensus
 - [Local Ethereum Network](https://github.com/ConsenSys/local_ethereum_network) - Out-of-the-box deployment scripts for private PoW networks
 - [Kaleido](https://kaleido.io/) - Use Kaleido for spinning up a consortium blockchain network. Great for PoCs and testing
-- [Cheshire](https://github.com/endless-nameless-inc/cheshire) - A local sandbox implementation of the CryptoKitties API and smart contracts, available as a Truffle Box
 - [aragonCLI](https://github.com/aragon/aragon-cli) - aragonCLI is used to create and develop Aragon apps and organizations.
 - [ColonyJS](https://github.com/JoinColony/colonyJS) - JavaScript client that provides an API for interacting with the Colony Network smart contracts.
 - [ArcJS](https://github.com/daostack/arc.js) - Library that facilitates javascript application access to the DAOstack Arc ethereum smart contracts.
@@ -188,9 +179,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [ABI-gen](https://github.com/0xProject/0x-monorepo/tree/development/packages/abi-gen) - Generate Typescript contract wrappers from contract ABI's.
 - [Ethereum ABI UI](https://github.com/hiddentao/ethereum-abi-ui) - Auto-generate UI form field definitions and associated validators from an Ethereum contract ABI
 - [headlong](https://github.com/esaulpaugh/headlong/) - type-safe Contract ABI and Recursive Length Prefix library in Java
-- [EasyDapper](https://www.easydapper.com) - Generate dapps from Truffle artifacts, deploy contracts on public/private networks, offers live customizable public page to interact with contracts.
 - [One Click dApp](https://oneclickdapp.com) - Instantly create a dApp at a unique URL using the ABI.
-- [Truffle Pig](https://npmjs.com/package/trufflepig) - a development tool that provides a simple HTTP API to find and read from Truffle-generated contract files, for use during local development. Serves fresh contract ABIs over http.
 - [Ethereum Contract Service](https://github.com/mesg-foundation/service-ethereum-contract) - A MESG Service to interact with any Ethereum contract based on its address and ABI.
 - [Nethereum-CodeGenerator](https://github.com/StefH/Nethereum-CodeGenerator) - A web based generator which creates a Nethereum based C# Interface and Service based on Solidity Smart Contracts.
 - [EVMConnector](https://evmconnector.dev) - Create shareable contract dashboards and interact with arbitrary EVM-based blockchain functions, with or without an ABI.
@@ -211,7 +200,6 @@ A guide to available tools, components, patterns, and platforms for developing a
   - usage is described in [Dapp-a-day 1-10](https://steemit.com/@nikolai) and [Dapp-a-day 11-25](https://steemit.com/@nexusdev)
 - [OpenZeppelin Contracts: An open framework of reusable and secure smart contracts in the Solidity language.](https://github.com/OpenZeppelin/openzeppelin-contracts)
   - Likely the most widely-used libraries and smart contracts
-  - Similar to Dappsys, more integrated into Truffle framework
   - [Blog about Best Practices with Security Audits](https://blog.openzeppelin.com/)
 - [Advanced Workshop with Assembly](https://github.com/androlo/solidity-workshop)
 - [Simpler Ethereum Multisig](https://medium.com/@ChrisLundkvist/exploring-simpler-ethereum-multisig-contracts-b71020c19037) - especially section _Benefits_
@@ -282,7 +270,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 ## Testing Tools
 
-- [Truffle Teams](https://trufflesuite.com/teams) - Zero-Config continuous integration for truffle projects
 - [Solidity code coverage](https://github.com/0xProject/0x-monorepo/tree/development/packages/sol-coverage) - Solidity code coverage tool
 - [Solidity coverage](https://github.com/sc-forks/solidity-coverage) - Alternative code coverage for Solidity smart-contracts
 - [Solidity function profiler](https://github.com/EricR/sol-function-profiler) - Solidity contract function profiler
@@ -296,7 +283,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Solhint](https://github.com/protofire/solhint) - Solidity linter that provides security, style guide and best practice rules for smart contract validation
 - [Ethlint](https://github.com/duaraghav8/Ethlint) - Linter to identify and fix style & security issues in Solidity, formerly Solium
 - [Decode](https://github.com/hacker-DOM/decode) - npm package which parses tx's submitted to a local testrpc node to make them more readable and easier to understand
-- [truffle-assertions](https://github.com/rkalis/truffle-assertions) - An npm package with additional assertions and utilities used in testing Solidity smart contracts with truffle. Most importantly, it adds the ability to assert whether specific events have (not) been emitted.
 - [Psol](https://github.com/Lamarkaz/psol) - Solidity lexical preprocessor with mustache.js-style syntax, macros, conditional compilation and automatic remote dependency inclusion.
 - [solpp](https://github.com/merklejerk/solpp) - Solidity preprocessor and flattener with a comprehensive directive and expression language, high precision math, and many useful helper functions.
 - [Decode and Publish](https://flightwallet.github.io/decode-eth-tx/) – Decode and publish raw ethereum tx. Similar to https://live.blockcypher.com/btc-testnet/decodetx/
@@ -342,8 +328,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 ## Other Miscellaneous Tools
 
 - [aragonPM](https://hack.aragon.org/docs/apm-intro.html) - a decentralized package manager powered by aragonOS and Ethereum. aragonPM enables decentralized governance over package upgrades, removing centralized points of failure.
-- [Truffle boxes](https://www.trufflesuite.com/boxes) - Packaged components for building DApps fast.
-  - [Cheshire](https://github.com/endless-nameless-inc/cheshire) - A local sandbox implementation of the CryptoKitties API and smart contracts, available as a Truffle Box
 - [Solc](https://docs.soliditylang.org/en/latest/using-the-compiler.html) - Solidity compiler
 - [Sol-compiler](https://sol-compiler.com/) - Project-level Solidity compiler
 - [Solidity cli](https://github.com/pubkey/solidity-cli) - Compile solidity-code faster, easier and more reliable
@@ -355,7 +339,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Eth crypto](https://github.com/pubkey/eth-crypto) - Cryptographic javascript-functions for Ethereum and tutorials to use them with web3js and solidity
 - [Parity Signer](https://github.com/paritytech/parity-signer) - mobile app allows signing transactions
 - [py-eth](http://py-eth.com) - Collection of Python tools for the Ethereum ecosystem
-- [truffle-flattener](https://github.com/nomiclabs/truffle-flattener) - Concats solidity files developed under Truffle with all of their dependencies
 - [Decode](https://github.com/hacker-DOM/decode) - npm package which parses tx's submitted to a local testrpc node to make them more readable and easier to understand
 - [TypeChain](https://github.com/ethereum-ts/TypeChain) - Typescript bindings for Ethereum smartcontracts
 - [EthSum](https://ethsum.netlify.com) - A Simple Ethereum Address Checksum Tool
@@ -371,7 +354,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [Resolver-Engine](https://github.com/Crypto-Punkers/resolver-engine) - A set of tools to standarize Solidity import and artifact resolution in frameworks.
 - [eth-reveal](https://github.com/justinjmoses/eth-reveal) - A node and browser tool to inspect transactions - decoding where possible the method, event logs and any revert reasons using ABIs found online.
 - [Ethereum-tx-sender](https://github.com/HydroProtocol/ethereum-tx-sender) - A useful library written in Golang to reliably send a transaction — abstracting away some of the tricky low level details such as gas optimization, nonce calculations, synchronization, and retries.
-- [truffle-plugin-verify](https://github.com/rkalis/truffle-plugin-verify) - Seamlessly verify contract source code on Etherscan from the Truffle command line.
 - [Blocknative Gas Platform](https://www.blocknative.com/gas) — Gas estimation for builders, by builders. Gas Platform harnesses Blocknative's real-time mempool data infrastructure to accurately and consistently estimate Ethereum transaction fees. This provides builders and traders with an up-to-the-moment gas fee API.
 - [ETH Gas.watch](https://ethgas.watch/) - A gas price watcher with email notifications on price change
 
@@ -453,11 +435,11 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [ui.decentraland.org](https://github.com/decentraland/ui) - A React library including Dapp components
 - [dapparatus](https://github.com/austintgriffith/dapparatus) - Reusable React Dapp components
 - [Metamask ui](https://github.com/MetaMask/metamask-extension/tree/develop/ui/app/components) - Metamask React Components
-- [DappHybrid](https://github.com/Nethereum/Nethereum.DappHybrid) - A cross-platform hybrid hosting mechanism for web based decentralised applications
+- [DappHybrid](https://github.com/Nethereum/Nethereum.DappHybrid) - A cross-platform hybrid hosting mechanism for web-based decentralized applications
 - [Nethereum.UI.Desktop](https://github.com/Nethereum/Nethereum.UI.Desktop) - Cross-platform desktop wallet sample
 - [eth-button](https://eth-button.github.io/eth-button/) - Minimalist donation button
 - [Rimble Design System](https://rimble.consensys.design/) - Adaptable components and design standards for decentralized applications.
-- [3Box Plugins](https://docs.3box.io/build/plugins) - Drop in react components for social functionality. Including comments, profiles and messaging.
+- [3Box Plugins](https://docs.3box.io/build/plugins) - Drop in react components for social functionality. Including comments, profiles, and messaging.
 
 :::info
 

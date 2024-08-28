@@ -140,12 +140,6 @@ Because we are accessing the network remotely, we need to generate an account to
 
 There is a short script in `getAccount.js` to either get a Celo account from a mnemonic in the `.secret` file, or create a random account if the file is empty. In the script, we use`web3.js` to create a new private key/account pair. [Web3.js](https://web3js.readthedocs.io/) is a popular javascript library for handling Ethereum related functionality. Celo is a cousin of Ethereum, so this library works well for generating Celo accounts.
 
-:::danger
-
-This is not the standard way of managing Celo accounts. In a production environment, the [Celo Wallet](/wallet/celo-wallet/functionality) will manage accounts for you. Accessing accounts from the Celo Wallet will be discussed in future guides.
-
-:::
-
 We can now use this `account` to get account information \(ie the private key and account address\) and to send transactions from `account.address`. Add the following code to read the account balance. Continue adding to `helloCelo.js`.
 
 ```javascript title="helloCelo.js"

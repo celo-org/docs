@@ -15,13 +15,13 @@ Full nodes play a special purpose in the Celo ecosystem, acting as a bridge betw
 
 :::tip
 
-If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.
+If you'd prefer a simple, one-click hosted setup for running a node on one of the major cloud providers (AWS and GCP), check out our [hosted nodes](/network/node/run-hosted) documentation.
 
 :::
 
 :::info
 
-If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation and governance, please sign up to our [Celo Signal mailing list](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
+If you would like to keep up-to-date with all the news happening in the Celo community, including validation, node operation, and governance, please sign up for our [Celo Signal mailing list](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j).
 
 You can add the [Celo Signal public calendar](https://calendar.google.com/calendar/u/0/embed?src=c_9su6ich1uhmetr4ob3sij6kaqs@group.calendar.google.com) as well which has relevant dates.
 
@@ -33,7 +33,7 @@ You can add the [Celo Signal public calendar](https://calendar.google.com/calend
 
 :::info
 
-Code you'll see on this page is bash commands and their output.
+The code you'll see on this page is bash commands and their output.
 
 When you see text in angle brackets &lt;&gt;, replace them and the text inside with your own value of what it refers to. Don't include the &lt;&gt; in the command.
 
@@ -41,7 +41,7 @@ When you see text in angle brackets &lt;&gt;, replace them and the text inside w
 
 ## Celo Networks
 
-First we are going to setup the environment variables required for `Alfajores` network. Run:
+First, we are going to setup the environment variables required for `Alfajores` network. Run:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:alfajores
@@ -76,9 +76,9 @@ Run the command to create a new account:
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
 ```
 
-It will prompt you for a passphrase, ask you to confirm it, and then will output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
+It will prompt you for a passphrase, ask you to confirm it, and then output your account address: `Public address of the key: <YOUR-ACCOUNT-ADDRESS>`
 
-Save this address to an environment variables, so that you can reference it below (don't include the braces):
+Save this address to an environment variable, so that you can reference it below (don't include the braces):
 
 ```bash
 export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
@@ -108,7 +108,7 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Alfajores Network Stats](https://alfajores-celostats.celo-testnet.org/) or [Alfajores Block Explorer]](https://alfajores-blockscout.celo-testnet.org/) pages.
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Alfajores Network Stats](https://alfajores-celostats.celo-testnet.org/) or [Alfajores Block Explorer](https://alfajores-blockscout.celo-testnet.org/) pages.
 
 :::danger
 
@@ -128,7 +128,3 @@ true
 $ celocli account:new
 ...
 ```
-
-## Light Client Serving
-
-Light clients may connect to you as people run the [Celo Mobile Wallet](/wallet/mobile-wallet/setup). The `light.serve` parameter defines the percentage of time this node should spend serving light clients. Valid values are 0-100. If this node is having trouble catching up to the current block, dropping this to a lower percentage may help. The `light.maxpeers` and `maxpeers` parameters set limits on the number of light clients and full node peers that the node will accept.

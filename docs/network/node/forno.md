@@ -15,7 +15,7 @@ Forno is a cLabs hosted node service for interacting with the Celo network. This
 
 :::tip
 
-Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using [Figment Datahub](/developer/tools#figment-datahub) or [Quicknode](/developer/tools#quicknode).
+Forno does not offer a terms of service and there are no guarantees about service uptime. For production applications, consider using or [Quicknode](/developer/tools#quicknode).
 
 :::
 
@@ -59,12 +59,6 @@ Websocket support:
 
 ```bash
 wss://alfajores-forno.celo-testnet.org/ws
-```
-
-### Baklava Testnet
-
-```
-https://baklava-forno.celo-testnet.org
 ```
 
 ### Websocket connections & Event listeners
