@@ -1,6 +1,6 @@
 ---
 title: Celo EVM Compatible Tooling
-description: Overview of Celo EVM compatible tools and the value they provide to developers.
+description: Overview of Celo EVM-compatible tools and the value they provide to developers.
 ---
 
 # Developer Tools
@@ -37,7 +37,6 @@ A guide to available tools, components, patterns, and platforms for developing a
 
 - [thirdweb](https://portal.thirdweb.com/solidity) - Provides the tools needed to build custom smart contracts efficiently by offering a set of prebuilt base contracts and a set of reusable components, or extensions, that can be integrated into your own smart contracts.
 - [Hardhat](https://hardhat.org/) - Flexible, extensible and fast Ethereum development environment.
-- [Brownie](https://github.com/iamdefinitelyahuman/brownie) - Brownie is a Python framework for deploying, testing and interacting with Ethereum smart contracts.
 - [Embark](https://github.com/embark-framework/embark) - Framework for DApp development
 - [Dapp](https://dapp.tools/dapp/) - Framework for DApp development, successor to DApple
 - [Etherlime](https://github.com/LimeChain/etherlime) - ethers.js based framework for Dapp deployment
@@ -147,7 +146,7 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [KEthereum](https://github.com/komputing/KEthereum) - Kotlin Web3
 - [Eventeum](https://github.com/ConsenSys/eventeum) - A bridge between Ethereum smart contract events and backend microservices, written in Java by Kauri
 - [Ethereumex](https://github.com/mana-ethereum/ethereumex) - Elixir JSON-RPC client for the Ethereum blockchain
-- [Ethereum-jsonrpc-gateway](https://github.com/HydroProtocol/ethereum-jsonrpc-gateway) - A gateway that allows you to run multiple Ethereum nodes for redundancy and load-balancing purposes. Can be ran as an alternative to (or on top of) Infura. Written in Golang.
+- [Ethereum-jsonrpc-gateway](https://github.com/HydroProtocol/ethereum-jsonrpc-gateway) - A gateway that allows you to run multiple Ethereum nodes for redundancy and load-balancing purposes. Can be run as an alternative to (or on top of) Infura. Written in Golang.
 - [EthContract](https://github.com/AgileAlpha/eth_contract) - A set of helper methods to help query ETH smart contracts in Elixir
 - [Ethereum Contract Service](https://github.com/mesg-foundation/service-ethereum-contract) - A MESG Service to interact with any Ethereum contract based on its address and ABI.
 - [Ethereum Service](https://github.com/mesg-foundation/service-ethereum) - A MESG Service to interact with events from Ethereum and interact with it.
@@ -436,11 +435,11 @@ A guide to available tools, components, patterns, and platforms for developing a
 - [ui.decentraland.org](https://github.com/decentraland/ui) - A React library including Dapp components
 - [dapparatus](https://github.com/austintgriffith/dapparatus) - Reusable React Dapp components
 - [Metamask ui](https://github.com/MetaMask/metamask-extension/tree/develop/ui/app/components) - Metamask React Components
-- [DappHybrid](https://github.com/Nethereum/Nethereum.DappHybrid) - A cross-platform hybrid hosting mechanism for web based decentralised applications
+- [DappHybrid](https://github.com/Nethereum/Nethereum.DappHybrid) - A cross-platform hybrid hosting mechanism for web-based decentralized applications
 - [Nethereum.UI.Desktop](https://github.com/Nethereum/Nethereum.UI.Desktop) - Cross-platform desktop wallet sample
 - [eth-button](https://eth-button.github.io/eth-button/) - Minimalist donation button
 - [Rimble Design System](https://rimble.consensys.design/) - Adaptable components and design standards for decentralized applications.
-- [3Box Plugins](https://docs.3box.io/build/plugins) - Drop in react components for social functionality. Including comments, profiles and messaging.
+- [3Box Plugins](https://docs.3box.io/build/plugins) - Drop in react components for social functionality. Including comments, profiles, and messaging.
 
 :::info
 
