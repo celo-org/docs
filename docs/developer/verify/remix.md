@@ -13,7 +13,7 @@ description: How to verify a Smart Contract on Celo using Remix
 
 :::tip
 
-The source code of the contract that you are verifying will need to be in Remix. Contracts deployed with Truffle, Hardhat, and other tools can also be verified using the Remix Sourcify plugin, but you will need to copy your contract source code into Remix first.
+The source code of the contract that you are verifying will need to be in Remix. Contracts deployed with Hardhat, and other tools can also be verified using the Remix Sourcify plugin, but you will need to copy your contract source code into Remix first.
 
 :::
 
