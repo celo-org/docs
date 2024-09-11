@@ -55,7 +55,7 @@ const ALFAJORES_PARAMS = {
 
 ## Adding Tokens \(e.g. cUSD, cEUR\)
 
-To watch an asset on a Celo netowork \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)\).
+To watch an asset on a Celo network \(e.g. cUSD, cEUR\) in your dApp, you can use MetaMask's RPC API's `wallet_watchAsset` method. \([See documentation](https://docs.metamask.io/guide/rpc-api.html#wallet-watchasset)\).
 
 Here is a JavaScript snippet you can use:
 
