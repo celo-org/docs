@@ -1,71 +1,80 @@
 ---
-title: Rainbowkit-celo
-description: Overview of Rainbowkit-celo
+title: Rainbowkit
+description: Overview of Rainbowkit 
 ---
 
-# Rainbowkit-celo
+# Rainbowkit (celo example)
 
-Overview of Rainbowkit-celo
+Overview of Rainbowkit 
 
 ---
 
 ## Rainbowkit-celo
 
-RainbowKit is a React library that makes it easy to add wallet connection to your dapp. It's intuitive, responsive and customizable.
+RainbowKit is a React library that makes it easy to add wallet connection to your dapp. It's intuitive, responsive and customizable. And Supports some of the best wallets on Celo.
 
-On top of that, we at Celo developed a plugin to help rainbowkit developers support the CELO protocol faster. It includes the chain information as well as the main CELO wallets (currently Valora, Celo Wallet, and Celo Terminal).
-
-- [Github repo](https://github.com/celo-org/rainbowkit-celo)
-- [Demo page](https://rainbowkit-with-celo.vercel.app/)
 
 ## Installation
 
 ```sh
-npm install @celo/rainbowkit-celo
+npm install @rainbow-me/rainbowkit@2 viem@2 wagmi@2
 ```
 
-This package has `@rainbow-me/rainbowkit` as a peer dependency and expect it to be installed too. Follow [their instructions](https://www.rainbowkit.com/docs/installation) if that's not done yet.
-
-## Usage
+## Example Config
 
 ```ts
+import '@rainbow-me/rainbowkit/styles.css';
 import {
-  connectorsForWallets,
+  braveWallet,
+  coinbaseWallet,
+  injectedWallet,
+  safeWallet,
+  valoraWallet,
+  walletConnectWallet,
+} from '@rainbow-me/rainbowkit/wallets';
+
+import {
   RainbowKitProvider,
-  wallet,
-} from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+  darkTheme,
+  getDefaultConfig,
+  lightTheme,
+} from '@rainbow-me/rainbowkit';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { WagmiProvider, http } from 'wagmi';
+import { celo, celoAlfajores } from 'wagmi/chains';
 
-// Import known recommended wallets
-import { Valora, CeloWallet, CeloDance } from "@celo/rainbowkit-celo/wallets";
+import { WALLET_CONNECT_PROJECT_ID } from 'src/config/consts';
 
-// Import CELO chain information
-import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
+const queryClient = new QueryClient();
 
-const { chains, provider } = configureChains(
-  [Alfajores, Celo],
-  [jsonRpcProvider({ rpc: (chain) => ({ http: chain.rpcUrls.default }) })]
-);
-
-const connectors = connectorsForWallets([
-  {
-    groupName: "Recommended with CELO",
-    wallets: [
-      Valora({ chains }),
-      CeloWallet({ chains }),
-      CeloDance({ chains }),
-      wallet.steak({ chains }),
-      wallet.walletConnect({ chains }),
-    ],
+const config = getDefaultConfig({
+  appName: 'Staked Celo',
+  projectId: WALLET_CONNECT_PROJECT_ID,
+  chains: [celo, celoAlfajores],
+  wallets: [
+    {
+      groupName: 'Recommended',
+      wallets: [safeWallet, valoraWallet, braveWallet, coinbaseWallet],
+    },
+    {
+      groupName: 'Fallbacks',
+      wallets: [walletConnectWallet, injectedWallet],
+    },
+  ],
+  transports: {
+    [celo.id]: http(),
+    [celoAlfajores.id]: http(),
   },
-]);
-
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
 });
-
-// ... Your exisiting app.
+function App() {
+  return (
+      <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            <RainbowKitProvider>
+              Your APP Here
+            </RainbowKitProvider>
+          </QueryClientProvider>
+        </WagmiProvider>
+  )
+}
 ```
