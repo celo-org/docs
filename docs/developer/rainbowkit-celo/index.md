@@ -48,7 +48,7 @@ import { WALLET_CONNECT_PROJECT_ID } from 'src/config/consts';
 const queryClient = new QueryClient();
 
 const config = getDefaultConfig({
-  appName: 'Staked Celo',
+  appName: 'Your App Name',
   projectId: WALLET_CONNECT_PROJECT_ID,
   chains: [celo, celoAlfajores],
   wallets: [
