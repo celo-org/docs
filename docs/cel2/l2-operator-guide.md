@@ -10,11 +10,11 @@ description: How to migrate Celo nodes from L1 to L2
 The information in this guide is subject to change.
 :::
 
-In the Celo L2 transition we are planning to migrate the historical Celo data into the Celo L2 node so that all blocks, transactions, logs and receipts will be accessible within the Celo L2 node.
+In the Celo L2 transition we are migrating the historical Celo data into the Celo L2 node so that all blocks, transactions, logs and receipts are accessible within the Celo L2 node.
 
-At the transition point operators will need to shut down their Celo nodes and run a migration script on the datadir to convert it to a form that can be run with a Celo L2 node. Then the Celo L2 node can be run with the converted datadir. Operators that wish to full sync or run an archive node will need to start from a migrated datadir, because archive or full sync nodes will require the full state at the transition point in order to continue applying transactions. Otherwise operators will be able to start a Celo L2 node and snap sync without a migrated datadir.
+At the transition point, operators need to shut down their Celo nodes and run a migration script on the datadir to convert it to a form that can be run with a Celo L2 node. Then, the Celo L2 node can be run with the converted datadir. Operators that wish to full sync or run an archive node need to start from a migrated datadir, because archive or full sync nodes require the full state at the transition point in order to continue applying transactions. Otherwise, operators are able to start a Celo L2 node and snap sync without a migrated datadir.
 
-In order to simplify the task of maintaining the Celo L2 node we are planning to not include any old execution logic in Celo L2, however RPC calls that invoke execution for pre-transition blocks will still be supported by proxying from the Celo L2 node to an archive Celo node. So operators that wish to run full archive nodes will now need to run both a Celo node and a Celo L2 node, and since the Celo L2 node does include the full chain history those operators will need to start with roughly double the storage they currently require for an archive Celo node.
+In order to simplify the task of maintaining the Celo L2 node, we are not including any old execution logic in Celo L2. However, RPC calls that invoke execution for pre-transition blocks are still supported by proxying from the Celo L2 node to an archive Celo node. So operators that wish to run full archive nodes now need to run both a Celo node and a Celo L2 node, and, since the Celo L2 node does include the full chain history, those operators need to start with roughly double the storage they currently require for an archive Celo node.
 
 ## Operation instructions
 
