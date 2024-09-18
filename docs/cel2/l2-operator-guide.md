@@ -280,7 +280,9 @@ Start the Celo L2 execution client with an empty datadir.
 
 </details>
 
-## Mainnet Migration Process Overview (WIP)
+<details>
+
+<summary>## Mainnet Migration Process Overview (WIP)</summary>
 
 Note this section is subject to change and intended for illustrative purposes only.
 
@@ -346,3 +348,5 @@ celo-migrate full  --old-db /path/to/old/datadir/chaindata --new-db /path/to/new
 
 - Start the l2 node using the migrated chaindata written to the new-db path.
 - Exact command is TBD. Right now we run both op-node and op-geth from source seperately and pass in a bunch of flags to each. We will provide a more user friendly way to start the entire node.
+
+</details>
