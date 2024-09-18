@@ -16,8 +16,10 @@ At the transition point, operators need to shut down their Celo nodes and run a 
 
 In order to simplify the task of maintaining the Celo L2 node, we are not including any old execution logic in Celo L2. However, RPC calls that invoke execution for pre-transition blocks are still supported by proxying from the Celo L2 node to an archive Celo node. So operators that wish to run full archive nodes now need to run both a Celo node and a Celo L2 node, and, since the Celo L2 node does include the full chain history, those operators need to start with roughly double the storage they currently require for an archive Celo node.
 
+## Alfajores to Dango 
+
 <details>
-  <summary>## Alfajores to Dango operation instructions</summary>
+  <summary>Operation instructions</summary>
 
 ### Running a fullnode on the Dango testnet (migration block - 24940101)
 
@@ -280,9 +282,9 @@ Start the Celo L2 execution client with an empty datadir.
 
 </details>
 
+## Mainnet Migration 
 <details>
-
-<summary>## Mainnet Migration Process Overview (WIP)</summary>
+<summary>Process Overview (WIP)</summary>
 
 Note this section is subject to change and intended for illustrative purposes only.
 
