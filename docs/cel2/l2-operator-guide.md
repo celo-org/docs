@@ -332,7 +332,7 @@ Where:
 
 ##### Full migration
 
-At block <TODO>, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+At block TODO, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
