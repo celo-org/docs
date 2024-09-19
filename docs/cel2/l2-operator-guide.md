@@ -354,7 +354,21 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --o
 cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
 ```
 
-3. Run the container (or the binary if prefered). You can use the following example as a reference.
+3. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using container or the binary if prefered. You can use the following example as a reference.
+
+```bash
+OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
+
+docker run -it \
+  --name op-geth-init \
+  -v ${OP_GETH_DIR}:/celo \
+  ${OP_GETH_IMAGE}
+  geth \
+    --datadir=/celo \
+    init /celo/genesis.json
+```
+
+4. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
@@ -392,7 +406,6 @@ docker run -d \
 
 #### Option 1: snap sync
 
-
 :::warning
 Snap sync will only work once Alfajores L2 is live.
 :::
@@ -417,22 +430,42 @@ tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DIR}
 
 #### Option 3: L1 chaindata migration
 
-L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. 
-**Pre-migration**
+L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
+For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block #TBD)
 
-TODO: download and build migration script from source?
+##### Pre-migration
 
-~48 hours before the migration block, node operators need to run a pre-migration script. This script migrates the majority of the chaindata in advance so that the full migration can quickly complete the migration on top of the latest state when the migration block is reached.
+The migration script is provided as docker image, but you can also review build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
+
+```bash
+git clone https://github.com/celo-org/optimism.git
+git checkout celo8
+cd ops-chain-ops
+make celo-migrate
+```
+
+~24-72 hours before the migration block, node operators can run a pre-migration script. This script migrates the majority of the chaindata in advance so that the full migration can quickly complete the migration on top of the latest state when the migration block is reached.
 
 1. Create a snapshot of the node's chaindata directory. This is a subdirectory of the node's datadir.
     - Do not run the migration script on a datadir that is actively being used by a node.
-    - In order to ensure liveness of the network, please do not stop your node to perform the migration.
     - Make sure you have at least enough disk space to store double the size of the snapshot. As you will be storing both the old and new (migrated) chaindata.
-2. Run the pre-migration script.
+2. Run the pre-migration script. Using the docker image, you can use the next command as a reference:
+
+:::danger
+Do not run the migration script on a datadir that is actively being used by a node even if it has stopped adding blocks.
+:::
 
 ```bash
-celo-migrate pre --old-db /path/to/old/datadir/chaindata --new-db /path/to/new/datadir/chaindata
+CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8
+
+docker run -it --rm \
+  -v /path/to/old/datadir/chaindata:/old-db \
+  -v /path/to/new/datadir/chaindata:/new-db \
+  ${CEL2_MIGRATION_IMAGE} \
+  celo-migrate pre --old-db /old-db --new-db /new-db
 ```
+
+Where:
 
 - `old-db` should be the path to the chaindata snapshot.
 - `new-db` should be the path where you want the l2 chaindata to be written.
@@ -440,123 +473,58 @@ celo-migrate pre --old-db /path/to/old/datadir/chaindata --new-db /path/to/new/d
 - Ensure the pre-migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance: TODO(discord)
 - Keep the `new-db` as is until the full migration script is run. If this data is corrupted or lost, the full migration may fail or take a very long time to complete.
 
-**Full migration**
+##### Full migration
 
-Your node will stop adding blocks immediately before the block passed as `--l2migrationblock`. That is, the last block added will be `l2migrationblock - 1`, and the first block of the l2 will `l2migrationblock`. When your node stops adding blocks, you may shut it down.
-
-:::danger
-
-Do not run the migration script on a datadir that is actively being used by a node even if it has stopped adding blocks.
-
-:::
-
-1. Run the full migration script
+At block #TBD, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need also some additional files, as the script will generate the L2 chain configuration and genesis files.
 
 ```bash
-celo-migrate full \
-  --old-db /path/to/old/datadir/chaindata \
-  --new-db /path/to/new/datadir/chaindata \
-  --deploy-config /path/to/deploy-config.json \
-  --l1-deployments /path/to/l1-deployments.json \
-  --l1-rpc <ETHEREUM_RPC_URL> \
-  --l2-allocs /path/to/l2-allocs.json \
-  --outfile.rollup-config /path/to/rollup-config.json \
-  --outfile.genesis /path/to/genesis.json
+CEL2_MIGRATION_DIR=/tmp/alfajores/cel2-migration-tool
+
+mkdir -p ${CEL2_MIGRATION_DIR}
+wget -O ${CEL2_MIGRATION_DIR}/config.json https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json
+wget -O ${CEL2_MIGRATION_DIR}/deployment-l1.json https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json
+wget -O ${CEL2_MIGRATION_DIR}/l2-allocs.json https://storage.googleapis.com/cel2-rollup-files/alfajores/l2-allocs.json
 ```
 
-- `old-db` should be the path to the chaindata snapshot or the chaindata of your stopped node.
-- `new-db` should be the path where you want the l2 chaindata to be written. This should be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
-- `deploy-config` should be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
-- `l1-deployments` should be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
-- `l1-rpc` should be the rpc url of the L1 node.
-- `l2-allocs` should be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
-- `outfile.rollup-config` should be the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the l2 node.
-- `outfile.genesis` should be the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
+Now we can run the migration script. Remember to stop your node (geth) before running it:
 
-- Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
+```bash
+CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8
 
-**Start L2 Node**
+docker run -it --rm \
+  -v /path/to/old/datadir/chaindata:/old-db \
+  -v /path/to/new/datadir/chaindata:/new-db \
+  -v ${CEL2_MIGRATION_DIR}:/migration-files \
+  ${CEL2_MIGRATION_IMAGE} \
+  celo-migrate full \
+    --old-db /path/to/old/datadir/chaindata \
+    --new-db /path/to/new/datadir/chaindata \
+    --deploy-config /migration-files/config.json \
+    --l1-deployments /migration-files/deployment-l1.json \
+    --l2-allocs /path/to/l2-allocs.json \
+    --l1-rpc https://ethereum-holesky-rpc.publicnode.com \
+    --outfile.rollup-config /path/to/rollup.json \
+    --outfile.genesis /path/to/genesis.json
+```
 
-- Start the l2 node using the migrated chaindata written to the new-db path.
-- TODO Exact command is TBD. Right now we run both op-node and op-geth from source seperately and pass in a bunch of flags to each. We will provide a more user friendly way to start the entire node.
+- `old-db` must be the path to the chaindata snapshot or the chaindata of your stopped node.
+- `new-db` must be the path where you want the l2 chaindata to be written. This must be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
+- `deploy-config` must be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
+- `l1-deployments` must be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
+- `l1-rpc` must be the rpc url of the L1 node. For alfajores it must be a [Holesky endpoint](https://chainlist.org/chain/17000). Feel free to use any other endpoint that you trust.
+- `l2-allocs` must be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
+- `outfile.rollup-config` is the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the l2 node.
+- `outfile.genesis` is the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
 
-## Mainnet Migration 
+Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
+
+##### Start your L2 Node
+
+Now that we have the migrated chaindata, we can start our L2 node using it. The process will be similar to the one described for [Option 2: download L1 chaindata and get started](TODO), but here you can use your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
+
+## Mainnet Migration
 <details>
 <summary>Process Overview (WIP)</summary>
 
-Note this section is subject to change and intended for illustrative purposes only.
-
-### Stopping the L1 Celo network
-
-A new version of `celo-blockchain` will be released that allows the flag`--l2migrationbock` to be passed, specifying the block number of the first L2 block (i.e. the block immediately after the last block of the Celo network as an L1). Nodes ran with this flag will stop producing, inserting and sharing blocks when the block number before `--l2migrationblock` is inserted.
-
-When this version of `celo-blockchain` is released and a migration block number has been chosen, node operators will be asked to upgrade and pass in the correct block number when restarting their node.
-
-### Starting an L2 node
-
-As is detailed in other parts of this guide, node operators who wish to run an L2 node will have two options.
-
-1. Perform a migration of the l1 chaindata. This option is required for nodes running in full or archive mode and is a more involved process.
-2. Start an L2 node with snap sync. This option does not require running the migration script.
-
-The rest of this section applies only to option 1.
-
-### Pre-migration
-
-~48 hours before the migration block, node operators will need to run a pre-migration script. This script migrates the majority of the chaindata in advance so that the full migration can quickly complete the migration on top of the latest state when the migration block is reached. (Method of distributing the migration script is TBD, right now we build and run from source).
-
-1. Create a snapshot of the node's chaindata directory. This is a subdirectory of the node's datadir.
-    - Do not run the migration script on a datadir that is actively being used by a node.
-    - In order to ensure liveness of the network, please do not stop your node to perform the migration.
-    - Make sure you have at least enough disk space to store double the size of the snapshot. As you will be storing both the old and new (migrated) chaindata.
-2. Run the pre-migration script.
-
-```bash
-celo-migrate pre \
-  --old-db /path/to/old/datadir/chaindata \
-  --new-db /path/to/new/datadir/chaindata
-```
-
-- `old-db` should be the path to the chaindata snapshot.
-- `new-db` should be the path where you want the l2 chaindata to be written.
-- Please run the pre-migration script at least 24 hours before the migration block so that there is time to trouble shoot any issues.
-- Ensure the pre-migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
-- Keep the `new-db` as is until the full migration script is run. If this data is corrupted or lost, the full migration may fail or take a very long time to complete.
-
-### Full migration
-
-Your node will stop adding blocks immediately before the block passed as `--l2migrationblock`. That is, the last block added will be `l2migrationblock - 1`, and the first block of the l2 will `l2migrationblock`. When your node stops adding blocks, you may shut it down.
-
-NOTE: Do not run the migration script on a datadir that is actively being used by a node even if it has stopped adding blocks.
-
-1. Run the full migration script
-
-```bash
-celo-migrate full \
-  --old-db /path/to/old/datadir/chaindata \
-  --new-db /path/to/new/datadir/chaindata \
-  --deploy-config /path/to/deploy-config.json \
-  --l1-deployments /path/to/l1-deployments.json \
-  --l1-rpc <ETHEREUM_RPC_URL> \
-  --l2-allocs /path/to/l2-allocs.json \
-  --outfile.rollup-config /path/to/rollup-config.json \
-  --outfile.genesis /path/to/genesis.json
-```
-
-- `old-db` should be the path to the chaindata snapshot or the chaindata of your stopped node.
-- `new-db` should be the path where you want the l2 chaindata to be written. This should be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
-- `deploy-config` should be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
-- `l1-deployments` should be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
-- `l1-rpc` should be the rpc url of the L1 network. For alfajores it must be a [Holesky endpoint](https://chainlist.org/chain/17000).
-- `l2-allocs` should be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
-- `outfile.rollup-config` should be the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the l2 node.
-- `outfile.genesis` should be the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
-
-- Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
-
-### Start L2 Node
-
-- Start the l2 node using the migrated chaindata written to the new-db path.
-- Exact command is TBD. Right now we run both op-node and op-geth from source seperately and pass in a bunch of flags to each. We will provide a more user friendly way to start the entire node.
-
+Celo Mainnet is still in the process of migrating to L2. The process will be similar to the Alfajores migration, but it may have some differences. Use the Alfajores migration as a reference, and stay tuned for updates on the Mainnet migration process.
 </details>
