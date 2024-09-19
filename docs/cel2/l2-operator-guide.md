@@ -8,21 +8,34 @@ description: How to migrate Celo nodes from L1 to L2
 
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
-At the point of transition, operators must shut down their existing Celo L1 nodes.
-Those who _do not_ need a full sync can start a Celo L2 node and use snap sync right away. 
-Those who _do_ need a full sync have two options: use the migrated chaindata provided by cLabs or run a migration script on their own chaindata to convert it into a format compatible with the Celo L2 node.
-Archive or full sync nodes require the full state at the transition point in order to continue applying transactions.
+:::info
+Stay tuned for the alfajores migration block number and approximate date / time.
+:::
+
+Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
+
+When the block before `--l2migrationblock` is reached, node operators can start their l2 alfajores nodes.
+Those who _do not_ need a full sync can start a Celo L2 node and use snap sync right away.
+Those who _do_ need a full sync have two options: downlaod and use the migrated chaindata provided by cLabs or run a migration script on their own chaindata to convert it into a format compatible with the Celo L2 node.
 
 To simplify the management of the Celo L2 node, no legacy execution logic is included in Celo L2.
-However, RPC calls that invoke execution for pre-transition L1 blocks remain supported by proxying these requests from the Celo L2 node to an archive Celo L1 node.
-Therefore, operators looking to run full archive nodes now need to run both a Celo L1 node and a Celo L2 node.
-Since the Celo L2 node does include the full chain history, these operators will require approximately double the storage space currently needed for an archive Celo L1 node.
+However, RPC calls that require execution or state for pre-transition L1 blocks remain supported by proxying these requests from the Celo L2 node to a legacy Celo L1 node.
+Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
+Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
 ## Alfajores Migration
 
 :::warning
 The instructions below are not yet fully useable, as some values need to be set. They are marked as TODO.
 :::
+
+### Stopping an L2 Node
+
+If you are currently running an L1 Alfajores node, you should upgrade to the below version before the migration and add the `--l2migrationblock` flag when restarting.
+
+TODO: Stay tuned for specific docker image and migration block number
+
+This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1`.
 
 ### Starting an L2 node
 
@@ -36,11 +49,11 @@ Three components are required to run an L2 node:
 
 There are three options to get started, ranked by ease and the level of trust required:
 
-1. Start an L2 node with snap sync. This option does not require running the migration script.
-2. Start an L2 node with the provided L1 chaindata.
-3. Migrate the L1 chaindata manually.
+1. Start an L2 node with snap sync. This option does not require running the migration script or manually downloading chaindata.
+2. Download the migrated chaindata and start an L2 node in full or archive mode.
+3. Migrate the L1 chaindata yourself by running the migration script and start an L2 node in full or archive mode.
 
-Using snap sync offers a simpler and faster experience, but it cannot be used if you want to run an archive node. In that case, you will need to use an archive node snapshot or migrate your own archive data from an L1 node.
+Using snap sync offers a simpler and faster experience, but it cannot be used if you want to run in full or archive mode. In those cases, you will need to use a pre-migrated data snapshot or migrate your own data from an L1 node.
 
 #### Running EigenDA Proxy
 
@@ -182,7 +195,7 @@ git checkout celo8
 make geth
 ```
 
-1. Download the genesis file and the rollup config file. Also you need to copy the JWT secret generated in the previous step.
+1. If you are not running the migration script, download the genesis file and the rollup config file. These files are output from the migration script. Also you need to copy the JWT secret generated in the previous step.
 
 ```bash
 OP_GETH_DIR=/tmp/alfajores/op-geth
@@ -273,7 +286,7 @@ For the full migration step, you will need to wait until Alfajores L1 has stoppe
 
 ##### Pre-migration
 
-The migration script is provided as docker image, but you can also review build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
+The migration script is provided as a docker image, but you can also review and build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
 
 ```bash
 git clone https://github.com/celo-org/optimism.git
@@ -313,7 +326,9 @@ Where:
 
 ##### Full migration
 
-At block #TBD, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need also some additional files, as the script will generate the L2 chain configuration and genesis files.
+At block #TBD, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+
+You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
 ```bash
 CEL2_MIGRATION_DIR=/tmp/alfajores/cel2-migration-tool
