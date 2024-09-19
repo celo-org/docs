@@ -27,7 +27,7 @@ Since the Celo L2 node does still require the full pre-migration chain data, the
 The instructions below are not yet fully usable, as some values need to be set. They are marked as TODO.
 :::
 
-## Stopping an L2 Node
+## Stopping an L1 Node
 
 If you are currently running an L1 Alfajores node, you should upgrade to the below version before the migration and add the `--l2migrationblock` flag when restarting.
 
