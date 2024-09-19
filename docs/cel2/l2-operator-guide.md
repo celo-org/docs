@@ -9,8 +9,8 @@ description: How to migrate Celo nodes from L1 to L2
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 At the point of transition, operators must shut down their existing Celo L1 nodes.
-Thos who _do not_ need a full sync can start a Celo L2 node and use snap sync right away. 
-Those who _do_ need a full sync have two options: use the migrated datadir provided by cLabs or run a migration script on their own datadir to convert it into a format compatible with the Celo L2 node.
+Those who _do not_ need a full sync can start a Celo L2 node and use snap sync right away. 
+Those who _do_ need a full sync have two options: use the migrated chaindata provided by cLabs or run a migration script on their own chaindata to convert it into a format compatible with the Celo L2 node.
 Archive or full sync nodes require the full state at the transition point in order to continue applying transactions.
 
 To simplify the management of the Celo L2 node, no legacy execution logic is included in Celo L2.
@@ -21,12 +21,20 @@ Since the Celo L2 node does include the full chain history, these operators will
 ## Alfajores Migration
 
 :::warning
-The instructions below are not yet fully useable, as some values need to be set.
+The instructions below are not yet fully useable, as some values need to be set. They are marked as TODO.
 :::
 
 ### Starting an L2 node
 
-Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
+#### Overview
+
+Three components are required to run an L2 node:
+
+- op-geth: the execution layer
+- op-node: the consensus layer
+- [eigenda-proxy](https://github.com/Layr-Labs/eigenda-proxy/tree/main): proxy interface between EigenDA and the OP stack
+
+There are three options to get started, ranked by ease and the level of trust required:
 
 1. Start an L2 node with snap sync. This option does not require running the migration script.
 2. Start an L2 node with the provided L1 chaindata.
@@ -34,13 +42,24 @@ Node operators who wish to run an L2 node have three options, ranked by ease and
 
 Using snap sync offers a simpler and faster experience, but it cannot be used if you want to run an archive node. In that case, you will need to use an archive node snapshot or migrate your own archive data from an L1 node.
 
-Whichever option you choose for running your node, you will need to run an instance of [eigenda-proxy](https://github.com/Layr-Labs/eigenda-proxy/tree/main). This service acts as a proxy interface between EigenDA and the OP stack. Additionally, for all options, you will need to run op-node as the consensus client. The configuration for op-node remains almost the same regardless of the option chosen.
-
 #### Running EigenDA Proxy
 
+:::info
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
+:::
 
-If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
+If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy Helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
+
+To run the eigenda-proxy, you can use the container image: ghcr.io/layr-labs/eigenda-proxy:v1.4.1. Alternatively, you can clone the [Layr-Labs/eigenda-proxy repository](https://github.com/Layr-Labs/eigenda-proxy) and build the proxy:
+
+```bash
+git clone https://github.com/Layr-Labs/eigenda-proxy.git
+cd eigenda-proxy
+git checkout v1.2.0
+make
+
+# Binary available at ./bin/eigenda-proxy
+```
 
 1. First, you will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
 
@@ -60,7 +79,7 @@ else
 fi
 ```
 
-2. Now, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
+2. Now, we can run the eigenda-proxy container (or the binary if prefered). Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
 
 ```bash
 EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
@@ -84,22 +103,12 @@ docker run -d \
       --eigenda-max-blob-length=300MiB
 ```
 
-Alternatively, you can clone the repo and build the proxy:
-
-```bash
-git clone https://github.com/Layr-Labs/eigenda-proxy.git
-cd eigenda-proxy
-git checkout v1.2.0
-make
-
-# Binary available at ./bin/eigenda-proxy
-```
-
 #### Running op-node
 
-Op-node is not a resource-demanding service. As a general recommendation, we suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
+op-node is not a resource-demanding service. We suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
 
-1. To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
+To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8.
+Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
 
 ```bash
 git clone https://github.com/celo-org/optimism.git
@@ -108,7 +117,7 @@ git checkout celo8
 make op-node
 ```
 
-2. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
+1. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
 
 ```bash
 OP_NODE_DIR=/tmp/alfajores/op-node
@@ -118,7 +127,7 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --ou
 echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
 ```
 
-3. Run the container (or the binary if prefered). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
+2. Run the container (or the binary if prefered). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
 
 ```bash
 OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8
@@ -155,11 +164,16 @@ If you start op-node before op-geth, it will shut down after a few seconds if it
 
 #### Running op-geth
 
-Now, lets move on to the op-geth client. Op-geth will be the execution client for the L2 node. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements (you can use as additional reference [op-geth official documentation](https://docs.optimism.io/builders/node-operators/configuration/execution-config)).
+Now, lets move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
+
+:::info
+You can use the [official op-geth documentation](https://docs.optimism.io/builders/node-operators/configuration/execution-config) as an additional reference.
+:::
 
 Although there are multiple ways to run op-geth, all options will share most of the same configuration. We will cover how to run op-geth, in general, and then provide specific instructions for each of the three options.
 
-1. To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
+To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8.
+Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
 
 ```bash
 git clone https://github.com/celo-org/op-geth.git
@@ -168,7 +182,7 @@ git checkout celo8
 make geth
 ```
 
-2. Download the genesis file and the rollup config file. Also you need to copy the JWT secret generated in the previous step.
+1. Download the genesis file and the rollup config file. Also you need to copy the JWT secret generated in the previous step.
 
 ```bash
 OP_GETH_DIR=/tmp/alfajores/op-geth
@@ -178,7 +192,7 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --o
 cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
 ```
 
-3. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using container or the binary if prefered. You can use the following example as a reference.
+2. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using the container or the binary according to your preference. You can use the following example as a reference.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
@@ -192,7 +206,7 @@ docker run -it \
     init /celo/genesis.json
 ```
 
-4. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
+3. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
