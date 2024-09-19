@@ -16,12 +16,11 @@ At the transition point, operators need to shut down their Celo nodes and run a 
 
 In order to simplify the task of maintaining the Celo L2 node, we are not including any old execution logic in Celo L2. However, RPC calls that invoke execution for pre-transition blocks are still supported by proxying from the Celo L2 node to an archive Celo node. So operators that wish to run full archive nodes now need to run both a Celo node and a Celo L2 node, and, since the Celo L2 node does include the full chain history, those operators need to start with roughly double the storage they currently require for an archive Celo node.
 
-## Alfajores to Dango 
 
 <details>
   <summary>Operation instructions</summary>
 
-### Running a fullnode on the Dango testnet (migration block - 24940101)
+### Running a fullnode on the Dango testnet (migration block - 24940101) # TODO: Remove
 
 The new node consists of 3 services op-geth (the execution client), op-node (the consensus client) and the eigenda-proxy (provides offchain data availability).
 The op-node service connects to a p2p network of other op-node instances through which the sequencer distributes new blocks, it also has a direct connection to its op-geth instance to which it forwards received blocks for execution and, finally, it connects to the eigenda-proxy which acts as a gateway to the data availability layer.
@@ -73,7 +72,6 @@ make geth
 
 Run op-geth (note `--datadir` flag needs replacing with actual path to datadir):
 
-
 ```bash
 ./build/bin/geth \
   --datadir=<your-datadir-path> \
@@ -96,92 +94,6 @@ Run op-geth (note `--datadir` flag needs replacing with actual path to datadir):
   --rollup.halt=major \
   --bootnodes="" \
   --nodiscover
-```
-
-#### Running eigenda-proxy
-
-Clone the repo and build the proxy:
-
-```bash
-git clone https://github.com/Layr-Labs/eigenda-proxy.git
-cd eigenda-proxy
-git checkout v1.2.0
-make
-```
-
-Download and validate required g1 files (these files are part of the eigenda kzg trusted setup), see [https://github.com/Layr-Labs/rust-kzg-bn254](https://github.com/Layr-Labs/rust-kzg-bn254):
-
-```bash
-mkdir eigenda-resources
-( cd eigenda-resources
-wget \
-https://srs-mainnet.s3.amazonaws.com/kzg/g1.point \
-https://srs-mainnet.s3.amazonaws.com/kzg/g2.point.powerOf2 \
-https://raw.githubusercontent.com/Layr-Labs/eigenda-operator-setup/master/resources/srssha256sums.txt
-sha256sum -c srssha256sums.txt )
-```
-
-Generate a private key for your eigenda proxy instance; you will need `cast` (part of `foundry`) and `jq` for this, see [Install Foundry](https://book.getfoundry.sh/getting-started/installation) & [Download jq](https://jqlang.github.io/jq/download/):
-
-```bash
-cast wallet new -j | jq -r '.[0].private_key' | tail -c 3 > eigenda-priv-key.txt
-```
-
-Run the proxy:
-
-```bash
-./bin/eigenda-proxy \
-  --addr=0.0.0.0 \
-  --port=4242 \
-  --eigenda-disperser-rpc=disperser-holesky.eigenda.xyz:443 \
-  --eigenda-g1-path=eigenda-resources/g1.point \
-  --eigenda-g2-tau-path=eigenda-resources/g2.point.powerOf2 \
-  --eigenda-disable-tls=false \
-  --eigenda-signer-private-key-hex `cat eigenda-priv-key.txt`
-```
-
-#### Running op-node
-
-Clone the celo optimism repo and build op-node:
-
-```bash
-git clone https://github.com/celo-org/optimism.git
-cd optimism/op-node
-git checkout 42f2a5bbb7218c0828a996c48ad6bceb1e5f561a
-make op-node
-```
-
-Download the rollup config file:
-
-```bash
-wget https://storage.googleapis.com/cel2-rollup-files/dango/rollup.json
-```
-
-Run op-node (note `--l2.jwt-secret` flag needs updating with the path to your op-geth datadir):
-
-```bash
-./bin/op-node \
-  --l1=https://ethereum-holesky-rpc.publicnode.com \
-  --l1.beacon=https://ethereum-holesky-beacon-api.publicnode.com \
-  --l1.trustrpc=true \
-  --l2=http://localhost:8551 \
-  --l2.jwt-secret=<your-datdair-path>/geth/jwtsecret \
-  --rollup.load-protocol-versions=true \
-  --rollup.config=rollup.json \
-  --verifier.l1-confs=4 \
-  --p2p.advertise.ip 127.0.0.1 \
-  --p2p.listen.tcp=9222 \
-  --p2p.listen.udp=9222 \
-  --p2p.priv.path=op-node_p2p_priv.txt \
-  --p2p.static=\
-/ip4/34.19.9.48/tcp/9222/p2p/16Uiu2HAmM4Waw3Qmw9eFjvLbPzNUSaNvdD91RzodwxDzTXCM3Rp1,\
-/ip4/34.83.14.89/tcp/9222/p2p/16Uiu2HAkwGzuYEzVY7CXoN44BnfUiZWe92TMU1dJesbAi4CYGQFS,\
-/ip4/34.19.27.0/tcp/9222/p2p/16Uiu2HAmSf7FE4FXCy6ks5VPjX2Vdo21N9H3PQk7H7T8HbDMqEB8,\
-/ip4/34.82.212.175/tcp/9222/p2p/16Uiu2HAm2xo9mPhbMW9eAzjLMjp6JFEa1gijWu2CsBpWEqVWh7Kg \
-  --plasma.enabled=true \
-  --plasma.da-server=http://127.0.0.1:4242 \
-  --plasma.da-service=true \
-  --plasma.verify-on-read=false
 ```
 
 ### Migrating the L1 data (for illustrative and testing purposes)
@@ -290,29 +202,148 @@ The instructions below are not yet fully useable, as some values need to be set.
 
 :::
 
+### Starting an L2 node
+
+Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
+
+1. Start an L2 node with snap sync. This option does not require running the migration script.
+2. Start an L2 node with the provided L1 chaindata.
+3. Migrate the L1 chaindata manually.
+
+Using snap sync offers a simpler and faster experience, but it cannot be used if you want to run an archive node. In that case, you will need to use an archive node snapshot or migrate your own archive data from an L1 node.
+
+Whichever option you choose for running your node, you will need to run an instance of [eigenda-proxy](https://github.com/Layr-Labs/eigenda-proxy/tree/main). This service acts as a proxy interface between EigenDA and the OP stack. Additionally, for all options, you will need to run op-node as the consensus client. The configuration for op-node remains almost the same regardless of the option chosen.
+
+#### Running EigenDA Proxy
+
+These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
+
+If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
+
+1. First, you will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
+
+```bash
+EIGENDA_KZG_PROXY_DIR=/tmp/alfajores/eigenda-proxy/kzg
+mkdir -p ${EIGENDA_KZG_PROXY_DIR}
+
+[ ! -f ${EIGENDA_KZG_PROXY_DIR}/g1.point ] && wget https://srs-mainnet.s3.amazonaws.com/kzg/g1.point --output-document=${EIGENDA_KZG_PROXY_DIR}/g1.point
+[ ! -f ${EIGENDA_KZG_PROXY_DIR}/g2.point.powerOf2 ] && wget https://srs-mainnet.s3.amazonaws.com/kzg/g2.point.powerOf2 --output-document=${EIGENDA_KZG_PROXY_DIR}/g2.point.powerOf2
+
+wget https://raw.githubusercontent.com/Layr-Labs/eigenda-operator-setup/master/resources/srssha256sums.txt --output-document=${EIGENDA_KZG_PROXY_DIR}/srssha256sums.txt
+if (cd ${EIGENDA_KZG_PROXY_DIR} && sha256sum -c srssha256sums.txt); then
+  echo "Checksums match. Verification successful."
+else
+  echo "Error: Checksums do not match. Please delete this folder and try again."
+  exit 1
+fi
+```
+
+2. Now, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
+
+```bash
+EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
+
+docker run -d \
+  --name eigenda-proxy \
+  -v ${EIGENDA_KZG_PROXY_DIR}:/data \
+  --network=host \
+  ${EIGENDA_IMAGE} \
+    /app/eigenda-proxy \
+      --addr=0.0.0.0 \
+      --port=4242 \
+      --eigenda-disperser-rpc=disperser-holesky.eigenda.xyz:443 \
+      --eigenda-eth-rpc=https://ethereum-holesky-rpc.publicnode.com \
+      --eigenda-svc-manager-addr=0xD4A7E1Bd8015057293f0D0A557088c286942e84b \
+      --eigenda-status-query-timeout=45m \
+      --eigenda-g1-path=/data/g1.point \
+      --eigenda-g2-tau-path=/data/g2.point.powerOf2 \
+      --eigenda-disable-tls=false \
+      --eigenda-eth-confirmation-depth=1 \
+      --eigenda-max-blob-length=300MiB
+```
+
+Alternatively, you can clone the repo and build the proxy:
+
+```bash
+git clone https://github.com/Layr-Labs/eigenda-proxy.git
+cd eigenda-proxy
+git checkout v1.2.0
+make
+
+# Binary available at ./bin/eigenda-proxy
+```
+
+#### Running op-node
+
+Op-node is not a resource-demanding service. As a general recommendation, we suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
+
+1. To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8. Alternatively, you can clone the Celo Optimism repo and build op-node from source:
+
+```bash
+git clone https://github.com/celo-org/optimism.git
+cd optimism/op-node
+git checkout celo8
+make op-node
+```
+
+2. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
+
+```bash
+OP_NODE_DIR=/tmp/alfajores/op-node
+mkdir -p ${OP_NODE_DIR}
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --output-document=${OP_NODE_DIR}/rollup.json
+
+JWT_SECRET=$(openssl rand -hex 32)
+echo ${JWT_SECRET} > ${OP_NODE_DIR}/jwt.txt
+```
+
+If you're using snap sync mode, you need to add the flag --syncmode=consensus-layer.
+
+```bash
+OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8
+
+docker run -d \
+  --name op-node \
+  --network=host \
+  -v ${OP_NODE_DIR}:/data \
+  ${OP_NODE_IMAGE}
+  op-node \
+    --l1.trustrpc=true \
+    --l1=https://ethereum-holesky-rpc.publicnode.com \
+    --l1.beacon=https://ethereum-holesky-beacon-api.publicnode.com \
+    --l2=http://localhost:8551 \
+    --l2.jwt-secret=/data/jwt.txt \
+    --rollup.load-protocol-versions=true \
+    --rollup.config=/data/rollup.json \
+    --verifier.l1-confs=4 \
+    --rpc.addr=127.0.0.1 \
+    --rpc.port=9545 \
+    --p2p.listen.tcp=9222 \
+    --p2p.listen.udp=9222 \
+    --p2p.priv.path=/data/op-node_p2p_priv.txt \
+    --p2p.static=\
+    <TODO>
+    --altda.enabled=true \
+    --altda.da-server=http://localhost:4242 \
+    --altda.da-service=true \
+    --altda.verify-on-read=false \
+```
+
+Now, depending on your preferred option, the next section will vary.
+
+#### Option 1: snap sync
+
+<TODO>
+
 ### Stopping the L1 Celo network
 
 From version TODO of `celo-blockchain` onwards, passing the flag `--l2migrationblock` specifies the block number of the first L2 block (i.e. the block immediately after the last block of the Celo network as an L1). Nodes ran with this flag will stop producing, inserting and sharing blocks when the block number before `--l2migrationblock` is inserted.
 
 Upgrade your node and restart with the flag `--l2migrationblock` set to block TODO.
 
-### Starting an L2 node
-
-TODO: correct ordering of op-node, op-geth, eigeda-proxy
-
-Node operators who wish to run an L2 node have 3 options, ranked by ease and level of trust required.
-
-1. Start an L2 node with snap sync. This option does not require running the migration script.
-2. Start an L2 node with provided L1 chaindata.
-3. Perform a migration of the L1 chaindata.
-
-Options 2 or 3 are required for nodes running in full or archive mode.
-
-The rest of this section applies only to option 3.
-
 #### Option 1: snap sync
 
-TODO
+
 
 #### Option 2: download L1 chaindata and get started
 
@@ -357,14 +388,22 @@ Do not run the migration script on a datadir that is actively being used by a no
 1. Run the full migration script
 
 ```bash
-celo-migrate full  --old-db /path/to/old/datadir/chaindata --new-db /path/to/new/datadir/chaindata --deploy-config /path/to/deploy-config.json --l1-deployments /path/to/l1-deployments.json --l1-rpc <ETHEREUM_RPC_URL> --l2-allocs /path/to/l2-allocs.json --outfile.rollup-config /path/to/rollup-config.json --outfile.genesis /path/to/genesis.json
+celo-migrate full \
+  --old-db /path/to/old/datadir/chaindata \
+  --new-db /path/to/new/datadir/chaindata \
+  --deploy-config /path/to/deploy-config.json \
+  --l1-deployments /path/to/l1-deployments.json \
+  --l1-rpc <ETHEREUM_RPC_URL> \
+  --l2-allocs /path/to/l2-allocs.json \
+  --outfile.rollup-config /path/to/rollup-config.json \
+  --outfile.genesis /path/to/genesis.json
 ```
 
 - `old-db` should be the path to the chaindata snapshot or the chaindata of your stopped node.
 - `new-db` should be the path where you want the l2 chaindata to be written. This should be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
 - `deploy-config` should be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
 - `l1-deployments` should be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
-- `l1-rpc` should be the rpc url of an l1 (i.e. Ethereum) node.
+- `l1-rpc` should be the rpc url of the L1 node.
 - `l2-allocs` should be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
 - `outfile.rollup-config` should be the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the l2 node.
 - `outfile.genesis` should be the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
@@ -408,7 +447,9 @@ The rest of this section applies only to option 1.
 2. Run the pre-migration script.
 
 ```bash
-celo-migrate pre --old-db /path/to/old/datadir/chaindata --new-db /path/to/new/datadir/chaindata
+celo-migrate pre \
+  --old-db /path/to/old/datadir/chaindata \
+  --new-db /path/to/new/datadir/chaindata
 ```
 
 - `old-db` should be the path to the chaindata snapshot.
@@ -426,14 +467,22 @@ NOTE: Do not run the migration script on a datadir that is actively being used b
 1. Run the full migration script
 
 ```bash
-celo-migrate full  --old-db /path/to/old/datadir/chaindata --new-db /path/to/new/datadir/chaindata --deploy-config /path/to/deploy-config.json --l1-deployments /path/to/l1-deployments.json --l1-rpc <ETHEREUM_RPC_URL> --l2-allocs /path/to/l2-allocs.json --outfile.rollup-config /path/to/rollup-config.json --outfile.genesis /path/to/genesis.json
+celo-migrate full \
+  --old-db /path/to/old/datadir/chaindata \
+  --new-db /path/to/new/datadir/chaindata \
+  --deploy-config /path/to/deploy-config.json \
+  --l1-deployments /path/to/l1-deployments.json \
+  --l1-rpc <ETHEREUM_RPC_URL> \
+  --l2-allocs /path/to/l2-allocs.json \
+  --outfile.rollup-config /path/to/rollup-config.json \
+  --outfile.genesis /path/to/genesis.json
 ```
 
 - `old-db` should be the path to the chaindata snapshot or the chaindata of your stopped node.
 - `new-db` should be the path where you want the l2 chaindata to be written. This should be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
 - `deploy-config` should be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
 - `l1-deployments` should be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
-- `l1-rpc` should be the rpc url of an l1 (i.e. Ethereum) node.
+- `l1-rpc` should be the rpc url of the L1 network. For alfajores it must be a [Holesky endpoint](https://chainlist.org/chain/17000).
 - `l2-allocs` should be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
 - `outfile.rollup-config` should be the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the l2 node.
 - `outfile.genesis` should be the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
