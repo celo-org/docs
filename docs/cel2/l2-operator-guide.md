@@ -6,10 +6,6 @@ description: How to migrate Celo nodes from L1 to L2
 
 ## Overview
 
-:::warning
-The information in this guide is subject to change.
-:::
-
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 At the point of transition, operators must shut down their existing Celo L1 nodes.
