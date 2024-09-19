@@ -31,7 +31,9 @@ The instructions below are not yet fully usable, as some values need to be set. 
 
 If you are currently running an L1 Alfajores node, you should upgrade to the below version before the migration and add the `--l2migrationblock` flag when restarting.
 
+:::warning
 TODO: Stay tuned for specific docker image and migration block number
+:::
 
 This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1`.
 
@@ -181,7 +183,7 @@ If you start op-node before op-geth, it will shut down after a few seconds if it
 
 ### Running op-geth
 
-Now, lets move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
+Now, let's move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
 
 :::info
 You can use the [official op-geth documentation](https://docs.optimism.io/builders/node-operators/configuration/execution-config) as an additional reference.
@@ -330,7 +332,7 @@ Where:
 
 ##### Full migration
 
-At block #TODO, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+At block <TODO>, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
@@ -368,7 +370,7 @@ docker run -it --rm \
 - `new-db` must be the path where you want the L2 chaindata to be written. This must be the same path as in the pre-migration script, otherwise all the work done in the pre-migration will be lost.
 - `deploy-config` must be the path to the JSON file that was used for the l1 contracts deployment. This will be distributed by cLabs.
 - `l1-deployments` must be the path to the L1 deployments JSON file, which is the output of running the bedrock contracts deployment for the given 'deploy-config'. This will be distributed by cLabs.
-- `l1-rpc` must be the rpc url of the L1 node. For alfajores it must be a [Holesky endpoint](https://chainlist.org/chain/17000). Feel free to use any other endpoint that you trust.
+- `l1-rpc` must be the RPC URL of the L1 node. For alfajores it must be a [Holesky endpoint](https://chainlist.org/chain/17000). Feel free to use any other endpoint that you trust.
 - `l2-allocs` must be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
 - `outfile.rollup-config` is the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the L2 node.
 - `outfile.genesis` is the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
@@ -381,7 +383,7 @@ Now that we have the migrated chaindata, we can start our L2 node using it. The 
 
 ## Mainnet Migration
 <details>
-<summary>Process Overview (WIP)</summary>
+<summary>Work in progress</summary>
 
-Celo Mainnet is still in the process of migrating to L2. The process will be similar to the Alfajores migration, but it may have some differences. Use the Alfajores migration as a reference, and stay tuned for updates on the Mainnet migration process.
+Celo Mainnet is still in the process of migrating to L2. The process will be similar to the Alfajores migration, but it may include some differences. Use the Alfajores migration as a reference, and stay tuned for updates on the Mainnet migration process!
 </details>
