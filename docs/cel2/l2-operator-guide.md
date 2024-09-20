@@ -23,62 +23,45 @@ However, RPC calls that require execution or state for pre-transition L1 blocks 
 Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
+In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
+
+At the point of transition, operators must shut down their existing Celo L1 nodes.
+Thos who _do not_ need a full sync can start a Celo L2 node and use snap sync right away.
+Those who _do_ need a full sync have two options: use the migrated datadir provided by cLabs or run a migration script on their own datadir to convert it into a format compatible with the Celo L2 node.
+Archive or full sync nodes require the full state at the transition point in order to continue applying transactions.
+
+To simplify the management of the Celo L2 node, no legacy execution logic is included in Celo L2.
+However, RPC calls that invoke execution for pre-transition L1 blocks remain supported by proxying these requests from the Celo L2 node to an archive Celo L1 node.
+Therefore, operators looking to run full archive nodes now need to run both a Celo L1 node and a Celo L2 node.
+Since the Celo L2 node does include the full chain history, these operators will require approximately double the storage space currently needed for an archive Celo L1 node.
+
+## Alfajores Migration
+
 :::warning
-The instructions below are not yet fully usable, as some values need to be set. They are marked as TODO.
+The instructions below are not yet fully useable, as some values need to be set.
 :::
 
-## Stopping an L1 Node
+### Starting an L2 node
 
-If you are currently running an L1 Alfajores node, you should upgrade to the below version before the migration and add the `--l2migrationblock` flag when restarting.
-
-:::warning
-TODO: Stay tuned for specific docker image and migration block number
-:::
-
-This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1`.
-
-## Starting an L2 node
-
-### Overview
-
-Three components are required to run an L2 node:
-
-- [eigenda-proxy](https://github.com/Layr-Labs/eigenda-proxy/tree/main): proxy interface between EigenDA and the OP stack
-- op-node: the consensus layer
-- op-geth: the execution layer
-
-For op-geth, there are three options to get started, ranked by ease and the level of trust required:
+Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
 
 1. Start an L2 node with snap sync. This option does not require running the migration script.
 2. Start an L2 node with the provided L1 chaindata.
 3. Migrate the L1 chaindata manually.
 
-Using snap sync offers a simpler and faster experience, but it cannot be used if you want to run an archive node. In that case, you will need to use an archive node snapshot or migrate your own archive data from an L1 node.
+Snap sync provides a simpler and faster setup experience. However, it is not suitable if you plan to run an archive node. In that case, you'll need to either use an archive node snapshot or migrate your own archive data from an L1 node. While both options follow a similar process, there are some differences, particularly in how you prepare the chaindata from the L1. Nonetheless, the majority of the service configuration remains the same across all options.
 
-:::info
-If you plan to migrate your own chaindata, we recommend getting familiar with the instructions and running the pre-migration 1-3 days ahead of the full migration.
-:::
+The node setup will require running three services: op-node, op-geth, and eigenda-proxy. op-node is the consensus client for the L2 node, op-geth is the execution client, and eigenda-proxy is the interface between your L2 node and [EigenDA](https://www.blog.eigenlayer.xyz/intro-to-eigenda-hyperscale-data-availability-for-rollups/). If you want to run multiple L2 nodes, you will need to run multiple instances of op-node and op-geth, but can share a single instance of eigenda-proxy.
 
-The next sections will provide more information on running each component, including the different options for op-geth.
+- [Running EigenDA Proxy](#running-eigenda-proxy)
+- [Running op-node](#running-op-node)
+- [Running op-geth](#running-op-geth)
 
-### Running EigenDA Proxy
+#### Running EigenDA Proxy
 
-:::info
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
-:::
 
-If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy Helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
-
-To run the eigenda-proxy, you can use the container image: ghcr.io/layr-labs/eigenda-proxy:v1.4.1. Alternatively, you can clone the [Layr-Labs/eigenda-proxy repository](https://github.com/Layr-Labs/eigenda-proxy) and build the proxy:
-
-```bash
-git clone https://github.com/Layr-Labs/eigenda-proxy.git
-cd eigenda-proxy
-git checkout v1.2.0
-make
-
-# Binary available at ./bin/eigenda-proxy
-```
+If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
 1. First, you will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
 
@@ -98,7 +81,7 @@ else
 fi
 ```
 
-2. Now, we can run the eigenda-proxy container (or the binary if preferred). Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
+2. Now, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
 
 ```bash
 EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
@@ -122,9 +105,20 @@ docker run -d \
       --eigenda-max-blob-length=300MiB
 ```
 
-### Running op-node
+Alternatively, you can clone the repo and build the proxy:
 
-op-node is not a resource-demanding service. We suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
+```bash
+git clone https://github.com/Layr-Labs/eigenda-proxy.git
+cd eigenda-proxy
+git checkout v1.2.0
+make
+
+# Binary available at ./bin/eigenda-proxy
+```
+
+#### Running op-node
+
+Op-node is not a resource-demanding service. As a general recommendation, we suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
 
 1. To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
 
@@ -135,7 +129,7 @@ git checkout celo8
 make op-node
 ```
 
-1. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
+2. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
 
 ```bash
 OP_NODE_DIR=/tmp/alfajores/op-node
@@ -145,7 +139,7 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --ou
 echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
 ```
 
-2. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
+3. Run the container (or the binary if prefered). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
 
 ```bash
 OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8
