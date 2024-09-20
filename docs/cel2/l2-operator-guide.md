@@ -126,8 +126,7 @@ docker run -d \
 
 op-node is not a resource-demanding service. We suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
 
-To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8.
-Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
+1. To run op-node, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
 
 ```bash
 git clone https://github.com/celo-org/optimism.git
@@ -189,77 +188,11 @@ Now, let's move on to the op-geth execution client. It will be responsible for e
 You can use the [official op-geth documentation](https://docs.optimism.io/builders/node-operators/configuration/execution-config) as an additional reference.
 :::
 
-Although there are multiple ways to run op-geth, all options will share most of the same configuration. We will cover how to run op-geth, in general, and then provide specific instructions for each of the three options.
+Although there are multiple ways to run op-geth, all options will share most of the same configuration. Depending on the option you choose, you may need to execute some steps before running op-geth to prepare the chaindata:
 
-To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8.
-Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
-
-```bash
-git clone https://github.com/celo-org/op-geth.git
-cd op-geth
-git checkout celo8
-make geth
-```
-
-1. If you are not running the migration script, download the genesis file and the rollup config file. These files are output from the migration script. Also you need to copy the JWT secret generated in the previous step.
-
-```bash
-OP_GETH_DIR=/tmp/alfajores/op-geth
-mkdir -p ${OP_GETH_DIR}
-wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
-
-cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
-```
-
-2. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using the container or the binary according to your preference. You can use the following example as a reference.
-
-```bash
-OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
-
-docker run -it \
-  --name op-geth-init \
-  -v ${OP_GETH_DIR}:/celo \
-  ${OP_GETH_IMAGE}
-  geth \
-    --datadir=/celo \
-    init /celo/genesis.json
-```
-
-3. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
-
-```bash
-OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
-
-docker run -d \
-  --name op-geth \
-  --network=host \
-  -v ${OP_GETH_DIR}:/celo \
-  -e GETH_DATADIR=/celo \
-  ${OP_GETH_IMAGE}
-  geth \
-    --datadir=/celo \
-    --networkid=44787 \
-    --syncmode=snap \
-    --gcmode=full \
-    --snapshot=true \
-    --maxpeers=60 \
-    --port=30303 \
-    --authrpc.addr=127.0.0.1 \
-    --authrpc.port=8551 \
-    --authrpc.jwtsecret=/celo/jwt.hex \
-    --authrpc.vhosts=* \
-    --http \
-    --http.addr=127.0.0.1 \
-    --http.port=8545 \
-    --http.api=eth,net,web3,debug,txpool,engine \
-    --http.vhosts=* \
-    --http.corsdomain=* \
-    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ # TODO
-    --rollup.disabletxpoolgossip=true \
-    --rollup.halt=major \
-    --verbosity=3 \
-    --bootnodes=<TODO>
-```
+- [Option 1: snap sync](#option-1-snap-sync)
+- [Option 2: download L1 chaindata and get started](#option-2-download-l1-chaindata-and-get-started)
+- [Option 3: L1 chaindata migration](#option-3-l1-chaindata-migration)
 
 #### Option 1: snap sync
 
@@ -267,7 +200,7 @@ docker run -d \
 Snap sync will only work once Alfajores L2 is live.
 :::
 
-With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag.
+With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 2: download L1 chaindata and get started
 
@@ -284,6 +217,8 @@ mkdir -p ${OP_GETH_DIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst
 tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DIR}
 ```
+
+Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 3: L1 chaindata migration
 
@@ -379,9 +314,82 @@ Ensure the full migration script completes successfully (this should be clear fr
 
 ##### Start your L2 Node
 
-Now that we have the migrated chaindata, we can start our L2 node using it. The process will be similar to the one described for [Option 2: download L1 chaindata and get started](#option-2-download-l1-chaindata-and-get-started), but here you can use your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
+Now that we have the migrated chaindata, we can start our L2 node using your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
+Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
+
+#### Executing op-geth
+
+1. To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
+
+```bash
+git clone https://github.com/celo-org/op-geth.git
+cd op-geth
+git checkout celo8
+make geth
+```
+
+2. Download the genesis file and the rollup config file. Also you need to copy the JWT secret generated in the previous step.
+
+```bash
+OP_GETH_DIR=/tmp/alfajores/op-geth
+mkdir -p ${OP_GETH_DIR}
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
+
+cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
+```
+
+3. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using container or the binary if prefered. You can use the following example as a reference.
+
+```bash
+OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
+
+docker run -it \
+  --name op-geth-init \
+  -v ${OP_GETH_DIR}:/celo \
+  ${OP_GETH_IMAGE}
+  geth \
+    --datadir=/celo \
+    init /celo/genesis.json
+```
+
+4. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
+
+```bash
+OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
+
+docker run -d \
+  --name op-geth \
+  --network=host \
+  -v ${OP_GETH_DIR}:/celo \
+  -e GETH_DATADIR=/celo \
+  ${OP_GETH_IMAGE}
+  geth \
+    --datadir=/celo \
+    --networkid=44787 \
+    --syncmode=snap \
+    --gcmode=full \
+    --snapshot=true \
+    --maxpeers=60 \
+    --port=30303 \
+    --authrpc.addr=127.0.0.1 \
+    --authrpc.port=8551 \
+    --authrpc.jwtsecret=/celo/jwt.hex \
+    --authrpc.vhosts=* \
+    --http \
+    --http.addr=127.0.0.1 \
+    --http.port=8545 \
+    --http.api=eth,net,web3,debug,txpool,engine \
+    --http.vhosts=* \
+    --http.corsdomain=* \
+    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ # TODO
+    --rollup.disabletxpoolgossip=true \
+    --rollup.halt=major \
+    --verbosity=3 \
+    --bootnodes=<TODO>
+```
 
 ## Mainnet Migration
+
 <details>
 <summary>Work in progress</summary>
 
