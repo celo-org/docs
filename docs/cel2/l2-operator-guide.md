@@ -63,7 +63,18 @@ These are brief instructions for running an eigenda-proxy instance. For more det
 
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
-1. First, you will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
+1. You can either build the EigenDA Proxy from source or use their official Docker image. At the time of writing, we are using version 1.4.1 (`ghcr.io/layr-labs/eigenda-proxy:v1.4.1`). In this example, we'll be using the container image:
+
+```bash
+git clone https://github.com/Layr-Labs/eigenda-proxy.git
+cd eigenda-proxy
+git checkout v1.2.0
+make
+
+# Binary available at ./bin/eigenda-proxy
+```
+
+2. You will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
 
 ```bash
 EIGENDA_KZG_PROXY_DIR=/tmp/alfajores/eigenda-proxy/kzg
@@ -81,7 +92,7 @@ else
 fi
 ```
 
-2. Now, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
+3. Finally, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
 
 ```bash
 EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
@@ -103,17 +114,6 @@ docker run -d \
       --eigenda-disable-tls=false \
       --eigenda-eth-confirmation-depth=1 \
       --eigenda-max-blob-length=300MiB
-```
-
-Alternatively, you can clone the repo and build the proxy:
-
-```bash
-git clone https://github.com/Layr-Labs/eigenda-proxy.git
-cd eigenda-proxy
-git checkout v1.2.0
-make
-
-# Binary available at ./bin/eigenda-proxy
 ```
 
 ### Running op-node
