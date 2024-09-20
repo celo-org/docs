@@ -1093,6 +1093,11 @@ const sidebars = {
       id: "cel2/l2-operator-guide",
     },
     {
+      type: "doc",
+      label: "L1 to L2 Decision Tree",
+      id: "cel2/decision-tree",
+    },
+    {
       type: "link",
       label: "Cel2 Dango Bridge",
       href: "https://testnets.superbridge.app/celo-testnet",
