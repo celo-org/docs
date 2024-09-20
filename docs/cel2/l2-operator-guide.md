@@ -196,7 +196,26 @@ Although there are multiple ways to run op-geth, all options will share most of 
 Snap sync will only work once Alfajores L2 is live.
 :::
 
-With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
+With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive gcmode.
+
+To start an L2 node with snap sync, you need to initialize the chaindata with the network genesis file. You can use the following commands to download the genesis file and initialize your chaindata folder:
+
+```bash
+OP_GETH_DIR=/tmp/alfajores/op-geth
+OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
+mkdir -p ${OP_GETH_DIR}
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
+
+docker run -it \
+  --name op-geth-init \
+  -v ${OP_GETH_DIR}:/celo \
+  ${OP_GETH_IMAGE}
+  geth \
+    --datadir=/celo \
+    init /celo/genesis.json
+```
+
+Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 ### Option 2: download L1 chaindata and get started
 
@@ -324,34 +343,13 @@ git checkout celo8
 make geth
 ```
 
-2. Download the genesis file and the rollup config file. Also you need to copy the JWT secret generated in the previous step.
+2. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
 
 ```bash
-OP_GETH_DIR=/tmp/alfajores/op-geth
-mkdir -p ${OP_GETH_DIR}
-wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
+OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 
+# Copying the jwt secret from the op-node directory
 cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
-```
-
-3. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using container or the binary if prefered. You can use the following example as a reference.
-
-```bash
-OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
-
-docker run -it \
-  --name op-geth-init \
-  -v ${OP_GETH_DIR}:/celo \
-  ${OP_GETH_IMAGE}
-  geth \
-    --datadir=/celo \
-    init /celo/genesis.json
-```
-
-4. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
-
-```bash
-OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 
 docker run -d \
   --name op-geth \
@@ -362,7 +360,7 @@ docker run -d \
   geth \
     --datadir=/celo \
     --networkid=44787 \
-    --syncmode=snap \
+    --syncmode=<snap/consensus-layer> \
     --gcmode=full \
     --snapshot=true \
     --maxpeers=60 \
