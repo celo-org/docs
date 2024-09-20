@@ -47,6 +47,10 @@ Node operators who wish to run an L2 node have three options, ranked by ease and
 
 Snap sync provides a simpler and faster setup experience. However, it is not suitable if you plan to run an archive node. In that case, you'll need to either use an archive node snapshot or migrate your own archive data from an L1 node. While both options follow a similar process, there are some differences, particularly in how you prepare the chaindata from the L1. Nonetheless, the majority of the service configuration remains the same across all options.
 
+:::info
+If you plan to migrate your own chaindata, we recommend getting familiar with the instructions and running the pre-migration 1-3 days ahead of the full migration.
+:::
+
 The node setup will require running three services: op-node, op-geth, and eigenda-proxy. op-node is the consensus client for the L2 node, op-geth is the execution client, and eigenda-proxy is the interface between your L2 node and [EigenDA](https://www.blog.eigenlayer.xyz/intro-to-eigenda-hyperscale-data-availability-for-rollups/). If you want to run multiple L2 nodes, you will need to run multiple instances of op-node and op-geth, but can share a single instance of eigenda-proxy.
 
 - [Running EigenDA Proxy](#running-eigenda-proxy)
