@@ -51,7 +51,7 @@ Snap sync provides a simpler and faster setup experience. However, it is not sui
 If you plan to migrate your own chaindata, we recommend getting familiar with the instructions and running the pre-migration 1-3 days ahead of the full migration.
 :::
 
-To set up your node, you'll need to run three services: `op-node`, `op-geth`, and `eigenda-proxy`. op-node serves as the consensus client for the L2 node, op-geth as the execution client, and eigenda-proxy acts as the interface between your L2 node and the data availability layer [EigenDA]((https://www.blog.eigenlayer.xyz/intro-to-eigenda-hyperscale-data-availability-for-rollups/)).
+To set up your node, you'll need to run three services: `op-node`, `op-geth`, and `eigenda-proxy`. op-node serves as the consensus client for the L2 node, op-geth as the execution client, and eigenda-proxy acts as the interface between your L2 node and the data availability layer [EigenDA](https://www.blog.eigenlayer.xyz/intro-to-eigenda-hyperscale-data-availability-for-rollups/).
 
 If you plan to run multiple L2 nodes, you’ll need separate instances of `op-node` and `op-geth` for each node, but you can share a single instance of `eigenda-proxy`. Additionally, you'll need an endpoint for the L1 RPC, which can either be a public node or your own L1 node. For Alfajores, the L1 used is [Holesky](https://chainlist.org/chain/17000).
 
