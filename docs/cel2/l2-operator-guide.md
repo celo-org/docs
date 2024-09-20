@@ -24,10 +24,20 @@ Therefore, operators looking to run full archive nodes or serve requests for his
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
 :::warning
-The instructions below are not yet fully useable, as some values need to be set.
+The instructions below are not yet fully usable, as some values need to be set. They are marked as TODO.
 :::
 
-### Starting an L2 node
+## Stopping an L1 Node
+
+If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for upcoming Baklava and Mainnet migrations.
+
+:::warning
+TODO: Stay tuned for Alfajores migration block number
+:::
+
+This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1`.
+
+## Starting an L2 node
 
 Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
 
@@ -43,7 +53,7 @@ The node setup will require running three services: op-node, op-geth, and eigend
 - [Running op-node](#running-op-node)
 - [Running op-geth](#running-op-geth)
 
-#### Running EigenDA Proxy
+### Running EigenDA Proxy
 
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
 
@@ -102,7 +112,7 @@ make
 # Binary available at ./bin/eigenda-proxy
 ```
 
-#### Running op-node
+### Running op-node
 
 Op-node is not a resource-demanding service. As a general recommendation, we suggest running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
 
@@ -160,7 +170,7 @@ docker run -d \
 
 If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
-### Running op-geth
+## Running op-geth
 
 Now, let's move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
 
@@ -174,7 +184,7 @@ Although there are multiple ways to run op-geth, all options will share most of 
 - [Option 2: download L1 chaindata and get started](#option-2-download-l1-chaindata-and-get-started)
 - [Option 3: L1 chaindata migration](#option-3-l1-chaindata-migration)
 
-#### Option 1: snap sync
+### Option 1: snap sync
 
 :::warning
 Snap sync will only work once Alfajores L2 is live.
@@ -182,7 +192,7 @@ Snap sync will only work once Alfajores L2 is live.
 
 With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-#### Option 2: download L1 chaindata and get started
+### Option 2: download L1 chaindata and get started
 
 :::warning
 TODO: The migrated chaindata is not yet available for download.
@@ -200,12 +210,12 @@ tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DIR}
 
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-#### Option 3: L1 chaindata migration
+### Option 3: L1 chaindata migration
 
 L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
 For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block TODO).
 
-##### Pre-migration
+#### Pre-migration
 
 The migration script is provided as a docker image, but you can also review and build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
 
@@ -245,7 +255,7 @@ Where:
 - Ensure the pre-migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance: TODO(discord)
 - Keep the `new-db` as is until the full migration script is run. If this data is corrupted or lost, the full migration may fail or take a very long time to complete.
 
-##### Full migration
+#### Full migration
 
 At block TODO, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
@@ -292,12 +302,12 @@ docker run -it --rm \
 
 Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
 
-##### Start your L2 Node
+#### Start your L2 Node
 
 Now that we have the migrated chaindata, we can start our L2 node using your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-#### Executing op-geth
+### Executing op-geth
 
 1. To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
 
