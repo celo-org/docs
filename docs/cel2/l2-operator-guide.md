@@ -211,7 +211,7 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --o
 cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
 ```
 
-2. In the first execution, you will need to `init` the chaindata dir using the provided genesis file. Run using the container or the binary according to your preference. You can use the following example as a reference.
+2. If you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
@@ -267,7 +267,7 @@ docker run -d \
 Snap sync will only work once Alfajores L2 is live.
 :::
 
-With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag.
+With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag. You will also need to run an extra `init` step before starting your node (see above).
 
 #### Option 2: download L1 chaindata and get started
 
