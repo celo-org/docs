@@ -23,18 +23,6 @@ However, RPC calls that require execution or state for pre-transition L1 blocks 
 Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
-In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
-
-At the point of transition, operators must shut down their existing Celo L1 nodes.
-Thos who _do not_ need a full sync can start a Celo L2 node and use snap sync right away.
-Those who _do_ need a full sync have two options: use the migrated datadir provided by cLabs or run a migration script on their own datadir to convert it into a format compatible with the Celo L2 node.
-Archive or full sync nodes require the full state at the transition point in order to continue applying transactions.
-
-To simplify the management of the Celo L2 node, no legacy execution logic is included in Celo L2.
-However, RPC calls that invoke execution for pre-transition L1 blocks remain supported by proxying these requests from the Celo L2 node to an archive Celo L1 node.
-Therefore, operators looking to run full archive nodes now need to run both a Celo L1 node and a Celo L2 node.
-Since the Celo L2 node does include the full chain history, these operators will require approximately double the storage space currently needed for an archive Celo L1 node.
-
 ## Alfajores Migration
 
 :::warning
