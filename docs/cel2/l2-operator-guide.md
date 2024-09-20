@@ -23,8 +23,6 @@ However, RPC calls that require execution or state for pre-transition L1 blocks 
 Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
-## Alfajores Migration
-
 :::warning
 The instructions below are not yet fully useable, as some values need to be set.
 :::
