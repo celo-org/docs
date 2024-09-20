@@ -139,7 +139,7 @@ wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --ou
 echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
 ```
 
-3. Run the container (or the binary if prefered). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
+3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
 
 ```bash
 OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8
