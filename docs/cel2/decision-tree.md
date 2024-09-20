@@ -21,7 +21,7 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 
   If none of the above work for you, you can use cLabs best effort hosted node: [Forno](https://docs.celo.org/network/node/forno).
 </details>
-</br>
+
 <details>
   <summary>I use ContractKit or Fee Abstraction (ERC-20 gas tokens)</summary>
 
@@ -39,7 +39,7 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
   </details>
   
 </details>
-</br>
+
 <details>
   <summary>I need help!</summary>
 
