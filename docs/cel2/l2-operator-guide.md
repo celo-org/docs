@@ -29,7 +29,7 @@ The instructions below are not yet fully usable, as some values need to be set. 
 
 ## Stopping an L1 Node
 
-If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for upcoming Baklava and Mainnet migrations.
+If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for the upcoming Baklava and Mainnet migrations.
 
 :::warning
 TODO: Stay tuned for Alfajores migration block number
