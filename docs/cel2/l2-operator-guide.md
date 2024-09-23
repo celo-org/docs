@@ -95,7 +95,7 @@ else
 fi
 ```
 
-3. Finally, we can run the eigenda-proxy. In this example, a container image is used, but you can also obtain the binaries by building from source or downloading them from GitHub releases. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
+3. Finally, we can run eigenda-proxy. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
 
 ```bash
 EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
