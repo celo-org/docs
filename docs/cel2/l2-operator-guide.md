@@ -178,7 +178,7 @@ If you start op-node before op-geth, it will shut down after a few seconds if it
 
 ## Running op-geth
 
-Now, let's move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. In terms of resource requirements, it is recommended to run op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
+Now, let's move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. We recommend running op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
 
 :::info
 You can use the [official op-geth documentation](https://docs.optimism.io/builders/node-operators/configuration/execution-config) as an additional reference.
