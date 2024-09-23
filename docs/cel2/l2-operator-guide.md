@@ -334,7 +334,7 @@ Please continue with [executing op-geth](#executing-op-geth) instructions to sta
 
 ### Executing op-geth
 
-1. To run op-geth, you can use the container image: us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
+1. To run op-geth, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8`. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
 
 ```bash
 git clone https://github.com/celo-org/op-geth.git
