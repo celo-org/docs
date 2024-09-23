@@ -65,7 +65,7 @@ These are brief instructions for running an eigenda-proxy instance. For more det
 
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
-1. You can either build the EigenDA Proxy from source or use their official Docker image. At the time of writing, we are using version 1.4.1 (`ghcr.io/layr-labs/eigenda-proxy:v1.4.1`). In this example, we'll be using the container image:
+1. You can use the official Docker image for the EigenDA Proxy. At the time of writing, we are using version 1.4.1 (`ghcr.io/layr-labs/eigenda-proxy:v1.4.1`). Alternatively, you can build it from source:
 
 ```bash
 git clone https://github.com/Layr-Labs/eigenda-proxy.git
