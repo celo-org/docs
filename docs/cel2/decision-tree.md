@@ -16,7 +16,7 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 
   - [Quicknode](https://www.quicknode.com/chains/celo) (not yet verified)
   - [Infura](https://www.infura.io/networks/celo) (not yet verified)
-  - [DSRV](https://drpc.org/chainlist/celo) (not yet verified)
+  - [dRPC](https://drpc.org/chainlist/celo) (not yet verified)
 
 
   If none of the above work for you, you can use cLabs best effort hosted node: [Forno](https://docs.celo.org/network/node/forno).
