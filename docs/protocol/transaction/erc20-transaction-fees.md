@@ -46,7 +46,7 @@ N/A
 
 ### Enabling Transactions with ERC20 Token as fee currency in a wallet
 
-We recommend using the [viem](https://viem.sh/) library as it has support for the `feeCurrency` field in the transaction required for sending transaction where the gas fees will be paid in ERC20 tokens.
+We recommend using the [viem](https://viem.sh/) library as it has support for the `feeCurrency` field in the transaction required for sending transactions where the gas fees will be paid in ERC20 tokens. Ethers.js and web.js currently don't support `feeCurrency`.
 
 #### Estimating gas price
 

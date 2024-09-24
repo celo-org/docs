@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Celo Validators
 
-Secure the Celo network by participating in consensus of the Celo protocol.
+Secure the Celo network by participating in the consensus of the Celo protocol.
 
 ---
 

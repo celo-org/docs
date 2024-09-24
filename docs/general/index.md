@@ -12,15 +12,14 @@ Celo's mission is to build a financial system that creates the conditions for pr
 
 ## Cryptocurrency for a beautiful planet
 
-Celo was designed to enable a new universe of financial solutions accessible for mobile users, creating a global financial ecosystem where an end-user can onboard into the Celo ecosystem with just a mobile number. Here are few of the key features of Celo:
+Celo is an emerging Ethereum Layer-2 and mobile-first blockchain network built for the real world and designed for fast, low-cost payments worldwide. Here are few of the key features of Celo:
 
-- [Layer-1 protocol](https://medium.com/celoorg/why-build-on-the-celo-blockchain-9ceab3d11b70)
-- [EVM compatible](https://medium.com/celoorg/donut-hardfork-is-live-on-celo-585e2e294dcb)
+- [Layer-1 to an Ethereum Layer-2 protocol](https://blog.celo.org/celobrate-cel2-4-years-of-mainnet-on-earth-day-861ffe557cdb)
 - [Proof-of-stake](https://medium.com/celoorg/celos-proof-of-stake-mechanism-31061fbebea)
 - [Carbon negative](https://medium.com/celoorg/cryptocurrency-for-a-beautiful-planet-e47299dfb1c3)
 - [Mobile-first identity](protocol/identity/odis)
 - [Ultra-light clients](protocol/plumo)
-- [Localized stablecoins (cUSD, cEUR, cREAL)](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c)
+- [Localized stablecoins (cUSD, cEUR, cREAL, cKES)](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c](https://app.mento.org/))
 - [Gas payable in multiple currencies](protocol/transaction/erc20-transaction-fees)
 
 ## What is the Celo Platform?

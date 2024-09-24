@@ -73,63 +73,6 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Celo Wallet",
-          items: [
-            {
-              type: "link",
-              label: "Celo Wallet Setup",
-              href: "https://celowallet.app/",
-            },
-            {
-              type: "doc",
-              label: "Functionality",
-              id: "wallet/celo-wallet/functionality",
-            },
-            {
-              type: "doc",
-              label: "Verification",
-              id: "wallet/celo-wallet/verification",
-            },
-            {
-              type: "doc",
-              label: "Invitation",
-              id: "wallet/celo-wallet/invitation",
-            },
-            {
-              type: "doc",
-              label: "Payment",
-              id: "wallet/celo-wallet/payment",
-            },
-            {
-              type: "doc",
-              label: "Node Sync",
-              id: "wallet/celo-wallet/node-sync",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Mobile Wallet",
-          items: [
-            {
-              type: "doc",
-              label: "Mobile Wallet Setup",
-              id: "wallet/mobile-wallet/setup",
-            },
-            {
-              type: "doc",
-              label: "Running the Wallet Locally",
-              id: "wallet/mobile-wallet/run-local",
-            },
-            {
-              type: "doc",
-              label: "Testnet Faucet",
-              id: "wallet/faucet-testnet",
-            },
-          ],
-        },
-        {
-          type: "category",
           label: "Ledger Wallet",
           items: [
             {
@@ -221,7 +164,7 @@ const sidebars = {
             {
               type: "link",
               label: "Network Stats",
-              href: "https://explorer.celo.org/stats",
+              href: "https://dune.com/celo/celo-blockchain-overview",
             },
             {
               type: "link",
@@ -357,11 +300,6 @@ const sidebars = {
               type: "doc",
               label: "Core Contracts Registry",
               id: "developer/contractkit/contracts-wrappers-registry",
-            },
-            {
-              type: "doc",
-              label: "Interact with Contracts",
-              id: "developer/walkthrough/hello-contract-remote-node",
             },
             {
               type: "doc",
@@ -545,11 +483,6 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Figment",
-          href: "https://learn.figment.io/protocols/celo",
-        },
-        {
-          type: "link",
           label: "Dacade",
           href: "https://dacade.org/communities/celo",
         },
@@ -588,7 +521,6 @@ const sidebars = {
 
   integrationsSidebar: [
     { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "Dapps", id: "integration/dapps" },
     { type: "doc", label: "General", id: "integration/general" },
     {
       type: "doc",
@@ -711,18 +643,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "StackShift",
-      id: "community/StackShift/StackShift",
-    },
-    {
-      type: "doc",
       label: "Fundraising",
       id: "community/fundraising",
-    },
-    {
-      type: "link",
-      label: "Bounties",
-      href: "https://gitcoin.co/celo-org/projects",
     },
     {
       type: "doc",
@@ -1126,6 +1048,16 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "L1 to L2 Operator Guide",
+      id: "cel2/l2-operator-guide",
+    },
+    {
+      type: "doc",
+      label: "L1 to L2 Decision Tree",
+      id: "cel2/decision-tree",
+    },
+    {
+      type: "doc",
       label: "Add Cel2 Testnet to Wallet",
       id: "cel2/add-cel2-testnet-to-metamask",
     },
@@ -1175,8 +1107,8 @@ const sidebars = {
       label: "Cel2 Dango Faucet",
       href: "https://faucet.celo.org/dango",
     },
-    { type: "doc", label: "FAQ", id: "cel2/faq" },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
+    { type: "doc", label: "FAQ", id: "cel2/faq" },
   ],
 };
 module.exports = sidebars;

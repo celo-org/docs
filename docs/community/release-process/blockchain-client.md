@@ -21,7 +21,7 @@ Artifacts produced by this build process (e.g. Docker images) will be signed by 
 
 ## Documentation
 
-Documentation for client features, such as APIs and commands, are maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](/protocol/).
+The documentation for client features, such as APIs and commands, is maintained in the `docs` directory within the `celo-blockchain` repository. Documentation on protocol features, such as the proof-of-stake protocol, is hosted on [docs.celo.org](/protocol/).
 
 ## Identifying releases:
 
@@ -48,15 +48,15 @@ can be used to verify those images.
 
 ### Docker tags
 
-Each released Docker image should should be tagged with it’s version number such that for release `x.y.z`, the image should have tags `x`, `x.y`, and `x.y.z`, with the first two tags potentially being moved from a previous image. Just as a Git tag `x.y.z` immutably points to a commit hash, the Docker tag, `x.y.z` should immutably point to an image hash.
+Each released Docker image should be tagged with its version number such that for release `x.y.z`, the image should have tags `x`, `x.y`, and `x.y.z`, with the first two tags potentially being moved from a previous image. Just as a Git tag `x.y.z` immutably points to a commit hash, the Docker tag, `x.y.z` should immutably point to an image hash.
 
 ## Build process
 
 ### Docker images
 
-Docker images are built automatically with [Google Cloud Build](https://cloud.google.com/cloud-build) upon pushes to `master` and all release branches. Automated builds will be tagged in [Google Container Registry](https://cloud.google.com/container-registry) with the corresponding commit hash.
+Docker images are built automatically with [Google Cloud Build](https://cloud.google.com/build) upon pushes to `master` and all release branches. Automated builds will be tagged in [Google Artifact Registry](https://cloud.google.com/artifact-registry) with the corresponding commit hash.
 
-A signature should be produced over the image automatically built at the corresponding commit hash and included with the Github release.
+A signature should be produced over the image automatically built at the corresponding commit hash and included with the GitHub release.
 
 Release image signatures can be verified with the following command:
 
@@ -86,7 +86,7 @@ Bugs which affect the security, stability, or core functionality of the network 
 
 If the issue is not exploitable, release notes should describe the issue in detail and the image should be distributed publicly.
 
-If the issue is exploitable and mitigations are not readily available, a patch should be prepared privately and signed binaries should be distributed from private commits. Establishing trust is key to pushing out the fix. An audit from a reputable third party may be contracted to verify the release to help earn that trust. Once a majority of validators updated, patch details can be made public.
+If the issue is exploitable and mitigations are not readily available, a patch should be prepared privately, and signed binaries should be distributed from private commits. Establishing trust is key to pushing out the fix. An audit from a reputable third party may be contracted to verify the release to help earn that trust. Once a majority of validators are updated, patch details can be made public.
 
 > Pushing an upgrade with this process will be disruptive to any nodes that do not upgrade quickly. It should _only_ be used when the circumstances require it.
 

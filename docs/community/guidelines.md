@@ -15,12 +15,13 @@ import TabItem from '@theme/TabItem';
 
 Celo is open source and we welcome open participation. We strive to fulfill our [Community Tenets](https://celo.org/community) by being an open and inclusive community where everyone feels welcome and empowered to contribute. This also means following some ground rules and abiding by Celo’s [Code of Conduct](https://celo.org/code-of-conduct).
 
-- [Raise an issue](https://github.com/celo-org/docs/issues/new) - fill in the requested information and paste your contribution.
-- [Create a pull request](https://github.com/celo-org/docs) - Clone the repo and follow the guidelines below to submit your contribution.
+- Raise an issue in the repository that you would like to contribute to or find one you feel comfortable solving - fill in the requested information and paste your contribution.
+- Clone the repo and follow the guidelines below to submit your contribution.
+- Create a pull request 
 
 ## How to Contribute
 
-Our community includes a group of contributors that help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.
+Our community includes a group of contributors who help develop, write, translate, and improve Celo. Anyone is welcome to join the community and contribute their skills to help empower other community members and grow the Celo ecosystem.
 
 - [Code](/community/guidelines#%EF%B8%8F-code)
 - [CIPs](/community/guidelines#-cips)
@@ -32,7 +33,8 @@ Our community includes a group of contributors that help develop, write, transla
 
 There are a few basic ground rules for contributing:
 
-- PRs \(pull requests\) are preferred to issues, especially for small changes such as typos. Issues should be used for missing features and for broad-based changes.
+- Please fork the repository
+- PRs \(pull requests\) are preferred for solving issues, especially for small changes such as typos. Issues should be used for missing features and for broad-based changes.
 - For on-going work, use your own side-branch and not the master branch.
 - For non-trivial amounts of work, we encourage you to submit PRs regularly to solicit feedback.
 - Please double check your work before submitting it. Submissions with typos, spelling, and grammatical errors may not be merged until fixed.
@@ -48,7 +50,7 @@ Code Contributors are developers in the Celo community that contribute to the [C
 
 #### How to Get Started
 
-Find an area that is of interest and you would like to help with. Look for issues that are tagged as "[good first issue](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)" and "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)" to get started. If you’d like to dig deeper, feel free to look at other labels and TODO’s in code comments. If there’s an issue you’re interested in contributing to or taking over, assign yourself to it and add a comment with your plans to address and target timeline. If there’s already someone assigned to it, please check with them before adding yourself to the assignee list.
+Find an area that is of interest and you would like to help with. Look for issues that are tagged as "[good first issue](https://github.com/celo-org/celo-blockchain/labels/good%20first%20issue)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)" and "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)" to get started. If you’d like to dig deeper, feel free to look at other labels and TODO’s in code comments. If there’s an issue you’re interested in contributing to or taking over, assign yourself to it and add a comment with your plans to address and target timeline. If there’s already someone assigned to it, please check with them before adding yourself to the assignee list.
 
 Tasks range from minor to major improvements. Based on your interests, skillset, and level of comfort with the code-base feel free to contribute where you see appropriate. Our only ask is that you follow the guidelines below to ensure a smooth and effective collaboration.
 
@@ -92,11 +94,9 @@ Draft all proposals following the template below and submit to the [CIPs reposit
 
 Technical writers support the Celo community by educating developers about Celo through engaging, informative, and insightful documentation.
 
-[Watch the Video ↗️](https://www.youtube.com/watch?v=DaAenTNv668&feature=emb_title)
-
 #### Edit an existing page
 
-To edit an existing page in the documentation, create a fork of the repo, commit your edits and submit a PR.
+To edit an existing page in the [documentation](https://docs.celo.org/), create a fork of the repo, commit your edits, and submit a PR.
 
 - Go to the page in the docs
 - Click **Edit this page** at the bottom of the page
@@ -109,9 +109,9 @@ To edit an existing page in the documentation, create a fork of the repo, commit
 
 #### Add/remove pages
 
-To add a new page to the documentation, create a fork, add the new pages and update the table of contents file to include your new pages in the appropriate location and submit a PR.
+To add a new page to the documentation, create a fork, add the new pages, and update the table of contents file to include your new pages in the appropriate location and submit a PR.
 
-- Add or delete pages directly in Github
+- Add or delete pages directly in GitHub
 - Put new pages where you think makes the most sense, we can move them later
 - Create a PR to have your changes added to the live version of the site
 - Update the file called “sidebars.js” in the main folder
@@ -120,7 +120,7 @@ To add a new page to the documentation, create a fork, add the new pages and upd
 
 ## 🎓 Tutorials
 
-Write about your experience as a member of the Celo community, whether you're a CELO owner, developer, or a project founder. Your experience and perspective is valuable and can help others.
+Write about your experience as a member of the Celo community, whether you're a CELO owner, developer, or project founder. Your experience and perspective are valuable and can help others.
 
 #### File naming
 
@@ -128,7 +128,7 @@ Creating a new post in the blog is straightforward. Create a new file in the [bl
 
 #### Front Matter
 
-Posts are written in [Markdown](https://www.markdownguide.org/). Posts include front matter. Front matter is file metadata at the top of the file that provides more information about the post. The front matter for this post looks like this:
+Posts are written in [Markdown](https://www.markdownguide.org/). Posts include front matter. The front matter is file metadata at the top of the file that provides more information about the post. The front matter for this post looks like this:
 
 ```md
 ---

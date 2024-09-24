@@ -17,18 +17,17 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 ## Token bridges
 
+- [SmolRefuel (Gassless Bridging)](https://smolrefuel.com/?outboundChain=42220)
+- [Squid Router V2](https://v2.app.squidrouter.com/)
 - [Portal (Wormhole)](https://www.portalbridge.com/#/transfer)
-- [Squid Router](https://app.squidrouter.com/)
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
 - [Satellite (Axelar)](https://satellite.money/)
-- [Celer](https://cbridge.celer.network/1/10/USDC)
 - [O3](https://o3swap.com/)
-- [Orbit Bridge](https://bridge.orbitchain.io/)
 
 ## Cross-Chain Messaging
 
+- [Chainlink CCIP](https://chain.link/cross-chain)
 - [Hyperlane](https://www.hyperlane.xyz/)
 - [Wormhole](https://wormhole.com/)
 - [Layer Zero](https://layerzero.network/)
 - [Axelar Network](https://axelar.network/)
-- [Squid Router](https://app.squidrouter.com/)

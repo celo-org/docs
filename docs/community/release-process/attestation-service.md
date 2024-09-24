@@ -73,7 +73,7 @@ Currently hosted core developer keys used for Attestation Service releases inclu
 
 ### Docker images
 
-Docker images are built automatically with [Google Cloud Build](https://cloud.google.com/cloud-build) upon pushes to `master` and all release branches. Automated builds will be tagged in [Google Container Registry](https://cloud.google.com/container-registry) with the corresponding commit hash.
+Docker images are built automatically with [Google Cloud Build](https://cloud.google.com/build) upon pushes to `master` and all release branches. Automated builds will be tagged in [Google Artifact Registry](https://cloud.google.com/artifact-registry) with the corresponding commit hash.
 
 A signature should be produced over the image automatically built at the corresponding commit hash and included with the Github release.
 
@@ -145,4 +145,4 @@ If the issue is exploitable and mitigations are not readily available, a patch s
 
 ## Vulnerability Disclosure
 
-Vulnerabilities in Attestation Service releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-monorepo/blob/master/SECURITY.md).
+Vulnerabilities in Attestation Service releases should be disclosed according to the [security policy](https://github.com/celo-org/celo-blockchain/blob/master/SECURITY.md).

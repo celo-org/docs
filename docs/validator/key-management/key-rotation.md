@@ -11,7 +11,7 @@ How to manage signer key rotations as a Celo Validator.
 
 ## Why Rotate Keys?
 
-As detailed in [the Celo account roles description page](/validator/key-management/detailed), Celo Locked Gold accounts can authorize separate signer keys for various roles such as voting or validating. This way, if an authorized signer key is lost or compromised, the Locked Gold account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
+As detailed in [the Celo account roles description page](/validator/key-management/detailed), Celo Locked CELO accounts can authorize separate signer keys for various roles such as voting or validating. This way, if an authorized signer key is lost or compromised, the Locked CELO account can authorize a new signer to replace the old one, without risking the key that custodies funds. This prevents losing an authorized signer key from becoming a catastrophic event. In fact, it is recommended as an operational best practice to regularly rotate keys to limit the impact of keys being silently compromised.
 
 ### Validator Signer Rotation
 
@@ -25,7 +25,7 @@ Before proceeding to step 2 ensure there is sufficient time until the end of the
 
 :::
 
-2. Authorize the new Validator signer key with the Locked Gold Account to overwrite the old Validator signer key.
+2. Authorize the new Validator signer key with the Locked CELO Account to overwrite the old Validator signer key.
 
 ```bash
 # With $SIGNER_TO_AUTHORIZE as the new validator signer:

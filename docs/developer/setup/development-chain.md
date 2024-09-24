@@ -17,20 +17,6 @@ Running the development Celo blockchain is helpful because it greatly speeds up 
 
 You can run the development Celo blockchain in several ways:
 
-### Use Ganache to fork Mainnet or Alfajores
-
-You can start a local EVM development blockchain with [Ganache](https://trufflesuite.com/docs/ganache/index.html). Once Ganache is installed you can fork Mainnet or Alfajores with a single command. Read more about it in the [Ganache docs here](https://trufflesuite.com/blog/introducing-ganache-7/index.html#1-zero-config-mainnet-forking).
-
-```shell
-ganache --fork.url https://forno.celo.org
-```
-
-This allows you to interact with contracts and accounts that were deployed at the specified fork point, including DeFi applications and protocol contracts like the [Reserve](https://explorer.celo.org/address/0xc683e6f77B58D814B31F8661331EbDf63785D607/contracts), [cUSD](https://explorer.celo.org/address/0x765DE816845861e75A25fCA122bb6898B8B1282a/contracts), [cEUR](https://explorer.celo.org/token/0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73/token-transfers), [Accounts](https://explorer.celo.org/address/0x7d21685C17607338b313a7174bAb6620baD0aaB7/read-proxy), Governance and [other contracts](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts).
-
-You also get 10 accounts funded with fake CELO to deploy your contracts and run tests in this simulated mainnet environment.
-
-Be aware that you will not be able to pay transaction fees in stable coins since this is an Ethereum enviroment. It behaves similarly to the Celo EVM but not exactly.
-
 ### Use the celo-devchain NPM package
 
 The easiest is to use a "pre-generated" devchain from the [celo-devchain](https://github.com/zviadm/celo-devchain) NPM package. For that all you have to do is:
@@ -122,8 +108,9 @@ The linked gist is called getInfo.js. Run it with `$ node getInfo.js` This will 
 
 You are now prepared to start developing, transacting and deploying contracts on your own Celo development blockchain!
 
-### Using Ethereum developers tools with Celo
+### Using Ethereum developer tools with Celo
 
-You can connect the development chain to a tool like [Truffle](https://trufflesuite.com/docs/truffle/) or [Remix](https://remix.ethereum.org/) to begin interacting with it. Keep in mind that these tools are built primarily for Ethereum development and are compatible with Celo because Celo is similar to Ethereum. The two blockchains have similar block architectures and both run the Ethereum Virtual Machine \(EVM\) for executing smart contracts.
+You can connect the development chain to a tool like [Remix](https://remix.ethereum.org/) to begin interacting with it. Keep in mind that these tools are built primarily for Ethereum development and are compatible with Celo because Celo is similar to Ethereum. The two blockchains have similar block architectures and both run the Ethereum Virtual Machine \(EVM\) for executing smart contracts.
 
-The main difference between Celo and Ethereum that dapp developers need to keep in mind is that Celo has a slightly different transaction object than Ethereum. Celo requires one additional field in a transaction object, a `feeCurrency`. When Truffle and Remix are connected to a locally running Celo node, the local node will fill these fields with default values \(if the fields are empty\). The node will sign the Celo transaction and broadcast it to the network.
+The main difference between Celo and Ethereum that dapp developers need to keep in mind is that Celo has a slightly different transaction object than Ethereum. Celo requires one additional field in a transaction object, a `feeCurrency`. When Remix is connected to a locally running Celo node, the local node will fill these fields with default values \(if the fields are empty\). The node will sign the Celo transaction and broadcast it to the network.
+
