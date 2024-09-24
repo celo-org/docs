@@ -9,7 +9,7 @@ description: How to migrate Celo nodes from L1 to L2
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 :::info
-Alfajores L2 first block: 26384000
+Alfajores migration block *26384000* (expected on Thursday, September 26, 2024 8:09:22 AM UTC)
 :::
 
 Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
