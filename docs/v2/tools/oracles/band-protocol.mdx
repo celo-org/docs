@@ -1,0 +1,64 @@
+---
+title: Using Band Protocol
+description: Tutorial on how to use the Band Protocol on Celo
+---
+
+import ImageWrapper from '/src/components/ImageWrapper'
+
+By the end of this tutorial, you will understand how to query the [Band Protocol](https://www.bandprotocol.com/) reference data smart contract from another Solidity smart contract on Celo.
+
+This tutorial will cover:
+
+- Introduction to Band Protocol
+- Deploying an example Oracle contract that interacts with the Band reference data contract
+- Querying the reference data contract for current asset rates
+
+## Introduction to Band Protocol
+
+[Band Protocol](https://bandprotocol.com/) is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts. For more detailed information about the protocol, please refer to the [official documentation](https://docs.bandchain.org/).
+
+## Deploying the Oracle
+
+1. Follow [this link](https://remix.ethereum.org/?#code=cHJhZ21hIHNvbGlkaXR5IDAuNi4xMTsKcHJhZ21hIGV4cGVyaW1lbnRhbCBBQklFbmNvZGVyVjI7CgppbnRlcmZhY2UgSVN0ZFJlZmVyZW5jZSB7CiAgICAvLy8gQSBzdHJ1Y3R1cmUgcmV0dXJuZWQgd2hlbmV2ZXIgc29tZW9uZSByZXF1ZXN0cyBmb3Igc3RhbmRhcmQgcmVmZXJlbmNlIGRhdGEuCiAgICBzdHJ1Y3QgUmVmZXJlbmNlRGF0YSB7CiAgICAgICAgdWludDI1NiByYXRlOyAvLyBiYXNlL3F1b3RlIGV4Y2hhbmdlIHJhdGUsIG11bHRpcGxpZWQgYnkgMWUxOC4KICAgICAgICB1aW50MjU2IGxhc3RVcGRhdGVkQmFzZTsgLy8gVU5JWCBlcG9jaCBvZiB0aGUgbGFzdCB0aW1lIHdoZW4gYmFzZSBwcmljZSBnZXRzIHVwZGF0ZWQuCiAgICAgICAgdWludDI1NiBsYXN0VXBkYXRlZFF1b3RlOyAvLyBVTklYIGVwb2NoIG9mIHRoZSBsYXN0IHRpbWUgd2hlbiBxdW90ZSBwcmljZSBnZXRzIHVwZGF0ZWQuCiAgICB9CgogICAgLy8vIFJldHVybnMgdGhlIHByaWNlIGRhdGEgZm9yIHRoZSBnaXZlbiBiYXNlL3F1b3RlIHBhaXIuIFJldmVydCBpZiBub3QgYXZhaWxhYmxlLgogICAgZnVuY3Rpb24gZ2V0UmVmZXJlbmNlRGF0YShzdHJpbmcgbWVtb3J5IF9iYXNlLCBzdHJpbmcgbWVtb3J5IF9xdW90ZSkKICAgICAgICBleHRlcm5hbAogICAgICAgIHZpZXcKICAgICAgICByZXR1cm5zIChSZWZlcmVuY2VEYXRhIG1lbW9yeSk7CgogICAgLy8vIFNpbWlsYXIgdG8gZ2V0UmVmZXJlbmNlRGF0YSwgYnV0IHdpdGggbXVsdGlwbGUgYmFzZS9xdW90ZSBwYWlycyBhdCBvbmNlLgogICAgZnVuY3Rpb24gZ2V0UmVmZXJlbmNlRGF0YUJ1bGsoc3RyaW5nW10gbWVtb3J5IF9iYXNlcywgc3RyaW5nW10gbWVtb3J5IF9xdW90ZXMpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICB2aWV3CiAgICAgICAgcmV0dXJucyAoUmVmZXJlbmNlRGF0YVtdIG1lbW9yeSk7Cn0KCmNvbnRyYWN0IERlbW9PcmFjbGUgewogICAgSVN0ZFJlZmVyZW5jZSByZWY7CgogICAgdWludDI1NiBwdWJsaWMgcHJpY2U7CgogICAgY29uc3RydWN0b3IoSVN0ZFJlZmVyZW5jZSBfcmVmKSBwdWJsaWMgewogICAgICAgIHJlZiA9IF9yZWY7CiAgICB9CgogICAgZnVuY3Rpb24gZ2V0UHJpY2UoKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKHVpbnQyNTYpewogICAgICAgIElTdGRSZWZlcmVuY2UuUmVmZXJlbmNlRGF0YSBtZW1vcnkgZGF0YSA9IHJlZi5nZXRSZWZlcmVuY2VEYXRhKCJDRUxPIiwiVVNEIik7CiAgICAgICAgcmV0dXJuIGRhdGEucmF0ZTsKICAgIH0KCiAgICBmdW5jdGlvbiBnZXRNdWx0aVByaWNlcygpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1NltdIG1lbW9yeSl7CiAgICAgICAgc3RyaW5nW10gbWVtb3J5IGJhc2VTeW1ib2xzID0gbmV3IHN0cmluZ1tdKDIpOwogICAgICAgIGJhc2VTeW1ib2xzWzBdID0gIkNFTE8iOwogICAgICAgIGJhc2VTeW1ib2xzWzFdID0gIkNFTE8iOwoKICAgICAgICBzdHJpbmdbXSBtZW1vcnkgcXVvdGVTeW1ib2xzID0gbmV3IHN0cmluZ1tdKDIpOwogICAgICAgIHF1b3RlU3ltYm9sc1swXSA9ICJVU0QiOwogICAgICAgIHF1b3RlU3ltYm9sc1sxXSA9ICJFVEgiOwogICAgICAgIElTdGRSZWZlcmVuY2UuUmVmZXJlbmNlRGF0YVtdIG1lbW9yeSBkYXRhID0gcmVmLmdldFJlZmVyZW5jZURhdGFCdWxrKGJhc2VTeW1ib2xzLHF1b3RlU3ltYm9scyk7CgogICAgICAgIHVpbnQyNTZbXSBtZW1vcnkgcHJpY2VzID0gbmV3IHVpbnQyNTZbXSgyKTsKICAgICAgICBwcmljZXNbMF0gPSBkYXRhWzBdLnJhdGU7CiAgICAgICAgcHJpY2VzWzFdID0gZGF0YVsxXS5yYXRlOwoKICAgICAgICByZXR1cm4gcHJpY2VzOwogICAgfQoKICAgIGZ1bmN0aW9uIHNhdmVQcmljZShzdHJpbmcgbWVtb3J5IGJhc2UsIHN0cmluZyBtZW1vcnkgcXVvdGUpIGV4dGVybmFsIHsKICAgICAgICBJU3RkUmVmZXJlbmNlLlJlZmVyZW5jZURhdGEgbWVtb3J5IGRhdGEgPSByZWYuZ2V0UmVmZXJlbmNlRGF0YShiYXNlLHF1b3RlKTsKICAgICAgICBwcmljZSA9IGRhdGEucmF0ZTsKICAgIH0KfQo=&optimize=false&runs=200&evmVersion=null&version=soljson-v0.6.11+commit.5ef660b1.js) to Remix. The link contains an encoded example `DemoOracle.sol` contract.
+2. Compile the contract using compiler version `0.6.11`.
+3. Switch to the Deploy tab in Remix.
+   1. Select "Injected Web3" in the Environment dropdown in the top left to connect Metamask.
+   2. Ensure Metamask is connected to the Alfajores test network. Instructions for adding Alfajores to Metamask can be found [here](/tools/wallets/Metamask/setup#adding-a-celo-network-to-metamask).
+
+<ImageWrapper path="/img/tools/oracles/band-protocol/remix-environment.png" alt="environment" width="400" />
+
+4. Enter the Alfajores testnet Band reference data aggregator contract address [`0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc`](https://docs.bandchain.org/develop/supported-blockchains/#testnets) into the `DemoOracle` constructor and deploy the contract. The mainnet reference data aggregator contract address is [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://docs.bandchain.org/develop/supported-blockchains/#mainnets). Always verify the current address on their page to ensure accuracy, as updates may occur.
+
+<ImageWrapper path="/img/tools/oracles/band-protocol/deploy.png" alt="environment" />
+
+An interface to interact with the contract will appear in the bottom left corner of Remix.
+
+## Retrieving Rates
+
+Clicking the `getPrice` button will return the current price of CELO in USD. This function calls `getReferenceData(string memory _base, string memory _quote)` on the Band reference data contract, passing "CELO" and "USD" as parameters. The returned rate is base/quote multiplied by 1e18.
+
+<ImageWrapper path="/img/tools/oracles/band-protocol/get-price.png" alt="get price" width="300" />
+
+Note that the `DemoOracle` contract only returns the latest rate, but the reference contract also provides the last update times for the base and quote references.
+
+The price is scaled by 1e18. For example, a returned value of `3747326500000000000` corresponds to a current USD price of 3.7473265 CELO/USD.
+
+Clicking the `getMultiPrices` button returns multiple quotes in a single call, such as BTC/USD and BTC/ETH. This function calls `getReferenceDataBulk(string[] memory _bases, string[] memory _quotes)` on the Band reference data contract, passing "CELO" as the base and "USD" and "ETH" as the quotes. This returns the current CELO prices in USD and ETH as an array of integers. The call returns only the exchange rates (multiplied by 1e18) but can be modified to include the last update times for the bases and quotes.
+
+<ImageWrapper path="/img/tools/oracles/band-protocol/getmultiprices.png" alt="get prices" width="300" />
+
+The `savePrice` function stores any base/quote rate passed to it in the storage variable `price`. This data will only be updated when the `savePrice` function is called, so the stored `price` value may become outdated unless updated regularly.
+
+<ImageWrapper path="/img/tools/oracles/band-protocol/saveprice.png" alt="get prices" width="300" />
+
+## Mainnet Reference Data Contract
+
+The mainnet reference data aggregator contract address is [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://docs.bandchain.org/develop/supported-blockchains/#mainnets).
+
+## Available Reference Data
+
+You can view the available reference data on the [Band Data site](https://data.bandprotocol.com/).
+
+## Bandchain.js
+
+Band also offers a JavaScript library, Bandchain.js, which facilitates interaction with BandChain directly from JavaScript or TypeScript applications. The library provides classes and methods for sending transactions, querying data, OBI encoding, and wallet management. More information can be found in the [Bandchain.js documentation](https://docs.bandchain.org/develop/developer-tools/bandchain.js/getting-started).

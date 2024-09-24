@@ -67,14 +67,14 @@ module.exports = {
   themeConfig: {
     twitterImage: "img/preview.png",
     image: "img/preview.png",
-    announcementBar: {
-      id: "request_tokens",
-      content:
-        'Need Testnet tokens? – Request from <a target="_blank" rel="noopener noreferrer" href="https://faucet.celo.org/alfajores">Faucet</a>.',
-      backgroundColor: "#18191A",
-      textColor: "#ffffff",
-      isCloseable: false,
-    },
+    // announcementBar: {
+    //   id: "request_tokens",
+    //   content:
+    //     'Need Testnet tokens? – Request from <a target="_blank" rel="noopener noreferrer" href="https://faucet.celo.org/alfajores">Faucet</a>.',
+    //   backgroundColor: "#18191A",
+    //   textColor: "#ffffff",
+    //   isCloseable: false,
+    // },
     docs: {
       sidebar: { hideable: true },
     },
@@ -98,19 +98,28 @@ module.exports = {
       },
       items: [
         {
-          to: "/general",
-          label: "What is Celo",
+          type: "docSidebar",
+          sidebarId: "about",
           position: "left",
+          label: "About Celo",
         },
         {
-          to: "developer/",
-          label: "Developers",
+          type: "docSidebar",
+          sidebarId: "build",
           position: "left",
+          label: "Build on Celo",
         },
         {
-          to: "cel2/",
-          label: "Cel2",
+          type: "docSidebar",
+          sidebarId: "tools",
           position: "left",
+          label: "Explore Tools",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "migrationNoticesSidebar",
+          position: "left",
+          label: "Celo L2 Notices",
         },
         {
           type: "dropdown",
@@ -118,62 +127,91 @@ module.exports = {
           position: "left",
           items: [
             {
-              to: "validator/",
-              label: "Validators",
-            },
-            {
-              to: "holder/",
-              label: "Holder",
-            },
-            {
-              to: "cli/",
-              label: "CLI",
-            },
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "integration/",
-              label: "Integrations",
-            },
-            {
-              to: "https://celo.academy/c/tutorials/4",
-              label: "Tutorials",
+              to: "https://celo.org",
+              label: "Celo Website",
               target: "_blank",
             },
-            { to: "showcase", label: "DApps" },
-            {
-              to: "community/guidelines",
-              label: "Community",
-            },
+            { to: "showcase", label: "Dapp Showcase" },
           ],
         },
-        {
-          type: "localeDropdown",
-          position: "right",
-          dropdownItemsAfter: [
-            {
-              to: "https://celo.crowdin.com/",
-              label: "Help us translate",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          position: "right",
-          label: "Support",
-          items: [
-            {
-              to: "https://forum.celo.org/",
-              label: "View the Forum",
-            },
-            {
-              to: "https://github.com/celo-org/docs/issues/new",
-              label: "Leave Feedback",
-            },
-          ],
-        },
+
+        // {
+        //   to: "/general",
+        //   label: "What is Celo",
+        //   position: "left",
+        // },
+        // {
+        //   to: "developer/",
+        //   label: "Developers",
+        //   position: "left",
+        // },
+        // {
+        //   to: "cel2/",
+        //   label: "Cel2",
+        //   position: "left",
+        // },
+        // {
+        //   type: "dropdown",
+        //   label: "More",
+        //   position: "left",
+        //   items: [
+        //     {
+        //       to: "validator/",
+        //       label: "Validators",
+        //     },
+        //     {
+        //       to: "holder/",
+        //       label: "Holder",
+        //     },
+        //     {
+        //       to: "cli/",
+        //       label: "CLI",
+        //     },
+        //     {
+        //       to: "protocol/",
+        //       label: "Protocol",
+        //     },
+        //     {
+        //       to: "integration/",
+        //       label: "Integrations",
+        //     },
+        //     {
+        //       to: "https://celo.academy/c/tutorials/4",
+        //       label: "Tutorials",
+        //       target: "_blank",
+        //     },
+        //     { to: "showcase", label: "DApps" },
+        //     {
+        //       to: "community/guidelines",
+        //       label: "Community",
+        //     },
+        //   ],
+        // },
+        // {
+        //   type: "localeDropdown",
+        //   position: "right",
+        //   dropdownItemsAfter: [
+        //     {
+        //       to: "https://celo.crowdin.com/",
+        //       label: "Help us translate",
+        //     },
+        //   ],
+        // },
+        // {
+        //   type: "dropdown",
+        //   position: "right",
+        //   label: "Support",
+        //   items: [
+        //     {
+        //       to: "https://forum.celo.org/",
+        //       label: "View the Forum",
+        //     },
+        //     {
+        //       to: "https://github.com/celo-org/docs/issues/new",
+        //       label: "Leave Feedback",
+        //     },
+        //   ],
+        // },
         // {
         //   type: "dropdown",
         //   position: "right",

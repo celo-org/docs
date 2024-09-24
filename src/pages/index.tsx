@@ -791,7 +791,7 @@ export default function HomePage(): JSX.Element {
                   Sign Up for Developer Updates
                 </span>
                 {buildKnowMoreButton(
-                  "https://share.hsforms.com/1X6b89a1bQOCLYXbwxeb5Ow53n4j"
+                  "https://events.celo.org/builders"
                 )}
               </div>
             </div>

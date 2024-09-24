@@ -1,0 +1,178 @@
+---
+title: Build on MiniPay
+description: A guide  for building on MiniPay and Celo.
+---
+import ColoredText from '/src/components/ColoredText';
+
+## Building dApps for MiniPay Wallet
+
+---
+
+Welcome to the MiniPay wallet integration guide. <ColoredText>[MiniPay](https://www.opera.com/products/minipay)</ColoredText> is one of the fastest growing wallets that was built out by <ColoredText>Opera</ColoredText> on Celo that seeks to create a simple user experience to use dApps. MiniPay is available inside <ColoredText>Opera Mini browser</ColoredText> on <ColoredText>Android phones</ColoredText> thereby allowing dApp developers to tap into a distribution of <ColoredText>100M users</ColoredText> on integration. This guide will help you build dApps for MiniPay.
+
+### Overview
+
+In this guide, we'll walk you through the process of integrating the `windows.provider` object provided by the MiniPay wallet's webview with popular web3 JavaScript libraries.
+
+When your website is loaded inside the MiniPay app's webview, the MiniPay wallet injects a Web3 provider via the `windows` object, akin to `window.ethereum`. This provider is compatible with <ColoredText>[viem](https://viem.sh/docs/introduction)</ColoredText> and <ColoredText>[wagmi](https://wagmi.sh/)</ColoredText> libraries that accept a <ColoredText>[Wallet Client](https://viem.sh/docs/clients/wallet#json-rpc-accounts)</ColoredText> object.
+
+To check if your app is in the context of MiniPay, you can verify it using `window.ethereum.isMiniPay`.
+
+```js
+// If you are using React.js you can check for it on mount
+useEffect(() => {
+  if (window.ethereum && window.ethereum.isMiniPay) {
+    // User is using MiniPay wallet
+
+    connect({ connector: injected({ target: "metaMask" }) });
+  }
+}, []);
+```
+
+:::info
+MiniPay is only available on Celo and Celo Testnet. MiniPay is not available to be used on other chains.
+:::
+
+### Installing MiniPay
+
+MiniPay is available inside Opera Mini on <ColoredText>Android phones only</ColoredText>. To ensure that your dApp functions as expected within the MiniPay environment, it's crucial to test it inside the MiniPay app. Here's how you can set up and test your dApp:
+
+- <ColoredText>Download Opera Mini Beta:</ColoredText> Start by downloading the <ColoredText>Opera Mini Beta</ColoredText> application from the PlayStore on your Android phone. - <ColoredText>[Download Opera Mini Beta](https://play.google.com/store/apps/details?id=com.opera.mini.native.beta)</ColoredText>
+- <ColoredText>Access MiniPay through Opera Mini Beta:</ColoredText> Once you've downloaded the latest version of Opera Mini Beta application, click on the following link on your phone to access MiniPay: [Access MiniPay](https://opmini.page.link/d6VPt8LBwbAxstun8)
+- <ColoredText>Create an Account:</ColoredText> Before you can test your dApp, you need to create an account on the MiniPay app. Follow the on-screen instructions to set up your account.
+
+### Test your dApp inside MiniPay
+
+1. Open the MiniPay app on your phone and click on <ColoredText>compass icon</ColoredText>.
+
+<img
+  src={"/img/build/build-on-minipay/overview/1.png"}
+  style={{ width: 250 }}
+  alt="Open MiniPay dApp store"
+/>
+
+2. Click on <ColoredText>"Test Page"</ColoredText> to open the MiniPay test page.
+
+<img
+  src={"/img/build/build-on-minipay/overview/2.png"}
+  style={{ width: 250 }}
+  alt="Open MiniPay dApp test page"
+/>
+
+3. Enter the URL of your dApp and click on <ColoredText>"Go"</ColoredText>.
+
+<img
+  src={"/img/build/build-on-minipay/overview/3.png"}
+  style={{ width: 250 }}
+  alt="MiniPay dApp testing"
+/>
+
+:::info
+One can also setup their project, using the <ColoredText>MiniPay template</ColoredText> in the <ColoredText>[Celo Composer](https://github.com/celo-org/celo-composer)</ColoredText>.
+:::
+
+### Testing Local Development with MiniPay
+
+If you're developing your dApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to <ColoredText>test the localhost version</ColoredText> in real-time inside MiniPay.
+
+- <ColoredText>Install ngrok:</ColoredText> If you haven't already, install <ColoredText>[ngrok](https://ngrok.com/)</ColoredText>. You can find instructions on their <ColoredText>[official website](https://ngrok.com/download)</ColoredText>, and in our <ColoredText>[guide](./prerequisites/ngrok-setup.mdx)</ColoredText> on how to set up ngrok.
+- <ColoredText>Start Your Local Server:</ColoredText> Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
+- <ColoredText>Tunnel Traffic with ngrok:</ColoredText> In your terminal, run the following command to start an ngrok tunnel:
+
+```bash
+ngrok http 3000
+```
+
+This will provide you with a public URL that tunnels to your localhost.
+
+- <ColoredText>Activate Testnet in MiniPay:</ColoredText> You need to <ColoredText>activate Testnet</ColoredText> in your settings in MiniPay. Check out our <ColoredText>[guide](./enabling-testnet.mdx)</ColoredText> on how to.
+- <ColoredText>Test in MiniPay:</ColoredText> Copy the <ColoredText>provided ngrok URL</ColoredText> and use it inside the MiniPay app to test your dApp.
+
+### Get your dApp ready for MiniPay
+
+:::warning
+MiniPay uses Custom Fee Abstraction based transactions, which is <ColoredText>not yet supported</ColoredText> by <ColoredText>Ethers.js</ColoredText> and <ColoredText>web3.js</ColoredText>. Your dApp would work in a web browser but not in MiniPay, if you would use those frameworks. 
+:::
+
+#### 1. Viem
+
+In the Viem example, we're creating a wallet client that specifies the chain and a custom transport using `window.ethereum`. The `getAddresses` method then retrieves the connected addresses.
+
+
+<ColoredText> [Viem](https://viem.sh/docs/introduction.html)</ColoredText>  is a popular web3 library to interface with Ethereum. Here's how you can integrate it:
+
+```js
+import { createWalletClient, custom } from "viem";
+import { celo, celoAlfajores } from "viem/chains";
+
+const client = createWalletClient({
+  chain: celo,
+  // chain: celoAlfajores, // For Celo Testnet
+  transport: custom(window.ethereum),
+});
+
+const [address] = await client.getAddresses();
+```
+
+#### 2. Wagmi
+
+<ColoredText> [Wagmi.js](https://wagmi.sh/)</ColoredText>  is a web3 library built <ColoredText>on top of viem</ColoredText> for <ColoredText>React</ColoredText>. To integrate it with MiniPay's provider, you can use the `useConnect` hook.
+
+This code sets up an `InjectedConnector` and then utilizes the `connect` method from the `useConnect` hook. The `useEffect` ensures that the connection is established when the page loads.
+
+
+```js
+import { useConnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
+
+const { connect } = useConnect({
+  connector: new InjectedConnector(),
+});
+
+useEffect(() => {
+  connect();
+}, []);
+```
+
+### Important Notes
+
+- Ensure the <ColoredText>"Connect Wallet"</ColoredText> button is hidden when your dApp is loaded inside the MiniPay app, as the <ColoredText>wallet connection is implicit</ColoredText>.
+
+_Code Example to hide Connect Wallet button if the user is using MiniPay wallet_
+
+```jsx
+export default function Header() {
+  // State variable that determines whether to hide the button or not.
+  const [hideConnectBtn, setHideConnectBtn] = useState(false);
+  const { connect } = useConnect();
+
+  useEffect(() => {
+    if (window.ethereum && window.ethereum.isMiniPay) {
+      // User is using MiniPay so hide connect wallet button.
+      setHideConnectBtn(true);
+
+      connect({ connector: injected({ target: "metaMask" }) });
+    }
+  }, []);
+
+  return (
+    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      {/* Conditional rendering of Connect Wallet button */}
+      {!hideConnectBtn && (
+        <ConnectButton
+          showBalance={{
+            smallScreen: true,
+            largeScreen: false,
+          }}
+        />
+      )}
+    </div>
+  );
+}
+```
+
+- Always <ColoredText>verify</ColoredText> the existence of `window.provider` before initializing your web3 library to ensure seamless compatibility with the MiniPay wallet.
+- When using `ngrok`, remember that the <ColoredText>tunneling URL is temporary</ColoredText>. You'll get a new URL every time you restart ngrok.
+- Be <ColoredText>cautious</ColoredText> about <ColoredText>exposing sensitive information</ColoredText> or functionality when using public tunneling services like ngrok. Always use them in a controlled environment.
+- MiniPay currently supports setting the `feeCurrency` property when running `eth_sendTransaction`. However, currency support is limited to `cUSD`. More currencies might be supported in future.
+- MiniPay only accepts <ColoredText>legacy transactions</ColoredText> at the moment. EIP-1559 properties won't be considered when handling requests.

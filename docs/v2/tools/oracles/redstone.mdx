@@ -1,0 +1,52 @@
+---
+title: Utilizing RedStone Oracles
+description: A comprehensive guide on integrating RedStone oracles with Celo
+---
+
+import ImageWrapper from '/src/components/ImageWrapper'
+
+By the conclusion of this tutorial, you will have a thorough understanding of how to integrate your decentralized application (dApp) built on Celo with RedStone oracles.
+
+This document will cover:
+
+- Overview of RedStone
+- Integration with RedStone
+- Practical Examples
+
+## 🚀 Overview of RedStone
+
+RedStone is a data ecosystem that provides fast and accurate financial information in a decentralized manner through an innovative on-demand data fetching approach.
+
+RedStone offers a unique design of Oracles tailored to meet the requirements of modern DeFi protocols.
+
+- Utilizes the Arweave blockchain for cost-effective and permanent storage
+- Employs token incentives to encourage data providers to maintain data integrity and uninterrupted service
+- Uses signed meta-transactions to deliver prices on-chain
+- Although data is stored on the Arweave chain, it can be utilized with any other blockchain
+
+For more detailed information about the RedStone protocol, please refer to the [RedStone compiled documentation.](https://github.com/redstone-finance/redstone-node/blob/main/docs/COMPILED_ORACLE_DOCS.md)
+
+## 📈 Available Data
+
+Thanks to our innovative architecture, we offer over a thousand pricing data feeds, including tokens, stocks, ETFs, commodities, and more, at a fraction of the cost of traditional Oracle integrations.
+
+You can explore available assets and data providers on [app.redstone.finance.](https://app.redstone.finance/)
+
+## 🔥 Integration with RedStone
+
+**IMPORTANT**: RedStone contracts are currently undergoing a security audit, and we are enhancing our infrastructure security. Therefore, before using RedStone oracles in production dApps, please contact us [on Discord.](https://redstone.finance/discord) We are happy to assist with the integration and can set up a new pool of data provider nodes if necessary.
+
+Please review this [short documentation](https://github.com/redstone-finance/redstone-evm-connector/blob/master/README.md) to learn how to integrate your dApp with RedStone oracles.
+
+💡 Note: Currently, RedStone is integrated only with the `ethers.js` library. To use it in Celo blockchain dApps, you should use [ethers.js](https://docs.ethers.io/v5/) along with [@celo-tools/celo-ethers-wrapper](https://www.npmjs.com/package/@celo-tools/celo-ethers-wrapper).
+
+## 👨‍💻 Code Examples
+
+- [Repository with examples](https://github.com/redstone-finance/redstone-evm-connector-examples)
+- [Generating pseudo-random values](https://github.com/redstone-finance/redstone-evm-connector-examples/blob/main/contracts/example-pseudo-random.sol)
+- [Example with multiple contracts](https://github.com/redstone-finance/redstone-evm-connector-examples/tree/main/contracts/example-proxy-calldata)
+- [Synthetic commodities dApp on Celo](https://github.com/redstone-finance/komodo-celo)
+
+## 🙋‍♂️ Need Assistance?
+
+For any questions, please feel free to contact the RedStone team [on Discord](https://redstone.finance/discord).

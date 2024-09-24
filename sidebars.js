@@ -1,4 +1,510 @@
 const sidebars = {
+
+
+  // ######################################
+  // Celo L2 Docs
+  // ######################################
+
+  about: [
+    {
+      type: "doc",
+      label: "What is Celo?",
+      id: "v2/about/overview", // Adjust this to the correct document id
+    },
+    {
+      type: "doc",
+      label: "Our History",
+      id: "v2/about/our-history", // Adjust this to the correct document id
+    },
+    {
+      type: "doc",
+      label: "Architecture",
+      id: "v2/about/architecture", // Adjust this to the correct document id
+    },
+    {
+      type: "doc",
+      label: "Difference between Ethereum and Celo",
+      id: "v2/about/celo-and-ethereum", // Adjust this to the correct document id
+    },
+    {
+      type: "category",
+      label: "Using Celo",
+      items: [
+        {
+          type: "doc",
+          label: "Wallets",
+          id: "v2/about/using-celo/wallets",
+        },
+        {
+          type: "doc",
+          label: "Gas Fees",
+          id: "v2/about/using-celo/gas-fees",
+        },
+        {
+          type: "doc",
+          label: "Bridging",
+          id: "v2/about/using-celo/bridging",
+        },
+        {
+          type: "doc",
+          label: "DEXs",
+          id: "v2/about/using-celo/dexes",
+        },
+        {
+          type: "doc",
+          label: "Voting",
+          id: "v2/about/using-celo/voting",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Joining Celo",
+      items: [
+        {
+          type: "doc",
+          label: "Celo Ecosystem",
+          id: "v2/about/ecosystem/overview",
+        },
+        {
+          type: "doc",
+          label: "Builders",
+          id: "v2/about/ecosystem/builders",
+        },
+        {
+          type: "doc",
+          label: "Open Source Contributors",
+          id: "v2/about/ecosystem/contributors",
+        },
+        {
+          type: "doc",
+          label: "Regional DAOs",
+          id: "v2/about/ecosystem/daos",
+        },
+        {
+          type: "doc",
+          label: "Governance",
+          id: "v2/about/ecosystem/governance",
+        },
+        {
+          type: "category",
+          label: "Guides",
+          items: [
+            {
+              type: "doc",
+              label: "Fundraising",
+              id: "v2/about/ecosystem/guides/fundraising",
+            },
+            {
+              type: "doc",
+              label: "Guidelines",
+              id: "v2/about/ecosystem/guides/guidelines",
+            },
+            {
+              type: "doc",
+              label: "Grant Playbook",
+              id: "v2/about/ecosystem/guides/grant-playbook",
+            },
+            {
+              type: "link",
+              label: "Code of Conduct",
+              href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Celo Website",
+      href: "https://celo.org",
+    },
+  ],
+
+  build: [
+    {
+      type: "doc",
+      label: "Overview",
+      id: "v2/build/overview",
+    },
+    {
+      type: "doc",
+      label: "Network Information",
+      id: "v2/build/network-information",
+    },
+    {
+      type: "doc",
+      label: "Celo Contracts",
+      id: "v2/build/contract-addresses",
+    },
+    {
+      type: "doc",
+      label: "Adding Celo Testnet to MetaMask",
+      id: "v2/build/add-celo-testnet-to-metamask",
+    },
+    {
+      type: "doc",
+      label: "Quickstart",
+      id: "v2/build/quickstart",
+    },
+    {
+      type: "category",
+      label: "Build on MiniPay",
+      // id: "developer/build-on-minipay",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "v2/build/build-on-minipay/overview",
+        },
+        {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Android Studio Setup",
+              id: "v2/build/build-on-minipay/prerequisites/android-studio-setup",
+            },
+            {
+              type: "doc",
+              label: "Ngrok Setup",
+              id: "v2/build/build-on-minipay/prerequisites/ngrok-setup",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Enabling Testnet",
+          id: "v2/build/build-on-minipay/enabling-testnet",
+        },
+        {
+          type: "doc",
+          label: "Code Library",
+          id: "v2/build/build-on-minipay/code-library",
+        },
+        {
+          type: "doc",
+          label: "MiniPay Deeplinks",
+          id: "v2/build/build-on-minipay/deeplinks",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Integrate with Celo",
+      items: [
+        { type: "doc", label: "Overview", id: "v2/build/integrations/index" },
+        { type: "doc", label: "General", id: "v2/build/integrations/general" },
+        // { type: "doc", label: "Checklist", id: "build/integrations/checklist" },
+        // { type: "doc", label: "Custody", id: "build/integrations/custody" },
+        { type: "doc", label: "Listings", id: "v2/build/integrations/listings" },
+        { type: "doc", label: "Cloud HSM", id: "v2/build/integrations/cloud-hsm" },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Launch Checklist",
+      id: "v2/build/launch-checklist",
+    },
+    {
+      type: "link",
+      label: "Community Tutorials",
+      href: "https://celo.academy/c/tutorials/4",
+    },
+    {
+      type: "doc",
+      label: "Support",
+      id: "v2/build/support",
+    },
+  ],
+
+  tools: [
+    {
+      type: "doc",
+      label: "Overview",
+      id: "v2/tools/overview",
+    },
+    {
+      type: "doc",
+      label: "Node Providers",
+      id: "v2/tools/node-providers",
+    },
+    {
+      type: "category",
+      label: "Dev Environments",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "v2/tools/dev-environments/overview",
+        },
+        {
+          type: "doc",
+          label: "With Remix",
+          id: "v2/tools/dev-environments/remix",
+        },
+        {
+          type: "doc",
+          label: "With Hardhat",
+          id: "v2/tools/dev-environments/hardhat",
+        },
+        {
+          type: "doc",
+          label: "With Foundry",
+          id: "v2/tools/dev-environments/foundry",
+        },
+        {
+          type: "doc",
+          label: "With thirdweb",
+          id: "v2/tools/dev-environments/thirdweb",
+        },
+        {
+          type: "category",
+          label: "Verify",
+          items: [
+            {
+              type: "doc",
+              label: "With Remix",
+              id: "v2/tools/dev-environments/verify/remix",
+            },
+            {
+              type: "doc",
+              label: "With Celoscan",
+              id: "v2/tools/dev-environments/verify/celoscan",
+            },
+            {
+              type: "doc",
+              label: "With Hardhat",
+              id: "v2/tools/dev-environments/verify/hardhat",
+            },
+            {
+              type: "doc",
+              label: "With Foundry",
+              id: "v2/tools/dev-environments/verify/foundry",
+            },
+            {
+              type: "doc",
+              label: "With Celo Explorer",
+              id: "v2/tools/dev-environments/verify/celo-explorer",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Libraries & SDKs",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "v2/tools/libraries-and-sdks/clients",
+        },
+        {
+          type: "doc",
+          label: "ContractKit",
+          id: "v2/tools/libraries-and-sdks/sdks/contractkit/overview",
+        },
+        {
+          type: "doc",
+          label: "RainbowKit",
+          id: "v2/tools/libraries-and-sdks/sdks/rainbowkit-celo/overview",
+        },
+        {
+          type: "doc",
+          label: "Thirdweb SDK",
+          id: "v2/tools/libraries-and-sdks/sdks/thirdweb-sdk/overview",
+        },
+        {
+          type: "doc",
+          label: "Web3Modal SDK",
+          id: "v2/tools/libraries-and-sdks/sdks/web3modal/overview",
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Faucets",
+      id: "v2/tools/faucets",
+    },
+    {
+      type: "category",
+      label: "Explorer",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "v2/tools/explorers/overview",
+        },
+        {
+          type: "doc",
+          label: "Block Explorer",
+          id: "v2/tools/explorers/block-explorers",
+        },
+        {
+          type: "doc",
+          label: "Data Indexers",
+          id: "v2/tools/explorers/data-indexers",
+        },
+        {
+          type: "doc",
+          label: "Analytics",
+          id: "v2/tools/explorers/analytics",
+        },
+        {
+          type: "link",
+          label: "Celoscan",
+          href: "https://celoscan.io",
+        },
+        {
+          type: "link",
+          label: "Celo Explorer",
+          href: "https://explorer.celo.org",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Wallets",
+      items: [
+        {
+          type: "autogenerated",
+          dirName: "v2/tools/wallets",
+        },
+        {
+          type: "link",
+          label: "Valora",
+          href: "https://valora.xyz",
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Bridges",
+      id: "v2/tools/bridges",
+    },
+    {
+      type: "category",
+      label: "Oracles",
+      items: [
+        {
+          type: "autogenerated",
+          dirName: "v2/tools/oracles",
+        },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Fee Abstraction",
+      id: "v2/tools/fee-abstraction",
+    },
+    {
+      type: "link",
+      label: "SocialConnect",
+      href: "https://socialconnect-docs.vercel.app/",
+    },
+  ],
+
+  migrationNoticesSidebar: [
+    {
+      type: "doc",
+      label: "Overview",
+      id: "v2/migration-notices/overview",
+    },
+    {
+      type: "doc",
+      label: "L2 Migration Decision Tree",
+      id: "v2/migration-notices/decision-tree",
+    },
+    {
+      type: "doc",
+      label: "Testnets",
+      id: "v2/migration-notices/testnets",
+    },
+    {
+      type: "doc",
+      label: "L2 Operator Guide",
+      id: "v2/migration-notices/operator-guide",
+    },
+    {
+      type: "link",
+      label: "Celo L2 Specs",
+      href: "https://specs.celo.org/"
+    }
+  ],
+
+  holderSiderbar: [
+    { 
+      type: "doc", 
+      label: "Overview", 
+      id: "v2/holder/index" },
+    {
+      type: "category",
+      label: "Manage",
+      items: [
+        {
+          type: "doc",
+          label: "Self-Custody",
+          id: "v2/holder/manage/self-custody",
+        },
+        {
+          type: "doc",
+          label: "Release Gold",
+          id: "v2/holder/manage/release-gold",
+        },
+        {
+          type: "doc",
+          label: "Exchange Assets",
+          id: "v2/holder/manage/exchange",
+        },
+        {
+          type: "doc",
+          label: "Asset Management",
+          id: "v2/holder/manage/asset",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Voting",
+      items: [
+        {
+          type: "doc",
+          label: "Voting on Governance",
+          id: "v2/holder/vote/governance",
+        },
+        {
+          type: "doc",
+          label: "Governable Parameters",
+          id: "v2/holder/vote/governance-parameters",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Recovery",
+      items: [
+        {
+          type: "doc",
+          label: "Recover from ETH Address",
+          id: "v2/holder/recover/from-eth-address",
+        },
+        {
+          type: "doc",
+          label: "Recover from Celo Address",
+          id: "v2/holder/recover/from-celo-address",
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Exchanges",
+      href: "https://coinmarketcap.com/currencies/celo/markets/",
+    },
+  ],
+
+
   // ######################################
   // What is Celo
   // ######################################
