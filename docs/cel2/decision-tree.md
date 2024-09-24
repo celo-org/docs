@@ -21,10 +21,11 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 
   If none of the above work for you, you can use cLabs best effort hosted node: [Forno](https://docs.celo.org/network/node/forno).
 </details>
+
 <details>
   <summary>I use ContractKit or Fee Abstraction (ERC-20 gas tokens)</summary>
 
-  Recommended versions for SDK and libraries:
+  **Required** versions for SDK and libraries:
   - [@celo/connect >=6.1.0](https://www.npmjs.com/package/@celo/connect)
   - [@celo/contractkit >=8.1.1](https://www.npmjs.com/package/@celo/contractkit)
   - [@celo/celocli >=5.1.1](https://www.npmjs.com/package/@celo/celocli)
@@ -45,7 +46,9 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
   Reach out to us!
 
   - Technical question? [celo-org discussions on GitHub](https://github.com/orgs/celo-org/discussions/categories/cel2)
-  - Any type of question? TODO Discord channel
+  - Any type of question? Reach out on [Discord](https://chat.celo.org) in the #celo-L2-support channel
+
+
 Forum: 
 
   Also check out these resources:

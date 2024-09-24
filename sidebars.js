@@ -1048,6 +1048,16 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "L1 to L2 Operator Guide",
+      id: "cel2/l2-operator-guide",
+    },
+    {
+      type: "doc",
+      label: "L1 to L2 Decision Tree",
+      id: "cel2/decision-tree",
+    },
+    {
+      type: "doc",
       label: "Add Cel2 Testnet to Wallet",
       id: "cel2/add-cel2-testnet-to-metamask",
     },
@@ -1086,16 +1096,6 @@ const sidebars = {
       type: "doc",
       label: "Contract Addresses",
       id: "cel2/contract-addresses",
-    },
-    {
-      type: "doc",
-      label: "L1 to L2 Operator Guide",
-      id: "cel2/l2-operator-guide",
-    },
-    {
-      type: "doc",
-      label: "L1 to L2 Decision Tree",
-      id: "cel2/decision-tree",
     },
     {
       type: "link",
