@@ -9,7 +9,7 @@ description: How to migrate Celo nodes from L1 to L2
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 :::info
-Stay tuned for the alfajores migration block number and approximate date / time.
+Alfajores L2 first block: 26384000
 :::
 
 Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
@@ -29,13 +29,9 @@ The instructions below are not yet fully usable, as some values need to be set. 
 
 ## Stopping an L1 Node
 
-If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for the upcoming Baklava and Mainnet migrations.
+If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock=26384000` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for the upcoming Baklava and Mainnet migrations.
 
-:::warning
-TODO: Stay tuned for Alfajores migration block number
-:::
-
-This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1`.
+This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1` (i.e.: 26383999).
 
 ## Starting an L2 node
 
