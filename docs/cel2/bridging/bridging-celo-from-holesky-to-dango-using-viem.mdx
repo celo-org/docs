@@ -1,9 +1,10 @@
 ---
-title: Bridging Celo from Holesky to Dango using Viem
+title: Bridging CELO from Holesky to Dango using Viem
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+
 
 In this tutorial, you will learn how to programmatically bridge CELO from Holskey to Dango using the [viem OP Stack](https://viem.sh/op-stack).  
 
@@ -11,7 +12,10 @@ Bridging CELO from Holesky to Dango is simple, all you need to do is call [`depo
 
 The `depositERC20Transaction` pulls CELO tokens from the account which is why you need to approve `OptimismPortalProxy` to spend CELO tokens first.
 
-As you can see, we’ve created a `dango.js` file that contains all the necessary data for interacting with the test network. Since Dango will be a short-lived testnet, chain data won’t be available through viem or wagmi, so this file ensures you have everything you need directly at hand.
+Below, we’ve created a `dango.js` file that contains all the necessary data for interacting with the test network. 
+
+Since Dango will be a short-lived testnet, chain data won’t be available through viem or wagmi, so this file ensures you have everything you need directly at hand.
+
 
 <Tabs>
   <TabItem value="index.js" label="index.js" default>
@@ -25,6 +29,7 @@ As you can see, we’ve created a `dango.js` file that contains all the necessar
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
+    // https://docs.celo.org/cel2/contract-addresses
     const OptimismPortalProxy = "0xB29597c6866c6C2870348f1035335B75eEf79d07";
 
     const account = privateKeyToAccount(
@@ -49,7 +54,7 @@ As you can see, we’ve created a `dango.js` file that contains all the necessar
     }).extend(publicActionsL2());
 
     async function main() {
-      // Approve OptimismPortal to pull Celo on Holesky
+      // Approve OptimismPortal to pull CELO on Holesky
       const approve = await walletClientL1.writeContract({
         address: CELOL1,
         abi: [
@@ -110,7 +115,7 @@ As you can see, we’ve created a `dango.js` file that contains all the necessar
           ],
           functionName: "depositERC20Transaction",
           args: [
-            account.address, // Account where you want to receive Celo on L2
+            account.address, // Account where you want to receive CELO on L2
             parseEther("0.0001"), // Amount you are transferring to the Portal
             parseEther("0.0001"), // Amount you want on L2
             100_000, // Amount of L2 gas to purchase by burning gas on L1.
