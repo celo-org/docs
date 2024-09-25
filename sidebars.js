@@ -7,21 +7,124 @@ const sidebars = {
     { type: "doc", label: "Overview", id: "general/index" },
     {
       type: "doc",
-      label: "Architecture",
+      label: "Our History",
+      id: "general/history",
+    },
+    {
+      type: "doc",
+      label: "L1 Architecture",
       id: "general/architecture",
     },
     {
-      type: "doc",
-      label: "Web2 to Web3",
-      id: "general/web2-to-web3",
+      type: "category",
+      label: "Using Celo",
+      items: [
+        {
+          type: "doc",
+          label: "Wallets",
+          id: "general/using-celo/wallets",
+        },
+        {
+          type: "doc",
+          label: "Gas Fees",
+          id: "general/using-celo/gas-fees",
+        },
+        {
+          type: "doc",
+          label: "Bridging",
+          id: "general/using-celo/bridging",
+        },
+        {
+          type: "doc",
+          label: "DEXs",
+          id: "general/using-celo/dexes",
+        },
+        {
+          type: "doc",
+          label: "Voting",
+          id: "general/using-celo/voting",
+        },
+      ],
     },
     {
-      type: "doc",
-      label: "Whitepapers",
-      id: "general/whitepapers",
+      type: "category",
+      label: "Joining Celo",
+      items: [
+        {
+          type: "doc",
+          label: "Celo Ecosystem",
+          id: "general/ecosystem/overview",
+        },
+        {
+          type: "doc",
+          label: "Builders",
+          id: "general/ecosystem/builders",
+        },
+        {
+          type: "doc",
+          label: "Open Source Contributors",
+          id: "general/ecosystem/contributors",
+        },
+        {
+          type: "doc",
+          label: "Regional DAOs",
+          id: "general/ecosystem/daos",
+        },
+        {
+          type: "doc",
+          label: "Governance",
+          id: "general/ecosystem/governance",
+        },
+        {
+          type: "category",
+          label: "Guides",
+          items: [
+            {
+              type: "doc",
+              label: "Create a Governance Proposal",
+              id: "general/ecosystem/guides/create-proposal",
+            },
+            {
+              type: "doc",
+              label: "Fundraising",
+              id: "general/ecosystem/guides/fundraising",
+            },
+            {
+              type: "doc",
+              label: "Guidelines",
+              id: "general/ecosystem/guides/guidelines",
+            },
+            {
+              type: "doc",
+              label: "Grant Playbook",
+              id: "general/ecosystem/guides/grant-playbook",
+            },
+            {
+              type: "link",
+              label: "Code of Conduct",
+              href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
+            },
+          ],
+        },
+      ],
     },
-    { type: "doc", label: "Glossary", id: "general/glossary" },
-    { type: "doc", label: "Gallery", id: "general/gallery" },
+    {
+      type: "link",
+      label: "Celo Website",
+      href: "https://celo.org",
+    },
+    // {
+    //   type: "doc",
+    //   label: "Web2 to Web3",
+    //   id: "general/web2-to-web3",
+    // },
+    // {
+    //   type: "doc",
+    //   label: "Whitepapers",
+    //   id: "general/whitepapers",
+    // },
+    // { type: "doc", label: "Glossary", id: "general/glossary" },
+    // { type: "doc", label: "Gallery", id: "general/gallery" },
     // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
 
