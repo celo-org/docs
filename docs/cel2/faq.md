@@ -5,7 +5,9 @@ description: Frequently Asked Questions about Cel2
 
 ### How do I run a node or upgrade an existing node?
 
-See the [L2 Migration Guide](/docs/cel2/l2-operator-guide.md) and the following related assets:
+See the [L2 Migration Guide](/docs/cel2/l2-operator-guide.md).
+
+For Dango, here are the related assets:
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/dango/dango-migrated-datadir.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/dango/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/dango/deployment-l1.json)
@@ -98,7 +100,7 @@ The gas limit per block is 30 million. The Dango testnet has a throughput of 15M
 
 - CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
 - Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- Epoch rewards? No supported in Dango but will be supported in Alfajores and Mainnet
+- Epoch rewards? Not supported in Dango, but will be supported in Alfajores and Mainnet
 
 ## Not sure what you need to do?
 
