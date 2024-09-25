@@ -65,7 +65,6 @@ We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.a
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
 :::
 
-
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
 1. You can use the official Docker image for the EigenDA Proxy. At the time of writing, we are using version 1.4.1 (`ghcr.io/layr-labs/eigenda-proxy:v1.4.1`). Alternatively, you can build it from source:
@@ -377,7 +376,7 @@ docker run -d \
     --http.api=eth,net,web3,debug,txpool,engine \
     --http.vhosts=* \
     --http.corsdomain=* \
-    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ 
+    --rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org/ \ 
     --rollup.disabletxpoolgossip=true \
     --rollup.halt=major \
     --verbosity=3 \
