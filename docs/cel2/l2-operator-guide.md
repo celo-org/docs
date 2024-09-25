@@ -185,7 +185,7 @@ You can use the [official op-geth documentation](https://docs.optimism.io/builde
 Although there are multiple ways to run op-geth, all options will share most of the same configuration. Depending on the option you choose, you may need to execute some steps before running op-geth to prepare the chaindata:
 
 - [Option 1: Snap sync](#option-1-snap-sync)
-- [Option 2: Download L2 chaindata](#option-2-download-l1-chaindata-and-get-started)
+- [Option 2: Download L2 chaindata](#option-2-download-l2-chaindata)
 - [Option 3: L1 chaindata migration](#option-3-l1-chaindata-migration)
 
 #### Option 1: Snap sync
