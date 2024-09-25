@@ -100,7 +100,7 @@ The gas limit per block is 30 million. The Dango testnet has a throughput of 15M
 
 - CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
 - Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- Epoch rewards? No supported in Dango but will be supported in Alfajores and Mainnet
+- Epoch rewards? Not supported in Dango, but will be supported in Alfajores and Mainnet
 
 ## Not sure what you need to do?
 
