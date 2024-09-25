@@ -58,8 +58,13 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 ### Running EigenDA Proxy
 
 :::info
+We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance, but for mainnet, you are expected to run this service yourself.
+:::
+
+:::info
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
 :::
+
 
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
