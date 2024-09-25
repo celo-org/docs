@@ -9,7 +9,7 @@ This shift, [proposed by cLabs in July
 to maintain the seamless user experience that Celo is known for—characterized by speed, low costs,
 and ease of use—while leveraging Ethereum’s security and ecosystem.  As part of this transition,
 Celo is currently operating two Layer 2 testnets: Dango, which is live, and Alfajores, which will be
-upgraded to Layer 2 in late September 2024.
+upgraded to Layer 2 on September 26, 2024.
 
 
 ---
@@ -44,4 +44,7 @@ These dates are subject to change. This documentation will be continuously updat
 ## Useful Links
 
 - [Layer 2 Specification](https://specs.celo.org/root.html)
+- [L2 Migration Guide](/cel2/l2-operator-guide)
+- [What's Changed?](https://specs.celo.org/l2_migration.html)
+- [Cel2 Code](https://github.com/celo-org/optimism)
 - [FAQ](https://docs.celo.org/cel2/faq)
