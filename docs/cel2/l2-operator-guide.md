@@ -1,7 +1,11 @@
 ---
-title: Celo L1 → Celo L2 Operator Guide
+title: Celo L2 Migration Guide
 description: How to migrate Celo nodes from L1 to L2
 ---
+
+This guide is designed to help full node operators migrate from the Celo L1 to the Celo L2 client
+for the upcoming Layer 2 upgrades. Please note that the Celo mainnet instructions will be finalized
+after the Alfajores testnet upgrade occurs.
 
 
 ## Alfajores migration overview
@@ -9,7 +13,7 @@ description: How to migrate Celo nodes from L1 to L2
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 :::info
-Alfajores migration block *26384000* (expected on Thursday, September 26, 2024 8:09:22 AM UTC)
+The Alfajores network will migrate on block *26384000* (expected on Thursday, September 26, 2024 8:09:22 AM UTC)
 :::
 
 Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
@@ -23,17 +27,13 @@ However, RPC calls that require execution or state for pre-transition L1 blocks 
 Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
-:::warning
-The instructions below are not yet fully usable, as some values need to be set. They are marked as TODO.
-:::
-
-## Stopping an L1 Node
+### Stopping an L1 node
 
 If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock=26384000` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for the upcoming Baklava and Mainnet migrations.
 
 This will automatically prevent your node from processing blocks higher than `l2migrationblock - 1` (i.e.: 26383999).
 
-## Starting an L2 node
+### Starting an L2 node
 
 Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
 
@@ -59,6 +59,7 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 
 :::info
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
+:::
 
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
@@ -173,7 +174,7 @@ docker run -d \
 
 If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
-## Running op-geth
+### Running op-geth
 
 Now, let's move on to the op-geth execution client. It will be responsible for executing transactions and generating blocks. We recommend running op-geth on a machine with 8 modern cores (amd64 or arm64), at least 8GB of memory and 200GB of storage. Feel free to adjust these values based on your specific requirements.
 
@@ -183,11 +184,11 @@ You can use the [official op-geth documentation](https://docs.optimism.io/builde
 
 Although there are multiple ways to run op-geth, all options will share most of the same configuration. Depending on the option you choose, you may need to execute some steps before running op-geth to prepare the chaindata:
 
-- [Option 1: snap sync](#option-1-snap-sync)
-- [Option 2: download L1 chaindata and get started](#option-2-download-l1-chaindata-and-get-started)
+- [Option 1: Snap sync](#option-1-snap-sync)
+- [Option 2: Download L2 chaindata](#option-2-download-l2-chaindata)
 - [Option 3: L1 chaindata migration](#option-3-l1-chaindata-migration)
 
-### Option 1: snap sync
+#### Option 1: Snap sync
 
 :::warning
 Snap sync will only work once Alfajores L2 is live.
@@ -214,13 +215,13 @@ docker run -it \
 
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-### Option 2: download L1 chaindata and get started
+#### Option 2: Download L2 chaindata
 
 :::warning
-TODO: The migrated chaindata is not yet available for download.
+The migrated chaindata is not yet available for download. It will be shared after the upgrade.
 :::
 
-This option is required for nodes running in full or archive mode. In case of an archive node, you can download the migrated chaindata from a L1 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
+This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
 ```bash
 OP_GETH_DIR=/tmp/alfajores/op-geth
@@ -232,12 +233,12 @@ tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DIR}
 
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-### Option 3: L1 chaindata migration
+#### Option 3: L1 chaindata migration
 
-L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
-For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block TODO).
+Migrating L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
+For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block 26383550).
 
-#### Pre-migration
+##### Pre-migration
 
 The migration script is provided as a docker image, but you can also review and build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
 
@@ -274,12 +275,12 @@ Where:
 - `old-db` should be the path to the chaindata snapshot.
 - `new-db` should be the path where you want the L2 chaindata to be written.
 - Please run the pre-migration script at least 24 hours before the migration block so that there is time to troubleshoot any issues.
-- Ensure the pre-migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance: TODO(discord)
+- Ensure the pre-migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance on discord
 - Keep the `new-db` as is until the full migration script is run. If this data is corrupted or lost, the full migration may fail or take a very long time to complete.
 
-#### Full migration
+##### Full migration
 
-At block TODO, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+At block 26383550, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
@@ -324,12 +325,12 @@ docker run -it --rm \
 
 Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
 
-#### Start your L2 Node
+##### Start your L2 Node
 
 Now that we have the migrated chaindata, we can start our L2 node using your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
-### Executing op-geth
+#### Executing op-geth
 
 1. To run op-geth, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8`. Alternatively, you can clone the [celo-org/op-geth repository](https://github.com/celo-org/op-geth) and build op-geth from source:
 
@@ -372,17 +373,16 @@ docker run -d \
     --http.api=eth,net,web3,debug,txpool,engine \
     --http.vhosts=* \
     --http.corsdomain=* \
-    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ # TODO
+    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ 
     --rollup.disabletxpoolgossip=true \
     --rollup.halt=major \
     --verbosity=3 \
     --bootnodes=<TODO>
 ```
 
-## Mainnet Migration
+## Mainnet migration
 
-<details>
-<summary>Work in progress</summary>
-
-Celo Mainnet is still in the process of migrating to L2. The process will be similar to the Alfajores migration, but it may include some differences. Use the Alfajores migration as a reference, and stay tuned for updates on the Mainnet migration process!
-</details>
+We haven't yet picked a migration date for upgrading the Celo mainnet to the Layer 2 codebase. Once
+a date is set, we will update this page with the mainnet migration instructions. The process will be
+similar to the Alfajores migration. For now, feel free to refer to the Alfajores migration
+instructions as a reference and stay tuned for updates on the Mainnet migration process!

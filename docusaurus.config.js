@@ -109,7 +109,7 @@ module.exports = {
         },
         {
           to: "cel2/",
-          label: "Cel2",
+          label: "Celo L2",
           position: "left",
         },
         {

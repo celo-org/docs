@@ -1043,72 +1043,76 @@ const sidebars = {
   cel2: [
     {
       type: "doc",
-      label: "Introduction to Cel2",
+      label: "Overview",
       id: "cel2/index",
     },
     {
       type: "doc",
-      label: "L1 to L2 Operator Guide",
+      label: "L2 Migration Guide",
       id: "cel2/l2-operator-guide",
     },
     {
       type: "doc",
-      label: "L1 to L2 Decision Tree",
+      label: "L2 Migration Decision Tree",
       id: "cel2/decision-tree",
     },
-    {
-      type: "doc",
-      label: "Add Cel2 Testnet to Wallet",
-      id: "cel2/add-cel2-testnet-to-metamask",
-    },
-    {
-      type: "doc",
-      label: "Network Information",
-      id: "cel2/network-information",
-    },
-    {
-      type: "doc",
-      label: "Fee Currencies",
-      id: "cel2/fee-currencies",
-    },
-    {
-      type: "category",
-      label: "Bridging",
-      items: [
-        {
-          type: "doc",
-          label: "Deposit Celo using Viem",
-          id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
-        },
-        {
-          type: "doc",
-          label: "Withdraw Celo using Viem",
-          id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
-        },
-      ],
-    },
-    {
-      type: "doc",
-      label: "Deploy Contract",
-      id: "cel2/deploy-contract",
-    },
-    {
-      type: "doc",
-      label: "Contract Addresses",
-      id: "cel2/contract-addresses",
-    },
-    {
-      type: "link",
-      label: "Cel2 Dango Bridge",
-      href: "https://testnets.superbridge.app/celo-testnet",
-    },
-    {
-      type: "link",
-      label: "Cel2 Dango Faucet",
-      href: "https://faucet.celo.org/dango",
+    { type: "link",
+      label: "What's Changed?",
+      href: "https://specs.celo.org/l2_migration.html",
     },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
+    {
+      type: "category",
+      label: "Dango Testnet Information",
+      items: [
+      {
+        type: "doc",
+        label: "Network Information",
+        id: "cel2/network-information",
+      },
+      {
+        type: "doc",
+        label: "Contract Addresses",
+        id: "cel2/contract-addresses",
+      },
+      {
+        type: "doc",
+        label: "Add Cel2 Testnet to Wallet",
+        id: "cel2/add-cel2-testnet-to-metamask",
+      },
+      {
+        type: "category",
+        label: "Bridging",
+        items: [
+          {
+            type: "doc",
+            label: "Deposit Celo using Viem",
+            id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
+          },
+          {
+            type: "doc",
+            label: "Withdraw Celo using Viem",
+            id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
+          },
+        ],
+      },
+      {
+        type: "doc",
+        label: "Deploy Contract",
+        id: "cel2/deploy-contract",
+      },
+      {
+        type: "link",
+        label: "Cel2 Dango Bridge",
+        href: "https://testnets.superbridge.app/celo-testnet",
+      },
+      {
+        type: "link",
+        label: "Cel2 Dango Faucet",
+        href: "https://faucet.celo.org/dango",
+      }]
+    },
   ],
 };
 module.exports = sidebars;

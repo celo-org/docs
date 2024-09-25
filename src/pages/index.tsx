@@ -12,6 +12,7 @@ import "./index.module.css";
 
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import HeroImage from "../components/HeroImage";
 
 const TITLE = translate({ message: "Celo Documentation" });
 const DESCRIPTION = translate({
@@ -57,16 +58,16 @@ export default function HomePage(): JSX.Element {
         />
       </Head>
       <main className="margin-vert--lg max-w-7xl mx-auto px-4">
-        <section className="w-full flex md:flex-row flex-col items-center px-2 md:px-10">
+        <section className="w-full justify-between flex md:flex-row flex-col items-center px-2 md:px-10">
           <div className="md:w-1/2 w-full">
             <span className="text-4xl font-bold text-center space-x-5">
-              Build For MiniPay – Sign Up For Developer Updates
+              Celo L1 to Ethereum L2 Migration Coming Soon!
             </span>
             <Link
-              href={"/developer/build-on-minipay/overview"}
+              href={"/cel2"}
               className="flex space-x-2 items-center mt-2"
             >
-              <span className="text-lg font-semibold">Build on MiniPay</span>
+              <span className="text-lg font-semibold">Learn More</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -83,12 +84,9 @@ export default function HomePage(): JSX.Element {
               </svg>
             </Link>
           </div>
-          <img
-            className="md:w-1/2 w-full mt-5 md:mt-0"
-            src="img/Celo_MiniPay_02_Horizontal.jpg"
-          />
+          {/* TODO: Fix useColorMode is called outside the <ColorModeProvider/> */}
+          <HeroImage />
         </section>
-
         <section className="mt-12">
           <div className="text-3xl font-bold px-2 w-full">
             <Translate id="home.section1.title">
@@ -109,17 +107,17 @@ export default function HomePage(): JSX.Element {
                 <img src="/img/homepage/illustration-1.png" />
               </div>
             </div>
-
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
                   <Translate id="home.section1.box2">
-                    Learn smart contract development with us
+                    Build on MiniPay
                   </Translate>
                 </span>
-                {buildKnowMoreButton("https://celo.academy/c/tutorials/4")}
+                {buildKnowMoreButton("/developer/build-on-minipay/overview")}
               </div>
               <div className="w-1/3">
+                {/* biome-ignore lint/a11y/useAltText: <explanation> */}
                 <img src="/img/homepage/illustration-2.png" />
               </div>
             </div>
