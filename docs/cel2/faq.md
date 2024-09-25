@@ -3,16 +3,14 @@ title: Cel2 FAQ
 description: Frequently Asked Questions about Cel2
 ---
 
-## Dango Testnet
-
 ### How do I run a node or upgrade an existing node?
 
-- [Celo L1 → Celo L2 Operator Guide](/docs/cel2/l2-operator-guide.md) and related assets:
-  - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/dango/dango-migrated-datadir.tar.zst)
-  - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/dango/config.json)
-  - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/dango/deployment-l1.json)
-  - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/dango/rollup.json)
-  - [Genesis](https://storage.googleapis.com/cel2-rollup-files/dango/genesis.json) used for snap syncing
+See the [L2 Migration Guide](/docs/cel2/l2-operator-guide.md) and the following related assets:
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/dango/dango-migrated-datadir.tar.zst)
+- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/dango/config.json)
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/dango/deployment-l1.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/dango/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/dango/genesis.json) used for snap syncing
 - Container images:
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:badaf7f297762fbda117bc654b744e74a0ad6fe1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:42f2a5bbb7218c0828a996c48ad6bceb1e5f561a)
@@ -35,24 +33,22 @@ description: Frequently Asked Questions about Cel2
     /ip4/34.82.212.175/tcp/9222/p2p/16Uiu2HAm2xo9mPhbMW9eAzjLMjp6JFEa1gijWu2CsBpWEqVWh7Kg
     ```
 
-### Can I use an RPC endpoint?
+### Can I use an RPC endpoint with Dango?
 
 - Ethereum JSON-RPC endpoint: [https://forno.dango.celo-testnet.org/](https://forno.dango.celo-testnet.org/) (op-geth kind)
 - OP RPC endpoint: [https://op.dango.celo-testnet.org/](https://op.dango.celo-testnet.org/) (op-node kind)
 
-### Is there a faucet? Where? How do I get funds?
+### Is there a Dango faucet? Where? How do I get funds?
 
 Faucet: [https://faucet.celo.org/dango](https://faucet.celo.org/dango)
 
-### Is there an explorer?
+### Is there a Dango explorer?
 
 Blockscout Explorer: [https://celo-dango.blockscout.com/](https://celo-dango.blockscout.com/)
 
-### How can I use the native bridge?
+### How can I use the native bridge with Dango?
 
 Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://superbridge.app/celo-testnet) or [https://testnets.superbridge.app/celo-testnet](https://testnets.superbridge.app/celo-testnet).
-
-## Dango and Alfajores Testnets
 
 ### What’s the difference between Dango and Alfajores?
 
@@ -100,10 +96,10 @@ The gas limit per block is 30 million. The Dango testnet has a throughput of 15M
 
 ## What happened to these features?
 
-- CELO token duality? supported, see [Token Duality](https://specs.celo.org/token_duality.html)
-- fee currencies? supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- epoch rewards? no longer supported, see [L2 CELO Distribution Schedule](https://specs.celo.org/l2_migration.html#l2-celo-distribution-schedule)
+- CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
+- Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
+- Epoch rewards? No supported in Dango but will be supported in Alfajores and Mainnet
 
 ## Not sure what you need to do?
 
-Check out the [decision tree](/docs/cel2/decision-tree.md).
+Check out the [L2 Migration decision tree](/docs/cel2/decision-tree.md).

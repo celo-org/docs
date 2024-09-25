@@ -1,5 +1,5 @@
 ---
-title: Cel2 Decision Tree
+title: L2 Migration Decision Tree
 description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 ---
 
@@ -12,12 +12,11 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 <details>
   <summary>I use or need a node provider</summary>
 
-  The following node providers will be available shortly after the migration to Cel2:
+  The following node providers are planning on upgrading with Alfajores and will be available shortly after the Alfajores L2 upgrade:
 
-  - [Quicknode](https://www.quicknode.com/chains/celo) (not yet verified)
-  - [Infura](https://www.infura.io/networks/celo) (not yet verified)
-  - [dRPC](https://drpc.org/chainlist/celo) (not yet verified)
-
+  - [Quicknode](https://www.quicknode.com/chains/celo)
+  - [Infura](https://www.infura.io/networks/celo)
+  - [dRPC](https://drpc.org/chainlist/celo)
 
   If none of the above work for you, you can use cLabs best effort hosted node: [Forno](https://docs.celo.org/network/node/forno).
 </details>
