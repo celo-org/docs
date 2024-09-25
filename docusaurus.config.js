@@ -70,7 +70,7 @@ module.exports = {
     announcementBar: {
       id: "request_tokens",
       content:
-        'Need Testnet tokens? – Request from <a target="_blank" rel="noopener noreferrer" href="https://faucet.celo.org/alfajores">Faucet</a>.',
+        'Alfajores L2 Testnet is live! Full node operators: <a target="_blank" rel="noopener noreferrer" href="/cel2">Upgrade your nodes</a> now.',
       backgroundColor: "#18191A",
       textColor: "#ffffff",
       isCloseable: false,

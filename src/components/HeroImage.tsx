@@ -7,7 +7,7 @@ export default function HeroImage() {
   if (colorMode === "dark")
     return (
       <img
-        className="md:w-1/4 w-full mt-5 md:mt-0"
+        className="md:w-1/2 w-full object-contain mt-5 md:mt-0"
         alt="hero-image"
         src="/img/homepage/celo_docs_hero_dark.png"
       />
@@ -15,7 +15,7 @@ export default function HeroImage() {
 
   return (
     <img
-      className="md:w-1/4 w-full mt-5 md:mt-0"
+      className="md:w-1/2 w-full object-contain mt-5 md:mt-0"
       alt="hero-image"
       src="/img/homepage/celo_docs_hero_light.png"
     />

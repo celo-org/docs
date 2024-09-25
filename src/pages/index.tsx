@@ -84,12 +84,13 @@ export default function HomePage(): JSX.Element {
               </svg>
             </Link>
           </div>
-          {/* TODO: Fix useColorMode is called outside the <ColorModeProvider/> */}
-          <HeroImage />
+          <div className="flex justify-center md:w-1/2 w-full h-full ">
+            <HeroImage />
+          </div>
         </section>
         <section className="mt-12">
           <div className="text-3xl font-bold px-2 w-full">
-            <Translate id="home.section1.title">
+            <Translate id="home2.section1.title">
               Learn How to Build with Celo
             </Translate>
           </div>
@@ -97,7 +98,7 @@ export default function HomePage(): JSX.Element {
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  <Translate id="home.section1.box1">
+                  <Translate id="home2.section1.box1">
                     Get started with Celo Composer CLI
                   </Translate>
                 </span>
@@ -110,7 +111,7 @@ export default function HomePage(): JSX.Element {
             <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap dark:bg-fig bg-gypsum">
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
-                  <Translate id="home.section1.box2">
+                  <Translate id="home2.section1.box2">
                     Build on MiniPay
                   </Translate>
                 </span>
@@ -124,8 +125,198 @@ export default function HomePage(): JSX.Element {
           </div>
         </section>
 
+        {/* Section 2 */}
+        <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
+          <span className="text-3xl font-bold">
+            <Translate id="home2.section3.title">
+              Explore Developer Tools and Resources
+            </Translate>
+          </span>
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-x-4 gap-y-4 w-full mt-8">
+            <a
+              href="https://faucet.celo.org"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.faucet.title">Faucet</Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.faucet.description">
+                  Fund your Testnet Account.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://celoscan.io/"
+              target={"_blank"}
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+              rel="noreferrer"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoScan.title">
+                  Celo Scan
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoScan.description">
+                  Explore transactions on Celo Network.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+            <a
+              href="/protocol/bridge"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoBridge.title">
+                  Celo Bridge
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoBridge.description">
+                  How to bridge assets accross chains.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </a>
+
+            <Link
+              href="/wallet"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.wallets.title">Wallets</Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.wallets.description">
+                  Overview of ecosystem wallets.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
+
+            <Link
+              href="/developer/sdks/celo-sdks"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.celoLibraries.title">
+                  Celo Libraries & SDKs
+                </Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.celoLibraries.description">
+                  Search our vast range of libraries and SDKs.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
+
+            <Link
+              href="/developer/verify"
+              target="_blank"
+              className="hover:no-underline px-5 py-5 items-start flex flex-col flex-no-wrap bg-gypsum dark:bg-fig hover:cursor-pointer relative"
+            >
+              <span className="font-semibold text-2xl text-black dark:text-white">
+                <Translate id="home2.section3.deploy.title">Deploy</Translate>
+              </span>
+              <span className="text-base text-black dark:text-prosperity mt-1">
+                <Translate id="home2.section3.deploy.description">
+                  How to build and deploy a dApp.
+                </Translate>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5 absolute bottom-5 right-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </Link>
+          </div>
+        </section>
+
         {/* Section 3 */}
-        <section className="mt-12">
+        {/* <section className="mt-12">
           <div className="text-3xl font-bold mx-2">
             <Translate id="home.section2.title">
               Explore Providers and Frameworks
@@ -192,10 +383,10 @@ export default function HomePage(): JSX.Element {
               <span className="text-black dark:text-white">Lava</span>
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 4 */}
-        <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
+        {/* <section className="mt-20 md:p-8 p-4 bg-sand dark:bg-fig">
           <span className="text-3xl font-bold">
             <Translate id="home.section3.title">Start Your Journey</Translate>
           </span>
@@ -291,7 +482,7 @@ export default function HomePage(): JSX.Element {
               </span>
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* section 5 */}
 
@@ -453,6 +644,63 @@ export default function HomePage(): JSX.Element {
 
         <section className="mt-12">
           <div className="text-4xl font-semibold px-2 w-full">
+            <Translate id="home2.section5.title">
+              Join the Builder Ecosystem
+            </Translate>
+          </div>
+          <div className="text-xl font-medium px-2 w-full mt-2">
+            <Translate id="home2.section5.subheader">
+              Discover the many ways to connect with our growing community of
+              developers.
+            </Translate>
+          </div>
+          <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
+            <div className="flex-1 p-6 w-full flex flex-row flex-no-wrap bg-sand dark:bg-fig hover:cursor-pointer  ">
+              <div className="w-2/3 flex flex-col justify-between h-full">
+                <span className="text-3xl font-semibold pb-7">
+                  Sign Up for Developer Updates
+                </span>
+                {buildKnowMoreButton(
+                  "https://events.celo.org/builders"
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 w-full mt-8">
+              {sectionFourCard(
+                "Connect with the Community",
+                "Join our Discord",
+                "img/homepage/connect.svg",
+                "https://discord.com/invite/celo"
+              )}
+              {sectionFourCard(
+                "Bring Your Ideas to Life",
+                "Sign up for upcoming hackathons",
+                "img/homepage/contribute.svg",
+                "https://lemonade.social/celo"
+              )}
+
+              {sectionFourCard(
+                "Apply for Grants",
+                "Explore public goods funding programs",
+                "img/homepage/ambassador.svg",
+                "https://www.celopg.eco/programs"
+              )}
+
+              {sectionFourCard(
+                "Access Exclusive Resources",
+                "Register as an active Celo builder",
+                "img/homepage/connect.svg",
+                "https://forms.gle/yDQUYGZS3BYR8WFZA"
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="mt-12">
+          <div className="text-4xl font-semibold px-2 w-full">
             <Translate id="home.section5.title">Join Our Ecosystem</Translate>
           </div>
           <div className="px-2 flex flex-row flex-wrap w-full space-x-0 md:space-x-4 space-y-4 md:space-y-0 mt-8 ">
@@ -465,9 +713,6 @@ export default function HomePage(): JSX.Element {
                 </span>
                 {buildKnowMoreButton("/community/grant-playbook")}
               </div>
-              {/* <div className="w-1/2">
-                <img src="/img/homepage/celo-camp.webp" />
-              </div> */}
             </div>
           </div>
 
@@ -501,7 +746,7 @@ export default function HomePage(): JSX.Element {
               )}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* section 6 end */}
       </main>
