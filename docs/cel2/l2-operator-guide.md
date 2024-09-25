@@ -24,7 +24,7 @@ Those who _do_ need a full sync have two options: download and use the migrated 
 
 To simplify the management of the Celo L2 node, no legacy execution logic is included in Celo L2.
 However, RPC calls that require execution or state for pre-transition L1 blocks remain supported by proxying these requests from the Celo L2 node to a legacy Celo L1 node.
-Therefore, operators looking to run full archive nodes or serve requests for historical execution now need to run both a Celo L1 node and a Celo L2 node.
+Therefore, operators looking to run full archive nodes or serve requests for historical state / execution now need to run both a Celo L1 node and a Celo L2 node. The Celo L2 node can be configured to redirect requests for historical state / execution to the Celo L1 node (see Configuring a HistoricalRPCService).  
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
 ### Stopping an L1 node
@@ -382,6 +382,31 @@ docker run -d \
     --verbosity=3 \
     --bootnodes=enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303,enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303,enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303,enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303,enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
 ```
+
+#### Configuring a HistoricalRPCService
+
+The Celo L2 node alone cannot serve RPC requests requiring historical state or execution from before the migration. To serve such requests, you must configure a HistoricalRPCService URL pointing to a Celo L1 node. The Celo L2 node will then proxy requests for historical state / execution out to the Celo L1 node.
+
+To configure a HistoricalRPCService, add the following flag when starting `op-geth`
+
+```
+--rollup.historicalrpc=<CEL0_L1_NODE_URL>
+```
+
+The following rpc endpoints will forward historical requests.
+
+- `eth_call`
+- `eth_estimateGas`
+- `eth_getBalance`
+- `eth_getProof`
+- `eth_getCode`
+- `eth_getStorageAt`
+- `eth_createAccessList`
+- `eth_getTransactionCount`
+- `debug_traceBlockByNumber`
+- `debug_traceBlockByHash`
+- `debug_traceCall`
+- `debug_traceTransaction`
 
 ## Mainnet migration
 
