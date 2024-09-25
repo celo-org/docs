@@ -124,12 +124,12 @@ docker run -d \
 
 Op-node is not a resource-demanding service. We recommend running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
 
-1. To run op-node, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8`. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
+1. To run op-node, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9`. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
 
 ```bash
 git clone https://github.com/celo-org/optimism.git
 cd optimism/op-node
-git checkout celo8
+git checkout celo9
 make op-node
 ```
 
@@ -146,7 +146,7 @@ echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
 3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
 
 ```bash
-OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo8
+OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9
 
 docker run -d \
   --name op-node \
@@ -243,11 +243,11 @@ For the full migration step, you will need to wait until Alfajores L1 has stoppe
 
 ##### Pre-migration
 
-The migration script is provided as a docker image, but you can also review and build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8`. To build from source, you can follow the next steps:
+The migration script is provided as a docker image, but you can also review and build it from source. The docker image is available at `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9`. To build from source, you can follow the next steps:
 
 ```bash
 git clone https://github.com/celo-org/optimism.git
-git checkout celo8
+git checkout celo9
 cd ops-chain-ops
 make celo-migrate
 ```
@@ -264,7 +264,7 @@ Do not run the migration script on a datadir that is actively being used by a no
 :::
 
 ```bash
-CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8
+CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
 docker run -it --rm \
   -v /path/to/old/datadir/chaindata:/old-db \
@@ -299,7 +299,7 @@ wget -O ${CEL2_MIGRATION_DIR}/l2-allocs.json https://storage.googleapis.com/cel2
 Now we can run the migration script. Remember to stop your node (geth) before running it:
 
 ```bash
-CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo8
+CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
 docker run -it --rm \
   -v /path/to/old/datadir/chaindata:/old-db \
