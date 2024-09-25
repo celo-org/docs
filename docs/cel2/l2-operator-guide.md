@@ -58,6 +58,10 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 ### Running EigenDA Proxy
 
 :::info
+We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
+:::
+
+:::info
 These are brief instructions for running an eigenda-proxy instance. For more detailed instructions, please refer to the [repository README](https://github.com/Layr-Labs/eigenda-proxy/tree/main?tab=readme-ov-file#deployment-guide).
 :::
 
@@ -372,7 +376,7 @@ docker run -d \
     --http.api=eth,net,web3,debug,txpool,engine \
     --http.vhosts=* \
     --http.corsdomain=* \
-    --rollup.sequencerhttp=https://alfajores-sequencer.celo-testnet.org/ \ 
+    --rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org/ \ 
     --rollup.disabletxpoolgossip=true \
     --rollup.halt=major \
     --verbosity=3 \
