@@ -58,7 +58,7 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 ### Running EigenDA Proxy
 
 :::info
-We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance, but for mainnet, you are expected to run this service yourself.
+We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
 :::
 
 :::info
