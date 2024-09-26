@@ -58,7 +58,7 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 ### Running EigenDA Proxy
 
 :::info
-We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
+We have deployed a public EigenDA proxy for Alfajores at `https://eigenda-proxy.alfajores.celo-testnet.org`. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
 :::
 
 :::info
@@ -193,10 +193,6 @@ Although there are multiple ways to run op-geth, all options will share most of 
 
 #### Option 1: Snap sync
 
-:::warning
-Snap sync will only work once Alfajores L2 is live.
-:::
-
 With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag.
 
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
@@ -219,10 +215,6 @@ docker run -it \
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 2: Download L2 chaindata
-
-:::warning
-The migrated chaindata is not yet available for download. It will be shared after the upgrade.
-:::
 
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
