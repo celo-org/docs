@@ -14,6 +14,19 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 ## Bridging To and From Celo
 
+### Native Bridge
+
+:::info
+Native Bridging is only possible once Celo has become an L2. For now you can test it on the Alfajores L2 testnet.
+:::
+
+- Superbridge Celo Mainnet - **not released**
+- [Superbridge Testnet](https://superbridge.app/celo-testnet)
+
+
+- Superbridge Celo Mainnet - **not released**
+- [Superbridge Testnet](https://superbridge.app/celo-testnet)
+
 ### Gasless Bridge
 
 - [SmolRefuel](https://smolrefuel.com/?outboundChain=42220)
@@ -24,13 +37,3 @@ Be sure you understand and review the risks when bridging assets between chains.
 - [Portal Bridge](https://portalbridge.com/)
 - [Jumper Exchange](https://jumper.exchange/?fromChain=10&fromToken=0x0000000000000000000000000000000000000000&toChain=42220&toToken=0x471EcE3750Da237f93B8E339c536989b8978a438)
 
-
-### Native Bridge
-
-:::info
-Native Bridging is only possible once Celo has become an L2. For now you can test it on the Alfajores L2 testnet.
-:::
-
-
-- Superbridge Celo Mainnet - **not released**
-- [Superbridge Testnet](https://superbridge.app/celo-testnet)
