@@ -111,7 +111,7 @@ fi
 ```bash
 EIGENDA_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/eigenda-proxy:v1.4.1
 
-docker run -it --rm \
+docker run -d \
   --name eigenda-proxy \
   -v ${EIGENDA_KZG_PROXY_DIR}:/data \
   --network=host \
@@ -132,6 +132,8 @@ docker run -it --rm \
 ```
 
 `--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool.
+
+You can check the logs running `docker logs -f eigenda-proxy` to ensure the service is running correctly.
 
 ### Running op-node
 
@@ -191,7 +193,7 @@ docker run -d \
 
 For the `--syncmode` flag, use `--syncmode=consensus-layer` if you're using a snapshot and want blocks to be synced through the op-node. Alternatively, use `--syncmode=execution-layer` when using snap-syncing, and blocks will be synced by op-geth.
 
-If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
+You can check the logs running `docker logs -f op-node`. If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
 ### Running op-geth
 
@@ -402,6 +404,8 @@ docker run -d \
     --verbosity=3 \
     --bootnodes=enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303,enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303,enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303,enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303,enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
 ```
+
+To see the logs, you can run `docker logs -f op-geth`.
 
 #### Configuring a HistoricalRPCService
 
