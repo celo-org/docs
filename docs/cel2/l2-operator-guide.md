@@ -38,7 +38,7 @@ This will automatically prevent your node from processing blocks higher than `l2
 Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
 
 1. Start an L2 node with snap sync. This option does not require running the migration script.
-2. Start an L2 node with the provided L1 chaindata.
+2. Start an L2 node with the provided migrated chaindata.
 3. Migrate the L1 chaindata manually.
 
 Snap sync provides a simpler and faster setup experience. However, it is not suitable if you plan to run an archive node. In that case, you'll need to either use an archive node snapshot or migrate your own archive data from an L1 node. While both options follow a similar process, there are some differences, particularly in how you prepare the chaindata from the L1. Nonetheless, the majority of the service configuration remains the same across all options.
