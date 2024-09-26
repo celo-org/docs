@@ -94,7 +94,7 @@ Yes! See [EigenDA](https://specs.celo.org/eigenda.html).
 
 ### What's the block time?
 
-The block period is one seconds.
+The block period is 1 second.
 
 ### What's the throughput?
 
