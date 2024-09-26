@@ -7,13 +7,18 @@ const sidebars = {
     { type: "doc", label: "Overview", id: "general/index" },
     {
       type: "doc",
-      label: "Our History",
-      id: "general/history",
+      label: "L1 Architecture",
+      id: "general/architecture",
     },
     {
       type: "doc",
-      label: "L1 Architecture",
-      id: "general/architecture",
+      label: "Web2 to Web3",
+      id: "general/web2-to-web3",
+    },
+    {
+      type: "doc",
+      label: "Our History",
+      id: "general/history",
     },
     {
       type: "category",
@@ -47,83 +52,11 @@ const sidebars = {
       ],
     },
     {
-      type: "category",
-      label: "Joining Celo",
-      items: [
-        {
-          type: "doc",
-          label: "Celo Ecosystem",
-          id: "general/ecosystem/overview",
-        },
-        {
-          type: "doc",
-          label: "Builders",
-          id: "general/ecosystem/builders",
-        },
-        {
-          type: "doc",
-          label: "Open Source Contributors",
-          id: "general/ecosystem/contributors",
-        },
-        {
-          type: "doc",
-          label: "Regional DAOs",
-          id: "general/ecosystem/daos",
-        },
-        {
-          type: "doc",
-          label: "Governance",
-          id: "general/ecosystem/governance",
-        },
-        {
-          type: "category",
-          label: "Guides",
-          items: [
-            {
-              type: "doc",
-              label: "Create a Governance Proposal",
-              id: "general/ecosystem/guides/create-proposal",
-            },
-            {
-              type: "doc",
-              label: "Fundraising",
-              id: "general/ecosystem/guides/fundraising",
-            },
-            {
-              type: "doc",
-              label: "Guidelines",
-              id: "general/ecosystem/guides/guidelines",
-            },
-            {
-              type: "doc",
-              label: "Grant Playbook",
-              id: "general/ecosystem/guides/grant-playbook",
-            },
-            {
-              type: "link",
-              label: "Code of Conduct",
-              href: "https://github.com/celo-org/website/blob/master/src/content/code-of-conduct.md",
-            },
-          ],
-        },
-      ],
+      type: "doc",
+      label: "Whitepapers",
+      id: "general/whitepapers",
     },
-    {
-      type: "link",
-      label: "Celo Website",
-      href: "https://celo.org",
-    },
-    // {
-    //   type: "doc",
-    //   label: "Web2 to Web3",
-    //   id: "general/web2-to-web3",
-    // },
-    // {
-    //   type: "doc",
-    //   label: "Whitepapers",
-    //   id: "general/whitepapers",
-    // },
-    // { type: "doc", label: "Glossary", id: "general/glossary" },
+    { type: "doc", label: "Glossary", id: "general/glossary" },
     // { type: "doc", label: "Gallery", id: "general/gallery" },
     // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
@@ -1156,113 +1089,15 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "L1 to L2 Decision Tree",
+      label: "L2 Migration Decision Tree",
       id: "cel2/decision-tree",
     },
-    {
-      type: "doc",
-      label: "Add Cel2 Testnet to Wallet",
-      id: "cel2/add-cel2-testnet-to-metamask",
-    },
-    {
-      type: "doc",
-      label: "Network Information",
-      id: "cel2/network-information",
-    },
-    {
-      type: "doc",
-      label: "Fee Currencies",
-      id: "cel2/fee-currencies",
-    },
-    {
-      type: "category",
-      label: "Bridging",
-      items: [
-        {
-          type: "doc",
-          label: "Deposit Celo using Viem",
-          id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
-        },
-        {
-          type: "doc",
-          label: "Withdraw Celo using Viem",
-          id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
-        },
-      ],
-    },
-    {
-      type: "doc",
-      label: "Deploy Contract",
-      id: "cel2/deploy-contract",
-    },
-    {
-      type: "doc",
-      label: "Contract Addresses",
-      id: "cel2/contract-addresses",
-    },
-    {
-      type: "link",
-      label: "Cel2 Dango Bridge",
-      href: "https://testnets.superbridge.app/celo-testnet",
-    },
-    {
-      type: "link",
-      label: "Cel2 Dango Faucet",
-      href: "https://faucet.celo.org/dango",
+    { type: "link",
+      label: "What's Changed?",
+      href: "https://specs.celo.org/l2_migration.html",
     },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
-    {
-      type: "category",
-      label: "Dango Testnet Information",
-      items: [
-      {
-        type: "doc",
-        label: "Network Information",
-        id: "cel2/network-information",
-      },
-      {
-        type: "doc",
-        label: "Contract Addresses",
-        id: "cel2/contract-addresses",
-      },
-      {
-        type: "doc",
-        label: "Add Cel2 Testnet to Wallet",
-        id: "cel2/add-cel2-testnet-to-metamask",
-      },
-      {
-        type: "category",
-        label: "Bridging",
-        items: [
-          {
-            type: "doc",
-            label: "Deposit Celo using Viem",
-            id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
-          },
-          {
-            type: "doc",
-            label: "Withdraw Celo using Viem",
-            id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
-          },
-        ],
-      },
-      {
-        type: "doc",
-        label: "Deploy Contract",
-        id: "cel2/deploy-contract",
-      },
-      {
-        type: "link",
-        label: "Cel2 Dango Bridge",
-        href: "https://testnets.superbridge.app/celo-testnet",
-      },
-      {
-        type: "link",
-        label: "Cel2 Dango Faucet",
-        href: "https://faucet.celo.org/dango",
-      }]
-    },
   ],
 };
 module.exports = sidebars;
