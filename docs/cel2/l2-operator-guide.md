@@ -310,6 +310,7 @@ docker run -it --rm \
     --l1-rpc https://ethereum-holesky-rpc.publicnode.com \
     --outfile.rollup-config /path/to/rollup.json \
     --outfile.genesis /path/to/genesis.json
+    --migration-block-time=1727339320
 ```
 
 - `old-db` must be the path to the chaindata snapshot or the chaindata of your stopped node.
