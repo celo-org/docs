@@ -7,13 +7,44 @@ const sidebars = {
     { type: "doc", label: "Overview", id: "general/index" },
     {
       type: "doc",
-      label: "Architecture",
-      id: "general/architecture",
+      label: "Web2 to Web3",
+      id: "general/web2-to-web3",
     },
     {
       type: "doc",
-      label: "Web2 to Web3",
-      id: "general/web2-to-web3",
+      label: "Our History",
+      id: "general/history",
+    },
+    {
+      type: "category",
+      label: "Using Celo",
+      items: [
+        {
+          type: "doc",
+          label: "Wallets",
+          id: "general/using-celo/wallets",
+        },
+        {
+          type: "doc",
+          label: "Gas Fees",
+          id: "general/using-celo/gas-fees",
+        },
+        {
+          type: "doc",
+          label: "Bridging",
+          id: "general/using-celo/bridging",
+        },
+        {
+          type: "doc",
+          label: "DEXs",
+          id: "general/using-celo/dexes",
+        },
+        {
+          type: "doc",
+          label: "Voting",
+          id: "general/using-celo/voting",
+        },
+      ],
     },
     {
       type: "doc",
@@ -21,7 +52,7 @@ const sidebars = {
       id: "general/whitepapers",
     },
     { type: "doc", label: "Glossary", id: "general/glossary" },
-    { type: "doc", label: "Gallery", id: "general/gallery" },
+    // { type: "doc", label: "Gallery", id: "general/gallery" },
     // { type: "doc", label: "FAQs", id: "general/faqs" },
   ],
 
@@ -1062,57 +1093,6 @@ const sidebars = {
     },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
-    {
-      type: "category",
-      label: "Dango Testnet Information",
-      items: [
-      {
-        type: "doc",
-        label: "Network Information",
-        id: "cel2/network-information",
-      },
-      {
-        type: "doc",
-        label: "Contract Addresses",
-        id: "cel2/contract-addresses",
-      },
-      {
-        type: "doc",
-        label: "Add Cel2 Testnet to Wallet",
-        id: "cel2/add-cel2-testnet-to-metamask",
-      },
-      {
-        type: "category",
-        label: "Bridging",
-        items: [
-          {
-            type: "doc",
-            label: "Deposit Celo using Viem",
-            id: "cel2/bridging/bridging-celo-from-holesky-to-dango-using-viem",
-          },
-          {
-            type: "doc",
-            label: "Withdraw Celo using Viem",
-            id: "cel2/bridging/withdrawing-celo-from-dango-to-holesky-using-viem",
-          },
-        ],
-      },
-      {
-        type: "doc",
-        label: "Deploy Contract",
-        id: "cel2/deploy-contract",
-      },
-      {
-        type: "link",
-        label: "Cel2 Dango Bridge",
-        href: "https://testnets.superbridge.app/celo-testnet",
-      },
-      {
-        type: "link",
-        label: "Cel2 Dango Faucet",
-        href: "https://faucet.celo.org/dango",
-      }]
-    },
   ],
 };
 module.exports = sidebars;
