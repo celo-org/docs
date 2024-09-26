@@ -126,18 +126,18 @@ module.exports = {
             //   to: "validator/",
             //   label: "Validators",
             // },
-            {
-              to: "holder/",
-              label: "Holder",
-            },
-            {
-              to: "cli/",
-              label: "CLI",
-            },
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
+            // {
+            //   to: "holder/",
+            //   label: "Holder",
+            // },
+            // {
+            //   to: "cli/",
+            //   label: "CLI",
+            // },
+            // {
+            //   to: "protocol/",
+            //   label: "Protocol",
+            // },
             // {
             //   to: "integration/",
             //   label: "Integrations",
