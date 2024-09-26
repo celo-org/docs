@@ -68,26 +68,26 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
 3. Once you’ve identified a subset of investors who may be a fit for your sector/geography/stage, aggregate a list in your personal database to stay organized. Some popular tools include pre-built templates on [Airtable](https://www.airtable.com/templates/entrepreneurship/expQrNqXl4bUBrb8B/fundraising-crm) or even creating your own tracker on Google Sheets. As your number of conversations grows, it’s important to keep track of the status of each conversation and to understand where you should be doubling efforts to increase your chances of success.
 
-4. If one of your target investors is a venture capital fund, take some time to look through their website as well to look for a few things
+4. If one of your target investors is a venture capital fund, take some time to look through their website as well to look for a few things.
 
-- If they show their portfolio companies, take some time to review and see if they’ve invested in any competitors. There may be a conflict of interest even if they are a sector/stage/geographical fit for you and you want to cross out these investors quickly.
-- Research the team and see who may be the right person to reach. Venture capital funds often have a broad team and there may be certain individuals who are focused on your sector vs. others at the firm. You want to be sure that you’re reaching out to the right person.
+  - If they show their portfolio companies, take some time to review and see if they’ve invested in any competitors. There may be a conflict of interest even if they are a sector/stage/geographical fit for you and you want to cross out these investors quickly.
+  - Research the team and see who may be the right person to reach. Venture capital funds often have a broad team and there may be certain individuals who are focused on your sector vs. others at the firm. You want to be sure that you’re reaching out to the right person.
 
 5. If one of your target investors is an angel investor, take some time to research their background and personal investment thesis. Do they have attractive experience that you could leverage to grow your company?
 
 6. Frankly speaking and similar to sales, cold emails to investors have a low chance of success statistically speaking. For any investors who you identify to be a prospective fit, search through your social networks and see if you may have any mutual connections. People tend to trust others who they have some history with. If you find any mutual connections, try kindly reaching out to the individual and see if they’d be willing to forward along your company’s teaser materials to the prospective investor.
 
-7. If you’ve found a great venture capital firm and/or angel investor but have no mutual connections to the team or individual, you can attempt a cold outreach. Remember, fundraising at the earliest stages will be a numbers game. However, you also want to be as thorough and thoughtful as possible when reaching out to the investors. In sales, unique approaches can attract a few eyeballs even if they hit the inbox cold. A few things to keep in mind
+7. If you’ve found a great venture capital firm and/or angel investor but have no mutual connections to the team or individual, you can attempt a cold outreach. Remember, fundraising at the earliest stages will be a numbers game. However, you also want to be as thorough and thoughtful as possible when reaching out to the investors. In sales, unique approaches can attract a few eyeballs even if they hit the inbox cold. A few things to keep in mind:
 
-- Keep the outreach email as concise as possible. Investors receive a ton of inbound in this market so you’ll only have a minute if not a few seconds of their attention. You want to get straight to the point.
-- Specify why you reached out to them and why they would be a great fit for your company. (I.E. Perhaps they’ve invested in other companies that are tangential to what you’re building or have written an article with a thesis that aligns with your company vision.
-- Share a few points on your company taken from your teaser materials and include your investor presentation.
-  - What is the problem you’re solving for and is it a large market?
-  - Why is now the best time to tackle this opportunity?
-  - How are you solving this problem?
-  - Traction (if applicable and **be transparent**)
-  - How much are you raising?
-  - What’s special about your team and why are you the ones to solve this problem?
+  - Keep the outreach email as concise as possible. Investors receive a ton of inbound in this market so you’ll only have a minute if not a few seconds of their attention. You want to get straight to the point.
+  - Specify why you reached out to them and why they would be a great fit for your company. (I.E. Perhaps they’ve invested in other companies that are tangential to what you’re building or have written an article with a thesis that aligns with your company vision.
+  - Share a few points on your company taken from your teaser materials and include your investor presentation.
+    - What is the problem you’re solving for and is it a large market?
+    - Why is now the best time to tackle this opportunity?
+    - How are you solving this problem?
+    - Traction (if applicable and **be transparent**)
+    - How much are you raising?
+    - What’s special about your team and why are you the ones to solve this problem?
 
 ### How much capital do I need to raise?
 
