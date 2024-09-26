@@ -1159,6 +1159,11 @@ const sidebars = {
       label: "L2 Migration Decision Tree",
       id: "cel2/decision-tree",
     },
+    {
+      type: "doc",
+      label: "L2 Architecture",
+      id: "cel2/cel2-architecture",
+    },
     { type: "link",
       label: "What's Changed?",
       href: "https://specs.celo.org/l2_migration.html",
