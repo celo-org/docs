@@ -53,18 +53,18 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
 1. Find investors who fit your target investor profile! Using the following databases/resources listed below, you can easily identify the investors who are actively investing in your stage/sector/geography.
 
-- **Web3 Focused**
+  - **Web3 Focused**
 
-  - Dove Metrics ([https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
+    - Dove Metrics ([https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
 
-- **Investor Databases**
+  - **Investor Databases**
 
-  - AngelList [https://www.angellist.com/](https://www.angellist.com/)
-  - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
-  - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
-  - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
+    - AngelList [https://www.angellist.com/](https://www.angellist.com/)
+    - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
+    - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
+    - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
 
-2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases below.
+2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases above.
 
 3. Once you’ve identified a subset of investors who may be a fit for your sector/geography/stage, aggregate a list in your personal database to stay organized. Some popular tools include pre-built templates on [Airtable](https://www.airtable.com/templates/entrepreneurship/expQrNqXl4bUBrb8B/fundraising-crm) or even creating your own tracker on Google Sheets. As your number of conversations grows, it’s important to keep track of the status of each conversation and to understand where you should be doubling efforts to increase your chances of success.
 
