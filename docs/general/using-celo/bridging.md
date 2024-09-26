@@ -16,6 +16,14 @@ Be sure you understand and review the risks when bridging assets between chains.
 
 ### Native Bridge
 
+:::info
+Native Bridging is only possible once Celo has become an L2. For now you can test it on the Alfajores L2 testnet.
+:::
+
+- Superbridge Celo Mainnet - **not released**
+- [Superbridge Testnet](https://superbridge.app/celo-testnet)
+
+
 - Superbridge Celo Mainnet - **not released**
 - [Superbridge Testnet](https://superbridge.app/celo-testnet)
 
