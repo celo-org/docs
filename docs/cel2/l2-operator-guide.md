@@ -320,7 +320,7 @@ docker run -it --rm \
     --l2-allocs /path/to/l2-allocs.json \
     --l1-rpc https://ethereum-holesky-rpc.publicnode.com \
     --outfile.rollup-config /path/to/rollup.json \
-    --outfile.genesis /path/to/genesis.json
+    --outfile.genesis /path/to/genesis.json \
     --migration-block-time=1727339320
 ```
 
@@ -332,6 +332,11 @@ docker run -it --rm \
 - `l2-allocs` must be the path to the JSON file defining necessary state modifications that will be made during the full migration. This will be distributed by cLabs.
 - `outfile.rollup-config` is the path where you want the rollup-config.json file to be written by the migration script. You will need to pass this file when starting the L2 node.
 - `outfile.genesis` is the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
+- `migration-block-time` Should be the unix timestamp of the first L2 block produced by the sequencer (1727339320). Not including this flag will cause the L2 block hash to not match the one posted below, which will prevent your node from syncing.
+
+:::danger
+Be sure to include the `--migration-block-time` flag when running the full migration, using the official timestamp posted below
+:::
 
 Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
 
