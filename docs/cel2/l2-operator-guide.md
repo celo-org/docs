@@ -234,7 +234,7 @@ Please continue with [executing op-geth](#executing-op-geth) instructions to sta
 #### Option 3: L1 chaindata migration
 
 Migrating L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
-For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block 26383550).
+For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block 26384000).
 
 ##### Pre-migration
 
@@ -278,7 +278,7 @@ Where:
 
 ##### Full migration
 
-At block 26383550, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+At block 26384000, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
