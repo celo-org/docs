@@ -103,16 +103,15 @@ if (cd ${EIGENDA_KZG_PROXY_DIR} && sha256sum -c srssha256sums.txt); then
   echo "Checksums match. Verification successful."
 else
   echo "Error: Checksums do not match. Please delete this folder and try again."
-  exit 1
 fi
 ```
 
 3. Finally, we can run eigenda-proxy. Feel free to modify the `--eigenda-eth-rpc` flag to point to your own node or your preference:
 
 ```bash
-EIGENDA_IMAGE=ghcr.io/layr-labs/eigenda-proxy:v1.4.1
+EIGENDA_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/eigenda-proxy:v1.4.1
 
-docker run -d \
+docker run -it --rm \
   --name eigenda-proxy \
   -v ${EIGENDA_KZG_PROXY_DIR}:/data \
   --network=host \
@@ -122,6 +121,7 @@ docker run -d \
       --port=4242 \
       --eigenda-disperser-rpc=disperser-holesky.eigenda.xyz:443 \
       --eigenda-eth-rpc=https://ethereum-holesky-rpc.publicnode.com \
+      --eigenda-signer-private-key-hex=$(head -c 32 /dev/urandom | xxd -p -c 32) \
       --eigenda-svc-manager-addr=0xD4A7E1Bd8015057293f0D0A557088c286942e84b \
       --eigenda-status-query-timeout=45m \
       --eigenda-g1-path=/data/g1.point \
@@ -130,6 +130,8 @@ docker run -d \
       --eigenda-eth-confirmation-depth=1 \
       --eigenda-max-blob-length=300MiB
 ```
+
+`--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool.
 
 ### Running op-node
 
