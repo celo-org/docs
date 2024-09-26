@@ -10,7 +10,7 @@ See the [L2 Migration Guide](/docs/cel2/l2-operator-guide.md).
 For Alfajores, here are the related assets:
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
-- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/dango/deployment-l1.json)
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/alfajores/l2-allocs.json)
 - [rollup.json](https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json)
 - [Genesis](https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json) used for snap syncing
