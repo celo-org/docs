@@ -53,41 +53,41 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
 1. Find investors who fit your target investor profile! Using the following databases/resources listed below, you can easily identify the investors who are actively investing in your stage/sector/geography.
 
-- **Web3 Focused**
+  - **Web3 Focused**
 
-  - Dove Metrics ([https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
+    - Dove Metrics ([https://www.dovemetrics.com/](https://www.dovemetrics.com/) is an excellent resource for Web3 market fundraising data)
 
-- **Investor Databases**
+  - **Investor Databases**
 
-  - AngelList [https://www.angellist.com/](https://www.angellist.com/)
-  - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
-  - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
-  - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
+    - AngelList [https://www.angellist.com/](https://www.angellist.com/)
+    - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
+    - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
+    - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
 
-2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases below.
+2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases above.
 
 3. Once you’ve identified a subset of investors who may be a fit for your sector/geography/stage, aggregate a list in your personal database to stay organized. Some popular tools include pre-built templates on [Airtable](https://www.airtable.com/templates/entrepreneurship/expQrNqXl4bUBrb8B/fundraising-crm) or even creating your own tracker on Google Sheets. As your number of conversations grows, it’s important to keep track of the status of each conversation and to understand where you should be doubling efforts to increase your chances of success.
 
-4. If one of your target investors is a venture capital fund, take some time to look through their website as well to look for a few things
+4. If one of your target investors is a venture capital fund, take some time to look through their website as well to look for a few things.
 
-- If they show their portfolio companies, take some time to review and see if they’ve invested in any competitors. There may be a conflict of interest even if they are a sector/stage/geographical fit for you and you want to cross out these investors quickly.
-- Research the team and see who may be the right person to reach. Venture capital funds often have a broad team and there may be certain individuals who are focused on your sector vs. others at the firm. You want to be sure that you’re reaching out to the right person.
+  - If they show their portfolio companies, take some time to review and see if they’ve invested in any competitors. There may be a conflict of interest even if they are a sector/stage/geographical fit for you and you want to cross out these investors quickly.
+  - Research the team and see who may be the right person to reach. Venture capital funds often have a broad team and there may be certain individuals who are focused on your sector vs. others at the firm. You want to be sure that you’re reaching out to the right person.
 
 5. If one of your target investors is an angel investor, take some time to research their background and personal investment thesis. Do they have attractive experience that you could leverage to grow your company?
 
 6. Frankly speaking and similar to sales, cold emails to investors have a low chance of success statistically speaking. For any investors who you identify to be a prospective fit, search through your social networks and see if you may have any mutual connections. People tend to trust others who they have some history with. If you find any mutual connections, try kindly reaching out to the individual and see if they’d be willing to forward along your company’s teaser materials to the prospective investor.
 
-7. If you’ve found a great venture capital firm and/or angel investor but have no mutual connections to the team or individual, you can attempt a cold outreach. Remember, fundraising at the earliest stages will be a numbers game. However, you also want to be as thorough and thoughtful as possible when reaching out to the investors. In sales, unique approaches can attract a few eyeballs even if they hit the inbox cold. A few things to keep in mind
+7. If you’ve found a great venture capital firm and/or angel investor but have no mutual connections to the team or individual, you can attempt a cold outreach. Remember, fundraising at the earliest stages will be a numbers game. However, you also want to be as thorough and thoughtful as possible when reaching out to the investors. In sales, unique approaches can attract a few eyeballs even if they hit the inbox cold. A few things to keep in mind:
 
-- Keep the outreach email as concise as possible. Investors receive a ton of inbound in this market so you’ll only have a minute if not a few seconds of their attention. You want to get straight to the point.
-- Specify why you reached out to them and why they would be a great fit for your company. (I.E. Perhaps they’ve invested in other companies that are tangential to what you’re building or have written an article with a thesis that aligns with your company vision.
-- Share a few points on your company taken from your teaser materials and include your investor presentation.
-  - What is the problem you’re solving for and is it a large market?
-  - Why is now the best time to tackle this opportunity?
-  - How are you solving this problem?
-  - Traction (if applicable and **be transparent**)
-  - How much are you raising?
-  - What’s special about your team and why are you the ones to solve this problem?
+  - Keep the outreach email as concise as possible. Investors receive a ton of inbound in this market so you’ll only have a minute if not a few seconds of their attention. You want to get straight to the point.
+  - Specify why you reached out to them and why they would be a great fit for your company. (I.E. Perhaps they’ve invested in other companies that are tangential to what you’re building or have written an article with a thesis that aligns with your company vision.
+  - Share a few points on your company taken from your teaser materials and include your investor presentation.
+    - What is the problem you’re solving for and is it a large market?
+    - Why is now the best time to tackle this opportunity?
+    - How are you solving this problem?
+    - Traction (if applicable and **be transparent**)
+    - How much are you raising?
+    - What’s special about your team and why are you the ones to solve this problem?
 
 ### How much capital do I need to raise?
 
@@ -101,7 +101,7 @@ While new forms of funding models emerge in Web3 and a comprehensive list will g
 
 2. **SAFE** (Simple Agreement for Future Equity) - YCombinator’s SAFE document has become an industry standard used for early stage fundraising and for good reasons - they provide speed and flexibility for both investors and entrepreneurs. They’re a form of a convertible note however, unlike convertible debt, SAFEs remove the need for interest payments and repayment of the debt. The capital invested on a SAFE is generally expected to convert into shares of preferred equity in a priced equity round. YCombinator’s website [https://www.ycombinator.com/documents/#about](https://www.ycombinator.com/documents/#about) provides excellent best practices on SAFEs and templates as well.
 
-3 **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens which are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer the investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
+3. **SAFT** (Simple Agreement for Future Tokens) - For a period of time during the boom of crypto fundraising, SAFTs were frequently used by companies to raise capital. While most investors expect financial upside on their equity in traditional companies, Web3 companies will often build and launch tokens which are eventually available to the public. Ideally, these tokens have sustainable utility and practical use cases and should therefore accrue value from greater market adoption. Mechanically speaking, SAFTs offer the investors the ability to exchange capital for a promise of discounted tokens from the project at a future point in time. However, SAFTs have largely fallen out of favor due to their legal risks, potential tax implications, and complications that other companies have faced.
 
 4. **SAFE + Token Warrants** - A combination of a SAFE and a token warrant has become increasingly popular for fundraising in Web3. Unlike SAFTs, these token warrants typically come in the form of an optional side letter and don’t guarantee the deployment of tokens - therefore avoiding the legal complications faced by its predecessor. As a result, companies are more commonly raising capital on SAFEs along with a token warrant that offers investors the right to tokens in the amount that can be proportional to their equity ownership of the company. In this manner, investors have exposure to both equity and potential tokens if the companies decide to launch one.
 
