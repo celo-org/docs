@@ -164,6 +164,7 @@ docker run -d \
     --rollup.config=/data/rollup.json \
     --verifier.l1-confs=4 \
     --rpc.addr=127.0.0.1 \
+    --syncmode=<consensus-layer/execution-layer>
     --rpc.port=9545 \
     --p2p.listen.tcp=9222 \
     --p2p.listen.udp=9222 \
@@ -172,8 +173,10 @@ docker run -d \
     --altda.enabled=true \
     --altda.da-server=http://localhost:4242 \
     --altda.da-service=true \
-    --altda.verify-on-read=false \
+    --altda.verify-on-read=false
 ```
+
+For the `--syncmode` flag, use `--syncmode=consensus-layer` if you're using a snapshot and want blocks to be synced through the op-node. Alternatively, use `--syncmode=execution-layer` when using snap-syncing, and blocks will be synced by op-geth.
 
 If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
@@ -231,7 +234,7 @@ Please continue with [executing op-geth](#executing-op-geth) instructions to sta
 #### Option 3: L1 chaindata migration
 
 Migrating L1 chaindata is the most involved option, but you can use your own L1 chaindata, not trusting the provided chaindata. This option can be split into two steps: pre-migration and full migration. For the pre-migration, you can use the chaindata from a L1 fullnode you trust. This step can be used to prepare the chaindata for the full migration, reducing the time required for the full migration (and the downtime of the node during the migration).
-For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block 26383550).
+For the full migration step, you will need to wait until Alfajores L1 has stopped producing blocks (that will happen at block 26384000).
 
 ##### Pre-migration
 
@@ -275,7 +278,7 @@ Where:
 
 ##### Full migration
 
-At block 26383550, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
+At block 26384000, the L1 chain will stop producing blocks. At this point, you can run the full migration script. For this step, you will need to pass in some additional files, and also configure paths to write the rollup config and genesis files to.
 
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
@@ -307,6 +310,7 @@ docker run -it --rm \
     --l1-rpc https://ethereum-holesky-rpc.publicnode.com \
     --outfile.rollup-config /path/to/rollup.json \
     --outfile.genesis /path/to/genesis.json
+    --migration-block-time=1727339320
 ```
 
 - `old-db` must be the path to the chaindata snapshot or the chaindata of your stopped node.
