@@ -164,6 +164,7 @@ docker run -d \
     --rollup.config=/data/rollup.json \
     --verifier.l1-confs=4 \
     --rpc.addr=127.0.0.1 \
+    --syncmode=<consensus-layer/execution-layer>
     --rpc.port=9545 \
     --p2p.listen.tcp=9222 \
     --p2p.listen.udp=9222 \
@@ -172,8 +173,10 @@ docker run -d \
     --altda.enabled=true \
     --altda.da-server=http://localhost:4242 \
     --altda.da-service=true \
-    --altda.verify-on-read=false \
+    --altda.verify-on-read=false
 ```
+
+For the `--syncmode` flag, use `--syncmode=consensus-layer` if you're using a snapshot and want blocks to be synced through the op-node. Alternatively, use `--syncmode=execution-layer` when using snap-syncing, and blocks will be synced by op-geth.
 
 If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
