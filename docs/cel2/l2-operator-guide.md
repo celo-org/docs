@@ -13,7 +13,7 @@ after the Alfajores testnet upgrade occurs.
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 :::info
-The Alfajores network will migrate on block *26384000* (expected on Thursday, September 26, 2024 8:09:22 AM UTC)
+The Alfajores network has migrated on block *26384000*.
 :::
 
 Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
@@ -38,7 +38,7 @@ This will automatically prevent your node from processing blocks higher than `l2
 Node operators who wish to run an L2 node have three options, ranked by ease and the level of trust required:
 
 1. Start an L2 node with snap sync. This option does not require running the migration script.
-2. Start an L2 node with the provided L1 chaindata.
+2. Start an L2 node with the provided migrated chaindata.
 3. Migrate the L1 chaindata manually.
 
 Snap sync provides a simpler and faster setup experience. However, it is not suitable if you plan to run an archive node. In that case, you'll need to either use an archive node snapshot or migrate your own archive data from an L1 node. While both options follow a similar process, there are some differences, particularly in how you prepare the chaindata from the L1. Nonetheless, the majority of the service configuration remains the same across all options.
@@ -193,10 +193,6 @@ Although there are multiple ways to run op-geth, all options will share most of 
 
 #### Option 1: Snap sync
 
-:::warning
-Snap sync will only work once Alfajores L2 is live.
-:::
-
 With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag.
 
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
@@ -219,10 +215,6 @@ docker run -it \
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 2: Download L2 chaindata
-
-:::warning
-The migrated chaindata is not yet available for download. It will be shared after the upgrade.
-:::
 
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
@@ -307,8 +299,8 @@ docker run -it --rm \
   -v ${CEL2_MIGRATION_DIR}:/migration-files \
   ${CEL2_MIGRATION_IMAGE} \
   celo-migrate full \
-    --old-db /path/to/old/datadir/chaindata \
-    --new-db /path/to/new/datadir/chaindata \
+    --old-db /path/to/old/datadir/celo/chaindata \
+    --new-db /path/to/new/datadir/geth/chaindata \
     --deploy-config /migration-files/config.json \
     --l1-deployments /migration-files/deployment-l1.json \
     --l2-allocs /path/to/l2-allocs.json \
@@ -327,6 +319,12 @@ docker run -it --rm \
 - `outfile.genesis` is the path where you want the `genesis.json` file to be written by the migration script. Any node wishing to snap sync on the L2 chain will need this file.
 
 Ensure the full migration script completes successfully (this should be clear from the logs). If it does not, please reach out for assistance.
+
+:::warning
+Please check in your migration logs that the resulting migration block must look like this for Alfajores:
+`INFO [09-26|08:28:40.753] Wrote CeL2 migration block               height=26,384,000 root=0x38e32589e0300c46a5b98b037ea85abc5b28e3a592c36ce28d07efca8983283b hash=0xe96cb39b59ebe02553e47424e7f57dbfbffca905c3ff350765985289754a00a3 timestamp=1,727,339,320
+`
+:::
 
 ##### Start your L2 Node
 

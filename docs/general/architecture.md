@@ -11,7 +11,7 @@ Overview of the Celo Stack including it's blockchain, core contracts, and applic
 
 :::warning
 
-Celo is currently transitioning from a standalone Layer 1 blockchain to an EthereumLayer 2. As a result, certain aspects of our existing architecture and documentation may be outdated.
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain aspects of our existing architecture and documentation may be outdated.
 
 For the latest information, please refer to our [Celo L2 documentation](/cel2).
 :::
