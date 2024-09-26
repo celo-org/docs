@@ -27,6 +27,17 @@ However, RPC calls that require execution or state for pre-transition L1 blocks 
 Therefore, operators looking to run full archive nodes or serve requests for historical state / execution now need to run both a Celo L1 node and a Celo L2 node. The Celo L2 node can be configured to redirect requests for historical state / execution to the Celo L1 node (see Configuring a HistoricalRPCService).  
 Since the Celo L2 node does still require the full pre-migration chain data, these operators will require approximately double the storage space as is currently needed.
 
+### Alfajores deployment resources
+
+Here you can find the resources used for the Alfajores migration. Some of these are generated during the migration process if you decide to migrate your own chain data.
+
+- [Rollup deployment config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
+- [L1 Contract Addresses](https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json)
+- [L2 Allocs](https://storage.googleapis.com/cel2-rollup-files/alfajores/l2-allocs.json)
+- [Genesis file](https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json)
+- [Rollup config](https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json)
+- [Migrated snapshot at migration block 26,384,000](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
+
 ### Stopping an L1 node
 
 If you're currently running an L1 Alfajores node, you can upgrade your Celo blockchain client to the [v1.8.5](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.5) release before the migration, and include the `--l2migrationblock=26384000` flag when restarting. While this step is not mandatory for full nodes —since the network will stall if a quorum of elected validators has the flag set— it is recommended as a practice run for the upcoming Baklava and Mainnet migrations.
@@ -58,7 +69,7 @@ If you plan to run multiple L2 nodes, you’ll need separate instances of `op-no
 ### Running EigenDA Proxy
 
 :::info
-We have deployed a public EigenDA proxy for Alfajores at https://eigenda-proxy.alfajores.celo-testnet.org. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
+We have deployed a public EigenDA proxy for Alfajores at `https://eigenda-proxy.alfajores.celo-testnet.org`. This instance has caching enabled, so all Alfajores blobs will be available for download, even if they have expired from EigenDA. You can configure your nodes to consume from this instance. Beware that for Mainnet, we are not planning to host such a proxy.
 :::
 
 :::info
@@ -391,7 +402,7 @@ The Celo L2 node alone cannot serve RPC requests requiring historical state or e
 
 To configure a HistoricalRPCService, add the following flag when starting `op-geth`
 
-```
+```bash
 --rollup.historicalrpc=<CEL0_L1_NODE_URL>
 ```
 
