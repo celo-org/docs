@@ -103,8 +103,13 @@ module.exports = {
           position: "left",
         },
         {
+          to: "build/",
+          label: "Build on Celo",
+          position: "left",
+        },
+        {
           to: "developer/",
-          label: "Developers",
+          label: "Developer Resources",
           position: "left",
         },
         {
@@ -117,10 +122,10 @@ module.exports = {
           label: "More",
           position: "left",
           items: [
-            {
-              to: "validator/",
-              label: "Validators",
-            },
+            // {
+            //   to: "validator/",
+            //   label: "Validators",
+            // },
             {
               to: "holder/",
               label: "Holder",
@@ -133,20 +138,25 @@ module.exports = {
               to: "protocol/",
               label: "Protocol",
             },
+            // {
+            //   to: "integration/",
+            //   label: "Integrations",
+            // },
             {
-              to: "integration/",
-              label: "Integrations",
-            },
-            {
-              to: "https://celo.academy/c/tutorials/4",
-              label: "Tutorials",
+              to: "https://www.celopg.eco/ecosystem",
+              label: "Ecosystem",
               target: "_blank",
             },
-            { to: "showcase", label: "DApps" },
             {
-              to: "community/guidelines",
-              label: "Community",
+              to: "https://celo.org",
+              label: "Celo Website",
+              target: "_blank",
             },
+            // { to: "showcase", label: "DApps" },
+            // {
+            //   to: "community/guidelines",
+            //   label: "Community",
+            // },
           ],
         },
         {

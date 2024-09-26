@@ -108,11 +108,8 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "link",
-      label: "Celo Website",
-      href: "https://celo.org",
-    },
+    
+    
     // {
     //   type: "doc",
     //   label: "Web2 to Web3",
@@ -129,7 +126,200 @@ const sidebars = {
   ],
 
   // ######################################
-  // Developers
+  // Build on Celo
+  // ######################################
+  buildSidebar: [
+    { type: "doc", label: "Overview", id: "build/index" },
+    {
+      type: "doc",
+      label: "Quickstart wtih Celo Composer",
+      id: "build/quickstart",
+    },
+    {
+      type: "doc",
+      label: "Network Information",
+      id: "build/network-information",
+    },
+    {
+      type: "doc",
+      label: "Celo Contracts",
+      id: "build/contract-addresses",
+    },
+    {
+      type: "doc",
+      label: "Adding Celo Testnet to MetaMask",
+      id: "build/add-celo-testnet-to-metamask",
+    },
+    {
+      type: "category",
+      label: "Build on MiniPay",
+      // id: "developer/build-on-minipay",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "build/build-on-minipay/overview",
+        },
+        {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Android Studio Setup",
+              id: "build/build-on-minipay/prerequisites/android-studio-setup",
+            },
+            {
+              type: "doc",
+              label: "Ngrok Setup",
+              id: "build/build-on-minipay/prerequisites/ngrok-setup",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Enabling Testnet",
+          id: "build/build-on-minipay/enabling-testnet",
+        },
+        {
+          type: "doc",
+          label: "Code Library",
+          id: "build/build-on-minipay/code-library",
+        },
+        {
+          type: "doc",
+          label: "MiniPay Deeplinks",
+          id: "build/build-on-minipay/deeplinks",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Integrate with Celo",
+      items: [
+        { type: "doc", label: "Overview", id: "build/integrations/index" },
+        { type: "doc", label: "Custody", id: "build/integrations/custody" },
+        { type: "doc", label: "Guide", id: "build/integrations/guide" },
+        { type: "doc", label: "Listings", id: "build/integrations/listings" },
+      ],
+    },
+    {
+      type: "category",
+      label: "Validate the Network",
+      items: [
+        { type: "doc", label: "Overview", id: "validator/index" },
+        {
+          type: "category",
+          label: "Run a Validator",
+          items: [
+            {
+              type: "doc",
+              label: "Mainnet Validator",
+              id: "validator/run/mainnet",
+            },
+            {
+              type: "doc",
+              label: "Baklava Validator",
+              id: "validator/run/baklava",
+            },
+          ],
+        },
+        // {
+        //   type: "doc",
+        //   label: "Attestation Service",
+        //   id: "validator/attestation",
+        // },
+        {
+          type: "category",
+          label: "Key Management",
+          items: [
+            {
+              type: "doc",
+              label: "Summary",
+              id: "validator/key-management/summary",
+            },
+            {
+              type: "doc",
+              label: "Key Management",
+              id: "validator/key-management/detailed",
+            },
+            {
+              type: "doc",
+              label: "Key Rotation",
+              id: "validator/key-management/key-rotation",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Nodes and Services",
+          id: "validator/security",
+        },
+        {
+          type: "doc",
+          label: "Monitoring",
+          id: "validator/monitoring",
+        },
+        {
+          type: "doc",
+          label: "DevOps Best Practices",
+          id: "validator/devops-best-practices",
+        },
+        {
+          type: "doc",
+          label: "Node Upgrades",
+          id: "validator/node-upgrade",
+        },
+        {
+          type: "doc",
+          label: "Running Proxies",
+          id: "validator/proxy",
+        },
+        {
+          type: "doc",
+          label: "Validator Explorer",
+          id: "validator/validator-explorer",
+        },
+        {
+          type: "doc",
+          label: "Voting Policy",
+          id: "validator/celo-foundation-voting-policy",
+        },
+        {
+          type: "doc",
+          label: "Celo Signal",
+          id: "validator/celo-signal",
+        },
+        {
+          type: "doc",
+          label: "Validator FAQ",
+          id: "validator/troubleshooting-faq",
+        },
+        // { type: "doc", label: "Overview", id: "build/integrations/index" },
+        // { type: "doc", label: "Custody", id: "build/integrations/custody" },
+        // { type: "doc", label: "Guide", id: "build/integrations/guide" },
+        // { type: "doc", label: "Listings", id: "build/integrations/listings" },
+      ],
+    },
+    {
+      type: "doc",
+      label: "Launch Checklist",
+      id: "build/launch-checklist",
+    },
+    {
+      type: "link",
+      label: "Community Tutorials",
+      href: "https://celo.academy/c/tutorials/4",
+    },
+    {
+      type: "doc",
+      label: "Support",
+      id: "build/support",
+    },
+  ],
+
+  // ######################################
+  // Developer Resources
   // ######################################
 
   developersSidebar: [
@@ -643,96 +833,96 @@ const sidebars = {
   // Validators
   // ######################################
 
-  validatorsSidebar: [
-    { type: "doc", label: "Overview", id: "validator/index" },
-    {
-      type: "category",
-      label: "Run a Validator",
-      items: [
-        {
-          type: "doc",
-          label: "Mainnet Validator",
-          id: "validator/run/mainnet",
-        },
-        {
-          type: "doc",
-          label: "Baklava Validator",
-          id: "validator/run/baklava",
-        },
-      ],
-    },
+  // validatorsSidebar: [
+  //   { type: "doc", label: "Overview", id: "validator/index" },
+  //   {
+  //     type: "category",
+  //     label: "Run a Validator",
+  //     items: [
+  //       {
+  //         type: "doc",
+  //         label: "Mainnet Validator",
+  //         id: "validator/run/mainnet",
+  //       },
+  //       {
+  //         type: "doc",
+  //         label: "Baklava Validator",
+  //         id: "validator/run/baklava",
+  //       },
+  //     ],
+  //   },
     // {
     //   type: "doc",
     //   label: "Attestation Service",
     //   id: "validator/attestation",
     // },
-    {
-      type: "category",
-      label: "Key Management",
-      items: [
-        {
-          type: "doc",
-          label: "Summary",
-          id: "validator/key-management/summary",
-        },
-        {
-          type: "doc",
-          label: "Key Management",
-          id: "validator/key-management/detailed",
-        },
-        {
-          type: "doc",
-          label: "Key Rotation",
-          id: "validator/key-management/key-rotation",
-        },
-      ],
-    },
-    {
-      type: "doc",
-      label: "Nodes and Services",
-      id: "validator/security",
-    },
-    {
-      type: "doc",
-      label: "Monitoring",
-      id: "validator/monitoring",
-    },
-    {
-      type: "doc",
-      label: "DevOps Best Practices",
-      id: "validator/devops-best-practices",
-    },
-    {
-      type: "doc",
-      label: "Node Upgrades",
-      id: "validator/node-upgrade",
-    },
-    {
-      type: "doc",
-      label: "Running Proxies",
-      id: "validator/proxy",
-    },
-    {
-      type: "doc",
-      label: "Validator Explorer",
-      id: "validator/validator-explorer",
-    },
-    {
-      type: "doc",
-      label: "Voting Policy",
-      id: "validator/celo-foundation-voting-policy",
-    },
-    {
-      type: "doc",
-      label: "Celo Signal",
-      id: "validator/celo-signal",
-    },
-    {
-      type: "doc",
-      label: "Validator FAQ",
-      id: "validator/troubleshooting-faq",
-    },
-  ],
+  //   {
+  //     type: "category",
+  //     label: "Key Management",
+  //     items: [
+  //       {
+  //         type: "doc",
+  //         label: "Summary",
+  //         id: "validator/key-management/summary",
+  //       },
+  //       {
+  //         type: "doc",
+  //         label: "Key Management",
+  //         id: "validator/key-management/detailed",
+  //       },
+  //       {
+  //         type: "doc",
+  //         label: "Key Rotation",
+  //         id: "validator/key-management/key-rotation",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Nodes and Services",
+  //     id: "validator/security",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Monitoring",
+  //     id: "validator/monitoring",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "DevOps Best Practices",
+  //     id: "validator/devops-best-practices",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Node Upgrades",
+  //     id: "validator/node-upgrade",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Running Proxies",
+  //     id: "validator/proxy",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Validator Explorer",
+  //     id: "validator/validator-explorer",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Voting Policy",
+  //     id: "validator/celo-foundation-voting-policy",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Celo Signal",
+  //     id: "validator/celo-signal",
+  //   },
+  //   {
+  //     type: "doc",
+  //     label: "Validator FAQ",
+  //     id: "validator/troubleshooting-faq",
+  //   },
+  // ],
 
   // ######################################
   // Community
