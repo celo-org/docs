@@ -129,10 +129,10 @@ title: Contributing to the Blog
 description: How to contribute to the blog
 slug: blog-contributions
 authors:
-  - name: Josh Crites
-    title: Developer Relations, cLabs
-    url: https://github.com/critesjosh
-    image_url: https://github.com/critesjosh.png
+  - name: Mona Octocat
+    title: Solidity Engineer, Cephalopods Unite
+    url: https://github.com/octocat
+    image_url: https://github.com/octocat.png
 tags: [contribute]
 image: https://i.imgur.com/mErPwqL.png
 hide_table_of_contents: false
