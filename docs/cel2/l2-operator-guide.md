@@ -212,18 +212,18 @@ With snap sync, you can start an L2 node without migrating or downloading the L1
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
 
 ```bash
-OP_GETH_DIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=/tmp/alfajores/op-geth
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
-mkdir -p ${OP_GETH_DIR}
+mkdir -p ${OP_GETH_DATADIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
 
 docker run -it \
   --name op-geth-init \
-  -v ${OP_GETH_DIR}:/celo \
+  -v ${OP_GETH_DATADIR}:/datadir \
   ${OP_GETH_IMAGE}
   geth \
-    --datadir=/celo \
-    init /celo/genesis.json
+    --datadir=/datadir \
+    init /datadir/genesis.json
 ```
 
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
@@ -233,11 +233,11 @@ Additionally when running op-geth, you need to provide `--syncmode=snap` flag. P
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
 ```bash
-OP_GETH_DIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=/tmp/alfajores/op-geth
 
-mkdir -p ${OP_GETH_DIR}
+mkdir -p ${OP_GETH_DATADIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst
-tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DIR}
+tar -xvf alfajores-migrated-datadir.tar.zst -C ${OP_GETH_DATADIR}
 ```
 
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
@@ -273,8 +273,8 @@ Do not run the migration script on a datadir that is actively being used by a no
 CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
 docker run -it --rm \
-  -v /path/to/old/datadir/chaindata:/old-db \
-  -v /path/to/new/datadir/chaindata:/new-db \
+  -v /path/to/old/datadir/celo/chaindata/:/old-db \
+  -v /path/to/new/datadir/geth/chaindata:/new-db \
   ${CEL2_MIGRATION_IMAGE} \
   celo-migrate pre --old-db /old-db --new-db /new-db
 ```
@@ -308,19 +308,19 @@ Now we can run the migration script. Remember to stop your node (geth) before ru
 CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
 docker run -it --rm \
-  -v /path/to/old/datadir/chaindata:/old-db \
-  -v /path/to/new/datadir/chaindata:/new-db \
+  -v /path/to/old/datadir/celo/chaindata:/old-db \
+  -v /path/to/new/datadir/geth/chaindata:/new-db \
   -v ${CEL2_MIGRATION_DIR}:/migration-files \
   ${CEL2_MIGRATION_IMAGE} \
   celo-migrate full \
-    --old-db /path/to/old/datadir/celo/chaindata \
-    --new-db /path/to/new/datadir/geth/chaindata \
+    --old-db /old-db \
+    --new-db /new-db \
     --deploy-config /migration-files/config.json \
     --l1-deployments /migration-files/deployment-l1.json \
-    --l2-allocs /path/to/l2-allocs.json \
+    --l2-allocs /migration-files/l2-allocs.json \
     --l1-rpc https://ethereum-holesky-rpc.publicnode.com \
-    --outfile.rollup-config /path/to/rollup.json \
-    --outfile.genesis /path/to/genesis.json \
+    --outfile.rollup-config /migration-files/rollup.json \
+    --outfile.genesis /migration-files/genesis.json \
     --migration-block-time=1727339320
 ```
 
@@ -368,16 +368,15 @@ make geth
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 
 # Copying the jwt secret from the op-node directory
-cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DIR}/jwt.txt
+cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DATADIR}/jwt.txt
 
 docker run -d \
   --name op-geth \
   --network=host \
-  -v ${OP_GETH_DIR}:/celo \
-  -e GETH_DATADIR=/celo \
+  -v ${OP_GETH_DATADIR}:/datadir \
   ${OP_GETH_IMAGE}
   geth \
-    --datadir=/celo \
+    --datadir=/datadir \
     --networkid=44787 \
     --syncmode=<snap/consensus-layer> \
     --gcmode=full \
@@ -386,7 +385,7 @@ docker run -d \
     --port=30303 \
     --authrpc.addr=127.0.0.1 \
     --authrpc.port=8551 \
-    --authrpc.jwtsecret=/celo/jwt.hex \
+    --authrpc.jwtsecret=/datadir/jwt.hex \
     --authrpc.vhosts=* \
     --http \
     --http.addr=127.0.0.1 \
