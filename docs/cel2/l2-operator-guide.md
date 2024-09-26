@@ -299,8 +299,8 @@ docker run -it --rm \
   -v ${CEL2_MIGRATION_DIR}:/migration-files \
   ${CEL2_MIGRATION_IMAGE} \
   celo-migrate full \
-    --old-db /path/to/old/datadir/chaindata \
-    --new-db /path/to/new/datadir/chaindata \
+    --old-db /path/to/old/datadir/celo/chaindata \
+    --new-db /path/to/new/datadir/geth/chaindata \
     --deploy-config /migration-files/config.json \
     --l1-deployments /migration-files/deployment-l1.json \
     --l2-allocs /path/to/l2-allocs.json \
