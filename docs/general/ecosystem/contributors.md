@@ -73,7 +73,7 @@ Following these guidelines will help ensure that your pull request (PR) gets app
 10. Provide a <ColoredText>comprehensive description </ColoredText> of the problem addressed and changes made. Explains dependencies and backwards incompatible changes .
 11. <ColoredText>Add labels</ColoredText> to identify the type of your PR.  For example, if your PR fixes a bug, add the "bug" label.
 12. If the PR address an existing issue, comment in the issue with the PR number.
-13. <ColoredText>Ensure your changes are reviewed</ColoredText>. Request the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.Let the project you are contributing to know in the issue comments on GitHub or using the Discord sever chat channels that your PR is ready for review. If you are a maintainer, you can choose reviewers, otherwise this will be done by one of the maintainers.
+13. <ColoredText>Ensure your changes are reviewed</ColoredText>. Request the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions. Let the project you are contributing to know in the issue comments on GitHub or using the Discord sever chat channels that your PR is ready for review. If you are a maintainer, you can choose reviewers, otherwise this will be done by one of the maintainers.
 14. <ColoredText>Make any required changes</ColoredText> on your contribution from the reviewers feedback.  Make the changes, commit to your branch, and push to your remote fork.
 15. <ColoredText>When your PR is approved, validated</ColoredText>, all tests pass and your branch has no conflicts, it can be merged. Again, this action needs to be done by a maintainer - usually the same person who approves will also merge it.
 

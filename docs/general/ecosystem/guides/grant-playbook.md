@@ -33,7 +33,6 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 
 - Write a blog post at least once per month/milestone outlining your progress to date (i.e. accomplishments and challenges). Include links to repos, demos, or social media.
 - Here are some writing tips:
-  - [Celo Blogging Guide](https://docs.google.com/document/d/1pzlosMQxnOAxxHnLa7ES8pgQBRWC7ArMObI9OwU8mBI/edit?usp=sharing)
   - [How to write a killer press release](https://medium.com/@DaveCorn/how-to-write-a-killer-press-release-cd34791d6533)
   - [How to write a new product announcement](https://medium.com/@emilylope18/how-do-you-write-a-new-product-announcement-4706454adbad)
 
