@@ -16,7 +16,7 @@ Follow this quick guide to add Dango to your MetaMask wallet and start playing a
 
 ![](/img/build/add-celo-testnet-to-metamask/3.png)
 
-4. Add info about Celo L2 Dango Testnet
+4. Add info about Celo L2 Alfajores Testnet
 
 :::info
 If you never added a new Network before then you need click on "Add a Network"
