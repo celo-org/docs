@@ -13,7 +13,7 @@ after the Alfajores testnet upgrade occurs.
 In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
 
 :::info
-The Alfajores network will migrate on block *26384000* (expected on Thursday, September 26, 2024 8:09:22 AM UTC)
+The Alfajores network has migrated on block *26384000*.
 :::
 
 Sometime before the transition, all Alfajores node operators must upgrade their existing nodes to the latest version and add a `--l2migrationblock` flag when restarting (see below). All Alfajores nodes that do this will stop adding blocks immediately before the specified block number.
@@ -193,10 +193,6 @@ Although there are multiple ways to run op-geth, all options will share most of 
 
 #### Option 1: Snap sync
 
-:::warning
-Snap sync will only work once Alfajores L2 is live.
-:::
-
 With snap sync, you can start an L2 node without migrating or downloading the L1 chaindata. It is the easiest way to get started with an L2 node, but it does not support archive nodes. To start an L2 node with snap sync, you need to run op-geth with the `--syncmode=snap` flag.
 
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
@@ -219,10 +215,6 @@ docker run -it \
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 2: Download L2 chaindata
-
-:::warning
-The migrated chaindata is not yet available for download. It will be shared after the upgrade.
-:::
 
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
