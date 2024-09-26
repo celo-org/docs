@@ -7,6 +7,11 @@ const sidebars = {
     { type: "doc", label: "Overview", id: "general/index" },
     {
       type: "doc",
+      label: "L1 Architecture",
+      id: "general/architecture",
+    },
+    {
+      type: "doc",
       label: "Web2 to Web3",
       id: "general/web2-to-web3",
     },
