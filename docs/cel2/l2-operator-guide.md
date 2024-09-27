@@ -111,7 +111,7 @@ fi
 ```bash
 EIGENDA_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/eigenda-proxy:v1.4.1
 
-docker run -d \
+docker run --platform linux/amd64 -d \
   --name eigenda-proxy \
   -v ${EIGENDA_KZG_PROXY_DIR}:/data \
   --network=host \
@@ -131,7 +131,7 @@ docker run -d \
       --eigenda-max-blob-length=300MiB
 ```
 
-`--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool.
+`--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool. The key is used by the proxy solely for dispersing data to eigenda, but since this proxy will only be retrieving data from eigenda, the key is not important, however in order to start the proxy, a key is still required.
 
 You can check the logs running `docker logs -f eigenda-proxy` to ensure the service is running correctly.
 
@@ -155,20 +155,20 @@ OP_NODE_DIR=/tmp/alfajores/op-node
 mkdir -p ${OP_NODE_DIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --output-document=${OP_NODE_DIR}/rollup.json
 
-echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
+openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
 ```
 
-3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
+3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=execution-layer`.
 
 ```bash
 OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9
 
-docker run -d \
+docker run --platform linux/amd64 -d \
   --name op-node \
   --network=host \
   --restart=always \
   -v ${OP_NODE_DIR}:/data \
-  ${OP_NODE_IMAGE}
+  ${OP_NODE_IMAGE} \
   op-node \
     --l1.trustrpc=true \
     --l1=https://ethereum-holesky-rpc.publicnode.com \
@@ -179,7 +179,6 @@ docker run -d \
     --rollup.config=/data/rollup.json \
     --verifier.l1-confs=4 \
     --rpc.addr=127.0.0.1 \
-    --syncmode=<consensus-layer/execution-layer>
     --rpc.port=9545 \
     --p2p.listen.tcp=9222 \
     --p2p.listen.udp=9222 \
@@ -190,8 +189,6 @@ docker run -d \
     --altda.da-service=true \
     --altda.verify-on-read=false
 ```
-
-For the `--syncmode` flag, use `--syncmode=consensus-layer` if you're using a snapshot and want blocks to be synced through the op-node. Alternatively, use `--syncmode=execution-layer` when using snap-syncing, and blocks will be synced by op-geth.
 
 You can check the logs running `docker logs -f op-node`. If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
@@ -219,13 +216,12 @@ Also, if you are using snap sync, you will need to `init` the chaindata dir usin
 OP_GETH_DATADIR=/tmp/alfajores/op-geth
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 mkdir -p ${OP_GETH_DATADIR}
-wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_GETH_DATADIR}/genesis.json
 
 docker run -it \
   --name op-geth-init \
   -v ${OP_GETH_DATADIR}:/datadir \
-  ${OP_GETH_IMAGE}
-  geth \
+  ${OP_GETH_IMAGE} \
     --datadir=/datadir \
     init /datadir/genesis.json
 ```
@@ -370,40 +366,34 @@ git checkout celo8
 make geth
 ```
 
-2. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
+2. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use full sync instead of snap sync you need to add the flag `--syncmode=full`.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 
-# Copying the jwt secret from the op-node directory
 cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DATADIR}/jwt.txt
 
 docker run -d \
   --name op-geth \
   --network=host \
   -v ${OP_GETH_DATADIR}:/datadir \
-  ${OP_GETH_IMAGE}
-  geth \
+  ${OP_GETH_IMAGE} \
     --datadir=/datadir \
     --networkid=44787 \
-    --syncmode=<snap/consensus-layer> \
     --gcmode=full \
     --snapshot=true \
     --maxpeers=60 \
     --port=30303 \
     --authrpc.addr=127.0.0.1 \
     --authrpc.port=8551 \
-    --authrpc.jwtsecret=/datadir/jwt.hex \
-    --authrpc.vhosts=* \
+    --authrpc.jwtsecret=/datadir/jwt.txt \
+    --authrpc.vhosts='*' \
     --http \
     --http.addr=127.0.0.1 \
     --http.port=8545 \
     --http.api=eth,net,web3,debug,txpool,engine \
-    --http.vhosts=* \
-    --http.corsdomain=* \
-    --rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org/ \ 
-    --rollup.disabletxpoolgossip=true \
-    --rollup.halt=major \
+    --http.vhosts='*' \
+    --http.corsdomain='*' \
     --verbosity=3 \
     --bootnodes=enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303,enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303,enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303,enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303,enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
 ```
