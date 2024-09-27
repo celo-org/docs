@@ -230,6 +230,10 @@ docker run -it \
     init /datadir/genesis.json
 ```
 
+:::danger
+If you plan to run your L2 node as an archive node (`--gcmode=archive`), geth will automatically default to `--state.scheme=hash`. So the `geth init` command above must be run with `--state.scheme=hash` also.
+:::
+
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Option 2: Download L2 chaindata
@@ -415,6 +419,8 @@ To configure a HistoricalRPCService, add the following flag when starting `op-ge
 ```bash
 --rollup.historicalrpc=<CEL0_L1_NODE_URL>
 ```
+
+In case you do not have access to a Celo L1 node, we provide the following endpoint `<CEL0_L1_NODE_URL>=https://alfajores-forno.cel1.alfajores.celo-testnet.org` for the HistoricalRPCService.
 
 The following rpc endpoints will forward historical requests.
 
