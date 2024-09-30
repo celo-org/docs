@@ -19,7 +19,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.22.0",
+    "@algolia/client-search": "^5.0.0",
     "@cookbookdev/docsbot": "^4.21.5",
     "@crowdin/cli": "^4.0.0",
     "@docusaurus/core": "^3.0.0",
