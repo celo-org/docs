@@ -103,7 +103,7 @@ The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. 
 
 ## MaxCodeSize
 
-The hardcoded protocol parameter MaxCodeSize is raised from 24576 to 65536
+The hardcoded protocol parameter MaxCodeSize is raised from 24576 to 65536.
 
 ## Block receipt
 
