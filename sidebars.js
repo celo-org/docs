@@ -1166,7 +1166,7 @@ const sidebars = {
     },
     { type: "link",
       label: "What's Changed?",
-      href: "https://specs.celo.org/l2_migration.html",
+      href: "cel2/whats-changed",
     },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
