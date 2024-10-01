@@ -1164,7 +1164,7 @@ const sidebars = {
       label: "L2 Architecture",
       id: "cel2/cel2-architecture",
     },
-    { type: "link",
+    { type: "doc",
       label: "What's Changed?",
       href: "cel2/whats-changed",
     },
