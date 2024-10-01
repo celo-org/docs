@@ -83,7 +83,7 @@ Type 123 (`0x7b`) transaction type allows paying for gas in currencies other tha
 The fee currencies available at mainnet launch will be:
 
 USDC (USDC)
-Tether USD (USD₮)
+Tether USD (USDT)
 PUSO (PUSO)
 ECO CFA (eXOF)
 Celo Kenyan Shilling (cKES)
