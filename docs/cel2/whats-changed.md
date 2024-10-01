@@ -14,7 +14,7 @@ Sending these transaction types will no longer be supported, however you will st
 
 ## Consensus
 
-Consensus will no longer be controlled by the validators set, instead we will have a centralized sequencer. This means validators will not need to run any infrastructure for the L2. As such there will no longer be the notion of epochs.
+Consensus will no longer be controlled by the validators set, instead we will have a centralized sequencer, as such there will no longer be the notion of epochs. This also means validators will not need to run any infrastructure for the L2.
 
 This is a temporary situation, after mainnet launch we will be looking at implementing a decentralized sequencer.  
 
