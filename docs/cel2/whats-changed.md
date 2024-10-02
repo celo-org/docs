@@ -56,6 +56,16 @@ Note this results in a 300% increase in gas per second due to the shortened bloc
 * __epochSnarkData__ - not needed since there will be no [plumo](https://docs.Celo.org/protocol/plumo) support in the Celo L2.
 * __extraData__ - will have the BLS aggregated signature removed, this simplifies the L2 implementation and since we already trust those blocks and distributed rewards for them, the BLS signature is no longer required.
 
+## EIP1559 implementation
+
+Previously our implementation used a smart contract [(here)](https://github.com/celo-org/celo-monorepo/blob/faca88f6a48cc7c8e6104393e49ddf7c2d7d20e3/packages/protocol/contracts-0.8/common/GasPriceMinimum.sol#L162) to calculate the base fee which allowed for governable parameters. Now we use the the standard EIP1559 algorithm with the parameters defined in the chain config and the addition of a base fee floor which imposes a lower limit on the base fee value.
+
+The parameters we are using are:
+
+- EIP-1559 elasticity multiplier: 5
+- EIP-1559 denominator: 400
+- EIP-1559 floor: 25 Gwei
+
 ## RPC API
 
 ### Pre-transition data
@@ -97,9 +107,14 @@ In the optimism model, an extra fee is added on to user transactions in order to
 
 The Celo L2 always keeps the L1 fee at zero. This doesn't however mean that we will not charge fees to cover the cost of the L1, just that we won't do it via the L1 fees mechanism. Instead we may raise or lower the [base fee floor](#base-fee-floor) accordingly to match the L1 fees.
 
-## Base fee floor
+## EIP1559 implementation
 
-The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. This is currently configured in the genesis, but it will likely become configurable.
+The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. This is currently configured in through chain config.
+
+The starting value is:
+
+- EIP-1559 floor: 25 Gwei
+
 
 ## MaxCodeSize
 
