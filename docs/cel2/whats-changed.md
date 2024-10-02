@@ -14,15 +14,15 @@ Sending these transaction types will no longer be supported, however you will st
 
 ## Consensus
 
-Consensus will no longer be controlled by the validators set, instead we will have a centralized sequencer, as such there will no longer be the notion of epochs. This also means validators will not need to run any infrastructure for the L2.
+The bft consensus protocol will be removed and replaced with a centralized sequencer. Although there will be no more need for validators the validator set, election mechanism and voting will remain, however validators will not need to run any infrastructure for the L2.
 
-This is a temporary situation, after mainnet launch we will be looking at implementing a decentralized sequencer.  
+This is a temporary situation, after mainnet launch we will be looking at re-introducing active roles for validators.  
 
 ## Validator fees and staking rewards
 
-Validator fees will now go to the sequencer.
+Transaction fees will now go to the sequencer.
 
-We plan to keep validator and staking rewards, previously rewards were emitted on epoch blocks, since there are no epochs in Celo L2 this will now be handled through a smart contract that can be called to periodically distribute rewards.
+Validator and staking rewards will remain, previously rewards were emitted on epoch blocks, Celo L2 does not have epoch blocks so reward emissions will be handled through a smart contract that can be called to periodically distribute rewards.
 The amount of rewards to be distributed has not been decided, however during the time that validators are no longer required to run infrastructure rewards will likely be less than in the Celo L1.
 
 ## Hardforks
