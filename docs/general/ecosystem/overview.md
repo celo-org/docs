@@ -20,6 +20,8 @@ Explore the many ways to engage with the Celo ecosystem and contribute to its gr
 
 ### As a Founder
 - [**Register as an active Celo builder:**](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) Access exclusive resources and support.
+- [**Get your page added**](https://tally.so/r/w887RY) to our [**ecosystem page**](https://www.celopg.eco/ecosystem) managed by Celo Public Goods.
+- [**Introduce your project**](https://forum.celo.org/) in the [**Celo Forum**](https://forum.celo.org/) in the founders' category.
 - [**Apply to Celo Camp:**](https://www.celocamp.com/) Join the accelerator focused on scaling apps on Opera MiniPay.
 - [**Engage with Celo DAOs:**](/general/ecosystem/daos) Gain user feedback, access networking opportunities, and validate your project.
 - [**Apply for Prezenti Grants:**](https://www.prezenti.xyz/) Explore grant opportunities.
