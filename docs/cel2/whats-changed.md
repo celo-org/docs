@@ -108,7 +108,7 @@ The fee currencies available at mainnet launch will be:
 
 ## L1 fees
 
-In the optimism model, an extra fee is added on to user transactions in order to cover the cost of the L1, this can be surprising to users since they have no visibility about what that fee may be since it is not included in the results of calling estimate_gas.
+In the Optimism model, an extra fee is added on to user transactions in order to cover the cost of the L1, this can be surprising to users since they have no visibility about what that fee may be since it is not included in the results of calling `estimate_gas`.
 
 The Celo L2 always keeps the L1 fee at zero. This doesn't however mean that we will not charge fees to cover the cost of the L1, just that we won't do it via the L1 fees mechanism. Instead we may raise or lower the [base fee floor](#eip1559-implementation-1) accordingly to match the L1 fees.
 
