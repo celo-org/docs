@@ -54,7 +54,7 @@ This blinding process preserves the privacy of underlying message (e.g. a mobile
 In addition to protecting the user's privacy, it reduces the risk of targeted censorship.
 ODIS operators compute the OPRF against this hidden input value, and return a result which is also hidden from the operators.
 After the application receives the response, it unblinds it to receive the final evaluation result.
-Note that this blinding process provides privacy to the user _even_ if all of the ODIS operators where corrupted.
+Note that this blinding process provides privacy to the user _even_ if all of the ODIS operators were corrupted.
 This blinding process is what makes the oblivious pseudo random function (OPRF) "oblivious".
 
 ## Verification
