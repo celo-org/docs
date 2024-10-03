@@ -27,7 +27,7 @@ The amount of rewards to be distributed has not been decided, however during the
 
 ## Hardforks
 
-See [here](https://specs.Celo.org/l2_migration.html#changes-for-contracts-developers) for the list of hardforks that will be enabled in the first block of the L2.
+See [here](https://specs.celo.org/l2_migration.html#changes-for-contracts-developers) for the list of hardforks that will be enabled in the first block of the L2.
 
 ## Precompiled contracts
 
