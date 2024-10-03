@@ -12,6 +12,8 @@ Sending these transaction types will no longer be supported, however you will st
 * __Type 0 (`0x0`) _Celo_ legacy transaction__. These are type 0 transactions that had some combination of the following fields set ("feeCurrency", "gatewayFee", "gatewayFeeRecipient") and "ethCompatible" set to false.
 * __Type 124 (`0x7c`) Celo dynamic fee transaction__.
 
+More details on supported transaction types [here](https://specs.celo.org/tx_types.html).
+
 ## Consensus
 
 The BFT consensus protocol will be removed and replaced with a centralized sequencer. Although there will be no more need for validators the validator set, election mechanism and voting will remain, however validators will not need to run any infrastructure for the L2.
@@ -31,7 +33,7 @@ See [here](https://specs.celo.org/l2_migration.html#changes-for-contracts-develo
 
 ## Precompiled contracts
 
-All Celo specific precompiles removed except for the transfer precompile which supports Celo [token duality](https://specs.celo.org/token_duality.html) (the native asset Celo is also an ERC20 token)
+All Celo specific precompiles removed except for the transfer precompile which supports Celo [token duality](https://specs.celo.org/token_duality.html) (the native asset CELO is also an ERC20 token)
 
 ## Randomness
 
@@ -93,7 +95,7 @@ The native token is CELO as opposed to ETH. The native token is also an ERC20 to
 
 ## New transaction type
 
-Type 123 (`0x7b`) transaction type allows paying for gas in currencies other than the native asset (Celo). It has an additional field `feeCurrency` which allows the sender to chose the currency they pay gas in a chosen fee currency.
+Type 123 (`0x7b`) transaction type allows paying for gas in currencies other than the native asset (CELO). It has an additional field `feeCurrency` which allows the sender to chose the currency they pay gas in a chosen fee currency. See [here](https://specs.celo.org/fee_abstraction.html) for details on using fee currencies.
 
 The fee currencies available at mainnet launch will be:
 
@@ -106,9 +108,11 @@ The fee currencies available at mainnet launch will be:
  - Celo Euro (cEUR)
  - Celo Brazilian Real (cREAL)
 
+More details on supported transaction types [here](https://specs.celo.org/tx_types.html).
+
 ## L1 fees
 
-In the Optimism model, an extra fee is added on to user transactions in order to cover the cost of the L1, this can be surprising to users since they have no visibility about what that fee may be since it is not included in the results of calling `estimate_gas`.
+In the Optimism model, an extra fee is added on to user transactions in order to cover the cost of the L1, this can be surprising to users since they have no visibility about what that fee may be since it is not included in the results of calling `eth_estimateGas`.
 
 The Celo L2 always keeps the L1 fee at zero. This doesn't however mean that we will not charge fees to cover the cost of the L1, just that we won't do it via the L1 fees mechanism. Instead we may raise or lower the [base fee floor](#eip1559-implementation-1) accordingly to match the L1 fees.
 
