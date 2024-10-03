@@ -35,7 +35,7 @@ All Celo specific precompiles removed except for the transfer precompile which s
 
 ## Randomness
 
-The random contract removed, if randomness is needed then the PREVRANDAO opcode can be used, more details [here](https://specs.Celo.org/l2_migration.html#deactivated-random-contract).
+The random contract removed, if randomness is needed then the PREVRANDAO opcode can be used, more details [here](https://specs.celo.org/l2_migration.html#deactivated-random-contract).
 
 ## Blocks
 
