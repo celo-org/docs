@@ -58,13 +58,14 @@ Note this results in a 300% increase in gas per second due to the shortened bloc
 
 ## EIP1559 implementation
 
-Previously our implementation used a smart contract [(here)](https://github.com/celo-org/celo-monorepo/blob/faca88f6a48cc7c8e6104393e49ddf7c2d7d20e3/packages/protocol/contracts-0.8/common/GasPriceMinimum.sol#L162) to calculate the base fee which allowed for governable parameters. Now we use the the standard EIP1559 algorithm with the parameters defined in the chain config and the addition of a base fee floor which imposes a lower limit on the base fee value.
+Previously our implementation used a smart contract [(here)](https://github.com/celo-org/celo-monorepo/blob/faca88f6a48cc7c8e6104393e49ddf7c2d7d20e3/packages/protocol/contracts-0.8/common/GasPriceMinimum.sol#L162) to calculate the base fee which allowed for governable parameters. Now we use the the standard EIP1559 algorithm with the parameter values being defined in the chain config.
 
 The parameters we are using are:
 
-- EIP-1559 elasticity multiplier: 5
-- EIP-1559 denominator: 400
-- EIP-1559 floor: 25 Gwei
+- Alfajores
+  - EIP-1559 elasticity multiplier: 5
+  - EIP-1559 denominator: 400
+  - EIP-1559 floor: 25 Gwei (Note that the floor is not part of the original EIP-1559 specification, but it did exist in the Celo L1 smart contract implementation)
 
 ## RPC API
 
@@ -113,7 +114,8 @@ The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. 
 
 The starting value is:
 
-- EIP-1559 floor: 25 Gwei
+- Alfajores:
+  - base fee floor: 25 Gwei
 
 
 ## MaxCodeSize
