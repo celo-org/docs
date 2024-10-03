@@ -31,7 +31,7 @@ See [here](https://specs.Celo.org/l2_migration.html#changes-for-contracts-develo
 
 ## Precompiled contracts
 
-All Celo specific precompiles removed except for the transfer precompile which supports Celo token duality (the native asset Celo is also an ERC20 token)
+All Celo specific precompiles removed except for the transfer precompile which supports Celo [token duality](https://specs.celo.org/token_duality.html) (the native asset Celo is also an ERC20 token)
 
 ## Randomness
 
