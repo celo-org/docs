@@ -23,6 +23,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 - [AllBridge](https://app.allbridge.io/bridge?from=ETH&to=CELO&asset=ABR)
 - [Satellite (Axelar)](https://satellite.money/)
 - [O3](https://o3swap.com/)
+- [Transporter (Chainlink CCIP)](https://www.transporter.io/)
 
 ## Cross-Chain Messaging
 
