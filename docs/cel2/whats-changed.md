@@ -89,7 +89,7 @@ RPC API calls for pre-transition blocks that are performing execution or accessi
 Celo L2 block times are 1s as opposed to 2s for optimism, the gas limit per block remains the same.
 
 ## Native token
-The native token is Celo as opposed to Eth. The native token is also an ERC20 token.
+The native token is CELO as opposed to ETH. The native token is also an ERC20 token.
 
 ## New transaction type
 
