@@ -14,7 +14,7 @@ Sending these transaction types will no longer be supported, however you will st
 
 ## Consensus
 
-The bft consensus protocol will be removed and replaced with a centralized sequencer. Although there will be no more need for validators the validator set, election mechanism and voting will remain, however validators will not need to run any infrastructure for the L2.
+The BFT consensus protocol will be removed and replaced with a centralized sequencer. Although there will be no more need for validators the validator set, election mechanism and voting will remain, however validators will not need to run any infrastructure for the L2.
 
 This is a temporary situation, after mainnet launch we will be looking at re-introducing active roles for validators.  
 
