@@ -132,4 +132,4 @@ Historically the Celo L1 generated a block receipts when system contract calls g
 
 ## Improved finality guarantees
 
-The Celo L2 blocks only reference L1 blocks that are finalized, this means that the Celo L2 is protected from re-orgs that could occur due to L1 re-orgs, this is in contrast to the optimism L2 blocks which reference L1 blocks 4 blocks behind the L1 chain head.
+The Celo L2 blocks only reference L1 blocks that are finalized, this means that the Celo L2 is protected from re-orgs that could occur due to L1 re-orgs, this is in contrast to the Optimism L2 blocks which reference L1 blocks 4 blocks behind the L1 chain head.
