@@ -114,7 +114,7 @@ The Celo L2 always keeps the L1 fee at zero. This doesn't however mean that we w
 
 ## EIP1559 implementation
 
-The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. This is currently configured in through chain config.
+The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. This is currently configured through chain config.
 
 The starting value is:
 
