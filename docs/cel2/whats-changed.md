@@ -119,7 +119,7 @@ The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. 
 The starting value is:
 
 - Alfajores:
-  - base fee floor: 25 Gwei
+  - base fee floor: 25 gwei
 
 
 ## MaxCodeSize
