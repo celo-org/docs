@@ -49,7 +49,7 @@ Note this results in a 300% increase in gas per second due to the shortened bloc
 ### Added fields
 * __withdrawals__ & __withdrawalsRoot__ - these fields are inherited from Ethereum but not used by the op-stack or Celo, withdrawals will always be an empty list, `withdrawalsRoot` will always be the empty withdrawals root (`0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421`)
 * __blobGasUsed__ & __excessBlobGas__ - these fields are also inherited from Ethereum but not used by the op-stack or Celo, they will always be zero.
-* __parentBeaconBlockRoot__ - set to the parentBeaconRoot of the L1 origin block.
+* __parentBeaconBlockRoot__ - set to the `parentBeaconRoot` of the L1 origin block.
 
 ### Removed fields
 * __randomness__ - not needed since the [randomness](#randomness) feature is being removed
