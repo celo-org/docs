@@ -65,7 +65,7 @@ The parameters we are using are:
 - Alfajores
   - EIP-1559 elasticity multiplier: 5
   - EIP-1559 denominator: 400
-  - EIP-1559 floor: 25 Gwei (Note that the floor is not part of the original EIP-1559 specification, but it did exist in the Celo L1 smart contract implementation)
+  - EIP-1559 floor: 25 Gwei (note that the floor is not part of the original EIP-1559 specification, but it did exist in the Celo L1 smart contract implementation)
 
 ## RPC API
 
