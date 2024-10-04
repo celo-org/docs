@@ -15,6 +15,13 @@ There are 6 Billion smartphones on Earth. Build for all of them.
 
 [Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client, fee abstraction, and sub-cent fees makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification.
 
+:::warning
+
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](/cel2).
+:::
+
 ## Quickstart
 
 Easily build Celo dApps with Celo Composer.

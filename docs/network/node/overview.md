@@ -9,6 +9,13 @@ Connect to nodes and services in the Celo Ecosystem.
 
 ---
 
+:::warning
+
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about node providers may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](/cel2).
+:::
+
 ## cLabs Hosted Node
 
 - [Forno](forno)

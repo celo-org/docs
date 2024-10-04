@@ -1,0 +1,39 @@
+---
+title: Ngrok Setup
+description: Ngrok Setup to share localhost project with MiniPay app
+---
+import ColoredText from '/src/components/ColoredText';
+
+When building dApps for MiniPay <ColoredText> locally</ColoredText>, you want to <ColoredText>test the dApp</ColoredText> inside MiniPay wallet on your phone.
+
+But since the dApp is running locally, you <ColoredText>cannot simply visit localhost</ColoredText> on your phone to open the dApp on your phone.
+
+To solve this, we use `ngrok`.
+
+`ngrok` allows us to <ColoredText>share our localhost</ColoredText> by providing us with a temporary web url that can be used on any device!
+
+## Installing Ngrok
+
+1. Visit [ngrok.com](https://ngrok.com)
+
+![ngrok.com](/img/build/build-on-minipay/prerequisites/ngrok-setup/1.png)
+
+2. Sign up
+
+![sign up ngrok](/img/build/build-on-minipay/prerequisites/ngrok-setup/2.png)
+
+3. The dashboard will have instructions based on your OS on how to install and use ngrok!
+
+![dashboard](/img/build/build-on-minipay/prerequisites/ngrok-setup/3.png)
+
+4. Once installed you can use the following <ColoredText>command</ColoredText> to <ColoredText>share your localhost port</ColoredText>.
+
+```bash
+> ngrok http [PORT]
+```
+
+The output looks something like this.
+
+![ngrok output](/img/build/build-on-minipay/prerequisites/ngrok-setup/4.png)
+
+You can use the <ColoredText>highlighted URL</ColoredText> to launch the localhost dApp on the [MiniPay's Site Tester](http://docs.celo.org/developer/build-on-minipay/overview#test-your-dapp-inside-minipay).
