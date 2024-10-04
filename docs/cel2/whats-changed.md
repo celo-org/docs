@@ -3,7 +3,15 @@ title: What's changed?
 description: Changes from L1 to L2 and from op-stack to L2
 ---
 
+# What's changed
+
+Celo is moving from being a POS (proof of stake) based L1 to an L2 built on the OP Stack. In Celo L1 both ordering and data availability were provided by the validators participating in the POS consensus, being an L2 means that Celo will instead rely on the the L1 (Ethereum) for ordering and on [EigenDA](https://www.eigenda.xyz/) for data availability. Outsourcing those components allows Celo offer increased scalability while focussing on providing value for users. See below for more details about all the changes involved.
+
 # Celo L1 → L2
+
+## Node operators
+
+In the Celo L1 node operators simply needed to run the celo-blockchain client, a single service that was a fork of go-ethereum. Moving to the Celo L2 node operators will need to run an op-geth instance for execution, an op-node instance for consensus and an eigenda-proxy for data availability. Instructions on operating nodes are [here](./l2-operator-guide).
 
 ## Deprecated transactions
 
@@ -13,6 +21,10 @@ Sending these transaction types will no longer be supported, however you will st
 * __Type 124 (`0x7c`) Celo dynamic fee transaction__.
 
 More details on supported transaction types [here](https://specs.celo.org/tx_types.html).
+
+## Native bridge to Ethereum
+
+An integral part of L2 design is that they have a native bridge to ethereum. Celo will become an ERC20 token on ethereum and users will be able to use the native bridge to bridge between the Celo L2 and Ethereum. The Alfajores testnet bridge can be accessed [here](https://testnets.superbridge.app/celo-alfajores).
 
 ## Consensus
 
@@ -64,7 +76,7 @@ Previously our implementation used a smart contract [(here)](https://github.com/
 
 The parameters we are using are:
 
-- Alfajores
+- Alfajores testnet:
   - EIP-1559 elasticity multiplier: 5
   - EIP-1559 denominator: 400
   - EIP-1559 floor: 25 Gwei (note that the floor is not part of the original EIP-1559 specification, but it did exist in the Celo L1 smart contract implementation)
@@ -122,7 +134,7 @@ The Celo L2 adds a base fee floor, which imposes a lower limit on the base fee. 
 
 The starting value is:
 
-- Alfajores:
+- Alfajores testnet:
   - base fee floor: 25 gwei
 
 
