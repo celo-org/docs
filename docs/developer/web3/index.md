@@ -5,13 +5,15 @@ description: Using Web3.js with Celo
 
 ## Web3.js
 
-Web3.js was established in 2014, making it the oldest web3 library. With extensive documentation, an active community and modular design, Web3.js is powerful and easy-to-use. It has _support for Celo via plugins since version 4.13.1_.
+Web3.js was established in 2014, making it the oldest web3 library. With extensive documentation, an active community and modular design, Web3.js is powerful and easy-to-use. It has _support for Celo features via plugins since version 4.13.1_.
 
 The [Web3.js docs](https://docs.web3js.org/) have excellent examples of how to use it in your project.
 
 ### With Celo
 
-You need to install `@celo/web3-plugin-transaction-types` as well as `web3@4.13.1` or higher.
+For basic use web3 works out of the box. 
+
+For Celo' specific features like Fee Abstraction transcations you need to install `@celo/web3-plugin-transaction-types` as well as `web3@4.13.1` or higher. This also adds utils like `getCoreContractAddress` for fetching core contract address from onchain registry. 
 
 ```ts
 // see web3 docs for more info on setup
