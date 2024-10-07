@@ -381,6 +381,11 @@ const sidebars = {
           id: "developer/thirdweb-sdk/index",
         },
         {
+          type: "doc",
+          label: "Web3.js",
+          id: "developer/web3/index",
+        },
+        {
           type: "category",
           label: "ContractKit",
           items: [
