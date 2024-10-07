@@ -24,7 +24,7 @@ More details on supported transaction types [here](https://specs.celo.org/tx_typ
 
 ## Native bridge to Ethereum
 
-An integral part of L2 design is that they have a native bridge to ethereum. Celo will become an ERC20 token on ethereum and users will be able to use the native bridge to bridge between the Celo L2 and Ethereum. The Alfajores testnet bridge can be accessed [here](https://testnets.superbridge.app/celo-alfajores).
+An integral part of L2 design is that they have a native bridge to ethereum. Celo will become an ERC20 token on Ethereum and users will be able to use the native bridge to bridge between the Celo L2 and Ethereum. The Alfajores testnet bridge can be accessed [here](https://testnets.superbridge.app/celo-alfajores).
 
 ## Consensus
 
