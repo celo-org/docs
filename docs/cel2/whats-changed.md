@@ -11,7 +11,7 @@ Celo is moving from being a POS (proof of stake) based L1 blockchain to an L2 bu
 
 ## Node operators
 
-In the Celo L1 node operators simply needed to run the celo-blockchain client, a single service that was a fork of go-ethereum. Moving to the Celo L2 node operators will need to run an op-geth instance for execution, an op-node instance for consensus and an eigenda-proxy for data availability. Instructions on operating nodes are [here](./l2-operator-guide).
+In the Celo L1 node, operators simply needed to run the celo-blockchain client, a single service that was a fork of go-ethereum. Moving to the Celo L2 node operators will need to run an op-geth instance for execution, an op-node instance for consensus and an eigenda-proxy for data availability. Instructions on operating nodes are [here](./l2-operator-guide).
 
 ## Deprecated transactions
 
