@@ -92,7 +92,7 @@ make
 2. You will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
 
 ```bash
-EIGENDA_KZG_PROXY_DIR=/tmp/alfajores/eigenda-proxy/kzg
+EIGENDA_KZG_PROXY_DIR=$HOME/alfajores-l2/eigenda-proxy/kzg
 mkdir -p ${EIGENDA_KZG_PROXY_DIR}
 
 [ ! -f ${EIGENDA_KZG_PROXY_DIR}/g1.point ] && wget https://srs-mainnet.s3.amazonaws.com/kzg/g1.point --output-document=${EIGENDA_KZG_PROXY_DIR}/g1.point
@@ -156,7 +156,7 @@ With snap sync, you can start an L2 node without migrating or downloading the L1
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
 
 ```bash
-OP_GETH_DATADIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=$HOME/alfajores-l2/op-geth
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 mkdir -p ${OP_GETH_DATADIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_GETH_DATADIR}/genesis.json
@@ -180,7 +180,7 @@ Additionally when running op-geth, you need to provide `--syncmode=snap` flag. P
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
 ```bash
-OP_GETH_DATADIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=$HOME/alfajores-l2/op-geth
 
 mkdir -p ${OP_GETH_DATADIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst
@@ -241,7 +241,7 @@ At block 26384000, the L1 chain will stop producing blocks. At this point, you c
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
 ```bash
-CEL2_MIGRATION_DIR=/tmp/alfajores/cel2-migration-tool
+CEL2_MIGRATION_DIR=$HOME/alfajores-l2/cel2-migration-tool
 
 mkdir -p ${CEL2_MIGRATION_DIR}
 wget -O ${CEL2_MIGRATION_DIR}/config.json https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json
@@ -354,7 +354,7 @@ make op-node
 2. Make a directory for op node config and download the rollup config file:
 
 ```bash
-OP_NODE_DIR=/tmp/alfajores/op-node
+OP_NODE_DIR=$HOME/alfajores-l2/op-node
 mkdir -p ${OP_NODE_DIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --output-document=${OP_NODE_DIR}/rollup.json
 ```
