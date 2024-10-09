@@ -8,8 +8,7 @@ This shift, [proposed by cLabs in July
 2023](https://forum.celo.org/t/clabs-proposal-for-celo-to-transition-to-an-ethereum-l2/6109), aims
 to maintain the seamless user experience that Celo is known for—characterized by speed, low costs,
 and ease of use—while leveraging Ethereum’s security and ecosystem.  As part of this transition,
-Celo is currently operating two Layer 2 testnets: Dango, which is live, and Alfajores, which will be
-upgraded to Layer 2 on September 26, 2024.
+Celo is currently operating a Layer 2 testnet, Alfajores, which launched on September 26, 2024.
 
 
 ---
@@ -33,12 +32,12 @@ These dates are subject to change. This documentation will be continuously updat
 :::
 
 #### Early July, 2024: Dango L2 Testnet Launch
-- The Dango Testnet announced on the 7th of July 2024, Celo’s first Layer 2 public test network, is currently live. Dango allows developers and infrastructure providers to familiarize themselves with the Layer 2 environment. 
+- The Dango Testnet announced on the 7th of July 2024, Celo’s first L2 public test network, went live. Dango allowed developers and infrastructure providers to familiarize themselves with the L2 environment. It was shut down on the 9th of October 2024.
 
 #### 26th September, 2024: Alfajores L2 Testnet Launch
-- The Celo L2 testnet, Alfajores, will go live. This provides a testing environment for node operators and developers to ensure compatibility before the mainnet launch.
+- The Celo L2 testnet, Alfajores, went live! This provides a testing environment for node operators and developers to ensure compatibility before the mainnet launch.
 
-#### Early November 2024: Celo L2 Mainnet Launch
+#### December 2024: Celo L2 Mainnet Launch
 - The Celo L2 mainnet will officially launch. All nodes must be updated by this time to avoid disruption. Further announcements will confirm the exact date.
 
 ## Useful Links
