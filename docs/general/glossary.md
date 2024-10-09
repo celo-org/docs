@@ -23,11 +23,11 @@ The first public Celo test network, available for developers to use freely subje
 
 ## Attestation
 
-Generally, support for an entity having an associated identity. In Celo, each attestation confirms that an account has access to a message sent to a specific mobile phone number via a specific validator via Celo's decentralized verification process.
+Generally, support for an entity having an associated identity. In Celo, each attestation confirms that an account has access to a message sent to a specific identifier typically a mobile phone number via an Attestation Provider via Celo's ODIS.
 
 ## Attestation Service
 
-A service operated by validators that sends signed SMS messages in order to allow accounts to prove they have access to a phone number.
+Former name for what has become Social Connect. 
 
 ## Baklava
 
