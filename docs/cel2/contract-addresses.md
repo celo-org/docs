@@ -41,7 +41,7 @@ title: Contract Addresses
 |         SystemConfigProxy         | 0x43cb8878b4B62D9853452140eFB42CF30672e23a |
 |          SystemOwnerSafe          | 0x11f6358a0C3Af1808C9b76E9d9C97a850EEFb6d4 |
 
-## Cel2 Dango Testnet(L2)
+## Cel2 Alfajores Testnet(L2)
 
 :::info
 All the L1 Alfajores contracts exist at the same address on the L2 as they did on L1. Addresses are available [here](/contract-addresses#alfajores-testnet).
