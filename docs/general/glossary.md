@@ -97,6 +97,10 @@ Short for Decentralized Application. An application, usually a mobile applicatio
 
 Decentralized Finance; open source software and networks without intermediaries in the financial space.
 
+## Derivation Path
+
+A derivation path defines how private keys and addresses are derived from a mnemonic. The Bitcoin Community Defined the standards for derivation paths in BIP39 and BIP42 and BIP44. A [registry of coins/chains and their paths](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) is maintained and includes celo and ethereum paths.
+
 ## Double Signing
 
 When a validator signs two different blocks at the same height and with the same parent hash in the blockchain.
