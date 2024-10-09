@@ -31,7 +31,7 @@ Overview of Celo Mainnet, Alfajores Testnet and Baklava Testnet.
 | Chain ID        | 44787                                                                                                                                           |
 | RPC Endpoint (best effort)   | [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) |
 | RPC Nodes       | [https://docs.celo.org/network/node/forno#alfajores-testnet](https://docs.celo.org/network/node/forno#alfajores-testnet)                        |
-| Block Explorer  | <ul><li>[https://explorer.celo.org/alfajores](https://explorer.celo.org/alfajores)</li><li>[https://alfajores.celoscan.io](https://alfajores.celoscan.io)</li></ul>  |
+| Block Explorers  | <ul><li>[https://explorer.celo.org/alfajores](https://explorer.celo.org/alfajores)</li><li>[https://alfajores.celoscan.io](https://alfajores.celoscan.io)</li></ul>  |
 | Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
 | Faucet Link     | [https://faucet.celo.org](https://faucet.celo.org)                                                                                              |
 | Bridge Link     | [https://testnets.superbridge.app/celo-alfajores](https://testnets.superbridge.app/celo-alfajores)                                                                                              |
