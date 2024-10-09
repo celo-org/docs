@@ -1,20 +1,20 @@
 ---
-title: Bridging CELO from Holesky to Dango using Viem
+title: Bridging CELO from Holesky to Alfajores using Viem
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 
-In this tutorial, you will learn how to programmatically bridge CELO from Holskey to Dango using the [viem OP Stack](https://viem.sh/op-stack).  
+In this tutorial, you will learn how to programmatically bridge CELO from Holskey to Alfajores using the [viem OP Stack](https://viem.sh/op-stack).  
 
-Bridging CELO from Holesky to Dango is simple, all you need to do is call [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) on the `OptimismPortalProxy` contract on Holesky.
+Bridging CELO from Holesky to Alfajores is simple, all you need to do is call [`depositERC20Transaction`](https://viem.sh/op-stack/actions/depositTransaction#deposittransaction) on the `OptimismPortalProxy` contract on Holesky.
 
 The `depositERC20Transaction` pulls CELO tokens from the account which is why you need to approve `OptimismPortalProxy` to spend CELO tokens first.
 
-Below, we’ve created a `dango.js` file that contains all the necessary data for interacting with the test network. 
+Below, we’ve created a `alfajores.js` file that contains all the necessary data for interacting with the test network. 
 
-Since Dango will be a short-lived testnet, chain data won’t be available through viem or wagmi, so this file ensures you have everything you need directly at hand.
+Since Alfajores will be a short-lived testnet, chain data won’t be available through viem or wagmi, so this file ensures you have everything you need directly at hand.
 
 
 <Tabs>
@@ -25,7 +25,7 @@ Since Dango will be a short-lived testnet, chain data won’t be available throu
     import { privateKeyToAccount } from "viem/accounts";
     import { holesky } from "viem/chains";
     import { getL2TransactionHashes, publicActionsL2 } from "viem/op-stack";
-    import { dango } from "./dango.js";
+    import { alfajores } from "./alfajores.js";
 
     const CELOL1 = "0xDEd08f6Ec0A57cE6Be62d1876d2CE92AF37eddA0";
 
@@ -49,7 +49,7 @@ Since Dango will be a short-lived testnet, chain data won’t be available throu
     });
 
     export const publicClientL2 = createPublicClient({
-      chain: dango,
+      chain: alfajores,
       transport: http(),
     }).extend(publicActionsL2());
 
@@ -148,15 +148,15 @@ Since Dango will be a short-lived testnet, chain data won’t be available throu
 
   </TabItem>
 
-  <TabItem value="dango.js" label="dango.js">
+  <TabItem value="alfajores.js" label="alfajores.js">
 
     ```js
     import { defineChain } from "viem";
 
     const sourceId = 17000;
 
-    export const dango = defineChain({
-      name: "Dango Testnet",
+    export const alfajores = defineChain({
+      name: "Alfajores Testnet",
       id: 44_787,
       nativeCurrency: {
         decimals: 18,
@@ -165,7 +165,7 @@ Since Dango will be a short-lived testnet, chain data won’t be available throu
       },
       rpcUrls: {
         default: {
-          http: ["https://forno.dango.celo-testnet.org"],
+          http: ["https://alfajores-forno.celo-testnet.org"],
         },
       },
       contracts: {
