@@ -8,8 +8,7 @@ This shift, [proposed by cLabs in July
 2023](https://forum.celo.org/t/clabs-proposal-for-celo-to-transition-to-an-ethereum-l2/6109), aims
 to maintain the seamless user experience that Celo is known for—characterized by speed, low costs,
 and ease of use—while leveraging Ethereum’s security and ecosystem.  As part of this transition,
-Celo is currently operating two Layer 2 testnets: Dango, which is live, and Alfajores, which will be
-upgraded to Layer 2 on September 26, 2024.
+Celo is currently operating a Layer 2 testnet, Alfajores, which launched on September 26, 2024.
 
 
 ---
