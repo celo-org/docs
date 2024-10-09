@@ -60,19 +60,8 @@ Through the Superbridge UI: [https://superbridge.app/celo-testnet](https://super
 
 Alfajores is the first testnet of the Celo L1 blockchain, [launched in July 2019](https://blog.celo.org/introducing-alfajores-1b162ebcb44d). It was upgraded to L2 in September 2024. For more details, refer to the [Alfajores Testnet documentation](https://docs.celo.org/network/alfajores).
 
-Dango is the first testnet of the Celo L2 blockchain, launched in July 2024.
-It implements the specifications detailed in [Cel2 Specification](https://specs.celo.org/root.html) while preserving the original Alfajores history and state.
-For more details, refer to [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html).
-
+Dango was the first testnet of the Celo L2 blockchain, launched in July 2024 and shut down in October 2024. It served as a test run for the Alfajores migration to L2.
 Dango diverged from Alfajores L1 at block [24940100](https://celo-alfajores.blockscout.com/block/0xc0e521a7b7326064ec12f51449de16d3218de161335daaa4ae8bbed1790b4a6c).
-
-### I noticed you used the same chainID for Alfajores and Dango. Isn't that dangerous?
-
-Good catch! Yes, we're using the same chain ID for both Alfajores and Dango. This means that transactions from one testnet can be executed on the other testnet as well. But as both networks are testnets, this is not a problem. Furthermore, Dango is set to go away in fall 2024.
-
-### Are there any address changes between Alfajores and Dango?
-
-No, all contracts stay at their place. For more information about the migration, see the [migration docs](https://specs.celo.org/l2_migration.html).
 
 ### Is there anything that used to work on Alfajores that doesn’t anymore?
 
@@ -105,7 +94,7 @@ For more details, see the [Alfajores specifications](https://specs.celo.org/root
 
 - CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
 - Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- Epoch rewards? Not supported in Dango, but will be supported in Alfajores and Mainnet
+- Epoch rewards? Supported in Alfajores and Mainnet
 
 ## Not sure what you need to do?
 
