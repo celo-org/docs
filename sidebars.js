@@ -1169,9 +1169,14 @@ const sidebars = {
       label: "L2 Architecture",
       id: "cel2/cel2-architecture",
     },
-    { type: "doc",
+    { type: "category",
       label: "What's Changed?",
-      id: "cel2/whats-changed",
+      link: { type: 'doc', id: 'cel2/whats-changed/overview' },
+      collapsed: false,
+      items: [
+        'cel2/whats-changed/l1-l2',
+        'cel2/whats-changed/op-l2'
+      ],
     },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
