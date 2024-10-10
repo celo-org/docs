@@ -12,9 +12,8 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 <details>
   <summary>I use or need a node provider</summary>
 
-  The following node providers are planning on upgrading with Alfajores and will be available shortly after the Alfajores L2 upgrade:
+  The following node providers are available for Alfajores L2:
 
-  - [Quicknode](https://www.quicknode.com/chains/celo)
   - [Infura](https://www.infura.io/networks/celo)
   - [dRPC](https://drpc.org/chainlist/celo)
 
