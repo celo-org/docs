@@ -41,7 +41,7 @@ yarn add @celo/contractkit @celo-tools/use-contractkit bignumber.js
 Here's what we'll be using each of these packages for:
 
 - [@celo/contractkit](https://github.com/celo-org/celo-monorepo/tree/master/packages/sdk/contractkit) is a lightweight wrapper around the [Web3](https://web3js.readthedocs.io/) object you may already be familiar with. It contains typed interfaces for the core contracts (generated from the Contract ABIs) and helper functions to make common operations on Celo easier
-- [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) is a community provided library to ease establishing the connection with a user's wallet, whether that is a hardware, mobile, or web wallet. When developing with this library, your users can hold Celo via [Valora](https://valoraapp.com), a Ledger, Metamask and more
+- [@celo-tools/use-contractkit](https://github.com/celo-org/react-celo) is a community provided library to ease establishing the connection with a user's wallet, whether that is a hardware, mobile, or web wallet. When developing with this library, your users can hold Celo via [Valora](https://valoraapp.com), a Ledger, Metamask and more
 - [bignumber.js](https://github.com/MikeMcl/bignumber.js/) is a library for expressing large numbers in JavaScript. When interacting with a blockchain we often need to handle arbitrary-precision decimal and non-decimal arithmetic.
 
 We'll also need to add some Next.js config to work with these packages. Update next.config.js with the following:
@@ -71,7 +71,7 @@ After all our boilerplate has been setup, we're ready to start developing our ap
 
 When a user wants to interact with your DApp we need to somehow allow them to connect their wallet. Interaction with on chain smart contracts is impossible without this step.
 
-Leveraging our previously added [@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) library we can provide a button that prompts the user to connect their wallet.
+Leveraging our previously added [@celo-tools/use-contractkit](https://github.com/celo-org/react-celo) library we can provide a button that prompts the user to connect their wallet.
 
 Update pages/index.js with the following:
 
@@ -143,7 +143,7 @@ function GovernanceApp() {
       dequeue.map(async (id) => ({
         id,
         ...(await governance.getProposalRecord(id)),
-      }))
+      })),
     );
     setProposals(fetchedProposals);
   }, [kit]);
@@ -173,8 +173,8 @@ function GovernanceApp() {
                 {proposal.passed
                   ? "Passed"
                   : proposal.approved
-                  ? "Approved"
-                  : "Not approved"}
+                    ? "Approved"
+                    : "Not approved"}
               </td>
               <td>
                 <a
@@ -235,7 +235,7 @@ const fetchProposals = useCallback(async () => {
         ...record,
         vote: voteRecord ? voteRecord.value : undefined,
       };
-    })
+    }),
   );
   setProposals(fetchedProposals);
 }, [kit, address]);
@@ -262,8 +262,8 @@ return (
             {proposal.passed
               ? "Passed"
               : proposal.approved
-              ? "Approved"
-              : "Not approved"}
+                ? "Approved"
+                : "Not approved"}
           </td>
           <td>
             <a
@@ -317,7 +317,7 @@ const vote = useCallback(
     await (await governance.vote(id, value)).sendAndWaitForReceipt();
     fetchProposals();
   },
-  [kit, fetchProposals]
+  [kit, fetchProposals],
 );
 ```
 
@@ -335,8 +335,8 @@ return (
       {proposal.passed
         ? "Passed"
         : proposal.approved
-        ? "Approved"
-        : "Not approved"}
+          ? "Approved"
+          : "Not approved"}
     </td>
     <td>
       <a href={proposal.descriptionURL} target="_blank">
@@ -363,7 +363,7 @@ We've compiled a short list on best practices to follow when developing DApps. F
 
 ### Last used address
 
-[@celo-tools/use-contractkit](https://github.com/celo-tools/use-contractkit) will remember the address a user last logged in with (via [browser LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)). Use this to your advantage and allow your DApp to display the same data whether or not the user has connected their wallet. A good test is to refresh your DApp after connecting and see if anything changes. At the very most, buttons for interaction could be disabled, however it's preferable to prompt to connect the wallet on button click.
+[@celo-tools/use-contractkit](https://github.com/celo-org/react-celo) will remember the address a user last logged in with (via [browser LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)). Use this to your advantage and allow your DApp to display the same data whether or not the user has connected their wallet. A good test is to refresh your DApp after connecting and see if anything changes. At the very most, buttons for interaction could be disabled, however it's preferable to prompt to connect the wallet on button click.
 
 Keeping the UI consistent by using the last connected address is a quick win we can have with DApps that make the experience using them closer to Web2, an experience more users will be familiar with.
 
@@ -391,7 +391,7 @@ The sweeping generalisation would be to allow entering values in CELO or their p
 
 Hopefully you have a better grasp on developing DApps against the Celo core contracts now. In this tutorial we covered:
 
-- Connecting to user wallets ([use-contractkit](https://github.com/celo-tools/use-contractkit))
+- Connecting to user wallets ([use-contractkit](https://github.com/celo-org/react-celo))
 - Fetching on-chain data
 - Calling simple functions on the core contracts
 - A brief word on best practices with regard to DApp development.

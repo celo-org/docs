@@ -25,12 +25,11 @@ Consider using [Dependabot](https://docs.github.com/en/code-security/supply-chai
 
 [viem](https://viem.sh/) is a lightweight javascript library for interacting with EVM chains. It supports celo specific features. If you're building with react, consider [wagmi](https://wagmi.sh/) a viem wrapper library that speeds up your development time.
 
-
 ### Ethers.JS Wrapper
 
 A minimal wrapper for ethers to create Celo Easy Fee transactions. If paying for gas with tokens is not important for your use case, then the standard ethers.js works perfectly well.
 
-<PageRef url="https://github.com/celo-tools/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
+<PageRef url="https://github.com/jmrossy/celo-ethers-wrapper" pageName="Ethers.JS Wrapper" />
 
 ### WalletConnect
 
