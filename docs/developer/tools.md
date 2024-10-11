@@ -97,6 +97,12 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 <PageRef url="https://dapplooker.com/integration/celo" pageName="DappLooker" />
 
+### SQD
+
+[SQD](https://sqd.dev/) is a decentralized hyper-scalable data platform optimized for providing efficient, permissionless access to large volumes of data. It currently serves historical on-chain data, including event logs, transaction receipts, traces, and per-transaction state diffs. SQD offers a powerful toolkit for creating custom data extraction and processing pipelines, achieving an indexing speed of up to 150k blocks per second. Use SQD to retrieve data from both the Celo Mainnet Celo Alfajores Testnet.
+
+<PageRef url="https://sqd.dev/" pageName="SQD" />
+
 ### Stats.celo.org
 
 [Stats.celo.org](http://stats.celo.org) allows you to check network activity and health.
