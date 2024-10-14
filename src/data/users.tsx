@@ -289,7 +289,7 @@ const Users: User[] = [
     description: 'A simple wallet for the Celo network. Manage your funds in a browser or on your desktop.',
     preview: require('./showcase/celo-wallet.png'),
     website: 'https://celowallet.app/setup',
-    source: 'https://github.com/celo-tools/celo-web-wallet',
+    source: 'https://github.com/jmrossy/celo-web-wallet',
     tags: ['apps', 'wallets', 'popular'],
   },
   {
@@ -875,7 +875,7 @@ const Users: User[] = [
     description: 'Make exchanges between Celo native currencies using the Mento on-chain exchange mechanism.',
     preview: require('./showcase/mento-fi.png'),
     website: 'https://mento.finance/',
-    source: 'https://github.com/celo-tools/mento-fi',
+    source: 'https://github.com/mento-protocol/mento-web',
     tags: ['apps','defi', 'popular'],
   },
   {
