@@ -137,13 +137,6 @@ const sidebars = {
       label: "Quickstart",
       id: "build/quickstart",
     },
-    
-    // {
-    //   type: "doc",
-    //   label: "Celo Contracts",
-    //   id: "build/contract-addresses",
-    // },
-    
     {
       type: "category",
       label: "Build on MiniPay",
@@ -218,11 +211,6 @@ const sidebars = {
             },
           ],
         },
-        // {
-        //   type: "doc",
-        //   label: "Attestation Service",
-        //   id: "validator/attestation",
-        // },
         {
           type: "category",
           label: "Key Management",
@@ -289,10 +277,6 @@ const sidebars = {
           label: "Validator FAQ",
           id: "validator/troubleshooting-faq",
         },
-        // { type: "doc", label: "Overview", id: "build/integrations/index" },
-        // { type: "doc", label: "Custody", id: "build/integrations/custody" },
-        // { type: "doc", label: "Guide", id: "build/integrations/guide" },
-        // { type: "doc", label: "Listings", id: "build/integrations/listings" },
       ],
     },
     {
@@ -309,11 +293,6 @@ const sidebars = {
           label: "Developer Blog",
           href: "https://medium.com/celodevelopers",
         },
-        // {
-        //   type: "doc",
-        //   label: "Code Tutorials",
-        //   id: "/blog",
-        // },
         {
           type: "link",
           label: "Celo Blog",
@@ -349,146 +328,221 @@ const sidebars = {
 
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
-    {
-      type: "link",
-      label: "Faucet",
-      href: "https://faucet.celo.org",
-    },
-    {
-      type: "category",
-      label: "Node Providers",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "network/node/overview",
-        },
-        {
-          type: "doc",
-          label: "Forno",
-          id: "network/node/forno",
-        },
-        {
-          type: "category",
-          label: "Run a Node",
-          items: [
-            {
-              type: "doc",
-              label: "Mainnet Full Node",
-              id: "network/node/run-mainnet",
-            },
-            {
-              type: "doc",
-              label: "Alfajores Full Node",
-              id: "network/node/run-alfajores",
-            },
-            {
-              type: "doc",
-              label: "Baklava Full Node",
-              id: "network/node/run-baklava",
-            },
-            {
-              type: "doc",
-              label: "Hosted Nodes",
-              id: "network/node/run-hosted",
-            },
-          ],
-        },
-      ],
-    },
 
+    // NEW
     // {
     //   type: "category",
-    //   label: "Networks",
+    //   label: "Node Providers",
     //   items: [
-    //     { type: "doc", label: "Overview", id: "network/index" },
-        // Nodes
-        // {
-        //   type: "category",
-        //   label: "Nodes",
-        //   items: [
-        //     {
-        //       type: "doc",
-        //       label: "Overview",
-        //       id: "network/node/overview",
-        //     },
-        //     {
-        //       type: "doc",
-        //       label: "Forno",
-        //       id: "network/node/forno",
-        //     },
-        //     {
-        //       type: "category",
-        //       label: "Run a Node",
-        //       items: [
-        //         {
-        //           type: "doc",
-        //           label: "Mainnet Full Node",
-        //           id: "network/node/run-mainnet",
-        //         },
-        //         {
-        //           type: "doc",
-        //           label: "Alfajores Full Node",
-        //           id: "network/node/run-alfajores",
-        //         },
-        //         {
-        //           type: "doc",
-        //           label: "Baklava Full Node",
-        //           id: "network/node/run-baklava",
-        //         },
-        //         {
-        //           type: "doc",
-        //           label: "Hosted Nodes",
-        //           id: "network/node/run-hosted",
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
     //     {
-    //       type: "category",
-    //       label: "Explorers",
-    //       items: [
-    //         {
-    //           type: "link",
-    //           label: "Network Stats",
-    //           href: "https://dune.com/celo/celo-blockchain-overview",
-    //         },
-    //         {
-    //           type: "link",
-    //           label: "Blockscout",
-    //           href: "https://explorer.celo.org/",
-    //         },
-    //         {
-    //           type: "link",
-    //           label: "Celoscan",
-    //           href: "https://celoscan.xyz/",
-    //         },
-    //       ],
+    //       type: "doc",
+    //       label: "Overview",
+    //       id: "network/node/overview",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Forno",
+    //       id: "network/node/forno",
     //     },
     //     {
     //       type: "category",
-    //       label: "Disclaimers",
+    //       label: "Run a Node",
     //       items: [
     //         {
     //           type: "doc",
-    //           label: "Mainnet",
-    //           id: "network/mainnet/disclaimer",
+    //           label: "Mainnet Full Node",
+    //           id: "network/node/run-mainnet",
     //         },
     //         {
     //           type: "doc",
-    //           label: "Alfajores Testnet",
-    //           id: "network/alfajores/disclaimer",
+    //           label: "Alfajores Full Node",
+    //           id: "network/node/run-alfajores",
     //         },
     //         {
     //           type: "doc",
-    //           label: "Baklava Testnet",
-    //           id: "network/baklava/disclaimer",
+    //           label: "Baklava Full Node",
+    //           id: "network/node/run-baklava",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Hosted Nodes",
+    //           id: "network/node/run-hosted",
     //         },
     //       ],
     //     },
     //   ],
     // },
+
+    {
+      type: "category",
+      label: "Wallets",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "wallet/index",
+        },
+        {
+          type: "link",
+          label: "Valora",
+          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
+        },
+        {
+          type: "category",
+          label: "MetaMask",
+          items: [
+            {
+              type: "link",
+              label: "MetaMask Setup",
+              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
+            },
+            {
+              type: "doc",
+              label: "Programmatic Setup",
+              id: "wallet/metamask/setup",
+            },
+            {
+              type: "doc",
+              label: "Metmask and Celo",
+              id: "wallet/metamask/use",
+            },
+            {
+              type: "doc",
+              label: "MetaMask and Valora",
+              id: "wallet/metamask/import",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Ledger Wallet",
+          items: [
+            {
+              type: "doc",
+              label: "Ledger Wallet Setup",
+              id: "wallet/ledger/setup",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Terminal",
+              id: "wallet/ledger/to-celo-terminal",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo Web Wallet",
+              id: "wallet/ledger/to-celo-web",
+            },
+            {
+              type: "doc",
+              label: "Connect to Celo CLI",
+              id: "wallet/ledger/to-celo-cli",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Coinbase Wallet",
+          id: "wallet/coinbase-wallet",
+        },
+        {
+          type: "link",
+          label: "Staking",
+          href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
+        },
+      ],
+    },
+
+    {
+      type: "category",
+      label: "Networks",
+      items: [
+        { type: "doc", label: "Overview", id: "network/index" },
+        {
+          type: "category",
+          label: "Nodes",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "network/node/overview",
+            },
+            {
+              type: "doc",
+              label: "Forno",
+              id: "network/node/forno",
+            },
+            {
+              type: "category",
+              label: "Run a Node",
+              items: [
+                {
+                  type: "doc",
+                  label: "Mainnet Full Node",
+                  id: "network/node/run-mainnet",
+                },
+                {
+                  type: "doc",
+                  label: "Alfajores Full Node",
+                  id: "network/node/run-alfajores",
+                },
+                {
+                  type: "doc",
+                  label: "Baklava Full Node",
+                  id: "network/node/run-baklava",
+                },
+                {
+                  type: "doc",
+                  label: "Hosted Nodes",
+                  id: "network/node/run-hosted",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Explorers",
+          items: [
+            {
+              type: "link",
+              label: "Network Stats",
+              href: "https://dune.com/celo/celo-blockchain-overview",
+            },
+            {
+              type: "link",
+              label: "Blockscout",
+              href: "https://explorer.celo.org/",
+            },
+            {
+              type: "link",
+              label: "Celoscan",
+              href: "https://celoscan.xyz/",
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Disclaimers",
+          items: [
+            {
+              type: "doc",
+              label: "Mainnet",
+              id: "network/mainnet/disclaimer",
+            },
+            {
+              type: "doc",
+              label: "Alfajores Testnet",
+              id: "network/alfajores/disclaimer",
+            },
+            {
+              type: "doc",
+              label: "Baklava Testnet",
+              id: "network/baklava/disclaimer",
+            },
+          ],
+        },
+      ],
+    },
     {
       type: "category",
       label: "Addresses",
@@ -740,84 +794,84 @@ const sidebars = {
     },
 
     // OLD
-    {
-      type: "category",
-      label: "Wallets",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "wallet/index",
-        },
-        {
-          type: "link",
-          label: "Valora",
-          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
-        },
-        {
-          type: "category",
-          label: "MetaMask",
-          items: [
-            {
-              type: "link",
-              label: "MetaMask Setup",
-              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
-            },
-            {
-              type: "doc",
-              label: "Programmatic Setup",
-              id: "wallet/metamask/setup",
-            },
-            {
-              type: "doc",
-              label: "Metmask and Celo",
-              id: "wallet/metamask/use",
-            },
-            {
-              type: "doc",
-              label: "MetaMask and Valora",
-              id: "wallet/metamask/import",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Ledger Wallet",
-          items: [
-            {
-              type: "doc",
-              label: "Ledger Wallet Setup",
-              id: "wallet/ledger/setup",
-            },
-            {
-              type: "doc",
-              label: "Connect to Celo Terminal",
-              id: "wallet/ledger/to-celo-terminal",
-            },
-            {
-              type: "doc",
-              label: "Connect to Celo Web Wallet",
-              id: "wallet/ledger/to-celo-web",
-            },
-            {
-              type: "doc",
-              label: "Connect to Celo CLI",
-              id: "wallet/ledger/to-celo-cli",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Coinbase Wallet",
-          id: "wallet/coinbase-wallet",
-        },
-        {
-          type: "link",
-          label: "Staking",
-          href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
-        },
-      ],
-    },
+    // {
+    //   type: "category",
+    //   label: "Wallets",
+    //   items: [
+    //     {
+    //       type: "doc",
+    //       label: "Overview",
+    //       id: "wallet/index",
+    //     },
+    //     {
+    //       type: "link",
+    //       label: "Valora",
+    //       href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "MetaMask",
+    //       items: [
+    //         {
+    //           type: "link",
+    //           label: "MetaMask Setup",
+    //           href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Programmatic Setup",
+    //           id: "wallet/metamask/setup",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Metmask and Celo",
+    //           id: "wallet/metamask/use",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "MetaMask and Valora",
+    //           id: "wallet/metamask/import",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "Ledger Wallet",
+    //       items: [
+    //         {
+    //           type: "doc",
+    //           label: "Ledger Wallet Setup",
+    //           id: "wallet/ledger/setup",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Connect to Celo Terminal",
+    //           id: "wallet/ledger/to-celo-terminal",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Connect to Celo Web Wallet",
+    //           id: "wallet/ledger/to-celo-web",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Connect to Celo CLI",
+    //           id: "wallet/ledger/to-celo-cli",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Coinbase Wallet",
+    //       id: "wallet/coinbase-wallet",
+    //     },
+    //     {
+    //       type: "link",
+    //       label: "Staking",
+    //       href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
+    //     },
+    //   ],
+    // },
     {
       type: "category",
       label: "Bridges",
@@ -871,81 +925,6 @@ const sidebars = {
         { type: "doc", id: "protocol/oracle/supra" },
       ],
     },
-    
-    // {
-    //   type: "category",
-    //   label: "Verification",
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       label: "Overview",
-    //       id: "developer/verify/index",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Using Celo Explorer",
-    //       id: "developer/verify/celo-explorer",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Using Celoscan",
-    //       id: "developer/verify/celoscan",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Using Remix",
-    //       id: "developer/verify/remix",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Using Hardhat",
-    //       id: "developer/verify/hardhat",
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Build on MiniPay",
-    //   // id: "developer/build-on-minipay",
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       label: "Overview",
-    //       id: "developer/build-on-minipay/overview",
-    //     },
-    //     {
-    //       type: "category",
-    //       label: "Prerequisites",
-    //       items: [
-    //         {
-    //           type: "doc",
-    //           label: "Android Studio Setup",
-    //           id: "developer/build-on-minipay/prerequisites/android-studio-setup",
-    //         },
-    //         {
-    //           type: "doc",
-    //           label: "Ngrok Setup",
-    //           id: "developer/build-on-minipay/prerequisites/ngrok-setup",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Enabling Testnet",
-    //       id: "developer/build-on-minipay/enabling-testnet",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "Code Library",
-    //       id: "developer/build-on-minipay/code-library",
-    //     },
-    //     {
-    //       type: "doc",
-    //       label: "MiniPay Deeplinks",
-    //       id: "developer/build-on-minipay/deeplinks",
-    //     },
-    //   ],
-    // },
     {
       type: "doc",
       label: "Fee Abstraction",
@@ -1290,85 +1269,12 @@ const sidebars = {
           ],
         },
       ],
-    }
-    // {
-    //   type: "category",
-    //   label: "Indexers",
-    //   items: [
-    //     { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Addresses",
-    //   items: [
-    //     { type: "doc", label: "Contracts", id: "contract-addresses" },
-    //     { type: "doc", label: "Tokens", id: "token-addresses" },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Migrate to Celo",
-    //   items: [
-    //     {
-    //       type: "doc",
-    //       label: "Ethereum Developers",
-    //       id: "developer/migrate/from-ethereum",
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: "category",
-    //   label: "Code Examples",
-    //   items: [
-    //     {
-    //       type: "link",
-    //       label: "Celo Composer",
-    //       href: "https://github.com/celo-org/celo-composer#celo-composer",
-    //     },
-    //     {
-    //       type: "link",
-    //       label: "Developer Blog",
-    //       href: "https://medium.com/celodevelopers",
-    //     },
-    //     // {
-    //     //   type: "doc",
-    //     //   label: "Code Tutorials",
-    //     //   id: "/blog",
-    //     // },
-    //     {
-    //       type: "link",
-    //       label: "Celo Blog",
-    //       href: "https://medium.com/celoorg",
-    //     },
-    //     {
-    //       type: "link",
-    //       label: "Dacade",
-    //       href: "https://dacade.org/communities/celo",
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: "link",
-    //   label: "Tutorials",
-    //   href: "https://celo.academy/c/tutorials/4",
-    // },
-    // {
-    //   type: "doc",
-    //   label: "Launch Checklist",
-    //   id: "developer/launch-checklist",
-    // },
-    // {
-    //   type: "doc",
-    //   label: "EVM Tools",
-    //   id: "developer/evm-tools",
-    // },
-    // {
-    //   type: "link",
-    //   label: "Explorer",
-    //   href: "https://explorer.celo.org/",
-    // },
-    
+    },
+    {
+      type: "link",
+      label: "Faucet",
+      href: "https://faucet.celo.org",
+    },
   ],
 
   // ######################################

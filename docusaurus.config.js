@@ -109,7 +109,7 @@ module.exports = {
         },
         {
           to: "developer/",
-          label: "Developer Resources",
+          label: "Developers",
           position: "left",
         },
         {
