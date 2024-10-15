@@ -1,40 +1,25 @@
 ---
-title: Build on Celo
+title: Building dApps on Celo
 description: A guide  for building on Celo.
 ---
 import ColoredText from '/src/components/ColoredText';
 
-## Building dApps on Celo
+Whether you're building your first dApp or looking to integrate an existing protocol onto Celo, we have all the resources and tools you need to get started.
 
 ---
 
-Welcome to the Celo developer documentation!
+## Why Build on Celo?
 
-Celo is an Ethereum Layer 2 network designed to scale Ethereum using the OP Stack, becoming part of the growing Superchain ecosystem.
-
-If you’re experienced in building on Ethereum, your code, dependencies, and tooling will work seamlessly on Celo. Our network is fully compatible with EVM bytecode, making the development experience feel just like building on Ethereum, but with enhanced scalability and lower costs.
-
-## Getting Started
-
-### Looking to build on Celo?
-
-<!-- For the essentials: Check out the <ColoredText>[Developer Quickstart Guide](./quickstart.md)</ColoredText>. For a tutorial on deploying your first smart contract on Celo, follow our <ColoredText>[Contract Deployment Tutorial](./how-to-deploy)</ColoredText>. 
-
-You can find all deployed <ColoredText>[contract addresses](./contract-addresses.md), [developer toolings](../docs/tools/node-providers.md)</ColoredText>, infrastructure toolings and resources to help you get started in these docs. -->
-
-Whether you're a developer building a dApp on Celo, or a founder thinking about deploying your protocol on Celo you'll find everything you need to get started right here.
+- **EVM Compatibile:** Celo is fully EVM-compatible, offering the same development experience as Ethereum with improved scalability and lower costs.
+- **Mobile First:** Celo's ultralight client and phone number mapping allows developers to build dApps that enable easy payments via phone numbers, making blockchain accessible to mobile users, even in areas with limited connectivity.
+- **Fast, Low-Cost Payments:** Celo's seemless payment infrastrucutre, inclduing fee abstraction, sub-cent fees, and native stablecoins enables simple and affordable transactions.
+- **Global Reach:** Celo supports 1,000+ projects in 150+ countries, providing a vibrant, global community that helps developers build, test, and scale their applications to millions of everyday users. 
 
 
-#### New Developer
-<!-- 
-Begin by deploying your first contract on Celo using our <ColoredText>[step-by-step guides](../tools/dev-environments/overview)</ColoredText>. Access funds through the <ColoredText>[faucet](https://faucet.celo.org/alfajores)</ColoredText>, and enhance your skills through the <ColoredText>[Celo Academy](https://celo.academy/)</ColoredText>. Explore tools like the <ColoredText>[Celo Composer](https://github.com/celo-org/celo-composer)</ColoredText> to jumpstart your development. Stay connected with the community on <ColoredText>[Discord](https://discord.com/invite/celo)</ColoredText>, participate in <ColoredText>[IRL, online events and hackathons](https://celo.stand.lemonade.social/events)</ColoredText>, and keep up with updates through the <ColoredText>[developer newsletter](https://share.hsforms.com/1Qrhush1vSA2WIamd_yL4ow53n4j)</ColoredText>. Learn what Celo is, and discover how you can contribute to open source projects to make a meaningful impact. -->
+### Getting Started
 
-#### Experienced builders
-
-If you are an experienced developer, here are some links, to get you ready to build on Celo, test your application and check compatibilities.
-
-- [Faucet](https://faucet.celo.org/alfajores)
-<!-- - [Developer Tooling](../tools/overview) -->
-
-
+- <a href="/build/quickstart" target="_blank">Quickstart with Celo Composer CLI</a>
+- <a href="/developer/dev-environments/overview" target="_blank">Deploy a smart contract on Celo</a>
+- <a href="https://faucet.celo.org/alfajores" target="_blank">Receive testnet funds</a>
+- <a href="/developer" target="_blank">Explore developer tooling</a>
 
