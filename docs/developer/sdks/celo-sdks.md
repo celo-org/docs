@@ -17,3 +17,4 @@ Because Celo is compitable with Ethereum any ethereum package can be used with C
 - [ContractKit](../contractkit/index.md)
 - [thirdweb SDK](../thirdweb-sdk/index.md)
 - [Rainbowkit-Celo](../rainbowkit-celo/index.md)
+- [web3](../web3/index.md)

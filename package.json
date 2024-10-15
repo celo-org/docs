@@ -19,7 +19,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.22.0",
+    "@algolia/client-search": "^5.0.0",
     "@cookbookdev/docsbot": "^4.21.5",
     "@crowdin/cli": "^4.0.0",
     "@docusaurus/core": "^3.0.0",
@@ -31,7 +31,7 @@
     "@docusaurus/theme-mermaid": "^3.0.1",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.5",
-    "@saucelabs/theme-github-codeblock": "^0.2.0",
+    "@saucelabs/theme-github-codeblock": "^0.3.0",
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
@@ -77,8 +77,8 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.4.0",
-    "@docusaurus/tsconfig": "3.4.0",
+    "@docusaurus/module-type-aliases": "3.5.2",
+    "@docusaurus/tsconfig": "3.5.2",
     "@types/react": "^18.2.29",
     "@types/react-helmet": "^6.1.1",
     "@types/react-router-dom": "^5.1.7",

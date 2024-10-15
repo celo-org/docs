@@ -33,13 +33,12 @@ Browse the code, raise an issue, or contribute a pull request.
 - [Celo Client GitHub Page](https://github.com/celo-org/celo-blockchain)
 - [Celo Developers Page](https://celo.org/developers)
 
-Look for issues that are taged as "[good first issue](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)", or "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)". These labels will help you find appropriate starting points. If you want to dive deeper, explore other labels and TODOs in the code.
+Look for issues that are tagged as "[good first issue](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)", "[help wanted](https://github.com/celo-org/celo-monorepo/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)", or "[1 hour tasks](https://github.com/celo-org/celo-monorepo/issues?q=is%3Aopen+is%3Aissue+label%3A%221+hour+tasks%22)". These labels will help you find appropriate starting points. If you want to dive deeper, explore other labels and TODOs in the code.
 
 #### To work on an issue:
-
-1. Assign yourself to the issue.
+1. Reach out to the repository maintainer to assign you to the issue.
 2. Add a comment outlining your plan and timeline.
-3. If someone is already assigned, check with them before assigning yourself.
+3. If someone is already assigned, check with the repo maintainer if they are still working on it.
 4. Ensure no duplicate issues exist for the work you're planning.
 
 ### Submitting Issues

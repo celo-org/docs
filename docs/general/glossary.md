@@ -23,11 +23,11 @@ The first public Celo test network, available for developers to use freely subje
 
 ## Attestation
 
-Generally, support for an entity having an associated identity. In Celo, each attestation confirms that an account has access to a message sent to a specific mobile phone number via a specific validator via Celo's decentralized verification process.
+Generally, support for an entity having an associated identity. In Celo, each attestation confirms that an account has access to a message sent to a specific identifier typically a mobile phone number via an Attestation Provider via Celo's ODIS.
 
 ## Attestation Service
 
-A service operated by validators that sends signed SMS messages in order to allow accounts to prove they have access to a phone number.
+Former name for what has become Social Connect. 
 
 ## Baklava
 
@@ -96,6 +96,10 @@ Short for Decentralized Application. An application, usually a mobile applicatio
 ## DeFi
 
 Decentralized Finance; open source software and networks without intermediaries in the financial space.
+
+## Derivation Path
+
+A derivation path defines how private keys and addresses are derived from a mnemonic. The Bitcoin community defined the standards for derivation paths in BIP39 and BIP42 and BIP44. A [registry of coins/chains and their paths](https://github.com/satoshilabs/slips/blob/master/slip-0044.md) is maintained and includes Celo and Ethereum paths.
 
 ## Double Signing
 

@@ -11,7 +11,7 @@ A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
 :::tip
 
-This is still experimental. [View on GitHub](https://github.com/celo-tools/celo-ethers-wrapper)
+This is still experimental. [View on GitHub](https://github.com/jmrossy/celo-ethers-wrapper)
 
 :::
 

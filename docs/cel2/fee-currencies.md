@@ -11,7 +11,7 @@ Alternate fee currency works with EOAs, no paymaster is required!
 ### Get a list of whitelisted Fee Currencies
 
 ```bash
-celocli network:whitelist --node https://forno.dango.celo-testnet.org
+celocli network:whitelist --node https://alfajores-forno.celo-testnet.org
 ```
 
 ### Using Fee Abstraction with Celo CLI
@@ -43,8 +43,11 @@ Wallets will overwrite the `feeCurrency`, which is why this is recommended for w
 
 For using Fee Abstraction for a wallet or inside your dApp we recommend using [viem](https://viem.sh/docs/introduction.html) or [wagmi](https://wagmi.sh/).
 
+:::info
+While we recommend viem, [web3.js](https://docs.web3js.org/) has added as of 4.13.1 support for `feeCurrency` via the usage of [plugins](https://docs.web3js.org/#packages--plugins). There is a celo-specific [plugin for web3@4 available on github](https://github.com/celo-org/web3-plugin-transaction-types).
+
 :::warning
-Currently, ethers.js and web3.js don't support the `feeCurrency` property
+Currently, ethers.js doesn't support the `feeCurrency` property
 :::
 
 ### Sending transaction using Fee Abstraction

@@ -9,7 +9,7 @@ Overview of Rainbowkit
 
 ---
 
-## Rainbowkit-celo
+## Rainbowkit
 
 RainbowKit is a React library that makes it easy to add wallet connection to your dapp. It's intuitive, responsive and customizable. And Supports some of the best wallets on Celo.
 

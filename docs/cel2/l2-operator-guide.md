@@ -63,8 +63,8 @@ To set up your node, you'll need to run three services: `op-node`, `op-geth`, an
 If you plan to run multiple L2 nodes, you’ll need separate instances of `op-node` and `op-geth` for each node, but you can share a single instance of `eigenda-proxy`. Additionally, you'll need an endpoint for the L1 RPC, which can either be a public node or your own L1 node. For Alfajores, the L1 used is [Holesky](https://chainlist.org/chain/17000).
 
 - [Running EigenDA Proxy](#running-eigenda-proxy)
-- [Running op-node](#running-op-node)
 - [Running op-geth](#running-op-geth)
+- [Running op-node](#running-op-node)
 
 ### Running EigenDA Proxy
 
@@ -78,7 +78,7 @@ These are brief instructions for running an eigenda-proxy instance. For more det
 
 If you are using Kubernetes for this deployment, you can utilize our [eigenda-proxy helm chart](https://github.com/celo-org/charts/tree/main/charts/eigenda-proxy) to simplify the process. Feel free to modify these instructions to better suit your specific needs.
 
-1. You can use the official Docker image for the EigenDA Proxy. At the time of writing, we are using version 1.4.1 (`ghcr.io/layr-labs/eigenda-proxy:v1.4.1`). Alternatively, you can build it from source:
+1. You can use the official Docker image for the EigenDA Proxy. At the time of writing, we are using version 1.4.1 (`us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/eigenda-proxy:v1.4.1`). Alternatively, you can build it from source:
 
 ```bash
 git clone https://github.com/Layr-Labs/eigenda-proxy.git
@@ -92,7 +92,7 @@ make
 2. You will need to download two files required for KZG verification. At the time of writing, these files are approximately 8GB in size, so please ensure you have enough space in the download directory. For example:
 
 ```bash
-EIGENDA_KZG_PROXY_DIR=/tmp/alfajores/eigenda-proxy/kzg
+EIGENDA_KZG_PROXY_DIR=${HOME}/alfajores-l2/eigenda-proxy/kzg
 mkdir -p ${EIGENDA_KZG_PROXY_DIR}
 
 [ ! -f ${EIGENDA_KZG_PROXY_DIR}/g1.point ] && wget https://srs-mainnet.s3.amazonaws.com/kzg/g1.point --output-document=${EIGENDA_KZG_PROXY_DIR}/g1.point
@@ -111,7 +111,7 @@ fi
 ```bash
 EIGENDA_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/eigenda-proxy:v1.4.1
 
-docker run -d \
+docker run --platform linux/amd64 -d \
   --name eigenda-proxy \
   -v ${EIGENDA_KZG_PROXY_DIR}:/data \
   --network=host \
@@ -131,69 +131,9 @@ docker run -d \
       --eigenda-max-blob-length=300MiB
 ```
 
-`--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool.
+`--eigenda-signer-private-key-hex` is the proxy hex-enconded private key (without `0x`). This account does not need to be associated with any existing ethereum account or holds any funds. You can create this key using your preferred tool. The key is used by the proxy solely for dispersing data to eigenda, but since this proxy will only be retrieving data from eigenda, the key is not important, however in order to start the proxy, a key is still required.
 
 You can check the logs running `docker logs -f eigenda-proxy` to ensure the service is running correctly.
-
-### Running op-node
-
-Op-node is not a resource-demanding service. We recommend running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
-
-1. To run op-node, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9`. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
-
-```bash
-git clone https://github.com/celo-org/optimism.git
-cd optimism/op-node
-git checkout celo9
-make op-node
-```
-
-2. Download the rollup config file and generate a JWT secret (this value will also be required for configuring the op-geth client):
-
-```bash
-OP_NODE_DIR=/tmp/alfajores/op-node
-mkdir -p ${OP_NODE_DIR}
-wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --output-document=${OP_NODE_DIR}/rollup.json
-
-echo openssl rand -hex 32 > ${OP_NODE_DIR}/jwt.txt
-```
-
-3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=consensus-layer`.
-
-```bash
-OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9
-
-docker run -d \
-  --name op-node \
-  --network=host \
-  --restart=always \
-  -v ${OP_NODE_DIR}:/data \
-  ${OP_NODE_IMAGE}
-  op-node \
-    --l1.trustrpc=true \
-    --l1=https://ethereum-holesky-rpc.publicnode.com \
-    --l1.beacon=https://ethereum-holesky-beacon-api.publicnode.com \
-    --l2=http://localhost:8551 \
-    --l2.jwt-secret=/data/jwt.txt \
-    --rollup.load-protocol-versions=true \
-    --rollup.config=/data/rollup.json \
-    --verifier.l1-confs=4 \
-    --rpc.addr=127.0.0.1 \
-    --syncmode=<consensus-layer/execution-layer>
-    --rpc.port=9545 \
-    --p2p.listen.tcp=9222 \
-    --p2p.listen.udp=9222 \
-    --p2p.priv.path=/data/op-node_p2p_priv.txt \
-    --p2p.static=/ip4/35.197.25.52/tcp/9222/p2p/16Uiu2HAmQEdyLRSAVZDr5SqbJ1RnKmNDhtQJcEKmemrVxe4FxKwR,/ip4/34.105.22.4/tcp/9222/p2p/16Uiu2HAm1SZBDSugT5MMu7vBY8auDgfZFNhoDeXPLc9Me5FsAxwT,/ip4/34.83.209.168/tcp/9222/p2p/16Uiu2HAmGJAiUX6HLSo4nLh8T984qxzokwL23cVsYuNZy2SrK7C6,/ip4/34.83.214.149/tcp/9222/p2p/16Uiu2HAmAko2Kr3eAjM7tnshtEhYrxQYfKUvN2kwiygeFoBAoi8S,/ip4/34.169.5.52/tcp/9222/p2p/16Uiu2HAmKc6YKHzYgsjBDaj36uAufxpgZFgrzDqVBt6zTPwdhhJD \
-    --altda.enabled=true \
-    --altda.da-server=http://localhost:4242 \
-    --altda.da-service=true \
-    --altda.verify-on-read=false
-```
-
-For the `--syncmode` flag, use `--syncmode=consensus-layer` if you're using a snapshot and want blocks to be synced through the op-node. Alternatively, use `--syncmode=execution-layer` when using snap-syncing, and blocks will be synced by op-geth.
-
-You can check the logs running `docker logs -f op-node`. If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
 
 ### Running op-geth
 
@@ -216,19 +156,22 @@ With snap sync, you can start an L2 node without migrating or downloading the L1
 Also, if you are using snap sync, you will need to `init` the chaindata dir using the provided genesis file. You should not `init` if you are starting your node with a migrated datadir. Run using the container or the binary according to your preference. You can use the following example as a reference.
 
 ```bash
-OP_GETH_DATADIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=${HOME}/alfajores-l2/op-geth-datadir
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
 mkdir -p ${OP_GETH_DATADIR}
-wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_NODE_DIR}/genesis.json
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/genesis.json --output-document=${OP_GETH_DATADIR}/genesis.json
 
 docker run -it \
   --name op-geth-init \
   -v ${OP_GETH_DATADIR}:/datadir \
-  ${OP_GETH_IMAGE}
-  geth \
+  ${OP_GETH_IMAGE} \
     --datadir=/datadir \
     init /datadir/genesis.json
 ```
+
+:::danger
+If you plan to run your L2 node as an archive node (`--gcmode=archive`), geth will automatically default to `--state.scheme=hash`. So the `geth init` command above must be run with `--state.scheme=hash` also.
+:::
 
 Additionally when running op-geth, you need to provide `--syncmode=snap` flag. Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
@@ -237,7 +180,7 @@ Additionally when running op-geth, you need to provide `--syncmode=snap` flag. P
 This option is best for nodes that need the full chain history (e.g. archive nodes). In case of an archive node, you can download the migrated chaindata from a L2 fullnode snapshot, and run op-geth with the `--gcmode=archive` flag (it will only keep archive state for L2 blocks). Also, with this option, you can either use `--syncmode=consensus-layer` or `--syncmode=snap` (you will need to have op-node peers to use `--syncmode=consensus-layer` and op-geth peers to use `--syncmode=snap`).
 
 ```bash
-OP_GETH_DATADIR=/tmp/alfajores/op-geth
+OP_GETH_DATADIR=${HOME}/alfajores-l2/op-geth-datadir
 
 mkdir -p ${OP_GETH_DATADIR}
 wget https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst
@@ -274,13 +217,15 @@ Do not run the migration script on a datadir that is actively being used by a no
 :::
 
 ```bash
+OP_GETH_DATADIR=${HOME}/alfajores-l2/op-geth-datadir
 CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
-docker run -it --rm \
+mkdir -p ${OP_GETH_DATADIR}
+docker run --platform linux/amd64 -it --rm \
   -v /path/to/old/datadir/celo/chaindata/:/old-db \
-  -v /path/to/new/datadir/geth/chaindata:/new-db \
+  -v ${OP_GETH_DATADIR}/geth/chaindata:/new-db \
   ${CEL2_MIGRATION_IMAGE} \
-  celo-migrate pre --old-db /old-db --new-db /new-db
+  pre --old-db /old-db --new-db /new-db
 ```
 
 Where:
@@ -298,7 +243,7 @@ At block 26384000, the L1 chain will stop producing blocks. At this point, you c
 You can pull down the required deploy-config, l1-deployments, and l2-allocs files as follows.
 
 ```bash
-CEL2_MIGRATION_DIR=/tmp/alfajores/cel2-migration-tool
+CEL2_MIGRATION_DIR=${HOME}/alfajores-l2/cel2-migration-tool
 
 mkdir -p ${CEL2_MIGRATION_DIR}
 wget -O ${CEL2_MIGRATION_DIR}/config.json https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json
@@ -309,14 +254,16 @@ wget -O ${CEL2_MIGRATION_DIR}/l2-allocs.json https://storage.googleapis.com/cel2
 Now we can run the migration script. Remember to stop your node (geth) before running it:
 
 ```bash
+OP_GETH_DATADIR=${HOME}/alfajores-l2/op-geth-datadir
 CEL2_MIGRATION_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/cel2-migration-tool:celo9
 
-docker run -it --rm \
+mkdir -p ${OP_GETH_DATADIR}
+docker run --platform linux/amd64 -it --rm \
   -v /path/to/old/datadir/celo/chaindata:/old-db \
-  -v /path/to/new/datadir/geth/chaindata:/new-db \
+  -v ${OP_GETH_DATADIR}/geth/chaindata:/new-db \
   -v ${CEL2_MIGRATION_DIR}:/migration-files \
   ${CEL2_MIGRATION_IMAGE} \
-  celo-migrate full \
+  full \
     --old-db /old-db \
     --new-db /new-db \
     --deploy-config /migration-files/config.json \
@@ -350,9 +297,6 @@ Please check in your migration logs that the resulting migration block must look
 `
 :::
 
-##### Start your L2 Node
-
-Now that we have the migrated chaindata, we can start our L2 node using your own migrated chaindata (the `new-db` path) and the genesis file generated by the migration script. You can also use the `rollup.json` file generated by the migration script for your op-node.
 Please continue with [executing op-geth](#executing-op-geth) instructions to start your L2 node.
 
 #### Executing op-geth
@@ -366,23 +310,18 @@ git checkout celo8
 make geth
 ```
 
-2. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use snap sync mode, you need to add the flag `--syncmode=snap`.
+2. Now you can run the op-geth client. You can use the following example as a reference. If you wish to use full sync instead of snap sync you need to add the flag `--syncmode=full`.
 
 ```bash
 OP_GETH_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo8
-
-# Copying the jwt secret from the op-node directory
-cp ${OP_NODE_DIR}/jwt.txt ${OP_GETH_DATADIR}/jwt.txt
 
 docker run -d \
   --name op-geth \
   --network=host \
   -v ${OP_GETH_DATADIR}:/datadir \
-  ${OP_GETH_IMAGE}
-  geth \
+  ${OP_GETH_IMAGE} \
     --datadir=/datadir \
     --networkid=44787 \
-    --syncmode=<snap/consensus-layer> \
     --gcmode=full \
     --snapshot=true \
     --maxpeers=60 \
@@ -390,23 +329,78 @@ docker run -d \
     --authrpc.addr=127.0.0.1 \
     --authrpc.port=8551 \
     --authrpc.jwtsecret=/datadir/jwt.hex \
-    --authrpc.vhosts=* \
+    --authrpc.vhosts='*' \
     --http \
     --http.addr=127.0.0.1 \
     --http.port=8545 \
     --http.api=eth,net,web3,debug,txpool,engine \
-    --http.vhosts=* \
-    --http.corsdomain=* \
-    --rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org/ \ 
-    --rollup.disabletxpoolgossip=true \
-    --rollup.halt=major \
+    --http.vhosts='*' \
+    --http.corsdomain='*' \
     --verbosity=3 \
     --bootnodes=enode://ac0f42fa46f8cc10bd02a103894d71d495537465133e7c442bc02dc76721a5f41761cc2d8c69e7ba1b33e14e28f516436864d3e0836e2dcdaf032387f72447dd@34.83.164.192:30303,enode://596002969b8b269a4fa34b4709b9600b64201e7d02e2f5f1350affd021b0cbda6ce2b913ebe24f0fb1edcf66b6c730a8a3b02cd940f4de995f73d3b290a0fc92@34.82.177.77:30303,enode://3619455064ef1ce667171bba1df80cfd4c097f018cf0205aaad496f0d509611b7c40396893d9e490ee390cd098888279e177a4d9bb09c58387bb0a6031d237f1@34.19.90.27:30303,enode://e3c54db6004a92d4ee87504f073f3234a25759b485274cc224037e3e5ee792f3b482c3f4fffcb764af6e1859a1aea9710b71e1991e32c1dee7f40352124bb182@35.233.249.87:30303,enode://674410b34fd54c8406a4f945292b96111688d4bab49aecdc34b4f1b346891f4673dcb03ed44c38ab467ef7bec0b20f6031ad88aa1d35ce1333b343d00fa19fb1@34.168.43.76:30303
 ```
 
 To see the logs, you can run `docker logs -f op-geth`.
 
-#### Configuring a HistoricalRPCService
+### Running op-node
+
+Op-node is not a resource-demanding service. We recommend running it on any modern CPU (amd64 or arm64) with at least 2GB of memory. It is stateless, so it does not require any persistent storage.
+
+1. To run op-node, you can use the container image: `us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9`. Alternatively, you can clone the [celo-org/optimism repository](https://github.com/celo-org/optimism) and build op-node from source:
+
+```bash
+git clone https://github.com/celo-org/optimism.git
+cd optimism/op-node
+git checkout celo9
+make op-node
+```
+
+2. Make a directory for op node config and download the rollup config file:
+
+```bash
+OP_NODE_DIR=${HOME}/alfajores-l2/op-node
+mkdir -p ${OP_NODE_DIR}
+wget https://storage.googleapis.com/cel2-rollup-files/alfajores/rollup.json --output-document=${OP_NODE_DIR}/rollup.json
+```
+
+3. Run the container (or the binary if preferred). You can use the following example as a reference. If you're using snap sync mode, you need to add the flag `--syncmode=execution-layer`.
+
+```bash
+OP_NODE_IMAGE=us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9
+
+cp ${OP_GETH_DATADIR}/jwt.hex ${OP_NODE_DIR}/jwt.hex
+
+docker run --platform linux/amd64 -d \
+  --name op-node \
+  --network=host \
+  --restart=always \
+  -v ${OP_NODE_DIR}:/data \
+  ${OP_NODE_IMAGE} \
+  op-node \
+    --l1.trustrpc=true \
+    --l1=https://ethereum-holesky-rpc.publicnode.com \
+    --l1.beacon=https://ethereum-holesky-beacon-api.publicnode.com \
+    --l2=http://localhost:8551 \
+    --l2.jwt-secret=/data/jwt.hex \
+    --rollup.load-protocol-versions=true \
+    --rollup.config=/data/rollup.json \
+    --verifier.l1-confs=4 \
+    --rpc.addr=127.0.0.1 \
+    --rpc.port=9545 \
+    --p2p.listen.tcp=9222 \
+    --p2p.listen.udp=9222 \
+    --p2p.priv.path=/data/op-node_p2p_priv.txt \
+    --p2p.static=/ip4/35.197.25.52/tcp/9222/p2p/16Uiu2HAmQEdyLRSAVZDr5SqbJ1RnKmNDhtQJcEKmemrVxe4FxKwR,/ip4/34.105.22.4/tcp/9222/p2p/16Uiu2HAm1SZBDSugT5MMu7vBY8auDgfZFNhoDeXPLc9Me5FsAxwT,/ip4/34.83.209.168/tcp/9222/p2p/16Uiu2HAmGJAiUX6HLSo4nLh8T984qxzokwL23cVsYuNZy2SrK7C6,/ip4/34.83.214.149/tcp/9222/p2p/16Uiu2HAmAko2Kr3eAjM7tnshtEhYrxQYfKUvN2kwiygeFoBAoi8S,/ip4/34.169.5.52/tcp/9222/p2p/16Uiu2HAmKc6YKHzYgsjBDaj36uAufxpgZFgrzDqVBt6zTPwdhhJD \
+    --altda.enabled=true \
+    --altda.da-server=http://localhost:4242 \
+    --altda.da-service=true \
+    --altda.verify-on-read=false
+```
+
+You can check the logs running `docker logs -f op-node`. If you start op-node before op-geth, it will shut down after a few seconds if it cannot connect to its corresponding op-geth instance. This is normal behavior. It will run successfully once op-geth is running and it can connect to it.
+
+
+#### Supporting historical execution
 
 The Celo L2 node alone cannot serve RPC requests requiring historical state or execution from before the migration. To serve such requests, you must configure a HistoricalRPCService URL pointing to a Celo L1 node. The Celo L2 node will then proxy requests for historical state / execution out to the Celo L1 node.
 
@@ -415,6 +409,8 @@ To configure a HistoricalRPCService, add the following flag when starting `op-ge
 ```bash
 --rollup.historicalrpc=<CEL0_L1_NODE_URL>
 ```
+
+In case you do not have access to a Celo L1 node, we provide the following endpoint `<CEL0_L1_NODE_URL>=https://alfajores-forno.cel1.alfajores.celo-testnet.org` for the HistoricalRPCService.
 
 The following rpc endpoints will forward historical requests.
 
