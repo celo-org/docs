@@ -2,7 +2,7 @@
 title: Add Celo Testnet to Metamask
 ---
 
-Follow this quick guide to add Dango to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org).
+Follow this quick guide to add Alfajores to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org).
 
 1. Open Metamask
 
@@ -28,7 +28,7 @@ Insert the following details:
 - New RPC URL: `https://alfajores-forno.celo-testnet.org`
 - Chain ID: 44787
 - Currency Symbol: CELO
-- Block explorer URL: `https://explorer.celo.org/alfajores`
+- Block explorer URL: `https://celo-alfajores.blockscout.com`
 
 ![](/img/build/add-celo-testnet-to-metamask/4.png)
 
