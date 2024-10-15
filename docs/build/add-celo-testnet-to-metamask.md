@@ -2,7 +2,7 @@
 title: Add Celo Testnet to Metamask
 ---
 
-Follow this quick guide to add Dango to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org).
+Follow this quick guide to add Alfajores to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org).
 
 1. Open Metamask
 
