@@ -28,7 +28,7 @@ Insert the following details:
 - New RPC URL: `https://alfajores-forno.celo-testnet.org`
 - Chain ID: 44787
 - Currency Symbol: CELO
-- Block explorer URL: `https://explorer.celo.org/alfajores`
+- Block explorer URL: `https://celo-alfajores.blockscout.com`
 
 ![](/img/build/add-celo-testnet-to-metamask/4.png)
 
