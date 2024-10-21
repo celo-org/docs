@@ -144,6 +144,49 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+    {
+      type: "category",
+      label: "Build on MiniPay",
+      // id: "developer/build-on-minipay",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/build-on-minipay/overview",
+        },
+        {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Android Studio Setup",
+              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
+            },
+            {
+              type: "doc",
+              label: "Ngrok Setup",
+              id: "developer/build-on-minipay/prerequisites/ngrok-setup",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Enabling Testnet",
+          id: "developer/build-on-minipay/enabling-testnet",
+        },
+        {
+          type: "doc",
+          label: "Code Library",
+          id: "developer/build-on-minipay/code-library",
+        },
+        {
+          type: "doc",
+          label: "MiniPay Deeplinks",
+          id: "developer/build-on-minipay/deeplinks",
+        },
+      ],
+    },
   ],
 
   // ######################################
@@ -490,49 +533,6 @@ const sidebars = {
           type: "doc",
           label: "Using Hardhat",
           id: "developer/verify/hardhat",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Build on MiniPay",
-      // id: "developer/build-on-minipay",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "developer/build-on-minipay/overview",
-        },
-        {
-          type: "category",
-          label: "Prerequisites",
-          items: [
-            {
-              type: "doc",
-              label: "Android Studio Setup",
-              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
-            },
-            {
-              type: "doc",
-              label: "Ngrok Setup",
-              id: "developer/build-on-minipay/prerequisites/ngrok-setup",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Enabling Testnet",
-          id: "developer/build-on-minipay/enabling-testnet",
-        },
-        {
-          type: "doc",
-          label: "Code Library",
-          id: "developer/build-on-minipay/code-library",
-        },
-        {
-          type: "doc",
-          label: "MiniPay Deeplinks",
-          id: "developer/build-on-minipay/deeplinks",
         },
       ],
     },
