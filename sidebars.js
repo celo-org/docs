@@ -133,6 +133,7 @@ const sidebars = {
   // ######################################
   buildSidebar: [
     { type: "doc", label: "Overview", id: "build/index" },
+    { type: "doc", label: "Network Information", id: "network/index" },
   ],
 
   // ######################################
@@ -223,7 +224,7 @@ const sidebars = {
       type: "category",
       label: "Networks",
       items: [
-        { type: "doc", label: "Overview", id: "network/index" },
+        // { type: "doc", label: "Overview", id: "network/index" },
         // Nodes
         {
           type: "category",
