@@ -134,6 +134,11 @@ const sidebars = {
   buildSidebar: [
     { type: "doc", label: "Overview", id: "build/index" },
     { type: "doc", label: "Network Information", id: "network/index" },
+    {
+      type: "doc",
+      label: "Adding Celo to MetaMask",
+      id: "build/add-celo-testnet-to-metamask",
+    },
   ],
 
   // ######################################
