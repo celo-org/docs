@@ -206,6 +206,21 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "link",
+      label: "Community Tutorials",
+      href: "https://celo.academy/c/tutorials/4",
+    },
+    {
+      type: "doc",
+      label: "Launch Checklist",
+      id: "developer/launch-checklist",
+    },
+    {
+      type: "doc",
+      label: "Support",
+      id: "build/support",
+    },
   ],
 
   // ######################################
@@ -632,16 +647,6 @@ const sidebars = {
           href: "https://dacade.org/communities/celo",
         },
       ],
-    },
-    {
-      type: "link",
-      label: "Tutorials",
-      href: "https://celo.academy/c/tutorials/4",
-    },
-    {
-      type: "doc",
-      label: "Launch Checklist",
-      id: "developer/launch-checklist",
     },
     {
       type: "doc",
