@@ -139,6 +139,11 @@ const sidebars = {
       label: "Adding Celo to MetaMask",
       id: "build/add-celo-testnet-to-metamask",
     },
+    {
+      type: "doc",
+      label: "Quickstart with Celo Composer",
+      id: "build/quickstart",
+    },
   ],
 
   // ######################################
