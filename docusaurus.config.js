@@ -103,6 +103,11 @@ module.exports = {
           position: "left",
         },
         {
+          to: "build/",
+          label: "Build on Celo",
+          position: "left",
+        },
+        {
           to: "developer/",
           label: "Developers",
           position: "left",
