@@ -139,10 +139,6 @@ module.exports = {
               label: "Protocol",
             },
             {
-              to: "integration/",
-              label: "Integrations",
-            },
-            {
               to: "https://celo.academy/c/tutorials/4",
               label: "Tutorials",
               target: "_blank",

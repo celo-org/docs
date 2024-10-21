@@ -147,7 +147,6 @@ const sidebars = {
     {
       type: "category",
       label: "Build on MiniPay",
-      // id: "developer/build-on-minipay",
       items: [
         {
           type: "doc",
@@ -184,6 +183,26 @@ const sidebars = {
           type: "doc",
           label: "MiniPay Deeplinks",
           id: "developer/build-on-minipay/deeplinks",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Integrate with Celo",
+      items: [
+        { type: "doc", label: "Overview", id: "integration/index" },
+        { type: "doc", label: "General", id: "integration/general" },
+        {
+          type: "doc",
+          label: "Checklist",
+          id: "integration/checklist",
+        },
+        { type: "doc", label: "Custody", id: "integration/custody" },
+        { type: "doc", label: "Listings", id: "integration/listings" },
+        {
+          type: "doc",
+          label: "Cloud HSM",
+          id: "integration/cloud-hsm",
         },
       ],
     },
@@ -645,22 +664,22 @@ const sidebars = {
   // Integrations
   // ######################################
 
-  integrationsSidebar: [
-    { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "General", id: "integration/general" },
-    {
-      type: "doc",
-      label: "Checklist",
-      id: "integration/checklist",
-    },
-    { type: "doc", label: "Custody", id: "integration/custody" },
-    { type: "doc", label: "Listings", id: "integration/listings" },
-    {
-      type: "doc",
-      label: "Cloud HSM",
-      id: "integration/cloud-hsm",
-    },
-  ],
+  // integrationsSidebar: [
+  //   { type: "doc", label: "Overview", id: "integration/index" },
+  //   { type: "doc", label: "General", id: "integration/general" },
+  //   {
+  //     type: "doc",
+  //     label: "Checklist",
+  //     id: "integration/checklist",
+  //   },
+  //   { type: "doc", label: "Custody", id: "integration/custody" },
+  //   { type: "doc", label: "Listings", id: "integration/listings" },
+  //   {
+  //     type: "doc",
+  //     label: "Cloud HSM",
+  //     id: "integration/cloud-hsm",
+  //   },
+  // ],
 
   // ######################################
   // Validators
