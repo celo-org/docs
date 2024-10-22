@@ -1,10 +1,10 @@
 ---
-title: Add Celo Testnet to Metamask
+title: Add Celo Testnet to MetaMask
 ---
 
 Follow this quick guide to add Alfajores to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org).
 
-1. Open Metamask
+1. Open MetaMask
 
 ![](/img/build/add-celo-testnet-to-metamask/1.png)
 
