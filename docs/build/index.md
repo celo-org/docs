@@ -18,7 +18,7 @@ Whether you're building your first dApp or looking to integrate an existing prot
 
 ### Getting Started
 
-<!-- - <a href="/build/quickstart" target="_blank">Quickstart with Celo Composer CLI</a> -->
+- <a href="/build/quickstart" target="_blank">Quickstart with Celo Composer CLI</a>
 - <a href="/developer/dev-environments/overview" target="_blank">Deploy a smart contract on Celo</a>
 - <a href="https://faucet.celo.org/alfajores" target="_blank">Receive testnet funds</a>
 - <a href="/developer" target="_blank">Explore developer tooling</a>
