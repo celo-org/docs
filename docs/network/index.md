@@ -31,7 +31,7 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava Testnet.
 | Chain ID        | 44787                                                                                                                                           |
 | RPC Endpoint (best effort)   | [https://forno.alfajores.celo-testnet.org/](https://forno.alfajores.celo-testnet.org/) |
 | RPC Nodes       | <ul><li>Ethereum JSON-RPC endpoint: [https://forno.alfajores.celo-testnet.org/](https://alfajores-forno.celo-testnet.org) (op-geth kind)</li><li>OP RPC endpoint: [https://op.alfajores.celo-testnet.org/](https://op.alfajores.celo-testnet.org/) (op-node kind)</li></ul>                      |
-| Block Explorer  | [https://celo-alfajores.blockscout.com/](https://celo-alfajores.blockscout.com/)|
+| Block Explorer  | <ul><li>[https://celo-alfajores.blockscout.com/](https://celo-alfajores.blockscout.com/) </li><li>[https://alfajores.celoscan.io/](https://alfajores.celoscan.io/)</li></ul> |
 | Bridge Link     | <p>[https://superbridge.app/celo-testnet](https://superbridge.app/celo-testnet)</p><p>Note: Ensure you enable Testnet in settings </p>  |
 | Network Status  | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                    |
 | Faucet Link     | <p>[https://faucet.celo.org](https://faucet.celo.org)</p><p>For large Faucet requests you can apply [here](https://docs.google.com/forms/d/e/1FAIpQLSfpt3WikYt5-TsDHmUgfFCbZjmZMcWr9bO5H0csHcmMrl9sFw/viewform).</p> |
