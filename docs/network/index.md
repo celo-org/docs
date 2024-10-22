@@ -1,6 +1,6 @@
 ---
 title: Network Details
-description: How to choose a Celo network based on your interested and objectives.
+description: How to choose a Celo network based on your needs and objectives.
 ---
 
 Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava Testnet.
