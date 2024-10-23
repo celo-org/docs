@@ -10,7 +10,7 @@ import ColoredText from '/src/components/ColoredText';
 This section explains how you can get support and stay up-to-date with Celo developer news.
 
 :::tip
-Help us improve by sharing your feedback on missing tools, unclear sections, or any challenges you encounter by filling out this [Feedback Form](https://forms.gle/14t1bhQyGDm7YQNG8).
+Help us improve by sharing your feedback on missing tools, unclear sections, or any challenges you encounter by creating an issue or by clicking on "Edit Page" on the bottom of each page.
 :::
 
 ## How to Get Support?

@@ -11,7 +11,7 @@ Whether you're building your first dApp or looking to integrate an existing prot
 ## Why Build on Celo?
 
 - **EVM Compatibile:** Celo is fully EVM-compatible, offering the same development experience as Ethereum with improved scalability and lower costs.
-- **Mobile First:** Celo's ultralight client and phone number mapping allows developers to build dApps that enable easy payments via phone numbers, making blockchain accessible to mobile users, even in areas with limited connectivity.
+- **Fast Transactions:** After the migrations to an L2 Celo now has a 1 second block finality compared to formerly 5 seconds.
 - **Fast, Low-Cost Payments:** Celo's seemless payment infrastructure, including Fee Abstraction, sub-cent fees, and native stablecoins, enables simple and affordable transactions.
 - **Global Reach:** Celo supports 1,000+ projects in 150+ countries, providing a vibrant, global community that helps developers build, test, and scale their applications to millions of everyday users. 
 
