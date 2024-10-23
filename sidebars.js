@@ -129,6 +129,101 @@ const sidebars = {
   ],
 
   // ######################################
+  // Build on Celo
+  // ######################################
+  buildSidebar: [
+    { type: "doc", label: "Overview", id: "build/index" },
+    { type: "doc", label: "Network Information", id: "network/index" },
+    {
+      type: "doc",
+      label: "Add Celo to MetaMask",
+      id: "build/add-celo-testnet-to-metamask",
+    },
+    {
+      type: "doc",
+      label: "Quickstart with Celo Composer",
+      id: "build/quickstart",
+    },
+    {
+      type: "category",
+      label: "Build on MiniPay",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/build-on-minipay/overview",
+        },
+        {
+          type: "category",
+          label: "Prerequisites",
+          items: [
+            {
+              type: "doc",
+              label: "Android Studio Setup",
+              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
+            },
+            {
+              type: "doc",
+              label: "Ngrok Setup",
+              id: "developer/build-on-minipay/prerequisites/ngrok-setup",
+            },
+          ],
+        },
+        {
+          type: "doc",
+          label: "Enabling Testnet",
+          id: "developer/build-on-minipay/enabling-testnet",
+        },
+        {
+          type: "doc",
+          label: "Code Library",
+          id: "developer/build-on-minipay/code-library",
+        },
+        {
+          type: "doc",
+          label: "MiniPay Deeplinks",
+          id: "developer/build-on-minipay/deeplinks",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Integrate with Celo",
+      items: [
+        { type: "doc", label: "Overview", id: "integration/index" },
+        { type: "doc", label: "General", id: "integration/general" },
+        {
+          type: "doc",
+          label: "Checklist",
+          id: "integration/checklist",
+        },
+        { type: "doc", label: "Custody", id: "integration/custody" },
+        { type: "doc", label: "Listings", id: "integration/listings" },
+        {
+          type: "doc",
+          label: "Cloud HSM",
+          id: "integration/cloud-hsm",
+        },
+      ],
+    },
+    {
+      type: "link",
+      label: "Community Tutorials",
+      href: "https://celo.academy/c/tutorials/4",
+    },
+    {
+      type: "doc",
+      label: "Launch Checklist",
+      id: "developer/launch-checklist",
+    },
+    {
+      type: "doc",
+      label: "Support",
+      id: "build/support",
+    },
+  ],
+
+  // ######################################
   // Developers
   // ######################################
 
@@ -216,7 +311,7 @@ const sidebars = {
       type: "category",
       label: "Networks",
       items: [
-        { type: "doc", label: "Overview", id: "network/index" },
+        // { type: "doc", label: "Overview", id: "network/index" },
         // Nodes
         {
           type: "category",
@@ -476,49 +571,6 @@ const sidebars = {
       ],
     },
     {
-      type: "category",
-      label: "Build on MiniPay",
-      // id: "developer/build-on-minipay",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "developer/build-on-minipay/overview",
-        },
-        {
-          type: "category",
-          label: "Prerequisites",
-          items: [
-            {
-              type: "doc",
-              label: "Android Studio Setup",
-              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
-            },
-            {
-              type: "doc",
-              label: "Ngrok Setup",
-              id: "developer/build-on-minipay/prerequisites/ngrok-setup",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          label: "Enabling Testnet",
-          id: "developer/build-on-minipay/enabling-testnet",
-        },
-        {
-          type: "doc",
-          label: "Code Library",
-          id: "developer/build-on-minipay/code-library",
-        },
-        {
-          type: "doc",
-          label: "MiniPay Deeplinks",
-          id: "developer/build-on-minipay/deeplinks",
-        },
-      ],
-    },
-    {
       type: "doc",
       label: "Fee Abstraction",
       id: "developer/fee-currency",
@@ -597,16 +649,6 @@ const sidebars = {
       ],
     },
     {
-      type: "link",
-      label: "Tutorials",
-      href: "https://celo.academy/c/tutorials/4",
-    },
-    {
-      type: "doc",
-      label: "Launch Checklist",
-      id: "developer/launch-checklist",
-    },
-    {
       type: "doc",
       label: "EVM Tools",
       id: "developer/evm-tools",
@@ -627,22 +669,22 @@ const sidebars = {
   // Integrations
   // ######################################
 
-  integrationsSidebar: [
-    { type: "doc", label: "Overview", id: "integration/index" },
-    { type: "doc", label: "General", id: "integration/general" },
-    {
-      type: "doc",
-      label: "Checklist",
-      id: "integration/checklist",
-    },
-    { type: "doc", label: "Custody", id: "integration/custody" },
-    { type: "doc", label: "Listings", id: "integration/listings" },
-    {
-      type: "doc",
-      label: "Cloud HSM",
-      id: "integration/cloud-hsm",
-    },
-  ],
+  // integrationsSidebar: [
+  //   { type: "doc", label: "Overview", id: "integration/index" },
+  //   { type: "doc", label: "General", id: "integration/general" },
+  //   {
+  //     type: "doc",
+  //     label: "Checklist",
+  //     id: "integration/checklist",
+  //   },
+  //   { type: "doc", label: "Custody", id: "integration/custody" },
+  //   { type: "doc", label: "Listings", id: "integration/listings" },
+  //   {
+  //     type: "doc",
+  //     label: "Cloud HSM",
+  //     id: "integration/cloud-hsm",
+  //   },
+  // ],
 
   // ######################################
   // Validators

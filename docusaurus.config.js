@@ -103,6 +103,11 @@ module.exports = {
           position: "left",
         },
         {
+          to: "build/",
+          label: "Build on Celo",
+          position: "left",
+        },
+        {
           to: "developer/",
           label: "Developers",
           position: "left",
@@ -132,10 +137,6 @@ module.exports = {
             {
               to: "protocol/",
               label: "Protocol",
-            },
-            {
-              to: "integration/",
-              label: "Integrations",
             },
             {
               to: "https://celo.academy/c/tutorials/4",
