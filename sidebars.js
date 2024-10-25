@@ -229,6 +229,49 @@ const sidebars = {
 
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
+    { type: "doc", label: "Developer Tools", id: "learn/developer-tools" },
+    {
+          type: "category",
+          label: "Nodes",
+          items: [
+            {
+              type: "doc",
+              label: "Overview",
+              id: "network/node/overview",
+            },
+            {
+              type: "doc",
+              label: "Forno",
+              id: "network/node/forno",
+            },
+            {
+              type: "category",
+              label: "Run a Node",
+              items: [
+                {
+                  type: "doc",
+                  label: "Mainnet Full Node",
+                  id: "network/node/run-mainnet",
+                },
+                {
+                  type: "doc",
+                  label: "Alfajores Full Node",
+                  id: "network/node/run-alfajores",
+                },
+                {
+                  type: "doc",
+                  label: "Baklava Full Node",
+                  id: "network/node/run-baklava",
+                },
+                {
+                  type: "doc",
+                  label: "Hosted Nodes",
+                  id: "network/node/run-hosted",
+                },
+              ],
+            },
+          ],
+        },
     {
       type: "category",
       label: "Wallets",
@@ -313,48 +356,48 @@ const sidebars = {
       items: [
         // { type: "doc", label: "Overview", id: "network/index" },
         // Nodes
-        {
-          type: "category",
-          label: "Nodes",
-          items: [
-            {
-              type: "doc",
-              label: "Overview",
-              id: "network/node/overview",
-            },
-            {
-              type: "doc",
-              label: "Forno",
-              id: "network/node/forno",
-            },
-            {
-              type: "category",
-              label: "Run a Node",
-              items: [
-                {
-                  type: "doc",
-                  label: "Mainnet Full Node",
-                  id: "network/node/run-mainnet",
-                },
-                {
-                  type: "doc",
-                  label: "Alfajores Full Node",
-                  id: "network/node/run-alfajores",
-                },
-                {
-                  type: "doc",
-                  label: "Baklava Full Node",
-                  id: "network/node/run-baklava",
-                },
-                {
-                  type: "doc",
-                  label: "Hosted Nodes",
-                  id: "network/node/run-hosted",
-                },
-              ],
-            },
-          ],
-        },
+        // {
+        //   type: "category",
+        //   label: "Nodes",
+        //   items: [
+        //     {
+        //       type: "doc",
+        //       label: "Overview",
+        //       id: "network/node/overview",
+        //     },
+        //     {
+        //       type: "doc",
+        //       label: "Forno",
+        //       id: "network/node/forno",
+        //     },
+        //     {
+        //       type: "category",
+        //       label: "Run a Node",
+        //       items: [
+        //         {
+        //           type: "doc",
+        //           label: "Mainnet Full Node",
+        //           id: "network/node/run-mainnet",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Alfajores Full Node",
+        //           id: "network/node/run-alfajores",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Baklava Full Node",
+        //           id: "network/node/run-baklava",
+        //         },
+        //         {
+        //           type: "doc",
+        //           label: "Hosted Nodes",
+        //           id: "network/node/run-hosted",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
         {
           type: "category",
           label: "Explorers",

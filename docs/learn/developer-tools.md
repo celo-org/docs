@@ -3,7 +3,7 @@ title: Celo Developer Tools
 description: Overview of Celo tools and the value they provide to developers.
 ---
 
-# Developer Tools
+# Developer Tools Overview
 
 Overview of Celo tools and the value they provide to developers.
 
@@ -142,6 +142,8 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 ### Quicknode
 
 [Quicknode](https://www.quicknode.com/chains/celo) is an enterprise grade node service with a dashboard, metrics, security controls, customer support and no rate limits (pay-as-you-go).
+
+Quicknode is L2 ready.
 
 <PageRef url="https://www.quicknode.com/chains/celo" pageName="Quicknode" />
 
