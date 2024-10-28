@@ -7,28 +7,35 @@ import PageRef from '@components/PageRef'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Celo Developers
+# Developer Tools and Resources
 
-There are 6 Billion smartphones on Earth. Build for all of them.
+Explore our comprehensive suite of tools, guides, and resources designed to help you build, test, and deploy on Celo.
 
 ---
 
-[Celo Developers](https://celo.org/developers) build financial dApps that create the conditions for prosperity for everyone. Celo's ultralight mobile client, fee abstraction, and sub-cent fees makes it easy to build for smartphones across the world. Send or Request stable assets easily with anyone in your address book, powered by decentralized phone number verification.
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
 
 ## Quickstart
 
-Easily build Celo dApps with Celo Composer.
+Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
 
-- [Celo Composer](https://github.com/celo-org/celo-composer)
-- [Celo Composer Resources](https://celo.academy/tags/c/tutorials/4/composer)
+- [Quickstart with Celo Composer](https://docs.celo.org/build/quickstart)
+- [Celo Composer GitHub](https://github.com/celo-org/celo-composer)
+- [Community Resources](https://celo.academy/tags/c/tutorials/4/composer)
 
-## Local Environmennt
+## Developer Tools
 
-- [Using Mac](/developer/setup/mac)
-- [Using Windows](/developer/setup/windows)
-- [Using Replit](/developer/setup/replit)
+- [Nodes](/network/node/overview)
+- [Block Explorer](https://explorer.celo.org/)
+- [Testnet Faucet](https://faucet.celo.org)
+- [EVM Compatible Tooling](/developer/evm-tools)
 
-## Build on Celo
+
+## Developer Environments
 
 - [Using thirdweb](/developer/deploy/thirdweb)
 - [Using Remix](/developer/deploy/remix)
@@ -36,20 +43,5 @@ Easily build Celo dApps with Celo Composer.
 
 ## Code Examples
 
-- [Celo Composer](https://github.com/celo-org/celo-composer#celo-composer)
 - [Developer Tutorials](https://celo.academy/c/tutorials/4)
 - [Dacade](https://dacade.org/communities/celo)
-
-## Migrate to Celo
-
-- [Ethereum Developers](/developer/migrate/from-ethereum)
-
-## Integrations
-
-- [Integrations](/integration/)
-
-## Developer Tools
-
-- [EVM Compatible Tooling](/developer/evm-tools)
-- [Block Explorer](https://explorer.celo.org/)
-- [Testnet Faucet](https://faucet.celo.org)
