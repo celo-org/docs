@@ -15,15 +15,29 @@ The [Remix IDE](https://remix-project.org/) is an open-source web and desktop ap
 
 In this guide, you will learn to deploy a smart contract on Celo using [remix.ethereum.org](http://remix.ethereum.org).
 
+:::warning
+For Celo L1 Remix does not support Solidity compiler version `0.8.20` and above for EVM versions above **Paris**. If you try to deploy a smart contract with a higher version, you will receive this error message:
+
+
+```bash
+Gas estimation errored with the following message (see below). The transaction execution will likely fail. Do you want to force sending?
+
+invalid opcode: opcode 0x5f not defined
+The EVM version used by the selected environment is not compatible with the compiler EVM version.
+```
+
+A **workaround** is to go into the advanced settings for the compiler in Remix and choose Paris as the EVM version.
+
+For Alfajores L2 everything should be working as on every other EVM compatible chain.
+:::
+
 :::tip
 
 To learn more about the features available to you as a smart contract developer with Remix, visit the [Remix documentation](https://remix-ide.readthedocs.io/en/latest/).
 
 :::
 
-:::warning
-Remix does not support Solidity compiler version `0.8.20` and above specifically for the Celo network. You can alternatively use [Atlas IDE](https://app.atlaszk.com/ide)
-:::
+
 
 ## Create a Smart Contract
 
