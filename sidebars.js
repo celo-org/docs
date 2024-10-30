@@ -187,6 +187,11 @@ const sidebars = {
       ],
     },
     {
+      type: "doc",
+      label: "Build with Social Connect",
+      id: "build/build-on-socialconnect"
+    },
+    {
       type: "category",
       label: "Integrate with Celo",
       items: [
