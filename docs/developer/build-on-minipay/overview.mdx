@@ -9,6 +9,10 @@ description: A guide  for building on MiniPay and Celo.
 
 Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com/products/minipay) is one of the fastest growing wallets that was built out by Opera on Celo that seeks to create a simple user experience to use DApps. MiniPay is available inside Opera Mini browser on Android phones thereby allowing DApp developers to tap into a distribution of 100M users on integration. This guide will help you build DApps for MiniPay.
 
+:::info
+[Install](https://play.google.com/store/apps/details?id=com.opera.minipay) the new MiniPay standalone app now! 🎉 📥
+:::
+
 ### Get Started with Building on MiniPay
 
 #### 1. Create your MiniPay dApp using Celo Composer and selecting the MiniPay template (less than 5 mins).
@@ -32,7 +36,7 @@ MiniPay is available inside Opera Mini and in a [standalone App](https://play.go
 
 #### 4. Test your DApp inside MiniPay
 
-Open the MiniPay app on your phone and go to settings.
+1. Open the MiniPay app on your phone and go to settings.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/choose-settings.jpg"}
@@ -40,7 +44,7 @@ Open the MiniPay app on your phone and go to settings.
   alt="Open MiniPay dApp store"
 />
 
-Navigate into the "About" section and enable the developer mode by clicking "Version" a few times.
+2. Navigate into the "About" section and enable the developer mode by clicking "Version" number until you see a message pop up that you have enabled developer mode.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/turn-on-developer-mode.jpg"}
@@ -48,7 +52,7 @@ Navigate into the "About" section and enable the developer mode by clicking "Ver
   alt="Open MiniPay dApp test page"
 />
 
-When you go back into settings you should now see the option for "Developer Settings".
+3. When you go back into settings you should now see the option for "Developer Settings".
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/choose-developer-settings.jpg"}
@@ -57,7 +61,16 @@ When you go back into settings you should now see the option for "Developer Sett
 />
 
 
-Navigate into the "Developer Settings", enable the "Developer Mode" and click "Load Test Page". A popup to enter a URL should apprear.
+4. To enable the Celo testnet, Alfajores L2, you need to toggle "Use test net".
+
+<img
+  src={"/img/doc-images/minipay/build-on-minipay/choose-testnet.jpg"}
+  style={{ width: 250 }}
+  alt="MiniPay dApp testing"
+/>
+
+
+5. Navigate into the "Developer Settings", enable the "Developer Mode" and click "Load Test Page". A popup to enter a URL should apprear.
 
 
 <img
@@ -66,14 +79,13 @@ Navigate into the "Developer Settings", enable the "Developer Mode" and click "L
   alt="MiniPay dApp testing"
 />
 
-Enter the URL of your DApp and click on "Go". You should now get redirected to the site tester.
+6. Enter the URL of your DApp and click on "Go". You should now get redirected to the site tester.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/site-tester-opening.png"}
   style={{ width: 250 }}
   alt="MiniPay dApp testing"
 />
-
 
 #### 5. Testing Local Development with MiniPay
 
