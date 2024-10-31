@@ -171,11 +171,6 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Enabling Testnet",
-          id: "developer/build-on-minipay/enabling-testnet",
-        },
-        {
-          type: "doc",
           label: "Code Library",
           id: "developer/build-on-minipay/code-library",
         },
