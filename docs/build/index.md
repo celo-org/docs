@@ -4,6 +4,8 @@ description: A guide  for building on Celo.
 ---
 import ColoredText from '/src/components/ColoredText';
 
+Celo was created to enable real-world uses cases on Ethereum.
+
 Whether you're building your first dApp or looking to integrate an existing protocol onto Celo, we have all the resources and tools you need to get started.
 
 ---
