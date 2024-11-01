@@ -520,6 +520,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Particle Network",
+          id: "developer/particle-network/index",
+        },
+        {
+          type: "doc",
           label: "Web3.js",
           id: "developer/web3/index",
         },

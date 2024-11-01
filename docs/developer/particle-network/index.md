@@ -1,176 +1,253 @@
 ---
 title: Particle Network
-description: Walkthrough on leveraging Particle Network's Wallet-as-a-Service on Celo.
+description: Walkthrough on leveraging Particle Network's Wallet Abstraction on Celo.
 ---
 
-# Particle Network's Wallet-as-a-Service
+# Integrate Particle Connect on Celo
 
-[Particle Network](https://particle.network)'s Wallet Abstraction services enable universal, Web2-adjacent onboarding and interactions through social logins. Its core technology, [Smart Wallet-as-a-Service](https://blog.particle.network/announcing-our-smart-wallet-as-a-service-modular-stack-upgrading-waas-with-erc-4337) (WaaS) aims to onboard users into MPC-secured accounts supporting any chain. It also allows developers to offer an improved user experience through modular, fully customizable EOA/AA embedded wallets. Particle supports its Smart Wallet-as-a-Service through a Modular L1 powering chain abstraction, acting as a settlement layer across chains for a seamless multi-chain experience.
+[Particle Network](https://particle.network) offers Wallet Abstraction services to streamline user onboarding.
 
-Particle Network's Wallet-as-a-Service supports the Celo Mainnet and Alfajores Testnet through standard EOA-based social logins. Therefore, developers building on Celo can natively leverage Particle Network to onboard users into application-embedded wallets using social logins through various SDKs with direct Celo compatibility.
+The [Particle Connect SDK](https://developers.particle.network/api-reference/connect/desktop/web) supports EVM-compatible chains, including Celo and its testnet. It enables 2-click onboarding with social and Web3 login options within a single modal.
 
-On this page, you can find a high-level overview and tutorial on implementing Particle Network's Wallet-as-a-Service within an application built on Celo (specifically Celo Mainnet in this example), highlighting the basics of getting an integration up and running.
+With Particle Network's Wallet-as-a-Service, developers on Celo can integrate social logins for the Celo Mainnet and Alfajores Testnet, embedding wallets directly into applications.
 
-## Tutorial: Implementing Particle Network's Wallet-as-a-Service on Celo
+This page provides an overview and tutorial on implementing Particle Connect in a Celo-based application, specifically on the Celo Mainnet, to help you get started with integration.
 
-Particle Network has various avenues for integration, with the best one for you being largely dependent on your platform of choice. If you're building a mobile application, Particle offers various SDKs for iOS, Android, Flutter, React Native, and so on. In this example, we'll focus on using Particle's flagship web SDK, `@particle-network/auth-core-modal`. This SDK facilitates end-to-end implementation of social logins within web apps (using React). To install this library, alongside some supporting ones, run one of the two following commands at the root of your project:
+## Tutorial: Implementing Particle Connect on Celo
+
+The Particle Connect SDK simplifies wallet creation, user login, and blockchain interactions through a single interface. It supports both social logins and traditional Web3 wallets, making Web3 more accessible to users of all experience levels. 
+
+To install this library, alongside Viem, which is used in the backend by Connect and ethers, which is used to demonstrate how to use any EIP-1193 provider, run the following command at the root of your project:
 
 ```shell
-yarn add @particle-network/auth-core-modal @particle-network/chains
-
-# OR
-
-npm install @particle-network/auth-core-modal @particle-network/chains
+yarn add @particle-network/connectkit viem@^2 ethers
 ```
 
-These two libraries are all you'll need to begin using social logins within a new or existing application built on Celo. For this tutorial, we'll put together a basic React application showcasing the utilization of social logins to facilitate wallet generation on Celo. 
+This tutorial is based on a [Next.js app](https://nextjs.org/docs/getting-started/installation) with TypeScript and Tailwind CSS that demonstrates using social logins for wallet creation on Celo.
 
-To get started:
+### 1. Set Up Particle Connect
 
-1. Configure Particle Auth Core (`@particle-network/auth-core-modal`) within `index.ts/tsx` (or an adjacent file).
+To start, we’ll configure and initialize Particle Connect (Particle's flagship authentication SDK). Begin by creating a new file called `ConnectKit.tsx` in your project’s root directory, where we’ll set up the `ParticleConnectKit` component as the main interface for configuration.
 
-To start using Particle Auth Core (Particle's flagip authentication SDK), you'll first need to configure and initialize it within your `index.ts/tsx` file through `AuthCoreContextProvider` (imported from `@particle-network/auth-core-modal`). `AuthCoreContextProvider` acts as the primary interface for configuration; through `options`, you'll need to pass the following parameters, all derived from the [Particle dashboard](https://dashboard.particle.network):
+Before proceeding, create a new project with a web app on the [Particle dashboard](https://dashboard.particle.network) and retrieve the following API keys:
 
-- `projectId`, your project ID.
-- `clientKey`, your client Key.
-- `appId`, your app ID.
+- **`projectId`** – your project’s unique ID.
+- **`clientKey`** – your client-specific key.
+- **`appId`** – your application ID.
 
-Each of these values are required as they directly link your instance of Particle Auth Core with the Particle dashboard, therefore enabling no-code customization, user activity tracking, API requests authentication, etc.
+These keys are essential as they connect your Particle Connect instance with the Particle dashboard, enabling features like no-code customization, user activity tracking, and API request authentication.
 
-Beyond these core parameters (`projectId`, `clientKey`, and `appId`), you have a few other optional configurations you can set (largely visual). An example of an `index.ts/tsx` file, with `AuthCoreContextProvider` successfully initialized, is included below.
+Place the API keys in a `.env` file in the following format:
 
-```js
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { Celo } from '@particle-network/chains';
-import { AuthCoreContextProvider, PromptSettingType } from '@particle-network/auth-core-modal';
-import App from './App'
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <AuthCoreContextProvider
-      options={{
-        projectId: process.env.REACT_APP_PROJECT_ID,
-        clientKey: process.env.REACT_APP_CLIENT_KEY,
-        appId: process.env.REACT_APP_APP_ID,
-        themeType: 'dark', // Optional
-        fiatCoin: 'USD', // Optional
-        language: 'en', // Optional
-        promptSettingConfig: { // Optional, determines the security settings that a user has to configure
-          promptPaymentPasswordSettingWhenSign: PromptSettingType.first,
-          promptMasterPasswordSettingWhenLogin: PromptSettingType.first,
-        },
-        wallet: { // Optional, streamlines the wallet modal popup
-          visible: true, // Displays an embedded wallet popup on the bottom right of the screen after login
-          customStyle: {
-            supportChains: [Celo],
-          }
-        },
-      }}
-    >
-    <App />
-      </AuthCoreContextProvider>
-  </React.StrictMode>
-)
+```plaintext
+NEXT_PUBLIC_PROJECT_ID='PROJECT_ID'
+NEXT_PUBLIC_CLIENT_KEY='CLIENT_KEY'
+NEXT_PUBLIC_APP_ID='APP_ID'
 ```
 
-2. Set up various hooks within your primary `App` component (or its equivalent).
+This setup ensures that your API keys are securely accessible to the Next.js application while protecting them from unauthorized access.
 
-Now that you've configured Particle Auth Core (through `AuthCoreContextProvider`, as shown above), you're ready to use the full extent of the SDK (to facilitate social logins) within your application, in this case through your main `App` component or whichever file you intend on using Particle Auth Core within. This file should be specified within your `index.ts/tsx` file, wrapped by `AuthCoreContextProvider`. 
+Here’s the code to add to your `ConnectKit.tsx` file:
 
-For this example, we'll be using three hooks exported by `@particle-network/auth-core-modal` to connect a user through social login, set up a custom EIP-1193 provider (with Ethers), and retrieve information about the user once they've logged in. These hooks are as follows:
+```javascript
+"use client";
 
-- `useConnect` connects and disconnects a user through a specified social login mechanism (or through Particle Network's generalized authentication modal).
-- `useEthereum` retrieves the user's address, the associated 1193 `provider` object, etc.
-- `useAuthCore`, pulls data about the user once they've connected (such as their public email used for signing up).
+import React from "react";
+import { ConnectKitProvider, createConfig } from "@particle-network/connectkit";
+import { authWalletConnectors } from "@particle-network/connectkit/auth";
+import { celo, celoAlfajores } from "@particle-network/connectkit/chains";
+import { wallet, EntryPosition } from "@particle-network/connectkit/wallet";
 
-For a complete list of hooks, including those covered above, take a look at the [Particle Auth Core documentation](https://docs.particle.network/developers/auth-service/core/web#auth-core-hooks).
+const config = createConfig({
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+  clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY!,
+  appId: process.env.NEXT_PUBLIC_APP_ID!,
 
-An example of using each of the three aforementioned hooks to build a sample application that onboards a user through social logins, retrieves and displays relevant data, and executes a sample transaction has been included below:
+  walletConnectors: [
+    authWalletConnectors({}),
+  ],
+
+  plugins: [
+    wallet({
+      entryPosition: EntryPosition.BR, // Positions the modal button at the bottom right on login
+      visible: true, // Determines if the wallet modal is displayed
+    }),
+  ],
+  chains: [celo, celoAlfajores],
+});
+
+export const ParticleConnectkit = ({ children }: React.PropsWithChildren) => {
+  return <ConnectKitProvider config={config}>{children}</ConnectKitProvider>;
+};
+```
+
+This setup initializes the `ParticleConnectKit` component with your project keys and defines key SDK configurations, such as supported chains (Celo and Alfajores), wallet positioning, and visibility options.
+
+For further customization options, refer to the [Particle Connect documentation](https://developers.particle.network/api-reference/connect/desktop/web#configuration).
+
+### 2. Integrate the `ParticleConnectKit` Component in Your App
+
+With the configuration complete, wrap your application with the `ParticleConnectKit` component to provide global access to the Particle Connect SDK. To do this, update your `layout.tsx` file located in `src` as shown below:
+
+```typescript
+import { ParticleConnectkit } from '@/connectkit';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Particle Connectkit App',
+  description: 'Generated by create next app',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <ParticleConnectkit>{children}</ParticleConnectkit>
+      </body>
+    </html>
+  );
+}
+```
+
+By wrapping your application in `ParticleConnectKit`, you make the Particle Connect SDK available globally within your app. This setup in `layout.tsx` ensures all components have access to the SDK, enabling features like social logins and wallet generation across your app.
+
+### 3. Set Up Key Hooks in `page.tsx`
+
+With Particle Connect configured, you can use the SDK for social logins and wallet interactions within your application. In this example, we’ll set up several essential hooks in `page.tsx` to manage user connection, retrieve data, and perform blockchain interactions.
+
+For this example, we’ll use five hooks from `@particle-network/connectkit`:
+
+- `ConnectButton`: Displays a connect button, transforming into an embedded widget once logged in.
+- `useAccount`: Retrieves the user’s wallet address and connection state.
+- `useWallets`: Provides the connected wallet, allowing interactions with the blockchain.
+- `usePublicClient`: You can fetch data from the chain, like balances, using Viem.
+- `useDisconnect`: Lets you set up custom disconnect functionality.
+
+For a comprehensive list of hooks, check the [Particle Connect documentation](https://developers.particle.network/api-reference/connect/desktop/web#key-react-hooks-for-particle-connect).
+
+Below is a sample implementation in `page.tsx`, showcasing how to use these hooks to connect via social logins, retrieve user data, and display it:
 
 ```js
-import React, { useState, useEffect } from 'react';
+"use client";
 
-import { useEthereum, useConnect, useAuthCore } from '@particle-network/auth-core-modal';
-import { Celo } from '@particle-network/chains';
+import React, { useState, useEffect } from "react";
+import {
+  ConnectButton,
+  useAccount,
+  useDisconnect,
+  useWallets,
+  usePublicClient,
+} from "@particle-network/connectkit";
+import { ethers, type Eip1193Provider } from "ethers";
+import { parseEther, formatEther } from "viem";
 
-import { ethers } from 'ethers';
-import { notification } from 'antd';
+export default function Home() {
+  // Account-related states
+  const { isConnected, address } = useAccount();
+  const { disconnect } = useDisconnect();
+  const [primaryWallet] = useWallets();
+  const publicClient = usePublicClient();
 
-import './App.css';
+  // State variables for recipient address, transaction hash, and balance
+  const [recipientAddress, setRecipientAddress] = useState<string>("");
+  const [transactionHash, setTransactionHash] = useState<string | null>(null);
+  const [balance, setBalance] = useState<string>("");
 
-const App = () => {
-  const { provider } = useEthereum(); // For provider retrieval
-  const { connect, disconnect } = useConnect(); // For facilitating social logins
-  const { userInfo } = useAuthCore(); // For retrieving user information
-
-  const [balance, setBalance] = useState(null);
-
-  const customProvider = new ethers.providers.Web3Provider(provider, "any");
-
+  // Fetch and display user balance when connected
   useEffect(() => {
-    if (userInfo) {
-      fetchBalance();
-    }
-  }, [userInfo]);
-
-  const fetchBalance = async () => {
-    const balanceResponse = await customProvider.getBalance(await customProvider.getSigner().getAddress());
-
-    setBalance(ethers.utils.formatEther(balanceResponse));
-  }
-
-  // Upon calling, the user will be prompted to login with their social account according to authType
-  const handleLogin = async (authType) => {
-    if (!userInfo) {
-      await connect({
-        socialType: authType,
-        chain: Celo,
-      });
-    }
-  };
-
-  // The user will be required to click on an application-embedded confirmation popup, after which this transaction will be sent.
-  const executeTx = async () => {
-    const signer = customProvider.getSigner();
-    console.log(await signer.getAddress())
-
-
-    const tx = {
-      to: "0x00000000000000000000000000000000000dEAD0",
-      value: ethers.utils.parseEther("0.001")
+    const fetchBalance = async () => {
+      if (address) {
+        try {
+          const balanceResponse = await publicClient.getBalance({ address });
+          const balanceInEther = formatEther(balanceResponse);
+          setBalance(balanceInEther);
+        } catch (error) {
+          console.error("Error fetching balance:", error);
+        }
+      }
     };
 
-    const txResponse = await signer.sendTransaction(tx);
-    const txReceipt = await txResponse.wait();
+    if (isConnected) {
+      fetchBalance();
+    }
+  }, [isConnected, address, publicClient]);
 
-    notification.success({
-      message: txReceipt.transactionHash
-    })
+  // Send transaction using ethers.js with a custom EIP-1193 provider
+  const executeTransaction = async () => {
+    if (!recipientAddress || !primaryWallet) return;
+
+    const tx = {
+      to: recipientAddress,
+      value: parseEther("0.01"), // Set value to 0.01 Ether
+      data: "0x",
+    };
+
+    try {
+      const EOAprovider = await primaryWallet.connector.getProvider();
+      const customProvider = new ethers.BrowserProvider(
+        EOAprovider as Eip1193Provider,
+        "any"
+      );
+      const signer = await customProvider.getSigner();
+      const txResponse = await signer.sendTransaction(tx);
+      const txReceipt = await txResponse.wait();
+
+      setTransactionHash(txReceipt.hash);
+    } catch (error) {
+      console.error("Error executing transaction:", error);
+    }
   };
 
   return (
-    <div className="App">
-      {!userInfo ? (
-        <div className="login-section">
-          <button className="sign-button" onClick={() => handleLogin('google')}>Sign in with Google</button>
-          <button className="sign-button" onClick={() => handleLogin('twitter')}>Sign in with Twitter</button>
-        </div>
-      ) : (
-        <div className="profile-card">
-          <h2>{userInfo.name}</h2>
-          <div className="balance-section">
-            <small>{balance} CELO</small>
-            <button className="sign-message-button" onClick={executeTx}>Execute Transaction</button>
-            <button className="disconnect-button" onClick={() => disconnect()}>Logout</button>
-          </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-black text-white">
+      <ConnectButton label="Connect Wallet" />
+      {isConnected && (
+        <div className="w-full max-w-md mt-6">
+          <h2 className="text-xl font-bold text-white mb-4">Account Details</h2>
+          <p className="text-lg text-white">
+            Balance: {balance || "Loading..."} ETH
+          </p>
+          <h2 className="text-xl font-bold text-white mt-6 mb-4">
+            Send 0.01 ETH
+          </h2>
+          <input
+            type="text"
+            placeholder="Recipient Address"
+            value={recipientAddress}
+            onChange={(e) => setRecipientAddress(e.target.value)}
+            className="p-2 w-full rounded border border-gray-700 bg-gray-900 text-white"
+          />
+          <button
+            className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+            onClick={executeTransaction}
+            disabled={!recipientAddress}
+          >
+            Send Transaction
+          </button>
+          <button
+            className="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            onClick={disconnect}
+          >
+            Disconnect
+          </button>
+          {transactionHash && (
+            <div className="text-sm text-green-500 mt-4">
+              Transaction Hash: {transactionHash}
+            </div>
+          )}
         </div>
       )}
     </div>
   );
-};
-
-export default App;
+}
 ```
 
 As shown above, Particle Network's Wallet-as-a-Service can be plugged in and used in a way similar to any other standard wallet that exposes an EIP-1193 provider on Celo, enabling social logins in just a few lines of code.
@@ -179,5 +256,3 @@ As shown above, Particle Network's Wallet-as-a-Service can be plugged in and use
 
 - [Particle Dashboard](https://dashboard.particle.network)
 - [Particle Documentation](https://docs.particle.network)
-- [Celo Example Repository](https://github.com/TABASCOatw/particle-celo-demo)
-
