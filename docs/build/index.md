@@ -12,7 +12,7 @@ Whether you're building your first dApp or looking to integrate an existing prot
 
 - **EVM Compatibile:** Celo is fully EVM-compatible, offering the same development experience as Ethereum with improved scalability and lower costs.
 - **Fast Transactions:** After the migrations to an L2 Celo now has a 1 second block finality compared to formerly 5 seconds.
-- **Fast, Low-Cost Payments:** Celo's seemless payment infrastructure, including Fee Abstraction, sub-cent fees, and native stablecoins, enables simple and affordable transactions.
+- **Easy, Low-Cost Payments:** Celo's seemless payment infrastructure, including Fee Abstraction, sub-cent fees, and native stablecoins, enables simple and affordable transactions.
 - **Global Reach:** Celo supports 1,000+ projects in 150+ countries, providing a vibrant, global community that helps developers build, test, and scale their applications to millions of everyday users. 
 
 
