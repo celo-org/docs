@@ -123,7 +123,7 @@ This will provide you with a public URL that tunnels to your localhost.
 ### Get your dApp ready for MiniPay
 
 :::warning
-MiniPay uses Custom [Fee Abstraction](../fee-currency.md) based transactions, which is not yet supported by Ethers.js. Make sure to use viem or wagmi. If you are using web3.js make sure to use our [custom built plugin for fee abstraction](../web3/index.md).
+MiniPay uses Custom [Fee Abstraction](../fee-currency.md) based transactions, which is not yet supported by Ethers.js, so if you are using Ethers.js for smart contract interactions in your dapp, those won't work inside of MiniPay. Make sure to use viem or wagmi. If you are using web3.js make sure to use our [custom built plugin for fee abstraction](../web3/index.md).
 :::
 
 #### 1. Viem
