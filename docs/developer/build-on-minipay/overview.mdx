@@ -12,52 +12,47 @@ Welcome to the MiniPay wallet integration guide. [MiniPay](https://www.opera.com
 This guide provides information on how to develop and test your dapp for MiniPay. 
 
 :::info
-Get the new [MiniPay standalone app](https://play.google.com/store/apps/details?id=com.opera.minipay) now! 🎉 📥
-:::
-
-:::info
-[Install](https://play.google.com/store/apps/details?id=com.opera.minipay) the new MiniPay standalone app now! 🎉 📥
+Install the new [MiniPay standalone app](https://play.google.com/store/apps/details?id=com.opera.minipay) now! 🎉 📥
 :::
 
 ### Get Started with Building on MiniPay
 
-To get started building for MiniPay we recommend testing out the wallet and building an example dapp with our starter kit. Follow the steps below to get a good understanding what it means to build for MiniPay.
+To get started with MiniPay, we recommend testing the wallet and building a sample dApp using our starter kit. The following steps will guide you through setting up MiniPay, building your dApp, and testing it in the wallet.
 
 #### 1. Installing MiniPay
 
-As MiniPay was built for mainstream adoption and web2 users, it might have a different feel than most web3 wallets that you are used to. MiniPay has a special focus on a seamless user experience. When you test it out make sure to notice how:
+MiniPay is designed for mainstream adoption and web2 users, offering a different experience compared to most web3 wallets. Its primary focus is on providing a seamless user experience. When testing MiniPay, take note of the following:
 
-- currencies are presented: amounts are shown in your local currency
-- focus on stablecoins: only stablecoins are available, like cUSD, USDC and USDT, to simplify the user experience and build trust
-- very seamless design: notice the pocket swap where you can just pull one stablecoin pocket into the other to execute a swap
-
+- Currency presentation: Balances are displayed in your local currency.
+- Stablecoin support: Only stablecoins, such as cUSD, USDC, and USDT, are available to simplify the user experience and enhance trust.
+- Streamlined design: The pocket swap feature allows for easy swaps between stablecoins by dragging one pocket into another.
 
 :::info
-MiniPay is only available on Celo and Celo Testnet. MiniPay is not available to be used on other chains.
+MiniPay is currently available only on Celo and Celo Testnet and does not support other blockchain networks.
 :::
 
-MiniPay is available inside [Opera Mini](https://www.opera.com/pl/products/minipay) and as a [standalone App](https://play.google.com/store/apps/details?id=com.opera.minipay), so far only on **Android**.
-To ensure that your DApp functions as expected within the MiniPay environment, it's crucial to test it inside the MiniPay app. Here's how you can set up and test your DApp:
+MiniPay can be accessed via [Opera Mini](https://www.opera.com/pl/products/minipay) and as a [standalone App](https://play.google.com/store/apps/details?id=com.opera.minipay), currently available only on **Android**.
 
-- **Install the [MiniPay standalone app](https://play.google.com/store/apps/details?id=com.opera.minipay):** Start by downloading the MiniPay standalone application from the PlayStore on your Android phone. [ Download MiniPay](https://play.google.com/store/apps/details?id=com.opera.minipay)
-- **Create an Account:** Before you can test your DApp, you need to create an account on the MiniPay app. Follow the on-screen instructions to set up your account using your Google account and your phone number.
+To ensure your dApp operates correctly within the MiniPay environment, follow these steps to set up and test your dApp:
 
+- **Install the [MiniPay standalone app](https://play.google.com/store/apps/details?id=com.opera.minipay):** Download the app from the PlayStore on your Android device. [ Download MiniPay](https://play.google.com/store/apps/details?id=com.opera.minipay)
+- **Create an Account:** Set up your MiniPay account by following the on-screen instructions using your Google account and phone number before proceeding with dApp testing.
 
-#### 2. Create your MiniPay dApp using Celo Composer and selecting the MiniPay template (less than 5 mins).
+#### 2. Create Your MiniPay dApp Using the Celo Composer MiniPay Template
 
-Follow the [Quickstart](/build/quickstart.md) guide to set up your dapp end-to-end till a live deployment.
+Follow the [Quickstart Guide](/build/quickstart.md) for an end-to-end dApp setup and deployment.
 
 ```bash
 npx @celo/celo-composer@latest create -t minipay
 ```
 
-#### 3. Get Testnet tokens to test your application
+#### 3. Get Testnet Tokens
 
-You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
+To test your dApp, request test tokens from the Celo [faucet](https://faucet.celo.org/).
 
-#### 4. Test your DApp inside MiniPay
+#### 4. Test your dApp inside MiniPay
 
-1. Open the MiniPay app on your phone and go to settings.
+1. Open the MiniPay app on your phone and navigate to settings.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/choose-settings.jpg"}
@@ -65,7 +60,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
   alt="Open MiniPay dApp store"
 />
 
-2. Navigate into the "About" section and enable the developer mode by clicking "Version" number until you see a message pop up that you have enabled developer mode.
+2. In the "About" section, enable developer mode by tapping the "Version" number until the confirmation message appears.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/activate-developer-mode.jpg"}
@@ -73,7 +68,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
   alt="Open MiniPay dApp test page"
 />
 
-3. When you go back into settings you should now see the option for "Developer Settings".
+3. Return to the settings menu, where you will now see "Developer Settings."
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/choose-developer-settings.jpg"}
@@ -82,7 +77,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
 />
 
 
-4. Navigate into the "Developer Settings", enable the "Developer Mode", and enable the Celo testnet Alfajores L2 by toggling "Use test net"..
+4. In "Developer Settings," enable developer mode and toggle "Use Testnet" to connect to the Alfajores L2 testnet.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/choose-testnet.jpg"}
@@ -90,9 +85,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
   alt="MiniPay dApp testing"
 />
 
-
-5. To test your website, click "Load Test Page". A popup to enter a URL should appear. Enter the URL of your dapp here. If you want to show a local deployment, you can use [ngrok](#5-testing-local-development-with-minipay).
-
+5. To test your dApp, click "Load Test Page" and enter the URL of your dApp. If testing a local deployment, use [ngrok](#5-testing-local-development-with-minipay) to expose your localhost environment.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/enter-url.jpg"}
@@ -100,7 +93,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
   alt="MiniPay dApp testing"
 />
 
-6. When you have entered the URL of your DApp clicked on "Go", you should now get redirected to the site tester.
+6. Once the URL is entered, click "Go" to launch the site tester and view your dApp.
 
 <img
   src={"/img/doc-images/minipay/build-on-minipay/site-tester-opening.jpg"}
@@ -110,7 +103,7 @@ You can get test tokens from the Celo [faucet](https://faucet.celo.org/).
 
 #### 5. Testing Local Development with MiniPay
 
-If you're developing your DApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), you can use `ngrok` to tunnel the traffic over HTTP. This allows you to test the localhost version in real-time inside MiniPay. If this is your first time working with ngrok, we recommend checking out our more in depth guide for the [ngrok setup](./prerequisites/ngrok-setup.mdx).
+If you're developing your dApp locally (e.g., on `localhost:3000` using Next.js or a similar framework), use `ngrok` to tunnel traffic over HTTP, allowing real-time testing within MiniPay. If this is your first time working with ngrok, we recommend checking out our more in depth guide for the [ngrok setup](./prerequisites/ngrok-setup.mdx).
 
 - **Install ngrok:** If you haven't already, install ngrok. You can find instructions on their [official website](https://ngrok.com/download).
 - **Start Your Local Server:** Ensure your local development server is running. For instance, if you're using Next.js, you might run `npm run dev` to start your server at `localhost:3000`.
