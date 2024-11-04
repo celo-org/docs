@@ -54,7 +54,7 @@ As Forno is a public node you will have to sign transactions locally because wit
 Forno networks:
 
 ```
-Alfajores = 'https://alfajores-forno.celo-testnet.org'
+Alfajores = 'https://forno.alfajores.celo-testnet.org/'
 
 Baklava = 'https://baklava-forno.celo-testnet.org'
 

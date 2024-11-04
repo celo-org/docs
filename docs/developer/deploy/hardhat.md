@@ -53,7 +53,7 @@ Using [Forno](/network/node/forno) allows you to connect to the Celo test blockc
 
 ```js
    alfajores: {
-     url: "https://alfajores-forno.celo-testnet.org",
+     url: "https://forno.alfajores.celo-testnet.org/",
      accounts: {
        mnemonic: process.env.MNEMONIC,
        path: "m/44'/52752'/0'/0"

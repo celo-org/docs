@@ -21,7 +21,7 @@ export default class WalletConnect extends React.Component {
   connect = async () => {
     const provider = new WalletConnectProvider({
       rpc: {
-        44787: "https://alfajores-forno.celo-testnet.org",
+        44787: "https://forno.alfajores.celo-testnet.org/",
         42220: "https://forno.celo.org",
       },
     });

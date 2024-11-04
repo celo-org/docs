@@ -51,7 +51,7 @@ To make things a bit simpler, I recommend running that command to create a .env 
 
 ```
 # Make sure you're working on alfajores network
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
+celocli config:set --node https://forno.alfajores.celo-testnet.org//
 
 If this is the first time you're running this command, the script will create a blockchain account/private-key for you and ask you to fund it using Celo faucet. Then this account will be used automatically to pay for the requested payment.
 

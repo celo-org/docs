@@ -46,7 +46,7 @@ Connecting celocli to an untrusted node may allow that node to influence the tra
 Configure the Celo CLI so that it uses a cLabs node on the Alfajores network.
 
 ```bash
-celocli config:set --node https://alfajores-forno.celo-testnet.org/
+celocli config:set --node https://forno.alfajores.celo-testnet.org//
 ```
 
 :::danger
@@ -104,7 +104,7 @@ https://faucet.celo.org
 Check that you received the funds with the following command:
 
 ```bash
-celocli account:balance <your-address> --node https://alfajores-forno.celo-testnet.org/
+celocli account:balance <your-address> --node https://forno.alfajores.celo-testnet.org//
 ```
 
 Next, you'll need to enable "Contract Data" in the ledger app. Open the Celo App on your ledger device and go to Settings, then enable "Contract Data" to "Allowed". This setting is required because the celocli uses the ERC20 "pre-wrapped" version of CELO and so sending transactions requires sending data to a smart contract.
@@ -112,7 +112,7 @@ Next, you'll need to enable "Contract Data" in the ledger app. Open the Celo Ap
 Perform a test transaction by running the following command:
 
 ```bash
-celocli transfer:gold --from=<your-address> --to=0x0000000000000000000000000000000000000001 --value=10000 --useLedger --node https://alfajores-forno.celo-testnet.org/
+celocli transfer:gold --from=<your-address> --to=0x0000000000000000000000000000000000000001 --value=10000 --useLedger --node https://forno.alfajores.celo-testnet.org//
 ```
 
 You'll need to then approve the transaction on the Ledger device. Toggle right on the device until you see `Approve` on screen. Press both buttons at the same time to confirm.

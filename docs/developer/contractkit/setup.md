@@ -27,7 +27,7 @@ To start working with ContractKit you need a `kit` instance and a valid net to c
 import Web3 from "web3";
 import { newKitFromWeb3 } from "@celo/contractkit";
 
-const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
+const web3 = new Web3("https://forno.alfajores.celo-testnet.org/");
 const kit = newKitFromWeb3(web3);
 ```
 

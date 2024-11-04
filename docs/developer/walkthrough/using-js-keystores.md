@@ -139,7 +139,7 @@ await keystoreWalletWrapper.importPrivateKey(privateKey, passphrase);
 
 // Get the wrapper's `LocalWallet` instance and pass this into ContractKit
 const wallet = keystoreWalletWrapper.getLocalWallet();
-const kit = newKit("https://alfajores-forno.celo-testnet.org", wallet);
+const kit = newKit("https://forno.alfajores.celo-testnet.org/", wallet);
 const [from] = wallet.getAccounts();
 
 // Send a test transaction

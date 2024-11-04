@@ -27,7 +27,7 @@ If you never added a new Network before then you need click on "Add a Network"
 Insert the following details:
 
 - Network Name: Celo Alfajores Testnet
-- New RPC URL: `https://alfajores-forno.celo-testnet.org`
+- New RPC URL: `https://forno.alfajores.celo-testnet.org/`
 - Chain ID: 44787
 - Currency Symbol: CELO
 - Block explorer URL: `https://explorer.celo.org/alfajores`

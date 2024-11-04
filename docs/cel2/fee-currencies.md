@@ -11,7 +11,7 @@ Alternate fee currency works with EOAs, no paymaster is required!
 ### Get a list of whitelisted Fee Currencies
 
 ```bash
-celocli network:whitelist --node https://alfajores-forno.celo-testnet.org
+celocli network:whitelist --node https://forno.alfajores.celo-testnet.org/
 ```
 
 ### Using Fee Abstraction with Celo CLI

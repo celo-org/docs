@@ -58,7 +58,7 @@ Now we can use the ContractKit to connect to the test network.
 
 ```javascript title="helloCelo.js"
 // 2. Init a new kit, connected to the alfajores testnet
-const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
+const web3 = new Web3("https://forno.alfajores.celo-testnet.org/");
 const kit = ContractKit.newKitFromWeb3(web3);
 ```
 
@@ -128,7 +128,7 @@ In order to do transfers (aka [transactions](https://docs.celo.org/getting-start
 
 ## Accounts
 
-We are accessing the Celo network via a remote [node](https://docs.celo.org/getting-started/glossary#node) via HTTP requests at `'https://alfajores-forno.celo-testnet.org'`.
+We are accessing the Celo network via a remote [node](https://docs.celo.org/getting-started/glossary#node) via HTTP requests at `'https://forno.alfajores.celo-testnet.org/'`.
 
 :::info
 
@@ -290,7 +290,7 @@ const getCeloLedgerTransport = () => {
 // Handle creating a new Celo ContractKit
 const getContractKit = async () => {
   // Create a Web3 provider by passing in the testnet/mainnet URL
-  const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
+  const web3 = new Web3("https://forno.alfajores.celo-testnet.org/");
 
   // Get the appropriate Ledger Transport
   const transport = await getCeloLedgerTransport();
