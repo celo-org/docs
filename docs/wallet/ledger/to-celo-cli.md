@@ -117,7 +117,7 @@ celocli transfer:gold --from=<your-address> --to=0x00000000000000000000000000000
 
 You'll need to then approve the transaction on the Ledger device. Toggle right on the device until you see `Approve` on screen. Press both buttons at the same time to confirm.
 
-Finally, you can see if your transaction was mined on the network by copying the transaction hash (txHash) outputted by the command, and searching for it on the [Alfajores Block Explorer](https://alfajores-blockscout.celo-testnet.org/).
+Finally, you can see if your transaction was mined on the network by copying the transaction hash (txHash) outputted by the command, and searching for it on the [Alfajores Block Explorer](https://celo-alfajores.blockscout.com/).
 
 ### Using `celocli`
 

@@ -54,7 +54,7 @@ In this tutorial, we will go over how to deploy an ERC20 token contract. The pro
 
 That’s it! We now have ProsperityToken deployed on Alfajores with the Metamask account as the contract owner.
 
-You can see the contract information on the [Alfajores block explorer](https://alfajores-blockscout.celo-testnet.org/). Copy and paste the contract address or deployment transaction hash from the console output and paste it into the block explorer search bar or look up the deployment transaction info in the Metamask activity.
+You can see the contract information on the [Alfajores block explorer](https://celo-alfajores.blockscout.com/). Copy and paste the contract address or deployment transaction hash from the console output and paste it into the block explorer search bar or look up the deployment transaction info in the Metamask activity.
 
 ## Deploying your token on the Mainnet
 
@@ -68,6 +68,6 @@ If you are unable to view your token on the block explorer, you may need to Veri
 
 Verifying your contract with Remix is straight-forward and allows anyone to read and interact with the contract on the block explorer. You can read more about verifying a contract with Remix on [this page](/developer/verify/remix).
 
-You can find my example contract [here](https://alfajores-blockscout.celo-testnet.org/address/0x97d550A2540F902F4501e21A6c09f12B69173261/transactions).
+You can find my example contract [here](https://celo-alfajores.blockscout.com//address/0x97d550A2540F902F4501e21A6c09f12B69173261/transactions).
 
 Let me know what you end up building and reach out if you have any questions, [@critesjosh\_](https://twitter.com/critesjosh_) on Twitter or joshc#0001 on Discord. Join the Celo discord at https://chat.celo.org.

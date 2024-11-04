@@ -48,7 +48,7 @@ const ALFAJORES_PARAMS = {
   chainName: "Alfajores Testnet",
   nativeCurrency: { name: "Alfajores Celo", symbol: "A-CELO", decimals: 18 },
   rpcUrls: ["https://forno.alfajores.celo-testnet.org/"],
-  blockExplorerUrls: ["https://alfajores-blockscout.celo-testnet.org/"],
+  blockExplorerUrls: ["https://celo-alfajores.blockscout.com/"],
   iconUrls: ["future"],
 };
 ```
