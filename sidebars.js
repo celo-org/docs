@@ -159,11 +159,6 @@ const sidebars = {
           items: [
             {
               type: "doc",
-              label: "Android Studio Setup",
-              id: "developer/build-on-minipay/prerequisites/android-studio-setup",
-            },
-            {
-              type: "doc",
               label: "Ngrok Setup",
               id: "developer/build-on-minipay/prerequisites/ngrok-setup",
             },

@@ -20,7 +20,9 @@ Powered by a platform algorithmic native stable coins, Celo Dollars (cUSD), Celo
 
 ## Supporting Wallets
 
-- Valora [iOS](https://vlra.app/webappstore) [Android](https://vlra.app/webplaystore))
+- Valora 
+  - [iOS](https://vlra.app/webappstore) 
+  - [Android](https://vlra.app/webplaystore))
 
 ## Requirements
 

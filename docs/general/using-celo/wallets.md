@@ -16,9 +16,20 @@ Celo-optimized wallets provide built-in support for Celo and make use of its uni
 
 How to Get Started with MiniPay:
 
-1. **Download Opera Mini**: Get the Opera Mini browser for free from the Google Play Store.
+1. **Download Opera Mini**: Get the Opera Mini browser for free from the Google Play Store. 
 2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
 3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
+
+### MiniPay (standalone)
+
+[MiniPay](https://play.google.com/store/apps/details?id=com.opera.minipay) is a stablecoin-based non-custodial wallet now also available as a standalone dapp. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser, all while consuming less than 2MB of data.
+
+How to Get Started with MiniPay:
+
+1. **Download Opera Mini**: Get the Opera Mini browser for free from the Google Play Store. 
+2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
+3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
+
 
 ### Valora
 
