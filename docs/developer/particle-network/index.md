@@ -81,7 +81,7 @@ export const ParticleConnectkit = ({ children }: React.PropsWithChildren) => {
 };
 ```
 
-This setup initializes the `ParticleConnectKit` component with your project keys and defines key SDK configurations, such as supported chains (Celo and Alfajores), wallet positioning, and visibility options.
+This setup initializes the `ParticleConnectKit` component—a wrapper for the configured `ConnectKitProvider` instance—using your project keys and defining essential SDK settings. These settings include supported blockchain networks (Celo and Alfajores), wallet positioning, and visibility options for an optimal user experience.
 
 For further customization options, refer to the [Particle Connect documentation](https://developers.particle.network/api-reference/connect/desktop/web#configuration).
 
