@@ -94,7 +94,7 @@ Add the following configuration to `foundry.toml` file in the root level of your
 
 ```toml
 [rpc_endpoints]
-celo-alfajores = "https://alfajores-forno.celo-testnet.org"
+celo-alfajores = "https://forno.alfajores.celo-testnet.org/"
 celo = "https://forno.celo.org"
 ```
 

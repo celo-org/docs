@@ -38,7 +38,7 @@ let totalBalance = await kit.getTotalBalance(myAddress);
 
 Deploying a contract with the default account already set. Simply send a transaction with no `to:` field. See more about sending custom transactions below.
 
-You can verify the deployment on the [Alfajores block explorer here](https://alfajores-blockscout.celo-testnet.org/). Wait for the receipt and log it to get the transaction details.
+You can verify the deployment on the [Alfajores block explorer here](https://celo-alfajores.blockscout.com/). Wait for the receipt and log it to get the transaction details.
 
 ```ts
 let bytecode = "0x608060405234..."; // compiled Solidity deployment bytecode

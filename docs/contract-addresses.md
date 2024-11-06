@@ -58,7 +58,7 @@ celocli network:contracts --node https://forno.celo.org
 ## Alfajores Testnet
 
 ```jsx
-celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+celocli network:contracts --node https://forno.alfajores.celo-testnet.org/
 ```
 
 | Contract                 | Proxy                                      |

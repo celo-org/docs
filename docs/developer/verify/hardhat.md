@@ -29,7 +29,7 @@ Add the following configuration to the `config` object in `hardhat.config.js`.
     networks: {
         alfajores: {
             // can be replaced with the RPC url of your choice.
-            url: "https://alfajores-forno.celo-testnet.org",
+            url: "https://forno.alfajores.celo-testnet.org/",
             accounts: [
                 "<YOUR_PRIVATE_KEY>"
             ],

@@ -38,7 +38,7 @@ You will need Celo (not ETH) in your account to deploy the contract.
 :::
 
 ```bash
-forge create src/Counter.sol:Counter --rpc-url https://alfajores-forno.celo-testnet.org --private-key [PRIVATE_KEY]
+forge create src/Counter.sol:Counter --rpc-url https://forno.alfajores.celo-testnet.org/ --private-key [PRIVATE_KEY]
 ```
 
 On successful deployment, you should see a similar output in your terminal.

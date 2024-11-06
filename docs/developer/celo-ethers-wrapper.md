@@ -33,7 +33,7 @@ Connect to the network by creating a `CeloProvider`, which is based on [JsonRpc-
 import { CeloProvider } from "@celo-tools/celo-ethers-wrapper";
 
 // Connecting to Alfajores testnet
-const provider = new CeloProvider("https://alfajores-forno.celo-testnet.org");
+const provider = new CeloProvider("https://forno.alfajores.celo-testnet.org/");
 await provider.ready;
 ```
 

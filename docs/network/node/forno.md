@@ -52,13 +52,13 @@ wss://forno.celo.org/ws
 ### Alfajores Testnet
 
 ```bash
-https://alfajores-forno.celo-testnet.org
+https://forno.alfajores.celo-testnet.org/
 ```
 
 Websocket support:
 
 ```bash
-wss://alfajores-forno.celo-testnet.org/ws
+wss://forno.alfajores.celo-testnet.org/ws
 ```
 
 ### Websocket connections & Event listeners

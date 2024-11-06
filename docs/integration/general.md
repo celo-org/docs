@@ -54,7 +54,7 @@ As Forno is a public node you will have to sign transactions locally because wit
 Forno networks:
 
 ```
-Alfajores = 'https://alfajores-forno.celo-testnet.org'
+Alfajores = 'https://forno.alfajores.celo-testnet.org/'
 
 Baklava = 'https://baklava-forno.celo-testnet.org'
 
@@ -66,7 +66,7 @@ Mainnet = 'https://forno.celo.org'
 We also expose data on the cLabs run blockscout instance. Blockscout itself exposes an API.
 
 ```
-Alfajores = 'https://alfajores-blockscout.celo-testnet.org'
+Alfajores = 'https://celo-alfajores.blockscout.com'
 
 Baklava = 'https://baklava-blockscout.celo-testnet.org'
 

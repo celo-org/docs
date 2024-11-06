@@ -58,7 +58,7 @@ EXAMPLES
 
   set --node baklava # alias for https://baklava-forno.celo-testnet.org
 
-  set --node alfajores # alias for https://alfajores-forno.celo-testnet.org
+  set --node alfajores # alias for https://forno.alfajores.celo-testnet.org/
 
   set --node localhost # alias for `local`
 

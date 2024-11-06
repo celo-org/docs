@@ -25,7 +25,7 @@ Make sure to also have Celo RPC configuration in `foundry.toml` file, here it is
 
 ```toml
 [rpc_endpoints]
-celo-alfajores = "https://alfajores-forno.celo-testnet.org"
+celo-alfajores = "https://forno.alfajores.celo-testnet.org/"
 celo = "https://forno.celo.org"
 ```
 

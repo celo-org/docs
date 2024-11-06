@@ -37,7 +37,7 @@ const alfajores = {
   name: 'Alfajores',
   currency: 'CELO',
   explorerUrl: 'https://explorer.celo.org/alfajores',
-  rpcUrl: 'https://alfajores-forno.celo-testnet.org'
+  rpcUrl: 'https://forno.alfajores.celo-testnet.org/'
 }
 
 // 3. Create modal
