@@ -104,12 +104,12 @@ module.exports = {
         },
         {
           to: "build/",
-          label: "Build on Celo",
+          label: "Get Started",
           position: "left",
         },
         {
           to: "developer/",
-          label: "Developers",
+          label: "Build on Celo",
           position: "left",
         },
         {
@@ -123,6 +123,10 @@ module.exports = {
           position: "left",
           items: [
             {
+              to: "protocol/",
+              label: "Protocol",
+            },
+            {
               to: "validator/",
               label: "Validators",
             },
@@ -134,20 +138,7 @@ module.exports = {
               to: "cli/",
               label: "CLI",
             },
-            {
-              to: "protocol/",
-              label: "Protocol",
-            },
-            {
-              to: "https://celo.academy/c/tutorials/4",
-              label: "Tutorials",
-              target: "_blank",
-            },
-            { to: "showcase", label: "DApps" },
-            {
-              to: "community/guidelines",
-              label: "Community",
-            },
+            { to: "https://www.celopg.eco/ecosystem", label: "dApps", target: "_blank" },
           ],
         },
         {
