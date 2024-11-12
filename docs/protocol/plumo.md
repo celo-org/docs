@@ -54,7 +54,7 @@ The Plumo MPC setup is broken up into two phases:
 - Phase 2 - Plumo circuit
   - In this phase, the participants contribute to the Plumo circuit keys, which would be used by provers to create proofs and verifiers to verify them.
 
-Phase 1 will take place starting early December 2020, and continue until January 2021. It will consist of multiple rounds of 6–10 contributors each running the Plumo setup for approximately 36 hours. While much of the activity is passive and involves simply running the computation continuously, contributors should not expect to use their machines for other intensive activies through the duration of the setup.
+Phase 1 will take place starting early December 2020, and continue until January 2021. It will consist of multiple rounds of 6–10 contributors each running the Plumo setup for approximately 36 hours. While much of the activity is passive and involves simply running the computation continuously, contributors should not expect to use their machines for other intensive activities through the duration of the setup.
 
 Phase 2 will commence roughly a month after Phase 1.
 
@@ -74,7 +74,7 @@ You can run the contributor software locally or on cloud VMs, but desktop machin
 - Operating system: Linux, macOS, Windows
 - Recommended internet connection speed: 10Mbit upload
 
-With these kind of machines, participiation in the setup should take around 30 hours, potentially a bit more or much less, depending on your specific hardware and internet connection.
+With these kind of machines, participation in the setup should take around 30 hours, potentially a bit more or much less, depending on your specific hardware and internet connection.
 
 ## Running the Setup
 
@@ -129,7 +129,7 @@ cLabs is running the coordinator server, which has a list of approved participan
 
 - You will be asked for your passphrase - enter the same one from earlier.
   - Follow the same process from earlier when prompted for additional entropy.
-- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are succesfully running the contributor binary.
+- Wait until you see 0/256 on the progress bar. This means that your contribution has started, and you are successfully running the contributor binary.
 
 Once this is running, you can leave the machine running -- no direct action is needed. This will run for about ~36 hours, after which the software will terminate running and you will have finished contributing to the Plumo setup!
 
