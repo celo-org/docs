@@ -41,7 +41,7 @@ For Alfajores, here are the related assets:
 
 ### Can I use an RPC endpoint with Alfajores?
 
-- Ethereum JSON-RPC endpoint: [https://forno.alfajores.celo-testnet.org/](https://alfajores-forno.celo-testnet.org) (op-geth kind)
+- Ethereum JSON-RPC endpoint: [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org) (op-geth kind)
 - OP RPC endpoint: [https://op.alfajores.celo-testnet.org/](https://op.alfajores.celo-testnet.org/) (op-node kind)
 
 ### Is there an Alfajores faucet? Where? How do I get funds?
