@@ -46,7 +46,7 @@ Celo is optimized for mobile devices, making blockchain accessible to billions o
 Celo is committed to environmental sustainability, offsetting more carbon than it produces.
 
 - **Proof-of-Stake**: Celo uses an energy-efficient consensus mechanism that avoids energy-intensive mining, reducing its carbon footprint.
-- **Ultragreen-Money**: A portion of every transaction feengoes towards carbon offsetting and sustainability projects, supporting environmental efforts with every transaction.
+- **Ultragreen-Money**: A portion of every transaction fee goes towards carbon offsetting and sustainability projects, supporting environmental efforts with every transaction.
 
 ## Understanding the Celo Ecosystem
 
