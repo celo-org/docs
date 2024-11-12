@@ -326,6 +326,8 @@ docker run -d \
     --snapshot=true \
     --maxpeers=60 \
     --port=30303 \
+    --rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org \
+    --rollup.disabletxpoolgossip=true \
     --authrpc.addr=127.0.0.1 \
     --authrpc.port=8551 \
     --authrpc.jwtsecret=/datadir/jwt.hex \
