@@ -75,7 +75,7 @@ See [Celo L2 Specification](https://specs.celo.org/root.html).
 
 ### What are the costs for L1 data and how are they paid?
 
-For the testnet L1 data fees are covered by us, see [Zero L1 fees](https://specs.celo.org/tx_fees.html#zero-l1-fees) for more details.
+For the testnet L1 data fees are covered by us, see [this section on L1 fees](docs/cel2/whats-changed/op-l2#l1-fees) for more details.
 
 ### I saw EigenDA mentioned, is it used?
 
