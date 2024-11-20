@@ -94,7 +94,7 @@ For more details, see the [Alfajores specifications](https://specs.celo.org/root
 
 - CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html).
 - Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html).
-- Epoch rewards? Supported in Alfajores and Mainnet, see [Epochs and Rewards](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards.).
+- Epoch rewards? Supported in Alfajores and Mainnet, see [Epochs and Rewards](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ## Not sure what you need to do?
 
