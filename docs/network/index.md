@@ -36,14 +36,11 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava Testnet.
 | Network Status             | [https://alfajores-celostats.celo-testnet.org](https://alfajores-celostats.celo-testnet.org)                                                                                                                                                                                                                                                                                                                                                                                            |
 | Faucet Link                | <p>[https://faucet.celo.org](https://faucet.celo.org)</p><p>For large Faucet requests you can apply [here](https://docs.google.com/forms/d/e/1FAIpQLSfpt3WikYt5-TsDHmUgfFCbZjmZMcWr9bO5H0csHcmMrl9sFw/viewform).</p>                                                                                                                                                                                                                                                                    |
 
-
-
 :::info
 
 Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaimer](/network/alfajores/disclaimer).
 
 :::
-
 
 ## Baklava
 
@@ -52,6 +49,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 | Network Name              | Baklava                                                                                                              |
 | Description               | The Node Operator Testnet network                                                                                    |
 | Currency Symbol           | CELO                                                                                                                 |
+| Chain ID                  | 62320                                                                                                                |
 | RPC Endpoint (best effort | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org)                                     |
 | RPC Nodes                 | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet) |
 | Block Explorer            | [https://baklava-blockscout.celo-testnet.org](https://baklava-blockscout.celo-testnet.org)                           |
