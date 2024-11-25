@@ -75,7 +75,7 @@ See [Celo L2 Specification](https://specs.celo.org/root.html).
 
 ### What are the costs for L1 data and how are they paid?
 
-For the testnet L1 data fees are covered by us.
+For the testnet L1 data fees are covered by us, see [this section on L1 fees](docs/cel2/whats-changed/op-l2.md#l1-fees) for more details.
 
 ### I saw EigenDA mentioned, is it used?
 
@@ -92,9 +92,9 @@ For more details, see the [Alfajores specifications](https://specs.celo.org/root
 
 ## What happened to these features?
 
-- CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html)
-- Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html)
-- Epoch rewards? Supported in Alfajores and Mainnet
+- CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html).
+- Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html).
+- Epoch rewards? Supported in Alfajores and Mainnet, see [Epochs and Rewards](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
 
 ## Not sure what you need to do?
 
