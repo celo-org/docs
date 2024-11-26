@@ -1258,6 +1258,7 @@ const sidebars = {
         'cel2/whats-changed/op-l2'
       ],
     },
+    { type: "doc", label: "Bringing CELO", id: "cel2/bridging/bridging-celo-from-holesky-to-alfajores-using-viem" },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
   ],
