@@ -44,7 +44,7 @@ MiniPay is a non-custodial 2MB wallet that allows users to send and receive stab
 
 ### [Othello Wallet](https://celowallet.app/setup)
 
-Othello Wallet (formally know as CeloWallet) is a lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
+Othello Wallet (formally known as CeloWallet) is a lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
 
 - Platforms: Web, MacOS, Linux, Windows
 - Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
@@ -170,5 +170,5 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 
 ### [El Dorado](https://eldorado.io/)
 
-- Countries: Argentina, Brazilm, Colombia, Panama, Peru, Venezuela
+- Countries: Argentina, Brazil, Colombia, Panama, Peru, Venezuela
 - Platforms: Android, iOS
