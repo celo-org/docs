@@ -27,7 +27,7 @@ This tutorial will go over:
 
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/remix-environment.png" alt="environment" width="400" />
 
-4. Enter the Alfajores testnet Band reference data aggregator contract address [`0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc`](https://docs.bandchain.org/develop/supported-blockchains/#testnets) to the `DemoOracle` constructor and deploy the contract. You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://docs.bandchain.org/develop/supported-blockchains/#mainnets). Make sure you check the current address on their page, as it might happen that they updated their reference contract and then your orcale data will not be correct anymore. 
+4. Enter the Alfajores testnet Band reference data aggregator contract address [`0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc`](https://docs.bandchain.org/develop/supported-blockchains/#testnets) to the `DemoOracle` constructor and deploy the contract. Alternatively, you can use the Alfajores Testnet proxy contract address 0x3d00deA966314E47aC3D4ACd2f00121351Cec1C5. You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://docs.bandchain.org/develop/supported-blockchains/#mainnets). Make sure you check the current address on their page, as it might happen that they updated their reference contract and then your orcale data will not be correct anymore. 
 
 <ImageWrapper path="/img/doc-images/band-protocol-how-to/deploy.png" alt="environment" />
 
@@ -54,6 +54,9 @@ The "savePrice" function will save any base/quote rate that is passed to it in t
 ## Mainnet Reference Data Contract
 
 You can access the reference data aggregator contract on mainnet at [`0xDA7a001b254CD22e46d3eAB04d937489c93174C3`](https://docs.bandchain.org/develop/supported-blockchains/#mainnets).
+
+You can access the proxy contract address on Alfajores Testnet 0x3d00deA966314E47aC3D4ACd2f00121351Cec1C5
+
 
 ## Available Reference Data
 
