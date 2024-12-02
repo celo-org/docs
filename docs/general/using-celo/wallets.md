@@ -3,7 +3,7 @@ title: Wallets
 ---
 
 Celo is designed to work seamlessly with a range of wallets, each offering features to meet different user needs. This section provides an overview on how you can use Celo with various types of wallets.
-For a more comprehensive list, have a look at [Celo Wallets](/wallet/index).
+For a more comprehensive list, have a look at [Celo Wallets](docs/wallet/index.md).
 
 ---
 
