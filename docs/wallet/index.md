@@ -23,45 +23,43 @@ The [Celo Native Wallets](#celo-native-wallets) section shows some popular walle
 
 ### [Valora](https://valora.xyz/)
 
-Valora is a mobile wallet focused on making global peer-to-peer payments simple and accessible to anyone. It supports the Celo Identity Protocol which allows users to verify their phone number and send payments to their contacts.
+Valora is a non-custodial multichain mobile wallet focused on helping users save, earn, and send their crypto. It supports Celo's ability to pay for transactions with stablecoins, supports Wallet Connect, and has a built in swap experience that works across chains. It also lets users verify their phone number and send payments to their contacts.
 
-- [valoraapp.com](https://valora.xyz/)
-
+- Homepage: [valora.xyz](https://valora.xyz/)
 - Platforms: iOS, Android
 - Maintainers: [Valora](https://valora.xyz/)
 - Ledger support: No
 - [Source Code](https://github.com/valora-inc/wallet)
 
-
 ### [MiniPay](https://www.opera.com/products/minipay)
 
-MiniPay is a non-custodial 2MB wallet that allows users to send and receive stablecoins with meager transaction fees—less than 1 cent. It was first launched in Africa to assist people in sending and receiving stablecoins using mobile numbers.
+MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers.
 
-- Countries: Ghana, Nigeria, Kenya, South Africa, Uganda
-- Platforms: Android
+- Homepage: [opera.com/products/minipay](https://www.opera.com/products/minipay)
+- Platforms: Android, iOS (testflight only)
 - Maintainers: Opera
 - Ledger support: No
-
-### [Othello Wallet](https://celowallet.app/setup)
-
-Othello Wallet (formally known as CeloWallet) is a lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
-
-- Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
-- Ledger support: Yes
-- [Source Code](https://github.com/jmrossy/celo-web-wallet)
+- Supported tokens: cUSD, USDT, and USDC
 
 ### [Celo Terminal](https://celoterminal.com/)
 
-### Celo Terminal
+Celo Terminal is a desktop wallet and DApp platform. It supports wallet connect, and has a built in swap experience. It aims to be a hub for installing and running Celo DApps locally on your desktop.
 
-
-Celo Terminal is a wallet and DApp platform. It aims to be a hub for installing and running Celo DApps locally on your desktop.
-
+- Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://twitter.com/wotrust1)
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
+
+### [Othello Wallet](https://celowallet.app/setup)
+
+Othello Wallet (formally known as CeloWallet) is a lightweight, wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
+
+- Homepage: [celowallet.app](https://celowallet.app/setup)
+- Platforms: Web, MacOS, Linux, Windows
+- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
+- Ledger support: Yes
+- [Source Code](https://github.com/jmrossy/celo-web-wallet)
 
 
 ### [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
@@ -76,10 +74,9 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 
 ### [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
 
-### Enkrypt
-
 Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
 
+- Homepage: [enkrypt.com](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
 - Platforms: Chrome, Brave, Firefox, Safari, Opera
 - Maintainers: [MyEtherWallet](https://www.myetherwallet.com/)
 - [Source Code](https://github.com/enkryptcom/enKrypt)
@@ -88,6 +85,7 @@ Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wa
 
 Omni (formally known as Steakwallet) is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
 
+- Homepage: [omni.app](https://omni.app/)
 - Platforms: Android, iOS
 - Maintainers: [Omni](https://omni.app/)
 - [Source Code](https://github.com/steakwallet)
@@ -102,22 +100,19 @@ You can learn more about connecting Metamask to the Celo network [here](/wallet/
 
 - Platforms: Browser, iOS, Android
 
-### [Wallet Connect](https://walletconnect.org/)
+### [Wallet Connect](https://walletconnect.org)
 
 Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 1, so dapp developers should use V1 as well.
 
 - Platforms: Browser, iOS, Android
 - [Source Code](https://github.com/WalletConnect)
-
   
-### [Wigwam Wallet](https://wigwam.app)
-
 ### Dove Wallet
 
 - [dovewallet.com](https://dovewallet.com)
 - Platforms: Web
 
-### Wigwam Wallet
+### [Wigwam Wallet](https://wigwam.app)
 
 - Platforms: Browser, Web
 - [Source Code](https://github.com/wigwamapp/wigwam)
@@ -125,7 +120,6 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 ### [Pesabase](https://pesabase.com/)
 
 - Platforms: iOS, Android
-
 
 ### [D’CENT](https://dcentwallet.com/)
 
@@ -151,7 +145,6 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 ### [Coinprofile](https://coinprofile.co/)
 
 - Countries: Nigeria
-
 
 ### Bitmama
 
