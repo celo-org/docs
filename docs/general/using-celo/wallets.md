@@ -8,7 +8,7 @@ Celo is designed to work seamlessly with a range of wallets, each offering featu
 
 ## Celo Optimized Wallets
 
-Celo-optimized wallets provide built-in support for Celo and make use of its unique features. These wallets allow users to fully benefit from Celo’s native functionalities, such as phone number mapping, ultra-light mobile clients, and fee abstraction.
+Celo-optimized wallets provide built-in support for Celo and make use of its unique features. These wallets allow users to fully benefit from Celo’s native functionalities, such as phone number mapping and fee abstraction.
 
 ### Opera MiniPay
 

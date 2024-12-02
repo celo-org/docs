@@ -933,11 +933,6 @@ const sidebars = {
           label: "Locating Nodes",
           id: "protocol/consensus/locating-nodes",
         },
-        {
-          type: "doc",
-          label: "Ultralight Sync",
-          id: "protocol/consensus/ultralight-sync",
-        },
       ],
     },
     {
@@ -1052,11 +1047,6 @@ const sidebars = {
       type: "doc",
       label: "Celo Randomness",
       id: "protocol/randomness",
-    },
-    {
-      type: "doc",
-      label: "Ultralight Client",
-      id: "protocol/plumo",
     },
     {
       type: "category",

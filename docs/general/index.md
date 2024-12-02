@@ -33,7 +33,6 @@ Celo is designed with features that lower the entry barrier for those new to cry
 
 Celo is optimized for mobile devices, making blockchain accessible to billions of smartphone users worldwide.
 
-- **Ultralight Client**: Celo’s lightweight client allows fast transactions on mobile phones without needing to download large amounts of data, ideal for areas with limited internet.
 - **Phone number mapping**: Celo’s native protocol Social Connect, links wallets to phone numbers, making it easy to send and receive payments using just a phone number.
 
 #### Optimized for Global Reach:
@@ -91,7 +90,6 @@ Celo is an emerging Ethereum Layer-2 and mobile-first blockchain network built f
 - [Proof-of-stake](https://medium.com/celoorg/celos-proof-of-stake-mechanism-31061fbebea)
 - [Carbon negative](https://medium.com/celoorg/cryptocurrency-for-a-beautiful-planet-e47299dfb1c3)
 - [Mobile-first identity](protocol/identity/odis)
-- [Ultra-light clients](protocol/plumo)
 - [Localized stablecoins (cUSD, cEUR, cREAL, cKES)](https://medium.com/celoorg/celo-launches-the-creal-stablecoin-11da0d560c1c](https://app.mento.org/))
 - [Gas payable in multiple currencies](protocol/transaction/erc20-transaction-fees)
 
