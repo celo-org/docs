@@ -9,6 +9,12 @@ How to run a full node on the Alfajores Network using a prebuilt Docker image.
 
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ## What is a Full Node?
 
 Full nodes play a special purpose in the Celo ecosystem, acting as a bridge between the mobile wallets \(running as light clients\) and the validator nodes.
