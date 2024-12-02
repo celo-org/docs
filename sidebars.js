@@ -399,18 +399,13 @@ const sidebars = {
           items: [
             {
               type: "link",
-              label: "Network Stats",
-              href: "https://dune.com/celo/celo-blockchain-overview",
-            },
-            {
-              type: "link",
               label: "Blockscout",
               href: "https://explorer.celo.org/",
             },
             {
               type: "link",
               label: "Celoscan",
-              href: "https://celoscan.xyz/",
+              href: "https://celoscan.io/",
             },
           ],
         },
