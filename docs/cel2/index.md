@@ -35,7 +35,7 @@ These dates are subject to change. This documentation will be continuously updat
 - The Dango Testnet announced on the 7th of July 2024, Celo’s first L2 public test network, went live. Dango allowed developers and infrastructure providers to familiarize themselves with the L2 environment. It was shut down on the 9th of October 2024.
 
 #### 26th September, 2024: Alfajores L2 Testnet Launch
-- The Celo L2 testnet, Alfajores, went live! This provides a testing environment for node operators and developers to ensure compatibility before the mainnet launch.
+- The Celo L2 testnet, Alfajores, went live! This provides a testing environment for node operators and developers to ensure compatibility before the Mainnet launch.
 
 #### October 2024: Code Freeze and Audits
 - The core dev team will freeze all feature development by October 14th. All further development will focus on bug fixes and partner support.
@@ -44,7 +44,7 @@ These dates are subject to change. This documentation will be continuously updat
 - Using the final audited release, the Celo validator community will perform a dry run of the L2 upgrade on the Baklava network.
 
 #### Mid-January 2025: Celo L2 Mainnet Launch
-- Following a successful Baklava upgrade, the Celo L2 mainnet will officially launch. All nodes must be updated by this time to avoid disruption. Further announcements will confirm the exact date.
+- Following a successful Baklava upgrade, the Celo L2 Mainnet will officially launch. All nodes must be updated by this time to avoid disruption. Further announcements will confirm the exact date.
 
 ## Useful Links
 

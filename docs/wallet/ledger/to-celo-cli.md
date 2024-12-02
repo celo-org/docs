@@ -132,7 +132,7 @@ Then, simply append the `--useLedger` flag to any `celocli` commands with which 
 In order to view your account Balance on your Ledger with `celocli`, you need to run the following command:
 
 ```sh
-# If you haven't set the node config to mainnet, do it first
+# If you haven't set the node config to Mainnet, do it first
 celocli config:set --node=https://forno.celo.org
 celocli account:balance <your-address>
 ```

@@ -47,7 +47,7 @@ A form of consensus algorithm in which up to a third of participants can be faul
 
 ## cLabs, Celo Labs
 
-The team that, before mainnet release, has worked closely to develop and shape the Celo protocol and Celo Wallet application with the input of the larger Celo Community.
+The team that, before Mainnet release, has worked closely to develop and shape the Celo protocol and Celo Wallet application with the input of the larger Celo Community.
 
 ## Carbon Offsetting Fund
 
@@ -213,7 +213,7 @@ The system that determines the participants in a Byzantine Fault Tolerant consen
 
 ## RC1
 
-RC1, which stands for Release Candidate 1, was the first network that had the potential to become the Celo mainnet. It was promoted to Mainnet after the Celo community voted to enable [CELO](#celo-native-asset) transfers on the network on May 18, 2020.
+RC1, which stands for Release Candidate 1, was the first network that had the potential to become the Celo Mainnet. It was promoted to Mainnet after the Celo community voted to enable [CELO](#celo-native-asset) transfers on the network on May 18, 2020.
 
 ## Savings Circle
 

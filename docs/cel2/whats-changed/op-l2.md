@@ -11,7 +11,7 @@ The native token is CELO as opposed to ETH. The native token is also an ERC20 to
 
 Type 123 (`0x7b`) transaction type allows paying for gas in currencies other than the native asset (CELO). It has an additional field `feeCurrency` which allows the sender to chose the currency they pay gas in a chosen fee currency. See [here](https://specs.celo.org/fee_abstraction.html) for details on using fee currencies.
 
-The fee currencies available at mainnet launch will be:
+The fee currencies available at Mainnet launch will be:
 
  - USDC (USDC)
  - Tether USD (USD₮)

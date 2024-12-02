@@ -145,7 +145,7 @@ Featuring open access to a Public RPC API layer, Ankr Protocol provides reliable
 
 ### All That Node
 
-All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
+All That Node supports public and private RPC nodes for Mainnet, Alfajores and Baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim Alfajores funds from the faucet in the site without signing up or any time-consuming auth.
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 
