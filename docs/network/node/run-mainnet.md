@@ -106,7 +106,7 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Network Stats](https://stats.celo.org) or [Block Explorer](https://explorer.celo.org/) pages.
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting the [Block Explorer](https://explorer.celo.org/).
 
 :::danger
 
