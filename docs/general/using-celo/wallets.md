@@ -3,37 +3,33 @@ title: Wallets
 ---
 
 Celo is designed to work seamlessly with a range of wallets, each offering features to meet different user needs. This section provides an overview on how you can use Celo with various types of wallets.
+For a more comprehensive list, have a look at [Celo Wallets](/wallet/index).
 
 ---
 
-## Celo Optimized Wallets
+## Celo Native Wallets
 
-Celo-optimized wallets provide built-in support for Celo and make use of its unique features. These wallets allow users to fully benefit from Celo’s native functionalities, such as phone number mapping, ultra-light mobile clients, and fee abstraction.
+Celo native wallets provide built-in support for Celo and make use of its unique features. These wallets allow users to fully benefit from Celo’s native functionalities, such as phone number mapping and fee abstraction.
 
-### Opera MiniPay
+### [MiniPay](https://www.opera.com/products/minipay)
 
-[MiniPay](https://www.opera.com/products/minipay) is a stablecoin-based non-custodial wallet natively integrated into the Opera Mini Android browser. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser, all while consuming less than 2MB of data.
+Opera MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins (cUSD, USDT, and USDC) with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers. It is now also available as a standalone app on Android; iOS is coming soon.
 
-How to Get Started with MiniPay:
+How to Get Started with MiniPay within the Opera browser:
 
-1. **Download Opera Mini**: Get the Opera Mini browser for free from the Google Play Store. 
+1. **Download Opera Mini**: [Get the Opera Mini browser for free from the Google Play Store](https://play.google.com/store/apps/details?id=com.opera.mini.native). 
 2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
 3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
 
-### MiniPay (standalone)
+How to Get Started with the MiniPay Android app:
 
-[MiniPay](https://play.google.com/store/apps/details?id=com.opera.minipay) is a stablecoin-based non-custodial wallet now also available as a standalone dapp. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser, all while consuming less than 2MB of data.
-
-How to Get Started with MiniPay:
-
-1. **Download Opera Mini**: Get the Opera Mini browser for free from the Google Play Store. 
-2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
+1. **Download MiniPay**: [Get the MiniPay app for free from the Google Play Store](https://play.google.com/store/apps/details?id=com.opera.minipay). 
+2. **Create an Account**: Open the app and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
 3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
 
+### [Valora](https://valora.xyz/)
 
-### Valora
-
-[Valora](https://valora.xyz/) is a mobile wallet optimized for the Celo blockchain. It enables users to exchange and securely store digital assets on a mobile phone. ​​Valora supports both Celo and other Ethereum networks.
+Valora is a mobile wallet optimized for the Celo blockchain. It enables users to exchange and securely store digital assets on a mobile phone. ​​Valora supports both Celo and other Ethereum networks.
 
 How to use Celo on Valora:
 
@@ -41,8 +37,6 @@ How to use Celo on Valora:
 2. **Set Up Account**: Create a new account or recover an existing one.
 3. **Verify Phone Number**: Complete phone verification for easy transactions.
 4. **Start Using Celo**: Begin sending, receiving and using dApps.
-
-
 
 ## Other Wallets
 
