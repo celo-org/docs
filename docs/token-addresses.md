@@ -24,7 +24,7 @@ Token addresses for Celo assets on Mainnet, Alfajores Testnet, and Baklava Testn
 - **cEUR:** `0x10c892a6ec43a53e45d0b916b4b7d383b1b78c0f`
 - **cREAL**: `0xE4D517785D091D3c54818832dB6094bcc2744545`
 
-## Baklava
+## Baklava Testnet
 
 - **CELO:** `0xdDc9bE57f553fe75752D61606B94CBD7e0264eF8`
 - **cUSD:** `0x62492A644A588FD904270BeD06ad52B9abfEA1aE`
