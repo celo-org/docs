@@ -13,7 +13,7 @@ Overview of digital wallets available to send, spend, and earn Celo assets.
 
 Celo is designed to work seamlessly with a range of wallets, each offering features to meet different user needs. 
 
-The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as phone number mapping and fee abstraction.
+The [Celo Native Wallets](#celo-native-wallets) section provides an overview of wallets that are optimized for the Celo network. These wallets allow users to fully benefit from Celo’s native functionalities, such as [phone number mapping](https://docs.celo.org/protocol/identity) and [fee abstraction](https://docs.celo.org/developer/fee-currency).
 
 The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an overview of commonly used wallets wallets that support the Celo network.
 
@@ -32,15 +32,16 @@ Valora is a mobile wallet designed to make global peer-to-peer payments by phone
 
 ### [MiniPay](https://www.opera.com/products/minipay)
 
-MiniPay is a stablecoin-based non-custodial wallet now also available as a standalone dapp. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser, all while consuming less than 2MB of data.
+MiniPay is a stablecoin-based non-custodial wallet integrated into Opera Mini and available as a standalone app. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser.
 
-- Platforms: [Android]([url](https://play.google.com/store/apps/details?id=com.opera.minipay&hl=en_US)), iOS (Coming Soon)
+- Platforms: Available on [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native&hl=en_US) in Ghana, Nigeria, Kenya, South Africa, and Uganda
+- Standalone Platforms: [Android]([url](https://play.google.com/store/apps/details?id=com.opera.minipay&hl=en_US)), iOS (Coming Soon)
 - Maintainers: Opera
 - Ledger support: No
 
 ### [Othello Wallet](https://celowallet.app/setup)
 
-Othello Wallet (formally known as CeloWallet) is a community-run, lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, staking, and governance.
+Othello Wallet (formally known as CeloWallet) is a community-run, lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, and governance.
 
 - Platforms: Web, MacOS, Linux, Windows
 - Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
@@ -49,7 +50,7 @@ Othello Wallet (formally known as CeloWallet) is a community-run, lightweight, m
 
 ### [Celo Terminal](https://celoterminal.com/)
 
-Celo Terminal is a wallet and DApp platform designed as a hub for managing and running Celo DApps locally.
+Celo Terminal is a wallet and dApp platform designed as a hub for managing and running Celo dApps locally.
 
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://twitter.com/wotrust1)
@@ -77,6 +78,13 @@ Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wa
 ## Celo Compatible Wallets
 
 Here’s an overview of popular wallets compatible with the Celo network. Note that some wallets do not support fee currency for gas payments with different tokens.
+
+### [Uniswap Wallet](https://wallet.uniswap.org/)
+
+A self-custody wallet with support for Celo.
+
+- Platforms: Available on [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile&referrer=af_tranid%3D3zCTM7eCySenzDw_WNMJxQ%26c%3Dextension_ga%26pid%3Dweb_extension_microsite) and as a browser extension for [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+
 
 ### [Metamask](https://metamask.io/)
 
