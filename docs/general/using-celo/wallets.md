@@ -15,16 +15,16 @@ Celo native wallets provide built-in support for Celo and make use of its unique
 
 Opera MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins (cUSD, USDT, and USDC) with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers. It is now also available as a standalone app on Android; iOS is coming soon.
 
-How to Get Started with MiniPay within the Opera browser:
-
-1. **Download Opera Mini**: [Get the Opera Mini browser for free from the Google Play Store](https://play.google.com/store/apps/details?id=com.opera.mini.native). 
-2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
-3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
-
 How to Get Started with the MiniPay Android app:
 
 1. **Download MiniPay**: [Get the MiniPay app for free from the Google Play Store](https://play.google.com/store/apps/details?id=com.opera.minipay). 
 2. **Create an Account**: Open the app and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
+3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
+
+How to Get Started with MiniPay within the Opera browser:
+
+1. **Download Opera Mini**: [Get the Opera Mini browser for free from the Google Play Store](https://play.google.com/store/apps/details?id=com.opera.mini.native). 
+2. **Create an Account**: Open the browser, go to MiniPay, and follow the prompts to create an account, with your google mail address and your phone number. (It will only be shown in the countries that it's live in, meaning where on and off-ramp providers are integrated.)
 3. **Explore dApps**: Use the built-in dApp discovery page to find and interact with various Celo-based applications.
 
 ### [Valora](https://valora.xyz/)
