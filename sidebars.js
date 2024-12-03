@@ -629,6 +629,7 @@ const sidebars = {
       label: "Indexers",
       items: [
         { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+        { type: "doc", label: "Envio", id: "developer/indexer/envio" },
       ],
     },
     {
