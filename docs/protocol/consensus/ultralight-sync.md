@@ -15,7 +15,7 @@ In addition to the **full**, **fast**, and **light** sync modes supported by Eth
 
 ## Ultralight Sync Speed
 
-Ultralight nodes download approximately 17,000 times fewer headers than light nodes in order to sync the latest block on Celo mainnet with 5-second block periods and 1-day epochs.
+Ultralight nodes download approximately 17,000 times fewer headers than light nodes in order to sync the latest block on Celo Mainnet with 5-second block periods and 1-day epochs.
 
 :::tip note
 

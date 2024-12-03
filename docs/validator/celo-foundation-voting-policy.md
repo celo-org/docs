@@ -50,7 +50,7 @@ To support effective and responsible validators, the Foundation considers the fo
 
 - **Uptime Performance.** High performance uptime score over the past 30 days on Mainnet (or Baklava if not elected on Mainnet)
 
-**Note**: If you are NOT ELECTED on Mainnet, you must be validating on Baklava testnet for at least 30 days. If you are ELECTED you must run validators and attestation service for at least one month (30 days) on Mainnet. If you are ELECTED on mainnet but for less than 30 days, you must be validating on Baklava for 30 days at least.
+**Note**: If you are NOT ELECTED on Mainnet, you must be validating on Baklava testnet for at least 30 days. If you are ELECTED you must run validators and attestation service for at least one month (30 days) on Mainnet. If you are ELECTED on Mainnet but for less than 30 days, you must be validating on Baklava for 30 days at least.
 
 ### Supporting Criteria
 

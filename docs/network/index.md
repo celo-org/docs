@@ -21,7 +21,7 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava Testnet.
 | Network Status             | [https://stats.celo.org](https://stats.celo.org)                                                                                                                                                |
 | Validator Explorer         | [https://validators.celo.org](https://validators.celo.org)                                                                                                                                      |
 
-## Celo Alfajores L2
+## Celo Alfajores L2 Testnet
 
 | Name                       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
-## Baklava
+## Celo Baklava Testnet
 
 | Name                      | Value                                                                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 | Chain ID                  | 62320                                                                                                                |
 | RPC Endpoint (best effort | [https://baklava-forno.celo-testnet.org](https://baklava-forno.celo-testnet.org)                                     |
 | RPC Nodes                 | [https://docs.celo.org/network/node/forno#baklava-testnet](https://docs.celo.org/network/node/forno#baklava-testnet) |
-| Block Explorer            | [https://baklava-blockscout.celo-testnet.org](https://baklava-blockscout.celo-testnet.org)                           |
+| Block Explorer            | [https://celo-baklava.blockscout.com/](https://celo-baklava.blockscout.com/)                           |
 | Network Status            | [https://baklava-celostats.celo-testnet.org](https://baklava-celostats.celo-testnet.org)                             |
 | Faucet Request Form       | [https://forms.gle/JTYkMAJWTAUQp1sv9](https://forms.gle/JTYkMAJWTAUQp1sv9)                                           |
 

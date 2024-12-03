@@ -3,6 +3,12 @@ title: Run an Alfajores Full Node on Celo
 description: How to run a full node on the Alfajores Network using a prebuilt Docker image.
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 # Run an Alfajores Full Node
 
 How to run a full node on the Alfajores Network using a prebuilt Docker image.
@@ -108,7 +114,7 @@ INFO [07-16|14:04:48.941] Imported new chain segment               blocks=335  t
 INFO [07-16|14:04:56.944] Imported new chain segment               blocks=472  txs=0   mgas=0.000  elapsed=8.003s mgasps=0.000 number=1927 hash=4f1010…1414c1 age=4h52m31s cache=2.34mB
 ```
 
-You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Alfajores Network Stats](https://alfajores-celostats.celo-testnet.org/) or [Alfajores Block Explorer]](https://alfajores-blockscout.celo-testnet.org/) pages.
+You will have fully synced with the network once you have pulled the latest block number, which you can lookup by visiting at the [Alfajores Network Stats](https://alfajores-celostats.celo-testnet.org/) or [Alfajores Block Explorer]](https://celo-alfajores.blockscout.com/) pages.
 
 :::danger
 
