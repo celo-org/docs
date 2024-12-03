@@ -20,7 +20,7 @@ Overview of Celo Mainnet, Alfajores L2 Testnet and Baklava Testnet.
 | Block Explorers            | <ul><li>[https://explorer.celo.org](https://explorer.celo.org)</li><li>[https://celoscan.io](https://celoscan.io)</li></ul>                                                                     |
 | Validator Explorer         | [https://validators.celo.org](https://validators.celo.org)                                                                                                                                      |
 
-## Celo Alfajores L2
+## Celo Alfajores L2 Testnet
 
 | Name                       | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 :::
 
-## Baklava
+## Celo Baklava Testnet
 
 | Name                      | Value                                                                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |

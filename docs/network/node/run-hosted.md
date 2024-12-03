@@ -9,6 +9,12 @@ How to get a preconfigured Celo blockchain node running on one of the major clou
 
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 ## Before getting started
 
 cLabs currently provides machine images for launching full and lightest nodes on Alfajores and Mainnet. These prebuilt images are updated with every release of the Celo blockchain client and are available on Amazon Web Services and Google Cloud Platform.

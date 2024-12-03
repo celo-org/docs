@@ -1,6 +1,6 @@
 ---
 title: Voting for Validator Groups
-description: Overview of Validator elections for validator groups including technical details, policies, and explorers.
+description: Overview of Validator elections for Validator groups including technical details, policies, and explorers.
 ---
 
 # Voting for Validator Groups
@@ -83,30 +83,16 @@ Validators and groups can also supply [verifiable DNS claims](/validator/validat
 
 :::
 
-### [Celo Validator Explorer](https://validators.celo.org) (cLabs)
+### [Celo Mondo Validator Explorer](https://mondo.celo.org/) ([cLabs](https://clabs.co))
 
-The Celo Validator Explorer has tabs to show either Mainnet or the Baklava Testnet.
-
-The list shows Validator Groups and, when you expand each group, the Validators that are affiliated to that group.
-
-A white check mark next to the name of a Validator Group shows that there is one or more DNS metadata claims verified for that group (see below).
-
-The Votes Available column shows:
-
-- On the left: Votes made for the group, as a percentage of the total Locked Gold
-
-- On the right: The voting cap of that group, as a percentage of the total Locked Gold
-
-- In the middle: votes made for the group as a proportion of the voting cap
-
-### [TheCelo](https://thecelo.com) (Bi23 Labs)
-
-TheCelo contains a range of valuable information on the Celo project and active Celo networks. The "Groups" tab shows a detailed view of Validator Groups. Click on a group to drilldown to see group metadata and affiliated Validators.
+The Celo Mondo "Staking" tab displays information for Mainnet Validators.
 
 ### [Celovote Scores](https://celovote.com/scores) (WOTrust | celovote.com)
 
-Celovote shows ranking of validator groups based on their estimated annual rate of return (ARR). Estimate is calculated based on past performance.
+Celovote shows a ranking of Validator groups based on their estimated annual rate of return (ARR).
+The estimate is calculated based on past performance.
 
-### [Vido](https://vido.atalma.io/block-map) ( [Atalma](https://www.atalma.io/) )
+### [Vido](https://vido.atalma.io/block-map) ([Atalma](https://www.atalma.io/))
 
-Vido is a block visualization and monitoring suite for Mainnet and Baklava testnet, showing missed blocks and downtime for the validator group set and subscribable metrics to get alerted if your validator is no longer signing.
+Vido is a block visualization and monitoring suite for Mainnet and the Baklava testnet.
+It shows missed blocks and downtime for the Validator group set and subscribable metrics to get alerted if your Validator is no longer signing.

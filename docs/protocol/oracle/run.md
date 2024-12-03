@@ -140,7 +140,7 @@ The oracle client supports metrics suitable for Prometheus. Available metrics an
 
 ## Monitoring
 
-There are two public dashboards deployed where the community can watch how individual oracle is performing on mainnet:
+There are two public dashboards deployed where the community can watch how individual oracle is performing on Mainnet:
 
 1. [One with high sampling but short timeframe](<https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-2d?orgId=2>)
 2. [One with low sampling but longer timeframe](<https://snapshots.raintank.io/dashboard/snapshot/sortedoracles(public)-now-1M?orgId=2>)

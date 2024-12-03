@@ -9,6 +9,12 @@ How to run on the Mainnet Network using a prebuilt Docker image.
 
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 :::tip Hosted Nodes
 
 If you'd prefer a simple, one click hosted setup for running a node on one of the major cloud providers (AWS and GCP), checkout our [hosted nodes](/network/node/run-hosted) documentation.

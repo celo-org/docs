@@ -88,7 +88,7 @@ El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the
 
 ### ReSource Network
 
-The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
+The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO Mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
 
 - [Website](https://resource.finance/)
 - [GitHub](https://github.com/ReSource-Network)

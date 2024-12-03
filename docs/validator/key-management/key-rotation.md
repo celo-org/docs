@@ -58,7 +58,7 @@ Please note that the BLS key will change along with the validator signer ECDSA k
 1. **Leave all validator and proxy nodes running** until the next epoch change. At the start the next epoch, the new Validator signer should take over participation in consensus.
 
 2. Verify that key rotation was successful. Here are some ways to check:
-   <!-- TODO: The following URL assumes that the user is running against the baklava network. This will need to be updated -->
+   <!-- TODO: The following URL assumes that the user is running against the Baklava network. This will need to be updated -->
 
 - Open `baklava-blockscout.celo-testnet.org/address/<SIGNER_TO_AUTHORIZE>/validations` to confirm that blocks are being proposed.
 - Open `baklava-celostats.celo-testnet.org` to confirm that your node is signing blocks.
