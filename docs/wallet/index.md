@@ -25,7 +25,7 @@ Valora is a mobile wallet designed to make global peer-to-peer payments by phone
 
 - [valoraapp.com](https://valora.xyz/)
 
-- Platforms: [iOS]([url](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263)), [Android]([url](https://play.google.com/store/apps/details?id=co.clabs.valora&hl=en_US))
+- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://app.adjust.com/ih0t0hf?redirect=https://play.google.com/store/apps/details?id=co.clabs.valora)
 - Maintainers: [Valora](https://valora.xyz/)
 - Ledger support: No
 - [Source Code](https://github.com/valora-inc/wallet)
@@ -35,7 +35,7 @@ Valora is a mobile wallet designed to make global peer-to-peer payments by phone
 MiniPay is a stablecoin-based non-custodial wallet integrated into Opera Mini and available as a standalone app. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser.
 
 - Platforms: Available on [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native&hl=en_US) in Ghana, Nigeria, Kenya, South Africa, and Uganda
-- Standalone Platforms: [Android]([url](https://play.google.com/store/apps/details?id=com.opera.minipay&hl=en_US)), iOS (Coming Soon)
+- Standalone Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay&hl=en_US), iOS (Coming Soon)
 - Maintainers: Opera
 - Ledger support: No
 
@@ -81,23 +81,25 @@ Here’s an overview of popular wallets compatible with the Celo network. Note t
 
 ### [Uniswap Wallet](https://wallet.uniswap.org/)
 
-A self-custody wallet with support for Celo.
+Uniswap Wallet is a self-custody wallet with support for Celo avaialble on iOS, Android, and as a browser extension for Chrome.
 
-- Platforms: Available on [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile&referrer=af_tranid%3D3zCTM7eCySenzDw_WNMJxQ%26c%3Dextension_ga%26pid%3Dweb_extension_microsite) and as a browser extension for [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile&referrer=af_tranid%3D3zCTM7eCySenzDw_WNMJxQ%26c%3Dextension_ga%26pid%3Dweb_extension_microsite), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+- Maintainers: [Uniswap](https://app.uniswap.org/)
+
+### [Trust Wallet](https://trustwallet.com/)
+
+Trust Wallet is a self-custody wallet with support for Celo available as a mobile app and extension on multiple browsers.
+
+-Platforms: [iOS](https://apps.apple.com/us/app/trust-crypto-bitcoin-wallet/id1288339409?mt=8), [Android](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph), 
 
 
-### [Metamask](https://metamask.io/)
+### [MetaMask](https://metamask.io/)
 
-You can learn more about connecting Metamask to the Celo network [here](/wallet/metamask/use).
+MetaMask is a self-custody wallet with support for Celo avaialble on iOS, Android, and as a browser extension for Chrome.
 
-- Platforms: Browser, iOS, Android
+You can learn more about connecting MetaMask to the Celo network [here](/wallet/metamask/use).
 
-### [Wallet Connect](https://walletconnect.org/)
-
-Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for connecting wallets to Dapps. Celo wallets are implementing Wallet Connect version 1, so dapp developers should use V1 as well.
-
-- Platforms: Browser, iOS, Android
-- [Source Code](https://github.com/WalletConnect)
+- Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask&hl=en_US)
 
 ### Dove Wallet
 
@@ -157,3 +159,10 @@ Strictly speaking, Wallet Connect is not a wallet; it is an open protocol for co
 
 - Countries: Argentina, Brazil, Colombia, Panama, Peru, Venezuela
 - Platforms: Android, iOS
+
+### [Wallet Connect](https://walletconnect.org/)
+
+WalletConnect is an open protocol for connecting wallets to dApps. Celo wallets support WalletConnect version 1, so dApp developers should also use version 1.
+
+- Platforms: Browser, iOS, Android
+- [Source Code](https://github.com/WalletConnect)
