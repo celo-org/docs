@@ -505,6 +505,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Reown",
+          id: "developer/reown/index",
+        },
+        {
+          type: "doc",
           label: "thirdweb SDK",
           id: "developer/thirdweb-sdk/index",
         },
