@@ -19,7 +19,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Building a mobile-first blockchain platform](https://www.youtube.com/watch?v=bp2loYXPhbM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc)
 - [Simplifying blockchain development with the Celo SDK](https://www.youtube.com/watch?v=Rg33B0E2DTM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=2)
 - [Proof of Stake](https://www.youtube.com/watch?v=YU80SLdD17Q&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=4)
-- [Plumo Towards Scalable Interoperable Blockchains Using Ultra Light Validation Sys](https://www.youtube.com/watch?v=8KlysQOaowU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=5)
 - [Celo Stability Protocol Walkthrough](https://www.youtube.com/watch?v=nzAdXJq8HoU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=6)
 - [Price Oracles](https://www.youtube.com/watch?v=WLtFSJ1lPc4&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=7)
 - [Valora](https://www.youtube.com/watch?v=xJbEjD4iuTo&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=8)
@@ -29,7 +28,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Developing & deploying your first DApp on Celo](https://www.youtube.com/watch?v=kO6Wm8pgKXU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=12)
 - [Building your first DApps on Celo, Part 2](https://www.youtube.com/watch?v=KjaH8H9ssvk&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=13)
 - [Feeless Onboarding](https://www.youtube.com/watch?v=uX70_mXl7Zc&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=14)
-- [Plumo Ceremony](https://www.youtube.com/watch?v=0HTkND1Lf2A&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=15)
 - [Cross Chain Interoperability](https://www.youtube.com/watch?v=2uBvMhxBBeU&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=16)
 - [Building your first DApps on Celo](https://www.youtube.com/watch?v=1E3j-fjZtKE&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=17)
 - [Porting existing Ethereum DApps onto Celo](https://www.youtube.com/watch?v=C6_8tze5Bw8&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=18)
@@ -145,7 +143,6 @@ Curated collection of Celo resources for developers, designers, dreamers, and do
 - [Celo at #EthDenver](https://www.youtube.com/watch?v=wxxc1xH1jCc&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=4)
 - [You Had Me At Celo - Marek Olszewski / Toss a CELO To Your Prestwicher: - James Prestwich](https://www.youtube.com/watch?v=HYPyF8bcoMw&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=5)
 - [Make it Mobile or Else](https://www.youtube.com/watch?v=rRwQYY0da-U&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=6)
-- [Plumo Ceremony](https://www.youtube.com/watch?v=VsAH4N92Au0&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=7)
 - [Celo Bounties at #ETHDenver](https://www.youtube.com/watch?v=WhY0fKXgKsg&list=PLsQbsop73cfFjAB66fE2oCQFLRVfqa2V9&index=8)
 
 ## #MakeitMobile Hackathon

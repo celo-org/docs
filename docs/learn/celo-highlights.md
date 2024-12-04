@@ -13,7 +13,7 @@ Summary of benefits, features, and data behind the Celo platform.
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD) and Celo Euros (cEUR) are stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
-The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/) and [ultralight mobile](/protocol/consensus/ultralight-sync) clients.
+The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/).
 
 **Innovative tools to build native mobile dApps:**
 
@@ -24,7 +24,6 @@ The Celo protocol also includes mechanisms for [lightweight identity](/protocol/
 - Proof-of-Stake
 - Open-source
 - Permissionless
-- High Speed Sync for Ultra-light Clients
 - Gas Payable in Multiple Stablecoins
 - Programmable (full EVM Compatibility)
 
@@ -75,10 +74,6 @@ Celo maintains a secure [decentralized mapping of phone numbers](/protocol/ident
 **Transaction Fees in Any Currency **
 
 Users can [pay transaction fees](/protocol/transaction/erc20-transaction-fees) in stable currencies so that they do not need to manage the balances of different currencies.
-
-**Immediate Syncing Even on Slow Connections**
-
-Extremely fast, secure [synchronization](/protocol/plumo) between mobile devices and the Celo network means that even wallet users with high latency, low bandwidth, or high-cost data tariffs can use Celo. Celo removes the need to check every header before a received header can be trusted. The performance will be further improved with BLS signature aggregation and succinct zero-knowledge proofs, via zk-SNARKs.
 
 **Proof-of-Stake**
 
