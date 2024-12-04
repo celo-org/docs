@@ -4,7 +4,7 @@ description: How to migrate Celo nodes from L1 to L2
 ---
 
 This guide is designed to help full node operators migrate from the Celo L1 to the Celo L2 client
-for the upcoming Layer 2 upgrades. Please note that the Celo mainnet instructions will be finalized
+for the upcoming Layer 2 upgrades. Please note that the Celo Mainnet instructions will be finalized
 after the Alfajores testnet upgrade occurs.
 
 
@@ -431,7 +431,7 @@ The following rpc endpoints will forward historical requests.
 
 ## Mainnet migration
 
-We haven't yet picked a migration date for upgrading the Celo mainnet to the Layer 2 codebase. Once
-a date is set, we will update this page with the mainnet migration instructions. The process will be
+We haven't yet picked a migration date for upgrading the Celo Mainnet to the Layer 2 codebase. Once
+a date is set, we will update this page with the Mainnet migration instructions. The process will be
 similar to the Alfajores migration. For now, feel free to refer to the Alfajores migration
 instructions as a reference and stay tuned for updates on the Mainnet migration process!

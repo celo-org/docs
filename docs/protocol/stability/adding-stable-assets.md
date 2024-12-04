@@ -76,7 +76,7 @@ Adding a new stable asset involves updating many parts of the tooling, such as:
 - Adding support on [kliento](https://github.com/celo-org/kliento).
 - Adding support on [eksportisto](https://github.com/celo-org/eksportisto).
 - Update on the cli, an example list of things to add are included on [this issue](https://github.com/celo-org/celo-monorepo/issues/6793).
-- Supporting alfajores faucet.
+- Supporting Alfajores faucet.
 - Supporting on Dapp kit.
 
 [^1] There are opened issues trying to de-couple the addition of new assets to the reserve to the release cycle.

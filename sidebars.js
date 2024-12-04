@@ -334,11 +334,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "Coinbase Wallet",
-          id: "wallet/coinbase-wallet",
-        },
-        {
           type: "link",
           label: "Staking",
           href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
@@ -399,18 +394,13 @@ const sidebars = {
           items: [
             {
               type: "link",
-              label: "Network Stats",
-              href: "https://dune.com/celo/celo-blockchain-overview",
-            },
-            {
-              type: "link",
               label: "Blockscout",
               href: "https://explorer.celo.org/",
             },
             {
               type: "link",
               label: "Celoscan",
-              href: "https://celoscan.xyz/",
+              href: "https://celoscan.io/",
             },
           ],
         },

@@ -439,7 +439,7 @@ celocli account:balance $CELO_VALIDATOR_ADDRESS
 
 At some point the output of these commands will change from `0` to `12e12`, indicating you have received the testnet CELO. This process involves a human, so please be patient. If you haven't received a balance within 24 hours, please get in touch again.
 
-You can also look at an account's current balance and transaction history on [Blockscout](https://baklava-blockscout.celo-testnet.org/). Enter the address into the search bar.
+You can also look at an account's current balance and transaction history on [Blockscout](https://celo-baklava.blockscout.com/). Enter the address into the search bar.
 
 Once these accounts have a balance, unlock them so that we can sign transactions. Then, we will register the accounts with the Celo core smart contracts:
 

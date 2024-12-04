@@ -103,8 +103,6 @@ Users have access to and fully control their funds and account keys, and don't n
 
 Celo has a validator set with a current size of 110 validators. Validators are elected to this set on a daily basis; typically more validators stand for election than seats available. The validator set size may be raised in the future through the [on-chain governance](/protocol/governance) process.
 
-You can view more detailed information about the current validator set at [stats.celo.org](https://stats.celo.org/).
-
 **Total Blocks**
 
 For real-time updates and information, please visit [explorer.celo.org](https://explorer.celo.org/)
@@ -118,12 +116,6 @@ Celo's average blocktime is 5 seconds. For real-time updates and information, pl
 Transactions are interactions that occur between user addresses and Celo (e.g., transferring funds).
 
 **< $0.01 Average Network Transaction Fee**
-
-:::tip
-
-Real-time gas fees are captured in gwei on [stats.celo.org](https://stats.celo.org/).
-
-:::
 
 **Circulating Supply**
 

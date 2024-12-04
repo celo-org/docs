@@ -5,7 +5,7 @@ description: How to deploy a Smart Contract to Celo using remix.ethereum.org.
 
 # Deploy on Celo with Remix
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Remix](https://remix.ethereum.org/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Remix](https://remix.ethereum.org/).
 
 ---
 
@@ -60,8 +60,8 @@ To learn more about the features available to you as a smart contract developer 
 - Click the **Deploy and Run Transactions Icon** on the left side menu.
 - Choose **Injected Web3** as your environment.
 - [Connect MetaMask to Celo](/wallet/metamask/use) testnet and verify that the environment reads:
-  - **Custom (44787) network** for Celo testnet
-  - **Custom (42220) network** for Celo mainnet
+  - **Custom (44787) network** for Celo Alfajores testnet
+  - **Custom (42220) network** for Celo Mainnet
 - Click **Deploy** and select **Confirm** in the MetaMask notification window to pay for the transaction
 
 ![github](/img/doc-images/deploy-remix/image3.png)
