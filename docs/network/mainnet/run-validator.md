@@ -184,7 +184,7 @@ There are a number of environment variables in this guide, and you may use this 
 
 ## Network Deployment Timeline
 
-The setup of mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
+The setup of Mainnet is similar to the new Baklava network and the deployment timeline is as follows (all dates are subject to change):
 
 Done:
 
@@ -215,7 +215,7 @@ This section outlines the steps needed to configure your Proxy and Validator nod
 
 ### Environment Variables
 
-First we are going to set up the main environment variables related to the mainnet network. Run these on both your **Validator** and **Proxy** machines:
+First we are going to set up the main environment variables related to the Mainnet network. Run these on both your **Validator** and **Proxy** machines:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet

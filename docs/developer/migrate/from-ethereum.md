@@ -9,6 +9,12 @@ Overview of the similarities and differences between the Celo and Ethereum block
 
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 :::tip
 
 For a general overview of the Celo network and architecture, see [the Celo Overview page](/general/).

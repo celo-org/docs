@@ -1,11 +1,11 @@
 ---
 title: Deploy with Replit
-description: How to deploy a smart contract to Celo testnet, mainnet, or a local network using Replit.
+description: How to deploy a smart contract to Celo testnet, Mainnet, or a local network using Replit.
 ---
 
 # Deploy on Celo with Replit
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Replit](https://replit.com/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Replit](https://replit.com/).
 
 ---
 

@@ -380,7 +380,7 @@ _See code: [src/commands/account/deauthorize.ts](https://github.com/celo-org/dev
 
 ## `celocli account:delete-payment-delegation`
 
-Removes a validator's payment delegation by setting benficiary and fraction to 0.
+Removes a validator's payment delegation by setting beneficiary and fraction to 0.
 
 ```
 USAGE
@@ -408,7 +408,7 @@ _See code: [src/commands/account/delete-payment-delegation.ts](https://github.co
 
 ## `celocli account:get-metadata ARG1`
 
-Show information about an address. Retreives the metadata URL for an account from the on-chain, then fetches the metadata file off-chain and verifies proofs as able.
+Show information about an address. Retrieves the metadata URL for an account from the on-chain, then fetches the metadata file off-chain and verifies proofs as able.
 
 ```
 USAGE
@@ -453,7 +453,7 @@ FLAGS
       property to sort by (prepend '-' for descending)
 
 DESCRIPTION
-  Show information about an address. Retreives the metadata URL for an account from the
+  Show information about an address. Retrieves the metadata URL for an account from the
   on-chain, then fetches the metadata file off-chain and verifies proofs as able.
 
 EXAMPLES

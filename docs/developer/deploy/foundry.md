@@ -5,7 +5,7 @@ description: How to deploy a Smart Contract to Celo using Foundry
 
 # Deploy on Celo with Foundry
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Foundry](https://book.getfoundry.sh/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Foundry](https://book.getfoundry.sh/).
 
 ---
 

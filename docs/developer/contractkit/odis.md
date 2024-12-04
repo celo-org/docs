@@ -81,7 +81,7 @@ The ODIS public key for each environment can be found here:
 
 ## Query phone number identifier
 
-This call consumes quota. When the user runs out of quota, it's recommended to prompt the user to "purchase" more quota by sending a transaction to themselves. This method returns the pepper retrieved from the service as well as the the computed on-chain identifier that is generated using this pepper and the phone number.
+This call consumes quota. When the user runs out of quota, it's recommended to prompt the user to "purchase" more quota by sending a transaction to themselves. This method returns the pepper retrieved from the service as well as the computed on-chain identifier that is generated using this pepper and the phone number.
 
 ### BLS Blinding Client
 

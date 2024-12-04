@@ -5,7 +5,7 @@ description: How to deploy a Smart Contract to Celo using Hardhat
 
 # Deploy on Celo with Hardhat
 
-How to deploy a smart contract to Celo testnet, mainnet, or a local network using [Hardhat](https://hardhat.org/).
+How to deploy a smart contract to Celo testnet, Mainnet, or a local network using [Hardhat](https://hardhat.org/).
 
 ---
 
@@ -70,7 +70,7 @@ Celo uses a different account derivation path than Ethereum, so you have to spec
 
 ### Connect to Mainnet using Forno
 
-Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
+Using [Forno](/network/node/forno) also allows you to connect to the Celo main blockchain without running a local node. The Mainnet configuration uses Forno to connect you to the Celo Mainnet using HDWalletProvider and the mnemonic stored in your **.env** file.
 
 ```js
    celo: {
@@ -97,7 +97,7 @@ Run the following command from your root project directory to deploy to Celo Alf
 npx hardhat run scripts/sample-script.js --network alfajores
 ```
 
-...or run this command to deploy to Celo mainnet.
+...or run this command to deploy to Celo Mainnet.
 
 ```shell
 npx hardhat run scripts/sample-script.js --network celo

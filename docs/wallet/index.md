@@ -21,41 +21,43 @@ The [Celo Compatible Wallets](#celo-compatible-wallets) section provides an over
 
 ### [Valora](https://valora.xyz/)
 
-Valora is a mobile wallet designed to make global peer-to-peer payments by phone numbers simple and accessible for everyone. Valora supports both Celo and other Ethereum networks.
+Valora is a non-custodial multichain mobile wallet focused on helping users save, earn, and send their crypto. It supports Celo's ability to pay for transactions with stablecoins, supports Wallet Connect, and has a built in swap experience that works across chains. It also lets users verify their phone number and send payments to their contacts.
 
-- [valoraapp.com](https://valora.xyz/)
-
-- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://app.adjust.com/ih0t0hf?redirect=https://play.google.com/store/apps/details?id=co.clabs.valora)
+- Homepage: [valora.xyz](https://valora.xyz/)
+- Platforms: [iOS](https://apps.apple.com/us/app/valora-crypto-wallet/id1520414263?mt=8), [Android](https://play.google.com/store/apps/details?id=co.clabs.valora)
 - Maintainers: [Valora](https://valora.xyz/)
 - Ledger support: No
 - [Source Code](https://github.com/valora-inc/wallet)
 
 ### [MiniPay](https://www.opera.com/products/minipay)
 
-MiniPay is a stablecoin-based non-custodial wallet integrated into Opera Mini and available as a standalone app. It enables instant transactions using a phone number and provides easy access to dApps directly within the browser.
+MiniPay is a non-custodial lightweight mobile wallet that allows users to send and receive stablecoins with transaction below 1 cent. It was first launched within the Opera Mini browser to assist people in sending and receiving stablecoins using mobile numbers.
 
-- Platforms: Available on [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native&hl=en_US) in Ghana, Nigeria, Kenya, South Africa, and Uganda
-- Standalone Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay&hl=en_US), iOS (Coming Soon)
+- Homepage: [opera.com/products/minipay](https://www.opera.com/products/minipay)
+- Platforms: [Android](https://play.google.com/store/apps/details?id=com.opera.minipay), iOS (testflight only), inside [Opera Mini](https://play.google.com/store/apps/details?id=com.opera.mini.native) in Ghana, Nigeria, Kenya, South Africa, and Uganda
 - Maintainers: Opera
 - Ledger support: No
-
-### [Othello Wallet](https://celowallet.app/setup)
-
-Othello Wallet (formally known as CeloWallet) is a community-run, lightweight, mobile-friendly wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, and governance.
-
-- Platforms: Web, MacOS, Linux, Windows
-- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
-- Ledger support: Yes
-- [Source Code](https://github.com/jmrossy/celo-web-wallet)
+- Supported tokens: cUSD, USDT, and USDC
 
 ### [Celo Terminal](https://celoterminal.com/)
 
 Celo Terminal is a wallet and dApp platform designed as a hub for managing and running Celo dApps locally.
 
+- Homepage: [celoterminal.com](https://celoterminal.com)
 - Platforms: MacOS, Linux, Windows
 - Maintainers: [WOTrust](https://twitter.com/wotrust1)
 - Ledger support: Yes
 - [Source Code](https://github.com/zviadm/celoterminal)
+
+### [Othello Wallet](https://celowallet.app/setup)
+
+Othello Wallet (formerly known as CeloWallet) is a lightweight, wallet for both web and desktop. It supports core Celo functionality like payments, exchanges, and governance.
+
+- Homepage: [celowallet.app](https://celowallet.app/setup)
+- Platforms: Web, MacOS, Linux, Windows
+- Maintainers: [J M Rossy](https://twitter.com/RossyWrote)
+- Ledger support: Yes
+- [Source Code](https://github.com/jmrossy/celo-web-wallet)
 
 ### [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh)
 
@@ -66,103 +68,135 @@ Celo Extension Wallet is a fork of Metamask for the Celo Network. It's a browser
 - Ledger support: Yes
 - [Source Code](https://github.com/dsrvlabs/celo-extension-wallet)
 
-
 ### [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
 
 Enkrypt is a self-custodial, open-sourced, client-side and multichain browser wallet with CELO natively integrated.
 
+- Homepage: [enkrypt.com](https://www.enkrypt.com/?mtm_campaign=Celo%20wiki)
 - Platforms: Chrome, Brave, Firefox, Safari, Opera
 - Maintainers: [MyEtherWallet](https://www.myetherwallet.com/)
 - [Source Code](https://github.com/enkryptcom/enKrypt)
 
+### [Omni](https://omni.app/)
+
+Omni (formerly known as Steakwallet) is a non-custodial, multi chain staking wallet. It aims to be the hub for mobile DeFi, supporting Celo from the very start.
+
+- Homepage: [omni.app](https://omni.app/)
+- Platforms: Android, iOS
+- Maintainers: [Omni](https://omni.app/)
+- [Source Code](https://github.com/steakwallet)
+
 ## Celo Compatible Wallets
 
-Here’s an overview of popular wallets compatible with the Celo network. Note that some wallets do not support fee currency for gas payments with different tokens.
+Here’s an overview of popular wallets compatible with the Celo network. Note that some wallets do not support fee abstraction for gas payments with different tokens.
 
 ### [Uniswap Wallet](https://wallet.uniswap.org/)
 
-Uniswap Wallet is a self-custody wallet with support for Celo avaialble on iOS, Android, and as a browser extension for Chrome.
+Uniswap Wallet is a self-custody wallet with support for Celo.
 
-- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobile&referrer=af_tranid%3D3zCTM7eCySenzDw_WNMJxQ%26c%3Dextension_ga%26pid%3Dweb_extension_microsite), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
+- Homepage: [wallet.uniswap.org](https://wallet.uniswap.org/)
+- Platforms: [iOS](https://apps.apple.com/us/app/uniswap-crypto-nft-wallet/id6443944476?mt=8), [Android](https://play.google.com/store/apps/details?id=com.uniswap.mobilee), and [Chrome](https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg).
 - Maintainers: [Uniswap](https://app.uniswap.org/)
+- [Source Code](https://github.com/Uniswap/wallet)
 
 ### [Trust Wallet](https://trustwallet.com/)
 
 Trust Wallet is a self-custody wallet with support for Celo available as a mobile app and extension on multiple browsers.
 
--Platforms: [iOS](https://apps.apple.com/us/app/trust-crypto-bitcoin-wallet/id1288339409?mt=8), [Android](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph), 
-
+- Homepage: [trustwallet.com](https://trustwallet.com/)
+- Platforms: [iOS](https://apps.apple.com/us/app/trust-crypto-bitcoin-wallet/id1288339409?mt=8), [Android](https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp), [Chrome, Brave, Opera, & Edge Browser](https://chromewebstore.google.com/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph), 
+- Maintainers: [Trust Wallet](https://trustwallet.com/)
+- [Source Code](https://github.com/trustwallet)
 
 ### [MetaMask](https://metamask.io/)
 
-MetaMask is a self-custody wallet with support for Celo avaialble on iOS, Android, and as a browser extension for Chrome.
+MetaMask is a self-custody wallet with support for Celo.
 
 You can learn more about connecting MetaMask to the Celo network [here](/wallet/metamask/use).
 
-- Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask&hl=en_US)
+- Homepage: [metamask.io](https://metamask.io/)
+- Platforms: [Browser](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn), [iOS](https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202), [Android](https://play.google.com/store/apps/details?id=io.metamask)
 
-### Dove Wallet
+### [Dove Wallet](https://dovewallet.com)
 
-- [dovewallet.com](https://dovewallet.com)
+- Homepage: [dovewallet.com](https://dovewallet.com)
 - Platforms: Web
 
 ### [Wigwam Wallet](https://wigwam.app)
 
+- Homepage: [wigwap.app](https://wigwam.app)
 - Platforms: Browser, Web
 - [Source Code](https://github.com/wigwamapp/wigwam)
 
 ### [Pesabase](https://pesabase.com/)
 
+- Homepage: [pesabase.com](https://pesabase.com/)
 - Platforms: iOS, Android
 
 ### [D’CENT](https://dcentwallet.com/)
 
-- Hardware wallet
+D'CENT is a hardware wallet.
+
+- Homepage: [dcentwallet.com](https://dcentwallet.com/)
 - Platforms: Browser, iOS, Android
 - [Source Code](https://github.com/DcentWallet)
 
 ### [Bitfy](https://blockchainwebservices.com.br/bitfy-app)
 
-- Countries: Brazil
+Bitfy is a wallet available in Brazil.
+
+- Homepage: [blockchainwebservices.com.br/bitfy-app](https://blockchainwebservices.com.br/bitfy-app)
 - Platforms: iOS, Android
 - Maintainer: [BWS](https://blockchainwebservices.com)
 
 ### [Cobru](https://cobru.co/)
 
-- Countries: Colombia
+Cobru is a wallet available in Columbia.
+
+- Homepage: [cobru.co](https://cobru.co/)
 
 ### [Kotani Pay](https://kotanipay.com/)
 
-- Countries: Kenya
+Kotani Pay is a wallet available in Kenya.
+
+- Homepage: [kotanipay.com]https://kotanipay.com/
 - [Source Code](https://github.com/Kotani-Pay)
 
 ### [Coinprofile](https://coinprofile.co/)
 
-- Countries: Nigeria
+Coinprofile is a wallet available in Nigeria.
 
-### Bitmama
+- Homepage: [coinprofile.co](https://coinprofile.co/)
 
-- [https://bitmama.io/](https://bitmama.io/)
-- Countries: Nigeria, Ghana
+### [Bitmama](https://bitmama.io/)
+
+Bitmama is a wallet available in Nigeria and Ghana.
+
+- Homepage: [bitmama.io](https://bitmama.io/)
 - [Source Code](https://github.com/Bitmama-Inc)
 
 ### [BloomX](https://www.bloom.solutions/)
 
-- Exchange
-- Countries: Philippines
+BloomX is an exchange available in the Philippines.
+
+- Homepage: [bloom.solutions](https://www.bloom.solutions/)
 
 ### [Frontier](https://www.frontier.xyz/)
 
+- Homepage: [frontier.xyz](https://www.frontier.xyz/)
 - [Source Code](https://github.com/frontierdotxyz)
 
 ### [El Dorado](https://eldorado.io/)
 
-- Countries: Argentina, Brazil, Colombia, Panama, Peru, Venezuela
+El Dorado is a wallet available in Argentina, Brazil, Colombia, Panama, Peru, and Venezuela.
+
+- Homepage: [eldorado.io](https://eldorado.io/)
 - Platforms: Android, iOS
 
-### [Wallet Connect](https://walletconnect.org/)
+### [WalletConnect](https://walletconnect.network/)
 
 WalletConnect is an open protocol for connecting wallets to dApps. Celo wallets support WalletConnect version 1, so dApp developers should also use version 1.
 
+- Homepage: [walletconnect.network](https://walletconnect.network/)
 - Platforms: Browser, iOS, Android
 - [Source Code](https://github.com/WalletConnect)

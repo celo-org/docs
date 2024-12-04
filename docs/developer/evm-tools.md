@@ -203,7 +203,7 @@ A guide to available tools, components, patterns, and platforms for developing a
   - [Blog about Best Practices with Security Audits](https://blog.openzeppelin.com/)
 - [Advanced Workshop with Assembly](https://github.com/androlo/solidity-workshop)
 - [Simpler Ethereum Multisig](https://medium.com/@ChrisLundkvist/exploring-simpler-ethereum-multisig-contracts-b71020c19037) - especially section _Benefits_
-- [CryptoFin Solidity Auditing Checklist](https://github.com/cryptofinlabs/audit-checklist) - A checklist of common findings, and issues to watch out for when auditing a contract for a mainnet launch.
+- [CryptoFin Solidity Auditing Checklist](https://github.com/cryptofinlabs/audit-checklist) - A checklist of common findings, and issues to watch out for when auditing a contract for a Mainnet launch.
 - [aragonOS: A smart contract framework for building DAOs, Dapps and protocols](https://hack.aragon.org/docs/aragonos-intro.html)
   - Upgradeability: Smart contracts can be upgraded to a newer version
   - Permission control: By using the `auth` and `authP` modifiers, you can protect functionality so only other apps or entities can access it

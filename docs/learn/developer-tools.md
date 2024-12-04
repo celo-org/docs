@@ -99,12 +99,6 @@ You can find the reference documentation for all of the [Celo SDK packages](http
 
 <PageRef url="https://dapplooker.com/integration/celo" pageName="DappLooker" />
 
-### Stats.celo.org
-
-[Stats.celo.org](http://stats.celo.org) allows you to check network activity and health.
-
-<PageRef url="http://stats.celo.org" pageName="stats.celo.org" />
-
 ### SubQuery
 
 [SubQuery](https://subquery.network/) is a leading blockchain data indexer that provides developers with fast, flexible, universal, open source and decentralised APIs for CELO. One of SubQuery's competitive advantages is the ability to aggregate data not only within a chain but across multiple blockchains all within a single project.
@@ -149,7 +143,7 @@ Quicknode is L2 ready.
 
 ### All That Node
 
-All That Node supports public and private RPC nodes for mainnet, alfajores and baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
+All That Node supports public and private RPC nodes for Mainnet, Alfajores and Baklava networks. They offer free private RPC nodes up to 10,000 requests/day and you can upgrade your plan as neeeded. You can also claim alfajores funds from the faucet in the site without signing up or any time-consuming auth.
 
 <PageRef url="https://www.allthatnode.com/celo.dsrv" pageName="All That Node" />
 

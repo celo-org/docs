@@ -5,7 +5,7 @@ description: Important considerations, warnings, and legal regulations for users
 
 # Mainnet Disclaimer
 
-Important considerations, warnings, and legal regulations for users of Celo mainnet.
+Important considerations, warnings, and legal regulations for users of Celo Mainnet.
 
 ---
 
