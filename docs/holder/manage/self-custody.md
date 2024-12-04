@@ -12,7 +12,7 @@ Account access and reward details for self-custodying holder of CELO on the Celo
 
 This guide assumes:
 
-- You are self-custodying (you hold the private key to your address), and that you have provided that address directly to cLabs. If you are using a custody provider ([Anchorage](https://anchorage.com), [Coinbase](https://coinbase.com), [CoinList](https://coinlist.co), or others), please contact them for directions.
+- You are self-custodying (you hold the private key to your address), and that you have provided that address directly to cLabs. If you are using a custody provider ([Anchorage](https://anchorage.com), [CoinList](https://coinlist.co), or others), please contact them for directions.
 
 - Your address is the beneficiary of a [ReleaseGold](/holder/manage/release-gold) contract, which releases CELO programmatically to a beneficiary over a period of time.
 
