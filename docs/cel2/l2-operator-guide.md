@@ -13,18 +13,17 @@ This process involves 3 steps:
 2. Run the migration tool to migrate the datadir and produce the transition block.
 3. Run the L2 node with the migrated datadir.
 
-Prior to the transition point, node operators must upgrade their existing L1 nodes to one of the specified releases below. These releases will have a transition block configured. L1 nodes with a transition block will cease producing or accepting blocks at the block immediately preceding the transition block. Once this point is reached, the node can be shut down, and its datadir can be migrated.
+Prior to the transition point, node operators must upgrade their existing L1 nodes to one of the specified releases below. These releases will have a transition block automatically configured. L1 nodes with a transition block will cease producing or accepting blocks at the block immediately preceding the transition block. Once this point is reached, the node can be shut down, and its datadir can be migrated.
 
 ### Migration blocks and releases
 :::info
 * Alfajores *26384000*
-  * Release *not yet created*
+  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
 * Baklava *27110000*
-  * Release *not yet created*
+  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
 * Mainnet *not yet decided*
   * Release *not yet created*
 :::
-
 
 
 ## Migrating data and running an L2 node
