@@ -1216,7 +1216,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "L1 to L2 Operator Guide",
+      label: "L2 Node Operator Guide",
       id: "cel2/l2-operator-guide",
     },
     {
