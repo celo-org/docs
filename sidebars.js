@@ -1221,6 +1221,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      label: "Validators in the L2",
+      id: "cel2/validators-in-the-l2",
+    },
+    {
+      type: "doc",
       label: "L2 Migration Decision Tree",
       id: "cel2/decision-tree",
     },
