@@ -13,17 +13,19 @@ This process involves 3 steps:
 2. Run the migration tool to migrate the datadir and produce the transition block.
 3. Run the L2 node with the migrated datadir.
 
-Sometime before the transition point, node operators must upgrade their existing L1 nodes to the
-latest release which will have a transition block configured. L1 nodes with a transition block
-configured will stop producing or accepting blocks at the block prior to the transition block. Once
-a node has reached this point it can be shut down and it's datadir can be migrated.
+Prior to the transition point, node operators must upgrade their existing L1 nodes to one of the specified releases below. These releases will have a transition block configured. L1 nodes with a transition block will cease producing or accepting blocks at the block immediately preceding the transition block. Once this point is reached, the node can be shut down, and its datadir can be migrated.
 
-### Migration blocks
+### Migration blocks and releases
 :::info
 * Alfajores *26384000*
+  * Release *not yet created*
 * Baklava *27110000*
+  * Release *not yet created*
 * Mainnet *not yet decided*
+  * Release *not yet created*
 :::
+
+
 
 ## Migrating data and running an L2 node
 
