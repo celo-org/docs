@@ -13,6 +13,7 @@ receipts are fully accessible within the Celo L2 environment.
 
 This process involves 4 steps:
 
+
 1. Upgrading L1 node to the latest client release so it stops producing blocks
    at the hardfork
 2. Waiting for the hardfork
@@ -58,11 +59,12 @@ hardfork block configured. L1 nodes with a hardfork block will cease
 producing or accepting blocks at the block immediately preceding the hardfork
 block. 
 
+
 :::info
 * Alfajores *26384000*
-  * Celo L1 Node [v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6)
+  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
 * Baklava *27110000*
-  * Celo L1 Node [v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6)
+  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
 * Mainnet *not yet decided*
   * Release *not yet created*
 :::
@@ -127,4 +129,3 @@ Node operators who wish to minimize the migration downtime during the hardfork, 
    and `cd` into the root of the project.
 3. Run `./migrate pre <network> <path-to-your-L1-datadir>` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. This will likely take some minutes to complete.
 4. Once the pre-migration is complete, you can start your L1 node again.
-
