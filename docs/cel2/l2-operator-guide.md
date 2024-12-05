@@ -1,5 +1,5 @@
 ---
-title: Celo L2 node operator guide
+title: Celo L2 Node Operator Guide
 ---
 
 This guide is designed to help node operators run Celo L2 nodes and to explain the process of switching from running a Celo L1 node to a Celo L2 node.
