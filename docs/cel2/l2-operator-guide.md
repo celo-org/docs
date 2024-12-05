@@ -29,4 +29,4 @@ Prior to the transition point, node operators must upgrade their existing L1 nod
 
 ## Migrating data and running an L2 node
 
-See the [simple-celo-node](https://github.com/celo-org/simple-celo-node) project for instructions on migrating data and running an L2 node.
+See the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) project for instructions on migrating data and running an L2 node.
