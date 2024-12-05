@@ -100,7 +100,8 @@ syncing as the process is quite different.
    and `cd` into the root of the project.
 3. Run `./migrate full <network> <path-to-your-L1-datadir>` where `<network>`
    is one of `alfajores`, `baklava`, or `mainnet`. This will likely take some
-   minutes to complete.
+   minutes to complete. Note that the migration does not modify the original
+   datadir, the migrated data is written to a new directory.
 4. Verify that the migration was successful by looking for the `Migration
    successful` message at the end of the output.
 5. Run `cp <network>.env .env` where `<network>` is one
@@ -115,3 +116,15 @@ syncing as the process is quite different.
 9. At this point you should be able to validate the progression of the node by
    fetching the current block number via the RPC API and seeing that it is
    increasing.
+
+### Pre migration
+
+Node operators who wish to minimize the migration downtime during the hardfork, can perform pre-migrations with the following steps.
+
+1. Stop your L1 node.
+2. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
+   and `cd` into the root of the project.
+3. Run `./migrate pre <network> <path-to-your-L1-datadir>` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. This will likely take some minutes to complete.
+4. Once the pre-migration is complete, you can start your L1 node again.
+
