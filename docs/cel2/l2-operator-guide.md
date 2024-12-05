@@ -21,7 +21,7 @@ a node has reached this point it can be shut down and it's datadir can be migrat
 ### Migration blocks
 :::info
 * Alfajores *26384000*
-* Baklava *not yet decided*
+* Baklava *27110000*
 * Mainnet *not yet decided*
 :::
 
