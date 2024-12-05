@@ -31,7 +31,7 @@ so involves these steps:
 2. Waiting for the hardfork
 3. Shutting down the L1 node
 5. Pulling the new network configuration files once they are known (e.g. hardfork block time)
-6. Running the migration tool to migrate the L1 datadir and produce the transition block
+6. Running the migration tool to migrate the L1 datadir and produce the hardfork block
 7. Launching the L2 node with the migrated datadir
 
 If a node operator is interested in minimizing downtime during the hardfork,
@@ -54,8 +54,8 @@ Kubernetes helm charts.
 
 Prior to the hardfork, node operators must upgrade their existing L1
 nodes to one of the specified releases below. These releases will have a
-transition block configured. L1 nodes with a transition block will cease
-producing or accepting blocks at the block immediately preceding the transition
+hardfork block configured. L1 nodes with a hardfork block will cease
+producing or accepting blocks at the block immediately preceding the hardfork
 block. 
 
 :::info
