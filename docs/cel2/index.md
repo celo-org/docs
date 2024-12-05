@@ -50,6 +50,6 @@ These dates are subject to change. This documentation will be continuously updat
 
 - [Layer 2 Specification](https://specs.celo.org/root.html)
 - [L2 Migration Guide](/cel2/l2-operator-guide)
-- [What's Changed?](https://docs.celo.org/cel2/whats-changed)
+- [What's Changed?](/cel2/whats-changed/overview)
 - [Cel2 Code](https://github.com/celo-org/optimism)
-- [FAQ](https://docs.celo.org/cel2/faq)
+- [FAQ](/cel2/faq)
