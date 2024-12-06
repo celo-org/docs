@@ -2,20 +2,64 @@
 title: Celo L2 Node Operator Guide
 ---
 
-This guide is designed to help node operators run Celo L2 nodes and to explain the process of switching from running a Celo L1 node to a Celo L2 node.
+This guide is designed to help node operators run Celo L2 nodes and to explain
+the process of switching from running a Celo L1 node to a Celo L2 node.
 
 ## Migration overview
 
-In the Celo L1 to L2 transition, we are migrating all historical Celo data into the Celo L2 node, ensuring that blocks, transactions, logs, and receipts are fully accessible within the Celo L2 environment.
+In the Celo L1 to L2 transition, Celo L1 nodes will migrate all historical Celo
+data into the Celo L2 node, ensuring that blocks, transactions, logs, and
+receipts are fully accessible within the Celo L2 environment.
 
-This process involves 3 steps:
-1. Shut down the L1 node
-2. Run the migration tool to migrate the datadir and produce the transition block.
-3. Run the L2 node with the migrated datadir.
+This process involves 4 steps:
 
-Prior to the transition point, node operators must upgrade their existing L1 nodes to one of the specified releases below. These releases will have a transition block automatically configured. L1 nodes with a transition block will cease producing or accepting blocks at the block immediately preceding the transition block. Once this point is reached, the node can be shut down, and its datadir can be migrated.
 
-### Migration blocks and releases
+1. Upgrading the L1 node to the latest client release so it stops producing blocks
+   at the hardfork
+2. Waiting for the hardfork
+3. Pulling the new network configuration files once they are known (e.g. hardfork block time)
+4. Launching the L2 node with snap sync
+
+Optionally, for node operators that want to verify the entire chain history
+through the upgrade, they may manually migrate their L1 node chain data into a
+format compatible with the L2 node. This is required for all nodes looking to full
+sync and for anyone looking to run an archive node. Doing
+so involves these steps:
+
+1. Upgrading the L1 node to the latest client release so it stops producing blocks
+   at the hardfork
+2. Optionally running pre-migrations of the L1 datadir (see note below)
+2. Waiting for the hardfork
+3. Shutting down the L1 node
+5. Pulling the new network configuration files once they are known (e.g. hardfork block time)
+6. Running the migration tool to migrate the L1 datadir and produce the hardfork block
+7. Launching the L2 node with the migrated datadir
+
+If a node operator is interested in minimizing downtime during the hardfork,
+they can run the migration tool ahead of time to migrate the majority of the
+data before the hardfork. The migration tool can be run multiple times as the L1
+chain data grows and will continue migrating from where it last left off.
+Please note that the node must be stopped before the migration tool is run. 
+
+## Detailed instructions
+
+To simplify running L2 nodes, cLabs has created a
+[celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
+repo with all the necessary configuration files and docker compose templates,
+which make it easy to pull network configuration files and launch all the
+services needed to run an L2 node.
+
+For node operators interested in using Kubernetes, we recommend using
+[Kompose](https://kompose.io) to convert the docker compose template to
+Kubernetes helm charts.
+
+Prior to the hardfork, node operators must upgrade their existing L1
+nodes to the respective release below. These releases will have a
+hardfork block configured. L1 nodes with a hardfork block will cease
+producing or accepting blocks at the block immediately preceding the hardfork
+block.
+
+
 :::info
 * Alfajores *26384000*
   * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
@@ -25,7 +69,69 @@ Prior to the transition point, node operators must upgrade their existing L1 nod
   * Release *not yet created*
 :::
 
+Once this block number is reached, node operators can then launch the L2 node. Instructions are
+provided for both snap syncing and full syncing as the process is quite different.
 
-## Migrating data and running an L2 node
+### Snap sync
 
-See the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) project for instructions on migrating data and running an L2 node.
+1. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
+   and `cd` into the root of the project.
+2. Run `cp <network>.env .env` where `<network>` is one of `alfajores`,
+   `baklava`, or `mainnet`.
+3. Open `.env` and optionally configure any setting you may wish to change, such as setting `NODE_TYPE=archive` to enable archive mode.
+4. Run `docker-compose up -d --build`.
+5. To check the progress of the node you can run `docker-compose logs -n 50 -f
+   op-geth`. This will display the last 50 lines of the logs and follow the logs
+   as they are written. In a syncing node, you would expect to see lines of the
+   form `Syncing beacon headers  downloaded=...` where the downloaded number is
+   increasing and later lines such as `"Syncing: chain download in
+   progress","synced":"21.07%"` where the percentage is increasing. Once the
+   percentage reaches 100%, the node should be synced.
+6. At this point, you should be able to validate the progression of the node by
+   fetching the current block number via the RPC API and seeing that it is
+   increasing. (Note that until fully synced, the RPC API will return 0 for the
+   head block number).
+
+### Full sync
+
+1. Stop your L1 node.
+2. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
+   into the root of the project.
+3. Run `./migrate full <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]` where
+   `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
+   ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
+   will take at least some minutes to complete. Note that in all cases, the migration does not modify
+   the original datadir; the migrated data is written to a new directory.
+4. Verify that the migration was successful by looking for the `Migration successful` message at the
+   end of the output.
+5. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
+6. Open `.env` and set `OP_GETH__SYNCMODE=full` and optionally configure any setting you may wish to
+   change, such as setting `NODE_TYPE=archive` to enable archive mode.
+7. Run `docker-compose up -d --build`.
+8. To inspect the progress of the node you can run `docker-compose logs -n 50 -f op-geth`. This will
+   display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
+   you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
+   downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
+   begin by applying blocks on top of the hardfork block.
+9. At this point, you should be able to validate the progression of the node by fetching the current
+   block number via the RPC API and seeing that it is increasing.
+
+### Pre-migration
+
+Node operators who wish to minimize the migration downtime during the hardfork can perform pre-migrations with the following steps.
+
+1. Stop your L1 node.
+2. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
+   into the root of the project.
+3. Run `./migrate pre <network> <path-to-your-L1-datadir>` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. This will likely take some minutes to complete.
+4. Once the pre-migration is complete, you can start your L1 node again.
+
+### Pre-hardfork archive state access and execution
+
+Node operators who were running archive nodes before the migration and wish to maintain execution
+and state access functionality for pre-hardfork blocks will need to continue to run their L1 node
+and configure their L2 node to proxy pre-hardfork execution and state access requests to the L1 node
+by setting the `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of their L1 node.
