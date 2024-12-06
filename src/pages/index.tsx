@@ -99,7 +99,7 @@ export default function HomePage(): JSX.Element {
               <div className="w-2/3 flex flex-col justify-between h-full">
                 <span className="text-3xl font-semibold">
                   <Translate id="home2.section1.box1">
-                    Get started with Celo Composer CLI
+                    Quickstart with Celo Composer
                   </Translate>
                 </span>
                 {buildKnowMoreButton("/developer/deploy")}

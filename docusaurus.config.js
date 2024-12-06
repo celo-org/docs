@@ -104,12 +104,12 @@ module.exports = {
         },
         {
           to: "build/",
-          label: "Get Started",
+          label: "Build on Celo",
           position: "left",
         },
         {
           to: "developer/",
-          label: "Build on Celo",
+          label: "Tooling",
           position: "left",
         },
         {
