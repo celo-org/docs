@@ -1259,7 +1259,7 @@ const sidebars = {
       ],
     },
     { type: "doc", label: "Bridging CELO", id: "cel2/bridging/bridging-celo-from-l1-to-l2-using-viem" },
-    { type: "doc", label: "Withdrawing CELO", id: "docs/cel2/bridging/withdrawing-celo-from-l2-to-l1-using-viem" },
+    { type: "doc", label: "Withdrawing CELO", id: "cel2/bridging/withdrawing-celo-from-l2-to-l1-using-viem" },
     { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
   ],
