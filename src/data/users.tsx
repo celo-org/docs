@@ -1026,8 +1026,8 @@ const Users: User[] = [
     title: 'Cryptum Woocommerce Checkout',
     description: 'Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces checkouts, providing fast and easy integration for Celo and cUSD acceptance and management for merchants.',
     preview: require('./showcase/cryptumwoocommercecheckout.png'),
-    website: 'https://github.com/blockforce-official/cryptum-checkout-wordpress-plugin',
-    source: 'https://github.com/blockforce-official/cryptum-checkout-wordpress-plugin',
+    website: 'https://github.com/cryptum-official/cryptum-checkout-wordpress-plugin',
+    source: 'https://github.com/cryptum-official/cryptum-checkout-wordpress-plugin',
     tags: ['defi','earn'],
   },
   {
