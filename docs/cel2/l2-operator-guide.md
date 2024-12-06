@@ -62,9 +62,9 @@ block.
 
 :::info
 * Alfajores *26384000*
-  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
-* Baklava *27110000*
-  * Celo L1 client: [celo-blockchain v1.8.6](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.6). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.6`
+  * Celo L1 client: [celo-blockchain v1.8.7](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.7). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7`
+* Baklava  *not yet decided*
+  * Release *not yet created*
 * Mainnet *not yet decided*
   * Release *not yet created*
 :::
