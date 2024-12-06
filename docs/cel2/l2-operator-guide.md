@@ -54,7 +54,7 @@ For node operators interested in using Kubernetes, we recommend using
 Kubernetes helm charts.
 
 Prior to the hardfork, node operators must upgrade their existing L1
-nodes to one of the specified releases below. These releases will have a
+nodes to the respective release below. These releases will have a
 hardfork block configured. L1 nodes with a hardfork block will cease
 producing or accepting blocks at the block immediately preceding the hardfork
 block.
