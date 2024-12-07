@@ -138,7 +138,11 @@ module.exports = {
               to: "cli/",
               label: "CLI",
             },
-            { to: "https://www.celopg.eco/ecosystem", label: "dApps", target: "_blank" },
+            {
+              to: "https://www.celopg.eco/ecosystem",
+              label: "dApps",
+              target: "_blank",
+            },
           ],
         },
         {
@@ -212,7 +216,7 @@ module.exports = {
     },
     algolia: {
       appId: "55M4I38S60",
-      apiKey: "baed78b52be14ac907688f1dd70b41d5",
+      apiKey: "6945902648de2be7204ad4d973b1e594",
       indexName: "celo",
       contextualSearch: true,
       debug: false,
