@@ -344,7 +344,7 @@ Deploying a new contract release should occur with the following process. On-cha
         <li>
           On Tuesday: Run the{" "}
           <a href="/community/release-process/smart-contracts#release-process">smart contract release script</a>{" "}
-          in order to to deploy the contracts to Baklava as well as submit a
+          in order to deploy the contracts to Baklava as well as submit a
           governance proposal.
           <ul>
             <li>
@@ -370,7 +370,7 @@ Deploying a new contract release should occur with the following process. On-cha
           <a href="/community/release-process/smart-contracts#release-process">
             smart contract release script
           </a>{" "}
-          in order to to deploy the contracts to Alfajores as well as submit a
+          in order to deploy the contracts to Alfajores as well as submit a
           governance proposal.
         </li>
         <li>
@@ -395,7 +395,7 @@ Deploying a new contract release should occur with the following process. On-cha
           <a href="https://docs.celo.org/community/release-process/smart-contracts#build-process">
             smart contract release script
           </a>{" "}
-          in order to to deploy the contracts to Mainnet as well as submit a
+          in order to deploy the contracts to Mainnet as well as submit a
           governance proposal.
         </li>
         <li>

@@ -50,7 +50,7 @@ export default function ShowcaseFilterToggle(): JSX.Element {
         type="checkbox"
         id={id}
         className="screen-reader-only"
-        aria-label="Toggle between or and and for the tags you selected"
+        aria-label="Toggle between or and for the tags you selected"
         onChange={toggleOperator}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
