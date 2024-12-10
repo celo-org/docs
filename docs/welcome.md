@@ -51,9 +51,10 @@ Get up and running as a Celo holder, validator, developer, using tools in the Ce
 
 ### Explore Celo Data
 
-Explore Celo data to view the reserve, network, dapps, and additional analytics.
+Explore Celo data to view the reserve, network, dApps, and additional analytics.
 
 - [Token Terminal](https://tokenterminal.com/explorer/projects/celo)
+- [Artemis](https://app.artemisanalytics.com/project/celo)
 - [Mento Reserve on Celo](https://reserve.mento.org/)
 - [DappLooker](https://dapplooker.com/browse/dashboards?sort=popular&tags=celo&pg=1)
 
