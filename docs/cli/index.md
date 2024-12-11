@@ -110,4 +110,4 @@ The autocomplete plugin adds an interactive autocomplete for `bash` and `zsh` sh
 celocli autocomplete
 ```
 
-The update warning plugin notifies the user if they are using an oudated version of the CLI. This plugin is enabled by default.
+The update warning plugin notifies the user if they are using an outdated version of the CLI. This plugin is enabled by default.
