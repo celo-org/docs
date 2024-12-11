@@ -9,6 +9,7 @@ Manage your account, keys, and metadata
 * [`celocli account:claim-domain ARG1`](#celocli-accountclaim-domain-arg1)
 * [`celocli account:claim-keybase ARG1`](#celocli-accountclaim-keybase-arg1)
 * [`celocli account:claim-name ARG1`](#celocli-accountclaim-name-arg1)
+* [`celocli account:claim-rpc-url ARG1`](#celocli-accountclaim-rpc-url-arg1)
 * [`celocli account:claim-storage ARG1`](#celocli-accountclaim-storage-arg1)
 * [`celocli account:create-metadata ARG1`](#celocli-accountcreate-metadata-arg1)
 * [`celocli account:deauthorize`](#celocli-accountdeauthorize)
@@ -21,7 +22,6 @@ Manage your account, keys, and metadata
 * [`celocli account:offchain-read ARG1`](#celocli-accountoffchain-read-arg1)
 * [`celocli account:offchain-write`](#celocli-accountoffchain-write)
 * [`celocli account:proof-of-possession`](#celocli-accountproof-of-possession)
-* [`celocli account:recover-old`](#celocli-accountrecover-old)
 * [`celocli account:register`](#celocli-accountregister)
 * [`celocli account:register-data-encryption-key`](#celocli-accountregister-data-encryption-key)
 * [`celocli account:register-metadata`](#celocli-accountregister-metadata)
@@ -40,11 +40,19 @@ Keep your locked Gold more secure by authorizing alternative keys to be used for
 
 ```
 USAGE
-  $ celocli account:authorize --from <value> -r vote|validator|attestation --signature
-    <value> --signer <value> [--gasCurrency <value>] [--globalHelp] [--blsKey <value>
-    --blsPop <value>]
+  $ celocli account:authorize --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -r
+    vote|validator|attestation --signature 0x --signer
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--globalHelp] [--blsKey 0x --blsPop 0x]
 
 FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   -r, --role=<option>
       (required) Role to delegate
       <options: vote|validator|attestation>
@@ -67,11 +75,18 @@ FLAGS
   --globalHelp
       View all available global flags
 
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --signature=0x
       (required) Signature (a.k.a proof-of-possession) of the signer key
 
   --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Account Address
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Keep your locked Gold more secure by authorizing alternative keys to be used for
@@ -84,6 +99,16 @@ EXAMPLES
   authorize --from 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role vote --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb
 
   authorize --from 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role validator --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb --signature 0x1b9fca4bbb5bfb1dbe69ef1cddbd9b4202dcb6b134c5170611e1e36ecfa468d7b46c85328d504934fce6c2a1571603a50ae224d2b32685e84d4d1a1eebad8452eb --blsKey 0x4fa3f67fc913878b068d1fa1cdddc54913d3bf988dbe5a36a20fa888f20d4894c408a6773f3d7bde11154f2a3076b700d345a42fd25a0e5e83f4db5586ac7979ac2053cd95d8f2efd3e959571ceccaa743e02cf4be3f5d7aaddb0b06fc9aff00 --blsPop 0xcdb77255037eb68897cd487fdd85388cbda448f617f874449d4b11588b0b7ad8ddc20d9bb450b513bb35664ea3923900
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/authorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/authorize.ts)_
@@ -94,19 +119,18 @@ View Celo Stables and CELO balances for an address
 
 ```
 USAGE
-  $ celocli account:balance ARG1 [--gasCurrency <value>] [--globalHelp]
-    [--erc20Address <value>]
+  $ celocli account:balance ARG1 [-n <value>] [--globalHelp] [--erc20Address
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
 
 FLAGS
-  --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-      Address of generic ERC-20 token to also check balance for
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
-
-  --globalHelp
-      View all available global flags
+  -n, --node=<value>                                             URL of the node to run
+                                                                 commands against or an
+                                                                 alias
+      --erc20Address=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  Address of generic
+                                                                 ERC-20 token to also
+                                                                 check balance for
+      --globalHelp                                               View all available
+                                                                 global flags
 
 DESCRIPTION
   View Celo Stables and CELO balances for an address
@@ -115,6 +139,16 @@ EXAMPLES
   balance 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
   balance 0x5409ed021d9299bf6814279a6a1411a7e866a631 --erc20Address 0x765DE816845861e75A25fCA122bb6898B8B1282a
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/balance.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/balance.ts)_
@@ -125,31 +159,44 @@ Claim another account, and optionally its public key, and add the claim to a loc
 
 ```
 USAGE
-  $ celocli account:claim-account ARG1 --from <value> --address <value> [--gasCurrency
-    <value>] [--globalHelp] [--publicKey <value>]
+  $ celocli account:claim-account ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --address <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp] [--publicKey <value>]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --address=<value>                                         (required) The address of
-                                                            the account you want to
-                                                            claim
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --publicKey=<value>                                       The public key of the
-                                                            account that others may use
-                                                            to send you encrypted
-                                                            messages
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --address=<value>
+      (required) The address of the account you want to claim
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --publicKey=<value>
+      The public key of the account that others may use to send you encrypted messages
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Claim another account, and optionally its public key, and add the claim to a local
@@ -157,6 +204,16 @@ DESCRIPTION
 
 EXAMPLES
   claim-account ~/metadata.json --address 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/claim-account.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-account.ts)_
@@ -167,32 +224,57 @@ Claim a domain and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-domain ARG1 --from <value> --domain <value> [--gasCurrency
-    <value>] [--globalHelp]
+  $ celocli account:claim-domain ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --domain <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --domain=<value>                                          (required) The domain you
-                                                            want to claim
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --domain=<value>
+      (required) The domain you want to claim
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Claim a domain and add the claim to a local metadata file
 
 EXAMPLES
   claim-domain ~/metadata.json --domain example.com --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/claim-domain.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-domain.ts)_
@@ -203,32 +285,57 @@ Claim a keybase username and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-keybase ARG1 --from <value> --username <value> [--gasCurrency
-    <value>] [--globalHelp]
+  $ celocli account:claim-keybase ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --username <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --username=<value>                                        (required) The keybase
-                                                            username you want to claim
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --username=<value>
+      (required) The keybase username you want to claim
 
 DESCRIPTION
   Claim a keybase username and add the claim to a local metadata file
 
 EXAMPLES
   claim-keybase ~/metadata.json --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --username myusername
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/claim-keybase.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-keybase.ts)_
@@ -239,35 +346,121 @@ Claim a name and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-name ARG1 --from <value> --name <value> [--gasCurrency
-    <value>] [--globalHelp]
+  $ celocli account:claim-name ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --name <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --name=<value>                                            (required) The name you want
-                                                            to claim
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --name=<value>
+      (required) The name you want to claim
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Claim a name and add the claim to a local metadata file
 
 EXAMPLES
   claim-name ~/metadata.json --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95 --name myname
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/claim-name.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-name.ts)_
+
+## `celocli account:claim-rpc-url ARG1`
+
+Claim a RPC URL and add the claim to a local metadata file
+
+```
+USAGE
+  $ celocli account:claim-rpc-url ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --rpcUrl https://www.celo.org [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp]
+
+ARGUMENTS
+  ARG1  Path of the metadata file
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for. Claiming address must be
+      registered as validator
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --rpcUrl=https://www.celo.org
+      (required) The RPC URL to claim
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Claim a RPC URL and add the claim to a local metadata file
+
+EXAMPLES
+  claim-rpc-url ~/metadata.json --rpc-url example.com --from 0x5409ED021D9299bf6814279A6A1411A7e866A631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/account/claim-rpc-url.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-rpc-url.ts)_
 
 ## `celocli account:claim-storage ARG1`
 
@@ -275,33 +468,57 @@ Claim a storage root and add the claim to a local metadata file
 
 ```
 USAGE
-  $ celocli account:claim-storage ARG1 --from <value> --url <value> [--gasCurrency <value>]
+  $ celocli account:claim-storage ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --url https://www.celo.org [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--globalHelp]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --url=https://www.celo.org                                (required) The URL of the
-                                                            storage root you want to
-                                                            claim
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --url=https://www.celo.org
+      (required) The URL of the storage root you want to claim
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Claim a storage root and add the claim to a local metadata file
 
 EXAMPLES
   claim-storage ~/metadata.json --url http://example.com/myurl --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/claim-storage.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/claim-storage.ts)_
@@ -312,24 +529,38 @@ Create an empty identity metadata file. Use this metadata file to store claims a
 
 ```
 USAGE
-  $ celocli account:create-metadata ARG1 --from <value> [--gasCurrency <value>]
-  [--globalHelp]
+  $ celocli account:create-metadata ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 ARGUMENTS
   ARG1  Path where the metadata should be saved
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Address of the
-                                                            account to set metadata for
-                                                            or an authorized signer for
-                                                            the address in the metadata
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set metadata for or an authorized signer for
+      the address in the metadata
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Create an empty identity metadata file. Use this metadata file to store claims
@@ -338,6 +569,16 @@ DESCRIPTION
 
 EXAMPLES
   create-metadata ~/metadata.json --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/create-metadata.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/create-metadata.ts)_
@@ -348,10 +589,19 @@ Remove an account's authorized attestation signer role.
 
 ```
 USAGE
-  $ celocli account:deauthorize --from <value> -r attestation --signer <value>
-    [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:deauthorize --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -r
+    attestation --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   -r, --role=<option>
       (required) Role to remove
       <options: attestation>
@@ -366,14 +616,31 @@ FLAGS
   --globalHelp
       View all available global flags
 
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Account Address
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Remove an account's authorized attestation signer role.
 
 EXAMPLES
   deauthorize --from 0x5409ED021D9299bf6814279A6A1411A7e866A631 --role attestation --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/deauthorize.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/deauthorize.ts)_
@@ -384,24 +651,50 @@ Removes a validator's payment delegation by setting beneficiary and fraction to 
 
 ```
 USAGE
-  $ celocli account:delete-payment-delegation --account <value> [--gasCurrency <value>]
-  [--globalHelp]
+  $ celocli account:delete-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
-  Removes a validator's payment delegation by setting benficiary and fraction to 0.
+  Removes a validator's payment delegation by setting beneficiary and fraction to 0.
 
 EXAMPLES
   delete-payment-delegation --account 0x5409ED021D9299bf6814279A6A1411A7e866A631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/delete-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/delete-payment-delegation.ts)_
@@ -412,14 +705,21 @@ Show information about an address. Retrieves the metadata URL for an account fro
 
 ```
 USAGE
-  $ celocli account:get-metadata ARG1 [--gasCurrency <value>] [--globalHelp] [--columns
-    <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
-    csv|json|yaml |  | ] [--sort <value>]
+  $ celocli account:get-metadata ARG1 [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp] [--columns <value> | -x] [--filter <value>] [--no-header |
+    [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 ARGUMENTS
   ARG1  Address to get metadata for
 
 FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   -x, --extended
       show extra columns
 
@@ -439,6 +739,10 @@ FLAGS
   --globalHelp
       View all available global flags
 
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --no-header
       hide table header from output
 
@@ -452,12 +756,25 @@ FLAGS
   --sort=<value>
       property to sort by (prepend '-' for descending)
 
+  --useLedger
+      Set it to use a ledger wallet
+
 DESCRIPTION
   Show information about an address. Retrieves the metadata URL for an account from the
   on-chain, then fetches the metadata file off-chain and verifies proofs as able.
 
 EXAMPLES
   get-metadata 0x97f7333c51897469E8D98E7af8653aAb468050a3
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/get-metadata.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/get-metadata.ts)_
@@ -468,11 +785,19 @@ Get the payment delegation account beneficiary and fraction allocated from a val
 
 ```
 USAGE
-  $ celocli account:get-payment-delegation --account <value> [--gasCurrency <value>] [--globalHelp]
-    [--columns <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]]
-    [--output csv|json|yaml |  | ] [--sort <value>]
+  $ celocli account:get-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp] [--columns <value> | -x] [--filter <value>] [--no-header | [--csv |
+    --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   -x, --extended
       show extra columns
 
@@ -495,6 +820,10 @@ FLAGS
   --globalHelp
       View all available global flags
 
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --no-header
       hide table header from output
 
@@ -508,12 +837,25 @@ FLAGS
   --sort=<value>
       property to sort by (prepend '-' for descending)
 
+  --useLedger
+      Set it to use a ledger wallet
+
 DESCRIPTION
   Get the payment delegation account beneficiary and fraction allocated from a
   validator's payment each epoch. The fraction cannot be greater than 1.
 
 EXAMPLES
   get-payment-delegation --account 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/get-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/get-payment-delegation.ts)_
@@ -524,23 +866,47 @@ List the addresses from the node and the local instance
 
 ```
 USAGE
-  $ celocli account:list [--gasCurrency <value>] [--globalHelp] [--local]
+  $ celocli account:list [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp] [--local]
 
 FLAGS
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --[no-]local                                              If set, only show local and
-                                                            hardware wallet accounts.
-                                                            Use no-local to only show
-                                                            keystore addresses.
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --[no-]local
+      If set, only show local and hardware wallet accounts. Use no-local to only show
+      keystore addresses.
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   List the addresses from the node and the local instance
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/list.ts)_
@@ -551,25 +917,49 @@ Lock an account which was previously unlocked
 
 ```
 USAGE
-  $ celocli account:lock ARG1 [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:lock ARG1 [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp]
 
 ARGUMENTS
   ARG1  Account address
 
 FLAGS
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Lock an account which was previously unlocked
 
 EXAMPLES
   lock 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/lock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/lock.ts)_
@@ -580,12 +970,15 @@ Creates a new account locally using the Celo Derivation Path (m/44'/52752'/0/cha
 
 ```
 USAGE
-  $ celocli account:new [--gasCurrency <value>] [--globalHelp] [--passphrasePath
-    <value>] [--changeIndex <value>] [--addressIndex <value>] [--language chinese_simpli
-    fied|chinese_traditional|english|french|italian|japanese|korean|spanish]
-    [--mnemonicPath <value>] [--derivationPath <value>]
+  $ celocli account:new [-n <value>] [--globalHelp] [--passphrasePath <value>]
+    [--changeIndex <value>] [--addressIndex <value>] [--language chinese_simplified|chin
+    ese_traditional|english|french|italian|japanese|korean|spanish] [--mnemonicPath
+    <value>] [--derivationPath <value>]
 
 FLAGS
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   --addressIndex=<value>
       Choose the address index for the derivation path
 
@@ -593,14 +986,7 @@ FLAGS
       Choose the change index for the derivation path
 
   --derivationPath=<value>
-      Choose a different derivation Path (Celo's default is "m/44'/52752'/0'"). Use "eth"
-      as an alias of the Ethereum derivation path ("m/44'/60'/0'"). Recreating the same
-      account requires knowledge of the mnemonic, passphrase (if any), and the derivation
-      path
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
+      Derivation path in the format "m/44'/coin_type'/account'" or an alias
 
   --globalHelp
       View all available global flags
@@ -629,6 +1015,9 @@ DESCRIPTION
   command has been tested swapping mnemonics with the Ledger successfully (only supports
   english)
 
+  WARN: In 7.0 the default derivation path will be Eth ("m/44'/60'/0'")
+  forum.celo.org/t/deprecating-the-celo-derivation-path/9229
+
 EXAMPLES
   new
 
@@ -639,6 +1028,32 @@ EXAMPLES
   new --passphrasePath some_folder/my_passphrase_file --language japanese --addressIndex 5
 
   new --passphrasePath some_folder/my_passphrase_file --mnemonicPath some_folder/my_mnemonic_file --addressIndex 5
+
+  new --derivationPath eth
+
+  new --derivationPath celoLegacy
+
+  new --derivationPath "m/44'/60'/0'"
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+
+
+  --derivationPath=<value>
+
+    Derivation path in the format "m/44'/coin_type'/account'" or an alias
+
+    Choose a different derivation Path (Celo's default is "m/44'/52752'/0'"). Use "eth"
+    as an alias of the Ethereum derivation path ("m/44'/60'/0'"). Recreating the same
+    account requires knowledge of the mnemonic, passphrase (if any), and the derivation
+    path. (use changeIndex, and addressIndex flags to change BIP44 positions 4 and 5)
 ```
 
 _See code: [src/commands/account/new.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/new.ts)_
@@ -649,29 +1064,47 @@ DEV: Reads the name from offchain storage
 
 ```
 USAGE
-  $ celocli account:offchain-read ARG1 [--gasCurrency <value>] [--globalHelp] [--directory
-    <value>] [--bucket <value> --provider git|aws|gcp] [--from <value>] [--privateDEK
+  $ celocli account:offchain-read ARG1 [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp] [--directory <value>] [--bucket <value> --provider
+    git|aws|gcp] [--from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--privateDEK
     <value>]
 
 FLAGS
-  --bucket=<value>                                          If using a GCP or AWS
-                                                            storage bucket this
-                                                            parameter is required
-  --directory=<value>                                       [default: .] To which
-                                                            directory data should be
-                                                            written
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         Account Address
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --bucket=<value>
+      If using a GCP or AWS storage bucket this parameter is required
+
+  --directory=<value>
+      [default: .] To which directory data should be written
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --privateDEK=<value>
-  --provider=<option>                                       If the CLI should attempt to
-                                                            push to the cloud
-                                                            <options: git|aws|gcp>
+
+  --provider=<option>
+      If the CLI should attempt to push to the cloud
+      <options: git|aws|gcp>
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   DEV: Reads the name from offchain storage
@@ -680,6 +1113,16 @@ EXAMPLES
   offchain-read 0x...
 
   offchain-read 0x... --from 0x... --privateKey 0x...
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/offchain-read.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/offchain-read.ts)_
@@ -690,31 +1133,48 @@ DEV: Writes a name to offchain storage
 
 ```
 USAGE
-  $ celocli account:offchain-write --name <value> [--gasCurrency <value>] [--globalHelp]
-    [--directory <value>] [--bucket <value> --provider git|aws|gcp] (--privateDEK
-    <value> --privateKey <value> --encryptTo <value>)
+  $ celocli account:offchain-write --name <value> [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> (--useLedger
+    | --privateKey <value>)] [--globalHelp] [--directory <value>] [--bucket <value>
+    --provider git|aws|gcp] [--privateDEK <value>  --encryptTo <value>]
 
 FLAGS
-  --bucket=<value>                                          If using a GCP or AWS
-                                                            storage bucket this
-                                                            parameter is required
-  --directory=<value>                                       [default: .] To which
-                                                            directory data should be
-                                                            written
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --bucket=<value>
+      If using a GCP or AWS storage bucket this parameter is required
+
+  --directory=<value>
+      [default: .] To which directory data should be written
+
   --encryptTo=<value>
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --name=<value>                                            (required)
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --name=<value>
+      (required)
+
   --privateDEK=<value>
-  --privateKey=<value>                                      (required)
-  --provider=<option>                                       If the CLI should attempt to
-                                                            push to the cloud
-                                                            <options: git|aws|gcp>
+
+  --privateKey=<value>
+      (required)
+
+  --provider=<option>
+      If the CLI should attempt to push to the cloud
+      <options: git|aws|gcp>
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   DEV: Writes a name to offchain storage
@@ -723,6 +1183,16 @@ EXAMPLES
   offchain-write --name test-account --privateKey 0x...
 
   offchain-write --name test-account --privateKey 0x...  privateDEK 0x... --encryptTo 0x...
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/offchain-write.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/offchain-write.ts)_
@@ -733,58 +1203,20 @@ Generate proof-of-possession to be used to authorize a signer. See the "account:
 
 ```
 USAGE
-  $ celocli account:proof-of-possession --signer <value> --account <value> [--gasCurrency
-    <value>] [--globalHelp]
+  $ celocli account:proof-of-possession --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ]
+    [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Address of the
-                                                            account that needs to prove
-                                                            possession of the signer
-                                                            key.
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Address of the
-                                                            signer key to prove
-                                                            possession of.
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
 
-DESCRIPTION
-  Generate proof-of-possession to be used to authorize a signer. See the
-  "account:authorize" command for more details.
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
 
-EXAMPLES
-  proof-of-possession --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb
-```
-
-_See code: [src/commands/account/proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/proof-of-possession.ts)_
-
-## `celocli account:recover-old`
-
-Recovers the Valora old account and print out the key information. The old Valora app (in a beta state) generated the user address using a seed of 32 bytes, instead of 64 bytes. As the app fixed that, some old accounts were left with some funds. This command allows the user to recover those funds.
-
-```
-USAGE
-  $ celocli account:recover-old --mnemonicPath <value> [--gasCurrency <value>]
-    [--globalHelp] [--passphrasePath <value>] [--changeIndex <value>] [--addressIndex
-    <value>] [--language chinese_simplified|chinese_traditional|english|french|italian|j
-    apanese|korean|spanish] [--derivationPath <value>]
-
-FLAGS
-  --addressIndex=<value>
-      Choose the address index for the derivation path
-
-  --changeIndex=<value>
-      Choose the change index for the derivation path
-
-  --derivationPath=<value>
-      Choose a different derivation Path (Celo's default is "m/44'/52752'/0'"). Use "eth"
-      as an alias of the Ethereum derivation path ("m/44'/60'/0'"). Recreating the same
-      account requires knowledge of the mnemonic, passphrase (if any), and the derivation
-      path
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account that needs to prove possession of the signer key.
 
   --gasCurrency=0x1234567890123456789012345678901234567890
       Use a specific gas currency for transaction fees (defaults to CELO if no gas
@@ -793,41 +1225,35 @@ FLAGS
   --globalHelp
       View all available global flags
 
-  --language=<option>
-      [default: english] Language for the mnemonic words. **WARNING**, some hardware
-      wallets don't support other languages
-      <options: chinese_simplified|chinese_traditional|english|french|italian|japanese|kor
-      ean|spanish>
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
 
-  --mnemonicPath=<value>
-      (required) Path to a file that contains all the mnemonic words separated by a space
-      (example: "word1 word2 word3 ... word24"). If the words are a language other than
-      English, the --language flag must be used. Only BIP39 mnemonics are supported
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the signer key to prove possession of.
 
-  --passphrasePath=<value>
-      Path to a file that contains the BIP39 passphrase to combine with the mnemonic
-      specified using the mnemonicPath flag and the index specified using the addressIndex
-      flag. Every passphrase generates a different private key and wallet address.
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
-  Recovers the Valora old account and print out the key information. The old Valora app
-  (in a beta state) generated the user address using a seed of 32 bytes, instead of 64
-  bytes. As the app fixed that, some old accounts were left with some funds. This
-  command allows the user to recover those funds.
+  Generate proof-of-possession to be used to authorize a signer. See the
+  "account:authorize" command for more details.
 
 EXAMPLES
-  recover-old --mnemonicPath some_folder/my_mnemonic_file
+  proof-of-possession --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --signer 0x6ecbe1db9ef729cbe972c83fb886247691fb6beb
 
-  recover-old --mnemonicPath some_folder/my_mnemonic_file --passphrasePath myFolder/my_passphrase_file
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
 
-  recover-old --mnemonicPath some_folder/my_mnemonic_file --language spanish
-
-  recover-old --mnemonicPath some_folder/my_mnemonic_file --passphrasePath some_folder/my_passphrase_file --language japanese --addressIndex 5
-
-  recover-old --mnemonicPath some_folder/my_mnemonic_file --passphrasePath some_folder/my_passphrase_file --addressIndex 5
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-_See code: [src/commands/account/recover-old.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/recover-old.ts)_
+_See code: [src/commands/account/proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/proof-of-possession.ts)_
 
 ## `celocli account:register`
 
@@ -835,19 +1261,36 @@ Register an account on-chain. This allows you to lock Gold, which is a pre-requi
 
 ```
 USAGE
-  $ celocli account:register --from <value> [--gasCurrency <value>] [--globalHelp]
-    [--name <value>]
+  $ celocli account:register --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp] [--name <value>]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Account Address
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
   --name=<value>
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Register an account on-chain. This allows you to lock Gold, which is a pre-requisite
@@ -858,6 +1301,16 @@ EXAMPLES
   register --from 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
   register --from 0x5409ed021d9299bf6814279a6a1411a7e866a631 --name test-account
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/register.ts)_
@@ -868,22 +1321,37 @@ Register a data encryption key for an account on chain. This key can be used to 
 
 ```
 USAGE
-  $ celocli account:register-data-encryption-key --from <value> --publicKey <value> [--gasCurrency
-    <value>] [--globalHelp]
+  $ celocli account:register-data-encryption-key --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --publicKey <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 FLAGS
-  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d         (required) Addess of the
-                                                            account to set the data
-                                                            encryption key for
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --publicKey=<value>                                       (required) The public key
-                                                            you want to register
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account to set the data encryption key for
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --publicKey=<value>
+      (required) The public key you want to register
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Register a data encryption key for an account on chain. This key can be used to
@@ -891,21 +1359,39 @@ DESCRIPTION
 
 EXAMPLES
   register-data-encryption-key --publicKey 0x...  --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/register-data-encryption-key.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/register-data-encryption-key.ts)_
 
 ## `celocli account:register-metadata`
 
-Register metadata URL for an account where users will be able to retieve the metadata file and verify your claims
+Register metadata URL for an account where users will be able to retrieve the metadata file and verify your claims
 
 ```
 USAGE
-  $ celocli account:register-metadata --from <value> --url <value> [--gasCurrency <value>]
+  $ celocli account:register-metadata --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --url
+    <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--globalHelp] [--force] [--columns <value> | -x] [--filter <value>] [--no-header |
     [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
   -x, --extended
       show extra columns
 
@@ -922,7 +1408,7 @@ FLAGS
       Ignore metadata validity checks
 
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
-      (required) Addess of the account to set metadata for
+      (required) Address of the account to set metadata for
 
   --gasCurrency=0x1234567890123456789012345678901234567890
       Use a specific gas currency for transaction fees (defaults to CELO if no gas
@@ -930,6 +1416,10 @@ FLAGS
 
   --globalHelp
       View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
 
   --no-header
       hide table header from output
@@ -947,12 +1437,25 @@ FLAGS
   --url=<value>
       (required) The url to the metadata you want to register
 
+  --useLedger
+      Set it to use a ledger wallet
+
 DESCRIPTION
-  Register metadata URL for an account where users will be able to retieve the metadata
+  Register metadata URL for an account where users will be able to retrieve the metadata
   file and verify your claims
 
 EXAMPLES
   register-metadata --url https://www.mywebsite.com/celo-metadata --from 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/register-metadata.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/register-metadata.ts)_
@@ -963,19 +1466,37 @@ Sets the name of a registered account on-chain. An account's name is an optional
 
 ```
 USAGE
-  $ celocli account:set-name --account <value> --name <value> [--gasCurrency <value>]
+  $ celocli account:set-name --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --name <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
     [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --name=<value>                                            (required)
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --name=<value>
+      (required)
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Sets the name of a registered account on-chain. An account's name is an optional human
@@ -983,6 +1504,16 @@ DESCRIPTION
 
 EXAMPLES
   set-name --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --name test-account
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/set-name.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/set-name.ts)_
@@ -993,20 +1524,41 @@ Sets a payment delegation beneficiary, an account address to receive a fraction 
 
 ```
 USAGE
-  $ celocli account:set-payment-delegation --account <value> --beneficiary <value> --fraction
-    <value> [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:set-payment-delegation --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --beneficiary 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --fraction <value> [-k
+    <value> | --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
-  --beneficiary=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d  (required) Account Address
-  --fraction=<value>                                        (required)
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --beneficiary=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --fraction=<value>
+      (required)
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Sets a payment delegation beneficiary, an account address to receive a fraction of the
@@ -1014,6 +1566,16 @@ DESCRIPTION
 
 EXAMPLES
   set-payment-delegation --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --beneficiary 0x6Ecbe1DB9EF729CBe972C83Fb886247691Fb6beb --fraction 0.1
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/set-payment-delegation.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/set-payment-delegation.ts)_
@@ -1024,24 +1586,44 @@ Sets the wallet of a registered account on-chain. An account's wallet is an opti
 
 ```
 USAGE
-  $ celocli account:set-wallet --account <value> --wallet <value> [--gasCurrency
-    <value>] [--globalHelp] [--signature <value>] [--signer <value>]
+  $ celocli account:set-wallet --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --wallet 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ]
+    [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--globalHelp] [--signature 0x] [--signer
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Account Address
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --signature=0x                                            Signature (a.k.a.
-                                                            proof-of-possession) of the
-                                                            signer key
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       Address of the signer key to
-                                                            verify proof of possession.
-  --wallet=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Account Address
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --signature=0x
+      Signature (a.k.a. proof-of-possession) of the signer key
+
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the signer key to verify proof of possession.
+
+  --useLedger
+      Set it to use a ledger wallet
+
+  --wallet=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Account Address
 
 DESCRIPTION
   Sets the wallet of a registered account on-chain. An account's wallet is an optional
@@ -1051,6 +1633,16 @@ EXAMPLES
   set-wallet --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --wallet 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
   set-wallet --account 0x5409ed021d9299bf6814279a6a1411a7e866a631 --wallet 0x5409ed021d9299bf6814279a6a1411a7e866a631 --signer 0x0EdeDF7B1287f07db348997663EeEb283D70aBE7 --signature 0x1c5efaa1f7ca6484d49ccce76217e2fba0552c0b23462cff7ba646473bc2717ffc4ce45be89bd5be9b5d23305e87fc2896808467c4081d9524a84c01b89ec91ca3
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/set-wallet.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/set-wallet.ts)_
@@ -1061,16 +1653,11 @@ Show information for an account, including name, authorized vote, validator, and
 
 ```
 USAGE
-  $ celocli account:show ARG1 [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:show ARG1 [-n <value>] [--globalHelp]
 
 FLAGS
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -n, --node=<value>  URL of the node to run commands against or an alias
+      --globalHelp    View all available global flags
 
 DESCRIPTION
   Show information for an account, including name, authorized vote, validator, and
@@ -1080,6 +1667,16 @@ DESCRIPTION
 
 EXAMPLES
   show 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/show.ts)_
@@ -1090,22 +1687,46 @@ Show information about claimed accounts
 
 ```
 USAGE
-  $ celocli account:show-claimed-accounts ARG1 [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:show-claimed-accounts ARG1 [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp]
 
 FLAGS
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Show information about claimed accounts
 
 EXAMPLES
   show-claimed-accounts 0x5409ed021d9299bf6814279a6a1411a7e866a631
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/show-claimed-accounts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/show-claimed-accounts.ts)_
@@ -1116,51 +1737,41 @@ Show the data in a local metadata file
 
 ```
 USAGE
-  $ celocli account:show-metadata ARG1 [--gasCurrency <value>] [--globalHelp] [--columns
-    <value> | -x] [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output
-    csv|json|yaml |  | ] [--sort <value>]
+  $ celocli account:show-metadata ARG1 [-n <value>] [--globalHelp] [--columns <value> | -x]
+    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
+    | ] [--sort <value>]
 
 ARGUMENTS
   ARG1  Path of the metadata file
 
 FLAGS
-  -x, --extended
-      show extra columns
-
-  --columns=<value>
-      only show provided columns (comma-separated)
-
-  --csv
-      output is csv format [alias: --output=csv]
-
-  --filter=<value>
-      filter property by partial string matching, ex: name=foo
-
-  --gasCurrency=0x1234567890123456789012345678901234567890
-      Use a specific gas currency for transaction fees (defaults to CELO if no gas
-      currency is supplied). It must be a whitelisted token.
-
-  --globalHelp
-      View all available global flags
-
-  --no-header
-      hide table header from output
-
-  --no-truncate
-      do not truncate output to fit screen
-
-  --output=<option>
-      output in a more machine friendly format
-      <options: csv|json|yaml>
-
-  --sort=<value>
-      property to sort by (prepend '-' for descending)
+  -n, --node=<value>     URL of the node to run commands against or an alias
+  -x, --extended         show extra columns
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --globalHelp       View all available global flags
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
 
 DESCRIPTION
   Show the data in a local metadata file
 
 EXAMPLES
   show-metadata ~/metadata.json
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/show-metadata.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/show-metadata.ts)_
@@ -1171,28 +1782,41 @@ Unlock an account address to send transactions or validate blocks
 
 ```
 USAGE
-  $ celocli account:unlock ARG1 [--gasCurrency <value>] [--globalHelp] [--password
-    <value>] [--duration <value>]
+  $ celocli account:unlock ARG1 [-k <value> | --useLedger | ] [-n <value>]
+    [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
+    <value> ] [--globalHelp] [--password <value>] [--duration <value>]
 
 ARGUMENTS
   ARG1  Account address
 
 FLAGS
-  --duration=<value>                                        Duration in seconds to leave
-                                                            the account unlocked.
-                                                            Unlocks until the node exits
-                                                            by default.
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --password=<value>                                        Password used to unlock the
-                                                            account. If not specified,
-                                                            you will be prompted for a
-                                                            password.
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --duration=<value>
+      Duration in seconds to leave the account unlocked. Unlocks until the node exits by
+      default.
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --password=<value>
+      Password used to unlock the account. If not specified, you will be prompted for a
+      password.
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Unlock an account address to send transactions or validate blocks
@@ -1201,6 +1825,16 @@ EXAMPLES
   unlock 0x5409ed021d9299bf6814279a6a1411a7e866a631
 
   unlock 0x5409ed021d9299bf6814279a6a1411a7e866a631 --duration 600
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/unlock.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/unlock.ts)_
@@ -1211,27 +1845,41 @@ Verify a proof-of-possession. See the "account:proof-of-possession" command for 
 
 ```
 USAGE
-  $ celocli account:verify-proof-of-possession --signer <value> --account <value> --signature <value>
-    [--gasCurrency <value>] [--globalHelp]
+  $ celocli account:verify-proof-of-possession --signer 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    --account 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --signature 0x [-k <value> |
+    --useLedger | ] [-n <value>] [--gasCurrency
+    0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
+    [--globalHelp]
 
 FLAGS
-  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d      (required) Address of the
-                                                            account that needs to prove
-                                                            possession of the signer
-                                                            key.
-  --gasCurrency=0x1234567890123456789012345678901234567890  Use a specific gas currency
-                                                            for transaction fees
-                                                            (defaults to CELO if no gas
-                                                            currency is supplied). It
-                                                            must be a whitelisted token.
-  --globalHelp                                              View all available global
-                                                            flags
-  --signature=0x                                            (required) Signature (a.k.a.
-                                                            proof-of-possession) of the
-                                                            signer key
-  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d       (required) Address of the
-                                                            signer key to verify proof
-                                                            of possession.
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --account=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the account that needs to prove possession of the signer key.
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --signature=0x
+      (required) Signature (a.k.a. proof-of-possession) of the signer key
+
+  --signer=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the signer key to verify proof of possession.
+
+  --useLedger
+      Set it to use a ledger wallet
 
 DESCRIPTION
   Verify a proof-of-possession. See the "account:proof-of-possession" command for more
@@ -1239,6 +1887,16 @@ DESCRIPTION
 
 EXAMPLES
   verify-proof-of-possession --account 0x199eDF79ABCa29A2Fa4014882d3C13dC191A5B58 --signer 0x0EdeDF7B1287f07db348997663EeEb283D70aBE7 --signature 0x1c5efaa1f7ca6484d49ccce76217e2fba0552c0b23462cff7ba646473bc2717ffc4ce45be89bd5be9b5d23305e87fc2896808467c4081d9524a84c01b89ec91ca3
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
 ```
 
 _See code: [src/commands/account/verify-proof-of-possession.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/account/verify-proof-of-possession.ts)_
