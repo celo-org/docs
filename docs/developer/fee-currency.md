@@ -3,7 +3,7 @@ title: Implementing Fee Abstraction in Wallets
 description: How to allow your wallet users to pay for gas fee using alternate fee currencies
 ---
 
-Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in **FeeCurrencyWhitelist.sol**.
+Celo allows paying gas fees in currency other than the native currency. The tokens that can be used to pay gas fees is controlled via governance and the list of tokens allowed is maintained in [**FeeCurrencyWhitelist.sol**](../contract-addresses.md).
 
 Alternate fee currency works with EOAs and no paymaster is required!
 
