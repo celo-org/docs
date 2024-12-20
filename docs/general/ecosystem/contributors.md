@@ -64,13 +64,13 @@ Tasks range from minor to major improvements. Based on your interests, skillset,
 
 Celo uses a standard "contributor workflow" where changes are made through pull requests (PRs). This workflow enables peer review, easy testing, and social collaboration.
 
-Following these guidelines will help ensure that your pull request (PR) gets approved. Each protocol may have its own specific guidelines, so review them before contributing. Celo-specific contribution guidelines can be found <ColoredText>[here](./guides//guidelines.md)</ColoredText>. 
+Following these guidelines will help ensure that your pull request (PR) gets approved and you build a good relationship to the protocol you are contributing to. Each protocol may have its own specific guidelines, so review them before contributing. Celo-specific contribution guidelines can be found <ColoredText>[here](./guides//guidelines.md)</ColoredText>. Make sure to COMMUNICATE with the repo maintainer to make sure you fully understand the task. 
 
 #### To contribute:
 
 1. <ColoredText>Fork the repository</ColoredText>. Make sure you also [add an upstream](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to be able to update your fork.
 2. <ColoredText>Clone your fork</ColoredText> to your computer.
-3. <ColoredText>Create a topic branch</ColoredText> and name it appropriately. Starting the branch name with the issue number is a good practice and a reminder to fix only one issue in a Pull-Request (PR).
+3. <ColoredText>Create a topic branch</ColoredText> and **name** it appropriately. Starting the branch name with the issue number is a good practice and a reminder to fix only one issue in a Pull-Request (PR).
 4. <ColoredText>Make your changes</ColoredText> adhering to the coding conventions described below.  In general a commit serves a single purpose and diffs should be easily comprehensible. For this reason do not mix any formatting fixes or code moves with actual code changes.
 5. <ColoredText>Commit your changes</ColoredText>  see [How to Write a Git Commit Message](https://cbea.ms/git-commit/) article by Chris Beams.
 6. <ColoredText>Test your changes locally</ColoredText> before pushing to ensure that what you are proposing is not breaking another part of the software. Check the repository for the needed tests. Your PR should contain unit and end-to-end tests and a description of how these were run.
@@ -80,7 +80,7 @@ Following these guidelines will help ensure that your pull request (PR) gets app
 10. Provide a <ColoredText>comprehensive description </ColoredText> of the problem addressed and changes made. Explains dependencies and backwards incompatible changes .
 11. <ColoredText>Add labels</ColoredText> to identify the type of your PR.  For example, if your PR fixes a bug, add the "bug" label.
 12. If the PR address an existing issue, comment in the issue with the PR number.
-13. <ColoredText>Ensure your changes are reviewed</ColoredText>. Request the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.Let the project you are contributing to know in the issue comments on GitHub or using the Discord sever chat channels that your PR is ready for review. If you are a maintainer, you can choose reviewers, otherwise this will be done by one of the maintainers.
+13. <ColoredText>Ensure your changes are reviewed</ColoredText>. Request the appropriate reviewers. When in doubt, consult the CODEOWNERS file for suggestions.Let the project you are contributing to know in the issue comments on GitHub or using the **Discord** sever chat channels that your PR is ready for review. If you are a maintainer, you can choose reviewers, otherwise this will be done by one of the maintainers.
 14. <ColoredText>Make any required changes</ColoredText> on your contribution from the reviewers feedback.  Make the changes, commit to your branch, and push to your remote fork.
 15. <ColoredText>When your PR is approved, validated</ColoredText>, all tests pass and your branch has no conflicts, it can be merged. Again, this action needs to be done by a maintainer - usually the same person who approves will also merge it.
 
