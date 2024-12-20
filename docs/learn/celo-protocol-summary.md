@@ -13,7 +13,7 @@ Summary of the Celo Protocol and the value it provides to the community.
 
 The Celo protocol provides a platform upon which the Celo community can create stabilized value digital assets. Named for the currencies they follow, Celo Dollars (cUSD), Celo Euros (cEUR) and Celo Reals are Mento stablecoins that allow anyone to share value faster, cheaper and more easily from a mobile phone.
 
-The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/) and [ultralight mobile](/protocol/consensus/ultralight-sync) clients.
+The Celo protocol also includes mechanisms for [lightweight identity](/protocol/identity/).
 
 **Innovative tools to build native mobile dApps:**
 
@@ -24,7 +24,6 @@ The Celo protocol also includes mechanisms for [lightweight identity](/protocol/
 - Proof-of-Stake
 - Open-source
 - Permissionless
-- High Speed Sync for Ultra-light Clients
 - Gas Payable in Multiple Stablecoins
 - Programmable (full EVM Compatibility)
 

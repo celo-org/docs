@@ -13,7 +13,7 @@ The protocol maintains a governable allowlist of smart contract addresses which 
 
 ## Allowlisted Gas Fee Addresses
 
-To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
+To obtain a list of the gas fee addresses that have been allowlisted using [Celo's Governance Process](https://docs.celo.org/protocol/governance), you can run the `getWhitelist` method on the `FeeCurrencyWhitelist` contract. All other notable Mainnet core smart contracts are listed [here](https://docs.celo.org/contract-addresses#celo-mainnet).
 
 ### Tokens with Adapters
 

@@ -251,7 +251,7 @@ Step 2 will auto populate the ABI with the proxy ABI. We will want to change tha
 
 ![Governance Safe Creation process step 3](/img/build/governance/governance-safe-multisig-3.png)
 
-### **Step 4 Fill in the the appropriate addresses**
+### **Step 4 Fill in the appropriate addresses**
 
 You will now need to add the addresses you are wishing to interact with
 

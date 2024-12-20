@@ -66,9 +66,9 @@ Mainnet = 'https://forno.celo.org'
 We also expose data on the cLabs run blockscout instance. Blockscout itself exposes an API.
 
 ```
-Alfajores = 'https://alfajores-blockscout.celo-testnet.org'
+Alfajores = 'https://celo-alfajores.blockscout.com/'
 
-Baklava = 'https://baklava-blockscout.celo-testnet.org'
+Baklava = 'https://celo-baklava.blockscout.com/'
 
 Mainnet = 'https://explorer.celo.org/'
 ```

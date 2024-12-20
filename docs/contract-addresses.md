@@ -12,7 +12,7 @@ Core contract address proxies and implementations for the Celo network.
 
 :::tip
 
-View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts) contract addresses by searching testnet or mainnet on [celoscan.io](https://celoscan.io/) or [explorer.celo.org](https://explorer.celo.org/).
+View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/master/packages/protocol/contracts) contract addresses by searching testnet or Mainnet on [celoscan.io](https://celoscan.io/) or [explorer.celo.org](https://explorer.celo.org/).
 
 :::
 

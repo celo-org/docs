@@ -334,11 +334,6 @@ const sidebars = {
           ],
         },
         {
-          type: "doc",
-          label: "Coinbase Wallet",
-          id: "wallet/coinbase-wallet",
-        },
-        {
           type: "link",
           label: "Staking",
           href: "https://medium.com/stake-service/hey-guys-today-well-take-a-look-at-how-you-can-use-the-cello-wallet-to-stake-your-own-cello-92730ac24aa5",
@@ -399,18 +394,13 @@ const sidebars = {
           items: [
             {
               type: "link",
-              label: "Network Stats",
-              href: "https://dune.com/celo/celo-blockchain-overview",
-            },
-            {
-              type: "link",
               label: "Blockscout",
               href: "https://explorer.celo.org/",
             },
             {
               type: "link",
               label: "Celoscan",
-              href: "https://celoscan.xyz/",
+              href: "https://celoscan.io/",
             },
           ],
         },
@@ -933,11 +923,6 @@ const sidebars = {
           label: "Locating Nodes",
           id: "protocol/consensus/locating-nodes",
         },
-        {
-          type: "doc",
-          label: "Ultralight Sync",
-          id: "protocol/consensus/ultralight-sync",
-        },
       ],
     },
     {
@@ -1052,11 +1037,6 @@ const sidebars = {
       type: "doc",
       label: "Celo Randomness",
       id: "protocol/randomness",
-    },
-    {
-      type: "doc",
-      label: "Ultralight Client",
-      id: "protocol/plumo",
     },
     {
       type: "category",
@@ -1236,7 +1216,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "L1 to L2 Operator Guide",
+      label: "L2 Node Operator Guide",
       id: "cel2/l2-operator-guide",
     },
     {

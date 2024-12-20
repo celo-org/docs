@@ -3,6 +3,12 @@ title: Celo Randomness
 description: How unpredictable pseudo-randomness is achieved on the Celo blockchain.
 ---
 
+:::warning
+Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
+
+For the latest information, please refer to our [Celo L2 documentation](https://docs.celo.org/cel2).
+:::
+
 # Randomness
 
 How unpredictable pseudo-randomness is achieved on the Celo blockchain and offered as a service for dapp developers.

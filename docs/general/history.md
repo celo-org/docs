@@ -20,7 +20,7 @@ Ethereum debuts as a Proof-of-Work blockchain, introducing smart contracts but f
 
 #### April 2020: [Celo Mainnet Launch](https://blog.celo.org/its-official-celo-mainnet-is-here-6a3a71763f68)
 
-Celo officially launches its mainnet on Earth Day, marking its debut as a Layer 1 blockchain network. Designed with a focus on energy efficiency and low transaction costs, Celo sets out to provide a more sustainable and accessible blockchain solution.
+Celo officially launches its Mainnet on Earth Day, marking its debut as a Layer 1 blockchain network. Designed with a focus on energy efficiency and low transaction costs, Celo sets out to provide a more sustainable and accessible blockchain solution.
 
 #### May 2021: [Celo Donut Hard Fork](https://blog.celo.org/donut-hardfork-is-live-on-celo-585e2e294dcb)
 

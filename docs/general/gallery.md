@@ -88,7 +88,7 @@ El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the
 
 ### ReSource Network
 
-The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
+The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO Mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
 
 - [Website](https://resource.finance/)
 - [GitHub](https://github.com/ReSource-Network)
@@ -134,13 +134,13 @@ At Dunia Payment, we are building an electronic wallet that will let people in S
 
 Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces checkouts, providing fast and easy integration for Celo and cUSD acceptance and management for merchants.
 
-- [GitHub](https://github.com/blockforce-official/cryptum-checkout-wordpress-plugin)
+- [GitHub](https://github.com/cryptum-official/cryptum-checkout-wordpress-plugin)
 
 ### Cryptum Woocommerce NFT
 
 Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces, providing easy and fast Celo NFT creation and integration through a no-code interface - with marketplace goods for merchants, offering customers unique experiences and extending NFT possibilities for many marketplaces.
 
-- [GitHub](https://github.com/blockforce-official/cryptum-nft-wordpress-plugin)
+- [GitHub](https://github.com/cryptum-official/cryptum-checkout-wordpress-plugin)
 
 ### Bloinx by BX Smart Labs
 

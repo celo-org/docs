@@ -25,7 +25,7 @@ There are two ways to specify the proxy information to a validator. It can be do
 
 ## Command Line
 
-Instructions on how to add proxies via the command line is described in the [Getting Started guide for mainnet](/validator/run/mainnet#deploy-a-validator-machine).
+Instructions on how to add proxies via the command line is described in the [Getting Started guide for Mainnet](/validator/run/mainnet#deploy-a-validator-machine).
 
 ## RPC API
 
