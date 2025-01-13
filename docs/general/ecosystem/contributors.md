@@ -31,7 +31,7 @@ To contribute to Celo, the following accounts are necessary:
 :::info
 Celo supports open-source contributions through the [Scout Game](https://scoutgame.xyz/), offering rewards to builders who contribute to ecosystem projects. For details, visit the [Celo Rewards Page](https://scoutgame.xyz/info/partner-rewards/celo) and carefully review the guide to maximize your rewards.
 
-For any questions join our [Build with Celo telegram group](t.me/buildwithcelo).
+For any questions join our [Build with Celo telegram group](https://t.me/buildwithcelo).
 :::
 
 
