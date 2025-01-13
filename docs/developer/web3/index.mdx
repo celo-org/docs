@@ -1,0 +1,82 @@
+---
+title: Web3.js
+description: Using Web3.js with Celo
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Web3.js
+
+Web3.js was established in 2014, making it the oldest web3 library. With extensive documentation, an active community and modular design, Web3.js is powerful and easy-to-use. It has _support for Celo features (specifically **[Fee Abstraction](../fee-currency.md)** via plugins since version 4.13.1_.
+
+To learn more about building with Web3.js, check out their [docs](https://docs.web3js.org/) as they have excellent examples of how to use it in your project.
+
+### Fee Abstraction with Web3.js
+
+[Fee Abstraction](../fee-currency.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
+
+#### Requirements
+
+- Web3.js v. > 4.13.1 
+
+#### Install the Celo Web3.js Plugin
+
+For Celo' specific features like [Fee Abstraction](../fee-currency.md) transactions you need to install `@celo/web3-plugin-transaction-types` as well as `web3@4.13.1` or higher. This also adds utils like `getCoreContractAddress` for fetching core contract address from onchain registry. This is useful to get the stablecoin addresses you are planning to use programmatically. Make sure they are listed in the [**FeeCurrencyWhitelist.sol**](../../contract-addresses.md).
+
+{/* prettier-ignore-start */}
+
+<Tabs>
+  <TabItem value="yarn" label="yarn" attributes={{ className: "yarn_tab" }} default>
+
+        ```bash
+        yarn add @celo/web3-plugin-transaction-types web3
+        ```
+
+  </TabItem>
+  <TabItem value="npm" label="npm" attributes={{ className: "npm_tab" }}>
+
+        ```bash
+        npm install @celo/web3-plugin-transaction-types web3
+        ```
+
+  </TabItem>
+</Tabs>
+
+
+Now `web3.celo` is available and `web3.eth` is "celo-aware". "aware" means that if the tx has the `feeCurrency` param, calling `eth.sendTransaction` will use the celo cip64 serializer and be able to recognize the fee currency.
+
+Here an example on how to use "feeCurrency" with cEUR.
+
+```ts
+// see web3 docs for more info on setup
+
+import { Web3 } from "web3";
+import { CeloTransactionTypesPlugin } from "@celo/web3-plugin-transaction-types";
+
+const web3 = new Web3("http://127.0.0.1:8545");
+web3.registerPlugin(new CeloTransactionTypesPlugin());
+
+// Now `web3.celo` is available and `web3.eth` is celo-aware. 
+// Get all StableToken Addresses through the getCoreContractAddress
+const cEUR = await web3.celo.getCoreContractAddress("StableTokenEUR");
+const txData = {
+  from: "0x123...",
+  to: "0x456...",
+  value: 123n,
+  // find the list of accepted tokens in the Fee Abstraction documentation
+  feeCurrency: cEUR, // optional
+};
+await web3.celo.populateTransaction(txData);
+const tx = await web3.eth.sendTransaction(txData);
+```
+
+## Gas Price
+
+When paying for transaction with an alternate feeCurrency token it is **important** to know the price of gas denominated in that token. You can use `web3.celo.populateTransaction` to make sure `maxPriorityFeePerGas`, `maxFeePerGas`, and `gas` are filled properly.
+
+```ts
+await web3.celo.populateTransaction(txData);
+```
+
+You can find more examples in the [github repository readme](https://github.com/celo-org/web3-plugin-transaction-types).
