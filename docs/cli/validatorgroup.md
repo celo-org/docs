@@ -4,11 +4,13 @@
 View and manage Validator Groups
 
 * [`celocli validatorgroup:commission`](#celocli-validatorgroupcommission)
+* [`celocli validatorgroup:community-rpc-nodes`](#celocli-validatorgroupcommunity-rpc-nodes)
 * [`celocli validatorgroup:deregister`](#celocli-validatorgroupderegister)
 * [`celocli validatorgroup:list`](#celocli-validatorgrouplist)
 * [`celocli validatorgroup:member ARG1`](#celocli-validatorgroupmember-arg1)
 * [`celocli validatorgroup:register`](#celocli-validatorgroupregister)
 * [`celocli validatorgroup:reset-slashing-multiplier ARG1`](#celocli-validatorgroupreset-slashing-multiplier-arg1)
+* [`celocli validatorgroup:rpc-urls`](#celocli-validatorgrouprpc-urls)
 * [`celocli validatorgroup:show ARG1`](#celocli-validatorgroupshow-arg1)
 
 ## `celocli validatorgroup:commission`
@@ -20,7 +22,7 @@ USAGE
   $ celocli validatorgroup:commission --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--apply | --queue-update <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--apply | --queue-update <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -45,6 +47,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --queue-update=<value>
       Queues an update to the commission, which can be applied after the update delay.
@@ -78,6 +85,53 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validatorgroup/commission.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/commission.ts)_
 
+## `celocli validatorgroup:community-rpc-nodes`
+
+Displays a list of community RPC nodes for the currently elected validator groups
+
+```
+USAGE
+  $ celocli validatorgroup:community-rpc-nodes [-n <value>] [--globalHelp] [--columns <value> | -x]
+    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
+    | ] [--sort <value>] [--all]
+
+FLAGS
+  -n, --node=<value>     URL of the node to run commands against or an alias
+  -x, --extended         show extra columns
+      --all              Display all community RPC nodes, not just the ones from
+                         currently elected validator groups
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --globalHelp       View all available global flags
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
+
+DESCRIPTION
+  Displays a list of community RPC nodes for the currently elected validator groups
+
+ALIASES
+  $ celocli network:community-rpc-nodes
+  $ celocli network:rpc-urls
+  $ celocli node:list
+  $ celocli validator:community-rpc-nodes
+  $ celocli validator:rpc-urls
+  $ celocli validatorgroup:community-rpc-nodes
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
 ## `celocli validatorgroup:deregister`
 
 Deregister a Validator Group. After the group lock perioid has passed it will be possible to deregister it start unlocking the CELO. If you wish to deregister your validator group, you must first remove all members, then wait the required time before running this command.
@@ -87,7 +141,7 @@ USAGE
   $ celocli validatorgroup:deregister --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -109,6 +163,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -186,7 +245,7 @@ USAGE
   $ celocli validatorgroup:member ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yes] [--accept | --remove | --reorder <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--yes] [--accept | --remove | --reorder <value>]
 
 ARGUMENTS
   ARG1  Validator's address
@@ -214,6 +273,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --remove
       Remove a validator from the members list
@@ -259,7 +323,7 @@ USAGE
   $ celocli validatorgroup:register --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --commission <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yes]
+    [--ledgerLiveMode ] [--globalHelp] [--yes]
 
 FLAGS
   -k, --privateKey=<value>
@@ -285,6 +349,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -319,7 +388,7 @@ Reset validator group slashing multiplier.
 USAGE
   $ celocli validatorgroup:reset-slashing-multiplier ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 ARGUMENTS
   ARG1  ValidatorGroup's address
@@ -342,6 +411,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --useLedger
       Set it to use a ledger wallet
 
@@ -363,6 +437,55 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [src/commands/validatorgroup/reset-slashing-multiplier.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/reset-slashing-multiplier.ts)_
+
+## `celocli validatorgroup:rpc-urls`
+
+Displays a list of community RPC nodes for the currently elected validator groups
+
+```
+USAGE
+  $ celocli validatorgroup:rpc-urls [-n <value>] [--globalHelp] [--columns <value> | -x]
+    [--filter <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |
+    | ] [--sort <value>] [--all]
+
+FLAGS
+  -n, --node=<value>     URL of the node to run commands against or an alias
+  -x, --extended         show extra columns
+      --all              Display all community RPC nodes, not just the ones from
+                         currently elected validator groups
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --globalHelp       View all available global flags
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
+
+DESCRIPTION
+  Displays a list of community RPC nodes for the currently elected validator groups
+
+ALIASES
+  $ celocli network:community-rpc-nodes
+  $ celocli network:rpc-urls
+  $ celocli node:list
+  $ celocli validator:community-rpc-nodes
+  $ celocli validator:rpc-urls
+  $ celocli validatorgroup:community-rpc-nodes
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/validatorgroup/rpc-urls.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validatorgroup/rpc-urls.ts)_
 
 ## `celocli validatorgroup:show ARG1`
 
