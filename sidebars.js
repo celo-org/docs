@@ -145,6 +145,11 @@ const sidebars = {
       id: "build/quickstart",
     },
     {
+      type: "doc",
+      label: "Build with AI",
+      id: "build-with-ai/overview",
+    },
+    {
       type: "category",
       label: "Build on MiniPay",
       items: [
