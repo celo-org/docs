@@ -24,6 +24,26 @@ Celo's evolution from an L1 EVM-compatible chain to an L2 solution marks a signi
 
 From a technical standpoint, this shift brings substantial benefits. Native bridging between Celo and Ethereum, which was previously not possible, will now be a reality. This advancement significantly enhances the security of token transfers by reducing reliance on external bridges, which have often been a point of vulnerability. With native bridging, Celo can offer a more secure and streamlined experience for users, ensuring that transactions within our ecosystem are both safe and reliable. In essence, becoming an L2 not only aligns Celo more closely with Ethereum's expansive network but also empowers our community to innovate with greater confidence and reach.
 
+The table below summarizes the technical changes involved in transitioning from Celo's Layer 1 to Layer 2:
+
+| **Aspect**          | **Layer 1**                                                                                  | **Layer 2**                                                                                                   |
+|----------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| **Architecture**    | Single service, providing execution, consensus, and data availability.                      | Multiple services built on the op-stack with separate execution, data availability, and settlement layers.    |
+| **Bridging**        | Third-party bridges connecting to various chains.                                            | Additional native bridge with Ethereum alongside existing third-party bridges.                                |
+| **CELO Token**      | Lived on the Celo L1.                                                                        | Lives on Ethereum; CELO on L2 represents CELO bridged from Ethereum.                                          |
+| **Blocks**          | 5s long, 50M gas.                                                                           | 1s long, 30M gas.                                                                                            |
+| **Extra Fields**    | —                                                                                           | Withdrawals & withdrawalsRoot, blobGasUsed & excessBlobGas, parentBeaconBlockRoot.                           |
+| **Removed Fields**  | —                                                                                           | Randomness, epochSnarkData.                                                                                  |
+| **Validator Duties**| Operated the consensus protocol.                                                            | Validators will temporarily operate community RPC nodes.                                                     |
+| **Validator Rewards**| Distributed at epoch blocks.                                                              | Distributed periodically via smart contract execution.                                                       |
+| **Sequencing**      | Determined by the output of consensus, run by validators.                                    | Initially handled by a centralized sequencer with plans for decentralized sequencing later.                  |
+| **Precompiles**     | —                                                                                           | All Celo precompiles removed except for the transfer precompile which supports token duality.                 |
+| **EIP1559**         | Governable implementation on-chain.                                                         | Upgraded implementation with modified parameters across networks.                                            |
+| **Hardforks**       | —                                                                                           | Cel2 hardfork for transition to L2 alongside other op-stack hardforks.                                       |
+| **Transactions**    | —                                                                                           | Deprecated transactions include Type 0 with feeCurrency field and Type 124.                                  |
+| **Finality**        | One block finality, instantaneous once block is produced.                                    | Finality depends on trust in sequencer, batcher, proposer, and eigenDA, or ultimately on Ethereum.            |
+
+For more detailed technical changes, see [Celo's L2 Migration Documentation](https://specs.celo.org/l2_migration.html).
 
 ## Important Dates
 
