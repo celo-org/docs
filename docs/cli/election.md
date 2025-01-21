@@ -11,7 +11,7 @@ Participate in and view the state of Validator Elections
 * [`celocli election:show ARG1`](#celocli-electionshow-arg1)
 * [`celocli election:vote`](#celocli-electionvote)
 
-## `celocli election:activate`
+## `celocli election:activate` {#celocli-electionactivate}
 
 Activate pending votes in validator elections to begin earning rewards. To earn rewards as a voter, it is required to activate your pending votes at some point after the end of the epoch in which they were made.
 
@@ -77,7 +77,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/activate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/activate.ts)_
 
-## `celocli election:current`
+## `celocli election:current` {#celocli-electioncurrent}
 
 Outputs the set of validators currently participating in BFT to create blocks. An election is run to select the validator set at the end of every epoch.
 
@@ -155,7 +155,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/current.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/current.ts)_
 
-## `celocli election:list`
+## `celocli election:list` {#celocli-electionlist}
 
 Prints the list of validator groups, the number of votes they have received, the number of additional votes they are able to receive, and whether or not they are eligible to elect validators.
 
@@ -199,7 +199,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/list.ts)_
 
-## `celocli election:revoke`
+## `celocli election:revoke` {#celocli-electionrevoke}
 
 Revoke votes for a Validator Group in validator elections.
 
@@ -259,7 +259,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/revoke.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/revoke.ts)_
 
-## `celocli election:run`
+## `celocli election:run` {#celocli-electionrun}
 
 Runs a "mock" election and prints out the validators that would be elected if the epoch ended right now.
 
@@ -299,7 +299,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/run.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/run.ts)_
 
-## `celocli election:show ARG1`
+## `celocli election:show ARG1` {#celocli-electionshow-arg1}
 
 Show election information about a voter or registered Validator Group
 
@@ -337,7 +337,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/election/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/election/show.ts)_
 
-## `celocli election:vote`
+## `celocli election:vote` {#celocli-electionvote}
 
 Vote for a Validator Group in validator elections.
 

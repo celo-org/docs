@@ -10,7 +10,7 @@ Transfer CELO and Celo Dollars
 * [`celocli transfer:reals`](#celocli-transferreals)
 * [`celocli transfer:stable`](#celocli-transferstable)
 
-## `celocli transfer:celo`
+## `celocli transfer:celo` {#celocli-transfercelo}
 
 Transfer CELO to a specified address. (Note: this is the equivalent of the old transfer:gold)
 
@@ -74,7 +74,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/celo.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/celo.ts)_
 
-## `celocli transfer:dollars`
+## `celocli transfer:dollars` {#celocli-transferdollars}
 
 Transfer Celo Dollars (cUSD) to a specified address.
 
@@ -137,7 +137,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/dollars.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/dollars.ts)_
 
-## `celocli transfer:erc20`
+## `celocli transfer:erc20` {#celocli-transfererc20}
 
 Transfer ERC20 to a specified address
 
@@ -201,7 +201,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/erc20.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/erc20.ts)_
 
-## `celocli transfer:euros`
+## `celocli transfer:euros` {#celocli-transfereuros}
 
 Transfer Celo Euros (cEUR) to a specified address.
 
@@ -264,7 +264,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/euros.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/euros.ts)_
 
-## `celocli transfer:reals`
+## `celocli transfer:reals` {#celocli-transferreals}
 
 Transfer Celo Brazilian Real (cREAL) to a specified address.
 
@@ -327,7 +327,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/transfer/reals.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/transfer/reals.ts)_
 
-## `celocli transfer:stable`
+## `celocli transfer:stable` {#celocli-transferstable}
 
 Transfer a stable token to a specified address.
 

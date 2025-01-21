@@ -351,5 +351,9 @@ module.exports = {
         "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc",
       crossorigin: "anonymous",
     },
+    {
+      href: "/css/custom.css",
+      type: "text/css",
+    },
   ],
 };
