@@ -36,13 +36,6 @@ GoodGosting is a no-loss DeFi saving game. Users can compete with others to get 
 - [Website](https://www.goodghosting.com)
 - [GitHub](https://github.com/good-ghosting)
 
-### Infibridge
-
-Infibridge is a Metamask-like browser extension wallet for Celo. It will support payment of gas fees in Celo or stable currencies like cUSD and cEUR. It has deep integration with Celo to allow staking, voting and token swaps.
-
-- [Website](https://www.infibridge.com)
-- [GitHub](https://github.com/infibridge/browser-extension-wallet)
-
 ### Plastiks
 
 Plastiks is an NFT marketplace deployed on CELO that brings People, Organizations and Companies together to fight against plastic pollution.
@@ -86,13 +79,6 @@ El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the
 - [Website](https://eldorado.io/)
 - [GitHub](https://github.com/eldoradoio)
 
-### ReSource Network
-
-The ReSource Network is building a resource-based mutual credit blockchain protocol. The initial version is deployed in CELO Mainnet on address: [0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08](https://explorer.celo.org/address/0x39049c02a56c3ecd046f6c2a9be0cffa2bc29c08/transactions)
-
-- [Website](https://resource.finance/)
-- [GitHub](https://github.com/ReSource-Network)
-
 ### Pesabase
 
 An integration of a Celo Dollar (Mento Stablecoin) and Mpesa, showing flows of payment between a Mpesa User and a Celo Blockchain wallet from anywhere in the world. Our aim with Pesabase is to provide Africans with a cheap and social option to remit and pay for goods and services.
@@ -113,23 +99,6 @@ impactMarket enables any vulnerable community to create its own unconditional ba
 
 - [Website](https://github.com/impactMarket)
 
-### Celo Toolkit by MugglePay
-
-MugglePay provides a payment SDK for merchants to accept cryptocurrencies. Mugglepay makes crypto payment easy and thousands of merchants are onboarded with MugglePay SDK. For the Celo Camp 2020, we will integrate with cUSD/CELO for payments on the Celo blockchain.
-
-- [Website](https://mugglepay.com/)
-
-Celo Toolkit is the open source interface for managing Celo accounts on the Web. Celo developer might start with a funded Celo account (Testnet) now in 1 minute. A Phone number or app downloads are not necessary.
-
-- [Website](https://celo.mugglepay.com)
-- [GitHub](https://github.com/MugglePay/celo-toolkit)
-
-### Dunia Pay Wallet
-
-At Dunia Payment, we are building an electronic wallet that will let people in Sub-Saharan Africa send and receive money directly on their phones. The app will use the Celo light client to process transactions faster, even in low internet connection areas common in Africa. The wallet will be built on top of the Celo platform and also using a set of external open source smart contracts.
-
-- [GitHub](https://github.com/duniapay/Dunia-Wallet-Celo)
-
 ### Cryptum Woocommerce Checkout
 
 Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces checkouts, providing fast and easy integration for Celo and cUSD acceptance and management for merchants.
@@ -149,13 +118,6 @@ A decentralized app that helps users to create reliable savings communities by u
 - [Website](https://bloinx.io/)
 - [GitHub](https://github.com/Bloinx/bloinx-mobile)
 
-### Poof.cash
-
-Poof.cash is a protocol for decentralized, private transactions. It is the first native privacy tool for Celo users.
-
-- [Website](https://poof.cash)
-- [GitHub](https://github.com/poofcash)
-
 ### Talent Protocol
 
 **Talent Protocol** is the web3 professional community where high-potential builders can transform loose connections into a support network able to invest in their future.
@@ -164,20 +126,6 @@ Until now careers have mostly been a single-player game where only a privileged 
 
 - [Website](https://talentprotocol.com)
 - [GitHub](https://github.com/talentprotocol)
-
-### esolidar
-
-Empowering philanthropy and ESG practice through blockchain. Any nonprofit, sustainable project or cause can choose to receive Celo stablecoins as donations.
-
-- [Website](https://web3.esolidar.com)
-- [GitHub](https://github.com/esolidar/web3)
-
-### NEFTME
-
-NEFTME is a decentralized social NFT-powered network that allows anyone, anywhere to create, share and sell an NFT, with any media content! Users can also benefit from the network value created through their engagement and connections, powered by their followers/supporters commitment, through NFTs Staking model with $NEFT token.
-
-- [Website](https://neftme.com)
-- [GitHub](https://github.com/NEFTME)
 
 ---
 
@@ -216,24 +164,11 @@ Celovote automatically distributes your stake to preferred validator groups that
 
 - [Website](https://celovote.com/)
 
-### Celo Tools
-
-Celo Tools is an accessible frontend to the [Celo CLI](/cli/index.md). Anyone and everyone participating in the Celo network should be able to stake and vote on governance proposals, Celo Tools provides this functionality for those without the know-how to access a command line.
-
-- [Website](https://celotools.com/)
-
 ### Savings Circle
 
 Savings Circles let you pool funds with your friends to save for large purchases. They are known by a variety of names around the world and are a common way to get liquidity and access to loans without access to formal financial institutions.
 
 - [GitHub](https://github.com/celo-org/savings-circle-demo)
-
-### Lovecrypto
-
-Lovecrypto enables people to earn cUSD to do tasks in their phones.
-
-- [Website](https://www.lovecrypto.net/)
-- [GitHub](https://github.com/lucaszsd/LovecryptoAppScreenshots)
 
 ### Cent Wallet
 
@@ -249,19 +184,6 @@ Symmetric is a fork of Balancer for Celo. Symmetric is open source on GitHub, ha
 - [Website](https://symmetric.finance/)
 - [GitHub](https://github.com/centfinance)
 
-### Tradegen
-
-Tradegen is an asset management and algo trading platform that connects users to traders. Users can invest in pools, manage their own pools, farm pool tokens to earn extra yield, and trade pool tokens as NFTs on the platform's marketplace. Tradegen is open source on GitHub.
-
-- [Website](https://www.tradegen.io/)
-- [GitHub](https://github.com/Tradegen)
-
-## Umoja
-
-UMOJA is an open banking platform that enables NGOs and FSPs to provide flexible micro-financing to anyone with a phone. Umoja is open source on GitHub and consists of a suite of APIs and products to make digital money accounts more accessible (and more easily to develop for other financial applications).
-
-- [GitHub](https://github.com/Emerging-Impact)
-
 ## Santym
 
 Santym is a platform that allows Africans to have access to U.S Banking with crypto integration. Santym's available on GitHub. Santym is currently working on an African Stablecoin Exchange that allows continental currencies to be easily swapped on celo's blockchain.
@@ -273,13 +195,6 @@ Santym is a platform that allows Africans to have access to U.S Banking with cry
 Into the Verse is a Pixel Parallel Universe, connecting players on Celo. We have a Play2Earn NFT Dungeon Loot Game, game storefront, and Token Swaps on Celo. Open Sourced on GitHub, we aim to bridge Defi and Gaming through token-gated Pixel Metaverses.
 
 - [GitHub](https://github.com/IntoTheVerse)
-
-## RARE 💎 GEMS
-
-Non-custodial multichain NFT marketplace, connected to Celo
-
-- [Website](https://raregems.io/)
-- [Celo NFT collections](https://raregems.io/celo)
 
 ## Bru Finance
 
@@ -301,20 +216,6 @@ The Front Page of Celo. Track and manage all your assets from one place. We supp
 
 - [Website](https://celotracker.com/)
 - [GitHub](https://github.com/celo-tracker/)
-
-### Cyberbox
-
-Cyberbox is ReFi NFT Marketplace that helps anyone become carbon neutral by offsetting carbon (CO2) through NFT trading.
-
-- [Website](https://cyberbox.art)
-- [GitHub](https://github.com/cybertime-eth/cyberbox)
-
-### inTheory NFTs
-
-inTheory is a DeSci funding platform that allows crypto users to fund, support, and track scientific reserach through the trading of AI-generative artworks. This application allows users to mint NFTs based on their research interests prior to the launch of the full inTheory platform.
-
-- [Website](https://intheory.impact-finance.io/)
-- [GitHub](https://github.com/Impact-Finance/intheory-mobile-nft-mint-celo)
 
 ### WalliD
 
