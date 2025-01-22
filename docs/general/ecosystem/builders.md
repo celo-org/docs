@@ -20,11 +20,9 @@ There are several ways to get started as a builder on Celo:
    
 3. **Contribute to Open Source Projects**: You can [contribute](./contributors.md) directly to Celo’s open-source codebase or build complementary projects. 
 
-4. **Learn through the Celo Academy**: For those new to blockchain development, [Celo Academy](https://celo.academy/) provides tutorials and courses that guide you from deploying your first contract to advanced topics.
+4. **Apply for Grants**: Celo has grants programs, like [Prezenti](https://www.prezenti.xyz/) and [Celo Public Goods](https://www.celopg.eco/) which supports projects that align with its mission to provide financial services to the next billion people.
 
-5. **Apply for Grants**: Celo has grants programs, like [Prezenti](https://www.prezenti.xyz/) and [Celo Public Goods](https://www.celopg.eco/) which supports projects that align with its mission to provide financial services to the next billion people.
+5. **Apply for an Accelerator**: Check out [Celo Camp](https://www.celocamp.com/), the accelerator focused on the Celo ecosystem. If you are not yet at that stage, they also offer [Startup Pathway](https://startup-pathway.mykajabi.com/) a program, that leads you through your first steps to becoming a founder. 
 
-6. **Apply for an Accelerator**: Check out [Celo Camp](https://www.celocamp.com/), the accelerator focused on the Celo ecosystem. If you are not yet at that stage, they also offer [Startup Pathway](https://startup-pathway.mykajabi.com/) a program, that leads you through your first steps to becoming a founder. 
-
-7. **Access Exclusive Resources**: [Register as a Celo Builder](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) to gain access to resources and support available to active builders on Celo.
+6. **Access Exclusive Resources**: [Register as a Celo Builder](https://docs.google.com/forms/d/e/1FAIpQLSemO5Kbf8fzq70AtiZEPRkk040MmpmmyhRqeurAwuVWUg63tQ/viewform) to gain access to resources and support available to active builders on Celo.
 

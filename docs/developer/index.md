@@ -25,7 +25,6 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 
 - [Quickstart with Celo Composer](https://docs.celo.org/build/quickstart)
 - [Celo Composer GitHub](https://github.com/celo-org/celo-composer)
-- [Community Resources](https://celo.academy/tags/c/tutorials/4/composer)
 
 ## Developer Tools
 
@@ -43,5 +42,4 @@ Celo Composer allows you to quickly build, deploy, and iterate on decentralized 
 
 ## Code Examples
 
-- [Developer Tutorials](https://celo.academy/c/tutorials/4)
 - [Dacade](https://dacade.org/communities/celo)
