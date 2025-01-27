@@ -175,3 +175,9 @@ setup.
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.1)
+
+## Common problems
+
+### Transactions are not being executed
+
+If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
