@@ -147,7 +147,7 @@ const sidebars = {
     {
       type: "doc",
       label: "Build with AI",
-      id: "build-with-ai/overview",
+      id: "developer/build-with-ai/overview",
     },
     {
       type: "category",
