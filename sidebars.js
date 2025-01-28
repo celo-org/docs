@@ -1,3 +1,5 @@
+//const { type } = require("@generated/site-storage");
+
 const sidebars = {
   // ######################################
   // What is Celo
@@ -145,10 +147,31 @@ const sidebars = {
       id: "build/quickstart",
     },
     {
-      type: "doc",
+      type: "category",
       label: "Build with AI",
-      id: "developer/build-with-ai/overview",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/build-with-ai/overview",
+        },
+        {
+          type: "doc",
+          label: "Tools & Infra",
+          id: "developer/build-with-ai/tools",
+        },
+        {
+          type: "doc",
+          label: "Examples",
+          id: "developer/build-with-ai/examples",
+        }
+      ]
     },
+    // {
+    //   type: "doc",
+    //   label: "Build with AI",
+    //   id: "developer/build-with-ai/overview",
+    // },
     {
       type: "category",
       label: "Build on MiniPay",

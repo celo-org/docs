@@ -6,7 +6,7 @@ Manage your Celo node
 * [`celocli node:accounts`](#celocli-nodeaccounts)
 * [`celocli node:synced`](#celocli-nodesynced)
 
-## `celocli node:accounts`
+## `celocli node:accounts` {#celocli-nodeaccounts}
 
 List the addresses that this node has the private keys for.
 
@@ -53,7 +53,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/node/accounts.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/node/accounts.ts)_
 
-## `celocli node:synced`
+## `celocli node:synced` {#celocli-nodesynced}
 
 Check if the node is synced
 
