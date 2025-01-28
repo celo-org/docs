@@ -30,8 +30,7 @@ See the Alfajores network info [here](https://docs.celo.org/network#celo-alfajor
 
 ### Is there anything that used to work on Alfajores that doesn’t anymore?
 
-See [What's Changed Celo L1 -> L2] https://deploy-preview-1613--celo-docs.netlify.app/cel2/whats-changed/l1-l2.
-Also see [L1→L2 Migration Changes](https://specs.celo.org/l2_migration.html) in the spec for greater detail.
+See [What's Changed Celo L1 -> L2](./whats-changed/l1-l2.md) and [L1 -> L2 Migration Changes](https://specs.celo.org/l2_migration.html) in the spec for greater detail.
 
 ## Celo L2 setup
 
