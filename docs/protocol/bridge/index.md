@@ -17,6 +17,7 @@ Be sure you understand and review the risks pages when bridging assets between c
 
 ## Token bridges
 
+- [Layerswap](https://layerswap.io/app?to=celo_mainnet)
 - [SmolRefuel (Gassless Bridging)](https://smolrefuel.com/?outboundChain=42220)
 - [Squid Router V2](https://v2.app.squidrouter.com/)
 - [Portal (Wormhole)](https://www.portalbridge.com/#/transfer)
