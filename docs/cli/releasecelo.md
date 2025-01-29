@@ -29,7 +29,8 @@ USAGE
     --role vote|validator|attestation --signer
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --signature 0x [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--blsKey 0x --blsPop 0x]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--blsKey 0x
+    --blsPop 0x]
 
 FLAGS
   -k, --privateKey=<value>
@@ -59,6 +60,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --role=<option>
       (required)
@@ -107,7 +113,7 @@ USAGE
   $ celocli releasecelo:create-account --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -129,6 +135,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -161,7 +172,7 @@ USAGE
   $ celocli releasecelo:locked-gold --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -a
     lock|unlock|withdraw --value 10000000000000000000000 [-k <value> | --useLedger | ]
     [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--yes]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yes]
 
 FLAGS
   -a, --action=<option>
@@ -187,6 +198,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -230,7 +246,7 @@ USAGE
   $ celocli releasecelo:refund-and-finalize --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -252,6 +268,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -285,7 +306,7 @@ USAGE
   $ celocli releasecelo:revoke --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yesreally]
+    [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -307,6 +328,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -345,8 +371,9 @@ USAGE
   $ celocli releasecelo:revoke-votes --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--group 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --allGroups]
-    [--votes <value> | --allVotes | ]
+    [--ledgerLiveMode ] [--globalHelp] [--group
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d | --allGroups] [--votes <value> |
+    --allVotes | ]
 
 FLAGS
   -k, --privateKey=<value>
@@ -377,6 +404,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -414,7 +446,7 @@ USAGE
   $ celocli releasecelo:set-account --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d -p
     name|dataEncryptionKey|metaURL -v <value> [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -443,6 +475,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -480,7 +517,7 @@ USAGE
   $ celocli releasecelo:set-account-wallet-address --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --walletAddress 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--pop <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--pop <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -502,6 +539,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --pop=<value>
       ECDSA PoP for signer over contract's account
@@ -542,7 +584,7 @@ USAGE
     --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --beneficiary
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--yesreally]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -570,6 +612,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -608,7 +655,7 @@ USAGE
   $ celocli releasecelo:set-can-expire --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --value true|false|True|False [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp] [--yesreally]
+    <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -630,6 +677,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -669,7 +721,7 @@ USAGE
   $ celocli releasecelo:set-liquidity-provision --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--yesreally]
+    [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -691,6 +743,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -727,7 +784,7 @@ USAGE
   $ celocli releasecelo:set-max-distribution --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --distributionRatio <value> [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp] [--yesreally]
+    <value> ] [--ledgerLiveMode ] [--globalHelp] [--yesreally]
 
 FLAGS
   -k, --privateKey=<value>
@@ -753,6 +810,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -826,7 +888,7 @@ USAGE
     --to 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value 10000000000000000000000 [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -848,6 +910,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --to=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Address of the recipient of Celo Dollars transfer
@@ -887,7 +954,7 @@ USAGE
   $ celocli releasecelo:withdraw --contract 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --value 10000000000000000000000 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -909,6 +976,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

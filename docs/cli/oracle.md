@@ -55,7 +55,7 @@ USAGE
   $ celocli oracle:remove-expired-reports ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 ARGUMENTS
   ARG1  [default: StableToken] Token to remove expired reports for
@@ -80,6 +80,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -116,7 +121,7 @@ USAGE
   $ celocli oracle:report ARG1 --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --value <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 ARGUMENTS
   ARG1  [default: StableToken] Token to report on
@@ -141,6 +146,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -179,8 +189,9 @@ List oracle reports for a given token
 USAGE
   $ celocli oracle:reports ARG1 [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp] [--columns <value> | -x] [--filter <value>] [--no-header |
-    [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
+    <value> ] [--ledgerLiveMode ] [--globalHelp] [--columns <value> | -x] [--filter
+    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
+    [--sort <value>]
 
 ARGUMENTS
   ARG1  [default: StableToken] Token to list the reports for
@@ -214,6 +225,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --no-header
       hide table header from output
