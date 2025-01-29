@@ -1,5 +1,5 @@
 ---
-title: Fee Abstraction on Cel2
+title: Fee Abstraction on Celo L2
 ---
 
 ## Fee Abstraction Addresses
@@ -32,13 +32,12 @@ celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B
 |  USD₮  | 0xC4f86E9B4A588D501c1c3e25628dFd50Bc8D615e |                                            |
 |   G$   | 0x03d3daB843e6c03b3d271eff9178e6A96c28D25f |                                            |
 
-
 ### Using Fee Abstraction with Programmatically
 
 You can use Fee Abstraction by specifying a token/adapter address as a value for the `feeCurrency` property in the transaction object. The `feeCurrency` property in the transaction object is exclusive to Celo and allows paying gas fees using assets other than the native currency of the network.
 
 :::info
-Wallets will overwrite the `feeCurrency`, which is why this is recommended for wallet developers or backend developers. 
+Wallets will overwrite the `feeCurrency`, which is why this is recommended for wallet developers or backend developers.
 :::
 
 For using Fee Abstraction for a wallet or inside your dApp we recommend using [viem](https://viem.sh/docs/introduction.html) or [wagmi](https://wagmi.sh/).
