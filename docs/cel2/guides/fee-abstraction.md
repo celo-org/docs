@@ -40,7 +40,7 @@ You can use Fee Abstraction by specifying a token/adapter address as a value for
 Wallets will overwrite the `feeCurrency`, which is why this is recommended for wallet developers or backend developers.
 :::
 
-For using Fee Abstraction for a wallet or inside your dApp we recommend using [viem](https://viem.sh/docs/introduction.html) or [wagmi](https://wagmi.sh/).
+When using Fee Abstraction for a wallet or inside your dApp we recommend using [viem](https://viem.sh/docs/introduction.html) or [wagmi](https://wagmi.sh/).
 
 :::info
 While we recommend viem, [web3.js](https://docs.web3js.org/) has added as of 4.13.1 support for `feeCurrency` via the usage of [plugins](https://docs.web3js.org/#packages--plugins). There is a celo-specific [plugin for web3@4 available on github](https://github.com/celo-org/web3-plugin-transaction-types).
