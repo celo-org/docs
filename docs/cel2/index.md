@@ -10,10 +10,14 @@ to maintain the seamless user experience that Celo is known for—characterized 
 and ease of use—while leveraging Ethereum’s security and ecosystem.  As part of this transition,
 Celo is currently operating a Layer 2 testnet, Alfajores, which launched on September 26, 2024.
 
+:::info
+While most applications should remain unaffected, node operators, validators, and RPC providers must ensure their systems are prepared for the transition to maintain seamless operations.
 
----
-:::warning
-While most applications should remain unaffected, node operators, validators, and RPC providers must ensure their systems are prepared for the transition to maintain seamless operations. 
+See the following documents for more details:
+
+* [Celo L2 migration](notices/l2-migration.md)
+* [Pectra upgrade for Alfajores](notices/pectra-upgrade.md)
+
 :::
 
 ## What does this mean for our ecosystem?

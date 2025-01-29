@@ -1244,6 +1244,23 @@ const sidebars = {
       id: "cel2/index",
     },
     {
+      type: "category",
+      label: "Notices",
+      collapsed: false,
+      items: [
+        {
+          type : "doc",
+          label: "Celo L2 migration",
+          id: 'cel2/notices/l2-migration',
+        },
+        {
+          type : "doc",
+          label: "Pectra Upgrade",
+          id: 'cel2/notices/pectra-upgrade',
+        },
+      ]
+    },
+    {
       type: "doc",
       label: "L2 Node Operator Guide",
       id: "cel2/l2-operator-guide",
