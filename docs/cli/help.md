@@ -5,7 +5,7 @@ Display help for celocli.
 
 * [`celocli help [COMMAND]`](#celocli-help-command)
 
-## `celocli help [COMMAND]`
+## `celocli help [COMMAND]` {#celocli-help-command}
 
 Display help for celocli.
 

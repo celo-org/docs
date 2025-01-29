@@ -5,7 +5,7 @@ Show rewards information about a voter, registered Validator, or Validator Group
 
 * [`celocli rewards:show`](#celocli-rewardsshow)
 
-## `celocli rewards:show`
+## `celocli rewards:show` {#celocli-rewardsshow}
 
 Show rewards information about a voter, registered Validator, or Validator Group
 
