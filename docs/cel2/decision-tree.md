@@ -6,7 +6,7 @@ description: Not sure what you need to do to migrate from Celo L1 to Celo L2?
 <details>
   <summary>I run a node</summary>
   
-  Follow the [node upgrade instructions](docs/cel2/l2-operator-guide.md).
+  Follow the [node upgrade instructions](./l2-operator-guide.md).
 
 </details>
 <details>
@@ -51,7 +51,7 @@ Forum:
 
   Also check out these resources:
   
-  - [Celo Docs](docs/welcome.md)
+  - [Celo Docs](../welcome.md)
   - [Celo L2 Specifications](https://specs.celo.org/)
   - [Transaction types on Celo](https://github.com/celo-org/txtypes)
   - [Celo Forum](https://forum.celo.org/)
