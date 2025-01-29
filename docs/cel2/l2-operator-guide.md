@@ -21,7 +21,7 @@ This process involves 4 steps:
 4. Launching the L2 node with snap sync
 
 Optionally, for node operators that want to verify the entire chain history
-through the upgrade, they may manually migrate their L1 node chain data into a
+through the upgrade, they may manually migrate their L1 (full) node chain data into a
 format compatible with the L2 node. This is required for all nodes looking to full
 sync and for anyone looking to run an archive node. Doing
 so involves these steps:
@@ -130,6 +130,13 @@ Node operators who wish to minimize the migration downtime during the hardfork c
 4. Once the pre-migration is complete, you can start your L1 node again.
 
 ### Pre-hardfork archive state access and execution
+
+:::note
+It is not recommended to migrate from an L1 archive datadir, as the L2 execution client does not support
+executing L1 historical states and it will consume more time and storage.
+Instead, run the migration from a full L1 datadir, and if desired, configure the L2 execution client as an archive
+to proxy pre-hardfork execution and state access requests to the L1 node.
+:::
 
 Node operators who were running archive nodes before the migration and wish to maintain execution
 and state access functionality for pre-hardfork blocks will need to continue to run their L1 node
