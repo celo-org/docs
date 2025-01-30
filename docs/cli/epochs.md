@@ -7,7 +7,7 @@ Finishes next epoch process.
 * [`celocli epochs:start`](#celocli-epochsstart)
 * [`celocli epochs:switch`](#celocli-epochsswitch)
 
-## `celocli epochs:finish`
+## `celocli epochs:finish` {#celocli-epochsfinish}
 
 Finishes next epoch process.
 
@@ -66,7 +66,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/finish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/finish.ts)_
 
-## `celocli epochs:start`
+## `celocli epochs:start` {#celocli-epochsstart}
 
 Starts next epoch process.
 
@@ -125,7 +125,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/start.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/start.ts)_
 
-## `celocli epochs:switch`
+## `celocli epochs:switch` {#celocli-epochsswitch}
 
 Finishes current epoch and starts a new one.
 

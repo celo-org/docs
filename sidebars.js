@@ -149,6 +149,32 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Build with AI",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/build-with-ai/overview",
+        },
+        {
+          type: "doc",
+          label: "Tools & Infra",
+          id: "developer/build-with-ai/tools",
+        },
+        {
+          type: "doc",
+          label: "Examples",
+          id: "developer/build-with-ai/examples",
+        }
+      ]
+    },
+    // {
+    //   type: "doc",
+    //   label: "Build with AI",
+    //   id: "developer/build-with-ai/overview",
+    // },
+    {
+      type: "category",
       label: "Build on MiniPay",
       items: [
         {
