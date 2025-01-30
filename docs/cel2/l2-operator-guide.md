@@ -21,7 +21,7 @@ This process involves 4 steps:
 4. Launching the L2 node with snap sync
 
 Optionally, for node operators that want to verify the entire chain history
-through the upgrade, they may manually migrate their L1 node chain data into a
+through the upgrade, they may manually migrate their L1 (full) node chain data into a
 format compatible with the L2 node. This is required for all nodes looking to full
 sync and for anyone looking to run an archive node. Doing
 so involves these steps:
@@ -131,6 +131,13 @@ Node operators who wish to minimize the migration downtime during the hardfork c
 
 ### Pre-hardfork archive state access and execution
 
+:::note
+It is not recommended to migrate from an L1 archive datadir, as the L2 execution client does not support
+executing L1 historical states and it will consume more time and storage.
+Instead, run the migration from a full L1 datadir, and if desired, configure the L2 execution client as archive
+to run L2 archive requests, and to proxy to a L1 archive node to execute pre-hardfork transactions and state access.
+:::
+
 Node operators who were running archive nodes before the migration and wish to maintain execution
 and state access functionality for pre-hardfork blocks will need to continue to run their L1 node
 and configure their L2 node to proxy pre-hardfork execution and state access requests to the L1 node
@@ -175,3 +182,9 @@ setup.
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc1)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo9)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.1)
+
+## Common problems
+
+### Transactions are not being executed
+
+If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.

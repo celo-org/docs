@@ -1,4 +1,5 @@
-//const { type } = require("@generated/site-storage");
+const { link } = require("fs");
+const { type } = require("os");
 
 const sidebars = {
   // ######################################
@@ -1266,10 +1267,30 @@ const sidebars = {
         'cel2/whats-changed/op-l2'
       ],
     },
-    { type: "doc", label: "Bridging CELO", id: "cel2/bridging/bridging-celo-from-l1-to-l2-using-viem" },
-    { type: "doc", label: "Withdrawing CELO", id: "cel2/bridging/withdrawing-celo-from-l2-to-l1-using-viem" },
-    { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
+    {
+      type: "category",
+      label: "Guides",
+      collapsed: true,
+      items: [
+        {
+          type : "doc",
+          label: "Bridging from CELO from L1 to L2",
+          id: 'cel2/guides/bridging-celo-from-l1-to-l2',
+        },
+        {
+          type : "doc",
+          label: "Withdrawing CELO from L2 to L1",
+          id: 'cel2/guides/withdrawing-celo-from-l2-to-l1',
+        },
+        {
+          type : "doc",
+          label: "Fee Abstraction on Celo L2",
+          id: 'cel2/guides/fee-abstraction',
+        },
+      ]
+    },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
+    { type: "link", label: "Celo L2 Specs", href: "https://specs.celo.org/" },
   ],
 };
 module.exports = sidebars;
