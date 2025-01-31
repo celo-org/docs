@@ -3,23 +3,23 @@
 
 View and manage Validators
 
-- [`celocli validator`](#celocli-validator)
-  - [`celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}](#celocli-validatoraffiliate-arg1-celocli-validatoraffiliate-arg1)
-  - [`celocli validator:community-rpc-nodes` {#celocli-validatorcommunity-rpc-nodes}](#celocli-validatorcommunity-rpc-nodes-celocli-validatorcommunity-rpc-nodes)
-  - [`celocli validator:deaffiliate` {#celocli-validatordeaffiliate}](#celocli-validatordeaffiliate-celocli-validatordeaffiliate)
-  - [`celocli validator:deregister` {#celocli-validatorderegister}](#celocli-validatorderegister-celocli-validatorderegister)
-  - [`celocli validator:downtime-slash` {#celocli-validatordowntime-slash}](#celocli-validatordowntime-slash-celocli-validatordowntime-slash)
-  - [`celocli validator:list` {#celocli-validatorlist}](#celocli-validatorlist-celocli-validatorlist)
-  - [`celocli validator:register` {#celocli-validatorregister}](#celocli-validatorregister-celocli-validatorregister)
-  - [`celocli validator:requirements` {#celocli-validatorrequirements}](#celocli-validatorrequirements-celocli-validatorrequirements)
-  - [`celocli validator:rpc-urls` {#celocli-validatorrpc-urls}](#celocli-validatorrpc-urls-celocli-validatorrpc-urls)
-  - [`celocli validator:set-bitmaps` {#celocli-validatorset-bitmaps}](#celocli-validatorset-bitmaps-celocli-validatorset-bitmaps)
-  - [`celocli validator:show ARG1` {#celocli-validatorshow-arg1}](#celocli-validatorshow-arg1-celocli-validatorshow-arg1)
-  - [`celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}](#celocli-validatorsigned-blocks-celocli-validatorsigned-blocks)
-  - [`celocli validator:status` {#celocli-validatorstatus}](#celocli-validatorstatus-celocli-validatorstatus)
-  - [`celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}](#celocli-validatorupdate-bls-public-key-celocli-validatorupdate-bls-public-key)
+* [`celocli validator:affiliate ARG1`](#celocli-validatoraffiliate-arg1)
+* [`celocli validator:community-rpc-nodes`](#celocli-validatorcommunity-rpc-nodes)
+* [`celocli validator:deaffiliate`](#celocli-validatordeaffiliate)
+* [`celocli validator:deregister`](#celocli-validatorderegister)
+* [`celocli validator:downtime-slash`](#celocli-validatordowntime-slash)
+* [`celocli validator:list`](#celocli-validatorlist)
+* [`celocli validator:register`](#celocli-validatorregister)
+* [`celocli validator:requirements`](#celocli-validatorrequirements)
+* [`celocli validator:rpc-urls`](#celocli-validatorrpc-urls)
+* [`celocli validator:send-payment`](#celocli-validatorsend-payment)
+* [`celocli validator:set-bitmaps`](#celocli-validatorset-bitmaps)
+* [`celocli validator:show ARG1`](#celocli-validatorshow-arg1)
+* [`celocli validator:signed-blocks`](#celocli-validatorsigned-blocks)
+* [`celocli validator:status`](#celocli-validatorstatus)
+* [`celocli validator:update-bls-public-key`](#celocli-validatorupdate-bls-public-key)
 
-## `celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}
+## `celocli validator:affiliate ARG1`
 
 Affiliate a Validator with a Validator Group. This allows the Validator Group to add that Validator as a member. If the Validator is already a member of a Validator Group, affiliating with a different Group will remove the Validator from the first group's members.
 
@@ -87,7 +87,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/affiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/affiliate.ts)_
 
-## `celocli validator:community-rpc-nodes` {#celocli-validatorcommunity-rpc-nodes}
+## `celocli validator:community-rpc-nodes`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -134,7 +134,7 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli validator:deaffiliate` {#celocli-validatordeaffiliate}
+## `celocli validator:deaffiliate`
 
 Deaffiliate a Validator from a Validator Group, and remove it from the Group if it is also a member.
 
@@ -194,7 +194,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/deaffiliate.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deaffiliate.ts)_
 
-## `celocli validator:deregister` {#celocli-validatorderegister}
+## `celocli validator:deregister`
 
 Deregister a Validator. Wait the require lock period after the validator is no longer part of any group, then it will be possible to deregister the validator and start unlocking the CELO. If you wish to deregister your validator, you must first remove it from it's group, such as by deaffiliating it, then wait the required days before running this command.
 
@@ -257,7 +257,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/deregister.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/deregister.ts)_
 
-## `celocli validator:downtime-slash` {#celocli-validatordowntime-slash}
+## `celocli validator:downtime-slash`
 
 Downtime slash a validator
 
@@ -335,7 +335,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/downtime-slash.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/downtime-slash.ts)_
 
-## `celocli validator:list` {#celocli-validatorlist}
+## `celocli validator:list`
 
 List registered Validators, their name (if provided), affiliation, uptime score, and public keys used for validating.
 
@@ -378,7 +378,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/list.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/list.ts)_
 
-## `celocli validator:register` {#celocli-validatorregister}
+## `celocli validator:register`
 
 Register a new Validator
 
@@ -449,7 +449,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/register.ts)_
 
-## `celocli validator:requirements` {#celocli-validatorrequirements}
+## `celocli validator:requirements`
 
 List the Locked Gold requirements for registering a Validator. This consists of a value, which is the amount of CELO that needs to be locked in order to register, and a duration, which is the amount of time that CELO must stay locked following the deregistration of the Validator.
 
@@ -507,7 +507,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/requirements.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/requirements.ts)_
 
-## `celocli validator:rpc-urls` {#celocli-validatorrpc-urls}
+## `celocli validator:rpc-urls`
 
 Displays a list of community RPC nodes for the currently elected validator groups
 
@@ -554,7 +554,71 @@ FLAG DESCRIPTIONS
     mainnet, celo, forno => Celo Mainnet chain',
 ```
 
-## `celocli validator:set-bitmaps` {#celocli-validatorset-bitmaps}
+## `celocli validator:send-payment`
+
+Sends the allocated epoch payment to a validator, their group, and delegation beneficiary.
+
+```
+USAGE
+  $ celocli validator:send-payment --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the validator to send the payment to
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Sends the allocated epoch payment to a validator, their group, and delegation
+  beneficiary.
+
+ALIASES
+  $ celocli validator:send-payment
+
+EXAMPLES
+  send-validator-payment --for 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+## `celocli validator:set-bitmaps`
 
 Set validator signature bitmaps for provided intervals
 
@@ -625,7 +689,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/set-bitmaps.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/set-bitmaps.ts)_
 
-## `celocli validator:show ARG1` {#celocli-validatorshow-arg1}
+## `celocli validator:show ARG1`
 
 Show information about a registered Validator.
 
@@ -659,7 +723,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/show.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/show.ts)_
 
-## `celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}
+## `celocli validator:signed-blocks`
 
 Display a graph of blocks and whether the given signer's signature is included in each. A green '.' indicates the signature is present in that block, a red '✘' indicates the signature is not present. A yellow '~' indicates the signer is not elected for that block.
 
@@ -752,7 +816,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/signed-blocks.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/signed-blocks.ts)_
 
-## `celocli validator:status` {#celocli-validatorstatus}
+## `celocli validator:status`
 
 Shows the consensus status of a validator. This command will show whether a validator is currently elected, would be elected if an election were to be run right now, and the percentage of blocks signed and number of blocks successfully proposed within a given window.
 
@@ -860,7 +924,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/validator/status.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/validator/status.ts)_
 
-## `celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}
+## `celocli validator:update-bls-public-key`
 
 Update the BLS public key for a Validator to be used in consensus.
 
