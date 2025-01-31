@@ -3,17 +3,28 @@ title: Cel2 FAQ
 description: Frequently Asked Questions about Cel2
 ---
 
+### When is the Celo mainnet becoming an L2?
+
+### When is the Baklava testnet becoming an L2?
+
+### When is Alfajores testnet becoming an L2?
+
+The Alfajores testnet has already been migrated to an L2.
+
 ### How do I run a node or upgrade an existing node?
 
-See the [L2 Operator Guide](/docs/cel2/l2-operator-guide.md).
+See the [L2 Operator Guide](./operators/operator-guide.md).
 
 ### What RPC endpoints are available for the Alfajores testnet?
+
 See the Alfajores network info [here](https://docs.celo.org/network#celo-alfajores-l2-testnet).
 
 ### Is there an Alfajores faucet? Where? How do I get funds?
+
 See the Alfajores network info [here](https://docs.celo.org/network#celo-alfajores-l2-testnet).
 
 ### Is there an Alfajores explorer?
+
 See the Alfajores network info [here](https://docs.celo.org/network#celo-alfajores-l2-testnet).
 
 ### How can I use the native bridge with Alfajores?
@@ -36,12 +47,12 @@ See [What's Changed Celo L1 -> L2](./whats-changed/l1-l2.md) and [L1 -> L2 Migra
 
 ### How is the Celo L2 different to Optimism?
 
-See [What's Changed Optimism -> Celo L2](https://docs.celo.org/cel2/whats-changed/op-l2).
+See [What's Changed Optimism -> Celo L2](./whats-changed/op-l2).
 Also see [Celo L2 Specification](https://specs.celo.org/root.html) for greater detail.
 
 ### What are the costs for L1 data and how are they paid?
 
-See [What's changed section covering L1 fees](https://docs.celo.org/cel2/whats-changed/op-l2#l1-fees).
+See [What's changed section covering L1 fees](./whats-changed/op-l2#l1-fees).
 
 ### I saw EigenDA mentioned, is it used?
 
@@ -60,7 +71,3 @@ The gas limit per block is 30 million, so the maximum throughput is 30M gas/s.
 - CELO token duality? Supported, see [Token Duality](https://specs.celo.org/token_duality.html).
 - Fee currencies? Supported, see [Fee Abstraction](https://specs.celo.org/fee_abstraction.html).
 - Epoch rewards? Supported in Alfajores and Mainnet, see [Epochs and Rewards](https://specs.celo.org/smart_contract_updates_from_l1.html#epochs-and-rewards).
-
-## Not sure what you need to do?
-
-Check out the [L2 Migration decision tree](/docs/cel2/decision-tree.md).

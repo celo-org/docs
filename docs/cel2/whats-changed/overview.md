@@ -9,5 +9,5 @@ Celo is moving from being a POS (proof of stake) based L1 blockchain to an L2 bu
 
 ## Details
 
-* [Celo L1 → L2 changes](l1-l2)
-* [Optimism → Celo L2 changes](op-l2)
+* [Celo L1 → L2 changes](l1-l2.md)
+* [Optimism → Celo L2 changes](./op-l2.md)
