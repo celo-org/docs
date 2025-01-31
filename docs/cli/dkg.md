@@ -10,7 +10,7 @@ Publish your locally computed DKG results to the blockchain
 * [`celocli dkg:register`](#celocli-dkgregister)
 * [`celocli dkg:start`](#celocli-dkgstart)
 
-## `celocli dkg:allowlist` {#celocli-dkgallowlist}
+## `celocli dkg:allowlist`
 
 Allowlist an address in the DKG
 
@@ -73,7 +73,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/allowlist.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/allowlist.ts)_
 
-## `celocli dkg:deploy` {#celocli-dkgdeploy}
+## `celocli dkg:deploy`
 
 Deploys the DKG smart contract
 
@@ -135,7 +135,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/deploy.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/deploy.ts)_
 
-## `celocli dkg:get` {#celocli-dkgget}
+## `celocli dkg:get`
 
 Gets data from the contract to run the next phase
 
@@ -196,7 +196,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/get.ts)_
 
-## `celocli dkg:publish` {#celocli-dkgpublish}
+## `celocli dkg:publish`
 
 Publishes data for each phase of the DKG
 
@@ -259,7 +259,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/publish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/publish.ts)_
 
-## `celocli dkg:register` {#celocli-dkgregister}
+## `celocli dkg:register`
 
 Register a public key in the DKG
 
@@ -322,7 +322,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/dkg/register.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/dkg/register.ts)_
 
-## `celocli dkg:start` {#celocli-dkgstart}
+## `celocli dkg:start`
 
 Starts the DKG
 
