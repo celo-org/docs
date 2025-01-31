@@ -1,12 +1,10 @@
----
-title: Architecture
----
+# L2 Architecture
 
 Celo’s architecture is a multi-layered system that includes a Layer 2 blockchain, core smart contracts, user applications, and a dynamic network topology, all optimized for scalability, security, and ease of use.
 
 ---
 
-# Introduction to the Celo Stack
+## Introduction to the Celo Stack
 
 The Celo stack consists of three main components that work together to deliver a seamless blockchain experience:
 

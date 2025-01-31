@@ -1262,26 +1262,31 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "L2 Node Operator Guide",
-      id: "cel2/l2-operator-guide",
+      label: "Developers & Builders",
+      id: 'cel2/developers-builders',
     },
     {
-      type: "doc",
-      label: "L2 Migration Decision Tree",
-      id: "cel2/decision-tree",
+      type: "category",
+      label: "Node operators & Validators",
+      link: { type: 'doc', id: 'cel2/operators/overview' },
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "L2 Node Operator Guide",
+          id: "cel2/operators/operator-guide",
+        },
+      ]
     },
-    {
-      type: "doc",
-      label: "L2 Architecture",
-      id: "cel2/cel2-architecture",
-    },
-    { type: "category",
+    { 
+      type: "category",
       label: "What's Changed?",
       link: { type: 'doc', id: 'cel2/whats-changed/overview' },
       collapsed: false,
       items: [
         'cel2/whats-changed/l1-l2',
-        'cel2/whats-changed/op-l2'
+        'cel2/whats-changed/op-l2',
+        'cel2/whats-changed/cel2-architecture',
       ],
     },
     {

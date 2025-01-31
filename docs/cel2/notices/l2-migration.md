@@ -13,7 +13,7 @@ This page will be updated continuously with information on upgrade runbooks and 
 
 ## For node operators
 
-Node operators will need to upgrade to the respective releases before the activation dates and potentially migrate their state database. See the [Node Operator Guide](../l2-operator-guide.md) for detailed information.
+Node operators will need to upgrade to the respective releases before the activation dates and potentially migrate their state database. See the [Node Operator Guide](../operators/operator-guide.md) for detailed information.
 
 These following versions are necessary for every node operator:
 
