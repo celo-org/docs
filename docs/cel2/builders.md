@@ -1,13 +1,28 @@
-# Developers & Builders
+# Builders
 
-## I use or need a node provider
+The Celo L2 upgrade introduces no breaking changes but many improvements for builders.
+Among them are higher compatibility with Ethereum tooling and interfaces, support of the latest EVM versions and integration into the Optimism ecosystem.
 
-The following node providers are available for Alfajores L2:
+Celo L2 enables the [Cancun hardfork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md) for the EVM, enabling builders to use the latest opcodes to make smart contracts cheaper and more secure. It also enables new use-cases by supporting new precompiles and streamlined bridging to the Celo ecosystem. For more details see the [Celo specs](https://specs.celo.org/l2_migration.html#state-changes-during-the-migration).
+
+## Alfajores testnet
+
+The Alfajores testnet allows you to test the new environment.
+
+- Network Name: Celo Alfajores Testnet
+- RPC URL: [https://alfajores-forno.celo-testnet.org](https://alfajores-forno.celo-testnet.org)
+- Chain ID: 44787
+- Currency Symbol: CELO
+- Block explorer: [https://explorer.celo.org/alfajores](https://explorer.celo.org/alfajores)
+
+The following node providers are available for Alfajores:
 
 - [Infura](https://www.infura.io/networks/celo)
 - [dRPC](https://drpc.org/chainlist/celo)
 
 If none of the above work for you, you can use cLabs best effort hosted node: [Forno](https://docs.celo.org/network/node/forno).
+
+You can get funds from the [Alfajores Faucet](https://faucet.celo.org/alfajores).
 
 ## I use ContractKit or Fee Abstraction (ERC-20 gas tokens)
 
@@ -34,36 +49,3 @@ Also check out these resources:
 - [Transaction types on Celo](https://github.com/celo-org/txtypes)
 - [Celo Forum](https://forum.celo.org/)
   
-## Add Celo L2 Testnet to Metamask
-
-Follow this quick guide to add Alfajores to your MetaMask wallet and start playing around with it. You can get funds from the [Alfajores Faucet](https://faucet.celo.org/alfajores).
-
-1. Open Metamask
-
-![](/img/doc-images/add-cel2-testnet-network-to-metamask/1.png)
-
-2. Go to settings
-
-![](/img/doc-images/add-cel2-testnet-network-to-metamask/2.png)
-
-3. Select Networks
-
-![](/img/doc-images/add-cel2-testnet-network-to-metamask/3.png)
-
-4. Add info about Celo L2 Alfajores Testnet
-
-:::info
-If you never added a new Network before then you need click on "Add a Network"
-:::
-
-Insert the following details:
-
-- Network Name: Celo Alfajores Testnet
-- New RPC URL: `https://alfajores-forno.celo-testnet.org`
-- Chain ID: 44787
-- Currency Symbol: CELO
-- Block explorer URL: `https://explorer.celo.org/alfajores`
-
-![](/img/doc-images/add-cel2-testnet-network-to-metamask/4.png)
-
-5. Click "Save"
