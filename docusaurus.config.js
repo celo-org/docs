@@ -299,7 +299,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
+      copyright: "Copyright © 2025 Celo Foundation, Inc.",
     },
     fathomAnalytics: {
       siteId: "AZMFWALB",
