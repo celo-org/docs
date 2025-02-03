@@ -58,14 +58,15 @@ hardfork block configured. L1 nodes with a hardfork block will cease
 producing or accepting blocks at the block immediately preceding the hardfork
 block.
 
-
 :::info
+
 * Alfajores *26384000*
   * Celo L1 client: [celo-blockchain v1.8.7](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.7). Docker image `us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7`
-* Baklava *not yet decided*
+* Baklava *28308600*
   * Release *not yet created*
 * Mainnet *not yet decided*
   * Release *not yet created*
+
 :::
 
 Once this block number is reached, node operators can then launch the L2 node. Instructions are
