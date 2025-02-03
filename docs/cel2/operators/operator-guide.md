@@ -13,7 +13,6 @@ receipts are fully accessible within the Celo L2 environment.
 
 This process involves 4 steps:
 
-
 1. Upgrading the L1 node to the latest client release so it stops producing blocks
    at the hardfork
 2. Waiting for the hardfork
