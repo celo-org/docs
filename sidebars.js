@@ -1262,8 +1262,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Developers & Builders",
-      id: 'cel2/developers-builders',
+      label: "Builders",
+      id: 'cel2/builders',
     },
     {
       type: "category",

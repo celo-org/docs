@@ -1,4 +1,4 @@
-# Developers & Builders
+# Builders
 
 ## I use or need a node provider
 
