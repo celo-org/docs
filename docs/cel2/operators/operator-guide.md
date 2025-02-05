@@ -145,12 +145,13 @@ by setting the `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of their L
 
 ## Network config & Assets
 
-The config and assets for each network can be found at the links below. The
+This section includes the configs and assets needed to run each of the L2 node services manually. This is useful for anyone that is not interested in using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and the instructions above. The
 celo-l2-node-docker-compose project automatically handles retrieving the needed
 assets so you shouldn't need to manually download them unless running a custom
 setup.
 
 ### Alfajores
+
 - [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/alfajores/alfajores-migrated-datadir.tar.zst)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/alfajores/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/alfajores/deployment-l1.json)
@@ -185,6 +186,6 @@ setup.
 
 ## Common problems
 
-### Transactions are not being executed
+### Transactions are not being executed when submitted to a node
 
 If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
