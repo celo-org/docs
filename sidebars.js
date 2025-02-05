@@ -158,6 +158,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Resources",
+          id: "developer/build-with-ai/resources",
+        },
+        {
+          type: "doc",
           label: "Tools & Infra",
           id: "developer/build-with-ai/tools",
         },
