@@ -231,11 +231,6 @@ const sidebars = {
       ],
     },
     {
-      type: "link",
-      label: "Community Tutorials",
-      href: "https://celo.academy/c/tutorials/4",
-    },
-    {
       type: "doc",
       label: "Launch Checklist",
       id: "developer/launch-checklist",
@@ -306,19 +301,9 @@ const sidebars = {
           id: "wallet/index",
         },
         {
-          type: "link",
-          label: "Valora",
-          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
-        },
-        {
           type: "category",
           label: "MetaMask",
           items: [
-            {
-              type: "link",
-              label: "MetaMask Setup",
-              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
-            },
             {
               type: "doc",
               label: "Programmatic Setup",
