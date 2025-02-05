@@ -6,7 +6,7 @@ Configure CLI options which persist across commands
 * [`celocli config:get`](#celocli-configget)
 * [`celocli config:set`](#celocli-configset)
 
-## `celocli config:get`
+## `celocli config:get` {#celocli-configget}
 
 Output network node configuration
 
@@ -34,7 +34,7 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/config/get.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/config/get.ts)_
 
-## `celocli config:set`
+## `celocli config:set` {#celocli-configset}
 
 Configure running node information for propagating transactions to network
 
