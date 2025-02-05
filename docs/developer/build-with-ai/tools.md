@@ -1,11 +1,13 @@
 # AI Agents Tools & Infrastructure
 
 ## Table of Contents
-- [AI Agent Frameworks](#frameworks)
-- [Launchpads](#launchpads)
-- [Essential Tools](#essential-tools)
-- [Intelligence Tools](#intelligence-tools)
-- [Infrastructure](#infrastructure)
+- [AI Agents Tools \& Infrastructure](#ai-agents-tools--infrastructure)
+  - [Table of Contents](#table-of-contents)
+  - [AI Agent Frameworks {#frameworks}](#ai-agent-frameworks-frameworks)
+  - [Launchpads {#launchpads}](#launchpads-launchpads)
+  - [Essential Tools {#essential-tools}](#essential-tools-essential-tools)
+  - [Intelligence Tools {#intelligence-tools}](#intelligence-tools-intelligence-tools)
+  - [Infrastructure {#infrastructure}](#infrastructure-infrastructure)
 
 ## AI Agent Frameworks {#frameworks}
 
@@ -68,7 +70,9 @@ When scaling, consider:
 
 **Blockchain Tools:**
 - [**GOAT**](https://ohmygoat.dev/introduction): GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
-- [**Bitte**](https://github.com/BitteProtocol/make-agent): Enables multi-chain transactions using natural language.
+- [**Nebula**](https://portal.thirdweb.com/nebula): Web3 LLM by thridweb 
+  - [Tutorial](https://www.youtube.com/watch?v=FeubfHwfJcM)
+  - [Example Repository](https://github.com/cromewar/nebula-telegram-demo)
 - [**Kaito**](https://www.kaito.ai/): Unified crypto news data.
 
 **Memory Systems:**
