@@ -188,6 +188,11 @@ const sidebars = {
           id: "developer/build-on-minipay/overview",
         },
         {
+          type: "doc",
+          label: "Getting Started",
+          id: "developer/build-on-minipay/quickstart",
+        },
+        {
           type: "category",
           label: "Prerequisites",
           items: [
