@@ -72,7 +72,6 @@ When scaling, consider:
 - **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
 - **[Nebula](https://portal.thirdweb.com/nebula)**: Web3 LLM by thirdweb 
   - [Tutorial](https://www.youtube.com/watch?v=FeubfHwfJcM)
-  - [Example Repository](https://github.com/cromewar/nebula-telegram-demo)
 - **[Kaito](https://www.kaito.ai/)**: Unified crypto news data.
 
 **Memory Systems:**
