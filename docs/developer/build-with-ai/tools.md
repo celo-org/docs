@@ -1,15 +1,9 @@
 # AI Agents Tools & Infrastructure
 
-## Table of Contents
-- [AI Agents Tools \& Infrastructure](#ai-agents-tools--infrastructure)
-  - [Table of Contents](#table-of-contents)
-  - [AI Agent Frameworks {#frameworks}](#ai-agent-frameworks-frameworks)
-  - [Launchpads {#launchpads}](#launchpads-launchpads)
-  - [Essential Tools {#essential-tools}](#essential-tools-essential-tools)
-  - [Intelligence Tools {#intelligence-tools}](#intelligence-tools-intelligence-tools)
-  - [Infrastructure {#infrastructure}](#infrastructure-infrastructure)
+In this article you will find an overview of tools that are crucial for building AI Agents. This is by no means an extensive list, as there is so much development in the space and new protocols come our every day. This serves more as an example for what tools exist on Celo.
 
-## AI Agent Frameworks {#frameworks}
+
+## AI Agent Frameworks 
 
 Frameworks are essential for designing and enabling AI agents. They determine how agents interact, collaborate, and perform tasks. For a full list of available frameworks, tools, and infrastructure, refer to this [table](https://www.aiagenttoolkit.xyz/).
 
@@ -26,14 +20,14 @@ Frameworks are essential for designing and enabling AI agents. They determine ho
 - [**LangChain**](https://www.langchain.com/): Framework for LLM-powered applications.
 - [**MetaGPT**](https://github.com/geekan/MetaGPT): Multi-agent meta programming framework, mimicks organizational roles at a software company.
 
-## Launchpads {#launchpads}
+## Launchpads 
 
 No-code solutions for quick AI Agent deployment. Here are two examples of launchpads designed for social agents with token integration:
 
 - [**Virtuals**](https://app.virtuals.io/): No-code AI Launchpad with LLP context system.
 - [**Vapor**](https://alpha.vaporware.fun/): Platform built on ai16z Eliza Framework
 
-## Essential Tools {#essential-tools}
+## Essential Tools
 
 A variety of tools are available for building autonomous agents, including blockchain integration, machine learning, memory systems, simulation, monitoring, and security. 
 
@@ -49,7 +43,7 @@ When scaling, consider:
 - Support for videos, PDFs, and research papers.
 - Effective use of LLMs, NLP, and RAG tools.
 
-## Intelligence Tools {#intelligence-tools}
+## Intelligence Tools 
 
 **Machine Learning Tools:**
 - **Purpose**: Training, deploying, debugging and managing ML models
@@ -66,7 +60,7 @@ When scaling, consider:
 - **Examples**: Autonomous RAG, Agentic RAG, Local RAG Agent
 - **Use Cases**: Enhanced chatbots, documentation search, context-aware responses
 
-## Infrastructure {#infrastructure}
+## Infrastructure 
 
 **Blockchain Tools:**
 - **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
