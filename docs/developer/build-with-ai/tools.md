@@ -69,16 +69,16 @@ When scaling, consider:
 ## Infrastructure {#infrastructure}
 
 **Blockchain Tools:**
-- [**GOAT**](https://ohmygoat.dev/introduction): GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
-- [**Nebula**](https://portal.thirdweb.com/nebula): Web3 LLM by thirdweb 
+- **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
+- **[Nebula](https://portal.thirdweb.com/nebula)**: Web3 LLM by thirdweb 
   - [Tutorial](https://www.youtube.com/watch?v=FeubfHwfJcM)
   - [Example Repository](https://github.com/cromewar/nebula-telegram-demo)
-- [**Kaito**](https://www.kaito.ai/): Unified crypto news data.
+- **[Kaito](https://www.kaito.ai/)**: Unified crypto news data.
 
 **Memory Systems:**
-- [**Mem0**](https://github.com/mem0ai/mem0): Intelligent memory layer for AI assistants.
-- [**Eliza Agent Memory**](https://github.com/elizaOS/agentmemory): Knowledge graphing and document search.
-- [**LLM App with Personalized Memory**](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory): Individual user adaptation.
+- **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
+- **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
+- **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
 
 **Security and Policy:**
 - **Functor Network**: Policy framework for autonomous agents
@@ -87,5 +87,5 @@ When scaling, consider:
 
 **Data:**
 When working with AI agents, it's essential to train models and collect the right data. For unique character creation, ensure you have sufficient training data. Some useful tools include:
-- [**DataSphere**](https://github.com/datasphere/datasphere): Visualizes large datasets for analysis.
-- [**JinAI's LLM-friendly Markdown Tool**](https://github.com/jina-ai/serve): Converts websites into LLM-friendly markdown.
+- **[DataSphere](https://github.com/datasphere/datasphere)**: Visualizes large datasets for analysis.
+- **[JinAI's LLM-friendly Markdown Tool](https://github.com/jina-ai/serve)**: Converts websites into LLM-friendly markdown.
