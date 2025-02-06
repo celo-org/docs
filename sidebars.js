@@ -1268,8 +1268,28 @@ const sidebars = {
       items: [
         {
           type: "doc",
-          label: "L2 Node Operator Guide",
-          id: "cel2/operators/operator-guide",
+          label: "Architecture",
+          id: "cel2/operators/architecture",
+        },
+        {
+          type: "doc",
+          label: "Running a node",
+          id: "cel2/operators/l2-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating a L1 node",
+          id: "cel2/operators/migrate-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating an L1 archive node",
+          id: "cel2/operators/l2-node",
+        },
+        {
+          type: "doc",
+          label: "Running a RPC provider",
+          id: "cel2/operators/rpc-provider",
         },
       ]
     },
