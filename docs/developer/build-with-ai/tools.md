@@ -9,14 +9,21 @@ Frameworks are essential for designing and enabling AI agents. They determine ho
 
 **On Celo:**
 - [**Olas**](https://docs.autonolas.network/open-autonomy/): Framework for autonomous economic agents in decentralized markets.
-    - Tutorial [coming soon].
+    - [Implement MECH client into your dApp](https://www.youtube.com/watch?v=fuDteQqsf2A)
+    - [Celo Trader Agent](https://www.youtube.com/watch?v=WSB0H0dDc78&t=1740s)
+      - can do transfers (for advanced Python developers)
 - [**Gaia**](https://www.gaianet.ai/): Building intelligent ecosystems for evolving AI applications 
-    - [Tutorial: Meme Token Generator](https://github.com/harishkotra/celo-token-agent) - an AI Agent that autonomously deploys tokens on Celo.
-
-**Other:**
-- [**ElizaOS**](https://elizaos.github.io/eliza/): TypeScript-based framework with multi-agent simulation capabilities. 
+    -  Meme Token Generator - an AI Agent that autonomously deploys tokens on Celo.
+      - [Twitter Thread](https://github.com/harishkotra/celo-token-agent) - short intro
+      - [Video Tutorial](https://www.youtube.com/watch?v=-7Bcgpj79LM)
+      - [Example Repository](https://github.com/harishkotra/celo-token-agent/)
+ - [EternalAI](https://eternalai.org/): A Decentralized Autonomous Agent protocol running AI agents on Solidity smart contracts — exactly as programmed — without censorship, interference, or downtime.
+ - [GT Protocol](https://www.gt-protocol.io/): AI Agents Builder, powered by GT Protocol AI Executive Technology, delivers customized AI agents tailored to enhance both business operations and personal daily tasks.
+ - [**ElizaOS**](https://elizaos.github.io/eliza/): TypeScript-based framework with multi-agent simulation capabilities. 
     - To build on Celo use the [EVM plugin](https://github.com/elizaOS/eliza/tree/main/packages/plugin-evm) 
     - Tutorial [coming soon].
+
+**Other:**
 - [**LangChain**](https://www.langchain.com/): Framework for LLM-powered applications.
 - [**MetaGPT**](https://github.com/geekan/MetaGPT): Multi-agent meta programming framework, mimicks organizational roles at a software company.
 
@@ -64,9 +71,12 @@ When scaling, consider:
 
 **Blockchain Tools:**
 - **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
+- **[ChainGPT](https://www.chaingpt.org/)**: Is an advanced AI infrastructure that develops AI-powered technologies for the Web3, Blockchain, and Crypto space, developing solutions from Chatbots, NFT, Smart Contract Generators and AI Trading Assistants
+- [EigenLayer](https://www.eigenlayer.xyz/): Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom verification mechanisms of off-chain operations.
 - **[Nebula](https://portal.thirdweb.com/nebula)**: Web3 LLM by thirdweb 
   - [Tutorial](https://www.youtube.com/watch?v=FeubfHwfJcM)
   - [Example Respository](https://github.com/cromewar/nebula-telegram-demo)
+- [Safe](https://safe.global/safenet): Smart Accounts for Agents
 - **[Kaito](https://www.kaito.ai/)**: Unified crypto news data.
 
 **Memory Systems:**
@@ -75,11 +85,14 @@ When scaling, consider:
 - **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
 
 **Security and Policy:**
-- **Functor Network**: Policy framework for autonomous agents
+- **[Predicate](https://x.com/0xPredicate)**: Define rules for onchain interactions
+- **[Functor Network](https://www.functor.sh/)**: Policy framework for autonomous agents
 - **Access Controls**: Environmental permissions
 - **Prompt Verification**: Input validation and control
 
 **Data:**
 When working with AI agents, it's essential to train models and collect the right data. For unique character creation, ensure you have sufficient training data. Some useful tools include:
+- **[Masa](https://www.masa.ai/)**: The #1 real-time data network for AI Agents & Apps
+- **[Vana](https://www.vana.org/)**: The first open protocol for data sovereignty. User-owned AI through user-owned data. Growing the DataDAO ecosystem.
 - **[DataSphere](https://github.com/datasphere/datasphere)**: Visualizes large datasets for analysis.
 - **[JinAI's LLM-friendly Markdown Tool](https://github.com/jina-ai/serve)**: Converts websites into LLM-friendly markdown.
