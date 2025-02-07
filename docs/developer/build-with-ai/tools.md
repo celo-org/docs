@@ -2,7 +2,10 @@
 
 In this article you will find an overview of tools that are crucial for building AI Agents. This is by no means an extensive list, as there is so much development in the space and new protocols come our every day. This serves more as an example for what tools exist on Celo.
 
+In this article you will find an overview of tools that are crucial for building AI Agents. This is by no means an extensive list, as there is so much development in the space and new protocols come our every day. This serves more as an example for what tools exist on Celo.
 
+
+## AI Agent Frameworks 
 ## AI Agent Frameworks 
 
 Frameworks are essential for designing and enabling AI agents. They determine how agents interact, collaborate, and perform tasks. For a full list of available frameworks, tools, and infrastructure, refer to this [table](https://www.aiagenttoolkit.xyz/).
@@ -28,12 +31,14 @@ Frameworks are essential for designing and enabling AI agents. They determine ho
 - [**MetaGPT**](https://github.com/geekan/MetaGPT): Multi-agent meta programming framework, mimicks organizational roles at a software company.
 
 ## Launchpads 
+## Launchpads 
 
 No-code solutions for quick AI Agent deployment. Here are two examples of launchpads designed for social agents with token integration:
 
 - [**Virtuals**](https://app.virtuals.io/): No-code AI Launchpad with LLP context system.
 - [**Vapor**](https://alpha.vaporware.fun/): Platform built on ai16z Eliza Framework
 
+## Essential Tools
 ## Essential Tools
 
 A variety of tools are available for building autonomous agents, including blockchain integration, machine learning, memory systems, simulation, monitoring, and security. 
@@ -50,6 +55,7 @@ When scaling, consider:
 - Support for videos, PDFs, and research papers.
 - Effective use of LLMs, NLP, and RAG tools.
 
+## Intelligence Tools 
 ## Intelligence Tools 
 
 **Machine Learning Tools:**
@@ -68,8 +74,14 @@ When scaling, consider:
 - **Use Cases**: Enhanced chatbots, documentation search, context-aware responses
 
 ## Infrastructure 
+## Infrastructure 
 
 **Blockchain Tools:**
+- **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
+- **[Nebula](https://portal.thirdweb.com/nebula)**: Web3 LLM by thirdweb 
+  - [Tutorial](https://www.youtube.com/watch?v=FeubfHwfJcM)
+  - [Example Respository](https://github.com/cromewar/nebula-telegram-demo)
+- **[Kaito](https://www.kaito.ai/)**: Unified crypto news data.
 - **[GOAT](https://ohmygoat.dev/introduction)**: GOAT 🐐 (Great Onchain Agent Toolkit) is an open-source framework for adding blockchain capabilities like wallets and smart contracts to AI agents.
 - **[ChainGPT](https://www.chaingpt.org/)**: Is an advanced AI infrastructure that develops AI-powered technologies for the Web3, Blockchain, and Crypto space, developing solutions from Chatbots, NFT, Smart Contract Generators and AI Trading Assistants
 - [EigenLayer](https://www.eigenlayer.xyz/): Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom verification mechanisms of off-chain operations.
@@ -83,6 +95,9 @@ When scaling, consider:
 - **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
 - **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
 - **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
+- **[Mem0](https://github.com/mem0ai/mem0)**: Intelligent memory layer for AI assistants.
+- **[Eliza Agent Memory](https://github.com/elizaOS/agentmemory)**: Knowledge graphing and document search.
+- **[LLM App with Personalized Memory](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/llm_apps_with_memory_tutorials/llm_app_personalized_memory)**: Individual user adaptation.
 
 **Security and Policy:**
 - **[Predicate](https://x.com/0xPredicate)**: Define rules for onchain interactions
@@ -92,6 +107,8 @@ When scaling, consider:
 
 **Data:**
 When working with AI agents, it's essential to train models and collect the right data. For unique character creation, ensure you have sufficient training data. Some useful tools include:
+- **[DataSphere](https://github.com/datasphere/datasphere)**: Visualizes large datasets for analysis.
+- **[JinAI's LLM-friendly Markdown Tool](https://github.com/jina-ai/serve)**: Converts websites into LLM-friendly markdown.
 - **[Masa](https://www.masa.ai/)**: The #1 real-time data network for AI Agents & Apps
 - **[Vana](https://www.vana.org/)**: The first open protocol for data sovereignty. User-owned AI through user-owned data. Growing the DataDAO ecosystem.
 - **[DataSphere](https://github.com/datasphere/datasphere)**: Visualizes large datasets for analysis.
