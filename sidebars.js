@@ -1246,42 +1246,67 @@ const sidebars = {
         {
           type : "doc",
           label: "Celo L2 migration",
-          id: 'cel2/notices/l2-migration',
+          id: "cel2/notices/l2-migration",
         },
         {
           type : "doc",
           label: "Pectra Upgrade",
-          id: 'cel2/notices/pectra-upgrade',
+          id: "cel2/notices/pectra-upgrade",
         },
       ]
     },
     {
       type: "doc",
       label: "Builders",
-      id: 'cel2/builders',
+      id: "cel2/builders",
     },
     {
       type: "category",
       label: "Node operators & Validators",
-      link: { type: 'doc', id: 'cel2/operators/overview' },
+      link: { type: "doc", id: "cel2/operators/overview" },
       collapsed: false,
       items: [
         {
           type: "doc",
-          label: "L2 Node Operator Guide",
-          id: "cel2/operators/operator-guide",
+          label: "Architecture",
+          id: "cel2/operators/architecture",
+        },
+        {
+          type: "doc",
+          label: "Running a node with Docker",
+          id: "cel2/operators/docker-node",
+        },
+        {
+          type: "doc",
+          label: "Building a node from source",
+          id: "cel2/operators/custom-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating a L1 node",
+          id: "cel2/operators/migrate-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating an L1 archive node",
+          id: "cel2/operators/migrate-archive-node",
+        },
+        {
+          type: "doc",
+          label: "Running a RPC provider",
+          id: "cel2/operators/rpc-provider",
         },
       ]
     },
     { 
       type: "category",
       label: "What's Changed?",
-      link: { type: 'doc', id: 'cel2/whats-changed/overview' },
+      link: { type: "doc", id: "cel2/whats-changed/overview" },
       collapsed: false,
       items: [
-        'cel2/whats-changed/l1-l2',
-        'cel2/whats-changed/op-l2',
-        'cel2/whats-changed/cel2-architecture',
+        "cel2/whats-changed/cel2-architecture",
+        "cel2/whats-changed/l1-l2",
+        "cel2/whats-changed/op-l2",
       ],
     },
     {
@@ -1292,17 +1317,17 @@ const sidebars = {
         {
           type : "doc",
           label: "Bridging from CELO from L1 to L2",
-          id: 'cel2/guides/bridging-celo-from-l1-to-l2',
+          id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {
           type : "doc",
           label: "Withdrawing CELO from L2 to L1",
-          id: 'cel2/guides/withdrawing-celo-from-l2-to-l1',
+          id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
         },
         {
           type : "doc",
           label: "Fee Abstraction on Celo L2",
-          id: 'cel2/guides/fee-abstraction',
+          id: "cel2/guides/fee-abstraction",
         },
       ]
     },
