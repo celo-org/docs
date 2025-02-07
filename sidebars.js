@@ -154,22 +154,22 @@ const sidebars = {
         {
           type: "doc",
           label: "Overview",
-          id: "developer/build-with-ai/overview",
+          id: "build/build-with-ai/overview",
         },
         {
           type: "doc",
           label: "Resources",
-          id: "developer/build-with-ai/resources",
+          id: "build/build-with-ai/resources",
         },
         {
           type: "doc",
           label: "Tools & Infra",
-          id: "developer/build-with-ai/tools",
+          id: "build/build-with-ai/tools",
         },
         {
           type: "doc",
-          label: "Examples",
-          id: "developer/build-with-ai/examples",
+          label: "Use Cases",
+          id: "build/build-with-ai/usecases",
         }
       ]
     },
@@ -215,11 +215,11 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "doc",
-      label: "Build with Social Connect",
-      id: "build/build-on-socialconnect"
-    },
+    // {
+    //   type: "doc",
+    //   label: "Build with Social Connect",
+    //   id: "build/build-on-socialconnect"
+    // },
     {
       type: "category",
       label: "Integrate with Celo",
