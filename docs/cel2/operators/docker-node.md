@@ -15,6 +15,12 @@ For node operators interested in using Kubernetes, we recommend using
 [Kompose](https://kompose.io) to convert the docker compose template to
 Kubernetes helm charts.
 
+:::note
+
+This guide only covers L2 Celo. Currently only the Alfajores testnet has been migrated to become a L2, other networks will not work with this guide.
+
+:::
+
 ## Snap sync
 
 1. Pull the latest version of

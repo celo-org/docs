@@ -12,5 +12,5 @@ The Execution Client is responsible for executing the block payloads it receives
 
 ## Next steps
 
-- To get your node up and running, start with the [run a node from docker guide](l2-node.md).
+- To get your node up and running, start with the [run a node from docker guide](docker-node.md).
 - If you've already got a Celo node up and running, check out [how to migrate it to a L2 node](migrate-node.md).
