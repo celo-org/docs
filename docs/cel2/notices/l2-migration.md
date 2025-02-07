@@ -12,7 +12,7 @@ This page will be updated continuously with information on upgrade runbooks and 
 
 ## For node operators
 
-Node operators will need to upgrade to the respective releases before the activation dates and migrate their state database. See the [Node Operator Guide](../operators/operator-guide.md) for detailed information.
+Node operators will need to upgrade to the respective releases before the activation dates and migrate their state database. See the [Node Operator Guide](../operators/overview.md) for detailed information.
 
 The hardfork is scheduled for the following block on each network.
 
