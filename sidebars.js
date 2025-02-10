@@ -173,12 +173,12 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Memetoken",
+          label: "Examples",
           items: [
             {
               type: "doc",
-              label: "AI Agent Memecoin Launcher",
-              id: "build/build-with-ai/ai-memecoins",
+              label: "Launch AI Agent Memecoins",
+              id: "build/build-with-ai/examples/ai-memecoins",
             }
           ]
         },
