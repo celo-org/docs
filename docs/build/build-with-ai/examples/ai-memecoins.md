@@ -85,8 +85,8 @@ The project uses three main components
  - Generates creative token names
  - Uses AI with a fallback to random generation
  - Configures initial token supply
-2. Contract Deployment **`(tokenDeployer.js)`**
- - Uses ContractKit to interact with Celo
+2. Contract Deployment **`(tokenDeployer.sol)`**
+ - Uses viem to interact with Celo
  - Handles gas estimation and transaction monitoring
  - Provides deployment status updates
 3. Smart Contract **`(tokenDeployer.js)`**
