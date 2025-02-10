@@ -170,7 +170,18 @@ const sidebars = {
           type: "doc",
           label: "Use Cases",
           id: "build/build-with-ai/usecases",
-        }
+        },
+        {
+          type: "category",
+          label: "Memetoken",
+          items: [
+            {
+              type: "doc",
+              label: "AI Agent Memecoin Launcher",
+              id: "build/build-with-ai/ai-memecoins",
+            }
+          ]
+        },
       ]
     },
     // {
