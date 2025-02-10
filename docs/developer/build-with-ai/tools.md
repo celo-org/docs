@@ -1,14 +1,10 @@
 # AI Agents Tools & Infrastructure
 
-In this article you will find an overview of tools that are crucial for building AI Agents. This is by no means an extensive list, as there is so much development in the space and new protocols come our every day. This serves more as an example for what tools exist on Celo.
-
-In this article you will find an overview of tools that are crucial for building AI Agents. This is by no means an extensive list, as there is so much development in the space and new protocols come our every day. This serves more as an example for what tools exist on Celo.
-
+This article provides an overview of essential tools for building AI agents. Given the rapid advancements in this space, this is not an exhaustive list but rather a snapshot of tools available on Celo.
 
 ## AI Agent Frameworks 
-## AI Agent Frameworks 
 
-Frameworks are essential for designing and enabling AI agents. They determine how agents interact, collaborate, and perform tasks. For a full list of available frameworks, tools, and infrastructure, refer to this [table](https://www.aiagenttoolkit.xyz/).
+Frameworks define how AI agents interact, collaborate, and execute tasks. For a full list of frameworks, tools, and infrastructure, check out this [comprehensive table](https://www.aiagenttoolkit.xyz/).
 
 **On Celo:**
 - [**Olas**](https://docs.autonolas.network/open-autonomy/): Framework for autonomous economic agents in decentralized markets.
@@ -31,14 +27,12 @@ Frameworks are essential for designing and enabling AI agents. They determine ho
 - [**MetaGPT**](https://github.com/geekan/MetaGPT): Multi-agent meta programming framework, mimicks organizational roles at a software company.
 
 ## Launchpads 
-## Launchpads 
 
-No-code solutions for quick AI Agent deployment. Here are two examples of launchpads designed for social agents with token integration:
+No-code platforms simplify AI agent deployment, making it easier to integrate social agents with tokens.
 
 - [**Virtuals**](https://app.virtuals.io/): No-code AI Launchpad with LLP context system.
 - [**Vapor**](https://alpha.vaporware.fun/): Platform built on ai16z Eliza Framework
 
-## Essential Tools
 ## Essential Tools
 
 A variety of tools are available for building autonomous agents, including blockchain integration, machine learning, memory systems, simulation, monitoring, and security. 
@@ -56,7 +50,6 @@ When scaling, consider:
 - Effective use of LLMs, NLP, and RAG tools.
 
 ## Intelligence Tools 
-## Intelligence Tools 
 
 **Machine Learning Tools:**
 - **Purpose**: Training, deploying, debugging and managing ML models
@@ -73,7 +66,6 @@ When scaling, consider:
 - **Examples**: Autonomous RAG, Agentic RAG, Local RAG Agent
 - **Use Cases**: Enhanced chatbots, documentation search, context-aware responses
 
-## Infrastructure 
 ## Infrastructure 
 
 **Blockchain Tools:**
