@@ -39,6 +39,10 @@ Resources for learning how to craft intelligent, blockchain-powered agents on Ce
 - [Polytrader](https://x.com/polytraderAI)
 - [artto](https://x.com/artto_ai): Agent that collects NFTs
 - [Soleng](https://x.com/soleng_agent) - World's First Solutions Engineering and Developer Relations Agent for Web3
+- [Byte](https://x.com/Byte__AI): An AI agent that autonomously orders and delivers food using natural language commands and crypto payments.
+- [opencordai](https://x.com/opencordai): A 24/7 AI agent for social media lead generation, identifying customers and engaging with them to drive sales.
+- [Infinite Regen](https://x.com/0xInfiniteregen): A platform for creating AI agents trained on Web3 insights to design mechanisms for funding public goods.
+
 
 For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/GigaHierz/status/1881401460082274395) hosted by Nader Dabit.
 
@@ -95,3 +99,5 @@ For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/G
     - [EP 124: Databricks CEO Ali Ghodsi Breaks Down the AI Hype-Cycle](https://www.notion.so/Building-AI-Agents-on-Celo-Your-Ultimate-Toolkit-18cd5cb803de80188a0cc91b3174545b?pvs=21)
 - Predictions for the industry
     - [AI + a16z](https://podcasts.apple.com/in/podcast/ai-a16z/id1740178076)
+
+Have another resource you want to add? Click the ['Edit this page'](https://github.com/celo-org/docs/edit/main/docs/build/build-with-ai/usecases.md) button below to submit a PR.
