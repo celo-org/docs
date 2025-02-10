@@ -168,8 +168,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Examples",
-          id: "developer/build-with-ai/examples",
+          label: "Use Cases",
+          id: "developer/build-with-ai/usecases",
         }
       ]
     },
