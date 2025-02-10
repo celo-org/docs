@@ -75,7 +75,7 @@ Following a successful Baklava upgrade, the Celo L2 Mainnet will officially laun
 ## Useful Links
 
 * [Layer 2 Specification](https://specs.celo.org/root.html)
-* [L2 Migration Guide](./operators/operator-guide.md)
+* [Node Operator Guide](./operators/overview.md)
 * [What's Changed?](./whats-changed/overview.md)
 * [Cel2 Code](https://github.com/celo-org/optimism)
 * [FAQ](/cel2/faq)

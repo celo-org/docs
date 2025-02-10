@@ -13,7 +13,7 @@ The Alfajores testnet has already been migrated to an L2.
 
 ### How do I run a node or upgrade an existing node?
 
-See the [L2 Operator Guide](./operators/operator-guide.md).
+See the guides for [running a node](./operators/docker-node.md) or the guide on [how to migrate a L1 node](./operators/migrate-node.md)).
 
 ### What RPC endpoints are available for the Alfajores testnet?
 
