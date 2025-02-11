@@ -5,7 +5,11 @@ description: Frequently Asked Questions about Cel2
 
 ### When is the Celo mainnet becoming an L2?
 
+Following the final testnet dry run on the Baklava testnet the mainnet launch date will be determined.
+
 ### When is the Baklava testnet becoming an L2?
+
+The Bakalava testnet is scheduled to upgrade to L2 on February 20th, 2025.
 
 ### When is Alfajores testnet becoming an L2?
 
