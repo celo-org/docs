@@ -1,12 +1,12 @@
-`celocli epochs`
-================
+# `celocli epochs`
 
 Finishes next epoch process.
 
-* [`celocli epochs:finish`](#celocli-epochsfinish)
-* [`celocli epochs:send-validator-payment`](#celocli-epochssend-validator-payment)
-* [`celocli epochs:start`](#celocli-epochsstart)
-* [`celocli epochs:switch`](#celocli-epochsswitch)
+- [`celocli epochs`](#celocli-epochs)
+  - [`celocli epochs:finish` {#celocli-epochsfinish}](#celocli-epochsfinish-celocli-epochsfinish)
+  - [`celocli epochs:send-validator-payment` {#celocli-epochssend-validator-payment}](#celocli-epochssend-validator-payment-celocli-epochssend-validator-payment)
+  - [`celocli epochs:start` {#celocli-epochsstart}](#celocli-epochsstart-celocli-epochsstart)
+  - [`celocli epochs:switch` {#celocli-epochsswitch}](#celocli-epochsswitch-celocli-epochsswitch)
 
 ## `celocli epochs:finish` {#celocli-epochsfinish}
 

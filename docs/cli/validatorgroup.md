@@ -1,17 +1,17 @@
-`celocli validatorgroup`
-========================
+# `celocli validatorgroup`
 
 View and manage Validator Groups
 
-* [`celocli validatorgroup:commission`](#celocli-validatorgroupcommission)
-* [`celocli validatorgroup:community-rpc-nodes`](#celocli-validatorgroupcommunity-rpc-nodes)
-* [`celocli validatorgroup:deregister`](#celocli-validatorgroupderegister)
-* [`celocli validatorgroup:list`](#celocli-validatorgrouplist)
-* [`celocli validatorgroup:member ARG1`](#celocli-validatorgroupmember-arg1)
-* [`celocli validatorgroup:register`](#celocli-validatorgroupregister)
-* [`celocli validatorgroup:reset-slashing-multiplier ARG1`](#celocli-validatorgroupreset-slashing-multiplier-arg1)
-* [`celocli validatorgroup:rpc-urls`](#celocli-validatorgrouprpc-urls)
-* [`celocli validatorgroup:show ARG1`](#celocli-validatorgroupshow-arg1)
+- [`celocli validatorgroup`](#celocli-validatorgroup)
+  - [`celocli validatorgroup:commission` {#celocli-validatorgroupcommission}](#celocli-validatorgroupcommission-celocli-validatorgroupcommission)
+  - [`celocli validatorgroup:community-rpc-nodes` {#celocli-validatorgroupcommunity-rpc-nodes}](#celocli-validatorgroupcommunity-rpc-nodes-celocli-validatorgroupcommunity-rpc-nodes)
+  - [`celocli validatorgroup:deregister` {#celocli-validatorgroupderegister}](#celocli-validatorgroupderegister-celocli-validatorgroupderegister)
+  - [`celocli validatorgroup:list` {#celocli-validatorgrouplist}](#celocli-validatorgrouplist-celocli-validatorgrouplist)
+  - [`celocli validatorgroup:member ARG1` {#celocli-validatorgroupmember-arg1}](#celocli-validatorgroupmember-arg1-celocli-validatorgroupmember-arg1)
+  - [`celocli validatorgroup:register` {#celocli-validatorgroupregister}](#celocli-validatorgroupregister-celocli-validatorgroupregister)
+  - [`celocli validatorgroup:reset-slashing-multiplier ARG1` {#celocli-validatorgroupreset-slashing-multiplier-arg1}](#celocli-validatorgroupreset-slashing-multiplier-arg1-celocli-validatorgroupreset-slashing-multiplier-arg1)
+  - [`celocli validatorgroup:rpc-urls` {#celocli-validatorgrouprpc-urls}](#celocli-validatorgrouprpc-urls-celocli-validatorgrouprpc-urls)
+  - [`celocli validatorgroup:show ARG1` {#celocli-validatorgroupshow-arg1}](#celocli-validatorgroupshow-arg1-celocli-validatorgroupshow-arg1)
 
 ## `celocli validatorgroup:commission` {#celocli-validatorgroupcommission}
 

@@ -1,23 +1,23 @@
-`celocli validator`
-===================
+# `celocli validator`
 
 View and manage Validators
 
-* [`celocli validator:affiliate ARG1`](#celocli-validatoraffiliate-arg1)
-* [`celocli validator:community-rpc-nodes`](#celocli-validatorcommunity-rpc-nodes)
-* [`celocli validator:deaffiliate`](#celocli-validatordeaffiliate)
-* [`celocli validator:deregister`](#celocli-validatorderegister)
-* [`celocli validator:downtime-slash`](#celocli-validatordowntime-slash)
-* [`celocli validator:list`](#celocli-validatorlist)
-* [`celocli validator:register`](#celocli-validatorregister)
-* [`celocli validator:requirements`](#celocli-validatorrequirements)
-* [`celocli validator:rpc-urls`](#celocli-validatorrpc-urls)
-* [`celocli validator:send-payment`](#celocli-validatorsend-payment)
-* [`celocli validator:set-bitmaps`](#celocli-validatorset-bitmaps)
-* [`celocli validator:show ARG1`](#celocli-validatorshow-arg1)
-* [`celocli validator:signed-blocks`](#celocli-validatorsigned-blocks)
-* [`celocli validator:status`](#celocli-validatorstatus)
-* [`celocli validator:update-bls-public-key`](#celocli-validatorupdate-bls-public-key)
+- [`celocli validator`](#celocli-validator)
+  - [`celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}](#celocli-validatoraffiliate-arg1-celocli-validatoraffiliate-arg1)
+  - [`celocli validator:community-rpc-nodes` {#celocli-validatorcommunity-rpc-nodes}](#celocli-validatorcommunity-rpc-nodes-celocli-validatorcommunity-rpc-nodes)
+  - [`celocli validator:deaffiliate` {#celocli-validatordeaffiliate}](#celocli-validatordeaffiliate-celocli-validatordeaffiliate)
+  - [`celocli validator:deregister` {#celocli-validatorderegister}](#celocli-validatorderegister-celocli-validatorderegister)
+  - [`celocli validator:downtime-slash` {#celocli-validatordowntime-slash}](#celocli-validatordowntime-slash-celocli-validatordowntime-slash)
+  - [`celocli validator:list` {#celocli-validatorlist}](#celocli-validatorlist-celocli-validatorlist)
+  - [`celocli validator:register` {#celocli-validatorregister}](#celocli-validatorregister-celocli-validatorregister)
+  - [`celocli validator:requirements` {#celocli-validatorrequirements}](#celocli-validatorrequirements-celocli-validatorrequirements)
+  - [`celocli validator:rpc-urls` {#celocli-validatorrpc-urls}](#celocli-validatorrpc-urls-celocli-validatorrpc-urls)
+  - [`celocli validator:send-payment` {#celocli-validatorsend-payment}](#celocli-validatorsend-payment-celocli-validatorsend-payment)
+  - [`celocli validator:set-bitmaps` {#celocli-validatorset-bitmaps}](#celocli-validatorset-bitmaps-celocli-validatorset-bitmaps)
+  - [`celocli validator:show ARG1` {#celocli-validatorshow-arg1}](#celocli-validatorshow-arg1-celocli-validatorshow-arg1)
+  - [`celocli validator:signed-blocks` {#celocli-validatorsigned-blocks}](#celocli-validatorsigned-blocks-celocli-validatorsigned-blocks)
+  - [`celocli validator:status` {#celocli-validatorstatus}](#celocli-validatorstatus-celocli-validatorstatus)
+  - [`celocli validator:update-bls-public-key` {#celocli-validatorupdate-bls-public-key}](#celocli-validatorupdate-bls-public-key-celocli-validatorupdate-bls-public-key)
 
 ## `celocli validator:affiliate ARG1` {#celocli-validatoraffiliate-arg1}
 

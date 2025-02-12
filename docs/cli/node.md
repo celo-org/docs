@@ -1,11 +1,11 @@
-`celocli node`
-==============
+# `celocli node`
 
 Manage your Celo node
 
-* [`celocli node:accounts`](#celocli-nodeaccounts)
-* [`celocli node:list`](#celocli-nodelist)
-* [`celocli node:synced`](#celocli-nodesynced)
+- [`celocli node`](#celocli-node)
+  - [`celocli node:accounts` {#celocli-nodeaccounts}](#celocli-nodeaccounts-celocli-nodeaccounts)
+  - [`celocli node:list` {#celocli-nodelist}](#celocli-nodelist-celocli-nodelist)
+  - [`celocli node:synced` {#celocli-nodesynced}](#celocli-nodesynced-celocli-nodesynced)
 
 ## `celocli node:accounts` {#celocli-nodeaccounts}
 

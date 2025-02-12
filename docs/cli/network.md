@@ -1,14 +1,14 @@
-`celocli network`
-=================
+# `celocli network`
 
 View details about the network, like contracts and parameters
 
-* [`celocli network:community-rpc-nodes`](#celocli-networkcommunity-rpc-nodes)
-* [`celocli network:contracts`](#celocli-networkcontracts)
-* [`celocli network:info`](#celocli-networkinfo)
-* [`celocli network:parameters`](#celocli-networkparameters)
-* [`celocli network:rpc-urls`](#celocli-networkrpc-urls)
-* [`celocli network:whitelist`](#celocli-networkwhitelist)
+- [`celocli network`](#celocli-network)
+  - [`celocli network:community-rpc-nodes` {#celocli-networkcommunity-rpc-nodes}](#celocli-networkcommunity-rpc-nodes-celocli-networkcommunity-rpc-nodes)
+  - [`celocli network:contracts` {#celocli-networkcontracts}](#celocli-networkcontracts-celocli-networkcontracts)
+  - [`celocli network:info` {#celocli-networkinfo}](#celocli-networkinfo-celocli-networkinfo)
+  - [`celocli network:parameters` {#celocli-networkparameters}](#celocli-networkparameters-celocli-networkparameters)
+  - [`celocli network:rpc-urls` {#celocli-networkrpc-urls}](#celocli-networkrpc-urls-celocli-networkrpc-urls)
+  - [`celocli network:whitelist` {#celocli-networkwhitelist}](#celocli-networkwhitelist-celocli-networkwhitelist)
 
 ## `celocli network:community-rpc-nodes` {#celocli-networkcommunity-rpc-nodes}
 

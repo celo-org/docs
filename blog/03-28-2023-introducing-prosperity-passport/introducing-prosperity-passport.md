@@ -11,8 +11,6 @@ hide_table_of_contents: false
 slug: /tutorials/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain
 ---
 
-![header](../../src/data-tutorials/showcase/beginner/introducing-prosperity-passport-the-first-soulbound-token-powered-web3-identity-solution-for-celo-blockchain.png)
-
 ## 🌱 Introduction
 
 The rise of Web3 technologies has created new opportunities for decentralized identity solutions that provide more privacy, security, and control for users. One such solution is Prosperity Passport, the first soulbound token-powered identity solution for the Celo blockchain.
