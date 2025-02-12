@@ -34,8 +34,8 @@ USAGE
   $ celocli governance:approvehotfix --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--proposalID <value> | --hotfix <value>] [--useMultiSig | --useSafe]
-    [--type approver|securityCouncil ]
+    [--ledgerLiveMode ] [--globalHelp] [--proposalID <value> | --hotfix <value>]
+    [--useMultiSig | --useSafe] [--type approver|securityCouncil ]
 
 FLAGS
   -k, --privateKey=<value>
@@ -61,6 +61,11 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --proposalID=<value>
       UUID of proposal to approve
 
@@ -75,7 +80,7 @@ FLAGS
       True means the request will be sent through multisig.
 
   --useSafe
-      True means the request will be sent through safe.
+      True means the request will be sent through SAFE (http://safe.global)
 
 DESCRIPTION
   Approve a dequeued governance proposal (or hotfix)
@@ -112,8 +117,8 @@ Interactively build a governance proposal
 USAGE
   $ celocli governance:build-proposal [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--output <value>] [--afterExecutingProposal <value> |
-    --afterExecutingID <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--output <value>] [--afterExecutingProposal
+    <value> | --afterExecutingID <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -138,6 +143,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --output=<value>
       [default: proposalTransactions.json] Path to output
@@ -173,7 +183,7 @@ USAGE
   $ celocli governance:dequeue --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -195,6 +205,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -227,7 +242,7 @@ USAGE
   $ celocli governance:execute --proposalID <value> --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -249,6 +264,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --proposalID=<value>
       (required) UUID of proposal to execute
@@ -284,7 +304,7 @@ USAGE
   $ celocli governance:executehotfix --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
     --jsonTransactions <value> --salt <value> [-k <value> | --useLedger | ] [-n <value>]
     [--gasCurrency 0x1234567890123456789012345678901234567890] [--ledgerAddresses
-    <value> ] [--globalHelp]
+    <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -309,6 +329,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --salt=<value>
       (required) Secret salt associated with hotfix
@@ -344,7 +369,7 @@ USAGE
   $ celocli governance:hashhotfix --jsonTransactions <value> --salt <value> [-k <value> |
     --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--force]
+    [--ledgerLiveMode ] [--globalHelp] [--force]
 
 FLAGS
   -k, --privateKey=<value>
@@ -369,6 +394,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --salt=<value>
       (required) Secret salt associated with hotfix
@@ -403,8 +433,9 @@ List live governance proposals (queued and ongoing)
 USAGE
   $ celocli governance:list [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--columns <value> | -x] [--filter <value>] [--no-header | [--csv |
-    --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--columns <value> | -x] [--filter <value>]
+    [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort
+    <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -435,6 +466,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --no-header
       hide table header from output
@@ -480,7 +516,7 @@ USAGE
   $ celocli governance:preparehotfix --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --hash
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -505,6 +541,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -538,8 +579,10 @@ USAGE
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --descriptionURL https://www.celo.org [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --useMultiSig]
-    [--force] [--noInfo] [--afterExecutingProposal <value> | --afterExecutingID <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    [--useMultiSig | --useSafe]] [--safeAddress
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d ] [--force] [--noInfo]
+    [--afterExecutingProposal <value> | --afterExecutingID <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -583,14 +626,25 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
   --noInfo
       Skip printing the proposal info
+
+  --safeAddress=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the safe.
 
   --useLedger
       Set it to use a ledger wallet
 
   --useMultiSig
       True means the request will be sent through multisig.
+
+  --useSafe
+      True means the request will be sent through SAFE (http://safe.global).
 
 DESCRIPTION
   Submit a governance proposal
@@ -622,7 +676,7 @@ USAGE
   $ celocli governance:revokeupvote --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -644,6 +698,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -885,7 +944,7 @@ USAGE
   $ celocli governance:upvote --proposalID <value> --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -907,6 +966,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --proposalID=<value>
       (required) UUID of proposal to upvote
@@ -1149,7 +1213,7 @@ USAGE
   $ celocli governance:vote --proposalID <value> --value Abstain|No|Yes --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1171,6 +1235,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --proposalID=<value>
       (required) UUID of proposal to vote on
@@ -1210,8 +1279,8 @@ USAGE
   $ celocli governance:votePartially --proposalID <value> --from
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
     <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp] [--yes <value>] [--no <value>]
-    [--abstain <value>]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp] [--yes <value>]
+    [--no <value>] [--abstain <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1236,6 +1305,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --no=<value>
       No votes
@@ -1277,7 +1351,7 @@ USAGE
   $ celocli governance:whitelisthotfix --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --hash
     <value> [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1302,6 +1376,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -1334,7 +1413,9 @@ USAGE
   $ celocli governance:withdraw --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+    [--useMultiSig | --useSafe]] [--safeAddress
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d ]
 
 FLAGS
   -k, --privateKey=<value>
@@ -1342,6 +1423,9 @@ FLAGS
 
   -n, --node=<value>
       URL of the node to run commands against or an alias
+
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the multi-sig contract
 
   --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       (required) Proposer's address
@@ -1357,8 +1441,22 @@ FLAGS
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
 
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --safeAddress=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      Address of the safe.
+
   --useLedger
       Set it to use a ledger wallet
+
+  --useMultiSig
+      True means the request will be sent through multisig.
+
+  --useSafe
+      True means the request will be sent through SAFE (http://safe.global).
 
 DESCRIPTION
   Withdraw refunded governance proposal deposits.

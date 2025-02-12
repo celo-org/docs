@@ -1,3 +1,6 @@
+const { link } = require("fs");
+const { type } = require("os");
+
 const sidebars = {
   // ######################################
   // What is Celo
@@ -146,12 +149,48 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Build with AI",
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "developer/build-with-ai/overview",
+        },
+        {
+          type: "doc",
+          label: "Resources",
+          id: "developer/build-with-ai/resources",
+        },
+        {
+          type: "doc",
+          label: "Tools & Infra",
+          id: "developer/build-with-ai/tools",
+        },
+        {
+          type: "doc",
+          label: "Use Cases",
+          id: "developer/build-with-ai/usecases",
+        }
+      ]
+    },
+    // {
+    //   type: "doc",
+    //   label: "Build with AI",
+    //   id: "developer/build-with-ai/overview",
+    // },
+    {
+      type: "category",
       label: "Build on MiniPay",
       items: [
         {
           type: "doc",
           label: "Overview",
           id: "developer/build-on-minipay/overview",
+        },
+        {
+          type: "doc",
+          label: "Getting Started",
+          id: "developer/build-on-minipay/quickstart",
         },
         {
           type: "category",
@@ -200,11 +239,6 @@ const sidebars = {
           id: "integration/cloud-hsm",
         },
       ],
-    },
-    {
-      type: "link",
-      label: "Community Tutorials",
-      href: "https://celo.academy/c/tutorials/4",
     },
     {
       type: "doc",
@@ -277,19 +311,9 @@ const sidebars = {
           id: "wallet/index",
         },
         {
-          type: "link",
-          label: "Valora",
-          href: "https://celo.academy/t/3-simple-steps-to-get-started-with-valora-on-celo/80",
-        },
-        {
           type: "category",
           label: "MetaMask",
           items: [
-            {
-              type: "link",
-              label: "MetaMask Setup",
-              href: "https://celo.academy/t/3-simple-steps-to-connect-your-metamask-wallet-to-celo/84",
-            },
             {
               type: "doc",
               label: "Programmatic Setup",
@@ -1215,31 +1239,100 @@ const sidebars = {
       id: "cel2/index",
     },
     {
-      type: "doc",
-      label: "L2 Node Operator Guide",
-      id: "cel2/l2-operator-guide",
-    },
-    {
-      type: "doc",
-      label: "L2 Migration Decision Tree",
-      id: "cel2/decision-tree",
-    },
-    {
-      type: "doc",
-      label: "L2 Architecture",
-      id: "cel2/cel2-architecture",
-    },
-    { type: "category",
-      label: "What's Changed?",
-      link: { type: 'doc', id: 'cel2/whats-changed/overview' },
+      type: "category",
+      label: "Notices",
       collapsed: false,
       items: [
-        'cel2/whats-changed/l1-l2',
-        'cel2/whats-changed/op-l2'
+        {
+          type : "doc",
+          label: "Celo L2 migration",
+          id: "cel2/notices/l2-migration",
+        },
+        {
+          type : "doc",
+          label: "Pectra Upgrade",
+          id: "cel2/notices/pectra-upgrade",
+        },
+      ]
+    },
+    {
+      type: "doc",
+      label: "Builders",
+      id: "cel2/builders",
+    },
+    {
+      type: "category",
+      label: "Node operators & Validators",
+      link: { type: "doc", id: "cel2/operators/overview" },
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Architecture",
+          id: "cel2/operators/architecture",
+        },
+        {
+          type: "doc",
+          label: "Running a node with Docker",
+          id: "cel2/operators/docker-node",
+        },
+        {
+          type: "doc",
+          label: "Building a node from source",
+          id: "cel2/operators/custom-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating a L1 node",
+          id: "cel2/operators/migrate-node",
+        },
+        {
+          type: "doc",
+          label: "Migrating an L1 archive node",
+          id: "cel2/operators/migrate-archive-node",
+        },
+        {
+          type: "doc",
+          label: "Running a RPC provider",
+          id: "cel2/operators/rpc-provider",
+        },
+      ]
+    },
+    { 
+      type: "category",
+      label: "What's Changed?",
+      link: { type: "doc", id: "cel2/whats-changed/overview" },
+      collapsed: false,
+      items: [
+        "cel2/whats-changed/cel2-architecture",
+        "cel2/whats-changed/l1-l2",
+        "cel2/whats-changed/op-l2",
       ],
     },
-    { type: "link", label: "Cel2 Specs", href: "https://specs.celo.org/" },
+    {
+      type: "category",
+      label: "Guides",
+      collapsed: true,
+      items: [
+        {
+          type : "doc",
+          label: "Bridging from CELO from L1 to L2",
+          id: "cel2/guides/bridging-celo-from-l1-to-l2",
+        },
+        {
+          type : "doc",
+          label: "Withdrawing CELO from L2 to L1",
+          id: "cel2/guides/withdrawing-celo-from-l2-to-l1",
+        },
+        {
+          type : "doc",
+          label: "Fee Abstraction on Celo L2",
+          id: "cel2/guides/fee-abstraction",
+        },
+      ]
+    },
     { type: "doc", label: "FAQ", id: "cel2/faq" },
+    { type: "link", label: "Celo L2 Specs", href: "https://specs.celo.org/" },
   ],
 };
 module.exports = sidebars;

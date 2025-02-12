@@ -31,7 +31,7 @@ module.exports = {
     // },
   ],
   plugins: [
-    require.resolve("docusaurus-plugin-hubspot"),
+    require.resolve("@stackql/docusaurus-plugin-hubspot"),
     require.resolve("docusaurus-plugin-fathom"),
     path.resolve(__dirname, "src/plugins/aliases.ts"),
     path.resolve(__dirname, "src/plugins/web3-polyfill.ts"),
@@ -299,7 +299,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Celo Foundation, Inc. Built with Docusaurus.`,
+      copyright: "Copyright © 2025 Celo Foundation, Inc.",
     },
     fathomAnalytics: {
       siteId: "AZMFWALB",

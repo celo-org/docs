@@ -1,11 +1,12 @@
-`celocli epochs`
-================
+# `celocli epochs`
 
 Finishes next epoch process.
 
-* [`celocli epochs:finish`](#celocli-epochsfinish)
-* [`celocli epochs:start`](#celocli-epochsstart)
-* [`celocli epochs:switch`](#celocli-epochsswitch)
+- [`celocli epochs`](#celocli-epochs)
+  - [`celocli epochs:finish` {#celocli-epochsfinish}](#celocli-epochsfinish-celocli-epochsfinish)
+  - [`celocli epochs:send-validator-payment` {#celocli-epochssend-validator-payment}](#celocli-epochssend-validator-payment-celocli-epochssend-validator-payment)
+  - [`celocli epochs:start` {#celocli-epochsstart}](#celocli-epochsstart-celocli-epochsstart)
+  - [`celocli epochs:switch` {#celocli-epochsswitch}](#celocli-epochsswitch-celocli-epochsswitch)
 
 ## `celocli epochs:finish` {#celocli-epochsfinish}
 
@@ -16,7 +17,7 @@ USAGE
   $ celocli epochs:finish --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -38,6 +39,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -61,6 +67,72 @@ FLAG DESCRIPTIONS
 
 _See code: [src/commands/epochs/finish.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/finish.ts)_
 
+## `celocli epochs:send-validator-payment` {#celocli-epochssend-validator-payment}
+
+Sends the allocated epoch payment to a validator, their group, and delegation beneficiary.
+
+```
+USAGE
+  $ celocli epochs:send-validator-payment --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k <value> | --useLedger | ] [-n
+    <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
+
+FLAGS
+  -k, --privateKey=<value>
+      Use a private key to sign local transactions with
+
+  -n, --node=<value>
+      URL of the node to run commands against or an alias
+
+  --for=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the validator to send the payment to
+
+  --from=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
+      (required) Address of the sender
+
+  --gasCurrency=0x1234567890123456789012345678901234567890
+      Use a specific gas currency for transaction fees (defaults to CELO if no gas
+      currency is supplied). It must be a whitelisted token.
+
+  --globalHelp
+      View all available global flags
+
+  --ledgerAddresses=<value>
+      [default: 1] If --useLedger is set, this will get the first N addresses for local
+      signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
+
+  --useLedger
+      Set it to use a ledger wallet
+
+DESCRIPTION
+  Sends the allocated epoch payment to a validator, their group, and delegation
+  beneficiary.
+
+ALIASES
+  $ celocli validator:send-payment
+
+EXAMPLES
+  send-validator-payment --for 0x47e172F6CfB6c7D01C1574fa3E2Be7CC73269D95
+
+FLAG DESCRIPTIONS
+  -n, --node=<value>  URL of the node to run commands against or an alias
+
+    Can be a full url like https://forno.celo.org or an alias. default:
+    http://localhost:8545
+    Alias options:
+    local, localhost => 'http://localhost:8545'
+    alfajores => Celo Alfajores Testnet,
+    mainnet, celo, forno => Celo Mainnet chain',
+```
+
+_See code: [src/commands/epochs/send-validator-payment.ts](https://github.com/celo-org/developer-tooling/tree/master/packages/cli/src/commands/epochs/send-validator-payment.ts)_
+
 ## `celocli epochs:start` {#celocli-epochsstart}
 
 Starts next epoch process.
@@ -70,7 +142,7 @@ USAGE
   $ celocli epochs:start --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -92,6 +164,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -124,7 +201,7 @@ USAGE
   $ celocli epochs:switch --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp]
+    [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -146,6 +223,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

@@ -11,3 +11,4 @@
 /docs/developer/viem/ @celo-org/devrel @celo-org/devtooling
 /docs/network/node/ @celo-org/devrel @celo-org/devopsre
 /docs/protocol/identity/ @celo-org/devrel @celo-org/primitives
+/docs/cel2 @celo-org/blockchain

@@ -20,7 +20,8 @@ USAGE
   $ celocli election:activate --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--for 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--wait]
+    [--ledgerLiveMode ] [--globalHelp] [--for
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d] [--wait]
 
 FLAGS
   -k, --privateKey=<value>
@@ -45,6 +46,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -85,8 +91,9 @@ Outputs the set of validators currently participating in BFT to create blocks. A
 USAGE
   $ celocli election:current [-k <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--valset] [--columns <value> | -x] [--filter <value>] [--no-header |
-    [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
+    [--ledgerLiveMode ] [--globalHelp] [--valset] [--columns <value> | -x] [--filter
+    <value>] [--no-header | [--csv | --no-truncate]] [--output csv|json|yaml |  | ]
+    [--sort <value>]
 
 FLAGS
   -k, --privateKey=<value>
@@ -117,6 +124,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --no-header
       hide table header from output
@@ -208,7 +220,7 @@ USAGE
   $ celocli election:revoke --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -233,6 +245,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet
@@ -346,7 +363,7 @@ USAGE
   $ celocli election:vote --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --for
     0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d --value <value> [-k <value> | --useLedger
     | ] [-n <value>] [--gasCurrency 0x1234567890123456789012345678901234567890]
-    [--ledgerAddresses <value> ] [--globalHelp]
+    [--ledgerAddresses <value> ] [--ledgerLiveMode ] [--globalHelp]
 
 FLAGS
   -k, --privateKey=<value>
@@ -371,6 +388,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --useLedger
       Set it to use a ledger wallet

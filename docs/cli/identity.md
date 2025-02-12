@@ -14,7 +14,8 @@ USAGE
   $ celocli identity:withdraw-attestation-rewards --from 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d [-k
     <value> | --useLedger | ] [-n <value>] [--gasCurrency
     0x1234567890123456789012345678901234567890] [--ledgerAddresses <value> ]
-    [--globalHelp] [--tokenAddress 0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
+    [--ledgerLiveMode ] [--globalHelp] [--tokenAddress
+    0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d]
 
 FLAGS
   -k, --privateKey=<value>
@@ -37,6 +38,11 @@ FLAGS
   --ledgerAddresses=<value>
       [default: 1] If --useLedger is set, this will get the first N addresses for local
       signing
+
+  --ledgerLiveMode
+      When set, the 4th postion of the derivation path will be iterated over instead of
+      the 5th. This is useful to use same address on you Ledger with celocli as you do on
+      Ledger Live
 
   --tokenAddress=0xc1912fEE45d61C87Cc5EA59DaE31190FFFFf232d
       The address of the token that will be withdrawn. Defaults to cUSD
