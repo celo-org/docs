@@ -78,8 +78,7 @@ Once this block number is reached, node operators can then launch the L2 node.
 3. Run `./migrate full <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]` where
    `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
    ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
-   will take at least some minutes to complete. Note that in all cases, the migration does not modify
-   the original datadir; the migrated data is written to a new directory.
+   will take at least some minutes to complete.
 4. Verify that the migration was successful by looking for the `Migration successful` message at the
    end of the output.
 5. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
@@ -93,3 +92,9 @@ Once this block number is reached, node operators can then launch the L2 node.
    begin by applying blocks on top of the hardfork block.
 9. At this point, you should be able to validate the progression of the node by fetching the current
    block number via the RPC API and seeing that it is increasing.
+
+## Missing Data / DB check failures
+
+Both the `pre` and `full` migration commands will first run a script to check whether the source db provided has any gaps in data. This check may fail with an error indicating that data is missing from your source db, in which case you should try again with a different source db until the check passes.
+To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.
+Alternatively, you can run the check-db script on its own by checking out the latest version the [celo optimism monorepo](https://github.com/celo-org/optimism), running `cd op-chain-ops` followed by `make celo-migrate`, and finally running `go run ./cmd/celo-migrate check-db --db-path <path-to-your-L1-datadir>`. This command takes in an optional `--fail-fast` flag that will make it exit at the first gap detected as it does in the migration script. If the `--fail-fast` flag is not provided then the script will collect all the gaps it finds and print them out at the end.
