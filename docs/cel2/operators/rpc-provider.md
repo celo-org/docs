@@ -1,14 +1,16 @@
 # Running RPC service
 
-# Registering
+After Celo mainnet transitions to L1, validators that are elegible, registered and elected must run PRC nodes in order to be elegible for rewards.
+
+## Registering
 
 How to register as Validator, same instructions as in the [current docs](https://docs.celo.org/network/mainnet/run-validator#registering-as-a-validator). The only  difference is that BLS signatures are not required.
 
-# Run a node
+## Run a node
 
 See https://github.com/celo-org/simple-celo-node.
 
-# Register as RPC provider
+## Register as RPC provider
 
 To register as a RPC provider, a public https url needs to be registered on-chain. To do this, we will register the rpc url in a signed metadata file in the Celo Account.
 
