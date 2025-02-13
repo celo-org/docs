@@ -1293,8 +1293,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a RPC provider",
-          id: "cel2/operators/rpc-provider",
+          label: "Running a community RPC node",
+          id: "cel2/operators/community-rpc-node",
         },
       ]
     },
