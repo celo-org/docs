@@ -148,23 +148,34 @@ const sidebars = {
         {
           type: "doc",
           label: "Overview",
-          id: "developer/build-with-ai/overview",
+          id: "build/build-with-ai/overview",
         },
         {
           type: "doc",
           label: "Resources",
-          id: "developer/build-with-ai/resources",
+          id: "build/build-with-ai/resources",
         },
         {
           type: "doc",
           label: "Tools & Infra",
-          id: "developer/build-with-ai/tools",
+          id: "build/build-with-ai/tools",
         },
         {
           type: "doc",
           label: "Use Cases",
-          id: "developer/build-with-ai/usecases",
-        }
+          id: "build/build-with-ai/usecases",
+        },
+        {
+          type: "category",
+          label: "Examples",
+          items: [
+            {
+              type: "doc",
+              label: "Launch AI Agent Memecoins",
+              id: "build/build-with-ai/examples/ai-memecoins",
+            }
+          ]
+        },
       ]
     },
     // {
