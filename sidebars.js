@@ -137,11 +137,7 @@ const sidebars = {
   buildSidebar: [
     { type: "doc", label: "Overview", id: "build/index" },
     { type: "doc", label: "Network Information", id: "network/index" },
-    {
-      type: "doc",
-      label: "Add Celo to MetaMask",
-      id: "build/add-celo-testnet-to-metamask",
-    },
+
     {
       type: "doc",
       label: "Quickstart with Celo Composer",
@@ -322,6 +318,11 @@ const sidebars = {
           type: "category",
           label: "MetaMask",
           items: [
+            {
+              type: "doc",
+              label: "Add Celo to MetaMask",
+              id: "wallet/metamask/add-celo-testnet-to-metamask",
+            },
             {
               type: "doc",
               label: "Programmatic Setup",
