@@ -366,8 +366,24 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Networks",
+      label: "Explorers",
       items: [
+        {
+          type: "link",
+          label: "Blockscout",
+          href: "https://explorer.celo.org/",
+        },
+        {
+          type: "link",
+          label: "Celoscan",
+          href: "https://celoscan.io/",
+        },
+      ],
+    },
+    // {
+    //   type: "category",
+    //   label: "Networks",
+    //   items: [
         // { type: "doc", label: "Overview", id: "network/index" },
         // Nodes
         // {
@@ -412,45 +428,30 @@ const sidebars = {
         //     },
         //   ],
         // },
-        {
-          type: "category",
-          label: "Explorers",
-          items: [
-            {
-              type: "link",
-              label: "Blockscout",
-              href: "https://explorer.celo.org/",
-            },
-            {
-              type: "link",
-              label: "Celoscan",
-              href: "https://celoscan.io/",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Disclaimers",
-          items: [
-            {
-              type: "doc",
-              label: "Mainnet",
-              id: "network/mainnet/disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Alfajores Testnet",
-              id: "network/alfajores/disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Baklava Testnet",
-              id: "network/baklava/disclaimer",
-            },
-          ],
-        },
-      ],
-    },
+        
+    //     {
+    //       type: "category",
+    //       label: "Disclaimers",
+    //       items: [
+    //         {
+    //           type: "doc",
+    //           label: "Mainnet",
+    //           id: "network/mainnet/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Alfajores Testnet",
+    //           id: "network/alfajores/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Baklava Testnet",
+    //           id: "network/baklava/disclaimer",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       type: "category",
       label: "Setup",
