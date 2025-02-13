@@ -1305,7 +1305,7 @@ const sidebars = {
         {
           type: "doc",
           label: "Running a RPC provider",
-          id: "cel2/operators/rpc-provider",
+          id: "cel2/operators/community-rpc-provider",
         },
       ]
     },

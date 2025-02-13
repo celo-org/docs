@@ -517,6 +517,11 @@ celocli validatorgroup:show $CELO_VALIDATOR_GROUP_ADDRESS
 
 Next, register your Validator by running the following command. Note that because we have authorized a Validator signer, this step could also be performed on the Validator machine. Running it on the local machine allows us to avoid needing to install the [`celocli`](https://docs.celo.org/cli) on the Validator machine.
 
+:::tip
+After the Celo L2 transition, make sure to use CLI version at least `6.0.0-beta.5. It is then not needed to include the flags `blsKey` nor `blsSignature`.
+
+:::
+
 ```bash
 # On your local machine
 celocli validator:register --from $CELO_VALIDATOR_ADDRESS --ecdsaKey $CELO_VALIDATOR_SIGNER_PUBLIC_KEY --blsKey $CELO_VALIDATOR_SIGNER_BLS_PUBLIC_KEY --blsSignature $CELO_VALIDATOR_SIGNER_BLS_SIGNATURE
