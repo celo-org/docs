@@ -4,7 +4,7 @@ After Celo mainnet transitions to Celo L2, validators that are registered and el
 
 ## Registering
 
-If you're not yet a validator, you must first register. You can follow the instructions to do so  [here](/cel2/network/mainnet/run-validator#registering-as-a-validator).
+If you're not yet a validator, you must first register. You can follow the instructions to do so  [here](/network/mainnet/run-validator#registering-as-a-validator).
 
 
 ## Run a node
