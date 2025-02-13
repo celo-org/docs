@@ -1,21 +1,25 @@
-# Running RPC service
+# Running a community RPC node
 
-After Celo mainnet transitions to L1, validators that are elegible, registered and elected must run PRC nodes in order to be elegible for rewards.
+After Celo mainnet transitions to L1, validators that are eligible, registered and elected must run PRC nodes in order to be eligible for rewards.
 
 ## Registering
 
-How to register as Validator, same instructions as in the [current docs](https://docs.celo.org/network/mainnet/run-validator#registering-as-a-validator). The only  difference is that BLS signatures are not required.
+To register as a validator, follow the instructions as in the [current docs](https://docs.celo.org/network/mainnet/run-validator#registering-as-a-validator). The only difference is that BLS signatures are not required.
 
 ## Run a node
 
-See https://github.com/celo-org/simple-celo-node.
+See the guides for [running a node](./docker-node.md) or the guide on [how to migrate a L1 node](./migrate-node.md).
 
 ## Register as RPC provider
 
 To register as a RPC provider, a public https url needs to be registered on-chain. To do this, we will register the rpc url in a signed metadata file in the Celo Account.
 
-> Make sure to be in CLI in version at least `6.0.0-beta.5`
-> 
+:::info
+
+Make sure to be in CLI in version at least `6.0.0-beta.5`
+
+:::
+
 The `--from`  flag in the CLI can either be the validator account itself, or the validator signer. 
 
 1. Create a new metadata file. If, instead, you want to update an existing one, download it instead of creating it.
