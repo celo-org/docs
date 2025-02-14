@@ -141,6 +141,11 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+     {
+      type: "doc",
+      label: "Building an App with Thirdweb",
+      id: "build/thirdweb-quickstart",
+    },   
     {
       type: "category",
       label: "Build with AI",
