@@ -136,12 +136,6 @@ const sidebars = {
   // ######################################
   buildSidebar: [
     { type: "doc", label: "Overview", id: "build/index" },
-    { type: "doc", label: "Network Information", id: "network/index" },
-    {
-      type: "doc",
-      label: "Add Celo to MetaMask",
-      id: "build/add-celo-testnet-to-metamask",
-    },
     {
       type: "doc",
       label: "Quickstart with Celo Composer",
@@ -154,23 +148,34 @@ const sidebars = {
         {
           type: "doc",
           label: "Overview",
-          id: "developer/build-with-ai/overview",
+          id: "build/build-with-ai/overview",
         },
         {
           type: "doc",
           label: "Resources",
-          id: "developer/build-with-ai/resources",
+          id: "build/build-with-ai/resources",
         },
         {
           type: "doc",
           label: "Tools & Infra",
-          id: "developer/build-with-ai/tools",
+          id: "build/build-with-ai/tools",
         },
         {
           type: "doc",
           label: "Use Cases",
-          id: "developer/build-with-ai/usecases",
-        }
+          id: "build/build-with-ai/usecases",
+        },
+        {
+          type: "category",
+          label: "Examples",
+          items: [
+            {
+              type: "doc",
+              label: "Launch AI Agent Memecoins",
+              id: "build/build-with-ai/examples/ai-memecoins",
+            }
+          ]
+        },
       ]
     },
     // {
@@ -258,6 +263,7 @@ const sidebars = {
 
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
+    { type: "doc", label: "Network Information", id: "network/index" },
     { type: "doc", label: "Developer Tools", id: "learn/developer-tools" },
     {
           type: "category",
@@ -301,6 +307,14 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: "category",
+          label: "Addresses",
+          items: [
+            { type: "doc", label: "Contracts", id: "contract-addresses" },
+            { type: "doc", label: "Tokens", id: "token-addresses" },
+          ],
+        },
     {
       type: "category",
       label: "Wallets",
@@ -314,6 +328,11 @@ const sidebars = {
           type: "category",
           label: "MetaMask",
           items: [
+            {
+              type: "doc",
+              label: "Add Celo to MetaMask",
+              id: "wallet/metamask/add-celo-testnet-to-metamask",
+            },
             {
               type: "doc",
               label: "Programmatic Setup",
@@ -365,9 +384,37 @@ const sidebars = {
       ],
     },
     {
+      type: "doc",
+      label: "Bridges",
+      id: "protocol/bridge/index"
+    },
+    {
       type: "category",
-      label: "Networks",
+      label: "Explorers",
       items: [
+        {
+          type: "link",
+          label: "Blockscout",
+          href: "https://explorer.celo.org/",
+        },
+        {
+          type: "link",
+          label: "Celoscan",
+          href: "https://celoscan.io/",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Indexers",
+      items: [
+        { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+      ],
+    },
+    // {
+    //   type: "category",
+    //   label: "Networks",
+    //   items: [
         // { type: "doc", label: "Overview", id: "network/index" },
         // Nodes
         // {
@@ -412,84 +459,69 @@ const sidebars = {
         //     },
         //   ],
         // },
-        {
-          type: "category",
-          label: "Explorers",
-          items: [
-            {
-              type: "link",
-              label: "Blockscout",
-              href: "https://explorer.celo.org/",
-            },
-            {
-              type: "link",
-              label: "Celoscan",
-              href: "https://celoscan.io/",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Disclaimers",
-          items: [
-            {
-              type: "doc",
-              label: "Mainnet",
-              id: "network/mainnet/disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Alfajores Testnet",
-              id: "network/alfajores/disclaimer",
-            },
-            {
-              type: "doc",
-              label: "Baklava Testnet",
-              id: "network/baklava/disclaimer",
-            },
-          ],
-        },
-      ],
-    },
+        
+    //     {
+    //       type: "category",
+    //       label: "Disclaimers",
+    //       items: [
+    //         {
+    //           type: "doc",
+    //           label: "Mainnet",
+    //           id: "network/mainnet/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Alfajores Testnet",
+    //           id: "network/alfajores/disclaimer",
+    //         },
+    //         {
+    //           type: "doc",
+    //           label: "Baklava Testnet",
+    //           id: "network/baklava/disclaimer",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+    // {
+    //   type: "category",
+    //   label: "Setup",
+    //   items: [
+    //     {
+    //       type: "doc",
+    //       label: "Overview",
+    //       id: "developer/setup/overview",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Mac",
+    //       id: "developer/setup/mac",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Windows",
+    //       id: "developer/setup/windows",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Using Replit",
+    //       id: "developer/setup/replit",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Testnet Wallet",
+    //       id: "developer/setup/wallet",
+    //     },
+    //     {
+    //       type: "doc",
+    //       label: "Local Chain",
+    //       id: "developer/setup/development-chain",
+    //     },
+    //   ],
+    // },
     {
       type: "category",
-      label: "Setup",
-      items: [
-        {
-          type: "doc",
-          label: "Overview",
-          id: "developer/setup/overview",
-        },
-        {
-          type: "doc",
-          label: "Using Mac",
-          id: "developer/setup/mac",
-        },
-        {
-          type: "doc",
-          label: "Using Windows",
-          id: "developer/setup/windows",
-        },
-        {
-          type: "doc",
-          label: "Using Replit",
-          id: "developer/setup/replit",
-        },
-        {
-          type: "doc",
-          label: "Testnet Wallet",
-          id: "developer/setup/wallet",
-        },
-        {
-          type: "doc",
-          label: "Local Chain",
-          id: "developer/setup/development-chain",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Build",
+      label: "Dev Environments",
       items: [
         {
           type: "doc",
@@ -622,6 +654,8 @@ const sidebars = {
         },
       ],
     },
+    
+    
     {
       type: "doc",
       label: "Fee Abstraction",
@@ -629,86 +663,63 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Bridges",
-      items: [{ type: "doc", label: "Overview", id: "protocol/bridge/index" }],
-    },
-    {
-      type: "category",
       label: "Oracles",
       items: [
+        { type: "doc", label: "Running Oracles", id: "protocol/oracle/run" },
         { type: "doc", label: "Overview", id: "protocol/oracle/index" },
-        { type: "doc", id: "protocol/oracle/band-protocol" },
-        { type: "doc", id: "protocol/oracle/redstone" },
-        { type: "doc", id: "protocol/oracle/run" },
-        { type: "doc", id: "protocol/oracle/supra" },
+        { type: "doc", label: "Band Protocol", id: "protocol/oracle/band-protocol" },
+        { type: "doc", label: "RedStone", id: "protocol/oracle/redstone" },
+        { type: "doc", label: "Supra", id: "protocol/oracle/supra" },
       ],
     },
-    {
-      type: "category",
-      label: "Indexers",
-      items: [
-        { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
-      ],
-    },
-    {
-      type: "category",
-      label: "Addresses",
-      items: [
-        { type: "doc", label: "Contracts", id: "contract-addresses" },
-        { type: "doc", label: "Tokens", id: "token-addresses" },
-      ],
-    },
-    {
-      type: "category",
-      label: "Migrate to Celo",
-      items: [
-        {
-          type: "doc",
-          label: "Ethereum Developers",
-          id: "developer/migrate/from-ethereum",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Code Examples",
-      items: [
-        {
-          type: "link",
-          label: "Celo Composer",
-          href: "https://github.com/celo-org/celo-composer#celo-composer",
-        },
-        {
-          type: "link",
-          label: "Developer Blog",
-          href: "https://medium.com/celodevelopers",
-        },
+    
+    
+    // {
+    //   type: "category",
+    //   label: "Migrate to Celo",
+    //   items: [
+    //     {
+    //       type: "doc",
+    //       label: "Ethereum Developers",
+    //       id: "developer/migrate/from-ethereum",
+    //     },
+    //   ],
+    // },
+    // {
+    //   type: "category",
+    //   label: "Code Examples",
+    //   items: [
+    //     {
+    //       type: "link",
+    //       label: "Celo Composer",
+    //       href: "https://github.com/celo-org/celo-composer#celo-composer",
+    //     },
+    //     {
+    //       type: "link",
+    //       label: "Developer Blog",
+    //       href: "https://medium.com/celodevelopers",
+    //     },
         // {
         //   type: "doc",
         //   label: "Code Tutorials",
         //   id: "/blog",
         // },
-        {
-          type: "link",
-          label: "Celo Blog",
-          href: "https://medium.com/celoorg",
-        },
-        {
-          type: "link",
-          label: "Dacade",
-          href: "https://dacade.org/communities/celo",
-        },
-      ],
-    },
+    //     {
+    //       type: "link",
+    //       label: "Celo Blog",
+    //       href: "https://medium.com/celoorg",
+    //     },
+    //     {
+    //       type: "link",
+    //       label: "Dacade",
+    //       href: "https://dacade.org/communities/celo",
+    //     },
+    //   ],
+    // },
     {
       type: "doc",
       label: "EVM Tools",
       id: "developer/evm-tools",
-    },
-    {
-      type: "link",
-      label: "Explorer",
-      href: "https://explorer.celo.org/",
     },
     {
       type: "link",
