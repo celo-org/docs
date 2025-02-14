@@ -83,7 +83,16 @@ The following sections contain all infromation required to set up your node from
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7)
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc3)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc3)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.3)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.4)
+
+#### Baklava
+
+- Container images:
+  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc4)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.4)
+
 
 ### Common problems
 
