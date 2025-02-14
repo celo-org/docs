@@ -8,7 +8,7 @@ To register as a validator, follow the instructions as in the [current docs](htt
 
 ## Run a node
 
-See the guides for [running a node](./docker-node.md) or the guide on [how to migrate a L1 node](./migrate-node.md).
+See the guides for [running a node](run-node.md) or the guide on [how to migrate a L1 node](migrate-node.md).
 
 ## Register as RPC provider
 

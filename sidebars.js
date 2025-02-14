@@ -1284,13 +1284,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Running a node with Docker",
-          id: "cel2/operators/docker-node",
-        },
-        {
-          type: "doc",
-          label: "Building a node from source",
-          id: "cel2/operators/custom-node",
+          label: "Running a Celo node",
+          id: "cel2/operators/run-node",
         },
         {
           type: "doc",

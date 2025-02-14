@@ -3,7 +3,7 @@
 This guide is designed to help node operators run Celo L2 nodes and to explain
 the process of switching from running a Celo L1 node to a Celo L2 node.
 
-If you want to run a fresh L2 node, please follow the [node operator guide](docker-node.md).
+If you want to run a fresh L2 node, please follow the [node operator guide](run-node.md).
 
 ## Migration overview
 
