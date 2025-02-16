@@ -1,6 +1,6 @@
 # Running a community RPC node
 
-After Celo mainnet transitions to L1, validators that are eligible, registered and elected must run PRC nodes in order to be eligible for rewards.
+After Celo mainnet transitions to L2, validators that are eligible, registered and elected must run RPC nodes in order to be eligible for rewards.
 
 ## Registering
 
