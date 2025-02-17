@@ -41,7 +41,7 @@ For Baklava:
 geth --baklava
 ```
 
-For more command line options, please see [https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
+For more command line options, please see [https://geth.ethereum.org/docs/fundamentals/command-line-options](https://geth.ethereum.org/docs/fundamentals/command-line-options)
 
 ### Forno
 
@@ -85,5 +85,5 @@ Compared to Ethereum transactions, Celo transactions have an additional optional
 
 To sign transactions, you have the following options:
 
-- Use the JSON-RPC [`sendTransaction`](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) method to your node which would have the account in question unlocked. (Either manually or via a library such as `web3`)
+- Use the JSON-RPC [`sendTransaction`](https://github.com/ethereum/execution-apis/blob/c710097abda52b5a190d831eb8b1eddd3d28c603/tests/eth_sendRawTransaction/send-legacy-transaction.io) method to your node which would have the account in question unlocked. (Either manually or via a library such as `web3`)
 - Use [ContractKit's](/developer/contractkit/) local signing feature.

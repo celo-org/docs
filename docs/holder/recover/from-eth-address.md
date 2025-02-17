@@ -62,7 +62,7 @@ This guide assumes that you have access to the following:
   - [Mac](https://macpaw.com/how-to/use-terminal-on-mac)
   - [Linux](https://askubuntu.com/questions/196212/how-do-you-open-a-command-line)
 - [Celo Command Line Interface](/cli/) installed on your computer
-- The [24-word recovery phrase](https://kb.myetherwallet.com/en/security-and-privacy/what-is-a-mnemonic-phrase/) of your Ethereum address
+- The [24-word recovery phrase](https://help.myetherwallet.com/en/?q=mnemonic) of your Ethereum address
 
 ### Steps
 
@@ -74,7 +74,7 @@ Write your recovery phrase to a file using the following commands:
 
 1. `nano recovery.txt`
 2. Paste `<word1> <word2> … <word24>`
-3. Replace the `<word>`s in brackets with the words from your recovery phrase (usually 24 words, but can be 12, 15, 18, 21 or 24 words, as specified in the [BIP 39 standard](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki))
+3. Replace the `<word>`s in brackets with the words from your recovery phrase (usually 24 words, but can be 12, 15, 18, 21 or 24 words, as specified in the [BIP 39 standard](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 4. Press ctrl-o to save
 5. Press ctrl-x to exit
 

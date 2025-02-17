@@ -62,7 +62,7 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
   - AngelList [https://www.angellist.com/](https://www.angellist.com/)
   - Crunchbase [https://www.crunchbase.com/](https://www.crunchbase.com/)
-  - First Round Capital’s Angel Directory [https://angels.firstround.com/directory](https://angels.firstround.com/directory)
+  - First Round Capital’s Angel Directory [https://angels.firstround.com/?t=home](https://angels.firstround.com/?t=home)
   - NFX Signal [https://signal.nfx.com/](https://signal.nfx.com/)
 
 2. Ensure that the investors you identify are actively investing. For example, try finding investors who have made 1-2 relevant investments within the last 2-4 months using the databases below.
@@ -92,7 +92,7 @@ While fundraising can take an unexpected amount of time, it’s important to opt
 
 ### How much capital do I need to raise?
 
-The rule of thumb here is to raise enough capital to give you 1 year of runway at minimum and best case 2 years of runway with the primary goal of reaching your next milestone. In other words, think through how much monthly operating capital you’ll need (across hires and other administrative budget items) and multiply that by the number of months you believe it’ll take to reach that milestone. This resulting figure can serve as a reference point but it’s often helpful to size up and down your potential round size to give yourself and investors a magnitude of what you could realistically achieve with different levels of capital. Finmark ([https://finmark.com/](https://finmark.com/)) is an example of a helpful resource that can help build out your financial plan.
+The rule of thumb here is to raise enough capital to give you 1 year of runway at minimum and best case 2 years of runway with the primary goal of reaching your next milestone. In other words, think through how much monthly operating capital you’ll need (across hires and other administrative budget items) and multiply that by the number of months you believe it’ll take to reach that milestone. This resulting figure can serve as a reference point but it’s often helpful to size up and down your potential round size to give yourself and investors a magnitude of what you could realistically achieve with different levels of capital. Finmark ([https://finmark.com/](https://finmark.com/) is an example of a helpful resource that can help build out your financial plan.
 
 ### What are the different forms of capital I can raise?
 
@@ -194,7 +194,7 @@ Prezenti is the next iteration of the CCF1 and was developed with the support of
 
 ## Celo Foundation Grant Program
 
-The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://celo.org/experience/grants#purpose](https://celo.org/experience/grants#purpose).
+The Celo Foundation Grants Program is an open program that supports projects that are committed to Celo’s mission of building a financial system that creates the conditions for prosperity for all. Applicants to the Celo Foundation Grant program are expected to have a viable product or offering for the community. Admitted applicants will be provided capital and mentorship. To learn more about the program and the application process, please visit this link - [https://docs.celo.org/learn/celo-ecosystem#the-celo-foundation-grants-program](https://docs.celo.org/learn/celo-ecosystem#the-celo-foundation-grants-program).
 
 ## Celo Scout Investors
 

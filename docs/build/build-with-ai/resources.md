@@ -63,7 +63,7 @@ For a full comprehensive list, checkout the [AI Agent Demo Days](https://x.com/G
 - Starter Kit (including Lit + Gaia): https://github.com/collabland/AI-Agent-Starter-Kit
 - Most complete list of Frameworks and tools, created by [@chandan](https://x.com/chandan1_)
     - [AIAgentToolkit.xyz](http://aiagenttoolkit.xyz/)
-- Celo - [Getting Started with AI Agents](https://docs.celo.org/developer/build-with-ai/overview)
+- Celo - [Getting Started with AI Agents](https://docs.celo.org/build/build-with-ai/overview)
 - Safe Agentathon Partners:
     - [Brahma ConsoleKit: Safe Agentathon Guide](https://www.notion.so/18ea53ecb04c80649c4be0657c031959?pvs=21)
     - Automating DeFi across chains: https://www.enso.build/

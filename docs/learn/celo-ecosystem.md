@@ -47,7 +47,7 @@ By joining the Alliance for Prosperity, Alliance members are furthering the Celo
 
 ## The Celo Foundation Grants Program
 
-The Celo Foundation Grants Program is an open initiative supporting projects committed to the mission of building a financial system that creates the conditions for prosperity for all, focusing grants based on four key areas: (1) fostering innovation and development of the Celo Platform and[ Celo reference wallet](https://celo.org/developers/wallet)s, (2) lowering barriers to entry to encourage the accessibility of Celo to developers and end-users, (3) educating and expanding Celo’s global community, (4) expanding Celo’s access, opportunity, and impact.
+The Celo Foundation Grants Program is an open initiative supporting projects committed to the mission of building a financial system that creates the conditions for prosperity for all, focusing grants based on four key areas: (1) fostering innovation and development of the Celo Platform and[ Celo reference wallet](https://docs.celo.org/wallet)s, (2) lowering barriers to entry to encourage the accessibility of Celo to developers and end-users, (3) educating and expanding Celo’s global community, (4) expanding Celo’s access, opportunity, and impact.
 
 ## Kuneco
 
