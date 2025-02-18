@@ -274,7 +274,7 @@ For more details, check out the [Voting for Validators page](/holder/vote/valida
 - in Celo, CELO holders vote for Validator Groups, not Validators directly
 - you only earn epoch rewards if the Validator Group you voted for gets at least 1 Validator elected
 
-Keeping this in mind, you will need to find a Validator Group to vote for and copy its address. You can find this information on community validator explorers such as the [cLabs Validator explorer](https://celo.org/validators/explore) and [Bi23 Labs' `thecelo` dashboard](https://thecelo.com).
+Keeping this in mind, you will need to find a Validator Group to vote for and copy its address. You can find this information on community validator explorers such as the [cLabs Validator explorer](https://docs.celo.org/validator/validator-explorer) and [Bi23 Labs' `thecelo` dashboard](https://thecelo.com).
 
 You can also see registered Validator Groups through the Celo CLI. This will display a list of Validator Groups, the number of votes they have received, the number of additional votes they are able to receive, and whether or not they are eligible to elect Validators:
 

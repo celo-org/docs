@@ -13,7 +13,7 @@ Introduction to the philosophy and account roles related to key management on Ce
 
 > Crypto is a tool for turning a whole swathe of problems into key management problems. Key management problems are way harder than (virtually all) cryptographers think.
 >
-> [@LeaKissner on Twitter](https://twitter.com/LeaKissner/status/1198595109756887040)
+> [@LeaKissner on X](https://x.com/LeaKissner/status/1198595109756887040)
 
 ## Philosophy
 
