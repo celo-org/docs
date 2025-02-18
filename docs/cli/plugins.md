@@ -35,7 +35,7 @@ EXAMPLES
   $ celocli plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/index.ts)_
 
 ## `celocli plugins:install PLUGIN...` {#celocli-pluginsinstall-plugin}
 
@@ -105,7 +105,7 @@ EXAMPLES
   $ celocli plugins:inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/inspect.ts)_
 
 ## `celocli plugins:install PLUGIN...` {#celocli-pluginsinstall-plugin-1}
 
@@ -150,7 +150,7 @@ EXAMPLES
   $ celocli plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/install.ts)_
 
 ## `celocli plugins:link PLUGIN` {#celocli-pluginslink-plugin}
 
@@ -181,7 +181,7 @@ EXAMPLES
   $ celocli plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/link.ts)_
 
 ## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin}
 
@@ -223,7 +223,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/reset.ts)_
 
 ## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin-1}
 
@@ -251,7 +251,7 @@ EXAMPLES
   $ celocli plugins:uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/uninstall.ts)_
 
 ## `celocli plugins:uninstall PLUGIN...` {#celocli-pluginsuninstall-plugin-2}
 
@@ -295,4 +295,4 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v4.3.10/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/main/src/commands/plugins/update.ts)_

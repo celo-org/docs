@@ -84,14 +84,12 @@ El Dorado is building "the crypto dollar wallet of LATAM. We are reinventing the
 An integration of a Celo Dollar (Mento Stablecoin) and Mpesa, showing flows of payment between a Mpesa User and a Celo Blockchain wallet from anywhere in the world. Our aim with Pesabase is to provide Africans with a cheap and social option to remit and pay for goods and services.
 
 - [Android App](https://play.google.com/store/apps/details?id=com.pesabase.app)
-- [GitHub](https://github.com/Kesholabs/celoBackend)
 
 ### Wallet as a Service
 
-Tangany's custody solution Wallet as a Service enables you to create and manage HSM-secured wallets and interact with the underlying blockchain. Our API makes it incredibly easy for developers to execute transactions, check details of past transactions or query account balances without any worries about private key safekeeping. For the Celo Camp 2020 we have developed a prototype version of our product that integrates the Celo blockchain. The [demo project](https://github.com/adrianmitter/celo-camp) presents the new features and provides some code snippets to get started.
+Tangany's custody solution Wallet as a Service enables you to create and manage HSM-secured wallets and interact with the underlying blockchain. Our API makes it incredibly easy for developers to execute transactions, check details of past transactions or query account balances without any worries about private key safekeeping. For the Celo Camp 2020 we have developed a prototype version of our product that integrates the Celo blockchain.
 
 - [Website](https://docs.tangany.com/?version=latest)
-- [Demo Project](https://github.com/adrianmitter/celo-camp)
 
 ### impactMarket
 
@@ -116,7 +114,6 @@ Based on Cryptum APIs, the open source Plugin connects to WordPress e-commerces,
 A decentralized app that helps users to create reliable savings communities by using smart contracts, in a transparent, verifiable, and trustworthy environment. Bloinx is upgrading the way to manage TANDAS, which are rotating, saving, and credit associations, used in Latin American communities.
 
 - [Website](https://bloinx.io/)
-- [GitHub](https://github.com/Bloinx/bloinx-mobile)
 
 ### Talent Protocol
 
@@ -139,7 +136,7 @@ The Decentralized Impact Incubator is a 6-week program to ideate and prototype b
 
 Decentralized application to help coordinate and improve the impact metric of non-profit organizations that work with migrants in Latin America.
 
-- [GitHub](https://github.com/nestorbonilla/bienvenir)
+- [GitHub](https://github.com/nestorbonilla/bienvenir-old)
 
 ### Symbiotic Protocol
 
@@ -163,12 +160,6 @@ Ubeswap is a mobile-first DeFi exchange, a mobile compatible fork of Uniswap run
 Celovote automatically distributes your stake to preferred validator groups that have high estimated APY (annual percentage yield) and automatically rebalances votes if any voted groups fail to maintain high uptime. You retain full custody of your CELO and receive 100% of your rewards.
 
 - [Website](https://celovote.com/)
-
-### Savings Circle
-
-Savings Circles let you pool funds with your friends to save for large purchases. They are known by a variety of names around the world and are a common way to get liquidity and access to loans without access to formal financial institutions.
-
-- [GitHub](https://github.com/celo-org/savings-circle-demo)
 
 ### Cent Wallet
 
