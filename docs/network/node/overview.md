@@ -40,6 +40,7 @@ Running your own RPC endpoint.
 
 Paid RPC endpoint hosting.
 
+- [Chainstack](https://chainstack.com/build-better-with-celo/)
 - [Ankr](https://www.ankr.com/rpc/celo/)
 - [Infura](https://www.infura.io/)
 - [Quicknode](https://www.quicknode.com/chains/celo)
