@@ -45,3 +45,4 @@ Paid RPC endpoint hosting.
 - [Quicknode](https://www.quicknode.com/chains/celo)
 - [All that node](https://www.allthatnode.com/celo.dsrv)
 - [dRPC](https://drpc.org/chainlist/celo)
+- [Tatum](https://tatum.io/chain/celo)
