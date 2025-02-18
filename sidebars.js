@@ -390,8 +390,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Bridges",
-      id: "protocol/bridge/index"
+      label: "Token Bridges",
+      id: "protocol/token-bridges"
+    },
+    {
+      type: "doc",
+      label: "Cross Chain Messaging",
+      id: "protocol/cross-chain-messaging"
     },
     {
       type: "category",
