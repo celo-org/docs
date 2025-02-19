@@ -23,7 +23,7 @@ Creating an ecosystem that supports and encourages each other is important to th
 - Publish (at least) one post per week
 - Follow @CeloOrg and @CeloDevs
 - Follow projects in your space & fellow grant recipients
-- Identify and follow influencers who might be interested in your space. To help you get started, here is a [list](https://twitter.com/i/lists/1247200668470915074) of influencers we follow.
+- Identify and follow influencers who might be interested in your space. To help you get started, here is a [list](https://x.com/i/lists/1247200668470915074) of influencers we follow.
 - Post links to your blog posts, repos, etc
 - Use the hashtag #CeloGrants so you can join the conversation about the grant program
 
@@ -34,7 +34,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 - Write a blog post at least once per month/milestone outlining your progress to date (i.e. accomplishments and challenges). Include links to repos, demos, or social media.
 - If using Medium, please share your Medium profile tag with [community@celo.org](mailto:community@celo.org) so we may add you as a writer for the Celo Medium Publication
 - Here are some writing tips:
-  - [Celo Blogging Guide](https://docs.google.com/document/d/1pzlosMQxnOAxxHnLa7ES8pgQBRWC7ArMObI9OwU8mBI/edit?usp=sharing)
+  - [Celo Blogging Guide](https://docs.celo.org/community/grant-playbook#blog)
   - [How to write a killer press release](https://medium.com/@DaveCorn/how-to-write-a-killer-press-release-cd34791d6533)
   - [How to write a new product announcement](https://medium.com/@emilylope18/how-do-you-write-a-new-product-announcement-4706454adbad)
 
@@ -42,7 +42,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 
 ### Source Code
 
-In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://wikipedia.org/wiki/Apache_License)). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
+In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://wikipedia.org/wiki/Apache_License). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
 
 To make sure teams are making progress on projects, send us bi-weekly updates to grants@celo.org. The intent is not to create pressure, but to provide structure and guidance in case things get off track. Some suggestions:
 

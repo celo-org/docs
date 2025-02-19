@@ -83,10 +83,23 @@ The following sections contain all infromation required to set up your node from
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.7)
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc3)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc3)
-  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.4.3)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
+
+#### Baklava
+
+- Container images:
+  - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8)
+  - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc4)
+  - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
+  - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
+
 
 ### Common problems
 
 #### Transactions are not being executed when submitted to a node
 
 If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
+
+#### Self-hosted public RPC does not retrieve transactions by hash
+
+If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.

@@ -129,9 +129,8 @@ Celo Governance represented by Celo Governance Guardians and can help answer any
 ## Celo Governance Guardians Overview
 The curent Celo Governance Guardians *(Formerly known as CGP Editors)*, actively participating in the Governance Process.
 
-- **Guardian:** 0xj4an (@0xj4an-work, [Twitter](https://twitter.com/0xj4an))
-- **Guardian:** Wade (@Wade, [Twitter](https://twitter.com/0xZOZ))
-- **Guardian:** 0xGoldo (@0xGoldo, [Twitter.](https://twitter.com/0xGoldo))
+- **Guardian:** 0xj4an (@0xj4an-work, [Twitter](https://x.com/0xj4an)
+- **Guardian:** Wade (@Wade, [Twitter](https://x.com/0xZOZ)
 - **Advisors Guardians:**
-  - Eric (@ericnakagawa, [Twitter](https://twitter.com/ericnakagawa))
-  - Anna (@annaalexa, [Twitter]( https://twitter.com/AnnaAlexaK))
+  - Eric (@ericnakagawa, [Twitter](https://x.com/ericnakagawa)
+  - Anna (@annaalexa, [Twitter](https://x.com/AnnaAlexaK)

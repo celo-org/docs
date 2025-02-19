@@ -33,7 +33,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 
 - Write a blog post at least once per month/milestone outlining your progress to date (i.e. accomplishments and challenges). Include links to repos, demos, or social media.
 - Here are some writing tips:
-  - [Celo Blogging Guide](https://docs.google.com/document/d/1pzlosMQxnOAxxHnLa7ES8pgQBRWC7ArMObI9OwU8mBI/edit?usp=sharing)
+  - [Celo Blogging Guide](https://docs.celo.org/community/grant-playbook#blog)
   - [How to write a killer press release](https://medium.com/@DaveCorn/how-to-write-a-killer-press-release-cd34791d6533)
   - [How to write a new product announcement](https://medium.com/@emilylope18/how-do-you-write-a-new-product-announcement-4706454adbad)
 
@@ -41,7 +41,7 @@ Each project should have a dedicated blog. Two suggestions are devpost or Medium
 
 ### Source Code
 
-In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://wikipedia.org/wiki/Apache_License)). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
+In the spirit of decentralization, The Celo Foundation expects all funded projects to be open-source by default -- this means that the codebase is public and under a permissive license (we recommend [Apache 2.0](https://wikipedia.org/wiki/Apache_License). If there are any parts that need to be kept private (eg. an admin key), please let us know ahead of time (at grants@celo.org), and document it in your project’s README.
 
 To make sure teams are making progress on projects, send us bi-weekly updates to grants@celo.org. The intent is not to create pressure, but to provide structure and guidance in case things get off track. Some suggestions:
 

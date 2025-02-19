@@ -13,14 +13,14 @@ Find Celo on social media, contribute to the codebase, or chat with the communit
 
 Follow on Social Media to learn more about Celo.
 
-- [Blog](https://medium.com/celoOrg)
+- [Blog](https://medium.com/@celoorg)
 - [GitHub](https://github.com/celo-org/celo-monorepo)
-- [Twitter](https://twitter.com/CeloOrg)
+- [Twitter](https://x.com/CeloOrg)
 - [Forum](https://forum.celo.org/)
 - [Chat](https://discord.gg/6yWMkgM)
 - [YouTube](https://youtube.com/channel/UCCZgos_YAJSXm5QX5D5Wkcw)
 - [Instagram](https://www.instagram.com/celoorg/)
-- [LinkedIn](https://www.linkedin.com/company/celoOrg/)
+- [LinkedIn](https://www.linkedin.com/company/celo-foundation)
 - [Twitch](https://www.twitch.tv/celoorg)
 - [Reddit](https://www.reddit.com/r/celo/)
 - [Telegram](https://t.me/celoplatform)

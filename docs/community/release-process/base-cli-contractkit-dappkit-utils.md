@@ -47,7 +47,7 @@ For all releases:
 
 For major releases:
 
-- Twitter: [@CeloDevs](https://twitter.com/CeloDevs)
+- Twitter: [@CeloDevs](https://x.com/CeloDevs)
 - Mailing list: cLabs’ Tech Sync
 - [Celo Forum](https://forum.celo.org/)
 

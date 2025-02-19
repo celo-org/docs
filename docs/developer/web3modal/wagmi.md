@@ -68,13 +68,13 @@ Web components are global html elements that don't require importing.
 
 ## Smart Contracts interaction
 
-Use Wagmi hooks to [read](https://wagmi.sh/react/hooks/useContractRead) or [write](https://wagmi.sh/react/hooks/useContractWrite) Smart Contracts. 
+Use Wagmi hooks to [read](https://wagmi.sh/react/api/hooks/useReadContract) or [write](https://wagmi.sh/react/api/hooks/useWriteContract) Smart Contracts. 
 ```ts
 import { useContractRead } from 'wagmi'
 import { USDTAbi } from '../abi/USDTAbi'
 
 function App() {
-  const { data, isError, isLoading } = useContractRead({
+  const { data, isError, isLoading } = useReadContract({
     address: '0x617f3112bf5397D0467D315cC709EF968D9ba546',
     abi: USDTAbi,
     functionName: 'getHunger',

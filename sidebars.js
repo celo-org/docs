@@ -141,6 +141,11 @@ const sidebars = {
       label: "Quickstart with Celo Composer",
       id: "build/quickstart",
     },
+     {
+      type: "doc",
+      label: "Building an App with Thirdweb",
+      id: "build/thirdweb-quickstart",
+    },   
     {
       type: "category",
       label: "Build with AI",
@@ -384,8 +389,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "Bridges",
-      id: "protocol/bridge/index"
+      label: "Token Bridges",
+      id: "protocol/token-bridges"
+    },
+    {
+      type: "doc",
+      label: "Cross Chain Messaging",
+      id: "protocol/cross-chain-messaging"
     },
     {
       type: "category",
@@ -1257,7 +1267,7 @@ const sidebars = {
     { type: "doc", label: "Node", id: "cli/node" },
     { type: "doc", label: "Oracle", id: "cli/oracle" },
     { type: "doc", label: "Plugins", id: "cli/plugins" },
-    { type: "doc", label: "Reserve", id: "cli/reserve" },
+    //{ type: "doc", label: "Reserve", id: "cli/reserve" },
     { type: "doc", label: "Rewards", id: "cli/rewards" },
     { type: "doc", label: "Transfer", id: "cli/transfer" },
     { type: "doc", label: "Validator", id: "cli/validator" },

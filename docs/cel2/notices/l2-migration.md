@@ -21,9 +21,13 @@ The hardfork is scheduled for the following block on each network.
 * Block number: `26384000`
 * Date: September 26, 2024
 * Minimum `celo-blockchain` version: [v1.8.7](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.7)
+* `op-geth`: [celo-v2.0.0-rc4](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0-rc4)
+* `op-node`: [celo-v2.0.0-rc4](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0-rc4)
 
 ### Baklava testnet
 
 * Block number: `28308600`
 * Date: February 20, 2025
 * Minimum `celo-blockchain` version: [v1.8.8](https://github.com/celo-org/celo-blockchain/releases/tag/v1.8.8)
+* `op-geth`: [celo-v2.0.0-rc4](https://github.com/celo-org/op-geth/releases/tag/celo-v2.0.0-rc4)
+* `op-node`: [celo-v2.0.0-rc4](https://github.com/celo-org/optimism/releases/tag/celo-v2.0.0-rc4)
