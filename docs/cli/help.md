@@ -5,7 +5,7 @@ Display help for celocli.
 
 * [`celocli help [COMMAND]`](#celocli-help-command)
 
-## `celocli help [COMMAND]` {#celocli-help-command}
+## `celocli help [COMMAND]`
 
 Display help for celocli.
 
@@ -23,4 +23,4 @@ DESCRIPTION
   Display help for celocli.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/main/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.8/src/commands/help.ts)_
