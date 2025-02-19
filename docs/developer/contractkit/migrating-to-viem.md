@@ -41,10 +41,9 @@ const defaultAccount = accounts[0];
 
 With viem:
 
-> [viem does not full support](<[source](https://viem.sh/docs/ethers-migration.html#viem-11)>) client-side signing (it's coming shortly!) – until then, you can use an Ethers Wallet, however it does support `signMessage` and `signTypedData` already.
 
 ```diff
-+ import { privateKeyToAccount } from 'viem/accounts'
++ import { privateKeyToAccount, createWalletClient, http } from 'viem/accounts'
 +
 + const privateKey = "0x...";
 + const walletClient = createWalletClient({
@@ -52,10 +51,27 @@ With viem:
 +   chain: celoAlfajores,
 + });
 + const account = privateKeyToAccount(privateKey);
++ 
++ // Sign a message
 + await walletClient.signMessage({
 +   account,
 +   message: 'hello world',
-+ })
++ });
++
++ // Sign a transaction
++ const transaction = {
++   to: '0x...',
++   value: 1000n,
++   gasLimit: 21000n,
++   gasPrice: 20000000000n,
++ };
++ const signedTransaction = await walletClient.signTransaction({
++   account,
++   transaction,
++ });
++ 
++ // Send the signed transaction
++ const txHash = await walletClient.sendSignedTransaction(signedTransaction);
 ```
 
 ### Provider methods
