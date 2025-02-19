@@ -94,6 +94,53 @@ The following sections contain all infromation required to set up your node from
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
 
 
+#### Config
+
+
+| **Parameter**                          | **Value**                                                          | **Description / Comment**                              |
+|----------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------|
+| **L1 & L2 Configuration**              |                                                                    |                                                        |
+| l1ChainID                              | 17000                                                              | L1 chain identifier                                    |
+| l2ChainID                              | 62320                                                              | L2 chain identifier                                    |
+| l1BlockTime                            | 12                                                                 | L1 block time (seconds)                                |
+| l2BlockTime                            | 1                                                                  | L2 block time (seconds)                                |
+| **Sequencer & Timing**                 |                                                                    |                                                        |
+| maxSequencerDrift                      | 600                                                                | Same as OP Sepolia                                     |
+| sequencerWindowSize                    | 7200                                                               | 24 hours (2× OP Sepolia)                               |
+| channelTimeout                         | 300                                                                | 1 hour (Same as OP Sepolia)                            |
+| p2pSequencerAddress                    | `0x3Cd8072cbC235246c684ab9BD76Bb6f3813Df2CD`                         |                                                        |
+| **Batch Messaging**                    |                                                                    |                                                        |
+| batchInboxAddress                      | `0xff00000000000000000000000000000000062320`                        |                                                        |
+| batchSenderAddress                     | `""`                                                               |                                                        |
+| **L2 Output Oracle**                   |                                                                    |                                                        |
+| l2OutputOracleSubmissionInterval       | 600                                                                | Not relevant                                           |
+| l2OutputOracleStartingBlockNumber      | 28308600                                                           |                                                        |
+| l2OutputOracleStartingTimestamp        | 1739879782                                                         |                                                        |
+| **Administration & Fee Vaults**        |                                                                    |                                                        |
+| finalizationPeriodSeconds              | 12                                                                 |                                                        |
+| proxyAdminOwner                        | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| finalSystemOwner                       | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| superchainConfigGuardian               | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| baseFeeVaultRecipient                  | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| l1FeeVaultRecipient                    | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| sequencerFeeVaultRecipient             | `0x22EaF69162ae49605441229EdbEF7D9FC5f4f094`                         |                                                        |
+| baseFeeVaultMinimumWithdrawalAmount    | `0x8ac7230489e80000`                                                | Same as OP Sepolia                                     |
+| **L2 Genesis & EIP-1559**              |                                                                    |                                                        |
+| l2GenesisBlockGasLimit                 | `0x1c9c380`                                                        | 30M gas limit                                          |
+| l2GenesisBlockBaseFeePerGas            | `0x3b9aca00`                                                       | 1 gwei                                                |
+| eip1559Denominator                     | 400                                                                |                                                        |
+| eip1559Elasticity                      | 5                                                                  |                                                        |
+| eip1559BaseFeeFloor                    | 25000000000                                                        |                                                        |
+| **Fault Game**                         |                                                                    |                                                        |
+| faultGameGenesisBlock                  | 28308600                                                           |                                                        |
+| faultGameGenesisOutputRoot             | `0x2fafa02f4d94e20796afac0bae793bcc5c3cbb1244bc5a8c730153def18b0f3f` |                                                        |
+| **Data Availability & Custom Gas**     |                                                                    |                                                        |
+| useAltDA                               | true                                                               |                                                        |
+| daCommitmentType                       | GenericCommitment                                                  |                                                        |
+| useCustomGasToken                      | true                                                               |                                                        |
+| customGasTokenAddress                  | `0x0000000000000000000000000000000000000000`                         |                                                        |
+
+
 ### Common problems
 
 #### Transactions are not being executed when submitted to a node
