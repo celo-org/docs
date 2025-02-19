@@ -99,3 +99,7 @@ The following sections contain all infromation required to set up your node from
 #### Transactions are not being executed when submitted to a node
 
 If your node is synced but transtransactions submitted to it are not executed, make sure the the `--rollup.sequencerhttp=https://sequencer.alfajores.celo-testnet.org` flag is correctly set.
+
+#### Self-hosted public RPC does not retrieve transactions by hash
+
+If you are hosting a public RPC node, please make sure the flag `--history.transactions` is set to 0 in op-geth (i.e. `--history.transactions=0`), so all transactions are indexed. Otherwise, transactions will not be retrievable by hash.
