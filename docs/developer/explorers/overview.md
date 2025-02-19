@@ -1,12 +1,6 @@
 ---
 title: Explorer on Celo
----
-
-import ReactYouTube from "react-youtube";
-import ColoredText from '/src/components/ColoredText';
-
-Find toolings to access historical data, analytics and more in this section. 
-
+description: Find toolings to access historical data, analytics and more in this section.
 ---
 
 If you are looking to check your recent transactions or check and interact with a smart contract, check out our <ColoredText>[Block Explorer](./block-explorer.md)</ColoredText>. 
@@ -14,5 +8,5 @@ If you need historical data for building your dapp, you can find that in the <Co
 
 
 - [Block Explorers](./block-explorers.md)
-- [Data Indexers](./data-indexers.md)
+- [Data Indexers](../indexer/overview.md)
 - [Analytics](./analytics.md)
