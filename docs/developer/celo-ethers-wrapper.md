@@ -1,9 +1,16 @@
 ---
-title: Celo Ethers.js Wrapper
+title: Ethers.js
 description: A minimal wrapper to make Ethers.JS compatible with the Celo network.
 ---
 
-# Celo Ethers.JS Wrapper
+:::warning
+
+When using Ethers.js on Celo, we suggest using the Celo Ethers.js Wrapper to make Ethers.JS compatible with the Celo network. This means being able to handle [fee abstraction](../../../developer/fee-currency.md) when opened in MiniPay/ Valora. 
+
+[Fee Abstraction](../../../developer/fee-currency.md) on Celo enables the use of stablecoins like cUSD, USDT and USDC as gas tokens. 
+:::
+
+## Celo Ethers.JS Wrapper
 
 A minimal wrapper to make Ethers.JS compatible with the Celo network.
 
