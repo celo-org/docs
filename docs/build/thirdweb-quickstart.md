@@ -2,7 +2,9 @@
 title: Building an App with Thirdweb
 ---
 
-Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 🚀
+Create and deploy your own Web3 app effortlessly with Thirdweb and Celo. 
+
+---
 
 ## Objectives
 
