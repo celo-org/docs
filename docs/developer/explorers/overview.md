@@ -7,6 +7,6 @@ If you are looking to check your recent transactions or check and interact with 
 If you need historical data for building your dapp, you can find that in the <ColoredText>[Data Indexer](../indexer/overview.md)</ColoredText> and if you are looking to get an overview on what is happening on Celo, top applications and TVL, check out the <ColoredText>[Analytics](./analytics.md)</ColoredText> page.  
 
 
-- [Block Explorers](./block-explorers.md)
+- [Block Explorers](block-explorers.md)
 - [Data Indexers](../indexer/overview.md)
-- [Analytics](./analytics.md)
+- [Analytics](analytics.md)
