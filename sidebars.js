@@ -393,6 +393,21 @@ const sidebars = {
       label: "Explorers",
       items: [
         {
+          type: "doc",
+          label: "Overview",
+          id: "developer/explorers/overview",
+        },
+        {
+          type: "doc",
+          label: "Block Explorers",
+          id: "developer/explorers/block-explorers",
+        },
+        {
+          type: "doc",
+          label: "Analytics",
+          id: "developer/explorers/analytics",
+        },
+        {
           type: "link",
           label: "Blockscout",
           href: "https://explorer.celo.org/",
