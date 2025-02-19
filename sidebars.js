@@ -408,7 +408,9 @@ const sidebars = {
       type: "category",
       label: "Indexers",
       items: [
+        { type: "doc", label: "Overview", id: "developer/indexer/overview" },
         { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+        { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
       ],
     },
     // {
