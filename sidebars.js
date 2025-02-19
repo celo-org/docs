@@ -264,7 +264,6 @@ const sidebars = {
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
     { type: "doc", label: "Network Information", id: "network/index" },
-    { type: "doc", label: "Developer Tools", id: "learn/developer-tools" },
     {
           type: "category",
           label: "Nodes",
