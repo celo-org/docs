@@ -572,13 +572,18 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "viem",
+          id: "developer/viem/index",
+        },
+        {
+          type: "doc",
           label: "thirdweb SDK",
           id: "developer/thirdweb-sdk/index",
         },
         {
           type: "doc",
-          label: "Web3.js",
-          id: "developer/web3/index",
+          label: "Ethers.js",
+          id: "developer/ethers/index",
         },
         {
           type: "category",
@@ -634,8 +639,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "rainbowkit-celo",
+          label: "rainbowkit-celo (deprectated)",
           id: "developer/rainbowkit-celo/index",
+        },
+        {
+          type: "doc",
+          label: "Web3.js",
+          id: "developer/web3/index",
         },
       ],
     },
