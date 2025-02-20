@@ -17,7 +17,7 @@ Kubernetes helm charts.
 
 :::note
 
-This guide only covers L2 Celo. Currently only the Alfajores testnet has been migrated to become a L2, other networks will not work with this guide.
+This guide only covers L2 Celo. Currently only the Alfajores and Baklava testnets have been migrated to become a L2.
 
 :::
 
@@ -87,14 +87,8 @@ The following sections contain all infromation required to set up your node from
 
 #### Baklava
 
-:::note
-
-These urls will be populated with the assets when they become available, which will be
-shortly after the [last L1 block](https://celo-baklava.blockscout.com/block/countdown/28308599)
-has been reached.
-
-:::
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zst)
+- [Final Celo L1 chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-l1-final.tar.zstd)
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zstd)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/baklava/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/baklava/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/baklava/l2-allocs.json)
@@ -126,7 +120,6 @@ has been reached.
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc4)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
-
 
 ### Common problems
 

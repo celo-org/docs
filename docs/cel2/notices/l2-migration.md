@@ -6,7 +6,7 @@ This page outlines breaking changes related to the Celo L2 migration. This migra
 This page will be updated continuously with information on upgrade runbooks and timelines as they come.
 
 * The Alfajores testnet has been migrated on block **26384000**, September 26, 2024.
-* The Baklava testnet will migrate on block **28308600**, February 20, 2025.
+* The Baklava testnet has been migrated on block **28308600**, February 20, 2025.
 
 :::
 
