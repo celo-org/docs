@@ -4,9 +4,9 @@ title: Fee Abstraction on Celo L2
 
 ## Fee Abstraction Addresses
 
-Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in `FeeCurrencyWhitelist.sol` contract.
+Celo allows paying gas fees in currencies other than the native currency. The tokens that can be used to pay gas fees are controlled via governance and the list of tokens allowed is maintained in `FeeCurrencyWhitelist.sol`.
 
-Alternate fee currency works with EOAs, no paymaster is required!
+Fee-abstraction on Celo works with EOAs. No paymaster required!
 
 ### Get a list of whitelisted Fee Currencies
 
@@ -32,7 +32,7 @@ celocli transfer:erc20 --erc20Address 0x2F25deB3848C207fc8E0c34035B3Ba7fC157602B
 |  USD₮  | 0xC4f86E9B4A588D501c1c3e25628dFd50Bc8D615e |                                            |
 |   G$   | 0x03d3daB843e6c03b3d271eff9178e6A96c28D25f |                                            |
 
-### Using Fee Abstraction with Programmatically
+### Using Fee Abstraction Programmatically
 
 You can use Fee Abstraction by specifying a token/adapter address as a value for the `feeCurrency` property in the transaction object. The `feeCurrency` property in the transaction object is exclusive to Celo and allows paying gas fees using assets other than the native currency of the network.
 
