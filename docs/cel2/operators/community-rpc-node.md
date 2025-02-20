@@ -41,6 +41,6 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
     :::
 
-6. Verify that the metadata registration was successful by retrieving it:
+5. Verify that the metadata registration was successful by retrieving it:
 
     `$ celocli account:get-metadata $ACCOUNT_ADDRESS`
