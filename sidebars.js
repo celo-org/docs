@@ -637,7 +637,6 @@ const sidebars = {
   developersSidebar: [
     { type: "doc", label: "Overview", id: "developer/index" },
     { type: "doc", label: "Network Information", id: "network/index" },
-    { type: "doc", label: "Developer Tools", id: "learn/developer-tools" },
     {
           type: "category",
           label: "Nodes",
@@ -771,6 +770,21 @@ const sidebars = {
       label: "Explorers",
       items: [
         {
+          type: "doc",
+          label: "Overview",
+          id: "developer/explorers/overview",
+        },
+        {
+          type: "doc",
+          label: "Block Explorers",
+          id: "developer/explorers/block-explorers",
+        },
+        {
+          type: "doc",
+          label: "Analytics",
+          id: "developer/explorers/analytics",
+        },
+        {
           type: "link",
           label: "Blockscout",
           href: "https://explorer.celo.org/",
@@ -786,7 +800,9 @@ const sidebars = {
       type: "category",
       label: "Indexers",
       items: [
+        { type: "doc", label: "Overview", id: "developer/indexer/overview" },
         { type: "doc", label: "The Graph", id: "developer/indexer/the-graph" },
+        { type: "doc", label: "SubQuery", id: "developer/indexer/subquery" },
       ],
     },
     // {
@@ -934,13 +950,18 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "viem",
+          id: "developer/viem/index",
+        },
+        {
+          type: "doc",
           label: "thirdweb SDK",
           id: "developer/thirdweb-sdk/index",
         },
         {
           type: "doc",
-          label: "Web3.js",
-          id: "developer/web3/index",
+          label: "Ethers.js",
+          id: "developer/ethers/index",
         },
         {
           type: "category",
@@ -996,8 +1017,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "rainbowkit-celo",
+          label: "rainbowkit-celo (deprectated)",
           id: "developer/rainbowkit-celo/index",
+        },
+        {
+          type: "doc",
+          label: "Web3.js",
+          id: "developer/web3/index",
         },
       ],
     },

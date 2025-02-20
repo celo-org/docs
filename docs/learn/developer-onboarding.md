@@ -30,7 +30,7 @@ If you’re unfamiliar with any of these topics, here’s a few places to get st
 - [Celo Decentralized Application Examples](https://celohub.org/)
 - [Celo Architecture](https://docs.celo.org/overview)
 - [Celo Tech Talks Simplifying blockchain development with the Celo SDK](https://www.youtube.com/watch?v=Rg33B0E2DTM&list=PLsQbsop73cfGmUdABArPaXagPB2EpBkNc&index=2)
-- [Celo Developer Tools](./developer-tools.md)
+- [Celo Developer Tools](../developer/index.md)
 - [A Look at the Celo Stability Analysis White Paper](https://medium.com/celoorg/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5)
 - [Celo Whitepapers](https://celo.org/papers)
 
