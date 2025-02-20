@@ -1,3 +1,3 @@
 # Overview 
 
-Celo L1 is a pioneering blockchain platform designed to enable fast, secure, and low-cost financial transactions, with a focus on mobile-first accessibility and financial inclusion. Built on a proof-of-stake (PoS) consensus mechanism, Celo L1 supports a vibrant ecosystem of decentralized applications (dApps), stablecoins like Celo Dollar (cUSD), and innovative protocols. Its unique lightweight identity system allows users to send payments using phone numbers, making blockchain technology more accessible to people worldwide. Celo L1 is also committed to sustainability, operating as a carbon-neutral network, and empowering communities through decentralized finance (DeFi) tools and solutions.
+Celo L1 is a mobile-friendly blockchain focused on financial inclusion. It enables fast, low-cost transactions, supports stablecoins like cUSD, and uses phone numbers for payments. Built on proof-of-stake, it’s carbon-neutral and powers a growing DeFi ecosystem.
