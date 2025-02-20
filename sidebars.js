@@ -178,6 +178,11 @@ const sidebars = {
               type: "doc",
               label: "Launch AI Agent Memecoins",
               id: "build/build-with-ai/examples/ai-memecoins",
+            },
+            {
+              type: "doc",
+              label: "Using GOAT Framework",
+              id: "build/build-with-ai/examples/building_with_goat",
             }
           ]
         },
