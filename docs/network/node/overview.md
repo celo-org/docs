@@ -9,6 +9,8 @@ Connect to nodes and services in the Celo Ecosystem.
 
 ---
 
+import PageRef from '@components/PageRef'
+
 :::warning
 Celo is currently transitioning from a standalone Layer 1 blockchain to an Ethereum Layer 2. As a result, certain information about developer resources may be outdated.
 
