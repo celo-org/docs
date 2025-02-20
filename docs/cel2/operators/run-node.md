@@ -87,7 +87,8 @@ The following sections contain all infromation required to set up your node from
 
 #### Baklava
 
-- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zst)
+- [Final Celo L1 chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-l1-final.tar.zstd)
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zstd)
 - [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/baklava/config.json)
 - [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/baklava/deployment-l1.json)
 - [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/baklava/l2-allocs.json)
