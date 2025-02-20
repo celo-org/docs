@@ -37,7 +37,7 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
     :::info
 
-    If you're account is based of a [ReleaseGold contract](holder/manage/release-gold) you should use the command `$ celocli releasecelo:set-account`. Docs can be found [here](cli/releasecelo#celocli-releaseceloset-account).
+    If your account is based of a [ReleaseGold contract](holder/manage/release-gold) you should use the command `$ celocli releasecelo:set-account`. Docs can be found [here](cli/releasecelo#celocli-releaseceloset-account).
 
     :::
 
