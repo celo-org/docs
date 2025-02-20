@@ -42,4 +42,4 @@ Contractkit includes common functionality to make it easier to get started build
 
 - [Setup](contractkit/setup)
 - [Using the kit](contractkit/usage)
-- [SDK Reference Docs](https://docs.celo.org/learn/developer-tools#celo-sdk-reference-docs)
+
