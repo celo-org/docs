@@ -24,16 +24,22 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
 1. Create a new metadata file. If, instead, you want to update an existing one, download it instead of creating it.
 
-    `$ celocli account:create-metadata ./metadata.json --from $VALIDATOR_SIGNER`
+    ```bash
+    $ celocli account:create-metadata ./metadata.json --from $VALIDATOR_SIGNER`
+    ```
 
 2. Register your public RPC URL:
 
-    `$ celocli account:claim-rpc-url ./metadata.json --from $VALIDATOR_SIGNER --rpcUrl $RPC_URL`
+    ```bash
+    $ celocli account:claim-rpc-url ./metadata.json --from $VALIDATOR_SIGNER --rpcUrl $RPC_URL
+    ```
 
 3. Upload this metadata file to a publicly available URL with high availability.
 4. Now link this URL to the validator Celo account:
 
-    `$ celocli account:register-metadata --url $METADATA_URL --from $ACCOUNT_ADDRESS`
+    ```bash
+    $ celocli account:register-metadata --url $METADATA_URL --from $ACCOUNT_ADDRESS
+    ```
 
     :::info
 
@@ -43,8 +49,12 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 
 5. Verify that the metadata registration was successful by retrieving it:
 
-    `$ celocli account:get-metadata $ACCOUNT_ADDRESS`
+    ```bash
+    $ celocli account:get-metadata $ACCOUNT_ADDRESS
+    ```
 
 6. To list all registered RPC URLs:
 
-    `$ celocli network:rpc-urls [--node $NETWORK]`
+    ```bash
+    $ celocli network:rpc-urls [--node $NETWORK]
+    ```
