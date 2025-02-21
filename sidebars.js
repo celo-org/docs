@@ -1353,7 +1353,7 @@ const sidebars = {
       items: [
         {
           type : "doc",
-          label: "Bridging from CELO from L1 to L2",
+          label: "Bridging CELO from L1 to L2",
           id: "cel2/guides/bridging-celo-from-l1-to-l2",
         },
         {
