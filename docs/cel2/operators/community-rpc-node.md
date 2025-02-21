@@ -8,7 +8,7 @@ To register as a validator, follow [the instructions](/validator/run/mainnet#reg
 
 ## Run a node
 
-See the guides for [running a node](run-node) or the guide on [how to migrate a L1 node](migrate-node).
+See the guides for [running a node](run-node.md) or the guide on [how to migrate a L1 node](migrate-node.md).
 
 ## Register as RPC provider
 
@@ -16,7 +16,7 @@ To register as a RPC provider, a public HTTPS URL needs to be registered on-chai
 
 :::info
 
-Make sure to use [Celo CLI](/cli/index) at version `6.1.0` or later
+Make sure to use [Celo CLI](/cli/index.md) at version `6.1.0` or later
 
 :::
 
