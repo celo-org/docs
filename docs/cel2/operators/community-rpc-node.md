@@ -4,7 +4,7 @@ After Celo Mainnet transitions to L2, validators that are eligible, registered a
 
 ## Registering
 
-To register as a validator, follow [the instructions](/network/mainnet/run-validator#registering-as-a-validator). The only difference is that BLS signatures are not required.
+To register as a validator, follow [the instructions](/validator/run/mainnet#registering-as-a-validator). The only difference is that BLS signatures are not required.
 
 ## Run a node
 
