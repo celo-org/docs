@@ -46,13 +46,13 @@ The L1 -> L2 migration requires some changes to the database.
 
 :::warning
 
-It is not recommended to migrate from an L1 archive datadir, as the L2 execution client does not
-support executing L1 historical states and it will consume more time and storage.
+It is not recommended to migrate from an L1 archive datadir. The L2 execution client does not
+support executing L1 historical states, so migrated archive data will just be taking up space in the L2 datadir for no reason. Attempting to migrate an archive datadir will also cause the migration tool to run very slowly and consume large amounts of memory even if a pre-migration has been performed.
 
-Instead, run the migration from a full L1 datadir, and if desired, configure the L2 execution client
-as archive to run L2 archive requests, and to proxy to a L1 archive node to execute pre-hardfork
-transactions and state access. See also the [archive node docs](#migrating-a-celo-archive-node).
+If you wish to run an L2 archive node, you should instead run the migration on a full node L1 datadir and then configure the L2 execution client
+in archive mode with a historical rpc service to redirect requests for pre-hardfork state and execution to a legacy L1 archive node running alongside the L2 node. See the [archive node docs](#migrating-a-celo-archive-node) for more detailed intstructions.
 
+If you only have L1 archive nodes currently, we recommend syncing a L1 full node in preparation for the mainnet migration.
 :::
 
 Prior to the hardfork, node operators must upgrade their existing L1 nodes to
@@ -112,7 +112,39 @@ Alternatively, you can run the check-db script on its own by checking out the la
 
 ## Migrating a Celo archive node
 
-Node operators who were running archive nodes before the migration and wish to maintain execution
-and state access functionality for pre-hardfork blocks will need to continue to run their L1 node
-and configure their L2 node to proxy pre-hardfork execution and state access requests to the L1 node
-by setting the `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of their L1 node.
+We recommend only running the migration on full node data, and not on archive node data. If you only have L1 archive nodes, we recommend syncing a L1 full node for the Mainnet migration.
+
+The L2 execution client cannot use pre-hardfork state data, so migrating an archive datadir will just copy large amounts of data unnecessarily. The migration script will also run slowly and consume large amounts of memory when run on archive data. For these reasons, we recommend only running the migration script on a full node L1 datadir even if you plan to run an L2 archive node.
+
+To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept rpc requests that require an archive node. Then, you should set `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of a running legacy L1 archive node. The L2 node will proxy requests for pre-hardfork state and execution to the legacy L1 archive node instead of looking for the archive state in its own database. The L2 node will still run as a standard archive node storing post-hardfork data.
+
+Here are step-by-step instructions for using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) to run an archive L2 node:
+
+1. Sync an L1 archive node.
+2. Sync an L1 full node.
+3. (If desired) 1-2 days before the migration block, run a [pre-migration](#run-the-pre-migration-tool) on the L1 full node datadir.
+4. Wait for the migration block.
+5. Stop both nodes once the migration block is reached.
+6. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
+   into the root of the project.
+7. Run `./migrate full <network> <path-to-your-L1-full-node-datadir> [<l2_destination_datadir>]` where
+   `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
+   ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
+   will take at least several minutes to complete.
+8. Verify that the migration was successful by looking for the `Migration successful` message at the
+   end of the output.
+9. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
+10. Open `.env` and set `OP_GETH__SYNCMODE=full` and `NODE_TYPE=archive` to enable archive mode.
+11. Open `.env` and set `HISTORICAL_RPC_DATADIR_PATH` to the path of your L1 archive datadir. This will prompt the tool to start an L1 archive node for you with that datadir. If you would prefer to start the L1 archive node yourself, set `OP_GETH__HISTORICAL_RPC` to the L1 archive node RPC endpoint and do not set `HISTORICAL_RPC_DATADIR_PATH`. The l1 archive node will not need the same flags as it did before the hardfork, as it will not be syncing new blocks. To see how we recommend re-starting the l1 archive node see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
+12. Run `docker-compose up -d --build` to start the L2 node (and the L1 archive node if `HISTORICAL_RPC_DATADIR_PATH` is set).
+13. To inspect the progress of the node you can run `docker-compose logs -n 50 -f op-geth`. This will
+   display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
+   you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
+   downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
+   begin by applying blocks on top of the hardfork block.
+14. At this point, you should be able to validate the progression of the node by fetching the current
+   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
+15. You can also try querying historical state to test archive functionality. (e.g. `cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993`)
+
+For more information on using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) see the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/README.md#L1).
