@@ -17,7 +17,7 @@ Kubernetes helm charts.
 
 :::note
 
-This guide only covers L2 Celo. Currently only the Alfajores testnet has been migrated to become a L2, other networks will not work with this guide.
+This guide only covers L2 Celo. Currently only the Alfajores and Baklava testnets have been migrated to become a L2.
 
 :::
 
@@ -87,12 +87,39 @@ The following sections contain all infromation required to set up your node from
 
 #### Baklava
 
+- [Final Celo L1 chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-l1-final.tar.zst)
+- [Full migrated chaindata](https://storage.googleapis.com/cel2-rollup-files/baklava/baklava-migrated-datadir.tar.zst)
+- [Rollup deploy config](https://storage.googleapis.com/cel2-rollup-files/baklava/config.json)
+- [L1 contract addresses](https://storage.googleapis.com/cel2-rollup-files/baklava/deployment-l1.json)
+- [L2 allocs](https://storage.googleapis.com/cel2-rollup-files/baklava/l2-allocs.json)
+- [rollup.json](https://storage.googleapis.com/cel2-rollup-files/baklava/rollup.json)
+- [Genesis](https://storage.googleapis.com/cel2-rollup-files/baklava/genesis.json) used for snap syncing
+- p2p peers:
+  - op-geth bootnode/peers, to be used with op-geth `--bootnodes` flag:
+
+    ```text
+    enode://6017c373a4151250e166ee7205b78cf845caff6a2003b3be38af8a09a569e413e31b21667d38a065f747a3662aec4920f122ad1bf1d46605cacf2d3d19f0ff5b@34.19.52.198:30303
+    enode://e0ab5ed2071b0ea0d57a52e3cd3da7c97db1a0754e00e91a32a1ca9dab6bf040fa1dd8775e8d6812a557d75760b1b90d18a8d69cbf8cfc2b7acdacf0b47fce96@34.168.70.112:30303
+    enode://b6d21edf251da32ffc1527092045ad3beba435f8ba27373dba8ce35f3ee54a411dc8327b57ebce9dc5c53e29825ea9e62356289a849fc4a048cce64da771aed8@34.82.194.102:30303
+    enode://339acdcbc3961b11f5458bab3c931e1bbb41548d9cea7692311db1543deac1f4a9efc1e6cff93f745865988d16bdc6bbb38cd59a8dde71bafd236eec0d5e0fea@34.82.75.77:30303
+    enode://616429f584575f8da463c18e5e2d38ec028b95446bffd607ebf8ac3d2dd3bbe9b859c91efbbbea6cf51ad78fb0d5db178f66ca57e647bd46bfe6692cc06127e9@34.53.24.17:30303
+    ```
+
+  - op-node static peers, to be used with op-node `--p2p.static` flag:
+
+    ```text
+    /ip4/34.105.121.84/tcp/9222/p2p/16Uiu2HAmK86WJyCXu8j9vHa2AbEDRmJe8DfzAaHPVsVEhnPvq3cE
+    /ip4/35.199.167.200/tcp/9222/p2p/16Uiu2HAmAYgs8bWPgVoQmAR7jPDn1n2Gn83Y44LuBpkzJDPyVsqy
+    /ip4/34.145.111.30/tcp/9222/p2p/16Uiu2HAm7jL1h1hDUMAC4zpa6VwfVeF6ugF1BcaPMAHuAf176aGG
+    /ip4/35.233.246.129/tcp/9222/p2p/16Uiu2HAkxu7gWGs3ZGUpevwU74tuRvjoqAw2ZSEZNCvWaYrK6YkK
+    /ip4/34.127.45.21/tcp/9222/p2p/16Uiu2HAmKDAUxJftKBgi8sfD1kyVHHhqMy9Z6Ee4XYyQ7NhwmKgC
+    ```
+
 - Container images:
   - [Celo L1 client](https://us-docker.pkg.dev/celo-org/us.gcr.io/geth-all:1.8.8)
   - [op-geth](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-geth:celo-v2.0.0-rc4)
   - [op-node](https://us-west1-docker.pkg.dev/devopsre/celo-blockchain-public/op-node:celo-v2.0.0-rc4)
   - [eigenda-proxy](https://ghcr.io/layr-labs/eigenda-proxy:v1.6.4)
-
 
 ### Common problems
 

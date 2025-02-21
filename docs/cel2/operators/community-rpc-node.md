@@ -33,7 +33,13 @@ The `--from`  flag in the CLI can either be the validator account itself, or the
 3. Upload this metadata file to a publicly available URL with high availability.
 4. Now link this URL to the validator Celo account:
 
-    `$ celocli account:register-metadata --url $METADATA_URL --from $ACCOUNT_ADDRESS` 
+    `$ celocli account:register-metadata --url $METADATA_URL --from $ACCOUNT_ADDRESS`
+
+    :::info
+
+    If your account is based of a [ReleaseGold contract](/holder/manage/release-gold) you should use the command `$ celocli releasecelo:set-account`. Docs can be found [here](/cli/releasecelo#celocli-releaseceloset-account).
+
+    :::
 
 5. Verify that the metadata registration was successful by retrieving it:
 
