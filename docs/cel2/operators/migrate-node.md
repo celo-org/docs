@@ -102,7 +102,7 @@ Once this block number is reached, node operators can then launch the L2 node.
    downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
    begin by applying blocks on top of the hardfork block.
 9. At this point, you should be able to validate the progression of the node by fetching the current
-   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:8545`).
+   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
 
 ## Missing Data / DB check failures
 

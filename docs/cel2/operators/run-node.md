@@ -39,7 +39,7 @@ This guide only covers L2 Celo. Currently only the Alfajores testnet has been mi
    percentage reaches 100%, the node should be synced.
 6. At this point, you should be able to validate the progression of the node by
    fetching the current block number via the RPC API and seeing that it is
-   increasing (e.g. `cast block-number --rpc-url http://localhost:8545`). Note that until fully synced, the RPC API will return 0 for the
+   increasing (e.g. `cast block-number --rpc-url http://localhost:9993`). Note that until fully synced, the RPC API will return 0 for the
    head block number.
 
 ## Building a node from source
