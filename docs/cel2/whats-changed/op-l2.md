@@ -39,6 +39,8 @@ The starting base fee floor values are:
 
 - Alfajores testnet:
   - base fee floor: 25 gwei
+- Baklava testnet:
+  - base fee floor: 25 gwei
 
 ## MaxCodeSize
 
