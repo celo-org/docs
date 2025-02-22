@@ -42,15 +42,16 @@ Your use of the Alfajores Testnet is subject to the [Alfajores Testnet Disclaime
 
 ## Celo Baklava Testnet
 
-| Name                      | Value                                                                                                                |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Network Name              | Baklava                                                                                                              |
-| Description               | The Node Operator Testnet network                                                                                    |
-| Currency Symbol           | CELO                                                                                                                 |
-| Chain ID                  | 62320                                                                                                                |
-| RPC Endpoint (best effort | [https://baklava-forno.celo-testnet.org/](https://baklava-forno.celo-testnet.org/)                                     |
-| Block Explorer            | [https://celo-baklava.blockscout.com/](https://celo-baklava.blockscout.com/)                           |
-| Faucet Request Form       | [https://forms.gle/JTYkMAJWTAUQp1sv9](https://forms.gle/JTYkMAJWTAUQp1sv9)                                           |
+| Name                      | Value                                                                                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network Name              | Baklava                                                                                                                                                  |
+| Description               | The Node Operator Testnet network                                                                                                                        |
+| Currency Symbol           | CELO                                                                                                                                                     |
+| Chain ID                  | 62320                                                                                                                                                    |
+| RPC Endpoint (best effort | [https://baklava-forno.celo-testnet.org/](https://baklava-forno.celo-testnet.org/)                                                                       |
+| Block Explorer            | [https://celo-baklava.blockscout.com/](https://celo-baklava.blockscout.com/)                                                                             |
+| Bridge Link               | <p>[https://testnets.superbridge.app/celo-baklava](https://testnets.superbridge.app/celo-baklava)</p><p>Note: Ensure you enable Testnet in settings </p> |
+| Faucet Request Form       | [https://forms.gle/JTYkMAJWTAUQp1sv9](https://forms.gle/JTYkMAJWTAUQp1sv9)                                                                               |
 
 The Baklava Testnet is a non-production Testnet for the Validator community.
 
