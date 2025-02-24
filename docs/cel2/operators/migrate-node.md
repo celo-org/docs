@@ -93,13 +93,12 @@ Once this block number is reached, node operators can then launch the L2 node.
 6. Open `.env` and set `OP_GETH__SYNCMODE=full` and optionally configure any setting you may wish to
    change, such as setting `NODE_TYPE=archive` to enable archive mode.
 7. Run `docker-compose up -d --build`.
-8. To inspect the progress of the node you can run `docker-compose logs -n 50 -f op-geth`. This will
+8. Inspect the progress of the node by running `docker-compose logs -n 50 -f op-geth`. This will
    display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
    you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
    downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
    begin by applying blocks on top of the hardfork block.
-9. At this point, you should be able to validate the progression of the node by fetching the current
-   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
+9. Validate the progression of the node by fetching the current block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
 
 ## Missing Data / DB check failures
 
@@ -136,13 +135,12 @@ Here are step-by-step instructions for using [celo-l2-node-docker-compose](https
 11. Open `.env` and set `OP_GETH__SYNCMODE=full` and `NODE_TYPE=archive` to enable archive mode.
 12. Open `.env` and set `HISTORICAL_RPC_DATADIR_PATH` to the path of your L1 archive datadir. This will prompt the tool to start an L1 archive node for you with that datadir. If you would prefer to start the L1 archive node yourself, set `OP_GETH__HISTORICAL_RPC` to the L1 archive node RPC endpoint and do not set `HISTORICAL_RPC_DATADIR_PATH`. The L1 archive node will not need the same flags as it did before the hardfork, as it will not be syncing new blocks. To see how we recommend re-starting the L1 archive node see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
 13. Run `docker-compose up -d --build` to start the L2 node (and the L1 archive node if `HISTORICAL_RPC_DATADIR_PATH` is set).
-14. To inspect the progress of the node you can run `docker-compose logs -n 50 -f op-geth`. This will
+14. Inspect the progress of the node by running `docker-compose logs -n 50 -f op-geth`. This will
    display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
    you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
    downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
    begin by applying blocks on top of the hardfork block.
-15. At this point, you should be able to validate the progression of the node by fetching the current
-   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
-16. You can also try querying historical state to test archive functionality. (e.g. `cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993`)
+15. Validate the progression of the node by fetching the current block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
+16. Try querying historical state to test archive functionality. (e.g. `cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993`)
 
 For more information on using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) see the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/README.md#L1).
