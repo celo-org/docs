@@ -75,7 +75,7 @@ Node operators who wish to minimize the migration downtime during the hardfork c
 2. Pull the latest version of
    [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
    into the root of the project.
-3. Run `./migrate pre <network> <path-to-your-L1-datadir>` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. This will likely take some minutes to complete.
+3. Run `./migrate pre <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified, ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The pre-migration process will take at least several minutes to complete.
 4. Once the pre-migration is complete, you can start your L1 node again.
 
 ## Running the migration
@@ -89,7 +89,7 @@ Once this block number is reached, node operators can then launch the L2 node.
 3. Run `./migrate full <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]` where
    `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
    ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
-   will take at least some minutes to complete.
+   will take at least several minutes to complete.
 4. Verify that the migration was successful by looking for the `Migration successful` message at the
    end of the output.
 5. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
@@ -102,7 +102,7 @@ Once this block number is reached, node operators can then launch the L2 node.
    downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
    begin by applying blocks on top of the hardfork block.
 9. At this point, you should be able to validate the progression of the node by fetching the current
-   block number via the RPC API and seeing that it is increasing.
+   block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
 
 ## Missing Data / DB check failures
 
