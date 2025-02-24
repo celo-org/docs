@@ -670,8 +670,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Using Celo Explorer",
-          id: "developer/verify/celo-explorer",
+          label: "Using Blockscout",
+          id: "developer/verify/blockscout",
         },
         {
           type: "doc",
