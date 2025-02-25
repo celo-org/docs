@@ -1,52 +1,81 @@
 # Running a Celo node
 
-This guide is designed to help node operators run a Celo L2 node.
-If you want to switch from running a Celo L1 node to a Celo L2 node, please see the [migration guide](migrate-node.md).
+This guide is designed to help node operators run a Celo L2 node, and assumes that you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node to a Celo L2 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing here.
 
-## Running a node with docker
+## Run node with docker
 
-To simplify running L2 nodes, Celo has created the
-[celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
-repo with all the necessary configuration files and docker compose templates,
-which make it easy to pull network configuration files and launch all the
-services needed to run an L2 node.
+To simplify running L2 nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates. This makes it easy to pull network configuration files and launch all the services needed to run an L2 node.
 
-For node operators interested in using Kubernetes, we recommend using
-[Kompose](https://kompose.io) to convert the docker compose template to
-Kubernetes helm charts.
+For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
 
 :::note
-
-This guide only covers L2 Celo. Currently only the Alfajores and Baklava testnets have been migrated to become a L2.
-
+This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
 :::
 
-## Snap sync
+1. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
 
-1. Pull the latest version of
-   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose)
-   and `cd` into the root of the project.
-2. Run `cp <network>.env .env` where `<network>` is one of `alfajores`,
-   `baklava`, or `mainnet`.
-3. Open `.env` and optionally configure any setting you may wish to change, such as setting `NODE_TYPE=archive` to enable archive mode.
-4. Run `docker-compose up -d --build`.
-5. To check the progress of the node you can run `docker-compose logs -n 50 -f
-   op-geth`. This will display the last 50 lines of the logs and follow the logs
-   as they are written. In a syncing node, you would expect to see lines of the
-   form `Syncing beacon headers  downloaded=...` where the downloaded number is
-   increasing and later lines such as `"Syncing: chain download in
-   progress","synced":"21.07%"` where the percentage is increasing. Once the
-   percentage reaches 100%, the node should be synced.
-6. At this point, you should be able to validate the progression of the node by
-   fetching the current block number via the RPC API and seeing that it is
-   increasing (e.g. `cast block-number --rpc-url http://localhost:9993`). Note that until fully synced, the RPC API will return 0 for the
-   head block number.
+    ```bash
+    git clone https://github.com/celo-org/celo-l2-node-docker-compose.git
+    cd celo-l2-node-docker-compose
+    ```
+
+2. Configure your `.env` file.
+
+    __Copy default configurations__
+  
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+
+    ```bash
+    export NETWORK=<alfajores, baklava, or mainnet>
+    cp $NETWORK.env .env
+    ```
+
+    __Configure sync mode__
+
+    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. This will automatically download pre-hardfork block data from peers and allow your node to start without a migrated L1 datadir. This is the easiest way to start an L2 node.
+
+    Alternatively, you can start your node with `full` sync if you have a migrated L1 datadir. For instructions on obtaining a migrated L1 datadir, please see [Migrating an L1 Node](../migrate-node.md).
+
+    To use `full` sync, configure `.env` as follows:
+
+    ```md
+    OP_GETH__SYNCMODE=full
+    DATADIR_PATH=<path to a migrated L1 datadir>
+    ```
+
+    __Configure node type__
+
+    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See the [archive node section](../migrate-node/#Running a Celo archive node) for more information and instructions on running an archive node.
+
+3. Start the node.
+
+    ```bash
+    docker-compose up -d --build
+    ```
+
+4. Check the progress of the node as it syncs.
+
+    ```bash
+    docker-compose logs -n 50 -f op-geth
+    ```
+
+    This will display the last 50 lines of the logs and follow the log as they are written. In a syncing node, you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
+
+5. Check that node is fully synced.
+
+   Once the node is fully synced, you can validate that it's following the network by fetching the current block number via the RPC API and seeing that it's increasing as expected.
+
+   ```bash
+   cast block-number --rpc-url http://localhost:9993
+   ```
+
+   Note that until fully synced, the RPC API will return 0 for the head block number.
 
 ## Building a node from source
 
-Docker images are the easiest way to run an Celo node, but you can always build your own node from source code. You might want to do this if you want to run a node on a specific architecture or if you want to inspect the source code of the node you're running.
+Docker images are the easiest way to run a Celo node, but you can always build your own node from source code. You might wish to do this if you want to run on a specific architecture or inspect the source code.
 
-The following sections contain all infromation required to set up your node from source.
+The following sections contain all the informmation required to set up your node from source.
 
 ### Network config & Assets
 
