@@ -34,7 +34,7 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
 
     By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. This will automatically download pre-hardfork block data from peers and allow your node to start without a migrated L1 datadir. This is the easiest way to start an L2 node.
 
-    Alternatively, you can start your node with `full` sync if you have a migrated L1 datadir. For instructions on obtaining a migrated L1 datadir, please see [Migrating an L1 Node](../migrate-node.md).
+    Alternatively, you can start your node with `full` sync if you have a migrated L1 datadir. For instructions on obtaining a migrated L1 datadir, please see [Migrating an L1 Node](migrate-node.md).
 
     To use `full` sync, configure `.env` as follows:
 
