@@ -3,7 +3,7 @@
 This guide is designed to help node operators run Celo L2 nodes and to explain
 the process of switching from running a Celo L1 node to a Celo L2 node.
 
-If you want to run a fresh L2 node, please follow the [node operator guide](run-node.md).
+If you want to run a fresh L2 node, please follow the [node operator guide](run-node.md). // TODO(Alec) delete this, specify delineation of running from migrated datadir
 
 ## Migration overview
 
@@ -13,17 +13,17 @@ receipts are fully accessible within the Celo L2 environment.
 
 This process involves 4 steps:
 
-1. Upgrading the L1 node to the latest client release so it stops producing blocks
+1. Upgrading the L1 node to the latest client release so it stops producing blocks // TODO(Alec) add prepare for hardfork (L2 hardfork preparation) page where the correct client version is listed and the migration block number is listed. This can also mention pre-migration
    at the hardfork
 2. Waiting for the hardfork
 3. Pulling the new network configuration files once they are known (e.g. hardfork block time)
-4. Launching the L2 node with snap sync
+4. Launching the L2 node with snap sync // TODO(Alec) delete this section
 
 Optionally, for node operators that want to verify the entire chain history
 through the upgrade, they may manually migrate their L1 (full) node chain data into a
 format compatible with the L2 node. This is required for all nodes looking to full
 sync and for anyone looking to run an archive node. Doing
-so involves these steps:
+so involves these steps: // TODO(Alec) delete this or move to top of page
 
 1. Upgrading the L1 node to the latest client release so it stops producing blocks
    at the hardfork
@@ -109,7 +109,7 @@ Both the `pre` and `full` migration commands will first run a script to check wh
 To check if a db has gaps, you can simply re-run the migration command which will automatically perform the check each time.
 Alternatively, you can run the check-db script on its own by checking out the latest version the [celo optimism monorepo](https://github.com/celo-org/optimism), running `cd op-chain-ops` followed by `make celo-migrate`, and finally running `go run ./cmd/celo-migrate check-db --db-path <path-to-your-L1-datadir>`. This command takes in an optional `--fail-fast` flag that will make it exit at the first gap detected as it does in the migration script. If the `--fail-fast` flag is not provided then the script will collect all the gaps it finds and print them out at the end.
 
-## Running a Celo archive node
+## Running a Celo archive node // TODO(Alec) move this to run-node page
 
 We recommend only running the migration on full node data, and not on archive node data. If you only have L1 archive nodes, we recommend syncing a L1 full node for the Mainnet migration.
 
