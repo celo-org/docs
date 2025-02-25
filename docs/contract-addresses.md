@@ -18,10 +18,6 @@ View Celo smart contracts [here](https://github.com/celo-org/celo-monorepo/tree/
 
 ## Celo Mainnet
 
-```jsx
-celocli network:contracts --node https://forno.celo.org
-```
-
 | Contract                | Proxy                                      |
 | ----------------------- | ------------------------------------------ |
 | Accounts                | 0x7d21685C17607338b313a7174bAb6620baD0aaB7 |
@@ -55,11 +51,13 @@ celocli network:contracts --node https://forno.celo.org
 | UniswapFeeHandlerSeller | 0xD3aeE28548Dbb65DF03981f0dC0713BfCBd10a97 |
 | Validators              | 0xaEb865bCa93DdC8F47b8e29F40C5399cE34d0C58 |
 
-## Alfajores Testnet
+Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
 
-```jsx
-celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+```bash
+$ celocli network:contracts --node https://forno.celo.org
 ```
+
+## Alfajores Testnet
 
 | Contract                 | Proxy                                      |
 | ------------------------ | ------------------------------------------ |
@@ -97,3 +95,9 @@ celocli network:contracts --node https://alfajores-forno.celo-testnet.org
 | TransferWhitelist        | 0x52449A99e3455acB831C0D580dCDAc8B290d5182 |
 | UniswapFeeHandlerSeller  | 0xc7b6E77C3702666DDa8EB5b7F30234B020788b21 |
 | Validators               | 0x9acF2A99914E083aD0d610672E93d14b0736BBCc |
+
+Core contracts addresses can change over time, to keep up to date with the latest, it is recomended to use the Celo CLI:
+
+```bash
+celocli network:contracts --node https://alfajores-forno.celo-testnet.org
+```
