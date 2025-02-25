@@ -1325,7 +1325,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Migrating a L1 node",
+          label: "Migrating an L1 node",
           id: "cel2/operators/migrate-node",
         },
         {
