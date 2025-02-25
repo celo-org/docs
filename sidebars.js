@@ -670,8 +670,8 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Using Celo Explorer",
-          id: "developer/verify/celo-explorer",
+          label: "Using Blockscout",
+          id: "developer/verify/blockscout",
         },
         {
           type: "doc",
@@ -1325,7 +1325,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Migrating a L1 node",
+          label: "Migrating an L1 node",
           id: "cel2/operators/migrate-node",
         },
         {
