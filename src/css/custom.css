@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Advercase";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/advercase-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Advercase";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/advercase-regular.woff2") format("woff2");
+}
+
 /* stylelint-disable docusaurus/copyright-header */
 /**
  * Any CSS included here will be global. The classic template

@@ -35,6 +35,7 @@
     "assert": "^2.0.0",
     "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.0.0",
     "crypto-browserify": "^3.12.0",
     "docusaurus-plugin-fathom": "^1.1.0",
