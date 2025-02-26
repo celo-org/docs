@@ -1310,7 +1310,10 @@ const sidebars = {
     {
       type: "category",
       label: "Node operators & Validators",
-      link: { type: "doc", id: "cel2/operators/overview" },
+      link: {
+        type: "doc",
+        id: "cel2/operators/overview"
+      },
       collapsed: false,
       items: [
         {
