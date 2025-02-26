@@ -2,8 +2,7 @@
 
 ## Before the migration
 
-// TODO(Alec) Move this to its own page
-// TODO(Alec) add prepare for hardfork (L2 hardfork preparation) page where the correct client version is listed and the migration block number is listed. This can also mention pre-migration
+// TODO(Alec) page where the correct client version and migration block number are listed. This can also mention pre-migration
 
 :::warning
 __It is not recommended to migrate from an L1 archive datadir.__
