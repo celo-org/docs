@@ -12,6 +12,10 @@ For node operators interested in using Kubernetes, we recommend using [Kompose](
 This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testnets have been hardforked to L2 networks.
 :::
 
+### Running a full node
+
+Follow these steps to run a full node. If you would like to run an archive node, see [below](#running-an-archive-node).
+
 1. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
 
     ```bash
@@ -45,7 +49,7 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
 
     __Configure node type__
 
-    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See the [archive node section](../migrate-node/#Running a Celo archive node) for more information and instructions on running an archive node.
+    Your node will run as a `full` node by default, but can also be configured as an `archive` node if you wish to preserve access to all historical state. Note that `full` has a different meaning here than in the context of syncing. See [Running an archive node](#running-an-archive-node) for more information.
 
 3. Start the node.
 
@@ -59,7 +63,7 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
     docker-compose logs -n 50 -f op-geth
     ```
 
-    This will display the last 50 lines of the logs and follow the log as they are written. In a syncing node, you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
+    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
 
 5. Check that node is fully synced.
 
@@ -70,6 +74,45 @@ This guide only covers L2 Celo. Currently, only the Alfajores and Baklava testne
    ```
 
    Note that until fully synced, the RPC API will return 0 for the head block number.
+
+### Running an archive node
+
+__Even if you plan to run an archive node, we do not recommend running the migration tool on archive node data. If you only have L1 archive nodes, we recommend syncing an L1 full node for the Mainnet migration.__
+
+The L2 execution client cannot use pre-hardfork state, so migrating an archive datadir will copy large amounts of data unnecessarily. The migration script will also run slowly and consume lots of memory when run on archive data, regardless of whether a pre-migration was performed. For these reasons, we recommend only running the migration script on a full node L1 datadir, even if you plan to run an L2 archive node.
+
+To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require an archive node. Then, you should set `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of a running legacy L1 archive node. The L2 node will proxy requests for pre-hardfork state and execution to the legacy L1 archive node instead of looking for the archive state in its own database. The L2 node will still run as a standard archive node storing post-hardfork data.
+
+Here are step-by-step instructions for using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) to run an archive node:
+
+// TODO(Alec) rewrite these steps
+
+1. Make sure you have the correct version of `celo-blockchain` installed. See [l2-migration](../notices/l2-migration.md).
+2. Sync an L1 archive node.
+3. Sync an L1 full node.
+4. 1-2 days before the migration block, run a [pre-migration](#run-the-pre-migration-tool) on the L1 full node datadir.
+5. Wait for the migration block.
+6. Stop both nodes once the migration block is reached.
+7. Pull the latest version of
+   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
+   into the root of the project.
+8. Run `./migrate full <network> <path-to-your-L1-full-node-datadir> [<l2_destination_datadir>]` where
+   `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
+   ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
+   will take at least several minutes to complete.
+9. Verify that the migration was successful by looking for the `Migration successful` message at the
+   end of the output.
+10. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
+11. Open `.env` and set `OP_GETH__SYNCMODE=full` and `NODE_TYPE=archive` to enable archive mode.
+12. Open `.env` and set `HISTORICAL_RPC_DATADIR_PATH` to the path of your L1 archive datadir. This will prompt the tool to start an L1 archive node for you with that datadir. If you would prefer to start the L1 archive node yourself, set `OP_GETH__HISTORICAL_RPC` to the L1 archive node RPC endpoint and do not set `HISTORICAL_RPC_DATADIR_PATH`. The L1 archive node will not need the same flags as it did before the hardfork, as it will not be syncing new blocks. To see how we recommend re-starting the L1 archive node see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
+13. Run `docker-compose up -d --build` to start the L2 node (and the L1 archive node if `HISTORICAL_RPC_DATADIR_PATH` is set).
+14. Inspect the progress of the node by running `docker-compose logs -n 50 -f op-geth`. This will
+   display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
+   you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
+   downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
+   begin by applying blocks on top of the hardfork block.
+15. Validate the progression of the node by fetching the current block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
+16. Try querying historical state to test archive functionality. (e.g. `cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993`)
 
 ## Building a node from source
 
