@@ -81,38 +81,114 @@ __Even if you plan to run an archive node, we do not recommend running the migra
 
 The L2 execution client cannot use pre-hardfork state, so migrating an archive datadir will copy large amounts of data unnecessarily. The migration script will also run slowly and consume lots of memory when run on archive data, regardless of whether a pre-migration was performed. For these reasons, we recommend only running the migration script on a full node L1 datadir, even if you plan to run an L2 archive node.
 
-To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require an archive node. Then, you should set `OP_GETH__HISTORICAL_RPC` in `.env` to the RPC address of a running legacy L1 archive node. The L2 node will proxy requests for pre-hardfork state and execution to the legacy L1 archive node instead of looking for the archive state in its own database. The L2 node will still run as a standard archive node storing post-hardfork data.
+#### Overview of Celo L2 archive nodes
+
+To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require archive data, even though it doesn't have any archive data from before the hardfork. You can then configure your node to proxy requests for pre-hardfork archive data out to a legacy archive node that you will have running alongside your L2 archive node.
+
+#### Instructions
 
 Here are step-by-step instructions for using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) to run an archive node:
 
-// TODO(Alec) rewrite these steps
+:::note
+These instructions assume you already have
 
-1. Make sure you have the correct version of `celo-blockchain` installed. See [l2-migration](../notices/l2-migration.md).
-2. Sync an L1 archive node.
-3. Sync an L1 full node.
-4. 1-2 days before the migration block, run a [pre-migration](#run-the-pre-migration-tool) on the L1 full node datadir.
-5. Wait for the migration block.
-6. Stop both nodes once the migration block is reached.
-7. Pull the latest version of
-   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
-   into the root of the project.
-8. Run `./migrate full <network> <path-to-your-L1-full-node-datadir> [<l2_destination_datadir>]` where
-   `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified,
-   ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The migration process
-   will take at least several minutes to complete.
-9. Verify that the migration was successful by looking for the `Migration successful` message at the
-   end of the output.
-10. Run `cp <network>.env .env` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
-11. Open `.env` and set `OP_GETH__SYNCMODE=full` and `NODE_TYPE=archive` to enable archive mode.
-12. Open `.env` and set `HISTORICAL_RPC_DATADIR_PATH` to the path of your L1 archive datadir. This will prompt the tool to start an L1 archive node for you with that datadir. If you would prefer to start the L1 archive node yourself, set `OP_GETH__HISTORICAL_RPC` to the L1 archive node RPC endpoint and do not set `HISTORICAL_RPC_DATADIR_PATH`. The L1 archive node will not need the same flags as it did before the hardfork, as it will not be syncing new blocks. To see how we recommend re-starting the L1 archive node see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
-13. Run `docker-compose up -d --build` to start the L2 node (and the L1 archive node if `HISTORICAL_RPC_DATADIR_PATH` is set).
-14. Inspect the progress of the node by running `docker-compose logs -n 50 -f op-geth`. This will
-   display the last 50 lines of the logs and follow the logs as they are written. In a syncing node,
-   you would expect to see lines of the form `Syncing beacon headers  downloaded=...` where the
-   downloaded number is increasing. Once syncing of the beacon headers is complete, full sync will
-   begin by applying blocks on top of the hardfork block.
-15. Validate the progression of the node by fetching the current block number via the RPC API and seeing that it is increasing (e.g. `cast block-number --rpc-url http://localhost:9993`).
-16. Try querying historical state to test archive functionality. (e.g. `cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993`)
+1. A migrated full node datadir that has been synced to the migration block. See [Migrating an L1 Node](migrate-node.md) if you do not have this.
+2. A non-migrated L1 archive node datadir. Again, please do not attempt to migrate an archive datadir.
+
+Please ensure neither datadir is being used by a running node before proceeding.
+:::
+
+1. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
+
+    ```bash
+    git clone https://github.com/celo-org/celo-l2-node-docker-compose.git
+    cd celo-l2-node-docker-compose
+    ```
+
+2. Configure your `.env` file.
+
+    __Copy default configurations__
+  
+    The [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo contains a `<network>.env` file for each Celo network (`alfajores`, `baklava`, and `mainnet`). Start by copying the default configuration for the appropriate network.
+
+    ```bash
+    export NETWORK=<alfajores, baklava, or mainnet>
+    cp $NETWORK.env .env
+    ```
+
+    __Configure sync mode__
+
+    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. While `archive` nodes can technically run with `snap` sync, they will only store archive data from the point that `snap` sync completes. This will leave a gap in the archive data after the hardfork, so we recommend running archive nodes with `full` sync and a migrated pre-hardfork datadir. // TODO(Alec) add link to snap sync docs here and above.
+
+    To use `full` sync, configure `.env` as follows:
+
+    ```md
+    OP_GETH__SYNCMODE=full
+    DATADIR_PATH=<path to a migrated L1 full node datadir>
+    ```
+
+    __Configure node type__
+
+    To enable `archive` mode, configure `.env` as follows:
+
+    ```md
+    NODE_TYPE=archive
+    ```
+
+    __Configure Historical RPC Service__
+
+    To handle RPC requests for pre-hardfork state and execution, an L2 archive node proxy out to a legacy archive node or "Historical RPC Service".
+
+    There are two ways to configure a Historical RPC Service for your archive node:
+
+    1. You can supply a pre-hardfork archive datadir and have [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) start a legacy archive node for you. To do this, simply configure `.env` as follows:
+
+        ```md
+        HISTORICAL_RPC_DATADIR_PATH=<path to your pre-hardfork archive datadir>
+        ```
+
+        When you start your L2 node, a legacy archive node will also start using the pre-hardfork archive datadir. Your L2 node will be configured to use the legacy archive node as its Historical RPC Service.
+
+    2. If you would prefer to start the legacy archive node yourself, you can configure `.env` as follows:
+
+        ```md
+        OP_GETH__HISTORICAL_RPC=<RPC endpoint of a running legacy archive node>
+        ```
+
+      This will cause any value you set for `HISTORICAL_RPC_DATADIR_PATH` to be ignored, and the tool will not start a legacy archive node when it starts your L2 archive node.
+      Note that if you choose to run your own legacy archive node, you should do so with different flags than before the hardfork as the node will no longer be syncing blocks or communicating with other nodes. To see how we recommend re-starting a legacy archive node as a Historical RPC Service, see this [script](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/scripts/start-historical-rpc-node.sh#L19).
+
+3. Start the node(s).
+
+    ```bash
+    docker-compose up -d --build
+    ```
+
+4. Check the progress of your L2 archive node as it syncs.
+
+    ```bash
+    docker-compose logs -n 50 -f op-geth
+    ```
+
+    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced. //TODO(Alec) check all this for full sync vs snap sync
+
+5. Check that node is fully synced.
+
+   Once the node is fully synced, you can validate that it's following the network by fetching the current block number via the RPC API and seeing that it's increasing as expected.
+
+   ```bash
+   cast block-number --rpc-url http://localhost:9993
+   ```
+
+   Note that until fully synced, the RPC API will return 0 for the head block number.
+
+6. Try querying historical state to test archive functionality.
+
+   ```bash
+   cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993
+   ```
+
+   // TODO(Alec) test this and say what the ouput looks like
 
 ## Building a node from source
 
