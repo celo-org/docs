@@ -27,13 +27,34 @@ __Migrating archive data is not recommended.__
 Both the pre-migration and full migration must be run on full node data. If you only have Celo archive nodes, we recommend syncing a full node in preparation for the L2 hardfork. You should not migrate archive data even if you plan to run an L2 archive node. See [Running an archive node](../operators/run-node.md#running-an-archive-node) for more information.
 :::
 
-We recommend running the migration script (which includes commands for both the pre-migration and full migration) using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). If necessary, the script can also be run from source but the process will be more manual. // TODO(Alec) Do we even want this or should we just tell partners not to run the script from source?
+We recommend running the migration script (which includes commands for both the pre-migration and full migration) using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). If necessary, the script can also be run from source.
 
-// TODO(Alec) rewrite these steps
+### Run pre-migration with docker
 
-1. Stop your L1 node.
-2. Pull the latest version of
-   [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd`
-   into the root of the project.
-3. Run `./migrate pre <network> <path-to-your-L1-datadir> [<l2_destination_datadir>]` where `<network>` is one of `alfajores`, `baklava`, or `mainnet`. If a destination datadir is specified, ensure that the value of `DATADIR_PATH` inside `.env` is updated to match. The pre-migration process will take at least several minutes to complete.
+1. Stop your node.
+2. Pull the latest version of [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) and `cd` into the root of the project.
+
+    ```bash
+    git clone https://github.com/celo-org/celo-l2-node-docker-compose.git
+    cd celo-l2-node-docker-compose
+    ```
+
+3. Run pre-migration command, where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
+
+    :::warn
+    Please ensure your node is stopped before running the migration tool.
+    :::
+
+    ```bash
+    ./migrate pre <network> <path-to-your-L1-datadir> [<L2_destination_datadir>]
+    ```
+
+    If a destination datadir is specified, ensure the value of `DATADIR_PATH` inside `.env` is updated to match. //TODO(Alec) are we missing a step to cp the right `.env` file like we have in the instructions for running a node?
+
+    The pre-migration process will take some time to complete.
+
 4. Once the pre-migration is complete, you can start your L1 node again.
+
+### Run pre-migration from source
+
+ // TODO(Alec) Do we even want this or should we just tell partners not to run the script from source?

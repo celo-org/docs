@@ -51,10 +51,10 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
     cd celo-l2-node-docker-compose
     ```
 
-3. Run the full migration.
+3. Run the full migration command, where `<network>` is one of `alfajores`, `baklava`, or `mainnet`.
 
    :::warn
-   Please ensure your L1 node is stopped before running the migration tool.
+   Please ensure your node is stopped before running the migration tool.
    :::
 
    ```bash
