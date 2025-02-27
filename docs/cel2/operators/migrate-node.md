@@ -26,7 +26,7 @@ Please note that the node must be stopped before the migration tool is run, even
 
 ## Before the hardfork
 
-There are some important steps node operators should take ahead of the L2 hardfork. These include upgrading to the [latest client release](run-node.md#network-config--assets) so that the L1 network will stop producing blocks at the hardfork, and running a pre-migration 1-2 days before the hardfork. If you have not yet read the [Preparing for the L2 hardfork](prepare-node.md) page, please do so before continuing.
+There are some important steps node operators should take ahead of the L2 hardfork. These include upgrading to the [latest client release](run-node.md#network-config--assets) so that the L1 network will stop producing blocks at the hardfork, and running a pre-migration 1-2 days before the hardfork. If you have not yet read the [Preparing for the L2 hardfork](../notices/prepare-node.md) page, please do so before continuing.
 
 ## Running the migration
 
@@ -66,7 +66,7 @@ To simplify migrating and running L2 nodes, Celo has created the [celo-l2-node-d
    The migration process will take at least several minutes to complete.
 
    :::note
-   A full migration constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](prepare-node.md) for instructions on running a pre-migration ahead of the hardfork.
+   A full migration constists of a pre-migration followed by some additional finalization steps, such as building the first L2 block. The pre-migration step will always run during a full migration, but will be significantly faster if a pre-migration has already been performed. See [Preparing for the L2 migration](../notices/prepare-node.md) for instructions on running a pre-migration ahead of the hardfork.
    :::
 
 4. Verify the migration was successful by looking for `Migration successful` at the end of the output.
