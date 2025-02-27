@@ -14,9 +14,9 @@ Migrating a pre-hardfork datadir involves these high-level steps:
 
 1. Upgrade your L1 node to the [latest client release](run-node.md#network-config--assets) so it will stop producing blocks at
    at the hardfork.
-2. 1-2 days before the hardfork, stop your node and run a pre-migration to migrate the majority of data. This is not required, but is highly recommended for minimizing downtime. // TODO(Alec) add link
+2. 1-2 days before the hardfork, stop your node and run a pre-migration to migrate the majority of data. This is not required, but is highly recommended for minimizing downtime. See [Preparing for the L2 Hardfork](../notices/prepare-node.md).
 3. Restart your node and wait for the hardfork.
-4. Shut down your node.
+4. Shut down your node once the hardfork block number is reached.
 5. Pull the necessary network configuration artifacts once available (e.g. hardfork block time).
 6. Run the migration tool to migrate your L1 datadir and produce the hardfork block.
 7. Launch your L2 node with the migrated datadir.
@@ -111,5 +111,5 @@ Alternatively, you can run the check-db script on its own as follows.
 
    This command takes in an optional `--fail-fast` flag that will make it exit at the first gap detected as it does when run via [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose). If the `--fail-fast` flag is not provided then the script will collect all the gaps it finds and print them out at the end.
 
-// TODO(Alec) where to link to README
+// TODO(Alec) where to link to README? Should also update this and the migration script README in other PRs
 For more information on using [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) see the [README](https://github.com/celo-org/celo-l2-node-docker-compose/blob/30ee2c4ec2dacaff10aaba52e59969053c652f05/README.md#L1).
