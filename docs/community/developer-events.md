@@ -14,5 +14,5 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Hackathons
-
+Hack me
 - [Celo at ETHDenver](https://www.ethdenver.com)
