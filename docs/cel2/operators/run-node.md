@@ -1,10 +1,10 @@
 # Running a Celo node
 
-This guide is designed to help node operators run a Celo L2 node, and assumes that you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node to a Celo L2 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing here.
+This guide is designed to help node operators run a Celo L2 node, and assumes you have already migrated data from a Celo L1 node or plan to `snap` sync from scratch. If you wish to migrate data from a Celo L1 node and have not yet done so, please see the [migration guide](migrate-node.md) before continuing.
 
 ## Run node with docker
 
-To simplify running L2 nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates. This makes it easy to pull network configuration files and launch all the services needed to run an L2 node.
+To simplify running nodes, Celo has created the [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) repo with all the necessary configuration files and docker compose templates to make migrating and running a Celo L2 node easy.
 
 For node operators interested in using Kubernetes, we recommend using [Kompose](https://kompose.io) to convert the docker compose template to Kubernetes helm charts.
 
@@ -36,7 +36,7 @@ Follow these steps to run a full node. If you would like to run an archive node,
 
     __Configure sync mode__
 
-    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. This will automatically download pre-hardfork block data from peers and allow your node to start without a migrated L1 datadir. This is the easiest way to start an L2 node.
+    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. This allows your node to start without a migrated L1 datadir, as pre-hardfork block data will be automatically downloaded from peers during syncing. This is the easiest way to start an L2 node.
 
     Alternatively, you can start your node with `full` sync if you have a migrated L1 datadir. For instructions on obtaining a migrated L1 datadir, please see [Migrating an L1 Node](migrate-node.md).
 
@@ -81,9 +81,9 @@ __Even if you plan to run an archive node, we do not recommend running the migra
 
 The L2 execution client cannot use pre-hardfork state, so migrating an archive datadir will copy large amounts of data unnecessarily. The migration script will also run slowly and consume lots of memory when run on archive data, regardless of whether a pre-migration was performed. For these reasons, we recommend only running the migration script on a full node L1 datadir, even if you plan to run an L2 archive node.
 
-#### Overview of Celo L2 archive nodes
+#### Overview
 
-To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require archive data, even though it doesn't have any archive data from before the hardfork. You can then configure your node to proxy requests for pre-hardfork archive data out to a legacy archive node that you will have running alongside your L2 archive node.
+To run an L2 archive node, you should migrate from an L1 full node datadir but still start the L2 execution client in archive mode. This will allow the node to accept RPC requests that require archive data, even though it doesn't have any archive data from before the hardfork. You can then configure your node to forward requests for pre-hardfork archive data to a legacy archive node.
 
 #### Instructions
 
@@ -118,7 +118,7 @@ Please ensure neither datadir is being used by a running node before proceeding.
 
     __Configure sync mode__
 
-    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. While `archive` nodes can technically run with `snap` sync, they will only store archive data from the point that `snap` sync completes. This will leave a gap in the archive data after the hardfork, so we recommend running archive nodes with `full` sync and a migrated pre-hardfork datadir. // TODO(Alec) add link to snap sync docs here and above.
+    By default, [celo-l2-node-docker-compose](https://github.com/celo-org/celo-l2-node-docker-compose) will start your node with `snap` sync. While `archive` nodes can technically run with `snap` sync, they will only store archive data from the point that `snap` sync completes. This will leave a gap in the archive data after the hardfork, so we recommend running archive nodes with `full` sync and a migrated pre-hardfork datadir.
 
     To use `full` sync, configure `.env` as follows:
 
@@ -170,7 +170,7 @@ Please ensure neither datadir is being used by a running node before proceeding.
     docker-compose logs -n 50 -f op-geth
     ```
 
-    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced. //TODO(Alec) check all this for full sync vs snap sync
+    This will display and follow the last 50 lines of logs. In a syncing node, you would expect to see `Syncing beacon headers  downloaded=...` where the downloaded number is increasing and later lines such as `"Syncing: chain download in progress","synced":"21.07%"` where the percentage is increasing. Once the percentage reaches 100%, the node should be synced.
 
 5. Check that node is fully synced.
 
@@ -187,8 +187,6 @@ Please ensure neither datadir is being used by a running node before proceeding.
    ```bash
    cast balance --block <pre-migration-block-number> <address> --rpc-url http://localhost:9993
    ```
-
-   // TODO(Alec) test this and say what the ouput looks like
 
 ## Building a node from source
 
